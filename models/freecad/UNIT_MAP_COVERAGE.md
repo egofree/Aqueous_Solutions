@@ -184,3 +184,17 @@
 | `WS_SOLV` | `massing_only` | `WS_SOLV` | `d1b_massing.py` | Plant/Process/Wet |
 | `ZNBR2` | `mapped` | `ZNBR2` | `electrical_yard.py` | Plant/Electrical |
 
+
+
+## WP-D4 — Presence filter (done 2026-10-01 America/Chicago)
+
+| Field | Value |
+|---|---|
+| Policy | `skip_disabled_and_placeholder_unless_mapped_massing` |
+| Bridge | `graph_geometry_bridge.py` — `presence_filter` / `--presence-report` / `--apply-presence` / `--self-test` |
+| Baseline (gold Rev B) | omit Feature set **empty** → object count **1114** unchanged (parts **1030**) |
+| T6 (`LEACH_CSTR_1` `enabled=false`) | objects **1114→1113**, Part::Feature **1030→1029**, removed `LEACH_CSTR_1` |
+| Logical unmapped | stay **skip** (`BOUNDARY_EXPORT`, `LOAD_AGG`, `Q4_BUS`) — no invented boxes |
+| Placeholders | skip unless map `status=massing_only` opt-in |
+
+Envelope / structural Features not listed on skipped process units are left in place.

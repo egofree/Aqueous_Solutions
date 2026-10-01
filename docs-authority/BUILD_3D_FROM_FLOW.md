@@ -1,7 +1,7 @@
 # Build 3D models from flow diagrams / design packs
 
 Document number: **AQS-3D-BUILD-001**  
-Revision: **E**  
+Revision: **F**  
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
 Audience: Outsiders using the published `aqueous-solutions` tree  
@@ -15,6 +15,7 @@ Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
 | C | Plan pointer | Phase D impl plan is planning-local (AQS-PLAN-3D-001); not shipped here | 2026-10-01 |
 | D | WP-D1b queue | Name-map coverage notes CAD massing side quest queued (18 present unmapped); D2 overlay still next / parallel OK | 2026-10-01 |
 | E | WP-D2 overlay | Safe allow-list applicator → `params_overlay.py` only; bridge `--apply-overlay`; gold `params.py` never rewritten | 2026-10-01 |
+| F | WP-D3/D4 | Pack module `3d/` recipe + rebuild pointer; presence filter omit/tag; bridge `--self-test` / `--apply-presence` | 2026-10-01 |
 
 ---
 
@@ -23,14 +24,14 @@ Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
 | Path | What it does today |
 |---|---|
 | **Present (wired)** | FreeCAD builders read **`models/freecad/params.py`** (and OpenSCAD `params.scad`) and write **`plant.FCStd`**. Geometry is **not** driven by the flow graph. |
-| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay). Module **`3d` is deferred**. No script places FreeCAD solids from graph nodes/edges. Impl plan (hub planning-local): **AQS-PLAN-3D-001** Rev E — **WP-D1/D1b/D2 done**; safe overlay → `params_overlay.py` via `params_overlay_apply.py` / bridge `--apply-overlay`; pipeline next **WP-D3** pack `3d/` (∥ WP-D4 presence). |
+| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay) + **`3d/recipe.json`** when module `3d` requested (WP-D3). Presence filter (WP-D4) omits/tags Features for `enabled=false` / placeholder (logical unmapped stay skip). Impl plan (hub planning-local): **AQS-PLAN-3D-001** Rev F — **WP-D1…D4 done**; next optional **WP-D5** placement study. Overlay still forks `params_overlay.py` only (never gold `params.py`). No invented vessel mm or rates. |
 | **Bias** | FreeCAD 1.0 rebuild (`/usr/bin/freecadcmd`). **Three.js** (or live browser mesh) only with a **later written decision** — see `STACK_3D_DECISION.md`. |
 
-**Graph → geometry is not wired.** If you exported a custom design pack
-expecting “press button → 3D of *my* topology,” that bridge is **not
-implemented**. You can still rebuild the **baseline M1 plant** shipped
-here, and use the stub bridge to inventory your graph against that
-baseline.
+**Graph → place/size solids from edges is not wired** (no auto layout).
+Presence filter + name map + overlay fork **are** wired: rebuild the
+**baseline M1 plant**, then omit/tag Features for disabled/placeholder
+units per pack `3d/recipe.json`. Vessel millimetres still come only from
+`params.py` / allow-listed overlay — never from rates.
 
 ---
 
@@ -63,7 +64,7 @@ import meshes, hide massing                import_mfg / import_details
 | FreeCAD massing | `models/freecad/` + `REBUILD.sh` | Yes — **baseline catalogue**, not graph filter |
 | OpenSCAD → STL | `models/openscad/`, `models/export/` | Optional detail |
 | Import | builders under `models/freecad/` | Yes when STLs present |
-| Graph → place/size solids | — | **Not wired** (Phase D) |
+| Graph → filter/overlay solids | pack `3d/` + bridge presence | **WP-D3/D4 wired**; placement from edges = WP-D5 study |
 
 Matplotlib PFD/SLD PNGs are **optional exporters only**
 (`flow_graph/exporters/matplotlib/`). They are **not** topology authority
@@ -163,9 +164,9 @@ Typical pack always includes:
 | `params.json` | Study overlay (`scale_m`, electrical counts). Apply via `params_overlay_apply.py` / bridge `--apply-overlay` → **`params_overlay.py` fork only** (never gold `params.py`) |
 | `mvs_snapshot.json` / `design.json` | MVS projection / sandbox — not solids |
 | `pfd/` / `sld` / `bom` (if requested) | 2D / tables — WP-C1 |
-| `3d/` | **Not emitted** — Phase D deferred |
+| `3d/` | **Emitted (WP-D3):** `recipe.json` (`aqs-3d-recipe-1.0`) + README rebuild pointer; optional FCStd/STEP sha256; presence decisions (WP-D4) |
 
-### 4.3 Stub: inventory your graph against the CAD baseline
+### 4.3 Bridge: inventory, overlay, presence, pack recipe
 
 ```bash
 cd models/freecad
@@ -185,6 +186,13 @@ python3 graph_geometry_bridge.py \
 python3 params_overlay_apply.py --params /path/to/export/params.json
 python3 params_overlay_apply.py --self-test
 python3 graph_geometry_bridge.py --allow-list
+
+# WP-D4: presence report / post-pass / tests
+python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \
+  --presence-report
+python3 graph_geometry_bridge.py --graph /path/to/export/flow_graph_snapshot.json \
+  --apply-presence --fcstd plant.FCStd --fcstd-out /tmp/plant_filtered.FCStd
+python3 graph_geometry_bridge.py --self-test
 ```
 
 What the bridge **does**:
@@ -195,10 +203,15 @@ What the bridge **does**:
 - **WP-D2:** apply allow-listed overlay keys to **`params_overlay.py`** only
 - Writes a **recipe JSON** (records `applied_keys` when overlay applied)
 
+What it **does** (WP-D3/D4 additions):
+
+- Presence filter: skip `enabled=false` / `presence=placeholder` unless map `massing_only`; logical `unmapped` stay skip
+- `--apply-presence` post-pass omits or tags mapped Feature Names on an FCStd **copy**
+- Pack module `3d` writes `3d/recipe.json` + rebuild pointer (no deferred-only warning)
+
 What it **does not** do:
 
 - Resize tanks from rates / invent vessel mm
-- Hide units with `enabled=false` in FreeCAD (WP-D4)
 - Auto-layout from edges
 - Call Three.js
 - Rewrite gold `params.py` from pack overlay
@@ -227,9 +240,10 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 8. **Optionally** apply pack overlay with `--apply-overlay` → `params_overlay.py`
    (allow-list only). Do **not** overwrite gold `params.py`. Rebuilds still
    import `params` unless you knowingly point a session at the fork.
-9. Treat full **graph→geometry** as Phase D study until pack module `3d`
-   ships. Do **not** adopt Three.js without a written decision in
-   `STACK_3D_DECISION.md`.
+9. **Export** with design_tool module `3d` → open pack `3d/recipe.json` +
+   `3d/README.md`. Apply presence post-pass when the sandbox disables units.
+   Placement from edges remains optional study (WP-D5). Do **not** adopt
+   Three.js without a written decision in `STACK_3D_DECISION.md`.
 
 ---
 
@@ -244,9 +258,9 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 | `SCALE_MODEL.md` | What `SCALE_M` changes |
 | `STL_MANIFEST.md` | OpenSCAD STL contract |
 | `DESIGN_TOOL_ARCHITECTURE.md` | Phase D FreeCAD bias; pack layout (§3.3) |
-| *(hub planning only)* | Phase D detailed plan **AQS-PLAN-3D-001** Rev E lives under hub `planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md` — not in this share tree; WP-D2 applicator is `models/freecad/params_overlay_apply.py` |
+| *(hub planning only)* | Phase D detailed plan **AQS-PLAN-3D-001** Rev F lives under hub `planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md` — not in this share tree; WP-D3/D4 = pack `3d/` + presence filter |
 | `../models/REBUILD.sh` | Share-tree rebuild |
-| `../models/freecad/graph_geometry_bridge.py` | Bridge (inventory + name map + WP-D2 overlay apply) |
+| `../models/freecad/graph_geometry_bridge.py` | Bridge (inventory + name map + WP-D2 overlay + WP-D4 presence + recipe 1.0) |
 | `../models/freecad/params_overlay_apply.py` | WP-D2 allow-list overlay → `params_overlay.py` fork |
 | `../flow_graph/views/` | Primary published 2D diagrams |
 | `../tables/` | materials.csv and BOM tables |

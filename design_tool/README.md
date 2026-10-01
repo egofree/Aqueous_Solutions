@@ -83,7 +83,7 @@ See `../flow_graph/derived/SYNC_POINTER.md`. CAD `STREAM_REGISTER.md` /
 
 ```bash
 # Terminal 1 — API
-cd Diagrams/aqueous_diagrams/design_tool
+cd design_tool   # hub: Diagrams/aqueous_diagrams/design_tool; share: share/aqueous-solutions/design_tool
 uvicorn aqs_design_tool.api.app:app --host 127.0.0.1 --port 8000
 
 # Terminal 2 — UI
@@ -125,7 +125,7 @@ MVS gold / `plant_flow_graph.json` are never overwritten. **WP-C2 GitHub publish
 | `sld` | `sld.svg` / `sld.json` + `sld/` (efd-thermal/ess) | `views/efd-elec` (+ peers) |
 | `bom` | `bom.csv`, `bom_self_copy.json` | graph nodes + AQS-BOM-SC-001 flags |
 | `matplotlib` | `matplotlib/*.png` | optional hub bridged PNGs (copy-only) |
-| `3d` | deferred | Phase D |
+| `3d` | `3d/recipe.json`, `3d/README.md` | bridge + name map + presence (WP-D3/D4) |
 
 ### C1 smoke
 
@@ -144,6 +144,35 @@ print('OK', resp.pack_dir)
 ```
 
 **C1 exit:** Yes (local). **C2/C3:** blocked pending Mike GitHub authorize — not started.
+
+
+## WP-D3 / WP-D4 — Pack `3d/` + presence (done 2026-10-01 CT)
+
+Module `3d` emits `3d/recipe.json` (`aqs-3d-recipe-1.0`) and `3d/README.md` rebuild
+pointer from `graph_geometry_bridge` + `unit_freecad_map.json`. Presence policy
+skips `enabled=false` / `presence=placeholder` (unless map `massing_only`) and
+keeps logical `unmapped` as skip. No deferred-only warning when `3d` is requested.
+No invented geometry or rates. CERN-OHL-S-2.0.
+
+### D3 smoke
+
+```bash
+cd Diagrams/aqueous_diagrams/design_tool
+python3 -c "
+from aqs_design_tool.api.store import SandboxStore
+from aqs_design_tool.models import ExportRequest
+from aqs_design_tool.export.pack import export_pack
+rec = SandboxStore().create(label='d3-smoke')
+resp = export_pack(rec, ExportRequest(export_modules=['params','3d']))
+assert '3d/recipe.json' in resp.files
+assert not any('deferred' in n.lower() for n in resp.notes if '3d' in n.lower() or 'Module' in n)
+print('OK', resp.pack_dir)
+"
+# Presence filter tests (hub/share freecad):
+python3 ../models/freecad/graph_geometry_bridge.py --self-test
+```
+
+**D3/D4 exit:** Yes (local). Pack `3d/` ships; baseline FCStd object count unchanged under gold presence; T6 disable removes mapped Feature.
 
 
 ## What this is
@@ -282,7 +311,7 @@ streams. Surplus-export goal retained.
 - Self-copy checklist flags on `mvs_criteria.self_copy` (Partial).
 - Sector catalogue is **AQS-SEC-001** Rev E (`cad/SECTOR_DEFINITIONS.md`).
 - Candidate MVS ≠ frozen `AQS-MVS-001` gold file.
-- PFD/SLD/BOM export modules **WP-C1 done** (graph-driven); 3D still deferred; GitHub C2 not started.
+- PFD/SLD/BOM export modules **WP-C1 done** (graph-driven); **WP-D3/D4** pack `3d/` + presence filter done; GitHub C2 not started.
 
 ## P1 / deferred export backlog (explicit)
 
@@ -293,10 +322,10 @@ streams. Surplus-export goal retained.
 | **pfd** | **WP-C1** | Graph `views/pfd`+`mfd` → pack `pfd/`; matplotlib optional separate |
 | **bom** | **WP-C1** (Partial RepRap) | `bom.csv` from graph nodes; flags from AQS-BOM-SC-001; `reprap_bom_complete` still false |
 | **matplotlib** | Optional exporter | Copy bridged hub PNGs only; not authority |
-| **3d** | Deferred Phase D | FreeCAD rebuild bias — not API pack yet |
+| **3d** | **WP-D3 done** | `3d/recipe.json` + rebuild pointer; presence in recipe (WP-D4) |
 | Schematic UI | **P1 + B′** | `web/` graph-layer; AQS-UI-001 §11 |
 
-Do not claim C1 closes GitHub publish (C2) or 3D (D).
+Do not claim C1/D3 closes GitHub publish (C2). Phase D exit still needs outsider dry-run checklist in BUILD_3D.
 
 
 ## P1 schematic UI (`web/`)

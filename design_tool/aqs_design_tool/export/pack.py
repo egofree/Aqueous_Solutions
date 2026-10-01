@@ -8,6 +8,10 @@ sandbox overlay. MVS gold / graph write path remain untouched.
 WP-C1: optional modules ``pfd`` / ``sld`` / ``bom`` emit from the graph
 snapshot (or documented layer views). ``matplotlib`` is an optional exporter
 only (copies bridged hub PNGs when present). Unused modules stay off.
+
+WP-D3: module ``3d`` emits ``3d/recipe.json`` + rebuild pointer (and optional
+FCStd/STEP sha256) via ``graph_geometry_bridge``; presence filter (WP-D4)
+is recorded in the recipe. No invented geometry or rates.
 """
 
 from __future__ import annotations
@@ -325,6 +329,224 @@ def _emit_matplotlib(
     )
 
 
+
+def _freecad_dir() -> Path | None:
+    """Hub cad/freecad or share models/freecad beside design_tool parent."""
+    parent = TOOL_ROOT.parent
+    for c in (parent / "models" / "freecad", parent / "cad" / "freecad"):
+        if c.is_dir():
+            return c
+    return None
+
+
+def _load_geometry_bridge():
+    """Import graph_geometry_bridge from hub/share freecad dir."""
+    import importlib.util
+
+    fc = _freecad_dir()
+    if fc is None:
+        raise ImportError("freecad dir not found beside design_tool parent")
+    mod_path = fc / "graph_geometry_bridge.py"
+    if not mod_path.is_file():
+        raise ImportError(f"graph_geometry_bridge.py missing: {mod_path}")
+    spec = importlib.util.spec_from_file_location(
+        "aqs_graph_geometry_bridge_pack", mod_path
+    )
+    if spec is None or spec.loader is None:
+        raise ImportError(f"cannot load {mod_path}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod, fc
+
+
+def _emit_3d(
+    pack_dir: Path,
+    rec: SandboxRecord,
+    graph: dict[str, Any] | None,
+    files: list[str],
+    notes: list[str],
+    params_emitted: bool,
+) -> None:
+    """WP-D3: emit pack ``3d/recipe.json`` + README rebuild pointer (+ hashes)."""
+    out = pack_dir / "3d"
+    out.mkdir(parents=True, exist_ok=True)
+
+    if graph is None:
+        notes.append(
+            "Module '3d': no flow_graph_snapshot — recipe inventory skipped; "
+            "see 3d/README.md for baseline rebuild only."
+        )
+        (out / "README.md").write_text(
+            "\n".join(
+                [
+                    "# Pack module `3d/` — rebuild pointer (incomplete)",
+                    "",
+                    "Licence: CERN-OHL-S-2.0",
+                    "",
+                    "No `flow_graph_snapshot.json` was available at export.",
+                    "Rebuild baseline from share `models/REBUILD.sh` only;",
+                    "presence filter needs a graph snapshot.",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        files.append("3d/README.md")
+        return
+
+    try:
+        bridge, fc_dir = _load_geometry_bridge()
+    except ImportError as exc:
+        notes.append(f"Module '3d': bridge import failed ({exc}); pointer-only README.")
+        (out / "README.md").write_text(
+            "\n".join(
+                [
+                    "# Pack module `3d/` — bridge unavailable",
+                    "",
+                    "Licence: CERN-OHL-S-2.0",
+                    "",
+                    f"Could not load graph_geometry_bridge: {exc}",
+                    "Install share/hub freecad tree beside design_tool parent.",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        files.append("3d/README.md")
+        return
+
+    unit_map = None
+    map_path = fc_dir / "unit_freecad_map.json"
+    if map_path.is_file():
+        unit_map = bridge.load_unit_map(map_path)
+
+    params_overlay = None
+    params_path = pack_dir / "params.json"
+    if params_path.is_file():
+        params_overlay = json.loads(params_path.read_text(encoding="utf-8"))
+    elif not params_emitted:
+        # Prefer sandbox overlay fields when params module was not requested
+        params_overlay = {
+            "scale_m": rec.model.scale_m,
+            "site": rec.model.site.model_dump(mode="json"),
+            "electrical": rec.model.electrical.model_dump(mode="json"),
+            "scale_rules": rec.model.scale_rules.model_dump(mode="json"),
+            "note": "Overlay snapshot for 3d recipe — does not rewrite params.py",
+            "topology_authority": "AQS-FLOW-GRAPH-001",
+        }
+
+    recipe = bridge.build_recipe(
+        graph,
+        params_overlay,
+        unit_map=unit_map,
+        map_path=map_path if map_path.is_file() else None,
+        overlay_apply_result=None,
+    )
+    recipe["graph_ref"] = "flow_graph_snapshot.json"
+    recipe["params_overlay_ref"] = (
+        "params.json" if params_path.is_file() or params_overlay else None
+    )
+    # Relative name-map pointer for outsiders (share layout)
+    recipe["name_map_ref"] = "models/freecad/unit_freecad_map.json"
+    if recipe.get("freecad"):
+        recipe["freecad"]["name_map_ref"] = "models/freecad/unit_freecad_map.json"
+        recipe["freecad"]["rebuild_sh"] = "models/REBUILD.sh"
+
+    # Full units + presence decisions in pack recipe
+    full = dict(recipe)
+    full["units"] = bridge.inventory(graph)["units"]
+    if "_name_map_units" in full:
+        full["name_map_units"] = full.pop("_name_map_units")
+    if "_presence_decisions" in full:
+        if full.get("presence_filter") is not None:
+            full["presence_filter"] = dict(full["presence_filter"])
+            full["presence_filter"]["decisions"] = full.pop("_presence_decisions")
+        else:
+            full.pop("_presence_decisions", None)
+    full.pop("units_sample", None)
+
+    recipe_path = out / "recipe.json"
+    recipe_path.write_text(
+        json.dumps(full, indent=2) + "\n", encoding="utf-8"
+    )
+    files.append("3d/recipe.json")
+
+    pf = full.get("presence_filter") or {}
+    cov = full.get("name_map_coverage") or {}
+    sha = (full.get("outputs") or {}).get("sha256") or {}
+
+    readme_lines = [
+        "# Pack module `3d/` — graph → FreeCAD rebuild pointer (WP-D3 / WP-D4)",
+        "",
+        "Licence: CERN-OHL-S-2.0",
+        "",
+        "This folder does **not** invent vessel millimetres or stream rates.",
+        "Solids come from share `models/freecad/params.py` + builders",
+        "(`build_plant.py`), optionally via a **forked** `params_overlay.py`",
+        "(WP-D2 allow-list). Presence (WP-D4) omits or tags Features whose",
+        "graph nodes are `enabled=false` or `presence=placeholder` (unless",
+        "map `status=massing_only`). Logical `unmapped` units stay skip.",
+        "",
+        "## Artefacts",
+        "",
+        "| File | Role |",
+        "|---|---|",
+        "| `recipe.json` | `aqs-3d-recipe-1.0` inventory + presence + map gaps + optional sha256 |",
+        "| `README.md` | This rebuild pointer |",
+        "",
+        f"- Recipe status: `{full.get('status')}`",
+        f"- Presence policy: `{full.get('presence_policy')}`",
+        f"- Presence emit/skip: {pf.get('emit_count')}/{pf.get('skip_count')}",
+        f"- Name-map present coverage: {cov.get('present_mapped_or_massing')}/{cov.get('present_nodes')} "
+        f"({cov.get('present_coverage_pct')}%)",
+        f"- Baseline sha256 keys: {', '.join(sha.keys()) or '(none beside bridge at export)'}",
+        "",
+        "## Outsider rebuild (share tree)",
+        "",
+        "```bash",
+        "# 0) Prerequisites: /usr/bin/freecadcmd 1.0 — see docs-authority/BUILD_3D_FROM_FLOW.md",
+        "cd models/freecad",
+        "",
+        "# 1) Inventory + recipe (optional re-emit)",
+        "python3 graph_geometry_bridge.py \\",
+        "  --graph /path/to/this-pack/flow_graph_snapshot.json \\",
+        "  --params /path/to/this-pack/params.json \\",
+        "  --map unit_freecad_map.json \\",
+        "  --out /path/to/this-pack/3d/recipe.json",
+        "",
+        "# 2) Safe overlay fork (never gold params.py)",
+        "python3 graph_geometry_bridge.py \\",
+        "  --params /path/to/this-pack/params.json --apply-overlay",
+        "",
+        "# 3) Baseline rebuild (params-driven catalogue)",
+        "bash ../REBUILD.sh --plant-only",
+        "# or: python3 graph_geometry_bridge.py --graph ... --rebuild-baseline",
+        "",
+        "# 4) Presence post-pass on a *copy* of plant.FCStd",
+        "python3 graph_geometry_bridge.py \\",
+        "  --graph /path/to/this-pack/flow_graph_snapshot.json \\",
+        "  --apply-presence --fcstd plant.FCStd \\",
+        "  --fcstd-out /tmp/plant_filtered.FCStd",
+        "",
+        "# 5) Filter tests (no FreeCAD geometry invention)",
+        "python3 graph_geometry_bridge.py --self-test",
+        "```",
+        "",
+        "Authority: pack `flow_graph_snapshot.json` (AQS-FLOW-GRAPH-001).",
+        "Protocol: `docs-authority/AGENT_CAD_PROTOCOL.md` + `FREECAD_PROTOCOL.md`.",
+        "",
+    ]
+    (out / "README.md").write_text("\n".join(readme_lines), encoding="utf-8")
+    files.append("3d/README.md")
+
+    notes.append(
+        f"Module '3d': wrote 3d/recipe.json (schema {full.get('schema')}, "
+        f"status={full.get('status')}; presence emit={pf.get('emit_count')} "
+        f"skip={pf.get('skip_count')}) + 3d/README.md rebuild pointer."
+    )
+
+
+
 def export_pack(rec: SandboxRecord, req: ExportRequest | None = None) -> ExportResponse:
     req = req or ExportRequest()
     EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -339,7 +561,7 @@ def export_pack(rec: SandboxRecord, req: ExportRequest | None = None) -> ExportR
         "Graph snapshot included (WP-Bp4); plant_flow_graph.json not modified.",
         "Gap flags included even when sandbox is incomplete vs MVS.",
         "WP-C1: pfd/sld/bom emit from graph when requested; unused modules off; "
-        "matplotlib is optional exporter only.",
+        "matplotlib is optional exporter only; WP-D3 module 3d emits recipe.",
     ]
 
     # WP-Bp4: always include a read-only copy of the plant flow graph
@@ -451,7 +673,7 @@ Exported: {datetime.now(CT).strftime("%Y-%m-%d %H:%M:%S CT")}
 | sld | sld.svg/json + sld/ | views/efd-elec (+ thermal/ess) |
 | bom | bom.csv, bom_self_copy.json | graph nodes + AQS-BOM-SC-001 flags |
 | matplotlib | matplotlib/*.png | optional hub bridged PNGs |
-| 3d | (deferred Phase D) | — |
+| 3d | 3d/recipe.json, 3d/README.md | bridge + map + presence (WP-D3/D4) |
 """
     (pack_dir / "README.md").write_text(readme, encoding="utf-8")
     files.append("README.md")
@@ -530,9 +752,13 @@ Exported: {datetime.now(CT).strftime("%Y-%m-%d %H:%M:%S CT")}
         _emit_matplotlib(pack_dir, files, notes)
 
     if "3d" in modset:
-        notes.append(
-            "Module '3d' requested but deferred to Phase D "
-            "(FreeCAD rebuild bias; WP-D3)."
+        _emit_3d(
+            pack_dir,
+            rec,
+            graph,
+            files,
+            notes,
+            params_emitted=("params" in modset),
         )
 
     unknown = modset - {
