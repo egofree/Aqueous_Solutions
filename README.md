@@ -54,11 +54,14 @@ review rebuilds. Rules: `docs-authority/SCALE_MODEL.md` §7–§8.
 
 ## 3D from flow graphs (honest)
 
-Outsiders: see **`docs-authority/BUILD_3D_FROM_FLOW.md`**.
+Outsiders: see **`docs-authority/BUILD_3D_FROM_FLOW.md`** (end-to-end) and
+**`docs-authority/STACK_3D_DECISION.md`** (FreeCAD bias; Three.js gated).
+Pipeline protocol: **`docs-authority/AGENT_CAD_PROTOCOL.md`**.
 
-- **Present path:** rebuild baseline plant from `models/freecad/params.py` via `models/REBUILD.sh` (FreeCAD 1.0 only).
+- **Present path:** rebuild baseline plant from `models/freecad/params.py` via `models/REBUILD.sh` (FreeCAD 1.0 only; `SCALE_M=1.0`).
 - **Not wired:** export-pack `flow_graph_snapshot.json` does **not** drive FreeCAD placement. Stub: `models/freecad/graph_geometry_bridge.py`.
-- Phase D bias remains FreeCAD rebuild; Three.js only with a written decision (`DESIGN_TOOL_ARCHITECTURE.md` §3.3).
+- **2D primary:** `flow_graph/views/*.svg` (matplotlib PNGs optional, not authority, not shipped).
+- Phase D bias remains FreeCAD rebuild; Three.js only with a **later written decision** revising `STACK_3D_DECISION.md`.
 
 ```bash
 cd models && bash REBUILD.sh
