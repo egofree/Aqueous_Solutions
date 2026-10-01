@@ -66,9 +66,10 @@ def classify(name: str):
 
     # --- Life ------------------------------------------------------------
     if (
-        _startswith(name, "HAB", "SLEEP", "GALLEY")
+        _startswith(name, "HAB", "SLEEP", "GALLEY", "GREY_", "BLACK_")
         or name == "HABITATION"
         or name.startswith("HABITATION_")
+        or _in(name, "GREY_TREAT", "BLACK_DIGEST")
     ):
         return ("Life", "Habitation")
     if (
@@ -93,7 +94,7 @@ def classify(name: str):
         name,
         "RECTIFIER", "ATS", "SOL_ARK", "ZNBR", "PV_ARRAY", "GND_",
         "TRAY_YARD", "MFG_ELECTRICAL", "MFG_ZNBR",
-        "BACKUP_GEN", "GEN_", "FUEL_CELL", "FC_", "GEO_",
+        "BACKUP_GEN", "GEN_", "FUEL_CELL", "FC_", "GEO_", "MEOH_",
         "YARD_", "CLEAR_", "KO_", "UTIL_ROUGH_",
     ) or _in(name, "ATS", "SOL_ARK_60K", "BACKUP_GEN", "FUEL_CELL"):
         return ("Electrical",)
@@ -143,7 +144,7 @@ def classify(name: str):
         "PROD_METALS", "PROD_Au", "PROD_Ag", "PROD_Cu", "PROD_Pb",
         "PROD_Sn", "PROD_Ni", "PROD_Fe", "PROD_Cd", "PROD_Zn",
         "PROD_HYDROXIDES", "MELT", "NaOH_PRODUCT", "HCl_PRODUCT",
-        "WAFER_FAB", "FAB_", "WET_BENCH", "ETCH_", "PV_",
+        "WAFER_FAB", "FAB_", "WET_BENCH", "ETCH_", "PV_", "WS_", "S13_",
         "MFG_SHOP", "MFG_CRIB", "MFG_FLOOR",
         "MET_", "WIRE_DRAW", "COLD_MILL", "GAS_ATOMIZER", "MFG_SHREDDER", "MFG_HOPPER",
         "MFG_CONVEYOR", "MFG_LID_", "MFG_LEACH", "MFG_CSTR3", "MFG_FLOAT",

@@ -38,6 +38,7 @@ import building_stack
 import fitout
 import transparency
 import plant_groups
+import d1b_massing
 
 import FreeCAD as App
 
@@ -111,6 +112,7 @@ def build():
     building_stack.attach(doc)
     fire_barriers.attach(doc)
     fitout.attach(doc)
+    d1b_massing.attach(doc)  # WP-D1b TBD massing (unit_id Features)
     stamp_materials.stamp(doc, stamp_materials.load_rows())
     transparency.apply_document(doc)
 

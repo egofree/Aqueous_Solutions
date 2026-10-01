@@ -392,3 +392,25 @@ LIFE_RACK_X0 = 0
 LIFE_RACK_X1 = PLATE_L
 LIFE_RACK_Y0 = 0
 LIFE_RACK_Y1 = PLATE_W
+
+# ---------------------------------------------------------------------------
+# WP-D1b / CAD-M1 — TBD massing clash envelopes (not PE nameplates / not rates).
+# Aliases of existing stub / tote / digest / tank / BMED classes only.
+# ---------------------------------------------------------------------------
+D1B_TBD_SKID_L = BMED_L
+D1B_TBD_SKID_W = BMED_W
+D1B_TBD_SKID_H = BMED_H
+D1B_TBD_TOTE_L = TOTE_L
+D1B_TBD_TOTE_W = TOTE_W
+D1B_TBD_TOTE_H = TOTE_H
+D1B_TBD_DIGEST_L = DIGEST_L
+D1B_TBD_DIGEST_W = DIGEST_W
+D1B_TBD_DIGEST_H = DIGEST_H
+D1B_TBD_TANK_L = P_TANK_L
+D1B_TBD_TANK_W = P_TANK_W
+D1B_TBD_TANK_H = P_TANK_H
+D1B_TBD_STUB_L = STUB_L
+D1B_TBD_STUB_W = STUB_W
+D1B_TBD_STUB_H = STUB_H
+# Reagent-tote pitch (reuse polish-bank pitch class)
+D1B_WS_PITCH = PK_PITCH

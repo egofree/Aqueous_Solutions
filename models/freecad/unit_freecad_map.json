@@ -2,16 +2,16 @@
   "schema": "aqs-unit-freecad-map-1.0",
   "licence": "CERN-OHL-S-2.0",
   "doc_id": "AQS-UNIT-FREECAD-MAP-001",
-  "revision": "A",
+  "revision": "B",
   "date": "2026-10-01",
   "graph_doc_id": "AQS-FLOW-GRAPH-001",
   "graph_revision": "B",
   "freecad_binary": "/usr/bin/freecadcmd",
   "evidence": {
-    "plant_fcstd": "models/freecad/plant.FCStd (hub: cad/freecad/plant.FCStd)",
-    "inventory_object_count": 1060,
-    "part_feature_count": 976,
-    "method": "freecadcmd open plant.FCStd \u2192 Name/Label/TypeId; cross-check builder add() Names; no invented geometry"
+    "plant_fcstd": "plant.FCStd",
+    "inventory_object_count": 1114,
+    "part_feature_count": 1030,
+    "method": "freecadcmd 1.0 inventory + WP-D1b d1b_massing.py TBD Part::Feature for 18 present units"
   },
   "coverage": {
     "graph_nodes": 91,
@@ -19,36 +19,18 @@
     "rows_classified_pct": 100.0,
     "by_status": {
       "mapped": 56,
-      "massing_only": 7,
+      "massing_only": 25,
       "placeholder_skip": 7,
-      "unmapped": 21
+      "unmapped": 3
     },
     "present_nodes": 79,
-    "present_mapped_or_massing": 58,
-    "present_coverage_pct": 73.4,
+    "present_mapped_or_massing": 76,
+    "present_coverage_pct": 96.2,
     "placeholder_nodes": 12,
     "unmapped_present": [
-      "BLACK_DIGEST",
-      "BMED_UPW_POLISH",
       "BOUNDARY_EXPORT",
-      "FAB_UPW_TANK",
-      "GEO_HP_CLOSED_LOOP",
-      "GREY_TREAT",
       "LOAD_AGG",
-      "MEOH_FC",
-      "MEOH_FERM",
-      "MEOH_SYNTH",
-      "MEOH_TANK",
-      "Q4_BUS",
-      "S13_CLASS_TREAT",
-      "WS_AMMONIA",
-      "WS_DOPE",
-      "WS_HF_ED",
-      "WS_KOH",
-      "WS_NITRIC",
-      "WS_PEROX",
-      "WS_SLURRY",
-      "WS_SOLV"
+      "Q4_BUS"
     ]
   },
   "entries": [
@@ -165,11 +147,17 @@
       "presence": "present",
       "enabled": true,
       "class": "digest",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present WTR unit; no Part::Feature in plant.FCStd (NaOH_DIGEST is glass-line, not black digest)"
+      "status": "massing_only",
+      "freecad_names": [
+        "BLACK_DIGEST"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Habitation"
+      ],
+      "notes": "WP-D1b TBD digest-class clash near HAB_WASTE; \u2260 NaOH_DIGEST"
     },
     {
       "unit_id": "BLOW_MOLD",
@@ -225,11 +213,17 @@
       "presence": "present",
       "enabled": true,
       "class": "skid",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present WTR skid; no Feature in plant.FCStd"
+      "status": "massing_only",
+      "freecad_names": [
+        "BMED_UPW_POLISH"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD skid beside BMED_REGEN (world); not PE"
     },
     {
       "unit_id": "BOUNDARY_EXPORT",
@@ -543,11 +537,17 @@
       "presence": "present",
       "enabled": true,
       "class": "tank",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present FAB tank; no Feature (ROOF_TANK/CATCH_TANK are building water, not fab UPW)"
+      "status": "massing_only",
+      "freecad_names": [
+        "FAB_UPW_TANK"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tank = P_TANK_* alias in FAB envelope; \u2260 ROOF/CATCH"
     },
     {
       "unit_id": "FLOAT_SINK",
@@ -643,11 +643,16 @@
       "presence": "present",
       "enabled": true,
       "class": null,
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present loop topology node; no dedicated Feature (related GEO_HP / KO_GEO_GHEX / UTIL_ROUGH_GHEX already mapped to other units)"
+      "status": "massing_only",
+      "freecad_names": [
+        "GEO_HP_CLOSED_LOOP"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "WP-D1b TBD stub beside GEO_HP/GHEX rough-in; loop topology massing only"
     },
     {
       "unit_id": "GEO_ORC",
@@ -744,11 +749,17 @@
       "presence": "present",
       "enabled": true,
       "class": "treat",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present WTR treat; HDR_GREY_* are headers only, not treatment solids"
+      "status": "massing_only",
+      "freecad_names": [
+        "GREY_TREAT"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Habitation"
+      ],
+      "notes": "WP-D1b TBD treat skid near HAB; HDR_GREY_* remain headers only"
     },
     {
       "unit_id": "GROW_BED",
@@ -948,11 +959,16 @@
       "presence": "present",
       "enabled": true,
       "class": "iem_fc",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present MEOH; no Feature in plant.FCStd"
+      "status": "massing_only",
+      "freecad_names": [
+        "MEOH_FC"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "WP-D1b TBD skid clash (D1B_TBD_SKID=*BMED_*); not PE nameplate"
     },
     {
       "unit_id": "MEOH_FERM",
@@ -960,11 +976,16 @@
       "presence": "present",
       "enabled": true,
       "class": "ferment",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present MEOH; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "MEOH_FERM"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "WP-D1b TBD digest-class clash near FARM; XY study; not PE"
     },
     {
       "unit_id": "MEOH_SYNTH",
@@ -972,11 +993,16 @@
       "presence": "present",
       "enabled": true,
       "class": "reactor",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present MEOH; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "MEOH_SYNTH"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "WP-D1b TBD skid clash (D1B_TBD_SKID); not PE / rates"
     },
     {
       "unit_id": "MEOH_TANK",
@@ -984,11 +1010,16 @@
       "presence": "present",
       "enabled": true,
       "class": "tank",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present MEOH; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "MEOH_TANK"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "WP-D1b TBD tank clash = P_TANK_* alias (~study 50\u2013200 L envelope class); not PE"
     },
     {
       "unit_id": "MET_AHU",
@@ -1278,11 +1309,17 @@
       "presence": "present",
       "enabled": true,
       "class": null,
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "present WET treat class node; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "S13_CLASS_TREAT"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD treat-class skid on wet basement; not PE"
     },
     {
       "unit_id": "SALT_FEED",
@@ -1421,11 +1458,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no dedicated Feature (ETCH_RETURN is return header, not reagent)"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_AMMONIA"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub (AQS-EQP-FAB-RGN-001); XY TBD"
     },
     {
       "unit_id": "WS_DOPE",
@@ -1433,11 +1476,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_DOPE"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "WS_HF_ED",
@@ -1445,11 +1494,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_HF_ED"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "WS_KOH",
@@ -1457,11 +1512,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_KOH"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "WS_NITRIC",
@@ -1469,11 +1530,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_NITRIC"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "WS_PEROX",
@@ -1481,11 +1548,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_PEROX"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "WS_SLURRY",
@@ -1493,11 +1566,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_SLURRY"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "WS_SOLV",
@@ -1505,11 +1584,17 @@
       "presence": "present",
       "enabled": true,
       "class": "reagent",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "fab reagent fork; no Feature"
+      "status": "massing_only",
+      "freecad_names": [
+        "WS_SOLV"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "WP-D1b TBD tote-class reagent stub; XY TBD"
     },
     {
       "unit_id": "ZNBR2",
