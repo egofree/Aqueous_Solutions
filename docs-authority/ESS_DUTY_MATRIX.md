@@ -12,7 +12,7 @@ Style: AQS-DOC-001.
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | Study duties for three ESS peers + H₂ contention note | 2026-10-01 |
-| B | 1 | Hydro continuous kW = honest incomplete; scale-up V×h path table; seed HYDRO_SET params | 2026-10-01 |
+| B | 1 | Hydro continuous kW incomplete; scale-up V×h path table; seed HYDRO_SET params | 2026-10-01 |
 
 Licence: **CERN-OHL-S-2.0**.
 
@@ -22,7 +22,7 @@ Canonical in this tree: `docs-authority/ESS_DUTY_MATRIX.md`
 ## 1. Purpose
 
 Prove **catalogue presence** of ZNBR2 / MEOH / PUMPED_HYDRO is backed by
-**study duty numbers** and an honest energy-equivalence note — especially
+**study duty numbers** and an energy-equivalence note — especially
 M1 hydro ≪ ZnBr₂ — without inventing nameplates.
 
 ---

@@ -77,7 +77,7 @@ Do not treat the genset as a substitute for the fuel cell, or the
 reverse. Size CRYO_H2 against **GEN + FC + vent contingency**
 (AQS-EQP-CRY-001 §5).
 
-### 2.3 Electrical tie — Sol-Ark BATT DC (honest)
+### 2.3 Electrical tie — Sol-Ark BATT DC
 
 From `ELECTRICAL.md` and AQS-GAP-001 §4:
 
@@ -188,9 +188,9 @@ cryo pass; this document locks the **interface only**.
 
 ---
 
-## 8. Other plant fuel consumers (honest inventory)
+## 8. Other plant fuel consumers (inventory)
 
-Do not invent new consumers without tree evidence.
+Add consumers only with tree evidence.
 
 | Consumer | Class | Evidence | Fuel / oxidizer | Stream / note |
 |---|---|---|---|---|

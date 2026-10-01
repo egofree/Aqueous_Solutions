@@ -1,23 +1,28 @@
-# Foam-board EW cascade (1:3)
+# Authority documents (publish tree)
 
-AQS-FOAM-001. Nine funnel cells on a bund, cut from 4×8 ft × 6 mm
-expanded (foam-core) PVC. Duty: wet Salria coupon at bench temperature.
-Plant wet wall remains solid CPVC sheet (70–85 °C).
+Document identity, process equipment notes, CAD protocols, and rebuild
+guidance for the Aqueous plant. Licence: CERN-OHL-S-2.0.
 
-```
-python3 generate.py
-```
+## Start here
 
-| File | What |
+| Doc | Role |
 |---|---|
-| `DECISIONS.md` | Scale, sheet, joint |
-| `params.py` / `params.scad` | One number set |
-| `CUT_LIST.md` | Buy + glue order |
-| `cut_list.csv` | Same table |
-| `aisle.png` | Plan of EW-1…9 |
-| `cell_unfold.png` | One-cell net |
-| `nest_sheet_1.png` `nest_sheet_2.png` | 4×8 nests |
-| `foam_cascade.scad` | Assembled 3D (operator OpenSCAD) |
+| `AUTHORITY.md` | CAD / doc authority lock (AQS-AUTH-001) |
+| `REBUILD.md` | Rebuild from this publish tree (AQS-REB-001) |
+| `BUILD_3D_FROM_FLOW.md` | Graph → 3D rebuild path and limitations |
+| `STACK_3D_DECISION.md` | FreeCAD default; Three.js gated |
+| `AGENT_CAD_PROTOCOL.md` | Parametric PFD→CAD agent protocol |
+| `FREECAD_PROTOCOL.md` | FreeCAD 1.0 console / script rules |
+| `SCALE_MODEL.md` | What `SCALE_M` drives |
+| `DOCUMENTATION_STYLE.md` | House style (AQS-DOC-001) |
+| `DOC_STYLE.md` | WARNING / CAUTION / NOTE practice |
+| `GLOSSARY.md` | Locked unit and stream names |
+| `HANDOFF.md` | Short CAD handoff pointers |
 
-Buy **two** 4×8 × 6 mm sheets. Change `SCALE` or `T` only in `params.py`
-and `params.scad`, then rerun the generator.
+## Layout
+
+- Root of this folder: cad-authority markdown (share layout).
+- `process/`: process equipment sheets mirrored from hub process docs.
+
+Copyright Mike Matthews. Design “Project decision YYYY-MM-DD” rows in
+individual files remain authoritative for those decisions.

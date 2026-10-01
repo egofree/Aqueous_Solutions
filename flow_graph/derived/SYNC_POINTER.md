@@ -27,5 +27,5 @@ python3 export_authority_md.py
 python3 render_layer_views.py   # layer stubs still graph-driven
 ```
 
-Do **not** invent DOCK S## or fill null placeholder rates.
+DOCK stream numbers and null placeholder rates are not filled without authority.
 DOCK_EXPORT_TBD stays TBD. Layer views: `render_layer_views.py` → `views/`.

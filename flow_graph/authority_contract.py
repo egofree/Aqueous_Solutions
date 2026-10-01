@@ -252,7 +252,7 @@ def check_authority_contract(
                 )
             )
 
-    # Honesty: projection must never flip mvs_equivalent true
+    # Projection must never flip mvs_equivalent true
     crit = (projection.get("mvs_criteria") or {}).get("self_copy") or {}
     if crit.get("mvs_equivalent") is True:
         report.issues.append(

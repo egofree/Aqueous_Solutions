@@ -163,7 +163,7 @@ STREAM_REGISTER / MASS_FLOW **Rev I** (S64–S72); SECTOR_CAPACITY_AUDIT
 CRYO_EQUIPMENT **Rev D**; METAL_FORMING / MET_* scrub hooks; SCRUBBER_CHEMISTRY
 / FAN_STACK / FLOW_BATTERY notes; PFDs mass_flow / cryo / metal_forming /
 znbr2 / oil updated. Claimed architecture advanced for H₂→GEN/FC, CO₂
-capture, WS_* returns, ORC electric (no invented kW). SCALE_M left **1.0**.
+capture, WS_* returns, ORC electric (kW unverified). SCALE_M left **1.0**.
 Plant rebuild optional/note only; no git commit.
 
 
@@ -186,7 +186,7 @@ PFDs regenerated; share sync. SCALE_M left **1.0**. No git commit.
 
 
 Completed 2026-10-01 **Wave 2** (Rev U): **AQS-CMP-001** compliance matrix
-(NFPA/NEC/OSHA/ASME/ISO themes; no invented permits); **AQS-DOC-001**
+(NFPA/NEC/OSHA/ASME/ISO themes; permits not fabricated); **AQS-DOC-001**
 house style + authority header fixes (ELECTRICAL as AQS-ELC-001; Purpose on
 FC/CRYO/GEO; HSE Rev G; SITE Rev B); textiles/HEPA + ELECTRODE_FAB
 Partial architecture stubs; OpenSCAD PATH install note (no forced
@@ -196,7 +196,7 @@ No git commit.
 Completed 2026-10-01 **Wave 3** (Rev V): **AQS-EGR-001** NFPA 101 / IBC Ch.10
 study egress calc (travel, exit width, STAIR_SERVICE+STAIR_MAINT basement
 pair, north dock discharge; AHJ verify); **AQS-ASM-001** vessel inventory +
-B31.3 PC-01…10 templates (CMP-ASM-01 Gap→Partial; no invented MAWP);
+B31.3 PC-01…10 templates (CMP-ASM-01 Gap→Partial; MAWP not assigned without basis);
 **AQS-MEP-001** Life Phase D Partial (fixtures / header OD / one-line);
 **AQS-EQP-FAB-PV-001** solar-cell schedule (architecture Partial);
 OpenSCAD via build-host `openscad` on PATH (apt sudo
@@ -217,7 +217,7 @@ east faces west of `ENV_WALL_W` (`YARD_WALL_CLEAR`; no wall punch-through);
 pairs E–W. AQS-EGR-001 Rev B controlling-code table; `CRYO_EGRESS_DOOR` /
 `CRYO_EGRESS_LOBBY` stubs. AQS-BLD-001 Rev F; AQS-SITE-001; AQS-SCALE-001
 Rev C; AQS-TRR-001 Rev B. `plant.FCStd` rebuild; share sync. SCALE_M
-left **1.0**. No git commit. No invented MAWP / vendor kW.
+left **1.0**. No git commit. No unverified MAWP / vendor kW.
 
 Completed 2026-10-01 **Wave 4** (Rev W): closable CAD/PFD residuals —
 **AQS-PFD-FAB-PV-001** (`solar_cell_pfd.py` + PNG); FreeCAD `PV_*`
@@ -305,7 +305,7 @@ membership, export minimum, Odysseus link, UI licence). AUTHORITY
     AQS-EGR-001 Rev B controlling-code table; CRYO_EGRESS_* stubs.
     CMP-NFPA-04 / CMP-OSH-01 still Partial pending AHJ clear widths.
 17. **North dock traffic / apron geometry** — dock+ELEV_DOCK discrete
-    jump Done Rev X; no invented truck counts; city street dock still
+    jump Done Rev X; truck counts not fabricated; city street dock still
     AQS-BLD-001 §5 narrative only.
 18. ~~**Sector capacity follow-ons (AQS-AUD-001)**~~ — **Done Rev T / AUD D**
     (2026-10-01): CRYO/FAB layout relief; GEN/FC study bounds; L/d water +

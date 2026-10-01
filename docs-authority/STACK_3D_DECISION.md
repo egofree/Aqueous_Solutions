@@ -4,14 +4,14 @@ Document number: **AQS-3D-STACK-001**
 Revision: **A**  
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
-Authority: Project decision **docs_first** for graph→3D (2026-10-01); aligns with
-`DESIGN_TOOL_ARCHITECTURE.md` §3.3 and planning `STACK_REEVAL_2026-10-01.md`
-(planning-only; not mirrored here).  
-Audience: Contributors and outsiders choosing tools for plant 3D / 2D.
+Authority: Project decision **2026-10-01** (documentation before stack
+changes for graph→3D); aligns with `DESIGN_TOOL_ARCHITECTURE.md` §3.3 and
+planning `STACK_REEVAL_2026-10-01.md` (planning-only; not mirrored here).  
+Audience: Contributors choosing tools for plant 3D / 2D.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
-| A | First issue | FreeCAD bias; Three.js gated; matplotlib optional | 2026-10-01 |
+| A | First issue | FreeCAD default; Three.js gated; matplotlib optional | 2026-10-01 |
 
 ---
 
@@ -19,8 +19,8 @@ Audience: Contributors and outsiders choosing tools for plant 3D / 2D.
 
 Record the **written stack decision** for how 3D and secondary diagram
 surfaces relate to the typed plant graph and the FreeCAD rebuild path.
-This file is the share-tree answer to “do we use Three.js?” and “are
-matplotlib PNGs authority?”
+This file is the share-tree answer to whether Three.js is in scope and
+whether matplotlib PNGs are authority.
 
 ## 2. Scope
 
@@ -49,15 +49,15 @@ matplotlib PNGs authority?”
    deliberately designed as a consumer of the same params / export recipe.
 2. **Massing before mesh UI.** AGENT_CAD_PROTOCOL: correct box in the
    right place before shop detail or animation; FreeCAD Part matches that.
-3. **Honest gap.** Graph→geometry is **not wired**. Prefer documenting
+3. **Known limitation.** Graph→geometry is **not wired**. Prefer documenting
    rebuild of the baseline plant over claiming a browser 3D that also
    would not read the graph.
 4. **2D authority already relocated.** Primary published drawings are
    graph-layer SVGs, not matplotlib PNGs.
 
-## 5. How outsiders should act
+## 5. How contributors should act
 
-1. Follow **`BUILD_3D_FROM_FLOW.md`** for end-to-end rebuild and stub use.
+1. Follow **`BUILD_3D_FROM_FLOW.md`** for end-to-end rebuild and bridge use.
 2. Use **`models/REBUILD.sh`** and FreeCAD **1.0** only.
 3. Treat pack `params.json` as overlay study — it does **not** rewrite
    `params.py`.
@@ -82,8 +82,8 @@ started**.
 
 | Doc | Role |
 |---|---|
-| `BUILD_3D_FROM_FLOW.md` | Outsider end-to-end + honest gap |
+| `BUILD_3D_FROM_FLOW.md` | End-to-end rebuild and limitations |
 | `AGENT_CAD_PROTOCOL.md` | Design-agnostic PFD→CAD pipeline |
 | `FREECAD_PROTOCOL.md` | Console binary / script rules |
-| `DESIGN_TOOL_ARCHITECTURE.md` | §3.3 schematic first; Phase D bias |
+| `DESIGN_TOOL_ARCHITECTURE.md` | §3.3 schematic first; Phase D default |
 | `SCALE_MODEL.md` | `SCALE_M = 1.0` baseline |

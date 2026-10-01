@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""WP-D2 — Safe pack params.json → params_overlay.py applicator.
+"""Safe pack params.json → params_overlay.py applicator.
 
 Copies gold ``params.py`` to an explicit fork path and applies **allow-listed**
 overlay keys only. Never writes gold ``params.py``. Null / missing overlay

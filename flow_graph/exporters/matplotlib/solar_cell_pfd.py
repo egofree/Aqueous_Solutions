@@ -147,7 +147,7 @@ def main():
         "Parent fab: AQS-PFD-FAB-001 §5 points here",
     ], fill="#fffbeb", edge="#b45309")
 
-    S.callout(ax, 62, 8.5, 36, 15.5, "OPEN / HONEST", [
+    S.callout(ax, 62, 8.5, 36, 15.5, "OPEN / STUDY", [
         "PECVD SiH₄/NH₃ vendor gas TBD",
         "Belt-furnace nameplate kW TBD",
         "Cell offtake ≠ resize PV_COUNT",

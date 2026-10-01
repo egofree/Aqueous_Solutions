@@ -18,7 +18,7 @@ Licence: CERN-OHL-S-2.0. Not a claim of KSC or IET issuance.
 
 Give every authority document a consistent identity and wording so
 readers can trust shall/should language, find scope quickly, and sync
-the share tree without inventing permits or clause text.
+the share tree without fabricating permits or clause text.
 
 ## 2. Scope
 
@@ -77,7 +77,7 @@ Aligned with KSC wording practice and existing Aqueous DOC_STYLE:
 | **will** | Statement of fact or expected future action (not a soft shall) |
 | **must** | Avoid for requirements; prefer **shall** (KSC preference theme) |
 
-Do not use shall for historical narrative. Do not invent code clause
+Do not use shall for historical narrative. Do not state code clause
 obligations as shall unless a cited edition was verified.
 
 ## 7. Abbreviations (KSC §3.5 theme)

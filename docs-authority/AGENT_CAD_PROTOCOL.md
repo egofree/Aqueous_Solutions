@@ -1,20 +1,19 @@
 # Agent protocol — parametric PFD to CAD
 
-Audience: any AI agent (any model, any harness) that will generate or
-edit process drawings and 3D CAD with the user. This file is design
-agnostic. Do not assume a plant type, a tank size, a CAD version, or
-a licence from some other project.
+Audience: operators and automation that generate or edit process
+drawings and 3D CAD with the user. This file is design-agnostic: do not
+assume a plant type, tank size, CAD version, or licence from another
+project.
 
-Purpose: get from a process idea to scripted, rebuildable CAD without
-repeating the failure modes that show up when agents drive FreeCAD and
-OpenSCAD headless.
+Purpose: move from a process idea to scripted, rebuildable CAD while
+avoiding known FreeCAD / OpenSCAD headless failure modes.
 
 ---
 
 ## 0. Operating rules
 
-1. Ask before inventing names, materials, or dimensions that lock the
-   design. One wrong synonym will fork the whole tree.
+1. Confirm names, materials, and dimensions with the user before they
+   lock the design. One wrong synonym forks the whole tree.
 2. One source of parameters. Every script includes or imports it.
    Changing a length happens in that file only.
 3. Scripts generate documents. Do not click-model as the source of
@@ -237,7 +236,7 @@ until the user asks for welds, balloons, and tolerances.
 
 Do not start until massing origins are frozen. Publish waypoints
 and a shot list. Capture frames from the GUI the user named. Do not
-invent people, emissions, or mixed headers that the PFD forbids.
+add people, emissions, or mixed headers that the PFD forbids.
 
 ---
 
@@ -303,4 +302,4 @@ self-contained pack. Do not scatter a second `params.py`.
 - Do not copy repeated units by hand; instance from one function.
 - Do not vendor a font whose licence the user did not accept.
 - Do not mix FreeCAD installs in one rebuild.
-- Do not treat chat as the parameter store.
+- Do not treat chat transcripts as the parameter store; use `params` files.

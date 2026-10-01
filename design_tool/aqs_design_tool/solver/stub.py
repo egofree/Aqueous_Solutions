@@ -846,7 +846,7 @@ def solve(model: MvsModel, request: SolveRequest | None = None, sandbox_id: str 
             if u.reason == "rate_incomplete_study" or u.reason.startswith("null_")
         )
         notes.append(
-            f"{n_null} streams lack numeric rates (honest null_rate_kind / study labels; "
+            f"{n_null} streams lack numeric rates (null_rate_kind / study labels; "
             "no invented continuous dump)."
         )
     food_item = surplus.get("food")

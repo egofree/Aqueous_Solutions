@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Flow graph / export pack → 3D recipe (NO geometry solver).
+"""Flow graph / export pack → 3D recipe (no geometry solver).
 
-Inventories the graph, loads WP-D1 unit↔FreeCAD name map coverage,
-optionally applies WP-D2 safe overlay → params_overlay.py (never gold
-params.py), applies WP-D4 presence filter (skip/tag disabled & placeholder),
-emits pack-ready recipe (WP-D3), and optionally triggers baseline rebuild.
+Inventories the graph, loads unit↔FreeCAD name-map coverage, optionally
+applies allow-listed overlay → params_overlay.py (never gold params.py),
+applies presence filter (skip/tag disabled & placeholder), emits pack-ready
+recipe, and optionally triggers baseline rebuild.
 
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json
     python3 graph_geometry_bridge.py --graph /path/to/flow_graph_snapshot.json \
@@ -21,7 +21,7 @@ emits pack-ready recipe (WP-D3), and optionally triggers baseline rebuild.
         --rebuild-baseline
 
 CERN-OHL-S-2.0. See docs-authority/BUILD_3D_FROM_FLOW.md;
-planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md (AQS-PLAN-3D-001 WP-D3/D4).
+planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md (AQS-PLAN-3D-001).
 """
 from __future__ import annotations
 
@@ -128,7 +128,7 @@ def load_unit_map(path: Path | None) -> dict | None:
 
 
 def map_coverage(graph: dict, unit_map: dict) -> dict:
-    """Join graph unit_ids to map entries; report coverage % (WP-D1)."""
+    """Join graph unit_ids to map entries; report coverage %."""
     nodes = graph.get("nodes") or []
     entries = unit_map.get("entries") or []
     by_id = {e.get("unit_id"): e for e in entries if e.get("unit_id")}
@@ -207,7 +207,7 @@ def node_presence(n: dict) -> str:
 
 
 def emit_decision(node: dict, map_entry: dict | None) -> dict:
-    """WP-D4 presence + name-map emit decision. Never invents Features.
+    """Presence + name-map emit decision. Does not create Features.
 
     Semantics (AQS-PLAN-3D-001 §8):
       enabled=false → skip
@@ -588,11 +588,11 @@ def build_recipe(
         "status": status,
         "licence": "CERN-OHL-S-2.0",
         "honest_note": (
-            "Recipe inventories the graph, name-map coverage, presence filter "
-            "(WP-D4), and optional overlay fork (WP-D2). Solids still come from "
-            "params.py + build_plant.py (or params_overlay.py fork). Presence "
-            "post-pass omits/tags mapped Feature Names for disabled/placeholder "
-            "units — no invented dims or rates. Logical unmapped stay skip."
+            "Recipe inventories the graph, name-map coverage, presence filter, "
+            "and optional overlay fork. Solids still come from params.py + "
+            "build_plant.py (or params_overlay.py fork). Presence post-pass "
+            "omits/tags mapped Feature Names for disabled/placeholder units — "
+            "dims and rates are not derived from the graph. Logical unmapped stay skip."
         ),
         "topology_authority": graph.get("doc_id") or "AQS-FLOW-GRAPH-001",
         "graph_ref": None,  # pack emitter fills relative path
@@ -683,7 +683,7 @@ def build_recipe(
             else None
         ),
         "future_hooks": [
-            "WP-D5 optional placement_mm (schema study)",
+            "optional placement_mm (schema study; applicator deferred)",
             "Auto layout solver (post-Phase-D study)",
         ],
         "units_sample": inv["units"][:20],
@@ -763,7 +763,7 @@ def main(argv: list[str] | None = None) -> int:
         "--map",
         type=Path,
         default=DEFAULT_MAP if DEFAULT_MAP.is_file() else None,
-        help="unit_freecad_map.json (WP-D1); default beside this script",
+        help="unit_freecad_map.json; default beside this script",
     )
     ap.add_argument(
         "--coverage",
@@ -784,7 +784,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--apply-overlay",
         action="store_true",
-        help="WP-D2: apply --params allow-list → params_overlay.py (never gold params.py)",
+        help="apply --params allow-list → params_overlay.py (never gold params.py)",
     )
     ap.add_argument(
         "--overlay-out",
@@ -795,17 +795,17 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--allow-list",
         action="store_true",
-        help="print WP-D2 overlay allow-list JSON and exit",
+        help="print overlay allow-list JSON and exit",
     )
     ap.add_argument(
         "--presence-report",
         action="store_true",
-        help="WP-D4: print presence filter summary JSON and exit",
+        help="print presence filter summary JSON and exit",
     )
     ap.add_argument(
         "--apply-presence",
         action="store_true",
-        help="WP-D4: omit/tag Features for skipped units on an FCStd copy",
+        help="omit/tag Features for skipped units on an FCStd copy",
     )
     ap.add_argument(
         "--fcstd",

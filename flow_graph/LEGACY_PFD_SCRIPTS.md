@@ -13,7 +13,7 @@ Date: 2026-10-01
 | `pfd_bridge.py` | Thin helper — load/filter edges for matplotlib bridges |
 | `exporters/matplotlib/*.py` (share) / hub `pfd_scripts/` + hub PNGs | Matplotlib sheets — **optional**; **graph-bridged** where noted; **PNGs not shipped in share** |
 
-Do **not** invent rates/nameplates/stream routes in either path.
+Rates, nameplates, and stream routes are authority-sourced in both paths; gaps stay null or flagged.
 
 ## Bridge status
 
@@ -89,11 +89,11 @@ cd flow_graph/exporters/matplotlib
 
 Helpers excluded (not sheets): `drawlib.py`, `params.py`, `sector_style.py`.
 
-### Honest residual (not blockers for bridge tranche)
+### Residual gaps (not blockers for the bridge tranche)
 
 | Item | Why not “fully closed” |
 |---|---|
-| **DOCK_EXPORT_TBD** | Namespace TBD — **no fake S##** |
+| **DOCK_EXPORT_TBD** | Namespace TBD — no placeholder DOCK stream numbers |
 | Null rates | Graph rates stay null until authority fills them |
 | **SOLAR_PV_CELL** | Placeholder node; no dedicated edges — sheet uses shared S10/S27/S35 peers |
 | Matplotlib full rewrite | Optional — layout still drawlib/sector_style; overlays only |

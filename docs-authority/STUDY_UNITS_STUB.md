@@ -15,11 +15,11 @@ unreclaimed or sub-MVS endpoint. Sandbox stays modular as studies close.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
-| A | — | Name study units + streams for gap close honesty | 2026-10-01 |
+| A | — | Name study units + streams for gap-close tracking | 2026-10-01 |
 | B | 1 | Present-path blockers table; remain study — no fake Present (WP-A5) | 2026-10-01 |
 | C | 2 | VCD first-principles kW; REMIN mineral balance; GEO_ORC Carnot-limited kW_e; SOLAR architecture promote; litho/blow/electrode in-scope units (WP-A5 close) | 2026-10-01 |
 | D | 3 | Framing: gaps = open studies queued toward MVS; sandbox tracks progress (not accepted unreclaimed/sub-MVS) | 2026-10-01 |
-| E | 4 | Phase A side quests WP-A3b–d / A5b–e: LITHO/BLOW/ELC first-principles; VCD/REMIN/ORC/SOLAR physics closed + external next actions | 2026-10-01 |
+| E | 4 | Phase A supplements A3b–d / A5b–e: LITHO/BLOW/ELC first-principles; VCD/REMIN/ORC/SOLAR physics closed + external next actions | 2026-10-01 |
 | F | 5 | Pointer to equipment spec gap register AQS-EQ-GAP-001 (commercial interim → OSS policy) | 2026-10-01 |
 
 Licence: **CERN-OHL-S-2.0**.
@@ -30,7 +30,7 @@ Canonical in this tree: `docs-authority/process/STUDY_UNITS_STUB.md`
 
 ## 1. Purpose
 
-Keep `loops_closed` honest by **naming** deferred capabilities as study
+Keep `loops_closed` accurate by **naming** deferred capabilities as study
 units/streams in the candidate MVS graph — not silent omissions — and by
 recording **first-principles** duty methods (system fit → standards/physics
 → practicality → cost metrics) with citations. Decision trail:
@@ -232,7 +232,7 @@ literature low-T geothermal (70–100 °C) often **~5–9%** thermal efficiency
 | Shallow ground \(T_h\) near ambient | \(\eta_\mathrm{C}\) tiny if ORC tried on loop fluid alone |
 | \(Q_\mathrm{surplus}\) after Q4 priority | **≈ 0** until survey shows extra capacity or process waste-heat HX |
 
-**Study band (honest):**
+**Study band:**
 
 | Case | Q_surplus (kW_th) | η_ORC | P_ORC (kW_e) |
 |---|---|---|---|

@@ -24,7 +24,7 @@ emissions or closed unreclaimed endpoints.
 | B | 1 | Litho deferred-with-unreclaimed; blow-mold out-of-MVS-at-M1; deepen Partial next-measurement (WP-A3) | 2026-10-01 |
 | C | 2 | Project decision: litho **IN SCOPE** Present-path study schedule; blow-mold **in MFG / in MVS**; electrode coating **IN SCOPE**; `reprap_bom_complete` stays false (Partial) | 2026-10-01 |
 | D | 3 | Framing: MVS is the pursued ideal; sandbox tracks progress; gaps = **open studies queued in plan** (not accepted unreclaimed/sub-MVS endpoints) | 2026-10-01 |
-| E | 4 | Side quests: ST-LITHO/BLOW/ELC first-principles duty issued (0.1 / 0.5 / 0.3 kW_e); Present CAD still external | 2026-10-01 |
+| E | 4 | ST-LITHO/BLOW/ELC first-principles duty issued (0.1 / 0.5 / 0.3 kW_e); Present CAD still external | 2026-10-01 |
 
 Licence: **CERN-OHL-S-2.0**.
 

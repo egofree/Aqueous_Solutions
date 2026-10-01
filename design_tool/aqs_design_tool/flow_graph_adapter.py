@@ -9,7 +9,7 @@ node continuous_kw/modules/params/enabled).
 ``candidate_mvs.json`` is a **generated projection** only
 (``flow_graph/export_candidate_mvs.py``) — never a competing write authority.
 
-Honest gaps only — never sets ``mvs_equivalent`` true from topology alone.
+Preserves known gaps — never sets ``mvs_equivalent`` true from topology alone.
 Placeholder / TBD rates stay null (``present_plus_placeholders``).
 """
 from __future__ import annotations
@@ -59,7 +59,7 @@ def _map_rate_status(raw: Optional[str]) -> RateStatus:
 
 
 def _null_rate_kind(edge: dict[str, Any]) -> Optional[str]:
-    """Label null rates honestly — never invent continuous dump."""
+    """Label null rates explicitly — do not invent continuous dump."""
     rate = edge.get("rate") or {}
     if rate.get("value") is not None:
         return None
@@ -228,7 +228,7 @@ def mvs_from_graph(
         "gaps": [g.model_dump(mode="json") for g in graph_gaps],
         "unclosed_streams": [],
     }
-    # Honesty locks on criteria
+    # Criteria locks (gap preservation)
     crit = data["mvs_criteria"]
     if isinstance(crit, dict):
         crit["loops_closed"] = False

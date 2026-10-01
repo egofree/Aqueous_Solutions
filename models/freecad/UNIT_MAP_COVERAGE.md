@@ -1,4 +1,4 @@
-# Unit ↔ FreeCAD name map — coverage (WP-D1 / WP-D1b)
+# Unit ↔ FreeCAD name map — coverage
 
 | Field | Value |
 |---|---|
@@ -8,7 +8,7 @@
 | Graph | AQS-FLOW-GRAPH-001 Rev B (91 nodes) |
 | Map | `models/freecad/unit_freecad_map.json` (hub: `cad/freecad/`) |
 | Evidence | `plant.FCStd` inventory via `/usr/bin/freecadcmd` (1114 objects, 1030 Part::Feature) |
-| Plan | AQS-PLAN-3D-001 **WP-D1b done** 2026-10-01 (CAD-M1 massing) |
+| Plan | AQS-PLAN-3D-001 — CAD-M1 massing done 2026-10-01 |
 
 ## Summary counts
 
@@ -22,13 +22,13 @@
 
 - Rows classified: **100%** (91/91)
 - Present units mapped or massing_only: **76/79** (96.2%)
-- Placeholder nodes: **12** (skip or massing_only — no invented boxes)
+- Placeholder nodes: **12** (skip or massing_only — no placeholder solids)
 
-## WP-D1b / CAD-M1 — **done** 2026-10-01 (America/Chicago)
+## CAD-M1 massing — **done** 2026-10-01 (America/Chicago)
 
 | Field | Value |
 |---|---|
-| WP id | **WP-D1b** (alias **CAD-M1**) |
+| Id | **CAD-M1** (plan id WP-D1b) |
 | Builder | `d1b_massing.py` (hooked from `build_plant.py`) |
 | Dims | `D1B_TBD_*` aliases of existing STUB/TOTE/DIGEST/P_TANK/BMED params — **not** PE nameplates / rates |
 | Features added (18) | Names = `unit_id` Part::Feature |
@@ -186,7 +186,7 @@
 
 
 
-## WP-D4 — Presence filter (done 2026-10-01 America/Chicago)
+## Presence filter (done 2026-10-01 America/Chicago)
 
 | Field | Value |
 |---|---|
@@ -194,7 +194,7 @@
 | Bridge | `graph_geometry_bridge.py` — `presence_filter` / `--presence-report` / `--apply-presence` / `--self-test` |
 | Baseline (gold Rev B) | omit Feature set **empty** → object count **1114** unchanged (parts **1030**) |
 | T6 (`LEACH_CSTR_1` `enabled=false`) | objects **1114→1113**, Part::Feature **1030→1029**, removed `LEACH_CSTR_1` |
-| Logical unmapped | stay **skip** (`BOUNDARY_EXPORT`, `LOAD_AGG`, `Q4_BUS`) — no invented boxes |
+| Logical unmapped | stay **skip** (`BOUNDARY_EXPORT`, `LOAD_AGG`, `Q4_BUS`) — no solids |
 | Placeholders | skip unless map `status=massing_only` opt-in |
 
 Envelope / structural Features not listed on skipped process units are left in place.

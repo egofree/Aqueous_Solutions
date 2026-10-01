@@ -93,7 +93,7 @@ def get_mvs() -> MvsModel:
 def get_mvs_from_graph() -> MvsModel:
     """Alias of GET /mvs — graph is sole authority (WP-Ap1).
 
-    Honest gaps preserved. Never claims mvs_equivalent from topology alone.
+    Known gaps preserved. Never claims mvs_equivalent from topology alone.
     Sandboxes created via POST /sandbox use this same load by default.
     """
     try:

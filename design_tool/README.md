@@ -75,7 +75,7 @@ See `../flow_graph/derived/SYNC_POINTER.md`. CAD `STREAM_REGISTER.md` /
 | WP | Deliverable | Evidence |
 |---|---|---|
 | **WP-Bp1** | React/SVG rebound to graph API | App loads `/flow-graph`, `/topology`; sandbox from graph MVS |
-| **WP-Bp2** | Layer viewer | UI filters PFD/MFD/EFD-elec/thermal/ess; placeholders dashed; no invented rates |
+| **WP-Bp2** | Layer viewer | UI filters PFD/MFD/EFD-elec/thermal/ess; placeholders dashed; rates stay authority-sourced |
 | **WP-Bp3** | Editor affordances | Sector toggles, cycles, gaps, crew/`SITE_LAT` on graph-backed sandbox |
 | **WP-Bp4** | Export from graph | Pack includes `flow_graph_snapshot.json` + projection `mvs_snapshot.json`; MVS gold untouched |
 
@@ -125,7 +125,7 @@ MVS gold / `plant_flow_graph.json` are never overwritten. **WP-C2 GitHub publish
 | `sld` | `sld.svg` / `sld.json` + `sld/` (efd-thermal/ess) | `views/efd-elec` (+ peers) |
 | `bom` | `bom.csv`, `bom_self_copy.json` | graph nodes + AQS-BOM-SC-001 flags |
 | `matplotlib` | `matplotlib/*.png` | optional hub bridged PNGs (copy-only) |
-| `3d` | `3d/recipe.json`, `3d/README.md` | bridge + name map + presence (WP-D3/D4) |
+| `3d` | `3d/recipe.json`, `3d/README.md` | bridge + name map + presence filter |
 
 ### C1 smoke
 
@@ -146,13 +146,13 @@ print('OK', resp.pack_dir)
 **C1 exit:** Yes (local). **C2/C3:** blocked pending GitHub publish authorize — not started.
 
 
-## WP-D3 / WP-D4 — Pack `3d/` + presence (done 2026-10-01 CT)
+## Pack module `3d/` + presence filter (done 2026-10-01 CT)
 
 Module `3d` emits `3d/recipe.json` (`aqs-3d-recipe-1.0`) and `3d/README.md` rebuild
 pointer from `graph_geometry_bridge` + `unit_freecad_map.json`. Presence policy
 skips `enabled=false` / `presence=placeholder` (unless map `massing_only`) and
 keeps logical `unmapped` as skip. No deferred-only warning when `3d` is requested.
-No invented geometry or rates. CERN-OHL-S-2.0.
+Geometry and rates are not invented from the graph. CERN-OHL-S-2.0.
 
 ### D3 smoke
 
@@ -185,7 +185,7 @@ surplus reporting, and electrical match hooks.
 - All edits go through **sandboxes**; export writes a **new pack** under
   `exports/` — never overwrites locked / candidate MVS.
 - Solver may return `status: partial` with gaps/surplus keys; it **does
-  not invent false loop closure**.
+  not claim false loop closure**.
 
 ## Relation to authority docs
 
@@ -281,7 +281,7 @@ candidate seed. Redundancy is a core tenet; MeOH also feeds other process
 streams. Sandbox may disable any peer; the solver then emits gap reason
 `unreclaimed_resource` **for each** missing required ESS — framed as
 **incomplete closure / unreclaimed resource** (problems to solve), **not**
-accepted pollution or emissions. No invented storage closure.
+accepted pollution or emissions. Storage closure is not claimed without evidence.
 
 **MVS framing (AQS-UI-001 Rev C):** smallest self-sustaining human colony
 (Moon/Mars class) — full manufacturing + habitation; can make its own
@@ -294,38 +294,37 @@ streams. Surplus-export goal retained.
 - ``WATER`` → ``WTR``; added ``ELEC`` (hub) distinct from ``ELEC_PV``.
 - ``GLASS`` ``required_for_mvs_closure=true`` per catalogue.
 - 21 mapped ``sector_id`` rows; aliases ``POWER``/``FRM``/… rejected
-  (see ``NON_SECTOR_ALIASES``). Do **not** invent new Sector Definition
-  classes.
+  (see ``NON_SECTOR_ALIASES``). Do **not** add Sector Definition classes without a catalogue revision.
 - GEO remains optional in seed (catalogue ``study``; ORC TBD).
 - Rev D / A3: all three ESS peers ``required_for_mvs_closure=true``;
   missing → ``unreclaimed_resource`` (replaces Rev C ≥1 /
   ``ess_peer_set_all_disabled`` set-level rule).
 
-## Known incompletenesses (honest)
+## Known incompletenesses
 
 - Mass / energy balances are **stub**: residuals mark `incomplete`.
 - Remaining stream rates still `null` (life gas, inventory cycle, events,
   TBD duties) → `rate_incomplete_study`; filled rates cite authority docs
-  as `study`/`authority` (not invented closure).
+  as `study`/`authority` (not treated as closed balances).
 - Surplus values now study-computed vs **AQS-SUR-001** thresholds; `pass_study` may be true while freeze of AQS-MVS-001 remains open.
 - Self-copy checklist flags on `mvs_criteria.self_copy` (Partial).
 - Sector catalogue is **AQS-SEC-001** Rev E (`cad/SECTOR_DEFINITIONS.md`).
 - Candidate MVS ≠ frozen `AQS-MVS-001` gold file.
-- PFD/SLD/BOM export modules **WP-C1 done** (graph-driven); **WP-D3/D4** pack `3d/` + presence filter done; GitHub C2 not started.
+- PFD/SLD/BOM export modules done (graph-driven); pack `3d/` + presence filter done; GitHub pack publish not started.
 
 ## P1 / deferred export backlog (explicit)
 
 | Module | Status | Notes |
 |---|---|---|
 | params / streams / compliance_flags / gaps | Present | `export/pack.py` |
-| **sld** | **WP-C1** | Graph `views/efd-elec` → `sld.svg`/`sld.json` |
-| **pfd** | **WP-C1** | Graph `views/pfd`+`mfd` → pack `pfd/`; matplotlib optional separate |
-| **bom** | **WP-C1** (Partial RepRap) | `bom.csv` from graph nodes; flags from AQS-BOM-SC-001; `reprap_bom_complete` still false |
+| **sld** | Done | Graph `views/efd-elec` → `sld.svg`/`sld.json` |
+| **pfd** | Done | Graph `views/pfd`+`mfd` → pack `pfd/`; matplotlib optional separate |
+| **bom** | Partial (RepRap) | `bom.csv` from graph nodes; flags from AQS-BOM-SC-001; `reprap_bom_complete` still false |
 | **matplotlib** | Optional exporter | Copy bridged hub PNGs only; not authority |
-| **3d** | **WP-D3 done** | `3d/recipe.json` + rebuild pointer; presence in recipe (WP-D4) |
+| **3d** | Done | `3d/recipe.json` + rebuild pointer; presence decisions in recipe |
 | Schematic UI | **P1 + B′** | `web/` graph-layer; AQS-UI-001 §11 |
 
-Do not claim C1/D3 closes GitHub publish (C2). Phase D exit still needs outsider dry-run checklist in BUILD_3D.
+PFD/SLD/BOM/`3d` export does not close GitHub pack publish. Phase D exit still needs a dry-run checklist in BUILD_3D_FROM_FLOW.
 
 
 ## P1 schematic UI (`web/`)

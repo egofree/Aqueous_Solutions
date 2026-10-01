@@ -101,7 +101,7 @@ class StreamModel(BaseModel):
     from_sector_id: Optional[str] = None
     to_sector_id: Optional[str] = None
     open_boundary: bool = False
-    # When rate.value is null: honest label (AQS-PLAN-UI-001 WP-A1). Not invented continuous dump.
+    # When rate.value is null: explicit label (AQS-PLAN-UI-001 WP-A1). Not continuous-dump filler.
     null_rate_kind: Optional[
         Literal[
             "open_boundary",

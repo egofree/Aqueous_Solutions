@@ -13,7 +13,7 @@ mass-flow AQS-MF-001; capacity study AQS-AUD-001; style AQS-DOC-001.
 |---|---|---|---|
 | A | — | Census every known plant sector_id; map each to exactly one Sector Definition; MVS-closure flags | 2026-10-01 |
 | B | A2 decision closed; FAB and MFG required | Project decision 2026-10-01: goods surplus requires FAB and MFG; set both `required_for_mvs_closure` to true. | 2026-10-01 |
-| C | A3 decision closed; ESS ≥1 peer | Project decision 2026-10-01: electrical MVS requires ≥1 enabled ESS among ZNBR2 / MEOH / PUMPED_HYDRO; individual ESS peers stay `required_for_mvs_closure` false; all off → gap (do not invent closure). | 2026-10-01 |
+| C | A3 decision closed; ESS ≥1 peer | Project decision 2026-10-01: electrical MVS requires ≥1 enabled ESS among ZNBR2 / MEOH / PUMPED_HYDRO; individual ESS peers stay `required_for_mvs_closure` false; all off → gap (do not claim closure). | 2026-10-01 |
 | D | A3 reframed; all three ESS in MVS | Project reframe 2026-10-01: MVS requires **all three** ESS peers (ZNBR2, MEOH, PUMPED_HYDRO) `required_for_mvs_closure: true`; redundancy is a core tenet; MeOH also feeds processes; sandbox off → unreclaimed-resource / incomplete-closure gaps (not accepted emissions). | 2026-10-01 |
 | E | A4–A9 catalogue defaults | Reasoned defaults for ELEC split, WTR, NUT, GEO, GAS, FUEL_CELL; operator-decision TBD only where truly ambiguous (none blocking). | 2026-10-01 |
 | F | Sector cross-use note | Boundaries organisational not absolute; missing-sector parts may live inside present sectors (Project decision 2026-10-01) | 2026-10-01 |
@@ -30,7 +30,7 @@ Give the design-tool / MVS schema a single authority table that maps every
 known plant `sector_id` to **exactly one** Sector Definition from
 AQS-UI-001 §3.1, with `required_for_mvs_closure` and notes for dual-role
 blocks. Schema / solver workers **shall** reconcile typed fields to this
-table; they **shall not** invent a tenth Sector Definition class without
+table; they **shall not** add a tenth Sector Definition class without
 Project decision (see §5).
 
 ---
@@ -42,7 +42,7 @@ Project decision (see §5).
 | One row per known `sector_id` (locked CAD / PFD / audit names) | FastAPI, JSON Schema files, solver implementation |
 | Primary Sector Definition + optional secondary note | Rewriting AQS-UI-001 §3.1 class list |
 | `required_for_mvs_closure` = true / false / study | Vendor nameplates; PE / AHJ permits |
-| Alias / non-sector / TBD rows for orphans | Overwriting MVS gold; inventing closure |
+| Alias / non-sector / TBD rows for orphans | Overwriting MVS gold; fabricating closure |
 
 Census sources (deduplicated): `freecad/params.py`, `freecad/plant_groups.py`,
 `SYSTEM_MODEL_PLAN.md`, `STREAM_REGISTER.md`, `BUILDING_STACK.md`,
@@ -81,7 +81,7 @@ Sector boundaries are **organisational, not absolute**. A design may host
 parts of a capability that “belongs” to a missing or deferred sector
 **inside** present sectors when physics and HSE allow — example: electrode
 coating (required for MVS) lives in **MFG** with MET substrates and may
-borrow FAB wet-bench practice without inventing a new Sector Definition
+borrow FAB wet-bench practice without adding a new Sector Definition
 class. Catalogue rows still name a **primary** `sector_id` for toggles/gaps;
 UI / sandbox models combinations/footprints and **tracks progress toward
 MVS**. Missing capability inside a present sector is still an **open study
@@ -104,7 +104,7 @@ PUMPED_HYDRO are each `required_for_mvs_closure` = **true**. Project reframe
 other process streams. Sandbox **may** disable any peer; the design-tool /
 solver **shall** then emit gap reason `unreclaimed_resource` for **each**
 disabled required ESS (incomplete closure — **not** accepted pollution /
-emissions) and **shall not** invent electrical-storage or mass closure.
+emissions) and **shall not** claim electrical-storage or mass closure without evidence.
 
 Rows marked **[catalogue-proposed]** are stable strings chosen here to
 match plant names where AQS-UI-001 §6 sketch did not yet list them;
@@ -131,7 +131,7 @@ schema worker **shall** reconcile IDs, not silently rename CAD units.
 | PUMPED_HYDRO | Energy Storage System (Gravity) | true | Roof↔CATCH turbine-pump; side effect of water tower (AQS-BLD-001 §3). **Required** ESS peer in MVS (redundancy). Unit tag `HYDRO_SET` / hydro formula. Sandbox off → `unreclaimed_resource`. | AQS-BLD-001 §3; AQS-SCALE-001; AQS-AUD-001 §4.10; AQS-UI-001 §6 |
 | BACKUP_GEN | Energy Production (Combustion Engine) | false | H₂ genset on Sol-Ark GEN (S45/S47). Island / redundancy; not required if PV+ESS close electrical match. | AQS-PWR-001; AQS-EQP-GEN-001; AQS-REQ-KW-001; AQS-UI-001 §6 |
 | FUEL_CELL | Energy Production (Electrochemical) | false | PEM FC on BATT DC (S49–S53). ≠ BACKUP_GEN; ≠ MEOH_FC (MEOH sector). Optional generation peer. **Rev E lock:** own sector_id (A9). | AQS-FC-001; AQS-EQP-FC-001; ELECTRICAL.md |
-| GEO | Utility / header | study | GEO_GHEX / GEO_HP → Q4 (S43–S44). Secondary: Energy Production (Electrical) **only if** GEO_ORC (S48) enabled — ORC rating TBD, no invent kW. | AQS-PWR-001; AQS-EQP-GEO-001; AQS-AUD-001 §10.4; [catalogue-proposed] |
+| GEO | Utility / header | study | GEO_GHEX / GEO_HP → Q4 (S43–S44). Secondary: Energy Production (Electrical) **only if** GEO_ORC (S48) enabled — ORC rating TBD (no unverified kW). | AQS-PWR-001; AQS-EQP-GEO-001; AQS-AUD-001 §10.4; [catalogue-proposed] |
 | DOCK | Export / dock | true | North dock + `ELEV_DOCK` pairs (`DOCK_COUNT = CASSETTE_COUNT`). Boundary for surplus goods / freight export. | AQS-SITE-001; AQS-BLD-001 §4; AQS-UI-001 §3.1 / §3.2 |
 
 ### 4.1 Alias / non-sector rows (not toggleable sector_ids)
@@ -151,7 +151,7 @@ schema worker **shall** reconcile IDs, not silently rename CAD units.
 
 ## 5. Ambiguities / catalogue locks (schema reconcile)
 
-Do **not** invent a 10th Sector Definition. Prefer deciding among existing
+Do **not** add a 10th Sector Definition. Prefer deciding among existing
 nine classes or confirming the primary below.
 
 | # | Topic | Status (Rev E) | Decision / default | Blocking? |

@@ -129,7 +129,7 @@ Non-zero if any selected step fails. Each step prints the command used.
 | `docs-authority/FREECAD_PROTOCOL.md` | FreeCAD 1.0 binary / template |
 | `docs-authority/STL_MANIFEST.md` | OpenSCAD STL contract |
 | `docs-authority/AUTHORITY.md` | CAD authority lock |
-| `docs-authority/BUILD_3D_FROM_FLOW.md` | Graph → 3D honest path |
+| `docs-authority/BUILD_3D_FROM_FLOW.md` | Graph → 3D rebuild path and limitations |
 
 ## OpenSCAD availability
 

@@ -4,7 +4,7 @@ Sandbox `POST /api/v1/sandbox/{id}/export` writes modular packs here
 (e.g. `sbx_…_YYYYMMDD_HHMMSS/`). Packs never overwrite the candidate
 MVS under `aqs_design_tool/data/` or `flow_graph/plant_flow_graph.json`.
 
-Licence: CERN-OHL-S-2.0. Per-pack contents follow AQS-UI-001 §8 / WP-C1.
+Licence: CERN-OHL-S-2.0. Per-pack contents follow AQS-UI-001 §8.
 
 ## Modules (request via `export_modules`)
 
@@ -18,8 +18,8 @@ Licence: CERN-OHL-S-2.0. Per-pack contents follow AQS-UI-001 §8 / WP-C1.
 | `sld` | `sld.svg`, `sld.json`, `sld/*` | `views/efd-elec` (+ thermal/ess) |
 | `bom` | `bom.csv`, `bom_self_copy.json` | graph nodes + AQS-BOM-SC-001 flags |
 | `matplotlib` | `matplotlib/*.png` | optional bridged hub PNGs (copy-only) |
-| `3d` | note only | deferred Phase D |
+| `3d` | `3d/recipe.json`, `3d/README.md` | bridge + name map + presence filter |
 
 Unused modules stay off. Matplotlib is optional and **not** topology authority.
-No invented rates/streams/nameplates. WP-C2 GitHub publish is separate and blocked
-until publish is explicitly authorized.
+Rates, streams, and nameplates are not invented to fill gaps. GitHub pack publish
+is separate and blocked until explicitly authorized.

@@ -14,9 +14,9 @@ Date: 2026-10-01
 | 4 | `typed_graph_sole` | This package is the **sole** topology + MVS-field authority |
 | 5 | `present_plus_placeholders` | Present-path may carry rates; study stubs are **placeholders with `rate: null`** |
 
-Do **not** invent stream routes, rates, or nameplates. Gaps stay flagged.
+Stream routes, rates, and nameplates are not filled inventively; gaps stay flagged.
 
-## WP-Ap1 contract — single write path
+## Authority contract — single write path
 
 | Concern | Lives on graph | Legacy projection |
 |---|---|---|
@@ -36,11 +36,11 @@ Do **not** invent stream routes, rates, or nameplates. Gaps stay flagged.
 `python3 export_candidate_mvs.py` → `design_tool/aqs_design_tool/data/candidate_mvs.json`
 
 Do **not** hand-edit `candidate_mvs.json`. FastAPI loads/solves from the graph.
-Never silent dual writes. `mvs_equivalent` stays **false** while incomplete.
-`DOCK_EXPORT_TBD` remains TBD (no invented S##).
+No silent dual writes. `mvs_equivalent` stays **false** while incomplete.
+`DOCK_EXPORT_TBD` remains TBD (no placeholder DOCK stream numbers).
 
 
-## WP-Ap2 — sole-authority contract
+## Sole-authority contract
 
 Topology identity: `unit_id` / `stream_id` sets (and stream endpoints) must
 match between `plant_flow_graph.json` and the generated `candidate_mvs`
@@ -58,7 +58,7 @@ FastAPI: `GET /health` and `GET /api/v1/flow-graph` include `projection_contract
 `GET /api/v1/mvs/projection-check` returns **409** on drift. Solve / mvs /
 sandbox always load the **graph** (never a divergent on-disk master).
 
-## WP-Ap3 — derived STREAM / MASS sync
+## Derived STREAM / MASS sync
 
 ```bash
 python3 export_authority_md.py     # → derived/{STREAM_REGISTER,MASS_FLOW}_DERIVED.md + SYNC_POINTER.md + CENSUS.md
@@ -67,7 +67,7 @@ python3 render_layer_views.py      # layer stubs still graph-driven → views/
 
 `cad/STREAM_REGISTER.md` and `cad/MASS_FLOW.md` are **sync targets** (human +
 derived hybrid). Prefer `derived/` as generated; do not overwrite CAD wholesale.
-Do not invent DOCK S## or fill null placeholder rates.
+Do not assign DOCK stream numbers or fill null placeholder rates without authority.
 
 ## Layout
 
@@ -79,7 +79,7 @@ flow_graph/
   build_seed.py             # rebuild topology; preserves mvs enrichment
   export_candidate_mvs.py   # → design_tool/.../candidate_mvs.json (projection)
   export_authority_md.py    # → derived/ STREAM_REGISTER + MASS_FLOW + SYNC_POINTER
-  authority_contract.py    # WP-Ap2 topology identity + drift helpers
+  authority_contract.py    # topology identity + drift helpers
   check_authority_contract.py
   test_authority_contract.py
   render_layer_views.py     # → views/*.{json,dot,svg} (Graphviz)
@@ -120,10 +120,10 @@ python3 -c "from models import PlantFlowGraph; \
 Pointer: `design_tool/README.md`.
 Legacy PFD/SLD scripts: `LEGACY_PFD_SCRIPTS.md`.
 
-## Honest gaps represented
+## Known gaps represented
 
 - **S17** included; labeled on graph-bridged `electrical_sld.png` (still sparse on line PFDs).
-- **DOCK_EXPORT_TBD** placeholder edge (`namespace=TBD`) — no invented S##; TBD block on `mass_flow_pfd.png`.
+- **DOCK_EXPORT_TBD** placeholder edge (`namespace=TBD`) — no DOCK stream number assigned; TBD block on `mass_flow_pfd.png`.
 - **MeOH S73–S82** on graph + bridged mass_flow claim sheet; S79 on electrical_sld; MF table claim rows still end S72.
 - **PUMPED_HYDRO / DOCK** covered by dedicated `hydro_dock_pfd.png` (graph-bridged); HYDRO elec still rate null on SLD; DOCK_EXPORT_TBD remains TBD.
 - **IA-*** for EW / continuous recycle / glass / BMED / polish — placeholder rates; **overlaid on corresponding line PFDs**.
@@ -137,13 +137,13 @@ See `LEGACY_PFD_SCRIPTS.md` and `exporters/matplotlib/README.md`.
 **Share:** views SVG primary; matplotlib optional; PNGs not shipped.
 
 
-## WP-C1 — design-tool export modules (graph consumers)
+## Design-tool export modules (graph consumers)
 
 `design_tool/aqs_design_tool/export/pack.py` may copy layer artefacts from
 `views/` into an export pack when modules `pfd` / `sld` are requested, and
 roll up `bom.csv` from `nodes[]`. Optional `matplotlib` module copies hub
-bridged PNGs only. See `design_tool/README.md` section WP-C1. Does not rewrite
-this graph. WP-C2 GitHub publish not started.
+bridged PNGs only. See `design_tool/README.md` (export modules). Does not rewrite
+this graph. GitHub publish of packs is not started.
 
 ## Related
 

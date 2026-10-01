@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""WP-D1b / CAD-M1 — TBD massing boxes for 18 present unmapped process units.
+"""CAD-M1 — TBD massing boxes for 18 present unmapped process units.
 
 Part::Feature envelopes only. Feature Names = graph unit_id.
 Dims = aliases of existing params stub/tote/digest/tank/BMED classes

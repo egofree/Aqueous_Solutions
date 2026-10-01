@@ -1,32 +1,32 @@
-# Build 3D models from flow diagrams / design packs
+# Building 3D models from the plant flow graph
 
 Document number: **AQS-3D-BUILD-001**  
 Revision: **G**  
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
-Audience: Outsiders using the published `aqueous-solutions` tree  
+Audience: Users of the published `aqueous-solutions` tree  
 Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
-`STACK_3D_DECISION.md` (FreeCAD bias). Not a PE stamp.
+`STACK_3D_DECISION.md` (FreeCAD default). Not a PE stamp.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
-| A | First issue | Present path + honest gap + stub | 2026-10-01 |
+| A | First issue | Baseline rebuild path, limitations, and bridge stub | 2026-10-01 |
 | B | Protocol align | End-to-end mapped to AGENT_CAD_PROTOCOL; stack pointer; share paths; flow_graph views primary 2D | 2026-10-01 |
 | C | Plan pointer | Phase D impl plan is planning-local (AQS-PLAN-3D-001); not shipped here | 2026-10-01 |
-| D | WP-D1b queue | Name-map coverage notes CAD massing side quest queued (18 present unmapped); D2 overlay still next / parallel OK | 2026-10-01 |
-| E | WP-D2 overlay | Safe allow-list applicator → `params_overlay.py` only; bridge `--apply-overlay`; gold `params.py` never rewritten | 2026-10-01 |
-| F | WP-D3/D4 | Pack module `3d/` recipe + rebuild pointer; presence filter omit/tag; bridge `--self-test` / `--apply-presence` | 2026-10-01 |
-| G | WP-D5 study pointer | Placement schema study done (hub planning-local); adopt schema draft / defer applicator / reject auto-router; no invented mm | 2026-10-01 |
+| D | Name-map queue | Name-map coverage notes CAD massing for 18 present unmapped units; overlay next / parallel OK | 2026-10-01 |
+| E | Overlay applicator | Allow-list applicator → `params_overlay.py` only; bridge `--apply-overlay`; gold `params.py` never rewritten | 2026-10-01 |
+| F | Pack `3d/` + presence | Pack module `3d/` recipe + rebuild pointer; presence filter omit/tag; bridge `--self-test` / `--apply-presence` | 2026-10-01 |
+| G | Placement study | Placement schema study done (hub planning-local); adopt schema draft / defer applicator / reject auto-router; no invented mm | 2026-10-01 |
 
 ---
 
-## 0. Honest status (read first)
+## 0. Status and limitations
 
 | Path | What it does today |
 |---|---|
-| **Present (wired)** | FreeCAD builders read **`models/freecad/params.py`** (and OpenSCAD `params.scad`) and write **`plant.FCStd`**. Geometry is **not** driven by the flow graph. |
-| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay) + **`3d/recipe.json`** when module `3d` requested (WP-D3). Presence filter (WP-D4) omits/tags Features for `enabled=false` / placeholder (logical unmapped stay skip). Impl plan (hub planning-local): **AQS-PLAN-3D-001** Rev G — **WP-D1…D5 done** (D5 = schema study only; applicator deferred; auto-router rejected). Overlay still forks `params_overlay.py` only (never gold `params.py`). No invented vessel mm, rates, or placements. |
-| **Bias** | FreeCAD 1.0 rebuild (`/usr/bin/freecadcmd`). **Three.js** (or live browser mesh) only with a **later written decision** — see `STACK_3D_DECISION.md`. |
+| **Baseline (wired)** | FreeCAD builders read **`models/freecad/params.py`** (and OpenSCAD `params.scad`) and write **`plant.FCStd`**. Geometry is **not** driven by the flow graph. |
+| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay) + **`3d/recipe.json`** when module `3d` is requested. Presence filter omits/tags Features for `enabled=false` / placeholder (logical unmapped stay skip). Impl plan (hub planning-local): **AQS-PLAN-3D-001** Rev G — name map, overlay, pack recipe, presence, and placement-schema study complete (placement applicator deferred; edge auto-router rejected). Overlay still forks `params_overlay.py` only (never gold `params.py`). Vessel millimetres, rates, and placements are not invented from the graph. |
+| **Stack default** | FreeCAD 1.0 rebuild (`/usr/bin/freecadcmd`). **Three.js** (or live browser mesh) only with a **later written decision** — see `STACK_3D_DECISION.md`. |
 
 **Graph → place/size solids from edges is not wired** (no auto layout).
 Presence filter + name map + overlay fork **are** wired: rebuild the
@@ -65,7 +65,7 @@ import meshes, hide massing                import_mfg / import_details
 | FreeCAD massing | `models/freecad/` + `REBUILD.sh` | Yes — **baseline catalogue**, not graph filter |
 | OpenSCAD → STL | `models/openscad/`, `models/export/` | Optional detail |
 | Import | builders under `models/freecad/` | Yes when STLs present |
-| Graph → filter/overlay solids | pack `3d/` + bridge presence | **WP-D3/D4 wired**; placement schema = WP-D5 study done (no edge auto-router) |
+| Graph → filter/overlay solids | pack `3d/` + bridge presence | **Wired** (recipe + presence); placement schema studied, applicator deferred (no edge auto-router) |
 
 Matplotlib PFD/SLD PNGs are **optional exporters only**
 (`flow_graph/exporters/matplotlib/`). They are **not** topology authority
@@ -81,7 +81,7 @@ and **PNGs are not shipped** in this tree. Primary 2D drawings:
 | FreeCAD | **`/usr/bin/freecadcmd` 1.0** (apt). Do **not** use the 1.1 AppImage. Details: `FREECAD_PROTOCOL.md`. |
 | FreeCAD GUI (optional) | `/usr/bin/freecad` to open `.FCStd` / `.step` |
 | OpenSCAD (optional) | On `PATH` if you want to recompile detail STLs |
-| Python 3 | For the stub bridge and (on hub) design_tool |
+| Python 3 | For the bridge and (on hub) design_tool |
 
 On-disk plant baseline: **`SCALE_M = 1.0`** in `models/freecad/params.py`
 (1 m : 1 m manufacturing). See `SCALE_MODEL.md`.
@@ -99,7 +99,7 @@ bash REBUILD.sh --stls     # also run OpenSCAD detail compile first
 bash REBUILD.sh --plant-only
 ```
 
-### 3.1 Share path map (important)
+### 3.1 Share path map
 
 | Need | Share path |
 |---|---|
@@ -110,7 +110,7 @@ bash REBUILD.sh --plant-only
 | Materials CSV | `tables/materials.csv` (REBUILD.sh links into `models/`) |
 | Typed graph | `flow_graph/plant_flow_graph.json` |
 | Primary 2D views | `flow_graph/views/*.svg` |
-| Stub graph inventory | `models/freecad/graph_geometry_bridge.py` |
+| Graph inventory bridge | `models/freecad/graph_geometry_bridge.py` |
 
 Manual equivalent:
 
@@ -153,7 +153,7 @@ flow_graph/views/*.svg             # graph-layer diagrams (primary published 2D)
 ```
 
 These drive **2D** layer views and design_tool topology — **not** FreeCAD
-Part placement. That gap is intentional until Phase D ships.
+Part placement. That limitation remains until a placement applicator ships.
 
 ### 4.2 Design-tool export pack (from your design)
 
@@ -161,11 +161,11 @@ Typical pack always includes:
 
 | File | Role for 3D |
 |---|---|
-| `flow_graph_snapshot.json` | Frozen graph for the sandbox — **input to stub**, not to builders |
+| `flow_graph_snapshot.json` | Frozen graph for the sandbox — **input to bridge**, not to builders |
 | `params.json` | Study overlay (`scale_m`, electrical counts). Apply via `params_overlay_apply.py` / bridge `--apply-overlay` → **`params_overlay.py` fork only** (never gold `params.py`) |
 | `mvs_snapshot.json` / `design.json` | MVS projection / sandbox — not solids |
-| `pfd/` / `sld` / `bom` (if requested) | 2D / tables — WP-C1 |
-| `3d/` | **Emitted (WP-D3):** `recipe.json` (`aqs-3d-recipe-1.0`) + README rebuild pointer; optional FCStd/STEP sha256; presence decisions (WP-D4) |
+| `pfd/` / `sld` / `bom` (if requested) | 2D / tables |
+| `3d/` | **Emitted:** `recipe.json` (`aqs-3d-recipe-1.0`) + README rebuild pointer; optional FCStd/STEP sha256; presence decisions |
 
 ### 4.3 Bridge: inventory, overlay, presence, pack recipe
 
@@ -180,7 +180,7 @@ python3 graph_geometry_bridge.py \
   --params /path/to/export/params.json \
   --out /tmp/3d_recipe.json
 
-# WP-D2: safe overlay → params_overlay.py (allow-list only; gold untouched)
+# Safe overlay → params_overlay.py (allow-list only; gold untouched)
 python3 graph_geometry_bridge.py \
   --params /path/to/export/params.json --apply-overlay
 # equivalent:
@@ -188,7 +188,7 @@ python3 params_overlay_apply.py --params /path/to/export/params.json
 python3 params_overlay_apply.py --self-test
 python3 graph_geometry_bridge.py --allow-list
 
-# WP-D4: presence report / post-pass / tests
+# Presence report / post-pass / tests
 python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \
   --presence-report
 python3 graph_geometry_bridge.py --graph /path/to/export/flow_graph_snapshot.json \
@@ -199,20 +199,17 @@ python3 graph_geometry_bridge.py --self-test
 What the bridge **does**:
 
 - Lists units by `sector_id` / `enabled`
-- Loads WP-D1 name map coverage
+- Loads unit↔FreeCAD name-map coverage
 - Notes pack `scale_m` vs on-disk `SCALE_M`
-- **WP-D2:** apply allow-listed overlay keys to **`params_overlay.py`** only
+- Applies allow-listed overlay keys to **`params_overlay.py`** only
 - Writes a **recipe JSON** (records `applied_keys` when overlay applied)
-
-What it **does** (WP-D3/D4 additions):
-
 - Presence filter: skip `enabled=false` / `presence=placeholder` unless map `massing_only`; logical `unmapped` stay skip
 - `--apply-presence` post-pass omits or tags mapped Feature Names on an FCStd **copy**
-- Pack module `3d` writes `3d/recipe.json` + rebuild pointer (no deferred-only warning)
+- Pack module `3d` writes `3d/recipe.json` + rebuild pointer
 
 What it **does not** do:
 
-- Resize tanks from rates / invent vessel mm
+- Resize tanks from rates or invent vessel millimetres
 - Auto-layout from edges
 - Call Three.js
 - Rewrite gold `params.py` from pack overlay
@@ -226,7 +223,7 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 
 ---
 
-## 5. Outsider checklist (end-to-end)
+## 5. End-to-end checklist
 
 1. **Read** this file + `AGENT_CAD_PROTOCOL.md` + `STACK_3D_DECISION.md` +
    `FREECAD_PROTOCOL.md` + `SCALE_MODEL.md`.
@@ -243,8 +240,8 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
    import `params` unless you knowingly point a session at the fork.
 9. **Export** with design_tool module `3d` → open pack `3d/recipe.json` +
    `3d/README.md`. Apply presence post-pass when the sandbox disables units.
-   Placement schema study done (WP-D5; hub planning-local); applicator
-   deferred; **no** edge auto-router / invented mm. Do **not** adopt
+   Placement schema study is complete (hub planning-local); applicator
+   deferred; **no** edge auto-router or invented millimetres. Do **not** adopt
    Three.js without a written decision in `STACK_3D_DECISION.md`.
 
 ---
@@ -254,15 +251,15 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 | Doc | Role |
 |---|---|
 | `AGENT_CAD_PROTOCOL.md` | Design-agnostic PFD→CAD agent protocol (pipeline source) |
-| `STACK_3D_DECISION.md` | FreeCAD bias; Three.js / matplotlib disposition |
+| `STACK_3D_DECISION.md` | FreeCAD default; Three.js / matplotlib disposition |
 | `FREECAD_PROTOCOL.md` | Binary, script template, failure modes |
 | `REBUILD.md` | Hub master menu (AQS-REB-001) |
 | `SCALE_MODEL.md` | What `SCALE_M` changes |
 | `STL_MANIFEST.md` | OpenSCAD STL contract |
-| `DESIGN_TOOL_ARCHITECTURE.md` | Phase D FreeCAD bias; pack layout (§3.3) |
-| *(hub planning only)* | Phase D plan **AQS-PLAN-3D-001** Rev G + WP-D5 study `planning/PLACEMENT_SCHEMA_STUDY.md` — not shipped here; D1–D5 done (D5 schema only) |
+| `DESIGN_TOOL_ARCHITECTURE.md` | Phase D FreeCAD default; pack layout (§3.3) |
+| *(hub planning only)* | Phase D plan **AQS-PLAN-3D-001** Rev G + placement study `planning/PLACEMENT_SCHEMA_STUDY.md` — not shipped here |
 | `../models/REBUILD.sh` | Share-tree rebuild |
-| `../models/freecad/graph_geometry_bridge.py` | Bridge (inventory + name map + WP-D2 overlay + WP-D4 presence + recipe 1.0) |
-| `../models/freecad/params_overlay_apply.py` | WP-D2 allow-list overlay → `params_overlay.py` fork |
+| `../models/freecad/graph_geometry_bridge.py` | Bridge (inventory + name map + overlay + presence + recipe 1.0) |
+| `../models/freecad/params_overlay_apply.py` | Allow-list overlay → `params_overlay.py` fork |
 | `../flow_graph/views/` | Primary published 2D diagrams |
 | `../tables/` | materials.csv and BOM tables |

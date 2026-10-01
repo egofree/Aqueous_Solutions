@@ -9,8 +9,8 @@ WP-C1: optional modules ``pfd`` / ``sld`` / ``bom`` emit from the graph
 snapshot (or documented layer views). ``matplotlib`` is an optional exporter
 only (copies bridged hub PNGs when present). Unused modules stay off.
 
-WP-D3: module ``3d`` emits ``3d/recipe.json`` + rebuild pointer (and optional
-FCStd/STEP sha256) via ``graph_geometry_bridge``; presence filter (WP-D4)
+Module ``3d`` emits ``3d/recipe.json`` + rebuild pointer (and optional
+FCStd/STEP sha256) via ``graph_geometry_bridge``; presence filter
 is recorded in the recipe. No invented geometry or rates.
 """
 
@@ -198,7 +198,7 @@ def _emit_bom(
                 continue
             sid = n.get("sector_id") or ""
             # Include nodes whose sector is enabled in the sandbox overlay.
-            # Nodes with no sector_id are included with a blank sector (honest).
+            # Nodes with no sector_id are included with a blank sector.
             if sid and sid not in enabled:
                 continue
             mods = n.get("modules") or []
@@ -367,7 +367,7 @@ def _emit_3d(
     notes: list[str],
     params_emitted: bool,
 ) -> None:
-    """WP-D3: emit pack ``3d/recipe.json`` + README rebuild pointer (+ hashes)."""
+    """Emit pack ``3d/recipe.json`` + README rebuild pointer (+ hashes)."""
     out = pack_dir / "3d"
     out.mkdir(parents=True, exist_ok=True)
 
@@ -446,7 +446,7 @@ def _emit_3d(
     recipe["params_overlay_ref"] = (
         "params.json" if params_path.is_file() or params_overlay else None
     )
-    # Relative name-map pointer for outsiders (share layout)
+    # Relative name-map pointer for package users (share layout)
     recipe["name_map_ref"] = "models/freecad/unit_freecad_map.json"
     if recipe.get("freecad"):
         recipe["freecad"]["name_map_ref"] = "models/freecad/unit_freecad_map.json"
@@ -476,14 +476,14 @@ def _emit_3d(
     sha = (full.get("outputs") or {}).get("sha256") or {}
 
     readme_lines = [
-        "# Pack module `3d/` — graph → FreeCAD rebuild pointer (WP-D3 / WP-D4)",
+        "# Pack module `3d/` — graph → FreeCAD rebuild pointer",
         "",
         "Licence: CERN-OHL-S-2.0",
         "",
-        "This folder does **not** invent vessel millimetres or stream rates.",
+        "Vessel millimetres and stream rates are not derived from the graph.",
         "Solids come from share `models/freecad/params.py` + builders",
         "(`build_plant.py`), optionally via a **forked** `params_overlay.py`",
-        "(WP-D2 allow-list). Presence (WP-D4) omits or tags Features whose",
+        "(allow-listed overlay keys only). Presence filter omits or tags Features whose",
         "graph nodes are `enabled=false` or `presence=placeholder` (unless",
         "map `status=massing_only`). Logical `unmapped` units stay skip.",
         "",
@@ -501,7 +501,7 @@ def _emit_3d(
         f"({cov.get('present_coverage_pct')}%)",
         f"- Baseline sha256 keys: {', '.join(sha.keys()) or '(none beside bridge at export)'}",
         "",
-        "## Outsider rebuild (share tree)",
+        "## Rebuild from this pack (share tree)",
         "",
         "```bash",
         "# 0) Prerequisites: /usr/bin/freecadcmd 1.0 — see docs-authority/BUILD_3D_FROM_FLOW.md",
@@ -561,7 +561,7 @@ def export_pack(rec: SandboxRecord, req: ExportRequest | None = None) -> ExportR
         "Graph snapshot included (WP-Bp4); plant_flow_graph.json not modified.",
         "Gap flags included even when sandbox is incomplete vs MVS.",
         "WP-C1: pfd/sld/bom emit from graph when requested; unused modules off; "
-        "matplotlib is optional exporter only; WP-D3 module 3d emits recipe.",
+        "matplotlib is optional exporter only; module 3d emits recipe.",
     ]
 
     # WP-Bp4: always include a read-only copy of the plant flow graph
@@ -673,7 +673,7 @@ Exported: {datetime.now(CT).strftime("%Y-%m-%d %H:%M:%S CT")}
 | sld | sld.svg/json + sld/ | views/efd-elec (+ thermal/ess) |
 | bom | bom.csv, bom_self_copy.json | graph nodes + AQS-BOM-SC-001 flags |
 | matplotlib | matplotlib/*.png | optional hub bridged PNGs |
-| 3d | 3d/recipe.json, 3d/README.md | bridge + map + presence (WP-D3/D4) |
+| 3d | 3d/recipe.json, 3d/README.md | bridge + map + presence filter |
 """
     (pack_dir / "README.md").write_text(readme, encoding="utf-8")
     files.append("README.md")

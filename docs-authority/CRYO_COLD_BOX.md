@@ -180,7 +180,7 @@ rebuild `plant.FCStd` (prefer docs + PFD + authority first).
 
 ---
 
-## 7. Gaps left (honest)
+## 7. Remaining gaps
 
 1. Quantitative cold-box / Stirling / column duties (kW, kg/hr) — TBD;
    doc 09 numbers are narrative only.

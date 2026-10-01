@@ -48,16 +48,20 @@ SCALE_M = 1.0
 `SCALE_M = 2.0` was a review-only pass; restore to 2 only for intentional
 review rebuilds. Rules: `docs-authority/SCALE_MODEL.md` §7–§8.
 
-## 3D from flow graphs (honest)
+## Building 3D models from the plant flow graph
 
-Outsiders: see **`docs-authority/BUILD_3D_FROM_FLOW.md`** (end-to-end) and
-**`docs-authority/STACK_3D_DECISION.md`** (FreeCAD bias; Three.js gated).
+See **`docs-authority/BUILD_3D_FROM_FLOW.md`** (end-to-end rebuild) and
+**`docs-authority/STACK_3D_DECISION.md`** (FreeCAD default; Three.js gated).
 Pipeline protocol: **`docs-authority/AGENT_CAD_PROTOCOL.md`**.
 
-- **Present path:** rebuild baseline plant from `models/freecad/params.py` via `models/REBUILD.sh` (FreeCAD 1.0 only; `SCALE_M=1.0`).
-- **Not wired:** export-pack `flow_graph_snapshot.json` does **not** drive FreeCAD placement. Stub: `models/freecad/graph_geometry_bridge.py`.
-- **2D primary:** `flow_graph/views/*.svg` (matplotlib PNGs optional, not authority, not shipped).
-- Phase D bias remains FreeCAD rebuild; Three.js only with a **later written decision** revising `STACK_3D_DECISION.md`.
+### Status and limitations
+
+| Path | Behaviour |
+|---|---|
+| **Baseline rebuild** | FreeCAD builders read `models/freecad/params.py` via `models/REBUILD.sh` (FreeCAD 1.0; `SCALE_M=1.0`). |
+| **Graph → placement** | Export-pack `flow_graph_snapshot.json` does **not** drive FreeCAD placement or vessel millimetres. Bridge: `models/freecad/graph_geometry_bridge.py` (inventory, name map, overlay fork, presence filter, pack recipe). |
+| **2D primary** | `flow_graph/views/*.svg`. Matplotlib PNGs are optional exporters, not authority, and are not shipped. |
+| **3D stack** | FreeCAD rebuild remains the default. Three.js only with a later written decision revising `STACK_3D_DECISION.md`. |
 
 ```bash
 cd models && bash REBUILD.sh

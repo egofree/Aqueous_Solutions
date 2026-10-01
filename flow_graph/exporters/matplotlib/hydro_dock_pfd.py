@@ -184,7 +184,7 @@ def main() -> None:
                     fontsize=7.2, color=P.MUTED)
         y -= 1.35
 
-    ax.text(2.0, 12.5, "HONEST GAPS", fontsize=11.0, fontweight="bold", color=P.INK)
+    ax.text(2.0, 12.5, "KNOWN GAPS", fontsize=11.0, fontweight="bold", color=P.INK)
     ax.text(2.0, 11.2,
             "• HYDRO elec rate null — no invented kW / nameplate.\n"
             "• DOCK export has no S## — DOCK_EXPORT_TBD only.\n"

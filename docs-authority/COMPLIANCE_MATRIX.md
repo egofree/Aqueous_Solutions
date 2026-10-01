@@ -6,7 +6,7 @@ Date: 2026-10-01
 Authority: AQS-AUTH-001, AQS-HSE-001, AQS-SITE-001, hub `ELECTRICAL.md`,
 AQS-VENT-001, AQS-WLD-001, AQS-AUD-001.  
 Jurisdiction assumed: USA (Dallas-class / Texas AHJ).  
-**Not a PE stamp. Not a permit set. No invented permits or clause quotations.**
+**Not a PE stamp. Not a permit set.** Permits and clause quotations are not invented here.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
@@ -108,11 +108,11 @@ Cross-refs: `cad/HAZARD_SEPARATION.md`, `cad/SITE_ACCESS.md`,
 | CMP-ASM-05 | Relief / overpressure | BPVC / B31.3 + process relief practice | FAB/CRY relief noted Wave 1; upset stacks AHJ residuals (AQS-VENT-001) | Partial | Relief device schedule with set pressures |
 
 **NOTE:** Where piping class or MAWP is not detailed in authority docs,
-status is **TBD / Gap** — do not invent class ratings.
+status is **TBD / Gap** — class ratings are not assigned without verified basis.
 
 ---
 
-## 7. ISO (process / safety — honest applicability)
+## 7. ISO (process / safety — applicability)
 
 | ID | Theme | Typical standard (reference only) | Aqueous relevance | Status | Action |
 |---|---|---|---|---|---|
@@ -125,7 +125,7 @@ status is **TBD / Gap** — do not invent class ratings.
 | CMP-ISO-07 | Pressure equipment (EU) | PED / ISO vessel norms | **Not applicable** as primary US design code | Gap / N/A | US = ASME; do not claim PED |
 
 Do **not** claim ISO certification. Prefer US NFPA / NEC / OSHA / ASME
-for permit. ISO rows are mapping honesty only.
+for permit. ISO rows are applicability mapping only.
 
 ---
 
@@ -135,24 +135,24 @@ for permit. ISO rows are mapping honesty only.
 |---|---|---|
 | Compliant-intent | 10 |
 | Partial | 26 |
-| Gap (incl. N/A-as-gap honesty) | 4 |
+| Gap (incl. N/A recorded as gap) | 4 |
 | **Total rows** | **39** |
 
 **Gap IDs:** CMP-ASM-04, CMP-ISO-02, CMP-ISO-07 (N/A primary), and
-remaining honest gaps above. CMP-ASM-01 moved Gap → Partial (inventory
+remaining gaps above. CMP-ASM-01 moved Gap → Partial (inventory
 issued; MAWP still TBD). CMP-NFPA-04 / CMP-OSH-01 remain Partial with
 AQS-EGR-001 study annex (AHJ verify).
 
 Primary construction blockers now: AHJ verification of egress, vessel
 MAWP / relief set pressures, vendor nameplates.
 
-### 8.1 Blocks honest design-freeze language (pointer)
+### 8.1 Blocks design-freeze language (pointer)
 
-Formal PE stamp / permits remain **out of scope** (do not invent). The
-following still **block honest “design freeze” / AQS-MVS-001 freeze
+Formal PE stamp / permits remain **out of scope**. The
+following still **block “design freeze” / AQS-MVS-001 freeze
 language** until evidence tables exist — checklist owned by planning
-`MVS_GAP_AUDIT.md` (AQS-MVS-GAP-001) §4.8; do not invent PE stamps or
-vendor nameplates to clear them:
+`MVS_GAP_AUDIT.md` (AQS-MVS-GAP-001) §4.8; PE stamps and vendor
+nameplates are not fabricated to clear them:
 
 | Blocker class | CMP / EGR refs | Study status |
 |---|---|---|

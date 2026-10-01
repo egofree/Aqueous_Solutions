@@ -153,7 +153,7 @@ Rules:
 2. 3D **shall** follow export-from-graph lock (Phase D). **Default bias:
    FreeCAD rebuild** from the graph / `params` model (`freecadcmd` /
    AQS-REB-001). Live parametric mesh, LOD campus mesh, and **Three.js**
-   remain candidates **only** if a **written decision** (plan WP-D1 or
+   remain candidates **only** if a **written decision** (Phase D plan item or
    this file follow-on) selects them over FreeCAD rebuild.
 
 ### 3.4 Identifiers
@@ -598,7 +598,7 @@ a phase dependency.
    (**AQS-SEC-001** Rev D). Class list remains AQS-UI-001 §3.1; ambiguities
    for the operator in AQS-SEC-001 §5 (schema worker reconcile).
 4. **3D path pick** — **Bias FreeCAD rebuild** (§3.3 / Phase D). Three.js /
-   live mesh / LOD only with a **written decision** (WP-D1).
+   live mesh / LOD only with a **written decision** revising the 3D stack.
 5. **`candidate_mvs` unify** — **WP-Ap1 done** (graph write + projection).
    Phase C remains blocked until A′ exit (WP-Ap2 contract tests).
 
