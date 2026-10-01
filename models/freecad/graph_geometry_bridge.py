@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """Flow graph / export pack → 3D recipe (NO geometry solver).
 
-Inventories the graph, loads WP-D1 unit↔FreeCAD name map coverage, and
-optionally triggers the *baseline* FreeCAD rebuild (params-driven).
+Inventories the graph, loads WP-D1 unit↔FreeCAD name map coverage,
+optionally applies WP-D2 safe overlay → params_overlay.py (never gold
+params.py), and optionally triggers the *baseline* FreeCAD rebuild.
 
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json
     python3 graph_geometry_bridge.py --graph /path/to/flow_graph_snapshot.json \\
         --params /path/to/params.json --out /tmp/3d_recipe.json
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \\
         --map unit_freecad_map.json --coverage
+    python3 graph_geometry_bridge.py --params /path/to/params.json --apply-overlay
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \\
         --rebuild-baseline
 
 CERN-OHL-S-2.0. See docs-authority/BUILD_3D_FROM_FLOW.md;
-planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md (AQS-PLAN-3D-001 WP-D1).
+planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md (AQS-PLAN-3D-001 WP-D1/D2).
 """
 from __future__ import annotations
 
@@ -29,6 +31,23 @@ HERE = Path(__file__).resolve().parent
 # Hub layout: .../cad/freecad → parents[1]=cad; graph lives at hub/flow_graph
 SHARE_CANDIDATE = HERE.parents[1]
 DEFAULT_MAP = HERE / "unit_freecad_map.json"
+DEFAULT_OVERLAY_OUT = HERE / "params_overlay.py"
+
+
+def _load_overlay_apply():
+    """Import params_overlay_apply from the same directory (hub or share)."""
+    import importlib.util
+
+    mod_path = HERE / "params_overlay_apply.py"
+    if not mod_path.is_file():
+        raise ImportError(f"params_overlay_apply.py missing beside bridge: {mod_path}")
+    spec = importlib.util.spec_from_file_location("params_overlay_apply", mod_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"cannot load {mod_path}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
 
 
 def _default_graph() -> Path | None:
@@ -186,6 +205,7 @@ def build_recipe(
     params_overlay: dict | None,
     unit_map: dict | None = None,
     map_path: Path | None = None,
+    overlay_apply_result: dict | None = None,
 ) -> dict:
     inv = inventory(graph)
     disk_scale = read_scale_m_params_py()
@@ -202,6 +222,8 @@ def build_recipe(
     status = "stub_not_wired"
     if coverage and coverage["rows_classified_pct"] == 100.0:
         status = "name_map_loaded_wp_d1"
+    if overlay_apply_result and overlay_apply_result.get("ok"):
+        status = "overlay_fork_applied_wp_d2"
 
     recipe = {
         "schema": "aqs-3d-recipe-0.1-stub",
@@ -209,8 +231,9 @@ def build_recipe(
         "licence": "CERN-OHL-S-2.0",
         "honest_note": (
             "No FreeCAD Feature is created from this recipe yet. "
-            "Baseline solids remain params.py + build_plant.py. "
-            "WP-D1 name map is loaded for coverage; WP-D2..D4 wire overlay/presence."
+            "Baseline solids remain params.py + build_plant.py unless a session "
+            "imports params_overlay.py. WP-D1 name map + WP-D2 safe overlay "
+            "applicator are wired; WP-D3..D4 add pack 3d/ + presence filter."
         ),
         "topology_authority": graph.get("doc_id") or "AQS-FLOW-GRAPH-001",
         "graph_inventory": {
@@ -248,8 +271,19 @@ def build_recipe(
         "scale": {
             "params_py_SCALE_M": disk_scale,
             "overlay_scale_m": overlay_scale,
+            "applied_to": (
+                (overlay_apply_result or {}).get("out_path")
+                if overlay_apply_result
+                else None
+            ),
+            "applied_keys": (
+                (overlay_apply_result or {}).get("applied_keys")
+                if overlay_apply_result
+                else None
+            ),
             "overlay_rewrites_params_py": False,
             "overlay_note": (params_overlay or {}).get("note"),
+            "allow_list_ref": "params_overlay_apply.py",
         },
         "freecad": {
             "binary": "/usr/bin/freecadcmd",
@@ -259,7 +293,6 @@ def build_recipe(
             "name_map_ref": "unit_freecad_map.json",
         },
         "future_hooks": [
-            "WP-D2 safe apply of overlay scale_m / module counts to a params copy",
             "WP-D3 export pack module 3d/ (recipe + rebuild pointer + optional STEP)",
             "WP-D4 presence filter from enabled=false / placeholder policy",
             "WP-D5 optional placement_mm (schema study)",
@@ -269,6 +302,18 @@ def build_recipe(
     }
     if coverage:
         recipe["_name_map_units"] = coverage["units"]
+    try:
+        oa = _load_overlay_apply()
+        recipe["overlay_allow_list"] = oa.allow_list_report()["apply"]
+    except ImportError:
+        recipe["overlay_allow_list"] = None
+    if overlay_apply_result:
+        recipe["overlay_apply"] = {
+            "ok": overlay_apply_result.get("ok"),
+            "out_path": overlay_apply_result.get("out_path"),
+            "applied_keys": overlay_apply_result.get("applied_keys"),
+            "overlay_rewrites_params_py": False,
+        }
     return recipe
 
 
@@ -345,7 +390,47 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="after inventory, run freecadcmd build_plant.py (ignores graph for geometry)",
     )
+    ap.add_argument(
+        "--apply-overlay",
+        action="store_true",
+        help="WP-D2: apply --params allow-list → params_overlay.py (never gold params.py)",
+    )
+    ap.add_argument(
+        "--overlay-out",
+        type=Path,
+        default=None,
+        help="fork path for --apply-overlay (default: params_overlay.py beside bridge)",
+    )
+    ap.add_argument(
+        "--allow-list",
+        action="store_true",
+        help="print WP-D2 overlay allow-list JSON and exit",
+    )
     args = ap.parse_args(argv)
+
+    if args.allow_list:
+        oa = _load_overlay_apply()
+        print(json.dumps(oa.allow_list_report(), indent=2))
+        return 0
+
+    apply_result = None
+    if args.apply_overlay:
+        if not args.params or not args.params.is_file():
+            print("ERROR: --apply-overlay requires existing --params", file=sys.stderr)
+            return 2
+        oa = _load_overlay_apply()
+        overlay_doc = load_json(args.params)
+        out = args.overlay_out or DEFAULT_OVERLAY_OUT
+        try:
+            apply_result = oa.write_overlay_fork(overlay_doc, out_path=out)
+        except ValueError as exc:
+            print(f"ERROR: overlay refuse: {exc}", file=sys.stderr)
+            return 1
+        print("overlay applied →", apply_result["out_path"])
+        print("applied_keys:", json.dumps(apply_result["applied_keys"], sort_keys=True))
+        print("gold untouched; overlay_rewrites_params_py=false")
+        if args.graph is None and not args.out and not args.coverage and not args.rebuild_baseline:
+            return 0
 
     if args.graph is None or not args.graph.is_file():
         print("ERROR: --graph path required and must exist", file=sys.stderr)
@@ -368,7 +453,13 @@ def main(argv: list[str] | None = None) -> int:
         print_coverage(cov)
         return 0 if cov["rows_classified_pct"] == 100.0 and not cov["missing_map_rows"] else 1
 
-    recipe = build_recipe(graph, overlay, unit_map=unit_map, map_path=map_path)
+    recipe = build_recipe(
+        graph,
+        overlay,
+        unit_map=unit_map,
+        map_path=map_path,
+        overlay_apply_result=apply_result,
+    )
 
     gi = recipe["graph_inventory"]
     print("graph:", args.graph)
@@ -381,6 +472,9 @@ def main(argv: list[str] | None = None) -> int:
         "  SCALE_M params.py=%s overlay=%s (overlay does NOT rewrite params.py)"
         % (recipe["scale"]["params_py_SCALE_M"], recipe["scale"]["overlay_scale_m"])
     )
+    if recipe["scale"].get("applied_keys") is not None:
+        print("  overlay applied_to:", recipe["scale"].get("applied_to"))
+        print("  overlay applied_keys:", recipe["scale"].get("applied_keys"))
     print("  status:", recipe["status"])
     if recipe.get("name_map_coverage"):
         print_coverage(recipe["name_map_coverage"])
