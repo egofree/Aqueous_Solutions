@@ -52,13 +52,34 @@ SCALE_M = 1.0
 `SCALE_M = 2.0` was a review-only pass; restore to 2 only for intentional
 review rebuilds. Rules: `docs-authority/SCALE_MODEL.md` §7–§8.
 
+## 3D from flow graphs (honest)
+
+Outsiders: see **`docs-authority/BUILD_3D_FROM_FLOW.md`**.
+
+- **Present path:** rebuild baseline plant from `models/freecad/params.py` via `models/REBUILD.sh` (FreeCAD 1.0 only).
+- **Not wired:** export-pack `flow_graph_snapshot.json` does **not** drive FreeCAD placement. Stub: `models/freecad/graph_geometry_bridge.py`.
+- Phase D bias remains FreeCAD rebuild; Three.js only with a written decision (`DESIGN_TOOL_ARCHITECTURE.md` §3.3).
+
+```bash
+cd models && bash REBUILD.sh
+cd freecad && python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json
+```
+
 ## How to rebuild
 
 **Master menu (hub):** `python3 /home/user/dev/Aqueous/Diagrams/aqueous_diagrams/rebuild.py`  
 Doc: `docs-authority/REBUILD.md` (AQS-REB-001).  
 `SCALE_M` in `models/freecad/params.py` = **actual building size** (not plot zoom). Manufacturing `1.0`; `2.0` review-only. Set via menu 8 / `--scale`.
 
-Preferred: rebuild from the **working hub** (paths match existing scripts):
+**From this share tree** (outsiders):
+
+```bash
+cd models
+bash REBUILD.sh            # path shims + freecadcmd build_plant.py
+bash REBUILD.sh --stls     # optional OpenSCAD first
+```
+
+**From the working hub** (Mike / operators — paths match existing scripts):
 
 ```bash
 cd /home/user/dev/Aqueous/Diagrams/aqueous_diagrams

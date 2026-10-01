@@ -60,3 +60,7 @@ ODYSSEUS*
 planning/
 LOCAL_BOT_HANDOFF.md
 **/LOCAL_BOT_HANDOFF.md
+
+# Share REBUILD.sh path shims (runtime links; not source)
+models/materials.csv
+models/detail/
