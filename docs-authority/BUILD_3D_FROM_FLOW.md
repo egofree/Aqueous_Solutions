@@ -1,7 +1,7 @@
 # Build 3D models from flow diagrams / design packs
 
 Document number: **AQS-3D-BUILD-001**  
-Revision: **B**  
+Revision: **C**  
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
 Audience: Outsiders using the published `aqueous-solutions` tree  
@@ -12,6 +12,7 @@ Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
 |---|---|---|---|
 | A | First issue | Present path + honest gap + stub | 2026-10-01 |
 | B | Protocol align | End-to-end mapped to AGENT_CAD_PROTOCOL; stack pointer; share paths; flow_graph views primary 2D | 2026-10-01 |
+| C | Plan pointer | Phase D impl plan is planning-local (AQS-PLAN-3D-001); not shipped here | 2026-10-01 |
 
 ---
 
@@ -20,7 +21,7 @@ Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
 | Path | What it does today |
 |---|---|
 | **Present (wired)** | FreeCAD builders read **`models/freecad/params.py`** (and OpenSCAD `params.scad`) and write **`plant.FCStd`**. Geometry is **not** driven by the flow graph. |
-| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay). Module **`3d` is deferred**. No script places FreeCAD solids from graph nodes/edges. |
+| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay). Module **`3d` is deferred**. No script places FreeCAD solids from graph nodes/edges. Impl plan (hub planning-local): **AQS-PLAN-3D-001**. |
 | **Bias** | FreeCAD 1.0 rebuild (`/usr/bin/freecadcmd`). **Three.js** (or live browser mesh) only with a **later written decision** — see `STACK_3D_DECISION.md`. |
 
 **Graph → geometry is not wired.** If you exported a custom design pack
@@ -231,6 +232,7 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 | `SCALE_MODEL.md` | What `SCALE_M` changes |
 | `STL_MANIFEST.md` | OpenSCAD STL contract |
 | `DESIGN_TOOL_ARCHITECTURE.md` | Phase D FreeCAD bias; pack layout (§3.3) |
+| *(hub planning only)* | Phase D detailed plan **AQS-PLAN-3D-001** lives under hub `planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md` — not in this share tree |
 | `../models/REBUILD.sh` | Share-tree rebuild |
 | `../models/freecad/graph_geometry_bridge.py` | Stub bridge (inventory only) |
 | `../flow_graph/views/` | Primary published 2D diagrams |
