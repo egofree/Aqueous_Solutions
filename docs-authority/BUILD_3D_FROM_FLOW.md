@@ -1,7 +1,7 @@
 # Build 3D models from flow diagrams / design packs
 
 Document number: **AQS-3D-BUILD-001**  
-Revision: **F**  
+Revision: **G**  
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
 Audience: Outsiders using the published `aqueous-solutions` tree  
@@ -16,6 +16,7 @@ Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
 | D | WP-D1b queue | Name-map coverage notes CAD massing side quest queued (18 present unmapped); D2 overlay still next / parallel OK | 2026-10-01 |
 | E | WP-D2 overlay | Safe allow-list applicator → `params_overlay.py` only; bridge `--apply-overlay`; gold `params.py` never rewritten | 2026-10-01 |
 | F | WP-D3/D4 | Pack module `3d/` recipe + rebuild pointer; presence filter omit/tag; bridge `--self-test` / `--apply-presence` | 2026-10-01 |
+| G | WP-D5 study pointer | Placement schema study done (hub planning-local); adopt schema draft / defer applicator / reject auto-router; no invented mm | 2026-10-01 |
 
 ---
 
@@ -24,7 +25,7 @@ Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
 | Path | What it does today |
 |---|---|
 | **Present (wired)** | FreeCAD builders read **`models/freecad/params.py`** (and OpenSCAD `params.scad`) and write **`plant.FCStd`**. Geometry is **not** driven by the flow graph. |
-| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay) + **`3d/recipe.json`** when module `3d` requested (WP-D3). Presence filter (WP-D4) omits/tags Features for `enabled=false` / placeholder (logical unmapped stay skip). Impl plan (hub planning-local): **AQS-PLAN-3D-001** Rev F — **WP-D1…D4 done**; next optional **WP-D5** placement study. Overlay still forks `params_overlay.py` only (never gold `params.py`). No invented vessel mm or rates. |
+| **Study / Phase D** | Design-tool export packs include `flow_graph_snapshot.json` + `params.json` (overlay) + **`3d/recipe.json`** when module `3d` requested (WP-D3). Presence filter (WP-D4) omits/tags Features for `enabled=false` / placeholder (logical unmapped stay skip). Impl plan (hub planning-local): **AQS-PLAN-3D-001** Rev G — **WP-D1…D5 done** (D5 = schema study only; applicator deferred; auto-router rejected). Overlay still forks `params_overlay.py` only (never gold `params.py`). No invented vessel mm, rates, or placements. |
 | **Bias** | FreeCAD 1.0 rebuild (`/usr/bin/freecadcmd`). **Three.js** (or live browser mesh) only with a **later written decision** — see `STACK_3D_DECISION.md`. |
 
 **Graph → place/size solids from edges is not wired** (no auto layout).
@@ -64,7 +65,7 @@ import meshes, hide massing                import_mfg / import_details
 | FreeCAD massing | `models/freecad/` + `REBUILD.sh` | Yes — **baseline catalogue**, not graph filter |
 | OpenSCAD → STL | `models/openscad/`, `models/export/` | Optional detail |
 | Import | builders under `models/freecad/` | Yes when STLs present |
-| Graph → filter/overlay solids | pack `3d/` + bridge presence | **WP-D3/D4 wired**; placement from edges = WP-D5 study |
+| Graph → filter/overlay solids | pack `3d/` + bridge presence | **WP-D3/D4 wired**; placement schema = WP-D5 study done (no edge auto-router) |
 
 Matplotlib PFD/SLD PNGs are **optional exporters only**
 (`flow_graph/exporters/matplotlib/`). They are **not** topology authority
@@ -242,7 +243,8 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
    import `params` unless you knowingly point a session at the fork.
 9. **Export** with design_tool module `3d` → open pack `3d/recipe.json` +
    `3d/README.md`. Apply presence post-pass when the sandbox disables units.
-   Placement from edges remains optional study (WP-D5). Do **not** adopt
+   Placement schema study done (WP-D5; hub planning-local); applicator
+   deferred; **no** edge auto-router / invented mm. Do **not** adopt
    Three.js without a written decision in `STACK_3D_DECISION.md`.
 
 ---
@@ -258,7 +260,7 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 | `SCALE_MODEL.md` | What `SCALE_M` changes |
 | `STL_MANIFEST.md` | OpenSCAD STL contract |
 | `DESIGN_TOOL_ARCHITECTURE.md` | Phase D FreeCAD bias; pack layout (§3.3) |
-| *(hub planning only)* | Phase D detailed plan **AQS-PLAN-3D-001** Rev F lives under hub `planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md` — not in this share tree; WP-D3/D4 = pack `3d/` + presence filter |
+| *(hub planning only)* | Phase D plan **AQS-PLAN-3D-001** Rev G + WP-D5 study `planning/PLACEMENT_SCHEMA_STUDY.md` — not shipped here; D1–D5 done (D5 schema only) |
 | `../models/REBUILD.sh` | Share-tree rebuild |
 | `../models/freecad/graph_geometry_bridge.py` | Bridge (inventory + name map + WP-D2 overlay + WP-D4 presence + recipe 1.0) |
 | `../models/freecad/params_overlay_apply.py` | WP-D2 allow-list overlay → `params_overlay.py` fork |
