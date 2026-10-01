@@ -1,0 +1,5 @@
+# Aqueous design-tool P0 (AQS-UI-001 Rev B)
+# SPDX-License-Identifier: CERN-OHL-S-2.0
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.0

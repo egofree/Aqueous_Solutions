@@ -1,0 +1,69 @@
+digraph G {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev B", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
+  edge [fontname="Helvetica", fontsize=8];
+  subgraph "cluster_CRYO" {
+    label="CRYO";
+    style=rounded; color="#94a3b8";
+    "CRYO_DED_COOL" [fillcolor="#ffffff", label="CRYO_DED_COOL"];
+    "CRYO_HX_Q4" [fillcolor="#ffffff", label="CRYO_HX_Q4"];
+  }
+  subgraph "cluster_FARM" {
+    label="FARM";
+    style=rounded; color="#94a3b8";
+    "GROW_BED" [fillcolor="#ffffff", label="GROW_BED"];
+  }
+  subgraph "cluster_FUEL_CELL" {
+    label="FUEL_CELL";
+    style=rounded; color="#94a3b8";
+    "FUEL_CELL" [fillcolor="#ffffff", label="FUEL_CELL"];
+  }
+  subgraph "cluster_GEO" {
+    label="GEO";
+    style=rounded; color="#94a3b8";
+    "GEO_GHEX" [fillcolor="#ffffff", label="GEO_GHEX"];
+    "GEO_HP" [fillcolor="#ffffff", label="GEO_HP"];
+    "GEO_HP_CLOSED_LOOP" [fillcolor="#ffffff", label="GEO_HP_CLOSED_LOOP"];
+  }
+  subgraph "cluster_GLASS" {
+    label="GLASS";
+    style=rounded; color="#94a3b8";
+    "GLASS_BURNOUT" [fillcolor="#e2e8f0", label="GLASS_BURNOUT\n(placeholder)"];
+  }
+  subgraph "cluster_HAB" {
+    label="HAB";
+    style=rounded; color="#94a3b8";
+    "Q4_BUS" [fillcolor="#ffffff", label="Q4_BUS"];
+  }
+  subgraph "cluster_MEOH" {
+    label="MEOH";
+    style=rounded; color="#94a3b8";
+    "MEOH_FC" [fillcolor="#ffffff", label="MEOH_FC"];
+  }
+  subgraph "cluster_MFG" {
+    label="MFG";
+    style=rounded; color="#94a3b8";
+    "MET_HX_Q4" [fillcolor="#ffffff", label="MET_HX_Q4"];
+  }
+  subgraph "cluster_OIL" {
+    label="OIL";
+    style=rounded; color="#94a3b8";
+    "AFTERBURNER" [fillcolor="#ffffff", label="AFTERBURNER"];
+  }
+  subgraph "cluster_WET" {
+    label="WET";
+    style=rounded; color="#94a3b8";
+    "CONTINUOUS_RECYCLE" [fillcolor="#e2e8f0", label="CONTINUOUS_RECYCLE\n(placeholder)"];
+  }
+  "GEO_HP" -> "GROW_BED" [label="S06", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GEO_HP" -> "Q4_BUS" [label="S44", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "FUEL_CELL" -> "Q4_BUS" [label="S53", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "CRYO_HX_Q4" -> "Q4_BUS" [label="S54", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MET_HX_Q4" -> "Q4_BUS" [label="S63", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "MEOH_FC" -> "Q4_BUS" [label="S80", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
+  "CONTINUOUS_RECYCLE" -> "Q4_BUS" [label="IA-REC-Q3", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "Q4_BUS" [label="IA-GLASS-Q2", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "Q4_BUS" [label="IA-OIL-Q1", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+}

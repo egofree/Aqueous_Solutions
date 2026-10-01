@@ -1,0 +1,56 @@
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal
+SPDX-License-Identifier: CERN-OHL-S-2.0
+
+Copyright 2026 Mike Matthews.
+
+This source describes Open Hardware and is licensed under the
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal
+(CERN-OHL-S-2.0).
+
+You may redistribute and modify this source and make products using it
+under the terms of CERN-OHL-S-2.0:
+
+    https://ohwr.org/cern_ohl_s_v2.txt
+    https://cern-ohl.web.cern.ch/
+
+This Source is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY,
+INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A
+PARTICULAR PURPOSE. See CERN-OHL-S-2.0 for applicable conditions.
+
+Why this licence
+----------------
+S.E.M Technology / Rowow releases its core (membranes, cell and stack
+architectures, general methods) under CERN-OHL-S. See:
+
+    https://rowow.net/open-technology-charter/
+
+This repository is a plant flowsheet that uses that core (chlorate
+leach, CEM electrowinning aisle, BMED regeneration) plus unit
+operations that are not Rowow's (induction pyrolyzer, glass digest,
+heat ladder). Licensing the design source under the same CERN-OHL-S
+keeps the combined work compatible with SEM Tech: anyone who conveys
+a modified flowsheet or a Product built from it must convey the
+complete corresponding Source under CERN-OHL-S.
+
+CERN-OHL-P-2.0 would be more permissive. It was not used, because a
+permissive wrapper around a strong-reciprocal core lets a later party
+close the plant design while still consuming the open membrane work.
+If you want the weaker or permissive variant instead, replace this
+file and the SPDX identifiers before publication.
+
+This project is not a Rowow product. The CERN-OHL-S grant on Rowow
+designs does not grant the Rowow name or logo. Do not imply Rowow
+endorsement of a build from these drawings.
+
+Covered Source
+--------------
+params.py, drawlib.py, every *_pfd.py generator, the README, and the
+PNG process-flow drawings they produce. Those drawings are Source
+and Product documentation for the hardware.
+
+Conveyance
+----------
+If you Convey a Product (a cell, stack, pyrolyzer, or plant built
+from this Source) you must also Convey the complete corresponding
+Source under CERN-OHL-S-2.0, and keep the copyright and licence
+notices intact.

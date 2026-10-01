@@ -1,0 +1,943 @@
+{
+  "$defs": {
+    "ElectricalModel": {
+      "additionalProperties": false,
+      "properties": {
+        "bus_nodes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Bus Nodes",
+          "type": "array"
+        },
+        "storage_options": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Storage Options",
+          "type": "array"
+        },
+        "need_kw": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "target_kw": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pv_module_kw": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pv Module Kw"
+        },
+        "pv_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pv Count"
+        },
+        "znbr_module_kw": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Znbr Module Kw"
+        },
+        "znbr_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Znbr Count"
+        },
+        "rect_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rect Count"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "Study values from cad/freecad/params.py and AQS-REQ-KW-001; not vendor nameplates.",
+          "title": "Notes"
+        }
+      },
+      "title": "ElectricalModel",
+      "type": "object"
+    },
+    "GapModel": {
+      "additionalProperties": false,
+      "properties": {
+        "sector_definition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sector Definition"
+        },
+        "sector_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sector Id"
+        },
+        "stream_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stream Id"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "title": "GapModel",
+      "type": "object"
+    },
+    "MvsCriteriaModel": {
+      "additionalProperties": false,
+      "properties": {
+        "loops_closed": {
+          "default": false,
+          "title": "Loops Closed",
+          "type": "boolean"
+        },
+        "surplus_export": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Surplus Export",
+          "type": "array"
+        },
+        "note": {
+          "default": "Candidate MVS only until AQS-MVS-001 freeze; loops_closed must not be claimed true without solver evidence.",
+          "title": "Note",
+          "type": "string"
+        },
+        "surplus_thresholds_doc": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surplus Thresholds Doc"
+        },
+        "surplus_thresholds": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SurplusThresholdsModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "self_copy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SelfCopyFlagsModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "MvsCriteriaModel",
+      "type": "object"
+    },
+    "Quantity": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "unit": {
+          "default": "",
+          "title": "Unit",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/RateStatus",
+          "default": "study"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "title": "Quantity",
+      "type": "object"
+    },
+    "RateStatus": {
+      "enum": [
+        "study",
+        "authority",
+        "issued",
+        "tbd",
+        "unknown"
+      ],
+      "title": "RateStatus",
+      "type": "string"
+    },
+    "ScaleRulesModel": {
+      "additionalProperties": false,
+      "properties": {
+        "tanks": {
+          "const": "continuous",
+          "default": "continuous",
+          "title": "Tanks",
+          "type": "string"
+        },
+        "mfg_cryo": {
+          "const": "discrete",
+          "default": "discrete",
+          "title": "Mfg Cryo",
+          "type": "string"
+        },
+        "pv_znbr2": {
+          "const": "module",
+          "default": "module",
+          "title": "Pv Znbr2",
+          "type": "string"
+        },
+        "dock": {
+          "const": "by_cassette",
+          "default": "by_cassette",
+          "title": "Dock",
+          "type": "string"
+        }
+      },
+      "title": "ScaleRulesModel",
+      "type": "object"
+    },
+    "SectorDefinition": {
+      "description": "Role types orthogonal to physical bay layout (AQS-UI-001 \u00a73.1).",
+      "enum": [
+        "Energy Storage System (Gravity)",
+        "Energy Storage System (Electrochemical)",
+        "Energy Production (Electrical)",
+        "Energy Production (Combustion Engine)",
+        "Energy Production (Electrochemical)",
+        "Process (Mass transform)",
+        "Life support / habitat",
+        "Utility / header",
+        "Export / dock"
+      ],
+      "title": "SectorDefinition",
+      "type": "string"
+    },
+    "SectorModel": {
+      "additionalProperties": false,
+      "properties": {
+        "sector_id": {
+          "title": "Sector Id",
+          "type": "string"
+        },
+        "sector_definition": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SectorDefinition"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Sector Definition"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "required_for_mvs_closure": {
+          "default": false,
+          "title": "Required For Mvs Closure",
+          "type": "boolean"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "sector_id",
+        "sector_definition"
+      ],
+      "title": "SectorModel",
+      "type": "object"
+    },
+    "SelfCopyFlagsModel": {
+      "additionalProperties": false,
+      "description": "Self-copy checklist flags (AQS-BOM-SC-001) \u2014 Partial until complete.",
+      "properties": {
+        "critical_path_documented": {
+          "default": false,
+          "title": "Critical Path Documented",
+          "type": "boolean"
+        },
+        "reprap_bom_complete": {
+          "default": false,
+          "title": "Reprap Bom Complete",
+          "type": "boolean"
+        },
+        "lithography_on_site": {
+          "default": false,
+          "title": "Lithography On Site",
+          "type": "boolean"
+        },
+        "lithography_in_mvs": {
+          "default": false,
+          "title": "Lithography In Mvs",
+          "type": "boolean",
+          "description": "Photolithography required in platonic MVS (study schedule may precede Present CAD)."
+        },
+        "blow_mold_in_mvs": {
+          "default": false,
+          "title": "Blow Mold In Mvs",
+          "type": "boolean",
+          "description": "Blow mold / shoe mold required in platonic MVS (MFG)."
+        },
+        "vcd_remin_on_site": {
+          "default": false,
+          "title": "Vcd Remin On Site",
+          "type": "boolean"
+        },
+        "electrode_coating_on_site": {
+          "default": false,
+          "title": "Electrode Coating On Site",
+          "type": "boolean"
+        },
+        "bom_doc": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bom Doc"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "title": "SelfCopyFlagsModel",
+      "type": "object"
+    },
+    "SiteModel": {
+      "additionalProperties": false,
+      "properties": {
+        "site_id": {
+          "default": "AQS_SITE_M1",
+          "title": "Site Id",
+          "type": "string"
+        },
+        "site_lat_deg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Site Lat Deg"
+        },
+        "crew": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Crew"
+        },
+        "jurisdiction_theme": {
+          "default": "USA_Dallas_class",
+          "title": "Jurisdiction Theme",
+          "type": "string"
+        }
+      },
+      "title": "SiteModel",
+      "type": "object"
+    },
+    "StreamModel": {
+      "additionalProperties": false,
+      "properties": {
+        "stream_id": {
+          "title": "Stream Id",
+          "type": "string"
+        },
+        "from_unit_id": {
+          "title": "From Unit Id",
+          "type": "string"
+        },
+        "to_unit_id": {
+          "title": "To Unit Id",
+          "type": "string"
+        },
+        "phase": {
+          "title": "Phase",
+          "type": "string"
+        },
+        "carries": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Carries"
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "from_sector_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Sector Id"
+        },
+        "to_sector_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Sector Id"
+        },
+        "open_boundary": {
+          "default": false,
+          "title": "Open Boundary",
+          "type": "boolean"
+        },
+        "null_rate_kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "open_boundary",
+                "inventory_cycle",
+                "event",
+                "unknown",
+                "campaign_tbd",
+                "study_deferred"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Null Rate Kind"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "stream_id",
+        "from_unit_id",
+        "to_unit_id",
+        "phase"
+      ],
+      "title": "StreamModel",
+      "type": "object"
+    },
+    "SurplusThresholdsModel": {
+      "additionalProperties": false,
+      "description": "Study pass thresholds (AQS-SUR-001) \u2014 not freeze gold.",
+      "properties": {
+        "food_kg_d_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Food Kg D Min"
+        },
+        "clean_water_L_d_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clean Water L D Min"
+        },
+        "materials_or_goods_kg_d_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Materials Or Goods Kg D Min"
+        },
+        "energy_kWh_d_min": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Energy Kwh D Min"
+        },
+        "status": {
+          "$ref": "#/$defs/RateStatus",
+          "default": "study"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "title": "SurplusThresholdsModel",
+      "type": "object"
+    },
+    "UiModel": {
+      "additionalProperties": false,
+      "properties": {
+        "cycle_views": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Cycle Views",
+          "type": "array"
+        },
+        "sector_toggles": {
+          "default": true,
+          "title": "Sector Toggles",
+          "type": "boolean"
+        },
+        "gap_panel": {
+          "default": true,
+          "title": "Gap Panel",
+          "type": "boolean"
+        },
+        "export_modules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Export Modules",
+          "type": "array"
+        }
+      },
+      "title": "UiModel",
+      "type": "object"
+    },
+    "UnclosedStreamModel": {
+      "additionalProperties": false,
+      "properties": {
+        "stream_id": {
+          "title": "Stream Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "from_unit_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Unit Id"
+        },
+        "to_unit_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Unit Id"
+        }
+      },
+      "required": [
+        "stream_id",
+        "reason"
+      ],
+      "title": "UnclosedStreamModel",
+      "type": "object"
+    },
+    "UnitModel": {
+      "additionalProperties": false,
+      "properties": {
+        "unit_id": {
+          "title": "Unit Id",
+          "type": "string"
+        },
+        "sector_id": {
+          "title": "Sector Id",
+          "type": "string"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "class": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Class"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "params": {
+          "additionalProperties": true,
+          "title": "Params",
+          "type": "object"
+        },
+        "modules": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Modules",
+          "type": "array"
+        },
+        "electrical_role": {
+          "anyOf": [
+            {
+              "enum": [
+                "generation",
+                "storage",
+                "load",
+                "bus",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Electrical Role"
+        },
+        "continuous_kw": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quantity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "unit_id",
+        "sector_id"
+      ],
+      "title": "UnitModel",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Full typed MVS / sandbox design model.",
+  "properties": {
+    "schema_version": {
+      "default": "aqs-mvs-0.3",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "doc_id": {
+      "default": "AQS-MVS-001",
+      "title": "Doc Id",
+      "type": "string"
+    },
+    "revision": {
+      "default": "A-candidate",
+      "title": "Revision",
+      "type": "string"
+    },
+    "licence": {
+      "default": "CERN-OHL-S-2.0",
+      "title": "Licence",
+      "type": "string"
+    },
+    "scale_m": {
+      "default": 1.0,
+      "title": "Scale M",
+      "type": "number"
+    },
+    "status": {
+      "default": "candidate",
+      "enum": [
+        "candidate",
+        "frozen",
+        "sandbox"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "mvs_criteria": {
+      "$ref": "#/$defs/MvsCriteriaModel"
+    },
+    "site": {
+      "$ref": "#/$defs/SiteModel"
+    },
+    "sectors": {
+      "items": {
+        "$ref": "#/$defs/SectorModel"
+      },
+      "title": "Sectors",
+      "type": "array"
+    },
+    "units": {
+      "items": {
+        "$ref": "#/$defs/UnitModel"
+      },
+      "title": "Units",
+      "type": "array"
+    },
+    "streams": {
+      "items": {
+        "$ref": "#/$defs/StreamModel"
+      },
+      "title": "Streams",
+      "type": "array"
+    },
+    "electrical": {
+      "$ref": "#/$defs/ElectricalModel"
+    },
+    "scale_rules": {
+      "$ref": "#/$defs/ScaleRulesModel"
+    },
+    "ui": {
+      "$ref": "#/$defs/UiModel"
+    },
+    "gaps": {
+      "items": {
+        "$ref": "#/$defs/GapModel"
+      },
+      "title": "Gaps",
+      "type": "array"
+    },
+    "unclosed_streams": {
+      "items": {
+        "$ref": "#/$defs/UnclosedStreamModel"
+      },
+      "title": "Unclosed Streams",
+      "type": "array"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "title": "MvsModel",
+  "type": "object"
+}

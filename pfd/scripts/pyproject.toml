@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aqueous-pfd"
+version = "0.1.0"
+description = "Process-flow diagram generators for a closed-loop chlorate-leach recycling circuit."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CERN-OHL-S-2.0" }
+authors = [{ name = "Mike Matthews" }]
+dependencies = [
+    "matplotlib>=3.8",
+    "pillow>=10.0",
+]
+
+[project.urls]
+Repository = "https://github.com/"
+
+[tool.setuptools]
+packages = []
+py-modules = []

@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aqueous.local/schema/plant_flow_graph.schema.json",
+  "title": "Aqueous Plant Flow Graph",
+  "description": "Sole typed plant graph authority (AQS-FLOW-GRAPH-001). WP-Ap1: mvs block + node enrichment; candidate_mvs is generated projection. CERN-OHL-S-2.0.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "doc_id",
+    "revision",
+    "licence",
+    "nodes",
+    "edges",
+    "locks"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "aqs-flow-graph-0.1"
+    },
+    "doc_id": {
+      "type": "string",
+      "const": "AQS-FLOW-GRAPH-001"
+    },
+    "revision": {
+      "type": "string"
+    },
+    "licence": {
+      "type": "string",
+      "const": "CERN-OHL-S-2.0"
+    },
+    "date": {
+      "type": "string"
+    },
+    "sole_authority": {
+      "type": "boolean"
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 5
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "view_presets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/view_preset"
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mvs": {
+      "type": "object",
+      "description": "WP-Ap1: MVS sectors/site/criteria/electrical/ui live on the graph; candidate_mvs is a projection.",
+      "properties": {
+        "schema_version": {
+          "type": "string"
+        },
+        "doc_id": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "licence": {
+          "type": "string"
+        },
+        "scale_m": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string"
+        },
+        "mvs_criteria": {
+          "type": "object"
+        },
+        "site": {
+          "type": "object"
+        },
+        "sectors": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "electrical": {
+          "type": "object"
+        },
+        "scale_rules": {
+          "type": "object"
+        },
+        "ui": {
+          "type": "object"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "write_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "authority",
+            "study",
+            "null"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "unit_id",
+        "sector_id",
+        "presence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sector_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "presence": {
+          "type": "string",
+          "enum": [
+            "present",
+            "placeholder"
+          ]
+        },
+        "class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "electrical_role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "diagram_gap": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "continuous_kw": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "params": {
+          "type": "object"
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": [
+        "stream_id",
+        "from_unit_id",
+        "to_unit_id",
+        "phase",
+        "layers",
+        "presence",
+        "namespace"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "stream_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_unit_id": {
+          "type": "string"
+        },
+        "to_unit_id": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "mass",
+              "elec",
+              "thermal",
+              "ess"
+            ]
+          },
+          "minItems": 1
+        },
+        "presence": {
+          "type": "string",
+          "enum": [
+            "present",
+            "placeholder"
+          ]
+        },
+        "carries": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "header": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "forbidden": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "claim_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "from_sector_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "to_sector_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "open_boundary": {
+          "type": "boolean"
+        },
+        "namespace": {
+          "type": "string",
+          "enum": [
+            "S",
+            "IA",
+            "TBD",
+            "SANDBOX"
+          ]
+        },
+        "gap_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "view_preset": {
+      "type": "object",
+      "required": [
+        "preset_id",
+        "view_mode"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "preset_id": {
+          "type": "string"
+        },
+        "view_mode": {
+          "type": "string",
+          "enum": [
+            "PFD",
+            "MFD",
+            "EFD"
+          ]
+        },
+        "layer_filter": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "mass",
+              "elec",
+              "thermal",
+              "ess"
+            ]
+          }
+        },
+        "include_intra_aisle": {
+          "type": "boolean"
+        },
+        "include_placeholders": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

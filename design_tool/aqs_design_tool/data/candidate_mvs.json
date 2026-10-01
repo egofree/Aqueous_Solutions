@@ -1,0 +1,3731 @@
+{
+  "schema_version": "aqs-mvs-0.3",
+  "doc_id": "AQS-MVS-001",
+  "revision": "E-candidate",
+  "licence": "CERN-OHL-S-2.0",
+  "scale_m": 1.0,
+  "status": "candidate",
+  "mvs_criteria": {
+    "loops_closed": false,
+    "surplus_export": [
+      "food",
+      "clean_water",
+      "materials_or_goods",
+      "energy"
+    ],
+    "note": "Candidate toward AQS-MVS-001 freeze; loops_closed false until evidence. MVS = ideal we pursue; sandbox = live modular model tracking progress \u2014 not an accepted sub-MVS product. Incomplete physics \u2192 open studies queued (AQS-EQP-STUDY-001 / DECISION_LOG_A3_A5), not accepted unreclaimed endpoints.",
+    "surplus_thresholds_doc": "AQS-SUR-001",
+    "surplus_thresholds": {
+      "food_kg_d_min": 0.5,
+      "clean_water_L_d_min": 50.0,
+      "materials_or_goods_kg_d_min": 5.0,
+      "energy_kWh_d_min": 20.0,
+      "status": "study",
+      "note": "AQS-SUR-001 Rev B \u2014 study pass thresholds; seed uses upper-band FARM path for food (WP-A2); not freeze gold"
+    },
+    "self_copy": {
+      "critical_path_documented": true,
+      "reprap_bom_complete": false,
+      "lithography_on_site": false,
+      "lithography_in_mvs": true,
+      "blow_mold_in_mvs": true,
+      "vcd_remin_on_site": false,
+      "electrode_coating_on_site": false,
+      "bom_doc": "Diagrams/aqueous_diagrams/bom/SELF_COPY_BOM.md",
+      "note": "AQS-BOM-SC-001 Rev E \u2014 litho/blow/electrode required for MVS. ST-LITHO/BLOW/ELC first-principles duty issued (WP-A3b/c/d); on_site flags false until Present CAD. ST-VCD/REMIN/ORC/SOLAR physics closed; Present blocked on external measurement (owner/date TBD). reprap_bom_complete=false until Present matrix warrants."
+    }
+  },
+  "site": {
+    "site_id": "AQS_SITE_M1",
+    "site_lat_deg": null,
+    "crew": 4,
+    "jurisdiction_theme": "USA_Dallas_class"
+  },
+  "sectors": [
+    {
+      "sector_id": "WET",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "L-1 leach / EW / BMED; 150 kg/d wet feed (AQS-SEC-001)"
+    },
+    {
+      "sector_id": "OIL",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Organics / oil loop; AFTERBURNER \u2192 CRYO"
+    },
+    {
+      "sector_id": "GLASS",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Silicate / ceramic; materials surplus path (AQS-SEC-001)"
+    },
+    {
+      "sector_id": "GAS",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Scrub / vent closure (AQS-VENT-001); secondary Utility"
+    },
+    {
+      "sector_id": "FAB",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Wafer / solar-cell fab + LITHO required for MVS (ST-LITHO-01/ST-SOLAR-01 until Present). Sandbox tracks progress toward MVS."
+    },
+    {
+      "sector_id": "MFG",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Shop + metal forming + BLOW_MOLD + ELECTRODE_COAT required for MVS (open studies ST-BLOW-01/ST-ELC-01 until Present). Sandbox tracks progress; not accepted sub-MVS. Cross-use OK (AQS-SEC-001 \u00a73.1)."
+    },
+    {
+      "sector_id": "NUT",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Nutrient dose; [catalogue-proposed] sector (AQS-SEC-001)"
+    },
+    {
+      "sector_id": "FARM",
+      "sector_definition": "Life support / habitat",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Grow beds; food surplus (CAD name FARM not FRM)"
+    },
+    {
+      "sector_id": "HAB",
+      "sector_definition": "Life support / habitat",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Habitation / life support"
+    },
+    {
+      "sector_id": "CRYO",
+      "sector_definition": "Utility / header",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Cold-box O2/N2/CO2/H2; not a generation class"
+    },
+    {
+      "sector_id": "WTR",
+      "sector_definition": "Utility / header",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Roof/catch/VCD/UPW (AQS-WTR-001); was WATER in early seed"
+    },
+    {
+      "sector_id": "TRR",
+      "sector_definition": "Utility / header",
+      "enabled": true,
+      "required_for_mvs_closure": false,
+      "notes": "Terrace overflow / irrigation (AQS-TRR-001)"
+    },
+    {
+      "sector_id": "ELEC",
+      "sector_definition": "Utility / header",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Sol-Ark / ATS / RECT / MCC hub \u2014 distinct from ELEC_PV"
+    },
+    {
+      "sector_id": "ELEC_PV",
+      "sector_definition": "Energy Production (Electrical)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "PV modules; discrete PV_COUNT"
+    },
+    {
+      "sector_id": "ZNBR2",
+      "sector_definition": "Energy Storage System (Electrochemical)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "ZnBr2 flow battery \u2014 required ESS peer in MVS (redundancy). Sandbox off \u2192 unreclaimed_resource gap (AQS-SEC-001 Rev D)."
+    },
+    {
+      "sector_id": "MEOH",
+      "sector_definition": "Energy Storage System (Electrochemical)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "MeOH \u2014 required ESS peer in MVS; also feeds other processes (AQS-SEC-001 A1 secondary). Sandbox off \u2192 unreclaimed_resource."
+    },
+    {
+      "sector_id": "PUMPED_HYDRO",
+      "sector_definition": "Energy Storage System (Gravity)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Roof\u2013catch penstock \u2014 required ESS peer in MVS (redundancy). Sandbox off \u2192 unreclaimed_resource gap (AQS-SEC-001 Rev D)."
+    },
+    {
+      "sector_id": "BACKUP_GEN",
+      "sector_definition": "Energy Production (Combustion Engine)",
+      "enabled": true,
+      "required_for_mvs_closure": false,
+      "notes": "H2 genset; REQ-GEN-CONT study 2.5 kW_e"
+    },
+    {
+      "sector_id": "FUEL_CELL",
+      "sector_definition": "Energy Production (Electrochemical)",
+      "enabled": true,
+      "required_for_mvs_closure": false,
+      "notes": "PEM FC; own sector_id (AQS-FC-001 / AQS-SEC-001)"
+    },
+    {
+      "sector_id": "GEO",
+      "sector_definition": "Utility / header",
+      "enabled": true,
+      "required_for_mvs_closure": false,
+      "notes": "GEO HP\u2192Q4; GEO_ORC heat\u2192electric. Carnot study band issued; ST-ORC-01 survey queued before kW freeze. required_for_mvs_closure false until evidence (AQS-SEC-001 A7)."
+    },
+    {
+      "sector_id": "DOCK",
+      "sector_definition": "Export / dock",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "North dock / freight; surplus export boundary"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ACID_POLISH_SCRUB",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "scrubber",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "AFTERBURNER",
+      "sector_id": "OIL",
+      "enabled": true,
+      "class": "thermal",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study ignition/blower parasitic"
+      }
+    },
+    {
+      "unit_id": "AFTERBURNER_FLUE",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": null,
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ALK_SCRUBBER",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "scrubber",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study scrub pump/fan (AQS-EQP-VENT-001)"
+      }
+    },
+    {
+      "unit_id": "BACKUP_GEN",
+      "sector_id": "BACKUP_GEN",
+      "enabled": true,
+      "class": "genset",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "generation",
+      "continuous_kw": {
+        "value": 2.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-GEN-CONT"
+      }
+    },
+    {
+      "unit_id": "BAGHOUSE",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "baghouse",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BLACK_DIGEST",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "digest",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "blow_mold",
+        "in_scope",
+        "polymer",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_duty_issued",
+        "present_path": "study_duty_issued",
+        "blockers": [
+          "mold_tooling_FreeCAD_open",
+          "selected_machine_datasheet_external"
+        ],
+        "blow_mold_in_mvs": true,
+        "ref": "AQS-EQP-STUDY-001 Rev E \u00a79 / AQS-REQ-KW-001 SI-MFG-01 / Precious Plastic kit motors",
+        "open_study_queued": true,
+        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
+        "study_id": "ST-BLOW-01",
+        "study_architecture": "lab_pilot_or_PP_extrusion_add_on \u2014 forbid industrial 14-28 kW avg as M1 continuous",
+        "study_continuous_kw_mid": 0.5,
+        "study_peak_kw_run": "2-4",
+        "study_throughput_kg_h_campaign": "1-5",
+        "study_method": "Clamp+air share on EXTRUSION polymer line; SI-MFG-01 2.2-4 kW motor class; campaign 2-4 h/d",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "Mold tooling CAD + selected clamp/air datasheet within 2-4 kW peak class \u2014 owner/date TBD",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "ST-BLOW-01: ~0.5 kW_e avg campaign (clamp+air on polymer line). Peak 2-4 kW run. Industrial EBM 14-28 kW avg forbidden as M1 continuous."
+      }
+    },
+    {
+      "unit_id": "BMED_ACID",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "bmed",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BMED_BASE",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "bmed",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BMED_UPW_POLISH",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "skid",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 6.0,
+        "unit": "kW",
+        "status": "study"
+      }
+    },
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "sector_id": "DOCK",
+      "enabled": true,
+      "class": "boundary",
+      "tags": [],
+      "params": {
+        "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "C29_RECYCLE",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "recycle",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CATCH_TANK",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "tank",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "COLD_MILL",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "forming",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CONTINUOUS_RECYCLE",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "recycle",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRU",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "cru",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_AHU",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "ahu",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": null,
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_CO2",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "cold_box",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_DED_COOL",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "cool",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_H2",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "cold_box",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 4.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-CRY-STIR-CONT study band"
+      }
+    },
+    {
+      "unit_id": "CRYO_HX_Q4",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "hx",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_N2",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "cold_box",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_O2",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "cold_box",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "electrode",
+        "coating",
+        "in_scope",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_duty_formulation_class_issued",
+        "present_path": "study_duty_formulation_class_issued",
+        "blockers": [
+          "booth_FreeCAD_open",
+          "formulation_recipe_external_lab",
+          "precious_DSA_deferred"
+        ],
+        "exhaust": "MET_AHU\u2192MET_SCRUB S71-S72",
+        "sector_cross_use": "MFG primary; may borrow FAB wet practice",
+        "ref": "AQS-EQP-STUDY-001 Rev E \u00a710 / AQS-MFG-ELC-001 / AQS-VENT-001",
+        "open_study_queued": true,
+        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
+        "study_id": "ST-ELC-01",
+        "study_formulation_class": "non_precious_conductive_carbon_or_Ni_or_passivation_for_M1_EW; RuO2-IrO2 DSA deferred",
+        "study_continuous_kw_mid": 0.3,
+        "study_peak_kw_run": "1-2",
+        "study_method": "Booth exhaust 0.2-0.75 kW + cure oven 0.5-2 kW intermittent; ~2 h/d campaign \u2192 ~0.3 avg",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "Booth CAD + lab formulation trial (carbon/Ni class) \u2014 owner/date TBD; RuO2-IrO2 remains deferred",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "ST-ELC-01: ~0.3 kW_e avg (exhaust+cure campaign). Peak 1-2 kW. Non-precious coat class for M1; RuO2-IrO2 deferred \u2014 no nameplate."
+      }
+    },
+    {
+      "unit_id": "EW_1",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "ew_cell",
+      "tags": [
+        "EW-1"
+      ],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 6.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "RECT-EW class share; study"
+      }
+    },
+    {
+      "unit_id": "EW_2",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "ew_cell",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "EW_9",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "ew_cell",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "FAB_UPW_TANK",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "tank",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "FLOAT_SINK",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "separator",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "sector_id": "FUEL_CELL",
+      "enabled": true,
+      "class": "pem_fc",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "generation",
+      "continuous_kw": {
+        "value": 4.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-FC-CONT"
+      }
+    },
+    {
+      "unit_id": "GAS_ATOMIZER",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "forming",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GEO_GHEX",
+      "sector_id": "GEO",
+      "enabled": true,
+      "class": "ghex",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GEO_HP",
+      "sector_id": "GEO",
+      "enabled": true,
+      "class": "heat_pump",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study HP electrical draw class \u2014 thermal primary; not ORC"
+      }
+    },
+    {
+      "unit_id": "GEO_HP_CLOSED_LOOP",
+      "sector_id": "GEO",
+      "enabled": true,
+      "class": null,
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GEO_ORC",
+      "sector_id": "GEO",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "ORC",
+        "carnot_study",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_carnot_band",
+        "present_path": "study_carnot_band",
+        "blockers": [
+          "GHEX_conductivity_survey",
+          "T_source_survey",
+          "Q_surplus_after_Q4"
+        ],
+        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
+        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
+        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
+        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
+        "open_study_queued": true,
+        "study_id": "ST-ORC-01",
+        "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "generation",
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
+      }
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "intra",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_DIGEST",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "digest",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 1.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study digest duty class"
+      }
+    },
+    {
+      "unit_id": "GLASS_MILL",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "intra",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_RINSE",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "intra",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GREY_TREAT",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "treat",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GROW_BED",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "farm",
+      "tags": [],
+      "params": {
+        "food_band_kg_d": [
+          1.4,
+          4.2
+        ],
+        "food_path_study": "upper_band",
+        "food_out_kg_d_study": 4.2,
+        "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
+        "berth_crew_study": 4,
+        "ration_kg_person_d_study": 0.6,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "LED canopy share; study"
+      }
+    },
+    {
+      "unit_id": "H2_DRYER",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "dryer",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study dryer parasitic \u2014 not nameplate"
+      }
+    },
+    {
+      "unit_id": "HABITATION",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "hab",
+      "tags": [],
+      "params": {
+        "crew_study": 4,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study"
+      }
+    },
+    {
+      "unit_id": "HDR_H2",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "header",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HDR_O2",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "header",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HDR_UPW",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "header",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HOPPER",
+      "sector_id": "OIL",
+      "enabled": true,
+      "class": "hopper",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HYDRO_SET",
+      "sector_id": "PUMPED_HYDRO",
+      "enabled": true,
+      "class": "hydro",
+      "tags": [],
+      "params": {
+        "energy_kwh_ideal_study": 9.8,
+        "energy_kwh_recoverable_study": 7.0,
+        "ref": "AQS-ESS-001",
+        "volume_m3_m1": 200,
+        "head_m_m1": 18,
+        "vs_znbr2_kwh": 120,
+        "fraction_of_znbr2_study": 0.082,
+        "continuous_kw_status": "incomplete",
+        "scale_up_volume_path_m3": [
+          200,
+          1000,
+          5000
+        ],
+        "scale_up_head_m": [
+          18,
+          18,
+          25
+        ],
+        "scale_up_energy_kwh_ideal": [
+          9.8,
+          49.0,
+          340.0
+        ],
+        "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
+        "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "storage",
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "M1 hydro ~9.8 kWh ideal / ~7 recoverable \u226a ZnBr2 120 kWh (AQS-ESS-001). Continuous charge/discharge kW model incomplete \u2014 honest incomplete (WP-A4). Scale-up path V=200\u21921000\u21925000 m3 documented in params."
+      }
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "vessel",
+      "tags": [],
+      "params": {
+        "V_m3": null,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AC parasitics share; study"
+      }
+    },
+    {
+      "unit_id": "LITHO_STUB",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "lithography",
+        "in_scope",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_duty_mass_issued",
+        "present_path": "study_duty_mass_issued",
+        "schedule_steps": [
+          "LITHO_COAT",
+          "LITHO_ALIGN",
+          "LITHO_DEV"
+        ],
+        "blockers": [
+          "FreeCAD_LITHO_COAT_ALIGN_DEV_children_open",
+          "UV_lamp_class_selection_external",
+          "wafer_starts_d_campaign_lock_external"
+        ],
+        "lithography_in_mvs": true,
+        "ref": "AQS-EQP-STUDY-001 Rev E \u00a78 / AQS-BOM-SC-001 / AQS-AUD-001 pilot starts",
+        "open_study_queued": true,
+        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
+        "study_id": "ST-LITHO-01",
+        "study_wafer_starts_d": "1-5 pilot (AQS-AUD-001)",
+        "study_resist_dispense_g_d": "2-10",
+        "study_resist_dry_residual_g_d": "0.2-1.0",
+        "study_method": "spin film ~1-3 um on 150mm; dispense ~2 mL/wafer; solids~10%; 1-5 starts/d",
+        "study_continuous_kw_mid": 0.1,
+        "study_peak_kw_run": "0.5-1.5",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "Issue FreeCAD LITHO_COAT/ALIGN/DEV children + lock wafer starts/d + UV lamp datasheet \u2014 owner/date TBD",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "ST-LITHO-01: ~0.1 kW_e avg at 1-5 starts/d (spin+softbake+UV intermittent). Peak 0.5-1.5 while running \u2014 not nameplate."
+      }
+    },
+    {
+      "unit_id": "LOAD_AGG",
+      "sector_id": "ELEC",
+      "enabled": true,
+      "class": "load_agg",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "sector_id": "MEOH",
+      "enabled": true,
+      "class": "iem_fc",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "generation",
+      "continuous_kw": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-MEOH-FC-CONT mid-band"
+      }
+    },
+    {
+      "unit_id": "MEOH_FERM",
+      "sector_id": "MEOH",
+      "enabled": true,
+      "class": "ferment",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "sector_id": "MEOH",
+      "enabled": true,
+      "class": "reactor",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study synth parasitic mid when surplus-H2 path active (AQS-MeOH-001)"
+      }
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "sector_id": "MEOH",
+      "enabled": true,
+      "class": "tank",
+      "tags": [],
+      "params": {
+        "inventory_kg_study_min": 15.0,
+        "days_at_mid_synth": 3,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "storage",
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "Inventory store; no continuous kW \u2014 fuel to MEOH_FC"
+      }
+    },
+    {
+      "unit_id": "MET_AHU",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "ahu",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MET_HX_Q4",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "hx",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MET_MELT",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "melt",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MET_SCRUB",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "scrubber",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MFG_SHOP",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "shop",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 12.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-MFG-TOTAL-CONT mid"
+      }
+    },
+    {
+      "unit_id": "NORTH_DOCK",
+      "sector_id": "DOCK",
+      "enabled": true,
+      "class": "dock",
+      "tags": [],
+      "params": {
+        "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus/ground_floor still show footprint",
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "NUTRIENT_DOSE",
+      "sector_id": "NUT",
+      "enabled": true,
+      "class": "dose",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study dose pumps"
+      }
+    },
+    {
+      "unit_id": "OIL_DRYER",
+      "sector_id": "OIL",
+      "enabled": true,
+      "class": "dryer",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "OIL_FRAC",
+      "sector_id": "OIL",
+      "enabled": true,
+      "class": "frac",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "OIL_PYRO",
+      "sector_id": "OIL",
+      "enabled": true,
+      "class": "pyro",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "POLISH_BANK",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "polish",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "sector_id": "ELEC_PV",
+      "enabled": true,
+      "class": "pv",
+      "tags": [],
+      "params": {
+        "module_kw": 70,
+        "count": 1,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "generation",
+      "continuous_kw": {
+        "value": 70.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "PV_MODULE_KW \u00d7 PV_COUNT from params.py; nameplate class not continuous avg"
+      }
+    },
+    {
+      "unit_id": "Q4_BUS",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "header",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "sector_id": "ELEC",
+      "enabled": true,
+      "class": "rectifier",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 12.0,
+        "unit": "kW",
+        "status": "study"
+      }
+    },
+    {
+      "unit_id": "REMIN",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "potable",
+        "study_balance",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_balance_issued",
+        "present_path": "study_balance_issued",
+        "blockers": [
+          "mineral_source_vs_S07_confirm",
+          "UV_integrity_TBD",
+          "equipment_IDs_not_issued"
+        ],
+        "blocks_claim": "potable_export_Present",
+        "study_drink_L_d": 10.0,
+        "study_Ca_g_d": 0.25,
+        "study_Mg_g_d": 0.1,
+        "study_targets_mg_L": {
+          "Ca": 25,
+          "Mg": 10,
+          "K_optional": 5
+        },
+        "ref": "AQS-EQP-STUDY-001 Rev C \u00a74 / WHO nutrients guidance",
+        "open_study_queued": true,
+        "study_id": "ST-REMIN-01",
+        "gap_framing": "balance issued; Present IDs = open study ST-REMIN-01",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "Mineral source lock vs S07 + UV integrity + equipment IDs \u2014 owner/date TBD",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ROOF_TANK",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "tank",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "S13_CLASS_TREAT",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": null,
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "SALT_FEED",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "feed",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "PV_TEXTURE",
+        "architecture_promoted",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_duty_bands_locked",
+        "present_path": "study_duty_bands_locked",
+        "train": [
+          "PV_TEXTURE",
+          "PV_EMITTER",
+          "PV_PSG_ETCH",
+          "PV_ARC",
+          "PV_CONTACT",
+          "PV_FIRE",
+          "PV_IV"
+        ],
+        "blockers": [
+          "vendor_PECVD_belt_datasheets_external",
+          "PV_COUNT_offtake_decision_external"
+        ],
+        "ref": "AQS-EQP-STUDY-001 Rev E \u00a76 / AQS-REQ-KW-001 \u00a73.4 / AQS-EQP-FAB-PV-001",
+        "open_study_queued": true,
+        "study_id": "ST-SOLAR-01",
+        "gap_framing": "architecture promoted; nameplates = ST-SOLAR-01",
+        "study_REQ_PECVD_avg_kW": "0.5-2",
+        "study_REQ_PECVD_peak_kW": "5-15",
+        "study_REQ_BELT_avg_kW": "0.5-2",
+        "study_REQ_BELT_peak_kW": "10-25",
+        "study_seed_share_kW": 1.0,
+        "study_method": "AQS-REQ-KW-001 SI-PECVD-01 / SI-BELT-01 pilot derate; staggered so full-line 80-150 kW forbidden",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "Vendor PECVD/belt datasheets + decide whether cell offtake resizes PV_COUNT \u2014 owner/date TBD",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "ST-SOLAR-01: 1.0 kW_e mid study share (REQ-PECVD+BELT avg bands). Not vendor nameplate; full-line 80-150 kW forbidden."
+      }
+    },
+    {
+      "unit_id": "SOL_ARK_60K",
+      "sector_id": "ELEC",
+      "enabled": true,
+      "class": "inverter",
+      "tags": [],
+      "params": {
+        "kW": 60,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "bus",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "TERRACE_IRRIG",
+      "sector_id": "TRR",
+      "enabled": true,
+      "class": "header",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "none",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "VCD_TRAIN",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [
+        "VCD",
+        "study_duty",
+        "study_stub"
+      ],
+      "params": {
+        "status": "study_duty_issued",
+        "present_path": "study_duty_issued",
+        "blockers": [
+          "equipment_IDs_not_issued",
+          "compressor_selection_TBD"
+        ],
+        "blocks_claim": "potable_export_Present",
+        "duty_method": "AQS-EQP-STUDY-001 Rev C \u00a73 MVC w=\u03bb\u0394T/T",
+        "study_SEC_kWh_per_m3": "14-20",
+        "study_feed_m3_d": 0.11,
+        "ref": "AQS-EQP-STUDY-001 Rev C / AQS-WTR-001 / AQS-AUD-001 \u00a711",
+        "open_study_queued": true,
+        "study_id": "ST-VCD-01",
+        "gap_framing": "duty issued; Present IDs = open study ST-VCD-01",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "Compressor selection + equipment IDs for Present VCD \u2014 owner/date TBD",
+        "presence": "placeholder"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.08,
+        "unit": "kW",
+        "status": "study",
+        "note": "First-principles MVC study mid ~0.08 kW_e avg at ~110 L/d SEC~16 kWh/m3 (AQS-EQP-STUDY-001 Rev C \u00a73) \u2014 not nameplate"
+      }
+    },
+    {
+      "unit_id": "WAFER_FAB",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "fab",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "PECVD+belt avg study"
+      }
+    },
+    {
+      "unit_id": "WET_BENCH",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "wet_bench",
+      "tags": [],
+      "params": {
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study fab wet-bench share"
+      }
+    },
+    {
+      "unit_id": "WIRE_DRAW",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "forming",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_AMMONIA",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_HF_ED",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_KOH",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_NITRIC",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_PEROX",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {},
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ZNBR2",
+      "sector_id": "ZNBR2",
+      "enabled": true,
+      "class": "flow_battery",
+      "tags": [],
+      "params": {
+        "kW": 60,
+        "kWh": 120,
+        "presence": "present"
+      },
+      "modules": [],
+      "electrical_role": "storage",
+      "continuous_kw": {
+        "value": 60.0,
+        "unit": "kW",
+        "status": "study"
+      }
+    }
+  ],
+  "streams": [
+    {
+      "stream_id": "S01",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "HDR_UPW",
+      "phase": "L",
+      "carries": "UPW",
+      "rate": {
+        "value": 95.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S02",
+      "from_unit_id": "CRYO_O2",
+      "to_unit_id": "HABITATION",
+      "phase": "G",
+      "carries": "O2",
+      "rate": {
+        "value": 3.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study metabolic O2 class ~0.84 kg/person\u00b7d \u00d7 crew 4 (AQS-AUD-001 berth TBD) \u2014 not issued berth lock"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S03",
+      "from_unit_id": "CRYO_H2",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "G",
+      "carries": "N2",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=campaign_tbd"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S04",
+      "from_unit_id": "CRYO_CO2",
+      "to_unit_id": "GROW_BED",
+      "phase": "G",
+      "carries": "CO2",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=unknown"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S05",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "CRYO_H2",
+      "phase": "G",
+      "carries": "process H2",
+      "rate": {
+        "value": 4.8,
+        "unit": "kg/d",
+        "status": "authority",
+        "note": "AQS-REQ-KW-001 \u00a73.0 / AQS-GAS-003 Faraday \u22480.2 kg/h at 150 kg/d wet feed"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S06",
+      "from_unit_id": "GEO_HP",
+      "to_unit_id": "GROW_BED",
+      "phase": "E",
+      "carries": "heat Q4",
+      "rate": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "null_rate_kind=unknown"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "S07",
+      "from_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "GROW_BED",
+      "phase": "S/L",
+      "carries": "nutrients",
+      "rate": {
+        "value": 2.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 \u00a74.6) \u2014 not tote schedule"
+      },
+      "from_sector_id": "NUT",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S08",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "metals/Si",
+      "rate": {
+        "value": 42.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE plated metals \u224842 kg/d at 150 kg/d wet feed"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S09",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "HCl/NaOH",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=campaign_tbd"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S10",
+      "from_unit_id": "WET_BENCH",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "spent etch",
+      "rate": {
+        "value": 10.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid)"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S11",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "S",
+      "carries": "organics",
+      "rate": {
+        "value": 0.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 \u00a712)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S12",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "L/S",
+      "carries": "grey/solids",
+      "rate": {
+        "value": 110.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "NUT",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S13",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "carries": "condensate",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "From register: FARM SUMP + HVAC \u2192 UPW POLISH / SALT FEED / VCD_FEED; gap_flags=absent_from_candidate_mvs; presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S14",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "carries": "food",
+      "rate": {
+        "value": 4.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Upper-band AQS-AUD-001 \u00a712 food path 4.2 kg/d fresh (band 1.4\u20134.2; was mid 2.8). Study yield/berth assumption \u2014 not nutritionist lock (AQS-SUR-001 / WP-A2)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S15",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "HABITATION",
+      "phase": "G",
+      "carries": "photosynthetic O2",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=unknown"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S16",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "carries": "scrap",
+      "rate": {
+        "value": 12.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6)"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S17",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "RECTIFIER",
+      "phase": "E",
+      "carries": "DC/480V",
+      "rate": {
+        "value": 50.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-SCALE-001 / params ELEC_NEED_KW_BASE \u224850 kW at SCALE_M=1"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "S18",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "CRYO_CO2",
+      "phase": "G",
+      "carries": "captured CO2/air",
+      "rate": {
+        "value": 15.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study afterburner\u2192CRYO captured CO2 class mid of oil cuts ~12\u201322.5 kg/d (AQS-AUD-001) \u2014 not flue analyser"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S19",
+      "from_unit_id": "BAGHOUSE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "carries": "dust",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: BAGHOUSE fines \u2192 LEACH CSTR 1; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S20",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "load",
+      "rate": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "null_rate_kind=study_deferred"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "S21",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "HABITATION",
+      "phase": "L",
+      "carries": "clean tower water",
+      "rate": {
+        "value": 95.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S22",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CATCH_TANK",
+      "phase": "L",
+      "carries": "penstock",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=inventory_cycle"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=ess"
+    },
+    {
+      "stream_id": "S23",
+      "from_unit_id": "CATCH_TANK",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "carries": "pump return",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=inventory_cycle"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=ess"
+    },
+    {
+      "stream_id": "S24",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "G",
+      "carries": "H2 relief contingency",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=event"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "DOCK",
+      "open_boundary": true,
+      "null_rate_kind": "open_boundary",
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S25",
+      "from_unit_id": "VCD_TRAIN",
+      "to_unit_id": "BMED_UPW_POLISH",
+      "phase": "L",
+      "carries": "VCD distillate",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S26",
+      "from_unit_id": "REMIN",
+      "to_unit_id": "HABITATION",
+      "phase": "L",
+      "carries": "potable",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S27",
+      "from_unit_id": "FAB_UPW_TANK",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "fab UPW > 18 M\u03a9\u00b7cm class",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: FAB_UPW_TANK \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S28",
+      "from_unit_id": "VCD_TRAIN",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "VCD brine",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S29",
+      "from_unit_id": "GREY_TREAT",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "carries": "treated grey",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED; gap_flags=absent_from_candidate_mvs; presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S30",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "L/S",
+      "carries": "digest liquor / nutrients",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "NUT",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S31",
+      "from_unit_id": "WS_HF_ED",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "HF (aq)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_HF_ED \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S32",
+      "from_unit_id": "WS_PEROX",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "H\u2082O\u2082",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_PEROX \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S33",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "NH\u2084OH / NH\u2083 (aq)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_AMMONIA \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S34",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "HNO\u2083 / H\u2083PO\u2084 etch suite",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_NITRIC / WS_PHOS \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S35",
+      "from_unit_id": "WS_KOH",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "KOH",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_KOH \u2192 WET_BENCH / solar texture stub; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S36",
+      "from_unit_id": "WS_DOPE",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "L/G",
+      "carries": "B/P/As concentrate; BBr\u2083 / POCl\u2083 class",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_DOPE / CRU polish \u2192 FAB_TOOL dopant cabinets; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S37",
+      "from_unit_id": "WS_SLURRY",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "L",
+      "carries": "colloidal silica slurry",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S38",
+      "from_unit_id": "LITHO_STUB",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "resist / solvent waste",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S39",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L/S",
+      "carries": "spent slurry, solvent, photoresist sludge",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: LAP_CMP / WET_BENCH / FAB_TOOL \u2192 REGEN LEACH / OIL / HDR_ORG; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S40",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "TERRACE_IRRIG",
+      "phase": "L",
+      "carries": "clean overflow",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=event"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "TRR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S41",
+      "from_unit_id": "TERRACE_IRRIG",
+      "to_unit_id": "CATCH_TANK",
+      "phase": "L",
+      "carries": "rain + S40 return",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "TRR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: TERRACE underdrain / apron (clean) \u2192 CATCH TANK / DRAIN_SEC; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S42",
+      "from_unit_id": "TERRACE_IRRIG",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "L",
+      "carries": "dilute nutrient drain",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "TRR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: Enclosed terrace / GH fertigated drain \u2192 GREY treat / VCD_FEED / SALT; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S43",
+      "from_unit_id": "GEO_GHEX",
+      "to_unit_id": "GEO_HP_CLOSED_LOOP",
+      "phase": "L/E",
+      "carries": "geothermal loop fluid",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: GEO_GHEX \u2192 GEO_HP (closed loop); gap_flags=absent_from_candidate_mvs; layers=mass,thermal"
+    },
+    {
+      "stream_id": "S44",
+      "from_unit_id": "GEO_HP",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "heat < 80 \u00b0C",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: GEO_HP \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
+    },
+    {
+      "stream_id": "S45",
+      "from_unit_id": "CRYO_H2",
+      "to_unit_id": "BACKUP_GEN",
+      "phase": "G",
+      "carries": "H2 fuel",
+      "rate": {
+        "value": 3.6,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "BACKUP_GEN",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S46",
+      "from_unit_id": "BACKUP_GEN",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "G/L",
+      "carries": "H\u2082O + NOx class",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "BACKUP_GEN",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: BACKUP_GEN exhaust \u2192 condensate / scrubber; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S47",
+      "from_unit_id": "BACKUP_GEN",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "GEN AC",
+      "rate": {
+        "value": 2.5,
+        "unit": "kW",
+        "status": "authority",
+        "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock \u2014 not vendor nameplate"
+      },
+      "from_sector_id": "BACKUP_GEN",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "S48",
+      "from_unit_id": "GEO_ORC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "ORC AC",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "gap_flags=orc_stub_kw_tbd; presence=placeholder; layers=elec"
+    },
+    {
+      "stream_id": "S49",
+      "from_unit_id": "CRYO_H2",
+      "to_unit_id": "FUEL_CELL",
+      "phase": "G",
+      "carries": "H2 fuel",
+      "rate": {
+        "value": 4.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-REQ-KW-001 ~0.20 kg/h H2 @ REQ-FC-CONT if GEN idle; shared pool with S45/S74"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FUEL_CELL",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S50",
+      "from_unit_id": "CRYO_O2",
+      "to_unit_id": "FUEL_CELL",
+      "phase": "G",
+      "carries": "O2 oxidizer",
+      "rate": {
+        "value": 38.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Stoich O2 for S49 H2 (O2/H2 mass \u2248 8 for 2 H2 + O2 \u2192 2 H2O); study"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FUEL_CELL",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S51",
+      "from_unit_id": "FUEL_CELL",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "FC DC",
+      "rate": {
+        "value": 4.0,
+        "unit": "kW",
+        "status": "authority",
+        "note": "AQS-REQ-KW-001 REQ-FC-CONT; study requirement lock \u2014 not vendor nameplate"
+      },
+      "from_sector_id": "FUEL_CELL",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "S52",
+      "from_unit_id": "FUEL_CELL",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "carries": "PEM product H2O",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "FUEL_CELL",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "presence=placeholder; layers=mass"
+    },
+    {
+      "stream_id": "S53",
+      "from_unit_id": "FUEL_CELL",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "heat < 80 \u00b0C",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FUEL_CELL",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
+    },
+    {
+      "stream_id": "S54",
+      "from_unit_id": "CRYO_HX_Q4",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "warm residual < 80 \u00b0C",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
+    },
+    {
+      "stream_id": "S55",
+      "from_unit_id": "CRYO_DED_COOL",
+      "to_unit_id": "CRYO_DED_COOL",
+      "phase": "L/E",
+      "carries": "dedicated cryo utility cooling",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL; gap_flags=absent_from_candidate_mvs; layers=mass,thermal"
+    },
+    {
+      "stream_id": "S56",
+      "from_unit_id": "CRYO_AHU",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "G",
+      "carries": "non-condensable residual after KO",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: CRYO_AHU / CRYO_AHU_COND residual \u2192 safe vent contingency; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S57",
+      "from_unit_id": "MET_MELT",
+      "to_unit_id": "WIRE_DRAW",
+      "phase": "S/L",
+      "carries": "billet / melt / charge",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S58",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "wire product",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S59",
+      "from_unit_id": "COLD_MILL",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "sheet / strip",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S60",
+      "from_unit_id": "GAS_ATOMIZER",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "metal powder",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S61",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "HOPPER",
+      "phase": "S",
+      "carries": "metal scrap",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: Forming swarf / trim \u2192 HOPPER / leach; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S62",
+      "from_unit_id": "MET_AHU",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "G",
+      "carries": "MFG metal-aisle capture feed",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MET_AHU \u2192 MET_SCRUB / baghouse (S71); gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S63",
+      "from_unit_id": "MET_HX_Q4",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "heat < 80 \u00b0C",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
+    },
+    {
+      "stream_id": "S64",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "CRYO_H2",
+      "phase": "G",
+      "carries": "H2 normal path",
+      "rate": {
+        "value": 4.8,
+        "unit": "kg/d",
+        "status": "authority",
+        "note": "Same Faraday pool as S05; normal H2 path (AQS-VENT-001); S24 contingency only"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S65",
+      "from_unit_id": "ALK_SCRUBBER",
+      "to_unit_id": "ALK_SCRUBBER",
+      "phase": "G",
+      "carries": "acid-gas residual",
+      "rate": {
+        "value": 1500.0,
+        "unit": "m3/h",
+        "status": "study",
+        "note": "AQS-EQP-VENT-001 Rev B \u00a72.1 polish Q = HDR_ACID_GAS 0.42 m3/s (1500 m3/h)"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S66",
+      "from_unit_id": "ACID_POLISH_SCRUB",
+      "to_unit_id": "CRU",
+      "phase": "L",
+      "carries": "scrub liquor \u2192 chlorate finish",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: ACID_POLISH / ALK blowdown \u2192 CRU; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S67",
+      "from_unit_id": "AFTERBURNER_FLUE",
+      "to_unit_id": "CRYO_CO2",
+      "phase": "G",
+      "carries": "captured CO\u2082 + condensables",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: AFTERBURNER flue \u2192 FLUE_CAP / CRYO; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S68",
+      "from_unit_id": "CRYO_AHU",
+      "to_unit_id": "S13_CLASS_TREAT",
+      "phase": "L",
+      "carries": "flue / AHU condensate",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: FLUE_CAP / CRYO_AHU_COND \u2192 S13 class / treat; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S69",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "ZNBR2",
+      "phase": "L",
+      "carries": "Br\u207b makeup after ORP",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "ZNBR2",
+      "to_sector_id": "ZNBR2",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: ZNBR2_BR2_REGEN \u2192 ZnBr2 positive tank; gap_flags=absent_from_candidate_mvs; layers=ess"
+    },
+    {
+      "stream_id": "S70",
+      "from_unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "to_unit_id": "CRYO_H2",
+      "phase": "G/L",
+      "carries": "boil-off / purge condensables",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: CRYO_AHU_COND condensable \u2192 COLD_BOX / CRYO condensate return; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S71",
+      "from_unit_id": "MET_AHU",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "G",
+      "carries": "metal-aisle fume / mist / dust",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MET_AHU \u2192 MET_SCRUB / baghouse; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S72",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L/S",
+      "carries": "fines + scrub liquor / organic mist",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MET_SCRUB / baghouse \u2192 CSTR 1 / OIL / HDR_ORG; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S73",
+      "from_unit_id": "CRYO_CO2",
+      "to_unit_id": "MEOH_SYNTH",
+      "phase": "G",
+      "carries": "CO2 feedstock",
+      "rate": {
+        "value": 6.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S74",
+      "from_unit_id": "CRYO_H2",
+      "to_unit_id": "MEOH_SYNTH",
+      "phase": "G",
+      "carries": "H2 for MeOH",
+      "rate": {
+        "value": 0.94,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S75",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "L",
+      "carries": "crude MeOH",
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "layers=mass"
+    },
+    {
+      "stream_id": "S76",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "MEOH_FC",
+      "phase": "L",
+      "carries": "MeOH fuel",
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "layers=ess"
+    },
+    {
+      "stream_id": "S77",
+      "from_unit_id": "MEOH_FERM",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "L",
+      "carries": "biogenic MeOH",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MEOH_FERM_STILL \u2192 MEOH_TANK; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S78",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "MEOH_FERM",
+      "phase": "L/S",
+      "carries": "ferment feed",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: Farm/hab organics (S12/S30 class) \u2192 MEOH_FERM_DIG; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S79",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "MEOH DC",
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Mid of AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5\u20132 kW_dc; stand-in SI-DMFC-01 class"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "note": "layers=elec,ess"
+    },
+    {
+      "stream_id": "S80",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "heat < 80 \u00b0C",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
+    },
+    {
+      "stream_id": "S81",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "L",
+      "carries": "product / process H\u2082O",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MEOH_FC / MEOH_COND \u2192 condensate / S13 class; gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S82",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "CRYO_CO2",
+      "phase": "G",
+      "carries": "CO\u2082 return from MeOH FC",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed); gap_flags=absent_from_candidate_mvs; layers=mass"
+    },
+    {
+      "stream_id": "S08G",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "glass/ceramic goods",
+      "rate": {
+        "value": 30.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "DOCK",
+      "open_boundary": true,
+      "note": "candidate_mvs extension \u2014 do not invent new register ID; gap_flags=sandbox_extra_not_in_STREAM_REGISTER,reconcile_or_keep_sandbox; namespace=SANDBOX; layers=mass"
+    },
+    {
+      "stream_id": "S14X",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "food surplus export",
+      "rate": {
+        "value": 1.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study residual S14 upper 4.2 \u2212 crew\u00d70.6=2.4 \u2192 1.8 kg/d; AQS-SUR-001 threshold \u22650.5 \u2014 pass_study expected true (WP-A2)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "DOCK",
+      "open_boundary": true,
+      "note": "candidate_mvs extension \u2014 do not invent new register ID; gap_flags=sandbox_extra_not_in_STREAM_REGISTER,reconcile_or_keep_sandbox; namespace=SANDBOX; layers=mass"
+    },
+    {
+      "stream_id": "DOCK_EXPORT_TBD",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "goods / cassettes / surplus freight (ID TBD)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "DOCK",
+      "open_boundary": true,
+      "null_rate_kind": "open_boundary",
+      "note": "Audit \u00a77.1 DOCK export \u2014 sector required; no inter-block stream ID issued; gap_flags=no_S_id,do_not_invent_route_or_rate,high_severity_audit; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-01",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "EW_2",
+      "phase": "L",
+      "carries": "EW stage overflow/advance",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "ew_cascade undrawn S##; gap_flags=intra_aisle,full_depth_now,ew_cascade undrawn S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-02",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "EW_9",
+      "phase": "L",
+      "carries": "EW cascade mid\u2192last (proxy; stages 3\u20138 not exploded)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "ew_cascade undrawn S##; gap_flags=intra_aisle,full_depth_now,ew_cascade undrawn S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-03",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "POLISH_BANK",
+      "phase": "L",
+      "carries": "EW \u2192 polish / precip",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "ew_cascade undrawn S##; gap_flags=intra_aisle,full_depth_now,ew_cascade undrawn S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-04",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "EW_1",
+      "phase": "L",
+      "carries": "CSTR \u2192 EW-1 feed",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "ew_cascade undrawn S##; gap_flags=intra_aisle,full_depth_now,ew_cascade undrawn S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-WET-FLOAT-01",
+      "from_unit_id": "FLOAT_SINK",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "Float/sink liquor return",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "STR scope-out; ID was TBD; gap_flags=intra_aisle,full_depth_now,STR scope-out; ID was TBD; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-WET-C29-01",
+      "from_unit_id": "C29_RECYCLE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "C29-class recycle",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "STR scope-out; ID was TBD; gap_flags=intra_aisle,full_depth_now,STR scope-out; ID was TBD; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-REC-01",
+      "from_unit_id": "CONTINUOUS_RECYCLE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "Continuous recycle liquor",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "continuous_recycling_pfd; gap_flags=intra_aisle,full_depth_now,continuous_recycling_pfd; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-REC-Q3",
+      "from_unit_id": "CONTINUOUS_RECYCLE",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "Heat ladder Q3 residual (ghost to Q4 bus for EFD-thermal)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "heat ladder unlabeled; gap_flags=intra_aisle,full_depth_now,heat ladder unlabeled; presence=placeholder; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-BMED-01",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "BMED_UPW_POLISH",
+      "phase": "L",
+      "carries": "BMED acid product internal",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "bmed_regen unlabeled; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BMED-02",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "BMED_UPW_POLISH",
+      "phase": "L",
+      "carries": "BMED base product internal",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "bmed_regen unlabeled; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BMED-03",
+      "from_unit_id": "CRU",
+      "to_unit_id": "BMED_ACID",
+      "phase": "L",
+      "carries": "CRU \u2192 BMED acid regen loop",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "bmed_regen unlabeled; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BMED-04",
+      "from_unit_id": "CRU",
+      "to_unit_id": "BMED_BASE",
+      "phase": "L",
+      "carries": "CRU \u2192 BMED base regen loop",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "bmed_regen unlabeled; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-POL-01",
+      "from_unit_id": "POLISH_BANK",
+      "to_unit_id": "BMED_UPW_POLISH",
+      "phase": "L",
+      "carries": "Polish bank \u2192 UPW polish",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "polish_bank unlabeled; gap_flags=intra_aisle,full_depth_now,polish_bank unlabeled; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-POL-02",
+      "from_unit_id": "POLISH_BANK",
+      "to_unit_id": "POLISH_BANK",
+      "phase": "L",
+      "carries": "Polish series internals (self-loop stub)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "polish_bank unlabeled; gap_flags=intra_aisle,full_depth_now,polish_bank unlabeled; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-GLASS-01",
+      "from_unit_id": "GLASS_RINSE",
+      "to_unit_id": "GLASS_BURNOUT",
+      "phase": "L",
+      "carries": "Glass rinse \u2192 burnout",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "glass_ceramic_pfd no S##; gap_flags=intra_aisle,full_depth_now,glass_ceramic_pfd no S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-GLASS-02",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "GLASS_MILL",
+      "phase": "S",
+      "carries": "Glass burnout \u2192 mill",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "glass_ceramic_pfd no S##; gap_flags=intra_aisle,full_depth_now,glass_ceramic_pfd no S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-GLASS-03",
+      "from_unit_id": "GLASS_MILL",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "S",
+      "carries": "Glass mill \u2192 digest",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "glass_ceramic_pfd no S##; gap_flags=intra_aisle,full_depth_now,glass_ceramic_pfd no S##; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-GLASS-Q2",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "Q2 burnout heat (study path; not rate)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "glass heat unlabeled; gap_flags=intra_aisle,full_depth_now,glass heat unlabeled; presence=placeholder; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-OIL-01",
+      "from_unit_id": "OIL_DRYER",
+      "to_unit_id": "OIL_PYRO",
+      "phase": "S",
+      "carries": "Dryer \u2192 pyro",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "oil_line internals; gap_flags=intra_aisle,full_depth_now,oil_line internals; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-OIL-02",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "carries": "Pyro \u2192 frac",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "oil_line internals; gap_flags=intra_aisle,full_depth_now,oil_line internals; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-OIL-03",
+      "from_unit_id": "OIL_FRAC",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "G",
+      "carries": "Frac cut / vapor \u2192 afterburner",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "oil_line internals; gap_flags=intra_aisle,full_depth_now,oil_line internals; presence=placeholder; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-OIL-Q1",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "Q1 afterburner heat (not into hab air)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "Q1\u2260Q4 rule; gap_flags=intra_aisle,full_depth_now,Q1\u2260Q4 rule; presence=placeholder; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-CHG",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ZNBR2",
+      "phase": "E",
+      "carries": "ZnBr2 charge (PV/RECT surplus)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ZNBR2",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; presence=placeholder; namespace=IA; layers=elec,ess"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-DIS",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "ZnBr2 discharge to bus",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ZNBR2",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; presence=placeholder; namespace=IA; layers=elec,ess"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-CHG",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "L",
+      "carries": "MeOH synth inventory = charge-analogue",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; presence=placeholder; namespace=IA; layers=mass,ess"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-DIS",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "MeOH FC discharge (peers S79)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "use S79 for rate; this edge is ESS-layer view alias"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer,overlaps_S79_architecture; presence=placeholder; namespace=IA; layers=elec,ess"
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-CHG",
+      "from_unit_id": "CATCH_TANK",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "carries": "Pumped hydro charge (pump up; peers S23)",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "tbd",
+        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "inventory_cycle",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; namespace=IA; layers=mass,ess"
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-DIS",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CATCH_TANK",
+      "phase": "L",
+      "carries": "Pumped hydro discharge (penstock; peers S22)",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "tbd",
+        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "inventory_cycle",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; namespace=IA; layers=mass,ess"
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-ELEC",
+      "from_unit_id": "HYDRO_SET",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "PUMPED_HYDRO",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "null_rate_kind": "study_deferred",
+      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer,missing_on_sld; presence=placeholder; namespace=IA; layers=elec,ess"
+    }
+  ],
+  "electrical": {
+    "bus_nodes": [
+      "SOL_ARK_60K",
+      "ZNBR2",
+      "RECTIFIER"
+    ],
+    "storage_options": [
+      "ZNBR2",
+      "MEOH",
+      "PUMPED_HYDRO"
+    ],
+    "need_kw": {
+      "value": 50.0,
+      "unit": "kW",
+      "status": "study",
+      "note": "ELEC_NEED_KW_BASE at SCALE_M=1"
+    },
+    "target_kw": {
+      "value": 70.0,
+      "unit": "kW",
+      "status": "study",
+      "note": "ELEC_NEED \u00d7 1.4 overprod"
+    },
+    "pv_module_kw": 70.0,
+    "pv_count": 1,
+    "znbr_module_kw": 60.0,
+    "znbr_count": 1,
+    "rect_count": 1,
+    "notes": "Study values from cad/freecad/params.py and AQS-REQ-KW-001; not vendor nameplates."
+  },
+  "scale_rules": {
+    "tanks": "continuous",
+    "mfg_cryo": "discrete",
+    "pv_znbr2": "module",
+    "dock": "by_cassette"
+  },
+  "ui": {
+    "cycle_views": [
+      "C",
+      "O",
+      "H2O",
+      "H2",
+      "N",
+      "heat"
+    ],
+    "sector_toggles": true,
+    "gap_panel": true,
+    "export_modules": [
+      "params",
+      "streams",
+      "sld",
+      "pfd",
+      "bom",
+      "compliance_flags",
+      "3d"
+    ]
+  },
+  "gaps": [],
+  "unclosed_streams": [],
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Mike locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev B (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+}

@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""Fire-area walls and horizontal assemblies. AQS-HSE-001 / AQS-BLD-001.
+
+    /usr/bin/freecadcmd fire_barriers.py
+
+FB_* = vertical barriers. HA_* = horizontal assemblies between levels.
+
+FB_HAB_CORE (3 h) vs FB_HAB_FARM (2 h) are distinct assemblies:
+  - FB_HAB_FARM — HAB ↔ FARM party wall outside the CORE Y-band (2 h,
+    T=200 mm massing). Locked name AQS-HSE-001.
+  - FB_HAB_CORE — CORE enclosure toward HABITATION + centreline segment
+    through the CORE Y-band where HAB meets CORE_PROCESS / recycle
+    (3 h, T=300 mm massing). Not co-located with FB_HAB_FARM.
+3 h also on HA_L1_L0, HA_L0_Lm1 (life/grade/basement family).
+"""
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import params as P
+from labels import add, box_at, label_plate
+import FreeCAD as App
+import Part
+
+OUT = Path(__file__).resolve().parent
+T = 200       # default 2 h wall / slab assembly thickness mm
+T_2H = 200    # FB_HAB_FARM massing
+T_3H = 300    # FB_HAB_CORE massing (thicker = distinct 3 h assembly)
+
+
+def _fuse(parts):
+    """Boolean-fuse or compound a list of shapes into one solid."""
+    if not parts:
+        return None
+    if len(parts) == 1:
+        return parts[0]
+    shp = parts[0]
+    for p in parts[1:]:
+        try:
+            shp = shp.fuse(p)
+        except Exception:
+            return Part.makeCompound(parts)
+    return shp
+
+
+def _life_hab_barriers(doc, z, suffix):
+    """Per life floor: distinct FB_HAB_FARM (2 h) and FB_HAB_CORE (3 h)."""
+    def n(base):
+        return base if suffix == "" else "%s%s" % (base, suffix)
+
+    h_farm = max(P.HAB_H, P.FARM_H)
+    h_core = max(int(P.CLEAR_L1) - 100, 3200)  # near full life clear
+
+    x_party = P.HAB_X + P.HAB_L
+    y0 = P.HAB_Y
+    y1 = P.HAB_Y + P.HAB_W
+    cy0 = max(P.CORE_Y, y0)
+    cy1 = min(P.CORE_Y + P.CORE_W, y1)
+
+    # --- FB_HAB_FARM (2 h): party wall segments outside CORE Y-band -----
+    farm_parts = []
+    if cy1 <= y0 or cy0 >= y1:
+        # CORE does not intersect life plate Y — full party wall
+        farm_parts.append(box_at(
+            x_party - T_2H // 2, y0, z, T_2H, P.HAB_W, h_farm))
+    else:
+        if cy0 > y0 + 10:
+            farm_parts.append(box_at(
+                x_party - T_2H // 2, y0, z, T_2H, cy0 - y0, h_farm))
+        if y1 > cy1 + 10:
+            farm_parts.append(box_at(
+                x_party - T_2H // 2, cy1, z, T_2H, y1 - cy1, h_farm))
+    shp_farm = _fuse(farm_parts)
+    if shp_farm is not None:
+        add(doc, n("FB_HAB_FARM"), shp_farm)
+        label_plate(doc, n("FB_HAB_FARM"), x_party + 80, y0 - 200,
+                    z=z + min(2800, h_farm - 200))
+
+    # --- FB_HAB_CORE (3 h): CORE interface toward HAB + recycle ---------
+    # 1) Centreline through CORE Y-band: HAB ↔ CORE_PROCESS (recycle)
+    # 2) West face of CORE: HAB rooms ↔ core entry
+    # 3–4) South / north CORE faces (enclosure)
+    core_parts = []
+    if cy1 > cy0 + 10:
+        core_parts.append(box_at(
+            x_party - T_3H // 2, cy0, z, T_3H, cy1 - cy0, h_core))
+    core_parts.append(box_at(
+        P.CORE_X - T_3H // 2, P.CORE_Y, z, T_3H, P.CORE_W, h_core))
+    core_parts.append(box_at(
+        P.CORE_X, P.CORE_Y - T_3H // 2, z, P.CORE_L, T_3H, h_core))
+    core_parts.append(box_at(
+        P.CORE_X, P.CORE_Y + P.CORE_W - T_3H // 2, z, P.CORE_L, T_3H, h_core))
+    shp_core = _fuse(core_parts)
+    add(doc, n("FB_HAB_CORE"), shp_core)
+    label_plate(doc, n("FB_HAB_CORE"), P.CORE_X, P.CORE_Y - 400,
+                z=z + min(2800, h_core - 200))
+
+
+def attach(doc):
+    # --- Vertical FB_* on each discrete life floor -----------------------
+    for i in range(P.LIFE_LEVELS):
+        suffix = "" if i == 0 else "_S%d" % (i + 1)
+        _life_hab_barriers(doc, P.life_z(i), suffix)
+
+    # FAB ↔ recycle (2 h) on L0 — north face of fab toward plate
+    add(doc, "FB_FAB_CORE", box_at(
+        P.FAB_X, P.FAB_Y - T // 2, P.Z_L0,
+        P.FAB_L, T, P.FAB_H))
+    label_plate(doc, "FB_FAB_CORE", P.FAB_X, P.FAB_Y - 400,
+                z=P.Z_L0 + 2800)
+
+    # CRYO enclosure (2 h) on L-1 — west face separates process from CRYO.
+    # No process-atmosphere duct through this wall (AQS-HSE-001).
+    add(doc, "FB_CRYO", box_at(
+        P.CRYO_X - T, P.CRYO_Y - T, P.CRYO_Z,
+        P.CRYO_L + 2 * T, T, P.CRYO_H))
+    label_plate(doc, "FB_CRYO", P.CRYO_X, P.CRYO_Y - 400,
+                z=P.CRYO_Z + 2800)
+    # Rated party wall process ↔ CRYO (full L-1 clear height)
+    add(doc, "FB_CRYO_PROCESS", box_at(
+        P.CRYO_X - T // 2, P.CRYO_Y, P.Z_Lm1,
+        T, P.CRYO_W, P.CLEAR_Lm1))
+    label_plate(doc, "FB_CRYO_PROCESS", P.CRYO_X, P.CRYO_Y - 400,
+                z=P.Z_Lm1 + 2800)
+
+    # ZnBr2 / ESS open-air or 2 h screen at grade (south of plate)
+    add(doc, "FB_ESS", box_at(
+        -2000, -4000, P.Z_L0, 4000, T, 2400))
+    label_plate(doc, "FB_ESS", -2000, -4200, z=P.Z_L0 + 2000)
+
+    # --- Horizontal assemblies (full plate) -------------------------------
+    # LIFE ↔ GRADE 3 h
+    add(doc, "HA_L1_L0", box_at(
+        0, 0, P.Z_L1 - T, P.PLATE_L, P.PLATE_W, T))
+    label_plate(doc, "HA_L1_L0", 200, -600, z=P.Z_L1 + 200)
+
+    # GRADE ↔ BASEMENT 3 h
+    add(doc, "HA_L0_Lm1", box_at(
+        0, 0, P.Z_L0 - T, P.PLATE_L, P.PLATE_W, T))
+    label_plate(doc, "HA_L0_Lm1", 200, -800, z=P.Z_L0 + 200)
+
+    # Between process basement plates (2 h) when depth > 1
+    for i in range(1, P.BASEMENT_LEVELS):
+        z = P.basement_z(i)
+        name = "HA_BASEMENT_B%d" % (i + 1)
+        add(doc, name, box_at(0, 0, z - T, P.PLATE_L, P.PLATE_W, T))
+        label_plate(doc, name, 200, -1000 - 200 * i, z=z + 200)
+
+    # Deepest process basement ↔ CATCH room 2 h (CATCH always deepest)
+    z_deep = P.basement_z(P.BASEMENT_LEVELS - 1)
+    add(doc, "HA_Lm1_Lm2", box_at(
+        0, 0, z_deep - T, P.PLATE_L, P.PLATE_W, T))
+    label_plate(doc, "HA_Lm1_Lm2", 200, -1000, z=z_deep + 200)
+
+    # Life-story horizontal assemblies when LIFE_LEVELS > 1 (1 h, tank/life family)
+    for i in range(1, P.LIFE_LEVELS):
+        z = P.life_z(i)
+        name = "HA_LIFE_S%d" % (i + 1)
+        add(doc, name, box_at(0, 0, z - T, P.PLATE_L, P.PLATE_W, T))
+        label_plate(doc, name, 200, -600 - 200 * i, z=z + 200)
+
+    # Tank / top life 1 h (AQS-BLD-001 HA_L2_L1)
+    add(doc, "HA_L2_L1", box_at(0, 0, P.Z_L2 - T, P.PLATE_L, P.PLATE_W, T))
+    label_plate(doc, "HA_L2_L1", 200, -1200, z=P.Z_L2 + 200)
+
+
+def build():
+    plant = OUT / "plant.FCStd"
+    doc = App.openDocument(str(plant)) if plant.exists() else App.newDocument("FB")
+    attach(doc)
+    doc.recompute()
+    doc.saveAs(str(plant if plant.exists() else OUT / "fire_barriers.FCStd"))
+    print("fire barriers attached (life_levels=%d basement=%d)"
+          % (P.LIFE_LEVELS, P.BASEMENT_LEVELS))
+
+
+if any(Path(a).name == Path(__file__).name for a in sys.argv):
+    build()

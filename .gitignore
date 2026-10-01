@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+*.egg-info/
+dist/
+**/dist/
+build/
+
+# FreeCAD backups / editor junk
+*.FCBak
+.DS_Store
+.idea/
+.vscode/
+*.png.bak
+*.omo
+
+# OpenSCAD / export noise
+*.log
+
+# Tooling / deps (never ship)
+.omo/
+.codegraph
+.node_modules/
+node_modules/
+**/node_modules/
+.grok/
+.pytest_cache/
+**/.pytest_cache/
+.sandbox_store/
+**/.sandbox_store/
+
+# design_tool runtime (never ship even if re-synced)
+design_tool/.sandbox_store/
+design_tool/exports/*/
+design_tool/exports/sbx_*/
+!design_tool/exports/README.md
+exports/sbx_*
+**/exports/sbx_*
+design_tool/web/node_modules/
+design_tool/web/dist/
+
+# Archives and bulk offline (live under ../../archive if Aqueous-rooted)
+archive/
+*.zip
+
+# Env / secrets
+.env
+*.pem
+id_rsa*
+
+# Local-only planning / Odysseus / bot handoff (never ship even if re-synced)
+ODYSSEUS_PLANNING.md
+**/ODYSSEUS_PLANNING.md
+ODYSSEUS*
+planning/
+LOCAL_BOT_HANDOFF.md
+**/LOCAL_BOT_HANDOFF.md

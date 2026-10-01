@@ -1,0 +1,56 @@
+digraph G {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD electrical layer (S17 + peers)\nVIEW-EFD-ELEC  ·  AQS-FLOW-GRAPH-001 rev B", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
+  edge [fontname="Helvetica", fontsize=8];
+  subgraph "cluster_BACKUP_GEN" {
+    label="BACKUP_GEN";
+    style=rounded; color="#94a3b8";
+    "BACKUP_GEN" [fillcolor="#ffffff", label="BACKUP_GEN"];
+  }
+  subgraph "cluster_ELEC" {
+    label="ELEC";
+    style=rounded; color="#94a3b8";
+    "RECTIFIER" [fillcolor="#ffffff", label="RECTIFIER"];
+    "SOL_ARK_60K" [fillcolor="#ffffff", label="SOL_ARK_60K"];
+  }
+  subgraph "cluster_FARM" {
+    label="FARM";
+    style=rounded; color="#94a3b8";
+    "GROW_BED" [fillcolor="#ffffff", label="GROW_BED"];
+  }
+  subgraph "cluster_FUEL_CELL" {
+    label="FUEL_CELL";
+    style=rounded; color="#94a3b8";
+    "FUEL_CELL" [fillcolor="#ffffff", label="FUEL_CELL"];
+  }
+  subgraph "cluster_GEO" {
+    label="GEO";
+    style=rounded; color="#94a3b8";
+    "GEO_ORC" [fillcolor="#e2e8f0", label="GEO_ORC\n(placeholder)"];
+  }
+  subgraph "cluster_MEOH" {
+    label="MEOH";
+    style=rounded; color="#94a3b8";
+    "MEOH_FC" [fillcolor="#ffffff", label="MEOH_FC"];
+  }
+  subgraph "cluster_PUMPED_HYDRO" {
+    label="PUMPED_HYDRO";
+    style=rounded; color="#94a3b8";
+    "HYDRO_SET" [fillcolor="#fde68a", label="HYDRO_SET\nDedicated hydro_dock_pfd.png (graph-bridged); ca…"];
+  }
+  subgraph "cluster_ZNBR2" {
+    label="ZNBR2";
+    style=rounded; color="#94a3b8";
+    "ZNBR2" [fillcolor="#ffffff", label="ZNBR2"];
+  }
+  "SOL_ARK_60K" -> "RECTIFIER" [label="S17\\n50.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "GROW_BED" -> "SOL_ARK_60K" [label="S20", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n2.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "SOL_ARK_60K" -> "ZNBR2" [label="IA-ESS-ZNBR2-CHG", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "ZNBR2" -> "SOL_ARK_60K" [label="IA-ESS-ZNBR2-DIS", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "MEOH_FC" -> "SOL_ARK_60K" [label="IA-ESS-MEOH-DIS", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "HYDRO_SET" -> "SOL_ARK_60K" [label="IA-ESS-HYDRO-ELEC", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+}

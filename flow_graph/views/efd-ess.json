@@ -1,0 +1,534 @@
+{
+  "preset_id": "VIEW-EFD-ESS",
+  "view_mode": "EFD",
+  "source_doc": "AQS-FLOW-GRAPH-001",
+  "source_revision": "B",
+  "node_count": 8,
+  "edge_count": 12,
+  "orphan_campus_units": [],
+  "nodes": [
+    {
+      "unit_id": "CATCH_TANK",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "HYDRO_SET",
+      "sector_id": "PUMPED_HYDRO",
+      "presence": "present",
+      "class": "hydro",
+      "tags": [],
+      "electrical_role": "storage",
+      "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "M1 hydro ~9.8 kWh ideal / ~7 recoverable \u226a ZnBr2 120 kWh (AQS-ESS-001). Continuous charge/discharge kW model incomplete \u2014 honest incomplete (WP-A4). Scale-up path V=200\u21921000\u21925000 m3 documented in params."
+      },
+      "modules": [],
+      "params": {
+        "energy_kwh_ideal_study": 9.8,
+        "energy_kwh_recoverable_study": 7.0,
+        "ref": "AQS-ESS-001",
+        "volume_m3_m1": 200,
+        "head_m_m1": 18,
+        "vs_znbr2_kwh": 120,
+        "fraction_of_znbr2_study": 0.082,
+        "continuous_kw_status": "incomplete",
+        "scale_up_volume_path_m3": [
+          200,
+          1000,
+          5000
+        ],
+        "scale_up_head_m": [
+          18,
+          18,
+          25
+        ],
+        "scale_up_energy_kwh_ideal": [
+          9.8,
+          49.0,
+          340.0
+        ],
+        "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
+        "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "class": "iem_fc",
+      "tags": [],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-MEOH-FC-CONT mid-band"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study synth parasitic mid when surplus-H2 path active (AQS-MeOH-001)"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": "storage",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "Inventory store; no continuous kW \u2014 fuel to MEOH_FC"
+      },
+      "modules": [],
+      "params": {
+        "inventory_kg_study_min": 15.0,
+        "days_at_mid_synth": 3,
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "ROOF_TANK",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "SOL_ARK_60K",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "inverter",
+      "tags": [],
+      "electrical_role": "bus",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "kW": 60,
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "ZNBR2",
+      "sector_id": "ZNBR2",
+      "presence": "present",
+      "class": "flow_battery",
+      "tags": [],
+      "electrical_role": "storage",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 60.0,
+        "unit": "kW",
+        "status": "study"
+      },
+      "modules": [],
+      "params": {
+        "kW": 60,
+        "kWh": 120,
+        "presence": "present"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "stream_id": "S22",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CATCH_TANK",
+      "phase": "L",
+      "layers": [
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "penstock",
+      "header": "SHAFT_PENSTOCK",
+      "forbidden": "process sumps",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=inventory_cycle"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S23",
+      "from_unit_id": "CATCH_TANK",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "pump return",
+      "header": "SHAFT_PENSTOCK",
+      "forbidden": "HDR_GREY",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "null_rate_kind=inventory_cycle"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S69",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "ZNBR2",
+      "phase": "L",
+      "layers": [
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "Br\u207b makeup after ORP",
+      "header": "Br\u2082 scrub liquor return",
+      "forbidden": "CRU, alkali scrub liquor",
+      "claim_status": "Partial / Claimed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "ZNBR2",
+      "to_sector_id": "ZNBR2",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: ZNBR2_BR2_REGEN \u2192 ZnBr2 positive tank"
+    },
+    {
+      "stream_id": "S76",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "MEOH_FC",
+      "phase": "L",
+      "layers": [
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "MeOH fuel",
+      "header": "PC-11",
+      "forbidden": "HDR_UPW, HAB air",
+      "claim_status": null,
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S79",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "MEOH DC",
+      "header": "BATT DC tray",
+      "forbidden": "GEN port, RECT hard-tee",
+      "claim_status": null,
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Mid of AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5\u20132 kW_dc; stand-in SI-DMFC-01 class"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-CHG",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ZNBR2",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "ZnBr2 charge (PV/RECT surplus)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ZNBR2",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-DIS",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "ZnBr2 discharge to bus",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ZNBR2",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-CHG",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "L",
+      "layers": [
+        "mass",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "MeOH synth inventory = charge-analogue",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-DIS",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "MeOH FC discharge (peers S79)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "use S79 for rate; this edge is ESS-layer view alias"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer",
+        "overlaps_S79_architecture"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-CHG",
+      "from_unit_id": "CATCH_TANK",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass",
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "Pumped hydro charge (pump up; peers S23)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "null",
+        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-DIS",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CATCH_TANK",
+      "phase": "L",
+      "layers": [
+        "mass",
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "Pumped hydro discharge (penstock; peers S22)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "null",
+        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-ELEC",
+      "from_unit_id": "HYDRO_SET",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "PUMPED_HYDRO",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer",
+        "missing_on_sld"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    }
+  ],
+  "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"
+}

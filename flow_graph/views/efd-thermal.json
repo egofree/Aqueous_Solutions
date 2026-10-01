@@ -1,0 +1,554 @@
+{
+  "preset_id": "VIEW-EFD-THERMAL",
+  "view_mode": "EFD",
+  "source_doc": "AQS-FLOW-GRAPH-001",
+  "source_revision": "B",
+  "node_count": 13,
+  "edge_count": 11,
+  "orphan_campus_units": [],
+  "nodes": [
+    {
+      "unit_id": "AFTERBURNER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "thermal",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study ignition/blower parasitic"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "CONTINUOUS_RECYCLE",
+      "sector_id": "WET",
+      "presence": "placeholder",
+      "class": "recycle",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": "continuous_recycling_pfd unlabeled",
+      "notes": "Continuous recycle heat ladder node",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_DED_COOL",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cool",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Dedicated cryo cool loop (S55)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CRYO_HX_Q4",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "hx",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "CRYO warm reject HX (S54)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "sector_id": "FUEL_CELL",
+      "presence": "present",
+      "class": "pem_fc",
+      "tags": [],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 4.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-FC-CONT"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "GEO_GHEX",
+      "sector_id": "GEO",
+      "presence": "present",
+      "class": "ghex",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Geothermal GHEX (S43)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GEO_HP",
+      "sector_id": "GEO",
+      "presence": "present",
+      "class": "heat_pump",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study HP electrical draw class \u2014 thermal primary; not ORC"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "GEO_HP_CLOSED_LOOP",
+      "sector_id": "GEO",
+      "presence": "present",
+      "class": null,
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "sector_id": "GLASS",
+      "presence": "placeholder",
+      "class": "intra",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": "glass_ceramic_pfd unlabeled",
+      "notes": "Intra-aisle glass burnout (IA-*)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GROW_BED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "LED canopy share; study"
+      },
+      "modules": [],
+      "params": {
+        "food_band_kg_d": [
+          1.4,
+          4.2
+        ],
+        "food_path_study": "upper_band",
+        "food_out_kg_d_study": 4.2,
+        "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
+        "berth_crew_study": 4,
+        "ration_kg_person_d_study": 0.6,
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "class": "iem_fc",
+      "tags": [],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "REQ-MEOH-FC-CONT mid-band"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "MET_HX_Q4",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "hx",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "MET HX \u2192 Q4 (S63)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q4_BUS",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "header",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Thermal Q4 collector bus (S06/S44/S53/S54/S63/S80)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    }
+  ],
+  "edges": [
+    {
+      "stream_id": "S06",
+      "from_unit_id": "GEO_HP",
+      "to_unit_id": "GROW_BED",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "heat Q4",
+      "header": "Q4",
+      "forbidden": "Q1 flue in hab air",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "null_rate_kind=unknown"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S43",
+      "from_unit_id": "GEO_GHEX",
+      "to_unit_id": "GEO_HP_CLOSED_LOOP",
+      "phase": "L/E",
+      "layers": [
+        "mass",
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "geothermal loop fluid",
+      "header": "dedicated GEO loop",
+      "forbidden": "HDR_UPW, CATCH, Salria",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)"
+    },
+    {
+      "stream_id": "S44",
+      "from_unit_id": "GEO_HP",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "heat < 80 \u00b0C",
+      "header": "Q4",
+      "forbidden": "Q1 flue in hab air",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB"
+    },
+    {
+      "stream_id": "S53",
+      "from_unit_id": "FUEL_CELL",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "heat < 80 \u00b0C",
+      "header": "Q4",
+      "forbidden": "Q1 flue / GEN exhaust in hab air",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "FUEL_CELL",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB"
+    },
+    {
+      "stream_id": "S54",
+      "from_unit_id": "CRYO_HX_Q4",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "warm residual < 80 \u00b0C",
+      "header": "Q4",
+      "forbidden": "Stirling deep reject, GEN exhaust, flue",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB"
+    },
+    {
+      "stream_id": "S55",
+      "from_unit_id": "CRYO_DED_COOL",
+      "to_unit_id": "CRYO_DED_COOL",
+      "phase": "L/E",
+      "layers": [
+        "mass",
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "dedicated cryo utility cooling",
+      "header": "dedicated CRYO cool",
+      "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL"
+    },
+    {
+      "stream_id": "S63",
+      "from_unit_id": "MET_HX_Q4",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "heat < 80 \u00b0C",
+      "header": "Q4",
+      "forbidden": "melt/atomizer hot gas as flue",
+      "claim_status": "Closed",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB"
+    },
+    {
+      "stream_id": "S80",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "heat < 80 \u00b0C",
+      "header": "Q4",
+      "forbidden": "Q1 flue / GEN exhaust in AHU",
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB"
+    },
+    {
+      "stream_id": "IA-REC-Q3",
+      "from_unit_id": "CONTINUOUS_RECYCLE",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "placeholder",
+      "carries": "Heat ladder Q3 residual (ghost to Q4 bus for EFD-thermal)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "intra_aisle",
+        "full_depth_now",
+        "heat ladder unlabeled"
+      ],
+      "notes": "heat ladder unlabeled"
+    },
+    {
+      "stream_id": "IA-GLASS-Q2",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "placeholder",
+      "carries": "Q2 burnout heat (study path; not rate)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "intra_aisle",
+        "full_depth_now",
+        "glass heat unlabeled"
+      ],
+      "notes": "glass heat unlabeled"
+    },
+    {
+      "stream_id": "IA-OIL-Q1",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "placeholder",
+      "carries": "Q1 afterburner heat (not into hab air)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "intra_aisle",
+        "full_depth_now",
+        "Q1\u2260Q4 rule"
+      ],
+      "notes": "Q1\u2260Q4 rule"
+    }
+  ],
+  "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"
+}
