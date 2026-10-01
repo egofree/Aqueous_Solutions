@@ -1,0 +1,1532 @@
+{
+  "schema": "aqs-unit-freecad-map-1.0",
+  "licence": "CERN-OHL-S-2.0",
+  "doc_id": "AQS-UNIT-FREECAD-MAP-001",
+  "revision": "A",
+  "date": "2026-10-01",
+  "graph_doc_id": "AQS-FLOW-GRAPH-001",
+  "graph_revision": "B",
+  "freecad_binary": "/usr/bin/freecadcmd",
+  "evidence": {
+    "plant_fcstd": "models/freecad/plant.FCStd (hub: cad/freecad/plant.FCStd)",
+    "inventory_object_count": 1060,
+    "part_feature_count": 976,
+    "method": "freecadcmd open plant.FCStd \u2192 Name/Label/TypeId; cross-check builder add() Names; no invented geometry"
+  },
+  "coverage": {
+    "graph_nodes": 91,
+    "rows_classified": 91,
+    "rows_classified_pct": 100.0,
+    "by_status": {
+      "mapped": 56,
+      "massing_only": 7,
+      "placeholder_skip": 7,
+      "unmapped": 21
+    },
+    "present_nodes": 79,
+    "present_mapped_or_massing": 58,
+    "present_coverage_pct": 73.4,
+    "placeholder_nodes": 12,
+    "unmapped_present": [
+      "BLACK_DIGEST",
+      "BMED_UPW_POLISH",
+      "BOUNDARY_EXPORT",
+      "FAB_UPW_TANK",
+      "GEO_HP_CLOSED_LOOP",
+      "GREY_TREAT",
+      "LOAD_AGG",
+      "MEOH_FC",
+      "MEOH_FERM",
+      "MEOH_SYNTH",
+      "MEOH_TANK",
+      "Q4_BUS",
+      "S13_CLASS_TREAT",
+      "WS_AMMONIA",
+      "WS_DOPE",
+      "WS_HF_ED",
+      "WS_KOH",
+      "WS_NITRIC",
+      "WS_PEROX",
+      "WS_SLURRY",
+      "WS_SOLV"
+    ]
+  },
+  "entries": [
+    {
+      "unit_id": "ACID_POLISH_SCRUB",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "scrubber",
+      "status": "mapped",
+      "freecad_names": [
+        "ACID_POLISH_SCRUB"
+      ],
+      "builder": "gas_handling.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Gas"
+      ],
+      "notes": "exact Name in plant.FCStd; secondary ACID_POLISH_REGEN not a graph unit"
+    },
+    {
+      "unit_id": "AFTERBURNER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "enabled": true,
+      "class": "thermal",
+      "status": "mapped",
+      "freecad_names": [
+        "AFTERBURNER"
+      ],
+      "builder": "oil_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "Label MASSING_AFTERBURNER after import_mfg"
+    },
+    {
+      "unit_id": "AFTERBURNER_FLUE",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "mapped",
+      "freecad_names": [
+        "HX7_FLUE_JACKET"
+      ],
+      "builder": "gas_handling.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Gas"
+      ],
+      "notes": "alias: graph AFTERBURNER_FLUE \u2192 Feature HX7_FLUE_JACKET (flue jacket on AB path); no Feature named AFTERBURNER_FLUE"
+    },
+    {
+      "unit_id": "ALK_SCRUBBER",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "scrubber",
+      "status": "mapped",
+      "freecad_names": [
+        "ALK_SCRUBBER"
+      ],
+      "builder": "gas_handling.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Gas"
+      ],
+      "notes": "Label MASSING_ALK_SCRUBBER after import_mfg"
+    },
+    {
+      "unit_id": "BACKUP_GEN",
+      "sector_id": "BACKUP_GEN",
+      "presence": "present",
+      "enabled": true,
+      "class": "genset",
+      "status": "mapped",
+      "freecad_names": [
+        "BACKUP_GEN"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "secondary CLEAR_BACKUP_GEN keep-out"
+    },
+    {
+      "unit_id": "BAGHOUSE",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "baghouse",
+      "status": "mapped",
+      "freecad_names": [
+        "BAGHOUSE"
+      ],
+      "builder": "gas_handling.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Gas"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "BLACK_DIGEST",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": "digest",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present WTR unit; no Part::Feature in plant.FCStd (NaOH_DIGEST is glass-line, not black digest)"
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "sector_id": "MFG",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; no invented massing"
+    },
+    {
+      "unit_id": "BMED_ACID",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "bmed",
+      "status": "massing_only",
+      "freecad_names": [
+        "BMED_REGEN"
+      ],
+      "builder": "wet_products.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "no dedicated BMED_ACID Feature; shared BMED_REGEN skid massing only (acid loop is graph topology)"
+    },
+    {
+      "unit_id": "BMED_BASE",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "bmed",
+      "status": "massing_only",
+      "freecad_names": [
+        "BMED_REGEN"
+      ],
+      "builder": "wet_products.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "no dedicated BMED_BASE Feature; shared BMED_REGEN skid massing only"
+    },
+    {
+      "unit_id": "BMED_UPW_POLISH",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": "skid",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present WTR skid; no Feature in plant.FCStd"
+    },
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "sector_id": "DOCK",
+      "presence": "present",
+      "enabled": true,
+      "class": "boundary",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "logical DOCK boundary node; no solid"
+    },
+    {
+      "unit_id": "C29_RECYCLE",
+      "sector_id": "WET",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "recycle",
+      "status": "massing_only",
+      "freecad_names": [
+        "C29_RECYCLE"
+      ],
+      "builder": "oil_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "presence=placeholder but Feature exists in oil_line; massing stand-in opted in"
+    },
+    {
+      "unit_id": "CATCH_TANK",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": "tank",
+      "status": "mapped",
+      "freecad_names": [
+        "CATCH_TANK"
+      ],
+      "builder": "building_stack.py",
+      "group_path": [
+        "Plant",
+        "Building",
+        "Cores_Shafts"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "COLD_MILL",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "forming",
+      "status": "mapped",
+      "freecad_names": [
+        "COLD_MILL"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "group via plant_groups MET_/COLD_MILL \u2192 Process/Wet"
+    },
+    {
+      "unit_id": "CONTINUOUS_RECYCLE",
+      "sector_id": "WET",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "recycle",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; no Feature"
+    },
+    {
+      "unit_id": "CRU",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "cru",
+      "status": "mapped",
+      "freecad_names": [
+        "CRU"
+      ],
+      "builder": "wet_products.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_AHU",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "ahu",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_AHU"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_AHU_COND"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": "alias: graph CRYO_AHU_COND_CONDENSABLE \u2192 Feature CRYO_AHU_COND"
+    },
+    {
+      "unit_id": "CRYO_CO2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cold_box",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_CO2"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_DED_COOL",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cool",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_DED_COOL"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_H2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cold_box",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_H2"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_HX_Q4",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "hx",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_HX_Q4"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_N2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cold_box",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_N2"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "CRYO_O2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cold_box",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_O2"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "sector_id": "MFG",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; no Feature"
+    },
+    {
+      "unit_id": "EW_1",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "ew_cell",
+      "status": "mapped",
+      "freecad_names": [
+        "EW_1"
+      ],
+      "builder": "leach_cstr.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondary EW_1_CEM"
+    },
+    {
+      "unit_id": "EW_2",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "ew_cell",
+      "status": "mapped",
+      "freecad_names": [
+        "EW_2"
+      ],
+      "builder": "leach_cstr.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondary EW_2_CEM; cascade stages EW_3..EW_8 exist in FCStd but are not separate graph units"
+    },
+    {
+      "unit_id": "EW_9",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "ew_cell",
+      "status": "mapped",
+      "freecad_names": [
+        "EW_9"
+      ],
+      "builder": "leach_cstr.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondary EW_9_CEM; last-stage proxy"
+    },
+    {
+      "unit_id": "FAB_UPW_TANK",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "tank",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present FAB tank; no Feature (ROOF_TANK/CATCH_TANK are building water, not fab UPW)"
+    },
+    {
+      "unit_id": "FLOAT_SINK",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "separator",
+      "status": "mapped",
+      "freecad_names": [
+        "FLOAT_DEWATER",
+        "SINK_DEWATER"
+      ],
+      "builder": "leach_cstr.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "alias: graph FLOAT_SINK \u2192 FLOAT_DEWATER + SINK_DEWATER"
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "sector_id": "FUEL_CELL",
+      "presence": "present",
+      "enabled": true,
+      "class": "pem_fc",
+      "status": "mapped",
+      "freecad_names": [
+        "FUEL_CELL"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "secondaries FC_DCDC, FC_H2_MANIFOLD, FC_HX_Q4, CLEAR_FUEL_CELL"
+    },
+    {
+      "unit_id": "GAS_ATOMIZER",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "forming",
+      "status": "mapped",
+      "freecad_names": [
+        "GAS_ATOMIZER"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "GEO_GHEX",
+      "sector_id": "GEO",
+      "presence": "present",
+      "enabled": true,
+      "class": "ghex",
+      "status": "mapped",
+      "freecad_names": [
+        "KO_GEO_GHEX"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "alias: graph GEO_GHEX \u2192 Feature KO_GEO_GHEX; related UTIL_ROUGH_GHEX"
+    },
+    {
+      "unit_id": "GEO_HP",
+      "sector_id": "GEO",
+      "presence": "present",
+      "enabled": true,
+      "class": "heat_pump",
+      "status": "mapped",
+      "freecad_names": [
+        "GEO_HP"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "secondary CLEAR_GEO_HP"
+    },
+    {
+      "unit_id": "GEO_HP_CLOSED_LOOP",
+      "sector_id": "GEO",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present loop topology node; no dedicated Feature (related GEO_HP / KO_GEO_GHEX / UTIL_ROUGH_GHEX already mapped to other units)"
+    },
+    {
+      "unit_id": "GEO_ORC",
+      "sector_id": "GEO",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "massing_only",
+      "freecad_names": [
+        "GEO_ORC"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "presence=placeholder but Feature exists in electrical_yard; massing stand-in opted in"
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "sector_id": "GLASS",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "intra",
+      "status": "massing_only",
+      "freecad_names": [
+        "BURNOUT_ROTARY"
+      ],
+      "builder": "glass_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "presence=placeholder; Feature BURNOUT_ROTARY is glass-line massing stand-in"
+    },
+    {
+      "unit_id": "GLASS_DIGEST",
+      "sector_id": "GLASS",
+      "presence": "present",
+      "enabled": true,
+      "class": "digest",
+      "status": "mapped",
+      "freecad_names": [
+        "NaOH_DIGEST"
+      ],
+      "builder": "glass_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "alias: graph GLASS_DIGEST \u2192 Feature NaOH_DIGEST"
+    },
+    {
+      "unit_id": "GLASS_MILL",
+      "sector_id": "GLASS",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "intra",
+      "status": "massing_only",
+      "freecad_names": [
+        "MILL"
+      ],
+      "builder": "glass_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "presence=placeholder; Feature MILL is glass-line massing stand-in"
+    },
+    {
+      "unit_id": "GLASS_RINSE",
+      "sector_id": "GLASS",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "intra",
+      "status": "massing_only",
+      "freecad_names": [
+        "RINSE_DEWATER"
+      ],
+      "builder": "glass_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "presence=placeholder; Feature RINSE_DEWATER (+ RINSE_TO_SALT) massing stand-in"
+    },
+    {
+      "unit_id": "GREY_TREAT",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": "treat",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present WTR treat; HDR_GREY_* are headers only, not treatment solids"
+    },
+    {
+      "unit_id": "GROW_BED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": "farm",
+      "status": "mapped",
+      "freecad_names": [
+        "GROW_BED"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "secondaries GROW_BED_G3, GROW_TRAY_*"
+    },
+    {
+      "unit_id": "H2_DRYER",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "dryer",
+      "status": "mapped",
+      "freecad_names": [
+        "H2_DRYER"
+      ],
+      "builder": "gas_handling.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Gas"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "HABITATION",
+      "sector_id": "HAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "hab",
+      "status": "mapped",
+      "freecad_names": [
+        "HABITATION"
+      ],
+      "builder": "habitation.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Habitation"
+      ],
+      "notes": "secondaries SLEEP, GALLEY, HAB_AIR, HAB_WATER, HAB_WASTE"
+    },
+    {
+      "unit_id": "HDR_H2",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "header",
+      "status": "mapped",
+      "freecad_names": [
+        "HDR_H2"
+      ],
+      "builder": "build_wet.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondary HDR_H2_RACK from pipe_services"
+    },
+    {
+      "unit_id": "HDR_O2",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "header",
+      "status": "mapped",
+      "freecad_names": [
+        "HDR_O2_N",
+        "HDR_O2_S",
+        "HDR_O2_E",
+        "HDR_O2_W"
+      ],
+      "builder": "pipe_services.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Habitation"
+      ],
+      "notes": "alias: graph HDR_O2 \u2192 cardinal HDR_O2_* Features (no singular HDR_O2)"
+    },
+    {
+      "unit_id": "HDR_UPW",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": "header",
+      "status": "mapped",
+      "freecad_names": [
+        "HDR_UPW_N",
+        "HDR_UPW_S",
+        "HDR_UPW_E",
+        "HDR_UPW_W"
+      ],
+      "builder": "pipe_services.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Habitation"
+      ],
+      "notes": "alias: graph HDR_UPW \u2192 cardinal HDR_UPW_* Features"
+    },
+    {
+      "unit_id": "HOPPER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "enabled": true,
+      "class": "hopper",
+      "status": "mapped",
+      "freecad_names": [
+        "HOPPER_SHREDDER"
+      ],
+      "builder": "leach_cstr.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "alias: graph HOPPER \u2192 Feature HOPPER_SHREDDER"
+    },
+    {
+      "unit_id": "HYDRO_SET",
+      "sector_id": "PUMPED_HYDRO",
+      "presence": "present",
+      "enabled": true,
+      "class": "hydro",
+      "status": "mapped",
+      "freecad_names": [
+        "HYDRO_SET"
+      ],
+      "builder": "building_stack.py",
+      "group_path": [
+        "Plant",
+        "Building",
+        "Cores_Shafts"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "vessel",
+      "status": "mapped",
+      "freecad_names": [
+        "LEACH_CSTR_1"
+      ],
+      "builder": "leach_cstr.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "LITHO_STUB",
+      "sector_id": "FAB",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; no Feature"
+    },
+    {
+      "unit_id": "LOAD_AGG",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "enabled": true,
+      "class": "load_agg",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "electrical aggregation logical node; no solid"
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "enabled": true,
+      "class": "iem_fc",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present MEOH; no Feature in plant.FCStd"
+    },
+    {
+      "unit_id": "MEOH_FERM",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "enabled": true,
+      "class": "ferment",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present MEOH; no Feature"
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present MEOH; no Feature"
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "enabled": true,
+      "class": "tank",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present MEOH; no Feature"
+    },
+    {
+      "unit_id": "MET_AHU",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "ahu",
+      "status": "mapped",
+      "freecad_names": [
+        "MET_AHU"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "MET_HX_Q4",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "hx",
+      "status": "mapped",
+      "freecad_names": [
+        "MET_HX_Q4"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "MET_MELT",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "melt",
+      "status": "mapped",
+      "freecad_names": [
+        "MET_MELT"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "related wet-line MELT is separate Feature (metals crib)"
+    },
+    {
+      "unit_id": "MET_SCRUB",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "scrubber",
+      "status": "mapped",
+      "freecad_names": [
+        "MET_SCRUB"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondary MET_SCRUB_REGEN"
+    },
+    {
+      "unit_id": "MFG_SHOP",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "shop",
+      "status": "mapped",
+      "freecad_names": [
+        "MFG_SHOP"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondaries MFG_CRIB, MFG_FLOOR"
+    },
+    {
+      "unit_id": "NORTH_DOCK",
+      "sector_id": "DOCK",
+      "presence": "present",
+      "enabled": true,
+      "class": "dock",
+      "status": "mapped",
+      "freecad_names": [
+        "DOCK",
+        "DOCK_APRON_N",
+        "DOCK_DOOR_N"
+      ],
+      "builder": "building_stack.py",
+      "group_path": [
+        "Plant",
+        "Building",
+        "Cores_Shafts"
+      ],
+      "notes": "alias: graph NORTH_DOCK \u2192 DOCK (+ apron/door); ELEV_DOCK paired"
+    },
+    {
+      "unit_id": "NUTRIENT_DOSE",
+      "sector_id": "NUT",
+      "presence": "present",
+      "enabled": true,
+      "class": "dose",
+      "status": "mapped",
+      "freecad_names": [
+        "NUTRIENT_DOSE"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "secondary NUTRIENT_DOSE_D2"
+    },
+    {
+      "unit_id": "OIL_DRYER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "enabled": true,
+      "class": "dryer",
+      "status": "mapped",
+      "freecad_names": [
+        "DRYER"
+      ],
+      "builder": "oil_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "alias: graph OIL_DRYER \u2192 Feature DRYER"
+    },
+    {
+      "unit_id": "OIL_FRAC",
+      "sector_id": "OIL",
+      "presence": "present",
+      "enabled": true,
+      "class": "frac",
+      "status": "mapped",
+      "freecad_names": [
+        "FRACTIONATOR"
+      ],
+      "builder": "oil_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "alias: graph OIL_FRAC \u2192 Feature FRACTIONATOR"
+    },
+    {
+      "unit_id": "OIL_PYRO",
+      "sector_id": "OIL",
+      "presence": "present",
+      "enabled": true,
+      "class": "pyro",
+      "status": "mapped",
+      "freecad_names": [
+        "INDUCTION_PYROLYZER"
+      ],
+      "builder": "oil_line.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Oil_Glass"
+      ],
+      "notes": "alias: graph OIL_PYRO \u2192 Feature INDUCTION_PYROLYZER; secondary QUENCH"
+    },
+    {
+      "unit_id": "POLISH_BANK",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "polish",
+      "status": "mapped",
+      "freecad_names": [
+        "PK_1",
+        "PK_2",
+        "PK_3",
+        "PK_6",
+        "PK_7",
+        "PK_8",
+        "PK_9"
+      ],
+      "builder": "wet_products.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "bank massing = PK_* cells (+ PK_4/5 CEM boxes); no Feature named POLISH_BANK; P_Al/P_Mg/P_Ca precip tanks adjacent"
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "sector_id": "ELEC_PV",
+      "presence": "present",
+      "enabled": true,
+      "class": "pv",
+      "status": "mapped",
+      "freecad_names": [
+        "PV_ARRAY"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "ARRAY_ROOF is building; PV_* process stubs under wafer_fab are fab tools not this unit"
+    },
+    {
+      "unit_id": "Q4_BUS",
+      "sector_id": "HAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "header",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "thermal collector bus logical; related HX Features (CRYO_HX_Q4, MET_HX_Q4, HVAC_Q4, FC_HX_Q4, PV_HX_Q4, UTIL_ROUGH_Q4) belong to other units \u2014 no Q4_BUS Feature"
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "enabled": true,
+      "class": "rectifier",
+      "status": "mapped",
+      "freecad_names": [
+        "RECTIFIER"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "REMIN",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; no Feature"
+    },
+    {
+      "unit_id": "ROOF_TANK",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": "tank",
+      "status": "mapped",
+      "freecad_names": [
+        "ROOF_TANK"
+      ],
+      "builder": "building_stack.py",
+      "group_path": [
+        "Plant",
+        "Building",
+        "Cores_Shafts"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "S13_CLASS_TREAT",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "present WET treat class node; no Feature"
+    },
+    {
+      "unit_id": "SALT_FEED",
+      "sector_id": "WET",
+      "presence": "present",
+      "enabled": true,
+      "class": "feed",
+      "status": "mapped",
+      "freecad_names": [
+        "SALT_FEED"
+      ],
+      "builder": "wet_products.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "sector_id": "FAB",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; wafer_fab PV_* stubs are process tools not this unit"
+    },
+    {
+      "unit_id": "SOL_ARK_60K",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "enabled": true,
+      "class": "inverter",
+      "status": "mapped",
+      "freecad_names": [
+        "SOL_ARK_60K"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "TERRACE_IRRIG",
+      "sector_id": "TRR",
+      "presence": "present",
+      "enabled": true,
+      "class": "header",
+      "status": "mapped",
+      "freecad_names": [
+        "TERRACE_IRRIG_HDR_S"
+      ],
+      "builder": "building_stack.py",
+      "group_path": [
+        "Plant",
+        "Building",
+        "Terraces"
+      ],
+      "notes": "alias: graph TERRACE_IRRIG \u2192 TERRACE_IRRIG_HDR_S; related GH_IRRIG_HDR"
+    },
+    {
+      "unit_id": "VCD_TRAIN",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "enabled": true,
+      "class": "study_stub",
+      "status": "placeholder_skip",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "presence=placeholder; no invented massing"
+    },
+    {
+      "unit_id": "WAFER_FAB",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "fab",
+      "status": "mapped",
+      "freecad_names": [
+        "WAFER_FAB"
+      ],
+      "builder": "wafer_fab.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondaries FAB_PREP, FAB_TOOL, ETCH_RETURN, PV_* process stubs"
+    },
+    {
+      "unit_id": "WET_BENCH",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "wet_bench",
+      "status": "mapped",
+      "freecad_names": [
+        "WET_BENCH"
+      ],
+      "builder": "wafer_fab.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "secondaries WET_BENCH_W1, WET_BENCH_W5"
+    },
+    {
+      "unit_id": "WIRE_DRAW",
+      "sector_id": "MFG",
+      "presence": "present",
+      "enabled": true,
+      "class": "forming",
+      "status": "mapped",
+      "freecad_names": [
+        "WIRE_DRAW"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": ""
+    },
+    {
+      "unit_id": "WS_AMMONIA",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no dedicated Feature (ETCH_RETURN is return header, not reagent)"
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "WS_HF_ED",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "WS_KOH",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "WS_NITRIC",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "WS_PEROX",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "sector_id": "FAB",
+      "presence": "present",
+      "enabled": true,
+      "class": "reagent",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "fab reagent fork; no Feature"
+    },
+    {
+      "unit_id": "ZNBR2",
+      "sector_id": "ZNBR2",
+      "presence": "present",
+      "enabled": true,
+      "class": "flow_battery",
+      "status": "mapped",
+      "freecad_names": [
+        "ZNBR2"
+      ],
+      "builder": "electrical_yard.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "secondaries ZNBR2_NEG_TANK, ZNBR2_POS_TANK, ZNBR2_BR2_SCRUBBER, ZNBR2_BR2_REGEN"
+    }
+  ]
+}

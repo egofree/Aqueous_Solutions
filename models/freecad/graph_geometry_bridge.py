@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
-"""Stub: flow graph / export pack → 3D recipe (NO geometry solver).
+"""Flow graph / export pack → 3D recipe (NO geometry solver).
 
-Honest Phase D interface. Today geometry still comes from params.py +
-build_plant.py. This script only inventories the graph and optionally
-triggers the *baseline* FreeCAD rebuild (params-driven).
+Inventories the graph, loads WP-D1 unit↔FreeCAD name map coverage, and
+optionally triggers the *baseline* FreeCAD rebuild (params-driven).
 
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json
     python3 graph_geometry_bridge.py --graph /path/to/flow_graph_snapshot.json \\
         --params /path/to/params.json --out /tmp/3d_recipe.json
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \\
+        --map unit_freecad_map.json --coverage
+    python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \\
         --rebuild-baseline
 
-CERN-OHL-S-2.0. See docs-authority/BUILD_3D_FROM_FLOW.md.
+CERN-OHL-S-2.0. See docs-authority/BUILD_3D_FROM_FLOW.md;
+planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md (AQS-PLAN-3D-001 WP-D1).
 """
 from __future__ import annotations
 
@@ -23,8 +25,25 @@ from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SHARE = HERE.parents[1]  # .../aqueous-solutions
-DEFAULT_GRAPH = SHARE / "flow_graph" / "plant_flow_graph.json"
+# Share layout: .../aqueous-solutions/models/freecad → parents[1]=aqueous-solutions
+# Hub layout: .../cad/freecad → parents[1]=cad; graph lives at hub/flow_graph
+SHARE_CANDIDATE = HERE.parents[1]
+DEFAULT_MAP = HERE / "unit_freecad_map.json"
+
+
+def _default_graph() -> Path | None:
+    candidates = [
+        SHARE_CANDIDATE / "flow_graph" / "plant_flow_graph.json",
+        HERE.parents[1].parent / "flow_graph" / "plant_flow_graph.json",  # hub cad/ → aqueous_diagrams
+        HERE.parents[2] / "flow_graph" / "plant_flow_graph.json",
+    ]
+    for c in candidates:
+        if c.is_file():
+            return c
+    return None
+
+
+DEFAULT_GRAPH = _default_graph()
 
 
 def load_json(path: Path) -> dict:
@@ -35,7 +54,6 @@ def load_json(path: Path) -> dict:
 def node_enabled(n: dict) -> bool:
     if "enabled" in n:
         return bool(n["enabled"])
-    # presence style
     p = n.get("presence") or (n.get("params") or {}).get("presence")
     if p is None:
         return True
@@ -59,6 +77,7 @@ def inventory(graph: dict) -> dict:
                 "unit_id": n.get("unit_id"),
                 "sector_id": sector,
                 "enabled": en,
+                "presence": n.get("presence"),
                 "class": n.get("class"),
                 "params": n.get("params") or {},
             }
@@ -74,13 +93,87 @@ def inventory(graph: dict) -> dict:
     }
 
 
+def load_unit_map(path: Path | None) -> dict | None:
+    """Load aqs-unit-freecad-map-1.0 JSON; return None if missing."""
+    if path is None:
+        path = DEFAULT_MAP
+    if not path.is_file():
+        return None
+    return load_json(path)
+
+
+def map_coverage(graph: dict, unit_map: dict) -> dict:
+    """Join graph unit_ids to map entries; report coverage % (WP-D1)."""
+    nodes = graph.get("nodes") or []
+    entries = unit_map.get("entries") or []
+    by_id = {e.get("unit_id"): e for e in entries if e.get("unit_id")}
+    graph_ids = [n.get("unit_id") for n in nodes if n.get("unit_id")]
+    missing_rows = [uid for uid in graph_ids if uid not in by_id]
+    extra_rows = sorted(set(by_id) - set(graph_ids))
+    status_c: Counter = Counter()
+    joined = []
+    for uid in graph_ids:
+        e = by_id.get(uid)
+        if e is None:
+            status_c["missing_map_row"] += 1
+            joined.append({"unit_id": uid, "status": "missing_map_row"})
+            continue
+        st = e.get("status") or "unknown"
+        status_c[st] += 1
+        joined.append(
+            {
+                "unit_id": uid,
+                "status": st,
+                "freecad_names": e.get("freecad_names") or [],
+                "builder": e.get("builder"),
+                "group_path": e.get("group_path") or [],
+            }
+        )
+    n = len(graph_ids) or 1
+    classified = n - len(missing_rows)
+    present_ids = [
+        n.get("unit_id")
+        for n in nodes
+        if n.get("unit_id") and n.get("presence") == "present"
+    ]
+    present_ok = [
+        uid
+        for uid in present_ids
+        if (by_id.get(uid) or {}).get("status") in ("mapped", "massing_only")
+    ]
+    return {
+        "schema": unit_map.get("schema"),
+        "map_revision": unit_map.get("revision"),
+        "map_path": None,  # filled by caller
+        "graph_nodes": len(graph_ids),
+        "map_entries": len(entries),
+        "rows_classified": classified,
+        "rows_classified_pct": round(100.0 * classified / n, 1),
+        "by_status": dict(sorted(status_c.items())),
+        "missing_map_rows": missing_rows,
+        "extra_map_rows": extra_rows,
+        "present_nodes": len(present_ids),
+        "present_mapped_or_massing": len(present_ok),
+        "present_coverage_pct": round(
+            100.0 * len(present_ok) / (len(present_ids) or 1), 1
+        ),
+        "gaps": {
+            "unmapped": [j["unit_id"] for j in joined if j["status"] == "unmapped"],
+            "placeholder_skip": [
+                j["unit_id"] for j in joined if j["status"] == "placeholder_skip"
+            ],
+            "missing_map_row": missing_rows,
+        },
+        "units": joined,
+    }
+
+
 def read_scale_m_params_py() -> float | None:
     p = HERE / "params.py"
     if not p.is_file():
         return None
     for line in p.read_text(encoding="utf-8").splitlines():
         if line.strip().startswith("SCALE_M"):
-            # SCALE_M = 1.0
             try:
                 return float(line.split("=", 1)[1].strip().split()[0])
             except (IndexError, ValueError):
@@ -88,20 +181,36 @@ def read_scale_m_params_py() -> float | None:
     return None
 
 
-def build_recipe(graph: dict, params_overlay: dict | None) -> dict:
+def build_recipe(
+    graph: dict,
+    params_overlay: dict | None,
+    unit_map: dict | None = None,
+    map_path: Path | None = None,
+) -> dict:
     inv = inventory(graph)
     disk_scale = read_scale_m_params_py()
     overlay_scale = None
     if params_overlay:
         overlay_scale = params_overlay.get("scale_m")
-    return {
+
+    coverage = None
+    if unit_map is not None:
+        coverage = map_coverage(graph, unit_map)
+        if map_path is not None:
+            coverage["map_path"] = str(map_path)
+
+    status = "stub_not_wired"
+    if coverage and coverage["rows_classified_pct"] == 100.0:
+        status = "name_map_loaded_wp_d1"
+
+    recipe = {
         "schema": "aqs-3d-recipe-0.1-stub",
-        "status": "stub_not_wired",
+        "status": status,
         "licence": "CERN-OHL-S-2.0",
         "honest_note": (
-            "No FreeCAD Feature is created from this recipe. "
+            "No FreeCAD Feature is created from this recipe yet. "
             "Baseline solids remain params.py + build_plant.py. "
-            "Phase D WPs: unit_id map, safe SCALE_M apply, presence filter, pack 3d/."
+            "WP-D1 name map is loaded for coverage; WP-D2..D4 wire overlay/presence."
         ),
         "topology_authority": graph.get("doc_id") or "AQS-FLOW-GRAPH-001",
         "graph_inventory": {
@@ -115,6 +224,27 @@ def build_recipe(graph: dict, params_overlay: dict | None) -> dict:
                 "nodes_by_sector",
             )
         },
+        "name_map_coverage": (
+            {
+                k: coverage[k]
+                for k in (
+                    "schema",
+                    "map_revision",
+                    "map_path",
+                    "graph_nodes",
+                    "map_entries",
+                    "rows_classified",
+                    "rows_classified_pct",
+                    "by_status",
+                    "present_nodes",
+                    "present_mapped_or_massing",
+                    "present_coverage_pct",
+                    "gaps",
+                )
+            }
+            if coverage
+            else None
+        ),
         "scale": {
             "params_py_SCALE_M": disk_scale,
             "overlay_scale_m": overlay_scale,
@@ -126,17 +256,20 @@ def build_recipe(graph: dict, params_overlay: dict | None) -> dict:
             "entry": "build_plant.py",
             "protocol": "docs-authority/FREECAD_PROTOCOL.md",
             "consumes_graph": False,
+            "name_map_ref": "unit_freecad_map.json",
         },
         "future_hooks": [
-            "WP-D1 unit_id ↔ FreeCAD object name map",
             "WP-D2 safe apply of overlay scale_m / module counts to a params copy",
             "WP-D3 export pack module 3d/ (recipe + rebuild pointer + optional STEP)",
-            "WP-D4 presence filter from enabled=false",
-            "WP-D5 optional placement_mm (schema)",
+            "WP-D4 presence filter from enabled=false / placeholder policy",
+            "WP-D5 optional placement_mm (schema study)",
         ],
         "units_sample": inv["units"][:20],
         "units_full_count": len(inv["units"]),
     }
+    if coverage:
+        recipe["_name_map_units"] = coverage["units"]
+    return recipe
 
 
 def rebuild_baseline() -> int:
@@ -149,12 +282,39 @@ def rebuild_baseline() -> int:
     return subprocess.call(cmd, cwd=str(HERE))
 
 
+def print_coverage(cov: dict) -> None:
+    print("name map coverage:")
+    print(
+        "  classified=%s/%s (%.1f%%)  present_mapped_or_massing=%s/%s (%.1f%%)"
+        % (
+            cov["rows_classified"],
+            cov["graph_nodes"],
+            cov["rows_classified_pct"],
+            cov["present_mapped_or_massing"],
+            cov["present_nodes"],
+            cov["present_coverage_pct"],
+        )
+    )
+    print("  by_status:", cov["by_status"])
+    gaps = cov.get("gaps") or {}
+    if gaps.get("unmapped"):
+        print("  gaps.unmapped (%d):" % len(gaps["unmapped"]), ", ".join(gaps["unmapped"][:12]),
+              ("..." if len(gaps["unmapped"]) > 12 else ""))
+    if gaps.get("placeholder_skip"):
+        print(
+            "  gaps.placeholder_skip (%d):" % len(gaps["placeholder_skip"]),
+            ", ".join(gaps["placeholder_skip"]),
+        )
+    if gaps.get("missing_map_row"):
+        print("  ERROR missing_map_row:", gaps["missing_map_row"])
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument(
         "--graph",
         type=Path,
-        default=DEFAULT_GRAPH if DEFAULT_GRAPH.is_file() else None,
+        default=DEFAULT_GRAPH,
         help="plant_flow_graph.json or flow_graph_snapshot.json",
     )
     ap.add_argument(
@@ -162,6 +322,17 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=None,
         help="optional export pack params.json overlay",
+    )
+    ap.add_argument(
+        "--map",
+        type=Path,
+        default=DEFAULT_MAP if DEFAULT_MAP.is_file() else None,
+        help="unit_freecad_map.json (WP-D1); default beside this script",
+    )
+    ap.add_argument(
+        "--coverage",
+        action="store_true",
+        help="print name-map coverage %% and exit 0 if 100%% rows classified",
     )
     ap.add_argument(
         "--out",
@@ -182,7 +353,22 @@ def main(argv: list[str] | None = None) -> int:
 
     graph = load_json(args.graph)
     overlay = load_json(args.params) if args.params else None
-    recipe = build_recipe(graph, overlay)
+    unit_map = load_unit_map(args.map) if args.map else load_unit_map(DEFAULT_MAP)
+    map_path = args.map if args.map and args.map.is_file() else (
+        DEFAULT_MAP if DEFAULT_MAP.is_file() else None
+    )
+
+    if args.coverage:
+        if unit_map is None:
+            print("ERROR: --coverage requires unit_freecad_map.json", file=sys.stderr)
+            return 2
+        cov = map_coverage(graph, unit_map)
+        cov["map_path"] = str(map_path) if map_path else None
+        print("graph:", args.graph)
+        print_coverage(cov)
+        return 0 if cov["rows_classified_pct"] == 100.0 and not cov["missing_map_rows"] else 1
+
+    recipe = build_recipe(graph, overlay, unit_map=unit_map, map_path=map_path)
 
     gi = recipe["graph_inventory"]
     print("graph:", args.graph)
@@ -196,20 +382,25 @@ def main(argv: list[str] | None = None) -> int:
         % (recipe["scale"]["params_py_SCALE_M"], recipe["scale"]["overlay_scale_m"])
     )
     print("  status:", recipe["status"])
+    if recipe.get("name_map_coverage"):
+        print_coverage(recipe["name_map_coverage"])
+    elif map_path is None:
+        print("  name map: (not found — place unit_freecad_map.json beside bridge)")
 
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
-        # full unit list in file
         full = dict(recipe)
         full["units"] = inventory(graph)["units"]
+        if "_name_map_units" in full:
+            full["name_map_units"] = full.pop("_name_map_units")
         full.pop("units_sample", None)
         args.out.write_text(json.dumps(full, indent=2) + "\n", encoding="utf-8")
         print("wrote", args.out)
 
     if args.rebuild_baseline:
-        # Ensure share path shims if materials/stl missing (best-effort)
         models = HERE.parent
-        tables_csv = SHARE / "tables" / "materials.csv"
+        share_root = SHARE_CANDIDATE
+        tables_csv = share_root / "tables" / "materials.csv"
         if tables_csv.is_file() and not (models / "materials.csv").exists():
             try:
                 (models / "materials.csv").symlink_to(Path("../tables/materials.csv"))
