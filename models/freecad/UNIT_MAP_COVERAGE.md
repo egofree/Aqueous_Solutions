@@ -8,7 +8,7 @@
 | Graph | AQS-FLOW-GRAPH-001 Rev B (91 nodes) |
 | Map | `models/freecad/unit_freecad_map.json` (hub: `cad/freecad/`) |
 | Evidence | `plant.FCStd` inventory via `/usr/bin/freecadcmd` (1060 objects, 976 Part::Feature) |
-| Plan | AQS-PLAN-3D-001 WP-D1 |
+| Plan | AQS-PLAN-3D-001 WP-D1 done; **WP-D1b queued** (CAD massing) |
 
 ## Summary counts
 
@@ -24,7 +24,27 @@
 - Present units mapped or massing_only: **58/79** (73.4%)
 - Placeholder nodes: **12** (skip or massing_only — no invented boxes)
 
+## WP-D1b queue (CAD massing side quest) — **queued / not started**
+
+| Field | Value |
+|---|---|
+| WP id | **WP-D1b** (alias **CAD-M1**) |
+| Mike choice | `queue_all_massing` 2026-10-01 (America/Chicago) |
+| Plan | AQS-PLAN-3D-001 Rev C §4 WP-D1b |
+| Pipeline | **WP-D2** still next for overlay; **parallel OK** with D1b (presence will skip unmapped) |
+| Geometry this turn | **None** — plan queue only; no FreeCAD invent (TBD stubs only when WP executes) |
+
+### In-scope present unmapped (18) — generate massing when WP-D1b runs
+
+`MEOH_FC`, `MEOH_FERM`, `MEOH_SYNTH`, `MEOH_TANK`, `BLACK_DIGEST`, `BMED_UPW_POLISH`, `GREY_TREAT`, `S13_CLASS_TREAT`, `FAB_UPW_TANK`, `WS_AMMONIA`, `WS_DOPE`, `WS_HF_ED`, `WS_KOH`, `WS_NITRIC`, `WS_PEROX`, `WS_SLURRY`, `WS_SOLV`, `GEO_HP_CLOSED_LOOP`
+
+### Remain unmapped / logical-only (3) — exclude from D1b
+
+`BOUNDARY_EXPORT`, `LOAD_AGG`, `Q4_BUS`
+
 ## Unmapped present (honest gaps)
+
+> **WP-D1b:** 18 process units below are **queued for massing**; `BOUNDARY_EXPORT`, `LOAD_AGG`, `Q4_BUS` remain logical-only (not in D1b).
 
 | unit_id | sector | class | Notes |
 |---|---|---|---|
