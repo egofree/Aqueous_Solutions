@@ -84,9 +84,10 @@ flow_graph/
   test_authority_contract.py
   render_layer_views.py     # → views/*.{json,dot,svg} (Graphviz)
   pfd_bridge.py             # thin helper for matplotlib SLD/MF bridges
-  LEGACY_PFD_SCRIPTS.md     # graph-bridged vs still-legacy pfd_scripts
+  LEGACY_PFD_SCRIPTS.md     # graph-bridged matplotlib sheets (optional)
+  exporters/matplotlib/     # optional PFD/SLD generators (PNGs not shipped)
   derived/                  # generated excerpts (not competing CAD masters yet)
-  views/                    # JSON + DOT + SVG layer renders
+  views/                    # JSON + DOT + SVG layer renders (primary)
 ```
 
 ## Regenerate
@@ -132,7 +133,8 @@ Legacy PFD/SLD scripts: `LEGACY_PFD_SCRIPTS.md`.
 ## Matplotlib bridge
 
 `pfd_bridge.py` — shared loader/filter for SLD/MF + IA line PFDs + `hydro_dock_pfd` + znbr2/meoh.
-See `LEGACY_PFD_SCRIPTS.md`.
+See `LEGACY_PFD_SCRIPTS.md` and `exporters/matplotlib/README.md`.
+**Share:** views SVG primary; matplotlib optional; PNGs not shipped.
 
 
 ## WP-C1 — design-tool export modules (graph consumers)

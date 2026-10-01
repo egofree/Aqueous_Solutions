@@ -23,9 +23,8 @@ models/freecad/     # *.py builders, *.FCStd, *.step
 models/openscad/    # root + detail/ + foam_ew/ *.scad
 models/export/      # *.stl (root + detail/; no *.log)
 iso/                # AQS-ISO-*.png + iso_fab_drawings.pdf
-pfd/scripts/        # PFD Python generators
-pfd/images/         # current PFD / SLD PNGs (40)
-flow_graph/         # plant flow graph schema, JSON, views, derived, tests
+flow_graph/         # plant flow graph schema, JSON, views/, derived/, tests
+  exporters/matplotlib/  # optional legacy PFD/SLD generators (PNGs not shipped)
 design_tool/        # aqs_design_tool + web source (no node_modules/dist/sandbox)
 tables/             # BOM / materials / shopping lists
 media/              # animation stills (D0–D6, F0) + plant_phase_d.mp4 + logo3.png
@@ -69,15 +68,20 @@ bash cad/REBUILD.sh
 cd cad/freecad && /usr/bin/freecadcmd build_plant.py
 ```
 
-PFD images from hub:
+Primary diagrams in share are **`flow_graph/views/*.svg`** (graph-driven).
+Matplotlib PFD/SLD generators are optional under
+`flow_graph/exporters/matplotlib/` — **PNGs are not shipped** in this tree
+(Mike: `demote_drop_pngs`). Hub still holds working `pfd_scripts/` + PNGs.
 
 ```bash
+# Hub (working CAD — leave untouched when refreshing share):
 cd /home/user/dev/Aqueous/Diagrams/aqueous_diagrams/pfd_scripts
-# e.g. python wet_line_factory_pfd.py   (writes PNG next to hub or cwd per script)
+# e.g. python wet_line_factory_pfd.py
 ```
 
 After a hub rebuild, refresh this share tree by re-copying changed
-`*.FCStd` / STLs / PNGs / docs into the matching folders above.
+`*.FCStd` / STLs / docs / flow_graph views into the matching folders above.
+Do **not** re-copy hub PFD PNGs into share.
 
 Share-tree local paths (if you adapt scripts here):
 
@@ -87,8 +91,8 @@ Share-tree local paths (if you adapt scripts here):
 | `cad/*.scad`, `cad/detail/`, `cad/foam_ew/` | `models/openscad/` |
 | `cad/export/`, `cad/detail/stl/` | `models/export/` |
 | `cad/iso/` | `iso/` |
-| `pfd_scripts/` | `pfd/scripts/` |
-| hub `*.png` | `pfd/images/` |
+| `pfd_scripts/` | `flow_graph/exporters/matplotlib/` (scripts only; PNGs not shipped) |
+| hub `*_pfd.png` / SLD | **not copied** — stay on hub only |
 | `cad/*.md` | `docs-authority/` |
 | `cad/animation/`, `cad/freecad/animation/` | `media/` |
 | `flow_graph/` | `flow_graph/` |
