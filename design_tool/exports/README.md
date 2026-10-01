@@ -22,4 +22,4 @@ Licence: CERN-OHL-S-2.0. Per-pack contents follow AQS-UI-001 §8 / WP-C1.
 
 Unused modules stay off. Matplotlib is optional and **not** topology authority.
 No invented rates/streams/nameplates. WP-C2 GitHub publish is separate and blocked
-until Mike authorizes.
+until publish is explicitly authorized.

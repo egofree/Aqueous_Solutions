@@ -16,10 +16,9 @@ Graph-bridged via `../../pfd_bridge.py` where noted in
 `../../LEGACY_PFD_SCRIPTS.md`.
 
 - **Not required** to consume the share package.
-- **PNGs are not shipped** in this publish tree (Mike: `demote_drop_pngs`).
-- Hub working copies remain at
-  `Diagrams/aqueous_diagrams/pfd_scripts/` + hub-root `*_pfd.png` /
-  `electrical_sld.png` — leave those untouched when refreshing share.
+- **PNGs are not shipped** in this publish tree.
+- Working PNG copies may exist in a local hub (not published); do not
+  copy them into this tree when refreshing share.
 
 ## Optional local regenerate
 

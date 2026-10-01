@@ -152,5 +152,4 @@ TBD until procurement. CERN-OHL-S-friendly cites in §2.
 
 ## 5. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/CONTINUOUS_KW_REQUIREMENTS.md`  
-Share: `share/aqueous-solutions/docs-authority/CONTINUOUS_KW_REQUIREMENTS.md`
+Canonical in this tree: `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md`  

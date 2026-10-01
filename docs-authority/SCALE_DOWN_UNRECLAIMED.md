@@ -6,7 +6,7 @@ Date: 2026-10-01
 Authority: AQS-SCALE-001 Rev C (`cad/SCALE_MODEL.md`); MVS framing
 AQS-UI-001 Rev C §3.2; sector map AQS-SEC-001 Rev D; streams AQS-STR-001;
 mass-flow AQS-MF-001; vent AQS-VENT-001; continuous kW AQS-REQ-KW-001;
-planning gap audit AQS-MVS-GAP-001 (`/home/user/dev/Aqueous/planning/MVS_GAP_AUDIT.md`).  
+planning gap audit AQS-MVS-GAP-001 (local planning artefacts, not published).  
 Style: AQS-DOC-001.  
 **Stage = encode policy.** Not a PE stamp. Not vendor nameplates.
 
@@ -18,8 +18,7 @@ Style: AQS-DOC-001.
 
 Licence: **CERN-OHL-S-2.0**.
 
-Canonical: `Diagrams/aqueous_diagrams/cad/SCALE_DOWN_UNRECLAIMED.md`  
-Share: `share/aqueous-solutions/docs-authority/SCALE_DOWN_UNRECLAIMED.md`  
+Canonical in this tree: `docs-authority/SCALE_DOWN_UNRECLAIMED.md`  
 Solver encoding: `design_tool/aqs_design_tool/solver/scale_down_map.py`
 
 ---
@@ -173,7 +172,7 @@ P0 solver consumes sector-level **and** unit-level maps (Rev C). Blow-mold remai
 | SCALE_MODEL.md | AQS-SCALE-001 | Growth / discrete jumps |
 | DESIGN_TOOL_ARCHITECTURE.md | AQS-UI-001 Rev C | Unreclaimed framing §3.2 |
 | SECTOR_DEFINITIONS.md | AQS-SEC-001 Rev D | required_for_mvs_closure |
-| planning/MVS_GAP_AUDIT.md | AQS-MVS-GAP-001 | Gap list; this map closes §4.4 encode item |
+| Local planning (not published): MVS_GAP_AUDIT | AQS-MVS-GAP-001 | Gap list; this map closes §4.4 encode item |
 | STREAM_REGISTER.md | AQS-STR-001 | Stable S## |
 | AUTHORITY.md | AQS-AUTH-001 | Hub pointer |
 
@@ -182,6 +181,6 @@ P0 solver consumes sector-level **and** unit-level maps (Rev C). Blow-mold remai
 ## 7. Sync
 
 ```bash
-cd Diagrams/aqueous_diagrams
+cd models   # or local hub root
 python3 rebuild.py --sync
 ```

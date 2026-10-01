@@ -197,7 +197,7 @@ No invented L/d or kg/d on this sheet.
 ## 9. PFD and regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 terrace_irrigation_pfd.py
 python3 farm_pfd.py
 python3 campus_life_hazard_pfds.py   # water_cycle / campus footnotes

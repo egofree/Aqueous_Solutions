@@ -59,7 +59,7 @@ def _load_overlay_apply():
 def _default_graph() -> Path | None:
     candidates = [
         SHARE_CANDIDATE / "flow_graph" / "plant_flow_graph.json",
-        HERE.parents[1].parent / "flow_graph" / "plant_flow_graph.json",  # hub cad/ → aqueous_diagrams
+        HERE.parents[1].parent / "flow_graph" / "plant_flow_graph.json",  # share: models/ → repo root
         HERE.parents[2] / "flow_graph" / "plant_flow_graph.json",
     ]
     for c in candidates:

@@ -137,7 +137,7 @@ cd models/freecad
 /usr/bin/freecad wet_line.FCStd   # GUI
 ```
 
-**Hub operators** continue to use `Diagrams/aqueous_diagrams/rebuild.py`
+**Local hub operators** (not this repo) may use a hub `rebuild.py`
 and `cad/REBUILD.sh` (absolute hub paths). `docs-authority/REBUILD.md`
 documents that menu; it is not required for share-tree rebuild.
 

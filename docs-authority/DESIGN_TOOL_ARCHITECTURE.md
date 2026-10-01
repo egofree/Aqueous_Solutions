@@ -54,9 +54,7 @@ Define the architecture of an interactive design tool that:
 | Modular export pack; phased roadmap | Mixing Odysseus AGPL data into the MVS or UI tree |
 | Host path local → GitHub → cloud | Invented permits or clause quotations |
 
-Canonical path: `Diagrams/aqueous_diagrams/cad/DESIGN_TOOL_ARCHITECTURE.md`  
-Share: `share/aqueous-solutions/docs-authority/DESIGN_TOOL_ARCHITECTURE.md`
-
+Canonical in this tree: `docs-authority/DESIGN_TOOL_ARCHITECTURE.md`  
 ---
 
 ## 3. Locked decisions
@@ -218,7 +216,7 @@ the authoring authority until a published remote exists.
 ### 3.9 Single machine-readable model (typed plant graph sole)
 
 1. One typed **plant graph** (JSON preferred; YAML allowed as isomorphic
-   view), presently `Diagrams/aqueous_diagrams/flow_graph/`
+   view), presently `flow_graph/`
    (**AQS-FLOW-GRAPH-001**), **shall** be the **sole topology authority**
    for units and streams (`typed_graph_sole`). Design-tool
    `candidate_mvs` **shall** be **folded into** that graph **or** exposed
@@ -543,7 +541,7 @@ scaffold (Phase B) are **complete**. Forward phases:
 |---|---|---|---|
 | **A′ — Unify** | A′ | Typed plant graph = sole topology authority; fold `candidate_mvs` or make it a projection | Single write path; API/solver consume graph/projection; STREAM/MASS derived/sync; contract tests |
 | **B′ — Layer UI on graph** | B′ | **done** 2026-10-01 | React+SVG graph-layer; layer filters PFD/MFD/EFD-*; export graph snapshot; B′ exit Yes; C planned/unblocked |
-| **C — Export-from-graph → GitHub** | C | Modular export packs from graph + public CERN-OHL-S package | **WP-C1 done** (local pfd/sld/bom from graph; matplotlib optional); **C2/C3 blocked** pending Mike GitHub authorize |
+| **C — Export-from-graph → GitHub** | C | Modular export packs from graph + public CERN-OHL-S package | **WP-C1 done** (local pfd/sld/bom from graph; matplotlib optional); **C2/C3 blocked** pending GitHub publish authorize |
 | **D — P2 3D** | D | Campus 3D from same model | **FreeCAD rebuild bias**; Three.js only with written decision |
 | **E — P3 Cloud** | E | Hosted API/UI under CERN-OHL-S | Auth, pack storage; MVS still immutable |
 
@@ -554,7 +552,7 @@ scaffold (Phase B) are **complete**. Forward phases:
 | **P0 — Schema + solver / evidence** | **done** | `design_tool/` schema aqs-mvs-0.3; FastAPI; Phase A WPs; ESS peers required |
 | **P1 — Schematic UI scaffold** | **done**; **B′ done** | `design_tool/web/` Vite+React+TS; Phase B exit + B′ exit 2026-10-01 CT |
 
-**Graph seed:** `Diagrams/aqueous_diagrams/flow_graph/` (AQS-FLOW-GRAPH-001);
+**Graph seed:** `flow_graph/` (AQS-FLOW-GRAPH-001);
 adapter + layer SVG + process PFD bridges issued (WP-A10 Closed). Unify of
 `candidate_mvs` **WP-Ap1 done** — generated projection of `plant_flow_graph.json` (`export_candidate_mvs.py`).
 
@@ -572,9 +570,9 @@ a phase dependency.
 - Scale truth remains `cad/SCALE_MODEL.md` / `freecad/params.py`.
 - Share mirror via `rebuild.py --sync` into
   `share/aqueous-solutions/docs-authority/`.
-- Planning audits (`/home/user/dev/Aqueous/planning/`) are separate from
+- Planning audits (local planning artefacts, not published) are separate from
   CAD authority and are not mirrored into the public share tree.
-- No git commit from agent passes unless Mike explicitly requests one.
+- No git commit from agent passes unless the operator explicitly requests one.
 - Odysseus board (**AQS-ORG-001**) may track meta tasks for building this
   tool; it is not an authority for the MVS model or UI runtime.
 
@@ -598,7 +596,7 @@ a phase dependency.
    AQS-REQ-KW-001).
 3. ~~**Complete Sector Definition catalogue**~~ — **Issued:** `cad/SECTOR_DEFINITIONS.md`
    (**AQS-SEC-001** Rev D). Class list remains AQS-UI-001 §3.1; ambiguities
-   for Mike in AQS-SEC-001 §5 (schema worker reconcile).
+   for the operator in AQS-SEC-001 §5 (schema worker reconcile).
 4. **3D path pick** — **Bias FreeCAD rebuild** (§3.3 / Phase D). Three.js /
    live mesh / LOD only with a **written decision** (WP-D1).
 5. **`candidate_mvs` unify** — **WP-Ap1 done** (graph write + projection).
@@ -621,4 +619,4 @@ a phase dependency.
 | REBUILD.md | AQS-REB-001 | PFD / plant / share sync |
 | SECTOR_DEFINITIONS.md | AQS-SEC-001 | sector_id → Sector Definition catalogue |
 | MeOH_TRAIN.md | AQS-MeOH-001 | MeOH ESS / process peer |
-| planning/MVS_GAP_AUDIT.md, planning/SECTOR_CAPACITY_AUDIT.md, planning/LEGACY_PROFILE_GAP.md | AQS-MVS-GAP-001 / AQS-AUD-001 / AQS-GAP-001 | Planning audits; not CAD authority |
+| Local planning artefacts (not published): MVS_GAP / SECTOR_CAPACITY / LEGACY_PROFILE audits | AQS-MVS-GAP-001 / AQS-AUD-001 / AQS-GAP-001 | Planning audits; not CAD authority |

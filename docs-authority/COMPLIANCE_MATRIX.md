@@ -178,5 +178,4 @@ vendor nameplates to clear them:
 
 ## 10. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/COMPLIANCE_MATRIX.md`  
-Share: `share/aqueous-solutions/docs-authority/COMPLIANCE_MATRIX.md`
+Canonical in this tree: `docs-authority/COMPLIANCE_MATRIX.md`  

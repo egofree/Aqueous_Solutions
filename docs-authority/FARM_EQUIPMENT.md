@@ -95,7 +95,7 @@ Detail, climate option rule, and planting bands: AQS-TRR-001.
 ## 5. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 farm_pfd.py
 python3 nutrient_pfd.py
 python3 terrace_irrigation_pfd.py

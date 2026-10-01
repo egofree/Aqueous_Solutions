@@ -233,7 +233,7 @@ enclosed-greenhouse drain is S42 → HDR_GREY — never mixed into CATCH.
 ## 8. Rebuild
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 mass_flow_pfd.py
 python3 vent_closure_pfd.py
 ```

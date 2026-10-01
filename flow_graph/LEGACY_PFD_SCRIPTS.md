@@ -57,7 +57,7 @@ Do **not** invent rates/nameplates/stream routes in either path.
 ## Regenerate graph views
 
 ```bash
-cd Diagrams/aqueous_diagrams/flow_graph
+cd flow_graph
 python3 build_seed.py
 python3 export_authority_md.py
 python3 render_layer_views.py
@@ -66,11 +66,10 @@ python3 render_layer_views.py
 ## Regenerate bridged PNGs (optional; not shipped in share)
 
 **Share:** scripts live at `flow_graph/exporters/matplotlib/`. PNGs are
-**not** committed here (`demote_drop_pngs`). Primary published diagrams are
-`views/*.svg`.
+**not** committed here. Primary published diagrams are `views/*.svg`.
 
-**Hub (working CAD — leave untouched by share refresh):**
-`Diagrams/aqueous_diagrams/pfd_scripts/` + hub-root PNGs.
+**Local hub** (not published): working `pfd_scripts/` + PNG copies may
+remain there — leave them untouched by share refresh.
 
 ```bash
 # Share-tree optional local run (writes PNGs next to scripts — do not commit):
@@ -79,11 +78,9 @@ cd flow_graph/exporters/matplotlib
 /usr/bin/python3 mass_flow_pfd.py
 # …any other sheet in this folder
 
-# Hub working regenerate (preferred for operators):
-cd Diagrams/aqueous_diagrams
-/usr/bin/python3 pfd_scripts/electrical_sld.py
-# or: python3 rebuild.py --all-pfds
-#     python3 rebuild.py --sync
+# Local hub regenerate (optional; not in this repo):
+# python3 pfd_scripts/electrical_sld.py
+# or hub rebuild.py --all-pfds / --sync
 ```
 
 ## Remaining legacy (process sheets)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One-shot: open plant.FCStd, fit view, save a check PNG. Run with GUI FreeCAD:
 
-    cd ~/dev/Aqueous/Diagrams/aqueous_diagrams/cad/freecad
+    cd models/freecad   # this repo
     /usr/bin/freecad verify_view_png.py
 
 Or with plant already open, paste the body of verify() into the Python console.

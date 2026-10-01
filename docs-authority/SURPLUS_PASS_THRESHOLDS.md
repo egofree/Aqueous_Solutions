@@ -10,7 +10,7 @@ planning gap audit AQS-MVS-GAP-001.
 Style: AQS-DOC-001.  
 **Stage = study pass thresholds.** Not a PE stamp. Not vendor nameplates.
 Does **not** freeze `AQS-MVS-001`. Numbers are labeled **study** until
-Mike locks berth count, SITE_LAT, and wafer starts.
+Project locks berth count, SITE_LAT, and wafer starts.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
@@ -19,8 +19,7 @@ Mike locks berth count, SITE_LAT, and wafer starts.
 
 Licence: **CERN-OHL-S-2.0**.
 
-Canonical: `Diagrams/aqueous_diagrams/cad/SURPLUS_PASS_THRESHOLDS.md`  
-Share: `share/aqueous-solutions/docs-authority/SURPLUS_PASS_THRESHOLDS.md`  
+Canonical in this tree: `docs-authority/SURPLUS_PASS_THRESHOLDS.md`  
 Solver: `design_tool/.../solver/stub.py` `_surplus_stub` + `MvsCriteriaModel.surplus_thresholds`
 
 ---
@@ -84,7 +83,7 @@ Candidate seed uses **upper-band** S14 = **4.2 kg/d** (AQS-AUD-001 §12 band
 1.4–4.2) so study food export = 4.2 − crew×0.6 = **1.8 kg/d** at crew=4 →
 `pass_study=true` vs ≥0.5. Mid-band 2.8 remains a valid alternate sandbox
 path but fails the study bar. **Yield/berth assumption = study** — not a
-nutritionist lock; retune when Mike issues berth/ration.
+nutritionist lock; retune when berth/ration is issued.
 
 ## 5. Explicit unknowns (do not invent)
 
@@ -100,7 +99,7 @@ nutritionist lock; retune when Mike issues berth/ration.
 
 ## 6. Next measurement / decision
 
-1. Lock berth count and ration table (Mike).
+1. Lock berth count and ration table (operator decision).
 2. Issue SITE_LAT for energy surplus climate band.
 3. Confirm VCD/remin equipment IDs online before claiming potable export.
 4. Retune thresholds in Rev B when measurements land — keep study label until freeze evidence table exists.
@@ -112,8 +111,8 @@ nutritionist lock; retune when Mike issues berth/ration.
 | Doc | ID | Role |
 |---|---|---|
 | DESIGN_TOOL_ARCHITECTURE.md | AQS-UI-001 | §11.1.2 open item |
-| planning/SECTOR_CAPACITY_AUDIT.md | AQS-AUD-001 | Bands |
-| planning/MVS_GAP_AUDIT.md | AQS-MVS-GAP-001 | Gap §4.2 |
+| Local planning (not published): SECTOR_CAPACITY_AUDIT | AQS-AUD-001 | Bands |
+| Local planning (not published): MVS_GAP_AUDIT | AQS-MVS-GAP-001 | Gap §4.2 |
 | SCALE_MODEL.md | AQS-SCALE-001 | Overprod policy |
 | AUTHORITY.md | AQS-AUTH-001 | Hub |
 
@@ -122,6 +121,6 @@ nutritionist lock; retune when Mike issues berth/ration.
 ## 8. Sync
 
 ```bash
-cd Diagrams/aqueous_diagrams
+# Optional — run only in a local working hub (not published):
 python3 rebuild.py --sync
 ```

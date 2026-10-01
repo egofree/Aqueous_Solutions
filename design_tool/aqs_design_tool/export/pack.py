@@ -243,7 +243,7 @@ def _emit_bom(
 
     # Self-copy flags from graph mvs (AQS-BOM-SC-001) — no invented completeness
     self_copy: dict[str, Any] = {}
-    bom_doc = "Diagrams/aqueous_diagrams/bom/SELF_COPY_BOM.md"
+    bom_doc = "docs-authority/SELF_COPY_BOM.md"
     if graph:
         mvs = graph.get("mvs") or {}
         crit = mvs.get("mvs_criteria") or {}

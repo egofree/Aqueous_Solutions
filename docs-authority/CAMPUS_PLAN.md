@@ -19,7 +19,7 @@ BMED / gas / electrical aisle. Do not redraw that chemistry.
 
 | Layer | Where |
 |---|---|
-| Names | `GLOSSARY.md`, `LOCAL_BOT_HANDOFF.md` §2 |
+| Names | `GLOSSARY.md` (locked strings) |
 | Plant PFD | `continuous_recycling_pfd.png` |
 | Line PFDs | wet, EW, oil, glass, BMED, polish, ZnBr2, SLD, container |
 | 3D | `cad/freecad/build_plant.py` → `plant.FCStd` |

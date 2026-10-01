@@ -24,7 +24,7 @@ Licence: CERN-OHL-S-2.0. No diffusion pictures. Not a PE stamp.
 
 AQS-BLD-001 placed the truck dock south of CORE and credited STAIR_P
 (no L-1 door) plus STAIR_MAINT (operators only) for vertical
-circulation. Mike’s site rule for this pass:
+circulation. Project site rule for this pass:
 
 1. Primary truck dock faces **north** (pole-facing in the northern
    hemisphere) at **L0 grade**.
@@ -186,7 +186,7 @@ Do not place yard consumers straddling the west wall into the plate.
 Rebuild:
 
 ```bash
-cd Diagrams/aqueous_diagrams
+# Optional — run only in a local working hub (not published):
 python3 pfd_scripts/building_stack_pfds.py
 python3 pfd_scripts/campus_life_hazard_pfds.py
 /usr/bin/freecadcmd cad/freecad/build_plant.py
@@ -220,5 +220,4 @@ items remain deferred (no invented truck counts).
 
 ## 7. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/SITE_ACCESS.md`  
-Share: `share/aqueous-solutions/docs-authority/SITE_ACCESS.md`
+Canonical in this tree: `docs-authority/SITE_ACCESS.md`  

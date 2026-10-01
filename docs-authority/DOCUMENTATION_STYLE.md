@@ -120,10 +120,9 @@ When touching an authority file, fix if missing:
 
 Priority files for Wave 2: FUEL_CELL, CRYO_COLD_BOX, VENT_CLOSURE,
 GEOTHERMAL_BACKUP, BUILDING_STACK, STREAM_REGISTER, REMAINING_BLD,
-planning/SECTOR_CAPACITY_AUDIT, HAZARD_SEPARATION, SITE_ACCESS, ELECTRICAL,
+local planning SECTOR_CAPACITY_AUDIT (not published), HAZARD_SEPARATION, SITE_ACCESS, ELECTRICAL,
 COMPLIANCE_MATRIX, this file.
 
 ## 11. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/DOCUMENTATION_STYLE.md`  
-Share: `share/aqueous-solutions/docs-authority/DOCUMENTATION_STYLE.md`
+Canonical in this tree: `docs-authority/DOCUMENTATION_STYLE.md`  

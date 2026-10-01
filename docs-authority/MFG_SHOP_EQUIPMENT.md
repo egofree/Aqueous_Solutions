@@ -12,7 +12,7 @@ Authority: `MANUFACTURING/Manufacturing_Overview.md`, Precious Plastic kit
 |---|---|---|---|
 | A | — | Massing-level named machines | 2026-09-27 |
 | B | 1 | Point metals forming to AQS-MFG-MET-001 / S57–S63 | 2026-09-28 |
-| C | 2 | Blow mold **in MFG / in MVS** (Mike 2026-10-01); electrode coat pointer | 2026-10-01 |
+| C | 2 | Blow mold **in MFG / in MVS** (Project decision 2026-10-01); electrode coat pointer | 2026-10-01 |
 | D | 3 | ST-BLOW-01 duty 0.5 kW_e avg / 2–4 peak; industrial 14–28 kW avg forbidden as M1 continuous | 2026-10-01 |
 
 ## 1. Locked CAD units
@@ -47,7 +47,7 @@ Upstream reference: [Precious Plastic](https://preciousplastic.com/) /
 **Metal forming (issued detail):** wire draw / cold mill / gas atomizer
 path is now AQS-MFG-MET-001 / AQS-EQP-MFG-MET-001 / AQS-PFD-MFG-MET-001
 (`metal_forming_pfd.png`); streams S57–S63. Twin-screw extruder remains out of M1 CAD massing unless issued later.
-**Blow mold / shoe mold:** **required for MVS** (Mike 2026-10-01) — seed
+**Blow mold / shoe mold:** **required for MVS** (Project decision 2026-10-01) — seed
 `BLOW_MOLD` + AQS-BOM-SC-001 Rev D; Present FreeCAD open → **ST-BLOW-01**.
 Electrode coating: AQS-MFG-ELC-001 / `ELECTRODE_COAT` → **ST-ELC-01**.
 Sandbox tracks progress; gaps are open studies, not accepted endpoints.
@@ -72,7 +72,7 @@ Sandbox tracks progress; gaps are open studies, not accepted endpoints.
 ## 5. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 mfg_shop_pfd.py
 python3 metal_forming_pfd.py
 ```

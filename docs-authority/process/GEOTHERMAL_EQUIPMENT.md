@@ -59,6 +59,6 @@ enters Q4 or hab AHU.
 ## 5. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 geothermal_pfd.py
 ```

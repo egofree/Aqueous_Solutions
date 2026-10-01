@@ -366,5 +366,4 @@ AWS qualification. Do not treat WPS-N-* as qualified procedures.
 
 ## 8. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/ASME_CLASS_SHEETS.md`  
-Share: `share/aqueous-solutions/docs-authority/ASME_CLASS_SHEETS.md`
+Canonical in this tree: `docs-authority/ASME_CLASS_SHEETS.md`  

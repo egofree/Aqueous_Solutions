@@ -16,9 +16,7 @@ Style: AQS-DOC-001.
 
 Licence: **CERN-OHL-S-2.0**.
 
-Canonical: `Diagrams/aqueous_diagrams/cad/ESS_DUTY_MATRIX.md`  
-Share: `share/aqueous-solutions/docs-authority/ESS_DUTY_MATRIX.md`
-
+Canonical in this tree: `docs-authority/ESS_DUTY_MATRIX.md`  
 ---
 
 ## 1. Purpose
@@ -62,7 +60,7 @@ MeOH tank / FC bank have **no** discrete SCALE_M formula in AQS-SCALE-001 §6
 | Synth rate vs SCALE_M | Track wet-feed / Faraday H₂ (∝ cassette), not bay stretch | Surplus-H₂ only |
 
 Encode in AQS-SCALE-001 / AQS-SCALE-UR-001 Rev bumps as notes — full module
-count formula remains P1 if Mike wants discrete jumps.
+count formula remains P1 if discrete jumps are preferred.
 
 ---
 
@@ -102,7 +100,7 @@ Solver emits bottleneck `H2_pool_contended` when ≥2 of S45/S49/S74 present
 
 1. Vendor / listing package for ZnBr₂ BMS (nameplate TBD).
 2. Site survey before any GEO_ORC kW (out of ESS matrix; GEO study).
-3. Mike decision: whether M1 hydro energy asymmetry is accepted as
+3. Project decision: whether M1 hydro energy asymmetry is accepted as
    study-complete for freeze evidence, or SCALE_M tank growth required
    before freeze language.
 
@@ -114,5 +112,5 @@ AQS-MVS-GAP-001 §4.5; AQS-BLD-001 §3; AQS-MeOH-001; AQS-REQ-KW-001;
 AQS-SCALE-UR-001.
 
 ```bash
-cd Diagrams/aqueous_diagrams && python3 rebuild.py --sync
+# local hub: python3 rebuild.py --sync  (not in this repo)
 ```

@@ -95,5 +95,4 @@ Br₂ / ZnBr2 stay outdoor.
 
 ## 7. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/process/SOLAR_CELL_EQUIPMENT.md`  
-Share: `share/aqueous-solutions/docs-authority/process/SOLAR_CELL_EQUIPMENT.md`
+Canonical in this tree: `docs-authority/process/SOLAR_CELL_EQUIPMENT.md`  

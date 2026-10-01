@@ -157,7 +157,7 @@ hab HVAC. Size CRYO_H2 for **GEN + FC + S24 vent contingency**
 ## 7. Rebuild / sync
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 geothermal_pfd.py
 python3 backup_gen_pfd.py
 python3 fuel_cell_pfd.py

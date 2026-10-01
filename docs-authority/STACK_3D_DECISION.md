@@ -4,7 +4,7 @@ Document number: **AQS-3D-STACK-001**
 Revision: **A**  
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
-Authority: Mike lock **docs_first** for graph→3D (2026-10-01); aligns with
+Authority: Project decision **docs_first** for graph→3D (2026-10-01); aligns with
 `DESIGN_TOOL_ARCHITECTURE.md` §3.3 and planning `STACK_REEVAL_2026-10-01.md`
 (planning-only; not mirrored here).  
 Audience: Contributors and outsiders choosing tools for plant 3D / 2D.

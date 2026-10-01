@@ -5,7 +5,7 @@ Revision: F
 Date: 2026-10-01  
 Authority: AQS-WTR-001; AQS-EQP-GEO-001; AQS-EQP-FAB-001; AQS-EQP-FAB-PV-001;
 AQS-EQP-MFG-001; AQS-MFG-ELC-001; AQS-GAP-001; AQS-MVS-GAP-001 §4.1.3;
-AQS-AUD-001 §10.4 / §11; seed `candidate_mvs.json`; Mike lock 2026-10-01;
+AQS-AUD-001 §10.4 / §11; seed `candidate_mvs.json`; Project decision 2026-10-01;
 `planning/UNIT_EQUIPMENT_SPEC_GAP.md` (**AQS-EQ-GAP-001**).  
 Style: AQS-DOC-001.  
 **Stage = first-principles study + stubs toward MVS (Rev F: gap-register pointer).** Not Present CAD yet.
@@ -24,7 +24,7 @@ unreclaimed or sub-MVS endpoint. Sandbox stays modular as studies close.
 
 Licence: **CERN-OHL-S-2.0**.
 
-Canonical: `Diagrams/aqueous_diagrams/cad/process/STUDY_UNITS_STUB.md`
+Canonical in this tree: `docs-authority/process/STUDY_UNITS_STUB.md`
 
 ---
 
@@ -196,7 +196,7 @@ dose into potable (AQS-WTR-001).
 
 ## 5. GEO_ORC — Carnot-limited kW_e study
 
-**Definition (Mike):** GEO_ORC = geothermal **Organic Rankine Cycle**
+**Definition:** GEO_ORC = geothermal **Organic Rankine Cycle**
 (heat → electric). Same first-principles trail.
 
 ### 5.1 System fit
@@ -280,7 +280,7 @@ Present FreeCAD solids complete.
 
 ---
 
-## 7. Framing (Mike correction 2026-10-01)
+## 7. Framing (correction 2026-10-01)
 
 We design the **MVS in theory** because not all answers are known yet.
 The **sandbox is the live model** of progress toward that MVS — modular

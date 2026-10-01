@@ -5,7 +5,7 @@
 Authoritative plant ``sector_id`` map: ``cad/SECTOR_DEFINITIONS.md``
 (**AQS-SEC-001** Rev E). Class list remains owned by AQS-UI-001 §3.1.
 
-Mike locks (2026-10-01):
+Project locks (2026-10-01):
 - FAB and MFG ``required_for_mvs_closure=true`` for goods surplus (A2 closed).
 - ESS peers ZNBR2 / MEOH / PUMPED_HYDRO: **all three**
   ``required_for_mvs_closure=true`` in MVS (A3 reframed Rev D). Redundancy
@@ -100,7 +100,7 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
         "aqs_sec_required": "true",
         "notes": (
             "Wafer / solar-cell fab. Required for MVS goods surplus "
-            "(Mike 2026-10-01 / AQS-SEC-001 A2)."
+            "(Project decision 2026-10-01 / AQS-SEC-001 A2)."
         ),
     },
     {
@@ -111,7 +111,7 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
         "aqs_sec_required": "true",
         "notes": (
             "Shop + metal forming (MET folded). Required for MVS goods surplus "
-            "(Mike 2026-10-01 / AQS-SEC-001 A2)."
+            "(Project decision 2026-10-01 / AQS-SEC-001 A2)."
         ),
     },
     {

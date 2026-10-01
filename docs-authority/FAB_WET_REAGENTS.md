@@ -151,7 +151,7 @@ recipe concentration (SILICON_FAB / doc 03).
 ## 7. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 fab_reagent_forks_pfd.py
 python3 wafer_fab_pfd.py
 ```

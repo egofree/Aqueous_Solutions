@@ -98,6 +98,6 @@ the assembled plant — not performed this pass.
 ## 7. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 cryo_pfd.py
 ```

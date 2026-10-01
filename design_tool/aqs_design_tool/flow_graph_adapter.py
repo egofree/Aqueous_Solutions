@@ -2,7 +2,7 @@
 # Copyright 2026 Mike Matthews.
 """Adapter: plant_flow_graph.json → MVS model (WP-Ap1 sole authority).
 
-``Diagrams/aqueous_diagrams/flow_graph/plant_flow_graph.json`` is the **single
+``flow_graph/plant_flow_graph.json`` is the **single
 write path** for topology (nodes/edges) and MVS fields (``mvs`` block +
 node continuous_kw/modules/params/enabled).
 

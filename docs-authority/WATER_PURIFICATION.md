@@ -323,7 +323,7 @@ PNG as evidence that VCD was deleted.
 | AQS-PFD-WTR-001 | `campus_life_hazard_pfds.py` (`water`) | `water_cycle_pfd.png` |
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 hab_water_pfd.py
 python3 fab_upw_pfd.py
 python3 habitation_pfd.py

@@ -261,7 +261,7 @@ Record this annex as the quantitative companion to AQS-SITE-001 §6.
 **Blocks design-freeze language (not a permit invent):** until AHJ
 confirms clear widths / CRYO lobby / controlling edition, do not claim
 egress-closed freeze evidence. Master checklist:
-`planning/MVS_GAP_AUDIT.md` (AQS-MVS-GAP-001) §4.8 + AQS-CMP-001 §8.1.
+local planning MVS_GAP_AUDIT (AQS-MVS-GAP-001, not published) §4.8 + AQS-CMP-001 §8.1.
 
 
 1. Confirm adopted IBC / NFPA 101 editions and local amendments.
@@ -277,5 +277,4 @@ egress-closed freeze evidence. Master checklist:
 
 ## 9. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/EGRESS_CALC.md`  
-Share: `share/aqueous-solutions/docs-authority/EGRESS_CALC.md`
+Canonical in this tree: `docs-authority/EGRESS_CALC.md`  

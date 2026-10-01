@@ -4,21 +4,24 @@ Document number: AQS-STL-001
 Revision: A  
 Date: 2026-09-27
 
-OpenSCAD: user-local AppImage on PATH (`/home/user/bin/openscad`). FreeCAD: `/usr/bin/freecadcmd`.
+OpenSCAD: any `openscad` on PATH (AppImage or distro package). FreeCAD: `/usr/bin/freecadcmd` (1.0).
 
 ## Command
 
 ```
-cd cad/detail && bash build_stls.sh
-cd ../freecad && /usr/bin/freecadcmd build_plant.py
+# This repo:
+cd models/openscad/detail && bash build_stls.sh   # when script present
+cd ../../freecad && /usr/bin/freecadcmd build_plant.py
+
+# Local hub layout (not published): cad/detail + cad/freecad
 ```
 
 `import_mfg.py` skips a missing STL. `stamp_materials.py` runs from
-`build_plant.py` against `cad/materials.csv`.
+`build_plant.py` against materials CSV in the models/tables tree.
 
-## Expected outputs (`cad/detail/stl/`)
+## Expected outputs (`models/export/detail/` or hub `cad/detail/stl/`)
 
-Every `cad/detail/*.scad` compiles to a same-name `.stl`.
+Every detail `*.scad` compiles to a same-name `.stl`.
 
 Shop files that must exist before the plant tree is considered rebuilt:
 
@@ -76,26 +79,23 @@ Shop files that must exist before the plant tree is considered rebuilt:
 Pipe racks, trays, and campus envelopes also exist as Part features from
 `pipe_services.py` and `campus.py` even if those two STLs are absent.
 
-Existing compiled twins (older, still valid check files):
+Existing compiled twins (older, still valid check files under
+`models/export/`):
 
-- `cad/export/leach_cstr.stl`
-- `cad/export/ew_cell.stl`
-- `cad/export/assembly_wet.stl`
+- `leach_cstr.stl`
+- `ew_cell.stl`
+- `assembly_wet.stl`
 
-## Operator PATH note (2026-10-01 Wave 3)
+## Operator PATH note
 
-`openscad` **available** on Mike's machine via user-local AppImage (no
-apt/sudo):
-
-- Binary: `/home/user/bin/OpenSCAD.AppImage` (OpenSCAD 2021.01)
-- Symlink: `/home/user/bin/openscad` → AppImage
-- apt install of distro package was **blocked** (sudo interactive auth)
-
-Compile:
+When OpenSCAD is available on the **build host** (AppImage or package on
+`PATH`), compile STLs before the FreeCAD plant import:
 
 ```
-export PATH="/home/user/bin:$PATH"
-cd cad/detail && bash build_stls.sh
+cd models/openscad/detail   # or cad/detail/ in a local hub layout
+bash build_stls.sh
 ```
 
-System package install remains optional; do not force `sudo apt`.
+System package install remains optional; do not force `sudo apt` from an
+unattended agent. Record the binary you used in your local build log — do
+not commit workstation-absolute paths into this tree.

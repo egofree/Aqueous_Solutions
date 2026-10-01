@@ -75,7 +75,7 @@ H₂ combustion in air yields primarily H₂O (+ N₂, O₂, NOx). Route:
 ## 6. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 backup_gen_pfd.py
 python3 electrical_sld.py
 ```

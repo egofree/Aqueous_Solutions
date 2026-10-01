@@ -208,7 +208,7 @@ Do not invent new consumers without tree evidence.
 ## 9. Rebuild / sync
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 fuel_cell_pfd.py
 python3 electrical_sld.py
 python3 geothermal_pfd.py          # Q4 peer callout if regenerated

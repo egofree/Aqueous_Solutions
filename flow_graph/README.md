@@ -47,7 +47,7 @@ match between `plant_flow_graph.json` and the generated `candidate_mvs`
 projection. Hand-edited or stale `candidate_mvs.json` fails the regen-check.
 
 ```bash
-cd Diagrams/aqueous_diagrams/flow_graph
+cd flow_graph
 python3 check_authority_contract.py          # exit 0 = PASS
 python3 -m pytest test_authority_contract.py -q
 # or from design_tool/:
@@ -93,7 +93,7 @@ flow_graph/
 ## Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/flow_graph
+cd flow_graph
 python3 build_seed.py              # rebuild plant_flow_graph.json (keeps mvs)
 python3 export_candidate_mvs.py    # refresh generated candidate_mvs projection
 python3 export_authority_md.py     # derived markdown excerpts + SYNC_POINTER
@@ -117,7 +117,7 @@ python3 -c "from models import PlantFlowGraph; \
 | `GET /api/v1/mvs/from-graph` | Alias of `/mvs` |
 | `POST /api/v1/sandbox` | Sandboxes default to graph load + overrides |
 
-Pointer: `Diagrams/aqueous_diagrams/design_tool/README.md`.
+Pointer: `design_tool/README.md`.
 Legacy PFD/SLD scripts: `LEGACY_PFD_SCRIPTS.md`.
 
 ## Honest gaps represented
@@ -147,9 +147,9 @@ this graph. WP-C2 GitHub publish not started.
 
 ## Related
 
-- Audit: `/home/user/dev/Aqueous/planning/FLOW_DIAGRAM_AUDIT.md` (AQS-FLOW-AUD-001)
-- Legacy CAD: `cad/STREAM_REGISTER.md`, `cad/MASS_FLOW.md` (sync targets)
-- Authority lock: `cad/AUTHORITY.md`
-- Plan: `planning/DESIGN_UI_COMPLETION_PLAN.md` (WP-Ap1…Ap3; A′ exit)
+- Audit: AQS-FLOW-AUD-001 (local planning artefacts, not published)
+- Legacy CAD sync targets: `docs-authority/` STREAM_REGISTER / MASS_FLOW (or derived/)
+- Authority lock: `docs-authority/AUTHORITY.md`
+- Plan notes: local planning artefacts (not published)
 - Contract: `check_authority_contract.py` / `test_authority_contract.py`
 - Derived sync: `derived/SYNC_POINTER.md`

@@ -22,7 +22,7 @@ Licence: CERN-OHL-S-2.0
 Prefer editing the graph, then:
 
 ```bash
-cd Diagrams/aqueous_diagrams/flow_graph
+cd flow_graph
 python3 export_authority_md.py
 python3 render_layer_views.py   # layer stubs still graph-driven
 ```

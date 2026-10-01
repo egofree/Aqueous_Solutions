@@ -6,7 +6,7 @@ Date: 2026-10-01
 Authority: AQS-AUTH-001; MVS AQS-UI-001 Rev C §3.2 / §11; AQS-GAP-001;
 AQS-MFG-MET-001; AQS-EQP-MFG-001; AQS-EQP-FAB-001; AQS-EQP-FAB-PV-001;
 AQS-MFG-ELC-001; AQS-MeOH-001; AQS-MF-001; AQS-STR-001; AQS-EQP-STUDY-001;
-Mike lock 2026-10-01 (litho / blow-mold / electrode coating in MVS);
+Project decision 2026-10-01 (litho / blow-mold / electrode coating in MVS);
 shopping lists under hub `manufacturing_bom.xlsx` / `materials_shopping_list.xlsx`
 (procurement ≠ this).  
 Style: AQS-DOC-001.  
@@ -22,13 +22,13 @@ emissions or closed unreclaimed endpoints.
 |---|---|---|---|
 | A | — | Critical-path parts × on-site feedstock; Partial vs Closed flags | 2026-10-01 |
 | B | 1 | Litho deferred-with-unreclaimed; blow-mold out-of-MVS-at-M1; deepen Partial next-measurement (WP-A3) | 2026-10-01 |
-| C | 2 | Mike lock: litho **IN SCOPE** Present-path study schedule; blow-mold **in MFG / in MVS**; electrode coating **IN SCOPE**; `reprap_bom_complete` stays false (Partial) | 2026-10-01 |
+| C | 2 | Project decision: litho **IN SCOPE** Present-path study schedule; blow-mold **in MFG / in MVS**; electrode coating **IN SCOPE**; `reprap_bom_complete` stays false (Partial) | 2026-10-01 |
 | D | 3 | Framing: MVS is the pursued ideal; sandbox tracks progress; gaps = **open studies queued in plan** (not accepted unreclaimed/sub-MVS endpoints) | 2026-10-01 |
 | E | 4 | Side quests: ST-LITHO/BLOW/ELC first-principles duty issued (0.1 / 0.5 / 0.3 kW_e); Present CAD still external | 2026-10-01 |
 
 Licence: **CERN-OHL-S-2.0**.
 
-Canonical: `Diagrams/aqueous_diagrams/bom/SELF_COPY_BOM.md`  
+Canonical in this tree: `docs-authority/SELF_COPY_BOM.md`  
 (Hub BOM authority — not `cad/` planning fluff; not mirrored as planning.)  
 Share: copy into `docs-authority/` on sync pass when listed; prefer hub path until freeze.
 
@@ -82,7 +82,7 @@ map **critical-path** assemblies to on-site streams / units. Rows marked
 
 ## 3.1 Photolithography Present-path study schedule (Rev C)
 
-**Lock (Mike 2026-10-01):** Photolithography is **IN SCOPE** for realistic
+**Lock (Project decision 2026-10-01):** Photolithography is **IN SCOPE** for realistic
 self-sustaining tech — not an accepted omission.
 
 | Step | Study tag | Duty | Streams / utilities | Status |
@@ -100,7 +100,7 @@ schedule → Present.
 
 ## 3.2 Blow mold — in MFG / in MVS (Rev C)
 
-**Lock (Mike 2026-10-01):** Blow mold / shoe mold **brought into MFG** and
+**Lock (Project decision 2026-10-01):** Blow mold / shoe mold **brought into MFG** and
 **required for MVS**. Rev B “out-of-MVS-at-M1” is **superseded** (was wrong
 framing — gaps are studies, not out-of-scope acceptance).
 
@@ -114,7 +114,7 @@ framing — gaps are studies, not out-of-scope acceptance).
 
 ## 3.3 Electrode coating — IN SCOPE (Rev C)
 
-**Lock (Mike 2026-10-01):** Electrode coating **IN SCOPE**; MFG or FAB as
+**Lock (Project decision 2026-10-01):** Electrode coating **IN SCOPE**; MFG or FAB as
 process needs. Sector boundaries are **not absolute** (AQS-SEC-001 §3.1
 cross-use note): coating lives in **MFG** with MET substrates; wet
 chemistry may borrow FAB wet-bench practice without requiring a new sector.

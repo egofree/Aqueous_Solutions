@@ -189,7 +189,7 @@ Hydro vs ZnBr₂ energy mismatch documented there — not MeOH-specific.
 ## 8. Rebuild / sync
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 meoh_train_pfd.py
 python3 fuel_cell_pfd.py
 python3 electrical_sld.py

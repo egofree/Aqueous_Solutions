@@ -4,13 +4,13 @@ Document number: AQS-MFG-ELC-001
 Revision: B  
 Date: 2026-10-01  
 Authority: AQS-GAP-001; AQS-MFG-MET-001 / AQS-EQP-MFG-MET-001; AQS-BOM-SC-001 Rev C;
-AQS-EQP-STUDY-001; AQS-AUTH-001; Mike lock 2026-10-01 (coating IN SCOPE).  
+AQS-EQP-STUDY-001; AQS-AUTH-001; Project decision 2026-10-01 (coating IN SCOPE).  
 Status: **Study duty issued** (ST-ELC-01); Present booth CAD + lab formula = external — not accepted gap.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | Wave 2 stub: coating Remaining to Partial architecture | 2026-10-01 |
-| B | 1 | Mike lock: coating **IN SCOPE**; seed `ELECTRODE_COAT`; MFG primary; sector cross-use OK | 2026-10-01 |
+| B | 1 | Project decision: coating **IN SCOPE**; seed `ELECTRODE_COAT`; MFG primary; sector cross-use OK | 2026-10-01 |
 | C | 2 | ST-ELC-01: 0.3 kW_e avg; non-precious M1 formulation class; RuO₂–IrO₂ deferred | 2026-10-01 |
 
 Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. SCALE_M = 1.0.

@@ -92,7 +92,7 @@ AQS-EQP-CRY-001 next-pass solids — interface only this pass.
 ## 7. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 fuel_cell_pfd.py
 python3 electrical_sld.py
 ```

@@ -2,7 +2,7 @@
 
 Document: implements **AQS-UI-001** Rev D phases **P0**, **P1**, and **B′**  
 Licence: **CERN-OHL-S-2.0**  
-Path (hub): `Diagrams/aqueous_diagrams/design_tool/`
+Path (this repo): `design_tool/`
 
 ## WP-Ap1 — graph sole authority (unify_then_reshape)
 
@@ -83,7 +83,7 @@ See `../flow_graph/derived/SYNC_POINTER.md`. CAD `STREAM_REGISTER.md` /
 
 ```bash
 # Terminal 1 — API
-cd design_tool   # hub: Diagrams/aqueous_diagrams/design_tool; share: share/aqueous-solutions/design_tool
+cd design_tool
 uvicorn aqs_design_tool.api.app:app --host 127.0.0.1 --port 8000
 
 # Terminal 2 — UI
@@ -113,7 +113,7 @@ curl -s -X POST "http://127.0.0.1:8000/api/v1/sandbox/$SID/export" -H 'Content-T
 Modular export modules emit **from the graph** when requested. Unused modules stay off.
 Matplotlib is an **optional** exporter only (copy bridged hub PNGs; not authority).
 MVS gold / `plant_flow_graph.json` are never overwritten. **WP-C2 GitHub publish not started**
-(blocked pending Mike authorize).
+(blocked pending publish authorize).
 
 | Module key | Artefacts | Source |
 |---|---|---|
@@ -130,7 +130,7 @@ MVS gold / `plant_flow_graph.json` are never overwritten. **WP-C2 GitHub publish
 ### C1 smoke
 
 ```bash
-cd Diagrams/aqueous_diagrams/design_tool
+cd design_tool
 python3 -c "
 from aqs_design_tool.api.store import SandboxStore
 from aqs_design_tool.models import ExportRequest
@@ -143,7 +143,7 @@ print('OK', resp.pack_dir)
 "
 ```
 
-**C1 exit:** Yes (local). **C2/C3:** blocked pending Mike GitHub authorize — not started.
+**C1 exit:** Yes (local). **C2/C3:** blocked pending GitHub publish authorize — not started.
 
 
 ## WP-D3 / WP-D4 — Pack `3d/` + presence (done 2026-10-01 CT)
@@ -157,7 +157,7 @@ No invented geometry or rates. CERN-OHL-S-2.0.
 ### D3 smoke
 
 ```bash
-cd Diagrams/aqueous_diagrams/design_tool
+cd design_tool
 python3 -c "
 from aqs_design_tool.api.store import SandboxStore
 from aqs_design_tool.models import ExportRequest
@@ -197,7 +197,7 @@ surplus reporting, and electrical match hooks.
 | `cad/CONTINUOUS_KW_REQUIREMENTS.md` (**AQS-REQ-KW-001**) | Electrical continuous-kW study inputs |
 | `cad/freecad/params.py` | `SCALE_M = 1.0` electrical module counts |
 | `cad/AUTHORITY.md` (**AQS-AUTH-001**) | Hub pointer to this package |
-| `/home/user/dev/Aqueous/planning/` (`MVS_GAP_AUDIT.md`, `SECTOR_CAPACITY_AUDIT.md`, `LEGACY_PROFILE_GAP.md`) | Planning/audit evidence; not CAD authority and not public-share mirrored |
+| Local planning artefacts (`MVS_GAP_AUDIT.md`, `SECTOR_CAPACITY_AUDIT.md`, `LEGACY_PROFILE_GAP.md`) | Planning/audit evidence; not CAD authority and not published |
 
 No Odysseus runtime dependency.
 
@@ -226,7 +226,7 @@ design_tool/
   exports/                  ← gitignored pack dirs (see exports/README.md)
 ```
 
-Package location chosen: **`Diagrams/aqueous_diagrams/design_tool/`**
+Package location: **`design_tool/`** (this repository)
 (hub sibling to `cad/`), not `cad/design_tool/`, so CAD rebuild scripts
 stay separate from the API package.
 
@@ -235,7 +235,7 @@ stay separate from the API package.
 From this directory (or with `PYTHONPATH` including it):
 
 ```bash
-cd Diagrams/aqueous_diagrams/design_tool
+cd design_tool
 pip install -r requirements.txt
 
 # Import check
@@ -270,7 +270,7 @@ OpenAPI: `http://127.0.0.1:8000/docs`
 
 **2026-10-01 Rev C wave:** AQS-SUR-001 surplus study thresholds wired into seed + solver (`pass_study`); AQS-BOM-SC-001 self-copy flags; study units VCD/REMIN/ORC/LITHO/SOLAR; AQS-ESS-001 duties; AQS-SEC-001 Rev E A4–A9 locks; schema **aqs-mvs-0.3**.
 
-## Mike lock (sectors)
+## Project locks (sectors)
 
 For goods surplus, **FAB** and **MFG** are both
 `required_for_mvs_closure: true` in the seed and catalogue module (A2 closed).

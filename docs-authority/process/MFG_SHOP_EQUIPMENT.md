@@ -59,7 +59,7 @@ blow mold remain out of M1 CAD massing unless issued later.
 ## 5. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 mfg_shop_pfd.py
 python3 metal_forming_pfd.py
 ```

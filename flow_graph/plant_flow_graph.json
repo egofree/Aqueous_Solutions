@@ -5047,7 +5047,7 @@
         "blow_mold_in_mvs": true,
         "vcd_remin_on_site": false,
         "electrode_coating_on_site": false,
-        "bom_doc": "Diagrams/aqueous_diagrams/bom/SELF_COPY_BOM.md",
+        "bom_doc": "docs-authority/SELF_COPY_BOM.md",
         "note": "AQS-BOM-SC-001 Rev E \u2014 litho/blow/electrode required for MVS. ST-LITHO/BLOW/ELC first-principles duty issued (WP-A3b/c/d); on_site flags false until Present CAD. ST-VCD/REMIN/ORC/SOLAR physics closed; Present blocked on external measurement (owner/date TBD). reprap_bom_complete=false until Present matrix warrants."
       }
     },
@@ -5263,7 +5263,7 @@
         "3d"
       ]
     },
-    "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Mike locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.",
+    "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.",
     "write_path": "plant_flow_graph.json#mvs + nodes/edges; candidate_mvs.json is generated projection only"
   }
 }

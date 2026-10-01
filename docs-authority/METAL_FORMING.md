@@ -198,7 +198,7 @@ in the assembled plant model — stub only this pass.
 ## 7. Rebuild / sync
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 metal_forming_pfd.py
 python3 mfg_shop_pfd.py          # pointer callout if regenerated
 ```

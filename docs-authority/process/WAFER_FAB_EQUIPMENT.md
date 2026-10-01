@@ -159,7 +159,7 @@ SEM-Tech / IEM membrane work remains **link-only**
 ## 8. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 wafer_fab_pfd.py
 python3 fab_reagent_forks_pfd.py
 python3 fab_upw_pfd.py

@@ -137,5 +137,4 @@ lighting fixture schedule, hot-water kW.
 
 ## 8. Sync
 
-Canonical: `Diagrams/aqueous_diagrams/cad/LIFE_MEP.md`  
-Share: `share/aqueous-solutions/docs-authority/LIFE_MEP.md`
+Canonical in this tree: `docs-authority/LIFE_MEP.md`  

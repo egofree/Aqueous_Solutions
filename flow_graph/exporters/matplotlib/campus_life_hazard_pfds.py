@@ -36,7 +36,7 @@ def _load_freecad_params():
         ROOT / "cad" / "freecad" / "params.py",
         ROOT.parent / "cad" / "freecad" / "params.py",
         ROOT.parent / "models" / "freecad" / "params.py",
-        Path("/home/user/dev/Aqueous/Diagrams/aqueous_diagrams/cad/freecad/params.py"),
+        # local hub fallback omitted from publish tree
     ]
     for path in candidates:
         if path.is_file():

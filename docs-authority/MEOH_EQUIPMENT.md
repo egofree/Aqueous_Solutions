@@ -52,6 +52,6 @@ compressor loads TBD (do not invent full-plant kW beyond H₂ allocation).
 ## 4. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 meoh_train_pfd.py
 ```

@@ -1,9 +1,10 @@
 # FreeCAD protocol — Aqueous wet line
 
 For any agent building or editing the 3D model. Read this before touching
-`cad/freecad/`. Process authority is `GLOSSARY.md` and
-`LOCAL_BOT_HANDOFF.md`. This file is only how to drive FreeCAD 1.0 on the
-operator’s box without repeating the failures from 2026-09-26.
+`models/freecad/` (or hub `cad/freecad/`). Process authority is `GLOSSARY.md`
+and related docs-authority equipment / process notes. This file is only how
+to drive FreeCAD 1.0 on the build host without repeating the failures from
+2026-09-26.
 
 Licence: CERN-OHL-S-2.0. No photoreal / diffusion images.
 
@@ -70,7 +71,7 @@ hyphens where FreeCAD forbids them): `LEACH_CSTR_1`, `EW_1`,
 ## 3. How to run a script
 
 ```bash
-cd ~/dev/Aqueous/Diagrams/aqueous_diagrams/cad/freecad
+cd models/freecad   # this repo; or hub cad/freecad/
 /usr/bin/freecadcmd leach_cstr.py
 ```
 
@@ -233,15 +234,15 @@ massing model.
 6. Only then instance it from `build_wet.py`.
 
 Build order is positional. Later parts locate off earlier faces. See
-Phase A in `LOCAL_BOT_HANDOFF.md`. Do not start Phase C/D solids until
-the OIL LINE and GLASS / CERAMIC stubs exist — they do, as of Phase A 6.
+Do not start Phase C/D solids until the OIL LINE and GLASS / CERAMIC stubs
+exist — they do, as of Phase A 6. Build order is positional; see §6–§7.
 
 ---
 
 ## 7. Current rebuild sequence
 
 ```bash
-cd ~/dev/Aqueous/Diagrams/aqueous_diagrams/cad/freecad
+cd models/freecad   # this repo; or hub cad/freecad/
 /usr/bin/freecadcmd leach_cstr.py    # vessel, feed train, fork stubs
 /usr/bin/freecadcmd ew_cell.py       # one funnel cell
 /usr/bin/freecadcmd build_wet.py     # load tank, instance EW-1..9, bund,

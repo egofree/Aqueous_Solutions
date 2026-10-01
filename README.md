@@ -3,16 +3,12 @@
 CERN-OHL-S-2.0 publish layout for the Aqueous closed-loop recycling plant
 CAD, PFDs, ISO sheets, and authority docs.
 
-**Working CAD home (Mike opens this daily):**  
-`/home/user/dev/Aqueous/Diagrams/aqueous_diagrams/`
+This repository is the **CERN-OHL-S publish tree**: CAD, flow graph,
+design-tool source, ISO sheets, and authority docs intended for sharing.
 
-This directory (`share/aqueous-solutions/`) is the **clean publish tree**.
-It is a copy of share-worthy content, reorganized. Do not treat it as the
-only copy of live CAD — edit in `aqueous_diagrams`, then refresh share when
-ready to publish.
-
-Offline / non-git bulk lives in `/home/user/dev/Aqueous/archive/` (not
-tracked).
+Active day-to-day editing may happen in a separate local working hub; refresh
+this tree from that hub before each publish. Absolute workstation paths and
+offline archives are intentionally omitted here.
 
 ## Layout
 
@@ -70,66 +66,51 @@ cd freecad && python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_fl
 
 ## How to rebuild
 
-**Master menu (hub):** `python3 /home/user/dev/Aqueous/Diagrams/aqueous_diagrams/rebuild.py`  
 Doc: `docs-authority/REBUILD.md` (AQS-REB-001).  
-`SCALE_M` in `models/freecad/params.py` = **actual building size** (not plot zoom). Manufacturing `1.0`; `2.0` review-only. Set via menu 8 / `--scale`.
+`SCALE_M` in `models/freecad/params.py` = **actual building size** (not plot zoom). Manufacturing `1.0`; `2.0` review-only.
 
-**From this share tree** (outsiders):
+**From this repository:**
 
 ```bash
 cd models
 bash REBUILD.sh            # path shims + freecadcmd build_plant.py
-bash REBUILD.sh --stls     # optional OpenSCAD first
+bash REBUILD.sh --stls     # optional OpenSCAD first (openscad on PATH)
 ```
 
-**From the working hub** (Mike / operators — paths match existing scripts):
+Plant only (FreeCAD 1.0):
 
 ```bash
-cd /home/user/dev/Aqueous/Diagrams/aqueous_diagrams
-# OpenSCAD STLs + FreeCAD plant (needs openscad on PATH, /usr/bin/freecadcmd 1.0)
-bash cad/REBUILD.sh
-# or plant only:
-cd cad/freecad && /usr/bin/freecadcmd build_plant.py
+cd models/freecad && /usr/bin/freecadcmd build_plant.py
 ```
 
-Primary diagrams in share are **`flow_graph/views/*.svg`** (graph-driven).
+Primary diagrams are **`flow_graph/views/*.svg`** (graph-driven).
 Matplotlib PFD/SLD generators are optional under
-`flow_graph/exporters/matplotlib/` — **PNGs are not shipped** in this tree
-(Mike: `demote_drop_pngs`). Hub still holds working `pfd_scripts/` + PNGs.
+`flow_graph/exporters/matplotlib/` — **PNGs are not shipped** in this tree.
+Optional local PNG regenerate writes next to those scripts; do not commit PNGs.
 
-```bash
-# Hub (working CAD — leave untouched when refreshing share):
-cd /home/user/dev/Aqueous/Diagrams/aqueous_diagrams/pfd_scripts
-# e.g. python wet_line_factory_pfd.py
-```
+A separate local working hub (not in this repo) may hold day-to-day CAD edits
+and bridged PNG working copies. Refresh this publish tree from that hub before
+sharing; do **not** copy hub PFD PNGs into this tree.
 
-After a hub rebuild, refresh this share tree by re-copying changed
-`*.FCStd` / STLs / docs / flow_graph views into the matching folders above.
-Do **not** re-copy hub PFD PNGs into share.
+Layout mapping when adapting scripts from a local hub:
 
-Share-tree local paths (if you adapt scripts here):
-
-| Hub path | Share path |
+| Hub-style path | This repo |
 |---|---|
 | `cad/freecad/` | `models/freecad/` |
 | `cad/*.scad`, `cad/detail/`, `cad/foam_ew/` | `models/openscad/` |
 | `cad/export/`, `cad/detail/stl/` | `models/export/` |
 | `cad/iso/` | `iso/` |
 | `pfd_scripts/` | `flow_graph/exporters/matplotlib/` (scripts only; PNGs not shipped) |
-| hub `*_pfd.png` / SLD | **not copied** — stay on hub only |
+| hub `*_pfd.png` / SLD | **not published** |
 | `cad/*.md` | `docs-authority/` |
 | `cad/animation/`, `cad/freecad/animation/` | `media/` |
 | `flow_graph/` | `flow_graph/` |
 | `design_tool/` (src only) | `design_tool/` |
 
-`docs-authority/REBUILD.sh` still assumes hub layout (`ROOT/cad/...`); use
-the hub copy for operator rebuilds.
-
 ## flow_graph + design_tool (v1 source)
 
-Ship **source only** in this share tree. Odysseus planning is **not** published
-(hub `cad/ODYSSEUS_PLANNING.md` stays local). Repo-level `planning/` audits stay
-on the Aqueous machine and are never copied here.
+Ship **source only** in this share tree. Odysseus planning and local
+`planning/` audits are **not** published here.
 
 **flow_graph** (authority-adjacent plant graph):
 
@@ -153,8 +134,6 @@ Do not commit `web/node_modules/`, `web/dist/`, `.sandbox_store/`, or `exports/s
 (ignored). Keep `exports/README.md` only.
 
 ## Git / LFS
-
-Local repo only until Mike asks to push.
 
 - `*.FCStd` and `*.stl` → Git LFS (see `.gitattributes`)
 - Ignored: `__pycache__`, `*.log`, `*.FCBak`, `.omo`, `node_modules`, `dist`, `.sandbox_store`, `exports/sbx_*`, `ODYSSEUS*`, `planning/`, `archive/`, `*.zip`

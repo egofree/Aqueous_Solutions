@@ -90,7 +90,7 @@ remains S07 — separate from REMIN.
 ## 4. Regenerate
 
 ```bash
-cd Diagrams/aqueous_diagrams/pfd_scripts
+cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
 python3 habitation_pfd.py
 python3 hab_water_pfd.py
 ```

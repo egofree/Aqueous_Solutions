@@ -135,11 +135,11 @@ plant.FCStd rebuild; no git commit. kW / kg/h TBD.
 
 
 Completed 2026-09-28 **sector capacity / footprint audit** pass (Rev Q): new
-`planning/SECTOR_CAPACITY_AUDIT.md` (AQS-AUD-001 Rev A) — M1 envelopes vs PHF /
+Local planning SECTOR_CAPACITY_AUDIT (AQS-AUD-001 Rev A, not published) — M1 envelopes vs PHF /
 PFD density; sizing from AQS-EQP-* + ELECTRICAL + params (`SCALE_M=1.0`);
 study throughputs with labeled assumptions; closed vs open loops from
 AQS-STR-001 / AQS-MF-001 (S24, stacks, S56/S62). AUTHORITY pointer added.
-Planning audit retained under `/home/user/dev/Aqueous/planning/`; not synced to share. SCALE_M left **1.0**. No plant rebuild;
+Planning audit retained as local planning artefacts (not published). SCALE_M left **1.0**. No plant rebuild;
 no git commit.
 
 Completed 2026-09-28 **site / yard / dock / egress** pass (Rev P): new
@@ -199,7 +199,7 @@ pair, north dock discharge; AHJ verify); **AQS-ASM-001** vessel inventory +
 B31.3 PC-01…10 templates (CMP-ASM-01 Gap→Partial; no invented MAWP);
 **AQS-MEP-001** Life Phase D Partial (fixtures / header OD / one-line);
 **AQS-EQP-FAB-PV-001** solar-cell schedule (architecture Partial);
-OpenSCAD via user-local AppImage `/home/user/bin/openscad` (apt sudo
+OpenSCAD via build-host `openscad` on PATH (apt sudo
 blocked) + **51/51** detail STL compile; VJ iso + GH envelope as **doc schedules**
 (AQS-ASM-001 §6 / AQS-TRR-GH-001) not full CAD; GUI animation remains
 operator overlay (schematic D0–D6 already present). SCALE_M left **1.0**.
@@ -207,7 +207,7 @@ Share sync. No git commit. Plant FreeCAD rebuild **not required** this
 wave (docs + STL only).
 
 
-Completed 2026-10-01 **layout locks** pass (Rev X): Mike layout locks —
+Completed 2026-10-01 **layout locks** pass (Rev X): Project layout locks —
 (1) `ARRAY_ROOF` / `PV_ARRAY*` tilt = **+SITE_LAT_DEG** about +X (equator /
 south face NH; prior −lat faced north/dock); (2) life-floor balconies
 `TERRACE_{S,E,W}_L*` + `TERRACE_DOOR_*` starting top floor, step down S/E/W
@@ -320,7 +320,7 @@ AQS-REM-001 closed ≠ this list. REM was shop-envelope; this is BLD stack.
 20. ~~**Textiles / HEPA architecture**~~ — **Partial Rev U**: AQS-MFG-TEX-001 stub. CAD/PFD still open.
 21. ~~**ASME vessel / B31.3 piping class sheets**~~ — **Partial Wave 4**:
     AQS-ASM-001 Rev B + VJ envelopes; CMP-ASM-01 Partial. MAWP / WPS still TBD/Gap.
-22. ~~**OpenSCAD on PATH**~~ — **Done Wave 3**: `/home/user/bin/openscad` AppImage
+22. ~~**OpenSCAD on PATH**~~ — **Done Wave 3**: build-host `openscad` (AppImage or package)
     (apt sudo blocked). STL_MANIFEST Rev B.
 
 
