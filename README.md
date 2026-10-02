@@ -144,7 +144,25 @@ Do not commit `web/node_modules/`, `web/dist/`, `.sandbox_store/`, or `exports/s
 
 ## External open-source dependencies
 
-Aqueous links to two external open-source projects: [Precious Plastic](https://preciousplastic.com/) for the MFG plastic-recycling reference, and [SEM-Tech / the open-sourced off-the-shelf ion-exchange membrane](https://github.com/egofree/Open-sourced-off-the-shelf-ion-exchange-membrane) for wet-line and BMED membrane work. See [`DEPENDENCIES.md`](DEPENDENCIES.md) for roles, licenses, upstream provenance, and the explicit **not bundled — link only** boundary.
+Aqueous links to external open-source projects for design reference only:
+[Precious Plastic](https://preciousplastic.com/) (MFG polymer line),
+[SEM-Tech / open-sourced off-the-shelf ion-exchange membrane](https://github.com/egofree/Open-sourced-off-the-shelf-ion-exchange-membrane)
+(wet-line and BMED / MeOH IEM), and the
+[Civilization Starter Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit)
+(OSE GVCS machine catalogue). See [`DEPENDENCIES.md`](DEPENDENCIES.md) for
+roles, licenses, upstream provenance, and the explicit **not bundled — link
+only** boundary. CSK → Aqueous sector/unit inventory:
+[`docs-authority/OSE_CSK_ALIGNMENT.md`](docs-authority/OSE_CSK_ALIGNMENT.md).
+
+## Related projects / Upstream references
+
+| Project | Role |
+|---|---|
+| [Precious Plastic](https://preciousplastic.com/) | MFG plastic-recycling machine and workspace reference |
+| [SEM-Tech / open IEM](https://github.com/egofree/Open-sourced-off-the-shelf-ion-exchange-membrane) | Wet-line and MeOH IEM fabrication reference |
+| [Civilization Starter Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit) | OSE Global Village Construction Set documentation: modular DIY blueprints for 50 industrial machines (code GPLv3; other content CC-BY-SA). Alignment map: [`OSE_CSK_ALIGNMENT.md`](docs-authority/OSE_CSK_ALIGNMENT.md). |
+
+Full attribution and license notes: [`DEPENDENCIES.md`](DEPENDENCIES.md).
 
 ## Licence
 

@@ -33,3 +33,30 @@ Aqueous, not a claim that the upstream project endorses Aqueous.
   (CERN-OHL-S-2.0).
 - **Distribution:** **Not bundled — link only.** No membrane repository files
   are copied into this publish tree.
+
+## Civilization Starter Kit (Open Source Ecology)
+
+- **Project:** [Civilization Starter Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit)
+  — OSE documentation for the Global Village Construction Set (GVCS), a
+  modular DIY blueprint set aimed at 50 industrial machines for a small
+  sustainable civilization.
+- **Role in Aqueous:** Upstream machine-catalogue reference for MFG/FAB shop,
+  metals forming, farm/habitat, and energy peers. Alignment inventory:
+  [`docs-authority/OSE_CSK_ALIGNMENT.md`](docs-authority/OSE_CSK_ALIGNMENT.md)
+  (AQS-REF-CSK-001). Does not replace Aqueous equipment or flow-graph authority.
+- **Public URLs:**
+  - [Civilization Starter Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit)
+  - [OSE GVCS List](https://wiki.opensourceecology.org/wiki/GVCS_List)
+  - [opensourceecology.org](https://www.opensourceecology.org/)
+- **License:** Dual-licensed per upstream README — **code GPLv3**; **other
+  content CC-BY-SA** (GitHub license metadata: GPL-3.0).
+- **Distribution:** **Not bundled — link only.** No CSK repository files are
+  copied into this publish tree.
+
+## Related projects / Upstream references
+
+| Project | Link | Aqueous note |
+|---|---|---|
+| Precious Plastic | [preciousplastic.com](https://preciousplastic.com/) | MFG polymer line reference |
+| SEM-Tech / open IEM | [egofree/…ion-exchange-membrane](https://github.com/egofree/Open-sourced-off-the-shelf-ion-exchange-membrane) | Wet-line / MeOH IEM reference |
+| Civilization Starter Kit | [OpenSourceEcology/Civilization-Starter-Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit) | GVCS machine catalogue; see [OSE_CSK_ALIGNMENT.md](docs-authority/OSE_CSK_ALIGNMENT.md) |

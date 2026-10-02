@@ -18,6 +18,7 @@ guidance for the Aqueous plant. Licence: CERN-OHL-S-2.0.
 | `DOC_STYLE.md` | WARNING / CAUTION / NOTE practice |
 | `GLOSSARY.md` | Locked unit and stream names |
 | `HANDOFF.md` | Short CAD handoff pointers |
+| `OSE_CSK_ALIGNMENT.md` | OSE CSK / GVCS → Aqueous sector & unit map (AQS-REF-CSK-001) |
 
 ## Layout
 
