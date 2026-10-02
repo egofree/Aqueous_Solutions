@@ -97,7 +97,20 @@ def emit_census(g: dict) -> str:
     eph = sum(1 for e in edges if e["presence"] == "placeholder")
     by_ns = {}
     for e in edges:
-        by_ns[e["namespace"]] = by_ns.get(e["namespace"], 0) + 1
+        ns = e.get("namespace")
+        if ns is None:
+            sid = e.get("stream_id") or ""
+            if sid.startswith("IA-"):
+                ns = "IA"
+            elif sid.startswith("SANDBOX"):
+                ns = "SANDBOX"
+            elif sid.startswith("TBD") or "TBD" in sid:
+                ns = "TBD"
+            elif sid.startswith("S") and len(sid) > 1 and sid[1].isdigit():
+                ns = "S"
+            else:
+                ns = "unknown"
+        by_ns[ns] = by_ns.get(ns, 0) + 1
     lines = [
         "# Flow graph census — DERIVED",
         "",
