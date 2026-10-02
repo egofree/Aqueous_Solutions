@@ -1,0 +1,2842 @@
+{
+  "schema": "aqs-placement-apply-1.0",
+  "graph_doc": "AQS-FLOW-GRAPH-001",
+  "graph_revision": "B",
+  "map_revision": "B",
+  "placement_doc": "AQS-PLACE-SEED-001",
+  "datums_mm": {
+    "L0": 0.0,
+    "L-1": -6000.0,
+    "L-2": -10500.0,
+    "L1": 6000.0,
+    "L2": 10800.0
+  },
+  "move_count": 91,
+  "apply_count": 37,
+  "gap_count": 0,
+  "skip_count": 0,
+  "by_gap": {},
+  "process_nudge_mm": {
+    "PROCESS_DX": 5000,
+    "PROCESS_DY": 4000,
+    "Z_Lm1": -6000
+  },
+  "nudge_rule": "Seed origins are plate-world. build_plant already applies PROCESS_DX/DY to the wet cassette. Apply script sets Placement only for explicit unit rows (yard, fab wet, MeOH, shop/cryo nozzles, water stubs). Block rows are not written, so the aisle is not restacked.",
+  "moves": [
+    {
+      "unit_id": "ACID_POLISH_SCRUB",
+      "freecad_names": [
+        "ACID_POLISH_SCRUB"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        18000.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        5000
+      ],
+      "source": "SCRUB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "AFTERBURNER",
+      "freecad_names": [
+        "AFTERBURNER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        10000,
+        6000,
+        4500
+      ],
+      "source": "OIL_GLASS",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "AFTERBURNER_FLUE",
+      "freecad_names": [
+        "HX7_FLUE_JACKET"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        18000.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        5000
+      ],
+      "source": "SCRUB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ALK_SCRUBBER",
+      "freecad_names": [
+        "ALK_SCRUBBER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        18000.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        5000
+      ],
+      "source": "SCRUB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BACKUP_GEN",
+      "freecad_names": [
+        "BACKUP_GEN"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        2000,
+        1000,
+        1600
+      ],
+      "source": "BACKUP_GEN",
+      "source_doc": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BAGHOUSE",
+      "freecad_names": [
+        "BAGHOUSE"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        18000.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        5000
+      ],
+      "source": "SCRUB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BLACK_DIGEST",
+      "freecad_names": [
+        "BLACK_DIGEST"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        200.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        1400,
+        900,
+        1600
+      ],
+      "source": "BLACK_DIGEST",
+      "source_doc": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        20000.0,
+        400.0,
+        0.0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1600
+      ],
+      "source": "BLOW_MOLD",
+      "source_doc": "ST-BLOW-01. Precious Plastic class add-on on polymer line. 0.5 kW avg. Not a 14-28 kW EBM. Scrap to oil line, not leach.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BMED_ACID",
+      "freecad_names": [
+        "BMED_REGEN"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "BMED_CRU",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BMED_BASE",
+      "freecad_names": [
+        "BMED_REGEN"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "BMED_CRU",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BMED_UPW_POLISH",
+      "freecad_names": [
+        "BMED_UPW_POLISH"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        14000.0,
+        4200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "BMED_UPW_POLISH",
+      "source_doc": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        0.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        3600,
+        800,
+        2800
+      ],
+      "source": "BOUNDARY_EXPORT",
+      "source_doc": "Dock door. Freight boundary. No process stream. Goods only.",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "C29_RECYCLE",
+      "freecad_names": [
+        "C29_RECYCLE"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "C29_RECYCLE",
+      "source_doc": "Not a second machine. Alias of the wet line already on this block. No new solid.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CATCH_TANK",
+      "freecad_names": [
+        "CATCH_TANK"
+      ],
+      "level": "L-2",
+      "origin_mm": [
+        0.0,
+        5000.0,
+        -10500.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4000
+      ],
+      "source": "CATCH",
+      "source_doc": "params.py CATCH_TANK_X/Y at SCALE_M=1",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "COLD_MILL",
+      "freecad_names": [
+        "COLD_MILL"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        5000
+      ],
+      "source": "MFG",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CONTINUOUS_RECYCLE",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "CONTINUOUS_RECYCLE",
+      "source_doc": "Not a second machine. Alias of the Q ladder / HX-8 already on the BMED block. No new solid.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRU",
+      "freecad_names": [
+        "CRU"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "BMED_CRU",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_AHU",
+      "freecad_names": [
+        "CRYO_AHU"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "CRYO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "freecad_names": [
+        "CRYO_AHU_COND"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15600.0,
+        6400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "CRYO_AHU_COND_CONDENSABLE",
+      "source_doc": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_CO2",
+      "freecad_names": [
+        "CRYO_CO2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "CRYO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_DED_COOL",
+      "freecad_names": [
+        "CRYO_DED_COOL"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "CRYO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_H2",
+      "freecad_names": [
+        "CRYO_H2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "CRYO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_HX_Q4",
+      "freecad_names": [
+        "CRYO_HX_Q4"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        16400.0,
+        6400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "CRYO_HX_Q4",
+      "source_doc": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL).",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_N2",
+      "freecad_names": [
+        "CRYO_N2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "CRYO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_O2",
+      "freecad_names": [
+        "CRYO_O2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "CRYO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        15600.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "source": "ELECTRODE_COAT",
+      "source_doc": "ST-ELC-01. Carbon/Ni booth. Exhaust MET_AHU to MET_SCRUB. DSA deferred. 0.3 kW avg.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_1",
+      "freecad_names": [
+        "EW_1"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_2",
+      "freecad_names": [
+        "EW_2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_9",
+      "freecad_names": [
+        "EW_9"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "FAB_UPW_TANK",
+      "freecad_names": [
+        "FAB_UPW_TANK"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        21000.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "FAB_UPW_TANK",
+      "source_doc": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "FLOAT_SINK",
+      "freecad_names": [
+        "FLOAT_DEWATER",
+        "SINK_DEWATER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "freecad_names": [
+        "FUEL_CELL"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3300.0,
+        7600.0,
+        0.0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "FUEL_CELL",
+      "source_doc": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GAS_ATOMIZER",
+      "freecad_names": [
+        "GAS_ATOMIZER"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        5000
+      ],
+      "source": "MFG",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_GHEX",
+      "freecad_names": [
+        "KO_GEO_GHEX"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -5200.0,
+        5200.0,
+        0.0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        800
+      ],
+      "source": "GEO_GHEX",
+      "source_doc": "West of GEO_HP. Bore field tie. Massing only.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_HP",
+      "freecad_names": [
+        "GEO_HP"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        5200.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1400
+      ],
+      "source": "GEO_HP",
+      "source_doc": "Yard, south of GEN, north of MeOH. Closed loop. Not a process pit.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_HP_CLOSED_LOOP",
+      "freecad_names": [
+        "GEO_HP_CLOSED_LOOP"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -5200.0,
+        4200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        800
+      ],
+      "source": "GEO_HP_CLOSED_LOOP",
+      "source_doc": "Loop vessel beside GHEX. Not Salria.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_ORC",
+      "freecad_names": [
+        "GEO_ORC"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        3600.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1400
+      ],
+      "source": "GEO_ORC",
+      "source_doc": "ST-ORC-01 reserved pad. M1 duty is 0 kW_e until GHEX survey shows surplus after Q4. Do not buy a skid on this row.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "freecad_names": [
+        "BURNOUT_ROTARY"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        4400.0,
+        12200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        800,
+        600,
+        1200
+      ],
+      "source": "GLASS_BURNOUT",
+      "source_doc": "IA glass. Organics off cullet before digest. Off-gas to oil vapor header, not acid header.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_DIGEST",
+      "freecad_names": [
+        "NaOH_DIGEST"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        10000,
+        6000,
+        4500
+      ],
+      "source": "OIL_GLASS",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_MILL",
+      "freecad_names": [
+        "MILL"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        3400.0,
+        12200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        800,
+        600,
+        800
+      ],
+      "source": "GLASS_MILL",
+      "source_doc": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_RINSE",
+      "freecad_names": [
+        "RINSE_DEWATER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        2000.0,
+        12200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        1200,
+        600,
+        800
+      ],
+      "source": "GLASS_RINSE",
+      "source_doc": "IA glass. After vibratory split, before mill. Rinse liquor back to CSTR 1.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GREY_TREAT",
+      "freecad_names": [
+        "GREY_TREAT"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        1800.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "GREY_TREAT",
+      "source_doc": "Downstream of black digest. HDR_GREY only. Not Salria.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GROW_BED",
+      "freecad_names": [
+        "GROW_BED"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        6000.0
+      ],
+      "size_mm": [
+        12000,
+        18000,
+        4500
+      ],
+      "source": "FARM",
+      "source_doc": "params.py FARM_X/Y/Z",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "H2_DRYER",
+      "freecad_names": [
+        "H2_DRYER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        18000.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        5000
+      ],
+      "source": "SCRUB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HABITATION",
+      "freecad_names": [
+        "HABITATION"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        0.0,
+        0.0,
+        6000.0
+      ],
+      "size_mm": [
+        12000,
+        18000,
+        3200
+      ],
+      "source": "HAB",
+      "source_doc": "params.py HAB_X/Y/Z",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HDR_H2",
+      "freecad_names": [
+        "HDR_H2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HDR_O2",
+      "freecad_names": [
+        "HDR_O2_N",
+        "HDR_O2_S",
+        "HDR_O2_E",
+        "HDR_O2_W"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        0.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        24000,
+        1000
+      ],
+      "source": "LIFE_RACK",
+      "source_doc": "params.py LIFE_RACK_S_Y",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HDR_UPW",
+      "freecad_names": [
+        "HDR_UPW_N",
+        "HDR_UPW_S",
+        "HDR_UPW_E",
+        "HDR_UPW_W"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        0.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        24000,
+        1000
+      ],
+      "source": "LIFE_RACK",
+      "source_doc": "params.py LIFE_RACK_S_Y",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HOPPER",
+      "freecad_names": [
+        "HOPPER_SHREDDER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HYDRO_SET",
+      "freecad_names": [
+        "HYDRO_SET"
+      ],
+      "level": "L-2",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -10500.0
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        3500
+      ],
+      "source": "HYDRO",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "freecad_names": [
+        "LEACH_CSTR_1"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "LEACH_EW",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_STUB",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        18000.0,
+        15000.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1600
+      ],
+      "source": "LITHO_STUB",
+      "source_doc": "ST-LITHO-01. Coat, align, develop. 1-5 starts/d, 150 mm, 2 mL resist. Solvent to WS_SOLV cabinet, not this bench.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LOAD_AGG",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        -1900.0,
+        11800.0,
+        0.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        1800
+      ],
+      "source": "LOAD_AGG",
+      "source_doc": "Electrical sum at the rectifier. Not a process vessel. S17/S20 accounting node.",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "freecad_names": [
+        "MEOH_FC"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "MEOH_FC",
+      "source_doc": "Order 4. Last. Not the PEM H2 fuel cell. No bay inside L1.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_FERM",
+      "freecad_names": [
+        "MEOH_FERM"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        4000.0,
+        0.0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "MEOH_FERM",
+      "source_doc": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "freecad_names": [
+        "MEOH_SYNTH"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        2800.0,
+        0.0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "MEOH_SYNTH",
+      "source_doc": "Order 2. Downstream of fermenter. DMFC still deferred.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "freecad_names": [
+        "MEOH_TANK"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        1600.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "MEOH_TANK",
+      "source_doc": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_AHU",
+      "freecad_names": [
+        "MET_AHU"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12200.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "source": "MET_AHU",
+      "source_doc": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_HX_Q4",
+      "freecad_names": [
+        "MET_HX_Q4"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        14600.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "MET_HX_Q4",
+      "source_doc": "Water only, after scrub, <80 C. S63.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_MELT",
+      "freecad_names": [
+        "MET_MELT"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        5000
+      ],
+      "source": "MFG",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_SCRUB",
+      "freecad_names": [
+        "MET_SCRUB"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        13600.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        2000
+      ],
+      "source": "MET_SCRUB",
+      "source_doc": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MFG_SHOP",
+      "freecad_names": [
+        "MFG_SHOP"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        5000
+      ],
+      "source": "MFG",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "NORTH_DOCK",
+      "freecad_names": [
+        "DOCK",
+        "DOCK_APRON_N",
+        "DOCK_DOOR_N"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        0.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        8000
+      ],
+      "source": "DOCK",
+      "source_doc": "params.py DOCK_Y = PLATE_W - DOCK_W",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "NUTRIENT_DOSE",
+      "freecad_names": [
+        "NUTRIENT_DOSE"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        6000.0
+      ],
+      "size_mm": [
+        12000,
+        18000,
+        4500
+      ],
+      "source": "FARM",
+      "source_doc": "params.py FARM_X/Y/Z",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "OIL_DRYER",
+      "freecad_names": [
+        "DRYER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        10000,
+        6000,
+        4500
+      ],
+      "source": "OIL_GLASS",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "OIL_FRAC",
+      "freecad_names": [
+        "FRACTIONATOR"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        10000,
+        6000,
+        4500
+      ],
+      "source": "OIL_GLASS",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "OIL_PYRO",
+      "freecad_names": [
+        "INDUCTION_PYROLYZER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        10000,
+        6000,
+        4500
+      ],
+      "source": "OIL_GLASS",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "POLISH_BANK",
+      "freecad_names": [
+        "PK_1",
+        "PK_2",
+        "PK_3",
+        "PK_6",
+        "PK_7",
+        "PK_8",
+        "PK_9"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "BMED_CRU",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "freecad_names": [
+        "PV_ARRAY"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -9200.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        4000,
+        2000,
+        80
+      ],
+      "source": "PV_ARRAY",
+      "source_doc": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "Q4_BUS",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        200,
+        200
+      ],
+      "source": "Q4_BUS",
+      "source_doc": "Water header collecting S06/S44/S53/S54/S63/S80. <80 C. Not a flue.",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "freecad_names": [
+        "RECTIFIER"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -1900.0,
+        12800.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1800
+      ],
+      "source": "RECTIFIER",
+      "source_doc": "params.py RECT_* . Same ordinary yard row. Not in Class I.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "REMIN",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        2800.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        800
+      ],
+      "source": "REMIN",
+      "source_doc": "ST-REMIN-01. 10 L/d. Ca 25 mg/L, Mg 10 mg/L from hydroxide dissolve. After class treat and UV. Not a second leach.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ROOF_TANK",
+      "freecad_names": [
+        "ROOF_TANK"
+      ],
+      "level": "L2",
+      "origin_mm": [
+        4000.0,
+        3000.0,
+        10800.0
+      ],
+      "size_mm": [
+        16000,
+        12000,
+        7000
+      ],
+      "source": "ROOF",
+      "source_doc": "params.py ROOF_TANK centered",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "S13_CLASS_TREAT",
+      "freecad_names": [
+        "S13_CLASS_TREAT"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12800.0,
+        2000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "S13_CLASS_TREAT",
+      "source_doc": "Wet side, not life floor. Class treat before any life return.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SALT_FEED",
+      "freecad_names": [
+        "SALT_FEED"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12000.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "BMED_CRU",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        18800.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        2400,
+        1200,
+        1600
+      ],
+      "source": "SOLAR_PV_CELL",
+      "source_doc": "ST-SOLAR-01 train: texture, emitter, PSG etch, ARC, contact, fire, IV. 1 kW mid. KOH from WS_KOH. Not the yard PV array.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SOL_ARK_60K",
+      "freecad_names": [
+        "SOL_ARK_60K"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -1500.0,
+        14800.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        400,
+        1400
+      ],
+      "source": "SOL_ARK_60K",
+      "source_doc": "params.py SOLARK_* . East face at X=-1100 (NEC 110.26). North of rectifier. Outside ZnBr2 Class I.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "TERRACE_IRRIG",
+      "freecad_names": [
+        "TERRACE_IRRIG_HDR_S"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        0.0,
+        -3000.0,
+        0.0
+      ],
+      "size_mm": [
+        24000,
+        400
+      ],
+      "source": "TERRACE_IRRIG",
+      "source_doc": "South grade overflow header. Clean tower water. Not a machine.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "VCD_TRAIN",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        15000.0,
+        2000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        1400,
+        600,
+        1200
+      ],
+      "source": "VCD_TRAIN",
+      "source_doc": "ST-VCD-01 MVC. 0.11 m3/d, 14-20 kWh/m3, ~0.08 kW avg. Before REMIN. Not RO.",
+      "apply": false,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WAFER_FAB",
+      "freecad_names": [
+        "WAFER_FAB"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        8000.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        10000,
+        4000
+      ],
+      "source": "FAB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WET_BENCH",
+      "freecad_names": [
+        "WET_BENCH"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        8000.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        10000,
+        4000
+      ],
+      "source": "FAB",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WIRE_DRAW",
+      "freecad_names": [
+        "WIRE_DRAW"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        0.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        5000
+      ],
+      "source": "MFG",
+      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "apply": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_AMMONIA",
+      "freecad_names": [
+        "WS_AMMONIA"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        15200.0,
+        9400.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_AMMONIA",
+      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "freecad_names": [
+        "WS_DOPE"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        20000.0,
+        15000.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_DOPE",
+      "source_doc": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_HF_ED",
+      "freecad_names": [
+        "WS_HF_ED"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_HF_ED",
+      "source_doc": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_KOH",
+      "freecad_names": [
+        "WS_KOH"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        16200.0,
+        9400.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_KOH",
+      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_NITRIC",
+      "freecad_names": [
+        "WS_NITRIC"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        13200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_NITRIC",
+      "source_doc": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_PEROX",
+      "freecad_names": [
+        "WS_PEROX"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        15200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_PEROX",
+      "source_doc": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "freecad_names": [
+        "WS_SLURRY"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        17200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_SLURRY",
+      "source_doc": "CMP makeup. Glass silicate + UPW. Not an etch bath.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "freecad_names": [
+        "WS_SOLV"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12200.0,
+        16000.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_SOLV",
+      "source_doc": "Flammable cabinet, FAB north wall. 1 h from HF room. Oil-vapor rules, not the acid header.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ZNBR2",
+      "freecad_names": [
+        "ZNBR2"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        1800,
+        1200,
+        1600
+      ],
+      "source": "ZNBR2",
+      "source_doc": "params.py ZNBR_* . East face 3048 mm west of X=0 (AQS-HSE-001 10 ft from openings). Y aligned to dock. Outdoor. Own Br2 tower, not CRU.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    }
+  ],
+  "apply_moves": [
+    {
+      "unit_id": "BACKUP_GEN",
+      "freecad_names": [
+        "BACKUP_GEN"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        2000,
+        1000,
+        1600
+      ],
+      "source": "BACKUP_GEN",
+      "source_doc": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BLACK_DIGEST",
+      "freecad_names": [
+        "BLACK_DIGEST"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        200.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        1400,
+        900,
+        1600
+      ],
+      "source": "BLACK_DIGEST",
+      "source_doc": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BMED_UPW_POLISH",
+      "freecad_names": [
+        "BMED_UPW_POLISH"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        14000.0,
+        4200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "BMED_UPW_POLISH",
+      "source_doc": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "C29_RECYCLE",
+      "freecad_names": [
+        "C29_RECYCLE"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "C29_RECYCLE",
+      "source_doc": "Not a second machine. Alias of the wet line already on this block. No new solid.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "freecad_names": [
+        "CRYO_AHU_COND"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        15600.0,
+        6400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "CRYO_AHU_COND_CONDENSABLE",
+      "source_doc": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "CRYO_HX_Q4",
+      "freecad_names": [
+        "CRYO_HX_Q4"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        16400.0,
+        6400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "CRYO_HX_Q4",
+      "source_doc": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL).",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "FAB_UPW_TANK",
+      "freecad_names": [
+        "FAB_UPW_TANK"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        21000.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "FAB_UPW_TANK",
+      "source_doc": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "freecad_names": [
+        "FUEL_CELL"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3300.0,
+        7600.0,
+        0.0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "FUEL_CELL",
+      "source_doc": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_GHEX",
+      "freecad_names": [
+        "KO_GEO_GHEX"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -5200.0,
+        5200.0,
+        0.0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        800
+      ],
+      "source": "GEO_GHEX",
+      "source_doc": "West of GEO_HP. Bore field tie. Massing only.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_HP",
+      "freecad_names": [
+        "GEO_HP"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        5200.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1400
+      ],
+      "source": "GEO_HP",
+      "source_doc": "Yard, south of GEN, north of MeOH. Closed loop. Not a process pit.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_HP_CLOSED_LOOP",
+      "freecad_names": [
+        "GEO_HP_CLOSED_LOOP"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -5200.0,
+        4200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        800
+      ],
+      "source": "GEO_HP_CLOSED_LOOP",
+      "source_doc": "Loop vessel beside GHEX. Not Salria.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GEO_ORC",
+      "freecad_names": [
+        "GEO_ORC"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        3600.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1400
+      ],
+      "source": "GEO_ORC",
+      "source_doc": "ST-ORC-01 reserved pad. M1 duty is 0 kW_e until GHEX survey shows surplus after Q4. Do not buy a skid on this row.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "freecad_names": [
+        "BURNOUT_ROTARY"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        4400.0,
+        12200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        800,
+        600,
+        1200
+      ],
+      "source": "GLASS_BURNOUT",
+      "source_doc": "IA glass. Organics off cullet before digest. Off-gas to oil vapor header, not acid header.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_MILL",
+      "freecad_names": [
+        "MILL"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        3400.0,
+        12200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        800,
+        600,
+        800
+      ],
+      "source": "GLASS_MILL",
+      "source_doc": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GLASS_RINSE",
+      "freecad_names": [
+        "RINSE_DEWATER"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        2000.0,
+        12200.0,
+        -6000.0
+      ],
+      "size_mm": [
+        1200,
+        600,
+        800
+      ],
+      "source": "GLASS_RINSE",
+      "source_doc": "IA glass. After vibratory split, before mill. Rinse liquor back to CSTR 1.",
+      "apply": true,
+      "study": true,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "GREY_TREAT",
+      "freecad_names": [
+        "GREY_TREAT"
+      ],
+      "level": "L1",
+      "origin_mm": [
+        1800.0,
+        200.0,
+        6000.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "GREY_TREAT",
+      "source_doc": "Downstream of black digest. HDR_GREY only. Not Salria.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "freecad_names": [
+        "MEOH_FC"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "MEOH_FC",
+      "source_doc": "Order 4. Last. Not the PEM H2 fuel cell. No bay inside L1.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_FERM",
+      "freecad_names": [
+        "MEOH_FERM"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        4000.0,
+        0.0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "MEOH_FERM",
+      "source_doc": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "freecad_names": [
+        "MEOH_SYNTH"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        2800.0,
+        0.0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "MEOH_SYNTH",
+      "source_doc": "Order 2. Downstream of fermenter. DMFC still deferred.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "freecad_names": [
+        "MEOH_TANK"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        1600.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "MEOH_TANK",
+      "source_doc": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_AHU",
+      "freecad_names": [
+        "MET_AHU"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12200.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "source": "MET_AHU",
+      "source_doc": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_HX_Q4",
+      "freecad_names": [
+        "MET_HX_Q4"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        14600.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "MET_HX_Q4",
+      "source_doc": "Water only, after scrub, <80 C. S63.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MET_SCRUB",
+      "freecad_names": [
+        "MET_SCRUB"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        13600.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        2000
+      ],
+      "source": "MET_SCRUB",
+      "source_doc": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "freecad_names": [
+        "PV_ARRAY"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -9200.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        4000,
+        2000,
+        80
+      ],
+      "source": "PV_ARRAY",
+      "source_doc": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "freecad_names": [
+        "RECTIFIER"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -1900.0,
+        12800.0,
+        0.0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1800
+      ],
+      "source": "RECTIFIER",
+      "source_doc": "params.py RECT_* . Same ordinary yard row. Not in Class I.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "S13_CLASS_TREAT",
+      "freecad_names": [
+        "S13_CLASS_TREAT"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12800.0,
+        2000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "S13_CLASS_TREAT",
+      "source_doc": "Wet side, not life floor. Class treat before any life return.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SOL_ARK_60K",
+      "freecad_names": [
+        "SOL_ARK_60K"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -1500.0,
+        14800.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        400,
+        1400
+      ],
+      "source": "SOL_ARK_60K",
+      "source_doc": "params.py SOLARK_* . East face at X=-1100 (NEC 110.26). North of rectifier. Outside ZnBr2 Class I.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "TERRACE_IRRIG",
+      "freecad_names": [
+        "TERRACE_IRRIG_HDR_S"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        0.0,
+        -3000.0,
+        0.0
+      ],
+      "size_mm": [
+        24000,
+        400
+      ],
+      "source": "TERRACE_IRRIG",
+      "source_doc": "South grade overflow header. Clean tower water. Not a machine.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_AMMONIA",
+      "freecad_names": [
+        "WS_AMMONIA"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        15200.0,
+        9400.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_AMMONIA",
+      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "freecad_names": [
+        "WS_DOPE"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        20000.0,
+        15000.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_DOPE",
+      "source_doc": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_HF_ED",
+      "freecad_names": [
+        "WS_HF_ED"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_HF_ED",
+      "source_doc": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_KOH",
+      "freecad_names": [
+        "WS_KOH"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        16200.0,
+        9400.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_KOH",
+      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_NITRIC",
+      "freecad_names": [
+        "WS_NITRIC"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        13200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_NITRIC",
+      "source_doc": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_PEROX",
+      "freecad_names": [
+        "WS_PEROX"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        15200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_PEROX",
+      "source_doc": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "freecad_names": [
+        "WS_SLURRY"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        17200.0,
+        8200.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_SLURRY",
+      "source_doc": "CMP makeup. Glass silicate + UPW. Not an etch bath.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "freecad_names": [
+        "WS_SOLV"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        12200.0,
+        16000.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_SOLV",
+      "source_doc": "Flammable cabinet, FAB north wall. 1 h from HF room. Oil-vapor rules, not the acid header.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ZNBR2",
+      "freecad_names": [
+        "ZNBR2"
+      ],
+      "level": "L0",
+      "origin_mm": [
+        -4848.0,
+        10000.0,
+        0.0
+      ],
+      "size_mm": [
+        1800,
+        1200,
+        1600
+      ],
+      "source": "ZNBR2",
+      "source_doc": "params.py ZNBR_* . East face 3048 mm west of X=0 (AQS-HSE-001 10 ft from openings). Y aligned to dock. Outdoor. Own Br2 tower, not CRU.",
+      "apply": true,
+      "study": false,
+      "frame": "plate_world"
+    }
+  ],
+  "gaps": [],
+  "skipped": [],
+  "refused": [
+    "edge_auto_router",
+    "size_from_rate",
+    "rewrite_gold_params"
+  ]
+}

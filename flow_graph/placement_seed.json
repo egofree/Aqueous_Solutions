@@ -1,0 +1,1266 @@
+{
+  "schema": "aqs-placement-table-1.0",
+  "doc_id": "AQS-PLACE-SEED-001",
+  "revision": "E",
+  "date": "2026-10-02",
+  "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
+  "datums_mm": {
+    "L0": 0,
+    "L-1": -6000,
+    "L-2": -10500,
+    "L1": 6000,
+    "L2": 10800
+  },
+  "rules": {
+    "yard_wall_clear_mm": 500,
+    "nec_110_26_mm": 1100,
+    "ess_opening_setback_mm": 3048,
+    "class_I_flange_mm": 914,
+    "oxidizer_or_1h_mm": 7620
+  },
+  "blocks": [
+    {
+      "block_id": "LEACH_EW",
+      "level": "L-1",
+      "origin_mm": [
+        0,
+        4000
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4500
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "LEACH_CSTR_1",
+        "EW_1",
+        "EW_2",
+        "EW_9",
+        "FLOAT_SINK",
+        "HOPPER",
+        "HDR_H2"
+      ]
+    },
+    {
+      "block_id": "BMED_CRU",
+      "level": "L-1",
+      "origin_mm": [
+        12000,
+        4000
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        3500
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "BMED_ACID",
+        "BMED_BASE",
+        "CRU",
+        "SALT_FEED",
+        "POLISH_BANK",
+        "BMED_UPW_POLISH"
+      ]
+    },
+    {
+      "block_id": "OIL_GLASS",
+      "level": "L-1",
+      "origin_mm": [
+        0,
+        12000
+      ],
+      "size_mm": [
+        10000,
+        6000,
+        4500
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "OIL_DRYER",
+        "OIL_FRAC",
+        "OIL_PYRO",
+        "AFTERBURNER",
+        "GLASS_DIGEST"
+      ]
+    },
+    {
+      "block_id": "CRYO",
+      "level": "L-1",
+      "origin_mm": [
+        15000,
+        6000
+      ],
+      "size_mm": [
+        9000,
+        6000,
+        4000
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "CRYO_H2",
+        "CRYO_O2",
+        "CRYO_N2",
+        "CRYO_CO2",
+        "CRYO_AHU",
+        "CRYO_DED_COOL"
+      ]
+    },
+    {
+      "block_id": "CATCH",
+      "level": "L-2",
+      "origin_mm": [
+        0,
+        5000
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4000
+      ],
+      "source": "params.py CATCH_TANK_X/Y at SCALE_M=1",
+      "unit_ids": [
+        "CATCH_TANK"
+      ]
+    },
+    {
+      "block_id": "HYDRO",
+      "level": "L-2",
+      "origin_mm": [
+        12000,
+        4000
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        3500
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "HYDRO_SET"
+      ]
+    },
+    {
+      "block_id": "DOCK",
+      "level": "L0",
+      "origin_mm": [
+        0,
+        10000
+      ],
+      "size_mm": [
+        12000,
+        8000
+      ],
+      "source": "params.py DOCK_Y = PLATE_W - DOCK_W",
+      "unit_ids": [
+        "NORTH_DOCK"
+      ]
+    },
+    {
+      "block_id": "MFG",
+      "level": "L0",
+      "origin_mm": [
+        12000,
+        0
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        5000
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "MFG_SHOP",
+        "MET_MELT",
+        "COLD_MILL",
+        "WIRE_DRAW",
+        "GAS_ATOMIZER"
+      ]
+    },
+    {
+      "block_id": "FAB",
+      "level": "L0",
+      "origin_mm": [
+        12000,
+        8000
+      ],
+      "size_mm": [
+        12000,
+        10000,
+        4000
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "WAFER_FAB",
+        "WET_BENCH"
+      ]
+    },
+    {
+      "block_id": "HAB",
+      "level": "L1",
+      "origin_mm": [
+        0,
+        0
+      ],
+      "size_mm": [
+        12000,
+        18000,
+        3200
+      ],
+      "source": "params.py HAB_X/Y/Z",
+      "unit_ids": [
+        "HABITATION"
+      ]
+    },
+    {
+      "block_id": "FARM",
+      "level": "L1",
+      "origin_mm": [
+        12000,
+        0
+      ],
+      "size_mm": [
+        12000,
+        18000,
+        4500
+      ],
+      "source": "params.py FARM_X/Y/Z",
+      "unit_ids": [
+        "GROW_BED",
+        "NUTRIENT_DOSE"
+      ]
+    },
+    {
+      "block_id": "ROOF",
+      "level": "L2",
+      "origin_mm": [
+        4000,
+        3000
+      ],
+      "size_mm": [
+        16000,
+        12000,
+        7000
+      ],
+      "source": "params.py ROOF_TANK centered",
+      "unit_ids": [
+        "ROOF_TANK"
+      ]
+    },
+    {
+      "block_id": "SCRUB",
+      "level": "L-1",
+      "origin_mm": [
+        18000,
+        12000
+      ],
+      "size_mm": [
+        6000,
+        6000,
+        5000
+      ],
+      "source": "AQS-BLD-001 Rev F \u00a76",
+      "unit_ids": [
+        "ACID_POLISH_SCRUB",
+        "ALK_SCRUBBER",
+        "BAGHOUSE",
+        "H2_DRYER",
+        "AFTERBURNER_FLUE"
+      ]
+    },
+    {
+      "block_id": "LIFE_RACK",
+      "level": "L1",
+      "origin_mm": [
+        0,
+        200
+      ],
+      "size_mm": [
+        24000,
+        1000
+      ],
+      "source": "params.py LIFE_RACK_S_Y",
+      "unit_ids": [
+        "HDR_O2",
+        "HDR_UPW"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ZNBR2",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        10000,
+        0
+      ],
+      "size_mm": [
+        1800,
+        1200,
+        1600
+      ],
+      "source": "params.py ZNBR_* . East face 3048 mm west of X=0 (AQS-HSE-001 10 ft from openings). Y aligned to dock. Outdoor. Own Br2 tower, not CRU."
+    },
+    {
+      "unit_id": "SOL_ARK_60K",
+      "level": "L0",
+      "origin_mm": [
+        -1500,
+        14800,
+        0
+      ],
+      "size_mm": [
+        800,
+        400,
+        1400
+      ],
+      "source": "params.py SOLARK_* . East face at X=-1100 (NEC 110.26). North of rectifier. Outside ZnBr2 Class I."
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "level": "L0",
+      "origin_mm": [
+        -1900,
+        12800,
+        0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1800
+      ],
+      "source": "params.py RECT_* . Same ordinary yard row. Not in Class I."
+    },
+    {
+      "unit_id": "BACKUP_GEN",
+      "level": "L0",
+      "origin_mm": [
+        -3500,
+        8200,
+        0
+      ],
+      "size_mm": [
+        2000,
+        1000,
+        1600
+      ],
+      "source": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear."
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "level": "L0",
+      "origin_mm": [
+        -3300,
+        7600,
+        0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only."
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "level": "L0",
+      "origin_mm": [
+        -9200,
+        10000,
+        0
+      ],
+      "size_mm": [
+        4000,
+        2000,
+        80
+      ],
+      "source": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank."
+    },
+    {
+      "unit_id": "WS_HF_ED",
+      "level": "L0",
+      "origin_mm": [
+        12200,
+        8200,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH."
+    },
+    {
+      "unit_id": "WS_NITRIC",
+      "level": "L0",
+      "origin_mm": [
+        13200,
+        8200,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents."
+    },
+    {
+      "unit_id": "WS_PEROX",
+      "level": "L0",
+      "origin_mm": [
+        15200,
+        8200,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV."
+    },
+    {
+      "unit_id": "WS_AMMONIA",
+      "level": "L0",
+      "origin_mm": [
+        15200,
+        9400,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room."
+    },
+    {
+      "unit_id": "WS_KOH",
+      "level": "L0",
+      "origin_mm": [
+        16200,
+        9400,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub."
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "level": "L0",
+      "origin_mm": [
+        20000,
+        15000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle."
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "level": "L0",
+      "origin_mm": [
+        17200,
+        8200,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "CMP makeup. Glass silicate + UPW. Not an etch bath."
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "level": "L0",
+      "origin_mm": [
+        12200,
+        16000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Flammable cabinet, FAB north wall. 1 h from HF room. Oil-vapor rules, not the acid header."
+    },
+    {
+      "unit_id": "FAB_UPW_TANK",
+      "level": "L0",
+      "origin_mm": [
+        21000,
+        8200,
+        0
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria."
+    },
+    {
+      "unit_id": "MEOH_FERM",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        2400,
+        0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate."
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        1200,
+        0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "Order 2. Downstream of fermenter. DMFC still deferred."
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        1600,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank."
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        200,
+        0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "Order 4. Last. Not the PEM H2 fuel cell. No bay inside L1."
+    },
+    {
+      "unit_id": "MET_AHU",
+      "level": "L0",
+      "origin_mm": [
+        12200,
+        200,
+        0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "source": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return."
+    },
+    {
+      "unit_id": "MET_SCRUB",
+      "level": "L0",
+      "origin_mm": [
+        13600,
+        200,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        2000
+      ],
+      "source": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4."
+    },
+    {
+      "unit_id": "MET_HX_Q4",
+      "level": "L0",
+      "origin_mm": [
+        14600,
+        200,
+        0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "Water only, after scrub, <80 C. S63."
+    },
+    {
+      "unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "level": "L-1",
+      "origin_mm": [
+        15600,
+        6400,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab."
+    },
+    {
+      "unit_id": "CRYO_HX_Q4",
+      "level": "L-1",
+      "origin_mm": [
+        16400,
+        6400,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL)."
+    },
+    {
+      "unit_id": "BLACK_DIGEST",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        200,
+        6000
+      ],
+      "size_mm": [
+        1400,
+        900,
+        1600
+      ],
+      "source": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST."
+    },
+    {
+      "unit_id": "GREY_TREAT",
+      "level": "L1",
+      "origin_mm": [
+        1800,
+        200,
+        6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Downstream of black digest. HDR_GREY only. Not Salria."
+    },
+    {
+      "unit_id": "S13_CLASS_TREAT",
+      "level": "L-1",
+      "origin_mm": [
+        12800,
+        2000,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Wet side, not life floor. Class treat before any life return."
+    },
+    {
+      "unit_id": "BMED_UPW_POLISH",
+      "level": "L-1",
+      "origin_mm": [
+        14000,
+        4200,
+        -6000
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack."
+    },
+    {
+      "unit_id": "TERRACE_IRRIG",
+      "level": "L0",
+      "origin_mm": [
+        0,
+        -3000,
+        0
+      ],
+      "size_mm": [
+        24000,
+        400
+      ],
+      "source": "South grade overflow header. Clean tower water. Not a machine."
+    },
+    {
+      "unit_id": "GEO_HP",
+      "level": "L0",
+      "origin_mm": [
+        -7000,
+        5200,
+        0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1400
+      ],
+      "source": "Yard, south of GEN, north of MeOH. Closed loop. Not a process pit."
+    },
+    {
+      "unit_id": "GEO_GHEX",
+      "level": "L0",
+      "origin_mm": [
+        -8600,
+        5200,
+        0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        800
+      ],
+      "source": "West of GEO_HP. Bore field tie. Massing only."
+    },
+    {
+      "unit_id": "GEO_HP_CLOSED_LOOP",
+      "level": "L0",
+      "origin_mm": [
+        -8600,
+        4000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        800
+      ],
+      "source": "Loop vessel beside GHEX. Not Salria."
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "level": "L0",
+      "origin_mm": [
+        20000,
+        400,
+        0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1600
+      ],
+      "source": "ST-BLOW-01. Precious Plastic class add-on on polymer line. 0.5 kW avg. Not a 14-28 kW EBM. Scrap to oil line, not leach."
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "level": "L0",
+      "origin_mm": [
+        15600,
+        200,
+        0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "source": "ST-ELC-01. Carbon/Ni booth. Exhaust MET_AHU to MET_SCRUB. DSA deferred. 0.3 kW avg."
+    },
+    {
+      "unit_id": "GEO_ORC",
+      "level": "L0",
+      "origin_mm": [
+        -7000,
+        3600,
+        0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1400
+      ],
+      "source": "ST-ORC-01 reserved pad. M1 duty is 0 kW_e until GHEX survey shows surplus after Q4. Do not buy a skid on this row."
+    },
+    {
+      "unit_id": "GLASS_RINSE",
+      "level": "L-1",
+      "origin_mm": [
+        2000,
+        12200,
+        -6000
+      ],
+      "size_mm": [
+        1200,
+        600,
+        800
+      ],
+      "source": "IA glass. After vibratory split, before mill. Rinse liquor back to CSTR 1."
+    },
+    {
+      "unit_id": "GLASS_MILL",
+      "level": "L-1",
+      "origin_mm": [
+        3400,
+        12200,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        800
+      ],
+      "source": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class."
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "level": "L-1",
+      "origin_mm": [
+        4400,
+        12200,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        1200
+      ],
+      "source": "IA glass. Organics off cullet before digest. Off-gas to oil vapor header, not acid header."
+    },
+    {
+      "unit_id": "LITHO_STUB",
+      "level": "L0",
+      "origin_mm": [
+        18000,
+        15000,
+        0
+      ],
+      "size_mm": [
+        1600,
+        800,
+        1600
+      ],
+      "source": "ST-LITHO-01. Coat, align, develop. 1-5 starts/d, 150 mm, 2 mL resist. Solvent to WS_SOLV cabinet, not this bench."
+    },
+    {
+      "unit_id": "REMIN",
+      "level": "L1",
+      "origin_mm": [
+        2800,
+        200,
+        6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        800
+      ],
+      "source": "ST-REMIN-01. 10 L/d. Ca 25 mg/L, Mg 10 mg/L from hydroxide dissolve. After class treat and UV. Not a second leach."
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "level": "L0",
+      "origin_mm": [
+        18800,
+        10000,
+        0
+      ],
+      "size_mm": [
+        2400,
+        1200,
+        1600
+      ],
+      "source": "ST-SOLAR-01 train: texture, emitter, PSG etch, ARC, contact, fire, IV. 1 kW mid. KOH from WS_KOH. Not the yard PV array."
+    },
+    {
+      "unit_id": "VCD_TRAIN",
+      "level": "L-1",
+      "origin_mm": [
+        15000,
+        2000,
+        -6000
+      ],
+      "size_mm": [
+        1400,
+        600,
+        1200
+      ],
+      "source": "ST-VCD-01 MVC. 0.11 m3/d, 14-20 kWh/m3, ~0.08 kW avg. Before REMIN. Not RO."
+    },
+    {
+      "unit_id": "C29_RECYCLE",
+      "level": "L-1",
+      "origin_mm": [
+        2000,
+        12400,
+        -6000
+      ],
+      "size_mm": [
+        2000,
+        60,
+        60
+      ],
+      "source": "C29 cut pipe. PROD_C29 to pyro inlet. Not the wet line."
+    },
+    {
+      "unit_id": "CONTINUOUS_RECYCLE",
+      "level": "L-1",
+      "origin_mm": [
+        800,
+        4200,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        60,
+        60
+      ],
+      "source": "Liquor return to LEACH CSTR 1. Not the heat ladder."
+    },
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "level": "L0",
+      "origin_mm": [
+        0,
+        10000,
+        0
+      ],
+      "size_mm": [
+        3600,
+        800,
+        2800
+      ],
+      "source": "Dock door. Freight boundary. No process stream. Goods only."
+    },
+    {
+      "unit_id": "LOAD_AGG",
+      "level": "L0",
+      "origin_mm": [
+        -1900,
+        11800,
+        0
+      ],
+      "size_mm": [
+        600,
+        400,
+        1800
+      ],
+      "source": "Electrical sum at the rectifier. Not a process vessel. S17/S20 accounting node."
+    },
+    {
+      "unit_id": "Q4_BUS",
+      "level": "L0",
+      "origin_mm": [
+        12000,
+        0,
+        0
+      ],
+      "size_mm": [
+        10000,
+        80,
+        80
+      ],
+      "source": "Water header collecting S06/S44/S53/S54/S63/S80. <80 C. Not a flue."
+    },
+    {
+      "unit_id": "Q1_A",
+      "level": "L-1",
+      "origin_mm": [
+        6000,
+        4000,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q2_A",
+      "level": "L-1",
+      "origin_mm": [
+        6000,
+        5500,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q3_A",
+      "level": "L-1",
+      "origin_mm": [
+        6000,
+        7000,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q4_A",
+      "level": "L-1",
+      "origin_mm": [
+        6000,
+        8500,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q1_B",
+      "level": "L-1",
+      "origin_mm": [
+        12000,
+        4000,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q2_B",
+      "level": "L-1",
+      "origin_mm": [
+        12000,
+        5500,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q3_B",
+      "level": "L-1",
+      "origin_mm": [
+        12000,
+        7000,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "Q4_B",
+      "level": "L-1",
+      "origin_mm": [
+        12000,
+        8500,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        800,
+        1200
+      ],
+      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+    },
+    {
+      "unit_id": "PROD_C5_C10",
+      "level": "L-1",
+      "origin_mm": [
+        4400,
+        12200,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        300,
+        700
+      ],
+      "source": "Cut tank. Product. NFPA 30."
+    },
+    {
+      "unit_id": "PROD_C11_C18",
+      "level": "L-1",
+      "origin_mm": [
+        4400,
+        12600,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        300,
+        700
+      ],
+      "source": "Cut tank."
+    },
+    {
+      "unit_id": "PROD_C19_C28",
+      "level": "L-1",
+      "origin_mm": [
+        4400,
+        13000,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        300,
+        700
+      ],
+      "source": "Cut tank."
+    },
+    {
+      "unit_id": "PROD_C29",
+      "level": "L-1",
+      "origin_mm": [
+        4400,
+        13400,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        300,
+        700
+      ],
+      "source": "C29 tank. Feeds C29_RECYCLE only."
+    },
+    {
+      "unit_id": "NCG_HEADER",
+      "level": "L-1",
+      "origin_mm": [
+        5200,
+        12200,
+        -6000
+      ],
+      "size_mm": [
+        80,
+        80,
+        800
+      ],
+      "source": "NCG only. To afterburner."
+    },
+    {
+      "unit_id": "HX8",
+      "level": "L-1",
+      "origin_mm": [
+        4000,
+        5200,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "EW exchanger. Not a cell."
+    },
+    {
+      "unit_id": "FLUE_KO",
+      "level": "L-1",
+      "origin_mm": [
+        18000,
+        12400,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        800
+      ],
+      "source": "Flue knockout before CO2 claim."
+    },
+    {
+      "unit_id": "NOX_SCRUB",
+      "level": "L0",
+      "origin_mm": [
+        -3500,
+        7000,
+        0
+      ],
+      "size_mm": [
+        600,
+        400,
+        1200
+      ],
+      "source": "Gen exhaust. Not grey."
+    },
+    {
+      "unit_id": "MEOH_COND",
+      "level": "L0",
+      "origin_mm": [
+        -3000,
+        200,
+        0
+      ],
+      "size_mm": [
+        400,
+        400,
+        600
+      ],
+      "source": "MeOH FC condensate. Process."
+    },
+    {
+      "unit_id": "ZNBR2_BR2_REGEN",
+      "level": "L0",
+      "origin_mm": [
+        -6400,
+        10000,
+        0
+      ],
+      "size_mm": [
+        400,
+        400,
+        1500
+      ],
+      "source": "Own Br2 tower. 10 ft class with the skid."
+    }
+  ]
+}
