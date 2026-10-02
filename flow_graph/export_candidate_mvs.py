@@ -48,7 +48,7 @@ def _graph_edge_to_stream(edge: dict[str, Any]) -> dict[str, Any]:
         "to_sector_id": edge.get("to_sector_id"),
         "open_boundary": bool(edge.get("open_boundary", False)),
     }
-    # Explicit null-rate labels for projection consumers (WP-A1)
+    # Honest null-rate labels for projection consumers (WP-A1)
     if rate is None or rate.get("value") is None:
         if edge.get("open_boundary") or edge.get("namespace") == "TBD":
             stream["null_rate_kind"] = "open_boundary"
@@ -129,7 +129,7 @@ def project_candidate_mvs(graph: dict[str, Any] | None = None) -> dict[str, Any]
         "unclosed_streams": [],
         "notes": notes,
     }
-    # Never claim closed loops from projection alone
+    # Honesty: never claim closed loops from projection
     crit = out["mvs_criteria"]
     if isinstance(crit, dict):
         crit.setdefault("loops_closed", False)

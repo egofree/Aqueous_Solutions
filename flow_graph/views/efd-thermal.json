@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "B",
-  "node_count": 13,
-  "edge_count": 11,
+  "source_revision": "F",
+  "node_count": 14,
+  "edge_count": 14,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -31,15 +31,18 @@
     {
       "unit_id": "CONTINUOUS_RECYCLE",
       "sector_id": "WET",
-      "presence": "placeholder",
+      "presence": "present",
       "class": "recycle",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": "continuous_recycling_pfd unlabeled",
-      "notes": "Continuous recycle heat ladder node",
+      "notes": "WP-L2: continuous recycle Present; rates on IA-REC-*",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "presence": "present",
+        "wp_l2": "promoted_from_placeholder"
+      },
       "continuous_kw": null
     },
     {
@@ -99,11 +102,28 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "Geothermal GHEX (S43)",
+      "notes": "True-closure: GHEX design-basis T_source=285 K, k_ground=1.5 W/m\u00b7K, Q_GHEX_avail=Q4_life=3.0 kW_th \u2192 Q_surplus=0 (ST-ORC-01). Not field survey.",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "presence": "present",
+        "study_id": "ST-ORC-01",
+        "T_source_K": 285.0,
+        "T_sink_K": 303.0,
+        "k_ground_W_mK": 1.5,
+        "Q_GHEX_avail_kW_th": 3.0,
+        "Q4_life_kW_th": 3.0,
+        "Q_surplus_kW_th": 0.0,
+        "basis": "design_sandbox_survey_defaults \u2014 NOT field-measured bore test",
+        "ref": "AQS-EQP-STUDY-001 \u00a75 / GEOTHERMAL_BACKUP / STUDIES_COMPLETE \u00a73.3",
+        "site_lat_deg_coupled": 33.0
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "GHEX passive exchanger \u2014 no continuous electrical draw"
+      }
     },
     {
       "unit_id": "GEO_HP",
@@ -123,7 +143,12 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "Q4_out_kW_th": 3.0,
+        "COP_study": 3.0,
+        "T_source_K": 285.0,
+        "coupled_GHEX": true,
+        "basis": "ST-ORC-01 / GEOTHERMAL_BACKUP \u2014 design sandbox"
       }
     },
     {
@@ -141,17 +166,92 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "GEO_ORC",
+      "sector_id": "GEO",
+      "presence": "present",
+      "class": "orc",
+      "tags": [
+        "ORC",
+        "carnot_study",
+        "wp_l2_filled"
+      ],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": "WP-L2/ST-ORC-01: heat path connected; M1 Q_surplus~0 => P_ORC~0. Survey defaults documented.",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "M1 default 0 kW_e (Q_surplus~0). Illus 0-2 if survey frees 0-20 kW_th. Forbid 100 kW."
+      },
+      "modules": [],
+      "params": {
+        "status": "study_carnot_connected",
+        "present_path": "study_carnot_band_heat_path_connected",
+        "blockers": [
+          "field_GHEX_conductivity_test",
+          "bore_count_depth_AHJ"
+        ],
+        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
+        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
+        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
+        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
+        "open_study_queued": false,
+        "study_id": "ST-ORC-01",
+        "gap_framing": "WP-L2 connected+defaults; CAPEX unjustified while Q_surplus=0",
+        "study_phase_a_status": "wp_l2_closed_survey_defaults",
+        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
+        "presence": "present",
+        "ghex_study_defaults": {
+          "T_source_K": 285.0,
+          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
+          "T_sink_K": 303.0,
+          "eta_Carnot": 0.059,
+          "eta_ORC_study": "0.08-0.12 of available surplus",
+          "k_ground_W_mK_study": 1.5,
+          "Q_GHEX_avail_kW_th_study": 3.0,
+          "Q4_life_priority_kW_th_study": 3.0,
+          "Q_surplus_kW_th_M1": 0.0,
+          "P_ORC_kW_e_M1": 0.0,
+          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4"
+        },
+        "equipment_ids": {
+          "GEO_ORC_EVAP": "OSS-ORC-EVAP-01 (dormant at Q_surplus=0)",
+          "GEO_ORC_TURB": "OSS-ORC-TURB-01 \u2014 interim cite Infinity Turbine IT10 if surplus appears",
+          "GEO_ORC_COND": "OSS-ORC-COND-01 -> Q4 via named HX only",
+          "working_fluid": "TBD (not Salria, not ZnBr2, not process Cl2)"
+        },
+        "blockers_remaining": [
+          "site_GHEX_conductivity_survey",
+          "bore_count_depth"
+        ],
+        "T_source_K": 285.0,
+        "T_sink_K": 303.0,
+        "k_ground_W_mK": 1.5,
+        "Q_GHEX_avail_kW_th": 3.0,
+        "Q4_life_kW_th": 3.0,
+        "Q_surplus_kW_th": 0.0,
+        "P_ORC_kW_e": 0.0,
+        "site_lat_deg": 33.0,
+        "survey_status": "design_basis_defaults_not_field_measured"
+      }
+    },
+    {
       "unit_id": "GLASS_BURNOUT",
       "sector_id": "GLASS",
-      "presence": "placeholder",
-      "class": "intra",
+      "presence": "present",
+      "class": "glass",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": "glass_ceramic_pfd unlabeled",
-      "notes": "Intra-aisle glass burnout (IA-*)",
+      "notes": "WP-L2: glass burnout Present; cascade ~30 kg/d silicate",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "presence": "present",
+        "wp_l2": "promoted_from_placeholder"
+      },
       "continuous_kw": null
     },
     {
@@ -249,17 +349,19 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 1.5,
         "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "Q4 heat FARM share \u2014 GEO_HP Q4_life 3.0 kW_th \u00d7 0.5 farm allocation (ST-ORC-01) \u2014 true-closure"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "true-closure thermal design-basis"
     },
     {
       "stream_id": "S43",
@@ -276,19 +378,20 @@
       "forbidden": "HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "GHEX\u2192closed-loop thermal duty = Q_GHEX_avail 3.0 kW_th (ST-ORC-01 design-basis) \u2014 true-closure"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
-      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)"
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop) | thermal carrier rate; design-basis not field measured"
     },
     {
       "stream_id": "S44",
@@ -304,17 +407,18 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "GEO_HP\u2192Q4_BUS = Q4_life 3.0 kW_th (ST-ORC-01) \u2014 true-closure"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB"
     },
@@ -332,17 +436,18 @@
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "FC_HX_Q4\u2192Q4 study reject <80 \u00b0C \u2014 true-closure"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -360,17 +465,18 @@
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "CRYO_HX_Q4 warm residual study \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -389,19 +495,21 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "CRYO_DED_COOL intentional self-loop thermal duty study 1.0 kW \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "intentional_self_loop",
+        "wp_true_closure"
       ],
-      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL"
+      "notes": "WP-L2: intentional dedicated cryo cool self-loop retained (AQS-STR/MF Closed utility). Not a topology gap. | intentional utility self-loop; continuous thermal circulating duty"
     },
     {
       "stream_id": "S63",
@@ -417,17 +525,18 @@
       "forbidden": "melt/atomizer hot gas as flue",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "MET_HX_Q4 study \u2014 true-closure"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -445,17 +554,18 @@
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "MEOH_HX_Q4 / MEOH_FC reject study \u2014 true-closure"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -467,16 +577,16 @@
       "layers": [
         "thermal"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Heat ladder Q3 residual (ghost to Q4 bus for EFD-thermal)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Heat ladder Q3 residual -> Q4_BUS study mid \u2014 WP-L2"
       },
       "from_sector_id": "WET",
       "to_sector_id": "HAB",
@@ -485,9 +595,10 @@
       "gap_flags": [
         "intra_aisle",
         "full_depth_now",
-        "heat ladder unlabeled"
+        "heat ladder unlabeled",
+        "wp_l2_filled"
       ],
-      "notes": "heat ladder unlabeled"
+      "notes": "heat ladder unlabeled | WP-L2 study rate filled."
     },
     {
       "stream_id": "IA-GLASS-Q2",
@@ -497,16 +608,16 @@
       "layers": [
         "thermal"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Q2 burnout heat (study path; not rate)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Q2 burnout heat residual -> Q4_BUS study \u2014 WP-L2"
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "HAB",
@@ -515,9 +626,10 @@
       "gap_flags": [
         "intra_aisle",
         "full_depth_now",
-        "glass heat unlabeled"
+        "glass heat unlabeled",
+        "wp_l2_filled"
       ],
-      "notes": "glass heat unlabeled"
+      "notes": "glass heat unlabeled | WP-L2 study rate filled."
     },
     {
       "stream_id": "IA-OIL-Q1",
@@ -527,16 +639,16 @@
       "layers": [
         "thermal"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Q1 afterburner heat (not into hab air)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Q1 afterburner heat -> Q4_BUS study \u2014 WP-L2"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "HAB",
@@ -545,9 +657,99 @@
       "gap_flags": [
         "intra_aisle",
         "full_depth_now",
-        "Q1\u2260Q4 rule"
+        "Q1\u2260Q4 rule",
+        "wp_l2_filled"
       ],
-      "notes": "Q1\u2260Q4 rule"
+      "notes": "Q1\u2260Q4 rule | WP-L2 study rate filled."
+    },
+    {
+      "stream_id": "IA-GEO-01",
+      "from_unit_id": "GEO_HP_CLOSED_LOOP",
+      "to_unit_id": "GEO_HP",
+      "phase": "L/E",
+      "layers": [
+        "mass",
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "geothermal loop fluid",
+      "header": "dedicated GEO loop",
+      "forbidden": "HDR_UPW, CATCH, Salria",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Closed-loop\u2192GEO_HP = Q_GHEX_avail 3.0 kW_th \u2014 true-closure ST-ORC-01"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "wp_l1_topology",
+        "geo_survey_open",
+        "wp_true_closure"
+      ],
+      "notes": "WP-L1: connect GHEX closed-loop island to GEO_HP (S43 remains GHEX\u2192GEO_HP_CLOSED_LOOP; STR S43\u2192GEO_HP). ORC heat-source edge deferred pending survey."
+    },
+    {
+      "stream_id": "IA-GEO-ORC-01",
+      "from_unit_id": "GEO_HP",
+      "to_unit_id": "GEO_ORC",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "surplus heat after Q4 life priority",
+      "header": "GEO ORC heat",
+      "forbidden": "HDR_UPW, CATCH, Salria, raw loop into ORC working fluid",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Q_surplus M1 ~0 kW_th after Q4 (STUDY \u00a75) \u2014 WP-L2 ST-ORC-01"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "wp_l2_filled",
+        "geo_orc_heat"
+      ],
+      "notes": "WP-L2: GEO_HP->GEO_ORC surplus heat after S44/Q4. Dormant while Q_surplus=0."
+    },
+    {
+      "stream_id": "IA-GEO-ORC-02",
+      "from_unit_id": "GEO_ORC",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "ORC condenser reject via named HX",
+      "header": "Q4",
+      "forbidden": "raw ORC working fluid into life headers",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "ORC condenser->Q4 via HX; M1 dormant 0 \u2014 WP-L2"
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "wp_l2_filled",
+        "geo_orc_heat"
+      ],
+      "notes": "WP-L2: ORC condenser joins Q4 only through named HX (AQS-EQP-GEO-001)."
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

@@ -2,7 +2,7 @@
 
 Locked names are in SMALL CAPS as they appear on the drawings. Do not invent synonyms.
 
-Each entry is `{term -- definition}`.
+Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, design-tool UI, PFDs/MFD/EFD layers, sector taxonomy, and authority docs are listed here with expansion and plant role. No invented rates or nameplates.
 
 ## Process and chemistry
 
@@ -253,6 +253,221 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {NaOH PRODUCT -- From BMED BASE. Wall PP. Feeds pH-shift, digest, and CRU.}
 
 {POLISH METALS -- Co, Mn (or MnO₂), Cr, Hg, Tl, Bi, Sb. Join METALS / ELEMENTS.}
+
+
+## Diagram layers and design tool
+
+{PFD -- Process flow diagram. Line or campus view of process units and streams. In the typed plant graph, PFD is a view filter over the same unit_id / stream_id set (lock layered_views), not a competing topology authority.}
+
+{MFD -- Mass-flow diagram. Inter-block mass edges and claim status (extends mass_flow / STREAM_REGISTER themes). Graph view filter; campus MFD may collapse intra-aisle detail.}
+
+{EFD -- Energy-flow diagram. Three energy layers over the same graph: electrical, thermal (Q1–Q4 / HX), and chemical-storage ESS charge–discharge (lock efd_three_layers). UI labels: EFD-elec, EFD-thermal, EFD-ess.}
+
+{SLD -- Single-line diagram. Electrical one-line (utility → Sol-Ark → ATS → loads). Graph export path uses the efd-elec layer; matplotlib `electrical_sld.png` is an optional exporter.}
+
+{MVS -- Minimum Viable System. Smallest self-sustaining human colony design intent: full manufacture and habitation, self-copy, scale up/down, closed loops including all three ESS peers, plus surplus export of food, clean water, materials/goods, and energy. Sandbox must not overwrite locked MVS.}
+
+{IA / IA-* -- Intra-aisle stream identifiers on the typed graph (e.g. IA-EW-*, IA-ESS-*). Distinct from inter-block S## in STREAM_REGISTER. Required under lock full_depth_now; rates stay null until Present authority supplies them.}
+
+{CAD -- Computer-aided design. FreeCAD solids, campus placement, and parametric envelopes under AGENT_CAD_PROTOCOL / FREECAD_PROTOCOL. Topology authority remains the typed plant flow graph.}
+
+{BOM -- Bill of materials. Self-copy critical-path list (AQS-BOM-SC-001) and export-pack bom artefacts from graph nodes/flags.}
+
+{UI -- Design-tool user interface. React + SVG graph-layer schematic (AQS-UI-001); loads flow-graph views PFD/MFD/EFD-*.}
+
+{GUI -- Graphical user interface. Same design-tool surface as UI in architecture prose.}
+
+{SCALE_M -- Parametric plant scale multiplier (AQS-SCALE-001). On-disk baseline is 1.0 (M1). Layout driver; not a rate invention.}
+
+{WP -- Work package. Planning tranche label (e.g. WP-A10, WP-Bp1) for design-tool / flow-graph delivery. Not a plant unit.}
+
+## Plant sectors and systems
+
+{AQS -- Aqueous Solutions document and plant namespace prefix. Document numbers take the form AQS-*-### (e.g. AQS-SEC-001, AQS-STR-001, AQS-FLOW-GRAPH-001).}
+
+{SEC / AQS-SEC -- Sector Definitions catalogue (AQS-SEC-001). Maps every plant sector_id to one Sector Definition class and required_for_mvs_closure flags.}
+
+{STR / AQS-STR -- Stream register (AQS-STR-001). Inter-block stream_id scheme S## between sectors/blocks.}
+
+{MF / AQS-MF -- Mass-flow authority (AQS-MF-001). Closed-loop claims and surplus language for mass paths.}
+
+{WET -- Process sector: L-1 leach / EW / BMED / CRU / polish wet line. Primary mass recycle.}
+
+{OIL -- Process sector: dryer → pyro → fractionator hydrocarbon cuts; afterburner flue to CRYO.}
+
+{GLASS -- Process sector: rinse → burnout → mill → NaOH digest; silicate / ceramic products.}
+
+{GAS -- Process sector: scrub / demister / baghouse / stacks; acid-gas and dust returns. Secondary utility/header role for HDR_*.}
+
+{FAB -- Process sector: wafer fab, UPW, wet-bench reagents, solar-cell stub. Goods surplus path.}
+
+{MFG -- Process sector: shop, polymer line, metal forming (MET folded under MFG). Goods surplus path.}
+
+{NUT -- Process sector: nutrient dose (P-Al/Mg/Ca and BMED salts → farm). Distinct from REMIN potable dose.}
+
+{FARM -- Life-support sector: grow beds / aquaculture / LED; food surplus. CAD name FARM (alias FRM).}
+
+{HAB -- Life-support sector: habitation, galley, sleep, grey/black return; crew load driver.}
+
+{CRYO -- Utility sector: cold box and O₂/N₂/CO₂/H₂ receivers; H₂ normal path S64. Alias CRY.}
+
+{WTR -- Utility sector: roof/catch tanks, VCD / REMIN / UPW polish, grey treat (AQS-WTR-001).}
+
+{TRR -- Utility sector: terrace overflow / irrigation; optional greenhouse envelopes. Not required for loop closure.}
+
+{ELEC -- Utility sector: Sol-Ark / ATS / RECT / MCC distribution hub. Distinct from ELEC_PV.}
+
+{ELEC_PV -- Energy Production (Electrical): PV array / roof array generation.}
+
+{GEO -- Utility sector (study): ground heat exchanger and heat pump to Q4; optional GEO_ORC electric stub.}
+
+{DOCK -- Export / dock sector: north dock and freight elevators for surplus goods export.}
+
+{MET -- Metal forming capability folded under MFG (not a separate sector_id).}
+
+{CORE -- Building distribution (cores, shafts, stairs). Not a mass–energy sector toggle.}
+
+## Water and life support
+
+{UPW -- Ultrapure water. Plant HDR_UPW / S01 class (< 1 µS/cm post-ED polish); fab further polishes to S27. Pre-remin water serves farm/fab; drinking uses REMIN.}
+
+{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (VCD_HX → EVAP → COMP → COND). Kept from SLINGSHOT into the building stack; study stub rates may be null.}
+
+{REMIN -- Remineralization. Doses Ca²⁺ / Mg²⁺ / K⁺ (and related) from core salt inventory into drinking water (S26). For potable only — not farm nutrient dose S07.}
+
+{ED -- Electrodialysis. Hab/UPW polish stage (HAB_ED_POLISH / UPW POLISH) toward S01 conductivity claim; BMED middle chamber may assist, not as a second wet-line stack.}
+
+{EDI -- Electrodeionization. Optional fab UPW polish peer to mixed-bed IX on FAB_UPW_IX.}
+
+{IX -- Ion exchange. Mixed-bed polish on the fab UPW train.}
+
+{UF -- Ultrafiltration. Particulate / colloidal barrier on FAB_UPW_UF.}
+
+{NF -- Nanofiltration. Potable integrity check class after remin (with UF/UV).}
+
+{UV -- Ultraviolet disinfection / TOC destruction on potable finish and fab UPW.}
+
+{TOC -- Total organic carbon. Fab rinse target class on UPW.}
+
+{MED -- Membrane electrodialysis (grey stage GREY_MED). Root-07 multi-effect distillation narrative is adapted; VCD remains primary distillate regenerator.}
+
+{RPZ -- Reduced-pressure-zone backflow preventer. Required theme on HDR_UPW at potable taps.}
+
+{HEPA -- High-efficiency particulate air filtration. Life / clean-space filtration theme (TEXTILES_HEPA and related).}
+
+{MEP -- Mechanical, electrical, and plumbing. Life-plate utility fit-out (AQS-MEP-001).}
+
+{AHU -- Air-handling unit. Hab / cryo / greenhouse HVAC air side.}
+
+{HVAC -- Heating, ventilation, and air conditioning. Q4 reject and life climate; keep process and life air paths separated per HSE.}
+
+{FFL -- Finished-floor level. Building-stack datum for each level (world Z = 0 is L0 grade FFL).}
+
+## Power, ESS, and electrical
+
+{ESS -- Energy Storage System. MVS requires all three peers: ZNBR2 (electrochemical), MEOH (electrochemical), and PUMPED_HYDRO (gravity). Disabling a peer in sandbox flags unreclaimed_resource / incomplete closure.}
+
+{ZNBR2 / ZnBr₂ -- Zinc–bromide hybrid flow battery ESS peer. Outdoor skid preference; Br₂ scrub/regen on S69. Couples to Sol-Ark BATT DC.}
+
+{MEOH / MeOH -- Methanol train and store. Required ESS peer; also process feed. IEM-based DMFC path preferred; synth and FC discharge edges on EFD-ess / MFD.}
+
+{ORC -- Organic Rankine Cycle. Binary geothermal electric stub GEO_ORC (S48). Rating TBD until GHEX survey; do not invent kW.}
+
+{GHEX -- Ground heat exchanger. Closed-loop vertical bore-field class GEO_GHEX; loop fluid dedicated (not UPW / CATCH).}
+
+{PEM -- Proton-exchange membrane. H₂/O₂ fuel-cell chemistry on FUEL_CELL (AQS-FC-001); couples BATT DC via FC_DCDC. Not the Sol-Ark GEN AC port.}
+
+{DMFC -- Direct methanol fuel cell. MeOH discharge path; IEM-based preferred over conventional packaging. Distinct from PEM H₂ FC.}
+
+{IEM -- Ion-exchange membrane. Generic SEM-Tech membrane family (CEM/AEM style) used on EW, BMED, ZnBr₂, and MeOH FC paths.}
+
+{FC -- Fuel cell. Sector FUEL_CELL (PEM) or MEOH_FC discharge; electrical offtake to BATT DC, not GEN.}
+
+{PV -- Photovoltaic. Roof/yard array generation (ELEC_PV).}
+
+{ATS -- Automatic transfer switch. Selects utility vs Sol-Ark LOAD for plant main; service bypass path.}
+
+{MCC -- Motor control center. Plant AC distribution after ATS.}
+
+{RECT -- Rectifier skid. Process DC for EW / BMED / polish (RECT-EW, RECT-BMED, RECT-PK).}
+
+{DC -- Direct current. BATT bus, rectifiers, FC/MeOH DCDC offtakes.}
+
+{AC -- Alternating current. Utility, Sol-Ark LOAD/GEN, MCC, ORC couple stubs.}
+
+{GEN -- Sol-Ark generator AC port. BACKUP_GEN (H₂ genset) only — not FC or RECT hard-tee.}
+
+{BATT -- Sol-Ark battery DC window. ZnBr₂ and fuel-cell DCDC peers land here.}
+
+{HSE -- Health, safety, and environment. Hazard separation and fire-area authority (AQS-HSE-001).}
+
+## Compliance and codes
+
+{AHJ -- Authority Having Jurisdiction. Local building/fire official whose edition and amendments govern permits; design docs are not a PE stamp.}
+
+{MAQ -- Maximum Allowable Quantity. Code inventory cap for hazardous materials (oxidizers, H₂, flammables) before occupancy upgrade.}
+
+{MAWP -- Maximum Allowable Working Pressure. Vessel/piping design pressure; relief set ≤ MAWP (study values in AQS-ASM-001 until PE/AHJ).}
+
+{PE -- Professional Engineer. Stamp/permit role; architecture docs state Compliant-intent or study until PE confirmation.}
+
+{NFPA -- National Fire Protection Association. Fire/H₂/ESS/oxidizer themes (e.g. NFPA 2, 13, 30, 55, 400, 855).}
+
+{NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
+
+{ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}
+
+{IBC -- International Building Code. Occupancy and construction overlays with NFPA/HSE.}
+
+{OSHA -- Occupational Safety and Health Administration. Egress, LOTO, and workplace themes.}
+
+{LOTO -- Lockout/tagout. Energy isolation for rectifiers, shredder, pyro, melt, Sol-Ark.}
+
+{WEEE -- Waste electrical and electronic equipment. Primary wet-line feed class for RECT-EW sizing theme.}
+
+{SPDX -- Software Package Data Exchange. Licence identifier convention (CERN-OHL-S-2.0).}
+
+{OSE -- Open Source Ecology. Upstream GVCS / Civilization Starter Kit reference map (AQS-REF-CSK-001); not bundled into the tree.}
+
+{CSK -- Civilization Starter Kit. OSE documentation set for a subset of GVCS machines.}
+
+{GVCS -- Global Village Construction Set. OSE catalogue of industrial machines mapped as coverage/study/candidate against Aqueous sectors.}
+
+
+{M1 -- Module / plant baseline at SCALE_M = 1.0. Layout and study duties reference M1; do not copy legacy campus kW claims onto M1 without evidence.}
+
+{BMS -- Battery management system. ZnBr₂ / ESS charge–discharge inhibit and Sol-Ark gateway theme.}
+
+{SOC -- State of charge. ESS energy state from amp-hours and chemistry indicators (e.g. ORP on ZnBr₂).}
+
+{LEL -- Lower explosive limit. H₂ headspace trip theme on zinc-tank / H₂ headers.}
+
+{LFL -- Lower flammable limit. NFPA 69 explosion-prevention theme (H₂ < 25% LFL class).}
+
+{PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
+
+{UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
+
+
+## Membrane and support chemistry (cross-refs)
+
+{AEL -- Anion-exchange layer of a BPM. Drawn orange; faces the anode. OH⁻ leaves into BASE.}
+
+{CEL -- Cation-exchange layer of a BPM. Drawn blue; faces the cathode. H⁺ leaves into ACID.}
+
+{SHE -- Standard hydrogen electrode. ORP probe reference basis (SHE-equivalent).}
+
+{PS -- Polystyrene. Co-polymer base in SEM-Tech PS–PVC ion-exchange membranes.}
+
+{THF -- Tetrahydrofuran. Component of Weld-On 724 class CPVC cement.}
+
+{MEK -- Methyl ethyl ketone. Component of Weld-On 724 class CPVC cement.}
+
+{FRP -- Fiber-reinforced plastic. Induced-draft fan and scrubber duct class on HDR_ACID_GAS.}
+
+{HDPE -- High-density polyethylene. Explicitly wrong for hot Salria anolyte walls.}
+
+{ID fan -- Induced-draft fan. Pulls negative on dust or acid-gas headers after filtration/scrub.}
 
 ## Legal
 

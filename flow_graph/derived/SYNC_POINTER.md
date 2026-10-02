@@ -1,7 +1,7 @@
 # Derived STREAM / MASS sync pointer — WP-Ap3
 
-Source graph: AQS-FLOW-GRAPH-001 Rev B (`plant_flow_graph.json`)
-Generated: 2026-10-01
+Source graph: AQS-FLOW-GRAPH-001 Rev G (`plant_flow_graph.json`)
+Generated: 2026-10-02
 Licence: CERN-OHL-S-2.0
 
 ## Generated (this directory)
@@ -22,10 +22,10 @@ Licence: CERN-OHL-S-2.0
 Prefer editing the graph, then:
 
 ```bash
-cd flow_graph
+cd Diagrams/aqueous_diagrams/flow_graph
 python3 export_authority_md.py
 python3 render_layer_views.py   # layer stubs still graph-driven
 ```
 
-DOCK stream numbers and null placeholder rates are not filled without authority.
+Do **not** invent DOCK S## or fill null placeholder rates.
 DOCK_EXPORT_TBD stays TBD. Layer views: `render_layer_views.py` → `views/`.

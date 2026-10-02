@@ -3,7 +3,7 @@
 """WP-Ap2 regression: topology identity graph ↔ candidate_mvs projection.
 
 Runnable:
-  cd flow_graph
+  cd Diagrams/aqueous_diagrams/flow_graph
   python3 -m pytest test_authority_contract.py -q
   python3 check_authority_contract.py
 """

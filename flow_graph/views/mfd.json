@@ -2,9 +2,9 @@
   "preset_id": "VIEW-MFD-CAMPUS",
   "view_mode": "MFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "B",
-  "node_count": 58,
-  "edge_count": 69,
+  "source_revision": "F",
+  "node_count": 61,
+  "edge_count": 74,
   "orphan_campus_units": [
     "HYDRO_SET"
   ],
@@ -161,7 +161,7 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+        "diagram_gap": "S86 dock freight + S08G glass + S14X food \u2014 WP-L2",
         "presence": "present"
       }
     },
@@ -289,6 +289,20 @@
       }
     },
     {
+      "unit_id": "CRYO_N2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "True-closure: S03/S84 campaign rates filled (pilot N2 purge study). Register S03 endpoint WAFER_FAB + FARM/GROW_BED.",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
       "unit_id": "CRYO_O2",
       "sector_id": "CRYO",
       "presence": "present",
@@ -361,11 +375,28 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "Geothermal GHEX (S43)",
+      "notes": "True-closure: GHEX design-basis T_source=285 K, k_ground=1.5 W/m\u00b7K, Q_GHEX_avail=Q4_life=3.0 kW_th \u2192 Q_surplus=0 (ST-ORC-01). Not field survey.",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "presence": "present",
+        "study_id": "ST-ORC-01",
+        "T_source_K": 285.0,
+        "T_sink_K": 303.0,
+        "k_ground_W_mK": 1.5,
+        "Q_GHEX_avail_kW_th": 3.0,
+        "Q4_life_kW_th": 3.0,
+        "Q_surplus_kW_th": 0.0,
+        "basis": "design_sandbox_survey_defaults \u2014 NOT field-measured bore test",
+        "ref": "AQS-EQP-STUDY-001 \u00a75 / GEOTHERMAL_BACKUP / STUDIES_COMPLETE \u00a73.3",
+        "site_lat_deg_coupled": 33.0
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "GHEX passive exchanger \u2014 no continuous electrical draw"
+      }
     },
     {
       "unit_id": "GEO_HP_CLOSED_LOOP",
@@ -489,6 +520,20 @@
       }
     },
     {
+      "unit_id": "HDR_O2",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "header",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "O2 header (S15/S02)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
       "unit_id": "HDR_UPW",
       "sector_id": "WTR",
       "presence": "present",
@@ -589,16 +634,16 @@
     {
       "unit_id": "LITHO_STUB",
       "sector_id": "FAB",
-      "presence": "placeholder",
-      "class": "study_stub",
+      "presence": "present",
+      "class": "litho",
       "tags": [
         "lithography",
         "in_scope",
-        "study_stub"
+        "wp_l2_filled"
       ],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "WP-L2/ST-LITHO-01: starts 3/d; FreeCAD LITHO_* refs planned (solids absent); UV interim MIDAS MDA-150.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -608,32 +653,62 @@
       },
       "modules": [],
       "params": {
-        "status": "study_duty_mass_issued",
-        "present_path": "study_duty_mass_issued",
+        "status": "study_duty_mass_ids_issued",
+        "present_path": "study_duty_mass_ids_issued_interim_tool_cite",
         "schedule_steps": [
           "LITHO_COAT",
           "LITHO_ALIGN",
           "LITHO_DEV"
         ],
         "blockers": [
-          "FreeCAD_LITHO_COAT_ALIGN_DEV_children_open",
-          "UV_lamp_class_selection_external",
-          "wafer_starts_d_campaign_lock_external"
+          "FreeCAD_LITHO_solids",
+          "UV_lamp_purchase_lock"
         ],
         "lithography_in_mvs": true,
         "ref": "AQS-EQP-STUDY-001 Rev E \u00a78 / AQS-BOM-SC-001 / AQS-AUD-001 pilot starts",
-        "open_study_queued": true,
-        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
+        "open_study_queued": false,
+        "gap_framing": "WP-L2 starts+IDs+UV cite; lithography_on_site false until FCStd",
         "study_id": "ST-LITHO-01",
-        "study_wafer_starts_d": "1-5 pilot (AQS-AUD-001)",
+        "study_wafer_starts_d": 3,
         "study_resist_dispense_g_d": "2-10",
         "study_resist_dry_residual_g_d": "0.2-1.0",
         "study_method": "spin film ~1-3 um on 150mm; dispense ~2 mL/wafer; solids~10%; 1-5 starts/d",
         "study_continuous_kw_mid": 0.1,
         "study_peak_kw_run": "0.5-1.5",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "study_phase_a_status": "wp_l2_closed",
         "next_external": "Issue FreeCAD LITHO_COAT/ALIGN/DEV children + lock wafer starts/d + UV lamp datasheet \u2014 owner/date TBD",
-        "presence": "placeholder"
+        "presence": "present",
+        "study_wafer_starts_lock": {
+          "decision": "3 starts/d mid of AUD pilot 1-5/d",
+          "wafer_class_mm": 150,
+          "ref": "AQS-EQP-STUDY-001 \u00a78"
+        },
+        "freecad_refs": {
+          "LITHO_COAT": "planned \u2014 NOT on disk (UNIT_MAP placeholder_skip)",
+          "LITHO_ALIGN": "planned \u2014 NOT on disk",
+          "LITHO_DEV": "planned \u2014 NOT on disk; may share WET_BENCH",
+          "parent_envelope": "WAFER_FAB / FAB module",
+          "status": "refs_issued_solids_absent"
+        },
+        "uv_datasheet": {
+          "interim_cite": "MIDAS MDA-150 / MDA-400M-6 350-450 nm to 6 in",
+          "spin_cite": "SPS/POLOS SPIN150x (150 mm)",
+          "ref": "AQS-EQ-GAP-001 \u00a74.4",
+          "oss_rep": "OSS-REP-LITHO_STUB"
+        },
+        "equipment_ids": {
+          "LITHO_COAT": "LITHO-COAT-01",
+          "LITHO_ALIGN": "LITHO-ALIGN-01",
+          "LITHO_DEV": "LITHO-DEV-01"
+        },
+        "study_resist_dry_g_d": 0.6,
+        "study_resist_wet_g_d": 6.0,
+        "blockers_remaining": [
+          "FreeCAD_LITHO_solids",
+          "UV_lamp_purchase_lock"
+        ],
+        "freecad_status": "placeholder_skip_no_Feature",
+        "on_site_flag": false
       }
     },
     {
@@ -791,7 +866,7 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus/ground_floor still show footprint",
+        "diagram_gap": "hydro_dock_pfd graph-bridged; S86 export issued WP-L2",
         "presence": "present"
       }
     },
@@ -819,26 +894,32 @@
     {
       "unit_id": "REMIN",
       "sector_id": "WTR",
-      "presence": "placeholder",
-      "class": "study_stub",
+      "presence": "present",
+      "class": "remin",
       "tags": [
         "potable",
         "study_balance",
-        "study_stub"
+        "wp_l2_filled",
+        "true_closure",
+        "present_ids_only"
       ],
       "electrical_role": "none",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "WP-L2/ST-REMIN-01: mineral source locked != S07; UV >=40 mJ/cm2; IDs issued; drink 10 L/d.",
       "enabled": true,
-      "continuous_kw": null,
+      "continuous_kw": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "Metering+HAB_UV <<0.05; mid 0.02 kW_e (STUDY \u00a74.4)"
+      },
       "modules": [],
       "params": {
-        "status": "study_balance_issued",
-        "present_path": "study_balance_issued",
+        "status": "study_balance_ids_issued",
+        "present_path": "ids_issued_freecad_solids_absent",
         "blockers": [
-          "mineral_source_vs_S07_confirm",
-          "UV_integrity_TBD",
-          "equipment_IDs_not_issued"
+          "Present_FreeCAD_skid",
+          "AHJ_potable"
         ],
         "blocks_claim": "potable_export_Present",
         "study_drink_L_d": 10.0,
@@ -850,12 +931,39 @@
           "K_optional": 5
         },
         "ref": "AQS-EQP-STUDY-001 Rev C \u00a74 / WHO nutrients guidance",
-        "open_study_queued": true,
+        "open_study_queued": false,
         "study_id": "ST-REMIN-01",
-        "gap_framing": "balance issued; Present IDs = open study ST-REMIN-01",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "gap_framing": "WP-L2 source+UV+IDs locked; on_site false until CAD/AHJ",
+        "study_phase_a_status": "wp_l2_closed",
         "next_external": "Mineral source lock vs S07 + UV integrity + equipment IDs \u2014 owner/date TBD",
-        "presence": "placeholder"
+        "presence": "present",
+        "mineral_source_lock": {
+          "decision": "BMED/core-salt carbonates & chlorides (CaCO3/CaCl2, MgCl2/MgSO4, KCl)",
+          "forbid": "Silent tee of S07 farm dose into potable (AQS-WTR-001)",
+          "vs_S07": "separate \u2014 S07 remains FARM path only",
+          "ref": "AQS-EQP-STUDY-001 \u00a74.3 / AQS-WTR-001 \u00a72.5"
+        },
+        "uv_integrity": {
+          "decision": "HAB_UV >=40 mJ/cm2 after remin, before taps",
+          "interim_cite": "Atlantic Ultraviolet SANITRON class (oversize) or POU UV >=40 mJ/cm2",
+          "equipment_id": "HAB_UV-01",
+          "ref": "AQS-EQ-GAP-001 \u00a74.2"
+        },
+        "equipment_ids": {
+          "REMIN_DOSE_CA": "OSS-REMIN-CA-01 (0.25 g/d Ca @ 10 L/d)",
+          "REMIN_DOSE_MG": "OSS-REMIN-MG-01 (0.10 g/d Mg)",
+          "REMIN_DOSE_K": "OSS-REMIN-K-01 optional (0.05 g/d K)",
+          "REMIN_MIX": "OSS-REMIN-MIX-01",
+          "HAB_UV": "HAB_UV-01 >=40 mJ/cm2",
+          "POTABLE_TANK": "OSS-POTABLE-TK-01"
+        },
+        "blockers_remaining": [
+          "Present_FreeCAD_skid",
+          "AHJ_potable"
+        ],
+        "freecad_status": "placeholder_skip_no_Feature",
+        "on_site_flag": false,
+        "ahj_assumption": "USA_Dallas_class design-basis (AQS-CMP-001); potable train requires AHJ/health review before vcd_remin_on_site \u2014 no permit fabricated"
       }
     },
     {
@@ -907,16 +1015,18 @@
     {
       "unit_id": "VCD_TRAIN",
       "sector_id": "WTR",
-      "presence": "placeholder",
-      "class": "study_stub",
+      "presence": "present",
+      "class": "vcd_train",
       "tags": [
         "VCD",
         "study_duty",
-        "study_stub"
+        "wp_l2_filled",
+        "true_closure",
+        "present_ids_only"
       ],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "WP-L2/ST-VCD-01: MVC topology+duty; OSS equipment IDs; commercial interim cite-only. vcd_remin_on_site false until AHJ+CAD.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.08,
@@ -926,23 +1036,48 @@
       },
       "modules": [],
       "params": {
-        "status": "study_duty_issued",
-        "present_path": "study_duty_issued",
+        "status": "study_duty_ids_issued",
+        "present_path": "ids_issued_freecad_solids_absent",
         "blockers": [
-          "equipment_IDs_not_issued",
-          "compressor_selection_TBD"
+          "AHJ_potable_train",
+          "Present_FreeCAD_solids",
+          "oss_compressor_detailed_design"
         ],
         "blocks_claim": "potable_export_Present",
         "duty_method": "AQS-EQP-STUDY-001 Rev C \u00a73 MVC w=\u03bb\u0394T/T",
         "study_SEC_kWh_per_m3": "14-20",
         "study_feed_m3_d": 0.11,
         "ref": "AQS-EQP-STUDY-001 Rev C / AQS-WTR-001 / AQS-AUD-001 \u00a711",
-        "open_study_queued": true,
+        "open_study_queued": false,
         "study_id": "ST-VCD-01",
-        "gap_framing": "duty issued; Present IDs = open study ST-VCD-01",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Compressor selection + equipment IDs for Present VCD \u2014 owner/date TBD",
-        "presence": "placeholder"
+        "gap_framing": "WP-L2 filled IDs+rates; potable export needs REMIN UV+AHJ",
+        "study_phase_a_status": "wp_l2_closed",
+        "next_external": "OSS FreeCAD solids + AHJ \u2014 owner Mike; commercial cite-only",
+        "presence": "present",
+        "equipment_ids": {
+          "VCD_FEED": "OSS-VCD-FEED-01 (buffer; S13+S29+S52 tee)",
+          "VCD_HX": "OSS-VCD-HX-01 (counterflow HR)",
+          "VCD_EVAP": "OSS-VCD-EVAP-01 (brine S28)",
+          "VCD_COMP": "OSS-VCD-COMP-01 scroll/roots lab MVC ~0.2-0.5 kW nameplate; duty avg 0.08 kW_e",
+          "VCD_COND": "OSS-VCD-COND-01 (distillate S25)"
+        },
+        "compressor_selection": {
+          "decision": "OSS small MVC compressor primary; no public commercial MVC at ~0.1 m3/d",
+          "interim_cite_only": [
+            "Stilmas VCS (>=100 L/h oversized)",
+            "Qingdao Conqinphi compact MVR 1 T/D (~9x M1)"
+          ],
+          "forbid": "IDE industrial MVC as M1 continuous nameplate",
+          "ref": "AQS-EQ-GAP-001 \u00a74.1 / AQS-EQP-STUDY-001 \u00a73"
+        },
+        "blockers_remaining": [
+          "AHJ_potable_train",
+          "Present_FreeCAD_solids",
+          "oss_compressor_detailed_design"
+        ],
+        "freecad_status": "placeholder_skip_no_Feature",
+        "on_site_flag": false,
+        "ahj_assumption": "USA_Dallas_class design-basis (AQS-CMP-001); potable train requires AHJ/health review before vcd_remin_on_site \u2014 no permit fabricated"
       }
     },
     {
@@ -1098,6 +1233,20 @@
       "modules": [],
       "params": {},
       "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork \u2014 supply S85\u2192LITHO_STUB; waste path S38 LITHO_STUB\u2192WET_BENCH",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
     }
   ],
   "edges": [
@@ -1130,7 +1279,7 @@
     {
       "stream_id": "S02",
       "from_unit_id": "CRYO_O2",
-      "to_unit_id": "HABITATION",
+      "to_unit_id": "HDR_O2",
       "phase": "G",
       "layers": [
         "mass"
@@ -1147,15 +1296,15 @@
         "note": "Study metabolic O2 class ~0.84 kg/person\u00b7d \u00d7 crew 4 (AQS-AUD-001 berth TBD) \u2014 not issued berth lock"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "HAB",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": "WP-L1: insert HDR_O2 header endpoint (AQS-STR-001 S02; was CRYO_O2\u2192HABITATION bypass)"
     },
     {
       "stream_id": "S03",
-      "from_unit_id": "CRYO_H2",
+      "from_unit_id": "CRYO_N2",
       "to_unit_id": "WAFER_FAB",
       "phase": "G",
       "layers": [
@@ -1167,17 +1316,19 @@
       "forbidden": "process headers",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 1.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=campaign_tbd"
+        "note": "N2 purge FAB \u2014 0.5 kg/start \u00d7 3 starts/d mid (ST-LITHO-01; FAB_WET_REAGENTS \u00a74.1 band) \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "WP-L1: register mismatch fix \u2014 S03 source is CRYO_N2 (was CRYO_H2 carrying N2); AQS-STR-001 S03 | true-closure campaign steady-state equivalent"
     },
     {
       "stream_id": "S04",
@@ -1193,17 +1344,19 @@
       "forbidden": "raw AFTERBURNER flue",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
+        "value": 2.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "CO2 enrich GROW \u2014 ~photosynthetic demand for upper-band food 4.2 kg/d wet (~0.55 kg-C/d \u2192 ~2.0 kg CO2/d); method lock CRYO_CO2 not raw flue \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "true-closure method lock photosynthetic demand"
     },
     {
       "stream_id": "S05",
@@ -1297,17 +1450,19 @@
       "forbidden": "sewer",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.6,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=campaign_tbd"
+        "note": "HCl/NaOH BMED\u2192WET_BENCH \u2014 SC-2 make-up ~0.2 kg/start \u00d7 3 starts/d (FAB_WET_REAGENTS \u00a74.1/\u00a75) \u2014 true-closure"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "true-closure campaign steady-state equivalent"
     },
     {
       "stream_id": "S10",
@@ -1395,25 +1550,26 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "condensate",
       "header": "HDR_GREY",
       "forbidden": "Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 15.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Farm/HVAC condensate -> VCD_FEED study mid (AQS-AUD-001 \u00a711 / STR S13) \u2014 WP-L2 ST-VCD-01"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_l2_filled"
       ],
-      "notes": "From register: FARM SUMP + HVAC \u2192 UPW POLISH / SALT FEED / VCD_FEED"
+      "notes": "From register: FARM SUMP + HVAC \u2192 UPW POLISH / SALT FEED / VCD_FEED | WP-L2 study rate filled."
     },
     {
       "stream_id": "S14",
@@ -1444,7 +1600,7 @@
     {
       "stream_id": "S15",
       "from_unit_id": "GROW_BED",
-      "to_unit_id": "HABITATION",
+      "to_unit_id": "HDR_O2",
       "phase": "G",
       "layers": [
         "mass"
@@ -1455,17 +1611,19 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 1.4545454545454546,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "Photosynthetic O2 = (32/44)\u00d7S04 CO2 fixed = 1.454545 kg/d \u2014 residuals WP exact stoich lock"
       },
       "from_sector_id": "FARM",
-      "to_sector_id": "HAB",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "WP-L1: STR S15 GROW_BED\u2192HDR_O2 (was bypass to HABITATION) | true-closure biomass O2 method lock"
     },
     {
       "stream_id": "S16",
@@ -1533,17 +1691,18 @@
       "forbidden": "farm",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Baghouse fines\u2192leach study \u2014 true-closure"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: BAGHOUSE fines \u2192 LEACH CSTR 1"
     },
@@ -1587,17 +1746,20 @@
       "forbidden": "hab air, HDR_O2, continuous dump",
       "claim_status": "Partial",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=event"
+        "note": "H2 relief contingency event \u2014 continuous dump forbidden; steady-state 0 by design \u2014 true-closure"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DOCK",
       "open_boundary": true,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure",
+        "wp_true_closure_residuals"
+      ],
+      "notes": "zero-flow continuous by design (event) | Intentional open_boundary contingency (steady 0) \u2014 residuals WP confirm"
     },
     {
       "stream_id": "S25",
@@ -1607,23 +1769,26 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "VCD distillate",
       "header": "process UPW",
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 145.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "VCD distillate = 0.91 \u00d7 full feed 159.3 kg/d (S29+S13+S52) = 145.0 (ST-VCD-01 recovery applied to grey+condensate+FC water) \u2014 residuals WP"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_l2_filled",
+        "wp_true_closure_residuals"
+      ],
+      "notes": "WP-L2 study rate filled. | residuals: full-feed recovery (was grey-primary holdup)"
     },
     {
       "stream_id": "S26",
@@ -1633,23 +1798,25 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "potable",
       "header": "potable + RPZ",
       "forbidden": "wet bench, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 10.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "REMIN drink 10 L/d -> HAB (STUDY \u00a74 drink-only default) \u2014 WP-L2 ST-REMIN-01"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_l2_filled"
+      ],
+      "notes": "WP-L2 study rate filled."
     },
     {
       "stream_id": "S27",
@@ -1665,17 +1832,18 @@
       "forbidden": "remin path, grey",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 15.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "FAB UPW >18 M\u03a9 \u2014 wet bench share study mid ~5 L/start \u00d7 3 \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: FAB_UPW_TANK \u2192 WET_BENCH"
     },
@@ -1687,23 +1855,26 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "VCD brine",
       "header": "process",
       "forbidden": "HDR_UPW, farm beds",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 14.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "VCD brine = feed\u2212distillate = 159.3\u2212145.0 = 14.3 kg/d \u2014 residuals WP"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_l2_filled",
+        "wp_true_closure_residuals"
+      ],
+      "notes": "WP-L2 study rate filled. | residuals: brine matches full-feed balance"
     },
     {
       "stream_id": "S29",
@@ -1713,25 +1884,26 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "treated grey",
       "header": "HDR_GREY branch",
       "forbidden": "Salria, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 110.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Treated grey -> VCD matches S12 mid 110 kg/d (AUD \u00a711) \u2014 WP-L2"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_l2_filled"
       ],
-      "notes": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED"
+      "notes": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED | WP-L2 study rate filled."
     },
     {
       "stream_id": "S30",
@@ -1747,17 +1919,18 @@
       "forbidden": "VCD evaporators (solids), sewer",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 8.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "BLACK_DIGEST\u2192dose \u2014 crew black liquor study ~2 kg/person\u00b7d \u00d7 4 \u2014 true-closure"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "NUT",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED"
     },
@@ -1775,17 +1948,18 @@
       "forbidden": "sewer, HDR_GREY, life",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HF(aq) mid 1.5 L/d @ 3 starts (FAB_WET_REAGENTS \u00a74.1 0.5\u20132.5) \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_HF_ED \u2192 WET_BENCH"
     },
@@ -1803,17 +1977,18 @@
       "forbidden": "sewer",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "H2O2 dilute mid 3 L/d (band 1\u20135) \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_PEROX \u2192 WET_BENCH"
     },
@@ -1831,17 +2006,18 @@
       "forbidden": "hab air",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "NH4OH dilute mid 3 L/d (band 1\u20135) \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_AMMONIA \u2192 WET_BENCH"
     },
@@ -1859,17 +2035,18 @@
       "forbidden": "sewer",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.25,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HNO3/H3PO4 mid 1.25 L/d (band 0.5\u20132) \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_NITRIC / WS_PHOS \u2192 WET_BENCH"
     },
@@ -1887,17 +2064,18 @@
       "forbidden": "sewer, farm beds",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "KOH <0.5 L/d band mid \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_KOH \u2192 WET_BENCH / solar texture stub"
     },
@@ -1915,17 +2093,18 @@
       "forbidden": "hab AHU",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Dopant concentrate grams/d \u2192 0.01 kg/d study \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_DOPE / CRU polish \u2192 FAB_TOOL dopant cabinets"
     },
@@ -1943,17 +2122,18 @@
       "forbidden": "sewer",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "CMP slurry mid 3 L/d (band 1\u20135) \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP"
     },
@@ -1965,23 +2145,25 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "resist / solvent waste",
       "header": "flammable",
       "forbidden": "sewer, HDR_H2",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.006,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "LITHO resist/solvent wet mid ~6 g/d @ 3 starts/d (STUDY \u00a78) \u2014 WP-L2 ST-LITHO-01"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_l2_filled"
+      ],
+      "notes": "WP-L2 study rate filled."
     },
     {
       "stream_id": "S39",
@@ -1997,17 +2179,18 @@
       "forbidden": "floor drain, farm",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 12.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Spent slurry/solvent return \u2248 sum reagent forwards class \u2014 true-closure"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: LAP_CMP / WET_BENCH / FAB_TOOL \u2192 REGEN LEACH / OIL / HDR_ORG"
     },
@@ -2025,17 +2208,19 @@
       "forbidden": "FARM_SUMP, S26 potable, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=event"
+        "note": "Roof overflow event \u2014 steady-state 0 (no continuous dump to terrace) \u2014 true-closure"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "TRR",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "zero-flow continuous by design (event)"
     },
     {
       "stream_id": "S41",
@@ -2051,17 +2236,18 @@
       "forbidden": "L-1 process bund, HDR_GREY fertigation",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 20.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Terrace underdrain\u2192CATCH \u2014 rain+irrigation return study mid \u2014 true-closure"
       },
       "from_sector_id": "TRR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: TERRACE underdrain / apron (clean) \u2192 CATCH TANK / DRAIN_SEC"
     },
@@ -2079,17 +2265,18 @@
       "forbidden": "CATCH, ROOF_TANK, sewer-as-primary",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fertigated drain\u2192GREY \u2014 dilute nutrient study \u2014 true-closure"
       },
       "from_sector_id": "TRR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: Enclosed terrace / GH fertigated drain \u2192 GREY treat / VCD_FEED / SALT"
     },
@@ -2108,19 +2295,20 @@
       "forbidden": "HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "GHEX\u2192closed-loop thermal duty = Q_GHEX_avail 3.0 kW_th (ST-ORC-01 design-basis) \u2014 true-closure"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
-      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)"
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop) | thermal carrier rate; design-basis not field measured"
     },
     {
       "stream_id": "S45",
@@ -2134,19 +2322,21 @@
       "carries": "H2 fuel",
       "header": "GEN fuel manifold",
       "forbidden": "HDR_O2, hab AHU",
-      "claim_status": "Claimed / Partial",
+      "claim_status": "Closed",
       "rate": {
-        "value": 3.6,
+        "value": 0.72,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max"
+        "note": "BACKUP_GEN islanded-peak continuous-equiv 0.72 kg/d = 15% of Faraday (priority #3; REQ-GEN-CONT 0.15 kg/h \u00d7 ~0.2 d-eq) \u2014 residuals WP"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "BACKUP_GEN",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure_residuals"
+      ],
+      "notes": "residuals: H2 schedule GEN peaks 15%"
     },
     {
       "stream_id": "S46",
@@ -2162,17 +2352,18 @@
       "forbidden": "raw AFTERBURNER, HDR_CO2 as primary",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "BACKUP_GEN exhaust condensate/NOx class study (intermittent) \u2014 true-closure"
       },
       "from_sector_id": "BACKUP_GEN",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: BACKUP_GEN exhaust \u2192 condensate / scrubber"
     },
@@ -2188,19 +2379,21 @@
       "carries": "H2 fuel",
       "header": "FC fuel manifold",
       "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
-      "claim_status": "Claimed / Partial",
+      "claim_status": "Closed",
       "rate": {
-        "value": 4.8,
+        "value": 3.84,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.20 kg/h H2 @ REQ-FC-CONT if GEN idle; shared pool with S45/S74"
+        "note": "PEM FC baseload continuous-equiv 3.84 kg/d = 80% of Faraday 4.8 kg/d (AQS-ESS-001 priority #2; AQS-REQ-KW-001 \u00a73.0) \u2014 residuals WP; not simultaneous full-duty with GEN/MeOH"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure_residuals"
+      ],
+      "notes": "residuals: H2 schedule FC baseload 80%"
     },
     {
       "stream_id": "S50",
@@ -2236,23 +2429,26 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "PEM product H2O",
       "header": "S13 / grey-condensate",
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 34.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "PEM product H2O = S49\u00d78.94 = 34.3 kg/d (stoich H2\u2192H2O; tracks residuals H2 schedule) \u2014 residuals WP"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_l2_filled",
+        "wp_true_closure_residuals"
+      ],
+      "notes": "WP-L2 study rate filled. | residuals: S52 tracks S49 schedule"
     },
     {
       "stream_id": "S55",
@@ -2269,19 +2465,21 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "CRYO_DED_COOL intentional self-loop thermal duty study 1.0 kW \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "intentional_self_loop",
+        "wp_true_closure"
       ],
-      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL"
+      "notes": "WP-L2: intentional dedicated cryo cool self-loop retained (AQS-STR/MF Closed utility). Not a topology gap. | intentional utility self-loop; continuous thermal circulating duty"
     },
     {
       "stream_id": "S56",
@@ -2297,17 +2495,18 @@
       "forbidden": "HAB/FARM return, acid-gas header, continuous dump",
       "claim_status": "Partial",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "CRYO_AHU residual vent contingency \u2014 continuous 0 by design (safe vent event) \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: CRYO_AHU / CRYO_AHU_COND residual \u2192 safe vent contingency"
     },
@@ -2325,19 +2524,21 @@
       "forbidden": "polymer, FR-4, pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 10.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MET_MELT\u2192WIRE_DRAW = 10.0 kg/d (melt split wire share of 20.0 kg/d charge) \u2014 residuals WP"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure",
+        "wp_true_closure_residuals"
       ],
-      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER"
+      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER | residuals: melt split wire 10 of 20"
     },
     {
       "stream_id": "S58",
@@ -2353,19 +2554,21 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 9.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "WIRE_DRAW\u2192MFG_SHOP wire product 9.0 kg/d (from 10.0 melt \u2212 swarf) \u2014 residuals WP"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure",
+        "wp_true_closure_residuals"
       ],
-      "notes": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB"
+      "notes": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB | residuals: wire product mass-conserving"
     },
     {
       "stream_id": "S59",
@@ -2381,19 +2584,21 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 5.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "COLD_MILL\u2192MFG_SHOP sheet 5.5 kg/d (from 6.0 \u2212 swarf) \u2014 residuals WP"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure",
+        "wp_true_closure_residuals"
       ],
-      "notes": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB"
+      "notes": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB | residuals: sheet product mass-conserving"
     },
     {
       "stream_id": "S60",
@@ -2409,19 +2614,21 @@
       "forbidden": "open ignition, HAB air",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "GAS_ATOMIZER\u2192powder 3.5 kg/d (from 4.0 \u2212 swarf) \u2014 residuals WP"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure",
+        "wp_true_closure_residuals"
       ],
-      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap"
+      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap | residuals: powder product mass-conserving"
     },
     {
       "stream_id": "S61",
@@ -2437,19 +2644,21 @@
       "forbidden": "FR-4, pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 2.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Forming swarf\u2192HOPPER 2.0 kg/d (= melt\u2212products 20.0-9.0-5.5-3.5) \u2014 residuals WP"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "OIL",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure",
+        "wp_true_closure_residuals"
       ],
-      "notes": "From register: Forming swarf / trim \u2192 HOPPER / leach"
+      "notes": "From register: Forming swarf / trim \u2192 HOPPER / leach | residuals: swarf closes melt balance"
     },
     {
       "stream_id": "S62",
@@ -2465,17 +2674,18 @@
       "forbidden": "HAB/FARM return, acid-gas as primary",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 200.0,
+        "unit": "m3/h",
+        "status": "study",
+        "note": "MET_AHU capture feed peer S71 \u2014 true-closure"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse (S71)"
     },
@@ -2508,7 +2718,7 @@
     {
       "stream_id": "S65",
       "from_unit_id": "ALK_SCRUBBER",
-      "to_unit_id": "ALK_SCRUBBER",
+      "to_unit_id": "ACID_POLISH_SCRUB",
       "phase": "G",
       "layers": [
         "mass"
@@ -2529,7 +2739,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": "WP-L1: STR/MF S65 ALK residual\u2192ACID_POLISH_SCRUB (was self-loop)"
     },
     {
       "stream_id": "S66",
@@ -2545,17 +2755,18 @@
       "forbidden": "sewer, Br\u207b liquor, farm beds",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 2.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Acid polish blowdown\u2192CRU study \u2014 true-closure"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: ACID_POLISH / ALK blowdown \u2192 CRU"
     },
@@ -2573,17 +2784,18 @@
       "forbidden": "HDR_ACID_GAS, HAB air, raw HDR_CO2",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Afterburner flue\u2192CRYO_CO2 capture study (CO2+condensables) \u2014 true-closure"
       },
       "from_sector_id": "WET",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: AFTERBURNER flue \u2192 FLUE_CAP / CRYO"
     },
@@ -2601,17 +2813,18 @@
       "forbidden": "potable taps, HDR_UPW",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 2.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "CRYO_AHU condensate\u2192S13 class treat \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: FLUE_CAP / CRYO_AHU_COND \u2192 S13 class / treat"
     },
@@ -2629,17 +2842,18 @@
       "forbidden": "HAB/FARM return, acid-gas",
       "claim_status": "Partial",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Boil-off/purge condensable\u2192CRYO_H2 study \u2014 true-closure"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: CRYO_AHU_COND condensable \u2192 COLD_BOX / CRYO condensate return"
     },
@@ -2657,17 +2871,18 @@
       "forbidden": "HAB return, HDR_ACID_GAS primary",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 200.0,
+        "unit": "m3/h",
+        "status": "study",
+        "note": "MET_AHU\u2192MET_SCRUB booth exhaust class (peers IA-ELC-03) \u2014 true-closure"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse"
     },
@@ -2685,17 +2900,18 @@
       "forbidden": "sewer-as-primary, farm beds",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MET_SCRUB liquor/fines\u2192leach study \u2014 true-closure"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MET_SCRUB / baghouse \u2192 CSTR 1 / OIL / HDR_ORG"
     },
@@ -2737,19 +2953,21 @@
       "carries": "H2 for MeOH",
       "header": "MeOH H\u2082 branch",
       "forbidden": "HDR_O2, continuous dump",
-      "claim_status": null,
+      "claim_status": "Closed",
       "rate": {
-        "value": 0.94,
+        "value": 0.24,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN"
+        "note": "MeOH synth surplus-only 0.24 kg/d = 5% of Faraday (priority #4 AQS-MeOH-001 D7; only when ZnBr2 SOC + PV surplus) \u2014 residuals WP"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "gap_flags": [
+        "wp_true_closure_residuals"
+      ],
+      "notes": "residuals: H2 schedule MeOH surplus 5%"
     },
     {
       "stream_id": "S75",
@@ -2791,17 +3009,18 @@
       "forbidden": "sewer-as-primary",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MEOH_FERM\u2192TANK biogenic MeOH study mid \u2014 true-closure"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MEOH_FERM_STILL \u2192 MEOH_TANK"
     },
@@ -2819,17 +3038,18 @@
       "forbidden": "CATCH potable",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 2.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HAB organics\u2192MEOH_FERM ferment feed (S12/S30 class share) \u2014 true-closure"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "MEOH",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: Farm/hab organics (S12/S30 class) \u2192 MEOH_FERM_DIG"
     },
@@ -2847,17 +3067,18 @@
       "forbidden": "potable w/o remin",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MEOH_FC product H2O\u2192GREY study \u2014 true-closure"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MEOH_FC / MEOH_COND \u2192 condensate / S13 class"
     },
@@ -2875,17 +3096,18 @@
       "forbidden": "free outdoor dump, HAB return",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MEOH_FC CO2 return\u2192CRYO_CO2 study \u2014 true-closure"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs"
+        "absent_from_candidate_mvs",
+        "wp_true_closure"
       ],
       "notes": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed)"
     },
@@ -2914,9 +3136,10 @@
       "namespace": "SANDBOX",
       "gap_flags": [
         "sandbox_extra_not_in_STREAM_REGISTER",
-        "reconcile_or_keep_sandbox"
+        "reconcile_or_keep_sandbox",
+        "wp_true_closure_residuals"
       ],
-      "notes": "candidate_mvs extension \u2014 do not invent new register ID"
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID | Intentional glass/ceramic goods export boundary \u2014 residuals WP confirm"
     },
     {
       "stream_id": "S14X",
@@ -2943,39 +3166,183 @@
       "namespace": "SANDBOX",
       "gap_flags": [
         "sandbox_extra_not_in_STREAM_REGISTER",
-        "reconcile_or_keep_sandbox"
+        "reconcile_or_keep_sandbox",
+        "wp_true_closure_residuals"
       ],
-      "notes": "candidate_mvs extension \u2014 do not invent new register ID"
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID | Intentional food surplus export boundary \u2014 residuals WP confirm"
     },
     {
-      "stream_id": "DOCK_EXPORT_TBD",
+      "stream_id": "S83",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "HABITATION",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "O2",
+      "header": "HDR_O2",
+      "forbidden": "HDR_H2, acid gas",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 3.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HDR_O2\u2192HAB metabolic = S02 class 3.4 kg/d (crew\u00d70.84); S15 surplus captured on S87\u2192CRYO_O2 \u2014 residuals WP"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "wp_true_closure",
+        "wp_true_closure_residuals"
+      ],
+      "notes": "WP-L1: HDR_O2\u2192HAB after S02/S15 header insert (AQS-PLAN-LOOP-001 \u00a74.1) | residuals: metabolic only; surplus on S87"
+    },
+    {
+      "stream_id": "S84",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "GROW_BED",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "N2",
+      "header": "HDR_N2",
+      "forbidden": "process headers",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "N2 FARM/GROW purge/inerting study share \u2014 true-closure (STR S03 FARM leg)"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "wp_true_closure"
+      ],
+      "notes": "WP-L1: STR S03 CRYO N2\u2192FARM; GROW_BED is FARM sector endpoint (no separate FARM unit)"
+    },
+    {
+      "stream_id": "S85",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "LITHO_STUB",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "IPA / acetone / NMP class",
+      "header": "flammable",
+      "forbidden": "sewer, HDR_H2",
+      "claim_status": "Claimed",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "WS_SOLV->LITHO ~10 g/d @ 3 starts \u2014 WP-L2 ST-LITHO-01"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "wp_l2_filled",
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "WP-L1: STR S38 supply WS_SOLV\u2192litho/strip; S38 remains LITHO_STUB\u2192WET_BENCH waste path"
+    },
+    {
+      "stream_id": "S86",
       "from_unit_id": "NORTH_DOCK",
       "to_unit_id": "BOUNDARY_EXPORT",
       "phase": "S",
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
-      "carries": "goods / cassettes / surplus freight (ID TBD)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
+      "presence": "present",
+      "carries": "goods / cassettes / surplus freight",
+      "header": "dock export",
+      "forbidden": "process wet, HDR_H2, untreated waste",
+      "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 22.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Surplus goods export study 22.5 kg/d (AQS-SUR-001 / gap-audit) \u2014 WP-L2 issued S86; was DOCK_EXPORT_TBD"
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
       "open_boundary": true,
-      "namespace": "TBD",
+      "namespace": "S",
       "gap_flags": [
-        "no_S_id",
-        "do_not_invent_route_or_rate",
-        "high_severity_audit"
+        "wp_l2_filled",
+        "was_DOCK_EXPORT_TBD",
+        "open_boundary_export",
+        "wp_true_closure_residuals"
       ],
-      "notes": "Audit \u00a77.1 DOCK export \u2014 sector required; no inter-block stream ID issued"
+      "notes": "WP-L2: retired DOCK_EXPORT_TBD; issued S86. Peer S08G glass + S14X food remain distinct. | Intentional dock goods export boundary \u2014 residuals WP confirm"
+    },
+    {
+      "stream_id": "S87",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "CRYO_O2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "surplus photosynthetic O2",
+      "header": "HDR_O2 \u2192 CRYO liquefaction",
+      "forbidden": "HDR_H2, acid gas, continuous roof dump",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.4545454545454546,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HDR_O2 surplus = S15 photosynthetic 1.454545 kg/d \u2192 CRYO_O2 liquefaction/storage (header in S02+S15; out S83+S87) \u2014 residuals WP exact stoich"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "wp_true_closure_residuals"
+      ],
+      "notes": "Residuals: capture photosynthetic O2 surplus into cryo (not silent blend loss)"
+    },
+    {
+      "stream_id": "S88",
+      "from_unit_id": "CRYO_AHU",
+      "to_unit_id": "CRYO_N2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ASU N2 make-up",
+      "header": "CRYO ASU \u2192 N2 receiver",
+      "forbidden": "HDR_H2, HDR_O2 cross-tee",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 2.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "ASU N2 make-up = S03+S84 campaign draw 2.0 kg/d (CRYO_AHU air \u2192 CRYO_N2 product; wafer/farm purge consumption matched) \u2014 residuals WP"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "wp_true_closure_residuals"
+      ],
+      "notes": "Residuals: N2 make-up closes campaign draw (no invented return SCC)"
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

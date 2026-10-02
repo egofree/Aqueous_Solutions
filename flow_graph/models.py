@@ -2,7 +2,7 @@
 # Copyright 2026 Mike Matthews.
 """Pydantic models for Aqueous plant flow graph (AQS-FLOW-GRAPH-001).
 
-Sole typed topology authority per project locks:
+Sole typed topology authority per Mike locks:
   layered_views, full_depth_now, efd_three_layers, typed_graph_sole,
   present_plus_placeholders.
 """
