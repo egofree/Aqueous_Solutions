@@ -1,9 +1,9 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "B",
+  "revision": "E",
   "licence": "CERN-OHL-S-2.0",
-  "date": "2026-10-01",
+  "date": "2026-10-02",
   "sole_authority": true,
   "locks": [
     "layered_views",
@@ -232,27 +232,34 @@
       "tags": [],
       "electrical_role": "none",
       "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
-      "notes": null,
+      "notes": "North dock door. Freight only. No process stream.",
       "enabled": true,
       "continuous_kw": null,
       "modules": [],
       "params": {
         "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
-        "presence": "present"
+        "presence": "present",
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none"
       }
     },
     {
       "unit_id": "C29_RECYCLE",
-      "sector_id": "WET",
-      "presence": "placeholder",
-      "class": "recycle",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "recycle_pipe",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": "intra-aisle ID was TBD",
-      "notes": "C29-class recycle node",
+      "notes": "C29 cut return. PROD_C29 tank to induction pyrolyzer inlet. Not the wet line.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "from": "PROD_C29",
+        "to": "INDUCTION_PYROLYZER",
+        "solid": "pipe",
+        "ref": "oil_line.py / ANIMATION_BRIEF D6"
+      },
       "continuous_kw": null
     },
     {
@@ -288,15 +295,19 @@
     {
       "unit_id": "CONTINUOUS_RECYCLE",
       "sector_id": "WET",
-      "presence": "placeholder",
-      "class": "recycle",
+      "presence": "present",
+      "class": "recycle_pipe",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": "continuous_recycling_pfd unlabeled",
-      "notes": "Continuous recycle heat ladder node",
+      "notes": "Continuous-line liquor return to LEACH CSTR 1. Not the heat ladder.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "to": "LEACH_CSTR_1",
+        "solid": "pipe",
+        "ref": "IA-REC-01"
+      },
       "continuous_kw": null
     },
     {
@@ -1020,10 +1031,13 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": "S17/S20 undrawn aggregation",
-      "notes": "Electrical load aggregation for S17/S20",
+      "notes": "Rectifier electrical sum. S17/S20 accounting. Not a vessel.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none"
+      },
       "continuous_kw": null
     },
     {
@@ -1307,10 +1321,13 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "Thermal Q4 collector bus (S06/S44/S53/S54/S63/S80)",
+      "notes": "Q4 water header, <80 C. Fed by Q4 batteries and listed Q4 exchangers only.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none"
+      },
       "continuous_kw": null
     },
     {
@@ -1734,6 +1751,344 @@
         "kWh": 120,
         "presence": "present"
       }
+    },
+    {
+      "unit_id": "Q1_A",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "A",
+        "Q1"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder A Q1 battery. flue / afterburner. Fluid thermal oil. Nominal 250 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "A",
+        "tier": "Q1",
+        "fluid": "thermal oil",
+        "t_nom_C": 250,
+        "deadband_K": 5,
+        "origin_mm": [
+          6000,
+          4000,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q2_A",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "A",
+        "Q2"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder A Q2 battery. glass burnout / pyro jacket. Fluid thermal oil. Nominal 150 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "A",
+        "tier": "Q2",
+        "fluid": "thermal oil",
+        "t_nom_C": 150,
+        "deadband_K": 5,
+        "origin_mm": [
+          6000,
+          5500,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q3_A",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "A",
+        "Q3"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder A Q3 battery. EW HX-8 residual. Fluid water or oil. Nominal 100 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "A",
+        "tier": "Q3",
+        "fluid": "water or oil",
+        "t_nom_C": 100,
+        "deadband_K": 5,
+        "origin_mm": [
+          6000,
+          7000,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q4_A",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "A",
+        "Q4"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder A Q4 battery. life water. Fluid water. Nominal 70 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "A",
+        "tier": "Q4",
+        "fluid": "water",
+        "t_nom_C": 70,
+        "deadband_K": 5,
+        "origin_mm": [
+          6000,
+          8500,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q1_B",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "B",
+        "Q1"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder B Q1 battery. flue / afterburner. Fluid thermal oil. Nominal 250 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "B",
+        "tier": "Q1",
+        "fluid": "thermal oil",
+        "t_nom_C": 250,
+        "deadband_K": 5,
+        "origin_mm": [
+          12000,
+          4000,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q2_B",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "B",
+        "Q2"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder B Q2 battery. glass burnout / pyro jacket. Fluid thermal oil. Nominal 150 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "B",
+        "tier": "Q2",
+        "fluid": "thermal oil",
+        "t_nom_C": 150,
+        "deadband_K": 5,
+        "origin_mm": [
+          12000,
+          5500,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q3_B",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "B",
+        "Q3"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder B Q3 battery. EW HX-8 residual. Fluid water or oil. Nominal 100 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "B",
+        "tier": "Q3",
+        "fluid": "water or oil",
+        "t_nom_C": 100,
+        "deadband_K": 5,
+        "origin_mm": [
+          12000,
+          7000,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "Q4_B",
+      "sector_id": "HEAT",
+      "presence": "study",
+      "class": "heat_battery",
+      "tags": [
+        "heat_ladder",
+        "B",
+        "Q4"
+      ],
+      "electrical_role": "none",
+      "notes": "Ladder B Q4 battery. life water. Fluid water. Nominal 70 C. Diode down only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ladder": "B",
+        "tier": "Q4",
+        "fluid": "water",
+        "t_nom_C": 70,
+        "deadband_K": 5,
+        "origin_mm": [
+          12000,
+          8500,
+          -6000
+        ],
+        "ref": "AQS-HEAT-LADDER-001"
+      }
+    },
+    {
+      "unit_id": "PROD_C5_C10",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Light cut tank. Product, not fuel to the afterburner.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py"
+      }
+    },
+    {
+      "unit_id": "PROD_C11_C18",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Mid cut tank. Product.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py"
+      }
+    },
+    {
+      "unit_id": "PROD_C19_C28",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Heavy-mid cut tank. Product.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py"
+      }
+    },
+    {
+      "unit_id": "PROD_C29",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "C29 cut tank. Feeds C29_RECYCLE only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py"
+      }
+    },
+    {
+      "unit_id": "NCG_HEADER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "header",
+      "notes": "Non-condensable gas from the fractionator. Only this stream may enter the afterburner.",
+      "enabled": true,
+      "modules": [],
+      "params": {}
+    },
+    {
+      "unit_id": "HX8",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "hx",
+      "notes": "EW aisle exchanger to Q3. Not an EW cell.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "tier": "Q3"
+      }
+    },
+    {
+      "unit_id": "FLUE_KO",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "separator",
+      "notes": "Afterburner flue knockout. N2/O2/NOx rejected. CO2-rich gas only may continue to CRYO_CO2.",
+      "enabled": true,
+      "modules": [],
+      "params": {}
+    },
+    {
+      "unit_id": "NOX_SCRUB",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "scrubber",
+      "notes": "Generator exhaust water and NOx. Not grey treat.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "NFPA 37 / plant acid-gas practice"
+      }
+    },
+    {
+      "unit_id": "MEOH_COND",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "separator",
+      "notes": "Methanol fuel-cell condensate. Process, not grey.",
+      "enabled": true,
+      "modules": [],
+      "params": {}
+    },
+    {
+      "unit_id": "ZNBR2_BR2_REGEN",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "scrubber",
+      "notes": "Dedicated bromine regen. Not the plant Cl2 tower. Not CRU.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "FLOW_BATTERY.md"
+      }
     }
   ],
   "edges": [
@@ -1940,32 +2295,6 @@
       },
       "from_sector_id": "WET",
       "to_sector_id": "MFG",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S09",
-      "from_unit_id": "BMED_UPW_POLISH",
-      "to_unit_id": "WET_BENCH",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "HCl/NaOH",
-      "header": "pipe",
-      "forbidden": "sewer",
-      "claim_status": "Closed",
-      "rate": {
-        "value": null,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "null_rate_kind=campaign_tbd"
-      },
-      "from_sector_id": "WTR",
-      "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
@@ -2350,7 +2679,7 @@
       "presence": "present",
       "carries": "H2 relief contingency",
       "header": "SHAFT_H2",
-      "forbidden": "hab air, HDR_O2, continuous dump",
+      "forbidden": "normal dump",
       "claim_status": "Partial",
       "rate": {
         "value": null,
@@ -2363,7 +2692,7 @@
       "open_boundary": true,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": " Contingency relief only. NFPA 2 / 55. Not a process sink."
     },
     {
       "stream_id": "S25",
@@ -2724,60 +3053,6 @@
       "notes": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP"
     },
     {
-      "stream_id": "S38",
-      "from_unit_id": "LITHO_STUB",
-      "to_unit_id": "WET_BENCH",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "resist / solvent waste",
-      "header": "flammable",
-      "forbidden": "sewer, HDR_H2",
-      "claim_status": "Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "FAB",
-      "to_sector_id": "FAB",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S39",
-      "from_unit_id": "WAFER_FAB",
-      "to_unit_id": "LEACH_CSTR_1",
-      "phase": "L/S",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "spent slurry, solvent, photoresist sludge",
-      "header": "HDR_ETCH / HDR_ORG",
-      "forbidden": "floor drain, farm",
-      "claim_status": "Closed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "FAB",
-      "to_sector_id": "WET",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: LAP_CMP / WET_BENCH / FAB_TOOL \u2192 REGEN LEACH / OIL / HDR_ORG"
-    },
-    {
       "stream_id": "S40",
       "from_unit_id": "ROOF_TANK",
       "to_unit_id": "TERRACE_IRRIG",
@@ -2941,34 +3216,6 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
-    },
-    {
-      "stream_id": "S46",
-      "from_unit_id": "BACKUP_GEN",
-      "to_unit_id": "GREY_TREAT",
-      "phase": "G/L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "H\u2082O + NOx class",
-      "header": "S13 class + scrub branch",
-      "forbidden": "raw AFTERBURNER, HDR_CO2 as primary",
-      "claim_status": "Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "BACKUP_GEN",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: BACKUP_GEN exhaust \u2192 condensate / scrubber"
     },
     {
       "stream_id": "S47",
@@ -3224,7 +3471,7 @@
       "presence": "present",
       "carries": "non-condensable residual after KO",
       "header": "CRYO fire-area AHU",
-      "forbidden": "HAB/FARM return, acid-gas header, continuous dump",
+      "forbidden": "normal dump",
       "claim_status": "Partial",
       "rate": {
         "value": null,
@@ -3239,7 +3486,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_AHU / CRYO_AHU_COND residual \u2192 safe vent contingency"
+      "notes": "From register: CRYO_AHU / CRYO_AHU_COND residual \u2192 safe vent contingency Contingency relief only. NFPA 2 / 55. Not a process sink."
     },
     {
       "stream_id": "S57",
@@ -3464,32 +3711,6 @@
       "notes": null
     },
     {
-      "stream_id": "S65",
-      "from_unit_id": "ALK_SCRUBBER",
-      "to_unit_id": "ALK_SCRUBBER",
-      "phase": "G",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "acid-gas residual",
-      "header": "HDR_ACID_GAS polish",
-      "forbidden": "Br\u2082 header, CRYO feed, HAB",
-      "claim_status": "Partial / Claimed",
-      "rate": {
-        "value": 1500.0,
-        "unit": "m3/h",
-        "status": "study",
-        "note": "AQS-EQP-VENT-001 Rev B \u00a72.1 polish Q = HDR_ACID_GAS 0.42 m3/s (1500 m3/h)"
-      },
-      "from_sector_id": "GAS",
-      "to_sector_id": "GAS",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [],
-      "notes": null
-    },
-    {
       "stream_id": "S66",
       "from_unit_id": "ACID_POLISH_SCRUB",
       "to_unit_id": "CRU",
@@ -3518,118 +3739,6 @@
       "notes": "From register: ACID_POLISH / ALK blowdown \u2192 CRU"
     },
     {
-      "stream_id": "S67",
-      "from_unit_id": "AFTERBURNER_FLUE",
-      "to_unit_id": "CRYO_CO2",
-      "phase": "G",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "captured CO\u2082 + condensables",
-      "header": "CRYO feed (extends S18)",
-      "forbidden": "HDR_ACID_GAS, HAB air, raw HDR_CO2",
-      "claim_status": "Partial / Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "CRYO",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: AFTERBURNER flue \u2192 FLUE_CAP / CRYO"
-    },
-    {
-      "stream_id": "S68",
-      "from_unit_id": "CRYO_AHU",
-      "to_unit_id": "S13_CLASS_TREAT",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "flue / AHU condensate",
-      "header": "condensate header",
-      "forbidden": "potable taps, HDR_UPW",
-      "claim_status": "Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "CRYO",
-      "to_sector_id": "WET",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: FLUE_CAP / CRYO_AHU_COND \u2192 S13 class / treat"
-    },
-    {
-      "stream_id": "S69",
-      "from_unit_id": "ZNBR2",
-      "to_unit_id": "ZNBR2",
-      "phase": "L",
-      "layers": [
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "Br\u207b makeup after ORP",
-      "header": "Br\u2082 scrub liquor return",
-      "forbidden": "CRU, alkali scrub liquor",
-      "claim_status": "Partial / Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "ZNBR2",
-      "to_sector_id": "ZNBR2",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: ZNBR2_BR2_REGEN \u2192 ZnBr2 positive tank"
-    },
-    {
-      "stream_id": "S70",
-      "from_unit_id": "CRYO_AHU_COND_CONDENSABLE",
-      "to_unit_id": "CRYO_H2",
-      "phase": "G/L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "boil-off / purge condensables",
-      "header": "CRYO return",
-      "forbidden": "HAB/FARM return, acid-gas",
-      "claim_status": "Partial",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "CRYO",
-      "to_sector_id": "CRYO",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: CRYO_AHU_COND condensable \u2192 COLD_BOX / CRYO condensate return"
-    },
-    {
       "stream_id": "S71",
       "from_unit_id": "MET_AHU",
       "to_unit_id": "MET_SCRUB",
@@ -3656,34 +3765,6 @@
         "absent_from_candidate_mvs"
       ],
       "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse"
-    },
-    {
-      "stream_id": "S72",
-      "from_unit_id": "MET_SCRUB",
-      "to_unit_id": "LEACH_CSTR_1",
-      "phase": "L/S",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "fines + scrub liquor / organic mist",
-      "header": "S19 class / HDR_ORG",
-      "forbidden": "sewer-as-primary, farm beds",
-      "claim_status": "Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "MFG",
-      "to_sector_id": "WET",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: MET_SCRUB / baghouse \u2192 CSTR 1 / OIL / HDR_ORG"
     },
     {
       "stream_id": "S73",
@@ -3899,34 +3980,6 @@
         "absent_from_candidate_mvs"
       ],
       "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB"
-    },
-    {
-      "stream_id": "S81",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "GREY_TREAT",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "product / process H\u2082O",
-      "header": "S13",
-      "forbidden": "potable w/o remin",
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: MEOH_FC / MEOH_COND \u2192 condensate / S13 class"
     },
     {
       "stream_id": "S82",
@@ -4195,156 +4248,6 @@
       "notes": "STR scope-out; ID was TBD"
     },
     {
-      "stream_id": "IA-WET-C29-01",
-      "from_unit_id": "C29_RECYCLE",
-      "to_unit_id": "LEACH_CSTR_1",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "C29-class recycle",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "STR scope-out; ID was TBD"
-      ],
-      "notes": "STR scope-out; ID was TBD"
-    },
-    {
-      "stream_id": "IA-REC-01",
-      "from_unit_id": "CONTINUOUS_RECYCLE",
-      "to_unit_id": "LEACH_CSTR_1",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "Continuous recycle liquor",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "continuous_recycling_pfd"
-      ],
-      "notes": "continuous_recycling_pfd"
-    },
-    {
-      "stream_id": "IA-REC-Q3",
-      "from_unit_id": "CONTINUOUS_RECYCLE",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "placeholder",
-      "carries": "Heat ladder Q3 residual (ghost to Q4 bus for EFD-thermal)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "HAB",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "heat ladder unlabeled"
-      ],
-      "notes": "heat ladder unlabeled"
-    },
-    {
-      "stream_id": "IA-BMED-01",
-      "from_unit_id": "BMED_ACID",
-      "to_unit_id": "BMED_UPW_POLISH",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "BMED acid product internal",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "bmed_regen unlabeled"
-      ],
-      "notes": "bmed_regen unlabeled"
-    },
-    {
-      "stream_id": "IA-BMED-02",
-      "from_unit_id": "BMED_BASE",
-      "to_unit_id": "BMED_UPW_POLISH",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "BMED base product internal",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "bmed_regen unlabeled"
-      ],
-      "notes": "bmed_regen unlabeled"
-    },
-    {
       "stream_id": "IA-BMED-03",
       "from_unit_id": "CRU",
       "to_unit_id": "BMED_ACID",
@@ -4465,126 +4368,6 @@
       "notes": "polish_bank unlabeled"
     },
     {
-      "stream_id": "IA-GLASS-01",
-      "from_unit_id": "GLASS_RINSE",
-      "to_unit_id": "GLASS_BURNOUT",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "Glass rinse \u2192 burnout",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "GLASS",
-      "to_sector_id": "GLASS",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "glass_ceramic_pfd no S##"
-      ],
-      "notes": "glass_ceramic_pfd no S##"
-    },
-    {
-      "stream_id": "IA-GLASS-02",
-      "from_unit_id": "GLASS_BURNOUT",
-      "to_unit_id": "GLASS_MILL",
-      "phase": "S",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "Glass burnout \u2192 mill",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "GLASS",
-      "to_sector_id": "GLASS",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "glass_ceramic_pfd no S##"
-      ],
-      "notes": "glass_ceramic_pfd no S##"
-    },
-    {
-      "stream_id": "IA-GLASS-03",
-      "from_unit_id": "GLASS_MILL",
-      "to_unit_id": "GLASS_DIGEST",
-      "phase": "S",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "Glass mill \u2192 digest",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "GLASS",
-      "to_sector_id": "GLASS",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "glass_ceramic_pfd no S##"
-      ],
-      "notes": "glass_ceramic_pfd no S##"
-    },
-    {
-      "stream_id": "IA-GLASS-Q2",
-      "from_unit_id": "GLASS_BURNOUT",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "placeholder",
-      "carries": "Q2 burnout heat (study path; not rate)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "GLASS",
-      "to_sector_id": "HAB",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "glass heat unlabeled"
-      ],
-      "notes": "glass heat unlabeled"
-    },
-    {
       "stream_id": "IA-OIL-01",
       "from_unit_id": "OIL_DRYER",
       "to_unit_id": "OIL_PYRO",
@@ -4643,66 +4426,6 @@
         "oil_line internals"
       ],
       "notes": "oil_line internals"
-    },
-    {
-      "stream_id": "IA-OIL-03",
-      "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "AFTERBURNER",
-      "phase": "G",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "Frac cut / vapor \u2192 afterburner",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "OIL",
-      "to_sector_id": "OIL",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "oil_line internals"
-      ],
-      "notes": "oil_line internals"
-    },
-    {
-      "stream_id": "IA-OIL-Q1",
-      "from_unit_id": "AFTERBURNER",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "placeholder",
-      "carries": "Q1 afterburner heat (not into hab air)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "OIL",
-      "to_sector_id": "HAB",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "Q1\u2260Q4 rule"
-      ],
-      "notes": "Q1\u2260Q4 rule"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-CHG",
@@ -4908,6 +4631,506 @@
         "missing_on_sld"
       ],
       "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "HL-Q1-A-DOWN",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "Q2_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "downhill heat pipe",
+      "forbidden": "uphill",
+      "notes": "Opens only if T_upper > T_lower + 5 K"
+    },
+    {
+      "stream_id": "HL-Q1-X",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "Q1_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "forbidden": "equal-temperature circulation",
+      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder"
+    },
+    {
+      "stream_id": "HL-Q2-A-DOWN",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "Q3_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "downhill heat pipe",
+      "forbidden": "uphill",
+      "notes": "Opens only if T_upper > T_lower + 5 K"
+    },
+    {
+      "stream_id": "HL-Q2-X",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "Q2_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "forbidden": "equal-temperature circulation",
+      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder"
+    },
+    {
+      "stream_id": "HL-Q3-A-DOWN",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "Q4_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "downhill heat pipe",
+      "forbidden": "uphill",
+      "notes": "Opens only if T_upper > T_lower + 5 K"
+    },
+    {
+      "stream_id": "HL-Q3-X",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "Q3_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "forbidden": "equal-temperature circulation",
+      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder"
+    },
+    {
+      "stream_id": "HL-Q4-X",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "Q4_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "forbidden": "equal-temperature circulation",
+      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder"
+    },
+    {
+      "stream_id": "HL-Q1-B-DOWN",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "Q2_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "downhill heat pipe",
+      "forbidden": "uphill",
+      "notes": "Opens only if T_upper > T_lower + 5 K"
+    },
+    {
+      "stream_id": "HL-Q2-B-DOWN",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "Q3_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "downhill heat pipe",
+      "forbidden": "uphill",
+      "notes": "Opens only if T_upper > T_lower + 5 K"
+    },
+    {
+      "stream_id": "HL-Q3-B-DOWN",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "Q4_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "downhill heat pipe",
+      "forbidden": "uphill",
+      "notes": "Opens only if T_upper > T_lower + 5 K"
+    },
+    {
+      "stream_id": "HL-AFTERBURNER-Q1-A",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "Q1_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "Q1 flue, not Q4",
+      "notes": "Isolable branch. One ladder may be down."
+    },
+    {
+      "stream_id": "HL-AFTERBURNER-Q1-B",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "Q1_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "Q1 flue, not Q4",
+      "notes": "Isolable branch. One ladder may be down."
+    },
+    {
+      "stream_id": "HL-GLASS_BURNOUT-Q2-A",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "Q2_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "Q2 burnout, not Q4",
+      "notes": "Isolable branch. One ladder may be down."
+    },
+    {
+      "stream_id": "HL-GLASS_BURNOUT-Q2-B",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "Q2_B",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "Q2 burnout, not Q4",
+      "notes": "Isolable branch. One ladder may be down."
+    },
+    {
+      "stream_id": "HL-Q4-A-BUS",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "Q4_BUS",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "water <80 C",
+      "notes": "Only Q4 batteries feed the bus from the ladder."
+    },
+    {
+      "stream_id": "HL-Q4-B-BUS",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "Q4_BUS",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "water <80 C",
+      "notes": "Only Q4 batteries feed the bus from the ladder."
+    },
+    {
+      "stream_id": "IA-REC-01",
+      "from_unit_id": "CONTINUOUS_RECYCLE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "presence": "present",
+      "carries": "continuous recycle liquor",
+      "notes": "Liquor return only. No heat-ladder duty."
+    },
+    {
+      "stream_id": "IA-OIL-03",
+      "from_unit_id": "OIL_FRAC",
+      "to_unit_id": "NCG_HEADER",
+      "phase": "G",
+      "presence": "present",
+      "carries": "NCG only",
+      "forbidden": "product cuts",
+      "notes": "NFPA 30: product cuts stay in tanks. NCG only to the burner."
+    },
+    {
+      "stream_id": "NCG_TO_AB",
+      "from_unit_id": "NCG_HEADER",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "G",
+      "presence": "present",
+      "carries": "NCG",
+      "notes": "Burner feed. Not C29."
+    },
+    {
+      "stream_id": "C29_RECYCLE",
+      "from_unit_id": "PROD_C29",
+      "to_unit_id": "C29_RECYCLE",
+      "phase": "L",
+      "presence": "present",
+      "carries": "C29 heavy cut",
+      "notes": "Cut tank to recycle pipe."
+    },
+    {
+      "stream_id": "C29_TO_PYRO",
+      "from_unit_id": "C29_RECYCLE",
+      "to_unit_id": "OIL_PYRO",
+      "phase": "L",
+      "presence": "present",
+      "carries": "C29 heavy cut",
+      "forbidden": "afterburner",
+      "notes": "Pyro inlet. Not burned."
+    },
+    {
+      "stream_id": "CUT-1",
+      "from_unit_id": "OIL_FRAC",
+      "to_unit_id": "PROD_C5_C10",
+      "phase": "L",
+      "presence": "present",
+      "carries": "fractionator cut",
+      "forbidden": "afterburner",
+      "notes": "Product. NFPA 30 dike."
+    },
+    {
+      "stream_id": "CUT-2",
+      "from_unit_id": "OIL_FRAC",
+      "to_unit_id": "PROD_C11_C18",
+      "phase": "L",
+      "presence": "present",
+      "carries": "fractionator cut",
+      "forbidden": "afterburner",
+      "notes": "Product. NFPA 30 dike."
+    },
+    {
+      "stream_id": "CUT-3",
+      "from_unit_id": "OIL_FRAC",
+      "to_unit_id": "PROD_C19_C28",
+      "phase": "L",
+      "presence": "present",
+      "carries": "fractionator cut",
+      "forbidden": "afterburner",
+      "notes": "Product. NFPA 30 dike."
+    },
+    {
+      "stream_id": "CUT-4",
+      "from_unit_id": "OIL_FRAC",
+      "to_unit_id": "PROD_C29",
+      "phase": "L",
+      "presence": "present",
+      "carries": "fractionator cut",
+      "forbidden": "afterburner",
+      "notes": "Product. NFPA 30 dike."
+    },
+    {
+      "stream_id": "S67",
+      "from_unit_id": "AFTERBURNER_FLUE",
+      "to_unit_id": "FLUE_KO",
+      "phase": "G",
+      "presence": "present",
+      "carries": "flue N2/O2/CO2/NOx",
+      "forbidden": "CRYO_CO2 direct, hab air",
+      "notes": "Knockout before any CO2 claim."
+    },
+    {
+      "stream_id": "S67B",
+      "from_unit_id": "FLUE_KO",
+      "to_unit_id": "CRYO_CO2",
+      "phase": "G",
+      "presence": "study",
+      "carries": "CO2-rich gas after KO",
+      "notes": "Only the CO2-rich cut. Reject N2/O2/NOx."
+    },
+    {
+      "stream_id": "S46",
+      "from_unit_id": "BACKUP_GEN",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "L/G",
+      "presence": "present",
+      "carries": "exhaust condensate / NOx",
+      "forbidden": "GREY_TREAT, hab AHU",
+      "notes": "NFPA 37 exhaust. Not life water."
+    },
+    {
+      "stream_id": "S81",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "MEOH_COND",
+      "phase": "L",
+      "presence": "present",
+      "carries": "MeOH FC condensate",
+      "forbidden": "GREY_TREAT",
+      "notes": "Methanol residual stays process."
+    },
+    {
+      "stream_id": "S39",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L/S",
+      "presence": "present",
+      "carries": "spent slurry and etch liquor",
+      "forbidden": "solvent, photoresist, floor drain",
+      "notes": "NFPA 400: no organics into chlorate leach."
+    },
+    {
+      "stream_id": "S39B",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "solvent and photoresist",
+      "header": "HDR_ORG",
+      "forbidden": "leach, farm",
+      "notes": "Organics to the oil line."
+    },
+    {
+      "stream_id": "S72",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L/S",
+      "presence": "present",
+      "carries": "metal fines and aqueous scrub liquor",
+      "forbidden": "organic mist",
+      "notes": "Fines only."
+    },
+    {
+      "stream_id": "S72B",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "organic mist",
+      "forbidden": "leach",
+      "notes": "Organics off the metal scrub, to oil."
+    },
+    {
+      "stream_id": "IA-BMED-01",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "WS_NITRIC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "HCl product",
+      "forbidden": "UPW polish, hab",
+      "notes": "Acid product to acid use. Not the polish node."
+    },
+    {
+      "stream_id": "IA-BMED-02",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "WS_KOH",
+      "phase": "L",
+      "presence": "present",
+      "carries": "NaOH product",
+      "forbidden": "UPW polish",
+      "notes": "Base product. KOH node is a separate synth."
+    },
+    {
+      "stream_id": "S09",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "presence": "present",
+      "carries": "HCl",
+      "forbidden": "hab",
+      "notes": "Acid to bench. Polish is not this edge."
+    },
+    {
+      "stream_id": "S38",
+      "from_unit_id": "WET_BENCH",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "resist and solvent waste",
+      "forbidden": "into the bench",
+      "notes": "Waste leaves the bench."
+    },
+    {
+      "stream_id": "S70",
+      "from_unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "to_unit_id": "FLUE_KO",
+      "phase": "L",
+      "presence": "present",
+      "carries": "condensables",
+      "forbidden": "CRYO_H2",
+      "notes": "Not into the hydrogen box."
+    },
+    {
+      "stream_id": "S68",
+      "from_unit_id": "CRYO_AHU",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "presence": "present",
+      "carries": "flue condensate",
+      "forbidden": "S13_CLASS_TREAT, hab",
+      "notes": "Acid condensate stays process."
+    },
+    {
+      "stream_id": "IA-GLASS-01",
+      "from_unit_id": "GLASS_RINSE",
+      "to_unit_id": "GLASS_MILL",
+      "phase": "S",
+      "presence": "present",
+      "carries": "rinsed cullet",
+      "notes": "Drain rinse before heat."
+    },
+    {
+      "stream_id": "IA-GLASS-02",
+      "from_unit_id": "GLASS_MILL",
+      "to_unit_id": "GLASS_BURNOUT",
+      "phase": "S",
+      "presence": "present",
+      "carries": "milled cullet",
+      "notes": "Burnout after a dry step, not on rinse water."
+    },
+    {
+      "stream_id": "IA-GLASS-03",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "S",
+      "presence": "present",
+      "carries": "burned cullet",
+      "notes": "Digest after organics are off."
+    },
+    {
+      "stream_id": "S65",
+      "from_unit_id": "ALK_SCRUBBER",
+      "to_unit_id": "ACID_POLISH_SCRUB",
+      "phase": "G",
+      "presence": "present",
+      "carries": "acid-gas residual",
+      "notes": "Not a self-loop. Polish then CRU via S66."
+    },
+    {
+      "stream_id": "S69",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "ZNBR2_BR2_REGEN",
+      "phase": "G",
+      "presence": "present",
+      "carries": "Br2 vapor",
+      "forbidden": "CRU, plant Cl2 tower",
+      "notes": "Own tower."
+    },
+    {
+      "stream_id": "S69B",
+      "from_unit_id": "ZNBR2_BR2_REGEN",
+      "to_unit_id": "ZNBR2",
+      "phase": "L",
+      "presence": "present",
+      "carries": "NaBr after ORP",
+      "forbidden": "CRU",
+      "notes": "Return to the bromine tank only."
+    },
+    {
+      "stream_id": "HL-HX8-Q3-A",
+      "from_unit_id": "HX8",
+      "to_unit_id": "Q3_A",
+      "phase": "heat",
+      "presence": "present",
+      "carries": "HX-8 residual",
+      "notes": "Exchanger, not EW-1."
+    },
+    {
+      "stream_id": "HL-HX8-Q3-B",
+      "from_unit_id": "HX8",
+      "to_unit_id": "Q3_B",
+      "phase": "heat",
+      "presence": "present",
+      "carries": "HX-8 residual",
+      "notes": "Exchanger, not EW-1."
+    },
+    {
+      "stream_id": "IA-HX8",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "HX8",
+      "phase": "heat",
+      "presence": "present",
+      "carries": "EW heat",
+      "notes": "Cell to exchanger. Separate fluids."
+    },
+    {
+      "stream_id": "HL-Q1-X-BA",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "Q1_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier."
+    },
+    {
+      "stream_id": "HL-Q2-X-BA",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "Q2_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier."
+    },
+    {
+      "stream_id": "HL-Q3-X-BA",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "Q3_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier."
+    },
+    {
+      "stream_id": "HL-Q4-X-BA",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "Q4_A",
+      "phase": "heat",
+      "presence": "study",
+      "carries": "cross-tie, hot to cold only",
+      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier."
     }
   ],
   "view_presets": [
@@ -5265,5 +5488,8 @@
     },
     "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.",
     "write_path": "plant_flow_graph.json#mvs + nodes/edges; candidate_mvs.json is generated projection only"
-  }
+  },
+  "notes_rev_c": "AQS-HEAT-LADDER-001: aliases fixed; dual diode ladder; Q1 no longer tees to Q4_BUS.",
+  "notes_rev_d": "C29_RECYCLE is the C29 cut pipe to pyro. CONTINUOUS_RECYCLE is liquor to leach. Neither is an alias. Ladder keeps its own Q*_A/B names.",
+  "notes_rev_e": "Audit fixes. No oxidizer/organic mix. No flue into CO2 or grey. Ladder fluids not common. Relief retained as contingency."
 }
