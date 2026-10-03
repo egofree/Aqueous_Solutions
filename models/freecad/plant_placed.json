@@ -1,0 +1,103 @@
+{
+  "schema": "plant_placed_copy",
+  "source": "placement_seed.json",
+  "plant_fcstd": "not opened",
+  "units": [
+    {
+      "unit_id": "BACKUP_GEN",
+      "level": "L0",
+      "origin_mm": [
+        -3500,
+        8200,
+        0
+      ],
+      "size_mm": [
+        2000,
+        1000,
+        1600
+      ],
+      "source": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear.",
+      "applied_to": "copy"
+    },
+    {
+      "unit_id": "FUEL_CELL",
+      "level": "L0",
+      "origin_mm": [
+        -3300,
+        7600,
+        0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only.",
+      "applied_to": "copy"
+    },
+    {
+      "unit_id": "MEOH_FERM",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        2400,
+        0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate.",
+      "applied_to": "copy"
+    },
+    {
+      "unit_id": "MEOH_SYNTH",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        1200,
+        0
+      ],
+      "size_mm": [
+        2200,
+        900,
+        1400
+      ],
+      "source": "Order 2. Downstream of fermenter. DMFC still deferred.",
+      "applied_to": "copy"
+    },
+    {
+      "unit_id": "MEOH_TANK",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        1600,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank.",
+      "applied_to": "copy"
+    },
+    {
+      "unit_id": "MEOH_FC",
+      "level": "L0",
+      "origin_mm": [
+        -4848,
+        200,
+        0
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "Order 4. Last. Not the PEM H2 fuel cell. No bay inside L1.",
+      "applied_to": "copy"
+    }
+  ]
+}
