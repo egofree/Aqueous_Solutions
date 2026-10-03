@@ -108,7 +108,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          2000,
+          1000,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -430,7 +436,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -444,7 +456,14 @@
       "notes": "EW cascade stage (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
       "continuous_kw": null
     },
     {
@@ -457,7 +476,13 @@
       "modules": [],
       "params": {
         "pitch_mm": 750,
-        "index": 3
+        "index": 3,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -470,7 +495,13 @@
       "modules": [],
       "params": {
         "pitch_mm": 750,
-        "index": 4
+        "index": 4,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -483,7 +514,13 @@
       "modules": [],
       "params": {
         "pitch_mm": 750,
-        "index": 5
+        "index": 5,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -496,7 +533,13 @@
       "modules": [],
       "params": {
         "pitch_mm": 750,
-        "index": 6
+        "index": 6,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -509,7 +552,13 @@
       "modules": [],
       "params": {
         "pitch_mm": 750,
-        "index": 7
+        "index": 7,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -522,7 +571,13 @@
       "modules": [],
       "params": {
         "pitch_mm": 750,
-        "index": 8
+        "index": 8,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -536,7 +591,14 @@
       "notes": "EW cascade last stage proxy (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
       "continuous_kw": null
     },
     {
@@ -595,7 +657,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1047,7 +1115,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1061,7 +1135,14 @@
       "notes": "MeOH ferment (S77/S78)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          2200,
+          900,
+          1400
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
       "continuous_kw": null
     },
     {
@@ -1082,7 +1163,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          2200,
+          900,
+          1400
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1105,7 +1192,13 @@
       "params": {
         "inventory_kg_study_min": 15.0,
         "days_at_mid_synth": 3,
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          800,
+          800,
+          1100
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1721,7 +1814,13 @@
       "params": {
         "bund": "acid_phos",
         "separate_from": "WS_HF_ED",
-        "study_L_d": "0.5-2"
+        "study_L_d": "0.5-2",
+        "size_mm": [
+          800,
+          800,
+          1100
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1735,7 +1834,13 @@
       "params": {
         "equipment_id": "GLASS_RINSE-01",
         "continuous_kw": "0.2",
-        "status": "duty_issued"
+        "status": "duty_issued",
+        "size_mm": [
+          1200,
+          600,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1749,7 +1854,13 @@
       "params": {
         "equipment_id": "GLASS_MILL-01",
         "continuous_kw": "0.8",
-        "status": "duty_issued"
+        "status": "duty_issued",
+        "size_mm": [
+          800,
+          600,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1763,7 +1874,13 @@
       "params": {
         "equipment_id": "GLASS_BURNOUT-01",
         "continuous_kw": "1.0",
-        "status": "duty_issued"
+        "status": "duty_issued",
+        "size_mm": [
+          800,
+          600,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1780,7 +1897,13 @@
         "sec_kWh_m3": "14-20",
         "feed_m3_d": 0.11,
         "avg_kw": 0.08,
-        "status": "duty_issued"
+        "status": "duty_issued",
+        "size_mm": [
+          1400,
+          600,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1797,7 +1920,13 @@
         "Ca_mg_L": 25,
         "Mg_mg_L": 10,
         "uv": "after dose",
-        "source": "hydroxide crib"
+        "source": "hydroxide crib",
+        "size_mm": [
+          600,
+          400,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1810,7 +1939,13 @@
       "modules": [],
       "params": {
         "starts_d": "1-5",
-        "parent": "LITHO_STUB"
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          600,
+          500,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1823,7 +1958,13 @@
       "modules": [],
       "params": {
         "starts_d": "1-5",
-        "parent": "LITHO_STUB"
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          500,
+          500,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1836,7 +1977,13 @@
       "modules": [],
       "params": {
         "starts_d": "1-5",
-        "parent": "LITHO_STUB"
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          500,
+          500,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1854,7 +2001,13 @@
       "params": {
         "lamp": "365 nm LED",
         "starts_d": "1-5",
-        "avg_kw": 0.1
+        "avg_kw": 0.1,
+        "size_mm": [
+          1600,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1869,7 +2022,13 @@
         "equipment_id": "ELC-BOOTH-01",
         "formulation": "carbon or nickel",
         "avg_kw": 0.3,
-        "exhaust": "MET_AHU"
+        "exhaust": "MET_AHU",
+        "size_mm": [
+          1200,
+          800,
+          1800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1884,7 +2043,13 @@
         "equipment_id": "BLOW-01",
         "peak_kw": "2-4",
         "avg_kw": 0.5,
-        "scrap": "OIL_FRAC"
+        "scrap": "OIL_FRAC",
+        "size_mm": [
+          1200,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1907,7 +2072,13 @@
         "equipment_id": "PV-CELL-01",
         "avg_kw": 1.0,
         "koh": "WS_KOH",
-        "not": "PV_ARRAY"
+        "not": "PV_ARRAY",
+        "size_mm": [
+          2400,
+          1200,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1925,7 +2096,13 @@
         "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
         "ladder": "A",
         "tier": "Q1",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1943,7 +2120,13 @@
         "relief": "thermal 1/2 in, set 10 percent above design",
         "ladder": "A",
         "tier": "Q2",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1961,7 +2144,13 @@
         "relief": "thermal 1/2 in, set 10 percent above design",
         "ladder": "A",
         "tier": "Q3",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1979,7 +2168,13 @@
         "relief": "thermal 1/2 in water, set 10 percent above design",
         "ladder": "A",
         "tier": "Q4",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -1997,7 +2192,13 @@
         "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
         "ladder": "B",
         "tier": "Q1",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -2015,7 +2216,13 @@
         "relief": "thermal 1/2 in, set 10 percent above design",
         "ladder": "B",
         "tier": "Q2",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -2033,7 +2240,13 @@
         "relief": "thermal 1/2 in, set 10 percent above design",
         "ladder": "B",
         "tier": "Q3",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -2051,7 +2264,13 @@
         "relief": "thermal 1/2 in water, set 10 percent above design",
         "ladder": "B",
         "tier": "Q4",
-        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K"
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     }
   ],
@@ -5964,5 +6183,5 @@
   "notes_rev_d": "C29_RECYCLE is the C29 cut pipe to pyro. CONTINUOUS_RECYCLE is liquor to leach. Neither is an alias. Ladder keeps its own Q*_A/B names.",
   "notes_rev_e": "Audit fixes. No oxidizer/organic mix. No flue into CO2 or grey. Ladder fluids not common. Relief retained as contingency. | F+local merge retained handoff Rev E audit fixes.",
   "notes_rev_f": "EW-3..8 added. Relief off the dock. S03 sourced from CRYO_N2. S83-S86 cryo product or relief, not freight. S87 O2 capture. S88 N2 make-up.",
-  "notes_rev_g": "WS_PHOS, machine duties, ladder store sizes, fab class. EW solid still operator-box."
+  "notes_rev_g": "Envelopes issued L\u00d7W\u00d7H mm on MVS machines, EW cells, ladder batteries, gen, fuel cell, methanol skids."
 }

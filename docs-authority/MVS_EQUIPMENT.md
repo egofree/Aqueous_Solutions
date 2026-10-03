@@ -2,40 +2,45 @@
 
 Document: AQS-MVS-EQP-001
 Date: 2026-10-02
-Graph Rev G. Duties, not nameplates.
+Graph Rev G. L×W×H are issued envelopes in millimetres, not vendor nameplates.
 
-## Issued
+## Envelopes
 
-WS_PHOS on S34B. Own bund.
+| Unit | L | W | H | Duty |
+|---|---:|---:|---:|---|
+| WS_PHOS | 800 | 800 | 1100 | Tote class. Own bund. S34B. |
+| GLASS_RINSE | 1200 | 600 | 800 | 0.2 kW. Drain before mill. |
+| GLASS_MILL | 800 | 600 | 800 | 0.8 kW. |
+| GLASS_BURNOUT | 800 | 600 | 1200 | 1.0 kW. Off-gas to oil-vapor header. |
+| VCD-COMP-01 | 1400 | 600 | 1200 | 0.11 m³/d, 14–20 kWh/m³, 0.08 kW. |
+| REMIN-01 | 600 | 400 | 800 | 10 L/d. 25 mg/L Ca, 10 mg/L Mg. UV after dose. |
+| LITHO_COAT | 600 | 500 | 800 | Spin. 2 mL/wafer class. |
+| LITHO_ALIGN | 500 | 500 | 800 | 365 nm LED. 1–5 starts/day. |
+| LITHO_DEV | 500 | 500 | 800 | Solvent waste leaves to the oil line. |
+| LITHO_STUB | 1600 | 800 | 1600 | Parent of the three. |
+| ELC-BOOTH-01 | 1200 | 800 | 1800 | Carbon or nickel. Exhaust to MET_AHU. 0.3 kW. |
+| BLOW-01 | 1200 | 800 | 1600 | Peak 2–4 kW. Scrap to the oil line. |
+| PV-CELL-01 | 2400 | 1200 | 1600 | Texture through IV. 1.0 kW. Not the yard array. |
+| EW-1…EW-9 | 600 | 420 | 650 | Pitch 750. Funnel 220 below the box. |
+| Q1_A, Q1_B | 800 | 800 | 1200 | Oil, 0.30 m³, 250 °C. 1/2 in thermal relief. |
+| Q2_A, Q2_B | 800 | 800 | 1200 | Oil, 0.30 m³, 150 °C. |
+| Q3_A, Q3_B | 800 | 800 | 1200 | Water, 0.40 m³, 100 °C. |
+| Q4_A, Q4_B | 800 | 800 | 1200 | Water, 0.60 m³, 70 °C. |
+| BACKUP_GEN | 2000 | 1000 | 1600 | Outdoor H2 skid. |
+| FUEL_CELL | 1800 | 800 | 1600 | PEM. O2 face on the south side. |
+| MEOH_FERM | 2200 | 900 | 1400 | First in the train. |
+| MEOH_SYNTH | 2200 | 900 | 1400 | Second. |
+| MEOH_TANK | 800 | 800 | 1100 | Diked. |
+| MEOH_FC | 1800 | 800 | 1600 | Last. Not the PEM. |
 
-Glass: rinse 0.2 kW, mill 0.8 kW, burnout 1.0 kW. Off-gas to the oil-vapor header.
+Fab room: ISO 14644-1 Class 7 wet bench, Class 6 tool row. Wet bench envelope is the FAB block, 12000 × 10000 × 4000.
 
-VCD-COMP-01. Scroll or diaphragm. 0.11 m³/d, 14–20 kWh/m³, 0.08 kW average.
-
-REMIN-01. 10 L/d. 25 mg/L Ca, 10 mg/L Mg. Hydroxide crib. UV after dose.
-
-Litho children: LITHO_COAT, LITHO_ALIGN, LITHO_DEV. 1–5 starts/day. 365 nm LED.
-
-ELC-BOOTH-01. Carbon or nickel. Exhaust to MET_AHU. 0.3 kW average.
-
-BLOW-01. Peak 2–4 kW. Scrap to the oil line.
-
-PV-CELL-01. Texture through IV. 1.0 kW average. KOH from WS_KOH.
-
-Fab: ISO 14644-1 Class 7 wet bench, Class 6 tool row.
-
-## Ladder stores
-
-Basis: Q4 holds 20 kWh thermal at a 30 K rise.
+Q4 volume basis:
 
 \[
 m = 20 \times 3.6\times10^6 / (4180 \times 30) = 574\,\mathrm{kg} \approx 0.60\,\mathrm{m^3}
 \]
 
-Oil stores hold 10 kWh at an 80 K rise, cp 2.0 kJ/kg·K, about 0.30 m³. Q3 water 0.40 m³.
+Relief is blocked-in expansion, not a fire-case orifice. Q1 relief is not a hab vent.
 
-Relief is blocked-in thermal expansion, 1/2 in, set 10 percent above design. Not a fire-case orifice. Q1 relief is not a hab vent.
-
-## Not done
-
-ew_cascade.FCStd is not built. plant.FCStd was not opened. Placement copy was not run. ORC pad is empty.
+EW solid file and the placement copy are still operator-box. ORC pad is empty.
