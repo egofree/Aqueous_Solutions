@@ -43,7 +43,7 @@ def main():
            "Genset AC → GEN port only — not RECT DC bus.  Rating TBD.")
 
     ax.text(2, 59.0, "1   FUEL  (on-site stream)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     h2d = S.unit(ax, 2, 48, 18, 8.0, "H2_DRYER",
                  "process H₂\nS05 / S24",
                  fill="#dbeafe", edge="#1e3a8a")
@@ -55,7 +55,7 @@ def main():
                  fill="#e0f2fe", edge="#0369a1")
     gen = S.unit(ax, 70, 46, 26, 11.0, "BACKUP_GEN",
                  "H₂ AC genset\n480 V 3φ\nkW TBD (≤ Sol-Ark class)",
-                 fill="#fef3c7", edge="#b45309", ts=11.4, ss=7.4)
+                 fill="#fef3c7", edge="#b45309", ts=17.7, ss=11.5)
     arrow(ax, R(h2d), L(buf), S.C_H2, lw=1.5)
     arrow(ax, R(cryo), (buf[0], cy(cryo)), S.C_H2, lw=1.5)
     arrow(ax, R(buf), L(gen), S.C_H2, lw=1.8)
@@ -63,10 +63,10 @@ def main():
     slabel(ax, 42, 57.8, "S45", S.C_H2, size=7.4)
 
     ax.text(2, 43.5, "2   ELECTRICAL  (closes GEN spare)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     sol = S.unit(ax, 2, 28, 32, 12.0, "SOL-ARK  60K-3P-480V",
                  "GEN port WAS spare → now S47\nGRID ↔  ·  LOAD → ATS S2\nBATTERY ← ZnBr2  ·  PV DC in",
-                 fill="#dcfce7", edge="#15803d", ts=11.2, ss=7.2)
+                 fill="#dcfce7", edge="#15803d", ts=17.4, ss=11.2)
     ats = S.iface(ax, 40, 31, 20, 8.0, "ATS 200 A",
                   "S1 utility bypass\nS2 Sol-Ark LOAD",
                   fill="#fff7ed", edge="#b45309")
@@ -87,13 +87,13 @@ def main():
     arrow(ax, R(main), L(znbr), S.C_H2, lw=1.1, ls="--")
 
     ax.text(2, 25.5, "3   EXHAUST  (Claimed)  +  FUEL OPTIONS",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     exh = S.unit(ax, 2, 12, 28, 10.5, "GEN_EXHAUST_HX",
                  "H₂ burn → H₂O primary\ncondensate → S13 class\nS46 liquid",
-                 fill="#e0f2fe", edge="#0369a1", ts=10.8, ss=7.0)
+                 fill="#e0f2fe", edge="#0369a1", ts=16.7, ss=10.8)
     scrub = S.unit(ax, 36, 12, 28, 10.5, "SCRUBBER BRANCH",
                    "NOx / residual gas\n≠ CRU Cl₂ path\nS46 gas Claimed",
-                   fill="#ffedd5", edge="#c2410c", ts=10.8, ss=7.0)
+                   fill="#ffedd5", edge="#c2410c", ts=16.7, ss=10.8)
     fuel = S.callout(ax, 70, 12, 28, 10.5, "FUEL OPTIONS", [
         "PRIMARY: S64→CRYO_H2→S45",
         "S24 = H₂ roof contingency only",

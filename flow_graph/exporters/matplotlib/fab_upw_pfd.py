@@ -51,7 +51,7 @@ def main():
 
     # Feed
     ax.text(2, 61.5, "1   FEED  (pre-remin plant water — minerals defeat resistivity)",
-            fontsize=9.4, fontweight="bold", color=P.INK)
+            fontsize=14.6, fontweight="bold", color=P.INK)
     roof = S.iface(ax, 2, 51.5, 14, 7.0, "ROOF TANK", "S21 gravity\nclean inventory", fill="#dbeafe", edge="#1d4ed8")
     hdr = S.iface(ax, 19, 51.5, 16, 7.0, "HDR_UPW / S01", "< 1 µS/cm class\nfrom HAB_ED_POLISH", fill="#e0f2fe", edge="#0369a1")
     no_pot = S.rule(ax, 38, 51.5, 22, 7.0,
@@ -65,12 +65,12 @@ def main():
 
     # Polish train
     ax.text(2, 49.0, "2   POLISH TRAIN  (AQS-EQP-FAB-UPW-001 tags)",
-            fontsize=9.4, fontweight="bold", color=P.INK)
+            fontsize=14.6, fontweight="bold", color=P.INK)
     pre = S.unit(ax, 2, 38.0, 14, 7.5, "FAB_UPW_PRE", "particulate /\ncarbon prefilter", fill="#e0f2fe", edge="#0369a1")
     uf = S.unit(ax, 19, 38.0, 14, 7.5, "FAB_UPW_UF", "ultrafiltration", fill="#e0f2fe", edge="#0369a1")
     ix = S.unit(ax, 36, 38.0, 16, 7.5, "FAB_UPW_IX", "mixed-bed IX\nand/or EDI", fill="#bae6fd", edge="#0369a1")
     uv = S.unit(ax, 55, 38.0, 14, 7.5, "FAB_UPW_UV", "TOC / microbial\nUV", fill="#e0f2fe", edge="#0369a1")
-    tank = S.unit(ax, 72, 38.0, 16, 7.5, "FAB_UPW_TANK", "recirc loop\n→ WET_BENCH S27", fill="#bae6fd", edge="#0369a1", ts=11.0)
+    tank = S.unit(ax, 72, 38.0, 16, 7.5, "FAB_UPW_TANK", "recirc loop\n→ WET_BENCH S27", fill="#bae6fd", edge="#0369a1", ts=17.1)
 
     arrow(ax, B(hdr), (cx(hdr), 47), S.C_UTIL, lw=1.5)
     arrow(ax, (cx(hdr), 47), (cx(pre), 47), S.C_UTIL, lw=1.5)
@@ -89,7 +89,7 @@ def main():
 
     # Wet bench + reject
     ax.text(2, 33.0, "3   WET BENCH USE + REJECT SEGREGATION",
-            fontsize=9.4, fontweight="bold", color=P.INK)
+            fontsize=14.6, fontweight="bold", color=P.INK)
     wet = S.unit(ax, 36, 22.5, 18, 7.5, "WET_BENCH", "RCA / etch / rinse\ndoc 03 rinse control", fill="#e0f2fe", edge="#0369a1")
     rej = S.unit(ax, 58, 22.5, 16, 7.5, "FAB_UPW_REJECT", "segregated header\nclean vs etch-laden", fill="#fef3c7", edge="#b45309")
     etch = S.iface(ax, 78, 22.5, 14, 7.5, "HDR_ETCH / S10", "→ REGEN LEACH\nclosed · no drain", fill="#dcfce7", edge="#166534")

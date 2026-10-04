@@ -105,11 +105,11 @@ def footer(ax, doc_no, fname):
     ax.text(
         0.01, 0.012,
         f"{doc_no}  ·  AQS-BLD-001 Rev C  ·  AQS-HSE-001  ·  CERN-OHL-S  ·  {fname}",
-        transform=ax.transAxes, fontsize=6.5, color=P.MUTED,
+        transform=ax.transAxes, fontsize=10.1, color=P.MUTED,
     )
     ax.text(
         0.99, 0.012, scale_note(),
-        transform=ax.transAxes, fontsize=6.2, color=P.MUTED, ha="right",
+        transform=ax.transAxes, fontsize=9.6, color=P.MUTED, ha="right",
     )
 
 
@@ -122,7 +122,7 @@ def sheet(fname, draw_fn, size=(16, 10), dpi=140):
     draw_fn(ax)
     ax.set_title(
         f"{doc_no}  ·  {title}",
-        fontsize=12.5, fontweight="bold", color=P.INK, pad=10,
+        fontsize=19.4, fontweight="bold", color=P.INK, pad=10,
     )
     footer(ax, doc_no, fname)
     _stamp_building_graph(ax)
@@ -157,10 +157,10 @@ def fire_mark(ax, x0, y0, x1, y1, text, horizontal=True):
     mx, my = (x0 + x1) / 2, (y0 + y1) / 2
     if horizontal:
         ax.text(mx, my + 0.25, text, ha="center", va="bottom",
-                fontsize=6.2, color=C_FIRE, fontweight="bold", zorder=7)
+                fontsize=9.6, color=C_FIRE, fontweight="bold", zorder=7)
     else:
         ax.text(mx + 0.2, my, text, ha="left", va="center",
-                fontsize=6.2, color=C_FIRE, fontweight="bold", zorder=7,
+                fontsize=9.6, color=C_FIRE, fontweight="bold", zorder=7,
                 rotation=90)
 
 
@@ -308,7 +308,7 @@ def section(ax):
         ax.plot([wall_x0, wall_x1], [z, z], color=C_SLAB, lw=2.0, zorder=5)
         if "HA_" in txt:
             ax.text(wall_x1 + 0.35, z, txt, ha="left", va="center",
-                    fontsize=6.2, color=C_FIRE, fontweight="bold")
+                    fontsize=9.6, color=C_FIRE, fontweight="bold")
 
     # CORE vertical band (split LIFE | PROCESS)
     rbox(ax, core_x0, z_c, core_mid, z_top_tank - z_c,
@@ -771,12 +771,12 @@ def _stamp_building_graph(ax):
     ymin = ax.get_ylim()[0]
     xmin = ax.get_xlim()[0]
     ax.text(xmin + 0.5, ymin + 2.4, f"GRAPH CROSS-LINKS ({gp}) — building stack layout overlay",
-            fontsize=7.0, fontweight="bold", color="#1c1917")
+            fontsize=10.8, fontweight="bold", color="#1c1917")
     for i, line in enumerate(lines[:8]):
-        ax.text(xmin + 0.5, ymin + 1.8 - i * 0.35, line, fontsize=5.4, color="#57534e")
+        ax.text(xmin + 0.5, ymin + 1.8 - i * 0.35, line, fontsize=8.4, color="#57534e")
     ax.text(xmin + 0.5, ymin + 1.8 - min(8, len(lines)) * 0.35 - 0.25,
             "Non-process layout: overlay only; DOCK_EXPORT_TBD has no S##.",
-            fontsize=5.6, color="#57534e")
+            fontsize=8.7, color="#57534e")
 
 
 def main():

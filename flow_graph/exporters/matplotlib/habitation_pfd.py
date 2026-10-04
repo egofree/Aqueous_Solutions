@@ -65,7 +65,7 @@ def main():
     S.rule(ax, 3, 43.0, 50, 2.6, "RULE  ·  Q4 only into HAB AIR.  No Q1 flue.  No process H₂ / acid-gas / oil vapor.")
 
     ax.text(3, 40.5, "WATER BLOCKS  —  detail sheet AQS-PFD-HAB-WTR-001 (hab_water_pfd.py)",
-            fontsize=9.0, fontweight="bold", color=P.INK)
+            fontsize=14, fontweight="bold", color=P.INK)
 
     pot = S.stub(ax, 3, 30.5, 18, 7.5, "POTABLE / REMIN", "S26 → taps · UV\nsee HAB-WTR-001")
     grey = S.stub(ax, 24, 30.5, 18, 7.5, "GREY TREAT", "SCREEN→BIO→MED→S29\nsee HAB-WTR-001")

@@ -36,27 +36,27 @@ fig.patch.set_facecolor(P.BG)
 ax.set_facecolor(P.BG)
 
 ax.text(50, 99.35, "BMED REGEN  —  BRINE  →  HCl  +  NaOH  +  CHLORATE",
-        ha="center", va="top", fontsize=18.6, fontweight="bold", color=P.INK)
+        ha="center", va="top", fontsize=28.8, fontweight="bold", color=P.INK)
 ax.text(50, 97.55,
         "3-compartment stack   ·   CEM blue   ·   AEM orange   ·   BPM blue|orange   ·   polymer chambers, not titanium",
-        ha="center", va="top", fontsize=11.6, color=P.MUTED)
+        ha="center", va="top", fontsize=18, color=P.MUTED)
 ax.text(50, 96.15,
         f"Graph-bridged IA-BMED-* from {_GP}  ·  null rates stay null  ·  no invented S##",
-        ha="center", va="top", fontsize=9.0, color=P.MUTED)
+        ha="center", va="top", fontsize=14, color=P.MUTED)
 
 # ── feed stubs ───────────────────────────────────────────
 ew = box(ax, 2.0, 91.45, 23.6, 4.6, P.C_SOL_F, P.C_SOLID, P.NAME["ew"],
-         "depleted catholyte / polish brine", ts=12.4, ss=8.6)
+         "depleted catholyte / polish brine", ts=19.2, ss=13.3)
 pol = box(ax, 26.8, 91.45, 22.4, 4.6, P.C_SOL_F, P.C_SOLID, P.NAME["polish"],
-          "spent polish liquor", ts=12.4, ss=8.6)
+          "spent polish liquor", ts=19.2, ss=13.3)
 gls = box(ax, 50.4, 91.45, 23.6, 4.6, P.C_IN_F, P.C_INORG, P.NAME["glass"],
-          "Br- / HCl condensate", ts=12.4, ss=8.6)
+          "Br- / HCl condensate", ts=19.2, ss=13.3)
 rin = box(ax, 75.2, 91.45, 22.8, 4.6, P.C_LE_F, P.C_LEACH, P.NAME["wash"],
-          "rinse liquor", ts=12.4, ss=8.6)
+          "rinse liquor", ts=19.2, ss=13.3)
 
 salt = box(ax, 18.0, 83.85, 64.0, 5.2, P.C_SOL_F, P.C_SOLID, P.NAME["salt_feed"],
            "NaCl + residual cations    wall PP / CPVC    Q4 condensate as makeup water",
-           ts=14.0, ss=9.4)
+           ts=21.7, ss=14.6)
 arrow(ax, B(ew), (cx(salt) - 18, salt[1] + salt[3]), P.C_LEACH, lw=1.5)
 arrow(ax, B(pol), (cx(salt) - 6, salt[1] + salt[3]), P.C_LEACH, lw=1.5)
 arrow(ax, B(gls), (cx(salt) + 8, salt[1] + salt[3]), P.C_LEACH, lw=1.5)
@@ -69,9 +69,9 @@ ax.add_patch(FancyBboxPatch(
     facecolor="#ecfdf5", edgecolor=P.C_LEACH, linewidth=1.7, zorder=2,
 ))
 ax.text(50.0, 81.15, "ONE REPEATING UNIT",
-        ha="center", va="top", fontsize=13.6, fontweight="bold", color=P.C_LEACH, zorder=4)
+        ha="center", va="top", fontsize=21.1, fontweight="bold", color=P.C_LEACH, zorder=4)
 ax.text(50.0, 79.45, "n cells in series on a common DC bus     ·     Na+ left through CEM     ·     Cl- right through AEM",
-        ha="center", va="top", fontsize=10.0, color=P.MUTED, zorder=4)
+        ha="center", va="top", fontsize=15.5, color=P.MUTED, zorder=4)
 
 BY, BH = 54.85, 19.6
 units = [
@@ -94,7 +94,7 @@ for name, w in units:
     x += w + gap
 
 
-def ch_box(x, y, w, h, fill, edge, t1, t2, t3="", ts=12.2, ss=8.6):
+def ch_box(x, y, w, h, fill, edge, t1, t2, t3="", ts=18.9, ss=13.3):
     ax.add_patch(Rectangle((x, y), w, h, facecolor=fill, edgecolor=edge,
                            linewidth=1.4, zorder=4))
     ax.text(x + w / 2, y + h * 0.78, t1, ha="center", va="center",
@@ -133,26 +133,26 @@ bx, bw = pos["base"]
 sx, sw = pos["saltc"]
 ax_, aw = pos["acid"]
 ax.text(bx + bw / 2, BY - 0.55, "OH- from BPM  +  Na+ through CEM",
-        ha="center", va="top", fontsize=8.6, color=P.C_LEACH, zorder=5)
+        ha="center", va="top", fontsize=13.3, color=P.C_LEACH, zorder=5)
 ax.text(sx + sw / 2, BY - 0.55, "depleted brine recycled to SALT FEED",
-        ha="center", va="top", fontsize=8.6, color=P.MUTED, zorder=5)
+        ha="center", va="top", fontsize=13.3, color=P.MUTED, zorder=5)
 ax.text(ax_ + aw / 2, BY - 0.55, "H+ from BPM  +  Cl- through AEM",
-        ha="center", va="top", fontsize=8.6, color=P.C_AN, zorder=5)
+        ha="center", va="top", fontsize=13.3, color=P.C_AN, zorder=5)
 
 ax.text(50.0, 52.55,
         "BPM facing:  CEL (blue) toward cathode     ·     AEL (orange) toward anode     ·     H+ leaves CEL, OH- leaves AEL",
-        ha="center", va="bottom", fontsize=9.0, color=P.MUTED, zorder=5)
+        ha="center", va="bottom", fontsize=14, color=P.MUTED, zorder=5)
 
 # salt feed down into salt chamber
 arrow(ax, B(salt), (sx + sw / 2, BY + BH), P.C_SOLID, lw=1.8)
 
 # ── product tanks ────────────────────────────────────────
 base_t = box(ax, 2.0, 39.55, 30.4, 8.6, P.C_LE_F, P.C_LEACH, P.NAME["base_tank"],
-             f"from BASE chamber\nwall {P.WALL['bmed_base']}", ts=13.6, ss=9.4)
+             f"from BASE chamber\nwall {P.WALL['bmed_base']}", ts=21.1, ss=14.6)
 acid_t = box(ax, 34.8, 39.55, 30.4, 8.6, P.C_AN_F, P.C_AN, P.NAME["acid_tank"],
-             f"from ACID chamber\nwall {P.WALL['bmed_acid']}", ts=13.6, ss=9.4)
+             f"from ACID chamber\nwall {P.WALL['bmed_acid']}", ts=21.1, ss=14.6)
 cru = box(ax, 67.6, 39.55, 30.4, 8.6, P.C_HEAT_F, P.C_HEAT, P.NAME["cru"],
-          "Cl2 (anode + EW anolyte)\nabsorbed into NaOH / brine\n→ NaClO3", ts=13.2, ss=9.0)
+          "Cl2 (anode + EW anolyte)\nabsorbed into NaOH / brine\n→ NaClO3", ts=20.5, ss=14)
 
 arrow(ax, (bx + bw / 2, BY), T(base_t), P.C_LEACH, lw=1.8)
 arrow(ax, (ax_ + aw / 2, BY), T(acid_t), P.C_AN, lw=1.8)
@@ -175,17 +175,17 @@ if "IA-BMED-04" in _IA:
 
 # ── destinations ─────────────────────────────────────────
 pal = box(ax, 2.0, 26.55, 15.0, 9.4, P.C_IN_F, P.C_INORG, "P-Al",
-          "pH 5.0–5.5", ts=12.6, ss=8.8)
+          "pH 5.0–5.5", ts=19.5, ss=13.6)
 pmg = box(ax, 18.2, 26.55, 15.0, 9.4, P.C_IN_F, P.C_INORG, "P-Mg",
-          "pH 10.5–11", ts=12.6, ss=8.8)
+          "pH 10.5–11", ts=19.5, ss=13.6)
 pca = box(ax, 34.4, 26.55, 15.0, 9.4, P.C_IN_F, P.C_INORG, "P-Ca",
-          "pH 12–12.5", ts=12.6, ss=8.8)
+          "pH 12–12.5", ts=19.5, ss=13.6)
 dig = box(ax, 50.6, 26.55, 15.0, 9.4, P.C_IN_F, P.C_INORG, P.NAME["digest"],
-          "glass line", ts=11.6, ss=8.6)
+          "glass line", ts=18, ss=13.3)
 reg = box(ax, 67.6, 26.55, 15.0, 9.4, P.C_LE_F, P.C_LEACH, P.NAME["regen"],
-          "HCl + chlorate", ts=11.8, ss=8.6)
+          "HCl + chlorate", ts=18.3, ss=13.3)
 l1 = box(ax, 83.8, 26.55, 14.2, 9.4, P.C_LE_F, P.C_LEACH, P.NAME["leach1"],
-         "oxidative leach", ts=11.6, ss=8.6)
+         "oxidative leach", ts=18, ss=13.3)
 
 arrow(ax, (cx(base_t) - 8, base_t[1]), T(pal), P.C_LEACH, lw=1.45)
 arrow(ax, (cx(base_t), base_t[1]), T(pmg), P.C_LEACH, lw=1.45)
@@ -197,11 +197,11 @@ arrow(ax, R(reg), L(l1), P.C_LEACH, lw=1.45)
 
 # ── products ─────────────────────────────────────────────
 hyd = box(ax, 2.0, 14.15, 30.4, 9.2, P.C_PROD_F, P.C_PROD, P.NAME["hydroxides"],
-          "Al / Mg / Ca cakes\nfrom pH-shift + digest", ts=13.6, ss=9.4)
+          "Al / Mg / Ca cakes\nfrom pH-shift + digest", ts=21.1, ss=14.6)
 hcl = box(ax, 34.8, 14.15, 30.4, 9.2, P.C_PROD_F, P.C_PROD, "HCl  +  NaClO3",
-          "REGEN LEACH\nback to LEACH CSTR 1", ts=13.6, ss=9.4)
+          "REGEN LEACH\nback to LEACH CSTR 1", ts=21.1, ss=14.6)
 h2 = box(ax, 67.6, 14.15, 30.4, 9.2, P.C_PROD_F, P.C_PROD, "H2  /  O2",
-         "cathode H2    anode O2\nto gas / cryo sheet", ts=13.6, ss=9.4)
+         "cathode H2    anode O2\nto gas / cryo sheet", ts=21.1, ss=14.6)
 
 arrow(ax, B(pal), (hyd[0] + 5, hyd[1] + hyd[3]), P.C_INORG, lw=1.3)
 arrow(ax, B(pmg), T(hyd), P.C_INORG, lw=1.3)
@@ -212,29 +212,29 @@ arrow(ax, (98.2, cy(h2)), R(h2), P.C_CA, lw=1.15, ls="--")
 slabel(ax, 97.4, 65.7, "H2", P.C_CA, ha="right", size=8.4)
 
 # ── notes ────────────────────────────────────────────────
-ax.text(2.0, 12.35, "MEMBRANES  /  WALLS  /  RULES", fontsize=12.2, fontweight="bold", color=P.INK)
+ax.text(2.0, 12.35, "MEMBRANES  /  WALLS  /  RULES", fontsize=18.9, fontweight="bold", color=P.INK)
 ax.add_patch(Rectangle((2.0, 9.85), 3.2, 1.55, facecolor=P.C_CEM_F, edgecolor=P.C_CEM, lw=1.2))
 ax.text(5.5, 10.62, "CEM   sulfonated PS–PVC on PP felt, double-layer, hot-swap",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 ax.add_patch(Rectangle((2.0, 7.85), 3.2, 1.55, facecolor=P.C_AEM_F, edgecolor=P.C_AEM, lw=1.2))
 ax.text(5.5, 8.62, "AEM   aminated PS–PVC on PP felt",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 ax.add_patch(Rectangle((2.0, 5.85), 1.6, 1.55, facecolor=P.C_CEM_F, edgecolor=P.C_CEM, lw=1.2))
 ax.add_patch(Rectangle((3.6, 5.85), 1.6, 1.55, facecolor=P.C_AEM_F, edgecolor=P.C_AEM, lw=1.2))
 ax.text(5.5, 6.62, "BPM   CEL left (cathode) | AEL right (anode).  Water splits at the junction.",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 
 ax.text(2.0, 4.85,
         f"BASE chambers: {P.WALL['bmed_base']}.  ACID chambers: {P.WALL['bmed_acid']}.  "
         f"SALT: {P.WALL['bmed_salt']}.  PVDF is wrong for hot NaOH; PP is wrong for hot oxidizer.\n"
         "Chlorate is not made inside the BMED stack.  Cl2 from the BMED anode and the EW SALRIA ANOLYTE LOOP is absorbed in the CRU.\n"
         "Q4 condensate is the water that BPM splits.  Do not feed Salria solids into this stack — brine is filtered first.",
-        ha="left", va="top", fontsize=9.8, color=P.MUTED, linespacing=1.26)
+        ha="left", va="top", fontsize=15.2, color=P.MUTED, linespacing=1.26)
 
 _reg = ia_register_lines(_IA.values())
-ax.text(50.0, 3.85, f"GRAPH IA-BMED-*  ({_GP})", ha="center", fontsize=9.0, fontweight="bold", color=P.INK)
+ax.text(50.0, 3.85, f"GRAPH IA-BMED-*  ({_GP})", ha="center", fontsize=14, fontweight="bold", color=P.INK)
 for i, line in enumerate(_reg):
-    ax.text(50.0, 3.15 - i * 0.55, line, ha="center", va="top", fontsize=6.8, color=P.MUTED)
+    ax.text(50.0, 3.15 - i * 0.55, line, ha="center", va="top", fontsize=10.5, color=P.MUTED)
 
 ax.text(50.0, 0.35, P.NAMING_FOOT, ha="center", va="bottom",
         fontsize=P.EW_FONT_FOOT, color=P.MUTED)

@@ -43,16 +43,16 @@ def main():
            "Do not claim legacy 100 kW electric on M1 yard — ORC rating TBD.")
 
     ax.text(2, 59.0, "1   GROUND LOOP  (closed)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     ghex = S.unit(ax, 2, 46, 22, 10.5, "GEO_GHEX",
                   "vertical bore field class\nclosed-loop\noff-plate site\ncount / depth TBD",
-                  fill="#dcfce7", edge="#166534", ts=11.2, ss=7.2)
+                  fill="#dcfce7", edge="#166534", ts=17.4, ss=11.2)
     pump = S.unit(ax, 28, 48, 16, 7.5, "GEO_LOOP_PUMP",
                   "S43 circulation\nrating TBD",
                   fill="#e0f2fe", edge="#0369a1")
     hp = S.unit(ax, 50, 46, 22, 10.5, "GEO_HP",
                 "water-source heat pump\n→ Q4 thermal (S44)\nprimary M1 duty",
-                fill="#bbf7d0", edge="#166534", ts=11.2, ss=7.2)
+                fill="#bbf7d0", edge="#166534", ts=17.4, ss=11.2)
     arrow(ax, R(ghex), L(pump), S.C_UTIL, lw=1.7)
     arrow(ax, R(pump), L(hp), S.C_UTIL, lw=1.7)
     arrow(ax, L(pump), R(ghex), S.C_UTIL, lw=1.2, ls="--")
@@ -66,7 +66,7 @@ def main():
     slabel(ax, 73.5, 57.8, "S44", S.C_HVAC, size=7.4)
 
     ax.text(2, 43.0, "2   ELECTRIC PATH  (deferred)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     orc = S.tbd(ax, 2, 28, 36, 12.0, "GEO_ORC  —  BINARY ORC STUB (Claimed)",
                 "Closure arch: S48 → Sol-Ark AC · rating TBD — no invent kW (AQS-VENT-001)")
     sol = S.iface(ax, 44, 30, 28, 9.0, "SOL-ARK AC couple",
@@ -80,7 +80,7 @@ def main():
     arrow(ax, R(sol), L(yard), S.C_UTIL, lw=1.1, ls="--")
 
     ax.text(2, 25.5, "3   INTERFACES / FORBIDDEN",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     S.callout(ax, 2, 12, 46, 11.5, "INTERFACES", [
         "Thermal: GEO_HP → Q4 (S44) shared discipline with S06.",
         "Loop: GEO_GHEX ↔ GEO_HP (S43) dedicated fluid.",

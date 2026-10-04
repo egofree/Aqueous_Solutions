@@ -43,7 +43,7 @@ def main():
 
     # Precip train from wet line
     ax.text(2, 59.0, "1   PRECIPITATION CAKES  (wet line §5 — qualitative; cite AQS-STR-001 S07)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     pal = S.unit(ax, 2, 48, 14, 7.5, "P-Al", "pH 5.0–5.5\nAl(OH)₃ cake", fill="#dbeafe", edge="#1d4ed8")
     pmg = S.unit(ax, 19, 48, 14, 7.5, "P-Mg", "pH 10.5–11\nMg(OH)₂ / struvite", fill="#dbeafe", edge="#1d4ed8")
     pca = S.unit(ax, 36, 48, 14, 7.5, "P-Ca", "pH 12–12.5\nCa(OH)₂ / CaCO₃", fill="#dbeafe", edge="#1d4ed8")
@@ -55,10 +55,10 @@ def main():
 
     # Dose hub
     ax.text(2, 45.0, "2   DOSE HUB  →  FARM LOOP",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     dose = S.unit(ax, 28, 32, 22, 9.0, "NUTRIENT DOSE",
                   "struvite · NH₄ · chelates\npH trim · tote / dose line\nCAD: NUTRIENT_DOSE",
-                  fill="#fef3c7", edge="#b45309", ts=11.5, ss=7.6)
+                  fill="#fef3c7", edge="#b45309", ts=17.8, ss=11.8)
     arrow(ax, B(pca), (cx(pca), 44), S.C_UTIL, lw=1.4)
     arrow(ax, (cx(pca), 44), (cx(dose), 44), S.C_UTIL, lw=1.4)
     arrow(ax, (cx(dose), 44), T(dose), S.C_UTIL, lw=1.4)

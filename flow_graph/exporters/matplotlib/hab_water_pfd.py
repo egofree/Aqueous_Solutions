@@ -51,7 +51,7 @@ def main():
 
     # ── 1 Grey / black ──────────────────────────────────────
     ax.text(2, 65.5, "1   GREY / BLACK COLLECT  (dirty → treat; not VCD-primary)",
-            fontsize=9.4, fontweight="bold", color=P.INK)
+            fontsize=14.6, fontweight="bold", color=P.INK)
     waste = S.unit(ax, 2, 55.5, 12, 7.0, "HAB WASTE", "S12 collect\nCAD stub", fill="#e4e4e7", edge="#3f3f46")
     wetrm = S.iface(ax, 2, 46.5, 12, 6.5, "WETROOM / GALLEY", "rinse + toilet\nIBC clearances", fill="#ffedd5", edge="#c2410c")
 
@@ -82,7 +82,7 @@ def main():
 
     # ── 2 VCD regeneration ──────────────────────────────────
     ax.text(2, 44.0, "2   VCD REGENERATION  (SLINGSHOT kept — distillate into clean inventory)",
-            fontsize=9.4, fontweight="bold", color=P.INK)
+            fontsize=14.6, fontweight="bold", color=P.INK)
 
     s13 = S.iface(ax, 2, 33.5, 12, 7.0, "S13 CONDENSATE", "farm sump + HVAC\nclean primary feed", fill="#dbeafe", edge="#1d4ed8")
     feed = S.unit(ax, 17, 33.5, 12, 7.0, "VCD_FEED", "S13 + S29\nclean buffer", fill="#bae6fd", edge="#0369a1")
@@ -107,7 +107,7 @@ def main():
 
     # ── 3 ED / remin / potable ──────────────────────────────
     ax.text(2, 31.0, "3   ED POLISH + REMINERALIZATION  (drinking only — not farm S07)",
-            fontsize=9.4, fontweight="bold", color=P.INK)
+            fontsize=14.6, fontweight="bold", color=P.INK)
 
     ed = S.unit(ax, 17, 20.0, 16, 7.5, "HAB_ED_POLISH", "UPW POLISH\n< 1 µS/cm class · S01\nBMED middle assist", fill="#bae6fd", edge="#0369a1")
     remin = S.unit(ax, 37, 20.0, 14, 7.5, "REMIN", "Ca²⁺ Mg²⁺ K⁺\ncore salts · drink only", fill="#fef3c7", edge="#b45309")

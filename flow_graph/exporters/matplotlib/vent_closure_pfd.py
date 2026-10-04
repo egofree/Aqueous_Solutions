@@ -41,7 +41,7 @@ def status_chip(ax, x, y, w, h, text, color):
         facecolor="#fff8e1" if color == PARTIAL else "#e8f5e9",
         edgecolor=color, linewidth=1.3, zorder=4))
     ax.text(x + w / 2, y + h / 2, text, ha="center", va="center",
-            fontsize=6.6, fontweight="bold", color=color, zorder=5)
+            fontsize=10.2, fontweight="bold", color=color, zorder=5)
 
 
 def main():
@@ -65,17 +65,17 @@ def main():
     for i, (c, lab) in enumerate((
         (CLOSED, "Closed"), (PARTIAL, "Partial (named path)"), (CLAIMED, "Claimed architecture"))):
         ax.add_patch(Rectangle((4 + i * 22, 61.6), 1.1, 1.1, facecolor=c, edgecolor=INK, zorder=4))
-        ax.text(6 + i * 22, 62.15, lab, va="center", fontsize=7.2, color=INK)
+        ax.text(6 + i * 22, 62.15, lab, va="center", fontsize=11.2, color=INK)
 
     # ── Row 1: six former opens ──
     ax.text(2, 60.0, "1   FORMER OPEN PATHS  (must be Closed or Partial with named return)",
-            fontsize=9.0, fontweight="bold", color=INK)
+            fontsize=14, fontweight="bold", color=INK)
 
     # H2
     h2d = S.unit(ax, 2, 49.5, 12, 8.0, "H2_DRYER", "S05 dried\narrestor",
-                 fill="#dbeafe", edge="#1e3a8a", ts=9.2, ss=6.4)
+                 fill="#dbeafe", edge="#1e3a8a", ts=14.3, ss=9.9)
     cryo_h = S.unit(ax, 16, 49.5, 12, 8.0, "CRYO_H2", "S64 hold\n≠ HDR_H2",
-                    fill="#dbeafe", edge="#1e3a8a", ts=9.2, ss=6.4)
+                    fill="#dbeafe", edge="#1e3a8a", ts=14.3, ss=9.9)
     gen = S.iface(ax, 30, 53.5, 10, 4.5, "GEN S45", "kW TBD", fill="#fef3c7", edge="#b45309")
     fc = S.iface(ax, 30, 48.5, 10, 4.5, "FC S49", "kW TBD", fill="#dbeafe", edge="#1e3a8a")
     s24 = S.iface(ax, 42, 49.5, 10, 8.0, "S24 CONTING.", "roof relief\nONLY", fill="#fee2e2", edge="#b91c1c")
@@ -88,9 +88,9 @@ def main():
 
     # Acid polish
     alk = S.unit(ax, 54, 49.5, 14, 8.0, "ALK_SCRUBBER", "DEMISTER+\nlean NaOH",
-                 fill="#dcfce7", edge="#166534", ts=9.0, ss=6.4)
+                 fill="#dcfce7", edge="#166534", ts=14, ss=9.9)
     pol = S.unit(ax, 70, 49.5, 14, 8.0, "ACID_POLISH", "S65 polish\npack stub",
-                 fill="#fff7ed", edge="#c2410c", ts=9.0, ss=6.4)
+                 fill="#fff7ed", edge="#c2410c", ts=14, ss=9.9)
     cru = S.iface(ax, 86, 49.5, 12, 8.0, "CRU S66", "liquor regen\nSCRUBBER_TO_CRU",
                   fill="#ffedd5", edge="#9a3412")
     arrow(ax, R(alk), L(pol), S.C_OX, lw=1.4)
@@ -101,12 +101,12 @@ def main():
 
     # ── Row 2: flue + Br2 ──
     ax.text(2, 44.5, "2   AFTERBURNER FLUE  ·  ZnBr₂ Br₂",
-            fontsize=9.0, fontweight="bold", color=INK)
+            fontsize=14, fontweight="bold", color=INK)
 
     ab = S.unit(ax, 2, 34.0, 14, 8.0, "AFTERBURNER", "NCG destroy\nQ1 heat stays",
-                fill="#fff7ed", edge="#b45309", ts=9.0, ss=6.4)
+                fill="#fff7ed", edge="#b45309", ts=14, ss=9.9)
     flue = S.unit(ax, 18, 34.0, 14, 8.0, "FLUE_CAP", "S67 / S18\n→ CRYO_CO2",
-                  fill="#ffedd5", edge="#9a3412", ts=9.0, ss=6.4)
+                  fill="#ffedd5", edge="#9a3412", ts=14, ss=9.9)
     co2 = S.iface(ax, 34, 34.0, 12, 8.0, "CRYO_CO2", "→ S04 FARM\nS68 condens.",
                   fill="#ffedd5", edge="#c2410c")
     arrow(ax, R(ab), L(flue), S.C_HVAC, lw=1.4)
@@ -115,9 +115,9 @@ def main():
     status_chip(ax, 2, 31.3, 44, 2.0, "Flue  ·  Partial/Claimed  ·  destroy + capture; not free dump", PARTIAL)
 
     brsc = S.unit(ax, 54, 34.0, 16, 8.0, "Br₂ TOWER", "PVDF pack\noutdoor skid OK",
-                  fill="#ede9fe", edge="#6d28d9", ts=9.0, ss=6.4)
+                  fill="#ede9fe", edge="#6d28d9", ts=14, ss=9.9)
     regen = S.unit(ax, 72, 34.0, 14, 8.0, "ZNBR2_REGEN", "ORP hold\nBr⁻ return",
-                   fill="#ede9fe", edge="#6d28d9", ts=9.0, ss=6.4)
+                   fill="#ede9fe", edge="#6d28d9", ts=14, ss=9.9)
     pos = S.iface(ax, 88, 34.0, 10, 8.0, "POS TANK", "S69\n≠ CRU",
                   fill="#ede9fe", edge="#6d28d9")
     arrow(ax, R(brsc), L(regen), "#6d28d9", lw=1.4)
@@ -127,12 +127,12 @@ def main():
 
     # ── Row 3: CRYO AHU + MET ──
     ax.text(2, 29.0, "3   CRYO_AHU  ·  MET_AHU",
-            fontsize=9.0, fontweight="bold", color=INK)
+            fontsize=14, fontweight="bold", color=INK)
 
     ahu = S.unit(ax, 2, 18.5, 14, 8.0, "CRYO_AHU", "NFPA 2/55\nroom air",
-                 fill="#e0f2fe", edge="#0369a1", ts=9.0, ss=6.4)
+                 fill="#e0f2fe", edge="#0369a1", ts=14, ss=9.9)
     cond = S.unit(ax, 18, 18.5, 14, 8.0, "CRYO_AHU_COND", "condensable KO\nS70 → COLD_BOX",
-                  fill="#e0f2fe", edge="#0369a1", ts=8.8, ss=6.2)
+                  fill="#e0f2fe", edge="#0369a1", ts=13.6, ss=9.6)
     s56 = S.iface(ax, 34, 18.5, 12, 8.0, "S56 residual", "non-cond.\ncontingency",
                   fill="#fee2e2", edge="#b91c1c")
     arrow(ax, R(ahu), L(cond), S.C_UTIL, lw=1.4)
@@ -141,9 +141,9 @@ def main():
     status_chip(ax, 2, 15.8, 44, 2.0, "CRYO_AHU  ·  Partial  ·  S70 condensables; S56 residual only", PARTIAL)
 
     met_a = S.unit(ax, 54, 18.5, 14, 8.0, "MET_AHU", "aisle capture\nS62 / S71",
-                   fill="#ffedd5", edge="#c2410c", ts=9.0, ss=6.4)
+                   fill="#ffedd5", edge="#c2410c", ts=14, ss=9.9)
     met_s = S.unit(ax, 70, 18.5, 14, 8.0, "MET_SCRUB", "+ baghouse\nfume / mist",
-                   fill="#ffedd5", edge="#c2410c", ts=9.0, ss=6.4)
+                   fill="#ffedd5", edge="#c2410c", ts=14, ss=9.9)
     ret = S.iface(ax, 86, 18.5, 12, 8.0, "S72 returns", "fines→CSTR\nmist→OIL/ORG",
                   fill="#dcfce7", edge="#166534")
     arrow(ax, R(met_a), L(met_s), S.C_HVAC, lw=1.4)
@@ -153,7 +153,7 @@ def main():
 
     # ── Row 4: claimed-incomplete ──
     ax.text(2, 13.5, "4   CLAIMED-INCOMPLETE  (architecture named; no invented kW/Nm³/h)",
-            fontsize=9.0, fontweight="bold", color=INK)
+            fontsize=14, fontweight="bold", color=INK)
 
     S.callout(ax, 2, 2.5, 23, 9.5, "H₂ → GEN / FC", [
         "S64 → CRYO_H2 → S45 + S49",

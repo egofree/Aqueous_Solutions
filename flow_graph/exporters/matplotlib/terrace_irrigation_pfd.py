@@ -43,7 +43,7 @@ def main():
 
     # ── Source ──
     ax.text(2, 59.0, "1   CLEAN SURPLUS SOURCE  (AQS-SCALE-001 §6–7)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     roof = S.unit(ax, 2, 48, 16, 7.5, "ROOF TANK", "clean tower\nS21–S23 inventory", fill="#e0f2fe", edge="#0369a1")
     znbr = S.iface(ax, 20, 48, 14, 7.5, "ZnBr2 FULL", "batteries accept\nno more charge", fill="#f3e8ff", edge="#6b21a8")
     spill = S.unit(ax, 37, 48, 18, 7.5, "OVERFLOW SPILL", "OVERFLOW_SPILL_ROOF\n→ DOWNCOMER / OUTFALL", fill="#dcfce7", edge="#166534")
@@ -61,20 +61,20 @@ def main():
 
     # ── Climate split ──
     ax.text(2, 45.0, "2   CLIMATE OPTION  (AQS-TRR-001 §3)  ·  equator-facing + E/W wrap per SITE_LAT_DEG",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
 
     open_t = S.unit(ax, 2, 28, 42, 13.5, "OPTION A — OPEN TERRACE",
                     "Prefer when frost-free window + moderate wind + rain/S40 meet ET\n"
                     "Bands: B1 access/header · mid perennial/cover · outer apron buffer\n"
                     "Duty: landscape / soil-build / surplus-water buffer\n"
                     "N-hem default (SITE_LAT_DEG=33): S + E + W open",
-                    fill="#dcfce7", edge="#166534", ts=11.0, ss=7.0)
+                    fill="#dcfce7", edge="#166534", ts=17.1, ss=10.8)
     gh = S.unit(ax, 50, 28, 46, 13.5, "OPTION B — ENCLOSED GREENHOUSE",
                 "Prefer when freeze · high |lat| / low DLI · arid ET · high wind/salt · food-grade outdoor\n"
                 "May enclose equator-facing band only; E/W wrap can stay open\n"
                 "Optional dilute fertigation from NUTRIENT_DOSE (not S40)\n"
                 "Q4 heat · S04 CO₂ · optional LED — no process gas headers",
-                fill="#fef3c7", edge="#b45309", ts=11.0, ss=7.0)
+                fill="#fef3c7", edge="#b45309", ts=17.1, ss=10.8)
 
     arrow(ax, B(irrig), (cx(irrig), 44), S.C_UTIL, lw=1.4)
     arrow(ax, (cx(irrig), 44), (cx(open_t), 44), S.C_UTIL, lw=1.4)
@@ -91,16 +91,16 @@ def main():
 
     # ── Returns ──
     ax.text(2, 25.5, "3   DRAINAGE RETURN",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     catch = S.unit(ax, 2, 12, 28, 10.0, "CATCH / DRAIN_SEC",
                    "S41 clean underdrain + apron\nrain + overflow only\nnever L-1 process bund",
-                   fill="#e0f2fe", edge="#0369a1", ts=11.0, ss=7.2)
+                   fill="#e0f2fe", edge="#0369a1", ts=17.1, ss=11.2)
     grey = S.unit(ax, 36, 12, 28, 10.0, "HDR_GREY → TREAT",
                   "S42 fertigated greenhouse drain\n→ GREY / VCD_FEED class\nkeep off roof–catch",
-                  fill="#ffedd5", edge="#c2410c", ts=11.0, ss=7.2)
+                  fill="#ffedd5", edge="#c2410c", ts=17.1, ss=11.2)
     forbid = S.unit(ax, 70, 12, 26, 10.0, "FORBIDDEN",
                     "FARM_SUMP → terrace\nS26 potable → terrace\nSalria / etch → bands\nfertigation → CATCH",
-                    fill="#fee2e2", edge="#b91c1c", ts=11.0, ss=7.2)
+                    fill="#fee2e2", edge="#b91c1c", ts=17.1, ss=11.2)
 
     arrow(ax, B(open_t), (cx(open_t), 23.5), S.C_UTIL, lw=1.5)
     arrow(ax, (cx(open_t), 23.5), (cx(catch), 23.5), S.C_UTIL, lw=1.5)

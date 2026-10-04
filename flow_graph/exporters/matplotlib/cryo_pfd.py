@@ -47,7 +47,7 @@ def main():
 
     # ---- Intake train ----
     ax.text(2, 62.0, "1   INTAKE  (doc 09 §2.2)",
-            fontsize=9.0, fontweight="bold", color="#1c1917")
+            fontsize=14, fontweight="bold", color="#1c1917")
     intake = S.unit(ax, 2, 52, 13, 7.5, "AIR_INTAKE",
                     "centrifugal +\ndemister", fill="#e4e4e7", edge="#3f3f46")
     sieve = S.unit(ax, 17, 52, 13, 7.5, "MOL_SIEVE",
@@ -66,24 +66,24 @@ def main():
 
     # ---- Cold box parent with internals ----
     ax.text(47, 62.0, "2   COLD BOX INTERNALS",
-            fontsize=9.0, fontweight="bold", color="#1c1917")
+            fontsize=14, fontweight="bold", color="#1c1917")
     # Parent outline
     ax.add_patch(FancyBboxPatch(
         (46, 38.5), 30, 22.5,
         boxstyle="round,pad=0.1,rounding_size=0.25",
         facecolor="#f0f9ff", edgecolor="#0284c7", linewidth=2.0, zorder=2,
         linestyle="-"))
-    ax.text(61, 59.8, "COLD_BOX", ha="center", fontsize=10.5,
+    ax.text(61, 59.8, "COLD_BOX", ha="center", fontsize=16.3,
             fontweight="bold", color="#0369a1", zorder=4)
 
     stir = S.unit(ax, 47.5, 51.5, 13, 6.5, "STIRLING",
-                  "cold-head\n77–90 K", fill="#dbeafe", edge="#1e40af", ts=9.5, ss=6.8)
+                  "cold-head\n77–90 K", fill="#dbeafe", edge="#1e40af", ts=14.7, ss=10.5)
     dist = S.unit(ax, 62, 51.5, 12.5, 6.5, "DIST COLS",
-                  "PRI / SEC / TER\n+ PSA class", fill="#e0f2fe", edge="#0369a1", ts=9.5, ss=6.8)
+                  "PRI / SEC / TER\n+ PSA class", fill="#e0f2fe", edge="#0369a1", ts=14.7, ss=10.5)
     reb = S.unit(ax, 47.5, 43.5, 13, 6.0, "REBOILER_COND",
-                 "HX integration\nduty TBD", fill="#ffedd5", edge="#c2410c", ts=9.0, ss=6.6)
+                 "HX integration\nduty TBD", fill="#ffedd5", edge="#c2410c", ts=14, ss=10.2)
     comp = S.unit(ax, 62, 43.5, 12.5, 6.0, "COMP_EXPAND",
-                  "VFD compressors\n+ expanders", fill="#e0f2fe", edge="#0369a1", ts=9.0, ss=6.6)
+                  "VFD compressors\n+ expanders", fill="#e0f2fe", edge="#0369a1", ts=14, ss=10.2)
 
     # Feeds into cold box
     arrow(ax, R(hepa), (45.5, cy(hepa)), S.C_UTIL, lw=1.6)
@@ -97,15 +97,15 @@ def main():
 
     # ---- Product receivers ----
     ax.text(78, 62.0, "3   RECEIVERS",
-            fontsize=9.0, fontweight="bold", color="#1c1917")
+            fontsize=14, fontweight="bold", color="#1c1917")
     o2 = S.unit(ax, 79, 55, 18, 5.0, "CRYO_O2",
-                "→ HDR_O2 S02 · FC S50", fill="#ccfbf1", edge="#115e59", ts=9.5, ss=6.6)
+                "→ HDR_O2 S02 · FC S50", fill="#ccfbf1", edge="#115e59", ts=14.7, ss=10.2)
     n2 = S.unit(ax, 79, 48.5, 18, 5.0, "CRYO_N2",
-                "→ HDR_N2 · S03", fill="#dbeafe", edge="#1d4ed8", ts=9.5, ss=6.6)
+                "→ HDR_N2 · S03", fill="#dbeafe", edge="#1d4ed8", ts=14.7, ss=10.2)
     co2 = S.unit(ax, 79, 42, 18, 5.0, "CRYO_CO2",
-                 "→ HDR_CO2 · S04", fill="#ffedd5", edge="#c2410c", ts=9.5, ss=6.6)
+                 "→ HDR_CO2 · S04", fill="#ffedd5", edge="#c2410c", ts=14.7, ss=10.2)
     h2 = S.unit(ax, 79, 35.5, 18, 5.0, "CRYO_H2",
-                "hold / fuel · ≠ HDR_H2", fill="#dbeafe", edge="#1e3a8a", ts=9.5, ss=6.6)
+                "hold / fuel · ≠ HDR_H2", fill="#dbeafe", edge="#1e3a8a", ts=14.7, ss=10.2)
 
     for dst, col in ((o2, S.C_PRODUCT), (n2, S.C_UTIL), (co2, S.C_HVAC), (h2, S.C_H2)):
         arrow(ax, (76.5, cy(dst)), L(dst), col, lw=1.35)
@@ -115,7 +115,7 @@ def main():
 
     # ---- Consumers from CRYO_H2 ----
     ax.text(2, 37.5, "4   CRYO_H2 CONSUMERS  (size hold for all three)",
-            fontsize=9.0, fontweight="bold", color="#1c1917")
+            fontsize=14, fontweight="bold", color="#1c1917")
     gen = S.iface(ax, 2, 28, 16, 6.5, "BACKUP_GEN",
                   "S45 · GEN port\nAQS-PWR-001", fill="#fef3c7", edge="#b45309")
     fc = S.iface(ax, 21, 28, 16, 6.5, "FUEL_CELL",
@@ -138,13 +138,13 @@ def main():
 
     # ---- Heat / HVAC ----
     ax.text(58, 37.5, "5   HEAT REJECTION / HVAC",
-            fontsize=9.0, fontweight="bold", color="#1c1917")
+            fontsize=14, fontweight="bold", color="#1c1917")
     hx = S.unit(ax, 58, 28, 14, 6.5, "CRYO_HX_Q4",
-                "warm residual\n→ Q4  S54", fill="#ffedd5", edge="#c2410c", ts=9.5, ss=6.6)
+                "warm residual\n→ Q4  S54", fill="#ffedd5", edge="#c2410c", ts=14.7, ss=10.2)
     ded = S.unit(ax, 74, 28, 12, 6.5, "CRYO_DED_COOL",
-                 "Stirling/deep\nS55 dedicated", fill="#e0f2fe", edge="#0369a1", ts=9.0, ss=6.4)
+                 "Stirling/deep\nS55 dedicated", fill="#e0f2fe", edge="#0369a1", ts=14, ss=9.9)
     ahu = S.unit(ax, 88, 28, 10, 6.5, "CRYO_AHU",
-                 "COND→S70\nS56 residual", fill="#e0f2fe", edge="#0369a1", ts=9.0, ss=6.4)
+                 "COND→S70\nS56 residual", fill="#e0f2fe", edge="#0369a1", ts=14, ss=9.9)
     q4 = S.iface(ax, 58, 18.5, 14, 6.0, "Q4 HEADER",
                  "S06 / S44 / S53\n+ S54 peer", fill="#ffedd5", edge="#9a3412")
     arrow(ax, B(hx), T(q4), S.C_HVAC, lw=1.6)

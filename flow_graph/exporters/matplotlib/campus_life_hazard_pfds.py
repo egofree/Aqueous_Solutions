@@ -91,9 +91,9 @@ def scale_note():
 def footer(ax, doc_no, fname):
     ax.text(0.01, 0.012,
             f"{doc_no}  ·  AQS-BLD-001 / AQS-HSE-001  ·  CERN-OHL-S  ·  {fname}",
-            transform=ax.transAxes, fontsize=6.5, color=P.MUTED)
+            transform=ax.transAxes, fontsize=10.1, color=P.MUTED)
     ax.text(0.99, 0.012, scale_note(),
-            transform=ax.transAxes, fontsize=6.2, color=P.MUTED, ha="right")
+            transform=ax.transAxes, fontsize=9.6, color=P.MUTED, ha="right")
 
 
 def save(fname, draw_fn, size=(15, 11), dpi=140):
@@ -104,7 +104,7 @@ def save(fname, draw_fn, size=(15, 11), dpi=140):
     fig.patch.set_facecolor("white")
     draw_fn(ax)
     ax.set_title(f"{doc_no}  ·  {title}",
-                 fontsize=12.5, fontweight="bold", color=P.INK, pad=10)
+                 fontsize=19.4, fontweight="bold", color=P.INK, pad=10)
     footer(ax, doc_no, fname)
     _stamp_graph_cross(ax)
     out = OUT_DIR / fname
@@ -506,14 +506,14 @@ def _stamp_graph_cross(ax, sector_key="campus_cross"):
         gp = graph_path().name
         lines = ia_register_lines(edges)
     except Exception as exc:  # noqa: BLE001 — show honest failure on sheet
-        ax.text(0.5, 0.5, f"graph overlay unavailable: {exc}", fontsize=7, color="red")
+        ax.text(0.5, 0.5, f"graph overlay unavailable: {exc}", fontsize=10.8, color="red")
         return
     ymin = ax.get_ylim()[0]
     xmin = ax.get_xlim()[0]
     ax.text(xmin + 0.5, ymin + 2.2, f"GRAPH CROSS-LINKS ({gp}) — campus/life layout overlay",
-            fontsize=7.0, fontweight="bold", color="#1c1917")
+            fontsize=10.8, fontweight="bold", color="#1c1917")
     for i, line in enumerate(lines[:8]):
-        ax.text(xmin + 0.5, ymin + 1.6 - i * 0.35, line, fontsize=5.4, color="#57534e")
+        ax.text(xmin + 0.5, ymin + 1.6 - i * 0.35, line, fontsize=8.4, color="#57534e")
 
 
 def main():

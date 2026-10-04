@@ -43,9 +43,9 @@ def plate_cell(x, y, w, h, tag, metal, mode, anode, cathode, product):
         facecolor="#fafaf9", edgecolor=P.INK, linewidth=1.4, zorder=3,
     ))
     ax.text(x + 0.4, y + h - 0.38, tag, ha="left", va="top",
-            fontsize=11.2, fontweight="bold", color=P.INK, zorder=4)
+            fontsize=17.4, fontweight="bold", color=P.INK, zorder=4)
     ax.text(x + w - 0.4, y + h - 0.38, f"{metal}   {mode}", ha="right", va="top",
-            fontsize=9.4, fontweight="bold", color=P.MUTED, zorder=4)
+            fontsize=14.6, fontweight="bold", color=P.MUTED, zorder=4)
 
     inner_y = y + 1.05
     inner_h = h - 2.45
@@ -53,9 +53,9 @@ def plate_cell(x, y, w, h, tag, metal, mode, anode, cathode, product):
     ax.add_patch(Rectangle((x + 0.32, inner_y), aw, inner_h,
                            facecolor=P.C_AN_F, edgecolor=P.C_AN, linewidth=1.15, zorder=4))
     ax.text(x + 0.32 + aw / 2, inner_y + inner_h * 0.70, "ANODE",
-            ha="center", va="center", fontsize=9.6, fontweight="bold", color=P.C_AN, zorder=5)
+            ha="center", va="center", fontsize=14.9, fontweight="bold", color=P.C_AN, zorder=5)
     ax.text(x + 0.32 + aw / 2, inner_y + inner_h * 0.30, anode,
-            ha="center", va="center", fontsize=7.8, color=P.MUTED, zorder=5, linespacing=1.08)
+            ha="center", va="center", fontsize=12.1, color=P.MUTED, zorder=5, linespacing=1.08)
 
     mw = 0.78
     mx = x + 0.32 + aw + 0.10
@@ -66,12 +66,12 @@ def plate_cell(x, y, w, h, tag, metal, mode, anode, cathode, product):
     ax.add_patch(Rectangle((cx0, inner_y), cw, inner_h,
                            facecolor=P.C_CA_F, edgecolor=P.C_CEM, linewidth=1.15, zorder=4))
     ax.text(cx0 + cw / 2, inner_y + inner_h * 0.70, "CATHODE",
-            ha="center", va="center", fontsize=9.6, fontweight="bold", color=P.C_CEM, zorder=5)
+            ha="center", va="center", fontsize=14.9, fontweight="bold", color=P.C_CEM, zorder=5)
     ax.text(cx0 + cw / 2, inner_y + inner_h * 0.30, cathode,
-            ha="center", va="center", fontsize=7.8, color=P.MUTED, zorder=5, linespacing=1.08)
+            ha="center", va="center", fontsize=12.1, color=P.MUTED, zorder=5, linespacing=1.08)
 
     ax.text(x + w / 2, y + 0.22, f"wall {P.WALL['polish']}     {product}",
-            ha="center", va="bottom", fontsize=8.2, color=P.INK, zorder=6)
+            ha="center", va="bottom", fontsize=12.7, color=P.INK, zorder=6)
     return (x, y, w, h)
 
 
@@ -82,9 +82,9 @@ def precip_cell(x, y, w, h, tag, metal, mode, method, product):
         facecolor="#ecfdf5", edgecolor=P.C_LEACH, linewidth=1.4, zorder=3,
     ))
     ax.text(x + 0.4, y + h - 0.38, tag, ha="left", va="top",
-            fontsize=11.2, fontweight="bold", color=P.INK, zorder=4)
+            fontsize=17.4, fontweight="bold", color=P.INK, zorder=4)
     ax.text(x + w - 0.4, y + h - 0.38, f"{metal}   {mode}", ha="right", va="top",
-            fontsize=9.4, fontweight="bold", color=P.MUTED, zorder=4)
+            fontsize=14.6, fontweight="bold", color=P.MUTED, zorder=4)
 
     inner_y = y + 1.05
     inner_h = h - 2.45
@@ -92,29 +92,29 @@ def precip_cell(x, y, w, h, tag, metal, mode, method, product):
     ax.add_patch(Rectangle((x + 1.22, inner_y), w - 1.54, inner_h,
                            facecolor=P.C_LE_F, edgecolor=P.C_LEACH, linewidth=1.15, zorder=4))
     ax.text(x + w / 2 + 0.3, inner_y + inner_h * 0.62, "CONCENTRATE + PRECIP",
-            ha="center", va="center", fontsize=9.8, fontweight="bold", color=P.C_LEACH, zorder=5)
+            ha="center", va="center", fontsize=15.2, fontweight="bold", color=P.C_LEACH, zorder=5)
     ax.text(x + w / 2 + 0.3, inner_y + inner_h * 0.28, method,
-            ha="center", va="center", fontsize=8.0, color=P.MUTED, zorder=5, linespacing=1.08)
+            ha="center", va="center", fontsize=12.4, color=P.MUTED, zorder=5, linespacing=1.08)
     ax.text(x + w / 2, y + 0.22, f"wall {P.WALL['polish']}     {product}",
-            ha="center", va="bottom", fontsize=8.2, color=P.INK, zorder=6)
+            ha="center", va="bottom", fontsize=12.7, color=P.INK, zorder=6)
     return (x, y, w, h)
 
 
 ax.text(50, 99.35, "POLISH BANK  —  PARALLEL CEM CELLS AFTER EW-9",
-        ha="center", va="top", fontsize=18.4, fontweight="bold", color=P.INK)
+        ha="center", va="top", fontsize=28.5, fontweight="bold", color=P.INK)
 ax.text(50, 97.55,
         "Low-tenor leftovers   ·   not a second E° aisle   ·   Li and REE are concentrated then precipitated   ·   wall CPVC",
-        ha="center", va="top", fontsize=11.6, color=P.MUTED)
+        ha="center", va="top", fontsize=18, color=P.MUTED)
 ax.text(50, 96.15,
         f"Graph-bridged IA-POL-* from {_GP}  ·  null rates stay null  ·  no invented S##",
-        ha="center", va="top", fontsize=9.0, color=P.MUTED)
+        ha="center", va="top", fontsize=14, color=P.MUTED)
 
 ew = box(ax, 2.0, 91.45, 31.0, 4.6, P.C_SOL_F, P.C_SOLID, "EW-9  /  P-Ca",
-         "depleted catholyte after Zn + pH-shift", ts=13.0, ss=8.8)
+         "depleted catholyte after Zn + pH-shift", ts=20.2, ss=13.6)
 hdr = box(ax, 34.6, 91.45, 30.8, 4.6, P.C_LE_F, P.C_LEACH, P.NAME["polish_hdr"],
-          "parallel bleed manifold", ts=13.2, ss=8.8)
+          "parallel bleed manifold", ts=20.5, ss=13.6)
 bmed = box(ax, 67.0, 91.45, 31.0, 4.6, P.C_LE_F, P.C_LEACH, P.NAME["bmed"],
-           "spent polish → SALT FEED", ts=13.0, ss=8.8)
+           "spent polish → SALT FEED", ts=20.2, ss=13.6)
 arrow(ax, R(ew), L(hdr), P.C_LEACH, lw=1.7)
 
 CW, CH = 30.4, 8.15
@@ -151,13 +151,13 @@ if "IA-POL-02" in _IA:
 # products
 met = box(ax, 2.0, 47.55, 30.4, 10.4, P.C_PROD_F, P.C_PROD, "POLISH METALS",
           "Co  Mn  Cr  Hg  Tl  Bi  Sb\npowder / sheet / MnO2\njoin METALS / ELEMENTS",
-          ts=13.6, ss=9.4)
+          ts=21.1, ss=14.6)
 salts = box(ax, 34.8, 47.55, 30.4, 10.4, P.C_PROD_F, P.C_PROD, "Li  /  REE SALTS",
             "Li2CO3 or Li3PO4\nREE oxalate / hydroxide\nto farm / fab / metal line",
-            ts=13.6, ss=9.4)
+            ts=21.1, ss=14.6)
 rad = box(ax, 67.6, 47.55, 30.4, 10.4, P.C_SOL_F, P.C_SOLID, P.NAME["rad_cell"],
           "isolated sump\nsludge vitrified into\nCERAMIC GRIT",
-          ts=13.2, ss=9.2)
+          ts=20.5, ss=14.3)
 
 arrow(ax, B(drawn[0]), (met[0] + 6, met[1] + met[3]), P.C_PROD, lw=1.25)
 arrow(ax, B(drawn[1]), T(met), P.C_PROD, lw=1.25)
@@ -171,14 +171,14 @@ arrow(ax, B(drawn[8]), T(rad), P.C_SOLID, lw=1.35)
 
 # grit handoff
 grit = box(ax, 67.6, 39.55, 30.4, 5.4, P.C_IN_F, P.C_INORG, P.NAME["grit"],
-           "glass-branch grit is the host matrix", ts=12.6, ss=8.8)
+           "glass-branch grit is the host matrix", ts=19.5, ss=13.6)
 arrow(ax, B(rad), T(grit), P.C_SOLID, lw=1.25, ls="--")
 
 hx = box(ax, 2.0, 39.55, 30.4, 5.4, P.C_HEAT_F, P.C_HEAT, "HX-8b   POLISH → Q3",
-         "small ohmic reject onto the EW heat tap", ts=12.4, ss=8.8)
+         "small ohmic reject onto the EW heat tap", ts=19.2, ss=13.6)
 
 ax.text(2.0, 36.85, "WHY PARALLEL, AND WHAT DOES NOT GET PLATED",
-        fontsize=12.4, fontweight="bold", color=P.INK)
+        fontsize=19.2, fontweight="bold", color=P.INK)
 ax.text(2.0, 35.75,
         "The main aisle already took Au through Zn by E°.  What remains is milligrams-to-grams per litre.  A second series cascade\n"
         "would idle most of the time and still miss Li and the REEs, which do not plate from this chloride liquor at a useful current efficiency.\n"
@@ -190,22 +190,22 @@ ax.text(2.0, 35.75,
         "PK-6 Hg and PK-9 radionuclides are sealed.  Hg vapor and alpha-bearing mist do not share a headspace with Co/Mn.\n"
         "PK-9 sludge is dissolved into the glass-branch grit melt.  That is the silicon / ceramic sink for activity, not a drum in a closet.\n"
         "Spent combined brine is the BMED SALT FEED.  No polish liquor returns to LEACH CSTR 1 until BMED has split it.",
-        ha="left", va="top", fontsize=10.0, color=P.MUTED, linespacing=1.26)
+        ha="left", va="top", fontsize=15.5, color=P.MUTED, linespacing=1.26)
 
-ax.text(2.0, 14.15, "MEMBRANES  /  WALLS", fontsize=12.2, fontweight="bold", color=P.INK)
+ax.text(2.0, 14.15, "MEMBRANES  /  WALLS", fontsize=18.9, fontweight="bold", color=P.INK)
 ax.add_patch(Rectangle((2.0, 11.65), 3.2, 1.55, facecolor=P.C_CEM_F, edgecolor=P.C_CEM, lw=1.2))
 ax.text(5.5, 12.42, "CEM   sulfonated PS–PVC on PP felt    every polish cell    blue",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 ax.text(2.0, 10.35,
         f"Walls: {P.WALL['polish']} sheet, same cement spec as the EW aisle.  "
         "PK-6 and PK-9 get a welded lid and a dedicated ventilation stub to the alkaline scrubber.\n"
         f"Anodes that plate: {P.ANODE}.  Li / REE boxes have no anode.",
-        ha="left", va="top", fontsize=10.0, color=P.MUTED, linespacing=1.26)
+        ha="left", va="top", fontsize=15.5, color=P.MUTED, linespacing=1.26)
 
 _reg = ia_register_lines(_IA.values())
-ax.text(2.0, 3.55, f"GRAPH IA-POL-*  ({_GP})", fontsize=9.2, fontweight="bold", color=P.INK)
+ax.text(2.0, 3.55, f"GRAPH IA-POL-*  ({_GP})", fontsize=14.3, fontweight="bold", color=P.INK)
 for i, line in enumerate(_reg):
-    ax.text(2.0, 2.75 - i * 0.55, line, ha="left", va="top", fontsize=7.2, color=P.MUTED)
+    ax.text(2.0, 2.75 - i * 0.55, line, ha="left", va="top", fontsize=11.2, color=P.MUTED)
 
 ax.text(50.0, 0.35, P.NAMING_FOOT + "    POLISH BANK    POLISH HEADER",
         ha="center", va="bottom", fontsize=P.EW_FONT_FOOT, color=P.MUTED)

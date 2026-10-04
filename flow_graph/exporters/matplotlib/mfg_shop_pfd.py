@@ -51,7 +51,7 @@ def main():
 
     # Precious Plastic class line
     ax.text(22, 58.5, "POLYMER LINE  (Precious Plastic–class envelope)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     shred = S.unit(ax, 22, 49, 13, 7.5, "SHREDDER", "PP kit shredder\nflake", fill="#e4e4e7", edge="#3f3f46")
     wash = S.unit(ax, 38, 49, 12, 7.5, "WASH / DRY", "rinse · spin\ngrey → HDR_GREY", fill="#e0f2fe", edge="#0369a1")
     extr = S.unit(ax, 53, 49, 13, 7.5, "EXTRUSION", "beam / sheet\nfilament option", fill="#ffedd5", edge="#c2410c")
@@ -68,7 +68,7 @@ def main():
 
     # Metals / CNC floor
     ax.text(22, 45.5, "METALS + PRECISION  (forming detail: AQS-PFD-MFG-MET-001)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     crib = S.unit(ax, 22, 34, 14, 8.0, "MFG CRIB", "S08 stock\nfasteners / bar", fill="#dcfce7", edge="#166534")
     cnc = S.unit(ax, 40, 34, 14, 8.0, "CNC / MILL", "lab 5-axis class\nRepRap FDM/SLA", fill="#e4e4e7", edge="#3f3f46")
     weld = S.unit(ax, 58, 34, 14, 8.0, "WELD / ASSY", "fixture · join\npump housings", fill="#e4e4e7", edge="#3f3f46")

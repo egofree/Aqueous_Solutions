@@ -46,7 +46,7 @@ def ew_cell(x, y, w, h, tag, metal, e0, anode, cathode, vessel, product):
     ax.text(x + 0.45, y + h - 0.42, tag, ha="left", va="top",
             fontsize=P.EW_FONT_CELL, fontweight="bold", color=P.INK, zorder=4)
     ax.text(x + w - 0.45, y + h - 0.42, f"{metal}   E° {e0}", ha="right", va="top",
-            fontsize=10.2, fontweight="bold", color=P.MUTED, zorder=4)
+            fontsize=15.8, fontweight="bold", color=P.MUTED, zorder=4)
 
     inner_y = y + 0.95
     inner_h = h - 2.35
@@ -54,7 +54,7 @@ def ew_cell(x, y, w, h, tag, metal, e0, anode, cathode, vessel, product):
     ax.add_patch(Rectangle((x + 0.35, inner_y), aw, inner_h,
                            facecolor=P.C_AN_F, edgecolor=P.C_AN, linewidth=1.2, zorder=4))
     ax.text(x + 0.35 + aw / 2, inner_y + inner_h * 0.70, "ANODE",
-            ha="center", va="center", fontsize=10.5, fontweight="bold", color=P.C_AN, zorder=5)
+            ha="center", va="center", fontsize=16.3, fontweight="bold", color=P.C_AN, zorder=5)
     ax.text(x + 0.35 + aw / 2, inner_y + inner_h * 0.32, anode,
             ha="center", va="center", fontsize=P.EW_FONT_CELL_SUB, color=P.MUTED, zorder=5, linespacing=1.1)
 
@@ -67,12 +67,12 @@ def ew_cell(x, y, w, h, tag, metal, e0, anode, cathode, vessel, product):
     ax.add_patch(Rectangle((cx0, inner_y), cw, inner_h,
                            facecolor=P.C_CA_F, edgecolor=P.C_CEM, linewidth=1.2, zorder=4))
     ax.text(cx0 + cw / 2, inner_y + inner_h * 0.70, "CATHODE",
-            ha="center", va="center", fontsize=10.5, fontweight="bold", color=P.C_CEM, zorder=5)
+            ha="center", va="center", fontsize=16.3, fontweight="bold", color=P.C_CEM, zorder=5)
     ax.text(cx0 + cw / 2, inner_y + inner_h * 0.32, cathode,
             ha="center", va="center", fontsize=P.EW_FONT_CELL_SUB, color=P.MUTED, zorder=5, linespacing=1.1)
 
     ax.text(x + w / 2, y + 0.22, f"wall {vessel}     product {product}",
-            ha="center", va="bottom", fontsize=8.8, color=P.INK, zorder=6)
+            ha="center", va="bottom", fontsize=13.6, color=P.INK, zorder=6)
     return (x, y, w, h)
 
 
@@ -83,19 +83,19 @@ ax.text(50, 97.55,
         ha="center", va="top", fontsize=P.EW_FONT_SUBTITLE, color=P.MUTED)
 ax.text(50, 96.15,
         f"Graph-bridged IA-EW-* from {_GP}  ·  null rates stay null  ·  no invented S##",
-        ha="center", va="top", fontsize=9.0, color=P.MUTED)
+        ha="center", va="top", fontsize=14, color=P.MUTED)
 
 oil = box(ax, 1.4, 92.15, 16.6, 4.55, P.C_OIL_F, P.C_OIL, P.NAME["oil"],
-          "stub only   see oil sheet", ts=13.5, ss=9.2)
+          "stub only   see oil sheet", ts=20.9, ss=14.3)
 leach = box(ax, 19.6, 92.15, 60.8, 4.55, P.C_LE_F, P.C_LEACH, P.NAME["leach_fork"],
-            f"{P.LEACH_CHEM}    {P.LEACH_T}    {P.LEACH_ORP}", ts=14.5, ss=9.6)
+            f"{P.LEACH_CHEM}    {P.LEACH_T}    {P.LEACH_ORP}", ts=22.5, ss=14.9)
 glass = box(ax, 81.8, 92.15, 16.8, 4.55, P.C_IN_F, P.C_INORG, P.NAME["glass"],
-            "stub only   see glass sheet", ts=12.4, ss=8.8)
+            "stub only   see glass sheet", ts=19.2, ss=13.6)
 arrow(ax, R(oil), L(leach), P.C_OIL, lw=1.5, ls="--")
 arrow(ax, L(glass), R(leach), P.C_INORG, lw=1.5, ls="--")
 
 vdf = box(ax, 19.6, 86.35, 60.8, 4.4, P.C_SOL_F, P.C_SOLID, P.NAME["vdf"],
-          "solids → VIBRATORY SPLIT     liquor → EW header", ts=14.0, ss=9.5)
+          "solids → VIBRATORY SPLIT     liquor → EW header", ts=21.7, ss=14.7)
 arrow(ax, B(leach), T(vdf), P.C_LEACH, lw=2.0)
 slabel(ax, 50.0, 91.55, "pregnant liquor", P.C_LEACH, size=10.0)
 
@@ -124,22 +124,22 @@ for a, b in [(0, 1), (1, 2), (3, 4), (4, 5), (6, 7), (7, 8)]:
 ax.annotate("", xy=(1.15, 63.4), xytext=(1.15, 85.0),
             arrowprops=dict(arrowstyle="<->", color=P.C_AN, lw=1.5, linestyle="--"))
 ax.text(0.55, 74.2, "SALRIA ANOLYTE LOOP\nCl2 / chlorate regen   CRU",
-        ha="center", va="center", fontsize=8.4, color=P.C_AN, rotation=90, zorder=5)
+        ha="center", va="center", fontsize=13, color=P.C_AN, rotation=90, zorder=5)
 
 slabel(ax, 50.0, 62.35, "each cell harvests independently  →  METALS / ELEMENTS",
        P.C_LEACH, size=10.0)
 
 ax.text(2.0, 61.35, "pH-SHIFT PRECIP   —   NaOH from BMED BASE chamber",
-        ha="left", va="bottom", fontsize=13.2, fontweight="bold", color=P.C_CEM)
+        ha="left", va="bottom", fontsize=20.5, fontweight="bold", color=P.C_CEM)
 
 pal = box(ax, 2.0, 54.55, 23.6, 6.15, P.C_IN_F, P.C_INORG, P.PH_SHIFT[0][0],
-          f"{P.PH_SHIFT[0][1]}\nwall {P.WALL[P.PH_SHIFT[0][2]]}", ts=12.8, ss=9.2)
+          f"{P.PH_SHIFT[0][1]}\nwall {P.WALL[P.PH_SHIFT[0][2]]}", ts=19.8, ss=14.3)
 pmg = box(ax, 27.2, 54.55, 23.6, 6.15, P.C_IN_F, P.C_INORG, P.PH_SHIFT[1][0],
-          f"{P.PH_SHIFT[1][1]}\nwall {P.WALL[P.PH_SHIFT[1][2]]}", ts=12.8, ss=9.2)
+          f"{P.PH_SHIFT[1][1]}\nwall {P.WALL[P.PH_SHIFT[1][2]]}", ts=19.8, ss=14.3)
 pca = box(ax, 52.4, 54.55, 23.6, 6.15, P.C_IN_F, P.C_INORG, P.PH_SHIFT[2][0],
-          f"{P.PH_SHIFT[2][1]}\nwall {P.WALL[P.PH_SHIFT[2][2]]}", ts=12.8, ss=9.2)
+          f"{P.PH_SHIFT[2][1]}\nwall {P.WALL[P.PH_SHIFT[2][2]]}", ts=19.8, ss=14.3)
 pol = box(ax, 77.4, 54.55, 20.6, 6.15, P.C_SOL_F, P.C_SOLID, P.NAME["polish"],
-          f"parallel CEM cells\nCo Mn Cr Li REE\nwall {P.WALL['polish']}", ts=12.6, ss=8.8)
+          f"parallel CEM cells\nCo Mn Cr Li REE\nwall {P.WALL['polish']}", ts=19.5, ss=13.6)
 
 arrow(ax, (cx(drawn[8]), drawn[8][1]), (cx(pal) + 8, pal[1] + pal[3]), P.C_LEACH, lw=1.6)
 slabel(ax, 78.5, 62.0, "depleted catholyte", P.C_LEACH, ha="left", size=9.0)
@@ -154,7 +154,7 @@ slabel(ax, cx(pmg), pmg[1] - 0.15, "▼ Mg(OH)2 cake", P.C_INORG, size=8.6, va="
 slabel(ax, cx(pca), pca[1] - 0.15, "▼ Ca cake", P.C_INORG, size=8.6, va="top")
 
 hx = box(ax, 77.4, 49.55, 20.6, 3.85, P.C_HEAT_F, P.C_HEAT, P.NAME["hx8"],
-         "ohmic reject to heat ladder", ts=12.4, ss=8.8)
+         "ohmic reject to heat ladder", ts=19.2, ss=13.6)
 
 ax.add_patch(FancyBboxPatch(
     (2.0, 27.15), 96.0, 21.7,
@@ -162,10 +162,10 @@ ax.add_patch(FancyBboxPatch(
     facecolor="#ecfdf5", edgecolor=P.C_LEACH, linewidth=1.7, zorder=2,
 ))
 ax.text(50.0, 48.35, "BMED REGEN     NaCl brine  →  HCl  +  NaOH  +  chlorate makeup",
-        ha="center", va="top", fontsize=15.0, fontweight="bold", color=P.C_LEACH, zorder=4)
+        ha="center", va="top", fontsize=23.2, fontweight="bold", color=P.C_LEACH, zorder=4)
 ax.text(50.0, 46.55,
         f"3-compartment stack   ·   ACID {P.WALL['bmed_acid']}   ·   BASE {P.WALL['bmed_base']}   ·   membranes hot-swappable PS–PVC on PP felt",
-        ha="center", va="top", fontsize=10.0, color=P.MUTED, zorder=4)
+        ha="center", va="top", fontsize=15.5, color=P.MUTED, zorder=4)
 
 BY, BH = 30.55, 12.6
 units = [
@@ -181,7 +181,7 @@ for name, w in units:
     x += w + gap
 
 
-def ch_box(x, y, w, h, fill, edge, t1, t2, ts=11.5, ss=8.6):
+def ch_box(x, y, w, h, fill, edge, t1, t2, ts=17.8, ss=13.3):
     ax.add_patch(Rectangle((x, y), w, h, facecolor=fill, edgecolor=edge,
                            linewidth=1.35, zorder=4))
     ax.text(x + w / 2, y + h * 0.68, t1, ha="center", va="center",
@@ -216,14 +216,14 @@ for name, x, w in xs:
         ch_box(x, BY, w, BH, P.C_AN_F, P.C_AN, "ANODE", P.ANODE.split(" / ")[0] + " / MMO")
 
 ax.text(base_x + base_w / 2, BY - 0.45, "OH- from BPM  +  Na+ through CEM",
-        ha="center", va="top", fontsize=8.4, color=P.C_LEACH, zorder=5)
+        ha="center", va="top", fontsize=13, color=P.C_LEACH, zorder=5)
 ax.text(salt_x + salt_w / 2, BY - 0.45, "depleted brine recycled",
-        ha="center", va="top", fontsize=8.4, color=P.MUTED, zorder=5)
+        ha="center", va="top", fontsize=13, color=P.MUTED, zorder=5)
 ax.text(acid_x + acid_w / 2, BY - 0.45, "H+ from BPM  +  Cl- through AEM",
-        ha="center", va="top", fontsize=8.4, color=P.C_AN, zorder=5)
+        ha="center", va="top", fontsize=13, color=P.C_AN, zorder=5)
 ax.text(50.0, 28.05,
         "BPM facing: CEL (blue) toward cathode     ·     AEL (orange) toward anode",
-        ha="center", va="bottom", fontsize=8.6, color=P.MUTED, zorder=5)
+        ha="center", va="bottom", fontsize=13.3, color=P.MUTED, zorder=5)
 
 arrow(ax, (base_x + base_w / 2, BY + BH), (cx(pal), pal[1]), P.C_LEACH, lw=1.7)
 arrow(ax, (base_x + base_w / 2, BY + BH), (cx(pmg), pmg[1]), P.C_LEACH, lw=1.7)
@@ -238,30 +238,30 @@ arrow(ax, (98.2, BY + BH * 0.55), (salt_x + salt_w, BY + BH * 0.55), P.C_LEACH, 
 
 met = box(ax, 2.0, 16.35, 30.4, 8.55, P.C_PROD_F, P.C_PROD, P.NAME["metals"],
           "sheets:  Ag  Cu  Pb  Sn  Ni  Cd  Zn\npowder:  Au  Fe   (Sn optional)\neach EW cell harvests independently",
-          ts=14.2, ss=9.4)
+          ts=22, ss=14.6)
 hyd = box(ax, 34.8, 16.35, 30.4, 8.55, P.C_PROD_F, P.C_PROD, P.NAME["hydroxides"],
           "Al(OH)3 from P-Al\nMg(OH)2 from P-Mg\nCa(OH)2 / CaCO3 from P-Ca\nto farm / metal line",
-          ts=14.2, ss=9.4)
+          ts=22, ss=14.6)
 reg = box(ax, 67.6, 16.35, 30.4, 8.55, P.C_LE_F, P.C_LEACH, P.NAME["regen"],
           "HCl from BMED ACID chamber\nNaClO3 from anolyte / CRU loop\nback to LEACH CSTR 1",
-          ts=14.2, ss=9.4)
+          ts=22, ss=14.6)
 
 arrow(ax, (acid_x + acid_w / 2, BY), (reg[0] + reg[2] * 0.45, reg[1] + reg[3]), P.C_AN, lw=1.7)
 slabel(ax, acid_x + acid_w / 2 + 3.2, 26.55, "HCl", P.C_AN, size=9.6)
 
-ax.text(2.0, 14.35, "MEMBRANES", fontsize=12.2, fontweight="bold", color=P.INK)
+ax.text(2.0, 14.35, "MEMBRANES", fontsize=18.9, fontweight="bold", color=P.INK)
 ax.add_patch(Rectangle((2.0, 11.85), 3.4, 1.7, facecolor=P.C_CEM_F, edgecolor=P.C_CEM, lw=1.3))
 ax.text(5.7, 12.7, "CEM   sulfonated PS–PVC on PP felt, double-layer hot-swap",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 ax.add_patch(Rectangle((2.0, 9.65), 3.4, 1.7, facecolor=P.C_AEM_F, edgecolor=P.C_AEM, lw=1.3))
 ax.text(5.7, 10.5, "AEM   aminated PS–PVC on PP felt",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 ax.add_patch(Rectangle((2.0, 7.45), 1.7, 1.7, facecolor=P.C_CEM_F, edgecolor=P.C_CEM, lw=1.2))
 ax.add_patch(Rectangle((3.7, 7.45), 1.7, 1.7, facecolor=P.C_AEM_F, edgecolor=P.C_AEM, lw=1.2))
 ax.text(5.7, 8.3, "BPM   double line  blue CEL | orange AEL     CEL faces cathode, AEL faces anode",
-        ha="left", va="center", fontsize=10.0, color=P.MUTED)
+        ha="left", va="center", fontsize=15.5, color=P.MUTED)
 
-ax.text(2.0, 6.35, "WALLS, ELECTRODES, SOLVENT", fontsize=12.2, fontweight="bold", color=P.INK)
+ax.text(2.0, 6.35, "WALLS, ELECTRODES, SOLVENT", fontsize=18.9, fontweight="bold", color=P.INK)
 ax.text(2.0, 5.55,
         "Walls are polymer.  Bare Ti and 316L are not cell walls in Salria — hot pH 0 chloride + high ORP strips the Ti oxide; 316L pits.\n"
         f"Default aisle wall: solid CPVC sheet (not foam-core expanded PVC), solvent-welded with {P.CEMENT}\n"
@@ -270,7 +270,7 @@ ax.text(2.0, 5.55,
         f"Anodes: {P.ANODE} — the coating is the barrier; the substrate is not a tank wall.\n"
         "Cathodes: Ti Gr.2 blanks on Au / Ag / Ni;  316L starter sheets on Cu / Pb / Sn / Cd / Fe;  Ti or Al starter on Zn.\n"
         "PVC cement solvents weld PVC and CPVC only.  They do not weld PE, PP, or PVDF.  Cure fully before Salria fill.",
-        ha="left", va="top", fontsize=9.6, color=P.MUTED, linespacing=1.26)
+        ha="left", va="top", fontsize=14.9, color=P.MUTED, linespacing=1.26)
 
 # Graph IA-* register (honest null rates)
 _reg = ia_register_lines(_IA.values())
@@ -280,10 +280,10 @@ ax.add_patch(FancyBboxPatch(
     facecolor="#f8fafc", edgecolor=P.MUTED, linewidth=1.1, zorder=2,
 ))
 ax.text(53.0, 13.55, f"GRAPH IA-EW-*  ({_GP})",
-        ha="left", va="top", fontsize=9.2, fontweight="bold", color=P.INK, zorder=4)
+        ha="left", va="top", fontsize=14.3, fontweight="bold", color=P.INK, zorder=4)
 for i, line in enumerate(_reg):
     ax.text(53.0, 12.35 - i * 1.15, line, ha="left", va="top",
-            fontsize=7.2, color=P.MUTED, zorder=4)
+            fontsize=11.2, color=P.MUTED, zorder=4)
 
 ax.text(50.0, 0.35, P.NAMING_FOOT, ha="center", va="bottom", fontsize=P.EW_FONT_FOOT, color=P.MUTED)
 

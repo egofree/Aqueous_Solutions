@@ -26,27 +26,27 @@ C_HX, C_HX_F = "#7c2d12", "#fed7aa"
 # ── type ─────────────────────────────────────────────────
 # Plant sheet is denser; EW sheet is larger. Use these as defaults
 # and override per-sheet if a title needs to shout.
-FONT_TITLE = 20
-FONT_SUBTITLE = 12
-FONT_BOX = 15
-FONT_BOX_SUB = 12
-FONT_LABEL = 7.1
-FONT_FOOT = 6.7
-FONT_LEGEND = 8.1
+FONT_TITLE = 32
+FONT_SUBTITLE = 20
+FONT_BOX = 24
+FONT_BOX_SUB = 18
+FONT_LABEL = 14
+FONT_FOOT = 13
+FONT_LEGEND = 14
 
 # EW sheet runs larger so the whole-image view stays readable
-EW_FONT_TITLE = 20.0
-EW_FONT_SUBTITLE = 12.0
-EW_FONT_BOX = 15.0
-EW_FONT_BOX_SUB = 12.0
-EW_FONT_CELL = 11.5
-EW_FONT_CELL_SUB = 8.4
-EW_FONT_FOOT = 8.4
+EW_FONT_TITLE = 32.0
+EW_FONT_SUBTITLE = 20.0
+EW_FONT_BOX = 24.0
+EW_FONT_BOX_SUB = 18.0
+EW_FONT_CELL = 18.0
+EW_FONT_CELL_SUB = 14.0
+EW_FONT_FOOT = 14.0
 
 # ── locked unit names (use these strings everywhere) ─────
 NAME = {
     "oil": "OIL LINE",
-    "glass": "GLASS / CERAMIC BRANCH",
+    "glass": "SOLIDS LINE",
     "hopper": "HOPPER",
     "shredder": "SHREDDER",
     "leach1": "LEACH CSTR 1",
@@ -69,6 +69,14 @@ NAME = {
     "silicate": "SILICATE",
     "hydroxides": "Ca / Al / Mg HYDROXIDES",
     "grit": "CERAMIC GRIT",
+    "fusion": "ALKALI FUSION",
+    "aem": "AEM BANK",
+    "silica": "SiO2 GEL",
+    "reduce": "Si / B REDUCE",
+    "molten": "MOLTEN-SALT CELLS",
+    "ree_split": "PK-5B  REE SPLIT",
+    "k_split": "K SPLIT",
+    "n_scrub": "N SCRUB",
     "vdf": "VACUUM DRUM FILTER",
     "hx8": "HX-8   EW → Q3",
     "regen": "REGEN LEACH",
@@ -160,7 +168,7 @@ POLISH_CELLS = [
     ("PK-2", "Mn", "metal or MnO2", "Ti Gr.2 / MMO", "Ti blank or MMO anode", "powder / MnO2"),
     ("PK-3", "Cr", "Cr(III) CEM", "Ti Gr.2 / MMO", "316L or Cr(OH)3 precip", "powder / cake"),
     ("PK-4", "Li", "not aqueous EW", "—", "CEM concentrate → Li2CO3 / Li3PO4", "carbonate / phosphate"),
-    ("PK-5", "REE", "not aqueous EW", "—", "CEM concentrate → oxalate / hydroxide", "oxalate cake"),
+    ("PK-5", "REE", "not aqueous EW", "—", "bleed before P-Al   oxalate cake → PK-5B", "cake to split"),
     ("PK-6", "Hg", "E° +0.85 V", "Ti Gr.2 / MMO", "Ti / graphite, sealed", "amalgam / metal"),
     ("PK-7", "Tl", "E° –0.34 V", "Ti Gr.2 / MMO", "316L or iodide precip", "powder / cake"),
     ("PK-8", "Bi / Sb", "E° +0.32 / +0.15", "Ti Gr.2 / MMO", "316L sheet", "powder"),

@@ -44,7 +44,7 @@ def main():
            "FC → BATT DC only — not GEN port, not RECT process DC.  kW TBD.")
 
     ax.text(2, 59.0, "1   FUEL / OXIDIZER  (on-site streams)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     h2d = S.unit(ax, 2, 48, 16, 8.0, "H2_DRYER",
                  "process H₂\nS05 / S24",
                  fill="#dbeafe", edge="#1e3a8a")
@@ -56,13 +56,13 @@ def main():
                     fill="#ffedd5", edge="#c2410c")
     man_h = S.unit(ax, 56, 49, 14, 6.5, "FC_H2_MANIFOLD",
                    "S49 + arrestor\nMAQ / NFPA 2",
-                   fill="#e0f2fe", edge="#0369a1", ts=9.6, ss=6.8)
+                   fill="#e0f2fe", edge="#0369a1", ts=14.9, ss=10.5)
     man_o = S.unit(ax, 56, 41.5, 14, 6.0, "FC_O2_MANIFOLD",
                    "S50 oxidizer\nkeep ≠ H₂",
-                   fill="#ffedd5", edge="#c2410c", ts=9.6, ss=6.8)
+                   fill="#ffedd5", edge="#c2410c", ts=14.9, ss=10.5)
     fc = S.unit(ax, 74, 44, 24, 13.0, "FUEL_CELL",
                 "PEM stack(s)\nH₂ + O₂ → DC + heat + H₂O\nkW TBD (≤ Sol-Ark / ZnBr2 class)",
-                fill="#fef3c7", edge="#b45309", ts=11.4, ss=7.2)
+                fill="#fef3c7", edge="#b45309", ts=17.7, ss=11.2)
     arrow(ax, R(h2d), L(man_h), S.C_H2, lw=1.4)
     arrow(ax, R(cryo_h), (man_h[0], cy(cryo_h)), S.C_H2, lw=1.4)
     arrow(ax, R(cryo_o), (man_o[0], cy(cryo_o)), S.C_OX, lw=1.4)
@@ -73,13 +73,13 @@ def main():
     slabel(ax, 50, 40.2, "S50", S.C_OX, size=7.4)
 
     ax.text(2, 39.5, "2   ELECTRICAL  (BATT DC — not GEN)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     dcdc = S.unit(ax, 2, 26, 20, 10.0, "FC_DCDC",
                   "DC/DC into\n160–700 V window\nS51",
-                  fill="#dbeafe", edge="#1e3a8a", ts=11.0, ss=7.2)
+                  fill="#dbeafe", edge="#1e3a8a", ts=17.1, ss=11.2)
     sol = S.unit(ax, 26, 26, 30, 10.0, "SOL-ARK  60K-3P-480V",
                  "BATT DC ← ZnBr2 + FC\nGEN port = BACKUP_GEN only (S47)\nGRID ↔  ·  LOAD → ATS",
-                 fill="#dcfce7", edge="#15803d", ts=10.8, ss=7.0)
+                 fill="#dcfce7", edge="#15803d", ts=16.7, ss=10.8)
     znbr = S.iface(ax, 60, 27, 16, 8.0, "ZnBr2",
                    "peer on BATT DC\nunchanged",
                    fill="#ede9fe", edge="#6d28d9")
@@ -96,16 +96,16 @@ def main():
     arrow(ax, R(znbr), L(gen), "#b45309", lw=1.0, ls=":")
 
     ax.text(2, 23.5, "3   HEAT → Q4  +  PRODUCT WATER  +  FORBIDDEN",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     hx = S.unit(ax, 2, 10, 24, 10.5, "FC_HX_Q4",
                 "low-grade stack heat\n→ Q4 water (S53)\n< 80 °C life air",
-                fill="#ffedd5", edge="#c2410c", ts=10.8, ss=7.0)
+                fill="#ffedd5", edge="#c2410c", ts=16.7, ss=10.8)
     q4 = S.iface(ax, 30, 11, 18, 9.0, "Q4 / HVAC",
                  "FARM + HAB\nS06 / S44 peers",
                  fill="#ffedd5", edge="#c2410c")
     h2o = S.unit(ax, 52, 10, 22, 10.5, "FC_PRODUCT_H2O",
                  "product water\n→ S13 condensate\nS52  ·  not potable",
-                 fill="#e0f2fe", edge="#0369a1", ts=10.6, ss=7.0)
+                 fill="#e0f2fe", edge="#0369a1", ts=16.4, ss=10.8)
     S.callout(ax, 78, 10, 20, 10.5, "FORBIDDEN", [
         "FC → GEN port",
         "FC → RECT DC tee",

@@ -45,16 +45,16 @@ def main():
            "MET_AHU → MET_SCRUB/BH (S71–S72) — no HAB return / no free dump.  Q4 via MET_HX_Q4.  kW TBD.")
 
     ax.text(2, 59.0, "1   FEEDSTOCK  (S08 crib → melt)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     crib = S.unit(ax, 2, 48, 16, 8.0, "PROD_METALS",
                   "S08 crib\nEW / polish metals",
                   fill="#dcfce7", edge="#166534")
     melt = S.unit(ax, 22, 47, 20, 10.0, "MET_MELT",
                   "induction electric\nbillet / charge\n≠ oil-line pyro",
-                  fill="#fef3c7", edge="#b45309", ts=11.0, ss=7.0)
+                  fill="#fef3c7", edge="#b45309", ts=17.1, ss=10.8)
     n2 = S.unit(ax, 46, 49, 14, 7.0, "MET_N2_BLANKET",
                 "S03 N₂ / Ar opt\natomize + hold",
-                fill="#dbeafe", edge="#1e3a8a", ts=9.6, ss=6.8)
+                fill="#dbeafe", edge="#1e3a8a", ts=14.9, ss=10.5)
     pyro = S.iface(ax, 64, 49, 16, 7.0, "INDUCTION_PYROLYZER",
                    "OIL LINE only\n≠ this sheet",
                    fill="#ffedd5", edge="#9a3412")
@@ -64,16 +64,16 @@ def main():
     arrow(ax, L(pyro), (pyro[0] - 1.5, cy(pyro)), S.C_ORG, lw=1.0, ls=":")
 
     ax.text(2, 44.5, "2   FORMING TRAIN  (S57 feed → products S58–S60)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     draw = S.unit(ax, 2, 30, 18, 10.5, "WIRE_DRAW",
                   "Cu/Al/Fe wire\n0.5–5 mm class\nS58 · duty TBD",
-                  fill="#e0f2fe", edge="#0369a1", ts=10.8, ss=7.0)
+                  fill="#e0f2fe", edge="#0369a1", ts=16.7, ss=10.8)
     mill = S.unit(ax, 26, 30, 20, 10.5, "COLD_MILL",
                   "4HI reversing\nsheet / strip\nS59 · duty TBD",
-                  fill="#e0f2fe", edge="#0369a1", ts=10.8, ss=7.0)
+                  fill="#e0f2fe", edge="#0369a1", ts=16.7, ss=10.8)
     atom = S.unit(ax, 52, 30, 20, 10.5, "GAS_ATOMIZER",
                   "N₂/Ar atomize\nmetal powder\nS60 · kg/h TBD",
-                  fill="#e0f2fe", edge="#0369a1", ts=10.8, ss=7.0)
+                  fill="#e0f2fe", edge="#0369a1", ts=16.7, ss=10.8)
     elec = S.stub(ax, 78, 31, 20, 9.0, "ELECTRODE_FAB",
                   "stub — coating deferred")
     # S57 from melt down to train
@@ -89,28 +89,28 @@ def main():
     arrow(ax, R(mill), (elec[0], cy(mill) - 1), S.C_PRODUCT, lw=1.1, ls="--")
 
     ax.text(2, 27.5, "3   PRODUCTS  ·  SCRAP  ·  HVAC / Q4",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     wbin = S.unit(ax, 2, 14, 14, 9.0, "MET_WIRE_BIN",
                   "wire hold\nS58",
-                  fill="#dcfce7", edge="#166534", ts=9.8, ss=6.8)
+                  fill="#dcfce7", edge="#166534", ts=15.2, ss=10.5)
     sbin = S.unit(ax, 18, 14, 14, 9.0, "MET_SHEET_BIN",
                   "sheet hold\nS59",
-                  fill="#dcfce7", edge="#166534", ts=9.8, ss=6.8)
+                  fill="#dcfce7", edge="#166534", ts=15.2, ss=10.5)
     pbin = S.unit(ax, 34, 14, 16, 9.0, "MET_POWDER_CRIB",
                   "powder + N₂\nS60 → FAB/RepRap",
-                  fill="#dcfce7", edge="#166534", ts=9.6, ss=6.8)
+                  fill="#dcfce7", edge="#166534", ts=14.9, ss=10.5)
     hop = S.iface(ax, 54, 14, 16, 9.0, "HOPPER",
                   "S61 scrap\nS16 class · no FR-4",
                   fill="#e4e4e7", edge="#3f3f46")
     ahu = S.unit(ax, 74, 18.5, 12, 7.0, "MET_AHU",
                  "aisle exhaust\nS62 → scrub",
-                 fill="#ffedd5", edge="#c2410c", ts=9.6, ss=6.8)
+                 fill="#ffedd5", edge="#c2410c", ts=14.9, ss=10.5)
     hx = S.unit(ax, 74, 10.5, 12, 7.0, "MET_HX_Q4",
                 "warm residual\nS63 → Q4",
-                fill="#ffedd5", edge="#c2410c", ts=9.6, ss=6.8)
+                fill="#ffedd5", edge="#c2410c", ts=14.9, ss=10.5)
     scrub = S.unit(ax, 88, 18.5, 12, 7.0, "MET_SCRUB",
                    "fume/mist\nS71 · study Q",
-                   fill="#ffedd5", edge="#c2410c", ts=9.4, ss=6.6)
+                   fill="#ffedd5", edge="#c2410c", ts=14.6, ss=10.2)
     ret = S.iface(ax, 88, 10.5, 12, 7.0, "S72 returns",
                   "fines→CSTR\norg→OIL",
                   fill="#e4e4e7", edge="#3f3f46")

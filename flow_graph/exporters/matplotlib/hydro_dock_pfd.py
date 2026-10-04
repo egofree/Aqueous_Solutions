@@ -68,14 +68,14 @@ def main() -> None:
     ax.set_facecolor(P.BG)
 
     ax.text(50, 76.5, "PUMPED HYDRO  +  NORTH DOCK",
-            ha="center", va="top", fontsize=17.0, fontweight="bold", color=P.INK)
+            ha="center", va="top", fontsize=26.4, fontweight="bold", color=P.INK)
     ax.text(50, 74.2,
             "Dedicated coverage from plant_flow_graph.json  ·  "
             "inventory cycle peers S22/S23  ·  DOCK_EXPORT_TBD (no fake S##)",
-            ha="center", va="top", fontsize=9.4, color=P.MUTED)
+            ha="center", va="top", fontsize=14.6, color=P.MUTED)
     ax.text(50, 72.4,
             f"Graph-bridged from {gp}  ·  null rates stay null  ·  placeholders visible",
-            ha="center", va="top", fontsize=8.6, color=P.MUTED)
+            ha="center", va="top", fontsize=13.3, color=P.MUTED)
 
     # ── PUMPED_HYDRO column ───────────────────────────────
     ax.add_patch(FancyBboxPatch(
@@ -84,14 +84,14 @@ def main() -> None:
         facecolor="#eff6ff", edgecolor=C_W, linewidth=1.5, zorder=1,
     ))
     ax.text(29.0, 68.8, "PUMPED_HYDRO  /  WTR inventory",
-            ha="center", va="top", fontsize=12.4, fontweight="bold", color=C_W, zorder=4)
+            ha="center", va="top", fontsize=19.2, fontweight="bold", color=C_W, zorder=4)
 
     roof = box(ax, 16.0, 58.5, 26.0, 7.5, C_W_F, C_W, "ROOF_TANK",
-               _node_sub("ROOF_TANK", g, "upper reservoir"), ts=12.2, ss=7.6)
+               _node_sub("ROOF_TANK", g, "upper reservoir"), ts=18.9, ss=11.8)
     catch = box(ax, 16.0, 36.5, 26.0, 7.5, C_W_F, C_W, "CATCH_TANK",
-                _node_sub("CATCH_TANK", g, "lower reservoir"), ts=12.2, ss=7.6)
+                _node_sub("CATCH_TANK", g, "lower reservoir"), ts=18.9, ss=11.8)
     hydro = box(ax, 4.0, 46.5, 10.5, 9.0, C_PH_F, C_PH, "HYDRO_SET",
-                _node_sub("HYDRO_SET", g, "turbine-pump"), ts=10.4, ss=6.8)
+                _node_sub("HYDRO_SET", g, "turbine-pump"), ts=16.1, ss=10.5)
 
     e22 = br.get("S22_PENSTOCK")
     e23 = br.get("S23_PUMP")
@@ -119,7 +119,7 @@ def main() -> None:
 
     # hydro electrical to bus (placeholder)
     bus = box(ax, 40.0, 46.5, 14.0, 9.0, C_PH_F, C_PH, "SOL_ARK_60K",
-              "elec peer\n(see SLD)", ts=10.2, ss=7.2)
+              "elec peer\n(see SLD)", ts=15.8, ss=11.2)
     arrow(ax, R(hydro), L(bus), C_PH, lw=1.4, ls="--")
     if e_el is not None:
         slabel(ax, 33.5, 56.2, edge_callout(e_el), C_PH, size=6.8)
@@ -127,7 +127,7 @@ def main() -> None:
 
     # S21 roof → habitation (boundary of this sheet)
     hab = box(ax, 40.0, 58.5, 14.0, 7.5, "#ecfdf5", P.C_LEACH, "HABITATION",
-              "clean tower\n(S21)", ts=10.2, ss=7.2)
+              "clean tower\n(S21)", ts=15.8, ss=11.2)
     arrow(ax, R(roof), L(hab), C_W, lw=1.4)
     if e21 is not None:
         slabel(ax, 36.5, 67.0, edge_callout(e21), C_W, size=7.0)
@@ -136,7 +136,7 @@ def main() -> None:
             "Inventory cycle only — continuous kW not invented.\n"
             "IA-ESS-HYDRO-CHG/DIS peer S23/S22 (rate null kg/d).\n"
             "IA-ESS-HYDRO-ELEC is placeholder on SLD; no nameplate kW here.",
-            ha="left", va="top", fontsize=7.6, color=P.MUTED, linespacing=1.2, zorder=4)
+            ha="left", va="top", fontsize=11.8, color=P.MUTED, linespacing=1.2, zorder=4)
 
     # ── DOCK column ───────────────────────────────────────
     ax.add_patch(FancyBboxPatch(
@@ -145,12 +145,12 @@ def main() -> None:
         facecolor="#f8fafc", edgecolor=C_DK, linewidth=1.5, zorder=1,
     ))
     ax.text(78.25, 68.8, "DOCK  /  NORTH_DOCK",
-            ha="center", va="top", fontsize=12.4, fontweight="bold", color=C_DK, zorder=4)
+            ha="center", va="top", fontsize=19.2, fontweight="bold", color=C_DK, zorder=4)
 
     dock = box(ax, 64.0, 50.0, 28.0, 10.0, C_DK_F, C_DK, "NORTH_DOCK",
-               _node_sub("NORTH_DOCK", g, "site north bay"), ts=12.4, ss=7.4)
+               _node_sub("NORTH_DOCK", g, "site north bay"), ts=19.2, ss=11.5)
     bnd = box(ax, 64.0, 34.0, 28.0, 9.0, C_TB_F, C_TB, "BOUNDARY_EXPORT",
-              _node_sub("BOUNDARY_EXPORT", g, "campus export"), ts=11.6, ss=7.2)
+              _node_sub("BOUNDARY_EXPORT", g, "campus export"), ts=18, ss=11.2)
 
     e_dock = br.get("DOCK_EXPORT")
     arrow(ax, B(dock), T(bnd), C_TB, lw=1.8, ls="--")
@@ -166,34 +166,34 @@ def main() -> None:
             "DOCK_EXPORT_TBD is namespace=TBD.\n"
             "No inter-block S## issued (audit §7.1).\n"
             "Campus/ground_floor still show footprint.",
-            ha="left", va="top", fontsize=7.6, color=P.MUTED, linespacing=1.2, zorder=4)
+            ha="left", va="top", fontsize=11.8, color=P.MUTED, linespacing=1.2, zorder=4)
 
     # ── register ──────────────────────────────────────────
-    ax.text(2.0, 25.5, "GRAPH EDGES ON THIS SHEET", fontsize=11.0, fontweight="bold", color=P.INK)
+    ax.text(2.0, 25.5, "GRAPH EDGES ON THIS SHEET", fontsize=17.1, fontweight="bold", color=P.INK)
     y = 23.5
     for key in ("S21_ROOF_HAB", "S22_PENSTOCK", "S23_PUMP",
                 "HYDRO_CHG", "HYDRO_DIS", "HYDRO_ELEC", "DOCK_EXPORT"):
         e = br.get(key)
         if e is None:
-            ax.text(2.0, y, f"{key}  ·  missing from graph", fontsize=7.4, color="#b71c1c")
+            ax.text(2.0, y, f"{key}  ·  missing from graph", fontsize=11.5, color="#b71c1c")
         else:
             route = f"{e.from_unit_id} → {e.to_unit_id}"
             ax.text(2.0, y,
                     f"{e.stream_id}  {route}  ·  {format_rate(e)}  ·  {claim_label(e)}"
                     + (f"  ·  {e.carries}" if e.carries else ""),
-                    fontsize=7.2, color=P.MUTED)
+                    fontsize=11.2, color=P.MUTED)
         y -= 1.35
 
-    ax.text(2.0, 12.5, "KNOWN GAPS", fontsize=11.0, fontweight="bold", color=P.INK)
+    ax.text(2.0, 12.5, "KNOWN GAPS", fontsize=17.1, fontweight="bold", color=P.INK)
     ax.text(2.0, 11.2,
             "• HYDRO elec rate null — no invented kW / nameplate.\n"
             "• DOCK export has no S## — DOCK_EXPORT_TBD only.\n"
             "• Continuous pumped-hydro duty remains a study (AQS-ESS-001); this sheet shows topology + peers only.\n"
             "• Campus water_cycle_pfd still covers roof–catch inventory narrative; this sheet is the dedicated HYDRO+DOCK bridge.",
-            ha="left", va="top", fontsize=8.0, color=P.MUTED, linespacing=1.25)
+            ha="left", va="top", fontsize=12.4, color=P.MUTED, linespacing=1.25)
 
     ax.text(50.0, 0.6, P.NAMING_FOOT + "    PUMPED_HYDRO    DOCK    graph-bridged",
-            ha="center", va="bottom", fontsize=7.4, color=P.MUTED)
+            ha="center", va="bottom", fontsize=11.5, color=P.MUTED)
 
     plt.tight_layout(pad=0.25)
     fig.savefig(OUT, dpi=140, facecolor=fig.get_facecolor(), bbox_inches="tight")

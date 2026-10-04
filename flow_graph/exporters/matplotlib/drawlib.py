@@ -73,10 +73,10 @@ def hx_diamond(ax, x, y, name, sub=""):
         closed=True, facecolor=P.C_HX_F, edgecolor=P.C_HX, linewidth=1.35, zorder=6,
     ))
     ax.text(x, y + s + 0.36, name, ha="center", va="bottom",
-            fontsize=7.0, fontweight="bold", color=P.C_HX, zorder=6)
+            fontsize=10.8, fontweight="bold", color=P.C_HX, zorder=6)
     if sub:
         ax.text(x, y - s - 0.26, sub, ha="center", va="top",
-                fontsize=6.0, color=P.C_HEAT, zorder=6)
+                fontsize=9.3, color=P.C_HEAT, zorder=6)
     return (x, y)
 
 
@@ -86,13 +86,13 @@ def mem_bar(ax, x, y, w, h, kind):
                                linewidth=1.3, zorder=5))
         if h > 2.2:
             ax.text(x + w / 2, y + h / 2, "CEM", ha="center", va="center",
-                    fontsize=8.2, fontweight="bold", color=P.C_CEM, rotation=90, zorder=6)
+                    fontsize=12.7, fontweight="bold", color=P.C_CEM, rotation=90, zorder=6)
     elif kind == "AEM":
         ax.add_patch(Rectangle((x, y), w, h, facecolor=P.C_AEM_F, edgecolor=P.C_AEM,
                                linewidth=1.3, zorder=5))
         if h > 2.2:
             ax.text(x + w / 2, y + h / 2, "AEM", ha="center", va="center",
-                    fontsize=8.2, fontweight="bold", color=P.C_AEM, rotation=90, zorder=6)
+                    fontsize=12.7, fontweight="bold", color=P.C_AEM, rotation=90, zorder=6)
     elif kind == "BPM_BO":
         ax.add_patch(Rectangle((x, y), w / 2, h, facecolor=P.C_CEM_F, edgecolor=P.C_CEM,
                                linewidth=1.2, zorder=5))
@@ -100,4 +100,4 @@ def mem_bar(ax, x, y, w, h, kind):
                                linewidth=1.2, zorder=5))
         if h > 2.4:
             ax.text(x + w / 2, y + h / 2, "BPM", ha="center", va="center",
-                    fontsize=8.0, fontweight="bold", color=P.INK, rotation=90, zorder=6)
+                    fontsize=12.4, fontweight="bold", color=P.INK, rotation=90, zorder=6)

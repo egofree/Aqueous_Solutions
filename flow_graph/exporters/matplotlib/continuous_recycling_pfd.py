@@ -42,7 +42,7 @@ ax.text(50, 97.4,
         ha="center", va="top", fontsize=P.FONT_SUBTITLE, color=P.MUTED)
 ax.text(50, 96.05,
         f"Graph-bridged IA-REC-* / IA-WET-* from {_GP}  ·  null rates stay null",
-        ha="center", va="top", fontsize=8.6, color=P.MUTED)
+        ha="center", va="top", fontsize=13.3, color=P.MUTED)
 
 ax.add_patch(FancyBboxPatch(
     (1.3, 1.15), 97.4, 15.7,
@@ -51,12 +51,12 @@ ax.add_patch(FancyBboxPatch(
     linestyle="--", alpha=0.55, zorder=0,
 ))
 ax.text(2.0, 16.45, "HEAT LADDER   Q1 → Q4", ha="left", va="top",
-        fontsize=8.4, fontweight="bold", color=P.C_HEAT, zorder=1)
+        fontsize=13, fontweight="bold", color=P.C_HEAT, zorder=1)
 
 ax.text(15.4, 73.15, "OIL BRANCH", ha="center", va="bottom",
-        fontsize=8.6, fontweight="bold", color=P.C_OIL)
+        fontsize=13.3, fontweight="bold", color=P.C_OIL)
 ax.text(84.5, 73.15, P.NAME["glass"], ha="center", va="bottom",
-        fontsize=8.6, fontweight="bold", color=P.C_INORG)
+        fontsize=13.3, fontweight="bold", color=P.C_INORG)
 
 # trunk
 hop = box(ax, 38.5, 90.6, 23.0, 5.2, P.C_SOL_F, P.C_SOLID, P.NAME["hopper"], "bulk waste feed")
@@ -188,13 +188,13 @@ arrow(ax, (ab[0] + ab[2], ab[1] + ab[3] * 0.72), (h7[0] - 1.8, h7[1] - 0.9),
       P.C_HEAT, lw=1.15, ls="--")
 
 q1 = box(ax, 2.4, 2.95, 22.4, 11.3, P.C_HEAT_F, P.C_HEAT, P.HEAT["Q1"]["label"],
-         P.HEAT["Q1"]["sub"], ts=10.3, ss=7.2)
+         P.HEAT["Q1"]["sub"], ts=16, ss=11.2)
 q2 = box(ax, 26.6, 2.95, 22.4, 11.3, P.C_HEAT_F, P.C_HEAT, P.HEAT["Q2"]["label"],
-         P.HEAT["Q2"]["sub"], ts=10.3, ss=7.2)
+         P.HEAT["Q2"]["sub"], ts=16, ss=11.2)
 q3 = box(ax, 50.8, 2.95, 22.4, 11.3, P.C_HEAT_F, P.C_HEAT, P.HEAT["Q3"]["label"],
-         P.HEAT["Q3"]["sub"], ts=10.3, ss=7.2)
+         P.HEAT["Q3"]["sub"], ts=16, ss=11.2)
 q4 = box(ax, 75.0, 2.95, 22.6, 11.3, P.C_HEAT_F, P.C_HEAT, P.HEAT["Q4"]["label"],
-         P.HEAT["Q4"]["sub"], ts=10.3, ss=7.2)
+         P.HEAT["Q4"]["sub"], ts=16, ss=11.2)
 arrow(ax, R(q1), L(q2), P.C_HEAT, lw=2.4)
 arrow(ax, R(q2), L(q3), P.C_HEAT, lw=2.4)
 arrow(ax, R(q3), L(q4), P.C_HEAT, lw=2.4)
@@ -214,12 +214,12 @@ items = [
 for i, (col, name) in enumerate(items):
     xx = 14.0 + i * 14.1
     ax.plot([xx, xx + 2.2], [18.55, 18.55], color=col, lw=3.15, solid_capstyle="butt")
-    ax.text(xx + 2.55, 18.55, name, ha="left", va="center", fontsize=7.2, color=P.MUTED)
+    ax.text(xx + 2.55, 18.55, name, ha="left", va="center", fontsize=11.2, color=P.MUTED)
 
 _reg = ia_register_lines(_IA.values())
-ax.text(2.0, 17.55, f"GRAPH IA-*  ({_GP})", fontsize=7.6, fontweight="bold", color=P.INK)
+ax.text(2.0, 17.55, f"GRAPH IA-*  ({_GP})", fontsize=11.8, fontweight="bold", color=P.INK)
 for i, line in enumerate(_reg):
-    ax.text(2.0, 16.75 - i * 0.72, line, ha="left", va="top", fontsize=6.0, color=P.MUTED)
+    ax.text(2.0, 16.75 - i * 0.72, line, ha="left", va="top", fontsize=9.3, color=P.MUTED)
 
 ax.text(50.0, 0.35, P.RULES_FOOT, ha="center", va="bottom", fontsize=P.FONT_FOOT, color=P.MUTED)
 

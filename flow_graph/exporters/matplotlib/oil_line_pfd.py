@@ -41,24 +41,24 @@ ax.text(50, 99.35, "OIL LINE  —  FLOAT · DRY · PYROLYZE · DISTILL",
         ha="center", va="top", fontsize=P.EW_FONT_TITLE, fontweight="bold", color=P.INK)
 ax.text(50, 97.55,
         "Leach float + dense-plastic jumper at the head   ·   hydrocarbon cuts at the bottom   ·   NCG → AFTERBURNER → FLUE_CAP / CRYO (S67)",
-        ha="center", va="top", fontsize=12.0, color=P.MUTED)
+        ha="center", va="top", fontsize=18.6, color=P.MUTED)
 ax.text(50, 96.15,
         f"Graph-bridged IA-OIL-* from {_GP}  ·  null rates stay null  ·  no invented S##",
-        ha="center", va="top", fontsize=9.0, color=P.MUTED)
+        ha="center", va="top", fontsize=14, color=P.MUTED)
 
 # ── head stubs ───────────────────────────────────────────
 leach = box(ax, 2.0, 91.35, 36.0, 4.7, P.C_LE_F, P.C_LEACH, P.NAME["leach_fork"],
-            "FLOAT skim  →  this sheet", ts=13.2, ss=9.2)
+            "FLOAT skim  →  this sheet", ts=20.5, ss=14.3)
 split = box(ax, 62.0, 91.35, 36.0, 4.7, P.C_SOL_F, P.C_SOLID, P.NAME["screen"],
-            "dense plastic jumper  →  DRYER", ts=13.2, ss=9.2)
+            "dense plastic jumper  →  DRYER", ts=20.5, ss=14.3)
 ew = box(ax, 40.0, 91.35, 20.0, 4.7, P.C_SOL_F, P.C_SOLID, P.NAME["ew"],
-         "stub only", ts=12.4, ss=8.8)
+         "stub only", ts=19.2, ss=13.6)
 
 # ── trunk ────────────────────────────────────────────────
 flt = box(ax, 22.0, 83.55, 56.0, 5.4, P.C_OIL_F, P.C_OIL, P.NAME["float"],
-          "weir / DAF    light plastic · paper · wood · insulation fiber", ts=14.2, ss=9.6)
+          "weir / DAF    light plastic · paper · wood · insulation fiber", ts=22, ss=14.9)
 dry = box(ax, 22.0, 75.35, 56.0, 5.6, P.C_OIL_F, P.C_OIL, P.NAME["dryer"],
-          f"paddle / belt    {P.DRYER_T} from HX-4 (Q3)    condensate → Q4", ts=14.2, ss=9.6)
+          f"paddle / belt    {P.DRYER_T} from HX-4 (Q3)    condensate → Q4", ts=22, ss=14.9)
 
 arrow(ax, B(leach), (cx(flt) - 10, flt[1] + flt[3]), P.C_OIL, lw=1.9)
 arrow(ax, B(split), (cx(flt) + 14, flt[1] + flt[3]), P.C_OIL, lw=1.9)
@@ -75,18 +75,18 @@ ax.add_patch(FancyBboxPatch(
     facecolor=P.C_OIL_F, edgecolor=P.C_OIL, linewidth=1.7, zorder=2,
 ))
 ax.text(50.0, 72.15, P.NAME["pyro"], ha="center", va="top",
-        fontsize=15.0, fontweight="bold", color=P.INK, zorder=4)
+        fontsize=23.2, fontweight="bold", color=P.INK, zorder=4)
 ax.text(50.0, 70.35, f"{P.PYRO_T}    coils heat the auger, not the charge directly    no FR-4 in this pipe",
-        ha="center", va="top", fontsize=10.0, color=P.MUTED, zorder=4)
+        ha="center", va="top", fontsize=15.5, color=P.MUTED, zorder=4)
 
 coil = box(ax, 10.2, 58.15, 16.4, 9.4, P.C_HEAT_F, P.C_HEAT, "INDUCTION\nCOILS",
-           "outside Ti shell\npreferential coupling\nto iron auger", ts=11.6, ss=8.6)
+           "outside Ti shell\npreferential coupling\nto iron auger", ts=18, ss=13.3)
 shell = box(ax, 28.8, 58.15, 24.0, 9.4, P.C_SOL_F, P.C_SOLID, "Ti OUTER PIPE",
-            "Grade 2 shell\nnot a liquor wall\ncharge is dry", ts=12.4, ss=8.8)
+            "Grade 2 shell\nnot a liquor wall\ncharge is dry", ts=19.2, ss=13.6)
 auger = box(ax, 55.0, 58.15, 24.0, 9.4, P.C_SOL_F, P.C_SOLID, "CAST-IRON\nCONICAL AUGER",
-            "forced plug flow\nfractures polymer\n→ dirty crude", ts=12.2, ss=8.8)
+            "forced plug flow\nfractures polymer\n→ dirty crude", ts=18.9, ss=13.6)
 outp = box(ax, 81.2, 58.15, 9.4, 9.4, P.C_OIL_F, P.C_OIL, "OUTLET\nPIPE",
-           "smaller\nbore", ts=11.2, ss=8.4)
+           "smaller\nbore", ts=17.4, ss=13)
 arrow(ax, R(coil), L(shell), P.C_HEAT, lw=1.5)
 arrow(ax, R(shell), L(auger), P.C_SOLID, lw=1.5)
 arrow(ax, R(auger), L(outp), P.C_OIL, lw=1.5)
@@ -94,13 +94,13 @@ arrow(ax, B(dry), (cx(shell), 72.75), P.C_OIL, lw=1.9)
 
 # ── quench + still ───────────────────────────────────────
 quen = box(ax, 8.0, 47.35, 40.0, 5.6, P.C_OIL_F, P.C_OIL, P.NAME["quench"],
-           "direct oil quench    vapor down    NCG across", ts=13.6, ss=9.4)
+           "direct oil quench    vapor down    NCG across", ts=21.1, ss=14.6)
 dem = box(ax, 52.0, 47.35, 18.0, 5.6, P.C_SOL_F, P.C_SOLID, P.NAME["demister"],
-          "mist to still", ts=12.6, ss=9.0)
+          "mist to still", ts=19.5, ss=14)
 ab = box(ax, 72.0, 47.35, 14.0, 5.6, P.C_HEAT_F, P.C_HEAT, P.NAME["afterburner"],
-         "NCG + tars  Q1", ts=11.8, ss=8.6)
+         "NCG + tars  Q1", ts=18.3, ss=13.3)
 flue = box(ax, 87.5, 47.35, 10.5, 5.6, P.C_HEAT_F, P.C_HEAT, "FLUE_CAP",
-           "S67→CRYO", ts=11.2, ss=8.2)
+           "S67→CRYO", ts=17.4, ss=12.7)
 
 arrow(ax, (cx(outp), 58.15), (cx(quen) + 8, quen[1] + quen[3]), P.C_OIL, lw=1.8)
 arrow(ax, R(quen), L(dem), P.C_OIL, lw=1.5)
@@ -121,14 +121,14 @@ if "S11" in _SEC:
 
 still = box(ax, 8.0, 32.55, 56.0, 12.2, P.C_OIL_F, P.C_OIL, "", "")
 ax.text(36.0, 43.85, P.NAME["still"], ha="center", va="top",
-        fontsize=14.4, fontweight="bold", color=P.INK, zorder=5)
+        fontsize=22.3, fontweight="bold", color=P.INK, zorder=5)
 ax.text(36.0, 42.05, "continuous packed / tray column    HX-3 reboiler from Q2",
-        ha="center", va="top", fontsize=9.4, color=P.MUTED, zorder=5)
+        ha="center", va="top", fontsize=14.6, color=P.MUTED, zorder=5)
 
-nap = box(ax, 10.2, 33.35, 12.2, 6.4, P.C_PROD_F, P.C_PROD, "C5–C10", "overhead", ts=12.0, ss=8.8)
-mid = box(ax, 23.4, 33.35, 12.2, 6.4, P.C_PROD_F, P.C_PROD, "C11–C18", "side draw", ts=12.0, ss=8.8)
-gas = box(ax, 36.6, 33.35, 12.2, 6.4, P.C_PROD_F, P.C_PROD, "C19–C28", "side draw", ts=12.0, ss=8.8)
-res = box(ax, 49.8, 33.35, 12.2, 6.4, P.C_OIL_F, P.C_OIL, "C29+", "bottoms", ts=12.0, ss=8.8)
+nap = box(ax, 10.2, 33.35, 12.2, 6.4, P.C_PROD_F, P.C_PROD, "C5–C10", "overhead", ts=18.6, ss=13.6)
+mid = box(ax, 23.4, 33.35, 12.2, 6.4, P.C_PROD_F, P.C_PROD, "C11–C18", "side draw", ts=18.6, ss=13.6)
+gas = box(ax, 36.6, 33.35, 12.2, 6.4, P.C_PROD_F, P.C_PROD, "C19–C28", "side draw", ts=18.6, ss=13.6)
+res = box(ax, 49.8, 33.35, 12.2, 6.4, P.C_OIL_F, P.C_OIL, "C29+", "bottoms", ts=18.6, ss=13.6)
 
 arrow(ax, B(quen), (cx(still), still[1] + still[3]), P.C_OIL, lw=1.8)
 arrow(ax, B(dem), (still[0] + still[2] * 0.72, still[1] + still[3]), P.C_OIL, lw=1.4)
@@ -152,13 +152,13 @@ arrow(ax, (h3[0] - 1.8, h3[1]), R(still), P.C_HEAT, lw=1.2, ls="--")
 
 # ── products ─────────────────────────────────────────────
 p1 = box(ax, 2.0, 19.35, 22.6, 9.4, P.C_PROD_F, P.C_PROD, P.NAME["naphtha"],
-         "solvents\ncracking feed\n→ new monomers", ts=13.0, ss=9.2)
+         "solvents\ncracking feed\n→ new monomers", ts=20.2, ss=14.3)
 p2 = box(ax, 26.6, 19.35, 22.6, 9.4, P.C_PROD_F, P.C_PROD, P.NAME["midcut"],
-         "diesel-range\n→ polymer oil\n→ resins", ts=13.0, ss=9.2)
+         "diesel-range\n→ polymer oil\n→ resins", ts=20.2, ss=14.3)
 p3 = box(ax, 51.2, 19.35, 22.6, 9.4, P.C_PROD_F, P.C_PROD, P.NAME["gasoil"],
-         "wax / lube cut\n→ polyolefins\nfeed", ts=13.0, ss=9.2)
+         "wax / lube cut\n→ polyolefins\nfeed", ts=20.2, ss=14.3)
 p4 = box(ax, 75.8, 19.35, 22.2, 9.4, P.C_SOL_F, P.C_SOLID, P.NAME["char"],
-         "inorganics that\nrode the float\n→ GLASS BRANCH mill", ts=13.0, ss=9.0)
+         "inorganics that\nrode the float\n→ GLASS BRANCH mill", ts=20.2, ss=14)
 
 arrow(ax, B(nap), T(p1), P.C_PROD, lw=1.6)
 arrow(ax, B(mid), T(p2), P.C_PROD, lw=1.6)
@@ -166,24 +166,24 @@ arrow(ax, B(gas), T(p3), P.C_PROD, lw=1.6)
 
 # glass stub
 gstub = box(ax, 75.8, 12.55, 22.2, 4.4, P.C_IN_F, P.C_INORG, P.NAME["glass"],
-            "char / grit handoff", ts=12.0, ss=8.6)
+            "char / grit handoff", ts=18.6, ss=13.3)
 arrow(ax, B(p4), T(gstub), P.C_INORG, lw=1.3, ls="--")
 
 # notes
-ax.text(2.0, 16.55, "HARDWARE  /  RULES", fontsize=12.2, fontweight="bold", color=P.INK)
+ax.text(2.0, 16.55, "HARDWARE  /  RULES", fontsize=18.9, fontweight="bold", color=P.INK)
 ax.text(2.0, 15.65,
         "Shell is titanium because it is dry and hot — not because it sees Salria.  Liquor never enters this pipe.\n"
         "Cast-iron conical auger is the susceptor.  Induction coils sit on the outside of the Ti shell and couple to the iron.\n"
         "Paper, wood, and fiber insulation ride the float and are tolerated.  FR-4 and glass do not.  Those leave at VIBRATORY SPLIT.\n"
         "Afterburner flue jackets the glass-line BURNOUT ROTARY (HX-7).  Atmospheres stay separate — oil vapor does not enter the rotary.\n""Flue products → FLUE_CAP / CRYO (S67 extends S18); condensate S68 → S13 class.  Continuous outdoor dump is not design intent (AQS-VENT-001).\n"
         "HX-4 dryer takes Q3 (80–120 °C) including EW reject.  If pyro is down the dryer can still run on EW heat.",
-        ha="left", va="top", fontsize=10.0, color=P.MUTED, linespacing=1.28)
+        ha="left", va="top", fontsize=15.5, color=P.MUTED, linespacing=1.28)
 
 
 _reg = ia_register_lines(list(_IA.values()) + [e for sid, e in sorted(_SEC.items()) if not sid.startswith("IA-")])
-ax.text(2.0, 8.55, f"GRAPH IA-OIL-* / S##  ({_GP})", fontsize=9.0, fontweight="bold", color=P.INK)
+ax.text(2.0, 8.55, f"GRAPH IA-OIL-* / S##  ({_GP})", fontsize=14, fontweight="bold", color=P.INK)
 for i, line in enumerate(_reg):
-    ax.text(2.0, 7.75 - i * 0.55, line, ha="left", va="top", fontsize=6.8, color=P.MUTED)
+    ax.text(2.0, 7.75 - i * 0.55, line, ha="left", va="top", fontsize=10.5, color=P.MUTED)
 
 ax.text(50.0, 0.35, P.NAMING_FOOT + "    OIL LINE    graph-bridged", ha="center", va="bottom",
         fontsize=P.EW_FONT_FOOT, color=P.MUTED)

@@ -53,10 +53,10 @@ def main():
 
     # --- 1 forge→cut train ---
     ax.text(2, 80.5, "1   CRYSTAL FORGE → CUT TRAIN  (AQS-EQP-FAB-001 Rev B)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     crib = S.iface(ax, 2, 71.5, 11, 6.5, "CORE CRIB", "S08 Si powder\nmetals / silicate", fill="#dcfce7", edge="#166534")
     charge = S.unit(ax, 15, 71.5, 10, 6.5, "CZ_CHARGE", "boule charge\nprep", fill="#ffedd5", edge="#c2410c")
-    puller = S.unit(ax, 27, 71.5, 12, 6.5, "CZ_PULLER", "Czochralski\nmelt → ingot", fill="#fdba74", edge="#c2410c", ts=10.0)
+    puller = S.unit(ax, 27, 71.5, 12, 6.5, "CZ_PULLER", "Czochralski\nmelt → ingot", fill="#fdba74", edge="#c2410c", ts=15.5)
     cool = S.unit(ax, 41, 71.5, 10, 6.5, "INGOT_COOL", "controlled\ncool-down", fill="#ffedd5", edge="#c2410c")
     anneal = S.unit(ax, 53, 71.5, 10, 6.5, "INGOT_ANNEAL", "optional\n800–1200 °C", fill="#ffedd5", edge="#c2410c")
     crop = S.unit(ax, 65, 71.5, 10, 6.5, "CROP_GRIND", "crop seed/tail\nOD grind", fill="#e0f2fe", edge="#0369a1")
@@ -74,12 +74,12 @@ def main():
             slabel(ax, (a[0] + a[2] + b[0]) / 2, 78.5, lab, col, size=6.6)
 
     ax.text(2, 69.0, "2   SAW → EDGE → LAP/CMP → CLEAN → L0 HANDOFF",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     saw = S.unit(ax, 2, 59.5, 14, 7.0, "ID_WIRE_SAW", "multi-wire diamond\n(primary) / ID alt", fill="#e0f2fe", edge="#0369a1")
     edge = S.unit(ax, 18, 59.5, 12, 7.0, "EDGE_PROFILE", "edge grind\n/ profile", fill="#e0f2fe", edge="#0369a1")
     lap = S.unit(ax, 32, 59.5, 14, 7.0, "LAP_CMP", "lap → CMP\nS37 slurry", fill="#bae6fd", edge="#0369a1")
     preclean = S.unit(ax, 48, 59.5, 12, 7.0, "PRE_CLEAN", "UPW rinse\nS27", fill="#e0f2fe", edge="#0369a1")
-    prep = S.unit(ax, 62, 59.5, 14, 7.0, "FAB_PREP", "slice / dope\nhandoff (CAD)", fill="#e0f2fe", edge="#0369a1", ts=11.0)
+    prep = S.unit(ax, 62, 59.5, 14, 7.0, "FAB_PREP", "slice / dope\nhandoff (CAD)", fill="#e0f2fe", edge="#0369a1", ts=17.1)
     slurry = S.iface(ax, 78, 59.5, 20, 7.0, "WS_SLURRY", "S37 colloidal silica\nAQS-PFD-FAB-RGN-001", fill="#ffedd5", edge="#9a3412")
 
     arrow(ax, B(crop), (cx(crop), 68.5), S.C_SCRAP, lw=1.3)
@@ -94,7 +94,7 @@ def main():
 
     # --- 3 L0 tools ---
     ax.text(2, 56.5, "3   L0 TOOL TRAIN  (freecad/wafer_fab.py locked names)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     wet = S.unit(ax, 2, 45.5, 16, 8.0, "WET_BENCH", "RCA / HF etch / rinse\nS27 + S09 + S31–S35", fill="#e0f2fe", edge="#0369a1")
     tool = S.unit(ax, 22, 45.5, 16, 8.0, "FAB_TOOL", "ox · litho · dope\nmetal · RTA · probe", fill="#e4e4e7", edge="#3f3f46")
     etch_r = S.unit(ax, 42, 45.5, 14, 8.0, "ETCH_RETURN", "HDR_ETCH collect\nclosed", fill="#dcfce7", edge="#166534")
@@ -118,7 +118,7 @@ def main():
 
     # --- 4 utilities ---
     ax.text(2, 39.0, "4   UTILITIES  (detail sheets)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     upw = S.stub(ax, 2, 30.0, 18, 6.5, "FAB UPW POLISH", "FAB-UPW-001 · S27")
     hcl = S.iface(ax, 22, 30.0, 12, 6.5, "HCl/NaOH", "S09 BMED", fill="#ffedd5", edge="#9a3412")
     n2 = S.iface(ax, 36, 30.0, 12, 6.5, "CRYO N2", "S03 purge", fill="#dbeafe", edge="#1d4ed8")
@@ -134,7 +134,7 @@ def main():
 
     # --- 5 solar branch (detail sheet) ---
     ax.text(2, 27.5, "5   SOLAR-CELL BRANCH  (AQS-PFD-FAB-PV-001 / AQS-EQP-FAB-PV-001)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     sol = S.iface(ax, 2, 18.5, 22, 6.5, "SOLAR CELL BRANCH",
                   "PV_TEXTURE…PV_IV\nAQS-PFD-FAB-PV-001",
                   fill="#fef3c7", edge="#b45309")
@@ -144,7 +144,7 @@ def main():
     arrow(ax, R(sol), L(koh), S.C_OX, lw=1.0, ls="--")
     arrow(ax, R(koh), L(pv), S.C_PRODUCT, lw=1.0, ls="--")
     ax.text(60, 21.5, "Detail sheet + FreeCAD PV_* envelopes issued Wave 4. kW TBD.",
-            fontsize=7.2, color="#78716c", style="italic")
+            fontsize=11.2, color="#78716c", style="italic")
 
     S.callout(ax, 2, 6.5, 56, 10.5, "MACHINE / PROCESS LIST", [
         "Forge→cut: CZ_CHARGE · CZ_PULLER · INGOT_COOL · INGOT_ANNEAL ·",

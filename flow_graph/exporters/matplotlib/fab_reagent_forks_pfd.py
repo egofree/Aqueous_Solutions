@@ -52,7 +52,7 @@ def main():
 
     # existing
     ax.text(2, 78.5, "1   EXISTING WET-LINE SOURCES  (no new fork)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     bmed = S.iface(ax, 2, 69.0, 14, 7.0, "BMED REGEN", "acid / base split", fill="#dcfce7", edge="#166534")
     hcl = S.unit(ax, 18, 69.0, 12, 7.0, "HCl PRODUCT", "S09 → bench", fill="#ffedd5", edge="#9a3412")
     naoh = S.unit(ax, 32, 69.0, 12, 7.0, "NaOH PRODUCT", "S09 → bench", fill="#ffedd5", edge="#9a3412")
@@ -69,7 +69,7 @@ def main():
 
     # NEW forks
     ax.text(2, 66.5, "2   NEW SYNTH FORKS  (issued module IDs — AQS-EQP-FAB-RGN-001)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
 
     forks = [
         (2, "WS_HF_ED", "HF (aq)\nfluoride ED", "S31", "#fecaca", "#b91c1c"),
@@ -81,21 +81,21 @@ def main():
     ]
     boxes = []
     for x, title, sub, sid, fill, edge in forks:
-        b = S.unit(ax, x, 56.5, 12.5, 7.5, title, sub, fill=fill, edge=edge, ts=9.2, ss=6.6)
+        b = S.unit(ax, x, 56.5, 12.5, 7.5, title, sub, fill=fill, edge=edge, ts=14.3, ss=10.2)
         boxes.append((b, sid))
-        ax.text(x + 6.25, 55.6, "NEW", ha="center", va="top", fontsize=6.2,
+        ax.text(x + 6.25, 55.6, "NEW", ha="center", va="top", fontsize=9.6,
                 fontweight="bold", color="#b91c1c")
 
     ax.text(2, 53.5, "3   DOPANT / SLURRY / SOLVENT FORKS",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
-    dope = S.unit(ax, 2, 43.5, 18, 7.5, "WS_DOPE", "B/P/As concentrate\n+ BBr₃/POCl₃ cabinets", fill="#fecaca", edge="#b91c1c", ts=10.0)
-    slurry = S.unit(ax, 23, 43.5, 18, 7.5, "WS_SLURRY", "colloidal silica\nglass silicate + UPW", fill="#fef3c7", edge="#b45309", ts=10.0)
-    solv = S.unit(ax, 44, 43.5, 18, 7.5, "WS_SOLV", "IPA / acetone / NMP\noil-line recover", fill="#fef3c7", edge="#b45309", ts=10.0)
+            fontsize=14.7, fontweight="bold", color="#1c1917")
+    dope = S.unit(ax, 2, 43.5, 18, 7.5, "WS_DOPE", "B/P/As concentrate\n+ BBr₃/POCl₃ cabinets", fill="#fecaca", edge="#b91c1c", ts=15.5)
+    slurry = S.unit(ax, 23, 43.5, 18, 7.5, "WS_SLURRY", "colloidal silica\nglass silicate + UPW", fill="#fef3c7", edge="#b45309", ts=15.5)
+    solv = S.unit(ax, 44, 43.5, 18, 7.5, "WS_SOLV", "IPA / acetone / NMP\noil-line recover", fill="#fef3c7", edge="#b45309", ts=15.5)
     glass = S.iface(ax, 66, 43.5, 14, 7.5, "GLASS LINE", "silicate make-up", fill="#dbeafe", edge="#1d4ed8")
     oil = S.iface(ax, 82, 43.5, 16, 7.5, "OIL LINE", "organics recover\nstub", fill="#ffedd5", edge="#9a3412")
-    ax.text(11, 42.6, "NEW", ha="center", fontsize=6.2, fontweight="bold", color="#b91c1c")
-    ax.text(32, 42.6, "NEW", ha="center", fontsize=6.2, fontweight="bold", color="#b91c1c")
-    ax.text(53, 42.6, "NEW", ha="center", fontsize=6.2, fontweight="bold", color="#b91c1c")
+    ax.text(11, 42.6, "NEW", ha="center", fontsize=9.6, fontweight="bold", color="#b91c1c")
+    ax.text(32, 42.6, "NEW", ha="center", fontsize=9.6, fontweight="bold", color="#b91c1c")
+    ax.text(53, 42.6, "NEW", ha="center", fontsize=9.6, fontweight="bold", color="#b91c1c")
 
     arrow(ax, R(glass), L(slurry), S.C_UTIL, lw=1.15, ls="--")
     arrow(ax, L(oil), R(solv), S.C_ORG, lw=1.15, ls="--")
@@ -107,7 +107,7 @@ def main():
 
     # consumers
     ax.text(2, 40.5, "4   FAB CONSUMERS  (L0)",
-            fontsize=9.5, fontweight="bold", color="#1c1917")
+            fontsize=14.7, fontweight="bold", color="#1c1917")
     wet = S.unit(ax, 2, 30.0, 20, 8.0, "WET_BENCH", "RCA · HF · etch\nS09 + S31–S35 + S27", fill="#e0f2fe", edge="#0369a1")
     lap = S.unit(ax, 26, 30.0, 16, 8.0, "LAP_CMP", "S37 slurry", fill="#bae6fd", edge="#0369a1")
     tool = S.unit(ax, 46, 30.0, 18, 8.0, "FAB_TOOL", "S36 dopants · S38 solv\nox / litho / metal", fill="#e4e4e7", edge="#3f3f46")

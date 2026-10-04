@@ -49,7 +49,7 @@ def main():
            "No free outdoor dump (AQS-VENT-001).  PECVD / belt kW = vendor TBD — do not invent.")
 
     ax.text(2, 68.0, "1   FEED  (from AQS-PFD-FAB-001 polish path)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     preclean = S.iface(ax, 2, 57.5, 16, 7.5, "PRE_CLEAN",
                        "polished wafers\nAQS-PFD-FAB-001",
                        fill="#e0f2fe", edge="#0369a1")
@@ -67,28 +67,28 @@ def main():
                   fill="#fafaf9", edge="#57534e")
 
     ax.text(2, 55.0, "2   CELL TRAIN  (AQS-EQP-FAB-PV-001 tags)",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     tex = S.unit(ax, 2, 42.0, 12, 9.5, "PV_TEXTURE",
                  "alkaline\npyramid\nWS_KOH",
-                 fill="#fef3c7", edge="#b45309", ts=9.8, ss=6.6)
+                 fill="#fef3c7", edge="#b45309", ts=15.2, ss=10.2)
     emit = S.unit(ax, 16, 42.0, 12, 9.5, "PV_EMITTER",
                   "POCl₃\ndiffusion\nfurnace",
-                  fill="#ffedd5", edge="#c2410c", ts=9.8, ss=6.6)
+                  fill="#ffedd5", edge="#c2410c", ts=15.2, ss=10.2)
     psg = S.unit(ax, 30, 42.0, 12, 9.5, "PV_PSG_ETCH",
                  "PSG / edge\nisolation\n→ S10",
-                 fill="#e0f2fe", edge="#0369a1", ts=9.8, ss=6.6)
+                 fill="#e0f2fe", edge="#0369a1", ts=15.2, ss=10.2)
     arc = S.unit(ax, 44, 42.0, 12, 9.5, "PV_ARC",
                  "SiNₓ ARC\nPECVD class\ngas TBD",
-                 fill="#e0f2fe", edge="#0369a1", ts=9.8, ss=6.6)
+                 fill="#e0f2fe", edge="#0369a1", ts=15.2, ss=10.2)
     contact = S.unit(ax, 58, 42.0, 12, 9.5, "PV_CONTACT",
                      "Ag front\nAl rear\nscreen",
-                     fill="#e4e4e7", edge="#3f3f46", ts=9.8, ss=6.6)
+                     fill="#e4e4e7", edge="#3f3f46", ts=15.2, ss=10.2)
     fire = S.unit(ax, 72, 42.0, 12, 9.5, "PV_FIRE",
                   "belt fire\nfurnace\nkW TBD",
-                  fill="#ffedd5", edge="#c2410c", ts=9.8, ss=6.6)
+                  fill="#ffedd5", edge="#c2410c", ts=15.2, ss=10.2)
     iv = S.unit(ax, 86, 42.0, 12, 9.5, "PV_IV",
                 "IV / flash\nsort",
-                fill="#dcfce7", edge="#166534", ts=9.8, ss=6.6)
+                fill="#dcfce7", edge="#166534", ts=15.2, ss=10.2)
 
     arrow(ax, B(preclean), (cx(preclean), 53.5), S.C_PRODUCT, lw=1.4)
     arrow(ax, (cx(preclean), 53.5), (cx(tex), 53.5), S.C_PRODUCT, lw=1.4)
@@ -104,7 +104,7 @@ def main():
     slabel(ax, 28, 54.2, "S35", S.C_OX, size=6.6)
 
     ax.text(2, 39.5, "3   RETURNS  ·  HEAT  ·  OFFTAKE",
-            fontsize=9.2, fontweight="bold", color="#1c1917")
+            fontsize=14.3, fontweight="bold", color="#1c1917")
     etch = S.iface(ax, 2, 26.5, 16, 9.0, "ETCH RETURN",
                    "S10 → REGEN\nLEACH closed",
                    fill="#dcfce7", edge="#166534")
@@ -113,7 +113,7 @@ def main():
                     fill="#ffedd5", edge="#9a3412")
     hx = S.unit(ax, 40, 26.5, 16, 9.0, "PV_HX_Q4",
                 "fire heat reject\n→ Q4 water\n≠ Q1 flue",
-                fill="#fce7f3", edge="#9d174d", ts=10.0, ss=6.8)
+                fill="#fce7f3", edge="#9d174d", ts=15.5, ss=10.5)
     solv = S.iface(ax, 59, 26.5, 16, 9.0, "WS_SOLV path",
                    "screen wipe\n→ S38 / OIL",
                    fill="#ffedd5", edge="#9a3412")

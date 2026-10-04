@@ -41,9 +41,9 @@ def block(ax, x, y, w, h, title, sub, fill, edge):
         (x, y), w, h, boxstyle="round,pad=0.08,rounding_size=0.2",
         facecolor=fill, edgecolor=edge, linewidth=1.4, zorder=3))
     ax.text(x + w / 2, y + h * 0.62, title, ha="center", va="center",
-            fontsize=8.0, fontweight="bold", color=INK, zorder=4)
+            fontsize=12.4, fontweight="bold", color=INK, zorder=4)
     ax.text(x + w / 2, y + h * 0.28, sub, ha="center", va="center",
-            fontsize=6.2, color=P.MUTED, zorder=4)
+            fontsize=9.6, color=P.MUTED, zorder=4)
 
 
 def _edge_color(label: str):
@@ -69,17 +69,17 @@ def main():
     fig.patch.set_facecolor("white")
 
     ax.text(50, 92, "AQS-MF-001  Mass-flow claim status", ha="center",
-            fontsize=16, fontweight="bold", color=INK)
+            fontsize=24.8, fontweight="bold", color=INK)
     ax.text(50, 89.5,
             f"Closed / Partial / Claimed  ·  S01–S72 + MeOH S73–S82 (graph) + DOCK_EXPORT_TBD  ·  "
             f"no free outdoor dump  ·  {gp}",
-            ha="center", fontsize=8.2, color=P.MUTED)
+            ha="center", fontsize=12.7, color=P.MUTED)
 
     for i, (c, lab) in enumerate((
         (CLOSED, "Closed"), (PARTIAL, "Partial / Claimed"),
         (OPEN, "Closure required (path named)"), (TBD, "TBD / null claim (graph)"))):
         ax.add_patch(Rectangle((3 + i * 24, 86.2), 1.2, 1.2, facecolor=c, edgecolor=INK))
-        ax.text(5 + i * 24, 86.8, lab, va="center", fontsize=7.2, color=INK)
+        ax.text(5 + i * 24, 86.8, lab, va="center", fontsize=11.2, color=INK)
 
     # Row 1 — closed life / water / H2 partial
     block(ax, 3, 74, 28, 9.5, "LIFE + UPW", "S01–S04 S06 S12–S15\nClosed", "#e8f5e9", CLOSED)
@@ -151,7 +151,7 @@ def main():
             "Authority: AQS-VENT-001 + AQS-MF-001 + AQS-STR-001\n"
             "MeOH/DOCK blocks read flow_graph only\n"
             "Detail: cad/MASS_FLOW.md · Sheet: AQS-PFD-VENT-001",
-            ha="left", va="center", fontsize=6.8, color=P.MUTED)
+            ha="left", va="center", fontsize=10.5, color=P.MUTED)
 
     fig.tight_layout()
     fig.savefig(OUT, bbox_inches="tight", facecolor="white")
