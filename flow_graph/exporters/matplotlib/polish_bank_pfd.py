@@ -117,9 +117,9 @@ bmed = box(ax, 67.0, 91.45, 31.0, 4.6, P.C_LE_F, P.C_LEACH, P.NAME["bmed"],
            "spent polish → SALT FEED", ts=20.2, ss=13.6)
 arrow(ax, R(ew), L(hdr), P.C_LEACH, lw=1.7)
 
-CW, CH = 30.4, 8.15
+CW, CH = 30.4, 7.35
 XS = [2.0, 34.8, 67.6]
-YS = [81.55, 71.55, 61.55]
+YS = [81.85, 73.35, 64.85, 56.35]
 drawn = []
 for i, spec in enumerate(P.POLISH_CELLS):
     r, c = divmod(i, 3)
@@ -137,11 +137,12 @@ for d in drawn:
     arrow(ax, (cx(d), MY), (cx(d), d[1] + d[3]), P.C_LEACH, lw=1.05)
 slabel(ax, 18.5, 90.15, "parallel bleeds", P.C_LEACH, ha="left", size=8.8)
 
-# spent to BMED from PK-9 and right column
-arrow(ax, R(drawn[8]), (98.2, cy(drawn[8])), P.C_LEACH, lw=1.3, ls="--")
-arrow(ax, (98.2, cy(drawn[8])), (98.2, cy(bmed)), P.C_LEACH, lw=1.3, ls="--")
+# spent to BMED from PK-10
+arrow(ax, R(drawn[9]), (98.2, cy(drawn[9])), P.C_LEACH, lw=1.3, ls="--")
+arrow(ax, (98.2, cy(drawn[9])), (98.2, cy(bmed)), P.C_LEACH, lw=1.3, ls="--")
 arrow(ax, (98.2, cy(bmed)), R(bmed), P.C_LEACH, lw=1.3, ls="--")
-slabel(ax, 97.4, 70.2, "spent\nbrine", P.C_LEACH, ha="right", size=8.4)
+slabel(ax, 97.4, 62.4, "spent\nbrine", P.C_LEACH, ha="right", size=8.4)
+slabel(ax, cx(drawn[9]), drawn[9][1] + drawn[9][3] + 0.15, "PK-10 hood → alk scrubber", P.C_AN, size=7.4)
 if "IA-POL-01" in _IA:
     slabel(ax, 82.5, 93.0, edge_callout(_IA["IA-POL-01"]), P.C_LEACH, size=7.6)
 if "IA-POL-02" in _IA:

@@ -26,7 +26,7 @@ _GP = graph_path().name
 
 fig, ax = plt.subplots(figsize=(32.0, 26.0), dpi=140)
 ax.set_xlim(0, 164)
-ax.set_ylim(0, 118)
+ax.set_ylim(-24.0, 118)
 ax.set_aspect("equal")
 ax.axis("off")
 fig.patch.set_facecolor(P.BG)
@@ -150,12 +150,18 @@ leach = (tank_x, tank_y, tank_w, tank_h)
 arrow(ax, R(conv), (tank_x, tank_y + tank_h - 2.2), P.C_SOLID, lw=1.9)
 slabel(ax, 55.4, 107.2, "drop", P.C_SOLID, size=8.0)
 
-# liquor pump on the left of the tank
-pump = box(ax, 2.0, 94.4, 52.5, 4.6, P.C_LE_F, P.C_LEACH,
+# liquor pump, then CONC-ED, then the aisle. No drum on this path.
+pump = box(ax, 2.0, 94.0, 16.4, 5.2, P.C_LE_F, P.C_LEACH,
            "LEACHATE PUMP",
-           "CSTR 1  →  EW-1     coarse strainer only     no drum before the aisle",
-           ts=18, ss=12.1)
+           "CSTR 1 discharge",
+           ts=16.1, ss=11.2)
+conc = box(ax, 20.0, 94.0, 34.5, 5.2, P.C_LE_F, P.C_LEACH,
+           "CONC-ED",
+           "0.2 µm · 3 m/s · CEM · Ti/PbO2\n"
+           "2 → 0.17 m³/h    pH < 1.5",
+           ts=16.1, ss=10.2)
 arrow(ax, (tank_x, tank_y + 8.4), R(pump), P.C_LEACH, lw=1.7)
+arrow(ax, R(pump), L(conc), P.C_LEACH, lw=1.55)
 
 # ── float / sink handling ────────────────────────────────
 ax.text(2.0, 90.9, "2   SOLIDS FORK", fontsize=18.6, fontweight="bold", color=P.INK)
@@ -212,8 +218,10 @@ for i, (tag, metal, prod) in enumerate(cells_meta):
         slabel(ax, (funnels[i - 1][0] + funnels[i - 1][2] + f[0]) / 2,
                y0 + ch + 0.12, "overflow", P.C_LEACH, size=7.0)
 
-arrow(ax, B(pump), (cx(funnels[0]), funnels[0][1] + funnels[0][3]), P.C_LEACH, lw=1.9)
-slabel(ax, 10.0, 94.0, "into EW-1", P.C_LEACH, size=8.2)
+arrow(ax, B(conc), (cx(funnels[0]), funnels[0][1] + funnels[0][3]), P.C_LEACH, lw=1.9)
+slabel(ax, 12.5, 92.7, "concentrate → EW-1", P.C_LEACH, size=8.0)
+arrow(ax, (cx(conc) + 8.0, conc[1]), (tank_x + 10.0, tank_y), P.C_LEACH, lw=1.05, ls="--")
+slabel(ax, 48.2, 93.35, "diluate + dP bypass → CSTR 1", P.C_LEACH, size=7.6)
 
 # sloped bund under the aisle
 ax.add_patch(FancyBboxPatch(
@@ -313,7 +321,7 @@ ax.text(2.0, 13.15,
         "HOPPER / SHREDDER sits on a mezzanine above LEACH CSTR 1. Vibratory conveyor dumps shred straight into the tank. No filter on that drop. The tank lid is the first acid-gas hood.\n"
         "CSTR 2 is a weir on CSTR 1, not a second tank. Float goes over the weir onto FLOAT DEWATER; liquor from that conveyor is pumped back into CSTR 1; solids go DRYER → INDUCTION PYROLYZER (OIL LINE stub).\n"
         "CSTR 3 is an injection-molded PVC / fiberglass auger in the floor of CSTR 1. It lifts undissolved sink onto SINK DEWATER (drain returns to CSTR 1) then VIBRATORY SPLIT: dense plastic jumper to OIL LINE, grit to GLASS / CERAMIC BRANCH.\n"
-        "Pregnant liquor is pumped from CSTR 1 into EW-1 (coarse strainer only). Au plates and drops the EW-1 funnel. Liquor overflows EW-1 → EW-2 (Ag) → … → EW-9 (Zn). Spent liquor to BMED REGEN.\n"
+        "Pregnant liquor is pumped from CSTR 1 through CONC-ED (alumina crossflow, then CEM) into EW-1. Diluate and a high-dP bypass return to CSTR 1. Au plates and drops the EW-1 funnel. Liquor overflows EW-1 → EW-2 (Ag) → … → EW-9 (Zn). Spent liquor to BMED REGEN.\n"
         "Each EW / PK cell is a funnel-bottom CPVC tank with a center CEM divider (A | CEM | C). Powder or loose sheet leaves through the bottom valve. A sloped bund under the aisle catches drips; bund liquor returns to CSTR 1.\n"
         "Manual / startup: valve into a lidded pail in the bund, then one shared HARVEST VACUUM DRUM FILTER. Auto: each cell has its own drum, then induction or oil-gas melt fired from the OIL LINE header that also feeds AFTERBURNER.\n"
         "Dust, acid gas, H2, and oil vapor never share a header.\n""Acid-gas end state (AQS-VENT-001): ALK + ACID_POLISH → CRU; upset stack residual only — not continuous outdoor dump.",
@@ -329,7 +337,7 @@ ax.text(4.0, 10.3, "MACHINE / PROCESS LIST  ·  AQS-PFD-WET-001  ·  locked name
         ha="left", va="top", fontsize=15.5, fontweight="bold", color=P.INK, zorder=4)
 ax.text(4.0, 8.7,
         "FEED: HOPPER / SHREDDER · VIBRATORY CONVEYOR\n"
-        "LEACH: LEACH CSTR 1 (+ CSTR 2 WEIR · CSTR 3 AUGER) · LEACHATE PUMP\n"
+        "LEACH: LEACH CSTR 1 (+ CSTR 2 WEIR · CSTR 3 AUGER) · LEACHATE PUMP · CONC-ED\n"
         "SOLIDS: FLOAT DEWATER · DRYER → INDUCTION PYROLYZER (OIL LINE) · SINK DEWATER · VIBRATORY SPLIT · GLASS / CERAMIC BRANCH\n"
         "EW: EW-1…EW-9 funnel cells · SLOPED BUND · HARVEST VDF / MELT · METALS / ELEMENTS\n"
         "PRECIP: P-Al · P-Mg · P-Ca → Ca / Al / Mg HYDROXIDES\n"
@@ -347,9 +355,20 @@ ax.text(82.0, 0.30, P.NAMING_FOOT + "    DOC  AQS-PFD-WET-001",
 
 
 _reg = ia_register_lines(_SEC.values())
-ax.text(2.0, 0.95, f"GRAPH WET/REC  ({_GP})  ·  null rates stay null", fontsize=10.8, fontweight="bold", color=P.INK)
-for i, line in enumerate(list(_reg)[:10]):
-    ax.text(2.0, 0.55 - i * 0.28, line, ha="left", va="top", fontsize=8.1, color=P.MUTED)
+ax.text(2.0, -14.6, "7   ANIONS · SPLIT · MOLTEN · REDUCE    vessel / acid / return",
+        fontsize=14.5, fontweight="bold", color=P.INK)
+ax.text(2.0, -16.0,
+        "AEM BANK: PP frame, AEM-CAST film stub. No acid in the cut. HCl CIP only. Borate/phosphate/sulfate/fluoride concentrate → farm. Diluate → BMED salt. As is not this cut.\n"
+        "K SPLIT: cooled PP crystallizer. No acid. KCl → farm. NaCl brine → BMED.\n"
+        "N SCRUB: packed tower on burnout and pyro headers. Wall waits on POL-VCM. BMED HCl. NH4 salt → farm.\n"
+        "PK-5B: PP lot tank, not a flow cell. Oxalic / HCl redissolve. Nd/Pr/Dy/Tb and La–Ce lots → molten cells. Mother liquor → CSTR 1.\n"
+        "MOLTEN-SALT: dry chloride cell, graphite shell. No aqueous acid. Metal out. Cl2 → alk scrubber.\n"
+        "Si / B REDUCE: arc furnace. Char pipe from OIL LINE pyro. No aqueous EW. Si → FAB PREP. Slag → alkali fusion.\n"
+        "AEM-CAST and POL-VCM are the first copy-stoppers. Neither is on site.",
+        ha="left", va="top", fontsize=11.2, color=P.MUTED, linespacing=1.18)
+ax.text(2.0, -22.4, f"GRAPH WET/REC  ({_GP})  ·  null rates stay null", fontsize=10.8, fontweight="bold", color=P.INK)
+for i, line in enumerate(list(_reg)[:6]):
+    ax.text(2.0, -23.2 - i * 0.28, line, ha="left", va="top", fontsize=8.1, color=P.MUTED)
 if "IA-WET-FLOAT-01" in _SEC:
     slabel(ax, 20.0, 88.0, edge_callout(_SEC["IA-WET-FLOAT-01"]), P.C_LEACH, size=6.8)
 if "IA-WET-C29-01" in _SEC:

@@ -141,11 +141,14 @@ sil = box(ax, 2.0, 18.55, 30.4, 10.2, P.C_PROD_F, P.C_PROD, P.NAME["silicate"],
 hyd = box(ax, 34.8, 18.55, 30.4, 10.2, P.C_PROD_F, P.C_PROD, P.NAME["hydroxides"],
           "Ca / Al / Mg cakes\n→ molten-salt cells", ts=21.7, ss=14.9)
 grit = box(ax, 67.6, 18.55, 30.4, 10.2, P.C_SOL_F, P.C_SOLID, P.NAME["grit"],
-           "undigested ceramic\nAl2O3 / SiC / filler\nmedia / aggregate", ts=21.7, ss=14.9)
+           "Al2O3 / SiC / zircon\nstill ore, not aggregate", ts=20.5, ss=13.6)
 
 arrow(ax, B(d3), (cx(sil), sil[1] + sil[3]), P.C_PROD, lw=1.6)
 arrow(ax, B(d3), T(hyd), P.C_INORG, lw=1.6)
 arrow(ax, B(d3), (cx(grit), grit[1] + grit[3]), P.C_SOLID, lw=1.6)
+char = box(ax, 67.6, 10.4, 30.4, 5.6, P.C_SOL_F, P.C_SOLID, "PYRO CHAR → SI-REDUCE",
+           "pipe from OIL LINE furnace\ncarbon reductant, not mill feed", ts=16.4, ss=12.1)
+arrow(ax, B(grit), T(char), P.C_SOLID, lw=1.2, ls="--")
 
 # leach regen stub
 reg = box(ax, 2.0, 12.15, 30.4, 4.5, P.C_LE_F, P.C_LEACH, P.NAME["regen"],

@@ -173,6 +173,7 @@ POLISH_CELLS = [
     ("PK-7", "Tl", "E° –0.34 V", "Ti Gr.2 / MMO", "316L or iodide precip", "powder / cake"),
     ("PK-8", "Bi / Sb", "E° +0.32 / +0.15", "Ti Gr.2 / MMO", "316L sheet", "powder"),
     ("PK-9", "U / Th / Ra / Po", "sealed CEM", "Ti Gr.2 / MMO", "Ti blank, isolated sump", "sludge → grit vitrify"),
+    ("PK-10", "As", "sealed · not aqueous EW", "Ti / PbO2", "Ti blank, welded lid", "sublimed metal"),
 ]
 
 # ── leach ────────────────────────────────────────────────
