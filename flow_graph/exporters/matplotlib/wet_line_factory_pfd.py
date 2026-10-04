@@ -358,13 +358,12 @@ _reg = ia_register_lines(_SEC.values())
 ax.text(2.0, -14.6, "7   ANIONS · SPLIT · MOLTEN · REDUCE    vessel / acid / return",
         fontsize=14.5, fontweight="bold", color=P.INK)
 ax.text(2.0, -16.0,
-        "AEM BANK: PP frame, AEM-CAST film stub. No acid in the cut. HCl CIP only. Borate/phosphate/sulfate/fluoride concentrate → farm. Diluate → BMED salt. As is not this cut.\n"
-        "K SPLIT: cooled PP crystallizer. No acid. KCl → farm. NaCl brine → BMED.\n"
-        "N SCRUB: packed tower on burnout and pyro headers. Wall waits on POL-VCM. BMED HCl. NH4 salt → farm.\n"
-        "PK-5B: PP lot tank, not a flow cell. Oxalic / HCl redissolve. Nd/Pr/Dy/Tb and La–Ce lots → molten cells. Mother liquor → CSTR 1.\n"
-        "MOLTEN-SALT: dry chloride cell, graphite shell. No aqueous acid. Metal out. Cl2 → alk scrubber.\n"
-        "Si / B REDUCE: arc furnace. Char pipe from OIL LINE pyro. No aqueous EW. Si → FAB PREP. Slag → alkali fusion.\n"
-        "AEM-CAST and POL-VCM are the first copy-stoppers. Neither is on site.",
+        "AEM BANK: two feeds, post-polish brine raised to pH 9 and digest liquor. Borate to B2O3, phosphate to farm, fluoride to the HF cell. Diluate to BMED salt. Arsenic does not enter.\n"
+        "K SPLIT: PP crystallizer, 5 °C to 10 °C. KCl to farm. NaCl liquor to BMED.\n"
+        "N SCRUB: packed tower on burnout and pyro gas. BMED HCl. NH4Cl to farm. NOx stays on the alkaline scrubber.\n"
+        "PK-5B: batch PP lot tank. Dissolve oxalate in HCl. La–Ce double sulfate. Nd/Pr and Dy/Tb oxalate lots, calcined, to the retort.\n"
+        "MOLTEN SALT: Al and Mg pots near 700 °C. Ca pot near 800 °C, contact cathode. REE is a Ca retort at 900 °C to 1100 °C, not a pot. Cl2 from the pots to the CRU.\n"
+        "SILICON ARC: gel + char near 1800 °C, then directional solidification. BORON RETORT: B2O3 + Mg or Ca near 850 °C. Boron does not enter the arc. Slag to fusion.",
         ha="left", va="top", fontsize=11.2, color=P.MUTED, linespacing=1.18)
 ax.text(2.0, -22.4, f"GRAPH WET/REC  ({_GP})  ·  null rates stay null", fontsize=10.8, fontweight="bold", color=P.INK)
 for i, line in enumerate(list(_reg)[:6]):
