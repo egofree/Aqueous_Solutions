@@ -1,169 +1,60 @@
-# aqueous-solutions (share / publish tree)
+# Aqueous Solutions
 
-CERN-OHL-S-2.0 publish layout for the Aqueous closed-loop recycling plant
-CAD, PFDs, ISO sheets, and authority docs.
+Closed-loop plant that takes waste or natural mineral feedstock and returns metals, salts, silica, hydrocarbons, and regenerated acid. Energy may be external. A second plant is the replication bar: the mass input is waste or feedstock, not a purchased reagent kit.
 
-This repository is the **CERN-OHL-S publish tree**: CAD, flow graph,
-design-tool source, ISO sheets, and authority docs intended for sharing.
+License: CERN-OHL-S-2.0.
 
-Active day-to-day editing may happen in a separate local working hub; refresh
-this tree from that hub before each publish. Absolute workstation paths and
-offline archives are intentionally omitted here.
+## What the plant does
+
+One leach tank. Hydrochloric acid and sodium chlorate dissolve the feed at 70–85 °C. Three streams leave that tank.
+
+- Sink solids leave on the floor auger, then a vibratory split. Dense plastic joins the dryer. Glass and ceramic are rinsed, burned out, milled, and digested in sodium hydroxide. Quartz that does not open goes to alkali fusion. Silica is dropped, calcined, and reduced with pyrolyzer char.
+- Float leaves over the wall weir, is dried, and is cracked in an induction pyrolyzer. The condensate is split into naphtha (C5–C10), fuel oil (C11–C18), and wax (C19–C32). Bottoms return to the auger. Char is the silicon reductant.
+- Liquor is coalesced, filtered, and concentrated on a cation-exchange stack, then electrowon in order from gold through zinc. Lithium and the rare earths are bled before the hydroxide cuts. Aluminum, magnesium, and calcium leave as hydroxides and are reduced in chloride pots. Rare-earth oxides are reduced in a separate calcium retort. Boron oxide is reduced in its own retort, not in the silicon arc.
+
+Spent brine is raised to pH 9. An anion-exchange stack concentrates borate, phosphate, sulfate, and fluoride. The cuts are after the stack. Diluate goes to a potassium chloride crystallizer, then to bipolar-membrane electrodialysis, which makes the hydrochloric acid and the sodium hydroxide. Chlorine from the anodes and the pots is absorbed to sodium chlorate and returned with the acid. Aqueous cells do not make aluminum, magnesium, calcium, lithium, titanium, silicon, or the rare earths.
 
 ## Layout
 
 ```
-README.md LICENSE .gitignore .gitattributes DEPENDENCIES.md
-docs-authority/     # cad/*.md authority + hub process docs (no Odysseus)
-models/freecad/     # *.py builders, *.FCStd, *.step
-models/openscad/    # root + detail/ + foam_ew/ *.scad
-models/export/      # *.stl (root + detail/; no *.log)
-iso/                # AQS-ISO-*.png + iso_fab_drawings.pdf
-flow_graph/         # plant flow graph schema, JSON, views/, derived/, tests
-  exporters/matplotlib/  # optional legacy PFD/SLD generators (PNGs not shipped)
-design_tool/        # aqs_design_tool + web source (no node_modules/dist/sandbox)
-tables/             # BOM / materials / shopping lists
-media/              # animation stills (D0–D6, F0) + plant_phase_d.mp4 + logo3.png
+docs-authority/     duty notes, building stack, CAD protocol, decisions
+flow_graph/         plant graph, schema, SVG views, matplotlib exporters
+media/pfd/          rendered process sheets
+media/              animation stills and plant_phase_d.mp4
+models/freecad/     FreeCAD builders. SCALE_M = 1.0 is the build size
+models/openscad/    parametric solids
+models/export/      STL exports
+iso/                ISO sheets
+design_tool/        graph UI source
+tables/             BOM and material lists
 ```
 
-## Doc authority
+The process sheets in `media/pfd/` are the current drawing set. `master_disassembly_pfd.png` is the equipment graph of the disassembly line. The wet line, solids line, oil line, polish bank, and completion sheet are the detail views. Generators live in `flow_graph/exporters/matplotlib/`. Duty notes that are not part of a drawing live in `docs-authority/notes/`.
 
-In this tree, **only `docs-authority/` holds** `SIGN_SCHEDULE.md`,
-`SYSTEM_MODEL_PLAN.md`, `FREECAD_PROTOCOL.md`, `AGENT_CAD_PROTOCOL.md`,
-and other cad-authority markdown. Hub-root duplicates are not copied here;
-cad/ wins.
+Graph SVG views under `flow_graph/views/` are the topology export. They are not a substitute for the equipment sheets.
 
-See `docs-authority/AUTHORITY.md` and `docs-authority/SCALE_MODEL.md`.
+## Rebuild
 
-## Scale: plant.FCStd is SCALE_M=1.0 (M1 baseline)
-
-On-disk `models/freecad/plant.FCStd` is built and saved at **`SCALE_M = 1.0`**
-(4×3 bays / M1 / one life plate / one basement). Driver:
-
-```python
-# models/freecad/params.py
-SCALE_M = 1.0
-```
-
-`SCALE_M = 2.0` was a review-only pass; restore to 2 only for intentional
-review rebuilds. Rules: `docs-authority/SCALE_MODEL.md` §7–§8.
-
-## Building 3D models from the plant flow graph
-
-See **`docs-authority/BUILD_3D_FROM_FLOW.md`** (end-to-end rebuild) and
-**`docs-authority/STACK_3D_DECISION.md`** (FreeCAD default; Three.js gated).
-Pipeline protocol: **`docs-authority/AGENT_CAD_PROTOCOL.md`**.
-
-### Status and limitations
-
-| Path | Behaviour |
-|---|---|
-| **Baseline rebuild** | FreeCAD builders read `models/freecad/params.py` via `models/REBUILD.sh` (FreeCAD 1.0; `SCALE_M=1.0`). |
-| **Graph → placement** | Export-pack `flow_graph_snapshot.json` does **not** drive FreeCAD placement or vessel millimetres. Bridge: `models/freecad/graph_geometry_bridge.py` (inventory, name map, overlay fork, presence filter, pack recipe). |
-| **2D primary** | `flow_graph/views/*.svg`. Matplotlib PNGs are optional exporters, not authority, and are not shipped. |
-| **3D stack** | FreeCAD rebuild remains the default. Three.js only with a later written decision revising `STACK_3D_DECISION.md`. |
+FreeCAD 1.0 and OpenSCAD are required for the solids. This tree does not vendor those binaries.
 
 ```bash
 cd models && bash REBUILD.sh
-cd freecad && python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json
-```
-
-## How to rebuild
-
-Doc: `docs-authority/REBUILD.md` (AQS-REB-001).  
-`SCALE_M` in `models/freecad/params.py` = **actual building size** (not plot zoom). Manufacturing `1.0`; `2.0` review-only.
-
-**From this repository:**
-
-```bash
-cd models
-bash REBUILD.sh            # path shims + freecadcmd build_plant.py
-bash REBUILD.sh --stls     # optional OpenSCAD first (openscad on PATH)
-```
-
-Plant only (FreeCAD 1.0):
-
-```bash
 cd models/freecad && /usr/bin/freecadcmd build_plant.py
 ```
 
-Primary diagrams are **`flow_graph/views/*.svg`** (graph-driven).
-Matplotlib PFD/SLD generators are optional under
-`flow_graph/exporters/matplotlib/` — **PNGs are not shipped** in this tree.
-Optional local PNG regenerate writes next to those scripts; do not commit PNGs.
+`SCALE_M = 1.0` in `models/freecad/params.py` is the manufacturing size. `2.0` is a review scale only. Level datums and the building stack are in `docs-authority/`. See `docs-authority/REBUILD.md` and `docs-authority/BUILD_3D_FROM_FLOW.md`.
 
-A separate local working hub (not in this repo) may hold day-to-day CAD edits
-and bridged PNG working copies. Refresh this publish tree from that hub before
-sharing; do **not** copy hub PFD PNGs into this tree.
-
-Layout mapping when adapting scripts from a local hub:
-
-| Hub-style path | This repo |
-|---|---|
-| `cad/freecad/` | `models/freecad/` |
-| `cad/*.scad`, `cad/detail/`, `cad/foam_ew/` | `models/openscad/` |
-| `cad/export/`, `cad/detail/stl/` | `models/export/` |
-| `cad/iso/` | `iso/` |
-| `pfd_scripts/` | `flow_graph/exporters/matplotlib/` (scripts only; PNGs not shipped) |
-| hub `*_pfd.png` / SLD | **not published** |
-| `cad/*.md` | `docs-authority/` |
-| `cad/animation/`, `cad/freecad/animation/` | `media/` |
-| `flow_graph/` | `flow_graph/` |
-| `design_tool/` (src only) | `design_tool/` |
-
-## flow_graph + design_tool (v1 source)
-
-Ship **source only** in this share tree. Odysseus planning and local
-`planning/` audits are **not** published here.
-
-**flow_graph** (authority-adjacent plant graph):
+Process sheets:
 
 ```bash
-cd flow_graph
-# schema + plant_flow_graph.json + views/ + derived/
-python3 -m pytest test_authority_contract.py   # or: python3 check_authority_contract.py
+cd flow_graph/exporters/matplotlib
+python3 master_disassembly_pfd.py
+python3 wet_line_factory_pfd.py
+python3 glass_ceramic_pfd.py
+python3 oil_line_pfd.py
+python3 completion_pfd.py
 ```
 
-**design_tool** (MVS sandbox UI — contributors rebuild deps locally):
+## Authority
 
-```bash
-cd design_tool
-python3 -m pip install -r requirements.txt
-# API (from design_tool/; needs hub or local flow_graph paths per README)
-python3 -m aqs_design_tool
-cd web && npm ci && npm run dev
-```
-
-Do not commit `web/node_modules/`, `web/dist/`, `.sandbox_store/`, or `exports/sbx_*`
-(ignored). Keep `exports/README.md` only.
-
-## Git / LFS
-
-- `*.FCStd` and `*.stl` → Git LFS (see `.gitattributes`)
-- Ignored: `__pycache__`, `*.log`, `*.FCBak`, `.omo`, `node_modules`, `dist`, `.sandbox_store`, `exports/sbx_*`, `ODYSSEUS*`, `planning/`, `archive/`, `*.zip`
-
-## External open-source dependencies
-
-Aqueous links to external open-source projects for design reference only:
-[Precious Plastic](https://preciousplastic.com/) (MFG polymer line),
-[SEM-Tech / open-sourced off-the-shelf ion-exchange membrane](https://github.com/egofree/Open-sourced-off-the-shelf-ion-exchange-membrane)
-(wet-line and BMED / MeOH IEM), and the
-[Civilization Starter Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit)
-(OSE GVCS machine catalogue). See [`DEPENDENCIES.md`](DEPENDENCIES.md) for
-roles, licenses, upstream provenance, and the explicit **not bundled — link
-only** boundary. CSK → Aqueous sector/unit inventory:
-[`docs-authority/OSE_CSK_ALIGNMENT.md`](docs-authority/OSE_CSK_ALIGNMENT.md).
-
-## Related projects / Upstream references
-
-| Project | Role |
-|---|---|
-| [Precious Plastic](https://preciousplastic.com/) | MFG plastic-recycling machine and workspace reference |
-| [SEM-Tech / open IEM](https://github.com/egofree/Open-sourced-off-the-shelf-ion-exchange-membrane) | Wet-line and MeOH IEM fabrication reference |
-| [Civilization Starter Kit](https://github.com/OpenSourceEcology/Civilization-Starter-Kit) | OSE Global Village Construction Set documentation: modular DIY blueprints for 50 industrial machines (code GPLv3; other content CC-BY-SA). Alignment map: [`OSE_CSK_ALIGNMENT.md`](docs-authority/OSE_CSK_ALIGNMENT.md). |
-
-Full attribution and license notes: [`DEPENDENCIES.md`](DEPENDENCIES.md).
-
-## Licence
-
-CERN-OHL-S-2.0 — see `LICENSE`.
+`docs-authority/AUTHORITY.md` is the lock list. The typed plant graph in `flow_graph/plant_flow_graph.json` is the topology source. Equipment duties written on the process sheets are the drawing source for the disassembly line. Where a sheet and an older note disagree, the sheet is the later drawing.
