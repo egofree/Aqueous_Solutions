@@ -16,7 +16,7 @@ Undissolved sink only. Sequence is rinse, 450–550 °C indirect burnout, mill u
 
 ## AEM bank
 
-Two feeds. Post-polish brine is acidic; it is raised to pH 9 with BMED NaOH so borate is B(OH)4− and phosphate is HPO4 2−. Digest liquor is already alkaline. AEM stack, PP frame. Diluate to BMED salt. Borate concentrate is acidified and calcined to B2O3 for the boron retort. Phosphate to the farm. Sulfate to the PK-5B double-sulfate cut, excess to BMED. Fluoride to the HF electrodialysis cell, not the farm. Arsenic does not enter this stack.
+The stack concentrates anions. It does not fractionate them. Post-polish brine is raised to pH 9 so borate is B(OH)4− and phosphate is HPO4 2−. Digest liquor is already alkaline and is cut before the silica drop. Stack is 16 pairs, 4 m², Ti/PbO2 rinse, HCl CIP. Diluate to the K split, then BMED. Concentrate cuts in order: CaF2 to the HF cell, cooled sodium sulfate to PK-5B, phosphate to the farm, borate calcined to B2O3. Arsenic does not enter.
 
 ## K split
 

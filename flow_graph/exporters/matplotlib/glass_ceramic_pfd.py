@@ -1,179 +1,131 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: CERN-OHL-S-2.0
-"""GLASS / CERAMIC BRANCH — graph-bridged IA-GLASS-* overlays.
-
-Sole topology authority: ``flow_graph/plant_flow_graph.json``.
-IA-GLASS-01…03 + IA-GLASS-Q2 from graph; null rates stay null. No invented S##.
-"""
+"""SOLIDS LINE detail sheet. Wide row layout, same pitch as the disassembly sheet."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 import params as P
-from drawlib import box, cx, cy, R, L, T, B, arrow, slabel, hx_diamond
+from drawlib import box, cx, cy, R, L, T, B, arrow, slabel, hx_diamond, legend_strip
 
-from flow_graph.pfd_bridge import (  # noqa: E402
-    edge_callout,
-    graph_path,
-    ia_edges,
-    ia_register_lines,
-    load,
-)
-
-_G = load()
-_IA = {e.stream_id: e for e in ia_edges("glass", _G)}
-_GP = graph_path().name
-
-fig, ax = plt.subplots(figsize=(20.0, 28.0), dpi=140)
-ax.set_xlim(0, 100)
-ax.set_ylim(0, 100)
+fig, ax = plt.subplots(figsize=(34.0, 22.0), dpi=140)
+ax.set_xlim(0, 168)
+ax.set_ylim(-8.0, 112)
 ax.set_aspect("equal")
 ax.axis("off")
 fig.patch.set_facecolor(P.BG)
 ax.set_facecolor(P.BG)
 
-ax.text(50, 99.35, "SOLIDS LINE  —  SPLIT · RINSE · BURNOUT · FUSION · DIGEST · REDUCE",
-        ha="center", va="top", fontsize=28.7, fontweight="bold", color=P.INK)
-ax.text(50, 97.55,
-        "Undissolved sink solids at the head   ·   silicate / hydroxides / grit at the bottom   ·   no FR-4 in the oil auger",
-        ha="center", va="top", fontsize=18.6, color=P.MUTED)
-ax.text(50, 96.15,
-        f"Graph-bridged IA-GLASS-* from {_GP}  ·  null rates stay null  ·  no invented S##",
-        ha="center", va="top", fontsize=14, color=P.MUTED)
+ax.text(84, 110.4, "SOLIDS LINE  —  SPLIT · RINSE · BURNOUT · FUSION · DIGEST · REDUCE",
+        ha="center", va="top", fontsize=26, fontweight="bold", color=P.INK)
+ax.text(84, 107.6,
+        "Undissolved sink at the head    ·    Si metal, boron, hydroxides, grit at the bottom    ·    no FR-4 in the oil auger",
+        ha="center", va="top", fontsize=16.2, color=P.MUTED)
 
-# head
-leach = box(ax, 2.0, 91.35, 38.0, 4.7, P.C_LE_F, P.C_LEACH, P.NAME["leach_fork"],
-            "undissolved sink  →  VDF", ts=20.5, ss=14.3)
-vdf = box(ax, 42.0, 91.35, 27.0, 4.7, P.C_SOL_F, P.C_SOLID, P.NAME["vdf"],
-          "cake to this sheet", ts=20.2, ss=14)
-oil = box(ax, 71.0, 91.35, 27.0, 4.7, P.C_OIL_F, P.C_OIL, P.NAME["oil"],
-          "dense-plastic handoff", ts=20.2, ss=14)
-arrow(ax, R(leach), L(vdf), P.C_LEACH, lw=1.5)
+ax.text(2.0, 105.4, "1   HEAD", fontsize=17.5, fontweight="bold", color=P.INK)
+leach = box(ax, 2.0, 96.6, 38.0, 6.4, P.C_LE_F, P.C_LEACH, P.NAME["leach_fork"],
+            "undissolved sink → VDF", ts=18.2, ss=13.2)
+vdf = box(ax, 44.0, 96.6, 36.0, 6.4, P.C_SOL_F, P.C_SOLID, P.NAME["vdf"],
+          "cake to this sheet", ts=18.2, ss=13.2)
+scr = box(ax, 84.0, 96.6, 46.0, 6.4, P.C_SOL_F, P.C_SOLID, P.NAME["screen"],
+          "glass · ceramic · FR-4 down", ts=18.2, ss=13.2)
+oil = box(ax, 134.0, 96.6, 32.0, 6.4, P.C_OIL_F, P.C_OIL, P.NAME["oil"],
+          "dense plastic → dryer", ts=18.2, ss=13.2)
+arrow(ax, R(leach), L(vdf), P.C_LEACH, lw=1.6)
+arrow(ax, R(vdf), L(scr), P.C_SOLID, lw=1.6)
+arrow(ax, R(scr), L(oil), P.C_OIL, lw=1.5)
+slabel(ax, 131.8, 100.2, "dense plastic", P.C_OIL, size=9.0)
 
-scr = box(ax, 18.0, 82.55, 64.0, 6.0, P.C_SOL_F, P.C_SOLID, P.NAME["screen"],
-          "wet classification    glass · ceramic · FR-4 down    dense thermoplastic across",
-          ts=22.3, ss=15.2)
-arrow(ax, B(vdf), T(scr), P.C_SOLID, lw=2.0)
+ax.text(2.0, 94.4, "2   RINSE", fontsize=17.5, fontweight="bold", color=P.INK)
+wash = box(ax, 2.0, 86.2, 128.0, 6.2, P.C_IN_F, P.C_INORG, P.NAME["wash"],
+           "countercurrent    liquor and fines → REGEN LEACH / BMED SALT", ts=18.6, ss=13.4)
+arrow(ax, B(scr), T(wash), P.C_INORG, lw=1.7)
 
-# plastic jumper to oil
-arrow(ax, R(scr), (scr[0] + scr[2] + 6.5, cy(scr)), P.C_OIL, lw=1.7)
-arrow(ax, (scr[0] + scr[2] + 6.5, cy(scr)), (scr[0] + scr[2] + 6.5, cy(oil)), P.C_OIL, lw=1.7)
-arrow(ax, (scr[0] + scr[2] + 6.5, cy(oil)), L(oil), P.C_OIL, lw=1.7)
-slabel(ax, 86.5, 80.15, "dense PE / PVC / PET\n→ DRYER", P.C_OIL, ha="center", size=9.0)
-
-wash = box(ax, 18.0, 73.35, 64.0, 6.0, P.C_IN_F, P.C_INORG, P.NAME["wash"],
-           "countercurrent    liquor and fines → REGEN LEACH / BMED SALT", ts=22.3, ss=15.2)
-arrow(ax, B(scr), T(wash), P.C_INORG, lw=2.0)
-
-# burnout + afterburner pair
+ax.text(2.0, 84.0, "3   BURNOUT    atmospheres isolated from the oil auger",
+        fontsize=17.5, fontweight="bold", color=P.INK)
 ax.add_patch(FancyBboxPatch(
-    (8.0, 54.55), 84.0, 16.2,
-    boxstyle="round,pad=0.12,rounding_size=0.30",
-    facecolor="#eff6ff", edgecolor=P.C_INORG, linewidth=1.7, zorder=2,
+    (2.0, 66.4), 148.0, 15.4,
+    boxstyle="round,pad=0.1,rounding_size=0.28",
+    facecolor="#eff6ff", edgecolor=P.C_INORG, linewidth=1.5, zorder=2,
 ))
-ax.text(50.0, 70.15, P.NAME["burnout"], ha="center", va="top",
-        fontsize=23.2, fontweight="bold", color=P.INK, zorder=4)
-ax.text(50.0, 68.35, f"{P.BURNOUT_T}    jacketed by AFTERBURNER flue    not the oil auger    atmospheres isolated",
-        ha="center", va="top", fontsize=15.5, color=P.MUTED, zorder=4)
+ax.text(76.0, 80.6, P.NAME["burnout"], ha="center", va="top",
+        fontsize=18.5, fontweight="bold", color=P.INK, zorder=4)
+ax.text(76.0, 78.7, f"{P.BURNOUT_T}    jacketed by afterburner flue    oil vapor does not enter the rotary",
+        ha="center", va="top", fontsize=13.6, color=P.MUTED, zorder=4)
+rot = box(ax, 4.2, 67.6, 52.0, 9.0, P.C_IN_F, P.C_INORG, "INDIRECT-FIRED ROTARY",
+          "SiC / high-Ni tube    organics and epoxy out    glass and ceramic stay", ts=16.8, ss=12.6)
+ab = box(ax, 60.0, 67.6, 42.0, 9.0, P.C_HEAT_F, P.C_HEAT, P.NAME["afterburner"],
+         "oil-line NCG + burnout off-gas    Q1 source", ts=16.8, ss=12.6)
+jkt = box(ax, 106.0, 67.6, 40.0, 9.0, P.C_HEAT_F, P.C_HEAT, "FLUE JACKET",
+          "HX-7    Q2 to the rotary    no mixing", ts=16.8, ss=12.6)
+arrow(ax, R(ab), L(jkt), P.C_HEAT, lw=1.5)
+arrow(ax, L(jkt), R(rot), P.C_HEAT, lw=1.3, ls="--")
+arrow(ax, B(wash), T(rot), P.C_INORG, lw=1.6)
+h7 = hx_diamond(ax, 158.0, 72.1, "HX-7", P.HX["HX-7"])
+arrow(ax, R(jkt), (h7[0] - 1.8, h7[1]), P.C_HEAT, lw=1.15, ls="--")
 
-rot = box(ax, 10.2, 56.55, 36.6, 9.0, P.C_IN_F, P.C_INORG, "INDIRECT-FIRED\nROTARY",
-          "SiC / high-Ni tube\norganics + epoxy out\nglass / ceramic stay", ts=20.2, ss=14)
-ab = box(ax, 50.0, 56.55, 20.0, 9.0, P.C_HEAT_F, P.C_HEAT, P.NAME["afterburner"],
-         "oil-line NCG\n+ burnout off-gas\nQ1 source", ts=19.5, ss=13.6)
-jkt = box(ax, 73.2, 56.55, 16.6, 9.0, P.C_HEAT_F, P.C_HEAT, "FLUE\nJACKET",
-          "HX-7\nQ2 to rotary\nno mixing", ts=19.5, ss=13.6)
-arrow(ax, R(ab), L(jkt), P.C_HEAT, lw=1.6)
-arrow(ax, L(jkt), R(rot), P.C_HEAT, lw=1.4, ls="--")
-arrow(ax, B(wash), T(rot), P.C_INORG, lw=1.9)
-if "IA-GLASS-01" in _IA:
-    slabel(ax, cx(wash), wash[1] - 0.55, edge_callout(_IA["IA-GLASS-01"]), P.C_INORG, size=8.0)
+ax.text(2.0, 64.2, "4   MILL AND CONDENSATE", fontsize=17.5, fontweight="bold", color=P.INK)
+mill = box(ax, 2.0, 55.6, 70.0, 6.4, P.C_IN_F, P.C_INORG, P.NAME["mill"],
+           "< 300 µm    dry mill after burnout", ts=18.2, ss=13.2)
+bmed = box(ax, 78.0, 55.6, 72.0, 6.4, P.C_LE_F, P.C_LEACH, P.NAME["bmed"],
+           "Br- / HCl vapor condensate in    not vented", ts=18.0, ss=13.0)
+arrow(ax, B(rot), T(mill), P.C_INORG, lw=1.6)
+arrow(ax, R(rot), L(bmed), P.C_LEACH, lw=1.2, ls="--")
+slabel(ax, 74.5, 58.6, "Br-", P.C_LEACH, size=9.0)
 
-
-# Br- to BMED
-bmed = box(ax, 73.2, 47.55, 16.6, 5.4, P.C_LE_F, P.C_LEACH, P.NAME["bmed"],
-           "Br- condensate in", ts=18.9, ss=13.3)
-arrow(ax, B(rot), (cx(rot) + 18, bmed[1] + bmed[3]), P.C_LEACH, lw=1.3, ls="--")
-arrow(ax, (cx(rot) + 18, bmed[1] + bmed[3]), L(bmed), P.C_LEACH, lw=1.3, ls="--")
-slabel(ax, 62.0, 52.55, "Br- / HCl vapor\ncondensate", P.C_LEACH, size=8.8)
-
-mill = box(ax, 10.2, 47.55, 36.6, 5.4, P.C_IN_F, P.C_INORG, P.NAME["mill"],
-           "< 300 µm    dry mill after burnout", ts=21.1, ss=14.6)
-arrow(ax, B(rot), T(mill), P.C_INORG, lw=1.9)
-if "IA-GLASS-02" in _IA:
-    slabel(ax, cx(mill), mill[1] + mill[3] + 0.35, edge_callout(_IA["IA-GLASS-02"]), P.C_INORG, size=8.0)
-
-
-# digest
-dig = box(ax, 10.2, 32.55, 62.6, 12.4, P.C_IN_F, P.C_INORG, "", "")
-ax.text(41.5, 44.15, P.NAME["digest"], ha="center", va="top",
-        fontsize=22.6, fontweight="bold", color=P.INK, zorder=5)
-ax.text(41.5, 42.35, f"{P.DIGEST_T}    BMED NaOH    glass → silicate    Al/Ca/Mg → hydroxides",
-        ha="center", va="top", fontsize=14.9, color=P.MUTED, zorder=5)
-
-d1 = box(ax, 12.2, 33.35, 18.0, 6.4, P.C_LE_F, P.C_LEACH, "NaOH FEED",
-         f"from BMED BASE\nwall {P.WALL['bmed_base']}", ts=18.6, ss=13.6)
-d2 = box(ax, 32.4, 33.35, 18.0, 6.4, P.C_IN_F, P.C_INORG, "DIGESTOR",
-         "stirred PP or Ni\n80–90 °C", ts=18.6, ss=13.6)
-d3 = box(ax, 52.6, 33.35, 18.0, 6.4, P.C_SOL_F, P.C_SOLID, "FILTER",
-         "silicate liquor\nvs  grit cake", ts=18.6, ss=13.6)
+ax.text(2.0, 53.4, "5   DIGEST    soda-lime opens here    quartz does not",
+        fontsize=17.5, fontweight="bold", color=P.INK)
+d1 = box(ax, 2.0, 42.2, 42.0, 8.8, P.C_LE_F, P.C_LEACH, "NaOH FEED",
+         f"from BMED BASE    wall {P.WALL['bmed_base']}", ts=17.4, ss=12.8)
+d2 = box(ax, 48.0, 42.2, 46.0, 8.8, P.C_IN_F, P.C_INORG, "DIGESTOR",
+         "stirred PP or Ni    80–90 °C    BMED NaOH", ts=17.4, ss=12.8)
+d3 = box(ax, 98.0, 42.2, 42.0, 8.8, P.C_SOL_F, P.C_SOLID, "FILTER",
+         "silicate liquor versus grit cake", ts=17.4, ss=12.8)
 arrow(ax, R(d1), L(d2), P.C_LEACH, lw=1.5)
 arrow(ax, R(d2), L(d3), P.C_INORG, lw=1.5)
-arrow(ax, B(mill), T(d2), P.C_INORG, lw=1.7)
-if "IA-GLASS-03" in _IA:
-    slabel(ax, cx(mill) - 8.0, mill[1] - 0.55, edge_callout(_IA["IA-GLASS-03"]), P.C_INORG, size=8.0)
+arrow(ax, B(mill), T(d2), P.C_INORG, lw=1.5)
+h6 = hx_diamond(ax, 158.0, 46.6, "HX-6", P.HX["HX-6"])
+arrow(ax, (h6[0] - 1.8, h6[1]), R(d3), P.C_HEAT, lw=1.15, ls="--")
 
+ax.text(2.0, 39.8, "6   FUSION · AEM · GEL · REDUCE    char is a pipe, not a mill feed",
+        fontsize=17.5, fontweight="bold", color=P.INK)
+fus = box(ax, 2.0, 26.6, 36.0, 10.6, P.C_HEAT_F, P.C_HEAT, P.NAME["fusion"],
+          "NaOH / Na2CO3 sinter\n300–500 °C\nquartz returns to digest", ts=16.4, ss=12.2)
+aem = box(ax, 42.0, 26.6, 36.0, 10.6, P.C_AEM_F, P.C_AEM, P.NAME["aem"],
+          "pH 9 concentrate\nF, SO4, P, B cut after\narsenic does not enter", ts=16.0, ss=11.6)
+sil = box(ax, 82.0, 26.6, 36.0, 10.6, P.C_PROD_F, P.C_PROD, P.NAME["silica"],
+          "BMED HCl\nwash Na+\ncalcine", ts=16.4, ss=12.2)
+red = box(ax, 122.0, 26.6, 44.0, 10.6, P.C_HEAT_F, P.C_HEAT, P.NAME["reduce"],
+          "Si arc ~1800 °C, gel + char\nB retort ~850 °C, not in the arc\nslag back to fusion", ts=16.0, ss=11.8)
+arrow(ax, R(aem), L(sil), P.C_AEM, lw=1.4)
+arrow(ax, R(sil), L(red), P.C_PROD, lw=1.4)
+arrow(ax, B(d3), T(aem), P.C_INORG, lw=1.4)
+arrow(ax, L(fus), (20.0, 42.2), P.C_HEAT, lw=1.15, ls="--")
+slabel(ax, 16.5, 41.0, "quartz returns", P.C_HEAT, size=9.0)
+char = box(ax, 122.0, 38.4, 44.0, 3.6, P.C_SOL_F, P.C_SOLID, "PYRO CHAR",
+           "from OIL LINE    reductant    not mill feed", ts=15.4, ss=11.6)
+arrow(ax, B(char), T(red), P.C_SOLID, lw=1.45)
 
-# HX
-h7 = hx_diamond(ax, 93.2, 61.05, "HX-7", P.HX["HX-7"])
-h6 = hx_diamond(ax, 93.2, 38.65, "HX-6", P.HX["HX-6"])
-arrow(ax, R(jkt), (h7[0] - 1.8, h7[1]), P.C_HEAT, lw=1.2, ls="--")
-if "IA-GLASS-Q2" in _IA:
-    slabel(ax, 88.5, 66.55, edge_callout(_IA["IA-GLASS-Q2"]), P.C_HEAT, size=7.4)
+ax.text(2.0, 24.6, "7   PRODUCTS", fontsize=17.5, fontweight="bold", color=P.INK)
+hyd = box(ax, 2.0, 12.2, 38.0, 9.6, P.C_PROD_F, P.C_PROD, P.NAME["hydroxides"],
+          "from the digest filter    to molten-salt cells", ts=16.4, ss=12.4)
+grit = box(ax, 44.0, 12.2, 36.0, 9.6, P.C_SOL_F, P.C_SOLID, P.NAME["grit"],
+           "alumina, SiC, zircon    undigested, still feedstock", ts=16.2, ss=12.2)
+sim = box(ax, 84.0, 12.2, 34.0, 9.6, P.C_PROD_F, P.C_PROD, "Si METAL  /  B",
+          "from the arc furnace    to wafer-fab prep", ts=16.4, ss=12.4)
+arrow(ax, B(aem), T(hyd), P.C_INORG, lw=1.25)
+arrow(ax, B(sil), T(grit), P.C_SOLID, lw=1.2)
+arrow(ax, B(red), (cx(sim), sim[1] + sim[3]), P.C_PROD, lw=1.3)
 
-arrow(ax, (h6[0] - 1.8, h6[1]), R(dig), P.C_HEAT, lw=1.2, ls="--")
+ax.text(2.0, 10.0,
+        "Soda-lime glass dissolves in BMED sodium hydroxide at 80–90 °C. Quartz, feldspar, and olivine do not, so they recycle through the alkali fusion and come back to the digest.\n"
+        "The anion stack concentrates the digest liquor before the silica drop. Fluoride, sulfate, phosphate, and borate are cut after the stack. Boron oxide goes to the retort, not the arc.\n"
+        "Carbon char from the oil line is the reductant in the arc furnace. Slag goes back to fusion. Rinse liquor goes to regen leach. Bromide condensate goes to BMED.",
+        ha="left", va="top", fontsize=14.0, color=P.MUTED, linespacing=1.4)
 
-# products
-sil = box(ax, 2.0, 18.55, 30.4, 10.2, P.C_PROD_F, P.C_PROD, P.NAME["silicate"],
-          "Na-silicate liquor\nfarm Si / silica gel\nwafer-fab slurries", ts=21.7, ss=14.9)
-hyd = box(ax, 34.8, 18.55, 30.4, 10.2, P.C_PROD_F, P.C_PROD, P.NAME["hydroxides"],
-          "Ca / Al / Mg cakes\n→ molten-salt cells", ts=21.7, ss=14.9)
-grit = box(ax, 67.6, 18.55, 30.4, 10.2, P.C_SOL_F, P.C_SOLID, P.NAME["grit"],
-           "Al2O3 / SiC / zircon\nstill ore, not aggregate", ts=20.5, ss=13.6)
-
-arrow(ax, B(d3), (cx(sil), sil[1] + sil[3]), P.C_PROD, lw=1.6)
-arrow(ax, B(d3), T(hyd), P.C_INORG, lw=1.6)
-arrow(ax, B(d3), (cx(grit), grit[1] + grit[3]), P.C_SOLID, lw=1.6)
-char = box(ax, 67.6, 10.4, 30.4, 5.6, P.C_SOL_F, P.C_SOLID, "PYRO CHAR → SI-REDUCE",
-           "pipe from OIL LINE furnace\ncarbon reductant, not mill feed", ts=16.4, ss=12.1)
-arrow(ax, B(grit), T(char), P.C_SOLID, lw=1.2, ls="--")
-
-# leach regen stub
-reg = box(ax, 2.0, 12.15, 30.4, 4.5, P.C_LE_F, P.C_LEACH, P.NAME["regen"],
-          "rinse liquor returns here", ts=19.2, ss=13.6)
-arrow(ax, (wash[0], cy(wash)), (3.4, cy(wash)), P.C_LEACH, lw=1.2, ls="--")
-arrow(ax, (3.4, cy(wash)), (3.4, cy(reg)), P.C_LEACH, lw=1.2, ls="--")
-arrow(ax, (3.4, cy(reg)), L(reg), P.C_LEACH, lw=1.2, ls="--")
-
-ax.text(2.0, 10.55, "HARDWARE  /  RULES", fontsize=18.9, fontweight="bold", color=P.INK)
-ax.text(2.0, 9.65,
-        "This branch exists because FR-4, glass, and ceramic must not enter the Ti / cast-iron auger.  The fork pays for itself by protecting the oil line.\n"
-        "Burnout is a small indirect rotary jacketed by afterburner flue (HX-7).  Oil vapor and burnout off-gas share the afterburner, not the kiln atmosphere.\n"
-        "Rinse returns chloride and residual metals to REGEN LEACH.  Brominated FR-4 off-gas is condensed into BMED, not vented.\n"
-        "Digest uses BMED NaOH, not purchased caustic.  Silicate liquor is the silicon-cycle return; hydroxide cakes join the EW pH-shift products.\n"
-        "Grit that will not digest is product, not waste — media, filler, or aggregate.",
-        ha="left", va="top", fontsize=15.5, color=P.MUTED, linespacing=1.28)
-
-_reg = ia_register_lines(_IA.values())
-ax.text(2.0, 3.55, f"GRAPH IA-GLASS-*  ({_GP})", fontsize=14.3, fontweight="bold", color=P.INK)
-for i, line in enumerate(_reg):
-    ax.text(2.0, 2.75 - i * 0.55, line, ha="left", va="top", fontsize=10.8, color=P.MUTED)
-
-ax.text(50.0, 0.35, P.NAMING_FOOT, ha="center", va="bottom",
-        fontsize=P.EW_FONT_FOOT, color=P.MUTED)
-
-plt.tight_layout(pad=0.22)
-fig.savefig(P.OUT_GLASS, dpi=140, facecolor=fig.get_facecolor(), bbox_inches="tight")
+ax.text(84.0, 3.2, "SOLIDS LINE takes the undissolved sink.  Plastic leaves at the split.  Glass becomes silicate, silica, then silicon.",
+        ha="center", va="bottom", fontsize=13.0, color=P.MUTED)
+legend_strip(ax, 2.0, -5.8, w=164.0, include=("streams", "marks"))
+fig.savefig(P.OUT_GLASS, dpi=130, facecolor=fig.get_facecolor(), bbox_inches="tight")
 print("wrote", P.OUT_GLASS)

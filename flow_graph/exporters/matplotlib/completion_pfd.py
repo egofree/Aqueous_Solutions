@@ -10,7 +10,7 @@ from drawlib import box, cx, R, L, T, B, arrow, slabel, legend_strip
 
 fig, ax = plt.subplots(figsize=(34.0, 26.0), dpi=120)
 ax.set_xlim(0, 168)
-ax.set_ylim(-8.0, 124)
+ax.set_ylim(-22.0, 124)
 ax.set_aspect("equal")
 ax.axis("off")
 fig.patch.set_facecolor(P.BG)
@@ -56,70 +56,84 @@ arrow(ax, R(burn), L(mill), P.C_INORG, lw=1.4)
 arrow(ax, R(mill), L(dig), P.C_INORG, lw=1.4)
 arrow(ax, R(dig), L(fus), P.C_HEAT, lw=1.3, ls="--")
 
-ax.text(2.0, 79.6, "3   AEM BANK    two feeds    arsenic does not enter",
+ax.text(2.0, 79.6, "3   AEM BANK    the stack concentrates    the cuts are after it",
         fontsize=17.2, fontweight="bold", color=P.INK)
-brine = box(ax, 2.0, 66.8, 38.0, 10.2, P.C_LE_F, P.C_LEACH, "POST-POLISH BRINE",
-            "raise to pH 9 with BMED NaOH\nborate as B(OH)4−", ts=16.2, ss=12.2)
-sil = box(ax, 44.0, 66.8, 36.0, 10.2, P.C_IN_F, P.C_INORG, "DIGEST LIQUOR",
-          "already alkaline\nbefore the silica drop", ts=16.2, ss=12.2)
-aem = box(ax, 84.0, 66.8, 40.0, 10.2, P.C_AEM_F, P.C_AEM, "AEM STACK",
-          "PP frame    anion film\ndiluate to BMED salt", ts=16.2, ss=12.2)
-cuts = box(ax, 128.0, 66.8, 38.0, 10.2, P.C_PROD_F, P.C_PROD, "CUTS",
-           "B2O3 to the furnace\nphosphate to the farm\nfluoride to the HF cell", ts=15.6, ss=11.8)
+brine = box(ax, 2.0, 66.8, 40.0, 10.4, P.C_LE_F, P.C_LEACH, "pH 9 TANK",
+            "post-polish brine\nBMED NaOH to pH 9\nborate as B(OH)4−", ts=16.0, ss=12.0)
+sil = box(ax, 46.0, 66.8, 38.0, 10.4, P.C_IN_F, P.C_INORG, "DIGEST LIQUOR",
+          "already alkaline\ncut before the silica drop\narsenic does not enter", ts=15.6, ss=11.8)
+aem = box(ax, 88.0, 66.8, 42.0, 10.4, P.C_AEM_F, P.C_AEM, "AEM STACK",
+          "16 pairs, 4 m²\nTi / PbO2 rinse\ndiluate to the K split", ts=15.8, ss=11.8)
+dilu = box(ax, 134.0, 66.8, 32.0, 10.4, P.C_LE_F, P.C_LEACH, "DILUATE",
+           "sodium brine\nto K split, then BMED", ts=15.8, ss=12.0)
 arrow(ax, R(brine), L(sil), P.C_LEACH, lw=1.3)
 arrow(ax, R(sil), L(aem), P.C_AEM, lw=1.4)
-arrow(ax, R(aem), L(cuts), P.C_PROD, lw=1.4)
+arrow(ax, R(aem), L(dilu), P.C_LEACH, lw=1.3, ls="--")
+fluor = box(ax, 2.0, 52.6, 40.0, 10.4, P.C_PROD_F, P.C_PROD, "FLUORIDE",
+            "Ca(OH)2 drops CaF2\ncake to the HF cell\nnot to the farm", ts=15.6, ss=11.8)
+sulf = box(ax, 46.0, 52.6, 40.0, 10.4, P.C_PROD_F, P.C_PROD, "SULFATE",
+           "cool the liquor\nNa2SO4 to PK-5B\nexcess to BMED", ts=15.6, ss=11.8)
+phos = box(ax, 90.0, 52.6, 36.0, 10.4, P.C_PROD_F, P.C_PROD, "PHOSPHATE",
+           "left after F and SO4\nto the farm", ts=15.8, ss=12.0)
+borc = box(ax, 130.0, 52.6, 36.0, 10.4, P.C_PROD_F, P.C_PROD, "BORATE",
+           "acidify, calcine to B2O3\nto the boron retort", ts=15.6, ss=11.8)
+arrow(ax, B(aem), (cx(fluor), 63.0), P.C_PROD, lw=1.2)
+arrow(ax, (cx(fluor), 63.0), T(fluor), P.C_PROD, lw=1.2)
+arrow(ax, R(fluor), L(sulf), P.C_PROD, lw=1.25)
+arrow(ax, R(sulf), L(phos), P.C_PROD, lw=1.25)
+arrow(ax, R(phos), L(borc), P.C_PROD, lw=1.25)
 
-ax.text(2.0, 64.2, "4   K SPLIT    then N SCRUB",
+ax.text(2.0, 49.6, "4   K SPLIT    then N SCRUB",
         fontsize=17.2, fontweight="bold", color=P.INK)
-ks = box(ax, 2.0, 52.4, 52.0, 9.2, P.C_LE_F, P.C_LEACH, "K SPLIT",
+ks = box(ax, 2.0, 37.8, 52.0, 9.2, P.C_LE_F, P.C_LEACH, "K SPLIT",
          "PP crystallizer    5–10 °C\nKCl to the farm    NaCl liquor to BMED", ts=16.6, ss=12.4)
-ns = box(ax, 58.0, 52.4, 52.0, 9.2, P.C_SOL_F, P.C_SOLID, "N SCRUB",
+ns = box(ax, 58.0, 37.8, 52.0, 9.2, P.C_SOL_F, P.C_SOLID, "N SCRUB",
          "packed tower    BMED HCl\nNH3 to NH4Cl for the farm\nNOx stays on the alk scrubber", ts=16.2, ss=12.0)
-arrow(ax, (28.0, 61.6), T(ks), P.C_LEACH, lw=1.2)
+arrow(ax, B(dilu), (cx(ks), 47.0), P.C_LEACH, lw=1.15)
+arrow(ax, (cx(ks), 47.0), T(ks), P.C_LEACH, lw=1.15)
 
-ax.text(2.0, 49.8, "5   PK-5B    batch lot    not a flow cell",
+ax.text(2.0, 35.0, "5   PK-5B    batch lot    not a flow cell",
         fontsize=17.2, fontweight="bold", color=P.INK)
-dis = box(ax, 2.0, 37.6, 38.0, 9.6, P.C_IN_F, P.C_INORG, "DISSOLVE",
+dis = box(ax, 2.0, 22.8, 38.0, 9.6, P.C_IN_F, P.C_INORG, "DISSOLVE",
           "oxalate cake in BMED HCl", ts=16.4, ss=12.4)
-ds = box(ax, 44.0, 37.6, 40.0, 9.6, P.C_SOL_F, P.C_SOLID, "DOUBLE SULFATE",
+ds = box(ax, 44.0, 22.8, 40.0, 9.6, P.C_SOL_F, P.C_SOLID, "DOUBLE SULFATE",
          "sulfate from the anion bank\nLa–Ce drops    Nd group stays", ts=16.2, ss=12.2)
-ox = box(ax, 88.0, 37.6, 40.0, 9.6, P.C_PROD_F, P.C_PROD, "OXALATE CUTS",
+ox = box(ax, 88.0, 22.8, 40.0, 9.6, P.C_PROD_F, P.C_PROD, "OXALATE CUTS",
          "stepped pH\nNd/Pr    then Dy/Tb\ncalcine to oxide", ts=16.2, ss=12.2)
 arrow(ax, R(dis), L(ds), P.C_INORG, lw=1.4)
 arrow(ax, R(ds), L(ox), P.C_PROD, lw=1.4)
+arrow(ax, B(sulf), (cx(ds), 32.4), P.C_PROD, lw=1.1)
+arrow(ax, (cx(ds), 32.4), T(ds), P.C_PROD, lw=1.1)
 
-ax.text(2.0, 35.0, "6   MOLTEN SALT    three pots and one retort    not a series",
+ax.text(2.0, 20.0, "6   MOLTEN SALT    three pots and one retort    not a series",
         fontsize=17.2, fontweight="bold", color=P.INK)
-al = box(ax, 2.0, 21.4, 39.0, 11.0, P.C_HEAT_F, P.C_HEAT, "Al POT",
+al = box(ax, 2.0, 6.4, 39.0, 11.0, P.C_HEAT_F, P.C_HEAT, "Al POT",
          "calcine to alumina\nchar + Cl2 to AlCl3\nelectrolyze near 700 C", ts=15.8, ss=11.8)
-mg = box(ax, 44.0, 21.4, 39.0, 11.0, P.C_HEAT_F, P.C_HEAT, "Mg POT",
+mg = box(ax, 44.0, 6.4, 39.0, 11.0, P.C_HEAT_F, P.C_HEAT, "Mg POT",
          "dehydrate under HCl\nanhydrous MgCl2\nelectrolyze near 700 C", ts=15.8, ss=11.8)
-ca = box(ax, 86.0, 21.4, 39.0, 11.0, P.C_HEAT_F, P.C_HEAT, "Ca POT",
+ca = box(ax, 86.0, 6.4, 39.0, 11.0, P.C_HEAT_F, P.C_HEAT, "Ca POT",
          "CaCl2 near 800 C\ncontact cathode\nmetal withdrawn as it forms", ts=15.6, ss=11.6)
-ree = box(ax, 128.0, 21.4, 38.0, 11.0, P.C_HEAT_F, P.C_HEAT, "REE RETORT",
+ree = box(ax, 128.0, 6.4, 38.0, 11.0, P.C_HEAT_F, P.C_HEAT, "REE RETORT",
           "not a pot\noxide + Ca, 900 to 1100 C\nCaO slag back to the Ca feed", ts=15.6, ss=11.6)
-arrow(ax, B(ox), T(ree), P.C_PROD, lw=1.25)
+arrow(ax, B(ox), T(ree), P.C_PROD, lw=1.2)
 arrow(ax, L(ree), R(ca), P.C_HEAT, lw=1.15, ls="--")
-slabel(ax, 124.0, 26.8, "Ca metal", P.C_HEAT, size=9.0)
+slabel(ax, 124.0, 11.8, "Ca metal", P.C_HEAT, size=9.0)
 
-ax.text(2.0, 18.8, "7   SILICON ARC AND BORON RETORT    boron does not enter the arc",
+ax.text(2.0, 3.6, "7   SILICON ARC AND BORON RETORT    boron does not enter the arc",
         fontsize=17.2, fontweight="bold", color=P.INK)
-gel = box(ax, 2.0, 6.4, 36.0, 10.0, P.C_PROD_F, P.C_PROD, "SILICA GEL",
+gel = box(ax, 2.0, -8.8, 36.0, 10.0, P.C_PROD_F, P.C_PROD, "SILICA GEL",
           "BMED HCl, wash Na+, calcine", ts=16.0, ss=12.0)
-arc = box(ax, 42.0, 6.4, 42.0, 10.0, P.C_HEAT_F, P.C_HEAT, "SILICON ARC",
+arc = box(ax, 42.0, -8.8, 42.0, 10.0, P.C_HEAT_F, P.C_HEAT, "SILICON ARC",
           "gel + char, near 1800 C\nSiO2 + 2C to Si + 2CO\nslag to fusion", ts=15.6, ss=11.8)
-sol = box(ax, 88.0, 6.4, 36.0, 10.0, P.C_PROD_F, P.C_PROD, "SOLIDIFY",
+sol = box(ax, 88.0, -8.8, 36.0, 10.0, P.C_PROD_F, P.C_PROD, "SOLIDIFY",
           "silicon only\ndrops Fe, Al, Ca\nto fab prep", ts=16.0, ss=12.0)
-bor = box(ax, 128.0, 6.4, 38.0, 10.0, P.C_HEAT_F, P.C_HEAT, "BORON RETORT",
-          "B2O3 + Mg or Ca, near 850 C\nHCl leach of the oxide\npowder out", ts=15.6, ss=11.6)
+bor = box(ax, 128.0, -8.8, 38.0, 10.0, P.C_HEAT_F, P.C_HEAT, "BORON RETORT",
+          "B2O3 from the borate cut\nMg or Ca, near 850 C\npowder out", ts=15.6, ss=11.6)
 arrow(ax, R(gel), L(arc), P.C_PROD, lw=1.4)
 arrow(ax, R(arc), L(sol), P.C_PROD, lw=1.4)
-arrow(ax, (147.0, 66.8), (147.0, 16.4), P.C_PROD, lw=1.15)
-arrow(ax, (147.0, 16.4), T(bor), P.C_PROD, lw=1.15)
 
-ax.text(84.0, 4.6, "Aqueous cells do not make Al, Mg, Ca, Li, Ti, Si, or the rare earths.",
+ax.text(84.0, -11.2, "Aqueous cells do not make Al, Mg, Ca, Li, Ti, Si, or the rare earths.",
         ha="center", va="bottom", fontsize=13.2, color=P.MUTED)
-legend_strip(ax, 2.0, -5.6, w=164.0, include=("streams", "marks", "membranes"))
+legend_strip(ax, 2.0, -18.6, w=164.0, include=("streams", "marks", "membranes"))
 fig.savefig(P.ROOT / "completion_pfd.png", dpi=120, facecolor=fig.get_facecolor(), bbox_inches="tight")
 print("wrote", P.ROOT / "completion_pfd.png")
