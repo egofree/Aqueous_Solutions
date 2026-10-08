@@ -1,7 +1,7 @@
 # MVS completion plan
 
 Document: AQS-MVS-PLAN-001
-Date: 2026-10-02
+Date: 2026-10-02; status note 2026-10-08 (graph Rev M)
 Graph on main is the topology. This plan finishes the equipment set. Not a PE stamp.
 
 ## 1. Issue the missing node
@@ -19,7 +19,7 @@ Each pass issues a solid, a nozzle list, and a power number from the study band.
 | Order | Unit | Pass |
 |---|---|---|
 | 1 | GLASS_RINSE, GLASS_MILL, GLASS_BURNOUT | Rinse, drain, mill, burnout, then the existing digest. Burnout off-gas to the oil-vapor header. |
-| 2 | VCD_TRAIN | Pick a compressor inside 14–20 kWh/m³ at 0.11 m³/d. Issue the equipment ID. |
+| 2 | VCD_TRAIN | Pick a compressor inside 14–20 kWh/m³ at 0.11 m³/d. Issue the equipment ID. Rev M: capacity re-issued at 0.40 m³/d (AQS-DUTY-011). |
 | 3 | REMIN | Dose from the hydroxide crib. 10 L/d, 25 mg/L Ca, 10 mg/L Mg. UV after dose. |
 | 4 | LITHO_STUB | Three children: coat, align, develop. Lock starts/day in the 1–5 band. Pick the UV lamp class. |
 | 5 | ELECTRODE_COAT | Carbon or nickel booth. Exhaust to MET_AHU. DSA stays out. |
@@ -45,3 +45,7 @@ After the solids exist, run flow_to_cad.py. Apply only to a copy. plant.FCStd st
 ## 7. Done test
 
 MVS design is complete when every present node has a solid or a stated reason it is a header, WS_PHOS exists, the seven machines above are present, ladder relief is sized, and the fab class is written. loops_closed stays false until those solids are on the copy.
+
+## 8. Status at graph Rev M (2026-10-08)
+
+Items 1–6 are complete (MVS_CHECKLIST). Graph Rev M closes every node balance, rates the leach and digest heaters (6.0 kW and 2.5 kW), assigns the Q4 surplus and retires S87/S88 (AQS-DUTY-011). The placement copy is `plant_placed_2026-10-08_revM.FCStd` from seed Rev I. loops_closed stays false. Remaining before a loops_closed review: the energy surplus (utility import 40.0 kW average), REQ-MEOH-FC, the AQS-DUTY-011 provisional decisions and required studies, and the legacy CAD studies RS-CAD-HYDRO, RS-CAD-YARD and RS-CAD-LEGACY.

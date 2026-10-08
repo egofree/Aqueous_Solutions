@@ -1,7 +1,7 @@
 # HDR_CO2 consumer duty
 
 Document number: AQS-DUTY-009
-Revision: B
+Revision: C
 Date: 2026-10-07
 Authority: AQS-FLOW-GRAPH-001 Rev K (Rev B: Rev L); AQS-DUTY-008 Rev C §13.3. Not a PE stamp.
 
@@ -9,6 +9,7 @@ Authority: AQS-FLOW-GRAPH-001 Rev K (Rev B: Rev L); AQS-DUTY-008 Rev C §13.3. N
 |---|---|---|---|
 | A | — | First issue. Consumer for S85 chosen, S89 added, HDR_CO2 balance closed | 2026-10-07 |
 | B | §7 | S90 hab metabolic CO₂ joins HDR_CO2; S89 and farm OA re-rated (AQS-DUTY-010) | 2026-10-07 |
+| C | §8 | Graph Rev M: S11 carbon in the afterburner basis; S85, S89 and farm OA re-rated; S05 retired, H₂ pool read from S64 (AQS-DUTY-011) | 2026-10-08 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -104,3 +105,6 @@ Graph Rev L adds S90 HABITATION → HDR_CO2. The crew of 4 uses S02 = 0.84 × 4 
 
 GROW_BED still fixes S04 (1.109 kg/d). The 15.637 kg/d on S89 leaves with farm exhaust air. Open item 1 of §6 is closed. Item 3 is answered in AQS-DUTY-010: S87 and S88 stay on HOLD as placeholders.
 
+## 8. Rev C (graph Rev M)
+
+AQS-DUTY-011 folds the S11 farm-trim carbon (0.554 kg/d CO₂) into the afterburner basis (15.554 kg/d). S67B is 13.221 kg/d, S85 12.080 kg/d and S89 16.101 kg/d. Farm outdoor air is 961.2 m³/h at 1000 ppm (minimum 251.3 m³/h). S05 is retired as an alias of S64; `_co2_header_study.py` reads the H₂ pool from S64 when S05 is absent. S87 and S88 are retired (AQS-DUTY-011 §4.16). The consumer decision (GROW_BED via S89) is unchanged.

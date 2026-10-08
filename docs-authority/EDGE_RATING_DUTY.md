@@ -9,6 +9,8 @@ Authority: AQS-FLOW-GRAPH-001 Rev L; AQS-DUTY-008 Rev C; AQS-DUTY-009 Rev B. Not
 |---|---|---|---|
 | A | — | First issue. Every present edge rated; placeholders closed; node conservation run | 2026-10-07 |
 
+Superseded for graph Rev M by AQS-DUTY-011 (`REV_M_CLOSURE_DUTY.md`), which closes the §6 balances and the §7 blockers. This note and `_edge_rating_study.py` remain reproducible against the Rev L graph (commit d9cd071); run on a Rev M tree, the script loads that base.
+
 Licence: CERN-OHL-S-2.0.
 
 ## 1. Purpose

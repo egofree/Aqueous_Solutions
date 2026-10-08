@@ -11,6 +11,8 @@ Authority: AQS-BLD-001 + AQS-STR-001 + AQS-HSE-001
 > claim-status narrative sync target (hybrid — not overwritten wholesale).
 > Prefer `derived/` as generated; see `flow_graph/derived/SYNC_POINTER.md`.
 > Do not invent DOCK S## or fill null placeholder rates.
+>
+> **Graph Rev M (2026-10-08):** every edge is rated and every node balance closes (AQS-DUTY-011, `REV_M_CLOSURE_DUTY.md`). New streams S91–S102 and IA-BMED-05..10; S05, S86, S87, S88 retired; S16 is harvest rinse liquor (12.6 kg/d); S68 is CRYO AHU coil condensate. Rates in `flow_graph/derived/MASS_FLOW_DERIVED.md` govern over the claim-status rows below.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|

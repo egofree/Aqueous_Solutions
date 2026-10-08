@@ -196,7 +196,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {Rated duty -- For an HL-* edge, the single-ladder throughput × 1.25; carried as the edge rate. Normal duty is both ladders on line. AQS-DUTY-008.}
 
-{S89 -- HDR_CO2 → GROW_BED CO₂ enrichment dose through the FARM AHU, 3.0 bar a, DN15 316L. 11.616 kg/d at Rev K; 15.637 kg/d from Rev L (S85 + S90). Only consumer of HDR_CO2. CO₂ only: no tee to HDR_O2, hab air, the HAB return or the dock. AQS-DUTY-009.}
+{S89 -- HDR_CO2 → GROW_BED CO₂ enrichment dose through the FARM AHU, 3.0 bar a, DN15 316L. 11.616 kg/d at Rev K; 15.637 kg/d at Rev L (S85 + S90); 16.101 kg/d from Rev M (S11 carbon in the afterburner basis). Only consumer of HDR_CO2. CO₂ only: no tee to HDR_O2, hab air, the HAB return or the dock. AQS-DUTY-009.}
 
 {S90 -- HABITATION → HDR_CO2, 4.021 kg/d metabolic CO₂ (S02 3.36 kg/d O₂ × RQ 0.87 × 44/32), desorbed from the hab CO₂ sorbent bed. CO₂ only; hab air never enters the header. Rev L, AQS-DUTY-010.}
 
@@ -206,9 +206,37 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {balance_rev_l -- Node params block from Rev L listing the off-graph terms used in the node balance (feed, harvest, vents, losses, life loads), each with its basis. AQS-DUTY-010.}
 
-{Design day -- Rev L conservation basis: daily average, plant running normal on both ladders, dry weather, one pumped-hydro cycle per day.}
+{Design day -- Rev L and Rev M conservation basis: daily average, plant running normal on both ladders, dry weather, one pumped-hydro cycle per day.}
 
-{HOLD placeholder -- S87 and S88 from Rev L. Kept as placeholder edges with the reason on the edge (no clean endpoint under the O₂ and N₂ rules), not rated and not retired.}
+{HOLD placeholder -- S87 and S88 in Rev L: placeholder edges with the reason on the edge. Retired in Rev M (no physical flow; AQS-DUTY-011 §4.16).}
+
+{balance_rev_m -- Node params block from Rev M listing the off-graph terms used in the node balance, replacing balance_rev_l. AQS-DUTY-011.}
+
+{rev_l_value / rev_l_from / rev_l_to -- Edge params from Rev M recording the Rev L rate and, for a retargeted edge, the Rev L endpoints. AQS-DUTY-011.}
+
+{Rating case -- For a trim heater, the duty with no ladder heat, no Q4 preheat and the lowest reaction credit; the issued rating is ceil(rating case × 1.25) to 0.5 kW. AQS-DUTY-011.}
+
+{HX-9 -- Q4_BUS branch exchanger preheating the cold leach make-up (S68, S10, S16, S39, S72, S28) to 55 °C. Duty is the S100 rate. Not an HL-* edge. AQS-DUTY-011.}
+
+{HX-10 -- Q4_BUS branch exchanger preheating the GLASS_DIGEST caustic to 55 °C. Duty is the S101 rate. Not an HL-* edge. AQS-DUTY-011.}
+
+{S91 / S92 -- BMED_BASE → GLASS_DIGEST NaOH for the cullet digest, and GLASS_DIGEST → SALT_FEED silicate liquor, which leaves in the pH-9 cake (S97). Rev M. AQS-DUTY-011 §4.7.}
+
+{S93 / S94 -- PV_ARRAY → SOL_ARK_60K daily-average PV energy, and SOL_ARK_60K → LOAD_AGG itemized process and life loads. Rev M. AQS-DUTY-011.}
+
+{S95 -- HDR_O2 → LEACH_CSTR_1 O₂ sparge that closes the leach electron balance after the anode Cl₂ sparge and CRU chlorate. Rev M. AQS-DUTY-011.}
+
+{S96 / S97 -- GLASS_RINSE → BOUNDARY_EXPORT sink residue (unleached metal, fillers, unassigned assay) and SALT_FEED → BOUNDARY_EXPORT pH-9 filter cake (silica, sodium aluminosilicate, hydroxides). Both pending leachate characterization (RS-RESIDUE-TCLP). Rev M.}
+
+{S98 / S99 -- SALT_FEED → VCD_TRAIN BMED diluate, and VCD_TRAIN → BOUNDARY_EXPORT distillate export (MVS clean-water surplus). Rev M.}
+
+{S100 / S101 / S102 -- Q4_BUS sinks: HX-9 leach make-up preheat, HX-10 caustic preheat, and borefield recharge to GEO_GHEX (by difference). Rev M. AQS-DUTY-011.}
+
+{IA-BMED-05..10 -- Rev M chloride-loop edges: brine bleed POLISH_BANK → SALT_FEED (05), BMED HCl → CONTINUOUS_RECYCLE (06), NaOH to ALK_SCRUBBER (07), ALK liquor to CRU (08), CRU liquor to CONTINUOUS_RECYCLE (09), NaOH to SALT_FEED (10). AQS-DUTY-011 §4.6.}
+
+{Option B (chloride) -- Rev M provisional decision: anode Cl₂ is sparged back into LEACH_CSTR_1 as oxidant (0.95 absorbed), the remainder goes ALK_SCRUBBER → CRU → CONTINUOUS_RECYCLE, and BMED regenerates HCl from the brine bleed. Option A (all Cl₂ to ALK) needs about 16 kW of BMED. AQS-DUTY-011.}
+
+{Utility import -- The GRID-port term that closes the SOL_ARK_60K balance by difference on the design day. Rev M: about 40 kW average; the MVS energy-surplus criterion is not met. AQS-DUTY-011 §4.9.}
 
 {CO₂ enrichment -- Farm air held at 1000 ppm in the 16 h photoperiod. GROW_BED fixes S04 (1.109 kg/d); the S89 carbon leaves with farm exhaust air. Use, not sequestration.}
 

@@ -1,8 +1,8 @@
 # Heat-ladder edge duties
 
 Document number: AQS-DUTY-008
-Revision: C
-Date: 2026-10-07
+Revision: D
+Date: 2026-10-08
 Authority: AQS-HEAT-LADDER-001 (`HEAT_LADDER.md`), AQS-FLOW-GRAPH-001 Rev K. Not a PE stamp.
 
 | Rev | Change | Description | Date |
@@ -10,6 +10,7 @@ Authority: AQS-HEAT-LADDER-001 (`HEAT_LADDER.md`), AQS-FLOW-GRAPH-001 Rev K. Not
 | A | — | First-principles duties for the 20 HL-* edges and S67B; closes the presence "study" edges | 2026-10-07 |
 | B | §2, §4.1, §6, §7, §12, §13 | Graph Rev J: HX-8 to Q4, Q3 draws HX-4/5/6 with electric trim, S18 credit retired, re-rated Q3/Q4, ladder placement Rev G | 2026-10-07 |
 | C | §3, §8, §11, §13.3, §13.8, §14 | Graph Rev K: thermosyphon rise checked; downhill steps gravity on stepped stores, cross-ties pumped loops; HDR_CO2 consumer (AQS-DUTY-009) | 2026-10-07 |
+| D | §15 | Graph Rev M: HX-5 and HX-6 ratings, Q3 draws re-rated, Q4 sinks HX-9 / HX-10 / borefield (AQS-DUTY-011) | 2026-10-08 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -606,3 +607,23 @@ Open:
 1. Stand and access-platform design for Q2–Q4 (up to 2.65 m), and the Q4 coil and relief access from a platform.
 2. Pump selection for XL-Q1..Q4 (high-temperature magnetic drive for the oil loops).
 3. §13.8 items 1, 2 and 4 are unchanged.
+
+## 15. Rev D (graph Rev M): heater ratings and Q4 sinks
+
+The calculation is AQS-DUTY-011 (`REV_M_CLOSURE_DUTY.md`, `_rev_m_closure_study.py`), which calls the functions of this note (`draws`, `ladder_j`, `pumped`) with the Rev M stream set.
+
+### 15.1 HX-5 leach
+
+The §13.2 leach duty (6.353 kW) assumed the whole 4284 kg/d recirculation returned at 35 °C and carried the Rev L Faraday H₂ basis. Rev M recomputes the leach energy balance: recycle return mixed at 48.0 °C, float return 60 °C, cold make-up 0.85 kW, fixed losses 1.118 kW, lowest exotherm credit 2.562 kW. Rating case 4.602 kW (no Q3, no Q4 preheat, no oxidant credit); rating ceil(× 1.25) = **6.0 kW**. HL-Q3-A/B-HX5 rated duty 5.753 kW. Normal duty 0.430 kW after HX-9 (0.532 kW) and the Cl₂/O₂ oxidant credit (3.640 kW). Q3 serves HX-4 and HX-6 first and has nothing left for HX-5, so the normal HX-5 trim is 0.430 kW.
+
+### 15.2 HX-6 digest
+
+Duty 1.663 kW (§13.2). HX-10 preheats the caustic from Q4 (0.282 kW): normal 1.381 kW, of which Q3 serves 0.579 kW and the trim is 0.802 kW. Rating ceil(1.663 × 1.25) = **2.5 kW**.
+
+### 15.3 Q4 bus
+
+Sources at normal duty 4.488 kW (ladder 4.244, S54 0.100, S63 0.017, S80 0.127; S53 is 0 with the fuel cell on standby). Sinks: life 3.0 kW, HX-9 0.532 kW, HX-10 0.282 kW, borefield 0.674 kW (S102, by difference). The §13.8 surplus item is closed. ORC pad 0 kW.
+
+### 15.4 Items closed and open
+
+Closed: §13.8 leach heater rating and digest class; Q4 surplus. Open: §14.5 items 1 and 2 (store stands and access platform; cross-tie pump selection).
