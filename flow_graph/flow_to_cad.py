@@ -98,7 +98,7 @@ def origin_world_mm(row: dict, datums: dict) -> tuple[float, float, float] | Non
 
 
 def plan(graph: dict, unit_map: dict, table: dict, issued_envelopes: bool = True,
-         create_issued: bool = False) -> dict:
+         create_issued: bool = False, create_only: set | None = None) -> dict:
     by_unit, by_block, datums = index_placements(table)
     entries = {e["unit_id"]: e for e in (unit_map.get("entries") or []) if e.get("unit_id")}
     moves = []
@@ -134,7 +134,8 @@ def plan(graph: dict, unit_map: dict, table: dict, issued_envelopes: bool = True
             if issued is not None and isinstance(size, list) and [float(v) for v in size] != issued:
                 size_conflicts.append({"unit_id": uid, "seed_size_mm": size, "issued_size_mm": issued})
                 issued = None
-            if create_issued and issued is not None and not names:
+            if (create_issued and issued is not None and not names
+                    and (create_only is None or uid in create_only)):
                 # Issued envelope, explicit seed row, no Feature on the model: the
                 # copy gets one envelope box named after the unit. Not a nameplate.
                 creates.append({
@@ -186,6 +187,7 @@ def plan(graph: dict, unit_map: dict, table: dict, issued_envelopes: bool = True
         "issued_envelopes": issued_envelopes,
         "resize_count": sum(1 for m in deduped if m.get("issued_size_mm")),
         "create_issued": create_issued,
+        "create_only": sorted(create_only) if create_only is not None else None,
         "create_count": len(creates),
         "process_nudge_mm": {"PROCESS_DX": 5000, "PROCESS_DY": 4000, "Z_Lm1": -6000},
         "nudge_rule": (
@@ -281,13 +283,20 @@ def main() -> int:
                     help="Also add an envelope box for issued units that have a seed row but no "
                          "Feature. Off by default: seed origins for those rows are not yet "
                          "reconciled with the plant model.")
+    ap.add_argument("--create-issued-only", default=None,
+                    help="Comma list of unit_ids: like --create-issued, but only for these rows "
+                         "(rows whose seed origin has been reconciled with the plant model).")
     args = ap.parse_args()
+    create_only = None
+    if args.create_issued_only:
+        create_only = {u.strip() for u in args.create_issued_only.split(",") if u.strip()}
     if args.fcstd == args.fcstd_out:
         ap.error("--fcstd-out must differ from --fcstd; the applicator writes a copy only")
 
     report = plan(load_json(args.graph), load_json(args.map), load_json(args.placements),
                   issued_envelopes=not args.no_issued_envelopes,
-                  create_issued=args.create_issued)
+                  create_issued=args.create_issued or create_only is not None,
+                  create_only=create_only)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     args.out.write_text(
         emit_freecad(report, args.fcstd, args.fcstd_out),

@@ -43,9 +43,9 @@ SECTOR_OFF_UNRECLAIMED: dict[str, UnreclaimedEntry] = {
         "detail": "WET off — metals crib + Faraday H2 generation unreclaimed",
     },
     "OIL": {
-        "stream_ids": ["S11", "S18"],
+        "stream_ids": ["S11", "S18", "S67", "S67B"],
         "sector_definition": "Process (Mass transform)",
-        "detail": "OIL off — organics / afterburner→CRYO CO2 path unreclaimed",
+        "detail": "OIL off — organics / afterburner→CRYO CO2 path unreclaimed (carbon on S67/S67B since graph Rev J; S18 is the claim id)",
     },
     "GLASS": {
         "stream_ids": ["S08G"],

@@ -5,13 +5,14 @@
 First-principles duties, media, temperatures, flows and line sizes for the
 21 edges that carried presence "study" through Rev H. Inputs are graph values
 and issued envelopes; every other number is an assumption stated in A_* below.
-Run: python3 _hl_edges_study.py [--json out.json]
+Rev J (AQS-DUTY-008 Rev B) adds main_j(): HX-8 on Q4, Q3 draws HX-4/5/6, re-rated Q3/Q4.
+Run: python3 _hl_edges_study.py [--json out.json] [--rev-j]
 """
 from __future__ import annotations
 import json, math, sys
 
 # ---------------------------------------------------------------- inputs (graph / docs)
-CO2_AB_KG_D = 15.0          # S18 study rate, AQS-AUD-001 mid of 12-22.5 kg/d
+CO2_AB_KG_D = 15.0          # afterburner flue CO2 (S67 basis since Rev J; was S18), AQS-AUD-001 mid of 12-22.5 kg/d
 CULLET_KG_D = 30.0          # S08G silicate + grit, AQS-AUD-001 s4.1, mixed WEEE at 150 kg/d wet
 BURNOUT_KW_E = 1.0          # GLASS_BURNOUT issued duty (electric)
 T_AMB = 25.0
@@ -302,7 +303,320 @@ def main():
     return res
 
 
+
+# ================================================================ Rev J (AQS-DUTY-008 Rev B)
+# HX-8 on Q4, Q3 process draws HX-4/5/6, re-rated Q3/Q4. Inputs from repo docs; A_J_* are decisions.
+F = 96485.0
+DHF = {"Fe2+": -89.1, "Cu2+": 64.8, "Zn2+": -153.9, "Al3+": -531.0, "Cl-": -167.2, "ClO3-": -104.0, "H2O": -285.8}  # kJ/mol, aq, 25 C
+EW_KW = 6.0                 # EW_1 continuous_kw (RECT-EW class share), graph
+EW_SHARE = {"Fe": 790.0, "Cu": 137.0, "Zn": 80.0}   # kWh/t mixed WEEE, ELECTRICAL.md (Ni+Zn+Sn+Pb blend taken at Zn)
+EW_CELL = {"Fe": (3.1, 0.80), "Cu": (2.2, 0.85), "Zn": (3.4, 0.80)}  # V_cell, CE, ELECTRICAL.md
+EW_N, EW_L, EW_W, EW_H = 9, 0.600, 0.420, 0.650     # params.py EW_*; 9 cells
+EW_WALL = (0.012, 0.16)     # m, W/m K CPVC wall
+CONC_M3_H = 0.17            # concentrate to EW-1, AQS-DUTY-007
+RHO_LIQ, CP_LIQ = 1050.0, 3.7   # chloride liquor
+FEED_KG_D = 150.0           # plant rate, wet
+# leach metals per wet t (ELECTRICAL.md mixed WEEE build-up), leach fraction
+LEACH_METALS = {"Fe": (250.0, 0.85, 55.85), "Cu": (70.0, 0.90, 63.55), "Zn": (30.0, 0.85, 65.38), "Al": (50.0, 0.85, 26.98)}
+DRYER_KWH_KG = (0.70, 0.85)  # ELECTRICAL.md, per kg water evaporated
+MOIST_FRAC = 0.05           # mixed WEEE moisture, ELECTRICAL.md assay
+GLASS_FRAC = (0.72, 0.13)   # soda-lime SiO2, Na2O mass fractions
+CSTR = (2.000, 1.200, 1.400)   # params.py CSTR_L/W/H
+DIGEST = (1.400, 0.900, 1.600)  # params.py DIGEST_L/W/H
+DIGEST_CLASS_KW = 1.5       # GLASS_DIGEST continuous_kw (study class)
+# decisions
+A_J_T_EW = 55.0             # EW aisle liquor, inside the 40-60 C band (FAN_STACK)
+A_J_EW_INS = (0.025, 0.040) # 25 mm closed-cell lagging on cell walls (fits the 150 mm gap at 750 pitch)
+A_J_V_HOOD = 0.3            # m/s air over the liquor under the anode hoods
+A_J_BALL = 0.80             # evaporation cut by a PP ball blanket
+A_J_T_LEACH = 77.5          # mid of 70-85 C (GLOSSARY Leach / Salria)
+A_J_T_REGEN = 35.0          # REGEN LEACH return after BMED (bipolar membranes held <= 40 C)
+A_J_T_DIGEST = 85.0         # mid of 80-90 C
+A_J_T_CAUSTIC = 35.0        # BMED caustic to the digest
+A_J_NAOH_M = 2.0            # mol/L BMED caustic
+A_J_LAG = (0.050, 0.035)    # 50 mm mineral wool on CSTR and digest
+A_J_PURGE_M3_H = 5.0        # lid purge per vessel (CSTR N3, digest to HDR_CAUSTIC), damper-set
+A_J_T_PURGE = 60.0          # purge leaves saturated at 60 C (lid reflux)
+A_J_CP_SHRED = 1.0
+A_J_Q4_RET = 45.0           # Q4 return
+A_J_HX8_WOUT = 49.0         # HX-8 water out
+A_J_HX8_LOUT = 51.0         # HX-8 liquor out
+A_J_U_PLATE = 1500.0        # W/m2 K, Ti plate liquor/water
+A_J_U_COIL = {"Q1": 150.0, "Q2": 150.0, "Q3": 400.0, "Q4": 400.0}   # natural convection, Appendix B basis
+A_J_COIL_DT = 5.0
+
+
+def xsat(T):
+    p = 0.61094 * math.exp(17.625 * T / (T + 243.04)) * 1000      # Pa, Magnus
+    return 0.622 * p / (101325 - p)
+
+
+def hfg_w(T):
+    return 2501.0 - 2.37 * T
+
+
+def lagged(dims, t_k, T):
+    L, W, H = dims
+    A = 2 * (L * W + L * H + W * H)
+    U = 1 / (t_k[0] / t_k[1] + 1 / A_H_OUT)
+    return A, U, U * A * (T - T_AMB) / 1000
+
+
+def purge_evap(m3_h, T_out):
+    m_air = m3_h / 3600 * 1.18
+    w = m_air * (xsat(T_out) - 0.010)
+    return w, w * hfg_w(T_out)
+
+
+def vtn_metal(m):
+    # M2+ + 2Cl- -> M + Cl2 (chloride EW, Cl2 to CRU)
+    return -(DHF[m + "2+"] + 2 * DHF["Cl-"]) / (2 * F) * 1000
+
+
+def hx8():
+    v_side = -(2 * DHF["Cl-"]) / (2 * F) * 1000          # 2H+ + 2Cl- -> H2 + Cl2
+    tot = sum(EW_SHARE.values())
+    rows, q_ohm = [], 0.0
+    for m, e in EW_SHARE.items():
+        V, CE = EW_CELL[m]
+        vt = vtn_metal(m)
+        frac = 1 - (CE * vt + (1 - CE) * v_side) / V
+        p = EW_KW * e / tot
+        q_ohm += p * frac
+        rows.append(dict(metal=m, V_cell=V, CE=CE, V_tn=round(vt, 3), heat_fraction=round(frac, 3), P_kw=kw(p), heat_kw=kw(p * frac)))
+    a_wall = EW_N * (2 * (EW_L + EW_W) * EW_H + EW_L * EW_W)
+    U = 1 / (EW_WALL[0] / EW_WALL[1] + A_J_EW_INS[0] / A_J_EW_INS[1] + 1 / A_H_OUT)
+    q_wall = U * a_wall * (A_J_T_EW - T_AMB) / 1000
+    a_surf = EW_N * EW_L * EW_W
+    evap_kg_h = (25 + 19 * A_J_V_HOOD) * a_surf * (xsat(A_J_T_EW) - 0.010)
+    q_evap_bare = evap_kg_h / 3600 * hfg_w(A_J_T_EW)
+    q_evap = q_evap_bare * (1 - A_J_BALL)
+    mcp = CONC_M3_H / 3600 * RHO_LIQ * CP_LIQ
+    q_feed = mcp * (A_J_T_LEACH - A_J_T_EW)
+    q = q_ohm + q_feed - q_wall - q_evap
+    m_w = q / (WATER_Q4["cp"] * (A_J_HX8_WOUT - A_J_Q4_RET))
+    m_l = q / (CP_LIQ * (A_J_T_EW - A_J_HX8_LOUT))
+    dt1, dt2 = A_J_T_EW - A_J_HX8_WOUT, A_J_HX8_LOUT - A_J_Q4_RET
+    lmtd = dt1 if abs(dt1 - dt2) < 1e-9 else (dt1 - dt2) / math.log(dt1 / dt2)
+    return dict(metals=rows, V_side=round(v_side, 3), q_ohmic_kw=kw(q_ohm), wall_area_m2=round(a_wall, 2), wall_U=round(U, 3),
+                q_wall_kw=kw(q_wall), surf_area_m2=round(a_surf, 3), evap_bare_kg_h=round(evap_kg_h, 2),
+                q_evap_bare_kw=kw(q_evap_bare), q_evap_kw=kw(q_evap), conc_mcp_kw_K=round(mcp, 4), q_feed_kw=kw(q_feed),
+                duty_kw=kw(q), water_in_C=A_J_Q4_RET, water_out_C=A_J_HX8_WOUT, liquor_in_C=A_J_T_EW,
+                liquor_out_C=A_J_HX8_LOUT, approach_hot_K=dt1, approach_cold_K=dt2, lmtd_K=round(lmtd, 2),
+                area_m2=round(q * 1000 / (A_J_U_PLATE * lmtd), 2), water_kg_h=round(m_w * 3600, 1),
+                liquor_kg_h=round(m_l * 3600, 1), sens_kw_per_K_feed=round(mcp, 4))
+
+
+def draws():
+    # HX-4 dryer: ELECTRICAL.md 0.70-0.85 kWh/kg water x mixed-WEEE moisture
+    w_kg_d = FEED_KG_D * MOIST_FRAC
+    q4 = w_kg_d * sum(DRYER_KWH_KG) / 2 / 24
+    dryer = dict(water_kg_d=w_kg_d, kWh_per_kg=sum(DRYER_KWH_KG) / 2, duty_kw=kw(q4),
+                 check_kWh_t=round(q4 * 24 / FEED_KG_D * 1000, 1), basis="ELECTRICAL.md dryer 0.70-0.85 kWh/kg water; table 40 kWh/t")
+    # HX-5 leach
+    mcp = CONC_M3_H / 3600 * RHO_LIQ * CP_LIQ
+    q_regen = mcp * (A_J_T_LEACH - A_J_T_REGEN)
+    A, U, q_shell = lagged(CSTR, A_J_LAG, A_J_T_LEACH)
+    q_shred = FEED_KG_D / 86400 * A_J_CP_SHRED * (A_J_T_LEACH - T_AMB)
+    w, q_purge = purge_evap(A_J_PURGE_M3_H, A_J_T_PURGE)
+    rx = []
+    dh = {"Fe": DHF["Fe2+"], "Zn": DHF["Zn2+"], "Al": DHF["Al3+"],
+          "Cu": DHF["Cu2+"] + DHF["Cl-"] / 3 + DHF["H2O"] - DHF["ClO3-"] / 3}
+    q_rx = 0.0
+    for m, (kg_t, f, M) in LEACH_METALS.items():
+        mol_d = kg_t * f * FEED_KG_D / 1000 * 1000 / M
+        q = mol_d * -dh[m] / 86400
+        q_rx += q
+        rx.append(dict(metal=m, kg_d=round(kg_t * f * FEED_KG_D / 1000, 2), mol_d=round(mol_d, 1), dH_kJ_mol=round(dh[m], 1),
+                       oxidant="ClO3-" if m == "Cu" else "H+ (lowest credit)", q_kw=kw(q)))
+    q5 = q_regen + q_shell + q_shred + q_purge - q_rx
+    leach = dict(T_C=A_J_T_LEACH, q_regen_kw=kw(q_regen), regen_in_C=A_J_T_REGEN, mcp_kw_K=round(mcp, 4),
+                 shell_area_m2=round(A, 2), shell_U=round(U, 3), q_shell_kw=kw(q_shell), q_shred_kw=kw(q_shred),
+                 purge_water_kg_d=round(w * 86400, 1), q_purge_kw=kw(q_purge), reactions=rx, q_exotherm_kw=kw(q_rx),
+                 duty_kw=kw(q5))
+    # HX-6 digest
+    g = CULLET_KG_D
+    sio2 = g * GLASS_FRAC[0] / 60.08 * 1000
+    na_in = 2 * g * GLASS_FRAC[1] / 61.98 * 1000
+    naoh = max(2 * sio2 - na_in, 0)
+    v_l_d = naoh / A_J_NAOH_M
+    m_liq = v_l_d / 1000 * 1080.0
+    q_liq = m_liq / 86400 * 3.8 * (A_J_T_DIGEST - A_J_T_CAUSTIC)
+    q_glass = g / 86400 * 0.84 * (A_J_T_DIGEST - T_AMB)
+    Ad, Ud, q_dshell = lagged(DIGEST, A_J_LAG, A_J_T_DIGEST)
+    wd, q_dpurge = purge_evap(A_J_PURGE_M3_H, A_J_T_PURGE)
+    q6 = q_liq + q_glass + q_dshell + q_dpurge
+    digest = dict(T_C=A_J_T_DIGEST, glass_kg_d=g, naoh_mol_d=round(naoh, 0), naoh_kg_d=round(naoh * 0.040, 1),
+                  caustic_L_d=round(v_l_d, 0), q_liquor_kw=kw(q_liq), q_glass_kw=kw(q_glass), shell_area_m2=round(Ad, 2),
+                  q_shell_kw=kw(q_dshell), purge_water_kg_d=round(wd * 86400, 1), q_purge_kw=kw(q_dpurge), duty_kw=kw(q6),
+                  class_kw=DIGEST_CLASS_KW)
+    return dryer, leach, digest
+
+
+def ladder_j(q1_src, q2_src, losses, split, q_hx8, draw_list):
+    """Rev J ladder: HX-8 into Q4, Q3 serves the process draws in list order; shortfall is electric trim."""
+    out = {}
+    for i, lad in enumerate("AB"):
+        f = split[i]
+        if f == 0:
+            out[lad] = None
+            continue
+        r = {}
+        q_in1 = q1_src * f
+        d1 = q_in1 - losses["Q1"]
+        r["Q1"] = dict(src=q_in1, from_above=0.0, loss=losses["Q1"], down=d1)
+        d1n = d1 * (1 - A_HP_LOSS)
+        d2 = d1n + q2_src * f - losses["Q2"]
+        r["Q2"] = dict(src=q2_src * f, from_above=d1n, hp_loss=d1 - d1n, loss=losses["Q2"], down=d2)
+        d2n = d2 * (1 - A_HP_LOSS)
+        avail = d2n - losses["Q3"]
+        served, short = {}, {}
+        for name, q in draw_list:
+            need = q * f
+            s = min(need, max(avail, 0.0))
+            served[name], short[name] = s, need - s
+            avail -= s
+        d3 = max(avail, 0.0)
+        r["Q3"] = dict(src=0.0, from_above=d2n, hp_loss=d2 - d2n, loss=losses["Q3"], draws=sum(served.values()), down=d3)
+        r["draws_served"] = served
+        r["trim"] = short
+        d3n = d3 * (1 - A_HP_LOSS)
+        q8 = q_hx8 * f
+        bus = d3n + q8 - losses["Q4"]
+        r["Q4"] = dict(src=q8, from_above=d3n, hp_loss=d3 - d3n, loss=losses["Q4"], down=bus)
+        out[lad] = r
+    return out
+
+
+def closure_j(q1_src, q2_src, q_hx8, res):
+    src = q1_src + q2_src + q_hx8
+    sinks = 0.0
+    for r in res.values():
+        if r is None:
+            continue
+        sinks += r["Q4"]["down"] + sum(r["draws_served"].values())
+        sinks += sum(r[t]["loss"] for t in ("Q1", "Q2", "Q3", "Q4")) + sum(r[t].get("hp_loss", 0.0) for t in ("Q1", "Q2", "Q3", "Q4"))
+    return src, sinks, src - sinks
+
+
+def coil(q_kw, tier):
+    return q_kw * 1000 / (A_J_U_COIL[tier] * A_J_COIL_DT)
+
+
+A_J_LOWFIN = (2.5, 0.90)     # integral low-fin tube: outside area ratio, fin efficiency (used only if bare does not fit)
+
+
+def coil_fit(area, tier, dn=25, clear=0.06):
+    """Helical coil, pitch 2 OD, concentric rows (max 3) until one coil fits in 0.45 of the store height
+    (evaporator low, condenser high: two cross-tie coils per store). Falls back to low-fin tube."""
+    od = {15: 0.0213, 20: 0.0269, 25: 0.0337}[dn]
+    vol, T, (shape, a, b, h), t, k, mat = STORES[tier]
+    d0 = (a if shape == "cyl" else min(a, b)) - 2 * clear - od
+    for tube, mult in (("bare", 1.0), ("integral low-fin", A_J_LOWFIN[0] * A_J_LOWFIN[1])):
+        L = area / (math.pi * od * mult)
+        for rows in range(1, 4):
+            ds = [d0 - 4 * od * i for i in range(rows)]
+            turns = L / (math.pi * sum(ds))
+            height = turns * 2 * od
+            if height <= 0.45 * h:
+                break
+        if 2 * height <= 0.9 * h:
+            break
+    return dict(tube=f"DN{dn} OD {od*1000:.1f} mm, {tube}", tube_m=round(L, 1), rows=rows,
+                helix_d_m=[round(d, 3) for d in ds], turns_per_row=round(turns, 1), height_m=round(height, 3),
+                store_inner_h_m=h, fits_two=2 * height <= 0.9 * h)
+
+
+def r1_variant(h8, leach):
+    """Sensitivity, not adopted: liquor recuperator between the concentrate (leach -> EW-1) and the REGEN LEACH
+    return, sized so that HX-8 is 0 (EW self-balanced)."""
+    mcp = h8["conc_mcp_kw_K"]
+    net_ew = h8["q_ohmic_kw"] - h8["q_wall_kw"] - h8["q_evap_kw"]
+    t_feed = A_J_T_EW - net_ew / mcp
+    q_r1 = mcp * (A_J_T_LEACH - t_feed)
+    t_ret = A_J_T_REGEN + q_r1 / mcp
+    q5 = leach["duty_kw"] - q_r1
+    return dict(ew_feed_C=round(t_feed, 1), r1_duty_kw=kw(q_r1), regen_after_r1_C=round(t_ret, 1),
+                approach_K=round(min(A_J_T_LEACH - t_ret, t_feed - A_J_T_REGEN), 1), hx5_kw=kw(q5), hx8_kw=0.0)
+
+
+def main_j():
+    base = main()
+    ab, bo, q1_src, q2_src = sources()
+    losses = {t: base["stores"][t]["loss_kw"] for t in STORES}
+    h8 = hx8()
+    dryer, leach, digest = draws()
+    order = [("HX-4", dryer["duty_kw"]), ("HX-6", digest["duty_kw"]), ("HX-5", leach["duty_kw"])]
+    tot_draw = sum(q for _, q in order)
+    run_n = ladder_j(q1_src, q2_src, losses, (0.5, 0.5), h8["duty_kw"], order)
+    run_s = ladder_j(q1_src, q2_src, losses, (1.0, 0.0), h8["duty_kw"], order)
+    cN, cS = closure_j(q1_src, q2_src, h8["duty_kw"], run_n), closure_j(q1_src, q2_src, h8["duty_kw"], run_s)
+    idle_s = base["single"]["A"]
+    S = run_s["A"]
+    rated = dict(base["rated"])
+    rated["DOWN_Q3"] = max(idle_s["Q3"]["down"], S["Q3"]["down"]) * A_MARGIN
+    rated["BUS_Q4"] = max(idle_s["Q4"]["down"], S["Q4"]["down"]) * A_MARGIN
+    # HX-8 has its own edge to each Q4 battery, so the Q4 cross-tie never carries HX-8 heat: X_Q4 keeps the ladder basis.
+    rated["X_Q4"] = max(idle_s["Q4"]["from_above"], S["Q4"]["from_above"]) * A_MARGIN
+    rated["HX8"] = h8["duty_kw"] * A_MARGIN
+    for k, q in order:
+        rated[k] = q * A_MARGIN
+    trim = {lad: (sum(r["trim"].values()) if r else 0.0) for lad, r in run_n.items()}
+    trim_n = {k: sum(run_n[l]["trim"][k] for l in "AB") for k, _ in order}
+    trim_s = {k: run_s["A"]["trim"][k] for k, _ in order}
+    edges = {}
+    N = run_n["A"]
+    for lad in "AB":
+        edges[f"HL-Q3-{lad}-DOWN"] = dict(src=f"Q3_{lad}", dst=f"Q4_{lad}", rated=rated["DOWN_Q3"], normal=N["Q3"]["down"],
+                                          normal_idle=base["normal"]["A"]["Q3"]["down"], **twophase(rated["DOWN_Q3"], "W_85", A_L_DOWN))
+        edges[f"HL-Q4-{lad}-BUS"] = dict(src=f"Q4_{lad}", dst="Q4_BUS", rated=rated["BUS_Q4"], normal=N["Q4"]["down"],
+                                         **pumped(rated["BUS_Q4"], WATER_Q4, 65.0, 45.0))
+        p = pumped(rated["HX8"], WATER_Q4, A_J_Q4_RET, A_J_HX8_WOUT)
+        p.update(kind="pumped loop (Q4 return preheat)", supply_C=A_J_HX8_WOUT, return_C=A_J_Q4_RET)
+        edges[f"HL-HX8-Q4-{lad}"] = dict(src="HX8", dst=f"Q4_{lad}", rated=rated["HX8"], normal=h8["duty_kw"] / 2, **p,
+                                         approach_K=min(h8["approach_hot_K"], h8["approach_cold_K"]),
+                                         hot_side=f"EW liquor {A_J_T_EW:.0f} -> {A_J_HX8_LOUT:.0f} C")
+        for k, dst, tsup, tret in (("HX-4", "OIL_DRYER", 95.0, 85.0), ("HX-5", "LEACH_CSTR_1", 95.0, 85.0), ("HX-6", "GLASS_DIGEST", 95.0, 90.0)):
+            p = pumped(rated[k], WATER_Q4 | dict(name="treated water (Q3 jacket loop, pressurized)", rho=962.0, cp=4.21), tsup, tret)
+            edges[f"HL-Q3-{lad}-{k.replace('-', '')}"] = dict(src=f"Q3_{lad}", dst=dst, rated=rated[k], normal=N["draws_served"][k], **p,
+                                                              exchanger=k, trim_normal_kw=trim_n[k] / 2, trim_single_kw=trim_s[k])
+    for t, key in (("Q4", "W_65"),):
+        for sfx, a, b in (("X", "A", "B"), ("X-BA", "B", "A")):
+            edges[f"HL-{t}-{sfx}"] = dict(src=f"{t}_{a}", dst=f"{t}_{b}", rated=rated["X_Q4"], normal=0.0, **twophase(rated["X_Q4"], key, A_L_X))
+    for e in edges.values():
+        e["rated"], e["normal"] = round(e["rated"], 3), round(e["normal"], 3)
+    coils = {}
+    for t in ("Q1", "Q2", "Q3", "Q4"):
+        a = coil(rated["X_" + t], t)
+        coils[t] = dict(rated_kw=kw(rated["X_" + t]), area_m2=round(a, 2), **coil_fit(a, t))
+    return dict(base=base, hx8=h8, dryer=dryer, leach=leach, digest=digest, draw_order=[k for k, _ in order], draw_total_kw=kw(tot_draw),
+                run_normal=run_n, run_single=run_s, closure_run_normal=[kw(x) for x in cN], closure_run_single=[kw(x) for x in cS],
+                trim_normal=({k: kw(v) for k, v in trim_n.items()}), trim_single=({k: kw(v) for k, v in trim_s.items()}),
+                rated_j={k: kw(v) for k, v in rated.items()}, edges_j=edges, coils=coils,
+                r1=r1_variant(h8, leach), q4_bus_running_normal_kw=kw(2 * N["Q4"]["down"]),
+                q4_bus_running_single_kw=kw(S["Q4"]["down"]), q4_life_kw=3.0)
+
 if __name__ == "__main__":
+    if "--rev-j" in sys.argv:
+        r = main_j()
+        if "--json" in sys.argv:
+            json.dump(r, open(sys.argv[sys.argv.index("--json") + 1], "w"), indent=1, default=float)
+        for k in ("hx8", "dryer", "leach", "digest"):
+            print(k, json.dumps(r[k]))
+        print("draw_total", r["draw_total_kw"], "trim_normal", r["trim_normal"], "trim_single", r["trim_single"])
+        print("closure_run_normal", r["closure_run_normal"], "closure_run_single", r["closure_run_single"])
+        for c in ("run_normal", "run_single"):
+            for L, t in r[c].items():
+                if t:
+                    print(c, L, {q: ({a: round(b, 3) for a, b in v.items()} if isinstance(v, dict) else v) for q, v in t.items()})
+        print("rated_j", r["rated_j"])
+        for k, e in r["edges_j"].items():
+            print(k, e["rated"], e["normal"], e.get("supply_C"), e.get("return_C"), e.get("m_kg_s"), e.get("line_DN"), e.get("velocity_m_s"), e.get("dp_ok"))
+        print("r1", r["r1"], "bus", r["q4_bus_running_normal_kw"], r["q4_bus_running_single_kw"])
+        for k, c in r["coils"].items():
+            print("coil", k, c)
+        sys.exit(0)
+
     r = main()
     if "--json" in sys.argv:
         json.dump(r, open(sys.argv[sys.argv.index("--json") + 1], "w"), indent=1, default=float)

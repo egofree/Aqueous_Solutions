@@ -15,6 +15,8 @@ build/
 *.FCBak
 # Generated placement copy (flow_graph/apply_placement.py). plant.FCStd stays the tracked source.
 models/freecad/plant_placed.FCStd
+# Dated placement copies (hub keeps the archive).
+models/freecad/plant_placed_*.FCStd
 .DS_Store
 .idea/
 .vscode/

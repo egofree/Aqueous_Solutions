@@ -164,9 +164,9 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {Q2 -- 150–250 °C. Thermal-oil / steam; still reboiler; burnout jacket.}
 
-{Q3 -- 80–120 °C. Dryer, leach, digest, EW / polish ohmic reject.}
+{Q3 -- 80–120 °C. Charged only downhill from Q2. Draws: dryer (HX-4), digest (HX-6), leach (HX-5). No EW heat (no lift).}
 
-{Q4 -- < 80 °C. Still condenser, rinse, BMED makeup, HVAC.}
+{Q4 -- < 80 °C. Still condenser, rinse, BMED makeup, HVAC. EW / polish ohmic reject through HX-8.}
 
 {HX-1 -- Q1 pyro wall recovery.}
 
@@ -182,17 +182,17 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {HX-7 -- Q2 burnout rotary jacket.}
 
-{HX-8 -- Q3 EW ohmic reject.}
+{HX-8 -- EW aisle exchanger to Q4. EW liquor 55 → 51 °C preheats the Q4 return 45 → 49 °C, 6 K approach. Edges HL-HX8-Q4-A/B. AQS-DUTY-008 Rev B.}
 
-{HX-8b -- Q3 polish ohmic reject onto the EW tap.}
+{HX-8b -- Polish ohmic reject onto the EW tap; reaches Q4 through HX-8.}
 
-{Heat rule -- If pyro is down the dryer still runs on EW heat. Leach and digest idle on the same Q3 loop.}
+{Heat rule -- EW heat goes to Q4 through HX-8, never to Q3. Q3 serves its draws in order dryer, digest, leach; any shortfall is electric trim at the process. If pyro is down, Q3 runs on inventory and then on trim.}
 
 {Loop thermosyphon -- Ladder step or cross-tie. Evaporator low in the source store, condenser at least 0.8 m higher in the sink store, vapor riser and condensate return with a check. The hardware diode. Own fluid per step.}
 
 {Rated duty -- For an HL-* edge, the single-ladder throughput × 1.25; carried as the edge rate. Normal duty is both ladders on line. AQS-DUTY-008.}
 
-{CO2-rich cut -- S67B. FLUE_KO VSA product, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue.}
+{CO2-rich cut -- S67B. FLUE_KO VSA product, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue. The only CRYO_CO2 credit for afterburner carbon; S18 carries none since Rev J.}
 
 ## Gas headers
 

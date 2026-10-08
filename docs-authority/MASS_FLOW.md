@@ -68,7 +68,7 @@ Sheet: `mass_flow_pfd.png` (generator `pfd_scripts/mass_flow_pfd.py`).
 | S15 | GROW → HDR_O2 | Closed | photosynthetic O₂ |
 | S16 | MFG scrap → HOPPER | Closed | no FR-4 to pyro |
 | S17 | Power bus → loads | Closed | electric; Br₂ stays on ZnBr2 |
-| S18 | AFTERBURNER / air → CRYO feed | Claimed | CO₂ capture; extended by S67; not acid-gas header |
+| S18 | AFTERBURNER / air → CRYO feed | Retired credit (Rev J) | Claim id only, 0 kg/d; afterburner CO₂ (15.0 kg/d) is counted on S67 and credited at CRYO_CO2 through S67B (12.75 kg/d); not acid-gas header |
 | S19 | BAGHOUSE fines → CSTR 1 | Closed | claimed recycle |
 | S20 | Loads → SOL_ARK bus | Closed | electric |
 | S21 | ROOF TANK → HAB / FARM / UPW | Closed | clean tower water |

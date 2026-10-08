@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "F",
+  "revision": "G",
   "date": "2026-10-07",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
@@ -999,8 +999,8 @@
       "unit_id": "Q1_A",
       "level": "L-1",
       "origin_mm": [
-        6000,
-        4000,
+        1200,
+        9000,
         -6000
       ],
       "size_mm": [
@@ -1008,14 +1008,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Cross-tie coils inside: 2 x 1.84 m2 (DN25 OD 33.7 mm, bare, 3 row(s), 0.376 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q2_A",
       "level": "L-1",
       "origin_mm": [
-        6000,
-        5500,
+        2700,
+        9000,
         -6000
       ],
       "size_mm": [
@@ -1023,14 +1023,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Cross-tie coils inside: 2 x 2.7 m2 (DN25 OD 33.7 mm, integral low-fin, 2 row(s), 0.305 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q3_A",
       "level": "L-1",
       "origin_mm": [
-        6000,
-        7000,
+        4200,
+        9000,
         -6000
       ],
       "size_mm": [
@@ -1038,14 +1038,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Cross-tie coils inside: 2 x 0.92 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.352 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q4_A",
       "level": "L-1",
       "origin_mm": [
-        6000,
-        8500,
+        5700,
+        9000,
         -6000
       ],
       "size_mm": [
@@ -1053,14 +1053,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Cross-tie coils inside: 2 x 0.78 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.271 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q1_B",
       "level": "L-1",
       "origin_mm": [
-        12000,
-        4000,
+        15000,
+        15000,
         -6000
       ],
       "size_mm": [
@@ -1068,14 +1068,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Cross-tie coils inside: 2 x 1.84 m2 (DN25 OD 33.7 mm, bare, 3 row(s), 0.376 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q2_B",
       "level": "L-1",
       "origin_mm": [
-        12000,
-        5500,
+        16500,
+        15000,
         -6000
       ],
       "size_mm": [
@@ -1083,14 +1083,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Cross-tie coils inside: 2 x 2.7 m2 (DN25 OD 33.7 mm, integral low-fin, 2 row(s), 0.305 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q3_B",
       "level": "L-1",
       "origin_mm": [
-        12000,
-        7000,
+        18000,
+        15000,
         -6000
       ],
       "size_mm": [
@@ -1098,14 +1098,14 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Cross-tie coils inside: 2 x 0.92 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.352 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q4_B",
       "level": "L-1",
       "origin_mm": [
-        12000,
-        8500,
+        19500,
+        15000,
         -6000
       ],
       "size_mm": [
@@ -1113,7 +1113,7 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery. Study envelope. Q1 is oil/ceramic, not water."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Cross-tie coils inside: 2 x 0.78 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.271 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "PROD_C5_C10",
@@ -1266,5 +1266,6 @@
       "source": "Own Br2 tower. 10 ft class with the skid."
     }
   ],
-  "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied."
+  "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",
+  "notes_rev_g": "2026-10-07, graph Rev J. Q1_A..Q4_B rows reissued: the Rev F study origins (ladder A at x 6000, B at x 12000) collided with LEACH_CSTR_1, BMED_REGEN, SALT_FEED, HVAC_Q4 and the process core on the placed copy. New origins: ladder A along the west wall (x 1200/2700/4200/5700, y 9000), ladder B in the north-east bay (x 15000/16500/18000/19500, y 15000), all L-1 at z -6000, 1500 mm pitch. Checked against every solid on the placed copy and every seed box: >= 600 mm (maint_clear_mm) to equipment and walls, no overlap with corridors or fit-out. Issued envelope 800x800x1200 and store volumes unchanged. Cross-tie coils sized in AQS-DUTY-008 Rev B. GEO_ORC pad untouched. Plate-world origins; PROCESS_DX/DY not applied."
 }

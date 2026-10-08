@@ -59,7 +59,7 @@ Study / stand-in rates remain labeled. No vendor nameplates invented.
 | **MEOH** | Energy Storage System (Electrochemical) | S73, S74, S76, S79 | Synth feeds + MEOH_FC DC (also process) |
 | **PUMPED_HYDRO** | Energy Storage System (Gravity) | S22, S23 | Roof↔catch penstock |
 | **WET** | Process (Mass transform) | S08, S05, S64 | Metals crib; Faraday H₂ generation |
-| **OIL** | Process (Mass transform) | S11, S18 | Organics; afterburner→CRYO |
+| **OIL** | Process (Mass transform) | S11, S18, S67, S67B | Organics; afterburner→CRYO (carbon on S67/S67B since graph Rev J; S18 is the claim id) |
 | **GLASS** | Process (Mass transform) | S08G | Silicate/ceramic goods export |
 | **GAS** | Process (Mass transform) | S05, S64, S65, S24 | Dryer / polish / contingency |
 | **FAB** | Process (Mass transform) | S03, S09, S10 | Wafer gases / etch; goods surplus |

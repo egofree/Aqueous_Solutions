@@ -83,7 +83,7 @@ Al, Mg, Ca, Li, REE are not electrowon here. Their energy is BMED NaOH + mixing,
 BMED: 1.8–2.4 kWh per kg of (NaOH + HCl) pair at 50–100 A, 1.8–2.2 V per repeating unit.
 
 Induction pyro: 0.8–1.2 kWh/kg dry plastic to the coil, plus afterburner heat from NCG.
-Dryer: 0.70–0.85 kWh/kg water evaporated (Q3, including EW reject).
+Dryer: 0.70–0.85 kWh/kg water evaporated (Q3 through HX-4). Since graph Rev J the EW reject goes to Q4 through HX-8 (AQS-DUTY-008 Rev B).
 Shredder: 10–25 kWh/wet t, peaked.
 
 ## AC vs DC

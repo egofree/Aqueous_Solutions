@@ -60,7 +60,7 @@ Out: intra-aisle recycle (EW overflow, float return, C29) — remain on line PFD
 | S15 | GROW BED | HDR_O2 | G | photosynthetic O₂ | HDR_O2 | — |
 | S16 | MFG SHOP scrap | HOPPER | S | metal / polymer scrap | conveyor | pyro if FR-4 |
 | S17 | SOL_ARK / ZNBR2 / RECTIFIER | all blocks | E | DC / 480 V | tray | battery Br₂ into CRU |
-| S18 | AFTERBURNER / air | CRYO | G | captured CO₂ / air feed | CRYO feed | acid-gas header |
+| S18 | AFTERBURNER / air | CRYO | G | flue-carbon claim reference; 0 kg/d CO₂ since graph Rev J (carbon counted once on S67 → FLUE_KO → S67B). Cold-box air is AIR_INTAKE → MOL_SIEVE | CRYO feed | acid-gas header |
 | S19 | BAGHOUSE fines | LEACH CSTR 1 | S | dust | existing | farm |
 | S20 | LED CANOPY, FAB TOOL, HAB AIR | SOL_ARK bus | E | load | tray | — |
 | S21 | ROOF TANK | HAB WATER, FARM SUMP, UPW POLISH | L | clean tower water | gravity + HDR_UPW | Salria, grey, etch |

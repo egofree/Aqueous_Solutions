@@ -60,8 +60,16 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] HL-* edge duties, media, temperatures, flows, and line sizes (AQS-DUTY-008)
 - [x] Ladder energy balance closes, both ladders and single ladder
 - [x] S67B CO2-rich cut defined (VSA at FLUE_KO, 12.75 kg/d CO2)
-- [ ] HX-8 tier: EW at 40–60 °C cannot charge Q3; decide Q4 or a hot EW aisle
-- [ ] S18 and S67B are the same carbon; decide which one carries the claim
+- [x] HX-8 tier: moved to Q4 (HL-HX8-Q4-A/B), 4.57 kW, Q4 return 45 → 49 °C, 6 K approach (AQS-DUTY-008 Rev B §13.1)
+- [x] S18 and S67B: S67B carries the claim (12.75 kg/d); S18 at 0 kg/d, edge kept; CRYO_CO2 balanced (§13.3)
+- [x] Q3 draws HX-4/HX-5/HX-6 are graph edges with duties 0.242 / 6.353 / 1.663 kW (§13.2)
+- [x] Ladder balance closes running and idle, both ladders and single ladder (residual 0.000 kW)
+- [x] Cross-tie coils fit inside the stores (Q2 on low-fin tube) (§13.5)
+- [ ] Leach heater rating: 6.35 kW electric trim has no issued rating; issue one or adopt recuperator R-1 (§13.7)
+- [ ] Digest heater: 1.08 kW trim sits inside the 1.5 kW GLASS_DIGEST study class; issue the class as the rating
+- [ ] HDR_CO2 consumer or export for 11.6 kg/d (S85)
+- [ ] Q4 bus 4.24 kW running vs 3.0 kW life priority; surplus 1.24 kW to ST-ORC-01 (ORC stays 0)
+- [ ] Thermosyphon 0.8 m rise between stores on one floor: stands or level offset
 
 ## Fab room
 
@@ -81,6 +89,9 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] FUEL_CELL south (O2) face 7700 mm from BACKUP_GEN, above the 7620 mm oxidizer separation without a 1 h wall
 - [x] GEO_ORC pad stays empty; nearest box 700 mm
 - [x] Glass envelopes (rinse, mill, burnout) at issued size on the copy
+- [x] Seed Rev G: Q1_A..Q4_B reissued (Rev F study origins hit LEACH_CSTR_1, BMED_REGEN and the core); ladder A west wall y 9000, ladder B north-east bay y 15000
+- [x] Ladder stores ≥ 700 mm from same-level equipment and walls on the placed copy; 0 intersections; seed all-pairs 0 of 2080
+- [x] Ladder stores carried as issued envelopes on `plant_placed_2026-10-07_revJ.FCStd` (`--create-issued-only`)
 
 ## Done
 
