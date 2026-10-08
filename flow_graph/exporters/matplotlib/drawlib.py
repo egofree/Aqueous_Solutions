@@ -101,3 +101,97 @@ def mem_bar(ax, x, y, w, h, kind):
         if h > 2.4:
             ax.text(x + w / 2, y + h / 2, "BPM", ha="center", va="center",
                     fontsize=12.4, fontweight="bold", color=P.INK, rotation=90, zorder=6)
+
+
+# Legend rows shared by the line sheets. Artists are not clipped so the
+# strip may sit below the axes limits.
+LEGEND_STREAMS = (
+    ("solid / scrap", "C_SOLID"),
+    ("leach / acid liquor", "C_LEACH"),
+    ("organics / oil", "C_OIL"),
+    ("inorganic utility", "C_INORG"),
+    ("heat / grey / HVAC", "C_HEAT"),
+    ("product", "C_PROD"),
+    ("cathode / H2", "C_CA"),
+    ("anode / oxidizer", "C_AN"),
+)
+
+
+def legend_strip(ax, x, y, w=160.0, include=("streams", "marks"), row=2.4, size=None):
+    """Draw labelled legend rows from (x, y) downward. Returns the y below the last row."""
+    fs = 8.6 if size is None else size
+    head = 12.0
+    span = max(w - head, 1.0)
+    kw = dict(clip_on=False, zorder=7)
+
+    def caption(yy, text):
+        ax.text(x, yy, text, ha="left", va="center", fontsize=fs + 1.6,
+                fontweight="bold", color=P.INK, **kw)
+
+    yy = y
+    for part in include:
+        if part == "streams":
+            caption(yy, "STREAMS")
+            step = span / len(LEGEND_STREAMS)
+            for i, (label, cname) in enumerate(LEGEND_STREAMS):
+                x0 = x + head + i * step
+                ax.plot([x0, x0 + 2.4], [yy, yy], color=getattr(P, cname), lw=2.0,
+                        solid_capstyle="butt", **kw)
+                ax.text(x0 + 3.0, yy, label, ha="left", va="center", fontsize=fs,
+                        color=P.MUTED, **kw)
+        elif part == "marks":
+            caption(yy, "MARKS")
+            step = span / 5.0
+            h = row * 0.62
+            x0 = x + head
+            ax.add_patch(FancyBboxPatch((x0, yy - h / 2), 3.0, h,
+                                        boxstyle="round,pad=0.05,rounding_size=0.2",
+                                        facecolor=P.C_PROD_F, edgecolor=P.C_PROD, lw=1.0, **kw))
+            ax.text(x0 + 3.6, yy, "unit (locked name)", ha="left", va="center",
+                    fontsize=fs, color=P.MUTED, **kw)
+            x0 += step
+            ax.add_patch(FancyBboxPatch((x0, yy - h / 2), 3.0, h,
+                                        boxstyle="round,pad=0.05,rounding_size=0.2",
+                                        facecolor=P.C_HEAT_F, edgecolor=P.C_HEAT, lw=1.0, **kw))
+            ax.text(x0 + 3.6, yy, "rule (not equipment)", ha="left", va="center",
+                    fontsize=fs, color=P.MUTED, **kw)
+            x0 += step
+            s = h / 2
+            ax.add_patch(Polygon([(x0 + s, yy + s), (x0 + 2 * s, yy), (x0 + s, yy - s), (x0, yy)],
+                                 closed=True, facecolor=P.C_HX_F, edgecolor=P.C_HX, lw=1.0, **kw))
+            ax.text(x0 + 2 * s + 0.8, yy, "HX  Q1–Q4", ha="left", va="center",
+                    fontsize=fs, color=P.MUTED, **kw)
+            x0 += step
+            ax.text(x0, yy, "S01", ha="left", va="center", fontsize=fs + 0.6,
+                    fontstyle="italic", color=P.MUTED, **kw)
+            ax.text(x0 + 3.6, yy, "stream ID (register)", ha="left", va="center",
+                    fontsize=fs, color=P.MUTED, **kw)
+            x0 += step
+            ax.text(x0, yy, "HDR_*", ha="left", va="center", fontsize=fs + 0.6,
+                    fontweight="bold", color=P.INK, **kw)
+            ax.text(x0 + 4.6, yy, "header, not a vessel", ha="left", va="center",
+                    fontsize=fs, color=P.MUTED, **kw)
+        elif part == "membranes":
+            caption(yy, "MEMBRANES")
+            step = span / 5.0
+            h = row * 0.22
+            items = (("CEM", "CEM  cations pass"), ("AEM", "AEM  anions pass"),
+                     ("BPM", "BPM  CEL | AEL  water splits"))
+            for i, (kind, label) in enumerate(items):
+                x0 = x + head + i * step
+                if kind == "BPM":
+                    ax.add_patch(Rectangle((x0, yy - h / 2), 1.2, h, facecolor=P.C_CEM_F,
+                                           edgecolor=P.C_CEM, lw=1.0, **kw))
+                    ax.add_patch(Rectangle((x0 + 1.2, yy - h / 2), 1.2, h, facecolor=P.C_AEM_F,
+                                           edgecolor=P.C_AEM, lw=1.0, **kw))
+                else:
+                    fill = P.C_CEM_F if kind == "CEM" else P.C_AEM_F
+                    edge = P.C_CEM if kind == "CEM" else P.C_AEM
+                    ax.add_patch(Rectangle((x0, yy - h / 2), 2.4, h, facecolor=fill,
+                                           edgecolor=edge, lw=1.0, **kw))
+                ax.text(x0 + 3.0, yy, label, ha="left", va="center", fontsize=fs,
+                        color=P.MUTED, **kw)
+        else:
+            raise ValueError("legend_strip: unknown row %r" % part)
+        yy -= row
+    return yy
