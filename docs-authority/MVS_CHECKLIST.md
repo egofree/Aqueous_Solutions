@@ -13,11 +13,12 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 
 ## EW aisle
 
-- [ ] ew_cascade_present.py run on the operator box
-- [ ] ew_cascade.FCStd written
-- [ ] plant.FCStd not opened by that run
-- [ ] EW-1 through EW-9, each 600×420×650, at 750 mm pitch
-- [ ] Overflow order EW-1 → EW-9 → polish confirmed on the solid
+- [x] ew_cascade_present.py run on the operator box
+- [x] ew_cascade.FCStd written
+- [x] plant.FCStd not opened by that run
+- [x] EW-1 through EW-9, each 600×420×650, at 750 mm pitch
+- [x] Overflow order EW-1 → EW-9 → polish confirmed on the solid
+- [x] ew_cascade.step re-exported with the nine cells, eight launders, POLISH_BANK, and the EW-9 → polish pipe (2026-10-07)
 
 ## Machines
 

@@ -13,6 +13,8 @@ build/
 
 # FreeCAD backups / editor junk
 *.FCBak
+# Generated placement copy (flow_graph/apply_placement.py). plant.FCStd stays the tracked source.
+models/freecad/plant_placed.FCStd
 .DS_Store
 .idea/
 .vscode/
