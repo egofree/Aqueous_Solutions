@@ -1,7 +1,7 @@
 # Stream register excerpt — DERIVED from flow_graph
 
 Document number: AQS-STR-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev I (`plant_flow_graph.json`)
+Source: AQS-FLOW-GRAPH-001 Rev J (`plant_flow_graph.json`)
 Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
@@ -21,8 +21,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | HL-AFTERBURNER-Q1-B | AFTERBURNER | Q1_B | heat | thermal | present | Q1 flue, not Q4 | 1.383 kW | — |
 | HL-GLASS_BURNOUT-Q2-A | GLASS_BURNOUT | Q2_A | heat | thermal | present | Q2 burnout, not Q4 | 0.928 kW | — |
 | HL-GLASS_BURNOUT-Q2-B | GLASS_BURNOUT | Q2_B | heat | thermal | present | Q2 burnout, not Q4 | 0.928 kW | — |
-| HL-HX8-Q3-A | HX8 | Q3_A | heat | mass | present | HX-8 residual | — | — |
-| HL-HX8-Q3-B | HX8 | Q3_B | heat | mass | present | HX-8 residual | — | — |
+| HL-HX8-Q4-A | HX8 | Q4_A | heat | thermal | present | HX-8 EW reject, Q4 return preheat | 5.715 kW | — |
+| HL-HX8-Q4-B | HX8 | Q4_B | heat | thermal | present | HX-8 EW reject, Q4 return preheat | 5.715 kW | — |
 | HL-Q1-A-DOWN | Q1_A | Q2_A | heat | thermal | present | downhill heat pipe | 1.133 kW | — |
 | HL-Q1-B-DOWN | Q1_B | Q2_B | heat | thermal | present | downhill heat pipe | 1.133 kW | — |
 | HL-Q1-X | Q1_A | Q1_B | heat | thermal | present | cross-tie, hot to cold only | 1.383 kW | — |
@@ -33,10 +33,16 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | HL-Q2-X-BA | Q2_B | Q2_A | heat | thermal | present | cross-tie, hot to cold only | 2.027 kW | — |
 | HL-Q3-A-DOWN | Q3_A | Q4_A | heat | thermal | present | downhill heat pipe | 1.614 kW | — |
 | HL-Q3-B-DOWN | Q3_B | Q4_B | heat | thermal | present | downhill heat pipe | 1.614 kW | — |
+| HL-Q3-A-HX4 | Q3_A | OIL_DRYER | heat | thermal | present | HX-4 Q3 process heat (dryer jacket) | 0.302 kW | — |
+| HL-Q3-A-HX5 | Q3_A | LEACH_CSTR_1 | heat | thermal | present | HX-5 Q3 process heat (leach CSTR jacket) | 7.941 kW | — |
+| HL-Q3-A-HX6 | Q3_A | GLASS_DIGEST | heat | thermal | present | HX-6 Q3 process heat (NaOH digest jacket) | 2.079 kW | — |
+| HL-Q3-B-HX4 | Q3_B | OIL_DRYER | heat | thermal | present | HX-4 Q3 process heat (dryer jacket) | 0.302 kW | — |
+| HL-Q3-B-HX5 | Q3_B | LEACH_CSTR_1 | heat | thermal | present | HX-5 Q3 process heat (leach CSTR jacket) | 7.941 kW | — |
+| HL-Q3-B-HX6 | Q3_B | GLASS_DIGEST | heat | thermal | present | HX-6 Q3 process heat (NaOH digest jacket) | 2.079 kW | — |
 | HL-Q3-X | Q3_A | Q3_B | heat | thermal | present | cross-tie, hot to cold only | 1.831 kW | — |
 | HL-Q3-X-BA | Q3_B | Q3_A | heat | thermal | present | cross-tie, hot to cold only | 1.831 kW | — |
-| HL-Q4-A-BUS | Q4_A | Q4_BUS | heat | thermal | present | water <80 C | 1.36 kW | — |
-| HL-Q4-B-BUS | Q4_B | Q4_BUS | heat | thermal | present | water <80 C | 1.36 kW | — |
+| HL-Q4-A-BUS | Q4_A | Q4_BUS | heat | thermal | present | water <80 C | 5.51 kW | — |
+| HL-Q4-B-BUS | Q4_B | Q4_BUS | heat | thermal | present | water <80 C | 5.51 kW | — |
 | HL-Q4-X | Q4_A | Q4_B | heat | thermal | present | cross-tie, hot to cold only | 1.565 kW | — |
 | HL-Q4-X-BA | Q4_B | Q4_A | heat | thermal | present | cross-tie, hot to cold only | 1.565 kW | — |
 | IA-BMED-01 | BMED_ACID | WS_NITRIC | L | mass | present | HCl product | — | — |
@@ -67,7 +73,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-HDR-H2-02 | HDR_H2 | H2_DRYER | G | mass | present | process H2 | 4.8 kg/d | wp_l1_topology,arrestor_inline,wp_true_closure,ew_cascade_exploded |
 | IA-HDR-H2-03 | EW_2 | HDR_H2 | G | mass | present | cathode H2 + sweep air | 1.6 kg/d | wp_l2_filled,multi_ew_hood,ew_cascade_exploded |
 | IA-HDR-H2-04 | EW_9 | HDR_H2 | G | mass | present | cathode H2 + sweep air | 1.6 kg/d | wp_l2_filled,multi_ew_hood,ew_cascade_exploded |
-| IA-HX8 | EW_1 | HX8 | heat | mass | present | EW heat | — | — |
+| IA-HX8 | EW_1 | HX8 | heat | thermal | present | EW heat | 4.572 kW | — |
 | IA-OIL-01 | OIL_DRYER | OIL_PYRO | S | mass | placeholder | Dryer → pyro | — | intra_aisle,full_depth_now,oil_line internals |
 | IA-OIL-02 | OIL_PYRO | OIL_FRAC | L | mass | placeholder | Pyro → frac | — | intra_aisle,full_depth_now,oil_line internals |
 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | G | mass | present | NCG only | — | — |
@@ -79,7 +85,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S01 | BMED_UPW_POLISH | HDR_UPW | L | mass | present | UPW | 95.0 kg/d | — |
 | S02 | CRYO_O2 | HABITATION | G | mass | present | O2 | 3.4 kg/d | — |
 | S03 | CRYO_N2 | WAFER_FAB | G | mass | present | N2 | — | — |
-| S04 | CRYO_CO2 | GROW_BED | G | mass | present | CO2 | — | — |
+| S04 | CRYO_CO2 | GROW_BED | G | mass | present | CO2 | 1.109 kg/d | — |
 | S05 | H2_DRYER | CRYO_H2 | G | mass | present | process H2 | 4.8 kg/d | — |
 | S06 | GEO_HP | GROW_BED | E | thermal | present | heat Q4 | — | — |
 | S07 | NUTRIENT_DOSE | GROW_BED | S/L | mass | present | nutrients | 2.5 kg/d | — |
@@ -95,7 +101,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | — | — |
 | S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 12.0 kg/d | — |
 | S17 | SOL_ARK_60K | RECTIFIER | E | elec | present | DC/480V | 50.0 kW | — |
-| S18 | AFTERBURNER | CRYO_CO2 | G | mass | present | captured CO2/air | 15.0 kg/d | — |
+| S18 | AFTERBURNER | CRYO_CO2 | G | mass | present | flue-carbon claim reference (no CO2 mass since Rev J) | 0.0 kg/d | — |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | S | mass | present | dust | — | absent_from_candidate_mvs |
 | S20 | GROW_BED | SOL_ARK_60K | E | elec | present | load | — | — |
 | S21 | ROOF_TANK | HABITATION | L | mass | present | clean tower water | 95.0 kg/d | — |
@@ -144,8 +150,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S64 | H2_DRYER | CRYO_H2 | G | mass | present | H2 normal path | 4.8 kg/d | — |
 | S65 | ALK_SCRUBBER | ACID_POLISH_SCRUB | G | mass | present | acid-gas residual | — | — |
 | S66 | ACID_POLISH_SCRUB | CRU | L | mass | present | scrub liquor → chlorate finish | — | absent_from_candidate_mvs |
-| S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | — | — |
-| S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 12.75 kg/d | same_carbon_as_S18 |
+| S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 241.7 kg/d | — |
+| S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 12.75 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | — | — |
 | S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | — | — |
 | S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | — | — |
@@ -162,10 +168,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S79 | MEOH_FC | SOL_ARK_60K | E | elec,ess | present | MEOH DC | 1.0 kW | — |
 | S80 | MEOH_FC | Q4_BUS | E | thermal | present | heat < 80 °C | — | absent_from_candidate_mvs |
 | S81 | MEOH_FC | MEOH_COND | L | mass | present | MeOH FC condensate | — | — |
-| S82 | MEOH_FC | CRYO_CO2 | G | mass | present | CO₂ return from MeOH FC | — | absent_from_candidate_mvs |
+| S82 | MEOH_FC | CRYO_CO2 | G | mass | present | CO₂ return from MeOH FC | 6.875 kg/d | — |
 | S83 | CRYO_O2 | HDR_O2 | G | mass | present | O2 product | — | — |
 | S84 | CRYO_N2 | HDR_N2 | G | mass | present | N2 product | — | — |
-| S85 | CRYO_CO2 | HDR_CO2 | G | mass | present | CO2 product after FLUE_KO | — | — |
+| S85 | CRYO_CO2 | HDR_CO2 | G | mass | present | CO2 product after FLUE_KO | 11.616 kg/d | — |
 | S86 | CRYO_AHU | RELIEF_CRYO | G | mass | present | cryo residual contingency | — | — |
 | S87 | GROW_BED | CRYO_O2 | G | mass | present | surplus O2 capture | — | — |
 | S88 | CRYO_N2 | GROW_BED | G | mass | present | N2 make-up | — | — |

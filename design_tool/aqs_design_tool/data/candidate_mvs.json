@@ -1047,7 +1047,28 @@
       "class": "hx",
       "tags": [],
       "params": {
-        "tier": "Q3"
+        "tier": "Q4",
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_kw": 4.572,
+        "q_ohmic_kw": 1.938,
+        "q_feed_sensible_kw": 4.128,
+        "q_wall_loss_kw": 0.533,
+        "q_evap_kw": 0.962,
+        "liquor_in_C": 55.0,
+        "liquor_out_C": 51.0,
+        "water_in_C": 45.0,
+        "water_out_C": 49.0,
+        "approach_K": 6.0,
+        "lmtd_K": 6.0,
+        "area_m2": 0.51,
+        "U_W_m2K": 1500.0,
+        "plates": "titanium",
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "seed envelope (placement_seed HX8 row)"
       },
       "modules": [],
       "electrical_role": null,
@@ -2464,30 +2485,38 @@
       "note": "Isolable branch. One ladder may be down. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
-      "stream_id": "HL-HX8-Q3-A",
+      "stream_id": "HL-HX8-Q4-A",
       "from_unit_id": "HX8",
-      "to_unit_id": "Q3_A",
+      "to_unit_id": "Q4_A",
       "phase": "heat",
-      "carries": "HX-8 residual",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "carries": "HX-8 EW reject, Q4 return preheat",
+      "rate": {
+        "value": 5.715,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Exchanger, not EW-1.; namespace=IA; layers=mass"
+      "note": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1.; namespace=IA; layers=thermal"
     },
     {
-      "stream_id": "HL-HX8-Q3-B",
+      "stream_id": "HL-HX8-Q4-B",
       "from_unit_id": "HX8",
-      "to_unit_id": "Q3_B",
+      "to_unit_id": "Q4_B",
       "phase": "heat",
-      "carries": "HX-8 residual",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "carries": "HX-8 EW reject, Q4 return preheat",
+      "rate": {
+        "value": 5.715,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Exchanger, not EW-1.; namespace=IA; layers=mass"
+      "note": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-A-DOWN",
@@ -2635,7 +2664,7 @@
         "value": 1.614,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.411 kW."
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -2652,12 +2681,114 @@
         "value": 1.614,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.411 kW."
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "HL-Q3-A-HX4",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "OIL_DRYER",
+      "phase": "heat",
+      "carries": "HX-4 Q3 process heat (dryer jacket)",
+      "rate": {
+        "value": 0.302,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "HL-Q3-A-HX5",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "heat",
+      "carries": "HX-5 Q3 process heat (leach CSTR jacket)",
+      "rate": {
+        "value": 7.941,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "HL-Q3-A-HX6",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "heat",
+      "carries": "HX-6 Q3 process heat (NaOH digest jacket)",
+      "rate": {
+        "value": 2.079,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "HL-Q3-B-HX4",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "OIL_DRYER",
+      "phase": "heat",
+      "carries": "HX-4 Q3 process heat (dryer jacket)",
+      "rate": {
+        "value": 0.302,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "HL-Q3-B-HX5",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "heat",
+      "carries": "HX-5 Q3 process heat (leach CSTR jacket)",
+      "rate": {
+        "value": 7.941,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "HL-Q3-B-HX6",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "heat",
+      "carries": "HX-6 Q3 process heat (NaOH digest jacket)",
+      "rate": {
+        "value": 2.079,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-X",
@@ -2700,10 +2831,10 @@
       "phase": "heat",
       "carries": "water <80 C",
       "rate": {
-        "value": 1.36,
+        "value": 5.51,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.234 kW."
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
@@ -2717,10 +2848,10 @@
       "phase": "heat",
       "carries": "water <80 C",
       "rate": {
-        "value": 1.36,
+        "value": 5.51,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.234 kW."
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
@@ -3192,12 +3323,16 @@
       "to_unit_id": "HX8",
       "phase": "heat",
       "carries": "EW heat",
-      "rate": null,
+      "rate": {
+        "value": 4.572,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.1: EW ohmic heat + concentrate sensible - cell wall loss - surface evaporation."
+      },
       "from_sector_id": null,
       "to_sector_id": null,
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Cell to exchanger. Separate fluids.; namespace=IA; layers=mass"
+      "note": "Cell to exchanger. Separate fluids.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-OIL-01",
@@ -3382,15 +3517,14 @@
       "phase": "G",
       "carries": "CO2",
       "rate": {
-        "value": null,
+        "value": 1.109,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "Rev J: GROW_BED net uptake = 4.2 kg/d fresh food x 0.08 dry matter / 0.5 harvest index x 0.45 C x 44/12."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
       "open_boundary": false,
-      "null_rate_kind": "unknown",
       "note": "layers=mass"
     },
     {
@@ -3652,17 +3786,17 @@
       "from_unit_id": "AFTERBURNER",
       "to_unit_id": "CRYO_CO2",
       "phase": "G",
-      "carries": "captured CO2/air",
+      "carries": "flue-carbon claim reference (no CO2 mass since Rev J)",
       "rate": {
-        "value": 15.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study afterburner\u2192CRYO captured CO2 class mid of oil cuts ~12\u201322.5 kg/d (AQS-AUD-001) \u2014 not flue analyser"
+        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (scale_down_map OIL, pfd_bridge, C2 nozzle). Cold-box air feed is AIR_INTAKE -> MOL_SIEVE, not S18."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "layers=mass"
+      "note": "Retired carbon credit (AQS-DUTY-008 Rev B s13.3). Not deleted: other locks name S18.; layers=mass"
     },
     {
       "stream_id": "S19",
@@ -4492,11 +4626,15 @@
       "to_unit_id": "FLUE_KO",
       "phase": "G",
       "carries": "flue N2/O2/CO2/NOx",
-      "rate": null,
+      "rate": {
+        "value": 241.7,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-008: afterburner flue 10.07 kg/h; carries the 15.0 kg/d CO2 basis (AQS-AUD-001 mid of 12-22.5 kg/d) moved here from S18 in Rev J."
+      },
       "from_sector_id": null,
       "to_sector_id": null,
       "open_boundary": false,
-      "null_rate_kind": "unknown",
       "note": "Knockout before any CO2 claim.; layers=mass"
     },
     {
@@ -4509,12 +4647,12 @@
         "value": 12.75,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-008: CO2 in the cut = S18 basis 15.0 kg/d x VSA recovery 0.85. Not a flue analyser. Same carbon as S18."
+        "note": "AQS-DUTY-008: CO2 in the cut = S67 flue CO2 15.0 kg/d x VSA recovery 0.85. Sole CRYO_CO2 credit for afterburner carbon (S18 retired, Rev J)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "Only the CO2-rich cut. Reject N2/O2/NOx. AQS-DUTY-008.; gap_flags=same_carbon_as_S18; layers=mass"
+      "note": "Only the CO2-rich cut. Reject N2/O2/NOx. AQS-DUTY-008.; layers=mass"
     },
     {
       "stream_id": "S68",
@@ -4771,16 +4909,15 @@
       "phase": "G",
       "carries": "CO\u2082 return from MeOH FC",
       "rate": {
-        "value": null,
-        "unit": "",
-        "status": "tbd",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 6.875,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "S76 5.0 kg/d MeOH x 1.375 kg CO2/kg MeOH (complete oxidation, same factor as S73). Rev J."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "null_rate_kind": "unknown",
-      "note": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed); gap_flags=absent_from_candidate_mvs; layers=mass"
+      "note": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed); layers=mass"
     },
     {
       "stream_id": "S83",
@@ -4814,11 +4951,15 @@
       "to_unit_id": "HDR_CO2",
       "phase": "G",
       "carries": "CO2 product after FLUE_KO",
-      "rate": null,
+      "rate": {
+        "value": 11.616,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. HDR_CO2 has no consumer edge yet."
+      },
       "from_sector_id": null,
       "to_sector_id": null,
       "open_boundary": false,
-      "null_rate_kind": "unknown",
       "note": "Life header fill. Not the dock.; layers=mass"
     },
     {
@@ -4946,5 +5087,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev I (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev J (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }

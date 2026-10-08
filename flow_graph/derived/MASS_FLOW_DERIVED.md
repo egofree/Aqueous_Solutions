@@ -1,7 +1,7 @@
 # Mass-flow claim excerpt — DERIVED from flow_graph
 
 Document number: AQS-MF-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev I (`plant_flow_graph.json`)
+Source: AQS-FLOW-GRAPH-001 Rev J (`plant_flow_graph.json`)
 Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
@@ -14,7 +14,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S01 | BMED_UPW_POLISH→HDR_UPW | Closed | present | 95.0 kg/d | — |
 | S02 | CRYO_O2→HABITATION | Closed | present | 3.4 kg/d | — |
 | S03 | CRYO_N2→WAFER_FAB | — | present | — | Was wrongly sourced from CRYO_H2. |
-| S04 | CRYO_CO2→GROW_BED | Closed / Claimed | present | — | — |
+| S04 | CRYO_CO2→GROW_BED | Closed / Claimed | present | 1.109 kg/d | — |
 | S05 | H2_DRYER→CRYO_H2 | Claimed / Partial | present | 4.8 kg/d | — |
 | S07 | NUTRIENT_DOSE→GROW_BED | Closed | present | 2.5 kg/d | — |
 | S08 | LEACH_CSTR_1→MFG_SHOP | Closed | present | 42.0 kg/d | — |
@@ -28,7 +28,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S14X | GROW_BED→BOUNDARY_EXPORT | — | present | 1.8 kg/d | candidate_mvs extension — do not invent new register ID |
 | S15 | GROW_BED→HABITATION | Closed | present | — | — |
 | S16 | MFG_SHOP→LEACH_CSTR_1 | Closed | present | 12.0 kg/d | — |
-| S18 | AFTERBURNER→CRYO_CO2 | Claimed | present | 15.0 kg/d | — |
+| S18 | AFTERBURNER→CRYO_CO2 | Retired (Rev J): carbon counted once on S67 -> FLUE_KO -> S67B | present | 0.0 kg/d | Retired carbon credit (AQS-DUTY-008 Rev B s13.3). Not deleted: other locks name S18. |
 | S19 | BAGHOUSE→LEACH_CSTR_1 | Closed | present | — | From register: BAGHOUSE fines → LEACH CSTR 1 |
 | S21 | ROOF_TANK→HABITATION | Closed | present | 95.0 kg/d | — |
 | S24 | H2_DRYER→RELIEF_H2 | — | present | — | NFPA 2 relief. Not freight. |
@@ -67,7 +67,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S64 | H2_DRYER→CRYO_H2 | Partial | present | 4.8 kg/d | — |
 | S65 | ALK_SCRUBBER→ACID_POLISH_SCRUB | — | present | — | Not a self-loop. Polish then CRU via S66. |
 | S66 | ACID_POLISH_SCRUB→CRU | Claimed | present | — | From register: ACID_POLISH / ALK blowdown → CRU |
-| S67 | AFTERBURNER_FLUE→FLUE_KO | — | present | — | Knockout before any CO2 claim. |
+| S67 | AFTERBURNER_FLUE→FLUE_KO | — | present | 241.7 kg/d | Knockout before any CO2 claim. |
 | S67B | FLUE_KO→CRYO_CO2 | Claimed | present | 12.75 kg/d | Only the CO2-rich cut. Reject N2/O2/NOx. AQS-DUTY-008. |
 | S68 | CRYO_AHU→LEACH_CSTR_1 | — | present | — | Acid condensate stays process. |
 | S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | — | Own tower. |
@@ -82,10 +82,10 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S77 | MEOH_FERM→MEOH_TANK | — | present | — | From register: MEOH_FERM_STILL → MEOH_TANK |
 | S78 | HABITATION→MEOH_FERM | — | present | — | From register: Farm/hab organics (S12/S30 class) → MEOH_FERM_DIG |
 | S81 | MEOH_FC→MEOH_COND | — | present | — | Methanol residual stays process. |
-| S82 | MEOH_FC→CRYO_CO2 | — | present | — | From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed) |
+| S82 | MEOH_FC→CRYO_CO2 | — | present | 6.875 kg/d | From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed) |
 | S83 | CRYO_O2→HDR_O2 | — | present | — | Life header fill. Not the dock. |
 | S84 | CRYO_N2→HDR_N2 | — | present | — | Life header fill. Not the dock. |
-| S85 | CRYO_CO2→HDR_CO2 | — | present | — | Life header fill. Not the dock. |
+| S85 | CRYO_CO2→HDR_CO2 | — | present | 11.616 kg/d | Life header fill. Not the dock. |
 | S86 | CRYO_AHU→RELIEF_CRYO | — | present | — | Same sink as S56. Issued so the old dock edge has a number and a legal end. |
 | S87 | GROW_BED→CRYO_O2 | — | present | — | Capture. Not a vent. Not hab air into a process header. |
 | S88 | CRYO_N2→GROW_BED | — | present | — | Make-up from the N2 box only. |
