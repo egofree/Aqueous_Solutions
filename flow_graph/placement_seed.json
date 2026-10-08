@@ -1,8 +1,8 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "H",
-  "date": "2026-10-07",
+  "revision": "I",
+  "date": "2026-10-08",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
     "L0": 0,
@@ -386,8 +386,8 @@
       "unit_id": "WS_HF_ED",
       "level": "L0",
       "origin_mm": [
-        12200,
-        8200,
+        15000,
+        16400,
         0
       ],
       "size_mm": [
@@ -395,14 +395,14 @@
         800,
         1100
       ],
-      "source": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH."
+      "source": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH. Rev I: moved from (12200, 8200) to (15000, 16400): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
     },
     {
       "unit_id": "WS_NITRIC",
       "level": "L0",
       "origin_mm": [
-        13200,
-        8200,
+        16400,
+        16400,
         0
       ],
       "size_mm": [
@@ -410,14 +410,14 @@
         800,
         1100
       ],
-      "source": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents."
+      "source": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents. Rev I: moved from (13200, 8200) to (16400, 16400): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
     },
     {
       "unit_id": "WS_PEROX",
       "level": "L0",
       "origin_mm": [
-        15200,
-        8200,
+        17800,
+        16400,
         0
       ],
       "size_mm": [
@@ -425,43 +425,13 @@
         800,
         1100
       ],
-      "source": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV."
+      "source": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV. Rev I: moved from (15200, 8200) to (17800, 16400): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
     },
     {
       "unit_id": "WS_AMMONIA",
       "level": "L0",
       "origin_mm": [
-        15200,
-        9400,
-        0
-      ],
-      "size_mm": [
-        800,
-        800,
-        1100
-      ],
-      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room."
-    },
-    {
-      "unit_id": "WS_KOH",
-      "level": "L0",
-      "origin_mm": [
-        16200,
-        9400,
-        0
-      ],
-      "size_mm": [
-        800,
-        800,
-        1100
-      ],
-      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub."
-    },
-    {
-      "unit_id": "WS_DOPE",
-      "level": "L0",
-      "origin_mm": [
-        20000,
+        16400,
         15000,
         0
       ],
@@ -470,14 +440,14 @@
         800,
         1100
       ],
-      "source": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle."
+      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev I: moved from (15200, 9400) to (16400, 15000): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
     },
     {
-      "unit_id": "WS_SLURRY",
+      "unit_id": "WS_KOH",
       "level": "L0",
       "origin_mm": [
-        17200,
-        8200,
+        17800,
+        15000,
         0
       ],
       "size_mm": [
@@ -485,7 +455,37 @@
         800,
         1100
       ],
-      "source": "CMP makeup. Glass silicate + UPW. Not an etch bath."
+      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev I: moved from (16200, 9400) to (17800, 15000): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "level": "L0",
+      "origin_mm": [
+        15000,
+        15000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle. Rev I: moved from (20000, 15000) to (15000, 15000): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "level": "L0",
+      "origin_mm": [
+        13600,
+        16400,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "CMP makeup. Glass silicate + UPW. Not an etch bath. Rev I: moved from (17200, 8200) to (13600, 16400): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
     },
     {
       "unit_id": "WS_SOLV",
@@ -506,8 +506,8 @@
       "unit_id": "FAB_UPW_TANK",
       "level": "L0",
       "origin_mm": [
-        21000,
-        8200,
+        13600,
+        15000,
         0
       ],
       "size_mm": [
@@ -515,7 +515,7 @@
         500,
         800
       ],
-      "source": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria."
+      "source": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria. Rev I: moved from (21000, 8200) to (13600, 15000): fab chemical supply rows: out of the legacy bench/PV/core massing; acids and oxidizers row A, bases/dopant/UPW row B, 600 mm grid."
     },
     {
       "unit_id": "MEOH_FERM",
@@ -581,7 +581,7 @@
       "unit_id": "MET_AHU",
       "level": "L0",
       "origin_mm": [
-        12200,
+        20200,
         200,
         0
       ],
@@ -590,14 +590,14 @@
         800,
         1800
       ],
-      "source": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return."
+      "source": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return. Rev I: moved from (12200, 200) to (20200, 200): MFG_SHOP south bay; clear of MFG_CRIB and 600 mm to MET_SCRUB."
     },
     {
       "unit_id": "MET_SCRUB",
       "level": "L0",
       "origin_mm": [
-        13600,
-        200,
+        20200,
+        1600,
         0
       ],
       "size_mm": [
@@ -605,14 +605,14 @@
         800,
         2000
       ],
-      "source": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4."
+      "source": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4. Rev I: moved from (13600, 200) to (20200, 1600): MFG_SHOP south bay; clear of MFG_CRIB, MFG_FLOOR."
     },
     {
       "unit_id": "MET_HX_Q4",
       "level": "L0",
       "origin_mm": [
-        14600,
-        200,
+        15000,
+        6000,
         0
       ],
       "size_mm": [
@@ -620,14 +620,14 @@
         400,
         600
       ],
-      "source": "Water only, after scrub, <80 C. S63."
+      "source": "Water only, after scrub, <80 C. S63. Rev I: moved from (14600, 200) to (15000, 6000): MFG_SHOP north bay; the south bay has no 600 mm slot once MFG_FLOOR is respected."
     },
     {
       "unit_id": "CRYO_AHU_COND_CONDENSABLE",
       "level": "L-1",
       "origin_mm": [
         15600,
-        6400,
+        9400,
         -6000
       ],
       "size_mm": [
@@ -635,14 +635,14 @@
         400,
         600
       ],
-      "source": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab."
+      "source": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab. Rev I: moved from (15600, 6400) to (15600, 9400): clear of COLD_BOX / STIRLING_COLD_HEAD."
     },
     {
       "unit_id": "CRYO_HX_Q4",
       "level": "L-1",
       "origin_mm": [
-        16400,
-        6400,
+        18400,
+        6000,
         -6000
       ],
       "size_mm": [
@@ -650,14 +650,14 @@
         400,
         600
       ],
-      "source": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL)."
+      "source": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL). Rev I: moved from (16400, 6400) to (18400, 6000): clear of COLD_BOX / distillation columns."
     },
     {
       "unit_id": "BLACK_DIGEST",
       "level": "L1",
       "origin_mm": [
-        200,
-        200,
+        400,
+        5400,
         6000
       ],
       "size_mm": [
@@ -665,14 +665,14 @@
         900,
         1600
       ],
-      "source": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST."
+      "source": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST. Rev I: moved from (200, 200) to (400, 5400): HABITATION; clear of the perimeter life rack; 600 mm to GREY_TREAT."
     },
     {
       "unit_id": "GREY_TREAT",
       "level": "L1",
       "origin_mm": [
-        1800,
-        200,
+        6200,
+        2200,
         6000
       ],
       "size_mm": [
@@ -680,14 +680,14 @@
         800,
         1100
       ],
-      "source": "Downstream of black digest. HDR_GREY only. Not Salria."
+      "source": "Downstream of black digest. HDR_GREY only. Not Salria. Rev I: moved from (1800, 200) to (6200, 2200): HABITATION; clear of the perimeter life rack, SLEEP and GALLEY."
     },
     {
       "unit_id": "S13_CLASS_TREAT",
       "level": "L-1",
       "origin_mm": [
-        12800,
-        2000,
+        14800,
+        400,
         -6000
       ],
       "size_mm": [
@@ -695,14 +695,14 @@
         800,
         1100
       ],
-      "source": "Wet side, not life floor. Class treat before any life return."
+      "source": "Wet side, not life floor. Class treat before any life return. Rev I: moved from (12800, 2000) to (14800, 400): out of the legacy PK/harvest massing."
     },
     {
       "unit_id": "BMED_UPW_POLISH",
       "level": "L-1",
       "origin_mm": [
-        14000,
-        4200,
+        18000,
+        2200,
         -6000
       ],
       "size_mm": [
@@ -710,7 +710,7 @@
         900,
         1400
       ],
-      "source": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack."
+      "source": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack. Rev I: moved from (14000, 4200) to (18000, 2200): out of the legacy oil-line massing (QUENCH, FRACTIONATOR, AFTERBURNER, NaOH_DIGEST)."
     },
     {
       "unit_id": "TERRACE_IRRIG",
@@ -745,8 +745,8 @@
       "unit_id": "GEO_GHEX",
       "level": "L0",
       "origin_mm": [
-        -8600,
-        5200,
+        -9100,
+        5400,
         0
       ],
       "size_mm": [
@@ -754,7 +754,7 @@
         800,
         800
       ],
-      "source": "West of GEO_HP. Bore field tie. Massing only."
+      "source": "West of GEO_HP. Bore field tie. Massing only. Rev I: moved from (-8600, 5200) to (-9100, 5400): yard; 600 mm to GEO_HP and GEO_HP_CLOSED_LOOP."
     },
     {
       "unit_id": "GEO_HP_CLOSED_LOOP",
@@ -836,7 +836,7 @@
       "level": "L-1",
       "origin_mm": [
         3400,
-        12200,
+        11000,
         -6000
       ],
       "size_mm": [
@@ -844,7 +844,7 @@
         600,
         800
       ],
-      "source": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class."
+      "source": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class. Rev I: moved from (3400, 12200) to (3400, 11000): glass row; 600 mm to GLASS_RINSE and the product drums."
     },
     {
       "unit_id": "GLASS_BURNOUT",
@@ -1126,8 +1126,8 @@
       "unit_id": "PROD_C5_C10",
       "level": "L-1",
       "origin_mm": [
-        4400,
-        12200,
+        4800,
+        11700,
         -6000
       ],
       "size_mm": [
@@ -1135,13 +1135,13 @@
         300,
         700
       ],
-      "source": "Cut tank. Product. NFPA 30."
+      "source": "Cut tank. Product. NFPA 30. Rev I: moved from (4400, 12200) to (4800, 11700): product drum row at 600 mm."
     },
     {
       "unit_id": "PROD_C11_C18",
       "level": "L-1",
       "origin_mm": [
-        4400,
+        5600,
         12600,
         -6000
       ],
@@ -1150,14 +1150,14 @@
         300,
         700
       ],
-      "source": "Cut tank."
+      "source": "Cut tank. Rev I: moved from (4400, 12600) to (5600, 12600): product drum row at 600 mm."
     },
     {
       "unit_id": "PROD_C19_C28",
       "level": "L-1",
       "origin_mm": [
-        4400,
-        13000,
+        5600,
+        13500,
         -6000
       ],
       "size_mm": [
@@ -1165,7 +1165,7 @@
         300,
         700
       ],
-      "source": "Cut tank."
+      "source": "Cut tank. Rev I: moved from (4400, 13000) to (5600, 13500): product drum row at 600 mm."
     },
     {
       "unit_id": "PROD_C29",
@@ -1216,8 +1216,8 @@
       "unit_id": "FLUE_KO",
       "level": "L-1",
       "origin_mm": [
-        18800,
-        7200,
+        19500,
+        9500,
         -6000
       ],
       "size_mm": [
@@ -1225,8 +1225,7 @@
         700,
         1100
       ],
-      "source": "Rev H: FLUE_KO is the existing FLUE_CAP Feature (cryo.py; VENT_SCRUB_EQUIPMENT s2.5 afterburner -> CRYO CO2 / condensate KO). Record row (fixed_feature): equals the FLUE_CAP origin and size and is never written. Old study row (18000,12400) retired: it duplicated the Feature.",
-      "fixed_feature": true
+      "source": "Rev H: FLUE_KO is the existing FLUE_CAP Feature (cryo.py; VENT_SCRUB_EQUIPMENT s2.5 afterburner -> CRYO CO2 / condensate KO). Record row (fixed_feature): equals the FLUE_CAP origin and size and is never written. Old study row (18000,12400) retired: it duplicated the Feature. Rev I: moved from (18800, 7200) to (19500, 9500): clear of VJ_001 and 600 mm to cryo equipment (record row made a placed row). No longer a record row; the Feature is placed by bounding-box origin."
     },
     {
       "unit_id": "NOX_SCRUB",
@@ -1371,8 +1370,8 @@
       "unit_id": "RELIEF_H2",
       "level": "L-1",
       "origin_mm": [
-        12925,
-        3925,
+        11925,
+        2625,
         -6000
       ],
       "size_mm": [
@@ -1380,11 +1379,11 @@
         250,
         8000
       ],
-      "source": "Rev H record row (fixed_feature): RELIEF_H2 discharges through the existing H2_STACK (gas_handling, 8 m H2 vent stack, centred cylinder D250). Bounding box only; the applicator never writes it.",
-      "fixed_feature": true
+      "source": "Rev H record row (fixed_feature): RELIEF_H2 discharges through the existing H2_STACK (gas_handling, 8 m H2 vent stack, centred cylinder D250). Bounding box only; the applicator never writes it. Rev I: moved from (12925, 3925) to (11925, 2625): vent stack clear of RACK_OIL / HDR_OIL_VAPOR_RACK (record row made a placed row). No longer a record row; the Feature is placed by bounding-box origin."
     }
   ],
   "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",
   "notes_rev_g": "2026-10-07, graph Rev J. Q1_A..Q4_B rows reissued: the Rev F study origins (ladder A at x 6000, B at x 12000) collided with LEACH_CSTR_1, BMED_REGEN, SALT_FEED, HVAC_Q4 and the process core on the placed copy. New origins: ladder A along the west wall (x 1200/2700/4200/5700, y 9000), ladder B in the north-east bay (x 15000/16500/18000/19500, y 15000), all L-1 at z -6000, 1500 mm pitch. Checked against every solid on the placed copy and every seed box: >= 600 mm (maint_clear_mm) to equipment and walls, no overlap with corridors or fit-out. Issued envelope 800x800x1200 and store volumes unchanged. Cross-tie coils sized in AQS-DUTY-008 Rev B. GEO_ORC pad untouched. Plate-world origins; PROCESS_DX/DY not applied.",
-  "notes_rev_h": "2026-10-07, graph Rev K. Heat-ladder stores stepped for gravity thermosyphons (AQS-DUTY-008 Rev C s14): Q1 z -6000, Q2 -5150, Q3 -4250, Q4 -3350 on both ladders; plan positions unchanged; Q4 top -2150, 1850 mm under the L0 slab soffit. New or moved rows for the Rev K solids: FLUE_KO (= FLUE_CAP), NOX_SCRUB, MEOH_COND, HX8, CONTINUOUS_RECYCLE, VCD_TRAIN, RELIEF_CRYO, REMIN, WS_PHOS, LITHO_STUB bench + LITHO_COAT/ALIGN/DEV, SOLAR_PV_CELL, ELECTRODE_COAT, BLOW_MOLD. Every row checked against every solid on the placed copy and every seed box: 0 intersections, >= 600 mm within a level (lines and group members: no overlap). GEO_ORC pad untouched. Record rows (fixed_feature, never written): CATCH_TANK, FLUE_KO (= FLUE_CAP), RELIEF_H2 (= H2_STACK bounding box). Plate-world origins; PROCESS_DX/DY not applied."
+  "notes_rev_h": "2026-10-07, graph Rev K. Heat-ladder stores stepped for gravity thermosyphons (AQS-DUTY-008 Rev C s14): Q1 z -6000, Q2 -5150, Q3 -4250, Q4 -3350 on both ladders; plan positions unchanged; Q4 top -2150, 1850 mm under the L0 slab soffit. New or moved rows for the Rev K solids: FLUE_KO (= FLUE_CAP), NOX_SCRUB, MEOH_COND, HX8, CONTINUOUS_RECYCLE, VCD_TRAIN, RELIEF_CRYO, REMIN, WS_PHOS, LITHO_STUB bench + LITHO_COAT/ALIGN/DEV, SOLAR_PV_CELL, ELECTRODE_COAT, BLOW_MOLD. Every row checked against every solid on the placed copy and every seed box: 0 intersections, >= 600 mm within a level (lines and group members: no overlap). GEO_ORC pad untouched. Record rows (fixed_feature, never written): CATCH_TANK, FLUE_KO (= FLUE_CAP), RELIEF_H2 (= H2_STACK bounding box). Plate-world origins; PROCESS_DX/DY not applied.",
+  "notes_rev_i": "2026-10-08, graph Rev M. Origins only; issued size_mm unchanged. Resolves the twenty seed pairs under 600 mm (fab totes, MET skids, cryo exchangers, hab digesters, GEO yard, glass row and product drums) and the seed rows that intersected legacy Features on the placed copy: WS_* and FAB_UPW_TANK out of FAB_PREP / WET_BENCH / FAB_TOOL / PV_* / CORE_PROCESS into two chemical supply rows north of SOLAR_PV_CELL (acids and oxidizers row A y 16400, bases, dopant and UPW row B y 15000, 600 mm grid, each tote on its own bund); MET_AHU/MET_SCRUB to the south-east bay and MET_HX_Q4 to the north bay, clear of MFG_CRIB and MFG_FLOOR; CRYO_AHU_COND and CRYO_HX_Q4 clear of COLD_BOX; GREY_TREAT and BLACK_DIGEST clear of the perimeter life rack and the sleep room; S13_CLASS_TREAT and BMED_UPW_POLISH out of the legacy PK and oil-line massing. FLUE_KO (= FLUE_CAP) and RELIEF_H2 (= H2_STACK) change from record rows to placed rows: FLUE_CAP leaves the VJ_001 run; H2_STACK leaves RACK_OIL / HDR_OIL_VAPOR_RACK. Placement is by bounding-box origin (H2_STACK carries a centred shape). Every row checked against every seed box (0 intersections, >= 600 mm within a level, 1100 mm at BACKUP_GEN and FUEL_CELL; lines and the LITHO group: no overlap) and against every solid on the placed copy at its effective size (larger of seed and Feature): 0 intersections and >= 600 mm to same-level equipment for every moved row, except that MET_AHU and MET_SCRUB overlap OVERFLOW_APRON_E, a legacy grade apron drawn 3 m inside the east wall (OVERFLOW_APRON_W is likewise inside the west wall; their terrace and envelope siblings are outside the walls; RS-CAD-LEGACY). Not resolved by origin moves (required studies RS-CAD-HYDRO and RS-CAD-YARD): CATCH_TANK and HYDRO_SET against the cores and L-2 corridors; the yard rows against GH_ENV_W and the un-moved legacy yard sub-features. CATCH_TANK stays a record row. GEO_ORC pad untouched. Plate-world origins; PROCESS_DX/DY not applied."
 }

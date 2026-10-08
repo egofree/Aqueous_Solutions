@@ -2,7 +2,7 @@
   "preset_id": "VIEW-EFD-ESS",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
+  "source_revision": "M",
   "node_count": 7,
   "edge_count": 9,
   "orphan_campus_units": [],
@@ -100,15 +100,15 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "air O2",
-              "value": 7.4897,
+              "value": 2.5778,
               "basis": "stoichiometric",
               "kind": "derived"
             },
@@ -116,7 +116,7 @@
               "layer": "energy",
               "dir": "in",
               "label": "MeOH LHV (S76)",
-              "value": 1.1534,
+              "value": 0.397,
               "basis": "19.93 MJ/kg",
               "kind": "derived"
             },
@@ -124,7 +124,7 @@
               "layer": "energy",
               "dir": "out",
               "label": "low-grade heat",
-              "value": 0.4919,
+              "value": 0.1693,
               "basis": "below Q4 return",
               "kind": "derived"
             }
@@ -175,16 +175,24 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "inventory draw (dry design day, no rain)",
-              "value": 120.0,
-              "basis": "S21 + S40 met from storage",
+              "value": 128.4,
+              "basis": "S21 + MFG rinse met from storage",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "MFG harvest rinse water",
+              "value": 8.4,
+              "basis": "S16 basis",
               "kind": "derived"
             }
           ]
@@ -205,7 +213,29 @@
       "modules": [],
       "params": {
         "kW": 60,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "inverter / charger conversion loss",
+              "value": 1.4883,
+              "basis": "3% of AC delivered",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "utility import at the GRID port (ELECTRICAL AQS-ELC-001 Rev B)",
+              "value": 39.9862,
+              "basis": "bus balance",
+              "kind": "by_difference"
+            }
+          ]
+        }
       }
     },
     {
@@ -228,10 +258,18 @@
         "kW": 60,
         "kWh": 120,
         "presence": "present",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            },
             {
               "layer": "mass",
               "dir": "in",
@@ -242,18 +280,18 @@
             },
             {
               "layer": "mass",
-              "dir": "out",
-              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
-              "value": 8.4402,
-              "basis": "no electrolyte bleed on the graph",
-              "kind": "accumulation"
+              "dir": "in",
+              "label": "purge air ambient humidity",
+              "value": 8.4399,
+              "basis": "w 0.010",
+              "kind": "derived"
             },
             {
-              "layer": "energy",
-              "dir": "out",
-              "label": "round-trip loss",
-              "value": 1.6667,
-              "basis": "1 - RTE",
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW electrolyte make-up (HDR_UPW)",
+              "value": 2.374,
+              "basis": "evaporation less S69B water",
               "kind": "derived"
             }
           ]
@@ -539,17 +577,26 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 1.7209,
         "unit": "kg/d",
         "status": "study",
-        "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
+        "note": "AQS-DUTY-011: S75 1.706 + S77 0.0146"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "S75 1.706 + S77 0.0146",
+        "rate_source": "MEOH_TANK level",
+        "medium": "MeOH fuel",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 5.0
+      }
     },
     {
       "stream_id": "S79",
@@ -566,10 +613,10 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 0.2925,
+        "value": 0.1007,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
+        "note": "AQS-DUTY-011: DMFC eta 0.2536 x S76 LHV 0.397 kW"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
@@ -578,13 +625,14 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "rate_basis": "DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met",
-        "rate_source": "EFOY-class fuel use; ESS_DUTY_MATRIX",
+        "rate_basis": "DMFC eta 0.2536 x S76 LHV 0.397 kW",
+        "rate_source": "EFOY-class fuel use",
         "medium": "DC power",
         "conditions": "24 V DC bus",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010",
-        "rev_k_value": 1.0
+        "doc": "AQS-DUTY-011",
+        "rev_k_value": 1.0,
+        "rev_l_value": 0.2925
       }
     }
   ],

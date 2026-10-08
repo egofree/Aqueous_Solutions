@@ -52,6 +52,9 @@ class SiteModel(BaseModel):
     site_lat_deg: Optional[float] = None
     crew: Optional[int] = None
     jurisdiction_theme: str = "USA_Dallas_class"
+    # WP C4/GHEX 2026-10-02: design_survey_locked is not a field measurement
+    site_survey_status: Optional[str] = None
+    site_survey_note: Optional[str] = None
 
 
 class SectorModel(BaseModel):
@@ -191,6 +194,8 @@ class SelfCopyFlagsModel(BaseModel):
     electrode_coating_on_site: bool = False
     bom_doc: Optional[str] = None
     note: Optional[str] = None
+    # WP C4 2026-10-02: C3 Present criteria reminder (does not set *_on_site)
+    present_criteria_note: Optional[str] = None
 
 
 class MvsCriteriaModel(BaseModel):

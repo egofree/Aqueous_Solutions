@@ -10,7 +10,7 @@
 <title>G</title>
 <polygon fill="white" stroke="transparent" points="-21.6,21.6 -21.6,-496.6 828.6,-496.6 828.6,21.6 -21.6,21.6"/>
 <text text-anchor="middle" x="403.5" y="-462.2" font-family="Helvetica,sans-Serif" font-size="11.00">EFD ESS charge/discharge layer</text>
-<text text-anchor="middle" x="403.5" y="-450.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;ESS &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev L</text>
+<text text-anchor="middle" x="403.5" y="-450.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;ESS &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev M</text>
 <g id="clust1" class="cluster">
 <title>cluster_ELEC</title>
 <path fill="none" stroke="#94a3b8" d="M715,-108C715,-108 787,-108 787,-108 793,-108 799,-114 799,-120 799,-120 799,-168 799,-168 799,-174 793,-180 787,-180 787,-180 715,-180 715,-180 709,-180 703,-174 703,-168 703,-168 703,-120 703,-120 703,-114 709,-108 715,-108"/>
@@ -66,7 +66,7 @@
 <title>MEOH_FC&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="2.2" d="M436.75,-111.21C488.16,-106.86 599.05,-100.39 691,-115 694.24,-115.51 697.55,-116.18 700.86,-116.94"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="2.2" points="700.18,-120.38 710.74,-119.51 701.94,-113.61 700.18,-120.38"/>
-<text text-anchor="middle" x="624" y="-117.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">S79\n0.2925 kW</text>
+<text text-anchor="middle" x="624" y="-117.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">S79\n0.1007 kW</text>
 </g>
 <!-- MEOH_TANK -->
 <g id="node3" class="node">
@@ -79,7 +79,7 @@
 <title>MEOH_TANK&#45;&gt;MEOH_FC</title>
 <path fill="none" stroke="#6d28d9" stroke-width="2.2" d="M88.71,-114C154.71,-114 297.83,-114 367.01,-114"/>
 <polygon fill="#6d28d9" stroke="#6d28d9" stroke-width="2.2" points="367.05,-117.5 377.05,-114 367.05,-110.5 367.05,-117.5"/>
-<text text-anchor="middle" x="183.5" y="-116.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#6d28d9">S76\n5.0 kg/d</text>
+<text text-anchor="middle" x="183.5" y="-116.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#6d28d9">S76\n1.7209 kg/d</text>
 </g>
 <!-- HYDRO_SET -->
 <g id="node4" class="node">

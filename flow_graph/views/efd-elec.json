@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-ELEC",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
-  "node_count": 8,
-  "edge_count": 8,
+  "source_revision": "M",
+  "node_count": 10,
+  "edge_count": 10,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -31,37 +31,7 @@
           1000,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
-          "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "combustion air",
-              "value": 246.96,
-              "basis": "lambda 2",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "in",
-              "label": "H2 LHV (S45)",
-              "value": 4.9983,
-              "basis": "119.96 MJ/kg",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "radiator + exhaust heat",
-              "value": 2.4983,
-              "basis": "1 - eta",
-              "kind": "derived"
-            }
-          ]
-        }
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -88,37 +58,7 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
-          "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "cathode excess O2 vent",
-              "value": 0.3071,
-              "basis": "S50 less stoichiometric O2",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "in",
-              "label": "H2 LHV (S49)",
-              "value": 6.6644,
-              "basis": "119.96 MJ/kg",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "low-grade heat to ambient",
-              "value": 1.5225,
-              "basis": "below Q4 return",
-              "kind": "derived"
-            }
-          ]
-        }
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -151,30 +91,30 @@
         "presence": "present",
         "co2_in_kg_d": {
           "S04": 1.109,
-          "S89": 15.637
+          "S89": 16.1009
         },
         "co2_fixed_kg_d": 1.109,
-        "co2_to_exhaust_kg_d": 15.637,
+        "co2_to_exhaust_kg_d": 16.1009,
         "co2_setpoint_ppm": 1000,
-        "farm_oa_m3_h": 933.5,
+        "farm_oa_m3_h": 961.2,
         "co2_doc": "AQS-DUTY-009",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
-              "label": "UPW make-up from HDR_UPW (S01)",
-              "value": 95.0,
-              "basis": "S01",
-              "kind": "derived"
+              "label": "UPW make-up from HDR_UPW",
+              "value": 74.9024,
+              "basis": "S01 less ZnBr2 make-up",
+              "kind": "by_difference"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "CO2 to farm exhaust",
-              "value": 15.637,
+              "value": 16.1009,
               "basis": "AQS-DUTY-009 fate",
               "kind": "derived"
             },
@@ -182,7 +122,7 @@
               "layer": "mass",
               "dir": "out",
               "label": "water vapor to farm exhaust",
-              "value": 60.9005,
+              "value": 62.4932,
               "basis": "OA x humidity rise",
               "kind": "derived"
             },
@@ -191,7 +131,7 @@
               "dir": "out",
               "label": "photosynthetic O2 to farm exhaust",
               "value": 0.8063,
-              "basis": "CO2 + H2O -> CH2O + O2 on S04",
+              "basis": "S04 stoichiometry",
               "kind": "derived"
             }
           ]
@@ -245,6 +185,240 @@
       }
     },
     {
+      "unit_id": "LOAD_AGG",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "boundary",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": "S17/S20 undrawn aggregation",
+      "notes": "Rectifier electrical sum. S17/S20 accounting. Not a vessel.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none",
+        "former_class": "load_agg",
+        "boundary_kind": "electrical accounting (S17/S20 sum)",
+        "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "MFG_SHOP",
+              "value": 12.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HABITATION",
+              "value": 3.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "CRYO cold head (CRYO_H2 node 4.0 kW)",
+              "value": 4.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "LEACH_CSTR_1 parasitics",
+              "value": 2.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "WAFER_FAB",
+              "value": 2.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "WET_BENCH",
+              "value": 1.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "AFTERBURNER",
+              "value": 0.5,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "ALK_SCRUBBER",
+              "value": 0.4,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "H2_DRYER",
+              "value": 0.3,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "MEOH_SYNTH",
+              "value": 0.5,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "NUTRIENT_DOSE",
+              "value": 0.1,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "GLASS_RINSE",
+              "value": 0.2,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "GLASS_MILL",
+              "value": 0.8,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "GLASS_BURNOUT electric trim",
+              "value": 0.238,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "LITHO_STUB",
+              "value": 0.1,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "ELECTRODE_COAT",
+              "value": 0.3,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "BLOW_MOLD",
+              "value": 0.5,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "SOLAR_PV_CELL",
+              "value": 1.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "UPW polish (EDI)",
+              "value": 0.1,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "VCD_TRAIN",
+              "value": 0.2006,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "ASU compressor",
+              "value": 0.1184,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "hydro pump",
+              "value": 0.5451,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-4 trim",
+              "value": 0.0,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-5 trim",
+              "value": 0.4302,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-6 trim",
+              "value": 0.8016,
+              "basis": "daily average",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "GEO_HP (idle)",
+              "value": 0.0,
+              "basis": "daily average",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
+      "continuous_kw": null
+    },
+    {
       "unit_id": "MEOH_FC",
       "sector_id": "MEOH",
       "presence": "present",
@@ -269,15 +443,15 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "air O2",
-              "value": 7.4897,
+              "value": 2.5778,
               "basis": "stoichiometric",
               "kind": "derived"
             },
@@ -285,7 +459,7 @@
               "layer": "energy",
               "dir": "in",
               "label": "MeOH LHV (S76)",
-              "value": 1.1534,
+              "value": 0.397,
               "basis": "19.93 MJ/kg",
               "kind": "derived"
             },
@@ -293,12 +467,35 @@
               "layer": "energy",
               "dir": "out",
               "label": "low-grade heat",
-              "value": 0.4919,
+              "value": 0.1693,
               "basis": "below Q4 return",
               "kind": "derived"
             }
           ]
         }
+      }
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "sector_id": "ELEC_PV",
+      "presence": "present",
+      "class": "pv",
+      "tags": [],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 70.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "PV_MODULE_KW \u00d7 PV_COUNT from params.py; nameplate class not continuous avg"
+      },
+      "modules": [],
+      "params": {
+        "module_kw": 70,
+        "count": 1,
+        "presence": "present"
       }
     },
     {
@@ -312,13 +509,52 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 12.0,
+        "value": 13.48,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "Rev M: (EW 5.75 + BMED 6.55 + PK 0.5 kW DC) / 0.95 (AQS-DUTY-011)"
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "RECT-EW DC to EW cells",
+              "value": 5.7507,
+              "basis": "Faraday x V_cell",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "RECT-BMED DC to BMED stack",
+              "value": 6.5511,
+              "basis": "74.9 kg/d pair x 2.1 kWh/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "RECT-PK DC",
+              "value": 0.5,
+              "basis": "ELECTRICAL < 0.5 kW",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "conversion loss",
+              "value": 0.6738,
+              "basis": "1 - 0.95",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -335,7 +571,29 @@
       "modules": [],
       "params": {
         "kW": 60,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "inverter / charger conversion loss",
+              "value": 1.4883,
+              "basis": "3% of AC delivered",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "utility import at the GRID port (ELECTRICAL AQS-ELC-001 Rev B)",
+              "value": 39.9862,
+              "basis": "bus balance",
+              "kind": "by_difference"
+            }
+          ]
+        }
       }
     },
     {
@@ -358,10 +616,18 @@
         "kW": 60,
         "kWh": 120,
         "presence": "present",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            },
             {
               "layer": "mass",
               "dir": "in",
@@ -372,18 +638,18 @@
             },
             {
               "layer": "mass",
-              "dir": "out",
-              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
-              "value": 8.4402,
-              "basis": "no electrolyte bleed on the graph",
-              "kind": "accumulation"
+              "dir": "in",
+              "label": "purge air ambient humidity",
+              "value": 8.4399,
+              "basis": "w 0.010",
+              "kind": "derived"
             },
             {
-              "layer": "energy",
-              "dir": "out",
-              "label": "round-trip loss",
-              "value": 1.6667,
-              "basis": "1 - RTE",
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW electrolyte make-up (HDR_UPW)",
+              "value": 2.374,
+              "basis": "evaporation less S69B water",
               "kind": "derived"
             }
           ]
@@ -523,51 +789,65 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": "Closed",
       "rate": {
-        "value": 50.0,
+        "value": 13.4755,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-SCALE-001 / params ELEC_NEED_KW_BASE \u224850 kW at SCALE_M=1"
+        "note": "AQS-DUTY-011: (EW 5.751 + BMED 6.551 + PK 0.5) / 0.95"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "(EW 5.751 + BMED 6.551 + PK 0.5) / 0.95",
+        "rate_source": "AQS-DUTY-011 Faraday + BMED pair basis",
+        "medium": "AC to rectifiers",
+        "conditions": "480 V",
+        "rate_kind": "derived",
+        "rect_ew_kw": 5.751,
+        "rect_bmed_kw": 6.551,
+        "rect_bmed_rating_kw": 9,
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 50.0
+      }
     },
     {
       "stream_id": "S20",
-      "from_unit_id": "GROW_BED",
-      "to_unit_id": "SOL_ARK_60K",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GROW_BED",
       "phase": "E",
       "layers": [
         "elec"
       ],
       "presence": "present",
-      "carries": "load",
+      "carries": "LED canopy load",
       "header": "tray",
-      "forbidden": "\u2014",
+      "forbidden": "none",
       "claim_status": "Closed",
       "rate": {
         "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J"
+        "note": "AQS-DUTY-011: GROW_BED LED canopy share (graph continuous_kw 5.0)"
       },
-      "from_sector_id": "FARM",
-      "to_sector_id": "ELEC",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
+      "notes": "Rev M: direction corrected; GROW_BED is a load (LED canopy), not a source.",
       "params": {
-        "rate_basis": "GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J",
-        "rate_source": "graph GROW_BED continuous_kw 5.0 kW (LED canopy share, study)",
-        "medium": "DC load",
+        "rate_basis": "GROW_BED LED canopy share (graph continuous_kw 5.0)",
+        "rate_source": "graph GROW_BED continuous_kw",
+        "medium": "AC load",
         "conditions": "bus",
         "rate_kind": "derived",
         "source_governs": "graph node value; LED first-principles check is lower",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-011",
+        "rev_l_from": "GROW_BED",
+        "rev_l_to": "SOL_ARK_60K"
       }
     },
     {
@@ -584,17 +864,27 @@
       "forbidden": "RECT DC bus direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 2.5,
+        "value": 0.0,
         "unit": "kW",
-        "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock \u2014 not vendor nameplate"
+        "status": "study",
+        "note": "AQS-DUTY-011: standby: 0 on the design day; 2.5 kW while running"
       },
       "from_sector_id": "BACKUP_GEN",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "standby: 0 on the design day; 2.5 kW while running",
+        "rate_source": "AQS-DUTY-011 dispatch",
+        "medium": "power",
+        "conditions": "standby",
+        "rate_kind": "derived",
+        "standby_kw": 2.5,
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 2.5
+      }
     },
     {
       "stream_id": "S51",
@@ -610,17 +900,27 @@
       "forbidden": "GEN AC port, RECT process DC hard-tee",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.0,
+        "value": 0.0,
         "unit": "kW",
-        "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-FC-CONT; study requirement lock \u2014 not vendor nameplate"
+        "status": "study",
+        "note": "AQS-DUTY-011: standby: 0 on the design day; 4.0 kW while running"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "standby: 0 on the design day; 4.0 kW while running",
+        "rate_source": "AQS-DUTY-011 dispatch",
+        "medium": "power",
+        "conditions": "standby",
+        "rate_kind": "derived",
+        "standby_kw": 4.0,
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 4.0
+      }
     },
     {
       "stream_id": "S79",
@@ -637,10 +937,10 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 0.2925,
+        "value": 0.1007,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
+        "note": "AQS-DUTY-011: DMFC eta 0.2536 x S76 LHV 0.397 kW"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
@@ -649,13 +949,85 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "rate_basis": "DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met",
-        "rate_source": "EFOY-class fuel use; ESS_DUTY_MATRIX",
+        "rate_basis": "DMFC eta 0.2536 x S76 LHV 0.397 kW",
+        "rate_source": "EFOY-class fuel use",
         "medium": "DC power",
         "conditions": "24 V DC bus",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010",
-        "rev_k_value": 1.0
+        "doc": "AQS-DUTY-011",
+        "rev_k_value": 1.0,
+        "rev_l_value": 0.2925
+      }
+    },
+    {
+      "stream_id": "S93",
+      "from_unit_id": "PV_ARRAY",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "PV DC (daily average)",
+      "header": "tray",
+      "forbidden": "none",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 12.3858,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011: 70 kWp x 1550 kWh/kWp.yr / 8760 h"
+      },
+      "from_sector_id": "ELEC_PV",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Rev M. 70 kWp array to the Sol-Ark PV input; daily-average yield.",
+      "params": {
+        "doc": "AQS-DUTY-011",
+        "rev_m_new": true,
+        "rate_basis": "70 kWp x 1550 kWh/kWp.yr / 8760 h",
+        "rate_source": "PV yield class SITE_LAT 33 (fixed tilt)",
+        "medium": "DC",
+        "conditions": "PV input",
+        "rate_kind": "derived",
+        "peak_kw": 70.0
+      }
+    },
+    {
+      "stream_id": "S94",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LOAD_AGG",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "AC loads aggregate (daily average)",
+      "header": "tray",
+      "forbidden": "none",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 31.1339,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011: sum of itemized daily-average AC loads (LOAD_AGG balance terms)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Rev M. LOAD_AGG is an accounting boundary: itemized loads in its balance terms.",
+      "params": {
+        "doc": "AQS-DUTY-011",
+        "rev_m_new": true,
+        "rate_basis": "sum of itemized daily-average AC loads (LOAD_AGG balance terms)",
+        "rate_source": "graph node continuous_kw + AQS-DUTY-011 trims",
+        "medium": "AC",
+        "conditions": "bus",
+        "rate_kind": "derived"
       }
     }
   ],

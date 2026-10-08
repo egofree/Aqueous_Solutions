@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
+  "source_revision": "M",
   "node_count": 25,
-  "edge_count": 37,
+  "edge_count": 40,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -26,8 +26,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -35,15 +35,15 @@
               "dir": "in",
               "label": "combustion air",
               "value": 236.68,
-              "basis": "DUTY-008 flue 10.07 kg/h less fuel",
+              "basis": "DUTY-008 flue less fuel",
               "kind": "derived"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "flue to AFTERBURNER_FLUE",
-              "value": 241.68,
-              "basis": "DUTY-008 m_flue_kg_h",
+              "value": 242.48,
+              "basis": "DUTY-008 + S11",
               "kind": "derived"
             },
             {
@@ -52,6 +52,14 @@
               "label": "NCG heat release",
               "value": 2.744,
               "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "S11 trim heat release",
+              "value": 0.0681,
+              "basis": "0.336 kg/d DM x 17.5 MJ/kg",
               "kind": "derived"
             },
             {
@@ -73,9 +81,9 @@
             {
               "layer": "energy",
               "dir": "out",
-              "label": "flue sensible to KO",
-              "value": 0.869,
-              "basis": "DUTY-008",
+              "label": "flue sensible to KO (+ S11 heat)",
+              "value": 0.9371,
+              "basis": "DUTY-008 + S11",
               "kind": "derived"
             }
           ]
@@ -137,34 +145,10 @@
           650
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "Au cathode harvest (reported on S08)",
-              "value": 0.0063,
-              "basis": "S08 split by leach build-up",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 56.278,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "evaporation to EW hood (ball blanket)",
-              "value": 3.8933,
-              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
-              "kind": "derived"
-            },
             {
               "layer": "energy",
               "dir": "in",
@@ -196,6 +180,46 @@
               "value": 0.962,
               "basis": "DUTY-008",
               "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Au cathode harvest (reported on S08)",
+              "value": 0.0063,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to the leach sparge header",
+              "value": 0.0038,
+              "basis": "Faraday: (n_dep + n_side)/2 Cl2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+              "value": 0.0006,
+              "basis": "0.1 kg/kg deposit",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "cathode H2 to hood sweep (vented, < 1 % LFL)",
+              "value": 0.0,
+              "basis": "minor cell; not collected",
+              "kind": "derived"
             }
           ]
         }
@@ -225,37 +249,7 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
-          "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "cathode excess O2 vent",
-              "value": 0.3071,
-              "basis": "S50 less stoichiometric O2",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "in",
-              "label": "H2 LHV (S49)",
-              "value": 6.6644,
-              "basis": "119.96 MJ/kg",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "low-grade heat to ambient",
-              "value": 1.5225,
-              "basis": "below Q4 return",
-              "kind": "derived"
-            }
-          ]
-        }
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -275,7 +269,23 @@
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "heat to ground (borefield recharge)",
+              "value": 0.6738,
+              "basis": "S102",
+              "kind": "derived"
+            }
+          ]
+        },
+        "Q_recharge_kW_th": 0.674,
+        "recharge_note": "Rev M: Q4 surplus to borefield (S102); ORC pad reserved, P_ORC 0"
       },
       "continuous_kw": null
     },
@@ -331,49 +341,54 @@
         "value": 1.5,
         "unit": "kW",
         "status": "study",
-        "note": "Study digest duty class"
+        "note": "Rev M: heater rating 2.5 kW (AQS-DUTY-011); 1.5 kW study class retired"
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
-              "dir": "in",
-              "label": "2 M NaOH digest liquor",
-              "value": 320.76,
-              "basis": "DUTY-008 digest 593 mol/d at 2 M",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
               "dir": "out",
-              "label": "sodium silicate liquor (carries the caustic)",
-              "value": 320.76,
-              "basis": "same liquor; S08G is on the cullet-equivalent yield basis",
+              "label": "lid purge vapor to HDR_CAUSTIC",
+              "value": 20.3,
+              "basis": "DUTY-008 digest purge",
               "kind": "derived"
             },
             {
               "layer": "energy",
               "dir": "in",
               "label": "electric trim",
-              "value": 1.084,
-              "basis": "DUTY-008 trim_normal",
+              "value": 0.8016,
+              "basis": "AQS-DUTY-011 ladder run",
               "kind": "derived"
             },
             {
               "layer": "energy",
               "dir": "out",
-              "label": "digest duty",
-              "value": 1.663,
-              "basis": "DUTY-008",
+              "label": "HX-6 duty after HX-10 caustic preheat",
+              "value": 1.3809,
+              "basis": "AQS-DUTY-011",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-10 caustic preheat duty",
+              "value": 0.2822,
+              "basis": "S101",
               "kind": "derived"
             }
           ]
-        }
+        },
+        "heater_rating_kw": 2.5,
+        "heater_rating_basis": "HX-6 rating case 1.663 kW (Q3 and Q4 unavailable) x 1.25, rounded up to 0.5 kW; replaces the 1.5 kW study class",
+        "hx6_normal_kw": 1.381,
+        "hx10_kw": 0.282,
+        "doc_rev_m": "AQS-DUTY-011"
       }
     },
     {
@@ -406,30 +421,30 @@
         "presence": "present",
         "co2_in_kg_d": {
           "S04": 1.109,
-          "S89": 15.637
+          "S89": 16.1009
         },
         "co2_fixed_kg_d": 1.109,
-        "co2_to_exhaust_kg_d": 15.637,
+        "co2_to_exhaust_kg_d": 16.1009,
         "co2_setpoint_ppm": 1000,
-        "farm_oa_m3_h": 933.5,
+        "farm_oa_m3_h": 961.2,
         "co2_doc": "AQS-DUTY-009",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
-              "label": "UPW make-up from HDR_UPW (S01)",
-              "value": 95.0,
-              "basis": "S01",
-              "kind": "derived"
+              "label": "UPW make-up from HDR_UPW",
+              "value": 74.9024,
+              "basis": "S01 less ZnBr2 make-up",
+              "kind": "by_difference"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "CO2 to farm exhaust",
-              "value": 15.637,
+              "value": 16.1009,
               "basis": "AQS-DUTY-009 fate",
               "kind": "derived"
             },
@@ -437,7 +452,7 @@
               "layer": "mass",
               "dir": "out",
               "label": "water vapor to farm exhaust",
-              "value": 60.9005,
+              "value": 62.4932,
               "basis": "OA x humidity rise",
               "kind": "derived"
             },
@@ -446,7 +461,7 @@
               "dir": "out",
               "label": "photosynthetic O2 to farm exhaust",
               "value": 0.8063,
-              "basis": "CO2 + H2O -> CH2O + O2 on S04",
+              "basis": "S04 stoichiometry",
               "kind": "derived"
             }
           ]
@@ -507,8 +522,8 @@
       "params": {
         "V_m3": null,
         "presence": "present",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -529,6 +544,14 @@
             },
             {
               "layer": "mass",
+              "dir": "in",
+              "label": "anode Cl2 sparge (all EW cells)",
+              "value": 61.9203,
+              "basis": "AQS-DUTY-011 Faraday",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
               "dir": "out",
               "label": "slurry to FLOAT_SINK",
               "value": 454.7062,
@@ -544,23 +567,52 @@
               "kind": "derived"
             },
             {
+              "layer": "mass",
+              "dir": "out",
+              "label": "unabsorbed Cl2 to lid purge -> ALK_SCRUBBER",
+              "value": 3.096,
+              "basis": "1 - sparge absorption 0.95",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "unused O2 to lid purge",
+              "value": 0.4311,
+              "basis": "1 - utilization 0.9",
+              "kind": "derived"
+            },
+            {
               "layer": "energy",
               "dir": "in",
               "label": "electric trim (ladder short)",
-              "value": 6.353,
-              "basis": "DUTY-008 trim_normal",
+              "value": 0.4302,
+              "basis": "AQS-DUTY-011 ladder run",
               "kind": "derived"
             },
             {
               "layer": "energy",
               "dir": "out",
-              "label": "HX-5 duty (regen + shell + shred + purge - exotherm)",
-              "value": 6.353,
-              "basis": "DUTY-008",
+              "label": "HX-5 duty, normal (streams + shell + shred + purge - exotherm incl. Cl2/O2 oxidant credit)",
+              "value": 0.4302,
+              "basis": "AQS-DUTY-011",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-9 make-up preheat duty",
+              "value": 0.5322,
+              "basis": "S100",
               "kind": "derived"
             }
           ]
-        }
+        },
+        "heater_rating_kw": 6.0,
+        "heater_rating_basis": "HX-5 rating case 4.602 kW (Q3, Q4 and Cl2 sparge unavailable; DUTY-008 lowest exotherm credit) x 1.25, rounded up to 0.5 kW",
+        "hx5_normal_kw": 0.43,
+        "hx9_kw": 0.532,
+        "doc_rev_m": "AQS-DUTY-011"
       }
     },
     {
@@ -588,15 +640,15 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "air O2",
-              "value": 7.4897,
+              "value": 2.5778,
               "basis": "stoichiometric",
               "kind": "derived"
             },
@@ -604,7 +656,7 @@
               "layer": "energy",
               "dir": "in",
               "label": "MeOH LHV (S76)",
-              "value": 1.1534,
+              "value": 0.397,
               "basis": "19.93 MJ/kg",
               "kind": "derived"
             },
@@ -612,7 +664,7 @@
               "layer": "energy",
               "dir": "out",
               "label": "low-grade heat",
-              "value": 0.4919,
+              "value": 0.1693,
               "basis": "below Q4 return",
               "kind": "derived"
             }
@@ -646,8 +698,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -679,7 +731,7 @@
               "dir": "in",
               "label": "electric trim",
               "value": 0.0,
-              "basis": "DUTY-008",
+              "basis": "AQS-DUTY-011 ladder run",
               "kind": "derived"
             }
           ]
@@ -701,8 +753,8 @@
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -710,7 +762,7 @@
               "dir": "out",
               "label": "life load (hab + farm)",
               "value": 3.0,
-              "basis": "DUTY-008 q4_life_kw = GHEX Q4 life priority",
+              "basis": "DUTY-008 q4_life_kw",
               "kind": "derived"
             }
           ]
@@ -736,8 +788,8 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -824,8 +876,8 @@
         },
         "coil_pack_stack_m": 0.76,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -886,8 +938,8 @@
         },
         "coil_pack_stack_m": 0.881,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -956,8 +1008,8 @@
         },
         "coil_pack_stack_m": 0.63,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1020,8 +1072,8 @@
         },
         "coil_pack_stack_m": 0.549,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1076,8 +1128,8 @@
         },
         "coil_pack_stack_m": 0.76,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1138,8 +1190,8 @@
         },
         "coil_pack_stack_m": 0.881,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1208,8 +1260,8 @@
         },
         "coil_pack_stack_m": 0.63,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1272,8 +1324,8 @@
         },
         "coil_pack_stack_m": 0.549,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_l": {
-          "doc": "AQS-DUTY-010",
+        "balance_rev_m": {
+          "doc": "AQS-DUTY-011",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -2207,7 +2259,7 @@
         "value": 0.302,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
+        "note": "AQS-DUTY-011: rated 0.302 kW = HX-4 rating-case duty x 1.25; normal 0.121 kW (AQS-DUTY-011 ladder run)"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "OIL",
@@ -2216,7 +2268,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
+        "doc": "AQS-DUTY-011",
         "duty_rated_kw": 0.302,
         "duty_normal_kw": 0.121,
         "kind": "pumped loop",
@@ -2250,10 +2302,10 @@
       "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
       "claim_status": "Closed",
       "rate": {
-        "value": 7.941,
+        "value": 5.753,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
+        "note": "AQS-DUTY-011: rated 5.753 kW = HX-5 rating-case duty x 1.25; normal 0.000 kW (AQS-DUTY-011 ladder run)"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WET",
@@ -2262,24 +2314,25 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
-        "duty_rated_kw": 7.941,
+        "doc": "AQS-DUTY-011",
+        "duty_rated_kw": 5.753,
         "duty_normal_kw": 0.0,
         "kind": "pumped loop",
         "medium": "treated water (Q3 jacket loop, pressurized)",
         "supply_C": 95.0,
         "return_C": 85.0,
         "dT_K": 10.0,
-        "m_kg_s": 0.18863,
-        "flow_L_min": 11.76,
-        "line_DN": 20,
-        "line_id_mm": 20.93,
-        "velocity_m_s": 0.57,
+        "m_kg_s": 0.13665,
+        "flow_L_min": 8.52,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.724,
         "velocity_basis_m_s": 1.0,
-        "thermal_relief_L_h": 3.5294,
+        "thermal_relief_L_h": 2.5569,
         "exchanger": "HX-5",
-        "trim_normal_kw_per_ladder": 3.176,
-        "trim_single_kw": 6.353
+        "trim_normal_kw_per_ladder": 0.215,
+        "trim_single_kw": 0.43,
+        "rev_l_value": 7.941
       }
     },
     {
@@ -2299,7 +2352,7 @@
         "value": 2.079,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
+        "note": "AQS-DUTY-011: rated 2.079 kW = HX-6 rating-case duty x 1.25; normal 0.290 kW (AQS-DUTY-011 ladder run)"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS",
@@ -2308,7 +2361,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
+        "doc": "AQS-DUTY-011",
         "duty_rated_kw": 2.079,
         "duty_normal_kw": 0.29,
         "kind": "pumped loop",
@@ -2324,8 +2377,8 @@
         "velocity_basis_m_s": 1.0,
         "thermal_relief_L_h": 0.9239,
         "exchanger": "HX-6",
-        "trim_normal_kw_per_ladder": 0.542,
-        "trim_single_kw": 0.614
+        "trim_normal_kw_per_ladder": 0.401,
+        "trim_single_kw": 0.332
       }
     },
     {
@@ -2345,7 +2398,7 @@
         "value": 0.302,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
+        "note": "AQS-DUTY-011: rated 0.302 kW = HX-4 rating-case duty x 1.25; normal 0.121 kW (AQS-DUTY-011 ladder run)"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "OIL",
@@ -2354,7 +2407,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
+        "doc": "AQS-DUTY-011",
         "duty_rated_kw": 0.302,
         "duty_normal_kw": 0.121,
         "kind": "pumped loop",
@@ -2388,10 +2441,10 @@
       "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
       "claim_status": "Closed",
       "rate": {
-        "value": 7.941,
+        "value": 5.753,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
+        "note": "AQS-DUTY-011: rated 5.753 kW = HX-5 rating-case duty x 1.25; normal 0.000 kW (AQS-DUTY-011 ladder run)"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WET",
@@ -2400,24 +2453,25 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
-        "duty_rated_kw": 7.941,
+        "doc": "AQS-DUTY-011",
+        "duty_rated_kw": 5.753,
         "duty_normal_kw": 0.0,
         "kind": "pumped loop",
         "medium": "treated water (Q3 jacket loop, pressurized)",
         "supply_C": 95.0,
         "return_C": 85.0,
         "dT_K": 10.0,
-        "m_kg_s": 0.18863,
-        "flow_L_min": 11.76,
-        "line_DN": 20,
-        "line_id_mm": 20.93,
-        "velocity_m_s": 0.57,
+        "m_kg_s": 0.13665,
+        "flow_L_min": 8.52,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.724,
         "velocity_basis_m_s": 1.0,
-        "thermal_relief_L_h": 3.5294,
+        "thermal_relief_L_h": 2.5569,
         "exchanger": "HX-5",
-        "trim_normal_kw_per_ladder": 3.176,
-        "trim_single_kw": 6.353
+        "trim_normal_kw_per_ladder": 0.215,
+        "trim_single_kw": 0.43,
+        "rev_l_value": 7.941
       }
     },
     {
@@ -2437,7 +2491,7 @@
         "value": 2.079,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
+        "note": "AQS-DUTY-011: rated 2.079 kW = HX-6 rating-case duty x 1.25; normal 0.290 kW (AQS-DUTY-011 ladder run)"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS",
@@ -2446,7 +2500,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
+        "doc": "AQS-DUTY-011",
         "duty_rated_kw": 2.079,
         "duty_normal_kw": 0.29,
         "kind": "pumped loop",
@@ -2462,8 +2516,8 @@
         "velocity_basis_m_s": 1.0,
         "thermal_relief_L_h": 0.9239,
         "exchanger": "HX-6",
-        "trim_normal_kw_per_ladder": 0.542,
-        "trim_single_kw": 0.614
+        "trim_normal_kw_per_ladder": 0.401,
+        "trim_single_kw": 0.332
       }
     },
     {
@@ -2940,10 +2994,10 @@
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.1419,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return"
+        "note": "AQS-DUTY-011: standby: 0 on the design day; 1.582 kW while running"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "HAB",
@@ -2954,12 +3008,14 @@
       ],
       "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
-        "rate_basis": "FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return",
-        "rate_source": "H2 LHV; S51 authority",
+        "rate_basis": "standby: 0 on the design day; 1.582 kW while running",
+        "rate_source": "AQS-DUTY-011 dispatch",
         "medium": "Q4 water",
-        "conditions": "45 C return",
+        "conditions": "standby",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-011",
+        "standby_kw": 1.582,
+        "rev_l_value": 1.1419
       }
     },
     {
@@ -2976,10 +3032,10 @@
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.5448,
+        "value": 0.1001,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058"
+        "note": "AQS-DUTY-011: ASU air 36.8 kg/d for O2 7.67 kg/d (S02 + S83): shaft 0.1066 kW x 0.839 + sieve TSA 0.0107"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
@@ -2990,13 +3046,14 @@
       ],
       "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
-        "rate_basis": "ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058",
-        "rate_source": "CRYO_COLD_BOX (intercooler residual + sieve cool-down)",
+        "rate_basis": "ASU air 36.8 kg/d for O2 7.67 kg/d (S02 + S83): shaft 0.1066 kW x 0.839 + sieve TSA 0.0107",
+        "rate_source": "CRYO_COLD_BOX",
         "medium": "Q4 water",
         "conditions": "45 C return / 60 C supply",
         "rate_kind": "derived",
-        "asu_air_kg_d": 200.5,
-        "doc": "AQS-DUTY-010"
+        "asu_air_kg_d": 36.8,
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 0.5448
       }
     },
     {
@@ -3014,10 +3071,10 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.2838,
+        "value": 4.0606,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)"
+        "note": "AQS-DUTY-011: Stirling reject = electric 4.0 + lift 0.0606 kW"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -3028,13 +3085,14 @@
       ],
       "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL",
       "params": {
-        "rate_basis": "Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)",
-        "rate_source": "CRYO_COLD_BOX; CONTINUOUS_KW 2-8 kW class",
+        "rate_basis": "Stirling reject = electric 4.0 + lift 0.0606 kW",
+        "rate_source": "CRYO_COLD_BOX",
         "medium": "glycol 30 %",
         "conditions": "dT 5 K",
         "rate_kind": "derived",
         "glycol_kg_h": 857.0,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 4.2838
       }
     },
     {
@@ -3087,10 +3145,10 @@
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
       "rate": {
-        "value": 0.3689,
+        "value": 0.127,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return"
+        "note": "AQS-DUTY-011: DMFC heat 0.296 kW x 0.4286 above Q4 return"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HAB",
@@ -3101,12 +3159,124 @@
       ],
       "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
-        "rate_basis": "DMFC heat 0.861 kW x 0.4286 above Q4 return",
+        "rate_basis": "DMFC heat 0.296 kW x 0.4286 above Q4 return",
         "rate_source": "MeOH LHV",
         "medium": "Q4 water",
         "conditions": "45 C return",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-011",
+        "rev_l_value": 0.3689
+      }
+    },
+    {
+      "stream_id": "S100",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q4 water to HX-9 leach make-up preheater",
+      "header": "Q4",
+      "forbidden": "HL-* ladder, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.5322,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011: HX-9: make-up S68, S10, S16, S39, S72, S28 to 55.0 C"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Rev M. HX-9 heats the cold make-up streams (S68, S10, S16, S39, S72, S28) to 55 C. Not on CONTINUOUS_RECYCLE.",
+      "params": {
+        "doc": "AQS-DUTY-011",
+        "rev_m_new": true,
+        "rate_basis": "HX-9: make-up S68, S10, S16, S39, S72, S28 to 55.0 C",
+        "rate_source": "AQS-DUTY-011",
+        "medium": "Q4 water",
+        "conditions": "60 C supply / 45 C return",
+        "rate_kind": "derived",
+        "duty_normal_kw": 0.5322,
+        "duty_rated_kw": 0.665
+      }
+    },
+    {
+      "stream_id": "S101",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q4 water to HX-10 digest caustic preheater",
+      "header": "Q4",
+      "forbidden": "HL-* ladder",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.2822,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011: HX-10: S91 320.8 kg/d x 3.8 x (55.0 - 35.0) C"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Rev M. HX-10 heats S91 caustic 35 -> 55 C ahead of the HX-6 jacket.",
+      "params": {
+        "doc": "AQS-DUTY-011",
+        "rev_m_new": true,
+        "rate_basis": "HX-10: S91 320.8 kg/d x 3.8 x (55.0 - 35.0) C",
+        "rate_source": "AQS-DUTY-011",
+        "medium": "Q4 water",
+        "conditions": "60 C supply / 45 C return",
+        "rate_kind": "derived",
+        "duty_normal_kw": 0.2822,
+        "duty_rated_kw": 0.353
+      }
+    },
+    {
+      "stream_id": "S102",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q4 surplus to borefield recharge",
+      "header": "Q4",
+      "forbidden": "GEO_ORC (reserved, 0 kW)",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.6738,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011: Q4 bus in 4.488 - life 3.0 - HX-9 0.532 - HX-10 0.282"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Rev M. Remaining Q4 surplus to the GHEX loop (seasonal ground store). ORC pad stays empty.",
+      "params": {
+        "doc": "AQS-DUTY-011",
+        "rev_m_new": true,
+        "rate_basis": "Q4 bus in 4.488 - life 3.0 - HX-9 0.532 - HX-10 0.282",
+        "rate_source": "AQS-DUTY-011 Q4 balance",
+        "medium": "Q4 water -> GHEX glycol",
+        "conditions": "60 C supply",
+        "rate_kind": "by_difference",
+        "duty_normal_kw": 0.6738,
+        "duty_rated_kw": 0.842
       }
     }
   ],

@@ -284,7 +284,14 @@ for row in moves:
         if issued and i == 0:
             obj.Shape = Part.makeBox(*issued)
             resized.append(name)
-        obj.Placement = App.Placement(App.Vector(x, y, z), App.Rotation())
+            obj.Placement = App.Placement(App.Vector(x, y, z), App.Rotation())
+        else:
+            # Seed origins are bounding-box origins. A Feature whose shape is not
+            # built from its local origin (e.g. a centred cylinder) is moved by the
+            # bounding-box offset, so its bounding box lands on the seed origin.
+            bb = obj.Shape.BoundBox
+            obj.Placement = App.Placement(obj.Placement.Base + App.Vector(x - bb.XMin, y - bb.YMin, z - bb.ZMin),
+                                          obj.Placement.Rotation)
         applied.append(name)
 if creates:
     grp = doc.getObject("ISSUED_ENVELOPES") or doc.addObject("App::DocumentObjectGroup", "ISSUED_ENVELOPES")

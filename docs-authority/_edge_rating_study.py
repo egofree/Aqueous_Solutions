@@ -928,6 +928,18 @@ def main(path=GRAPH, write=None):
 if __name__ == "__main__":
     gp = sys.argv[sys.argv.index("--graph") + 1] if "--graph" in sys.argv else GRAPH
     wr = sys.argv[sys.argv.index("--write") + 1] if "--write" in sys.argv else None
+    if "--graph" not in sys.argv and json.load(open(GRAPH)).get("revision", "L") > "L":
+        # Rev M onward: this study (AQS-DUTY-010 Rev A) is reproducible against its Rev L
+        # base only. The superseding rating is AQS-DUTY-011 (_rev_m_closure_study.py).
+        import subprocess
+        import tempfile
+        txt = subprocess.check_output(["git", "-C", os.path.join(HERE, ".."), "show",
+                                       "d9cd071:flow_graph/plant_flow_graph.json"])
+        tmp = tempfile.NamedTemporaryFile("wb", suffix=".json", delete=False)
+        tmp.write(txt)
+        tmp.close()
+        gp = tmp.name
+        print("note: graph is past Rev L; AQS-DUTY-010 rerun on Rev L base d9cd071", file=sys.stderr)
     rep, g = main(gp, wr)
     if "--json" in sys.argv:
         json.dump(rep, open(sys.argv[sys.argv.index("--json") + 1], "w"), indent=1)

@@ -1,11 +1,11 @@
 # Flow graph census — DERIVED
 
-Source: AQS-FLOW-GRAPH-001 Rev L
+Source: AQS-FLOW-GRAPH-001 Rev M
 Generated: 2026-10-08
 
 - nodes: **123** (present=122, placeholder=1)
-- edges: **165** (present=163, placeholder=2)
-- by namespace: {'IA': 68, 'TBD': 1, 'S': 94, 'SANDBOX': 2}
+- edges: **179** (present=179, placeholder=0)
+- by namespace: {'IA': 74, 'TBD': 1, 'S': 102, 'SANDBOX': 2}
 - locks: layered_views, full_depth_now, efd_three_layers, typed_graph_sole, present_plus_placeholders, site_lat_design_sandbox, true_closure_residuals_wp, reprap_bom_complete_c4, site_ghex_design_survey_locked, wp_l3_evidence_pack, wp_l4_claim_discipline, wp_ew_cascade_explode
 
 ## Gaps
@@ -22,5 +22,6 @@ Generated: 2026-10-08
 - **WP_EW_CASCADE_EXPLODE** (low): EW_3…EW_8 present. Cascade hops EW_1→…→EW_9 complete incl. IA-EW-10 EW_4→EW_5 (Rev F was missing that hop). IA-HDR-H2 Faraday restored. loops_closed=false.
 - **WP_L2_PRESENT_CAD** (medium): Equipment IDs / BOM matrix on disk (C4 true). FreeCAD Features for VCD/REMIN/LITHO/BLOW/ELC absent (placeholder_skip). *_on_site=false (C3). AHJ design-basis USA_Dallas_class — no fake certificates. Primary remaining loops_closed gate under Rev E topology.
 - **WP_L2_SITE_SURVEY** (low): CLOSED as design_survey_locked 2026-10-02 (reaffirmed on Rev E sync). SITE_LAT=33.0 Dallas sandbox (params.py); jurisdiction_theme=USA_Dallas_class; GHEX design-basis ST-ORC-01. Field bore/conductivity still external — not claimed as measured.
-- **WP_TRUE_CLOSURE_RESIDUALS** (medium): Rev L: S87/S88 demoted to placeholder on HOLD (no clean endpoint; AQS-DUTY-010). Node conservation run: see REV_L_CONSERVATION_EXCEPTIONS. loops_closed false.
-- **REV_L_CONSERVATION_EXCEPTIONS** (high): AQS-DUTY-010 node conservation (+-1 %, daily average): open at AFTERBURNER, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, CRU, CRYO_H2, GREY_TREAT, H2_DRYER, NUTRIENT_DOSE, Q4_BUS, SOL_ARK_60K, ZNBR2. Reasons in EDGE_RATING_DUTY.md s6.
+- **WP_TRUE_CLOSURE_RESIDUALS** (medium): Rev M: S87 and S88 retired (no physical flow; AQS-DUTY-011). Required studies in REV_M_REQUIRED_STUDIES. loops_closed false.
+- **REV_M_CONSERVATION** (low): AQS-DUTY-011 node conservation (+-1 %, daily average): no open node balances. See REV_M_CLOSURE_DUTY.md.
+- **REV_M_REQUIRED_STUDIES** (medium): RS-LEACH-H2: leach lid H2 under oxidant upset (Cl2 sparge or O2 off): purge dilution to < 25 % LFL and interlock. | RS-HAB-N2: hab envelope leak rate at operating pressure; sets HDR_N2 -> HABITATION make-up (the only N2 consumer candidate). | RS-RESIDUE-TCLP: S96 sink residue and S97 cake leachate characterization before disposal or sale. | RS-DSP: bench confirmation that glass Na leaves in the pH-9 cake as sodium aluminosilicate (Na <= Al). | RS-CL2-SPARGE: anode Cl2 absorption in LEACH_CSTR_1 (0.95 basis) and the Fe3+ effect on EW CE. | RS-GHEX-RECHARGE: borefield temperature drift under S102 continuous recharge (field bore data external, design_survey_locked).
