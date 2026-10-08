@@ -188,6 +188,12 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {Heat rule -- If pyro is down the dryer still runs on EW heat. Leach and digest idle on the same Q3 loop.}
 
+{Loop thermosyphon -- Ladder step or cross-tie. Evaporator low in the source store, condenser at least 0.8 m higher in the sink store, vapor riser and condensate return with a check. The hardware diode. Own fluid per step.}
+
+{Rated duty -- For an HL-* edge, the single-ladder throughput × 1.25; carried as the edge rate. Normal duty is both ladders on line. AQS-DUTY-008.}
+
+{CO2-rich cut -- S67B. FLUE_KO VSA product, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue.}
+
 ## Gas headers
 
 Four process headers stay isolated. A fifth caustic branch is local to BMED / digest. The ZnBr2 Br2 scrubber is not on any of these.

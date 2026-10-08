@@ -57,6 +57,11 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] Q1 fluid is oil or ceramic
 - [x] Q4 fluid is water
 - [x] Q1 relief is not a hab vent
+- [x] HL-* edge duties, media, temperatures, flows, and line sizes (AQS-DUTY-008)
+- [x] Ladder energy balance closes, both ladders and single ladder
+- [x] S67B CO2-rich cut defined (VSA at FLUE_KO, 12.75 kg/d CO2)
+- [ ] HX-8 tier: EW at 40–60 °C cannot charge Q3; decide Q4 or a hot EW aisle
+- [ ] S18 and S67B are the same carbon; decide which one carries the claim
 
 ## Fab room
 

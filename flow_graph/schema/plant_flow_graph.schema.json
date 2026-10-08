@@ -358,6 +358,10 @@
             "string",
             "null"
           ]
+        },
+        "params": {
+          "type": "object",
+          "description": "Engineering basis of the edge: duty, medium, supply/return temperature, flow, line size (AQS-DUTY-008)."
         }
       }
     },
@@ -405,6 +409,11 @@
           ]
         }
       }
+    }
+  },
+  "patternProperties": {
+    "^notes_rev_[a-z0-9_]+$": {
+      "type": "string"
     }
   }
 }

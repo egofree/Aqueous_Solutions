@@ -87,6 +87,9 @@ class FlowEdge(BaseModel):
     namespace: Literal["S", "IA", "TBD", "SANDBOX"] = "S"
     gap_flags: list[str] = Field(default_factory=list)
     notes: Optional[str] = None
+    # AQS-DUTY-008: engineering basis of the edge (duty, medium, temperatures,
+    # flow, line size). Free-form object, documented per edge in the duty note.
+    params: dict[str, Any] = Field(default_factory=dict)
 
 
 class ViewPreset(BaseModel):

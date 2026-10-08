@@ -59,3 +59,7 @@ The heat pipe is the hardware diode: evaporator on the upper battery, condenser 
 ## Names
 
 Q1_A, Q1_B, Q2_A, Q2_B, Q3_A, Q3_B, Q4_A, Q4_B are the batteries. Q4_BUS is the Q4 water header. No other unit is renamed onto this ladder.
+
+## Duties
+
+Edge duties, media, supply and return temperatures, flows, and line sizes are in AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`), written to each HL-* edge in the graph. Each step and cross-tie is a loop thermosyphon. The condenser coil sits at least 0.8 m above the evaporator coil.
