@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "F",
-  "node_count": 14,
-  "edge_count": 14,
+  "source_revision": "K",
+  "node_count": 25,
+  "edge_count": 37,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -27,23 +27,6 @@
       "params": {
         "presence": "present"
       }
-    },
-    {
-      "unit_id": "CONTINUOUS_RECYCLE",
-      "sector_id": "WET",
-      "presence": "present",
-      "class": "recycle",
-      "tags": [],
-      "electrical_role": null,
-      "diagram_gap": "continuous_recycling_pfd unlabeled",
-      "notes": "WP-L2: continuous recycle Present; rates on IA-REC-*",
-      "enabled": true,
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "wp_l2": "promoted_from_placeholder"
-      },
-      "continuous_kw": null
     },
     {
       "unit_id": "CRYO_DED_COOL",
@@ -74,6 +57,35 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "EW_1",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "ew_cell",
+      "tags": [
+        "EW-1"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 6.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "RECT-EW class share; study"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      }
+    },
+    {
       "unit_id": "FUEL_CELL",
       "sector_id": "FUEL_CELL",
       "presence": "present",
@@ -91,7 +103,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -102,28 +120,18 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "True-closure: GHEX design-basis T_source=285 K, k_ground=1.5 W/m\u00b7K, Q_GHEX_avail=Q4_life=3.0 kW_th \u2192 Q_surplus=0 (ST-ORC-01). Not field survey.",
+      "notes": "Geothermal GHEX (S43) | design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
       "enabled": true,
       "modules": [],
       "params": {
-        "presence": "present",
-        "study_id": "ST-ORC-01",
         "T_source_K": 285.0,
         "T_sink_K": 303.0,
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
-        "Q4_life_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
-        "basis": "design_sandbox_survey_defaults \u2014 NOT field-measured bore test",
-        "ref": "AQS-EQP-STUDY-001 \u00a75 / GEOTHERMAL_BACKUP / STUDIES_COMPLETE \u00a73.3",
-        "site_lat_deg_coupled": 33.0
+        "survey_status": "design_survey_locked"
       },
-      "continuous_kw": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "GHEX passive exchanger \u2014 no continuous electrical draw"
-      }
+      "continuous_kw": null
     },
     {
       "unit_id": "GEO_HP",
@@ -144,11 +152,9 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "Q4_out_kW_th": 3.0,
-        "COP_study": 3.0,
         "T_source_K": 285.0,
         "coupled_GHEX": true,
-        "basis": "ST-ORC-01 / GEOTHERMAL_BACKUP \u2014 design sandbox"
+        "survey_status": "design_survey_locked"
       }
     },
     {
@@ -166,93 +172,25 @@
       "continuous_kw": null
     },
     {
-      "unit_id": "GEO_ORC",
-      "sector_id": "GEO",
-      "presence": "present",
-      "class": "orc",
-      "tags": [
-        "ORC",
-        "carnot_study",
-        "wp_l2_filled"
-      ],
-      "electrical_role": "generation",
-      "diagram_gap": null,
-      "notes": "WP-L2/ST-ORC-01: heat path connected; M1 Q_surplus~0 => P_ORC~0. Survey defaults documented.",
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "M1 default 0 kW_e (Q_surplus~0). Illus 0-2 if survey frees 0-20 kW_th. Forbid 100 kW."
-      },
-      "modules": [],
-      "params": {
-        "status": "study_carnot_connected",
-        "present_path": "study_carnot_band_heat_path_connected",
-        "blockers": [
-          "field_GHEX_conductivity_test",
-          "bore_count_depth_AHJ"
-        ],
-        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
-        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
-        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
-        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
-        "open_study_queued": false,
-        "study_id": "ST-ORC-01",
-        "gap_framing": "WP-L2 connected+defaults; CAPEX unjustified while Q_surplus=0",
-        "study_phase_a_status": "wp_l2_closed_survey_defaults",
-        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
-        "presence": "present",
-        "ghex_study_defaults": {
-          "T_source_K": 285.0,
-          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
-          "T_sink_K": 303.0,
-          "eta_Carnot": 0.059,
-          "eta_ORC_study": "0.08-0.12 of available surplus",
-          "k_ground_W_mK_study": 1.5,
-          "Q_GHEX_avail_kW_th_study": 3.0,
-          "Q4_life_priority_kW_th_study": 3.0,
-          "Q_surplus_kW_th_M1": 0.0,
-          "P_ORC_kW_e_M1": 0.0,
-          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4"
-        },
-        "equipment_ids": {
-          "GEO_ORC_EVAP": "OSS-ORC-EVAP-01 (dormant at Q_surplus=0)",
-          "GEO_ORC_TURB": "OSS-ORC-TURB-01 \u2014 interim cite Infinity Turbine IT10 if surplus appears",
-          "GEO_ORC_COND": "OSS-ORC-COND-01 -> Q4 via named HX only",
-          "working_fluid": "TBD (not Salria, not ZnBr2, not process Cl2)"
-        },
-        "blockers_remaining": [
-          "site_GHEX_conductivity_survey",
-          "bore_count_depth"
-        ],
-        "T_source_K": 285.0,
-        "T_sink_K": 303.0,
-        "k_ground_W_mK": 1.5,
-        "Q_GHEX_avail_kW_th": 3.0,
-        "Q4_life_kW_th": 3.0,
-        "Q_surplus_kW_th": 0.0,
-        "P_ORC_kW_e": 0.0,
-        "site_lat_deg": 33.0,
-        "survey_status": "design_basis_defaults_not_field_measured"
-      }
-    },
-    {
-      "unit_id": "GLASS_BURNOUT",
+      "unit_id": "GLASS_DIGEST",
       "sector_id": "GLASS",
       "presence": "present",
-      "class": "glass",
+      "class": "digest",
       "tags": [],
-      "electrical_role": null,
-      "diagram_gap": "glass_ceramic_pfd unlabeled",
-      "notes": "WP-L2: glass burnout Present; cascade ~30 kg/d silicate",
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
       "enabled": true,
+      "continuous_kw": {
+        "value": 1.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Study digest duty class"
+      },
       "modules": [],
       "params": {
-        "presence": "present",
-        "wp_l2": "promoted_from_placeholder"
-      },
-      "continuous_kw": null
+        "presence": "present"
+      }
     },
     {
       "unit_id": "GROW_BED",
@@ -281,6 +219,71 @@
         "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
         "berth_crew_study": 4,
         "ration_kg_person_d_study": 0.6,
+        "presence": "present",
+        "co2_in_kg_d": {
+          "S04": 1.109,
+          "S89": 11.616
+        },
+        "co2_fixed_kg_d": 1.109,
+        "co2_to_exhaust_kg_d": 11.616,
+        "co2_setpoint_ppm": 1000,
+        "farm_oa_m3_h": 693.5,
+        "co2_doc": "AQS-DUTY-009"
+      }
+    },
+    {
+      "unit_id": "HX8",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "hx",
+      "notes": "EW aisle exchanger. Cools EW liquor 55 -> 51 C and preheats the Q4 return 45 -> 49 C into Q4_A/Q4_B. Not an EW cell. Not on Q3 (no lift).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "tier": "Q4",
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_kw": 4.572,
+        "q_ohmic_kw": 1.938,
+        "q_feed_sensible_kw": 4.128,
+        "q_wall_loss_kw": 0.533,
+        "q_evap_kw": 0.962,
+        "liquor_in_C": 55.0,
+        "liquor_out_C": 51.0,
+        "water_in_C": 45.0,
+        "water_out_C": 49.0,
+        "approach_K": 6.0,
+        "lmtd_K": 6.0,
+        "area_m2": 0.51,
+        "U_W_m2K": 1500.0,
+        "plates": "titanium",
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
+      }
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "vessel",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AC parasitics share; study"
+      },
+      "modules": [],
+      "params": {
+        "V_m3": null,
         "presence": "present"
       }
     },
@@ -302,7 +305,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -320,6 +329,20 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "OIL_DRYER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "dryer",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Oil dryer (intra)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
       "unit_id": "Q4_BUS",
       "sector_id": "HAB",
       "presence": "present",
@@ -327,14 +350,1922 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "Thermal Q4 collector bus (S06/S44/S53/S54/S63/S80)",
+      "notes": "Q4 water header, <80 C. Fed by Q4 batteries and listed Q4 exchangers only.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none"
+      },
       "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "sector_id": "GLASS",
+      "presence": "present",
+      "class": "intra",
+      "notes": "Burnout after mill. Off-gas to oil-vapor header.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "GLASS_BURNOUT-01",
+        "continuous_kw": "1.0",
+        "status": "duty_issued",
+        "size_mm": [
+          800,
+          600,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      }
+    },
+    {
+      "unit_id": "Q1_A",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q1 A store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 250,
+        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "ladder": "A",
+        "tier": "Q1",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -6000,
+        "stand_mm": 0,
+        "coil_pack": {
+          "cross_tie (mid)": {
+            "area_m2": 1.84,
+            "tube": "bare",
+            "rows": 3,
+            "height_m": 0.376
+          },
+          "down_evaporator (high)": {
+            "area_m2": 1.51,
+            "tube": "bare",
+            "rows": 2,
+            "height_m": 0.384
+          }
+        },
+        "coil_pack_stack_m": 0.76,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q2_A",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q2 A store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 150,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "A",
+        "tier": "Q2",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -5150,
+        "stand_mm": 850,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 1.51,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.292
+          },
+          "cross_tie (mid)": {
+            "area_m2": 2.7,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.305
+          },
+          "down_evaporator (high)": {
+            "area_m2": 2.52,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.284
+          }
+        },
+        "coil_pack_stack_m": 0.881,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q3_A",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q3 A store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.4,
+        "t_nom_C": 100,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "A",
+        "tier": "Q3",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -4250,
+        "stand_mm": 1750,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.94,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.162
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.92,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.157
+          },
+          "down_evaporator (high)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.311
+          }
+        },
+        "coil_pack_stack_m": 0.63,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q4_A",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q4 A store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.6,
+        "t_nom_C": 70,
+        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "ladder": "A",
+        "tier": "Q4",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -3350,
+        "stand_mm": 2650,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.279
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.78,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.27
+          }
+        },
+        "coil_pack_stack_m": 0.549,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q1_B",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q1 B store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 250,
+        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "ladder": "B",
+        "tier": "Q1",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -6000,
+        "stand_mm": 0,
+        "coil_pack": {
+          "cross_tie (mid)": {
+            "area_m2": 1.84,
+            "tube": "bare",
+            "rows": 3,
+            "height_m": 0.376
+          },
+          "down_evaporator (high)": {
+            "area_m2": 1.51,
+            "tube": "bare",
+            "rows": 2,
+            "height_m": 0.384
+          }
+        },
+        "coil_pack_stack_m": 0.76,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q2_B",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q2 B store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 150,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "B",
+        "tier": "Q2",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -5150,
+        "stand_mm": 850,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 1.51,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.292
+          },
+          "cross_tie (mid)": {
+            "area_m2": 2.7,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.305
+          },
+          "down_evaporator (high)": {
+            "area_m2": 2.52,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.284
+          }
+        },
+        "coil_pack_stack_m": 0.881,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q3_B",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q3 B store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.4,
+        "t_nom_C": 100,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "B",
+        "tier": "Q3",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -4250,
+        "stand_mm": 1750,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.94,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.162
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.92,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.157
+          },
+          "down_evaporator (high)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.311
+          }
+        },
+        "coil_pack_stack_m": 0.63,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
+    },
+    {
+      "unit_id": "Q4_B",
+      "sector_id": "HEAT",
+      "presence": "present",
+      "class": "heat_battery",
+      "notes": "Q4 B store. Own thermosyphon.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.6,
+        "t_nom_C": 70,
+        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "ladder": "B",
+        "tier": "Q4",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -3350,
+        "stand_mm": 2650,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.279
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.78,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.27
+          }
+        },
+        "coil_pack_stack_m": 0.549,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+      }
     }
   ],
   "edges": [
+    {
+      "stream_id": "HL-AFTERBURNER-Q1-A",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "Q1_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q1 flue, not Q4",
+      "header": "Q1",
+      "forbidden": "Q4_BUS, hab air, flue into the store",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.553 kW."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Isolable branch. One ladder may be down. AQS-DUTY-008.",
+      "params": {
+        "doc": "AQS-DUTY-008",
+        "duty_rated_kw": 1.383,
+        "duty_normal_kw": 0.553,
+        "kind": "pumped loop",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 220.0,
+        "return_C": 250.0,
+        "m_kg_s": 0.02004,
+        "flow_L_min": 1.38,
+        "dT_K": 30.0,
+        "thermal_relief_L_h": 2.1144,
+        "hot_side": "afterburner flue 650 -> 300 C after HX-7, 10.07 kg/h",
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.117,
+        "velocity_basis_m_s": 1.0
+      }
+    },
+    {
+      "stream_id": "HL-AFTERBURNER-Q1-B",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "Q1_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q1 flue, not Q4",
+      "header": "Q1",
+      "forbidden": "Q4_BUS, hab air, flue into the store",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.553 kW."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Isolable branch. One ladder may be down. AQS-DUTY-008.",
+      "params": {
+        "doc": "AQS-DUTY-008",
+        "duty_rated_kw": 1.383,
+        "duty_normal_kw": 0.553,
+        "kind": "pumped loop",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 220.0,
+        "return_C": 250.0,
+        "m_kg_s": 0.02004,
+        "flow_L_min": 1.38,
+        "dT_K": 30.0,
+        "thermal_relief_L_h": 2.1144,
+        "hot_side": "afterburner flue 650 -> 300 C after HX-7, 10.07 kg/h",
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.117,
+        "velocity_basis_m_s": 1.0
+      }
+    },
+    {
+      "stream_id": "HL-GLASS_BURNOUT-Q2-A",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "Q2_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q2 burnout, not Q4",
+      "header": "Q2",
+      "forbidden": "Q4_BUS, oil-vapor atmosphere in the rotary",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.928,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Isolable branch. One ladder may be down. AQS-DUTY-008.",
+      "params": {
+        "doc": "AQS-DUTY-008",
+        "duty_rated_kw": 0.928,
+        "duty_normal_kw": 0.371,
+        "kind": "pumped loop",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 120.0,
+        "return_C": 150.0,
+        "m_kg_s": 0.01547,
+        "flow_L_min": 1.0,
+        "dT_K": 30.0,
+        "thermal_relief_L_h": 1.437,
+        "hot_side": "rotary Q2 jacket behind insulation + cullet cooler 500 -> 170 C",
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.085,
+        "velocity_basis_m_s": 1.0
+      }
+    },
+    {
+      "stream_id": "HL-GLASS_BURNOUT-Q2-B",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "Q2_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q2 burnout, not Q4",
+      "header": "Q2",
+      "forbidden": "Q4_BUS, oil-vapor atmosphere in the rotary",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.928,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Isolable branch. One ladder may be down. AQS-DUTY-008.",
+      "params": {
+        "doc": "AQS-DUTY-008",
+        "duty_rated_kw": 0.928,
+        "duty_normal_kw": 0.371,
+        "kind": "pumped loop",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 120.0,
+        "return_C": 150.0,
+        "m_kg_s": 0.01547,
+        "flow_L_min": 1.0,
+        "dT_K": 30.0,
+        "thermal_relief_L_h": 1.437,
+        "hot_side": "rotary Q2 jacket behind insulation + cullet cooler 500 -> 170 C",
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.085,
+        "velocity_basis_m_s": 1.0
+      }
+    },
+    {
+      "stream_id": "HL-HX8-Q4-A",
+      "from_unit_id": "HX8",
+      "to_unit_id": "Q4_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-8 EW reject, Q4 return preheat",
+      "header": "Q4 return",
+      "forbidden": "Q3 (no lift), Q4_BUS direct",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 5.715,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 5.715,
+        "duty_normal_kw": 2.286,
+        "kind": "pumped loop (Q4 return preheat)",
+        "medium": "treated water (Q4 water header)",
+        "supply_C": 49.0,
+        "return_C": 45.0,
+        "dT_K": 4.0,
+        "m_kg_s": 0.34181,
+        "flow_L_min": 20.82,
+        "line_DN": 25,
+        "line_id_mm": 26.64,
+        "velocity_m_s": 0.623,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 2.4985,
+        "approach_K": 6.0,
+        "hot_side": "EW liquor 55 -> 51 C"
+      }
+    },
+    {
+      "stream_id": "HL-HX8-Q4-B",
+      "from_unit_id": "HX8",
+      "to_unit_id": "Q4_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-8 EW reject, Q4 return preheat",
+      "header": "Q4 return",
+      "forbidden": "Q3 (no lift), Q4_BUS direct",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 5.715,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 5.715,
+        "duty_normal_kw": 2.286,
+        "kind": "pumped loop (Q4 return preheat)",
+        "medium": "treated water (Q4 water header)",
+        "supply_C": 49.0,
+        "return_C": 45.0,
+        "dT_K": 4.0,
+        "m_kg_s": 0.34181,
+        "flow_L_min": 20.82,
+        "line_DN": 25,
+        "line_id_mm": 26.64,
+        "velocity_m_s": 0.623,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 2.4985,
+        "approach_K": 6.0,
+        "hot_side": "EW liquor 55 -> 51 C"
+      }
+    },
+    {
+      "stream_id": "HL-Q1-A-DOWN",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "Q2_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "downhill heat pipe",
+      "header": "Q1 to Q2",
+      "forbidden": "uphill",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.133,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.85 m store step (Q1 at z -6000, Q2 at z -5150), rise 0.308 m, dP/head 0.23. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.133,
+        "duty_normal_kw": 0.353,
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
+        "medium": "biphenyl/diphenyl-oxide eutectic (Dowtherm A class)",
+        "supply_C": 200.0,
+        "return_C": 195.0,
+        "m_kg_s": 0.003654,
+        "P_sat_bar_a": 0.25,
+        "h_fg_kJ_kg": 310.0,
+        "vapor_m3_h": 12.468,
+        "return_DN": 15,
+        "L_eq_m": 6.0,
+        "dp_vapor_Pa": 126.2,
+        "head_Pa": 2746.0,
+        "T_blocked_C": 275.0,
+        "P_blocked_bar_a": 1.45,
+        "line_DN": 25,
+        "line_id_mm": 26.64,
+        "velocity_m_s": 6.21,
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.848,
+        "cond_centre_above_snk_origin_m": 0.306,
+        "dz_store_m": 0.85,
+        "rise_m": 0.308,
+        "dp_liquid_Pa": 7.09,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 633.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.231,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.542 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.542 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -6000,
+          "dst": -5150
+        }
+      }
+    },
+    {
+      "stream_id": "HL-Q1-B-DOWN",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "Q2_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "downhill heat pipe",
+      "header": "Q1 to Q2",
+      "forbidden": "uphill",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.133,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.85 m store step (Q1 at z -6000, Q2 at z -5150), rise 0.308 m, dP/head 0.23. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.133,
+        "duty_normal_kw": 0.353,
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
+        "medium": "biphenyl/diphenyl-oxide eutectic (Dowtherm A class)",
+        "supply_C": 200.0,
+        "return_C": 195.0,
+        "m_kg_s": 0.003654,
+        "P_sat_bar_a": 0.25,
+        "h_fg_kJ_kg": 310.0,
+        "vapor_m3_h": 12.468,
+        "return_DN": 15,
+        "L_eq_m": 6.0,
+        "dp_vapor_Pa": 126.2,
+        "head_Pa": 2746.0,
+        "T_blocked_C": 275.0,
+        "P_blocked_bar_a": 1.45,
+        "line_DN": 25,
+        "line_id_mm": 26.64,
+        "velocity_m_s": 6.21,
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.848,
+        "cond_centre_above_snk_origin_m": 0.306,
+        "dz_store_m": 0.85,
+        "rise_m": 0.308,
+        "dp_liquid_Pa": 7.09,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 633.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.231,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.542 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.542 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -6000,
+          "dst": -5150
+        }
+      }
+    },
+    {
+      "stream_id": "HL-Q1-X",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "Q1_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q1 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q1 (shared with HL-Q1-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 17.8 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.383,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q1-X-BA)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 245.0,
+        "return_C": 240.0,
+        "m_kg_s": 0.11153,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.661,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q1",
+        "dT_K": 5.0,
+        "flow_L_min": 7.78,
+        "coil_area_m2_each": 1.84,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 17.4,
+        "loop_dp_kPa": 20.55,
+        "pump_head_m": 2.44,
+        "pump_hydraulic_W": 2.66,
+        "pump_electric_W": 17.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 275.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 2.101,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q1-X-BA",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "Q1_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q1 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q1 (shared with HL-Q1-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 17.8 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.383,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q1-X)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 245.0,
+        "return_C": 240.0,
+        "m_kg_s": 0.11153,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.661,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q1",
+        "dT_K": 5.0,
+        "flow_L_min": 7.78,
+        "coil_area_m2_each": 1.84,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 17.4,
+        "loop_dp_kPa": 20.55,
+        "pump_head_m": 2.44,
+        "pump_hydraulic_W": 2.66,
+        "pump_electric_W": 17.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 275.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 2.101,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q2-A-DOWN",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "Q3_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "downhill heat pipe",
+      "header": "Q2 to Q3",
+      "forbidden": "uphill",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.888,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q2 at z -5150, Q3 at z -4250), rise 0.303 m, dP/head 0.22. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.888,
+        "duty_normal_kw": 0.603,
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
+        "medium": "water (deaerated, steel loop)",
+        "supply_C": 125.0,
+        "return_C": 120.0,
+        "m_kg_s": 0.000863,
+        "P_sat_bar_a": 2.32,
+        "h_fg_kJ_kg": 2188.0,
+        "vapor_m3_h": 2.462,
+        "return_DN": 15,
+        "L_eq_m": 6.0,
+        "dp_vapor_Pa": 107.7,
+        "head_Pa": 2787.0,
+        "T_blocked_C": 165.0,
+        "P_blocked_bar_a": 7.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 3.49,
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.898,
+        "cond_centre_above_snk_origin_m": 0.301,
+        "dz_store_m": 0.9,
+        "rise_m": 0.303,
+        "dp_liquid_Pa": 0.79,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 608.5,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.218,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.597 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.597 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -5150,
+          "dst": -4250
+        }
+      }
+    },
+    {
+      "stream_id": "HL-Q2-B-DOWN",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "Q3_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "downhill heat pipe",
+      "header": "Q2 to Q3",
+      "forbidden": "uphill",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.888,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q2 at z -5150, Q3 at z -4250), rise 0.303 m, dP/head 0.22. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.888,
+        "duty_normal_kw": 0.603,
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
+        "medium": "water (deaerated, steel loop)",
+        "supply_C": 125.0,
+        "return_C": 120.0,
+        "m_kg_s": 0.000863,
+        "P_sat_bar_a": 2.32,
+        "h_fg_kJ_kg": 2188.0,
+        "vapor_m3_h": 2.462,
+        "return_DN": 15,
+        "L_eq_m": 6.0,
+        "dp_vapor_Pa": 107.7,
+        "head_Pa": 2787.0,
+        "T_blocked_C": 165.0,
+        "P_blocked_bar_a": 7.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 3.49,
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.898,
+        "cond_centre_above_snk_origin_m": 0.301,
+        "dz_store_m": 0.9,
+        "rise_m": 0.303,
+        "dp_liquid_Pa": 0.79,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 608.5,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.218,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.597 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.597 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -5150,
+          "dst": -4250
+        }
+      }
+    },
+    {
+      "stream_id": "HL-Q2-X",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "Q2_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q2 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 2.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q2 (shared with HL-Q2-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 28.8 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 2.027,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q2-X-BA)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 145.0,
+        "return_C": 140.0,
+        "m_kg_s": 0.2027,
+        "L_eq_m": 50.0,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.633,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q2",
+        "dT_K": 5.0,
+        "flow_L_min": 13.08,
+        "coil_area_m2_each": 2.7,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 11.3,
+        "loop_dp_kPa": 19.8,
+        "pump_head_m": 2.17,
+        "pump_hydraulic_W": 4.32,
+        "pump_electric_W": 28.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 165.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 3.1386,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q2-X-BA",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "Q2_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q2 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 2.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q2 (shared with HL-Q2-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 28.8 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 2.027,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q2-X)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
+        "supply_C": 145.0,
+        "return_C": 140.0,
+        "m_kg_s": 0.2027,
+        "L_eq_m": 50.0,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.633,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q2",
+        "dT_K": 5.0,
+        "flow_L_min": 13.08,
+        "coil_area_m2_each": 2.7,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 11.3,
+        "loop_dp_kPa": 19.8,
+        "pump_head_m": 2.17,
+        "pump_hydraulic_W": 4.32,
+        "pump_electric_W": 28.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 165.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 3.1386,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q3-A-DOWN",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "Q4_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "downhill heat pipe",
+      "header": "Q3 to Q4",
+      "forbidden": "uphill",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.614,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q3 at z -4250, Q4 at z -3350), rise 0.325 m, dP/head 0.18. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.614,
+        "duty_normal_kw": 0.0,
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
+        "medium": "water (deaerated, copper loop)",
+        "supply_C": 85.0,
+        "return_C": 80.0,
+        "m_kg_s": 0.000703,
+        "P_sat_bar_a": 0.578,
+        "h_fg_kJ_kg": 2296.0,
+        "vapor_m3_h": 7.242,
+        "return_DN": 15,
+        "L_eq_m": 6.0,
+        "dp_vapor_Pa": 69.3,
+        "head_Pa": 3085.0,
+        "T_blocked_C": 110.0,
+        "P_blocked_bar_a": 1.43,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 5.85,
+        "velocity_basis_m_s": 10.0,
+        "dp_liquid_Pa": 0.94,
+        "duty_normal_idle_kw": 0.41060499621775376,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.825,
+        "cond_centre_above_snk_origin_m": 0.249,
+        "dz_store_m": 0.9,
+        "rise_m": 0.325,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 570.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.185,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.575 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.575 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -4250,
+          "dst": -3350
+        }
+      }
+    },
+    {
+      "stream_id": "HL-Q3-B-DOWN",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "Q4_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "downhill heat pipe",
+      "header": "Q3 to Q4",
+      "forbidden": "uphill",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.614,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q3 at z -4250, Q4 at z -3350), rise 0.325 m, dP/head 0.18. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.614,
+        "duty_normal_kw": 0.0,
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
+        "medium": "water (deaerated, copper loop)",
+        "supply_C": 85.0,
+        "return_C": 80.0,
+        "m_kg_s": 0.000703,
+        "P_sat_bar_a": 0.578,
+        "h_fg_kJ_kg": 2296.0,
+        "vapor_m3_h": 7.242,
+        "return_DN": 15,
+        "L_eq_m": 6.0,
+        "dp_vapor_Pa": 69.3,
+        "head_Pa": 3085.0,
+        "T_blocked_C": 110.0,
+        "P_blocked_bar_a": 1.43,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 5.85,
+        "velocity_basis_m_s": 10.0,
+        "dp_liquid_Pa": 0.94,
+        "duty_normal_idle_kw": 0.41060499621775376,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.825,
+        "cond_centre_above_snk_origin_m": 0.249,
+        "dz_store_m": 0.9,
+        "rise_m": 0.325,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 570.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.185,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.575 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.575 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -4250,
+          "dst": -3350
+        }
+      }
+    },
+    {
+      "stream_id": "HL-Q3-A-HX4",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "OIL_DRYER",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-4 Q3 process heat (dryer jacket)",
+      "header": "Q3 process draw",
+      "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.302,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 0.302,
+        "duty_normal_kw": 0.121,
+        "kind": "pumped loop",
+        "medium": "treated water (Q3 jacket loop, pressurized)",
+        "supply_C": 95.0,
+        "return_C": 85.0,
+        "dT_K": 10.0,
+        "m_kg_s": 0.00719,
+        "flow_L_min": 0.45,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.038,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 0.1344,
+        "exchanger": "HX-4",
+        "trim_normal_kw_per_ladder": 0.0,
+        "trim_single_kw": 0.0
+      }
+    },
+    {
+      "stream_id": "HL-Q3-A-HX5",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-5 Q3 process heat (leach CSTR jacket)",
+      "header": "Q3 process draw",
+      "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 7.941,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 7.941,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped loop",
+        "medium": "treated water (Q3 jacket loop, pressurized)",
+        "supply_C": 95.0,
+        "return_C": 85.0,
+        "dT_K": 10.0,
+        "m_kg_s": 0.18863,
+        "flow_L_min": 11.76,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.57,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 3.5294,
+        "exchanger": "HX-5",
+        "trim_normal_kw_per_ladder": 3.176,
+        "trim_single_kw": 6.353
+      }
+    },
+    {
+      "stream_id": "HL-Q3-A-HX6",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-6 Q3 process heat (NaOH digest jacket)",
+      "header": "Q3 process draw",
+      "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 2.079,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 2.079,
+        "duty_normal_kw": 0.29,
+        "kind": "pumped loop",
+        "medium": "treated water (Q3 jacket loop, pressurized)",
+        "supply_C": 95.0,
+        "return_C": 90.0,
+        "dT_K": 5.0,
+        "m_kg_s": 0.09875,
+        "flow_L_min": 6.16,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.524,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 0.9239,
+        "exchanger": "HX-6",
+        "trim_normal_kw_per_ladder": 0.542,
+        "trim_single_kw": 0.614
+      }
+    },
+    {
+      "stream_id": "HL-Q3-B-HX4",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "OIL_DRYER",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-4 Q3 process heat (dryer jacket)",
+      "header": "Q3 process draw",
+      "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.302,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 0.302,
+        "duty_normal_kw": 0.121,
+        "kind": "pumped loop",
+        "medium": "treated water (Q3 jacket loop, pressurized)",
+        "supply_C": 95.0,
+        "return_C": 85.0,
+        "dT_K": 10.0,
+        "m_kg_s": 0.00719,
+        "flow_L_min": 0.45,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.038,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 0.1344,
+        "exchanger": "HX-4",
+        "trim_normal_kw_per_ladder": 0.0,
+        "trim_single_kw": 0.0
+      }
+    },
+    {
+      "stream_id": "HL-Q3-B-HX5",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-5 Q3 process heat (leach CSTR jacket)",
+      "header": "Q3 process draw",
+      "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 7.941,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 7.941,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped loop",
+        "medium": "treated water (Q3 jacket loop, pressurized)",
+        "supply_C": 95.0,
+        "return_C": 85.0,
+        "dT_K": 10.0,
+        "m_kg_s": 0.18863,
+        "flow_L_min": 11.76,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.57,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 3.5294,
+        "exchanger": "HX-5",
+        "trim_normal_kw_per_ladder": 3.176,
+        "trim_single_kw": 6.353
+      }
+    },
+    {
+      "stream_id": "HL-Q3-B-HX6",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "HX-6 Q3 process heat (NaOH digest jacket)",
+      "header": "Q3 process draw",
+      "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 2.079,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 2.079,
+        "duty_normal_kw": 0.29,
+        "kind": "pumped loop",
+        "medium": "treated water (Q3 jacket loop, pressurized)",
+        "supply_C": 95.0,
+        "return_C": 90.0,
+        "dT_K": 5.0,
+        "m_kg_s": 0.09875,
+        "flow_L_min": 6.16,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.524,
+        "velocity_basis_m_s": 1.0,
+        "thermal_relief_L_h": 0.9239,
+        "exchanger": "HX-6",
+        "trim_normal_kw_per_ladder": 0.542,
+        "trim_single_kw": 0.614
+      }
+    },
+    {
+      "stream_id": "HL-Q3-X",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "Q3_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q3 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.831,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q3 (shared with HL-Q3-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 5.8 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.831,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q3-X-BA)",
+        "medium": "treated water (Q3 cross-tie loop, pressurized 2.5 bar a)",
+        "supply_C": 95.0,
+        "return_C": 90.0,
+        "m_kg_s": 0.08698,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.461,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q3",
+        "dT_K": 5.0,
+        "flow_L_min": 5.43,
+        "coil_area_m2_each": 0.92,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 3.8,
+        "loop_dp_kPa": 9.64,
+        "pump_head_m": 1.02,
+        "pump_hydraulic_W": 0.87,
+        "pump_electric_W": 5.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 110.0,
+        "P_loop_bar_a": 2.5,
+        "thermal_relief_L_h": 1.1393,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q3-X-BA",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "Q3_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q3 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.831,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q3 (shared with HL-Q3-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 5.8 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.831,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q3-X)",
+        "medium": "treated water (Q3 cross-tie loop, pressurized 2.5 bar a)",
+        "supply_C": 95.0,
+        "return_C": 90.0,
+        "m_kg_s": 0.08698,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.461,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q3",
+        "dT_K": 5.0,
+        "flow_L_min": 5.43,
+        "coil_area_m2_each": 0.92,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 3.8,
+        "loop_dp_kPa": 9.64,
+        "pump_head_m": 1.02,
+        "pump_hydraulic_W": 0.87,
+        "pump_electric_W": 5.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 110.0,
+        "P_loop_bar_a": 2.5,
+        "thermal_relief_L_h": 1.1393,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q4-A-BUS",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "Q4_BUS",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "water <80 C",
+      "header": "Q4",
+      "forbidden": "Q1-Q3 fluids, flue, oil",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 5.51,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Only Q4 batteries feed the bus from the ladder. AQS-DUTY-008.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 5.51,
+        "duty_normal_kw": 2.122,
+        "kind": "pumped loop",
+        "medium": "treated water (Q4 water header)",
+        "supply_C": 65.0,
+        "return_C": 45.0,
+        "m_kg_s": 0.06591,
+        "flow_L_min": 4.01,
+        "dT_K": 20.0,
+        "thermal_relief_L_h": 2.4089,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.341,
+        "velocity_basis_m_s": 1.0
+      }
+    },
+    {
+      "stream_id": "HL-Q4-B-BUS",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "Q4_BUS",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "water <80 C",
+      "header": "Q4",
+      "forbidden": "Q1-Q3 fluids, flue, oil",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 5.51,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Only Q4 batteries feed the bus from the ladder. AQS-DUTY-008.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 5.51,
+        "duty_normal_kw": 2.122,
+        "kind": "pumped loop",
+        "medium": "treated water (Q4 water header)",
+        "supply_C": 65.0,
+        "return_C": 45.0,
+        "m_kg_s": 0.06591,
+        "flow_L_min": 4.01,
+        "dT_K": 20.0,
+        "thermal_relief_L_h": 2.4089,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.341,
+        "velocity_basis_m_s": 1.0
+      }
+    },
+    {
+      "stream_id": "HL-Q4-X",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "Q4_B",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q4 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.565,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q4 (shared with HL-Q4-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 4.0 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.565,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q4-X-BA)",
+        "medium": "treated water (Q4 cross-tie loop)",
+        "supply_C": 65.0,
+        "return_C": 60.0,
+        "m_kg_s": 0.07488,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.39,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q4",
+        "dT_K": 5.0,
+        "flow_L_min": 4.58,
+        "coil_area_m2_each": 0.78,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 7.4,
+        "loop_dp_kPa": 7.95,
+        "pump_head_m": 0.83,
+        "pump_hydraulic_W": 0.61,
+        "pump_electric_W": 4.0,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 77.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 0.7564,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "HL-Q4-X-BA",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "Q4_A",
+      "phase": "heat",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "cross-tie, hot to cold only",
+      "header": "Q4 cross-tie",
+      "forbidden": "equal-temperature circulation",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.565,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Pumped loop XL-Q4 (shared with HL-Q4-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 4.0 W electric. AQS-DUTY-008 Rev C s14.",
+      "params": {
+        "doc": "AQS-DUTY-008 Rev C",
+        "duty_rated_kw": 1.565,
+        "duty_normal_kw": 0.0,
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q4-X)",
+        "medium": "treated water (Q4 cross-tie loop)",
+        "supply_C": 65.0,
+        "return_C": 60.0,
+        "m_kg_s": 0.07488,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.39,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q4",
+        "dT_K": 5.0,
+        "flow_L_min": 4.58,
+        "coil_area_m2_each": 0.78,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 7.4,
+        "loop_dp_kPa": 7.95,
+        "pump_head_m": 0.83,
+        "pump_hydraulic_W": 0.61,
+        "pump_electric_W": 4.0,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 77.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 0.7564,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+      }
+    },
+    {
+      "stream_id": "IA-HX8",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "HX8",
+      "phase": "heat",
+      "presence": "present",
+      "carries": "EW heat",
+      "notes": "Cell to exchanger. Separate fluids.",
+      "namespace": "IA",
+      "layers": [
+        "thermal"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 4.572,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008 Rev B s13.1: EW ohmic heat + concentrate sensible - cell wall loss - surface evaporation."
+      },
+      "params": {
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_kw": 4.572,
+        "liquor_in_C": 55.0,
+        "liquor_out_C": 51.0,
+        "liquor_kg_h": 1112.1
+      }
+    },
     {
       "stream_id": "S06",
       "from_unit_id": "GEO_HP",
@@ -349,19 +2280,17 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.5,
+        "value": null,
         "unit": "kW",
         "status": "study",
-        "note": "Q4 heat FARM share \u2014 GEO_HP Q4_life 3.0 kW_th \u00d7 0.5 farm allocation (ST-ORC-01) \u2014 true-closure"
+        "note": "null_rate_kind=unknown"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [
-        "wp_true_closure"
-      ],
-      "notes": "true-closure thermal design-basis"
+      "gap_flags": [],
+      "notes": null
     },
     {
       "stream_id": "S43",
@@ -378,20 +2307,19 @@
       "forbidden": "HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "GHEX\u2192closed-loop thermal duty = Q_GHEX_avail 3.0 kW_th (ST-ORC-01 design-basis) \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop) | thermal carrier rate; design-basis not field measured"
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)"
     },
     {
       "stream_id": "S44",
@@ -407,18 +2335,17 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "GEO_HP\u2192Q4_BUS = Q4_life 3.0 kW_th (ST-ORC-01) \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
       "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB"
     },
@@ -436,18 +2363,17 @@
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "FC_HX_Q4\u2192Q4 study reject <80 \u00b0C \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
       "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -465,18 +2391,17 @@
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.5,
-        "unit": "kW",
-        "status": "study",
-        "note": "CRYO_HX_Q4 warm residual study \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
       "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -495,21 +2420,19 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "CRYO_DED_COOL intentional self-loop thermal duty study 1.0 kW \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "intentional_self_loop",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
-      "notes": "WP-L2: intentional dedicated cryo cool self-loop retained (AQS-STR/MF Closed utility). Not a topology gap. | intentional utility self-loop; continuous thermal circulating duty"
+      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL"
     },
     {
       "stream_id": "S63",
@@ -525,18 +2448,17 @@
       "forbidden": "melt/atomizer hot gas as flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.5,
-        "unit": "kW",
-        "status": "study",
-        "note": "MET_HX_Q4 study \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
       "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB"
     },
@@ -554,202 +2476,19 @@
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
       "rate": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "MEOH_HX_Q4 / MEOH_FC reject study \u2014 true-closure"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "absent_from_candidate_mvs",
-        "wp_true_closure"
+        "absent_from_candidate_mvs"
       ],
       "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB"
-    },
-    {
-      "stream_id": "IA-REC-Q3",
-      "from_unit_id": "CONTINUOUS_RECYCLE",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "Heat ladder Q3 residual (ghost to Q4 bus for EFD-thermal)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "Heat ladder Q3 residual -> Q4_BUS study mid \u2014 WP-L2"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "HAB",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "heat ladder unlabeled",
-        "wp_l2_filled"
-      ],
-      "notes": "heat ladder unlabeled | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-GLASS-Q2",
-      "from_unit_id": "GLASS_BURNOUT",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "Q2 burnout heat (study path; not rate)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 0.5,
-        "unit": "kW",
-        "status": "study",
-        "note": "Q2 burnout heat residual -> Q4_BUS study \u2014 WP-L2"
-      },
-      "from_sector_id": "GLASS",
-      "to_sector_id": "HAB",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "glass heat unlabeled",
-        "wp_l2_filled"
-      ],
-      "notes": "glass heat unlabeled | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-OIL-Q1",
-      "from_unit_id": "AFTERBURNER",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "Q1 afterburner heat (not into hab air)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 2.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "Q1 afterburner heat -> Q4_BUS study \u2014 WP-L2"
-      },
-      "from_sector_id": "OIL",
-      "to_sector_id": "HAB",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "Q1\u2260Q4 rule",
-        "wp_l2_filled"
-      ],
-      "notes": "Q1\u2260Q4 rule | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-GEO-01",
-      "from_unit_id": "GEO_HP_CLOSED_LOOP",
-      "to_unit_id": "GEO_HP",
-      "phase": "L/E",
-      "layers": [
-        "mass",
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "geothermal loop fluid",
-      "header": "dedicated GEO loop",
-      "forbidden": "HDR_UPW, CATCH, Salria",
-      "claim_status": "Closed",
-      "rate": {
-        "value": 3.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "Closed-loop\u2192GEO_HP = Q_GHEX_avail 3.0 kW_th \u2014 true-closure ST-ORC-01"
-      },
-      "from_sector_id": "GEO",
-      "to_sector_id": "GEO",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "wp_l1_topology",
-        "geo_survey_open",
-        "wp_true_closure"
-      ],
-      "notes": "WP-L1: connect GHEX closed-loop island to GEO_HP (S43 remains GHEX\u2192GEO_HP_CLOSED_LOOP; STR S43\u2192GEO_HP). ORC heat-source edge deferred pending survey."
-    },
-    {
-      "stream_id": "IA-GEO-ORC-01",
-      "from_unit_id": "GEO_HP",
-      "to_unit_id": "GEO_ORC",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "surplus heat after Q4 life priority",
-      "header": "GEO ORC heat",
-      "forbidden": "HDR_UPW, CATCH, Salria, raw loop into ORC working fluid",
-      "claim_status": "Closed",
-      "rate": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "Q_surplus M1 ~0 kW_th after Q4 (STUDY \u00a75) \u2014 WP-L2 ST-ORC-01"
-      },
-      "from_sector_id": "GEO",
-      "to_sector_id": "GEO",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "wp_l2_filled",
-        "geo_orc_heat"
-      ],
-      "notes": "WP-L2: GEO_HP->GEO_ORC surplus heat after S44/Q4. Dormant while Q_surplus=0."
-    },
-    {
-      "stream_id": "IA-GEO-ORC-02",
-      "from_unit_id": "GEO_ORC",
-      "to_unit_id": "Q4_BUS",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "ORC condenser reject via named HX",
-      "header": "Q4",
-      "forbidden": "raw ORC working fluid into life headers",
-      "claim_status": "Closed",
-      "rate": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ORC condenser->Q4 via HX; M1 dormant 0 \u2014 WP-L2"
-      },
-      "from_sector_id": "GEO",
-      "to_sector_id": "GEO",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "wp_l2_filled",
-        "geo_orc_heat"
-      ],
-      "notes": "WP-L2: ORC condenser joins Q4 only through named HX (AQS-EQP-GEO-001)."
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

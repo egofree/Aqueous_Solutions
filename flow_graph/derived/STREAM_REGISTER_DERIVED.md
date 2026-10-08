@@ -1,7 +1,7 @@
 # Stream register excerpt — DERIVED from flow_graph
 
 Document number: AQS-STR-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev J (`plant_flow_graph.json`)
+Source: AQS-FLOW-GRAPH-001 Rev K (`plant_flow_graph.json`)
 Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
@@ -177,3 +177,4 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S88 | CRYO_N2 | GROW_BED | G | mass | present | N2 make-up | — | — |
 | S34 | WS_NITRIC | WET_BENCH | L | mass | present | HNO3 | — | — |
 | S34B | WS_PHOS | WET_BENCH | L | mass | present | H3PO4 | — | — |
+| S89 | HDR_CO2 | GROW_BED | G | mass | present | CO2 enrichment dose (FARM AHU supply) | 11.616 kg/d | — |

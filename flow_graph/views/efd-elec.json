@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-ELEC",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "F",
-  "node_count": 11,
-  "edge_count": 12,
+  "source_revision": "K",
+  "node_count": 9,
+  "edge_count": 10,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -25,7 +25,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          2000,
+          1000,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -46,47 +52,54 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
       "unit_id": "GEO_ORC",
       "sector_id": "GEO",
-      "presence": "present",
-      "class": "orc",
+      "presence": "placeholder",
+      "class": "study_stub",
       "tags": [
         "ORC",
         "carnot_study",
-        "wp_l2_filled"
+        "study_stub"
       ],
       "electrical_role": "generation",
       "diagram_gap": null,
-      "notes": "WP-L2/ST-ORC-01: heat path connected; M1 Q_surplus~0 => P_ORC~0. Survey defaults documented.",
+      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.0,
+        "value": null,
         "unit": "kW",
         "status": "study",
-        "note": "M1 default 0 kW_e (Q_surplus~0). Illus 0-2 if survey frees 0-20 kW_th. Forbid 100 kW."
+        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
       },
       "modules": [],
       "params": {
-        "status": "study_carnot_connected",
-        "present_path": "study_carnot_band_heat_path_connected",
+        "status": "study_carnot_band",
+        "present_path": "study_carnot_band",
         "blockers": [
-          "field_GHEX_conductivity_test",
-          "bore_count_depth_AHJ"
+          "GHEX_conductivity_survey",
+          "T_source_survey",
+          "Q_surplus_after_Q4"
         ],
         "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
         "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
         "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
         "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
-        "open_study_queued": false,
+        "open_study_queued": true,
         "study_id": "ST-ORC-01",
-        "gap_framing": "WP-L2 connected+defaults; CAPEX unjustified while Q_surplus=0",
-        "study_phase_a_status": "wp_l2_closed_survey_defaults",
+        "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
         "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
-        "presence": "present",
+        "presence": "placeholder",
         "ghex_study_defaults": {
           "T_source_K": 285.0,
           "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
@@ -98,27 +111,18 @@
           "Q4_life_priority_kW_th_study": 3.0,
           "Q_surplus_kW_th_M1": 0.0,
           "P_ORC_kW_e_M1": 0.0,
-          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4"
+          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4",
+          "survey_status": "design_survey_locked",
+          "field_measurement_status": "not_measured_external"
         },
-        "equipment_ids": {
-          "GEO_ORC_EVAP": "OSS-ORC-EVAP-01 (dormant at Q_surplus=0)",
-          "GEO_ORC_TURB": "OSS-ORC-TURB-01 \u2014 interim cite Infinity Turbine IT10 if surplus appears",
-          "GEO_ORC_COND": "OSS-ORC-COND-01 -> Q4 via named HX only",
-          "working_fluid": "TBD (not Salria, not ZnBr2, not process Cl2)"
-        },
-        "blockers_remaining": [
-          "site_GHEX_conductivity_survey",
-          "bore_count_depth"
-        ],
         "T_source_K": 285.0,
         "T_sink_K": 303.0,
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
-        "Q4_life_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
-        "survey_status": "design_basis_defaults_not_field_measured"
+        "survey_status": "design_survey_locked"
       }
     },
     {
@@ -148,7 +152,16 @@
         "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
         "berth_crew_study": 4,
         "ration_kg_person_d_study": 0.6,
-        "presence": "present"
+        "presence": "present",
+        "co2_in_kg_d": {
+          "S04": 1.109,
+          "S89": 11.616
+        },
+        "co2_fixed_kg_d": 1.109,
+        "co2_to_exhaust_kg_d": 11.616,
+        "co2_setpoint_ppm": 1000,
+        "farm_oa_m3_h": 693.5,
+        "co2_doc": "AQS-DUTY-009"
       }
     },
     {
@@ -198,20 +211,6 @@
       }
     },
     {
-      "unit_id": "LOAD_AGG",
-      "sector_id": "ELEC",
-      "presence": "present",
-      "class": "load_agg",
-      "tags": [],
-      "electrical_role": null,
-      "diagram_gap": "S17/S20 undrawn aggregation",
-      "notes": "Electrical load aggregation (S20\u2192LOAD_AGG\u2192IA-LOAD-01\u2192SOL_ARK). Logical unmapped in 3D.",
-      "enabled": true,
-      "modules": [],
-      "params": {},
-      "continuous_kw": null
-    },
-    {
       "unit_id": "MEOH_FC",
       "sector_id": "MEOH",
       "presence": "present",
@@ -229,30 +228,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
-      }
-    },
-    {
-      "unit_id": "PV_ARRAY",
-      "sector_id": "ELEC_PV",
-      "presence": "present",
-      "class": "pv",
-      "tags": [],
-      "electrical_role": "generation",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 70.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "PV_MODULE_KW \u00d7 PV_COUNT from params.py; nameplate class not continuous avg"
-      },
-      "modules": [],
-      "params": {
-        "module_kw": 70,
-        "count": 1,
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -317,6 +299,124 @@
   ],
   "edges": [
     {
+      "stream_id": "IA-ESS-HYDRO-ELEC",
+      "from_unit_id": "HYDRO_SET",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "PUMPED_HYDRO",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer",
+        "missing_on_sld"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-DIS",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "MeOH FC discharge (peers S79)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "use S79 for rate; this edge is ESS-layer view alias"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer",
+        "overlaps_S79_architecture"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-CHG",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ZNBR2",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "ZnBr2 charge (PV/RECT surplus)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ZNBR2",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-DIS",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "ZnBr2 discharge to bus",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ZNBR2",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
       "stream_id": "S17",
       "from_unit_id": "SOL_ARK_60K",
       "to_unit_id": "RECTIFIER",
@@ -345,7 +445,7 @@
     {
       "stream_id": "S20",
       "from_unit_id": "GROW_BED",
-      "to_unit_id": "LOAD_AGG",
+      "to_unit_id": "SOL_ARK_60K",
       "phase": "E",
       "layers": [
         "elec"
@@ -356,19 +456,17 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.0,
+        "value": null,
         "unit": "kW",
         "status": "study",
-        "note": "GROW_BED LED canopy continuous_kw 5.0 kW \u2192 LOAD_AGG (node duty) \u2014 true-closure"
+        "note": "null_rate_kind=study_deferred"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [
-        "wp_true_closure"
-      ],
-      "notes": "WP-L1: GROW load into LOAD_AGG (node notes S17/S20 aggregation); bus edge IA-LOAD-01 | true-closure was study_deferred"
+      "gap_flags": [],
+      "notes": null
     },
     {
       "stream_id": "S47",
@@ -404,25 +502,25 @@
       "layers": [
         "elec"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "ORC AC",
       "header": "future AC couple",
       "forbidden": "hard-coded 100 kW on M1",
       "claim_status": "Claimed",
       "rate": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ORC AC M1 default 0 kW_e (Q_surplus~0). Illus 0-2 if survey \u2014 WP-L2 ST-ORC-01; forbid 100 kW"
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [
-        "wp_l2_filled"
+        "orc_stub_kw_tbd"
       ],
-      "notes": "WP-L2 study rate filled."
+      "notes": null
     },
     {
       "stream_id": "S51",
@@ -476,186 +574,6 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
-    },
-    {
-      "stream_id": "IA-ESS-ZNBR2-CHG",
-      "from_unit_id": "SOL_ARK_60K",
-      "to_unit_id": "ZNBR2",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "ZnBr2 charge (PV/RECT surplus)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 60.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ZnBr2 charge 60 kW class (AQS-ESS-001) \u2014 WP-L2"
-      },
-      "from_sector_id": "ELEC",
-      "to_sector_id": "ZNBR2",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-ZNBR2-DIS",
-      "from_unit_id": "ZNBR2",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "ZnBr2 discharge to bus",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 60.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ZnBr2 discharge 60 kW class \u2014 WP-L2"
-      },
-      "from_sector_id": "ZNBR2",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-DIS",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "MeOH FC discharge (peers S79)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ESS-layer alias; primary S79 \u2014 WP-L2"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "overlaps_S79_architecture",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-HYDRO-ELEC",
-      "from_unit_id": "HYDRO_SET",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "Pumped-hydro continuous incomplete (AQS-ESS-001); M1 study 0 \u2014 WP-L2"
-      },
-      "from_sector_id": "PUMPED_HYDRO",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "missing_on_sld",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-PV-01",
-      "from_unit_id": "PV_ARRAY",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec"
-      ],
-      "presence": "present",
-      "carries": "PV DC",
-      "header": "PV DC couple",
-      "forbidden": "RECT process DC hard-tee",
-      "claim_status": "Closed",
-      "rate": {
-        "value": 70.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "From PV_ARRAY continuous_kw study (PV_MODULE_KW\u00d7PV_COUNT class) \u2014 nameplate class not continuous avg; SITE_LAT still null"
-      },
-      "from_sector_id": "ELEC_PV",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "wp_l1_topology"
-      ],
-      "notes": "WP-L1: ELEC_PV layer PV_ARRAY\u2192SOL_ARK_60K (AQS-PLAN-LOOP-001 \u00a74.2). Does not collide S17."
-    },
-    {
-      "stream_id": "IA-LOAD-01",
-      "from_unit_id": "LOAD_AGG",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec"
-      ],
-      "presence": "present",
-      "carries": "aggregated AC/DC load",
-      "header": "tray",
-      "forbidden": "\u2014",
-      "claim_status": "Closed",
-      "rate": {
-        "value": 5.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "LOAD_AGG\u2192SOL_ARK \u2014 GROW S20 5.0 kW edged share (logical MCC) \u2014 true-closure"
-      },
-      "from_sector_id": "ELEC",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "wp_l1_topology",
-        "logical_unmapped",
-        "wp_true_closure"
-      ],
-      "notes": "WP-L1: LOAD_AGG\u2192SOL_ARK bus; logical-only per GRAPH_TO_3D (no 3D massing)."
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

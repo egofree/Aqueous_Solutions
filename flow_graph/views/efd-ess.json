@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-ESS",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "F",
+  "source_revision": "K",
   "node_count": 8,
-  "edge_count": 12,
+  "edge_count": 11,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -20,7 +20,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "function": "pumped-hydro lower reservoir + terrace rain catch (clean water)",
+        "level": "L-2",
+        "z_mm": -10500,
+        "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
+        "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
+        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out"
       }
     },
     {
@@ -87,7 +93,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -108,7 +120,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          2200,
+          900,
+          1400
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -131,7 +149,13 @@
       "params": {
         "inventory_kg_study_min": 15.0,
         "days_at_mid_synth": 3,
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          800,
+          800,
+          1100
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       }
     },
     {
@@ -192,6 +216,217 @@
   ],
   "edges": [
     {
+      "stream_id": "IA-ESS-HYDRO-CHG",
+      "from_unit_id": "CATCH_TANK",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass",
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "Pumped hydro charge (pump up; peers S23)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "null",
+        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-DIS",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CATCH_TANK",
+      "phase": "L",
+      "layers": [
+        "mass",
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "Pumped hydro discharge (penstock; peers S22)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": "kg/d",
+        "status": "null",
+        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
+    },
+    {
+      "stream_id": "IA-ESS-HYDRO-ELEC",
+      "from_unit_id": "HYDRO_SET",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "PUMPED_HYDRO",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer",
+        "missing_on_sld"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-CHG",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "L",
+      "layers": [
+        "mass",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "MeOH synth inventory = charge-analogue",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-MEOH-DIS",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "MeOH FC discharge (peers S79)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "use S79 for rate; this edge is ESS-layer view alias"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer",
+        "overlaps_S79_architecture"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-CHG",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ZNBR2",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "ZnBr2 charge (PV/RECT surplus)",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ZNBR2",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-DIS",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "placeholder",
+      "carries": "ZnBr2 discharge to bus",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+      },
+      "from_sector_id": "ZNBR2",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "EFD chemical-storage / charge-discharge typing"
+    },
+    {
       "stream_id": "S22",
       "from_unit_id": "ROOF_TANK",
       "to_unit_id": "CATCH_TANK",
@@ -205,19 +440,20 @@
       "forbidden": "process sumps",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.0,
+        "value": null,
         "unit": "kg/d",
         "status": "study",
-        "note": "Penstock inventory_cycle \u2014 continuous steady-state 0 by design (ESS energy on AQS-ESS-001; not continuous L/d) \u2014 true-closure"
+        "note": "null_rate_kind=inventory_cycle"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [
-        "wp_true_closure"
-      ],
-      "notes": "zero-flow continuous by design (inventory cycle)"
+      "gap_flags": [],
+      "notes": null,
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
     },
     {
       "stream_id": "S23",
@@ -233,49 +469,20 @@
       "forbidden": "HDR_GREY",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.0,
+        "value": null,
         "unit": "kg/d",
         "status": "study",
-        "note": "Pump return inventory_cycle \u2014 continuous steady-state 0 by design \u2014 true-closure"
+        "note": "null_rate_kind=inventory_cycle"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
-      "gap_flags": [
-        "wp_true_closure"
-      ],
-      "notes": "zero-flow continuous by design (inventory cycle)"
-    },
-    {
-      "stream_id": "S69",
-      "from_unit_id": "ZNBR2",
-      "to_unit_id": "ZNBR2",
-      "phase": "L",
-      "layers": [
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "Br\u207b makeup after ORP",
-      "header": "Br\u2082 scrub liquor return",
-      "forbidden": "CRU, alkali scrub liquor",
-      "claim_status": "Partial / Claimed",
-      "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "ZnBr2 Br- makeup self-loop \u2014 continuous external make-up 0 (internal regen) \u2014 true-closure"
-      },
-      "from_sector_id": "ZNBR2",
-      "to_sector_id": "ZNBR2",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs",
-        "intentional_self_loop",
-        "wp_true_closure"
-      ],
-      "notes": "WP-L2: intentional ZnBr2 Br- makeup self-loop retained (ESS internal regen). Not a topology gap. | intentional ESS self-loop; zero external continuous make-up"
+      "gap_flags": [],
+      "notes": null,
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
     },
     {
       "stream_id": "S76",
@@ -329,218 +536,6 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
-    },
-    {
-      "stream_id": "IA-ESS-ZNBR2-CHG",
-      "from_unit_id": "SOL_ARK_60K",
-      "to_unit_id": "ZNBR2",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "ZnBr2 charge (PV/RECT surplus)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 60.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ZnBr2 charge 60 kW class (AQS-ESS-001) \u2014 WP-L2"
-      },
-      "from_sector_id": "ELEC",
-      "to_sector_id": "ZNBR2",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-ZNBR2-DIS",
-      "from_unit_id": "ZNBR2",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "ZnBr2 discharge to bus",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 60.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ZnBr2 discharge 60 kW class \u2014 WP-L2"
-      },
-      "from_sector_id": "ZNBR2",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-CHG",
-      "from_unit_id": "MEOH_SYNTH",
-      "to_unit_id": "MEOH_TANK",
-      "phase": "L",
-      "layers": [
-        "mass",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "MeOH synth inventory = charge-analogue",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "MeOH ESS charge alias study mid \u2014 WP-L2"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "MEOH",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-DIS",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "MeOH FC discharge (peers S79)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ESS-layer alias; primary S79 \u2014 WP-L2"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "overlaps_S79_architecture",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
-    },
-    {
-      "stream_id": "IA-ESS-HYDRO-CHG",
-      "from_unit_id": "CATCH_TANK",
-      "to_unit_id": "ROOF_TANK",
-      "phase": "L",
-      "layers": [
-        "mass",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "Pumped hydro charge (pump up; peers S23)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "Hydro charge inventory_cycle peer S23 \u2014 continuous 0 by design \u2014 true-closure"
-      },
-      "from_sector_id": "WTR",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_true_closure"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-HYDRO-DIS",
-      "from_unit_id": "ROOF_TANK",
-      "to_unit_id": "CATCH_TANK",
-      "phase": "L",
-      "layers": [
-        "mass",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "Pumped hydro discharge (penstock; peers S22)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "Hydro discharge inventory_cycle peer S22 \u2014 continuous 0 by design \u2014 true-closure"
-      },
-      "from_sector_id": "WTR",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "wp_true_closure"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-HYDRO-ELEC",
-      "from_unit_id": "HYDRO_SET",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "present",
-      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 0.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "Pumped-hydro continuous incomplete (AQS-ESS-001); M1 study 0 \u2014 WP-L2"
-      },
-      "from_sector_id": "PUMPED_HYDRO",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "missing_on_sld",
-        "wp_l2_filled"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing | WP-L2 study rate filled."
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

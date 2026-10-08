@@ -346,7 +346,8 @@
         "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
         "presence": "present",
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "boundary_kind": "dock freight door (logical)"
       },
       "modules": [],
       "electrical_role": "none",
@@ -375,7 +376,13 @@
       "class": "tank",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "function": "pumped-hydro lower reservoir + terrace rain catch (clean water)",
+        "level": "L-2",
+        "z_mm": -10500,
+        "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
+        "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
+        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out"
       },
       "modules": [],
       "electrical_role": "none",
@@ -401,7 +408,14 @@
       "params": {
         "to": "LEACH_CSTR_1",
         "solid": "pipe",
-        "ref": "IA-REC-01"
+        "ref": "IA-REC-01",
+        "size_mm": [
+          1500,
+          60,
+          60
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor; rate not issued)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
       },
       "modules": [],
       "electrical_role": null,
@@ -727,7 +741,15 @@
       "enabled": true,
       "class": "separator",
       "tags": [],
-      "params": {},
+      "params": {
+        "solid": "FLUE_CAP (existing Feature; Feature name, not a unit alias)",
+        "size_mm_existing": [
+          600,
+          700,
+          1100
+        ],
+        "duty_check": "flue 10.07 kg/h (S67): DN300 KO drum with mesh pad fits the 600x700 plan even at the 180 m3/h AQS-GAS-003 NCG case (0.7 m/s)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -923,7 +945,16 @@
         "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
         "berth_crew_study": 4,
         "ration_kg_person_d_study": 0.6,
-        "presence": "present"
+        "presence": "present",
+        "co2_in_kg_d": {
+          "S04": 1.109,
+          "S89": 11.616
+        },
+        "co2_fixed_kg_d": 1.109,
+        "co2_to_exhaust_kg_d": 11.616,
+        "co2_setpoint_ppm": 1000,
+        "farm_oa_m3_h": 693.5,
+        "co2_doc": "AQS-DUTY-009"
       },
       "modules": [],
       "electrical_role": "load",
@@ -976,7 +1007,23 @@
       "enabled": true,
       "class": "header",
       "tags": [],
-      "params": {},
+      "params": {
+        "doc": "AQS-DUTY-009",
+        "P_bar_a": 3.0,
+        "pipe": "OD40 316, Z 3200 (AQS-PIP-002)",
+        "balance_kg_d": {
+          "in_S85": 11.616,
+          "out_S89": 11.616,
+          "residual": 0.0
+        },
+        "consumers": [
+          "S89"
+        ],
+        "not_consumers": {
+          "MEOH_SYNTH": "H2-limited; carrier loop via S82",
+          "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
+        }
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1068,7 +1115,8 @@
           400,
           600
         ],
-        "size_note": "seed envelope (placement_seed HX8 row)"
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
       },
       "modules": [],
       "electrical_role": null,
@@ -1140,11 +1188,14 @@
       "unit_id": "LOAD_AGG",
       "sector_id": "ELEC",
       "enabled": true,
-      "class": "load_agg",
+      "class": "boundary",
       "tags": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "former_class": "load_agg",
+        "boundary_kind": "electrical accounting (S17/S20 sum)",
+        "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only."
       },
       "modules": [],
       "electrical_role": null,
@@ -1156,7 +1207,15 @@
       "enabled": true,
       "class": "separator",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          400,
+          400,
+          600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1347,7 +1406,14 @@
       "class": "scrubber",
       "tags": [],
       "params": {
-        "ref": "NFPA 37 / plant acid-gas practice"
+        "ref": "NFPA 37 / plant acid-gas practice",
+        "size_mm": [
+          600,
+          400,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
       },
       "modules": [],
       "electrical_role": null,
@@ -1524,7 +1590,15 @@
       "enabled": true,
       "class": "relief",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1535,7 +1609,9 @@
       "enabled": true,
       "class": "relief",
       "tags": [],
-      "params": {},
+      "params": {
+        "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2137,7 +2213,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -6000,
+        "stand_mm": 0,
+        "coil_pack": {
+          "cross_tie (mid)": {
+            "area_m2": 1.84,
+            "tube": "bare",
+            "rows": 3,
+            "height_m": 0.376
+          },
+          "down_evaporator (high)": {
+            "area_m2": 1.51,
+            "tube": "bare",
+            "rows": 2,
+            "height_m": 0.384
+          }
+        },
+        "coil_pack_stack_m": 0.76,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2162,7 +2256,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -5150,
+        "stand_mm": 850,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 1.51,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.292
+          },
+          "cross_tie (mid)": {
+            "area_m2": 2.7,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.305
+          },
+          "down_evaporator (high)": {
+            "area_m2": 2.52,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.284
+          }
+        },
+        "coil_pack_stack_m": 0.881,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2187,7 +2305,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -4250,
+        "stand_mm": 1750,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.94,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.162
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.92,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.157
+          },
+          "down_evaporator (high)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.311
+          }
+        },
+        "coil_pack_stack_m": 0.63,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2212,7 +2354,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -3350,
+        "stand_mm": 2650,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.279
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.78,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.27
+          }
+        },
+        "coil_pack_stack_m": 0.549,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2237,7 +2397,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -6000,
+        "stand_mm": 0,
+        "coil_pack": {
+          "cross_tie (mid)": {
+            "area_m2": 1.84,
+            "tube": "bare",
+            "rows": 3,
+            "height_m": 0.376
+          },
+          "down_evaporator (high)": {
+            "area_m2": 1.51,
+            "tube": "bare",
+            "rows": 2,
+            "height_m": 0.384
+          }
+        },
+        "coil_pack_stack_m": 0.76,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2262,7 +2440,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -5150,
+        "stand_mm": 850,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 1.51,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.292
+          },
+          "cross_tie (mid)": {
+            "area_m2": 2.7,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.305
+          },
+          "down_evaporator (high)": {
+            "area_m2": 2.52,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.284
+          }
+        },
+        "coil_pack_stack_m": 0.881,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2287,7 +2489,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -4250,
+        "stand_mm": 1750,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.94,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.162
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.92,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.157
+          },
+          "down_evaporator (high)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.311
+          }
+        },
+        "coil_pack_stack_m": 0.63,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2312,7 +2538,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -3350,
+        "stand_mm": 2650,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.279
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.78,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.27
+          }
+        },
+        "coil_pack_stack_m": 0.549,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       },
       "modules": [],
       "electrical_role": null,
@@ -2533,7 +2777,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.85 m store step (Q1 at z -6000, Q2 at z -5150), rise 0.308 m, dP/head 0.23. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-B-DOWN",
@@ -2550,7 +2794,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.85 m store step (Q1 at z -6000, Q2 at z -5150), rise 0.308 m, dP/head 0.23. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-X",
@@ -2567,7 +2811,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q1 (shared with HL-Q1-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 17.8 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-X-BA",
@@ -2584,7 +2828,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q1 (shared with HL-Q1-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 17.8 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-A-DOWN",
@@ -2601,7 +2845,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q2 at z -5150, Q3 at z -4250), rise 0.303 m, dP/head 0.22. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-B-DOWN",
@@ -2618,7 +2862,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q2 at z -5150, Q3 at z -4250), rise 0.303 m, dP/head 0.22. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-X",
@@ -2635,7 +2879,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q2 (shared with HL-Q2-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 28.8 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-X-BA",
@@ -2652,7 +2896,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q2 (shared with HL-Q2-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 28.8 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-A-DOWN",
@@ -2669,7 +2913,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q3 at z -4250, Q4 at z -3350), rise 0.325 m, dP/head 0.18. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-B-DOWN",
@@ -2686,7 +2930,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q3 at z -4250, Q4 at z -3350), rise 0.325 m, dP/head 0.18. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-A-HX4",
@@ -2805,7 +3049,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q3 (shared with HL-Q3-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 5.8 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-X-BA",
@@ -2822,7 +3066,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q3 (shared with HL-Q3-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 5.8 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q4-A-BUS",
@@ -2873,7 +3117,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q4 (shared with HL-Q4-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 4.0 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q4-X-BA",
@@ -2890,7 +3134,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
+      "note": "Pumped loop XL-Q4 (shared with HL-Q4-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 4.0 W electric. AQS-DUTY-008 Rev C s14.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-BMED-01",
@@ -4955,7 +5199,7 @@
         "value": 11.616,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. HDR_CO2 has no consumer edge yet."
+        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. Rev K: HDR_CO2 consumer is S89 (GROW_BED), AQS-DUTY-009."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -5026,6 +5270,23 @@
       "open_boundary": false,
       "null_rate_kind": "unknown",
       "note": "Phosphoric etch. Own bund.; layers=mass"
+    },
+    {
+      "stream_id": "S89",
+      "from_unit_id": "HDR_CO2",
+      "to_unit_id": "GROW_BED",
+      "phase": "G",
+      "carries": "CO2 enrichment dose (FARM AHU supply)",
+      "rate": {
+        "value": 11.616,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-009: all of S85. 1000 ppm setpoint, dosed in the 16 h photoperiod."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU.; layers=mass"
     }
   ],
   "electrical": {
@@ -5087,5 +5348,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev J (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev K (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }

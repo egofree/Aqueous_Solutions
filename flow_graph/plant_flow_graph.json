@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "J",
+  "revision": "K",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-07",
   "sole_authority": true,
@@ -209,7 +209,8 @@
         "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
         "presence": "present",
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "boundary_kind": "dock freight door (logical)"
       }
     },
     {
@@ -244,7 +245,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "function": "pumped-hydro lower reservoir + terrace rain catch (clean water)",
+        "level": "L-2",
+        "z_mm": -10500,
+        "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
+        "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
+        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out"
       }
     },
     {
@@ -275,7 +282,14 @@
       "params": {
         "to": "LEACH_CSTR_1",
         "solid": "pipe",
-        "ref": "IA-REC-01"
+        "ref": "IA-REC-01",
+        "size_mm": [
+          1500,
+          60,
+          60
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor; rate not issued)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
       },
       "continuous_kw": null
     },
@@ -637,7 +651,15 @@
       "notes": "Afterburner flue knockout. N2/O2/NOx rejected. CO2-rich gas only may continue to CRYO_CO2.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "solid": "FLUE_CAP (existing Feature; Feature name, not a unit alias)",
+        "size_mm_existing": [
+          600,
+          700,
+          1100
+        ],
+        "duty_check": "flue 10.07 kg/h (S67): DN300 KO drum with mesh pad fits the 600x700 plan even at the 180 m3/h AQS-GAS-003 NCG case (0.7 m/s)"
+      }
     },
     {
       "unit_id": "FUEL_CELL",
@@ -865,7 +887,16 @@
         "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
         "berth_crew_study": 4,
         "ration_kg_person_d_study": 0.6,
-        "presence": "present"
+        "presence": "present",
+        "co2_in_kg_d": {
+          "S04": 1.109,
+          "S89": 11.616
+        },
+        "co2_fixed_kg_d": 1.109,
+        "co2_to_exhaust_kg_d": 11.616,
+        "co2_setpoint_ppm": 1000,
+        "farm_oa_m3_h": 693.5,
+        "co2_doc": "AQS-DUTY-009"
       }
     },
     {
@@ -918,7 +949,23 @@
       "notes": "Life CO2 header. Not raw flue. Not the dock.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "doc": "AQS-DUTY-009",
+        "P_bar_a": 3.0,
+        "pipe": "OD40 316, Z 3200 (AQS-PIP-002)",
+        "balance_kg_d": {
+          "in_S85": 11.616,
+          "out_S89": 11.616,
+          "residual": 0.0
+        },
+        "consumers": [
+          "S89"
+        ],
+        "not_consumers": {
+          "MEOH_SYNTH": "H2-limited; carrier loop via S82",
+          "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
+        }
+      }
     },
     {
       "unit_id": "HDR_H2",
@@ -1020,7 +1067,8 @@
           400,
           600
         ],
-        "size_note": "seed envelope (placement_seed HX8 row)"
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
       }
     },
     {
@@ -1095,7 +1143,7 @@
       "unit_id": "LOAD_AGG",
       "sector_id": "ELEC",
       "presence": "present",
-      "class": "load_agg",
+      "class": "boundary",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": "S17/S20 undrawn aggregation",
@@ -1104,7 +1152,10 @@
       "modules": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "former_class": "load_agg",
+        "boundary_kind": "electrical accounting (S17/S20 sum)",
+        "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only."
       },
       "continuous_kw": null
     },
@@ -1116,7 +1167,15 @@
       "notes": "Methanol fuel-cell condensate. Process, not grey.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "size_mm": [
+          400,
+          400,
+          600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
+      }
     },
     {
       "unit_id": "MEOH_FC",
@@ -1335,7 +1394,14 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "NFPA 37 / plant acid-gas practice"
+        "ref": "NFPA 37 / plant acid-gas practice",
+        "size_mm": [
+          600,
+          400,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
       }
     },
     {
@@ -1531,7 +1597,15 @@
       "notes": "Cryo non-condensable contingency. NFPA 55. Not the dock.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
+        "size_doc": "MVS_EQUIPMENT Rev K"
+      }
     },
     {
       "unit_id": "RELIEF_H2",
@@ -1541,7 +1615,9 @@
       "notes": "H2 contingency relief. NFPA 2. Not BOUNDARY_EXPORT. Not a product sink.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)"
+      }
     },
     {
       "unit_id": "ROOF_TANK",
@@ -2179,7 +2255,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -6000,
+        "stand_mm": 0,
+        "coil_pack": {
+          "cross_tie (mid)": {
+            "area_m2": 1.84,
+            "tube": "bare",
+            "rows": 3,
+            "height_m": 0.376
+          },
+          "down_evaporator (high)": {
+            "area_m2": 1.51,
+            "tube": "bare",
+            "rows": 2,
+            "height_m": 0.384
+          }
+        },
+        "coil_pack_stack_m": 0.76,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2203,7 +2297,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -5150,
+        "stand_mm": 850,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 1.51,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.292
+          },
+          "cross_tie (mid)": {
+            "area_m2": 2.7,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.305
+          },
+          "down_evaporator (high)": {
+            "area_m2": 2.52,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.284
+          }
+        },
+        "coil_pack_stack_m": 0.881,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2227,7 +2345,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -4250,
+        "stand_mm": 1750,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.94,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.162
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.92,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.157
+          },
+          "down_evaporator (high)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.311
+          }
+        },
+        "coil_pack_stack_m": 0.63,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2251,7 +2393,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -3350,
+        "stand_mm": 2650,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.279
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.78,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.27
+          }
+        },
+        "coil_pack_stack_m": 0.549,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2275,7 +2435,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -6000,
+        "stand_mm": 0,
+        "coil_pack": {
+          "cross_tie (mid)": {
+            "area_m2": 1.84,
+            "tube": "bare",
+            "rows": 3,
+            "height_m": 0.376
+          },
+          "down_evaporator (high)": {
+            "area_m2": 1.51,
+            "tube": "bare",
+            "rows": 2,
+            "height_m": 0.384
+          }
+        },
+        "coil_pack_stack_m": 0.76,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2299,7 +2477,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -5150,
+        "stand_mm": 850,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 1.51,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.292
+          },
+          "cross_tie (mid)": {
+            "area_m2": 2.7,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.305
+          },
+          "down_evaporator (high)": {
+            "area_m2": 2.52,
+            "tube": "integral low-fin",
+            "rows": 2,
+            "height_m": 0.284
+          }
+        },
+        "coil_pack_stack_m": 0.881,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2323,7 +2525,31 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -4250,
+        "stand_mm": 1750,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.94,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.162
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.92,
+            "tube": "integral low-fin",
+            "rows": 1,
+            "height_m": 0.157
+          },
+          "down_evaporator (high)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.311
+          }
+        },
+        "coil_pack_stack_m": 0.63,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     },
     {
@@ -2347,7 +2573,25 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "origin_z_mm": -3350,
+        "stand_mm": 2650,
+        "coil_pack": {
+          "down_condenser (low)": {
+            "area_m2": 0.81,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.279
+          },
+          "cross_tie (mid)": {
+            "area_m2": 0.78,
+            "tube": "bare",
+            "rows": 1,
+            "height_m": 0.27
+          }
+        },
+        "coil_pack_stack_m": 0.549,
+        "coil_pack_doc": "AQS-DUTY-008 Rev C"
       }
     }
   ],
@@ -2761,12 +3005,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.",
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.85 m store step (Q1 at z -6000, Q2 at z -5150), rise 0.308 m, dP/head 0.23. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.133,
         "duty_normal_kw": 0.353,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
         "medium": "biphenyl/diphenyl-oxide eutectic (Dowtherm A class)",
         "supply_C": 200.0,
         "return_C": 195.0,
@@ -2776,14 +3020,31 @@
         "vapor_m3_h": 12.468,
         "return_DN": 15,
         "L_eq_m": 6.0,
-        "dp_vapor_Pa": 126.1,
-        "head_Pa": 7142.0,
+        "dp_vapor_Pa": 126.2,
+        "head_Pa": 2746.0,
         "T_blocked_C": 275.0,
         "P_blocked_bar_a": 1.45,
         "line_DN": 25,
         "line_id_mm": 26.64,
         "velocity_m_s": 6.21,
-        "velocity_basis_m_s": 10.0
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.848,
+        "cond_centre_above_snk_origin_m": 0.306,
+        "dz_store_m": 0.85,
+        "rise_m": 0.308,
+        "dp_liquid_Pa": 7.09,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 633.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.231,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.542 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.542 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -6000,
+          "dst": -5150
+        }
       }
     },
     {
@@ -2810,12 +3071,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.",
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.85 m store step (Q1 at z -6000, Q2 at z -5150), rise 0.308 m, dP/head 0.23. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.133,
         "duty_normal_kw": 0.353,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
         "medium": "biphenyl/diphenyl-oxide eutectic (Dowtherm A class)",
         "supply_C": 200.0,
         "return_C": 195.0,
@@ -2825,14 +3086,31 @@
         "vapor_m3_h": 12.468,
         "return_DN": 15,
         "L_eq_m": 6.0,
-        "dp_vapor_Pa": 126.1,
-        "head_Pa": 7142.0,
+        "dp_vapor_Pa": 126.2,
+        "head_Pa": 2746.0,
         "T_blocked_C": 275.0,
         "P_blocked_bar_a": 1.45,
         "line_DN": 25,
         "line_id_mm": 26.64,
         "velocity_m_s": 6.21,
-        "velocity_basis_m_s": 10.0
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.848,
+        "cond_centre_above_snk_origin_m": 0.306,
+        "dz_store_m": 0.85,
+        "rise_m": 0.308,
+        "dp_liquid_Pa": 7.09,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 633.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.231,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.542 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.542 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -6000,
+          "dst": -5150
+        }
       }
     },
     {
@@ -2859,29 +3137,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q1 (shared with HL-Q1-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 17.8 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.383,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "biphenyl/diphenyl-oxide eutectic (Dowtherm A class)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q1-X-BA)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
         "supply_C": 245.0,
         "return_C": 240.0,
-        "m_kg_s": 0.004768,
-        "P_sat_bar_a": 0.78,
-        "h_fg_kJ_kg": 290.0,
-        "vapor_m3_h": 5.71,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 946.2,
-        "head_Pa": 6828.0,
-        "T_blocked_C": 275.0,
-        "P_blocked_bar_a": 1.45,
-        "line_DN": 20,
-        "line_id_mm": 20.93,
-        "velocity_m_s": 4.61,
-        "velocity_basis_m_s": 10.0
+        "m_kg_s": 0.11153,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.661,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q1",
+        "dT_K": 5.0,
+        "flow_L_min": 7.78,
+        "coil_area_m2_each": 1.84,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 17.4,
+        "loop_dp_kPa": 20.55,
+        "pump_head_m": 2.44,
+        "pump_hydraulic_W": 2.66,
+        "pump_electric_W": 17.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 275.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 2.101,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -2908,29 +3196,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q1 (shared with HL-Q1-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 17.8 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.383,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "biphenyl/diphenyl-oxide eutectic (Dowtherm A class)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q1-X)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
         "supply_C": 245.0,
         "return_C": 240.0,
-        "m_kg_s": 0.004768,
-        "P_sat_bar_a": 0.78,
-        "h_fg_kJ_kg": 290.0,
-        "vapor_m3_h": 5.71,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 946.2,
-        "head_Pa": 6828.0,
-        "T_blocked_C": 275.0,
-        "P_blocked_bar_a": 1.45,
-        "line_DN": 20,
-        "line_id_mm": 20.93,
-        "velocity_m_s": 4.61,
-        "velocity_basis_m_s": 10.0
+        "m_kg_s": 0.11153,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.661,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q1",
+        "dT_K": 5.0,
+        "flow_L_min": 7.78,
+        "coil_area_m2_each": 1.84,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 17.4,
+        "loop_dp_kPa": 20.55,
+        "pump_head_m": 2.44,
+        "pump_hydraulic_W": 2.66,
+        "pump_electric_W": 17.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 275.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 2.101,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -2957,12 +3255,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.",
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q2 at z -5150, Q3 at z -4250), rise 0.303 m, dP/head 0.22. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.888,
         "duty_normal_kw": 0.603,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
         "medium": "water (deaerated, steel loop)",
         "supply_C": 125.0,
         "return_C": 120.0,
@@ -2973,13 +3271,30 @@
         "return_DN": 15,
         "L_eq_m": 6.0,
         "dp_vapor_Pa": 107.7,
-        "head_Pa": 7369.0,
+        "head_Pa": 2787.0,
         "T_blocked_C": 165.0,
         "P_blocked_bar_a": 7.0,
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 3.49,
-        "velocity_basis_m_s": 10.0
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.898,
+        "cond_centre_above_snk_origin_m": 0.301,
+        "dz_store_m": 0.9,
+        "rise_m": 0.303,
+        "dp_liquid_Pa": 0.79,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 608.5,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.218,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.597 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.597 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -5150,
+          "dst": -4250
+        }
       }
     },
     {
@@ -3006,12 +3321,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.",
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q2 at z -5150, Q3 at z -4250), rise 0.303 m, dP/head 0.22. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.888,
         "duty_normal_kw": 0.603,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
         "medium": "water (deaerated, steel loop)",
         "supply_C": 125.0,
         "return_C": 120.0,
@@ -3022,13 +3337,30 @@
         "return_DN": 15,
         "L_eq_m": 6.0,
         "dp_vapor_Pa": 107.7,
-        "head_Pa": 7369.0,
+        "head_Pa": 2787.0,
         "T_blocked_C": 165.0,
         "P_blocked_bar_a": 7.0,
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 3.49,
-        "velocity_basis_m_s": 10.0
+        "velocity_basis_m_s": 10.0,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.898,
+        "cond_centre_above_snk_origin_m": 0.301,
+        "dz_store_m": 0.9,
+        "rise_m": 0.303,
+        "dp_liquid_Pa": 0.79,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 608.5,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.218,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.597 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.597 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -5150,
+          "dst": -4250
+        }
       }
     },
     {
@@ -3055,29 +3387,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q2 (shared with HL-Q2-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 28.8 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 2.027,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "water (deaerated, steel loop)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q2-X-BA)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
         "supply_C": 145.0,
         "return_C": 140.0,
-        "m_kg_s": 0.00095,
-        "P_sat_bar_a": 4.15,
-        "h_fg_kJ_kg": 2133.0,
-        "vapor_m3_h": 1.592,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 317.7,
-        "head_Pa": 7236.0,
-        "T_blocked_C": 165.0,
-        "P_blocked_bar_a": 7.0,
-        "line_DN": 15,
-        "line_id_mm": 15.8,
-        "velocity_m_s": 2.26,
-        "velocity_basis_m_s": 10.0
+        "m_kg_s": 0.2027,
+        "L_eq_m": 50.0,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.633,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q2",
+        "dT_K": 5.0,
+        "flow_L_min": 13.08,
+        "coil_area_m2_each": 2.7,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 11.3,
+        "loop_dp_kPa": 19.8,
+        "pump_head_m": 2.17,
+        "pump_hydraulic_W": 4.32,
+        "pump_electric_W": 28.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 165.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 3.1386,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -3104,29 +3446,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q2 (shared with HL-Q2-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 28.8 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 2.027,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "water (deaerated, steel loop)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q2-X)",
+        "medium": "synthetic thermal oil, hydrogenated terphenyl class",
         "supply_C": 145.0,
         "return_C": 140.0,
-        "m_kg_s": 0.00095,
-        "P_sat_bar_a": 4.15,
-        "h_fg_kJ_kg": 2133.0,
-        "vapor_m3_h": 1.592,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 317.7,
-        "head_Pa": 7236.0,
-        "T_blocked_C": 165.0,
-        "P_blocked_bar_a": 7.0,
-        "line_DN": 15,
-        "line_id_mm": 15.8,
-        "velocity_m_s": 2.26,
-        "velocity_basis_m_s": 10.0
+        "m_kg_s": 0.2027,
+        "L_eq_m": 50.0,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.633,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q2",
+        "dT_K": 5.0,
+        "flow_L_min": 13.08,
+        "coil_area_m2_each": 2.7,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 11.3,
+        "loop_dp_kPa": 19.8,
+        "pump_head_m": 2.17,
+        "pump_hydraulic_W": 4.32,
+        "pump_electric_W": 28.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 165.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 3.1386,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -3153,12 +3505,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.",
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q3 at z -4250, Q4 at z -3350), rise 0.325 m, dP/head 0.18. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.614,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
         "medium": "water (deaerated, copper loop)",
         "supply_C": 85.0,
         "return_C": 80.0,
@@ -3169,7 +3521,7 @@
         "return_DN": 15,
         "L_eq_m": 6.0,
         "dp_vapor_Pa": 69.3,
-        "head_Pa": 7597.0,
+        "head_Pa": 3085.0,
         "T_blocked_C": 110.0,
         "P_blocked_bar_a": 1.43,
         "line_DN": 20,
@@ -3177,8 +3529,23 @@
         "velocity_m_s": 5.85,
         "velocity_basis_m_s": 10.0,
         "dp_liquid_Pa": 0.94,
-        "dp_ok": true,
-        "duty_normal_idle_kw": 0.41060499621775376
+        "duty_normal_idle_kw": 0.41060499621775376,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.825,
+        "cond_centre_above_snk_origin_m": 0.249,
+        "dz_store_m": 0.9,
+        "rise_m": 0.325,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 570.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.185,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.575 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.575 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -4250,
+          "dst": -3350
+        }
       }
     },
     {
@@ -3205,12 +3572,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.",
+      "notes": "Opens only if T_upper > T_lower + 5 K. Gravity thermosyphon on a 0.90 m store step (Q3 at z -4250, Q4 at z -3350), rise 0.325 m, dP/head 0.18. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008 Rev B",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.614,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
+        "kind": "gravity loop thermosyphon (vapor riser + condensate return with low-cracking check), stepped stores",
         "medium": "water (deaerated, copper loop)",
         "supply_C": 85.0,
         "return_C": 80.0,
@@ -3221,7 +3588,7 @@
         "return_DN": 15,
         "L_eq_m": 6.0,
         "dp_vapor_Pa": 69.3,
-        "head_Pa": 7597.0,
+        "head_Pa": 3085.0,
         "T_blocked_C": 110.0,
         "P_blocked_bar_a": 1.43,
         "line_DN": 20,
@@ -3229,8 +3596,23 @@
         "velocity_m_s": 5.85,
         "velocity_basis_m_s": 10.0,
         "dp_liquid_Pa": 0.94,
-        "dp_ok": true,
-        "duty_normal_idle_kw": 0.41060499621775376
+        "duty_normal_idle_kw": 0.41060499621775376,
+        "layout": "evaporator high in the source store, condenser low in the sink store (stratification-correct); sink store raised",
+        "evap_centre_above_src_origin_m": 0.825,
+        "cond_centre_above_snk_origin_m": 0.249,
+        "dz_store_m": 0.9,
+        "rise_m": 0.325,
+        "dp_check_Pa": 500.0,
+        "dp_total_Pa": 570.2,
+        "H_req_m": 0.3,
+        "dp_over_head": 0.185,
+        "gravity_ok": true,
+        "criterion": "dp_total < 0.5 x static head",
+        "same_elevation_check": "fails: stratification-correct coils at equal store elevation give rise -0.575 m (negative head). The Rev B coil layout (evaporator low, condenser high) gives 0.575 m < the 0.8 m it required, and draws the cold bottom of the hot store.",
+        "store_z_mm": {
+          "src": -4250,
+          "dst": -3350
+        }
       }
     },
     {
@@ -3533,29 +3915,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q3 (shared with HL-Q3-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 5.8 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.831,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "water (deaerated, copper loop)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q3-X-BA)",
+        "medium": "treated water (Q3 cross-tie loop, pressurized 2.5 bar a)",
         "supply_C": 95.0,
         "return_C": 90.0,
-        "m_kg_s": 0.000807,
-        "P_sat_bar_a": 0.845,
-        "h_fg_kJ_kg": 2270.0,
-        "vapor_m3_h": 5.845,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 992.8,
-        "head_Pa": 7550.0,
-        "T_blocked_C": 110.0,
-        "P_blocked_bar_a": 1.43,
+        "m_kg_s": 0.08698,
+        "L_eq_m": 50.0,
         "line_DN": 15,
         "line_id_mm": 15.8,
-        "velocity_m_s": 8.28,
-        "velocity_basis_m_s": 10.0
+        "velocity_m_s": 0.461,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q3",
+        "dT_K": 5.0,
+        "flow_L_min": 5.43,
+        "coil_area_m2_each": 0.92,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 3.8,
+        "loop_dp_kPa": 9.64,
+        "pump_head_m": 1.02,
+        "pump_hydraulic_W": 0.87,
+        "pump_electric_W": 5.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 110.0,
+        "P_loop_bar_a": 2.5,
+        "thermal_relief_L_h": 1.1393,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -3582,29 +3974,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q3 (shared with HL-Q3-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 5.8 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.831,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "water (deaerated, copper loop)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q3-X)",
+        "medium": "treated water (Q3 cross-tie loop, pressurized 2.5 bar a)",
         "supply_C": 95.0,
         "return_C": 90.0,
-        "m_kg_s": 0.000807,
-        "P_sat_bar_a": 0.845,
-        "h_fg_kJ_kg": 2270.0,
-        "vapor_m3_h": 5.845,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 992.8,
-        "head_Pa": 7550.0,
-        "T_blocked_C": 110.0,
-        "P_blocked_bar_a": 1.43,
+        "m_kg_s": 0.08698,
+        "L_eq_m": 50.0,
         "line_DN": 15,
         "line_id_mm": 15.8,
-        "velocity_m_s": 8.28,
-        "velocity_basis_m_s": 10.0
+        "velocity_m_s": 0.461,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q3",
+        "dT_K": 5.0,
+        "flow_L_min": 5.43,
+        "coil_area_m2_each": 0.92,
+        "coil_tube": "integral low-fin",
+        "coil_tube_m_each": 3.8,
+        "loop_dp_kPa": 9.64,
+        "pump_head_m": 1.02,
+        "pump_hydraulic_W": 0.87,
+        "pump_electric_W": 5.8,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 110.0,
+        "P_loop_bar_a": 2.5,
+        "thermal_relief_L_h": 1.1393,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -3717,29 +4119,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q4 (shared with HL-Q4-X-BA). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 4.0 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.565,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "water (deaerated, copper loop)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q4-X-BA)",
+        "medium": "treated water (Q4 cross-tie loop)",
         "supply_C": 65.0,
         "return_C": 60.0,
-        "m_kg_s": 0.000667,
-        "P_sat_bar_a": 0.25,
-        "h_fg_kJ_kg": 2346.0,
-        "vapor_m3_h": 15.008,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 180.9,
-        "head_Pa": 7691.0,
-        "T_blocked_C": 77.0,
-        "P_blocked_bar_a": 0.42,
-        "line_DN": 25,
-        "line_id_mm": 26.64,
-        "velocity_m_s": 7.48,
-        "velocity_basis_m_s": 10.0
+        "m_kg_s": 0.07488,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.39,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q4",
+        "dT_K": 5.0,
+        "flow_L_min": 4.58,
+        "coil_area_m2_each": 0.78,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 7.4,
+        "loop_dp_kPa": 7.95,
+        "pump_head_m": 0.83,
+        "pump_hydraulic_W": 0.61,
+        "pump_electric_W": 4.0,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 77.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 0.7564,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -3766,29 +4178,39 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.",
+      "notes": "Pumped loop XL-Q4 (shared with HL-Q4-X). Pump runs only if |T_A-T_B| > 5 K, hotter to colder. Rated 4.0 W electric. AQS-DUTY-008 Rev C s14.",
       "params": {
-        "doc": "AQS-DUTY-008",
+        "doc": "AQS-DUTY-008 Rev C",
         "duty_rated_kw": 1.565,
         "duty_normal_kw": 0.0,
-        "kind": "loop thermosyphon (vapor riser + condensate return with check)",
-        "medium": "water (deaerated, copper loop)",
+        "kind": "pumped single-phase loop, normally off (one loop per tier, shared with HL-Q4-X)",
+        "medium": "treated water (Q4 cross-tie loop)",
         "supply_C": 65.0,
         "return_C": 60.0,
-        "m_kg_s": 0.000667,
-        "P_sat_bar_a": 0.25,
-        "h_fg_kJ_kg": 2346.0,
-        "vapor_m3_h": 15.008,
-        "return_DN": 15,
-        "L_eq_m": 25.0,
-        "dp_vapor_Pa": 180.9,
-        "head_Pa": 7691.0,
-        "T_blocked_C": 77.0,
-        "P_blocked_bar_a": 0.42,
-        "line_DN": 25,
-        "line_id_mm": 26.64,
-        "velocity_m_s": 7.48,
-        "velocity_basis_m_s": 10.0
+        "m_kg_s": 0.07488,
+        "L_eq_m": 50.0,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_m_s": 0.39,
+        "velocity_basis_m_s": 1.0,
+        "loop_id": "XL-Q4",
+        "dT_K": 5.0,
+        "flow_L_min": 4.58,
+        "coil_area_m2_each": 0.78,
+        "coil_tube": "bare",
+        "coil_tube_m_each": 7.4,
+        "loop_dp_kPa": 7.95,
+        "pump_head_m": 0.83,
+        "pump_hydraulic_W": 0.61,
+        "pump_electric_W": 4.0,
+        "pump_eta_wire_to_water": 0.15,
+        "pump_duty_normal_W": 0.0,
+        "store_dT_at_rated_K": 15.0,
+        "T_max_C": 77.0,
+        "P_loop_bar_a": 1.0,
+        "thermal_relief_L_h": 0.7564,
+        "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
       }
     },
     {
@@ -3908,7 +4330,10 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
     },
     {
       "stream_id": "IA-ESS-HYDRO-DIS",
@@ -3937,7 +4362,10 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
     },
     {
       "stream_id": "IA-ESS-HYDRO-ELEC",
@@ -5241,7 +5669,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
     },
     {
       "stream_id": "S23",
@@ -5267,7 +5698,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+      }
     },
     {
       "stream_id": "S24",
@@ -5714,7 +6148,10 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: TERRACE underdrain / apron (clean) \u2192 CATCH TANK / DRAIN_SEC"
+      "notes": "From register: TERRACE underdrain / apron (clean) \u2192 CATCH TANK / DRAIN_SEC",
+      "params": {
+        "route": "terrace drain -> wall sleeve at L0 -> SHAFT_PENSTOCK -> CATCH_TANK; no opening into L-1"
+      }
     },
     {
       "stream_id": "S42",
@@ -6861,7 +7298,7 @@
         "value": 11.616,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. HDR_CO2 has no consumer edge yet."
+        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. Rev K: HDR_CO2 consumer is S89 (GROW_BED), AQS-DUTY-009."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -6944,6 +7381,55 @@
         "mass"
       ],
       "namespace": "S"
+    },
+    {
+      "stream_id": "S89",
+      "from_unit_id": "HDR_CO2",
+      "to_unit_id": "GROW_BED",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "CO2 enrichment dose (FARM AHU supply)",
+      "header": "HDR_CO2",
+      "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 11.616,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-009: all of S85. 1000 ppm setpoint, dosed in the 16 h photoperiod."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU.",
+      "params": {
+        "doc": "AQS-DUTY-009",
+        "medium": "CO2 gas (dry, from the CRYO_CO2 vaporizer)",
+        "P_bar_a": 3.0,
+        "T_C": 20.0,
+        "rho_kg_m3": 5.5,
+        "m_avg_kg_h": 0.484,
+        "m_peak_kg_h": 0.726,
+        "q_peak_m3_h": 0.132,
+        "line_DN": 15,
+        "line_id_mm": 15.8,
+        "velocity_peak_m_s": 0.187,
+        "material": "316L",
+        "dose_control": "mass-flow controller + solenoid on farm CO2 ppm; OA damper on farm CO2 high limit",
+        "setpoint_ppm": 1000,
+        "photoperiod_h": 16,
+        "oa_required_m3_h": 693.5,
+        "oa_min_m3_h": 251.3,
+        "fate_fixed_kg_d": 0.0,
+        "fate_exhaust_kg_d": 11.616,
+        "fate_note": "Not sequestration. GROW_BED fixes S04 (1.109 kg/d); the S89 carbon leaves with farm exhaust air.",
+        "dark_buffer_kg": 3.87
+      }
     }
   ],
   "view_presets": [
@@ -7338,5 +7824,6 @@
   "notes_rev_g": "Envelopes issued L\u00d7W\u00d7H mm on MVS machines, EW cells, ladder batteries, gen, fuel cell, methanol skids.",
   "notes_rev_h": "Issued size_mm (L\u00d7W\u00d7H mm) stands on 36 nodes from commit 2240602. Placement seed Rev F clears the BACKUP_GEN/FUEL_CELL and MEOH_SYNTH/MEOH_TANK overlaps by moving origins only; issued sizes unchanged. EW-1..9 solid model carries overflow launders OVF_EW_1_2..OVF_EW_8_9 and OVF_EW_9_POLISH to POLISH_BANK. No topology, presence, loops_closed or *_on_site change.",
   "notes_rev_i": "AQS-DUTY-008 heat-ladder edge study: the 20 HL-* edges and S67B carry rated duty, medium, supply and return temperature, flow and line size in params and close to present; HL-* moved to the thermal layer. Edge params and notes_rev_* added to the schema; presence stays present|placeholder. LITHO_STUB and SOLAR_PV_CELL modules are objects. S34/S34B carry layers and namespace. No loops_closed or *_on_site change.",
-  "notes_rev_j": "AQS-DUTY-008 Rev B. HX-8 moved off Q3: HL-HX8-Q3-A/B replaced by HL-HX8-Q4-A/B (HX8 -> Q4_A/Q4_B), duty 4.572 kW from EW cell heat (ohmic 1.938 + concentrate sensible 4.128 - walls 0.533 - evaporation 0.962), Q4 return 45 -> 49 C, approach 6 K; IA-HX8 thermal with rate. Q3 draws added: HL-Q3-A/B-HX4 (OIL_DRYER 0.242 kW), -HX5 (LEACH_CSTR_1 6.353 kW), -HX6 (GLASS_DIGEST 1.663 kW); Q3 cannot supply them, electric trim normal 7.437 kW / single 6.967 kW. Re-rated HL-Q3-*-DOWN 1.614, HL-Q4-*-BUS 5.51; HL-Q4-X unchanged. S18 carbon credit retired (rate 0, edge kept); 15.0 kg/d flue CO2 basis on S67; S67B is the sole credit, same_carbon_as_S18 removed; S82 6.875 kg/d; CRYO_CO2 balanced: S04 1.109, S85 11.616, S73 6.9 kg/d. Q4_BUS stays the Q4 water header only. ORC 0 kW_e. No loops_closed or *_on_site change."
+  "notes_rev_j": "AQS-DUTY-008 Rev B. HX-8 moved off Q3: HL-HX8-Q3-A/B replaced by HL-HX8-Q4-A/B (HX8 -> Q4_A/Q4_B), duty 4.572 kW from EW cell heat (ohmic 1.938 + concentrate sensible 4.128 - walls 0.533 - evaporation 0.962), Q4 return 45 -> 49 C, approach 6 K; IA-HX8 thermal with rate. Q3 draws added: HL-Q3-A/B-HX4 (OIL_DRYER 0.242 kW), -HX5 (LEACH_CSTR_1 6.353 kW), -HX6 (GLASS_DIGEST 1.663 kW); Q3 cannot supply them, electric trim normal 7.437 kW / single 6.967 kW. Re-rated HL-Q3-*-DOWN 1.614, HL-Q4-*-BUS 5.51; HL-Q4-X unchanged. S18 carbon credit retired (rate 0, edge kept); 15.0 kg/d flue CO2 basis on S67; S67B is the sole credit, same_carbon_as_S18 removed; S82 6.875 kg/d; CRYO_CO2 balanced: S04 1.109, S85 11.616, S73 6.9 kg/d. Q4_BUS stays the Q4 water header only. ORC 0 kW_e. No loops_closed or *_on_site change.",
+  "notes_rev_k": "AQS-DUTY-008 Rev C and AQS-DUTY-009. (1) HDR_CO2 consumer: new S89 HDR_CO2 -> GROW_BED 11.616 kg/d (all of S85), CO2 only, 3.0 bar a, DN15 316L, farm AHU dose at 1000 ppm over a 16 h photoperiod, OA 694 m3/h (min 251). MEOH_SYNTH rejected (needs +1.596 kg/d H2; free H2 0.26 kg/d at best; MeOH carbon returns on S82). Fate: 1.109 kg/d fixed (S04), 11.616 kg/d leaves with farm exhaust; not sequestration. HDR_CO2 in = out. (2) Downhill steps HL-Q1/Q2/Q3-*-DOWN: gravity loop thermosyphons with stratification-correct coils on stepped stores (Q1 -6000, Q2 -5150, Q3 -4250, Q4 -3350 mm), rise 0.31/0.30/0.33 m, dP/head 0.23/0.22/0.19. Cross-ties HL-Q*-X and -X-BA: pumped single-phase loops XL-Q1..Q4, normally off, rated 17.8/28.8/5.8/4.0 W electric. (3) CATCH_TANK stays at L-2 (pumped-hydro lower reservoir); slab crossing only via SHAFT_PENSTOCK. (4) Study envelopes: HX8, NOX_SCRUB, MEOH_COND, RELIEF_CRYO, CONTINUOUS_RECYCLE. FLUE_KO solid = FLUE_CAP, RELIEF_H2 solid = H2_STACK (unit map). LOAD_AGG class load_agg -> boundary (electrical accounting, not a vessel). Placement seed Rev H. No loops_closed or *_on_site change."
 }

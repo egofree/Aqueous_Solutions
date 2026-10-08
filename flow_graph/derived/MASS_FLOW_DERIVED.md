@@ -1,7 +1,7 @@
 # Mass-flow claim excerpt — DERIVED from flow_graph
 
 Document number: AQS-MF-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev J (`plant_flow_graph.json`)
+Source: AQS-FLOW-GRAPH-001 Rev K (`plant_flow_graph.json`)
 Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
@@ -91,3 +91,4 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S88 | CRYO_N2→GROW_BED | — | present | — | Make-up from the N2 box only. |
 | S34 | WS_NITRIC→WET_BENCH | — | present | — | Nitric only. |
 | S34B | WS_PHOS→WET_BENCH | — | present | — | Phosphoric etch. Own bund. |
+| S89 | HDR_CO2→GROW_BED | Closed | present | 11.616 kg/d | Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU. |

@@ -1,5 +1,5 @@
 digraph G {
-  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev F", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev K", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
   edge [fontname="Helvetica", fontsize=8];
   subgraph "cluster_CRYO" {
@@ -24,17 +24,29 @@ digraph G {
     "GEO_GHEX" [fillcolor="#ffffff", label="GEO_GHEX"];
     "GEO_HP" [fillcolor="#ffffff", label="GEO_HP"];
     "GEO_HP_CLOSED_LOOP" [fillcolor="#ffffff", label="GEO_HP_CLOSED_LOOP"];
-    "GEO_ORC" [fillcolor="#ffffff", label="GEO_ORC"];
   }
   subgraph "cluster_GLASS" {
     label="GLASS";
     style=rounded; color="#94a3b8";
+    "GLASS_DIGEST" [fillcolor="#ffffff", label="GLASS_DIGEST"];
     "GLASS_BURNOUT" [fillcolor="#ffffff", label="GLASS_BURNOUT"];
   }
   subgraph "cluster_HAB" {
     label="HAB";
     style=rounded; color="#94a3b8";
     "Q4_BUS" [fillcolor="#ffffff", label="Q4_BUS"];
+  }
+  subgraph "cluster_HEAT" {
+    label="HEAT";
+    style=rounded; color="#94a3b8";
+    "Q1_A" [fillcolor="#ffffff", label="Q1_A"];
+    "Q2_A" [fillcolor="#ffffff", label="Q2_A"];
+    "Q3_A" [fillcolor="#ffffff", label="Q3_A"];
+    "Q4_A" [fillcolor="#ffffff", label="Q4_A"];
+    "Q1_B" [fillcolor="#ffffff", label="Q1_B"];
+    "Q2_B" [fillcolor="#ffffff", label="Q2_B"];
+    "Q3_B" [fillcolor="#ffffff", label="Q3_B"];
+    "Q4_B" [fillcolor="#ffffff", label="Q4_B"];
   }
   subgraph "cluster_MEOH" {
     label="MEOH";
@@ -50,24 +62,50 @@ digraph G {
     label="OIL";
     style=rounded; color="#94a3b8";
     "AFTERBURNER" [fillcolor="#ffffff", label="AFTERBURNER"];
+    "OIL_DRYER" [fillcolor="#ffffff", label="OIL_DRYER"];
   }
   subgraph "cluster_WET" {
     label="WET";
     style=rounded; color="#94a3b8";
-    "CONTINUOUS_RECYCLE" [fillcolor="#ffffff", label="CONTINUOUS_RECYCLE"];
+    "EW_1" [fillcolor="#ffffff", label="EW_1"];
+    "HX8" [fillcolor="#ffffff", label="HX8"];
+    "LEACH_CSTR_1" [fillcolor="#ffffff", label="LEACH_CSTR_1"];
   }
-  "GEO_HP" -> "GROW_BED" [label="S06\\n1.5 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43\\n3.0 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GEO_HP" -> "Q4_BUS" [label="S44\\n3.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "FUEL_CELL" -> "Q4_BUS" [label="S53\\n1.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "CRYO_HX_Q4" -> "Q4_BUS" [label="S54\\n0.5 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55\\n1.0 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MET_HX_Q4" -> "Q4_BUS" [label="S63\\n0.5 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "MEOH_FC" -> "Q4_BUS" [label="S80\\n0.3 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
-  "CONTINUOUS_RECYCLE" -> "Q4_BUS" [label="IA-REC-Q3\\n1.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "GLASS_BURNOUT" -> "Q4_BUS" [label="IA-GLASS-Q2\\n0.5 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "AFTERBURNER" -> "Q4_BUS" [label="IA-OIL-Q1\\n2.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "GEO_HP_CLOSED_LOOP" -> "GEO_HP" [label="IA-GEO-01\\n3.0 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GEO_HP" -> "GEO_ORC" [label="IA-GEO-ORC-01\\n0.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "GEO_ORC" -> "Q4_BUS" [label="IA-GEO-ORC-02\\n0.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "Q1_A" [label="HL-AFTERBURNER-Q1-A\\n1.383 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "Q1_B" [label="HL-AFTERBURNER-Q1-B\\n1.383 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "Q2_A" [label="HL-GLASS_BURNOUT-Q2-A\\n0.928 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "Q2_B" [label="HL-GLASS_BURNOUT-Q2-B\\n0.928 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "HX8" -> "Q4_A" [label="HL-HX8-Q4-A\\n5.715 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "HX8" -> "Q4_B" [label="HL-HX8-Q4-B\\n5.715 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_A" -> "Q2_A" [label="HL-Q1-A-DOWN\\n1.133 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_B" -> "Q2_B" [label="HL-Q1-B-DOWN\\n1.133 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_A" -> "Q1_B" [label="HL-Q1-X\\n1.383 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_B" -> "Q1_A" [label="HL-Q1-X-BA\\n1.383 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_A" -> "Q3_A" [label="HL-Q2-A-DOWN\\n1.888 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_B" -> "Q3_B" [label="HL-Q2-B-DOWN\\n1.888 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_A" -> "Q2_B" [label="HL-Q2-X\\n2.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_B" -> "Q2_A" [label="HL-Q2-X-BA\\n2.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "Q4_A" [label="HL-Q3-A-DOWN\\n1.614 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "Q4_B" [label="HL-Q3-B-DOWN\\n1.614 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "OIL_DRYER" [label="HL-Q3-A-HX4\\n0.302 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "LEACH_CSTR_1" [label="HL-Q3-A-HX5\\n7.941 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "GLASS_DIGEST" [label="HL-Q3-A-HX6\\n2.079 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "OIL_DRYER" [label="HL-Q3-B-HX4\\n0.302 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "LEACH_CSTR_1" [label="HL-Q3-B-HX5\\n7.941 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "GLASS_DIGEST" [label="HL-Q3-B-HX6\\n2.079 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "Q3_B" [label="HL-Q3-X\\n1.831 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "Q3_A" [label="HL-Q3-X-BA\\n1.831 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_A" -> "Q4_BUS" [label="HL-Q4-A-BUS\\n5.51 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_B" -> "Q4_BUS" [label="HL-Q4-B-BUS\\n5.51 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_A" -> "Q4_B" [label="HL-Q4-X\\n1.565 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_B" -> "Q4_A" [label="HL-Q4-X-BA\\n1.565 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "EW_1" -> "HX8" [label="IA-HX8\\n4.572 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GEO_HP" -> "GROW_BED" [label="S06", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GEO_HP" -> "Q4_BUS" [label="S44", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "FUEL_CELL" -> "Q4_BUS" [label="S53", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "CRYO_HX_Q4" -> "Q4_BUS" [label="S54", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MET_HX_Q4" -> "Q4_BUS" [label="S63", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "MEOH_FC" -> "Q4_BUS" [label="S80", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
 }

@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "G",
+  "revision": "H",
   "date": "2026-10-07",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
@@ -19,7 +19,8 @@
     "oxidizer_or_1h_mm": 7620,
     "maint_clear_mm": 600,
     "electrical_face_clear_mm": 1100,
-    "fc_vent_div2_mm": 1524
+    "fc_vent_div2_mm": 1524,
+    "clearance_scope": "maint_clear_mm applies within one level (same room). Pairs separated by a structural slab (different levels) are checked for no intersection only. Lines (DN pipe envelopes) need no overlap only. A tool group (envelope_part rows) is one envelope: its members abut."
   },
   "blocks": [
     {
@@ -774,8 +775,8 @@
       "unit_id": "BLOW_MOLD",
       "level": "L0",
       "origin_mm": [
-        20000,
-        400,
+        19200,
+        6000,
         0
       ],
       "size_mm": [
@@ -783,14 +784,14 @@
         800,
         1600
       ],
-      "source": "ST-BLOW-01. Precious Plastic class add-on on polymer line. 0.5 kW avg. Not a 14-28 kW EBM. Scrap to oil line, not leach."
+      "source": "Rev H: issued envelope 1200x800x1600 (BLOW-01). Moved from (20000,400): 200 mm from STAIR_S2. North MFG bay, south of CORR_L0_EW, >= 600 mm to equipment."
     },
     {
       "unit_id": "ELECTRODE_COAT",
       "level": "L0",
       "origin_mm": [
-        15600,
-        200,
+        18400,
+        600,
         0
       ],
       "size_mm": [
@@ -798,7 +799,7 @@
         800,
         1800
       ],
-      "source": "ST-ELC-01. Carbon/Ni booth. Exhaust MET_AHU to MET_SCRUB. DSA deferred. 0.3 kW avg."
+      "source": "Rev H: issued envelope 1200x800x1800 (ELC-BOOTH-01). Moved from (15600,200): intersected MFG_FLOOR, 400 mm to MET_HX_Q4. South wall of MFG, 600 mm to ENV_WALL_S and GAS_ATOMIZER. Exhaust to MET_AHU."
     },
     {
       "unit_id": "GEO_ORC",
@@ -864,23 +865,29 @@
       "unit_id": "LITHO_STUB",
       "level": "L0",
       "origin_mm": [
-        18000,
-        15000,
+        17800,
+        11400,
         0
       ],
       "size_mm": [
         1600,
         800,
-        1600
+        800
       ],
-      "source": "ST-LITHO-01. Coat, align, develop. 1-5 starts/d, 150 mm, 2 mL resist. Solvent to WS_SOLV cabinet, not this bench."
+      "source": "Rev H: issued group envelope 1600x800x1600 drawn as bench 1600x800x800 (this row) plus three tools on top (LITHO_COAT/ALIGN/DEV rows, z +800). Class 6 tool-row extension north of FAB_TOOL (600 mm); WET_BENCH (Class 7) and ETCH_RETURN untouched; PV_EMITTER 600 mm east. Moved from (18000,15000): that origin clashed with the Q*_B stairs zone and WS_DOPE.",
+      "envelope_part": "bench",
+      "envelope_mm": [
+        1600,
+        800,
+        1600
+      ]
     },
     {
       "unit_id": "REMIN",
       "level": "L1",
       "origin_mm": [
+        5000,
         2800,
-        200,
         6000
       ],
       "size_mm": [
@@ -888,14 +895,14 @@
         400,
         800
       ],
-      "source": "ST-REMIN-01. 10 L/d. Ca 25 mg/L, Mg 10 mg/L from hydroxide dissolve. After class treat and UV. Not a second leach."
+      "source": "Rev H: issued envelope 600x400x800 (REMIN-01). Moved from (2800,200): 200 mm from GREY_TREAT. Now in HAB between GALLEY and HAB_WASTE, >= 600 mm clear."
     },
     {
       "unit_id": "SOLAR_PV_CELL",
       "level": "L0",
       "origin_mm": [
-        18800,
-        10000,
+        17000,
+        13200,
         0
       ],
       "size_mm": [
@@ -903,14 +910,14 @@
         1200,
         1600
       ],
-      "source": "ST-SOLAR-01 train: texture, emitter, PSG etch, ARC, contact, fire, IV. 1 kW mid. KOH from WS_KOH. Not the yard PV array."
+      "source": "Rev H: issued envelope 2400x1200x1600. Moved from (18800,10000): clashed with FAB_TOOL and PV_EMITTER. Free FAB bay north of ETCH_RETURN (600 mm), 1000 mm north of the LITHO group. The wafer_fab PV_* stubs (PV_TEXTURE..PV_ARC) are separate secondaries: duplication open."
     },
     {
       "unit_id": "VCD_TRAIN",
       "level": "L-1",
       "origin_mm": [
-        15000,
-        2000,
+        12800,
+        700,
         -6000
       ],
       "size_mm": [
@@ -918,7 +925,7 @@
         600,
         1200
       ],
-      "source": "ST-VCD-01 MVC. 0.11 m3/d, 14-20 kWh/m3, ~0.08 kW avg. Before REMIN. Not RO."
+      "source": "Rev H: issued envelope 1400x600x1200 (VCD-COMP-01). Moved from (15000,2000): abutted S13_CLASS_TREAT. Now south of it (700 mm), >= 600 mm to PK_1 and walls."
     },
     {
       "unit_id": "C29_RECYCLE",
@@ -939,16 +946,16 @@
       "unit_id": "CONTINUOUS_RECYCLE",
       "level": "L-1",
       "origin_mm": [
-        800,
-        4200,
-        -6000
+        5000,
+        4600,
+        -2700
       ],
       "size_mm": [
         1500,
         60,
         60
       ],
-      "source": "Liquor return to LEACH CSTR 1. Not the heat ladder."
+      "source": "Rev H line envelope DN50 (OD 60.3): continuous liquor return IA-REC-01, high-level run over LEACH_CSTR_1 (top nozzle drop not drawn), above the corridors (top -2800). Moved from (800,4200,-6000): that origin was in CORR_Lm1_EW at floor level. Line: no-overlap rule."
     },
     {
       "unit_id": "BOUNDARY_EXPORT",
@@ -1008,7 +1015,7 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Cross-tie coils inside: 2 x 1.84 m2 (DN25 OD 33.7 mm, bare, 3 row(s), 0.376 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on the L-1 floor. Coils, top to bottom: cross_tie (mid) 1.84 m2 (bare, 3 row, 0.376 m); down_evaporator (high) 1.51 m2 (bare, 2 row, 0.384 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q2_A",
@@ -1016,14 +1023,14 @@
       "origin_mm": [
         2700,
         9000,
-        -6000
+        -5150
       ],
       "size_mm": [
         800,
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Cross-tie coils inside: 2 x 2.7 m2 (DN25 OD 33.7 mm, integral low-fin, 2 row(s), 0.305 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on a 850 mm steel stand (z -5150). Coils, top to bottom: down_condenser (low) 1.51 m2 (integral low-fin, 1 row, 0.292 m); cross_tie (mid) 2.70 m2 (integral low-fin, 2 row, 0.305 m); down_evaporator (high) 2.52 m2 (integral low-fin, 2 row, 0.284 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q3_A",
@@ -1031,14 +1038,14 @@
       "origin_mm": [
         4200,
         9000,
-        -6000
+        -4250
       ],
       "size_mm": [
         800,
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Cross-tie coils inside: 2 x 0.92 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.352 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Rev H (AQS-DUTY-008 Rev C s14): on a 1750 mm steel stand (z -4250). Coils, top to bottom: down_condenser (low) 0.94 m2 (integral low-fin, 1 row, 0.162 m); cross_tie (mid) 0.92 m2 (integral low-fin, 1 row, 0.157 m); down_evaporator (high) 0.81 m2 (bare, 1 row, 0.311 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q4_A",
@@ -1046,14 +1053,14 @@
       "origin_mm": [
         5700,
         9000,
-        -6000
+        -3350
       ],
       "size_mm": [
         800,
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Cross-tie coils inside: 2 x 0.78 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.271 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Rev H (AQS-DUTY-008 Rev C s14): on a 2650 mm steel stand (z -3350). Coils, top to bottom: down_condenser (low) 0.81 m2 (bare, 1 row, 0.279 m); cross_tie (mid) 0.78 m2 (bare, 1 row, 0.270 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q1_B",
@@ -1068,7 +1075,7 @@
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Cross-tie coils inside: 2 x 1.84 m2 (DN25 OD 33.7 mm, bare, 3 row(s), 0.376 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on the L-1 floor. Coils, top to bottom: cross_tie (mid) 1.84 m2 (bare, 3 row, 0.376 m); down_evaporator (high) 1.51 m2 (bare, 2 row, 0.384 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q2_B",
@@ -1076,14 +1083,14 @@
       "origin_mm": [
         16500,
         15000,
-        -6000
+        -5150
       ],
       "size_mm": [
         800,
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Cross-tie coils inside: 2 x 2.7 m2 (DN25 OD 33.7 mm, integral low-fin, 2 row(s), 0.305 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on a 850 mm steel stand (z -5150). Coils, top to bottom: down_condenser (low) 1.51 m2 (integral low-fin, 1 row, 0.292 m); cross_tie (mid) 2.70 m2 (integral low-fin, 2 row, 0.305 m); down_evaporator (high) 2.52 m2 (integral low-fin, 2 row, 0.284 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q3_B",
@@ -1091,14 +1098,14 @@
       "origin_mm": [
         18000,
         15000,
-        -6000
+        -4250
       ],
       "size_mm": [
         800,
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Cross-tie coils inside: 2 x 0.92 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.352 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Rev H (AQS-DUTY-008 Rev C s14): on a 1750 mm steel stand (z -4250). Coils, top to bottom: down_condenser (low) 0.94 m2 (integral low-fin, 1 row, 0.162 m); cross_tie (mid) 0.92 m2 (integral low-fin, 1 row, 0.157 m); down_evaporator (high) 0.81 m2 (bare, 1 row, 0.311 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "Q4_B",
@@ -1106,14 +1113,14 @@
       "origin_mm": [
         19500,
         15000,
-        -6000
+        -3350
       ],
       "size_mm": [
         800,
         800,
         1200
       ],
-      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Cross-tie coils inside: 2 x 0.78 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.271 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+      "source": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Rev H (AQS-DUTY-008 Rev C s14): on a 2650 mm steel stand (z -3350). Coils, top to bottom: down_condenser (low) 0.81 m2 (bare, 1 row, 0.279 m); cross_tie (mid) 0.78 m2 (bare, 1 row, 0.270 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
     },
     {
       "unit_id": "PROD_C5_C10",
@@ -1194,8 +1201,8 @@
       "unit_id": "HX8",
       "level": "L-1",
       "origin_mm": [
-        4000,
         5200,
+        1900,
         -6000
       ],
       "size_mm": [
@@ -1203,22 +1210,23 @@
         400,
         600
       ],
-      "source": "EW exchanger. Not a cell."
+      "source": "Rev H study envelope: Ti plate HX 0.51 m2 (AQS-DUTY-008 Rev B) in an M3-class frame. Moved from (4000,5200): that origin was inside CORR_Lm1_PROCESS. Now south of EW_BUND (606 mm), under the EW_1 end, near the Q4 return run. EW exchanger, not a cell."
     },
     {
       "unit_id": "FLUE_KO",
       "level": "L-1",
       "origin_mm": [
-        18000,
-        12400,
+        18800,
+        7200,
         -6000
       ],
       "size_mm": [
         600,
-        400,
-        800
+        700,
+        1100
       ],
-      "source": "Flue knockout before CO2 claim."
+      "source": "Rev H: FLUE_KO is the existing FLUE_CAP Feature (cryo.py; VENT_SCRUB_EQUIPMENT s2.5 afterburner -> CRYO CO2 / condensate KO). Record row (fixed_feature): equals the FLUE_CAP origin and size and is never written. Old study row (18000,12400) retired: it duplicated the Feature.",
+      "fixed_feature": true
     },
     {
       "unit_id": "NOX_SCRUB",
@@ -1233,7 +1241,7 @@
         400,
         1200
       ],
-      "source": "Gen exhaust. Not grey. Rev F: from (-3500, 7000). Moved south so BACKUP_GEN keeps 1100 mm on its south face. Still on the gen exhaust run."
+      "source": "Rev H study envelope (graph params): DN100 packed column + sump for H2 genset exhaust 10.4 kg/h. Yard, east face x -2900 (<= -500); 1500 mm from BACKUP_GEN. Origin unchanged."
     },
     {
       "unit_id": "MEOH_COND",
@@ -1248,7 +1256,7 @@
         400,
         600
       ],
-      "source": "MeOH FC condensate. Process. Rev F: from (-3000, 200). 600 mm east of MEOH_FC (was 48 mm)."
+      "source": "Rev H study envelope: DN150 KO pot + trap for 5.6 kg/d MeOH fuel-cell condensate. Yard, 600 mm from MEOH_FC. Origin unchanged."
     },
     {
       "unit_id": "ZNBR2_BR2_REGEN",
@@ -1264,8 +1272,119 @@
         1500
       ],
       "source": "Own Br2 tower. 10 ft class with the skid."
+    },
+    {
+      "unit_id": "RELIEF_CRYO",
+      "level": "L-1",
+      "origin_mm": [
+        18300,
+        9500,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "Rev H study envelope: contingency vent damper section on the CRYO_AHU exhaust (12 ACH x 216 m3 = 2592 m3/h, 300x300 duct at 8 m/s). In the CRYO room, 800 mm north of CRYO_AHU, under VJ_003. Not the dock."
+    },
+    {
+      "unit_id": "WS_PHOS",
+      "level": "L0",
+      "origin_mm": [
+        13000,
+        12600,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "Rev H new row: issued envelope 800x800x1100. H3PO4 to WET_BENCH (S34B). Own bund (acid_phos), not the HF room: 3.6 m from WS_HF_ED, 600 mm from CORE_PROCESS, north of WET_BENCH (Class 7 bench unchanged)."
+    },
+    {
+      "unit_id": "LITHO_COAT",
+      "level": "L0",
+      "origin_mm": [
+        17800,
+        11400,
+        800
+      ],
+      "size_mm": [
+        600,
+        500,
+        800
+      ],
+      "source": "Rev H child of LITHO_STUB, issued 600x500x800, on the bench. Group member.",
+      "group": "LITHO_STUB"
+    },
+    {
+      "unit_id": "LITHO_ALIGN",
+      "level": "L0",
+      "origin_mm": [
+        18400,
+        11400,
+        800
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "Rev H child of LITHO_STUB, issued 500x500x800, on the bench. 365 nm LED. Group member.",
+      "group": "LITHO_STUB"
+    },
+    {
+      "unit_id": "LITHO_DEV",
+      "level": "L0",
+      "origin_mm": [
+        18900,
+        11400,
+        800
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "Rev H child of LITHO_STUB, issued 500x500x800, on the bench. Solvent waste to the oil line. Group member.",
+      "group": "LITHO_STUB"
+    },
+    {
+      "unit_id": "CATCH_TANK",
+      "level": "L-2",
+      "origin_mm": [
+        0,
+        5000,
+        -10500
+      ],
+      "size_mm": [
+        12000,
+        8000,
+        4000
+      ],
+      "source": "Rev H record row (no move: equals the existing Feature). Pumped-hydro lower reservoir and terrace rain catch (ASME_CLASS_SHEETS \"Lower reservoir\"; SCALE_MODEL CATCH_TANK_Z = Z_Lm2, always deepest). Below L-1 by function. Inlets: S22/IA-ESS-HYDRO-DIS penstock and S23/IA-ESS-HYDRO-CHG pump return, both inside SHAFT_PENSTOCK [10800..11600, 8200..9000], which is the only slab crossing; S41 terrace drain joins the shaft at L0 through a wall sleeve. No penetration of SLAB_Lm1 into the L-1 process rooms. Not a heat-ladder drain tank: Q-store drain-down goes to the L-1 process bund pump-out (S22 forbids process sumps, S41 forbids the L-1 process bund).",
+      "fixed_feature": true
+    },
+    {
+      "unit_id": "RELIEF_H2",
+      "level": "L-1",
+      "origin_mm": [
+        12925,
+        3925,
+        -6000
+      ],
+      "size_mm": [
+        250,
+        250,
+        8000
+      ],
+      "source": "Rev H record row (fixed_feature): RELIEF_H2 discharges through the existing H2_STACK (gas_handling, 8 m H2 vent stack, centred cylinder D250). Bounding box only; the applicator never writes it.",
+      "fixed_feature": true
     }
   ],
   "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",
-  "notes_rev_g": "2026-10-07, graph Rev J. Q1_A..Q4_B rows reissued: the Rev F study origins (ladder A at x 6000, B at x 12000) collided with LEACH_CSTR_1, BMED_REGEN, SALT_FEED, HVAC_Q4 and the process core on the placed copy. New origins: ladder A along the west wall (x 1200/2700/4200/5700, y 9000), ladder B in the north-east bay (x 15000/16500/18000/19500, y 15000), all L-1 at z -6000, 1500 mm pitch. Checked against every solid on the placed copy and every seed box: >= 600 mm (maint_clear_mm) to equipment and walls, no overlap with corridors or fit-out. Issued envelope 800x800x1200 and store volumes unchanged. Cross-tie coils sized in AQS-DUTY-008 Rev B. GEO_ORC pad untouched. Plate-world origins; PROCESS_DX/DY not applied."
+  "notes_rev_g": "2026-10-07, graph Rev J. Q1_A..Q4_B rows reissued: the Rev F study origins (ladder A at x 6000, B at x 12000) collided with LEACH_CSTR_1, BMED_REGEN, SALT_FEED, HVAC_Q4 and the process core on the placed copy. New origins: ladder A along the west wall (x 1200/2700/4200/5700, y 9000), ladder B in the north-east bay (x 15000/16500/18000/19500, y 15000), all L-1 at z -6000, 1500 mm pitch. Checked against every solid on the placed copy and every seed box: >= 600 mm (maint_clear_mm) to equipment and walls, no overlap with corridors or fit-out. Issued envelope 800x800x1200 and store volumes unchanged. Cross-tie coils sized in AQS-DUTY-008 Rev B. GEO_ORC pad untouched. Plate-world origins; PROCESS_DX/DY not applied.",
+  "notes_rev_h": "2026-10-07, graph Rev K. Heat-ladder stores stepped for gravity thermosyphons (AQS-DUTY-008 Rev C s14): Q1 z -6000, Q2 -5150, Q3 -4250, Q4 -3350 on both ladders; plan positions unchanged; Q4 top -2150, 1850 mm under the L0 slab soffit. New or moved rows for the Rev K solids: FLUE_KO (= FLUE_CAP), NOX_SCRUB, MEOH_COND, HX8, CONTINUOUS_RECYCLE, VCD_TRAIN, RELIEF_CRYO, REMIN, WS_PHOS, LITHO_STUB bench + LITHO_COAT/ALIGN/DEV, SOLAR_PV_CELL, ELECTRODE_COAT, BLOW_MOLD. Every row checked against every solid on the placed copy and every seed box: 0 intersections, >= 600 mm within a level (lines and group members: no overlap). GEO_ORC pad untouched. Record rows (fixed_feature, never written): CATCH_TANK, FLUE_KO (= FLUE_CAP), RELIEF_H2 (= H2_STACK bounding box). Plate-world origins; PROCESS_DX/DY not applied."
 }

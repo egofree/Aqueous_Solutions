@@ -1,8 +1,8 @@
 {
   "schema": "aqs-placement-apply-1.0",
   "graph_doc": "AQS-FLOW-GRAPH-001",
-  "graph_revision": "J",
-  "map_revision": "B",
+  "graph_revision": "K",
+  "map_revision": "C",
   "placement_doc": "AQS-PLACE-SEED-001",
   "datums_mm": {
     "L0": 0.0,
@@ -11,15 +11,25 @@
     "L1": 6000.0,
     "L2": 10800.0
   },
-  "move_count": 109,
+  "move_count": 115,
   "apply_count": 37,
   "gap_count": 0,
-  "skip_count": 14,
+  "skip_count": 8,
   "by_gap": {},
   "issued_envelopes": true,
   "resize_count": 9,
   "create_issued": true,
   "create_only": [
+    "BLOW_MOLD",
+    "CONTINUOUS_RECYCLE",
+    "ELECTRODE_COAT",
+    "HX8",
+    "LITHO_ALIGN",
+    "LITHO_COAT",
+    "LITHO_DEV",
+    "LITHO_STUB",
+    "MEOH_COND",
+    "NOX_SCRUB",
     "Q1_A",
     "Q1_B",
     "Q2_A",
@@ -27,9 +37,14 @@
     "Q3_A",
     "Q3_B",
     "Q4_A",
-    "Q4_B"
+    "Q4_B",
+    "RELIEF_CRYO",
+    "REMIN",
+    "SOLAR_PV_CELL",
+    "VCD_TRAIN",
+    "WS_PHOS"
   ],
-  "create_count": 8,
+  "create_count": 23,
   "process_nudge_mm": {
     "PROCESS_DX": 5000,
     "PROCESS_DY": 4000,
@@ -57,6 +72,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -80,6 +96,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -103,6 +120,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -126,6 +144,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -153,6 +172,7 @@
         1600.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -176,6 +196,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -199,6 +220,7 @@
       "source_doc": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -222,6 +244,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -245,6 +268,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -268,6 +292,7 @@
       "source_doc": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -289,6 +314,7 @@
       "source_doc": "Dock door. Freight boundary. No process stream. Goods only.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -312,6 +338,7 @@
       "source_doc": "C29 cut pipe. PROD_C29 to pyro inlet. Not the wet line. Rev F: from (2000, 12400). Run moved off the glass row (was through GLASS_RINSE and GLASS_MILL); centred on PROD_C29, 400 mm nozzle approach.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -331,10 +358,11 @@
         8000,
         4000
       ],
-      "source": "CATCH",
-      "source_doc": "params.py CATCH_TANK_X/Y at SCALE_M=1",
+      "source": "CATCH_TANK",
+      "source_doc": "Rev H record row (no move: equals the existing Feature). Pumped-hydro lower reservoir and terrace rain catch (ASME_CLASS_SHEETS \"Lower reservoir\"; SCALE_MODEL CATCH_TANK_Z = Z_Lm2, always deepest). Below L-1 by function. Inlets: S22/IA-ESS-HYDRO-DIS penstock and S23/IA-ESS-HYDRO-CHG pump return, both inside SHAFT_PENSTOCK [10800..11600, 8200..9000], which is the only slab crossing; S41 terrace drain joins the shaft at L0 through a wall sleeve. No penetration of SLAB_Lm1 into the L-1 process rooms. Not a heat-ladder drain tank: Q-store drain-down goes to the L-1 process bund pump-out (S22 forbids process sumps, S41 forbids the L-1 process bund).",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": true,
       "study": false,
       "frame": "plate_world"
     },
@@ -358,6 +386,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -366,9 +395,9 @@
       "freecad_names": [],
       "level": "L-1",
       "origin_mm": [
-        800.0,
-        4200.0,
-        -6000.0
+        5000.0,
+        4600.0,
+        -2700.0
       ],
       "size_mm": [
         1500,
@@ -376,9 +405,10 @@
         60
       ],
       "source": "CONTINUOUS_RECYCLE",
-      "source_doc": "Liquor return to LEACH CSTR 1. Not the heat ladder.",
+      "source_doc": "Rev H line envelope DN50 (OD 60.3): continuous liquor return IA-REC-01, high-level run over LEACH_CSTR_1 (top nozzle drop not drawn), above the corridors (top -2800). Moved from (800,4200,-6000): that origin was in CORR_Lm1_EW at floor level. Line: no-overlap rule.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -402,6 +432,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -425,6 +456,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -448,6 +480,7 @@
       "source_doc": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -471,6 +504,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -494,6 +528,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -517,6 +552,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -540,6 +576,7 @@
       "source_doc": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL).",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -563,6 +600,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -586,6 +624,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -609,6 +648,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -632,6 +672,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -655,6 +696,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -678,6 +720,7 @@
       "source_doc": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -702,27 +745,31 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
     {
       "unit_id": "FLUE_KO",
-      "freecad_names": [],
+      "freecad_names": [
+        "FLUE_CAP"
+      ],
       "level": "L-1",
       "origin_mm": [
-        18000.0,
-        12400.0,
+        18800.0,
+        7200.0,
         -6000.0
       ],
       "size_mm": [
         600,
-        400,
-        800
+        700,
+        1100
       ],
       "source": "FLUE_KO",
-      "source_doc": "Flue knockout before CO2 claim.",
+      "source_doc": "Rev H: FLUE_KO is the existing FLUE_CAP Feature (cryo.py; VENT_SCRUB_EQUIPMENT s2.5 afterburner -> CRYO CO2 / condensate KO). Record row (fixed_feature): equals the FLUE_CAP origin and size and is never written. Old study row (18000,12400) retired: it duplicated the Feature.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": true,
       "study": false,
       "frame": "plate_world"
     },
@@ -750,6 +797,7 @@
         1600.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -773,6 +821,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -796,6 +845,7 @@
       "source_doc": "West of GEO_HP. Bore field tie. Massing only.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -819,6 +869,7 @@
       "source_doc": "Yard, south of GEN, north of MeOH. Closed loop. Not a process pit.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -842,6 +893,7 @@
       "source_doc": "Loop vessel beside GHEX. Not Salria.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -865,6 +917,7 @@
       "source_doc": "ST-ORC-01 reserved pad. M1 duty is 0 kW_e until GHEX survey shows surplus after Q4. Do not buy a skid on this row.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": true,
       "frame": "plate_world"
     },
@@ -888,6 +941,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -911,6 +965,7 @@
       "source_doc": "Downstream of black digest. HDR_GREY only. Not Salria.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -934,6 +989,7 @@
       "source_doc": "params.py FARM_X/Y/Z",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -957,6 +1013,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -980,6 +1037,7 @@
       "source_doc": "params.py HAB_X/Y/Z",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1003,6 +1061,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1028,6 +1087,7 @@
       "source_doc": "params.py LIFE_RACK_S_Y",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1053,6 +1113,7 @@
       "source_doc": "params.py LIFE_RACK_S_Y",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1076,6 +1137,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1084,8 +1146,8 @@
       "freecad_names": [],
       "level": "L-1",
       "origin_mm": [
-        4000.0,
         5200.0,
+        1900.0,
         -6000.0
       ],
       "size_mm": [
@@ -1094,9 +1156,10 @@
         600
       ],
       "source": "HX8",
-      "source_doc": "EW exchanger. Not a cell.",
+      "source_doc": "Rev H study envelope: Ti plate HX 0.51 m2 (AQS-DUTY-008 Rev B) in an M3-class frame. Moved from (4000,5200): that origin was inside CORR_Lm1_PROCESS. Now south of EW_BUND (606 mm), under the EW_1 end, near the Q4 return run. EW exchanger, not a cell.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1120,6 +1183,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1143,6 +1207,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1164,6 +1229,7 @@
       "source_doc": "Electrical sum at the rectifier. Not a process vessel. S17/S20 accounting node.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1182,9 +1248,10 @@
         600
       ],
       "source": "MEOH_COND",
-      "source_doc": "MeOH FC condensate. Process. Rev F: from (-3000, 200). 600 mm east of MEOH_FC (was 48 mm).",
+      "source_doc": "Rev H study envelope: DN150 KO pot + trap for 5.6 kg/d MeOH fuel-cell condensate. Yard, 600 mm from MEOH_FC. Origin unchanged.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1212,6 +1279,7 @@
         1600.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1239,6 +1307,7 @@
         1400.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1266,6 +1335,7 @@
         1400.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1293,6 +1363,7 @@
         1100.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1316,6 +1387,7 @@
       "source_doc": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1339,6 +1411,7 @@
       "source_doc": "Water only, after scrub, <80 C. S63.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1362,6 +1435,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1385,6 +1459,7 @@
       "source_doc": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1408,6 +1483,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1429,6 +1505,7 @@
       "source_doc": "NCG only. To afterburner.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1453,6 +1530,7 @@
       "source_doc": "params.py DOCK_Y = PLATE_W - DOCK_W",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1471,9 +1549,10 @@
         1200
       ],
       "source": "NOX_SCRUB",
-      "source_doc": "Gen exhaust. Not grey. Rev F: from (-3500, 7000). Moved south so BACKUP_GEN keeps 1100 mm on its south face. Still on the gen exhaust run.",
+      "source_doc": "Rev H study envelope (graph params): DN100 packed column + sump for H2 genset exhaust 10.4 kg/h. Yard, east face x -2900 (<= -500); 1500 mm from BACKUP_GEN. Origin unchanged.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1497,6 +1576,7 @@
       "source_doc": "params.py FARM_X/Y/Z",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1520,6 +1600,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1543,6 +1624,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1566,6 +1648,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1595,6 +1678,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1616,6 +1700,7 @@
       "source_doc": "Cut tank.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1637,6 +1722,7 @@
       "source_doc": "Cut tank.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1658,6 +1744,7 @@
       "source_doc": "C29 tank. Feeds C29_RECYCLE only.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1679,6 +1766,7 @@
       "source_doc": "Cut tank. Product. NFPA 30.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1702,6 +1790,7 @@
       "source_doc": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank. Rev F: from (-9200, 10000). Footprint cleared ZNBR2_BR2_REGEN (was intersecting); 600 mm to the Br2 tower. Still west of ESS.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1723,6 +1812,7 @@
       "source_doc": "Water header collecting S06/S44/S53/S54/S63/S80. <80 C. Not a flue.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1746,6 +1836,53 @@
       "source_doc": "params.py RECT_* . Same ordinary yard row. Not in Class I.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "RELIEF_CRYO",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        18300.0,
+        9500.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        600
+      ],
+      "source": "RELIEF_CRYO",
+      "source_doc": "Rev H study envelope: contingency vent damper section on the CRYO_AHU exhaust (12 ACH x 216 m3 = 2592 m3/h, 300x300 duct at 8 m/s). In the CRYO room, 800 mm north of CRYO_AHU, under VJ_003. Not the dock.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "RELIEF_H2",
+      "freecad_names": [
+        "H2_STACK"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        12925.0,
+        3925.0,
+        -6000.0
+      ],
+      "size_mm": [
+        250,
+        250,
+        8000
+      ],
+      "source": "RELIEF_H2",
+      "source_doc": "Rev H record row (fixed_feature): RELIEF_H2 discharges through the existing H2_STACK (gas_handling, 8 m H2 vent stack, centred cylinder D250). Bounding box only; the applicator never writes it.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": true,
       "study": false,
       "frame": "plate_world"
     },
@@ -1769,6 +1906,7 @@
       "source_doc": "params.py ROOF_TANK centered",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1792,6 +1930,7 @@
       "source_doc": "Wet side, not life floor. Class treat before any life return.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1815,6 +1954,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1838,6 +1978,7 @@
       "source_doc": "params.py SOLARK_* . East face at X=-1100 (NEC 110.26). North of rectifier. Outside ZnBr2 Class I.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1860,6 +2001,7 @@
       "source_doc": "South grade overflow header. Clean tower water. Not a machine.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1883,6 +2025,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1906,6 +2049,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1929,6 +2073,7 @@
       "source_doc": "AQS-BLD-001 Rev F \u00a76",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1952,6 +2097,7 @@
       "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1975,6 +2121,7 @@
       "source_doc": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -1998,6 +2145,7 @@
       "source_doc": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2021,6 +2169,7 @@
       "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2044,6 +2193,7 @@
       "source_doc": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2067,6 +2217,7 @@
       "source_doc": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2090,6 +2241,7 @@
       "source_doc": "CMP makeup. Glass silicate + UPW. Not an etch bath.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2113,6 +2265,7 @@
       "source_doc": "Flammable cabinet, FAB north wall. 1 h from HF room. Oil-vapor rules, not the acid header.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2136,6 +2289,7 @@
       "source_doc": "params.py ZNBR_* . East face 3048 mm west of X=0 (AQS-HSE-001 10 ft from openings). Y aligned to dock. Outdoor. Own Br2 tower, not CRU.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2157,6 +2311,33 @@
       "source_doc": "Own Br2 tower. 10 ft class with the skid.",
       "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_PHOS",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        13000.0,
+        12600.0,
+        0.0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1100
+      ],
+      "source": "WS_PHOS",
+      "source_doc": "Rev H new row: issued envelope 800x800x1100. H3PO4 to WET_BENCH (S34B). Own bund (acid_phos), not the HF room: 3.6 m from WS_HF_ED, 600 mm from CORE_PROCESS, north of WET_BENCH (Class 7 bench unchanged).",
+      "issued_size_mm": [
+        800.0,
+        800.0,
+        1100.0
+      ],
+      "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2184,6 +2365,7 @@
         800.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2211,6 +2393,7 @@
         800.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2238,6 +2421,7 @@
         1200.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2246,8 +2430,8 @@
       "freecad_names": [],
       "level": "L-1",
       "origin_mm": [
-        15000.0,
-        2000.0,
+        12800.0,
+        700.0,
         -6000.0
       ],
       "size_mm": [
@@ -2256,13 +2440,14 @@
         1200
       ],
       "source": "VCD_TRAIN",
-      "source_doc": "ST-VCD-01 MVC. 0.11 m3/d, 14-20 kWh/m3, ~0.08 kW avg. Before REMIN. Not RO.",
+      "source_doc": "Rev H: issued envelope 1400x600x1200 (VCD-COMP-01). Moved from (15000,2000): abutted S13_CLASS_TREAT. Now south of it (700 mm), >= 600 mm to PK_1 and walls.",
       "issued_size_mm": [
         1400.0,
         600.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2271,8 +2456,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
+        5000.0,
         2800.0,
-        200.0,
         6000.0
       ],
       "size_mm": [
@@ -2281,13 +2466,92 @@
         800
       ],
       "source": "REMIN",
-      "source_doc": "ST-REMIN-01. 10 L/d. Ca 25 mg/L, Mg 10 mg/L from hydroxide dissolve. After class treat and UV. Not a second leach.",
+      "source_doc": "Rev H: issued envelope 600x400x800 (REMIN-01). Moved from (2800,200): 200 mm from GREY_TREAT. Now in HAB between GALLEY and HAB_WASTE, >= 600 mm clear.",
       "issued_size_mm": [
         600.0,
         400.0,
         800.0
       ],
       "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_COAT",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        17800.0,
+        11400.0,
+        800.0
+      ],
+      "size_mm": [
+        600,
+        500,
+        800
+      ],
+      "source": "LITHO_COAT",
+      "source_doc": "Rev H child of LITHO_STUB, issued 600x500x800, on the bench. Group member.",
+      "issued_size_mm": [
+        600.0,
+        500.0,
+        800.0
+      ],
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_ALIGN",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        18400.0,
+        11400.0,
+        800.0
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "LITHO_ALIGN",
+      "source_doc": "Rev H child of LITHO_STUB, issued 500x500x800, on the bench. 365 nm LED. Group member.",
+      "issued_size_mm": [
+        500.0,
+        500.0,
+        800.0
+      ],
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_DEV",
+      "freecad_names": [],
+      "level": "L0",
+      "origin_mm": [
+        18900.0,
+        11400.0,
+        800.0
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "LITHO_DEV",
+      "source_doc": "Rev H child of LITHO_STUB, issued 500x500x800, on the bench. Solvent waste to the oil line. Group member.",
+      "issued_size_mm": [
+        500.0,
+        500.0,
+        800.0
+      ],
+      "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2296,23 +2560,20 @@
       "freecad_names": [],
       "level": "L0",
       "origin_mm": [
-        18000.0,
-        15000.0,
+        17800.0,
+        11400.0,
         0.0
       ],
       "size_mm": [
         1600,
         800,
-        1600
+        800
       ],
       "source": "LITHO_STUB",
-      "source_doc": "ST-LITHO-01. Coat, align, develop. 1-5 starts/d, 150 mm, 2 mL resist. Solvent to WS_SOLV cabinet, not this bench.",
-      "issued_size_mm": [
-        1600.0,
-        800.0,
-        1600.0
-      ],
+      "source_doc": "Rev H: issued group envelope 1600x800x1600 drawn as bench 1600x800x800 (this row) plus three tools on top (LITHO_COAT/ALIGN/DEV rows, z +800). Class 6 tool-row extension north of FAB_TOOL (600 mm); WET_BENCH (Class 7) and ETCH_RETURN untouched; PV_EMITTER 600 mm east. Moved from (18000,15000): that origin clashed with the Q*_B stairs zone and WS_DOPE.",
+      "issued_size_mm": null,
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2321,8 +2582,8 @@
       "freecad_names": [],
       "level": "L0",
       "origin_mm": [
-        15600.0,
-        200.0,
+        18400.0,
+        600.0,
         0.0
       ],
       "size_mm": [
@@ -2331,13 +2592,14 @@
         1800
       ],
       "source": "ELECTRODE_COAT",
-      "source_doc": "ST-ELC-01. Carbon/Ni booth. Exhaust MET_AHU to MET_SCRUB. DSA deferred. 0.3 kW avg.",
+      "source_doc": "Rev H: issued envelope 1200x800x1800 (ELC-BOOTH-01). Moved from (15600,200): intersected MFG_FLOOR, 400 mm to MET_HX_Q4. South wall of MFG, 600 mm to ENV_WALL_S and GAS_ATOMIZER. Exhaust to MET_AHU.",
       "issued_size_mm": [
         1200.0,
         800.0,
         1800.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2346,8 +2608,8 @@
       "freecad_names": [],
       "level": "L0",
       "origin_mm": [
-        20000.0,
-        400.0,
+        19200.0,
+        6000.0,
         0.0
       ],
       "size_mm": [
@@ -2356,13 +2618,14 @@
         1600
       ],
       "source": "BLOW_MOLD",
-      "source_doc": "ST-BLOW-01. Precious Plastic class add-on on polymer line. 0.5 kW avg. Not a 14-28 kW EBM. Scrap to oil line, not leach.",
+      "source_doc": "Rev H: issued envelope 1200x800x1600 (BLOW-01). Moved from (20000,400): 200 mm from STAIR_S2. North MFG bay, south of CORR_L0_EW, >= 600 mm to equipment.",
       "issued_size_mm": [
         1200.0,
         800.0,
         1600.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2371,8 +2634,8 @@
       "freecad_names": [],
       "level": "L0",
       "origin_mm": [
-        18800.0,
-        10000.0,
+        17000.0,
+        13200.0,
         0.0
       ],
       "size_mm": [
@@ -2381,13 +2644,14 @@
         1600
       ],
       "source": "SOLAR_PV_CELL",
-      "source_doc": "ST-SOLAR-01 train: texture, emitter, PSG etch, ARC, contact, fire, IV. 1 kW mid. KOH from WS_KOH. Not the yard PV array.",
+      "source_doc": "Rev H: issued envelope 2400x1200x1600. Moved from (18800,10000): clashed with FAB_TOOL and PV_EMITTER. Free FAB bay north of ETCH_RETURN (600 mm), 1000 mm north of the LITHO group. The wafer_fab PV_* stubs (PV_TEXTURE..PV_ARC) are separate secondaries: duplication open.",
       "issued_size_mm": [
         2400.0,
         1200.0,
         1600.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2406,13 +2670,14 @@
         1200
       ],
       "source": "Q1_A",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Cross-tie coils inside: 2 x 1.84 m2 (DN25 OD 33.7 mm, bare, 3 row(s), 0.376 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on the L-1 floor. Coils, top to bottom: cross_tie (mid) 1.84 m2 (bare, 3 row, 0.376 m); down_evaporator (high) 1.51 m2 (bare, 2 row, 0.384 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2423,7 +2688,7 @@
       "origin_mm": [
         2700.0,
         9000.0,
-        -6000.0
+        -5150.0
       ],
       "size_mm": [
         800,
@@ -2431,13 +2696,14 @@
         1200
       ],
       "source": "Q2_A",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Cross-tie coils inside: 2 x 2.7 m2 (DN25 OD 33.7 mm, integral low-fin, 2 row(s), 0.305 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on a 850 mm steel stand (z -5150). Coils, top to bottom: down_condenser (low) 1.51 m2 (integral low-fin, 1 row, 0.292 m); cross_tie (mid) 2.70 m2 (integral low-fin, 2 row, 0.305 m); down_evaporator (high) 2.52 m2 (integral low-fin, 2 row, 0.284 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2448,7 +2714,7 @@
       "origin_mm": [
         4200.0,
         9000.0,
-        -6000.0
+        -4250.0
       ],
       "size_mm": [
         800,
@@ -2456,13 +2722,14 @@
         1200
       ],
       "source": "Q3_A",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Cross-tie coils inside: 2 x 0.92 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.352 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Rev H (AQS-DUTY-008 Rev C s14): on a 1750 mm steel stand (z -4250). Coils, top to bottom: down_condenser (low) 0.94 m2 (integral low-fin, 1 row, 0.162 m); cross_tie (mid) 0.92 m2 (integral low-fin, 1 row, 0.157 m); down_evaporator (high) 0.81 m2 (bare, 1 row, 0.311 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2473,7 +2740,7 @@
       "origin_mm": [
         5700.0,
         9000.0,
-        -6000.0
+        -3350.0
       ],
       "size_mm": [
         800,
@@ -2481,13 +2748,14 @@
         1200
       ],
       "source": "Q4_A",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Cross-tie coils inside: 2 x 0.78 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.271 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder A west of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Rev H (AQS-DUTY-008 Rev C s14): on a 2650 mm steel stand (z -3350). Coils, top to bottom: down_condenser (low) 0.81 m2 (bare, 1 row, 0.279 m); cross_tie (mid) 0.78 m2 (bare, 1 row, 0.270 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2506,13 +2774,14 @@
         1200
       ],
       "source": "Q1_B",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Cross-tie coils inside: 2 x 1.84 m2 (DN25 OD 33.7 mm, bare, 3 row(s), 0.376 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on the L-1 floor. Coils, top to bottom: cross_tie (mid) 1.84 m2 (bare, 3 row, 0.376 m); down_evaporator (high) 1.51 m2 (bare, 2 row, 0.384 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2523,7 +2792,7 @@
       "origin_mm": [
         16500.0,
         15000.0,
-        -6000.0
+        -5150.0
       ],
       "size_mm": [
         800,
@@ -2531,13 +2800,14 @@
         1200
       ],
       "source": "Q2_B",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Cross-tie coils inside: 2 x 2.7 m2 (DN25 OD 33.7 mm, integral low-fin, 2 row(s), 0.305 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on a 850 mm steel stand (z -5150). Coils, top to bottom: down_condenser (low) 1.51 m2 (integral low-fin, 1 row, 0.292 m); cross_tie (mid) 2.70 m2 (integral low-fin, 2 row, 0.305 m); down_evaporator (high) 2.52 m2 (integral low-fin, 2 row, 0.284 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2548,7 +2818,7 @@
       "origin_mm": [
         18000.0,
         15000.0,
-        -6000.0
+        -4250.0
       ],
       "size_mm": [
         800,
@@ -2556,13 +2826,14 @@
         1200
       ],
       "source": "Q3_B",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Cross-tie coils inside: 2 x 0.92 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.352 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Rev H (AQS-DUTY-008 Rev C s14): on a 1750 mm steel stand (z -4250). Coils, top to bottom: down_condenser (low) 0.94 m2 (integral low-fin, 1 row, 0.162 m); cross_tie (mid) 0.92 m2 (integral low-fin, 1 row, 0.157 m); down_evaporator (high) 0.81 m2 (bare, 1 row, 0.311 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2573,7 +2844,7 @@
       "origin_mm": [
         19500.0,
         15000.0,
-        -6000.0
+        -3350.0
       ],
       "size_mm": [
         800,
@@ -2581,13 +2852,14 @@
         1200
       ],
       "source": "Q4_B",
-      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Cross-tie coils inside: 2 x 0.78 m2 (DN25 OD 33.7 mm, bare, 1 row(s), 0.271 m tall each; evaporator low, condenser high), AQS-DUTY-008 Rev B s13.5. Ladder B east of the core; origin checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
+      "source_doc": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Rev H (AQS-DUTY-008 Rev C s14): on a 2650 mm steel stand (z -3350). Coils, top to bottom: down_condenser (low) 0.81 m2 (bare, 1 row, 0.279 m); cross_tie (mid) 0.78 m2 (bare, 1 row, 0.270 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world.",
       "issued_size_mm": [
         800.0,
         800.0,
         1200.0
       ],
       "apply": false,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     }
@@ -2617,6 +2889,7 @@
         1600.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2640,6 +2913,7 @@
       "source_doc": "Hab service, SW corner. Not kitchen air. Digest class alias. Not NaOH_DIGEST.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2663,6 +2937,7 @@
       "source_doc": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2686,6 +2961,7 @@
       "source_doc": "C29 cut pipe. PROD_C29 to pyro inlet. Not the wet line. Rev F: from (2000, 12400). Run moved off the glass row (was through GLASS_RINSE and GLASS_MILL); centred on PROD_C29, 400 mm nozzle approach.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2709,6 +2985,7 @@
       "source_doc": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2732,6 +3009,7 @@
       "source_doc": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL).",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2755,6 +3033,7 @@
       "source_doc": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2782,6 +3061,7 @@
         1600.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2805,6 +3085,7 @@
       "source_doc": "West of GEO_HP. Bore field tie. Massing only.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2828,6 +3109,7 @@
       "source_doc": "Yard, south of GEN, north of MeOH. Closed loop. Not a process pit.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2851,6 +3133,7 @@
       "source_doc": "Loop vessel beside GHEX. Not Salria.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2874,6 +3157,7 @@
       "source_doc": "ST-ORC-01 reserved pad. M1 duty is 0 kW_e until GHEX survey shows surplus after Q4. Do not buy a skid on this row.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": true,
       "frame": "plate_world"
     },
@@ -2897,6 +3181,7 @@
       "source_doc": "Downstream of black digest. HDR_GREY only. Not Salria.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2924,6 +3209,7 @@
         1600.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2951,6 +3237,7 @@
         1400.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -2978,6 +3265,7 @@
         1400.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3005,6 +3293,7 @@
         1100.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3028,6 +3317,7 @@
       "source_doc": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3051,6 +3341,7 @@
       "source_doc": "Water only, after scrub, <80 C. S63.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3074,6 +3365,7 @@
       "source_doc": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3097,6 +3389,7 @@
       "source_doc": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank. Rev F: from (-9200, 10000). Footprint cleared ZNBR2_BR2_REGEN (was intersecting); 600 mm to the Br2 tower. Still west of ESS.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3120,6 +3413,7 @@
       "source_doc": "params.py RECT_* . Same ordinary yard row. Not in Class I.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3143,6 +3437,7 @@
       "source_doc": "Wet side, not life floor. Class treat before any life return.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3166,6 +3461,7 @@
       "source_doc": "params.py SOLARK_* . East face at X=-1100 (NEC 110.26). North of rectifier. Outside ZnBr2 Class I.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3188,6 +3484,7 @@
       "source_doc": "South grade overflow header. Clean tower water. Not a machine.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3211,6 +3508,7 @@
       "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3234,6 +3532,7 @@
       "source_doc": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3257,6 +3556,7 @@
       "source_doc": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3280,6 +3580,7 @@
       "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3303,6 +3604,7 @@
       "source_doc": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3326,6 +3628,7 @@
       "source_doc": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3349,6 +3652,7 @@
       "source_doc": "CMP makeup. Glass silicate + UPW. Not an etch bath.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3372,6 +3676,7 @@
       "source_doc": "Flammable cabinet, FAB north wall. 1 h from HF room. Oil-vapor rules, not the acid header.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3395,6 +3700,7 @@
       "source_doc": "params.py ZNBR_* . East face 3048 mm west of X=0 (AQS-HSE-001 10 ft from openings). Y aligned to dock. Outdoor. Own Br2 tower, not CRU.",
       "issued_size_mm": null,
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3422,6 +3728,7 @@
         800.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3449,6 +3756,7 @@
         800.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     },
@@ -3476,11 +3784,267 @@
         1200.0
       ],
       "apply": true,
+      "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
     }
   ],
   "create_moves": [
+    {
+      "unit_id": "CONTINUOUS_RECYCLE",
+      "feature_name": "CONTINUOUS_RECYCLE",
+      "level": "L-1",
+      "origin_mm": [
+        5000.0,
+        4600.0,
+        -2700.0
+      ],
+      "size_mm": [
+        1500.0,
+        60.0,
+        60.0
+      ],
+      "envelope_kind": "study envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "HX8",
+      "feature_name": "HX8",
+      "level": "L-1",
+      "origin_mm": [
+        5200.0,
+        1900.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600.0,
+        400.0,
+        600.0
+      ],
+      "envelope_kind": "study envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MEOH_COND",
+      "feature_name": "MEOH_COND",
+      "level": "L0",
+      "origin_mm": [
+        -2448.0,
+        200.0,
+        0.0
+      ],
+      "size_mm": [
+        400.0,
+        400.0,
+        600.0
+      ],
+      "envelope_kind": "study envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "NOX_SCRUB",
+      "feature_name": "NOX_SCRUB",
+      "level": "L0",
+      "origin_mm": [
+        -3500.0,
+        5800.0,
+        0.0
+      ],
+      "size_mm": [
+        600.0,
+        400.0,
+        1200.0
+      ],
+      "envelope_kind": "study envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "RELIEF_CRYO",
+      "feature_name": "RELIEF_CRYO",
+      "level": "L-1",
+      "origin_mm": [
+        18300.0,
+        9500.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600.0,
+        400.0,
+        600.0
+      ],
+      "envelope_kind": "study envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "WS_PHOS",
+      "feature_name": "WS_PHOS",
+      "level": "L0",
+      "origin_mm": [
+        13000.0,
+        12600.0,
+        0.0
+      ],
+      "size_mm": [
+        800.0,
+        800.0,
+        1100.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "VCD_TRAIN",
+      "feature_name": "VCD_TRAIN",
+      "level": "L-1",
+      "origin_mm": [
+        12800.0,
+        700.0,
+        -6000.0
+      ],
+      "size_mm": [
+        1400.0,
+        600.0,
+        1200.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "REMIN",
+      "feature_name": "REMIN",
+      "level": "L1",
+      "origin_mm": [
+        5000.0,
+        2800.0,
+        6000.0
+      ],
+      "size_mm": [
+        600.0,
+        400.0,
+        800.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_COAT",
+      "feature_name": "LITHO_COAT",
+      "level": "L0",
+      "origin_mm": [
+        17800.0,
+        11400.0,
+        800.0
+      ],
+      "size_mm": [
+        600.0,
+        500.0,
+        800.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_ALIGN",
+      "feature_name": "LITHO_ALIGN",
+      "level": "L0",
+      "origin_mm": [
+        18400.0,
+        11400.0,
+        800.0
+      ],
+      "size_mm": [
+        500.0,
+        500.0,
+        800.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_DEV",
+      "feature_name": "LITHO_DEV",
+      "level": "L0",
+      "origin_mm": [
+        18900.0,
+        11400.0,
+        800.0
+      ],
+      "size_mm": [
+        500.0,
+        500.0,
+        800.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LITHO_STUB",
+      "feature_name": "LITHO_STUB",
+      "level": "L0",
+      "origin_mm": [
+        17800.0,
+        11400.0,
+        0.0
+      ],
+      "size_mm": [
+        1600.0,
+        800.0,
+        800.0
+      ],
+      "envelope_kind": "part of issued envelope (bench)",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "feature_name": "ELECTRODE_COAT",
+      "level": "L0",
+      "origin_mm": [
+        18400.0,
+        600.0,
+        0.0
+      ],
+      "size_mm": [
+        1200.0,
+        800.0,
+        1800.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "feature_name": "BLOW_MOLD",
+      "level": "L0",
+      "origin_mm": [
+        19200.0,
+        6000.0,
+        0.0
+      ],
+      "size_mm": [
+        1200.0,
+        800.0,
+        1600.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "feature_name": "SOLAR_PV_CELL",
+      "level": "L0",
+      "origin_mm": [
+        17000.0,
+        13200.0,
+        0.0
+      ],
+      "size_mm": [
+        2400.0,
+        1200.0,
+        1600.0
+      ],
+      "envelope_kind": "issued envelope",
+      "frame": "plate_world"
+    },
     {
       "unit_id": "Q1_A",
       "feature_name": "Q1_A",
@@ -3495,6 +4059,7 @@
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3504,13 +4069,14 @@
       "origin_mm": [
         2700.0,
         9000.0,
-        -6000.0
+        -5150.0
       ],
       "size_mm": [
         800.0,
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3520,13 +4086,14 @@
       "origin_mm": [
         4200.0,
         9000.0,
-        -6000.0
+        -4250.0
       ],
       "size_mm": [
         800.0,
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3536,13 +4103,14 @@
       "origin_mm": [
         5700.0,
         9000.0,
-        -6000.0
+        -3350.0
       ],
       "size_mm": [
         800.0,
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3559,6 +4127,7 @@
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3568,13 +4137,14 @@
       "origin_mm": [
         16500.0,
         15000.0,
-        -6000.0
+        -5150.0
       ],
       "size_mm": [
         800.0,
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3584,13 +4154,14 @@
       "origin_mm": [
         18000.0,
         15000.0,
-        -6000.0
+        -4250.0
       ],
       "size_mm": [
         800.0,
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     },
     {
@@ -3600,13 +4171,14 @@
       "origin_mm": [
         19500.0,
         15000.0,
-        -6000.0
+        -3350.0
       ],
       "size_mm": [
         800.0,
         800.0,
         1200.0
       ],
+      "envelope_kind": "issued envelope",
       "frame": "plate_world"
     }
   ],
@@ -3643,30 +4215,6 @@
     },
     {
       "unit_id": "HDR_N2",
-      "reason": "no_feature_name_no_study_row"
-    },
-    {
-      "unit_id": "RELIEF_CRYO",
-      "reason": "no_feature_name_no_study_row"
-    },
-    {
-      "unit_id": "RELIEF_H2",
-      "reason": "no_feature_name_no_study_row"
-    },
-    {
-      "unit_id": "WS_PHOS",
-      "reason": "no_feature_name_no_study_row"
-    },
-    {
-      "unit_id": "LITHO_COAT",
-      "reason": "no_feature_name_no_study_row"
-    },
-    {
-      "unit_id": "LITHO_ALIGN",
-      "reason": "no_feature_name_no_study_row"
-    },
-    {
-      "unit_id": "LITHO_DEV",
       "reason": "no_feature_name_no_study_row"
     }
   ],

@@ -6,7 +6,9 @@ First-principles duties, media, temperatures, flows and line sizes for the
 21 edges that carried presence "study" through Rev H. Inputs are graph values
 and issued envelopes; every other number is an assumption stated in A_* below.
 Rev J (AQS-DUTY-008 Rev B) adds main_j(): HX-8 on Q4, Q3 draws HX-4/5/6, re-rated Q3/Q4.
-Run: python3 _hl_edges_study.py [--json out.json] [--rev-j]
+Rev K (AQS-DUTY-008 Rev C) adds main_k(): thermosyphon static head vs loop pressure drop at the
+placed store elevations, stepped store elevations for the downhill steps, pumped cross-ties.
+Run: python3 _hl_edges_study.py [--json out.json] [--rev-j | --rev-k]
 """
 from __future__ import annotations
 import json, math, sys
@@ -596,7 +598,171 @@ def main_j():
                 r1=r1_variant(h8, leach), q4_bus_running_normal_kw=kw(2 * N["Q4"]["down"]),
                 q4_bus_running_single_kw=kw(S["Q4"]["down"]), q4_life_kw=3.0)
 
+
+# ================================================================ Rev K (AQS-DUTY-008 Rev C)
+# Thermosyphon rise. Inputs: Rev J rated duties, Rev G store origins (z -6000 both ladders, 1500 mm pitch),
+# issued envelope 800 x 800 x 1200. A_K_* are decisions.
+A_K_Z0 = -6000.0             # mm, Rev G origin z of every store (L-1 FFL)
+A_K_PITCH = 1.5              # m, store centre-to-centre along the ladder row (Rev G)
+A_K_COIL_CLEAR = 0.06        # m, coil to inner top / bottom (same as coil_fit radial clearance)
+A_K_DP_CHECK = 500.0         # Pa, cracking pressure of the low-cracking swing check on the condensate return
+A_K_H_MIN = 0.30             # m, minimum condensate leg above the evaporator (level swing + check + drain-down)
+A_K_ROUND = 0.05             # m, store elevation step rounded up to 50 mm
+A_K_ELBOW_LD = 30.0          # L/D per long-radius elbow
+A_K_SLAB_SOFFIT = -300.0     # mm, underside of the L0 slab over L-1 (SLAB_L0 on the placed copy)
+A_K_HEADROOM = 600.0         # mm, maint_clear_mm above the highest store
+A_K_PUMP_ETA = 0.15          # wire-to-water, small canned / mag-drive circulator
+A_K_COIL_HELIX = 1.3         # friction multiplier for helical coil vs straight tube
+A_K_K_MINOR = 12.0           # sum of minor losses per cross-tie loop (2 isolation, 1 check, 4 tees, entries)
+A_K_X_DT = 5.0               # K, cross-tie loop supply - return
+OIL_Q1X = dict(name="synthetic thermal oil, hydrogenated terphenyl class", rho=860.0, cp=2.48, mu=0.60e-3, beta=9.0e-4)
+OIL_Q2X = OIL_Q2
+WATER_Q3X = dict(name="treated water (Q3 cross-tie loop, pressurized 2.5 bar a)", rho=962.0, cp=4.21, mu=0.30e-3, beta=7.0e-4)
+WATER_Q4X = dict(name="treated water (Q4 cross-tie loop)", rho=980.0, cp=4.18, mu=0.43e-3, beta=5.5e-4)
+STEP_KEYS = (("Q1", "Q2", "DA_200", "DOWN_Q1"), ("Q2", "Q3", "W_125", "DOWN_Q2"), ("Q3", "Q4", "W_85", "DOWN_Q3"))
+X_KEY = {"Q1": "DA_245", "Q2": "W_145", "Q3": "W_95", "Q4": "W_65"}   # Rev J two-phase keys; give the blocked store temperature
+X_DESIGN_P = {"Q1": 1.0, "Q2": 1.0, "Q3": 2.5, "Q4": 1.0}               # bar a, closed loop with expansion tank (Q3 pressurized)
+X_FLUID = {"Q1": (OIL_Q1X, 245.0, 240.0), "Q2": (OIL_Q2X, 145.0, 140.0), "Q3": (WATER_Q3X, 95.0, 90.0), "Q4": (WATER_Q4X, 65.0, 60.0)}
+
+
+def store_geom(tier):
+    vol, T, (shape, a, b, h), t, k, mat = STORES[tier]
+    base = (ENVELOPE[2] - h) / 2      # inner base above the store origin (symmetric bottom / top build-up)
+    return base, h
+
+
+def coil_height(area, tier, lowfin, dn=25, clear=0.06):
+    od = {15: 0.0213, 20: 0.0269, 25: 0.0337}[dn]
+    vol, T, (shape, a, b, h), t, k, mat = STORES[tier]
+    d0 = (a if shape == "cyl" else min(a, b)) - 2 * clear - od
+    mult = A_J_LOWFIN[0] * A_J_LOWFIN[1] if lowfin else 1.0
+    L = area / (math.pi * od * mult)
+    for rows in range(1, 4):
+        ds = [d0 - 4 * od * i for i in range(rows)]
+        turns = L / (math.pi * sum(ds))
+        height = turns * 2 * od
+        if height <= 0.45 * h:
+            break
+    return dict(tube="bare" if not lowfin else "integral low-fin", tube_m=round(L, 1), rows=rows, height_m=round(height, 3))
+
+
+def pack_store(tier, coils):
+    """coils: list of (name, area). All bare first; switch the tallest bare coil to low-fin until the stack fits 0.9 h."""
+    base, h = store_geom(tier)
+    lowfin = {n: False for n, _ in coils}
+    while True:
+        res = {n: coil_height(a, tier, lowfin[n]) for n, a in coils}
+        tot = sum(r["height_m"] for r in res.values())
+        if tot <= 0.9 * h or all(lowfin.values()):
+            break
+        tall = max((n for n in lowfin if not lowfin[n]), key=lambda n: res[n]["height_m"])
+        lowfin[tall] = True
+    for n, a in coils:
+        res[n]["area_m2"] = round(a, 2)
+    return dict(coils=res, stack_m=round(tot, 3), inner_h_m=h, fits=tot <= 0.9 * h)
+
+
+def pumped_loop_dp(fl, m, dn, L, coil_m):
+    d = PIPE_ID_MM[dn] / 1000
+    dpp, v, Re = dp_darcy(m, fl["rho"], fl["mu"], dn, L)
+    dpc, vc, Rec = dp_darcy(m, fl["rho"], fl["mu"], 25, 2 * coil_m)
+    dpm = A_K_K_MINOR * fl["rho"] * v * v / 2
+    return dpp + dpc * A_K_COIL_HELIX + dpm
+
+
+def main_k():
+    J = main_j()
+    rated = dict(J["base"]["rated"])
+    rated.update(J["rated_j"])
+    # coil areas: downhill evaporator (source tier U) / condenser (sink tier U); one bidirectional cross-tie coil per store
+    areas = {}
+    for s, k, key, rk in STEP_KEYS:
+        areas[(s, "evap")] = coil(rated[rk], s)
+        areas[(k, "cond")] = coil(rated[rk], k)
+    packs = {}
+    for t in ("Q1", "Q2", "Q3", "Q4"):
+        lst = []
+        if (t, "cond") in areas:
+            lst.append(("down_condenser (low)", areas[(t, "cond")]))
+        lst.append(("cross_tie (mid)", coil(rated["X_" + t], t)))
+        if (t, "evap") in areas:
+            lst.append(("down_evaporator (high)", areas[(t, "evap")]))
+        packs[t] = pack_store(t, lst)
+    steps, z = {}, {"Q1": A_K_Z0 / 1000}
+    for s, k, key, rk in STEP_KEYS:
+        f = TP[key]
+        bs, hs = store_geom(s)
+        bk, hk = store_geom(k)
+        he = packs[s]["coils"]["down_evaporator (high)"]["height_m"]
+        hc = packs[k]["coils"]["down_condenser (low)"]["height_m"]
+        evap_c = bs + hs - A_K_COIL_CLEAR - he / 2       # above the source origin
+        cond_c = bk + A_K_COIL_CLEAR + hc / 2            # above the sink origin
+        # Rev B layout at equal elevation: evaporator low in the source, condenser high in the sink
+        rise_revb = (bk + hk - A_K_COIL_CLEAR - hc / 2) - (bs + A_K_COIL_CLEAR + he / 2)
+        # stratification-correct layout (extract at the top of the hot store, inject at the bottom of the cold store)
+        rise_flat = cond_c - evap_c
+        tp0 = twophase(rated[rk], key, A_L_DOWN)
+        dn = tp0["line_DN"]
+        # route: in-store legs + level change + pitch, plus 4 long-radius elbows on the vapor line
+        def route(H):
+            straight = 0.4 + 0.4 + abs(H) + A_K_PITCH
+            return straight + 4 * A_K_ELBOW_LD * PIPE_ID_MM[dn] / 1000
+        rho_v = f["P"] * f["M"] / (R * (f["T"] + 273.15))
+        m = rated[rk] / f["hfg"]
+        H = A_K_H_MIN
+        for _ in range(20):
+            L = max(A_L_DOWN, route(H))
+            dpv, vv, _r = dp_darcy(m, rho_v, f["mu_v"], dn, L)
+            dpl, vl, _r2 = dp_darcy(m, f["rl"], f["mu_l"], 15, L)
+            dpt = dpv + dpl + A_K_DP_CHECK
+            Hn = max(A_K_H_MIN, 2 * dpt / (f["rl"] * 9.81))
+            if abs(Hn - H) < 1e-4:
+                break
+            H = Hn
+        dz = math.ceil((evap_c - cond_c + H) / A_K_ROUND - 1e-9) * A_K_ROUND
+        H_act = dz - (evap_c - cond_c)
+        head = (f["rl"] - rho_v) * 9.81 * H_act
+        z[k] = z[s] + dz
+        steps[rk] = dict(src=s, dst=k, fluid=key, medium=f["name"], rated_kw=kw(rated[rk]), line_DN=dn, L_eq_m=round(L, 2),
+                         m_kg_s=round(m, 6), dp_vapor_Pa=round(dpv, 1), dp_liquid_Pa=round(dpl, 2), dp_check_Pa=A_K_DP_CHECK,
+                         dp_total_Pa=round(dpt, 1), H_req_m=round(H, 3),
+                         same_elev_revB_rise_m=round(rise_revb, 3), same_elev_revB_head_Pa=round(f["rl"] * 9.81 * rise_revb, 0),
+                         same_elev_correct_rise_m=round(rise_flat, 3),
+                         evap_centre_m=round(evap_c, 3), cond_centre_m=round(cond_c, 3), dz_store_m=round(dz, 3),
+                         rise_m=round(H_act, 3), head_Pa=round(head, 0), dp_over_head=round(dpt / head, 3), gravity_ok=dpt < 0.5 * head)
+    top = (z["Q4"] * 1000 + ENVELOPE[2] * 1000)
+    elev = dict(z_mm={t: round(v * 1000) for t, v in z.items()}, q4_top_mm=round(top),
+                headroom_mm=round(A_K_SLAB_SOFFIT - top), headroom_ok=(A_K_SLAB_SOFFIT - top) >= A_K_HEADROOM)
+    xties = {}
+    for t, (fl, ts, tr) in X_FLUID.items():
+        p = pumped(rated["X_" + t], fl, ts, tr)
+        mm = p["m_kg_s"]
+        xc = packs[t]["coils"]["cross_tie (mid)"]
+        coil_m = xc["tube_m"]
+        dpl = pumped_loop_dp(fl, mm, p["line_DN"], 2 * A_L_X, coil_m)   # supply + return, 25 m each way
+        qv = mm / fl["rho"]
+        hyd = qv * dpl
+        xties[t] = dict(rated_kw=kw(rated["X_" + t]), **p, L_eq_m=2 * A_L_X, coil_area_m2_each=xc["area_m2"],
+                        coil_tube=xc["tube"], coil_tube_m_each=coil_m, loop_dp_kPa=round(dpl / 1000, 2), pump_head_m=round(dpl / (fl["rho"] * 9.81), 2),
+                        pump_hydraulic_W=round(hyd, 2), pump_electric_W=round(hyd / A_K_PUMP_ETA, 1),
+                        store_dT_at_rated_K=2 * A_J_COIL_DT + A_K_X_DT, T_max_C=PSAT_MAX[X_KEY[t]][0],
+                        P_loop_bar_a=X_DESIGN_P[t])
+    return dict(J=J, packs=packs, steps=steps, elevations=elev, xties=xties)
+
+
 if __name__ == "__main__":
+    if "--rev-k" in sys.argv:
+        r = main_k()
+        if "--json" in sys.argv:
+            json.dump({k: v for k, v in r.items() if k != "J"}, open(sys.argv[sys.argv.index("--json") + 1], "w"), indent=1, default=float)
+        for t, pk in r["packs"].items():
+            print("pack", t, json.dumps(pk))
+        for k, st in r["steps"].items():
+            print("step", k, json.dumps(st))
+        print("elev", json.dumps(r["elevations"]))
+        for t, x in r["xties"].items():
+            print("xtie", t, json.dumps(x))
+        sys.exit(0)
     if "--rev-j" in sys.argv:
         r = main_j()
         if "--json" in sys.argv:

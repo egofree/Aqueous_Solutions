@@ -2,8 +2,8 @@
   "schema": "aqs-unit-freecad-map-1.0",
   "licence": "CERN-OHL-S-2.0",
   "doc_id": "AQS-UNIT-FREECAD-MAP-001",
-  "revision": "B",
-  "date": "2026-10-01",
+  "revision": "C",
+  "date": "2026-10-07",
   "graph_doc_id": "AQS-FLOW-GRAPH-001",
   "graph_revision": "B",
   "freecad_binary": "/usr/bin/freecadcmd",
@@ -567,6 +567,24 @@
         "Wet"
       ],
       "notes": "alias: graph FLOAT_SINK \u2192 FLOAT_DEWATER + SINK_DEWATER"
+    },
+    {
+      "unit_id": "FLUE_KO",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "separator",
+      "status": "mapped",
+      "freecad_names": [
+        "FLUE_CAP"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": "Rev C (graph Rev K): FLUE_CAP is the afterburner flue KO (VENT_SCRUB_EQUIPMENT s2.5). Feature name, not a unit alias: FLUE_CAP is not a graph unit_id."
     },
     {
       "unit_id": "FUEL_CELL",
@@ -1274,6 +1292,24 @@
       "notes": ""
     },
     {
+      "unit_id": "RELIEF_H2",
+      "sector_id": "GAS",
+      "presence": "present",
+      "enabled": true,
+      "class": "relief",
+      "status": "mapped",
+      "freecad_names": [
+        "H2_STACK"
+      ],
+      "builder": "gas_handling.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Gas"
+      ],
+      "notes": "Rev C (graph Rev K): H2_STACK (label MASSING_H2_STACK) is the 8 m H2 vent stack, the RELIEF_H2 discharge (NFPA 2). Centred cylinder: no seed row, never moved. Feature name, not a unit alias."
+    },
+    {
       "unit_id": "REMIN",
       "sector_id": "WTR",
       "presence": "placeholder",
@@ -1613,5 +1649,6 @@
       ],
       "notes": "secondaries ZNBR2_NEG_TANK, ZNBR2_POS_TANK, ZNBR2_BR2_SCRUBBER, ZNBR2_BR2_REGEN"
     }
-  ]
+  ],
+  "rev_c_note": "Graph Rev K: FLUE_KO -> FLUE_CAP and RELIEF_H2 -> H2_STACK added. LOAD_AGG is class boundary on the graph. Units created on the placed copy from issued or study envelopes carry their own unit_id as the Feature name and are not listed here. Coverage block below is from the original inventory and is not recounted."
 }

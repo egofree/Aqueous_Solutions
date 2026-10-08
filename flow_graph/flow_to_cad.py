@@ -8,7 +8,8 @@ is not rewritten.
 
 A unit is placed only when the table has origin_mm and level for that
 unit_id, or for a block_id the unit is explicitly assigned to. Missing
-rows are gaps, not boxes.
+rows are gaps, not boxes. A row with "fixed_feature": true records where an
+existing Feature already is (bounding-box origin) and is never written.
 
     python3 flow_to_cad.py --graph plant_flow_graph.json \\
         --map unit_freecad_map.json --placements placement_seed.json \\
@@ -57,6 +58,26 @@ def issued_size(n: dict) -> list | None:
     if isinstance(size, list) and len(size) == 3 and "issued envelope" in note:
         return [float(v) for v in size]
     return None
+
+
+def study_size(n: dict) -> list | None:
+    """Graph size_mm when the node carries a study envelope derived from its duty
+    (size_note contains "study envelope"), else None. Created on the copy only when
+    listed in --create-issued-only; never used to resize a mapped Feature."""
+    p = n.get("params") or {}
+    size = p.get("size_mm")
+    note = str(p.get("size_note") or "").lower()
+    if isinstance(size, list) and len(size) == 3 and "study envelope" in note:
+        return [float(v) for v in size]
+    return None
+
+
+def envelope_part_ok(row: dict, envelope: list) -> bool:
+    """A row marked envelope_part draws one part of an issued group envelope
+    (e.g. the bench under its tools). Each dimension must fit inside it."""
+    size = row.get("size_mm")
+    return (bool(row.get("envelope_part")) and isinstance(size, list) and len(size) == 3
+            and all(float(a) <= float(b) for a, b in zip(size, envelope)))
 
 
 def index_placements(table: dict) -> tuple[dict, dict, dict]:
@@ -131,19 +152,35 @@ def plan(graph: dict, unit_map: dict, table: dict, issued_envelopes: bool = True
             size = row.get("size_mm")
             explicit = "unit_id" in row and row.get("block_id") is None
             issued = issued_size(n) if (issued_envelopes and explicit) else None
+            create_size = issued
+            create_kind = "issued envelope"
             if issued is not None and isinstance(size, list) and [float(v) for v in size] != issued:
-                size_conflicts.append({"unit_id": uid, "seed_size_mm": size, "issued_size_mm": issued})
+                if envelope_part_ok(row, issued):
+                    create_size = [float(v) for v in size]
+                    create_kind = "part of issued envelope (%s)" % row.get("envelope_part")
+                else:
+                    size_conflicts.append({"unit_id": uid, "seed_size_mm": size, "issued_size_mm": issued})
+                    create_size = None
                 issued = None
-            if (create_issued and issued is not None and not names
+            if create_size is None and issued_envelopes and explicit and not names:
+                study = study_size(n)
+                if study is not None:
+                    if isinstance(size, list) and [float(v) for v in size] != study:
+                        size_conflicts.append({"unit_id": uid, "seed_size_mm": size, "study_size_mm": study})
+                    else:
+                        create_size = study
+                        create_kind = "study envelope"
+            if (create_issued and create_size is not None and not names
                     and (create_only is None or uid in create_only)):
-                # Issued envelope, explicit seed row, no Feature on the model: the
-                # copy gets one envelope box named after the unit. Not a nameplate.
+                # Issued (or duty-derived study) envelope, explicit seed row, no Feature on
+                # the model: the copy gets one envelope box named after the unit. Not a nameplate.
                 creates.append({
                     "unit_id": uid,
                     "feature_name": uid,
                     "level": row.get("level"),
                     "origin_mm": list(origin),
-                    "size_mm": issued,
+                    "size_mm": create_size,
+                    "envelope_kind": create_kind,
                     "frame": "plate_world",
                 })
             moves.append({
@@ -155,7 +192,8 @@ def plan(graph: dict, unit_map: dict, table: dict, issued_envelopes: bool = True
                 "source": row.get("block_id") or uid,
                 "source_doc": row.get("source"),
                 "issued_size_mm": issued,
-                "apply": explicit and bool(names),
+                "apply": explicit and bool(names) and not row.get("fixed_feature"),
+                "fixed_feature": bool(row.get("fixed_feature")),
                 "study": placeholder,
                 "frame": "plate_world",
             })
@@ -285,7 +323,9 @@ def main() -> int:
                          "reconciled with the plant model.")
     ap.add_argument("--create-issued-only", default=None,
                     help="Comma list of unit_ids: like --create-issued, but only for these rows "
-                         "(rows whose seed origin has been reconciled with the plant model).")
+                         "(rows whose seed origin has been reconciled with the plant model). "
+                         "Also creates duty-derived study envelopes (size_note 'study envelope') "
+                         "and envelope_part rows of an issued group envelope.")
     args = ap.parse_args()
     create_only = None
     if args.create_issued_only:
