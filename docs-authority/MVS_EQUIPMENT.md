@@ -1,8 +1,8 @@
 # MVS equipment issue
 
 Document: AQS-MVS-EQP-001
-Date: 2026-10-02; Rev K 2026-10-07
-Graph Rev K. L×W×H are issued envelopes in millimetres, not vendor nameplates, except the study envelopes in the second table.
+Date: 2026-10-02; Rev K 2026-10-07; Rev L 2026-10-07
+Graph Rev L (no envelope changes from Rev K). L×W×H are issued envelopes in millimetres, not vendor nameplates, except the study envelopes in the second table.
 
 ## Envelopes
 
@@ -45,9 +45,23 @@ Physical units with no issued size. Each envelope is derived from the unit duty.
 | NOX_SCRUB | 600 | 400 | 1200 | H₂ genset exhaust 10.4 kg/h (3.6 kg/d H₂ at λ 2, 69.6 kg/kg): about 9.5 m³/h at 40 °C, DN100 packed column at under 0.5 m/s, 0.6 m packing + sump + demister. |
 | MEOH_COND | 400 | 400 | 600 | MeOH fuel-cell condensate 5.6 kg/d (2 H₂O per CH₃OH on 5.0 kg/d MeOH): DN150 KO pot, trap and level switch. |
 | RELIEF_CRYO | 600 | 400 | 600 | Contingency vent damper section on the CRYO_AHU exhaust: 12 ACH × 216 m³ = 2592 m³/h, 300 × 300 duct at 8 m/s, actuator and flanges. |
-| CONTINUOUS_RECYCLE | 1500 | 60 | 60 | Line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor. IA-REC-01 rate not issued. |
+| CONTINUOUS_RECYCLE | 1500 | 60 | 60 | Line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor. Rev L: IA-REC-01 3977.5 kg/d = 0.158 m³/h, 0.02 m/s in DN50, below solids-carrying velocity (AQS-DUTY-010). |
 
 Existing Features carry two more units (unit map Rev C, Feature names, not unit aliases): FLUE_KO is FLUE_CAP (600 × 700 × 1100; a DN300 KO drum with mesh pad fits it even at the 180 m³/h AQS-GAS-003 NCG case, and it is large for the graph 10.07 kg/h), and RELIEF_H2 is H2_STACK (Ø250 × 8000 H₂ vent stack).
+
+## Duties against envelopes (Rev L)
+
+Rev L rates every edge (AQS-DUTY-010). Three issued sizes need checking against the new rates. No envelope changes in Rev L.
+
+| Unit | Rev L duty | Envelope basis | Note |
+|---|---|---|---|
+| VCD_TRAIN (VCD-COMP-01) | feed 178.9 kg/d (S13 31.5 + S29 104.5 + S52 42.9); distillate S25 161.0 | 0.11 m³/d | Under-rated: re-rate to 0.18 m³/d |
+| NOX_SCRUB | S46 250.6 kg/d = 10.44 kg/h | 10.4 kg/h | Matches |
+| MEOH_COND | S81 5.62 kg/d | 5.6 kg/d | Matches |
+| RELIEF_CRYO | S56 / S86 0 continuous; CRYO AHU 2592 m³/h | 2592 m³/h | Contingency only |
+| FLUE_KO (FLUE_CAP) | S67 241.7 kg/d + S70 0.05; condensate 4.14 kg/d; S67B 12.75 | 10.07 kg/h | Matches |
+| MET_SCRUB | S62 1800 m³/h + S71 720 m³/h; blowdown S72 2.44 kg/d | — | Size check open |
+| ACID_POLISH_SCRUB | S65 1500 m³/h at 50 °C; blowdown S66 27.4 kg/d | VENT_SCRUB_EQUIPMENT §2.1 | Matches the band |
 
 LOAD_AGG is class `boundary` since Rev K (S17/S20 electrical accounting, no solid), with BOUNDARY_EXPORT.
 

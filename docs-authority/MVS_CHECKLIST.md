@@ -1,7 +1,7 @@
 # MVS checklist
 
 Document: AQS-MVS-CHK-001
-Date: 2026-10-02; updated 2026-10-07 (graph Rev K)
+Date: 2026-10-02; updated 2026-10-07 (graph Rev L)
 Plan: docs-authority/MVS_PLAN.md
 Graph topology is the baseline. Check an item only when the solid or the number exists.
 
@@ -28,6 +28,7 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] Burnout off-gas on the oil-vapor header
 - [x] Glass order is rinse, drain, mill, burnout, existing digest
 - [x] VCD-COMP-01 1400×600×1200, 14–20 kWh/m³ at 0.11 m³/d
+- [ ] VCD feed is 0.18 m³/d at Rev L rates (S13 + S29 + S52 = 178.9 kg/d); re-rate VCD-COMP-01 (AQS-DUTY-010)
 - [x] VCD equipment ID issued
 - [x] REMIN-01 600×400×800, hydroxide crib
 - [x] REMIN 10 L/d, 25 mg/L Ca, 10 mg/L Mg
@@ -65,13 +66,28 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] Q3 draws HX-4/HX-5/HX-6 are graph edges with duties 0.242 / 6.353 / 1.663 kW (§13.2)
 - [x] Ladder balance closes running and idle, both ladders and single ladder (residual 0.000 kW)
 - [x] Cross-tie coils fit inside the stores (Q2 on low-fin tube) (§13.5)
-- [ ] Leach heater rating: 6.35 kW electric trim has no issued rating; issue one or adopt recuperator R-1 (§13.7)
+- [ ] Leach heater rating: 6.35 kW electric trim has no issued rating; issue one or adopt recuperator R-1 (§13.7). Rev L: HX-5 gets 0 kW from Q3 at normal duty; S16 composition and the Faraday H₂ basis feed this duty
 - [ ] Digest heater: 1.08 kW trim sits inside the 1.5 kW GLASS_DIGEST study class; issue the class as the rating
 - [x] HDR_CO2 consumer: S89 HDR_CO2 → GROW_BED 11.616 kg/d, farm enrichment at 1000 ppm, DN15 316L at 3.0 bar a; MeOH rejected (H₂-limited) (AQS-DUTY-009)
-- [ ] Q4 bus 4.24 kW running vs 3.0 kW life priority; surplus 1.24 kW to ST-ORC-01 (ORC stays 0)
+- [x] Hab metabolic CO₂ on the graph: S90 HABITATION → HDR_CO2 4.021 kg/d; S89 15.637 kg/d; farm OA 933.5 m³/h (AQS-DUTY-009 Rev B)
+- [ ] Q4 bus vs 3.0 kW life load: ladder 4.24 kW + rated Q4 peers (S53 1.14, S54 0.54, S63 0.02, S80 0.37) = 6.32 kW; surplus 3.32 kW, no sink. GEO_HP 0 on the design day (AQS-DUTY-010)
 - [x] Thermosyphon rise: downhill steps gravity on stepped stores (Q2 −5150, Q3 −4250, Q4 −3350), rise 0.30–0.33 m, Δp/head ≤ 0.23; cross-ties pumped loops XL-Q1..Q4, 4–29 W, normally off (AQS-DUTY-008 Rev C §14)
 - [ ] Store stands (up to 2.65 m) and access platform designed
 - [ ] Cross-tie pumps selected (XL-Q1/Q2 high-temperature magnetic drive)
+
+## Edge rates and conservation (AQS-DUTY-010)
+
+- [x] Every present edge rated with rate_basis / rate_source in params: 0 present edges unrated (graph Rev L)
+- [x] Placeholders closed: 16 made present, 4 retired (IA-POL-01, S48, IA-ESS-MEOH-CHG/DIS), S87/S88 back to placeholder on HOLD with the reason on the edge
+- [x] Node conservation run at ±1 %: 88 balances, 68 closed, 9 closed with one by-difference term, 11 open
+- [ ] H2_DRYER: S05 and S64 both carry the 4.8 kg/d pool (alias)
+- [ ] CRYO_H2: dispatch rule for S45 / S49 / S74
+- [ ] S12 lands on NUTRIENT_DOSE; GREY_TREAT has no grey inlet
+- [ ] BMED_UPW_POLISH short 7.2 kg/d (S25 161.0 vs 168.2 demand)
+- [ ] CRU / BMED_ACID / BMED_BASE: BMED salt feed, water make-up, REGEN LEACH and digest caustic edges missing; Cl loop not closed
+- [ ] SOL_ARK_60K: PV / grid source edges, daily-average S17, S20 direction
+- [ ] ZNBR2: electrolyte accumulates the S69B water; no bleed
+- [ ] AFTERBURNER CO₂: S11 carbon (0.554 kg/d) not in the DUTY-008 15.0 kg/d basis
 
 ## Fab room
 
@@ -104,4 +120,5 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 ## Done
 
 - [x] Every present node has a solid, is a header, or is a logical boundary: 112 solid, 8 header, 2 boundary (BOUNDARY_EXPORT, LOAD_AGG), 0 fail (graph Rev K, copy revK)
-- [ ] loops_closed still false. The copy now carries the solids; still open: 83 present edges with no rate, 20 placeholder edges, the open items above, S87/S88 HOLD, hab exhaled CO₂ not on the graph
+- [x] Done test on graph Rev L, copy revK: 112 solid, 8 header, 2 boundary, 0 fail
+- [ ] loops_closed still false. Edges are all rated and S90 is on the graph; still open: the eleven open balances above, the leach heater rating, the digest heater class, the Q4 surplus, the legacy CAD overlaps, S87/S88 HOLD

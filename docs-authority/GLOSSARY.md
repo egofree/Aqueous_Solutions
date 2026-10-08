@@ -196,7 +196,19 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {Rated duty -- For an HL-* edge, the single-ladder throughput × 1.25; carried as the edge rate. Normal duty is both ladders on line. AQS-DUTY-008.}
 
-{S89 -- HDR_CO2 → GROW_BED, 11.616 kg/d CO₂ enrichment dose through the FARM AHU, 3.0 bar a, DN15 316L. Only consumer of HDR_CO2. CO₂ only: no tee to HDR_O2, hab air, the HAB return or the dock. AQS-DUTY-009.}
+{S89 -- HDR_CO2 → GROW_BED CO₂ enrichment dose through the FARM AHU, 3.0 bar a, DN15 316L. 11.616 kg/d at Rev K; 15.637 kg/d from Rev L (S85 + S90). Only consumer of HDR_CO2. CO₂ only: no tee to HDR_O2, hab air, the HAB return or the dock. AQS-DUTY-009.}
+
+{S90 -- HABITATION → HDR_CO2, 4.021 kg/d metabolic CO₂ (S02 3.36 kg/d O₂ × RQ 0.87 × 44/32), desorbed from the hab CO₂ sorbent bed. CO₂ only; hab air never enters the header. Rev L, AQS-DUTY-010.}
+
+{rate_basis / rate_source -- Edge params from Rev L. rate_basis is the derivation in one line; rate_source is the document or graph value it rests on. With medium, conditions and rate_kind (derived or by_difference). AQS-DUTY-010.}
+
+{By difference -- A rate set so that one node balance closes, for example the leach-loop brine bleed (level control) or S10 (spent bench liquor = sum of bench inputs − S38). Marked rate_kind by_difference; a node that closes this way is reported separately from one whose terms are all derived.}
+
+{balance_rev_l -- Node params block from Rev L listing the off-graph terms used in the node balance (feed, harvest, vents, losses, life loads), each with its basis. AQS-DUTY-010.}
+
+{Design day -- Rev L conservation basis: daily average, plant running normal on both ladders, dry weather, one pumped-hydro cycle per day.}
+
+{HOLD placeholder -- S87 and S88 from Rev L. Kept as placeholder edges with the reason on the edge (no clean endpoint under the O₂ and N₂ rules), not rated and not retired.}
 
 {CO₂ enrichment -- Farm air held at 1000 ppm in the 16 h photoperiod. GROW_BED fixes S04 (1.109 kg/d); the S89 carbon leaves with farm exhaust air. Use, not sequestration.}
 

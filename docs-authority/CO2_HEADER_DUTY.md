@@ -1,13 +1,14 @@
 # HDR_CO2 consumer duty
 
 Document number: AQS-DUTY-009
-Revision: A
+Revision: B
 Date: 2026-10-07
-Authority: AQS-FLOW-GRAPH-001 Rev K; AQS-DUTY-008 Rev C §13.3. Not a PE stamp.
+Authority: AQS-FLOW-GRAPH-001 Rev K (Rev B: Rev L); AQS-DUTY-008 Rev C §13.3. Not a PE stamp.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | First issue. Consumer for S85 chosen, S89 added, HDR_CO2 balance closed | 2026-10-07 |
+| B | §7 | S90 hab metabolic CO₂ joins HDR_CO2; S89 and farm OA re-rated (AQS-DUTY-010) | 2026-10-07 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -83,3 +84,23 @@ Fate, stated plainly: the S85 carbon is used once for growth enrichment and then
 1. Hab exhaled CO₂ (about 1 kg/person·d) is not on the graph. LIFE_MEP draws HAB_AIR → HDR_CO2; if it is added, the farm outdoor air rises in proportion (4 kg/d more gives about 932 m³/h, still inside the duct).
 2. Outdoor-air heat recovery for the farm exhaust (sensible plate only, no wheel) is not designed.
 3. S87/S88 (farm O₂ capture and N₂ make-up) are still on HOLD. At 694 m³/h the farm O₂ surplus is diluted; S87 may not be needed.
+
+## 7. Rev B: hab metabolic CO₂ (S90)
+
+Graph Rev L adds S90 HABITATION → HDR_CO2. The crew of 4 uses S02 = 0.84 × 4 = 3.36 kg/d O₂. At a respiratory quotient of 0.87 they exhale 3.36 × 0.87 × 44.01/32.00 = 4.021 kg/d CO₂. The sealed hab's sorbent bed holds this CO₂. It desorbs as dry CO₂ and is compressed into HDR_CO2 at 3.0 bar a. This is the LIFE_MEP route HAB_AIR → HDR_CO2 → farm. Hab air itself never enters the header. O₂ does not tee into the hab from this line.
+
+`_co2_header_study.py` now reads S90 from the graph when it is present:
+
+| | Rev A | Rev B |
+|---|---:|---:|
+| HDR_CO2 in | S85 11.616 | S85 11.616 + S90 4.021 = 15.637 |
+| S89 (out) | 11.616 | 15.637 |
+| Residual | 0 | 0 |
+| Farm OA in the photoperiod, m³/h | 693.5 | 933.5 (0.96 ACH) |
+| Duct velocity at all-OA, m/s | — | 1.73 |
+| Extra OA sensible load at 10 K, kW | — | 2.29 |
+| S89 peak, kg/h / velocity in DN15, m/s | 0.726 / 0.19 | 0.977 / 0.25 |
+| Dark buffer, kg | 3.87 | 5.21 |
+
+GROW_BED still fixes S04 (1.109 kg/d). The 15.637 kg/d on S89 leaves with farm exhaust air. Open item 1 of §6 is closed. Item 3 is answered in AQS-DUTY-010: S87 and S88 stay on HOLD as placeholders.
+
