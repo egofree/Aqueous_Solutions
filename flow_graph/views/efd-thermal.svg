@@ -10,7 +10,7 @@
 <title>G</title>
 <polygon fill="white" stroke="transparent" points="-21.6,21.6 -21.6,-1102.6 1427.6,-1102.6 1427.6,21.6 -21.6,21.6"/>
 <text text-anchor="middle" x="703" y="-1068.2" font-family="Helvetica,sans-Serif" font-size="11.00">EFD thermal layer</text>
-<text text-anchor="middle" x="703" y="-1056.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;THERMAL &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev K</text>
+<text text-anchor="middle" x="703" y="-1056.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;THERMAL &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev L</text>
 <g id="clust1" class="cluster">
 <title>cluster_CRYO</title>
 <path fill="none" stroke="#94a3b8" d="M1046,-740C1046,-740 1132,-740 1132,-740 1138,-740 1144,-746 1144,-752 1144,-752 1144,-888 1144,-888 1144,-894 1138,-900 1132,-900 1132,-900 1046,-900 1046,-900 1040,-900 1034,-894 1034,-888 1034,-888 1034,-752 1034,-752 1034,-746 1040,-740 1046,-740"/>
@@ -77,7 +77,7 @@
 <title>CRYO_DED_COOL&#45;&gt;CRYO_DED_COOL</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M1070.05,-845.12C1064.31,-857.65 1070.62,-870 1089,-870 1102.35,-870 1109.34,-863.48 1109.95,-855.11"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1113.35,-854.23 1107.95,-845.12 1106.49,-855.61 1113.35,-854.23"/>
-<text text-anchor="middle" x="1089" y="-872.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S55</text>
+<text text-anchor="middle" x="1089" y="-872.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S55\n4.2838 kW</text>
 </g>
 <!-- CRYO_HX_Q4 -->
 <g id="node2" class="node">
@@ -96,7 +96,7 @@
 <title>CRYO_HX_Q4&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1125.57,-747.87C1131.74,-744.63 1138.08,-741.25 1144,-738 1191.3,-712.02 1205.32,-708.69 1249,-677 1268.13,-663.12 1287.96,-645.41 1303.04,-631.16"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1305.65,-633.5 1310.45,-624.05 1300.81,-628.44 1305.65,-633.5"/>
-<text text-anchor="middle" x="1202.5" y="-732.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S54</text>
+<text text-anchor="middle" x="1202.5" y="-732.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S54\n0.5448 kW</text>
 </g>
 <!-- GROW_BED -->
 <g id="node3" class="node">
@@ -115,7 +115,7 @@
 <title>FUEL_CELL&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1122.66,-675.04C1167.23,-660.09 1246.82,-633.4 1292.88,-617.95"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1294.08,-621.24 1302.45,-614.74 1291.86,-614.6 1294.08,-621.24"/>
-<text text-anchor="middle" x="1202.5" y="-664.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S53</text>
+<text text-anchor="middle" x="1202.5" y="-664.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S53\n1.1419 kW</text>
 </g>
 <!-- GEO_GHEX -->
 <g id="node5" class="node">
@@ -134,7 +134,7 @@
 <title>GEO_GHEX&#45;&gt;GEO_HP_CLOSED_LOOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M1122.17,-995C1157.04,-995 1213.75,-995 1258.91,-995"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1258.94,-998.5 1268.94,-995 1258.94,-991.5 1258.94,-998.5"/>
-<text text-anchor="middle" x="1202.5" y="-997.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S43</text>
+<text text-anchor="middle" x="1202.5" y="-997.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S43\n0.0 kW</text>
 </g>
 <!-- GEO_HP -->
 <g id="node6" class="node">
@@ -147,14 +147,14 @@
 <title>GEO_HP&#45;&gt;GROW_BED</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1116.43,-925.13C1157.4,-911.39 1236.59,-884.83 1285.76,-868.34"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1287.1,-871.58 1295.47,-865.08 1284.87,-864.94 1287.1,-871.58"/>
-<text text-anchor="middle" x="1202.5" y="-912.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S06</text>
+<text text-anchor="middle" x="1202.5" y="-912.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S06\n0.0 kW</text>
 </g>
 <!-- GEO_HP&#45;&gt;Q4_BUS -->
 <g id="edge32" class="edge">
 <title>GEO_HP&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1116.23,-925.4C1126.14,-920.99 1136.76,-914.68 1144,-906 1155.62,-892.08 1147.71,-883.13 1156,-867 1187.18,-806.37 1211.33,-801.83 1249,-745 1273.98,-707.32 1299.3,-661.42 1314.45,-632.95"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1317.61,-634.48 1319.19,-624 1311.42,-631.21 1317.61,-634.48"/>
-<text text-anchor="middle" x="1202.5" y="-869.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S44</text>
+<text text-anchor="middle" x="1202.5" y="-869.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S44\n0.0 kW</text>
 </g>
 <!-- GLASS_DIGEST -->
 <g id="node8" class="node">
@@ -407,7 +407,7 @@
 <title>MEOH_FC&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="2.2" stroke-dasharray="5,2" d="M1118.77,-606C1162.19,-606 1244.45,-606 1292.02,-606"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="2.2" points="1292.19,-609.5 1302.19,-606 1292.19,-602.5 1292.19,-609.5"/>
-<text text-anchor="middle" x="1202.5" y="-608.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S80</text>
+<text text-anchor="middle" x="1202.5" y="-608.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S80\n0.3689 kW</text>
 </g>
 <!-- MET_HX_Q4 -->
 <g id="node20" class="node">
@@ -420,7 +420,7 @@
 <title>MET_HX_Q4&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1124.17,-537.46C1168.96,-552.48 1247.15,-578.71 1292.72,-594"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1291.87,-597.41 1302.47,-597.27 1294.1,-590.77 1291.87,-597.41"/>
-<text text-anchor="middle" x="1202.5" y="-579.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S63</text>
+<text text-anchor="middle" x="1202.5" y="-579.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S63\n0.0171 kW</text>
 </g>
 <!-- AFTERBURNER -->
 <g id="node21" class="node">

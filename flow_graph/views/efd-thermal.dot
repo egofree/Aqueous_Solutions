@@ -1,5 +1,5 @@
 digraph G {
-  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev K", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev L", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
   edge [fontname="Helvetica", fontsize=8];
   subgraph "cluster_CRYO" {
@@ -100,12 +100,12 @@ digraph G {
   "Q4_A" -> "Q4_B" [label="HL-Q4-X\\n1.565 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q4_B" -> "Q4_A" [label="HL-Q4-X-BA\\n1.565 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "EW_1" -> "HX8" [label="IA-HX8\\n4.572 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "GEO_HP" -> "GROW_BED" [label="S06", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GEO_HP" -> "Q4_BUS" [label="S44", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "FUEL_CELL" -> "Q4_BUS" [label="S53", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "CRYO_HX_Q4" -> "Q4_BUS" [label="S54", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MET_HX_Q4" -> "Q4_BUS" [label="S63", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "MEOH_FC" -> "Q4_BUS" [label="S80", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
+  "GEO_HP" -> "GROW_BED" [label="S06\\n0.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43\\n0.0 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GEO_HP" -> "Q4_BUS" [label="S44\\n0.0 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "FUEL_CELL" -> "Q4_BUS" [label="S53\\n1.1419 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "CRYO_HX_Q4" -> "Q4_BUS" [label="S54\\n0.5448 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55\\n4.2838 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MET_HX_Q4" -> "Q4_BUS" [label="S63\\n0.0171 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "MEOH_FC" -> "Q4_BUS" [label="S80\\n0.3689 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
 }

@@ -2,9 +2,9 @@
   "preset_id": "VIEW-PFD-LINE",
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "K",
-  "node_count": 111,
-  "edge_count": 168,
+  "source_revision": "L",
+  "node_count": 110,
+  "edge_count": 165,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -18,7 +18,30 @@
       "notes": "Acid polish scrub (S65)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "make-up water + NaOH",
+              "value": 25.1723,
+              "basis": "level control",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "polished air to stack",
+              "value": 37507.6718,
+              "basis": "S65 less absorbed Cl2",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -39,7 +62,61 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "combustion air",
+              "value": 236.68,
+              "basis": "DUTY-008 flue 10.07 kg/h less fuel",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "flue to AFTERBURNER_FLUE",
+              "value": 241.68,
+              "basis": "DUTY-008 m_flue_kg_h",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "NCG heat release",
+              "value": 2.744,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "shell loss",
+              "value": 0.137,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-7 to burnout",
+              "value": 0.632,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "flue sensible to KO",
+              "value": 0.869,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -53,7 +130,22 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "flue from AFTERBURNER",
+              "value": 241.68,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -101,7 +193,37 @@
           1000,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "combustion air",
+              "value": 246.96,
+              "basis": "lambda 2",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "H2 LHV (S45)",
+              "value": 4.9983,
+              "basis": "119.96 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "radiator + exhaust heat",
+              "value": 2.4983,
+              "basis": "1 - eta",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -129,7 +251,30 @@
       "notes": "Black digest (S30)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "black water",
+              "value": 16.48,
+              "basis": "HABITATION",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "digester gas",
+              "value": 0.05,
+              "basis": "VS destruction",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -177,7 +322,37 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "fab UPW to FAB_UPW_TANK (S27)",
+              "value": 60.0,
+              "basis": "S27",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "potable to REMIN (S26)",
+              "value": 10.0,
+              "basis": "S26",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "polish reject",
+              "value": 3.2201,
+              "basis": "EDI/RO polish",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -252,7 +427,30 @@
       "notes": "Cold mill (S59)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "Cu charge from MFG_SHOP",
+              "value": 4.3921,
+              "basis": "S08 Cu share",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "mill trim to MFG_SHOP scrap bin",
+              "value": 0.4392,
+              "basis": "A_RL_SWARF",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -276,7 +474,21 @@
           60
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor; rate not issued)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "REGEN LEACH make-up (BMED HCl + CRU NaClO3)",
+              "value": 223.8036,
+              "basis": "Cl2 + H2 evolved at EW, element basis",
+              "kind": "derived"
+            }
+          ]
+        }
       },
       "continuous_kw": null
     },
@@ -335,7 +547,21 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "boil-off to CRYO AHU (S70)",
+              "value": 0.0521,
+              "basis": "= S70",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -443,7 +669,69 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Au cathode harvest (reported on S08)",
+              "value": 0.0063,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 56.278,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "cell ohmic heat (9 cells)",
+              "value": 1.938,
+              "basis": "DUTY-008 HX-8",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "feed sensible above 51 C",
+              "value": 4.128,
+              "basis": "DUTY-008 HX-8",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "wall loss",
+              "value": 0.533,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "evaporation (ball blanket)",
+              "value": 0.962,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -463,7 +751,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Ag cathode harvest (reported on S08)",
+              "value": 0.0251,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 56.2829,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       },
       "continuous_kw": null
     },
@@ -483,7 +801,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Cu cathode harvest (reported on S08)",
+              "value": 8.7841,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 9.8015,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -502,7 +850,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Pb cathode harvest (reported on S08)",
+              "value": 0.7111,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 0.2433,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -521,7 +899,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Sn cathode harvest (reported on S08)",
+              "value": 0.7111,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 0.4247,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -540,7 +948,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Ni cathode harvest (reported on S08)",
+              "value": 0.7111,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 0.8591,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -559,7 +997,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Fe cathode harvest (reported on S08)",
+              "value": 29.629,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 37.6197,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -578,7 +1046,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Cd cathode harvest (reported on S08)",
+              "value": 0.7111,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 0.4485,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -598,7 +1096,37 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Zn cathode harvest (reported on S08)",
+              "value": 0.7111,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 57.0458,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            }
+          ]
+        }
       },
       "continuous_kw": null
     },
@@ -613,7 +1141,22 @@
       "notes": "Fab UPW tank (S27)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW from BMED_UPW_POLISH",
+              "value": 60.0,
+              "basis": "S27",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -627,7 +1170,38 @@
       "notes": "Float/sink (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "leach train slurry (solids + liquor)",
+              "value": 454.7062,
+              "basis": "LEACH out; 20 wt % solids",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "float cake to OIL_DRYER",
+              "value": 40.5,
+              "basis": "plastic + paper 22 % + DUTY-008 dryer water",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "sink cake to GLASS_RINSE",
+              "value": 71.1097,
+              "basis": "glass + residue at float cake moisture",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -645,7 +1219,29 @@
           700,
           1100
         ],
-        "duty_check": "flue 10.07 kg/h (S67): DN300 KO drum with mesh pad fits the 600x700 plan even at the 180 m3/h AQS-GAS-003 NCG case (0.7 m/s)"
+        "duty_check": "flue 10.07 kg/h (S67): DN300 KO drum with mesh pad fits the 600x700 plan even at the 180 m3/h AQS-GAS-003 NCG case (0.7 m/s)",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "KO condensate",
+              "value": 4.1404,
+              "basis": "flue water less saturation at 30.0 C",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "VSA tail gas to stack",
+              "value": 224.8417,
+              "basis": "flue + S70 less captured CO2 and condensate",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -672,7 +1268,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "cathode excess O2 vent",
+              "value": 0.3071,
+              "basis": "S50 less stoichiometric O2",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "H2 LHV (S49)",
+              "value": 6.6644,
+              "basis": "119.96 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat to ambient",
+              "value": 1.5225,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -686,7 +1312,38 @@
       "notes": "Gas atomizer (S60)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "blend charge from MFG_SHOP",
+              "value": 3.5555,
+              "basis": "S08 blend share",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "off-spec to MFG_SHOP scrap bin",
+              "value": 0.32,
+              "basis": "A_RL_SWARF",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "ultrafines to MET LEV (S71)",
+              "value": 0.0356,
+              "basis": "A_RL_FINES_ATOM",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -749,70 +1406,6 @@
       "continuous_kw": null
     },
     {
-      "unit_id": "GEO_ORC",
-      "sector_id": "GEO",
-      "presence": "placeholder",
-      "class": "study_stub",
-      "tags": [
-        "ORC",
-        "carnot_study",
-        "study_stub"
-      ],
-      "electrical_role": "generation",
-      "diagram_gap": null,
-      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
-      "enabled": true,
-      "continuous_kw": {
-        "value": null,
-        "unit": "kW",
-        "status": "study",
-        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
-      },
-      "modules": [],
-      "params": {
-        "status": "study_carnot_band",
-        "present_path": "study_carnot_band",
-        "blockers": [
-          "GHEX_conductivity_survey",
-          "T_source_survey",
-          "Q_surplus_after_Q4"
-        ],
-        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
-        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
-        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
-        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
-        "open_study_queued": true,
-        "study_id": "ST-ORC-01",
-        "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
-        "presence": "placeholder",
-        "ghex_study_defaults": {
-          "T_source_K": 285.0,
-          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
-          "T_sink_K": 303.0,
-          "eta_Carnot": 0.059,
-          "eta_ORC_study": "0.08-0.12 of available surplus",
-          "k_ground_W_mK_study": 1.5,
-          "Q_GHEX_avail_kW_th_study": 3.0,
-          "Q4_life_priority_kW_th_study": 3.0,
-          "Q_surplus_kW_th_M1": 0.0,
-          "P_ORC_kW_e_M1": 0.0,
-          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4",
-          "survey_status": "design_survey_locked",
-          "field_measurement_status": "not_measured_external"
-        },
-        "T_source_K": 285.0,
-        "T_sink_K": 303.0,
-        "k_ground_W_mK": 1.5,
-        "Q_GHEX_avail_kW_th": 3.0,
-        "Q_surplus_kW_th": 0.0,
-        "P_ORC_kW_e": 0.0,
-        "site_lat_deg": 33.0,
-        "survey_status": "design_survey_locked"
-      }
-    },
-    {
       "unit_id": "GLASS_DIGEST",
       "sector_id": "GLASS",
       "presence": "present",
@@ -830,7 +1423,45 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "2 M NaOH digest liquor",
+              "value": 320.76,
+              "basis": "DUTY-008 digest 593 mol/d at 2 M",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "sodium silicate liquor (carries the caustic)",
+              "value": 320.76,
+              "basis": "same liquor; S08G is on the cullet-equivalent yield basis",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim",
+              "value": 1.084,
+              "basis": "DUTY-008 trim_normal",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "digest duty",
+              "value": 1.663,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -877,13 +1508,51 @@
         "presence": "present",
         "co2_in_kg_d": {
           "S04": 1.109,
-          "S89": 11.616
+          "S89": 15.637
         },
         "co2_fixed_kg_d": 1.109,
-        "co2_to_exhaust_kg_d": 11.616,
+        "co2_to_exhaust_kg_d": 15.637,
         "co2_setpoint_ppm": 1000,
-        "farm_oa_m3_h": 693.5,
-        "co2_doc": "AQS-DUTY-009"
+        "farm_oa_m3_h": 933.5,
+        "co2_doc": "AQS-DUTY-009",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW make-up from HDR_UPW (S01)",
+              "value": 95.0,
+              "basis": "S01",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "CO2 to farm exhaust",
+              "value": 15.637,
+              "basis": "AQS-DUTY-009 fate",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "water vapor to farm exhaust",
+              "value": 60.9005,
+              "basis": "OA x humidity rise",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "photosynthetic O2 to farm exhaust",
+              "value": 0.8063,
+              "basis": "CO2 + H2O -> CH2O + O2 on S04",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -925,7 +1594,29 @@
       "modules": [],
       "params": {
         "crew_study": 4,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "black water to BLACK_DIGEST",
+              "value": 16.48,
+              "basis": "BVAD urine/feces/flush",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "hab AHU condensate + non-grey remainder",
+              "value": 4.8994,
+              "basis": "S12 governs grey",
+              "kind": "by_difference"
+            }
+          ]
+        }
       }
     },
     {
@@ -1007,7 +1698,21 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "farm make-up to GROW_BED",
+              "value": 95.0,
+              "basis": "S01",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1123,7 +1828,61 @@
       "modules": [],
       "params": {
         "V_m3": null,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "fresh shredded feed",
+              "value": 150.0,
+              "basis": "plant basis 150 kg/d wet",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "EW cathode harvest booked onto S08",
+              "value": 42.0,
+              "basis": "= S08",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "slurry to FLOAT_SINK",
+              "value": 454.7062,
+              "basis": "undissolved + 20 wt % liquor",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "purge vapor",
+              "value": 20.3,
+              "basis": "DUTY-008 HX-5 purge",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim (ladder short)",
+              "value": 6.353,
+              "basis": "DUTY-008 trim_normal",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-5 duty (regen + shell + shred + purge - exotherm)",
+              "value": 6.353,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1168,7 +1927,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "air O2",
+              "value": 7.4897,
+              "basis": "stoichiometric",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "MeOH LHV (S76)",
+              "value": 1.1534,
+              "basis": "19.93 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat",
+              "value": 0.4919,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1188,7 +1977,21 @@
           900,
           1400
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "digestate + CO2 + water",
+              "value": 0.3454,
+              "basis": "feed less MeOH",
+              "kind": "by_difference"
+            }
+          ]
+        }
       },
       "continuous_kw": null
     },
@@ -1216,7 +2019,21 @@
           900,
           1400
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "synthesis water",
+              "value": 2.8112,
+              "basis": "CO2 + 3 H2 -> CH3OH + H2O",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1287,7 +2104,30 @@
       "notes": "Metal melt (S57)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "Cu charge from MFG_SHOP",
+              "value": 4.3921,
+              "basis": "S08 Cu share",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "melt fume to MET LEV (S71)",
+              "value": 0.0132,
+              "basis": "A_RL_FUME_MELT",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1301,7 +2141,30 @@
       "notes": "MET scrub/baghouse (S71/S72)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "scrub make-up water",
+              "value": 2.3878,
+              "basis": "level control = blowdown water",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "scrubbed air to stack",
+              "value": 71603.7288,
+              "basis": "air in less captured fines and mist",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1322,7 +2185,37 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "scrap bin returns",
+              "value": 1.1971,
+              "basis": "draw/mill/atomizer",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "charges to MET_MELT, COLD_MILL, GAS_ATOMIZER",
+              "value": 12.3396,
+              "basis": "S08 Cu + blend",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "finished goods to NORTH_DOCK",
+              "value": 28.7542,
+              "basis": "shop product = all not returned",
+              "kind": "by_difference"
+            }
+          ]
+        }
       }
     },
     {
@@ -1349,7 +2242,21 @@
       "modules": [],
       "params": {
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus/ground_floor still show footprint",
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "finished goods from MFG_SHOP",
+              "value": 28.7542,
+              "basis": "MFG_SHOP balance",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1403,7 +2310,46 @@
       "notes": "Oil dryer (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "float cake",
+              "value": 40.5,
+              "basis": "FLOAT_SINK",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "dryer vapor",
+              "value": 7.5,
+              "basis": "DUTY-008 dryer water 7.5 kg/d",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "dryer duty (evaporation)",
+              "value": 0.242,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim",
+              "value": 0.0,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1431,7 +2377,22 @@
       "notes": "Oil pyro (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "char to silicon arc",
+              "value": 5.5,
+              "basis": "yields complement: float - oil - NCG",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1445,7 +2406,22 @@
       "notes": "Polish bank series",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "brine bleed to AEM bank -> K split -> BMED",
+              "value": 229.4492,
+              "basis": "loop level control",
+              "kind": "by_difference"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1509,7 +2485,21 @@
       "modules": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "life load (hab + farm)",
+              "value": 3.0,
+              "basis": "DUTY-008 q4_life_kw = GHEX Q4 life priority",
+              "kind": "derived"
+            }
+          ]
+        }
       },
       "continuous_kw": null
     },
@@ -1576,7 +2566,21 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "inventory draw (dry design day, no rain)",
+              "value": 120.0,
+              "basis": "S21 + S40 met from storage",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1632,7 +2636,29 @@
       "params": {
         "presence": "present",
         "iso_14644_wet_bench": "Class 7",
-        "iso_14644_tool_row": "Class 6"
+        "iso_14644_tool_row": "Class 6",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "WS_SOLV solvent (litho/strip)",
+              "value": 0.9875,
+              "basis": "AUD s13 WS_SOLV",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "N2 purge to fab exhaust",
+              "value": 1.4998,
+              "basis": "= S03",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1653,7 +2679,21 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "resist from the litho track",
+              "value": 0.006,
+              "basis": "ST-LITHO-01",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1667,7 +2707,22 @@
       "notes": "Wire draw (S58)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "draw swarf to MFG_SHOP scrap bin",
+              "value": 0.4379,
+              "basis": "A_RL_SWARF",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1723,7 +2778,30 @@
       "notes": "Fab reagent fork (S35)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "KCl salt",
+              "value": 0.0373,
+              "basis": "1:1 molar",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "spent exchange brine",
+              "value": 0.0348,
+              "basis": "level of the exchange column",
+              "kind": "by_difference"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1737,7 +2815,30 @@
       "notes": "Fab reagent fork (S34)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "NaNO3 salt",
+              "value": 0.1062,
+              "basis": "1:1 molar",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "spent exchange brine",
+              "value": 0.0868,
+              "basis": "level of the exchange column",
+              "kind": "by_difference"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1787,7 +2888,37 @@
       "params": {
         "kW": 60,
         "kWh": 120,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "purge air (dry)",
+              "value": 843.9862,
+              "basis": "headspace purge",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
+              "value": 8.4402,
+              "basis": "no electrolyte bleed on the graph",
+              "kind": "accumulation"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1799,7 +2930,29 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "FLOW_BATTERY.md"
+        "ref": "FLOW_BATTERY.md",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "2 M NaOH make-up",
+              "value": 0.0003,
+              "basis": "stoichiometric",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "scrubbed dry air to stack",
+              "value": 843.9862,
+              "basis": "",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1839,7 +2992,29 @@
           600,
           800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "sink cake",
+              "value": 71.1097,
+              "basis": "FLOAT_SINK",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "sink residue reject (no product path in yields table)",
+              "value": 34.2915,
+              "basis": "assay unassigned + unleached metal; flagged",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1859,7 +3034,21 @@
           600,
           800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "mill dry-step vapor",
+              "value": 6.8182,
+              "basis": "drained moisture off before burnout",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1879,7 +3068,53 @@
           600,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "HX-7 from afterburner",
+              "value": 0.632,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim",
+              "value": 0.238,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "q_offgas_kw",
+              "value": 0.03,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "q_end_kw",
+              "value": 0.05,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "q_cullet_residual_kw",
+              "value": 0.048,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1925,7 +3160,21 @@
           400,
           800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW from BMED_UPW_POLISH",
+              "value": 10.0,
+              "basis": "S26",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -1967,7 +3216,21 @@
           }
         },
         "coil_pack_stack_m": 0.76,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.2,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2015,7 +3278,29 @@
           }
         },
         "coil_pack_stack_m": 0.881,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.111,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0106,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2063,7 +3348,29 @@
           }
         },
         "coil_pack_stack_m": 0.63,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.174,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0181,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2105,7 +3412,21 @@
           }
         },
         "coil_pack_stack_m": 0.549,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.164,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2147,7 +3468,21 @@
           }
         },
         "coil_pack_stack_m": 0.76,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.2,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2195,7 +3530,29 @@
           }
         },
         "coil_pack_stack_m": 0.881,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.111,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0106,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2243,7 +3600,29 @@
           }
         },
         "coil_pack_stack_m": 0.63,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.174,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0181,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -2285,7 +3664,21 @@
           }
         },
         "coil_pack_stack_m": 0.549,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.164,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     }
   ],
@@ -2302,7 +3695,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 1.4046,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: = CUT-4"
+      },
+      "params": {
+        "rate_basis": "= CUT-4",
+        "rate_source": "ASF fit",
+        "medium": "C29+ heavy cut",
+        "conditions": "hot, to pyrolyzer only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "C29_TO_PYRO",
@@ -2317,7 +3724,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 1.4046,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: = C29_RECYCLE"
+      },
+      "params": {
+        "rate_basis": "= C29_RECYCLE",
+        "rate_source": "ASF fit",
+        "medium": "C29+ heavy cut",
+        "conditions": "pyro inlet",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "CUT-1",
@@ -2332,7 +3753,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 11.1553,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: ASF C5-C10 share 10.16 of net oil 22.5 + S38 + S39B solvent"
+      },
+      "params": {
+        "rate_basis": "ASF C5-C10 share 10.16 of net oil 22.5 + S38 + S39B solvent",
+        "rate_source": "ELECTRICAL yields; ASF fit",
+        "medium": "C5-C10 cut",
+        "conditions": "tank",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "CUT-2",
@@ -2347,7 +3782,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 8.4068,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: ASF C11-C18 share of net oil 22.5"
+      },
+      "params": {
+        "rate_basis": "ASF C11-C18 share of net oil 22.5",
+        "rate_source": "ELECTRICAL yields; ASF fit",
+        "medium": "C11-C18 cut",
+        "conditions": "tank",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "CUT-3",
@@ -2362,7 +3811,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 3.9472,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: ASF C19-C28 share 3.93 + S72B lube mist"
+      },
+      "params": {
+        "rate_basis": "ASF C19-C28 share 3.93 + S72B lube mist",
+        "rate_source": "ELECTRICAL yields; ASF fit",
+        "medium": "C19-C28 cut",
+        "conditions": "tank",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "CUT-4",
@@ -2377,7 +3840,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 1.4046,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: C29+ per pass, recycled to extinction"
+      },
+      "params": {
+        "rate_basis": "C29+ per pass, recycled to extinction",
+        "rate_source": "ASF fit",
+        "medium": "C29+ heavy cut",
+        "conditions": "~250 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "DOCK_EXPORT_TBD",
@@ -2387,16 +3864,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "goods / cassettes / surplus freight (ID TBD)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 28.7542,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: MFG_SHOP finished goods (Fe plate, wire, sheet, powder) to export"
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
@@ -2404,10 +3881,18 @@
       "namespace": "TBD",
       "gap_flags": [
         "no_S_id",
-        "do_not_invent_route_or_rate",
         "high_severity_audit"
       ],
-      "notes": "Audit \u00a77.1 DOCK export \u2014 sector required; no inter-block stream ID issued"
+      "notes": "Audit \u00a77.1 DOCK export \u2014 sector required; no inter-block stream ID issued",
+      "params": {
+        "rate_basis": "MFG_SHOP finished goods (Fe plate, wire, sheet, powder) to export",
+        "rate_source": "AQS-DUTY-010 MFG balance",
+        "medium": "metal goods (solid)",
+        "conditions": "palletized",
+        "rate_kind": "by_difference",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: MFG goods export (ID stays TBD: no invented DOCK S##)"
+      }
     },
     {
       "stream_id": "HL-AFTERBURNER-Q1-A",
@@ -3920,7 +5405,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.6456,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange"
+      },
+      "params": {
+        "rate_basis": "1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange",
+        "rate_source": "S34 stoichiometry",
+        "medium": "HCl 2 M",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-BMED-02",
@@ -3935,7 +5434,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.27,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 1:1 molar NaOH for S35 (0.50 mol/d KOH) at 2 M, resin exchange"
+      },
+      "params": {
+        "rate_basis": "1:1 molar NaOH for S35 (0.50 mol/d KOH) at 2 M, resin exchange",
+        "rate_source": "S35 stoichiometry",
+        "medium": "NaOH 2 M",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-BMED-03",
@@ -3945,16 +5458,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "CRU \u2192 BMED acid regen loop",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 38.602,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: BMED 12.0 kWh/d / 2.1 kWh/kg pair = 5.71 kg/d = 74.7 mol/d HCl as 2 M"
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -3965,7 +5478,17 @@
         "full_depth_now",
         "bmed_regen unlabeled"
       ],
-      "notes": "bmed_regen unlabeled"
+      "notes": "bmed_regen unlabeled",
+      "params": {
+        "rate_basis": "BMED 12.0 kWh/d / 2.1 kWh/kg pair = 5.71 kg/d = 74.7 mol/d HCl as 2 M",
+        "rate_source": "ELECTRICAL BMED 80 kWh/t, 1.8-2.4 kWh/kg",
+        "medium": "HCl 2 M acid loop",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "mol_d": 74.7,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: BMED acid loop make (energy basis)"
+      }
     },
     {
       "stream_id": "IA-BMED-04",
@@ -3975,16 +5498,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "CRU \u2192 BMED base regen loop",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 40.3583,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 74.7 mol/d NaOH as 2 M"
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -3995,7 +5518,17 @@
         "full_depth_now",
         "bmed_regen unlabeled"
       ],
-      "notes": "bmed_regen unlabeled"
+      "notes": "bmed_regen unlabeled",
+      "params": {
+        "rate_basis": "74.7 mol/d NaOH as 2 M",
+        "rate_source": "ELECTRICAL BMED",
+        "medium": "NaOH 2 M base loop",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "mol_d": 74.7,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: BMED base loop make (energy basis)"
+      }
     },
     {
       "stream_id": "IA-ESS-HYDRO-CHG",
@@ -4012,10 +5545,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
+        "value": 200000.0,
         "unit": "kg/d",
-        "status": "null",
-        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+        "status": "study",
+        "note": "AQS-DUTY-010: one full 200 m3 cycle per day"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -4026,7 +5559,13 @@
       ],
       "notes": "EFD chemical-storage / charge-discharge typing",
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "one full 200 m3 cycle per day",
+        "rate_source": "ESS_DUTY_MATRIX pumped hydro 200 m3 / 18 m",
+        "medium": "water",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -4044,10 +5583,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
+        "value": 200000.0,
         "unit": "kg/d",
-        "status": "null",
-        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+        "status": "study",
+        "note": "AQS-DUTY-010: one full cycle per day"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -4058,7 +5597,13 @@
       ],
       "notes": "EFD chemical-storage / charge-discharge typing",
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "one full cycle per day",
+        "rate_source": "ESS_DUTY_MATRIX",
+        "medium": "water",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -4070,16 +5615,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.2917,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h"
       },
       "from_sector_id": "PUMPED_HYDRO",
       "to_sector_id": "ELEC",
@@ -4089,66 +5634,16 @@
         "ess_layer",
         "missing_on_sld"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-CHG",
-      "from_unit_id": "MEOH_SYNTH",
-      "to_unit_id": "MEOH_TANK",
-      "phase": "L",
-      "layers": [
-        "mass",
-        "ess"
-      ],
-      "presence": "placeholder",
-      "carries": "MeOH synth inventory = charge-analogue",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "MEOH",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-DIS",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "placeholder",
-      "carries": "MeOH FC discharge (peers S79)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "use S79 for rate; this edge is ESS-layer view alias"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "overlaps_S79_architecture"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "7.0 kWh recoverable per cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX ~7 kWh recoverable",
+        "medium": "AC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: hydro set to bus"
+      }
     },
     {
       "stream_id": "IA-ESS-ZNBR2-CHG",
@@ -4159,16 +5654,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 charge (PV/RECT surplus)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 6.6667,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid)"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ZNBR2",
@@ -4177,7 +5672,17 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid)",
+        "rate_source": "FLOW_BATTERY",
+        "medium": "DC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "peak_kw": 60.0,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: ZnBr2 charge"
+      }
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -4188,16 +5693,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 discharge to bus",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h"
       },
       "from_sector_id": "ZNBR2",
       "to_sector_id": "ELEC",
@@ -4206,7 +5711,17 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "120.0 kWh one cycle/d averaged over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 120 kWh; FLOW_BATTERY",
+        "medium": "DC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "peak_kw": 60.0,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: ZnBr2 discharge"
+      }
     },
     {
       "stream_id": "IA-EW-01",
@@ -4222,7 +5737,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4222.22,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.0063,
+        "anode_cl2_kg_d": 56.278,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-02",
@@ -4238,7 +5769,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4160.42,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.0251,
+        "anode_cl2_kg_d": 56.283,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-03",
@@ -4254,7 +5801,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4137.94,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 8.7841,
+        "anode_cl2_kg_d": 9.802,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-04",
@@ -4270,7 +5833,22 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4284.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: DUTY-008 concentrate 0.17 m3/h x 1050.0 kg/m3 x 24 h"
+      },
+      "params": {
+        "rate_basis": "DUTY-008 concentrate 0.17 m3/h x 1050.0 kg/m3 x 24 h",
+        "rate_source": "AQS-DUTY-008 (_hl_edges_study CONC_M3_H, RHO_LIQ)",
+        "medium": "chloride leach liquor (HCl/NaClO3, metal chlorides)",
+        "conditions": "77.5 C, atm",
+        "rate_kind": "derived",
+        "m3_h": 0.17,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-05",
@@ -4286,7 +5864,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4128.07,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.7111,
+        "anode_cl2_kg_d": 0.425,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-06",
@@ -4302,7 +5896,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4122.6,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.7111,
+        "anode_cl2_kg_d": 0.859,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-07",
@@ -4318,7 +5928,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4051.46,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 29.629,
+        "anode_cl2_kg_d": 37.62,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-08",
@@ -4334,7 +5960,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4046.41,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.7111,
+        "anode_cl2_kg_d": 0.449,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-09",
@@ -4350,7 +5992,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 3983.16,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.7111,
+        "anode_cl2_kg_d": 57.046,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-EW-10",
@@ -4366,7 +6024,23 @@
       ],
       "open_boundary": false,
       "from_sector_id": "WET",
-      "to_sector_id": "WET"
+      "to_sector_id": "WET",
+      "rate": {
+        "value": 4133.09,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
+      },
+      "params": {
+        "rate_basis": "EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
+        "rate_source": "AQS-DUTY-010 EW mass step; S08 deposit split by leach build-up (ELECTRICAL assay); H2 from IA-HDR-H2-*; evaporation DUTY-008 HX-8",
+        "medium": "chloride electrolyte overflow",
+        "conditions": "55.0 C, atm",
+        "rate_kind": "derived",
+        "deposit_kg_d": 0.7111,
+        "anode_cl2_kg_d": 0.243,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-GLASS-01",
@@ -4380,7 +6054,22 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 36.8182,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: cullet 30.0 kg/d dry (DUTY-008 burnout basis = silicate yield) + drained moisture 6.82"
+      },
+      "params": {
+        "rate_basis": "cullet 30.0 kg/d dry (DUTY-008 burnout basis = silicate yield) + drained moisture 6.82",
+        "rate_source": "AQS-DUTY-008 CULLET_KG_D; ELECTRICAL yields silicate 200 kg/t",
+        "medium": "rinsed cullet, drained",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "dry_kg_d": 30.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-GLASS-02",
@@ -4394,7 +6083,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 30.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: dry milled cullet = cullet basis"
+      },
+      "params": {
+        "rate_basis": "dry milled cullet = cullet basis",
+        "rate_source": "AQS-DUTY-008 CULLET_KG_D",
+        "medium": "milled cullet, dry",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-GLASS-03",
@@ -4408,7 +6111,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 30.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: burned cullet; organics burnout negligible (DUTY-008 off-gas 0.03 kW)"
+      },
+      "params": {
+        "rate_basis": "burned cullet; organics burnout negligible (DUTY-008 off-gas 0.03 kW)",
+        "rate_source": "AQS-DUTY-008",
+        "medium": "burned cullet",
+        "conditions": "170.0 C out",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-HDR-H2-01",
@@ -4566,16 +6283,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Dryer \u2192 pyro",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 33.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: dry plastic + paper float 0.22 x 150.0"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -4586,7 +6303,16 @@
         "full_depth_now",
         "oil_line internals"
       ],
-      "notes": "oil_line internals"
+      "notes": "oil_line internals",
+      "params": {
+        "rate_basis": "dry plastic + paper float 0.22 x 150.0",
+        "rate_source": "ELECTRICAL assay",
+        "medium": "dried plastic/paper float",
+        "conditions": "dryer out, <110 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: dried float to pyrolyzer"
+      }
     },
     {
       "stream_id": "IA-OIL-02",
@@ -4596,16 +6322,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Pyro \u2192 frac",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 28.9046,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -4616,7 +6342,17 @@
         "full_depth_now",
         "oil_line internals"
       ],
-      "notes": "oil_line internals"
+      "notes": "oil_line internals",
+      "params": {
+        "rate_basis": "per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456)",
+        "rate_source": "ELECTRICAL yields 150 kg/t oil; DUTY-008 NCG fuel; ASF fit",
+        "medium": "pyrolysis vapor/condensate",
+        "conditions": "~450 C pyro out",
+        "rate_kind": "derived",
+        "asf_alpha": 0.84558,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: pyrolysis volatiles to fractionator"
+      }
     },
     {
       "stream_id": "IA-OIL-03",
@@ -4631,56 +6367,40 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
-    },
-    {
-      "stream_id": "IA-POL-01",
-      "from_unit_id": "POLISH_BANK",
-      "to_unit_id": "BMED_UPW_POLISH",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "placeholder",
-      "carries": "Polish bank \u2192 UPW polish",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "WET",
-      "to_sector_id": "WTR",
       "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "intra_aisle",
-        "full_depth_now",
-        "polish_bank unlabeled"
-      ],
-      "notes": "polish_bank unlabeled"
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002)"
+      },
+      "params": {
+        "rate_basis": "NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002)",
+        "rate_source": "AQS-DUTY-008 sources()",
+        "medium": "NCG (C1-C4 gas)",
+        "conditions": "~1 bar a, 40 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-POL-02",
       "from_unit_id": "POLISH_BANK",
-      "to_unit_id": "POLISH_BANK",
+      "to_unit_id": "CONTINUOUS_RECYCLE",
       "phase": "L",
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
-      "carries": "Polish series internals (self-loop stub)",
+      "presence": "present",
+      "carries": "raffinate (EW tail after polish) to continuous recycle",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 3753.71,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: raffinate 3983.2 less brine bleed 229.4 to the AEM bank (level control)"
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -4691,7 +6411,16 @@
         "full_depth_now",
         "polish_bank unlabeled"
       ],
-      "notes": "polish_bank unlabeled"
+      "notes": "Rev L: was a POLISH_BANK self-loop stub. Raffinate return; the brine bleed leaves POLISH_BANK to the AEM bank (off-graph).",
+      "params": {
+        "rate_basis": "raffinate 3983.2 less brine bleed 229.4 to the AEM bank (level control)",
+        "rate_source": "AQS-DUTY-010 leach loop",
+        "medium": "raffinate",
+        "conditions": "~50 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: retargeted from the POLISH_BANK self-loop stub to POLISH_BANK -> CONTINUOUS_RECYCLE (raffinate return; STUDIES_COMPLETE precedent)"
+      }
     },
     {
       "stream_id": "IA-REC-01",
@@ -4705,7 +6434,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 3977.51,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis)"
+      },
+      "params": {
+        "rate_basis": "recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis)",
+        "rate_source": "AQS-DUTY-010 leach loop; DUTY-008 HX-5 0.17 m3/h governs the heater",
+        "medium": "regenerated leach liquor",
+        "conditions": "35.0 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "IA-WET-FLOAT-01",
@@ -4715,16 +6458,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Float/sink liquor return",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 343.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17"
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -4735,7 +6478,17 @@
         "full_depth_now",
         "STR scope-out; ID was TBD"
       ],
-      "notes": "STR scope-out; ID was TBD"
+      "notes": "STR scope-out; ID was TBD",
+      "params": {
+        "rate_basis": "slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17",
+        "rate_source": "AQS-DUTY-010; float moisture = DUTY-008 dryer water basis",
+        "medium": "leach liquor return",
+        "conditions": "~60 C, atm",
+        "rate_kind": "derived",
+        "slurry_solids_kg_d": 90.94,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: float/sink liquor return"
+      }
     },
     {
       "stream_id": "NCG_TO_AB",
@@ -4749,7 +6502,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: = IA-OIL-03 (header pass-through)"
+      },
+      "params": {
+        "rate_basis": "= IA-OIL-03 (header pass-through)",
+        "rate_source": "AQS-DUTY-008",
+        "medium": "NCG",
+        "conditions": "~1 bar a",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S01",
@@ -4791,17 +6558,26 @@
       "forbidden": "HDR_H2, acid gas",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.4,
+        "value": 3.36,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study metabolic O2 class ~0.84 kg/person\u00b7d \u00d7 crew 4 (AQS-AUD-001 berth TBD) \u2014 not issued berth lock"
+        "note": "AQS-DUTY-010: 0.84 kg O2/p.d x 4 crew"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "0.84 kg O2/p.d x 4 crew",
+        "rate_source": "NASA BVAD nominal; crew 4",
+        "medium": "O2 gas",
+        "conditions": "regulated, ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 3.4
+      }
     },
     {
       "stream_id": "S03",
@@ -4818,7 +6594,21 @@
       ],
       "open_boundary": false,
       "from_sector_id": "CRYO",
-      "to_sector_id": "FAB"
+      "to_sector_id": "FAB",
+      "rate": {
+        "value": 1.4998,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L"
+      },
+      "params": {
+        "rate_basis": "10.0 slm x 40.0 min x 3 starts at 1.25 g/L",
+        "rate_source": "ST-LITHO-01 starts; tool purge class",
+        "medium": "N2 gas",
+        "conditions": "ambient, ~2 bar g",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S04",
@@ -4886,17 +6676,26 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to farm"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to farm",
+        "rate_source": "HEAT_LADDER (GEO_HP only lift); DUTY-008 q4_life_kw",
+        "medium": "Q4 water",
+        "conditions": "60 C supply",
+        "rate_kind": "derived",
+        "standby_kw": 1.5,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S07",
@@ -4992,7 +6791,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 9.2772,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: SC-2 1:1:5 -> HCl volume = H2O2 SC-2 share 1.5 L/d (37 % eq, 0.655 kg HCl) delivered as 2 M BMED acid"
+      },
+      "params": {
+        "rate_basis": "SC-2 1:1:5 -> HCl volume = H2O2 SC-2 share 1.5 L/d (37 % eq, 0.655 kg HCl) delivered as 2 M BMED acid",
+        "rate_source": "RCA SC-2 recipe; S32 split",
+        "medium": "HCl 2 M",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S10",
@@ -5008,17 +6821,26 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 10.0,
+        "value": 78.3397,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid)"
+        "note": "AQS-DUTY-010: WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38",
+        "rate_source": "AQS-AUD-001 s13 (spent = forwards)",
+        "medium": "spent etch + rinse to REGEN LEACH",
+        "conditions": "ambient",
+        "rate_kind": "by_difference",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 10.0
+      }
     },
     {
       "stream_id": "S11",
@@ -5080,16 +6902,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "condensate",
       "header": "HDR_GREY",
       "forbidden": "Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 31.4995,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: ET 92.4 (3.3 L/m2.d x 28.0 m2) - farm exhaust vapor 60.9 (OA 933.5 m3/h light, 251.3 dark; w 0.0131 - 0.01)"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -5098,7 +6920,17 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FARM SUMP + HVAC \u2192 UPW POLISH / SALT FEED / VCD_FEED"
+      "notes": "From register: FARM SUMP + HVAC \u2192 UPW POLISH / SALT FEED / VCD_FEED",
+      "params": {
+        "rate_basis": "ET 92.4 (3.3 L/m2.d x 28.0 m2) - farm exhaust vapor 60.9 (OA 933.5 m3/h light, 251.3 dark; w 0.0131 - 0.01)",
+        "rate_source": "AQS-DUTY-009 OA; ET class",
+        "medium": "farm sump + AHU condensate",
+        "conditions": "~15 C",
+        "rate_kind": "derived",
+        "oa_m3_h": 933.5,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: farm sump + farm AHU condensate to VCD"
+      }
     },
     {
       "stream_id": "S14",
@@ -5114,17 +6946,26 @@
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.2,
+        "value": 2.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "Upper-band AQS-AUD-001 \u00a712 food path 4.2 kg/d fresh (band 1.4\u20134.2; was mid 2.8). Study yield/berth assumption \u2014 not nutritionist lock (AQS-SUR-001 / WP-A2)."
+        "note": "AQS-DUTY-010: crew ration 0.6 kg/p.d x 4; production 4.2 = S14 + S14X 1.8"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "crew ration 0.6 kg/p.d x 4; production 4.2 = S14 + S14X 1.8",
+        "rate_source": "GROW_BED params ration_kg_person_d_study",
+        "medium": "fresh produce",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 4.2
+      }
     },
     {
       "stream_id": "S14X",
@@ -5169,17 +7010,25 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "AQS-DUTY-010: photosynthetic O2 (0.806 kg/d) leaves with FARM AHU exhaust; HAB is sealed with its own AHU and is supplied by S02"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "photosynthetic O2 (0.806 kg/d) leaves with FARM AHU exhaust; HAB is sealed with its own AHU and is supplied by S02",
+        "rate_source": "AQS-DUTY-009 farm OA; S04 stoichiometry",
+        "medium": "O2 (none delivered)",
+        "conditions": "n/a",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S16",
@@ -5273,10 +7122,10 @@
       "forbidden": "farm",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.75,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: baghouse catch 0.5% of shredded feed"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "WET",
@@ -5285,7 +7134,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BAGHOUSE fines \u2192 LEACH CSTR 1"
+      "notes": "From register: BAGHOUSE fines \u2192 LEACH CSTR 1",
+      "params": {
+        "rate_basis": "baghouse catch 0.5% of shredded feed",
+        "rate_source": "shredder fines class",
+        "medium": "WEEE fines",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S20",
@@ -5301,17 +7158,26 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=study_deferred"
+        "note": "AQS-DUTY-010: GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J",
+        "rate_source": "graph GROW_BED continuous_kw 5.0 kW (LED canopy share, study)",
+        "medium": "DC load",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "source_governs": "graph node value; LED first-principles check is lower",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S21",
@@ -5327,17 +7193,26 @@
       "forbidden": "Salria, grey, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": 95.0,
+        "value": 120.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d"
+        "note": "AQS-DUTY-010: hab hygiene water 30.0 L/p.d x 4"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "hab hygiene water 30.0 L/p.d x 4",
+        "rate_source": "LIFE_MEP fixture class; crew 4",
+        "medium": "potable water",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 95.0
+      }
     },
     {
       "stream_id": "S22",
@@ -5353,10 +7228,10 @@
       "forbidden": "process sumps",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": "kg/d",
+        "value": 0.4088,
+        "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=inventory_cycle"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5365,7 +7240,13 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 9.8 kWh ideal",
+        "medium": "water (potential energy)",
+        "conditions": "18 m head",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -5382,10 +7263,10 @@
       "forbidden": "HDR_GREY",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": "kg/d",
+        "value": 0.4088,
+        "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=inventory_cycle"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5394,7 +7275,13 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 9.8 kWh ideal",
+        "medium": "water (potential energy)",
+        "conditions": "18 m head",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -5412,7 +7299,21 @@
       ],
       "open_boundary": true,
       "from_sector_id": "GAS",
-      "to_sector_id": "DOCK"
+      "to_sector_id": "DOCK",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
+      },
+      "params": {
+        "rate_basis": "contingency relief only; no continuous flow on the design day",
+        "rate_source": "NFPA 55 / NFPA 2 relief class",
+        "medium": "relief gas",
+        "conditions": "event only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S25",
@@ -5422,23 +7323,32 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "VCD distillate",
       "header": "process UPW",
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 161.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: VCD recovery 90% of feed 178.9 (S13 + S29 + S52)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "VCD recovery 90% of feed 178.9 (S13 + S29 + S52)",
+        "rate_source": "VCD practice",
+        "medium": "distillate",
+        "conditions": "~40 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: VCD distillate to UPW polish"
+      }
     },
     {
       "stream_id": "S26",
@@ -5448,23 +7358,32 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "potable",
       "header": "potable + RPZ",
       "forbidden": "wet bench, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 10.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: REMIN drink_L_d 10"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "REMIN drink_L_d 10",
+        "rate_source": "REMIN node params",
+        "medium": "remineralized potable",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: REMIN drinking water to HAB"
+      }
     },
     {
       "stream_id": "S27",
@@ -5480,10 +7399,10 @@
       "forbidden": "remin path, grey",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 60.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5492,7 +7411,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FAB_UPW_TANK \u2192 WET_BENCH"
+      "notes": "From register: FAB_UPW_TANK \u2192 WET_BENCH",
+      "params": {
+        "rate_basis": "fab UPW 20-100 L/d for 1-5 starts, at 3 starts",
+        "rate_source": "AQS-AUD-001 s13 + ST-LITHO-01",
+        "medium": "UPW >18 MOhm.cm",
+        "conditions": "ambient, 1.0 kg/L",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S28",
@@ -5502,23 +7429,32 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "VCD brine",
       "header": "process",
       "forbidden": "HDR_UPW, farm beds",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 17.8892,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: VCD brine 10% of feed"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "VCD brine 10% of feed",
+        "rate_source": "VCD practice",
+        "medium": "VCD brine",
+        "conditions": "~40 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: VCD brine to REGEN LEACH"
+      }
     },
     {
       "stream_id": "S29",
@@ -5528,16 +7464,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "treated grey",
       "header": "HDR_GREY branch",
       "forbidden": "Salria, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 104.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: grey treat recovery 95 % of S12 (5 % sludge/backwash)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5546,7 +7482,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED"
+      "notes": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED",
+      "params": {
+        "rate_basis": "grey treat recovery 95 % of S12 (5 % sludge/backwash)",
+        "rate_source": "grey-water practice",
+        "medium": "treated grey",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: treated grey to VCD"
+      }
     },
     {
       "stream_id": "S30",
@@ -5562,10 +7507,10 @@
       "forbidden": "VCD evaporators (solids), sewer",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 16.43,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: black water 16.48 kg/d less digester gas 0.05"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "NUT",
@@ -5574,7 +7519,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED"
+      "notes": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED",
+      "params": {
+        "rate_basis": "black water 16.48 kg/d less digester gas 0.05",
+        "rate_source": "BVAD class",
+        "medium": "digest liquor / nutrients",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S31",
@@ -5590,10 +7543,10 @@
       "forbidden": "sewer, HDR_GREY, life",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5602,7 +7555,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_HF_ED \u2192 WET_BENCH"
+      "notes": "From register: WS_HF_ED \u2192 WET_BENCH",
+      "params": {
+        "rate_basis": "AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "HF (aq) dilute",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S32",
@@ -5618,10 +7579,10 @@
       "forbidden": "sewer",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5630,7 +7591,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_PEROX \u2192 WET_BENCH"
+      "notes": "From register: WS_PEROX \u2192 WET_BENCH",
+      "params": {
+        "rate_basis": "AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "H2O2 dilute (SC-1/SC-2)",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S33",
@@ -5646,10 +7615,10 @@
       "forbidden": "hab air",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5658,7 +7627,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_AMMONIA \u2192 WET_BENCH"
+      "notes": "From register: WS_AMMONIA \u2192 WET_BENCH",
+      "params": {
+        "rate_basis": "AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "NH4OH dilute (SC-1)",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S35",
@@ -5674,10 +7651,10 @@
       "forbidden": "sewer, farm beds",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.2725,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L)"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5686,7 +7663,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_KOH \u2192 WET_BENCH / solar texture stub"
+      "notes": "From register: WS_KOH \u2192 WET_BENCH / solar texture stub",
+      "params": {
+        "rate_basis": "AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L)",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "KOH 2 M",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "L_d": 0.25,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S36",
@@ -5702,10 +7688,10 @@
       "forbidden": "hab AHU",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 grams/d concentrate -> 10 g/d"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5714,7 +7700,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_DOPE / CRU polish \u2192 FAB_TOOL dopant cabinets"
+      "notes": "From register: WS_DOPE / CRU polish \u2192 FAB_TOOL dopant cabinets",
+      "params": {
+        "rate_basis": "AUD s13 grams/d concentrate -> 10 g/d",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "B/P dopant concentrate",
+        "conditions": "cabinet",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S37",
@@ -5730,10 +7724,10 @@
       "forbidden": "sewer",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -5742,7 +7736,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP"
+      "notes": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP",
+      "params": {
+        "rate_basis": "AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "colloidal silica slurry",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S38",
@@ -5757,7 +7759,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.006,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d"
+      },
+      "params": {
+        "rate_basis": "ST-LITHO-01 resist waste 6 g/d",
+        "rate_source": "ST-LITHO-01",
+        "medium": "resist and solvent waste",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S39",
@@ -5772,7 +7788,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 3.31,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: spent slurry + dopant residue = S37 + S36 (AUD: spent return same order as forwards)"
+      },
+      "params": {
+        "rate_basis": "spent slurry + dopant residue = S37 + S36 (AUD: spent return same order as forwards)",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "spent slurry and etch liquor",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S39B",
@@ -5788,7 +7818,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.9875,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: WS_SOLV 1.25 L/d (AUD s13 0.5-2 mid) x 0.79"
+      },
+      "params": {
+        "rate_basis": "WS_SOLV 1.25 L/d (AUD s13 0.5-2 mid) x 0.79",
+        "rate_source": "AQS-AUD-001 s13 WS_SOLV",
+        "medium": "solvent and photoresist",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S40",
@@ -5804,17 +7848,25 @@
       "forbidden": "FARM_SUMP, S26 potable, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=event"
+        "note": "AQS-DUTY-010: event-driven; zero on the dry design day"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "TRR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "event-driven; zero on the dry design day",
+        "rate_source": "AUD s4 terrace S40 event-driven",
+        "medium": "water",
+        "conditions": "event only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S41",
@@ -5830,10 +7882,10 @@
       "forbidden": "L-1 process bund, HDR_GREY fertigation",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: event-driven; zero on the dry design day"
       },
       "from_sector_id": "TRR",
       "to_sector_id": "WTR",
@@ -5844,7 +7896,13 @@
       ],
       "notes": "From register: TERRACE underdrain / apron (clean) \u2192 CATCH TANK / DRAIN_SEC",
       "params": {
-        "route": "terrace drain -> wall sleeve at L0 -> SHAFT_PENSTOCK -> CATCH_TANK; no opening into L-1"
+        "route": "terrace drain -> wall sleeve at L0 -> SHAFT_PENSTOCK -> CATCH_TANK; no opening into L-1",
+        "rate_basis": "event-driven; zero on the dry design day",
+        "rate_source": "AUD s4 terrace S40 event-driven",
+        "medium": "water",
+        "conditions": "event only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -5861,10 +7919,10 @@
       "forbidden": "CATCH, ROOF_TANK, sewer-as-primary",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: event-driven; zero on the dry design day"
       },
       "from_sector_id": "TRR",
       "to_sector_id": "WTR",
@@ -5873,7 +7931,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Enclosed terrace / GH fertigated drain \u2192 GREY treat / VCD_FEED / SALT"
+      "notes": "From register: Enclosed terrace / GH fertigated drain \u2192 GREY treat / VCD_FEED / SALT",
+      "params": {
+        "rate_basis": "event-driven; zero on the dry design day",
+        "rate_source": "AUD s4 terrace S40 event-driven",
+        "medium": "water",
+        "conditions": "event only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S43",
@@ -5890,10 +7956,10 @@
       "forbidden": "HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
@@ -5902,7 +7968,17 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)"
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)",
+      "params": {
+        "rate_basis": "ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW",
+        "rate_source": "GEO_GHEX params; ST-ORC-01",
+        "medium": "glycol loop",
+        "conditions": "12 C ground",
+        "rate_kind": "derived",
+        "standby_kw": 2.126,
+        "cop": 3.43,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S44",
@@ -5918,10 +7994,10 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HAB",
@@ -5930,7 +8006,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB"
+      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab",
+        "rate_source": "HEAT_LADDER (GEO_HP only lift); DUTY-008 q4_life_kw",
+        "medium": "Q4 water",
+        "conditions": "60 C supply",
+        "rate_kind": "derived",
+        "standby_kw": 1.5,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S45",
@@ -5971,7 +8056,22 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 250.56,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: S45 3.6 + air at lambda 2.0 (34.3 kg/kg stoich)"
+      },
+      "params": {
+        "rate_basis": "S45 3.6 + air at lambda 2.0 (34.3 kg/kg stoich)",
+        "rate_source": "H2 combustion stoichiometry",
+        "medium": "engine exhaust (H2O, N2, O2, NOx)",
+        "conditions": "hot exhaust",
+        "rate_kind": "derived",
+        "kg_h": 10.44,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S47",
@@ -5997,34 +8097,6 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S48",
-      "from_unit_id": "GEO_ORC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec"
-      ],
-      "presence": "placeholder",
-      "carries": "ORC AC",
-      "header": "future AC couple",
-      "forbidden": "hard-coded 100 kW on M1",
-      "claim_status": "Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "GEO",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "orc_stub_kw_tbd"
-      ],
       "notes": null
     },
     {
@@ -6113,23 +8185,32 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "PEM product H2O",
       "header": "S13 / grey-condensate",
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 42.8929,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "S49 4.8 kg/d H2 x 18.015/2.016",
+        "rate_source": "PEM stoichiometry",
+        "medium": "PEM product water",
+        "conditions": "~60 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: PEM product water to VCD"
+      }
     },
     {
       "stream_id": "S53",
@@ -6145,10 +8226,10 @@
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.1419,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "HAB",
@@ -6157,7 +8238,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return",
+        "rate_source": "H2 LHV; S51 authority",
+        "medium": "Q4 water",
+        "conditions": "45 C return",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S54",
@@ -6173,10 +8262,10 @@
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.5448,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
@@ -6185,7 +8274,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058",
+        "rate_source": "CRYO_COLD_BOX (intercooler residual + sieve cool-down)",
+        "medium": "Q4 water",
+        "conditions": "45 C return / 60 C supply",
+        "rate_kind": "derived",
+        "asu_air_kg_d": 200.5,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S55",
@@ -6202,10 +8300,10 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 4.2838,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -6214,7 +8312,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL"
+      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL",
+      "params": {
+        "rate_basis": "Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)",
+        "rate_source": "CRYO_COLD_BOX; CONTINUOUS_KW 2-8 kW class",
+        "medium": "glycol 30 %",
+        "conditions": "dT 5 K",
+        "rate_kind": "derived",
+        "glycol_kg_h": 857.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S56",
@@ -6231,7 +8338,21 @@
       ],
       "open_boundary": false,
       "from_sector_id": "CRYO",
-      "to_sector_id": "DOCK"
+      "to_sector_id": "DOCK",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
+      },
+      "params": {
+        "rate_basis": "contingency relief only; no continuous flow on the design day",
+        "rate_source": "NFPA 55 / NFPA 2 relief class",
+        "medium": "relief gas",
+        "conditions": "event only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S57",
@@ -6247,10 +8368,10 @@
       "forbidden": "polymer, FR-4, pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 4.3789,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3%"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -6259,7 +8380,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER"
+      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER",
+      "params": {
+        "rate_basis": "Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3%",
+        "rate_source": "S08 split (EW-3 Cu share)",
+        "medium": "Cu billet",
+        "conditions": "cast",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S58",
@@ -6275,10 +8404,10 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.941,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: S57 less 10% draw swarf"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -6287,7 +8416,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB"
+      "notes": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB",
+      "params": {
+        "rate_basis": "S57 less 10% draw swarf",
+        "rate_source": "forming yield",
+        "medium": "Cu wire",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S59",
@@ -6303,10 +8440,10 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.9529,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -6315,7 +8452,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB"
+      "notes": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB",
+      "params": {
+        "rate_basis": "Cu 4.392 to cold mill less 10% trim",
+        "rate_source": "forming yield",
+        "medium": "Cu sheet/strip",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S60",
@@ -6331,10 +8476,10 @@
       "forbidden": "open ignition, HAB air",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 3.1999,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -6343,7 +8488,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap"
+      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap",
+      "params": {
+        "rate_basis": "blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec",
+        "rate_source": "atomizer yield",
+        "medium": "metal powder",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S61",
@@ -6359,10 +8512,10 @@
       "forbidden": "FR-4, pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.1971,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines)"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "OIL",
@@ -6371,7 +8524,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Forming swarf / trim \u2192 HOPPER / leach"
+      "notes": "From register: Forming swarf / trim \u2192 HOPPER / leach",
+      "params": {
+        "rate_basis": "swarf/trim/off-spec from draw, mill and atomizer (less LEV fines)",
+        "rate_source": "forming yield",
+        "medium": "metal scrap",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S62",
@@ -6387,10 +8548,10 @@
       "forbidden": "HAB/FARM return, acid-gas as primary",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 2131.07,
+        "unit": "kg/h",
+        "status": "study",
+        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -6399,7 +8560,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse (S71)"
+      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse (S71)",
+      "params": {
+        "rate_basis": "MET aisle general exhaust 6.0 ACH x 300.0 m3",
+        "rate_source": "ventilation basis",
+        "medium": "air",
+        "conditions": "25 C, atm",
+        "rate_kind": "derived",
+        "m3_h": 1800.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S63",
@@ -6415,10 +8585,10 @@
       "forbidden": "melt/atomizer hot gas as flue",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0171,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water)"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HAB",
@@ -6427,7 +8597,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water)",
+        "rate_source": "Cu properties",
+        "medium": "Q4 water",
+        "conditions": "45 C return",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S64",
@@ -6467,7 +8645,22 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 1562.91,
+        "unit": "kg/h",
+        "status": "study",
+        "note": "AQS-DUTY-010: polish 1500.0 m3/h at 50.0 C saturated"
+      },
+      "params": {
+        "rate_basis": "polish 1500.0 m3/h at 50.0 C saturated",
+        "rate_source": "hub VENT_SCRUB_EQUIPMENT 2.1; FAN_STACK HDR_ACID_GAS 1500 m3/h",
+        "medium": "acid-gas residual in moist air",
+        "conditions": "50.0 C, atm",
+        "rate_kind": "derived",
+        "m3_h": 1500.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S66",
@@ -6483,10 +8676,10 @@
       "forbidden": "sewer, Br\u207b liquor, farm beds",
       "claim_status": "Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 27.3623,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "WET",
@@ -6495,7 +8688,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: ACID_POLISH / ALK blowdown \u2192 CRU"
+      "notes": "From register: ACID_POLISH / ALK blowdown \u2192 CRU",
+      "params": {
+        "rate_basis": "Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts",
+        "rate_source": "VENT_SCRUB_EQUIPMENT 2.1 (blowdown 50-200 L per transfer)",
+        "medium": "hypochlorite/chloride scrub liquor",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S67",
@@ -6583,7 +8784,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 173.67,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW"
+      },
+      "params": {
+        "rate_basis": "CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW",
+        "rate_source": "RELIEF_CRYO size basis 12 ACH x 216 m3; VENT_SCRUB 2.3 KO 2-5 kW",
+        "medium": "AHU coil condensate (carries text says flue condensate: flagged)",
+        "conditions": "~10 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S69",
@@ -6598,7 +8813,24 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 852.47,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2"
+      },
+      "params": {
+        "rate_basis": "headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2",
+        "rate_source": "hub VENT_SCRUB_EQUIPMENT 2.2",
+        "medium": "moist air + Br2 vapor",
+        "conditions": "25 C, atm",
+        "rate_kind": "derived",
+        "br2_kg_d": 0.047,
+        "water_kg_d": 8.44,
+        "m3_h": 30.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S69B",
@@ -6613,7 +8845,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 8.4872,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: scrub liquor: saturation water 8.44 + Br2 0.0470 + NaOH make-up 0.0003"
+      },
+      "params": {
+        "rate_basis": "scrub liquor: saturation water 8.44 + Br2 0.0470 + NaOH make-up 0.0003",
+        "rate_source": "Br2 + 2 NaOH; vapor condensed in the scrub",
+        "medium": "NaBr/NaBrO liquor",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S70",
@@ -6628,7 +8874,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0521,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box"
+      },
+      "params": {
+        "rate_basis": "CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box",
+        "rate_source": "AQS-DUTY-009 dark buffer",
+        "medium": "CO2 vapor (condensables)",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S71",
@@ -6644,10 +8904,10 @@
       "forbidden": "HAB return, HDR_ACID_GAS primary",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 852.43,
+        "unit": "kg/h",
+        "status": "study",
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -6656,7 +8916,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse"
+      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse",
+      "params": {
+        "rate_basis": "MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3",
+        "rate_source": "hub VENT_SCRUB_EQUIPMENT 2.4",
+        "medium": "air + metal fume/fines/mist",
+        "conditions": "25 C, atm",
+        "rate_kind": "derived",
+        "m3_h": 720.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S72",
@@ -6671,7 +8940,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 2.4366,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids"
+      },
+      "params": {
+        "rate_basis": "fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids",
+        "rate_source": "AQS-DUTY-010 MET balance",
+        "medium": "metal fines in aqueous scrub liquor",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S72B",
@@ -6686,7 +8969,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0158,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d"
+      },
+      "params": {
+        "rate_basis": "lubricant mist 2.0 g/kg formed x 7.89 kg/d",
+        "rate_source": "forming practice",
+        "medium": "organic mist (draw/roll lube)",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S73",
@@ -6806,10 +9103,10 @@
       "forbidden": "sewer-as-primary",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0146,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70%"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -6818,7 +9115,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_FERM_STILL \u2192 MEOH_TANK"
+      "notes": "From register: MEOH_FERM_STILL \u2192 MEOH_TANK",
+      "params": {
+        "rate_basis": "VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70%",
+        "rate_source": "digestion stoichiometry",
+        "medium": "biogenic MeOH",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S78",
@@ -6834,10 +9139,10 @@
       "forbidden": "CATCH potable",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.36,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: food waste 15% of ration"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "MEOH",
@@ -6846,7 +9151,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Farm/hab organics (S12/S30 class) \u2192 MEOH_FERM_DIG"
+      "notes": "From register: Farm/hab organics (S12/S30 class) \u2192 MEOH_FERM_DIG",
+      "params": {
+        "rate_basis": "food waste 15% of ration",
+        "rate_source": "FAO household waste class",
+        "medium": "food waste",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S79",
@@ -6863,17 +9176,26 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 1.0,
+        "value": 0.2925,
         "unit": "kW",
         "status": "study",
-        "note": "Mid of AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5\u20132 kW_dc; stand-in SI-DMFC-01 class"
+        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met",
+        "rate_source": "EFOY-class fuel use; ESS_DUTY_MATRIX",
+        "medium": "DC power",
+        "conditions": "24 V DC bus",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 1.0
+      }
     },
     {
       "stream_id": "S80",
@@ -6889,10 +9211,10 @@
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.3689,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HAB",
@@ -6901,7 +9223,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "DMFC heat 0.861 kW x 0.4286 above Q4 return",
+        "rate_source": "MeOH LHV",
+        "medium": "Q4 water",
+        "conditions": "45 C return",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S81",
@@ -6916,7 +9246,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 5.6223,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d"
+      },
+      "params": {
+        "rate_basis": "CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d",
+        "rate_source": "stoichiometry",
+        "medium": "MeOH FC product water (MeOH trace)",
+        "conditions": "~60 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S82",
@@ -6957,7 +9301,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count."
+      },
+      "params": {
+        "rate_basis": "HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count.",
+        "rate_source": "graph topology",
+        "medium": "O2 gas",
+        "conditions": "header pressurized, no draw",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S84",
@@ -6972,7 +9330,21 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count."
+      },
+      "params": {
+        "rate_basis": "HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count.",
+        "rate_source": "graph topology",
+        "medium": "N2 gas",
+        "conditions": "header pressurized, no draw",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S85",
@@ -7012,14 +9384,28 @@
       "layers": [
         "mass"
       ],
-      "open_boundary": false
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
+      },
+      "params": {
+        "rate_basis": "contingency relief only; no continuous flow on the design day",
+        "rate_source": "NFPA 55 / NFPA 2 relief class",
+        "medium": "relief gas",
+        "conditions": "event only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S87",
       "from_unit_id": "GROW_BED",
       "to_unit_id": "CRYO_O2",
       "phase": "G",
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "surplus O2 capture",
       "forbidden": "BOUNDARY_EXPORT, HDR_H2",
       "notes": "Capture. Not a vent. Not hab air into a process header.",
@@ -7029,14 +9415,24 @@
       ],
       "open_boundary": false,
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO"
+      "to_sector_id": "CRYO",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint."
+      },
+      "params": {
+        "hold_reason": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint.",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S88",
       "from_unit_id": "CRYO_N2",
       "to_unit_id": "GROW_BED",
       "phase": "G",
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "N2 make-up",
       "forbidden": "CRYO_AHU residual, dock",
       "notes": "Make-up from the N2 box only.",
@@ -7046,7 +9442,17 @@
       ],
       "open_boundary": false,
       "from_sector_id": "CRYO",
-      "to_sector_id": "CRYO"
+      "to_sector_id": "CRYO",
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "HOLD placeholder: GROW_BED has no N2 demand (farm is outdoor-air ventilated at the DUTY-009 OA rate). Source rule is met (CRYO_N2, not the cryo residual) but there is no sink. No clean endpoint."
+      },
+      "params": {
+        "hold_reason": "HOLD placeholder: GROW_BED has no N2 demand (farm is outdoor-air ventilated at the DUTY-009 OA rate). Source rule is met (CRYO_N2, not the cryo residual) but there is no sink. No clean endpoint.",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S34",
@@ -7060,7 +9466,22 @@
       "layers": [
         "mass"
       ],
-      "namespace": "S"
+      "namespace": "S",
+      "rate": {
+        "value": 0.665,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L"
+      },
+      "params": {
+        "rate_basis": "AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "HNO3 2 M",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "L_d": 0.625,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S34B",
@@ -7074,7 +9495,22 @@
       "layers": [
         "mass"
       ],
-      "namespace": "S"
+      "namespace": "S",
+      "rate": {
+        "value": 0.625,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 50/50 split of the same band, 0.625 L/d dilute 1.0 kg/L"
+      },
+      "params": {
+        "rate_basis": "50/50 split of the same band, 0.625 L/d dilute 1.0 kg/L",
+        "rate_source": "AQS-AUD-001 s13",
+        "medium": "H3PO4 dilute",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "L_d": 0.625,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S89",
@@ -7090,10 +9526,10 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.616,
+        "value": 15.637,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-009: all of S85. 1000 ppm setpoint, dosed in the 16 h photoperiod."
+        "note": "AQS-DUTY-010: AQS-DUTY-009 Rev B: S85 11.616 + S90 4.021"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
@@ -7102,13 +9538,13 @@
       "gap_flags": [],
       "notes": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU.",
       "params": {
-        "doc": "AQS-DUTY-009",
-        "medium": "CO2 gas (dry, from the CRYO_CO2 vaporizer)",
+        "doc": "AQS-DUTY-009 Rev B",
+        "medium": "CO2 gas",
         "P_bar_a": 3.0,
         "T_C": 20.0,
         "rho_kg_m3": 5.5,
-        "m_avg_kg_h": 0.484,
-        "m_peak_kg_h": 0.726,
+        "m_avg_kg_h": 0.652,
+        "m_peak_kg_h": 0.977,
         "q_peak_m3_h": 0.132,
         "line_DN": 15,
         "line_id_mm": 15.8,
@@ -7117,12 +9553,53 @@
         "dose_control": "mass-flow controller + solenoid on farm CO2 ppm; OA damper on farm CO2 high limit",
         "setpoint_ppm": 1000,
         "photoperiod_h": 16,
-        "oa_required_m3_h": 693.5,
+        "oa_required_m3_h": 933.5,
         "oa_min_m3_h": 251.3,
         "fate_fixed_kg_d": 0.0,
-        "fate_exhaust_kg_d": 11.616,
+        "fate_exhaust_kg_d": 15.637,
         "fate_note": "Not sequestration. GROW_BED fixes S04 (1.109 kg/d); the S89 carbon leaves with farm exhaust air.",
-        "dark_buffer_kg": 3.87
+        "dark_buffer_kg": 5.21,
+        "rate_basis": "AQS-DUTY-009 Rev B: S85 11.616 + S90 4.021",
+        "rate_source": "AQS-DUTY-009 Rev B",
+        "conditions": "3.0 bar a, 20 C",
+        "rate_kind": "derived",
+        "rev_k_value": 11.616
+      }
+    },
+    {
+      "stream_id": "S90",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "HDR_CO2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "metabolic CO2 (desorbed from the HAB CO2 sorbent bed)",
+      "header": "HDR_CO2",
+      "forbidden": "HDR_O2, hab air return, BOUNDARY_EXPORT, process headers",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 4.021,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock.",
+      "params": {
+        "doc": "AQS-DUTY-010",
+        "rate_basis": "AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00",
+        "rate_source": "NASA BVAD RQ; S02",
+        "medium": "CO2 gas (desorbed, dry)",
+        "conditions": "sorbent desorb, compressed to HDR_CO2 3.0 bar a",
+        "P_bar_a": 3.0,
+        "line_DN": 15,
+        "material": "316L"
       }
     }
   ],

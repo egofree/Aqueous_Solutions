@@ -2,7 +2,7 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "K",
+  "source_revision": "L",
   "node_count": 25,
   "edge_count": 37,
   "orphan_campus_units": [],
@@ -25,7 +25,61 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "combustion air",
+              "value": 236.68,
+              "basis": "DUTY-008 flue 10.07 kg/h less fuel",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "flue to AFTERBURNER_FLUE",
+              "value": 241.68,
+              "basis": "DUTY-008 m_flue_kg_h",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "NCG heat release",
+              "value": 2.744,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "shell loss",
+              "value": 0.137,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-7 to burnout",
+              "value": 0.632,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "flue sensible to KO",
+              "value": 0.869,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -82,7 +136,69 @@
           420,
           650
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Au cathode harvest (reported on S08)",
+              "value": 0.0063,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 56.278,
+              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "cell ohmic heat (9 cells)",
+              "value": 1.938,
+              "basis": "DUTY-008 HX-8",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "feed sensible above 51 C",
+              "value": 4.128,
+              "basis": "DUTY-008 HX-8",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "wall loss",
+              "value": 0.533,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "evaporation (ball blanket)",
+              "value": 0.962,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -109,7 +225,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "cathode excess O2 vent",
+              "value": 0.3071,
+              "basis": "S50 less stoichiometric O2",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "H2 LHV (S49)",
+              "value": 6.6644,
+              "basis": "119.96 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat to ambient",
+              "value": 1.5225,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -189,7 +335,45 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "2 M NaOH digest liquor",
+              "value": 320.76,
+              "basis": "DUTY-008 digest 593 mol/d at 2 M",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "sodium silicate liquor (carries the caustic)",
+              "value": 320.76,
+              "basis": "same liquor; S08G is on the cullet-equivalent yield basis",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim",
+              "value": 1.084,
+              "basis": "DUTY-008 trim_normal",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "digest duty",
+              "value": 1.663,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -222,13 +406,51 @@
         "presence": "present",
         "co2_in_kg_d": {
           "S04": 1.109,
-          "S89": 11.616
+          "S89": 15.637
         },
         "co2_fixed_kg_d": 1.109,
-        "co2_to_exhaust_kg_d": 11.616,
+        "co2_to_exhaust_kg_d": 15.637,
         "co2_setpoint_ppm": 1000,
-        "farm_oa_m3_h": 693.5,
-        "co2_doc": "AQS-DUTY-009"
+        "farm_oa_m3_h": 933.5,
+        "co2_doc": "AQS-DUTY-009",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW make-up from HDR_UPW (S01)",
+              "value": 95.0,
+              "basis": "S01",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "CO2 to farm exhaust",
+              "value": 15.637,
+              "basis": "AQS-DUTY-009 fate",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "water vapor to farm exhaust",
+              "value": 60.9005,
+              "basis": "OA x humidity rise",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "photosynthetic O2 to farm exhaust",
+              "value": 0.8063,
+              "basis": "CO2 + H2O -> CH2O + O2 on S04",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -284,7 +506,61 @@
       "modules": [],
       "params": {
         "V_m3": null,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "fresh shredded feed",
+              "value": 150.0,
+              "basis": "plant basis 150 kg/d wet",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "EW cathode harvest booked onto S08",
+              "value": 42.0,
+              "basis": "= S08",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "slurry to FLOAT_SINK",
+              "value": 454.7062,
+              "basis": "undissolved + 20 wt % liquor",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "purge vapor",
+              "value": 20.3,
+              "basis": "DUTY-008 HX-5 purge",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim (ladder short)",
+              "value": 6.353,
+              "basis": "DUTY-008 trim_normal",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "HX-5 duty (regen + shell + shred + purge - exotherm)",
+              "value": 6.353,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -311,7 +587,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "air O2",
+              "value": 7.4897,
+              "basis": "stoichiometric",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "MeOH LHV (S76)",
+              "value": 1.1534,
+              "basis": "19.93 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat",
+              "value": 0.4919,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -339,7 +645,46 @@
       "notes": "Oil dryer (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "float cake",
+              "value": 40.5,
+              "basis": "FLOAT_SINK",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "dryer vapor",
+              "value": 7.5,
+              "basis": "DUTY-008 dryer water 7.5 kg/d",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "dryer duty (evaporation)",
+              "value": 0.242,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim",
+              "value": 0.0,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -355,7 +700,21 @@
       "modules": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "life load (hab + farm)",
+              "value": 3.0,
+              "basis": "DUTY-008 q4_life_kw = GHEX Q4 life priority",
+              "kind": "derived"
+            }
+          ]
+        }
       },
       "continuous_kw": null
     },
@@ -376,7 +735,53 @@
           600,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "HX-7 from afterburner",
+              "value": 0.632,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "electric trim",
+              "value": 0.238,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "q_offgas_kw",
+              "value": 0.03,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "q_end_kw",
+              "value": 0.05,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "q_cullet_residual_kw",
+              "value": 0.048,
+              "basis": "DUTY-008",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -418,7 +823,21 @@
           }
         },
         "coil_pack_stack_m": 0.76,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.2,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -466,7 +885,29 @@
           }
         },
         "coil_pack_stack_m": 0.881,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.111,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0106,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -514,7 +955,29 @@
           }
         },
         "coil_pack_stack_m": 0.63,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.174,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0181,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -556,7 +1019,21 @@
           }
         },
         "coil_pack_stack_m": 0.549,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.164,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -598,7 +1075,21 @@
           }
         },
         "coil_pack_stack_m": 0.76,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.2,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -646,7 +1137,29 @@
           }
         },
         "coil_pack_stack_m": 0.881,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.111,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0106,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -694,7 +1207,29 @@
           }
         },
         "coil_pack_stack_m": 0.63,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.174,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "thermosyphon line loss on arrival",
+              "value": 0.0181,
+              "basis": "DUTY-008 A_HP_LOSS",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -736,7 +1271,21 @@
           }
         },
         "coil_pack_stack_m": 0.549,
-        "coil_pack_doc": "AQS-DUTY-008 Rev C"
+        "coil_pack_doc": "AQS-DUTY-008 Rev C",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "store standing loss",
+              "value": 0.164,
+              "basis": "DUTY-008 store loss",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     }
   ],
@@ -2280,17 +2829,26 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to farm"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to farm",
+        "rate_source": "HEAT_LADDER (GEO_HP only lift); DUTY-008 q4_life_kw",
+        "medium": "Q4 water",
+        "conditions": "60 C supply",
+        "rate_kind": "derived",
+        "standby_kw": 1.5,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S43",
@@ -2307,10 +2865,10 @@
       "forbidden": "HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
@@ -2319,7 +2877,17 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)"
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)",
+      "params": {
+        "rate_basis": "ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW",
+        "rate_source": "GEO_GHEX params; ST-ORC-01",
+        "medium": "glycol loop",
+        "conditions": "12 C ground",
+        "rate_kind": "derived",
+        "standby_kw": 2.126,
+        "cop": 3.43,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S44",
@@ -2335,10 +2903,10 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HAB",
@@ -2347,7 +2915,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB"
+      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab",
+        "rate_source": "HEAT_LADDER (GEO_HP only lift); DUTY-008 q4_life_kw",
+        "medium": "Q4 water",
+        "conditions": "60 C supply",
+        "rate_kind": "derived",
+        "standby_kw": 1.5,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S53",
@@ -2363,10 +2940,10 @@
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 1.1419,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "HAB",
@@ -2375,7 +2952,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return",
+        "rate_source": "H2 LHV; S51 authority",
+        "medium": "Q4 water",
+        "conditions": "45 C return",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S54",
@@ -2391,10 +2976,10 @@
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.5448,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
@@ -2403,7 +2988,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058",
+        "rate_source": "CRYO_COLD_BOX (intercooler residual + sieve cool-down)",
+        "medium": "Q4 water",
+        "conditions": "45 C return / 60 C supply",
+        "rate_kind": "derived",
+        "asu_air_kg_d": 200.5,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S55",
@@ -2420,10 +3014,10 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 4.2838,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -2432,7 +3026,16 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL"
+      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL",
+      "params": {
+        "rate_basis": "Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)",
+        "rate_source": "CRYO_COLD_BOX; CONTINUOUS_KW 2-8 kW class",
+        "medium": "glycol 30 %",
+        "conditions": "dT 5 K",
+        "rate_kind": "derived",
+        "glycol_kg_h": 857.0,
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S63",
@@ -2448,10 +3051,10 @@
       "forbidden": "melt/atomizer hot gas as flue",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.0171,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water)"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HAB",
@@ -2460,7 +3063,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water)",
+        "rate_source": "Cu properties",
+        "medium": "Q4 water",
+        "conditions": "45 C return",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S80",
@@ -2476,10 +3087,10 @@
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
+        "value": 0.3689,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HAB",
@@ -2488,7 +3099,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "params": {
+        "rate_basis": "DMFC heat 0.861 kW x 0.4286 above Q4 return",
+        "rate_source": "MeOH LHV",
+        "medium": "Q4 water",
+        "conditions": "45 C return",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
+      }
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-ESS",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "K",
-  "node_count": 8,
-  "edge_count": 11,
+  "source_revision": "L",
+  "node_count": 7,
+  "edge_count": 9,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -99,34 +99,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
-      }
-    },
-    {
-      "unit_id": "MEOH_SYNTH",
-      "sector_id": "MEOH",
-      "presence": "present",
-      "class": "reactor",
-      "tags": [],
-      "electrical_role": "load",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.5,
-        "unit": "kW",
-        "status": "study",
-        "note": "Study synth parasitic mid when surplus-H2 path active (AQS-MeOH-001)"
-      },
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "size_mm": [
-          2200,
-          900,
-          1400
-        ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "air O2",
+              "value": 7.4897,
+              "basis": "stoichiometric",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "MeOH LHV (S76)",
+              "value": 1.1534,
+              "basis": "19.93 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat",
+              "value": 0.4919,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -171,7 +174,21 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "inventory draw (dry design day, no rain)",
+              "value": 120.0,
+              "basis": "S21 + S40 met from storage",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -210,7 +227,37 @@
       "params": {
         "kW": 60,
         "kWh": 120,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "purge air (dry)",
+              "value": 843.9862,
+              "basis": "headspace purge",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
+              "value": 8.4402,
+              "basis": "no electrolyte bleed on the graph",
+              "kind": "accumulation"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     }
   ],
@@ -230,10 +277,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
+        "value": 200000.0,
         "unit": "kg/d",
-        "status": "null",
-        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+        "status": "study",
+        "note": "AQS-DUTY-010: one full 200 m3 cycle per day"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -244,7 +291,13 @@
       ],
       "notes": "EFD chemical-storage / charge-discharge typing",
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "one full 200 m3 cycle per day",
+        "rate_source": "ESS_DUTY_MATRIX pumped hydro 200 m3 / 18 m",
+        "medium": "water",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -262,10 +315,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
+        "value": 200000.0,
         "unit": "kg/d",
-        "status": "null",
-        "note": "inventory_cycle \u2014 peers S22/S23; no invented continuous rate"
+        "status": "study",
+        "note": "AQS-DUTY-010: one full cycle per day"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -276,7 +329,13 @@
       ],
       "notes": "EFD chemical-storage / charge-discharge typing",
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "one full cycle per day",
+        "rate_source": "ESS_DUTY_MATRIX",
+        "medium": "water",
+        "conditions": "ambient",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -288,16 +347,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.2917,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h"
       },
       "from_sector_id": "PUMPED_HYDRO",
       "to_sector_id": "ELEC",
@@ -307,66 +366,16 @@
         "ess_layer",
         "missing_on_sld"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-CHG",
-      "from_unit_id": "MEOH_SYNTH",
-      "to_unit_id": "MEOH_TANK",
-      "phase": "L",
-      "layers": [
-        "mass",
-        "ess"
-      ],
-      "presence": "placeholder",
-      "carries": "MeOH synth inventory = charge-analogue",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "MEOH",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-DIS",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "placeholder",
-      "carries": "MeOH FC discharge (peers S79)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "use S79 for rate; this edge is ESS-layer view alias"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "overlaps_S79_architecture"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "7.0 kWh recoverable per cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX ~7 kWh recoverable",
+        "medium": "AC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: hydro set to bus"
+      }
     },
     {
       "stream_id": "IA-ESS-ZNBR2-CHG",
@@ -377,16 +386,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 charge (PV/RECT surplus)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 6.6667,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid)"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ZNBR2",
@@ -395,7 +404,17 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid)",
+        "rate_source": "FLOW_BATTERY",
+        "medium": "DC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "peak_kw": 60.0,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: ZnBr2 charge"
+      }
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -406,16 +425,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 discharge to bus",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h"
       },
       "from_sector_id": "ZNBR2",
       "to_sector_id": "ELEC",
@@ -424,7 +443,17 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "120.0 kWh one cycle/d averaged over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 120 kWh; FLOW_BATTERY",
+        "medium": "DC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "peak_kw": 60.0,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: ZnBr2 discharge"
+      }
     },
     {
       "stream_id": "S22",
@@ -440,10 +469,10 @@
       "forbidden": "process sumps",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": "kg/d",
+        "value": 0.4088,
+        "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=inventory_cycle"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -452,7 +481,13 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 9.8 kWh ideal",
+        "medium": "water (potential energy)",
+        "conditions": "18 m head",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -469,10 +504,10 @@
       "forbidden": "HDR_GREY",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
-        "unit": "kg/d",
+        "value": 0.4088,
+        "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=inventory_cycle"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -481,7 +516,13 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)"
+        "route": "SHAFT_PENSTOCK (only L-1/L-2 slab crossing)",
+        "rate_basis": "hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 9.8 kWh ideal",
+        "medium": "water (potential energy)",
+        "conditions": "18 m head",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -525,17 +566,26 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 1.0,
+        "value": 0.2925,
         "unit": "kW",
         "status": "study",
-        "note": "Mid of AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5\u20132 kW_dc; stand-in SI-DMFC-01 class"
+        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met",
+        "rate_source": "EFOY-class fuel use; ESS_DUTY_MATRIX",
+        "medium": "DC power",
+        "conditions": "24 V DC bus",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 1.0
+      }
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

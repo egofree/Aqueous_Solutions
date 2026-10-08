@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-ELEC",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "K",
-  "node_count": 9,
-  "edge_count": 10,
+  "source_revision": "L",
+  "node_count": 8,
+  "edge_count": 8,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -31,7 +31,37 @@
           1000,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "combustion air",
+              "value": 246.96,
+              "basis": "lambda 2",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "H2 LHV (S45)",
+              "value": 4.9983,
+              "basis": "119.96 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "radiator + exhaust heat",
+              "value": 2.4983,
+              "basis": "1 - eta",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -58,71 +88,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
-      }
-    },
-    {
-      "unit_id": "GEO_ORC",
-      "sector_id": "GEO",
-      "presence": "placeholder",
-      "class": "study_stub",
-      "tags": [
-        "ORC",
-        "carnot_study",
-        "study_stub"
-      ],
-      "electrical_role": "generation",
-      "diagram_gap": null,
-      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
-      "enabled": true,
-      "continuous_kw": {
-        "value": null,
-        "unit": "kW",
-        "status": "study",
-        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
-      },
-      "modules": [],
-      "params": {
-        "status": "study_carnot_band",
-        "present_path": "study_carnot_band",
-        "blockers": [
-          "GHEX_conductivity_survey",
-          "T_source_survey",
-          "Q_surplus_after_Q4"
-        ],
-        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
-        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
-        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
-        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
-        "open_study_queued": true,
-        "study_id": "ST-ORC-01",
-        "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
-        "presence": "placeholder",
-        "ghex_study_defaults": {
-          "T_source_K": 285.0,
-          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
-          "T_sink_K": 303.0,
-          "eta_Carnot": 0.059,
-          "eta_ORC_study": "0.08-0.12 of available surplus",
-          "k_ground_W_mK_study": 1.5,
-          "Q_GHEX_avail_kW_th_study": 3.0,
-          "Q4_life_priority_kW_th_study": 3.0,
-          "Q_surplus_kW_th_M1": 0.0,
-          "P_ORC_kW_e_M1": 0.0,
-          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4",
-          "survey_status": "design_survey_locked",
-          "field_measurement_status": "not_measured_external"
-        },
-        "T_source_K": 285.0,
-        "T_sink_K": 303.0,
-        "k_ground_W_mK": 1.5,
-        "Q_GHEX_avail_kW_th": 3.0,
-        "Q_surplus_kW_th": 0.0,
-        "P_ORC_kW_e": 0.0,
-        "site_lat_deg": 33.0,
-        "survey_status": "design_survey_locked"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "cathode excess O2 vent",
+              "value": 0.3071,
+              "basis": "S50 less stoichiometric O2",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "H2 LHV (S49)",
+              "value": 6.6644,
+              "basis": "119.96 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat to ambient",
+              "value": 1.5225,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -155,13 +151,51 @@
         "presence": "present",
         "co2_in_kg_d": {
           "S04": 1.109,
-          "S89": 11.616
+          "S89": 15.637
         },
         "co2_fixed_kg_d": 1.109,
-        "co2_to_exhaust_kg_d": 11.616,
+        "co2_to_exhaust_kg_d": 15.637,
         "co2_setpoint_ppm": 1000,
-        "farm_oa_m3_h": 693.5,
-        "co2_doc": "AQS-DUTY-009"
+        "farm_oa_m3_h": 933.5,
+        "co2_doc": "AQS-DUTY-009",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "UPW make-up from HDR_UPW (S01)",
+              "value": 95.0,
+              "basis": "S01",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "CO2 to farm exhaust",
+              "value": 15.637,
+              "basis": "AQS-DUTY-009 fate",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "water vapor to farm exhaust",
+              "value": 60.9005,
+              "basis": "OA x humidity rise",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "photosynthetic O2 to farm exhaust",
+              "value": 0.8063,
+              "basis": "CO2 + H2O -> CH2O + O2 on S04",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -234,7 +268,37 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "air O2",
+              "value": 7.4897,
+              "basis": "stoichiometric",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "MeOH LHV (S76)",
+              "value": 1.1534,
+              "basis": "19.93 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat",
+              "value": 0.4919,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     },
     {
@@ -293,7 +357,37 @@
       "params": {
         "kW": 60,
         "kWh": 120,
-        "presence": "present"
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "purge air (dry)",
+              "value": 843.9862,
+              "basis": "headspace purge",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
+              "value": 8.4402,
+              "basis": "no electrolyte bleed on the graph",
+              "kind": "accumulation"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            }
+          ]
+        }
       }
     }
   ],
@@ -307,16 +401,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.2917,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h"
       },
       "from_sector_id": "PUMPED_HYDRO",
       "to_sector_id": "ELEC",
@@ -326,37 +420,16 @@
         "ess_layer",
         "missing_on_sld"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
-    },
-    {
-      "stream_id": "IA-ESS-MEOH-DIS",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec",
-        "ess"
-      ],
-      "presence": "placeholder",
-      "carries": "MeOH FC discharge (peers S79)",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "use S79 for rate; this edge is ESS-layer view alias"
-      },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [
-        "ess_layer",
-        "overlaps_S79_architecture"
-      ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "7.0 kWh recoverable per cycle over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX ~7 kWh recoverable",
+        "medium": "AC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: hydro set to bus"
+      }
     },
     {
       "stream_id": "IA-ESS-ZNBR2-CHG",
@@ -367,16 +440,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 charge (PV/RECT surplus)",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 6.6667,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid)"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ZNBR2",
@@ -385,7 +458,17 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid)",
+        "rate_source": "FLOW_BATTERY",
+        "medium": "DC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "peak_kw": 60.0,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: ZnBr2 charge"
+      }
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -396,16 +479,16 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 discharge to bus",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h"
       },
       "from_sector_id": "ZNBR2",
       "to_sector_id": "ELEC",
@@ -414,7 +497,17 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_basis": "120.0 kWh one cycle/d averaged over 24 h",
+        "rate_source": "ESS_DUTY_MATRIX 120 kWh; FLOW_BATTERY",
+        "medium": "DC",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "peak_kw": 60.0,
+        "doc": "AQS-DUTY-010",
+        "rev_l_outcome": "present: ZnBr2 discharge"
+      }
     },
     {
       "stream_id": "S17",
@@ -456,17 +549,26 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=study_deferred"
+        "note": "AQS-DUTY-010: GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J",
+        "rate_source": "graph GROW_BED continuous_kw 5.0 kW (LED canopy share, study)",
+        "medium": "DC load",
+        "conditions": "bus",
+        "rate_kind": "derived",
+        "source_governs": "graph node value; LED first-principles check is lower",
+        "doc": "AQS-DUTY-010"
+      }
     },
     {
       "stream_id": "S47",
@@ -492,34 +594,6 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S48",
-      "from_unit_id": "GEO_ORC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
-      "layers": [
-        "elec"
-      ],
-      "presence": "placeholder",
-      "carries": "ORC AC",
-      "header": "future AC couple",
-      "forbidden": "hard-coded 100 kW on M1",
-      "claim_status": "Claimed",
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
-      },
-      "from_sector_id": "GEO",
-      "to_sector_id": "ELEC",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "orc_stub_kw_tbd"
-      ],
       "notes": null
     },
     {
@@ -563,17 +637,26 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 1.0,
+        "value": 0.2925,
         "unit": "kW",
         "status": "study",
-        "note": "Mid of AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5\u20132 kW_dc; stand-in SI-DMFC-01 class"
+        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "rate_basis": "DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met",
+        "rate_source": "EFOY-class fuel use; ESS_DUTY_MATRIX",
+        "medium": "DC power",
+        "conditions": "24 V DC bus",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-010",
+        "rev_k_value": 1.0
+      }
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

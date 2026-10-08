@@ -1,6 +1,6 @@
-"""AQS-DUTY-009 Rev A. HDR_CO2 consumer study (graph Rev K).
+"""AQS-DUTY-009 Rev B. HDR_CO2 consumer study (graph Rev K; Rev L adds S90 hab metabolic CO2).
 
-Reads the Rev J graph rates, tests each candidate CO2 sink, and sizes the chosen branch S89 HDR_CO2 -> GROW_BED.
+Reads the graph rates (S90 if present, Rev L), tests each candidate CO2 sink, and sizes the chosen branch S89 HDR_CO2 -> GROW_BED.
 Inputs from the graph are read, not typed. A_* are study decisions, each stated in CO2_HEADER_DUTY.md.
 Run: python3 _co2_header_study.py [--json out.json] [--graph path]
 """
@@ -52,16 +52,25 @@ def node(g, uid):
     raise KeyError(uid)
 
 
+def rate_opt(g, sid):
+    try:
+        return rate(g, sid) or 0.0
+    except KeyError:
+        return 0.0
+
+
 def main(path=GRAPH):
     g = json.load(open(path))
     s85 = rate(g, "S85")
+    s90 = rate_opt(g, "S90")   # Rev L: HABITATION -> HDR_CO2 metabolic CO2 (0 on the Rev K graph)
+    hdr_in = s85 + s90
     s04 = rate(g, "S04")
     h2_pool = rate(g, "S05")
     s73 = rate(g, "S73")
     s74 = rate(g, "S74")
     s49 = rate(g, "S49")
     s45 = rate(g, "S45")
-    out = {"inputs": dict(S85=s85, S04=s04, S05_H2_pool=h2_pool, S73=s73, S74=s74, S49=s49, S45=s45)}
+    out = {"inputs": dict(S85=s85, S90=s90, S04=s04, S05_H2_pool=h2_pool, S73=s73, S74=s74, S49=s49, S45=s45)}
 
     # --- candidate 1: MEOH_SYNTH (CO2 + 3 H2 -> CH3OH + H2O)
     h2_per_co2 = 3 * M_H2 / M_CO2
@@ -93,7 +102,7 @@ def main(path=GRAPH):
     loss_min = oa_min * A_PHOTO_H * dC                            # kg/d lost at minimum OA, light hours
     dose_min = uptake + loss_min
     # all of S85 + S04 is dosed in the photoperiod; S04 is fixed, S85 leaves with exhaust
-    exhaust = s85
+    exhaust = hdr_in
     oa_req = exhaust / (A_PHOTO_H * dC)
     ppm_at_min_oa = A_PPM_AMB + exhaust / (A_PHOTO_H * oa_min) / rho_co2_room * 1e6
     duct_v = oa_req / 3600 / (A_FARM_DUCT_MM[0] * A_FARM_DUCT_MM[1] * 1e-6)
@@ -107,23 +116,24 @@ def main(path=GRAPH):
                        oa_ok=oa_req >= oa_min, duct_velocity_all_oa_m_s=round(duct_v, 2),
                        extra_oa_sensible_kw_at_10K=round(load_kw, 2),
                        fate=dict(fixed_in_biomass_S04_kg_d=s04, leaves_with_farm_exhaust_kg_d=round(exhaust, 3),
-                                 note="Not sequestration. The S85 carbon is used once for growth enrichment and then vented with farm exhaust air."))
+                                 note="Not sequestration. The S85 (+ S90) carbon is used once for growth enrichment and then vented with farm exhaust air."))
 
     # --- branch line S89
     rho = A_HDR_P_BAR_A * 1e5 * M_CO2 / (A_Z_CO2 * R * (A_HDR_T_C + 273.15))
-    m_avg = s85 / 24.0
-    m_peak = s85 / A_PHOTO_H
+    m_avg = hdr_in / 24.0
+    m_peak = hdr_in / A_PHOTO_H
     q_peak = m_peak / rho
     a = math.pi / 4 * (A_BRANCH_ID_MM / 1000) ** 2
     v_peak = q_peak / 3600 / a
-    buffer = s85 * A_DARK_H / 24.0
-    out["branch"] = dict(stream_id="S89", from_unit_id="HDR_CO2", to_unit_id="GROW_BED", rate_kg_d=s85,
+    buffer = hdr_in * A_DARK_H / 24.0
+    out["branch"] = dict(stream_id="S89", from_unit_id="HDR_CO2", to_unit_id="GROW_BED", rate_kg_d=round(hdr_in, 3),
                          P_bar_a=A_HDR_P_BAR_A, T_C=A_HDR_T_C, rho_kg_m3=round(rho, 3), m_avg_kg_h=round(m_avg, 3),
                          m_peak_kg_h=round(m_peak, 3), q_peak_m3_h=round(q_peak, 4), line_DN=A_BRANCH_DN,
                          line_id_mm=A_BRANCH_ID_MM, velocity_peak_m_s=round(v_peak, 3), material="316L",
                          dark_buffer_kg=round(buffer, 2), dark_buffer_liquid_L=round(buffer / A_LIQ_RHO * 1000, 2))
-    out["balance"] = dict(HDR_CO2_in_S85=s85, HDR_CO2_out_S89=s85, residual=round(s85 - s85, 6),
-                          GROW_BED_in=round(s04 + s85, 3), GROW_BED_fixed=s04, GROW_BED_exhaust=round(exhaust, 3))
+    out["balance"] = dict(HDR_CO2_in_S85=s85, HDR_CO2_in_S90=s90, HDR_CO2_out_S89=round(hdr_in, 3),
+                          residual=round(hdr_in - round(hdr_in, 3), 6),
+                          GROW_BED_in=round(s04 + hdr_in, 3), GROW_BED_fixed=s04, GROW_BED_exhaust=round(exhaust, 3))
     out["decision"] = "GROW_BED via FARM AHU CO2 dose (S89). MEOH_SYNTH rejected (H2-limited, carrier loop). REMIN negligible."
     return out
 
