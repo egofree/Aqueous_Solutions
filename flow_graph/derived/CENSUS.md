@@ -1,10 +1,10 @@
 # Flow graph census — DERIVED
 
-Source: AQS-FLOW-GRAPH-001 Rev H
+Source: AQS-FLOW-GRAPH-001 Rev I
 Generated: 2026-10-07
 
 - nodes: **123** (present=122, placeholder=1)
-- edges: **161** (present=120, placeholder=20)
+- edges: **161** (present=141, placeholder=20)
 - by namespace: {'IA': 65, 'TBD': 1, 'S': 93, 'SANDBOX': 2}
 - locks: layered_views, full_depth_now, efd_three_layers, typed_graph_sole, present_plus_placeholders, site_lat_design_sandbox, true_closure_residuals_wp, reprap_bom_complete_c4, site_ghex_design_survey_locked, wp_l3_evidence_pack, wp_l4_claim_discipline, wp_ew_cascade_explode
 

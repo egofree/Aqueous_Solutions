@@ -1,7 +1,7 @@
 # Mass-flow claim excerpt — DERIVED from flow_graph
 
 Document number: AQS-MF-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev H (`plant_flow_graph.json`)
+Source: AQS-FLOW-GRAPH-001 Rev I (`plant_flow_graph.json`)
 Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
@@ -68,7 +68,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S65 | ALK_SCRUBBER→ACID_POLISH_SCRUB | — | present | — | Not a self-loop. Polish then CRU via S66. |
 | S66 | ACID_POLISH_SCRUB→CRU | Claimed | present | — | From register: ACID_POLISH / ALK blowdown → CRU |
 | S67 | AFTERBURNER_FLUE→FLUE_KO | — | present | — | Knockout before any CO2 claim. |
-| S67B | FLUE_KO→CRYO_CO2 | — | study | — | Only the CO2-rich cut. Reject N2/O2/NOx. |
+| S67B | FLUE_KO→CRYO_CO2 | Claimed | present | 12.75 kg/d | Only the CO2-rich cut. Reject N2/O2/NOx. AQS-DUTY-008. |
 | S68 | CRYO_AHU→LEACH_CSTR_1 | — | present | — | Acid condensate stays process. |
 | S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | — | Own tower. |
 | S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | — | Return to the bromine tank only. |
@@ -89,3 +89,5 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S86 | CRYO_AHU→RELIEF_CRYO | — | present | — | Same sink as S56. Issued so the old dock edge has a number and a legal end. |
 | S87 | GROW_BED→CRYO_O2 | — | present | — | Capture. Not a vent. Not hab air into a process header. |
 | S88 | CRYO_N2→GROW_BED | — | present | — | Make-up from the N2 box only. |
+| S34 | WS_NITRIC→WET_BENCH | — | present | — | Nitric only. |
+| S34B | WS_PHOS→WET_BENCH | — | present | — | Phosphoric etch. Own bund. |

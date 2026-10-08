@@ -1960,9 +1960,30 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [
-        "LITHO_COAT",
-        "LITHO_ALIGN",
-        "LITHO_DEV"
+        {
+          "module_id": "LITHO_COAT",
+          "class": "tool",
+          "count": 1,
+          "params": {
+            "unit_ref": "LITHO_COAT"
+          }
+        },
+        {
+          "module_id": "LITHO_ALIGN",
+          "class": "tool",
+          "count": 1,
+          "params": {
+            "unit_ref": "LITHO_ALIGN"
+          }
+        },
+        {
+          "module_id": "LITHO_DEV",
+          "class": "tool",
+          "count": 1,
+          "params": {
+            "unit_ref": "LITHO_DEV"
+          }
+        }
       ],
       "electrical_role": null,
       "continuous_kw": null
@@ -2030,13 +2051,48 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [
-        "PV_TEXTURE",
-        "PV_EMITTER",
-        "PV_PSG_ETCH",
-        "PV_ARC",
-        "PV_CONTACT",
-        "PV_FIRE",
-        "PV_IV"
+        {
+          "module_id": "PV_TEXTURE",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        },
+        {
+          "module_id": "PV_EMITTER",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        },
+        {
+          "module_id": "PV_PSG_ETCH",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        },
+        {
+          "module_id": "PV_ARC",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        },
+        {
+          "module_id": "PV_CONTACT",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        },
+        {
+          "module_id": "PV_FIRE",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        },
+        {
+          "module_id": "PV_IV",
+          "class": "process_step",
+          "count": 1,
+          "params": {}
+        }
       ],
       "electrical_role": null,
       "continuous_kw": null
@@ -2345,12 +2401,16 @@
       "to_unit_id": "Q1_A",
       "phase": "heat",
       "carries": "Q1 flue, not Q4",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.553 kW."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
+      "note": "Isolable branch. One ladder may be down. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-AFTERBURNER-Q1-B",
@@ -2358,12 +2418,16 @@
       "to_unit_id": "Q1_B",
       "phase": "heat",
       "carries": "Q1 flue, not Q4",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.553 kW."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
+      "note": "Isolable branch. One ladder may be down. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-GLASS_BURNOUT-Q2-A",
@@ -2371,12 +2435,16 @@
       "to_unit_id": "Q2_A",
       "phase": "heat",
       "carries": "Q2 burnout, not Q4",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 0.928,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
+      "note": "Isolable branch. One ladder may be down. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-GLASS_BURNOUT-Q2-B",
@@ -2384,12 +2452,16 @@
       "to_unit_id": "Q2_B",
       "phase": "heat",
       "carries": "Q2 burnout, not Q4",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 0.928,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
+      "note": "Isolable branch. One ladder may be down. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-HX8-Q3-A",
@@ -2423,12 +2495,16 @@
       "to_unit_id": "Q2_A",
       "phase": "heat",
       "carries": "downhill heat pipe",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.133,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
+      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-B-DOWN",
@@ -2436,12 +2512,16 @@
       "to_unit_id": "Q2_B",
       "phase": "heat",
       "carries": "downhill heat pipe",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.133,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
+      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-X",
@@ -2449,12 +2529,16 @@
       "to_unit_id": "Q1_B",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
+      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q1-X-BA",
@@ -2462,12 +2546,16 @@
       "to_unit_id": "Q1_A",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.383,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
+      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-A-DOWN",
@@ -2475,12 +2563,16 @@
       "to_unit_id": "Q3_A",
       "phase": "heat",
       "carries": "downhill heat pipe",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.888,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
+      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-B-DOWN",
@@ -2488,12 +2580,16 @@
       "to_unit_id": "Q3_B",
       "phase": "heat",
       "carries": "downhill heat pipe",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.888,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
+      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-X",
@@ -2501,12 +2597,16 @@
       "to_unit_id": "Q2_B",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 2.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
+      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q2-X-BA",
@@ -2514,12 +2614,16 @@
       "to_unit_id": "Q2_A",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 2.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
+      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-A-DOWN",
@@ -2527,12 +2631,16 @@
       "to_unit_id": "Q4_A",
       "phase": "heat",
       "carries": "downhill heat pipe",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.614,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.411 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
+      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-B-DOWN",
@@ -2540,12 +2648,16 @@
       "to_unit_id": "Q4_B",
       "phase": "heat",
       "carries": "downhill heat pipe",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.614,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.411 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
+      "note": "Opens only if T_upper > T_lower + 5 K AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-X",
@@ -2553,12 +2665,16 @@
       "to_unit_id": "Q3_B",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.831,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
+      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-X-BA",
@@ -2566,12 +2682,16 @@
       "to_unit_id": "Q3_A",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.831,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
+      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q4-A-BUS",
@@ -2579,12 +2699,16 @@
       "to_unit_id": "Q4_BUS",
       "phase": "heat",
       "carries": "water <80 C",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.36,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.234 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Only Q4 batteries feed the bus from the ladder.; namespace=IA; layers=mass"
+      "note": "Only Q4 batteries feed the bus from the ladder. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q4-B-BUS",
@@ -2592,12 +2716,16 @@
       "to_unit_id": "Q4_BUS",
       "phase": "heat",
       "carries": "water <80 C",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.36,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.234 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Only Q4 batteries feed the bus from the ladder.; namespace=IA; layers=mass"
+      "note": "Only Q4 batteries feed the bus from the ladder. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q4-X",
@@ -2605,12 +2733,16 @@
       "to_unit_id": "Q4_B",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.565,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
+      "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q4-X-BA",
@@ -2618,12 +2750,16 @@
       "to_unit_id": "Q4_A",
       "phase": "heat",
       "carries": "cross-tie, hot to cold only",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 1.565,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
+      "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier. AQS-DUTY-008.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-BMED-01",
@@ -4369,12 +4505,16 @@
       "to_unit_id": "CRYO_CO2",
       "phase": "G",
       "carries": "CO2-rich gas after KO",
-      "rate": null,
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "rate": {
+        "value": 12.75,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-008: CO2 in the cut = S18 basis 15.0 kg/d x VSA recovery 0.85. Not a flue analyser. Same carbon as S18."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
-      "null_rate_kind": "unknown",
-      "note": "Only the CO2-rich cut. Reject N2/O2/NOx.; layers=mass"
+      "note": "Only the CO2-rich cut. Reject N2/O2/NOx. AQS-DUTY-008.; gap_flags=same_carbon_as_S18; layers=mass"
     },
     {
       "stream_id": "S68",
@@ -4731,7 +4871,7 @@
       "to_sector_id": null,
       "open_boundary": false,
       "null_rate_kind": "unknown",
-      "note": "Nitric only."
+      "note": "Nitric only.; layers=mass"
     },
     {
       "stream_id": "S34B",
@@ -4744,7 +4884,7 @@
       "to_sector_id": null,
       "open_boundary": false,
       "null_rate_kind": "unknown",
-      "note": "Phosphoric etch. Own bund."
+      "note": "Phosphoric etch. Own bund.; layers=mass"
     }
   ],
   "electrical": {
@@ -4806,5 +4946,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev H (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev I (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }

@@ -203,7 +203,9 @@ def _emit_bom(
                 continue
             mods = n.get("modules") or []
             if isinstance(mods, list):
-                mods_s = ";".join(str(m) for m in mods)
+                mods_s = ";".join(
+                    str(m.get("module_id", m)) if isinstance(m, dict) else str(m) for m in mods
+                )
             else:
                 mods_s = str(mods)
             kw = n.get("continuous_kw")

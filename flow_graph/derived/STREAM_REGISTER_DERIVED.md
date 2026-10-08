@@ -1,7 +1,7 @@
 # Stream register excerpt — DERIVED from flow_graph
 
 Document number: AQS-STR-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev H (`plant_flow_graph.json`)
+Source: AQS-FLOW-GRAPH-001 Rev I (`plant_flow_graph.json`)
 Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
@@ -17,28 +17,28 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CUT-3 | OIL_FRAC | PROD_C19_C28 | L | mass | present | fractionator cut | — | — |
 | CUT-4 | OIL_FRAC | PROD_C29 | L | mass | present | fractionator cut | — | — |
 | DOCK_EXPORT_TBD | NORTH_DOCK | BOUNDARY_EXPORT | S | mass | placeholder | goods / cassettes / surplus freight (ID TBD) | — | no_S_id,do_not_invent_route_or_rate,high_severity_audit |
-| HL-AFTERBURNER-Q1-A | AFTERBURNER | Q1_A | heat | mass | study | Q1 flue, not Q4 | — | — |
-| HL-AFTERBURNER-Q1-B | AFTERBURNER | Q1_B | heat | mass | study | Q1 flue, not Q4 | — | — |
-| HL-GLASS_BURNOUT-Q2-A | GLASS_BURNOUT | Q2_A | heat | mass | study | Q2 burnout, not Q4 | — | — |
-| HL-GLASS_BURNOUT-Q2-B | GLASS_BURNOUT | Q2_B | heat | mass | study | Q2 burnout, not Q4 | — | — |
+| HL-AFTERBURNER-Q1-A | AFTERBURNER | Q1_A | heat | thermal | present | Q1 flue, not Q4 | 1.383 kW | — |
+| HL-AFTERBURNER-Q1-B | AFTERBURNER | Q1_B | heat | thermal | present | Q1 flue, not Q4 | 1.383 kW | — |
+| HL-GLASS_BURNOUT-Q2-A | GLASS_BURNOUT | Q2_A | heat | thermal | present | Q2 burnout, not Q4 | 0.928 kW | — |
+| HL-GLASS_BURNOUT-Q2-B | GLASS_BURNOUT | Q2_B | heat | thermal | present | Q2 burnout, not Q4 | 0.928 kW | — |
 | HL-HX8-Q3-A | HX8 | Q3_A | heat | mass | present | HX-8 residual | — | — |
 | HL-HX8-Q3-B | HX8 | Q3_B | heat | mass | present | HX-8 residual | — | — |
-| HL-Q1-A-DOWN | Q1_A | Q2_A | heat | mass | study | downhill heat pipe | — | — |
-| HL-Q1-B-DOWN | Q1_B | Q2_B | heat | mass | study | downhill heat pipe | — | — |
-| HL-Q1-X | Q1_A | Q1_B | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q1-X-BA | Q1_B | Q1_A | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q2-A-DOWN | Q2_A | Q3_A | heat | mass | study | downhill heat pipe | — | — |
-| HL-Q2-B-DOWN | Q2_B | Q3_B | heat | mass | study | downhill heat pipe | — | — |
-| HL-Q2-X | Q2_A | Q2_B | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q2-X-BA | Q2_B | Q2_A | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q3-A-DOWN | Q3_A | Q4_A | heat | mass | study | downhill heat pipe | — | — |
-| HL-Q3-B-DOWN | Q3_B | Q4_B | heat | mass | study | downhill heat pipe | — | — |
-| HL-Q3-X | Q3_A | Q3_B | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q3-X-BA | Q3_B | Q3_A | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q4-A-BUS | Q4_A | Q4_BUS | heat | mass | study | water <80 C | — | — |
-| HL-Q4-B-BUS | Q4_B | Q4_BUS | heat | mass | study | water <80 C | — | — |
-| HL-Q4-X | Q4_A | Q4_B | heat | mass | study | cross-tie, hot to cold only | — | — |
-| HL-Q4-X-BA | Q4_B | Q4_A | heat | mass | study | cross-tie, hot to cold only | — | — |
+| HL-Q1-A-DOWN | Q1_A | Q2_A | heat | thermal | present | downhill heat pipe | 1.133 kW | — |
+| HL-Q1-B-DOWN | Q1_B | Q2_B | heat | thermal | present | downhill heat pipe | 1.133 kW | — |
+| HL-Q1-X | Q1_A | Q1_B | heat | thermal | present | cross-tie, hot to cold only | 1.383 kW | — |
+| HL-Q1-X-BA | Q1_B | Q1_A | heat | thermal | present | cross-tie, hot to cold only | 1.383 kW | — |
+| HL-Q2-A-DOWN | Q2_A | Q3_A | heat | thermal | present | downhill heat pipe | 1.888 kW | — |
+| HL-Q2-B-DOWN | Q2_B | Q3_B | heat | thermal | present | downhill heat pipe | 1.888 kW | — |
+| HL-Q2-X | Q2_A | Q2_B | heat | thermal | present | cross-tie, hot to cold only | 2.027 kW | — |
+| HL-Q2-X-BA | Q2_B | Q2_A | heat | thermal | present | cross-tie, hot to cold only | 2.027 kW | — |
+| HL-Q3-A-DOWN | Q3_A | Q4_A | heat | thermal | present | downhill heat pipe | 1.614 kW | — |
+| HL-Q3-B-DOWN | Q3_B | Q4_B | heat | thermal | present | downhill heat pipe | 1.614 kW | — |
+| HL-Q3-X | Q3_A | Q3_B | heat | thermal | present | cross-tie, hot to cold only | 1.831 kW | — |
+| HL-Q3-X-BA | Q3_B | Q3_A | heat | thermal | present | cross-tie, hot to cold only | 1.831 kW | — |
+| HL-Q4-A-BUS | Q4_A | Q4_BUS | heat | thermal | present | water <80 C | 1.36 kW | — |
+| HL-Q4-B-BUS | Q4_B | Q4_BUS | heat | thermal | present | water <80 C | 1.36 kW | — |
+| HL-Q4-X | Q4_A | Q4_B | heat | thermal | present | cross-tie, hot to cold only | 1.565 kW | — |
+| HL-Q4-X-BA | Q4_B | Q4_A | heat | thermal | present | cross-tie, hot to cold only | 1.565 kW | — |
 | IA-BMED-01 | BMED_ACID | WS_NITRIC | L | mass | present | HCl product | — | — |
 | IA-BMED-02 | BMED_BASE | WS_KOH | L | mass | present | NaOH product | — | — |
 | IA-BMED-03 | CRU | BMED_ACID | L | mass | placeholder | CRU → BMED acid regen loop | — | intra_aisle,full_depth_now,bmed_regen unlabeled |
@@ -145,7 +145,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S65 | ALK_SCRUBBER | ACID_POLISH_SCRUB | G | mass | present | acid-gas residual | — | — |
 | S66 | ACID_POLISH_SCRUB | CRU | L | mass | present | scrub liquor → chlorate finish | — | absent_from_candidate_mvs |
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | — | — |
-| S67B | FLUE_KO | CRYO_CO2 | G | mass | study | CO2-rich gas after KO | — | — |
+| S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 12.75 kg/d | same_carbon_as_S18 |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | — | — |
 | S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | — | — |
 | S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | — | — |
@@ -169,5 +169,5 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S86 | CRYO_AHU | RELIEF_CRYO | G | mass | present | cryo residual contingency | — | — |
 | S87 | GROW_BED | CRYO_O2 | G | mass | present | surplus O2 capture | — | — |
 | S88 | CRYO_N2 | GROW_BED | G | mass | present | N2 make-up | — | — |
-| S34 | WS_NITRIC | WET_BENCH | L |  | present | HNO3 | — | — |
-| S34B | WS_PHOS | WET_BENCH | L |  | present | H3PO4 | — | — |
+| S34 | WS_NITRIC | WET_BENCH | L | mass | present | HNO3 | — | — |
+| S34B | WS_PHOS | WET_BENCH | L | mass | present | H3PO4 | — | — |
