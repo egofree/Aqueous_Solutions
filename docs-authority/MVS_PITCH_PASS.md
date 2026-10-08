@@ -1,7 +1,7 @@
 # Pitch pass — yard through water stubs
 
-Document: AQS-PLACE-SEED-001 Rev B
-Date: 2026-10-02
+Document: AQS-PLACE-SEED-001 Rev B; origins updated to seed Rev F
+Date: 2026-10-02; updated 2026-10-07
 Not a PE stamp. Study envelopes where params.py has no article size.
 
 ## 1. Yard (west of X=0, Y aligned to dock at 10000)
@@ -11,10 +11,11 @@ Not a PE stamp. Study envelopes where params.py has no article size.
 | ZNBR2 | −4848, 10000 | 10 ft from openings. Own Br2 tower. Not CRU. |
 | SOL_ARK_60K | −1500, 14800 | NEC 110.26, 1100 mm. Outside ESS Class I. |
 | RECTIFIER | −1900, 12800 | Same ordinary row. |
-| BACKUP_GEN | −3500, 10000 | Outdoor H2. Study skid 2000×1000. |
-| FUEL_CELL | −3300, 7600 | H2 anode. O2 face south, 7620 mm from GEN or 1 h wall. |
-| PV_ARRAY | −9200, 10000 | One module. Tilt +33° about +X. Not on the tank. |
-| GEO_HP / GHEX / loop | −3500 / −5200, 5200 | South of GEN, north of MeOH. |
+| BACKUP_GEN | −3500, 7700 | Outdoor H2. Issued 2000×1000×1600. 1100 mm all faces. Rev F. |
+| FUEL_CELL | −4800, 16400 | H2 anode. O2 face south, 7700 mm from GEN (rule 7620 mm or 1 h wall). 1100 mm all faces. Rev F. |
+| PV_ARRAY | −11000, 10000 | One module. Tilt +33° about +X. Not on the tank. 600 mm to ZNBR2_BR2_REGEN. Rev F. |
+| GEO_HP / GHEX / loop | −7000 / −8600, 5200; loop −8600, 4000 | West of the MeOH train. |
+| NOX_SCRUB | −3500, 5800 | Gen exhaust. Rev F, 1500 mm south of GEN. |
 
 M1 counts from params.py are 1 / 1 / 1 for PV, ZnBr2, rectifier.
 
@@ -38,6 +39,8 @@ WS_PHOS is in the reagent note and not a graph node. No solid this pass.
 
 Outdoor west yard, south of geothermal: FERM → SYNTH → TANK → FC.
 Not the PEM fuel cell. Not under L1. Tank is NFPA 30 diked.
+
+Rev F origins (SW corner, mm): MEOH_FERM −4700, 3100; MEOH_SYNTH −4848, 1600; MEOH_TANK −2048, 1600; MEOH_FC −4848, 200; MEOH_COND −2448, 200. 600 mm between every pair; FERM 700 mm from the ORC pad.
 
 ## 4. Nozzle order
 

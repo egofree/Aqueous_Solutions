@@ -1,8 +1,8 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "E",
-  "date": "2026-10-02",
+  "revision": "F",
+  "date": "2026-10-07",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
     "L0": 0,
@@ -16,7 +16,10 @@
     "nec_110_26_mm": 1100,
     "ess_opening_setback_mm": 3048,
     "class_I_flange_mm": 914,
-    "oxidizer_or_1h_mm": 7620
+    "oxidizer_or_1h_mm": 7620,
+    "maint_clear_mm": 600,
+    "electrical_face_clear_mm": 1100,
+    "fc_vent_div2_mm": 1524
   },
   "blocks": [
     {
@@ -338,7 +341,7 @@
       "level": "L0",
       "origin_mm": [
         -3500,
-        8200,
+        7700,
         0
       ],
       "size_mm": [
@@ -346,14 +349,14 @@
         1000,
         1600
       ],
-      "source": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear."
+      "source": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear. Rev F: from (-3500, 8200). Clears FUEL_CELL overlap. 1100 mm all faces (nec_110_26_mm); 1300 mm to ZNBR2, 1500 mm to NOX_SCRUB, 1500 mm to the west wall line."
     },
     {
       "unit_id": "FUEL_CELL",
       "level": "L0",
       "origin_mm": [
-        -3300,
-        7600,
+        -4800,
+        16400,
         0
       ],
       "size_mm": [
@@ -361,13 +364,13 @@
         800,
         1600
       ],
-      "source": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only."
+      "source": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only. Rev F: from (-3300, 7600). South (O2) face 7700 mm north of BACKUP_GEN, meeting oxidizer_or_1h_mm by distance without a 1 h wall. 1100 mm all faces; 1921 mm to SOL_ARK_60K (above the 5 ft vent envelope)."
     },
     {
       "unit_id": "PV_ARRAY",
       "level": "L0",
       "origin_mm": [
-        -9200,
+        -11000,
         10000,
         0
       ],
@@ -376,7 +379,7 @@
         2000,
         80
       ],
-      "source": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank."
+      "source": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank. Rev F: from (-9200, 10000). Footprint cleared ZNBR2_BR2_REGEN (was intersecting); 600 mm to the Br2 tower. Still west of ESS."
     },
     {
       "unit_id": "WS_HF_ED",
@@ -517,8 +520,8 @@
       "unit_id": "MEOH_FERM",
       "level": "L0",
       "origin_mm": [
-        -4848,
-        2400,
+        -4700,
+        3100,
         0
       ],
       "size_mm": [
@@ -526,14 +529,14 @@
         900,
         1400
       ],
-      "source": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate."
+      "source": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate. Rev F: from (-4848, 2400). North end of the MeOH train; 600 mm to MEOH_SYNTH, 700 mm to the GEO_ORC pad."
     },
     {
       "unit_id": "MEOH_SYNTH",
       "level": "L0",
       "origin_mm": [
         -4848,
-        1200,
+        1600,
         0
       ],
       "size_mm": [
@@ -541,13 +544,13 @@
         900,
         1400
       ],
-      "source": "Order 2. Downstream of fermenter. DMFC still deferred."
+      "source": "Order 2. Downstream of fermenter. DMFC still deferred. Rev F: from (-4848, 1200). Clears MEOH_TANK overlap; 600 mm to MEOH_FC and MEOH_FERM."
     },
     {
       "unit_id": "MEOH_TANK",
       "level": "L0",
       "origin_mm": [
-        -4848,
+        -2048,
         1600,
         0
       ],
@@ -556,7 +559,7 @@
         800,
         1100
       ],
-      "source": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank."
+      "source": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank. Rev F: from (-4848, 1600). East of MEOH_SYNTH, 600 mm aisle; NFPA 30 dike envelope not drawn."
     },
     {
       "unit_id": "MEOH_FC",
@@ -846,7 +849,7 @@
       "unit_id": "GLASS_BURNOUT",
       "level": "L-1",
       "origin_mm": [
-        4400,
+        600,
         12200,
         -6000
       ],
@@ -855,7 +858,7 @@
         600,
         1200
       ],
-      "source": "IA glass. Organics off cullet before digest. Off-gas to oil vapor header, not acid header."
+      "source": "IA glass. Organics off cullet before digest. Off-gas to oil vapor header, not acid header. Rev F: from (4400, 12200). Cleared PROD_C5_C10 and PROD_C11_C18 (were intersecting). West of GLASS_RINSE with a 600 mm aisle; 600 mm off the west wall line. East side of the row is TOILET_Lm1_MAINT and STAIR_SERVICE on the model."
     },
     {
       "unit_id": "LITHO_STUB",
@@ -922,7 +925,7 @@
       "level": "L-1",
       "origin_mm": [
         2000,
-        12400,
+        13520,
         -6000
       ],
       "size_mm": [
@@ -930,7 +933,7 @@
         60,
         60
       ],
-      "source": "C29 cut pipe. PROD_C29 to pyro inlet. Not the wet line."
+      "source": "C29 cut pipe. PROD_C29 to pyro inlet. Not the wet line. Rev F: from (2000, 12400). Run moved off the glass row (was through GLASS_RINSE and GLASS_MILL); centred on PROD_C29, 400 mm nozzle approach."
     },
     {
       "unit_id": "CONTINUOUS_RECYCLE",
@@ -1222,7 +1225,7 @@
       "level": "L0",
       "origin_mm": [
         -3500,
-        7000,
+        5800,
         0
       ],
       "size_mm": [
@@ -1230,13 +1233,13 @@
         400,
         1200
       ],
-      "source": "Gen exhaust. Not grey."
+      "source": "Gen exhaust. Not grey. Rev F: from (-3500, 7000). Moved south so BACKUP_GEN keeps 1100 mm on its south face. Still on the gen exhaust run."
     },
     {
       "unit_id": "MEOH_COND",
       "level": "L0",
       "origin_mm": [
-        -3000,
+        -2448,
         200,
         0
       ],
@@ -1245,7 +1248,7 @@
         400,
         600
       ],
-      "source": "MeOH FC condensate. Process."
+      "source": "MeOH FC condensate. Process. Rev F: from (-3000, 200). 600 mm east of MEOH_FC (was 48 mm)."
     },
     {
       "unit_id": "ZNBR2_BR2_REGEN",
@@ -1262,5 +1265,6 @@
       ],
       "source": "Own Br2 tower. 10 ft class with the skid."
     }
-  ]
+  ],
+  "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied."
 }

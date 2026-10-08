@@ -1,6 +1,7 @@
 {
   "schema": "plant_placed_copy",
   "source": "placement_seed.json",
+  "seed_revision": "F",
   "plant_fcstd": "not opened",
   "units": [
     {
@@ -8,7 +9,7 @@
       "level": "L0",
       "origin_mm": [
         -3500,
-        8200,
+        7700,
         0
       ],
       "size_mm": [
@@ -16,15 +17,15 @@
         1000,
         1600
       ],
-      "source": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear.",
+      "source": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear. Rev F: from (-3500, 8200). Clears FUEL_CELL overlap. 1100 mm all faces (nec_110_26_mm); 1300 mm to ZNBR2, 1500 mm to NOX_SCRUB, 1500 mm to the west wall line.",
       "applied_to": "copy"
     },
     {
       "unit_id": "FUEL_CELL",
       "level": "L0",
       "origin_mm": [
-        -3300,
-        7600,
+        -4800,
+        16400,
         0
       ],
       "size_mm": [
@@ -32,15 +33,15 @@
         800,
         1600
       ],
-      "source": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only.",
+      "source": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only. Rev F: from (-3300, 7600). South (O2) face 7700 mm north of BACKUP_GEN, meeting oxidizer_or_1h_mm by distance without a 1 h wall. 1100 mm all faces; 1921 mm to SOL_ARK_60K (above the 5 ft vent envelope).",
       "applied_to": "copy"
     },
     {
       "unit_id": "MEOH_FERM",
       "level": "L0",
       "origin_mm": [
-        -4848,
-        2400,
+        -4700,
+        3100,
         0
       ],
       "size_mm": [
@@ -48,7 +49,7 @@
         900,
         1400
       ],
-      "source": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate.",
+      "source": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate. Rev F: from (-4848, 2400). North end of the MeOH train; 600 mm to MEOH_SYNTH, 700 mm to the GEO_ORC pad.",
       "applied_to": "copy"
     },
     {
@@ -56,7 +57,7 @@
       "level": "L0",
       "origin_mm": [
         -4848,
-        1200,
+        1600,
         0
       ],
       "size_mm": [
@@ -64,14 +65,14 @@
         900,
         1400
       ],
-      "source": "Order 2. Downstream of fermenter. DMFC still deferred.",
+      "source": "Order 2. Downstream of fermenter. DMFC still deferred. Rev F: from (-4848, 1200). Clears MEOH_TANK overlap; 600 mm to MEOH_FC and MEOH_FERM.",
       "applied_to": "copy"
     },
     {
       "unit_id": "MEOH_TANK",
       "level": "L0",
       "origin_mm": [
-        -4848,
+        -2048,
         1600,
         0
       ],
@@ -80,7 +81,7 @@
         800,
         1100
       ],
-      "source": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank.",
+      "source": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank. Rev F: from (-4848, 1600). East of MEOH_SYNTH, 600 mm aisle; NFPA 30 dike envelope not drawn.",
       "applied_to": "copy"
     },
     {

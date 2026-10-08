@@ -1,7 +1,7 @@
 # MVS checklist
 
 Document: AQS-MVS-CHK-001
-Date: 2026-10-02
+Date: 2026-10-02; updated 2026-10-07
 Plan: docs-authority/MVS_PLAN.md
 Graph topology is the baseline. Check an item only when the solid or the number exists.
 
@@ -65,11 +65,17 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 
 ## Placement
 
-- [ ] Generator envelope 2000×1000×1600 on the copy
-- [ ] Fuel-cell envelope 1800×800×1600 on the copy
-- [ ] Methanol skids 2200×900×1400, 2200×900×1400, 800×800×1100, 1800×800×1600 on the copy
-- [ ] flow_to_cad.py run against a copy
-- [ ] plant.FCStd unchanged
+- [x] Generator envelope 2000×1000×1600 on the copy
+- [x] Fuel-cell envelope 1800×800×1600 on the copy
+- [x] Methanol skids 2200×900×1400, 2200×900×1400, 800×800×1100, 1800×800×1600 on the copy
+- [x] flow_to_cad.py run against a copy
+- [x] plant.FCStd unchanged
+- [x] Seed Rev F: BACKUP_GEN × FUEL_CELL and MEOH_SYNTH × MEOH_TANK resolved by origin moves; issued sizes unchanged
+- [x] No pair of the 65 seed unit boxes intersects (all 2080 pairs checked)
+- [x] Moved boxes keep 600 mm to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm on all faces (NEC 110.26 figure in seed rules)
+- [x] FUEL_CELL south (O2) face 7700 mm from BACKUP_GEN, above the 7620 mm oxidizer separation without a 1 h wall
+- [x] GEO_ORC pad stays empty; nearest box 700 mm
+- [x] Glass envelopes (rinse, mill, burnout) at issued size on the copy
 
 ## Done
 
