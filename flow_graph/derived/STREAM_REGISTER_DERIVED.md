@@ -1,8 +1,8 @@
 # Stream register excerpt — DERIVED from flow_graph
 
 Document number: AQS-STR-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev F+local (`plant_flow_graph.json`)
-Generated: 2026-10-02
+Source: AQS-FLOW-GRAPH-001 Rev H (`plant_flow_graph.json`)
+Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
 **Not** the legacy master while migration is incomplete — compare to `cad/STREAM_REGISTER.md`.
@@ -111,7 +111,6 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S31 | WS_HF_ED | WET_BENCH | L | mass | present | HF (aq) | — | absent_from_candidate_mvs |
 | S32 | WS_PEROX | WET_BENCH | L | mass | present | H₂O₂ | — | absent_from_candidate_mvs |
 | S33 | WS_AMMONIA | WET_BENCH | L | mass | present | NH₄OH / NH₃ (aq) | — | absent_from_candidate_mvs |
-| S34 | WS_NITRIC | WET_BENCH | L | mass | present | HNO₃ / H₃PO₄ etch suite | — | absent_from_candidate_mvs |
 | S35 | WS_KOH | WET_BENCH | L | mass | present | KOH | — | absent_from_candidate_mvs |
 | S36 | WS_DOPE | WAFER_FAB | L/G | mass | present | B/P/As concentrate; BBr₃ / POCl₃ class | — | absent_from_candidate_mvs |
 | S37 | WS_SLURRY | WAFER_FAB | L | mass | present | colloidal silica slurry | — | absent_from_candidate_mvs |
@@ -170,3 +169,5 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S86 | CRYO_AHU | RELIEF_CRYO | G | mass | present | cryo residual contingency | — | — |
 | S87 | GROW_BED | CRYO_O2 | G | mass | present | surplus O2 capture | — | — |
 | S88 | CRYO_N2 | GROW_BED | G | mass | present | N2 make-up | — | — |
+| S34 | WS_NITRIC | WET_BENCH | L |  | present | HNO3 | — | — |
+| S34B | WS_PHOS | WET_BENCH | L |  | present | H3PO4 | — | — |

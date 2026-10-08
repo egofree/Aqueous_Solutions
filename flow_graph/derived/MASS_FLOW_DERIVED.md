@@ -1,8 +1,8 @@
 # Mass-flow claim excerpt — DERIVED from flow_graph
 
 Document number: AQS-MF-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev F+local (`plant_flow_graph.json`)
-Generated: 2026-10-02
+Source: AQS-FLOW-GRAPH-001 Rev H (`plant_flow_graph.json`)
+Generated: 2026-10-07
 Licence: CERN-OHL-S-2.0
 
 **Not** the legacy master while migration is incomplete — compare to `cad/MASS_FLOW.md`.
@@ -41,7 +41,6 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S31 | WS_HF_ED→WET_BENCH | Closed / Claimed | present | — | From register: WS_HF_ED → WET_BENCH |
 | S32 | WS_PEROX→WET_BENCH | Claimed | present | — | From register: WS_PEROX → WET_BENCH |
 | S33 | WS_AMMONIA→WET_BENCH | Claimed | present | — | From register: WS_AMMONIA → WET_BENCH |
-| S34 | WS_NITRIC→WET_BENCH | Claimed | present | — | From register: WS_NITRIC / WS_PHOS → WET_BENCH |
 | S35 | WS_KOH→WET_BENCH | Claimed | present | — | From register: WS_KOH → WET_BENCH / solar texture stub |
 | S36 | WS_DOPE→WAFER_FAB | Claimed | present | — | From register: WS_DOPE / CRU polish → FAB_TOOL dopant cabinets |
 | S37 | WS_SLURRY→WAFER_FAB | Claimed | present | — | From register: WS_SLURRY → LAP_CMP / FAB_PREP |

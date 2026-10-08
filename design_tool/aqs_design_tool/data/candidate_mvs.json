@@ -258,7 +258,13 @@
       "class": "genset",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          2000,
+          1000,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": "generation",
@@ -290,47 +296,6 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
-    },
-    {
-      "unit_id": "BLOW_MOLD",
-      "sector_id": "MFG",
-      "enabled": true,
-      "class": "study_stub",
-      "tags": [
-        "blow_mold",
-        "in_scope",
-        "polymer",
-        "study_stub"
-      ],
-      "params": {
-        "status": "study_duty_issued",
-        "present_path": "study_duty_issued",
-        "blockers": [
-          "mold_tooling_FreeCAD_open",
-          "selected_machine_datasheet_external"
-        ],
-        "blow_mold_in_mvs": true,
-        "ref": "AQS-EQP-STUDY-001 Rev E \u00a79 / AQS-REQ-KW-001 SI-MFG-01 / Precious Plastic kit motors",
-        "open_study_queued": true,
-        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
-        "study_id": "ST-BLOW-01",
-        "study_architecture": "lab_pilot_or_PP_extrusion_add_on \u2014 forbid industrial 14-28 kW avg as M1 continuous",
-        "study_continuous_kw_mid": 0.5,
-        "study_peak_kw_run": "2-4",
-        "study_throughput_kg_h_campaign": "1-5",
-        "study_method": "Clamp+air share on EXTRUSION polymer line; SI-MFG-01 2.2-4 kW motor class; campaign 2-4 h/d",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Mold tooling CAD + selected clamp/air datasheet within 2-4 kW peak class \u2014 owner/date TBD",
-        "presence": "placeholder"
-      },
-      "modules": [],
-      "electrical_role": "load",
-      "continuous_kw": {
-        "value": 0.5,
-        "unit": "kW",
-        "status": "study",
-        "note": "ST-BLOW-01: ~0.5 kW_e avg campaign (clamp+air on polymer line). Peak 2-4 kW run. Industrial EBM 14-28 kW avg forbidden as M1 continuous."
-      }
     },
     {
       "unit_id": "BMED_ACID",
@@ -553,48 +518,6 @@
       "continuous_kw": null
     },
     {
-      "unit_id": "ELECTRODE_COAT",
-      "sector_id": "MFG",
-      "enabled": true,
-      "class": "study_stub",
-      "tags": [
-        "electrode",
-        "coating",
-        "in_scope",
-        "study_stub"
-      ],
-      "params": {
-        "status": "study_duty_formulation_class_issued",
-        "present_path": "study_duty_formulation_class_issued",
-        "blockers": [
-          "booth_FreeCAD_open",
-          "formulation_recipe_external_lab",
-          "precious_DSA_deferred"
-        ],
-        "exhaust": "MET_AHU\u2192MET_SCRUB S71-S72",
-        "sector_cross_use": "MFG primary; may borrow FAB wet practice",
-        "ref": "AQS-EQP-STUDY-001 Rev E \u00a710 / AQS-MFG-ELC-001 / AQS-VENT-001",
-        "open_study_queued": true,
-        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
-        "study_id": "ST-ELC-01",
-        "study_formulation_class": "non_precious_conductive_carbon_or_Ni_or_passivation_for_M1_EW; RuO2-IrO2 DSA deferred",
-        "study_continuous_kw_mid": 0.3,
-        "study_peak_kw_run": "1-2",
-        "study_method": "Booth exhaust 0.2-0.75 kW + cure oven 0.5-2 kW intermittent; ~2 h/d campaign \u2192 ~0.3 avg",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Booth CAD + lab formulation trial (carbon/Ni class) \u2014 owner/date TBD; RuO2-IrO2 remains deferred",
-        "presence": "placeholder"
-      },
-      "modules": [],
-      "electrical_role": "load",
-      "continuous_kw": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "ST-ELC-01: ~0.3 kW_e avg (exhaust+cure campaign). Peak 1-2 kW. Non-precious coat class for M1; RuO2-IrO2 deferred \u2014 no nameplate."
-      }
-    },
-    {
       "unit_id": "EW_1",
       "sector_id": "WET",
       "enabled": true,
@@ -603,7 +526,13 @@
         "EW-1"
       ],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": "load",
@@ -620,7 +549,14 @@
       "enabled": true,
       "class": "ew_cell",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -633,7 +569,13 @@
       "tags": [],
       "params": {
         "pitch_mm": 750,
-        "index": 3
+        "index": 3,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -647,7 +589,13 @@
       "tags": [],
       "params": {
         "pitch_mm": 750,
-        "index": 4
+        "index": 4,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -661,7 +609,13 @@
       "tags": [],
       "params": {
         "pitch_mm": 750,
-        "index": 5
+        "index": 5,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -675,7 +629,13 @@
       "tags": [],
       "params": {
         "pitch_mm": 750,
-        "index": 6
+        "index": 6,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -689,7 +649,13 @@
       "tags": [],
       "params": {
         "pitch_mm": 750,
-        "index": 7
+        "index": 7,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -703,7 +669,13 @@
       "tags": [],
       "params": {
         "pitch_mm": 750,
-        "index": 8
+        "index": 8,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -715,7 +687,14 @@
       "enabled": true,
       "class": "ew_cell",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -760,7 +739,13 @@
       "class": "pem_fc",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": "generation",
@@ -894,17 +879,6 @@
       }
     },
     {
-      "unit_id": "GLASS_BURNOUT",
-      "sector_id": "GLASS",
-      "enabled": true,
-      "class": "intra",
-      "tags": [],
-      "params": {},
-      "modules": [],
-      "electrical_role": null,
-      "continuous_kw": null
-    },
-    {
       "unit_id": "GLASS_DIGEST",
       "sector_id": "GLASS",
       "enabled": true,
@@ -921,28 +895,6 @@
         "status": "study",
         "note": "Study digest duty class"
       }
-    },
-    {
-      "unit_id": "GLASS_MILL",
-      "sector_id": "GLASS",
-      "enabled": true,
-      "class": "intra",
-      "tags": [],
-      "params": {},
-      "modules": [],
-      "electrical_role": null,
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "GLASS_RINSE",
-      "sector_id": "GLASS",
-      "enabled": true,
-      "class": "intra",
-      "tags": [],
-      "params": {},
-      "modules": [],
-      "electrical_role": null,
-      "continuous_kw": null
     },
     {
       "unit_id": "GREY_TREAT",
@@ -1164,53 +1116,6 @@
       }
     },
     {
-      "unit_id": "LITHO_STUB",
-      "sector_id": "FAB",
-      "enabled": true,
-      "class": "study_stub",
-      "tags": [
-        "lithography",
-        "in_scope",
-        "study_stub"
-      ],
-      "params": {
-        "status": "study_duty_mass_issued",
-        "present_path": "study_duty_mass_issued",
-        "schedule_steps": [
-          "LITHO_COAT",
-          "LITHO_ALIGN",
-          "LITHO_DEV"
-        ],
-        "blockers": [
-          "FreeCAD_LITHO_COAT_ALIGN_DEV_children_open",
-          "UV_lamp_class_selection_external",
-          "wafer_starts_d_campaign_lock_external"
-        ],
-        "lithography_in_mvs": true,
-        "ref": "AQS-EQP-STUDY-001 Rev E \u00a78 / AQS-BOM-SC-001 / AQS-AUD-001 pilot starts",
-        "open_study_queued": true,
-        "gap_framing": "open_study_queued \u2014 must close before claiming this MVS path; not accepted unreclaimed endpoint",
-        "study_id": "ST-LITHO-01",
-        "study_wafer_starts_d": "1-5 pilot (AQS-AUD-001)",
-        "study_resist_dispense_g_d": "2-10",
-        "study_resist_dry_residual_g_d": "0.2-1.0",
-        "study_method": "spin film ~1-3 um on 150mm; dispense ~2 mL/wafer; solids~10%; 1-5 starts/d",
-        "study_continuous_kw_mid": 0.1,
-        "study_peak_kw_run": "0.5-1.5",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Issue FreeCAD LITHO_COAT/ALIGN/DEV children + lock wafer starts/d + UV lamp datasheet \u2014 owner/date TBD",
-        "presence": "placeholder"
-      },
-      "modules": [],
-      "electrical_role": "load",
-      "continuous_kw": {
-        "value": 0.1,
-        "unit": "kW",
-        "status": "study",
-        "note": "ST-LITHO-01: ~0.1 kW_e avg at 1-5 starts/d (spin+softbake+UV intermittent). Peak 0.5-1.5 while running \u2014 not nameplate."
-      }
-    },
-    {
       "unit_id": "LOAD_AGG",
       "sector_id": "ELEC",
       "enabled": true,
@@ -1242,7 +1147,13 @@
       "class": "iem_fc",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": "generation",
@@ -1259,7 +1170,14 @@
       "enabled": true,
       "class": "ferment",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          2200,
+          900,
+          1400
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1271,7 +1189,13 @@
       "class": "reactor",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          2200,
+          900,
+          1400
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1291,7 +1215,13 @@
       "params": {
         "inventory_kg_study_min": 15.0,
         "days_at_mid_synth": 3,
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          800,
+          800,
+          1100
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": "storage",
@@ -1537,222 +1467,6 @@
       }
     },
     {
-      "unit_id": "Q1_A",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "A",
-        "Q1"
-      ],
-      "params": {
-        "ladder": "A",
-        "tier": "Q1",
-        "fluid": "thermal oil",
-        "t_nom_C": 250,
-        "deadband_K": 5,
-        "origin_mm": [
-          6000,
-          4000,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q1_B",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "B",
-        "Q1"
-      ],
-      "params": {
-        "ladder": "B",
-        "tier": "Q1",
-        "fluid": "thermal oil",
-        "t_nom_C": 250,
-        "deadband_K": 5,
-        "origin_mm": [
-          12000,
-          4000,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q2_A",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "A",
-        "Q2"
-      ],
-      "params": {
-        "ladder": "A",
-        "tier": "Q2",
-        "fluid": "thermal oil",
-        "t_nom_C": 150,
-        "deadband_K": 5,
-        "origin_mm": [
-          6000,
-          5500,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q2_B",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "B",
-        "Q2"
-      ],
-      "params": {
-        "ladder": "B",
-        "tier": "Q2",
-        "fluid": "thermal oil",
-        "t_nom_C": 150,
-        "deadband_K": 5,
-        "origin_mm": [
-          12000,
-          5500,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q3_A",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "A",
-        "Q3"
-      ],
-      "params": {
-        "ladder": "A",
-        "tier": "Q3",
-        "fluid": "water or oil",
-        "t_nom_C": 100,
-        "deadband_K": 5,
-        "origin_mm": [
-          6000,
-          7000,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q3_B",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "B",
-        "Q3"
-      ],
-      "params": {
-        "ladder": "B",
-        "tier": "Q3",
-        "fluid": "water or oil",
-        "t_nom_C": 100,
-        "deadband_K": 5,
-        "origin_mm": [
-          12000,
-          7000,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q4_A",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "A",
-        "Q4"
-      ],
-      "params": {
-        "ladder": "A",
-        "tier": "Q4",
-        "fluid": "water",
-        "t_nom_C": 70,
-        "deadband_K": 5,
-        "origin_mm": [
-          6000,
-          8500,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
-      "unit_id": "Q4_B",
-      "sector_id": "HEAT",
-      "enabled": true,
-      "class": "heat_battery",
-      "tags": [
-        "heat_ladder",
-        "B",
-        "Q4"
-      ],
-      "params": {
-        "ladder": "B",
-        "tier": "Q4",
-        "fluid": "water",
-        "t_nom_C": 70,
-        "deadband_K": 5,
-        "origin_mm": [
-          12000,
-          8500,
-          -6000
-        ],
-        "ref": "AQS-HEAT-LADDER-001"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
       "unit_id": "Q4_BUS",
       "sector_id": "HAB",
       "enabled": true,
@@ -1806,45 +1520,6 @@
       "continuous_kw": null
     },
     {
-      "unit_id": "REMIN",
-      "sector_id": "WTR",
-      "enabled": true,
-      "class": "study_stub",
-      "tags": [
-        "potable",
-        "study_balance",
-        "study_stub"
-      ],
-      "params": {
-        "status": "study_balance_issued",
-        "present_path": "study_balance_issued",
-        "blockers": [
-          "mineral_source_vs_S07_confirm",
-          "UV_integrity_TBD",
-          "equipment_IDs_not_issued"
-        ],
-        "blocks_claim": "potable_export_Present",
-        "study_drink_L_d": 10.0,
-        "study_Ca_g_d": 0.25,
-        "study_Mg_g_d": 0.1,
-        "study_targets_mg_L": {
-          "Ca": 25,
-          "Mg": 10,
-          "K_optional": 5
-        },
-        "ref": "AQS-EQP-STUDY-001 Rev C \u00a74 / WHO nutrients guidance",
-        "open_study_queued": true,
-        "study_id": "ST-REMIN-01",
-        "gap_framing": "balance issued; Present IDs = open study ST-REMIN-01",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Mineral source lock vs S07 + UV integrity + equipment IDs \u2014 owner/date TBD",
-        "presence": "placeholder"
-      },
-      "modules": [],
-      "electrical_role": "none",
-      "continuous_kw": null
-    },
-    {
       "unit_id": "ROOF_TANK",
       "sector_id": "WTR",
       "enabled": true,
@@ -1880,55 +1555,6 @@
       "continuous_kw": null
     },
     {
-      "unit_id": "SOLAR_PV_CELL",
-      "sector_id": "FAB",
-      "enabled": true,
-      "class": "study_stub",
-      "tags": [
-        "PV_TEXTURE",
-        "architecture_promoted",
-        "study_stub"
-      ],
-      "params": {
-        "status": "study_duty_bands_locked",
-        "present_path": "study_duty_bands_locked",
-        "train": [
-          "PV_TEXTURE",
-          "PV_EMITTER",
-          "PV_PSG_ETCH",
-          "PV_ARC",
-          "PV_CONTACT",
-          "PV_FIRE",
-          "PV_IV"
-        ],
-        "blockers": [
-          "vendor_PECVD_belt_datasheets_external",
-          "PV_COUNT_offtake_decision_external"
-        ],
-        "ref": "AQS-EQP-STUDY-001 Rev E \u00a76 / AQS-REQ-KW-001 \u00a73.4 / AQS-EQP-FAB-PV-001",
-        "open_study_queued": true,
-        "study_id": "ST-SOLAR-01",
-        "gap_framing": "architecture promoted; nameplates = ST-SOLAR-01",
-        "study_REQ_PECVD_avg_kW": "0.5-2",
-        "study_REQ_PECVD_peak_kW": "5-15",
-        "study_REQ_BELT_avg_kW": "0.5-2",
-        "study_REQ_BELT_peak_kW": "10-25",
-        "study_seed_share_kW": 1.0,
-        "study_method": "AQS-REQ-KW-001 SI-PECVD-01 / SI-BELT-01 pilot derate; staggered so full-line 80-150 kW forbidden",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Vendor PECVD/belt datasheets + decide whether cell offtake resizes PV_COUNT \u2014 owner/date TBD",
-        "presence": "placeholder"
-      },
-      "modules": [],
-      "electrical_role": "load",
-      "continuous_kw": {
-        "value": 1.0,
-        "unit": "kW",
-        "status": "study",
-        "note": "ST-SOLAR-01: 1.0 kW_e mid study share (REQ-PECVD+BELT avg bands). Not vendor nameplate; full-line 80-150 kW forbidden."
-      }
-    },
-    {
       "unit_id": "SOL_ARK_60K",
       "sector_id": "ELEC",
       "enabled": true,
@@ -1956,51 +1582,15 @@
       "continuous_kw": null
     },
     {
-      "unit_id": "VCD_TRAIN",
-      "sector_id": "WTR",
-      "enabled": true,
-      "class": "study_stub",
-      "tags": [
-        "VCD",
-        "study_duty",
-        "study_stub"
-      ],
-      "params": {
-        "status": "study_duty_issued",
-        "present_path": "study_duty_issued",
-        "blockers": [
-          "equipment_IDs_not_issued",
-          "compressor_selection_TBD"
-        ],
-        "blocks_claim": "potable_export_Present",
-        "duty_method": "AQS-EQP-STUDY-001 Rev C \u00a73 MVC w=\u03bb\u0394T/T",
-        "study_SEC_kWh_per_m3": "14-20",
-        "study_feed_m3_d": 0.11,
-        "ref": "AQS-EQP-STUDY-001 Rev C / AQS-WTR-001 / AQS-AUD-001 \u00a711",
-        "open_study_queued": true,
-        "study_id": "ST-VCD-01",
-        "gap_framing": "duty issued; Present IDs = open study ST-VCD-01",
-        "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "Compressor selection + equipment IDs for Present VCD \u2014 owner/date TBD",
-        "presence": "placeholder"
-      },
-      "modules": [],
-      "electrical_role": "load",
-      "continuous_kw": {
-        "value": 0.08,
-        "unit": "kW",
-        "status": "study",
-        "note": "First-principles MVC study mid ~0.08 kW_e avg at ~110 L/d SEC~16 kWh/m3 (AQS-EQP-STUDY-001 Rev C \u00a73) \u2014 not nameplate"
-      }
-    },
-    {
       "unit_id": "WAFER_FAB",
       "sector_id": "FAB",
       "enabled": true,
       "class": "fab",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "iso_14644_wet_bench": "Class 7",
+        "iso_14644_tool_row": "Class 6"
       },
       "modules": [],
       "electrical_role": "load",
@@ -2155,6 +1745,497 @@
       "tags": [],
       "params": {
         "ref": "FLOW_BATTERY.md"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_PHOS",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reagent",
+      "tags": [],
+      "params": {
+        "bund": "acid_phos",
+        "separate_from": "WS_HF_ED",
+        "study_L_d": "0.5-2",
+        "size_mm": [
+          800,
+          800,
+          1100
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_RINSE",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "intra",
+      "tags": [],
+      "params": {
+        "equipment_id": "GLASS_RINSE-01",
+        "continuous_kw": "0.2",
+        "status": "duty_issued",
+        "size_mm": [
+          1200,
+          600,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_MILL",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "intra",
+      "tags": [],
+      "params": {
+        "equipment_id": "GLASS_MILL-01",
+        "continuous_kw": "0.8",
+        "status": "duty_issued",
+        "size_mm": [
+          800,
+          600,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_BURNOUT",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "intra",
+      "tags": [],
+      "params": {
+        "equipment_id": "GLASS_BURNOUT-01",
+        "continuous_kw": "1.0",
+        "status": "duty_issued",
+        "size_mm": [
+          800,
+          600,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "VCD_TRAIN",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [],
+      "params": {
+        "equipment_id": "VCD-COMP-01",
+        "type": "scroll or diaphragm",
+        "sec_kWh_m3": "14-20",
+        "feed_m3_d": 0.11,
+        "avg_kw": 0.08,
+        "status": "duty_issued",
+        "size_mm": [
+          1400,
+          600,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "REMIN",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [],
+      "params": {
+        "equipment_id": "REMIN-01",
+        "drink_L_d": 10,
+        "Ca_mg_L": 25,
+        "Mg_mg_L": 10,
+        "uv": "after dose",
+        "source": "hydroxide crib",
+        "size_mm": [
+          600,
+          400,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LITHO_COAT",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "tool",
+      "tags": [],
+      "params": {
+        "starts_d": "1-5",
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          600,
+          500,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LITHO_ALIGN",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "tool",
+      "tags": [],
+      "params": {
+        "starts_d": "1-5",
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          500,
+          500,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LITHO_DEV",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "tool",
+      "tags": [],
+      "params": {
+        "starts_d": "1-5",
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          500,
+          500,
+          800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LITHO_STUB",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [],
+      "params": {
+        "lamp": "365 nm LED",
+        "starts_d": "1-5",
+        "avg_kw": 0.1,
+        "size_mm": [
+          1600,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [
+        "LITHO_COAT",
+        "LITHO_ALIGN",
+        "LITHO_DEV"
+      ],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [],
+      "params": {
+        "equipment_id": "ELC-BOOTH-01",
+        "formulation": "carbon or nickel",
+        "avg_kw": 0.3,
+        "exhaust": "MET_AHU",
+        "size_mm": [
+          1200,
+          800,
+          1800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "sector_id": "MFG",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [],
+      "params": {
+        "equipment_id": "BLOW-01",
+        "peak_kw": "2-4",
+        "avg_kw": 0.5,
+        "scrap": "OIL_FRAC",
+        "size_mm": [
+          1200,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "study_stub",
+      "tags": [],
+      "params": {
+        "equipment_id": "PV-CELL-01",
+        "avg_kw": 1.0,
+        "koh": "WS_KOH",
+        "not": "PV_ARRAY",
+        "size_mm": [
+          2400,
+          1200,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [
+        "PV_TEXTURE",
+        "PV_EMITTER",
+        "PV_PSG_ETCH",
+        "PV_ARC",
+        "PV_CONTACT",
+        "PV_FIRE",
+        "PV_IV"
+      ],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q1_A",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 250,
+        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "ladder": "A",
+        "tier": "Q1",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q2_A",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 150,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "A",
+        "tier": "Q2",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q3_A",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.4,
+        "t_nom_C": 100,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "A",
+        "tier": "Q3",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q4_A",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.6,
+        "t_nom_C": 70,
+        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "ladder": "A",
+        "tier": "Q4",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q1_B",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 250,
+        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "ladder": "B",
+        "tier": "Q1",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q2_B",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "thermal oil",
+        "vol_m3": 0.3,
+        "t_nom_C": 150,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "B",
+        "tier": "Q2",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q3_B",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.4,
+        "t_nom_C": 100,
+        "relief": "thermal 1/2 in, set 10 percent above design",
+        "ladder": "B",
+        "tier": "Q3",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "Q4_B",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "heat_battery",
+      "tags": [],
+      "params": {
+        "fluid": "water",
+        "vol_m3": 0.6,
+        "t_nom_C": 70,
+        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "ladder": "B",
+        "tier": "Q4",
+        "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
+        "size_mm": [
+          800,
+          800,
+          1200
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
       "modules": [],
       "electrical_role": null,
@@ -3712,24 +3793,6 @@
       "note": "From register: WS_AMMONIA \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
     },
     {
-      "stream_id": "S34",
-      "from_unit_id": "WS_NITRIC",
-      "to_unit_id": "WET_BENCH",
-      "phase": "L",
-      "carries": "HNO\u2083 / H\u2083PO\u2084 etch suite",
-      "rate": {
-        "value": null,
-        "unit": "",
-        "status": "tbd",
-        "note": "no rate in candidate_mvs / authority numeric \u2014 not invented"
-      },
-      "from_sector_id": "FAB",
-      "to_sector_id": "FAB",
-      "open_boundary": false,
-      "null_rate_kind": "unknown",
-      "note": "From register: WS_NITRIC / WS_PHOS \u2192 WET_BENCH; gap_flags=absent_from_candidate_mvs; layers=mass"
-    },
-    {
       "stream_id": "S35",
       "from_unit_id": "WS_KOH",
       "to_unit_id": "WET_BENCH",
@@ -4656,6 +4719,32 @@
       "open_boundary": false,
       "null_rate_kind": "unknown",
       "note": "Make-up from the N2 box only.; layers=mass"
+    },
+    {
+      "stream_id": "S34",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "HNO3",
+      "rate": null,
+      "from_sector_id": null,
+      "to_sector_id": null,
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "Nitric only."
+    },
+    {
+      "stream_id": "S34B",
+      "from_unit_id": "WS_PHOS",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "carries": "H3PO4",
+      "rate": null,
+      "from_sector_id": null,
+      "to_sector_id": null,
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "Phosphoric etch. Own bund."
     }
   ],
   "electrical": {
@@ -4717,5 +4806,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev F+local (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev H (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }
