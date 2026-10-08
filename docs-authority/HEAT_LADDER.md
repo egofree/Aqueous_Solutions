@@ -1,7 +1,7 @@
 # Dual heat ladder
 
 Document: AQS-HEAT-LADDER-001
-Date: 2026-10-02 (duty and tier notes updated 2026-10-07, graph Rev J)
+Date: 2026-10-02 (duty and tier notes updated 2026-10-07, graph Rev K)
 Not a PE stamp. Replaces the ghost edges that dumped Q1/Q2/Q3 onto Q4_BUS.
 
 ## Tiers
@@ -62,8 +62,8 @@ Q1_A, Q1_B, Q2_A, Q2_B, Q3_A, Q3_B, Q4_A, Q4_B are the batteries. Q4_BUS is the 
 
 ## Duties
 
-Edge duties, media, supply and return temperatures, flows, and line sizes are in AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`, Rev B for graph Rev J), written to each HL-* edge in the graph. With the Q3 draws running, Q3 is fully drawn and the Q3 → Q4 step carries 0; the shortfall is electric trim at the process (AQS-DUTY-008 §13). Each step and cross-tie is a loop thermosyphon. The condenser coil sits at least 0.8 m above the evaporator coil.
+Edge duties, media, supply and return temperatures, flows, and line sizes are in AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`, Rev C for graph Rev K), written to each HL-* edge in the graph. With the Q3 draws running, Q3 is fully drawn and the Q3 → Q4 step carries 0; the shortfall is electric trim at the process (AQS-DUTY-008 §13). Each downhill step is a gravity loop thermosyphon: evaporator high in the hotter store, condenser low in the colder store, and the colder store raised so the condensate leg rises at least 0.30 m (Q1 z −6000, Q2 −5150, Q3 −4250, Q4 −3350 mm; AQS-DUTY-008 §14.2). Each cross-tie is a pumped single-phase loop (XL-Q1..Q4), normally off, run only when the two ladders differ by more than 5 K (§14.3).
 
 ## Placement
 
-The eight batteries have seed rows in `flow_graph/placement_seed.json` (AQS-PLACE-SEED-001 Rev G), 800 × 800 × 1200 mm issued envelope, 1500 mm pitch in a row at L-1. Ladder A sits west of the core along the west wall, ladder B east of the core in the north-east bay. Origins are listed in AQS-DUTY-008 §13.6.
+The eight batteries have seed rows in `flow_graph/placement_seed.json` (AQS-PLACE-SEED-001 Rev H), 800 × 800 × 1200 mm issued envelope, 1500 mm pitch in a row at L-1, colder tiers on steel stands (0 / 850 / 1750 / 2650 mm). Ladder A sits west of the core along the west wall, ladder B east of the core in the north-east bay. Plan origins are listed in AQS-DUTY-008 §13.6; elevations in §14.2.

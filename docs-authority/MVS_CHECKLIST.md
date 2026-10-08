@@ -1,7 +1,7 @@
 # MVS checklist
 
 Document: AQS-MVS-CHK-001
-Date: 2026-10-02; updated 2026-10-07
+Date: 2026-10-02; updated 2026-10-07 (graph Rev K)
 Plan: docs-authority/MVS_PLAN.md
 Graph topology is the baseline. Check an item only when the solid or the number exists.
 
@@ -67,9 +67,11 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] Cross-tie coils fit inside the stores (Q2 on low-fin tube) (§13.5)
 - [ ] Leach heater rating: 6.35 kW electric trim has no issued rating; issue one or adopt recuperator R-1 (§13.7)
 - [ ] Digest heater: 1.08 kW trim sits inside the 1.5 kW GLASS_DIGEST study class; issue the class as the rating
-- [ ] HDR_CO2 consumer or export for 11.6 kg/d (S85)
+- [x] HDR_CO2 consumer: S89 HDR_CO2 → GROW_BED 11.616 kg/d, farm enrichment at 1000 ppm, DN15 316L at 3.0 bar a; MeOH rejected (H₂-limited) (AQS-DUTY-009)
 - [ ] Q4 bus 4.24 kW running vs 3.0 kW life priority; surplus 1.24 kW to ST-ORC-01 (ORC stays 0)
-- [ ] Thermosyphon 0.8 m rise between stores on one floor: stands or level offset
+- [x] Thermosyphon rise: downhill steps gravity on stepped stores (Q2 −5150, Q3 −4250, Q4 −3350), rise 0.30–0.33 m, Δp/head ≤ 0.23; cross-ties pumped loops XL-Q1..Q4, 4–29 W, normally off (AQS-DUTY-008 Rev C §14)
+- [ ] Store stands (up to 2.65 m) and access platform designed
+- [ ] Cross-tie pumps selected (XL-Q1/Q2 high-temperature magnetic drive)
 
 ## Fab room
 
@@ -92,8 +94,14 @@ Graph topology is the baseline. Check an item only when the solid or the number 
 - [x] Seed Rev G: Q1_A..Q4_B reissued (Rev F study origins hit LEACH_CSTR_1, BMED_REGEN and the core); ladder A west wall y 9000, ladder B north-east bay y 15000
 - [x] Ladder stores ≥ 700 mm from same-level equipment and walls on the placed copy; 0 intersections; seed all-pairs 0 of 2080
 - [x] Ladder stores carried as issued envelopes on `plant_placed_2026-10-07_revJ.FCStd` (`--create-issued-only`)
+- [x] Seed Rev H: ladder stores stepped; rows for WS_PHOS, LITHO bench + COAT/ALIGN/DEV, VCD_TRAIN, REMIN, ELECTRODE_COAT, BLOW_MOLD, SOLAR_PV_CELL, HX8, NOX_SCRUB, MEOH_COND, RELIEF_CRYO, CONTINUOUS_RECYCLE; record rows CATCH_TANK, FLUE_KO, RELIEF_H2
+- [x] Seed all-pairs: 72 boxes, 2556 pairs, 0 intersections; new and moved rows ≥ 600 mm within a level (lines and the LITHO group: no overlap); GEO_ORC pad empty
+- [x] CATCH_TANK stays at L-2 (pumped-hydro lower reservoir); only slab crossing is SHAFT_PENSTOCK; no ladder drain into it
+- [x] Rev K copy `plant_placed_2026-10-07_revK.FCStd`: new solids 0 intersections with the copy; plant.FCStd unchanged
+- [ ] Legacy massing on the copy still overlaps (WS_* inside FAB blocks, H2_STACK through racks, FLUE_CAP × VJ_001, CATCH_TANK × cores); 20 unmoved seed pairs under 600 mm
+- [ ] SOLAR_PV_CELL envelope vs the wafer_fab PV_* stubs: one of the two is a duplicate
 
 ## Done
 
-- [ ] Every present node has a solid or is a header
-- [ ] loops_closed still false until the copy carries the solids
+- [x] Every present node has a solid, is a header, or is a logical boundary: 112 solid, 8 header, 2 boundary (BOUNDARY_EXPORT, LOAD_AGG), 0 fail (graph Rev K, copy revK)
+- [ ] loops_closed still false. The copy now carries the solids; still open: 83 present edges with no rate, 20 placeholder edges, the open items above, S87/S88 HOLD, hab exhaled CO₂ not on the graph

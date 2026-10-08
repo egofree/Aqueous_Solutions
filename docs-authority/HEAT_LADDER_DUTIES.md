@@ -1,14 +1,15 @@
 # Heat-ladder edge duties
 
 Document number: AQS-DUTY-008
-Revision: B
+Revision: C
 Date: 2026-10-07
-Authority: AQS-HEAT-LADDER-001 (`HEAT_LADDER.md`), AQS-FLOW-GRAPH-001 Rev J. Not a PE stamp.
+Authority: AQS-HEAT-LADDER-001 (`HEAT_LADDER.md`), AQS-FLOW-GRAPH-001 Rev K. Not a PE stamp.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | First-principles duties for the 20 HL-* edges and S67B; closes the presence "study" edges | 2026-10-07 |
 | B | §2, §4.1, §6, §7, §12, §13 | Graph Rev J: HX-8 to Q4, Q3 draws HX-4/5/6 with electric trim, S18 credit retired, re-rated Q3/Q4, ladder placement Rev G | 2026-10-07 |
+| C | §3, §8, §11, §13.3, §13.8, §14 | Graph Rev K: thermosyphon rise checked; downhill steps gravity on stepped stores, cross-ties pumped loops; HDR_CO2 consumer (AQS-DUTY-009) | 2026-10-07 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -61,7 +62,7 @@ Rated duty is the governing single-ladder throughput (one ladder isolated, all s
 Line sizes are chosen as follows:
 
 - Pumped liquid: velocity at or below 1.0 m/s. DN15 is the mechanical minimum and governs every pumped line here.
-- Vapor: velocity at or below 10 m/s, plus a pressure-drop check. Darcy vapor and condensate losses over the equivalent length must stay below half of the static head \(\rho_l g H\) at H = 0.8 m of rise.
+- Vapor: velocity at or below 10 m/s, plus a pressure-drop check. Darcy vapor and condensate losses over the equivalent length must stay below half of the static head \(\rho_l g H\) at H = 0.8 m of rise. Rev C: H is the actual rise on the stepped stores (§14.2); cross-ties are pumped (§14.3).
 - Equivalent length: 6 m for a downhill step and 25 m for a cross-tie across the core.
 
 ## 4. Sources
@@ -217,7 +218,7 @@ Media:
 
 ## 8. Checks
 
-Thermosyphon pressure drop. Vapor plus condensate loss is 69–993 Pa against 6.8–7.7 kPa of head at 0.8 m rise, so every loop is below half the head. The condenser coil shall sit at least 0.8 m above the evaporator coil: evaporator low in the source store, condenser high in the sink store.
+Thermosyphon pressure drop. Vapor plus condensate loss is 69–993 Pa against 6.8–7.7 kPa of head at 0.8 m rise, so every loop is below half the head. The condenser coil shall sit at least 0.8 m above the evaporator coil: evaporator low in the source store, condenser high in the sink store. Superseded in Rev C (§14): that layout gives 0.54–0.60 m on level stores and draws the cold bottom of the hot store. The downhill steps use stratification-correct coils on stepped stores; the cross-ties are pumped.
 
 Sealed-loop design pressure is the saturation pressure at the source store's relief temperature (nominal + 10 %):
 
@@ -266,7 +267,7 @@ Every lock is respected:
 The following design choices were made in this study:
 
 1. Rated duty is single-ladder × 1.25. `rate.value` carries the rated duty.
-2. Downhill steps and cross-ties are loop thermosyphons, with the media named in §7.
+2. Downhill steps and cross-ties are loop thermosyphons, with the media named in §7. Rev C (§14): downhill steps stay gravity thermosyphons on stepped stores; cross-ties are pumped single-phase loops XL-Q1..Q4.
 3. HL-* edges move to the thermal layer (EFD layer B).
 4. FLUE_KO separates the CO₂-rich cut by VSA on 13X at 0.85 recovery.
 5. Presence stays `present` | `placeholder`. "study" is not a permanent class: every one of the 21 edges closes with a defined duty, source, sink and size.
@@ -390,7 +391,7 @@ CRYO_CO2 balance, kg/d:
 | | | S85 → HDR_CO2 (remainder) | 11.616 |
 | Total | 19.625 | Total | 19.625 |
 
-HDR_CO2 has no consumer edge, so 11.6 kg/d accumulates there. See §13.8.
+HDR_CO2 has no consumer edge, so 11.6 kg/d accumulates there. See §13.8. Rev C: closed by S89 HDR_CO2 → GROW_BED (AQS-DUTY-009, `CO2_HEADER_DUTY.md`).
 
 ### 13.4 Re-rated ladder balance (running: HX-8 on, Q3 draws on)
 
@@ -516,6 +517,92 @@ Open items:
 
 1. A leach heater rating (6.35 kW of trim) must be issued, or R-1 adopted.
 2. The GLASS_DIGEST 1.5 kW class should be issued as the digest heater rating.
-3. HDR_CO2 needs a consumer or an export decision for 11.6 kg/d.
+3. ~~HDR_CO2 needs a consumer or an export decision for 11.6 kg/d.~~ Closed in Rev C: S89 to GROW_BED, AQS-DUTY-009.
 4. Q4 bus surplus over the life priority is 1.24 kW. Input it to ST-ORC-01; ORC stays at 0.
-5. The 0.8 m thermosyphon rise between stores on the same floor still needs stands or a level offset.
+5. ~~The 0.8 m thermosyphon rise between stores on the same floor still needs stands or a level offset.~~ Closed in Rev C §14: stepped stores (gravity downhill steps), pumped cross-ties.
+
+## 14. Rev C (graph Rev K): thermosyphon rise and cross-tie drive
+
+Run: `python3 _hl_edges_study.py --rev-k --json out.json` (`main_k()`). Rev A/Rev B outputs are unchanged.
+
+### 14.1 Check at the Rev G elevations
+
+Both ladders were placed at z −6000 (one floor, all stores level). The store inner height and the coil heights fix where each coil can sit. Inner base above the store origin is (1.2 − h)/2; coils keep 0.06 m from the inner top and bottom.
+
+| Step | Rev B layout (evaporator low, condenser high), rise at equal elevation | Required by Rev B | Stratification-correct layout at equal elevation |
+|---|---:|---:|---:|
+| Q1 → Q2 (HL-Q1-*-DOWN) | 0.542 m (4.8 kPa head) | 0.8 m | −0.542 m (no head) |
+| Q2 → Q3 (HL-Q2-*-DOWN) | 0.597 m (5.5 kPa head) | 0.8 m | −0.597 m (no head) |
+| Q3 → Q4 (HL-Q3-*-DOWN) | 0.575 m (5.5 kPa head) | 0.8 m | −0.575 m (no head) |
+
+So the §8 requirement (0.8 m) is not met at the same elevation. Hydraulically the Rev B layout would still pass Δp < 0.5 × head at 0.54–0.60 m (4.8–5.5 kPa against at most 0.6 kPa with the check valve); it fails the 0.8 m rule as written and it fails thermally. The Rev B layout also has a thermal flaw: an evaporator at the bottom of the hotter store sits in the coldest layer of that store, and the fluid it cools stays at the bottom, so the step starves. A condenser at the top of the colder store heats only the top layer. A gravity loop between level stores cannot be both hydraulically and thermally right.
+
+### 14.2 Decision for the downhill steps: gravity, on stepped stores
+
+Each downhill step stays a gravity loop thermosyphon. The coils are stratification-correct: the evaporator sits high in the hotter store (it draws the hottest layer and the cooled fluid sinks away from it), and the condenser sits low in the colder store (it heats from the bottom and drives mixing). The colder store is raised so the condensate leg still falls to the evaporator:
+
+\[ \Delta z_{store} = (z_{evap} - z_{cond}) + H_{req}, \qquad H_{req} = \max\left(\frac{2(\Delta p_v + \Delta p_l + \Delta p_{check})}{\rho_l g},\ 0.30\ \text{m}\right) \]
+
+rounded up to 50 mm. Δp_check = 500 Pa (low-cracking swing check on the condensate return). The 0.30 m floor covers level swing in the condenser and drain-down of the return. Equivalent length: 6 m, or the routed length (in-store legs, level change, 1.5 m pitch, four long-radius elbows) if longer.
+
+| Edge | Medium, line | Evaporator centre above source origin | Condenser centre above sink origin | Δp vapor + liquid + check, Pa | H_req | Store step | Actual rise | Head, Pa | Δp/head |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| HL-Q1-A/B-DOWN | biphenyl/diphenyl-oxide eutectic, DN25 | 0.848 m | 0.306 m | 126.2 + 7.09 + 500 = 633 | 0.30 m | 0.85 m | 0.308 m | 2746 | 0.23 |
+| HL-Q2-A/B-DOWN | water, DN15 | 0.898 m | 0.301 m | 107.7 + 0.79 + 500 = 608 | 0.30 m | 0.90 m | 0.303 m | 2787 | 0.22 |
+| HL-Q3-A/B-DOWN | water, DN20 | 0.825 m | 0.249 m | 69.3 + 0.94 + 500 = 570 | 0.30 m | 0.90 m | 0.325 m | 3085 | 0.18 |
+
+Every step passes Δp < 0.5 × head with margin (0.18–0.23). The check valve dominates the loss.
+
+Store elevations (both ladders, plan positions unchanged):
+
+| Store | Origin z, mm | Stand, mm |
+|---|---:|---:|
+| Q1_A, Q1_B | −6000 | 0 |
+| Q2_A, Q2_B | −5150 | 850 |
+| Q3_A, Q3_B | −4250 | 1750 |
+| Q4_A, Q4_B | −3350 | 2650 |
+
+Q4 top is at z −2150, 1850 mm below the L0 slab soffit (−300), so there is at least the 600 mm maintenance clearance overhead. The stand is a steel frame under the 800 × 800 store footprint; it does not widen the envelope. Store envelope, volumes and insulation are unchanged.
+
+Coil packs (top to bottom; tallest bare coil switched to integral low-fin until the stack is ≤ 0.9 × inner height):
+
+| Store | Coils | Stack / inner height |
+|---|---|---:|
+| Q1 | cross_tie (mid) 1.84 m² bare 3 row 0.376 m; down_evaporator (high) 1.51 m² bare 2 row 0.384 m | 0.760 / 1.00 m |
+| Q2 | down_condenser (low) 1.51 m² integral low-fin 1 row 0.292 m; cross_tie (mid) 2.70 m² integral low-fin 2 row 0.305 m; down_evaporator (high) 2.52 m² integral low-fin 2 row 0.284 m | 0.881 / 1.00 m |
+| Q3 | down_condenser (low) 0.94 m² integral low-fin 1 row 0.162 m; cross_tie (mid) 0.92 m² integral low-fin 1 row 0.157 m; down_evaporator (high) 0.81 m² bare 1 row 0.311 m | 0.630 / 0.88 m |
+| Q4 | down_condenser (low) 0.81 m² bare 1 row 0.279 m; cross_tie (mid) 0.78 m² bare 1 row 0.270 m | 0.549 / 1.10 m |
+
+### 14.3 Decision for the cross-ties: pumped single-phase loops
+
+HL-Q*-X and HL-Q*-X-BA connect same-tier stores on the two ladders. Those stores are at the same elevation, the tie must carry heat in either direction, and the run is 25 m each way across the core. A gravity loop has a fixed hot end and would need ladder B a full step above ladder A for one direction only. Each tier therefore gets one pumped single-phase loop (XL-Q1..XL-Q4) through one coil in each store. The X and X-BA edges share it. The pump runs only when |T_A − T_B| > 5 K; heat then flows hotter to colder whatever the flow direction. Normal duty is 0, so the pumps are normally off.
+
+Loop pressure drop is Darcy over 50 m (supply and return), two coils (× 1.3 for the helix) and ΣK = 12 of fittings. Pump electric power at 15 % wire-to-water.
+
+| Loop | Medium | Supply/return °C | Flow, L/min | Line | Velocity, m/s | Loop Δp, kPa | Pump head, m | Hydraulic, W | Electric, W | Loop pressure |
+|---|---|---|---:|---|---:|---:|---:|---:|---:|---|
+| XL-Q1 | synthetic thermal oil, hydrogenated terphenyl class | 245/240 | 7.78 | DN15 | 0.66 | 20.55 | 2.44 | 2.66 | 17.8 | 1.0 bar a, T_max 275 °C |
+| XL-Q2 | synthetic thermal oil, hydrogenated terphenyl class | 145/140 | 13.08 | DN20 | 0.63 | 19.80 | 2.17 | 4.32 | 28.8 | 1.0 bar a, T_max 165 °C |
+| XL-Q3 | treated water | 95/90 | 5.43 | DN15 | 0.46 | 9.64 | 1.02 | 0.87 | 5.8 | 2.5 bar a, T_max 110 °C |
+| XL-Q4 | treated water | 65/60 | 4.58 | DN15 | 0.39 | 7.95 | 0.83 | 0.61 | 4.0 | 1.0 bar a, T_max 77 °C |
+
+At the rated duty the store-to-store difference is 15 K (5 K loop ΔT plus two 5 K coil approaches). XL-Q1 and XL-Q2 use synthetic hydrogenated-terphenyl oil (no pressurisation at 275/165 °C). XL-Q3 water is held at 2.5 bar a (above 1.43 bar a saturation at 110 °C). The pumps are canned or magnetic-drive circulators; the computed electric power is below the smallest motor class, so the real draw is set by the motor (tens of watts), and only while a tie runs.
+
+### 14.4 What changed in the graph and the seed
+
+- HL-Q1/Q2/Q3-A/B-DOWN `params`: layout, rise, store step, Δp terms, head, Δp/head, same-elevation check.
+- HL-Q*-X and -X-BA `params`: `kind` pumped single-phase loop, loop id, medium, flow, DN, Δp, pump head and power, control rule. The two-phase keys are removed.
+- Q*_A/B node `params`: origin z, stand height, coil pack.
+- AQS-PLACE-SEED-001 Rev H: Q2 −5150, Q3 −4250, Q4 −3350 on both ladders. All-pairs 0 intersections; ≥ 600 mm within a level.
+
+§3 (H = 0.8 m), §8 (0.8 m rule, evaporator low and condenser high) and §11 item 2 (cross-ties as thermosyphons) are superseded by this section.
+
+### 14.5 Items closed and open
+
+Closed: §13.8 item 3 (HDR_CO2 consumer: S89 to GROW_BED, AQS-DUTY-009) and item 5 (rise: stepped stores).
+
+Open:
+
+1. Stand and access-platform design for Q2–Q4 (up to 2.65 m), and the Q4 coil and relief access from a platform.
+2. Pump selection for XL-Q1..Q4 (high-temperature magnetic drive for the oil loops).
+3. §13.8 items 1, 2 and 4 are unchanged.
