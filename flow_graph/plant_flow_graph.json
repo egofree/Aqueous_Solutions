@@ -1,9 +1,9 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "G",
+  "revision": "H",
   "licence": "CERN-OHL-S-2.0",
-  "date": "2026-10-02",
+  "date": "2026-10-07",
   "sole_authority": true,
   "locks": [
     "layered_views",
@@ -6183,5 +6183,6 @@
   "notes_rev_d": "C29_RECYCLE is the C29 cut pipe to pyro. CONTINUOUS_RECYCLE is liquor to leach. Neither is an alias. Ladder keeps its own Q*_A/B names.",
   "notes_rev_e": "Audit fixes. No oxidizer/organic mix. No flue into CO2 or grey. Ladder fluids not common. Relief retained as contingency. | F+local merge retained handoff Rev E audit fixes.",
   "notes_rev_f": "EW-3..8 added. Relief off the dock. S03 sourced from CRYO_N2. S83-S86 cryo product or relief, not freight. S87 O2 capture. S88 N2 make-up.",
-  "notes_rev_g": "Envelopes issued L\u00d7W\u00d7H mm on MVS machines, EW cells, ladder batteries, gen, fuel cell, methanol skids."
+  "notes_rev_g": "Envelopes issued L\u00d7W\u00d7H mm on MVS machines, EW cells, ladder batteries, gen, fuel cell, methanol skids.",
+  "notes_rev_h": "Issued size_mm (L\u00d7W\u00d7H mm) stands on 36 nodes from commit 2240602. Placement seed Rev F clears the BACKUP_GEN/FUEL_CELL and MEOH_SYNTH/MEOH_TANK overlaps by moving origins only; issued sizes unchanged. EW-1..9 solid model carries overflow launders OVF_EW_1_2..OVF_EW_8_9 and OVF_EW_9_POLISH to POLISH_BANK. No topology, presence, loops_closed or *_on_site change."
 }

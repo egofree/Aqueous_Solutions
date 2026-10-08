@@ -2,7 +2,7 @@
 
 Document: AQS-MVS-EQP-001
 Date: 2026-10-02
-Graph Rev G. L×W×H are issued envelopes in millimetres, not vendor nameplates.
+Graph Rev H. L×W×H are issued envelopes in millimetres, not vendor nameplates.
 
 ## Envelopes
 
