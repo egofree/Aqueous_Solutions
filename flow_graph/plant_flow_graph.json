@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "R",
+  "revision": "S",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4210,6 +4210,28 @@
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
         "duty": "Low-temperature hydrothermal carbonization ahead of compost."
+      }
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "77-90 K column. Air and scrubbed flue in. N2, O2, CO2 out."
+      },
+      "continuous_kw": {
+        "value": 18.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
       }
     }
   ],
@@ -9829,10 +9851,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.0,
+        "value": 95.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
       },
       "params": {
         "rate_basis": "HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count.",
@@ -9858,10 +9880,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.0,
+        "value": 541.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
       },
       "params": {
         "rate_basis": "HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count.",
@@ -12420,7 +12442,7 @@
     {
       "stream_id": "IA-AIR-IN",
       "from_unit_id": "NORTH_DOCK",
-      "to_unit_id": "CRYO_N2",
+      "to_unit_id": "CRYO_ASU",
       "phase": "S/L",
       "layers": [
         "mass"
@@ -12498,13 +12520,13 @@
     {
       "stream_id": "IA-NOX-CO2",
       "from_unit_id": "NOX_SCRUB",
-      "to_unit_id": "HDR_CO2",
+      "to_unit_id": "CRYO_ASU",
       "phase": "S/L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "scrubbed CO2",
+      "carries": "scrubbed CO2 to the cold box",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -12524,13 +12546,13 @@
     {
       "stream_id": "IA-NOX-N2",
       "from_unit_id": "NOX_SCRUB",
-      "to_unit_id": "CRYO_N2",
+      "to_unit_id": "CRYO_ASU",
       "phase": "S/L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "scrubbed nitrogen",
+      "carries": "scrubbed flue nitrogen to the cold box",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -12721,6 +12743,136 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-N2",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_N2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrogen product",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 541.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-O2",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_O2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen product",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 95.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-CO2",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_CO2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "CO2 product",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 30.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-AR",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "argon",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-H2-AIR",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "sweep air from the hydrogen hood",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
