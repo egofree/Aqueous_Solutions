@@ -3240,7 +3240,7 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.11,
+        "feed_m3_d": 0.187,
         "avg_kw": 0.08,
         "status": "duty_issued",
         "size_mm": [
@@ -4215,10 +4215,10 @@
       "phase": "heat",
       "carries": "HX-8 EW reject, Q4 return preheat",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -4232,10 +4232,10 @@
       "phase": "heat",
       "carries": "HX-8 EW reject, Q4 return preheat",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -4652,15 +4652,15 @@
     },
     {
       "stream_id": "IA-BMED-03",
-      "from_unit_id": "CRU",
+      "from_unit_id": "LEACH_CSTR_1",
       "to_unit_id": "BMED_ACID",
       "phase": "L",
       "carries": "CRU \u2192 BMED acid regen loop",
       "rate": {
-        "value": 38.602,
+        "value": 108.195,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: BMED 12.0 kWh/d / 2.1 kWh/kg pair = 5.71 kg/d = 74.7 mol/d HCl as 2 M"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d HCl as 20 wt%. Brine from the leach bleed."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -4669,15 +4669,15 @@
     },
     {
       "stream_id": "IA-BMED-04",
-      "from_unit_id": "CRU",
+      "from_unit_id": "LEACH_CSTR_1",
       "to_unit_id": "BMED_BASE",
       "phase": "L",
       "carries": "CRU \u2192 BMED base regen loop",
       "rate": {
-        "value": 40.3583,
+        "value": 118.7,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: 74.7 mol/d NaOH as 2 M"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d NaOH as 20 wt%. Digest takes 593 mol/d."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -4997,10 +4997,10 @@
       "phase": "G",
       "carries": "cathode H2 + sweep air",
       "rate": {
-        "value": 1.6,
+        "value": 2.1333,
         "unit": "kg/d",
         "status": "study",
-        "note": "EW_1 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GAS",
@@ -5014,10 +5014,10 @@
       "phase": "G",
       "carries": "process H2",
       "rate": {
-        "value": 4.8,
+        "value": 6.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "HDR_H2\u2192H2_DRYER = sum EW hood Faraday pool 1.6\u00d73 = 4.8 kg/d \u2014 true-closure \u2014 plant Faraday pool unchanged 4.8 kg/d (AQS-GAS-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Dryer inlet equals the pool."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "GAS",
@@ -5031,10 +5031,10 @@
       "phase": "G",
       "carries": "cathode H2 + sweep air",
       "rate": {
-        "value": 1.6,
+        "value": 2.1333,
         "unit": "kg/d",
         "status": "study",
-        "note": "EW_2 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GAS",
@@ -5048,10 +5048,10 @@
       "phase": "G",
       "carries": "cathode H2 + sweep air",
       "rate": {
-        "value": 1.6,
+        "value": 2.1333,
         "unit": "kg/d",
         "status": "study",
-        "note": "EW_9 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GAS",
@@ -5150,10 +5150,10 @@
       "phase": "L",
       "carries": "continuous recycle liquor",
       "rate": {
-        "value": 3977.51,
+        "value": 3753.71,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis)"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -5269,10 +5269,10 @@
       "phase": "G",
       "carries": "process H2",
       "rate": {
-        "value": 4.8,
+        "value": 6.4,
         "unit": "kg/d",
-        "status": "authority",
-        "note": "AQS-REQ-KW-001 \u00a73.0 / AQS-GAS-003 Faraday \u22480.2 kg/h at 150 kg/d wet feed"
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -5401,14 +5401,14 @@
     {
       "stream_id": "S12",
       "from_unit_id": "HABITATION",
-      "to_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "GREY_TREAT",
       "phase": "L/S",
       "carries": "grey/solids",
       "rate": {
-        "value": 110.0,
+        "value": 131.38,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "NUT",
@@ -5507,10 +5507,10 @@
       "phase": "E",
       "carries": "DC/480V",
       "rate": {
-        "value": 50.0,
+        "value": 23.32,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-SCALE-001 / params ELEC_NEED_KW_BASE \u224850 kW at SCALE_M=1"
+        "note": "AQS-DUTY-012 Rev N. Continuous, covers the leach-heater trim."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -5553,15 +5553,15 @@
     },
     {
       "stream_id": "S20",
-      "from_unit_id": "GROW_BED",
-      "to_unit_id": "SOL_ARK_60K",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GROW_BED",
       "phase": "E",
       "carries": "load",
       "rate": {
         "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Direction reversed. Power flows to the farm."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "ELEC",
@@ -5643,10 +5643,10 @@
       "phase": "L",
       "carries": "VCD distillate",
       "rate": {
-        "value": 161.0,
+        "value": 168.22,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: VCD recovery 90% of feed 178.9 (S13 + S29 + S52)"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Matches polish outlets. VCD feed raised."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5983,10 +5983,10 @@
       "phase": "G",
       "carries": "H2 fuel",
       "rate": {
-        "value": 3.6,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Standby. Not a design-day draw. Fuel cell and MeOH take the pool."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "BACKUP_GEN",
@@ -6037,7 +6037,7 @@
         "value": 4.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.20 kg/h H2 @ REQ-FC-CONT if GEN idle; shared pool with S45/S74"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
@@ -6068,10 +6068,10 @@
       "phase": "E",
       "carries": "FC DC",
       "rate": {
-        "value": 4.0,
+        "value": 3.46,
         "unit": "kW",
         "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-FC-CONT; study requirement lock \u2014 not vendor nameplate"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. 0.52 of the 6.66 kW LHV. Band is 0.50-0.55."
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "ELEC",
@@ -6292,12 +6292,12 @@
         "value": 4.8,
         "unit": "kg/d",
         "status": "authority",
-        "note": "Same Faraday pool as S05; normal H2 path (AQS-VENT-001); S24 contingency only"
+        "note": "Retired Rev M. Alias of S05. One dryer, one product."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "layers=mass"
+      "note": "presence=placeholder; layers=mass"
     },
     {
       "stream_id": "S65",
@@ -6357,10 +6357,10 @@
       "phase": "G",
       "carries": "CO2-rich gas after KO",
       "rate": {
-        "value": 12.75,
+        "value": 13.304,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-008: CO2 in the cut = S67 flue CO2 15.0 kg/d x VSA recovery 0.85. Sole CRYO_CO2 credit for afterburner carbon (S18 retired, Rev J)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -6408,10 +6408,10 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 8.4872,
+        "value": 852.473,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: scrub liquor: saturation water 8.44 + Br2 0.0470 + NaOH make-up 0.0003"
+        "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -6510,10 +6510,10 @@
       "phase": "G",
       "carries": "H2 for MeOH",
       "rate": {
-        "value": 0.94,
+        "value": 1.6,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous methanol synthesis."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -6527,7 +6527,7 @@
       "phase": "L",
       "carries": "crude MeOH",
       "rate": {
-        "value": 5.0,
+        "value": 8.5,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2"
@@ -6544,7 +6544,7 @@
       "phase": "L",
       "carries": "MeOH fuel",
       "rate": {
-        "value": 5.0,
+        "value": 8.53,
         "unit": "kg/d",
         "status": "study",
         "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
@@ -6595,10 +6595,10 @@
       "phase": "E",
       "carries": "MEOH DC",
       "rate": {
-        "value": 0.2925,
+        "value": 0.5,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Bottom of the 0.5-2 kW band. Fuel 8.53 kg/d."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
@@ -6697,10 +6697,10 @@
       "phase": "G",
       "carries": "CO2 product after FLUE_KO",
       "rate": {
-        "value": 11.616,
+        "value": 12.17,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. Rev K: HDR_CO2 consumer is S89 (GROW_BED), AQS-DUTY-009."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -6717,12 +6717,12 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
+        "note": "Retired Rev N. Alias of S56."
       },
       "from_sector_id": null,
       "to_sector_id": null,
       "open_boundary": false,
-      "note": "Same sink as S56. Issued so the old dock edge has a number and a legal end.; layers=mass"
+      "note": "Same sink as S56. Issued so the old dock edge has a number and a legal end.; presence=placeholder; layers=mass"
     },
     {
       "stream_id": "S87",
@@ -6767,7 +6767,7 @@
       "phase": "L",
       "carries": "HNO3",
       "rate": {
-        "value": 0.665,
+        "value": 0.65,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L"
@@ -6801,10 +6801,10 @@
       "phase": "G",
       "carries": "CO2 enrichment dose (FARM AHU supply)",
       "rate": {
-        "value": 15.637,
+        "value": 16.191,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AQS-DUTY-009 Rev B: S85 11.616 + S90 4.021"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
@@ -6827,6 +6827,805 @@
       "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock.; layers=mass"
+    },
+    {
+      "stream_id": "IA-GREY-01",
+      "from_unit_id": "GREY_TREAT",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S/L",
+      "carries": "grey sludge",
+      "rate": {
+        "value": 35.3672,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-CRU-01",
+      "from_unit_id": "CRU",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "sodium chlorate liquor",
+      "rate": {
+        "value": 27.3623,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. CRU re-scoped to chlorate. Closes on S66."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ACID-01",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "regen HCl, 20 wt%",
+      "rate": {
+        "value": 98.2722,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BASE-01",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "L",
+      "carries": "digest NaOH, 20 wt%",
+      "rate": {
+        "value": 118.43,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593 mol/d. Resin exchange keeps IA-BMED-02."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "HL-Q4-REJ",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "GEO_ORC",
+      "phase": "thermal",
+      "carries": "Q4 surplus heat",
+      "rate": {
+        "value": 11.7617,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "IA-PV-01",
+      "from_unit_id": "PV_ARRAY",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "electric",
+      "carries": "PV daily average",
+      "rate": {
+        "value": 23.235,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Closes the bus at the 0.52 fuel cell."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=energy"
+    },
+    {
+      "stream_id": "IA-ZNBR-BD",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "L",
+      "carries": "electrolyte bleed",
+      "rate": {
+        "value": 8.4872,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NUT-01",
+      "from_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "carries": "digest surplus",
+      "rate": {
+        "value": 13.93,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-UPW-FAB",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "FAB_UPW_TANK",
+      "phase": "L",
+      "carries": "fab UPW",
+      "rate": {
+        "value": 60.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-UPW-REMIN",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "REMIN",
+      "phase": "L",
+      "carries": "remineralizer",
+      "rate": {
+        "value": 10.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-UPW-REJ",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "polish reject",
+      "rate": {
+        "value": 3.22,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-Q4-LIFE",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "HABITATION",
+      "phase": "thermal",
+      "carries": "life heat",
+      "rate": {
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-AB-FLUE",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "AFTERBURNER_FLUE",
+      "phase": "G",
+      "carries": "flue",
+      "rate": {
+        "value": 5.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ZNBR-MU",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "ZNBR2",
+      "phase": "L",
+      "carries": "electrolyte water make-up",
+      "rate": {
+        "value": 8.4872,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Water make-up from the leach header, equal to the bleed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-1",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 59.87,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-2",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 59.89,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-3",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 22.48,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-4",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 4.85,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-5",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 5.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-6",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 5.47,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-7",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 71.14,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-8",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 5.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-EW-MET-9",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "carries": "plated sheet",
+      "rate": {
+        "value": 61.34,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-POL-CAKE",
+      "from_unit_id": "POLISH_BANK",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "polish cake",
+      "rate": {
+        "value": 229.45,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-AB-AIR",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "AFTERBURNER_FLUE",
+      "phase": "G",
+      "carries": "combustion air",
+      "rate": {
+        "value": 235.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-FLUE-EXH",
+      "from_unit_id": "FLUE_KO",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "G",
+      "carries": "flue exhaust",
+      "rate": {
+        "value": 228.95,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-DIG-LIQ",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "silicate liquor",
+      "rate": {
+        "value": 118.43,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-MILL-LOSS",
+      "from_unit_id": "GLASS_MILL",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "mill dust",
+      "rate": {
+        "value": 6.82,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-MFG-OUT",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "finished goods",
+      "rate": {
+        "value": 335.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BED-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "GROW_BED",
+      "phase": "L",
+      "carries": "irrigation",
+      "rate": {
+        "value": 16.7,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-MEOH-H2O",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MEOH_COND",
+      "phase": "L",
+      "carries": "synth water",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-FC-AIR",
+      "from_unit_id": "CRYO_O2",
+      "to_unit_id": "MEOH_FC",
+      "phase": "G",
+      "carries": "cell air",
+      "rate": {
+        "value": 7.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-Q3A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_A",
+      "phase": "electric",
+      "carries": "leach heater trim",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q3B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_B",
+      "phase": "electric",
+      "carries": "leach heater trim",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-LEACH-BD",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "L",
+      "carries": "level bleed",
+      "rate": {
+        "value": 106.48,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-VCD-BD",
+      "from_unit_id": "VCD_TRAIN",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "still bottoms",
+      "rate": {
+        "value": 6.71,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-CHAR",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "pyro char",
+      "rate": {
+        "value": 5.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-FC-EXH",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "G",
+      "carries": "cell exhaust",
+      "rate": {
+        "value": 3.53,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ZNBR-HEAT",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "Q4_BUS",
+      "phase": "thermal",
+      "carries": "round-trip loss",
+      "rate": {
+        "value": 1.67,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q4A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_A",
+      "phase": "electric",
+      "carries": "store trim",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q4B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_B",
+      "phase": "electric",
+      "carries": "store trim",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-FAB-LOSS",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "kerf",
+      "rate": {
+        "value": 0.51,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-WIRE-LOSS",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "carries": "draw scrap",
+      "rate": {
+        "value": 0.44,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-Q1A-LOSS",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "carries": "store loss",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q1B-LOSS",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "carries": "store loss",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q2A-LOSS",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "carries": "store loss",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q2B-LOSS",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "carries": "store loss",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
     }
   ],
   "electrical": {
@@ -6888,5 +7687,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev L (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev N (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }

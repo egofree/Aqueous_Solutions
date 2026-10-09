@@ -1,11 +1,11 @@
 # Flow graph census — DERIVED
 
-Source: AQS-FLOW-GRAPH-001 Rev L
-Generated: 2026-10-08
+Source: AQS-FLOW-GRAPH-001 Rev N
+Generated: 2026-10-09
 
 - nodes: **123** (present=122, placeholder=1)
-- edges: **165** (present=163, placeholder=2)
-- by namespace: {'IA': 68, 'TBD': 1, 'S': 94, 'SANDBOX': 2}
+- edges: **212** (present=208, placeholder=4)
+- by namespace: {'IA': 114, 'TBD': 1, 'S': 95, 'SANDBOX': 2}
 - locks: layered_views, full_depth_now, efd_three_layers, typed_graph_sole, present_plus_placeholders, site_lat_design_sandbox, true_closure_residuals_wp, reprap_bom_complete_c4, site_ghex_design_survey_locked, wp_l3_evidence_pack, wp_l4_claim_discipline, wp_ew_cascade_explode
 
 ## Gaps
