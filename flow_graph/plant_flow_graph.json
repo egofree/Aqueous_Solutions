@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AS",
+  "revision": "AT",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5593,6 +5593,204 @@
       "params": {
         "presence": "present",
         "duty": "85 m2. Anabaena. Closes the 17 g/d nitrogen gap."
+      }
+    },
+    {
+      "unit_id": "ETOH_STILL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "50 L, 78 C, glass. Ethanol from the yeast."
+      }
+    },
+    {
+      "unit_id": "BUOH_STILL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "20 L, 118 C, glass. Butanol from ABE."
+      }
+    },
+    {
+      "unit_id": "FORM_RX",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "10 L, 600 C, silver gauze. Methanol to formaldehyde."
+      }
+    },
+    {
+      "unit_id": "PEANUT",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "10 m2. 0.02 kg/m2/day. Oil seed. Fixing bed."
+      }
+    },
+    {
+      "unit_id": "SUNFLOWER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "10 m2. 0.02 kg/m2/day. Oil seed. Stalks to the ash burner."
+      }
+    },
+    {
+      "unit_id": "HAB_SLEEP",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "16 m2. Four berths."
+      }
+    },
+    {
+      "unit_id": "HAB_GALLEY",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "12 m2. Food in. Plate waste to the larvae."
+      }
+    },
+    {
+      "unit_id": "HAB_MED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "6 m2. Bandage, saline, iodide store."
+      }
+    },
+    {
+      "unit_id": "HAB_WASH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "6 m2. Grey water to treatment. No flush on the toilet."
       }
     }
   ],
@@ -19746,6 +19944,474 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ETOH-S",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "ETOH_STILL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.1,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "ethanol feed",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ETOH-R",
+      "from_unit_id": "ETOH_STILL",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.1,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "ethanol product",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BUOH-S",
+      "from_unit_id": "ABE",
+      "to_unit_id": "BUOH_STILL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.05,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "butanol feed",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BUOH-R",
+      "from_unit_id": "BUOH_STILL",
+      "to_unit_id": "BUCL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.05,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "butanol product",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FORM-S",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "FORM_RX",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.04,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "methanol slip",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FORM-R",
+      "from_unit_id": "FORM_RX",
+      "to_unit_id": "IMID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.04,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "formaldehyde",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PN-S",
+      "from_unit_id": "NFIX_BED",
+      "to_unit_id": "PEANUT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "bed spill",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PN-R",
+      "from_unit_id": "PEANUT",
+      "to_unit_id": "HABITATION",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "peanut",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SF-S",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "SUNFLOWER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "bed spill",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SF-R",
+      "from_unit_id": "SUNFLOWER",
+      "to_unit_id": "ASH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "stalks",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SLEEP",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "HAB_SLEEP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.1,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "occupancy",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SLEEP-R",
+      "from_unit_id": "HAB_SLEEP",
+      "to_unit_id": "HABITATION",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.1,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "return",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GAL",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "HAB_GALLEY",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "food",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GAL-R",
+      "from_unit_id": "HAB_GALLEY",
+      "to_unit_id": "BSFL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "plate waste",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MED",
+      "from_unit_id": "IODIDE",
+      "to_unit_id": "HAB_MED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.002,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "iodide stock",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MED-R",
+      "from_unit_id": "HAB_MED",
+      "to_unit_id": "HABITATION",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.002,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "dose",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WASH",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "HAB_WASH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 1.0,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "wash water",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WASH-R",
+      "from_unit_id": "HAB_WASH",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 1.0,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "grey",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
