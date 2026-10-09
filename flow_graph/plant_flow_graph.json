@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AI",
+  "revision": "AJ",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -10399,7 +10399,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 78.99,
+        "value": 78.9879,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW"
@@ -14533,7 +14533,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.05,
+        "value": 0.0521,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
@@ -15573,7 +15573,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.05,
+        "value": 0.07,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
@@ -15625,7 +15625,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.24,
+        "value": 0.26,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
