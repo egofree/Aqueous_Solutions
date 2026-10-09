@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AO",
+  "revision": "AP",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5387,6 +5387,72 @@
             "turkey tail spawn"
           ]
         }
+      }
+    },
+    {
+      "unit_id": "STRUVITE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Urine plus magnesium. pH 8.5. MgNH4PO4.6H2O. To the beds, not the tank."
+      }
+    },
+    {
+      "unit_id": "ASH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Stalk burn. 550 C. Potassium carbonate to the beds."
+      }
+    },
+    {
+      "unit_id": "IODIDE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Leach iodide on an anion resin. Elute as KI. Hold 2 g. Dose 0.6 mg/d."
       }
     }
   ],
@@ -18578,6 +18644,162 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-046. Seed bank. Clover plus inoculant."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-URN-STR",
+      "from_unit_id": "COMPOST_TOILET",
+      "to_unit_id": "STRUVITE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "urine slip",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-STR-BED",
+      "from_unit_id": "STRUVITE",
+      "to_unit_id": "GROW_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "struvite",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-STALK",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "ASH",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "stalks",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASH-BED",
+      "from_unit_id": "ASH",
+      "to_unit_id": "GROW_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ash",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-I-SRC",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "IODIDE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "iodide startup",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.002,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-I-DOSE",
+      "from_unit_id": "IODIDE",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "KI dose",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.002,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049. Struvite, ash, iodide."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

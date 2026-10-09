@@ -23,3 +23,10 @@ Authority: farm model a532d2e. Four people. Study. Not a PE stamp.
 | Vitamin D | Lighting | None if the spectrum is right | Lighting duty |
 
 Phosphorus and iodine are not made by the farm. Potassium is the largest mass hole. Nitrogen is closable without the Haber store.
+
+
+Recovery is AQS-DUTY-049. Phosphorus: urine slip at pH 8.5 with magnesium from the hydroxide cake makes struvite, MgNH4PO4.6H2O. Bone and manure join it. A 0.20 kg/d slip goes to the beds, not the tank. The leach phosphate store is the startup deposit.
+
+Potassium: stalks burned at 550 °C. The carbonate returns to the beds, 0.30 kg/d. Urine is the second return. Leach potassium is the deposit, not the daily dose.
+
+Iodine: iodide in the leach brine on an anion resin, eluted as KI. The store holds 2 g. The dose is 0.6 mg/d for four people. Urine returns it. No kelp.
