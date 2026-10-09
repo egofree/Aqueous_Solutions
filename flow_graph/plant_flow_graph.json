@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AF",
+  "revision": "AG",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5034,6 +5034,72 @@
       "params": {
         "presence": "present",
         "duty": "Tomato, cucumber, pepper, lettuce, spinach, kale, allium, basil. Organic media. Fish water."
+      }
+    },
+    {
+      "unit_id": "CLARIFIER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Settler ahead of the biofilter. Solids to the crayfish sump."
+      }
+    },
+    {
+      "unit_id": "BIOFILTER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Nitrification. NH4 to NO2 to NO3. 0.5-1.5 g NH4-N/m2/day. pH 6.8-7.2."
+      }
+    },
+    {
+      "unit_id": "FISH_SUMP",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Return sump. Crayfish on the settled solids. Pump back to the tank."
       }
     }
   ],
@@ -17003,6 +17069,266 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FISH-OUT",
+      "from_unit_id": "FISH",
+      "to_unit_id": "CLARIFIER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "tank water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2000,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLAR-BIO",
+      "from_unit_id": "CLARIFIER",
+      "to_unit_id": "BIOFILTER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "clarified water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1980,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLAR-SOL",
+      "from_unit_id": "CLARIFIER",
+      "to_unit_id": "FISH_SUMP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "settled solids",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 20,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BIO-VEG",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "VEG_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrate water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 800,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BIO-WEED",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "DUCKWEED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrate water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 400,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BIO-BED",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "GROW_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrate water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 780,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-VEG-SUMP",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "FISH_SUMP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "bed return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 800,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WEED-SUMP",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "FISH_SUMP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "raceway return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 400,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-SUMP",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "FISH_SUMP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "bed return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 780,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SUMP-FISH",
+      "from_unit_id": "FISH_SUMP",
+      "to_unit_id": "FISH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2000,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

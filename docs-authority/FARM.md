@@ -16,3 +16,6 @@ Mycelial compost is AQS-DUTY-030. The hot pile stays above 55 °C and kills the 
 
 
 Fruit and vegetables are AQS-DUTY-031. Day-neutral strawberry is in gutters, not in the grain bed. Fig is in tubs. Blueberry is in acid pots at pH 4.5–5.5, off the main beds. Tomato, cucumber, pepper, lettuce, spinach, kale, allium, and basil take fish water on organic media. Apple, peach, and citrus are not drawn. They need a chill or a larger crown than this envelope has.
+
+
+Aquaponics is AQS-DUTY-032. Tilapia tank, 2 m3, 26 °C. Water leaves at 2000 kg/d to a settler, then a nitrifying biofilter, then the vegetable bed, the duckweed raceway, and the grain bed, and returns through the sump. Crayfish take the settled solids. Ammonia is oxidized to nitrite and then nitrate at 0.5–1.5 g NH4-N/m2/day. The loop is held at pH 6.8–7.2. The leach bleed, 129.63 kg/d of salts, stays on the compost side. It does not enter the fish tank.
