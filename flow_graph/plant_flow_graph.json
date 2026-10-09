@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "V",
+  "revision": "W",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -6407,7 +6407,7 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4222.22,
+        "value": 4226.04,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89"
@@ -6439,7 +6439,7 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4160.42,
+        "value": 4164.24,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89"
@@ -6471,7 +6471,7 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4137.94,
+        "value": 4141.76,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89"
@@ -6503,7 +6503,7 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4284.0,
+        "value": 4287.82,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: DUTY-008 concentrate 0.17 m3/h x 1050.0 kg/m3 x 24 h"
@@ -6662,7 +6662,7 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 3983.16,
+        "value": 3971.08,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89"
@@ -7544,7 +7544,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 331.78,
+        "value": 338.68,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
@@ -7778,7 +7778,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "dust",
       "header": "existing",
       "forbidden": "farm",
@@ -7787,7 +7787,7 @@
         "value": 0.75,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: baghouse catch 0.5% of shredded feed"
+        "note": "AQS-DUTY-021. Duplicate outs removed. Column product equals the return."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "WET",
@@ -8720,7 +8720,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 250.56,
+        "value": 61.16,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S45 3.6 + air at lambda 2.0 (34.3 kg/kg stoich)"
@@ -9375,7 +9375,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 241.7,
+        "value": 105.8,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-008: afterburner flue 10.07 kg/h; carries the 15.0 kg/d CO2 basis (AQS-AUD-001 mid of 12-22.5 kg/d) moved here from S18 in Rev J."
@@ -9448,7 +9448,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 173.67,
+        "value": 79.04,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW"
@@ -9966,7 +9966,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 95.0,
+        "value": 42.74,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -9995,7 +9995,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 653.47,
+        "value": 232.54,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -10189,7 +10189,7 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 46.381,
+        "value": 16.38,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
@@ -10279,7 +10279,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 235.7672,
+        "value": 242.6672,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
@@ -10877,7 +10877,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 229.45,
+        "value": 217.37,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -10903,7 +10903,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 235.9,
+        "value": 100.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11007,7 +11007,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 607.3607,
+        "value": 595.2807,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11631,7 +11631,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 173.67,
+        "value": 79.04,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet. Source of S68."
@@ -11710,7 +11710,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 38.0,
+        "value": 8.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11918,7 +11918,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 18.18,
+        "value": 3.18,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11944,7 +11944,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 18.18,
+        "value": 3.18,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11970,7 +11970,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 28.35,
+        "value": -1.65,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -12256,7 +12256,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.52,
+        "value": 7.77,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
@@ -12724,7 +12724,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 239.4,
+        "value": 50.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016."
@@ -12750,7 +12750,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 200.0,
+        "value": 206.9,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016."
@@ -12854,7 +12854,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 505.88,
+        "value": 523.8,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016"
@@ -12880,7 +12880,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 653.47,
+        "value": 232.54,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -12906,7 +12906,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 95.0,
+        "value": 42.74,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -13270,7 +13270,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 607.36,
+        "value": 595.28,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13322,7 +13322,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 42.74,
+        "value": 0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13394,7 +13394,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "dried hydrogen",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
@@ -13403,7 +13403,7 @@
         "value": 6.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "AQS-DUTY-021. Duplicate outs removed. Column product equals the return."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

@@ -1,12 +1,10 @@
-# Balance check
+# Balance fixes
 
-Document number: AQS-DUTY-020
+Document number: AQS-DUTY-021
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev V. Not a PE stamp.
+Authority: graph Rev W. Not a PE stamp.
 
-Fermenter residue, 0.35 kg/d, goes to the digester. The mill and the atomizer are fed from the melt. The draw fume feeds the metal scrubber. The condensable pot is fed by the air handler. Dock air and dock feedstock are not continuous. Feed is returned scrap. Dock freight is retired.
+Removed the second hydrogen outlet from the dryer. The baghouse returns only what it catches. The carbon dioxide dose is cut to the header inlet. EW-9 liquor is cut by the sheet sent to the melt. EW-1 and EW-2 liquor is restored where the hood hydrogen was taken off the mass layer. The roof tank passes the methanol condensate to habitation.
 
-Boundary export is zero. No sink remains. One source remains: the condensable pot still shows 0.05 kg/d with no inlet in the balance, despite the air-handler edge.
-
-Nodes still off by more than 0.5 kg/d: leach long 451.7, cold box short 443.2, shop long 30, CO2 header short 30, EW-9 short 12.1, roof tank long 6.9, hydrogen dryer short 6.4, EW-1 and EW-2 long 1.9 each, baghouse short 1.5. The leach surplus and the cold-box short are the same mass, the retired air intake.
+The column product is set to the scrubbed nitrogen that returns, 232.5 kg/d. The combustion, genset, and handler draws are larger than that. Cutting them opened the flue knockout and the NOx scrubber. Those gaps are the retired intake air, not a new leak.
