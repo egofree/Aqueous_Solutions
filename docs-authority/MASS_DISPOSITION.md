@@ -1,12 +1,12 @@
-# Closed reclaim
+# Balance check
 
-Document number: AQS-DUTY-019
+Document number: AQS-DUTY-020
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev U. Not a PE stamp.
+Authority: graph Rev V. Not a PE stamp.
 
-The boundary export is zero.
+Fermenter residue, 0.35 kg/d, goes to the digester. The mill and the atomizer are fed from the melt. The draw fume feeds the metal scrubber. The condensable pot is fed by the air handler. Dock air and dock feedstock are not continuous. Feed is returned scrap. Dock freight is retired.
 
-Finished goods go to habitation and return to the hopper as worn goods, 607 kg/d. Freight returns to the hopper. Food surplus goes to the animal pen. Nitrogen and oxygen headers return to the cold box. The carbon-dioxide surplus returns to the column. Methanol condensate returns to the roof tank. Dried hydrogen feeds the hydrogen header. Cathode sheet feeds the melt. Phosphate feeds the phosphoric-acid store.
+Boundary export is zero. No sink remains. One source remains: the condensable pot still shows 0.05 kg/d with no inlet in the balance, despite the air-handler edge.
 
-Still appearing with no inlet: the dock, 541 kg/d, which is the startup charge and the feedstock. The cold mill, 3.95 kg/d, the atomizer, 3.20 kg/d, and the metal scrubber, 2.45 kg/d, are not fed by the melt. The condensable pot, 0.05 kg/d, has no source. The fermenter, 0.36 kg/d, has no outlet.
+Nodes still off by more than 0.5 kg/d: leach long 451.7, cold box short 443.2, shop long 30, CO2 header short 30, EW-9 short 12.1, roof tank long 6.9, hydrogen dryer short 6.4, EW-1 and EW-2 long 1.9 each, baghouse short 1.5. The leach surplus and the cold-box short are the same mass, the retired air intake.

@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "U",
+  "revision": "V",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4532,7 +4532,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "returned freight",
       "header": null,
       "forbidden": null,
@@ -4541,7 +4541,7 @@
         "value": 28.7542,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MFG_SHOP finished goods (Fe plate, wire, sheet, powder) to export"
+        "note": "AQS-DUTY-020. Freight is not a source."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
@@ -7208,7 +7208,7 @@
     },
     {
       "stream_id": "S02",
-      "from_unit_id": "CRYO_O2",
+      "from_unit_id": "HDR_O2",
       "to_unit_id": "HABITATION",
       "phase": "G",
       "layers": [
@@ -7243,7 +7243,7 @@
     },
     {
       "stream_id": "S03",
-      "from_unit_id": "CRYO_N2",
+      "from_unit_id": "HDR_N2",
       "to_unit_id": "WAFER_FAB",
       "phase": "G",
       "presence": "present",
@@ -8789,7 +8789,7 @@
     },
     {
       "stream_id": "S50",
-      "from_unit_id": "CRYO_O2",
+      "from_unit_id": "HDR_O2",
       "to_unit_id": "FUEL_CELL",
       "phase": "G",
       "layers": [
@@ -9030,7 +9030,7 @@
       "forbidden": "polymer, FR-4, pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.3789,
+        "value": 6.8389,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3%"
@@ -9995,7 +9995,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 541.8,
+        "value": 653.47,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -10891,7 +10891,7 @@
     },
     {
       "stream_id": "IA-AB-AIR",
-      "from_unit_id": "CRYO_N2",
+      "from_unit_id": "HDR_N2",
       "to_unit_id": "AFTERBURNER_FLUE",
       "phase": "G",
       "layers": [
@@ -11073,7 +11073,7 @@
     },
     {
       "stream_id": "IA-FC-AIR",
-      "from_unit_id": "CRYO_O2",
+      "from_unit_id": "HDR_O2",
       "to_unit_id": "MEOH_FC",
       "phase": "G",
       "layers": [
@@ -11619,7 +11619,7 @@
     },
     {
       "stream_id": "IA-AHU-AIR",
-      "from_unit_id": "CRYO_N2",
+      "from_unit_id": "HDR_N2",
       "to_unit_id": "CRYO_AHU",
       "phase": "G",
       "layers": [
@@ -12088,7 +12088,7 @@
     },
     {
       "stream_id": "IA-FEED-01",
-      "from_unit_id": "NORTH_DOCK",
+      "from_unit_id": "HOPPER",
       "to_unit_id": "LEACH_CSTR_1",
       "phase": "L",
       "layers": [
@@ -12103,7 +12103,7 @@
         "value": 102.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014."
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. Feed is returned scrap, not a dock intake."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12504,7 +12504,7 @@
     },
     {
       "stream_id": "IA-NH3-SRC",
-      "from_unit_id": "CRYO_N2",
+      "from_unit_id": "HDR_N2",
       "to_unit_id": "WS_AMMONIA",
       "phase": "S/L",
       "layers": [
@@ -12530,7 +12530,7 @@
     },
     {
       "stream_id": "IA-H2O2-SRC",
-      "from_unit_id": "CRYO_O2",
+      "from_unit_id": "HDR_O2",
       "to_unit_id": "WS_PEROX",
       "phase": "S/L",
       "layers": [
@@ -12562,7 +12562,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "intake air",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
@@ -12571,7 +12571,7 @@
         "value": 409.57,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. Startup charge. Not a continuous intake."
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. Startup inventory."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12712,7 +12712,7 @@
     },
     {
       "stream_id": "IA-GEN-AIR",
-      "from_unit_id": "CRYO_N2",
+      "from_unit_id": "HDR_N2",
       "to_unit_id": "BACKUP_GEN",
       "phase": "L",
       "layers": [
@@ -12854,7 +12854,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 29.95,
+        "value": 505.88,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016"
@@ -12880,7 +12880,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 541.8,
+        "value": 653.47,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -13296,7 +13296,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 541.8,
+        "value": 0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13322,7 +13322,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 95.0,
+        "value": 42.74,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13426,7 +13426,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.38,
+        "value": 13.99,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13456,6 +13456,136 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FERM-RES",
+      "from_unit_id": "MEOH_FERM",
+      "to_unit_id": "DIGESTER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fermenter residue",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.35,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MELT-MILL",
+      "from_unit_id": "MET_MELT",
+      "to_unit_id": "COLD_MILL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "melt to the mill",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.95,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MELT-ATOM",
+      "from_unit_id": "MET_MELT",
+      "to_unit_id": "GAS_ATOMIZER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "melt to the atomizer",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DRAW-FUME",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "draw fume",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.46,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AHU-POT",
+      "from_unit_id": "CRYO_AHU",
+      "to_unit_id": "CRYO_AHU_COND_CONDENSABLE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "condensable slip",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
