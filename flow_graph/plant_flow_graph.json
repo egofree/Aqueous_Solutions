@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AA",
+  "revision": "AB",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4639,6 +4639,226 @@
         "presence": "present",
         "duty": "n-butanol plus BMED HCl to 1-chlorobutane."
       }
+    },
+    {
+      "unit_id": "BSFL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Hermetia illucens. Food waste in. Larvae to fish and chickens. Frass to compost."
+      }
+    },
+    {
+      "unit_id": "DUCKWEED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Lemna minor on the fish-water raceway. Feed for fish, chickens, goats. Human reserve."
+      }
+    },
+    {
+      "unit_id": "WORMS",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Eisenia fetida. Manure and frass. Castings to the beds."
+      }
+    },
+    {
+      "unit_id": "BEES",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Apis mellifera. Two hives. Pollination. Honey and wax."
+      }
+    },
+    {
+      "unit_id": "CHICKENS",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Six hens. Eggs. Manure to worms. Fed larvae and duckweed."
+      }
+    },
+    {
+      "unit_id": "GOATS",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Two dwarf goats. Milk. Browse the woody trim. Manure to worms."
+      }
+    },
+    {
+      "unit_id": "FISH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Oreochromis niloticus. Aquaponic loop. Fed larvae and duckweed."
+      }
+    },
+    {
+      "unit_id": "CRAYFISH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Procambarus clarkii in the sump. Detritus. Harvest to habitation."
+      }
+    },
+    {
+      "unit_id": "AZOLLA",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Azolla on the rice bed. Fixes nitrogen. Fish feed."
+      }
+    },
+    {
+      "unit_id": "MUSHROOM",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Pleurotus on spent lignocellulose. Harvest to habitation. Spent block to compost."
+      }
     }
   ],
   "edges": [
@@ -7923,13 +8143,13 @@
     {
       "stream_id": "S14X",
       "from_unit_id": "GROW_BED",
-      "to_unit_id": "ANIMAL_PEN",
+      "to_unit_id": "BSFL",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "food surplus export",
+      "carries": "food waste to larvae",
       "header": null,
       "forbidden": null,
       "claim_status": null,
@@ -12022,12 +12242,12 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "manure",
+      "carries": "pen residual",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.4,
+        "value": 0.2,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -15333,6 +15553,630 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-026"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BSFL-FISH",
+      "from_unit_id": "BSFL",
+      "to_unit_id": "FISH",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "larvae",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BSFL-HEN",
+      "from_unit_id": "BSFL",
+      "to_unit_id": "CHICKENS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "larvae",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BSFL-FRASS",
+      "from_unit_id": "BSFL",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "frass",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WEED-FISH",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "FISH",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "duckweed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WEED-HEN",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "CHICKENS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "duckweed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WEED-GOAT",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "GOATS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "duckweed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.15,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WEED-HAB",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "duckweed reserve",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-WEED",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "DUCKWEED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nutrient water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AZOLLA",
+      "from_unit_id": "AZOLLA",
+      "to_unit_id": "FISH",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "azolla",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-RICE-AZ",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "AZOLLA",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "rice-bed spill",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HEN-EGG",
+      "from_unit_id": "CHICKENS",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "eggs",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HEN-MAN",
+      "from_unit_id": "CHICKENS",
+      "to_unit_id": "WORMS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "manure",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GOAT-MILK",
+      "from_unit_id": "GOATS",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "milk",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GOAT-MAN",
+      "from_unit_id": "GOATS",
+      "to_unit_id": "WORMS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "manure",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GOAT-TRIM",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "GOATS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "browse",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.55,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FISH-HAB",
+      "from_unit_id": "FISH",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fish",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FISH-DET",
+      "from_unit_id": "FISH",
+      "to_unit_id": "CRAYFISH",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "detritus",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CRAY-HAB",
+      "from_unit_id": "CRAYFISH",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "crayfish",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.08,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CAST",
+      "from_unit_id": "WORMS",
+      "to_unit_id": "GROW_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "castings",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WORM-MAN",
+      "from_unit_id": "WORMS",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "worm manure",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HONEY",
+      "from_unit_id": "BEES",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "honey",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MUSH",
+      "from_unit_id": "MUSHROOM",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oyster mushroom",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MUSH-SPENT",
+      "from_unit_id": "MUSHROOM",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent block",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-LIG-MUSH",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "MUSHROOM",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent fiber",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
