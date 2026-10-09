@@ -6928,7 +6928,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "namespace=IA; layers=energy"
+      "note": "namespace=IA; layers=elec"
     },
     {
       "stream_id": "IA-ZNBR-BD",

@@ -10108,7 +10108,7 @@
       "to_unit_id": "SOL_ARK_60K",
       "phase": "electric",
       "layers": [
-        "energy"
+        "elec"
       ],
       "presence": "present",
       "carries": "PV daily average",
