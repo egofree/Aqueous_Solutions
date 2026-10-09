@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AG",
+  "revision": "AH",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5100,6 +5100,204 @@
       "params": {
         "presence": "present",
         "duty": "Return sump. Crayfish on the settled solids. Pump back to the tank."
+      }
+    },
+    {
+      "unit_id": "CROP_TOMATO",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Tomato. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_CUCUMBER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Cucumber. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_PEPPER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Pepper. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_LETTUCE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Lettuce. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_SPINACH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Spinach. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_KALE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Kale. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_ALLIUM",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Onion, garlic, leek. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_BASIL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Basil. Fish water. Organic media."
+      }
+    },
+    {
+      "unit_id": "CROP_ROSEMARY",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Rosemary. Dry gutter. Not the flooded bed."
       }
     }
   ],
@@ -17039,7 +17237,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.55,
+        "value": 0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
@@ -17329,6 +17527,474 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_TOMATO",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_TOMATO",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "tomato",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.12,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_TOMATO-HAB",
+      "from_unit_id": "CROP_TOMATO",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.12,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_CUCUMBER",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_CUCUMBER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cucumber",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.08,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_CUCUMBER-HAB",
+      "from_unit_id": "CROP_CUCUMBER",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.08,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_PEPPER",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_PEPPER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "pepper",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_PEPPER-HAB",
+      "from_unit_id": "CROP_PEPPER",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_LETTUCE",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_LETTUCE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "lettuce",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.08,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_LETTUCE-HAB",
+      "from_unit_id": "CROP_LETTUCE",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.08,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_SPINACH",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_SPINACH",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spinach",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_SPINACH-HAB",
+      "from_unit_id": "CROP_SPINACH",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_KALE",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_KALE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "kale",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_KALE-HAB",
+      "from_unit_id": "CROP_KALE",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_ALLIUM",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_ALLIUM",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "onion, garlic, leek",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_ALLIUM-HAB",
+      "from_unit_id": "CROP_ALLIUM",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_BASIL",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_BASIL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "basil",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.03,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_BASIL-HAB",
+      "from_unit_id": "CROP_BASIL",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.03,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_ROSEMARY",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "CROP_ROSEMARY",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "rosemary",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CROP_ROSEMARY-HAB",
+      "from_unit_id": "CROP_ROSEMARY",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

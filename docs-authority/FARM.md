@@ -19,3 +19,6 @@ Fruit and vegetables are AQS-DUTY-031. Day-neutral strawberry is in gutters, not
 
 
 Aquaponics is AQS-DUTY-032. Tilapia tank, 2 m3, 26 °C. Water leaves at 2000 kg/d to a settler, then a nitrifying biofilter, then the vegetable bed, the duckweed raceway, and the grain bed, and returns through the sump. Crayfish take the settled solids. Ammonia is oxidized to nitrite and then nitrate at 0.5–1.5 g NH4-N/m2/day. The loop is held at pH 6.8–7.2. The leach bleed, 129.63 kg/d of salts, stays on the compost side. It does not enter the fish tank.
+
+
+Named crops are AQS-DUTY-033. Tomato 0.12, cucumber 0.08, pepper 0.06, lettuce 0.08, spinach 0.05, kale 0.05, allium 0.06, and basil 0.03 kg/d take fish water on organic media. Rosemary, 0.02 kg/d, is on a dry gutter. It does not sit in the flooded bed. The lumped vegetable harvest is zero so it is not counted twice.
