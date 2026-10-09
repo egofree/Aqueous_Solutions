@@ -29,3 +29,6 @@ Nutrient balance is AQS-DUTY-034. Wet rates from Rev AH. Dry matter: larvae 30 %
 Fish feed is 10.7 g/d N, 1.8 g/d P, 2.6 g/d K. Larvae carry 9.0 g of the nitrogen. The fish retain about 30 %, 3.2 g/d N. Excretion is 7.5 g/d N, which the biofilter oxidizes to nitrate.
 
 Crop and duckweed uptake is 3.9 g/d N, 0.7 g/d P, 3.3 g/d K. The loop is long 3.6 g/d N and 1.1 g/d P, and short 0.7 g/d K. Potassium is the nutrient to add. It comes from the urine tank, not from the leach bleed. Urine at 1.30 kg/d and 0.7 % N is 9 g/d N, and it stays on the nutrient tank. It is not poured into the fish tank.
+
+
+Loops closed, AQS-DUTY-035, graph Rev AI. No mass node is off by more than 0.05 kg/d. Urine goes to the biofilter as the potassium makeup. Cooled compost to the mycelial stage is 2.70 kg/d, matched to the bin. Plate waste returns to the larvae. The residual pairs are loop returns between the long node and the short node.

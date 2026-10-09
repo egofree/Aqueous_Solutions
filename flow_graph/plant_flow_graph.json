@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AH",
+  "revision": "AI",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -8434,7 +8434,7 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 77.9597,
+        "value": 79.0997,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38"
@@ -10946,7 +10946,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 243.96,
+        "value": 243.28,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -12687,7 +12687,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.2,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -12791,7 +12791,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.89,
+        "value": 0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -14559,7 +14559,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 196.02,
+        "value": 195.02,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -16067,7 +16067,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.1,
+        "value": 2.23,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
@@ -16706,13 +16706,13 @@
     {
       "stream_id": "IA-TOIL-URN",
       "from_unit_id": "COMPOST_TOILET",
-      "to_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "BIOFILTER",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "urine",
+      "carries": "urine to the biofilter",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -17055,7 +17055,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 20.0,
+        "value": 2.7,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
@@ -17081,7 +17081,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 20.18,
+        "value": 3.02,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
@@ -17107,7 +17107,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 19.68,
+        "value": 2.52,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
@@ -17995,6 +17995,396 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HAB-WASTE",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "BSFL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plate waste",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.13,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035. Farm loops closed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-0",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-1",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-2",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "GROW_BED",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.7305,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-3",
+      "from_unit_id": "WORMS",
+      "to_unit_id": "HDR_N2",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-4",
+      "from_unit_id": "FISH",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-5",
+      "from_unit_id": "HOPPER",
+      "to_unit_id": "LIGNO_PRE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4491,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-6",
+      "from_unit_id": "ACEX",
+      "to_unit_id": "ANIMAL_PEN",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-7",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3554,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-8",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "DIGESTER",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.29,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-9",
+      "from_unit_id": "BSFL",
+      "to_unit_id": "HDR_N2",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1798,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-10",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "MEOH_FC",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.14,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-11",
+      "from_unit_id": "CRAYFISH",
+      "to_unit_id": "IMID",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "loop return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-12",
+      "from_unit_id": "BSFL",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "frass liquor",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.07,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOSE-13",
+      "from_unit_id": "QUAT",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "quaternization brine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-035"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
