@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AR",
+  "revision": "AS",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -19538,6 +19538,214 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NFT-IN",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "NFT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 200,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "film supply",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NFT-OUT",
+      "from_unit_id": "NFT",
+      "to_unit_id": "BIOFILTER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 200,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "film return",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MIST-IN",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "MISTER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 50,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "mister supply",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MIST-OUT",
+      "from_unit_id": "MISTER",
+      "to_unit_id": "VEG_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 50,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "mister return",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DR-IN",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "DUAL_ROOT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 20,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "correction supply",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DR-OUT",
+      "from_unit_id": "DUAL_ROOT",
+      "to_unit_id": "GROW_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 20,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "correction return, not to the tank",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AZ-IN",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "AZOLLA_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.15,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "rice-bed spill",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AZ-OUT",
+      "from_unit_id": "AZOLLA_BED",
+      "to_unit_id": "GROW_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.15,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "azolla residue",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

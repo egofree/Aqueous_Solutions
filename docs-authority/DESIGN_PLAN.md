@@ -22,3 +22,5 @@ Phase 7. Plate is 470 m² plus 85 m² azolla, 555 m², 16 bays. The issued 432 m
 Phase 7 is AQS-PLAN-001 Rev B. Plate is 4 by 4 bays, 24 by 24 m, 576 m2. The 432 m2 plate is retired. Placement report is graph Rev AR. Azolla, film, mister, dual root, struvite, ash, iodide, and the seed bank are placed. Solids are not rebuilt in this pass.
 
 Phase 8 is AQS-PLAN-001 Rev C. Envelopes for the phase 7 units and the solvent stills are in cad/phase8_envelopes.py, millimetres. FreeCAD is not in this environment. The meshes were not compiled. The operator box compiles them.
+
+Phase 9 is AQS-PLAN-001 Rev C. Film, mister, dual root, and azolla are piped. Each line returns what it takes. Nozzles are in docs-authority/PHASE9_INTERFACES.md. Peanut and sunflower are 10 m2 each at 0.02 kg/m2/day.
