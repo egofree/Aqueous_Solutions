@@ -10,3 +10,6 @@ Toilet and fixers are AQS-DUTY-028. Stock and crops are AQS-DUTY-027.
 Mycology is two rooms. The straw room is Pleurotus on wheat straw, pasteurized at 60–70 °C for 1 h. Harvest 0.12 kg/d. Spent straw to compost. The block room is sterilized hardwood and bran, 121 °C. Shiitake and lion's mane are the food, 0.08 kg/d. Reishi and turkey tail are the slow conks, 0.03 kg/d. Cordyceps militaris is not drawn. It eats rice the habitation needs.
 
 The beds take Rhizophagus irregularis, raised on compost and vermiculite. It is an arbuscular inoculum for bean, corn, wheat, and potato. It is not a fruiting crop. Brassica will not take it. Potato inoculation at the seedling stage raised colonization about 8 points and held yield at a 25 % lower phosphorus rate in the 2025 trial. Bean yield rose when the same class of inoculum was paired with fertilizer.
+
+
+Mycelial compost is AQS-DUTY-030. The hot pile stays above 55 °C and kills the spawn, so the inoculum goes on after the pile falls below 40 °C. Spent Pleurotus straw, 0.18 kg/d, and the spent blocks inoculate 20 kg/d of cooled compost. The myceliated mass goes to the worms, and the castings go to the beds. The arbuscular inoculum is still added at the bed, not in the pile.

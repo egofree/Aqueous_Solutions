@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AD",
+  "revision": "AE",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4968,6 +4968,28 @@
       "params": {
         "presence": "present",
         "duty": "Rhizophagus irregularis on compost and vermiculite. Bed inoculum. Not a food crop."
+      }
+    },
+    {
+      "unit_id": "COMPOST_MYC",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Post-thermophilic. Below 40 C. Spent Pleurotus spawn on the lignocellulose. Then worms."
       }
     }
   ],
@@ -16532,13 +16554,13 @@
     {
       "stream_id": "IA-STRAW-SPENT",
       "from_unit_id": "MUSH_STRAW",
-      "to_unit_id": "COMPOST",
+      "to_unit_id": "COMPOST_MYC",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "spent straw",
+      "carries": "spent oyster spawn",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -16636,7 +16658,7 @@
     {
       "stream_id": "IA-BLOCK-SPENT",
       "from_unit_id": "MUSH_BLOCK",
-      "to_unit_id": "COMPOST",
+      "to_unit_id": "COMPOST_MYC",
       "phase": "S",
       "layers": [
         "mass"
@@ -16703,6 +16725,84 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COMP-MYC",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "COMPOST_MYC",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cooled compost",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 20.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MYC-WORM",
+      "from_unit_id": "COMPOST_MYC",
+      "to_unit_id": "WORMS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "myceliated compost",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 20.18,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MYC-BED",
+      "from_unit_id": "WORMS",
+      "to_unit_id": "GROW_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "finished castings",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 19.68,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
