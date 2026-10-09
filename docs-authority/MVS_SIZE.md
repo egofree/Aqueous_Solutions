@@ -1,12 +1,10 @@
 # Sector size and MVS
 
 Document number: AQS-DUTY-038
-Revision: B
+Revision: C
 Date: 2026-10-09
 Authority: graph Rev AL. Study. Not a PE stamp.
 
-The process sectors are not the question. Leach, polish, cold box, power, fish, stock, and habitation are one bay each. The fab is two. That is 9 bays, 324 m², and it is enough.
+The calorie crop is potato and sweet potato, not rice. A controlled-environment upper bound for potato is 327 t/ha/year, 0.09 kg/m²/day fresh. The staple share is 6 kg/d fresh. That is 70 m². Indoor wheat on one layer measured 14 t/ha per harvest and five harvests, 0.019 kg/m²/day. Two stacked layers hold the 1.4 kg/d dry grain on 40 m² of floor. Rice at field yield is not the duty.
 
-The farm is the swing. The booked wet harvest is 4.1 kg/d. Four people at 2000 kcal need about 1.4 kg/d of dry staple for 60 % of the calories. At a field rice yield of 0.002 kg/m²/day that is 700 m². The earlier 240 m² used 0.01 kg/m²/day on the booked wet mass. That yield is not demonstrated for indoor grain.
-
-Until an indoor grain yield is measured, the grain hall is 700 m², 20 bays. Vegetable and fruit are 40 m². The minimum plate is 29 bays, about 1050 m², plus the roof array. The issued 432 m² plate is too small for the calories and larger than the process needs.
+Vegetable and fruit stay at 40 m². Duckweed at the measured vertical-farm rate, 0.035 kg/m²/day fresh, needs 26 m² for the 0.9 kg/d raceway. Crop floor is 140 m², 4 bays. Process sectors stay 9 bays. The minimum plate is 13 bays, 470 m², plus the roof array. The issued 432 m² plate is one bay short.
