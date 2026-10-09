@@ -22,3 +22,10 @@ Aquaponics is AQS-DUTY-032. Tilapia tank, 2 m3, 26 °C. Water leaves at 2000 kg/
 
 
 Named crops are AQS-DUTY-033. Tomato 0.12, cucumber 0.08, pepper 0.06, lettuce 0.08, spinach 0.05, kale 0.05, allium 0.06, and basil 0.03 kg/d take fish water on organic media. Rosemary, 0.02 kg/d, is on a dry gutter. It does not sit in the flooded bed. The lumped vegetable harvest is zero so it is not counted twice.
+
+
+Nutrient balance is AQS-DUTY-034. Wet rates from Rev AH. Dry matter: larvae 30 %, duckweed and azolla 7 %. Nitrogen is protein/6.25.
+
+Fish feed is 10.7 g/d N, 1.8 g/d P, 2.6 g/d K. Larvae carry 9.0 g of the nitrogen. The fish retain about 30 %, 3.2 g/d N. Excretion is 7.5 g/d N, which the biofilter oxidizes to nitrate.
+
+Crop and duckweed uptake is 3.9 g/d N, 0.7 g/d P, 3.3 g/d K. The loop is long 3.6 g/d N and 1.1 g/d P, and short 0.7 g/d K. Potassium is the nutrient to add. It comes from the urine tank, not from the leach bleed. Urine at 1.30 kg/d and 0.7 % N is 9 g/d N, and it stays on the nutrient tank. It is not poured into the fish tank.
