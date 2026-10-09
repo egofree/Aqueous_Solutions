@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AJ",
+  "revision": "AK",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4791,7 +4791,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Oreochromis niloticus. Aquaponic loop. Fed larvae and duckweed."
+        "duty": "2 m3 tilapia, 26 C. Turnover 1 per hour, 48 m3/d."
       }
     },
     {
@@ -5055,7 +5055,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Settler ahead of the biofilter. Solids to the crayfish sump."
+        "duty": "20 min residence on 48 m3/d. Solids 1.0 kg/d to the sump."
       }
     },
     {
@@ -5077,7 +5077,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nitrification. NH4 to NO2 to NO3. 0.5-1.5 g NH4-N/m2/day. pH 6.8-7.2."
+        "duty": "8 m2 media. 7.5 g NH4-N/d. 1.0 g/m2/day. pH 6.8-7.2."
       }
     },
     {
@@ -17289,7 +17289,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2000,
+        "value": 48000,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17315,7 +17315,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1980,
+        "value": 47999,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17341,7 +17341,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 20,
+        "value": 1.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17367,7 +17367,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 800,
+        "value": 19393,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17393,7 +17393,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 400,
+        "value": 9697,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17419,7 +17419,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 780,
+        "value": 18909,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17445,7 +17445,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 800,
+        "value": 19393,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17471,7 +17471,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 400,
+        "value": 9697,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17497,7 +17497,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 780,
+        "value": 18909,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
@@ -17523,7 +17523,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2000,
+        "value": 48000,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
