@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "P",
+  "revision": "Q",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4163,7 +4163,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
+        "duty": "25 C, 2.0 V, 30 min, 25 wt% solids. Solvent is the IL/GVL pair. IL is not copied."
       }
     },
     {
@@ -4186,6 +4187,29 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
+    },
+    {
+      "unit_id": "HTC",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
+        "duty": "Low-temperature hydrothermal carbonization ahead of compost."
       }
     }
   ],
@@ -10033,7 +10057,7 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 16.191,
+        "value": 16.381,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
@@ -11621,7 +11645,7 @@
     {
       "stream_id": "IA-COMP-01",
       "from_unit_id": "GROW_BED",
-      "to_unit_id": "COMPOST",
+      "to_unit_id": "HTC",
       "phase": "S/L",
       "layers": [
         "mass"
@@ -11635,7 +11659,7 @@
         "value": 3.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -11684,7 +11708,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.9,
+        "value": 2.54,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11762,7 +11786,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.0,
+        "value": 3.18,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11788,7 +11812,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.0,
+        "value": 3.18,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11814,7 +11838,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": -0.01,
+        "value": -1.65,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11866,7 +11890,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 11.01,
+        "value": 10.82,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11918,7 +11942,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 11.91,
+        "value": 13.36,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014."
@@ -11974,6 +11998,84 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HTC-01",
+      "from_unit_id": "HTC",
+      "to_unit_id": "COMPOST",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "hydrochar slurry",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COMP-CO2",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "HDR_CO2",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "compost CO2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.19,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SUGAR",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "DIGESTER",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "reducing sugars",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.64,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
