@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AT",
+  "revision": "AU",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5791,6 +5791,138 @@
       "params": {
         "presence": "present",
         "duty": "6 m2. Grey water to treatment. No flush on the toilet."
+      }
+    },
+    {
+      "unit_id": "LITHO",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Contact aligner. 365 nm LED. Novolac from cresol and formaldehyde. No stepper optic bought."
+      }
+    },
+    {
+      "unit_id": "BLOW",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Extruder and mold. Pyrolysis polyethylene. Shop-cut aluminum mold."
+      }
+    },
+    {
+      "unit_id": "ELCOAT",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Nickel and graphite on titanium. No iridium. No platinum."
+      }
+    },
+    {
+      "unit_id": "PV_CELL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Wafer from the silicon furnace. Phosphate dopant. Electrowon aluminum grid."
+      }
+    },
+    {
+      "unit_id": "EXPANDER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Reciprocating expander. Shop-cut 316L. Joule-Thomson backup."
+      }
+    },
+    {
+      "unit_id": "SIC_FURNACE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Acheson. Silica plus char. 2000 C. Graphite resistance. Silicon carbide grain."
       }
     }
   ],
@@ -20412,6 +20544,318 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-LITHO-IN",
+      "from_unit_id": "FORM_RX",
+      "to_unit_id": "LITHO",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.02,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "formaldehyde to resist",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-LITHO-OUT",
+      "from_unit_id": "LITHO",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.02,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "exposed wafer",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLOW-IN",
+      "from_unit_id": "OIL_DRYER",
+      "to_unit_id": "BLOW",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.1,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "pyrolysis wax",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLOW-OUT",
+      "from_unit_id": "BLOW",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.1,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "blown parts",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COAT-IN",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "ELCOAT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.05,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "nickel sheet",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COAT-OUT",
+      "from_unit_id": "ELCOAT",
+      "to_unit_id": "EW_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.05,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "coated anode",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PV-IN",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "PV_CELL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.04,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "silicon wafer",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PV-OUT",
+      "from_unit_id": "PV_CELL",
+      "to_unit_id": "PV_ARRAY",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.04,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "cell",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EXP-IN",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "EXPANDER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "cold gas",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EXP-OUT",
+      "from_unit_id": "EXPANDER",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.2,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "expanded gas",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SIC-IN",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "SIC_FURNACE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.08,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "silica",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SIC-OUT",
+      "from_unit_id": "SIC_FURNACE",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": 0.08,
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": "silicon carbide",
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

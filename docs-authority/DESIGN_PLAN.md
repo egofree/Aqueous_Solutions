@@ -26,3 +26,5 @@ Phase 8 is AQS-PLAN-001 Rev C. Envelopes for the phase 7 units and the solvent s
 Phase 9 is AQS-PLAN-001 Rev C. Film, mister, dual root, and azolla are piped. Each line returns what it takes. Nozzles are in docs-authority/PHASE9_INTERFACES.md. Peanut and sunflower are 10 m2 each at 0.02 kg/m2/day.
 
 Phase 10 closes the plan, AQS-PLAN-001 Rev D, graph Rev AT. Stills, peanut, sunflower, and the four rooms are nodes. Each feed has a return. Mass nodes are inside 0.05 kg/d. Not finished here: FreeCAD meshes, and the excluded copy-stoppers (lithography, blow-mold, electrode coat, photovoltaic cell, cold-box expander, silicon carbide). Iridium stays off the anode.
+
+Phase 11, AQS-PLAN-001 Rev E, graph Rev AU. Lithography, blow-mold, electrode coat, photovoltaic cell, expander, and silicon carbide are in scope. Contact aligner, shop mold, nickel coat, wafer cell, reciprocating expander, Acheson furnace. No iridium. Envelopes and STL boxes are issued. FreeCAD is still not in this environment.
