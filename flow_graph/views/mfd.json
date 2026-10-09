@@ -2,7 +2,7 @@
   "preset_id": "VIEW-MFD-CAMPUS",
   "view_mode": "MFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
+  "source_revision": "N",
   "node_count": 70,
   "edge_count": 83,
   "orphan_campus_units": [
@@ -2046,7 +2046,7 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.11,
+        "feed_m3_d": 0.187,
         "avg_kw": 0.08,
         "status": "duty_issued",
         "size_mm": [
@@ -2266,10 +2266,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.8,
+        "value": 6.4,
         "unit": "kg/d",
-        "status": "authority",
-        "note": "AQS-REQ-KW-001 \u00a73.0 / AQS-GAS-003 Faraday \u22480.2 kg/h at 150 kg/d wet feed"
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -2452,7 +2452,7 @@
     {
       "stream_id": "S12",
       "from_unit_id": "HABITATION",
-      "to_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "GREY_TREAT",
       "phase": "L/S",
       "layers": [
         "mass"
@@ -2463,10 +2463,10 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 110.0,
+        "value": 131.38,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "NUT",
@@ -2779,10 +2779,10 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 161.0,
+        "value": 168.22,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: VCD recovery 90% of feed 178.9 (S13 + S29 + S52)"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Matches polish outlets. VCD feed raised."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -3444,10 +3444,10 @@
       "forbidden": "HDR_O2, hab AHU",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.6,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Standby. Not a design-day draw. Fuel cell and MeOH take the pool."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "BACKUP_GEN",
@@ -3503,7 +3503,7 @@
         "value": 4.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.20 kg/h H2 @ REQ-FC-CONT if GEN idle; shared pool with S45/S74"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
@@ -3867,7 +3867,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "H2 normal path",
       "header": "dedicated / SHAFT_H2 branch",
       "forbidden": "hab air, HDR_O2, continuous roof dump",
@@ -3876,7 +3876,7 @@
         "value": 4.8,
         "unit": "kg/d",
         "status": "authority",
-        "note": "Same Faraday pool as S05; normal H2 path (AQS-VENT-001); S24 contingency only"
+        "note": "Retired Rev M. Alias of S05. One dryer, one product."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -3992,10 +3992,10 @@
       "forbidden": "N2/O2/NOx reject, raw flue, HDR_CO2 direct",
       "claim_status": "Claimed",
       "rate": {
-        "value": 12.75,
+        "value": 13.304,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-008: CO2 in the cut = S67 flue CO2 15.0 kg/d x VSA recovery 0.85. Sole CRYO_CO2 credit for afterburner carbon (S18 retired, Rev J)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -4099,10 +4099,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 8.4872,
+        "value": 852.473,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: scrub liquor: saturation water 8.44 + Br2 0.0470 + NaOH make-up 0.0003"
+        "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD."
       },
       "params": {
         "rate_basis": "scrub liquor: saturation water 8.44 + Br2 0.0470 + NaOH make-up 0.0003",
@@ -4277,10 +4277,10 @@
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
-        "value": 0.94,
+        "value": 1.6,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous methanol synthesis."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -4303,7 +4303,7 @@
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 8.5,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2"
@@ -4515,10 +4515,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 11.616,
+        "value": 12.17,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J CRYO_CO2 balance: in S67B 12.75 + S82 6.875 = 19.625; out S73 6.9 + S04 1.109 + S85 11.616. Rev K: HDR_CO2 consumer is S89 (GROW_BED), AQS-DUTY-009."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -4530,7 +4530,7 @@
       "from_unit_id": "CRYO_AHU",
       "to_unit_id": "RELIEF_CRYO",
       "phase": "G",
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "cryo residual contingency",
       "forbidden": "NORTH_DOCK, BOUNDARY_EXPORT",
       "notes": "Same sink as S56. Issued so the old dock edge has a number and a legal end.",
@@ -4543,7 +4543,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
+        "note": "Retired Rev N. Alias of S56."
       },
       "params": {
         "rate_basis": "contingency relief only; no continuous flow on the design day",
@@ -4622,7 +4622,7 @@
       ],
       "namespace": "S",
       "rate": {
-        "value": 0.665,
+        "value": 0.65,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L"
@@ -4680,10 +4680,10 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 15.637,
+        "value": 16.191,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AQS-DUTY-009 Rev B: S85 11.616 + S90 4.021"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",

@@ -1,5 +1,5 @@
 digraph G {
-  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD electrical layer (S17 + peers)\nVIEW-EFD-ELEC  ·  AQS-FLOW-GRAPH-001 rev L", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD electrical layer (S17 + peers)\nVIEW-EFD-ELEC  ·  AQS-FLOW-GRAPH-001 rev N", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
   edge [fontname="Helvetica", fontsize=8];
   subgraph "cluster_BACKUP_GEN" {
@@ -41,9 +41,9 @@ digraph G {
   "HYDRO_SET" -> "SOL_ARK_60K" [label="IA-ESS-HYDRO-ELEC\\n0.2917 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "ZNBR2" [label="IA-ESS-ZNBR2-CHG\\n6.6667 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "SOL_ARK_60K" [label="IA-ESS-ZNBR2-DIS\\n5.0 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "RECTIFIER" [label="S17\\n50.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "GROW_BED" -> "SOL_ARK_60K" [label="S20\\n5.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "RECTIFIER" [label="S17\\n23.32 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "SOL_ARK_60K" -> "GROW_BED" [label="S20\\n5.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n2.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.2925 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n3.46 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
 }

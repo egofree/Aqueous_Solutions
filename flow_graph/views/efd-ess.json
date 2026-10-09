@@ -2,7 +2,7 @@
   "preset_id": "VIEW-EFD-ESS",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
+  "source_revision": "N",
   "node_count": 7,
   "edge_count": 9,
   "orphan_campus_units": [],
@@ -539,7 +539,7 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 8.53,
         "unit": "kg/d",
         "status": "study",
         "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
@@ -566,10 +566,10 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 0.2925,
+        "value": 0.5,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Bottom of the 0.5-2 kW band. Fuel 8.53 kg/d."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",

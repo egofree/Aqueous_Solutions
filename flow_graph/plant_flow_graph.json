@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "M",
+  "revision": "N",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4454,10 +4454,10 @@
       "forbidden": "Q3 (no lift), Q4_BUS direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -4499,10 +4499,10 @@
       "forbidden": "Q3 (no lift), Q4_BUS direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -6511,7 +6511,7 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 1.9133,
+        "value": 2.1333,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
@@ -6541,7 +6541,7 @@
       "forbidden": "HDR_O2, hab air, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 5.74,
+        "value": 6.4,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Dryer inlet equals the pool."
@@ -6572,7 +6572,7 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 1.9133,
+        "value": 2.1333,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
@@ -6602,7 +6602,7 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 1.9133,
+        "value": 2.1333,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
@@ -6806,10 +6806,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 3977.51,
+        "value": 3753.71,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis)"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s."
       },
       "params": {
         "rate_basis": "recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis)",
@@ -7020,7 +7020,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.74,
+        "value": 6.4,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day."
@@ -7252,10 +7252,10 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 110.0,
+        "value": 131.38,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Retargeted off NUTRIENT_DOSE."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "NUT",
@@ -7440,10 +7440,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": "Closed",
       "rate": {
-        "value": 12.0,
+        "value": 23.32,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Rectifier continuous rating, not the 50 kW peak."
+        "note": "AQS-DUTY-012 Rev N. Continuous, covers the leach-heater trim."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -8535,10 +8535,10 @@
       "forbidden": "GEN AC port, RECT process DC hard-tee",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.0,
+        "value": 3.46,
         "unit": "kW",
         "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-FC-CONT; study requirement lock \u2014 not vendor nameplate"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. 0.52 of the 6.66 kW LHV. Band is 0.50-0.55."
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "ELEC",
@@ -9110,10 +9110,10 @@
       "forbidden": "N2/O2/NOx reject, raw flue, HDR_CO2 direct",
       "claim_status": "Claimed",
       "rate": {
-        "value": 12.75,
+        "value": 13.304,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-008: CO2 in the cut = S67 flue CO2 15.0 kg/d x VSA recovery 0.85. Sole CRYO_CO2 credit for afterburner carbon (S18 retired, Rev J)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -9395,7 +9395,7 @@
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
-        "value": 0.94,
+        "value": 1.6,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous methanol synthesis."
@@ -9421,7 +9421,7 @@
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 8.5,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2"
@@ -9447,7 +9447,7 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 8.53,
         "unit": "kg/d",
         "status": "study",
         "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
@@ -9546,10 +9546,10 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 0.2925,
+        "value": 0.5,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Bottom of the 0.5-2 kW band. Fuel 8.53 kg/d."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
@@ -9746,7 +9746,7 @@
       "from_unit_id": "CRYO_AHU",
       "to_unit_id": "RELIEF_CRYO",
       "phase": "G",
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "cryo residual contingency",
       "forbidden": "NORTH_DOCK, BOUNDARY_EXPORT",
       "notes": "Same sink as S56. Issued so the old dock edge has a number and a legal end.",
@@ -9759,7 +9759,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
+        "note": "Retired Rev N. Alias of S56."
       },
       "params": {
         "rate_basis": "contingency relief only; no continuous flow on the design day",
@@ -9838,7 +9838,7 @@
       ],
       "namespace": "S",
       "rate": {
-        "value": 0.665,
+        "value": 0.65,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L"
@@ -9986,7 +9986,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 13.9872,
+        "value": 35.3672,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
@@ -10090,7 +10090,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 10.0917,
+        "value": 11.7617,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC."
@@ -10116,10 +10116,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 11.59,
+        "value": 23.235,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Closes the bus at the continuous loads. Peak is a separate rating."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Closes the bus at the 0.52 fuel cell."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -10328,6 +10328,864 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Water make-up from the leach header, equal to the bleed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-1",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 59.87,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-2",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 59.89,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-3",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 22.48,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-4",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.85,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-5",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-6",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.47,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-7",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 71.14,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-8",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-MET-9",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 61.34,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-POL-CAKE",
+      "from_unit_id": "POLISH_BANK",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "polish cake",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 229.45,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AB-AIR",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "AFTERBURNER_FLUE",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "combustion air",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 235.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FLUE-EXH",
+      "from_unit_id": "FLUE_KO",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "flue exhaust",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 228.95,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DIG-LIQ",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "silicate liquor",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 118.43,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MILL-LOSS",
+      "from_unit_id": "GLASS_MILL",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "mill dust",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.82,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MFG-OUT",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "finished goods",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 335.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "GROW_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "irrigation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 16.7,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEOH-H2O",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MEOH_COND",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "synth water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FC-AIR",
+      "from_unit_id": "CRYO_O2",
+      "to_unit_id": "MEOH_FC",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cell air",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 7.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q3A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_A",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "leach heater trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q3B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_B",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "leach heater trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-LEACH-BD",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "level bleed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 106.48,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-VCD-BD",
+      "from_unit_id": "VCD_TRAIN",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "still bottoms",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.71,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CHAR",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "pyro char",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FC-EXH",
+      "from_unit_id": "MEOH_FC",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cell exhaust",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.53,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ZNBR-HEAT",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "Q4_BUS",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "round-trip loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.67,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_A",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_B",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FAB-LOSS",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "kerf",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.51,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WIRE-LOSS",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "draw scrap",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.44,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q1A-LOSS",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q1B-LOSS",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q2A-LOSS",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q2B-LOSS",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -10764,5 +11622,9 @@
     ],
     "h2_pool_kg_d": 5.74,
     "bmed_mol_d": 593.5
+  },
+  "notes_rev_n": {
+    "doc": "AQS-DUTY-012",
+    "alias_retired": "S86"
   }
 }

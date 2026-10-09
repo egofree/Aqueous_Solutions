@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
-  "node_count": 25,
-  "edge_count": 37,
+  "source_revision": "N",
+  "node_count": 30,
+  "edge_count": 48,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -80,6 +80,26 @@
             }
           ]
         }
+      }
+    },
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "sector_id": "DOCK",
+      "presence": "present",
+      "class": "boundary",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+      "notes": "North dock door. Freight only. No process stream.",
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+        "presence": "present",
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none",
+        "boundary_kind": "dock freight door (logical)"
       }
     },
     {
@@ -318,6 +338,70 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "GEO_ORC",
+      "sector_id": "GEO",
+      "presence": "placeholder",
+      "class": "study_stub",
+      "tags": [
+        "ORC",
+        "carnot_study",
+        "study_stub"
+      ],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
+      },
+      "modules": [],
+      "params": {
+        "status": "study_carnot_band",
+        "present_path": "study_carnot_band",
+        "blockers": [
+          "GHEX_conductivity_survey",
+          "T_source_survey",
+          "Q_surplus_after_Q4"
+        ],
+        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
+        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
+        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
+        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
+        "open_study_queued": true,
+        "study_id": "ST-ORC-01",
+        "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
+        "presence": "placeholder",
+        "ghex_study_defaults": {
+          "T_source_K": 285.0,
+          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
+          "T_sink_K": 303.0,
+          "eta_Carnot": 0.059,
+          "eta_ORC_study": "0.08-0.12 of available surplus",
+          "k_ground_W_mK_study": 1.5,
+          "Q_GHEX_avail_kW_th_study": 3.0,
+          "Q4_life_priority_kW_th_study": 3.0,
+          "Q_surplus_kW_th_M1": 0.0,
+          "P_ORC_kW_e_M1": 0.0,
+          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4",
+          "survey_status": "design_survey_locked",
+          "field_measurement_status": "not_measured_external"
+        },
+        "T_source_K": 285.0,
+        "T_sink_K": 303.0,
+        "k_ground_W_mK": 1.5,
+        "Q_GHEX_avail_kW_th": 3.0,
+        "Q_surplus_kW_th": 0.0,
+        "P_ORC_kW_e": 0.0,
+        "site_lat_deg": 33.0,
+        "survey_status": "design_survey_locked"
+      }
+    },
+    {
       "unit_id": "GLASS_DIGEST",
       "sector_id": "GLASS",
       "presence": "present",
@@ -448,6 +532,49 @@
               "value": 0.8063,
               "basis": "CO2 + H2O -> CH2O + O2 on S04",
               "kind": "derived"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "unit_id": "HABITATION",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "hab",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study"
+      },
+      "modules": [],
+      "params": {
+        "crew_study": 4,
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "black water to BLACK_DIGEST",
+              "value": 16.48,
+              "basis": "BVAD urine/feces/flush",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "hab AHU condensate + non-grey remainder",
+              "value": 4.8994,
+              "basis": "S12 governs grey",
+              "kind": "by_difference"
             }
           ]
         }
@@ -717,6 +844,78 @@
         }
       },
       "continuous_kw": null
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "rectifier",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 12.0,
+        "unit": "kW",
+        "status": "study"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "ZNBR2",
+      "sector_id": "ZNBR2",
+      "presence": "present",
+      "class": "flow_battery",
+      "tags": [],
+      "electrical_role": "storage",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 60.0,
+        "unit": "kW",
+        "status": "study"
+      },
+      "modules": [],
+      "params": {
+        "kW": 60,
+        "kWh": 120,
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "purge air (dry)",
+              "value": 843.9862,
+              "basis": "headspace purge",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
+              "value": 8.4402,
+              "basis": "no electrolyte bleed on the graph",
+              "kind": "accumulation"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            }
+          ]
+        }
+      }
     },
     {
       "unit_id": "GLASS_BURNOUT",
@@ -1480,10 +1679,10 @@
       "forbidden": "Q3 (no lift), Q4_BUS direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -1525,10 +1724,10 @@
       "forbidden": "Q3 (no lift), Q4_BUS direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -3108,6 +3307,292 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
       }
+    },
+    {
+      "stream_id": "HL-Q4-REJ",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "GEO_ORC",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "Q4 surplus heat",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 11.7617,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4-LIFE",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "HABITATION",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "life heat",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q3A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_A",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "leach heater trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q3B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_B",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "leach heater trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ZNBR-HEAT",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "Q4_BUS",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "round-trip loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.67,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_A",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_B",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q1A-LOSS",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q1B-LOSS",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q2A-LOSS",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q2B-LOSS",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

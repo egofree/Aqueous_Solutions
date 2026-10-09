@@ -2,7 +2,7 @@
   "preset_id": "VIEW-EFD-ELEC",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "L",
+  "source_revision": "N",
   "node_count": 8,
   "edge_count": 8,
   "orphan_campus_units": [],
@@ -523,10 +523,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": "Closed",
       "rate": {
-        "value": 50.0,
+        "value": 23.32,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-SCALE-001 / params ELEC_NEED_KW_BASE \u224850 kW at SCALE_M=1"
+        "note": "AQS-DUTY-012 Rev N. Continuous, covers the leach-heater trim."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -537,8 +537,8 @@
     },
     {
       "stream_id": "S20",
-      "from_unit_id": "GROW_BED",
-      "to_unit_id": "SOL_ARK_60K",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GROW_BED",
       "phase": "E",
       "layers": [
         "elec"
@@ -552,7 +552,7 @@
         "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GROW_BED continuous_kw (LED canopy share); LED check 3.06 kW in photoperiod at DLI 17.0, 2.7 umol/J"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Direction reversed. Power flows to the farm."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "ELEC",
@@ -610,10 +610,10 @@
       "forbidden": "GEN AC port, RECT process DC hard-tee",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.0,
+        "value": 3.46,
         "unit": "kW",
         "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-FC-CONT; study requirement lock \u2014 not vendor nameplate"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. 0.52 of the 6.66 kW LHV. Band is 0.50-0.55."
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "ELEC",
@@ -637,10 +637,10 @@
       "forbidden": "GEN port, RECT hard-tee",
       "claim_status": null,
       "rate": {
-        "value": 0.2925,
+        "value": 0.5,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC eta 0.2536 (0.9 L/kWh) x S76 LHV 1.153 kW; REQ-MEOH-FC 0.5-2 kW band NOT met"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Bottom of the 0.5-2 kW band. Fuel 8.53 kg/d."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "ELEC",
