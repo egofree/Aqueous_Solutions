@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "Z",
+  "revision": "AA",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -301,7 +301,9 @@
       "notes": "BMED acid loop node",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Bipolar membrane. Brine to 20 wt% HCl. Leach and chlorobutane."
+      },
       "continuous_kw": null
     },
     {
@@ -315,7 +317,9 @@
       "notes": "BMED base loop node",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Bipolar membrane. Brine to 20 wt% NaOH. Glass digest. Potassium slip to KOH."
+      },
       "continuous_kw": null
     },
     {
@@ -516,7 +520,9 @@
       "notes": "Chlorate finish / CRU (S66)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "NaCl electrolysis to sodium chlorate. Oxidant for the leach. Graphite anode, no iridium."
+      },
       "continuous_kw": null
     },
     {
@@ -2888,7 +2894,9 @@
       "notes": "Fab reagent fork (S33)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Haber. N2 and H2, 450 C, 200 bar, electrowon iron. Fertilizer, SC-1 clean, nitric acid, methylamine."
+      },
       "continuous_kw": null
     },
     {
@@ -2902,7 +2910,9 @@
       "notes": "Fab reagent fork (S36)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Phosphate slip and boron from the brine. Wafer doping. No BBr3 bought."
+      },
       "continuous_kw": null
     },
     {
@@ -2916,7 +2926,9 @@
       "notes": "Fab reagent fork (S31)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Fluoride from the leach plus BMED HCl. Oxide etch and glass etch."
+      },
       "continuous_kw": null
     },
     {
@@ -2952,7 +2964,8 @@
               "kind": "by_difference"
             }
           ]
-        }
+        },
+        "duty": "Potassium split of the BMED base. Silicon anisotropic etch."
       },
       "continuous_kw": null
     },
@@ -2989,7 +3002,8 @@
               "kind": "by_difference"
             }
           ]
-        }
+        },
+        "duty": "Ostwald nitric. Aluminum etch, pickling, nitrate fertilizer."
       },
       "continuous_kw": null
     },
@@ -3004,7 +3018,9 @@
       "notes": "Fab reagent fork (S32)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Cathodic oxygen reduction, 2 V. RCA clean, bleach, sanitation."
+      },
       "continuous_kw": null
     },
     {
@@ -3018,7 +3034,9 @@
       "notes": "Fab reagent fork (S37)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Milled sodium silicate. Chemical-mechanical polish."
+      },
       "continuous_kw": null
     },
     {
@@ -3032,7 +3050,9 @@
       "notes": "Fab reagent fork (S38) \u2014 litho path also via LITHO_STUB",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Ethanol and acetone from the fermenters. Resist strip and the pretreat makeup."
+      },
       "continuous_kw": null
     },
     {
@@ -3140,7 +3160,8 @@
           800,
           1100
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Leach phosphate. Fertilizer, aluminum polish, dopant."
       }
     },
     {
@@ -4353,6 +4374,270 @@
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      }
+    },
+    {
+      "unit_id": "YEAST",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Saccharomyces. 30 C. 1.00 kg/d sugar to ethanol."
+      }
+    },
+    {
+      "unit_id": "ABE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Clostridium. 35 C. 0.64 kg/d sugar to butanol and acetone."
+      }
+    },
+    {
+      "unit_id": "ACETOX",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Acetobacter. Ethanol to acetic acid. No rhodium."
+      }
+    },
+    {
+      "unit_id": "ALD",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Copper. Ethanol to acetaldehyde, 280 C."
+      }
+    },
+    {
+      "unit_id": "GLYOXAL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Nitric oxidation of acetaldehyde."
+      }
+    },
+    {
+      "unit_id": "FORM",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Silver. Methanol to formaldehyde, 600 C."
+      }
+    },
+    {
+      "unit_id": "MEAM",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Methanol plus ammonia to methylamine, 350 C."
+      }
+    },
+    {
+      "unit_id": "IMID",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Glyoxal, formaldehyde, methylamine, ammonia. 1-methylimidazole."
+      }
+    },
+    {
+      "unit_id": "QUAT",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "1-methylimidazole plus 1-chlorobutane, 70 C. [Bmim]Cl."
+      }
+    },
+    {
+      "unit_id": "ACEX",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Anion resin. [Bmim]Cl plus acetic acid to [Bmim][OAc]."
+      }
+    },
+    {
+      "unit_id": "HNO3",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Ostwald. Ammonia and oxygen to nitric acid. Platinum gauze is not copied; use electrowon nickel."
+      }
+    },
+    {
+      "unit_id": "BUCL",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "n-butanol plus BMED HCl to 1-chlorobutane."
       }
     }
   ],
@@ -7489,7 +7774,7 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 78.3397,
+        "value": 77.9597,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38"
@@ -7550,7 +7835,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 338.68,
+        "value": 339.06,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
@@ -9746,7 +10031,7 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 8.53,
+        "value": 8.37,
         "unit": "kg/d",
         "status": "study",
         "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
@@ -9972,7 +10257,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 47.44,
+        "value": 48.05,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -10001,7 +10286,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 243.71,
+        "value": 243.96,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -10137,7 +10422,7 @@
       ],
       "namespace": "S",
       "rate": {
-        "value": 0.65,
+        "value": 1.25,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L"
@@ -10195,7 +10480,7 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 16.38,
+        "value": 17.07,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
@@ -10285,7 +10570,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 242.6672,
+        "value": 243.0472,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
@@ -11013,7 +11298,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 596.9307,
+        "value": 597.3307,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11716,7 +12001,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.0,
+        "value": 8.69,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11820,7 +12105,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.3,
+        "value": 0.94,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11846,7 +12131,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.89,
+        "value": 1.89,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11872,7 +12157,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.3,
+        "value": 0.94,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11924,7 +12209,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.18,
+        "value": 3.87,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11976,7 +12261,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0,
+        "value": 0.69,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -12080,7 +12365,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 127.1,
+        "value": 126.1,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014."
@@ -12199,7 +12484,7 @@
     {
       "stream_id": "IA-SUGAR",
       "from_unit_id": "LIGNO_PRE",
-      "to_unit_id": "DIGESTER",
+      "to_unit_id": "YEAST",
       "phase": "S/L",
       "layers": [
         "mass"
@@ -12210,7 +12495,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.64,
+        "value": 1.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
@@ -12522,7 +12807,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.0,
+        "value": 3.25,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
@@ -12678,7 +12963,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 243.71,
+        "value": 243.89,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
@@ -12756,7 +13041,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 206.9,
+        "value": 207.28,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016."
@@ -12886,7 +13171,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 243.71,
+        "value": 243.28,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -12912,7 +13197,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 47.44,
+        "value": 48.05,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -13276,7 +13561,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 596.93,
+        "value": 597.33,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13614,7 +13899,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 195.86,
+        "value": 196.02,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -14008,6 +14293,1046 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-023"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SUGAR-ABE",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "ABE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "sugar to ABE",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.64,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ETOH",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "ALD",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ethanol",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ETOH-AC",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "ACETOX",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ethanol to acetic",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.16,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ETOH-SOL",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ethanol solvent",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-YEAST-CO2",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "HDR_CO2",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fermentation CO2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.44,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-STILL",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "DIGESTER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "stillage",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BUOH",
+      "from_unit_id": "ABE",
+      "to_unit_id": "BUCL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "n-butanol",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.13,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ACETONE",
+      "from_unit_id": "ABE",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "acetone",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ABE-ETOH",
+      "from_unit_id": "ABE",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ABE ethanol",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ABE-CO2",
+      "from_unit_id": "ABE",
+      "to_unit_id": "HDR_CO2",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ABE CO2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ABE-STILL",
+      "from_unit_id": "ABE",
+      "to_unit_id": "DIGESTER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ABE stillage",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.18,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AC-O2",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "ACETOX",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxidation air",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.11,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ACOH",
+      "from_unit_id": "ACETOX",
+      "to_unit_id": "ACEX",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "acetic acid",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.26,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AC-H2O",
+      "from_unit_id": "ACETOX",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxidation water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ALD",
+      "from_unit_id": "ALD",
+      "to_unit_id": "GLYOXAL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "acetaldehyde",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.18,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ALD-H2",
+      "from_unit_id": "ALD",
+      "to_unit_id": "HDR_H2",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dehydrogenation H2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GLX",
+      "from_unit_id": "GLYOXAL",
+      "to_unit_id": "IMID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "glyoxal",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.16,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GLX-NOX",
+      "from_unit_id": "GLYOXAL",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxidation NOx",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEOH-FORM",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "FORM",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol to formaldehyde",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.12,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CH2O",
+      "from_unit_id": "FORM",
+      "to_unit_id": "IMID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "formaldehyde",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FORM-H2O",
+      "from_unit_id": "FORM",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "formaldehyde water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEOH-MEAM",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "MEAM",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol to methylamine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.04,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NH3-MEAM",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "MEAM",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ammonia to methylamine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.03,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEAM",
+      "from_unit_id": "MEAM",
+      "to_unit_id": "IMID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methylamine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NH3-IMID",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "IMID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ammonia to imidazole",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-IMID",
+      "from_unit_id": "IMID",
+      "to_unit_id": "QUAT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "1-methylimidazole",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.24,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-IMID-H2O",
+      "from_unit_id": "IMID",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "condensation water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.19,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HCL-BU",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "BUCL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "HCl to chlorobutane",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BUCL",
+      "from_unit_id": "BUCL",
+      "to_unit_id": "QUAT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "1-chlorobutane",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.16,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BUCL-H2O",
+      "from_unit_id": "BUCL",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "chlorination water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BMIM",
+      "from_unit_id": "QUAT",
+      "to_unit_id": "ACEX",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "[Bmim]Cl",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-QUAT-H2O",
+      "from_unit_id": "QUAT",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "quaternization water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.04,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-IL",
+      "from_unit_id": "ACEX",
+      "to_unit_id": "LIGNO_PRE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "[Bmim][OAc] makeup",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-IL-BRINE",
+      "from_unit_id": "ACEX",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "chloride brine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.16,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NH3-NIT",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "HNO3",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ammonia to nitric",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-O2-NIT",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "HNO3",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen to nitric",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HNO3",
+      "from_unit_id": "HNO3",
+      "to_unit_id": "WS_NITRIC",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitric acid",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.6,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NIT-H2O",
+      "from_unit_id": "HNO3",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "absorber water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PHOS-DOPE",
+      "from_unit_id": "WS_PHOS",
+      "to_unit_id": "WS_DOPE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "phosphate to dopant",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SOLV-WB",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ethanol and acetone",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.18,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

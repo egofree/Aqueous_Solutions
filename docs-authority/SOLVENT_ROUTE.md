@@ -1,14 +1,10 @@
-# Solvent and unsourced reagents
+# Sugar and reagent stores
 
-Document number: AQS-DUTY-025
+Document number: AQS-DUTY-026
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev Z. Not a PE stamp. The synthesis is not on the graph.
+Authority: graph Rev AA. Not a PE stamp. Ten nodes are still off by more than 0.05 kg/d.
 
-The pretreat is an electro-assisted organosolv extraction. Lignocellulose is held at 25 wt % in 10 wt % 1-butyl-3-methylimidazolium acetate in γ-valerolactone, 2.0 V, 25 °C, 30 min. The acetate swells the cellulose and dissolves lignin. The voltage is the substitute for the usual 120–180 °C cook. The pulp leaves to the board mill. The sugar, 1.64 kg/d, leaves to the digester.
+Sugar no longer goes to the digester. 1.00 kg/d goes to Saccharomyces at 30 °C. 0.64 kg/d goes to Clostridium at 35 °C. Ethanol is oxidized to acetic acid on Acetobacter, and dehydrogenated to acetaldehyde on copper. Acetaldehyde is oxidized to glyoxal. A methanol slip is oxidized to formaldehyde. Methanol plus ammonia makes methylamine. Those four make 1-methylimidazole. n-butanol plus bipolar-membrane hydrochloric acid makes 1-chlorobutane. The two are quaternized at 70 °C to the chloride, and an anion resin exchanges it to the acetate. Stillage returns to the digester.
 
-The ionic liquid is 1-butyl-3-methylimidazolium acetate. The usual route is 1-methylimidazole plus 1-chlorobutane at 60–80 °C to the chloride, then acetate exchange on an anion resin with acetic acid. 1-methylimidazole is glyoxal, formaldehyde, methylamine, and ammonia. Formaldehyde is methanol oxidation. Methylamine is methanol plus ammonia. Ammonia is nitrogen plus hydrogen. Acetic acid is ethanol fermented, not methanol carbonylated: the carbonylation catalyst is rhodium or iridium. 1-chlorobutane is n-butanol plus the hydrochloric acid the bipolar membrane already makes. n-butanol is an acetone-butanol fermentation of the pretreat sugar. Glyoxal is acetaldehyde oxidized. Acetaldehyde is ethanol oxidized. γ-valerolactone is the copyable half: cellulose and hydrochloric acid give levulinic acid, and electrowon nickel hydrogenates it.
-
-None of that train is drawn. The graph has methanol, ammonia, hydrochloric acid, hydrogen, and sugar. It does not have ethanol, butanol, formaldehyde, glyoxal, imidazole, or the quaternization vessel.
-
-Stores with a name and no duty: ammonia, dope, hydrofluoric acid, potassium hydroxide, nitric acid, peroxide, phosphoric acid, silica slurry, solvent, both bipolar-membrane products, and the chlorate unit. Nitric acid, potassium hydroxide, and the dopant have no feed edge.
+Uses. Ammonia: fertilizer, SC-1 clean, nitric acid, methylamine. Hydrofluoric acid: oxide etch and glass etch. Potassium hydroxide: silicon anisotropic etch. Nitric acid: aluminum etch, pickling, nitrate fertilizer. Peroxide: RCA clean, bleach, sanitation. Phosphoric acid: fertilizer, aluminum polish, dopant. Silica slurry: chemical-mechanical polish. Ethanol and acetone: resist strip. Bipolar-membrane acid: leach and chlorobutane. Bipolar-membrane base: glass digest. Chlorate: leach oxidant, graphite anode. Dopant: phosphate slip, no bought boron tribromide.
