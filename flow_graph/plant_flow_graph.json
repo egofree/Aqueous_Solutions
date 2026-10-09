@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AL",
+  "revision": "AM",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5298,6 +5298,28 @@
       "params": {
         "presence": "present",
         "duty": "Rosemary. Dry gutter. Not the flooded bed."
+      }
+    },
+    {
+      "unit_id": "CLOVER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Clover on finished worm castings. Inoculated. Cuttings return. Bees. No leach salts."
       }
     }
   ],
@@ -18385,6 +18407,58 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-035"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CAST-CLOVER",
+      "from_unit_id": "WORMS",
+      "to_unit_id": "CLOVER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "finished castings",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-045. Clover on worm castings. Cuttings return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CLOVER-CUT",
+      "from_unit_id": "CLOVER",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "clover cuttings",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-045. Clover on worm castings. Cuttings return."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

@@ -10,3 +10,6 @@ The enzyme is nitrogenase. It reduces N₂ to ammonia at 16 ATP per N₂, and it
 Clover fixes about 150 kg N/ha/year, 0.04 g/m²/day. Azolla accumulates about 2 kg N/ha/day while it is growing, 0.2 g/m²/day. The fish loop plus urine is short about 17 g/d against gross crop uptake. That is 400 m² of clover or 85 m² of azolla. The drawn fixing bed does not close it.
 
 The duty is the nitrogen that leaves as food, not the gross uptake, if residue returns to the bed. Residue return is the first close. Azolla on the rice bed is the second. The Haber store is not poured into the tank.
+
+
+Clover is AQS-DUTY-045. It is seeded on finished worm castings, not on hot compost. The pile has to be below 40 °C and the ammonia gone, or the rhizobia die. Seed is inoculated. The fixed nitrogen is in the plant. It enters the soil when the cutting is returned to the compost. Bees take the flower. Leach salts stay off this bed.
