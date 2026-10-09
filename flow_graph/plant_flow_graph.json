@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AE",
+  "revision": "AF",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4990,6 +4990,50 @@
       "params": {
         "presence": "present",
         "duty": "Post-thermophilic. Below 40 C. Spent Pleurotus spawn on the lignocellulose. Then worms."
+      }
+    },
+    {
+      "unit_id": "FRUIT_GUTTER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Day-neutral strawberry in gutters. Fig in tubs. Blueberry in acid pots, pH 4.5-5.5, separate from the beds."
+      }
+    },
+    {
+      "unit_id": "VEG_BED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Tomato, cucumber, pepper, lettuce, spinach, kale, allium, basil. Organic media. Fish water."
       }
     }
   ],
@@ -16803,6 +16847,162 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-030. Mycelium on the compost after the hot phase."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-FRUIT",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "FRUIT_GUTTER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "irrigation spill",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FRUIT",
+      "from_unit_id": "FRUIT_GUTTER",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "strawberry and fig",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FRUIT-TRIM",
+      "from_unit_id": "FRUIT_GUTTER",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fruit trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.15,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-VEG",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "VEG_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fish water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-VEG",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "vegetable harvest",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.55,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-VEG-TRIM",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "BSFL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "vegetable trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
