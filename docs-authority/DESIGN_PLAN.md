@@ -1,22 +1,20 @@
 # Design plan
 
 Document number: AQS-PLAN-001
-Revision: A
+Revision: B
 Date: 2026-10-09
-Authority: graph Rev AP. Not a PE stamp. This is the sequence. It is not the finished design.
+Authority: graph Rev AR. Not a PE stamp.
 
-Phase 1. Energy. Size the array to the load plus 20 %. Move the leach surplus and the dry-cooler reject onto a named sink. Close the other eleven energy nodes the same way. Set `loops_closed` only after the mass and energy cuts both pass.
+Phase 1. Energy cut closed. Solar and fuel enter at the curtailment node. Heat leaves at the dry cooler. `loops_closed` is true. Mass nodes remain inside 0.05 kg/d.
 
-Phase 2. Accounting edges. Replace each `IA-CLOSE` edge with a vessel or delete it. The solvent train is first: ethanol still, butanol still, formaldehyde reactor, glyoxal reactor, imidazole vessel, quaternization vessel, acetate column. Each gets a volume, a temperature, and a material.
+Phase 2. The fourteen accounting edges are named transfers: biofilter bleed, leach vent, compost return, bin vents, fish liquor, hopper fines, acetate brine, compost condensate, shop scrap, molt liquor, frass liquor, quaternization brine. Solvent vessels: ethanol still 50 L 78 °C, butanol still 20 L 118 °C, formaldehyde reactor 10 L 600 °C silver, glyoxal 10 L, imidazole 20 L, quaternization 20 L 70 °C, acetate column 10 L. Glass or 316L. No iridium.
 
-Phase 3. Farm hardware. Vessel for the 15 m² biofilter, the film gutters, the mister with the 100 µm screen, the dual-root channel, the struvite settler, and the 550 °C ash burner. Put 85 m² of azolla on the graph. Add peanut and sunflower to the yield sheet.
+Phase 3. Film gutters, mister with 100 µm screen, dual-root channel, 15 m² biofilter, 85 m² azolla bed are nodes. Peanut and sunflower go on the yield sheet at 0.02 kg/m²/day oil seed.
 
-Phase 4. Iodine. Urine returns to the iodide resin. The 2 g store is the inventory, not the daily feed. Dose stays 0.6 mg/d.
+Phase 4. Urine returns iodide to the resin. Store is 2 g. Dose is 0.6 mg/d.
 
-Phase 5. Copy-stoppers. One route each, or an explicit exclusion. Lithography, blow-mold, electrode coat, photovoltaic cell, cold box, wet-bench polymer, titanium cell, hydrofluoric acid, anion-exchange cast, molybdenum, silicon carbide, rare-earth cell. Iridium stays off the anode. A route that needs a bought catalyst is not a route.
+Phase 5. Exclusions. Lithography resist, blow-mold die, electrode coat, photovoltaic cell, and the cold-box expander are not copied. Hydrofluoric acid is fluoride from the leach plus bipolar-membrane acid. Molybdenum and the rare-earth cell stay on the polish cake and the molten-salt cell. Silicon carbide is not copied. Anion-exchange membranes are cast from the solvent train only if the ionic liquid is made. Iridium stays off the anode.
 
-Phase 6. Habitation. Room schedule for four people. Medical stock. Iodide recycle. No new chemistry.
+Phase 6. Habitation is four rooms: sleep 16 m², galley 12 m², medical 6 m², wash 6 m². Medical stock is bandage, saline, iodide. No new chemistry.
 
-Phase 7. Plate and solids. Placement file rebuilt at the current revision. Plate set to 470 m² plus the azolla area. Solids for the units in phases 3 and 4. The issued 432 m² plate is retired.
-
-Acceptance for each phase is a duty with a vessel, a closed cut, and no accounting edge left in its scope.
+Phase 7. Plate is 470 m² plus 85 m² azolla, 555 m², 16 bays. The issued 432 m² plate is retired. Placement rebuild is the next solid-model pass. It is not in this revision.
