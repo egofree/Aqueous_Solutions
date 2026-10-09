@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "X",
+  "revision": "Y",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -6837,7 +6837,7 @@
       "forbidden": "HDR_O2, hab air, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 6.4,
+        "value": 6.64,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Dryer inlet equals the pool."
@@ -7312,7 +7312,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 6.4,
+        "value": 6.64,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day."
@@ -8775,7 +8775,7 @@
       "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.8,
+        "value": 5.04,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
@@ -9375,7 +9375,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 115.32,
+        "value": 116.97,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-008: afterburner flue 10.07 kg/h; carries the 15.0 kg/d CO2 basis (AQS-AUD-001 mid of 12-22.5 kg/d) moved here from S18 in Rev J."
@@ -9966,7 +9966,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 42.74,
+        "value": 47.44,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -9995,7 +9995,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 241.07,
+        "value": 243.71,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -10903,7 +10903,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 109.52,
+        "value": 111.17,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -10929,7 +10929,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 237.97,
+        "value": 239.62,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11007,7 +11007,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 595.2807,
+        "value": 596.9307,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11085,7 +11085,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": -2.02,
+        "value": 2.68,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11241,7 +11241,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": -4.403,
+        "value": 0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
@@ -11970,7 +11970,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": -1.65,
+        "value": 0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -12672,7 +12672,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 241.07,
+        "value": 243.71,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
@@ -12854,7 +12854,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 524.403,
+        "value": 530.753,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016"
@@ -12880,7 +12880,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 241.07,
+        "value": 243.71,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -12906,7 +12906,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 42.74,
+        "value": 47.44,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
@@ -13270,7 +13270,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 595.28,
+        "value": 596.93,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -13608,7 +13608,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 197.93,
+        "value": 195.86,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -13660,7 +13660,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 30.482,
+        "value": 35.355,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -13686,7 +13686,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 12.74,
+        "value": 17.44,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -13764,7 +13764,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.58,
+        "value": 2.82,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -13950,6 +13950,58 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FC-LEACH",
+      "from_unit_id": "FUEL_CELL",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cell water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.547,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-023"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NOX-BOARD",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "BOARD_MILL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "recovered carbon",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.65,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-023"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
