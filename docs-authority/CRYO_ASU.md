@@ -1,14 +1,12 @@
-# Cold box
+# Noble gases
 
-Document number: AQS-DUTY-017
+Document number: AQS-DUTY-018
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev S. Not a PE stamp.
+Authority: graph Rev T. Not a PE stamp.
 
-The column is CRYO_ASU, 77–90 K. It is the gas separator, not a product tank.
+The plant is a closed inventory after the startup charge. Intake air is that charge, not a continuous feed, and the nitrogen vent is retired.
 
-Intake air, 409.6 kg/d, enters the column instead of the nitrogen tank. Scrubbed flue nitrogen, 232.5 kg/d, and scrubbed CO2, 30 kg/d, enter the column instead of the headers. The NOx scrubber still takes the water and the nitrate. Only the dry gas goes downstream.
+The cold box holds a receiver for each noble gas. Helium, neon, krypton, and xenon return to the column, so the cut is a circulating slip and not a yield from fresh air. Argon goes to the fab as cover gas and returns to the column. Nothing in this set is vented.
 
-Column products: nitrogen 541.8 kg/d to CRYO_N2, oxygen 95.0 kg/d to CRYO_O2, CO2 30.0 kg/d to CRYO_CO2, argon 5.3 kg/d to the fab. S83 and S84, which were zero, now carry the oxygen and nitrogen onto the headers.
-
-Hydrogen stays on its own path. Hood gas is dried and held in CRYO_H2. Water stays on the air handler. The column does not take condensate.
+The slips are 0.01 kg/d helium, 0.05 kg/d neon, 0.02 kg/d krypton, 0.01 kg/d xenon, and 5.3 kg/d argon. Those are the circulation rates, not the mass of the startup inventory.

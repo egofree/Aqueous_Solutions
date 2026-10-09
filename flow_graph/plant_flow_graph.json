@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "S",
+  "revision": "T",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4232,6 +4232,121 @@
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+      }
+    },
+    {
+      "unit_id": "CRYO_HE",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "helium receiver",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      }
+    },
+    {
+      "unit_id": "CRYO_NE",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "neon receiver",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      }
+    },
+    {
+      "unit_id": "CRYO_KR",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "krypton receiver",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      }
+    },
+    {
+      "unit_id": "CRYO_XE",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "xenon receiver",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      }
+    },
+    {
+      "unit_id": "CRYO_AR",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "argon receiver",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       }
     }
   ],
@@ -12456,7 +12571,7 @@
         "value": 409.57,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. Startup charge. Not a continuous intake."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12716,7 +12831,7 @@
         "value": 0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016"
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. Vent retired."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12832,7 +12947,7 @@
     {
       "stream_id": "IA-ASU-AR",
       "from_unit_id": "CRYO_ASU",
-      "to_unit_id": "WAFER_FAB",
+      "to_unit_id": "CRYO_AR",
       "phase": "G",
       "layers": [
         "mass"
@@ -12873,6 +12988,266 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AR-FAB",
+      "from_unit_id": "CRYO_AR",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "argon cover",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AR-RET",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "argon return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-HE",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_HE",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "helium",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-NE",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_NE",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "neon",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-KR",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_KR",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "krypton",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ASU-XE",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_XE",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "xenon",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HE-RET",
+      "from_unit_id": "CRYO_HE",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "helium return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NE-RET",
+      "from_unit_id": "CRYO_NE",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "neon return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-KR-RET",
+      "from_unit_id": "CRYO_KR",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "krypton return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-XE-RET",
+      "from_unit_id": "CRYO_XE",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "xenon return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
