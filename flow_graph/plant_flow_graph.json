@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "T",
+  "revision": "U",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4545,7 +4545,7 @@
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
-      "open_boundary": true,
+      "open_boundary": false,
       "namespace": "TBD",
       "gap_flags": [
         "no_S_id",
@@ -7432,7 +7432,7 @@
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "DOCK",
-      "open_boundary": true,
+      "open_boundary": false,
       "namespace": "SANDBOX",
       "gap_flags": [
         "sandbox_extra_not_in_STREAM_REGISTER",
@@ -7650,7 +7650,7 @@
       },
       "from_sector_id": "FARM",
       "to_sector_id": "DOCK",
-      "open_boundary": true,
+      "open_boundary": false,
       "namespace": "SANDBOX",
       "gap_flags": [
         "sandbox_extra_not_in_STREAM_REGISTER",
@@ -10996,13 +10996,13 @@
     {
       "stream_id": "IA-MFG-OUT",
       "from_unit_id": "MFG_SHOP",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "HABITATION",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "finished goods",
+      "carries": "goods in service",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -13248,6 +13248,214 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-WEAR",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "HOPPER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "worn goods",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 607.36,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-N2-RET",
+      "from_unit_id": "HDR_N2",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrogen return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 541.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-O2-RET",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 95.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CO2-RET",
+      "from_unit_id": "CRYO_CO2",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "CO2 return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 30.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEOH-COND",
+      "from_unit_id": "MEOH_COND",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol condensate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.62,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-H2-IN",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "HDR_H2",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dried hydrogen",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EW-SHEET",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "MET_MELT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.38,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PHOS-SRC",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "WS_PHOS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "phosphate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.62,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
