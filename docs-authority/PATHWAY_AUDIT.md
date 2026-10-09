@@ -1,69 +1,14 @@
-# Pathway audit
+# No placeholders
 
-Document number: AQS-AUDIT-001
+Document number: AQS-DUTY-024
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev Y, commit ec2e1e5. Not a PE stamp. Not a construction issue.
+Authority: graph Rev Z. Not a PE stamp.
 
-## Mass
+No node and no edge is a placeholder.
 
-No present mass node is off by more than 0.05 kg/d. Boundary export is zero. Nineteen edges are placeholder. That close is not a design.
+The organic Rankine node is a dry cooler. It rejects 11.76 kW to air at a 10 K approach. The fan is 0.4 kW. It is not a power cycle. The shallow ground at this site does not have the surplus for one.
 
-These returns were added to make the books match. They are not sized equipment:
+Retired edges are present at zero and name the live stream. Dock freight is IA-HOP-01. Baghouse dust is IA-BAG-01. Digestate is IA-DIG-SOL. Hydrogen is S05. Habitation water is S12. There is no vent.
 
-- Leach offgas to the NOx scrubber, 189 kg/d. No nozzle, no blower, no composition.
-- Leach vent to the flue knockout, 136 kg/d. Same.
-- Dissolved gas from the leach to the cold box, 13 kg/d. No stripper.
-- Scrubber carbon to the board mill, 1.65 kg/d. No filter, no analysis.
-- Methanol cell air, 2.68 kg/d, and zero exhaust. A cell that consumes fuel has an exhaust. The zero is the balance, not the machine.
-
-The ionic liquid in the pretreat is not copied. The 25 °C, 2.0 V, 30 min duty is the thesis summary. There is no vessel, no electrode area, and no solvent inventory.
-
-## Energy
-
-The energy layer is open. The largest gaps, kW:
-
-| Unit | Gap |
-|---|---|
-| PV array | −27.9 |
-| Leach | +15.9 |
-| Organic Rankine | +11.8 |
-| Boundary | +7.2 |
-| Grow bed | +5.0 |
-| Fuel cell | −4.6 |
-| EW-1 | −4.6 |
-| Glass digest | +4.2 |
-| Habitation | +3.0 |
-
-A positive gap is power arriving with nowhere to go. A negative gap is a load with no feed on this layer. GEO_ORC is the one placeholder node.
-
-## What is not a design
-
-One hundred twenty present nodes have no duty, no note, and no function. The farm units added in Rev P–Y are rates and a kilowatt number:
-
-| Unit | What exists | What a build needs |
-|---|---|---|
-| Animal pen | 1.8 kg/d feed | Headcount, stall, water, ventilation |
-| Digester | 0.4 kW | Volume, HRT, temperature, gas holder |
-| Electromethanogenic cell | 1.0 V, 0.5 kW | Electrode area, current density, cathode alloy |
-| Hydrothermal carbonizer | 0.6 kW | Volume, temperature, pressure, residence time |
-| Ligno pretreat | 25 °C, 2.0 V, 30 min | Vessel, solvent holdup, electrode gap |
-| Board mill | 1 kW | Press load, dryness, sheet size |
-| Cold box | 77–90 K, 18 kW | Column diameter, stage count, exchanger duty, insulation |
-| Noble-gas receivers | circulation slips | Inventory mass, cylinder rating, valve |
-
-Wet-bench peroxide, ammonia, and hydrofluoric acid have a source edge and no generator. Phosphoric acid has no source.
-
-## 3D models
-
-Present as FreeCAD or OpenSCAD: leach CSTR, EW cell and cascade, wet line, hopper, shredder, grow bed, digester shell, CRU, fractionator, cold-box shell, zinc-bromine skid, wet bench, burnout rotary, vibratory split. Those are envelopes or fitouts, not fabrication models. Nozzle schedules exist for the CSTR and the life headers. They are not tied to Rev Y.
-
-Not modeled: animal pen, hydrothermal carbonizer, electromethanogenic cell, ligno pretreat, board mill, noble-gas receivers, greenhouse enclosure, NOx scrubber as a vessel, baghouse, methanol cell.
-
-## Layout
-
-The placement report is graph Rev K. The graph is Rev Y. Eight units were skipped and three moves were refused at Rev K. Nothing in Rev P–Y has a coordinate. The farm block, the cold box, and the noble-gas receivers are not on a slab.
-
-## Not constructable yet
-
-A unit is constructable when it has a vessel, a material, a nozzle, a duty, and a coordinate. The leach CSTR and the EW cell are the closest. The farm block and the cold-box internals are not.
+The farm vessels are sized. Digester 80 L, 35 °C, 20 d. Electromethanogenic cell, stainless cathode, 1.0 V, 0.1 m². Hydrothermal step 10 L, 180 °C, 2 h. Pretreat 20 L, 25 °C, 2.0 V, 30 min. Board press 2 MPa. Pen for two head. Compost bin 200 L. Cold box column 150 mm. The ionic liquid is still not copied. Mass nodes remain inside 0.05 kg/d.

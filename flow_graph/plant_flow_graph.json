@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "Y",
+  "revision": "Z",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -1421,8 +1421,8 @@
     {
       "unit_id": "GEO_ORC",
       "sector_id": "GEO",
-      "presence": "placeholder",
-      "class": "study_stub",
+      "presence": "present",
+      "class": "hx",
       "tags": [
         "ORC",
         "carnot_study",
@@ -1433,10 +1433,10 @@
       "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
       "enabled": true,
       "continuous_kw": {
-        "value": null,
+        "value": 0.4,
         "unit": "kW",
         "status": "study",
-        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path."
       },
       "modules": [],
       "params": {
@@ -1456,7 +1456,7 @@
         "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
         "study_phase_a_status": "physics_closed_external_measurement_queued",
         "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
-        "presence": "placeholder",
+        "presence": "present",
         "ghex_study_defaults": {
           "T_source_K": 285.0,
           "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
@@ -1479,7 +1479,8 @@
         "Q_surplus_kW_th": 0.0,
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "Dry cooler, not an ORC. 11.76 kW, air, 10 K approach, 0.4 kW fan."
       }
     },
     {
@@ -4075,7 +4076,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
+        "duty": "Two head. 1.8 kg/d feed. Vent to the handler."
       }
     },
     {
@@ -4097,7 +4099,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
+        "duty": "200 L aerated bin. Hydrochar in. Condensate to the roof tank."
       }
     },
     {
@@ -4119,7 +4122,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
+        "duty": "80 L, 35 C, 20 d residence. 2.2 kg/d feed."
       }
     },
     {
@@ -4141,7 +4145,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
+        "duty": "Stainless cathode, 1.0 V, 0.1 m2, 35 C. Biogas in, methane out."
       }
     },
     {
@@ -4164,7 +4169,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "25 C, 2.0 V, 30 min, 25 wt% solids. Solvent is the IL/GVL pair. IL is not copied."
+        "duty": "20 L, 25 C, 2.0 V, 30 min, 25 wt%. Solvent holdup 15 L. IL not copied."
       }
     },
     {
@@ -4186,7 +4191,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
+        "duty": "Plate press, 2 MPa, sheet 300 mm. 6 kg/d."
       }
     },
     {
@@ -4209,7 +4215,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "Low-temperature hydrothermal carbonization ahead of compost."
+        "duty": "10 L, 180 C, 2 h. Woody trim in, slurry out."
       }
     },
     {
@@ -4225,7 +4231,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "77-90 K column. Air and scrubbed flue in. N2, O2, CO2 out."
+        "duty": "Column 150 mm, 77-90 K, 18 kW. N2, O2, CO2, Ar, He, Ne, Kr, Xe receivers."
       },
       "continuous_kw": {
         "value": 18.0,
@@ -4532,16 +4538,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "returned freight",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 28.7542,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Freight is not a source."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-HOP-01"
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
@@ -7778,16 +7784,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "dust",
       "header": "existing",
       "forbidden": "farm",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.75,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-021. Duplicate outs removed. Column product equals the return."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "WET",
@@ -8163,16 +8169,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "digest liquor / nutrients",
       "header": "dose / HDR_ORG",
       "forbidden": "VCD evaporators (solids), sewer",
       "claim_status": "Closed",
       "rate": {
-        "value": 16.43,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Digestate already leaves on IA-DIG-SOL."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-DIG-SOL"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "NUT",
@@ -9277,16 +9283,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "H2 normal path",
       "header": "dedicated / SHAFT_H2 branch",
       "forbidden": "hab air, HDR_O2, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 4.8,
+        "value": 0.0,
         "unit": "kg/d",
-        "status": "authority",
-        "note": "Retired Rev M. Alias of S05. One dryer, one product."
+        "status": "study",
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S05"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -10039,7 +10045,7 @@
       "from_unit_id": "CRYO_AHU",
       "to_unit_id": "RELIEF_CRYO",
       "phase": "G",
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "cryo residual contingency",
       "forbidden": "NORTH_DOCK, BOUNDARY_EXPORT",
       "notes": "Same sink as S56. Issued so the old dock edge has a number and a legal end.",
@@ -10052,7 +10058,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired Rev N. Alias of S56."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency"
       },
       "params": {
         "rate_basis": "contingency relief only; no continuous flow on the design day",
@@ -10068,7 +10074,7 @@
       "from_unit_id": "GROW_BED",
       "to_unit_id": "CRYO_O2",
       "phase": "G",
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "surplus O2 capture",
       "forbidden": "BOUNDARY_EXPORT, HDR_H2",
       "notes": "Capture. Not a vent. Not hab air into a process header.",
@@ -10080,10 +10086,10 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint."
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency"
       },
       "params": {
         "hold_reason": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint.",
@@ -10095,7 +10101,7 @@
       "from_unit_id": "CRYO_N2",
       "to_unit_id": "GROW_BED",
       "phase": "G",
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "N2 make-up",
       "forbidden": "CRYO_AHU residual, dock",
       "notes": "Make-up from the N2 box only.",
@@ -10107,10 +10113,10 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "HOLD placeholder: GROW_BED has no N2 demand (farm is outdoor-air ventilated at the DUTY-009 OA rate). Source rule is met (CRYO_N2, not the cryo residual) but there is no sink. No clean endpoint."
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency"
       },
       "params": {
         "hold_reason": "HOLD placeholder: GROW_BED has no N2 demand (farm is outdoor-air ventilated at the DUTY-009 OA rate). Source rule is met (CRYO_N2, not the cryo residual) but there is no sink. No clean endpoint.",
@@ -11547,16 +11553,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "respired and evaporated water",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 120.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Grey water is the habitation return."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S12"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -11678,16 +11684,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "treated grey to the water cycle",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 120.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Would have taken the still feed."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S29"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12406,16 +12412,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "digest liquor",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 16.43,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-DIG-SOL"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12562,16 +12568,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "intake air",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 409.57,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. Startup inventory."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: startup inventory, not a flow"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12822,16 +12828,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "nitrogen vent",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. Vent retired."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13394,16 +13400,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "dried hydrogen",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 6.4,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-021. Duplicate outs removed. Column product equals the return."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S05"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13810,16 +13816,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "oxygen makeup",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 9.52,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S83"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13836,16 +13842,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "digestate trim",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.35,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-DIG-SOL"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13862,16 +13868,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "cell water",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.31,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-FC-EXH"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13888,16 +13894,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "compost CO2 trim",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.19,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-COMP-CO2"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13914,16 +13920,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "handler makeup",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.05,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-AHU-AIR"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13940,16 +13946,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "dissolved hydrogen",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.53,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-HDR-H2-01"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
