@@ -1,11 +1,11 @@
-Graph O. Closure is the cut around each Tarjan component.
+Graph P. Closure is the cut around each Tarjan component.
 A component passes when every unit balances and the cut balances, per rate unit.
 
-## mass: 154 edges, 1 loops
-- 46 units. Circuits listed: 20 (cap 20).
-  AFTERBURNER, AFTERBURNER_FLUE, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, C29_RECYCLE, CATCH_TANK, CONTINUOUS_RECYCLE, CRYO_AHU, CRYO_CO2, CRYO_H2, EW_1, EW_2, EW_3 ...
+## mass: 171 edges, 1 loops
+- 53 units. Circuits listed: 20 (cap 20).
+  AFTERBURNER, AFTERBURNER_FLUE, ANIMAL_PEN, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, BOARD_MILL, C29_RECYCLE, CATCH_TANK, COMPOST, CONTINUOUS_RECYCLE, CRYO_AHU, CRYO_CO2, CRYO_H2 ...
   one circuit: S18 -> S04 -> S11
-  kg/d: nodes off 0, cut in 934.87 out 1049.05 fail
+  kg/d: nodes off 0, cut in 1037.55 out 1037.55 pass
 
 ## thermal: 48 edges, 4 loops
 - 2 units. Circuits listed: 1 (cap 20).

@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "O",
+  "revision": "P",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4055,6 +4055,138 @@
           ]
         }
       }
+    },
+    {
+      "unit_id": "ANIMAL_PEN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
+    },
+    {
+      "unit_id": "COMPOST",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
+    },
+    {
+      "unit_id": "DIGESTER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
+    },
+    {
+      "unit_id": "EMETH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "cell",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
+    },
+    {
+      "unit_id": "LIGNO_PRE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.8,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
+    },
+    {
+      "unit_id": "BOARD_MILL",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "mill",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      }
     }
   ],
   "edges": [
@@ -6907,7 +7039,7 @@
       "forbidden": "leach, etch, grey",
       "claim_status": "Closed",
       "rate": {
-        "value": 78.3,
+        "value": 67.3,
         "unit": "kg/d",
         "status": "study",
         "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d"
@@ -7257,7 +7389,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 131.38,
+        "value": 131.78,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
@@ -7283,10 +7415,10 @@
       "forbidden": "Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 14.7995,
+        "value": 3.7995,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet."
+        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -7345,7 +7477,7 @@
     {
       "stream_id": "S14X",
       "from_unit_id": "GROW_BED",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "ANIMAL_PEN",
       "phase": "S",
       "layers": [
         "mass"
@@ -7359,7 +7491,7 @@
         "value": 1.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study residual S14 upper 4.2 \u2212 crew\u00d70.6=2.4 \u2192 1.8 kg/d; AQS-SUR-001 threshold \u22650.5 \u2014 pass_study expected true (WP-A2)."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. 1.8 kg/d ration."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "DOCK",
@@ -7704,7 +7836,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 151.52,
+        "value": 140.52,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate."
@@ -9991,7 +10123,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 35.3672,
+        "value": 35.7672,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
@@ -10878,7 +11010,7 @@
         "value": 106.48,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N."
+        "note": "AQS-DUTY-014. Bleed sized so the leach node matches the dock feed."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -11407,6 +11539,448 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-RES-01",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "LIGNO_PRE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "lignocellulose residue",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 8.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MAN-01",
+      "from_unit_id": "ANIMAL_PEN",
+      "to_unit_id": "DIGESTER",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "manure",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FEC-01",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "DIGESTER",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fecal solids",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COMP-01",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "COMPOST",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "woody trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DIG-GAS",
+      "from_unit_id": "DIGESTER",
+      "to_unit_id": "EMETH",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "biogas",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DIG-SOL",
+      "from_unit_id": "DIGESTER",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "digestate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EM-CH4",
+      "from_unit_id": "EMETH",
+      "to_unit_id": "MEOH_TANK",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methane",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EM-DIG",
+      "from_unit_id": "EMETH",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "EM effluent",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-LIG-01",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "BOARD_MILL",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "lignin",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CEL-01",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "BOARD_MILL",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cellulose",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BOARD",
+      "from_unit_id": "BOARD_MILL",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "board, paper, cardboard",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": -0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BOARD-SCRAP",
+      "from_unit_id": "BOARD_MILL",
+      "to_unit_id": "COMPOST",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "board scrap",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 8.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COMP-OUT",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "compost",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 11.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEAT",
+      "from_unit_id": "ANIMAL_PEN",
+      "to_unit_id": "HABITATION",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "animal food",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NUT-LEACH",
+      "from_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nutrient surplus",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 11.91,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FEED-01",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "mineral feedstock",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 102.68,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-POT-01",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "treated water makeup",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 120.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [
@@ -11845,5 +12419,8 @@
     "doc": "AQS-DUTY-013",
     "greenhouse": true,
     "znbr_kwh": 400
+  },
+  "notes_rev_p": {
+    "doc": "AQS-DUTY-014"
   }
 }
