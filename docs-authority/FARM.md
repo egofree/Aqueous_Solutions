@@ -1,12 +1,10 @@
-# Aquaponic integration
+# Nitrification kinetics
 
-Document number: AQS-DUTY-036
+Document number: AQS-DUTY-037
 Revision: A
 Date: 2026-10-09
 Authority: graph Rev AK. Study. Not a PE stamp.
 
-The tank is 2 m³ of tilapia at 26 °C. Turnover is once an hour, 48 m³/d. The earlier 2 m³/d was a book rate, not a hydraulic duty.
+Two steps. Ammonia to nitrite, then nitrite to nitrate. The overall demand is about 4.57 g oxygen and 7.1 g alkalinity as CaCO3 per gram of ammonia-nitrogen, and about 0.17 g of cells. On 7.5 g/d that is 34 g/d oxygen, 53 g/d alkalinity, and 1.3 g/d cells. The alkalinity comes from the urine slip. The oxygen comes from the air sparge on the filter.
 
-Water leaves the tank to a settler with 20 min residence. Settled solids are 1.0 kg/d, not a percent of the circulation, and go to the crayfish in the sump. Clarified water goes to 8 m² of nitrifying media. Excretion is 7.5 g NH₄-N/d, so the loading is about 1.0 g/m²/day. The filter splits to the vegetable bed, the duckweed raceway, and the grain bed, and the sump returns the same 48 m³/d to the tank.
-
-Not on this loop: rosemary, the blueberry pots, and the leach bleed. Fruit gutters take a spill, not the main return.
+The rate is Monod in ammonia. Half-saturation is about 1 mg/L. The fish want the tank below 0.5 mg/L, so the filter runs at about one third of its maximum. A maximum of 1.5 g/m²/day is then 0.5 g/m²/day. The 7.5 g/d duty needs 15 m², not 8 m². The pH band of 6.8–7.2 is below the nitrifier optimum and is the reason for the extra area. Nitrite oxidizers lose to ammonia oxidizers if the dissolved oxygen falls below about 2 mg/L, so the sparge holds 4 mg/L.

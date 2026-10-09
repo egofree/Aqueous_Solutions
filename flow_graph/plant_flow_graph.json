@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AK",
+  "revision": "AL",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5077,7 +5077,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "8 m2 media. 7.5 g NH4-N/d. 1.0 g/m2/day. pH 6.8-7.2."
+        "duty": "15 m2 media. 7.5 g NH4-N/d at 0.5 mg/L. Sparge holds 4 mg/L O2."
       }
     },
     {
