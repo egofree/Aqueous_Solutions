@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "Q",
+  "revision": "R",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4274,7 +4274,7 @@
     {
       "stream_id": "CUT-1",
       "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "PROD_C5_C10",
+      "to_unit_id": "BACKUP_GEN",
       "phase": "L",
       "presence": "present",
       "carries": "fractionator cut",
@@ -4303,7 +4303,7 @@
     {
       "stream_id": "CUT-2",
       "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "PROD_C11_C18",
+      "to_unit_id": "MFG_SHOP",
       "phase": "L",
       "presence": "present",
       "carries": "fractionator cut",
@@ -4332,7 +4332,7 @@
     {
       "stream_id": "CUT-3",
       "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "PROD_C19_C28",
+      "to_unit_id": "MFG_SHOP",
       "phase": "L",
       "presence": "present",
       "carries": "fractionator cut",
@@ -4390,13 +4390,13 @@
     {
       "stream_id": "DOCK_EXPORT_TBD",
       "from_unit_id": "NORTH_DOCK",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "HOPPER",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "goods / cassettes / surplus freight (ID TBD)",
+      "carries": "returned freight",
       "header": null,
       "forbidden": null,
       "claim_status": null,
@@ -6663,9 +6663,7 @@
       "from_unit_id": "EW_1",
       "to_unit_id": "HDR_H2",
       "phase": "G",
-      "layers": [
-        "mass"
-      ],
+      "layers": [],
       "presence": "present",
       "carries": "cathode H2 + sweep air",
       "header": "HDR_H2",
@@ -6724,9 +6722,7 @@
       "from_unit_id": "EW_2",
       "to_unit_id": "HDR_H2",
       "phase": "G",
-      "layers": [
-        "mass"
-      ],
+      "layers": [],
       "presence": "present",
       "carries": "cathode H2 + sweep air",
       "header": "HDR_H2",
@@ -6754,9 +6750,7 @@
       "from_unit_id": "EW_9",
       "to_unit_id": "HDR_H2",
       "phase": "G",
-      "layers": [
-        "mass"
-      ],
+      "layers": [],
       "presence": "present",
       "carries": "cathode H2 + sweep air",
       "header": "HDR_H2",
@@ -7283,18 +7277,18 @@
     {
       "stream_id": "S08G",
       "from_unit_id": "GLASS_DIGEST",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "MFG_SHOP",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "glass/ceramic goods",
+      "carries": "glass and ceramic stock",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 30.0,
+        "value": 26.7,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary"
@@ -7413,7 +7407,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 131.78,
+        "value": 331.78,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
@@ -8026,13 +8020,13 @@
     },
     {
       "stream_id": "S30",
-      "from_unit_id": "BLACK_DIGEST",
+      "from_unit_id": "DIGESTER",
       "to_unit_id": "NUTRIENT_DOSE",
       "phase": "L/S",
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "placeholder",
       "carries": "digest liquor / nutrients",
       "header": "dose / HDR_ORG",
       "forbidden": "VCD evaporators (solids), sewer",
@@ -8041,7 +8035,7 @@
         "value": 16.43,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: black water 16.48 kg/d less digester gas 0.05"
+        "note": "Retired. Digestate already leaves on IA-DIG-SOL."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "NUT",
@@ -9600,6 +9594,7 @@
       "to_unit_id": "MEOH_FC",
       "phase": "L",
       "layers": [
+        "mass",
         "ess"
       ],
       "presence": "present",
@@ -10057,7 +10052,7 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 16.381,
+        "value": 46.381,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
@@ -10147,7 +10142,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 35.7672,
+        "value": 235.7672,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
@@ -10734,13 +10729,13 @@
     {
       "stream_id": "IA-POL-CAKE",
       "from_unit_id": "POLISH_BANK",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "MFG_SHOP",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "polish cake",
+      "carries": "recovered cake",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -10786,18 +10781,18 @@
     {
       "stream_id": "IA-FLUE-EXH",
       "from_unit_id": "FLUE_KO",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "NOX_SCRUB",
       "phase": "G",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "flue exhaust",
+      "carries": "flue to the NOx scrubber",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 228.95,
+        "value": 228.45,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -10838,7 +10833,7 @@
     {
       "stream_id": "IA-MILL-LOSS",
       "from_unit_id": "GLASS_MILL",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "BAGHOUSE",
       "phase": "S",
       "layers": [
         "mass"
@@ -10875,7 +10870,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 335.0,
+        "value": 607.3607,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -11020,18 +11015,18 @@
     {
       "stream_id": "IA-LEACH-BD",
       "from_unit_id": "LEACH_CSTR_1",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "NUTRIENT_DOSE",
       "phase": "L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "level bleed",
+      "carries": "bleed salts to nutrient",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 106.48,
+        "value": 109.63,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Bleed sized so the leach node matches the dock feed."
@@ -11072,13 +11067,13 @@
     {
       "stream_id": "IA-CHAR",
       "from_unit_id": "OIL_PYRO",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "MFG_SHOP",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "pyro char",
+      "carries": "char reductant",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -11098,7 +11093,7 @@
     {
       "stream_id": "IA-FC-EXH",
       "from_unit_id": "MEOH_FC",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "NOX_SCRUB",
       "phase": "G",
       "layers": [
         "mass"
@@ -11109,7 +11104,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.53,
+        "value": 4.81,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
@@ -11202,7 +11197,7 @@
     {
       "stream_id": "IA-FAB-LOSS",
       "from_unit_id": "WAFER_FAB",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "BAGHOUSE",
       "phase": "S",
       "layers": [
         "mass"
@@ -11228,7 +11223,7 @@
     {
       "stream_id": "IA-WIRE-LOSS",
       "from_unit_id": "WIRE_DRAW",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "BAGHOUSE",
       "phase": "S",
       "layers": [
         "mass"
@@ -11578,7 +11573,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.0,
+        "value": 38.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11656,7 +11651,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.0,
+        "value": 3.19,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
@@ -11786,7 +11781,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.18,
+        "value": 18.18,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11812,7 +11807,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.18,
+        "value": 18.18,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11838,7 +11833,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": -1.65,
+        "value": 28.35,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11890,7 +11885,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 10.82,
+        "value": 140.45,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
@@ -11942,7 +11937,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 13.36,
+        "value": 126.56,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014."
@@ -12020,7 +12015,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.0,
+        "value": 3.19,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
@@ -12076,6 +12071,656 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-UPW-HAB",
+      "from_unit_id": "HDR_UPW",
+      "to_unit_id": "HABITATION",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "potable makeup",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BAG-01",
+      "from_unit_id": "BAGHOUSE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "captured dust",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 8.52,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-UPW-USE",
+      "from_unit_id": "HDR_UPW",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fab UPW",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 66.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEOH-REST",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "MEOH_FC",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "tank draw",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.28,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SINK-01",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "FLOAT_SINK",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "sink solids",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 376.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PLAST-01",
+      "from_unit_id": "FLOAT_SINK",
+      "to_unit_id": "OIL_DRYER",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "float plastics",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 33.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CULLET",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GLASS_RINSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cullet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 36.82,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DIG-BLK",
+      "from_unit_id": "DIGESTER",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "digest liquor",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 16.43,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SCRUB-SRC",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "ACID_POLISH_SCRUB",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrub feed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 27.36,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SIL-SRC",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "WS_SLURRY",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "silicate to slurry",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HF-SRC",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "WS_HF_ED",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fluoride to HF",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NH3-SRC",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "WS_AMMONIA",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrogen to ammonia",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-H2O2-SRC",
+      "from_unit_id": "CRYO_O2",
+      "to_unit_id": "WS_PEROX",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen to peroxide",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AIR-IN",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "CRYO_N2",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "intake air",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 409.57,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NOX-H2O",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubber condensate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 201.28,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NOX-N",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrate liquor",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 20.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NOX-CO2",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "HDR_CO2",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubbed CO2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 30.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NOX-N2",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "CRYO_N2",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubbed nitrogen",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 232.54,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FAB-SPENT",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent UPW",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 66.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GEN-AIR",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "BACKUP_GEN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "genset air",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 239.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NOX-HAB",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "HABITATION",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubber water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 200.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NUT-BED",
+      "from_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "GROW_BED",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrate and bleed salts",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 129.63,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-COMP",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "COMPOST",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "salt-laden trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 129.63,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-N2-VENT",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "nitrogen vent",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HOP-01",
+      "from_unit_id": "HOPPER",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "returned scrap",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 29.95,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
