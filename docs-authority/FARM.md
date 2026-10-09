@@ -1,23 +1,12 @@
-# Crop system
+# Nitrogen fixation
 
-Document number: AQS-DUTY-042
+Document number: AQS-DUTY-044
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev AL. Study. Not a PE stamp.
+Authority: farm model a532d2e. Study. Not a PE stamp.
 
-| Crop | System | Reason |
-|---|---|---|
-| Lettuce, basil, spinach, microgreens | Nutrient film | Shallow root. Film is enough. |
-| Strawberry | Mister | Shallow root, wants air. Nozzle screen required. |
-| Tomato, cucumber, pepper | Dual root, media | Heavy root. Potassium and iron on the channel that does not return. |
-| Kale, allium, carrot, beet | Organic media | Root crop or long cycle. Film dams. |
-| Potato, sweet potato | Organic media | Calorie bed. Mist is a seed duty, not this yield. |
-| Bean, lentil, peanut, cowpea, clover | Fixing bed, media | Inoculated. Residue to compost. |
-| Rice, azolla | Flooded bed | Shared water. Azolla fixes nitrogen. |
-| Wheat, corn, sunflower | Media, stacked for wheat | Grain and oil. Not a film. |
-| Duckweed | Raceway | On the return, ahead of the sump. |
-| Rosemary | Dry gutter | Rots in a film. |
-| Blueberry | Acid pot, pH 4.5–5.5 | Off the loop. |
-| Fig, plantain | Tub | Too large for a gutter. |
-| Oyster | Straw, 60–70 °C | Pasteurize. |
-| Shiitake, lion's mane, reishi, turkey tail | Sterile block, 121 °C | Hardwood and bran. |
+The enzyme is nitrogenase. It reduces N₂ to ammonia at 16 ATP per N₂, and it is killed by oxygen. The legume hides it in the nodule with leghemoglobin. Azolla hides it in the leaf cavity with Anabaena. Free-living fixers in the compost are the third and the smallest.
+
+Clover fixes about 150 kg N/ha/year, 0.04 g/m²/day. Azolla accumulates about 2 kg N/ha/day while it is growing, 0.2 g/m²/day. The fish loop plus urine is short about 17 g/d against gross crop uptake. That is 400 m² of clover or 85 m² of azolla. The drawn fixing bed does not close it.
+
+The duty is the nitrogen that leaves as food, not the gross uptake, if residue returns to the bed. Residue return is the first close. Azolla on the rice bed is the second. The Haber store is not poured into the tank.
