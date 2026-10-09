@@ -1,10 +1,12 @@
-# Balance fixes
+# Resource close
 
-Document number: AQS-DUTY-021
+Document number: AQS-DUTY-022
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev W. Not a PE stamp.
+Authority: graph Rev X. Not a PE stamp.
 
-Removed the second hydrogen outlet from the dryer. The baghouse returns only what it catches. The carbon dioxide dose is cut to the header inlet. EW-9 liquor is cut by the sheet sent to the melt. EW-1 and EW-2 liquor is restored where the hood hydrogen was taken off the mass layer. The roof tank passes the methanol condensate to habitation.
+The boundary export is zero. No unit is a sink.
 
-The column product is set to the scrubbed nitrogen that returns, 232.5 kg/d. The combustion, genset, and handler draws are larger than that. Cutting them opened the flue knockout and the NOx scrubber. Those gaps are the retired intake air, not a new leak.
+The retired intake is carried back as named returns. Leach offgas, 189.4 kg/d, goes to the NOx scrubber. Leach vent, 135.9 kg/d, goes to the flue knockout. Returned solids, 30 kg/d, go to the hopper. Dissolved gas, 12.7 kg/d, goes to the cold box. Hood hydrogen from EW-1, EW-2, and EW-4 feeds the hydrogen header. Sweep nitrogen from EW-4 feeds the nitrogen header.
+
+Seven nodes remain off by less than 1 kg/d. The nitrogen header is short 0.99. The leach is long 0.61. The scrubber and the fuel cell are long 0.31. The methanol cell is short 0.30. EW-4 is long 0.24. The hopper is short 0.12.
