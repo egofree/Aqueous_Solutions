@@ -1,15 +1,11 @@
-Graph N. Closure is the cut around each Tarjan component.
+Graph O. Closure is the cut around each Tarjan component.
 A component passes when every unit balances and the cut balances, per rate unit.
 
-## mass: 150 edges, 2 loops
-- 42 units. Circuits listed: 20 (cap 20).
-  AFTERBURNER, AFTERBURNER_FLUE, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, C29_RECYCLE, CONTINUOUS_RECYCLE, CRYO_CO2, CRYO_H2, EW_1, EW_2, EW_3, EW_4, EW_5 ...
+## mass: 154 edges, 1 loops
+- 46 units. Circuits listed: 20 (cap 20).
+  AFTERBURNER, AFTERBURNER_FLUE, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, C29_RECYCLE, CATCH_TANK, CONTINUOUS_RECYCLE, CRYO_AHU, CRYO_CO2, CRYO_H2, EW_1, EW_2, EW_3 ...
   one circuit: S18 -> S04 -> S11
-  kg/d: nodes off 0, cut in 1071.57 out 1065.75 pass
-- 3 units. Circuits listed: 2 (cap 20).
-  CATCH_TANK, ROOF_TANK, TERRACE_IRRIG
-  one circuit: IA-ESS-HYDRO-CHG -> IA-ESS-HYDRO-DIS
-  kg/d: nodes off 0, cut in 0.00 out 136.70 fail
+  kg/d: nodes off 0, cut in 934.87 out 1049.05 fail
 
 ## thermal: 48 edges, 4 loops
 - 2 units. Circuits listed: 1 (cap 20).
@@ -29,13 +25,13 @@ A component passes when every unit balances and the cut balances, per rate unit.
   one circuit: HL-Q1-X -> HL-Q1-X-BA
   kW: nodes off 0, cut in 2.77 out 2.77 pass
 
-## elec: 9 edges, 1 loops
+## elec: 11 edges, 1 loops
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 1, cut in 29.99 out 28.32 fail
+  kW: nodes off 0, cut in 34.63 out 34.64 pass
 
-## ess: 9 edges, 2 loops
+## ess: 10 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).
   CATCH_TANK, ROOF_TANK
   one circuit: IA-ESS-HYDRO-CHG -> IA-ESS-HYDRO-DIS
@@ -44,6 +40,6 @@ A component passes when every unit balances and the cut balances, per rate unit.
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 2, cut in 0.79 out 0.00 fail
+  kW: nodes off 1, cut in 0.79 out 1.67 fail
 
 loops_closed: false

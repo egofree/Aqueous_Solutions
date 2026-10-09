@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "N",
+  "revision": "O",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -2634,9 +2634,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 12.0,
+        "value": 24.0,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
       },
       "modules": [],
       "params": {
@@ -2761,7 +2762,9 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "enclosure": "greenhouse",
+        "note": "Enclosed. Vapor to the AHU, condensate to the roof tank."
       }
     },
     {
@@ -3049,7 +3052,7 @@
       "modules": [],
       "params": {
         "kW": 60,
-        "kWh": 120,
+        "kWh": 400,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -3080,7 +3083,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty_fraction": 0.3,
+        "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW."
       }
     },
     {
@@ -6902,7 +6907,7 @@
       "forbidden": "leach, etch, grey",
       "claim_status": "Closed",
       "rate": {
-        "value": 95.0,
+        "value": 78.3,
         "unit": "kg/d",
         "status": "study",
         "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d"
@@ -7278,10 +7283,10 @@
       "forbidden": "Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 31.4995,
+        "value": 14.7995,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: ET 92.4 (3.3 L/m2.d x 28.0 m2) - farm exhaust vapor 60.9 (OA 933.5 m3/h light, 251.3 dark; w 0.0131 - 0.01)"
+        "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -7699,10 +7704,10 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 168.22,
+        "value": 151.52,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Matches polish outlets. VCD feed raised."
+        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -7843,7 +7848,7 @@
         "value": 104.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: grey treat recovery 95 % of S12 (5 % sludge/backwash)"
+        "note": "AQS-DUTY-013. Still feed restored. Grey is not the greenhouse return."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -8218,10 +8223,10 @@
       "forbidden": "FARM_SUMP, S26 potable, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.0,
+        "value": 40.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: event-driven; zero on the dry design day"
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "TRR",
@@ -10116,10 +10121,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 23.235,
+        "value": 27.88,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Closes the bus at the 0.52 fuel cell."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -11193,6 +11198,215 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-TERR-VAP",
+      "from_unit_id": "TERRACE_IRRIG",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "greenhouse transpiration",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 40.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-VAP",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "bed transpiration",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 16.7,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HAB-VAP",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "respired and evaporated water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 120.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Retired. Grey water is the habitation return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HVAC-COND",
+      "from_unit_id": "CRYO_AHU",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "AHU condensate to the water cycle",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 56.7,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-PV-CURTAIL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "electric",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "bus surplus",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.645,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AHU-AIR",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "outdoor air moisture",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 173.67,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet. Source of S68."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ZNBR-LOSS",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "electric",
+      "layers": [
+        "elec",
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "round-trip loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.67,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-013. 6.67 charge, 5.0 discharge. Store is 400 kWh."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GREY-RET",
+      "from_unit_id": "GREY_TREAT",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "treated grey to the water cycle",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 120.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Retired. Would have taken the still feed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [
@@ -11626,5 +11840,10 @@
   "notes_rev_n": {
     "doc": "AQS-DUTY-012",
     "alias_retired": "S86"
+  },
+  "notes_rev_o": {
+    "doc": "AQS-DUTY-013",
+    "greenhouse": true,
+    "znbr_kwh": 400
   }
 }
