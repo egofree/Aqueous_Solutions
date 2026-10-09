@@ -13,3 +13,6 @@ The duty is the nitrogen that leaves as food, not the gross uptake, if residue r
 
 
 Clover is AQS-DUTY-045. It is seeded on finished worm castings, not on hot compost. The pile has to be below 40 °C and the ammonia gone, or the rhizobia die. Seed is inoculated. The fixed nitrogen is in the plant. It enters the soil when the cutting is returned to the compost. Bees take the flower. Leach salts stay off this bed.
+
+
+Seed bank is AQS-DUTY-046. 4 °C, 30 % relative humidity, dry, off the compost. Clover seed is held with the rhizobia inoculant. The inoculant is a separate packet. It is not mixed into the seed until sowing.

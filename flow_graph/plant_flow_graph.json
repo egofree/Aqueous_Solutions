@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AM",
+  "revision": "AN",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5320,6 +5320,28 @@
       "params": {
         "presence": "present",
         "duty": "Clover on finished worm castings. Inoculated. Cuttings return. Bees. No leach salts."
+      }
+    },
+    {
+      "unit_id": "SEED_BANK",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "4 C, 30 % RH. Clover seed and rhizobia inoculant. Dry. Off the compost."
       }
     }
   ],
@@ -18459,6 +18481,58 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-045. Clover on worm castings. Cuttings return."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SEED-CLOVER",
+      "from_unit_id": "CLOVER",
+      "to_unit_id": "SEED_BANK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "clover seed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-046. Seed bank. Clover plus inoculant."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SEED-OUT",
+      "from_unit_id": "SEED_BANK",
+      "to_unit_id": "CLOVER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "seeded clover",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-046. Seed bank. Clover plus inoculant."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
