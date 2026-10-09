@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AN",
+  "revision": "AO",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -5341,7 +5341,52 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "4 C, 30 % RH. Clover seed and rhizobia inoculant. Dry. Off the compost."
+        "duty": "4 C, 30 % RH. Seed, vegetative, and culture. Dry. Off the compost.",
+        "inventory": {
+          "seed": [
+            "bean",
+            "lentil",
+            "cowpea",
+            "peanut",
+            "clover",
+            "rice",
+            "wheat",
+            "corn",
+            "sunflower",
+            "carrot",
+            "beet",
+            "sugar beet",
+            "tomato",
+            "pepper",
+            "cucumber",
+            "lettuce",
+            "spinach",
+            "kale",
+            "basil",
+            "onion"
+          ],
+          "vegetative": [
+            "potato",
+            "sweet potato",
+            "garlic",
+            "strawberry runner",
+            "rosemary cutting",
+            "fig cutting",
+            "plantain sucker",
+            "blueberry cutting",
+            "duckweed",
+            "azolla"
+          ],
+          "culture": [
+            "rhizobia inoculant",
+            "arbuscular inoculum",
+            "oyster spawn",
+            "shiitake spawn",
+            "lion's mane spawn",
+            "reishi spawn",
+            "turkey tail spawn"
+          ]
+        }
       }
     }
   ],

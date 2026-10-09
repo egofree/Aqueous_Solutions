@@ -16,3 +16,6 @@ Clover is AQS-DUTY-045. It is seeded on finished worm castings, not on hot compo
 
 
 Seed bank is AQS-DUTY-046. 4 °C, 30 % relative humidity, dry, off the compost. Clover seed is held with the rhizobia inoculant. The inoculant is a separate packet. It is not mixed into the seed until sowing.
+
+
+Seed bank inventory is AQS-DUTY-047. Seed: bean, lentil, cowpea, peanut, clover, rice, wheat, corn, sunflower, carrot, beet, sugar beet, tomato, pepper, cucumber, lettuce, spinach, kale, basil, onion. Vegetative, not seed: potato, sweet potato, garlic, strawberry runner, rosemary, fig, plantain, blueberry, duckweed, azolla. Culture: rhizobia, arbuscular inoculum, and the five mushroom spawns. Coconut is not held. It does not yield in this envelope.
