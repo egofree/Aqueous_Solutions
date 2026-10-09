@@ -1,10 +1,12 @@
-# Toilet and nitrogen fixers
+# Farm
 
-Document number: AQS-DUTY-028
+Document number: AQS-DUTY-029
 Revision: A
 Date: 2026-10-09
-Authority: graph Rev AC. Study rates for four people. Not a PE stamp.
+Authority: graph Rev AD. Study rates for four people. Not a PE stamp.
 
-The toilet is urine-diverting. Feces, 0.80 kg/d, leave habitation for the toilet instead of the digester. Urine, 1.20 kg/d, is diverted. Covered solids, 0.90 kg/d, go to the compost bin. Urine, 1.30 kg/d, goes to the nutrient tank. Cover is 0.20 kg/d of cut legume. No flush water.
+Toilet and fixers are AQS-DUTY-028. Stock and crops are AQS-DUTY-027.
 
-The nitrogen-fixing bed is cowpea, clover, and peanut, inoculated. Residue, 0.40 kg/d, goes to compost. Harvest, 0.15 kg/d, goes to habitation. Azolla on the rice bed is the aquatic fixer and is already drawn. Bean and lentil on the main beds are the same symbiosis. They are not a second vessel.
+Mycology is two rooms. The straw room is Pleurotus on wheat straw, pasteurized at 60–70 °C for 1 h. Harvest 0.12 kg/d. Spent straw to compost. The block room is sterilized hardwood and bran, 121 °C. Shiitake and lion's mane are the food, 0.08 kg/d. Reishi and turkey tail are the slow conks, 0.03 kg/d. Cordyceps militaris is not drawn. It eats rice the habitation needs.
+
+The beds take Rhizophagus irregularis, raised on compost and vermiculite. It is an arbuscular inoculum for bean, corn, wheat, and potato. It is not a fruiting crop. Brassica will not take it. Potato inoculation at the seedling stage raised colonization about 8 points and held yield at a 25 % lower phosphorus rate in the 2025 trial. Bean yield rose when the same class of inoculum was paired with fertilizer.

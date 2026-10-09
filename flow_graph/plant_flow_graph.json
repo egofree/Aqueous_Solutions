@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AC",
+  "revision": "AD",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4857,7 +4857,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Pleurotus on spent lignocellulose. Harvest to habitation. Spent block to compost."
+        "duty": "Retired into the straw room and the block room."
       }
     },
     {
@@ -4902,6 +4902,72 @@
       "params": {
         "presence": "present",
         "duty": "Cowpea, clover, peanut. Inoculated. Residue to compost. Azolla already on the rice bed."
+      }
+    },
+    {
+      "unit_id": "MUSH_STRAW",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Pleurotus. Wheat straw, 60-70 C, 1 h. Two flushes."
+      }
+    },
+    {
+      "unit_id": "MUSH_BLOCK",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Sterile hardwood blocks. Shiitake, lion's mane, reishi, turkey tail. 121 C."
+      }
+    },
+    {
+      "unit_id": "AMF",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Rhizophagus irregularis on compost and vermiculite. Bed inoculum. Not a food crop."
       }
     }
   ],
@@ -16403,6 +16469,240 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-STRAW",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "MUSH_STRAW",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "wheat straw",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-OYSTER",
+      "from_unit_id": "MUSH_STRAW",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oyster",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.12,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-STRAW-SPENT",
+      "from_unit_id": "MUSH_STRAW",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent straw",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.18,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-HW",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "MUSH_BLOCK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "hardwood and bran",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLOCK-FOOD",
+      "from_unit_id": "MUSH_BLOCK",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "shiitake and lion's mane",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.08,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLOCK-MED",
+      "from_unit_id": "MUSH_BLOCK",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "reishi and turkey tail",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.03,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLOCK-SPENT",
+      "from_unit_id": "MUSH_BLOCK",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent blocks",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.14,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AMF-IN",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "AMF",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "compost inoculum",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-AMF-BED",
+      "from_unit_id": "AMF",
+      "to_unit_id": "GROW_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "bed inoculum",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
