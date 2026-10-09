@@ -71,8 +71,8 @@ Building is NFPA 13 throughout. Non-sprinklered R over H is NP.
 
 ## 1. Levels (one module)
 
-Structural bay **6.0 × 6.0 m**. Module plate **24 × 18 m**
-(4 × 3 bays) = 432 m². Add bays on +X to scale throughput.
+Structural bay **6.0 × 6.0 m**. Module plate **24 × 24 m**
+(4 × 4 bays) = 576 m². The 24 × 18 m, 432 m² plate is retired. AQS-PLAN-001 Rev B.
 Clear heights are to underside of the next slab.
 
 | Level | Name | Clear | Occupancy | Holds |

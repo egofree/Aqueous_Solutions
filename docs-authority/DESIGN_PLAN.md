@@ -18,3 +18,5 @@ Phase 5. Exclusions. Lithography resist, blow-mold die, electrode coat, photovol
 Phase 6. Habitation is four rooms: sleep 16 m², galley 12 m², medical 6 m², wash 6 m². Medical stock is bandage, saline, iodide. No new chemistry.
 
 Phase 7. Plate is 470 m² plus 85 m² azolla, 555 m², 16 bays. The issued 432 m² plate is retired. Placement rebuild is the next solid-model pass. It is not in this revision.
+
+Phase 7 is AQS-PLAN-001 Rev B. Plate is 4 by 4 bays, 24 by 24 m, 576 m2. The 432 m2 plate is retired. Placement report is graph Rev AR. Azolla, film, mister, dual root, struvite, ash, iodide, and the seed bank are placed. Solids are not rebuilt in this pass.
