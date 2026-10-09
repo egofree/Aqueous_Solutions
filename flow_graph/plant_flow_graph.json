@@ -18807,6 +18807,58 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-NPK-0",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "COMPOST_TOILET",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "bed return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NPK-1",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "WORMS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "castings return",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-049"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [
