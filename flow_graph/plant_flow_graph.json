@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AB",
+  "revision": "AC",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -4858,6 +4858,50 @@
       "params": {
         "presence": "present",
         "duty": "Pleurotus on spent lignocellulose. Harvest to habitation. Spent block to compost."
+      }
+    },
+    {
+      "unit_id": "COMPOST_TOILET",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Urine-diverting composting toilet. Solids with cover. Urine to nutrient."
+      }
+    },
+    {
+      "unit_id": "NFIX_BED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "farm",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "Cowpea, clover, peanut. Inoculated. Residue to compost. Azolla already on the rice bed."
       }
     }
   ],
@@ -12262,13 +12306,13 @@
     {
       "stream_id": "IA-FEC-01",
       "from_unit_id": "HABITATION",
-      "to_unit_id": "DIGESTER",
+      "to_unit_id": "COMPOST_TOILET",
       "phase": "S/L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "fecal solids",
+      "carries": "feces",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -16177,6 +16221,188 @@
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-URINE",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "COMPOST_TOILET",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "urine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-COVER",
+      "from_unit_id": "NFIX_BED",
+      "to_unit_id": "COMPOST_TOILET",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cover crop",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-TOIL-SOL",
+      "from_unit_id": "COMPOST_TOILET",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "covered solids",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-TOIL-URN",
+      "from_unit_id": "COMPOST_TOILET",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "urine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NFIX-RES",
+      "from_unit_id": "NFIX_BED",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "legume residue",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-NFIX-FOOD",
+      "from_unit_id": "NFIX_BED",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cowpea and peanut",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.15,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BED-NFIX",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "NFIX_BED",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "bed spill",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.75,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
