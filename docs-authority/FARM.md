@@ -1,10 +1,10 @@
-# Nutrient film
+# Dual root zone
 
-Document number: AQS-DUTY-040
+Document number: AQS-DUTY-041
 Revision: A
 Date: 2026-10-09
 Authority: graph Rev AL. Study. Not a PE stamp.
 
-The film is clarified biofilter water in a gutter at a 1:40 slope. Depth is 1–3 mm. Flow is 1–2 L/min per gutter. A 1 mm screen is enough. There is no nozzle. A pump stop leaves a residual film, so the roots survive longer than they do under the mister. The standby is still the flooded sump.
+Fruiting crops get two root channels. The lower channel is the biofilter film, nitrate and the shared loop, and it returns to the sump. The upper channel is a correction solution, potassium from the urine tank and ferric citrate from the electrowinning iron, and it does not return to the fish tank. Calcium and potassium are not dosed on the same day. They lock each other out.
 
-Lettuce, basil, and spinach are the film crops. Strawberry stays on the mister. Tomato, cucumber, and pepper root too heavily for a film and stay on the organic media. Potato stays on the media. The film does not change the calorie hall.
+Lettuce, basil, and spinach stay on the single film. They are not short of potassium at this duty. Tomato, cucumber, and pepper take the split. Bought DTPA is not used.
