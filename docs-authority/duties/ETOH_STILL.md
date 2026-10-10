@@ -1,19 +1,21 @@
 # ETOH_STILL
 
-Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
 
-1. Basis. No inlet.
+1. Basis. No inlet on the graph.
 
-2. Size. Inlet 0.000 kg/d, 0.00 kW. Envelope 400x400x1500 mm = 0.240 m3.
+2. Size.
+- Envelope: 400 x 400 x 1500 mm.
+- V = 400*400*1500/10^9 = 0.2400 m3.
 
-3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
+4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
 
 5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
+6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. None. Numbers are from the graph rate and the envelope.
+8. Open items. None.

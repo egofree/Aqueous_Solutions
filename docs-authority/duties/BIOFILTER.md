@@ -1,19 +1,24 @@
 # BIOFILTER
 
-Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
 
-1. Basis. IA-TOIL-URN 1.3 kg/d from COMPOST_TOILET.
+1. Basis. Mass inlet IA-CLAR-BIO = 47999.000 kg/d from CLARIFIER.
 
-2. Size. Inlet 47999.000 kg/d, 0.00 kW. Envelope 3000x5000x1200 mm = 18.000 m3. Residence 18.000/(47999.000/(1000*24)) = 540.0 min.
+2. Size.
+- Envelope: 3000 x 5000 x 1200 mm.
+- V = 3000*5000*1200/10^9 = 18.0000 m3.
+- Density 1000 kg/m3.
+- Q = 47999.000/(1000*24) = 1.99996 m3/h.
+- Residence = 18.0000/1.99996 = 9.00 h = 540.0 min.
 
-3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
+4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
 
 5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
+6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. None. Numbers are from the graph rate and the envelope.
+8. Open items. None.

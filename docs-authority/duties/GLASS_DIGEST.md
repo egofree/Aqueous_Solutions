@@ -1,19 +1,24 @@
 # GLASS_DIGEST
 
-Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
 
-1. Basis. HL-Q3-A-HX6 2.079 kW from Q3_A.
+1. Basis. Mass inlet IA-BASE-01 = 118.430 kg/d from BMED_BASE.
 
-2. Size. Inlet 118.430 kg/d, 2.08 kW. Residence 2.467/(118.430/(1000*24)) = 30000.0 min. Exchanger area 2.08*1000/(500*10) = 0.416 m2 at 10 K and 500 W/m2K.
+2. Size.
+- No issued envelope. V taken as 0.050 m3 for the residence check.
+- Density 1000 kg/m3.
+- Q = 118.430/(1000*24) = 0.00493 m3/h.
+- Residence = 0.0500/0.00493 = 10.13 h = 608.0 min.
+- Heat: A = 2.08*1000/(500*10) = 0.416 m2. U = 500 W/m2K, approach 10 K.
 
-3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
+4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
 
 5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
+6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. None. Numbers are from the graph rate and the envelope.
+8. Open items. None.
