@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,ZnBr2 charge (PV/RECT surplus),inlet,200
-N2,DN50,Class 150,NaBr after ORP,inlet,200
-N3,DN15,Class 150,electrolyte water make-up,inlet,200
-N4,DN15,Class 150,charge into the battery,inlet,200
+N1,DN15,Class 150,ZnBr2 charge (PV/RECT surplus),inlet,160
+N2,DN50,Class 150,NaBr after ORP,inlet,160
+N3,DN15,Class 150,electrolyte water make-up,inlet,160
+N4,DN15,Class 150,charge into the battery,inlet,160
 N5,DN15,Class 150,ZnBr2 discharge to bus,outlet,600
 N6,DN50,Class 150,Br2 vapor,outlet,600
 N7,DN15,Class 150,electrolyte bleed,outlet,600

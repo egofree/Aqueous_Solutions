@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,crude MeOH,inlet,200
-N2,DN15,Class 150,biogenic MeOH,inlet,200
-N3,DN15,Class 150,methane,inlet,200
-N4,DN15,Class 150,compost condensate to the methanol tank,inlet,200
+N1,DN15,Class 150,crude MeOH,inlet,160
+N2,DN15,Class 150,biogenic MeOH,inlet,160
+N3,DN15,Class 150,methane,inlet,160
+N4,DN15,Class 150,compost condensate to the methanol tank,inlet,160
 N5,DN15,Class 150,MeOH fuel,outlet,600
 N6,DN15,Class 150,tank draw,outlet,600
 N7,DN15,Class 150,methanol to formaldehyde,outlet,600

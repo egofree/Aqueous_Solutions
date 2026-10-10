@@ -1,7 +1,7 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,H2 fuel,inlet,200
-N2,DN25,Class 150,O2 oxidizer,inlet,200
-N3,DN15,Class 150,hydrogen into the cell,inlet,200
+N1,DN15,Class 150,H2 fuel,inlet,160
+N2,DN25,Class 150,O2 oxidizer,inlet,160
+N3,DN15,Class 150,hydrogen into the cell,inlet,160
 N4,DN15,Class 150,FC DC,outlet,600
 N5,DN25,Class 150,PEM product H2O,outlet,600
 N6,DN15,Class 150,heat < 80 °C,outlet,600

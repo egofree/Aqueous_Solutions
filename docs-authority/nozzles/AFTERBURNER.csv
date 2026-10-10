@@ -1,7 +1,7 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,NCG,inlet,200
-N2,DN15,Class 150,organics,inlet,200
-N3,DN15,Class 150,fuel into the afterburner,inlet,200
+N1,DN15,Class 150,NCG,inlet,160
+N2,DN15,Class 150,organics,inlet,160
+N3,DN15,Class 150,fuel into the afterburner,inlet,160
 N4,DN15,Class 150,Q1 flue, not Q4,outlet,600
 N5,DN15,Class 150,Q1 flue, not Q4,outlet,600
 N6,DN15,Class 150,flue,outlet,600

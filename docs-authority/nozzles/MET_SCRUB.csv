@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN50,Class 150,MFG metal-aisle capture feed,inlet,200
-N2,DN50,Class 150,metal-aisle fume / mist / dust,inlet,200
-N3,DN15,Class 150,draw fume,inlet,200
-N4,DN15,Class 150,metal fines and aqueous scrub liquor,outlet,600
-N5,DN15,Class 150,organic mist,outlet,600
+N1,DN50,Class 150,MFG metal-aisle capture feed,inlet,400
+N2,DN50,Class 150,metal-aisle fume / mist / dust,inlet,400
+N3,DN15,Class 150,draw fume,inlet,400
+N4,DN15,Class 150,metal fines and aqueous scrub liquor,outlet,1500
+N5,DN15,Class 150,organic mist,outlet,1500
 N6,DN15,Class 150,drain,bottom,50
-N7,DN15,Class 150,vent,top,800
+N7,DN15,Class 150,vent,top,2000

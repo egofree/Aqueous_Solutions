@@ -1,5 +1,5 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,cathode sheet,inlet,200
+N1,DN15,Class 150,cathode sheet,inlet,160
 N2,DN15,Class 150,billet / melt / charge,outlet,600
 N3,DN15,Class 150,melt to the mill,outlet,600
 N4,DN15,Class 150,melt to the atomizer,outlet,600

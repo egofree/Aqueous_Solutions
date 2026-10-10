@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,fractionator cut,inlet,200
-N2,DN15,Class 150,fractionator cut,inlet,200
-N3,DN25,Class 150,metals/Si,inlet,200
-N4,DN25,Class 150,glass and ceramic stock,inlet,200
+N1,DN15,Class 150,fractionator cut,inlet,160
+N2,DN15,Class 150,fractionator cut,inlet,160
+N3,DN25,Class 150,metals/Si,inlet,160
+N4,DN25,Class 150,glass and ceramic stock,inlet,160
 N5,DN15,Class 150,scrap,outlet,600
 N6,DN15,Class 150,metal scrap,outlet,600
 N7,DN50,Class 150,goods in service,outlet,600

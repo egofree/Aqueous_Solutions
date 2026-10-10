@@ -1,7 +1,7 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,downhill heat pipe,inlet,200
-N2,DN15,Class 150,cross-tie, hot to cold only,inlet,200
-N3,DN15,Class 150,leach heater trim,inlet,200
+N1,DN15,Class 150,downhill heat pipe,inlet,160
+N2,DN15,Class 150,cross-tie, hot to cold only,inlet,160
+N3,DN15,Class 150,leach heater trim,inlet,160
 N4,DN15,Class 150,downhill heat pipe,outlet,600
 N5,DN15,Class 150,HX-4 Q3 process heat (dryer jacket),outlet,600
 N6,DN15,Class 150,HX-5 Q3 process heat (leach CSTR jacket),outlet,600

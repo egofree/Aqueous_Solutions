@@ -1,9 +1,9 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,urine to the biofilter,inlet,200
-N2,DN50,Class 150,clarified water,inlet,200
-N3,DN50,Class 150,nitrate water,outlet,600
-N4,DN50,Class 150,nitrate water,outlet,600
-N5,DN50,Class 150,nitrate water,outlet,600
-N6,DN15,Class 150,biofilter bleed to the nutrient tank,outlet,600
+N1,DN15,Class 150,urine to the biofilter,inlet,240
+N2,DN50,Class 150,clarified water,inlet,240
+N3,DN50,Class 150,nitrate water,outlet,900
+N4,DN50,Class 150,nitrate water,outlet,900
+N5,DN50,Class 150,nitrate water,outlet,900
+N6,DN15,Class 150,biofilter bleed to the nutrient tank,outlet,900
 N7,DN15,Class 150,drain,bottom,50
-N8,DN15,Class 150,vent,top,800
+N8,DN15,Class 150,vent,top,1200

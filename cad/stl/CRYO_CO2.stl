@@ -85,86 +85,86 @@ solid CRYO_CO2
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.2000
-      vertex 0.2500 0.0500 0.2000
-      vertex 0.2500 0.2500 0.2000
+      vertex 0.0500 0.0500 0.3000
+      vertex 0.2500 0.0500 0.3000
+      vertex 0.2500 0.2500 0.3000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.2000
-      vertex 0.2500 0.2500 0.2000
-      vertex 0.0500 0.2500 0.2000
+      vertex 0.0500 0.0500 0.3000
+      vertex 0.2500 0.2500 0.3000
+      vertex 0.0500 0.2500 0.3000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 1.8000
-      vertex 0.2500 0.0500 1.8000
-      vertex 0.2500 0.2500 1.8000
+      vertex 0.0500 0.0500 1.7000
+      vertex 0.2500 0.0500 1.7000
+      vertex 0.2500 0.2500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 1.8000
-      vertex 0.2500 0.2500 1.8000
-      vertex 0.0500 0.2500 1.8000
+      vertex 0.0500 0.0500 1.7000
+      vertex 0.2500 0.2500 1.7000
+      vertex 0.0500 0.2500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.2000
-      vertex 0.2500 0.0500 0.2000
-      vertex 0.2500 0.0500 1.8000
+      vertex 0.0500 0.0500 0.3000
+      vertex 0.2500 0.0500 0.3000
+      vertex 0.2500 0.0500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.2000
-      vertex 0.2500 0.0500 1.8000
-      vertex 0.0500 0.0500 1.8000
+      vertex 0.0500 0.0500 0.3000
+      vertex 0.2500 0.0500 1.7000
+      vertex 0.0500 0.0500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.2500 0.2500 0.2000
-      vertex 0.0500 0.2500 0.2000
-      vertex 0.0500 0.2500 1.8000
+      vertex 0.2500 0.2500 0.3000
+      vertex 0.0500 0.2500 0.3000
+      vertex 0.0500 0.2500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.2500 0.2500 0.2000
-      vertex 0.0500 0.2500 1.8000
-      vertex 0.2500 0.2500 1.8000
+      vertex 0.2500 0.2500 0.3000
+      vertex 0.0500 0.2500 1.7000
+      vertex 0.2500 0.2500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.2000
-      vertex 0.0500 0.2500 0.2000
-      vertex 0.0500 0.2500 1.8000
+      vertex 0.0500 0.0500 0.3000
+      vertex 0.0500 0.2500 0.3000
+      vertex 0.0500 0.2500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.2000
-      vertex 0.0500 0.2500 1.8000
-      vertex 0.0500 0.0500 1.8000
+      vertex 0.0500 0.0500 0.3000
+      vertex 0.0500 0.2500 1.7000
+      vertex 0.0500 0.0500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.2500 0.0500 0.2000
-      vertex 0.2500 0.2500 0.2000
-      vertex 0.2500 0.2500 1.8000
+      vertex 0.2500 0.0500 0.3000
+      vertex 0.2500 0.2500 0.3000
+      vertex 0.2500 0.2500 1.7000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.2500 0.0500 0.2000
-      vertex 0.2500 0.2500 1.8000
-      vertex 0.2500 0.0500 1.8000
+      vertex 0.2500 0.0500 0.3000
+      vertex 0.2500 0.2500 1.7000
+      vertex 0.2500 0.0500 1.7000
     endloop
   endfacet
 endsolid CRYO_CO2

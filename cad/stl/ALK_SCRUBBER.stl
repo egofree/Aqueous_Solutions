@@ -85,16 +85,16 @@ solid ALK_SCRUBBER
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.4000
-      vertex 0.3500 0.0500 0.4000
-      vertex 0.3500 0.3500 0.4000
+      vertex 0.0500 0.0500 0.6000
+      vertex 0.3500 0.0500 0.6000
+      vertex 0.3500 0.3500 0.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.4000
-      vertex 0.3500 0.3500 0.4000
-      vertex 0.0500 0.3500 0.4000
+      vertex 0.0500 0.0500 0.6000
+      vertex 0.3500 0.3500 0.6000
+      vertex 0.0500 0.3500 0.6000
     endloop
   endfacet
   facet normal 0 0 0
@@ -113,56 +113,56 @@ solid ALK_SCRUBBER
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.4000
-      vertex 0.3500 0.0500 0.4000
+      vertex 0.0500 0.0500 0.6000
+      vertex 0.3500 0.0500 0.6000
       vertex 0.3500 0.0500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.4000
+      vertex 0.0500 0.0500 0.6000
       vertex 0.3500 0.0500 1.6000
       vertex 0.0500 0.0500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.3500 0.3500 0.4000
-      vertex 0.0500 0.3500 0.4000
+      vertex 0.3500 0.3500 0.6000
+      vertex 0.0500 0.3500 0.6000
       vertex 0.0500 0.3500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.3500 0.3500 0.4000
+      vertex 0.3500 0.3500 0.6000
       vertex 0.0500 0.3500 1.6000
       vertex 0.3500 0.3500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.4000
-      vertex 0.0500 0.3500 0.4000
+      vertex 0.0500 0.0500 0.6000
+      vertex 0.0500 0.3500 0.6000
       vertex 0.0500 0.3500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.4000
+      vertex 0.0500 0.0500 0.6000
       vertex 0.0500 0.3500 1.6000
       vertex 0.0500 0.0500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.3500 0.0500 0.4000
-      vertex 0.3500 0.3500 0.4000
+      vertex 0.3500 0.0500 0.6000
+      vertex 0.3500 0.3500 0.6000
       vertex 0.3500 0.3500 1.6000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.3500 0.0500 0.4000
+      vertex 0.3500 0.0500 0.6000
       vertex 0.3500 0.3500 1.6000
       vertex 0.3500 0.0500 1.6000
     endloop

@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,N2,inlet,200
-N2,DN15,Class 150,B/P/As concentrate; BBr₃ / POCl₃ class,inlet,200
-N3,DN15,Class 150,colloidal silica slurry,inlet,200
-N4,DN25,Class 150,fab UPW,inlet,200
+N1,DN15,Class 150,N2,inlet,160
+N2,DN15,Class 150,B/P/As concentrate; BBr₃ / POCl₃ class,inlet,160
+N3,DN15,Class 150,colloidal silica slurry,inlet,160
+N4,DN25,Class 150,fab UPW,inlet,160
 N5,DN15,Class 150,spent slurry and etch liquor,outlet,600
 N6,DN15,Class 150,solvent and photoresist,outlet,600
 N7,DN15,Class 150,kerf,outlet,600

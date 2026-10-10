@@ -1,11 +1,11 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,larvae,inlet,200
-N2,DN15,Class 150,duckweed,inlet,200
-N3,DN15,Class 150,azolla,inlet,200
-N4,DN50,Class 150,return,inlet,200
-N5,DN15,Class 150,fish,outlet,600
-N6,DN15,Class 150,detritus,outlet,600
-N7,DN50,Class 150,tank water,outlet,600
-N8,DN15,Class 150,fish solids liquor to the nutrient tank,outlet,600
+N1,DN15,Class 150,larvae,inlet,80
+N2,DN15,Class 150,duckweed,inlet,80
+N3,DN15,Class 150,azolla,inlet,80
+N4,DN50,Class 150,return,inlet,80
+N5,DN15,Class 150,fish,outlet,300
+N6,DN15,Class 150,detritus,outlet,300
+N7,DN50,Class 150,tank water,outlet,300
+N8,DN15,Class 150,fish solids liquor to the nutrient tank,outlet,300
 N9,DN15,Class 150,drain,bottom,50
-N10,DN15,Class 150,vent,top,800
+N10,DN15,Class 150,vent,top,400

@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "BA",
+  "revision": "BB",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -56,7 +56,7 @@
         },
         "duty": "Inlet 27.360 kg/d, 0.00 kW. Residence 0.570/(27.360/(1000*24)) = 30000.0 min.",
         "presence": "present",
-        "internals": "2 m pall rings, distributor, demister"
+        "internals": "pall-ring bed, distributor, demister"
       },
       "continuous_kw": null
     },
@@ -133,7 +133,8 @@
             }
           ]
         },
-        "duty": "Inlet 5.000 kg/d, 2.77 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min. Exchanger area 2.77*1000/(500*10) = 0.554 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 5.000 kg/d, 2.77 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min. Exchanger area 2.77*1000/(500*10) = 0.554 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -163,7 +164,8 @@
           ]
         },
         "duty": "Inlet 111.170 kg/d, 0.00 kW. Residence 2.316/(111.170/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -187,7 +189,7 @@
       "params": {
         "presence": "present",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "internals": "2 m pall rings, distributor, demister"
+        "internals": "pall-ring bed, distributor, demister"
       }
     },
     {
@@ -245,7 +247,8 @@
             }
           ]
         },
-        "duty": "Inlet 50.000 kg/d, 2.50 kW. Residence 1.042/(50.000/(1000*24)) = 30000.0 min. Exchanger area 2.50*1000/(500*10) = 0.500 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 50.000 kg/d, 2.50 kW. Residence 1.042/(50.000/(1000*24)) = 30000.0 min. Exchanger area 2.50*1000/(500*10) = 0.500 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -261,7 +264,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 6.820 kg/d, 0.00 kW. Residence 0.142/(6.820/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -300,7 +304,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "pitched-blade agitator"
       },
       "continuous_kw": null
     },
@@ -316,7 +321,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 108.195 kg/d, 0.00 kW. Residence 2.254/(108.195/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 108.195 kg/d, 0.00 kW. Residence 2.254/(108.195/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -332,7 +338,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 118.700 kg/d, 0.00 kW. Residence 2.473/(118.700/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 118.700 kg/d, 0.00 kW. Residence 2.473/(118.700/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -384,7 +391,8 @@
             }
           ]
         },
-        "duty": "Inlet 140.520 kg/d, 0.00 kW. Residence 2.928/(140.520/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 140.520 kg/d, 0.00 kW. Residence 2.928/(140.520/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -405,7 +413,8 @@
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
         "boundary_kind": "dock freight door (logical)",
-        "duty": "Inlet 0.000 kg/d, 50.25 kW. Exchanger area 50.25*1000/(500*10) = 10.050 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 50.25 kW. Exchanger area 50.25*1000/(500*10) = 10.050 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -425,7 +434,8 @@
         "solid": "pipe",
         "ref": "oil_line.py / ANIMATION_BRIEF D6",
         "duty": "Inlet 1.405 kg/d, 0.00 kW. Residence 0.050/(1.405/(1000*24)) = 51260.1 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -449,7 +459,8 @@
         "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
         "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
         "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
-        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K.",
+        "internals": "dip pipe, stilling well"
       }
     },
     {
@@ -487,7 +498,8 @@
           ]
         },
         "duty": "Inlet 3.950 kg/d, 0.00 kW. Residence 0.082/(3.950/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -528,7 +540,8 @@
           ]
         },
         "duty": "Inlet 3753.710 kg/d, 0.00 kW. Residence 78.202/(3753.710/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -544,7 +557,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 27.362 kg/d, 0.00 kW. Residence 0.570/(27.362/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 27.362 kg/d, 0.00 kW. Residence 0.570/(27.362/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -561,7 +575,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 79.040 kg/d, 0.00 kW. Residence 1.647/(79.040/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -578,7 +593,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.052 kg/d, 0.00 kW. Residence 0.050/(0.052/(1000*24)) = 1381957.8 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -610,7 +626,8 @@
             }
           ]
         },
-        "duty": "Inlet 30.000 kg/d, 0.00 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 30.000 kg/d, 0.00 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min.",
+        "internals": "packed section, vacuum jacket"
       }
     },
     {
@@ -626,7 +643,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 4.28 kW. Exchanger area 4.28*1000/(500*10) = 0.857 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -649,7 +667,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min.",
+        "internals": "packed section, vacuum jacket"
       }
     },
     {
@@ -665,7 +684,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 0.54 kW. Exchanger area 0.54*1000/(500*10) = 0.108 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "plate pack"
       },
       "continuous_kw": null
     },
@@ -682,7 +702,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 243.280 kg/d, 0.00 kW. Residence 5.068/(243.280/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": null
     },
@@ -700,7 +721,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min.",
+        "internals": "packed section, vacuum jacket"
       }
     },
     {
@@ -793,7 +815,7 @@
           ]
         },
         "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
-        "internals": "21 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -846,7 +868,7 @@
         },
         "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "21 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       },
       "continuous_kw": null
     },
@@ -899,7 +921,7 @@
         },
         "duty": "8 plates at 50 mm. Rack 600 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "8 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -951,7 +973,7 @@
         },
         "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1003,7 +1025,7 @@
         },
         "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1055,7 +1077,7 @@
         },
         "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1107,7 +1129,7 @@
         },
         "duty": "25 plates at 50 mm. Rack 1450 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "25 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1159,7 +1181,7 @@
         },
         "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1212,7 +1234,7 @@
         },
         "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "21 cathode plates, edge strips, PbO2 anodes, launder"
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder"
       },
       "continuous_kw": null
     },
@@ -1243,7 +1265,8 @@
           ]
         },
         "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "dip pipe, stilling well"
       },
       "continuous_kw": null
     },
@@ -1290,7 +1313,8 @@
           ]
         },
         "duty": "Inlet 376.100 kg/d, 0.00 kW. Residence 7.835/(376.100/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -1333,7 +1357,8 @@
           ]
         },
         "duty": "Inlet 135.900 kg/d, 0.00 kW. Residence 2.831/(135.900/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -1391,7 +1416,8 @@
             }
           ]
         },
-        "duty": "Inlet 38.400 kg/d, 4.60 kW. Residence 0.800/(38.400/(1000*24)) = 30000.0 min. Exchanger area 4.60*1000/(500*10) = 0.920 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 38.400 kg/d, 4.60 kW. Residence 0.800/(38.400/(1000*24)) = 30000.0 min. Exchanger area 4.60*1000/(500*10) = 0.920 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -1437,7 +1463,8 @@
           ]
         },
         "duty": "Inlet 3.200 kg/d, 0.00 kW. Residence 0.067/(3.200/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -1460,7 +1487,8 @@
         "Q_surplus_kW_th": 0.0,
         "survey_status": "design_survey_locked",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -1486,7 +1514,8 @@
         "T_source_K": 285.0,
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -1502,7 +1531,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -1568,7 +1598,8 @@
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
         "survey_status": "design_survey_locked",
-        "duty": "Inlet 0.000 kg/d, 11.76 kW. Exchanger area 11.76*1000/(500*10) = 2.352 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 11.76 kW. Exchanger area 11.76*1000/(500*10) = 2.352 m2 at 10 K and 500 W/m2K.",
+        "internals": "plate pack"
       }
     },
     {
@@ -1628,7 +1659,8 @@
             }
           ]
         },
-        "duty": "Inlet 118.430 kg/d, 2.08 kW. Residence 2.467/(118.430/(1000*24)) = 30000.0 min. Exchanger area 2.08*1000/(500*10) = 0.416 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 118.430 kg/d, 2.08 kW. Residence 2.467/(118.430/(1000*24)) = 30000.0 min. Exchanger area 2.08*1000/(500*10) = 0.416 m2 at 10 K and 500 W/m2K.",
+        "internals": "pitched-blade agitator"
       }
     },
     {
@@ -1644,7 +1676,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 339.060 kg/d, 0.00 kW. Residence 7.064/(339.060/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -1723,7 +1756,8 @@
             }
           ]
         },
-        "duty": "Inlet 18909.000 kg/d, 5.00 kW. Residence 393.938/(18909.000/(1000*24)) = 30000.0 min. Exchanger area 5.00*1000/(500*10) = 1.000 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 18909.000 kg/d, 5.00 kW. Residence 393.938/(18909.000/(1000*24)) = 30000.0 min. Exchanger area 5.00*1000/(500*10) = 1.000 m2 at 10 K and 500 W/m2K.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -1745,7 +1779,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -1789,7 +1824,8 @@
             }
           ]
         },
-        "duty": "Inlet 597.331 kg/d, 3.00 kW. Residence 12.444/(597.331/(1000*24)) = 30000.0 min. Exchanger area 3.00*1000/(500*10) = 0.600 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 597.331 kg/d, 3.00 kW. Residence 12.444/(597.331/(1000*24)) = 30000.0 min. Exchanger area 3.00*1000/(500*10) = 0.600 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -1817,7 +1853,8 @@
           "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
         },
         "duty": "Inlet 12.170 kg/d, 0.00 kW. Residence 0.254/(12.170/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "pipe only"
       }
     },
     {
@@ -1834,7 +1871,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 2.820 kg/d, 0.00 kW. Residence 0.059/(2.820/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 2.820 kg/d, 0.00 kW. Residence 0.059/(2.820/(1000*24)) = 30000.0 min.",
+        "internals": "pipe only"
       }
     },
     {
@@ -1847,7 +1885,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 243.280 kg/d, 0.00 kW. Residence 5.068/(243.280/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "pipe only"
       }
     },
     {
@@ -1863,7 +1902,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "pipe only"
       },
       "continuous_kw": null
     },
@@ -1895,7 +1935,8 @@
             }
           ]
         },
-        "duty": "Inlet 67.300 kg/d, 0.00 kW. Residence 1.402/(67.300/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 67.300 kg/d, 0.00 kW. Residence 1.402/(67.300/(1000*24)) = 30000.0 min.",
+        "internals": "pipe only"
       }
     },
     {
@@ -1911,7 +1952,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 597.330 kg/d, 0.00 kW. Residence 12.444/(597.330/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -1948,7 +1990,8 @@
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "Inlet 0.000 kg/d, 4.57 kW. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "plate pack"
       }
     },
     {
@@ -1995,7 +2038,8 @@
         "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2073,7 +2117,7 @@
           ]
         },
         "duty": "Inlet 3753.710 kg/d, 7.94 kW. Envelope 2000x1200x1400 mm = 3.360 m3. Residence 3.360/(3753.710/(1100*24)) = 1417.9 min. Exchanger area 7.94*1000/(500*10) = 1.588 m2 at 10 K and 500 W/m2K.",
-        "internals": "weir on +X, floor auger, jacket"
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2094,7 +2138,8 @@
         "boundary_kind": "electrical accounting (S17/S20 sum)",
         "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2115,7 +2160,8 @@
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "Inlet 5.622 kg/d, 0.00 kW. Residence 0.117/(5.622/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2173,7 +2219,8 @@
             }
           ]
         },
-        "duty": "Inlet 8.370 kg/d, 0.87 kW. Residence 0.174/(8.370/(1000*24)) = 30000.0 min. Exchanger area 0.87*1000/(500*10) = 0.174 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 8.370 kg/d, 0.87 kW. Residence 0.174/(8.370/(1000*24)) = 30000.0 min. Exchanger area 0.87*1000/(500*10) = 0.174 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2209,7 +2256,8 @@
           ]
         },
         "duty": "Inlet 0.360 kg/d, 0.00 kW. Residence 0.050/(0.360/(1000*24)) = 200000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2252,7 +2300,8 @@
             }
           ]
         },
-        "duty": "Inlet 6.900 kg/d, 0.00 kW. Residence 0.144/(6.900/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 6.900 kg/d, 0.00 kW. Residence 0.144/(6.900/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2282,7 +2331,8 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 8.500 kg/d, 0.00 kW. Residence 0.177/(8.500/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 8.500 kg/d, 0.00 kW. Residence 0.177/(8.500/(1000*24)) = 30000.0 min.",
+        "internals": "dip pipe, stilling well"
       }
     },
     {
@@ -2298,7 +2348,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2315,7 +2366,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "plate pack"
       },
       "continuous_kw": null
     },
@@ -2354,7 +2406,8 @@
           ]
         },
         "duty": "Inlet 13.990 kg/d, 0.00 kW. Residence 0.291/(13.990/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2394,7 +2447,7 @@
         },
         "duty": "Inlet 2.460 kg/d, 0.00 kW. Residence 0.051/(2.460/(1000*24)) = 30000.0 min.",
         "presence": "present",
-        "internals": "2 m pall rings, distributor, demister"
+        "internals": "pall-ring bed, distributor, demister"
       },
       "continuous_kw": null
     },
@@ -2447,7 +2500,8 @@
             }
           ]
         },
-        "duty": "Inlet 217.370 kg/d, 0.00 kW. Residence 4.529/(217.370/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 217.370 kg/d, 0.00 kW. Residence 4.529/(217.370/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2460,7 +2514,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 5.000 kg/d, 0.00 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "pipe only"
       }
     },
     {
@@ -2492,7 +2547,8 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2514,7 +2570,7 @@
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "Inlet 239.620 kg/d, 0.00 kW. Residence 4.992/(239.620/(1000*24)) = 30000.0 min.",
         "presence": "present",
-        "internals": "2 m pall rings, distributor, demister"
+        "internals": "pall-ring bed, distributor, demister"
       }
     },
     {
@@ -2536,7 +2592,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 140.640 kg/d, 0.00 kW. Residence 2.930/(140.640/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 140.640 kg/d, 0.00 kW. Residence 2.930/(140.640/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2590,7 +2647,8 @@
           ]
         },
         "duty": "Inlet 33.000 kg/d, 0.30 kW. Residence 0.688/(33.000/(1000*24)) = 30000.0 min. Exchanger area 0.30*1000/(500*10) = 0.060 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2607,7 +2665,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 28.905 kg/d, 0.00 kW. Residence 0.602/(28.905/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2638,7 +2697,8 @@
           ]
         },
         "duty": "Inlet 33.000 kg/d, 0.00 kW. Residence 0.688/(33.000/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2669,7 +2729,8 @@
           ]
         },
         "duty": "Inlet 3971.080 kg/d, 0.00 kW. Residence 82.731/(3971.080/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2684,7 +2745,8 @@
       "params": {
         "ref": "oil_line.py",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2698,7 +2760,8 @@
       "params": {
         "ref": "oil_line.py",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2712,7 +2775,8 @@
       "params": {
         "ref": "oil_line.py",
         "duty": "Inlet 1.405 kg/d, 0.00 kW. Residence 0.050/(1.405/(1000*24)) = 51260.1 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2726,7 +2790,8 @@
       "params": {
         "ref": "oil_line.py",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2750,7 +2815,8 @@
         "module_kw": 70,
         "count": 1,
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2782,7 +2848,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 5.51 kW. Exchanger area 5.51*1000/(500*10) = 1.102 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "pipe only"
       },
       "continuous_kw": null
     },
@@ -2805,7 +2872,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 23.32 kW. Exchanger area 23.32*1000/(500*10) = 4.664 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 23.32 kW. Exchanger area 23.32*1000/(500*10) = 4.664 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2825,7 +2893,8 @@
         "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2839,7 +2908,8 @@
       "params": {
         "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2870,7 +2940,8 @@
             }
           ]
         },
-        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K.",
+        "internals": "dip pipe, stilling well"
       }
     },
     {
@@ -2886,7 +2957,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2903,7 +2975,8 @@
       "modules": [],
       "params": {
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -2922,7 +2995,8 @@
       "params": {
         "kW": 60,
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -2941,7 +3015,8 @@
         "presence": "present",
         "enclosure": "greenhouse",
         "note": "Enclosed. Vapor to the AHU, condensate to the roof tank.",
-        "duty": "Inlet 40.000 kg/d, 0.00 kW. Residence 0.833/(40.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 40.000 kg/d, 0.00 kW. Residence 0.833/(40.000/(1000*24)) = 30000.0 min.",
+        "internals": "pipe only"
       }
     },
     {
@@ -2987,7 +3062,8 @@
             }
           ]
         },
-        "duty": "Inlet 66.500 kg/d, 0.00 kW. Residence 1.385/(66.500/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 66.500 kg/d, 0.00 kW. Residence 1.385/(66.500/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3023,7 +3099,8 @@
             }
           ]
         },
-        "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3053,7 +3130,8 @@
           ]
         },
         "duty": "Inlet 6.839 kg/d, 0.00 kW. Residence 0.142/(6.839/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3069,7 +3147,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 3.250 kg/d, 0.00 kW. Residence 0.068/(3.250/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 3.250 kg/d, 0.00 kW. Residence 0.068/(3.250/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3085,7 +3164,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min."
+        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3101,7 +3181,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 1.500 kg/d, 0.00 kW. Residence 0.050/(1.500/(1000*24)) = 48000.0 min."
+        "duty": "Inlet 1.500 kg/d, 0.00 kW. Residence 0.050/(1.500/(1000*24)) = 48000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3139,7 +3220,8 @@
             }
           ]
         },
-        "duty": "Inlet 0.270 kg/d, 0.00 kW. Residence 0.050/(0.270/(1000*24)) = 266666.7 min."
+        "duty": "Inlet 0.270 kg/d, 0.00 kW. Residence 0.050/(0.270/(1000*24)) = 266666.7 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3177,7 +3259,8 @@
             }
           ]
         },
-        "duty": "Inlet 0.646 kg/d, 0.00 kW. Residence 0.050/(0.646/(1000*24)) = 111524.2 min."
+        "duty": "Inlet 0.646 kg/d, 0.00 kW. Residence 0.050/(0.646/(1000*24)) = 111524.2 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3193,7 +3276,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 3.000 kg/d, 0.00 kW. Residence 0.062/(3.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 3.000 kg/d, 0.00 kW. Residence 0.062/(3.000/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3209,7 +3293,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 3.300 kg/d, 0.00 kW. Residence 0.069/(3.300/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 3.300 kg/d, 0.00 kW. Residence 0.069/(3.300/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3225,7 +3310,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min."
+        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min.",
+        "internals": "shell and nozzles"
       },
       "continuous_kw": null
     },
@@ -3281,7 +3367,8 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "Inlet 852.473 kg/d, 6.67 kW. Residence 17.760/(852.473/(1000*24)) = 30000.0 min. Exchanger area 6.67*1000/(500*10) = 1.333 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 852.473 kg/d, 6.67 kW. Residence 17.760/(852.473/(1000*24)) = 30000.0 min. Exchanger area 6.67*1000/(500*10) = 1.333 m2 at 10 K and 500 W/m2K.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3318,7 +3405,7 @@
         },
         "duty": "Inlet 852.470 kg/d, 0.00 kW. Residence 17.760/(852.470/(1000*24)) = 30000.0 min.",
         "presence": "present",
-        "internals": "2 m pall rings, distributor, demister"
+        "internals": "pall-ring bed, distributor, demister"
       }
     },
     {
@@ -3339,7 +3426,8 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.620 kg/d, 0.00 kW. Residence 0.050/(0.620/(1000*24)) = 116129.0 min."
+        "duty": "Inlet 0.620 kg/d, 0.00 kW. Residence 0.050/(0.620/(1000*24)) = 116129.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3383,7 +3471,8 @@
           ]
         },
         "duty": "Inlet 36.820 kg/d, 0.00 kW. Residence 0.767/(36.820/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3419,7 +3508,8 @@
           ]
         },
         "duty": "Inlet 36.818 kg/d, 0.00 kW. Residence 0.767/(36.818/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3487,7 +3577,8 @@
           ]
         },
         "duty": "Inlet 30.000 kg/d, 1.86 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min. Exchanger area 1.86*1000/(500*10) = 0.372 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3512,7 +3603,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 104.500 kg/d, 0.00 kW. Residence 2.177/(104.500/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3551,7 +3643,8 @@
           ]
         },
         "duty": "Inlet 10.000 kg/d, 0.00 kW. Residence 0.208/(10.000/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3572,7 +3665,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3593,7 +3687,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3614,7 +3709,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3661,7 +3757,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3684,7 +3781,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3707,7 +3805,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3773,7 +3872,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "Inlet 0.000 kg/d, 0.00 kW.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -3831,7 +3931,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 1.38 kW. Exchanger area 1.38*1000/(500*10) = 0.277 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -3903,7 +4004,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 2.03 kW. Exchanger area 2.03*1000/(500*10) = 0.405 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -3975,7 +4077,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 10.05 kW. Exchanger area 10.05*1000/(500*10) = 2.010 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -4033,7 +4136,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 2.29 kW. Exchanger area 2.29*1000/(500*10) = 0.457 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -4091,7 +4195,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 1.38 kW. Exchanger area 1.38*1000/(500*10) = 0.277 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -4163,7 +4268,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 2.03 kW. Exchanger area 2.03*1000/(500*10) = 0.405 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -4235,7 +4341,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 10.05 kW. Exchanger area 10.05*1000/(500*10) = 2.010 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -4293,7 +4400,8 @@
           ]
         },
         "duty": "Inlet 0.000 kg/d, 2.29 kW. Exchanger area 2.29*1000/(500*10) = 0.457 m2 at 10 K and 500 W/m2K.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "stratification plate"
       }
     },
     {
@@ -4316,7 +4424,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min."
+        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4339,7 +4448,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 129.630 kg/d, 0.00 kW. Residence 2.701/(129.630/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 129.630 kg/d, 0.00 kW. Residence 2.701/(129.630/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4362,7 +4472,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 0.350 kg/d, 0.00 kW. Residence 0.050/(0.350/(1000*24)) = 205714.3 min."
+        "duty": "Inlet 0.350 kg/d, 0.00 kW. Residence 0.050/(0.350/(1000*24)) = 205714.3 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4385,7 +4496,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 0.940 kg/d, 0.00 kW. Residence 0.050/(0.940/(1000*24)) = 76595.7 min."
+        "duty": "Inlet 0.940 kg/d, 0.00 kW. Residence 0.050/(0.940/(1000*24)) = 76595.7 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -4408,7 +4520,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 8.690 kg/d, 0.00 kW. Residence 0.181/(8.690/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 8.690 kg/d, 0.00 kW. Residence 0.181/(8.690/(1000*24)) = 30000.0 min.",
+        "internals": "dip pipe, stilling well"
       }
     },
     {
@@ -4431,7 +4544,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 3.870 kg/d, 0.00 kW. Residence 0.081/(3.870/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 3.870 kg/d, 0.00 kW. Residence 0.081/(3.870/(1000*24)) = 30000.0 min.",
+        "internals": "shell and nozzles"
       }
     },
     {
@@ -4454,7 +4568,8 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "Inlet 3.190 kg/d, 0.00 kW. Residence 0.066/(3.190/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 3.190 kg/d, 0.00 kW. Residence 0.066/(3.190/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4470,7 +4585,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 243.890 kg/d, 0.00 kW. Residence 5.081/(243.890/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 243.890 kg/d, 0.00 kW. Residence 5.081/(243.890/(1000*24)) = 30000.0 min.",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": {
         "value": 18.0,
@@ -4493,7 +4609,8 @@
       "params": {
         "presence": "present",
         "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -4516,7 +4633,8 @@
       "params": {
         "presence": "present",
         "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -4539,7 +4657,8 @@
       "params": {
         "presence": "present",
         "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min.",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -4562,7 +4681,8 @@
       "params": {
         "presence": "present",
         "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -4585,7 +4705,8 @@
       "params": {
         "presence": "present",
         "duty": "Inlet 5.300 kg/d, 0.00 kW. Residence 0.110/(5.300/(1000*24)) = 30000.0 min.",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
+        "internals": "packed section, vacuum jacket"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -4613,7 +4734,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 1.000 kg/d, 0.00 kW. Residence 0.050/(1.000/(1000*24)) = 72000.0 min."
+        "duty": "Inlet 1.000 kg/d, 0.00 kW. Residence 0.050/(1.000/(1000*24)) = 72000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4635,7 +4757,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.640 kg/d, 0.00 kW. Residence 0.050/(0.640/(1000*24)) = 112500.0 min."
+        "duty": "Inlet 0.640 kg/d, 0.00 kW. Residence 0.050/(0.640/(1000*24)) = 112500.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4657,7 +4780,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min."
+        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4679,7 +4803,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4701,7 +4826,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.180 kg/d, 0.00 kW. Residence 0.050/(0.180/(1000*24)) = 400000.0 min."
+        "duty": "Inlet 0.180 kg/d, 0.00 kW. Residence 0.050/(0.180/(1000*24)) = 400000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4723,7 +4849,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min."
+        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4745,7 +4872,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.040 kg/d, 0.00 kW. Residence 0.050/(0.040/(1000*24)) = 1800000.0 min."
+        "duty": "Inlet 0.040 kg/d, 0.00 kW. Residence 0.050/(0.040/(1000*24)) = 1800000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4767,7 +4895,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min."
+        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4789,7 +4918,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.260 kg/d, 0.00 kW. Envelope 400x400x800 mm = 0.128 m3. Residence 0.128/(0.260/(1000*24)) = 708923.1 min."
+        "duty": "Inlet 0.260 kg/d, 0.00 kW. Envelope 400x400x800 mm = 0.128 m3. Residence 0.128/(0.260/(1000*24)) = 708923.1 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4811,7 +4941,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4833,7 +4964,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.500 kg/d, 0.00 kW. Residence 0.050/(0.500/(1000*24)) = 144000.0 min."
+        "duty": "Inlet 0.500 kg/d, 0.00 kW. Residence 0.050/(0.500/(1000*24)) = 144000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4855,7 +4987,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.130 kg/d, 0.00 kW. Residence 0.050/(0.130/(1000*24)) = 553846.2 min."
+        "duty": "Inlet 0.130 kg/d, 0.00 kW. Residence 0.050/(0.130/(1000*24)) = 553846.2 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4877,7 +5010,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 1.800 kg/d, 0.00 kW. Residence 0.050/(1.800/(1000*24)) = 40000.0 min."
+        "duty": "Inlet 1.800 kg/d, 0.00 kW. Residence 0.050/(1.800/(1000*24)) = 40000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4899,7 +5033,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 9697.000 kg/d, 0.00 kW. Residence 202.021/(9697.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 9697.000 kg/d, 0.00 kW. Residence 202.021/(9697.000/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4921,7 +5056,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 3.020 kg/d, 0.00 kW. Residence 0.063/(3.020/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 3.020 kg/d, 0.00 kW. Residence 0.063/(3.020/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4943,7 +5079,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4965,7 +5102,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -4987,7 +5125,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.550 kg/d, 0.00 kW. Residence 0.050/(0.550/(1000*24)) = 130909.1 min."
+        "duty": "Inlet 0.550 kg/d, 0.00 kW. Residence 0.050/(0.550/(1000*24)) = 130909.1 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5009,7 +5148,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5031,7 +5171,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5053,7 +5194,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min."
+        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5075,7 +5217,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5097,7 +5240,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 1.200 kg/d, 0.00 kW. Residence 0.050/(1.200/(1000*24)) = 60000.0 min."
+        "duty": "Inlet 1.200 kg/d, 0.00 kW. Residence 0.050/(1.200/(1000*24)) = 60000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5119,7 +5263,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.750 kg/d, 0.00 kW. Residence 0.050/(0.750/(1000*24)) = 96000.0 min."
+        "duty": "Inlet 0.750 kg/d, 0.00 kW. Residence 0.050/(0.750/(1000*24)) = 96000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5141,7 +5286,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5163,7 +5309,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.250 kg/d, 0.00 kW. Residence 0.050/(0.250/(1000*24)) = 288000.0 min."
+        "duty": "Inlet 0.250 kg/d, 0.00 kW. Residence 0.050/(0.250/(1000*24)) = 288000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5185,7 +5332,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min."
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5207,7 +5355,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 2.700 kg/d, 0.00 kW. Residence 0.056/(2.700/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 2.700 kg/d, 0.00 kW. Residence 0.056/(2.700/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5229,7 +5378,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min."
+        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5251,7 +5401,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5273,7 +5424,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5295,7 +5447,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 47999.000 kg/d, 0.00 kW. Envelope 3000x5000x1200 mm = 18.000 m3. Residence 18.000/(47999.000/(1000*24)) = 540.0 min."
+        "duty": "Inlet 47999.000 kg/d, 0.00 kW. Envelope 3000x5000x1200 mm = 18.000 m3. Residence 18.000/(47999.000/(1000*24)) = 540.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5317,7 +5470,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min."
+        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5339,7 +5493,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min."
+        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5361,7 +5516,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min."
+        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5383,7 +5539,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min."
+        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5405,7 +5562,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min."
+        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5427,7 +5585,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min."
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5449,7 +5608,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min."
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5471,7 +5631,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min."
+        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5493,7 +5654,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.030 kg/d, 0.00 kW. Residence 0.050/(0.030/(1000*24)) = 2400000.0 min."
+        "duty": "Inlet 0.030 kg/d, 0.00 kW. Residence 0.050/(0.030/(1000*24)) = 2400000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5515,7 +5677,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min."
+        "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5537,7 +5700,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min."
+        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5604,7 +5768,8 @@
             "reishi spawn",
             "turkey tail spawn"
           ]
-        }
+        },
+        "internals": "media or gutter"
       }
     },
     {
@@ -5626,7 +5791,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Envelope 1000x1000x1200 mm = 1.200 m3. Residence 1.200/(0.200/(1000*24)) = 8640000.0 min."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Envelope 1000x1000x1200 mm = 1.200 m3. Residence 1.200/(0.200/(1000*24)) = 8640000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5648,7 +5814,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Envelope 1000x1000x1500 mm = 1.500 m3. Residence 1.500/(0.300/(1000*24)) = 7200000.0 min."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Envelope 1000x1000x1500 mm = 1.500 m3. Residence 1.500/(0.300/(1000*24)) = 7200000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5670,7 +5837,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.002 kg/d, 0.00 kW. Envelope 500x500x800 mm = 0.200 m3. Residence 0.200/(0.002/(1000*24)) = 144000000.0 min."
+        "duty": "Inlet 0.002 kg/d, 0.00 kW. Envelope 500x500x800 mm = 0.200 m3. Residence 0.200/(0.002/(1000*24)) = 144000000.0 min.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5696,7 +5864,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 50.26 kW. Envelope 800x600x2000 mm = 0.960 m3. Exchanger area 50.26*1000/(500*10) = 10.052 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 50.26 kW. Envelope 800x600x2000 mm = 0.960 m3. Exchanger area 50.26*1000/(500*10) = 10.052 m2 at 10 K and 500 W/m2K.",
+        "internals": "plate pack"
       }
     },
     {
@@ -5722,7 +5891,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 15.88 kW. Envelope 6000x6000x1500 mm = 54.000 m3. Exchanger area 15.88*1000/(500*10) = 3.176 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 0.000 kg/d, 15.88 kW. Envelope 6000x6000x1500 mm = 54.000 m3. Exchanger area 15.88*1000/(500*10) = 3.176 m2 at 10 K and 500 W/m2K.",
+        "internals": "plate pack"
       }
     },
     {
@@ -5744,7 +5914,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x1000x300 mm = 1.800 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x1000x300 mm = 1.800 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5766,7 +5937,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 4000x1000x800 mm = 3.200 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 4000x1000x800 mm = 3.200 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5788,7 +5960,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x2000x600 mm = 7.200 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x2000x600 mm = 7.200 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5810,7 +5983,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 18000x5000x400 mm = 36.000 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 18000x5000x400 mm = 36.000 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5832,7 +6006,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 400x400x1500 mm = 0.240 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 400x400x1500 mm = 0.240 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5854,7 +6029,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x1200 mm = 0.108 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x1200 mm = 0.108 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5876,7 +6052,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x800 mm = 0.072 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x800 mm = 0.072 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5898,7 +6075,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5920,7 +6098,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5942,7 +6121,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5964,7 +6144,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -5986,7 +6167,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6008,7 +6190,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6030,7 +6213,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1600x900x1800 mm = 2.592 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1600x900x1800 mm = 2.592 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6052,7 +6236,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2200x1200x2000 mm = 5.280 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2200x1200x2000 mm = 5.280 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6074,7 +6259,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 800x600x900 mm = 0.432 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 800x600x900 mm = 0.432 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6096,7 +6282,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2000x1200x1800 mm = 4.320 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2000x1200x1800 mm = 4.320 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6118,7 +6305,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 600x400x500 mm = 0.120 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 600x400x500 mm = 0.120 m3.",
+        "internals": "media or gutter"
       }
     },
     {
@@ -6140,7 +6328,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1500x1500x1800 mm = 4.050 m3."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1500x1500x1800 mm = 4.050 m3.",
+        "internals": "media or gutter"
       }
     }
   ],
@@ -6173,8 +6362,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -6206,7 +6395,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -6238,7 +6428,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -6270,7 +6461,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -6302,7 +6494,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -6334,7 +6527,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -6375,8 +6569,8 @@
         "rev_l_outcome": "present: MFG goods export (ID stays TBD: no invented DOCK S##)"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -7906,9 +8100,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.9,
-        "HCl": 0.05,
-        "metals": 0.05
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -7940,8 +8133,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -7986,7 +8179,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -8031,7 +8225,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -8072,8 +8267,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -8114,8 +8309,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -8267,8 +8462,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8303,8 +8499,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8339,8 +8536,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8376,7 +8574,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -8411,8 +8610,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8447,8 +8647,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8483,8 +8684,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8519,8 +8721,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8555,8 +8758,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -8591,8 +8794,9 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.92,
+        "HCl": 0.05,
+        "metals": 0.03
       }
     },
     {
@@ -8624,8 +8828,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -8656,8 +8860,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -8688,8 +8892,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -8751,8 +8955,8 @@
       ],
       "notes": "WP-L1: HDR_H2\u2192H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).",
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -8877,7 +9081,8 @@
         "rev_l_outcome": "present: dried float to pyrolyzer"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -8920,7 +9125,8 @@
         "rev_l_outcome": "present: pyrolysis volatiles to fractionator"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -8952,7 +9158,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -8994,8 +9201,8 @@
         "rev_l_outcome": "present: retargeted from the POLISH_BANK self-loop stub to POLISH_BANK -> CONTINUOUS_RECYCLE (raffinate return; STUDIES_COMPLETE precedent)"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9028,7 +9235,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -9073,7 +9281,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -9104,8 +9313,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9134,8 +9343,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9173,8 +9382,8 @@
         "rev_k_value": 3.4
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -9208,8 +9417,7 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -9238,7 +9446,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -9267,8 +9476,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -9332,8 +9541,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -9364,7 +9574,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -9396,8 +9607,8 @@
       ],
       "notes": "candidate_mvs extension \u2014 do not invent new register ID",
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9429,9 +9640,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.9,
-        "HCl": 0.05,
-        "metals": 0.05
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9471,7 +9681,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -9500,8 +9711,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -9530,8 +9742,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9572,8 +9784,9 @@
         "rev_l_outcome": "present: farm sump + farm AHU condensate to VCD"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -9611,8 +9824,9 @@
         "rev_k_value": 4.2
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -9644,8 +9858,9 @@
       ],
       "notes": "candidate_mvs extension \u2014 do not invent new register ID",
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -9682,8 +9897,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -9714,7 +9929,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -9769,7 +9985,8 @@
       "gap_flags": [],
       "notes": "Retired carbon credit (AQS-DUTY-008 Rev B s13.3). Not deleted: other locks name S18.",
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -9810,7 +10027,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -9883,8 +10101,8 @@
         "rev_k_value": 95.0
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -9988,7 +10206,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -10026,8 +10245,8 @@
         "rev_l_outcome": "present: VCD distillate to UPW polish"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10065,8 +10284,8 @@
         "rev_l_outcome": "present: REMIN drinking water to HAB"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10105,8 +10324,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10146,7 +10365,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -10186,8 +10406,8 @@
         "rev_l_outcome": "present: treated grey to VCD"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10226,8 +10446,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10266,8 +10486,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10306,8 +10526,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10346,8 +10566,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10387,8 +10607,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10427,8 +10647,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10467,8 +10687,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10500,7 +10720,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -10534,7 +10755,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -10567,7 +10789,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -10604,8 +10827,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10645,8 +10868,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10685,8 +10908,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10728,8 +10951,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10795,7 +11018,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -10828,8 +11052,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -10884,7 +11108,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -10913,8 +11138,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -10978,8 +11203,8 @@
         "rev_l_outcome": "present: PEM product water to VCD"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -11093,8 +11318,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11128,8 +11353,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11168,8 +11393,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11208,8 +11433,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11248,8 +11473,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11288,8 +11513,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11328,8 +11553,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11369,8 +11594,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11435,7 +11660,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -11467,8 +11693,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11507,8 +11733,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11539,7 +11765,8 @@
         "basis": "AQS-AUD-001 mid; NCG 5.0 kg/d at 3.00 kg CO2/kg"
       },
       "composition": {
-        "N2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -11587,7 +11814,8 @@
         "sink_duty_basis": "CRYO_CO2 cooling 30 to -20 C plus condensation at about 20 bar, 282 kJ/kg"
       },
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -11621,7 +11849,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -11656,8 +11885,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11689,8 +11918,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11722,8 +11951,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11763,8 +11992,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11798,7 +12027,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -11830,7 +12060,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -11859,7 +12090,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -11888,7 +12120,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -11917,8 +12150,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11948,8 +12181,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -11988,8 +12221,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12028,8 +12261,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12133,8 +12366,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12163,7 +12396,8 @@
       "gap_flags": [],
       "notes": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed)",
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -12195,8 +12429,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -12228,8 +12462,7 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -12257,7 +12490,8 @@
         "balance": "CRYO_CO2 remainder"
       },
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -12289,8 +12523,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12320,8 +12554,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -12351,8 +12585,7 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -12384,8 +12617,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12417,8 +12650,8 @@
         "doc": "AQS-DUTY-010"
       },
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12475,7 +12708,8 @@
         "rev_k_value": 11.616
       },
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -12514,7 +12748,8 @@
         "material": "316L"
       },
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -12545,7 +12780,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -12576,7 +12812,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -12607,7 +12844,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -12636,8 +12874,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12718,8 +12956,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12748,8 +12986,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12778,8 +13016,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12808,8 +13046,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12840,7 +13078,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -12895,8 +13134,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -12927,7 +13166,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -12956,8 +13196,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -12986,8 +13225,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13016,8 +13254,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13046,8 +13283,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13076,8 +13312,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13106,8 +13341,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13136,8 +13370,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13166,8 +13399,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13196,8 +13428,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -13226,8 +13457,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13256,8 +13487,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -13286,8 +13516,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13318,7 +13548,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -13347,8 +13578,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13377,8 +13608,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13407,8 +13638,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -13437,8 +13669,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13467,8 +13699,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -13551,7 +13783,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -13582,7 +13815,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -13611,7 +13845,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -13640,8 +13875,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13748,8 +13983,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13778,8 +14013,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13912,8 +14147,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -13942,8 +14177,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -13972,8 +14208,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14002,8 +14238,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14058,8 +14294,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -14115,8 +14350,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14145,8 +14380,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -14175,8 +14411,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14205,7 +14441,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -14234,8 +14471,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -14264,8 +14502,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14294,8 +14532,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14324,8 +14562,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14354,8 +14592,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14384,8 +14622,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14414,8 +14652,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14444,8 +14682,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14474,8 +14712,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14504,8 +14742,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14534,8 +14772,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14566,7 +14804,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -14597,7 +14836,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -14628,7 +14868,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -14657,8 +14898,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14687,7 +14928,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -14716,8 +14958,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14746,8 +14988,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14778,7 +15020,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -14807,8 +15050,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14837,8 +15080,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14869,7 +15112,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -14898,7 +15142,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -14929,7 +15174,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -14958,8 +15204,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -14990,7 +15236,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -15019,8 +15266,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15051,7 +15298,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -15080,7 +15328,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       }
     },
     {
@@ -15109,7 +15357,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -15138,8 +15387,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15168,8 +15417,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15198,8 +15447,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -15228,7 +15478,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -15257,7 +15508,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       }
     },
     {
@@ -15288,7 +15539,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -15317,8 +15569,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -15347,8 +15598,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15377,8 +15628,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -15407,8 +15659,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -15437,7 +15690,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       }
     },
     {
@@ -15468,7 +15721,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -15497,7 +15751,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       }
     },
     {
@@ -15526,7 +15780,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -15555,7 +15810,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -15584,8 +15840,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15614,7 +15870,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -15643,8 +15900,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15673,8 +15930,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15703,8 +15960,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15733,8 +15990,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15763,8 +16020,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15793,8 +16050,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15823,8 +16080,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15853,8 +16110,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15883,8 +16140,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15913,8 +16170,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15943,8 +16200,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -15973,7 +16230,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       }
     },
     {
@@ -16002,7 +16259,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -16031,7 +16289,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -16060,8 +16319,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16090,7 +16349,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -16119,8 +16379,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "metal": 1.0
       }
     },
     {
@@ -16151,7 +16410,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -16180,8 +16440,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16210,8 +16470,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16240,8 +16500,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16270,8 +16530,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16300,8 +16560,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16332,7 +16592,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -16363,7 +16624,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -16394,7 +16656,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -16425,7 +16688,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -16454,7 +16718,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -16483,7 +16748,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -16512,7 +16778,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -16541,7 +16808,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       }
     },
     {
@@ -16570,7 +16837,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -16599,8 +16867,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16629,8 +16897,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16659,7 +16927,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -16688,8 +16957,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "N2": 0.99
       }
     },
     {
@@ -16718,9 +16986,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.9,
-        "HCl": 0.05,
-        "metals": 0.05
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -16751,7 +17018,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -16780,8 +17048,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16810,8 +17078,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16840,8 +17108,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16870,8 +17138,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16900,8 +17168,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16930,7 +17198,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -16959,8 +17228,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -16989,8 +17258,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17019,8 +17288,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17049,8 +17318,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17079,7 +17348,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -17108,8 +17378,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17138,8 +17408,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -17168,8 +17438,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17198,8 +17468,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17228,8 +17498,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17258,7 +17528,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 1.0
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -17287,8 +17558,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17317,8 +17588,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17347,8 +17618,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17377,8 +17648,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17407,8 +17678,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17437,8 +17708,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17467,8 +17738,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17497,8 +17768,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17527,8 +17798,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17557,8 +17828,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17587,8 +17858,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17617,9 +17888,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.9,
-        "HCl": 0.05,
-        "metals": 0.05
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17648,8 +17918,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17678,8 +17948,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17708,8 +17978,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17738,8 +18008,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17768,8 +18038,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17800,7 +18070,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -17829,8 +18100,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17859,7 +18130,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 1.0
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -17888,8 +18160,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17918,8 +18190,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17948,8 +18220,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -17978,8 +18250,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18008,8 +18280,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18038,8 +18311,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18068,8 +18341,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18098,8 +18371,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18128,8 +18402,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18158,8 +18432,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18188,8 +18462,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18218,8 +18492,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18248,8 +18523,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18278,8 +18554,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18308,8 +18585,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18338,8 +18615,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18368,8 +18645,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18398,8 +18675,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18428,8 +18705,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18458,8 +18736,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18488,8 +18767,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18518,8 +18798,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18548,8 +18829,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18578,8 +18860,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18608,8 +18890,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18638,8 +18920,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18668,8 +18950,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18698,8 +18980,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18728,7 +19010,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -18757,7 +19040,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -18786,7 +19070,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -18815,8 +19100,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -18845,8 +19130,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18875,8 +19161,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18905,8 +19192,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18935,8 +19223,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -18965,8 +19254,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -18995,8 +19284,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19025,8 +19314,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19055,8 +19344,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19085,8 +19374,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19115,8 +19404,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19145,8 +19434,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19175,8 +19464,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19205,8 +19495,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19235,8 +19525,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19265,8 +19555,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19295,8 +19586,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19325,8 +19617,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19355,8 +19647,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19385,8 +19677,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19415,8 +19708,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19445,8 +19739,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19475,8 +19770,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19505,8 +19801,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19535,8 +19832,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19565,8 +19863,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19595,8 +19894,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19625,8 +19925,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19655,8 +19956,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19685,8 +19987,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19715,8 +20018,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19745,8 +20049,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19775,8 +20080,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19805,8 +20111,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19835,8 +20141,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19865,8 +20172,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19895,8 +20202,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19925,8 +20233,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -19955,8 +20263,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -19985,8 +20294,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20015,8 +20324,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -20045,8 +20355,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20075,8 +20385,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -20105,8 +20416,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20135,8 +20446,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -20165,8 +20477,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20195,8 +20507,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -20225,8 +20538,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20255,8 +20568,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -20285,8 +20599,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20315,8 +20629,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20345,8 +20659,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       },
       "nozzle": {
         "tag": "IA-CLOSE-0",
@@ -20383,7 +20698,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-1",
@@ -20418,8 +20734,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       },
       "nozzle": {
         "tag": "IA-CLOSE-2",
@@ -20454,7 +20771,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       },
       "nozzle": {
         "tag": "IA-CLOSE-3",
@@ -20489,8 +20806,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       },
       "nozzle": {
         "tag": "IA-CLOSE-4",
@@ -20525,8 +20843,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-5",
@@ -20561,8 +20879,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       },
       "nozzle": {
         "tag": "IA-CLOSE-6",
@@ -20597,8 +20916,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-7",
@@ -20633,8 +20952,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-8",
@@ -20669,7 +20988,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 1.0
+        "N2": 0.99
       },
       "nozzle": {
         "tag": "IA-CLOSE-9",
@@ -20706,7 +21025,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-10",
@@ -20741,8 +21061,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       },
       "nozzle": {
         "tag": "IA-CLOSE-11",
@@ -20777,8 +21098,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-12",
@@ -20813,8 +21134,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       },
       "nozzle": {
         "tag": "IA-CLOSE-13",
@@ -20849,8 +21170,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20879,8 +21200,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -20909,8 +21230,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20939,8 +21260,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -20969,7 +21290,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -20998,7 +21320,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "solids": 1.0
+        "MgNH4PO4": 0.8,
+        "water": 0.2
       }
     },
     {
@@ -21027,7 +21350,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "solids": 1.0
+        "K2CO3": 0.4,
+        "CaO": 0.3,
+        "other": 0.3
       }
     },
     {
@@ -21056,7 +21381,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "solids": 1.0
+        "K2CO3": 0.4,
+        "CaO": 0.3,
+        "other": 0.3
       }
     },
     {
@@ -21087,7 +21414,8 @@
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
-        "metals": 0.05
+        "Fe": 0.02,
+        "other_metals": 0.03
       }
     },
     {
@@ -21116,8 +21444,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -21146,7 +21474,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -21175,8 +21504,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -21701,7 +22030,8 @@
       "composition": {
         "water": 0.95,
         "urea": 0.02,
-        "salts": 0.03
+        "KCl": 0.02,
+        "other": 0.01
       }
     },
     {
@@ -21730,8 +22060,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -21760,8 +22090,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21790,8 +22121,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.999,
-        "nitrate": 0.001
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21820,8 +22152,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21850,8 +22183,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21880,8 +22214,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21910,8 +22245,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21940,8 +22276,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -21970,8 +22307,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -22000,8 +22338,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22030,8 +22368,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22060,8 +22398,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22090,8 +22428,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22120,8 +22458,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22150,8 +22488,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22180,8 +22518,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -22210,8 +22549,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22240,8 +22579,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.998,
+        "NO3": 0.001,
+        "other": 0.001
       }
     },
     {
@@ -22270,7 +22610,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "solids": 1.0
+        "K2CO3": 0.4,
+        "CaO": 0.3,
+        "other": 0.3
       }
     },
     {
@@ -22299,8 +22641,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22329,8 +22671,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22359,8 +22701,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22389,8 +22731,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22419,8 +22761,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22449,8 +22791,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22479,7 +22821,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "solids": 1.0
+        "K2CO3": 0.4,
+        "CaO": 0.3,
+        "other": 0.3
       }
     },
     {
@@ -22508,7 +22852,9 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "solids": 1.0
+        "K2CO3": 0.4,
+        "CaO": 0.3,
+        "other": 0.3
       }
     },
     {
@@ -22537,8 +22883,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22567,8 +22913,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22597,7 +22943,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "hydrocarbon": 1.0
+        "hydrocarbon": 0.95,
+        "water": 0.05
       }
     },
     {
@@ -22626,8 +22973,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22656,8 +23003,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22686,8 +23033,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22716,8 +23063,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22746,8 +23093,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22776,8 +23123,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22806,8 +23153,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22836,8 +23183,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -22866,8 +23213,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.98,
-        "solute": 0.02
+        "water": 0.97,
+        "solute": 0.03
       }
     }
   ],

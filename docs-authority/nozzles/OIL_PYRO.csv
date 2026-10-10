@@ -1,6 +1,6 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,C29 heavy cut,inlet,200
-N2,DN25,Class 150,Dryer → pyro,inlet,200
+N1,DN15,Class 150,C29 heavy cut,inlet,160
+N2,DN25,Class 150,Dryer → pyro,inlet,160
 N3,DN25,Class 150,Pyro → frac,outlet,600
 N4,DN15,Class 150,char reductant,outlet,600
 N5,DN15,Class 150,drain,bottom,50

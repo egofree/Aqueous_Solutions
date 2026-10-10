@@ -83,4 +83,88 @@ solid BLOW
       vertex 2.2000 0.0000 2.0000
     endloop
   endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.1500 0.0500 0.0500
+      vertex 2.1500 1.1500 0.0500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.1500 1.1500 0.0500
+      vertex 0.0500 1.1500 0.0500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.1500
+      vertex 2.1500 0.0500 0.1500
+      vertex 2.1500 1.1500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.1500
+      vertex 2.1500 1.1500 0.1500
+      vertex 0.0500 1.1500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.1500 0.0500 0.0500
+      vertex 2.1500 0.0500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.1500 0.0500 0.1500
+      vertex 0.0500 0.0500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 2.1500 1.1500 0.0500
+      vertex 0.0500 1.1500 0.0500
+      vertex 0.0500 1.1500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 2.1500 1.1500 0.0500
+      vertex 0.0500 1.1500 0.1500
+      vertex 2.1500 1.1500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.0500
+      vertex 0.0500 1.1500 0.0500
+      vertex 0.0500 1.1500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.0500 0.0500 0.0500
+      vertex 0.0500 1.1500 0.1500
+      vertex 0.0500 0.0500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 2.1500 0.0500 0.0500
+      vertex 2.1500 1.1500 0.0500
+      vertex 2.1500 1.1500 0.1500
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 2.1500 0.0500 0.0500
+      vertex 2.1500 1.1500 0.1500
+      vertex 2.1500 0.0500 0.1500
+    endloop
+  endfacet
 endsolid BLOW

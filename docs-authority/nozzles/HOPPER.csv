@@ -1,7 +1,7 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,metal scrap,inlet,200
-N2,DN50,Class 150,worn goods,inlet,200
-N3,DN25,Class 150,returned solids,inlet,200
+N1,DN15,Class 150,metal scrap,inlet,160
+N2,DN50,Class 150,worn goods,inlet,160
+N3,DN25,Class 150,returned solids,inlet,160
 N4,DN25,Class 150,mineral feedstock,outlet,600
 N5,DN50,Class 150,returned scrap,outlet,600
 N6,DN15,Class 150,hopper fines to the pretreat,outlet,600

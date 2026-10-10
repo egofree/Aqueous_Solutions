@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN25,Class 150,Pyro → frac,inlet,200
-N2,DN15,Class 150,resist and solvent waste,inlet,200
-N3,DN15,Class 150,solvent and photoresist,inlet,200
-N4,DN15,Class 150,organic mist,inlet,200
+N1,DN25,Class 150,Pyro → frac,inlet,160
+N2,DN15,Class 150,resist and solvent waste,inlet,160
+N3,DN15,Class 150,solvent and photoresist,inlet,160
+N4,DN15,Class 150,organic mist,inlet,160
 N5,DN15,Class 150,fractionator cut,outlet,600
 N6,DN15,Class 150,fractionator cut,outlet,600
 N7,DN15,Class 150,fractionator cut,outlet,600

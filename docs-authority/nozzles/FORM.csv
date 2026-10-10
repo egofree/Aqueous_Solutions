@@ -1,6 +1,6 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,methanol to formaldehyde,inlet,200
-N2,DN15,Class 150,formaldehyde,outlet,600
-N3,DN15,Class 150,formaldehyde water,outlet,600
+N1,DN15,Class 150,methanol to formaldehyde,inlet,80
+N2,DN15,Class 150,formaldehyde,outlet,300
+N3,DN15,Class 150,formaldehyde water,outlet,300
 N4,DN15,Class 150,drain,bottom,50
-N5,DN15,Class 150,vent,top,800
+N5,DN15,Class 150,vent,top,400

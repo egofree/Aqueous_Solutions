@@ -1,9 +1,9 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,nutrient water,inlet,200
-N2,DN50,Class 150,nitrate water,inlet,200
-N3,DN15,Class 150,duckweed,outlet,600
-N4,DN15,Class 150,duckweed,outlet,600
-N5,DN15,Class 150,duckweed,outlet,600
-N6,DN15,Class 150,duckweed reserve,outlet,600
+N1,DN15,Class 150,nutrient water,inlet,80
+N2,DN50,Class 150,nitrate water,inlet,80
+N3,DN15,Class 150,duckweed,outlet,300
+N4,DN15,Class 150,duckweed,outlet,300
+N5,DN15,Class 150,duckweed,outlet,300
+N6,DN15,Class 150,duckweed reserve,outlet,300
 N7,DN15,Class 150,drain,bottom,50
-N8,DN15,Class 150,vent,top,800
+N8,DN15,Class 150,vent,top,400

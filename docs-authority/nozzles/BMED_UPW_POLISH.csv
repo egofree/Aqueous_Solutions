@@ -1,5 +1,5 @@
 tag,size,rating,service,face,height_mm
-N1,DN50,Class 150,VCD distillate,inlet,200
+N1,DN50,Class 150,VCD distillate,inlet,160
 N2,DN25,Class 150,UPW,outlet,600
 N3,DN25,Class 150,fab UPW,outlet,600
 N4,DN15,Class 150,remineralizer,outlet,600

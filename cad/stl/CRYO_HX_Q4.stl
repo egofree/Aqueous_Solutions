@@ -83,4 +83,88 @@ solid CRYO_HX_Q4
       vertex 1.0000 0.0000 0.8000
     endloop
   endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.1600
+      vertex 0.9000 0.0600 0.1600
+      vertex 0.9000 0.5400 0.1600
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.1600
+      vertex 0.9000 0.5400 0.1600
+      vertex 0.1000 0.5400 0.1600
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.6400
+      vertex 0.9000 0.0600 0.6400
+      vertex 0.9000 0.5400 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.6400
+      vertex 0.9000 0.5400 0.6400
+      vertex 0.1000 0.5400 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.1600
+      vertex 0.9000 0.0600 0.1600
+      vertex 0.9000 0.0600 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.1600
+      vertex 0.9000 0.0600 0.6400
+      vertex 0.1000 0.0600 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.9000 0.5400 0.1600
+      vertex 0.1000 0.5400 0.1600
+      vertex 0.1000 0.5400 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.9000 0.5400 0.1600
+      vertex 0.1000 0.5400 0.6400
+      vertex 0.9000 0.5400 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.1600
+      vertex 0.1000 0.5400 0.1600
+      vertex 0.1000 0.5400 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.1000 0.0600 0.1600
+      vertex 0.1000 0.5400 0.6400
+      vertex 0.1000 0.0600 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.9000 0.0600 0.1600
+      vertex 0.9000 0.5400 0.1600
+      vertex 0.9000 0.5400 0.6400
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 0.9000 0.0600 0.1600
+      vertex 0.9000 0.5400 0.6400
+      vertex 0.9000 0.0600 0.6400
+    endloop
+  endfacet
 endsolid CRYO_HX_Q4

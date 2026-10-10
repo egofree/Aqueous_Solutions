@@ -1,8 +1,8 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,MeOH fuel,inlet,200
-N2,DN15,Class 150,cell air,inlet,200
-N3,DN15,Class 150,tank draw,inlet,200
-N4,DN15,Class 150,leach condensate to the methanol cell,inlet,200
+N1,DN15,Class 150,MeOH fuel,inlet,160
+N2,DN15,Class 150,cell air,inlet,160
+N3,DN15,Class 150,tank draw,inlet,160
+N4,DN15,Class 150,leach condensate to the methanol cell,inlet,160
 N5,DN15,Class 150,MEOH DC,outlet,600
 N6,DN15,Class 150,heat < 80 °C,outlet,600
 N7,DN15,Class 150,MeOH FC condensate,outlet,600

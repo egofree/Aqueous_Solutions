@@ -1,7 +1,7 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,fractionator cut,inlet,200
-N2,DN25,Class 150,genset air,inlet,200
-N3,DN15,Class 150,fuel into the generator,inlet,200
+N1,DN15,Class 150,fractionator cut,inlet,160
+N2,DN25,Class 150,genset air,inlet,160
+N3,DN15,Class 150,fuel into the generator,inlet,160
 N4,DN25,Class 150,exhaust condensate / NOx,outlet,600
 N5,DN15,Class 150,GEN AC,outlet,600
 N6,DN15,Class 150,drain,bottom,50

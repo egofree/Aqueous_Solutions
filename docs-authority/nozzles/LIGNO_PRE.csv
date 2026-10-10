@@ -1,6 +1,6 @@
 tag,size,rating,service,face,height_mm
-N1,DN15,Class 150,lignocellulose residue,inlet,200
-N2,DN15,Class 150,hopper fines to the pretreat,inlet,200
+N1,DN15,Class 150,lignocellulose residue,inlet,160
+N2,DN15,Class 150,hopper fines to the pretreat,inlet,160
 N3,DN15,Class 150,lignin,outlet,600
 N4,DN15,Class 150,cellulose,outlet,600
 N5,DN15,Class 150,reducing sugars,outlet,600
