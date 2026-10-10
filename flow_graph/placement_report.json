@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-apply-1.0",
   "graph_doc": "AQS-FLOW-GRAPH-001",
-  "graph_revision": "AR",
+  "graph_revision": "AZ",
   "map_revision": "D",
   "placement_doc": "AQS-PLACE-SEED-001 Rev D",
   "datums_mm": {
@@ -4282,5 +4282,6 @@
       "bay": "L0 electrical",
       "size_m": "1 x 1"
     }
-  ]
+  ],
+  "ew_cathode": "Sized from the sheet edge at 200 A/m2. EW-1 is 21 plates."
 }
