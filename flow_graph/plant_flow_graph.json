@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AZ",
+  "revision": "BA",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -792,8 +792,8 @@
             }
           ]
         },
-        "duty": "Inlet 4287.820 kg/d, 4.57 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4287.820/(1100*24)) = 60.5 min. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
+        "internals": "21 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -844,9 +844,9 @@
             }
           ]
         },
-        "duty": "Inlet 4226.040 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4226.040/(1100*24)) = 61.4 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "21 cathode plates, edge strips, PbO2 anodes, launder"
       },
       "continuous_kw": null
     },
@@ -897,9 +897,9 @@
             }
           ]
         },
-        "duty": "Inlet 4164.240 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4164.240/(1100*24)) = 62.3 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "8 plates at 50 mm. Rack 600 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "8 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -949,9 +949,9 @@
             }
           ]
         },
-        "duty": "Inlet 4141.760 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4141.760/(1100*24)) = 62.6 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1001,9 +1001,9 @@
             }
           ]
         },
-        "duty": "Inlet 4133.090 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4133.090/(1100*24)) = 62.8 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1053,9 +1053,9 @@
             }
           ]
         },
-        "duty": "Inlet 4128.070 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4128.070/(1100*24)) = 62.9 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1105,9 +1105,9 @@
             }
           ]
         },
-        "duty": "Inlet 4122.600 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4122.600/(1100*24)) = 62.9 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "25 plates at 50 mm. Rack 1450 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "25 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1157,9 +1157,9 @@
             }
           ]
         },
-        "duty": "Inlet 4051.460 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4051.460/(1100*24)) = 64.0 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "2 cathode plates, edge strips, PbO2 anodes, launder"
       }
     },
     {
@@ -1210,9 +1210,9 @@
             }
           ]
         },
-        "duty": "Inlet 4046.410 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4046.410/(1100*24)) = 64.1 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
         "presence": "present",
-        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
+        "internals": "21 cathode plates, edge strips, PbO2 anodes, launder"
       },
       "continuous_kw": null
     },

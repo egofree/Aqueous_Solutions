@@ -17,4 +17,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
+6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
+
 8. Open items. None.

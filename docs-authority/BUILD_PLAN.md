@@ -40,3 +40,5 @@ A pressurized unit gets a design pressure, a relief set at 110%, and a destinati
 Composition, then nozzles, then internals, then mesh, then the five checks, then the fourteen edges, then relief. Placement is rebuilt at the revision that has the meshes. The plate stays 24 by 24 m until a unit does not fit.
 
 Acceptance is a unit that a shop can build without asking what the nozzle is or what is inside.
+
+Plan status, graph Rev BA. Composition on the mass edges. Nozzle list with height on every unit. Internals named. EW racks built to the sheet edge. Relief line on the duty pages. One-line, habitation fixtures, and cold-box trays written. IA-CLOSE edges tagged DN25. Meshes are envelopes. FreeCAD is not in this environment.

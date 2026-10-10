@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-apply-1.0",
   "graph_doc": "AQS-FLOW-GRAPH-001",
-  "graph_revision": "AZ",
+  "graph_revision": "BA",
   "map_revision": "D",
   "placement_doc": "AQS-PLACE-SEED-001 Rev D",
   "datums_mm": {
@@ -4229,7 +4229,8 @@
     "bay_m": 6,
     "plate_m": "24 x 24",
     "area_m2": 576,
-    "retired": "24 x 18 m, 432 m2"
+    "retired": "24 x 18 m, 432 m2",
+    "note": "EW racks sit on the L0 aisle. EW-7 is 1450 mm. Fits a 6 m bay."
   },
   "phase7": [
     {
@@ -4283,5 +4284,16 @@
       "size_m": "1 x 1"
     }
   ],
-  "ew_cathode": "Sized from the sheet edge at 200 A/m2. EW-1 is 21 plates."
+  "ew_cathode": "Sized from the sheet edge at 200 A/m2. EW-1 is 21 plates.",
+  "ew_racks": {
+    "EW_1": "21 plates, 1250 mm long",
+    "EW_2": "21 plates, 1250 mm long",
+    "EW_3": "8 plates, 600 mm long",
+    "EW_4": "2 plates, 300 mm long",
+    "EW_5": "2 plates, 300 mm long",
+    "EW_6": "2 plates, 300 mm long",
+    "EW_7": "25 plates, 1450 mm long",
+    "EW_8": "2 plates, 300 mm long",
+    "EW_9": "21 plates, 1250 mm long"
+  }
 }
