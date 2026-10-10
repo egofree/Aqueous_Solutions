@@ -1,13 +1,15 @@
-# Checks
+# Faradaic check
 
-Faradaic. EW-1 cathode 0.252 m2 at 100 A/m2 is 25.2 A. Copper at 63.5 g/mol and 2 e- is 1.185 g/Ah. 25.2 A for 24 h is 717 Ah, 0.85 kg/d at 100%. The cell is sized to the study current. Confirm against the metal edge on EW-1.
+Copper equivalent, 1.185 g/Ah, 24 h, 100%. Current = metal / 0.02844.
 
-Cold box. 20 trays at 0.3 m spacing in the 150 mm column. Refrigeration is the expander work plus the Joule-Thomson backup. Balance is the graph energy cut, which is closed.
+EW_1: 59.87 kg/d needs 2105 A. Face 0.252 m2, so 8354 A/m2.
+EW_2: 59.89 kg/d needs 2106 A. Face 0.252 m2, so 8356 A/m2.
+EW_3: 22.48 kg/d needs 790 A. Face 0.252 m2, so 3137 A/m2.
+EW_4: 4.85 kg/d needs 171 A. Face 0.252 m2, so 677 A/m2.
+EW_5: 5.02 kg/d needs 177 A. Face 0.252 m2, so 700 A/m2.
+EW_6: 5.47 kg/d needs 192 A. Face 0.252 m2, so 763 A/m2.
+EW_7: 71.14 kg/d needs 2501 A. Face 0.252 m2, so 9926 A/m2.
+EW_8: 5.05 kg/d needs 178 A. Face 0.252 m2, so 705 A/m2.
+EW_9: 61.34 kg/d needs 2157 A. Face 0.252 m2, so 8559 A/m2.
 
-Habitation. Four rooms. Fixtures: one sink, one shower, one composting toilet. Heat load 3 kW on the graph.
-
-One-line. Array to curtailment contactor to the 60 kW inverter to the bus. Battery on the bus. Protection at the inverter.
-
-Oil column. 20 stages. Reflux 2. Cuts at C10, C18, C28.
-
-Relief. Every pressurized unit vents to the scrubber at 110% of operating pressure. Atmospheric units vent to the scrubber, not the room.
+The 25.2 A study current is low by about 70 times on EW-1. The sheet edge is the duty. Confirm the edge is metal and not liquor before the rectifier is sized.
