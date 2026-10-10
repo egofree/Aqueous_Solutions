@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "BB",
+  "revision": "BC",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -20668,6 +20668,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "biofilter bleed to the nutrient tank"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.14,
+        "service": "biofilter bleed to the nutrient tank",
+        "material": "PVC"
       }
     },
     {
@@ -20706,6 +20713,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "leach vent to the NOx scrubber"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.12,
+        "service": "leach vent to the NOx scrubber",
+        "material": "PVC"
       }
     },
     {
@@ -20743,6 +20757,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "compost return to the bed"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.1,
+        "service": "compost return to the bed",
+        "material": "PVC"
       }
     },
     {
@@ -20778,6 +20799,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "worm bin vent to the nitrogen header"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.09,
+        "service": "worm bin vent to the nitrogen header",
+        "material": "PVC"
       }
     },
     {
@@ -20815,6 +20843,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "fish solids liquor to the nutrient tank"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.09,
+        "service": "fish solids liquor to the nutrient tank",
+        "material": "PVC"
       }
     },
     {
@@ -20851,6 +20886,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "hopper fines to the pretreat"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.08,
+        "service": "hopper fines to the pretreat",
+        "material": "PVC"
       }
     },
     {
@@ -20888,6 +20930,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "acetate brine to the pen bedding"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.08,
+        "service": "acetate brine to the pen bedding",
+        "material": "PVC"
       }
     },
     {
@@ -20924,6 +20973,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "compost condensate to the methanol tank"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.07,
+        "service": "compost condensate to the methanol tank",
+        "material": "PVC"
       }
     },
     {
@@ -20960,6 +21016,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "shop scrap to the digester"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.07,
+        "service": "shop scrap to the digester",
+        "material": "PVC"
       }
     },
     {
@@ -20995,6 +21058,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "larvae bin vent to the nitrogen header"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.05,
+        "service": "larvae bin vent to the nitrogen header",
+        "material": "PVC"
       }
     },
     {
@@ -21033,6 +21103,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "leach condensate to the methanol cell"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.05,
+        "service": "leach condensate to the methanol cell",
+        "material": "PVC"
       }
     },
     {
@@ -21070,6 +21147,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "crayfish molt liquor to imidazole makeup"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.04,
+        "service": "crayfish molt liquor to imidazole makeup",
+        "material": "PVC"
       }
     },
     {
@@ -21106,6 +21190,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "frass liquor to the nutrient tank"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.03,
+        "service": "frass liquor to the nutrient tank",
+        "material": "PVC"
       }
     },
     {
@@ -21142,6 +21233,13 @@
         "dn": "DN25",
         "rating": "Class 150",
         "service": "quaternization brine to the nutrient tank"
+      },
+      "pipe": {
+        "dn": "DN15",
+        "velocity_m_s": 1.0,
+        "id_mm": 0.03,
+        "service": "quaternization brine to the nutrient tank",
+        "material": "PVC"
       }
     },
     {
