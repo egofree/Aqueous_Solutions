@@ -1,19 +1,19 @@
 # QUAT
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
 
-1. Basis. IA-IMID 0.26 kg/d from IMID. One operating point, the graph rate.
+1. Basis. IA-IMID 0.26 kg/d from IMID.
 
-2. Size. Issued envelope 400 x 400 x 800 mm. Volume 400*400*800/1e9 = 0.128 m3.
+2. Size. Inlet 0.260 kg/d, 0.00 kW. Envelope 400x400x800 mm = 0.128 m3. Residence 0.128/(0.260/(1000*24)) = 708923.1 min.
 
-3. Material. Corrosion allowance 0 mm. Internals: media or gutter as named on the index.
+3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. Inlet DN15, outlet DN15, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
+4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
 
-5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
+5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
 
-7. Code. shop, HDPE.
+7. Code. Shop. Not stamped.
 
-8. Open items. None.
+8. Open items. None. Numbers are from the graph rate and the envelope.

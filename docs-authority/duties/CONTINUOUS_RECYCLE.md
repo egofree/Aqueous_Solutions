@@ -1,19 +1,19 @@
 # CONTINUOUS_RECYCLE
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
 
-1. Basis. IA-POL-02 3753.71 kg/d from POLISH_BANK. One operating point, the graph rate.
+1. Basis. IA-POL-02 3753.71 kg/d from POLISH_BANK.
 
-2. Size. Inlet 3753.71 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3753.71*15/(1440*1000/1000) = 39.101 m3.
+2. Size. Inlet 3753.710 kg/d, 0.00 kW. Residence 78.202/(3753.710/(1000*24)) = 30000.0 min.
 
-3. Material. Corrosion allowance 1.5 mm. Internals: dip pipe.
+3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. Inlet DN50, outlet DN50, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
+4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
 
-5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
+5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
 
-7. Code. shop, not coded.
+7. Code. Shop. Not stamped.
 
-8. Open items. None.
+8. Open items. None. Numbers are from the graph rate and the envelope.

@@ -1,19 +1,19 @@
 # EW_8
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
 
-1. Basis. IA-EW-07 4051.46 kg/d from EW_7. One operating point, the graph rate.
+1. Basis. IA-EW-07 4051.46 kg/d from EW_7.
 
-2. Size. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3.
+2. Size. Inlet 4051.460 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4051.460/(1100*24)) = 64.0 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.
 
-3. Material. Corrosion allowance 0 mm. Internals: 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.
+3. Material. Density used 1100 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. Inlet DN50, outlet DN50, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
+4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
 
-5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
+5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
 
-7. Code. shop, PVC/FRP.
+7. Code. Shop. Not stamped.
 
-8. Open items. None.
+8. Open items. None. Numbers are from the graph rate and the envelope.

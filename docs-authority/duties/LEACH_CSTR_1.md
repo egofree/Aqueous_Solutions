@@ -1,19 +1,19 @@
 # LEACH_CSTR_1
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
 
-1. Basis. IA-REC-01 3753.71 kg/d from CONTINUOUS_RECYCLE. One operating point, the graph rate.
+1. Basis. HL-Q3-A-HX5 7.941 kW from Q3_A.
 
-2. Size. Issued envelope 2000 x 1200 x 1400 mm. Volume 2000*1200*1400/1e9 = 3.360 m3.
+2. Size. Inlet 3753.710 kg/d, 7.94 kW. Envelope 2000x1200x1400 mm = 3.360 m3. Residence 3.360/(3753.710/(1100*24)) = 1417.9 min. Exchanger area 7.94*1000/(500*10) = 1.588 m2 at 10 K and 500 W/m2K.
 
-3. Material. Corrosion allowance 0 mm. Internals: weir and floor auger where named.
+3. Material. Density used 1100 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. Inlet DN50, outlet DN50, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
+4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
 
-5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
+5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
 
-7. Code. shop, PVC/FRP.
+7. Code. Shop. Not stamped.
 
-8. Open items. None.
+8. Open items. None. Numbers are from the graph rate and the envelope.

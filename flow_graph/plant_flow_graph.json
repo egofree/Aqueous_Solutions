@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AW",
+  "revision": "AX",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -54,7 +54,7 @@
             }
           ]
         },
-        "duty": "ACID_POLISH_SCRUB. Inlet 27.36 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 27.36*5/(1440*1000/1000) = 0.095 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
+        "duty": "Inlet 27.360 kg/d, 0.00 kW. Residence 0.570/(27.360/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -132,7 +132,7 @@
             }
           ]
         },
-        "duty": "AFTERBURNER. Inlet 5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 5.0*15/(1440*1000/1000) = 0.052 m3. dip pipe."
+        "duty": "Inlet 5.000 kg/d, 2.77 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min. Exchanger area 2.77*1000/(500*10) = 0.554 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -161,7 +161,7 @@
             }
           ]
         },
-        "duty": "AFTERBURNER_FLUE. Inlet 111.17 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 111.17*15/(1440*1000/1000) = 1.158 m3. dip pipe.",
+        "duty": "Inlet 111.170 kg/d, 0.00 kW. Residence 2.316/(111.170/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -185,7 +185,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ALK_SCRUBBER. No liquid residence. Size is the pipe or the bay. 25 mm pall rings, 2 m packed, distributor, demister."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -243,7 +243,7 @@
             }
           ]
         },
-        "duty": "BACKUP_GEN. Inlet 50 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 50.0*15/(1440*1000/1000) = 0.521 m3. dip pipe."
+        "duty": "Inlet 50.000 kg/d, 2.50 kW. Residence 1.042/(50.000/(1000*24)) = 30000.0 min. Exchanger area 2.50*1000/(500*10) = 0.500 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -258,7 +258,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "BAGHOUSE. Inlet 6.82 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.82*15/(1440*1000/1000) = 0.071 m3. dip pipe.",
+        "duty": "Inlet 6.820 kg/d, 0.00 kW. Residence 0.142/(6.820/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -297,7 +297,7 @@
             }
           ]
         },
-        "duty": "BLACK_DIGEST. No liquid residence. Size is the pipe or the bay. pitched-blade agitator.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -314,7 +314,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "BMED_ACID. Inlet 108.195 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 108.195*15/(1440*1000/1000) = 1.127 m3. dip pipe."
+        "duty": "Inlet 108.195 kg/d, 0.00 kW. Residence 2.254/(108.195/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": null
     },
@@ -330,7 +330,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "BMED_BASE. Inlet 118.7 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 118.7*15/(1440*1000/1000) = 1.236 m3. dip pipe."
+        "duty": "Inlet 118.700 kg/d, 0.00 kW. Residence 2.473/(118.700/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": null
     },
@@ -382,7 +382,7 @@
             }
           ]
         },
-        "duty": "BMED_UPW_POLISH. Inlet 140.52 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 140.52*15/(1440*1000/1000) = 1.464 m3. dip pipe."
+        "duty": "Inlet 140.520 kg/d, 0.00 kW. Residence 2.928/(140.520/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -403,7 +403,7 @@
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
         "boundary_kind": "dock freight door (logical)",
-        "duty": "BOUNDARY_EXPORT. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 50.25 kW. Exchanger area 50.25*1000/(500*10) = 10.050 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -422,7 +422,7 @@
         "to": "INDUCTION_PYROLYZER",
         "solid": "pipe",
         "ref": "oil_line.py / ANIMATION_BRIEF D6",
-        "duty": "C29_RECYCLE. Inlet 1.4046 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 1.4046*15/(1440*1000/1000) = 0.015 m3. dip pipe.",
+        "duty": "Inlet 1.405 kg/d, 0.00 kW. Residence 0.050/(1.405/(1000*24)) = 51260.1 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -447,7 +447,7 @@
         "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
         "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
         "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
-        "duty": "CATCH_TANK. Inlet 200000 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 200000.0*30/(1440*1000/1000) = 4166.667 m3. dip pipe and stilling well."
+        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -484,7 +484,7 @@
             }
           ]
         },
-        "duty": "COLD_MILL. Inlet 3.95 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.95*15/(1440*1000/1000) = 0.041 m3. dip pipe.",
+        "duty": "Inlet 3.950 kg/d, 0.00 kW. Residence 0.082/(3.950/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -525,7 +525,7 @@
             }
           ]
         },
-        "duty": "CONTINUOUS_RECYCLE. Inlet 3753.71 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3753.71*15/(1440*1000/1000) = 39.101 m3. dip pipe.",
+        "duty": "Inlet 3753.710 kg/d, 0.00 kW. Residence 78.202/(3753.710/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -542,7 +542,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "CRU. Inlet 27.3623 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 27.3623*15/(1440*1000/1000) = 0.285 m3. dip pipe."
+        "duty": "Inlet 27.362 kg/d, 0.00 kW. Residence 0.570/(27.362/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": null
     },
@@ -558,7 +558,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "CRYO_AHU. Inlet 79.04 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 79.04*15/(1440*1000/1000) = 0.823 m3. dip pipe.",
+        "duty": "Inlet 79.040 kg/d, 0.00 kW. Residence 1.647/(79.040/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -575,7 +575,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "CRYO_AHU_COND_CONDENSABLE. Inlet 0.0521 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.0521*15/(1440*1000/1000) = 0.001 m3. dip pipe.",
+        "duty": "Inlet 0.052 kg/d, 0.00 kW. Residence 0.050/(0.052/(1000*24)) = 1381957.8 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -608,7 +608,7 @@
             }
           ]
         },
-        "duty": "CRYO_CO2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
+        "duty": "Inlet 30.000 kg/d, 0.00 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -623,7 +623,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "CRYO_DED_COOL. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 4.28 kW. Exchanger area 4.28*1000/(500*10) = 0.857 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -647,7 +647,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_H2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
+        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -662,7 +662,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "CRYO_HX_Q4. No liquid residence. Size is the pipe or the bay. plates, 10 K approach.",
+        "duty": "Inlet 0.000 kg/d, 0.54 kW. Exchanger area 0.54*1000/(500*10) = 0.108 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -679,7 +679,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "CRYO_N2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
+        "duty": "Inlet 243.280 kg/d, 0.00 kW. Residence 5.068/(243.280/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -698,7 +698,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_O2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
+        "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -790,7 +790,7 @@
             }
           ]
         },
-        "duty": "EW_1. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder."
+        "duty": "Inlet 4287.820 kg/d, 4.57 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4287.820/(1100*24)) = 60.5 min. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A."
       }
     },
     {
@@ -841,7 +841,7 @@
             }
           ]
         },
-        "duty": "EW_2. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4226.040 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4226.040/(1100*24)) = 61.4 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -893,7 +893,7 @@
             }
           ]
         },
-        "duty": "EW_3. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4164.240 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4164.240/(1100*24)) = 62.3 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       }
     },
@@ -944,7 +944,7 @@
             }
           ]
         },
-        "duty": "EW_4. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4141.760 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4141.760/(1100*24)) = 62.6 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       }
     },
@@ -995,7 +995,7 @@
             }
           ]
         },
-        "duty": "EW_5. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4133.090 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4133.090/(1100*24)) = 62.8 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       }
     },
@@ -1046,7 +1046,7 @@
             }
           ]
         },
-        "duty": "EW_6. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4128.070 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4128.070/(1100*24)) = 62.9 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       }
     },
@@ -1097,7 +1097,7 @@
             }
           ]
         },
-        "duty": "EW_7. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4122.600 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4122.600/(1100*24)) = 62.9 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       }
     },
@@ -1148,7 +1148,7 @@
             }
           ]
         },
-        "duty": "EW_8. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4051.460 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4051.460/(1100*24)) = 64.0 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       }
     },
@@ -1200,7 +1200,7 @@
             }
           ]
         },
-        "duty": "EW_9. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
+        "duty": "Inlet 4046.410 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4046.410/(1100*24)) = 64.1 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1231,7 +1231,7 @@
             }
           ]
         },
-        "duty": "FAB_UPW_TANK. Inlet 60 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 60.0*30/(1440*1000/1000) = 1.250 m3. dip pipe and stilling well.",
+        "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1278,7 +1278,7 @@
             }
           ]
         },
-        "duty": "FLOAT_SINK. Inlet 376.1 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 376.1*15/(1440*1000/1000) = 3.918 m3. dip pipe.",
+        "duty": "Inlet 376.100 kg/d, 0.00 kW. Residence 7.835/(376.100/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1321,7 +1321,7 @@
             }
           ]
         },
-        "duty": "FLUE_KO. Inlet 135.9 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 135.9*15/(1440*1000/1000) = 1.416 m3. dip pipe.",
+        "duty": "Inlet 135.900 kg/d, 0.00 kW. Residence 2.831/(135.900/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -1380,7 +1380,7 @@
             }
           ]
         },
-        "duty": "FUEL_CELL. Inlet 38.4 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 38.4*15/(1440*1000/1000) = 0.400 m3. dip pipe."
+        "duty": "Inlet 38.400 kg/d, 4.60 kW. Residence 0.800/(38.400/(1000*24)) = 30000.0 min. Exchanger area 4.60*1000/(500*10) = 0.920 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -1425,7 +1425,7 @@
             }
           ]
         },
-        "duty": "GAS_ATOMIZER. Inlet 3.2 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.2*15/(1440*1000/1000) = 0.033 m3. dip pipe.",
+        "duty": "Inlet 3.200 kg/d, 0.00 kW. Residence 0.067/(3.200/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1448,7 +1448,7 @@
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
         "survey_status": "design_survey_locked",
-        "duty": "GEO_GHEX. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1475,7 +1475,7 @@
         "T_source_K": 285.0,
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
-        "duty": "GEO_HP. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -1490,7 +1490,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "GEO_HP_CLOSED_LOOP. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1557,7 +1557,7 @@
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
         "survey_status": "design_survey_locked",
-        "duty": "GEO_ORC. No liquid residence. Size is the pipe or the bay. plates, 10 K approach."
+        "duty": "Inlet 0.000 kg/d, 11.76 kW. Exchanger area 11.76*1000/(500*10) = 2.352 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -1617,7 +1617,7 @@
             }
           ]
         },
-        "duty": "GLASS_DIGEST. Inlet 118.43 kg/d. Residence 60 min. Density 1000 kg/m3. Volume 118.43*60/(1440*1000/1000) = 4.935 m3. pitched-blade agitator."
+        "duty": "Inlet 118.430 kg/d, 2.08 kW. Residence 2.467/(118.430/(1000*24)) = 30000.0 min. Exchanger area 2.08*1000/(500*10) = 0.416 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -1632,7 +1632,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "GREY_TREAT. Inlet 339.06 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 339.06*15/(1440*1000/1000) = 3.532 m3. dip pipe.",
+        "duty": "Inlet 339.060 kg/d, 0.00 kW. Residence 7.064/(339.060/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1712,7 +1712,7 @@
             }
           ]
         },
-        "duty": "GROW_BED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 18909.000 kg/d, 5.00 kW. Residence 393.938/(18909.000/(1000*24)) = 30000.0 min. Exchanger area 5.00*1000/(500*10) = 1.000 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -1734,7 +1734,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "H2_DRYER. Inlet 6.64 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.64*15/(1440*1000/1000) = 0.069 m3. dip pipe."
+        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -1778,7 +1778,7 @@
             }
           ]
         },
-        "duty": "HABITATION. Inlet 597.331 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 597.3307*15/(1440*1000/1000) = 6.222 m3. dip pipe."
+        "duty": "Inlet 597.331 kg/d, 3.00 kW. Residence 12.444/(597.331/(1000*24)) = 30000.0 min. Exchanger area 3.00*1000/(500*10) = 0.600 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -1805,7 +1805,7 @@
           "MEOH_SYNTH": "H2-limited; carrier loop via S82",
           "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
         },
-        "duty": "HDR_CO2. No liquid residence. Size is the pipe or the bay. none, pipe only.",
+        "duty": "Inlet 12.170 kg/d, 0.00 kW. Residence 0.254/(12.170/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -1823,7 +1823,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HDR_H2. No liquid residence. Size is the pipe or the bay. none, pipe only."
+        "duty": "Inlet 2.820 kg/d, 0.00 kW. Residence 0.059/(2.820/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -1835,7 +1835,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "HDR_N2. No liquid residence. Size is the pipe or the bay. none, pipe only.",
+        "duty": "Inlet 243.280 kg/d, 0.00 kW. Residence 5.068/(243.280/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -1851,7 +1851,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "HDR_O2. No liquid residence. Size is the pipe or the bay. none, pipe only.",
+        "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1884,7 +1884,7 @@
             }
           ]
         },
-        "duty": "HDR_UPW. No liquid residence. Size is the pipe or the bay. none, pipe only."
+        "duty": "Inlet 67.300 kg/d, 0.00 kW. Residence 1.402/(67.300/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -1899,7 +1899,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "HOPPER. Inlet 597.33 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 597.33*15/(1440*1000/1000) = 6.222 m3. dip pipe.",
+        "duty": "Inlet 597.330 kg/d, 0.00 kW. Residence 12.444/(597.330/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1936,7 +1936,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "HX8. No liquid residence. Size is the pipe or the bay. plates, 10 K approach.",
+        "duty": "Inlet 0.000 kg/d, 4.57 kW. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -1984,7 +1984,7 @@
         "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
-        "duty": "HYDRO_SET. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -2061,7 +2061,7 @@
             }
           ]
         },
-        "duty": "LEACH_CSTR_1. Issued envelope 2000 x 1200 x 1400 mm. Volume 2000*1200*1400/1e9 = 3.360 m3. weir and floor auger where named."
+        "duty": "Inlet 3753.710 kg/d, 7.94 kW. Envelope 2000x1200x1400 mm = 3.360 m3. Residence 3.360/(3753.710/(1100*24)) = 1417.9 min. Exchanger area 7.94*1000/(500*10) = 1.588 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -2081,7 +2081,7 @@
         "former_class": "load_agg",
         "boundary_kind": "electrical accounting (S17/S20 sum)",
         "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
-        "duty": "LOAD_AGG. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2102,7 +2102,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "MEOH_COND. Inlet 5.6223 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 5.6223*15/(1440*1000/1000) = 0.059 m3. dip pipe.",
+        "duty": "Inlet 5.622 kg/d, 0.00 kW. Residence 0.117/(5.622/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -2161,7 +2161,7 @@
             }
           ]
         },
-        "duty": "MEOH_FC. Inlet 8.37 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 8.37*15/(1440*1000/1000) = 0.087 m3. dip pipe."
+        "duty": "Inlet 8.370 kg/d, 0.87 kW. Residence 0.174/(8.370/(1000*24)) = 30000.0 min. Exchanger area 0.87*1000/(500*10) = 0.174 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -2196,7 +2196,7 @@
             }
           ]
         },
-        "duty": "MEOH_FERM. Inlet 0.36 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.36*15/(1440*1000/1000) = 0.004 m3. dip pipe.",
+        "duty": "Inlet 0.360 kg/d, 0.00 kW. Residence 0.050/(0.360/(1000*24)) = 200000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2240,7 +2240,7 @@
             }
           ]
         },
-        "duty": "MEOH_SYNTH. Inlet 6.9 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.9*15/(1440*1000/1000) = 0.072 m3. dip pipe."
+        "duty": "Inlet 6.900 kg/d, 0.00 kW. Residence 0.144/(6.900/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -2270,7 +2270,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "MEOH_TANK. Inlet 8.5 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 8.5*30/(1440*1000/1000) = 0.177 m3. dip pipe and stilling well."
+        "duty": "Inlet 8.500 kg/d, 0.00 kW. Residence 0.177/(8.500/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -2285,7 +2285,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "MET_AHU. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2302,7 +2302,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "MET_HX_Q4. No liquid residence. Size is the pipe or the bay. plates, 10 K approach.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2341,7 +2341,7 @@
             }
           ]
         },
-        "duty": "MET_MELT. Inlet 13.99 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 13.99*15/(1440*1000/1000) = 0.146 m3. dip pipe.",
+        "duty": "Inlet 13.990 kg/d, 0.00 kW. Residence 0.291/(13.990/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2380,7 +2380,7 @@
             }
           ]
         },
-        "duty": "MET_SCRUB. Inlet 2.46 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 2.46*5/(1440*1000/1000) = 0.009 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
+        "duty": "Inlet 2.460 kg/d, 0.00 kW. Residence 0.051/(2.460/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2434,7 +2434,7 @@
             }
           ]
         },
-        "duty": "MFG_SHOP. Inlet 217.37 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 217.37*15/(1440*1000/1000) = 2.264 m3. dip pipe."
+        "duty": "Inlet 217.370 kg/d, 0.00 kW. Residence 4.529/(217.370/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -2446,7 +2446,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "NCG_HEADER. No liquid residence. Size is the pipe or the bay. none, pipe only.",
+        "duty": "Inlet 5.000 kg/d, 0.00 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -2479,7 +2479,7 @@
             }
           ]
         },
-        "duty": "NORTH_DOCK. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -2499,7 +2499,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "NOX_SCRUB. Inlet 239.62 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 239.62*5/(1440*1000/1000) = 0.832 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
+        "duty": "Inlet 239.620 kg/d, 0.00 kW. Residence 4.992/(239.620/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -2522,7 +2522,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "NUTRIENT_DOSE. Inlet 140.64 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 140.64*15/(1440*1000/1000) = 1.465 m3. dip pipe."
+        "duty": "Inlet 140.640 kg/d, 0.00 kW. Residence 2.930/(140.640/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -2575,7 +2575,7 @@
             }
           ]
         },
-        "duty": "OIL_DRYER. Inlet 33 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 33.0*15/(1440*1000/1000) = 0.344 m3. dip pipe.",
+        "duty": "Inlet 33.000 kg/d, 0.30 kW. Residence 0.688/(33.000/(1000*24)) = 30000.0 min. Exchanger area 0.30*1000/(500*10) = 0.060 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2592,7 +2592,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "OIL_FRAC. Inlet 28.9046 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 28.9046*15/(1440*1000/1000) = 0.301 m3. dip pipe.",
+        "duty": "Inlet 28.905 kg/d, 0.00 kW. Residence 0.602/(28.905/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2623,7 +2623,7 @@
             }
           ]
         },
-        "duty": "OIL_PYRO. Inlet 33 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 33.0*15/(1440*1000/1000) = 0.344 m3. dip pipe.",
+        "duty": "Inlet 33.000 kg/d, 0.00 kW. Residence 0.688/(33.000/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2654,7 +2654,7 @@
             }
           ]
         },
-        "duty": "POLISH_BANK. Inlet 3971.08 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3971.08*15/(1440*1000/1000) = 41.365 m3. dip pipe.",
+        "duty": "Inlet 3971.080 kg/d, 0.00 kW. Residence 82.731/(3971.080/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2669,7 +2669,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "PROD_C11_C18. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -2683,7 +2683,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "PROD_C19_C28. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -2697,7 +2697,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "PROD_C29. Inlet 1.4046 kg/d. Residence 60 min. Density 850 kg/m3. Volume 1.4046*60/(1440*850/1000) = 0.069 m3. dip pipe.",
+        "duty": "Inlet 1.405 kg/d, 0.00 kW. Residence 0.050/(1.405/(1000*24)) = 51260.1 min.",
         "presence": "present"
       }
     },
@@ -2711,7 +2711,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "PROD_C5_C10. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -2736,7 +2736,7 @@
         "module_kw": 70,
         "count": 1,
         "presence": "present",
-        "duty": "PV_ARRAY. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -2767,7 +2767,7 @@
             }
           ]
         },
-        "duty": "Q4_BUS. No liquid residence. Size is the pipe or the bay. none, pipe only.",
+        "duty": "Inlet 0.000 kg/d, 5.51 kW. Exchanger area 5.51*1000/(500*10) = 1.102 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2791,7 +2791,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "RECTIFIER. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 23.32 kW. Exchanger area 23.32*1000/(500*10) = 4.664 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -2810,7 +2810,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "RELIEF_CRYO. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -2824,7 +2824,7 @@
       "modules": [],
       "params": {
         "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)",
-        "duty": "RELIEF_H2. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -2856,7 +2856,7 @@
             }
           ]
         },
-        "duty": "ROOF_TANK. Inlet 200000 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 200000.0*30/(1440*1000/1000) = 4166.667 m3. dip pipe and stilling well."
+        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -2871,7 +2871,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "S13_CLASS_TREAT. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2888,7 +2888,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "SALT_FEED. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2908,7 +2908,7 @@
       "params": {
         "kW": 60,
         "presence": "present",
-        "duty": "SOL_ARK_60K. No liquid residence. Size is the pipe or the bay. dip pipe."
+        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -2927,7 +2927,7 @@
         "presence": "present",
         "enclosure": "greenhouse",
         "note": "Enclosed. Vapor to the AHU, condensate to the roof tank.",
-        "duty": "TERRACE_IRRIG. No liquid residence. Size is the pipe or the bay. none, pipe only."
+        "duty": "Inlet 40.000 kg/d, 0.00 kW. Residence 0.833/(40.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -2973,7 +2973,7 @@
             }
           ]
         },
-        "duty": "WAFER_FAB. Inlet 66.5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 66.5*15/(1440*1000/1000) = 0.693 m3. dip pipe."
+        "duty": "Inlet 66.500 kg/d, 0.00 kW. Residence 1.385/(66.500/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -3009,7 +3009,7 @@
             }
           ]
         },
-        "duty": "WET_BENCH. Inlet 60 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 60.0*15/(1440*1000/1000) = 0.625 m3. dip pipe."
+        "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -3038,7 +3038,7 @@
             }
           ]
         },
-        "duty": "WIRE_DRAW. Inlet 6.8389 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.8389*15/(1440*1000/1000) = 0.071 m3. dip pipe.",
+        "duty": "Inlet 6.839 kg/d, 0.00 kW. Residence 0.142/(6.839/(1000*24)) = 30000.0 min.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -3055,7 +3055,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "WS_AMMONIA. Inlet 3.25 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.25*15/(1440*1000/1000) = 0.034 m3. dip pipe."
+        "duty": "Inlet 3.250 kg/d, 0.00 kW. Residence 0.068/(3.250/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": null
     },
@@ -3071,7 +3071,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "WS_DOPE. Inlet 0.01 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.01*15/(1440*1000/1000) = 0.000 m3. dip pipe."
+        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min."
       },
       "continuous_kw": null
     },
@@ -3087,7 +3087,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "WS_HF_ED. Inlet 1.5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 1.5*15/(1440*1000/1000) = 0.016 m3. dip pipe."
+        "duty": "Inlet 1.500 kg/d, 0.00 kW. Residence 0.050/(1.500/(1000*24)) = 48000.0 min."
       },
       "continuous_kw": null
     },
@@ -3125,7 +3125,7 @@
             }
           ]
         },
-        "duty": "WS_KOH. Inlet 0.27 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.27*15/(1440*1000/1000) = 0.003 m3. dip pipe."
+        "duty": "Inlet 0.270 kg/d, 0.00 kW. Residence 0.050/(0.270/(1000*24)) = 266666.7 min."
       },
       "continuous_kw": null
     },
@@ -3163,7 +3163,7 @@
             }
           ]
         },
-        "duty": "WS_NITRIC. Inlet 0.6456 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.6456*15/(1440*1000/1000) = 0.007 m3. dip pipe."
+        "duty": "Inlet 0.646 kg/d, 0.00 kW. Residence 0.050/(0.646/(1000*24)) = 111524.2 min."
       },
       "continuous_kw": null
     },
@@ -3179,7 +3179,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "WS_PEROX. Inlet 3 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.0*15/(1440*1000/1000) = 0.031 m3. dip pipe."
+        "duty": "Inlet 3.000 kg/d, 0.00 kW. Residence 0.062/(3.000/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": null
     },
@@ -3195,7 +3195,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "WS_SLURRY. Inlet 3.3 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.3*15/(1440*1000/1000) = 0.034 m3. dip pipe."
+        "duty": "Inlet 3.300 kg/d, 0.00 kW. Residence 0.069/(3.300/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": null
     },
@@ -3211,7 +3211,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "WS_SOLV. Inlet 0.1 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.1*15/(1440*1000/1000) = 0.001 m3. dip pipe."
+        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min."
       },
       "continuous_kw": null
     },
@@ -3267,7 +3267,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "ZNBR2. Inlet 852.473 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 852.473*15/(1440*1000/1000) = 8.880 m3. dip pipe."
+        "duty": "Inlet 852.473 kg/d, 6.67 kW. Residence 17.760/(852.473/(1000*24)) = 30000.0 min. Exchanger area 6.67*1000/(500*10) = 1.333 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -3302,7 +3302,7 @@
             }
           ]
         },
-        "duty": "ZNBR2_BR2_REGEN. Inlet 852.47 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 852.47*5/(1440*1000/1000) = 2.960 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
+        "duty": "Inlet 852.470 kg/d, 0.00 kW. Residence 17.760/(852.470/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -3324,7 +3324,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "WS_PHOS. Inlet 0.62 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.62*15/(1440*1000/1000) = 0.006 m3. dip pipe."
+        "duty": "Inlet 0.620 kg/d, 0.00 kW. Residence 0.050/(0.620/(1000*24)) = 116129.0 min."
       }
     },
     {
@@ -3367,7 +3367,7 @@
             }
           ]
         },
-        "duty": "GLASS_RINSE. Inlet 36.82 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 36.82*15/(1440*1000/1000) = 0.384 m3. dip pipe.",
+        "duty": "Inlet 36.820 kg/d, 0.00 kW. Residence 0.767/(36.820/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -3403,7 +3403,7 @@
             }
           ]
         },
-        "duty": "GLASS_MILL. Inlet 36.8182 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 36.8182*15/(1440*1000/1000) = 0.384 m3. dip pipe.",
+        "duty": "Inlet 36.818 kg/d, 0.00 kW. Residence 0.767/(36.818/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -3471,7 +3471,7 @@
             }
           ]
         },
-        "duty": "GLASS_BURNOUT. Inlet 30 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 30.0*15/(1440*1000/1000) = 0.312 m3. dip pipe.",
+        "duty": "Inlet 30.000 kg/d, 1.86 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min. Exchanger area 1.86*1000/(500*10) = 0.372 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -3496,7 +3496,7 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "VCD_TRAIN. Inlet 104.5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 104.5*15/(1440*1000/1000) = 1.089 m3. dip pipe.",
+        "duty": "Inlet 104.500 kg/d, 0.00 kW. Residence 2.177/(104.500/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -3535,7 +3535,7 @@
             }
           ]
         },
-        "duty": "REMIN. Inlet 10 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 10.0*15/(1440*1000/1000) = 0.104 m3. dip pipe.",
+        "duty": "Inlet 10.000 kg/d, 0.00 kW. Residence 0.208/(10.000/(1000*24)) = 30000.0 min.",
         "presence": "present"
       }
     },
@@ -3556,7 +3556,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "LITHO_COAT. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3577,7 +3577,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "LITHO_ALIGN. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3598,7 +3598,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "LITHO_DEV. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3645,7 +3645,7 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "LITHO_STUB. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3668,7 +3668,7 @@
           1800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "ELECTRODE_COAT. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3691,7 +3691,7 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "BLOW_MOLD. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3757,7 +3757,7 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "SOLAR_PV_CELL. No liquid residence. Size is the pipe or the bay. dip pipe.",
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
         "presence": "present"
       }
     },
@@ -3815,7 +3815,7 @@
             }
           ]
         },
-        "duty": "Q1_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 1.38 kW. Exchanger area 1.38*1000/(500*10) = 0.277 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -3887,7 +3887,7 @@
             }
           ]
         },
-        "duty": "Q2_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 2.03 kW. Exchanger area 2.03*1000/(500*10) = 0.405 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -3959,7 +3959,7 @@
             }
           ]
         },
-        "duty": "Q3_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 10.05 kW. Exchanger area 10.05*1000/(500*10) = 2.010 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -4017,7 +4017,7 @@
             }
           ]
         },
-        "duty": "Q4_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 2.29 kW. Exchanger area 2.29*1000/(500*10) = 0.457 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -4075,7 +4075,7 @@
             }
           ]
         },
-        "duty": "Q1_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 1.38 kW. Exchanger area 1.38*1000/(500*10) = 0.277 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -4147,7 +4147,7 @@
             }
           ]
         },
-        "duty": "Q2_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 2.03 kW. Exchanger area 2.03*1000/(500*10) = 0.405 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -4219,7 +4219,7 @@
             }
           ]
         },
-        "duty": "Q3_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 10.05 kW. Exchanger area 10.05*1000/(500*10) = 2.010 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -4277,7 +4277,7 @@
             }
           ]
         },
-        "duty": "Q4_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
+        "duty": "Inlet 0.000 kg/d, 2.29 kW. Exchanger area 2.29*1000/(500*10) = 0.457 m2 at 10 K and 500 W/m2K.",
         "presence": "present"
       }
     },
@@ -4301,7 +4301,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "ANIMAL_PEN. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min."
       }
     },
     {
@@ -4324,7 +4324,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "COMPOST. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 129.630 kg/d, 0.00 kW. Residence 2.701/(129.630/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -4347,7 +4347,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "DIGESTER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.350 kg/d, 0.00 kW. Residence 0.050/(0.350/(1000*24)) = 205714.3 min."
       }
     },
     {
@@ -4370,7 +4370,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "EMETH. Inlet 0.94 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.94*15/(1440*1000/1000) = 0.010 m3. dip pipe."
+        "duty": "Inlet 0.940 kg/d, 0.00 kW. Residence 0.050/(0.940/(1000*24)) = 76595.7 min."
       }
     },
     {
@@ -4393,7 +4393,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "LIGNO_PRE. Inlet 8.69 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 8.69*30/(1440*1000/1000) = 0.181 m3. dip pipe and stilling well."
+        "duty": "Inlet 8.690 kg/d, 0.00 kW. Residence 0.181/(8.690/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -4416,7 +4416,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "BOARD_MILL. Inlet 3.87 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.87*15/(1440*1000/1000) = 0.040 m3. dip pipe."
+        "duty": "Inlet 3.870 kg/d, 0.00 kW. Residence 0.081/(3.870/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -4439,7 +4439,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "HTC. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 3.190 kg/d, 0.00 kW. Residence 0.066/(3.190/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -4455,7 +4455,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_ASU. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
+        "duty": "Inlet 243.890 kg/d, 0.00 kW. Residence 5.081/(243.890/(1000*24)) = 30000.0 min."
       },
       "continuous_kw": {
         "value": 18.0,
@@ -4477,7 +4477,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_HE. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
+        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4500,7 +4500,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_NE. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4523,7 +4523,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_KR. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
+        "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4546,7 +4546,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_XE. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
+        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4569,7 +4569,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRYO_AR. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
+        "duty": "Inlet 5.300 kg/d, 0.00 kW. Residence 0.110/(5.300/(1000*24)) = 30000.0 min.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4598,7 +4598,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "YEAST. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 1.000 kg/d, 0.00 kW. Residence 0.050/(1.000/(1000*24)) = 72000.0 min."
       }
     },
     {
@@ -4620,7 +4620,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ABE. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.640 kg/d, 0.00 kW. Residence 0.050/(0.640/(1000*24)) = 112500.0 min."
       }
     },
     {
@@ -4642,7 +4642,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ACETOX. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min."
       }
     },
     {
@@ -4664,7 +4664,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ALD. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min."
       }
     },
     {
@@ -4686,7 +4686,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "GLYOXAL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.180 kg/d, 0.00 kW. Residence 0.050/(0.180/(1000*24)) = 400000.0 min."
       }
     },
     {
@@ -4708,7 +4708,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "FORM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min."
       }
     },
     {
@@ -4730,7 +4730,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "MEAM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.040 kg/d, 0.00 kW. Residence 0.050/(0.040/(1000*24)) = 1800000.0 min."
       }
     },
     {
@@ -4752,7 +4752,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "IMID. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min."
       }
     },
     {
@@ -4774,7 +4774,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "QUAT. Issued envelope 400 x 400 x 800 mm. Volume 400*400*800/1e9 = 0.128 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.260 kg/d, 0.00 kW. Envelope 400x400x800 mm = 0.128 m3. Residence 0.128/(0.260/(1000*24)) = 708923.1 min."
       }
     },
     {
@@ -4796,7 +4796,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ACEX. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min."
       }
     },
     {
@@ -4818,7 +4818,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HNO3. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.500 kg/d, 0.00 kW. Residence 0.050/(0.500/(1000*24)) = 144000.0 min."
       }
     },
     {
@@ -4840,7 +4840,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "BUCL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.130 kg/d, 0.00 kW. Residence 0.050/(0.130/(1000*24)) = 553846.2 min."
       }
     },
     {
@@ -4862,7 +4862,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "BSFL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 1.800 kg/d, 0.00 kW. Residence 0.050/(1.800/(1000*24)) = 40000.0 min."
       }
     },
     {
@@ -4884,7 +4884,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "DUCKWEED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 9697.000 kg/d, 0.00 kW. Residence 202.021/(9697.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -4906,7 +4906,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "WORMS. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 3.020 kg/d, 0.00 kW. Residence 0.063/(3.020/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -4928,7 +4928,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "BEES. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -4950,7 +4950,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CHICKENS. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min."
       }
     },
     {
@@ -4972,7 +4972,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "GOATS. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.550 kg/d, 0.00 kW. Residence 0.050/(0.550/(1000*24)) = 130909.1 min."
       }
     },
     {
@@ -4994,7 +4994,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "FISH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -5016,7 +5016,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CRAYFISH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min."
       }
     },
     {
@@ -5038,7 +5038,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "AZOLLA. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min."
       }
     },
     {
@@ -5060,7 +5060,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "MUSHROOM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min."
       }
     },
     {
@@ -5082,7 +5082,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "COMPOST_TOILET. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 1.200 kg/d, 0.00 kW. Residence 0.050/(1.200/(1000*24)) = 60000.0 min."
       }
     },
     {
@@ -5104,7 +5104,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "NFIX_BED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.750 kg/d, 0.00 kW. Residence 0.050/(0.750/(1000*24)) = 96000.0 min."
       }
     },
     {
@@ -5126,7 +5126,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "MUSH_STRAW. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min."
       }
     },
     {
@@ -5148,7 +5148,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "MUSH_BLOCK. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.250 kg/d, 0.00 kW. Residence 0.050/(0.250/(1000*24)) = 288000.0 min."
       }
     },
     {
@@ -5170,7 +5170,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "AMF. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min."
       }
     },
     {
@@ -5192,7 +5192,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "COMPOST_MYC. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 2.700 kg/d, 0.00 kW. Residence 0.056/(2.700/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -5214,7 +5214,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "FRUIT_GUTTER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min."
       }
     },
     {
@@ -5236,7 +5236,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "VEG_BED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -5258,7 +5258,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CLARIFIER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -5280,7 +5280,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "BIOFILTER. Issued envelope 3000 x 5000 x 1200 mm. Volume 3000*5000*1200/1e9 = 18.000 m3. media or gutter as named on the index."
+        "duty": "Inlet 47999.000 kg/d, 0.00 kW. Envelope 3000x5000x1200 mm = 18.000 m3. Residence 18.000/(47999.000/(1000*24)) = 540.0 min."
       }
     },
     {
@@ -5302,7 +5302,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "FISH_SUMP. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min."
       }
     },
     {
@@ -5324,7 +5324,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_TOMATO. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min."
       }
     },
     {
@@ -5346,7 +5346,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_CUCUMBER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min."
       }
     },
     {
@@ -5368,7 +5368,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_PEPPER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min."
       }
     },
     {
@@ -5390,7 +5390,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_LETTUCE. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min."
       }
     },
     {
@@ -5412,7 +5412,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_SPINACH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min."
       }
     },
     {
@@ -5434,7 +5434,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_KALE. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min."
       }
     },
     {
@@ -5456,7 +5456,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_ALLIUM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min."
       }
     },
     {
@@ -5478,7 +5478,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_BASIL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.030 kg/d, 0.00 kW. Residence 0.050/(0.030/(1000*24)) = 2400000.0 min."
       }
     },
     {
@@ -5500,7 +5500,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CROP_ROSEMARY. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min."
       }
     },
     {
@@ -5522,7 +5522,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CLOVER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min."
       }
     },
     {
@@ -5544,7 +5544,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "SEED_BANK. Issued envelope 2000 x 2000 x 2200 mm. Volume 2000*2000*2200/1e9 = 8.800 m3. media or gutter as named on the index.",
+        "duty": "Inlet 0.010 kg/d, 0.00 kW. Envelope 2000x2000x2200 mm = 8.800 m3. Residence 8.800/(0.010/(1000*24)) = 1267200000.0 min.",
         "inventory": {
           "seed": [
             "bean",
@@ -5611,7 +5611,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "STRUVITE. Issued envelope 1000 x 1000 x 1200 mm. Volume 1000*1000*1200/1e9 = 1.200 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.200 kg/d, 0.00 kW. Envelope 1000x1000x1200 mm = 1.200 m3. Residence 1.200/(0.200/(1000*24)) = 8640000.0 min."
       }
     },
     {
@@ -5633,7 +5633,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ASH. Issued envelope 1000 x 1000 x 1500 mm. Volume 1000*1000*1500/1e9 = 1.500 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.300 kg/d, 0.00 kW. Envelope 1000x1000x1500 mm = 1.500 m3. Residence 1.500/(0.300/(1000*24)) = 7200000.0 min."
       }
     },
     {
@@ -5655,7 +5655,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "IODIDE. Issued envelope 500 x 500 x 800 mm. Volume 500*500*800/1e9 = 0.200 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.002 kg/d, 0.00 kW. Envelope 500x500x800 mm = 0.200 m3. Residence 0.200/(0.002/(1000*24)) = 144000000.0 min."
       }
     },
     {
@@ -5681,7 +5681,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "CURTAIL. Issued envelope 800 x 600 x 2000 mm. Volume 800*600*2000/1e9 = 0.960 m3. plates, 10 K approach."
+        "duty": "Inlet 0.000 kg/d, 50.26 kW. Envelope 800x600x2000 mm = 0.960 m3. Exchanger area 50.26*1000/(500*10) = 10.052 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -5707,7 +5707,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HEAT_SINK. Issued envelope 6000 x 6000 x 1500 mm. Volume 6000*6000*1500/1e9 = 54.000 m3. plates, 10 K approach."
+        "duty": "Inlet 0.000 kg/d, 15.88 kW. Envelope 6000x6000x1500 mm = 54.000 m3. Exchanger area 15.88*1000/(500*10) = 3.176 m2 at 10 K and 500 W/m2K."
       }
     },
     {
@@ -5729,7 +5729,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "NFT. Issued envelope 6000 x 1000 x 300 mm. Volume 6000*1000*300/1e9 = 1.800 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x1000x300 mm = 1.800 m3."
       }
     },
     {
@@ -5751,7 +5751,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "MISTER. Issued envelope 4000 x 1000 x 800 mm. Volume 4000*1000*800/1e9 = 3.200 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 4000x1000x800 mm = 3.200 m3."
       }
     },
     {
@@ -5773,7 +5773,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "DUAL_ROOT. Issued envelope 6000 x 2000 x 600 mm. Volume 6000*2000*600/1e9 = 7.200 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x2000x600 mm = 7.200 m3."
       }
     },
     {
@@ -5795,7 +5795,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "AZOLLA_BED. Issued envelope 18000 x 5000 x 400 mm. Volume 18000*5000*400/1e9 = 36.000 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 18000x5000x400 mm = 36.000 m3."
       }
     },
     {
@@ -5817,7 +5817,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ETOH_STILL. Issued envelope 400 x 400 x 1500 mm. Volume 400*400*1500/1e9 = 0.240 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 400x400x1500 mm = 0.240 m3."
       }
     },
     {
@@ -5839,7 +5839,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "BUOH_STILL. Issued envelope 300 x 300 x 1200 mm. Volume 300*300*1200/1e9 = 0.108 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x1200 mm = 0.108 m3."
       }
     },
     {
@@ -5861,7 +5861,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "FORM_RX. Issued envelope 300 x 300 x 800 mm. Volume 300*300*800/1e9 = 0.072 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x800 mm = 0.072 m3."
       }
     },
     {
@@ -5883,7 +5883,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "PEANUT. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -5905,7 +5905,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "SUNFLOWER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -5927,7 +5927,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HAB_SLEEP. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -5949,7 +5949,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HAB_GALLEY. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -5971,7 +5971,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HAB_MED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -5993,7 +5993,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "HAB_WASH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW."
       }
     },
     {
@@ -6015,7 +6015,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "LITHO. Issued envelope 1600 x 900 x 1800 mm. Volume 1600*900*1800/1e9 = 2.592 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1600x900x1800 mm = 2.592 m3."
       }
     },
     {
@@ -6037,7 +6037,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "BLOW. Issued envelope 2200 x 1200 x 2000 mm. Volume 2200*1200*2000/1e9 = 5.280 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2200x1200x2000 mm = 5.280 m3."
       }
     },
     {
@@ -6059,7 +6059,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "ELCOAT. Issued envelope 800 x 600 x 900 mm. Volume 800*600*900/1e9 = 0.432 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 800x600x900 mm = 0.432 m3."
       }
     },
     {
@@ -6081,7 +6081,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "PV_CELL. Issued envelope 2000 x 1200 x 1800 mm. Volume 2000*1200*1800/1e9 = 4.320 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2000x1200x1800 mm = 4.320 m3."
       }
     },
     {
@@ -6103,7 +6103,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "EXPANDER. Issued envelope 600 x 400 x 500 mm. Volume 600*400*500/1e9 = 0.120 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 600x400x500 mm = 0.120 m3."
       }
     },
     {
@@ -6125,7 +6125,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "SIC_FURNACE. Issued envelope 1500 x 1500 x 1800 mm. Volume 1500*1500*1800/1e9 = 4.050 m3. media or gutter as named on the index."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1500x1500x1800 mm = 4.050 m3."
       }
     }
   ],

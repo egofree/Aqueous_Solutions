@@ -1,19 +1,19 @@
 # CURTAIL
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
 
-1. Basis. IA-E-SUNIN 50.26 kW from BOUNDARY_EXPORT. One operating point, the graph rate.
+1. Basis. IA-E-SUNIN 50.26 kW from BOUNDARY_EXPORT.
 
-2. Size. Issued envelope 800 x 600 x 2000 mm. Volume 800*600*2000/1e9 = 0.960 m3.
+2. Size. Inlet 0.000 kg/d, 50.26 kW. Envelope 800x600x2000 mm = 0.960 m3. Exchanger area 50.26*1000/(500*10) = 10.052 m2 at 10 K and 500 W/m2K.
 
-3. Material. Corrosion allowance 1.5 mm. Internals: plates, 10 K approach.
+3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. Inlet DN15, outlet DN15, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
+4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
 
-5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
+5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
 
-7. Code. shop, 316L plate.
+7. Code. Shop. Not stamped.
 
-8. Open items. None.
+8. Open items. None. Numbers are from the graph rate and the envelope.

@@ -1,19 +1,19 @@
 # GLASS_DIGEST
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Calculated from graph Rev AW. Study. Not a PE stamp.
 
-1. Basis. IA-BASE-01 118.43 kg/d from BMED_BASE. One operating point, the graph rate.
+1. Basis. HL-Q3-A-HX6 2.079 kW from Q3_A.
 
-2. Size. Inlet 118.43 kg/d. Residence 60 min. Density 1000 kg/m3. Volume 118.43*60/(1440*1000/1000) = 4.935 m3.
+2. Size. Inlet 118.430 kg/d, 2.08 kW. Residence 2.467/(118.430/(1000*24)) = 30000.0 min. Exchanger area 2.08*1000/(500*10) = 0.416 m2 at 10 K and 500 W/m2K.
 
-3. Material. Corrosion allowance 1.5 mm. Internals: pitched-blade agitator.
+3. Material. Density used 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
 
-4. Nozzles. Inlet DN25, outlet DN25, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
+4. Nozzles. From the inlet rate. DN15 below 24 kg/d, DN25 to 120, DN50 above. Class 150 on metal.
 
-5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
+5. Instruments. Level and temperature. High level trips the feed pump.
 
-6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber. Set 110% of operating pressure where the unit is pressurized.
 
-7. Code. shop, 316L.
+7. Code. Shop. Not stamped.
 
-8. Open items. None.
+8. Open items. None. Numbers are from the graph rate and the envelope.
