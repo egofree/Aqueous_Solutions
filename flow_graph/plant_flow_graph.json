@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AU",
+  "revision": "AV",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -53,7 +53,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Packed tower, 300 mm, PP. NaOH from BMED. Acid gas in, brine out. 40 C.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -129,7 +131,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Chamber, 316L, 800 C. VOC and H2. 1 s residence. Flue to the scrubber."
       }
     },
     {
@@ -157,7 +160,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "DN100 316L, 2 m. From the afterburner to the alkaline scrubber.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -179,7 +184,8 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "Packed tower, 400 mm, PP. NaOH. Acid gas and Cl2. Brine returns to leach."
       }
     },
     {
@@ -236,7 +242,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Diesel-equivalent, methanol fuel cell standby. 5 kW. Shop maintained."
       }
     },
     {
@@ -250,7 +257,10 @@
       "notes": "Dust baghouse (S19)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Pulse-jet, polyester bags, 2 m2 cloth. Dust from burnout and mill. Cake to leach.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -286,7 +296,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "CSTR, 500 L, 316L. Organic solids. 35 C. Biogas to the header.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -369,7 +381,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Bipolar membrane stack, 0.5 m2. Brine to acid and base. Diluate below 1 uS/cm."
       }
     },
     {
@@ -389,7 +402,8 @@
         "presence": "present",
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
-        "boundary_kind": "dock freight door (logical)"
+        "boundary_kind": "dock freight door (logical)",
+        "duty": "Accounting node. Heat and surplus leave here. No vessel."
       }
     },
     {
@@ -407,7 +421,9 @@
         "from": "PROD_C29",
         "to": "INDUCTION_PYROLYZER",
         "solid": "pipe",
-        "ref": "oil_line.py / ANIMATION_BRIEF D6"
+        "ref": "oil_line.py / ANIMATION_BRIEF D6",
+        "duty": "DN25, traced, 80 C. Heavy cut back to the pyrolyzer.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -430,7 +446,8 @@
         "z_mm": -10500,
         "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
         "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
-        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out"
+        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
+        "duty": "HDPE, 5 m3, L-2. Lowest water point. Pumped to the roof tank."
       }
     },
     {
@@ -466,7 +483,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Two-high mill. Electrowon sheet to strip. Shop frame.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -505,7 +524,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "DN40 PVC. Liquor from dewater back to CSTR 1.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -536,7 +557,10 @@
       "notes": "CRYO AHU (S56/S70)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Air handler, 700 m3/h. Coil at 5 C. Condensate to the pot.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -550,7 +574,10 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Knockout, 10 L, 316L. Condensate from the handler. To the flue KO.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -580,7 +607,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Column section, 150 mm, 316L. CO2 cut at the triple point. To the farm header."
       }
     },
     {
@@ -594,7 +622,10 @@
       "notes": "Dedicated cryo cool loop (S55)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Brazed plate, 316L. Dedicates the cold-box reject to Q4.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -615,7 +646,8 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "Cold box cut. H2 at 20 K. To the dryer then the fuel cell."
       }
     },
     {
@@ -629,7 +661,10 @@
       "notes": "CRYO warm reject HX (S54)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Plate exchanger. Cold-box reject to the Q4 bus. 10 K approach.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -643,7 +678,10 @@
       "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Column section. N2 at 77 K. To the header and the farm.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -659,7 +697,8 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "Column section. O2 at 90 K. To the header and the fuel cell."
       }
     },
     {
@@ -750,7 +789,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 1 in the cascade."
       }
     },
     {
@@ -800,7 +840,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 2 in the cascade.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -850,7 +892,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 3 in the cascade.",
+        "presence": "present"
       }
     },
     {
@@ -899,7 +943,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 4 in the cascade.",
+        "presence": "present"
       }
     },
     {
@@ -948,7 +994,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 5 in the cascade.",
+        "presence": "present"
       }
     },
     {
@@ -997,7 +1045,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 6 in the cascade.",
+        "presence": "present"
       }
     },
     {
@@ -1046,7 +1096,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 7 in the cascade.",
+        "presence": "present"
       }
     },
     {
@@ -1095,7 +1147,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 8 in the cascade.",
+        "presence": "present"
       }
     },
     {
@@ -1145,7 +1199,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 9 in the cascade.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -1174,7 +1230,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "PVDF, 1 m3. Ultra-pure water for the fab. Conductivity below 1 uS/cm.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -1219,7 +1277,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Weir and floor auger in CSTR 1. Float to the dryer. Sink to the split.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -1260,7 +1320,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Knockout, 20 L, 316L. Condensate from flue. To treatment.",
+        "presence": "present"
       }
     },
     {
@@ -1317,7 +1379,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "PEM, 5 kW. H2 and O2. Water to the condensate pot."
       }
     },
     {
@@ -1361,7 +1424,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Close-coupled nozzle. Melt to powder. Nitrogen atomizing gas.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -1382,7 +1447,9 @@
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "Borehole exchanger, 100 m, HDPE. Ground loop. 12 C source.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -1407,7 +1474,8 @@
         "presence": "present",
         "T_source_K": 285.0,
         "coupled_GHEX": true,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "Heat pump, 10 kW thermal. Ground loop to the Q2 bus."
       }
     },
     {
@@ -1421,7 +1489,10 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "HDPE, DN32, glycol. Between the borehole and the heat pump.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -1545,7 +1616,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Tank, 200 L, 316L. 80-90 C NaOH. Silica liquor, hydroxide cake, grit."
       }
     },
     {
@@ -1559,7 +1631,10 @@
       "notes": "Grey treatment (S29)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Settler and biofilter, 500 L. Grey water. Solids to compost. Water to the roof tank.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -1636,7 +1711,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Media bed, 70 m2 potato plus grain. Fish water. Residue to compost."
       }
     },
     {
@@ -1657,7 +1733,8 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "Molecular sieve, 2 beds, 10 L each. H2 to below 1 ppm water."
       }
     },
     {
@@ -1700,7 +1777,8 @@
               "kind": "by_difference"
             }
           ]
-        }
+        },
+        "duty": "Four rooms, 40 m2. Food, water, oxygen in. Waste and CO2 out."
       }
     },
     {
@@ -1726,7 +1804,9 @@
         "not_consumers": {
           "MEOH_SYNTH": "H2-limited; carrier loop via S82",
           "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
-        }
+        },
+        "duty": "DN15 header, 3 bar. CO2 to the farm at 1000 ppm.",
+        "presence": "present"
       }
     },
     {
@@ -1742,7 +1822,8 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "DN15 header, 316L. Cathode hydrogen to the dryer."
       }
     },
     {
@@ -1753,7 +1834,10 @@
       "notes": "Life N2 header. Not a process header. Not the dock.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "duty": "DN25 header. Nitrogen to the fab and the atomizer.",
+        "presence": "present"
+      }
     },
     {
       "unit_id": "HDR_O2",
@@ -1766,7 +1850,10 @@
       "notes": "O2 header (S15/S02)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "DN15 header. Oxygen to the fuel cell and habitation.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -1796,7 +1883,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "PVDF header. Ultra-pure water to the fab and the wet bench."
       }
     },
     {
@@ -1810,7 +1898,10 @@
       "notes": "Organic/scrap hopper (S11/S16/S61)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Elevated, 0.5 m3. Feedstock in. To the shredder. No filter.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -1844,7 +1935,9 @@
           600
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "Plate, 316L. Electrowinning reject to the Q3 bus.",
+        "presence": "present"
       }
     },
     {
@@ -1890,7 +1983,8 @@
         ],
         "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
-        "presence": "present"
+        "presence": "present",
+        "duty": "Turbine, 2 kW. Roof to catch. Standby."
       }
     },
     {
@@ -1966,7 +2060,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "2000 x 1200 x 1400 mm, PVC/FRP. HCl leach. Float weir, floor auger."
       }
     },
     {
@@ -1985,7 +2080,9 @@
         "solid": "none",
         "former_class": "load_agg",
         "boundary_kind": "electrical accounting (S17/S20 sum)",
-        "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only."
+        "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
+        "duty": "Electrical sum. Not a vessel. Loads roll up here.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2004,7 +2101,9 @@
           600
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "Condenser, 316L, water cooled. Methanol vapor to liquid.",
+        "presence": "present"
       }
     },
     {
@@ -2061,7 +2160,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Direct methanol cell, 1 kW. Methanol and air. CO2 to the header."
       }
     },
     {
@@ -2095,7 +2195,9 @@
               "kind": "by_difference"
             }
           ]
-        }
+        },
+        "duty": "Fermenter, 100 L, 30 C. Sugar to methanol. Yeast or bacteria.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2137,7 +2239,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Catalytic, Cu/ZnO, 250 C, 50 bar. Syngas to methanol. Shop catalyst."
       }
     },
     {
@@ -2166,7 +2269,8 @@
           800,
           1100
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "316L, 200 L. Methanol store. To the cell and the formaldehyde reactor."
       }
     },
     {
@@ -2180,7 +2284,10 @@
       "notes": "Metal aisle AHU (S62/S71)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Air handler on the melt bay. Capture and filter. To the scrubber.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -2194,7 +2301,10 @@
       "notes": "MET HX \u2192 Q4 (S63)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Plate. Melt reject to Q4.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -2230,7 +2340,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Induction, 50 kg, graphite crucible. Scrap to melt. To the atomizer.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2267,7 +2379,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Packed, PP. Melt fume. Caustic. Brine to leach.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2319,7 +2433,8 @@
               "kind": "by_difference"
             }
           ]
-        }
+        },
+        "duty": "One bay. Mill, lathe, weld. Scrap to the digester."
       }
     },
     {
@@ -2330,7 +2445,10 @@
       "notes": "Non-condensable gas from the fractionator. Only this stream may enter the afterburner.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "duty": "DN50. Non-condensable gas to the afterburner.",
+        "presence": "present"
+      }
     },
     {
       "unit_id": "NORTH_DOCK",
@@ -2360,7 +2478,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "12 x 8 m. Receiving. No process."
       }
     },
     {
@@ -2379,7 +2498,9 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "Packed, PP. NOx in NaOH. Nitrate brine to the nutrient tank.",
+        "presence": "present"
       }
     },
     {
@@ -2400,7 +2521,8 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "Tank, 200 L, HDPE. Compost liquor and urine. Dose to the beds."
       }
     },
     {
@@ -2452,7 +2574,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Indirect, 120 C. Float solids. Water out. Solids to the pyrolyzer.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2467,7 +2591,10 @@
       "notes": "Oil frac (intra)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Packed column, 150 mm, 20 stages. Oil to C5-C10, C11-C18, C19-C28, C29.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -2495,7 +2622,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Induction, 450 C, no air. Dried float to oil and char. Char to the silicon furnace.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2524,7 +2653,9 @@
               "kind": "by_difference"
             }
           ]
-        }
+        },
+        "duty": "Parallel cells after EW-9. Co, Mn, Cr, Li, REE cake, Hg, Tl. Sealed where noted.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2537,7 +2668,9 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "oil_line.py"
+        "ref": "oil_line.py",
+        "duty": "Tank, 100 L. Diesel-range cut. To the shop and the generator.",
+        "presence": "present"
       }
     },
     {
@@ -2549,7 +2682,9 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "oil_line.py"
+        "ref": "oil_line.py",
+        "duty": "Tank, 100 L. Lube cut. To the shop.",
+        "presence": "present"
       }
     },
     {
@@ -2561,7 +2696,9 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "oil_line.py"
+        "ref": "oil_line.py",
+        "duty": "Tank, 50 L. Heavy cut. Recycle to the pyrolyzer.",
+        "presence": "present"
       }
     },
     {
@@ -2573,7 +2710,9 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "oil_line.py"
+        "ref": "oil_line.py",
+        "duty": "Tank, 50 L. Light cut. To the generator.",
+        "presence": "present"
       }
     },
     {
@@ -2596,7 +2735,8 @@
       "params": {
         "module_kw": 70,
         "count": 1,
-        "presence": "present"
+        "presence": "present",
+        "duty": "Roof, 400 kW peak. Cells from the wafer line. DC to the bus."
       }
     },
     {
@@ -2626,7 +2766,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Heat header, lowest grade. Reject to the dry cooler.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -2648,7 +2790,8 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "DC supply to EW-1. Current set by the cell. No iridium on the anode."
       }
     },
     {
@@ -2666,7 +2809,9 @@
           600
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "Relief, set 10% above operating. To the scrubber. No vent to atmosphere.",
+        "presence": "present"
       }
     },
     {
@@ -2678,7 +2823,9 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)"
+        "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)",
+        "duty": "Relief on the hydrogen header. To the afterburner.",
+        "presence": "present"
       }
     },
     {
@@ -2708,7 +2855,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "HDPE, 10 m3. Irrigation and makeup. Above the beds."
       }
     },
     {
@@ -2722,7 +2870,10 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Classifier and treat on stream 13. Solids to compost. Liquor to the dose tank.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -2736,7 +2887,10 @@
       "notes": "Salt feed (S12/S13/S28/S29/S30)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "Hopper, 50 L. Salt makeup to the leach. From the brine return first.",
+        "presence": "present"
+      },
       "continuous_kw": null
     },
     {
@@ -2753,7 +2907,8 @@
       "modules": [],
       "params": {
         "kW": 60,
-        "presence": "present"
+        "presence": "present",
+        "duty": "Inverter, 60 kW. DC bus to AC loads. Not loaded above 80%."
       }
     },
     {
@@ -2771,7 +2926,8 @@
       "params": {
         "presence": "present",
         "enclosure": "greenhouse",
-        "note": "Enclosed. Vapor to the AHU, condensate to the roof tank."
+        "note": "Enclosed. Vapor to the AHU, condensate to the roof tank.",
+        "duty": "DN25 header. Roof tank to the beds. Enclosed greenhouse."
       }
     },
     {
@@ -2816,7 +2972,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Bay, 12 x 10 m. Slice, dope, etch, clean. Spent acid to the leach."
       }
     },
     {
@@ -2851,7 +3008,8 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "PP bench. Acid and base baths. Rinse to ultra-pure. Spent to the leach."
       }
     },
     {
@@ -2879,7 +3037,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Draw bench. Rod to wire. Shop.",
+        "presence": "present"
       },
       "continuous_kw": null
     },
@@ -3106,7 +3266,8 @@
           ]
         },
         "duty_fraction": 0.3,
-        "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW."
+        "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
+        "duty": "Zinc-bromine flow battery, 400 kWh. Charge from the bus. Not above 30% duty."
       }
     },
     {
@@ -3140,7 +3301,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Scrubber on the bromine headspace. Returns bromine to the electrolyte.",
+        "presence": "present"
       }
     },
     {
@@ -3203,7 +3366,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Spray, 200 L/h. Cake from the vacuum drum. Liquor back to the digest.",
+        "presence": "present"
       }
     },
     {
@@ -3237,7 +3402,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Ball mill. Cake to below 300 um. To the digest.",
+        "presence": "present"
       }
     },
     {
@@ -3303,7 +3470,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Indirect, 450-550 C. Organics off the glass cake. Char to the silicon furnace.",
+        "presence": "present"
       }
     },
     {
@@ -3326,7 +3495,9 @@
           600,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Vapor compression still. Brine to distillate. Study. 316L.",
+        "presence": "present"
       }
     },
     {
@@ -3363,7 +3534,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Remineralizer, calcite bed. Distillate to potable. Study.",
+        "presence": "present"
       }
     },
     {
@@ -3382,7 +3555,9 @@
           500,
           800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Spin coat. Novolac from formaldehyde and cresol. 1 um.",
+        "presence": "present"
       }
     },
     {
@@ -3401,7 +3576,9 @@
           500,
           800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Contact aligner, 365 nm LED. No bought stepper optic.",
+        "presence": "present"
       }
     },
     {
@@ -3420,7 +3597,9 @@
           500,
           800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Puddle develop. Exposed resist out. Spent to the leach.",
+        "presence": "present"
       }
     },
     {
@@ -3465,7 +3644,9 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Retired name. The aligner, coater, and developer are the lithography line.",
+        "presence": "present"
       }
     },
     {
@@ -3486,7 +3667,9 @@
           800,
           1800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Nickel and graphite on titanium. Tank, 100 L. No iridium.",
+        "presence": "present"
       }
     },
     {
@@ -3507,7 +3690,9 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Extruder and shop-cut aluminum mold. Pyrolysis polyethylene.",
+        "presence": "present"
       }
     },
     {
@@ -3571,7 +3756,9 @@
           1200,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "duty": "Diffusion and aluminum grid on a wafer from the silicon furnace.",
+        "presence": "present"
       }
     },
     {
@@ -3627,7 +3814,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Hot tank, 90 C, 2 m3. Highest heat grade.",
+        "presence": "present"
       }
     },
     {
@@ -3697,7 +3886,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Tank, 70 C, 2 m3.",
+        "presence": "present"
       }
     },
     {
@@ -3767,7 +3958,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Tank, 50 C, 2 m3.",
+        "presence": "present"
       }
     },
     {
@@ -3823,7 +4016,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Tank, 30 C, 2 m3. Lowest grade.",
+        "presence": "present"
       }
     },
     {
@@ -3879,7 +4074,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Second hot tank, 90 C, 2 m3. Paired with Q1_A.",
+        "presence": "present"
       }
     },
     {
@@ -3949,7 +4146,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Second tank, 70 C, 2 m3.",
+        "presence": "present"
       }
     },
     {
@@ -4019,7 +4218,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Second tank, 50 C, 2 m3.",
+        "presence": "present"
       }
     },
     {
@@ -4075,7 +4276,9 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "Second tank, 30 C, 2 m3.",
+        "presence": "present"
       }
     },
     {
@@ -4274,7 +4477,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "helium receiver",
+        "duty": "Receiver, 1 L. Helium cut. Grams per day. Held, not vented.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4297,7 +4500,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "neon receiver",
+        "duty": "Receiver, 1 L. Neon cut. Held.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4320,7 +4523,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "krypton receiver",
+        "duty": "Receiver, 1 L. Krypton cut. Held.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4343,7 +4546,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "xenon receiver",
+        "duty": "Receiver, 1 L. Xenon cut. Held.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4366,7 +4569,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "argon receiver",
+        "duty": "Receiver, 10 L. Argon cut. To the fab.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4461,7 +4664,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Copper. Ethanol to acetaldehyde, 280 C."
+        "duty": "Acetaldehyde still, 10 L, 21 C. Ethanol oxidation. To glyoxal."
       }
     },
     {
@@ -4483,7 +4686,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nitric oxidation of acetaldehyde."
+        "duty": "Reactor, 10 L. Acetaldehyde to glyoxal. To imidazole."
       }
     },
     {
@@ -5121,7 +5324,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Tomato. Fish water. Organic media."
+        "duty": "Dual root, 6 m2. Fish water below, correction above. 0.12 kg/d."
       }
     },
     {
@@ -5143,7 +5346,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Cucumber. Fish water. Organic media."
+        "duty": "Dual root, 4 m2. 0.08 kg/d."
       }
     },
     {
@@ -5165,7 +5368,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Pepper. Fish water. Organic media."
+        "duty": "Dual root, 3 m2. 0.06 kg/d."
       }
     },
     {
@@ -5187,7 +5390,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Lettuce. Fish water. Organic media."
+        "duty": "Nutrient film, 4 m2. 0.08 kg/d."
       }
     },
     {
@@ -5209,7 +5412,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Spinach. Fish water. Organic media."
+        "duty": "Nutrient film, 2 m2. 0.05 kg/d."
       }
     },
     {
@@ -5231,7 +5434,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Kale. Fish water. Organic media."
+        "duty": "Media, 2 m2. 0.05 kg/d."
       }
     },
     {
@@ -5275,7 +5478,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Basil. Fish water. Organic media."
+        "duty": "Nutrient film, 1 m2. 0.03 kg/d."
       }
     },
     {
@@ -5636,7 +5839,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "20 L, 118 C, glass. Butanol from ABE."
+        "duty": "20 L, glass, 118 C. Butanol from the ABE fermenter."
       }
     },
     {
@@ -5724,7 +5927,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "16 m2. Four berths."
+        "duty": "16 m2. Four berths. CO2 and heat to the handler."
       }
     },
     {
@@ -5768,7 +5971,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "6 m2. Bandage, saline, iodide store."
+        "duty": "6 m2. Bandage, saline, iodide store. No process chemistry."
       }
     },
     {
