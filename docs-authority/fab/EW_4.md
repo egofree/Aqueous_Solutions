@@ -11,3 +11,6 @@ N-drain x=300 y=210 z=0 face bottom
 N-vent x=300 y=210 z=650 face top
 
 Shell 6 mm on metal, 10 mm on polymer. Shop weld. Not stamped.
+
+N-launder x=end y=300 z=600 face +X
+N-bus x=0 y=100 z=400 face -X
