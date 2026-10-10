@@ -2,18 +2,18 @@
 
 Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
-1. Basis. Inlet: IA-BMED-04 118.7 kg/d CRU → BMED base regen loop. Outlet: IA-BMED-02 0.27 kg/d NaOH product. Operating point is the graph rate. Power None kW.
+1. Basis. IA-BMED-04 118.7 kg/d from LEACH_CSTR_1. One operating point, the graph rate.
 
-2. Size. Largest inlet 118.7 kg/d. At 10 min residence and density 1, volume is 118.7/144 = 0.824 m3. Confirm against the service.
+2. Size. Inlet 118.7 kg/d. Residence 15 min. Volume 118.7*15/1440 = 1.236 m3 at density 1.
 
-3. Material. Bipolar membrane. Brine to 20 wt% NaOH. Glass digest. Potassium slip to KOH.
+3. Material. Corrosion allowance 1.5 mm. Service from the class bmed. Barrier is the listed alloy or polymer. No coating unless the index names one.
 
-4. Nozzles. Inlet, outlet, drain, vent. Size from the rate. DN15 below 1 m3/h, DN25 to 5 m3/h, DN50 above. Rating shop.
+4. Nozzles. Inlet DN25, outlet DN25, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
 
-5. Instruments. Level and temperature where the unit holds liquid. Trip on high level to the upstream pump. A header or a boundary has no trip.
+5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
 
-6. Relief. Not pressurized unless the index says otherwise. If pressurized, set 10% above operating and route to the scrubber or the afterburner. No vent to the room.
+6. Relief. Atmospheric units have a vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
 
-7. Code. Shop, not coded, until a design pressure is on the basis line.
+7. Code. shop, not coded.
 
-8. Open items. Residence time is assumed at 10 min. Corrosion allowance is not calculated. Nozzle rating is shop.
+8. Open items. Density taken as 1. Internals are not drawn.

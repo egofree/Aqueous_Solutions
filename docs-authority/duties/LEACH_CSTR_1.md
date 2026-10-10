@@ -2,18 +2,18 @@
 
 Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
-1. Basis. Inlet: HL-Q3-A-HX5 7.941 kW HX-5 Q3 process heat (leach CSTR jacket). Outlet: IA-BMED-03 108.195 kg/d CRU → BMED acid regen loop. Operating point is the graph rate. Power 2.0 kW.
+1. Basis. IA-REC-01 3753.71 kg/d from CONTINUOUS_RECYCLE. One operating point, the graph rate.
 
-2. Size. Largest inlet 3753.71 kg/d. At 10 min residence and density 1, volume is 3753.71/144 = 26.067 m3. Confirm against the service.
+2. Size. Issued envelope 2000 x 1200 x 1400 mm. Volume 2000*1200*1400/1e9 = 3.360 m3.
 
-3. Material. 2000 x 1200 x 1400 mm, PVC/FRP. HCl leach. Float weir, floor auger.
+3. Material. Corrosion allowance 1.5 mm. Service from the class vessel. Barrier is the listed alloy or polymer. No coating unless the index names one.
 
-4. Nozzles. Inlet, outlet, drain, vent. Size from the rate. DN15 below 1 m3/h, DN25 to 5 m3/h, DN50 above. Rating shop.
+4. Nozzles. Inlet DN50, outlet DN50, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
 
-5. Instruments. Level and temperature where the unit holds liquid. Trip on high level to the upstream pump. A header or a boundary has no trip.
+5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
 
-6. Relief. Not pressurized unless the index says otherwise. If pressurized, set 10% above operating and route to the scrubber or the afterburner. No vent to the room.
+6. Relief. Atmospheric units have a vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
 
-7. Code. Shop, not coded, until a design pressure is on the basis line.
+7. Code. shop, not coded.
 
-8. Open items. Residence time is assumed at 10 min. Corrosion allowance is not calculated. Nozzle rating is shop.
+8. Open items. Envelope is issued. Internals are not.
