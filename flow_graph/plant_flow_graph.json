@@ -5412,7 +5412,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient-film gutter, 2 m2. 0.05 kg/d."
+        "duty": "Nutrient-film gutter, 2 m2, 1:40 slope, 1-2 L/min. Fish water. Harvest 0.05 kg/d."
       }
     },
     {
@@ -5434,7 +5434,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Media bed, 2 m2. Fish water. 0.05 kg/d."
+        "duty": "Organic media bed, 2 m2. Fish water from the biofilter. Harvest 0.05 kg/d. Trim to the larvae."
       }
     },
     {
@@ -5478,7 +5478,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient-film gutter, 1 m2. 0.03 kg/d."
+        "duty": "Nutrient-film gutter, 1 m2, 1:40 slope. Fish water. Harvest 0.03 kg/d."
       }
     },
     {
