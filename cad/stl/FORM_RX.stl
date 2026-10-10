@@ -99,72 +99,72 @@ solid FORM_RX
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.1500
-      vertex 0.2500 0.0500 0.1500
-      vertex 0.2500 0.2500 0.1500
+      vertex 0.0500 0.0500 0.1200
+      vertex 0.2500 0.0500 0.1200
+      vertex 0.2500 0.2500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.0500 0.0500 0.1500
-      vertex 0.2500 0.2500 0.1500
-      vertex 0.0500 0.2500 0.1500
+      vertex 0.0500 0.0500 0.1200
+      vertex 0.2500 0.2500 0.1200
+      vertex 0.0500 0.2500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.0500 0.0500 0.0500
       vertex 0.2500 0.0500 0.0500
-      vertex 0.2500 0.0500 0.1500
+      vertex 0.2500 0.0500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.0500 0.0500 0.0500
-      vertex 0.2500 0.0500 0.1500
-      vertex 0.0500 0.0500 0.1500
+      vertex 0.2500 0.0500 0.1200
+      vertex 0.0500 0.0500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.2500 0.2500 0.0500
       vertex 0.0500 0.2500 0.0500
-      vertex 0.0500 0.2500 0.1500
+      vertex 0.0500 0.2500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.2500 0.2500 0.0500
-      vertex 0.0500 0.2500 0.1500
-      vertex 0.2500 0.2500 0.1500
+      vertex 0.0500 0.2500 0.1200
+      vertex 0.2500 0.2500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.0500 0.0500 0.0500
       vertex 0.0500 0.2500 0.0500
-      vertex 0.0500 0.2500 0.1500
+      vertex 0.0500 0.2500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.0500 0.0500 0.0500
-      vertex 0.0500 0.2500 0.1500
-      vertex 0.0500 0.0500 0.1500
+      vertex 0.0500 0.2500 0.1200
+      vertex 0.0500 0.0500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.2500 0.0500 0.0500
       vertex 0.2500 0.2500 0.0500
-      vertex 0.2500 0.2500 0.1500
+      vertex 0.2500 0.2500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
       vertex 0.2500 0.0500 0.0500
-      vertex 0.2500 0.2500 0.1500
-      vertex 0.2500 0.0500 0.1500
+      vertex 0.2500 0.2500 0.1200
+      vertex 0.2500 0.0500 0.1200
     endloop
   endfacet
 endsolid FORM_RX

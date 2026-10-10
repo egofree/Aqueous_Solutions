@@ -1,170 +1,170 @@
 solid BIOFILTER
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 0.000
-      vertex 3.000 0.000 0.000
-      vertex 3.000 5.000 0.000
+      vertex 0.0000 0.0000 0.0000
+      vertex 3.0000 0.0000 0.0000
+      vertex 3.0000 5.0000 0.0000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 0.000
-      vertex 3.000 5.000 0.000
-      vertex 0.000 5.000 0.000
+      vertex 0.0000 0.0000 0.0000
+      vertex 3.0000 5.0000 0.0000
+      vertex 0.0000 5.0000 0.0000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 1.200
-      vertex 3.000 0.000 1.200
-      vertex 3.000 5.000 1.200
+      vertex 0.0000 0.0000 1.2000
+      vertex 3.0000 0.0000 1.2000
+      vertex 3.0000 5.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 1.200
-      vertex 3.000 5.000 1.200
-      vertex 0.000 5.000 1.200
+      vertex 0.0000 0.0000 1.2000
+      vertex 3.0000 5.0000 1.2000
+      vertex 0.0000 5.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 0.000
-      vertex 3.000 0.000 0.000
-      vertex 3.000 0.000 1.200
+      vertex 0.0000 0.0000 0.0000
+      vertex 3.0000 0.0000 0.0000
+      vertex 3.0000 0.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 0.000
-      vertex 3.000 0.000 1.200
-      vertex 0.000 0.000 1.200
+      vertex 0.0000 0.0000 0.0000
+      vertex 3.0000 0.0000 1.2000
+      vertex 0.0000 0.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 3.000 5.000 0.000
-      vertex 0.000 5.000 0.000
-      vertex 0.000 5.000 1.200
+      vertex 3.0000 5.0000 0.0000
+      vertex 0.0000 5.0000 0.0000
+      vertex 0.0000 5.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 3.000 5.000 0.000
-      vertex 0.000 5.000 1.200
-      vertex 3.000 5.000 1.200
+      vertex 3.0000 5.0000 0.0000
+      vertex 0.0000 5.0000 1.2000
+      vertex 3.0000 5.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 0.000
-      vertex 0.000 5.000 0.000
-      vertex 0.000 5.000 1.200
+      vertex 0.0000 0.0000 0.0000
+      vertex 0.0000 5.0000 0.0000
+      vertex 0.0000 5.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.000 0.000 0.000
-      vertex 0.000 5.000 1.200
-      vertex 0.000 0.000 1.200
+      vertex 0.0000 0.0000 0.0000
+      vertex 0.0000 5.0000 1.2000
+      vertex 0.0000 0.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 3.000 0.000 0.000
-      vertex 3.000 5.000 0.000
-      vertex 3.000 5.000 1.200
+      vertex 3.0000 0.0000 0.0000
+      vertex 3.0000 5.0000 0.0000
+      vertex 3.0000 5.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 3.000 0.000 0.000
-      vertex 3.000 5.000 1.200
-      vertex 3.000 0.000 1.200
+      vertex 3.0000 0.0000 0.0000
+      vertex 3.0000 5.0000 1.2000
+      vertex 3.0000 0.0000 1.2000
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 0.200
-      vertex 2.900 0.100 0.200
-      vertex 2.900 4.900 0.200
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.9500 0.0500 0.0500
+      vertex 2.9500 4.9500 0.0500
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 0.200
-      vertex 2.900 4.900 0.200
-      vertex 0.100 4.900 0.200
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.9500 4.9500 0.0500
+      vertex 0.0500 4.9500 0.0500
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 1.000
-      vertex 2.900 0.100 1.000
-      vertex 2.900 4.900 1.000
+      vertex 0.0500 0.0500 0.1200
+      vertex 2.9500 0.0500 0.1200
+      vertex 2.9500 4.9500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 1.000
-      vertex 2.900 4.900 1.000
-      vertex 0.100 4.900 1.000
+      vertex 0.0500 0.0500 0.1200
+      vertex 2.9500 4.9500 0.1200
+      vertex 0.0500 4.9500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 0.200
-      vertex 2.900 0.100 0.200
-      vertex 2.900 0.100 1.000
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.9500 0.0500 0.0500
+      vertex 2.9500 0.0500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 0.200
-      vertex 2.900 0.100 1.000
-      vertex 0.100 0.100 1.000
+      vertex 0.0500 0.0500 0.0500
+      vertex 2.9500 0.0500 0.1200
+      vertex 0.0500 0.0500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 2.900 4.900 0.200
-      vertex 0.100 4.900 0.200
-      vertex 0.100 4.900 1.000
+      vertex 2.9500 4.9500 0.0500
+      vertex 0.0500 4.9500 0.0500
+      vertex 0.0500 4.9500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 2.900 4.900 0.200
-      vertex 0.100 4.900 1.000
-      vertex 2.900 4.900 1.000
+      vertex 2.9500 4.9500 0.0500
+      vertex 0.0500 4.9500 0.1200
+      vertex 2.9500 4.9500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 0.200
-      vertex 0.100 4.900 0.200
-      vertex 0.100 4.900 1.000
+      vertex 0.0500 0.0500 0.0500
+      vertex 0.0500 4.9500 0.0500
+      vertex 0.0500 4.9500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 0.100 0.100 0.200
-      vertex 0.100 4.900 1.000
-      vertex 0.100 0.100 1.000
+      vertex 0.0500 0.0500 0.0500
+      vertex 0.0500 4.9500 0.1200
+      vertex 0.0500 0.0500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 2.900 0.100 0.200
-      vertex 2.900 4.900 0.200
-      vertex 2.900 4.900 1.000
+      vertex 2.9500 0.0500 0.0500
+      vertex 2.9500 4.9500 0.0500
+      vertex 2.9500 4.9500 0.1200
     endloop
   endfacet
   facet normal 0 0 0
     outer loop
-      vertex 2.900 0.100 0.200
-      vertex 2.900 4.900 1.000
-      vertex 2.900 0.100 1.000
+      vertex 2.9500 0.0500 0.0500
+      vertex 2.9500 4.9500 0.1200
+      vertex 2.9500 0.0500 0.1200
     endloop
   endfacet
 endsolid BIOFILTER
