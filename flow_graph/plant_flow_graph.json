@@ -1984,7 +1984,7 @@
         "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
-        "duty": "Turbine, 2 kW. Roof to catch. Standby."
+        "duty": "Turbine, 2 kW, on the roof-to-catch drop. Standby. Shop maintained. Not a process vessel."
       }
     },
     {
@@ -2302,7 +2302,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Plate. Melt reject to Q4.",
+        "duty": "Plate exchanger, 316L. Melt-bay reject to the Q4 bus. 10 K approach.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2479,7 +2479,7 @@
             }
           ]
         },
-        "duty": "12 x 8 m. Receiving. No process."
+        "duty": "Receiving bay, 12 by 8 m. Feedstock in. No process equipment."
       }
     },
     {
@@ -2683,7 +2683,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Tank, 100 L. Lube cut. To the shop.",
+        "duty": "Tank, 100 L, carbon steel. Lube-range cut from the fractionator. To the shop.",
         "presence": "present"
       }
     },
@@ -3038,7 +3038,7 @@
             }
           ]
         },
-        "duty": "Draw bench. Rod to wire. Shop.",
+        "duty": "Draw bench, shop frame. Electrowon rod to wire. Scrap to the hopper.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -3887,7 +3887,7 @@
             }
           ]
         },
-        "duty": "Tank, 70 C, 2 m3.",
+        "duty": "Heat store, 70 C, 2 m3, insulated carbon steel. Second grade on the ladder.",
         "presence": "present"
       }
     },
@@ -3959,7 +3959,7 @@
             }
           ]
         },
-        "duty": "Tank, 50 C, 2 m3.",
+        "duty": "Heat store, 50 C, 2 m3, insulated carbon steel. Third grade on the ladder.",
         "presence": "present"
       }
     },
@@ -4017,7 +4017,7 @@
             }
           ]
         },
-        "duty": "Tank, 30 C, 2 m3. Lowest grade.",
+        "duty": "Heat store, 30 C, 2 m3, insulated carbon steel. Lowest grade. Reject to the dry cooler.",
         "presence": "present"
       }
     },
@@ -4147,7 +4147,7 @@
             }
           ]
         },
-        "duty": "Second tank, 70 C, 2 m3.",
+        "duty": "Paired heat store, 70 C, 2 m3. With Q2_A.",
         "presence": "present"
       }
     },
@@ -4219,7 +4219,7 @@
             }
           ]
         },
-        "duty": "Second tank, 50 C, 2 m3.",
+        "duty": "Paired heat store, 50 C, 2 m3. With Q3_A.",
         "presence": "present"
       }
     },
@@ -4277,7 +4277,7 @@
             }
           ]
         },
-        "duty": "Second tank, 30 C, 2 m3.",
+        "duty": "Paired heat store, 30 C, 2 m3. With Q4_A.",
         "presence": "present"
       }
     },
@@ -4500,7 +4500,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L. Neon cut. Held.",
+        "duty": "Receiver, 1 L, 316L. Neon cut from the cold box. Grams per day. Held, not vented.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4523,7 +4523,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L. Krypton cut. Held.",
+        "duty": "Receiver, 1 L, 316L. Krypton cut. Held, not vented.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4546,7 +4546,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L. Xenon cut. Held.",
+        "duty": "Receiver, 1 L, 316L. Xenon cut. Held, not vented.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4569,7 +4569,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 10 L. Argon cut. To the fab.",
+        "duty": "Receiver, 10 L, 316L. Argon cut. To the fab as cover gas.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -5346,7 +5346,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Dual root, 4 m2. 0.08 kg/d."
+        "duty": "Dual-root bed, 4 m2. Fish water below, potassium correction above. 0.08 kg/d."
       }
     },
     {
@@ -5368,7 +5368,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Dual root, 3 m2. 0.06 kg/d."
+        "duty": "Dual-root bed, 3 m2. Fish water below, correction above. 0.06 kg/d."
       }
     },
     {
@@ -5390,7 +5390,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient film, 4 m2. 0.08 kg/d."
+        "duty": "Nutrient-film gutter, 4 m2, 1:40 slope. 0.08 kg/d."
       }
     },
     {
@@ -5412,7 +5412,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient film, 2 m2. 0.05 kg/d."
+        "duty": "Nutrient-film gutter, 2 m2. 0.05 kg/d."
       }
     },
     {
@@ -5434,7 +5434,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Media, 2 m2. 0.05 kg/d."
+        "duty": "Media bed, 2 m2. Fish water. 0.05 kg/d."
       }
     },
     {
@@ -5478,7 +5478,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient film, 1 m2. 0.03 kg/d."
+        "duty": "Nutrient-film gutter, 1 m2. 0.03 kg/d."
       }
     },
     {
