@@ -1,7 +1,7 @@
-tag,size,rating,service,location
-N1,DN15,Class 150,iodide startup,inlet face
-N2,DN15,Class 150,urine iodide return,inlet face
-N3,DN15,Class 150,KI dose,outlet face
-N4,DN15,Class 150,KI dose return,outlet face
-N5,DN15,Class 150,drain,bottom
-N6,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,iodide startup,inlet,200
+N2,DN15,Class 150,urine iodide return,inlet,200
+N3,DN15,Class 150,KI dose,outlet,600
+N4,DN15,Class 150,KI dose return,outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

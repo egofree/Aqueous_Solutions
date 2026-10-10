@@ -1,7 +1,7 @@
-tag,size,rating,service,location
-N1,DN15,Class 150,ammonia to nitric,inlet face
-N2,DN15,Class 150,oxygen to nitric,inlet face
-N3,DN15,Class 150,nitric acid,outlet face
-N4,DN15,Class 150,absorber water,outlet face
-N5,DN15,Class 150,drain,bottom
-N6,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,ammonia to nitric,inlet,200
+N2,DN15,Class 150,oxygen to nitric,inlet,200
+N3,DN15,Class 150,nitric acid,outlet,600
+N4,DN15,Class 150,absorber water,outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

@@ -1,7 +1,7 @@
-tag,size,rating,service,location
-N1,DN15,Class 150,ethanol to acetic,inlet face
-N2,DN15,Class 150,oxidation air,inlet face
-N3,DN15,Class 150,acetic acid,outlet face
-N4,DN15,Class 150,oxidation water,outlet face
-N5,DN15,Class 150,drain,bottom
-N6,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,ethanol to acetic,inlet,200
+N2,DN15,Class 150,oxidation air,inlet,200
+N3,DN15,Class 150,acetic acid,outlet,600
+N4,DN15,Class 150,oxidation water,outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

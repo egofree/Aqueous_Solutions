@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AY",
+  "revision": "AZ",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -55,7 +55,8 @@
           ]
         },
         "duty": "Inlet 27.360 kg/d, 0.00 kW. Residence 0.570/(27.360/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "2 m pall rings, distributor, demister"
       },
       "continuous_kw": null
     },
@@ -185,7 +186,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW."
+        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "internals": "2 m pall rings, distributor, demister"
       }
     },
     {
@@ -790,7 +792,8 @@
             }
           ]
         },
-        "duty": "Inlet 4287.820 kg/d, 4.57 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4287.820/(1100*24)) = 60.5 min. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A."
+        "duty": "Inlet 4287.820 kg/d, 4.57 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4287.820/(1100*24)) = 60.5 min. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -842,7 +845,8 @@
           ]
         },
         "duty": "Inlet 4226.040 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4226.040/(1100*24)) = 61.4 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       },
       "continuous_kw": null
     },
@@ -894,7 +898,8 @@
           ]
         },
         "duty": "Inlet 4164.240 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4164.240/(1100*24)) = 62.3 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -945,7 +950,8 @@
           ]
         },
         "duty": "Inlet 4141.760 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4141.760/(1100*24)) = 62.6 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -996,7 +1002,8 @@
           ]
         },
         "duty": "Inlet 4133.090 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4133.090/(1100*24)) = 62.8 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -1047,7 +1054,8 @@
           ]
         },
         "duty": "Inlet 4128.070 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4128.070/(1100*24)) = 62.9 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -1098,7 +1106,8 @@
           ]
         },
         "duty": "Inlet 4122.600 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4122.600/(1100*24)) = 62.9 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -1149,7 +1158,8 @@
           ]
         },
         "duty": "Inlet 4051.460 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4051.460/(1100*24)) = 64.0 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       }
     },
     {
@@ -1201,7 +1211,8 @@
           ]
         },
         "duty": "Inlet 4046.410 kg/d, 0.00 kW. Envelope 600x420x650 mm = 0.164 m3. Residence 0.164/(4046.410/(1100*24)) = 64.1 min. Cathode face 0.252 m2. At 100 A/m2, current 25.2 A.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "cathode plate, edge strip, PbO2 anode, overflow launder"
       },
       "continuous_kw": null
     },
@@ -2061,7 +2072,8 @@
             }
           ]
         },
-        "duty": "Inlet 3753.710 kg/d, 7.94 kW. Envelope 2000x1200x1400 mm = 3.360 m3. Residence 3.360/(3753.710/(1100*24)) = 1417.9 min. Exchanger area 7.94*1000/(500*10) = 1.588 m2 at 10 K and 500 W/m2K."
+        "duty": "Inlet 3753.710 kg/d, 7.94 kW. Envelope 2000x1200x1400 mm = 3.360 m3. Residence 3.360/(3753.710/(1100*24)) = 1417.9 min. Exchanger area 7.94*1000/(500*10) = 1.588 m2 at 10 K and 500 W/m2K.",
+        "internals": "weir on +X, floor auger, jacket"
       }
     },
     {
@@ -2381,7 +2393,8 @@
           ]
         },
         "duty": "Inlet 2.460 kg/d, 0.00 kW. Residence 0.051/(2.460/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "2 m pall rings, distributor, demister"
       },
       "continuous_kw": null
     },
@@ -2500,7 +2513,8 @@
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "Inlet 239.620 kg/d, 0.00 kW. Residence 4.992/(239.620/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "2 m pall rings, distributor, demister"
       }
     },
     {
@@ -3303,7 +3317,8 @@
           ]
         },
         "duty": "Inlet 852.470 kg/d, 0.00 kW. Residence 17.760/(852.470/(1000*24)) = 30000.0 min.",
-        "presence": "present"
+        "presence": "present",
+        "internals": "2 m pall rings, distributor, demister"
       }
     },
     {

@@ -1,8 +1,8 @@
-tag,size,rating,service,location
-N1,DN50,Class 150,EW overflow,inlet face
-N2,DN50,Class 150,EW overflow,outlet face
-N3,DN15,Class 150,plated sheet,outlet face
-N4,DN15,Class 150,hood hydrogen,outlet face
-N5,DN15,Class 150,sweep nitrogen,outlet face
-N6,DN15,Class 150,drain,bottom
-N7,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN50,Class 150,EW overflow,inlet,200
+N2,DN50,Class 150,EW overflow,outlet,600
+N3,DN15,Class 150,plated sheet,outlet,600
+N4,DN15,Class 150,hood hydrogen,outlet,600
+N5,DN15,Class 150,sweep nitrogen,outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800

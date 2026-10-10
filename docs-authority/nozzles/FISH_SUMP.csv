@@ -1,8 +1,8 @@
-tag,size,rating,service,location
-N1,DN15,Class 150,settled solids,inlet face
-N2,DN50,Class 150,bed return,inlet face
-N3,DN50,Class 150,raceway return,inlet face
-N4,DN50,Class 150,bed return,inlet face
-N5,DN50,Class 150,return,outlet face
-N6,DN15,Class 150,drain,bottom
-N7,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,settled solids,inlet,200
+N2,DN50,Class 150,bed return,inlet,200
+N3,DN50,Class 150,raceway return,inlet,200
+N4,DN50,Class 150,bed return,inlet,200
+N5,DN50,Class 150,return,outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800

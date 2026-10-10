@@ -1,8 +1,8 @@
-tag,size,rating,service,location
-N1,DN15,Class 150,leach reject,inlet face
-N2,DN15,Class 150,dry cooler,inlet face
-N3,DN15,Class 150,export reject,inlet face
-N4,DN15,Class 150,bed reject,inlet face
-N5,DN25,Class 150,heat to air,outlet face
-N6,DN15,Class 150,drain,bottom
-N7,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,leach reject,inlet,200
+N2,DN15,Class 150,dry cooler,inlet,200
+N3,DN15,Class 150,export reject,inlet,200
+N4,DN15,Class 150,bed reject,inlet,200
+N5,DN25,Class 150,heat to air,outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800

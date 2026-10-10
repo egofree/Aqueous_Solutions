@@ -1,11 +1,11 @@
-tag,size,rating,service,location
-N1,DN25,Class 150,exhaust condensate / NOx,inlet face
-N2,DN50,Class 150,flue to the NOx scrubber,inlet face
-N3,DN50,Class 150,leach offgas,inlet face
-N4,DN15,Class 150,oxidation NOx,inlet face
-N5,DN50,Class 150,scrubber condensate,outlet face
-N6,DN15,Class 150,nitrate liquor,outlet face
-N7,DN25,Class 150,scrubbed CO2 to the cold box,outlet face
-N8,DN50,Class 150,scrubbed flue nitrogen to the cold box,outlet face
-N9,DN15,Class 150,drain,bottom
-N10,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN25,Class 150,exhaust condensate / NOx,inlet,200
+N2,DN50,Class 150,flue to the NOx scrubber,inlet,200
+N3,DN50,Class 150,leach offgas,inlet,200
+N4,DN15,Class 150,oxidation NOx,inlet,200
+N5,DN50,Class 150,scrubber condensate,outlet,600
+N6,DN15,Class 150,nitrate liquor,outlet,600
+N7,DN25,Class 150,scrubbed CO2 to the cold box,outlet,600
+N8,DN50,Class 150,scrubbed flue nitrogen to the cold box,outlet,600
+N9,DN15,Class 150,drain,bottom,50
+N10,DN15,Class 150,vent,top,800

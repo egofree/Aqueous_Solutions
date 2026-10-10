@@ -1,5 +1,5 @@
-tag,size,rating,service,location
-N1,DN15,Class 150,oxygen to peroxide,inlet face
-N2,DN15,Class 150,H₂O₂,outlet face
-N3,DN15,Class 150,drain,bottom
-N4,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,oxygen to peroxide,inlet,200
+N2,DN15,Class 150,H₂O₂,outlet,600
+N3,DN15,Class 150,drain,bottom,50
+N4,DN15,Class 150,vent,top,800

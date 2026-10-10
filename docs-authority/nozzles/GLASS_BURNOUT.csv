@@ -1,8 +1,8 @@
-tag,size,rating,service,location
-N1,DN25,Class 150,milled cullet,inlet face
-N2,DN15,Class 150,fuel into the burner,inlet face
-N3,DN15,Class 150,Q2 burnout, not Q4,outlet face
-N4,DN15,Class 150,Q2 burnout, not Q4,outlet face
-N5,DN25,Class 150,burned cullet,outlet face
-N6,DN15,Class 150,drain,bottom
-N7,DN15,Class 150,vent,top
+tag,size,rating,service,face,height_mm
+N1,DN25,Class 150,milled cullet,inlet,200
+N2,DN15,Class 150,fuel into the burner,inlet,200
+N3,DN15,Class 150,Q2 burnout, not Q4,outlet,600
+N4,DN15,Class 150,Q2 burnout, not Q4,outlet,600
+N5,DN25,Class 150,burned cullet,outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800
