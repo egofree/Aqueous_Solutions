@@ -42,3 +42,5 @@ Composition, then nozzles, then internals, then mesh, then the five checks, then
 Acceptance is a unit that a shop can build without asking what the nozzle is or what is inside.
 
 Plan status, graph Rev BA. Composition on the mass edges. Nozzle list with height on every unit. Internals named. EW racks built to the sheet edge. Relief line on the duty pages. One-line, habitation fixtures, and cold-box trays written. IA-CLOSE edges tagged DN25. Meshes are envelopes. FreeCAD is not in this environment.
+
+Meshes for the nine cells are plate racks in cad/stl. Envelope plus one plate per cathode. This is the solid. FreeCAD is not required for these nine.
