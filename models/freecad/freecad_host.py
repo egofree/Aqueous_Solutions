@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Resolve the FreeCAD console and accept 1.0.x or 1.1.x.
+"""Resolve the FreeCAD console and accept 1.0, 1.1, or 26.3.
 
 Does not import FreeCAD. Safe to run from system Python on the operator box.
 
@@ -23,7 +23,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-ACCEPTED = ("1.0", "1.1")
+ACCEPTED = ("1.0", "1.1", "26")
 VERSION_RE = re.compile(r"(\d+\.\d+(?:\.\d+)?)")
 
 
