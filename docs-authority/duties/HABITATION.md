@@ -4,16 +4,16 @@ Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
 1. Basis. IA-MFG-OUT 597.331 kg/d from MFG_SHOP. One operating point, the graph rate.
 
-2. Size. Inlet 597.331 kg/d. Residence 15 min. Volume 597.3307*15/1440 = 6.222 m3 at density 1.
+2. Size. Inlet 597.331 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 597.3307*15/(1440*1000/1000) = 6.222 m3.
 
-3. Material. Corrosion allowance 1.5 mm. Service from the class hab. Barrier is the listed alloy or polymer. No coating unless the index names one.
+3. Material. Corrosion allowance 1.5 mm. Internals: dip pipe.
 
 4. Nozzles. Inlet DN50, outlet DN50, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
 
 5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
 
-6. Relief. Atmospheric units have a vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
 
 7. Code. shop, not coded.
 
-8. Open items. Density taken as 1. Internals are not drawn.
+8. Open items. None.

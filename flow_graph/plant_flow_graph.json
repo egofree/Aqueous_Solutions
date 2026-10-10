@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AV",
+  "revision": "AW",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -54,7 +54,7 @@
             }
           ]
         },
-        "duty": "Packed tower, 300 mm, PP. NaOH from BMED. Acid gas in, brine out. 40 C.",
+        "duty": "ACID_POLISH_SCRUB. Inlet 27.36 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 27.36*5/(1440*1000/1000) = 0.095 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -132,7 +132,7 @@
             }
           ]
         },
-        "duty": "Chamber, 316L, 800 C. VOC and H2. 1 s residence. Flue to the scrubber."
+        "duty": "AFTERBURNER. Inlet 5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 5.0*15/(1440*1000/1000) = 0.052 m3. dip pipe."
       }
     },
     {
@@ -161,7 +161,7 @@
             }
           ]
         },
-        "duty": "DN100 316L, 2 m. From the afterburner to the alkaline scrubber.",
+        "duty": "AFTERBURNER_FLUE. Inlet 111.17 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 111.17*15/(1440*1000/1000) = 1.158 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -185,7 +185,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Packed tower, 400 mm, PP. NaOH. Acid gas and Cl2. Brine returns to leach."
+        "duty": "ALK_SCRUBBER. No liquid residence. Size is the pipe or the bay. 25 mm pall rings, 2 m packed, distributor, demister."
       }
     },
     {
@@ -243,7 +243,7 @@
             }
           ]
         },
-        "duty": "Diesel-equivalent, methanol fuel cell standby. 5 kW. Shop maintained."
+        "duty": "BACKUP_GEN. Inlet 50 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 50.0*15/(1440*1000/1000) = 0.521 m3. dip pipe."
       }
     },
     {
@@ -258,7 +258,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Pulse-jet, polyester bags, 2 m2 cloth. Dust from burnout and mill. Cake to leach.",
+        "duty": "BAGHOUSE. Inlet 6.82 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.82*15/(1440*1000/1000) = 0.071 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -297,7 +297,7 @@
             }
           ]
         },
-        "duty": "CSTR, 500 L, 316L. Organic solids. 35 C. Biogas to the header.",
+        "duty": "BLACK_DIGEST. No liquid residence. Size is the pipe or the bay. pitched-blade agitator.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -314,7 +314,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Bipolar membrane. Brine to 20 wt% HCl. Leach and chlorobutane."
+        "duty": "BMED_ACID. Inlet 108.195 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 108.195*15/(1440*1000/1000) = 1.127 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -330,7 +330,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Bipolar membrane. Brine to 20 wt% NaOH. Glass digest. Potassium slip to KOH."
+        "duty": "BMED_BASE. Inlet 118.7 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 118.7*15/(1440*1000/1000) = 1.236 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -382,7 +382,7 @@
             }
           ]
         },
-        "duty": "Bipolar membrane stack, 0.5 m2. Brine to acid and base. Diluate below 1 uS/cm."
+        "duty": "BMED_UPW_POLISH. Inlet 140.52 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 140.52*15/(1440*1000/1000) = 1.464 m3. dip pipe."
       }
     },
     {
@@ -403,7 +403,7 @@
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
         "boundary_kind": "dock freight door (logical)",
-        "duty": "Accounting node. Heat and surplus leave here. No vessel."
+        "duty": "BOUNDARY_EXPORT. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -422,7 +422,7 @@
         "to": "INDUCTION_PYROLYZER",
         "solid": "pipe",
         "ref": "oil_line.py / ANIMATION_BRIEF D6",
-        "duty": "DN25, traced, 80 C. Heavy cut back to the pyrolyzer.",
+        "duty": "C29_RECYCLE. Inlet 1.4046 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 1.4046*15/(1440*1000/1000) = 0.015 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -447,7 +447,7 @@
         "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
         "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
         "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
-        "duty": "HDPE, 5 m3, L-2. Lowest water point. Pumped to the roof tank."
+        "duty": "CATCH_TANK. Inlet 200000 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 200000.0*30/(1440*1000/1000) = 4166.667 m3. dip pipe and stilling well."
       }
     },
     {
@@ -484,7 +484,7 @@
             }
           ]
         },
-        "duty": "Two-high mill. Electrowon sheet to strip. Shop frame.",
+        "duty": "COLD_MILL. Inlet 3.95 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.95*15/(1440*1000/1000) = 0.041 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -525,7 +525,7 @@
             }
           ]
         },
-        "duty": "DN40 PVC. Liquor from dewater back to CSTR 1.",
+        "duty": "CONTINUOUS_RECYCLE. Inlet 3753.71 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3753.71*15/(1440*1000/1000) = 39.101 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -542,7 +542,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "NaCl electrolysis to sodium chlorate. Oxidant for the leach. Graphite anode, no iridium."
+        "duty": "CRU. Inlet 27.3623 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 27.3623*15/(1440*1000/1000) = 0.285 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -558,7 +558,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Air handler, 700 m3/h. Coil at 5 C. Condensate to the pot.",
+        "duty": "CRYO_AHU. Inlet 79.04 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 79.04*15/(1440*1000/1000) = 0.823 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -575,7 +575,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Knockout, 10 L, 316L. Condensate from the handler. To the flue KO.",
+        "duty": "CRYO_AHU_COND_CONDENSABLE. Inlet 0.0521 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.0521*15/(1440*1000/1000) = 0.001 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -608,7 +608,7 @@
             }
           ]
         },
-        "duty": "Column section, 150 mm, 316L. CO2 cut at the triple point. To the farm header."
+        "duty": "CRYO_CO2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
       }
     },
     {
@@ -623,7 +623,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Brazed plate, 316L. Dedicates the cold-box reject to Q4.",
+        "duty": "CRYO_DED_COOL. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -647,7 +647,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Cold box cut. H2 at 20 K. To the dryer then the fuel cell."
+        "duty": "CRYO_H2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
       }
     },
     {
@@ -662,7 +662,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Plate exchanger. Cold-box reject to the Q4 bus. 10 K approach.",
+        "duty": "CRYO_HX_Q4. No liquid residence. Size is the pipe or the bay. plates, 10 K approach.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -679,7 +679,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Column section. N2 at 77 K. To the header and the farm.",
+        "duty": "CRYO_N2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -698,7 +698,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Column section. O2 at 90 K. To the header and the fuel cell."
+        "duty": "CRYO_O2. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
       }
     },
     {
@@ -790,7 +790,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 1 in the cascade."
+        "duty": "EW_1. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder."
       }
     },
     {
@@ -841,7 +841,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 2 in the cascade.",
+        "duty": "EW_2. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -893,7 +893,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 3 in the cascade.",
+        "duty": "EW_3. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       }
     },
@@ -944,7 +944,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 4 in the cascade.",
+        "duty": "EW_4. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       }
     },
@@ -995,7 +995,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 5 in the cascade.",
+        "duty": "EW_5. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       }
     },
@@ -1046,7 +1046,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 6 in the cascade.",
+        "duty": "EW_6. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       }
     },
@@ -1097,7 +1097,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 7 in the cascade.",
+        "duty": "EW_7. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       }
     },
@@ -1148,7 +1148,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 8 in the cascade.",
+        "duty": "EW_8. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       }
     },
@@ -1200,7 +1200,7 @@
             }
           ]
         },
-        "duty": "Electrowinning cell, 600 x 420 x 650 mm plus 220 mm funnel. 316L cathode with plastic edge strip. Titanium anode, PbO2. Sheet peels. Liquor overflows to the next cell. Position 9 in the cascade.",
+        "duty": "EW_9. Issued envelope 600 x 420 x 650 mm. Volume 600*420*650/1e9 = 0.164 m3. 316L cathode with plastic edge strip, titanium anode with PbO2, overflow launder.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1231,7 +1231,7 @@
             }
           ]
         },
-        "duty": "PVDF, 1 m3. Ultra-pure water for the fab. Conductivity below 1 uS/cm.",
+        "duty": "FAB_UPW_TANK. Inlet 60 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 60.0*30/(1440*1000/1000) = 1.250 m3. dip pipe and stilling well.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1278,7 +1278,7 @@
             }
           ]
         },
-        "duty": "Weir and floor auger in CSTR 1. Float to the dryer. Sink to the split.",
+        "duty": "FLOAT_SINK. Inlet 376.1 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 376.1*15/(1440*1000/1000) = 3.918 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1321,7 +1321,7 @@
             }
           ]
         },
-        "duty": "Knockout, 20 L, 316L. Condensate from flue. To treatment.",
+        "duty": "FLUE_KO. Inlet 135.9 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 135.9*15/(1440*1000/1000) = 1.416 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -1380,7 +1380,7 @@
             }
           ]
         },
-        "duty": "PEM, 5 kW. H2 and O2. Water to the condensate pot."
+        "duty": "FUEL_CELL. Inlet 38.4 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 38.4*15/(1440*1000/1000) = 0.400 m3. dip pipe."
       }
     },
     {
@@ -1425,7 +1425,7 @@
             }
           ]
         },
-        "duty": "Close-coupled nozzle. Melt to powder. Nitrogen atomizing gas.",
+        "duty": "GAS_ATOMIZER. Inlet 3.2 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.2*15/(1440*1000/1000) = 0.033 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1448,7 +1448,7 @@
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
         "survey_status": "design_survey_locked",
-        "duty": "Borehole exchanger, 100 m, HDPE. Ground loop. 12 C source.",
+        "duty": "GEO_GHEX. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1475,7 +1475,7 @@
         "T_source_K": 285.0,
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
-        "duty": "Heat pump, 10 kW thermal. Ground loop to the Q2 bus."
+        "duty": "GEO_HP. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -1490,7 +1490,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "HDPE, DN32, glycol. Between the borehole and the heat pump.",
+        "duty": "GEO_HP_CLOSED_LOOP. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1557,7 +1557,7 @@
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
         "survey_status": "design_survey_locked",
-        "duty": "Dry cooler, not an ORC. 11.76 kW, air, 10 K approach, 0.4 kW fan."
+        "duty": "GEO_ORC. No liquid residence. Size is the pipe or the bay. plates, 10 K approach."
       }
     },
     {
@@ -1617,7 +1617,7 @@
             }
           ]
         },
-        "duty": "Tank, 200 L, 316L. 80-90 C NaOH. Silica liquor, hydroxide cake, grit."
+        "duty": "GLASS_DIGEST. Inlet 118.43 kg/d. Residence 60 min. Density 1000 kg/m3. Volume 118.43*60/(1440*1000/1000) = 4.935 m3. pitched-blade agitator."
       }
     },
     {
@@ -1632,7 +1632,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Settler and biofilter, 500 L. Grey water. Solids to compost. Water to the roof tank.",
+        "duty": "GREY_TREAT. Inlet 339.06 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 339.06*15/(1440*1000/1000) = 3.532 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1712,7 +1712,7 @@
             }
           ]
         },
-        "duty": "Media bed, 70 m2 potato plus grain. Fish water. Residue to compost."
+        "duty": "GROW_BED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -1734,7 +1734,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Molecular sieve, 2 beds, 10 L each. H2 to below 1 ppm water."
+        "duty": "H2_DRYER. Inlet 6.64 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.64*15/(1440*1000/1000) = 0.069 m3. dip pipe."
       }
     },
     {
@@ -1778,7 +1778,7 @@
             }
           ]
         },
-        "duty": "Four rooms, 40 m2. Food, water, oxygen in. Waste and CO2 out."
+        "duty": "HABITATION. Inlet 597.331 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 597.3307*15/(1440*1000/1000) = 6.222 m3. dip pipe."
       }
     },
     {
@@ -1805,7 +1805,7 @@
           "MEOH_SYNTH": "H2-limited; carrier loop via S82",
           "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
         },
-        "duty": "DN15 header, 3 bar. CO2 to the farm at 1000 ppm.",
+        "duty": "HDR_CO2. No liquid residence. Size is the pipe or the bay. none, pipe only.",
         "presence": "present"
       }
     },
@@ -1823,7 +1823,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "DN15 header, 316L. Cathode hydrogen to the dryer."
+        "duty": "HDR_H2. No liquid residence. Size is the pipe or the bay. none, pipe only."
       }
     },
     {
@@ -1835,7 +1835,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "DN25 header. Nitrogen to the fab and the atomizer.",
+        "duty": "HDR_N2. No liquid residence. Size is the pipe or the bay. none, pipe only.",
         "presence": "present"
       }
     },
@@ -1851,7 +1851,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "DN15 header. Oxygen to the fuel cell and habitation.",
+        "duty": "HDR_O2. No liquid residence. Size is the pipe or the bay. none, pipe only.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1884,7 +1884,7 @@
             }
           ]
         },
-        "duty": "PVDF header. Ultra-pure water to the fab and the wet bench."
+        "duty": "HDR_UPW. No liquid residence. Size is the pipe or the bay. none, pipe only."
       }
     },
     {
@@ -1899,7 +1899,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Elevated, 0.5 m3. Feedstock in. To the shredder. No filter.",
+        "duty": "HOPPER. Inlet 597.33 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 597.33*15/(1440*1000/1000) = 6.222 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -1936,7 +1936,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Plate, 316L. Electrowinning reject to the Q3 bus.",
+        "duty": "HX8. No liquid residence. Size is the pipe or the bay. plates, 10 K approach.",
         "presence": "present"
       }
     },
@@ -1984,7 +1984,7 @@
         "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
-        "duty": "Turbine, 2 kW, on the roof-to-catch drop. Standby. Shop maintained. Not a process vessel."
+        "duty": "HYDRO_SET. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -2061,7 +2061,7 @@
             }
           ]
         },
-        "duty": "2000 x 1200 x 1400 mm, PVC/FRP. HCl leach. Float weir, floor auger."
+        "duty": "LEACH_CSTR_1. Issued envelope 2000 x 1200 x 1400 mm. Volume 2000*1200*1400/1e9 = 3.360 m3. weir and floor auger where named."
       }
     },
     {
@@ -2081,7 +2081,7 @@
         "former_class": "load_agg",
         "boundary_kind": "electrical accounting (S17/S20 sum)",
         "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
-        "duty": "Electrical sum. Not a vessel. Loads roll up here.",
+        "duty": "LOAD_AGG. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2102,7 +2102,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Condenser, 316L, water cooled. Methanol vapor to liquid.",
+        "duty": "MEOH_COND. Inlet 5.6223 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 5.6223*15/(1440*1000/1000) = 0.059 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -2161,7 +2161,7 @@
             }
           ]
         },
-        "duty": "Direct methanol cell, 1 kW. Methanol and air. CO2 to the header."
+        "duty": "MEOH_FC. Inlet 8.37 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 8.37*15/(1440*1000/1000) = 0.087 m3. dip pipe."
       }
     },
     {
@@ -2196,7 +2196,7 @@
             }
           ]
         },
-        "duty": "Fermenter, 100 L, 30 C. Sugar to methanol. Yeast or bacteria.",
+        "duty": "MEOH_FERM. Inlet 0.36 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.36*15/(1440*1000/1000) = 0.004 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2240,7 +2240,7 @@
             }
           ]
         },
-        "duty": "Catalytic, Cu/ZnO, 250 C, 50 bar. Syngas to methanol. Shop catalyst."
+        "duty": "MEOH_SYNTH. Inlet 6.9 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.9*15/(1440*1000/1000) = 0.072 m3. dip pipe."
       }
     },
     {
@@ -2270,7 +2270,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "316L, 200 L. Methanol store. To the cell and the formaldehyde reactor."
+        "duty": "MEOH_TANK. Inlet 8.5 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 8.5*30/(1440*1000/1000) = 0.177 m3. dip pipe and stilling well."
       }
     },
     {
@@ -2285,7 +2285,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Air handler on the melt bay. Capture and filter. To the scrubber.",
+        "duty": "MET_AHU. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2302,7 +2302,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Plate exchanger, 316L. Melt-bay reject to the Q4 bus. 10 K approach.",
+        "duty": "MET_HX_Q4. No liquid residence. Size is the pipe or the bay. plates, 10 K approach.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2341,7 +2341,7 @@
             }
           ]
         },
-        "duty": "Induction, 50 kg, graphite crucible. Scrap to melt. To the atomizer.",
+        "duty": "MET_MELT. Inlet 13.99 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 13.99*15/(1440*1000/1000) = 0.146 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2380,7 +2380,7 @@
             }
           ]
         },
-        "duty": "Packed, PP. Melt fume. Caustic. Brine to leach.",
+        "duty": "MET_SCRUB. Inlet 2.46 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 2.46*5/(1440*1000/1000) = 0.009 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2434,7 +2434,7 @@
             }
           ]
         },
-        "duty": "One bay. Mill, lathe, weld. Scrap to the digester."
+        "duty": "MFG_SHOP. Inlet 217.37 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 217.37*15/(1440*1000/1000) = 2.264 m3. dip pipe."
       }
     },
     {
@@ -2446,7 +2446,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "DN50. Non-condensable gas to the afterburner.",
+        "duty": "NCG_HEADER. No liquid residence. Size is the pipe or the bay. none, pipe only.",
         "presence": "present"
       }
     },
@@ -2479,7 +2479,7 @@
             }
           ]
         },
-        "duty": "Receiving bay, 12 by 8 m. Feedstock in. No process equipment."
+        "duty": "NORTH_DOCK. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -2499,7 +2499,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Packed, PP. NOx in NaOH. Nitrate brine to the nutrient tank.",
+        "duty": "NOX_SCRUB. Inlet 239.62 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 239.62*5/(1440*1000/1000) = 0.832 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
         "presence": "present"
       }
     },
@@ -2522,7 +2522,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Tank, 200 L, HDPE. Compost liquor and urine. Dose to the beds."
+        "duty": "NUTRIENT_DOSE. Inlet 140.64 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 140.64*15/(1440*1000/1000) = 1.465 m3. dip pipe."
       }
     },
     {
@@ -2575,7 +2575,7 @@
             }
           ]
         },
-        "duty": "Indirect, 120 C. Float solids. Water out. Solids to the pyrolyzer.",
+        "duty": "OIL_DRYER. Inlet 33 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 33.0*15/(1440*1000/1000) = 0.344 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2592,7 +2592,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Packed column, 150 mm, 20 stages. Oil to C5-C10, C11-C18, C19-C28, C29.",
+        "duty": "OIL_FRAC. Inlet 28.9046 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 28.9046*15/(1440*1000/1000) = 0.301 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2623,7 +2623,7 @@
             }
           ]
         },
-        "duty": "Induction, 450 C, no air. Dried float to oil and char. Char to the silicon furnace.",
+        "duty": "OIL_PYRO. Inlet 33 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 33.0*15/(1440*1000/1000) = 0.344 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2654,7 +2654,7 @@
             }
           ]
         },
-        "duty": "Parallel cells after EW-9. Co, Mn, Cr, Li, REE cake, Hg, Tl. Sealed where noted.",
+        "duty": "POLISH_BANK. Inlet 3971.08 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3971.08*15/(1440*1000/1000) = 41.365 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2669,7 +2669,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Tank, 100 L. Diesel-range cut. To the shop and the generator.",
+        "duty": "PROD_C11_C18. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -2683,7 +2683,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Tank, 100 L, carbon steel. Lube-range cut from the fractionator. To the shop.",
+        "duty": "PROD_C19_C28. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -2697,7 +2697,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Tank, 50 L. Heavy cut. Recycle to the pyrolyzer.",
+        "duty": "PROD_C29. Inlet 1.4046 kg/d. Residence 60 min. Density 850 kg/m3. Volume 1.4046*60/(1440*850/1000) = 0.069 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -2711,7 +2711,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Tank, 50 L. Light cut. To the generator.",
+        "duty": "PROD_C5_C10. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -2736,7 +2736,7 @@
         "module_kw": 70,
         "count": 1,
         "presence": "present",
-        "duty": "Roof, 400 kW peak. Cells from the wafer line. DC to the bus."
+        "duty": "PV_ARRAY. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -2767,7 +2767,7 @@
             }
           ]
         },
-        "duty": "Heat header, lowest grade. Reject to the dry cooler.",
+        "duty": "Q4_BUS. No liquid residence. Size is the pipe or the bay. none, pipe only.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2791,7 +2791,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "DC supply to EW-1. Current set by the cell. No iridium on the anode."
+        "duty": "RECTIFIER. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -2810,7 +2810,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Relief, set 10% above operating. To the scrubber. No vent to atmosphere.",
+        "duty": "RELIEF_CRYO. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -2824,7 +2824,7 @@
       "modules": [],
       "params": {
         "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)",
-        "duty": "Relief on the hydrogen header. To the afterburner.",
+        "duty": "RELIEF_H2. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -2856,7 +2856,7 @@
             }
           ]
         },
-        "duty": "HDPE, 10 m3. Irrigation and makeup. Above the beds."
+        "duty": "ROOF_TANK. Inlet 200000 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 200000.0*30/(1440*1000/1000) = 4166.667 m3. dip pipe and stilling well."
       }
     },
     {
@@ -2871,7 +2871,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Classifier and treat on stream 13. Solids to compost. Liquor to the dose tank.",
+        "duty": "S13_CLASS_TREAT. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2888,7 +2888,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Hopper, 50 L. Salt makeup to the leach. From the brine return first.",
+        "duty": "SALT_FEED. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -2908,7 +2908,7 @@
       "params": {
         "kW": 60,
         "presence": "present",
-        "duty": "Inverter, 60 kW. DC bus to AC loads. Not loaded above 80%."
+        "duty": "SOL_ARK_60K. No liquid residence. Size is the pipe or the bay. dip pipe."
       }
     },
     {
@@ -2927,7 +2927,7 @@
         "presence": "present",
         "enclosure": "greenhouse",
         "note": "Enclosed. Vapor to the AHU, condensate to the roof tank.",
-        "duty": "DN25 header. Roof tank to the beds. Enclosed greenhouse."
+        "duty": "TERRACE_IRRIG. No liquid residence. Size is the pipe or the bay. none, pipe only."
       }
     },
     {
@@ -2973,7 +2973,7 @@
             }
           ]
         },
-        "duty": "Bay, 12 x 10 m. Slice, dope, etch, clean. Spent acid to the leach."
+        "duty": "WAFER_FAB. Inlet 66.5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 66.5*15/(1440*1000/1000) = 0.693 m3. dip pipe."
       }
     },
     {
@@ -3009,7 +3009,7 @@
             }
           ]
         },
-        "duty": "PP bench. Acid and base baths. Rinse to ultra-pure. Spent to the leach."
+        "duty": "WET_BENCH. Inlet 60 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 60.0*15/(1440*1000/1000) = 0.625 m3. dip pipe."
       }
     },
     {
@@ -3038,7 +3038,7 @@
             }
           ]
         },
-        "duty": "Draw bench, shop frame. Electrowon rod to wire. Scrap to the hopper.",
+        "duty": "WIRE_DRAW. Inlet 6.8389 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 6.8389*15/(1440*1000/1000) = 0.071 m3. dip pipe.",
         "presence": "present"
       },
       "continuous_kw": null
@@ -3055,7 +3055,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Haber. N2 and H2, 450 C, 200 bar, electrowon iron. Fertilizer, SC-1 clean, nitric acid, methylamine."
+        "duty": "WS_AMMONIA. Inlet 3.25 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.25*15/(1440*1000/1000) = 0.034 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3071,7 +3071,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Phosphate slip and boron from the brine. Wafer doping. No BBr3 bought."
+        "duty": "WS_DOPE. Inlet 0.01 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.01*15/(1440*1000/1000) = 0.000 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3087,7 +3087,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Fluoride from the leach plus BMED HCl. Oxide etch and glass etch."
+        "duty": "WS_HF_ED. Inlet 1.5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 1.5*15/(1440*1000/1000) = 0.016 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3125,7 +3125,7 @@
             }
           ]
         },
-        "duty": "Potassium split of the BMED base. Silicon anisotropic etch."
+        "duty": "WS_KOH. Inlet 0.27 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.27*15/(1440*1000/1000) = 0.003 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3163,7 +3163,7 @@
             }
           ]
         },
-        "duty": "Ostwald nitric. Aluminum etch, pickling, nitrate fertilizer."
+        "duty": "WS_NITRIC. Inlet 0.6456 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.6456*15/(1440*1000/1000) = 0.007 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3179,7 +3179,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Cathodic oxygen reduction, 2 V. RCA clean, bleach, sanitation."
+        "duty": "WS_PEROX. Inlet 3 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.0*15/(1440*1000/1000) = 0.031 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3195,7 +3195,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Milled sodium silicate. Chemical-mechanical polish."
+        "duty": "WS_SLURRY. Inlet 3.3 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.3*15/(1440*1000/1000) = 0.034 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3211,7 +3211,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Ethanol and acetone from the fermenters. Resist strip and the pretreat makeup."
+        "duty": "WS_SOLV. Inlet 0.1 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.1*15/(1440*1000/1000) = 0.001 m3. dip pipe."
       },
       "continuous_kw": null
     },
@@ -3267,7 +3267,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "Zinc-bromine flow battery, 400 kWh. Charge from the bus. Not above 30% duty."
+        "duty": "ZNBR2. Inlet 852.473 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 852.473*15/(1440*1000/1000) = 8.880 m3. dip pipe."
       }
     },
     {
@@ -3302,7 +3302,7 @@
             }
           ]
         },
-        "duty": "Scrubber on the bromine headspace. Returns bromine to the electrolyte.",
+        "duty": "ZNBR2_BR2_REGEN. Inlet 852.47 kg/d. Residence 5 min. Density 1000 kg/m3. Volume 852.47*5/(1440*1000/1000) = 2.960 m3. 25 mm pall rings, 2 m packed, distributor, demister.",
         "presence": "present"
       }
     },
@@ -3324,7 +3324,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Leach phosphate. Fertilizer, aluminum polish, dopant."
+        "duty": "WS_PHOS. Inlet 0.62 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.62*15/(1440*1000/1000) = 0.006 m3. dip pipe."
       }
     },
     {
@@ -3367,7 +3367,7 @@
             }
           ]
         },
-        "duty": "Spray, 200 L/h. Cake from the vacuum drum. Liquor back to the digest.",
+        "duty": "GLASS_RINSE. Inlet 36.82 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 36.82*15/(1440*1000/1000) = 0.384 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -3403,7 +3403,7 @@
             }
           ]
         },
-        "duty": "Ball mill. Cake to below 300 um. To the digest.",
+        "duty": "GLASS_MILL. Inlet 36.8182 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 36.8182*15/(1440*1000/1000) = 0.384 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -3471,7 +3471,7 @@
             }
           ]
         },
-        "duty": "Indirect, 450-550 C. Organics off the glass cake. Char to the silicon furnace.",
+        "duty": "GLASS_BURNOUT. Inlet 30 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 30.0*15/(1440*1000/1000) = 0.312 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -3496,7 +3496,7 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Vapor compression still. Brine to distillate. Study. 316L.",
+        "duty": "VCD_TRAIN. Inlet 104.5 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 104.5*15/(1440*1000/1000) = 1.089 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -3535,7 +3535,7 @@
             }
           ]
         },
-        "duty": "Remineralizer, calcite bed. Distillate to potable. Study.",
+        "duty": "REMIN. Inlet 10 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 10.0*15/(1440*1000/1000) = 0.104 m3. dip pipe.",
         "presence": "present"
       }
     },
@@ -3556,7 +3556,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Spin coat. Novolac from formaldehyde and cresol. 1 um.",
+        "duty": "LITHO_COAT. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3577,7 +3577,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Contact aligner, 365 nm LED. No bought stepper optic.",
+        "duty": "LITHO_ALIGN. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3598,7 +3598,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Puddle develop. Exposed resist out. Spent to the leach.",
+        "duty": "LITHO_DEV. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3645,7 +3645,7 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Retired name. The aligner, coater, and developer are the lithography line.",
+        "duty": "LITHO_STUB. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3668,7 +3668,7 @@
           1800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Nickel and graphite on titanium. Tank, 100 L. No iridium.",
+        "duty": "ELECTRODE_COAT. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3691,7 +3691,7 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Extruder and shop-cut aluminum mold. Pyrolysis polyethylene.",
+        "duty": "BLOW_MOLD. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3757,7 +3757,7 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Diffusion and aluminum grid on a wafer from the silicon furnace.",
+        "duty": "SOLAR_PV_CELL. No liquid residence. Size is the pipe or the bay. dip pipe.",
         "presence": "present"
       }
     },
@@ -3815,7 +3815,7 @@
             }
           ]
         },
-        "duty": "Hot tank, 90 C, 2 m3. Highest heat grade.",
+        "duty": "Q1_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -3887,7 +3887,7 @@
             }
           ]
         },
-        "duty": "Heat store, 70 C, 2 m3, insulated carbon steel. Second grade on the ladder.",
+        "duty": "Q2_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -3959,7 +3959,7 @@
             }
           ]
         },
-        "duty": "Heat store, 50 C, 2 m3, insulated carbon steel. Third grade on the ladder.",
+        "duty": "Q3_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -4017,7 +4017,7 @@
             }
           ]
         },
-        "duty": "Heat store, 30 C, 2 m3, insulated carbon steel. Lowest grade. Reject to the dry cooler.",
+        "duty": "Q4_A. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -4075,7 +4075,7 @@
             }
           ]
         },
-        "duty": "Second hot tank, 90 C, 2 m3. Paired with Q1_A.",
+        "duty": "Q1_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -4147,7 +4147,7 @@
             }
           ]
         },
-        "duty": "Paired heat store, 70 C, 2 m3. With Q2_A.",
+        "duty": "Q2_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -4219,7 +4219,7 @@
             }
           ]
         },
-        "duty": "Paired heat store, 50 C, 2 m3. With Q3_A.",
+        "duty": "Q3_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -4277,7 +4277,7 @@
             }
           ]
         },
-        "duty": "Paired heat store, 30 C, 2 m3. With Q4_A.",
+        "duty": "Q4_B. No liquid residence. Size is the pipe or the bay. stratification plate.",
         "presence": "present"
       }
     },
@@ -4301,7 +4301,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Two head. 1.8 kg/d feed. Vent to the handler."
+        "duty": "ANIMAL_PEN. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4324,7 +4324,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "200 L aerated bin. Hydrochar in. Condensate to the roof tank."
+        "duty": "COMPOST. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4347,7 +4347,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "80 L, 35 C, 20 d residence. 2.2 kg/d feed."
+        "duty": "DIGESTER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4370,7 +4370,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Stainless cathode, 1.0 V, 0.1 m2, 35 C. Biogas in, methane out."
+        "duty": "EMETH. Inlet 0.94 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 0.94*15/(1440*1000/1000) = 0.010 m3. dip pipe."
       }
     },
     {
@@ -4393,7 +4393,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "20 L, 25 C, 2.0 V, 30 min, 25 wt%. Solvent holdup 15 L. IL not copied."
+        "duty": "LIGNO_PRE. Inlet 8.69 kg/d. Residence 30 min. Density 1000 kg/m3. Volume 8.69*30/(1440*1000/1000) = 0.181 m3. dip pipe and stilling well."
       }
     },
     {
@@ -4416,7 +4416,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Plate press, 2 MPa, sheet 300 mm. 6 kg/d."
+        "duty": "BOARD_MILL. Inlet 3.87 kg/d. Residence 15 min. Density 1000 kg/m3. Volume 3.87*15/(1440*1000/1000) = 0.040 m3. dip pipe."
       }
     },
     {
@@ -4439,7 +4439,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "10 L, 180 C, 2 h. Woody trim in, slurry out."
+        "duty": "HTC. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4455,7 +4455,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Column 150 mm, 77-90 K, 18 kW. N2, O2, CO2, Ar, He, Ne, Kr, Xe receivers."
+        "duty": "CRYO_ASU. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket."
       },
       "continuous_kw": {
         "value": 18.0,
@@ -4477,7 +4477,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L. Helium cut. Grams per day. Held, not vented.",
+        "duty": "CRYO_HE. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4500,7 +4500,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L, 316L. Neon cut from the cold box. Grams per day. Held, not vented.",
+        "duty": "CRYO_NE. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4523,7 +4523,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L, 316L. Krypton cut. Held, not vented.",
+        "duty": "CRYO_KR. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4546,7 +4546,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 1 L, 316L. Xenon cut. Held, not vented.",
+        "duty": "CRYO_XE. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4569,7 +4569,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Receiver, 10 L, 316L. Argon cut. To the fab as cover gas.",
+        "duty": "CRYO_AR. No liquid residence. Size is the pipe or the bay. structured packing, vacuum jacket.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
       },
       "continuous_kw": {
@@ -4598,7 +4598,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Saccharomyces. 30 C. 1.00 kg/d sugar to ethanol."
+        "duty": "YEAST. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4620,7 +4620,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Clostridium. 35 C. 0.64 kg/d sugar to butanol and acetone."
+        "duty": "ABE. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4642,7 +4642,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Acetobacter. Ethanol to acetic acid. No rhodium."
+        "duty": "ACETOX. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4664,7 +4664,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Acetaldehyde still, 10 L, 21 C. Ethanol oxidation. To glyoxal."
+        "duty": "ALD. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4686,7 +4686,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Reactor, 10 L. Acetaldehyde to glyoxal. To imidazole."
+        "duty": "GLYOXAL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4708,7 +4708,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Silver. Methanol to formaldehyde, 600 C."
+        "duty": "FORM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4730,7 +4730,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Methanol plus ammonia to methylamine, 350 C."
+        "duty": "MEAM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4752,7 +4752,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Glyoxal, formaldehyde, methylamine, ammonia. 1-methylimidazole."
+        "duty": "IMID. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4774,7 +4774,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "1-methylimidazole plus 1-chlorobutane, 70 C. [Bmim]Cl."
+        "duty": "QUAT. Issued envelope 400 x 400 x 800 mm. Volume 400*400*800/1e9 = 0.128 m3. media or gutter as named on the index."
       }
     },
     {
@@ -4796,7 +4796,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Anion resin. [Bmim]Cl plus acetic acid to [Bmim][OAc]."
+        "duty": "ACEX. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4818,7 +4818,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Ostwald. Ammonia and oxygen to nitric acid. Platinum gauze is not copied; use electrowon nickel."
+        "duty": "HNO3. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4840,7 +4840,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "n-butanol plus BMED HCl to 1-chlorobutane."
+        "duty": "BUCL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4862,7 +4862,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Hermetia illucens. Food waste in. Larvae to fish and chickens. Frass to compost."
+        "duty": "BSFL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4884,7 +4884,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Lemna minor on the fish-water raceway. Feed for fish, chickens, goats. Human reserve."
+        "duty": "DUCKWEED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4906,7 +4906,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Eisenia fetida. Manure and frass. Castings to the beds."
+        "duty": "WORMS. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4928,7 +4928,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Apis mellifera. Two hives. Pollination. Honey and wax."
+        "duty": "BEES. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4950,7 +4950,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Six hens. Eggs. Manure to worms. Fed larvae and duckweed."
+        "duty": "CHICKENS. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4972,7 +4972,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Two dwarf goats. Milk. Browse the woody trim. Manure to worms."
+        "duty": "GOATS. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -4994,7 +4994,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "2 m3 tilapia, 26 C. Turnover 1 per hour, 48 m3/d."
+        "duty": "FISH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5016,7 +5016,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Procambarus clarkii in the sump. Detritus. Harvest to habitation."
+        "duty": "CRAYFISH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5038,7 +5038,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Azolla on the rice bed. Fixes nitrogen. Fish feed."
+        "duty": "AZOLLA. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5060,7 +5060,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Retired into the straw room and the block room."
+        "duty": "MUSHROOM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5082,7 +5082,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Urine-diverting composting toilet. Solids with cover. Urine to nutrient."
+        "duty": "COMPOST_TOILET. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5104,7 +5104,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Cowpea, clover, peanut. Inoculated. Residue to compost. Azolla already on the rice bed."
+        "duty": "NFIX_BED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5126,7 +5126,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Pleurotus. Wheat straw, 60-70 C, 1 h. Two flushes."
+        "duty": "MUSH_STRAW. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5148,7 +5148,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Sterile hardwood blocks. Shiitake, lion's mane, reishi, turkey tail. 121 C."
+        "duty": "MUSH_BLOCK. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5170,7 +5170,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Rhizophagus irregularis on compost and vermiculite. Bed inoculum. Not a food crop."
+        "duty": "AMF. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5192,7 +5192,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Post-thermophilic. Below 40 C. Spent Pleurotus spawn on the lignocellulose. Then worms."
+        "duty": "COMPOST_MYC. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5214,7 +5214,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Day-neutral strawberry in gutters. Fig in tubs. Blueberry in acid pots, pH 4.5-5.5, separate from the beds."
+        "duty": "FRUIT_GUTTER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5236,7 +5236,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Tomato, cucumber, pepper, lettuce, spinach, kale, allium, basil. Organic media. Fish water."
+        "duty": "VEG_BED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5258,7 +5258,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "20 min residence on 48 m3/d. Solids 1.0 kg/d to the sump."
+        "duty": "CLARIFIER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5280,7 +5280,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "15 m2 media. 7.5 g NH4-N/d at 0.5 mg/L. Sparge holds 4 mg/L O2."
+        "duty": "BIOFILTER. Issued envelope 3000 x 5000 x 1200 mm. Volume 3000*5000*1200/1e9 = 18.000 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5302,7 +5302,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Return sump. Crayfish on the settled solids. Pump back to the tank."
+        "duty": "FISH_SUMP. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5324,7 +5324,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Dual root, 6 m2. Fish water below, correction above. 0.12 kg/d."
+        "duty": "CROP_TOMATO. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5346,7 +5346,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Dual-root bed, 4 m2. Fish water below, potassium correction above. 0.08 kg/d."
+        "duty": "CROP_CUCUMBER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5368,7 +5368,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Dual-root bed, 3 m2. Fish water below, correction above. 0.06 kg/d."
+        "duty": "CROP_PEPPER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5390,7 +5390,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient-film gutter, 4 m2, 1:40 slope. 0.08 kg/d."
+        "duty": "CROP_LETTUCE. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5412,7 +5412,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient-film gutter, 2 m2, 1:40 slope, 1-2 L/min. Fish water. Harvest 0.05 kg/d."
+        "duty": "CROP_SPINACH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5434,7 +5434,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Organic media bed, 2 m2. Fish water from the biofilter. Harvest 0.05 kg/d. Trim to the larvae."
+        "duty": "CROP_KALE. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5456,7 +5456,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Onion, garlic, leek. Fish water. Organic media."
+        "duty": "CROP_ALLIUM. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5478,7 +5478,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nutrient-film gutter, 1 m2, 1:40 slope. Fish water. Harvest 0.03 kg/d."
+        "duty": "CROP_BASIL. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5500,7 +5500,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Rosemary. Dry gutter. Not the flooded bed."
+        "duty": "CROP_ROSEMARY. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5522,7 +5522,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Clover on finished worm castings. Inoculated. Cuttings return. Bees. No leach salts."
+        "duty": "CLOVER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5544,7 +5544,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "4 C, 30 % RH. Seed, vegetative, and culture. Dry. Off the compost.",
+        "duty": "SEED_BANK. Issued envelope 2000 x 2000 x 2200 mm. Volume 2000*2000*2200/1e9 = 8.800 m3. media or gutter as named on the index.",
         "inventory": {
           "seed": [
             "bean",
@@ -5611,7 +5611,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Urine plus magnesium. pH 8.5. MgNH4PO4.6H2O. To the beds, not the tank."
+        "duty": "STRUVITE. Issued envelope 1000 x 1000 x 1200 mm. Volume 1000*1000*1200/1e9 = 1.200 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5633,7 +5633,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Stalk burn. 550 C. Potassium carbonate to the beds."
+        "duty": "ASH. Issued envelope 1000 x 1000 x 1500 mm. Volume 1000*1000*1500/1e9 = 1.500 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5655,7 +5655,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Leach iodide on an anion resin. Elute as KI. Hold 2 g. Dose 0.6 mg/d."
+        "duty": "IODIDE. Issued envelope 500 x 500 x 800 mm. Volume 500*500*800/1e9 = 0.200 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5681,7 +5681,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Array surplus. Contactor opens. Not a load."
+        "duty": "CURTAIL. Issued envelope 800 x 600 x 2000 mm. Volume 800*600*2000/1e9 = 0.960 m3. plates, 10 K approach."
       }
     },
     {
@@ -5707,7 +5707,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Dry cooler and leach reject. Air, 10 K approach."
+        "duty": "HEAT_SINK. Issued envelope 6000 x 6000 x 1500 mm. Volume 6000*6000*1500/1e9 = 54.000 m3. plates, 10 K approach."
       }
     },
     {
@@ -5729,7 +5729,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Film gutters. 1:40. 1-2 L/min. Lettuce, basil, spinach."
+        "duty": "NFT. Issued envelope 6000 x 1000 x 300 mm. Volume 6000*1000*300/1e9 = 1.800 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5751,7 +5751,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "5-7 bar. 100 um screen. Strawberry. Flooded standby."
+        "duty": "MISTER. Issued envelope 4000 x 1000 x 800 mm. Volume 4000*1000*800/1e9 = 3.200 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5773,7 +5773,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Upper channel. Urine potassium and ferric citrate. No return to the tank."
+        "duty": "DUAL_ROOT. Issued envelope 6000 x 2000 x 600 mm. Volume 6000*2000*600/1e9 = 7.200 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5795,7 +5795,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "85 m2. Anabaena. Closes the 17 g/d nitrogen gap."
+        "duty": "AZOLLA_BED. Issued envelope 18000 x 5000 x 400 mm. Volume 18000*5000*400/1e9 = 36.000 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5817,7 +5817,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "50 L, 78 C, glass. Ethanol from the yeast."
+        "duty": "ETOH_STILL. Issued envelope 400 x 400 x 1500 mm. Volume 400*400*1500/1e9 = 0.240 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5839,7 +5839,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "20 L, glass, 118 C. Butanol from the ABE fermenter."
+        "duty": "BUOH_STILL. Issued envelope 300 x 300 x 1200 mm. Volume 300*300*1200/1e9 = 0.108 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5861,7 +5861,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "10 L, 600 C, silver gauze. Methanol to formaldehyde."
+        "duty": "FORM_RX. Issued envelope 300 x 300 x 800 mm. Volume 300*300*800/1e9 = 0.072 m3. media or gutter as named on the index."
       }
     },
     {
@@ -5883,7 +5883,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "10 m2. 0.02 kg/m2/day. Oil seed. Fixing bed."
+        "duty": "PEANUT. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5905,7 +5905,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "10 m2. 0.02 kg/m2/day. Oil seed. Stalks to the ash burner."
+        "duty": "SUNFLOWER. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5927,7 +5927,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "16 m2. Four berths. CO2 and heat to the handler."
+        "duty": "HAB_SLEEP. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5949,7 +5949,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "12 m2. Food in. Plate waste to the larvae."
+        "duty": "HAB_GALLEY. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5971,7 +5971,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "6 m2. Bandage, saline, iodide store. No process chemistry."
+        "duty": "HAB_MED. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -5993,7 +5993,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "6 m2. Grey water to treatment. No flush on the toilet."
+        "duty": "HAB_WASH. No liquid residence. Size is the pipe or the bay. media or gutter as named on the index."
       }
     },
     {
@@ -6015,7 +6015,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Contact aligner. 365 nm LED. Novolac from cresol and formaldehyde. No stepper optic bought."
+        "duty": "LITHO. Issued envelope 1600 x 900 x 1800 mm. Volume 1600*900*1800/1e9 = 2.592 m3. media or gutter as named on the index."
       }
     },
     {
@@ -6037,7 +6037,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Extruder and mold. Pyrolysis polyethylene. Shop-cut aluminum mold."
+        "duty": "BLOW. Issued envelope 2200 x 1200 x 2000 mm. Volume 2200*1200*2000/1e9 = 5.280 m3. media or gutter as named on the index."
       }
     },
     {
@@ -6059,7 +6059,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Nickel and graphite on titanium. No iridium. No platinum."
+        "duty": "ELCOAT. Issued envelope 800 x 600 x 900 mm. Volume 800*600*900/1e9 = 0.432 m3. media or gutter as named on the index."
       }
     },
     {
@@ -6081,7 +6081,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Wafer from the silicon furnace. Phosphate dopant. Electrowon aluminum grid."
+        "duty": "PV_CELL. Issued envelope 2000 x 1200 x 1800 mm. Volume 2000*1200*1800/1e9 = 4.320 m3. media or gutter as named on the index."
       }
     },
     {
@@ -6103,7 +6103,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Reciprocating expander. Shop-cut 316L. Joule-Thomson backup."
+        "duty": "EXPANDER. Issued envelope 600 x 400 x 500 mm. Volume 600*400*500/1e9 = 0.120 m3. media or gutter as named on the index."
       }
     },
     {
@@ -6125,7 +6125,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Acheson. Silica plus char. 2000 C. Graphite resistance. Silicon carbide grain."
+        "duty": "SIC_FURNACE. Issued envelope 1500 x 1500 x 1800 mm. Volume 1500*1500*1800/1e9 = 4.050 m3. media or gutter as named on the index."
       }
     }
   ],

@@ -6,14 +6,14 @@ Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
 2. Size. Issued envelope 800 x 600 x 900 mm. Volume 800*600*900/1e9 = 0.432 m3.
 
-3. Material. Corrosion allowance 0 mm. Service from the class farm. Barrier is the listed alloy or polymer. No coating unless the index names one.
+3. Material. Corrosion allowance 0 mm. Internals: media or gutter as named on the index.
 
 4. Nozzles. Inlet DN15, outlet DN15, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
 
 5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
 
-6. Relief. Atmospheric units have a vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
 
-7. Code. shop, HDPE or timber.
+7. Code. shop, HDPE.
 
-8. Open items. Envelope is issued. Internals are not.
+8. Open items. None.

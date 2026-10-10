@@ -4,16 +4,16 @@ Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
 1. Basis. IA-NOX-N2 243.89 kg/d from NOX_SCRUB. One operating point, the graph rate.
 
-2. Size. No liquid residence. Size is the pipe or the bay, not a volume.
+2. Size. No liquid residence. Size is the pipe or the bay.
 
-3. Material. Corrosion allowance 1.5 mm. Service from the class cold_box. Barrier is the listed alloy or polymer. No coating unless the index names one.
+3. Material. Corrosion allowance 1.5 mm. Internals: structured packing, vacuum jacket.
 
 4. Nozzles. Inlet DN50, outlet DN50, drain DN15, vent DN15. Class 150 on metal. Unrated on polymer.
 
 5. Instruments. Level and temperature on a holding volume. High level trips the upstream pump. A header has no trip.
 
-6. Relief. Atmospheric units have a vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
+6. Relief. Vent to the scrubber, not to the room. A pressurized unit is set 10% above the basis pressure.
 
-7. Code. shop, 316L, vacuum jacket.
+7. Code. shop, 316L.
 
-8. Open items. None on the size. Internals are not drawn.
+8. Open items. None.
