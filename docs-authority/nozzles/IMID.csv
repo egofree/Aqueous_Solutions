@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,glyoxal,inlet face
+N2,DN15,Class 150,formaldehyde,inlet face
+N3,DN15,Class 150,methylamine,inlet face
+N4,DN15,Class 150,ammonia to imidazole,inlet face
+N5,DN15,Class 150,1-methylimidazole,outlet face
+N6,DN15,Class 150,condensation water,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

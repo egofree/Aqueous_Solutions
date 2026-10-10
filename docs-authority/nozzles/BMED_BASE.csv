@@ -1,0 +1,6 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,CRU → BMED base regen loop,inlet face
+N2,DN15,Class 150,NaOH product,outlet face
+N3,DN25,Class 150,digest NaOH, 20 wt%,outlet face
+N4,DN15,Class 150,drain,bottom
+N5,DN15,Class 150,vent,top

@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,CSTR to EW-1,inlet face
+N2,DN15,Class 150,rectifier into the cell,inlet face
+N3,DN50,Class 150,EW overflow,outlet face
+N4,DN15,Class 150,cathode H2 + sweep air,outlet face
+N5,DN15,Class 150,EW heat,outlet face
+N6,DN25,Class 150,plated sheet,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

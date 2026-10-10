@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,CO2,inlet face
+N2,DN15,Class 150,nutrients,inlet face
+N3,DN15,Class 150,load,inlet face
+N4,DN15,Class 150,CO2 enrichment dose (FARM AHU supply),inlet face
+N5,DN15,Class 150,organics,outlet face
+N6,DN15,Class 150,condensate,outlet face
+N7,DN15,Class 150,food,outlet face
+N8,DN15,Class 150,food waste to larvae,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,larvae,inlet face
+N2,DN15,Class 150,duckweed,inlet face
+N3,DN15,Class 150,azolla,inlet face
+N4,DN50,Class 150,return,inlet face
+N5,DN15,Class 150,fish,outlet face
+N6,DN15,Class 150,detritus,outlet face
+N7,DN50,Class 150,tank water,outlet face
+N8,DN15,Class 150,fish solids liquor to the nutrient tank,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

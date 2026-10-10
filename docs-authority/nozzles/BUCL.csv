@@ -1,0 +1,7 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,n-butanol,inlet face
+N2,DN15,Class 150,HCl to chlorobutane,inlet face
+N3,DN15,Class 150,1-chlorobutane,outlet face
+N4,DN15,Class 150,chlorination water,outlet face
+N5,DN15,Class 150,drain,bottom
+N6,DN15,Class 150,vent,top

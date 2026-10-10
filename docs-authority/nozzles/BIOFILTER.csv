@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,urine to the biofilter,inlet face
+N2,DN50,Class 150,clarified water,inlet face
+N3,DN50,Class 150,nitrate water,outlet face
+N4,DN50,Class 150,nitrate water,outlet face
+N5,DN50,Class 150,nitrate water,outlet face
+N6,DN15,Class 150,biofilter bleed to the nutrient tank,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

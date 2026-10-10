@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,scrubbed CO2 to the cold box,inlet face
+N2,DN50,Class 150,scrubbed flue nitrogen to the cold box,inlet face
+N3,DN15,Class 150,argon return,inlet face
+N4,DN15,Class 150,helium return,inlet face
+N5,DN50,Class 150,nitrogen product,outlet face
+N6,DN25,Class 150,oxygen product,outlet face
+N7,DN25,Class 150,CO2 product,outlet face
+N8,DN15,Class 150,argon,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

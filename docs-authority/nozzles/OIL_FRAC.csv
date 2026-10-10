@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,Pyro → frac,inlet face
+N2,DN15,Class 150,resist and solvent waste,inlet face
+N3,DN15,Class 150,solvent and photoresist,inlet face
+N4,DN15,Class 150,organic mist,inlet face
+N5,DN15,Class 150,fractionator cut,outlet face
+N6,DN15,Class 150,fractionator cut,outlet face
+N7,DN15,Class 150,fractionator cut,outlet face
+N8,DN15,Class 150,fractionator cut,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

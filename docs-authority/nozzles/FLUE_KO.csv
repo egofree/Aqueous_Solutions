@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,flue N2/O2/CO2/NOx,inlet face
+N2,DN15,Class 150,condensables,inlet face
+N3,DN50,Class 150,leach vent,inlet face
+N4,DN15,Class 150,CO2-rich gas after KO,outlet face
+N5,DN50,Class 150,flue to the NOx scrubber,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,NCG,inlet face
+N2,DN15,Class 150,organics,inlet face
+N3,DN15,Class 150,fuel into the afterburner,inlet face
+N4,DN15,Class 150,Q1 flue, not Q4,outlet face
+N5,DN15,Class 150,Q1 flue, not Q4,outlet face
+N6,DN15,Class 150,flue,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

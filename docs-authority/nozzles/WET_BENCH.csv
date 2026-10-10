@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,HCl,inlet face
+N2,DN25,Class 150,fab UPW > 18 MΩ·cm class,inlet face
+N3,DN15,Class 150,HF (aq),inlet face
+N4,DN15,Class 150,H₂O₂,inlet face
+N5,DN25,Class 150,spent etch,outlet face
+N6,DN15,Class 150,resist and solvent waste,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

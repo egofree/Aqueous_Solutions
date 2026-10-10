@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,fractionator cut,inlet face
+N2,DN25,Class 150,genset air,inlet face
+N3,DN15,Class 150,fuel into the generator,inlet face
+N4,DN25,Class 150,exhaust condensate / NOx,outlet face
+N5,DN15,Class 150,GEN AC,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

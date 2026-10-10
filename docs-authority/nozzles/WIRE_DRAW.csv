@@ -1,0 +1,7 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,billet / melt / charge,inlet face
+N2,DN15,Class 150,wire product,outlet face
+N3,DN15,Class 150,draw scrap,outlet face
+N4,DN15,Class 150,draw fume,outlet face
+N5,DN15,Class 150,drain,bottom
+N6,DN15,Class 150,vent,top

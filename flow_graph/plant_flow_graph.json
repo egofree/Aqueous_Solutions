@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AX",
+  "revision": "AY",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-09",
   "sole_authority": true,
@@ -6156,6 +6156,10 @@
         "conditions": "hot, to pyrolyzer only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -6185,6 +6189,9 @@
         "conditions": "pyro inlet",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -6214,6 +6221,9 @@
         "conditions": "tank",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -6243,6 +6253,9 @@
         "conditions": "tank",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -6272,6 +6285,9 @@
         "conditions": "tank",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -6301,6 +6317,9 @@
         "conditions": "~250 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -6339,6 +6358,10 @@
         "rate_kind": "by_difference",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: MFG goods export (ID stays TBD: no invented DOCK S##)"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -7866,6 +7889,11 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -7895,6 +7923,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -7935,6 +7967,11 @@
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: BMED acid loop make (energy basis)"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -7975,6 +8012,11 @@
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: BMED base loop make (energy basis)"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -8013,6 +8055,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8051,6 +8097,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8200,6 +8250,10 @@
         "deposit_kg_d": 0.0063,
         "anode_cl2_kg_d": 56.278,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8232,6 +8286,10 @@
         "deposit_kg_d": 0.0251,
         "anode_cl2_kg_d": 56.283,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8264,6 +8322,10 @@
         "deposit_kg_d": 8.7841,
         "anode_cl2_kg_d": 9.802,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8295,6 +8357,11 @@
         "rate_kind": "derived",
         "m3_h": 0.17,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -8327,6 +8394,10 @@
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.425,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8359,6 +8430,10 @@
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.859,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8391,6 +8466,10 @@
         "deposit_kg_d": 29.629,
         "anode_cl2_kg_d": 37.62,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8423,6 +8502,10 @@
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.449,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8455,6 +8538,10 @@
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 57.046,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8487,6 +8574,10 @@
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.243,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8516,6 +8607,10 @@
         "rate_kind": "derived",
         "dry_kg_d": 30.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8544,6 +8639,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8572,6 +8671,10 @@
         "conditions": "170.0 C out",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8631,7 +8734,11 @@
         "wp_true_closure",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L1: HDR_H2\u2192H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync)."
+      "notes": "WP-L1: HDR_H2\u2192H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).",
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HDR-H2-03",
@@ -8753,6 +8860,9 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: dried float to pyrolyzer"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -8793,6 +8903,9 @@
         "asf_alpha": 0.84558,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: pyrolysis volatiles to fractionator"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -8822,6 +8935,9 @@
         "conditions": "~1 bar a, 40 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -8861,6 +8977,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: retargeted from the POLISH_BANK self-loop stub to POLISH_BANK -> CONTINUOUS_RECYCLE (raffinate return; STUDIES_COMPLETE precedent)"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8889,6 +9009,11 @@
         "conditions": "35.0 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -8929,6 +9054,11 @@
         "slurry_solids_kg_d": 90.94,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: float/sink liquor return"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -8957,6 +9087,10 @@
         "conditions": "~1 bar a",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -8983,7 +9117,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S02",
@@ -9018,6 +9156,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_k_value": 3.4
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9049,6 +9191,10 @@
         "conditions": "ambient, ~2 bar g",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9075,7 +9221,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S05",
@@ -9101,7 +9250,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S06",
@@ -9162,7 +9315,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S08",
@@ -9188,7 +9345,12 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "S08G",
@@ -9217,7 +9379,11 @@
         "sandbox_extra_not_in_STREAM_REGISTER",
         "reconcile_or_keep_sandbox"
       ],
-      "notes": "candidate_mvs extension \u2014 do not invent new register ID"
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID",
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S09",
@@ -9246,6 +9412,11 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -9281,6 +9452,11 @@
         "rate_kind": "by_difference",
         "doc": "AQS-DUTY-010",
         "rev_k_value": 10.0
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -9307,7 +9483,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S12",
@@ -9333,7 +9513,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S13",
@@ -9371,6 +9555,10 @@
         "oa_m3_h": 933.5,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: farm sump + farm AHU condensate to VCD"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9406,6 +9594,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_k_value": 4.2
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9435,7 +9627,11 @@
         "sandbox_extra_not_in_STREAM_REGISTER",
         "reconcile_or_keep_sandbox"
       ],
-      "notes": "candidate_mvs extension \u2014 do not invent new register ID"
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID",
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S15",
@@ -9469,6 +9665,10 @@
         "conditions": "n/a",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9495,7 +9695,12 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "S17",
@@ -9547,7 +9752,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Retired carbon credit (AQS-DUTY-008 Rev B s13.3). Not deleted: other locks name S18."
+      "notes": "Retired carbon credit (AQS-DUTY-008 Rev B s13.3). Not deleted: other locks name S18.",
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S19",
@@ -9583,6 +9791,11 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -9653,6 +9866,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_k_value": 95.0
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9754,6 +9971,9 @@
         "conditions": "event only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "H2": 1.0
       }
     },
     {
@@ -9789,6 +10009,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: VCD distillate to UPW polish"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9824,6 +10048,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: REMIN drinking water to HAB"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9860,6 +10088,10 @@
         "conditions": "ambient, 1.0 kg/L",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9895,6 +10127,11 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: VCD brine to REGEN LEACH"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -9932,6 +10169,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: treated grey to VCD"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -9968,6 +10209,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10004,6 +10249,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10040,6 +10289,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10076,6 +10329,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10113,6 +10370,10 @@
         "rate_kind": "derived",
         "L_d": 0.25,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10149,6 +10410,10 @@
         "conditions": "cabinet",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10185,6 +10450,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10214,6 +10483,9 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -10243,6 +10515,11 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -10273,6 +10550,9 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -10307,6 +10587,10 @@
         "conditions": "event only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10344,6 +10628,10 @@
         "conditions": "event only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10380,6 +10668,10 @@
         "conditions": "event only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10419,6 +10711,10 @@
         "standby_kw": 2.126,
         "cop": 3.43,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10482,7 +10778,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "S46",
@@ -10512,6 +10811,10 @@
         "rate_kind": "derived",
         "kg_h": 10.44,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10564,7 +10867,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "S50",
@@ -10590,7 +10896,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S51",
@@ -10651,6 +10961,10 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: PEM product water to VCD"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10762,6 +11076,10 @@
         "rate_kind": "derived",
         "glycol_kg_h": 857.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10793,6 +11111,10 @@
         "conditions": "event only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10829,6 +11151,10 @@
         "conditions": "cast",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10865,6 +11191,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10901,6 +11231,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10937,6 +11271,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -10973,6 +11311,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11010,6 +11352,10 @@
         "rate_kind": "derived",
         "m3_h": 1800.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11072,7 +11418,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "S65",
@@ -11101,6 +11450,10 @@
         "rate_kind": "derived",
         "m3_h": 1500.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11137,6 +11490,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11165,6 +11522,9 @@
         "flue_kg_h": 10.07,
         "T_C": 300.0,
         "basis": "AQS-AUD-001 mid; NCG 5.0 kg/d at 3.00 kg CO2/kg"
+      },
+      "composition": {
+        "N2": 1.0
       }
     },
     {
@@ -11210,6 +11570,9 @@
         "velocity_basis_m_s": 10.0,
         "sink_duty_kw": 0.0479,
         "sink_duty_basis": "CRYO_CO2 cooling 30 to -20 C plus condensation at about 20 bar, 282 kJ/kg"
+      },
+      "composition": {
+        "CO2": 1.0
       }
     },
     {
@@ -11239,6 +11602,11 @@
         "conditions": "~10 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -11271,6 +11639,10 @@
         "water_kg_d": 8.44,
         "m3_h": 30.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11300,6 +11672,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11329,6 +11705,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11366,6 +11746,10 @@
         "rate_kind": "derived",
         "m3_h": 720.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11395,6 +11779,11 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
       }
     },
     {
@@ -11424,6 +11813,9 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "hydrocarbon": 1.0
       }
     },
     {
@@ -11450,7 +11842,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S74",
@@ -11476,7 +11871,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "S75",
@@ -11502,7 +11900,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S76",
@@ -11529,7 +11931,11 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "S77",
@@ -11565,6 +11971,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11601,6 +12011,10 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11702,6 +12116,10 @@
         "conditions": "~60 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11728,7 +12146,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed)"
+      "notes": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed)",
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S83",
@@ -11757,6 +12178,10 @@
         "conditions": "header pressurized, no draw",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11786,6 +12211,10 @@
         "conditions": "header pressurized, no draw",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11811,6 +12240,9 @@
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "balance": "CRYO_CO2 remainder"
+      },
+      "composition": {
+        "CO2": 1.0
       }
     },
     {
@@ -11840,6 +12272,10 @@
         "conditions": "event only",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11867,6 +12303,10 @@
       "params": {
         "hold_reason": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint.",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11894,6 +12334,10 @@
       "params": {
         "hold_reason": "HOLD placeholder: GROW_BED has no N2 demand (farm is outdoor-air ventilated at the DUTY-009 OA rate). Source rule is met (CRYO_N2, not the cryo residual) but there is no sink. No clean endpoint.",
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11923,6 +12367,10 @@
         "rate_kind": "derived",
         "L_d": 0.625,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -11952,6 +12400,10 @@
         "rate_kind": "derived",
         "L_d": 0.625,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
       }
     },
     {
@@ -12006,6 +12458,9 @@
         "conditions": "3.0 bar a, 20 C",
         "rate_kind": "derived",
         "rev_k_value": 11.616
+      },
+      "composition": {
+        "CO2": 1.0
       }
     },
     {
@@ -12042,6 +12497,9 @@
         "P_bar_a": 3.0,
         "line_DN": 15,
         "material": "316L"
+      },
+      "composition": {
+        "CO2": 1.0
       }
     },
     {
@@ -12068,7 +12526,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-CRU-01",
@@ -12094,7 +12557,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-ACID-01",
@@ -12120,7 +12588,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-BASE-01",
@@ -12146,7 +12619,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "HL-Q4-REJ",
@@ -12224,7 +12701,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NUT-01",
@@ -12250,7 +12731,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-UPW-FAB",
@@ -12276,7 +12761,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-UPW-REMIN",
@@ -12302,7 +12791,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-UPW-REJ",
@@ -12328,7 +12821,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-Q4-LIFE",
@@ -12380,7 +12878,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ZNBR-MU",
@@ -12406,7 +12908,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-EW-MET-1",
@@ -12432,7 +12939,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-2",
@@ -12458,7 +12969,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-3",
@@ -12484,7 +12999,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-4",
@@ -12510,7 +13029,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-5",
@@ -12536,7 +13059,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-6",
@@ -12562,7 +13089,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-7",
@@ -12588,7 +13119,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-8",
@@ -12614,7 +13149,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EW-MET-9",
@@ -12640,7 +13179,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-POL-CAKE",
@@ -12666,7 +13209,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AB-AIR",
@@ -12692,7 +13239,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FLUE-EXH",
@@ -12718,7 +13269,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-DIG-LIQ",
@@ -12744,7 +13299,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-MILL-LOSS",
@@ -12770,7 +13330,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MFG-OUT",
@@ -12796,7 +13360,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BED-H2O",
@@ -12822,7 +13390,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MEOH-H2O",
@@ -12848,7 +13420,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FC-AIR",
@@ -12874,7 +13450,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-Q3A-TRIM",
@@ -12952,7 +13532,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-VCD-BD",
@@ -12978,7 +13563,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-CHAR",
@@ -13004,7 +13594,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-FC-EXH",
@@ -13030,7 +13623,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ZNBR-HEAT",
@@ -13134,7 +13731,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WIRE-LOSS",
@@ -13160,7 +13761,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-Q1A-LOSS",
@@ -13290,7 +13895,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BED-VAP",
@@ -13316,7 +13925,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HAB-VAP",
@@ -13342,7 +13955,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HVAC-COND",
@@ -13368,7 +13985,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PV-CURTAIL",
@@ -13420,7 +14041,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ZNBR-LOSS",
@@ -13473,7 +14098,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-RES-01",
@@ -13499,7 +14128,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MAN-01",
@@ -13525,7 +14158,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FEC-01",
@@ -13551,7 +14188,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-COMP-01",
@@ -13577,7 +14217,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-DIG-GAS",
@@ -13603,7 +14247,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-DIG-SOL",
@@ -13629,7 +14277,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EM-CH4",
@@ -13655,7 +14307,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EM-DIG",
@@ -13681,7 +14337,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-LIG-01",
@@ -13707,7 +14367,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CEL-01",
@@ -13733,7 +14397,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BOARD",
@@ -13759,7 +14427,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BOARD-SCRAP",
@@ -13785,7 +14457,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-COMP-OUT",
@@ -13811,7 +14487,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MEAT",
@@ -13837,7 +14517,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NUT-LEACH",
@@ -13863,7 +14547,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-FEED-01",
@@ -13889,7 +14578,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-POT-01",
@@ -13915,7 +14609,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-HTC-01",
@@ -13941,7 +14640,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-COMP-CO2",
@@ -13967,7 +14670,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-SUGAR",
@@ -13993,7 +14699,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-UPW-HAB",
@@ -14019,7 +14729,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BAG-01",
@@ -14045,7 +14759,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-UPW-USE",
@@ -14071,7 +14790,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MEOH-REST",
@@ -14097,7 +14820,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SINK-01",
@@ -14123,7 +14850,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-PLAST-01",
@@ -14149,7 +14881,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-CULLET",
@@ -14175,7 +14910,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-DIG-BLK",
@@ -14201,7 +14941,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SCRUB-SRC",
@@ -14227,7 +14971,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-SIL-SRC",
@@ -14253,7 +15002,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HF-SRC",
@@ -14279,7 +15032,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-NH3-SRC",
@@ -14305,7 +15063,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
     },
     {
       "stream_id": "IA-H2O2-SRC",
@@ -14331,7 +15092,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
     },
     {
       "stream_id": "IA-AIR-IN",
@@ -14357,7 +15121,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NOX-H2O",
@@ -14383,7 +15151,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NOX-N",
@@ -14409,7 +15181,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-NOX-CO2",
@@ -14435,7 +15211,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-NOX-N2",
@@ -14461,7 +15240,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
     },
     {
       "stream_id": "IA-FAB-SPENT",
@@ -14487,7 +15269,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-GEN-AIR",
@@ -14513,7 +15300,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NOX-HAB",
@@ -14539,7 +15330,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NUT-BED",
@@ -14565,7 +15360,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-BED-COMP",
@@ -14591,7 +15390,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-N2-VENT",
@@ -14617,7 +15420,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
     },
     {
       "stream_id": "IA-HOP-01",
@@ -14643,7 +15449,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-ASU-N2",
@@ -14669,7 +15480,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
     },
     {
       "stream_id": "IA-ASU-O2",
@@ -14695,7 +15509,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
     },
     {
       "stream_id": "IA-ASU-CO2",
@@ -14721,7 +15538,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-ASU-AR",
@@ -14747,7 +15567,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-H2-AIR",
@@ -14773,7 +15597,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "IA-AR-FAB",
@@ -14799,7 +15626,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AR-RET",
@@ -14825,7 +15656,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ASU-HE",
@@ -14851,7 +15686,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ASU-NE",
@@ -14877,7 +15716,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ASU-KR",
@@ -14903,7 +15746,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ASU-XE",
@@ -14929,7 +15776,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HE-RET",
@@ -14955,7 +15806,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NE-RET",
@@ -14981,7 +15836,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-KR-RET",
@@ -15007,7 +15866,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-XE-RET",
@@ -15033,7 +15896,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WEAR",
@@ -15059,7 +15926,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-N2-RET",
@@ -15085,7 +15956,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
     },
     {
       "stream_id": "IA-O2-RET",
@@ -15111,7 +15985,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
     },
     {
       "stream_id": "IA-CO2-RET",
@@ -15137,7 +16014,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-MEOH-COND",
@@ -15163,7 +16043,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-H2-IN",
@@ -15189,7 +16073,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "IA-EW-SHEET",
@@ -15215,7 +16102,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PHOS-SRC",
@@ -15241,7 +16132,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-FERM-RES",
@@ -15267,7 +16163,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MELT-MILL",
@@ -15293,7 +16193,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MELT-ATOM",
@@ -15319,7 +16223,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-DRAW-FUME",
@@ -15345,7 +16253,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AHU-POT",
@@ -15371,7 +16283,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-LEACH-NOX",
@@ -15397,7 +16313,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-LEACH-FLUE",
@@ -15423,7 +16344,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-LEACH-HOP",
@@ -15449,7 +16375,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-LEACH-ASU",
@@ -15475,7 +16406,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-EW1-H2",
@@ -15501,7 +16437,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "IA-EW2-H2",
@@ -15527,7 +16466,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "IA-EW4-H2",
@@ -15553,7 +16495,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "IA-EW4-N2",
@@ -15579,7 +16524,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
     },
     {
       "stream_id": "IA-O2-MAKE",
@@ -15605,7 +16553,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
     },
     {
       "stream_id": "IA-DIG-FIX",
@@ -15631,7 +16582,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FC-FIX",
@@ -15657,7 +16612,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-COMP-FIX",
@@ -15683,7 +16642,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-AHU-FIX",
@@ -15709,7 +16671,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-LEACH-H2",
@@ -15735,7 +16701,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-FC-LEACH",
@@ -15761,7 +16732,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-NOX-BOARD",
@@ -15787,7 +16763,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SUGAR-ABE",
@@ -15813,7 +16793,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ETOH",
@@ -15839,7 +16823,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ETOH-AC",
@@ -15865,7 +16853,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ETOH-SOL",
@@ -15891,7 +16883,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-YEAST-CO2",
@@ -15917,7 +16913,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-STILL",
@@ -15943,7 +16942,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BUOH",
@@ -15969,7 +16972,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ACETONE",
@@ -15995,7 +17002,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ABE-ETOH",
@@ -16021,7 +17032,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ABE-CO2",
@@ -16047,7 +17062,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "IA-ABE-STILL",
@@ -16073,7 +17091,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AC-O2",
@@ -16099,7 +17121,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ACOH",
@@ -16125,7 +17151,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AC-H2O",
@@ -16151,7 +17181,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ALD",
@@ -16177,7 +17211,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ALD-H2",
@@ -16203,7 +17241,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
     },
     {
       "stream_id": "IA-GLX",
@@ -16229,7 +17270,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-GLX-NOX",
@@ -16255,7 +17300,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MEOH-FORM",
@@ -16281,7 +17330,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CH2O",
@@ -16307,7 +17360,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FORM-H2O",
@@ -16333,7 +17390,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MEOH-MEAM",
@@ -16359,7 +17420,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NH3-MEAM",
@@ -16385,7 +17450,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MEAM",
@@ -16411,7 +17480,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NH3-IMID",
@@ -16437,7 +17510,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-IMID",
@@ -16463,7 +17540,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-IMID-H2O",
@@ -16489,7 +17570,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HCL-BU",
@@ -16515,7 +17600,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-BUCL",
@@ -16541,7 +17631,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BUCL-H2O",
@@ -16567,7 +17661,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BMIM",
@@ -16593,7 +17691,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-QUAT-H2O",
@@ -16619,7 +17721,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-IL",
@@ -16645,7 +17751,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-IL-BRINE",
@@ -16671,7 +17781,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-NH3-NIT",
@@ -16697,7 +17812,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-O2-NIT",
@@ -16723,7 +17842,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
     },
     {
       "stream_id": "IA-HNO3",
@@ -16749,7 +17871,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NIT-H2O",
@@ -16775,7 +17901,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PHOS-DOPE",
@@ -16801,7 +17931,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SOLV-WB",
@@ -16827,7 +17961,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BSFL-FISH",
@@ -16853,7 +17991,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-BSFL-HEN",
@@ -16879,7 +18021,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BSFL-FRASS",
@@ -16905,7 +18051,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WEED-FISH",
@@ -16931,7 +18081,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-WEED-HEN",
@@ -16957,7 +18111,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WEED-GOAT",
@@ -16983,7 +18141,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WEED-HAB",
@@ -17009,7 +18171,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BED-WEED",
@@ -17035,7 +18201,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AZOLLA",
@@ -17061,7 +18231,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-RICE-AZ",
@@ -17087,7 +18261,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HEN-EGG",
@@ -17113,7 +18291,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HEN-MAN",
@@ -17139,7 +18321,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-GOAT-MILK",
@@ -17165,7 +18351,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-GOAT-MAN",
@@ -17191,7 +18381,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-GOAT-TRIM",
@@ -17217,7 +18411,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FISH-HAB",
@@ -17243,7 +18441,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-FISH-DET",
@@ -17269,7 +18471,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-CRAY-HAB",
@@ -17295,7 +18501,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-CAST",
@@ -17321,7 +18531,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WORM-MAN",
@@ -17347,7 +18561,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HONEY",
@@ -17373,7 +18591,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MUSH",
@@ -17399,7 +18621,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MUSH-SPENT",
@@ -17425,7 +18651,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-LIG-MUSH",
@@ -17451,7 +18681,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-URINE",
@@ -17477,7 +18711,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-COVER",
@@ -17503,7 +18740,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-TOIL-SOL",
@@ -17529,7 +18769,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-TOIL-URN",
@@ -17555,7 +18798,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-NFIX-RES",
@@ -17581,7 +18828,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NFIX-FOOD",
@@ -17607,7 +18858,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BED-NFIX",
@@ -17633,7 +18888,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-STRAW",
@@ -17659,7 +18918,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-OYSTER",
@@ -17685,7 +18948,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-STRAW-SPENT",
@@ -17711,7 +18978,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HW",
@@ -17737,7 +19008,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BLOCK-FOOD",
@@ -17763,7 +19038,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BLOCK-MED",
@@ -17789,7 +19068,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BLOCK-SPENT",
@@ -17815,7 +19098,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AMF-IN",
@@ -17841,7 +19128,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AMF-BED",
@@ -17867,7 +19158,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-COMP-MYC",
@@ -17893,7 +19188,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MYC-WORM",
@@ -17919,7 +19218,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MYC-BED",
@@ -17945,7 +19248,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BED-FRUIT",
@@ -17971,7 +19278,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FRUIT",
@@ -17997,7 +19308,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FRUIT-TRIM",
@@ -18023,7 +19338,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BED-VEG",
@@ -18049,7 +19368,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-VEG",
@@ -18075,7 +19398,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-VEG-TRIM",
@@ -18101,7 +19428,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FISH-OUT",
@@ -18127,7 +19458,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-CLAR-BIO",
@@ -18153,7 +19488,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-CLAR-SOL",
@@ -18179,7 +19518,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-BIO-VEG",
@@ -18205,7 +19548,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-BIO-WEED",
@@ -18231,7 +19578,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-BIO-BED",
@@ -18257,7 +19608,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-VEG-SUMP",
@@ -18283,7 +19638,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-WEED-SUMP",
@@ -18309,7 +19668,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-BED-SUMP",
@@ -18335,7 +19698,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-SUMP-FISH",
@@ -18361,7 +19728,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-CROP_TOMATO",
@@ -18387,7 +19758,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_TOMATO-HAB",
@@ -18413,7 +19788,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_CUCUMBER",
@@ -18439,7 +19818,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_CUCUMBER-HAB",
@@ -18465,7 +19848,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_PEPPER",
@@ -18491,7 +19878,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_PEPPER-HAB",
@@ -18517,7 +19908,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_LETTUCE",
@@ -18543,7 +19938,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_LETTUCE-HAB",
@@ -18569,7 +19968,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_SPINACH",
@@ -18595,7 +19998,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_SPINACH-HAB",
@@ -18621,7 +20028,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_KALE",
@@ -18647,7 +20058,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_KALE-HAB",
@@ -18673,7 +20088,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_ALLIUM",
@@ -18699,7 +20118,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_ALLIUM-HAB",
@@ -18725,7 +20148,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_BASIL",
@@ -18751,7 +20178,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_BASIL-HAB",
@@ -18777,7 +20208,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_ROSEMARY",
@@ -18803,7 +20238,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CROP_ROSEMARY-HAB",
@@ -18829,7 +20268,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-HAB-WASTE",
@@ -18855,7 +20298,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CLOSE-0",
@@ -18881,7 +20328,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-0",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "biofilter bleed to the nutrient tank"
+      }
     },
     {
       "stream_id": "IA-CLOSE-1",
@@ -18907,7 +20364,18 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-1",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "leach vent to the NOx scrubber"
+      }
     },
     {
       "stream_id": "IA-CLOSE-2",
@@ -18933,7 +20401,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-2",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "compost return to the bed"
+      }
     },
     {
       "stream_id": "IA-CLOSE-3",
@@ -18959,7 +20437,16 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-3",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "worm bin vent to the nitrogen header"
+      }
     },
     {
       "stream_id": "IA-CLOSE-4",
@@ -18985,7 +20472,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-4",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "fish solids liquor to the nutrient tank"
+      }
     },
     {
       "stream_id": "IA-CLOSE-5",
@@ -19011,7 +20508,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-5",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "hopper fines to the pretreat"
+      }
     },
     {
       "stream_id": "IA-CLOSE-6",
@@ -19037,7 +20544,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-6",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "acetate brine to the pen bedding"
+      }
     },
     {
       "stream_id": "IA-CLOSE-7",
@@ -19063,7 +20580,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-7",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "compost condensate to the methanol tank"
+      }
     },
     {
       "stream_id": "IA-CLOSE-8",
@@ -19089,7 +20616,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-8",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "shop scrap to the digester"
+      }
     },
     {
       "stream_id": "IA-CLOSE-9",
@@ -19115,7 +20652,16 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-9",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "larvae bin vent to the nitrogen header"
+      }
     },
     {
       "stream_id": "IA-CLOSE-10",
@@ -19141,7 +20687,18 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-10",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "leach condensate to the methanol cell"
+      }
     },
     {
       "stream_id": "IA-CLOSE-11",
@@ -19167,7 +20724,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-11",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "crayfish molt liquor to imidazole makeup"
+      }
     },
     {
       "stream_id": "IA-CLOSE-12",
@@ -19193,7 +20760,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-12",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "frass liquor to the nutrient tank"
+      }
     },
     {
       "stream_id": "IA-CLOSE-13",
@@ -19219,7 +20796,17 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      },
+      "nozzle": {
+        "tag": "IA-CLOSE-13",
+        "dn": "DN25",
+        "rating": "Class 150",
+        "service": "quaternization brine to the nutrient tank"
+      }
     },
     {
       "stream_id": "IA-CAST-CLOVER",
@@ -19245,7 +20832,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-CLOVER-CUT",
@@ -19271,7 +20862,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SEED-CLOVER",
@@ -19297,7 +20892,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SEED-OUT",
@@ -19323,7 +20922,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-URN-STR",
@@ -19349,7 +20952,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-STR-BED",
@@ -19375,7 +20981,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "solids": 1.0
+      }
     },
     {
       "stream_id": "IA-STALK",
@@ -19401,7 +21010,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "solids": 1.0
+      }
     },
     {
       "stream_id": "IA-ASH-BED",
@@ -19427,7 +21039,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "solids": 1.0
+      }
     },
     {
       "stream_id": "IA-I-SRC",
@@ -19453,7 +21068,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "metals": 0.05
+      }
     },
     {
       "stream_id": "IA-I-DOSE",
@@ -19479,7 +21099,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NPK-0",
@@ -19505,7 +21129,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-NPK-1",
@@ -19531,7 +21158,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-E-SUN",
@@ -20051,7 +21682,12 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.95,
+        "urea": 0.02,
+        "salts": 0.03
+      }
     },
     {
       "stream_id": "IA-I-MAKE",
@@ -20077,7 +21713,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-NFT-IN",
@@ -20103,7 +21743,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-NFT-OUT",
@@ -20129,7 +21773,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.999,
+        "nitrate": 0.001
+      }
     },
     {
       "stream_id": "IA-MIST-IN",
@@ -20155,7 +21803,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MIST-OUT",
@@ -20181,7 +21833,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-DR-IN",
@@ -20207,7 +21863,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-DR-OUT",
@@ -20233,7 +21893,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AZ-IN",
@@ -20259,7 +21923,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-AZ-OUT",
@@ -20285,7 +21953,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ETOH-S",
@@ -20311,7 +21983,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-ETOH-R",
@@ -20337,7 +22013,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BUOH-S",
@@ -20363,7 +22043,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BUOH-R",
@@ -20389,7 +22073,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FORM-S",
@@ -20415,7 +22103,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-FORM-R",
@@ -20441,7 +22133,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PN-S",
@@ -20467,7 +22163,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PN-R",
@@ -20493,7 +22193,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SF-S",
@@ -20519,7 +22223,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SF-R",
@@ -20545,7 +22253,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "solids": 1.0
+      }
     },
     {
       "stream_id": "IA-SLEEP",
@@ -20571,7 +22282,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SLEEP-R",
@@ -20597,7 +22312,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-GAL",
@@ -20623,7 +22342,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-GAL-R",
@@ -20649,7 +22372,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MED",
@@ -20675,7 +22402,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-MED-R",
@@ -20701,7 +22432,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-WASH",
@@ -20727,7 +22462,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "solids": 1.0
+      }
     },
     {
       "stream_id": "IA-WASH-R",
@@ -20753,7 +22491,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "solids": 1.0
+      }
     },
     {
       "stream_id": "IA-LITHO-IN",
@@ -20779,7 +22520,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-LITHO-OUT",
@@ -20805,7 +22550,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-BLOW-IN",
@@ -20831,7 +22580,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
     },
     {
       "stream_id": "IA-BLOW-OUT",
@@ -20857,7 +22609,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-COAT-IN",
@@ -20883,7 +22639,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-COAT-OUT",
@@ -20909,7 +22669,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PV-IN",
@@ -20935,7 +22699,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-PV-OUT",
@@ -20961,7 +22729,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EXP-IN",
@@ -20987,7 +22759,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-EXP-OUT",
@@ -21013,7 +22789,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SIC-IN",
@@ -21039,7 +22819,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     },
     {
       "stream_id": "IA-SIC-OUT",
@@ -21065,7 +22849,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "water": 0.98,
+        "solute": 0.02
+      }
     }
   ],
   "view_presets": [

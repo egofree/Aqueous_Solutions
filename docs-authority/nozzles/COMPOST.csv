@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,board scrap,inlet face
+N2,DN15,Class 150,hydrochar slurry,inlet face
+N3,DN50,Class 150,salt-laden trim,inlet face
+N4,DN15,Class 150,frass,inlet face
+N5,DN50,Class 150,compost,outlet face
+N6,DN15,Class 150,compost CO2,outlet face
+N7,DN15,Class 150,compost inoculum,outlet face
+N8,DN15,Class 150,cooled compost,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

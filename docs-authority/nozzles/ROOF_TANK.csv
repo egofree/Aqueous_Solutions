@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,Pumped hydro charge (pump up; peers S23),inlet face
+N2,DN15,Class 150,pump return,inlet face
+N3,DN25,Class 150,AHU condensate to the water cycle,inlet face
+N4,DN50,Class 150,treated water makeup,inlet face
+N5,DN50,Class 150,Pumped hydro discharge (penstock; peers S22),outlet face
+N6,DN50,Class 150,clean tower water,outlet face
+N7,DN15,Class 150,penstock,outlet face
+N8,DN25,Class 150,clean overflow,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

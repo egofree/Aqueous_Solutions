@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,HX-6 Q3 process heat (NaOH digest jacket),inlet face
+N2,DN15,Class 150,HX-6 Q3 process heat (NaOH digest jacket),inlet face
+N3,DN25,Class 150,burned cullet,inlet face
+N4,DN25,Class 150,digest NaOH, 20 wt%,inlet face
+N5,DN25,Class 150,glass and ceramic stock,outlet face
+N6,DN25,Class 150,silicate liquor,outlet face
+N7,DN15,Class 150,silicate to slurry,outlet face
+N8,DN15,Class 150,digest reject,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

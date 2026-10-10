@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,fermenter residue,inlet face
+N2,DN15,Class 150,stillage,inlet face
+N3,DN15,Class 150,ABE stillage,inlet face
+N4,DN15,Class 150,shop scrap to the digester,inlet face
+N5,DN15,Class 150,biogas,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

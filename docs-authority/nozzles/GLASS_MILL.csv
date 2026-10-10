@@ -1,0 +1,6 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,rinsed cullet,inlet face
+N2,DN25,Class 150,milled cullet,outlet face
+N3,DN15,Class 150,mill dust,outlet face
+N4,DN15,Class 150,drain,bottom
+N5,DN15,Class 150,vent,top

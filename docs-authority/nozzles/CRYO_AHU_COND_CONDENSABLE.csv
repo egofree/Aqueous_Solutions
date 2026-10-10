@@ -1,0 +1,5 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,condensable slip,inlet face
+N2,DN15,Class 150,condensables,outlet face
+N3,DN15,Class 150,drain,bottom
+N4,DN15,Class 150,vent,top

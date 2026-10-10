@@ -1,0 +1,10 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,H2 fuel,inlet face
+N2,DN25,Class 150,O2 oxidizer,inlet face
+N3,DN15,Class 150,hydrogen into the cell,inlet face
+N4,DN15,Class 150,FC DC,outlet face
+N5,DN25,Class 150,PEM product H2O,outlet face
+N6,DN15,Class 150,heat < 80 °C,outlet face
+N7,DN15,Class 150,cell water,outlet face
+N8,DN15,Class 150,drain,bottom
+N9,DN15,Class 150,vent,top

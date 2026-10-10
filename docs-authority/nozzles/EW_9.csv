@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,EW overflow,inlet face
+N2,DN50,Class 150,EW tail to polish,outlet face
+N3,DN15,Class 150,cathode H2 + sweep air,outlet face
+N4,DN25,Class 150,plated sheet,outlet face
+N5,DN15,Class 150,cathode sheet,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

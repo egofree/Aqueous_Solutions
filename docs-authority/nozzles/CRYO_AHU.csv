@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,greenhouse transpiration,inlet face
+N2,DN15,Class 150,bed transpiration,inlet face
+N3,DN25,Class 150,outdoor air moisture,inlet face
+N4,DN25,Class 150,flue condensate,outlet face
+N5,DN25,Class 150,AHU condensate to the water cycle,outlet face
+N6,DN15,Class 150,condensable slip,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

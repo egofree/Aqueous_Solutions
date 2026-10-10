@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,1-methylimidazole,inlet face
+N2,DN15,Class 150,1-chlorobutane,inlet face
+N3,DN15,Class 150,[Bmim]Cl,outlet face
+N4,DN15,Class 150,quaternization water,outlet face
+N5,DN15,Class 150,quaternization brine to the nutrient tank,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

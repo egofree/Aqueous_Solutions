@@ -1,0 +1,10 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,feces,inlet face
+N2,DN15,Class 150,urine,inlet face
+N3,DN15,Class 150,cover crop,inlet face
+N4,DN15,Class 150,bed return,inlet face
+N5,DN15,Class 150,covered solids,outlet face
+N6,DN15,Class 150,urine to the biofilter,outlet face
+N7,DN15,Class 150,urine slip,outlet face
+N8,DN15,Class 150,drain,bottom
+N9,DN15,Class 150,vent,top

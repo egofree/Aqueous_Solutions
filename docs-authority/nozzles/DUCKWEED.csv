@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,nutrient water,inlet face
+N2,DN50,Class 150,nitrate water,inlet face
+N3,DN15,Class 150,duckweed,outlet face
+N4,DN15,Class 150,duckweed,outlet face
+N5,DN15,Class 150,duckweed,outlet face
+N6,DN15,Class 150,duckweed reserve,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

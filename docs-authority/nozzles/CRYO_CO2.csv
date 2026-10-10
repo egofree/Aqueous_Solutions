@@ -1,0 +1,10 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,CO2-rich gas after KO,inlet face
+N2,DN15,Class 150,CO₂ return from MeOH FC,inlet face
+N3,DN25,Class 150,CO2 product,inlet face
+N4,DN15,Class 150,CO2,outlet face
+N5,DN15,Class 150,CO2 feedstock,outlet face
+N6,DN15,Class 150,CO2 product after FLUE_KO,outlet face
+N7,DN25,Class 150,CO2 return,outlet face
+N8,DN15,Class 150,drain,bottom
+N9,DN15,Class 150,vent,top

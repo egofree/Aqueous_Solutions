@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN25,Class 150,bleed salts to nutrient,inlet face
+N2,DN50,Class 150,compost,inlet face
+N3,DN15,Class 150,nitrate liquor,inlet face
+N4,DN15,Class 150,biofilter bleed to the nutrient tank,inlet face
+N5,DN15,Class 150,nutrients,outlet face
+N6,DN15,Class 150,digest surplus,outlet face
+N7,DN50,Class 150,nutrient surplus,outlet face
+N8,DN50,Class 150,nitrate and bleed salts,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

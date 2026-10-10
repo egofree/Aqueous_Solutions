@@ -1,0 +1,7 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,grey/solids,inlet face
+N2,DN15,Class 150,electrolyte bleed,inlet face
+N3,DN25,Class 150,treated grey,outlet face
+N4,DN50,Class 150,grey sludge,outlet face
+N5,DN15,Class 150,drain,bottom
+N6,DN15,Class 150,vent,top

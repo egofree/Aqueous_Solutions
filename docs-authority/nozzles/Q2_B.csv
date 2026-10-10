@@ -1,0 +1,9 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,Q2 burnout, not Q4,inlet face
+N2,DN15,Class 150,downhill heat pipe,inlet face
+N3,DN15,Class 150,cross-tie, hot to cold only,inlet face
+N4,DN15,Class 150,downhill heat pipe,outlet face
+N5,DN15,Class 150,cross-tie, hot to cold only,outlet face
+N6,DN15,Class 150,store loss,outlet face
+N7,DN15,Class 150,drain,bottom
+N8,DN15,Class 150,vent,top

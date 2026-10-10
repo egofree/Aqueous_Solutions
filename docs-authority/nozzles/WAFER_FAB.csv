@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,N2,inlet face
+N2,DN15,Class 150,B/P/As concentrate; BBr₃ / POCl₃ class,inlet face
+N3,DN15,Class 150,colloidal silica slurry,inlet face
+N4,DN25,Class 150,fab UPW,inlet face
+N5,DN15,Class 150,spent slurry and etch liquor,outlet face
+N6,DN15,Class 150,solvent and photoresist,outlet face
+N7,DN15,Class 150,kerf,outlet face
+N8,DN25,Class 150,spent UPW,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

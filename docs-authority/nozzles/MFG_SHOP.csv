@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,fractionator cut,inlet face
+N2,DN15,Class 150,fractionator cut,inlet face
+N3,DN25,Class 150,metals/Si,inlet face
+N4,DN25,Class 150,glass and ceramic stock,inlet face
+N5,DN15,Class 150,scrap,outlet face
+N6,DN15,Class 150,metal scrap,outlet face
+N7,DN50,Class 150,goods in service,outlet face
+N8,DN15,Class 150,shop scrap to the digester,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

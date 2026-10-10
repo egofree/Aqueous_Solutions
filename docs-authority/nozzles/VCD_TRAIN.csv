@@ -1,0 +1,10 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,condensate,inlet face
+N2,DN25,Class 150,treated grey,inlet face
+N3,DN25,Class 150,PEM product H2O,inlet face
+N4,DN15,Class 150,digest surplus,inlet face
+N5,DN50,Class 150,VCD distillate,outlet face
+N6,DN15,Class 150,VCD brine,outlet face
+N7,DN15,Class 150,still bottoms,outlet face
+N8,DN15,Class 150,drain,bottom
+N9,DN15,Class 150,vent,top

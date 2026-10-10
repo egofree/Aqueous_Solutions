@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,HX-4 Q3 process heat (dryer jacket),inlet face
+N2,DN15,Class 150,HX-4 Q3 process heat (dryer jacket),inlet face
+N3,DN25,Class 150,float plastics,inlet face
+N4,DN25,Class 150,Dryer → pyro,outlet face
+N5,DN15,Class 150,dryer reject,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

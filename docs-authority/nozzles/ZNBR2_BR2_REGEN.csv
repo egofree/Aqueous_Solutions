@@ -1,0 +1,5 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,Br2 vapor,inlet face
+N2,DN50,Class 150,NaBr after ORP,outlet face
+N3,DN15,Class 150,drain,bottom
+N4,DN15,Class 150,vent,top

@@ -1,0 +1,7 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,bed spill,inlet face
+N2,DN15,Class 150,cover crop,outlet face
+N3,DN15,Class 150,legume residue,outlet face
+N4,DN15,Class 150,cowpea and peanut,outlet face
+N5,DN15,Class 150,drain,bottom
+N6,DN15,Class 150,vent,top

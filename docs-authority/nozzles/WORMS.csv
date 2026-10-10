@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,manure,inlet face
+N2,DN15,Class 150,manure,inlet face
+N3,DN15,Class 150,myceliated compost,inlet face
+N4,DN15,Class 150,castings return,inlet face
+N5,DN15,Class 150,castings,outlet face
+N6,DN15,Class 150,worm manure,outlet face
+N7,DN15,Class 150,finished castings,outlet face
+N8,DN15,Class 150,worm bin vent to the nitrogen header,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

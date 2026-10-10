@@ -1,0 +1,11 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,N2 product,inlet face
+N2,DN15,Class 150,sweep nitrogen,inlet face
+N3,DN15,Class 150,worm bin vent to the nitrogen header,inlet face
+N4,DN15,Class 150,larvae bin vent to the nitrogen header,inlet face
+N5,DN15,Class 150,N2,outlet face
+N6,DN25,Class 150,combustion air,outlet face
+N7,DN25,Class 150,outdoor air moisture,outlet face
+N8,DN15,Class 150,nitrogen to ammonia,outlet face
+N9,DN15,Class 150,drain,bottom
+N10,DN15,Class 150,vent,top

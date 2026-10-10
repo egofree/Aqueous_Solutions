@@ -1,0 +1,10 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,food waste to larvae,inlet face
+N2,DN15,Class 150,vegetable trim,inlet face
+N3,DN15,Class 150,plate waste,inlet face
+N4,DN15,Class 150,larvae,outlet face
+N5,DN15,Class 150,larvae,outlet face
+N6,DN15,Class 150,frass,outlet face
+N7,DN15,Class 150,larvae bin vent to the nitrogen header,outlet face
+N8,DN15,Class 150,drain,bottom
+N9,DN15,Class 150,vent,top

@@ -1,0 +1,6 @@
+tag,size,rating,service,location
+N1,DN50,Class 150,tank water,inlet face
+N2,DN50,Class 150,clarified water,outlet face
+N3,DN15,Class 150,settled solids,outlet face
+N4,DN15,Class 150,drain,bottom
+N5,DN15,Class 150,vent,top

@@ -1,0 +1,8 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,sugar to ABE,inlet face
+N2,DN15,Class 150,n-butanol,outlet face
+N3,DN15,Class 150,acetone,outlet face
+N4,DN15,Class 150,ABE ethanol,outlet face
+N5,DN15,Class 150,ABE CO2,outlet face
+N6,DN15,Class 150,drain,bottom
+N7,DN15,Class 150,vent,top

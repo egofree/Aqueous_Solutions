@@ -1,0 +1,5 @@
+tag,size,rating,service,location
+N1,DN15,Class 150,stalks,inlet face
+N2,DN15,Class 150,ash,outlet face
+N3,DN15,Class 150,drain,bottom
+N4,DN15,Class 150,vent,top
