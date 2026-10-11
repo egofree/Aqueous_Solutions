@@ -130,6 +130,28 @@ def cryo_base(doc):
     obj.Shape = body
     return obj
 
+
+def pv_cell(doc):
+    """Diffusion tube and print station. Clean frame."""
+    bay, *_ = frame.frame(1200, 600, 800, 80, 5, "6061")
+    tube = Part.makeCylinder(40, 800)
+    tube.rotate(App.Vector(0, 0, 0), App.Vector(0, 1, 0), 90)
+    tube.translate(App.Vector(200, 300, 1000))
+    body = bay.fuse(tube)
+    obj = doc.addObject("Part::Feature", "PV_CELL")
+    obj.Shape = body
+    return obj
+
+
+def assay(doc):
+    """Sample point. Wet frame, small."""
+    bay, *_ = frame.frame(600, 400, 600, 80, 5, "316L")
+    bench = box(50, 50, 600, 500, 300, 20)
+    body = bay.fuse(bench)
+    obj = doc.addObject("Part::Feature", "ASSAY")
+    obj.Shape = body
+    return obj
+
 def main():
     doc = App.newDocument("process")
     lathe(doc)
@@ -141,6 +163,8 @@ def main():
     electronics(doc)
     farm_bay(doc)
     cryo_base(doc)
+    pv_cell(doc)
+    assay(doc)
     doc.recompute()
     doc.saveAs(str(OUT / "process_modules.FCStd"))
     print("wrote", OUT / "process_modules.FCStd")

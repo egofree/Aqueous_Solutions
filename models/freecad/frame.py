@@ -28,6 +28,17 @@ BAYS = {
 }
 
 
+
+def deflection(L, section, wall, load_kg):
+    """Simply supported rail, L/240. I for a square tube, mm4. E = 200 GPa steel."""
+    E = 200000.0  # N/mm2
+    outer, inner = section, section - 2 * wall
+    I = (outer**4 - inner**4) / 12.0
+    W = load_kg * 9.81  # N, on one rail
+    d = W * L**3 / (48 * E * I)
+    limit = L / 240.0
+    return d, limit, d <= limit
+
 def rail(section, length, x, y, z, axis="x"):
     s = Part.makeBox(section, section, length)
     if axis == "x":

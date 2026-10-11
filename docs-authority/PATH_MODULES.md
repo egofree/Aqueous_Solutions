@@ -26,3 +26,9 @@ Welder. Dry frame, 800 × 600 × 800, A500. 200 A. Transformer in the base.
 Farm bay. Four frames, 2000 × 1000 × 400, A500 painted. Tank, two biofilter frames, beds. Azolla stays in the hall.
 
 Cold box. Base frame 600 × 600 × 800, 316L. Expander on the top rails. The 6 m column is a pipe beside the frame, not a bay.
+
+Photovoltaic cell. Clean frame, 6061, 1200 mm. Diffusion tube on the top. Print station is the same bay.
+
+Assay. Wet frame, 316L, 600 × 400 × 600. Bench on the rails. Sample from the leach discharge.
+
+Deflection. Simply supported rail, E = 200 GPa, load on one rail. Lathe at 200 kg is 0.11 mm against 5.0 mm. EW-1 at 400 kg is 0.34 mm against 5.8 mm. Furnace at 150 kg is 0.08 mm against 5.0 mm. No section increase.
