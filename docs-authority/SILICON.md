@@ -1,16 +1,21 @@
 # Silicon reduction module
 
 Document number: AQS-SI-001
-Revision: A
+Revision: B
 Date: 2026-10-10
-Authority: critical path item 5. Sits on AQS-MOD-001.
 
-Reaction. SiO2 + 2C → Si + 2CO at 2000 °C. Silica from the glass digest. Char from the pyrolyzer. Carbon electrodes, consumable.
+1. Basis. SiO₂ + 2C → Si + 2CO. Silica from the digest. Char from the pyrolyzer. 0.04 kg/d silicon.
 
-Energy. 13 kWh per kg of silicon. The graph wafer rate is 0.04 kg/d, so the duty is 0.5 kWh/d. The furnace is the 10 kW induction module with a graphite crucible and a carbon charge. It runs minutes per day, not continuously.
+2. Size. 13 kWh/kg. Duty is 0.04 × 13 = 0.52 kWh/d. On the 10 kW furnace that is 3 minutes. Charge is stoichiometric: 0.04 × 60/28 = 0.086 kg silica, 0.04 × 24/28 = 0.034 kg carbon.
 
-Yield. 70% on the first pass. Unreacted silica returns to the digest. CO goes to the afterburner, not to the room.
+3. Material. Graphite crucible. Carbon electrodes, consumable, cut from char compacts.
 
-Product. Metallurgical silicon, about 98%. Solar grade is a later acid leach of this metal. Electronic grade is not this module.
+4. Nozzles. Same as the furnace. Off-gas is CO, DN25, to the afterburner.
 
-Frame. Same 1200 mm frame. Crucible on the centerline. Off-gas nozzle on the top, piped to the afterburner.
+5. Instruments. Temperature. Power integrate to 0.52 kWh and stop.
+
+6. Relief. Off-gas open to the afterburner. No room vent.
+
+7. Code. Shop.
+
+8. Open items. Electrode consumption rate is not measured. The charge and the energy are.

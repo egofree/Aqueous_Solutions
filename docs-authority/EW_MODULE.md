@@ -1,11 +1,21 @@
 # Electrowinning module
 
 Document number: AQS-EW-MOD-001
-Revision: A
+Revision: B
 Date: 2026-10-10
 
-One cell is one module. EW-1 is 21 plates of 600 x 420 mm, 50 mm pitch, rack 1250 mm long. It exceeds the 1200 mm frame, so the frame parameter for this module is 1400 mm. Current 2105 A at 200 A/m2. Two SB350 connectors in parallel, or a busbar as sized in BUSBAR.md, 10.5 cm2 copper.
+1. Basis. EW-1, 59.87 kg/d plated sheet, copper equivalent. Liquor from the leach, 4288 kg/d.
 
-Anodes PbO2 on titanium. Cathodes 316L with a plastic edge strip. Launder nozzle on +X. Bus entry on -X. Liquor in at 20% height, out at 75%.
+2. Size. 0.02844 kg/d per amp. Current is 59.87 / 0.02844 = 2105 A. At 200 A/m², area is 10.53 m². Plate is 0.6 × 0.42 m, both sides 0.504 m². Plates are 10.53 / 0.504 = 21. Pitch 50 mm. Rack is 21 × 50 + 200 = 1250 mm. Frame parameter is 1400 mm.
 
-The same module with a plate-count parameter is EW-2 through EW-9.
+3. Material. Cathode 316L, 3 mm, plastic edge strip. Anode titanium with PbO₂. Tank PVC/FRP. Bus 10.5 cm² copper.
+
+4. Nozzles. Liquor in, −X, 20% height. Liquor out, +X, 75% height. Launder, +X, 600 mm. Bus, −X, 400 mm. Drain bottom. Vent top to the scrubber.
+
+5. Instruments. Current, voltage, level. High level trips the feed pump. Low flow trips the rectifier.
+
+6. Relief. Atmospheric. Vent to the scrubber.
+
+7. Code. Shop, PVC/FRP.
+
+8. Open items. PbO₂ thickness is not specified. The plate count and the current are.
