@@ -76,10 +76,11 @@ def build():
     py = t + P.PUMP_Y
     pz = P.FLOOR + P.PUMP_Z
     run_y = py - (P.AISLE_Y + cell_w / 2)
-    p1 = cyl(P.PUMP_D, run_y, -80, P.AISLE_Y + cell_w / 2, pz, axis="y")
-    p2 = cyl(P.PUMP_D, P.AISLE_X0 + 80, -80, P.AISLE_Y + cell_w / 2, pz, axis="x")
-    p3 = cyl(P.PUMP_D, P.AISLE_Z + P.EW_H - 80 - pz, P.AISLE_X0, P.AISLE_Y + cell_w / 2, pz)
-    add(doc, "LEACHATE_TO_EW1", p1.fuse(p2).fuse(p3))
+    import pipes
+    p1 = pipes.tube(P.PUMP_D, run_y, -80, P.AISLE_Y + cell_w / 2, pz, axis="y")
+    p2 = pipes.tube(P.PUMP_D, P.AISLE_X0 + 80, -80, P.AISLE_Y + cell_w / 2, pz, axis="x")
+    p3 = pipes.tube(P.PUMP_D, P.AISLE_Z + P.EW_H - 80 - pz, P.AISLE_X0, P.AISLE_Y + cell_w / 2, pz)
+    pipes.connect(doc, "LEACHATE_TO_EW1", [p1, p2, p3])
 
     vdf = cyl(
         P.VDF_D, P.VDF_L,

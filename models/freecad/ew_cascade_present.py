@@ -59,10 +59,10 @@ def build():
     x9 = P.AISLE_X0 + 8 * P.EW_PITCH + P.EW_L - seat
     run_x = px - x9
     pk_yc = pk_y + P.EW_W / 2.0
-    seg_x = _cyl(P.PUMP_D, run_x, x9, y_c, z_c, axis="x")
-    seg_y = _cyl(P.PUMP_D, y_c - pk_yc, px, pk_yc, z_c, axis="y")
-    tail = doc.addObject("Part::Feature", "OVF_EW_9_POLISH")
-    tail.Shape = seg_x.fuse(seg_y)
+    import pipes
+    seg_x = pipes.tube(P.PUMP_D, run_x, x9, y_c, z_c, axis="x")
+    seg_y = pipes.tube(P.PUMP_D, y_c - pk_yc, px, pk_yc, z_c, axis="y")
+    pipes.connect(doc, "OVF_EW_9_POLISH", [seg_x, seg_y])
 
     doc.recompute()
     doc.saveAs(str(OUT / "ew_cascade.FCStd"))

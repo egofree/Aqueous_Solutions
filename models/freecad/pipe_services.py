@@ -21,13 +21,9 @@ OUT = Path(__file__).resolve().parent
 
 
 def pipe(d, l, x, y, z, axis="x"):
-    c = Part.makeCylinder(d / 2.0, l)
-    if axis == "x":
-        c.rotate(App.Vector(0, 0, 0), App.Vector(0, 1, 0), 90)
-    elif axis == "y":
-        c.rotate(App.Vector(0, 0, 0), App.Vector(1, 0, 0), -90)
-    c.translate(App.Vector(x, y, z))
-    return c
+    """Hollow header. See pipes.py. A solid cylinder is not a pipe."""
+    import pipes
+    return pipes.tube(d, l, x, y, z, axis=axis)
 
 
 def attach(doc, include_life=True):
