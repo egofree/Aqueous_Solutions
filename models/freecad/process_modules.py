@@ -89,13 +89,58 @@ def electronics(doc):
     print("electronics bay 6 x 1400 mm")
 
 
+
+def mill(doc):
+    """300 x 200 mm table, 1.1 kW, dry frame."""
+    bay, *_ = frame.frame(1200, 600, 800, 100, 6, "A500")
+    table = box(200, 150, 800, 800, 300, 40)
+    column = box(150, 200, 840, 200, 200, 400)
+    body = bay.fuse(table).fuse(column)
+    obj = doc.addObject("Part::Feature", "MILL")
+    obj.Shape = body
+    return obj
+
+
+def welder(doc):
+    """200 A, dry frame. Transformer in the base."""
+    bay, *_ = frame.frame(800, 600, 800, 100, 6, "A500")
+    xfrm = box(150, 150, 100, 500, 300, 400)
+    body = bay.fuse(xfrm)
+    obj = doc.addObject("Part::Feature", "WELDER")
+    obj.Shape = body
+    return obj
+
+
+def farm_bay(doc):
+    """Four farm frames: tank, biofilter, biofilter, beds."""
+    for i, name in enumerate(("TANK", "BIO_A", "BIO_B", "BEDS")):
+        bay, *_ = frame.frame(2000, 1000, 400, 80, 5, "A500")
+        bay.translate(App.Vector(i * 2200, 0, 0))
+        obj = doc.addObject("Part::Feature", "FARM_" + name)
+        obj.Shape = bay
+    print("farm bay 4 x 2000 mm")
+
+
+def cryo_base(doc):
+    """Cold-box base. Column is a pipe, not this frame."""
+    bay, *_ = frame.frame(600, 600, 800, 80, 5, "316L")
+    expander = box(100, 100, 800, 400, 400, 300)
+    body = bay.fuse(expander)
+    obj = doc.addObject("Part::Feature", "CRYO_BASE")
+    obj.Shape = body
+    return obj
+
 def main():
     doc = App.newDocument("process")
     lathe(doc)
+    mill(doc)
+    welder(doc)
     ew_cell(doc, 21)
     furnace(doc)
     aligner(doc)
     electronics(doc)
+    farm_bay(doc)
+    cryo_base(doc)
     doc.recompute()
     doc.saveAs(str(OUT / "process_modules.FCStd"))
     print("wrote", OUT / "process_modules.FCStd")

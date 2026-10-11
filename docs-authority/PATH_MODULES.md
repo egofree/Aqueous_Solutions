@@ -18,3 +18,11 @@ Silicon reduction. Same frame and coil. Charge 0.086 kg silica and 0.034 kg char
 Aligner. Clean frame, 6061, 1200 mm. Stage 100 mm, 10 µm, leadscrew cut on the lathe. Dose 200 mJ/cm² at 365 nm.
 
 Electronics bay. Six clean frames at 1400 mm pitch: coat, align, develop, etch, strip, probe. Minimum line 100 µm. First device is a diode.
+
+Mill. Dry frame, 1200 × 600 × 800, A500. Table 800 × 300 mm. Column on the back. 1.1 kW.
+
+Welder. Dry frame, 800 × 600 × 800, A500. 200 A. Transformer in the base.
+
+Farm bay. Four frames, 2000 × 1000 × 400, A500 painted. Tank, two biofilter frames, beds. Azolla stays in the hall.
+
+Cold box. Base frame 600 × 600 × 800, 316L. Expander on the top rails. The 6 m column is a pipe beside the frame, not a bay.
