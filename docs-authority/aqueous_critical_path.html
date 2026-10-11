@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aqueous critical path</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<style>
+body { font-family: sans-serif; background: #f7f4ee; color: #1c1917; margin: 24px; }
+.note { max-width: 720px; }
+</style>
+</head>
+<body>
+<h1>Aqueous critical path</h1>
+<p class="note">Click a node. The critical path is the dark chain. Grey nodes are side quests.</p>
+<pre class="mermaid">
+graph LR
+  MOD["Module frame and power bus"] --> TOOLS["Lathe, mill, welder"]
+  MOD --> EW["EW cell as a module"]
+  TOOLS --> FURN["Induction furnace"]
+  FURN --> SI["Silicon reduction"]
+  SI --> LITHO["Contact aligner"]
+  LITHO --> ELEC["Electronics bay"]
+  SI --> PV["PV cell line"]
+  MOD --> ASSAY["Assay and relief"]
+  MOD --> FARM["Farm module bay"]
+  TOOLS --> CRYO["Cold box as a module"]
+  classDef crit fill:#1c1917,color:#fff
+  classDef side fill:#a8a29e,color:#1c1917
+  class MOD,TOOLS,FURN,SI,LITHO crit
+  class EW,ELEC,PV,ASSAY,FARM,CRYO side
+</pre>
+<script>mermaid.initialize({startOnLoad:true, securityLevel:'loose'});</script>
+</body>
+</html>
