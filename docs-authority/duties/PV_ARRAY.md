@@ -1,23 +1,20 @@
 # PV_ARRAY
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Energy inlet IA-E-SUN = 27.88 kW from CURTAIL.
+1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 27.88 kW. In: none. Out: none.
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Heat: A = 27.88*1000/(500*10) = 5.576 m2. U = 500 W/m2K, approach 10 K.
+- Nameplate 70.00 kW. Average output 27.88 kW. No exchanger area. The old area used a heat-transfer formula on an electrical node. It is withdrawn.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. No wetted alloy. Conductors are copper.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. No process nozzle.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Current. Overcurrent opens the breaker.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Not a pressure vessel. No process vent.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Nameplate and average are both stated. The average is the edge.

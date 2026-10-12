@@ -1,9 +1,9 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "BD",
+  "revision": "BE",
   "licence": "CERN-OHL-S-2.0",
-  "date": "2026-10-09",
+  "date": "2026-10-12",
   "sole_authority": true,
   "locks": [
     "layered_views",
@@ -35,26 +35,9 @@
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "make-up water + NaOH",
-              "value": 25.1723,
-              "basis": "level control",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "polished air to stack",
-              "value": 37507.6718,
-              "basis": "S65 less absorbed Cl2",
-              "kind": "derived"
-            }
-          ]
+          "terms": []
         },
-        "duty": "Inlet 27.360 kg/d, 0.00 kW. Residence 0.570/(27.360/(1000*24)) = 30000.0 min.",
+        "duty": "In 37537.200 kg/d, out 37537.202 kg/d, 0.000 kW. Sheet docs-authority/duties/ACID_POLISH_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -135,7 +118,7 @@
             }
           ]
         },
-        "duty": "Inlet 5.000 kg/d, 2.77 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min. Exchanger area 2.77*1000/(500*10) = 0.554 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 5.800 kg/d, out 5.800 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -167,7 +150,7 @@
             }
           ]
         },
-        "duty": "Inlet 111.170 kg/d, 0.00 kW. Residence 2.316/(111.170/(1000*24)) = 30000.0 min.",
+        "duty": "In 116.970 kg/d, out 116.970 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -194,7 +177,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 37509.840 kg/d, out 37509.840 kg/d, 0.400 kW. Sheet docs-authority/duties/ALK_SCRUBBER.md.",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -255,7 +238,7 @@
             }
           ]
         },
-        "duty": "Inlet 50.000 kg/d, 2.50 kW. Residence 1.042/(50.000/(1000*24)) = 30000.0 min. Exchanger area 2.50*1000/(500*10) = 0.500 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 61.155 kg/d, out 61.160 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -273,7 +256,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 6.820 kg/d, 0.00 kW. Residence 0.142/(6.820/(1000*24)) = 30000.0 min.",
+        "duty": "In 7.770 kg/d, out 7.770 kg/d, 0.000 kW. Sheet docs-authority/duties/BAGHOUSE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -296,26 +279,9 @@
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "black water",
-              "value": 16.48,
-              "basis": "HABITATION",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "digester gas",
-              "value": 0.05,
-              "basis": "VS destruction",
-              "kind": "derived"
-            }
-          ]
+          "terms": []
         },
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BLACK_DIGEST.md.",
         "presence": "present",
         "internals": "pitched-blade agitator",
         "design_kPa": 17.8,
@@ -335,7 +301,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 108.195 kg/d, 0.00 kW. Residence 2.254/(108.195/(1000*24)) = 30000.0 min.",
+        "duty": "In 108.195 kg/d, out 108.245 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_ACID.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -354,7 +320,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 118.700 kg/d, 0.00 kW. Residence 2.473/(118.700/(1000*24)) = 30000.0 min.",
+        "duty": "In 118.700 kg/d, out 118.700 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -409,7 +375,7 @@
             }
           ]
         },
-        "duty": "Inlet 140.520 kg/d, 0.00 kW. Residence 2.928/(140.520/(1000*24)) = 30000.0 min.",
+        "duty": "In 140.520 kg/d, out 140.520 kg/d, 6.000 kW. Sheet docs-authority/duties/BMED_UPW_POLISH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -433,7 +399,7 @@
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
         "boundary_kind": "dock freight door (logical)",
-        "duty": "Inlet 0.000 kg/d, 50.25 kW. Exchanger area 50.25*1000/(500*10) = 10.050 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -455,7 +421,7 @@
         "to": "INDUCTION_PYROLYZER",
         "solid": "pipe",
         "ref": "oil_line.py / ANIMATION_BRIEF D6",
-        "duty": "Inlet 1.405 kg/d, 0.00 kW. Residence 0.050/(1.405/(1000*24)) = 51260.1 min.",
+        "duty": "In 1.405 kg/d, out 1.405 kg/d, 0.000 kW. Sheet docs-authority/duties/C29_RECYCLE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -483,7 +449,7 @@
         "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
         "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
         "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
-        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 200000.000 kg/d, out 200000.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CATCH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -523,7 +489,7 @@
             }
           ]
         },
-        "duty": "Inlet 3.950 kg/d, 0.00 kW. Residence 0.082/(3.950/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.950 kg/d, out 3.953 kg/d, 0.000 kW. Sheet docs-authority/duties/COLD_MILL.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -567,7 +533,7 @@
             }
           ]
         },
-        "duty": "Inlet 3753.710 kg/d, 0.00 kW. Residence 78.202/(3753.710/(1000*24)) = 30000.0 min.",
+        "duty": "In 3753.710 kg/d, out 3753.710 kg/d, 0.000 kW. Sheet docs-authority/duties/CONTINUOUS_RECYCLE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -587,7 +553,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 27.362 kg/d, 0.00 kW. Residence 0.570/(27.362/(1000*24)) = 30000.0 min.",
+        "duty": "In 27.362 kg/d, out 27.362 kg/d, 0.000 kW. Sheet docs-authority/duties/CRU.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -606,7 +572,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 79.040 kg/d, 0.00 kW. Residence 1.647/(79.040/(1000*24)) = 30000.0 min.",
+        "duty": "In 135.740 kg/d, out 135.740 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_AHU.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -626,7 +592,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.052 kg/d, 0.00 kW. Residence 0.050/(0.052/(1000*24)) = 1381957.8 min.",
+        "duty": "In 0.052 kg/d, out 0.052 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -662,7 +628,7 @@
             }
           ]
         },
-        "duty": "Inlet 30.000 kg/d, 0.00 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 50.179 kg/d, out 50.179 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_CO2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -680,7 +646,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 4.28 kW. Exchanger area 4.28*1000/(500*10) = 0.857 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_DED_COOL.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -707,7 +673,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min.",
+        "duty": "In 6.640 kg/d, out 6.640 kg/d, 4.000 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -725,7 +691,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 0.54 kW. Exchanger area 0.54*1000/(500*10) = 0.108 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_HX_Q4.md.",
         "presence": "present",
         "internals": "plate pack",
         "design_kPa": 17.8,
@@ -745,7 +711,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 243.280 kg/d, 0.00 kW. Residence 5.068/(243.280/(1000*24)) = 30000.0 min.",
+        "duty": "In 243.280 kg/d, out 243.280 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_N2.md.",
         "presence": "present",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
@@ -767,7 +733,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min.",
+        "duty": "In 48.050 kg/d, out 48.050 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -862,7 +828,7 @@
             }
           ]
         },
-        "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4287.840 kg/d, out 4287.840 kg/d, 6.000 kW. Sheet docs-authority/duties/EW_1.md.",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
         "relief_mm": 3.4
@@ -916,7 +882,7 @@
             }
           ]
         },
-        "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4226.040 kg/d, out 4226.040 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_2.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -971,7 +937,7 @@
             }
           ]
         },
-        "duty": "8 plates at 50 mm. Rack 600 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4164.240 kg/d, out 4164.240 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_3.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1025,7 +991,7 @@
             }
           ]
         },
-        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4141.760 kg/d, out 4141.760 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_4.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1079,7 +1045,7 @@
             }
           ]
         },
-        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4133.090 kg/d, out 4133.090 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_5.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1133,7 +1099,7 @@
             }
           ]
         },
-        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4128.070 kg/d, out 4128.070 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_6.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1187,7 +1153,7 @@
             }
           ]
         },
-        "duty": "25 plates at 50 mm. Rack 1450 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4122.600 kg/d, out 4122.600 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_7.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1241,7 +1207,7 @@
             }
           ]
         },
-        "duty": "2 plates at 50 mm. Rack 300 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4051.460 kg/d, out 4051.460 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_8.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1296,7 +1262,7 @@
             }
           ]
         },
-        "duty": "21 plates at 50 mm. Rack 1250 x 600 x 650 mm. 200 A/m2.",
+        "duty": "In 4046.410 kg/d, out 4046.410 kg/d, 0.000 kW. Sheet docs-authority/duties/EW_9.md.",
         "presence": "present",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
@@ -1330,7 +1296,7 @@
             }
           ]
         },
-        "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 60.000 kg/d, out 60.000 kg/d, 0.000 kW. Sheet docs-authority/duties/FAB_UPW_TANK.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
@@ -1380,7 +1346,7 @@
             }
           ]
         },
-        "duty": "Inlet 376.100 kg/d, 0.00 kW. Residence 7.835/(376.100/(1000*24)) = 30000.0 min.",
+        "duty": "In 376.100 kg/d, out 376.100 kg/d, 0.000 kW. Sheet docs-authority/duties/FLOAT_SINK.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1415,18 +1381,10 @@
               "value": 4.1404,
               "basis": "flue water less saturation at 30.0 C",
               "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "VSA tail gas to stack",
-              "value": 224.8417,
-              "basis": "flue + S70 less captured CO2 and condensate",
-              "kind": "derived"
             }
           ]
         },
-        "duty": "Inlet 135.900 kg/d, 0.00 kW. Residence 2.831/(135.900/(1000*24)) = 30000.0 min.",
+        "duty": "In 252.922 kg/d, out 252.924 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1488,7 +1446,7 @@
             }
           ]
         },
-        "duty": "Inlet 38.400 kg/d, 4.60 kW. Residence 0.800/(38.400/(1000*24)) = 30000.0 min. Exchanger area 4.60*1000/(500*10) = 0.920 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 43.440 kg/d, out 43.440 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1536,7 +1494,7 @@
             }
           ]
         },
-        "duty": "Inlet 3.200 kg/d, 0.00 kW. Residence 0.067/(3.200/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.200 kg/d, out 3.200 kg/d, 0.000 kW. Sheet docs-authority/duties/GAS_ATOMIZER.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1562,7 +1520,7 @@
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
         "survey_status": "design_survey_locked",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_GHEX.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1592,7 +1550,7 @@
         "T_source_K": 285.0,
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 2.000 kW. Sheet docs-authority/duties/GEO_HP.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1610,7 +1568,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_HP_CLOSED_LOOP.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1680,7 +1638,7 @@
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
         "survey_status": "design_survey_locked",
-        "duty": "Inlet 0.000 kg/d, 11.76 kW. Exchanger area 11.76*1000/(500*10) = 2.352 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.400 kW. Sheet docs-authority/duties/GEO_ORC.md.",
         "internals": "plate pack",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1743,7 +1701,7 @@
             }
           ]
         },
-        "duty": "Inlet 118.430 kg/d, 2.08 kW. Residence 2.467/(118.430/(1000*24)) = 30000.0 min. Exchanger area 2.08*1000/(500*10) = 0.416 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 148.430 kg/d, out 148.430 kg/d, 1.500 kW. Sheet docs-authority/duties/GLASS_DIGEST.md.",
         "internals": "pitched-blade agitator",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1761,7 +1719,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 339.060 kg/d, 0.00 kW. Residence 7.064/(339.060/(1000*24)) = 30000.0 min.",
+        "duty": "In 347.547 kg/d, out 347.547 kg/d, 0.000 kW. Sheet docs-authority/duties/GREY_TREAT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1844,7 +1802,7 @@
             }
           ]
         },
-        "duty": "Inlet 18909.000 kg/d, 5.00 kW. Residence 393.938/(18909.000/(1000*24)) = 30000.0 min. Exchanger area 5.00*1000/(500*10) = 1.000 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 19100.460 kg/d, out 19100.460 kg/d, 5.000 kW. Sheet docs-authority/duties/GROW_BED.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1869,7 +1827,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 6.640 kg/d, 0.00 kW. Residence 0.138/(6.640/(1000*24)) = 30000.0 min.",
+        "duty": "In 6.640 kg/d, out 6.640 kg/d, 0.300 kW. Sheet docs-authority/duties/H2_DRYER.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1901,14 +1859,6 @@
             {
               "layer": "mass",
               "dir": "out",
-              "label": "black water to BLACK_DIGEST",
-              "value": 16.48,
-              "basis": "BVAD urine/feces/flush",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
               "label": "hab AHU condensate + non-grey remainder",
               "value": 4.8994,
               "basis": "S12 governs grey",
@@ -1916,7 +1866,7 @@
             }
           ]
         },
-        "duty": "Inlet 597.331 kg/d, 3.00 kW. Residence 12.444/(597.331/(1000*24)) = 30000.0 min. Exchanger area 3.00*1000/(500*10) = 0.600 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 943.905 kg/d, out 943.903 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1946,7 +1896,7 @@
           "MEOH_SYNTH": "H2-limited; carrier loop via S82",
           "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
         },
-        "duty": "Inlet 12.170 kg/d, 0.00 kW. Residence 0.254/(12.170/(1000*24)) = 30000.0 min.",
+        "duty": "In 17.071 kg/d, out 17.070 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_CO2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -1967,7 +1917,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 2.820 kg/d, 0.00 kW. Residence 0.059/(2.820/(1000*24)) = 30000.0 min.",
+        "duty": "In 6.660 kg/d, out 6.640 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_H2.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1982,7 +1932,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 243.280 kg/d, 0.00 kW. Residence 5.068/(243.280/(1000*24)) = 30000.0 min.",
+        "duty": "In 244.960 kg/d, out 244.960 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_N2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -2001,7 +1951,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 48.050 kg/d, 0.00 kW. Residence 1.001/(48.050/(1000*24)) = 30000.0 min.",
+        "duty": "In 48.050 kg/d, out 48.050 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -2037,7 +1987,7 @@
             }
           ]
         },
-        "duty": "Inlet 67.300 kg/d, 0.00 kW. Residence 1.402/(67.300/(1000*24)) = 30000.0 min.",
+        "duty": "In 67.300 kg/d, out 67.300 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_UPW.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2055,7 +2005,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 597.330 kg/d, 0.00 kW. Residence 12.444/(597.330/(1000*24)) = 30000.0 min.",
+        "duty": "In 633.882 kg/d, out 633.882 kg/d, 0.000 kW. Sheet docs-authority/duties/HOPPER.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2095,7 +2045,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Inlet 0.000 kg/d, 4.57 kW. Exchanger area 4.57*1000/(500*10) = 0.914 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HX8.md.",
         "presence": "present",
         "internals": "plate pack",
         "design_kPa": 17.8,
@@ -2146,7 +2096,7 @@
         "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HYDRO_SET.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2226,10 +2176,15 @@
             }
           ]
         },
-        "duty": "Inlet 3753.710 kg/d, 7.94 kW. Envelope 2000x1200x1400 mm = 3.360 m3. Residence 3.360/(3753.710/(1100*24)) = 1417.9 min. Exchanger area 7.94*1000/(500*10) = 1.588 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 5622.085 kg/d, out 5622.089 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
         "internals": "shell and nozzles",
         "design_kPa": 25.1,
-        "relief_mm": 2.8
+        "relief_mm": 2.8,
+        "size_mm": [
+          2000,
+          1200,
+          1400
+        ]
       }
     },
     {
@@ -2249,7 +2204,7 @@
         "former_class": "load_agg",
         "boundary_kind": "electrical accounting (S17/S20 sum)",
         "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LOAD_AGG.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2273,7 +2228,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Inlet 5.622 kg/d, 0.00 kW. Residence 0.117/(5.622/(1000*24)) = 30000.0 min.",
+        "duty": "In 5.622 kg/d, out 5.620 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2335,7 +2290,7 @@
             }
           ]
         },
-        "duty": "Inlet 8.370 kg/d, 0.87 kW. Residence 0.174/(8.370/(1000*24)) = 30000.0 min. Exchanger area 0.87*1000/(500*10) = 0.174 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 12.470 kg/d, out 12.497 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2373,7 +2328,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.360 kg/d, 0.00 kW. Residence 0.050/(0.360/(1000*24)) = 200000.0 min.",
+        "duty": "In 0.360 kg/d, out 0.365 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_FERM.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2420,7 +2375,7 @@
             }
           ]
         },
-        "duty": "Inlet 6.900 kg/d, 0.00 kW. Residence 0.144/(6.900/(1000*24)) = 30000.0 min.",
+        "duty": "In 8.500 kg/d, out 8.500 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2453,7 +2408,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 8.500 kg/d, 0.00 kW. Residence 0.177/(8.500/(1000*24)) = 30000.0 min.",
+        "duty": "In 9.810 kg/d, out 9.810 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2471,7 +2426,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 71604.000 kg/d, out 71604.000 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_AHU.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2491,7 +2446,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_HX_Q4.md.",
         "presence": "present",
         "internals": "plate pack",
         "design_kPa": 17.8,
@@ -2533,7 +2488,7 @@
             }
           ]
         },
-        "duty": "Inlet 13.990 kg/d, 0.00 kW. Residence 0.291/(13.990/(1000*24)) = 30000.0 min.",
+        "duty": "In 13.990 kg/d, out 13.989 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_MELT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2556,26 +2511,9 @@
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "scrub make-up water",
-              "value": 2.3878,
-              "basis": "level control = blowdown water",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "scrubbed air to stack",
-              "value": 71603.7288,
-              "basis": "air in less captured fines and mist",
-              "kind": "derived"
-            }
-          ]
+          "terms": []
         },
-        "duty": "Inlet 2.460 kg/d, 0.00 kW. Residence 0.051/(2.460/(1000*24)) = 30000.0 min.",
+        "duty": "In 71606.460 kg/d, out 71606.452 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -2632,7 +2570,7 @@
             }
           ]
         },
-        "duty": "Inlet 217.370 kg/d, 0.00 kW. Residence 4.529/(217.370/(1000*24)) = 30000.0 min.",
+        "duty": "In 610.818 kg/d, out 610.818 kg/d, 12.000 kW. Sheet docs-authority/duties/MFG_SHOP.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2647,7 +2585,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 5.000 kg/d, 0.00 kW. Residence 0.104/(5.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 5.000 kg/d, out 5.000 kg/d, 0.000 kW. Sheet docs-authority/duties/NCG_HEADER.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -2683,7 +2621,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/NORTH_DOCK.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2706,7 +2644,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Inlet 239.620 kg/d, 0.00 kW. Residence 4.992/(239.620/(1000*24)) = 30000.0 min.",
+        "duty": "In 496.820 kg/d, out 496.820 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -2732,7 +2670,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 140.640 kg/d, 0.00 kW. Residence 2.930/(140.640/(1000*24)) = 30000.0 min.",
+        "duty": "In 272.200 kg/d, out 272.160 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2788,7 +2726,7 @@
             }
           ]
         },
-        "duty": "Inlet 33.000 kg/d, 0.30 kW. Residence 0.688/(33.000/(1000*24)) = 30000.0 min. Exchanger area 0.30*1000/(500*10) = 0.060 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 33.000 kg/d, out 33.000 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_DRYER.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2808,7 +2746,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 28.905 kg/d, 0.00 kW. Residence 0.602/(28.905/(1000*24)) = 30000.0 min.",
+        "duty": "In 29.914 kg/d, out 29.914 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_FRAC.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2842,7 +2780,7 @@
             }
           ]
         },
-        "duty": "Inlet 33.000 kg/d, 0.00 kW. Residence 0.688/(33.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 34.405 kg/d, out 34.405 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_PYRO.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2876,7 +2814,7 @@
             }
           ]
         },
-        "duty": "Inlet 3971.080 kg/d, 0.00 kW. Residence 82.731/(3971.080/(1000*24)) = 30000.0 min.",
+        "duty": "In 3971.080 kg/d, out 3971.080 kg/d, 0.000 kW. Sheet docs-authority/duties/POLISH_BANK.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2894,7 +2832,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 8.407 kg/d, out 8.407 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C11_C18.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2911,7 +2849,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 3.947 kg/d, out 3.947 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C19_C28.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2928,7 +2866,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Inlet 1.405 kg/d, 0.00 kW. Residence 0.050/(1.405/(1000*24)) = 51260.1 min.",
+        "duty": "In 1.405 kg/d, out 1.405 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C29.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2945,7 +2883,7 @@
       "modules": [],
       "params": {
         "ref": "oil_line.py",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 11.155 kg/d, out 11.155 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C5_C10.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2963,20 +2901,21 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 70.0,
+        "value": 27.88,
         "unit": "kW",
         "status": "study",
-        "note": "PV_MODULE_KW \u00d7 PV_COUNT from params.py; nameplate class not continuous avg"
+        "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
       },
       "modules": [],
       "params": {
         "module_kw": 70,
         "count": 1,
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "nameplate_kw": 70
       }
     },
     {
@@ -3007,7 +2946,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 5.51 kW. Exchanger area 5.51*1000/(500*10) = 1.102 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_BUS.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -3034,7 +2973,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 23.32 kW. Exchanger area 23.32*1000/(500*10) = 4.664 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 24.000 kW. Sheet docs-authority/duties/RECTIFIER.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3056,7 +2995,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/RELIEF_CRYO.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3073,7 +3012,7 @@
       "modules": [],
       "params": {
         "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/RELIEF_H2.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3108,7 +3047,7 @@
             }
           ]
         },
-        "duty": "Inlet 200000.000 kg/d, 0.41 kW. Residence 4166.667/(200000.000/(1000*24)) = 30000.0 min. Exchanger area 0.41*1000/(500*10) = 0.082 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 200383.980 kg/d, out 200383.980 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3126,7 +3065,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/S13_CLASS_TREAT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3146,7 +3085,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SALT_FEED.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3169,7 +3108,7 @@
       "params": {
         "kW": 60,
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 27.88 kW. Exchanger area 27.88*1000/(500*10) = 5.576 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3191,7 +3130,7 @@
         "presence": "present",
         "enclosure": "greenhouse",
         "note": "Enclosed. Vapor to the AHU, condensate to the roof tank.",
-        "duty": "Inlet 40.000 kg/d, 0.00 kW. Residence 0.833/(40.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 40.000 kg/d, out 40.000 kg/d, 0.000 kW. Sheet docs-authority/duties/TERRACE_IRRIG.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3240,7 +3179,7 @@
             }
           ]
         },
-        "duty": "Inlet 66.500 kg/d, 0.00 kW. Residence 1.385/(66.500/(1000*24)) = 30000.0 min.",
+        "duty": "In 76.610 kg/d, out 76.607 kg/d, 2.000 kW. Sheet docs-authority/duties/WAFER_FAB.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3279,7 +3218,7 @@
             }
           ]
         },
-        "duty": "Inlet 60.000 kg/d, 0.00 kW. Residence 1.250/(60.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 79.105 kg/d, out 79.106 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3311,7 +3250,7 @@
             }
           ]
         },
-        "duty": "Inlet 6.839 kg/d, 0.00 kW. Residence 0.142/(6.839/(1000*24)) = 30000.0 min.",
+        "duty": "In 6.839 kg/d, out 6.841 kg/d, 0.000 kW. Sheet docs-authority/duties/WIRE_DRAW.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3331,7 +3270,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 3.250 kg/d, 0.00 kW. Residence 0.068/(3.250/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.250 kg/d, out 3.250 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3350,7 +3289,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
+        "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_DOPE.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3369,7 +3308,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 1.500 kg/d, 0.00 kW. Residence 0.050/(1.500/(1000*24)) = 48000.0 min.",
+        "duty": "In 1.500 kg/d, out 1.500 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_HF_ED.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3410,7 +3349,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.270 kg/d, 0.00 kW. Residence 0.050/(0.270/(1000*24)) = 266666.7 min.",
+        "duty": "In 0.270 kg/d, out 0.273 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3451,7 +3390,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.646 kg/d, 0.00 kW. Residence 0.050/(0.646/(1000*24)) = 111524.2 min.",
+        "duty": "In 1.246 kg/d, out 1.250 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3470,7 +3409,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 3.000 kg/d, 0.00 kW. Residence 0.062/(3.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.000 kg/d, out 3.000 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PEROX.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3489,7 +3428,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 3.300 kg/d, 0.00 kW. Residence 0.069/(3.300/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.300 kg/d, out 3.300 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SLURRY.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3508,7 +3447,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min.",
+        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3526,9 +3465,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 60.0,
+        "value": 6.6667,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "Average charge. Peak remains 60 kW. Discharge is 5.0 kW."
       },
       "modules": [],
       "params": {
@@ -3567,10 +3507,11 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "Inlet 852.473 kg/d, 6.67 kW. Residence 17.760/(852.473/(1000*24)) = 30000.0 min. Exchanger area 6.67*1000/(500*10) = 1.333 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 860.960 kg/d, out 860.957 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "peak_kw": 60
       }
     },
     {
@@ -3594,18 +3535,10 @@
               "value": 0.0003,
               "basis": "stoichiometric",
               "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "scrubbed dry air to stack",
-              "value": 843.9862,
-              "basis": "",
-              "kind": "derived"
             }
           ]
         },
-        "duty": "Inlet 852.470 kg/d, 0.00 kW. Residence 17.760/(852.470/(1000*24)) = 30000.0 min.",
+        "duty": "In 852.470 kg/d, out 852.473 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -3630,7 +3563,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.620 kg/d, 0.00 kW. Residence 0.050/(0.620/(1000*24)) = 116129.0 min.",
+        "duty": "In 0.620 kg/d, out 0.635 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3676,7 +3609,7 @@
             }
           ]
         },
-        "duty": "Inlet 36.820 kg/d, 0.00 kW. Residence 0.767/(36.820/(1000*24)) = 30000.0 min.",
+        "duty": "In 36.820 kg/d, out 36.818 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_RINSE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3715,7 +3648,7 @@
             }
           ]
         },
-        "duty": "Inlet 36.818 kg/d, 0.00 kW. Residence 0.767/(36.818/(1000*24)) = 30000.0 min.",
+        "duty": "In 36.818 kg/d, out 36.820 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_MILL.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3786,7 +3719,7 @@
             }
           ]
         },
-        "duty": "Inlet 30.000 kg/d, 1.86 kW. Residence 0.625/(30.000/(1000*24)) = 30000.0 min. Exchanger area 1.86*1000/(500*10) = 0.372 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 30.000 kg/d, out 30.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_BURNOUT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3797,8 +3730,8 @@
       "unit_id": "VCD_TRAIN",
       "sector_id": "WTR",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "MVC. Equipment ID VCD-COMP-01.",
+      "class": "vessel",
+      "notes": "Mechanical vapor compression. Class was study_stub after the duty was issued.",
       "enabled": true,
       "modules": [],
       "params": {
@@ -3814,7 +3747,7 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 104.500 kg/d, 0.00 kW. Residence 2.177/(104.500/(1000*24)) = 30000.0 min.",
+        "duty": "In 165.122 kg/d, out 165.119 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3825,8 +3758,8 @@
       "unit_id": "REMIN",
       "sector_id": "WTR",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Hydroxide dose then UV.",
+      "class": "tank",
+      "notes": "Potable remineralizer. Class was study_stub after the duty was issued.",
       "enabled": true,
       "modules": [],
       "params": {
@@ -3856,7 +3789,7 @@
             }
           ]
         },
-        "duty": "Inlet 10.000 kg/d, 0.00 kW. Residence 0.208/(10.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 10.000 kg/d, out 10.000 kg/d, 0.000 kW. Sheet docs-authority/duties/REMIN.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3880,7 +3813,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_COAT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3904,7 +3837,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_ALIGN.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3928,7 +3861,7 @@
           800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_DEV.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3939,8 +3872,8 @@
       "unit_id": "LITHO_STUB",
       "sector_id": "FAB",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Parent of coat, align, develop. Lamp class: 365 nm LED, not a stepper.",
+      "class": "tool",
+      "notes": "365 nm contact bench. Resist solvent is IA-LITHO-IN.",
       "enabled": true,
       "modules": [
         {
@@ -3978,19 +3911,25 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.988 kg/d, out 0.988 kg/d, 0.100 kW. Sheet docs-authority/duties/LITHO_STUB.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
+      },
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "365 nm contact bench. Resist solvent is IA-LITHO-IN."
       }
     },
     {
       "unit_id": "ELECTRODE_COAT",
       "sector_id": "MFG",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Carbon or nickel booth. Exhaust to MET_AHU.",
+      "class": "tool",
+      "notes": "Carbon or nickel. No iridium. Exhaust idea is MET_AHU; the mass loop is the recoat.",
       "enabled": true,
       "modules": [],
       "params": {
@@ -4004,19 +3943,25 @@
           1800
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.300 kW. Sheet docs-authority/duties/ELECTRODE_COAT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
+      },
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "Carbon or nickel. No iridium. Exhaust idea is MET_AHU; the mass loop is the recoat."
       }
     },
     {
       "unit_id": "BLOW_MOLD",
       "sector_id": "MFG",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Clamp and air. Peak 2-4 kW. Scrap to oil line.",
+      "class": "forming",
+      "notes": "Draws the C11-C18 tank. Peak 2-4 kW.",
       "enabled": true,
       "modules": [],
       "params": {
@@ -4030,19 +3975,25 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 8.407 kg/d, out 8.407 kg/d, 0.500 kW. Sheet docs-authority/duties/BLOW_MOLD.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
+      },
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Draws the C11-C18 tank. Peak 2-4 kW."
       }
     },
     {
       "unit_id": "SOLAR_PV_CELL",
       "sector_id": "FAB",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Texture, emitter, PSG etch, ARC, contact, fire, IV. Not the yard array.",
+      "class": "tool",
+      "notes": "Dopant passes through on the way to the wafer fab. Not the yard array.",
       "enabled": true,
       "modules": [
         {
@@ -4099,11 +4050,17 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.300 kW. Sheet docs-authority/duties/SOLAR_PV_CELL.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
+      },
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "Dopant passes through on the way to the wafer fab. Not the yard array."
       }
     },
     {
@@ -4160,7 +4117,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 1.38 kW. Exchanger area 1.38*1000/(500*10) = 0.277 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q1_A.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4235,7 +4192,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 2.03 kW. Exchanger area 2.03*1000/(500*10) = 0.405 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q2_A.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4310,7 +4267,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 10.05 kW. Exchanger area 10.05*1000/(500*10) = 2.010 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q3_A.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4371,7 +4328,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 2.29 kW. Exchanger area 2.29*1000/(500*10) = 0.457 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_A.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4432,7 +4389,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 1.38 kW. Exchanger area 1.38*1000/(500*10) = 0.277 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q1_B.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4507,7 +4464,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 2.03 kW. Exchanger area 2.03*1000/(500*10) = 0.405 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q2_B.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4582,7 +4539,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 10.05 kW. Exchanger area 10.05*1000/(500*10) = 2.010 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q3_B.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4643,7 +4600,7 @@
             }
           ]
         },
-        "duty": "Inlet 0.000 kg/d, 2.29 kW. Exchanger area 2.29*1000/(500*10) = 0.457 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_B.md.",
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
@@ -4670,7 +4627,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min.",
+        "duty": "In 0.400 kg/d, out 0.400 kg/d, 0.200 kW. Sheet docs-authority/duties/ANIMAL_PEN.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4696,7 +4653,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 129.630 kg/d, 0.00 kW. Residence 2.701/(129.630/(1000*24)) = 30000.0 min.",
+        "duty": "In 145.110 kg/d, out 145.066 kg/d, 0.100 kW. Sheet docs-authority/duties/COMPOST.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4722,7 +4679,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 0.350 kg/d, 0.00 kW. Residence 0.050/(0.350/(1000*24)) = 205714.3 min.",
+        "duty": "In 0.920 kg/d, out 0.940 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4748,7 +4705,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 0.940 kg/d, 0.00 kW. Residence 0.050/(0.940/(1000*24)) = 76595.7 min.",
+        "duty": "In 0.940 kg/d, out 0.940 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4774,7 +4731,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 8.690 kg/d, 0.00 kW. Residence 0.181/(8.690/(1000*24)) = 30000.0 min.",
+        "duty": "In 9.139 kg/d, out 9.140 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4800,7 +4757,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "Inlet 3.870 kg/d, 0.00 kW. Residence 0.081/(3.870/(1000*24)) = 30000.0 min.",
+        "duty": "In 8.700 kg/d, out 8.700 kg/d, 1.000 kW. Sheet docs-authority/duties/BOARD_MILL.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4826,7 +4783,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "Inlet 3.190 kg/d, 0.00 kW. Residence 0.066/(3.190/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.600 kW. Sheet docs-authority/duties/HTC.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4845,7 +4802,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 243.890 kg/d, 0.00 kW. Residence 5.081/(243.890/(1000*24)) = 30000.0 min.",
+        "duty": "In 598.020 kg/d, out 598.020 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4870,7 +4827,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
+        "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.200 kW. Sheet docs-authority/duties/CRYO_HE.md.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
@@ -4896,7 +4853,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.200 kW. Sheet docs-authority/duties/CRYO_NE.md.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
@@ -4922,7 +4879,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min.",
+        "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.200 kW. Sheet docs-authority/duties/CRYO_KR.md.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
@@ -4948,7 +4905,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.010 kg/d, 0.00 kW. Residence 0.050/(0.010/(1000*24)) = 7200000.0 min.",
+        "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.200 kW. Sheet docs-authority/duties/CRYO_XE.md.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
@@ -4974,7 +4931,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 5.300 kg/d, 0.00 kW. Residence 0.110/(5.300/(1000*24)) = 30000.0 min.",
+        "duty": "In 5.300 kg/d, out 5.300 kg/d, 0.200 kW. Sheet docs-authority/duties/CRYO_AR.md.",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
@@ -5006,7 +4963,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 1.000 kg/d, 0.00 kW. Residence 0.050/(1.000/(1000*24)) = 72000.0 min.",
+        "duty": "In 1.000 kg/d, out 1.000 kg/d, 0.200 kW. Sheet docs-authority/duties/YEAST.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5031,7 +4988,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.640 kg/d, 0.00 kW. Residence 0.050/(0.640/(1000*24)) = 112500.0 min.",
+        "duty": "In 0.640 kg/d, out 0.640 kg/d, 0.200 kW. Sheet docs-authority/duties/ABE.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5056,7 +5013,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min.",
+        "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.100 kW. Sheet docs-authority/duties/ACETOX.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5081,7 +5038,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/ALD.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5106,7 +5063,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.180 kg/d, 0.00 kW. Residence 0.050/(0.180/(1000*24)) = 400000.0 min.",
+        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/GLYOXAL.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5131,7 +5088,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min.",
+        "duty": "In 0.120 kg/d, out 0.120 kg/d, 0.100 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5156,7 +5113,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.040 kg/d, 0.00 kW. Residence 0.050/(0.040/(1000*24)) = 1800000.0 min.",
+        "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.100 kW. Sheet docs-authority/duties/MEAM.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5181,7 +5138,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.160 kg/d, 0.00 kW. Residence 0.050/(0.160/(1000*24)) = 450000.0 min.",
+        "duty": "In 0.450 kg/d, out 0.450 kg/d, 0.100 kW. Sheet docs-authority/duties/IMID.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5206,10 +5163,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.260 kg/d, 0.00 kW. Envelope 400x400x800 mm = 0.128 m3. Residence 0.128/(0.260/(1000*24)) = 708923.1 min.",
+        "duty": "In 0.420 kg/d, out 0.400 kg/d, 0.100 kW. Sheet docs-authority/duties/QUAT.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "size_mm": [
+          400,
+          400,
+          800
+        ]
       }
     },
     {
@@ -5231,7 +5193,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min.",
+        "duty": "In 0.560 kg/d, out 0.560 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5256,7 +5218,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.500 kg/d, 0.00 kW. Residence 0.050/(0.500/(1000*24)) = 144000.0 min.",
+        "duty": "In 0.700 kg/d, out 0.700 kg/d, 0.300 kW. Sheet docs-authority/duties/HNO3.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5281,7 +5243,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.130 kg/d, 0.00 kW. Residence 0.050/(0.130/(1000*24)) = 553846.2 min.",
+        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/BUCL.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5306,7 +5268,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 1.800 kg/d, 0.00 kW. Residence 0.050/(1.800/(1000*24)) = 40000.0 min.",
+        "duty": "In 3.180 kg/d, out 3.180 kg/d, 0.100 kW. Sheet docs-authority/duties/BSFL.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5331,7 +5293,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 9697.000 kg/d, 0.00 kW. Residence 202.021/(9697.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 9697.900 kg/d, out 9697.900 kg/d, 0.100 kW. Sheet docs-authority/duties/DUCKWEED.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5356,7 +5318,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 3.020 kg/d, 0.00 kW. Residence 0.063/(3.020/(1000*24)) = 30000.0 min.",
+        "duty": "In 4.020 kg/d, out 4.020 kg/d, 0.100 kW. Sheet docs-authority/duties/WORMS.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5381,7 +5343,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.020 kg/d, 0.100 kW. Sheet docs-authority/duties/BEES.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5406,7 +5368,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min.",
+        "duty": "In 0.500 kg/d, out 0.500 kg/d, 0.100 kW. Sheet docs-authority/duties/CHICKENS.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5431,7 +5393,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.550 kg/d, 0.00 kW. Residence 0.050/(0.550/(1000*24)) = 130909.1 min.",
+        "duty": "In 0.700 kg/d, out 0.700 kg/d, 0.100 kW. Sheet docs-authority/duties/GOATS.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5456,7 +5418,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 48001.000 kg/d, out 48001.000 kg/d, 0.100 kW. Sheet docs-authority/duties/FISH.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5481,7 +5443,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min.",
+        "duty": "In 0.200 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/CRAYFISH.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5506,7 +5468,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.100 kg/d, 0.00 kW. Residence 0.050/(0.100/(1000*24)) = 720000.0 min.",
+        "duty": "In 0.100 kg/d, out 0.100 kg/d, 0.100 kW. Sheet docs-authority/duties/AZOLLA.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5531,7 +5493,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Residence 0.050/(0.200/(1000*24)) = 360000.0 min.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/MUSHROOM.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5556,7 +5518,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 1.200 kg/d, 0.00 kW. Residence 0.050/(1.200/(1000*24)) = 60000.0 min.",
+        "duty": "In 2.400 kg/d, out 2.400 kg/d, 0.050 kW. Sheet docs-authority/duties/COMPOST_TOILET.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5581,7 +5543,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.750 kg/d, 0.00 kW. Residence 0.050/(0.750/(1000*24)) = 96000.0 min.",
+        "duty": "In 0.750 kg/d, out 0.750 kg/d, 0.200 kW. Sheet docs-authority/duties/NFIX_BED.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5606,7 +5568,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Residence 0.050/(0.300/(1000*24)) = 240000.0 min.",
+        "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.150 kW. Sheet docs-authority/duties/MUSH_STRAW.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5631,7 +5593,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.250 kg/d, 0.00 kW. Residence 0.050/(0.250/(1000*24)) = 288000.0 min.",
+        "duty": "In 0.250 kg/d, out 0.250 kg/d, 0.150 kW. Sheet docs-authority/duties/MUSH_BLOCK.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5656,7 +5618,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.150 kW. Sheet docs-authority/duties/AMF.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5681,7 +5643,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 2.700 kg/d, 0.00 kW. Residence 0.056/(2.700/(1000*24)) = 30000.0 min.",
+        "duty": "In 3.020 kg/d, out 3.020 kg/d, 0.050 kW. Sheet docs-authority/duties/COMPOST_MYC.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5706,7 +5668,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min.",
+        "duty": "In 0.400 kg/d, out 0.400 kg/d, 0.400 kW. Sheet docs-authority/duties/FRUIT_GUTTER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5731,7 +5693,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 19443.800 kg/d, out 19443.800 kg/d, 0.400 kW. Sheet docs-authority/duties/VEG_BED.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5756,7 +5718,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 48000.000 kg/d, 0.00 kW. Residence 1000.000/(48000.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/CLARIFIER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5781,10 +5743,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 47999.000 kg/d, 0.00 kW. Envelope 3000x5000x1200 mm = 18.000 m3. Residence 18.000/(47999.000/(1000*24)) = 540.0 min.",
+        "duty": "In 48200.300 kg/d, out 48200.300 kg/d, 0.300 kW. Sheet docs-authority/duties/BIOFILTER.md.",
         "internals": "media or gutter",
         "design_kPa": 21.8,
-        "relief_mm": 3.0
+        "relief_mm": 3.0,
+        "size_mm": [
+          3000,
+          5000,
+          1200
+        ]
       }
     },
     {
@@ -5806,7 +5773,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 19393.000 kg/d, 0.00 kW. Residence 404.021/(19393.000/(1000*24)) = 30000.0 min.",
+        "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/FISH_SUMP.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5831,7 +5798,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.120 kg/d, 0.00 kW. Residence 0.050/(0.120/(1000*24)) = 600000.0 min.",
+        "duty": "In 0.120 kg/d, out 0.120 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_TOMATO.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5856,7 +5823,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min.",
+        "duty": "In 0.080 kg/d, out 0.080 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_CUCUMBER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5881,7 +5848,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min.",
+        "duty": "In 0.060 kg/d, out 0.060 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_PEPPER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5906,7 +5873,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.080 kg/d, 0.00 kW. Residence 0.050/(0.080/(1000*24)) = 900000.0 min.",
+        "duty": "In 0.080 kg/d, out 0.080 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_LETTUCE.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5931,7 +5898,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_SPINACH.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5956,7 +5923,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.050 kg/d, 0.00 kW. Residence 0.050/(0.050/(1000*24)) = 1440000.0 min.",
+        "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_KALE.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5981,7 +5948,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.060 kg/d, 0.00 kW. Residence 0.050/(0.060/(1000*24)) = 1200000.0 min.",
+        "duty": "In 0.060 kg/d, out 0.060 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_ALLIUM.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6006,7 +5973,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.030 kg/d, 0.00 kW. Residence 0.050/(0.030/(1000*24)) = 2400000.0 min.",
+        "duty": "In 0.030 kg/d, out 0.030 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_BASIL.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6031,7 +5998,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.020 kg/d, 0.00 kW. Residence 0.050/(0.020/(1000*24)) = 3600000.0 min.",
+        "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_ROSEMARY.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6056,7 +6023,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.400 kg/d, 0.00 kW. Residence 0.050/(0.400/(1000*24)) = 180000.0 min.",
+        "duty": "In 0.410 kg/d, out 0.410 kg/d, 0.200 kW. Sheet docs-authority/duties/CLOVER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6081,7 +6048,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.010 kg/d, 0.00 kW. Envelope 2000x2000x2200 mm = 8.800 m3. Residence 8.800/(0.010/(1000*24)) = 1267200000.0 min.",
+        "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.200 kW. Sheet docs-authority/duties/SEED_BANK.md.",
         "inventory": {
           "seed": [
             "bean",
@@ -6129,7 +6096,12 @@
         },
         "internals": "media or gutter",
         "design_kPa": 31.6,
-        "relief_mm": 2.5
+        "relief_mm": 2.5,
+        "size_mm": [
+          2000,
+          2000,
+          2200
+        ]
       }
     },
     {
@@ -6151,10 +6123,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.200 kg/d, 0.00 kW. Envelope 1000x1000x1200 mm = 1.200 m3. Residence 1.200/(0.200/(1000*24)) = 8640000.0 min.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.200 kW. Sheet docs-authority/duties/STRUVITE.md.",
         "internals": "media or gutter",
         "design_kPa": 21.8,
-        "relief_mm": 3.0
+        "relief_mm": 3.0,
+        "size_mm": [
+          1000,
+          1000,
+          1200
+        ]
       }
     },
     {
@@ -6176,10 +6153,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.300 kg/d, 0.00 kW. Envelope 1000x1000x1500 mm = 1.500 m3. Residence 1.500/(0.300/(1000*24)) = 7200000.0 min.",
+        "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.200 kW. Sheet docs-authority/duties/ASH.md.",
         "internals": "media or gutter",
         "design_kPa": 24.7,
-        "relief_mm": 2.8
+        "relief_mm": 2.8,
+        "size_mm": [
+          1000,
+          1000,
+          1500
+        ]
       }
     },
     {
@@ -6201,10 +6183,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.002 kg/d, 0.00 kW. Envelope 500x500x800 mm = 0.200 m3. Residence 0.200/(0.002/(1000*24)) = 144000000.0 min.",
+        "duty": "In 0.004 kg/d, out 0.004 kg/d, 0.200 kW. Sheet docs-authority/duties/IODIDE.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "size_mm": [
+          500,
+          500,
+          800
+        ]
       }
     },
     {
@@ -6230,10 +6217,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 50.26 kW. Envelope 800x600x2000 mm = 0.960 m3. Exchanger area 50.26*1000/(500*10) = 10.052 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.200 kW. Sheet docs-authority/duties/CURTAIL.md.",
         "internals": "plate pack",
         "design_kPa": 29.6,
-        "relief_mm": 2.6
+        "relief_mm": 2.6,
+        "size_mm": [
+          800,
+          600,
+          2000
+        ]
       }
     },
     {
@@ -6259,10 +6251,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 15.88 kW. Envelope 6000x6000x1500 mm = 54.000 m3. Exchanger area 15.88*1000/(500*10) = 3.176 m2 at 10 K and 500 W/m2K.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.200 kW. Sheet docs-authority/duties/HEAT_SINK.md.",
         "internals": "plate pack",
         "design_kPa": 24.7,
-        "relief_mm": 2.8
+        "relief_mm": 2.8,
+        "size_mm": [
+          6000,
+          6000,
+          1500
+        ]
       }
     },
     {
@@ -6284,10 +6281,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x1000x300 mm = 1.800 m3.",
+        "duty": "In 200.000 kg/d, out 200.000 kg/d, 0.300 kW. Sheet docs-authority/duties/NFT.md.",
         "internals": "media or gutter",
         "design_kPa": 12.9,
-        "relief_mm": 3.9
+        "relief_mm": 3.9,
+        "size_mm": [
+          6000,
+          1000,
+          300
+        ]
       }
     },
     {
@@ -6309,10 +6311,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 4000x1000x800 mm = 3.200 m3.",
+        "duty": "In 50.000 kg/d, out 50.000 kg/d, 0.300 kW. Sheet docs-authority/duties/MISTER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "size_mm": [
+          4000,
+          1000,
+          800
+        ]
       }
     },
     {
@@ -6334,10 +6341,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 6000x2000x600 mm = 7.200 m3.",
+        "duty": "In 20.000 kg/d, out 20.000 kg/d, 0.300 kW. Sheet docs-authority/duties/DUAL_ROOT.md.",
         "internals": "media or gutter",
         "design_kPa": 15.9,
-        "relief_mm": 3.5
+        "relief_mm": 3.5,
+        "size_mm": [
+          6000,
+          2000,
+          600
+        ]
       }
     },
     {
@@ -6359,10 +6371,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 18000x5000x400 mm = 36.000 m3.",
+        "duty": "In 0.150 kg/d, out 0.150 kg/d, 0.300 kW. Sheet docs-authority/duties/AZOLLA_BED.md.",
         "internals": "media or gutter",
         "design_kPa": 13.9,
-        "relief_mm": 3.8
+        "relief_mm": 3.8,
+        "size_mm": [
+          18000,
+          5000,
+          400
+        ]
       }
     },
     {
@@ -6384,10 +6401,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 400x400x1500 mm = 0.240 m3.",
+        "duty": "In 0.460 kg/d, out 0.460 kg/d, 0.300 kW. Sheet docs-authority/duties/ETOH_STILL.md.",
         "internals": "media or gutter",
         "design_kPa": 24.7,
-        "relief_mm": 2.8
+        "relief_mm": 2.8,
+        "size_mm": [
+          400,
+          400,
+          1500
+        ]
       }
     },
     {
@@ -6409,35 +6431,15 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x1200 mm = 0.108 m3.",
+        "duty": "In 0.130 kg/d, out 0.130 kg/d, 0.300 kW. Sheet docs-authority/duties/BUOH_STILL.md.",
         "internals": "media or gutter",
         "design_kPa": 21.8,
-        "relief_mm": 3.0
-      }
-    },
-    {
-      "unit_id": "FORM_RX",
-      "sector_id": "FARM",
-      "presence": "present",
-      "class": "farm",
-      "tags": [],
-      "electrical_role": "load",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
-      },
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 300x300x800 mm = 0.072 m3.",
-        "internals": "media or gutter",
-        "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.0,
+        "size_mm": [
+          300,
+          300,
+          1200
+        ]
       }
     },
     {
@@ -6459,7 +6461,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.150 kg/d, out 0.150 kg/d, 0.300 kW. Sheet docs-authority/duties/PEANUT.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6484,7 +6486,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.300 kW. Sheet docs-authority/duties/SUNFLOWER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6509,7 +6511,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_SLEEP.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6534,7 +6536,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 1.130 kg/d, out 1.130 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_GALLEY.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6559,7 +6561,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 0.002 kg/d, out 0.002 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_MED.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6584,160 +6586,70 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW.",
+        "duty": "In 80.000 kg/d, out 80.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_WASH.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
     },
     {
-      "unit_id": "LITHO",
-      "sector_id": "FARM",
-      "presence": "present",
-      "class": "farm",
-      "tags": [],
-      "electrical_role": "load",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
-      },
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1600x900x1800 mm = 2.592 m3.",
-        "internals": "media or gutter",
-        "design_kPa": 27.7,
-        "relief_mm": 2.7
-      }
-    },
-    {
-      "unit_id": "BLOW",
-      "sector_id": "FARM",
-      "presence": "present",
-      "class": "farm",
-      "tags": [],
-      "electrical_role": "load",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
-      },
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2200x1200x2000 mm = 5.280 m3.",
-        "internals": "media or gutter",
-        "design_kPa": 29.6,
-        "relief_mm": 2.6
-      }
-    },
-    {
-      "unit_id": "ELCOAT",
-      "sector_id": "FARM",
-      "presence": "present",
-      "class": "farm",
-      "tags": [],
-      "electrical_role": "load",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
-      },
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 800x600x900 mm = 0.432 m3.",
-        "internals": "media or gutter",
-        "design_kPa": 18.8,
-        "relief_mm": 3.2
-      }
-    },
-    {
-      "unit_id": "PV_CELL",
-      "sector_id": "FARM",
-      "presence": "present",
-      "class": "farm",
-      "tags": [],
-      "electrical_role": "load",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": 0.3,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
-      },
-      "modules": [],
-      "params": {
-        "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 2000x1200x1800 mm = 4.320 m3.",
-        "internals": "media or gutter",
-        "design_kPa": 27.7,
-        "relief_mm": 2.7
-      }
-    },
-    {
       "unit_id": "EXPANDER",
-      "sector_id": "FARM",
+      "sector_id": "CRYO",
       "presence": "present",
-      "class": "farm",
+      "class": "tool",
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Reciprocating expander. 5 kW shaft is this machine. Density on the gas edge is assumed.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.3,
+        "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+        "note": "Reciprocating expander. 5 kW shaft is this machine. Density on the gas edge is assumed."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 600x400x500 mm = 0.120 m3.",
+        "duty": "In 271.300 kg/d, out 271.300 kg/d, 5.000 kW. Sheet docs-authority/duties/EXPANDER.md.",
         "internals": "media or gutter",
         "design_kPa": 14.9,
-        "relief_mm": 3.6
+        "relief_mm": 3.6,
+        "size_mm": [
+          600,
+          400,
+          500
+        ]
       }
     },
     {
       "unit_id": "SIC_FURNACE",
-      "sector_id": "FARM",
+      "sector_id": "GLASS",
       "presence": "present",
-      "class": "farm",
+      "class": "melt",
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Acheson charge path. The 0.50 kg/d edge is the solid moved, not the yield.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.3,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+        "note": "Acheson charge path. The 0.50 kg/d edge is the solid moved, not the yield."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "Inlet 0.000 kg/d, 0.00 kW. Envelope 1500x1500x1800 mm = 4.050 m3.",
+        "duty": "In 0.500 kg/d, out 0.500 kg/d, 0.300 kW. Sheet docs-authority/duties/SIC_FURNACE.md.",
         "internals": "media or gutter",
         "design_kPa": 27.7,
-        "relief_mm": 2.7
+        "relief_mm": 2.7,
+        "size_mm": [
+          1500,
+          1500,
+          1800
+        ]
       }
     }
   ],
@@ -6810,7 +6722,7 @@
     {
       "stream_id": "CUT-1",
       "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "BACKUP_GEN",
+      "to_unit_id": "PROD_C5_C10",
       "phase": "L",
       "presence": "present",
       "carries": "fractionator cut",
@@ -6825,7 +6737,7 @@
         "value": 11.1553,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: ASF C5-C10 share 10.16 of net oil 22.5 + S38 + S39B solvent"
+        "note": "C5-C10 into the cut tank."
       },
       "params": {
         "rate_basis": "ASF C5-C10 share 10.16 of net oil 22.5 + S38 + S39B solvent",
@@ -6843,7 +6755,7 @@
     {
       "stream_id": "CUT-2",
       "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "MFG_SHOP",
+      "to_unit_id": "PROD_C11_C18",
       "phase": "L",
       "presence": "present",
       "carries": "fractionator cut",
@@ -6858,7 +6770,7 @@
         "value": 8.4068,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: ASF C11-C18 share of net oil 22.5"
+        "note": "C11-C18 into the cut tank."
       },
       "params": {
         "rate_basis": "ASF C11-C18 share of net oil 22.5",
@@ -6876,7 +6788,7 @@
     {
       "stream_id": "CUT-3",
       "from_unit_id": "OIL_FRAC",
-      "to_unit_id": "MFG_SHOP",
+      "to_unit_id": "PROD_C19_C28",
       "phase": "L",
       "presence": "present",
       "carries": "fractionator cut",
@@ -6891,7 +6803,7 @@
         "value": 3.9472,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: ASF C19-C28 share 3.93 + S72B lube mist"
+        "note": "C19-C28 into the cut tank."
       },
       "params": {
         "rate_basis": "ASF C19-C28 share 3.93 + S72B lube mist",
@@ -10171,10 +10083,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 26.7,
+        "value": 26.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary"
+        "note": "Glass stock less the 0.50 kg/d charge that now passes through SIC_FURNACE."
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "DOCK",
@@ -10309,10 +10221,10 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 339.06,
+        "value": 259.06,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Includes the unedged habitation water."
+        "note": "Grey less the 80 kg/d that now passes through HAB_WASH."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "NUT",
@@ -11204,10 +11116,10 @@
       "forbidden": "hab AHU",
       "claim_status": "Claimed",
       "rate": {
-        "value": 0.01,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 grams/d concentrate -> 10 g/d"
+        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -11354,10 +11266,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.9875,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: WS_SOLV 1.25 L/d (AUD s13 0.5-2 mid) x 0.79"
+        "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT."
       },
       "params": {
         "rate_basis": "WS_SOLV 1.25 L/d (AUD s13 0.5-2 mid) x 0.79",
@@ -12150,10 +12062,10 @@
       "forbidden": "HAB/FARM return, acid-gas as primary",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": 2131.07,
-        "unit": "kg/h",
+        "value": 51145.68,
+        "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3"
+        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -12257,10 +12169,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1562.91,
-        "unit": "kg/h",
+        "value": 37509.84,
+        "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: polish 1500.0 m3/h at 50.0 C saturated"
+        "note": "AQS-DUTY-010: polish 1500.0 m3/h at 50.0 C saturated Converted kg/h to kg/d. Air returns; it does not leave the building."
       },
       "params": {
         "rate_basis": "polish 1500.0 m3/h at 50.0 C saturated",
@@ -12548,10 +12460,10 @@
       "forbidden": "HAB return, HDR_ACID_GAS primary",
       "claim_status": "Partial / Claimed",
       "rate": {
-        "value": 852.43,
-        "unit": "kg/h",
+        "value": 20458.32,
+        "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3"
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -17878,7 +17790,7 @@
     },
     {
       "stream_id": "IA-ETOH",
-      "from_unit_id": "YEAST",
+      "from_unit_id": "ETOH_STILL",
       "to_unit_id": "ALD",
       "phase": "L",
       "layers": [
@@ -17893,7 +17805,7 @@
         "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "From the still. Same mass as before."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17908,7 +17820,7 @@
     },
     {
       "stream_id": "IA-ETOH-AC",
-      "from_unit_id": "YEAST",
+      "from_unit_id": "ETOH_STILL",
       "to_unit_id": "ACETOX",
       "phase": "L",
       "layers": [
@@ -17923,7 +17835,7 @@
         "value": 0.16,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "From the still. Same mass as before."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17945,15 +17857,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "ethanol solvent",
+      "carries": "retired direct solvent edge",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Retired. Live path is IA-ETOH-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18040,10 +17952,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.13,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Retired. Live path is IA-BUOH-S / IA-BUOH-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18400,10 +18312,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.12,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Retired. Live path is IA-FORM-S."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18430,10 +18342,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Retired. Live path is IA-FORM-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19943,10 +19855,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.15,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+        "note": "Retired. Live path is IA-PN-S / IA-PN-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21411,10 +21323,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.13,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-035. Farm loops closed."
+        "note": "Retired. Live path is IA-GAL / IA-GAL-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22246,10 +22158,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.3,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+        "note": "Retired. Live path is IA-SF-S / IA-SF-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22348,10 +22260,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.002,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+        "note": "Retired. Live path is IA-MED / IA-MED-R."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22997,15 +22909,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 200,
+      "carries": "film supply",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "film supply",
+        "value": 200.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Film supply. Returns on IA-NFT-OUT."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23028,15 +22940,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 200,
+      "carries": "film return",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "film return",
+        "value": 200.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Film return."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23059,15 +22971,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 50,
+      "carries": "mister supply",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "mister supply",
+        "value": 50.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Mister supply. 100 \u00b5m screen."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23090,15 +23002,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 50,
+      "carries": "mister return",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "mister return",
+        "value": 50.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Mister return."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23121,15 +23033,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 20,
+      "carries": "correction supply",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "correction supply",
+        "value": 20.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Dual-root supply."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23152,15 +23064,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 20,
+      "carries": "correction return, not to the tank",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "correction return, not to the tank",
+        "value": 20.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Returns to the bed, not the fish tank."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23183,15 +23095,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.15,
+      "carries": "rice-bed spill",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "rice-bed spill",
+        "value": 0.15,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Rice-bed spill to azolla."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23214,15 +23126,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.15,
+      "carries": "azolla residue",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "azolla residue",
+        "value": 0.15,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev C. Phase 9 interfaces. Circulation, net zero."
+        "note": "AQS-P9. Azolla residue back to the bed."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23245,15 +23157,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.1,
+      "carries": "ethanol feed",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "ethanol feed",
+        "value": 0.46,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "0.20 + 0.16 + 0.10 already leaving the yeast. Now via the still."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23275,15 +23187,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.1,
+      "carries": "ethanol product",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "ethanol product",
+        "value": 0.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Solvent cut. Replaces the direct yeast-to-store edge."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23305,15 +23217,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.05,
+      "carries": "butanol feed",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "butanol feed",
+        "value": 0.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Same mass as IA-BUOH. The still is now on the path."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23335,15 +23247,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.05,
+      "carries": "butanol product",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "butanol product",
+        "value": 0.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Same mass as IA-BUOH."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23359,21 +23271,21 @@
     {
       "stream_id": "IA-FORM-S",
       "from_unit_id": "MEOH_TANK",
-      "to_unit_id": "FORM_RX",
+      "to_unit_id": "FORM",
       "phase": "L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.04,
+      "carries": "methanol to formaldehyde",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "methanol slip",
+        "value": 0.12,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Same mass as IA-MEOH-FORM. One reactor: FORM."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23388,22 +23300,22 @@
     },
     {
       "stream_id": "IA-FORM-R",
-      "from_unit_id": "FORM_RX",
+      "from_unit_id": "FORM",
       "to_unit_id": "IMID",
       "phase": "L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.04,
+      "carries": "formaldehyde",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "formaldehyde",
+        "value": 0.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Same mass as IA-CH2O."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23425,15 +23337,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "bed spill",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "bed spill",
+        "value": 0.15,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "The existing food edge, through the peanut bed. Yield sheet is 0.20; the closed edge is 0.15."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23456,15 +23368,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "peanut",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "peanut",
+        "value": 0.15,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Same 0.15 kg/d into habitation."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23486,15 +23398,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "bed spill",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "bed spill",
+        "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "The existing stalk edge, through the sunflower bed."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23517,15 +23429,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "stalks",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "stalks",
+        "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Same 0.30 kg/d to ash."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23548,15 +23460,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.1,
+      "carries": "occupancy",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "occupancy",
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Not a mass flow. Four occupants. The room is not a process vessel."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23578,15 +23490,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.1,
+      "carries": "return",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "return",
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Not a mass flow."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23608,15 +23520,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "food",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "food",
+        "value": 1.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Plate waste, same mass as IA-HAB-WASTE, now through the galley."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23638,15 +23550,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "plate waste",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "plate waste",
+        "value": 1.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Galley waste to the larvae. Same mass."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23668,15 +23580,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.002,
+      "carries": "iodide stock",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "iodide stock",
+        "value": 0.002,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "The iodide dose, through the medical room."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23698,15 +23610,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.002,
+      "carries": "dose",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "dose",
+        "value": 0.002,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Dose leaves the medical room into habitation."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23728,15 +23640,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 1.0,
+      "carries": "wash water",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "wash water",
+        "value": 80.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Four people, 20 kg/d each. Split out of S12 so grey does not change."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23759,15 +23671,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 1.0,
+      "carries": "grey",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "grey",
+        "value": 80.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev D. Remaining units. Each return matches its feed."
+        "note": "Wash water into grey treatment. S12 reduced by the same 80."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23783,22 +23695,22 @@
     },
     {
       "stream_id": "IA-LITHO-IN",
-      "from_unit_id": "FORM_RX",
-      "to_unit_id": "LITHO",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LITHO_STUB",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.02,
+      "carries": "spent resist and solvent",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "formaldehyde to resist",
+        "value": 0.9875,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Spent resist and solvent. Same mass as S39B, through LITHO_STUB."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23813,22 +23725,22 @@
     },
     {
       "stream_id": "IA-LITHO-OUT",
-      "from_unit_id": "LITHO",
-      "to_unit_id": "WAFER_FAB",
+      "from_unit_id": "LITHO_STUB",
+      "to_unit_id": "OIL_FRAC",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.02,
+      "carries": "spent resist and solvent",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "exposed wafer",
+        "value": 0.9875,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Same mass into the fractionator."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23843,22 +23755,22 @@
     },
     {
       "stream_id": "IA-BLOW-IN",
-      "from_unit_id": "OIL_DRYER",
-      "to_unit_id": "BLOW",
+      "from_unit_id": "PROD_C11_C18",
+      "to_unit_id": "BLOW_MOLD",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.1,
+      "carries": "C11-C18 to the mold",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "pyrolysis wax",
+        "value": 8.4068,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "C11-C18 wax from the tank. Not the dryer."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23873,22 +23785,22 @@
     },
     {
       "stream_id": "IA-BLOW-OUT",
-      "from_unit_id": "BLOW",
+      "from_unit_id": "BLOW_MOLD",
       "to_unit_id": "MFG_SHOP",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.1,
+      "carries": "blown parts",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "blown parts",
+        "value": 8.4068,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Molded parts. Same mass into the shop."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23904,21 +23816,21 @@
     {
       "stream_id": "IA-COAT-IN",
       "from_unit_id": "EW_1",
-      "to_unit_id": "ELCOAT",
+      "to_unit_id": "ELECTRODE_COAT",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.05,
+      "carries": "nickel sheet to the booth",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "nickel sheet",
+        "value": 0.02,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel deposit."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23941,22 +23853,22 @@
     },
     {
       "stream_id": "IA-COAT-OUT",
-      "from_unit_id": "ELCOAT",
+      "from_unit_id": "ELECTRODE_COAT",
       "to_unit_id": "EW_1",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.05,
+      "carries": "coated anode",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "coated anode",
+        "value": 0.02,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Coated anode back to EW-1. Net zero."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23971,22 +23883,22 @@
     },
     {
       "stream_id": "IA-PV-IN",
-      "from_unit_id": "WAFER_FAB",
-      "to_unit_id": "PV_CELL",
+      "from_unit_id": "WS_DOPE",
+      "to_unit_id": "SOLAR_PV_CELL",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.04,
+      "carries": "dopant concentrate",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "silicon wafer",
+        "value": 0.01,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "S36 dopant, through the cell line."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24001,22 +23913,22 @@
     },
     {
       "stream_id": "IA-PV-OUT",
-      "from_unit_id": "PV_CELL",
-      "to_unit_id": "PV_ARRAY",
+      "from_unit_id": "SOLAR_PV_CELL",
+      "to_unit_id": "WAFER_FAB",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": 0.04,
+      "carries": "dopant into the wafer fab",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "cell",
+        "value": 0.01,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Same 10 g/d into the wafer fab."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24038,15 +23950,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "cold gas",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "cold gas",
+        "value": 271.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Displacement 1.57 L/s times 2.0 kg/m3. Density is assumed. Both directions, so the column cut does not change."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24068,15 +23980,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.2,
+      "carries": "expanded gas",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "expanded gas",
+        "value": 271.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Same mass back to the column."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24098,15 +24010,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.08,
+      "carries": "silica charge",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "silica",
+        "value": 0.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Split from S08G. Solid charge only. CO and carbon are not on this edge."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24128,15 +24040,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": 0.08,
+      "carries": "fired charge",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": "silicon carbide",
+        "value": 0.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev E. The six are in scope. No iridium."
+        "note": "Same solid mass to the shop. Not a reaction yield."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24148,6 +24060,110 @@
         "water": 0.97,
         "solute": 0.03
       }
+    },
+    {
+      "stream_id": "IA-MET-AIR-RET",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "MET_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubbed metal-aisle air returned to the hall",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 71604.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "S62 + S71. Closed aisle. No stack."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ACID-AIR-RET",
+      "from_unit_id": "ACID_POLISH_SCRUB",
+      "to_unit_id": "ALK_SCRUBBER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "acid-gas dilution air returned to the alkaline scrubber",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 37509.84,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Same mass as S65. The fan recirculates. Liquor leaves on S66."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "CUT-1-OUT",
+      "from_unit_id": "PROD_C5_C10",
+      "to_unit_id": "BACKUP_GEN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C5-C10 fuel from the tank",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 11.1553,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Same mass as CUT-1. The generator draws the tank, not the column."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "BACKUP_GEN",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "CUT-3-OUT",
+      "from_unit_id": "PROD_C19_C28",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C19-C28 from the tank",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 3.9472,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Same mass as CUT-3."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [

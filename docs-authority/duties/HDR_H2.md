@@ -1,25 +1,20 @@
 # HDR_H2
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-EW4-H2 = 2.820 kg/d from EW_4.
+1. Basis. Mass in 6.66 kg/d. Mass out 6.64 kg/d. Electrical duty 0.0000 kW. In: IA-EW4-H2 2.82 kg/d (hood hydrogen); IA-EW1-H2 1.91 kg/d (hood hydrogen); IA-EW2-H2 1.91 kg/d (hood hydrogen); IA-ALD-H2 0.0200 kg/d (dehydrogenation H2). Out: IA-HDR-H2-02 6.64 kg/d (process H2).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 2.820/(1000*24) = 0.00012 m3/h.
-- Residence = 0.0500/0.00012 = 425.53 h = 25531.9 min.
+- In 6.66 kg/d, out 6.64 kg/d. No holdup claimed.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.26 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. No holdup basis for this class.

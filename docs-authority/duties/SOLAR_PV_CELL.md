@@ -1,19 +1,20 @@
 # SOLAR_PV_CELL
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. The cell process is PV_CELL_MOD.md. This node is that module, not a tank.
+1. Basis. Mass in 0.0100 kg/d. Mass out 0.0100 kg/d. Electrical duty 0.3000 kW. In: IA-PV-IN 0.0100 kg/d (dopant concentrate). Out: IA-PV-OUT 0.0100 kg/d (dopant into the wafer fab).
 
-2. Size. 100 mm wafer. Diffusion 900 °C for 30 minutes. Cell 1.2 W. The graph edge IA-PV-OUT is 0.04 kg/d of cells into the array. There is no 50 L residence volume. A 50 L tank was a generator placeholder and is withdrawn.
+2. Size.
+- Envelope 2400×1200×1600 mm, 4.61 m³. Residence = 4.61 / (0.0100/1000/24) = 11059200.0 h.
 
-3. Material. Clean frame, 6061. Tube quartz. See PV_CELL_MOD.md.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. One SB350. Dopant vapor DN15. Exhaust to the scrubber.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.01 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Tube temperature. Timer.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Tube is open-ended. Exhaust to the scrubber.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
-7. Code. Shop.
+7. Code. Shop. Not stamped.
 
-8. Open items. Lifetime is not measured. The watt and the mass edge are.
+8. Open items. The size basis is an assumption. This unit has not been measured.

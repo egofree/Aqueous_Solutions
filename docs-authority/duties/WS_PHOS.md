@@ -1,25 +1,20 @@
 # WS_PHOS
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-PHOS-SRC = 0.620 kg/d from LEACH_CSTR_1.
+1. Basis. Mass in 0.6200 kg/d. Mass out 0.6350 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-SRC 0.6200 kg/d (phosphate). Out: S34B 0.6250 kg/d (H3PO4); IA-PHOS-DOPE 0.0100 kg/d (phosphate to dopant).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 0.620/(1000*24) = 0.00003 m3/h.
-- Residence = 0.0500/0.00003 = 1935.48 h = 116129.0 min.
+- Envelope 800×800×1100 mm, 0.7040 m³. Residence = 0.7040 / (0.6200/1000/24) = 27251.6 h.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.08 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The size basis is an assumption. This unit has not been measured.

@@ -1,19 +1,20 @@
 # VCD_TRAIN
 
-Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Feed is S29 104.5 kg/d, S13 3.80 kg/d, IA-NUT-01 13.93 kg/d, and S52 42.89 kg/d. Sum 165.1 kg/d. Distillate S25 is 140.5 kg/d. Brine S28 is 17.9 kg/d. Bottoms are 6.7 kg/d.
+1. Basis. Mass in 165.1 kg/d. Mass out 165.1 kg/d. Electrical duty 0.0000 kW. In: S29 104.5 kg/d (treated grey); S52 42.89 kg/d (PEM product H2O); IA-NUT-01 13.93 kg/d (digest surplus); S13 3.80 kg/d (condensate). Out: S25 140.5 kg/d (VCD distillate); S28 17.89 kg/d (VCD brine); IA-VCD-BD 6.71 kg/d (still bottoms).
 
-2. Size. Latent heat at 2260 kJ/kg on 140.5 kg/d is 3.68 kW. Mechanical vapor compression at 30 kWh/m³ is 4.2 kWh/d, 0.18 kW average. The machine is sized at 0.25 kW. Vessel is 200 mm ID by 400 mm tall, 12.6 L. Feed is 6.9 kg/h, so residence is 1.8 h. The old 50 L and 11 h figure was a placeholder.
+2. Size.
+- Envelope 1400×600×1200 mm, 1.01 m³. Residence = 1.01 / (165.1/1000/24) = 146.5 h.
 
-3. Material. 316L, 2 mm. The brine is salt, not clean condensate.
+3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas.
 
-4. Nozzles. Feed DN15. Distillate DN15. Brine DN15. Bottoms DN15. All class 150.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 1.27 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and boiling temperature. High level trips the feed. Low level trips the compressor.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. The shell is under compressor discharge, not atmosphere. DN15 to the scrubber at 110% of the discharge pressure.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. The 30 kWh/m³ is a typical MVC figure, not a test on this shell.
+8. Open items. The size basis is an assumption. This unit has not been measured.

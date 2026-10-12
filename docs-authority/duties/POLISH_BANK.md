@@ -1,25 +1,20 @@
 # POLISH_BANK
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-EW-09 = 3971.080 kg/d from EW_9.
+1. Basis. Mass in 3971.1 kg/d. Mass out 3971.1 kg/d. Electrical duty 0.0000 kW. In: IA-EW-09 3971.1 kg/d (EW tail to polish). Out: IA-POL-02 3753.7 kg/d (raffinate (EW tail after polish) to continuous recycle); IA-POL-CAKE 217.4 kg/d (recovered cake).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 3971.080/(1000*24) = 0.16546 m3/h.
-- Residence = 0.0500/0.16546 = 0.30 h = 18.1 min.
+- V = (3971.1/1000)×(0.5/24) = 0.0827 m³. 30 min.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L. Chloride or scrub liquor. Carbon steel pits.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 6.25 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Differential pressure across the packing, and pH if there is a liquor loop. High differential pressure trips the fan.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Holdup is 30 min. The vessel has not been built, so this is not a measured volume.

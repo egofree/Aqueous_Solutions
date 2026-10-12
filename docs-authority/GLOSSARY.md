@@ -36,7 +36,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {Leach / Salria -- Oxidative chloride leach: HCl + NaClO₃, 70–85 °C, ORP > 1.5 V, pH ≈ 0. Dissolves metals. Doubles as the float–sink medium.}
 
-{MMO -- Mixed-metal oxide anode coating, IrO₂–Ta₂O₅ on Ti Grade 2. The coating is the chemical barrier. The titanium substrate is not a tank wall.}
+{MMO -- Not used. The anode is titanium with a 0.5 mm lead-dioxide coat, or carbon, or nickel. Iridium and IrO₂–Ta₂O₅ are not on the anode spec.}
 
 {NCG -- Non-condensable gas from pyrolysis quench. Goes to AFTERBURNER, not to atmosphere.}
 

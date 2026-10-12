@@ -1,25 +1,20 @@
 # BOARD_MILL
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-LIG-01 = 3.870 kg/d from LIGNO_PRE.
+1. Basis. Mass in 8.70 kg/d. Mass out 8.70 kg/d. Electrical duty 1.00 kW. In: IA-LIG-01 3.87 kg/d (lignin); IA-CEL-01 3.18 kg/d (cellulose); IA-NOX-BOARD 1.65 kg/d (recovered carbon). Out: IA-BOARD-SCRAP 8.01 kg/d (board scrap); IA-BOARD 0.6900 kg/d (board, paper, cardboard).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 3.870/(1000*24) = 0.00016 m3/h.
-- Residence = 0.0500/0.00016 = 310.08 h = 18604.7 min.
+- In 8.70 kg/d, out 8.70 kg/d. No holdup claimed.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.29 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. No holdup basis for this class.

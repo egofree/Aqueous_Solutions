@@ -1,25 +1,20 @@
 # CONTINUOUS_RECYCLE
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-POL-02 = 3753.710 kg/d from POLISH_BANK.
+1. Basis. Mass in 3753.7 kg/d. Mass out 3753.7 kg/d. Electrical duty 0.0000 kW. In: IA-POL-02 3753.7 kg/d (raffinate (EW tail after polish) to continuous recycle). Out: IA-REC-01 3753.7 kg/d (continuous recycle liquor).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 3753.710/(1000*24) = 0.15640 m3/h.
-- Residence = 0.0500/0.15640 = 0.32 h = 19.2 min.
+- Envelope 1500×60×60 mm, 0.0054 m³. Residence = 0.0054 / (3753.7/1000/24) = 0.0345 h.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 6.07 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The size basis is an assumption. This unit has not been measured.

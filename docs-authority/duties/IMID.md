@@ -1,25 +1,20 @@
 # IMID
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-GLX = 0.160 kg/d from GLYOXAL.
+1. Basis. Mass in 0.4500 kg/d. Mass out 0.4500 kg/d. Electrical duty 0.1000 kW. In: IA-GLX 0.1600 kg/d (glyoxal); IA-CLOSE-11 0.1000 kg/d (crayfish molt liquor to imidazole makeup); IA-FORM-R 0.1000 kg/d (formaldehyde); IA-MEAM 0.0700 kg/d (methylamine); 1 more. Out: IA-IMID 0.2600 kg/d (1-methylimidazole); IA-IMID-H2O 0.1900 kg/d (condensation water).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 0.160/(1000*24) = 0.00001 m3/h.
-- Residence = 0.0500/0.00001 = 7500.00 h = 450000.0 min.
+- In 0.4500 kg/d, out 0.4500 kg/d. No holdup claimed.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. HDPE or PVC for the water. The frame is not the wetted part.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.07 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. No holdup basis for this class.

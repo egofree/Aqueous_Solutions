@@ -1,22 +1,21 @@
 # MET_AHU
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. No inlet on the graph.
+1. Basis. Mass in 71604.0 kg/d. Mass out 71604.0 kg/d. Electrical duty 0.0000 kW. In: IA-MET-AIR-RET 71604.0 kg/d (scrubbed metal-aisle air returned to the hall). Out: S62 51145.7 kg/d (MFG metal-aisle capture feed); S71 20458.3 kg/d (metal-aisle fume / mist / dust).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
+- Gas 2520.0 m³/h. Tower area at 1.5 m/s = 2520.0/3600/1.5 = 0.4667 m². Diameter 771 mm.
+- No liquor inlet. No sump volume is invented from the gas mass.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Gas duct DN300 at 10 m/s. Bore from 2520.0 m³/h is 299 mm. Drain DN15. Vent DN15 into the suction of this loop, not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 back to the suction of this loop. Not to the room and not to a stack.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Tower velocity 1.5 m/s is the packing assumption. Bed height is not calculated.

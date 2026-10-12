@@ -1,23 +1,20 @@
 # GEO_ORC
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Energy inlet HL-Q4-REJ = 11.76 kW from Q4_BUS.
+1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.4000 kW. In: none. Out: none.
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Heat: A = 11.76*1000/(500*10) = 2.352 m2. U = 500 W/m2K, approach 10 K.
+- A = 0.4000 × 1000 / (500 × 10) = 0.0800 m². U = 500 W/m²K and ΔT = 10 K are assumed for liquid water.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. No process nozzle.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Both outlet temperatures. High hot-side outlet trips the hot feed.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The approach and the coefficient are not measured.

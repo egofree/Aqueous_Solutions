@@ -1,23 +1,20 @@
 # BOUNDARY_EXPORT
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Energy inlet IA-E-HOUT = 50.25 kW from HEAT_SINK.
+1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Heat: A = 50.25*1000/(500*10) = 10.050 m2. U = 500 W/m2K, approach 10 K.
+- 0.0000 kW. No exchanger area. A heat-transfer area does not belong on this class.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. No wetted alloy. Conductors are copper.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. No process nozzle.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Current. Overcurrent opens the breaker.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Not a pressure vessel. No process vent.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The size basis is an assumption. This unit has not been measured.

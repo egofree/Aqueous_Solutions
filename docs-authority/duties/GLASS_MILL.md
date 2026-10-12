@@ -1,25 +1,20 @@
 # GLASS_MILL
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-GLASS-01 = 36.818 kg/d from GLASS_RINSE.
+1. Basis. Mass in 36.82 kg/d. Mass out 36.82 kg/d. Electrical duty 0.0000 kW. In: IA-GLASS-01 36.82 kg/d (rinsed cullet). Out: IA-GLASS-02 30.00 kg/d (milled cullet); IA-MILL-LOSS 6.82 kg/d (mill dust).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 36.818/(1000*24) = 0.00153 m3/h.
-- Residence = 0.0500/0.00153 = 32.59 h = 1955.6 min.
+- Envelope 800×600×800 mm, 0.3840 m³. Residence = 0.3840 / (36.82/1000/24) = 250.3 h.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L where the stream is wet.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.60 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The size basis is an assumption. This unit has not been measured.

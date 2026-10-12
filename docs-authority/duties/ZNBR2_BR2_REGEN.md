@@ -1,25 +1,21 @@
 # ZNBR2_BR2_REGEN
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet S69 = 852.470 kg/d from ZNBR2.
+1. Basis. Mass in 852.5 kg/d. Mass out 852.5 kg/d. Electrical duty 0.0000 kW. In: S69 852.5 kg/d (Br2 vapor). Out: S69B 852.5 kg/d (NaBr after ORP).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 852.470/(1000*24) = 0.03552 m3/h.
-- Residence = 0.0500/0.03552 = 1.41 h = 84.5 min.
+- Gas 30.00 m³/h. Tower area at 1.5 m/s = 30.0/3600/1.5 = 0.0056 m². Diameter 84 mm.
+- No liquor inlet. No sump volume is invented from the gas mass.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L shell. Wet gas. Packing is polymer. Carbon steel pits.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Gas duct DN40 at 10 m/s. Bore from 30.00 m³/h is 33 mm. Drain DN15. Vent DN15 into the suction of this loop, not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Differential pressure across the packing, and pH if there is a liquor loop. High differential pressure trips the fan.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 back to the suction of this loop. Not to the room and not to a stack.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Tower velocity 1.5 m/s is the packing assumption. Bed height is not calculated.

@@ -1,27 +1,20 @@
 # LEACH_CSTR_1
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-REC-01 = 3753.710 kg/d from CONTINUOUS_RECYCLE.
+1. Basis. Mass in 5622.1 kg/d. Mass out 5622.1 kg/d. Electrical duty 2.00 kW. In: IA-REC-01 3753.7 kg/d (continuous recycle liquor); IA-HOP-01 530.8 kg/d (returned scrap); IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); IA-GREY-01 243.0 kg/d (grey sludge); 17 more. Out: IA-EW-04 4287.8 kg/d (CSTR to EW-1); IA-SINK-01 376.1 kg/d (sink solids); IA-LEACH-NOX 195.0 kg/d (leach offgas); IA-LEACH-FLUE 135.9 kg/d (leach vent); 15 more.
 
 2. Size.
-- Envelope: 2000 x 1200 x 1400 mm.
-- V = 2000*1200*1400/10^9 = 3.3600 m3.
-- Density 1100 kg/m3.
-- Q = 3753.710/(1100*24) = 0.14219 m3/h.
-- Residence = 3.3600/0.14219 = 23.63 h = 1417.9 min.
-- Heat: A = 7.94*1000/(500*10) = 1.588 m2. U = 500 W/m2K, approach 10 K.
+- Envelope 2000×1200×1400 mm, 3.36 m³. Flow 5622.1 kg/d is circulation. Residence 14.34 h. Not a 20-day tank.
 
-3. Material. Density 1100 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 7.43 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 25.1 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The size basis is an assumption. This unit has not been measured.

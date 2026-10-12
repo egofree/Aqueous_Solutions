@@ -1,25 +1,21 @@
 # CRYO_CO2
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-ASU-CO2 = 30.000 kg/d from CRYO_ASU.
+1. Basis. Mass in 50.18 kg/d. Mass out 50.18 kg/d. Electrical duty 0.0000 kW. In: IA-ASU-CO2 30.00 kg/d (CO2 product); S67B 13.30 kg/d (CO2-rich gas after KO); S82 6.88 kg/d (CO₂ return from MeOH FC). Out: IA-CO2-RET 30.00 kg/d (CO2 return); S85 12.17 kg/d (CO2 product after FLUE_KO); S73 6.90 kg/d (CO2 feedstock); S04 1.11 kg/d (CO2).
 
 2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 30.000/(1000*24) = 0.00125 m3/h.
-- Residence = 0.0500/0.00125 = 40.00 h = 2400.0 min.
+- Gas 1.74 m³/h. Tower area at 1.5 m/s = 1.7/3600/1.5 = 0.0003 m². Diameter 20 mm.
+- No liquor inlet. No sump volume is invented from the gas mass.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. 316L. Condensation. No carbon steel.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Gas duct DN15 at 10 m/s and 1.2 kg/m³. Calculated bore 8 mm. Drain DN15. Vent DN15 into the loop, not to the room.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Design pressure 17.8 kPa. DN15 back to the suction of this loop. Not to the room and not to a stack.
 
 7. Code. Shop. Not stamped.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Gas volume uses 1.2 kg/m³ because the edge has no m³/h. Tower velocity 1.5 m/s is the packing assumption. Bed height is not calculated. Duct bore uses 1.2 kg/m³.
