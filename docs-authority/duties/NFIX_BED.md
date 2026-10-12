@@ -1,6 +1,6 @@
 # NFIX_BED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.7500 kg/d. Mass out 0.7500 kg/d. Electrical duty 0.2000 kW. In: IA-BED-NFIX 0.7500 kg/d (bed spill). Out: IA-NFIX-RES 0.3500 kg/d (legume residue); IA-COVER 0.2000 kg/d (cover crop); IA-PN-S 0.2000 kg/d (bed spill).
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.09 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.09 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. No trip is specified.
 

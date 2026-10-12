@@ -1,6 +1,6 @@
 # FORM
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.1200 kg/d. Mass out 0.1200 kg/d. Electrical duty 0.1000 kW. In: IA-FORM-S 0.1200 kg/d (methanol to formaldehyde). Out: IA-FORM-R 0.1000 kg/d (formaldehyde); IA-FORM-H2O 0.0200 kg/d (formaldehyde water).
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.03 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.03 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. No trip is specified.
 

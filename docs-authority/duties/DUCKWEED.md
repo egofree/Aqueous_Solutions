@@ -1,6 +1,6 @@
 # DUCKWEED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 9697.9 kg/d. Mass out 9697.9 kg/d. Electrical duty 0.1000 kW. In: IA-BIO-WEED 9697.0 kg/d (nitrate water); IA-BED-WEED 0.9000 kg/d (nutrient water). Out: IA-WEED-SUMP 9697.0 kg/d (raceway return); IA-WEED-FISH 0.5000 kg/d (duckweed); IA-WEED-HEN 0.2000 kg/d (duckweed); IA-WEED-GOAT 0.1500 kg/d (duckweed); 1 more.
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 9.76 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 9.76 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. No trip is specified.
 

@@ -1,6 +1,6 @@
 # HNO3
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.7000 kg/d. Mass out 0.7000 kg/d. Electrical duty 0.3000 kW. In: IA-O2-NIT 0.5000 kg/d (oxygen to nitric); IA-NH3-NIT 0.2000 kg/d (ammonia to nitric). Out: IA-HNO3 0.6000 kg/d (nitric acid); IA-NIT-H2O 0.1000 kg/d (absorber water).
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.08 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.08 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. No trip is specified.
 

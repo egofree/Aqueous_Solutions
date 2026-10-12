@@ -1,15 +1,15 @@
 # BLOW_MOLD
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 8.41 kg/d. Mass out 8.41 kg/d. Electrical duty 0.5000 kW. In: IA-BLOW-IN 8.41 kg/d (C11-C18 to the mold). Out: IA-BLOW-OUT 8.41 kg/d (blown parts).
 
 2. Size.
 - Envelope 1200×800×1600 mm, 1.54 m³. The box is the machine. It is not a liquid holdup.
 
-3. Material. 316L where the stream is wet. Corrosion allowance is not set.
+3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.29 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.29 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. Temperature or current. High temperature trips the power. There is no liquid-level trip.
 

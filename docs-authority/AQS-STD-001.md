@@ -24,3 +24,9 @@ A unit is not designed until this page exists for it. The sentence on the graph 
 8. Open items. What is assumed. A blank here means the page is unfinished.
 
 Acceptance. All eight lines filled. The size line shows the arithmetic. The graph sentence matches the size line. A unit that fails acceptance is not buildable.
+
+Shop rule, corrosion allowance. Polymer: none. Carbon steel in hydrocarbon service: 1.5 mm. 316L, titanium, and graphite: 0 mm. That is not a measured pit rate.
+
+Shop rule, nozzles. Atmospheric connections are tube or hose. No flange class. Where the process pressure is stated, the connection is rated at 110% of that pressure. The expander inlet is 550 kPa.
+
+Shop rule, relief. Envelope height plus 10 kPa is not a set point. Atmospheric equipment has an open vent to the process and no valve. The expander valve is set at 550 kPa to the cold-box suction.

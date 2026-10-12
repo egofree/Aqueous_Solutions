@@ -1,6 +1,6 @@
 # EW_9
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 4046.4 kg/d. Mass out 4046.4 kg/d. Electrical duty 0.0000 kW. In: IA-EW-08 4046.4 kg/d (EW overflow). Out: IA-EW-09 3971.1 kg/d (EW tail to polish); IA-EW-MET-9 61.34 kg/d (plated sheet); IA-EW-SHEET 13.99 kg/d (cathode sheet).
 
@@ -10,14 +10,14 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 - Liquor 4046.4 kg/d. Thirty-minute holdup V = (4046.4/1000)×(0.5/24) = 0.0843 m³.
 - Envelope 600×420×650 mm is one plate station, not the rack.
 
-3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance is not set.
+3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance 0 mm on the titanium. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 6.31 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 6.31 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. Cell voltage, current, liquor temperature. High temperature or low flow trips the rectifier.
 
-6. Relief. Hood gas leaves on the hydrogen and acid-gas edges already drawn. A DN15 vent joins that hood. Not to the room. No set point. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
+6. Relief. Hood gas leaves on the hydrogen and acid-gas edges already drawn. A DN15 vent joins that hood. Not to the room. No valve. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. The equivalent is copper. The metal is not named on the node. Kilowatts at 2.5 V do not match the node.
+8. Open items. The sheet mass is undifferentiated plated metal. It is not an assay. The copper equivalent is the sizing rule, not a metal identification. Kilowatts at 2.5 V do not match the node.

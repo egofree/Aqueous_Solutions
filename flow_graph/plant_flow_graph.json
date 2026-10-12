@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "BF",
+  "revision": "BG",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-12",
   "sole_authority": true,
@@ -1719,7 +1719,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 347.547 kg/d, out 347.547 kg/d, 0.000 kW. Sheet docs-authority/duties/GREY_TREAT.md.",
+        "duty": "In 347.147 kg/d, out 347.147 kg/d, 0.000 kW. Sheet docs-authority/duties/GREY_TREAT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1866,7 +1866,7 @@
             }
           ]
         },
-        "duty": "In 943.487 kg/d, out 943.487 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
+        "duty": "In 943.087 kg/d, out 943.087 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2176,7 +2176,7 @@
             }
           ]
         },
-        "duty": "In 5622.178 kg/d, out 5622.178 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
+        "duty": "In 5622.510 kg/d, out 5622.510 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
         "internals": "shell and nozzles",
         "design_kPa": 25.1,
         "relief_mm": 2.8,
@@ -2228,7 +2228,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 5.620 kg/d, out 5.620 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
+        "duty": "In 5.330 kg/d, out 5.330 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2290,7 +2290,7 @@
             }
           ]
         },
-        "duty": "In 12.495 kg/d, out 12.495 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
+        "duty": "In 12.205 kg/d, out 12.205 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2408,7 +2408,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 9.785 kg/d, out 9.785 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
+        "duty": "In 9.495 kg/d, out 9.495 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2670,7 +2670,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 272.713 kg/d, out 272.713 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
+        "duty": "In 273.401 kg/d, out 273.401 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4615,7 +4615,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "No mass. The 0.400 kg/d meat edge was acetate mislabeled as feed. Withdrawn.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.2,
@@ -4627,7 +4627,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 0.400 kg/d, out 0.400 kg/d, 0.200 kW. Sheet docs-authority/duties/ANIMAL_PEN.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.200 kW. Sheet docs-authority/duties/ANIMAL_PEN.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4667,7 +4667,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Biological feeds leave as biogas. Shop scrap and spent solvent pass through on IA-DIG-SOL.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.4,
@@ -4679,7 +4679,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 0.915 kg/d, out 0.915 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
+        "duty": "In 1.258 kg/d, out 1.258 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4705,7 +4705,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 0.915 kg/d, out 0.915 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
+        "duty": "In 0.625 kg/d, out 0.625 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4731,7 +4731,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 9.140 kg/d, out 9.140 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
+        "duty": "In 9.483 kg/d, out 9.483 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5152,7 +5152,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Addition. BuCl limited. Excess imidazole leaves on IA-CLOSE-13. No water.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5182,7 +5182,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "[Bmim]Cl plus acetic acid. Acetate to the pretreat. HCl and unused acetic acid to the leach.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5193,7 +5193,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.575 kg/d, out 0.575 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
+        "duty": "In 0.562 kg/d, out 0.562 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -10223,7 +10223,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 259.06,
+        "value": 258.6599999999997,
         "unit": "kg/d",
         "status": "study",
         "note": "Grey less the 80 kg/d that now passes through HAB_WASH."
@@ -12662,7 +12662,7 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 8.3454,
+        "value": 8.055399999999999,
         "unit": "kg/d",
         "status": "study",
         "note": "Fuel draw reduced by the biogas correction."
@@ -12844,7 +12844,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 5.62,
+        "value": 5.33,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d"
@@ -13258,7 +13258,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 243.0472,
+        "value": 242.64719999999969,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated."
@@ -15065,15 +15065,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "biogas",
+      "carries": "biogas from the biological feeds",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.9154,
+        "value": 0.6254,
         "unit": "kg/d",
         "status": "study",
-        "note": "Gas set to the feed. Wet mass cannot leave as more gas than entered."
+        "note": "Shop scrap and spent solvent are not gas."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15095,15 +15095,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "digestate",
+      "carries": "shop scrap and spent solvent",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0,
+        "value": 0.6327020720350884,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "Passthrough. Not a biogas yield."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15130,10 +15130,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.9154,
+        "value": 0.6254,
         "unit": "kg/d",
         "status": "study",
-        "note": "Methane equals the biogas in."
+        "note": "Matches IA-DIG-GAS. Shop scrap is not in this edge."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15335,15 +15335,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "animal food",
+      "carries": "withdrawn",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.4,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "The 0.400 kg/d was the withdrawn acetate edge. Not animal production."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15370,7 +15370,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 126.1883,
+        "value": 126.87608214463197,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014."
@@ -15434,7 +15434,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 119.998,
+        "value": 120.33000000000398,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw."
@@ -16927,7 +16927,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.62,
+        "value": 5.33,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -18674,10 +18674,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.315,
+        "value": 0.30191992740315016,
         "unit": "kg/d",
         "status": "study",
-        "note": "Scaled so the quaternization vessel conserves the feed. The split is unchanged."
+        "note": "BuCl limited. n = 0.160/92.566. Product n\u00d7174.672."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18699,15 +18699,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "quaternization water",
+      "carries": "no quaternization water",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.042,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Scaled so the quaternization vessel conserves the feed. The split is unchanged."
+        "note": "Addition makes no water. Withdrawn."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18729,15 +18729,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "[Bmim][OAc] makeup",
+      "carries": "[Bmim]OAc to the pretreat",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 0.34270207203508846,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "n \u00d7 198.266. Acetate exchange of the chloride."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18746,8 +18746,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "water": 0.97,
-        "solute": 0.03
+        "bmim_oac": 1.0
       }
     },
     {
@@ -18759,15 +18758,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "chloride brine",
+      "carries": "HCl and unused acetic acid",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.175,
+        "value": 0.21921785536806165,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Exchange coproduct plus acetic acid the BuCl did not consume."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21620,15 +21619,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "acetate brine to the pen bedding",
+      "carries": "withdrawn",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.4,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "Acetate brine is not animal feed. Withdrawn."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21932,15 +21931,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "quaternization brine to the nutrient tank",
+      "carries": "unreacted 1-methylimidazole",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.063,
+        "value": 0.11808007259684983,
         "unit": "kg/d",
         "status": "study",
-        "note": "Scaled so the quaternization vessel conserves the feed. The split is unchanged."
+        "note": "Imidazole feed minus the BuCl-limited consumption."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24296,6 +24295,35 @@
       "header": null,
       "forbidden": null,
       "claim_status": null
+    },
+    {
+      "stream_id": "IA-IL-SPENT",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "DIGESTER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent [Bmim]OAc",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.34270207203508846,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Equals IA-IL. The pretreat does not store the solvent."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "bmim_oac": 1.0
+      }
     }
   ],
   "view_presets": [

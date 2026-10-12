@@ -1,6 +1,6 @@
 # GROW_BED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 19100.9 kg/d. Mass out 19100.9 kg/d. Electrical duty 5.00 kW. In: IA-BIO-BED 18909.0 kg/d (nitrate water); IA-NUT-BED 129.6 kg/d (nitrate and bleed salts); IA-DR-OUT 20.00 kg/d (correction return, not to the tank); S89 17.07 kg/d (CO2 enrichment dose (FARM AHU supply)); 10 more. Out: IA-BED-SUMP 18909.0 kg/d (bed return); IA-BED-COMP 130.1 kg/d (salt-laden trim); IA-DR-IN 20.00 kg/d (correction supply); IA-BED-VAP 16.70 kg/d (bed transpiration); 16 more.
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 13.7 mm. Drain DN15. Rating is not set. Not to the room.
+4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 13.7 mm. Drain DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. No trip is specified.
 

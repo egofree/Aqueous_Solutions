@@ -1,6 +1,6 @@
 # PV_ARRAY
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 27.88 kW. In: none. Out: none.
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 
-4. Nozzles. No process nozzle. Rating is not set.
+4. Nozzles. No process nozzle.
 
 5. Instruments. Current. Overcurrent opens the breaker.
 

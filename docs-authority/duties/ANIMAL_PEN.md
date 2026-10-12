@@ -1,15 +1,16 @@
 # ANIMAL_PEN
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4000 kg/d. Mass out 0.4000 kg/d. Electrical duty 0.2000 kW. In: IA-CLOSE-6 0.4000 kg/d (acetate brine to the pen bedding). Out: IA-MEAT 0.4000 kg/d (animal food).
+1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.2000 kW. In: none. Out: none.
 
 2. Size.
-- In 0.4000 kg/d, out 0.4000 kg/d. No holdup claimed.
+- No mass throughput. No volume is invented.
+- No mass. The 0.400 kg/d meat edge was acetate mislabeled as feed. It is withdrawn. No replacement feed is invented.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.06 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. No process nozzle.
 
 5. Instruments. No trip is specified.
 
@@ -17,4 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No holdup basis for this class.
+8. Open items. No mass edge.

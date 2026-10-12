@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-003
 Revision: D
 Date: 2026-10-12
-Authority: graph Rev BF. Tech tree egofree/TechTree. OSE GVCS. Not a PE stamp.
+Authority: graph Rev BG. Tech tree egofree/TechTree. OSE GVCS. Not a PE stamp.
 
 Revision A said the lathe, the mill, and the frame did not exist. The pages now exist: FRAME_SYSTEM.md, POWER.md, LATHE.md, MILL.md, WELDER.md, EW_MODULE.md, FURNACE.md, SILICON.md, ALIGNER.md, ELECTRONICS.md, PV_CELL_MOD.md. The side pages are SIDE_ASSAY.md, SIDE_FARM.md, SIDE_CRYO.md. What is still open is named on those pages, not a missing machine.
 
@@ -13,7 +13,7 @@ The end state is a set of modules that can be arranged to any node on the tech t
 
 Closed on paper: mass, energy, a page per unit, and a page per path machine. The frame is parametric. The 48 V shop rail is 20 kW. The farm LEDs are a second rail.
 
-Not closed: the solids are not compiled. FreeCAD is not on this machine. VCD_TRAIN is class vessel. REMIN is class tank. LITHO_STUB, ELECTRODE_COAT, and SOLAR_PV_CELL are class tool. BLOW_MOLD is class forming. Present kg/d edges close. mvs_criteria.loops_closed stays false. On-site evidence is not in the repo.
+Not closed: the solids are not compiled. FreeCAD is not on this machine. VCD_TRAIN is class vessel. REMIN is class tank. LITHO_STUB, ELECTRODE_COAT, and SOLAR_PV_CELL are class tool. BLOW_MOLD is class forming. Present kg/d edges close on graph Rev BG. mvs_criteria.loops_closed stays false. On-site evidence is not in the repo.
 
 ## Critical path
 

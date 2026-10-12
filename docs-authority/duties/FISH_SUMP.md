@@ -1,6 +1,6 @@
 # FISH_SUMP
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 48000.0 kg/d. Mass out 48000.0 kg/d. Electrical duty 0.3000 kW. In: IA-VEG-SUMP 19393.0 kg/d (bed return); IA-BED-SUMP 18909.0 kg/d (bed return); IA-WEED-SUMP 9697.0 kg/d (raceway return); IA-CLAR-SOL 1.00 kg/d (settled solids). Out: IA-SUMP-FISH 48000.0 kg/d (return).
 
@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. Inlet and outlet DN25. At 1.5 m/s and 1000 kg/m³ the bore is 21.7 mm. Drain DN15. Rating is not set. Not to the room.
+4. Nozzles. Inlet and outlet DN25. At 1.5 m/s and 1000 kg/m³ the bore is 21.7 mm. Drain DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. No trip is specified.
 

@@ -1,19 +1,19 @@
 # HOPPER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 1. Basis. Mass in 633.4 kg/d. Mass out 633.4 kg/d. Electrical duty 0.0000 kW. In: IA-WEAR 596.9 kg/d (worn goods); IA-LEACH-HOP 35.35 kg/d (returned solids); S61 1.20 kg/d (metal scrap). Out: IA-HOP-01 530.3 kg/d (returned scrap); IA-FEED-01 102.7 kg/d (mineral feedstock); IA-CLOSE-5 0.4500 kg/d (hopper fines to the pretreat).
 
 2. Size.
 - In 633.4 kg/d, out 633.4 kg/d. No holdup claimed.
 
-3. Material. Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance is not set.
+3. Material. Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 2.49 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 2.49 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
-6. Relief. The set point is not assigned. DN15 back to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
+6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
