@@ -8743,8 +8743,7 @@
       "to_unit_id": "SOL_ARK_60K",
       "phase": "E",
       "layers": [
-        "elec",
-        "ess"
+        "elec"
       ],
       "presence": "present",
       "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
@@ -8774,6 +8773,42 @@
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: hydro set to bus"
+      }
+    },
+    {
+      "stream_id": "IA-ESS-ZNBR2-SRC",
+      "from_unit_id": "PV_ARRAY",
+      "to_unit_id": "SOL_ARK_60K",
+      "phase": "E",
+      "layers": [
+        "ess"
+      ],
+      "presence": "present",
+      "carries": "PV share of the zinc-bromine round-trip loss",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 1.6667,
+        "unit": "kW",
+        "status": "study",
+        "note": "Ess layer only. Already inside IA-PV-01 on the elec layer. 6.6667 charge minus 5.0 discharge."
+      },
+      "from_sector_id": "ELEC_PV",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [
+        "ess_layer"
+      ],
+      "notes": "Not additional generation.",
+      "params": {
+        "rate_basis": "6.6667 - 5.0",
+        "rate_source": "IA-ESS-ZNBR2-CHG minus IA-ESS-ZNBR2-DIS",
+        "medium": "DC",
+        "conditions": "storage layer only",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-013"
       }
     },
     {
@@ -12815,8 +12850,7 @@
       "to_unit_id": "SOL_ARK_60K",
       "phase": "E",
       "layers": [
-        "elec",
-        "ess"
+        "elec"
       ],
       "presence": "present",
       "carries": "MEOH DC",

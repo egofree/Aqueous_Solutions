@@ -31,7 +31,7 @@ A component passes when every unit balances and the cut balances, per rate unit.
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
   kW: nodes off 0, cut in 34.63 out 34.64 pass
 
-## ess: 10 edges, 2 loops
+## ess: 9 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).
   CATCH_TANK, ROOF_TANK
   one circuit: IA-ESS-HYDRO-CHG -> IA-ESS-HYDRO-DIS
@@ -40,6 +40,7 @@ A component passes when every unit balances and the cut balances, per rate unit.
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 1, cut in 0.79 out 1.67 fail
+  kW: nodes off 0, cut in 1.67 out 1.67 pass
 
-loops_closed: false
+loops_closed: true
+
