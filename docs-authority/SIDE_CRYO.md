@@ -1,11 +1,22 @@
 # Cold box module
 
 Document number: AQS-SIDE-003
-Revision: A
-Date: 2026-10-10
+Revision: B
+Date: 2026-10-11
+Not a PE stamp.
 
-The column is 150 mm, 20 trays, 6 m tall. It does not fit one frame. It is three frames stacked, or one frame and a 6 m tower beside it. The expander is the reciprocating 316L machine, 600 mm, on the base frame. Joule-Thomson valve as the backup.
+1. Basis. Separate nitrogen, oxygen, argon, and the noble-gas cuts from the intake. Refrigeration load 5 kW. Nothing vents.
 
-Power is one connector for the expander drive. Cold gas nozzles are on the top frame. Receivers for helium, neon, argon, krypton, and xenon are 1 L cans on the base. Nothing vents.
+2. Size. Column 150 mm diameter, 20 trays, 0.3 m spacing, packed height 6.0 m. It stands beside the base, guyed to the hall steel. Base frame 600 × 600 × 800, 316L. Expander is reciprocating, 50 mm bore, 80 mm stroke, 600 rpm. Displacement is 1.57 L/s. Shaft power 5 kW is 80 N·m at that speed. One SB350 does not carry 5 kW. The drive takes two connectors. Joule-Thomson valve is the backup on the same nozzles. Receivers are 1 L, five of them: helium, neon, argon, krypton, xenon.
 
-Refrigeration is 5 kW, already stated. The energy cut is closed.
+3. Material. Column 316L, 3 mm wall. Expander 316L. Base frame 316L. Insulation is the vacuum jacket, not foam that soaks condensate.
+
+4. Nozzles. Feed gas DN25 at the column base. Product nozzles DN15 at the cuts, to the 1 L cans. Drive is two SB350. No liquid drain to the room. Cold condensate returns to the water cycle.
+
+5. Instruments. Column pressure, expander speed, can pressure. High can pressure stops the feed. Low water on the expander jacket, if fitted, trips the drive.
+
+6. Relief. Each can has a DN15 valve to the next lower-pressure receiver, then to the column feed, not to the room. Set at 110% of the can working pressure.
+
+7. Code. Shop. Not stamped. The column is not a transport vessel.
+
+8. Open items. Tray efficiency is not measured. The height, the bore, and the torque are.
