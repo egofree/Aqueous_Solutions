@@ -371,7 +371,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {UPW -- Ultrapure water. Plant HDR_UPW / S01 class (< 1 µS/cm post-ED polish); fab further polishes to S27. Pre-remin water serves farm/fab; drinking uses REMIN.}
 
-{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (VCD_HX → EVAP → COMP → COND). Kept from SLINGSHOT into the building stack; study stub rates may be null.}
+{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (VCD_HX → EVAP → COMP → COND). VCD_TRAIN is class vessel. Rates are on the graph.}
 
 {REMIN -- Remineralization. Doses Ca²⁺ / Mg²⁺ / K⁺ (and related) from core salt inventory into drinking water (S26). For potable only — not farm nutrient dose S07.}
 

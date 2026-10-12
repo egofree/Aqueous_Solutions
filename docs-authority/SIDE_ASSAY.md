@@ -1,8 +1,8 @@
 # Assay and relief
 
 Document number: AQS-SIDE-001
-Revision: B
-Date: 2026-10-11
+Revision: C
+Date: 2026-10-12
 Not a PE stamp.
 
 1. Basis. One sample from the leach discharge, 100 mL, filtered. The plant does not buy a spectrometer or a primary standard it cannot make.
@@ -21,4 +21,4 @@ Not a PE stamp.
 
 8. Open items. The balance is a made mechanism, not selected. The sample volume and the return are set.
 
-Relief, restated. Design pressure is liquid head plus 10 kPa. Orifice is the 1 kg/s water case in RELIEF.md. Each pressurized module gets one DN15 valve, set at 110%, piped to the scrubber. Atmospheric modules get a vent, not a valve.
+Relief, restated. The old per-node orifice list used one 1 kg/s water case and the envelope height as water plus 10 kPa. That number is not a set point, and the orifice is not a nozzle. A liquid tank does not get a relief size until the relief case is stated. The nozzle, when there is one, is DN15 back to the process. A machine that is not a liquid tank is not a pressure vessel. Nothing vents to the room.

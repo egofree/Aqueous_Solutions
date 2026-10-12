@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "BE",
+  "revision": "BF",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-12",
   "sole_authority": true,
@@ -37,7 +37,7 @@
           "basis": "daily-average design day; off-graph terms",
           "terms": []
         },
-        "duty": "In 37537.200 kg/d, out 37537.202 kg/d, 0.000 kW. Sheet docs-authority/duties/ACID_POLISH_SCRUB.md.",
+        "duty": "In 37537.202 kg/d, out 37537.202 kg/d, 0.000 kW. Sheet docs-authority/duties/ACID_POLISH_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -118,7 +118,7 @@
             }
           ]
         },
-        "duty": "In 5.800 kg/d, out 5.800 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
+        "duty": "In 6.266 kg/d, out 6.266 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -150,7 +150,7 @@
             }
           ]
         },
-        "duty": "In 116.970 kg/d, out 116.970 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
+        "duty": "In 117.436 kg/d, out 117.436 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -238,7 +238,7 @@
             }
           ]
         },
-        "duty": "In 61.155 kg/d, out 61.160 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
+        "duty": "In 61.155 kg/d, out 61.155 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -301,7 +301,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 108.195 kg/d, out 108.245 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_ACID.md.",
+        "duty": "In 108.245 kg/d, out 108.245 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_ACID.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -489,7 +489,7 @@
             }
           ]
         },
-        "duty": "In 3.950 kg/d, out 3.953 kg/d, 0.000 kW. Sheet docs-authority/duties/COLD_MILL.md.",
+        "duty": "In 3.950 kg/d, out 3.950 kg/d, 0.000 kW. Sheet docs-authority/duties/COLD_MILL.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -628,7 +628,7 @@
             }
           ]
         },
-        "duty": "In 50.179 kg/d, out 50.179 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_CO2.md.",
+        "duty": "In 50.645 kg/d, out 50.645 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_CO2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -828,7 +828,7 @@
             }
           ]
         },
-        "duty": "In 4287.840 kg/d, out 4287.840 kg/d, 6.000 kW. Sheet docs-authority/duties/EW_1.md.",
+        "duty": "In 4287.820 kg/d, out 4287.820 kg/d, 6.000 kW. Sheet docs-authority/duties/EW_1.md.",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
         "relief_mm": 3.4
@@ -1384,7 +1384,7 @@
             }
           ]
         },
-        "duty": "In 252.922 kg/d, out 252.924 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
+        "duty": "In 253.390 kg/d, out 253.390 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -1802,7 +1802,7 @@
             }
           ]
         },
-        "duty": "In 19100.460 kg/d, out 19100.460 kg/d, 5.000 kW. Sheet docs-authority/duties/GROW_BED.md.",
+        "duty": "In 19100.926 kg/d, out 19100.926 kg/d, 5.000 kW. Sheet docs-authority/duties/GROW_BED.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1866,7 +1866,7 @@
             }
           ]
         },
-        "duty": "In 943.905 kg/d, out 943.903 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
+        "duty": "In 943.487 kg/d, out 943.487 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1896,7 +1896,7 @@
           "MEOH_SYNTH": "H2-limited; carrier loop via S82",
           "REMIN": "hydroxide dose; 0.55 g/d if lime+CO2"
         },
-        "duty": "In 17.071 kg/d, out 17.070 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_CO2.md.",
+        "duty": "In 17.071 kg/d, out 17.071 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_CO2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -1917,7 +1917,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 6.660 kg/d, out 6.640 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_H2.md.",
+        "duty": "In 6.640 kg/d, out 6.640 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_H2.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2005,7 +2005,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 633.882 kg/d, out 633.882 kg/d, 0.000 kW. Sheet docs-authority/duties/HOPPER.md.",
+        "duty": "In 633.416 kg/d, out 633.416 kg/d, 0.000 kW. Sheet docs-authority/duties/HOPPER.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2176,7 +2176,7 @@
             }
           ]
         },
-        "duty": "In 5622.085 kg/d, out 5622.089 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
+        "duty": "In 5622.178 kg/d, out 5622.178 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
         "internals": "shell and nozzles",
         "design_kPa": 25.1,
         "relief_mm": 2.8,
@@ -2228,7 +2228,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 5.622 kg/d, out 5.620 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
+        "duty": "In 5.620 kg/d, out 5.620 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2290,7 +2290,7 @@
             }
           ]
         },
-        "duty": "In 12.470 kg/d, out 12.497 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
+        "duty": "In 12.495 kg/d, out 12.495 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2328,7 +2328,7 @@
             }
           ]
         },
-        "duty": "In 0.360 kg/d, out 0.365 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_FERM.md.",
+        "duty": "In 0.360 kg/d, out 0.360 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_FERM.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2408,7 +2408,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 9.810 kg/d, out 9.810 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
+        "duty": "In 9.785 kg/d, out 9.785 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2488,7 +2488,7 @@
             }
           ]
         },
-        "duty": "In 13.990 kg/d, out 13.989 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_MELT.md.",
+        "duty": "In 13.989 kg/d, out 13.989 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_MELT.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2513,7 +2513,7 @@
           "basis": "daily-average design day; off-graph terms",
           "terms": []
         },
-        "duty": "In 71606.460 kg/d, out 71606.452 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_SCRUB.md.",
+        "duty": "In 71606.460 kg/d, out 71606.460 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -2570,7 +2570,7 @@
             }
           ]
         },
-        "duty": "In 610.818 kg/d, out 610.818 kg/d, 12.000 kW. Sheet docs-authority/duties/MFG_SHOP.md.",
+        "duty": "In 610.350 kg/d, out 610.350 kg/d, 12.000 kW. Sheet docs-authority/duties/MFG_SHOP.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2644,7 +2644,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 496.820 kg/d, out 496.820 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "duty": "In 497.286 kg/d, out 497.286 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -2670,7 +2670,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 272.200 kg/d, out 272.160 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
+        "duty": "In 272.713 kg/d, out 272.713 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3179,7 +3179,7 @@
             }
           ]
         },
-        "duty": "In 76.610 kg/d, out 76.607 kg/d, 2.000 kW. Sheet docs-authority/duties/WAFER_FAB.md.",
+        "duty": "In 76.610 kg/d, out 76.610 kg/d, 2.000 kW. Sheet docs-authority/duties/WAFER_FAB.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3218,7 +3218,7 @@
             }
           ]
         },
-        "duty": "In 79.105 kg/d, out 79.106 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
+        "duty": "In 79.083 kg/d, out 79.083 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3250,7 +3250,7 @@
             }
           ]
         },
-        "duty": "In 6.839 kg/d, out 6.841 kg/d, 0.000 kW. Sheet docs-authority/duties/WIRE_DRAW.md.",
+        "duty": "In 6.839 kg/d, out 6.839 kg/d, 0.000 kW. Sheet docs-authority/duties/WIRE_DRAW.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3349,7 +3349,7 @@
             }
           ]
         },
-        "duty": "In 0.270 kg/d, out 0.273 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
+        "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3390,7 +3390,7 @@
             }
           ]
         },
-        "duty": "In 1.246 kg/d, out 1.250 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
+        "duty": "In 1.246 kg/d, out 1.246 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3507,7 +3507,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 860.960 kg/d, out 860.957 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 860.957 kg/d, out 860.957 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3538,7 +3538,7 @@
             }
           ]
         },
-        "duty": "In 852.470 kg/d, out 852.473 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 852.470 kg/d, out 852.470 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -3563,7 +3563,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 0.620 kg/d, out 0.635 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
+        "duty": "In 0.620 kg/d, out 0.620 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3609,7 +3609,7 @@
             }
           ]
         },
-        "duty": "In 36.820 kg/d, out 36.818 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_RINSE.md.",
+        "duty": "In 36.820 kg/d, out 36.820 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_RINSE.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3648,7 +3648,7 @@
             }
           ]
         },
-        "duty": "In 36.818 kg/d, out 36.820 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_MILL.md.",
+        "duty": "In 36.820 kg/d, out 36.820 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_MILL.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -3747,7 +3747,7 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 165.122 kg/d, out 165.119 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
+        "duty": "In 165.122 kg/d, out 165.122 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -4653,7 +4653,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 145.110 kg/d, out 145.066 kg/d, 0.100 kW. Sheet docs-authority/duties/COMPOST.md.",
+        "duty": "In 145.576 kg/d, out 145.576 kg/d, 0.100 kW. Sheet docs-authority/duties/COMPOST.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4679,7 +4679,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 0.920 kg/d, out 0.940 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
+        "duty": "In 0.915 kg/d, out 0.915 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4705,7 +4705,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 0.940 kg/d, out 0.940 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
+        "duty": "In 0.915 kg/d, out 0.915 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4731,7 +4731,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 9.139 kg/d, out 9.140 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
+        "duty": "In 9.140 kg/d, out 9.140 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4802,7 +4802,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 598.020 kg/d, out 598.020 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "duty": "In 1902.730 kg/d, out 1902.730 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5163,7 +5163,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.420 kg/d, out 0.400 kg/d, 0.100 kW. Sheet docs-authority/duties/QUAT.md.",
+        "duty": "In 0.420 kg/d, out 0.420 kg/d, 0.100 kW. Sheet docs-authority/duties/QUAT.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5193,7 +5193,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.560 kg/d, out 0.560 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
+        "duty": "In 0.575 kg/d, out 0.575 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5268,7 +5268,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 3.180 kg/d, out 3.180 kg/d, 0.100 kW. Sheet docs-authority/duties/BSFL.md.",
+        "duty": "In 3.230 kg/d, out 3.230 kg/d, 0.100 kW. Sheet docs-authority/duties/BSFL.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5343,7 +5343,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.020 kg/d, 0.100 kW. Sheet docs-authority/duties/BEES.md.",
+        "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.100 kW. Sheet docs-authority/duties/BEES.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5443,7 +5443,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.200 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/CRAYFISH.md.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/CRAYFISH.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6461,7 +6461,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.150 kg/d, out 0.150 kg/d, 0.300 kW. Sheet docs-authority/duties/PEANUT.md.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.300 kW. Sheet docs-authority/duties/PEANUT.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6536,7 +6536,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 1.130 kg/d, out 1.130 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_GALLEY.md.",
+        "duty": "In 1.180 kg/d, out 1.180 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_GALLEY.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -6603,15 +6603,15 @@
       "notes": "Reciprocating expander. 5 kW shaft is this machine. Density on the gas edge is assumed.",
       "enabled": true,
       "continuous_kw": {
-        "value": 5.0,
+        "value": 0.614,
         "unit": "kW",
         "status": "study",
-        "note": "Reciprocating expander. 5 kW shaft is this machine. Density on the gas edge is assumed."
+        "note": "Shaft = mass times 0.70 of the isentropic drop, 500 to 130 kPa. 614 W. The 5 kW figure was the cold-box load, not this cylinder."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 271.300 kg/d, out 271.300 kg/d, 5.000 kW. Sheet docs-authority/duties/EXPANDER.md.",
+        "duty": "In 1575.544 kg/d, out 1575.544 kg/d, 0.614 kW. Sheet docs-authority/duties/EXPANDER.md.",
         "internals": "media or gutter",
         "design_kPa": 14.9,
         "relief_mm": 3.6,
@@ -6619,7 +6619,9 @@
           600,
           400,
           500
-        ]
+        ],
+        "rho_kg_m3": 11.61,
+        "shaft_w": 614.4
       }
     },
     {
@@ -6641,7 +6643,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.500 kg/d, out 0.500 kg/d, 0.300 kW. Sheet docs-authority/duties/SIC_FURNACE.md.",
+        "duty": "In 0.800 kg/d, out 0.800 kg/d, 0.300 kW. Sheet docs-authority/duties/SIC_FURNACE.md.",
         "internals": "media or gutter",
         "design_kPa": 27.7,
         "relief_mm": 2.7,
@@ -8471,7 +8473,7 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 108.195,
+        "value": 108.245,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d HCl as 20 wt%. Brine from the leach bleed."
@@ -8952,7 +8954,7 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4287.82,
+        "value": 4287.8,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: DUTY-008 concentrate 0.17 m3/h x 1050.0 kg/m3 x 24 h"
@@ -9264,7 +9266,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 36.8182,
+        "value": 36.82,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: cullet 30.0 kg/d dry (DUTY-008 burnout basis = silicate yield) + drained moisture 6.82"
@@ -9917,10 +9919,10 @@
       "forbidden": "raw AFTERBURNER flue",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": 1.109,
+        "value": 1.575188,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J: GROW_BED net uptake = 4.2 kg/d fresh food x 0.08 dry matter / 0.5 harvest index x 0.45 C x 44/12."
+        "note": "Bed takes the added CO2."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
@@ -10043,7 +10045,7 @@
       "forbidden": "FR-4 to pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": 42.0,
+        "value": 42.0021,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE plated metals \u224842 kg/d at 150 kg/d wet feed"
@@ -10149,7 +10151,7 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 79.0997,
+        "value": 79.0768,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38"
@@ -10833,7 +10835,7 @@
       "forbidden": "HDR_UPW, farm beds",
       "claim_status": "Closed",
       "rate": {
-        "value": 17.8892,
+        "value": 17.8924,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: VCD brine 10% of feed"
@@ -11075,7 +11077,7 @@
       "forbidden": "sewer, farm beds",
       "claim_status": "Claimed",
       "rate": {
-        "value": 0.2725,
+        "value": 0.27,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L)"
@@ -11528,7 +11530,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 61.16,
+        "value": 61.1553,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S45 3.6 + air at lambda 2.0 (34.3 kg/kg stoich)"
@@ -11902,7 +11904,7 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.941,
+        "value": 3.9389,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S57 less 10% draw swarf"
@@ -11942,7 +11944,7 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.9529,
+        "value": 3.95,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim"
@@ -11982,7 +11984,7 @@
       "forbidden": "open ignition, HAB air",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": 3.1999,
+        "value": 3.2,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec"
@@ -12243,10 +12245,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 116.97,
+        "value": 117.436188,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-008: afterburner flue 10.07 kg/h; carries the 15.0 kg/d CO2 basis (AQS-AUD-001 mid of 12-22.5 kg/d) moved here from S18 in Rev J."
+        "note": "Flue includes the silicon-carbide CO."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -12395,7 +12397,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 852.473,
+        "value": 852.47,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD."
@@ -12502,7 +12504,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 2.4366,
+        "value": 2.4442,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids"
@@ -12660,10 +12662,10 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 8.37,
+        "value": 8.3454,
         "unit": "kg/d",
         "status": "study",
-        "note": "Matches mid Source-A synth ~2\u20138 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC"
+        "note": "Fuel draw reduced by the biogas correction."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -12842,7 +12844,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 5.6223,
+        "value": 5.62,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d"
@@ -13092,7 +13094,7 @@
       ],
       "namespace": "S",
       "rate": {
-        "value": 1.25,
+        "value": 1.2456,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L"
@@ -13125,10 +13127,10 @@
       ],
       "namespace": "S",
       "rate": {
-        "value": 0.625,
+        "value": 0.61,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: 50/50 split of the same band, 0.625 L/d dilute 1.0 kg/L"
+        "note": "Phosphate feed 0.620 less dopant 0.010."
       },
       "params": {
         "rate_basis": "50/50 split of the same band, 0.625 L/d dilute 1.0 kg/L",
@@ -13158,7 +13160,7 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 17.07,
+        "value": 17.071,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
@@ -13612,10 +13614,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.8,
+        "value": 6.266188,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+        "note": "Includes the silicon-carbide CO."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13978,7 +13980,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 61.34,
+        "value": 61.3411,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -14074,10 +14076,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 239.62,
+        "value": 240.086188,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+        "note": "Knockout passes the added CO mass."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -14166,10 +14168,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 597.3307,
+        "value": 596.862812,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+        "note": "Goods less the mass that left as CO."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -14411,10 +14413,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.5,
+        "value": 5.20014,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N."
+        "note": "Char less the carbon charged to the silicon-carbide furnace."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15068,10 +15070,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.94,
+        "value": 0.9154,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "Gas set to the feed. Wet mass cannot leave as more gas than entered."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15128,10 +15130,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.94,
+        "value": 0.9154,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "Methane equals the biogas in."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15308,10 +15310,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 140.64,
+        "value": 141.150288,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "Compost passes the added trim."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15368,7 +15370,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 126.1,
+        "value": 126.1883,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014."
@@ -15432,7 +15434,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 120.0,
+        "value": 119.998,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw."
@@ -15824,7 +15826,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 27.36,
+        "value": 27.3623,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
@@ -16084,10 +16086,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 30.0,
+        "value": 30.466188,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "The added flue mass leaves with the CO2 cut."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16143,7 +16145,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 66.5,
+        "value": 66.5023,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016."
@@ -16234,7 +16236,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 129.63,
+        "value": 129.629,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016."
@@ -16265,10 +16267,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 129.63,
+        "value": 130.096188,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016."
+        "note": "The fixed carbon leaves in the trim."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16325,10 +16327,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 530.753,
+        "value": 530.285912,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016"
+        "note": "Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16416,10 +16418,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 30.0,
+        "value": 30.466188,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+        "note": "Cold box passes the added CO2."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16806,10 +16808,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 597.33,
+        "value": 596.863812,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "Worn goods follow the goods."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16985,7 +16987,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 13.99,
+        "value": 13.9889,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -17062,10 +17064,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.35,
+        "value": 0.3454,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+        "note": "Feed 0.36 less biogenic methanol. The residue had been larger than the feed allowed."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17212,7 +17214,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 195.02,
+        "value": 195.0247,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -17252,7 +17254,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 135.9,
+        "value": 135.9019,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -17372,7 +17374,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.91,
+        "value": 1.89,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-022."
@@ -17710,7 +17712,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.547,
+        "value": 0.5471,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-023"
@@ -18672,10 +18674,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.3,
+        "value": 0.315,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Scaled so the quaternization vessel conserves the feed. The split is unchanged."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18702,10 +18704,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.04,
+        "value": 0.042,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Scaled so the quaternization vessel conserves the feed. The split is unchanged."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18762,7 +18764,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.16,
+        "value": 0.175,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
@@ -19035,10 +19037,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.23,
+        "value": 2.28,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19824,10 +19826,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.4,
+        "value": 0.35,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+        "note": "Residue less the seed that is now 0.20 kg/d."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21580,7 +21582,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.4491,
+        "value": 0.45,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
@@ -21795,7 +21797,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.14,
+        "value": 0.1896,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
@@ -21892,7 +21894,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.07,
+        "value": 0.0702,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
@@ -21935,10 +21937,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.06,
+        "value": 0.063,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "Scaled so the quaternization vessel conserves the feed. The split is unchanged."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22008,10 +22010,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.4,
+        "value": 0.38,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-045. Clover on worm castings. Cuttings return."
+        "note": "Cuttings less 0.02 kg/d nectar to the bees."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23342,10 +23344,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.15,
+        "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "The existing food edge, through the peanut bed. Yield sheet is 0.20; the closed edge is 0.15."
+        "note": "10 m2 at 0.02 kg/m2/day."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23373,10 +23375,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.15,
+        "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same 0.15 kg/d into habitation."
+        "note": "Same seed into habitation."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23525,10 +23527,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.13,
+        "value": 1.18,
         "unit": "kg/d",
         "status": "study",
-        "note": "Plate waste, same mass as IA-HAB-WASTE, now through the galley."
+        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23555,10 +23557,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.13,
+        "value": 1.18,
         "unit": "kg/d",
         "status": "study",
-        "note": "Galley waste to the larvae. Same mass."
+        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23955,10 +23957,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 271.3,
+        "value": 1575.544287,
         "unit": "kg/d",
         "status": "study",
-        "note": "Displacement 1.57 L/s times 2.0 kg/m3. Density is assumed. Both directions, so the column cut does not change."
+        "note": "Displacement 1.57 L/s at 11.61 kg/m3. Inlet 500 kPa, 150 K. P/RT."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23985,7 +23987,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 271.3,
+        "value": 1575.544287,
         "unit": "kg/d",
         "status": "study",
         "note": "Same mass back to the column."
@@ -24018,7 +24020,7 @@
         "value": 0.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "Split from S08G. Solid charge only. CO and carbon are not on this edge."
+        "note": "Silica charge. SiO2 + 3C -> SiC + 2CO."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24045,10 +24047,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5,
+        "value": 0.333672,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same solid mass to the shop. Not a reaction yield."
+        "note": "SiC product 0.3337 kg/d. Not the silica mass."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24164,6 +24166,136 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-NECTAR",
+      "from_unit_id": "CLOVER",
+      "to_unit_id": "BEES",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "clover nectar",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Matches IA-HONEY. Bees do not create mass."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SIC-C",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "SIC_FURNACE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "carbon reagent",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 0.29986,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "3 mol C per mol SiO2. 0.2999 kg/d on 0.500 kg/d silica. Char taken as carbon."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SIC-CO",
+      "from_unit_id": "SIC_FURNACE",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "carbon monoxide",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 0.466188,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "2 mol CO per mol SiO2, 0.4662 kg/d. The flue air already contains the oxygen."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-SIC-RET",
+      "from_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "compost carbon returned to the leach",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 0.466188,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Closes the silicon-carbide carbon. Same mass as the CO. Not IA-NUT-LEACH."
+      },
+      "from_sector_id": "NUT",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-CRAY-DET",
+      "from_unit_id": "CRAYFISH",
+      "to_unit_id": "COMPOST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "unassimilated detritus",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "0.200 detritus in, 0.180 leaves as food and molt."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "header": null,
+      "forbidden": null,
+      "claim_status": null
     }
   ],
   "view_presets": [

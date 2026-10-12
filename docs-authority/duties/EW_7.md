@@ -1,20 +1,23 @@
 # EW_7
 
-Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 1. Basis. Mass in 4122.6 kg/d. Mass out 4122.6 kg/d. Electrical duty 0.0000 kW. In: IA-EW-06 4122.6 kg/d (EW overflow). Out: IA-EW-07 4051.5 kg/d (EW overflow); IA-EW-MET-7 71.14 kg/d (plated sheet).
 
 2. Size.
-- Envelope 600×420×650 mm, 0.1638 m³. Residence = 0.1638 / (4122.6/1000/24) = 0.9536 h.
+- Sheet 71.14 kg/d. As copper, 0.02844 kg/d per A. Current 71.14/0.02844 = 2501 A. At 200 A/m², area 2501/200 = 12.51 m². Plate 0.60×0.42 m, both sides 0.504 m², 25 plates. Pitch 50 mm.
+- At 2.5 V that current is 6.25 kW. The node books 0.0000 kW.
+- Liquor 4122.6 kg/d. Thirty-minute holdup V = (4122.6/1000)×(0.5/24) = 0.0859 m³.
+- Envelope 600×420×650 mm is one plate station, not the rack.
 
-3. Material. 316L. Chloride or scrub liquor. Carbon steel pits.
+3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance is not set.
 
-4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 6.36 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 6.36 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
 
 5. Instruments. Cell voltage, current, liquor temperature. High temperature or low flow trips the rectifier.
 
-6. Relief. Hood gas leaves on the hydrogen and acid-gas edges already drawn. A DN15 vent from the cell joins that hood. Not to the room.
+6. Relief. Hood gas leaves on the hydrogen and acid-gas edges already drawn. A DN15 vent joins that hood. Not to the room. No set point. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. The size basis is an assumption. This unit has not been measured.
+8. Open items. The equivalent is copper. The metal is not named on the node. Kilowatts at 2.5 V do not match the node.

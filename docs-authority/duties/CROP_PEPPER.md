@@ -1,19 +1,19 @@
 # CROP_PEPPER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0600 kg/d. Mass out 0.0600 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_PEPPER 0.0600 kg/d (pepper). Out: IA-CROP_PEPPER-HAB 0.0600 kg/d (harvest).
 
 2. Size.
 - In 0.0600 kg/d, out 0.0600 kg/d. No holdup claimed.
 
-3. Material. HDPE or PVC for the water. The frame is not the wetted part.
+3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. Inlet and outlet DN15. At 1.5 m/s and 1000 kg/m³ the bore is 0.02 mm, raised to DN15. Drain DN15. Vent DN15 to the suction or to the alkaline scrubber. Not to the room.
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.02 mm. That is not a specification. Nozzle is DN15. Rating is not set. Not to the room.
 
-5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
+5. Instruments. No trip is specified.
 
-6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
+6. Relief. Not a pressure vessel. A vent, if the shell is closed, returns to the process. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 

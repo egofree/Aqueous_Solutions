@@ -1,19 +1,19 @@
 # S13_CLASS_TREAT
 
-Standard: AQS-STD-001 Rev A. Graph Rev BE. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BF. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
 
 2. Size.
 - No mass throughput. No volume is invented.
 
-3. Material. 316L where the stream is wet.
+3. Material. 316L where the stream is wet. Corrosion allowance is not set.
 
-4. Nozzles. No process nozzle.
+4. Nozzles. No process nozzle. Rating is not set.
 
-5. Instruments. Level and temperature on a liquid holdup. High level trips the inlet.
+5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
-6. Relief. Design pressure 17.8 kPa. DN15 to the alkaline scrubber if the stream is wet, or back to the tank if it is hydrocarbon. Not to the room.
+6. Relief. The set point is not assigned. DN15 back to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
