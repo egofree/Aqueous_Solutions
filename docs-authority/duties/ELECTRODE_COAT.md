@@ -1,22 +1,19 @@
 # ELECTRODE_COAT
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
-1. Basis. No inlet on the graph.
+1. Basis. Nickel plate on a shop part. The electrowinning anode coat is PbO₂ on titanium and is specified on EW_MODULE.md. This booth is not that coat.
 
-2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
+2. Size. Bath 10 L. Nickel at 200 A/m². A 0.1 m² part is 20 A. At about 3 V that is 60 W. Nickel is 1.095 g/Ah. At 90% that is 197 g/h per square metre. Twenty micrometres is 178 g/m², so about one hour. Booth envelope 600 × 400 × 600 mm on a wet frame.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. Tank polymer. Anode nickel sheet from the electrowinning nickel cell. Work is the part. Exhaust duct to MET_AHU.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. One SB350. Bath fill and drain DN15, drain to the leach. Exhaust DN50.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Current. No flow, no plate. Exhaust fan failure trips the rectifier.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Bath is open. Exhaust is the relief. It does not enter the room.
 
-7. Code. Shop. Not stamped.
+7. Code. Shop.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Bath chemistry beyond nickel ion is not written. The current and the time are.

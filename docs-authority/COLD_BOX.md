@@ -1,5 +1,5 @@
 # Cold box
 
-Column 150 mm. 20 trays at 0.3 m, packed height 6 m. Cuts: helium, neon, nitrogen, argon, oxygen, krypton, xenon, held in the named receivers. Expander is reciprocating 316L with a Joule-Thomson backup. Refrigeration balance is the closed energy cut. No vent.
+Column, expander, and receivers are SIDE_CRYO.md and CRYO_ASU.md. This page does not carry a second size.
 
-Refrigeration load 5 kW at the expander. JT backup takes the same duty if the machine is down.
+Refrigeration at the expander is 5 kW. The graph node is 18 kW. That gap is stated in CRYO_ASU.md and is not closed by repeating it here.

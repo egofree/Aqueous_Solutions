@@ -1,25 +1,19 @@
 # REMIN
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
-1. Basis. Mass inlet IA-UPW-REMIN = 10.000 kg/d from BMED_UPW_POLISH.
+1. Basis. IA-UPW-REMIN is 10.0 kg/d of polish water. Product is S26, 10.0 kg/d potable.
 
-2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
-- Density 1000 kg/m3.
-- Q = 10.000/(1000*24) = 0.00042 m3/h.
-- Residence = 0.0500/0.00042 = 120.00 h = 7200.0 min.
+2. Size. Drinking salts at 40 mg/L calcium, 10 mg/L magnesium, and 5 mg/L potassium are 55 mg/L. On 10 L/d that is 0.55 g/d. The pot is 1 L, charged with 4 g, which is about a week. UV is point of use. A tap at 2 L/min through a 0.5 L chamber with a 16 W lamp is the dose path for 40 mJ/cm². The old 50 L tank and 120 h residence is withdrawn.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. Pot is polymer or glass. Lamp sleeve is quartz. No carbon steel.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. Inlet DN15. Outlet DN15 to the tap. Drain DN15 back to grey.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Lamp current. Lamp off closes the tap solenoid. No level trip on a 1 L pot.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Open pot. No valve.
 
-7. Code. Shop. Not stamped.
+7. Code. Shop.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. The 40 mJ/cm² is the lamp class, not a measured dose in this chamber.

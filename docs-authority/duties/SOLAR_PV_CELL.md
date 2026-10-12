@@ -1,22 +1,19 @@
 # SOLAR_PV_CELL
 
-Standard: AQS-STD-001 Rev A. Graph Rev AX. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Study. Not a PE stamp.
 
-1. Basis. No inlet on the graph.
+1. Basis. The cell process is PV_CELL_MOD.md. This node is that module, not a tank.
 
-2. Size.
-- No issued envelope. V taken as 0.050 m3 for the residence check.
+2. Size. 100 mm wafer. Diffusion 900 °C for 30 minutes. Cell 1.2 W. The graph edge IA-PV-OUT is 0.04 kg/d of cells into the array. There is no 50 L residence volume. A 50 L tank was a generator placeholder and is withdrawn.
 
-3. Material. Density 1000 kg/m3. Allowance 1.5 mm on metal, 0 on polymer.
+3. Material. Clean frame, 6061. Tube quartz. See PV_CELL_MOD.md.
 
-4. Nozzles. DN15 below 24 kg/d, DN25 to 120 kg/d, DN50 above. Class 150 on metal. Unrated on polymer.
+4. Nozzles. One SB350. Dopant vapor DN15. Exhaust to the scrubber.
 
-5. Instruments. Level and temperature. High level trips the feed pump.
+5. Instruments. Tube temperature. Timer.
 
-6. Relief. Vent to the scrubber. Set point 110% of operating pressure where pressurized.
+6. Relief. Tube is open-ended. Exhaust to the scrubber.
 
-7. Code. Shop. Not stamped.
+7. Code. Shop.
 
-6. Relief. Atmospheric. Vent DN15 to the alkaline scrubber. No room vent.
-
-8. Open items. None.
+8. Open items. Lifetime is not measured. The watt and the mass edge are.

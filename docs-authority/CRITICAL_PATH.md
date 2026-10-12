@@ -1,19 +1,19 @@
 # Critical path against the tech tree
 
 Document number: AQS-PLAN-003
-Revision: A
-Date: 2026-10-10
+Revision: B
+Date: 2026-10-12
 Authority: graph Rev BD. Tech tree egofree/TechTree. OSE GVCS. Not a PE stamp.
+
+Revision A said the lathe, the mill, and the frame did not exist. The pages now exist: FRAME_SYSTEM.md, POWER.md, LATHE.md, MILL.md, WELDER.md, EW_MODULE.md, FURNACE.md, SILICON.md, ALIGNER.md, ELECTRONICS.md, PV_CELL_MOD.md. The side pages are SIDE_ASSAY.md, SIDE_FARM.md, SIDE_CRYO.md. What is still open is named on those pages, not a missing machine.
 
 The end state is a set of modules that can be arranged to any node on the tech tree, and that can copy themselves. The OSE rule is a common frame, a common power unit, and machines that are not locked to one task. The Aqueous plant is a closed mass graph. It is not that set.
 
 ## Completeness
 
-Closed: mass, energy, a page per unit, a nozzle list, an STL per unit.
+Closed on paper: mass, energy, a page per unit, and a page per path machine. The frame is parametric. The 48 V shop rail is 20 kW. The farm LEDs are a second rail.
 
-Not a module: no common frame, no power bus pinout, no parametric size. The shop is a name. The lathe and the mill do not exist. Silicon reduction, the aligner, and the photovoltaic cell are duties. The nine electrowinning racks are the only machines with a plate count.
-
-Against the core path, foundations and a crude metals line exist. Machine tools do not. Everything past chemistry is blocked on that.
+Not closed: the solids are not compiled. FreeCAD is not on this machine. The graph still marks VCD, remineralizer, lithography, electrode coat, blow mold, and the cell node as study stubs. Those six now have a size in the duty pages. The node class has not been changed.
 
 ## Critical path
 
