@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No mass edge.
+8. Open items. No mass edge. No origin. The node has no envelope, so none was placed in the block.

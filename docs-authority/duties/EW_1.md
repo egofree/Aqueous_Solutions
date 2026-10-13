@@ -12,12 +12,20 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance 0 mm on the titanium. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 6.49 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin 3200, 5300, -6000 mm. Size 600 × 420 × 650 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-COAT-OUT, inlet, -Y face center, 3500, 5300, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-E-RECT, inlet, -Y face center, 3500, 5300, -5675 mm. Height 325 mm from the bottom. Rating conductor. Not a hose.
+- N3, IA-EW-04, inlet, -Y face center, 3500, 5300, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, IA-COAT-IN, outlet, +Y face center, 3500, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, IA-EW-01, outlet, +Y face center, 3500, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N6, IA-EW-MET-1, outlet, +Y face center, 3500, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N7, IA-EW1-H2, outlet, +Y face center, 3500, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N8, IA-HDR-H2-01, outlet, +Y face center, 3500, 5720, -5675 mm. Height 325 mm from the bottom. Rating conductor. Not a hose.
+- N9, IA-HX8, outlet, +Y face center, 3500, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Cell voltage, current, liquor temperature. High temperature or low flow trips the rectifier.
 
 6. Relief. Hood gas leaves on the hydrogen and acid-gas edges already drawn. A DN15 vent joins that hood. Not to the room. No valve. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. The sheet mass is undifferentiated plated metal. It is not an assay. The copper equivalent is the sizing rule, not a metal identification. Kilowatts at 2.5 V do not match the node.
+8. Open items. The sheet mass is undifferentiated plated metal. It is not an assay. The copper equivalent is the sizing rule, not a metal identification. Kilowatts at 2.5 V do not match the node. Bore was not calculated where the edge has no density and no line size.

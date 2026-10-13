@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. The holdup assumes 1000 kg/m³. The vessel is not built.
+8. Open items. The holdup assumes 1000 kg/m³. The vessel is not built. No origin. The node has no envelope, so none was placed in the block.

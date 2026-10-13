@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: C4 on AQS-PLAN-004. Origins for the 43 block members. The plate does not grow.
+Active item: C5 on AQS-PLAN-004. Units in no block. Farm beds are not shrunk.
 
 ## Limits
 

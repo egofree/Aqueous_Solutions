@@ -19,4 +19,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Tower velocity 1.5 m/s is the packing assumption. HTU is a packing figure, not a measured transfer unit.
+8. Open items. Tower velocity 1.5 m/s is the packing assumption. HTU is a packing figure, not a measured transfer unit. No origin. The node has no envelope, so none was placed in the block.
