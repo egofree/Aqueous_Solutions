@@ -20,4 +20,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. The vent is IA-SIC-CO to AFTERBURNER. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
-8. Open items. Char is taken as carbon. The oxygen in the CO is the oxygen already in the flue air. Neither is an assay. Bore was not calculated where the edge has no density and no line size.
+8. Open items. Neither is an assay.

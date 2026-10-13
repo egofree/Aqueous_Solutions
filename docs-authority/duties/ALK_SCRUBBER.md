@@ -18,4 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
-8. Open items. Tower velocity 1.5 m/s is the packing assumption. HTU is a packing figure, not a measured transfer unit. No origin. The node has no envelope, so none was placed in the block.
+8. Open items. HTU is a packing figure, not a measured transfer unit.

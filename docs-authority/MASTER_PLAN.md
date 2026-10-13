@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line C7 closed in this revision. No rate change.
+Authority: graph Rev BH. Not a PE stamp. Line C8 closed in this revision. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,7 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: C8
+Active: C9
 
 AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 
@@ -46,6 +46,6 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | C5 | C | The 84 with no block | Farm beds larger than the block are named, not shrunk. | closed. Twenty envelopes are in the sector block. AZOLLA_BED stays 18 m by 5 m, long side on the farm block. CURTAIL and HEAT_SINK have no GEO block and were not placed. Sixty-two have no envelope. The plate did not grow. No rate change. |
 | C6 | C | Generic internals | No node still says "shell and nozzles" or "media or gutter". | closed. 146 generic strings replaced. 12 took the class row. 75 of farm, tool, inverter, pv, rectifier, and hab are none, not a tank. 59 with no vessel row are none and not drawn. 53 specific strings left, including the nine cells. No rate change. Mass-layer kg/d nodes 169, 0 off. |
 | C7 | C | Relief destinations | Atmospheric nodes name an existing vent edge, or say there is none. | closed. 187 duties say atmospheric and no vent edge. 11 name an existing outgoing edge. EXPANDER stays 550 kPa to CRYO_ASU on IA-EXP-OUT. relief_mm stays 3.6. No new edge. No new set point. No rate change. |
-| C8 | C | Section 8 | Empty, or only a hold. | waits |
+| C8 | C | Section 8 | Empty, or only a hold. | closed. 37 duties have no open item. 162 keep a hold from the Rev C table. Placement, bore, class, and a stated holdup were taken off the gap list. No measurement was invented. No rate change. |
 | C9 | C | Meshes | An STL, or the solid is still an envelope. | waits |
 | C10 | C | Self-copy | Not started until C2 through C9 are accepted. | waits |

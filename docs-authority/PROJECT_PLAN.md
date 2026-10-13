@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: C8 on AQS-PLAN-004. Section 8 is empty, or every remaining sentence is a hold. It does not invent a measurement.
+Active item: C9 on AQS-PLAN-004. Point at an STL, or say the solid is still an envelope. FreeCAD is not here.
 
 ## Limits
 
@@ -86,13 +86,25 @@ These stay named. They do not block a nozzle, a class, or a vent that the files 
 | Hold | Why it stays |
 | --- | --- |
 | IA-FEED-01, S08, S16 | Placeholder composition. Not a measured assay. |
-| IA-EW-SHEET | `metal` 1.0. Not an element split. |
-| IA-FERM-RES, IA-STILL, IA-ABE-STILL | No volatile-solids measurement. They leave on IA-DIG-GAS. |
-| EW-1 current | `POWER.md` says 5.3 kW. The node is 6.0 kW study. No conductor is sized from the page. |
+| IA-EW-SHEET | `metal` 1.0. The cell sheets are undifferentiated plate. Not an element split. |
+| IA-FERM-RES, IA-STILL, IA-ABE-STILL | No volatile-solids measurement. They leave on IA-DIG-GAS. The gas composition is the liquid placeholder. |
+| EW-1 current | `POWER.md` says 5.3 kW. The node is 6.0 kW study. The cell duties state the 2.5 V product against the node. No conductor is sized from the page. |
 | `HEAT_LADDER_DUTIES.md` | Still the Rev K note. The graph is the duty. |
 | IA-HDR-H2-01, 03, 04 | 2.1333 kg/d, empty layer list. Outside the mass cut. |
-| EXPANDER `relief_mm` | 3.6 mm. Not recalculated at 550 kPa. |
+| EXPANDER `relief_mm` | 3.6 mm. Not recalculated at 550 kPa. Isentropic efficiency 70% is assumed. |
 | MVS flag | `mvs.mvs_criteria.loops_closed` stays false. |
+| No holdup basis | The duty says so. Envelope divided by flow is not used in its place. |
+| Not measured | The unit, the coat life, the methane fraction, the tray efficiency, the approach, or the coefficient. |
+| No diameter | No vessel diameter or machine envelope on the node. Not invented. |
+| No heat rate | No kilowatts on the node. Area is not calculated. |
+| 1.2 kg/m³ | Used for a gas volume where the edge has no m³/h. Not a measurement. Not resized. |
+| 1000 kg/m³ | Used for a holdup. Not a measurement. Not resized. |
+| Can pressure | Working pressure is not on the node. |
+| HTU | A packing figure, not a measured transfer unit. |
+| Stages | Stages and reflux are not set. |
+| Vessel not built | The stated volume is not a measured volume. A reservoir volume is not the two-minute holdup. |
+| SiC charge | Char as carbon, and the oxygen in the CO, are not an assay. |
+| Phosphoric acid | Concentration is not on the node. 316L is not confirmed. |
 
 ### Rules that were being treated as gaps
 
@@ -164,4 +176,4 @@ Replace only the two generic strings. Do not rewrite a specific internal.
 | C9 | Meshes | Each present unit points at an STL, or the line says the solid is still an envelope. Envelope boxes do not count where the internal matters. The nine cell racks in `cad/stl` count. FreeCAD is not here. The operator box compiles the rest |
 | C10 | Self-copy | Not started until C2 through C9 are accepted |
 
-Active item: C8 on AQS-PLAN-004. Section 8 is empty, or every remaining sentence is a hold. It does not invent a measurement.
+Active item: C9 on AQS-PLAN-004. Point at an STL, or say the solid is still an envelope. FreeCAD is not here.

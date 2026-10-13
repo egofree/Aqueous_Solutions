@@ -18,4 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Isentropic efficiency 70% is assumed. The relief orifice is not calculated at 550 kPa. Bore was not calculated where the edge has no density and no line size.
+8. Open items. Isentropic efficiency 70% is assumed. The relief orifice is not calculated at 550 kPa.

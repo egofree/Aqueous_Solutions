@@ -20,4 +20,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
-8. Open items. No heat rate on the node. Bore was not calculated where the edge has no density and no line size.
+8. Open items. No heat rate on the node.

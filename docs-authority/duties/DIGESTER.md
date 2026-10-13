@@ -16,4 +16,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. The vent is IA-DIG-GAS to EMETH. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
-8. Open items. Biological feeds still leave entirely as biogas. IA-FERM-RES 0.3454 kg/d, IA-STILL 0.1000 kg/d, and IA-ABE-STILL 0.1800 kg/d sum to IA-DIG-GAS 0.6254 kg/d. There is no volatile-solids measurement on those three edges, so no digestate split is calculated. IA-DIG-GAS composition is the liquid placeholder, not a gas analysis. Shop scrap and spent solvent are on IA-DIG-SOL, not in the gas. No origin. The node has no envelope, so it was not placed.
+8. Open items. IA-FERM-RES 0.3454 kg/d, IA-STILL 0.1000 kg/d, and IA-ABE-STILL 0.1800 kg/d sum to IA-DIG-GAS 0.6254 kg/d. There is no volatile-solids measurement on those three edges, so no digestate split is calculated. IA-DIG-GAS composition is the liquid placeholder, not a gas analysis.
