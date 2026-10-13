@@ -17,6 +17,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Differential pressure across the packing, and pH if there is a liquor loop. High differential pressure trips the fan.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped.
+7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/ZNBR2_BR2_REGEN.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. HTU is a packing figure, not a measured transfer unit.

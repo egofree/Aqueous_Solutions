@@ -14,6 +14,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Temperature and pressure. High pressure trips the feed. Gas stays on the gas edge, not the room.
 
 6. Relief. Atmospheric. The vent is IA-DIG-GAS to EMETH. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/DIGESTER.stl`.
 
 8. Open items. IA-FERM-RES 0.3454 kg/d, IA-STILL 0.1000 kg/d, and IA-ABE-STILL 0.1800 kg/d sum to IA-DIG-GAS 0.6254 kg/d. There is no volatile-solids measurement on those three edges, so no digestate split is calculated. IA-DIG-GAS composition is the liquid placeholder, not a gas analysis.

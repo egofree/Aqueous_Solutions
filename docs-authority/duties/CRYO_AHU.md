@@ -14,6 +14,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. Atmospheric. The vents are S56 to RELIEF_CRYO and S86 to RELIEF_CRYO. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/CRYO_AHU.stl`.
 
 8. Open items. Gas volume uses 1.2 kg/m³ because the edge has no m³/h. Duct bore uses 1.2 kg/m³.

@@ -15,6 +15,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped.
+7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/PROD_C5_C10.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. The vessel has not been built, so this is not a measured volume.

@@ -14,6 +14,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Pressure and temperature. High pressure trips the feed.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped.
+7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_HE.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. Can working pressure is not on the node.

@@ -16,6 +16,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 6. Relief. Set point 550 kPa, 110% of the 500 kPa inlet. Destination is CRYO_ASU, on IA-EXP-OUT, not the room. The node design_kPa is 550. relief_mm is 3.6 and was not resized for that set point.
 
-7. Code. Shop. Not stamped.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/EXPANDER.stl`.
 
 8. Open items. Isentropic efficiency 70% is assumed. The relief orifice is not calculated at 550 kPa.
