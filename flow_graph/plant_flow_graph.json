@@ -10055,7 +10055,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
+      "notes": "Not a measured assay and not an element split of the cathode harvest. Placeholder composition, the same fractions as IA-FEED-01.",
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
@@ -10418,7 +10418,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
+      "notes": "Not a measured assay. Placeholder composition, the same fractions as IA-FEED-01. Do not resize from it.",
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
@@ -15412,7 +15412,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
+      "notes": "Not a measured assay. Placeholder composition, the same fractions as S08 and S16. The working averages in ELECTRICAL.md are not this edge. Do not resize from it.",
       "composition": {
         "water": 0.9,
         "HCl": 0.05,
@@ -16997,7 +16997,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
+      "notes": "Not an element split. Composition is metal 1.0. The copper-equivalent sizing rule is not an assay.",
       "composition": {
         "metal": 1.0
       },
@@ -25027,5 +25027,6 @@
   "notes_rev_bg": "76ead20. Put the solvent train and the digester on the reaction.",
   "notes_rev_bh": "682b64e. Finish the synthesis train on the reaction. Derived views remain Rev N until marked.",
   "notes_rev_bh_cut": "Cut test on Rev BH. flow_graph/derived/LOOP_CLOSURE.md. Root loops_closed left true to match that report. mvs.mvs_criteria.loops_closed left false. No rate change.",
+  "notes_rev_bh_assay": "Feed assay not measured. IA-FEED-01, S08, and S16 keep the placeholder composition. IA-EW-SHEET stays metal 1.0. No resize. No rate change.",
   "loops_closed": true
 }
