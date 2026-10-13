@@ -119,7 +119,7 @@
           ]
         },
         "duty": "In 6.266 kg/d, out 6.266 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -152,7 +152,7 @@
         },
         "duty": "In 117.436 kg/d, out 117.436 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -239,7 +239,7 @@
           ]
         },
         "duty": "In 61.807 kg/d, out 61.807 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -258,7 +258,7 @@
       "params": {
         "duty": "In 7.770 kg/d, out 7.770 kg/d, 0.000 kW. Sheet docs-authority/duties/BAGHOUSE.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -302,7 +302,7 @@
       "modules": [],
       "params": {
         "duty": "In 108.245 kg/d, out 108.245 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_ACID.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -321,7 +321,7 @@
       "modules": [],
       "params": {
         "duty": "In 118.700 kg/d, out 118.700 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -376,7 +376,7 @@
           ]
         },
         "duty": "In 140.520 kg/d, out 140.520 kg/d, 6.000 kW. Sheet docs-authority/duties/BMED_UPW_POLISH.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -400,7 +400,7 @@
         "solid": "none",
         "boundary_kind": "dock freight door (logical)",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -423,7 +423,7 @@
         "ref": "oil_line.py / ANIMATION_BRIEF D6",
         "duty": "In 1.405 kg/d, out 1.405 kg/d, 0.000 kW. Sheet docs-authority/duties/C29_RECYCLE.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -491,7 +491,7 @@
         },
         "duty": "In 3.950 kg/d, out 3.950 kg/d, 0.000 kW. Sheet docs-authority/duties/COLD_MILL.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -535,7 +535,7 @@
         },
         "duty": "In 3753.710 kg/d, out 3753.710 kg/d, 0.000 kW. Sheet docs-authority/duties/CONTINUOUS_RECYCLE.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -554,7 +554,7 @@
       "modules": [],
       "params": {
         "duty": "In 27.362 kg/d, out 27.362 kg/d, 0.000 kW. Sheet docs-authority/duties/CRU.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -574,7 +574,7 @@
       "params": {
         "duty": "In 135.740 kg/d, out 135.740 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_AHU.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -594,7 +594,7 @@
       "params": {
         "duty": "In 0.052 kg/d, out 0.052 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "weir and launder",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -648,7 +648,7 @@
       "params": {
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_DED_COOL.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -1348,7 +1348,7 @@
         },
         "duty": "In 376.100 kg/d, out 376.100 kg/d, 0.000 kW. Sheet docs-authority/duties/FLOAT_SINK.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "weir and launder",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -1386,7 +1386,7 @@
         },
         "duty": "In 253.390 kg/d, out 253.390 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "weir and launder",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -1447,7 +1447,7 @@
           ]
         },
         "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -1496,7 +1496,7 @@
         },
         "duty": "In 3.200 kg/d, out 3.200 kg/d, 0.000 kW. Sheet docs-authority/duties/GAS_ATOMIZER.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -1522,7 +1522,7 @@
         "survey_status": "design_survey_locked",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_GHEX.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -1551,7 +1551,7 @@
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 2.000 kW. Sheet docs-authority/duties/GEO_HP.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -1570,7 +1570,7 @@
       "params": {
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_HP_CLOSED_LOOP.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -1721,7 +1721,7 @@
       "params": {
         "duty": "In 347.147 kg/d, out 347.147 kg/d, 0.000 kW. Sheet docs-authority/duties/GREY_TREAT.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -1803,7 +1803,7 @@
           ]
         },
         "duty": "In 19100.926 kg/d, out 19100.926 kg/d, 5.000 kW. Sheet docs-authority/duties/GROW_BED.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -1828,7 +1828,7 @@
       "params": {
         "presence": "present",
         "duty": "In 6.629 kg/d, out 6.629 kg/d, 0.300 kW. Sheet docs-authority/duties/H2_DRYER.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -1867,7 +1867,7 @@
           ]
         },
         "duty": "In 943.087 kg/d, out 943.087 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2007,7 +2007,7 @@
       "params": {
         "duty": "In 633.416 kg/d, out 633.416 kg/d, 0.000 kW. Sheet docs-authority/duties/HOPPER.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2102,7 +2102,7 @@
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HYDRO_SET.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2182,7 +2182,7 @@
           ]
         },
         "duty": "In 5622.650 kg/d, out 5622.650 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 25.1,
         "relief_mm": 2.8,
         "size_mm": [
@@ -2211,7 +2211,7 @@
         "reclass_reason": "Rev K: a sum of rectifier and load kW, not a vessel, panel or skid; the panel solids are RECTIFIER and SOL_ARK_60K. Seed row kept as a marker only.",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LOAD_AGG.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2235,7 +2235,7 @@
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "In 4.479 kg/d, out 4.479 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "weir and launder",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2296,7 +2296,7 @@
           ]
         },
         "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2335,7 +2335,7 @@
         },
         "duty": "In 0.360 kg/d, out 0.360 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_FERM.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2381,7 +2381,7 @@
           ]
         },
         "duty": "In 7.848 kg/d, out 7.848 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2433,7 +2433,7 @@
       "params": {
         "duty": "In 71604.000 kg/d, out 71604.000 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_AHU.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2495,7 +2495,7 @@
         },
         "duty": "In 13.989 kg/d, out 13.989 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_MELT.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2576,7 +2576,7 @@
           ]
         },
         "duty": "In 610.350 kg/d, out 610.350 kg/d, 12.000 kW. Sheet docs-authority/duties/MFG_SHOP.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2627,7 +2627,7 @@
           ]
         },
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/NORTH_DOCK.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2676,7 +2676,7 @@
       "params": {
         "presence": "present",
         "duty": "In 273.555 kg/d, out 273.555 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2733,7 +2733,7 @@
         },
         "duty": "In 33.000 kg/d, out 33.000 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_DRYER.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2753,7 +2753,7 @@
       "params": {
         "duty": "In 29.914 kg/d, out 29.914 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_FRAC.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2787,7 +2787,7 @@
         },
         "duty": "In 34.405 kg/d, out 34.405 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_PYRO.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2821,7 +2821,7 @@
         },
         "duty": "In 3971.080 kg/d, out 3971.080 kg/d, 0.000 kW. Sheet docs-authority/duties/POLISH_BANK.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -2839,7 +2839,7 @@
         "ref": "oil_line.py",
         "duty": "In 8.407 kg/d, out 8.407 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C11_C18.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2856,7 +2856,7 @@
         "ref": "oil_line.py",
         "duty": "In 3.947 kg/d, out 3.947 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C19_C28.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2873,7 +2873,7 @@
         "ref": "oil_line.py",
         "duty": "In 1.405 kg/d, out 1.405 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C29.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2890,7 +2890,7 @@
         "ref": "oil_line.py",
         "duty": "In 11.155 kg/d, out 11.155 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C5_C10.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -2917,7 +2917,7 @@
         "count": 1,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "nameplate_kw": 70
@@ -2979,7 +2979,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 24.000 kW. Sheet docs-authority/duties/RECTIFIER.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3002,7 +3002,7 @@
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/RELIEF_CRYO.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3019,7 +3019,7 @@
         "solid": "H2_STACK (existing Feature: 8 m H2 vent stack, gas_handling; Feature name, not a unit alias)",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/RELIEF_H2.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3072,7 +3072,7 @@
       "params": {
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/S13_CLASS_TREAT.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3092,7 +3092,7 @@
       "params": {
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SALT_FEED.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3114,7 +3114,7 @@
         "kW": 60,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3185,7 +3185,7 @@
           ]
         },
         "duty": "In 76.610 kg/d, out 76.610 kg/d, 2.000 kW. Sheet docs-authority/duties/WAFER_FAB.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3224,7 +3224,7 @@
           ]
         },
         "duty": "In 79.122 kg/d, out 79.122 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3257,7 +3257,7 @@
         },
         "duty": "In 6.839 kg/d, out 6.839 kg/d, 0.000 kW. Sheet docs-authority/duties/WIRE_DRAW.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3276,7 +3276,7 @@
       "modules": [],
       "params": {
         "duty": "In 3.259 kg/d, out 3.259 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3295,7 +3295,7 @@
       "modules": [],
       "params": {
         "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_DOPE.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3314,7 +3314,7 @@
       "modules": [],
       "params": {
         "duty": "In 1.500 kg/d, out 1.500 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_HF_ED.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3355,7 +3355,7 @@
           ]
         },
         "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3396,7 +3396,7 @@
           ]
         },
         "duty": "In 1.246 kg/d, out 1.246 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3415,7 +3415,7 @@
       "modules": [],
       "params": {
         "duty": "In 3.000 kg/d, out 3.000 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PEROX.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3434,7 +3434,7 @@
       "modules": [],
       "params": {
         "duty": "In 3.300 kg/d, out 3.300 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SLURRY.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3453,7 +3453,7 @@
       "modules": [],
       "params": {
         "duty": "In 0.210 kg/d, out 0.210 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3513,7 +3513,7 @@
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
         "duty": "In 860.957 kg/d, out 860.957 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "peak_kw": 60
@@ -3569,7 +3569,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.620 kg/d, out 0.620 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3616,7 +3616,7 @@
         },
         "duty": "In 36.820 kg/d, out 36.820 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_RINSE.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3655,7 +3655,7 @@
         },
         "duty": "In 36.820 kg/d, out 36.820 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_MILL.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3726,7 +3726,7 @@
         },
         "duty": "In 30.000 kg/d, out 30.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_BURNOUT.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3754,7 +3754,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 165.111 kg/d, out 165.111 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3796,7 +3796,7 @@
         },
         "duty": "In 10.000 kg/d, out 10.000 kg/d, 0.000 kW. Sheet docs-authority/duties/REMIN.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3820,7 +3820,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_COAT.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3844,7 +3844,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_ALIGN.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3868,7 +3868,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_DEV.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -3918,7 +3918,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.988 kg/d, out 0.988 kg/d, 0.100 kW. Sheet docs-authority/duties/LITHO_STUB.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3950,7 +3950,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.300 kW. Sheet docs-authority/duties/ELECTRODE_COAT.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -3982,7 +3982,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 8.407 kg/d, out 8.407 kg/d, 0.500 kW. Sheet docs-authority/duties/BLOW_MOLD.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -4057,7 +4057,7 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.300 kW. Sheet docs-authority/duties/SOLAR_PV_CELL.md.",
         "presence": "present",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
@@ -4633,7 +4633,7 @@
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.200 kW. Sheet docs-authority/duties/ANIMAL_PEN.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4659,7 +4659,7 @@
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 145.576 kg/d, out 145.576 kg/d, 0.100 kW. Sheet docs-authority/duties/COMPOST.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4685,7 +4685,7 @@
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 1.148 kg/d, out 1.148 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4711,7 +4711,7 @@
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 0.625 kg/d, out 0.625 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4763,7 +4763,7 @@
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 8.700 kg/d, out 8.700 kg/d, 1.000 kW. Sheet docs-authority/duties/BOARD_MILL.md.",
-        "internals": "shell and nozzles",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4789,7 +4789,7 @@
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
         "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.600 kW. Sheet docs-authority/duties/HTC.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4969,7 +4969,7 @@
       "params": {
         "presence": "present",
         "duty": "In 1.000 kg/d, out 1.000 kg/d, 0.200 kW. Sheet docs-authority/duties/YEAST.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -4994,7 +4994,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.640 kg/d, out 0.640 kg/d, 0.200 kW. Sheet docs-authority/duties/ABE.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5019,7 +5019,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.100 kW. Sheet docs-authority/duties/ACETOX.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5044,7 +5044,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/ALD.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5069,7 +5069,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.330 kg/d, out 0.330 kg/d, 0.100 kW. Sheet docs-authority/duties/GLYOXAL.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5094,7 +5094,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/FORM.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5119,7 +5119,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.100 kW. Sheet docs-authority/duties/MEAM.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5144,7 +5144,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.523 kg/d, out 0.523 kg/d, 0.100 kW. Sheet docs-authority/duties/IMID.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5169,7 +5169,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.223 kg/d, out 0.223 kg/d, 0.100 kW. Sheet docs-authority/duties/QUAT.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "size_mm": [
@@ -5199,7 +5199,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.412 kg/d, out 0.412 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5224,7 +5224,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.700 kg/d, out 0.700 kg/d, 0.300 kW. Sheet docs-authority/duties/HNO3.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5249,7 +5249,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/BUCL.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5274,7 +5274,7 @@
       "params": {
         "presence": "present",
         "duty": "In 3.230 kg/d, out 3.230 kg/d, 0.100 kW. Sheet docs-authority/duties/BSFL.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5299,7 +5299,7 @@
       "params": {
         "presence": "present",
         "duty": "In 9697.900 kg/d, out 9697.900 kg/d, 0.100 kW. Sheet docs-authority/duties/DUCKWEED.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5324,7 +5324,7 @@
       "params": {
         "presence": "present",
         "duty": "In 4.020 kg/d, out 4.020 kg/d, 0.100 kW. Sheet docs-authority/duties/WORMS.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5349,7 +5349,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.100 kW. Sheet docs-authority/duties/BEES.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5374,7 +5374,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.500 kg/d, out 0.500 kg/d, 0.100 kW. Sheet docs-authority/duties/CHICKENS.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5399,7 +5399,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.700 kg/d, out 0.700 kg/d, 0.100 kW. Sheet docs-authority/duties/GOATS.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5424,7 +5424,7 @@
       "params": {
         "presence": "present",
         "duty": "In 48001.000 kg/d, out 48001.000 kg/d, 0.100 kW. Sheet docs-authority/duties/FISH.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5449,7 +5449,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/CRAYFISH.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5474,7 +5474,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.100 kg/d, out 0.100 kg/d, 0.100 kW. Sheet docs-authority/duties/AZOLLA.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5499,7 +5499,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/MUSHROOM.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5524,7 +5524,7 @@
       "params": {
         "presence": "present",
         "duty": "In 2.400 kg/d, out 2.400 kg/d, 0.050 kW. Sheet docs-authority/duties/COMPOST_TOILET.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5549,7 +5549,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.750 kg/d, out 0.750 kg/d, 0.200 kW. Sheet docs-authority/duties/NFIX_BED.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5574,7 +5574,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.150 kW. Sheet docs-authority/duties/MUSH_STRAW.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5599,7 +5599,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.250 kg/d, out 0.250 kg/d, 0.150 kW. Sheet docs-authority/duties/MUSH_BLOCK.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5624,7 +5624,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.150 kW. Sheet docs-authority/duties/AMF.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5649,7 +5649,7 @@
       "params": {
         "presence": "present",
         "duty": "In 3.020 kg/d, out 3.020 kg/d, 0.050 kW. Sheet docs-authority/duties/COMPOST_MYC.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5674,7 +5674,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.400 kg/d, out 0.400 kg/d, 0.400 kW. Sheet docs-authority/duties/FRUIT_GUTTER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5699,7 +5699,7 @@
       "params": {
         "presence": "present",
         "duty": "In 19443.800 kg/d, out 19443.800 kg/d, 0.400 kW. Sheet docs-authority/duties/VEG_BED.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5724,7 +5724,7 @@
       "params": {
         "presence": "present",
         "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/CLARIFIER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5749,7 +5749,7 @@
       "params": {
         "presence": "present",
         "duty": "In 48200.300 kg/d, out 48200.300 kg/d, 0.300 kW. Sheet docs-authority/duties/BIOFILTER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 21.8,
         "relief_mm": 3.0,
         "size_mm": [
@@ -5779,7 +5779,7 @@
       "params": {
         "presence": "present",
         "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/FISH_SUMP.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5804,7 +5804,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.120 kg/d, out 0.120 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_TOMATO.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5829,7 +5829,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.080 kg/d, out 0.080 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_CUCUMBER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5854,7 +5854,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.060 kg/d, out 0.060 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_PEPPER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5879,7 +5879,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.080 kg/d, out 0.080 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_LETTUCE.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5904,7 +5904,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_SPINACH.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5929,7 +5929,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_KALE.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5954,7 +5954,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.060 kg/d, out 0.060 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_ALLIUM.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -5979,7 +5979,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.030 kg/d, out 0.030 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_BASIL.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6004,7 +6004,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_ROSEMARY.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6029,7 +6029,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.410 kg/d, out 0.410 kg/d, 0.200 kW. Sheet docs-authority/duties/CLOVER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6099,7 +6099,7 @@
             "turkey tail spawn"
           ]
         },
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 31.6,
         "relief_mm": 2.5,
         "size_mm": [
@@ -6129,7 +6129,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.200 kW. Sheet docs-authority/duties/STRUVITE.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 21.8,
         "relief_mm": 3.0,
         "size_mm": [
@@ -6159,7 +6159,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.200 kW. Sheet docs-authority/duties/ASH.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 24.7,
         "relief_mm": 2.8,
         "size_mm": [
@@ -6189,7 +6189,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.004 kg/d, out 0.004 kg/d, 0.200 kW. Sheet docs-authority/duties/IODIDE.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "size_mm": [
@@ -6287,7 +6287,7 @@
       "params": {
         "presence": "present",
         "duty": "In 200.000 kg/d, out 200.000 kg/d, 0.300 kW. Sheet docs-authority/duties/NFT.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 12.9,
         "relief_mm": 3.9,
         "size_mm": [
@@ -6317,7 +6317,7 @@
       "params": {
         "presence": "present",
         "duty": "In 50.000 kg/d, out 50.000 kg/d, 0.300 kW. Sheet docs-authority/duties/MISTER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "size_mm": [
@@ -6347,7 +6347,7 @@
       "params": {
         "presence": "present",
         "duty": "In 20.000 kg/d, out 20.000 kg/d, 0.300 kW. Sheet docs-authority/duties/DUAL_ROOT.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 15.9,
         "relief_mm": 3.5,
         "size_mm": [
@@ -6377,7 +6377,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.150 kg/d, out 0.150 kg/d, 0.300 kW. Sheet docs-authority/duties/AZOLLA_BED.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 13.9,
         "relief_mm": 3.8,
         "size_mm": [
@@ -6407,7 +6407,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.460 kg/d, out 0.460 kg/d, 0.300 kW. Sheet docs-authority/duties/ETOH_STILL.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 24.7,
         "relief_mm": 2.8,
         "size_mm": [
@@ -6437,7 +6437,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.130 kg/d, out 0.130 kg/d, 0.300 kW. Sheet docs-authority/duties/BUOH_STILL.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 21.8,
         "relief_mm": 3.0,
         "size_mm": [
@@ -6467,7 +6467,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.300 kW. Sheet docs-authority/duties/PEANUT.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6492,7 +6492,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.300 kW. Sheet docs-authority/duties/SUNFLOWER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6517,7 +6517,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_SLEEP.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6542,7 +6542,7 @@
       "params": {
         "presence": "present",
         "duty": "In 1.180 kg/d, out 1.180 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_GALLEY.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6567,7 +6567,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.002 kg/d, out 0.002 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_MED.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6592,7 +6592,7 @@
       "params": {
         "presence": "present",
         "duty": "In 80.000 kg/d, out 80.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_WASH.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       }
@@ -6617,7 +6617,7 @@
       "params": {
         "presence": "present",
         "duty": "In 1575.544 kg/d, out 1575.544 kg/d, 0.614 kW. Sheet docs-authority/duties/EXPANDER.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 550,
         "relief_mm": 3.6,
         "size_mm": [
@@ -6649,7 +6649,7 @@
       "params": {
         "presence": "present",
         "duty": "In 0.800 kg/d, out 0.800 kg/d, 0.300 kW. Sheet docs-authority/duties/SIC_FURNACE.md.",
-        "internals": "media or gutter",
+        "internals": "none",
         "design_kPa": 27.7,
         "relief_mm": 2.7,
         "size_mm": [
@@ -25038,5 +25038,6 @@
   "notes_rev_bh_class": "AFTERBURNER_FLUE header. CRYO_AHU_COND_CONDENSABLE separator. GEO_HP_CLOSED_LOOP thermal. S13_CLASS_TREAT treat. No rate change.",
   "notes_rev_bh_h2_layer": "IA-HDR-H2-01, IA-HDR-H2-03, and IA-HDR-H2-04 stay at 2.1333 kg/d with an empty layer list. They are not in the mass cut. No rate change.",
   "notes_rev_bh_expander": "EXPANDER design_kPa set to 550, the duty set point. Destination CRYO_ASU. relief_mm 3.6 not resized. No edge rate change.",
+  "notes_rev_c6": "C6. Replaced the generic internals. No rate change. Class row (12): AFTERBURNER_FLUE pipe only, C29_RECYCLE pipe only, CONTINUOUS_RECYCLE pipe only, CRYO_AHU_COND_CONDENSABLE weir and launder, FLOAT_SINK weir and launder, FLUE_KO weir and launder, MEOH_COND weir and launder, PROD_C11_C18 dip pipe, stilling well, PROD_C19_C28 dip pipe, stilling well, PROD_C29 dip pipe, stilling well, PROD_C5_C10 dip pipe, stilling well, REMIN dip pipe, stilling well. farm, tool, inverter, pv, rectifier, hab are none, not a tank (75). No vessel row, set to none and not drawn (59): ahu 2, baghouse 1, bmed 2, boundary 2, cell 1, cool 1, cru 1, dock 1, dose 1, dryer 2, fab 1, feed 1, ferment 1, flow_battery 1, forming 4, frac 1, genset 1, ghex 1, heat_pump 1, hopper 1, hydro 1, iem_fc 1, intra 3, melt 2, mill 1, pem_fc 1, polish 1, pyro 1, reactor 1, reagent 9, relief 2, shop 1, skid 1, thermal 2, treat 2, vessel 2, wet_bench 1. Specific internals left as written, including ew_cell.",
   "loops_closed": true
 }
