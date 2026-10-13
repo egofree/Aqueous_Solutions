@@ -2045,11 +2045,16 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HX8.md.",
+        "duty": "Heat in 4.572 kW, out 4.572 kW. No mass edge. Sheet docs-authority/duties/HX8.md.",
         "presence": "present",
         "internals": "plate pack",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "nozzles": [
+          {"tag": "N1", "stream_id": "IA-HX8", "service": "inlet", "face": "-Y", "xyz_mm": [5500, 1900, -5700], "height_mm": 300, "rating": "hose, atmospheric", "dn": null},
+          {"tag": "N2", "stream_id": "HL-HX8-Q4-A", "service": "outlet", "face": "+Y", "xyz_mm": [5500, 2300, -5700], "height_mm": 300, "rating": "hose, atmospheric", "dn": 25},
+          {"tag": "N3", "stream_id": "HL-HX8-Q4-B", "service": "outlet", "face": "+Y", "xyz_mm": [5500, 2300, -5700], "height_mm": 300, "rating": "hose, atmospheric", "dn": 25}
+        ]
       }
     },
     {
