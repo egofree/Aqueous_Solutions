@@ -25026,5 +25026,6 @@
   "notes_rev_bf": "815944c. Close residual mass and stop sizing machines as tanks.",
   "notes_rev_bg": "76ead20. Put the solvent train and the digester on the reaction.",
   "notes_rev_bh": "682b64e. Finish the synthesis train on the reaction. Derived views remain Rev N until marked.",
+  "notes_rev_bh_cut": "Cut test on Rev BH. flow_graph/derived/LOOP_CLOSURE.md. Root loops_closed left true to match that report. mvs.mvs_criteria.loops_closed left false. No rate change.",
   "loops_closed": true
 }

@@ -1,12 +1,13 @@
-Not current. Graph is Rev BH. This export is older than BH. Do not use its numbers.
-Graph Q. Closure is the cut around each Tarjan component.
-A component passes when every unit balances and the cut balances, per rate unit.
+Graph Rev BH. Closure is the cut around each Tarjan component.
+A component passes when every unit balances and the cut balances, per rate unit, within 1%.
+Pass is on the present edges in this file. It is not on-site evidence.
+This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 
-## mass: 174 edges, 1 loops
-- 54 units. Circuits listed: 20 (cap 20).
-  AFTERBURNER, AFTERBURNER_FLUE, ANIMAL_PEN, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, BOARD_MILL, C29_RECYCLE, CATCH_TANK, COMPOST, CONTINUOUS_RECYCLE, CRYO_AHU, CRYO_CO2, CRYO_H2 ...
-  one circuit: S18 -> S04 -> S11
-  kg/d: nodes off 0, cut in 1037.55 out 1037.55 pass
+## mass: 449 edges, 1 loops
+- 166 units. Circuits listed: 0 (cap 20). Elementary search stopped at the visit cap. Closure is the cut, not the circuit list.
+  ABE, ACETOX, ACEX, ACID_POLISH_SCRUB, AFTERBURNER, AFTERBURNER_FLUE, ALD, ALK_SCRUBBER, AMF, ANIMAL_PEN, ASH, AZOLLA, AZOLLA_BED, BACKUP_GEN ...
+  one circuit: IA-BMED-03 -> IA-BMED-01 -> S34 -> S10
+  kg/d: nodes off 0, cut in 0.00 out 0.00 pass
 
 ## thermal: 48 edges, 4 loops
 - 2 units. Circuits listed: 1 (cap 20).
@@ -44,4 +45,4 @@ A component passes when every unit balances and the cut balances, per rate unit.
   kW: nodes off 0, cut in 1.67 out 1.67 pass
 
 loops_closed: true
-
+This result is the cut test. It is not the MVS flag.

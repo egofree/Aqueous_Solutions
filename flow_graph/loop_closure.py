@@ -2,9 +2,10 @@
 """Loop partition and closure test.
 
 Tarjan finds the strongly connected components. A component of one unit is not a loop.
-Johnson lists the elementary cycles inside a component. The closure test is a balance
-on the cut around each component: mass or energy entering equals mass or energy leaving,
-and every unit inside balances. loops_closed stays false unless every component passes.
+Johnson lists the elementary cycles inside a component, and stops if the search runs
+past a visit cap. The closure test is a balance on the cut around each component:
+mass or energy entering equals mass or energy leaving, and every unit inside balances.
+The printed loops_closed is that cut test. It does not write mvs.mvs_criteria.loops_closed.
 """
 from __future__ import annotations
 
@@ -55,19 +56,31 @@ def tarjan(nodes: list[str], edges: list[tuple[str, str]]) -> list[list[str]]:
     return comps
 
 
-def johnson(nodes: list[str], edges: list[tuple[str, str, str]], limit: int) -> list[list[str]]:
-    """Elementary cycles, blocked after use. Stops at limit."""
+def johnson(
+    nodes: list[str],
+    edges: list[tuple[str, str, str]],
+    limit: int,
+    visit_cap: int = 20000,
+) -> tuple[list[list[str]], bool]:
+    """Elementary cycles. Stops at limit or visit_cap. Returns (cycles, stopped_early)."""
     adj: dict[str, list[tuple[str, str]]] = defaultdict(list)
     for a, b, s in edges:
         adj[a].append((b, s))
     order = {n: i for i, n in enumerate(sorted(nodes))}
     cycles: list[list[str]] = []
+    visits = 0
+    stopped = False
 
     def walk(start: str, v: str, path: list[str], seen: set[str]) -> None:
-        if len(cycles) >= limit:
+        nonlocal visits, stopped
+        if stopped or len(cycles) >= limit:
+            return
+        visits += 1
+        if visits > visit_cap:
+            stopped = True
             return
         for w, sid in adj[v]:
-            if len(cycles) >= limit:
+            if stopped or len(cycles) >= limit:
                 return
             if w == start and path:
                 cycles.append(path + [sid])
@@ -77,10 +90,46 @@ def johnson(nodes: list[str], edges: list[tuple[str, str, str]], limit: int) -> 
                 seen.remove(w)
 
     for n in sorted(nodes, key=lambda x: order[x]):
-        if len(cycles) >= limit:
+        if stopped or len(cycles) >= limit:
             break
         walk(n, n, [], {n})
-    return cycles
+    return cycles, stopped
+
+
+def one_circuit(nodes: list[str], edges: list[tuple[str, str, str]]) -> list[str] | None:
+    """One directed circuit, if the component has one. Not a census."""
+    adj: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for a, b, s in edges:
+        adj[a].append((b, s))
+    seen: set[str] = set()
+    stack: list[str] = []
+    on: set[str] = set()
+
+    def walk(v: str) -> list[str] | None:
+        seen.add(v)
+        on.add(v)
+        stack.append(v)
+        for w, _sid in adj[v]:
+            if w not in seen:
+                found = walk(w)
+                if found:
+                    return found
+            elif w in on:
+                path = stack[stack.index(w):] + [w]
+                sids: list[str] = []
+                for a, b in zip(path, path[1:]):
+                    sids.append(next(s for x, s in adj[a] if x == b))
+                return sids
+        stack.pop()
+        on.remove(v)
+        return None
+
+    for n in nodes:
+        if n not in seen:
+            found = walk(n)
+            if found:
+                return found
+    return None
 
 
 def load():
@@ -123,8 +172,10 @@ def component_cut(edges, members, unit):
 def report(limit: int = 20) -> str:
     g, by = load()
     lines = [
-        f"Graph {g['revision']}. Closure is the cut around each Tarjan component.",
-        "A component passes when every unit balances and the cut balances, per rate unit.",
+        f"Graph Rev {g['revision']}. Closure is the cut around each Tarjan component.",
+        "A component passes when every unit balances and the cut balances, per rate unit, within 1%.",
+        "Pass is on the present edges in this file. It is not on-site evidence.",
+        "This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.",
         "",
     ]
     any_fail = False
@@ -137,11 +188,20 @@ def report(limit: int = 20) -> str:
         for comp in sorted(comps, key=len, reverse=True):
             units = sorted({e["rate"]["unit"] for e in edges
                             if e["from_unit_id"] in comp or e["to_unit_id"] in comp})
-            named = johnson(comp, [(e["from_unit_id"], e["to_unit_id"], e["stream_id"]) for e in edges], limit)
-            lines.append(f"- {len(comp)} units. Circuits listed: {len(named)} (cap {limit}).")
+            triple = [(e["from_unit_id"], e["to_unit_id"], e["stream_id"]) for e in edges]
+            named, stopped = johnson(comp, triple, limit)
+            witness = one_circuit(comp, triple)
+            if stopped:
+                lines.append(
+                    f"- {len(comp)} units. Circuits listed: {len(named)} (cap {limit}). "
+                    "Elementary search stopped at the visit cap. Closure is the cut, not the circuit list."
+                )
+            else:
+                lines.append(f"- {len(comp)} units. Circuits listed: {len(named)} (cap {limit}).")
             lines.append("  " + ", ".join(sorted(comp)[:14]) + (" ..." if len(comp) > 14 else ""))
-            if named:
-                lines.append("  one circuit: " + " -> ".join(named[0][:8]))
+            shown = named[0][:8] if named else (witness[:8] if witness else None)
+            if shown:
+                lines.append("  one circuit: " + " -> ".join(shown))
             for unit in units:
                 bad = []
                 for uid in comp:
@@ -160,6 +220,7 @@ def report(limit: int = 20) -> str:
                 )
         lines.append("")
     lines.append("loops_closed: false" if any_fail else "loops_closed: true")
+    lines.append("This result is the cut test. It is not the MVS flag.")
     return "\n".join(lines)
 
 
