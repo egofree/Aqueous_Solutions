@@ -63,7 +63,7 @@ Next, in order. Do not skip 2.2 by naming the gap and calling the phase accepted
 
 | Line | Work | Stops when |
 | --- | --- | --- |
-| 2.2 | One connection. Location from the placement seed. Flange rating from the fluid already on the edge. | That one connection can be built, or the missing location is named on the line |
+| 2.2 | One connection. Location from the placement seed. Flange rating from the fluid already on the edge. | HX8 was the trial. The seed has an origin and a size and no nozzle face. The line stays open until a face is on the drawing |
 | 3 | Holdup only after 2.2 is accepted | No residence time is an envelope divided by a flow |
 | 4.1 | Relief cases for the nodes that are actually pressurized | Atmospheric nodes say so. The head-plus-10 figure is not used as a set point |
 | 5.1 | Meshes on the operator box | The mesh matches the duty at the revision that enters the phase |
