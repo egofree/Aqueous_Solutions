@@ -15080,7 +15080,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
+      "notes": "Equals the three biological feeds, 0.6254 kg/d. Composition is the liquid placeholder, not a gas analysis. No volatile-solids measurement upstream.",
       "composition": {
         "water": 0.97,
         "solute": 0.03
@@ -17074,7 +17074,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
+      "notes": "No volatile-solids measurement. This biological feed leaves entirely on IA-DIG-GAS. Do not split a digestate from it.",
       "composition": {
         "water": 0.97,
         "solute": 0.03
@@ -17934,7 +17934,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
+      "notes": "No volatile-solids measurement. This biological feed leaves entirely on IA-DIG-GAS. Do not split a digestate from it.",
       "composition": {
         "water": 0.97,
         "solute": 0.03
@@ -18084,7 +18084,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
+      "notes": "No volatile-solids measurement. This biological feed leaves entirely on IA-DIG-GAS. Do not split a digestate from it.",
       "composition": {
         "water": 0.97,
         "solute": 0.03
@@ -25028,5 +25028,6 @@
   "notes_rev_bh": "682b64e. Finish the synthesis train on the reaction. Derived views remain Rev N until marked.",
   "notes_rev_bh_cut": "Cut test on Rev BH. flow_graph/derived/LOOP_CLOSURE.md. Root loops_closed left true to match that report. mvs.mvs_criteria.loops_closed left false. No rate change.",
   "notes_rev_bh_assay": "Feed assay not measured. IA-FEED-01, S08, and S16 keep the placeholder composition. IA-EW-SHEET stays metal 1.0. No resize. No rate change.",
+  "notes_rev_bh_digester": "Biological feeds IA-FERM-RES, IA-STILL, and IA-ABE-STILL leave entirely on IA-DIG-GAS. Volatile solids not measured. No rate change.",
   "loops_closed": true
 }

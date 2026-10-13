@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line 1.1 closed in this revision. No rate change. No resize.
+Authority: graph Rev BH. Not a PE stamp. Line 1.2 closed in this revision. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,7 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: 1.2
+Active: 1.3
 
 | Line | Phase | Work | Check | Status |
 | --- | --- | --- | --- | --- |
@@ -30,6 +30,7 @@ Active: 1.2
 | 0.3 | 0 | Electrical and thermal book | `ONE_LINE.md`, `POWER.md`, and `HEAT_LADDER.md` name the graph revision they were checked against, or the page is stamped not current. No rate change. | closed. `ONE_LINE.md` names Rev BH. IA-PV-01 is 27.88 kW on the edge. `POWER.md` names Rev BH and is not current for the EW-1 current: the page says 5.3 kW, the node is 6.0 kW study. `HEAT_LADDER.md` names Rev BH. HX-8 and the Q3 draws are present. No present edge from Q1, Q2, or Q3 lands on Q4_BUS. `HEAT_LADDER_DUTIES.md` stays the Rev K note. No rate change. |
 | 0.3 | 0 | Electrical and thermal book | `ONE_LINE.md`, `POWER.md`, and `HEAT_LADDER.md` name the graph revision they were checked against, or the page is stamped not current. No rate change. | waits |
 | 1.1 | 1 | Feed assay and the sheet split | The assay is a measured composition on the edge, or the line names the missing measurement. No resize before that composition is on the edge. | closed by the missing measurement. IA-FEED-01, S08, and S16 still carry the placeholder water 0.90, HCl 0.05, Fe 0.02, other_metals 0.03. IA-EW-SHEET is metal 1.0. ELECTRICAL.md working averages were not copied onto the edge. No resize. No rate change. |
-| 1.2 | 1 | Digester | `DIGESTER.md` section 8. Biological feeds do not leave entirely as one gas edge, or the line names the missing volatile-solids measurement. | waits |
+| 1.2 | 1 | Digester | `DIGESTER.md` section 8. Biological feeds do not leave entirely as one gas edge, or the line names the missing volatile-solids measurement. | closed by the missing measurement. IA-FERM-RES, IA-STILL, and IA-ABE-STILL sum to IA-DIG-GAS, 0.6254 kg/d. Section 8 names the missing volatile-solids measurement. No digestate was added. No rate change. |
+| 1.3 | 1 | Other streams that already have a composition object | No unit is resized. The line names any inlet that is still not a measurement. | open |
 | 4.1 | 4 | Relief on pressurized nodes | Each pressurized node has a case and a destination. Each atmospheric node says so. | waits |
 | 5.1 | 5 | Solids | Operator box. Meshes match the duties at the revision that enters the phase. | waits |
