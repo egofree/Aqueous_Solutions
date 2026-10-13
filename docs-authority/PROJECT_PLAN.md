@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: 1.3 on AQS-PLAN-004. Other compositions. It does not resize a unit.
+Active item: 2.1 on AQS-PLAN-004. The four units with no class. It does not change a rate.
 
 ## Limits
 
