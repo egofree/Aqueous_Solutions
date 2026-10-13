@@ -1,5 +1,7 @@
 # MVS checklist
 
+Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+
 Document: AQS-MVS-CHK-001
 Date: 2026-10-02; updated 2026-10-07 (graph Rev L)
 Plan: docs-authority/MVS_PLAN.md

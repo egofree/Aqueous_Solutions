@@ -1,5 +1,7 @@
 # Remaining designs
 
+Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+
 Document number: AQS-REM-001
 Revision: A
 Date: 2026-10-10

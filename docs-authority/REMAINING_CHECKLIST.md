@@ -1,5 +1,7 @@
 # Remaining work checklist
 
+Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+
 Document number: AQS-REM-001  
 Revision: E  
 Date: 2026-10-01

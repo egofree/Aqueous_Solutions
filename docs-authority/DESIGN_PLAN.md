@@ -1,5 +1,7 @@
 # Design plan
 
+Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+
 Document number: AQS-PLAN-001
 Revision: B
 Date: 2026-10-09
