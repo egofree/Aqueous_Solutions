@@ -6600,7 +6600,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": "Reciprocating expander. 5 kW shaft is this machine. Density on the gas edge is assumed.",
+      "notes": "Reciprocating expander. 5 kW shaft is this machine. Density on the gas edge is assumed. Relief set point 550 kPa. Destination CRYO_ASU on IA-EXP-OUT. relief_mm 3.6 was not resized.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.614,
@@ -6613,7 +6613,7 @@
         "presence": "present",
         "duty": "In 1575.544 kg/d, out 1575.544 kg/d, 0.614 kW. Sheet docs-authority/duties/EXPANDER.md.",
         "internals": "media or gutter",
-        "design_kPa": 14.9,
+        "design_kPa": 550,
         "relief_mm": 3.6,
         "size_mm": [
           600,
@@ -9375,7 +9375,7 @@
         "wp_l2_filled",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).",
+      "notes": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -9446,7 +9446,7 @@
         "multi_ew_hood",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).",
+      "notes": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -9482,7 +9482,7 @@
         "multi_ew_hood",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).",
+      "notes": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -25031,5 +25031,7 @@
   "notes_rev_bh_digester": "Biological feeds IA-FERM-RES, IA-STILL, and IA-ABE-STILL leave entirely on IA-DIG-GAS. Volatile solids not measured. No rate change.",
   "notes_rev_bh_composition": "No present kg/d edge has a measured composition. 450 edges, 14 composition objects, all placeholders. No resize. No rate change.",
   "notes_rev_bh_class": "AFTERBURNER_FLUE header. CRYO_AHU_COND_CONDENSABLE separator. GEO_HP_CLOSED_LOOP thermal. S13_CLASS_TREAT treat. No rate change.",
+  "notes_rev_bh_h2_layer": "IA-HDR-H2-01, IA-HDR-H2-03, and IA-HDR-H2-04 stay at 2.1333 kg/d with an empty layer list. They are not in the mass cut. No rate change.",
+  "notes_rev_bh_expander": "EXPANDER design_kPa set to 550, the duty set point. Destination CRYO_ASU. relief_mm 3.6 not resized. No edge rate change.",
   "loops_closed": true
 }
