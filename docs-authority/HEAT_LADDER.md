@@ -4,6 +4,8 @@ Document: AQS-HEAT-LADDER-001
 Date: 2026-10-02 (duty and tier notes updated 2026-10-07, graph Rev K)
 Not a PE stamp. Replaces the ghost edges that dumped Q1/Q2/Q3 onto Q4_BUS.
 
+Checked against graph Rev BH on 2026-10-12. HL-HX8-Q4-A and HL-HX8-Q4-B are present, HX8 to Q4_A and Q4_B, 2.286 kW each. HL-Q3-A/B-HX4, HX5, and HX6 are present. No present edge from Q1, Q2, or Q3 lands on Q4_BUS. The date line records the Rev K text. `HEAT_LADDER_DUTIES.md` is still the Rev C note for graph Rev K. It was not re-issued. Edge duties are the graph. No rate change.
+
 ## Tiers
 
 Heat moves down only. A valve is not a heat pump.
