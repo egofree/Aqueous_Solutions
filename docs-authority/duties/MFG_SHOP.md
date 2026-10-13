@@ -16,4 +16,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/MFG_SHOP.stl`.
 
-8. Open items. No holdup basis for this class.
+8. Open items. No holdup basis for this class. S16 and S08 are not a measured assay. The placeholder stays. No resize.

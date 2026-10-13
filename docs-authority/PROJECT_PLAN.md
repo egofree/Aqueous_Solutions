@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: none. Rev C is closed. The holds above are still open. This is not a buildable plant.
+Active item: D1. Feed assay. The measurement is not in the repo. No resize.
 
 ## Limits
 
@@ -176,4 +176,8 @@ Replace only the two generic strings. Do not rewrite a specific internal.
 | C9 | Meshes | Each present unit points at an STL, or the line says the solid is still an envelope. Envelope boxes do not count where the internal matters. The nine cell racks in `cad/stl` count. FreeCAD is not here. The operator box compiles the rest |
 | C10 | Self-copy | Not started until C2 through C9 are accepted |
 
-Active item: none. Rev C is closed. The holds above are still open. This is not a buildable plant.
+Active item: D1. Feed assay. The measurement is not in the repo. No resize.
+
+## After Rev C
+
+D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. A measured mass fraction goes on IA-FEED-01, S08, and S16, or the sheet says the measurement is missing. The ELECTRICAL.md working averages are not copied. The rate stays. The bore stays. The cell stays.
