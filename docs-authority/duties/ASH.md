@@ -10,12 +10,14 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.05 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin 21200, 2600, 6000 mm. Size 1000 × 1000 × 1500 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-SF-R, inlet, -Y face center, 21700, 2600, 6750 mm. Height 750 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-STALK, inlet, -Y face center, 21700, 2600, 6750 mm. Height 750 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, IA-ASH-BED, outlet, +Y face center, 21700, 3600, 6750 mm. Height 750 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. No trip is specified.
 
 6. Relief. Not a pressure vessel. A vent, if the shell is closed, returns to the process. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Envelope volume over flow is not a residence time.
+8. Open items. Envelope volume over flow is not a residence time. Bore was not calculated where the edge has no density and no line size.

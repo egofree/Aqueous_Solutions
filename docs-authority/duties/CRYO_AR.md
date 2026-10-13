@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Can working pressure is not on the node.
+8. Open items. Can working pressure is not on the node. No origin. The node has no envelope, so it was not placed.

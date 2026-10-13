@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: C5 on AQS-PLAN-004. Units in no block. Farm beds are not shrunk.
+Active item: C6 on AQS-PLAN-004. Replace the two generic internal strings. It does not change a rate.
 
 ## Limits
 
@@ -164,4 +164,4 @@ Replace only the two generic strings. Do not rewrite a specific internal.
 | C9 | Meshes | Each present unit points at an STL, or the line says the solid is still an envelope. Envelope boxes do not count where the internal matters. The nine cell racks in `cad/stl` count. FreeCAD is not here. The operator box compiles the rest |
 | C10 | Self-copy | Not started until C2 through C9 are accepted |
 
-Active item: C2. HX8. It does not change a rate.
+Active item: C6 on AQS-PLAN-004. Replace the two generic internal strings. It does not change a rate.

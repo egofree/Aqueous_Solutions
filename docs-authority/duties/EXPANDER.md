@@ -9,12 +9,13 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L. Condensation. No carbon steel. Corrosion allowance 0 mm. Pit rate is not measured.
 
-4. Nozzles. Displacement 1.57 L/s at 10 m/s is a 14.1 mm bore, so DN15. Density 11.61 kg/m³, not 1.2. Inlet rated 550 kPa, 110% of 500 kPa. No flange class. The vent returns to the cold box, not the room.
-
+4. Nozzles. Origin 17600, 6000, -6000 mm. Size 600 × 400 × 500 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-EXP-IN, inlet, -Y face center, 17900, 6000, -5750 mm. Height 250 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-EXP-OUT, outlet, +Y face center, 17900, 6400, -5750 mm. Height 250 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Inlet pressure, discharge pressure, and speed. Overspeed or high inlet pressure trips the drive.
 
 6. Relief. Set point 550 kPa, 110% of the 500 kPa inlet. Destination is CRYO_ASU, on IA-EXP-OUT, not the room. The node design_kPa is 550. relief_mm is 3.6 and was not resized for that set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Isentropic efficiency 70% is assumed. The relief orifice is not calculated at 550 kPa.
+8. Open items. Isentropic efficiency 70% is assumed. The relief orifice is not calculated at 550 kPa. Bore was not calculated where the edge has no density and no line size.

@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Tray efficiency is not measured.
+8. Open items. Tray efficiency is not measured. No origin. The node has no envelope, so it was not placed.

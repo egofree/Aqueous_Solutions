@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line C4 closed in this revision. No rate change.
+Authority: graph Rev BH. Not a PE stamp. Line C5 closed in this revision. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,7 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: C5
+Active: C6
 
 AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 
@@ -43,7 +43,7 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | C2 | C | HX8 nozzles | The duty matches the two 2.286 kW edges. Two nozzles follow the rule. No rate change. | closed. Heat in 4.572 kW on IA-HX8. Out 2.286 kW on HL-HX8-Q4-A and HL-HX8-Q4-B. N2 and N3 on the +Y face, DN25 from the edge, hose. N1 on the −Y face, bore not calculated. No rate change. |
 | C3 | C | Nozzles on the other placed units | Face, height, and rating, or the bore is named as not calculated. | closed. 71 duties. Every present edge on those units is named. DN only where the edge already had line_DN. Conductors are not hoses. TERRACE_IRRIG has no height, so no face. No rate change. |
 | C4 | C | Origins for the 43 block members | Inside the block, or named as not fitting. No plate growth. | closed. LEACH_CSTR_1, EW_1, EW_2, and EW_9 are in LEACH_EW at z −6000, 600 mm clear. The other 39 have no envelope. No origin was written for them. The plate did not grow. No rate change. |
-| C5 | C | The 84 with no block | Farm beds larger than the block are named, not shrunk. | waits |
+| C5 | C | The 84 with no block | Farm beds larger than the block are named, not shrunk. | closed. Twenty envelopes are in the sector block. AZOLLA_BED stays 18 m by 5 m, long side on the farm block. CURTAIL and HEAT_SINK have no GEO block and were not placed. Sixty-two have no envelope. The plate did not grow. No rate change. |
 | C6 | C | Generic internals | No node still says "shell and nozzles" or "media or gutter". | waits |
 | C7 | C | Relief destinations | Atmospheric nodes name an existing vent edge, or say there is none. | waits |
 | C8 | C | Section 8 | Empty, or only a hold. | waits |

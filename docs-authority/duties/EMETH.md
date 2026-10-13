@@ -18,4 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No holdup basis for this class. Biological feed still leaves the digester as one gas edge. A methane fraction is not measured.
+8. Open items. No holdup basis for this class. Biological feed still leaves the digester as one gas edge. A methane fraction is not measured. No origin. The node has no envelope, so it was not placed.

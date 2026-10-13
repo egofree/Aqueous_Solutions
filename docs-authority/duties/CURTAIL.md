@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. The approach and the coefficient are not measured.
+8. Open items. The approach and the coefficient are not measured. No origin. There is no GEO block. The envelope was not placed in another block.
