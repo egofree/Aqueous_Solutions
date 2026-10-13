@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No vessel diameter. Duct bore is not calculated.
+8. Open items. No vessel diameter. Duct bore is not calculated. Class is header.

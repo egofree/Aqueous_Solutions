@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line 1.3 closed in this revision. No rate change. No resize.
+Authority: graph Rev BH. Not a PE stamp. Line 2.1 closed in this revision. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,7 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: 2.1
+Active: 2.2
 
 | Line | Phase | Work | Check | Status |
 | --- | --- | --- | --- | --- |
@@ -32,6 +32,7 @@ Active: 2.1
 | 1.1 | 1 | Feed assay and the sheet split | The assay is a measured composition on the edge, or the line names the missing measurement. No resize before that composition is on the edge. | closed by the missing measurement. IA-FEED-01, S08, and S16 still carry the placeholder water 0.90, HCl 0.05, Fe 0.02, other_metals 0.03. IA-EW-SHEET is metal 1.0. ELECTRICAL.md working averages were not copied onto the edge. No resize. No rate change. |
 | 1.2 | 1 | Digester | `DIGESTER.md` section 8. Biological feeds do not leave entirely as one gas edge, or the line names the missing volatile-solids measurement. | closed by the missing measurement. IA-FERM-RES, IA-STILL, and IA-ABE-STILL sum to IA-DIG-GAS, 0.6254 kg/d. Section 8 names the missing volatile-solids measurement. No digestate was added. No rate change. |
 | 1.3 | 1 | Other streams that already have a composition object | No unit is resized. The line names any inlet that is still not a measurement. | closed by the missing measurement. 450 present kg/d edges, 14 composition objects, none measured. No resize. No rate change. |
-| 2.1 | 2 | Four units with no class | Each of the four has a class taken from its edges and its duty. No rate change. | open |
+| 2.1 | 2 | Four units with no class | Each of the four has a class taken from its edges and its duty. No rate change. | closed. AFTERBURNER_FLUE header. CRYO_AHU_COND_CONDENSABLE separator. GEO_HP_CLOSED_LOOP thermal. S13_CLASS_TREAT treat. No rate change. |
+| 2.2 | 2 | Nozzles and a line list | A present connection has a nozzle location and a flange rating, or the line names what is missing. Phase 2 is not accepted until a connection can be built. | open. 199 duties. 163 say no flange class. 36 say no process nozzle. None gives a nozzle location. A connection cannot be built. |
 | 4.1 | 4 | Relief on pressurized nodes | Each pressurized node has a case and a destination. Each atmospheric node says so. | waits |
 | 5.1 | 5 | Solids | Operator box. Meshes match the duties at the revision that enters the phase. | waits |

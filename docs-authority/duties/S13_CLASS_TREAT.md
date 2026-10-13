@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No mass edge.
+8. Open items. No present edge. Class is treat. Nothing is sized from the class.
