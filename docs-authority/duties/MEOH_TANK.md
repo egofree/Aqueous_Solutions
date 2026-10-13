@@ -9,12 +9,20 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.24 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin -2048, 1600, 0 mm. Size 800 × 800 × 1100 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-CLOSE-7, inlet, -Y face center, -1648, 1600, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-EM-CH4, inlet, -Y face center, -1648, 1600, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, S75, inlet, -Y face center, -1648, 1600, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, S77, inlet, -Y face center, -1648, 1600, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, IA-FORM-S, outlet, +Y face center, -1648, 2400, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N6, IA-MEOH-FORM, outlet, +Y face center, -1648, 2400, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N7, IA-MEOH-MEAM, outlet, +Y face center, -1648, 2400, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N8, IA-MEOH-REST, outlet, +Y face center, -1648, 2400, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N9, S76, outlet, +Y face center, -1648, 2400, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Shell volume over flow is not the residence.
+8. Open items. Shell volume over flow is not the residence. Bore was not calculated where the edge has no density and no line size.

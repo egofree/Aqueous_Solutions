@@ -9,8 +9,8 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 
-4. Nozzles. No process nozzle.
-
+4. Nozzles. Origin -1900, 11800, 0 mm. Size 600 × 400 × 1800 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- No present edge. No nozzle.
 5. Instruments. Current. Overcurrent opens the breaker.
 
 6. Relief. Not a pressure vessel. No process vent. Stored design_kPa is the old head-plus-10 figure. It is not a set point.

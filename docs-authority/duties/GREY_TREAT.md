@@ -9,12 +9,18 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L. Chloride or scrub liquor. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 1.85 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin 1800, 200, 6000 mm. Size 800 × 800 × 1100 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-WASH-R, inlet, -Y face center, 2200, 200, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-ZNBR-BD, inlet, -Y face center, 2200, 200, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, S12, inlet, -Y face center, 2200, 200, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, S42, inlet, -Y face center, 2200, 200, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, IA-GREY-01, outlet, +Y face center, 2200, 1000, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N6, IA-GREY-RET, outlet, +Y face center, 2200, 1000, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N7, S29, outlet, +Y face center, 2200, 1000, 6550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No holdup basis for this class.
+8. Open items. No holdup basis for this class. Bore was not calculated where the edge has no density and no line size.

@@ -9,12 +9,16 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.
 
-4. Nozzles. Gas duct DN15 at 10 m/s. Bore from 0.1736 m³/h is 2 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
+4. Nozzles. Line list. Origin 5200, 12200, -6000 mm. Size 80 × 80 × 800 mm. Atmospheric lines are hose. DN is copied from the edge and is not recalculated.
 
+| Tag | Stream | From | To | End | Face | xyz mm | Height mm | Size | Rating |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| L1 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | inlet | -Y | 5240, 12200, -5600 | 400 | bore not calculated | hose, atmospheric |
+| L2 | NCG_TO_AB | NCG_HEADER | AFTERBURNER | outlet | +Y | 5240, 12280, -5600 | 400 | bore not calculated | hose, atmospheric |
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. No valve. Open to the suction of this loop. Not to the room and not to a stack. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Gas volume uses 1.2 kg/m³ because the edge has no m³/h. Duct bore uses 1.2 kg/m³.
+8. Open items. Gas volume uses 1.2 kg/m³ because the edge has no m³/h. Duct bore uses 1.2 kg/m³. Bore was not calculated where the edge has no density and no line size.

@@ -9,12 +9,13 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.20 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin 4400, 13000, -6000 mm. Size 600 × 300 × 700 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, CUT-3, inlet, -Y face center, 4700, 13000, -5650 mm. Height 350 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, CUT-3-OUT, outlet, +Y face center, 4700, 13300, -5650 mm. Height 350 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Holdup is 7 days of the cut. The vessel has not been built, so this is not a measured volume.
+8. Open items. Holdup is 7 days of the cut. The vessel has not been built, so this is not a measured volume. Bore was not calculated where the edge has no density and no line size.

@@ -9,12 +9,14 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.06 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin -4700, 3100, 0 mm. Size 2200 × 900 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, S78, inlet, -Y face center, -3600, 3100, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-FERM-RES, outlet, +Y face center, -3600, 4000, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, S77, outlet, +Y face center, -3600, 4000, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Temperature and pressure. High pressure trips the feed. Gas stays on the gas edge, not the room.
 
 6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Shell volume over flow is not the residence.
+8. Open items. Shell volume over flow is not the residence. Bore was not calculated where the edge has no density and no line size.

@@ -9,12 +9,14 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
 
-4. Nozzles. Gas duct DN300 at 10 m/s. Bore from 2520.0 m³/h is 299 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
-
+4. Nozzles. Origin 12200, 200, 0 mm. Size 1200 × 800 × 1800 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-MET-AIR-RET, inlet, -Y face center, 12800, 200, 900 mm. Height 900 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, S62, outlet, +Y face center, 12800, 1000, 900 mm. Height 900 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, S71, outlet, +Y face center, 12800, 1000, 900 mm. Height 900 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. No valve. Open to the suction of this loop. Not to the room and not to a stack. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. This unit has not been measured.
+8. Open items. This unit has not been measured. Bore was not calculated where the edge has no density and no line size.

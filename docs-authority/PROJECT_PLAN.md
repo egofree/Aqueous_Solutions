@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: C3 on AQS-PLAN-004. Nozzles on the other placed units. It does not change a rate.
+Active item: C4 on AQS-PLAN-004. Origins for the 43 block members. The plate does not grow.
 
 ## Limits
 

@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line C2 closed in this revision. No rate change.
+Authority: graph Rev BH. Not a PE stamp. Line C3 closed in this revision. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,9 +21,9 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: C3
+Active: C4
 
-AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 stays open until C3 has done the placed units. It is not the active item.
+AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 
 | Line | Phase | Work | Check | Status |
 | --- | --- | --- | --- | --- |
@@ -34,14 +34,14 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 stays open until C3 has 
 | 1.2 | 1 | Digester | `DIGESTER.md` section 8. Biological feeds do not leave entirely as one gas edge, or the line names the missing volatile-solids measurement. | closed by the missing measurement. IA-FERM-RES, IA-STILL, and IA-ABE-STILL sum to IA-DIG-GAS, 0.6254 kg/d. Section 8 names the missing volatile-solids measurement. No digestate was added. No rate change. |
 | 1.3 | 1 | Other streams that already have a composition object | No unit is resized. The line names any inlet that is still not a measurement. | closed by the missing measurement. 450 present kg/d edges, 14 composition objects, none measured. No resize. No rate change. |
 | 2.1 | 2 | Four units with no class | Each of the four has a class taken from its edges and its duty. No rate change. | closed. AFTERBURNER_FLUE header. CRYO_AHU_COND_CONDENSABLE separator. GEO_HP_CLOSED_LOOP thermal. S13_CLASS_TREAT treat. No rate change. |
-| 2.2 | 2 | Nozzles and a line list | A present connection has a nozzle location and a flange rating, or the line names what is missing. Phase 2 is not accepted until a connection can be built. | open. 199 duties. 163 say no flange class. 36 say no process nozzle. None gives a nozzle location. Tried HX8, which is placed: origin 5200, 1900, −6000 mm, size 600×400×600 mm, level L-1. The seed has no nozzle face. No flange was written. A connection cannot be built. |
+| 2.2 | 2 | Nozzles and a line list | A present connection has a nozzle location and a flange rating, or the line names what is missing. Phase 2 is not accepted until a connection can be built. | closed by C2 and C3. Placed units have a face, a height, and a rating. Atmospheric rating is hose, not a flange class. TERRACE_IRRIG has no height on the seed. No rate change. |
 | 4.1 | 4 | Relief on pressurized nodes | Each pressurized node has a case and a destination. Each atmospheric node says so. | waits. Phase 2 is not accepted. One case is already on EXPANDER: 550 kPa to CRYO_ASU. The other stored design_kPa values are the old head-plus-10 figures. |
 | 5.1 | 5 | Solids | Operator box. Meshes match the duties at the revision that enters the phase. | waits. Phase 2 is not accepted. Meshes are not in this repo session. |
 | R1 | — | Three hydrogen edges with no layer | The edges say they are outside the mass cut. Rates unchanged. Mass-layer nodes still close. | closed. IA-HDR-H2-01, IA-HDR-H2-03, and IA-HDR-H2-04 remain 2.1333 kg/d with an empty layer list. Mass-layer kg/d nodes 169, 0 off at 1e-4. |
 | R2 | — | Expander stored pressure | The node matches the written set point. The orifice is not resized. | closed. EXPANDER design_kPa is 550. Destination CRYO_ASU on IA-EXP-OUT. relief_mm left at 3.6. No edge rate change. |
 | C1 | C | Nozzle rule, holds, counts | The rule is on AQS-PLAN-005. No rate change. | closed. Rev C of `docs-authority/PROJECT_PLAN.md`. Atmospheric joints are hose. 72 placed, 43 in a block without an origin, 84 in no block. |
 | C2 | C | HX8 nozzles | The duty matches the two 2.286 kW edges. Two nozzles follow the rule. No rate change. | closed. Heat in 4.572 kW on IA-HX8. Out 2.286 kW on HL-HX8-Q4-A and HL-HX8-Q4-B. N2 and N3 on the +Y face, DN25 from the edge, hose. N1 on the −Y face, bore not calculated. No rate change. |
-| C3 | C | Nozzles on the other placed units | Face, height, and rating, or the bore is named as not calculated. | waits |
+| C3 | C | Nozzles on the other placed units | Face, height, and rating, or the bore is named as not calculated. | closed. 71 duties. Every present edge on those units is named. DN only where the edge already had line_DN. Conductors are not hoses. TERRACE_IRRIG has no height, so no face. No rate change. |
 | C4 | C | Origins for the 43 block members | Inside the block, or named as not fitting. No plate growth. | waits |
 | C5 | C | The 84 with no block | Farm beds larger than the block are named, not shrunk. | waits |
 | C6 | C | Generic internals | No node still says "shell and nozzles" or "media or gutter". | waits |

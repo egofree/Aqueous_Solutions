@@ -9,12 +9,16 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
 
-4. Nozzles. Inlet and outlet DN50. At 1.5 m/s and 1000 kg/m³ the bore is 44.3 mm. Drain DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin 0, 5000, -10500 mm. Size 12000 × 8000 × 4000 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-ESS-HYDRO-DIS, inlet, -Y face center, 6000, 5000, -8500 mm. Height 2000 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, S22, inlet, -Y face center, 6000, 5000, -8500 mm. Height 2000 mm from the bottom. Rating conductor. Not a hose.
+- N3, S41, inlet, -Y face center, 6000, 5000, -8500 mm. Height 2000 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, IA-ESS-HYDRO-CHG, outlet, +Y face center, 6000, 13000, -8500 mm. Height 2000 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, S23, outlet, +Y face center, 6000, 13000, -8500 mm. Height 2000 mm from the bottom. Rating conductor. Not a hose.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. If this node is also a reservoir, that volume is not the two-minute holdup.
+8. Open items. If this node is also a reservoir, that volume is not the two-minute holdup. Bore was not calculated where the edge has no density and no line size.

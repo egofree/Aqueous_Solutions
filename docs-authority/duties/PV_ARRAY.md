@@ -9,8 +9,10 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 
-4. Nozzles. No process nozzle.
-
+4. Nozzles. Origin -11000, 10000, 0 mm. Size 4000 × 2000 × 80 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-E-SUN, inlet, -Y face center, -9000, 10000, 40 mm. Height 40 mm from the bottom. Rating conductor. Not a hose.
+- N2, IA-ESS-ZNBR2-SRC, outlet, +Y face center, -9000, 12000, 40 mm. Height 40 mm from the bottom. Rating conductor. Not a hose.
+- N3, IA-PV-01, outlet, +Y face center, -9000, 12000, 40 mm. Height 40 mm from the bottom. Rating conductor. Not a hose.
 5. Instruments. Current. Overcurrent opens the breaker.
 
 6. Relief. Not a pressure vessel. No process vent. Stored design_kPa is the old head-plus-10 figure. It is not a set point.

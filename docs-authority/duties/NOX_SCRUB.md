@@ -9,12 +9,23 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. 316L. Chloride or scrub liquor. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 2.21 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin -3500, 5800, 0 mm. Size 600 × 400 × 1200 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-CLOSE-1, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-FC-EXH, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, IA-FC-FIX, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, IA-FLUE-EXH, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, IA-GLX-NOX, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N6, IA-LEACH-NOX, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N7, S46, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N8, IA-NOX-BOARD, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N9, IA-NOX-CO2, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N10, IA-NOX-H2O, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N11, IA-NOX-N, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N12, IA-NOX-N2, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Differential pressure across the packing, and pH if there is a liquor loop. High differential pressure trips the fan.
 
 6. Relief. No valve. Open to the suction of this loop. Not to the room and not to a stack. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. Envelope volume over flow is not a residence time.
+8. Open items. Envelope volume over flow is not a residence time. Bore was not calculated where the edge has no density and no line size.

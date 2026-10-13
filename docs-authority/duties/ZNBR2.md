@@ -10,12 +10,20 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 
-4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 2.91 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
-
+4. Nozzles. Origin -4848, 10000, 0 mm. Size 1800 × 1200 × 1600 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-E-ZNIN, inlet, -Y face center, -3948, 10000, 800 mm. Height 800 mm from the bottom. Rating conductor. Not a hose.
+- N2, IA-ESS-ZNBR2-CHG, inlet, -Y face center, -3948, 10000, 800 mm. Height 800 mm from the bottom. Rating conductor. Not a hose.
+- N3, IA-ZNBR-MU, inlet, -Y face center, -3948, 10000, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, S69B, inlet, -Y face center, -3948, 10000, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, IA-ESS-ZNBR2-DIS, outlet, +Y face center, -3948, 11200, 800 mm. Height 800 mm from the bottom. Rating conductor. Not a hose.
+- N6, IA-ZNBR-BD, outlet, +Y face center, -3948, 11200, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N7, IA-ZNBR-HEAT, outlet, +Y face center, -3948, 11200, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N8, IA-ZNBR-LOSS, outlet, +Y face center, -3948, 11200, 800 mm. Height 800 mm from the bottom. Rating conductor. Not a hose.
+- N9, S69, outlet, +Y face center, -3948, 11200, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Current. Overcurrent opens the breaker.
 
 6. Relief. Not a pressure vessel. No process vent. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. This unit has not been measured.
+8. Open items. This unit has not been measured. Bore was not calculated where the edge has no density and no line size.
