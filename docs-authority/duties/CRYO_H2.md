@@ -13,8 +13,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 5. Instruments. Pressure and temperature. High pressure trips the feed.
 
-6. Relief. No valve. Open to the suction of this loop. Not to the room and not to a stack. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. No diameter on this node. Duct bore is not calculated. No origin. The node has no envelope, so none was placed in the block.

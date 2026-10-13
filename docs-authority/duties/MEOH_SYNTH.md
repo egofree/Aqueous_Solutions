@@ -17,8 +17,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N4, S75, outlet, +Y face center, -3748, 2500, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Temperature and pressure. High pressure trips the feed. Gas stays on the gas edge, not the room.
 
-6. Relief. No valve. Open to the suction of this loop. Not to the room and not to a stack. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. No vessel diameter. Duct bore is not calculated. Bore was not calculated where the edge has no density and no line size.

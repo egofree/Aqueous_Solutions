@@ -14,8 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N2, CUT-3-OUT, outlet, +Y face center, 4700, 13300, -5650 mm. Height 350 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
-6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. Holdup is 7 days of the cut. The vessel has not been built, so this is not a measured volume. Bore was not calculated where the edge has no density and no line size.

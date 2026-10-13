@@ -14,8 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N2, IA-BUOH-R, outlet, +Y face center, 22350, 10100, 6600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. No trip is specified.
 
-6. Relief. Atmospheric. The vent is the condenser. Ethanol 78 °C, butanol 118 °C. No valve. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. Stages and reflux are not set. Bore was not calculated where the edge has no density and no line size.

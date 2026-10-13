@@ -23,8 +23,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N11, S20, outlet, +Y face center, -1100, 15200, 700 mm. Height 700 mm from the bottom. Rating conductor. Not a hose.
 5. Instruments. Current. Overcurrent opens the breaker.
 
-6. Relief. Not a pressure vessel. No process vent. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. This unit has not been measured.

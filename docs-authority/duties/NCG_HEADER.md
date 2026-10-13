@@ -17,8 +17,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 | L2 | NCG_TO_AB | NCG_HEADER | AFTERBURNER | outlet | +Y | 5240, 12280, -5600 | 400 | bore not calculated | hose, atmospheric |
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
-6. Relief. No valve. Open to the suction of this loop. Not to the room and not to a stack. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. Gas volume uses 1.2 kg/m³ because the edge has no m³/h. Duct bore uses 1.2 kg/m³. Bore was not calculated where the edge has no density and no line size.

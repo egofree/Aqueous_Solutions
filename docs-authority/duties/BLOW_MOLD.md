@@ -14,8 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N2, IA-BLOW-OUT, outlet, +Y face center, 19800, 6800, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Temperature or current. High temperature trips the power. There is no liquid-level trip.
 
-6. Relief. Not a pressure vessel. A vent, if the shell is closed, returns to the process. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. This unit has not been measured. Bore was not calculated where the edge has no density and no line size.

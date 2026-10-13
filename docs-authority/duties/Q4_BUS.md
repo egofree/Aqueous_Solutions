@@ -25,8 +25,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 | L10 | IA-Q4-LIFE | Q4_BUS | HABITATION | outlet | +Y | 17000, 80, 40 | 40 | bore not calculated | hose, atmospheric |
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
-6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. No mass edge. Bore was not calculated where the edge has no density and no line size.

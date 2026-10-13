@@ -14,8 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N2, IA-E-GEO, outlet, +Y face center, -6200, 4400, 700 mm. Height 700 mm from the bottom. Rating conductor. Not a hose.
 5. Instruments. Both outlet temperatures. High hot-side outlet trips the hot feed.
 
-6. Relief. No valve. Open to the process, not the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. The approach and the coefficient are not measured. Bore was not calculated where the edge has no density and no line size.

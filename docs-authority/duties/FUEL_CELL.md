@@ -20,8 +20,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N8, S53, outlet, +Y face center, -3900, 17200, 800 mm. Height 800 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Current. Overcurrent opens the breaker.
 
-6. Relief. Not a pressure vessel. No process vent. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped.
 
 8. Open items. Duct bore is not calculated. Bore was not calculated where the edge has no density and no line size.
