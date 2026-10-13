@@ -1,3 +1,4 @@
+// NOT CURRENT. Graph is Rev BH. This drawing is Rev N.
 digraph G {
   graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD ESS charge/discharge layer\nVIEW-EFD-ESS  ·  AQS-FLOW-GRAPH-001 rev N", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];

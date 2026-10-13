@@ -1,3 +1,4 @@
+Not current. Graph is Rev BH. This export is older than BH. Do not use its numbers.
 # Stream register excerpt — DERIVED from flow_graph
 
 Document number: AQS-STR-001-DERIVED

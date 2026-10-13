@@ -1,3 +1,4 @@
+Not current. Graph is Rev BH. This export is older than BH. Do not use its numbers.
 # Mass-flow claim excerpt — DERIVED from flow_graph
 
 Document number: AQS-MF-001-DERIVED

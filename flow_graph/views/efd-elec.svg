@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="1410" viewBox="0 0 640 1410">
 <rect width="100%" height="100%" fill="#f3efe6"/>
-<text x="20" y="24" font-size="16" font-family="sans-serif">efd-elec rev N</text>
+<text x="20" y="24" font-size="16" font-family="sans-serif">efd-elec rev N — not current; graph is BH</text>
 <line x1="400" y1="58" x2="100" y2="1230" stroke="#444" stroke-width="1.2"/>
 <line x1="100" y1="1248" x2="100" y2="1160" stroke="#444" stroke-width="1.2"/>
 <line x1="100" y1="1178" x2="100" y2="1230" stroke="#444" stroke-width="1.2"/>

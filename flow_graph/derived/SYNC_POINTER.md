@@ -1,3 +1,4 @@
+Not current. Graph is Rev BH. This export is older than BH. Do not use its numbers.
 # Derived STREAM / MASS sync pointer — WP-Ap3
 
 Source graph: AQS-FLOW-GRAPH-001 Rev N (`plant_flow_graph.json`)

@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: 0.1 on AQS-PLAN-004. Revision notes and the Rev N drawings. It does not change a rate.
+Active item: 0.2 on AQS-PLAN-004. Cut test. It does not change a rate.
 
 ## Limits
 

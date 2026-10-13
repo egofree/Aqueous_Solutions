@@ -1,3 +1,4 @@
+Not current. Graph is Rev BH. This export is older than BH. Do not use its numbers.
 # Flow graph census — DERIVED
 
 Source: AQS-FLOW-GRAPH-001 Rev N

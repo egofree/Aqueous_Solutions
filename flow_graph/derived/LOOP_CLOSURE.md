@@ -1,3 +1,4 @@
+Not current. Graph is Rev BH. This export is older than BH. Do not use its numbers.
 Graph Q. Closure is the cut around each Tarjan component.
 A component passes when every unit balances and the cut balances, per rate unit.
 
