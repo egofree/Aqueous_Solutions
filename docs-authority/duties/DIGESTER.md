@@ -1,11 +1,11 @@
 # DIGESTER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.26 kg/d. Mass out 1.26 kg/d. Electrical duty 0.4000 kW. In: IA-FERM-RES 0.3454 kg/d (fermenter residue); IA-IL-SPENT 0.3427 kg/d (spent [Bmim]OAc); IA-CLOSE-8 0.2900 kg/d (shop scrap to the digester); IA-ABE-STILL 0.1800 kg/d (ABE stillage); 1 more. Out: IA-DIG-SOL 0.6327 kg/d (shop scrap and spent solvent); IA-DIG-GAS 0.6254 kg/d (biogas from the biological feeds).
+1. Basis. Mass in 1.15 kg/d. Mass out 1.15 kg/d. Electrical duty 0.4000 kW. In: IA-FERM-RES 0.3454 kg/d (fermenter residue); IA-CLOSE-8 0.2900 kg/d (shop scrap to the digester); IA-IL-SPENT 0.2328 kg/d (spent [Bmim]OAc); IA-ABE-STILL 0.1800 kg/d (ABE stillage); 1 more. Out: IA-DIG-GAS 0.6254 kg/d (biogas from the biological feeds); IA-DIG-SOL 0.5228 kg/d (shop scrap and spent solvent).
 
 2. Size.
-- V = (1.26/1000)×(480/24) = 0.0252 m³. 20 days on the whole wet feed, including the passthrough. The node class is farm.
+- V = (1.15/1000)×(480/24) = 0.0230 m³. 20 days on the whole wet feed, including the passthrough. The node class is farm.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 

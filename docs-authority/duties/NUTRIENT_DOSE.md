@@ -1,11 +1,11 @@
 # NUTRIENT_DOSE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 273.4 kg/d. Mass out 273.4 kg/d. Electrical duty 0.1000 kW. In: IA-COMP-OUT 141.2 kg/d (compost); IA-LEACH-BD 109.6 kg/d (bleed salts to nutrient); IA-NOX-N 20.00 kg/d (nitrate liquor); IA-CLOSE-0 1.30 kg/d (biofilter bleed to the nutrient tank); 4 more. Out: IA-NUT-BED 129.6 kg/d (nitrate and bleed salts); IA-NUT-LEACH 126.9 kg/d (nutrient surplus); IA-NUT-01 13.93 kg/d (digest surplus); S07 2.50 kg/d (nutrients); 1 more.
+1. Basis. Mass in 273.6 kg/d. Mass out 273.6 kg/d. Electrical duty 0.1000 kW. In: IA-COMP-OUT 141.2 kg/d (compost); IA-LEACH-BD 109.6 kg/d (bleed salts to nutrient); IA-NOX-N 20.00 kg/d (nitrate liquor); IA-CLOSE-0 1.30 kg/d (biofilter bleed to the nutrient tank); 5 more. Out: IA-NUT-BED 129.6 kg/d (nitrate and bleed salts); IA-NUT-LEACH 127.0 kg/d (nutrient surplus); IA-NUT-01 13.93 kg/d (digest surplus); S07 2.50 kg/d (nutrients); 1 more.
 
 2. Size.
-- In 273.4 kg/d, out 273.4 kg/d. No holdup claimed.
+- In 273.6 kg/d, out 273.6 kg/d. No holdup claimed.
 
 3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
 

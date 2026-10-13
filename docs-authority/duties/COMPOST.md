@@ -1,6 +1,6 @@
 # COMPOST
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 145.6 kg/d. Mass out 145.6 kg/d. Electrical duty 0.1000 kW. In: IA-BED-COMP 130.1 kg/d (salt-laden trim); IA-BOARD-SCRAP 8.01 kg/d (board scrap); IA-HTC-01 3.19 kg/d (hydrochar slurry); IA-BSFL-FRASS 2.28 kg/d (frass); 7 more. Out: IA-COMP-OUT 141.2 kg/d (compost); IA-COMP-MYC 2.70 kg/d (cooled compost); IA-CLOSE-2 0.7305 kg/d (compost return to the bed); IA-NPK-1 0.4000 kg/d (castings return); 3 more.
 

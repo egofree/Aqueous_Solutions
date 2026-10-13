@@ -1,6 +1,6 @@
 # CRYO_N2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 243.3 kg/d. Mass out 243.3 kg/d. Electrical duty 0.0000 kW. In: IA-ASU-N2 243.3 kg/d (nitrogen product). Out: S84 243.3 kg/d (N2 product).
 

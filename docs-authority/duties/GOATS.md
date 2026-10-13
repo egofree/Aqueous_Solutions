@@ -1,6 +1,6 @@
 # GOATS
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.7000 kg/d. Mass out 0.7000 kg/d. Electrical duty 0.1000 kW. In: IA-GOAT-TRIM 0.5500 kg/d (browse); IA-WEED-GOAT 0.1500 kg/d (duckweed). Out: IA-GOAT-MILK 0.4000 kg/d (milk); IA-GOAT-MAN 0.3000 kg/d (manure).
 

@@ -1,6 +1,6 @@
 # MUSH_BLOCK
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.2500 kg/d. Mass out 0.2500 kg/d. Electrical duty 0.1500 kW. In: IA-HW 0.2500 kg/d (hardwood and bran). Out: IA-BLOCK-SPENT 0.1400 kg/d (spent blocks); IA-BLOCK-FOOD 0.0800 kg/d (shiitake and lion's mane); IA-BLOCK-MED 0.0300 kg/d (reishi and turkey tail).
 

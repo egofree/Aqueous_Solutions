@@ -1,6 +1,6 @@
 # HTC
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 3.19 kg/d. Mass out 3.19 kg/d. Electrical duty 0.6000 kW. In: IA-COMP-01 3.19 kg/d (woody trim). Out: IA-HTC-01 3.19 kg/d (hydrochar slurry).
 

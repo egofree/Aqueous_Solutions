@@ -1,6 +1,6 @@
 # COLD_MILL
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 3.95 kg/d. Mass out 3.95 kg/d. Electrical duty 0.0000 kW. In: IA-MELT-MILL 3.95 kg/d (melt to the mill). Out: S59 3.95 kg/d (sheet / strip).
 

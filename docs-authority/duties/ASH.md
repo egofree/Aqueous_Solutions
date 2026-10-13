@@ -1,6 +1,6 @@
 # ASH
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.3000 kg/d. Mass out 0.3000 kg/d. Electrical duty 0.2000 kW. In: IA-SF-R 0.3000 kg/d (stalks). Out: IA-ASH-BED 0.3000 kg/d (ash).
 

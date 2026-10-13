@@ -1,6 +1,6 @@
 # WS_NITRIC
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 1.25 kg/d. Mass out 1.25 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-01 0.6456 kg/d (HCl product); IA-HNO3 0.6000 kg/d (nitric acid). Out: S34 1.25 kg/d (HNO3).
 

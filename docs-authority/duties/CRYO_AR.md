@@ -1,6 +1,6 @@
 # CRYO_AR
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 5.30 kg/d. Mass out 5.30 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-AR 5.30 kg/d (argon). Out: IA-AR-FAB 5.30 kg/d (argon cover).
 

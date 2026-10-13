@@ -1,6 +1,6 @@
 # HAB_MED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0020 kg/d. Mass out 0.0020 kg/d. Electrical duty 0.3000 kW. In: IA-MED 0.0020 kg/d (iodide stock). Out: IA-MED-R 0.0020 kg/d (dose).
 

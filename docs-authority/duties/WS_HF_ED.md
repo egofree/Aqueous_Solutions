@@ -1,6 +1,6 @@
 # WS_HF_ED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 1.50 kg/d. Mass out 1.50 kg/d. Electrical duty 0.0000 kW. In: IA-HF-SRC 1.50 kg/d (fluoride to HF). Out: S31 1.50 kg/d (HF (aq)).
 

@@ -1,6 +1,6 @@
 # PROD_C29
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 1.40 kg/d. Mass out 1.40 kg/d. Electrical duty 0.0000 kW. In: CUT-4 1.40 kg/d (fractionator cut). Out: C29_RECYCLE 1.40 kg/d (C29 heavy cut).
 

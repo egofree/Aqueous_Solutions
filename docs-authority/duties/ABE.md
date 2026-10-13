@@ -1,6 +1,6 @@
 # ABE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.6400 kg/d. Mass out 0.6400 kg/d. Electrical duty 0.2000 kW. In: IA-SUGAR-ABE 0.6400 kg/d (sugar to ABE). Out: IA-ABE-CO2 0.2500 kg/d (ABE CO2); IA-ABE-STILL 0.1800 kg/d (ABE stillage); IA-BUOH-S 0.1300 kg/d (butanol feed); IA-ACETONE 0.0600 kg/d (acetone); 1 more.
 

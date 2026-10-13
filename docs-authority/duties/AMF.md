@@ -1,6 +1,6 @@
 # AMF
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0500 kg/d. Mass out 0.0500 kg/d. Electrical duty 0.1500 kW. In: IA-AMF-IN 0.0500 kg/d (compost inoculum). Out: IA-AMF-BED 0.0500 kg/d (bed inoculum).
 

@@ -1,13 +1,14 @@
 # ACETOX
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2700 kg/d. Mass out 0.2700 kg/d. Electrical duty 0.1000 kW. In: IA-ETOH-AC 0.1600 kg/d (ethanol to acetic); IA-AC-O2 0.1100 kg/d (oxidation air). Out: IA-ACOH 0.2600 kg/d (acetic acid); IA-AC-H2O 0.0100 kg/d (oxidation water).
+1. Basis. Mass in 0.2700 kg/d. Mass out 0.2700 kg/d. Electrical duty 0.1000 kW. In: IA-ETOH-AC 0.1600 kg/d (ethanol to acetic); IA-AC-O2 0.1100 kg/d (oxygen to acetic acid). Out: IA-ACOH 0.2064 kg/d (acetic acid); IA-AC-H2O 0.0619 kg/d (oxidation water); IA-AC-EX 0.0016 kg/d (unreacted ethanol).
 
 2. Size.
 - In 0.2700 kg/d, out 0.2700 kg/d. No holdup claimed.
+- C₂H₅OH + O₂ → CH₃COOH + H₂O. The inlet is oxygen from HDR_O2, not air. Oxygen limits. Unused ethanol goes to the solvent store.
 
-3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
+3. Material. Glass or 316L. Solvent or oxidizer. Not a farm gutter. Corrosion allowance 0 mm. Pit rate is not measured.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.05 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

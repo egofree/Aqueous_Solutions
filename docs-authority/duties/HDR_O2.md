@@ -1,8 +1,8 @@
 # HDR_O2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 48.05 kg/d. Mass out 48.05 kg/d. Electrical duty 0.0000 kW. In: S83 48.05 kg/d (O2 product). Out: S50 38.40 kg/d (O2 oxidizer); S02 3.36 kg/d (O2); IA-H2O2-SRC 3.00 kg/d (oxygen to peroxide); IA-FC-AIR 2.68 kg/d (cell air); 2 more.
+1. Basis. Mass in 48.05 kg/d. Mass out 48.05 kg/d. Electrical duty 0.0000 kW. In: S83 48.05 kg/d (O2 product). Out: S50 38.40 kg/d (O2 oxidizer); S02 3.36 kg/d (O2); IA-H2O2-SRC 3.00 kg/d (oxygen to peroxide); IA-FC-AIR 2.48 kg/d (cell air); 4 more.
 
 2. Size.
 - Duct at 10 m/s. Gas 1.67 m³/h. Bore 8 mm, DN15. Not a packed tower.

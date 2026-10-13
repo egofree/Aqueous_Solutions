@@ -1,6 +1,6 @@
 # LITHO_STUB
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.9875 kg/d. Mass out 0.9875 kg/d. Electrical duty 0.1000 kW. In: IA-LITHO-IN 0.9875 kg/d (spent resist and solvent). Out: IA-LITHO-OUT 0.9875 kg/d (spent resist and solvent).
 

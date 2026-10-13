@@ -1,6 +1,6 @@
 # GLASS_DIGEST
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 148.4 kg/d. Mass out 148.4 kg/d. Electrical duty 1.50 kW. In: IA-BASE-01 118.4 kg/d (digest NaOH, 20 wt%); IA-GLASS-03 30.00 kg/d (burned cullet). Out: IA-DIG-LIQ 118.4 kg/d (silicate liquor); S08G 26.20 kg/d (glass and ceramic stock); IA-SIL-SRC 3.30 kg/d (silicate to slurry); IA-SIC-IN 0.5000 kg/d (silica charge).
 

@@ -1,6 +1,6 @@
 # HOPPER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 633.4 kg/d. Mass out 633.4 kg/d. Electrical duty 0.0000 kW. In: IA-WEAR 596.9 kg/d (worn goods); IA-LEACH-HOP 35.35 kg/d (returned solids); S61 1.20 kg/d (metal scrap). Out: IA-HOP-01 530.3 kg/d (returned scrap); IA-FEED-01 102.7 kg/d (mineral feedstock); IA-CLOSE-5 0.4500 kg/d (hopper fines to the pretreat).
 

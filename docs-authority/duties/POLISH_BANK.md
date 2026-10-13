@@ -1,6 +1,6 @@
 # POLISH_BANK
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 3971.1 kg/d. Mass out 3971.1 kg/d. Electrical duty 0.0000 kW. In: IA-EW-09 3971.1 kg/d (EW tail to polish). Out: IA-POL-02 3753.7 kg/d (raffinate (EW tail after polish) to continuous recycle); IA-POL-CAKE 217.4 kg/d (recovered cake).
 

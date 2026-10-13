@@ -1,6 +1,6 @@
 # CLOVER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.4100 kg/d. Mass out 0.4100 kg/d. Electrical duty 0.2000 kW. In: IA-CAST-CLOVER 0.4000 kg/d (finished castings); IA-SEED-OUT 0.0100 kg/d (seeded clover). Out: IA-CLOVER-CUT 0.3800 kg/d (clover cuttings); IA-NECTAR 0.0200 kg/d (clover nectar); IA-SEED-CLOVER 0.0100 kg/d (clover seed).
 

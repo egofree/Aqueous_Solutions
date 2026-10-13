@@ -1,6 +1,6 @@
 # FRUIT_GUTTER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.4000 kg/d. Mass out 0.4000 kg/d. Electrical duty 0.4000 kW. In: IA-BED-FRUIT 0.4000 kg/d (irrigation spill). Out: IA-FRUIT 0.2500 kg/d (strawberry and fig); IA-FRUIT-TRIM 0.1500 kg/d (fruit trim).
 

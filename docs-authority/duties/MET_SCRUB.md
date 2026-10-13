@@ -1,6 +1,6 @@
 # MET_SCRUB
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 71606.5 kg/d. Mass out 71606.5 kg/d. Electrical duty 0.0000 kW. In: S62 51145.7 kg/d (MFG metal-aisle capture feed); S71 20458.3 kg/d (metal-aisle fume / mist / dust); IA-DRAW-FUME 2.46 kg/d (draw fume). Out: IA-MET-AIR-RET 71604.0 kg/d (scrubbed metal-aisle air returned to the hall); S72 2.44 kg/d (metal fines and aqueous scrub liquor); S72B 0.0158 kg/d (organic mist).
 

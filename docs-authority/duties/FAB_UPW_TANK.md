@@ -1,6 +1,6 @@
 # FAB_UPW_TANK
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 60.00 kg/d. Mass out 60.00 kg/d. Electrical duty 0.0000 kW. In: IA-UPW-FAB 60.00 kg/d (fab UPW). Out: S27 60.00 kg/d (fab UPW > 18 MΩ·cm class).
 

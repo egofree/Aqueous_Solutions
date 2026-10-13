@@ -1,6 +1,6 @@
 # BEES
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0200 kg/d. Mass out 0.0200 kg/d. Electrical duty 0.1000 kW. In: IA-NECTAR 0.0200 kg/d (clover nectar). Out: IA-HONEY 0.0200 kg/d (honey).
 

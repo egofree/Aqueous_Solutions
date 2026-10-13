@@ -1,6 +1,6 @@
 # WS_PEROX
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 3.00 kg/d. Mass out 3.00 kg/d. Electrical duty 0.0000 kW. In: IA-H2O2-SRC 3.00 kg/d (oxygen to peroxide). Out: S32 3.00 kg/d (H₂O₂).
 

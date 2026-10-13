@@ -1,6 +1,6 @@
 # BIOFILTER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 48200.3 kg/d. Mass out 48200.3 kg/d. Electrical duty 0.3000 kW. In: IA-CLAR-BIO 47999.0 kg/d (clarified water); IA-NFT-OUT 200.0 kg/d (film return); IA-TOIL-URN 1.30 kg/d (urine to the biofilter). Out: IA-BIO-VEG 19393.0 kg/d (nitrate water); IA-BIO-BED 18909.0 kg/d (nitrate water); IA-BIO-WEED 9697.0 kg/d (nitrate water); IA-NFT-IN 200.0 kg/d (film supply); 1 more.
 

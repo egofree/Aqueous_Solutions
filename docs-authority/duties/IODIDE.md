@@ -1,6 +1,6 @@
 # IODIDE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0040 kg/d. Mass out 0.0040 kg/d. Electrical duty 0.2000 kW. In: IA-I-SRC 0.0020 kg/d (iodide startup); IA-I-RET 0.0020 kg/d (urine iodide return). Out: IA-I-MAKE 0.0020 kg/d (KI dose return); IA-MED 0.0020 kg/d (iodide stock).
 

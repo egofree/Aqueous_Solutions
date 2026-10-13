@@ -1,6 +1,6 @@
 # MEOH_FERM
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.3600 kg/d. Mass out 0.3600 kg/d. Electrical duty 0.0000 kW. In: S78 0.3600 kg/d (ferment feed). Out: IA-FERM-RES 0.3454 kg/d (fermenter residue); S77 0.0146 kg/d (biogenic MeOH).
 

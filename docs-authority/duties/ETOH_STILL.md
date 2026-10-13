@@ -1,6 +1,6 @@
 # ETOH_STILL
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.4600 kg/d. Mass out 0.4600 kg/d. Electrical duty 0.3000 kW. In: IA-ETOH-S 0.4600 kg/d (ethanol feed). Out: IA-ETOH 0.2000 kg/d (ethanol); IA-ETOH-AC 0.1600 kg/d (ethanol to acetic); IA-ETOH-R 0.1000 kg/d (ethanol product).
 

@@ -1,6 +1,6 @@
 # PROD_C5_C10
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 11.16 kg/d. Mass out 11.16 kg/d. Electrical duty 0.0000 kW. In: CUT-1 11.16 kg/d (fractionator cut). Out: CUT-1-OUT 11.16 kg/d (C5-C10 fuel from the tank).
 

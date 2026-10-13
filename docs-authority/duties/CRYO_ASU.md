@@ -1,6 +1,6 @@
 # CRYO_ASU
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 1902.7 kg/d. Mass out 1902.7 kg/d. Electrical duty 18.00 kW. In: IA-EXP-OUT 1575.5 kg/d (expanded gas); IA-NOX-N2 243.9 kg/d (scrubbed flue nitrogen to the cold box); IA-NOX-CO2 30.47 kg/d (scrubbed CO2 to the cold box); IA-CO2-RET 30.00 kg/d (CO2 return); 6 more. Out: IA-EXP-IN 1575.5 kg/d (cold gas); IA-ASU-N2 243.3 kg/d (nitrogen product); IA-ASU-O2 48.05 kg/d (oxygen product); IA-ASU-CO2 30.47 kg/d (CO2 product); 5 more.
 

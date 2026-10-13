@@ -1,6 +1,6 @@
 # FISH
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 48001.0 kg/d. Mass out 48001.0 kg/d. Electrical duty 0.1000 kW. In: IA-SUMP-FISH 48000.0 kg/d (return); IA-WEED-FISH 0.5000 kg/d (duckweed); IA-BSFL-FISH 0.4000 kg/d (larvae); IA-AZOLLA 0.1000 kg/d (azolla). Out: IA-FISH-OUT 48000.0 kg/d (tank water); IA-CLOSE-4 0.5000 kg/d (fish solids liquor to the nutrient tank); IA-FISH-HAB 0.3000 kg/d (fish); IA-FISH-DET 0.2000 kg/d (detritus).
 

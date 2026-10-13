@@ -1,6 +1,6 @@
 # EXPANDER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 1575.5 kg/d. Mass out 1575.5 kg/d. Electrical duty 0.6140 kW. In: IA-EXP-IN 1575.5 kg/d (cold gas). Out: IA-EXP-OUT 1575.5 kg/d (expanded gas).
 

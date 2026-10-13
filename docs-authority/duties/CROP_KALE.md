@@ -1,6 +1,6 @@
 # CROP_KALE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0500 kg/d. Mass out 0.0500 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_KALE 0.0500 kg/d (kale). Out: IA-CROP_KALE-HAB 0.0500 kg/d (harvest).
 

@@ -1,8 +1,8 @@
 # FUEL_CELL
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 43.44 kg/d. Mass out 43.44 kg/d. Electrical duty 4.00 kW. In: S50 38.40 kg/d (O2 oxidizer); S49 5.04 kg/d (H2 fuel). Out: S52 42.89 kg/d (PEM product H2O); IA-FC-LEACH 0.5471 kg/d (cell water).
+1. Basis. Mass in 43.43 kg/d. Mass out 43.43 kg/d. Electrical duty 4.00 kW. In: S50 38.40 kg/d (O2 oxidizer); S49 5.03 kg/d (H2 fuel). Out: S52 42.88 kg/d (PEM product H2O); IA-FC-LEACH 0.5471 kg/d (cell water).
 
 2. Size.
 - 4.00 kW. No exchanger area. A heat-transfer area does not belong on this class.

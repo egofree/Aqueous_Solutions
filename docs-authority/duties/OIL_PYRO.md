@@ -1,6 +1,6 @@
 # OIL_PYRO
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 34.40 kg/d. Mass out 34.40 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-01 33.00 kg/d (Dryer → pyro); C29_TO_PYRO 1.40 kg/d (C29 heavy cut). Out: IA-OIL-02 28.90 kg/d (Pyro → frac); IA-CHAR 5.20 kg/d (char reductant); IA-SIC-C 0.2999 kg/d (carbon reagent).
 

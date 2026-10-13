@@ -1,6 +1,6 @@
 # BOARD_MILL
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 8.70 kg/d. Mass out 8.70 kg/d. Electrical duty 1.00 kW. In: IA-LIG-01 3.87 kg/d (lignin); IA-CEL-01 3.18 kg/d (cellulose); IA-NOX-BOARD 1.65 kg/d (recovered carbon). Out: IA-BOARD-SCRAP 8.01 kg/d (board scrap); IA-BOARD 0.6900 kg/d (board, paper, cardboard).
 

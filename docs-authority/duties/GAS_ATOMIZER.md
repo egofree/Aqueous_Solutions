@@ -1,6 +1,6 @@
 # GAS_ATOMIZER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 3.20 kg/d. Mass out 3.20 kg/d. Electrical duty 0.0000 kW. In: IA-MELT-ATOM 3.20 kg/d (melt to the atomizer). Out: S60 3.20 kg/d (metal powder).
 

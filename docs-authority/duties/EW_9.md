@@ -1,6 +1,6 @@
 # EW_9
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 4046.4 kg/d. Mass out 4046.4 kg/d. Electrical duty 0.0000 kW. In: IA-EW-08 4046.4 kg/d (EW overflow). Out: IA-EW-09 3971.1 kg/d (EW tail to polish); IA-EW-MET-9 61.34 kg/d (plated sheet); IA-EW-SHEET 13.99 kg/d (cathode sheet).
 

@@ -1,6 +1,6 @@
 # BMED_BASE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 118.7 kg/d. Mass out 118.7 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-04 118.7 kg/d (CRU → BMED base regen loop). Out: IA-BASE-01 118.4 kg/d (digest NaOH, 20 wt%); IA-BMED-02 0.2700 kg/d (NaOH product).
 

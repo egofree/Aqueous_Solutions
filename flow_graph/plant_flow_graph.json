@@ -1,7 +1,7 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "BG",
+  "revision": "BH",
   "licence": "CERN-OHL-S-2.0",
   "date": "2026-10-12",
   "sole_authority": true,
@@ -238,7 +238,7 @@
             }
           ]
         },
-        "duty": "In 61.155 kg/d, out 61.155 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
+        "duty": "In 61.807 kg/d, out 61.807 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -673,7 +673,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 6.640 kg/d, out 6.640 kg/d, 4.000 kW. Sheet docs-authority/duties/CRYO_H2.md.",
+        "duty": "In 6.629 kg/d, out 6.629 kg/d, 4.000 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1446,7 +1446,7 @@
             }
           ]
         },
-        "duty": "In 43.440 kg/d, out 43.440 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1827,7 +1827,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 6.640 kg/d, out 6.640 kg/d, 0.300 kW. Sheet docs-authority/duties/H2_DRYER.md.",
+        "duty": "In 6.629 kg/d, out 6.629 kg/d, 0.300 kW. Sheet docs-authority/duties/H2_DRYER.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -1917,7 +1917,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 6.640 kg/d, out 6.640 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_H2.md.",
+        "duty": "In 6.629 kg/d, out 6.629 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_H2.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2176,7 +2176,7 @@
             }
           ]
         },
-        "duty": "In 5622.510 kg/d, out 5622.510 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
+        "duty": "In 5622.650 kg/d, out 5622.650 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
         "internals": "shell and nozzles",
         "design_kPa": 25.1,
         "relief_mm": 2.8,
@@ -2228,7 +2228,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 5.330 kg/d, out 5.330 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
+        "duty": "In 4.479 kg/d, out 4.479 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -2290,7 +2290,7 @@
             }
           ]
         },
-        "duty": "In 12.205 kg/d, out 12.205 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
+        "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2344,7 +2344,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "CO2 + 3 H2 \u2192 CH3OH + H2O. CO2 limits. Excess hydrogen stays on S45.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.5,
@@ -2375,7 +2375,7 @@
             }
           ]
         },
-        "duty": "In 8.500 kg/d, out 8.500 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
+        "duty": "In 7.848 kg/d, out 7.848 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2408,7 +2408,7 @@
           1100
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 9.495 kg/d, out 9.495 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
+        "duty": "In 6.019 kg/d, out 6.019 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -2644,7 +2644,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 497.286 kg/d, out 497.286 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "duty": "In 497.918 kg/d, out 497.918 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -2670,7 +2670,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 273.401 kg/d, out 273.401 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
+        "duty": "In 273.555 kg/d, out 273.555 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3218,7 +3218,7 @@
             }
           ]
         },
-        "duty": "In 79.083 kg/d, out 79.083 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
+        "duty": "In 79.122 kg/d, out 79.122 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3270,7 +3270,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 3.250 kg/d, out 3.250 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
+        "duty": "In 3.259 kg/d, out 3.259 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3447,7 +3447,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
+        "duty": "In 0.210 kg/d, out 0.210 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -3747,7 +3747,7 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 165.122 kg/d, out 165.122 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
+        "duty": "In 165.111 kg/d, out 165.111 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
         "presence": "present",
         "internals": "shell and nozzles",
         "design_kPa": 17.8,
@@ -4679,7 +4679,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 1.258 kg/d, out 1.258 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
+        "duty": "In 1.148 kg/d, out 1.148 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -4731,7 +4731,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
-        "duty": "In 9.483 kg/d, out 9.483 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
+        "duty": "In 9.373 kg/d, out 9.373 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5002,7 +5002,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Ethanol plus oxygen from HDR_O2. Oxygen limits.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5052,7 +5052,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Acetaldehyde plus oxygen. Coproduct is water. Not NOx.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5063,7 +5063,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/GLYOXAL.md.",
+        "duty": "In 0.330 kg/d, out 0.330 kg/d, 0.100 kW. Sheet docs-authority/duties/GLYOXAL.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5077,7 +5077,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Methanol plus half an oxygen. Coproduct is water.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5088,7 +5088,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.120 kg/d, out 0.120 kg/d, 0.100 kW. Sheet docs-authority/duties/FORM.md.",
+        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5102,7 +5102,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Methanol plus ammonia. Methanol limits. Excess ammonia returns.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5127,7 +5127,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Glyoxal, formaldehyde, methylamine, and ammonia. Ammonia limits. Molt liquor passes through.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -5138,7 +5138,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.450 kg/d, out 0.450 kg/d, 0.100 kW. Sheet docs-authority/duties/IMID.md.",
+        "duty": "In 0.523 kg/d, out 0.523 kg/d, 0.100 kW. Sheet docs-authority/duties/IMID.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5163,7 +5163,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.420 kg/d, out 0.420 kg/d, 0.100 kW. Sheet docs-authority/duties/QUAT.md.",
+        "duty": "In 0.223 kg/d, out 0.223 kg/d, 0.100 kW. Sheet docs-authority/duties/QUAT.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5193,7 +5193,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.562 kg/d, out 0.562 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
+        "duty": "In 0.412 kg/d, out 0.412 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
         "internals": "media or gutter",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -5232,7 +5232,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": null,
+      "notes": "Butanol plus HCl. HCl limits.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.1,
@@ -9399,7 +9399,7 @@
       "forbidden": "HDR_O2, hab air, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 6.64,
+        "value": 6.628752089257418,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Dryer inlet equals the pool."
@@ -9949,7 +9949,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 6.64,
+        "value": 6.628752089257418,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day."
@@ -10151,7 +10151,7 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 79.0768,
+        "value": 79.11551173968371,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38"
@@ -10835,7 +10835,7 @@
       "forbidden": "HDR_UPW, farm beds",
       "claim_status": "Closed",
       "rate": {
-        "value": 17.8924,
+        "value": 17.881152089257387,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: VCD brine 10% of feed"
@@ -11037,7 +11037,7 @@
       "forbidden": "hab air",
       "claim_status": "Claimed",
       "rate": {
-        "value": 3.0,
+        "value": 3.008739154859247,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L"
@@ -11494,15 +11494,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "H2 fuel",
+      "carries": "unused synthesis hydrogen",
       "header": "GEN fuel manifold",
       "forbidden": "HDR_O2, hab AHU",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 0.6517575950373788,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Standby. Not a design-day draw. Fuel cell and MeOH take the pool."
+        "note": "Not methanol. Dispatched to the genset."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "BACKUP_GEN",
@@ -11530,7 +11530,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 61.1553,
+        "value": 61.80705759503738,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S45 3.6 + air at lambda 2.0 (34.3 kg/kg stoich)"
@@ -11589,7 +11589,7 @@
       "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.04,
+        "value": 5.028752089257418,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
@@ -11675,7 +11675,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Claimed",
       "rate": {
-        "value": 42.8929,
+        "value": 42.881652089257415,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016"
@@ -12596,15 +12596,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "H2 for MeOH",
+      "carries": "hydrogen consumed",
       "header": "MeOH H\u2082 branch",
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
-        "value": 1.6,
+        "value": 0.9482424049626212,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous methanol synthesis."
+        "note": "Three H2 per CO2. Excess does not enter."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -12626,15 +12626,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "crude MeOH",
+      "carries": "methanol",
       "header": "MeOH process",
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 8.5,
+        "value": 5.023740598513941,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2"
+        "note": "CO2 + 3 H2 \u2192 methanol + water. CO2 limits."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -12662,7 +12662,7 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 8.055399999999999,
+        "value": 4.579140598513943,
         "unit": "kg/d",
         "status": "study",
         "note": "Fuel draw reduced by the biogas correction."
@@ -12844,7 +12844,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 5.33,
+        "value": 1.6549096212978096,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d"
@@ -14224,15 +14224,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "synth water",
+      "carries": "synthesis water",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 2.824501806448681,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+        "note": "One water per methanol."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -14259,7 +14259,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.68,
+        "value": 2.481169022783867,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
@@ -15100,10 +15100,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.6327020720350884,
+        "value": 0.5228295461217779,
         "unit": "kg/d",
         "status": "study",
-        "note": "Passthrough. Not a biogas yield."
+        "note": "Passthrough. Biological feeds stay on the gas edge."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15370,7 +15370,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 126.87608214463197,
+        "value": 127.02966334820698,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014."
@@ -15434,7 +15434,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 120.33000000000398,
+        "value": 120.47056170745005,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw."
@@ -16025,7 +16025,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 201.28,
+        "value": 201.91175759503741,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
@@ -16927,7 +16927,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.33,
+        "value": 4.4794114277464905,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
@@ -18099,7 +18099,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "oxidation air",
+      "carries": "oxygen to acetic acid",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -18107,7 +18107,7 @@
         "value": 0.11,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "From the oxygen header. Not air."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18134,10 +18134,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.26,
+        "value": 0.2064416526032877,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Ethanol plus oxygen. Oxygen limits."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18164,10 +18164,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.01,
+        "value": 0.061930433152072,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Coproduct water."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18194,10 +18194,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.18,
+        "value": 0.19124791074258177,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Ethanol dehydrogenation. n \u00d7 44.053."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18219,15 +18219,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "dehydrogenation H2",
+      "carries": "dehydrogenation hydrogen",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.02,
+        "value": 0.00875208925741822,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "n \u00d7 2.016. Not 0.020."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18254,10 +18254,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.16,
+        "value": 0.25195250602357333,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Acetaldehyde plus oxygen."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18279,15 +18279,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "oxidation NOx",
+      "carries": "no NOx from this oxidation",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.02,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "The coproduct is water, not NOx."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18374,10 +18374,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.02,
+        "value": 0.06746769864552775,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Coproduct water."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18464,10 +18464,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.07,
+        "value": 0.038771612258910175,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Methanol plus ammonia. Methanol limits."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18524,10 +18524,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.26,
+        "value": 0.09641947037754683,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Ammonia limits the four-reagent condensation."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18554,10 +18554,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.19,
+        "value": 0.0634666196935001,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Three water per imidazole."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18614,10 +18614,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.16,
+        "value": 0.1269488178177629,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "HCl limits. n \u00d7 92.566."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18644,10 +18644,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.02,
+        "value": 0.024706511602391793,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "Coproduct water."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18674,10 +18674,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.30191992740315016,
+        "value": 0.2051224238153955,
         "unit": "kg/d",
         "status": "study",
-        "note": "BuCl limited. n = 0.160/92.566. Product n\u00d7174.672."
+        "note": "Addition. The smaller feed limits."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18707,7 +18707,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Addition makes no water. Withdrawn."
+        "note": "Addition makes no water."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18734,10 +18734,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.34270207203508846,
+        "value": 0.23282954612177795,
         "unit": "kg/d",
         "status": "study",
-        "note": "n \u00d7 198.266. Acetate exchange of the chloride."
+        "note": "Acetate exchange."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18758,15 +18758,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "HCl and unused acetic acid",
+      "carries": "exchange coproducts and unused feed",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.21921785536806165,
+        "value": 0.17873453029690525,
         "unit": "kg/d",
         "status": "study",
-        "note": "Exchange coproduct plus acetic acid the BuCl did not consume."
+        "note": "Everything that is not the acetate."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18945,7 +18945,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.18,
+        "value": 0.2099725848244856,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-026"
@@ -21931,15 +21931,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "unreacted 1-methylimidazole",
+      "carries": "unreacted quaternization feed",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.11808007259684983,
+        "value": 0.01824586437991424,
         "unit": "kg/d",
         "status": "study",
-        "note": "Imidazole feed minus the BuCl-limited consumption."
+        "note": "Whichever reagent remains."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23313,10 +23313,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1,
+        "value": 0.1124499094937894,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass as IA-CH2O."
+        "note": "Methanol oxidation."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24310,10 +24310,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.34270207203508846,
+        "value": 0.23282954612177795,
         "unit": "kg/d",
         "status": "study",
-        "note": "Equals IA-IL. The pretreat does not store the solvent."
+        "note": "Equals IA-IL. The pretreat does not store it."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "FARM",
@@ -24324,6 +24324,222 @@
       "composition": {
         "bmim_oac": 1.0
       }
+    },
+    {
+      "stream_id": "IA-GLX-O2",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "GLYOXAL",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen to glyoxal",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.13891336907681956,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "One O2 per acetaldehyde."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-GLX-H2O",
+      "from_unit_id": "GLYOXAL",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "glyoxal water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.078208773795828,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Coproduct water."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-FORM-O2",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "FORM",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen to formaldehyde",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.059917608139317145,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Half an O2 per methanol."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-MEAM-H2O",
+      "from_unit_id": "MEAM",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methylamine water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02248923288184258,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Coproduct water."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-NH3-RET",
+      "from_unit_id": "MEAM",
+      "to_unit_id": "WS_AMMONIA",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "unreacted ammonia",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.008739154859247238,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Returned. Not methylamine."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-AC-EX",
+      "from_unit_id": "ACETOX",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "unreacted ethanol",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0016279142446402883,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Oxygen-limited remainder."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-BUCL-EX",
+      "from_unit_id": "BUCL",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "unreacted butanol",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.028344670579845327,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HCl-limited remainder."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-IMID-EX",
+      "from_unit_id": "IMID",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "unreacted reagents and molt liquor",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.36328793770522605,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Not imidazole. The molt liquor is not a reactant."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "NUT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
     }
   ],
   "view_presets": [

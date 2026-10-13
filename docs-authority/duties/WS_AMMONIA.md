@@ -1,8 +1,8 @@
 # WS_AMMONIA
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.25 kg/d. Mass out 3.25 kg/d. Electrical duty 0.0000 kW. In: IA-NH3-SRC 3.25 kg/d (nitrogen to ammonia). Out: S33 3.00 kg/d (NH₄OH / NH₃ (aq)); IA-NH3-NIT 0.2000 kg/d (ammonia to nitric); IA-NH3-MEAM 0.0300 kg/d (ammonia to methylamine); IA-NH3-IMID 0.0200 kg/d (ammonia to imidazole).
+1. Basis. Mass in 3.26 kg/d. Mass out 3.26 kg/d. Electrical duty 0.0000 kW. In: IA-NH3-SRC 3.25 kg/d (nitrogen to ammonia); IA-NH3-RET 0.0087 kg/d (unreacted ammonia). Out: S33 3.01 kg/d (NH₄OH / NH₃ (aq)); IA-NH3-NIT 0.2000 kg/d (ammonia to nitric); IA-NH3-MEAM 0.0300 kg/d (ammonia to methylamine); IA-NH3-IMID 0.0200 kg/d (ammonia to imidazole).
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.

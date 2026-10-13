@@ -1,6 +1,6 @@
 # OIL_FRAC
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 29.91 kg/d. Mass out 29.91 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-02 28.90 kg/d (Pyro → frac); IA-LITHO-OUT 0.9875 kg/d (spent resist and solvent); S72B 0.0158 kg/d (organic mist); S38 0.0060 kg/d (resist and solvent waste). Out: CUT-1 11.16 kg/d (fractionator cut); CUT-2 8.41 kg/d (fractionator cut); IA-OIL-03 5.00 kg/d (NCG only); CUT-3 3.95 kg/d (fractionator cut); 1 more.
 

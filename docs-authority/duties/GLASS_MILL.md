@@ -1,6 +1,6 @@
 # GLASS_MILL
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 36.82 kg/d. Mass out 36.82 kg/d. Electrical duty 0.0000 kW. In: IA-GLASS-01 36.82 kg/d (rinsed cullet). Out: IA-GLASS-02 30.00 kg/d (milled cullet); IA-MILL-LOSS 6.82 kg/d (mill dust).
 

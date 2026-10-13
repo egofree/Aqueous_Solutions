@@ -1,6 +1,6 @@
 # WS_DOPE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0100 kg/d. Mass out 0.0100 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-DOPE 0.0100 kg/d (phosphate to dopant). Out: IA-PV-IN 0.0100 kg/d (dopant concentrate).
 

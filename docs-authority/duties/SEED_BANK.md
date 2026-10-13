@@ -1,6 +1,6 @@
 # SEED_BANK
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0100 kg/d. Mass out 0.0100 kg/d. Electrical duty 0.2000 kW. In: IA-SEED-CLOVER 0.0100 kg/d (clover seed). Out: IA-SEED-OUT 0.0100 kg/d (seeded clover).
 

@@ -1,6 +1,6 @@
 # HDR_N2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 245.0 kg/d. Mass out 245.0 kg/d. Electrical duty 0.0000 kW. In: S84 243.3 kg/d (N2 product); IA-EW4-N2 1.00 kg/d (sweep nitrogen); IA-CLOSE-3 0.5000 kg/d (worm bin vent to the nitrogen header); IA-CLOSE-9 0.1798 kg/d (larvae bin vent to the nitrogen header). Out: IA-AB-AIR 111.2 kg/d (combustion air); IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-GEN-AIR 50.00 kg/d (genset air); IA-NH3-SRC 3.25 kg/d (nitrogen to ammonia); 1 more.
 

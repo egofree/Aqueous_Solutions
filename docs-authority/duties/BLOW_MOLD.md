@@ -1,6 +1,6 @@
 # BLOW_MOLD
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 8.41 kg/d. Mass out 8.41 kg/d. Electrical duty 0.5000 kW. In: IA-BLOW-IN 8.41 kg/d (C11-C18 to the mold). Out: IA-BLOW-OUT 8.41 kg/d (blown parts).
 

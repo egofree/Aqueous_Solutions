@@ -1,6 +1,6 @@
 # WAFER_FAB
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 76.61 kg/d. Mass out 76.61 kg/d. Electrical duty 2.00 kW. In: IA-UPW-USE 66.50 kg/d (fab UPW); IA-AR-FAB 5.30 kg/d (argon cover); S37 3.30 kg/d (colloidal silica slurry); S03 1.50 kg/d (N2); 1 more. Out: IA-FAB-SPENT 66.50 kg/d (spent UPW); IA-AR-RET 5.30 kg/d (argon return); S39 3.31 kg/d (spent slurry and etch liquor); IA-LITHO-IN 0.9875 kg/d (spent resist and solvent); 1 more.
 

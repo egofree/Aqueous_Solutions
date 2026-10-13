@@ -1,6 +1,6 @@
 # BMED_ACID
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 108.2 kg/d. Mass out 108.2 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-03 108.2 kg/d (CRU → BMED acid regen loop). Out: IA-ACID-01 98.27 kg/d (regen HCl, 20 wt%); S09 9.28 kg/d (HCl); IA-BMED-01 0.6456 kg/d (HCl product); IA-HCL-BU 0.0500 kg/d (HCl to chlorobutane).
 

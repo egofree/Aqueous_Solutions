@@ -1,6 +1,6 @@
 # NFT
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 200.0 kg/d. Mass out 200.0 kg/d. Electrical duty 0.3000 kW. In: IA-NFT-IN 200.0 kg/d (film supply). Out: IA-NFT-OUT 200.0 kg/d (film return).
 

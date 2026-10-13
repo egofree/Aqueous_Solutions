@@ -1,6 +1,6 @@
 # ACID_POLISH_SCRUB
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 37537.2 kg/d. Mass out 37537.2 kg/d. Electrical duty 0.0000 kW. In: S65 37509.8 kg/d (acid-gas residual); IA-SCRUB-SRC 27.36 kg/d (scrub feed). Out: IA-ACID-AIR-RET 37509.8 kg/d (acid-gas dilution air returned to the alkaline scrubber); S66 27.36 kg/d (scrub liquor → chlorate finish).
 

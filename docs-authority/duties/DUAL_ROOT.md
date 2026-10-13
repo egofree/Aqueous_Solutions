@@ -1,6 +1,6 @@
 # DUAL_ROOT
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 20.00 kg/d. Mass out 20.00 kg/d. Electrical duty 0.3000 kW. In: IA-DR-IN 20.00 kg/d (correction supply). Out: IA-DR-OUT 20.00 kg/d (correction return, not to the tank).
 

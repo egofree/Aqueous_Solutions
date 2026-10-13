@@ -1,6 +1,6 @@
 # HDR_CO2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 17.07 kg/d. Mass out 17.07 kg/d. Electrical duty 0.0000 kW. In: S85 12.17 kg/d (CO2 product after FLUE_KO); S90 4.02 kg/d (metabolic CO2 (desorbed from the HAB CO2 sorbent bed)); IA-YEAST-CO2 0.4400 kg/d (fermentation CO2); IA-ABE-CO2 0.2500 kg/d (ABE CO2); 1 more. Out: S89 17.07 kg/d (CO2 enrichment dose (FARM AHU supply)).
 

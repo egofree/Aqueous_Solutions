@@ -1,11 +1,11 @@
 # LEACH_CSTR_1
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 5622.5 kg/d. Mass out 5622.5 kg/d. Electrical duty 2.00 kW. In: IA-REC-01 3753.7 kg/d (continuous recycle liquor); IA-HOP-01 530.3 kg/d (returned scrap); IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); IA-GREY-01 242.6 kg/d (grey sludge); 18 more. Out: IA-EW-04 4287.8 kg/d (CSTR to EW-1); IA-SINK-01 376.1 kg/d (sink solids); IA-LEACH-NOX 195.0 kg/d (leach offgas); IA-LEACH-FLUE 135.9 kg/d (leach vent); 15 more.
+1. Basis. Mass in 5622.7 kg/d. Mass out 5622.7 kg/d. Electrical duty 2.00 kW. In: IA-REC-01 3753.7 kg/d (continuous recycle liquor); IA-HOP-01 530.3 kg/d (returned scrap); IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); IA-GREY-01 242.6 kg/d (grey sludge); 18 more. Out: IA-EW-04 4287.8 kg/d (CSTR to EW-1); IA-SINK-01 376.1 kg/d (sink solids); IA-LEACH-NOX 195.0 kg/d (leach offgas); IA-LEACH-FLUE 135.9 kg/d (leach vent); 15 more.
 
 2. Size.
-- Envelope 2000×1200×1400 mm, 3.36 m³. Flow 5622.5 kg/d is circulation. If the box were full the residence would be 14.34 h. It is not sized as a 20-day tank.
+- Envelope 2000×1200×1400 mm, 3.36 m³. Flow 5622.7 kg/d is circulation. If the box were full the residence would be 14.34 h. It is not sized as a 20-day tank.
 
 3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
 

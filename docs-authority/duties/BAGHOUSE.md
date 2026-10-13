@@ -1,6 +1,6 @@
 # BAGHOUSE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 7.77 kg/d. Mass out 7.77 kg/d. Electrical duty 0.0000 kW. In: IA-MILL-LOSS 6.82 kg/d (mill dust); IA-FAB-LOSS 0.5100 kg/d (kerf); IA-WIRE-LOSS 0.4400 kg/d (draw scrap). Out: IA-BAG-01 7.77 kg/d (captured dust).
 

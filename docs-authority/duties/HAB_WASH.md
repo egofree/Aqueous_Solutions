@@ -1,6 +1,6 @@
 # HAB_WASH
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 80.00 kg/d. Mass out 80.00 kg/d. Electrical duty 0.3000 kW. In: IA-WASH 80.00 kg/d (wash water). Out: IA-WASH-R 80.00 kg/d (grey).
 

@@ -1,13 +1,14 @@
 # IMID
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4500 kg/d. Mass out 0.4500 kg/d. Electrical duty 0.1000 kW. In: IA-GLX 0.1600 kg/d (glyoxal); IA-CLOSE-11 0.1000 kg/d (crayfish molt liquor to imidazole makeup); IA-FORM-R 0.1000 kg/d (formaldehyde); IA-MEAM 0.0700 kg/d (methylamine); 1 more. Out: IA-IMID 0.2600 kg/d (1-methylimidazole); IA-IMID-H2O 0.1900 kg/d (condensation water).
+1. Basis. Mass in 0.5232 kg/d. Mass out 0.5232 kg/d. Electrical duty 0.1000 kW. In: IA-GLX 0.2520 kg/d (glyoxal); IA-FORM-R 0.1124 kg/d (formaldehyde); IA-CLOSE-11 0.1000 kg/d (crayfish molt liquor to imidazole makeup); IA-MEAM 0.0388 kg/d (methylamine); 1 more. Out: IA-IMID-EX 0.3633 kg/d (unreacted reagents and molt liquor); IA-IMID 0.0964 kg/d (1-methylimidazole); IA-IMID-H2O 0.0635 kg/d (condensation water).
 
 2. Size.
-- In 0.4500 kg/d, out 0.4500 kg/d. No holdup claimed.
+- In 0.5232 kg/d, out 0.5232 kg/d. No holdup claimed.
+- Glyoxal + formaldehyde + methylamine + ammonia → 1-methylimidazole + 3 H₂O. Ammonia limits. Molt liquor is not a reactant. It leaves with the unused reagents.
 
-3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
+3. Material. Glass or 316L. Solvent or oxidizer. Not a farm gutter. Corrosion allowance 0 mm. Pit rate is not measured.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.07 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

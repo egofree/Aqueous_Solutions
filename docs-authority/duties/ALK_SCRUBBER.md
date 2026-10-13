@@ -1,6 +1,6 @@
 # ALK_SCRUBBER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 37509.8 kg/d. Mass out 37509.8 kg/d. Electrical duty 0.4000 kW. In: IA-ACID-AIR-RET 37509.8 kg/d (acid-gas dilution air returned to the alkaline scrubber). Out: S65 37509.8 kg/d (acid-gas residual).
 

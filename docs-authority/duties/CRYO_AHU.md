@@ -1,6 +1,6 @@
 # CRYO_AHU
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 135.7 kg/d. Mass out 135.7 kg/d. Electrical duty 0.0000 kW. In: IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-TERR-VAP 40.00 kg/d (greenhouse transpiration); IA-BED-VAP 16.70 kg/d (bed transpiration). Out: S68 78.99 kg/d (flue condensate); IA-HVAC-COND 56.70 kg/d (AHU condensate to the water cycle); IA-AHU-POT 0.0521 kg/d (condensable slip).
 

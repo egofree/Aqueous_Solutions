@@ -1,11 +1,19 @@
 # Sugar and reagent stores
 
 Document number: AQS-DUTY-026
-Revision: B
+Revision: C
 Date: 2026-10-12
-Authority: graph Rev BG. Not a PE stamp.
+Authority: graph Rev BH. Not a PE stamp.
 
-Quaternization is an addition. 1-chlorobutane at 0.160 kg/d is limiting (MW 92.566). Product is 0.302 kg/d [Bmim]Cl. Unreacted 1-methylimidazole is 0.118 kg/d. Acetate exchange sends 0.343 kg/d [Bmim]OAc into the pretreat and the same mass out as spent solvent, which passes the digester on IA-DIG-SOL. HCl and unused acetic acid go to the leach. The animal pen does not take that stream.
+The synthesis train is the reaction, not a single outlet.
+
+Methanol. CO₂ at 6.900 kg/d limits. Product is 5.024 kg/d methanol and 2.824 kg/d water. Unused hydrogen, 0.652 kg/d, stays out of the reactor and goes to the genset on S45.
+
+Imidazole. Glyoxal, formaldehyde, methylamine, and ammonia. Ammonia at 0.020 kg/d limits. Product is 0.096 kg/d 1-methylimidazole and three waters. Molt liquor is not a reactant.
+
+Chlorobutane. HCl limits. 0.127 kg/d. Quaternization is addition of that chloride to the imidazole, 0.205 kg/d [Bmim]Cl. Acetic oxidation is oxygen-limited, 0.206 kg/d acid. The acetate to the pretreat is 0.233 kg/d and the same mass leaves as spent solvent.
+
+Formaldehyde is methanol plus half an oxygen. Glyoxal is acetaldehyde plus oxygen. The coproduct is water. The old glyoxal NOx edge is zero.
 
 Sugar no longer goes to the digester. 1.00 kg/d goes to Saccharomyces at 30 °C. 0.64 kg/d goes to Clostridium at 35 °C. Ethanol is oxidized to acetic acid on Acetobacter, and dehydrogenated to acetaldehyde on copper. Acetaldehyde is oxidized to glyoxal. A methanol slip is oxidized to formaldehyde. Methanol plus ammonia makes methylamine. Those four make 1-methylimidazole. n-butanol plus bipolar-membrane hydrochloric acid makes 1-chlorobutane. The two are quaternized at 70 °C to the chloride, and an anion resin exchanges it to the acetate. Stillage returns to the digester.
 

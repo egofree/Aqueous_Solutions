@@ -1,6 +1,6 @@
 # MUSHROOM
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.2000 kg/d. Mass out 0.2000 kg/d. Electrical duty 0.1000 kW. In: IA-LIG-MUSH 0.2000 kg/d (spent fiber). Out: IA-MUSH 0.1000 kg/d (oyster mushroom); IA-MUSH-SPENT 0.1000 kg/d (spent block).
 

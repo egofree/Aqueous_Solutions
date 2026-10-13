@@ -1,6 +1,6 @@
 # OIL_DRYER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 33.00 kg/d. Mass out 33.00 kg/d. Electrical duty 0.0000 kW. In: IA-PLAST-01 33.00 kg/d (float plastics). Out: IA-OIL-01 33.00 kg/d (Dryer → pyro).
 

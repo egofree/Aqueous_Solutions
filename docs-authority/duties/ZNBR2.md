@@ -1,6 +1,6 @@
 # ZNBR2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 861.0 kg/d. Mass out 861.0 kg/d. Electrical duty 6.67 kW. In: S69B 852.5 kg/d (NaBr after ORP); IA-ZNBR-MU 8.49 kg/d (electrolyte water make-up). Out: S69 852.5 kg/d (Br2 vapor); IA-ZNBR-BD 8.49 kg/d (electrolyte bleed).
 

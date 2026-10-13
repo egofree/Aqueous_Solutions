@@ -1,6 +1,6 @@
 # ZNBR2_BR2_REGEN
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 852.5 kg/d. Mass out 852.5 kg/d. Electrical duty 0.0000 kW. In: S69 852.5 kg/d (Br2 vapor). Out: S69B 852.5 kg/d (NaBr after ORP).
 

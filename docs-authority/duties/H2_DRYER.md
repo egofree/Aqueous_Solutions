@@ -1,8 +1,8 @@
 # H2_DRYER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 6.64 kg/d. Mass out 6.64 kg/d. Electrical duty 0.3000 kW. In: IA-HDR-H2-02 6.64 kg/d (process H2). Out: S05 6.64 kg/d (process H2).
+1. Basis. Mass in 6.63 kg/d. Mass out 6.63 kg/d. Electrical duty 0.3000 kW. In: IA-HDR-H2-02 6.63 kg/d (process H2). Out: S05 6.63 kg/d (process H2).
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.

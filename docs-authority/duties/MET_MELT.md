@@ -1,6 +1,6 @@
 # MET_MELT
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 13.99 kg/d. Mass out 13.99 kg/d. Electrical duty 0.0000 kW. In: IA-EW-SHEET 13.99 kg/d (cathode sheet). Out: S57 6.84 kg/d (billet / melt / charge); IA-MELT-MILL 3.95 kg/d (melt to the mill); IA-MELT-ATOM 3.20 kg/d (melt to the atomizer).
 

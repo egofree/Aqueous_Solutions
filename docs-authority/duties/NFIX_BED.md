@@ -1,6 +1,6 @@
 # NFIX_BED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.7500 kg/d. Mass out 0.7500 kg/d. Electrical duty 0.2000 kW. In: IA-BED-NFIX 0.7500 kg/d (bed spill). Out: IA-NFIX-RES 0.3500 kg/d (legume residue); IA-COVER 0.2000 kg/d (cover crop); IA-PN-S 0.2000 kg/d (bed spill).
 

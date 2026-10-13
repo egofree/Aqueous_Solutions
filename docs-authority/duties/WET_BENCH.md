@@ -1,11 +1,11 @@
 # WET_BENCH
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 79.08 kg/d. Mass out 79.08 kg/d. Electrical duty 1.00 kW. In: S27 60.00 kg/d (fab UPW > 18 MΩ·cm class); S09 9.28 kg/d (HCl); S32 3.00 kg/d (H₂O₂); S33 3.00 kg/d (NH₄OH / NH₃ (aq)); 5 more. Out: S10 79.08 kg/d (spent etch); S38 0.0060 kg/d (resist and solvent waste).
+1. Basis. Mass in 79.12 kg/d. Mass out 79.12 kg/d. Electrical duty 1.00 kW. In: S27 60.00 kg/d (fab UPW > 18 MΩ·cm class); S09 9.28 kg/d (HCl); S33 3.01 kg/d (NH₄OH / NH₃ (aq)); S32 3.00 kg/d (H₂O₂); 5 more. Out: S10 79.12 kg/d (spent etch); S38 0.0060 kg/d (resist and solvent waste).
 
 2. Size.
-- In 79.08 kg/d, out 79.08 kg/d. No holdup claimed.
+- In 79.12 kg/d, out 79.12 kg/d. No holdup claimed.
 
 3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
 

@@ -1,11 +1,12 @@
 # EMETH
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.6254 kg/d. Mass out 0.6254 kg/d. Electrical duty 0.5000 kW. In: IA-DIG-GAS 0.6254 kg/d (biogas from the biological feeds). Out: IA-EM-CH4 0.6254 kg/d (methane).
 
 2. Size.
 - In 0.6254 kg/d, out 0.6254 kg/d. No holdup claimed.
+- The inlet is the biological feed renamed as biogas, then renamed as methane. No CO₂ is split out. There is no gas assay.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 
@@ -17,4 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped.
 
-8. Open items. No holdup basis for this class.
+8. Open items. No holdup basis for this class. Biological feed still leaves the digester as one gas edge. A methane fraction is not measured.

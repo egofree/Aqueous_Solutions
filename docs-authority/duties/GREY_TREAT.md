@@ -1,6 +1,6 @@
 # GREY_TREAT
 
-Standard: AQS-STD-001 Rev A. Graph Rev BG. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 1. Basis. Mass in 347.1 kg/d. Mass out 347.1 kg/d. Electrical duty 0.0000 kW. In: S12 258.7 kg/d (grey/solids); IA-WASH-R 80.00 kg/d (grey); IA-ZNBR-BD 8.49 kg/d (electrolyte bleed). Out: IA-GREY-01 242.6 kg/d (grey sludge); S29 104.5 kg/d (treated grey).
 
