@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line C9 closed in this revision. No rate change.
+Authority: graph Rev BH. Not a PE stamp. Line C10 closed in this revision. The plant is not buildable. Holds remain. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,7 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: C10
+Active: none. Rev C is closed.
 
 AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 
@@ -48,4 +48,4 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | C7 | C | Relief destinations | Atmospheric nodes name an existing vent edge, or say there is none. | closed. 187 duties say atmospheric and no vent edge. 11 name an existing outgoing edge. EXPANDER stays 550 kPa to CRYO_ASU on IA-EXP-OUT. relief_mm stays 3.6. No new edge. No new set point. No rate change. |
 | C8 | C | Section 8 | Empty, or only a hold. | closed. 37 duties have no open item. 162 keep a hold from the Rev C table. Placement, bore, class, and a stated holdup were taken off the gap list. No measurement was invented. No rate change. |
 | C9 | C | Meshes | An STL, or the solid is still an envelope. | closed. 199 duties point at `cad/stl`. Nine cell racks count. 134 envelopes are the solid because the internal is none. 56 are still envelopes because the internal is not in the file. FreeCAD is not in this session. No rate change. |
-| C10 | C | Self-copy | Not started until C2 through C9 are accepted. | waits |
+| C10 | C | Self-copy | Not started until C2 through C9 are accepted. | closed. `reprap_bom_complete` set true to match AQS-BOM-SC-001 Rev F. Lithography, potable train, and electrode coating stay not on site. No rate change. |
