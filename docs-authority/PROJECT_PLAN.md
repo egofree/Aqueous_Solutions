@@ -1,7 +1,7 @@
 # Project plan
 
 Document number: AQS-PLAN-005
-Revision: B
+Revision: C
 Date: 2026-10-12
 Authority: graph Rev BH until `flow_graph/plant_flow_graph.json` says otherwise. Not a PE stamp.
 
@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: 2.2 on AQS-PLAN-004. Nozzles. A connection cannot be built yet.
+Active item: C2 on AQS-PLAN-004. HX8 nozzles, after the duty matches the edges.
 
 ## Limits
 
@@ -47,6 +47,8 @@ Section 8 of a duty is the gap list. A unit with a gap in section 8 is not finis
 The 500 kg/day moonshot is not this graph.
 
 ## Revision B
+
+Superseded by Revision C. Kept as the record of where Rev A stopped.
 
 Rev A stopped being a complete plant at phase 2. Lines 0.1 through 2.1 are closed on the board. 2.2 is open. Phases 3, 4, 5, and 6 are not accepted.
 
@@ -70,3 +72,96 @@ Next, in order. Do not skip 2.2 by naming the gap and calling the phase accepted
 | 6 | Self-copy | Not started until 2.2 through 5.1 are accepted |
 
 R1 and R2 are recorded defects. They are not a nozzle.
+
+## Revision C
+
+This is the sequence that finishes the plant. Rev A and Rev B stay above as history. A line closes only on the board, in the same commit as the proof.
+
+Complete means every present unit passes AQS-STD-001 and the buildable test in AQS-PLAN-002, except a hold on the list below. A hold is a missing measurement or a mesh the operator box has not compiled. A hold is not a number to guess. Nothing is resized from a placeholder composition.
+
+### Holds
+
+These stay named. They do not block a nozzle, a class, or a vent that the files already support.
+
+| Hold | Why it stays |
+| --- | --- |
+| IA-FEED-01, S08, S16 | Placeholder composition. Not a measured assay. |
+| IA-EW-SHEET | `metal` 1.0. Not an element split. |
+| IA-FERM-RES, IA-STILL, IA-ABE-STILL | No volatile-solids measurement. They leave on IA-DIG-GAS. |
+| EW-1 current | `POWER.md` says 5.3 kW. The node is 6.0 kW study. No conductor is sized from the page. |
+| `HEAT_LADDER_DUTIES.md` | Still the Rev K note. The graph is the duty. |
+| IA-HDR-H2-01, 03, 04 | 2.1333 kg/d, empty layer list. Outside the mass cut. |
+| EXPANDER `relief_mm` | 3.6 mm. Not recalculated at 550 kPa. |
+| MVS flag | `mvs.mvs_criteria.loops_closed` stays false. |
+
+### Rules that were being treated as gaps
+
+Atmospheric connections are tube or hose. No flange class. AQS-STD-001 already says so. "No flange class" on a duty is not an open item for an atmospheric joint.
+
+Where a process pressure is stated, the connection is rated at 110% of that pressure. The expander inlet is the one stated pressure: 550 kPa.
+
+Envelope height plus 10 kPa is not a set point.
+
+A residence time is not an envelope divided by a flow. That census is already clean: no duty uses the quotient as the residence.
+
+### Nozzle rule
+
+Used for every nozzle this sequence adds. Not a new standard number.
+
+- Only a unit with `origin_mm` and `size_mm` on `flow_graph/placement_seed.json` gets a coordinate.
+- The point is the center of a face of that box, in the placement frame, millimetres.
+- Inlet on the −Y face. Outlet on the +Y face. Vent on the +Z face. Drain on the −Z face.
+- Height is from the bottom of the envelope. Face center is half the height. Vent is the top. Drain is the bottom.
+- Rating text for an atmospheric joint is `hose, atmospheric`.
+- Bore is calculated only when the edge or the node already carries a density. Liquid at 1.5 m/s, gas at 10 m/s, raised to the next standard DN, minimum DN15. If the density is not there, the nozzle is located and section 8 says the bore was not calculated. 1000 kg/m³ and 1.2 kg/m³ are not used.
+- A header gets a line list: tag, from, to, DN or "bore not calculated", rating. Not a vessel nozzle table.
+- No edge is added to create a drain or a vent.
+
+### Where the units are
+
+199 present units.
+
+| Set | Count | What happens |
+| --- | --- | --- |
+| Origin on the seed | 72 | Nozzle these first. Do not move them. |
+| Named in a block, no origin | 43 | Pitch inside that block. No overlap. The plate does not grow. One that does not fit is named and left unplaced. |
+| In no block | 84 | 65 are farm. The farm block is 12 m by 18 m. A bed is not shrunk to fit it. Cryo, wet, hab, geo, glass, and the shop unit go to the block of that sector only if the envelope fits. |
+
+### Internals
+
+Replace only the two generic strings. Do not rewrite a specific internal.
+
+| On the node now | Count | Becomes |
+| --- | --- | --- |
+| shell and nozzles | 80 | The class row below, or "none" if the class has no vessel |
+| media or gutter | 66 | The class row below, or "none" if the class has no vessel |
+| A specific string | 53 | Left as written |
+
+| Class | Internal |
+| --- | --- |
+| header, recycle_pipe | pipe only |
+| scrubber | pall-ring bed, distributor, demister |
+| heat_battery | stratification plate |
+| hx | plate pack |
+| cold_box | packed section, vacuum jacket |
+| tank, cut_tank | dip pipe, stilling well |
+| separator | weir and launder |
+| ew_cell | already drawn. Do not touch |
+| farm, tool, inverter, pv, rectifier, hab | none. Not a tank |
+
+### Sequence
+
+| Line | Work | Stops when |
+| --- | --- | --- |
+| C1 | This nozzle rule, the holds, and the counts | The rule is on this page. No rate change |
+| C2 | HX8 | The duty matches HL-HX8-Q4-A and HL-HX8-Q4-B, 2.286 kW each. Two nozzles use the rule. The duty currently says there is no process nozzle and no heat rate. If those edges have no mass flow, the bore is not calculated. No rate change |
+| C3 | The other 71 units that already have an origin | Each connection on a placed unit has a face, a height, and a rating under the rule, or section 8 says the bore was not calculated. Headers have a line list |
+| C4 | The 43 block members with no origin | Each has an origin inside its block, or the line names the one that does not fit. No plate growth. No overlap |
+| C5 | The 84 with no block | Farm beds that are larger than the farm block are named, not shrunk. The others are in the sector block or named |
+| C6 | Generic internals | No present node still says "shell and nozzles" or "media or gutter" |
+| C7 | Relief | Each atmospheric node says so and names an existing edge as the vent, or says it has no vent edge. No new set point. No new edge. EXPANDER stays 550 kPa to CRYO_ASU |
+| C8 | Section 8 | Empty, or every remaining sentence is a hold from the table above |
+| C9 | Meshes | Each present unit points at an STL, or the line says the solid is still an envelope. Envelope boxes do not count where the internal matters. The nine cell racks in `cad/stl` count. FreeCAD is not here. The operator box compiles the rest |
+| C10 | Self-copy | Not started until C2 through C9 are accepted |
+
+Active item: C2. HX8. It does not change a rate.

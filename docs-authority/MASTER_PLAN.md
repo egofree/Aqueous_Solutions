@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line 2.1 closed in this revision. No rate change.
+Authority: graph Rev BH. Not a PE stamp. Line C1 closed in this revision. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,9 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: 2.2
+Active: C2
+
+AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 stays open until C3 has done the placed units. It is not the active item.
 
 | Line | Phase | Work | Check | Status |
 | --- | --- | --- | --- | --- |
@@ -37,3 +39,13 @@ Active: 2.2
 | 5.1 | 5 | Solids | Operator box. Meshes match the duties at the revision that enters the phase. | waits. Phase 2 is not accepted. Meshes are not in this repo session. |
 | R1 | — | Three hydrogen edges with no layer | The edges say they are outside the mass cut. Rates unchanged. Mass-layer nodes still close. | closed. IA-HDR-H2-01, IA-HDR-H2-03, and IA-HDR-H2-04 remain 2.1333 kg/d with an empty layer list. Mass-layer kg/d nodes 169, 0 off at 1e-4. |
 | R2 | — | Expander stored pressure | The node matches the written set point. The orifice is not resized. | closed. EXPANDER design_kPa is 550. Destination CRYO_ASU on IA-EXP-OUT. relief_mm left at 3.6. No edge rate change. |
+| C1 | C | Nozzle rule, holds, counts | The rule is on AQS-PLAN-005. No rate change. | closed. Rev C of `docs-authority/PROJECT_PLAN.md`. Atmospheric joints are hose. 72 placed, 43 in a block without an origin, 84 in no block. |
+| C2 | C | HX8 nozzles | The duty matches the two 2.286 kW edges. Two nozzles follow the rule. No rate change. | open |
+| C3 | C | Nozzles on the other placed units | Face, height, and rating, or the bore is named as not calculated. | waits |
+| C4 | C | Origins for the 43 block members | Inside the block, or named as not fitting. No plate growth. | waits |
+| C5 | C | The 84 with no block | Farm beds larger than the block are named, not shrunk. | waits |
+| C6 | C | Generic internals | No node still says "shell and nozzles" or "media or gutter". | waits |
+| C7 | C | Relief destinations | Atmospheric nodes name an existing vent edge, or say there is none. | waits |
+| C8 | C | Section 8 | Empty, or only a hold. | waits |
+| C9 | C | Meshes | An STL, or the solid is still an envelope. | waits |
+| C10 | C | Self-copy | Not started until C2 through C9 are accepted. | waits |
