@@ -61,4 +61,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. The vents are IA-CLOSE-1 to NOX_SCRUB and IA-LEACH-FLUE to FLUE_KO. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/LEACH_CSTR_1.stl`.
 
-8. Open items. This unit has not been measured. IA-FEED-01, S16, and S08 are not a measured assay. The placeholder stays. No resize.
+8. Open items. This unit has not been measured. IA-FEED-01 is the mixed-WEEE study assay. S08 is the cathode split. S16 follows S08. Not a weighed sample. No resize.

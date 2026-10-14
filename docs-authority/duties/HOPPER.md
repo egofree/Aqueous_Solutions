@@ -16,4 +16,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/HOPPER.stl`.
 
-8. Open items. No holdup basis for this class. IA-FEED-01 is not a measured assay. The placeholder stays. No resize.
+8. Open items. No holdup basis for this class. IA-FEED-01 is the mixed-WEEE study assay, not a weighed sample. No resize.

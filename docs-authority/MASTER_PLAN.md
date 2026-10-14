@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. The feed assay is open. No measurement was added. No rate change.
+Authority: graph Rev BH. Not a PE stamp. The feed assay is a study basis, not a weighed sample. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -21,7 +21,7 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 ## Open
 
-Active: D1
+Active: D1. Study assay written. Not weighed.
 
 AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 
@@ -49,4 +49,4 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | C8 | C | Section 8 | Empty, or only a hold. | closed. 37 duties have no open item. 162 keep a hold from the Rev C table. Placement, bore, class, and a stated holdup were taken off the gap list. No measurement was invented. No rate change. |
 | C9 | C | Meshes | An STL, or the solid is still an envelope. | closed. 199 duties point at `cad/stl`. Nine cell racks count. 134 envelopes are the solid because the internal is none. 56 are still envelopes because the internal is not in the file. FreeCAD is not in this session. No rate change. |
 | C10 | C | Self-copy | Not started until C2 through C9 are accepted. | closed. `reprap_bom_complete` set true to match AQS-BOM-SC-001 Rev F. Lithography, potable train, and electrode coating stay not on site. No rate change. |
-| D1 | — | Feed assay | A measured composition is on IA-FEED-01, S08, and S16. Nothing is resized from the placeholder. | open. No measurement in the repo. The placeholder stays. ELECTRICAL.md working averages were not copied. `assay_g_L` was not used. Rates unchanged. Sheet `docs-authority/FEED_ASSAY.md`. |
+| D1 | — | Feed assay | A measured composition is on IA-FEED-01, S08, and S16. Nothing is resized from the placeholder. | open as a measurement. Study fractions are on the three edges. IA-FEED-01 is the mixed-WEEE wet average. S08 is the cathode split. S16 follows S08. Rates unchanged. Sheet `docs-authority/FEED_ASSAY.md`. |

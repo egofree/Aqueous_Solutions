@@ -28,7 +28,7 @@ One phase, then the next. The active item is named here.
 | 5 | Solids, on the operator box | Meshes match the duties at the revision that enters the phase |
 | 6 | Self-copy | Not started until 0 through 5 are accepted |
 
-Active item: D1. Feed assay. The measurement is not in the repo. No resize.
+Active item: D1. The study assay is written. It is not a weighed sample. No resize.
 
 ## Limits
 
@@ -85,7 +85,7 @@ These stay named. They do not block a nozzle, a class, or a vent that the files 
 
 | Hold | Why it stays |
 | --- | --- |
-| IA-FEED-01, S08, S16 | Placeholder composition. Not a measured assay. |
+| IA-FEED-01, S08, S16 | Study fractions are on the edges. Not a weighed sample. |
 | IA-EW-SHEET | `metal` 1.0. The cell sheets are undifferentiated plate. Not an element split. |
 | IA-FERM-RES, IA-STILL, IA-ABE-STILL | No volatile-solids measurement. They leave on IA-DIG-GAS. The gas composition is the liquid placeholder. |
 | EW-1 current | `POWER.md` says 5.3 kW. The node is 6.0 kW study. The cell duties state the 2.5 V product against the node. No conductor is sized from the page. |
@@ -176,8 +176,8 @@ Replace only the two generic strings. Do not rewrite a specific internal.
 | C9 | Meshes | Each present unit points at an STL, or the line says the solid is still an envelope. Envelope boxes do not count where the internal matters. The nine cell racks in `cad/stl` count. FreeCAD is not here. The operator box compiles the rest |
 | C10 | Self-copy | Not started until C2 through C9 are accepted |
 
-Active item: D1. Feed assay. The measurement is not in the repo. No resize.
+Active item: D1. The study assay is written. It is not a weighed sample. No resize.
 
 ## After Rev C
 
-D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. A measured mass fraction goes on IA-FEED-01, S08, and S16, or the sheet says the measurement is missing. The ELECTRICAL.md working averages are not copied. The rate stays. The bore stays. The cell stays.
+D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. The study fractions are on IA-FEED-01, S08, and S16. They are not a weighed sample. The rate stays. The bore stays. The cell stays.

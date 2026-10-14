@@ -1,44 +1,61 @@
 # Feed assay
 
 Document number: AQS-ASSAY-001
-Revision: A
-Date: 2026-10-13
-Authority: graph Rev BH. Not a PE stamp.
+Revision: B
+Date: 2026-10-14
+Authority: graph Rev BH. Not a PE stamp. Not a weighed sample.
 
-The measurement is not in the repo. Nothing in this sheet is a composition. The edges keep the placeholder. No rate is changed. Nothing is resized.
+This is the design-basis assay. The fractions are already in `ELECTRICAL.md` and `EDGE_RATING_DUTY.md`. They are not a laboratory result. No rate changes. Nothing is resized.
 
-## The three edges
+## IA-FEED-01
 
-| Edge | From | To | kg/d | Phase | What crosses |
-| --- | --- | --- | --- | --- | --- |
-| IA-FEED-01 | HOPPER | LEACH_CSTR_1 | 102.68 | L | Mineral feedstock. The rate note says returned scrap, not a dock intake. |
-| S16 | MFG_SHOP | LEACH_CSTR_1 | 12.0 | S | Shop scrap. |
-| S08 | LEACH_CSTR_1 | MFG_SHOP | 42.0021 | S | Metals and silicon leaving the leach. Not the feed. |
+HOPPER to LEACH_CSTR_1, 102.68 kg/d, phase L. The rate stays. The 150 kg/d dock feed is not restored.
 
-Each composition on the edge is water 0.90, HCl 0.05, Fe 0.02, other_metals 0.03. That is one placeholder, not three assays. S08 is a solids product wearing a liquor fraction.
+Source: `ELECTRICAL.md`, mixed WEEE, wet, as published. `EDGE_RATING_DUTY.md` calls that table the design-day feed. The published percentages sum to 0.85025. The remainder is `unassigned`. It is the 15 % the duty book already calls unassigned. It is not identified here.
 
-IA-FEED-01 is phase L. The rate note calls it scrap. The phase is not changed here.
+| Fraction | Value |
+| --- | --- |
+| moisture | 0.05 |
+| Fe | 0.25 |
+| Cu | 0.07 |
+| Al | 0.05 |
+| other_plateable | 0.03 |
+| Au | 0.00005 |
+| Ag | 0.0002 |
+| plastic_paper | 0.22 |
+| glass_silicate | 0.18 |
+| unassigned | 0.14975 |
 
-## What a measurement is
+`other_plateable` is the published 3 % blend of Ni, Zn, Sn, and Pb. It is not split. Al is in the assay and is not electrowon.
 
-A mass fraction of the material that crosses that nozzle, as weighed. The sheet says wet or dry. Moisture is a fraction, not a conversion someone assumes later.
+The edge is named mineral feedstock and returned scrap. The assay is the whole wet WEEE average, which includes plastic and glass. That is a mismatch. No hopper split was invented to remove it.
 
-Analytes: moisture, Fe, Cu, Ni, Zn, Sn, Pb, Al, Au, Ag, plastic and paper, glass and silicate, and the balance. Al, Mg, Ca, Li, Ti, Si, and the rare earths are not electrowon. A number for them is still part of the assay. It is not a cell duty.
+## S08
 
-The measured column is empty.
+LEACH_CSTR_1 to MFG_SHOP, 42.0021 kg/d, phase S. The rate stays.
 
-| Edge | Basis | Measured fractions | Source |
-| --- | --- | --- | --- |
-| IA-FEED-01 | — | — | — |
-| S16 | — | — | — |
-| S08 | — | — | — |
+Source: `EDGE_RATING_DUTY.md` cathode deposits booked on S08. The nine deposits sum to 42.0000 kg/d. The edge is 42.0021 kg/d. The difference is left on the rate.
 
-## What is not the measurement
+| Metal | kg/d | Fraction |
+| --- | --- | --- |
+| Au | 0.0063 | 0.00015000 |
+| Ag | 0.0251 | 0.00059762 |
+| Cu | 8.7841 | 0.20914524 |
+| Pb | 0.7111 | 0.01693095 |
+| Sn | 0.7111 | 0.01693095 |
+| Ni | 0.7111 | 0.01693095 |
+| Fe | 29.6290 | 0.70545239 |
+| Cd | 0.7111 | 0.01693095 |
+| Zn | 0.7111 | 0.01693095 |
 
-`ELECTRICAL.md` "Feedstock assays used" is a working average. Mixed WEEE, PCB-rich, MSW, landfill, and tailings are cases, not a sample. They are not copied onto the edge.
+The carries line says metals and silicon. Silicon is not in this split. None was added. `assay_g_L` on this edge is the 50 g/L liquor stencil. It was not used.
 
-`assay_g_L` on S08 is Fe 20, Cu 8, Ni 3, Zn 4, Al 6, other 9. The same object is on 49 edges, including hydrogen, heat, and a conductor. It is not a feed assay. It is not used.
+## S16
 
-## When a number exists
+MFG_SHOP to LEACH_CSTR_1, 12.0 kg/d, phase S. The rate stays.
 
-It is written in the table above, then onto that edge's composition, in the same commit. The rate stays. The bore stays. The cell stays. A later line may resize from the measurement. This one does not.
+`EDGE_RATING_DUTY.md` says the composition is unstated and S08 governs. The fractions are the S08 fractions. The rate note calls the stream a polymer and metal band. No polymer fraction was added.
+
+## What this is not
+
+Not a weighed sample. Not a reason to change a bore, a cell, or a holdup. `assay_g_L` is not this assay. A later weighed sample replaces these fractions. It does not resize in the same commit.
