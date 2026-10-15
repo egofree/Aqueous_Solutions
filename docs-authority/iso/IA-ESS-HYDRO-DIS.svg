@@ -7,8 +7,8 @@
 <circle cx="40.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="48.0" y="594.0">CATCH_TANK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-ESS-HYDRO-DIS</text>
-<text x="20" y="614">DN65  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">ROOF_TANK -> CATCH_TANK</text>
-<text x="20" y="642">pipe 29.25 m in 6 pieces; cut 264 5927 6000 6000 6000 5064 mm</text>
-<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 solvent joints</text>
+<text x="20" y="642">pipe 29.36 m in 6 pieces; cut 289 5979 6000 6000 6000 5089 mm</text>
+<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

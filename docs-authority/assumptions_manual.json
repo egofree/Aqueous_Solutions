@@ -150,7 +150,7 @@
     "verification_test": "Tank thermal check"
   },
   {
-    "value": "two concentric helices D 600/900 mm, 25 \u00d7 3 mm tube, 50 mm pitch",
+    "value": "two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm pitch",
     "units": "geometry",
     "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
     "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
@@ -451,7 +451,7 @@
   },
   {
     "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
-    "units": "\u2014",
+    "units": "—",
     "where": "LEACH_CSTR_1 agitator",
     "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
     "sensitivity": "Power with N cubed and D to the fifth",
@@ -496,7 +496,7 @@
   },
   {
     "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
-    "units": "\u2014",
+    "units": "—",
     "where": "LEACH_CSTR_1 FRP belts",
     "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
     "sensitivity": "Belt stress and deflection",
@@ -2467,6 +2467,26 @@
     "statement": "CRYO_AHU latent = condensate x 2.454 MJ/kg (NIST_WEBBOOK, 20 C); coil chiller COP 2.96 (ASHRAE 90.1-2022 minimum); electric on new SF-CRYO_AHU, heat on SQ-CRYO_AHU to HEAT_SINK.",
     "verification": "Coil-side condensate meter and chiller kWh meter.",
     "replace_when": "Chiller design or condensate changes.",
+    "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-154",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Crop bed rows and FARM_EXT bay",
+    "statement": "Crop beds are laid out from their sized area (GROW_BED params.area_m2, crop_basis.area_m2) as rows 1200 mm wide, at most 10.8 m long, 600 mm high, with 914 mm walked aisles (NFPA 101 7.3.4.1.1, as A-M-102) on two tiers of the L1 FARM block; FARM process skids, pens and bed overflow go to a bay of EXT_HALL_E on L0 at (24000, 0), 18 m deep, its length grown in 6 m column bays until every unit packs (18 m)",
+    "verification": "Placement of 120 m2 GROW_BED, 33.6 m2 PEANUT and 22 FARM skids/pens",
+    "replace_when": "GA design of the farm hall with lighting racks, aisles to the hab and crew access",
     "doc": "AQS-PAR-003"
   }
 ]

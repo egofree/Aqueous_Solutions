@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,202.0 560.0,189.8 412.4,275.0 40.0,60.0 40.0,421.1" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="191.9">Z +300</text>
-<text x="492.2" y="228.4">X -4200</text>
-<text x="232.2" y="163.5">Y +10600</text>
-<text x="46.0" y="236.5">Z -8900</text>
-<circle cx="560.0" cy="202.0" r="5" fill="black"/><text x="568.0" y="216.0">ACETOX</text>
-<circle cx="40.0" cy="421.1" r="5" fill="none" stroke="black"/><text x="48.0" y="435.1">WS_SOLV</text>
+<polyline points="560.0,327.9 560.0,314.0 520.0,337.1 40.0,60.0 40.0,471.1" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="317.0">Z +300</text>
+<text x="546.0" y="321.6">X -1000</text>
+<text x="286.0" y="194.6">Y +12000</text>
+<text x="46.0" y="261.5">Z -8900</text>
+<circle cx="560.0" cy="327.9" r="5" fill="black"/><text x="568.0" y="341.9">ACETOX</text>
+<circle cx="40.0" cy="471.1" r="5" fill="none" stroke="black"/><text x="48.0" y="485.1">WS_SOLV</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-AC-EX</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">ACETOX -> WS_SOLV</text>
-<text x="20" y="642">pipe 23.77 m in 6 pieces; cut 262 4124 6000 4524 6000 2862 mm</text>
+<text x="20" y="642">pipe 21.97 m in 6 pieces; cut 262 924 6000 5924 6000 2862 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="545.1,580.0 545.1,60.0 40.0,351.6 153.6,417.2 153.6,426.5" fill="none" stroke="black" stroke-width="3"/>
-<text x="551.1" y="316.0">Z +16850</text>
-<text x="298.6" y="201.8">X -18900</text>
-<text x="102.8" y="380.4">Y -4250</text>
-<text x="159.6" y="417.8">Z -300</text>
-<circle cx="545.1" cy="580.0" r="5" fill="black"/><text x="553.1" y="594.0">DIGESTER</text>
-<circle cx="153.6" cy="426.5" r="5" fill="none" stroke="black"/><text x="161.6" y="440.5">BLACK_DIGEST</text>
+<polyline points="560.0,551.2 560.0,60.0 40.0,360.2 190.2,447.0 190.2,455.5" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="301.6">Z +17200</text>
+<text x="306.0" y="206.1">X -21025</text>
+<text x="121.1" y="399.6">Y -6075</text>
+<text x="196.2" y="447.3">Z -300</text>
+<circle cx="560.0" cy="551.2" r="5" fill="black"/><text x="568.0" y="565.2">DIGESTER</text>
+<circle cx="190.2" cy="455.5" r="5" fill="none" stroke="black"/><text x="198.2" y="469.5">BLACK_DIGEST</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-DIG-BLK</text>
 <text x="20" y="614">DN50  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">DIGESTER -> BLACK_DIGEST</text>
-<text x="20" y="642">pipe 40.12 m in 9 pieces; cut 6000 6000 4820 6000 6000 6000 840 4190 270 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 13 solvent joints</text>
+<text x="20" y="642">pipe 44.42 m in 10 pieces; cut 6000 6000 5170 6000 6000 6000 2965 6000 15 270 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 14 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

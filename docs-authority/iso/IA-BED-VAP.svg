@@ -7,8 +7,8 @@
 <circle cx="91.2" cy="580.0" r="5" fill="none" stroke="black"/><text x="99.2" y="594.0">CRYO_AHU</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-BED-VAP</text>
-<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="614">DN20  class M1  316L ASTM A312</text>
 <text x="20" y="628">GROW_BED -> CRYO_AHU</text>
-<text x="20" y="642">pipe 15.50 m in 5 pieces; cut 912 1424 6000 6000 1162 mm</text>
+<text x="20" y="642">pipe 15.53 m in 5 pieces; cut 921 1442 6000 6000 1171 mm</text>
 <text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

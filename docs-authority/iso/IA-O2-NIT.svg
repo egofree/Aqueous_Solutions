@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="70.3,580.0 70.3,407.5 356.1,242.5 40.0,60.0 40.0,75.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="76.3" y="489.8">Z +3450</text>
-<text x="219.2" y="321.0">X +6600</text>
-<text x="204.0" y="147.2">Y +7300</text>
-<text x="46.0" y="63.5">Z -300</text>
-<circle cx="70.3" cy="580.0" r="5" fill="black"/><text x="78.3" y="594.0">HDR_O2</text>
-<circle cx="40.0" cy="75.0" r="5" fill="none" stroke="black"/><text x="48.0" y="89.0">HNO3</text>
+<polyline points="40.0,564.1 40.0,484.1 560.0,183.8 345.5,60.0 345.5,267.7" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="520.1">Z +3200</text>
+<text x="306.0" y="330.0">X +24000</text>
+<text x="458.8" y="117.9">Y +9900</text>
+<text x="351.5" y="159.8">Z -8300</text>
+<circle cx="40.0" cy="564.1" r="5" fill="black"/><text x="48.0" y="578.1">HDR_O2</text>
+<circle cx="345.5" cy="267.7" r="5" fill="none" stroke="black"/><text x="353.5" y="281.7">HNO3</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-O2-NIT</text>
 <text x="20" y="614">DN15  class P3  PVDF SDR 21 ISO 10931</text>
 <text x="20" y="628">HDR_O2 -> HNO3</text>
-<text x="20" y="642">pipe 17.59 m in 6 pieces; cut 3439 6000 579 6000 1279 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 fusion joints</text>
+<text x="20" y="642">pipe 45.34 m in 9 pieces; cut 3189 6000 6000 6000 5979 6000 3879 6000 2289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 13 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

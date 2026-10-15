@@ -23,6 +23,7 @@ def thin(p): return min(p[3],p[4])<=100
 ov=[];cl=[]
 for (a,p),(b,q) in itertools.combinations(B.items(),2):
     if p[0]!=q[0]: continue
+    if p in sp.CONTAINER.values() or q in sp.CONTAINER.values(): continue   # hall envelope that contains study bays (FARM_EXT, A-M-154)
     if G.get(a)==b or G.get(b)==a or (G.get(a) and G.get(a)==G.get(b)): continue   # tool group: members abut
     za,zb=Z.get(a,(0,0)),Z.get(b,(0,0))
     if za[1] and zb[1] and not(za[0]<zb[0]+zb[1] and zb[0]<za[0]+za[1]): continue      # stacked, no vertical overlap

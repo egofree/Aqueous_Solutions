@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,408.1 560.0,60.0 95.3,328.3 40.0,296.3 40.0,315.5" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="230.1">Z +5450</text>
-<text x="333.7" y="190.1">X -8400</text>
-<text x="73.7" y="308.3">Y +1000</text>
-<text x="46.0" y="301.9">Z -300</text>
-<circle cx="560.0" cy="408.1" r="5" fill="black"/><text x="568.0" y="422.1">BUCL</text>
-<circle cx="40.0" cy="315.5" r="5" fill="none" stroke="black"/><text x="48.0" y="329.5">ROOF_TANK</text>
+<polyline points="560.0,374.0 560.0,60.0 40.0,360.2 71.8,378.6 71.8,385.4" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="213.0">Z +13700</text>
+<text x="306.0" y="206.1">X -26200</text>
+<text x="61.9" y="365.4">Y -1600</text>
+<text x="77.8" y="378.0">Z -300</text>
+<circle cx="560.0" cy="374.0" r="5" fill="black"/><text x="568.0" y="388.0">BUCL</text>
+<circle cx="71.8" cy="385.4" r="5" fill="none" stroke="black"/><text x="79.8" y="399.4">ROOF_TANK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-BUCL-H2O</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">BUCL -> ROOF_TANK</text>
-<text x="20" y="642">pipe 15.09 m in 5 pieces; cut 5439 6000 2379 979 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 solvent joints</text>
+<text x="20" y="642">pipe 41.74 m in 10 pieces; cut 6000 6000 1689 6000 6000 6000 6000 2179 1579 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 14 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

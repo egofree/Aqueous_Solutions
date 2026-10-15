@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,110.0 560.0,60.0 300.0,210.1 40.0,60.0 40.0,76.7" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="81.0">Z +900</text>
-<text x="436.0" y="131.1">X -5400</text>
-<text x="176.0" y="131.1">Y +5400</text>
-<text x="46.0" y="64.3">Z -300</text>
-<circle cx="560.0" cy="110.0" r="5" fill="black"/><text x="568.0" y="124.0">CLOVER</text>
-<circle cx="40.0" cy="76.7" r="5" fill="none" stroke="black"/><text x="48.0" y="90.7">BEES</text>
+<polyline points="560.0,517.9 560.0,342.0 544.2,351.1 40.0,60.0 40.0,199.5" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="426.0">Z +2900</text>
+<text x="558.1" y="342.6">X -300</text>
+<text x="298.1" y="201.6">Y +9600</text>
+<text x="46.0" y="125.7">Z -2300</text>
+<circle cx="560.0" cy="517.9" r="5" fill="black"/><text x="568.0" y="531.9">CLOVER</text>
+<circle cx="40.0" cy="199.5" r="5" fill="none" stroke="black"/><text x="48.0" y="213.5">BEES</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-NECTAR</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">CLOVER -> BEES</text>
-<text x="20" y="642">pipe 11.94 m in 4 pieces; cut 889 5379 5379 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
+<text x="20" y="642">pipe 15.04 m in 5 pieces; cut 2889 279 6000 3579 2289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

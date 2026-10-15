@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,155.3 40.0,147.3 191.3,60.0 211.9,71.9 211.9,580.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="147.3">Z +300</text>
-<text x="121.6" y="99.7">X +6600</text>
-<text x="207.6" y="62.0">Y -900</text>
-<text x="217.9" y="322.0">Z -19200</text>
-<circle cx="40.0" cy="155.3" r="5" fill="black"/><text x="48.0" y="169.3">YEAST</text>
-<circle cx="211.9" cy="580.0" r="5" fill="none" stroke="black"/><text x="219.9" y="594.0">DIGESTER</text>
+<polyline points="40.0,204.3 40.0,196.3 181.1,114.9 86.1,60.0 86.1,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="196.3">Z +300</text>
+<text x="116.5" y="151.6">X +6125</text>
+<text x="139.6" y="83.4">Y +4125</text>
+<text x="92.1" y="316.0">Z -19550</text>
+<circle cx="40.0" cy="204.3" r="5" fill="black"/><text x="48.0" y="218.3">YEAST</text>
+<circle cx="86.1" cy="580.0" r="5" fill="none" stroke="black"/><text x="94.1" y="594.0">DIGESTER</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-STILL</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">YEAST -> DIGESTER</text>
-<text x="20" y="642">pipe 26.94 m in 8 pieces; cut 289 6000 579 879 6000 6000 6000 1189 mm</text>
+<text x="20" y="642">pipe 30.04 m in 8 pieces; cut 289 6000 104 4104 6000 6000 6000 1539 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

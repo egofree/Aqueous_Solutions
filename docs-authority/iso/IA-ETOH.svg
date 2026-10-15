@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,325.8 560.0,60.0 227.5,251.9 40.0,143.7 40.0,173.2" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="188.9">Z +2700</text>
-<text x="399.8" y="152.0">X -3900</text>
-<text x="139.8" y="193.8">Y +2200</text>
-<text x="46.0" y="154.4">Z -300</text>
-<circle cx="560.0" cy="325.8" r="5" fill="black"/><text x="568.0" y="339.8">ETOH_STILL</text>
-<circle cx="40.0" cy="173.2" r="5" fill="none" stroke="black"/><text x="48.0" y="187.2">ALD</text>
+<polyline points="40.0,518.8 40.0,415.2 560.0,115.0 464.8,60.0 464.8,411.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="463.0">Z +2450</text>
+<text x="306.0" y="261.1">X +14200</text>
+<text x="518.4" y="83.5">Y +2600</text>
+<text x="470.8" y="231.5">Z -8300</text>
+<circle cx="40.0" cy="518.8" r="5" fill="black"/><text x="48.0" y="532.8">ETOH_STILL</text>
+<circle cx="464.8" cy="411.0" r="5" fill="none" stroke="black"/><text x="472.8" y="425.0">ALD</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-ETOH</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">ETOH_STILL -> ALD</text>
-<text x="20" y="642">pipe 9.04 m in 4 pieces; cut 2689 3879 2179 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
+<text x="20" y="642">pipe 27.49 m in 7 pieces; cut 2439 6000 6000 2179 2579 6000 2289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -14,5 +14,9 @@ def write(units):
         path = os.path.join(solver.ROOT, 'cad/stl', f'{u}.stl')
         cq.exporters.export(cq.Workplane().box(L, W, H, centered=False), path, exportType='STL', opt={'ascii': True})
         print(u, L, W, H)
+def sized_units():
+    g = json.load(open(os.path.join(solver.ROOT, 'flow_graph/plant_flow_graph.json')))
+    return [n['unit_id'] for n in g['nodes'] if (n.get('params', {}).get('sizing') or {}).get('size_mm') or n.get('params', {}).get('size_mm')]
 if __name__ == '__main__':
+    if sys.argv[1:] == ['--all']: write(sized_units()); sys.exit()
     write(sys.argv[1:] or [f'EW_{i}' for i in range(1, 10)] + ['EVAP_ACID', 'EVAP_BASE'])

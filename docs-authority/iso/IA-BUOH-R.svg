@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="348.1,580.0 348.1,60.0 40.0,237.9 348.1,415.8 348.1,470.5" fill="none" stroke="black" stroke-width="3"/>
-<text x="354.1" y="316.0">Z +2850</text>
-<text x="200.1" y="144.9">X -1950</text>
-<text x="200.1" y="322.8">Y -1950</text>
-<text x="354.1" y="439.2">Z -300</text>
-<circle cx="348.1" cy="580.0" r="5" fill="black"/><text x="356.1" y="594.0">BUOH_STILL</text>
-<circle cx="348.1" cy="470.5" r="5" fill="none" stroke="black"/><text x="356.1" y="484.5">BUCL</text>
+<polyline points="40.0,471.0 40.0,372.5 560.0,72.3 538.7,60.0 538.7,374.4" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="417.8">Z +2600</text>
+<text x="306.0" y="218.4">X +15850</text>
+<text x="555.3" y="62.2">Y +650</text>
+<text x="544.7" y="213.2">Z -8300</text>
+<circle cx="40.0" cy="471.0" r="5" fill="black"/><text x="48.0" y="485.0">BUOH_STILL</text>
+<circle cx="538.7" cy="374.4" r="5" fill="none" stroke="black"/><text x="546.7" y="388.4">BUCL</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-BUOH-R</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">BUOH_STILL -> BUCL</text>
-<text x="20" y="642">pipe 6.99 m in 4 pieces; cut 2839 1929 1929 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
+<text x="20" y="642">pipe 27.34 m in 7 pieces; cut 2589 6000 6000 3829 629 6000 2289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="58.9,580.0 58.9,60.0 40.0,70.9 169.8,145.9 169.8,155.3" fill="none" stroke="black" stroke-width="3"/>
-<text x="64.9" y="316.0">Z +16650</text>
-<text x="55.5" y="61.5">X -700</text>
-<text x="110.9" y="104.4">Y -4800</text>
-<text x="175.8" y="146.6">Z -300</text>
-<circle cx="58.9" cy="580.0" r="5" fill="black"/><text x="66.9" y="594.0">CLARIFIER</text>
-<circle cx="169.8" cy="155.3" r="5" fill="none" stroke="black"/><text x="177.8" y="169.3">BIOFILTER</text>
+<polyline points="140.1,580.0 140.1,60.0 40.0,117.8 104.9,155.3 104.9,164.6" fill="none" stroke="black" stroke-width="3"/>
+<text x="146.1" y="316.0">Z +16650</text>
+<text x="96.0" y="84.9">X -3700</text>
+<text x="78.5" y="132.5">Y -2400</text>
+<text x="110.9" y="155.9">Z -300</text>
+<circle cx="140.1" cy="580.0" r="5" fill="black"/><text x="148.1" y="594.0">CLARIFIER</text>
+<circle cx="104.9" cy="164.6" r="5" fill="none" stroke="black"/><text x="112.9" y="178.6">BIOFILTER</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-CLAR-BIO</text>
 <text x="20" y="614">DN25  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">CLARIFIER -> BIOFILTER</text>
-<text x="20" y="642">pipe 22.35 m in 6 pieces; cut 6000 6000 4633 667 4767 283 mm</text>
+<text x="20" y="642">pipe 22.95 m in 6 pieces; cut 6000 6000 4633 3667 2367 283 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

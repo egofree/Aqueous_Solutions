@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,230.8 40.0,148.0 192.4,60.0 560.0,272.2 560.0,391.3" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="185.4">Z +1600</text>
-<text x="122.2" y="100.0">X +3400</text>
-<text x="382.2" y="162.1">Y -8200</text>
-<text x="566.0" y="327.8">Z -2300</text>
-<circle cx="40.0" cy="230.8" r="5" fill="black"/><text x="48.0" y="244.8">HABITATION</text>
-<circle cx="560.0" cy="391.3" r="5" fill="none" stroke="black"/><text x="568.0" y="405.3">COMPOST_TOILET</text>
+<polyline points="184.7,208.6 184.7,60.0 40.0,143.6 426.0,366.4 426.0,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="190.7" y="130.3">Z +1600</text>
+<text x="118.4" y="97.8">X -1800</text>
+<text x="239.0" y="251.0">Y -4800</text>
+<text x="432.0" y="469.2">Z -2300</text>
+<circle cx="184.7" cy="208.6" r="5" fill="black"/><text x="192.7" y="222.6">HABITATION</text>
+<circle cx="426.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="434.0" y="594.0">COMPOST_TOILET</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-FEC-01</text>
 <text x="20" y="614">DN50  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">HABITATION -> COMPOST_TOILET</text>
-<text x="20" y="642">pipe 15.32 m in 5 pieces; cut 1570 3340 6000 2140 2270 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 fusion joints</text>
+<text x="20" y="642">pipe 10.32 m in 4 pieces; cut 1570 1740 4740 2270 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 8 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

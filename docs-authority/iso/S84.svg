@@ -8,8 +8,8 @@
 <circle cx="294.6" cy="519.7" r="5" fill="none" stroke="black"/><text x="302.6" y="533.7">HDR_N2</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S84</text>
-<text x="20" y="614">DN20  class M1  316L ASTM A312</text>
+<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">CRYO_N2 -> HDR_N2</text>
-<text x="20" y="642">pipe 32.03 m in 8 pieces; cut 6000 4421 6000 6000 2342 6000 992 271 mm</text>
+<text x="20" y="642">pipe 31.97 m in 8 pieces; cut 6000 4412 6000 6000 2324 6000 974 262 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

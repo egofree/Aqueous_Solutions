@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="159.4,199.8 159.4,85.6 121.9,107.3 40.0,60.0 40.0,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="165.4" y="138.7">Z +2900</text>
+<text x="146.6" y="92.4">X -1100</text>
+<text x="86.9" y="79.6">Y +2400</text>
+<text x="46.0" y="316.0">Z -13200</text>
+<circle cx="159.4" cy="199.8" r="5" fill="black"/><text x="167.4" y="213.8">DUAL_ROOT</text>
+<circle cx="40.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="48.0" y="594.0">CRYO_AHU</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-DR-VAP</text>
+<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="628">DUAL_ROOT -> CRYO_AHU</text>
+<text x="20" y="642">pipe 19.37 m in 6 pieces; cut 2862 1024 2324 6000 6000 1162 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

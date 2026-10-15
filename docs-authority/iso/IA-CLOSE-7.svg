@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="433.1,110.6 433.1,60.0 40.0,286.9 203.2,381.2 203.2,580.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="439.1" y="81.3">Z +2200</text>
-<text x="242.5" y="169.5">X -19748</text>
-<text x="127.6" y="330.1">Y -8200</text>
-<text x="209.2" y="476.6">Z -8650</text>
-<circle cx="433.1" cy="110.6" r="5" fill="black"/><text x="441.1" y="124.6">COMPOST</text>
-<circle cx="203.2" cy="580.0" r="5" fill="none" stroke="black"/><text x="211.2" y="594.0">MEOH_TANK</text>
+<polyline points="434.3,102.2 434.3,60.0 40.0,287.6 259.2,414.2 259.2,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="440.3" y="77.1">Z +2200</text>
+<text x="243.1" y="169.8">X -23748</text>
+<text x="155.6" y="346.9">Y -13200</text>
+<text x="265.2" y="493.1">Z -8650</text>
+<circle cx="434.3" cy="102.2" r="5" fill="black"/><text x="442.3" y="116.2">COMPOST</text>
+<circle cx="259.2" cy="580.0" r="5" fill="none" stroke="black"/><text x="267.2" y="594.0">MEOH_TANK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-CLOSE-7</text>
 <text x="20" y="614">DN50  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">COMPOST -> MEOH_TANK</text>
-<text x="20" y="642">pipe 38.62 m in 9 pieces; cut 2170 6000 6000 6000 1688 6000 2140 6000 2620 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 13 fusion joints</text>
+<text x="20" y="642">pipe 47.62 m in 10 pieces; cut 2170 6000 6000 6000 5688 6000 6000 1140 6000 2620 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 14 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

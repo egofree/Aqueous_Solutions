@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="513.1,67.5 513.1,60.0 40.0,333.2 83.4,358.2 83.4,580.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="519.1" y="59.8">Z +300</text>
-<text x="282.6" y="192.6">X -21800</text>
-<text x="67.7" y="341.7">Y -2000</text>
-<text x="89.4" y="465.1">Z -8850</text>
-<circle cx="513.1" cy="67.5" r="5" fill="black"/><text x="521.1" y="81.5">HNO3</text>
-<circle cx="83.4" cy="580.0" r="5" fill="none" stroke="black"/><text x="91.4" y="594.0">NOX_SCRUB</text>
+<polyline points="560.0,95.2 560.0,60.0 40.0,360.2 101.0,395.5 101.0,435.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="73.6">Z +2300</text>
+<text x="306.0" y="206.1">X -39200</text>
+<text x="76.5" y="373.8">Y -4600</text>
+<text x="107.0" y="411.4">Z -2600</text>
+<circle cx="560.0" cy="95.2" r="5" fill="black"/><text x="568.0" y="109.2">HNO3</text>
+<circle cx="101.0" cy="435.3" r="5" fill="none" stroke="black"/><text x="109.0" y="449.3">NOX_SCRUB</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-HNO3-VENT</text>
 <text x="20" y="614">DN15  class F1  FRP vinyl ester</text>
 <text x="20" y="628">HNO3 -> NOX_SCRUB</text>
-<text x="20" y="642">pipe 32.89 m in 8 pieces; cut 289 6000 6000 6000 3779 1979 6000 2839 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 butt-and-strap joints</text>
+<text x="20" y="642">pipe 48.64 m in 10 pieces; cut 2289 6000 6000 6000 6000 6000 6000 3179 4579 2589 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 14 butt-and-strap joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>
