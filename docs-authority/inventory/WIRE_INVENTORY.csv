@@ -74,7 +74,7 @@ ELEC,collection bus,CB-4,section main to CB-4 transformer LV,"power, 3 ph parall
 ELEC,collection bus,CB-5,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-5,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-5,section main to CB-5 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
-ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,5988.0,1,5988.0,AQS-ELEC-005 ring 752 m + mesh 5236 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
+ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,6144.0,1,6144.0,AQS-ELEC-005 ring 752 m + mesh 5392 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
 ELEC,inverter,SOL_ARK_60K,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,48,960.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,inverter,SOL_ARK_60K,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,48,960.0,speed/position feedback (assumed)
 ELEC,rectifier,RECTIFIER,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,4,80.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -100,9 +100,9 @@ ELEC_PV,EXT_HALL_N,EXT_HALL,heat pump condenser fan EGC,equipment ground,14 AWG,
 ELEC_PV,EXT_HALL_N,EXT_HALL,heat pump condenser fan control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,104.6,16,10045.4,"start/stop, run, fault (assumed)"
 ELEC_PV,EXT_HALL_N,EXT_HALL,heat pump condenser fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,104.6,16,5022.7,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-ELEC_PV (Manhattan x 1.1 + 3 m drop, assumed)"
 ELEC_PV,distribution,LP-ELEC_PV,panel feeder 460 V,"power, 3 ph + EGC",4/0 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,8,31.6,1,253.1,NEC 430.24: 438.4 A in 2 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-ELEC_PV,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,66,23760.0,installed 290 kW (average 29.019 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
-ELEC_PV,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,388,46560.0,"6972 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 388 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
-ELEC_PV,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,388,23280.0,NEC 690.45 / 250.122
+ELEC_PV,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,66,23760.0,installed 289 kW (average 28.892 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
+ELEC_PV,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,385,46200.0,"6930 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 385 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
+ELEC_PV,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,385,23100.0,NEC 690.45 / 250.122
 FAB,FAB,WAFER_FAB,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WAFER_FAB,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FAB,FAB,WAFER_FAB,process vacuum pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.1,1,9.1,NEC 250.122 at 15 A OCPD

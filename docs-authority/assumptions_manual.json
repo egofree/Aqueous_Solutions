@@ -2928,5 +2928,25 @@
     "verification": "BMED_UPW_POLISH 38 -> 18 W; 0.27 m2 membrane per module at 6.9 bar",
     "replace_when": "Module permeance and EDI resistivity bench test",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-177",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Metal-shop tools from physics",
+    "statement": "Induction melt eta 0.55, 10 kg charge, 0.5 h melt, 100 K superheat; atomiser Ar GMR 2.5 at 30 bar, compressor isothermal eta 0.6, 10 min pour, 1 kW tundish; Cu mean flow stress 250 MPa, rolling strain 2.3, drawing strain 3.0, deformation eta 0.55; mill 2.2 kW and drawer 1.1 kW with 15 % no-load for 1 h",
+    "verification": "MFG_SHOP 3.98 -> 2.90 kW average; coincident peak 38.5 -> 24.5 kW; melt 15 -> 7.5 kW, atomiser 12 -> 5.5 kW",
+    "replace_when": "Trial heats, atomiser run and rolling/drawing passes on the first articles",
+    "doc": "AQS-PAR-003"
   }
 ]

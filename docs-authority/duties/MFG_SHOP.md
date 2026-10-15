@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 610.3 kg/d. Mass out 610.3 kg/d. Electrical duty 3.9800 kW. In: S08 42 kg/d (metals and entrained silicate (Si as SiO2)); S08G 26.2 kg/d (glass and ceramic stock); S58 3.939 kg/d (wire product); S59 3.95 kg/d (sheet / strip); 16 more. Out: S16 12 kg/d (scrap); S61 1.197 kg/d (metal scrap); IA-MFG-OUT 596.9 kg/d (goods in service); IA-CLOSE-8 0.29 kg/d (shop scrap to the digester).
+1. Basis. Mass in 610.3 kg/d. Mass out 610.3 kg/d. Electrical duty 2.9030 kW. In: S08 42 kg/d (metals and entrained silicate (Si as SiO2)); S08G 26.2 kg/d (glass and ceramic stock); S58 3.939 kg/d (wire product); S59 3.95 kg/d (sheet / strip); 16 more. Out: S16 12 kg/d (scrap); S61 1.197 kg/d (metal scrap); IA-MFG-OUT 596.9 kg/d (goods in service); IA-CLOSE-8 0.29 kg/d (shop scrap to the digester).
 
 2. Size.
 - In 610.3 kg/d, out 610.3 kg/d. No holdup claimed.

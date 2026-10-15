@@ -1,6 +1,8 @@
 """Citation registry for the parametric model. Code cites by key; docs print the full entry.
 Only published sources: standards, textbooks, peer-reviewed papers, manufacturer data."""
 REFS = {
+ 'CRC_CU': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements and heat capacity of the elements: Cu melting point 1084.62 C, enthalpy of fusion 13.26 kJ/mol (208.7 kJ/kg), cp 24.44 J/(mol K) at 25 C rising to about 30 J/(mol K) near the melting point, liquid cp 32.8 J/(mol K); density 8.96 g/cm3. Ar molar mass 39.95 g/mol.',
+ 'DIETER1988': 'Dieter G.E., Mechanical Metallurgy, SI metric ed., McGraw-Hill (1988), ch. 17-21 metalworking: ideal work of plastic deformation per unit volume w = mean flow stress x true strain; rolling and wire drawing efficiencies (ideal over actual work) about 0.5-0.7; drawing true strain ln(A0/A1), maximum reduction per pass about 30-35 %.',
  'BAKER2012': 'Baker R.W., Membrane Technology and Applications, 3rd ed., Wiley (2012), ch. 5 reverse osmosis: solution-diffusion flux J = A (dP - d pi); thin-film composite brackish-water membranes, water permeance about 3-5 L/(m2 h bar); osmotic pressure by van t Hoff pi = i c R T.',
  'GREENLEE2009': 'Greenlee L.F., Lawler D.F., Freeman B.D., Marrot B., Moulin P., Reverse osmosis desalination: water sources, technology, and today\'s challenges, Water Research 43 (2009) 2317-2348: brackish-water RO specific energy about 0.5-3 kWh/m3.',
  'ALVARADO2014': 'Alvarado L., Chen A., Electrodeionization: principles, strategies and applications, Electrochimica Acta 132 (2014) 583-597: EDI polishes RO permeate to 10-18 MOhm cm with continuous electrochemical resin regeneration; current carried partly by water splitting, so current efficiency is low.',

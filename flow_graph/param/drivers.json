@@ -1984,5 +1984,121 @@
   "value": 15.0,
   "units": "W 185/254 nm UV lamp for TOC on the UPW loop",
   "register": "A-M-176"
+ },
+ "melt_cp_solid_kJ_kgK": {
+  "value": 0.43,
+  "units": "kJ/kg K mean Cu 25-1085 C",
+  "ref": "CRC_CU"
+ },
+ "melt_L_kJ_kg": {
+  "value": 208.7,
+  "units": "kJ/kg Cu fusion",
+  "ref": "CRC_CU"
+ },
+ "melt_cp_liq_kJ_kgK": {
+  "value": 0.516,
+  "units": "kJ/kg K liquid Cu",
+  "ref": "CRC_CU"
+ },
+ "melt_superheat_K": {
+  "value": 100.0,
+  "units": "K above liquidus at tap",
+  "register": "A-M-177"
+ },
+ "melt_eta": {
+  "value": 0.55,
+  "units": "- coreless induction furnace, coil to melt",
+  "register": "A-M-177",
+  "needs_verification": true,
+  "verification_test": "Trial run on the first article (X-MFG-37)"
+ },
+ "melt_charge_kg": {
+  "value": 10.0,
+  "units": "kg crucible charge (two heats a day cover the need)",
+  "register": "A-M-177"
+ },
+ "melt_time_h": {
+  "value": 0.5,
+  "units": "h melt time per heat",
+  "register": "A-M-177"
+ },
+ "melt_hold_kW": {
+  "value": 0.5,
+  "units": "kW holding loss while tapping",
+  "register": "A-M-177"
+ },
+ "atom_GMR": {
+  "value": 2.5,
+  "units": "kg Ar per kg metal",
+  "register": "A-M-177",
+  "needs_verification": true,
+  "verification_test": "Trial run on the first article (X-MFG-37)"
+ },
+ "atom_P_bar": {
+  "value": 30.0,
+  "units": "bar Ar at the nozzle",
+  "register": "A-M-177"
+ },
+ "atom_comp_eta": {
+  "value": 0.6,
+  "units": "- Ar recirculation compressor, isothermal efficiency",
+  "register": "A-M-177"
+ },
+ "atom_batch_min": {
+  "value": 10.0,
+  "units": "min pour time per heat",
+  "register": "A-M-177"
+ },
+ "atom_tundish_kW": {
+  "value": 1.0,
+  "units": "kW tundish heater for 1 h per heat",
+  "register": "A-M-177"
+ },
+ "cu_flow_stress_MPa": {
+  "value": 250.0,
+  "units": "MPa mean flow stress, Cu cold work",
+  "register": "A-M-177",
+  "needs_verification": true,
+  "verification_test": "Trial run on the first article (X-MFG-37)"
+ },
+ "roll_strain": {
+  "value": 2.3,
+  "units": "- true strain, 10 mm bar to 1 mm strip",
+  "register": "A-M-177"
+ },
+ "draw_strain": {
+  "value": 3.0,
+  "units": "- true strain, 8 mm rod to 1.8 mm wire",
+  "register": "A-M-177"
+ },
+ "deform_eta": {
+  "value": 0.55,
+  "units": "- rolling and drawing efficiency",
+  "ref": "DIETER1988"
+ },
+ "mill_kW": {
+  "value": 2.2,
+  "units": "kW mill motor nameplate",
+  "register": "A-M-177"
+ },
+ "mill_run_h": {
+  "value": 1.0,
+  "units": "h/d run",
+  "register": "A-M-177"
+ },
+ "mill_idle_frac": {
+  "value": 0.15,
+  "units": "- no-load fraction of nameplate while running",
+  "register": "A-M-177"
+ },
+ "draw_kW": {
+  "value": 1.1,
+  "units": "kW bull-block motor nameplate",
+  "register": "A-M-177"
+ },
+ "draw_run_h": {
+  "value": 1.0,
+  "units": "h/d run",
+  "register": "A-M-177"
  }
 }
