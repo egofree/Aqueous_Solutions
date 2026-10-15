@@ -739,5 +739,44 @@
    "docs-authority/ONE_LINE.md"
   ],
   "id": "A-M-057"
+ },
+ {
+  "value": "2 x rated",
+  "units": "fault current",
+  "where": "AQS-ELEC-006 inverter fault contribution",
+  "basis": "AQS-ELEC-002 Rev B figure; typical inverter limit 1.1-2.0 x",
+  "sensitivity": "Device choice and GPR linear",
+  "replaced_by": "SOL_ARK vendor fault data",
+  "task": "X-ELS-07",
+  "files": [
+   "docs-authority/PROTECTION.md"
+  ],
+  "id": "A-M-058"
+ },
+ {
+  "value": "5x low instantaneous; electronic 1.5x / 0.1 s; main 1.25x / 0.3 s",
+  "units": "settings",
+  "where": "AQS-ELEC-006 devices",
+  "basis": "Pickups set below the inverter-limited fault",
+  "sensitivity": "Clearing time",
+  "replaced_by": "Chosen brand time-current curves",
+  "task": "X-ELS-07",
+  "files": [
+   "docs-authority/PROTECTION.md"
+  ],
+  "id": "A-M-059"
+ },
+ {
+  "value": "0.5",
+  "units": "s",
+  "where": "IEEE 80 clearing time",
+  "basis": "Feeders clear in 0.1 s; margin",
+  "sensitivity": "Tolerable voltage with 1/sqrt(t)",
+  "replaced_by": "Device curves at the fault current",
+  "task": "X-ELS-08",
+  "files": [
+   "docs-authority/PROTECTION.md"
+  ],
+  "id": "A-M-060"
  }
 ]

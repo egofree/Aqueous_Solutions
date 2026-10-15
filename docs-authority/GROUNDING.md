@@ -25,8 +25,11 @@ Bare copper ring, 4/0 AWG (107 mm²), 0.75 m deep, round the placement extents (
 
 RECT-EW channels (AQS-ELEC-004) run ungrounded (floating) DC with insulation monitoring and a ground-fault alarm, so a single fault does not drive current through liquor, piping or the grid. Busbars are insulated from racks; cell tanks are non-conductive. Stray-current paths through the liquor manifolds are X-MAT-07.
 
-## 4. Held
+## 4. Step and touch
 
-- Step and touch voltages (IEEE 80) need the earth-fault current, which comes from X-ELS-07 protection and the X-ELS-03 one-line.
+Checked in AQS-ELEC-006 section 4: GPR 165 V against tolerable touch 176 V on bare soil at 0.5 s; safe. Crushed rock on the yard.
+
+## 5. Held
+
 - Soil resistivity needs a Wenner four-pin test at the parcel (X-BAS-03).
 - Lightning protection (NFPA 780) is not covered here.

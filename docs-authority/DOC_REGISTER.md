@@ -188,3 +188,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | A | 2026-10-15 | Piping class sheets | canonical |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | canonical |
 | AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | canonical |
+| AQS-ELEC-006 | `docs-authority/PROTECTION.md` | A | 2026-10-15 | Protection and coordination | canonical |

@@ -144,5 +144,5 @@ flowchart LR
 1. Bus demand at the bounding EW case is 141.9 kW against 39.6 kW of graph sources and a 60 kW inverter. The RECT-EW feeder alone is 38.0 kW. Sources, storage and inverter are re-sized under X-ELS-05; the graph edges are not changed (EW power rate change awaits the owner).
 2. 91 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
-4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17).
+4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.
 
