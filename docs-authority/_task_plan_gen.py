@@ -153,6 +153,7 @@ X=[
 ('X-MAT-17','HX8 PVDF bundle adopted','PVDF bundle 7.53 m2 recorded as the choice with rationale; duty, standard updated','X-MAT-12','docs-authority/MATERIALS_STD.md'),
 ('X-MAT-18','EW electrode materials in chloride','cathode and anode materials for chloride liquor with anodic Cl2 chosen with source (316L cathode and PbO2 anode reviewed against titanium blanks and mixed-oxide anodes)','X-MAT-08','docs-authority/MATERIALS_STD.md'),
 ('X-MAT-19','Cool hot LEACH draws','IA-BMED-03, IA-BMED-04 and IA-POT-01 cooled below the receiving limit (BMED membrane limit, PVC-U 60 °C) with a heat duty and exchanger on the graph','X-MAT-09','docs-authority/MATERIALS_STD.md'),
+('X-MAT-20','Evaporator outlet temperatures and line classes','EVAP_ACID and EVAP_BASE product and condensate outlet temperatures fixed from vendor MVR data (feed/condensate interchange), and IA-ACID-01, IA-BASE-01, IA-BASE-PPT, IA-EVAP_*-COND classed or cooled to the receiving limit; LINE_LIST currently classes the condensate P1 (60 °C) on carries text only','X-PAR-04',None),
 ('X-MAT-09','Material temperatures on the graph','liquor temperature carried on every edge into a thermoplastic unit','X-MAT-05','docs-authority/MATERIALS_STD.md')]),
 ('COD','Codes and permits',[
 ('X-COD-01','Code basis','AQS-HSE-001 code basis and AQS-CMP-001 compliance matrix closed per item','X-BAS-04',None),
@@ -271,7 +272,7 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 1. X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.
 2. X-PAR-03 Convert relief (API 520), LEACH_CSTR_1 sizing, HX-5 and power sizing to the library (rectifier converted 2026-10-15, `docs-authority/_rect_ew_sizing.py`).
 3. X-PAR-03 Add tank, pump, agitator and scrubber sizing functions with cited equations.
-4. X-PAR-04 Regenerate CadQuery params, BOMs and isometrics from sized values (EVAP_ACID, EVAP_BASE, resized EW tanks). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).
+4. X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the vendor MVR quote (bought skids, no models/mfg build); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).
 5. X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).
 6. X-PAR-05 Testing and prototyping rollout plan from the verification list.
 7. X-BLD-04 Clear the 20 sub-600 mm pairs and lay out the PV ground field.

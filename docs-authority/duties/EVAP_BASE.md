@@ -18,6 +18,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 6. Relief. Vendor relief on the vapour body (API 520 at vendor data). Vent to ACID_POLISH_SCRUB (alkaline mist).
 
-7. Code. Vendor skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001).
+7. Code. Vendor skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001). The envelope is `cad/stl/EVAP_BASE.stl` (flow_graph/param/envelopes.py).
 
-8. Open items. Vendor MVR quote at about 0.8 t/d water (A-M-089); bench leach at 20 wt% (A-M-090).
+8. Open items. Outlet temperatures and line classes (X-MAT-20). Vendor MVR quote at about 0.8 t/d water (A-M-089); bench leach at 20 wt% (A-M-090).
