@@ -129,5 +129,15 @@ def tf(g, ps=None):
     if 'IA-SUMP-MU' not in E:
         g['edges'].append(_edge('IA-SUMP-MU', 'ROOF_TANK', 'FISH_SUMP', 'L', ['mass'], 'aquaponic loop make-up (crop transpiration)', 0, 'kg/d', 'GEO', 'FARM', {'H2O': 1.0})); E['IA-SUMP-MU'] = g['edges'][-1]
     put('IA-SUMP-MU', 0.0, 'reset'); put('IA-SUMP-MU', max(0.0, -_resid(g, 'FISH_SUMP')), 'make-up = water the crops transpired off the loop; AHU condensate returns it to the roof tank')
+    # Crop lighting (A-M-144): sole-source LED at the bed's DLI 17 mol/m2/d and 2.8 umol/J (o2_close basis) = 70.3 W/m2 average, plus the unit's
+    # pre-existing pump/aux study load kept as the base.
+    from flow_graph.param.o2_close import DLI, LED
+    wm2 = DLI*1e6/LED/86400
+    for u in ['VEG_BED'] + [x[0] for x in FARM_UNITS]:
+        A_ = N[u]['params']['crop_basis']['area_m2'] if u != 'VEG_BED' else tot['A']; ck = N[u]['continuous_kw']
+        aux = N[u]['params'].setdefault('aux_kw_base', ck['value']); kw = aux + A_*wm2/1000
+        ck.update(value=round(kw, 4), note=f'LED {A_:.2f} m2 x {wm2:.1f} W/m2 (DLI {DLI}, {LED} umol/J) + aux {aux} kW (A-M-144)')
+        for k in (f'SF-{u}', f'SQ-{u}'):
+            if k in E: E[k]['rate']['value'] = round(kw, 4)
     N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
     return dict(veg=tot, ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
