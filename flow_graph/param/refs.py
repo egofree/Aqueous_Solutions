@@ -43,6 +43,7 @@ REFS = {
  'API576_2017': 'API 576, Inspection of Pressure-relieving Devices, 4th ed. (2017): interval set by service history, typically 5 years for clean service and shorter for fouling or corrosive service; maximum 10 years per API 510.',
  'NFPA25_2023': 'NFPA 25-2023, Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems: quarterly valve and alarm tests, annual inspection, weekly fire pump churn test, 5-year internal pipe and tank inspection.',
  'NFPA70B_2023': 'NFPA 70B-2023, Standard for Electrical Equipment Maintenance: intervals by equipment condition 12, 36 or 60 months; annual infrared thermography.',
+ 'OSHA_1910_119': '29 CFR 1910.119, Process Safety Management of Highly Hazardous Chemicals: Appendix A and (a)(1)(ii) flammable liquid or gas threshold 10,000 lb on site in one location.',
  'ACI350_3': 'ACI 350.3-20, Seismic Design of Liquid-Containing Concrete Structures: impulsive and convective components, rectangular tank convective frequency lambda = sqrt(3.16 g tanh(3.16 HL/L)).',
  'ACI350_20': 'ACI 350-20, Code Requirements for Environmental Engineering Concrete Structures: liquid-retaining walls and slabs, durability and crack control.',
  'AHRI340_ASHRAE901': 'ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360.',

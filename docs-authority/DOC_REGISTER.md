@@ -41,7 +41,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | F | 2026-10-02 | Self-copy critical-path BOM — parts × feedstock (RepRap-class) | canonical |
 | AQS-BUS-001 | `docs-authority/BUSBAR.md` | C | 2026-10-16 | Rectifier bus | canonical |
 | AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | canonical |
-| AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | C | 2026-10-01 | Compliance matrix — design intent vs code themes | canonical |
+| AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | D | 2026-10-16 | Compliance matrix — design intent vs code themes | canonical |
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals — ALCRM | canonical |
 | AQS-DOC-001 | `docs-authority/DOCUMENTATION_STYLE.md` | A | 2026-10-01 | Documentation style — Aqueous house style | canonical |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | canonical |
