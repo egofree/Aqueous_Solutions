@@ -8,7 +8,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - In 0.2000 kg/d, out 0.2000 kg/d. No holdup claimed.
 - C₂H₅OH → CH₃CHO + H₂. 46.069 → 44.053 + 2.016. The hydrogen edge is that H₂, not a rounded 0.020.
 
-3. Material. Glass or 316L. Solvent or oxidizer. Not a farm gutter. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. Glass or PVC-U, per AQS-STD-002 rule M1. No 316L. Solvent or oxidizer: PVC compatibility with the named chemical is not checked; glass where it is not compatible. Corrosion allowance does not apply.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.04 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

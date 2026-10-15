@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - No liquor inlet. No sump volume is invented from the gas mass.
 - Packed height 3.0 m. HTU 0.5 m on 25 mm pall rings. NTU 6. Removal 1 − e^(−6) = 99.75% if the acid gas is irreversible.
 
-3. Material. 316L shell. Wet gas. Packing is polymer. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. The graph gives no temperature for this unit; above 60 °C, CPVC. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Gas duct DN250 at 10 m/s. Bore from 1500.0 m³/h is 230 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
 

@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - V = (3971.1/1000)×(0.5/24) = 0.0827 m³. 30 min.
 
-3. Material. 316L. Chloride or scrub liquor. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 °C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 6.25 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

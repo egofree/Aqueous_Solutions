@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 1500×60×60 mm, 0.0054 m³. That box over this flow would be 0.0345 h if it were full. It is not a residence time.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 °C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Line list. Origin 5000, 4600, -2700 mm. Size 1500 × 60 × 60 mm. Atmospheric lines are hose. DN is copied from the edge and is not recalculated.
 

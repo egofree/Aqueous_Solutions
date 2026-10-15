@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Circulation 200000.0 kg/d. Two-minute holdup 0.2778 m³. A 20-day volume at this rate is not a tank.
 
-3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
+3. Material. PVC-U or HDPE, per AQS-STD-002 rule M1. No metal wetted part. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Origin 0, 5000, -10500 mm. Size 12000 × 8000 × 4000 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-ESS-HYDRO-DIS, inlet, -Y face center, 6000, 5000, -8500 mm. Height 2000 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

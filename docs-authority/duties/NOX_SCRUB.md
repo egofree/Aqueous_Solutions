@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 600×400×1200 mm, 0.2880 m³. That box over this flow would be 13.88 h if it were full. It is not a residence time.
 
-3. Material. 316L. Chloride or scrub liquor. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. The graph gives no temperature for this unit; above 60 °C, CPVC. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Origin -3500, 5800, 0 mm. Size 600 × 400 × 1200 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-CLOSE-1, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

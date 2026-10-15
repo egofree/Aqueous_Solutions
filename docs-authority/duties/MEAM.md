@@ -8,7 +8,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - In 0.0700 kg/d, out 0.0700 kg/d. No holdup claimed.
 - CH₃OH + NH₃ → CH₃NH₂ + H₂O. Methanol limits. Excess ammonia returns to WS_AMMONIA. Water goes to the roof tank.
 
-3. Material. Glass or 316L. Solvent or oxidizer. Not a farm gutter. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. Glass or PVC-U, per AQS-STD-002 rule M1. No 316L. Solvent or oxidizer: PVC compatibility with the named chemical is not checked; glass where it is not compatible. Corrosion allowance does not apply.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.03 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

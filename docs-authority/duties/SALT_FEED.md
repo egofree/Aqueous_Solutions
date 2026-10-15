@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - No mass throughput. No volume is invented.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 °C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. No process nozzle.
 

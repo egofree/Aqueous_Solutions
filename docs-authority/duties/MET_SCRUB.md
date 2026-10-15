@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - Liquid in 2.46 kg/d. Sump at 10 min: V = (2.46/1000)×(10/60)/24 = 0.00002 m³.
 - Packed height 1.0 m plus a demister. The duty is mist and fines, not a high-NTU acid absorption.
 
-3. Material. 316L shell. Wet gas. Packing is polymer. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. The graph gives no temperature for this unit; above 60 °C, CPVC. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Origin 13600, 200, 0 mm. Size 800 × 800 × 2000 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-DRAW-FUME, inlet, -Y face center, 14000, 200, 1000 mm. Height 1000 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

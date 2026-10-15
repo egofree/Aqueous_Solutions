@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - Seven-day charge V = (0.2234/1000)×(168/24) = 0.0016 m³.
 - Addition, C4H6N2 + C4H9Cl → C8H15ClN2. No water. The smaller feed limits. Product is the [Bmim]Cl edge. The other edge is the unreacted feed.
 
-3. Material. Glass or 316L. Solvent or oxidizer. Not a farm gutter. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. Glass or PVC-U, per AQS-STD-002 rule M1. No 316L. Solvent or oxidizer: PVC compatibility with the named chemical is not checked; glass where it is not compatible. Corrosion allowance does not apply.
 
 4. Nozzles. Origin 23300, 4200, 6000 mm. Size 400 × 400 × 800 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-BUCL, inlet, -Y face center, 23500, 4200, 6400 mm. Height 400 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

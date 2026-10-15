@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 2200×900×1400 mm is the shell. It is not full. Working volume, 48 h: V = (0.3600/1000)×(48/24) = 0.0007 m³.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 °C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Origin -4700, 3100, 0 mm. Size 2200 × 900 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, S78, inlet, -Y face center, -3600, 3100, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
