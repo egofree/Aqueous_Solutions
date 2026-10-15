@@ -274,10 +274,11 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 3. X-PAR-03 Add scrubber sizing (packed-tower diameter and height) with a cited method. Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).
 4. X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the vendor MVR quote (bought skids, no models/mfg build); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).
 5. X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).
-7. X-BLD-04 Clear the 20 sub-600 mm pairs and lay out the PV ground field.
-8. X-PIP-03 Fabrication isometrics from AQS-ISO-001.
-9. X-ELS-02 Remaining study-share loads; CRYO_ASU basis.
-10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.
+6. X-BLD-04 Clear the 20 sub-600 mm pairs and lay out the PV ground field.
+7. X-PIP-03 Fabrication isometrics from AQS-ISO-001.
+8. X-ELS-02 Remaining study-share loads; CRYO_ASU basis.
+9. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.
+10. X-PAR-02 NaOH balance: BMED makes 2411 mol/d NaOH (1:1 with leach HCl) against 2464 mol/d demand on IA-BASE-PPT and IA-BASE-01; owner choice of base make-up or a lower digest draw before EVAP_BASE is derived from leach acid demand.
 
 Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are approved by default (X-RSZ group).
 
