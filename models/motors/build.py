@@ -31,10 +31,10 @@ def induction(f, d):
         H, Ds, E, A, Bb, K = IEC72[fr]; shL = L + 2*60 + E
         sh = cq.Workplane('XY').circle(Ds/2).extrude(shL).translate((0, 0, -60))
         fo = min(2*H*0.98, Do + 24); fr_ = cq.Workplane('XY').circle(fo/2).circle(Do/2).extrude(L + 40).translate((0, 0, -20))
-        feet = cq.Workplane('XY').box(A + 20, 30, 12).translate((0, -H + 6, L/2))
+        feet = cq.Workplane('XY').box(A + 20, 12, Bb + 40).translate((0, -H + 6, L/2)).union(cq.Workplane('XY').box(A*0.6, H - fo/2 + 14, Bb + 20).translate((0, -H + 12 + (H - fo/2 + 2)/2, L/2)))
         for sx in (-1, 1):
             for z in (L/2 - Bb/2, L/2 + Bb/2):
-                feet = feet.cut(cq.Workplane('XZ').circle(K/2).extrude(-12).translate((sx*A/2, -H + 12, z)))
+                feet = feet.cut(cq.Workplane('XZ').circle(K/2).extrude(-20).translate((sx*A/2, -H + 16, z)))
         parts += [('shaft C45', sh), ('frame A356', fr_.union(feet))]
         bom += [(f'shaft C45 (EN 10083-2) D{Ds} x {shL:.0f} mm, key to IEC 60072-1', 1, 'turned'), (f'frame A356 IEC {fr}, feet A{A} x B{Bb}, holes K{K}', 1, 'cast + machined'),
                 ('end shields A356', 2, 'cast + machined'), (f'bearing {BRG.get(fr, "6204-2Z")}', 2, 'X-INV-05 OF bearing family'), ('fan PP + fan cover steel', 1, 'IC 411'), ('terminal box + 6-stud block', 1, 'IEC 60034-8 marking')]
@@ -67,13 +67,16 @@ for f, r in F.items():
     elif t == 'stepper': parts, bom, fas = pm(f, d, 57 if '57' in r['size'] else 86, 'stepper')
     else: parts, bom, fas = solenoid(f)
     o = f'{ROOT}/models/motors/{f}'; x = f'{o}/export'; os.makedirs(x, exist_ok=True)
+    parts = [(n, s.rotate((0, 0, 0), (1, 0, 0), 90)) for n, s in parts]     # axis horizontal (-Y), feet down (-Z), as mounted (IM B3)
     asm = cq.Assembly(name=f)
     for n, s in parts: asm.add(s, name=n.replace(' ', '_'))
     asm.save(f'{x}/{f.lower()}.step')
     comp = parts[0][1]
     for _, s in parts[1:]: comp = comp.union(s)
     cq.exporters.export(comp, f'{x}/{f.lower()}.stl')
-    cq.exporters.export(comp, f'{x}/drawing.svg', opt={'projectionDir': (1, -1, 0.6), 'showHidden': False, 'width': 600, 'height': 450})
+    # this CadQuery SVG exporter draws world +Z toward the bottom of the sheet; spin the solid 180 deg about the view axis (rigid, no mirror) so feet print down
+    PD = (1, -1, 0.7)
+    cq.exporters.export(comp.rotate((0, 0, 0), PD, 180), f'{x}/drawing.svg', opt={'projectionDir': PD, 'showHidden': False, 'width': 800, 'height': 600, 'marginLeft': 60, 'marginTop': 60})
     with open(f'{o}/bom.csv', 'w', newline='') as fh:
         w = csv.writer(fh); w.writerow(['item', 'description', 'qty', 'basis']); [w.writerow([i, a, q, b]) for i, (a, q, b) in enumerate(bom, 1)]
     with open(f'{o}/fasteners.csv', 'w', newline='') as fh:
