@@ -14,7 +14,7 @@ E_ = 200e3; FY = 345.0; G_C = 24.0                                   # MPa; conc
 BAY = P.BAY/1000; Lp, Wp = P.PLATE_L/1000, P.PLATE_W/1000; A_pl = Lp*Wp; nx, ny = round(Lp/BAY), round(Wp/BAY)
 LIVE = {'L-2': 0.0, 'L-1': 6.0, 'L0': 6.0, 'L1': 4.79, 'L2': 4.79, 'R1': 0.0, 'R2': 0.0, 'R3': 0.0, 'ROOF': 0.96}   # kPa: light manufacturing 125 psf, assembly/corridors 100 psf, water storeys (F), roof 20 psf
 z0 = P.HYDRO_RES_Z0/1000; clr = P.HYDRO_RES_CLEAR/1000
-Z = {'L-2': P.basement_z(1)/1000, 'L-1': P.basement_z(0)/1000, 'L0': 0.0, 'L1': 6.0, 'L2': 12.0, 'R1': z0, 'R2': z0 + clr, 'R3': z0 + 2*clr, 'ROOF': P.Z_ROOF/1000}
+Z = {'L-2': P.basement_z(1)/1000, 'L-1': P.basement_z(0)/1000, 'L0': P.Z_L0/1000, 'L1': P.Z_L1/1000, 'L2': P.Z_L2/1000, 'R1': z0, 'R2': z0 + clr, 'R3': z0 + 2*clr, 'ROOF': P.Z_ROOF/1000}
 SL = {}
 for line in open('docs-authority/STRUCT_LOADS.md'):
     c = [x.strip() for x in line.split('|')]

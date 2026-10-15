@@ -52,21 +52,21 @@ def _core_rooms(doc):
 
 def _stairs_elev(doc):
     z0 = P.Z_Lm2
-    z_roof = P.Z_L2 + 2000
+    z_roof = max(P.Z_L2 + 2000, getattr(P, 'Z_ROOF', 0) + 2000)   # X-BLD-05: STAIR_P and STAIR_S1 reach the reservoir levels and the roof
     add(doc, "STAIR_P", box_at(P.CORE_X + 100, P.CORE_Y + 100,
-                               P.Z_L0, 2400, 4800, z_roof - P.Z_L0))
+                               P.Z_L0, P.STAIR_BOX, 4800, z_roof - P.Z_L0))
     label_plate(doc, "STAIR_P", P.CORE_X + 100, P.CORE_Y - 200, z=P.Z_L1 + 500)
     add(doc, "STAIR_MAINT", box_at(P.CORE_X + 100, P.CORE_Y + 5000,
-                                   z0, 1200, 2400, P.Z_L0 - z0 + 500))
+                                   z0, P.STAIR_MAINT_W, 2400, P.Z_L0 - z0 + 500))
     label_plate(doc, "STAIR_MAINT", P.CORE_X + 100, P.CORE_Y + 4900,
                 z=P.Z_Lm1 + 500)
-    add(doc, "STAIR_S1", box_at(200, P.PLATE_W - 2600, P.Z_L0,
-                                2400, 2400, P.Z_L2 - P.Z_L0))
+    add(doc, "STAIR_S1", box_at(200, P.PLATE_W - 2800, P.Z_L0,
+                                P.STAIR_BOX, P.STAIR_BOX, max(P.Z_L2, getattr(P, 'Z_ROOF', 0)) - P.Z_L0))
     label_plate(doc, "STAIR_S1", 200, P.PLATE_W - 2800, z=P.Z_L1 + 500)
-    add(doc, "STAIR_S2", box_at(P.PLATE_L - 2600, 200, P.Z_L0,
-                                2400, 2400, P.Z_L2 - P.Z_L0))
+    add(doc, "STAIR_S2", box_at(P.PLATE_L - 2800, 200, P.Z_L0,
+                                P.STAIR_BOX, P.STAIR_BOX, P.Z_L2 - P.Z_L0))
     label_plate(doc, "STAIR_S2", P.PLATE_L - 2600, 0, z=P.Z_L1 + 500)
-    add(doc, "ELEV_SVC", box_at(P.CORE_X + 2600, P.CORE_Y + 100,
+    add(doc, "ELEV_SVC", box_at(P.CORE_X + P.STAIR_BOX + 200, P.CORE_Y + 100,
                                 z0, 2700, 3200, z_roof - z0))
     label_plate(doc, "ELEV_SVC", P.CORE_X + 2600, P.CORE_Y - 200,
                 z=P.Z_L0 + 500)
