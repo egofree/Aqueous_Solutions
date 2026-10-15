@@ -204,9 +204,11 @@ def storage(g):
     rh2, ro2 = rho(2.016e-3, 1.13), rho(31.998e-3, 0.93)
     N['CRYO_H2']['params']['store_water_volume_m3'] = round(st/rh2, 2)      # Z at 200 bar, 15 C: H2 1.13, O2 0.93 (NIST_WEBBOOK isothermal data; verify, A-M-133)
     o2st = st*7.937
+    crew = v('S02'); crew_d = max(1.0, PSH_STORE_D); crew_res = crew*crew_d     # X-RED-04: NFPA 99 reserve >= 1 average day; AQS-ELEC-007 2 d governs
     d = dict(fc_h2=fc_h2, fc_kW=v('S51'), e_fc=e_fc, rte=rte, store_h2=st, hours=hrs, rho_h2=rh2, V_h2=st/rh2, store_o2=o2st, rho_o2=ro2, V_o2=o2st/ro2)
     N['CRYO_O2']['params'].update({'storage_mode': 'compressed gas, 200 bar, Type I cylinder bank, O2-cleaned (ASTM G93), separate from H2 (NFPA 2 ch. 7 separation)',
-                                    'store_kg': round(o2st, 1), 'store_water_volume_m3': round(o2st/ro2, 2), 'store_basis': 'stoichiometric partner of the CRYO_H2 store (X-PAR-12)'})
+                                    'store_kg': round(o2st, 1), 'store_water_volume_m3': round(o2st/ro2, 2), 'store_basis': 'stoichiometric partner of the CRYO_H2 store (X-PAR-12)',
+                                    'crew_reserve_kg': round(crew_res, 2), 'crew_reserve_basis': f'separate cylinder bank, crew draw {crew:.2f} kg/d x {crew_d:.0f} d (NFPA 99 reserve >= 1 average day; AQS-ELEC-007 autonomy 2 d governs); not drawn by FUEL_CELL (X-RED-04, A-M-146)'})
     N['FUEL_CELL']['params']['reversible_loop'] = {'electrolyser': 'H2O_ELYZ', 'round_trip': round(rte, 3), 'basis': f'PEM {KWH_H2} kWh/kg H2 in, {e_fc:.1f} kWh/kg out', 'oxidant': 'pure O2 from HDR_O2; H2 and O2 never mixed (NFPA 2, ISO 22734, IEC 62282-3-100)'}
     return d
 
