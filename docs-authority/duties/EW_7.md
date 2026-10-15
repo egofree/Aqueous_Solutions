@@ -5,12 +5,13 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 1. Basis. Mass in 4122.6 kg/d. Mass out 4122.6 kg/d. Electrical duty 0.0000 kW. In: IA-EW-06 4122.6 kg/d (EW overflow). Out: IA-EW-07 4051.5 kg/d (EW overflow); IA-EW-MET-7 71.14 kg/d (plated sheet).
 
 2. Size.
+- AQS-DUTY-051: bounding 2500 A (1185.0 A at the element basis); 25 cathodes, 26 anodes at 198 A/m²; tank 2670 × 720 × 760 mm, 1.243 m³ liquor, 478 min; DC 6.25 kW. The 600 × 420 × 650 mm envelope is the plate; layout re-placement held (unit task 14).
 - Sheet 71.14 kg/d. As copper, 0.02844 kg/d per A. Current 71.14/0.02844 = 2501 A. At 200 A/m², area 2501/200 = 12.51 m². Plate 0.60×0.42 m, both sides 0.504 m², 25 plates. Pitch 50 mm.
 - At 2.5 V that current is 6.25 kW. The node books 0.0000 kW.
 - Liquor 4122.6 kg/d. Thirty-minute holdup V = (4122.6/1000)×(0.5/24) = 0.0859 m³.
 - Envelope 600×420×650 mm is one plate station, not the rack.
 
-3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance 0 mm on the titanium. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001).
+3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank and racks PVC/FRP; 316L frame withdrawn (AQS-STD-002 M3). Electrode materials reopened under X-MAT-18. Corrosion allowance 0 mm on the titanium. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001).
 
 4. Nozzles. Origin 7100, 4000, -6000 mm. Size 600 × 420 × 650 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-EW-06, inlet, -Y face center, 7400, 4000, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

@@ -453,5 +453,70 @@
    "docs-authority/sizing/LEACH_CSTR_1.md"
   ],
   "id": "A-M-035"
+ },
+ {
+  "value": "1.0",
+  "units": "current efficiency",
+  "where": "EW bounding current",
+  "basis": "Bounding; Cu-equivalent edge is already the sheet mass",
+  "sensitivity": "Current inverse to FE",
+  "replaced_by": "Measured current efficiency per cell",
+  "task": "MET-EW_1-02",
+  "files": [
+   "docs-authority/sizing/EW_CELLS.md"
+  ],
+  "id": "A-M-036"
+ },
+ {
+  "value": "200",
+  "units": "A/m2",
+  "where": "EW cathode current density",
+  "basis": "AQS-EW-MOD-001; typical copper EW range 200-350",
+  "sensitivity": "Cathode count inverse",
+  "replaced_by": "Deposit quality trial per metal",
+  "task": "MET-EW_1-02",
+  "files": [
+   "docs-authority/sizing/EW_CELLS.md"
+  ],
+  "id": "A-M-037"
+ },
+ {
+  "value": "100 mm cathode pitch; tank allowances 75/50/150/100/80 mm",
+  "units": "mm",
+  "where": "EW tank geometry",
+  "basis": "Common EW practice; room for sludge and covers",
+  "sensitivity": "Tank length linear in cathode count",
+  "replaced_by": "Fabrication drawing",
+  "task": "MET-EW_1-02",
+  "files": [
+   "docs-authority/sizing/EW_CELLS.md"
+  ],
+  "id": "A-M-038"
+ },
+ {
+  "value": "2.5",
+  "units": "V",
+  "where": "EW cell voltage, all cells",
+  "basis": "Graph EW_1 cell_voltage_V; not per metal",
+  "sensitivity": "DC power linear; Zn and Fe likely higher",
+  "replaced_by": "Measured cell voltage per metal",
+  "task": "MET-EW_1-02",
+  "files": [
+   "docs-authority/sizing/EW_CELLS.md"
+  ],
+  "id": "A-M-039"
+ },
+ {
+  "value": "0.60 x 0.42 m immersed plate",
+  "units": "m",
+  "where": "EW plates",
+  "basis": "AQS-EW-MOD-001",
+  "sensitivity": "Cathode count",
+  "replaced_by": "Cathode blank drawing",
+  "task": "MET-EW_1-02",
+  "files": [
+   "docs-authority/sizing/EW_CELLS.md"
+  ],
+  "id": "A-M-040"
  }
 ]

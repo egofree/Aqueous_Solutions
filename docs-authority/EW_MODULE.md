@@ -1,15 +1,15 @@
 # Electrowinning module
 
 Document number: AQS-EW-MOD-001
-Revision: C
-Date: 2026-10-11
+Revision: D
+Date: 2026-10-15
 Not a PE stamp.
 
 1. Basis. EW-1, 59.87 kg/d sheet. Liquor 4288 kg/d from the leach.
 
-2. Size. 0.02844 kg/d per amp. Current 59.87 / 0.02844 = 2105 A. At 200 A/m², area 10.53 m². Plate 0.6 × 0.42 m, both sides 0.504 m², 21 plates. Pitch 50 mm. Rack 1250 mm. Frame 1400 mm, 316L. Cell voltage 2.5 V. Power 5.3 kW from the cell rectifier. Bus 10.5 cm² copper.
+2. Size. 0.02844 kg/d per amp. Current 59.87 / 0.02844 = 2105 A. At 200 A/m², area 10.53 m². Plate 0.6 × 0.42 m, both sides 0.504 m², 21 plates. Pitch 50 mm. Rack 1250 mm. Frame 1400 mm, CPVC (Rev D; 316L withdrawn under AQS-STD-002 M3). Cell voltage 2.5 V. Power 5.3 kW from the cell rectifier. Bus 10.5 cm² copper.
 
-3. Material. Cathode 316L, 3 mm, plastic edge strip so the sheet peels. Anode titanium mesh, 1.5 mm, PbO₂ coat 0.5 mm. Tank PVC/FRP, 10 mm. Frame 316L.
+3. Material. Cathode 316L, 3 mm, plastic edge strip so the sheet peels. Anode titanium mesh, 1.5 mm, PbO₂ coat 0.5 mm. Tank PVC/FRP, 10 mm. Frame CPVC (Rev D).
 
 4. Nozzles. Liquor in −X at 20% height. Out +X at 75%. Launder +X at 600 mm. Bus −X at 400 mm. Drain bottom. Vent top to the scrubber.
 
@@ -19,4 +19,4 @@ Not a PE stamp.
 
 7. Code. Shop, PVC/FRP.
 
-8. Open items. None on the geometry. The coat life is not measured.
+8. Open items. Rev D: per-cell sizing is AQS-DUTY-051; the 600 × 420 mm envelope is the plate. Electrode materials in chloride with anodic Cl₂ reopened (X-MAT-18). The coat life is not measured.

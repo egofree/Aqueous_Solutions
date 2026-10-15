@@ -5,13 +5,14 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 1. Basis. Mass in 4287.8 kg/d. Mass out 4287.8 kg/d. Electrical duty 5.263 kW. In: IA-EW-04 4287.8 kg/d (CSTR to EW-1); IA-COAT-OUT 0.0200 kg/d (coated anode). Out: IA-EW-01 4226.0 kg/d (EW overflow); IA-EW-MET-1 59.87 kg/d (plated sheet); IA-EW1-H2 1.89 kg/d (hood hydrogen); IA-COAT-IN 0.0200 kg/d (nickel sheet to the booth).
 
 2. Size.
+- AQS-DUTY-051: bounding 2104 A (0.1 A at the element basis); 21 cathodes, 22 anodes at 199 A/m²; tank 2270 × 720 × 760 mm, 1.055 m³ liquor, 390 min; DC 5.26 kW. The 600 × 420 × 650 mm envelope is the plate; layout re-placement held (unit task 14).
 - Sheet 59.87 kg/d. As copper, 0.02844 kg/d per A. Current 59.87/0.02844 = 2105 A. At 200 A/m², area 2105/200 = 10.53 m². Plate 0.60×0.42 m, both sides 0.504 m², 21 plates. Pitch 50 mm.
 - At 2.5 V that current is 2105 × 2.5 = 5263 W, 5.263 kW. The node books 5.263 kW. Current efficiency 1.0 is assumed.
 - Output bar at 200 A/cm²: 2105 / 200 = 10.5 cm² copper per pole.
 - Liquor 4287.8 kg/d. Thirty-minute holdup V = (4287.8/1000)×(0.5/24) = 0.0893 m³.
 - Envelope 600×420×650 mm is one plate station, not the rack.
 
-3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance 0 mm on the titanium. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001).
+3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank and racks PVC/FRP; 316L frame withdrawn (AQS-STD-002 M3). Electrode materials reopened under X-MAT-18. Corrosion allowance 0 mm on the titanium. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001).
 
 4. Nozzles. Origin 3200, 5300, -6000 mm. Size 600 × 420 × 650 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-COAT-OUT, inlet, -Y face center, 3500, 5300, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
