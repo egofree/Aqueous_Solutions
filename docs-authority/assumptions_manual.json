@@ -3288,5 +3288,25 @@
     "verification": "21 sector PLCs, 202 modules, about 0.8 kW",
     "replace_when": "I/O list from the P&IDs at detailed design",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-195",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Design-derived HAZOP",
+    "statement": "One node per unit with inflow; guide words No/Less, More, High, Low, Reverse, Other-than on flow, pressure, temperature, level, composition; safeguards read from relief basis, AQS-CTL-001 instruments, AQS-INV-004 check valves and pumps, AQS-SAF-005; every liquid-receiving unit gets LT and LSH (rule added to AQS-INV-004)",
+    "verification": "126 nodes, 55 open actions (17 heater trips, 3 bank isolation trips, 5 relief cases incl. H2O_ELYZ, 8 LSH, 8 LT, 7 TE, 2 dry-run, 5 overfill)",
+    "replace_when": "Facilitated team HAZOP (rev B)",
+    "doc": "AQS-PAR-003"
   }
 ]

@@ -6,14 +6,16 @@ BACKUP_GEN,genset,BACKUP_GEN,electronics,PLC digital I/O point,24 V DC,IEC 61131
 BACKUP_GEN,genset,BACKUP_GEN,electronics,motor starter (contactor + overload),0.37 kW,IEC 60947-4-1,1,radiator fan (assumed VFD at >= 0.75 kW)
 BACKUP_GEN,genset,BACKUP_GEN,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,starter motor (assumed VFD at >= 0.75 kW)
 BACKUP_GEN,genset,BACKUP_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,S46: 2 per support (assumed)
+BACKUP_GEN,genset,BACKUP_GEN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+BACKUP_GEN,genset,BACKUP_GEN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 BACKUP_GEN,genset,BACKUP_GEN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 BACKUP_GEN,genset,BACKUP_GEN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 BACKUP_GEN,genset,BACKUP_GEN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 BACKUP_GEN,genset,BACKUP_GEN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 BACKUP_GEN,genset,BACKUP_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,S46: AQS-PIP-005 span count
 BACKUP_GEN,genset,BACKUP_GEN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S46: one at each end nozzle (assumed)
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,120,1914 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,836,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,122,1946 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,868,one per instrument
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-HVAC-COND to ROOF_TANK (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S68 to LEACH_CSTR_1 (assumed size)
@@ -215,6 +217,8 @@ DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-H2O-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-AIR-IN: pumped line (assumed)
 DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-H2O-MU: pumped line (assumed)
+DOCK,DOCK,NORTH_DOCK,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+DOCK,DOCK,NORTH_DOCK,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DOCK,DOCK,NORTH_DOCK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DOCK,DOCK,NORTH_DOCK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DOCK,DOCK,NORTH_DOCK,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,2,"NEC 430.52, from AQS-INV-002"
@@ -299,6 +303,8 @@ FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, 
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S39B: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FAB-SPENT: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-AR-RET: pumped line (assumed)
+FAB,FAB,WAFER_FAB,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+FAB,FAB,WAFER_FAB,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,FAB,WAFER_FAB,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,FAB,WAFER_FAB,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,FAB,WAFER_FAB,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -331,6 +337,8 @@ FAB,FAB,WET_BENCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,S10: 2
 FAB,FAB,WET_BENCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,S38: 2 per support (assumed)
 FAB,FAB,WET_BENCH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S10: pumped line (assumed)
 FAB,FAB,WET_BENCH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S38: pumped line (assumed)
+FAB,FAB,WET_BENCH,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+FAB,FAB,WET_BENCH,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,FAB,WET_BENCH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,FAB,WET_BENCH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,FAB,WET_BENCH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -1756,6 +1764,8 @@ GLASS,melt,SIC_FURNACE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transf
 GLASS,melt,SIC_FURNACE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-SIC-CO to AFTERBURNER: run and fault (assumed)
 GLASS,melt,SIC_FURNACE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-SIC-CO: 2 per support (assumed)
 GLASS,melt,SIC_FURNACE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-SIC-CO: pumped line (assumed)
+GLASS,melt,SIC_FURNACE,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+GLASS,melt,SIC_FURNACE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 GLASS,melt,SIC_FURNACE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GLASS,melt,SIC_FURNACE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 GLASS,melt,SIC_FURNACE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-SIC-CO: AQS-PIP-005 span count
@@ -1774,6 +1784,8 @@ HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-SL
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-GAL: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-WASH: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-BLK-01: 2 per support (assumed)
+HAB,HAB,HABITATION,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+HAB,HAB,HABITATION,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 HAB,HAB,HABITATION,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 HAB,HAB,HABITATION,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HAB,HAB,HABITATION,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-HAB-VAP: AQS-PIP-005 span count
@@ -1986,6 +1998,8 @@ MEOH,iem_fc,MEOH_FC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-F
 MEOH,iem_fc,MEOH_FC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S81: pumped line (assumed)
 MEOH,iem_fc,MEOH_FC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S82: pumped line (assumed)
 MEOH,iem_fc,MEOH_FC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FC-EXH: pumped line (assumed)
+MEOH,iem_fc,MEOH_FC,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+MEOH,iem_fc,MEOH_FC,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 MEOH,iem_fc,MEOH_FC,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MEOH,iem_fc,MEOH_FC,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MEOH,iem_fc,MEOH_FC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",29,S82: AQS-PIP-005 span count
@@ -2152,6 +2166,8 @@ MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,Eng
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,4 kW,IEC 61800-5-1,1,Rotary-screw air compressor: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-CLOSE-8: 2 per support (assumed)
 MFG,MFG,MFG_SHOP,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-CLOSE-8: pumped line (assumed)
+MFG,MFG,MFG_SHOP,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+MFG,MFG,MFG_SHOP,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 MFG,MFG,MFG_SHOP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,MFG,MFG_SHOP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -2262,6 +2278,8 @@ NUT,FARM,NUTRIENT_DOSE,instrument,flow transmitter,DN15,"electromagnetic, PFA li
 NUT,FARM,NUTRIENT_DOSE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NUT-LEACH: pumped line (assumed)
 NUT,FARM,NUTRIENT_DOSE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NUT-BED: pumped line (assumed)
 NUT,FARM,NUTRIENT_DOSE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-SIC-RET: pumped line (assumed)
+NUT,FARM,NUTRIENT_DOSE,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+NUT,FARM,NUTRIENT_DOSE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 NUT,FARM,NUTRIENT_DOSE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 NUT,FARM,NUTRIENT_DOSE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 NUT,FARM,NUTRIENT_DOSE,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",3,S07: AQS-PIP-005 span count
@@ -2312,6 +2330,8 @@ OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,2
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,HL-AFTERBURNER-Q1-B: 2 per support (assumed)
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,S18: 2 per support (assumed)
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-AB-FLUE: 2 per support (assumed)
+OIL,OIL_GLASS,AFTERBURNER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+OIL,OIL_GLASS,AFTERBURNER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,AFTERBURNER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,AFTERBURNER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,OIL_GLASS,AFTERBURNER,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",10,HL-AFTERBURNER-Q1-A: AQS-PIP-005 span count
@@ -2351,6 +2371,8 @@ OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA li
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-3: pumped line (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-4: pumped line (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-OIL-03: pumped line (assumed)
+OIL,OIL_GLASS,OIL_FRAC,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+OIL,OIL_GLASS,OIL_FRAC,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_FRAC,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,OIL_FRAC,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,OIL_GLASS,OIL_FRAC,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,CUT-1: AQS-PIP-005 span count
@@ -2381,6 +2403,8 @@ OIL,OIL_GLASS,OIL_PYRO,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,6,IA
 OIL,OIL_GLASS,OIL_PYRO,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-SIC-C: 2 per support (assumed)
 OIL,OIL_GLASS,OIL_PYRO,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-OIL-02: pumped line (assumed)
 OIL,OIL_GLASS,OIL_PYRO,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-SIC-C: pumped line (assumed)
+OIL,OIL_GLASS,OIL_PYRO,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+OIL,OIL_GLASS,OIL_PYRO,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_PYRO,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,OIL_PYRO,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,OIL_GLASS,OIL_PYRO,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",3,IA-OIL-02: AQS-PIP-005 span count
@@ -2558,6 +2582,8 @@ WET,BMED_CRU,CRU,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pum
 WET,BMED_CRU,CRU,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-CRU-01 to LEACH_CSTR_1: run and fault (assumed)
 WET,BMED_CRU,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-CRU-01: 2 per support (assumed)
 WET,BMED_CRU,CRU,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-CRU-01: pumped line (assumed)
+WET,BMED_CRU,CRU,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WET,BMED_CRU,CRU,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,BMED_CRU,CRU,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WET,BMED_CRU,CRU,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,BMED_CRU,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-CRU-01: AQS-PIP-005 span count
@@ -2625,6 +2651,8 @@ WET,BMED_CRU,POLISH_BANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2
 WET,BMED_CRU,POLISH_BANK,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-POL-CAKE to MFG_SHOP (assumed VFD at >= 0.75 kW)
 WET,BMED_CRU,POLISH_BANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-POL-02: 2 per support (assumed)
 WET,BMED_CRU,POLISH_BANK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-POL-02: pumped line (assumed)
+WET,BMED_CRU,POLISH_BANK,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WET,BMED_CRU,POLISH_BANK,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,BMED_CRU,POLISH_BANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WET,BMED_CRU,POLISH_BANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,BMED_CRU,POLISH_BANK,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -3033,6 +3061,8 @@ WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, 
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-UPW-FAB: pumped line (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-UPW-REMIN: pumped line (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-UPW-REJ: pumped line (assumed)
+WTR,BMED_CRU,BMED_UPW_POLISH,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WTR,BMED_CRU,BMED_UPW_POLISH,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,S01: AQS-PIP-005 span count
@@ -3296,6 +3326,8 @@ ZNBR2,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,78
 ZNBR2,flow_battery,ZNBR2,instrument,flow transmitter,DN40,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
 ZNBR2,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-BD: pumped line (assumed)
 ZNBR2,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
+ZNBR2,flow_battery,ZNBR2,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+ZNBR2,flow_battery,ZNBR2,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 ZNBR2,flow_battery,ZNBR2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 ZNBR2,flow_battery,ZNBR2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 ZNBR2,flow_battery,ZNBR2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,96,"NEC 430.52, from AQS-INV-002"

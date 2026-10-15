@@ -40,6 +40,7 @@ def rows():
             metal = c.startswith('M')
             add(u, 'support', 'pipe clamp' if not metal else 'U-bolt with guide', dn, 'PP clamp with EPDM liner, MSS SP-58 Type 7' if not metal else '316 U-bolt, MSS SP-58 Type 24', ns, f"{s['line']}: AQS-PIP-005 span count")
             add(u, 'fastener', 'anchor bolt', 'M10', 'ISO 3506 A4-70 wedge anchor', 2*ns, f"{s['line']}: 2 per support (assumed)")
+    LIQ_IN = {e['to_unit_id'] for e in g['edges'] if e['presence'] == 'present' and e.get('phase') == 'L' and (e['rate']['value'] or 0) > 0}
     for u, n in N.items():
         if n.get('class') in ('boundary', 'header', 'relief') or u.startswith(('HDR_', 'RELIEF_')): continue
         if os.path.exists(os.path.join(ROOT, f'docs-authority/nozzles/{u}.csv')):
@@ -47,7 +48,7 @@ def rows():
             dk = (n.get('params') or {}).get('design_kPa') or 0; need = 1.25*dk/100                       # X-CTL-01: range from the design pressure (AQS-CTL-001)
             top = next((x for x in (10, 16, 25, 40, 60, 100, 160, 250, 400) if x >= need), 400)
             add(u, 'instrument', 'pressure transmitter', f'0-{top} bar', 'ceramic diaphragm, IEC 61298' if top <= 16 else '316L thin-film strain gauge, IEC 61298', 1, 'duty item 5 (one per unit); range >= 1.25 x design pressure')
-            if n.get('class') in HOLD:
+            if n.get('class') in HOLD or u in LIQ_IN:                                                     # X-SAF-01 HZ: every liquid-receiving unit gets level and high level
                 add(u, 'instrument', 'level transmitter', 'radar 80 GHz', 'IEC 62828, PTFE lens', 1, 'duty item 5: liquid holdup')
                 add(u, 'instrument', 'high-level switch', 'vibrating fork', 'IEC 60947-5, 316L', 1, 'duty item 5: high level trips the inlet')
     for m in mot:

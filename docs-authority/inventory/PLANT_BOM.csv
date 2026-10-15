@@ -985,10 +985,10 @@ bulk wire,WF-27,"equipment ground 12 AWG green XHHW-2 Cu, 600 V",3 m,Cu,AQS-INV-
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",556,,AQS-INV-004
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,AQS-INV-004
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),1078,,AQS-INV-004
-building block,OF-04,electronics: PLC analog input point (IEC 61131-2),836,,AQS-INV-004
+building block,OF-04,electronics: PLC analog input point (IEC 61131-2),868,,AQS-INV-004
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),267,,AQS-INV-004
 building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),147,,AQS-INV-004
-building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",120,,AQS-INV-004
+building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",122,,AQS-INV-004
 building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),55,,AQS-INV-004
 building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),44,,AQS-INV-004
 building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),15,,AQS-INV-004
@@ -1017,8 +1017,8 @@ building block,OF-32,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-
 building block,OF-33,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",238,,AQS-INV-004
 building block,OF-34,"instrument: temperature element (IEC 60751, 316L thermowell)",186,,AQS-INV-004
 building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",180,,AQS-INV-004
-building block,OF-36,"instrument: high-level switch (IEC 60947-5, 316L)",113,,AQS-INV-004
-building block,OF-37,"instrument: level transmitter (IEC 62828, PTFE lens)",113,,AQS-INV-004
+building block,OF-36,"instrument: high-level switch (IEC 60947-5, 316L)",129,,AQS-INV-004
+building block,OF-37,"instrument: level transmitter (IEC 62828, PTFE lens)",129,,AQS-INV-004
 building block,OF-38,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)",6,,AQS-INV-004
 building block,OF-39,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",217,,AQS-INV-004
 building block,OF-40,"seal: mechanical seal, single (SiC/SiC faces, FKM)",144,,AQS-INV-004

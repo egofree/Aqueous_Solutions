@@ -2,10 +2,10 @@ family,category,item,spec,qty,sizes,units
 OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",556,608-2Z x556,107
 OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",404,6202-2Z x216; 6205-2Z x94; 6201-2Z x40; 6204-2Z x34; 6206-2Z x12; 6308-2Z x4; 6310-2Z x2; 6306-2Z x2,51
 OF-03,electronics,PLC digital I/O point,IEC 61131-2,1078,24 V DC x1078,137
-OF-04,electronics,PLC analog input point,IEC 61131-2,836,4-20 mA HART x836,1
+OF-04,electronics,PLC analog input point,IEC 61131-2,868,4-20 mA HART x868,1
 OF-05,electronics,BLDC driver,IEC 61800-5-1,267,24/48 V DC x267,103
 OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,147,0.37 kW x105; 0.18 kW x16; 0.55 kW x13; 0.75 kW x4; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2,39
-OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,120,24 V DC x120,1
+OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,122,24 V DC x122,1
 OF-08,electronics,variable-frequency drive,IEC 61800-5-1,55,1.1 kW x25; 1.5 kW x20; 2.2 kW x5; 7.5 kW x2; 18.5 kW x1; 3 kW x1; 4 kW x1,17
 OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,44,24 V DC x44,20
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,15,22 kW hermetic x8; 0.25 kW hermetic x5; 0.75 kW hermetic x1; 2.2 kW hermetic x1,8
@@ -34,8 +34,8 @@ OF-32,fastener,Solvent cement,PVC-U per ASTM D2564,1,Solvent cement x1,1
 OF-33,instrument,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",238,DN15 x190; DN50 x39; DN20 x3; DN25 x3; DN250 x1; DN300 x1; DN40 x1,95
 OF-34,instrument,temperature element,"IEC 60751, 316L thermowell",186,Pt100 class A x186,186
 OF-35,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",180,0-10 bar x180,180
-OF-36,instrument,high-level switch,"IEC 60947-5, 316L",113,vibrating fork x113,113
-OF-37,instrument,level transmitter,"IEC 62828, PTFE lens",113,radar 80 GHz x113,113
+OF-36,instrument,high-level switch,"IEC 60947-5, 316L",129,vibrating fork x129,129
+OF-37,instrument,level transmitter,"IEC 62828, PTFE lens",129,radar 80 GHz x129,129
 OF-38,instrument,pressure transmitter,"316L thin-film strain gauge, IEC 61298",6,0-40 bar x2; 0-400 bar x2; 0-25 bar x1; 0-100 bar x1,6
 OF-39,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,217,15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1,57
 OF-40,seal,"mechanical seal, single","SiC/SiC faces, FKM",144,EN 12756 x144,29
