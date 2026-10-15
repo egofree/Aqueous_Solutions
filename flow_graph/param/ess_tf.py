@@ -10,10 +10,12 @@ import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
 CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
-NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20
+NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20; SWARF = 0.10
 BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
+def _resid(g, u):
+    from flow_graph.param.balance import _unit_resid; return _unit_resid(g, u)
 def _ps():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
 def tf(g, ps=None):
@@ -64,4 +66,17 @@ def tf(g, ps=None):
             g['edges'].append(_edge(sid, tank, 'NORTH_DOCK', 'L', ['mass'], f'{comp} surplus shipped', 0, 'kg/d', 'CRYO', 'DOCK', {comp: 1.0})); E[sid] = g['edges'][-1]
         put(sid, E[cut]['rate']['value'] - E[use]['rate']['value'], f'{comp} make less the plant draw ({use}), shipped (Q-002 pattern)')
     N['OIL_FRAC']['params']['cut_basis'] = {'source': 'SU2018_PYRO', 'per_pass_fractions_C5-10_C11-18_C19-28_C29+': [round(x, 4) for x in f], 'A-M': 'A-M-138'}
-    return dict(c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
+    # GAS_ATOMIZER: powder S60 is the product; 10 % off-spec (A_RL_SWARF) is remelted on new IA-ATOM-REMELT, so the melt draw is S60/0.9.
+    # Melt-line compositions were a water/solute default; they carry metal (A-M-139). Ultrafines 1 % stay on the MET LEV air term.
+    if 'IA-ATOM-REMELT' not in E:
+        g['edges'].append(_edge('IA-ATOM-REMELT', 'GAS_ATOMIZER', 'MET_MELT', 'S', ['mass'], 'off-spec powder to remelt', 0, 'kg/d', 'MFG', 'MFG', {'metal': 1.0})); E['IA-ATOM-REMELT'] = g['edges'][-1]
+    s60 = E['S60']['rate']['value']; fa = s60/(1 - SWARF)
+    put('IA-MELT-ATOM', fa, f'powder {s60:.3f} / (1 - {SWARF:.0%} off-spec)'); put('IA-ATOM-REMELT', fa - s60, f'{SWARF:.0%} off-spec remelted')
+    for k in ('IA-MELT-ATOM', 'S60', 'IA-ATOM-REMELT'): E[k]['composition'] = {'Pb/Sn/Ni/Cd/Zn blend': 1.0}
+    for k in ('S57', 'IA-MELT-MILL'): E[k]['composition'] = {'Cu': 1.0} if k == 'S57' else {'metal': 1.0}
+    rl = N['GAS_ATOMIZER']['params'].get('balance_rev_l') or {}
+    rl['terms'] = [t for t in rl.get('terms', []) if t['label'].startswith('ultrafines')]
+    rl['note'] = 'blend charge retired (melt feed IA-MELT-ATOM); off-spec on-graph IA-ATOM-REMELT (A-M-139)'
+    # MET_MELT closes on the remelt: sheet + remelt = billet + mill + atomizer feed
+    r = _resid(g, 'MET_MELT'); put('IA-MELT-MILL', E['IA-MELT-MILL']['rate']['value'] + r, f'mill draw closes the melt ({r:+.4f})')
+    return dict(atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)

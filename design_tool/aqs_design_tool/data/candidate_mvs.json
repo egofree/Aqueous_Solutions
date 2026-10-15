@@ -1974,29 +1974,14 @@
           "terms": [
             {
               "layer": "mass",
-              "dir": "in",
-              "label": "blend charge from MFG_SHOP",
-              "value": 3.5555,
-              "basis": "S08 blend share",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "off-spec to MFG_SHOP scrap bin",
-              "value": 0.32,
-              "basis": "A_RL_SWARF",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
               "dir": "out",
               "label": "ultrafines to MET LEV (S71)",
               "value": 0.0356,
               "basis": "A_RL_FINES_ATOM",
               "kind": "derived"
             }
-          ]
+          ],
+          "note": "blend charge retired (melt feed IA-MELT-ATOM); off-spec on-graph IA-ATOM-REMELT (A-M-139)"
         },
         "duty": "In 3.200 kg/d, out 3.200 kg/d, 0.000 kW. Sheet docs-authority/duties/GAS_ATOMIZER.md.",
         "presence": "present",
@@ -13441,7 +13426,7 @@
         "value": 3.95,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: mill draw closes the melt (-0.0000) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13455,10 +13440,10 @@
       "phase": "S",
       "carries": "melt to the atomizer",
       "rate": {
-        "value": 3.2,
+        "value": 3.555556,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: powder 3.200 / (1 - 10% off-spec) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22557,6 +22542,23 @@
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ATOM-REMELT",
+      "from_unit_id": "GAS_ATOMIZER",
+      "to_unit_id": "MET_MELT",
+      "phase": "S",
+      "carries": "off-spec powder to remelt",
+      "rate": {
+        "value": 0.355556,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: 10% off-spec remelted (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     }
