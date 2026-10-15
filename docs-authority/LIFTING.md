@@ -9,7 +9,7 @@ Rule: hoist rated load is the next standard size at or above the heaviest lift p
 
 | Level | Heaviest lift | Empty kg | Next three | Hoist rated t | Test load t | Hoists |
 |---|---|---|---|---|---|---|
-| L-1 | EVAP_ACID | 1223 | CRYO_ASU 1170, SIC_FURNACE 608, RECT_EW 576 | 2.0 | 2.50 | 2 |
+| L-1 | CRYO_H2 (one bank half) | 3105 | CRYO_O2 (one bank half) 1553, EVAP_ACID 1223, CRYO_ASU 1170 | 5.0 | 6.25 | 2 |
 | L0 | SOLAR_PV_CELL | 691 | ZNBR2 518, BACKUP_GEN 480, MEOH_FERM 416 | 1.0 | 1.25 | 2 |
 | L1 | EMETH | 259 | BLACK_DIGEST 229, BLACK_ALK_HOLD 137, GREY_TREAT 106 | 0.5 | 0.62 | 1 |
 
