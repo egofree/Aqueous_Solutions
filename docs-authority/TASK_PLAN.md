@@ -98,8 +98,8 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 1. X-GOV-04 Document number register; resolve the duplicate numbers.
 2. X-BAS-02 Bounding-case check of every held rate against AQS-ASSAY-001 Rev C.
 3. X-BAS-03 Site basis.
-4. X-MAT-01 Materials selection guide across the assay envelope.
-5. X-MAT-02 Resolve the LEACH_CSTR_1 316L vs CPVC conflict.
+4. X-MAT-05 Thermoplastic temperature cases, LEACH_CSTR_1 HX-5 ports first.
+5. X-MAT-06 Resolve the AQS-STD-002 ambiguous list, ZNBR2_BR2_REGEN and HX8 first.
 6. MET-LEACH_CSTR_1-02 Sizing calculation (agitator, liquor density, wall).
 7. MET-EW_1-02 Sizing calculation for EW_1, then EW_2 to EW_9.
 8. X-ELS-02 Load list from calculations.
