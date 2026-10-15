@@ -1517,5 +1517,37 @@
   "id": "A-M-099",
   "needs_verification": true,
   "verification_test": "Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation"
+ },
+ {
+  "units": "mm",
+  "task": "X-BLD-04",
+  "needs_verification": true,
+  "id": "A-M-100",
+  "value": "1 h partition at X=15000 (FAB acid room) credited as the IFC 5003.9.8 fire barrier for every pair across it; hazardous materials cabinets not credited",
+  "where": "flow_graph/sep_check.py, AQS-BLD-011",
+  "basis": "WS_HF_ED seed source names the 1 h partition at X=15000; full FAB depth assumed",
+  "sensitivity": "Nitric, HF and phosphoric pairs to the alkaline bund pass only by the partition",
+  "replaced_by": "Architectural fire-barrier plan",
+  "files": [
+   "flow_graph/sep_check.py",
+   "flow_graph/placement_seed.json"
+  ],
+  "verification_test": "Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations"
+ },
+ {
+  "units": "mm",
+  "task": "X-BLD-04",
+  "needs_verification": true,
+  "id": "A-M-101",
+  "value": "Access check: 914 mm clear on at least one face per row; room walls other than X=15000 not modelled; tier-2 shelf rows reached from the tier-1 aisle; RECT_EW 1219 mm on all faces until its working face is fixed",
+  "where": "flow_graph/access_check.py, flow_graph/place_ew_aisle.py, AQS-BLD-012",
+  "basis": "NFPA 101 (2024) 7.3.4.1.1, IBC 2021 1018.5; NEC 2023 Table 110.26(A)(1) Condition 3",
+  "sensitivity": "Rows against a wall may lose their only clear face",
+  "replaced_by": "Room-by-room fit-out model with walls and doors",
+  "files": [
+   "flow_graph/access_check.py",
+   "flow_graph/place_ew_aisle.py"
+  ],
+  "verification_test": "Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths"
  }
 ]

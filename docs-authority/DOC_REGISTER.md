@@ -197,5 +197,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | A | 2026-10-15 | MFG_SHOP tool list | canonical |
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | canonical |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | canonical |
+| AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | A | 2026-10-15 | Incompatible hazardous-material separation check | canonical |
+| AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | A | 2026-10-15 | Access aisle and NEC 110.26 working-space check | canonical |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | canonical |
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | canonical |

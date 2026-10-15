@@ -1,9 +1,9 @@
 {
   "schema": "aqs-placement-apply-1.0",
   "graph_doc": "AQS-FLOW-GRAPH-001",
-  "graph_revision": "BA",
-  "map_revision": "D",
-  "placement_doc": "AQS-PLACE-SEED-001 Rev D",
+  "graph_revision": "BH",
+  "map_revision": "C",
+  "placement_doc": "AQS-PLACE-SEED-001",
   "datums_mm": {
     "L0": 0.0,
     "L-1": -6000.0,
@@ -11,10 +11,10 @@
     "L1": 6000.0,
     "L2": 10800.0
   },
-  "move_count": 115,
-  "apply_count": 37,
+  "move_count": 136,
+  "apply_count": 41,
   "gap_count": 0,
-  "skip_count": 8,
+  "skip_count": 67,
   "by_gap": {},
   "issued_envelopes": true,
   "resize_count": 9,
@@ -467,7 +467,7 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        15600.0,
+        15200.0,
         6400.0,
         -6000.0
       ],
@@ -635,19 +635,19 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        0.0,
-        4000.0,
+        7300.0,
+        5700.0,
         -6000.0
       ],
       "size_mm": [
-        12000,
-        8000,
-        4500
+        2670,
+        720,
+        760
       ],
-      "source": "LEACH_EW",
-      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "source": "EW_1",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
       "issued_size_mm": null,
-      "apply": false,
+      "apply": true,
       "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
@@ -660,16 +660,148 @@
       "level": "L-1",
       "origin_mm": [
         0.0,
+        7400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "source": "EW_2",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": true,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_3",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        3200.0,
         4000.0,
         -6000.0
       ],
       "size_mm": [
-        12000,
-        8000,
-        4500
+        1170,
+        720,
+        760
       ],
-      "source": "LEACH_EW",
-      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "source": "EW_3",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 10); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_4",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        6400.0,
+        7400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        370,
+        720,
+        760
+      ],
+      "source": "EW_4",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_5",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        10900.0,
+        5700.0,
+        -6000.0
+      ],
+      "size_mm": [
+        470,
+        720,
+        760
+      ],
+      "source": "EW_5",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_6",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        3600.0,
+        7400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        470,
+        720,
+        760
+      ],
+      "source": "EW_6",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_7",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        3200.0,
+        5700.0,
+        -6000.0
+      ],
+      "size_mm": [
+        3170,
+        720,
+        760
+      ],
+      "source": "EW_7",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 30); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_8",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        5000.0,
+        7400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        470,
+        720,
+        760
+      ],
+      "source": "EW_8",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -683,19 +815,19 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        0.0,
+        7100.0,
         4000.0,
         -6000.0
       ],
       "size_mm": [
-        12000,
-        8000,
-        4500
+        3270,
+        720,
+        760
       ],
-      "source": "LEACH_EW",
-      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "source": "EW_9",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 31); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
       "issued_size_mm": null,
-      "apply": false,
+      "apply": true,
       "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
@@ -832,8 +964,8 @@
       ],
       "level": "L0",
       "origin_mm": [
-        -8600.0,
-        5200.0,
+        -8800.0,
+        5400.0,
         0.0
       ],
       "size_mm": [
@@ -918,7 +1050,7 @@
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
-      "study": true,
+      "study": false,
       "frame": "plate_world"
     },
     {
@@ -952,7 +1084,7 @@
       ],
       "level": "L1",
       "origin_mm": [
-        1800.0,
+        2200.0,
         200.0,
         6000.0
       ],
@@ -1194,19 +1326,19 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        0.0,
-        4000.0,
+        600.0,
+        5300.0,
         -6000.0
       ],
       "size_mm": [
-        12000,
-        8000,
-        4500
+        2000,
+        1200,
+        1400
       ],
-      "source": "LEACH_EW",
-      "source_doc": "AQS-BLD-001 Rev F \u00a76",
+      "source": "LEACH_CSTR_1",
+      "source_doc": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1.",
       "issued_size_mm": null,
-      "apply": false,
+      "apply": true,
       "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
@@ -1447,7 +1579,7 @@
       "level": "L0",
       "origin_mm": [
         13600.0,
-        200.0,
+        1600.0,
         0.0
       ],
       "size_mm": [
@@ -1688,7 +1820,7 @@
       "level": "L-1",
       "origin_mm": [
         4400.0,
-        12600.0,
+        12100.0,
         -6000.0
       ],
       "size_mm": [
@@ -1710,7 +1842,7 @@
       "level": "L-1",
       "origin_mm": [
         4400.0,
-        13000.0,
+        15200.0,
         -6000.0
       ],
       "size_mm": [
@@ -1754,7 +1886,7 @@
       "level": "L-1",
       "origin_mm": [
         4400.0,
-        12200.0,
+        14300.0,
         -6000.0
       ],
       "size_mm": [
@@ -1777,17 +1909,17 @@
       ],
       "level": "L0",
       "origin_mm": [
-        -11000.0,
-        10000.0,
+        -99300.0,
+        -3000.0,
         0.0
       ],
       "size_mm": [
-        4000,
-        2000,
-        80
+        89900,
+        60000,
+        2500
       ],
       "source": "PV_ARRAY",
-      "source_doc": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank. Rev F: from (-9200, 10000). Footprint cleared ZNBR2_BR2_REGEN (was intersecting); 600 mm to the Br2 tower. Still west of ESS.",
+      "source_doc": "X-BLD-04 study PV ground field (flow_graph/place_pv_field.py): 1078 kWp x 5.0 m2/kWp = 5390 m2, 89.9 x 60.0 m, 2.5 m mount height (study), 600 mm west of the yard. Site area pending owner (X-BAS-03); A-M-078, A-M-098.",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -2085,7 +2217,7 @@
       "level": "L0",
       "origin_mm": [
         15200.0,
-        9400.0,
+        15200.0,
         0.0
       ],
       "size_mm": [
@@ -2094,7 +2226,7 @@
         1100
       ],
       "source": "WS_AMMONIA",
-      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
+      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -2133,7 +2265,7 @@
       "level": "L0",
       "origin_mm": [
         12200.0,
-        8200.0,
+        9600.0,
         0.0
       ],
       "size_mm": [
@@ -2156,8 +2288,8 @@
       ],
       "level": "L0",
       "origin_mm": [
-        16200.0,
-        9400.0,
+        16600.0,
+        15200.0,
         0.0
       ],
       "size_mm": [
@@ -2166,7 +2298,7 @@
         1100
       ],
       "source": "WS_KOH",
-      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
+      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -2205,7 +2337,7 @@
       "level": "L0",
       "origin_mm": [
         15200.0,
-        8200.0,
+        8000.0,
         0.0
       ],
       "size_mm": [
@@ -2376,8 +2508,8 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        3400.0,
-        12200.0,
+        3000.0,
+        13600.0,
         -6000.0
       ],
       "size_mm": [
@@ -2862,6 +2994,336 @@
       "fixed_feature": false,
       "study": false,
       "frame": "plate_world"
+    },
+    {
+      "unit_id": "QUAT",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        23300.0,
+        4200.0,
+        6000.0
+      ],
+      "size_mm": [
+        400,
+        400,
+        800
+      ],
+      "source": "QUAT",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BIOFILTER",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        17600.0,
+        0.0,
+        6000.0
+      ],
+      "size_mm": [
+        3000,
+        5000,
+        1200
+      ],
+      "source": "BIOFILTER",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SEED_BANK",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        21200.0,
+        0.0,
+        6000.0
+      ],
+      "size_mm": [
+        2000,
+        2000,
+        2200
+      ],
+      "source": "SEED_BANK",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "STRUVITE",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        22800.0,
+        2600.0,
+        6000.0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1200
+      ],
+      "source": "STRUVITE",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ASH",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        21200.0,
+        2600.0,
+        6000.0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "ASH",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "IODIDE",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        21200.0,
+        4200.0,
+        6000.0
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
+      "source": "IODIDE",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "NFT",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        17600.0,
+        8200.0,
+        6000.0
+      ],
+      "size_mm": [
+        6000,
+        1000,
+        300
+      ],
+      "source": "NFT",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "MISTER",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        17600.0,
+        9800.0,
+        6000.0
+      ],
+      "size_mm": [
+        4000,
+        1000,
+        800
+      ],
+      "source": "MISTER",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "DUAL_ROOT",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        17600.0,
+        5600.0,
+        6000.0
+      ],
+      "size_mm": [
+        6000,
+        2000,
+        600
+      ],
+      "source": "DUAL_ROOT",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "AZOLLA_BED",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        12000.0,
+        0.0,
+        6000.0
+      ],
+      "size_mm": [
+        5000,
+        18000,
+        400
+      ],
+      "source": "AZOLLA_BED",
+      "source_doc": "C5. Issued envelope 18000 x 5000 x 400 mm. Long side along the farm block. Not shrunk.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "ETOH_STILL",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        22300.0,
+        4200.0,
+        6000.0
+      ],
+      "size_mm": [
+        400,
+        400,
+        1500
+      ],
+      "source": "ETOH_STILL",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "BUOH_STILL",
+      "freecad_names": [],
+      "level": "L1",
+      "origin_mm": [
+        22200.0,
+        9800.0,
+        6000.0
+      ],
+      "size_mm": [
+        300,
+        300,
+        1200
+      ],
+      "source": "BUOH_STILL",
+      "source_doc": "C5. Node envelope in the farm block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EXPANDER",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        17600.0,
+        6000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        600,
+        400,
+        500
+      ],
+      "source": "EXPANDER",
+      "source_doc": "C5. Node envelope in the CRYO block.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "SIC_FURNACE",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        5900.0,
+        12000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        1500,
+        1500,
+        1800
+      ],
+      "source": "SIC_FURNACE",
+      "source_doc": "C5. Node envelope in OIL_GLASS.",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "RECT_EW",
+      "freecad_names": [],
+      "level": "L-1",
+      "origin_mm": [
+        7800.0,
+        7700.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2400,
+        800,
+        2000
+      ],
+      "source": "RECT_EW",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051, study cabinet); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": false,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
     }
   ],
   "apply_moves": [
@@ -2972,7 +3434,7 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        15600.0,
+        15200.0,
         6400.0,
         -6000.0
       ],
@@ -3007,6 +3469,78 @@
       ],
       "source": "CRYO_HX_Q4",
       "source_doc": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL).",
+      "issued_size_mm": null,
+      "apply": true,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_1",
+      "freecad_names": [
+        "EW_1"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        7300.0,
+        5700.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "source": "EW_1",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": true,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_2",
+      "freecad_names": [
+        "EW_2"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        0.0,
+        7400.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "source": "EW_2",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
+      "issued_size_mm": null,
+      "apply": true,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "EW_9",
+      "freecad_names": [
+        "EW_9"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        7100.0,
+        4000.0,
+        -6000.0
+      ],
+      "size_mm": [
+        3270,
+        720,
+        760
+      ],
+      "source": "EW_9",
+      "source_doc": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 31); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3072,8 +3606,8 @@
       ],
       "level": "L0",
       "origin_mm": [
-        -8600.0,
-        5200.0,
+        -8800.0,
+        5400.0,
         0.0
       ],
       "size_mm": [
@@ -3158,7 +3692,7 @@
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
-      "study": true,
+      "study": false,
       "frame": "plate_world"
     },
     {
@@ -3168,7 +3702,7 @@
       ],
       "level": "L1",
       "origin_mm": [
-        1800.0,
+        2200.0,
         200.0,
         6000.0
       ],
@@ -3179,6 +3713,30 @@
       ],
       "source": "GREY_TREAT",
       "source_doc": "Downstream of black digest. HDR_GREY only. Not Salria.",
+      "issued_size_mm": null,
+      "apply": true,
+      "fixed_feature": false,
+      "study": false,
+      "frame": "plate_world"
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "freecad_names": [
+        "LEACH_CSTR_1"
+      ],
+      "level": "L-1",
+      "origin_mm": [
+        600.0,
+        5300.0,
+        -6000.0
+      ],
+      "size_mm": [
+        2000,
+        1200,
+        1400
+      ],
+      "source": "LEACH_CSTR_1",
+      "source_doc": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1.",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3353,7 +3911,7 @@
       "level": "L0",
       "origin_mm": [
         13600.0,
-        200.0,
+        1600.0,
         0.0
       ],
       "size_mm": [
@@ -3376,17 +3934,17 @@
       ],
       "level": "L0",
       "origin_mm": [
-        -11000.0,
-        10000.0,
+        -99300.0,
+        -3000.0,
         0.0
       ],
       "size_mm": [
-        4000,
-        2000,
-        80
+        89900,
+        60000,
+        2500
       ],
       "source": "PV_ARRAY",
-      "source_doc": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank. Rev F: from (-9200, 10000). Footprint cleared ZNBR2_BR2_REGEN (was intersecting); 600 mm to the Br2 tower. Still west of ESS.",
+      "source_doc": "X-BLD-04 study PV ground field (flow_graph/place_pv_field.py): 1078 kWp x 5.0 m2/kWp = 5390 m2, 89.9 x 60.0 m, 2.5 m mount height (study), 600 mm west of the yard. Site area pending owner (X-BAS-03); A-M-078, A-M-098.",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3496,7 +4054,7 @@
       "level": "L0",
       "origin_mm": [
         15200.0,
-        9400.0,
+        15200.0,
         0.0
       ],
       "size_mm": [
@@ -3505,7 +4063,7 @@
         1100
       ],
       "source": "WS_AMMONIA",
-      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
+      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3544,7 +4102,7 @@
       "level": "L0",
       "origin_mm": [
         12200.0,
-        8200.0,
+        9600.0,
         0.0
       ],
       "size_mm": [
@@ -3567,8 +4125,8 @@
       ],
       "level": "L0",
       "origin_mm": [
-        16200.0,
-        9400.0,
+        16600.0,
+        15200.0,
         0.0
       ],
       "size_mm": [
@@ -3577,7 +4135,7 @@
         1100
       ],
       "source": "WS_KOH",
-      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
+      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3616,7 +4174,7 @@
       "level": "L0",
       "origin_mm": [
         15200.0,
-        8200.0,
+        8000.0,
         0.0
       ],
       "size_mm": [
@@ -3739,8 +4297,8 @@
       ],
       "level": "L-1",
       "origin_mm": [
-        3400.0,
-        12200.0,
+        3000.0,
+        13600.0,
         -6000.0
       ],
       "size_mm": [
@@ -4182,33 +4740,127 @@
       "frame": "plate_world"
     }
   ],
-  "size_conflicts": [],
-  "gaps": [],
-  "skipped": [
+  "size_conflicts": [
+    {
+      "unit_id": "EW_1",
+      "seed_size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
+    },
+    {
+      "unit_id": "EW_2",
+      "seed_size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
+    },
     {
       "unit_id": "EW_3",
-      "reason": "no_feature_name_no_study_row"
+      "seed_size_mm": [
+        1170,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
     },
     {
       "unit_id": "EW_4",
-      "reason": "no_feature_name_no_study_row"
+      "seed_size_mm": [
+        370,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
     },
     {
       "unit_id": "EW_5",
-      "reason": "no_feature_name_no_study_row"
+      "seed_size_mm": [
+        470,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
     },
     {
       "unit_id": "EW_6",
-      "reason": "no_feature_name_no_study_row"
+      "seed_size_mm": [
+        470,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
     },
     {
       "unit_id": "EW_7",
-      "reason": "no_feature_name_no_study_row"
+      "seed_size_mm": [
+        3170,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
     },
     {
       "unit_id": "EW_8",
-      "reason": "no_feature_name_no_study_row"
+      "seed_size_mm": [
+        470,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
     },
+    {
+      "unit_id": "EW_9",
+      "seed_size_mm": [
+        3270,
+        720,
+        760
+      ],
+      "issued_size_mm": [
+        600.0,
+        420.0,
+        650.0
+      ]
+    }
+  ],
+  "gaps": [],
+  "skipped": [
     {
       "unit_id": "HDR_CO2",
       "reason": "no_feature_name_no_study_row"
@@ -4216,84 +4868,271 @@
     {
       "unit_id": "HDR_N2",
       "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "ANIMAL_PEN",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "COMPOST",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "DIGESTER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "EMETH",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "LIGNO_PRE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "BOARD_MILL",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HTC",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRYO_HE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRYO_NE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRYO_KR",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRYO_XE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRYO_AR",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "YEAST",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "ABE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "ACETOX",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "ALD",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "GLYOXAL",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "FORM",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "MEAM",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "IMID",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "ACEX",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HNO3",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "BUCL",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "BSFL",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "DUCKWEED",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "WORMS",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "BEES",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CHICKENS",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "GOATS",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "FISH",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CRAYFISH",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "AZOLLA",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "MUSHROOM",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "COMPOST_TOILET",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "NFIX_BED",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "MUSH_STRAW",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "MUSH_BLOCK",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "AMF",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "COMPOST_MYC",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "FRUIT_GUTTER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "VEG_BED",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CLARIFIER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "FISH_SUMP",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_TOMATO",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_CUCUMBER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_PEPPER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_LETTUCE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_SPINACH",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_KALE",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_ALLIUM",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_BASIL",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CROP_ROSEMARY",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CLOVER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "CURTAIL",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HEAT_SINK",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "PEANUT",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "SUNFLOWER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HAB_SLEEP",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HAB_GALLEY",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HAB_MED",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "HAB_WASH",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "H2_PURIFIER",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "EVAP_ACID",
+      "reason": "no_feature_name_no_study_row"
+    },
+    {
+      "unit_id": "EVAP_BASE",
+      "reason": "no_feature_name_no_study_row"
     }
   ],
   "refused": [
     "edge_auto_router",
     "size_from_rate",
     "rewrite_gold_params"
-  ],
-  "plate": {
-    "bays_x": 4,
-    "bays_y": 4,
-    "bay_m": 6,
-    "plate_m": "24 x 24",
-    "area_m2": 576,
-    "retired": "24 x 18 m, 432 m2",
-    "note": "EW racks sit on the L0 aisle. EW-7 is 1450 mm. Fits a 6 m bay."
-  },
-  "phase7": [
-    {
-      "unit": "AZOLLA_BED",
-      "bay": "L1 east hall",
-      "size_m": "18 x 5"
-    },
-    {
-      "unit": "NFT",
-      "bay": "L1 gutter row",
-      "size_m": "6 x 1"
-    },
-    {
-      "unit": "MISTER",
-      "bay": "L1 gutter row",
-      "size_m": "4 x 1"
-    },
-    {
-      "unit": "DUAL_ROOT",
-      "bay": "L1 media",
-      "size_m": "6 x 2"
-    },
-    {
-      "unit": "STRUVITE",
-      "bay": "L0 nutrient",
-      "size_m": "1 x 1"
-    },
-    {
-      "unit": "ASH",
-      "bay": "L0 burner",
-      "size_m": "1 x 1"
-    },
-    {
-      "unit": "IODIDE",
-      "bay": "L0 medical",
-      "size_m": "0.5 x 0.5"
-    },
-    {
-      "unit": "SEED_BANK",
-      "bay": "L1 cold room",
-      "size_m": "2 x 2"
-    },
-    {
-      "unit": "HEAT_SINK",
-      "bay": "roof",
-      "size_m": "6 x 6"
-    },
-    {
-      "unit": "CURTAIL",
-      "bay": "L0 electrical",
-      "size_m": "1 x 1"
-    }
-  ],
-  "ew_cathode": "Sized from the sheet edge at 200 A/m2. EW-1 is 21 plates.",
-  "ew_racks": {
-    "EW_1": "21 plates, 1250 mm long",
-    "EW_2": "21 plates, 1250 mm long",
-    "EW_3": "8 plates, 600 mm long",
-    "EW_4": "2 plates, 300 mm long",
-    "EW_5": "2 plates, 300 mm long",
-    "EW_6": "2 plates, 300 mm long",
-    "EW_7": "25 plates, 1450 mm long",
-    "EW_8": "2 plates, 300 mm long",
-    "EW_9": "21 plates, 1250 mm long"
-  }
+  ]
 }
