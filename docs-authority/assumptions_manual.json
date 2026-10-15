@@ -2368,5 +2368,25 @@
     "verification": "Stock rotation audit.",
     "replace_when": "Ration lock or crop mix change.",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-149",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Still and toilet N+1",
+    "statement": "VCD_TRAIN and COMPOST_TOILET installed 2 x 100 %; VCD feed re-derived from present inflow (0.187 -> 0.383 m3/d) at 17 kWh/m3 (midpoint of the issued 14-20 band); roof-tank inventory 1520 d is the diverse water backup.",
+    "verification": "Changeover test duty to standby.",
+    "replace_when": "Feed or crew use changes.",
+    "doc": "AQS-PAR-003"
   }
 ]
