@@ -53,6 +53,8 @@ REFS = {
  'IEC61131_3': 'IEC 61131-3:2013, Programmable controllers, programming languages (structured text, function block diagram).',
  'IEC61882_2016': 'IEC 61882:2016, Hazard and operability studies (HAZOP studies), application guide: nodes, parameters, guide words, deviations, causes, consequences, safeguards, actions.',
  'IEC61511_2016': 'IEC 61511-1:2016, Functional safety, safety instrumented systems for the process industry sector.',
+ 'ACGIH_TLV_2024': 'ACGIH, TLVs and BEIs (2024): CO TWA 25 ppm; NO2 TWA 0.2 ppm; Cl2 TWA 0.1 ppm, STEL 0.4 ppm; HF ceiling 2 ppm (as F); HCl ceiling 2 ppm.',
+ 'OSHA_1910_146': '29 CFR 1910.146 (b): oxygen-deficient atmosphere below 19.5 % by volume; oxygen-enriched above 23.5 % by volume.',
  'ACI350_3': 'ACI 350.3-20, Seismic Design of Liquid-Containing Concrete Structures: impulsive and convective components, rectangular tank convective frequency lambda = sqrt(3.16 g tanh(3.16 HL/L)).',
  'ACI350_20': 'ACI 350-20, Code Requirements for Environmental Engineering Concrete Structures: liquid-retaining walls and slabs, durability and crack control.',
  'AHRI340_ASHRAE901': 'ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360.',

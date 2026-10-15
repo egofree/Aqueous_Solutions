@@ -27,21 +27,22 @@ item,description,qty,material,basis
 26,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 27,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 28,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-29,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-30,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-31,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-32,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-33,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-34,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
-35,support: U-bolt with guide DN15,17,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-36,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-37,support: pipe clamp DN50,23,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-38,support: pipe clamp DN15,33,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-39,valve: check valve DN50,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-40,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-41,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-42,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-43,valve: isolation valve DN50,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
-44,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-45,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
-46,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+29,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",AQS-INV-004
+30,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+31,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+32,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+33,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+34,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+35,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
+36,support: U-bolt with guide DN15,17,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+37,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+38,support: pipe clamp DN50,23,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+39,support: pipe clamp DN15,33,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+40,valve: check valve DN50,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
+41,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+42,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
+43,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+44,valve: isolation valve DN50,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+45,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+46,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+47,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

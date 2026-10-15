@@ -247,6 +247,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-SAF-001 | `docs-authority/HAZOP.md` | A | 2026-10-16 | HAZOP worksheets, design-derived study (X-SAF-01 rev A) | canonical |
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register, vessels and interstage valves (X-SAF-04) | canonical |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | A | 2026-10-16 | Fire protection and detection, gas-receiver API 521 fire case (X-SAF-05) | canonical |
+| AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | A | 2026-10-16 | Gas detection: H2, O2 deficiency and enrichment, CO, NOx, Cl2/HCl, HF (X-SAF-06) | canonical |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up (X-PRO-01, partial) | canonical |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan per fabrication route (X-QA-01) | canonical |
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | A | 2026-10-16 | End-of-life material return by feed class (X-END-02) | canonical |

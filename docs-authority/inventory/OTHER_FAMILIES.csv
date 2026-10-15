@@ -2,10 +2,10 @@ family,category,item,spec,qty,sizes,units
 OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",556,608-2Z x556,107
 OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",404,6202-2Z x216; 6205-2Z x94; 6201-2Z x40; 6204-2Z x34; 6206-2Z x12; 6308-2Z x4; 6310-2Z x2; 6306-2Z x2,51
 OF-03,electronics,PLC digital I/O point,IEC 61131-2,1078,24 V DC x1078,137
-OF-04,electronics,PLC analog input point,IEC 61131-2,915,4-20 mA HART x915,1
+OF-04,electronics,PLC analog input point,IEC 61131-2,1029,4-20 mA HART x1029,1
 OF-05,electronics,BLDC driver,IEC 61800-5-1,267,24/48 V DC x267,103
 OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,147,0.37 kW x105; 0.18 kW x16; 0.55 kW x13; 0.75 kW x4; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2,39
-OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,125,24 V DC x125,1
+OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,132,24 V DC x132,1
 OF-08,electronics,variable-frequency drive,IEC 61800-5-1,55,1.1 kW x25; 1.5 kW x20; 2.2 kW x5; 7.5 kW x2; 18.5 kW x1; 3 kW x1; 4 kW x1,17
 OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,44,24 V DC x44,20
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,15,22 kW hermetic x8; 0.25 kW hermetic x5; 0.75 kW hermetic x1; 2.2 kW hermetic x1,8
@@ -37,25 +37,31 @@ OF-35,instrument,temperature element,"IEC 60751, 316L thermowell",194,Pt100 clas
 OF-36,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",188,0-10 bar x187; 0-16 bar x1,188
 OF-37,instrument,high-level switch,"IEC 60947-5, 316L",136,vibrating fork x136,136
 OF-38,instrument,level transmitter,"IEC 62828, PTFE lens",136,radar 80 GHz x136,136
-OF-39,instrument,"temperature element (SIF, independent)","IEC 60751, own thermowell",17,Pt100 class A x17,17
-OF-40,instrument,pressure transmitter,"316L thin-film strain gauge, IEC 61298",6,0-40 bar x2; 0-400 bar x2; 0-25 bar x1; 0-100 bar x1,6
-OF-41,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,217,15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1,57
-OF-42,seal,"mechanical seal, single","SiC/SiC faces, FKM",144,EN 12756 x144,29
-OF-43,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5895,DN15 x4597; DN50 x1179; DN20 x58; DN25 x42; DN250 x7; DN40 x6; DN200 x3; DN300 x3,127
-OF-44,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1184,DN15 x1064; DN20 x89; DN25 x31,42
-OF-45,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",202,DN15 x174; DN50 x28,70
-OF-46,valve,isolation valve,"PP ball valve with HDPE stub ends, ISO 16135",198,DN15 x124; DN50 x64; DN25 x6; DN20 x4,53
-OF-47,valve,isolation valve,"316L ball valve, ASME B16.34 Cl 150, RF flanged",152,DN15 x136; DN20 x12; DN25 x4,37
-OF-48,valve,isolation valve,"CPVC true-union ball valve, MSS SP-122, FKM seals",100,DN15 x58; DN50 x42,25
-OF-49,valve,check valve,"PP swing/ball check valve with HDPE stub ends, ISO 16137",82,DN15 x55; DN50 x22; DN25 x3; DN20 x2,44
-OF-50,valve,check valve,"PVC-U true-union swing/ball check valve, EPDM seals",78,DN15 x72; DN50 x6,53
-OF-51,valve,isolation valve,"PVDF ball valve, ISO 16135, PTFE seats",56,DN15 x48; DN50 x4; DN300 x2; DN40 x2,25
-OF-52,valve,check valve,"CPVC true-union swing/ball check valve, FKM seals",30,DN15 x19; DN50 x11,21
-OF-53,valve,isolation valve,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",24,DN15 x16; DN25 x4; DN20 x4,6
-OF-54,valve,check valve,"PVDF swing/ball check valve, ISO 16137, PTFE seats",22,DN15 x20; DN300 x1; DN40 x1,20
-OF-55,valve,isolation valve,"PVC-lined ball valve in FRP service, ISO 16135",20,DN15 x10; DN250 x6; DN20 x2; DN200 x2,9
-OF-56,valve,check valve,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",14,DN15 x13; DN20 x1,10
-OF-57,valve,isolation valve,"PP-H ball valve, ISO 16135, EPDM seals",14,DN15 x14,4
-OF-58,valve,"ESD valve, spring-return actuator","316L, fail-safe, IEC 61511",10,DN15 x10,4
-OF-59,valve,check valve,"PP-H swing/ball check valve, ISO 16137, EPDM seals",7,DN15 x7,4
-OF-60,valve,check valve,"PVC-lined swing/ball check valve in FRP service, ISO 16137",5,DN15 x4; DN250 x1,5
+OF-39,instrument,"gas detector, H2","alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",34,catalytic bead + IR backup x34,16
+OF-40,instrument,"gas detector, O2 deficiency","alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",26,electrochemical O2 x26,13
+OF-41,instrument,"gas detector, Cl2 / HCl","alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",26,electrochemical Cl2 and HCl x26,13
+OF-42,instrument,"temperature element (SIF, independent)","IEC 60751, own thermowell",17,Pt100 class A x17,17
+OF-43,instrument,"gas detector, CO","alarm 25 ppm, trip 50 ppm, breathing height",12,electrochemical CO x12,6
+OF-44,instrument,"gas detector, O2 enrichment","alarm 23.5 vol %, trip 25 vol %, breathing height",12,electrochemical O2 x12,5
+OF-45,instrument,pressure transmitter,"316L thin-film strain gauge, IEC 61298",6,0-40 bar x2; 0-400 bar x2; 0-25 bar x1; 0-100 bar x1,6
+OF-46,instrument,"gas detector, NOx","alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",4,electrochemical NO2 x4,2
+OF-47,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,217,15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1,57
+OF-48,seal,"mechanical seal, single","SiC/SiC faces, FKM",144,EN 12756 x144,29
+OF-49,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5895,DN15 x4597; DN50 x1179; DN20 x58; DN25 x42; DN250 x7; DN40 x6; DN200 x3; DN300 x3,127
+OF-50,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1184,DN15 x1064; DN20 x89; DN25 x31,42
+OF-51,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",202,DN15 x174; DN50 x28,70
+OF-52,valve,isolation valve,"PP ball valve with HDPE stub ends, ISO 16135",198,DN15 x124; DN50 x64; DN25 x6; DN20 x4,53
+OF-53,valve,isolation valve,"316L ball valve, ASME B16.34 Cl 150, RF flanged",152,DN15 x136; DN20 x12; DN25 x4,37
+OF-54,valve,isolation valve,"CPVC true-union ball valve, MSS SP-122, FKM seals",100,DN15 x58; DN50 x42,25
+OF-55,valve,check valve,"PP swing/ball check valve with HDPE stub ends, ISO 16137",82,DN15 x55; DN50 x22; DN25 x3; DN20 x2,44
+OF-56,valve,check valve,"PVC-U true-union swing/ball check valve, EPDM seals",78,DN15 x72; DN50 x6,53
+OF-57,valve,isolation valve,"PVDF ball valve, ISO 16135, PTFE seats",56,DN15 x48; DN50 x4; DN300 x2; DN40 x2,25
+OF-58,valve,check valve,"CPVC true-union swing/ball check valve, FKM seals",30,DN15 x19; DN50 x11,21
+OF-59,valve,isolation valve,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",24,DN15 x16; DN25 x4; DN20 x4,6
+OF-60,valve,check valve,"PVDF swing/ball check valve, ISO 16137, PTFE seats",22,DN15 x20; DN300 x1; DN40 x1,20
+OF-61,valve,isolation valve,"PVC-lined ball valve in FRP service, ISO 16135",20,DN15 x10; DN250 x6; DN20 x2; DN200 x2,9
+OF-62,valve,check valve,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",14,DN15 x13; DN20 x1,10
+OF-63,valve,isolation valve,"PP-H ball valve, ISO 16135, EPDM seals",14,DN15 x14,4
+OF-64,valve,"ESD valve, spring-return actuator","316L, fail-safe, IEC 61511",10,DN15 x10,4
+OF-65,valve,check valve,"PP-H swing/ball check valve, ISO 16137, EPDM seals",7,DN15 x7,4
+OF-66,valve,check valve,"PVC-lined swing/ball check valve in FRP service, ISO 16137",5,DN15 x4; DN250 x1,5

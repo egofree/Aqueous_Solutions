@@ -6,6 +6,7 @@ BACKUP_GEN,genset,BACKUP_GEN,electronics,PLC digital I/O point,24 V DC,IEC 61131
 BACKUP_GEN,genset,BACKUP_GEN,electronics,motor starter (contactor + overload),0.37 kW,IEC 60947-4-1,1,radiator fan (assumed VFD at >= 0.75 kW)
 BACKUP_GEN,genset,BACKUP_GEN,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,starter motor (assumed VFD at >= 0.75 kW)
 BACKUP_GEN,genset,BACKUP_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,S46: 2 per support (assumed)
+BACKUP_GEN,genset,BACKUP_GEN,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 BACKUP_GEN,genset,BACKUP_GEN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 BACKUP_GEN,genset,BACKUP_GEN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 BACKUP_GEN,genset,BACKUP_GEN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -14,8 +15,8 @@ BACKUP_GEN,genset,BACKUP_GEN,protection,"inverse-time circuit breaker, 3-pole",1
 BACKUP_GEN,genset,BACKUP_GEN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 BACKUP_GEN,genset,BACKUP_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,S46: AQS-PIP-005 span count
 BACKUP_GEN,genset,BACKUP_GEN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S46: one at each end nozzle (assumed)
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,125,1993 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,915,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,132,2107 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,1029,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 162 SIFs, redundant pair"
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-HVAC-COND to ROOF_TANK (assumed size)
@@ -51,6 +52,7 @@ CRYO,CRYO,CRYO_AHU,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS 
 CRYO,CRYO,CRYO_AR,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,cryocooler compressor: run and fault (assumed)
 CRYO,CRYO,CRYO_AR,electronics,compressor contactor + overload,0.25 kW hermetic,IEC 60947-4-1,1,cryocooler compressor
 CRYO,CRYO,CRYO_AR,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-AR-FAB: 2 per support (assumed)
+CRYO,CRYO,CRYO_AR,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_AR,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_AR,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_AR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -70,6 +72,8 @@ CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-AS
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-ASU-NE: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-ASU-KR: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-ASU-XE: 2 per support (assumed)
+CRYO,CRYO,CRYO_ASU,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
+CRYO,CRYO,CRYO_ASU,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_ASU,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_ASU,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_ASU,protection,"inverse-time circuit breaker, 3-pole",90 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -93,6 +97,7 @@ CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 1
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S04: 2 per support (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,S73: 2 per support (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,S85: 2 per support (assumed)
+CRYO,CRYO,CRYO_CO2,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_CO2,instrument,pressure transmitter,0-40 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_CO2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_CO2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,S04: AQS-PIP-005 span count
@@ -112,6 +117,7 @@ CRYO,CRYO,CRYO_H2,electronics,compressor contactor + overload,0.75 kW hermetic,I
 CRYO,CRYO,CRYO_H2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,S45: 2 per support (assumed)
 CRYO,CRYO,CRYO_H2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S49: 2 per support (assumed)
 CRYO,CRYO,CRYO_H2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,S74: 2 per support (assumed)
+CRYO,CRYO,CRYO_H2,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",3,AQS-SAF-006 2oo3 to SIF (AQS-CTL-003)
 CRYO,CRYO,CRYO_H2,instrument,pressure transmitter,0-400 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_H2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_H2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -125,6 +131,7 @@ CRYO,CRYO,CRYO_H2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 15
 CRYO,CRYO,CRYO_HE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,cryocooler compressor: run and fault (assumed)
 CRYO,CRYO,CRYO_HE,electronics,compressor contactor + overload,0.25 kW hermetic,IEC 60947-4-1,1,cryocooler compressor
 CRYO,CRYO,CRYO_HE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-HE-RET: 2 per support (assumed)
+CRYO,CRYO,CRYO_HE,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_HE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_HE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_HE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -133,6 +140,7 @@ CRYO,CRYO,CRYO_HE,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 15
 CRYO,CRYO,CRYO_KR,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,cryocooler compressor: run and fault (assumed)
 CRYO,CRYO,CRYO_KR,electronics,compressor contactor + overload,0.25 kW hermetic,IEC 60947-4-1,1,cryocooler compressor
 CRYO,CRYO,CRYO_KR,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-KR-RET: 2 per support (assumed)
+CRYO,CRYO,CRYO_KR,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_KR,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_KR,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_KR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -142,6 +150,7 @@ CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,S84: 2
 CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S88: 2 per support (assumed)
 CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-N2-VENT: 2 per support (assumed)
 CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,6,IA-AHU-FIX: 2 per support (assumed)
+CRYO,CRYO,CRYO_N2,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_N2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_N2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",23,S84: AQS-PIP-005 span count
@@ -155,6 +164,7 @@ CRYO,CRYO,CRYO_N2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS S
 CRYO,CRYO,CRYO_NE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,cryocooler compressor: run and fault (assumed)
 CRYO,CRYO,CRYO_NE,electronics,compressor contactor + overload,0.25 kW hermetic,IEC 60947-4-1,1,cryocooler compressor
 CRYO,CRYO,CRYO_NE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-NE-RET: 2 per support (assumed)
+CRYO,CRYO,CRYO_NE,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_NE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_NE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_NE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -162,6 +172,7 @@ CRYO,CRYO,CRYO_NE,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24"
 CRYO,CRYO,CRYO_NE,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-NE-RET: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,S83: 2 per support (assumed)
 CRYO,CRYO,CRYO_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-O2-MAKE: 2 per support (assumed)
+CRYO,CRYO,CRYO_O2,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",3,AQS-SAF-006 2oo3 to SIF (AQS-CTL-003)
 CRYO,CRYO,CRYO_O2,instrument,pressure transmitter,0-400 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_O2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",19,S83: AQS-PIP-005 span count
@@ -172,6 +183,7 @@ CRYO,CRYO,CRYO_O2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS S
 CRYO,CRYO,CRYO_XE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,cryocooler compressor: run and fault (assumed)
 CRYO,CRYO,CRYO_XE,electronics,compressor contactor + overload,0.25 kW hermetic,IEC 60947-4-1,1,cryocooler compressor
 CRYO,CRYO,CRYO_XE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-XE-RET: 2 per support (assumed)
+CRYO,CRYO,CRYO_XE,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_XE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,CRYO,CRYO_XE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_XE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -181,11 +193,14 @@ CRYO,CRYO,H2_PURIFIER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal cl
 CRYO,CRYO,H2_PURIFIER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
 CRYO,CRYO,H2_PURIFIER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
 CRYO,CRYO,H2_PURIFIER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,S49P: 2 per support (assumed)
+CRYO,CRYO,H2_PURIFIER,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,H2_PURIFIER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-019 SIL 1
 CRYO,CRYO,H2_PURIFIER,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",28,S49P: AQS-PIP-005 span count
 CRYO,CRYO,H2_PURIFIER,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S49P: one at each end nozzle (assumed)
 CRYO,hx,CRYO_HX_Q4,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,hx,CRYO_HX_Q4,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",3,AQS-SAF-006 2oo3 to SIF (AQS-CTL-003)
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",3,AQS-SAF-006 2oo3 to SIF (AQS-CTL-003)
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,pressure transmitter,0-16 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -312,6 +327,7 @@ FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, 
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S39B: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FAB-SPENT: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-AR-RET: pumped line (assumed)
+FAB,FAB,WAFER_FAB,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 FAB,FAB,WAFER_FAB,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FAB,FAB,WAFER_FAB,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,FAB,WAFER_FAB,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -879,6 +895,7 @@ FARM,FARM,HTC,fabricated part,fabricated part set,7 BOM lines,models/mfg/HTC/bom
 FARM,FARM,HTC,fastener,3/4 in stud bolt,3/4 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,16,models/mfg/HTC/fasteners.csv
 FARM,FARM,HTC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-HTC-01: 2 per support (assumed)
 FARM,FARM,HTC,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HTC-01: pumped line (assumed)
+FARM,FARM,HTC,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 FARM,FARM,HTC,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,FARM,HTC,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,HTC,instrument,pressure transmitter,0-25 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1560,6 +1577,8 @@ FUEL_CELL,pem_fc,FUEL_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,
 FUEL_CELL,pem_fc,FUEL_CELL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S52: pumped line (assumed)
 FUEL_CELL,pem_fc,FUEL_CELL,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FC-FIX: pumped line (assumed)
 FUEL_CELL,pem_fc,FUEL_CELL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FC-LEACH: pumped line (assumed)
+FUEL_CELL,pem_fc,FUEL_CELL,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
+FUEL_CELL,pem_fc,FUEL_CELL,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",2,AQS-SAF-006 alarm 1oo2
 FUEL_CELL,pem_fc,FUEL_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FUEL_CELL,pem_fc,FUEL_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FUEL_CELL,pem_fc,FUEL_CELL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -1585,6 +1604,7 @@ GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,94,IA-
 GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,98,IA-FORM-O2: 2 per support (assumed)
 GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-GEN-O2: 2 per support (assumed)
 GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,IA-AB-O2: 2 per support (assumed)
+GAS,LIFE_RACK,HDR_O2,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",2,AQS-SAF-006 alarm 1oo2
 GAS,LIFE_RACK,HDR_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",14,S02: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",31,S50: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-FC-AIR: AQS-PIP-005 span count
@@ -1659,6 +1679,7 @@ GAS,SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,S05: 
 GAS,SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,S24: 2 per support (assumed)
 GAS,SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,S64: 2 per support (assumed)
 GAS,SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-H2-AIR: 2 per support (assumed)
+GAS,SCRUB,H2_DRYER,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 GAS,SCRUB,H2_DRYER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 GAS,SCRUB,H2_DRYER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 GAS,SCRUB,H2_DRYER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1695,6 +1716,7 @@ GAS,scrubber,NOX_SCRUB,instrument,flow transmitter,DN50,"electromagnetic, PFA li
 GAS,scrubber,NOX_SCRUB,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NOX-N: pumped line (assumed)
 GAS,scrubber,NOX_SCRUB,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NOX-CO2: pumped line (assumed)
 GAS,scrubber,NOX_SCRUB,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NOX-N2: pumped line (assumed)
+GAS,scrubber,NOX_SCRUB,instrument,"gas detector, NOx",electrochemical NO2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",2,AQS-SAF-006 alarm 1oo2
 GAS,scrubber,NOX_SCRUB,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 GAS,scrubber,NOX_SCRUB,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 GAS,scrubber,NOX_SCRUB,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1713,6 +1735,8 @@ GAS,scrubber,NOX_SCRUB,valve,isolation valve,DN50,"CPVC true-union ball valve, M
 GAS,scrubber,NOX_SCRUB,valve,isolation valve,DN50,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-NOX-N2: one at each end nozzle (assumed)
 GAS,separator,FLUE_KO,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,S67B: 2 per support (assumed)
 GAS,separator,FLUE_KO,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-FLUE-EXH: 2 per support (assumed)
+GAS,separator,FLUE_KO,instrument,"gas detector, NOx",electrochemical NO2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",2,AQS-SAF-006 alarm 1oo2
+GAS,separator,FLUE_KO,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 GAS,separator,FLUE_KO,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 GAS,separator,FLUE_KO,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 GAS,separator,FLUE_KO,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1801,6 +1825,7 @@ HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-SL
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-GAL: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-WASH: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-BLK-01: 2 per support (assumed)
+HAB,HAB,HABITATION,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 HAB,HAB,HABITATION,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 HAB,HAB,HABITATION,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 HAB,HAB,HABITATION,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2040,6 +2065,8 @@ MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,
 MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-MEOH-H2O: 2 per support (assumed)
 MEOH,reactor,MEOH_SYNTH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S75: pumped line (assumed)
 MEOH,reactor,MEOH_SYNTH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MEOH-H2O: pumped line (assumed)
+MEOH,reactor,MEOH_SYNTH,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
+MEOH,reactor,MEOH_SYNTH,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 MEOH,reactor,MEOH_SYNTH,instrument,pressure transmitter,0-100 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MEOH,reactor,MEOH_SYNTH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MEOH,reactor,MEOH_SYNTH,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-008 SIL 1
@@ -2351,6 +2378,8 @@ OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,2
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,HL-AFTERBURNER-Q1-B: 2 per support (assumed)
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,S18: 2 per support (assumed)
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-AB-FLUE: 2 per support (assumed)
+OIL,OIL_GLASS,AFTERBURNER,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
+OIL,OIL_GLASS,AFTERBURNER,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 OIL,OIL_GLASS,AFTERBURNER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 OIL,OIL_GLASS,AFTERBURNER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,AFTERBURNER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2367,6 +2396,7 @@ OIL,OIL_GLASS,AFTERBURNER,valve,isolation valve,DN15,"PVC-lined ball valve in FR
 OIL,OIL_GLASS,OIL_DRYER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 OIL,OIL_GLASS,OIL_DRYER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
 OIL,OIL_GLASS,OIL_DRYER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
+OIL,OIL_GLASS,OIL_DRYER,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 OIL,OIL_GLASS,OIL_DRYER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 OIL,OIL_GLASS,OIL_DRYER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_DRYER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2394,6 +2424,7 @@ OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA li
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-3: pumped line (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-4: pumped line (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-OIL-03: pumped line (assumed)
+OIL,OIL_GLASS,OIL_FRAC,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 OIL,OIL_GLASS,OIL_FRAC,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 OIL,OIL_GLASS,OIL_FRAC,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_FRAC,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2426,6 +2457,7 @@ OIL,OIL_GLASS,OIL_PYRO,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,6,IA
 OIL,OIL_GLASS,OIL_PYRO,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-SIC-C: 2 per support (assumed)
 OIL,OIL_GLASS,OIL_PYRO,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-OIL-02: pumped line (assumed)
 OIL,OIL_GLASS,OIL_PYRO,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-SIC-C: pumped line (assumed)
+OIL,OIL_GLASS,OIL_PYRO,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 OIL,OIL_GLASS,OIL_PYRO,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 OIL,OIL_GLASS,OIL_PYRO,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_PYRO,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2628,6 +2660,7 @@ WET,BMED_CRU,EVAP_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,IA
 WET,BMED_CRU,EVAP_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ACID-01: pumped line (assumed)
 WET,BMED_CRU,EVAP_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EVAP_ACID-COND: pumped line (assumed)
 WET,BMED_CRU,EVAP_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EVAP_ACID-VENT: pumped line (assumed)
+WET,BMED_CRU,EVAP_ACID,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 WET,BMED_CRU,EVAP_ACID,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,BMED_CRU,EVAP_ACID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,BMED_CRU,EVAP_ACID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2718,6 +2751,8 @@ WET,LEACH_EW,EW_1,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, 
 WET,LEACH_EW,EW_1,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HX8: pumped line (assumed)
 WET,LEACH_EW,EW_1,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW1-H2: pumped line (assumed)
 WET,LEACH_EW,EW_1,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW1-CL2: pumped line (assumed)
+WET,LEACH_EW,EW_1,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,LEACH_EW,EW_1,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,LEACH_EW,EW_1,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,LEACH_EW,EW_1,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,LEACH_EW,EW_1,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2757,6 +2792,8 @@ WET,LEACH_EW,EW_2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, 
 WET,LEACH_EW,EW_2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HDR-H2-03: pumped line (assumed)
 WET,LEACH_EW,EW_2,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW2-H2: pumped line (assumed)
 WET,LEACH_EW,EW_2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW2-CL2: pumped line (assumed)
+WET,LEACH_EW,EW_2,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,LEACH_EW,EW_2,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,LEACH_EW,EW_2,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,LEACH_EW,EW_2,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,LEACH_EW,EW_2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2791,6 +2828,8 @@ WET,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-EW9
 WET,LEACH_EW,EW_9,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-09: pumped line (assumed)
 WET,LEACH_EW,EW_9,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HDR-H2-04: pumped line (assumed)
 WET,LEACH_EW,EW_9,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW9-CL2: pumped line (assumed)
+WET,LEACH_EW,EW_9,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,LEACH_EW,EW_9,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,LEACH_EW,EW_9,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,LEACH_EW,EW_9,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,LEACH_EW,EW_9,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2851,6 +2890,7 @@ WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,1
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-CLOSE-10: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-LEACH-VCD: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-NA-PURGE: 2 per support (assumed)
+WET,LEACH_EW,LEACH_CSTR_1,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 WET,LEACH_EW,LEACH_CSTR_1,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,LEACH_EW,LEACH_CSTR_1,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,LEACH_EW,LEACH_CSTR_1,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2905,6 +2945,8 @@ WET,ew_cell,EW_3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-EW-0
 WET,ew_cell,EW_3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-EW3-CL2: 2 per support (assumed)
 WET,ew_cell,EW_3,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-03: pumped line (assumed)
 WET,ew_cell,EW_3,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW3-CL2: pumped line (assumed)
+WET,ew_cell,EW_3,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,ew_cell,EW_3,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,ew_cell,EW_3,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,ew_cell,EW_3,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,ew_cell,EW_3,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2931,6 +2973,8 @@ WET,ew_cell,EW_4,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, H
 WET,ew_cell,EW_4,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW4-H2: pumped line (assumed)
 WET,ew_cell,EW_4,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW4-N2: pumped line (assumed)
 WET,ew_cell,EW_4,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW4-CL2: pumped line (assumed)
+WET,ew_cell,EW_4,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,ew_cell,EW_4,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,ew_cell,EW_4,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,ew_cell,EW_4,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,ew_cell,EW_4,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2959,6 +3003,8 @@ WET,ew_cell,EW_5,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-EW-0
 WET,ew_cell,EW_5,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-EW5-CL2: 2 per support (assumed)
 WET,ew_cell,EW_5,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-05: pumped line (assumed)
 WET,ew_cell,EW_5,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW5-CL2: pumped line (assumed)
+WET,ew_cell,EW_5,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,ew_cell,EW_5,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,ew_cell,EW_5,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,ew_cell,EW_5,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,ew_cell,EW_5,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2981,6 +3027,8 @@ WET,ew_cell,EW_6,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-EW-0
 WET,ew_cell,EW_6,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-EW6-CL2: 2 per support (assumed)
 WET,ew_cell,EW_6,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-06: pumped line (assumed)
 WET,ew_cell,EW_6,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW6-CL2: pumped line (assumed)
+WET,ew_cell,EW_6,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,ew_cell,EW_6,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,ew_cell,EW_6,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,ew_cell,EW_6,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,ew_cell,EW_6,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -3006,6 +3054,8 @@ WET,ew_cell,EW_7,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-EW-0
 WET,ew_cell,EW_7,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-EW7-CL2: 2 per support (assumed)
 WET,ew_cell,EW_7,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-07: pumped line (assumed)
 WET,ew_cell,EW_7,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW7-CL2: pumped line (assumed)
+WET,ew_cell,EW_7,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,ew_cell,EW_7,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,ew_cell,EW_7,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,ew_cell,EW_7,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,ew_cell,EW_7,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -3029,6 +3079,8 @@ WET,ew_cell,EW_8,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-EW-0
 WET,ew_cell,EW_8,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-EW8-CL2: 2 per support (assumed)
 WET,ew_cell,EW_8,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-08: pumped line (assumed)
 WET,ew_cell,EW_8,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW8-CL2: pumped line (assumed)
+WET,ew_cell,EW_8,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,ew_cell,EW_8,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,ew_cell,EW_8,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,ew_cell,EW_8,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,ew_cell,EW_8,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -3041,6 +3093,8 @@ WET,ew_cell,EW_8,valve,check valve,DN15,"PVC-U true-union swing/ball check valve
 WET,ew_cell,EW_8,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-EW8-CL2: pump discharge (assumed)
 WET,ew_cell,EW_8,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW-08: one at each end nozzle (assumed)
 WET,ew_cell,EW_8,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW8-CL2: one at each end nozzle (assumed)
+WET,hcl_synthesis,HCL_BURNER,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+WET,hcl_synthesis,HCL_BURNER,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 WET,hcl_synthesis,HCL_BURNER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WET,hcl_synthesis,HCL_BURNER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,hx,HX8,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,HL-HX8-Q4-A: 2 per support (assumed)
@@ -3068,6 +3122,7 @@ WET,scrubber,EVAP_ACID_VS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,1
 WET,scrubber,EVAP_ACID_VS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-VS-OFF: 2 per support (assumed)
 WET,scrubber,EVAP_ACID_VS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-VS-SPENT: pumped line (assumed)
 WET,scrubber,EVAP_ACID_VS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-VS-OFF: pumped line (assumed)
+WET,scrubber,EVAP_ACID_VS,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 WET,scrubber,EVAP_ACID_VS,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,scrubber,EVAP_ACID_VS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,scrubber,EVAP_ACID_VS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure

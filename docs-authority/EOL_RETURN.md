@@ -9,11 +9,11 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 467 | 45 % |
-| organic | 435 | 42 % |
+| metal_plateable | 467 | 44 % |
+| organic | 435 | 41 % |
 | metal_reactive | 85 | 8 % |
+| unassigned | 34 | 3 % |
 | silicate_oxide | 30 | 3 % |
-| unassigned | 28 | 3 % |
 
 ## Held lines (no route in the present plant)
 
@@ -22,7 +22,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 58 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 32 |
 | material not stated on the line | 19 |
-| material not identified | 9 |
+| material not identified | 15 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house | 1 |
 
@@ -30,36 +30,36 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 
 ## Per unit (lines by class)
 
-| Unit | metal_plateable | organic | metal_reactive | silicate_oxide | unassigned |
+| Unit | metal_plateable | organic | metal_reactive | unassigned | silicate_oxide |
 |---|---|---|---|---|---|
 | ABE | 0 | 6 | 0 | 0 | 0 |
 | ACETOX | 0 | 6 | 0 | 0 | 0 |
 | ACEX | 0 | 6 | 0 | 0 | 0 |
 | ACID_POLISH_SCRUB | 0 | 4 | 0 | 0 | 0 |
 | AFTERBURNER | 3 | 0 | 0 | 0 | 0 |
-| ALD | 3 | 1 | 0 | 3 | 0 |
+| ALD | 3 | 1 | 0 | 0 | 3 |
 | ALK_SCRUBBER | 0 | 4 | 0 | 0 | 0 |
 | AMF | 0 | 3 | 0 | 0 | 0 |
 | ANIMAL_PEN | 0 | 4 | 0 | 0 | 0 |
 | ASH | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA_BED | 0 | 3 | 0 | 0 | 0 |
-| BACKUP_GEN | 0 | 0 | 0 | 0 | 3 |
+| BACKUP_GEN | 0 | 0 | 0 | 3 | 0 |
 | BAGHOUSE | 4 | 0 | 0 | 0 | 0 |
 | BEES | 0 | 3 | 0 | 0 | 0 |
 | BIOFILTER | 0 | 5 | 0 | 0 | 0 |
 | BLACK_ALK_HOLD | 0 | 5 | 0 | 0 | 0 |
 | BLACK_DEWATER | 2 | 2 | 0 | 0 | 0 |
 | BLACK_DIGEST | 1 | 5 | 0 | 0 | 0 |
-| BLACK_PASTEUR | 3 | 1 | 0 | 1 | 0 |
+| BLACK_PASTEUR | 3 | 1 | 0 | 0 | 1 |
 | BLOW_MOLD | 3 | 0 | 0 | 0 | 0 |
 | BMED_ACID | 0 | 3 | 0 | 0 | 0 |
 | BMED_BASE | 0 | 3 | 0 | 0 | 0 |
 | BMED_UPW_POLISH | 3 | 0 | 0 | 0 | 0 |
 | BOARD_MILL | 4 | 0 | 0 | 0 | 0 |
 | BSFL | 0 | 4 | 0 | 0 | 0 |
-| BUCL | 0 | 2 | 0 | 5 | 0 |
-| BUOH_STILL | 0 | 0 | 0 | 3 | 0 |
+| BUCL | 0 | 2 | 0 | 0 | 5 |
+| BUOH_STILL | 0 | 0 | 0 | 0 | 3 |
 | C29_RECYCLE | 3 | 0 | 0 | 0 | 0 |
 | CATCH_TANK | 0 | 3 | 0 | 0 | 0 |
 | CHICKENS | 0 | 3 | 0 | 0 | 0 |
@@ -101,7 +101,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | DUCKWEED | 0 | 3 | 0 | 0 | 0 |
 | ELECTRODE_COAT | 3 | 0 | 0 | 0 | 0 |
 | EMETH | 0 | 4 | 0 | 0 | 0 |
-| ETOH_STILL | 0 | 0 | 0 | 3 | 0 |
+| ETOH_STILL | 0 | 0 | 0 | 0 | 3 |
 | EVAP_ACID | 1 | 9 | 1 | 0 | 0 |
 | EVAP_ACID_VS | 0 | 8 | 0 | 0 | 0 |
 | EVAP_BASE | 5 | 3 | 1 | 0 | 0 |
@@ -121,9 +121,9 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | FISH_SUMP | 0 | 4 | 0 | 0 | 0 |
 | FLOAT_SINK | 0 | 4 | 0 | 0 | 0 |
 | FLUE_KO | 0 | 4 | 0 | 0 | 0 |
-| FORM | 4 | 1 | 0 | 3 | 0 |
+| FORM | 4 | 1 | 0 | 0 | 3 |
 | FRUIT_GUTTER | 0 | 3 | 0 | 0 | 0 |
-| FUEL_CELL | 0 | 0 | 0 | 0 | 4 |
+| FUEL_CELL | 0 | 0 | 0 | 4 | 0 |
 | GAS_ATOMIZER | 3 | 0 | 0 | 0 | 0 |
 | GEO_GHEX | 3 | 0 | 0 | 0 | 0 |
 | GEO_HP | 2 | 0 | 0 | 0 | 0 |
@@ -133,11 +133,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | GLASS_DIGEST | 0 | 6 | 0 | 0 | 0 |
 | GLASS_MILL | 3 | 0 | 0 | 0 | 0 |
 | GLASS_RINSE | 3 | 0 | 0 | 0 | 0 |
-| GLYOXAL | 3 | 2 | 0 | 1 | 0 |
+| GLYOXAL | 3 | 2 | 0 | 0 | 1 |
 | GOATS | 0 | 3 | 0 | 0 | 0 |
 | GREY_TREAT | 0 | 4 | 0 | 0 | 0 |
 | GROW_BED | 0 | 5 | 0 | 0 | 0 |
-| H2O_ELYZ | 1 | 0 | 0 | 0 | 2 |
+| H2O_ELYZ | 1 | 0 | 0 | 2 | 0 |
 | H2_DRYER | 0 | 3 | 0 | 0 | 0 |
 | H2_PURIFIER | 3 | 0 | 0 | 0 | 0 |
 | HABITATION | 4 | 0 | 0 | 0 | 0 |
@@ -145,14 +145,14 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | HAB_MED | 0 | 3 | 0 | 0 | 0 |
 | HAB_SLEEP | 0 | 3 | 0 | 0 | 0 |
 | HAB_WASH | 0 | 3 | 0 | 0 | 0 |
-| HCL_BURNER | 1 | 0 | 0 | 0 | 2 |
+| HCL_BURNER | 1 | 0 | 0 | 2 | 0 |
 | HEAT_SINK | 2 | 0 | 0 | 0 | 0 |
 | HNO3 | 6 | 1 | 0 | 0 | 0 |
 | HOPPER | 4 | 0 | 0 | 0 | 0 |
-| HTC | 4 | 1 | 0 | 2 | 0 |
+| HTC | 4 | 1 | 0 | 0 | 2 |
 | HX8 | 0 | 2 | 0 | 0 | 0 |
 | HYDRO_SET | 2 | 0 | 0 | 0 | 0 |
-| IMID | 3 | 2 | 0 | 1 | 0 |
+| IMID | 3 | 2 | 0 | 0 | 1 |
 | IODIDE | 0 | 3 | 0 | 0 | 0 |
 | LEACH_CSTR_1 | 0 | 15 | 0 | 1 | 1 |
 | LIGNO_PRE | 0 | 4 | 0 | 0 | 0 |
@@ -160,11 +160,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | LITHO_COAT | 2 | 0 | 0 | 0 | 0 |
 | LITHO_DEV | 2 | 0 | 0 | 0 | 0 |
 | LITHO_STUB | 3 | 0 | 0 | 0 | 0 |
-| MEAM | 4 | 1 | 0 | 3 | 0 |
+| MEAM | 4 | 1 | 0 | 0 | 3 |
 | MEOH_COND | 3 | 0 | 0 | 0 | 0 |
-| MEOH_FC | 0 | 0 | 0 | 0 | 3 |
+| MEOH_FC | 0 | 0 | 0 | 3 | 0 |
 | MEOH_FERM | 0 | 6 | 0 | 0 | 0 |
-| MEOH_SYNTH | 7 | 1 | 0 | 1 | 0 |
+| MEOH_SYNTH | 7 | 1 | 0 | 0 | 1 |
 | MEOH_TANK | 4 | 0 | 0 | 0 | 0 |
 | MET_AHU | 5 | 0 | 0 | 0 | 0 |
 | MET_HX_Q4 | 2 | 0 | 0 | 0 | 0 |
@@ -190,7 +190,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | MF-18 x 1 | 7 | 0 | 3 | 0 | 0 |
 | MF-19 x 1 | 7 | 0 | 3 | 0 | 0 |
 | MF-20 x 1 | 7 | 0 | 3 | 0 | 0 |
-| MF-21 x 44 | 2 | 0 | 0 | 0 | 1 |
+| MF-21 x 44 | 2 | 0 | 0 | 1 | 0 |
 | MF-22 x 8 | 4 | 0 | 2 | 0 | 0 |
 | MF-23 x 3 | 4 | 0 | 2 | 0 | 0 |
 | MFG_SHOP | 4 | 0 | 0 | 0 | 0 |
@@ -215,7 +215,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | OF-10 | 1 | 0 | 0 | 0 | 0 |
 | OF-11 | 1 | 0 | 0 | 0 | 0 |
 | OF-12 | 1 | 0 | 0 | 0 | 0 |
-| OF-13 | 0 | 0 | 0 | 0 | 1 |
+| OF-13 | 0 | 0 | 0 | 1 | 0 |
 | OF-14 | 1 | 0 | 0 | 0 | 0 |
 | OF-15 | 1 | 0 | 0 | 0 | 0 |
 | OF-16 | 1 | 0 | 0 | 0 | 0 |
@@ -236,36 +236,42 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | OF-31 | 1 | 0 | 0 | 0 | 0 |
 | OF-32 | 0 | 1 | 0 | 0 | 0 |
 | OF-33 | 0 | 1 | 0 | 0 | 0 |
-| OF-34 | 0 | 0 | 0 | 0 | 1 |
+| OF-34 | 0 | 0 | 0 | 1 | 0 |
 | OF-35 | 1 | 0 | 0 | 0 | 0 |
-| OF-36 | 0 | 0 | 0 | 1 | 0 |
+| OF-36 | 0 | 0 | 0 | 0 | 1 |
 | OF-37 | 1 | 0 | 0 | 0 | 0 |
 | OF-38 | 0 | 1 | 0 | 0 | 0 |
-| OF-39 | 0 | 0 | 0 | 0 | 1 |
-| OF-40 | 1 | 0 | 0 | 0 | 0 |
-| OF-41 | 1 | 0 | 0 | 0 | 0 |
-| OF-42 | 0 | 1 | 0 | 0 | 0 |
-| OF-43 | 0 | 1 | 0 | 0 | 0 |
-| OF-44 | 1 | 0 | 0 | 0 | 0 |
-| OF-45 | 0 | 1 | 0 | 0 | 0 |
-| OF-46 | 0 | 1 | 0 | 0 | 0 |
+| OF-39 | 0 | 0 | 0 | 1 | 0 |
+| OF-40 | 0 | 0 | 0 | 1 | 0 |
+| OF-41 | 0 | 0 | 0 | 1 | 0 |
+| OF-42 | 0 | 0 | 0 | 1 | 0 |
+| OF-43 | 0 | 0 | 0 | 1 | 0 |
+| OF-44 | 0 | 0 | 0 | 1 | 0 |
+| OF-45 | 1 | 0 | 0 | 0 | 0 |
+| OF-46 | 0 | 0 | 0 | 1 | 0 |
 | OF-47 | 1 | 0 | 0 | 0 | 0 |
 | OF-48 | 0 | 1 | 0 | 0 | 0 |
 | OF-49 | 0 | 1 | 0 | 0 | 0 |
-| OF-50 | 0 | 1 | 0 | 0 | 0 |
+| OF-50 | 1 | 0 | 0 | 0 | 0 |
 | OF-51 | 0 | 1 | 0 | 0 | 0 |
 | OF-52 | 0 | 1 | 0 | 0 | 0 |
 | OF-53 | 1 | 0 | 0 | 0 | 0 |
 | OF-54 | 0 | 1 | 0 | 0 | 0 |
 | OF-55 | 0 | 1 | 0 | 0 | 0 |
-| OF-56 | 1 | 0 | 0 | 0 | 0 |
+| OF-56 | 0 | 1 | 0 | 0 | 0 |
 | OF-57 | 0 | 1 | 0 | 0 | 0 |
-| OF-58 | 1 | 0 | 0 | 0 | 0 |
-| OF-59 | 0 | 1 | 0 | 0 | 0 |
+| OF-58 | 0 | 1 | 0 | 0 | 0 |
+| OF-59 | 1 | 0 | 0 | 0 | 0 |
 | OF-60 | 0 | 1 | 0 | 0 | 0 |
+| OF-61 | 0 | 1 | 0 | 0 | 0 |
+| OF-62 | 1 | 0 | 0 | 0 | 0 |
+| OF-63 | 0 | 1 | 0 | 0 | 0 |
+| OF-64 | 1 | 0 | 0 | 0 | 0 |
+| OF-65 | 0 | 1 | 0 | 0 | 0 |
+| OF-66 | 0 | 1 | 0 | 0 | 0 |
 | OIL_DRYER | 3 | 0 | 0 | 0 | 0 |
 | OIL_FRAC | 3 | 0 | 0 | 0 | 0 |
-| OIL_PYRO | 4 | 1 | 0 | 2 | 0 |
+| OIL_PYRO | 4 | 1 | 0 | 0 | 2 |
 | PEANUT | 0 | 3 | 0 | 0 | 0 |
 | PF-01 | 0 | 2 | 0 | 0 | 0 |
 | PF-02 | 1 | 1 | 0 | 0 | 0 |
@@ -304,8 +310,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | Q4_A | 2 | 0 | 0 | 0 | 0 |
 | Q4_B | 2 | 0 | 0 | 0 | 0 |
 | QUAT | 0 | 3 | 0 | 0 | 0 |
-| RECTIFIER | 0 | 0 | 0 | 0 | 2 |
-| RECT_EW | 0 | 0 | 0 | 0 | 1 |
+| RECTIFIER | 0 | 0 | 0 | 2 | 0 |
+| RECT_EW | 0 | 0 | 0 | 1 | 0 |
 | RELIEF_CRYO | 3 | 0 | 0 | 0 | 0 |
 | RELIEF_H2 | 3 | 0 | 0 | 0 | 0 |
 | REMIN | 0 | 3 | 0 | 0 | 0 |
@@ -315,7 +321,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | SEED_BANK | 0 | 3 | 0 | 0 | 0 |
 | SIC_FURNACE | 0 | 3 | 0 | 0 | 0 |
 | SOLAR_PV_CELL | 3 | 0 | 0 | 0 | 0 |
-| SOL_ARK_60K | 0 | 0 | 0 | 0 | 2 |
+| SOL_ARK_60K | 0 | 0 | 0 | 2 | 0 |
 | STRUVITE | 0 | 3 | 0 | 0 | 0 |
 | SUNFLOWER | 0 | 3 | 0 | 0 | 0 |
 | VCD_TRAIN | 3 | 0 | 0 | 0 | 0 |
@@ -361,5 +367,5 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | WS_SLURRY | 3 | 0 | 0 | 0 | 0 |
 | WS_SOLV | 3 | 0 | 0 | 0 | 0 |
 | YEAST | 0 | 6 | 0 | 0 | 0 |
-| ZNBR2 | 0 | 0 | 0 | 0 | 4 |
+| ZNBR2 | 0 | 0 | 0 | 4 | 0 |
 | ZNBR2_BR2_REGEN | 0 | 3 | 0 | 0 | 0 |

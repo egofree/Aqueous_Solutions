@@ -6,8 +6,9 @@ item,description,qty,material,basis
 5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 6,electronics: compressor contactor + overload 0.25 kW hermetic,1,IEC 60947-4-1,AQS-INV-004
 7,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-8,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-9,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-10,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-11,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-12,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+8,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",AQS-INV-004
+9,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+10,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+11,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+12,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+13,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

@@ -51,6 +51,9 @@ def rows():
             if n.get('class') in HOLD or u in LIQ_IN:                                                     # X-SAF-01 HZ: every liquid-receiving unit gets level and high level
                 add(u, 'instrument', 'level transmitter', 'radar 80 GHz', 'IEC 62828, PTFE lens', 1, 'duty item 5: liquid holdup')
                 add(u, 'instrument', 'high-level switch', 'vibrating fork', 'IEC 60947-5, 316L', 1, 'duty item 5: high level trips the inlet')
+    gp = os.path.join(ROOT, 'docs-authority/inventory/GAS_DETECTORS.csv')   # X-SAF-06 (AQS-SAF-006)
+    if os.path.exists(gp):
+        for r in csv.DictReader(open(gp)): add(r['unit'], 'instrument', f"gas detector, {r['gas']}", r['type'], f"alarm {r['alarm']}, trip {r['trip']}, {r['mounting']}", int(r['qty']), f"AQS-SAF-006 {r['voting']}")
     sp = os.path.join(ROOT, 'docs-authority/sif_list.csv')                    # X-CTL-03: SIF hardware (AQS-CTL-003)
     if os.path.exists(sp):
         sl = list(csv.DictReader(open(sp)))
