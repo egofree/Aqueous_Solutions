@@ -2108,5 +2108,25 @@
     "verification": "Headspace H2 by catalytic sensor over a charge cycle; NFT flow by timed catch per gully.",
     "replace_when": "Measured headspace H2 above 0.5 vol % at design purge, or gully count changes.",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-136",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Mister (HPA) supply transfer function",
+    "statement": "Mister supply = chamber area x 6 nozzles/m2 x 0.057 L/min (0.3 mm nozzle at 80 psi) x 4 s/244 s duty (HPA_PRACTICE, JAE2022_AERO). Return = supply.",
+    "verification": "Timed catch at the chamber drain over 24 h.",
+    "replace_when": "Nozzle model or timer schedule fixed by unit task.",
+    "doc": "AQS-PAR-003"
   }
 ]

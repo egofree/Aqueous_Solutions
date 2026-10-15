@@ -94,6 +94,8 @@ REFS = {
  'SAND2000-0893': 'Sandia National Laboratories SAND2000-0893, zinc/bromine battery technology: 1.82 V cell, H2 generation small in the absence of impurities, pH 1-3.5 operating window.',
  'NFPA69_2019': 'NFPA 69, Standard on Explosion Prevention Systems, 2019 ed.: combustible concentration maintained at or below 25 % of the LFL.',
  'COOPER1996': 'Cooper A., The ABC of NFT, 2nd ed., Grower Books, London (1996): about 1 L/min per gully, half at planting, 2 L/min upper limit; slope 1:30-1:100; gully length under 10-15 m.',
+ 'JAE2022_AERO': 'Aeroponic systems design: considerations and challenges, Journal of Agricultural Engineering 53 (2022) 1387, doi:10.4081/jae.2022.1387: PD pump plus pressure tank and solenoid-timed short sprays; high-pressure swirl nozzles.',
+ 'HPA_PRACTICE': 'High-pressure aeroponics practice (theyieldgrid.com aeroponic timer calculator; mistculture.com HPA manifold; plant-calculator.com aeroponics calculator, accessed 2026-10-15): 4-8 nozzles per m2, 0.3 mm anti-drip nozzle 0.015 gal/min at 80 psi, 3-5 s on / 3-5 min off (0.9-1.7 % duty).',
  'CROPKING_NFT': 'CropKing, NFT production of lettuce (knowledge centre, citing Cooper 1996): 80 mm wide, 40 mm deep gullies at 1.5 % slope best in a comparison of 60-150 mm widths.',
  'TURNS2012': 'Turns S.R., An Introduction to Combustion: Concepts and Applications, 3rd ed., McGraw-Hill (2012), ch. 2: stoichiometric oxidizer-fuel ratios for hydrocarbons, H2 and CO.',
  'COEY2010': 'Coey J.M.D., Magnetism and Magnetic Materials, Cambridge University Press (2010), ch. 11: properties of hard magnets (sintered Nd2Fe14B, sintered and bonded hexaferrite).',

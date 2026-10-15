@@ -16605,10 +16605,10 @@
       "phase": "L",
       "carries": "mister supply",
       "rate": {
-        "value": 50.0,
+        "value": 32.166295,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Mister supply. 100 \u00b5m screen."
+        "note": "AQS-P9. Mister supply. 100 \u00b5m screen. | X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.056775 L/min, 4 s on / 4 min off (HPA_PRACTICE, JAE2022_AERO) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16622,10 +16622,10 @@
       "phase": "L",
       "carries": "mister return",
       "rate": {
-        "value": 50.0,
+        "value": 32.166295,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Mister return."
+        "note": "AQS-P9. Mister return. | X-PAR-02 TF: chamber drain return = supply (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
