@@ -752,10 +752,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 6.0,
+        "value": 5.263,
         "unit": "kW",
         "status": "study",
-        "note": "RECT-EW class share; study"
+        "note": "Cell DC at the electrode. IA-EW-MET-1 59.87 kg/d as copper, 0.02844 kg/d per A, 2105 A, at 2.5 V. Current efficiency 1.0 is assumed. Replaces the 6.0 kW RECT-EW class share."
       },
       "modules": [],
       "params": {
@@ -828,10 +828,12 @@
             }
           ]
         },
-        "duty": "In 4287.820 kg/d, out 4287.820 kg/d, 6.000 kW. Sheet docs-authority/duties/EW_1.md.",
+        "duty": "In 4287.820 kg/d, out 4287.820 kg/d, 5.263 kW. Sheet docs-authority/duties/EW_1.md.",
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
-        "relief_mm": 3.4
+        "relief_mm": 3.4,
+        "cell_current_A": 2105,
+        "cell_voltage_V": 2.5
       }
     },
     {
@@ -25206,5 +25208,6 @@
   "notes_rev_d1_assay": "D1 revision B. Study assay on IA-FEED-01, S08, and S16. Not a weighed sample. Rates unchanged. No resize.",
   "notes_rev_d1_agnostic": "D1 revision C. Feed is feedstock-agnostic. IA-FEED-01 carries the AQS-ASSAY-001 Rev C class point and the envelope, regolith-like through metal-rich PCB. Plateable element mass is bounded by the sheet edges. Silicate, water, organic, and unassigned are held. Rates unchanged. No resize.",
   "notes_rev_d2": "D2. S08 carries metals and entrained silicate. The 0.0021 kg/d residual between the 42.0021 kg/d rate and the 42.0000 kg/d deposits is booked as SiO2, fraction 5.0e-5, Si 2.34e-5. Assumption, not a measurement. S16 follows S08. Rates unchanged. No resize.",
+  "notes_rev_d3": "D3. EW_1 continuous_kw is 5.263 kW, 2105 A at 2.5 V, copper equivalent of IA-EW-MET-1. Replaces the 6.0 kW class share. POWER.md and the duty carry the same figure. IA-E-RECT stays 4.57 kW and is named. No edge rate change.",
   "loops_closed": true
 }

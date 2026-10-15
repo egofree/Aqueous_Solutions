@@ -88,7 +88,7 @@ These stay named. They do not block a nozzle, a class, or a vent that the files 
 | IA-FEED-01, S08, S16 | Feedstock-agnostic. IA-FEED-01 carries the AQS-ASSAY-001 Rev C class point and envelope. Not a weighed sample. Silicate, water, organic, and unassigned loads across the envelope are held. |
 | IA-EW-SHEET | `metal` 1.0. The cell sheets are undifferentiated plate. Not an element split. |
 | IA-FERM-RES, IA-STILL, IA-ABE-STILL | No volatile-solids measurement. They leave on IA-DIG-GAS. The gas composition is the liquid placeholder. |
-| EW-1 current | `POWER.md` says 5.3 kW. The node is 6.0 kW study. The cell duties state the 2.5 V product against the node. No conductor is sized from the page. |
+| EW-1 current | Reconciled by D3. The node is 5.263 kW, 2105 A at 2.5 V, and `POWER.md` copies it. Current efficiency 1.0 and 2.5 V are assumed. IA-E-RECT stays 4.57 kW and is named. |
 | `HEAT_LADDER_DUTIES.md` | Still the Rev K note. The graph is the duty. |
 | IA-HDR-H2-01, 03, 04 | 2.1333 kg/d, empty layer list. Outside the mass cut. |
 | EXPANDER `relief_mm` | 3.6 mm. Not recalculated at 550 kPa. Isentropic efficiency 70% is assumed. |
@@ -183,3 +183,5 @@ Active item: D1. The study assay is written. It is not a weighed sample. No resi
 D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. The feed is not one material. It is anything from a silicate and oxide regolith to a metal-rich PCB. Every lot is characterized against the AQS-ASSAY-001 schema, and the held design is checked across the bounding range, not one average. Plateable element mass is bounded by the sheet edges. Silicate, water, organic, and unassigned loads are held. The study fractions are not a weighed sample. The rate stays. The bore stays. The cell stays.
 
 D2 is the S08 split. Silicon is carried as entrained silicate, from the rate residual. It is not plated.
+
+D3 is the EW-1 current. The graph node is the one figure: 5.263 kW, 2105 A at 2.5 V. The bar is sized from the node, not the page.
