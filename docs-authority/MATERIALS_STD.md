@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: G
+Revision: H
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -14,6 +14,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | E | H2 embrittlement review AQS-REV-H2-001; M6 applied to every H2-wetted unit. | 2026-10-15 |
 | F | Leach liquor temperature 70-85 C found in the repo; LEACH_CSTR_1 tank corrected from PVC-U to CPVC. | 2026-10-15 |
 | G | HX-5 adopted as a borosilicate glass 3.3 coil (X-MAT-16). | 2026-10-15 |
+| H | HX8 adopted as a PVDF bundle (X-MAT-17). | 2026-10-15 |
 
 ## 1. Rules
 
@@ -180,3 +181,11 @@ Under M5 this exceeds PVC-U (60 °C). The tank, headers, and stubs are CPVC (lim
 Decision (owner approval 2026-10-15). HX-5 is a borosilicate glass 3.3 coil. Glass is inert to HCl and chlorate at 95 °C and conducts heat about six times better than PVDF (1.2 vs 0.18 W/mK), so the coil is smaller: 4.22 m² in the natural-convection case of AQS-DUTY-049, 2.65 m² if agitation is confirmed. The 4.22 m² case is built. Tube 25 × 3 mm, 53.7 m, two concentric helices D 600 and 900 mm (arrangement is an assumption, see AQS-REG-002). Glass density 2230 kg/m³ and permitted thermal shock 120 K per ISO 3585 (S17); Q3 supply 95 °C into liquor 70–85 °C is a 25 K step. The coil sits on PTFE pads. An agitator guard is held for X-MAT-09. Section 3.2's PVDF coil is superseded; the 88 °C trip stands.
 
 S17. ISO 3585:1998, Borosilicate glass 3.3 — Properties.
+
+### 4.4 HX8 PVDF bundle, Rev H
+
+Decision (owner approval 2026-10-15). HX8 is a PVDF shell-and-tube bundle, 7.53 m² at U 101 W/m²K (AQS-DUTY-049). Rationale against isolated impregnated graphite (0.85 m²):
+- Graphite conducts. In the EW aisle it would sit in the liquor path between cells at different potentials; isolation must hold at both liquor connections and the Q4 side for the life of the plant. A failed isolator gives a stray-current path and a noble galvanic partner (M6). PVDF has no such failure mode.
+- Graphite is brittle and fails on thermal or pressure shock; PVDF tolerates handling and water hammer.
+- The penalty is area and footprint (about nine times), which is acceptable at 7.5 m².
+Graphite is not clearly better, so the approved default stands. Section 4.1's open graphite option is closed.

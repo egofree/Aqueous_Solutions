@@ -2102,6 +2102,12 @@
           "status": "study",
           "doc": "AQS-DUTY-049",
           "note": "The plate area_m2 0.51 is for titanium plates, which are withdrawn (AQS-STD-002 4.1)."
+        },
+        "exchanger": {
+          "type": "PVDF shell-and-tube bundle",
+          "area_m2": 7.53,
+          "status": "study",
+          "source": "AQS-DUTY-049; AQS-STD-002 4.4"
         }
       }
     },
