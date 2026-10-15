@@ -1983,5 +1983,20 @@
   "sensitivity": "PQ 0.9-1.1 moves S87 by +/-1.4 kg/d; uncaptured CO2 (bed leakage) lowers it",
   "replaced_by": "Species balance at the cold box (X-PAR-11 remaining)",
   "verification_test": "T-PAR-03 commissioning measurement: grow-bed enclosure CO2 dose and exhaust CO2/O2 by NDIR and paramagnetic analysers over 7 days, O2 release within 10 % of 32/44 x CO2 fixed; leach off-gas by headspace GC, desorbed gas below the Henry bound"
+ },
+ {
+  "id": "A-M-129",
+  "task": "X-PAR-11",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/gas_species.py"
+  ],
+  "value": "O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), organics as CH2O (1.066), H2 7.94, CO 0.571; NCG composition not counted; deficit 76.5 kg/d O2 with no source on the graph",
+  "units": "kg/d",
+  "where": "AQS-PAR-004",
+  "basis": "TURNS2012 ch. 2; TAIZ2015",
+  "sensitivity": "Fuel formula moves the combustion oxidant by about +/-5 %; the deficit sign does not change",
+  "replaced_by": "Owner decision on the O2 source (X-PAR-12) and the cold-box species split (X-PAR-11)",
+  "verification_test": "Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 %"
  }
 ]

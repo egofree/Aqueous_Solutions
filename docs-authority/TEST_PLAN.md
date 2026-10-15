@@ -20,9 +20,9 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 123 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 21 | Commissioning record |
+| T6 | Commissioning measurements | 22 | Commissioning record |
 
-Total 248 items: 120 drivers, 128 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 249 items: 120 drivers, 129 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -301,3 +301,4 @@ Total 248 items: 120 drivers, 128 register entries. Classification rule: first m
 | A-M-123 | T1 terrace transpiration = irrigation - drains (37.176 kg/d; kg/d | T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound | X-PAR-02 |
 | A-M-127 | Route rule: rack elevation for a line is at least 300 mm abo mm | Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning) | X-PIP-04 |
 | A-M-128 | T6: all CO2 dosed to GROW_BED (S04 + S89 = 19.0 kg/d) is fix kg/d | T-PAR-03 commissioning measurement: grow-bed enclosure CO2 dose and exhaust CO2/O2 by NDIR and paramagnetic analysers over 7 days, O2 release within 10 % of 32/44 x CO2 fixed; leach off-gas by headspace GC, desorbed gas below the Henry bound | X-PAR-11 |
+| A-M-129 | O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), or kg/d | Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 % | X-PAR-11 |

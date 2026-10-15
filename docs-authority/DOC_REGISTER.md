@@ -206,6 +206,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | A | 2026-10-15 | Blackwater and excreta multi-barrier train | canonical |
 | AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | A | 2026-10-15 | Motor and actuator inventory with family rollup (CSV beside) | canonical |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | A | 2026-10-15 | Mass balance reconciliation (X-PAR-02 closure layer) | canonical |
+| AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | A | 2026-10-15 | Oxygen species ledger | canonical |
 | AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheet per line (SVG + quantities CSV) | canonical |
 | AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | A | 2026-10-15 | Wire inventory with family rollup (CSV beside) | canonical |
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | A | 2026-10-15 | Pipe inventory with family rollup (CSV beside) | canonical |

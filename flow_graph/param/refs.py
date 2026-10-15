@@ -81,6 +81,7 @@ REFS = {
  'IEC60034_30_1': 'IEC 60034-30-1:2014, Rotating electrical machines - Efficiency classes of line operated AC motors (IE code): nominal efficiency limits, 60 Hz IE3 table; 5.4.7 interpolation for intermediate ratings.',
  'PYRHONEN2014': 'Pyrhonen J., Jokinen T., Hrabovcova V., Design of Rotating Electrical Machines, 2nd ed., Wiley (2014), ch. 6: output equation, permitted air-gap flux density and linear current density (table 6.3), current density (table 6.4), aspect ratio.',
  'HENDERSHOT2010': 'Hendershot J.R., Miller T.J.E., Design of Brushless Permanent-Magnet Machines, Motor Design Books (2010), ch. 2: torque per rotor volume T = (pi/2) D^2 L A B.',
+ 'TURNS2012': 'Turns S.R., An Introduction to Combustion: Concepts and Applications, 3rd ed., McGraw-Hill (2012), ch. 2: stoichiometric oxidizer-fuel ratios for hydrocarbons, H2 and CO.',
  'TAIZ2015': 'Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass.',
  'SANDER2015': 'Sander R., Compilation of Henry\'s law constants (version 4.0) for water as solvent, Atmos. Chem. Phys. 15 (2015) 4399-4981: O2, N2, CO2 solubility in water.',
  'NREL_NSRDB': 'Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8.',
