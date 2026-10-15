@@ -15,7 +15,7 @@ LV = [('L-2', P.Z_Lm2, 'lower reservoir and catch (maintenance only)', 27.9, 0.1
 z_top = max(P.Z_L2 + 2000, P.Z_ROOF + 2000)
 ST = [('STAIR_P', P.Z_L0, z_top, P.STAIR_BOX), ('STAIR_S1', P.Z_L0, max(P.Z_L2, P.Z_ROOF), P.STAIR_BOX), ('STAIR_S2', P.Z_L0, P.Z_L2, P.STAIR_BOX),
       ('STAIR_MAINT', P.Z_Lm2, P.Z_L0 + 500, P.STAIR_MAINT_W), ('STAIR_SERVICE', P.Z_Lm2, P.Z_L0, min(P.STAIR_SERVICE_L, P.STAIR_SERVICE_W))]
-POS = {'STAIR_P': (P.CORE_X + 1300, P.CORE_Y + 2500), 'STAIR_S1': (1400, Wp - 1400), 'STAIR_S2': (Lp - 1400, 1400), 'STAIR_MAINT': (P.CORE_X + 700, P.CORE_Y + 6200), 'STAIR_SERVICE': (P.STAIR_SERVICE_X + 1200, P.STAIR_SERVICE_Y + 1800)}
+POS = {'STAIR_P': (P.CORE_X + 1300, P.CORE_Y + 2400), 'STAIR_S1': (1500, Wp - 1500), 'STAIR_S2': (Lp - 1500, 1500), 'STAIR_MAINT': (P.CORE_X + 3450, P.CORE_Y + 4600), 'STAIR_SERVICE': (P.STAIR_SERVICE_X + 1200, P.STAIR_SERVICE_Y + 1800)}
 rows = []; bad = 0
 for lv, z, use, f, frac in LV:
     occ = math.ceil(A*frac/f); s = [n for n, a, b, w in ST if a <= z <= b]; need_w = max(1118, 7.6*occ)

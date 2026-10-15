@@ -246,7 +246,7 @@ PROCESS_DY = 4000
 
 SITE_LAT_DEG = 33.0                # Dallas default; ARRAY_ROOF / PV tilt = +φ (south face NH)
 
-CORE_L, CORE_W = 6000, 6000
+CORE_L, CORE_W = 8000, 6000      # X-BLD-05 core re-pack: STAIR_P 2.6x4.8, ELEV_SVC 2.7x3.2, STAIR_MAINT, 6 shafts without overlap (CAD clash check)
 CORE_X = (PLATE_L - CORE_L) // 2
 CORE_Y = (PLATE_W - CORE_W) // 2
 

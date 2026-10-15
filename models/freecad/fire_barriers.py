@@ -158,9 +158,50 @@ def attach(doc):
         add(doc, name, box_at(0, 0, z - T, P.PLATE_L, P.PLATE_W, T))
         label_plate(doc, name, 200, -600 - 200 * i, z=z + 200)
 
+    _rated_rooms(doc)
+
     # Tank / top life 1 h (AQS-BLD-001 HA_L2_L1)
     add(doc, "HA_L2_L1", box_at(0, 0, P.Z_L2 - T, P.PLATE_L, P.PLATE_W, T))
     label_plate(doc, "HA_L2_L1", 200, -1200, z=P.Z_L2 + 200)
+
+
+def _rated_rooms(doc):
+    """FR_<unit>: 1 h rooms (AQS-SAF-007, X-SAF-02) around each unit in flow_graph/fire_rooms.json. The room is built on the unit's
+    CAD solid; each wall sits mid-way to the nearest neighbouring solid on that side (max 1,000 mm, min 300 mm), so walls do not cut
+    neighbours. Units with no CAD solid fall back to the placement position."""
+    import json
+    f = Path(__file__).resolve().parents[2] / "flow_graph" / "fire_rooms.json"
+    if not f.exists():
+        return
+    zl = {"L-2": P.Z_Lm2, "L-1": P.Z_Lm1, "L0": P.Z_L0, "L1": P.Z_L1, "L2": P.Z_L2}
+    t = 150
+    skip = ("FB_", "HA_", "SLAB", "ENV_", "GROUND", "CRYO", "LBL", "LABEL", "SIGN", "CLEAR_", "UTIL_ROUGH", "VJ_", "HDR_", "RACK_", "FR_")
+    solids = [o for o in doc.Objects if hasattr(o, "Shape") and o.TypeId.startswith("Part::") and not o.Shape.isNull()
+              and o.Shape.Volume > 1e6 and not o.Label.startswith(skip) and o.Label not in ("CRYO",)]
+    for r in json.load(open(f))["rooms"]:
+        me = [o for o in solids if o.Label == r["unit"]]
+        if me:
+            bb = me[0].Shape.BoundBox; x0, y0, z, L, W, H = bb.XMin, bb.YMin, bb.ZMin, bb.XLength, bb.YLength, max(bb.ZLength + 500, 3000)
+        else:
+            x0, y0 = r["origin_mm"][0], r["origin_mm"][1]; L, W = r["size_mm"][0] - 2000, r["size_mm"][1] - 2000
+            z = zl.get(r["level"], P.Z_L0); H = max(r["size_mm"][2] + 500, 3000)
+        off = {"w": 1000.0, "e": 1000.0, "s": 1000.0, "n": 1000.0}
+        for o in solids:
+            if me and o is me[0]:
+                continue
+            b = o.Shape.BoundBox
+            if b.ZMax <= z or b.ZMin >= z + H:
+                continue
+            yo = b.YMin < y0 + W + 1000 and b.YMax > y0 - 1000; xo = b.XMin < x0 + L + 1000 and b.XMax > x0 - 1000
+            if yo and b.XMax <= x0: off["w"] = min(off["w"], (x0 - b.XMax)/2)
+            if yo and b.XMin >= x0 + L: off["e"] = min(off["e"], (b.XMin - x0 - L)/2)
+            if xo and b.YMax <= y0: off["s"] = min(off["s"], (y0 - b.YMax)/2)
+            if xo and b.YMin >= y0 + W: off["n"] = min(off["n"], (b.YMin - y0 - W)/2)
+        off = {k: max(300.0, v) for k, v in off.items()}
+        X0, Y0 = x0 - off["w"], y0 - off["s"]; LL, WW = L + off["w"] + off["e"], W + off["s"] + off["n"]
+        walls = [box_at(X0, Y0, z, LL, t, H), box_at(X0, Y0 + WW - t, z, LL, t, H),
+                 box_at(X0, Y0, z, t, WW, H), box_at(X0 + LL - t, Y0, z, t, WW, H)]
+        add(doc, "FR_%s" % r["unit"], _fuse(walls))
 
 
 def build():

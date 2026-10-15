@@ -1,0 +1,236 @@
+{
+ "new": 28,
+ "others": 248,
+ "clashes": [
+  {
+   "a": "STAIR_S2",
+   "b": "GROW_BED",
+   "m3": 10.4
+  },
+  {
+   "a": "STAIR_S2",
+   "b": "MET_SCRUB",
+   "m3": 0.096
+  },
+  {
+   "a": "ELEV_SVC",
+   "b": "BMED_UPW_POLISH",
+   "m3": 0.612
+  },
+  {
+   "a": "STAIR_SERVICE",
+   "b": "YARD_PAD",
+   "m3": 0.054
+  },
+  {
+   "a": "DOCK_APRON_N",
+   "b": "SERVICE_DOOR_N",
+   "m3": 0.027
+  },
+  {
+   "a": "ELEV_DOCK",
+   "b": "YARD_PAD",
+   "m3": 1.296
+  },
+  {
+   "a": "FR_AFTERBURNER",
+   "b": "PROD_C5_C10",
+   "m3": 0.032
+  },
+  {
+   "a": "FR_AFTERBURNER",
+   "b": "PROD_C11_C18",
+   "m3": 0.032
+  },
+  {
+   "a": "FR_AFTERBURNER",
+   "b": "PROD_C19_C28",
+   "m3": 0.032
+  },
+  {
+   "a": "FR_AFTERBURNER",
+   "b": "NaOH_DIGEST",
+   "m3": 0.231
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "YARD_FENCE_W",
+   "m3": 0.036
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "UTIL_ROUGH_GHEX",
+   "m3": 0.045
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "CLEAR_ZNBR_AISLE",
+   "m3": 0.01
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "CLEAR_BACKUP_GEN",
+   "m3": 0.069
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "GEN_H2_BUFFER",
+   "m3": 0.108
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "GEN_EXHAUST_STUB",
+   "m3": 0.048
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "CLEAR_FUEL_CELL",
+   "m3": 0.013
+  },
+  {
+   "a": "FR_BACKUP_GEN",
+   "b": "KO_GEN_FC",
+   "m3": 0.015
+  },
+  {
+   "a": "FR_CRYO_ASU",
+   "b": "CRYO",
+   "m3": 3.86
+  },
+  {
+   "a": "FR_CRYO_ASU",
+   "b": "CRYO_H2",
+   "m3": 0.162
+  },
+  {
+   "a": "FR_CRYO_ASU",
+   "b": "CRYO_O2",
+   "m3": 0.162
+  },
+  {
+   "a": "FR_CRYO_ASU",
+   "b": "CRYO_N2",
+   "m3": 0.162
+  },
+  {
+   "a": "FR_CRYO_ASU",
+   "b": "CRYO_CO2",
+   "m3": 0.392
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "CRYO",
+   "m3": 8.051
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "COLD_BOX",
+   "m3": 0.78
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "REBOILER_COND",
+   "m3": 0.135
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "COMP_EXPAND",
+   "m3": 0.165
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "CRYO_AHU",
+   "m3": 0.008
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "CRYO_AHU_COND",
+   "m3": 0.006
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "FLUE_CAP",
+   "m3": 0.026
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "CRYO_N2",
+   "m3": 0.378
+  },
+  {
+   "a": "FR_CRYO_CO2",
+   "b": "VJ_002",
+   "m3": 0.006
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO",
+   "m3": 4.05
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_HX_Q4",
+   "m3": 0.099
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_DED_COOL",
+   "m3": 0.099
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_AHU",
+   "m3": 0.126
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_H2",
+   "m3": 0.23
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_O2",
+   "m3": 0.162
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_N2",
+   "m3": 0.162
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "CRYO_CO2",
+   "m3": 0.23
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "VJ_001",
+   "m3": 0.006
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "VJ_002",
+   "m3": 0.006
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "VJ_003",
+   "m3": 0.052
+  },
+  {
+   "a": "FR_FLUE_KO",
+   "b": "VJ_004",
+   "m3": 0.006
+  },
+  {
+   "a": "FR_MET_MELT",
+   "b": "WIRE_DRAW",
+   "m3": 0.16
+  },
+  {
+   "a": "STAIR_CLR_L1_S2",
+   "b": "GROW_BED",
+   "m3": 1.38
+  }
+ ]
+}
