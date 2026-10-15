@@ -2321,5 +2321,53 @@
   "register": "A-M-184",
   "needs_verification": true,
   "verification_test": "CAD weight per tank"
+ },
+ "spares_rule": {
+  "value": {
+   "bearing": [
+    0.1,
+    2
+   ],
+   "seal": [
+    0.2,
+    2
+   ],
+   "electronics": [
+    0.1,
+    1
+   ],
+   "instrument": [
+    0.1,
+    1
+   ],
+   "valve": [
+    0.05,
+    1
+   ],
+   "protection": [
+    0.1,
+    1
+   ],
+   "fastener": [
+    0.02,
+    4
+   ],
+   "support": [
+    0.0,
+    0
+   ],
+   "fabricated part": [
+    0.0,
+    0
+   ],
+   "motor": [
+    0.05,
+    1
+   ]
+  },
+  "units": "[fraction of installed, minimum] per category; motors per family",
+  "register": "A-M-185",
+  "needs_verification": true,
+  "verification_test": "Replace with failure-rate data from the first operating year (X-OPS-02)"
  }
 }
