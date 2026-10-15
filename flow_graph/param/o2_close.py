@@ -150,9 +150,9 @@ def tf(g):
     put('IA-CO2-RET', 0.0, 'no CO2 recycle into the cold box'); put('IA-ASU-CO2', v('IA-NOX-CO2'), 'CO2 out = CO2 in'); put('IA-ASU-O2', xs, 'O2 out = O2 in (combustion excess)')
     L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_co + ab_org, xs=xs)
     # --- CO2: light-limited bed, rest to methanol
-    bed = BED_M2*CO2_M2/1000; others = sum(v(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
-    put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {BED_M2} m2 x {CO2_M2:.1f} g/m2/d')
-    put('IA-HCO2-MEOH', v('S85') + others - bed, 'header CO2 the bed cannot fix'); put('S73', v('S73') + resid('CRYO_CO2'), 'cold-box CO2 to methanol by difference')
+    bed = BED_M2*CO2_M2/1000; veg = v('IA-VEG-CO2') if 'IA-VEG-CO2' in E else 0.0; others = sum(v(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
+    put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {BED_M2} m2 x {CO2_M2:.1f} g/m2/d')
+    put('IA-HCO2-MEOH', v('S85') + others - bed - veg, 'header CO2 the bed cannot fix'); put('S73', v('S73') + resid('CRYO_CO2'), 'cold-box CO2 to methanol by difference')
     co2m = v('S73') + v('IA-HCO2-MEOH')
     put('S74', co2m*3*2.016/44.01, 'CO2 + 3 H2'); put('S75', co2m*(1 + 3*2.016/44.01 - 18.015/44.01), '-> CH3OH (mass closed)'); put('IA-MEOH-H2O', co2m*18.015/44.01, '+ H2O')
     put('IA-MEOH-PROD', v('IA-MEOH-PROD') + resid('MEOH_TANK'), 'methanol product by difference'); put('IA-MEOH-COND', v('IA-MEOH-COND') + resid('MEOH_COND'), 'condensate to roof')
@@ -170,7 +170,7 @@ def tf(g):
 def close_o2(g):
     """After T6: O2 product = cold-box O2 + bed O2 + electrolyser O2; surplus to PROD_O2."""
     E = {e['stream_id']: e for e in g['edges']}; v = lambda k: float(E[k]['rate']['value'] or 0)
-    src = v('S87') + v('IA-ASU-O2') + v('IA-ELY-O2')
+    src = v('S87') + v('IA-ASU-O2') + v('IA-ELY-O2') + (v('IA-VEG-O2') if 'IA-VEG-O2' in E else 0.0)
     draw = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['from_unit_id'] == 'HDR_O2' and e['stream_id'] not in ('IA-O2-RET', 'IA-O2-PROD') and e['presence'] == 'present')
     E['S83']['rate']['value'] = round(src - v('IA-O2-MAKE'), 6); E['IA-O2-PROD']['rate']['value'] = round(src - draw, 6)
     assert src - draw > -1e-6, ('O2 short', src, draw)

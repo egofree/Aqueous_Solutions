@@ -15,6 +15,11 @@ BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = 2.77, 36.24, 0.43, 0.45   # 
 BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
+# BVAD2022 Table 4-90/4-91: edible fresh g/m2/d -> kg, inedible fresh kg/m2/d, CO2 g/m2/d, O2 g/m2/d, transpiration kg/m2/d
+BVAD_CROP = {'tomato': (0.17376, 0.12743, 36.24, 26.36, 2.77), 'pepper': (0.14894, 0.12743, 33.98, 24.71, 2.77), 'lettuce': (0.13135, 0.0073, 10.70, 7.78, 2.10),
+             'spinach': (0.07297, 0.0073, 10.70, 7.78, 1.77), 'cabbage': (0.07578, 0.00674, 9.88, 7.19, 1.77), 'onion': (0.08182, 0.0225, 16.50, 12.00, 1.74)}
+VEG_PROXY = {'TOMATO': 'tomato', 'CUCUMBER': 'tomato', 'PEPPER': 'pepper', 'LETTUCE': 'lettuce', 'SPINACH': 'spinach', 'KALE': 'cabbage',
+             'ALLIUM': 'onion', 'BASIL': 'lettuce', 'ROSEMARY': 'spinach'}
 def _resid(g, u):
     from flow_graph.param.balance import _unit_resid; return _unit_resid(g, u)
 def _ps():
@@ -90,4 +95,21 @@ def tf(g, ps=None):
     lines = ('IA-RES-01', 'IA-COMP-01', 'IA-GOAT-TRIM', 'IA-STRAW'); claim = sum(E[k]['rate']['value'] for k in lines)
     N['GROW_BED']['params']['crop_carbon'] = {'co2_fixed_kg_d': round(co2f, 3), 'dm_kg_d': round(dm, 3), 'edible_fresh_kg_d': round(ed, 3), 'inedible_fresh_kg_d': round(ined, 3),
         'inedible_lines_claimed_kg_d': round(claim, 3), 'gap_kg_d': round(claim - ined, 3), 'basis': 'BVAD2022 tomato; A-M-141; Q-008'}
-    return dict(ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
+    # VEG_BED crops (A-M-142): harvest is the study need; area, CO2 uptake, O2, transpiration and trim per BVAD2022 Tables 4-90/4-91 per m2.
+    # The crops had no carbon source on the graph; CO2 now comes from HDR_CO2 (taken off the methanol feed in o2_close), O2 joins CRYO_O2.
+    for sid, a, b, ph, what, comp in (('IA-VEG-CO2', 'HDR_CO2', 'VEG_BED', 'G', 'CO2 uptake, vegetable crops', {'CO2': 1.0}), ('IA-VEG-O2', 'VEG_BED', 'CRYO_O2', 'G', 'photosynthetic O2, vegetable crops', {'O2': 0.99, 'Ar': 0.01}),
+                                       ('IA-VEG-VAP', 'VEG_BED', 'CRYO_AHU', 'G', 'vegetable-crop transpiration', {'H2O': 1.0})):
+        if sid not in E: g['edges'].append(_edge(sid, a, b, ph, ['mass'], what, 0, 'kg/d', 'FARM', 'CRYO', comp)); E[sid] = g['edges'][-1]
+    tot = dict(A=0.0, co2=0.0, o2=0.0, t=0.0, ined=0.0); rows = {}
+    for crop, proxy in VEG_PROXY.items():
+        h = E[f'IA-CROP_{crop}-HAB']['rate']['value']; ed, ined_m2, co2_m2, o2_m2, t_m2c = BVAD_CROP[proxy]; A = h/ed
+        rows[crop] = dict(proxy=proxy, area_m2=round(A, 3)); tot['A'] += A; tot['co2'] += A*co2_m2/1000; tot['o2'] += A*o2_m2/1000; tot['t'] += A*t_m2c; tot['ined'] += A*ined_m2
+    put('IA-VEG-CO2', tot['co2'], f"{tot['A']:.2f} m2 of crops at BVAD2022 CO2 uptake"); put('IA-VEG-O2', tot['o2'], 'BVAD2022 O2 production')
+    put('IA-VEG-VAP', tot['t'], 'BVAD2022 transpiration'); put('IA-VEG-TRIM', tot['ined'], 'BVAD2022 inedible fresh biomass to larvae')
+    r = _resid(g, 'VEG_BED'); put('IA-VEG-SUMP', E['IA-VEG-SUMP']['rate']['value'] + r, 'bed return closes the crop water')
+    if 'IA-SUMP-MU' not in E:
+        g['edges'].append(_edge('IA-SUMP-MU', 'ROOF_TANK', 'FISH_SUMP', 'L', ['mass'], 'aquaponic loop make-up (crop transpiration)', 0, 'kg/d', 'GEO', 'FARM', {'H2O': 1.0})); E['IA-SUMP-MU'] = g['edges'][-1]
+    put('IA-SUMP-MU', 0.0, 'reset'); put('IA-SUMP-MU', max(0.0, -_resid(g, 'FISH_SUMP')), 'make-up = water the crops transpired off the loop; AHU condensate returns it to the roof tank')
+    r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, 'frass closes the larvae bin')
+    N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
+    return dict(veg=tot, ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
