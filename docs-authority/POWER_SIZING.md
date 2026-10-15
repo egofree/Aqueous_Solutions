@@ -50,3 +50,12 @@ Rev B (X-RSZ-02, 2026-10-15). The bounding case is booked on the graph: PV_ARRAY
 2. PV at 758–984 kWp needs 3792–4918 m², far beyond the plate. Owner choices: a utility service, a smaller plant rate, or load reduction. None is taken here.
 3. Pumped hydro (HYDRO_SET, about 7 kWh recoverable) does not change the result.
 4. The backup generator and the H₂ store must grow with the critical list, or the critical list must shrink.
+
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Roof PV access | NFPA 1-2021 11.12; IFC 2021 1205.3 |
+| Energy storage | NFPA 855-2023 |
+| Ventilation fans | ISO 16798-3:2017 |
+| PV modelling | NREL PVWatts v8; IEC 61724-1:2021 performance monitoring |

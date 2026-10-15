@@ -35,3 +35,12 @@ Below 2 wt% the Perry fits are not tabulated; the 2 wt% row is used, which over-
 1. With the column working, the vent condenser alone holds the vent below the 1 ppmv target (0.63 ppmv). The scrubber covers start-up and column upsets (490 ppmv).
 2. The HCl load is milligrams per day in both cases. The NaOH draw changes the NaOH balance by 1.0e-03 mol/d, far inside the 1 % gate.
 3. The size is set by minimum practical dimensions (DN, bed stage, wetting), not by the mass transfer.
+
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Vapour exhaust duct | NFPA 91-2020 |
+| Corrosive liquid handling | NFPA 400-2022 ch. 13 |
+| PVC-U pipe | ISO 1452-2:2009 (ASTM D1785 sizes) |
+| Exposure limit basis | ACGIH TLV-C 2 ppm HCl; ISO 16000 / NIOSH 7903 sampling |

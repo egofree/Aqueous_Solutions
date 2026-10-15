@@ -18,3 +18,11 @@ Rule: IFC 2021 5003.9.8 and NFPA 400 (2022) 6.1.12.1: incompatible materials abo
 | WS_PHOS | WS_KOH | 3329 | yes | pass |
 
 Failing pairs: 0.
+
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Incompatible storage separation | NFPA 400-2022 6.1.12.1; IFC 2021 5003.9.8 |
+| Safety signs at bunds and cabinets | ISO 7010:2019; NFPA 704-2022 hazard diamond |
+| Corrosive and oxidizer quantities | NFPA 400-2022 ch. 13 and 15 |

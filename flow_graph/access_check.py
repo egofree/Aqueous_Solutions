@@ -43,3 +43,5 @@ hdr = ['# Access and electrical working-space check', '', 'Document: AQS-BLD-012
        'Basis: NEC 2023 110.26(A)(1)-(2); NFPA 101 (2024) 7.3.4.1.1 and IBC 2021 1018.5 minimum 914 mm clear width. Travel distance and exit count are in AQS-EGR-001 (EGRESS_CALC.md) and are not repeated here. '
        'Room walls other than the X=15000 partition are not modelled as obstacles (A-M-101).', '']
 open('docs-authority/ACCESS_CHECK.md','w').write('\n'.join(hdr+lines)+'\n'); print('\n'.join(lines)); sys.exit(1 if bad else 0)
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from flow_graph.param import code_basis as _CB; _CB.append(_CB.PATHS['ACCESS_CHECK'], 'ACCESS_CHECK')

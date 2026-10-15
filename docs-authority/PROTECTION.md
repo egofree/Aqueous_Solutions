@@ -146,3 +146,12 @@ Crushed rock 0.1 m, ≥ 3000 Ω·m, is kept on the outdoor yard (ZNBR2, MeOH tra
 ## 5. Held
 
 Inverter fault data from the vendor; device time-current curves of the chosen brand; re-run when X-ELS-05 changes the sources or the utility interconnection study gives the available fault current.
+
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Overcurrent and coordination | NFPA 70-2023 Art. 240; 240.87 |
+| Short-circuit method | IEC 60909-0:2016 (inverter-limited study) |
+| Grounding, touch and step | IEEE 80-2013; NFPA 70-2023 Art. 250 |
+| Arc flash | NFPA 70E-2024 130.5 |

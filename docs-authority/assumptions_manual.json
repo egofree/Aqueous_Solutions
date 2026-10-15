@@ -1768,5 +1768,21 @@
   "sensitivity": "Service voltage from the utility study (A-M-113) may change the MV level and transformer ratio",
   "replaced_by": "Utility interconnection agreement and switchgear selection",
   "verification_test": "Utility service voltage; short-circuit and coordination study with the utility source"
+ },
+ {
+  "id": "A-M-115",
+  "task": "X-STD-01",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/_egress_hall.py",
+   "flow_graph/param/code_basis.py"
+  ],
+  "value": "Hall classed general industrial ordinary hazard, sprinklered (NFPA 13); 9.29 m2/person; travel 76.2 m governs (NFPA 101 Table 40.2.6); doors as 1626 mm clear pairs at 90 m spacing; 2.2 m 2 h exit passageway at mid-depth; rectilinear travel bound on a 2 m grid; code editions per AQS-STD-002",
+  "units": "m, m2/person",
+  "where": "AQS-EGR-002, AQS-STD-002",
+  "basis": "NFPA101_2024, IBC2021_CH10, NFPA13_2022",
+  "sensitivity": "Low-hazard contents remove the travel limit and the passageway; high-piled storage changes sprinkler design",
+  "replaced_by": "Hall programme and AHJ review",
+  "verification_test": "Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model"
  }
 ]

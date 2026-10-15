@@ -78,3 +78,12 @@ From the Perry tables, vapour over the 20 wt% body liquid at 101.3 kPa carries 1
 | d | counter-current column on the body, feed at the top (adopted) | 1.076 | no reflux; top vapour 0.50 wt% HCl against 0.34 wt% equilibrium over the feed; recycle 4.32 kg/d HCl to BMED_ACID |
 
 Adopted: option d, the smallest complete system. The feed enters the top of a packed column standing on the body frame; liquid runs down against the body vapour and reaches the body at 20 wt%; no reflux is drawn, so the blower duty rises only by the recycled water. 4 ideal stages above the body (stage count from the Perry VLE), packed 3000 mm at HETP 500 mm x 1.5 (PERRY9_ABS, A-M-108), DN150 at 1.0 m/s vapour, column height 3800 mm, free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body. Condensate 0.5 wt% HCl (4.32 kg/d) returns to BMED_ACID with the make-up water and comes back in the feed: the feed rises to 1304.5 kg/d and the water off to 865.0 kg/d; BMED current is unchanged (recycled HCl is not generated). Owner may override, for example with option a if a near-zero-HCl condensate is wanted.
+
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Pressure relief, fire case | ISO 23251:2019 (API 521); ISO 4126-1:2013 (API 520) |
+| Corrosive liquid handling | NFPA 400-2022 ch. 13 |
+| Fasteners | ISO 898-1:2013; ISO 3506-1:2020 |
+| Pressure equipment practice | ISO 16528-1:2007 (ASME VIII-1 study basis) |

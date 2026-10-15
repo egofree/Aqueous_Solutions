@@ -8212,10 +8212,10 @@
           "T_K": 405.3,
           "M_kg_kmol": 18.02,
           "k": 1.33,
-          "A_req_mm2": 34.01,
+          "A_req_mm2": 34.0,
           "orifice": "API 526 D (71 mm2)",
           "adequate": true,
-          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "computed_by": "flow_graph/param/evap_design.py (ISO23251; API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
             "W_kg_h": 43.25,
@@ -8226,8 +8226,7 @@
             "A_req_mm2": 16.642,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
-          },
-          "bore_req_mm": 6.58
+          }
         },
         "design_kPa": 100.0
       },
@@ -8305,7 +8304,7 @@
           "A_req_mm2": 33.98,
           "orifice": "API 526 D (71 mm2)",
           "adequate": true,
-          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "computed_by": "flow_graph/param/evap_design.py (ISO23251; API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
             "W_kg_h": 39.96,
@@ -8316,8 +8315,7 @@
             "A_req_mm2": 15.376,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
-          },
-          "bore_req_mm": 6.58
+          }
         },
         "design_kPa": 100.0
       },

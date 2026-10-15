@@ -32,6 +32,10 @@ def main(write=False):
     if write: write_doc(d, s)
 
 def write_doc(d, s):
+    _write_doc(d, s)
+    from . import code_basis as CB; CB.append(CB.PATHS['VENT_SCRUBBER'], 'VENT_SCRUBBER')
+
+def _write_doc(d, s):
     x = s['vs']; u, n = x['upset'], x['normal']
     md = f"""# EVAP_ACID vent scrubber
 

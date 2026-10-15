@@ -259,3 +259,12 @@ flowchart LR
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.
 5. Grid export (D75, owner decision 2026-10-15). PV is sized at 2.0 x the balancing nameplate (1697 of 3394 kWp). Inverters at the NREL PVWatts DC/AC ratio 1.2: 48 × 60 = 2880 kW inverters. The inverters are split into 5 collection sections at 480 V, each through a pad-mount transformer to the 12.47 kV collection bus; the plant bus hangs on CB-1 (AQS-ELEC-008). Clear-day export at noon with storage full is up to 2635 kW, about 7344 kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
 
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Interconnected sources | NFPA 70-2023 Art. 705 |
+| Overcurrent protection | NFPA 70-2023 240.6(A), Art. 240 |
+| Energy storage | NFPA 70-2023 Art. 706; NFPA 855-2023 |
+| Interconnection | IEEE 1547-2018; UL 1741 SB |
+| Electrical safety in operation | NFPA 70E-2024; ISO 45001:2018 management system |

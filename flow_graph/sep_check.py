@@ -20,3 +20,5 @@ md = ['# Incompatible hazardous-material separation', '', 'Document: AQS-BLD-011
       'Incompatible pairs per NOAA CAMEO Chemicals reactivity groups. Cabinets are not credited here. The 1 h partition at X=15000 is credited as a barrier (A-M-100).', '',
       '| Row A | Row B | Edge gap (mm) | 1 h partition between | Result |', '|---|---|---|---|---|'] + rows + ['', f'Failing pairs: {bad}.']
 open('docs-authority/HAZMAT_SEPARATION.md','w').write('\n'.join(md)+'\n'); print('\n'.join(rows)); sys.exit(1 if bad else 0)
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from flow_graph.param import code_basis as _CB; _CB.append(_CB.PATHS['HAZMAT_SEPARATION'], 'HAZMAT_SEPARATION')

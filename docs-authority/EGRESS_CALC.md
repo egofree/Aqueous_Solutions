@@ -1,7 +1,7 @@
 # Means of egress — study calculation (NFPA 101 / IBC Ch. 10 themes)
 
 Document number: AQS-EGR-001  
-Revision: C
+Revision: D
 Date: 2026-10-01  
 Authority: AQS-BLD-001 Rev E, AQS-SITE-001 Rev B, AQS-HSE-001, AQS-CMP-001
 (CMP-NFPA-04 / CMP-OSH-01), `cad/freecad/params.py` at **SCALE_M = 1.0**.  
@@ -13,6 +13,7 @@ Jurisdiction assumed: USA (Dallas-class / Texas AHJ).
 | A | — | Study travel / exit-width / basement two-exit calc from locked CAD dims | 2026-10-01 |
 | B | 1 | Controlling-code rule (most restrictive); CRYO_EGRESS_* stubs; dock+ELEV_DOCK | 2026-10-01 |
 | C | 1 | Freeze-blocker pointer to AQS-MVS-GAP-001 §4.8 | 2026-10-01 |
+| D | 1 | X-STD-01: extension hall egress in AQS-EGR-002 (`HALL_EGRESS.md`); this document keeps the base plate. | 2026-10-15 |
 
 Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. No invented permits.
 

@@ -90,6 +90,10 @@ def options(d, e):
                  note=f'no reflux; top vapour {xD:.2f} wt% HCl against {yF:.2f} wt% equilibrium over the feed; recycle {e["recycle_hcl_kg_d"]:.2f} kg/d HCl to BMED_ACID')]
 
 def write_doc(d, s, R):
+    _write_doc(d, s, R)
+    from . import code_basis as CB; CB.append(CB.PATHS['EVAP_DESIGN'], 'EVAP_DESIGN')
+
+def _write_doc(d, s, R):
     A, B = R['EVAP_ACID'], R['EVAP_BASE']; c = A['column']; O = options(d, s['evap_acid'])
     keys = ['T_boil_C','T_cond_C','p_body_kPa','p_shell_kPa','ratio','water_kg_h','duty_kW','w_kJ_kg','comp_shaft_kW','comp_elec_kW','pump_kW','trim_kW','total_kW','kWh_per_t',
             'A_ff_m2','tubes','tube_id_mm','tube_L_mm','recirc_kg_h','shell_D_mm','height_mm','ix_Q_kW','ix_A_m2','T_feed_preheat_C','T_out_C']

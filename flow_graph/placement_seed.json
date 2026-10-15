@@ -324,6 +324,21 @@
         "EXT_HALL"
       ],
       "source": "X-PAR-07 extension north of the base plate. NORTH_DOCK opens into it; a 6 m truck lane to the north wall is reserved (accepted 2026-10-15)."
+    },
+    {
+      "block_id": "EXIT_PASSAGE_HALL",
+      "level": "L0",
+      "origin_mm": [
+        0,
+        85900
+      ],
+      "size_mm": [
+        186000,
+        2200,
+        6000
+      ],
+      "unit_ids": [],
+      "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 2.2 m clear, across the hall at mid-depth, discharging at both ends."
     }
   ],
   "units": [

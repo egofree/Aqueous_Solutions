@@ -92,3 +92,5 @@ out.append(f"""
 """)
 open('docs-authority/ONE_LINE.md','w').write('\n'.join(out)+'\n')
 print(json.dumps(dict(bus=bus,xf=xf,gen=gen,demand=demand)))
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from flow_graph.param import code_basis as _CB; _CB.append(_CB.PATHS['ONE_LINE'], 'ONE_LINE')
