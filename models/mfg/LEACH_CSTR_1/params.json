@@ -31,16 +31,16 @@
    "value": 1510,
    "note": "Spears engineering guide, CPVC specific gravity 1.51 [S3]."
   },
-  "temperature_check": "Liquor 77.5 C design, 70-85 C band (graph param liquor_T_C). CPVC limit 93 C [S3]; high trip 88 C (assumption). HX-5 coil and ports PVDF for Q3 water at 95 C (AQS-STD-002 3.2). Wall strength at temperature is held under the LEACH_CSTR_1 sizing task."
+  "temperature_check": "Liquor 77.5 C design, 70-85 C band (graph param liquor_T_C). CPVC limit 93 C [S3]; high trip 88 C (assumption). HX-5 is a glass coil (AQS-STD-002 3.3). Wall checked at 85 C in AQS-DUTY-050."
  },
  "assumptions": {
   "header_zone_mm": {
    "value": 60,
-   "note": "Assumption. Depth reserved on each Y face inside the envelope for the inlet and outlet headers."
+   "note": "Assumption. Depth reserved on each Y face inside the envelope for the inlet and outlet headers. Belts (56 mm) sit inside it on the Y faces."
   },
   "wall_mm": {
-   "value": 12,
-   "note": "From AQS-NZ-001 (CSTR_NOZZLE_SCHEDULE.md) sheet wall 12 mm, now PVC. Not checked against hydrostatic load; liquor density is held."
+   "value": 16,
+   "note": "AQS-DUTY-050: 5/8 in CPVC sheet; panel stress 1.37 MPa at the floor against 3.03 MPa allowable at 85 C (study)."
   },
   "floor_mm": {
    "value": 16,
@@ -71,6 +71,27 @@
   "port_pitch_mm": {
    "value": 70,
    "note": "Assumption. Ports spread along X about the face center at Z 700."
+  },
+  "belts": {
+   "z_mm": [
+    300,
+    560,
+    900
+   ],
+   "section": "FRP pultruded channel C203x56x6.4, web on the wall, wrapped all round",
+   "depth_mm": 56,
+   "height_mm": 203,
+   "web_mm": 6.4,
+   "density_kg_m3": 1900,
+   "note": "Study, AQS-DUTY-050. Density and allowable are assumptions pending the pultrusion vendor sheet."
+  },
+  "level_mm": {
+   "value": 1100,
+   "note": "Study working level, AQS-DUTY-050."
+  },
+  "liquor_density_kg_m3": {
+   "value": 1100,
+   "note": "Study. Dilute HCl with dissolved metal chlorides; replaced by a measured density."
   }
  },
  "hx5_coil": {
@@ -84,5 +105,18 @@
    "value": "two concentric helices D 600 and 900 mm, 11.5 turns at 50 mm pitch, 600 mm tall, on four PTFE pads at z 100 mm",
    "note": "Assumption. Envelope modeled as one annulus OD 925 / ID 575 x 600 mm."
   }
+ },
+ "agitator": {
+  "type": "4-blade 45 deg pitched-blade turbine, down-pumping",
+  "D_mm": 450,
+  "rpm": 150,
+  "Np": 1.27,
+  "shaft_W": 403,
+  "motor_kW": 0.75,
+  "shaft_od_mm": 50,
+  "impeller_z_mm": 250,
+  "wetted": "PVDF-sheathed shaft and solid PVDF impeller; no metal wetted (AQS-STD-002 M3)",
+  "drive": "gearmotor on a lid bridge, about 400 mm above the lid, outside the graph envelope (not modeled)",
+  "status": "study, AQS-DUTY-050"
  }
 }

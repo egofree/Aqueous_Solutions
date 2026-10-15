@@ -362,5 +362,96 @@
    "docs-authority/FEED_ASSAY.md"
   ],
   "id": "A-M-028"
+ },
+ {
+  "value": "1100",
+  "units": "kg/m3",
+  "where": "LEACH_CSTR_1 liquor density",
+  "basis": "Dilute HCl with dissolved metal chlorides; not measured",
+  "sensitivity": "Hydrostatic load and agitator power linear",
+  "replaced_by": "Density of a liquor sample",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-029"
+ },
+ {
+  "value": "1100",
+  "units": "mm",
+  "where": "LEACH_CSTR_1 working level",
+  "basis": "Leaves 288 mm freeboard below the lid; nozzles at 700",
+  "sensitivity": "Holdup and wall load",
+  "replaced_by": "Operating level set at commissioning",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-030"
+ },
+ {
+  "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
+  "units": "—",
+  "where": "LEACH_CSTR_1 agitator",
+  "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
+  "sensitivity": "Power with N cubed and D to the fifth",
+  "replaced_by": "Just-suspended speed test with a class A lot; vendor curve",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-031"
+ },
+ {
+  "value": "0.22",
+  "units": "derating factor",
+  "where": "CPVC allowable at 85 C",
+  "basis": "Interpolated from manufacturer CPVC derating tables on 2000 psi HDS",
+  "sensitivity": "Wall and panel thickness",
+  "replaced_by": "Manufacturer sheet-stock creep data at 85 C",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-032"
+ },
+ {
+  "value": "700",
+  "units": "MPa",
+  "where": "CPVC creep modulus at 85 C",
+  "basis": "Approximate long-term modulus; not sourced to one table",
+  "sensitivity": "Panel deflection only",
+  "replaced_by": "Manufacturer creep modulus",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-033"
+ },
+ {
+  "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
+  "units": "—",
+  "where": "LEACH_CSTR_1 FRP belts",
+  "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
+  "sensitivity": "Belt stress and deflection",
+  "replaced_by": "Pultrusion vendor data sheet",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-034"
+ },
+ {
+  "value": "0.75",
+  "units": "kW",
+  "where": "LEACH_CSTR_1 agitator motor",
+  "basis": "Shaft 403 W with gear and motor losses and start margin",
+  "sensitivity": "Load list",
+  "replaced_by": "Vendor motor rating",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/sizing/LEACH_CSTR_1.md"
+  ],
+  "id": "A-M-035"
  }
 ]

@@ -35,8 +35,10 @@ ST=[('01','Process basis and mass/energy closure','duty sheet section 1 with in 
 ('13','Fabrication route','docs-authority/fab/<UNIT>.md','10, 12'),
 ('14','Installation','installed position, supports, connections in the install sequence','13, X-BLD-05, X-ASM-01'),
 ('15','Test and commission','test procedure and acceptance record','14, X-COM-01')]
+DONE_U={('LEACH_CSTR_1', '02'): '`docs-authority/sizing/LEACH_CSTR_1.md` (AQS-DUTY-050)', ('LEACH_CSTR_1', '06'): '`docs-authority/sizing/LEACH_CSTR_1.md` §2 agitator, HX-5 coil'}
 def status(n,k):
     u=n['unit_id']; d=f'docs-authority/duties/{u}.md'
+    if (u,k) in DONE_U: return DONE_U[(u,k)]
     if k=='01':
         m=re.search(r'In ([\d.]+) kg/d, out ([\d.]+) kg/d',(n.get('params') or {}).get('duty') or '')
         if ex(d) and m and abs(float(m[1])-float(m[2]))<1e-6: return f'`{d}` §1; graph duty {m[1]} kg/d in = out'

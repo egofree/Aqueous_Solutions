@@ -181,3 +181,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-REG-001 | `docs-authority/DOC_REGISTER.md` | A | 2026-10-15 | Document number register | canonical |
 | AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | A | 2026-10-15 | Assumptions register | canonical |
 | AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | A | 2026-10-15 | Site basis — climate, wind, seismic, soil | canonical |
+| AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | A | 2026-10-15 | LEACH_CSTR_1 sizing | canonical |

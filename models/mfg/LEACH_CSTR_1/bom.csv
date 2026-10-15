@@ -10,3 +10,8 @@ item,description,qty,material,basis
 9,Cable gland boss IA-E-LEACH,1,CPVC,assumption; conductor not a hose
 10,HX-5 coil two concentric helices 25x3 mm tube 53.7 m 4.22 m2,1,borosilicate glass 3.3,AQS-DUTY-049; AQS-STD-002 3.3
 11,HX-5 coil support pad,4,PTFE,assumption
+12,Belt FRP pultruded channel C203x56x6.4 wrapped,3,FRP vinyl ester,AQS-DUTY-050 (study)
+13,Agitator 4-blade 45 deg PBT D450 solid PVDF impeller,1,PVDF,AQS-DUTY-050 (study)
+14,Agitator shaft D50 PVDF-sheathed,1,PVDF over steel core (not wetted),AQS-STD-002 M3
+15,Gearmotor 0.75 kW 150 rpm output on lid bridge,1,bought,AQS-DUTY-050 (study)
+16,Lid shaft seal,1,PTFE lip,assumption

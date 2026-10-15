@@ -2179,7 +2179,7 @@
       },
       "modules": [],
       "params": {
-        "V_m3": null,
+        "V_m3": 2.14,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -2236,7 +2236,7 @@
           ]
         },
         "duty": "In 5622.650 kg/d, out 5622.650 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
-        "internals": "none",
+        "internals": "agitator PBT D450 150 rpm; HX-5 glass coil (AQS-DUTY-050)",
         "design_kPa": 25.1,
         "relief_mm": 2.8,
         "size_mm": [
@@ -2267,6 +2267,18 @@
           "case": "glass_natural",
           "status": "study",
           "source": "AQS-DUTY-049"
+        },
+        "sizing": {
+          "level_mm": 1100,
+          "liquor_density_kg_m3": 1100,
+          "V_work_m3": 2.14,
+          "tau_h_EW04": 13.2,
+          "wall_mm": 16,
+          "belts": "FRP C203x56x6.4 at Z 300/560/900",
+          "agitator_shaft_W": 403,
+          "agitator_motor_kW": 0.75,
+          "status": "study",
+          "source": "AQS-DUTY-050"
         }
       }
     },

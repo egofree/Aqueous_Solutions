@@ -1,0 +1,87 @@
+{
+ "models/mfg/LEACH_CSTR_1/params.json header_zone_mm": {
+  "basis": "Room for the DN50 headers and the 56 mm belts on each Y face",
+  "replaced_by": "Fabrication drawing (unit task 11)",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json wall_mm": {
+  "basis": "AQS-DUTY-050 panel check at 85 C",
+  "replaced_by": "Manufacturer creep data; hydrotest",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json floor_mm": {
+  "basis": "AQS-NZ-001; floor bears on the slab",
+  "replaced_by": "Slab support drawing",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json lid_mm": {
+  "basis": "Non-pressure lid; spans the belts-free top",
+  "replaced_by": "Fabrication drawing",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json lid_flange_w_mm": {
+  "basis": "Room for M12 bolts with edge distance",
+  "replaced_by": "Fabrication drawing",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json lid_bolt": {
+  "basis": "AQS-STD-002 M4 non-metallic fasteners",
+  "replaced_by": "Gasket seating check (unit task 10)",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json header_od_mm": {
+  "basis": "ASTM D1785 2 in Sch 80 OD",
+  "replaced_by": "Port bore calculation (unit task 04)",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json port_od_mm_bore_not_calculated": {
+  "basis": "Placeholder",
+  "replaced_by": "Port bore calculation (unit task 04)",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json port_od_mm_dn20": {
+  "basis": "ASTM D1785 3/4 in OD for DN20 Q3 ports",
+  "replaced_by": "Port bore calculation (unit task 04)",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json port_pitch_mm": {
+  "basis": "Fits 25 ports on one header",
+  "replaced_by": "Fabrication drawing",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json belts": {
+  "basis": "AQS-DUTY-050 section 4",
+  "replaced_by": "Pultrusion vendor data",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json level_mm": {
+  "basis": "AQS-DUTY-050 section 1",
+  "replaced_by": "Commissioning level",
+  "sensitivity": ""
+ },
+ "models/mfg/LEACH_CSTR_1/params.json liquor_density_kg_m3": {
+  "basis": "AQS-DUTY-050 section 1",
+  "replaced_by": "Liquor sample density",
+  "sensitivity": ""
+ },
+ "graph LEACH_CSTR_1 continuous_kw": {
+  "basis": "AC parasitics share; agitator 0.75 kW now inside it",
+  "replaced_by": "X-ELS-02 load list from calculations",
+  "sensitivity": ""
+ },
+ "graph LEACH_CSTR_1 params.liquor_T_C": {
+  "basis": "GLOSSARY 70-85 C band, mid value",
+  "replaced_by": "Liquor temperature logged at commissioning",
+  "sensitivity": ""
+ },
+ "graph LEACH_CSTR_1 params.hx5_area_m2": {
+  "basis": "AQS-DUTY-049 four cases",
+  "replaced_by": "Coil heat-transfer test",
+  "sensitivity": ""
+ },
+ "graph LEACH_CSTR_1 params.hx5_coil": {
+  "basis": "AQS-DUTY-049 glass natural case",
+  "replaced_by": "Coil heat-transfer test",
+  "sensitivity": ""
+ }
+}
