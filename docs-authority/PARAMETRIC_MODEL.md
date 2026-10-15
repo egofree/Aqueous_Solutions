@@ -45,11 +45,12 @@ All solved units close.
 | BMED_ACID kW vs published SEC at 2 M | 26.928 | 26.928 | -0.0 % | EDBM_WHEY_2021 |
 | IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
 | IA-BASE-01 NaOH, kg/d | 5.059 | 5.059 | -0.0 % | GREENWOOD |
-| IA-NAOH-MU make-up, kg/d | 5.059 | 5.059 | +0.0 % | NaOH balance |
+| IA-NAOH-MU make-up, kg/d | 5.059 | 5.059 | -0.0 % | NaOH balance |
 | EVAP_ACID kW | 1.497 | 1.497 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_ACID water off, kg/d | 864.996 | 864.996 | -0.0 % | PERRY9_HCL |
 | EVAP_BASE kW | 1.324 | 1.324 | +0.0 % | X-MFG-30 in-house MVR design |
-| EVAP_BASE water off, kg/d | 799.194 | 799.194 | +0.0 % | PERRY9_HCL |
+| EVAP_BASE water off, kg/d | 799.193 | 799.193 | +0.0 % | PERRY9_HCL |
+| IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | -0.0 % | X-PAR-10, PERRY9_ABS |
 | EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_3 DC kW (cell + bus drop) | 2.249 | 2.249 | +0.0 % | CODATA2018, USBM_CL_EW |
@@ -60,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 1318.000 | 1317.779 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3376.000 | 3375.096 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -164,12 +165,26 @@ All solved units close.
 | evap_col_hetp_mm | 500.0 | mm HETP, 25 mm random rings | PERRY9_ABS | yes |
 | evap_col_margin | 1.5 | packed height margin on ideal stages x HETP | A-M-108 | yes |
 | evap_col_u_m_s | 1.0 | m/s superficial vapour velocity (below flooding for 25 mm rings at this load) | PERRY9_ABS | yes |
+| pv_oversize_factor | 2.0 | PV nameplate / PV needed to close the daily balance | A-M-109 | yes |
+| pv_dc_ac_ratio | 1.2 | DC kWp / inverter AC kW | NREL_PVWATTS8 | yes |
+| vs_air_mg_kg | 21.7 | mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water) | WEISS1970 | yes |
+| vs_T_C | 40.0 | C, vent condenser outlet | A-M-111 | yes |
+| vs_y_out_ppm | 1.0 | ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | ACGIH_HCL | yes |
+| vs_margin | 1.5 | packed height margin | A-M-111 | yes |
+| vs_dp_mm | 16.0 | mm, nominal packing (in-house cut PVC tube rings) | A-M-111 | yes |
+| vs_d_over_dp | 8.0 | column / packing diameter minimum (wall channelling) | PERRY9_ABS | — |
+| vs_a_m2_m3 | 340.0 | m2/m3 specific area of 16 mm rings | PERRY9_ABS | yes |
+| vs_mwr | 0.08 | m3/(m h) minimum wetting rate, packings below 75 mm | PERRY9_ABS | — |
+| vs_naoh_excess | 2.0 | mol NaOH fed / mol HCl absorbed | A-M-111 | yes |
+| vs_p_shell_case | "upset" | design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | A-M-111 | yes |
 
 ## 6. References
 
 | Key | Citation |
 | --- | --- |
+| ACGIH_HCL | ACGIH TLVs and BEIs (2023): hydrogen chloride TLV-Ceiling 2 ppm; NIOSH REL C 5 ppm. |
 | AHRI340_ASHRAE901 | ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360. |
+| ANSI_C12_20 | ANSI C12.20-2015, Electricity Meters 0.1, 0.2 and 0.5 Accuracy Classes (bidirectional revenue metering). |
 | API520 | API Standard 520 Part I, Sizing, Selection, and Installation of Pressure-relieving Devices, 10th ed. (2020): liquid A = Q/(38 Kd Kw Kc Kv) sqrt(G/(p1-p2)) (US units, eq. 32); gas critical flow A = W/(C K P1 Kb Kc) sqrt(T Z/M) (US units, eq. 3), C = 520 sqrt(k (2/(k+1))^((k+1)/(k-1))). |
 | ASCE7_22 | ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R). |
 | ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas. |
@@ -188,6 +203,7 @@ All solved units close.
 | IAPWS_IF97 | IAPWS, Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam (2007): region 4 saturation equation; latent heat of vaporisation 2257 kJ/kg at 100 C. |
 | IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K); Table C402.1.4 metal building wall U-0.094 Btu/h ft2 F (0.534 W/m2 K). |
 | IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2). |
+| IEEE1547_2018 | IEEE 1547-2018, Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (with 1547a-2020): abnormal-voltage Category II/III, ride-through, anti-islanding 2 s. |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding: eq. 29 (step), eq. 32 (touch), Cs eq. 27. |
 | IFC2021_1205 | International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access. |
 | IFC2021_5003 | International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
@@ -198,14 +214,19 @@ All solved units close.
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
+| NEC2023_705 | NFPA 70-2023 Article 705 Interconnected Electric Power Production Sources: 705.11 supply-side connection, 705.12 load-side 120 % rule, 705.20 disconnect, 705.30 overcurrent protection, 705.40 loss of primary source. |
+| NEC2023_706 | NFPA 70-2023 Article 706 Energy Storage Systems; NFPA 855-2023 installation of stationary ESS. |
 | NFPA1_2021_11_12 | NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3). |
 | NFPA400_2022 | NFPA 400, Hazardous Materials Code (2022) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8. |
+| NIOSH7903 | NIOSH Manual of Analytical Methods 7903, Acids, inorganic (HCl by ion chromatography). |
 | NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
+| NREL_NSRDB | Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8. |
 | NREL_PVWATTS | NREL PVWatts Calculator v8, site run recorded in AQS-SITE-002 (5.41 kWh/kWp/d). |
 | NREL_PVWATTS8 | Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input. |
 | PERRY7_HCL_VLE | Perry R.H., Green D.W. (eds), Perry's Chemical Engineers' Handbook, 7th ed., McGraw-Hill (1997), Table 2-9 Partial pressures of water over aqueous solutions of HCl and Table 2-10 Partial pressures of HCl over aqueous solutions of HCl, p. 2-76 (log10 p = A - B/T fits per wt% row; 8th ed. Tables 2-11/2-12). |
 | PERRY9 | Green D.W., Southard M.Z. (eds), Perry's Chemical Engineers' Handbook, 9th ed., McGraw-Hill (2019), sec. 2 physical properties (heat capacity of aqueous HCl and NaOH solutions); sec. 6 fluid transport (line sizing by velocity). |
 | PERRY9_ABS | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 14 equipment for gas-liquid operations: packed-column capacity by a flooding velocity u_f = C_s sqrt((rho_L - rho_G)/rho_G) with C_s from the packing correlation or vendor; design at 0.7-0.8 of flood; height Z = HTU x NTU; for absorption with negligible equilibrium back-pressure (fast reaction, m y* ~ 0) NTU = ln(y_in/y_out). |
+| PERRY9_DIFF | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 transport properties: Fuller, Schettler and Giddings (1966) gas diffusivity with atomic diffusion volumes (H 2.31, Cl 21.0, air 19.7). |
 | PERRY9_EVAP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 11 heat-transfer equipment, evaporators: falling-film evaporators, overall coefficients, minimum wetting rate and recirculation; mechanical vapour recompression. |
 | PERRY9_HCL | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 and sec. 13: HCl-water maximum-boiling azeotrope 20.2 wt% HCl at 108.6 C, 101.3 kPa; below the azeotrope the vapour is water-rich, so boiling concentrates the liquid toward 20.2 wt%; density of 2 M HCl 1.032 kg/L and of 2 M NaOH 1.081 kg/L at 20 C. |
 | PERRY9_MAT | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 25 materials of construction: impervious (resin-impregnated) graphite resists hydrochloric acid at all concentrations to the boiling point; nickel 200/201 for hot caustic soda. |
@@ -213,9 +234,12 @@ All solved units close.
 | PERRY9_PUMP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 10 transport of fluids: pump hydraulic power P = rho g Q H; shaft power = hydraulic / efficiency. |
 | ROARK8 | Young W.C., Budynas R.G., Sadegh A.M., Roark's Formulas for Stress and Strain, 8th ed., McGraw-Hill (2012): table 11.4 rectangular plates (long plate, uniform load, edges simply supported: sigma = beta q b^2 / t^2, y = alpha q b^4 / (E t^3)); table 8.1 beams (simply supported, uniform load: M = w L^2 / 8, y = 5 w L^4 / (384 E I)). |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
+| TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
+| UL1741_SB | UL 1741, 3rd ed. (2021), Supplement SB: inverters certified to IEEE 1547.1-2020 as grid-support utility-interactive. |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption. |
 | USBM_CL_EW | U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte. |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
+| WEISS1970 | Weiss R.F., The solubility of nitrogen, oxygen and argon in water and seawater, Deep-Sea Research 17 (1970) 721-735 (fresh water at 25 C, air-saturated: about 13.4 mg/kg N2 and 8.3 mg/kg O2). |
 | WILSON2006 | Wilson K.C., Addie G.R., Sellgren A., Clift R., Slurry Transport Using Centrifugal Pumps, 3rd ed., Springer (2006): deposition velocity and minimum bore for settling slurries. |
 
 ## 7. Verification list
@@ -297,6 +321,16 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver evap_col_hetp_mm | 500.0 mm HETP, 25 mm random rings | Pilot column composition profile |
 | driver evap_col_margin | 1.5 packed height margin on ideal stages x HETP | Pilot column |
 | driver evap_col_u_m_s | 1.0 m/s superficial vapour velocity (below flooding for 25 mm rings at this load) | Flooding check with the selected packing C_s (sizing/scrubber.py) |
+| driver pv_oversize_factor | 2.0 PV nameplate / PV needed to close the daily balance | NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility |
+| driver pv_dc_ac_ratio | 1.2 DC kWp / inverter AC kW | Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio |
+| driver vs_air_mg_kg | 21.7 mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water) | Vent gas flow meter on the column vent during commissioning |
+| driver vs_T_C | 40.0 C, vent condenser outlet | Vent condenser outlet temperature at design cooling water |
+| driver vs_y_out_ppm | 1.0 ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | Outlet HCl by NIOSH 7903 sampling |
+| driver vs_margin | 1.5 packed height margin | as vs_htu_m |
+| driver vs_dp_mm | 16.0 mm, nominal packing (in-house cut PVC tube rings) | Pressure drop and wetting test on the cut rings |
+| driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry |
+| driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate |
+| driver vs_p_shell_case | "upset" design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | Condensate titration during start-up before the column profile forms |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -405,3 +439,6 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-106 | Evaporator operating basis: body 101.3 kPa abs, 6 K driving  kPa, K, C, - | Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log |
 | A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials |
 | A-M-108 | EVAP_ACID counter-current column, feed at the top, no reflux wt%, mm, m/s | Pilot: titrate condensate and column bottoms; flooding check with the packing C_s |
+| A-M-109 | PV nameplate = 2.0 x balancing nameplate; design cloudy day  -, kW, kWh | NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2 |
+| A-M-110 | Grid export through a supply-side connection (NEC 2023 705.1 - | Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid |
+| A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate |

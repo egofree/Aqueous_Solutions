@@ -200,5 +200,6 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | A | 2026-10-15 | Incompatible hazardous-material separation check | canonical |
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | A | 2026-10-15 | Access aisle and NEC 110.26 working-space check | canonical |
 | AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | A | 2026-10-15 | In-house MVR evaporators: design, interchange, relief | canonical |
+| AQS-DUTY-061 | `docs-authority/sizing/VENT_SCRUBBER.md` | A | 2026-10-15 | EVAP_ACID vent scrubber sizing | canonical |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | canonical |
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | canonical |

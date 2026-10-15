@@ -61,7 +61,7 @@ def main():
         N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
         for u, r in R.items():
             p = N[u]['params']; p['design'] = {k: v for k, v in r.items() if not k.startswith('relief')}
-            p['size_mm'] = [r['shell_D_mm'] + 900 + (r['column']['DN'] + 250 if r.get('column') else 0), max(800, r['shell_D_mm'] + 400), r['height_mm']]
+            p['size_mm'] = [r['shell_D_mm'] + 900 + (r['column']['DN'] + 250 if r.get('column') else 0), max(800, r['shell_D_mm'] + 400) + (500 if u == 'EVAP_ACID' else 0), r['height_mm']]   # EVAP_ACID frame also carries EVAP_ACID_VS (X-PAR-10)
             p['size_note'] = 'L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)'
             p['relief_mm'] = round(math.sqrt(4*71.0/math.pi), 2)
             p['relief_basis'] = dict(r['relief_body'], computed_by=f"flow_graph/param/evap_design.py ({cite('ISO23251')}; {cite('API520')})", shell_side=r['relief_shell'])

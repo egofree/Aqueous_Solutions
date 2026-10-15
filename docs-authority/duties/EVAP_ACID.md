@@ -18,7 +18,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 5. Instruments. Product density or conductivity controls the concentration and holds it below the azeotrope; level, temperature, compressor current. High level trips the feed.
 
-6. Relief. Sized in-house (AQS-DUTY-060 section 3). Body: fire case ISO 23251 / API 521, 41.32 kg/h at 222.3 kPa abs, 34.0 mm2 required, API 526 D orifice, set 100 kPa g. Shell: blocked outlet 40.19 kg/h, 15.465 mm2, D orifice, set 350 kPa g. API 520 Part I / ISO 4126-1. Vent to ACID_POLISH_SCRUB.
+6. Relief. Sized in-house (AQS-DUTY-060 section 3). Body: fire case ISO 23251 / API 521, 41.32 kg/h at 222.3 kPa abs, 34.0 mm2 required, API 526 D orifice, set 100 kPa g. Shell: blocked outlet 43.25 kg/h, 16.642 mm2, D orifice, set 350 kPa g. API 520 Part I / ISO 4126-1. Relief discharge to ACID_POLISH_SCRUB. Process vent (non-condensables, 29 g/d) through the vent condenser to EVAP_ACID_VS (AQS-DUTY-061, X-PAR-10).
 
 7. Code. Built in-house to an open design (X-MFG-30); no bought skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001). Model `models/mfg/EVAP_ACID/export/evap_acid.step`; envelope `cad/stl/EVAP_ACID.stl`. Production route `docs-authority/fab/EVAP_ACID.md`.
 

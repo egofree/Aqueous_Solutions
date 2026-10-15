@@ -22,7 +22,7 @@ Flat 24 h profile (continuous process; study). PV yield 5.41 kWh/kWp/d before lo
 | Bus demand incl. EXT_HALL, kW | 243.4 | 210.3 | PV average to plant 232.8 |
 | Energy, kWh/d | 5842 | 5047 | — |
 | PV balancing nameplate, kWp | 1687 | 1458 | 1688 |
-| PV nameplate at 2.0 x, kWp (roof only) | 3375 | 2916 | 3375 |
+| PV nameplate at 2.0 x, kWp (roof only) | 3375 | 2916 | 3376 |
 | PV array area on the roof, m² | 29,740 | — | 29,740 |
 | Storage energy, kWh | 3408 | 2944 | 3409 |
 | Storage charge / discharge, kW | 1107 / 243 | 956 / 210 | 1107 / 244 |

@@ -1703,5 +1703,22 @@
   "sensitivity": "Utility fault current raises the bus fault level and the earth-fault current; mesh voltage scales with it",
   "replaced_by": "Utility interconnection study and service agreement; Wenner soil test",
   "verification_test": "Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid"
+ },
+ {
+  "id": "A-M-111",
+  "task": "X-PAR-10",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/vent_scrubber.py",
+   "flow_graph/param/sizing/scrubber.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "value": "Vent = air dissolved in the feed (21.7 mg/kg) saturated at a 40 C vent condenser; design case column bypassed (condensate 17.1 wt% HCl); outlet 1 ppmv; gas-film HTU by Fick film of half the 16 mm ring size; 0.5 m minimum bed; NaOH bleed 2 x HCl; 20 L sump charge; pump 10 m head at 40 %",
+  "units": "mg/kg, C, ppmv, m, L",
+  "where": "drivers vs_*",
+  "basis": "WEISS1970, PERRY7_HCL_VLE, ACGIH_HCL, PERRY9_DIFF, TREYBAL3, PERRY9_ABS",
+  "sensitivity": "HCl load is milligrams per day; size is set by minimum practical dimensions, not by mass transfer",
+  "replaced_by": "Commissioning measurements",
+  "verification_test": "Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate"
  }
 ]

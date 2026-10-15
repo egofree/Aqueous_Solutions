@@ -621,5 +621,76 @@
   "needs_verification": true,
   "verification_test": "Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio",
   "published": "NREL PVWatts v8 default DC to AC size ratio 1.2"
+ },
+ "vs_air_mg_kg": {
+  "value": 21.7,
+  "units": "mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water)",
+  "ref": "WEISS1970",
+  "needs_verification": true,
+  "register": "A-M-111",
+  "verification_test": "Vent gas flow meter on the column vent during commissioning"
+ },
+ "vs_T_C": {
+  "value": 40.0,
+  "units": "C, vent condenser outlet",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Vent condenser outlet temperature at design cooling water"
+ },
+ "vs_y_out_ppm": {
+  "value": 1.0,
+  "units": "ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm)",
+  "ref": "ACGIH_HCL",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Outlet HCl by NIOSH 7903 sampling"
+ },
+ "vs_margin": {
+  "value": 1.5,
+  "units": "packed height margin",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "as vs_htu_m"
+ },
+ "vs_dp_mm": {
+  "value": 16.0,
+  "units": "mm, nominal packing (in-house cut PVC tube rings)",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Pressure drop and wetting test on the cut rings"
+ },
+ "vs_d_over_dp": {
+  "value": 8.0,
+  "units": "column / packing diameter minimum (wall channelling)",
+  "ref": "PERRY9_ABS",
+  "needs_verification": false
+ },
+ "vs_a_m2_m3": {
+  "value": 340.0,
+  "units": "m2/m3 specific area of 16 mm rings",
+  "ref": "PERRY9_ABS",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Measured ring geometry"
+ },
+ "vs_mwr": {
+  "value": 0.08,
+  "units": "m3/(m h) minimum wetting rate, packings below 75 mm",
+  "ref": "PERRY9_ABS",
+  "needs_verification": false
+ },
+ "vs_naoh_excess": {
+  "value": 2.0,
+  "units": "mol NaOH fed / mol HCl absorbed",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Sump pH above 12 at the bleed rate"
+ },
+ "vs_p_shell_case": {
+  "value": "upset",
+  "units": "design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Condensate titration during start-up before the column profile forms"
  }
 }

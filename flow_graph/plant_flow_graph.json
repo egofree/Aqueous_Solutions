@@ -3573,7 +3573,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 232.7954,
+        "value": 232.8192,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -3581,13 +3581,13 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6750,
+        "count": 6752,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 3375,
+        "nameplate_kw": 3376,
         "area_m2": 29740,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
@@ -3858,8 +3858,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2576.6,
-          "export_kWh_d_clear": 7303,
+          "export_peak_kW": 2576.5,
+          "export_kWh_d_clear": 7304,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         }
@@ -8126,7 +8126,7 @@
         "mvr_kWh_per_t": 41.5,
         "size_mm": [
           1650,
-          800,
+          1300,
           3800
         ],
         "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
@@ -8184,10 +8184,10 @@
           "T_K": 405.3,
           "M_kg_kmol": 18.02,
           "k": 1.33,
-          "A_req_mm2": 34.01,
+          "A_req_mm2": 34.0,
           "orifice": "API 526 D (71 mm2)",
           "adequate": true,
-          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "computed_by": "flow_graph/param/evap_design.py (ISO23251; API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
             "W_kg_h": 43.25,
@@ -8198,8 +8198,7 @@
             "A_req_mm2": 16.642,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
-          },
-          "bore_req_mm": 6.58
+          }
         },
         "design_kPa": 100.0
       },
@@ -8277,7 +8276,7 @@
           "A_req_mm2": 33.98,
           "orifice": "API 526 D (71 mm2)",
           "adequate": true,
-          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "computed_by": "flow_graph/param/evap_design.py (ISO23251; API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
             "W_kg_h": 39.96,
@@ -8288,8 +8287,7 @@
             "A_req_mm2": 15.376,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
-          },
-          "bore_req_mm": 6.58
+          }
         },
         "design_kPa": 100.0
       },
@@ -8327,6 +8325,42 @@
         "note": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 40.43 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.54 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days)."
       },
       "class": "building"
+    },
+    {
+      "unit_id": "EVAP_ACID_VS",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "DN": 150,
+        "packed_mm": 500,
+        "height_mm": 1400,
+        "sump_L": 20.0,
+        "material": "PVC-U pipe and fittings (ASTM D1785 Sch 80), in-house cut PVC tube rings, PVC mesh demister (PERRY9_MAT: PVC to 60 C in HCl and NaOH)",
+        "y_in_ppm_design": 489.8,
+        "y_out_ppm": 1.0,
+        "design_case": "upset: column bypassed (A-M-111)",
+        "size_mm": [
+          400,
+          400,
+          1400
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)",
+        "doc": "AQS-DUTY-061"
+      },
+      "notes": "Packed PVC alkali scrubber on the EVAP_ACID column vent; NaOH bleed from BMED_BASE; spent liquor to BMED_ACID. Duty sheet docs-authority/duties/EVAP_ACID_VS.md.",
+      "continuous_kw": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
+      }
     }
   ],
   "edges": [
@@ -10211,7 +10245,7 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 502.7933,
+        "value": 502.7938,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Brine to BMED_BASE closing the stack balance with the condensate return."
@@ -15278,7 +15312,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 232.7954,
+        "value": 232.8192,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -32464,10 +32498,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 864.9957,
+        "value": 864.9665,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -32549,7 +32583,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1301.7169,
+        "value": 1301.7164,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 96.46 kg/d NaOH / 0.0741."
@@ -32575,7 +32609,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 799.1937,
+        "value": 799.1932,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_BASE."
@@ -32720,6 +32754,165 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": "X-PAR-07 extension hall feed"
+    },
+    {
+      "stream_id": "IA-EVAP_ACID-VENT",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "column vent: non-condensables, water vapour, trace HCl",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0292,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Air from the feed (WEISS1970) saturated at the vent condenser; design case 490 ppmv HCl."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-VS-NAOH",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "NaOH 2 M bleed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0005,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.008 mmol/d = 2.0 x HCl absorbed."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "params": {
+        "NaOH_mol_d": 0.001008082
+      }
+    },
+    {
+      "stream_id": "IA-VS-SPENT",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "BMED_ACID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent scrub liquor (NaCl in NaOH) to the BMED brine",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0006,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Bleed plus HCl absorbed."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-VS-OFF",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "ALK_SCRUBBER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubbed vent to the house acid-gas header",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0292,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.0 ppmv HCl."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SF-EVAP_ACID_VS",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Feed equal to continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SQ-EVAP_ACID_VS",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [

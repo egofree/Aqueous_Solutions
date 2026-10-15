@@ -53,7 +53,7 @@ def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
     return r
 
 SIO2 = mw({'Si':1,'O':2})
-def naoh_balance(d, g, hcl_mol):
+def naoh_balance(d, g, hcl_mol, vs_mol=0.0):
     """NaOH demand and make-up. Precipitation: one NaOH per chloride [GREENWOOD]. Digest: SiO2 + 2 NaOH
     [GREENWOOD] on the dissolved cullet (IA-GLASS-03 less S08G, all as SiO2, bounding). BMED makes NaOH 1:1
     with the leach HCl. Make-up = demand - BMED, no credit for sodium returned in the silicate liquor (worst case)."""
@@ -61,8 +61,8 @@ def naoh_balance(d, g, hcl_mol):
     ppt = hcl_mol*DR.val(d,'ppt_naoh_per_cl')
     sio2 = max(0.0, R['IA-GLASS-03'] - R['S08G'])*1000/SIO2
     dig = sio2*DR.val(d,'digest_naoh_per_sio2')
-    mk = max(0.0, ppt + dig - hcl_mol)
-    return dict(ppt_mol=ppt, digest_mol=dig, bmed_mol=hcl_mol, makeup_mol=mk, makeup_kg_d=mk*NAOH/1000/DR.val(d,'naoh_makeup_form'),
+    mk = max(0.0, ppt + dig + vs_mol - hcl_mol)          # vs_mol: vent-scrubber bleed (X-PAR-10)
+    return dict(ppt_mol=ppt, digest_mol=dig, bmed_mol=hcl_mol, makeup_mol=mk, vs_mol=vs_mol, makeup_kg_d=mk*NAOH/1000/DR.val(d,'naoh_makeup_form'),
                 ppt_kg_d=ppt*NAOH/1000, digest_kg_d=dig*NAOH/1000)
 
 BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
@@ -87,12 +87,14 @@ def solve():
     R = {x['stream_id']: x['rate']['value'] for x in g['edges']}
     assert DR.val(d,'acid_conc_design_wt') < DR.val(d,'hcl_azeotrope_wt'), 'acid loop above the HCl azeotrope'
     ea = evap(d, R['IA-ACID-01']*DR.val(d,'acid_conc_design_wt'), DR.val(d,'bmed_product_wt_acid'), DR.val(d,'acid_conc_design_wt'), unit='EVAP_ACID')
-    nb = naoh_balance(d, g, la['hcl_mol_d'])
-    eb = evap(d, bm['base_kg_d'], DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'), unit='EVAP_BASE')
+    from .vent_scrubber import design as _vs
+    vs = _vs(d, ea)                                                       # X-PAR-10: NaOH bleed from BMED_BASE to the vent scrubber
+    nb = naoh_balance(d, g, la['hcl_mol_d'], vs['upset']['naoh_mol_d'])
+    eb = evap(d, bm['base_kg_d'] - vs['upset']['naoh_mol_d']*NAOH/1000, DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'), unit='EVAP_BASE')
     import subprocess, sys as _s, os as _o
     root = _o.path.dirname(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))))
     roof = json.loads(subprocess.run([_s.executable, 'docs-authority/_power_sizing.py'], cwd=root, capture_output=True, text=True, check=True).stdout)['roof']
-    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb, naoh=nb, roof=roof)
+    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb, naoh=nb, roof=roof, vs=vs)
 
 def check():
     d, g, s = solve(); E = {x['stream_id']: x for x in g['edges']}; N = {x['unit_id']: x for x in g['nodes']}
@@ -114,7 +116,11 @@ def check():
     for k,u in (('evap_acid','EVAP_ACID'),('evap_base','EVAP_BASE')):
         if u in N:
             cmp(f'{u} kW', N[u]['continuous_kw']['value'], s[k]['kW'], 'X-MFG-30 in-house MVR design')
-            cmp(f'{u} water off, kg/d', E[f'IA-{u}-COND']['rate']['value'], s[k]['water_kg_d'], 'PERRY9_HCL')
+            cmp(f'{u} water off, kg/d', E[f'IA-{u}-COND']['rate']['value'] + (E['IA-EVAP_ACID-VENT']['rate']['value'] if u=='EVAP_ACID' and 'IA-EVAP_ACID-VENT' in E else 0), s[k]['water_kg_d'], 'PERRY9_HCL')
+    if 'IA-VS-NAOH' in E:
+        cmp('IA-VS-NAOH NaOH, mol/d', E['IA-VS-NAOH']['params']['NaOH_mol_d'], s['vs']['upset']['naoh_mol_d'], 'X-PAR-10, PERRY9_ABS')
+        bal = nb['ppt_mol'] + nb['digest_mol'] + nb['vs_mol'] - nb['bmed_mol'] - nb['makeup_mol']
+        if abs(bal) > 0.01*nb['bmed_mol']: errs.append(f'NaOH balance off by {bal:.3f} mol/d')
     for c,v in s['ew'].items():
         if c == 'RECT_EW':
             cmp('RECT_EW AC kW', N['RECT_EW']['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW'); continue

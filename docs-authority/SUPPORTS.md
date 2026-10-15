@@ -185,10 +185,10 @@ Status. 358 lines, 5699 supports, 3 lines need a loop or offset.
 | IA-DIG-SOL | DN50 | P5 | 25 | 1.26 | 20 | 15.6 | 0.80 | 4.10 | ok |
 | IA-EM-CH4 | DN50 | P5 | 25 | 1.26 | 34 | 25.1 | 1.01 | 8.65 | ok |
 | IA-EM-DIG | DN50 | P5 | 25 | 1.26 | 10 | 5.5 | 0.47 | 2.30 | ok |
-| IA-LIG-01 | DN50 | P5 | 25 | 1.26 | 12 | 8.3 | 0.58 | 2.90 | ok |
-| IA-CEL-01 | DN50 | P5 | 25 | 1.26 | 12 | 8.3 | 0.58 | 2.90 | ok |
-| IA-BOARD | DN50 | P5 | 25 | 1.26 | 11 | 5.2 | 0.46 | 3.60 | ok |
-| IA-BOARD-SCRAP | DN50 | P5 | 25 | 1.26 | 18 | 9.8 | 0.63 | 5.10 | ok |
+| IA-LIG-01 | DN50 | P5 | 25 | 1.26 | 13 | 8.3 | 0.58 | 2.90 | ok |
+| IA-CEL-01 | DN50 | P5 | 25 | 1.26 | 13 | 8.3 | 0.58 | 2.90 | ok |
+| IA-BOARD | DN50 | P5 | 25 | 1.26 | 11 | 4.8 | 0.44 | 3.60 | ok |
+| IA-BOARD-SCRAP | DN50 | P5 | 25 | 1.26 | 18 | 9.8 | 0.63 | 4.70 | ok |
 | IA-COMP-OUT | DN50 | P5 | 25 | 1.26 | 5 | 2.2 | 0.30 | 1.20 | ok |
 | IA-MEAT | DN50 | P5 | 25 | 1.26 | 23 | 16.1 | 0.81 | 7.00 | ok |
 | IA-NUT-LEACH | DN15 | P2 | 40 | 1.05 | 35 | 20.7 | 0.69 | 14.50 | ok |
@@ -364,8 +364,8 @@ Status. 358 lines, 5699 supports, 3 lines need a loop or offset.
 | IA-BASE-PPT | DN15 | P2 | 51 | 1.05 | 24 | 34.8 | 0.90 | 2.50 | ok |
 | IA-LEACH-VCD | DN15 | P2 | 85 | 1.05 | 22 | 48.7 | 1.06 | 4.90 | ok |
 | S49P | DN15 | M1 | 25 | 1.5 | 28 | 2.2 | 0.48 | 6.90 | ok |
-| IA-EVAP_ACID-FEED | DN15 | P1 | 25 | 0.98 | 9 | 0.7 | 0.14 | 1.62 | ok |
-| IA-EVAP_ACID-COND | DN15 | P1 | 49 | 0.98 | 9 | 4.1 | 0.33 | 1.62 | ok |
+| IA-EVAP_ACID-FEED | DN15 | P1 | 25 | 0.98 | 8 | 0.6 | 0.13 | 1.62 | ok |
+| IA-EVAP_ACID-COND | DN15 | P1 | 49 | 0.98 | 8 | 3.7 | 0.31 | 1.62 | ok |
 | IA-EVAP_BASE-FEED | DN15 | P4 | 25 | 1.12 | 10 | 2.8 | 0.21 | 2.60 | ok |
 | IA-EVAP_BASE-COND | DN15 | P1 | 51 | 0.98 | 11 | 6.1 | 0.40 | 2.60 | ok |
 | IA-NA-PURGE | DN15 | P2 | 25 | 1.05 | 18 | 2.6 | 0.24 | 4.40 | ok |

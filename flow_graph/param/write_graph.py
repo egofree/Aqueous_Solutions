@@ -8,7 +8,7 @@ import json, math, os, subprocess, sys
 from . import solver, drivers as DR
 ROOT = solver.ROOT; GP = os.path.join(ROOT,'flow_graph/plant_flow_graph.json')
 TAG = 'X-PAR acid-loop decision (AQS-PAR-001 \u00a73)'
-ELEC_IN = ('S17-BMED','S17-EW','SF-EVAP_ACID','SF-EVAP_BASE')
+ELEC_IN = ('S17-BMED','S17-EW','SF-EVAP_ACID','SF-EVAP_BASE','SF-EVAP_ACID_VS')
 
 def rate(v, unit, note): return {'value': round(v,4), 'unit': unit, 'status': 'study', 'note': note}
 
@@ -65,8 +65,29 @@ def process():
             else: g['edges'].append(e); E[e['stream_id']] = e
         for p in prods:
             E[p]['from_unit_id'] = u; E[p]['from_sector_id'] = 'WET'
+    # X-PAR-10 vent scrubber on the EVAP_ACID column vent (owner decision 2026-10-15; AQS-DUTY-061)
+    vs = s['vs']; up = vs['upset']; VT = f'{TAG}; X-PAR-10 vent scrubber (AQS-DUTY-061)'
+    nd = N.get('EVAP_ACID_VS') or {'unit_id': 'EVAP_ACID_VS', 'sector_id': 'WET', 'presence': 'present', 'class': 'scrubber', 'tags': [], 'electrical_role': 'load',
+                                    'diagram_gap': None, 'enabled': True, 'modules': [], 'params': {}}
+    nd['notes'] = 'Packed PVC alkali scrubber on the EVAP_ACID column vent; NaOH bleed from BMED_BASE; spent liquor to BMED_ACID. Duty sheet docs-authority/duties/EVAP_ACID_VS.md.'
+    nd['continuous_kw'] = rate(vs['pump_kW'],'kW',f"{VT}. Sump recirculation pump {up['recirc_m3_h']*1000:.0f} L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study).")
+    nd['params'].update({'presence':'present','DN':vs['DN'],'packed_mm':vs['packed_mm'],'height_mm':vs['height_mm'],'sump_L':vs['sump_L'],'material':vs['material'],
+                         'y_in_ppm_design':round(up['y_in_ppm'],1),'y_out_ppm':up['y_out_ppm'],'design_case':'upset: column bypassed (A-M-111)',
+                         'size_mm':[400, 400, vs['height_mm']],'size_note':'L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)','doc':'AQS-DUTY-061'})
+    if 'EVAP_ACID_VS' not in N: g['nodes'].append(nd); N['EVAP_ACID_VS'] = nd
+    vn = [edge('IA-EVAP_ACID-VENT','EVAP_ACID','EVAP_ACID_VS','G',['mass'],'column vent: non-condensables, water vapour, trace HCl',rate(up['vent_kg_d'],'kg/d',f"{VT}. Air from the feed (WEISS1970) saturated at the vent condenser; design case {up['y_in_ppm']:.0f} ppmv HCl."),'WET','WET'),
+          edge('IA-VS-NAOH','BMED_BASE','EVAP_ACID_VS','L',['mass'],'NaOH 2 M bleed',rate(up['naoh_soln_kg_d'],'kg/d',f"{VT}. {vs['upset']['naoh_mol_d']*1000:.3f} mmol/d = {DR.val(d,'vs_naoh_excess')} x HCl absorbed."),'WET','WET'),
+          edge('IA-VS-SPENT','EVAP_ACID_VS','BMED_ACID','L',['mass'],'spent scrub liquor (NaCl in NaOH) to the BMED brine',rate(up['spent_kg_d'],'kg/d',f'{VT}. Bleed plus HCl absorbed.'),'WET','WET'),
+          edge('IA-VS-OFF','EVAP_ACID_VS','ALK_SCRUBBER','G',['mass'],'scrubbed vent to the house acid-gas header',rate(up['offgas_kg_d'],'kg/d',f"{VT}. {up['y_out_ppm']} ppmv HCl."),'WET','GAS'),
+          edge('SF-EVAP_ACID_VS','SOL_ARK_60K','EVAP_ACID_VS','E',['elec'],'480 V AC',rate(vs['pump_kW'],'kW',f'{VT}. Feed equal to continuous_kw.'),'ELEC','WET','tray'),
+          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','HEAT_SINK','E',['energy'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat.'),'WET','GEO','tray')]
+    vn[1]['params'] = {'NaOH_mol_d': round(up['naoh_mol_d'], 9)}
+    for e in vn:
+        if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')}); E[e['stream_id']].setdefault('params',{}).update(e.get('params') or {})
+        else: g['edges'].append(e); E[e['stream_id']] = e
+    E['IA-EVAP_ACID-COND']['rate'] = rate(s['evap_acid']['water_kg_d'] - up['vent_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10).')
     # BMED_BASE closes on its brine feed: out (EVAP_BASE feed + IA-BMED-02) = IA-BMED-04 + condensate
-    E['IA-BMED-04']['rate'] = rate(s['evap_base']['feed_kg_d'] + E['IA-BMED-02']['rate']['value'] - s['evap_base']['water_kg_d'],'kg/d',f'{TAG}. Brine to BMED_BASE closing the stack balance with the condensate return.')
+    E['IA-BMED-04']['rate'] = rate(s['evap_base']['feed_kg_d'] + E['IA-BMED-02']['rate']['value'] + up['naoh_soln_kg_d'] - s['evap_base']['water_kg_d'],'kg/d',f'{TAG}. Brine to BMED_BASE closing the stack balance with the condensate return.')
     # EW cells and rectifier
     rows = {r['cell']: r for r in json.loads(subprocess.run([sys.executable,'docs-authority/_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['rows']}
     rect = json.loads(subprocess.run([sys.executable,'docs-authority/_rect_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['total']

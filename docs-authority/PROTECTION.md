@@ -123,6 +123,7 @@ A thermal-magnetic breaker clears instantly only if its magnetic pickup is below
 | SOL_ARK 480 V | CROP_ROSEMARY | 15 | 6784 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | H2_PURIFIER | 15 | 6784 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | BMED_UPW_POLISH | 15 | 6784 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | EVAP_ACID_VS | 15 | 6784 | thermal-magnetic, instantaneous 5× | 75 A |
 
 Bus main: 5000 A frame, electronic trip, short-time 0.3 s; selective over the 0.1 s feeders by time. T-1 per NEC 450.3(B); 208 V faults limited by the T-1 5 % impedance (study).
 

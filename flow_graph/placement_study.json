@@ -125,8 +125,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        16200,
-        8600,
+        20600,
+        14800,
         6000
       ],
       "tier": 1,
@@ -137,15 +137,15 @@
       ],
       "category": "pen",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "COMPOST",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        20200,
-        13600,
+        16600,
+        9000,
         6000
       ],
       "tier": 1,
@@ -156,33 +156,33 @@
       ],
       "category": "pen",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "DUCKWEED",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        12600,
-        0,
-        8250
+        20600,
+        9000,
+        6000
       ],
-      "tier": 2,
+      "tier": 1,
       "size_mm": [
-        4800,
         1200,
+        4800,
         600
       ],
       "category": "bed",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "NFIX_BED",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        18000,
+        12600,
         0,
         8250
       ],
@@ -221,7 +221,7 @@
       "block_id": "FARM",
       "origin_mm": [
         18000,
-        1800,
+        2600,
         8250
       ],
       "tier": 2,
@@ -239,7 +239,7 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        19200,
+        12600,
         3600,
         8250
       ],
@@ -258,8 +258,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        19200,
-        5400,
+        18000,
+        4400,
         8250
       ],
       "tier": 2,
@@ -372,46 +372,46 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        22700,
-        2300,
+        23100,
+        6300,
         6000
       ],
       "tier": 1,
       "size_mm": [
-        1200,
         800,
+        1200,
         1800
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "LIGNO_PRE",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        22700,
-        5900,
+        23100,
+        2700,
         6000
       ],
       "tier": 1,
       "size_mm": [
-        1200,
         800,
+        1200,
         1800
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "BOARD_MILL",
       "level": "L0",
       "block_id": "MFG",
       "origin_mm": [
-        15800,
-        700,
+        22200,
+        0,
         0
       ],
       "tier": 1,
@@ -422,18 +422,18 @@
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in MFG 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in MFG 600 mm clear X-PAR-10 pass: moved 400 mm west for 600 mm clear to the EXT_HALL_E line (was x 22600)."
     },
     {
       "unit_id": "HTC",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        18200,
-        6600,
-        6000
+        18000,
+        0,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -448,11 +448,11 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        22700,
-        7300,
-        6000
+        12600,
+        5400,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -467,11 +467,11 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        19800,
-        8600,
-        6000
+        14400,
+        5400,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -486,11 +486,11 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        19800,
-        10000,
-        6000
+        16200,
+        5400,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -505,11 +505,11 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        20200,
-        11400,
-        6000
+        18000,
+        6200,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -524,11 +524,11 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        20200,
-        16600,
-        6000
+        19800,
+        6200,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -543,11 +543,11 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        22000,
-        16600,
-        6000
+        21600,
+        6200,
+        8250
       ],
-      "tier": 1,
+      "tier": 2,
       "size_mm": [
         1200,
         800,
@@ -563,7 +563,7 @@
       "block_id": "FARM",
       "origin_mm": [
         12600,
-        3600,
+        6800,
         8250
       ],
       "tier": 2,
@@ -582,7 +582,7 @@
       "block_id": "FARM",
       "origin_mm": [
         14400,
-        3600,
+        6800,
         8250
       ],
       "tier": 2,
@@ -600,8 +600,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        12600,
-        5000,
+        16200,
+        6800,
         8250
       ],
       "tier": 2,
@@ -619,8 +619,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        14400,
-        5000,
+        18000,
+        7600,
         8250
       ],
       "tier": 2,
@@ -638,8 +638,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        12600,
-        6400,
+        19800,
+        7600,
         8250
       ],
       "tier": 2,
@@ -657,8 +657,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        14400,
-        6400,
+        21600,
+        7600,
         8250
       ],
       "tier": 2,
@@ -676,8 +676,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        16200,
-        6600,
+        12600,
+        8200,
         8250
       ],
       "tier": 2,
@@ -695,8 +695,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        20000,
-        7200,
+        14400,
+        8200,
         8250
       ],
       "tier": 2,
@@ -714,8 +714,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        12600,
-        7800,
+        16200,
+        8200,
         8250
       ],
       "tier": 2,
@@ -733,8 +733,8 @@
       "level": "L1",
       "block_id": "HAB",
       "origin_mm": [
-        3600,
-        3800,
+        8800,
+        400,
         6000
       ],
       "tier": 1,
@@ -745,7 +745,7 @@
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in HAB 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in HAB 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "EVAP_ACID",
@@ -758,32 +758,33 @@
       ],
       "tier": 1,
       "size_mm": [
-        1200,
-        800,
-        1800
+        1650,
+        1300,
+        3800
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in BMED_CRU 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in BMED_CRU 600 mm clear X-PAR-10: frame 500 mm deeper; EVAP_ACID_VS (DN150 x 1400 mm) rides on its north edge beside the column."
     },
     {
       "unit_id": "EVAP_BASE",
       "level": "L-1",
       "block_id": "BMED_CRU",
       "origin_mm": [
-        18600,
+        19050,
         4000,
         -6000
       ],
       "tier": 1,
       "size_mm": [
-        1200,
+        1250,
         800,
-        1800
+        3100
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in BMED_CRU 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in BMED_CRU 600 mm clear",
+      "note": " X-MFG-30: in-house envelope; placed 600 mm east of EVAP_ACID (whose frame now carries the HCl column)."
     },
     {
       "unit_id": "CRYO_HE",
