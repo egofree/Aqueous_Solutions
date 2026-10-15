@@ -12,4 +12,6 @@
 <text x="20" y="628">WS_AMMONIA -> IMID</text>
 <text x="20" y="642">pipe 29.19 m in 7 pieces; cut 2639 6000 6000 6000 5279 979 2289 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
+<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-NH3-IMID</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-NH3-IMID</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 19cf1d50   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
+</svg>

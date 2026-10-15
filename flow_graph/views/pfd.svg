@@ -7230,4 +7230,6 @@
 <text text-anchor="middle" x="1217.5" y="-12259.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ZNBR&#45;BD\n8.4872 kg/d</text>
 </g>
 </g>
+
+<g id="aqs-title-block"><rect x="2974.3" y="15853.3" width="1997.7" height="532.7" fill="white" stroke="black" stroke-width="5.55"/><text x="3007.6" y="15942.1" font-family="sans-serif" font-size="49.9">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3007.6" y="16036.4" font-family="sans-serif" font-size="49.9">Process flow diagram</text><text x="3007.6" y="16130.7" font-family="sans-serif" font-size="49.9">Type: flow diagram (ISO_10628_2)   Rev 9ee17340   Issued 2026-10-15</text><text x="3007.6" y="16225.1" font-family="sans-serif" font-size="49.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3007.6" y="16319.4" font-family="sans-serif" font-size="49.9">Graph SHA-256 82e0abc965b1e16b   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

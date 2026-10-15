@@ -17963,7 +17963,7 @@
         "value": 10.1627,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. | X-THM-01: 11.7617 kW less 1.5990 kW of line losses (A-M-166)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. | X-THM-01: closes Q4_BUS after the line losses carried down the ladder (A-M-166)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

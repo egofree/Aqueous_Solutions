@@ -87,8 +87,16 @@ def main():
             assert E2[sid]['rate']['value'] >= 0, (sid, b0, dsum)
             E2[sid]['rate']['note'] = E2[sid]['rate']['note'].split(' | X-THM-01')[0] + f' | X-THM-01: {b0} kW less {dsum:.4f} kW of insulated line loss upstream (A-M-166).'
             ladder[q] = dsum
-    b0 = base('HL-Q4-REJ'); dl = ladder['Q4_A'] + ladder['Q4_B']; E2['HL-Q4-REJ']['rate']['value'] = round(b0 - dl, 4)
-    E2['HL-Q4-REJ']['rate']['note'] = E2['HL-Q4-REJ']['rate']['note'].split(' | X-THM-01')[0] + f' | X-THM-01: {b0} kW less {dl:.4f} kW of line losses (A-M-166).'
+    import collections
+    def tbal():
+        bb = collections.Counter()
+        for e in g['edges']:
+            if 'thermal' in e['layers'] and e.get('presence') != 'retired' and e['rate'].get('unit') == 'kW':
+                bb[e['from_unit_id']] -= float(e['rate']['value'] or 0); bb[e['to_unit_id']] += float(e['rate']['value'] or 0)
+        return bb
+    b0 = base('HL-Q4-REJ'); r0 = E2['HL-Q4-REJ']['rate']['value']; E2['HL-Q4-REJ']['rate']['value'] = round(r0 + tbal()['Q4_BUS'] - 0.001, 4)   # Q4_BUS closes on the rejection
+    dl = b0 - E2['HL-Q4-REJ']['rate']['value']
+    E2['HL-Q4-REJ']['rate']['note'] = E2['HL-Q4-REJ']['rate']['note'].split(' | X-THM-01')[0] + f' | X-THM-01: closes Q4_BUS after the line losses carried down the ladder (A-M-166).'
     import collections
     bal = collections.Counter()
     for e in g['edges']:
@@ -98,7 +106,7 @@ def main():
     assert all(abs(bal[u]) < 0.01 for u in stores), {u: bal[u] for u in stores}
     md += ['', '## Heat-ladder store closure (X-THM-01, A-M-166)', '', '| Store | Line loss carried down, kW | Residual on graph rates, kW |', '|---|---|---|']
     md += [f'| {u} | {ladder.get(u, 0.0):.4f} | {bal[u]:.4f} |' for u in stores]
-    md += ['', f"Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as {dl:.3f} kW less rejected on HL-Q4-REJ ({b0} -> {b0 - dl:.3f} kW). No electric trim is added: Q4 rejects a surplus in normal operation."]
+    md += ['', f"Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as {ladder['Q4_A'] + ladder['Q4_B']:.3f} kW less rejected on HL-Q4-REJ, which closes Q4_BUS at {E2['HL-Q4-REJ']['rate']['value']} kW. No electric trim is added: Q4 rejects a surplus in normal operation."]
     if '--graph' in sys.argv: open(os.path.join(R, 'flow_graph/plant_flow_graph.json'), 'w').write(json.dumps(g, indent=2))
     md += ['', '## Heat-ladder line losses (X-THM-04, A-M-165)', '',
            f"All {len(hl)} heat-ladder lines carry their loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK ({tot_n/1000:.3f} kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their {sum(x['loss_W'] for x in hl if not ((E[x['item']]['params'].get('duty_normal_kw') or 0) > 0)):.0f} W is covered by the rated source duty. Total if every line ran: {tot_r/1000:.3f} kW.",

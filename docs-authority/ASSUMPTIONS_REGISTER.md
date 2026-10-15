@@ -346,16 +346,16 @@ Counts: 166 curated, 1015 graph, 22 model params, 90 document lines. Total 1293.
 | A-G-2fa255 | 0.928 | kW | graph HL-GLASS_BURNOUT-Q2-B rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW. |  | X-BAS-02 |
 | A-G-bacf05 | 2.286 | kW | graph HL-HX8-Q4-A rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty. |  | X-BAS-02 |
 | A-G-d2ca4b | 2.286 | kW | graph HL-HX8-Q4-B rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty. |  | X-BAS-02 |
-| A-G-8c37c5 | 1.133 | kW | graph HL-Q1-A-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. |  | X-BAS-02 |
-| A-G-8da8af | 1.133 | kW | graph HL-Q1-B-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. |  | X-BAS-02 |
+| A-G-8c37c5 | 0.992 | kW | graph HL-Q1-A-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. / X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-16 |  | X-BAS-02 |
+| A-G-8da8af | 0.992 | kW | graph HL-Q1-B-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. / X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-16 |  | X-BAS-02 |
 | A-G-a1cdb7 | 1.383 | kW | graph HL-Q1-X rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
 | A-G-6e7fed | 1.383 | kW | graph HL-Q1-X-BA rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
-| A-G-3d58a1 | 1.888 | kW | graph HL-Q2-A-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. |  | X-BAS-02 |
-| A-G-915653 | 1.888 | kW | graph HL-Q2-B-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. |  | X-BAS-02 |
+| A-G-3d58a1 | 1.6204 | kW | graph HL-Q2-A-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. / X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-16 |  | X-BAS-02 |
+| A-G-915653 | 1.6204 | kW | graph HL-Q2-B-DOWN rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. / X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-16 |  | X-BAS-02 |
 | A-G-fd5673 | 2.027 | kW | graph HL-Q2-X rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
 | A-G-014fdc | 2.027 | kW | graph HL-Q2-X-BA rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
-| A-G-923c93 | 1.614 | kW | graph HL-Q3-A-DOWN rate | AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621 |  | X-BAS-02 |
-| A-G-958740 | 1.614 | kW | graph HL-Q3-B-DOWN rate | AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621 |  | X-BAS-02 |
+| A-G-923c93 | 1.1286 | kW | graph HL-Q3-A-DOWN rate | AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621 |  | X-BAS-02 |
+| A-G-958740 | 1.0298 | kW | graph HL-Q3-B-DOWN rate | AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621 |  | X-BAS-02 |
 | A-G-59de45 | 0.302 | kW | graph HL-Q3-A-HX4 rate | AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single. |  | X-BAS-02 |
 | A-G-bb2aa7 | 7.941 | kW | graph HL-Q3-A-HX5 rate | AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single. |  | X-BAS-02 |
 | A-G-caeb5d | 2.079 | kW | graph HL-Q3-A-HX6 rate | AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single. |  | X-BAS-02 |
@@ -364,8 +364,8 @@ Counts: 166 curated, 1015 graph, 22 model params, 90 document lines. Total 1293.
 | A-G-8ed8fc | 2.079 | kW | graph HL-Q3-B-HX6 rate | AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single. |  | X-BAS-02 |
 | A-G-3a6b07 | 1.831 | kW | graph HL-Q3-X rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
 | A-G-445ec1 | 1.831 | kW | graph HL-Q3-X-BA rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
-| A-G-0de8d6 | 5.51 | kW | graph HL-Q4-A-BUS rate | AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. |  | X-BAS-02 |
-| A-G-b66b7f | 5.51 | kW | graph HL-Q4-B-BUS rate | AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. |  | X-BAS-02 |
+| A-G-0de8d6 | 4.7481 | kW | graph HL-Q4-A-BUS rate | AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. / X-THM-01: 5.51 kW less 0.7619 k |  | X-BAS-02 |
+| A-G-b66b7f | 4.6729 | kW | graph HL-Q4-B-BUS rate | AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. / X-THM-01: 5.51 kW less 0.8371 k |  | X-BAS-02 |
 | A-G-8e0740 | 1.565 | kW | graph HL-Q4-X rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
 | A-G-0ed9b0 | 1.565 | kW | graph HL-Q4-X-BA rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
 | A-G-46beba | 0.6456 | kg/d | graph IA-BMED-01 rate | AQS-DUTY-010: 1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange |  | X-BAS-02 |
@@ -501,7 +501,7 @@ Counts: 166 curated, 1015 graph, 22 model params, 90 document lines. Total 1293.
 | A-G-c27d95 | 27.372033 | kg/d | graph IA-CRU-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. CRU re-scoped to chlorate. Closes on S66. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-db23aa | 439.5222 | kg/d | graph IA-ACID-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-A |  | X-BAS-02 |
 | A-G-45a156 | 25.2964 | kg/d | graph IA-BASE-01 rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 126.5 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2,  |  | X-BAS-02 |
-| A-G-ec5c10 | 11.7617 | kW | graph HL-Q4-REJ rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. |  | X-BAS-02 |
+| A-G-ec5c10 | 10.1627 | kW | graph HL-Q4-REJ rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. / X-THM-01: closes Q4_BUS after the line losses car |  | X-BAS-02 |
 | A-G-a59b7e | 302.4327 | kW | graph IA-PV-01 rate | AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 REC |  | X-BAS-02 |
 | A-G-181fa6 | 8.4872 | kg/d | graph IA-ZNBR-BD rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. |  | X-BAS-02 |
 | A-G-3a0716 | 13.930007 | kg/d | graph IA-NUT-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |

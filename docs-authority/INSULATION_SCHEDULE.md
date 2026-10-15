@@ -104,7 +104,7 @@ Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most 10 %
 | Q4_B | 0.8371 | 0.0000 |
 | Q4_BUS | 0.0000 | 0.0010 |
 
-Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as 1.599 kW less rejected on HL-Q4-REJ (11.7617 -> 10.163 kW). No electric trim is added: Q4 rejects a surplus in normal operation.
+Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as 1.599 kW less rejected on HL-Q4-REJ, which closes Q4_BUS at 10.1627 kW. No electric trim is added: Q4 rejects a surplus in normal operation.
 
 ## Heat-ladder line losses (X-THM-04, A-M-165)
 
