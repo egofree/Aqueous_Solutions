@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. Continuous filtered vent and a free-lifting manway cover as the emergency relief for decomposition. Ball and plug valves have vented cavities; no trapped volume. Not to a closed header.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_PEROX.stl`.
 
-8. Open items. Cell current and area. Tank volume. Segregation per AQS-DSN-OX-001 section 3.
+8. Open items. Cell sized at 12.31 A, 246 cm², 30.8 W (AQS-DSN-OX-001 2.1, assumptions); anode held. IA-H2O2-SRC 3.0 kg/d against 0.176 kg/d O₂ needed: water source edge missing, owner decision. Tank volume (X-SAF-09). Segregation per AQS-DSN-OX-001 section 3.

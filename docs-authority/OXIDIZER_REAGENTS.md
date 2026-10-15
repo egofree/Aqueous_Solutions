@@ -48,6 +48,22 @@ Decomposition and venting. Peroxide decomposes to water and oxygen, faster with 
 
 Instruments and trips. Level with high-high trip on the cell. Temperature with a high trip at 30 °C. Concentration by inline UV or titration sample, with an alarm above 6 wt%. Vent flow or tank pressure, alarm on a rise.
 
+### 2.1 Cell sizing (X-ELS-10)
+
+| Term | Value | Basis |
+| --- | --- | --- |
+| H₂O₂ made | 0.15 kg/d, 4.41 mol/d | S32 3.0 kg/d at 5 wt% (product_spec, assumption) |
+| Current, ideal | 9.85 A | 2 e⁻ per H₂O₂, Faraday 96 485 C/mol |
+| Faradaic efficiency | 0.80 | Assumption |
+| Current | 12.31 A | |
+| Current density | 0.050 A/cm² | Assumption |
+| Cathode area | 246 cm² | |
+| Cell voltage | 2.5 V | Assumption |
+| Power | 30.8 W | |
+| O₂ consumed | 0.176 kg/d | At 0.80 efficiency |
+
+Divided cell: carbon gas-diffusion cathode, cation membrane, separate anolyte. Lead and iridium anodes would contaminate an electronic-grade product without the membrane, so the anode material is held. Finding: IA-H2O2-SRC carries 3.0 kg/d from HDR_O2, but the cell needs 0.176 kg/d of O₂. The rest is dilution water, which has no source edge on the graph. That needs an owner decision on a rate change and is not changed here.
+
 ## 3. Incompatibilities and segregation
 
 | Reagent | Keep apart from | Reason |
@@ -66,7 +82,8 @@ Each class gets its own bund at 110 % of its largest tank (assumption): oxidizin
 
 - Tank volumes. The holdup basis is not on the graph.
 - HNO3 absorber design at 2 M.
-- Peroxide cell current and area.
+- Anode material.
+- The IA-H2O2-SRC rate, which is mostly water, against 0.176 kg/d O₂.
 - Bund sizes.
 
 ## References
