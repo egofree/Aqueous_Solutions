@@ -9,6 +9,7 @@ The status of these lines is `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004).
 AQS-PLAN-003 is the module order against the tech tree. It is not this sequence.
 AQS-PLAN-002 is the definition of a buildable unit.
 AQS-PLAN-006 is the manufacturing model plan for every present unit.
+AQS-PLAN-007, `docs-authority/TASK_PLAN.md`, is the master task list for a buildable design. This plan and AQS-PLAN-006 are its sub-plans. MASTER_PLAN is the close-out record.
 AQS-PLAN-001, AQS-REM-001, and AQS-MVS-CHK-001 are history.
 
 ## Buildable

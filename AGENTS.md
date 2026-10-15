@@ -4,7 +4,7 @@ Follow the plan file. Do not keep a second list of exceptions.
 
 ## Loop
 
-1. Read the plan. The plan is `docs-authority/PROJECT_PLAN.md`. The status of its lines is `docs-authority/MASTER_PLAN.md`. The plan names the authority and the active item.
+1. Read the plan. The master task list is `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). The engineering limits and holds are in `docs-authority/PROJECT_PLAN.md`. The close-out record of plan lines is `docs-authority/MASTER_PLAN.md`. Check a task on AQS-PLAN-007 only with a cited file, and rerun `docs-authority/_task_plan_gen.py`. The plan names the authority and the active item.
 2. Read only the authority the active item needs. Confirm the item is still the active one.
 3. Do that item. Stay inside what it asks.
 4. Prove it. Run the check the plan states for that item. The check is on the files, not on the intention.
