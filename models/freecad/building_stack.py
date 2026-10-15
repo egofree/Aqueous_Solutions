@@ -138,7 +138,7 @@ def _tanks(doc):
     # North (pole-facing) dock + paired freight elevator — AQS-SITE-001.
     # Discrete jump: DOCK_COUNT = CASSETTE_COUNT; one dock+ELEV_DOCK pair
     # at M1 baseline; add pairs along +X as plate grows E–W.
-    apron_l = max(P.DOCK_L * P.DOCK_COUNT, 12000)
+    apron_l = max(P.DOCK_L * P.DOCK_COUNT, 12000, getattr(P, 'DOCK_APRON_W', 0))
     add(doc, "DOCK_APRON_N", box_at(
         P.DOCK_X, P.PLATE_W, P.Z_L0, apron_l, P.DOCK_APRON_N, 150))
     label_plate(doc, "DOCK_APRON_N",

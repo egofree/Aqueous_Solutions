@@ -269,7 +269,9 @@ DOCK_W = min(8000, PLATE_W)
 DOCK_X = 0
 DOCK_Y = PLATE_W - DOCK_W
 DOCK_Z = Z_L0
-DOCK_APRON_N = 6000          # exterior truck apron north of ENV_WALL_N
+DOCK_APRON_N = 34000         # exterior truck apron north of ENV_WALL_N: 1.5 x WB-67 length 22.4 m, X-BLD-07 / A-M-212 (was 6000)
+DOCK_APRON_W = PLATE_L       # apron along the whole north face for the WB-67 turn (X-BLD-07)
+DOCK_DOOR_H = 4300           # dock door clear height: WB-67 4.11 m + 0.19 m (X-BLD-07)
 DOCK_DOOR_W = 3600           # north-facing door clear (massing)
 # Freight elevator paired with each dock (≠ CORE ELEV_SVC)
 ELEV_DOCK_L, ELEV_DOCK_W = 2700, 3200
