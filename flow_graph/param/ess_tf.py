@@ -152,7 +152,7 @@ def tf(g, ps=None):
         A_ = BED_M2 if u == 'GROW_BED' else (N[u]['params']['crop_basis']['area_m2'] if u != 'VEG_BED' else tot['A']); ck = N[u]['continuous_kw']
         aux = N[u]['params'].setdefault('aux_kw_base', round(ck['value'] - (28*wm2/1000 if u == 'GROW_BED' else 0), 4)); kw = aux + A_*wm2/1000
         ck.update(value=round(kw, 4), note=f'LED {A_:.2f} m2 x {wm2:.1f} W/m2 (DLI {DLI}, {LED} umol/J) + aux {aux} kW (A-M-144)')
-        for k in (f'SF-{u}', f'SQ-{u}'):
+        for k in (f'SF-{u}', f'SQ-{u}') + (('S20',) if u == 'GROW_BED' else ()):
             if k in E: E[k]['rate']['value'] = round(kw, 4)
     # X-RED-06 crew CO2 removal N+1 (A-M-147): two-bed swing assembly (one adsorbs, one regenerates, 144 min half-cycle, CDRA practice) per
     # NASA_CDRA2015; zeolite 5A loading 1.0 wt% at 0.4 kPa CO2 (NASA_5A1998, equilibrium: bed mass is a minimum). N+1 = a second full assembly.
@@ -176,5 +176,14 @@ def tf(g, ps=None):
     qhs = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == 'HEAT_SINK' and e['rate'].get('unit') == 'kW')
     N['HEAT_SINK']['params']['redundancy'] = {'rejection_kW': round(qhs, 2), 'modules': 3, 'module_kW': round(qhs/2, 2), 'rule': '3 x 50 %, N+1 (X-RED-07, A-M-150)'}
     N['GEO_HP']['params'].update(units_installed=2, redundancy='2 x 100 % (X-RED-07)')
+    # X-RED-03 distribution N+1 (A-M-152): main-tie-main 480 V bus, each section rated for the whole bus demand (tie closes on loss of a main);
+    # MCC and T-1 duplicated; critical life-support loads on an ATS fed from both sections. NEC 240.6 standard ratings.
+    import math
+    dem = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and e['rate'].get('unit') == 'kW')
+    amps = dem*1000/(math.sqrt(3)*480*0.9); std = [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000]
+    sec = next(x for x in std if x >= amps*1.25); crit = float(ps.get('critical_kW') or _crit()); ca = crit*1000/(math.sqrt(3)*480*0.9)
+    N['SOL_ARK_60K']['params']['redundancy'] = {'arrangement': 'main-tie-main, sections A/B, normally-open tie', 'bus_demand_kW': round(dem, 1),
+        'section_rating_A': sec, 'basis_A': round(amps, 1), 'MCC': 'MCC-1A / MCC-1B', 'transformer': '2 x 100 % T-1 15 kVA', 'critical_ATS_A': next(x for x in std if x >= ca*1.25),
+        'critical_kW': crit, 'inverter_sections': 6, 'rule': 'X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous'}
     N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
     return dict(veg=tot, ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
