@@ -8431,10 +8431,10 @@
       "phase": "L",
       "carries": "clean overflow",
       "rate": {
-        "value": 40.0,
+        "value": 37.176,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. -2.824 kg/d to IA-PEROX-H2O (X-SAF-10)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "TRR",
@@ -10845,10 +10845,10 @@
       "phase": "S/L",
       "carries": "oxygen to peroxide",
       "rate": {
-        "value": 3.0,
+        "value": 0.176,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "X-SAF-10. O2 to the cell at 12.31 A, FE 0.80 (WS_PEROX params.cell). Was 3.0 kg/d, which counted dilution water as oxygen."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15614,6 +15614,23 @@
       "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "X-SAF-07. Spray quench of S67 at the FLUE_KO inlet spool.; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-PEROX-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "WS_PEROX",
+      "phase": "L",
+      "carries": "peroxide dilution water",
+      "rate": {
+        "value": 2.824,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAF-10. S32 3.0 kg/d less cell O2 0.176 kg/d"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "X-SAF-10. Make-up water for the 5 wt% product.; namespace=IA; layers=mass"
     }
   ],
   "electrical": {

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 40.00 kg/d. Mass out 40.00 kg/d. Electrical duty 0.0000 kW. In: S40 40.00 kg/d (clean overflow). Out: IA-TERR-VAP 40.00 kg/d (greenhouse transpiration).
+1. Basis. Mass in 37.18 kg/d. Mass out 40.00 kg/d. Electrical duty 0.0000 kW. In: S40 37.18 kg/d (clean overflow). Out: IA-TERR-VAP 40.00 kg/d (greenhouse transpiration); S41 0 kg/d (rain + S40 return); S42 0 kg/d (dilute nutrient drain).
 
 2. Size.
 - In 40.00 kg/d, out 40.00 kg/d. No holdup claimed.

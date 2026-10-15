@@ -11457,10 +11457,10 @@
       "forbidden": "FARM_SUMP, S26 potable, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 40.0,
+        "value": 37.176,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. -2.824 kg/d to IA-PEROX-H2O (X-SAF-10)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "TRR",
@@ -16269,10 +16269,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.0,
+        "value": 0.176,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "X-SAF-10. O2 to the cell at 12.31 A, FE 0.80 (WS_PEROX params.cell). Was 3.0 kg/d, which counted dilution water as oxygen."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24947,6 +24947,41 @@
         "rate_kind": "derived",
         "doc": "AQS-STD-002 4.3",
         "material": "PVC-U to the spool; PTFE spray nozzle"
+      },
+      "composition": {
+        "water": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-PEROX-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "WS_PEROX",
+      "phase": "L",
+      "presence": "present",
+      "carries": "peroxide dilution water",
+      "forbidden": "potable",
+      "notes": "X-SAF-10. Make-up water for the 5 wt% product.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "rate": {
+        "value": 2.824,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAF-10. S32 3.0 kg/d less cell O2 0.176 kg/d"
+      },
+      "params": {
+        "rate_basis": "S32 3.0 kg/d less cell O2 0.176 kg/d",
+        "rate_source": "X-SAF-10 mass balance",
+        "medium": "tower water, deionised at the point of use (held)",
+        "conditions": "25 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DSN-OX-001",
+        "material": "PVC-U"
       },
       "composition": {
         "water": 1.0

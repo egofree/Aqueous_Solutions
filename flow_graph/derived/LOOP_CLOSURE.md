@@ -3,11 +3,11 @@ A component passes when every unit balances and the cut balances, per rate unit,
 Pass is on the present edges in this file. It is not on-site evidence.
 This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 
-## mass: 452 edges, 1 loops
+## mass: 453 edges, 1 loops
 - 166 units. Circuits listed: 0 (cap 20). Elementary search stopped at the visit cap. Closure is the cut, not the circuit list.
   ABE, ACETOX, ACEX, ACID_POLISH_SCRUB, AFTERBURNER, AFTERBURNER_FLUE, ALD, ALK_SCRUBBER, AMF, ANIMAL_PEN, ASH, AZOLLA, AZOLLA_BED, BACKUP_GEN ...
   one circuit: IA-BMED-03 -> IA-BMED-01 -> S34 -> S10
-  kg/d: nodes off 0, cut in 0.00 out 0.00 pass
+  kg/d: nodes off 2, cut in 0.00 out 0.00 fail
 
 ## thermal: 48 edges, 4 loops
 - 2 units. Circuits listed: 1 (cap 20).
@@ -44,5 +44,5 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
   kW: nodes off 0, cut in 1.67 out 1.67 pass
 
-loops_closed: true
+loops_closed: false
 This result is the cut test. It is not the MVS flag.

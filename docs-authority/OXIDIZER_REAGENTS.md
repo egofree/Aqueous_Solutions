@@ -89,3 +89,7 @@ Each class gets its own bund at 110 % of its largest tank (assumption): oxidizin
 ## References
 
 [S1], [S2] as AQS-STD-002. [S10] Vinidex, Chemical Performance of PVC, https://www.vinidex.com.au/app/uploads/pdf/Chemical-Performance-of-PVC.pdf. [S11] Solvay, H₂O₂ Materials of Construction for Storage, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Materials%20of%20Construction%20for%20the%20Storage%20of%20H2O2.pdf. [S12] Solvay, Safety and Handling of Hydrogen Peroxide, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Safety%20and%20Handling%20of%20Hydrogen%20Peroxide.pdf.
+
+## Dilution water, X-SAF-10
+
+IA-H2O2-SRC carried 3.0 kg/d, the full product mass, against 0.176 kg/d of oxygen the cell uses. It is now 0.176 kg/d. The balance, 2.824 kg/d, is IA-PEROX-H2O from ROOF_TANK; S40 overflow drops by the same amount. Deionising at the point of use is held (assumption that tower water quality suffices is not made).
