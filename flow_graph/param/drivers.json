@@ -369,11 +369,11 @@
   "verification_test": "Occupancy classification of the extension"
  },
  "ext_dT_mean_K": {
-  "value": 8.0,
-  "units": "K mean |T_in - T_out| over the year",
-  "register": "A-M-104",
+  "value": 7.9,
+  "units": "K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals)",
   "needs_verification": true,
-  "verification_test": "Bin-hour load calculation from TMY3 (AQS-SITE-002 site)"
+  "verification_test": "NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation",
+  "ref": "NOAA_NORMALS_DFW"
  },
  "ext_cop": {
   "value": 3.2,
@@ -418,10 +418,24 @@
   "verification_test": "ASCE 7 Hazard Tool ground snow load at the site"
  },
  "ext_conditioned": {
-  "value": 0.0,
+  "value": 1.0,
   "units": "1 conditioned, 0 unconditioned hall",
+  "register": "A-M-104 (owner decision 2026-10-15: conditioned)",
+  "needs_verification": true,
+  "verification_test": "Bin-hour load calculation on TMY3 for the hall programme"
+ },
+ "ext_U_wall": {
+  "value": 0.534,
+  "units": "W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3",
+  "ref": "IECC2021_C402",
+  "needs_verification": true,
+  "verification_test": "Wall assembly design"
+ },
+ "ext_wall_h_mm": {
+  "value": 6000,
+  "units": "mm eave height of the extension (EXT_HALL block height)",
   "register": "A-M-104",
   "needs_verification": true,
-  "verification_test": "Room programme for the extension: confirm no process in it needs heating or cooling; otherwise set 1 and re-solve"
+  "verification_test": "Hall section drawing"
  }
 }

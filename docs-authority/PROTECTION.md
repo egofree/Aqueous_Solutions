@@ -12,7 +12,7 @@ Authority: AQS-PLAN-007 X-ELS-07; one-line AQS-ELEC-002 Rev C. Script `docs-auth
 
 ## 1. Available fault current
 
-All AC sources sit behind SOL_ARK_60K, 3 × 60 kW (X-RSZ-02). Rated 216.5 A at 480 V; fault contribution 2 × rated = 433 A (study; AQS-ELEC-002 Rev B). No utility service is on the graph. If one is added, this study is redone.
+All AC sources sit behind SOL_ARK_60K, 4 × 60 kW (X-PAR-07, was 3 × 60 kW under X-RSZ-02). Rated 288.7 A at 480 V; fault contribution 2 × rated = 577 A (study; AQS-ELEC-002 Rev B method). No utility service is on the graph. If one is added, this study is redone.
 
 ## 2. Device rule
 

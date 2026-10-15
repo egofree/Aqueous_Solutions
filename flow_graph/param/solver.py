@@ -133,7 +133,7 @@ def roof_close(d, P_base_kW):
         for ny in range(by0, by0+40):
             W, D = nx*bay, ny*bay; A = W*D/1e6
             if best and A > best['footprint_m2']: continue
-            ext = RF.extension_kW(A-A0, v('ext_lpd_W_m2'), v('ext_light_frac'), v('ext_Ra_L_s_m2'), v('ext_dT_mean_K'), v('ext_cop'), v('ext_sfp_W_per_L_s'), v('ext_U_roof'), v('ext_conditioned'))
+            ext = RF.extension_kW(A-A0, v('ext_lpd_W_m2'), v('ext_light_frac'), v('ext_Ra_L_s_m2'), v('ext_dT_mean_K'), v('ext_cop'), v('ext_sfp_W_per_L_s'), v('ext_U_roof'), v('ext_conditioned'), 2*(W+D)/1000*v('ext_wall_h_mm')/1000, v('ext_U_wall'))
             P = P_base_kW + ext['total_kW']
             need = PW.pv_kWp(P, v('night_hours'), v('storage_round_trip'), v('pv_yield_kWh_kWp_d')*v('pv_roof_yield_factor'), v('pv_system_derate'))
             arr, lay = RF.array_area_m2(W, D, v('ifc_perim_small_mm'), v('ifc_perim_large_mm'), v('ifc_axis_limit_mm'), v('ifc_array_max_mm'), v('ifc_path_mm'))

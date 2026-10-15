@@ -1160,7 +1160,7 @@
   "verification_test": "BMED stack vendor data and leach-loop precipitation test (unit task 02)"
  },
  {
-  "value": "PV 1174 kWp roof-only on a 120 x 96 m roof (X-PAR-07); ground field removed",
+  "value": "PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); ground field removed",
   "units": "kWp, m2",
   "where": "PV_ARRAY params",
   "basis": "AQS-ELEC-007 bounding case; 5 m2/kWp; plate cannot carry it (sizing rule revises the restriction)",
@@ -1588,19 +1588,20 @@
   "task": "X-PAR-07",
   "needs_verification": true,
   "files": [
-   "flow_graph/param/solver.py",
-   "flow_graph/param/sizing/roof.py",
    "flow_graph/param/drivers.json",
+   "flow_graph/param/sizing/roof.py",
+   "flow_graph/param/solver.py",
+   "flow_graph/place_roof.py",
    "flow_graph/placement_seed.json"
   ],
   "id": "A-M-104",
-  "value": "Extension is a single-storey unconditioned hall: lighting 8.8 W/m2 lit 10 % of hours (occupant sensors), mechanical ventilation 0.30 L/(s m2) at SFP 1.25 W/(L/s), no heating or cooling; mean |dT| 8 K and COP 3.2 apply only if conditioned (sensitivity: conditioned hall needs about 33,500 m2); NORTH_DOCK keeps a 6 m truck lane through EXT_HALL_N",
+  "value": "Extension is a single-storey CONDITIONED hall (owner decision 2026-10-15): lighting 8.8 W/m2 lit 10 % of hours (occupant sensors), outdoor air 0.30 L/(s m2) at SFP 1.25 W/(L/s), heat pump COP 3.2, roof U 0.199 and wall U 0.534 W/(m2 K) over the full new perimeter at 6 m eave (bounding), mean |dT| 7.9 K from DFW degree days; slab and internal gains not counted; GEO_GHEX not coupled; NORTH_DOCK keeps a 6 m truck lane through EXT_HALL_N",
   "units": "W/m2, L/(s m2), K",
   "where": "drivers ext_*; EXT_HALL_E/N blocks",
-  "basis": "IECC 2021 C405, C405.2.1; ASHRAE 62.1-2019 Table 6.2.2.1; ISO 16798-3; ASHRAE 90.1-2019 Table 6.8.1-2",
-  "sensitivity": "Extension load 13.9 kW here; conditioning would roughly triple the footprint",
+  "basis": "IECC 2021 C405, C405.2.1, C402.1.4; ASHRAE 62.1-2019 Table 6.2.2.1; ASHRAE 90.1-2019 Table 6.8.1-2; ISO 16798-3; NOAA 1991-2020 normals DFW",
+  "sensitivity": "Lighting at 100 % of hours drives the footprint to about 33,500 m2; ground-source COP 3.6 trims the conditioning load about 11 %",
   "replaced_by": "Room programme and load calculation for the extension",
-  "verification_test": "Bin-hour load calculation (TMY3) and lighting design; confirm the hall programme needs no conditioning"
+  "verification_test": "Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme"
  },
  {
   "task": "X-PAR-07",

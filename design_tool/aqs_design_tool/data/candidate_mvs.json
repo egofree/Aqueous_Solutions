@@ -3574,14 +3574,14 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 2348,
+        "count": 2672,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 1174,
-        "area_m2": 10379,
+        "nameplate_kw": 1336,
+        "area_m2": 11764,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -3591,19 +3591,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            120000,
-            96000
+            156000,
+            84000
           ],
           "bays": [
-            20,
-            16
+            26,
+            14
           ],
-          "footprint_m2": 11520.0,
-          "extension_m2": 11088.0,
-          "roof_capacity_kWp": 1183.2,
+          "footprint_m2": 13104.0,
+          "extension_m2": 12672.0,
+          "roof_capacity_kWp": 1341.1,
           "perimeter_pathway_mm": 1829,
-          "arrays": 6,
-          "extension_load_kW": 13.92,
+          "arrays": 8,
+          "extension_load_kW": 37.26,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -3824,13 +3824,13 @@
       "class": "inverter",
       "tags": [],
       "params": {
-        "kW": 180.0,
+        "kW": 240.0,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "count": 3,
+        "count": 4,
         "relief_basis": {
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
@@ -4266,8 +4266,8 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 170,
-        "kWh": 2371,
+        "kW": 193,
+        "kWh": 2698,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -7888,21 +7888,21 @@
       "class": "building",
       "tags": [],
       "params": {
-        "footprint_m2": 11088.0,
-        "conditioned": false,
+        "footprint_m2": 12672.0,
+        "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 13.915 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 37.255 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 13.9154,
+        "value": 37.2554,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: unconditioned extension 11088 m2; lighting 9.76 kW (IECC 2021 C405, 10 % lit), ventilation fans 4.16 kW (ASHRAE 62.1-2019, ISO 16798-3), envelope 0.00 kW."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 12672 m2; lighting 11.15 kW (IECC 2021 C405, 10 % lit), ventilation 16.08 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 10.02 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days)."
       }
     }
   ],
@@ -10821,7 +10821,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 158.692,
+        "value": 182.032,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -20732,7 +20732,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 13.9154,
+        "value": 37.2554,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."

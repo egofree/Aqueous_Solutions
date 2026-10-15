@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
 | T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
 | T4 | Pilot runs | 8 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 49 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 51 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 12 | Commissioning record |
 
-Total 152 items: 47 drivers, 105 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 154 items: 49 drivers, 105 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -45,7 +45,7 @@ Total 152 items: 47 drivers, 105 register entries. Classification rule: first ma
 | A-M-051 | 35 x 20 m ring, 12 rods 3 m m | Site plan (X-BLD) | X-ELS-08 |
 | A-M-052 | 5 ohm | Utility or AHJ requirement and IEEE 80 step/touch study | X-ELS-08 |
 | A-M-063 | HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 kW, d | Owner critical-load list | X-ELS-05 |
-| A-M-078 | PV 1174 kWp roof-only on a 120 x 96 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
+| A-M-078 | PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
 | A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and compressor vendor data | X-ELS-02 |
 | A-M-098 | Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground fiel -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout | X-BLD-04 |
 | A-M-101 | Access check: 914 mm clear on at least one face per row; roo mm | Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths | X-BLD-04 |
@@ -147,11 +147,13 @@ Total 152 items: 47 drivers, 105 register entries. Classification rule: first ma
 | driver cp_naoh20_kJ_kgK | 3.6 kJ/(kg K) | Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C | X-PAR |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension | X-PAR |
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design | X-PAR |
-| driver ext_conditioned | 0.0 1 conditioned, 0 unconditioned hall | Room programme for the extension: confirm no process in it needs heating or cooling; otherwise set 1 and re-solve | X-PAR |
+| driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design | X-PAR |
+| driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme | X-PAR |
 | driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating | X-PAR |
-| driver ext_dT_mean_K | 8.0 K mean /T_in - T_out/ over the year | Bin-hour load calculation from TMY3 (AQS-SITE-002 site) | X-PAR |
+| driver ext_dT_mean_K | 7.9 K mean /T_in - T_out/: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation | X-PAR |
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
+| driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile | X-PAR |
 | driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC | X-PAR |
 | driver pv_roof_gcr | 0.6 ground coverage ratio, low-tilt rows | Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt | X-PAR |
@@ -187,7 +189,7 @@ Total 152 items: 47 drivers, 105 register entries. Classification rule: first ma
 | A-M-100 | 1 h partition at X=15000 (FAB acid room) credited as the IFC mm | Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations | X-BLD-04 |
 | A-M-102 | L1 farm re-row: 914 mm minimum between all farm rows; farm r mm | Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan | X-BLD-04 |
 | A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close | X-PAR-07 |
-| A-M-104 | Extension is a single-storey unconditioned hall: lighting 8. W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) and lighting design; confirm the hall programme needs no conditioning | X-PAR-07 |
+| A-M-104 | Extension is a single-storey CONDITIONED hall (owner decisio W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme | X-PAR-07 |
 
 ## 7. T6 Commissioning measurements
 

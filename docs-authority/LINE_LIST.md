@@ -769,4 +769,4 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | cable | — | — |  | EVAP_BASE → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | IA-NAOH-MU | NORTH_DOCK | EVAP_BASE | solids | — | — | 33.5 | NORTH_DOCK → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-NA-PURGE | LEACH_CSTR_1 | NORTH_DOCK | DN15 | P2 | hot leach liquor | 21.4 | LEACH_CSTR_1 → NORTH_DOCK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | cable | — | — |  | SOL_ARK_60K → EXT_HALL, position missing for EXT_HALL | electrical: cable schedule X-ELS-06 |
+| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | cable | — | — | 142.0 | SOL_ARK_60K → EXT_HALL, orthogonal × 1.2 (duty origin; placement block EXT_HALL_E) | electrical: cable schedule X-ELS-06 |

@@ -110,14 +110,15 @@ def power():
     N['SOL_ARK_60K']['params'].update({'count': p['inverters'], 'kW': p['inv_kW']})
     # X-PAR-07: extension hall load on the graph (unconditioned until the owner decides; A-M-104)
     kw = round(rf['ext']['total_kW'], 4); E = {x['stream_id']: x for x in g['edges']}
-    note = (f"X-PAR-07 solver.roof_close: unconditioned extension {rf['added_m2']:.0f} m2; lighting {rf['ext']['light_kW']:.2f} kW (IECC 2021 C405, 10 % lit), "
-            f"ventilation fans {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2019, ISO 16798-3), envelope {rf['ext']['envelope_kW']:.2f} kW.")
+    cond = "conditioned" if DR.val(DR.load(), "ext_conditioned") else "unconditioned"
+    note = (f"X-PAR-07 solver.roof_close: {cond} extension {rf['added_m2']:.0f} m2; lighting {rf['ext']['light_kW']:.2f} kW (IECC 2021 C405, 10 % lit), "
+            f"ventilation {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope {rf['ext']['envelope_kW']:.2f} kW (IECC 2021 C402 roof and walls, NOAA DFW degree days).")
     if 'EXT_HALL' not in N:
         n = dict(unit_id='EXT_HALL', sector_id='ELEC_PV', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
                  notes='Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.', enabled=True, modules=[], params={}, continuous_kw=None)
         n['class'] = n.pop('class_'); g['nodes'].append(n); N['EXT_HALL'] = n
     N['EXT_HALL']['continuous_kw'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': note}
-    N['EXT_HALL']['params'].update({'footprint_m2': rf['added_m2'], 'conditioned': False, 'blocks': ['EXT_HALL_E', 'EXT_HALL_N'],
+    N['EXT_HALL']['params'].update({'footprint_m2': rf['added_m2'], 'conditioned': bool(DR.val(DR.load(), 'ext_conditioned')), 'blocks': ['EXT_HALL_E', 'EXT_HALL_N'],
         'duty': f"In 0.000 kg/d, out 0.000 kg/d, {kw:.3f} kW. Sheet docs-authority/duties/EXT_HALL.md."})
     old = E['SF-EXT_HALL']['rate']['value'] if 'SF-EXT_HALL' in E else 0.0
     if 'SF-EXT_HALL' not in E:

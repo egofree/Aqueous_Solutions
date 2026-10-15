@@ -60,7 +60,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 1174.000 | 1173.727 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 1336.000 | 1335.511 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -130,14 +130,16 @@ All solved units close.
 | ext_lpd_W_m2 | 8.8 | W/m2 | IECC2021_C405 | yes |
 | ext_light_frac | 0.1 | fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | A-M-104 | yes |
 | ext_Ra_L_s_m2 | 0.3 | L/(s m2) | ASHRAE621_2019 | yes |
-| ext_dT_mean_K | 8.0 | K mean |T_in - T_out| over the year | A-M-104 | yes |
+| ext_dT_mean_K | 7.9 | K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA_NORMALS_DFW | yes |
 | ext_cop | 3.2 | heat pump COP | AHRI340_ASHRAE901 | yes |
 | ext_sfp_W_per_L_s | 1.25 | W per L/s | ISO16798_3 | yes |
 | ext_U_roof | 0.199 | W/(m2 K) | IECC2021_C402 | yes |
 | roof_pv_dead_kPa | 0.15 | kPa PV modules and ballasted racking | A-M-105 | yes |
 | roof_live_kPa | 0.96 | kPa | ASCE7_22 | yes |
 | roof_snow_kPa | 0.24 | kPa flat-roof snow (study) | A-M-105 | yes |
-| ext_conditioned | 0.0 | 1 conditioned, 0 unconditioned hall | A-M-104 | yes |
+| ext_conditioned | 1.0 | 1 conditioned, 0 unconditioned hall | A-M-104 (owner decision 2026-10-15: conditioned) | yes |
+| ext_U_wall | 0.534 | W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | IECC2021_C402 | yes |
+| ext_wall_h_mm | 6000 | mm eave height of the extension (EXT_HALL block height) | A-M-104 | yes |
 
 ## 6. References
 
@@ -159,22 +161,29 @@ All solved units close.
 | EDBM_WHEY_2021 | Transforming salty whey into cleaning chemicals using electrodialysis with bipolar membranes, Desalination (2021), ScienceDirect pii S0011916420312765: maximum 3.6 M acid / 3.0 M base from NaCl; 6.7 kWh/kg to produce 2 M acid or base. |
 | EVAPCRYST_MVR | EvapCryst / manufacturer application notes on MVR evaporators: 15-25 kWh/t water for low boiling-point elevation, 30-60 kWh/t for high. |
 | GREENWOOD | Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl). |
-| IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K). |
+| IAPWS_IF97 | IAPWS, Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam (2007): region 4 saturation equation; latent heat of vaporisation 2257 kJ/kg at 100 C. |
+| IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K); Table C402.1.4 metal building wall U-0.094 Btu/h ft2 F (0.534 W/m2 K). |
 | IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2). |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding: eq. 29 (step), eq. 32 (touch), Cs eq. 27. |
 | IFC2021_1205 | International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access. |
 | IFC2021_5003 | International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
 | INCROPERA7 | Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1). |
 | ISO16798_3 | ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
+| ISO23251 | ISO 23251:2006 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade. |
+| ISO4126_1 | ISO 4126-1:2013, Safety devices for protection against excessive pressure, Part 1: safety valves (set pressure, overpressure, discharge capacity). |
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
+| MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
 | NFPA1_2021_11_12 | NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3). |
 | NFPA400_2022 | NFPA 400, Hazardous Materials Code (2022) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8. |
+| NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
 | NREL_PVWATTS | NREL PVWatts Calculator v8, site run recorded in AQS-SITE-002 (5.41 kWh/kWp/d). |
 | NREL_PVWATTS8 | Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input. |
 | PERRY9 | Green D.W., Southard M.Z. (eds), Perry's Chemical Engineers' Handbook, 9th ed., McGraw-Hill (2019), sec. 2 physical properties (heat capacity of aqueous HCl and NaOH solutions); sec. 6 fluid transport (line sizing by velocity). |
 | PERRY9_ABS | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 14 equipment for gas-liquid operations: packed-column capacity by a flooding velocity u_f = C_s sqrt((rho_L - rho_G)/rho_G) with C_s from the packing correlation or vendor; design at 0.7-0.8 of flood; height Z = HTU x NTU; for absorption with negligible equilibrium back-pressure (fast reaction, m y* ~ 0) NTU = ln(y_in/y_out). |
+| PERRY9_EVAP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 11 heat-transfer equipment, evaporators: falling-film evaporators, overall coefficients, minimum wetting rate and recirculation; mechanical vapour recompression. |
 | PERRY9_HCL | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 and sec. 13: HCl-water maximum-boiling azeotrope 20.2 wt% HCl at 108.6 C, 101.3 kPa; below the azeotrope the vapour is water-rich, so boiling concentrates the liquid toward 20.2 wt%; density of 2 M HCl 1.032 kg/L and of 2 M NaOH 1.081 kg/L at 20 C. |
+| PERRY9_MAT | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 25 materials of construction: impervious (resin-impregnated) graphite resists hydrochloric acid at all concentrations to the boiling point; nickel 200/201 for hot caustic soda. |
 | PERRY9_MIX | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 18 liquid-solid operations and mixing: turbulent agitator power P = Np rho N^3 D^5; pitched-blade turbine Np about 1.27 (4 blades, 45 deg). |
 | PERRY9_PUMP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 10 transport of fluids: pump hydraulic power P = rho g Q H; shaft power = hydraulic / efficiency. |
 | ROARK8 | Young W.C., Budynas R.G., Sadegh A.M., Roark's Formulas for Stress and Strain, 8th ed., McGraw-Hill (2012): table 11.4 rectangular plates (long plate, uniform load, edges simply supported: sigma = beta q b^2 / t^2, y = alpha q b^4 / (E t^3)); table 8.1 beams (simply supported, uniform load: M = w L^2 / 8, y = 5 w L^4 / (384 E I)). |
@@ -229,14 +238,16 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension |
 | driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension |
-| driver ext_dT_mean_K | 8.0 K mean |T_in - T_out| over the year | Bin-hour load calculation from TMY3 (AQS-SITE-002 site) |
+| driver ext_dT_mean_K | 7.9 K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation |
 | driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection |
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 |
 | driver roof_live_kPa | 0.96 kPa | Structural review |
 | driver roof_snow_kPa | 0.24 kPa flat-roof snow (study) | ASCE 7 Hazard Tool ground snow load at the site |
-| driver ext_conditioned | 0.0 1 conditioned, 0 unconditioned hall | Room programme for the extension: confirm no process in it needs heating or cooling; otherwise set 1 and re-solve |
+| driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme |
+| driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design |
+| driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -314,7 +325,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-075 | FARM second tier floor at L1 datum + 2250 mm, beds and skids mm | X-BLD-01 tier deck design and X-BLD-04 access check |
 | A-M-076 | FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm mm | X-BLD-04 general arrangement |
 | A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | BMED stack vendor data and leach-loop precipitation test (unit task 02) |
-| A-M-078 | PV 1174 kWp roof-only on a 120 x 96 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
+| A-M-078 | PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
 | A-M-079 | EW cell DC less existing heat outlets goes to HEAT_SINK as c kW | Cell heat balance at unit task 03 |
 | A-M-080 | RECT_EW cabinet 2400 x 800 x 2000 mm mm | Vendor GA |
 | A-M-081 | potable path: leach bleed -> VCD -> UPW polish (2.3% reject) - | Condensate chloride and pH test against the potable standard (unit task 06) |
@@ -340,5 +351,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-101 | Access check: 914 mm clear on at least one face per row; roo mm | Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths |
 | A-M-102 | L1 farm re-row: 914 mm minimum between all farm rows; farm r mm | Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan |
 | A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close |
-| A-M-104 | Extension is a single-storey unconditioned hall: lighting 8. W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) and lighting design; confirm the hall programme needs no conditioning |
+| A-M-104 | Extension is a single-storey CONDITIONED hall (owner decisio W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme |
 | A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays |

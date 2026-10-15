@@ -18,19 +18,19 @@ Flat 24 h profile (continuous process; study). PV yield 5.41 kWh/kWp/d before lo
 
 | Item | Bounding EW | Reference EW | Graph now |
 | --- | --- | --- | --- |
-| Bus demand, kW | 155.4 | 122.3 | PV average 144.8 |
-| Energy, kWh/d | 3730 | 2935 | — |
-| PV, kWp | 1077 | 848 | 1078 |
-| PV area at about 5 m²/kWp, m² | 5386 | 4238 | — |
-| Storage energy, kWh | 2176 | 1712 | 2176 |
-| Storage power, kW | 155 | 122 | 156 |
-| Inverters | 3 × 60 = 180.0 kW | 3 × 60 = 180.0 kW | 180.0 kW |
+| Bus demand incl. EXT_HALL, kW | 192.7 | 159.5 | PV average 182.0 |
+| Energy, kWh/d | 4624 | 3829 | — |
+| PV, kWp (roof only) | 1336 | 1106 | 1336 |
+| PV array area on the roof, m² | 11,709 at 0.114 kWp/m² | — | 11,709 |
+| Storage energy, kWh | 2697 | 2234 | 2698 |
+| Storage power, kW | 193 | 160 | 193 |
+| Inverters | 4 × 60 = 240.0 kW | 3 × 60 = 180.0 kW | 240.0 kW |
 
 Backup. Critical loads 32 kW (HABITATION 3, CRYO_H2 4, CRYO_ASU 18, GROW_BED 5, controls 2; study list). Generator 40 kW (125 %, rounded). Two days' critical energy 1536 kWh; on H₂ at about 33 kWh/kg LHV and 40 % engine efficiency that is about 115 kg H₂ held in CRYO_H2 (study). Graph: BACKUP_GEN 2.5 kW, FUEL_CELL 4.0 kW.
 
 ## 3. Findings
 
-Rev D (X-PAR-07, owner decision 2026-10-15: roof-only PV, grow the building). `flow_graph/param/solver.py` roof_close iterates the footprint on the 6 m bay grid until the roof, after IFC 2021 1205.3 / NFPA 1 11.12 pathways (1829 mm perimeter, 1219 mm between arrays of at most 45.72 m), carries the PV that closes the balance including the extension's own loads (IECC 2021 lighting, ASHRAE 62.1 ventilation, ISO 16798-3 fans; unconditioned hall). Converged: 120 x 96 m (20 x 16 bays, 11,520 m2, extension 11,088 m2), extension load 13.9 kW, bus 169.3 kW, PV 1174 kWp on 10,379 m2 of arrays (roof capacity 1183 kWp), ZNBR2 2371 kWh / 170 kW, SOL_ARK_60K 3 x 60 kW unchanged. Roof framing LRFD 1.72 kPa (ASCE 7-22). Ground field removed. Sensitivity: a conditioned extension needs about 33,500 m2. A-M-103 to A-M-105.
+Rev D (X-PAR-07, owner decisions 2026-10-15: roof-only PV, grow the building, extension conditioned). `flow_graph/param/solver.py` roof_close iterates the footprint on the 6 m bay grid until the roof, after IFC 2021 1205.3 / NFPA 1 11.12 pathways (1829 mm perimeter, 1219 mm between arrays of at most 45.72 m), carries the PV that closes the balance including the extension's own loads: lighting 8.8 W/m² lit 10 % of hours (IECC 2021 C405, C405.2.1), outdoor air 0.30 L/(s m²) (ASHRAE 62.1-2019) conditioned at COP 3.2 (ASHRAE 90.1-2019 Table 6.8.1-2) with ISO 16798-3 SFP 3 fans, roof U 0.199 and wall U 0.534 W/(m² K) over the full new perimeter at 6 m eave (IECC 2021 Table C402.1.4, climate zone 3), mean |dT| 7.9 K from the NOAA 1991-2020 DFW degree days. Converged: 156 x 84 m (26 x 14 bays, 13,104 m², extension 12,672 m²); EXT_HALL 37.26 kW (lighting 11.15, ventilation 16.08, envelope 10.02); bus 192.7 kW; PV 1336 kWp roof-only (roof capacity 1341 kWp, 8 arrays); ZNBR2 2698 kWh / 193 kW; SOL_ARK_60K 4 x 60 kW (was 3). Roof framing LRFD 1.72 kPa (ASCE 7-22). Ground field removed. The earlier 33,500 m² estimate assumed lighting at 100 % of hours; with occupant-sensor control (10 %) the conditioned hall converges at 13,104 m². GEO_GHEX coupling not applied (bore field sized for Q4; a ground-source unit at COP 3.6 would cut the envelope and air loads by about 11 %). A-M-103 to A-M-105.
 
 Rev C (X-PAR acid-loop decision, AQS-PAR-001, 2026-10-15). BMED_ACID at the published SEC 26.93 kW (was 16.13), EVAP_ACID 2.41 kW and EVAP_BASE 2.51 kW added (2.40 kW after the NaOH balance, X-PAR-06), RECT_EW 38.66 kW AC (was 38.02). Bus load +16.36 kW, carried on IA-PV-01. Graph: PV_ARRAY 1078 kWp (was 984), about 5390 m²; ZNBR2 2176 kWh / 156 kW (was 1987 / 142); SOL_ARK_60K 3 × 60 kW unchanged. Rev B text below keeps its own figures.
 

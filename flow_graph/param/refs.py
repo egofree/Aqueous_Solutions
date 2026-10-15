@@ -1,13 +1,21 @@
 """Citation registry for the parametric model. Code cites by key; docs print the full entry.
 Only published sources: standards, textbooks, peer-reviewed papers, manufacturer data."""
 REFS = {
+ 'NOAA_NORMALS_DFW': 'NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878.',
+ 'IAPWS_IF97': 'IAPWS, Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam (2007): region 4 saturation equation; latent heat of vaporisation 2257 kJ/kg at 100 C.',
+ 'PERRY9_EVAP': "Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 11 heat-transfer equipment, evaporators: falling-film evaporators, overall coefficients, minimum wetting rate and recirculation; mechanical vapour recompression.",
+ 'ISO23251': 'ISO 23251:2006 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade.',
+ 'ISO4126_1': 'ISO 4126-1:2013, Safety devices for protection against excessive pressure, Part 1: safety valves (set pressure, overpressure, discharge capacity).',
+ 'MCCABE7_DUHRING': 'McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation).',
+ 'PERRY9_MAT': "Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 25 materials of construction: impervious (resin-impregnated) graphite resists hydrochloric acid at all concentrations to the boiling point; nickel 200/201 for hot caustic soda.",
+
  'IFC2021_1205': 'International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access.',
  'NFPA1_2021_11_12': 'NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3).',
  'NREL_PVWATTS8': 'Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input.',
  'IECC2021_C405': 'International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2).',
  'ASHRAE621_2019': 'ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas.',
  'ISO16798_3': 'ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s).',
- 'IECC2021_C402': 'International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K).',
+ 'IECC2021_C402': 'International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K); Table C402.1.4 metal building wall U-0.094 Btu/h ft2 F (0.534 W/m2 K).',
  'ASCE7_22': 'ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R).',
  'AHRI340_ASHRAE901': 'ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360.',
 
