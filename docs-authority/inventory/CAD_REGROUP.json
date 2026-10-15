@@ -1,8 +1,8 @@
 {
  "units": 23,
  "moves": 12,
- "adjacency_before_m": 701.2,
- "adjacency_after_m": 518.0,
+ "adjacency_before_m": 702.3,
+ "adjacency_after_m": 519.0,
  "moves_list": [
   {
    "unit": "CRYO_H2",

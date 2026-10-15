@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,580.0 40.0,407.7 344.0,232.2 45.6,60.0 45.6,138.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="489.9">Z +2650</text>
-<text x="198.0" y="316.0">X +5400</text>
-<text x="200.8" y="142.1">Y +5300</text>
-<text x="51.6" y="95.0">Z -1200</text>
+<polyline points="40.0,580.0 40.0,397.5 362.1,211.5 99.6,60.0 99.6,142.6" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="484.7">Z +2650</text>
+<text x="207.0" y="300.5">X +5400</text>
+<text x="236.9" y="131.8">Y +4400</text>
+<text x="105.6" y="97.3">Z -1200</text>
 <circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">WS_HF_ED</text>
-<circle cx="45.6" cy="138.0" r="5" fill="none" stroke="black"/><text x="53.6" y="152.0">WET_BENCH</text>
+<circle cx="99.6" cy="142.6" r="5" fill="none" stroke="black"/><text x="107.6" y="156.6">WET_BENCH</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S31</text>
 <text x="20" y="614">DN15  class P3  PVDF SDR 21 ISO 10931</text>
 <text x="20" y="628">WS_HF_ED -> WET_BENCH</text>
-<text x="20" y="642">pipe 14.49 m in 4 pieces; cut 2639 5379 5279 1189 mm</text>
+<text x="20" y="642">pipe 13.59 m in 4 pieces; cut 2639 5379 4379 1189 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-S31</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric S31</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 01c67cdb   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

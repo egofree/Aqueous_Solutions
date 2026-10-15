@@ -1,0 +1,197 @@
+[
+ {
+  "unit": "FAB_UPW_TANK",
+  "applied": true,
+  "old_mm": [
+   500,
+   500,
+   800
+  ],
+  "D_mm": 400.0,
+  "H_mm": 600.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "HOPPER",
+  "applied": false,
+  "note": "no Part object with this label"
+ },
+ {
+  "unit": "MEOH_TANK",
+  "applied": true,
+  "old_mm": [
+   500,
+   500,
+   800
+  ],
+  "D_mm": 850.0,
+  "H_mm": 1250.0,
+  "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "NUTRIENT_DOSE",
+  "applied": true,
+  "old_mm": [
+   1600,
+   1400,
+   1400
+  ],
+  "D_mm": 700.0,
+  "H_mm": 900.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "PROD_C11_C18",
+  "applied": true,
+  "old_mm": [
+   600,
+   300,
+   700
+  ],
+  "D_mm": 650.0,
+  "H_mm": 950.0,
+  "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "PROD_C19_C28",
+  "applied": true,
+  "old_mm": [
+   600,
+   300,
+   700
+  ],
+  "D_mm": 550.0,
+  "H_mm": 800.0,
+  "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "PROD_C29",
+  "applied": true,
+  "old_mm": [
+   600,
+   300,
+   700
+  ],
+  "D_mm": 350.0,
+  "H_mm": 400.0,
+  "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "PROD_C5_C10",
+  "applied": true,
+  "old_mm": [
+   600,
+   300,
+   700
+  ],
+  "D_mm": 600.0,
+  "H_mm": 900.0,
+  "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "WS_AMMONIA",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 500.0,
+  "H_mm": 700.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_DOPE",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 300.0,
+  "H_mm": 300.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_HF_ED",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 350.0,
+  "H_mm": 550.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_KOH",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 300.0,
+  "H_mm": 300.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_NITRIC",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 350.0,
+  "H_mm": 450.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_PEROX",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 450.0,
+  "H_mm": 650.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_SLURRY",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 450.0,
+  "H_mm": 650.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "WS_SOLV",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   1100
+  ],
+  "D_mm": 300.0,
+  "H_mm": 300.0,
+  "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "WS_PHOS",
+  "applied": false,
+  "note": "no Part object with this label"
+ },
+ {
+  "unit": "REMIN",
+  "applied": false,
+  "note": "no Part object with this label"
+ }
+]

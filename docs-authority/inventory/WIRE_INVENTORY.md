@@ -25,27 +25,27 @@ Rule (`merge_panels`): fold the panel with the least feeder copper into the host
 | OIL | LP-WET |
 | PUMPED_HYDRO | LP-CRYO |
 
-Rejected by less than 5 kg of copper (kept separate under the rule; a panel enclosure and main breaker probably outweigh this, but no cost basis is registered, so they are held for review): DOCK (+0.2 kg), FUEL_CELL (+0.3 kg), BACKUP_GEN (+0.5 kg), GEO (+0.5 kg), WTR (+2.6 kg), FARM (+2.6 kg), WET (+3.2 kg), ELEC_PV (+4.5 kg).
+Rejected by less than 5 kg of copper (kept separate under the rule; a panel enclosure and main breaker probably outweigh this, but no cost basis is registered, so they are held for review): FUEL_CELL (+0.3 kg), DOCK (+0.3 kg), BACKUP_GEN (+0.5 kg), GEO (+0.6 kg), WTR (+3.0 kg), FARM (+3.0 kg), WET (+3.2 kg), ELEC_PV (+4.5 kg).
 
 ## 1. Family rollup
 
 | Family | Type | Size | Insulation | Voltage class | Conductor m | Circuits |
 | --- | --- | --- | --- | --- | --- | --- |
 | WF-01 | PV DC | 10 AWG | PV Wire, UL 4703, 2 kV | 2000 V DC | 46320 | 386 |
-| WF-02 | control | 18 AWG | TFFN 3-pair, shielded | 600 V | 31724 | 217 |
+| WF-02 | control | 18 AWG | TFFN 3-pair, shielded | 600 V | 31704 | 217 |
 | WF-03 | power | 6 AWG | THHN/THWN-2 Cu in EMT | 600 V | 23760 | 66 |
 | WF-04 | equipment ground | 10 AWG | bare Cu | - | 23160 | 386 |
-| WF-05 | power | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 13310 | 207 |
+| WF-05 | power | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 13300 | 207 |
 | WF-06 | control | 18 AWG | shielded pair | 300 V | 6440 | 322 |
 | WF-07 | DC power pair | 16 AWG | TC-ER 2-cond | 600 V | 6380 | 319 |
 | WF-08 | bare grounding | 4/0 AWG | bare soft-drawn Cu | - | 6144 | 1 |
-| WF-09 | equipment ground | 14 AWG | green XHHW-2 Cu | 600 V | 4428 | 204 |
+| WF-09 | equipment ground | 14 AWG | green XHHW-2 Cu | 600 V | 4424 | 204 |
 | WF-10 | power | 3 AWG | XHHW-2 Cu | 600 V | 3675 | 49 |
 | WF-11 | power | 6 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 2525 | 8 |
 | WF-12 | MV power | 2 AWG | MV-105 Cu, 133 % insulation, tape shield | 15 kV | 1500 | 5 |
 | WF-13 | equipment ground | 8 AWG | green XHHW-2 Cu | 600 V | 848 | 9 |
 | WF-14 | power | 400 kcmil | XHHW-2 Cu | 600 V | 675 | 5 |
-| WF-15 | power | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 582 | 7 |
+| WF-15 | power | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 574 | 7 |
 | WF-16 | power | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 330 | 2 |
 | WF-17 | power | 6 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 315 | 2 |
 | WF-18 | power | 4/0 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 258 | 1 |
@@ -196,18 +196,18 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | FAB | WAFER_FAB | induced-draft fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WAFER_FAB | induced-draft fan signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| FAB | WAFER_FAB | process vacuum pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 14.1 | 1 | 14.1 | NEC 250.122 at 15 A OCPD |
-| FAB | WAFER_FAB | process vacuum pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 14.1 | 1 | 84.3 | start/stop, run, fault (assumed) |
-| FAB | WAFER_FAB | process vacuum pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 14.1 | 1 | 42.2 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| FAB | WAFER_FAB | process vacuum pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 13.2 | 1 | 13.2 | NEC 250.122 at 15 A OCPD |
+| FAB | WAFER_FAB | process vacuum pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 13.2 | 1 | 79.1 | start/stop, run, fault (assumed) |
+| FAB | WAFER_FAB | process vacuum pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 13.2 | 1 | 39.5 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 | FAB | WAFER_FAB | transfer pump IA-FAB-SPENT to LEACH_CSTR_1 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WAFER_FAB | transfer pump IA-FAB-SPENT to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | FAB | WAFER_FAB | transfer pump S39 to LEACH_CSTR_1 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WAFER_FAB | transfer pump S39 to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | FAB | WET_BENCH | induced-draft fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WET_BENCH | induced-draft fan signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| FAB | WET_BENCH | process vacuum pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 14.1 | 1 | 14.1 | NEC 250.122 at 15 A OCPD |
-| FAB | WET_BENCH | process vacuum pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 14.1 | 1 | 84.3 | start/stop, run, fault (assumed) |
-| FAB | WET_BENCH | process vacuum pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 14.1 | 1 | 42.2 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| FAB | WET_BENCH | process vacuum pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 13.2 | 1 | 13.2 | NEC 250.122 at 15 A OCPD |
+| FAB | WET_BENCH | process vacuum pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 13.2 | 1 | 79.1 | start/stop, run, fault (assumed) |
+| FAB | WET_BENCH | process vacuum pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 13.2 | 1 | 39.5 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 | FAB | WET_BENCH | transfer pump S10 to LEACH_CSTR_1 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WET_BENCH | transfer pump S10 to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | FAB | WET_BENCH | transfer pump S38 to OIL_FRAC power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
@@ -270,14 +270,14 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | tool | LITHO_COAT | wafer stage axis signal | 18 AWG | shielded pair | 2 | 10.0 | 2 | 40.0 | speed/position feedback (assumed) |
 | tool | LITHO_DEV | wafer stage axis power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 2 | 40.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | tool | LITHO_DEV | wafer stage axis signal | 18 AWG | shielded pair | 2 | 10.0 | 2 | 40.0 | speed/position feedback (assumed) |
-| tool | LITHO_STUB | main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 12.0 | 1 | 12.0 | NEC 250.122 at 15 A OCPD |
-| tool | LITHO_STUB | main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 12.0 | 1 | 71.8 | start/stop, run, fault (assumed) |
-| tool | LITHO_STUB | main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 12.0 | 1 | 35.9 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| tool | LITHO_STUB | main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 11.1 | 1 | 11.1 | NEC 250.122 at 15 A OCPD |
+| tool | LITHO_STUB | main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 11.1 | 1 | 66.5 | start/stop, run, fault (assumed) |
+| tool | LITHO_STUB | main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 11.1 | 1 | 33.3 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 | tool | LITHO_STUB | wafer stage axis power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 2 | 40.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | tool | LITHO_STUB | wafer stage axis signal | 18 AWG | shielded pair | 2 | 10.0 | 2 | 40.0 | speed/position feedback (assumed) |
-| tool | SOLAR_PV_CELL | main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 13.8 | 1 | 13.8 | NEC 250.122 at 15 A OCPD |
-| tool | SOLAR_PV_CELL | main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 13.8 | 1 | 83.0 | start/stop, run, fault (assumed) |
-| tool | SOLAR_PV_CELL | main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 13.8 | 1 | 41.5 | NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| tool | SOLAR_PV_CELL | main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 13.0 | 1 | 13.0 | NEC 250.122 at 15 A OCPD |
+| tool | SOLAR_PV_CELL | main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 13.0 | 1 | 77.7 | start/stop, run, fault (assumed) |
+| tool | SOLAR_PV_CELL | main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 13.0 | 1 | 38.9 | NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 
 ### FARM
 
@@ -841,9 +841,9 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | BMED_CRU | BMED_UPW_POLISH | transfer pump IA-UPW-REMIN to REMIN signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | CATCH | CATCH_TANK | on/off valve IA-ESS-HYDRO-CHG power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | CATCH | CATCH_TANK | on/off valve IA-ESS-HYDRO-CHG signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| CATCH | CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK EGC | 14 AWG | green XHHW-2 Cu | 1 | 21.1 | 1 | 21.1 | NEC 250.122 at 15 A OCPD |
-| CATCH | CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK control | 18 AWG | TFFN 3-pair, shielded | 6 | 21.1 | 1 | 126.6 | start/stop, run, fault (assumed) |
-| CATCH | CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 21.1 | 1 | 63.3 | NEC 430.22: 1.25 x 2.1 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| CATCH | CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK EGC | 14 AWG | green XHHW-2 Cu | 1 | 22.0 | 1 | 22.0 | NEC 250.122 at 15 A OCPD |
+| CATCH | CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK control | 18 AWG | TFFN 3-pair, shielded | 6 | 22.0 | 1 | 131.9 | start/stop, run, fault (assumed) |
+| CATCH | CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 22.0 | 1 | 65.9 | NEC 430.22: 1.25 x 2.1 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 | ROOF | ROOF_TANK | on/off valve IA-BED-H2O power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | ROOF | ROOF_TANK | on/off valve IA-BED-H2O signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | ROOF | ROOF_TANK | on/off valve IA-ESS-HYDRO-DIS power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
@@ -858,9 +858,9 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | ROOF | ROOF_TANK | on/off valve S21 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | ROOF | ROOF_TANK | transfer pump IA-BED-H2O to GROW_BED power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | ROOF | ROOF_TANK | transfer pump IA-BED-H2O to GROW_BED signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| ROOF | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK EGC | 14 AWG | green XHHW-2 Cu | 1 | 19.7 | 1 | 19.7 | NEC 250.122 at 15 A OCPD |
-| ROOF | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK control | 18 AWG | TFFN 3-pair, shielded | 6 | 19.7 | 1 | 118.0 | start/stop, run, fault (assumed) |
-| ROOF | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 19.7 | 1 | 59.0 | NEC 430.22: 1.25 x 2.1 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| ROOF | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK EGC | 14 AWG | green XHHW-2 Cu | 1 | 20.5 | 1 | 20.5 | NEC 250.122 at 15 A OCPD |
+| ROOF | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK control | 18 AWG | TFFN 3-pair, shielded | 6 | 20.5 | 1 | 123.3 | start/stop, run, fault (assumed) |
+| ROOF | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 20.5 | 1 | 61.6 | NEC 430.22: 1.25 x 2.1 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 | ROOF | ROOF_TANK | transfer pump IA-FLUE-QUENCH to FLUE_KO power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | ROOF | ROOF_TANK | transfer pump IA-FLUE-QUENCH to FLUE_KO signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | ROOF | ROOF_TANK | transfer pump IA-NOX-HAB to HABITATION power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
@@ -873,16 +873,16 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | digest | BLACK_ALK_HOLD | NaOH dosing pump signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | digest | BLACK_ALK_HOLD | Release valve per tank power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | digest | BLACK_ALK_HOLD | Release valve per tank signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| digest | BLACK_DEWATER | Gearmotor 0.09 kW EGC | 14 AWG | green XHHW-2 Cu | 1 | 25.8 | 1 | 25.8 | NEC 250.122 at 15 A OCPD |
-| digest | BLACK_DEWATER | Gearmotor 0.09 kW control | 18 AWG | TFFN 3-pair, shielded | 6 | 25.8 | 1 | 154.6 | start/stop, run, fault (assumed) |
-| digest | BLACK_DEWATER | Gearmotor 0.09 kW feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 25.8 | 1 | 77.3 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| digest | BLACK_DEWATER | Gearmotor 0.09 kW EGC | 14 AWG | green XHHW-2 Cu | 1 | 24.9 | 1 | 24.9 | NEC 250.122 at 15 A OCPD |
+| digest | BLACK_DEWATER | Gearmotor 0.09 kW control | 18 AWG | TFFN 3-pair, shielded | 6 | 24.9 | 1 | 149.3 | start/stop, run, fault (assumed) |
+| digest | BLACK_DEWATER | Gearmotor 0.09 kW feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 24.9 | 1 | 74.7 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
 | digest | BLACK_DIGEST | Biogas recirculation diaphragm blower about 2 L/min power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | digest | BLACK_DIGEST | Biogas recirculation diaphragm blower about 2 L/min signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| digest | BLACK_PASTEUR | Transfer pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 27.1 | 1 | 27.1 | NEC 250.122 at 15 A OCPD |
-| digest | BLACK_PASTEUR | Transfer pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 27.1 | 1 | 162.5 | start/stop, run, fault (assumed) |
-| digest | BLACK_PASTEUR | Transfer pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 27.1 | 1 | 81.3 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
-| distribution | LP-WTR | panel feeder 208 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 29.8 | 1 | 119.1 | NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
-| distribution | LP-WTR | panel feeder 460 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 29.8 | 1 | 119.1 | NEC 430.24: 12.1 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| digest | BLACK_PASTEUR | Transfer pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 26.2 | 1 | 26.2 | NEC 250.122 at 15 A OCPD |
+| digest | BLACK_PASTEUR | Transfer pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 26.2 | 1 | 157.3 | start/stop, run, fault (assumed) |
+| digest | BLACK_PASTEUR | Transfer pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 26.2 | 1 | 78.6 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WTR (Manhattan x 1.1 + 3 m drop, assumed) |
+| distribution | LP-WTR | panel feeder 208 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 28.8 | 1 | 115.3 | NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| distribution | LP-WTR | panel feeder 460 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 28.8 | 1 | 115.3 | NEC 430.24: 12.1 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | tank | REMIN | on/off valve IA-POT-01 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | tank | REMIN | on/off valve IA-POT-01 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | tank | REMIN | on/off valve S26 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |

@@ -123,6 +123,9 @@ def build():
                 pl = o.Placement; pl.Base = pl.Base + d; o.Placement = pl
         print("  relocated", u, "by", round(d.x), round(d.y))
     doc.recompute()
+    import graph_dims
+    graph_dims.apply(doc, OUT.parents[1] / "flow_graph/plant_flow_graph.json", OUT.parents[1] / "docs-authority/inventory/CAD_GRAPH_DIMS.json")
+    doc.recompute()
     import resolve_overlaps
     resolve_overlaps.resolve(doc, (P.PLATE_L, P.PLATE_W), OUT.parents[1] / "docs-authority/inventory/CAD_MOVES.json")
     doc.recompute()

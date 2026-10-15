@@ -1,5 +1,5 @@
 step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
-1,FAB,FAB_UPW_TANK,150,solute,-,8,no
+1,FAB,FAB_UPW_TANK,125,solute,-,8,no
 1,FAB,LITHO_ALIGN,0,,-,30,no
 1,FAB,LITHO_COAT,0,,-,36,no
 1,FAB,LITHO_DEV,0,,-,30,no
@@ -7,15 +7,15 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 1,FAB,SOLAR_PV_CELL,0,solute,-,691,no
 1,FAB,WAFER_FAB,4,N2 solute,-,1,no
 1,FAB,WET_BENCH,99,solute,-,15,no
-1,FAB,WS_AMMONIA,0,N2,-,106,no
-1,FAB,WS_DOPE,0,solute,-,106,no
+1,FAB,WS_AMMONIA,440,N2,-,106,no
+1,FAB,WS_DOPE,440,solute,-,106,no
 1,FAB,WS_HF_ED,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
-1,FAB,WS_KOH,1,solute,-,106,no
-1,FAB,WS_NITRIC,4,solute,-,106,no
-1,FAB,WS_PEROX,8,Ar O2,N2/air to 19.5-23.5 % O2,106,no
+1,FAB,WS_KOH,440,solute,-,106,no
+1,FAB,WS_NITRIC,440,solute,-,106,no
+1,FAB,WS_PEROX,440,Ar O2,N2/air to 19.5-23.5 % O2,106,no
 1,FAB,WS_PHOS,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
 1,FAB,WS_SLURRY,0,solute,-,106,no
-1,FAB,WS_SOLV,0,solute,-,106,no
+1,FAB,WS_SOLV,440,solute,-,106,no
 2,MFG,BLOW_MOLD,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",230,no
 2,MFG,BOARD_MILL,0,solute,-,259,no
 2,MFG,COLD_MILL,0,metal,-,270,no
@@ -94,7 +94,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 4,FARM,VEG_BED,0,CO2,-,0,no
 4,FARM,WORMS,0,solute,-,259,no
 4,FARM,YEAST,0,solute,-,25,no
-5,NUT,NUTRIENT_DOSE,139,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",21,no
+5,NUT,NUTRIENT_DOSE,750,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",180,yes
 6,GLASS,GLASS_BURNOUT,0,solute,-,86,no
 6,GLASS,GLASS_DIGEST,313,solute,-,75,no
 6,GLASS,GLASS_MILL,0,solute,-,58,no
@@ -102,14 +102,14 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 6,GLASS,SIC_FURNACE,2531,solute,-,608,yes
 7,OIL,AFTERBURNER,0,Ar N2 O2 solute,N2/air to 19.5-23.5 % O2,65,no
 7,OIL,C29_RECYCLE,4,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",1,no
-7,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",240,no
+7,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",583,no
 7,OIL,OIL_DRYER,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",86,no
 7,OIL,OIL_FRAC,41,hydrocarbon solute,"N2 to < 25 % LFL, then < 1 % H2",6,no
 7,OIL,OIL_PYRO,105,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",25,no
-7,OIL,PROD_C11_C18,25,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-7,OIL,PROD_C19_C28,15,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-7,OIL,PROD_C29,15,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-7,OIL,PROD_C5_C10,19,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
+7,OIL,PROD_C11_C18,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
+7,OIL,PROD_C19_C28,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
+7,OIL,PROD_C29,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
+7,OIL,PROD_C5_C10,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
 8,MEOH,MEOH_FC,1440,Ar Fe HCl O2 other_metals solute,N2/air to 19.5-23.5 % O2,346,yes
 8,MEOH,MEOH_FERM,0,solute,-,416,no
 8,MEOH,MEOH_SYNTH,0,CO2 H2,"N2 to < 25 % LFL, then < 1 % H2",416,no

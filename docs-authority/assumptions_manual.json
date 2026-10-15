@@ -3908,5 +3908,25 @@
     "verification": "docs-authority/sizing/STORAGE_HOLDUP.md",
     "replace_when": "Replace with first-article / rig test results",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-226",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "GA reads storage dims from the graph",
+    "statement": "models/freecad/graph_dims.py rebuilds every unit with params.design_storage (AQS-DUTY-064) as a D x H cylinder at its placed centre before the overlap resolver; 15 of 18 applied. HOPPER is modelled as the combined HOPPER_SHREDDER; REMIN and WS_PHOS have no CAD solid yet (placed under the unrouted-unit task). Clash gates 0/0/0 after rebuild (47 resolver moves, 12 regroup moves).",
+    "verification": "CAD_GRAPH_DIMS.json; CAD_CLASH*.json.",
+    "replace_when": "When every GA module reads its envelope from the graph.",
+    "doc": "AQS-PAR-003"
   }
 ]

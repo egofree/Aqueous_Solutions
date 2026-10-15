@@ -42,13 +42,13 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | ALK_SCRUBBER | induced-draft fan feeder | 14 AWG | 1 | 3.0 | 15 | 7.5 | 460 | 0.09 | 3 | yes |
 | BACKUP_GEN | radiator fan feeder | 14 AWG | 1 | 1.1 | 15 | 3.0 | 460 | 0.01 | 3 | yes |
 | BACKUP_GEN | starter motor feeder | 14 AWG | 1 | 3.4 | 15 | 3.0 | 460 | 0.04 | 3 | yes |
-| BLACK_DEWATER | Gearmotor 0.09 kW feeder | 14 AWG | 1 | 2.4 | 15 | 25.8 | 460 | 0.24 | 3 | yes |
-| BLACK_PASTEUR | Transfer pump feeder | 14 AWG | 1 | 2.4 | 15 | 27.1 | 460 | 0.25 | 3 | yes |
+| BLACK_DEWATER | Gearmotor 0.09 kW feeder | 14 AWG | 1 | 2.4 | 15 | 24.9 | 460 | 0.23 | 3 | yes |
+| BLACK_PASTEUR | Transfer pump feeder | 14 AWG | 1 | 2.4 | 15 | 26.2 | 460 | 0.24 | 3 | yes |
 | BLOW_MOLD | main drive feeder | 14 AWG | 1 | 1.6 | 15 | 9.5 | 460 | 0.06 | 3 | yes |
 | BMED_ACID | stack loop pumps (acid, base, salt) feeder | 14 AWG | 1 | 1.1 | 15 | 11.5 | 460 | 0.05 | 3 | yes |
 | BMED_BASE | stack loop pumps (acid, base, salt) feeder | 14 AWG | 1 | 1.1 | 15 | 11.5 | 460 | 0.05 | 3 | yes |
 | BOARD_MILL | main drive feeder | 14 AWG | 1 | 3.0 | 15 | 9.7 | 460 | 0.11 | 3 | yes |
-| CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 21.1 | 460 | 0.17 | 3 | yes |
+| CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 22.0 | 460 | 0.18 | 3 | yes |
 | CB-1 | inverter AC output to section bus | 3 AWG | 1 | 72.2 | 100 | 25.0 | 460 | 0.55 | 3 | yes |
 | CB-1 | section main to CB-1 transformer LV | 400 kcmil | 3 | 1000.0 | 1005 | 15.0 | 460 | 0.20 | 2 | yes |
 | CB-2 | inverter AC output to section bus | 3 AWG | 1 | 72.2 | 100 | 25.0 | 460 | 0.55 | 3 | yes |
@@ -107,7 +107,7 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | HOPPER | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 7.6 | 460 | 0.07 | 3 | yes |
 | HYDRO_SET | pump-turbine motor-generator feeder | 14 AWG | 1 | 4.8 | 15 | 22.6 | 460 | 0.42 | 3 | yes |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 12.8 | 460 | 0.15 | 3 | yes |
-| LITHO_STUB | main drive feeder | 14 AWG | 1 | 2.4 | 15 | 12.0 | 460 | 0.11 | 3 | yes |
+| LITHO_STUB | main drive feeder | 14 AWG | 1 | 2.4 | 15 | 11.1 | 460 | 0.10 | 3 | yes |
 | LP-BACKUP_GEN | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 15.0 | 460 | 0.31 | 2 | yes |
 | LP-CRYO | panel feeder 460 V | 6 AWG | 1 | 61.6 | 65 | 46.6 | 460 | 1.74 | 2 | yes |
 | LP-DOCK | panel feeder 460 V | 14 AWG | 1 | 12.8 | 15 | 15.6 | 460 | 0.77 | 2 | yes |
@@ -119,8 +119,8 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | LP-MFG | panel feeder 460 V | 3 AWG | 1 | 95.7 | 100 | 43.3 | 460 | 1.25 | 2 | yes |
 | LP-WET | panel feeder 208 V | 6 AWG | 1 | 36.6 | 65 | 32.3 | 208 | 1.58 | 2 | yes |
 | LP-WET | panel feeder 460 V | 10 AWG | 1 | 28.6 | 30 | 32.3 | 460 | 1.38 | 2 | yes |
-| LP-WTR | panel feeder 208 V | 14 AWG | 1 | 7.8 | 15 | 29.8 | 208 | 1.99 | 2 | yes |
-| LP-WTR | panel feeder 460 V | 14 AWG | 1 | 12.1 | 15 | 29.8 | 460 | 1.40 | 2 | yes |
+| LP-WTR | panel feeder 208 V | 14 AWG | 1 | 7.8 | 15 | 28.8 | 208 | 1.93 | 2 | yes |
+| LP-WTR | panel feeder 460 V | 14 AWG | 1 | 12.1 | 15 | 28.8 | 460 | 1.35 | 2 | yes |
 | LP-ZNBR2 | panel feeder 460 V | 2 AWG | 1 | 105.9 | 115 | 13.8 | 460 | 0.35 | 2 | yes |
 | MET_AHU | induced-draft fan feeder | 14 AWG | 1 | 4.8 | 15 | 14.2 | 460 | 0.26 | 3 | yes |
 | MET_MELT | Induction melt furnace, 25 kg Cu charge: cooling-water pump feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
@@ -136,10 +136,10 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | NORTH_DOCK | dock leveller hydraulic pump feeder | 14 AWG | 1 | 3.0 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | NORTH_DOCK | overhead door operator feeder | 14 AWG | 1 | 3.0 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | POLISH_BANK | screw conveyor IA-POL-CAKE to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 11.5 | 460 | 0.07 | 3 | yes |
-| ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 19.7 | 460 | 0.16 | 3 | yes |
+| ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 20.5 | 460 | 0.17 | 3 | yes |
 | SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 11.5 | 460 | 0.11 | 3 | yes |
-| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 13.8 | 460 | 0.06 | 3 | yes |
-| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 14.1 | 460 | 0.16 | 3 | yes |
-| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 14.1 | 460 | 0.16 | 3 | yes |
+| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 13.0 | 460 | 0.06 | 3 | yes |
+| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 13.2 | 460 | 0.15 | 3 | yes |
+| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 13.2 | 460 | 0.15 | 3 | yes |
 | WIRE_DRAW | Bull-block wire drawer: main drive feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
 | ZNBR2 | electrolyte pump (anolyte, catholyte) per stack string feeder | 14 AWG | 1 | 1.1 | 15 | 3.0 | 460 | 0.01 | 3 | yes |

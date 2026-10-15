@@ -958,20 +958,20 @@ bulk pipe,PF-22,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 3/4 in 
 bulk pipe,PF-23,"PVDF SDR 21 ISO 10931 DN300 pipe, 1 x 6.096 m",5.0 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-23,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 7/8 in studs,2 / 2 / 2 / 24,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",46320 m,Cu,AQS-INV-002
-bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",31724 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",31704 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",23760 m,Cu,AQS-INV-002
 bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",23160 m,Cu,AQS-INV-002
-bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",13310 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",13300 m,Cu,AQS-INV-002
 bulk wire,WF-06,"control 18 AWG shielded pair, 300 V",6440 m,Cu,AQS-INV-002
 bulk wire,WF-07,"DC power pair 16 AWG TC-ER 2-cond, 600 V",6380 m,Cu,AQS-INV-002
 bulk wire,WF-08,"bare grounding 4/0 AWG bare soft-drawn Cu, -",6144 m,Cu,AQS-INV-002
-bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4428 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4424 m,Cu,AQS-INV-002
 bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3675 m,Cu,AQS-INV-002
 bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",2525 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1500 m,Cu,AQS-INV-002
 bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",848 m,Cu,AQS-INV-002
 bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",675 m,Cu,AQS-INV-002
-bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",582 m,Cu,AQS-INV-002
+bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",574 m,Cu,AQS-INV-002
 bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",330 m,Cu,AQS-INV-002
 bulk wire,WF-17,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",315 m,Cu,AQS-INV-002
 bulk wire,WF-18,"power 4/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",258 m,Cu,AQS-INV-002

@@ -42,7 +42,7 @@ Earlier fixes: core re-packed (CORE 8 x 6 m; STAIR_P, ELEV_SVC, STAIR_MAINT and 
 
 Fixes: the L-1 corridors were re-routed round the process hall (`fitout.LM1_ROUTE`: south aisle, west aisle, link and north aisle to STAIR_SERVICE, approach to the CRYO west door, all >= 1,200 mm); the old E-W and N-S spines ran through the pyrolysis, BMED and leach lines. The catch tank top was dropped 0.5 m below L-1 floor (slab plus bund-sump recess; `water_tower.TOP`), which deepens L-2 and changes the hydro head. The rest by `resolve_overlaps.py` (A-M-220), which moves the smaller unit of each overlapping pair to the nearest clear position on its level:
 
-65 moves; the largest are listed. Moves above 2 m change the piping runs, which are drawn from the old positions until the isometrics are regenerated (X-BLD-04 follow-up).
+59 moves; the largest are listed. Moves above 2 m change the piping runs, which are drawn from the old positions until the isometrics are regenerated (X-BLD-04 follow-up).
 
 | Unit | Was clashing with | dx mm | dy mm |
 |---|---|---|---|

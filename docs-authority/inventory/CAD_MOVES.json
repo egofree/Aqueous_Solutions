@@ -141,18 +141,24 @@
   "unit": "PROD_C5_C10",
   "from_clash_with": "FRACTIONATOR",
   "dx_mm": 0,
-  "dy_mm": -300
+  "dy_mm": -450
  },
  {
   "unit": "PROD_C11_C18",
   "from_clash_with": "FRACTIONATOR",
-  "dx_mm": 200,
-  "dy_mm": 0
+  "dx_mm": 0,
+  "dy_mm": -825
  },
  {
   "unit": "FRACTIONATOR",
   "from_clash_with": "NaOH_DIGEST",
   "dx_mm": 1526,
+  "dy_mm": 0
+ },
+ {
+  "unit": "PROD_C29",
+  "from_clash_with": "PROD_C19_C28",
+  "dx_mm": -950,
   "dy_mm": 0
  },
  {
@@ -274,48 +280,6 @@
   "from_clash_with": "CORR_Lm1_LINK",
   "dx_mm": 0,
   "dy_mm": -104
- },
- {
-  "unit": "WS_AMMONIA",
-  "from_clash_with": "WS_DOPE",
-  "dx_mm": 0,
-  "dy_mm": -900
- },
- {
-  "unit": "WS_DOPE",
-  "from_clash_with": "WS_HF_ED",
-  "dx_mm": -350,
-  "dy_mm": 0
- },
- {
-  "unit": "WS_HF_ED",
-  "from_clash_with": "WS_KOH",
-  "dx_mm": 0,
-  "dy_mm": -900
- },
- {
-  "unit": "WS_KOH",
-  "from_clash_with": "WS_NITRIC",
-  "dx_mm": -350,
-  "dy_mm": 0
- },
- {
-  "unit": "WS_NITRIC",
-  "from_clash_with": "WS_PEROX",
-  "dx_mm": 0,
-  "dy_mm": -900
- },
- {
-  "unit": "WS_PEROX",
-  "from_clash_with": "WS_SLURRY",
-  "dx_mm": -350,
-  "dy_mm": 0
- },
- {
-  "unit": "WS_SLURRY",
-  "from_clash_with": "WS_SOLV",
-  "dx_mm": 0,
-  "dy_mm": -900
  },
  {
   "unit": "CRYO_H2",
