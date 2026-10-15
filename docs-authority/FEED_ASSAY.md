@@ -122,4 +122,4 @@ MFG_SHOP to LEACH_CSTR_1, 12.0 kg/d, phase S. The rate stays.
 
 ## 7. What this is not
 
-Not a weighed sample. Not a design feed. Not a reason to change a bore, a cell, or a holdup. `assay_g_L` is not this assay. A characterized lot replaces the reference point. It does not resize in the same commit.
+Not a weighed sample. Not a design feed. Not a reason to change a bore, a cell, or a holdup. `assay_g_L` is not this assay. A characterized lot replaces the reference point. It does not resize in the same commit. The station that reports a lot against section 1 is `docs-authority/INSTRUMENT_LOOPS.md`.
