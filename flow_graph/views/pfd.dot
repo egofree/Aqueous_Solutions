@@ -418,7 +418,7 @@ digraph G {
   "CRYO_H2" -> "H2_PURIFIER" [label="S49\\n5.028752089257418 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "FUEL_CELL" [label="S50\\n38.4 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n3.46 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "FUEL_CELL" -> "VCD_TRAIN" [label="S52\\n42.881652 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FUEL_CELL" -> "VCD_TRAIN" [label="S52\\n42.876623 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FUEL_CELL" -> "Q4_BUS" [label="S53\\n1.1419 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "CRYO_HX_Q4" -> "Q4_BUS" [label="S54\\n0.5448 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55\\n4.2838 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -857,7 +857,7 @@ digraph G {
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-04-TRIM\\n1.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GEO_GHEX" -> "HEAT_SINK" [label="IA-GHEX-REJ\\n1.807 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "LEACH_CSTR_1" -> "VCD_TRAIN" [label="IA-LEACH-VCD\\n228.693629 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "H2_PURIFIER" -> "FUEL_CELL" [label="S49P\\n5.028752089257418 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "H2_PURIFIER" -> "FUEL_CELL" [label="S49P\\n5.023723 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "ALK_SCRUBBER" [label="SF-ALK_SCRUBBER\\n1.1123 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ALK_SCRUBBER" -> "HEAT_SINK" [label="SQ-ALK_SCRUBBER\\n1.1123 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_UPW_POLISH" [label="SF-BMED_UPW_POLISH\\n0.038 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -1152,6 +1152,7 @@ digraph G {
   "NOX_SCRUB" -> "HEAT_SINK" [label="SQ-NOX_SCRUB\\n0.0385 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "SOL_ARK_60K" -> "MET_SCRUB" [label="SF-MET_SCRUB\\n2.1234 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MET_SCRUB" -> "HEAT_SINK" [label="SQ-MET_SCRUB\\n2.1234 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
+  "H2_PURIFIER" -> "VCD_TRAIN" [label="IA-H2P-H2O\\n0.005029 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.3611 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.4139 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-A\\n0.1313 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];

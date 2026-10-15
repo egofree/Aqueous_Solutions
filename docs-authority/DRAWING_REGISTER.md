@@ -12,8 +12,8 @@ Authority: AQS-PLAN-007 X-DWG-02 under the drawing standard AQS-DWG-001. Generat
 | AQS-DWG-PFD-EFD-ELEC | Electrical flow diagram | flow diagram (ISO_10628_2) | 49a39546 | flow_graph/views/efd-elec.svg |
 | AQS-DWG-PFD-EFD-ESS | Energy storage flow diagram | flow diagram (ISO_10628_2) | 8a0924d5 | flow_graph/views/efd-ess.svg |
 | AQS-DWG-PFD-EFD-THERMAL | Thermal flow diagram | flow diagram (ISO_10628_2) | 9bac6f8a | flow_graph/views/efd-thermal.svg |
-| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | 701fd94b | flow_graph/views/mfd.svg |
-| AQS-DWG-PFD-PFD | Process flow diagram | flow diagram (ISO_10628_2) | 21c323d4 | flow_graph/views/pfd.svg |
+| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | d093180a | flow_graph/views/mfd.svg |
+| AQS-DWG-PFD-PFD | Process flow diagram | flow diagram (ISO_10628_2) | 9853dfb9 | flow_graph/views/pfd.svg |
 | AQS-ISO-002-C29_RECYCLE | Piping isometric C29_RECYCLE | piping isometric | 63ee50ea | docs-authority/iso/C29_RECYCLE.svg |
 | AQS-ISO-002-C29_TO_PYRO | Piping isometric C29_TO_PYRO | piping isometric | f7f151b2 | docs-authority/iso/C29_TO_PYRO.svg |
 | AQS-ISO-002-CUT-1-OUT | Piping isometric CUT-1-OUT | piping isometric | 50228761 | docs-authority/iso/CUT-1-OUT.svg |

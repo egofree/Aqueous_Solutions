@@ -4,7 +4,7 @@
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "BH",
   "node_count": 206,
-  "edge_count": 870,
+  "edge_count": 871,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -2297,7 +2297,7 @@
             }
           ]
         },
-        "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "duty": "In 43.424 kg/d, out 43.424 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -16338,7 +16338,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Claimed",
       "rate": {
-        "value": 42.881652,
+        "value": 42.876623,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003)."
@@ -30487,10 +30487,10 @@
       "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.028752089257418,
+        "value": 5.023723,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
+        "note": "X-PAR-15: S49 less the dried water; ISO_14687 Grade D (water and O2 <= 5 umol/mol)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
@@ -30499,8 +30499,7 @@
       "gap_flags": [],
       "notes": "X-ELS-02 CRYO_H2 compressed basis",
       "composition": {
-        "H2": 0.9997,
-        "water": 0.0003
+        "H2": 1.0
       },
       "params": {
         "P_bar_a": 1.5,
@@ -38392,6 +38391,35 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-H2P-H2O",
+      "from_unit_id": "H2_PURIFIER",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "TSA regeneration condensate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.005029,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-15: feed water (S49 composition) removed by the TSA, condensed from the regeneration purge (A-M-168)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "water": 1.0
+      }
     },
     {
       "stream_id": "HLL-AFTERBURNER-Q1-A",

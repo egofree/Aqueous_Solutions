@@ -2392,7 +2392,7 @@
             }
           ]
         },
-        "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "duty": "In 43.424 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4693,7 +4693,7 @@
         "module_kw": 0.5,
         "count": 8606,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.433 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.426 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4923,7 +4923,7 @@
             }
           ]
         },
-        "duty": "In 932.471 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
+        "duty": "In 932.476 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5658,7 +5658,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1308.513 kg/d, out 1308.513 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1308.486 kg/d, out 1308.486 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5719,7 +5719,7 @@
             }
           ]
         },
-        "duty": "In 1300.026 kg/d, out 1300.026 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1299.999 kg/d, out 1299.999 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -13059,7 +13059,7 @@
       "phase": "L",
       "carries": "PEM product H2O",
       "rate": {
-        "value": 42.881652,
+        "value": 42.876623,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003)."
@@ -20522,10 +20522,10 @@
       "phase": "G",
       "carries": "H2 fuel",
       "rate": {
-        "value": 5.028752089257418,
+        "value": 5.023723,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
+        "note": "X-PAR-15: S49 less the dried water; ISO_14687 Grade D (water and O2 <= 5 umol/mol)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
@@ -25529,6 +25529,23 @@
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
+    },
+    {
+      "stream_id": "IA-H2P-H2O",
+      "from_unit_id": "H2_PURIFIER",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "carries": "TSA regeneration condensate",
+      "rate": {
+        "value": 0.005029,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-15: feed water (S49 composition) removed by the TSA, condensed from the regeneration purge (A-M-168)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
     },
     {
       "stream_id": "HLL-AFTERBURNER-Q1-A",

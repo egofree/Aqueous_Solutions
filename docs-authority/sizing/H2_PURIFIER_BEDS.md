@@ -15,4 +15,4 @@ Feed 5.02 kg/d H2 (2.33 Nm3/h). O2 2.49 mol/d, water 94.8 g/d, HCl 0.091 g/d. Pr
 
 Guard charge 82 g; sieve 948 g per TSA bed. Regeneration 2.8 W average at 250.0 C, insulation 38 mm (loss 79 W while hot); electric load 44 W. Every bed is duplicated (one on line). All capacities and the space velocity are assumptions (A-M-168) until the bed tests.
 
-Finding: S49P carries 0.03 wt% water although Grade D allows 5 umol/mol (about 0.004 wt%); the dried water has no outlet edge. Carried as X-PAR-15.
+X-PAR-15: the feed water now leaves on IA-H2P-H2O to VCD_TRAIN (with the fuel-cell water S52, which falls by the same mass) and S49P is dry H2 to Grade D. Deoxo water is formed from O2 that the graph does not yet carry on S49 (1000 ppm v assumed here); it is inside the TSA load above.

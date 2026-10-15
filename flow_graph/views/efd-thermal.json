@@ -399,7 +399,7 @@
             }
           ]
         },
-        "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "duty": "In 43.424 kg/d, out 43.424 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,

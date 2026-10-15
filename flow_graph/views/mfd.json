@@ -1209,7 +1209,7 @@
             }
           ]
         },
-        "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "duty": "In 43.424 kg/d, out 43.424 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5700,7 +5700,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Claimed",
       "rate": {
-        "value": 42.881652,
+        "value": 42.876623,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003)."
@@ -7120,10 +7120,10 @@
       "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.028752089257418,
+        "value": 5.023723,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
+        "note": "X-PAR-15: S49 less the dried water; ISO_14687 Grade D (water and O2 <= 5 umol/mol)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
@@ -7132,8 +7132,7 @@
       "gap_flags": [],
       "notes": "X-ELS-02 CRYO_H2 compressed basis",
       "composition": {
-        "H2": 0.9997,
-        "water": 0.0003
+        "H2": 1.0
       },
       "params": {
         "P_bar_a": 1.5,

@@ -199,7 +199,7 @@ digraph G {
   "BACKUP_GEN" -> "NOX_SCRUB" [label="S46\\n0.267975 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_H2" -> "H2_PURIFIER" [label="S49\\n5.028752089257418 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "FUEL_CELL" [label="S50\\n38.4 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "FUEL_CELL" -> "VCD_TRAIN" [label="S52\\n42.881652 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FUEL_CELL" -> "VCD_TRAIN" [label="S52\\n42.876623 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55\\n4.2838 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "RELIEF_CRYO" [label="S56\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_MELT" -> "WIRE_DRAW" [label="S57\\n6.8389 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -238,5 +238,5 @@ digraph G {
   "WS_PHOS" -> "WET_BENCH" [label="S34B\\n0.61 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_CO2" -> "GROW_BED" [label="S89\\n3.648227 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HABITATION" -> "HDR_CO2" [label="S90\\n4.021 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "H2_PURIFIER" -> "FUEL_CELL" [label="S49P\\n5.028752089257418 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "H2_PURIFIER" -> "FUEL_CELL" [label="S49P\\n5.023723 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }
