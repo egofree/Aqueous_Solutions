@@ -816,7 +816,7 @@
         "storage_mode": "compressed gas, 200 bar, Type I/II cylinder bank (study; owner may override)",
         "store_kg": 19,
         "store_water_volume_m3": 1.28,
-        "store_basis": "need: 8.5 kg dark-hours buffer (11.39 kg/d x (1 - 6/24)) + 10.1 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_basis": "need: 8.3 kg dark-hours buffer (11.12 kg/d x (1 - 6/24)) + 10.1 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "compressor": "two-stage diaphragm, 10 to 200 bar",
         "relief_basis": {
           "case": "atmospheric",
@@ -933,7 +933,9 @@
         "storage_mode": "compressed gas, 200 bar, Type I cylinder bank, O2-cleaned (ASTM G93), separate from H2 (NFPA 2 ch. 7 separation)",
         "store_kg": 150.8,
         "store_water_volume_m3": 0.53,
-        "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)"
+        "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)",
+        "crew_reserve_kg": 6.08,
+        "crew_reserve_basis": "separate cylinder bank, crew draw 3.04 kg/d x 2 d (NFPA 99 reserve >= 1 average day; AQS-ELEC-007 autonomy 2 d governs); not drawn by FUEL_CELL (X-RED-04, A-M-146)"
       }
     },
     {

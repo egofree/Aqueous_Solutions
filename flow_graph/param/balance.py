@@ -66,7 +66,7 @@ def physics(g):
     put('IA-TERR-VAP', v('S40') - v('S41') - v('S42'), 'transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest')
     put('IA-HVAC-COND', v('IA-TERR-VAP') + v('IA-BED-VAP') + v('IA-HAB-VAP') + v('IA-DR-VAP') + sum(v(k) for k in E if k.endswith('-VAP') and E[k]['to_unit_id'] == 'CRYO_AHU' and k not in ('IA-TERR-VAP', 'IA-BED-VAP', 'IA-HAB-VAP', 'IA-DR-VAP')), 'condensate = greenhouse vapour in')
     put('IA-O2-RET', 0.0, 'no surplus O2 return')
-    src, draw = o2_close.close_o2(g)     # T3 (X-PAR-12): O2 product = cold-box O2 in + bed + electrolyser; surplus to PROD_O2. No O2 from CO2.
+    src, draw = o2_close.close_o2(g); o2_close.LAST['storage'] = o2_close.storage(g)     # T3; H2/O2 banks re-sized every pass (X-PAR-12): O2 product = cold-box O2 in + bed + electrolyser; surplus to PROD_O2. No O2 from CO2.
     d = -_unit_resid(g, 'ROOF_TANK')
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):
         put(k, v(k) + d, f'roof-tank shortfall {d:+.4f} kg/d by difference on the potable path')
