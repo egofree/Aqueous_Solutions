@@ -2588,5 +2588,25 @@
     "verification": "FORM N2 0.84 kg/d, O2 0.06 -> 0.12 kg/d, afterburner flue +0.06 kg/d O2",
     "replace_when": "Formox-style tail-gas recycle at scale-up; LOC check of the 10/10 mixture in X-SAF-02",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-160",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "GLYOXAL route: nitric acid oxidation with NO recycle",
+    "statement": "GLYOXAL re-routed to the industrial liquid-phase oxidation of acetaldehyde by aqueous HNO3 (HOTANAHALLI1972, US3429929, ULLMANN_GLYOXAL): 3 CH3CHO + 4 HNO3 -> 3 glyoxal + 4 NO + 5 H2O, NO recycled to the HNO3 absorber with 3/4 O2 per NO; stoichiometric yield carried (published yields 45-70 %, by-products acetic and glyoxylic acid not yet split out)",
+    "verification": "HNO3 0.365 kg/d to GLYOXAL, NO 0.174 kg/d recycled, net O2 unchanged at 0.139 kg/d",
+    "replace_when": "yield and by-product split from a bench run or a cited yield table",
+    "doc": "AQS-PAR-003"
   }
 ]

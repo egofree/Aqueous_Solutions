@@ -623,7 +623,7 @@ digraph G {
   "ALD" -> "GLYOXAL" [label="IA-ALD\\n0.191248 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ALD" -> "HDR_H2" [label="IA-ALD-H2\\n0.00875208925741822 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLYOXAL" -> "IMID" [label="IA-GLX\\n0.251952 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GLYOXAL" -> "NOX_SCRUB" [label="IA-GLX-NOX\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GLYOXAL" -> "HNO3" [label="IA-GLX-NOX\\n0.173687 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEOH_TANK" -> "FORM" [label="IA-MEOH-FORM\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FORM" -> "IMID" [label="IA-CH2O\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FORM" -> "ROOF_TANK" [label="IA-FORM-H2O\\n0.067467 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -642,8 +642,8 @@ digraph G {
   "ACEX" -> "LEACH_CSTR_1" [label="IA-IL-BRINE\\n0.178735 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_AMMONIA" -> "HNO3" [label="IA-NH3-NIT\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "HNO3" [label="IA-O2-NIT\\n0.5 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HNO3" -> "WS_NITRIC" [label="IA-HNO3\\n0.6 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HNO3" -> "ROOF_TANK" [label="IA-NIT-H2O\\n0.1 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HNO3" -> "WS_NITRIC" [label="IA-HNO3\\n0.964746 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HNO3" -> "ROOF_TANK" [label="IA-NIT-H2O\\n0.047861 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_PHOS" -> "WS_DOPE" [label="IA-PHOS-DOPE\\n0.01 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_SOLV" -> "WET_BENCH" [label="IA-SOLV-WB\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BSFL" -> "FISH" [label="IA-BSFL-FISH\\n0.4 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -819,8 +819,8 @@ digraph G {
   "NUTRIENT_DOSE" -> "LEACH_CSTR_1" [label="IA-SIC-RET\\n0.466189 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRAYFISH" -> "COMPOST" [label="IA-CRAY-DET\\n0.02 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LIGNO_PRE" -> "DIGESTER" [label="IA-IL-SPENT\\n0.232829 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HDR_O2" -> "GLYOXAL" [label="IA-GLX-O2\\n0.13891336907681956 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GLYOXAL" -> "ROOF_TANK" [label="IA-GLX-H2O\\n0.078209 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_O2" -> "HNO3" [label="IA-GLX-O2\\n0.13891336907681956 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GLYOXAL" -> "ROOF_TANK" [label="IA-GLX-H2O\\n0.130348 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "FORM" [label="IA-FORM-O2\\n0.119843 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEAM" -> "ROOF_TANK" [label="IA-MEAM-H2O\\n0.02249 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEAM" -> "WS_AMMONIA" [label="IA-NH3-RET\\n0.008739 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -1142,4 +1142,5 @@ digraph G {
   "CRYO_AHU" -> "HEAT_SINK" [label="SQ-CRYO_AHU\\n17.5834 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "HDR_N2" -> "FORM" [label="IA-FORM-N2\\n0.839288 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FORM" -> "AFTERBURNER" [label="IA-FORM-TAIL\\n0.89921 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_NITRIC" -> "GLYOXAL" [label="IA-NIT-GLX\\n0.364746 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

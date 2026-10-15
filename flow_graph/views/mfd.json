@@ -3192,7 +3192,7 @@
             }
           ]
         },
-        "duty": "In 1.246 kg/d, out 1.246 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
+        "duty": "In 1.610 kg/d, out 1.610 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3220,12 +3220,12 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0012,
-          "pump_out_m3_h": 0.0012,
-          "out_breathing_Nm3_h": 0.002,
-          "in_breathing_Nm3_h": 0.001,
+          "pump_in_m3_h": 0.0016,
+          "pump_out_m3_h": 0.0016,
+          "out_breathing_Nm3_h": 0.003,
+          "in_breathing_Nm3_h": 0.002,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.2,
+          "vent_bore_req_mm": 0.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         }

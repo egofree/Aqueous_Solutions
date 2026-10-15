@@ -291,7 +291,7 @@
             }
           ]
         },
-        "duty": "In 7.853 kg/d, out 7.853 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
+        "duty": "In 8.752 kg/d, out 8.752 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -351,7 +351,7 @@
             }
           ]
         },
-        "duty": "In 119.023 kg/d, out 119.023 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
+        "duty": "In 119.083 kg/d, out 119.083 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -1199,7 +1199,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
+        "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
         "relief_mm": 3.3,
@@ -2199,7 +2199,7 @@
             }
           ]
         },
-        "duty": "In 279.287 kg/d, out 279.287 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
+        "duty": "In 279.347 kg/d, out 279.347 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
@@ -3007,7 +3007,7 @@
       "class": "header",
       "tags": [],
       "params": {
-        "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
+        "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -4068,7 +4068,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 461.769 kg/d, out 461.769 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "duty": "In 461.829 kg/d, out 461.829 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -5288,12 +5288,12 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0012,
-          "pump_out_m3_h": 0.0012,
-          "out_breathing_Nm3_h": 0.002,
-          "in_breathing_Nm3_h": 0.001,
+          "pump_in_m3_h": 0.0016,
+          "pump_out_m3_h": 0.0016,
+          "out_breathing_Nm3_h": 0.003,
+          "in_breathing_Nm3_h": 0.002,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.2,
+          "vent_bore_req_mm": 0.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         }
@@ -7241,7 +7241,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 1796.231 kg/d, out 1796.231 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "duty": "In 1796.291 kg/d, out 1796.291 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7698,12 +7698,12 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0003,
-          "pump_out_m3_h": 0.0003,
+          "pump_in_m3_h": 0.0006,
+          "pump_out_m3_h": 0.0004,
           "out_breathing_Nm3_h": 0.001,
           "in_breathing_Nm3_h": 0.0,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.1,
+          "vent_bore_req_mm": 0.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         }
@@ -7725,7 +7725,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
+        "duty": "In 1.079 kg/d, out 1.079 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7980,9 +7980,9 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0007,
-          "pump_out_m3_h": 0.0007,
-          "out_breathing_Nm3_h": 0.001,
+          "pump_in_m3_h": 0.0008,
+          "pump_out_m3_h": 0.001,
+          "out_breathing_Nm3_h": 0.002,
           "in_breathing_Nm3_h": 0.001,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 0.2,
@@ -16206,14 +16206,14 @@
     {
       "stream_id": "IA-GLX-NOX",
       "from_unit_id": "GLYOXAL",
-      "to_unit_id": "NOX_SCRUB",
-      "phase": "L",
-      "carries": "no NOx from this oxidation",
+      "to_unit_id": "HNO3",
+      "phase": "G",
+      "carries": "NO from glyoxal oxidation, recycled to the nitric absorber",
       "rate": {
-        "value": 0.0,
+        "value": 0.173687,
         "unit": "kg/d",
         "status": "study",
-        "note": "The coproduct is water, not NOx."
+        "note": "NO coproduct recycled | X-PAR-13 (A-M-160): 3 CH3CHO + 4 HNO3 -> 3 OHC-CHO + 4 NO + 5 H2O (HOTANAHALLI1972, ULLMANN_GLYOXAL); NO recycled to HNO3 as 4 NO + 3 O2 + 2 H2O -> 4 HNO3."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16533,10 +16533,10 @@
       "phase": "L",
       "carries": "nitric acid",
       "rate": {
-        "value": 0.6,
+        "value": 0.964746,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003). +0.3647 kg/d HNO3 to GLYOXAL | X-PAR-13 (A-M-160): 3 CH3CHO + 4 HNO3 -> 3 OHC-CHO + 4 NO + 5 H2O (HOTANAHALLI1972, ULLMANN_GLYOXAL); NO recycled to HNO3 as 4 NO + 3 O2 + 2 H2O -> 4 HNO3."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16550,10 +16550,10 @@
       "phase": "L",
       "carries": "absorber water",
       "rate": {
-        "value": 0.1,
+        "value": 0.047861,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. -0.0521 kg/d water bound into recycled HNO3 | X-PAR-13 (A-M-160): 3 CH3CHO + 4 HNO3 -> 3 OHC-CHO + 4 NO + 5 H2O (HOTANAHALLI1972, ULLMANN_GLYOXAL); NO recycled to HNO3 as 4 NO + 3 O2 + 2 H2O -> 4 HNO3."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19538,14 +19538,14 @@
     {
       "stream_id": "IA-GLX-O2",
       "from_unit_id": "HDR_O2",
-      "to_unit_id": "GLYOXAL",
+      "to_unit_id": "HNO3",
       "phase": "L",
-      "carries": "oxygen to glyoxal",
+      "carries": "oxygen to re-oxidise the glyoxal NO",
       "rate": {
         "value": 0.13891336907681956,
         "unit": "kg/d",
         "status": "study",
-        "note": "One O2 per acetaldehyde."
+        "note": "3/4 O2 per NO (net one O2 per acetaldehyde) | X-PAR-13 (A-M-160): 3 CH3CHO + 4 HNO3 -> 3 OHC-CHO + 4 NO + 5 H2O (HOTANAHALLI1972, ULLMANN_GLYOXAL); NO recycled to HNO3 as 4 NO + 3 O2 + 2 H2O -> 4 HNO3."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FARM",
@@ -19559,10 +19559,10 @@
       "phase": "L",
       "carries": "glyoxal water",
       "rate": {
-        "value": 0.078209,
+        "value": 0.130348,
         "unit": "kg/d",
         "status": "study",
-        "note": "Coproduct water. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "5 H2O per 3 glyoxal | X-PAR-13 (A-M-160): 3 CH3CHO + 4 HNO3 -> 3 OHC-CHO + 4 NO + 5 H2O (HOTANAHALLI1972, ULLMANN_GLYOXAL); NO recycled to HNO3 as 4 NO + 3 O2 + 2 H2O -> 4 HNO3."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -25023,6 +25023,23 @@
       },
       "from_sector_id": "FARM",
       "to_sector_id": "GAS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NIT-GLX",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "GLYOXAL",
+      "phase": "L",
+      "carries": "nitric acid oxidant to glyoxal",
+      "rate": {
+        "value": 0.364746,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-13 | X-PAR-13 (A-M-160): 3 CH3CHO + 4 HNO3 -> 3 OHC-CHO + 4 NO + 5 H2O (HOTANAHALLI1972, ULLMANN_GLYOXAL); NO recycled to HNO3 as 4 NO + 3 O2 + 2 H2O -> 4 HNO3."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     }
