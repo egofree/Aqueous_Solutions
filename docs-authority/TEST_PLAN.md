@@ -18,11 +18,11 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T1 | Owner and site data | 22 | Owner decision or site investigation report |
 | T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
 | T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
-| T4 | Pilot runs | 8 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 51 | Calculation or drawing issued under the named task |
+| T4 | Pilot runs | 13 | Pilot campaign on plant brine / feed |
+| T5 | Design calculations and drawings | 68 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 12 | Commissioning record |
 
-Total 154 items: 49 drivers, 105 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 176 items: 69 drivers, 107 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -84,7 +84,7 @@ Total 154 items: 49 drivers, 105 register entries. Classification rule: first ma
 | A-M-084 | H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol% - | Purifier vendor mass balance | X-ELS-02 |
 | A-M-085 | melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0. kWh/kg, kW | Tool vendor data and the production schedule (unit task 02) | X-ELS-02 |
 | A-M-087 | spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3  m, 1/K, MPa | Manufacturer span tables per material and B31.3 flexibility analysis on the routed model | X-PIP-04 |
-| A-M-092 | 1200 x 800 x 1800 mm skid each; placed in BMED_CRU mm | Vendor MVR skid general arrangement | X-PAR-04 |
+| A-M-092 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D mm | Vendor MVR skid general arrangement | X-PAR-04 |
 
 ## 4. T3 Bench and laboratory tests
 
@@ -128,12 +128,17 @@ Total 154 items: 49 drivers, 105 register entries. Classification rule: first ma
 | --- | --- | --- | --- |
 | driver bmed_product_molarity | 2.0 mol/L acid and base leaving BMED | EDBM pilot on the plant chloride brine at 2 M product: SEC and current efficiency | X-PAR |
 | driver bmed_sec_kWh_per_kg_base | 6.7 kWh/kg NaOH at 2 M product | EDBM pilot on the plant chloride brine: SEC and current efficiency at the design product concentration | X-PAR |
+| driver evap_U_ff | 1500.0 W/(m2 K) falling film, condensing steam outside | Pilot measurement of U | X-PAR |
+| driver evap_body_kPa | 101.325 kPa abs body pressure | Bench or pilot measurement | X-PAR |
+| driver evap_dT_drive_K | 6.0 K condensing minus boiling | Pilot run: compressor ratio vs heat flux | X-PAR |
+| driver evap_wet_min | 0.05 kg/(m s) minimum falling-film wetting rate | Pilot wetting test | X-PAR |
 | driver mvr_kWh_per_t | 72.0 kWh/t water evaporated | Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot | X-PAR |
 | driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot | X-PAR |
 | A-M-088 | 2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH) mol/L | EDBM pilot at 2 M product: SEC, current efficiency and product purity | X-PAR-04 |
-| A-M-089 | 72 kWh/t water evaporated | Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement | X-PAR-04 |
+| A-M-089 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D kWh/t water evaporated | Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement | X-PAR-04 |
 | A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week | X-PAR-06 |
 | A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration | X-PAR-06 |
+| A-M-106 | Evaporator operating basis: body 101.3 kPa abs, 6 K driving  kPa, K, C, - | Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log | X-MFG-30 |
 
 ## 6. T5 Design calculations and drawings
 
@@ -145,6 +150,22 @@ Total 154 items: 49 drivers, 105 register entries. Classification rule: first ma
 | driver bmed_sec_design_kWh_per_kg_pair | 2.1 kWh per kg acid+base (current graph basis) | Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision) | X-PAR |
 | driver cp_hcl20_kJ_kgK | 3.0 kJ/(kg K) | Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C | X-PAR |
 | driver cp_naoh20_kJ_kgK | 3.6 kJ/(kg K) | Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C | X-PAR |
+| driver evap_U_ix | 2000.0 W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate) | Thermal test of the interchanger | X-PAR |
+| driver evap_approach_K | 10.0 K interchanger cold-end approach | Interchanger thermal test | X-PAR |
+| driver evap_body_design_kPag | 100.0 kPa g body design (plus full vacuum) | Pressure test per ASME VIII-1 UG-99 / ISO 16528 | X-PAR |
+| driver evap_bp_acid_C | 108.6 C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding) | Boiling-point measurement on the product at the body pressure | X-PAR |
+| driver evap_bp_base_C | 108.0 C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines) | Read-off check on the Duhring chart and boiling-point measurement | X-PAR |
+| driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
+| driver evap_cp_acid_prod | 3.1 kJ/(kg K) 20 wt% HCl | Perry sec. 2 heat-capacity table read-off | X-PAR |
+| driver evap_cp_base_prod | 3.55 kJ/(kg K) 20 wt% NaOH | Perry sec. 2 heat-capacity table read-off | X-PAR |
+| driver evap_cp_feed | 3.85 kJ/(kg K) 2 M HCl or NaOH | Perry sec. 2 heat-capacity table read-off | X-PAR |
+| driver evap_feed_T_C | 35.0 C BMED product temperature | BMED stack outlet temperature log | X-PAR |
+| driver evap_k_steam | 1.33 cp/cv low-pressure steam | - | X-PAR |
+| driver evap_motor_eta | 0.9 motor efficiency | IEC 60034-30-1 class of the motor used | X-PAR |
+| driver evap_shell_design_kPag | 350.0 kPa g steam shell design | Pressure test | X-PAR |
+| driver evap_sump_h_mm | 400.0 mm liquid in the sump | Level control setpoint | X-PAR |
+| driver evap_tube_L_mm | 1500.0 mm | Envelope fit | X-PAR |
+| driver evap_tube_id_mm | 25.0 mm | Tube stock | X-PAR |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension | X-PAR |
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design | X-PAR |
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design | X-PAR |
@@ -190,6 +211,7 @@ Total 154 items: 49 drivers, 105 register entries. Classification rule: first ma
 | A-M-102 | L1 farm re-row: 914 mm minimum between all farm rows; farm r mm | Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan | X-BLD-04 |
 | A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close | X-PAR-07 |
 | A-M-104 | Extension is a single-storey CONDITIONED hall (owner decisio W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme | X-PAR-07 |
+| A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials | X-MFG-30 |
 
 ## 7. T6 Commissioning measurements
 

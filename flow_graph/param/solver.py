@@ -33,15 +33,20 @@ def bmed(d, hcl_mol):
                 kW_published=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
                 kW_design=DR.val(d,'bmed_sec_design_kWh_per_kg_pair')*(hcl_mol*HCL/1000+base_kg)/24)
 
-def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0):
+def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
     """Evaporative concentration of a BMED product from w_in to w_out by MVR.
     Mass: feed = solute/w_in, product = solute/w_out, water off = feed - product.
     HCl side: w_out must stay below the HCl-water azeotrope [PERRY9_HCL]; vapour is then water-rich.
-    Power: water off x specific MVR energy [VOGELBUSCH_MVR]."""
+    Power: in-house MVR design (X-MFG-30, flow_graph/param/evap_design.py: IAPWS-IF97 compression ratio, isentropic blower,
+    recirculation pump, trim heat) when unit is given; else water off x specific MVR energy [VOGELBUSCH_MVR] (upper bound)."""
     assert w_out > w_in
     feed = solute_kg_d/w_in; prod = (solute_kg_d+added_kg_d)/w_out; water = feed + added_kg_d - prod
-    return dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water,
-                kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed+added_kg_d, prod+water))
+    r = dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water,
+             kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed+added_kg_d, prod+water))
+    if unit:
+        from .evap_design import design
+        r['design'] = design(d, r, unit); r['kW'] = r['design']['total_kW']
+    return r
 
 SIO2 = mw({'Si':1,'O':2})
 def naoh_balance(d, g, hcl_mol):
@@ -77,9 +82,9 @@ def solve():
     la = leach_acid(d); bm = bmed(d, la['hcl_mol_d']); e = ew(d, g)
     R = {x['stream_id']: x['rate']['value'] for x in g['edges']}
     assert DR.val(d,'acid_conc_design_wt') < DR.val(d,'hcl_azeotrope_wt'), 'acid loop above the HCl azeotrope'
-    ea = evap(d, R['IA-ACID-01']*DR.val(d,'acid_conc_design_wt'), DR.val(d,'bmed_product_wt_acid'), DR.val(d,'acid_conc_design_wt'))
+    ea = evap(d, R['IA-ACID-01']*DR.val(d,'acid_conc_design_wt'), DR.val(d,'bmed_product_wt_acid'), DR.val(d,'acid_conc_design_wt'), unit='EVAP_ACID')
     nb = naoh_balance(d, g, la['hcl_mol_d'])
-    eb = evap(d, bm['base_kg_d'], DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'))
+    eb = evap(d, bm['base_kg_d'], DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'), unit='EVAP_BASE')
     import subprocess, sys as _s, os as _o
     root = _o.path.dirname(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))))
     roof = json.loads(subprocess.run([_s.executable, 'docs-authority/_power_sizing.py'], cwd=root, capture_output=True, text=True, check=True).stdout)['roof']
@@ -104,7 +109,7 @@ def check():
     if 'IA-NAOH-MU' in E: cmp('IA-NAOH-MU make-up, kg/d', E['IA-NAOH-MU']['rate']['value'], nb['makeup_kg_d'], 'NaOH balance')
     for k,u in (('evap_acid','EVAP_ACID'),('evap_base','EVAP_BASE')):
         if u in N:
-            cmp(f'{u} kW', N[u]['continuous_kw']['value'], s[k]['kW'], 'VOGELBUSCH_MVR')
+            cmp(f'{u} kW', N[u]['continuous_kw']['value'], s[k]['kW'], 'X-MFG-30 in-house MVR design')
             cmp(f'{u} water off, kg/d', E[f'IA-{u}-COND']['rate']['value'], s[k]['water_kg_d'], 'PERRY9_HCL')
     for c,v in s['ew'].items():
         if c == 'RECT_EW':

@@ -1334,7 +1334,7 @@
   "needs_verification": true
  },
  {
-  "value": "72",
+  "value": "Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-DUTY-060): 72",
   "units": "kWh/t water evaporated",
   "where": "EVAP_ACID, EVAP_BASE power",
   "basis": "VOGELBUSCH_MVR 19-72 kWh/t; upper bound for high boiling-point elevation and a small unit",
@@ -1385,7 +1385,7 @@
   "needs_verification": true
  },
  {
-  "value": "1200 x 800 x 1800 mm skid each; placed in BMED_CRU",
+  "value": "Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-DUTY-060): 1200 x 800 x 1800 mm skid each; placed in BMED_CRU",
   "units": "mm",
   "where": "EVAP_ACID, EVAP_BASE envelope and placement",
   "basis": "AQS-PLACE-STUDY-001 skid category",
@@ -1620,5 +1620,37 @@
   "sensitivity": "Roof framing tonnage",
   "replaced_by": "Racking weight and ASCE 7 Hazard Tool snow at the site",
   "verification_test": "ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays"
+ },
+ {
+  "task": "X-MFG-30",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/evap_design.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "id": "A-M-106",
+  "value": "Evaporator operating basis: body 101.3 kPa abs, 6 K driving difference, feed 35 C, 10 K interchanger approach, motor efficiency 0.90",
+  "units": "kPa, K, C, -",
+  "where": "drivers evap_*",
+  "basis": "Design choices; motor class IEC 60034-30-1 IE3 at about 1 kW is near 0.85-0.88",
+  "sensitivity": "Blower power scales with the compression ratio set by the driving difference",
+  "replaced_by": "Pilot evaporator data",
+  "verification_test": "Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log"
+ },
+ {
+  "task": "X-MFG-30",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/evap_design.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "id": "A-M-107",
+  "value": "Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sump 400 mm, body design 100 kPa g and full vacuum, steam shell 350 kPa g",
+  "units": "mm, kPa g",
+  "where": "drivers evap_*",
+  "basis": "Design choices fitted to the BMED_CRU envelope",
+  "sensitivity": "Wetted area and relief load",
+  "replaced_by": "Detailed mechanical design (ASME VIII-1 / EN 13445)",
+  "verification_test": "Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials"
  }
 ]

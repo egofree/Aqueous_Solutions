@@ -47,13 +47,14 @@ def process():
         u = f'EVAP_{side}'; v = s[key]; w = DR.val(d,'acid_conc_design_wt' if side=='ACID' else 'base_conc_design_wt')
         note = (f"{TAG}. MVR evaporator, {sa} from 2 M ({DR.val(d,'bmed_product_wt_'+side.lower())*100:.2f} wt%) to {w*100:.0f} wt%"
                 + (f" (below the HCl azeotrope {DR.val(d,'hcl_azeotrope_wt')*100:.1f} wt%, PERRY9_HCL)" if side=='ACID' else '')
-                + f"; water off {v['water_kg_d']:.1f} kg/d x {DR.val(d,'mvr_kWh_per_t')} kWh/t (VOGELBUSCH_MVR upper bound) = {v['kW']:.2f} kW. Study.")
+                + f"; water off {v['water_kg_d']:.1f} kg/d x {v['design']['kWh_per_t']} kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower {v['design']['comp_elec_kW']:.3f} kW, recirculation {v['design']['pump_kW']:.3f} kW, trim {v['design']['trim_kW']:.3f} kW) = {v['kW']:.2f} kW. Study.")
         node = N.get(u) or {'unit_id': u, 'sector_id': 'WET', 'presence': 'present', 'class': 'evaporator', 'tags': [], 'electrical_role': 'load',
                             'diagram_gap': None, 'enabled': True, 'modules': [], 'params': {}}
         node['notes'] = f'{sa} concentrator after {src} ({TAG}). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).' if side=='ACID' else f'{sa} concentrator after {src} ({TAG}). Nickel or fluoropolymer-lined wetted parts (study).'
         node['continuous_kw'] = rate(v['kW'],'kW',note)
         node['params'].update({'presence':'present','water_off_kg_d':round(v['water_kg_d'],2),'feed_wt':DR.val(d,'bmed_product_wt_'+side.lower()),'product_wt':w,
-                               'mvr_kWh_per_t':DR.val(d,'mvr_kWh_per_t'),'size_mm':node['params'].get('size_mm',[1200,900,2000]),'size_note':'L x W x H mm, study envelope pending vendor MVR quote','doc':'AQS-PAR-001'})
+                               'mvr_kWh_per_t':v['design']['kWh_per_t'],'size_mm':node['params'].get('size_mm',[1200,900,2000]),'doc':'AQS-PAR-001, AQS-DUTY-060'})
+        node['params'].setdefault('size_note','L x W x H mm, set by flow_graph/param/evap_design.py (X-MFG-30)')
         if u not in N: g['nodes'].append(node); N[u] = node
         new = [edge(f'IA-{u}-FEED', src, u, 'L', ['mass'], f'{sa} 2 M from BMED', rate(v['feed_kg_d'],'kg/d',f'{TAG}. {v["solute_kg_d"]:.2f} kg/d {sa} / {DR.val(d,"bmed_product_wt_"+side.lower())}.'),'WET','WET'),
                edge(f'IA-{u}-COND', u, src, 'L', ['mass'], 'evaporator condensate return (BMED water make-up)', rate(v['water_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to {src}.'),'WET','WET'),

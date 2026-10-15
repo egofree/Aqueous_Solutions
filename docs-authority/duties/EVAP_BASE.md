@@ -16,8 +16,8 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 5. Instruments. Product density or conductivity controls the concentration; level, temperature, compressor current. High level trips the feed.
 
-6. Pressure relief open. To be sized in-house under X-MFG-30 (API 520 Part I / ISO 4126-1, blocked-outlet and fire cases on the custom vapour body); the vendor-data basis is withdrawn (owner decision 2026-10-15). Vent to ACID_POLISH_SCRUB (alkaline mist).
+6. Relief. Sized in-house (AQS-DUTY-060 section 3). Body: fire case ISO 23251 / API 521, 41.32 kg/h at 222.3 kPa abs, 33.98 mm2 required, API 526 D orifice, set 100 kPa g. Shell: blocked outlet 39.96 kg/h, 15.376 mm2, D orifice, set 350 kPa g. API 520 Part I / ISO 4126-1. Vent to ACID_POLISH_SCRUB.
 
-7. Code. Built in-house to an open design (X-MFG-30); no bought skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001). The envelope is `cad/stl/EVAP_BASE.stl` (flow_graph/param/envelopes.py).
+7. Code. Built in-house to an open design (X-MFG-30); no bought skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001). Model `models/mfg/EVAP_BASE/export/evap_base.step`; envelope `cad/stl/EVAP_BASE.stl`. Production route `docs-authority/fab/EVAP_BASE.md`.
 
-8. Open items. Outlet temperatures and line classes (X-MAT-20). Vendor MVR quote at about 0.8 t/d water (A-M-089); bench leach at 20 wt% (A-M-090).
+8. Open items. bench leach at 20 wt% (A-M-090); pilot U and blower efficiency (A-M-106).

@@ -437,5 +437,145 @@
   "register": "A-M-104",
   "needs_verification": true,
   "verification_test": "Hall section drawing"
+ },
+ "evap_bp_acid_C": {
+  "value": 108.6,
+  "units": "C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding)",
+  "needs_verification": true,
+  "verification_test": "Boiling-point measurement on the product at the body pressure",
+  "ref": "PERRY9_HCL"
+ },
+ "evap_bp_base_C": {
+  "value": 108.0,
+  "units": "C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines)",
+  "needs_verification": true,
+  "verification_test": "Read-off check on the Duhring chart and boiling-point measurement",
+  "ref": "MCCABE7_DUHRING"
+ },
+ "evap_body_kPa": {
+  "value": 101.325,
+  "units": "kPa abs body pressure",
+  "needs_verification": true,
+  "verification_test": "Bench or pilot measurement",
+  "register": "A-M-106"
+ },
+ "evap_dT_drive_K": {
+  "value": 6.0,
+  "units": "K condensing minus boiling",
+  "needs_verification": true,
+  "verification_test": "Pilot run: compressor ratio vs heat flux",
+  "register": "A-M-106"
+ },
+ "evap_U_ff": {
+  "value": 1500.0,
+  "units": "W/(m2 K) falling film, condensing steam outside",
+  "needs_verification": true,
+  "verification_test": "Pilot measurement of U",
+  "ref": "PERRY9_EVAP"
+ },
+ "evap_U_ix": {
+  "value": 2000.0,
+  "units": "W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate)",
+  "needs_verification": true,
+  "verification_test": "Thermal test of the interchanger",
+  "ref": "PERRY9_EVAP"
+ },
+ "evap_feed_T_C": {
+  "value": 35.0,
+  "units": "C BMED product temperature",
+  "needs_verification": true,
+  "verification_test": "BMED stack outlet temperature log",
+  "register": "A-M-106"
+ },
+ "evap_approach_K": {
+  "value": 10.0,
+  "units": "K interchanger cold-end approach",
+  "needs_verification": true,
+  "verification_test": "Interchanger thermal test",
+  "register": "A-M-106"
+ },
+ "evap_cp_feed": {
+  "value": 3.85,
+  "units": "kJ/(kg K) 2 M HCl or NaOH",
+  "needs_verification": true,
+  "verification_test": "Perry sec. 2 heat-capacity table read-off",
+  "ref": "PERRY9"
+ },
+ "evap_cp_acid_prod": {
+  "value": 3.1,
+  "units": "kJ/(kg K) 20 wt% HCl",
+  "needs_verification": true,
+  "verification_test": "Perry sec. 2 heat-capacity table read-off",
+  "ref": "PERRY9"
+ },
+ "evap_cp_base_prod": {
+  "value": 3.55,
+  "units": "kJ/(kg K) 20 wt% NaOH",
+  "needs_verification": true,
+  "verification_test": "Perry sec. 2 heat-capacity table read-off",
+  "ref": "PERRY9"
+ },
+ "evap_comp_eta": {
+  "value": 0.7,
+  "units": "isentropic efficiency, single-stage blower",
+  "needs_verification": true,
+  "verification_test": "Compressor map of the in-house blower",
+  "ref": "PERRY9_PUMP"
+ },
+ "evap_motor_eta": {
+  "value": 0.9,
+  "units": "motor efficiency",
+  "needs_verification": true,
+  "verification_test": "IEC 60034-30-1 class of the motor used",
+  "register": "A-M-106"
+ },
+ "evap_k_steam": {
+  "value": 1.33,
+  "units": "cp/cv low-pressure steam",
+  "needs_verification": true,
+  "verification_test": "-",
+  "ref": "IAPWS_IF97"
+ },
+ "evap_tube_id_mm": {
+  "value": 25.0,
+  "units": "mm",
+  "needs_verification": true,
+  "verification_test": "Tube stock",
+  "register": "A-M-107"
+ },
+ "evap_tube_L_mm": {
+  "value": 1500.0,
+  "units": "mm",
+  "needs_verification": true,
+  "verification_test": "Envelope fit",
+  "register": "A-M-107"
+ },
+ "evap_wet_min": {
+  "value": 0.05,
+  "units": "kg/(m s) minimum falling-film wetting rate",
+  "needs_verification": true,
+  "verification_test": "Pilot wetting test",
+  "ref": "PERRY9_EVAP"
+ },
+ "evap_body_design_kPag": {
+  "value": 100.0,
+  "units": "kPa g body design (plus full vacuum)",
+  "needs_verification": true,
+  "verification_test": "Pressure test per ASME VIII-1 UG-99 / ISO 16528",
+  "register": "A-M-107"
+ },
+ "evap_shell_design_kPag": {
+  "value": 350.0,
+  "units": "kPa g steam shell design",
+  "needs_verification": true,
+  "verification_test": "Pressure test",
+  "register": "A-M-107"
+ },
+ "evap_sump_h_mm": {
+  "value": 400.0,
+  "units": "mm liquid in the sump",
+  "needs_verification": true,
+  "verification_test": "Level control setpoint",
+  "register": "A-M-107"
  }
 }

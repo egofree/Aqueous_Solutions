@@ -1915,12 +1915,12 @@
         14400.0
       ],
       "size_mm": [
-        152342,
-        80342,
+        116342,
+        104342,
         300
       ],
       "source": "PV_ARRAY",
-      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 8 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 156 x 84 m roof (solver.roof_close); 1219 mm interior pathways; array area 11764 m2. ROOF datum 14400 mm is a study value (A-M-103).",
+      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3336,8 +3336,8 @@
         0.0
       ],
       "size_mm": [
-        132000,
-        84000,
+        96000,
+        108000,
         6000
       ],
       "source": "EXT_HALL_E",
@@ -3962,12 +3962,12 @@
         14400.0
       ],
       "size_mm": [
-        152342,
-        80342,
+        116342,
+        104342,
         300
       ],
       "source": "PV_ARRAY",
-      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 8 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 156 x 84 m roof (solver.roof_close); 1219 mm interior pathways; array area 11764 m2. ROOF datum 14400 mm is a study value (A-M-103).",
+      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,

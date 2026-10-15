@@ -7,8 +7,9 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - X-PAR acid-loop decision (AQS-PAR-001). Mechanical vapour recompression evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl-water azeotrope 20.2 wt%, PERRY9_HCL).
 - Water off 803.8 kg/d, condensed and returned to BMED_ACID on IA-EVAP_ACID-COND as BMED water make-up.
-- Power 0.8038 t/d × 72.0 kWh/t (VOGELBUSCH_MVR upper bound, A-M-089) / 24 h = 2.41 kW, 480 V feed SF-EVAP_ACID; heat leaves on SQ-EVAP_ACID (A-M-086).
-- Study skid 1200 × 800 × 1800 mm (A-M-092). Values from `flow_graph/param/solver.py` evap().
+- In-house MVR design (X-MFG-30, AQS-DUTY-060): body 101.325 kPa, boiling 108.6 C, condensing 114.6 C at 166.98 kPa (ratio 1.648); 20 tubes ID 25.0 x 1500 mm, 2.33 m2; shell DN350, height 3100 mm.
+- Power 1.391 kW (41.5 kWh/t: blower 1.384 kW, recirculation 0.008 kW), 480 V feed SF-EVAP_ACID.
+- Interchanger 0.15 m2, 3.52 kW; feed preheated to 98.6 C; product and condensate out at 48.7 C.
 
 3. Material. Wetted parts in hot HCl: impregnated graphite heat exchanger, fluoropolymer-lined shell, PVDF or PTFE piping (ULLMANN_HCL). No stainless or nickel in the HCl circuit. Above 60 °C no PVC-U or CPVC (AQS-STD-002).
 
@@ -16,8 +17,8 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 5. Instruments. Product density or conductivity controls the concentration and holds it below the azeotrope; level, temperature, compressor current. High level trips the feed.
 
-6. Pressure relief open. To be sized in-house under X-MFG-30 (API 520 Part I / ISO 4126-1, blocked-outlet and fire cases on the custom vapour body); the vendor-data basis is withdrawn (owner decision 2026-10-15). Vent to ACID_POLISH_SCRUB.
+6. Relief. Sized in-house (AQS-DUTY-060 section 3). Body: fire case ISO 23251 / API 521, 41.32 kg/h at 222.3 kPa abs, 34.0 mm2 required, API 526 D orifice, set 100 kPa g. Shell: blocked outlet 40.19 kg/h, 15.465 mm2, D orifice, set 350 kPa g. API 520 Part I / ISO 4126-1. Vent to ACID_POLISH_SCRUB.
 
-7. Code. Built in-house to an open design (X-MFG-30); no bought skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001). The envelope is `cad/stl/EVAP_ACID.stl` (flow_graph/param/envelopes.py).
+7. Code. Built in-house to an open design (X-MFG-30); no bought skid. Not stamped. Placed in BMED_CRU (AQS-PLACE-STUDY-001). Model `models/mfg/EVAP_ACID/export/evap_acid.step`; envelope `cad/stl/EVAP_ACID.stl`. Production route `docs-authority/fab/EVAP_ACID.md`.
 
-8. Open items. Outlet temperatures and line classes (X-MAT-20). Vendor MVR quote at about 0.8 t/d water (A-M-089); bench leach at 20 wt% (A-M-090).
+8. Open items. HCl carry-over in the vapour near the azeotrope (AQS-DUTY-060 section 7 item 1, owner review); bench leach at 20 wt% (A-M-090); pilot U and blower efficiency (A-M-106).

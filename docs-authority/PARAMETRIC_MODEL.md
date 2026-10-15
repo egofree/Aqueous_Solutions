@@ -46,9 +46,9 @@ All solved units close.
 | IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
 | IA-BASE-01 NaOH, kg/d | 5.059 | 5.059 | -0.0 % | GREENWOOD |
 | IA-NAOH-MU make-up, kg/d | 5.059 | 5.059 | +0.0 % | NaOH balance |
-| EVAP_ACID kW | 2.412 | 2.411 | +0.0 % | VOGELBUSCH_MVR |
+| EVAP_ACID kW | 1.391 | 1.391 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_ACID water off, kg/d | 803.822 | 803.822 | +0.0 % | PERRY9_HCL |
-| EVAP_BASE kW | 2.398 | 2.398 | +0.0 % | VOGELBUSCH_MVR |
+| EVAP_BASE kW | 1.324 | 1.324 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_BASE water off, kg/d | 799.194 | 799.194 | +0.0 % | PERRY9_HCL |
 | EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
@@ -60,16 +60,16 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 1336.000 | 1335.511 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 1318.000 | 1317.044 | +0.1 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
 1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 26.93 kW from 6.7 kWh/kg NaOH at 2 M (was 16.13 kW on an unsourced 2.1 kWh/kg pair). Study.
-2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1243.3 kg/d, water off 803.8 kg/d, 2.41 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
-3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 799.2 kg/d, 2.40 kW. Study.
+2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1243.3 kg/d, water off 803.8 kg/d, 1.39 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
+3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 799.2 kg/d, 1.32 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
 5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
-7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 126.5 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 5.06 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 799.2 kg/d, 2.40 kW.
+7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 126.5 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 5.06 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 799.2 kg/d, 1.32 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
 ## 5. Drivers
@@ -140,6 +140,26 @@ All solved units close.
 | ext_conditioned | 1.0 | 1 conditioned, 0 unconditioned hall | A-M-104 (owner decision 2026-10-15: conditioned) | yes |
 | ext_U_wall | 0.534 | W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | IECC2021_C402 | yes |
 | ext_wall_h_mm | 6000 | mm eave height of the extension (EXT_HALL block height) | A-M-104 | yes |
+| evap_bp_acid_C | 108.6 | C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding) | PERRY9_HCL | yes |
+| evap_bp_base_C | 108.0 | C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines) | MCCABE7_DUHRING | yes |
+| evap_body_kPa | 101.325 | kPa abs body pressure | A-M-106 | yes |
+| evap_dT_drive_K | 6.0 | K condensing minus boiling | A-M-106 | yes |
+| evap_U_ff | 1500.0 | W/(m2 K) falling film, condensing steam outside | PERRY9_EVAP | yes |
+| evap_U_ix | 2000.0 | W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate) | PERRY9_EVAP | yes |
+| evap_feed_T_C | 35.0 | C BMED product temperature | A-M-106 | yes |
+| evap_approach_K | 10.0 | K interchanger cold-end approach | A-M-106 | yes |
+| evap_cp_feed | 3.85 | kJ/(kg K) 2 M HCl or NaOH | PERRY9 | yes |
+| evap_cp_acid_prod | 3.1 | kJ/(kg K) 20 wt% HCl | PERRY9 | yes |
+| evap_cp_base_prod | 3.55 | kJ/(kg K) 20 wt% NaOH | PERRY9 | yes |
+| evap_comp_eta | 0.7 | isentropic efficiency, single-stage blower | PERRY9_PUMP | yes |
+| evap_motor_eta | 0.9 | motor efficiency | A-M-106 | yes |
+| evap_k_steam | 1.33 | cp/cv low-pressure steam | IAPWS_IF97 | yes |
+| evap_tube_id_mm | 25.0 | mm | A-M-107 | yes |
+| evap_tube_L_mm | 1500.0 | mm | A-M-107 | yes |
+| evap_wet_min | 0.05 | kg/(m s) minimum falling-film wetting rate | PERRY9_EVAP | yes |
+| evap_body_design_kPag | 100.0 | kPa g body design (plus full vacuum) | A-M-107 | yes |
+| evap_shell_design_kPag | 350.0 | kPa g steam shell design | A-M-107 | yes |
+| evap_sump_h_mm | 400.0 | mm liquid in the sump | A-M-107 | yes |
 
 ## 6. References
 
@@ -248,6 +268,26 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme |
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing |
+| driver evap_bp_acid_C | 108.6 C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding) | Boiling-point measurement on the product at the body pressure |
+| driver evap_bp_base_C | 108.0 C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines) | Read-off check on the Duhring chart and boiling-point measurement |
+| driver evap_body_kPa | 101.325 kPa abs body pressure | Bench or pilot measurement |
+| driver evap_dT_drive_K | 6.0 K condensing minus boiling | Pilot run: compressor ratio vs heat flux |
+| driver evap_U_ff | 1500.0 W/(m2 K) falling film, condensing steam outside | Pilot measurement of U |
+| driver evap_U_ix | 2000.0 W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate) | Thermal test of the interchanger |
+| driver evap_feed_T_C | 35.0 C BMED product temperature | BMED stack outlet temperature log |
+| driver evap_approach_K | 10.0 K interchanger cold-end approach | Interchanger thermal test |
+| driver evap_cp_feed | 3.85 kJ/(kg K) 2 M HCl or NaOH | Perry sec. 2 heat-capacity table read-off |
+| driver evap_cp_acid_prod | 3.1 kJ/(kg K) 20 wt% HCl | Perry sec. 2 heat-capacity table read-off |
+| driver evap_cp_base_prod | 3.55 kJ/(kg K) 20 wt% NaOH | Perry sec. 2 heat-capacity table read-off |
+| driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower |
+| driver evap_motor_eta | 0.9 motor efficiency | IEC 60034-30-1 class of the motor used |
+| driver evap_k_steam | 1.33 cp/cv low-pressure steam | - |
+| driver evap_tube_id_mm | 25.0 mm | Tube stock |
+| driver evap_tube_L_mm | 1500.0 mm | Envelope fit |
+| driver evap_wet_min | 0.05 kg/(m s) minimum falling-film wetting rate | Pilot wetting test |
+| driver evap_body_design_kPag | 100.0 kPa g body design (plus full vacuum) | Pressure test per ASME VIII-1 UG-99 / ISO 16528 |
+| driver evap_shell_design_kPag | 350.0 kPa g steam shell design | Pressure test |
+| driver evap_sump_h_mm | 400.0 mm liquid in the sump | Level control setpoint |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -336,10 +376,10 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-086 | electrical input to each fed load leaves as heat to HEAT_SIN kW | Per-unit energy balance at unit task 01 |
 | A-M-087 | spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3  m, 1/K, MPa | Manufacturer span tables per material and B31.3 flexibility analysis on the routed model |
 | A-M-088 | 2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH) mol/L | EDBM pilot at 2 M product: SEC, current efficiency and product purity |
-| A-M-089 | 72 kWh/t water evaporated | Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement |
+| A-M-089 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D kWh/t water evaporated | Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement |
 | A-M-090 | 20 wt% HCl on IA-ACID-01 mass fraction | Bench leach of class A feed at 20 wt% HCl, 90-108 C; ICP-OES extraction vs time |
 | A-M-091 | 20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT mass fraction | Bench hydroxide precipitation and glass digest with 20 wt% NaOH |
-| A-M-092 | 1200 x 800 x 1800 mm skid each; placed in BMED_CRU mm | Vendor MVR skid general arrangement |
+| A-M-092 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D mm | Vendor MVR skid general arrangement |
 | A-M-093 | SOL_ARK bus change carried on IA-PV-01 average; PV, storage, kW | Hourly load profile and PVsyst site run |
 | A-M-094 | 1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe p mol/mol | Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES |
 | A-M-095 | dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol mol/mol | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg |
@@ -353,3 +393,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close |
 | A-M-104 | Extension is a single-storey CONDITIONED hall (owner decisio W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme |
 | A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays |
+| A-M-106 | Evaporator operating basis: body 101.3 kPa abs, 6 K driving  kPa, K, C, - | Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log |
+| A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials |

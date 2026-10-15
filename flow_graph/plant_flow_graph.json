@@ -3573,7 +3573,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 144.7766,
+        "value": 179.9379,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -3581,14 +3581,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 2672,
+        "count": 2636,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 1336,
-        "area_m2": 11764,
+        "nameplate_kw": 1318,
+        "area_m2": 11607,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -3598,19 +3598,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            156000,
-            84000
+            120000,
+            108000
           ],
           "bays": [
-            26,
-            14
+            20,
+            18
           ],
-          "footprint_m2": 13104.0,
-          "extension_m2": 12672.0,
-          "roof_capacity_kWp": 1341.1,
+          "footprint_m2": 12960.0,
+          "extension_m2": 12528.0,
+          "roof_capacity_kWp": 1323.2,
           "perimeter_pathway_mm": 1829,
-          "arrays": 8,
-          "extension_load_kW": 37.26,
+          "arrays": 9,
+          "extension_load_kW": 36.69,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -4328,8 +4328,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 193,
-        "kWh": 2698,
+        "kW": 191,
+        "kWh": 2661,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -8111,22 +8111,78 @@
         "water_off_kg_d": 803.82,
         "feed_wt": 0.0707,
         "product_wt": 0.2,
-        "mvr_kWh_per_t": 72.0,
+        "mvr_kWh_per_t": 41.5,
         "size_mm": [
-          1200,
+          1250,
           800,
-          1800
+          3100
         ],
-        "size_note": "L x W x H mm, study envelope pending vendor MVR quote",
-        "doc": "AQS-PAR-001",
-        "duty": "In 1243.344 kg/d, out 1243.344 kg/d, 2.412 kW. Sheet docs-authority/duties/EVAP_ACID.md."
+        "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+        "doc": "AQS-PAR-001, AQS-DUTY-060",
+        "duty": "In 1243.344 kg/d, out 1243.344 kg/d, 2.412 kW. Sheet docs-authority/duties/EVAP_ACID.md.",
+        "design": {
+          "unit": "EVAP_ACID",
+          "T_boil_C": 108.6,
+          "T_cond_C": 114.6,
+          "p_body_kPa": 101.325,
+          "p_shell_kPa": 166.98,
+          "ratio": 1.648,
+          "water_kg_h": 33.493,
+          "duty_kW": 21.0,
+          "comp_shaft_kW": 1.245,
+          "comp_elec_kW": 1.384,
+          "w_kJ_kg": 93.7,
+          "kWh_per_t": 41.5,
+          "A_ff_m2": 2.33,
+          "tubes": 20,
+          "tube_id_mm": 25.0,
+          "tube_L_mm": 1500.0,
+          "recirc_kg_h": 282.7,
+          "pump_kW": 0.008,
+          "shell_D_mm": 350,
+          "height_mm": 3100,
+          "ix_Q_kW": 3.52,
+          "ix_A_m2": 0.15,
+          "T_feed_preheat_C": 98.6,
+          "T_out_C": 48.7,
+          "trim_kW": 0.0,
+          "total_kW": 1.391
+        },
+        "relief_mm": 9.51,
+        "relief_basis": {
+          "case": "fire, ISO 23251 / API 521 adequate drainage",
+          "A_wetted_m2": 0.536,
+          "Q_kW": 25.9,
+          "W_kg_h": 41.32,
+          "P1_kPa_abs": 222.3,
+          "T_K": 405.3,
+          "M_kg_kmol": 18.02,
+          "k": 1.33,
+          "A_req_mm2": 34.01,
+          "orifice": "API 526 D (71 mm2)",
+          "adequate": true,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "shell_side": {
+            "case": "blocked outlet, compressor at 120 % design flow",
+            "W_kg_h": 40.19,
+            "P1_kPa_abs": 486.3,
+            "T_K": 423.9,
+            "M_kg_kmol": 18.02,
+            "k": 1.33,
+            "A_req_mm2": 15.465,
+            "orifice": "API 526 D (71 mm2)",
+            "adequate": true
+          },
+          "bore_req_mm": 6.58
+        },
+        "design_kPa": 100.0
       },
       "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).",
       "continuous_kw": {
-        "value": 2.4115,
+        "value": 1.391,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 803.8 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.41 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 803.8 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.384 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.39 kW. Study."
       }
     },
     {
@@ -8144,22 +8200,78 @@
         "water_off_kg_d": 799.19,
         "feed_wt": 0.0741,
         "product_wt": 0.2,
-        "mvr_kWh_per_t": 72.0,
+        "mvr_kWh_per_t": 39.8,
         "size_mm": [
-          1200,
+          1250,
           800,
-          1800
+          3100
         ],
-        "size_note": "L x W x H mm, study envelope pending vendor MVR quote",
-        "doc": "AQS-PAR-001",
-        "duty": "In 1306.776 kg/d, out 1306.776 kg/d, 2.398 kW. Sheet docs-authority/duties/EVAP_BASE.md."
+        "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+        "doc": "AQS-PAR-001, AQS-DUTY-060",
+        "duty": "In 1306.776 kg/d, out 1306.776 kg/d, 2.398 kW. Sheet docs-authority/duties/EVAP_BASE.md.",
+        "design": {
+          "unit": "EVAP_BASE",
+          "T_boil_C": 108.0,
+          "T_cond_C": 114.0,
+          "p_body_kPa": 101.325,
+          "p_shell_kPa": 163.73,
+          "ratio": 1.616,
+          "water_kg_h": 33.3,
+          "duty_kW": 20.88,
+          "comp_shaft_kW": 1.185,
+          "comp_elec_kW": 1.316,
+          "w_kJ_kg": 89.6,
+          "kWh_per_t": 39.8,
+          "A_ff_m2": 2.32,
+          "tubes": 20,
+          "tube_id_mm": 25.0,
+          "tube_L_mm": 1500.0,
+          "recirc_kg_h": 282.7,
+          "pump_kW": 0.008,
+          "shell_D_mm": 350,
+          "height_mm": 3100,
+          "ix_Q_kW": 3.67,
+          "ix_A_m2": 0.146,
+          "T_feed_preheat_C": 98.0,
+          "T_out_C": 50.6,
+          "trim_kW": 0.0,
+          "total_kW": 1.324
+        },
+        "relief_mm": 9.51,
+        "relief_basis": {
+          "case": "fire, ISO 23251 / API 521 adequate drainage",
+          "A_wetted_m2": 0.536,
+          "Q_kW": 25.9,
+          "W_kg_h": 41.32,
+          "P1_kPa_abs": 222.3,
+          "T_K": 404.7,
+          "M_kg_kmol": 18.02,
+          "k": 1.33,
+          "A_req_mm2": 33.98,
+          "orifice": "API 526 D (71 mm2)",
+          "adequate": true,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "shell_side": {
+            "case": "blocked outlet, compressor at 120 % design flow",
+            "W_kg_h": 39.96,
+            "P1_kPa_abs": 486.3,
+            "T_K": 423.9,
+            "M_kg_kmol": 18.02,
+            "k": 1.33,
+            "A_req_mm2": 15.376,
+            "orifice": "API 526 D (71 mm2)",
+            "adequate": true
+          },
+          "bore_req_mm": 6.58
+        },
+        "design_kPa": 100.0
       },
       "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Nickel or fluoropolymer-lined wetted parts (study).",
       "continuous_kw": {
-        "value": 2.3976,
+        "value": 1.324,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.2 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.40 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.316 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.32 kW. Study."
       }
     },
     {
@@ -8173,19 +8285,19 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "footprint_m2": 12672.0,
+        "footprint_m2": 12528.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 37.255 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 36.685 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "continuous_kw": {
-        "value": 37.2554,
+        "value": 36.6854,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 12672 m2; lighting 11.15 kW (IECC 2021 C405, 10 % lit), ventilation 16.08 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 10.02 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days)."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 12528 m2; lighting 11.02 kW (IECC 2021 C405, 10 % lit), ventilation 15.90 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 9.76 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days)."
       },
       "class": "building"
     }
@@ -15061,8 +15173,8 @@
         "other_metals": 0.03
       },
       "params": {
-        "T_C": 40.0,
-        "T_basis": "X-MAT-09: upstream BMED_ACID outlet IA-BMED-01 (edge T_C)"
+        "T_C": 48.7,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
       }
     },
     {
@@ -15093,6 +15205,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 50.6,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
       }
     },
     {
@@ -15135,7 +15251,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 182.032,
+        "value": 179.3679,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -26809,9 +26925,10 @@
       "params": {
         "rate_basis": "1872 mol/d NaOH equal to the added HCl; 20 wt%",
         "rate_kind": "derived",
-        "T_C": 40.0,
+        "T_C": 50.6,
         "medium": "NaOH 20 wt%",
-        "doc": "AQS-ASSAY-001 Rev D \u00a78"
+        "doc": "AQS-ASSAY-001 Rev D \u00a78",
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
       }
     },
     {
@@ -32330,7 +32447,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "T_C": 48.7,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
+      }
     },
     {
       "stream_id": "SF-EVAP_ACID",
@@ -32346,7 +32467,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.4115,
+        "value": 1.391,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw."
@@ -32372,7 +32493,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.4115,
+        "value": 1.391,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
@@ -32434,7 +32555,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "T_C": 50.6,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
+      }
     },
     {
       "stream_id": "SF-EVAP_BASE",
@@ -32450,7 +32575,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.3976,
+        "value": 1.324,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
@@ -32476,7 +32601,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.3976,
+        "value": 1.324,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
@@ -32554,7 +32679,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 37.2554,
+        "value": 36.6854,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
