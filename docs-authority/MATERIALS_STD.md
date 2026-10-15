@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: D
+Revision: E
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -11,6 +11,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | B | Decisions for ZNBR2_BR2_REGEN (PVC-U) and LEACH_CSTR_1 HX-5 (PVDF coil). Published sources added. | 2026-10-15 |
 | C | M7 cases extended. Decisions for HX8, ETOH_STILL, BUOH_STILL, AFTERBURNER_FLUE, FLUE_KO, BAGHOUSE, Q1 and Q2. | 2026-10-15 |
 | D | Nitric and peroxide materials (AQS-DSN-OX-001). Sources S10 to S12. | 2026-10-15 |
+| E | H2 embrittlement review AQS-REV-H2-001; M6 applied to every H2-wetted unit. | 2026-10-15 |
 
 ## 1. Rules
 
@@ -156,3 +157,12 @@ WS_NITRIC, HNO3, and WS_PEROX are defined in AQS-DSN-OX-001, `docs-authority/OXI
 - [S10] Vinidex, Chemical Performance of PVC, https://www.vinidex.com.au/app/uploads/pdf/Chemical-Performance-of-PVC.pdf
 - [S11] Solvay, Materials of Construction for the Storage of H₂O₂, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Materials%20of%20Construction%20for%20the%20Storage%20of%20H2O2.pdf
 - [S12] Solvay, Safety and Handling of Hydrogen Peroxide, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Safety%20and%20Handling%20of%20Hydrogen%20Peroxide.pdf
+
+## 6. Hydrogen service, Rev E
+
+AQS-REV-H2-001, `docs-authority/H2_EMBRITTLEMENT_REVIEW.md`, applies M6 to every H₂-wetted unit:
+- No carbon, low-alloy, or high-strength steel.
+- 316L, annealed, for dry H₂ and for EW cathodes.
+- PVC-U for the wet acid HDR_H2 header.
+- HDPE, PA, or copper only for dry low-pressure lines.
+- Pressure-dependent checks are held until the graph carries P, T, and purity. Sources S13 to S15.

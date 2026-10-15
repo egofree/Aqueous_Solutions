@@ -8,7 +8,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.
 - CO₂ + 3 H₂ → CH₃OH + H₂O. MW 44.009, 2.016, 32.042, 18.015. CO₂ limits. Methanol is S75. Water is IA-MEOH-H2O. Hydrogen that does not react does not enter; it is S45.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. Held. Pressure and temperature are not on the graph. Above 200 °C with H₂ partial pressure, API 941 applies: no carbon steel; 316L or Cr-Mo from the Nelson curves. AQS-REV-H2-001.
 
 4. Nozzles. Origin -4848, 1600, 0 mm. Size 2200 × 900 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, S73, inlet, -Y face center, -3748, 1600, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

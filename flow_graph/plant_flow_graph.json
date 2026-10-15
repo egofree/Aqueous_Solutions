@@ -207,7 +207,7 @@
           1000,
           1600
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -388,13 +388,13 @@
       "class": "boundary",
       "tags": [],
       "electrical_role": "none",
-      "diagram_gap": "DOCK export boundary — no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+      "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
       "notes": "North dock door. Freight only. No process stream.",
       "enabled": true,
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "diagram_gap": "DOCK export boundary — no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+        "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
         "presence": "present",
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
@@ -517,7 +517,7 @@
           60,
           60
         ],
-        "size_note": "L×W×H mm, study envelope (line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor; rate not issued)",
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (line envelope DN50 (OD 60.3): minimum size for solids-bearing liquor; rate not issued)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -765,7 +765,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -853,7 +853,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -908,7 +908,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -962,7 +962,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1016,7 +1016,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1070,7 +1070,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1124,7 +1124,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1178,7 +1178,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1233,7 +1233,7 @@
           420,
           650
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1417,7 +1417,7 @@
           800,
           1600
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -1544,7 +1544,7 @@
         "value": 2.0,
         "unit": "kW",
         "status": "study",
-        "note": "Study HP electrical draw class — thermal primary; not ORC"
+        "note": "Study HP electrical draw class \u2014 thermal primary; not ORC"
       },
       "modules": [],
       "params": {
@@ -1607,19 +1607,19 @@
           "T_source_survey",
           "Q_surplus_after_Q4"
         ],
-        "definition": "geothermal Organic Rankine Cycle (heat→electric)",
-        "method": "P≈η_ORC×(Q_GHEX_avail−Q4_life); η 0.08–0.12; Carnot-limited",
+        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
+        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
         "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
-        "ref": "AQS-EQP-STUDY-001 Rev C §5 / AQS-AUD-001 §10.4",
+        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
         "open_study_queued": true,
         "study_id": "ST-ORC-01",
         "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
         "study_phase_a_status": "physics_closed_external_measurement_queued",
-        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey — owner/date TBD",
+        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
         "presence": "present",
         "ghex_study_defaults": {
           "T_source_K": 285.0,
-          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class — study default until bore survey",
+          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
           "T_sink_K": 303.0,
           "eta_Carnot": 0.059,
           "eta_ORC_study": "0.08-0.12 of available surplus",
@@ -1628,7 +1628,7 @@
           "Q4_life_priority_kW_th_study": 3.0,
           "Q_surplus_kW_th_M1": 0.0,
           "P_ORC_kW_e_M1": 0.0,
-          "ref": "AQS-EQP-STUDY-001 §5 / AQS-EQP-GEO-001 / AQS-AUD-001 §10.4",
+          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4",
           "survey_status": "design_survey_locked",
           "field_measurement_status": "not_measured_external"
         },
@@ -1753,7 +1753,7 @@
         ],
         "food_path_study": "upper_band",
         "food_out_kg_d_study": 4.2,
-        "yield_assumption": "0.15 kg/(m2·d) upper × ~28 m2 (AQS-AUD-001 §12) — study",
+        "yield_assumption": "0.15 kg/(m2\u00b7d) upper \u00d7 ~28 m2 (AQS-AUD-001 \u00a712) \u2014 study",
         "berth_crew_study": 4,
         "ration_kg_person_d_study": 0.6,
         "presence": "present",
@@ -1824,7 +1824,7 @@
         "value": 0.3,
         "unit": "kW",
         "status": "study",
-        "note": "Study dryer parasitic — not nameplate"
+        "note": "Study dryer parasitic \u2014 not nameplate"
       },
       "modules": [],
       "params": {
@@ -2045,7 +2045,7 @@
           400,
           600
         ],
-        "size_note": "L×W×H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "Heat in 4.572 kW, out 4.572 kW. No mass edge. Sheet docs-authority/duties/HX8.md.",
         "presence": "present",
@@ -2112,7 +2112,7 @@
         "value": null,
         "unit": "kW",
         "status": "study",
-        "note": "M1 hydro ~9.8 kWh ideal / ~7 recoverable ≪ ZnBr2 120 kWh (AQS-ESS-001). Continuous charge/discharge kW model incomplete — honest incomplete (WP-A4). Scale-up path V=200→1000→5000 m3 documented in params."
+        "note": "M1 hydro ~9.8 kWh ideal / ~7 recoverable \u226a ZnBr2 120 kWh (AQS-ESS-001). Continuous charge/discharge kW model incomplete \u2014 honest incomplete (WP-A4). Scale-up path V=200\u21921000\u21925000 m3 documented in params."
       },
       "modules": [],
       "params": {
@@ -2139,7 +2139,7 @@
           49.0,
           340.0
         ],
-        "scale_up_note": "AQS-BLD-001 §3 / AQS-ESS-001 — grow V×h for material hydro; M1 remains symbolic ≪ ZnBr2",
+        "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HYDRO_SET.md.",
@@ -2272,7 +2272,7 @@
           400,
           600
         ],
-        "size_note": "L×W×H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (MeOH fuel-cell condensate 5.6 kg/d: DN150 KO pot + trap + level switch)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "In 4.479 kg/d, out 4.479 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_COND.md.",
         "presence": "present",
@@ -2305,7 +2305,7 @@
           800,
           1600
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -2359,7 +2359,7 @@
           900,
           1400
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -2390,7 +2390,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": "CO2 + 3 H2 → CH3OH + H2O. CO2 limits. Excess hydrogen stays on S45.",
+      "notes": "CO2 + 3 H2 \u2192 CH3OH + H2O. CO2 limits. Excess hydrogen stays on S45.",
       "enabled": true,
       "continuous_kw": {
         "value": 0.5,
@@ -2406,7 +2406,7 @@
           900,
           1400
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -2441,7 +2441,7 @@
         "value": null,
         "unit": "kW",
         "status": "study",
-        "note": "Inventory store; no continuous kW — fuel to MEOH_FC"
+        "note": "Inventory store; no continuous kW \u2014 fuel to MEOH_FC"
       },
       "modules": [],
       "params": {
@@ -2453,7 +2453,7 @@
           800,
           1100
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 6.019 kg/d, out 6.019 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
@@ -2488,7 +2488,7 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "MET HX → Q4 (S63)",
+      "notes": "MET HX \u2192 Q4 (S63)",
       "enabled": true,
       "modules": [],
       "params": {
@@ -2688,7 +2688,7 @@
           400,
           1200
         ],
-        "size_note": "L×W×H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "In 497.918 kg/d, out 497.918 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
@@ -3039,7 +3039,7 @@
           400,
           600
         ],
-        "size_note": "L×W×H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
+        "size_note": "L\u00d7W\u00d7H mm, study envelope (contingency vent damper section, CRYO_AHU 12 ACH x 216 m3 = 2592 m3/h in a 300x300 duct at 8 m/s)",
         "size_doc": "MVS_EQUIPMENT Rev K",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/RELIEF_CRYO.md.",
         "presence": "present",
@@ -3506,7 +3506,7 @@
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": "Fab reagent fork (S38) — litho path also via LITHO_STUB",
+      "notes": "Fab reagent fork (S38) \u2014 litho path also via LITHO_STUB",
       "enabled": true,
       "modules": [],
       "params": {
@@ -3625,7 +3625,7 @@
           800,
           1100
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.620 kg/d, out 0.620 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
         "internals": "none",
         "design_kPa": 17.8,
@@ -3649,7 +3649,7 @@
           600,
           800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -3696,7 +3696,7 @@
           600,
           800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -3735,7 +3735,7 @@
           600,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -3809,7 +3809,7 @@
           600,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 165.111 kg/d, out 165.111 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
         "presence": "present",
         "internals": "none",
@@ -3837,7 +3837,7 @@
           400,
           800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -3875,7 +3875,7 @@
           500,
           800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_COAT.md.",
         "presence": "present",
         "internals": "none",
@@ -3899,7 +3899,7 @@
           500,
           800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_ALIGN.md.",
         "presence": "present",
         "internals": "none",
@@ -3923,7 +3923,7 @@
           500,
           800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/LITHO_DEV.md.",
         "presence": "present",
         "internals": "none",
@@ -3973,7 +3973,7 @@
           800,
           1600
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.988 kg/d, out 0.988 kg/d, 0.100 kW. Sheet docs-authority/duties/LITHO_STUB.md.",
         "presence": "present",
         "internals": "none",
@@ -4005,7 +4005,7 @@
           800,
           1800
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.300 kW. Sheet docs-authority/duties/ELECTRODE_COAT.md.",
         "presence": "present",
         "internals": "none",
@@ -4037,7 +4037,7 @@
           800,
           1600
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 8.407 kg/d, out 8.407 kg/d, 0.500 kW. Sheet docs-authority/duties/BLOW_MOLD.md.",
         "presence": "present",
         "internals": "none",
@@ -4112,7 +4112,7 @@
           1200,
           1600
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.300 kW. Sheet docs-authority/duties/SOLAR_PV_CELL.md.",
         "presence": "present",
         "internals": "none",
@@ -4147,7 +4147,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -6000,
         "stand_mm": 0,
         "coil_pack": {
@@ -4208,7 +4208,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -5150,
         "stand_mm": 850,
         "coil_pack": {
@@ -4283,7 +4283,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -4250,
         "stand_mm": 1750,
         "coil_pack": {
@@ -4358,7 +4358,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -3350,
         "stand_mm": 2650,
         "coil_pack": {
@@ -4419,7 +4419,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -6000,
         "stand_mm": 0,
         "coil_pack": {
@@ -4480,7 +4480,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -5150,
         "stand_mm": 850,
         "coil_pack": {
@@ -4555,7 +4555,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -4250,
         "stand_mm": 1750,
         "coil_pack": {
@@ -4630,7 +4630,7 @@
           800,
           1200
         ],
-        "size_note": "L×W×H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "origin_z_mm": -3350,
         "stand_mm": 2650,
         "coil_pack": {
@@ -6973,7 +6973,7 @@
         "no_S_id",
         "high_severity_audit"
       ],
-      "notes": "Audit §7.1 DOCK export — sector required; no inter-block stream ID issued",
+      "notes": "Audit \u00a77.1 DOCK export \u2014 sector required; no inter-block stream ID issued",
       "params": {
         "rate_basis": "MFG_SHOP finished goods (Fe plate, wire, sheet, powder) to export",
         "rate_source": "AQS-DUTY-010 MFG balance",
@@ -8561,7 +8561,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "CRU → BMED acid regen loop",
+      "carries": "CRU \u2192 BMED acid regen loop",
       "header": null,
       "forbidden": null,
       "claim_status": null,
@@ -8615,7 +8615,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "CRU → BMED base regen loop",
+      "carries": "CRU \u2192 BMED base regen loop",
       "header": null,
       "forbidden": null,
       "claim_status": null,
@@ -9307,7 +9307,7 @@
       "phase": "L",
       "presence": "present",
       "carries": "EW overflow",
-      "notes": "Sequential. No jump. Filled missing EW_4→EW_5 hop (Rev F gap; fuller cascade from E+local).",
+      "notes": "Sequential. No jump. Filled missing EW_4\u2192EW_5 hop (Rev F gap; fuller cascade from E+local).",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -9468,7 +9468,7 @@
         "wp_l2_filled",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
+      "notes": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -9507,7 +9507,7 @@
         "wp_true_closure",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L1: HDR_H2→H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync).",
+      "notes": "WP-L1: HDR_H2\u2192H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).",
       "composition": {
         "H2": 0.98,
         "water": 0.02
@@ -9539,7 +9539,7 @@
         "multi_ew_hood",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
+      "notes": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -9575,7 +9575,7 @@
         "multi_ew_hood",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
+      "notes": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync). Empty layers. Not in the mass cut. The cell already closes on its mass-layer hydrogen edge. Do not add this rate to the mass layer without a new balance.",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -9629,7 +9629,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "Dryer → pyro",
+      "carries": "Dryer \u2192 pyro",
       "header": null,
       "forbidden": null,
       "claim_status": null,
@@ -9672,7 +9672,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "Pyro → frac",
+      "carries": "Pyro \u2192 frac",
       "header": null,
       "forbidden": null,
       "claim_status": null,
@@ -9912,7 +9912,7 @@
         "value": 67.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 §11 FARM_SUMP / UPW makeup S01/S21 ~50–140 L/d"
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10110,7 +10110,7 @@
         "value": 2.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 §4.6) — not tote schedule"
+        "note": "Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 \u00a74.6) \u2014 not tote schedule"
       },
       "from_sector_id": "NUT",
       "to_sector_id": "FARM",
@@ -10141,7 +10141,7 @@
         "value": 42.0021,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 §4.1 plated metals ≈42 kg/d at the 150 kg/d reference feed"
+        "note": "AQS-AUD-001 \u00a74.1 plated metals \u224842 kg/d at the 150 kg/d reference feed"
       },
       "from_sector_id": "WET",
       "to_sector_id": "MFG",
@@ -10197,7 +10197,7 @@
         "sandbox_extra_not_in_STREAM_REGISTER",
         "reconcile_or_keep_sandbox"
       ],
-      "notes": "candidate_mvs extension — do not invent new register ID",
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID",
       "composition": {
         "water": 0.97,
         "solute": 0.03
@@ -10294,7 +10294,7 @@
         "value": 0.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 §12)"
+        "note": "Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 \u00a712)"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "OIL",
@@ -10364,7 +10364,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FARM SUMP + HVAC → UPW POLISH / SALT FEED / VCD_FEED",
+      "notes": "From register: FARM SUMP + HVAC \u2192 UPW POLISH / SALT FEED / VCD_FEED",
       "params": {
         "rate_basis": "ET 92.4 (3.3 L/m2.d x 28.0 m2) - farm exhaust vapor 60.9 (OA 933.5 m3/h light, 251.3 dark; w 0.0131 - 0.01)",
         "rate_source": "AQS-DUTY-009 OA; ET class",
@@ -10448,7 +10448,7 @@
         "sandbox_extra_not_in_STREAM_REGISTER",
         "reconcile_or_keep_sandbox"
       ],
-      "notes": "candidate_mvs extension — do not invent new register ID",
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID",
       "composition": {
         "water": 0.998,
         "NO3": 0.001,
@@ -10466,7 +10466,7 @@
       "presence": "present",
       "carries": "photosynthetic O2",
       "header": "HDR_O2",
-      "forbidden": "—",
+      "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
         "value": 0.0,
@@ -10510,7 +10510,7 @@
         "value": 12.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 §10.6)"
+        "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6)"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "WET",
@@ -10542,7 +10542,7 @@
       "presence": "present",
       "carries": "DC/480V",
       "header": "tray",
-      "forbidden": "battery Br₂ into CRU",
+      "forbidden": "battery Br\u2082 into CRU",
       "claim_status": "Closed",
       "rate": {
         "value": 23.32,
@@ -10613,7 +10613,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BAGHOUSE fines → LEACH CSTR 1",
+      "notes": "From register: BAGHOUSE fines \u2192 LEACH CSTR 1",
       "params": {
         "rate_basis": "baghouse catch 0.5% of shredded feed",
         "rate_source": "shredder fines class",
@@ -10640,7 +10640,7 @@
       "presence": "present",
       "carries": "load",
       "header": "tray",
-      "forbidden": "—",
+      "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
         "value": 5.0,
@@ -10895,7 +10895,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "fab UPW > 18 MΩ·cm class",
+      "carries": "fab UPW > 18 M\u03a9\u00b7cm class",
       "header": "fab UPW loop",
       "forbidden": "remin path, grey",
       "claim_status": "Closed",
@@ -10912,7 +10912,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FAB_UPW_TANK → WET_BENCH",
+      "notes": "From register: FAB_UPW_TANK \u2192 WET_BENCH",
       "params": {
         "rate_basis": "fab UPW 20-100 L/d for 1-5 starts, at 3 starts",
         "rate_source": "AQS-AUD-001 s13 + ST-LITHO-01",
@@ -10993,7 +10993,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GREY_TREAT → VCD_FEED / SALT FEED",
+      "notes": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED",
       "params": {
         "rate_basis": "grey treat recovery 95 % of S12 (5 % sludge/backwash)",
         "rate_source": "grey-water practice",
@@ -11034,7 +11034,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BLACK_DIGEST → NUTRIENT DOSE / SALT FEED",
+      "notes": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED",
       "params": {
         "rate_basis": "black water 16.48 kg/d less digester gas 0.05",
         "rate_source": "BVAD class",
@@ -11074,7 +11074,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_HF_ED → WET_BENCH",
+      "notes": "From register: WS_HF_ED \u2192 WET_BENCH",
       "params": {
         "rate_basis": "AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L",
         "rate_source": "AQS-AUD-001 s13",
@@ -11097,7 +11097,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "H₂O₂",
+      "carries": "H\u2082O\u2082",
       "header": "fab chem",
       "forbidden": "sewer",
       "claim_status": "Claimed",
@@ -11114,7 +11114,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_PEROX → WET_BENCH",
+      "notes": "From register: WS_PEROX \u2192 WET_BENCH",
       "params": {
         "rate_basis": "AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L",
         "rate_source": "AQS-AUD-001 s13",
@@ -11137,7 +11137,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "NH₄OH / NH₃ (aq)",
+      "carries": "NH\u2084OH / NH\u2083 (aq)",
       "header": "fab chem",
       "forbidden": "hab air",
       "claim_status": "Claimed",
@@ -11154,7 +11154,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_AMMONIA → WET_BENCH",
+      "notes": "From register: WS_AMMONIA \u2192 WET_BENCH",
       "params": {
         "rate_basis": "AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L",
         "rate_source": "AQS-AUD-001 s13",
@@ -11194,7 +11194,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_KOH → WET_BENCH / solar texture stub",
+      "notes": "From register: WS_KOH \u2192 WET_BENCH / solar texture stub",
       "params": {
         "rate_basis": "AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L)",
         "rate_source": "AQS-AUD-001 s13",
@@ -11218,7 +11218,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "B/P/As concentrate; BBr₃ / POCl₃ class",
+      "carries": "B/P/As concentrate; BBr\u2083 / POCl\u2083 class",
       "header": "gas cabinet / tote",
       "forbidden": "hab AHU",
       "claim_status": "Claimed",
@@ -11235,7 +11235,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_DOPE / CRU polish → FAB_TOOL dopant cabinets",
+      "notes": "From register: WS_DOPE / CRU polish \u2192 FAB_TOOL dopant cabinets",
       "params": {
         "rate_basis": "AUD s13 grams/d concentrate -> 10 g/d",
         "rate_source": "AQS-AUD-001 s13",
@@ -11275,7 +11275,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_SLURRY → LAP_CMP / FAB_PREP",
+      "notes": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP",
       "params": {
         "rate_basis": "AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L",
         "rate_source": "AQS-AUD-001 s13",
@@ -11455,7 +11455,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: TERRACE underdrain / apron (clean) → CATCH TANK / DRAIN_SEC",
+      "notes": "From register: TERRACE underdrain / apron (clean) \u2192 CATCH TANK / DRAIN_SEC",
       "params": {
         "route": "terrace drain -> wall sleeve at L0 -> SHAFT_PENSTOCK -> CATCH_TANK; no opening into L-1",
         "rate_basis": "event-driven; zero on the dry design day",
@@ -11496,7 +11496,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Enclosed terrace / GH fertigated drain → GREY treat / VCD_FEED / SALT",
+      "notes": "From register: Enclosed terrace / GH fertigated drain \u2192 GREY treat / VCD_FEED / SALT",
       "params": {
         "rate_basis": "event-driven; zero on the dry design day",
         "rate_source": "AUD s4 terrace S40 event-driven",
@@ -11537,7 +11537,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_GHEX → GEO_HP (closed loop)",
+      "notes": "From register: GEO_GHEX \u2192 GEO_HP (closed loop)",
       "params": {
         "rate_basis": "ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW",
         "rate_source": "GEO_GHEX params; ST-ORC-01",
@@ -11562,7 +11562,7 @@
         "thermal"
       ],
       "presence": "present",
-      "carries": "heat < 80 °C",
+      "carries": "heat < 80 \u00b0C",
       "header": "Q4",
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
@@ -11579,7 +11579,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_HP → Q4 / FARM / HAB",
+      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB",
       "params": {
         "rate_basis": "GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab",
         "rate_source": "HEAT_LADDER (GEO_HP only lift); DUTY-008 q4_life_kw",
@@ -11671,7 +11671,7 @@
         "value": 2.5,
         "unit": "kW",
         "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock — not vendor nameplate"
+        "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock \u2014 not vendor nameplate"
       },
       "from_sector_id": "BACKUP_GEN",
       "to_sector_id": "ELEC",
@@ -11727,7 +11727,7 @@
         "value": 38.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "Stoich O2 for S49 H2 (O2/H2 mass ≈ 8 for 2 H2 + O2 → 2 H2O); study"
+        "note": "Stoich O2 for S49 H2 (O2/H2 mass \u2248 8 for 2 H2 + O2 \u2192 2 H2O); study"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FUEL_CELL",
@@ -11814,7 +11814,7 @@
         "thermal"
       ],
       "presence": "present",
-      "carries": "heat < 80 °C",
+      "carries": "heat < 80 \u00b0C",
       "header": "Q4",
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
@@ -11831,7 +11831,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FC_HX_Q4 → Q4 / FARM / HAB",
+      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
         "rate_basis": "FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return",
         "rate_source": "H2 LHV; S51 authority",
@@ -11850,7 +11850,7 @@
         "thermal"
       ],
       "presence": "present",
-      "carries": "warm residual < 80 °C",
+      "carries": "warm residual < 80 \u00b0C",
       "header": "Q4",
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
@@ -11867,7 +11867,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_HX_Q4 → Q4 / FARM / HAB",
+      "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
         "rate_basis": "ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058",
         "rate_source": "CRYO_COLD_BOX (intercooler residual + sieve cool-down)",
@@ -11905,7 +11905,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_DED_COOL (loop) → CRYO_DED_COOL",
+      "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL",
       "params": {
         "rate_basis": "Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)",
         "rate_source": "CRYO_COLD_BOX; CONTINUOUS_KW 2-8 kW class",
@@ -11981,7 +11981,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: PROD_METALS / MET_MELT → WIRE_DRAW / COLD_MILL / GAS_ATOMIZER",
+      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER",
       "params": {
         "rate_basis": "Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3%",
         "rate_source": "S08 split (EW-3 Cu share)",
@@ -12006,7 +12006,7 @@
       "presence": "present",
       "carries": "wire product",
       "header": "tote / crib",
-      "forbidden": "—",
+      "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
         "value": 3.9389,
@@ -12021,7 +12021,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WIRE_DRAW → MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB",
+      "notes": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB",
       "params": {
         "rate_basis": "S57 less 10% draw swarf",
         "rate_source": "forming yield",
@@ -12046,7 +12046,7 @@
       "presence": "present",
       "carries": "sheet / strip",
       "header": "tote / crib",
-      "forbidden": "—",
+      "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
         "value": 3.95,
@@ -12061,7 +12061,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: COLD_MILL → MET_SHEET_BIN / MFG_CRIB",
+      "notes": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB",
       "params": {
         "rate_basis": "Cu 4.392 to cold mill less 10% trim",
         "rate_source": "forming yield",
@@ -12085,7 +12085,7 @@
       ],
       "presence": "present",
       "carries": "metal powder",
-      "header": "N₂-blanketed crib",
+      "header": "N\u2082-blanketed crib",
       "forbidden": "open ignition, HAB air",
       "claim_status": "Closed / Claimed",
       "rate": {
@@ -12101,7 +12101,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GAS_ATOMIZER → MET_POWDER_CRIB / FAB / RepRap",
+      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap",
       "params": {
         "rate_basis": "blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec",
         "rate_source": "atomizer yield",
@@ -12141,7 +12141,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Forming swarf / trim → HOPPER / leach",
+      "notes": "From register: Forming swarf / trim \u2192 HOPPER / leach",
       "params": {
         "rate_basis": "swarf/trim/off-spec from draw, mill and atomizer (less LEV fines)",
         "rate_source": "forming yield",
@@ -12181,7 +12181,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_AHU → MET_SCRUB / baghouse (S71)",
+      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse (S71)",
       "params": {
         "rate_basis": "MET aisle general exhaust 6.0 ACH x 300.0 m3",
         "rate_source": "ventilation basis",
@@ -12205,7 +12205,7 @@
         "thermal"
       ],
       "presence": "present",
-      "carries": "heat < 80 °C",
+      "carries": "heat < 80 \u00b0C",
       "header": "Q4",
       "forbidden": "melt/atomizer hot gas as flue",
       "claim_status": "Closed",
@@ -12222,7 +12222,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_HX_Q4 → Q4 / FARM / HAB",
+      "notes": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
         "rate_basis": "Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water)",
         "rate_source": "Cu properties",
@@ -12304,9 +12304,9 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "scrub liquor → chlorate finish",
+      "carries": "scrub liquor \u2192 chlorate finish",
       "header": "SCRUBBER_TO_CRU",
-      "forbidden": "sewer, Br⁻ liquor, farm beds",
+      "forbidden": "sewer, Br\u207b liquor, farm beds",
       "claim_status": "Claimed",
       "rate": {
         "value": 27.3623,
@@ -12321,7 +12321,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: ACID_POLISH / ALK blowdown → CRU",
+      "notes": "From register: ACID_POLISH / ALK blowdown \u2192 CRU",
       "params": {
         "rate_basis": "Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts",
         "rate_source": "VENT_SCRUB_EQUIPMENT 2.1 (blowdown 50-200 L per transfer)",
@@ -12579,7 +12579,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_AHU → MET_SCRUB / baghouse",
+      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse",
       "params": {
         "rate_basis": "MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3",
         "rate_source": "hub VENT_SCRUB_EQUIPMENT 2.4",
@@ -12679,7 +12679,7 @@
         "value": 6.9,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid × 1.375 kg CO2/kg MeOH; surplus-H2 path"
+        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -12702,7 +12702,7 @@
       ],
       "presence": "present",
       "carries": "hydrogen consumed",
-      "header": "MeOH H₂ branch",
+      "header": "MeOH H\u2082 branch",
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
@@ -12739,7 +12739,7 @@
         "value": 5.023740598513941,
         "unit": "kg/d",
         "status": "study",
-        "note": "CO2 + 3 H2 → methanol + water. CO2 limits."
+        "note": "CO2 + 3 H2 \u2192 methanol + water. CO2 limits."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -12809,7 +12809,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_FERM_STILL → MEOH_TANK",
+      "notes": "From register: MEOH_FERM_STILL \u2192 MEOH_TANK",
       "params": {
         "rate_basis": "VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70%",
         "rate_source": "digestion stoichiometry",
@@ -12849,7 +12849,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Farm/hab organics (S12/S30 class) → MEOH_FERM_DIG",
+      "notes": "From register: Farm/hab organics (S12/S30 class) \u2192 MEOH_FERM_DIG",
       "params": {
         "rate_basis": "food waste 15% of ration",
         "rate_source": "FAO household waste class",
@@ -12907,7 +12907,7 @@
         "thermal"
       ],
       "presence": "present",
-      "carries": "heat < 80 °C",
+      "carries": "heat < 80 \u00b0C",
       "header": "Q4",
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
@@ -12924,7 +12924,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_HX_Q4 → Q4 / FARM / HAB",
+      "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
         "rate_basis": "DMFC heat 0.861 kW x 0.4286 above Q4 return",
         "rate_source": "MeOH LHV",
@@ -12976,7 +12976,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "CO₂ return from MeOH FC",
+      "carries": "CO\u2082 return from MeOH FC",
       "header": "Claimed carbon",
       "forbidden": "free outdoor dump, HAB return",
       "claim_status": null,
@@ -12991,7 +12991,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed)",
+      "notes": "From register: MEOH_FC / MEOH_VENT_KO \u2192 CRYO_CO2 / FARM (Claimed)",
       "composition": {
         "O2": 0.99,
         "Ar": 0.01
@@ -18449,7 +18449,7 @@
         "value": 0.19124791074258177,
         "unit": "kg/d",
         "status": "study",
-        "note": "Ethanol dehydrogenation. n × 44.053."
+        "note": "Ethanol dehydrogenation. n \u00d7 44.053."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18479,7 +18479,7 @@
         "value": 0.00875208925741822,
         "unit": "kg/d",
         "status": "study",
-        "note": "n × 2.016. Not 0.020."
+        "note": "n \u00d7 2.016. Not 0.020."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18869,7 +18869,7 @@
         "value": 0.1269488178177629,
         "unit": "kg/d",
         "status": "study",
-        "note": "HCl limits. n × 92.566."
+        "note": "HCl limits. n \u00d7 92.566."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23232,7 +23232,7 @@
         "value": 50.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Mister supply. 100 µm screen."
+        "note": "AQS-P9. Mister supply. 100 \u00b5m screen."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24825,7 +24825,7 @@
       ],
       "include_intra_aisle": true,
       "include_placeholders": true,
-      "description": "EFD layer A — electrical"
+      "description": "EFD layer A \u2014 electrical"
     },
     {
       "preset_id": "VIEW-EFD-THERMAL",
@@ -24835,7 +24835,7 @@
       ],
       "include_intra_aisle": true,
       "include_placeholders": true,
-      "description": "EFD layer B — thermal Q1–Q4"
+      "description": "EFD layer B \u2014 thermal Q1\u2013Q4"
     },
     {
       "preset_id": "VIEW-EFD-ESS",
@@ -24845,7 +24845,7 @@
       ],
       "include_intra_aisle": true,
       "include_placeholders": true,
-      "description": "EFD layer C — chemical-storage charge/discharge"
+      "description": "EFD layer C \u2014 chemical-storage charge/discharge"
     }
   ],
   "gaps": [
@@ -24872,7 +24872,7 @@
     {
       "id": "MEOH_MF_SLD_BRIDGED",
       "severity": "low",
-      "detail": "S73–S82 on graph-bridged mass_flow_pfd + S79 on electrical_sld; MF claim_status rows still end S72"
+      "detail": "S73\u2013S82 on graph-bridged mass_flow_pfd + S79 on electrical_sld; MF claim_status rows still end S72"
     },
     {
       "id": "PUMPED_HYDRO_PFD",
@@ -24882,7 +24882,7 @@
     {
       "id": "REV_E_SYNC_SKIPPED_STREAMS",
       "severity": "low",
-      "detail": "Still skipped (handoff or Rev E conflict): IA-REC-Q3, IA-WET-C29-01, IA-GLASS-Q2/IA-OIL-Q1 (HL-* owns), other Rev G study IA-*. NOW ON GRAPH: S83–S86 + relief/headers from Rev F; EW_3…EW_8 cascade (incl. IA-EW-10 EW_4→EW_5); IA-HDR-H2-01…04 Faraday from E+local."
+      "detail": "Still skipped (handoff or Rev E conflict): IA-REC-Q3, IA-WET-C29-01, IA-GLASS-Q2/IA-OIL-Q1 (HL-* owns), other Rev G study IA-*. NOW ON GRAPH: S83\u2013S86 + relief/headers from Rev F; EW_3\u2026EW_8 cascade (incl. IA-EW-10 EW_4\u2192EW_5); IA-HDR-H2-01\u202604 Faraday from E+local."
     },
     {
       "id": "S17_bridged",
@@ -24892,22 +24892,22 @@
     {
       "id": "SANDBOX_S08G_S14X",
       "severity": "medium",
-      "detail": "Keep sandbox or promote — do not invent third ID"
+      "detail": "Keep sandbox or promote \u2014 do not invent third ID"
     },
     {
       "id": "WP_EW_CASCADE_EXPLODE",
       "severity": "low",
-      "detail": "EW_3…EW_8 present. Cascade hops EW_1→…→EW_9 complete incl. IA-EW-10 EW_4→EW_5 (Rev F was missing that hop). IA-HDR-H2 Faraday restored. loops_closed=false."
+      "detail": "EW_3\u2026EW_8 present. Cascade hops EW_1\u2192\u2026\u2192EW_9 complete incl. IA-EW-10 EW_4\u2192EW_5 (Rev F was missing that hop). IA-HDR-H2 Faraday restored. loops_closed=false."
     },
     {
       "id": "WP_L2_PRESENT_CAD",
       "severity": "medium",
-      "detail": "Equipment IDs / BOM matrix on disk (C4 true). FreeCAD Features for VCD/REMIN/LITHO/BLOW/ELC absent (placeholder_skip). *_on_site=false (C3). AHJ design-basis USA_Dallas_class — no fake certificates. Primary remaining loops_closed gate under Rev E topology."
+      "detail": "Equipment IDs / BOM matrix on disk (C4 true). FreeCAD Features for VCD/REMIN/LITHO/BLOW/ELC absent (placeholder_skip). *_on_site=false (C3). AHJ design-basis USA_Dallas_class \u2014 no fake certificates. Primary remaining loops_closed gate under Rev E topology."
     },
     {
       "id": "WP_L2_SITE_SURVEY",
       "severity": "low",
-      "detail": "CLOSED as design_survey_locked 2026-10-02 (reaffirmed on Rev E sync). SITE_LAT=33.0 Dallas sandbox (params.py); jurisdiction_theme=USA_Dallas_class; GHEX design-basis ST-ORC-01. Field bore/conductivity still external — not claimed as measured.",
+      "detail": "CLOSED as design_survey_locked 2026-10-02 (reaffirmed on Rev E sync). SITE_LAT=33.0 Dallas sandbox (params.py); jurisdiction_theme=USA_Dallas_class; GHEX design-basis ST-ORC-01. Field bore/conductivity still external \u2014 not claimed as measured.",
       "status": "design_survey_locked"
     },
     {
@@ -24922,13 +24922,13 @@
     }
   ],
   "notes": [
-    "WP-Ap1 unify_then_reshape: MVS sectors/site/criteria/electrical/scale_rules/ui and unit continuous_kw/modules/params live in this graph (mvs + nodes). candidate_mvs.json is a generated projection (export_candidate_mvs.py) — not a second write authority. Placeholder edge rates stay null (present_plus_placeholders); DOCK_EXPORT_TBD remains TBD.",
+    "WP-Ap1 unify_then_reshape: MVS sectors/site/criteria/electrical/scale_rules/ui and unit continuous_kw/modules/params live in this graph (mvs + nodes). candidate_mvs.json is a generated projection (export_candidate_mvs.py) \u2014 not a second write authority. Placeholder edge rates stay null (present_plus_placeholders); DOCK_EXPORT_TBD remains TBD.",
     "Sole typed topology authority per typed_graph_sole. UI + diagrams shall render/solve from this graph.",
-    "STREAM_REGISTER / MASS_FLOW are derived or bi-synced via export_authority_md.py — not competing masters after migration.",
+    "STREAM_REGISTER / MASS_FLOW are derived or bi-synced via export_authority_md.py \u2014 not competing masters after migration.",
     "present_plus_placeholders: study stubs VCD/LITHO/ORC/BLOW/REMIN/ELECTRODE_COAT/SOLAR_PV_CELL/GEO_ORC have presence=placeholder and rate=null.",
     "Do not invent stream routes, rates, or nameplates. Gaps remain flagged.",
     "Licence: CERN-OHL-S-2.0.",
-    "Merge Rev F (411ec79/f983723) as cloud topology base with E+local (dddadf5) handoff-safe deltas. Rev F kept: RELIEF_H2/RELIEF_CRYO, HDR_N2/HDR_CO2, S83–S86, S03 from CRYO_N2, S24/S56 off dock, S87/S88 per S83_S88.md, EW cell params. Fuller EW cascade: added missing EW_4→EW_5 (IA-EW-10). Reapplied E+local-only: IA-HDR-H2-01…04 Faraday hoods; GEO_GHEX/HP/ORC design_survey_locked + SITE_LAT=33. locks: no aliases, no HL-*, loops_closed=false, *_on_site=false; did not run apply_placement."
+    "Merge Rev F (411ec79/f983723) as cloud topology base with E+local (dddadf5) handoff-safe deltas. Rev F kept: RELIEF_H2/RELIEF_CRYO, HDR_N2/HDR_CO2, S83\u2013S86, S03 from CRYO_N2, S24/S56 off dock, S87/S88 per S83_S88.md, EW cell params. Fuller EW cascade: added missing EW_4\u2192EW_5 (IA-EW-10). Reapplied E+local-only: IA-HDR-H2-01\u202604 Faraday hoods; GEO_GHEX/HP/ORC design_survey_locked + SITE_LAT=33. locks: no aliases, no HL-*, loops_closed=false, *_on_site=false; did not run apply_placement."
   ],
   "mvs": {
     "schema_version": "aqs-mvs-0.3",
@@ -24945,7 +24945,7 @@
         "materials_or_goods",
         "energy"
       ],
-      "note": "Candidate toward AQS-MVS-001 freeze; loops_closed false until evidence. MVS = ideal we pursue; sandbox = live modular model tracking progress — not an accepted sub-MVS product. Incomplete physics → open studies queued (AQS-EQP-STUDY-001 / DECISION_LOG_A3_A5), not accepted unreclaimed endpoints.",
+      "note": "Candidate toward AQS-MVS-001 freeze; loops_closed false until evidence. MVS = ideal we pursue; sandbox = live modular model tracking progress \u2014 not an accepted sub-MVS product. Incomplete physics \u2192 open studies queued (AQS-EQP-STUDY-001 / DECISION_LOG_A3_A5), not accepted unreclaimed endpoints.",
       "surplus_thresholds_doc": "AQS-SUR-001",
       "surplus_thresholds": {
         "food_kg_d_min": 0.5,
@@ -24953,7 +24953,7 @@
         "materials_or_goods_kg_d_min": 5.0,
         "energy_kWh_d_min": 20.0,
         "status": "study",
-        "note": "AQS-SUR-001 Rev B — study pass thresholds; seed uses upper-band FARM path for food (WP-A2); not freeze gold"
+        "note": "AQS-SUR-001 Rev B \u2014 study pass thresholds; seed uses upper-band FARM path for food (WP-A2); not freeze gold"
       },
       "self_copy": {
         "critical_path_documented": true,
@@ -24973,7 +24973,7 @@
       "crew": 4,
       "jurisdiction_theme": "USA_Dallas_class",
       "site_survey_status": "design_survey_locked",
-      "site_survey_note": "WP_L2_SITE_SURVEY closed as design_survey_locked 2026-10-02. SITE_LAT=33.0 from params.py Dallas sandbox; jurisdiction_theme=USA_Dallas_class. GHEX T_source/k/Q locked to ST-ORC-01 design-basis. Field bore / conductivity measurement still labeled external — not claimed."
+      "site_survey_note": "WP_L2_SITE_SURVEY closed as design_survey_locked 2026-10-02. SITE_LAT=33.0 from params.py Dallas sandbox; jurisdiction_theme=USA_Dallas_class. GHEX T_source/k/Q locked to ST-ORC-01 design-basis. Field bore / conductivity measurement still labeled external \u2014 not claimed."
     },
     "sectors": [
       {
@@ -24988,7 +24988,7 @@
         "sector_definition": "Process (Mass transform)",
         "enabled": true,
         "required_for_mvs_closure": true,
-        "notes": "Organics / oil loop; AFTERBURNER → CRYO"
+        "notes": "Organics / oil loop; AFTERBURNER \u2192 CRYO"
       },
       {
         "sector_id": "GLASS",
@@ -25016,7 +25016,7 @@
         "sector_definition": "Process (Mass transform)",
         "enabled": true,
         "required_for_mvs_closure": true,
-        "notes": "Shop + metal forming + BLOW_MOLD + ELECTRODE_COAT required for MVS (open studies ST-BLOW-01/ST-ELC-01 until Present). Sandbox tracks progress; not accepted sub-MVS. Cross-use OK (AQS-SEC-001 §3.1)."
+        "notes": "Shop + metal forming + BLOW_MOLD + ELECTRODE_COAT required for MVS (open studies ST-BLOW-01/ST-ELC-01 until Present). Sandbox tracks progress; not accepted sub-MVS. Cross-use OK (AQS-SEC-001 \u00a73.1)."
       },
       {
         "sector_id": "NUT",
@@ -25065,7 +25065,7 @@
         "sector_definition": "Utility / header",
         "enabled": true,
         "required_for_mvs_closure": true,
-        "notes": "Sol-Ark / ATS / RECT / MCC hub — distinct from ELEC_PV"
+        "notes": "Sol-Ark / ATS / RECT / MCC hub \u2014 distinct from ELEC_PV"
       },
       {
         "sector_id": "ELEC_PV",
@@ -25079,21 +25079,21 @@
         "sector_definition": "Energy Storage System (Electrochemical)",
         "enabled": true,
         "required_for_mvs_closure": true,
-        "notes": "ZnBr2 flow battery — required ESS peer in MVS (redundancy). Sandbox off → unreclaimed_resource gap (AQS-SEC-001 Rev D)."
+        "notes": "ZnBr2 flow battery \u2014 required ESS peer in MVS (redundancy). Sandbox off \u2192 unreclaimed_resource gap (AQS-SEC-001 Rev D)."
       },
       {
         "sector_id": "MEOH",
         "sector_definition": "Energy Storage System (Electrochemical)",
         "enabled": true,
         "required_for_mvs_closure": true,
-        "notes": "MeOH — required ESS peer in MVS; also feeds other processes (AQS-SEC-001 A1 secondary). Sandbox off → unreclaimed_resource."
+        "notes": "MeOH \u2014 required ESS peer in MVS; also feeds other processes (AQS-SEC-001 A1 secondary). Sandbox off \u2192 unreclaimed_resource."
       },
       {
         "sector_id": "PUMPED_HYDRO",
         "sector_definition": "Energy Storage System (Gravity)",
         "enabled": true,
         "required_for_mvs_closure": true,
-        "notes": "Roof–catch penstock — required ESS peer in MVS (redundancy). Sandbox off → unreclaimed_resource gap (AQS-SEC-001 Rev D)."
+        "notes": "Roof\u2013catch penstock \u2014 required ESS peer in MVS (redundancy). Sandbox off \u2192 unreclaimed_resource gap (AQS-SEC-001 Rev D)."
       },
       {
         "sector_id": "BACKUP_GEN",
@@ -25114,7 +25114,7 @@
         "sector_definition": "Utility / header",
         "enabled": true,
         "required_for_mvs_closure": false,
-        "notes": "GEO HP→Q4; GEO_ORC heat→electric. Carnot study band issued; ST-ORC-01 survey queued before kW freeze. required_for_mvs_closure false until evidence (AQS-SEC-001 A7)."
+        "notes": "GEO HP\u2192Q4; GEO_ORC heat\u2192electric. Carnot study band issued; ST-ORC-01 survey queued before kW freeze. required_for_mvs_closure false until evidence (AQS-SEC-001 A7)."
       },
       {
         "sector_id": "DOCK",
@@ -25145,7 +25145,7 @@
         "value": 70.0,
         "unit": "kW",
         "status": "study",
-        "note": "ELEC_NEED × 1.4 overprod"
+        "note": "ELEC_NEED \u00d7 1.4 overprod"
       },
       "pv_module_kw": 70.0,
       "pv_count": 1,
@@ -25181,15 +25181,15 @@
         "3d"
       ]
     },
-    "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4–A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS → unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 → food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.",
+    "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.",
     "write_path": "plant_flow_graph.json#mvs + nodes/edges; candidate_mvs.json is generated projection only"
   },
   "notes_rev_c": "AQS-HEAT-LADDER-001: aliases fixed; dual diode ladder; Q1 no longer tees to Q4_BUS.",
   "notes_rev_d": "C29_RECYCLE is the C29 cut pipe to pyro. CONTINUOUS_RECYCLE is liquor to leach. Neither is an alias. Ladder keeps its own Q*_A/B names.",
   "notes_rev_e": "Audit fixes. No oxidizer/organic mix. No flue into CO2 or grey. Ladder fluids not common. Relief retained as contingency. | F+local merge retained handoff Rev E audit fixes.",
   "notes_rev_f": "EW-3..8 added. Relief off the dock. S03 sourced from CRYO_N2. S83-S86 cryo product or relief, not freight. S87 O2 capture. S88 N2 make-up.",
-  "notes_rev_g": "Envelopes issued L×W×H mm on MVS machines, EW cells, ladder batteries, gen, fuel cell, methanol skids.",
-  "notes_rev_h": "Issued size_mm (L×W×H mm) stands on 36 nodes from commit 2240602. Placement seed Rev F clears the BACKUP_GEN/FUEL_CELL and MEOH_SYNTH/MEOH_TANK overlaps by moving origins only; issued sizes unchanged. EW-1..9 solid model carries overflow launders OVF_EW_1_2..OVF_EW_8_9 and OVF_EW_9_POLISH to POLISH_BANK. No topology, presence, loops_closed or *_on_site change.",
+  "notes_rev_g": "Envelopes issued L\u00d7W\u00d7H mm on MVS machines, EW cells, ladder batteries, gen, fuel cell, methanol skids.",
+  "notes_rev_h": "Issued size_mm (L\u00d7W\u00d7H mm) stands on 36 nodes from commit 2240602. Placement seed Rev F clears the BACKUP_GEN/FUEL_CELL and MEOH_SYNTH/MEOH_TANK overlaps by moving origins only; issued sizes unchanged. EW-1..9 solid model carries overflow launders OVF_EW_1_2..OVF_EW_8_9 and OVF_EW_9_POLISH to POLISH_BANK. No topology, presence, loops_closed or *_on_site change.",
   "notes_rev_i": "AQS-DUTY-008 heat-ladder edge study: the 20 HL-* edges and S67B carry rated duty, medium, supply and return temperature, flow and line size in params and close to present; HL-* moved to the thermal layer. Edge params and notes_rev_* added to the schema; presence stays present|placeholder. LITHO_STUB and SOLAR_PV_CELL modules are objects. S34/S34B carry layers and namespace. No loops_closed or *_on_site change.",
   "notes_rev_j": "AQS-DUTY-008 Rev B. HX-8 moved off Q3: HL-HX8-Q3-A/B replaced by HL-HX8-Q4-A/B (HX8 -> Q4_A/Q4_B), duty 4.572 kW from EW cell heat (ohmic 1.938 + concentrate sensible 4.128 - walls 0.533 - evaporation 0.962), Q4 return 45 -> 49 C, approach 6 K; IA-HX8 thermal with rate. Q3 draws added: HL-Q3-A/B-HX4 (OIL_DRYER 0.242 kW), -HX5 (LEACH_CSTR_1 6.353 kW), -HX6 (GLASS_DIGEST 1.663 kW); Q3 cannot supply them, electric trim normal 7.437 kW / single 6.967 kW. Re-rated HL-Q3-*-DOWN 1.614, HL-Q4-*-BUS 5.51; HL-Q4-X unchanged. S18 carbon credit retired (rate 0, edge kept); 15.0 kg/d flue CO2 basis on S67; S67B is the sole credit, same_carbon_as_S18 removed; S82 6.875 kg/d; CRYO_CO2 balanced: S04 1.109, S85 11.616, S73 6.9 kg/d. Q4_BUS stays the Q4 water header only. ORC 0 kW_e. No loops_closed or *_on_site change.",
   "notes_rev_k": "AQS-DUTY-008 Rev C and AQS-DUTY-009. (1) HDR_CO2 consumer: new S89 HDR_CO2 -> GROW_BED 11.616 kg/d (all of S85), CO2 only, 3.0 bar a, DN15 316L, farm AHU dose at 1000 ppm over a 16 h photoperiod, OA 694 m3/h (min 251). MEOH_SYNTH rejected (needs +1.596 kg/d H2; free H2 0.26 kg/d at best; MeOH carbon returns on S82). Fate: 1.109 kg/d fixed (S04), 11.616 kg/d leaves with farm exhaust; not sequestration. HDR_CO2 in = out. (2) Downhill steps HL-Q1/Q2/Q3-*-DOWN: gravity loop thermosyphons with stratification-correct coils on stepped stores (Q1 -6000, Q2 -5150, Q3 -4250, Q4 -3350 mm), rise 0.31/0.30/0.33 m, dP/head 0.23/0.22/0.19. Cross-ties HL-Q*-X and -X-BA: pumped single-phase loops XL-Q1..Q4, normally off, rated 17.8/28.8/5.8/4.0 W electric. (3) CATCH_TANK stays at L-2 (pumped-hydro lower reservoir); slab crossing only via SHAFT_PENSTOCK. (4) Study envelopes: HX8, NOX_SCRUB, MEOH_COND, RELIEF_CRYO, CONTINUOUS_RECYCLE. FLUE_KO solid = FLUE_CAP, RELIEF_H2 solid = H2_STACK (unit map). LOAD_AGG class load_agg -> boundary (electrical accounting, not a vessel). Placement seed Rev H. No loops_closed or *_on_site change.",

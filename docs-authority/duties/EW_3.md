@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - Liquor 4164.2 kg/d. Thirty-minute holdup V = (4164.2/1000)×(0.5/24) = 0.0868 m³.
 - Envelope 600×420×650 mm is one plate station, not the rack.
 
-3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance 0 mm on the titanium. Pit rate is not measured.
+3. Material. Cathode 316L, 3 mm. Anode titanium mesh, 1.5 mm, with 0.5 mm PbO₂. No iridium. Tank PVC/FRP. Corrosion allowance 0 mm on the titanium. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001).
 
 4. Nozzles. Origin 0, 4000, -6000 mm. Size 600 × 420 × 650 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-EW-02, inlet, -Y face center, 300, 4000, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

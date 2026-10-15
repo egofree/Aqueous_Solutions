@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Not a packed tower. The column diameter and the tray count are on CRYO_ASU only.
 
-3. Material. 316L. Condensation. No carbon steel. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. 316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel. Warm-up range governs embrittlement. Pressure held. AQS-REV-H2-001.
 
 4. Nozzles. No duct bore. Density is not on the edge, and 1.2 kg/m³ is not used. No flange class. The vent stays on the gas edge, not the room.
 
