@@ -3503,30 +3503,14 @@
       },
       "modules": [],
       "params": {
-        "energy_kwh_ideal_study": 9.8,
-        "energy_kwh_recoverable_study": 7.0,
+        "energy_kwh_ideal_study": 263.6,
+        "energy_kwh_recoverable_study": 210.9,
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2707.0,
         "head_m_m1": 35.73,
-        "vs_znbr2_kwh": 120,
-        "fraction_of_znbr2_study": 0.082,
+        "vs_znbr2_kwh": 3501.0,
+        "fraction_of_znbr2_study": 0.06,
         "continuous_kw_status": "incomplete",
-        "scale_up_volume_path_m3": [
-          200,
-          1000,
-          5000
-        ],
-        "scale_up_head_m": [
-          18,
-          18,
-          25
-        ],
-        "scale_up_energy_kwh_ideal": [
-          9.8,
-          49.0,
-          340.0
-        ],
-        "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HYDRO_SET.md.",

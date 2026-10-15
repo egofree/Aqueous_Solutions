@@ -52,6 +52,9 @@ def tf(g, ps=None):
     from . import water_tower as WT
     wt = WT.solve(e_bus, FP.PLATE_L, FP.PLATE_W, FP.HYDRO_RES_Z0, FP.basement_z(FP.BASEMENT_LEVELS - 1), V_dead=FP.FIRE_RESERVE_M3); h = round(wt['head_m'], 2); vol = wt['V_m3']
     N['HYDRO_SET']['params']['head_m_m1'] = h; N['HYDRO_SET']['params']['volume_m3_m1'] = round(vol, 0)
+    _ei = 1000*9.81*vol*h/3.6e6; _zk = float(N['ZNBR2']['params'].get('kWh') or 0)          # X-QA-02 finding: legacy M1 energy keys were stale (200 m3 x 18 m)
+    N['HYDRO_SET']['params'].update(energy_kwh_ideal_study=round(_ei, 1), energy_kwh_recoverable_study=round(_ei*ETA_TURB, 1), vs_znbr2_kwh=round(_zk, 1), fraction_of_znbr2_study=round(_ei*ETA_TURB/_zk, 3) if _zk else None)
+    for _k in ('scale_up_volume_path_m3', 'scale_up_head_m', 'scale_up_energy_kwh_ideal', 'scale_up_note'): N['HYDRO_SET']['params'].pop(_k, None)   # superseded by the Q-009 water tower
     for k in ('IA-ESS-HYDRO-CHG', 'IA-ESS-HYDRO-DIS', 'S22', 'S23', 'IA-ESS-HYDRO-ELEC'):
         put(k, 0.0, 'standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus')
     N['HYDRO_SET']['params'].pop('role_from_need', None)
