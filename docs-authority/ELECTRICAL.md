@@ -117,7 +117,7 @@ Use pulse (10–100 Hz, 20–40 % duty, same average coulombs) when the liquor i
 
 ## Feedstock assays used
 
-These are working averages, not a contract assay. Real cells vary by decade and country.
+These are working averages, not a contract assay. Real cells vary by decade and country. Each row is a case inside the feedstock envelope of AQS-ASSAY-001 Rev C (`FEED_ASSAY.md`). None of them is the design feed. The plant is checked across that envelope, regolith-like through metal-rich PCB.
 
 | Stream | Fe | Cu | Al | other plateable | Au | Ag | plastic + paper | glass / silicate | moisture |
 |---|---|---|---|---|---|---|---|---|---|
