@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 124 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 125 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 22 | Commissioning record |
 
-Total 250 items: 120 drivers, 130 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 251 items: 120 drivers, 131 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -276,6 +276,7 @@ Total 250 items: 120 drivers, 130 register entries. Classification rule: first m
 | A-M-125 | Counting rules: 2 isolation valves per line; check valve and count | P&ID take-off count against AQS-INV-004 per family; difference reported per family | X-INV-05 |
 | A-M-126 | Design coefficients inside published ranges: B_delta 0.75 T, T, kA/m, A/mm2 | IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K | X-INV-02 |
 | A-M-130 | Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotr T, mm, % | Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 % | X-INV-02D |
+| A-M-131 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
 
 ## 7. T6 Commissioning measurements
 

@@ -1,0 +1,7 @@
+item,description,qty,basis
+1,stator laminations M270-35A 0.35 mm,18,EN 10106
+2,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),1,X-INV-02D
+3,magnet wire IEC 60317-13 class 200,-,X-INV-03 wire line
+4,"housing extruded 6063, NEMA ICS 16 42 mm flange",1,extruded + machined
+5,bearing 6000-2Z,2,X-INV-05
+6,Hall sensor PCB,1,X-INV-05 electronics

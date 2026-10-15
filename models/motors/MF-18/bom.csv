@@ -1,0 +1,11 @@
+item,description,qty,basis
+1,stator laminations M400-50A (EN 10106) 0.5 mm,288,EN 10106
+2,rotor laminations M400-50A 0.5 mm,288,EN 10106
+3,magnet wire IEC 60317-13 13 AWG (6.835 mm2),10.89 kg,X-INV-03 wire line
+4,die-cast Al cage (bars + rings),6.37 kg,A356 in-house melt (assumed 12 % of steel mass)
+5,"shaft C45 (EN 10083-2) D48 x 374 mm, key to IEC 60072-1",1,turned
+6,"frame A356 IEC 180M, feet A279 x B241, holes K15",1,cast + machined
+7,end shields A356,2,cast + machined
+8,bearing 6310-2Z,2,X-INV-05 OF bearing family
+9,fan PP + fan cover steel,1,IC 411
+10,terminal box + 6-stud block,1,IEC 60034-8 marking
