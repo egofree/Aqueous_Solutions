@@ -923,5 +923,31 @@
    "docs-authority/LOAD_LIST.md"
   ],
   "id": "A-M-071"
+ },
+ {
+  "value": "RO 3.0 kWh/m3, EDI 0.5 kWh/m3",
+  "units": "kWh/m3",
+  "where": "BMED_UPW_POLISH load",
+  "basis": "S24 Greenlee et al. 2009 Water Res 43:2317 (brackish RO 0.5-3); S25 Alvarado and Chen 2014 Electrochim Acta 132:583 (EDI); upper ends taken",
+  "sensitivity": "Linear; load is under 0.1 kW",
+  "replaced_by": "Skid vendor data (unit task 02)",
+  "task": "X-ELS-02",
+  "files": [
+   "docs-authority/LOAD_LIST.md"
+  ],
+  "id": "A-M-072"
+ },
+ {
+  "value": "DLI 17 mol/m2/d; LED 2.5 umol/J; 10 m head; 50% pump",
+  "units": "mixed",
+  "where": "GROW_BED load",
+  "basis": "S26 Both et al., Cornell CEA lettuce handbook DLI 17; LED efficacy per DLC horticultural QPL range; 28 m2 bed area from GROW_BED params",
+  "sensitivity": "LED term linear in area and DLI",
+  "replaced_by": "Crop plan lighting schedule and fixture data (unit task 02)",
+  "task": "X-ELS-02",
+  "files": [
+   "docs-authority/LOAD_LIST.md"
+  ],
+  "id": "A-M-073"
  }
 ]
