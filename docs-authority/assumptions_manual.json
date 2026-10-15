@@ -910,5 +910,18 @@
    "flow_graph/study_place.py"
   ],
   "id": "A-M-070"
+ },
+ {
+  "value": "1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2",
+  "units": "kWh/Nm3",
+  "where": "CRYO_ASU load (AQS-ELEC-003)",
+  "basis": "S23: Energy saving opportunities in oxygen plant, IJRET 2013, doi 10.15623/ijret.2013.0202018 (80 m3/h plant, 1.30-1.40 before optimisation); air ratio from 21 vol% O2 at about 100% recovery",
+  "sensitivity": "Linear in load; scale penalty below 80 m3/h not included, so the value is a lower bound",
+  "replaced_by": "Vendor quote for a micro cold box (unit task 02)",
+  "task": "X-ELS-02",
+  "files": [
+   "docs-authority/LOAD_LIST.md"
+  ],
+  "id": "A-M-071"
  }
 ]

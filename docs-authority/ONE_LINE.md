@@ -20,7 +20,7 @@ flowchart LR
   MEOH_FC["MEOH_FC 0.50 kW"] -->|S79| BUS
   PV_ARRAY["PV_ARRAY 27.88 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 60 kW inverter"])
-  BUS --> MCC["MCC-1 480 V 50.5 kW"]
+  BUS --> MCC["MCC-1 480 V 35.5 kW"]
   BUS --> XF["T-1 30 kVA 480–208/120 V"] --> PP["PP-1 18.4 kW"]
   BUS -->|IA-ESS-ZNBR2-CHG| ZNBR2["ZNBR2 6.67 kW"]
   BUS -->|S17| RECTIFIER["RECTIFIER 23.32 kW"]
@@ -31,10 +31,10 @@ flowchart LR
 
 | Bus | Load | kW | A | Breaker A | Basis |
 | --- | --- | --- | --- | --- | --- |
-| MCC-1 480 V | CRYO_ASU | 18.00 | 24.1 | 40 | AQS-ELEC-003 study share |
 | MCC-1 480 V | MFG_SHOP | 12.00 | 16.0 | 25 | AQS-ELEC-003 study share |
 | MCC-1 480 V | BMED_UPW_POLISH | 6.00 | 8.0 | 15 | AQS-ELEC-003 study share |
 | MCC-1 480 V | CRYO_H2 | 4.00 | 5.3 | 15 | AQS-ELEC-003 study share |
+| MCC-1 480 V | CRYO_ASU | 3.03 | 4.0 | 15 | AQS-ELEC-003 calculated |
 | MCC-1 480 V | HABITATION | 3.00 | 4.0 | 15 | AQS-ELEC-003 study share |
 | MCC-1 480 V | GEO_HP | 2.00 | 2.7 | 15 | AQS-ELEC-003 study share |
 | MCC-1 480 V | WAFER_FAB | 2.00 | 2.7 | 15 | AQS-ELEC-003 study share |
@@ -134,15 +134,15 @@ flowchart LR
 | Item | kW |
 | --- | --- |
 | Sources on the bus (graph edges) | 39.63 |
-| Demand on the bus (this page) | 141.91 |
+| Demand on the bus (this page) | 126.94 |
 | Inverter rating (SOL_ARK_60K) | 60.0 |
-| Shortfall against sources | 102.27 |
-| Shortfall against inverter | 81.91 |
+| Shortfall against sources | 87.30 |
+| Shortfall against inverter | 66.94 |
 
 ## Findings
 
-1. Bus demand at the bounding EW case is 141.9 kW against 39.6 kW of graph sources and a 60 kW inverter. The RECT-EW feeder alone is 38.0 kW. Sources, storage and inverter are re-sized under X-ELS-05; the graph edges are not changed (EW power rate change awaits the owner).
-2. 91 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
+1. Bus demand at the bounding EW case is 126.9 kW against 39.6 kW of graph sources and a 60 kW inverter. The RECT-EW feeder alone is 38.0 kW. Sources, storage and inverter are re-sized under X-ELS-05; the graph edges are not changed (EW power rate change awaits the owner).
+2. 90 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.
 

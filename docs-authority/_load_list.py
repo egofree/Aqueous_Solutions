@@ -5,6 +5,7 @@ g=json.load(open('flow_graph/plant_flow_graph.json'))
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['rows']
 CALC={r['cell']:(r['P_kW'],'AQS-DUTY-051 DC at the bounding current; cell power only, rectifier losses in AQS-ELEC-004') for r in ew}
 CALC['LEACH_CSTR_1']=(0.75,'AQS-DUTY-050 agitator motor; heat by Q3 (HX-5), not electric')
+CALC['CRYO_ASU']=(3.03,'Air set by IA-ASU-N2 243.28 kg/d / 0.755 N2 mass fraction = 322 kg/d = 249 Nm3/d; 1.4 kWh/Nm3 O2 (80 m3/h plant, S23 IJRET 2013) / 4.8 Nm3 air per Nm3 O2 = 0.292 kWh/Nm3 air. Lower bound: the plant is about 57x smaller than the reference')
 CALC['WS_PEROX']=(0.0308,'AQS-DSN-OX-001 cell 12.31 A at 2.5 V')
 rows=[]
 for n in g['nodes']:
