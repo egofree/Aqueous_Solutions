@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | Vendor and manufacturer data | 31 | Vendor data sheet, quote or curve filed against the item |
 | T3 | Bench and laboratory tests | 36 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 104 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 105 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 14 | Commissioning record |
 
-Total 238 items: 120 drivers, 118 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 239 items: 120 drivers, 119 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -272,6 +272,7 @@ Total 238 items: 120 drivers, 118 register entries. Classification rule: first m
 | A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate | X-PAR-10 |
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design | X-MFG-32 |
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room | X-SAN-01 |
+| A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list | X-INV-01 |
 
 ## 7. T6 Commissioning measurements
 

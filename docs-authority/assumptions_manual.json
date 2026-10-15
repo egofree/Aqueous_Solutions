@@ -1831,5 +1831,20 @@
   "sensitivity": "Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly",
   "replaced_by": "Occupancy schedule, toilet fit-out, challenge-test results",
   "verification_test": "ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room"
+ },
+ {
+  "id": "A-M-119",
+  "task": "X-INV-01",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/motors.py"
+  ],
+  "value": "Unsized driven items: one transfer pump per liquid outlet line at 10 m head, efficiency 0.4, gravity not credited; induced-draft fan per scrubber/dryer/baghouse/AHU/thermal/fab unit at 1 kPa, 0.5; screw conveyor 0.37 kW per solids line >= 50 kg/d; one solenoid valve per dosed line; agitators 0.25 kW; EXT_HALL 8 heat-pump modules with 2 condenser fans each and 8 AHUs at 500 Pa, 0.6; flow battery 2 pumps x 48 strings at 0.25 kW; cold-box compressor 0.85 x graph kW; < 60 W shaft as 24 V DC BLDC",
+  "units": "m, kPa, kW",
+  "where": "AQS-INV-001",
+  "basis": "Study rules pending each unit's task 02 sizing; IEC 60034-1 / IEC 60072-1 for ratings and frames",
+  "sensitivity": "Pump and fan counts fall where gravity or shared headers are used; family counts shift accordingly",
+  "replaced_by": "Unit sizing (task 02), P&IDs (task 03) and mfg models",
+  "verification_test": "Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list"
  }
 ]
