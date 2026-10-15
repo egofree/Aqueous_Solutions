@@ -161,7 +161,7 @@
         },
         "duty": "In 8.752 kg/d, out 8.752 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 3.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -176,7 +176,7 @@
           "vent_bore_req_mm": 0.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.3 kPa (0.11 m full at SG 1.25; process hold-up 1 d = 0.000 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
         },
         "design": {
           "flue_kg_h": 10.1019,
@@ -235,7 +235,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -409,7 +409,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -485,7 +485,7 @@
       "params": {
         "duty": "In 1314.491 kg/d, out 1314.491 kg/d, 5.627 kW. Sheet docs-authority/duties/BMED_ACID.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 21.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -500,7 +500,7 @@
           "vent_bore_req_mm": 7.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.1 kPa (1.56 m full at SG 1.25; process hold-up 1 d = 1.314 m3, H/D 1.5, A-M-182) = 21.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -524,7 +524,7 @@
       "params": {
         "duty": "In 1301.987 kg/d, out 1301.987 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 21.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -539,7 +539,7 @@
           "vent_bore_req_mm": 7.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.0 kPa (1.55 m full at SG 1.25; process hold-up 1 d = 1.302 m3, H/D 1.5, A-M-182) = 21.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -595,7 +595,7 @@
         },
         "duty": "In 369.214 kg/d, out 369.214 kg/d, 0.018 kW. Sheet docs-authority/duties/BMED_UPW_POLISH.md.",
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
-        "design_kPa": 2.0,
+        "design_kPa": 14.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -610,7 +610,7 @@
           "vent_bore_req_mm": 3.9,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 12.5 kPa (1.02 m full at SG 1.25; process hold-up 1 d = 0.369 m3, H/D 1.5, A-M-182) = 14.5 kPa g (A-M-174)"
         },
         "design": {
           "UPW_kg_d": 127.300395,
@@ -666,7 +666,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -704,7 +704,7 @@
           "vent_bore_req_mm": 0.5,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; pipe only, no standing liquid (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -746,7 +746,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -802,7 +802,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -880,7 +880,7 @@
       "params": {
         "duty": "In 27.372 kg/d, out 27.372 kg/d, 0.000 kW. Sheet docs-authority/duties/CRU.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 7.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -895,7 +895,7 @@
           "vent_bore_req_mm": 1.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 5.2 kPa (0.43 m full at SG 1.25; process hold-up 1 d = 0.027 m3, H/D 1.5, A-M-182) = 7.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -930,7 +930,7 @@
           "vent_bore_req_mm": 3.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -970,7 +970,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -1091,7 +1091,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -1264,7 +1264,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -1299,7 +1299,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2259,7 +2259,7 @@
         "duty": "In 60.000 kg/d, out 60.000 kg/d, 0.000 kW. Sheet docs-authority/duties/FAB_UPW_TANK.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 11.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -2274,7 +2274,7 @@
           "vent_bore_req_mm": 1.6,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.6 kPa (0.70 m full at SG 1.25; store hold-up 2 d = 0.120 m3, H/D 1.5, A-M-182) = 11.0 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2344,7 +2344,7 @@
           "vent_bore_req_mm": 2.7,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2382,7 +2382,7 @@
         "duty": "In 279.347 kg/d, out 279.347 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
         "internals": "weir and launder",
-        "design_kPa": 2.0,
+        "design_kPa": 7.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -2397,7 +2397,7 @@
           "vent_bore_req_mm": 1.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 5.0 kPa (0.41 m full at SG 1.25; process hold-up 1 d = 0.024 m3, H/D 1.5, A-M-182) = 7.5 kPa g (A-M-174)"
         }
       }
     },
@@ -2528,7 +2528,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2569,7 +2569,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2613,7 +2613,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "units_installed": 2,
         "redundancy": "2 x 100 % (X-RED-07)"
@@ -2649,7 +2649,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2733,7 +2733,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -2857,7 +2857,7 @@
         "duty": "In 347.147 kg/d, out 347.147 kg/d, 0.000 kW. Sheet docs-authority/duties/GREY_TREAT.md.",
         "presence": "present",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 10.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -2872,7 +2872,7 @@
           "vent_bore_req_mm": 2.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.3 kPa (0.67 m full at SG 1.25; process hold-up 1 d = 0.107 m3, H/D 1.5, A-M-182) = 10.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -2954,7 +2954,7 @@
         },
         "duty": "In 19362.867 kg/d, out 19362.867 kg/d, 8.743 kW. Sheet docs-authority/duties/GROW_BED.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -2969,7 +2969,7 @@
           "vent_bore_req_mm": 28.4,
           "vent_DN": 32,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         },
         "crop_carbon": {
           "co2_fixed_kg_d": 3.648,
@@ -3021,7 +3021,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -3060,7 +3060,7 @@
         },
         "duty": "In 943.852 kg/d, out 943.852 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -3075,7 +3075,7 @@
           "vent_bore_req_mm": 3.8,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         },
         "san_base": {
           "S12": 258.6599999999997,
@@ -3156,7 +3156,7 @@
           "vent_bore_req_mm": 0.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; pipe only, no standing liquid (A-M-174)"
         }
       }
     },
@@ -3191,7 +3191,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; pipe only, no standing liquid (A-M-174)"
         }
       }
     },
@@ -3222,7 +3222,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -3256,7 +3256,7 @@
           "vent_bore_req_mm": 0.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -3306,7 +3306,7 @@
           "vent_bore_req_mm": 1.7,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; pipe only, no standing liquid (A-M-174)"
         }
       }
     },
@@ -3340,7 +3340,7 @@
           "vent_bore_req_mm": 1.5,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -3517,7 +3517,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "backup_basis": {
           "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
@@ -3708,7 +3708,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -4070,7 +4070,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -4105,7 +4105,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -4162,7 +4162,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -4284,7 +4284,7 @@
         },
         "duty": "In 610.350 kg/d, out 610.350 kg/d, 2.903 kW. Sheet docs-authority/duties/MFG_SHOP.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 5.0,
         "relief_mm": 3.3,
         "peak_kw": 38.5,
         "tool_list": "docs-authority/MFG_TOOLS.md",
@@ -4301,7 +4301,7 @@
           "vent_bore_req_mm": 0.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 2.8 kPa (0.22 m full at SG 1.25; process hold-up 1 d = 0.004 m3, H/D 1.5, A-M-182) = 5.0 kPa g (A-M-174)"
         }
       }
     },
@@ -4332,7 +4332,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -4367,7 +4367,7 @@
         },
         "duty": "In 84.878 kg/d, out 84.878 kg/d, 0.000 kW. Sheet docs-authority/duties/NORTH_DOCK.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 10.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4382,7 +4382,7 @@
           "vent_bore_req_mm": 1.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.6 kPa (0.62 m full at SG 1.25; store hold-up 2 d = 0.083 m3, H/D 1.5, A-M-182) = 10.0 kPa g (A-M-174)"
         }
       }
     },
@@ -4468,7 +4468,7 @@
         "presence": "present",
         "duty": "In 274.877 kg/d, out 274.877 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 10.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4483,7 +4483,7 @@
           "vent_bore_req_mm": 2.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.4 kPa (0.68 m full at SG 1.25; process hold-up 1 d = 0.111 m3, H/D 1.5, A-M-182) = 10.5 kPa g (A-M-174)"
         }
       }
     },
@@ -4560,7 +4560,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -4580,7 +4580,7 @@
         "duty": "In 34.383 kg/d, out 34.383 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_FRAC.md.",
         "presence": "present",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 8.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4595,7 +4595,7 @@
           "vent_bore_req_mm": 1.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 5.6 kPa (0.46 m full at SG 1.25; process hold-up 1 d = 0.033 m3, H/D 1.5, A-M-182) = 8.0 kPa g (A-M-174)"
         },
         "vol_net_base": 27.5,
         "cut_basis": {
@@ -4720,7 +4720,7 @@
         "duty": "In 3520.003 kg/d, out 3520.003 kg/d, 0.000 kW. Sheet docs-authority/duties/POLISH_BANK.md.",
         "presence": "present",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 28.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4735,7 +4735,7 @@
           "vent_bore_req_mm": 12.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 26.5 kPa (2.16 m full at SG 1.25; process hold-up 1 d = 3.520 m3, H/D 1.5, A-M-182) = 28.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -4753,7 +4753,7 @@
         "duty": "In 9.919 kg/d, out 9.919 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C11_C18.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 7.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4768,7 +4768,7 @@
           "vent_bore_req_mm": 0.6,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.7 kPa (0.38 m full at SG 1.25; store hold-up 2 d = 0.020 m3, H/D 1.5, A-M-182) = 7.0 kPa g (A-M-174)"
         }
       }
     },
@@ -4785,7 +4785,7 @@
         "duty": "In 6.166 kg/d, out 6.166 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C19_C28.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 6.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4800,7 +4800,7 @@
           "vent_bore_req_mm": 0.5,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.0 kPa (0.33 m full at SG 1.25; store hold-up 2 d = 0.012 m3, H/D 1.5, A-M-182) = 6.5 kPa g (A-M-174)"
         }
       }
     },
@@ -4817,7 +4817,7 @@
         "duty": "In 5.873 kg/d, out 5.873 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C29.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4832,7 +4832,7 @@
           "vent_bore_req_mm": 0.5,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.0 kPa (0.32 m full at SG 1.25; store hold-up 2 d = 0.012 m3, H/D 1.5, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -4849,7 +4849,7 @@
         "duty": "In 7.425 kg/d, out 7.425 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C5_C10.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 6.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -4864,7 +4864,7 @@
           "vent_bore_req_mm": 0.6,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.3 kPa (0.35 m full at SG 1.25; store hold-up 2 d = 0.015 m3, H/D 1.5, A-M-182) = 6.5 kPa g (A-M-174)"
         }
       }
     },
@@ -4909,7 +4909,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -4983,7 +4983,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5024,7 +5024,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -5094,7 +5094,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -5128,7 +5128,7 @@
         },
         "duty": "In 932.471 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 21.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5143,7 +5143,7 @@
           "vent_bore_req_mm": 5.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.4 kPa (1.58 m full at SG 1.25; store hold-up 2 d = 1.378 m3, H/D 1.5, A-M-182) = 21.5 kPa g (A-M-174)"
         }
       }
     },
@@ -5177,7 +5177,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5212,7 +5212,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5250,7 +5250,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
@@ -5333,7 +5333,7 @@
           "vent_bore_req_mm": 1.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; pipe only, no standing liquid (A-M-174)"
         }
       }
     },
@@ -5382,7 +5382,7 @@
         },
         "duty": "In 76.610 kg/d, out 76.610 kg/d, 2.000 kW. Sheet docs-authority/duties/WAFER_FAB.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 5.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5397,7 +5397,7 @@
           "vent_bore_req_mm": 1.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 2.6 kPa (0.21 m full at SG 1.25; process hold-up 1 d = 0.003 m3, H/D 1.5, A-M-182) = 5.0 kPa g (A-M-174)"
         }
       }
     },
@@ -5436,7 +5436,7 @@
         },
         "duty": "In 79.122 kg/d, out 79.122 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 9.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5451,7 +5451,7 @@
           "vent_bore_req_mm": 1.8,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.5 kPa (0.61 m full at SG 1.25; process hold-up 1 d = 0.079 m3, H/D 1.5, A-M-182) = 9.5 kPa g (A-M-174)"
         }
       }
     },
@@ -5499,7 +5499,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5518,7 +5518,7 @@
       "params": {
         "duty": "In 3.259 kg/d, out 3.259 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 2.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5533,7 +5533,7 @@
           "vent_bore_req_mm": 0.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 0.5 kPa (0.04 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 2.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5552,7 +5552,7 @@
       "params": {
         "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_DOPE.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 2.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5567,7 +5567,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 0.5 kPa (0.04 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 2.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5601,7 +5601,7 @@
           "vent_bore_req_mm": 0.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5642,7 +5642,7 @@
         },
         "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 3.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5657,7 +5657,7 @@
           "vent_bore_req_mm": 0.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.4 kPa (0.12 m full at SG 1.25; store hold-up 2 d = 0.001 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5698,7 +5698,7 @@
         },
         "duty": "In 1.610 kg/d, out 1.610 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 5.0,
         "relief_mm": 3.3,
         "product_spec": {
           "HNO3_M": 2.0,
@@ -5732,7 +5732,7 @@
           "vent_bore_req_mm": 0.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 2.6 kPa (0.21 m full at SG 1.25; store hold-up 2 d = 0.003 m3, H/D 1.5, A-M-182) = 5.0 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5751,7 +5751,7 @@
       "params": {
         "duty": "In 3.000 kg/d, out 3.000 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PEROX.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 5.5,
         "relief_mm": 3.3,
         "product_spec": {
           "H2O2_wt_pct_nominal": 5.0,
@@ -5801,7 +5801,7 @@
           "vent_bore_req_mm": 0.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.1 kPa (0.25 m full at SG 1.25; store hold-up 2 d = 0.006 m3, H/D 1.5, A-M-182) = 5.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5835,7 +5835,7 @@
           "vent_bore_req_mm": 0.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5854,7 +5854,7 @@
       "params": {
         "duty": "In 0.210 kg/d, out 0.210 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 3.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -5869,7 +5869,7 @@
           "vent_bore_req_mm": 0.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.3 kPa (0.11 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -5929,7 +5929,7 @@
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
         "duty": "In 1055.683 kg/d, out 1055.683 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 20.0,
         "relief_mm": 3.3,
         "peak_kw": 60,
         "relief_basis": {
@@ -5945,7 +5945,7 @@
           "vent_bore_req_mm": 6.6,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 17.7 kPa (1.45 m full at SG 1.25; process hold-up 1 d = 1.056 m3, H/D 1.5, A-M-182) = 20.0 kPa g (A-M-174)"
         },
         "charge_kW": 1137,
         "discharge_kW": 251,
@@ -6001,7 +6001,7 @@
           "vent_bore_req_mm": 4.7,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -7478,7 +7478,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -7504,7 +7504,7 @@
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 145.951 kg/d, out 145.951 kg/d, 0.100 kW. Sheet docs-authority/duties/COMPOST.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -7519,7 +7519,7 @@
           "vent_bore_req_mm": 2.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -7620,7 +7620,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -7646,7 +7646,7 @@
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board.",
         "duty": "In 9.373 kg/d, out 9.373 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 2.0,
+        "design_kPa": 3.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -7661,7 +7661,7 @@
           "vent_bore_req_mm": 0.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.3 kPa (0.11 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
         }
       }
     },
@@ -7702,7 +7702,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -7860,7 +7860,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -7901,7 +7901,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -7942,7 +7942,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -7983,7 +7983,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -8024,7 +8024,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": {
@@ -8786,7 +8786,7 @@
         "presence": "present",
         "duty": "In 15.971 kg/d, out 15.971 kg/d, 0.100 kW. Sheet docs-authority/duties/BSFL.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -8801,7 +8801,7 @@
           "vent_bore_req_mm": 0.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -8826,7 +8826,7 @@
         "presence": "present",
         "duty": "In 9697.900 kg/d, out 9697.900 kg/d, 0.100 kW. Sheet docs-authority/duties/DUCKWEED.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -8841,7 +8841,7 @@
           "vent_bore_req_mm": 20.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -8881,7 +8881,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -8906,7 +8906,7 @@
         "presence": "present",
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.100 kW. Sheet docs-authority/duties/BEES.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -8921,7 +8921,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -8961,7 +8961,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9001,7 +9001,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9026,7 +9026,7 @@
         "presence": "present",
         "duty": "In 48001.000 kg/d, out 48001.000 kg/d, 0.100 kW. Sheet docs-authority/duties/FISH.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -9041,7 +9041,7 @@
           "vent_bore_req_mm": 44.7,
           "vent_DN": 50,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -9081,7 +9081,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9121,7 +9121,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9161,7 +9161,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9201,7 +9201,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "units_installed": 2,
         "redundancy": "2 x 100 % of crew use; alternate chambers (X-RED-09)"
@@ -9244,7 +9244,7 @@
           "vent_bore_req_mm": 1.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "crop_claim_base": {
           "IA-NFIX-RES": 0.35,
@@ -9295,7 +9295,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9335,7 +9335,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9375,7 +9375,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9415,7 +9415,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9455,7 +9455,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         },
         "crop_claim_base": {
           "IA-FRUIT": 0.25,
@@ -9491,7 +9491,7 @@
         "presence": "present",
         "duty": "In 19426.074 kg/d, out 19426.074 kg/d, 0.733 kW. Sheet docs-authority/duties/VEG_BED.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -9506,7 +9506,7 @@
           "vent_bore_req_mm": 28.5,
           "vent_DN": 32,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         },
         "crop_basis": {
           "crops": {
@@ -9575,7 +9575,7 @@
         "presence": "present",
         "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/CLARIFIER.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -9590,7 +9590,7 @@
           "vent_bore_req_mm": 44.7,
           "vent_DN": 50,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -9660,7 +9660,7 @@
         "presence": "present",
         "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/FISH_SUMP.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -9675,7 +9675,7 @@
           "vent_bore_req_mm": 44.7,
           "vent_DN": 50,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -9715,7 +9715,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9755,7 +9755,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9795,7 +9795,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9835,7 +9835,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9875,7 +9875,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9915,7 +9915,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9955,7 +9955,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -9995,7 +9995,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -10035,7 +10035,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -10075,7 +10075,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -10699,7 +10699,7 @@
         "presence": "present",
         "duty": "In 100.018 kg/d, out 100.018 kg/d, 2.658 kW. Sheet docs-authority/duties/PEANUT.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -10714,7 +10714,7 @@
           "vent_bore_req_mm": 2.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         },
         "crop_claim_base": {
           "IA-PN-R": 0.2,
@@ -10750,7 +10750,7 @@
         "presence": "present",
         "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.300 kW. Sheet docs-authority/duties/SUNFLOWER.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -10765,7 +10765,7 @@
           "vent_bore_req_mm": 0.1,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       }
     },
@@ -10805,7 +10805,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
@@ -10831,7 +10831,7 @@
         "presence": "present",
         "duty": "In 1.180 kg/d, out 1.180 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_GALLEY.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -10846,7 +10846,7 @@
           "vent_bore_req_mm": 0.2,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         },
         "food_reserve": {
           "days": 80,
@@ -10878,7 +10878,7 @@
         "presence": "present",
         "duty": "In 0.002 kg/d, out 0.002 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_MED.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -10893,7 +10893,7 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
@@ -10919,7 +10919,7 @@
         "presence": "present",
         "duty": "In 80.000 kg/d, out 80.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_WASH.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 6.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -10934,7 +10934,7 @@
           "vent_bore_req_mm": 1.8,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
         }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"

@@ -223,11 +223,20 @@ def vent():
         # A-M-174: design pressure from the actual cases, replacing the head-plus-10 study figure. Vapour space: the open-vent dP
         # is held to 25 % of design, so design >= 4 x vent dP; bottom of shell adds the full-height hydrostatic head at SG atm_design_sg.
         H = ((p.get('design') or {}).get('H_mm') or (sz[2] if sz and len(sz) >= 3 else 0))/1000
+        hold = ''
+        if not H and qi > 0:   # A-M-182: liquid head from a hold-up volume where the unit has no sized height
+            cl = u.get('class') or ''
+            if cl in ('header', 'recycle_pipe'): hold = 'pipe only, no standing liquid'
+            elif cl in ('farm', 'hab') or u['unit_id'].startswith('HAB_'): H = DV.val(D, 'atm_bed_depth_m'); hold = f'bed or fixture depth {H} m'
+            else:
+                kind = 'store' if (cl in ('tank', 'product', 'reagent', 'cut_tank', 'dock') or u['unit_id'] in ('ROOF_TANK', 'FAB_UPW_TANK')) else 'process'
+                Vh = qi*TH*DV.val(D, 'atm_hold_d')[kind]; HD = DV.val(D, 'atm_HD'); Dh = (4*Vh/(math.pi*HD))**(1/3); H = HD*Dh
+                hold = f'{kind} hold-up {DV.val(D, "atm_hold_d")[kind]:.0f} d = {Vh:.3f} m3, H/D {HD}'
         P_vap = 4*dp/1000; P_liq = SG*1000*9.80665*H/1000
         p['design_kPa'] = math.ceil((P_vap + P_liq)*2)/2
         rb['relief_mm_status'] = 'atmospheric; no relief orifice, open vent per API 2000'
-        rb['design_case'] = (f"vapour {P_vap:.1f} kPa (4 x vent dP) + hydrostatic {P_liq:.1f} kPa ({H:.2f} m full at SG {SG}) = {p['design_kPa']} kPa g (A-M-174)" if H else
-                             f"vapour {P_vap:.1f} kPa (4 x vent dP) only = {p['design_kPa']} kPa g; hydrostatic case added when the unit is sized (A-M-174)")
+        rb['design_case'] = (f"vapour {P_vap:.1f} kPa (4 x vent dP) + hydrostatic {P_liq:.1f} kPa ({H:.2f} m full at SG {SG}{'; ' + hold + ', A-M-182' if hold else ''}) = {p['design_kPa']} kPa g (A-M-174)" if H else
+                             f"vapour {P_vap:.1f} kPa (4 x vent dP) = {p['design_kPa']} kPa g; {hold or 'no liquid inflow, no hydrostatic case'} (A-M-174)")
         nh += bool(H)
         n += 1
     open(GP, 'w').write(json.dumps(g, indent=2))

@@ -2275,5 +2275,25 @@
   "value": 0.9,
   "units": "- maximum liquid fill",
   "register": "A-M-181"
+ },
+ "atm_hold_d": {
+  "value": {
+   "store": 2.0,
+   "process": 1.0
+  },
+  "units": "d of liquid inflow held: stores (tank, product, reagent, cut_tank, dock, ROOF_TANK, FAB_UPW_TANK) and process units",
+  "register": "A-M-182",
+  "needs_verification": true,
+  "verification_test": "Replace with each unit's sized volume at unit task 02"
+ },
+ "atm_bed_depth_m": {
+  "value": 0.3,
+  "units": "m standing water in farm beds and habitation fixtures",
+  "register": "A-M-182"
+ },
+ "atm_HD": {
+  "value": 1.5,
+  "units": "- vertical tank height to diameter for the hold-up case",
+  "register": "A-M-182"
  }
 }
