@@ -211,6 +211,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PAR-005A | `docs-authority/O2_SOURCE_AUDIT.md` | A | 2026-10-15 | O2 source audit (X-PAR-12 Rev A, frozen) | canonical |
 | AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | A | 2026-10-15 | Open questions log (owner away) | canonical |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | A | 2026-10-15 | Derived file revisions (X-GOV-06) | canonical |
+| AQS-RED-001 | `docs-authority/RED_AUDIT.md` | A | 2026-10-15 | Redundancy audit, energy and life support (X-RED-01) | canonical |
 | AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheet per line (SVG + quantities CSV) | canonical |
 | AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | A | 2026-10-15 | Wire inventory with family rollup (CSV beside) | canonical |
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | A | 2026-10-15 | Pipe inventory with family rollup (CSV beside) | canonical |

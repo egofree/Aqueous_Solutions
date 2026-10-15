@@ -2,8 +2,7 @@
 ZNBR2 purge (S69/S69B): sized so the headspace stays at or below 25 % of the H2 LFL (1.0 vol %, NFPA 69 / NFPA 855). H2 from charge-side HER at
   0.66 % of charge current (5.5e-2 mL/h/cm2 at 20 mA/cm2, ZBFB_REVIEW2023) plus open-circuit Zn corrosion 3.2e-3 mL/h/cm2 over the electrode
   area for the non-charging hours; charge Ah from the AQS-ELEC-007 store_in_kWh at 1.82 V (SAND2000-0893); recombination with Br2 not credited.
-HYDRO_SET: role from need. AQS-ELEC-007 sizes ZNBR2 for the whole night deficit and the H2/fuel-cell bank for multi-day autonomy; no storage gap
-  remains for the 7 kWh/cycle hydro set (0.2 % of ZNBR2). Cycle set to zero (unit retained as roof/catch-tank water inventory only); A-M-135.
+HYDRO_SET: diverse N+1 backup of ZNBR2 per the owner redundancy rule (A-M-145): NFPA 111 Level 1 Class X over the night hours at the critical load.
 NFT: 1 L/min per gully (COOPER1996), gullies at 200 mm pitch across the 1 m unit width (80 mm gully, CROPKING_NFT).
 MISTER: high-pressure aeroponics, 6 nozzles/m2 at 0.057 L/min, 4 s on / 4 min off (HPA_PRACTICE, JAE2022_AERO); A-M-136."""
 import json, os, subprocess, sys
