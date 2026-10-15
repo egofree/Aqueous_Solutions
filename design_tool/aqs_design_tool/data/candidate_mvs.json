@@ -916,9 +916,9 @@
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "storage_mode": "compressed gas, 200 bar, Type I/II cylinder bank (study; owner may override)",
-        "store_kg": 115.0,
-        "store_water_volume_m3": 7.72,
-        "store_basis": "two days of critical load on H2 (AQS-ELEC-007 \u00a72, about 115 kg)",
+        "store_kg": 19,
+        "store_water_volume_m3": 1.28,
+        "store_basis": "need: 8.5 kg dark-hours buffer (11.39 kg/d x (1 - 6/24)) + 10.1 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "compressor": "two-stage diaphragm, 10 to 200 bar",
         "relief_basis": {
           "case": "atmospheric",
@@ -1029,8 +1029,8 @@
           }
         },
         "storage_mode": "compressed gas, 200 bar, Type I cylinder bank, O2-cleaned (ASTM G93), separate from H2 (NFPA 2 ch. 7 separation)",
-        "store_kg": 912.8,
-        "store_water_volume_m3": 3.18,
+        "store_kg": 150.8,
+        "store_water_volume_m3": 0.53,
         "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)"
       },
       "modules": [],
@@ -2758,7 +2758,8 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "role_from_need": "none: ZNBR2 covers the night deficit, H2 bank the multi-day case (AQS-ELEC-007); 7 kWh/cycle = 0.2 % of ZNBR2. Recommend removal of turbine-pump; tanks stay as water inventory."
       },
       "modules": [],
       "electrical_role": "storage",
@@ -3766,7 +3767,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 277.7329,
+        "value": 278.0246,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -4466,8 +4467,8 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 843.9862,
-              "basis": "headspace purge",
+              "value": 1196.6276,
+              "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
             {
@@ -4503,7 +4504,13 @@
         "charge_kW": 1299,
         "discharge_kW": 286,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 56 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
+        "distribution": "distributed over the 56 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "purge_basis": {
+          "H2_m3_d": 10.141,
+          "purge_m3_h": 42.25,
+          "HER_fraction": 0.00658,
+          "electrode_area_m2": 2616.3
+        }
       },
       "modules": [],
       "electrical_role": "storage",
@@ -9152,10 +9159,10 @@
       "phase": "L",
       "carries": "Pumped hydro charge (pump up; peers S23)",
       "rate": {
-        "value": 200000.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full 200 m3 cycle per day"
+        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -9169,10 +9176,10 @@
       "phase": "L",
       "carries": "Pumped hydro discharge (penstock; peers S22)",
       "rate": {
-        "value": 200000.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full cycle per day"
+        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -9186,10 +9193,10 @@
       "phase": "E",
       "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
       "rate": {
-        "value": 0.2917,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h"
+        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "PUMPED_HYDRO",
       "to_sector_id": "ELEC",
@@ -10070,10 +10077,10 @@
       "phase": "L",
       "carries": "penstock",
       "rate": {
-        "value": 0.4088,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10087,10 +10094,10 @@
       "phase": "L",
       "carries": "pump return",
       "rate": {
-        "value": 0.4088,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10869,10 +10876,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 852.47,
+        "value": 1196.627606,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2"
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 42.3 m3/h holds H2 at 25 % LFL: HER 8.63 + open-circuit 1.51 m3/d H2 on 5714 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -10886,10 +10893,10 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 852.47,
+        "value": 1196.627606,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD."
+        "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -11396,7 +11403,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 277.7329,
+        "value": 278.0246,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -16207,7 +16214,7 @@
       "phase": "E",
       "carries": "solar into the array",
       "rate": {
-        "value": 152.4489,
+        "value": 152.609,
         "unit": "kW",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
@@ -16564,10 +16571,10 @@
       "phase": "L",
       "carries": "film supply",
       "rate": {
-        "value": 200.0,
+        "value": 7200.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Film supply. Returns on IA-NFT-OUT."
+        "note": "AQS-P9. Film supply. Returns on IA-NFT-OUT. | X-PAR-02 TF: 5 gullies x 1.0 L/min (COOPER1996) over 6 m (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16581,10 +16588,10 @@
       "phase": "L",
       "carries": "film return",
       "rate": {
-        "value": 200.0,
+        "value": 7200.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Film return."
+        "note": "AQS-P9. Film return. | X-PAR-02 TF: film return = supply (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

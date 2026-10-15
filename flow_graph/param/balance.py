@@ -48,6 +48,7 @@ def physics(g):
     T5 the leach dissolved-gas edge IA-LEACH-ASU closes the leach and the cold box. It is reduced, toward the Henry's-law solubility bound
        (SANDER2015); the remaining excess over that bound is task X-PAR-11."""
     from flow_graph.param import o2_close
+    from flow_graph.param import ess_tf; ess_tf.tf(g)
     o2_close.patch(g); o2_close.tf(g); XL = o2_close.tf(g)     # second pass settles EW_4 after the N2 trim
     E = {e['stream_id']: e for e in g['edges']}
     v = lambda k: float(E[k]['rate']['value'] or 0)
