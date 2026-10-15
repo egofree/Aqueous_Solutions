@@ -835,7 +835,7 @@ def solve(model: MvsModel, request: SolveRequest | None = None, sandbox_id: str 
     sc = model.mvs_criteria.self_copy
     if sc and not sc.reprap_bom_complete:
         notes.append(
-            "Self-copy BOM Partial (AQS-BOM-SC-001 Rev E) — reprap_bom_complete=false; "
+            "Self-copy BOM Partial (AQS-BOM-SC-001 Rev G) — reprap_bom_complete=false; "
             "ST-LITHO/BLOW/ELC/VCD/REMIN/ORC/SOLAR physics issued; Present/survey external TBD "
             "(not accepted gaps; sandbox tracks MVS)."
         )

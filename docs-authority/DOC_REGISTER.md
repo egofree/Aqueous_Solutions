@@ -38,7 +38,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-AUD-GRAPH-001 | `docs-authority/GRAPH_AUDIT.md` | — | 2026-10-02 | Graph audit | canonical |
 | AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | X | 2026-10-01 | CAD authority lock | canonical |
 | AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | F | 2026-10-01 | Building stack — vertical campus | canonical |
-| AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | F | 2026-10-02 | Self-copy critical-path BOM — parts × feedstock (RepRap-class) | canonical |
+| AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | G | 2026-10-16 | Self-copy critical-path BOM — parts × feedstock (RepRap-class) | canonical |
 | AQS-BUS-001 | `docs-authority/BUSBAR.md` | C | 2026-10-16 | Rectifier bus | canonical |
 | AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | canonical |
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | D | 2026-10-16 | Compliance matrix — design intent vs code themes | canonical |

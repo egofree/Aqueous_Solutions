@@ -25,14 +25,14 @@
     },
     "self_copy": {
       "critical_path_documented": true,
-      "reprap_bom_complete": true,
+      "reprap_bom_complete": false,
       "lithography_on_site": false,
       "lithography_in_mvs": true,
       "blow_mold_in_mvs": true,
       "vcd_remin_on_site": false,
       "electrode_coating_on_site": false,
       "bom_doc": "docs-authority/SELF_COPY_BOM.md",
-      "note": "AQS-BOM-SC-001 Rev F. The matrix warrants reprap_bom_complete. On-site flags stay false. Present CAD is not in this session."
+      "note": "AQS-BOM-SC-001 Rev G. Reconciled with the unit BOMs (X-PRO-04): 335 lines Missing (Cr, Mo, Ti, F not recovered), so reprap_bom_complete is false. On-site flags stay false."
     }
   },
   "site": {
