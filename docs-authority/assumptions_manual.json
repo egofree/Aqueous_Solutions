@@ -3285,7 +3285,7 @@
     "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
     "title": "PLC architecture",
     "statement": "One PLC per sector; 16-channel modules with 20 % spare; redundant CPU pair and dual 24 V supplies for life-support and energy sectors; 2 W per module, 12 W per CPU; MRP fibre ring; safety trips outside the basic control PLCs",
-    "verification": "22 sector PLCs, 202 modules, about 0.8 kW",
+    "verification": "21 sector PLCs, 202 modules, about 0.8 kW",
     "replace_when": "I/O list from the P&IDs at detailed design",
     "doc": "AQS-PAR-003"
   }
