@@ -179,7 +179,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
 - [ ] **X-BLD-01** Frame system per AQS-MOD-001. Done when: member sizes checked against loads. Depends: X-BAS-03, X-BLD-02.
 - [ ] **X-BLD-02** Structural loads. Done when: equipment operating and test weights on each level. Depends: unit task 10.
 - [ ] **X-BLD-03** Foundations. Done when: foundation design against soil data. Depends: X-BAS-03, X-BLD-02.
-- [ ] **X-BLD-04** General arrangement and layout. Done when: placement seed checked for clearance, access, and maintenance envelopes. Depends: unit task 02.
+- [ ] **X-BLD-04** General arrangement and layout. Done when: placement seed checked for clearance, access, and maintenance envelopes. Depends: unit task 02. Start from `docs-authority/GA_CHECK.md` (partial).
 - [ ] **X-BLD-05** Enclosure, floors, stairs, egress. Done when: envelope, floor plates, stairs; egress per AQS-EGR-001. Depends: X-BLD-01.
 - [ ] **X-BLD-06** Lifting and cranes. Done when: crane and hoist duty for the heaviest lift per level. Depends: X-BLD-02.
 - [ ] **X-BLD-07** Site access and dock. Done when: AQS-SITE-001 checked against vehicle and container sizes. Depends: X-BAS-03.

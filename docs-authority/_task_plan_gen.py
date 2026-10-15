@@ -111,7 +111,7 @@ X=[
 ('X-BLD-01','Frame system per AQS-MOD-001','member sizes checked against loads','X-BAS-03, X-BLD-02',None),
 ('X-BLD-02','Structural loads','equipment operating and test weights on each level','unit task 10',None),
 ('X-BLD-03','Foundations','foundation design against soil data','X-BAS-03, X-BLD-02',None),
-('X-BLD-04','General arrangement and layout','placement seed checked for clearance, access, and maintenance envelopes','unit task 02',None),
+('X-BLD-04','General arrangement and layout','placement seed checked for clearance, access, and maintenance envelopes','unit task 02','docs-authority/GA_CHECK.md'),
 ('X-BLD-05','Enclosure, floors, stairs, egress','envelope, floor plates, stairs; egress per AQS-EGR-001','X-BLD-01',None),
 ('X-BLD-06','Lifting and cranes','crane and hoist duty for the heaviest lift per level','X-BLD-02',None),
 ('X-BLD-07','Site access and dock','AQS-SITE-001 checked against vehicle and container sizes','X-BAS-03',None),
