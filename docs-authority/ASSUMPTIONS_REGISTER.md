@@ -239,16 +239,16 @@ Counts: 156 curated, 985 graph, 22 model params, 89 document lines. Total 1252. 
 | A-G-56a28e | 0.5 | kW | graph EMETH continuous_kw | AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. |  | unit task 02 (EMETH) |
 | A-G-0b530c | 0.8 | kW | graph LIGNO_PRE continuous_kw | AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. |  | unit task 02 (LIGNO_PRE) |
 | A-G-aad8af | 1.0 | kW | graph BOARD_MILL continuous_kw | AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. |  | unit task 02 (BOARD_MILL) |
-| A-G-375678 | 0.6 | kW | graph HTC continuous_kw | AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost. |  | unit task 02 (HTC) |
+| A-G-375678 | 0.0317 | kW | graph HTC continuous_kw | X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 31.7 W |  | unit task 02 (HTC) |
 | A-G-dfe702 | 18.0 | kW | graph CRYO_ASU continuous_kw | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | unit task 02 (CRYO_ASU) |
 | A-G-7b38a9 | 0.2 | kW | graph CRYO_HE continuous_kw | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |  | unit task 02 (CRYO_HE) |
 | A-G-249a51 | 0.2 | kW | graph CRYO_NE continuous_kw | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |  | unit task 02 (CRYO_NE) |
 | A-G-8f65a8 | 0.2 | kW | graph CRYO_KR continuous_kw | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |  | unit task 02 (CRYO_KR) |
 | A-G-fc47ca | 0.2 | kW | graph CRYO_XE continuous_kw | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |  | unit task 02 (CRYO_XE) |
 | A-G-98aec5 | 0.2 | kW | graph CRYO_AR continuous_kw | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |  | unit task 02 (CRYO_AR) |
-| A-G-7526e4 | 0.2 | kW | graph YEAST continuous_kw | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | unit task 02 (YEAST) |
-| A-G-202d63 | 0.2 | kW | graph ABE continuous_kw | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | unit task 02 (ABE) |
-| A-G-996edc | 0.1 | kW | graph ACETOX continuous_kw | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | unit task 02 (ACETOX) |
+| A-G-7526e4 | 0.0216 | kW | graph YEAST continuous_kw | X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 1.6 W |  | unit task 02 (YEAST) |
+| A-G-202d63 | 0.0214 | kW | graph ABE continuous_kw | X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 1.4 W |  | unit task 02 (ABE) |
+| A-G-996edc | 0.0203 | kW | graph ACETOX continuous_kw | X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 0.3 W |  | unit task 02 (ACETOX) |
 | A-G-a710b2 | 0.1 | kW | graph ALD continuous_kw | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | unit task 02 (ALD) |
 | A-G-7701bd | 0.1 | kW | graph GLYOXAL continuous_kw | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | unit task 02 (GLYOXAL) |
 | A-G-0ccb0a | 0.1 | kW | graph FORM continuous_kw | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | unit task 02 (FORM) |
@@ -925,8 +925,8 @@ Counts: 156 curated, 985 graph, 22 model params, 89 document lines. Total 1252. 
 | A-G-68cfd3 | 0.8 | kW | graph SQ-LIGNO_PRE rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-556b77 | 1.0 | kW | graph SF-BOARD_MILL rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-22962d | 1.0 | kW | graph SQ-BOARD_MILL rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-8fd609 | 0.6 | kW | graph SF-HTC rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-84838f | 0.6 | kW | graph SQ-HTC rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
+| A-G-8fd609 | 0.0317 | kW | graph SF-HTC rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
+| A-G-84838f | 0.0317 | kW | graph SQ-HTC rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
 | A-G-49e74d | 18.0 | kW | graph SF-CRYO_ASU rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-2c8e5f | 18.0 | kW | graph SQ-CRYO_ASU rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-92d882 | 0.2 | kW | graph SF-CRYO_HE rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
@@ -939,12 +939,12 @@ Counts: 156 curated, 985 graph, 22 model params, 89 document lines. Total 1252. 
 | A-G-6f46d4 | 0.2 | kW | graph SQ-CRYO_XE rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-f12dbf | 0.2 | kW | graph SF-CRYO_AR rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-34d5b6 | 0.2 | kW | graph SQ-CRYO_AR rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-4d004c | 0.2 | kW | graph SF-YEAST rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-6edd10 | 0.2 | kW | graph SQ-YEAST rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-6ff7af | 0.2 | kW | graph SF-ABE rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-1a66a7 | 0.2 | kW | graph SQ-ABE rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-91e683 | 0.1 | kW | graph SF-ACETOX rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-63af42 | 0.1 | kW | graph SQ-ACETOX rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
+| A-G-4d004c | 0.0216 | kW | graph SF-YEAST rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
+| A-G-6edd10 | 0.0216 | kW | graph SQ-YEAST rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
+| A-G-6ff7af | 0.0214 | kW | graph SF-ABE rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
+| A-G-1a66a7 | 0.0214 | kW | graph SQ-ABE rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
+| A-G-91e683 | 0.0203 | kW | graph SF-ACETOX rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
+| A-G-63af42 | 0.0203 | kW | graph SQ-ACETOX rate | X-MFG-31 in-house reactor design (AQS-DUTY-062). |  | X-BAS-02 |
 | A-G-fd703f | 0.1 | kW | graph SF-ALD rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-a7ec47 | 0.1 | kW | graph SQ-ALD rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-756b06 | 0.1 | kW | graph SF-GLYOXAL rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |

@@ -1273,5 +1273,55 @@
   "register": "A-M-133",
   "needs_verification": true,
   "verification_test": "see A-M-133"
+ },
+ "rx_yeast_tau_h": {
+  "value": 48,
+  "units": "h",
+  "ref": "BAI2008"
+ },
+ "rx_yeast_T_C": {
+  "value": 32,
+  "units": "C",
+  "ref": "BAI2008"
+ },
+ "rx_abe_tau_h": {
+  "value": 72,
+  "units": "h",
+  "ref": "JONES1986"
+ },
+ "rx_abe_T_C": {
+  "value": 37,
+  "units": "C",
+  "ref": "JONES1986"
+ },
+ "rx_acetox_tau_h": {
+  "value": 24,
+  "units": "h",
+  "ref": "GULLO2014"
+ },
+ "rx_acetox_T_C": {
+  "value": 30,
+  "units": "C",
+  "ref": "GULLO2014"
+ },
+ "rx_htc_tau_h": {
+  "value": 4,
+  "units": "h",
+  "ref": "LIBRA2011"
+ },
+ "rx_htc_T_C": {
+  "value": 200,
+  "units": "C",
+  "ref": "LIBRA2011"
+ },
+ "psat_water_200C_MPa": {
+  "value": 1.555,
+  "units": "MPa",
+  "ref": "NIST_WEBBOOK"
+ },
+ "sa240_316L_S_MPa_200C": {
+  "value": 115.0,
+  "units": "MPa, SA-240 316L at 200 C",
+  "ref": "ASME_II_D"
  }
 }

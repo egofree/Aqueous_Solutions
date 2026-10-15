@@ -44,3 +44,14 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 - Wall: UG-27 (ASME_VIII1_UG27) with S = 118.0 MPa (ASME_II_D, SA-106 B at 260 C), E = 1, CA 1.5 mm: required 2.88 mm; Sch 40 nominal 3.91 mm less 12.5 % mill tolerance = 3.42 mm: adequate.
 - Heat: exotherm 0.541 kW (49.5 kJ/mol, PONTZEN2011) to the jacket; feed preheat 0.421 kW electric, no feed/effluent interchanger credit.
 - Relief: API 520 gas, blocked outlet at the full feed (flow_graph/param/pressure_nodes.py).
+
+## 5. Biological and hydrothermal reactors
+
+| Unit | T, C | Residence, h | Working / vessel, L | DN x H, mm | Wall, mm | Heat, W | Material | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| YEAST | 32 | 48 | 2.0 / 2.7 | 200 x 170 | 4.0 | 1.6 | HDPE (PE100), 50 mm PIR | BAI2008 |
+| ABE | 37 | 72 | 1.9 / 2.6 | 150 x 150 | 4.0 | 1.4 | HDPE (PE100), 50 mm PIR, N2-blanketed (anaerobic) | JONES1986 |
+| ACETOX | 30 | 24 | 0.3 / 0.4 | 80 x 80 | 4.0 | 0.3 | PP, 50 mm PIR; O2 sparger PVDF | GULLO2014 |
+| HTC | 200 | 4 | 0.5 / 0.7 | 100 x 90 | 3.0 | 31.7 | SA-240 316L, 50 mm mineral wool | LIBRA2011 |
+
+HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = 1.71 MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: 2.25 mm required.

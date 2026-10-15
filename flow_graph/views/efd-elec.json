@@ -2165,7 +2165,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 298.8302,
+        "value": 296.2307,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -2173,14 +2173,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8508,
+        "count": 8436,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 298.830 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.231 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4254,
-        "area_m2": 37333,
+        "nameplate_kw": 4218,
+        "area_m2": 37071,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -2199,19 +2199,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            294000,
-            138000
+            216000,
+            186000
           ],
           "bays": [
-            49,
-            23
+            36,
+            31
           ],
-          "footprint_m2": 40572.0,
-          "extension_m2": 40140.0,
-          "roof_capacity_kWp": 4255.9,
+          "footprint_m2": 40176.0,
+          "extension_m2": 39744.0,
+          "roof_capacity_kWp": 4226.1,
           "perimeter_pathway_mm": 1829,
-          "arrays": 21,
-          "extension_load_kW": 114.45,
+          "arrays": 20,
+          "extension_load_kW": 112.85,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -2219,7 +2219,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 2127
+        "balance_kWp": 2109
       }
     },
     {
@@ -2274,13 +2274,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3600.0,
+        "kW": 3540.0,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "count": 60,
+        "count": 59,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
@@ -2297,8 +2297,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3293.2,
-          "export_kWh_d_clear": 9204,
+          "export_peak_kW": 3235.8,
+          "export_kWh_d_clear": 9126,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2310,7 +2310,7 @@
             10,
             10,
             10,
-            10
+            9
           ],
           "breaker_A": [
             1000,
@@ -2334,9 +2334,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 307.6,
+          "bus_demand_kW": 305.0,
           "section_rating_A": 600,
-          "basis_A": 411.1,
+          "basis_A": 407.7,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -2480,8 +2480,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1395,
-        "kWh": 4296,
+        "kW": 1383,
+        "kWh": 4259,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -2491,7 +2491,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1284.9373,
+              "value": 1274.0498,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -2515,7 +2515,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1293.424 kg/d, out 1293.424 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1282.537 kg/d, out 1282.537 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -2525,24 +2525,24 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2934,
+          "pump_in_m3_h": 1.2825,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.587,
+          "out_breathing_Nm3_h": 2.565,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1395,
-        "discharge_kW": 307,
+        "charge_kW": 1383,
+        "discharge_kW": 305,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 60 hybrid inverters, 71.6 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 59 hybrid inverters, 72.2 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.889,
-          "purge_m3_h": 45.37,
+          "H2_m3_d": 10.797,
+          "purge_m3_h": 44.99,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2809.4
+          "electrode_area_m2": 2785.6
         }
       }
     },
@@ -3067,33 +3067,54 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.6,
+        "value": 0.0317,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 31.7 W"
       },
       "modules": [],
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.600 kW. Sheet docs-authority/duties/HTC.md.",
+        "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.032 kW. Sheet docs-authority/duties/HTC.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 1710.5,
         "relief_mm": 3.3,
         "relief_basis": {
-          "case": "atmospheric",
-          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
-          "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
-          "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
-        }
+          "case": "blocked outlet at full inflow 0.059 kg/h (steam from the heater at full power); operating 16 bar, design 17.1 bar g",
+          "P1_kPa_abs": 1982.9,
+          "T_K": 473.15,
+          "M_kg_kmol": 18.015,
+          "k": 1.33,
+          "Z": 0.95,
+          "W_kg_h": 0.0588,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 0.01,
+          "bore_req_mm": 0.09,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
+        },
+        "design": {
+          "T_C": 200,
+          "tau_h": 4,
+          "V_work_L": 0.5317,
+          "V_L": 0.6646,
+          "D_mm": 100,
+          "H_mm": 90,
+          "wall_mm": 3.0,
+          "design_MPa": 1.7105,
+          "t_req_mm": 2.2504,
+          "heat_W": 31.738,
+          "mixer": "static autoclave, batch",
+          "material": "SA-240 316L, 50 mm mineral wool",
+          "kW": 0.0317
+        },
+        "size_mm": [
+          400,
+          400,
+          590
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -3346,15 +3367,15 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.2,
+        "value": 0.0216,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 1.6 W"
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 1.000 kg/d, out 1.000 kg/d, 0.200 kW. Sheet docs-authority/duties/YEAST.md.",
+        "duty": "In 1.000 kg/d, out 1.000 kg/d, 0.022 kW. Sheet docs-authority/duties/YEAST.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3362,16 +3383,35 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.168,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.001,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.001,
+          "out_breathing_Nm3_h": 0.064,
+          "in_breathing_Nm3_h": 1.862,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.1,
+          "vent_bore_req_mm": 6.2,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
-        }
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "T_C": 32,
+          "tau_h": 48,
+          "V_work_L": 2.0,
+          "V_L": 2.6667,
+          "D_mm": 200,
+          "H_mm": 170,
+          "wall_mm": 4.0,
+          "heat_W": 1.5984,
+          "mixer": "CO2 evolution; daily recirculation pump",
+          "material": "HDPE (PE100), 50 mm PIR",
+          "kW": 0.0216
+        },
+        "size_mm": [
+          500,
+          500,
+          670
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -3385,15 +3425,15 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.2,
+        "value": 0.0214,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 1.4 W"
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.640 kg/d, out 0.640 kg/d, 0.200 kW. Sheet docs-authority/duties/ABE.md.",
+        "duty": "In 0.640 kg/d, out 0.640 kg/d, 0.021 kW. Sheet docs-authority/duties/ABE.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3401,16 +3441,35 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.132,
           "pump_in_m3_h": 0.0006,
           "pump_out_m3_h": 0.0006,
-          "out_breathing_Nm3_h": 0.001,
-          "in_breathing_Nm3_h": 0.001,
+          "out_breathing_Nm3_h": 0.053,
+          "in_breathing_Nm3_h": 1.573,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.2,
+          "vent_bore_req_mm": 5.7,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
-        }
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "T_C": 37,
+          "tau_h": 72,
+          "V_work_L": 1.92,
+          "V_L": 2.56,
+          "D_mm": 150,
+          "H_mm": 150,
+          "wall_mm": 4.0,
+          "heat_W": 1.4276,
+          "mixer": "gas recirculation (no shaft seal)",
+          "material": "HDPE (PE100), 50 mm PIR, N2-blanketed (anaerobic)",
+          "kW": 0.0214
+        },
+        "size_mm": [
+          450,
+          450,
+          650
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -3424,15 +3483,15 @@
       "notes": "Ethanol plus oxygen from HDR_O2. Oxygen limits.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.1,
+        "value": 0.0203,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 0.3 W"
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.100 kW. Sheet docs-authority/duties/ACETOX.md.",
+        "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.020 kW. Sheet docs-authority/duties/ACETOX.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3440,16 +3499,35 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.084,
           "pump_in_m3_h": 0.0003,
           "pump_out_m3_h": 0.0003,
-          "out_breathing_Nm3_h": 0.001,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.035,
+          "in_breathing_Nm3_h": 1.146,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.1,
+          "vent_bore_req_mm": 4.9,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
-        }
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "T_C": 30,
+          "tau_h": 24,
+          "V_work_L": 0.27,
+          "V_L": 0.3857,
+          "D_mm": 80,
+          "H_mm": 80,
+          "wall_mm": 4.0,
+          "heat_W": 0.2814,
+          "mixer": "O2 sparge from HDR_O2",
+          "material": "PP, 50 mm PIR; O2 sparger PVDF",
+          "kW": 0.0203
+        },
+        "size_mm": [
+          380,
+          380,
+          580
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -6211,34 +6289,34 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "footprint_m2": 40140.0,
+        "footprint_m2": 39744.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 114.447 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 112.852 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "hvac": {
-          "light_kW": 35.323,
-          "vent_kW": 50.064,
-          "envelope_kW": 29.059,
-          "total_kW": 114.447,
-          "vent_L_s": 12042.0,
-          "Qh_kW": 69.018,
-          "Qc_kW": 138.963,
-          "slab_kW": 3.776,
-          "gains_kW": 50.376,
+          "light_kW": 34.975,
+          "vent_kW": 49.57,
+          "envelope_kW": 28.307,
+          "total_kW": 112.852,
+          "vent_L_s": 11923.2,
+          "Qh_kW": 67.542,
+          "Qc_kW": 136.87,
+          "slab_kW": 3.514,
+          "gains_kW": 49.879,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 614.778,
-          "peak_c_kW": 548.652
+          "peak_h_kW": 603.354,
+          "peak_c_kW": 539.99
         }
       },
       "continuous_kw": {
-        "value": 114.4466,
+        "value": 112.8521,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 40140 m2; lighting 35.32 kW (IECC 2021 C405, 10 % lit), ventilation 50.06 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 29.06 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 69.0 kW and cooling 139.0 kW thermal average after internal gains 50.4 kW and slab edge 3.78 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 39744 m2; lighting 34.97 kW (IECC 2021 C405, 10 % lit), ventilation 49.57 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.31 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 67.5 kW and cooling 136.9 kW thermal average after internal gains 49.9 kW and slab edge 3.51 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -6742,7 +6820,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 298.8302,
+        "value": 296.2307,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -7679,10 +7757,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.6,
+        "value": 0.0317,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FARM",
@@ -7861,10 +7939,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.2,
+        "value": 0.0216,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FARM",
@@ -7887,10 +7965,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.2,
+        "value": 0.0214,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FARM",
@@ -7913,10 +7991,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.1,
+        "value": 0.0203,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FARM",
@@ -9525,7 +9603,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 114.4466,
+        "value": 112.8521,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."

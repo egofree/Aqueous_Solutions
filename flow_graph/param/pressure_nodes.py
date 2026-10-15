@@ -9,12 +9,13 @@ from .refs import cite
 GP = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'flow_graph/plant_flow_graph.json')
 GAS = {'MEOH_SYNTH': dict(P_bar=50.0, T_K=523.15, M=12.51, k=1.38, Z=1.0, fluid='3 H2 : 1 CO2 loop gas'),
        'CRYO_H2': dict(P_bar=200.0, T_K=313.15, M=2.016, k=1.41, Z=1.13, fluid='hydrogen'),
+       'HTC': dict(P_bar=15.55, T_K=473.15, M=18.015, k=1.33, Z=0.95, fluid='steam from the heater at full power', W_heater=True),
        'CRYO_O2': dict(P_bar=200.0, T_K=313.15, M=31.999, k=1.40, Z=0.97, fluid='oxygen')}
 def main():
     d = DR.load(); m = DR.val(d, 'press_design_margin'); win = DR.val(d, 'ely_window_h'); g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}
     for u, c in GAS.items():
         ins = [e for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and (e['rate'] or {}).get('unit') == 'kg/d']
-        W = sum((e['rate']['value'] or 0)/(win if e['from_unit_id'] == 'H2O_ELYZ' else 24) for e in ins)
+        W = ((N[u].get('continuous_kw') or {}).get('value') or 0)*3600/1940.0 if c.get('W_heater') else sum((e['rate']['value'] or 0)/(win if e['from_unit_id'] == 'H2O_ELYZ' else 24) for e in ins)
         des = c['P_bar']*m*100; P1 = 1.10*des + 101.325
         p = N[u]['params']; p['design_kPa'] = round(des, 1)
         p['relief_basis'] = {'case': f"blocked outlet at full inflow {W:.3f} kg/h ({c['fluid']}); operating {c['P_bar']:.0f} bar, design {des/100:.1f} bar g",
