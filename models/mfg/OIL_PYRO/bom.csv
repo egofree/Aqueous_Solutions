@@ -3,6 +3,6 @@ item,description,qty,material,basis
 2,Bolted flat lid with gasket,1,SA-240 304H plate, rolled, GTAW (ASME IX),AQS-DUTY-062
 3,Nozzles DN25: oil feed in; vapour out to OIL_FRAC; char out; thermowell; bursting disc,5,SA-240 304H plate, rolled, GTAW (ASME IX),AQS-DUTY-062
 4,Legs 40x40 x 300 mm,3,SA-240 304H plate, rolled, GTAW (ASME IX),study
-5,Ceramic band heaters, 1.42 kW installed rounded up to 2.0 kW, 480 V,1,mica/ceramic,AQS-DUTY-062
+5,Ceramic band heaters, 1.60 kW installed rounded up to 2.0 kW, 480 V,1,mica/ceramic,AQS-DUTY-062
 6,Ceramic fibre insulation 60 mm with SS cladding,1,Al2O3-SiO2 fibre,ASTM C892
 7,Bursting disc DN25 to flare header,1,Inconel,ASME VIII-1 UG-127
