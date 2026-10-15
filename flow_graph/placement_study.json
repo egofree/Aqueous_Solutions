@@ -881,25 +881,6 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
     },
     {
-      "unit_id": "H2_PURIFIER",
-      "level": "L-1",
-      "block_id": "CRYO",
-      "origin_mm": [
-        22000,
-        9600,
-        -6000
-      ],
-      "tier": 1,
-      "size_mm": [
-        800,
-        600,
-        1500
-      ],
-      "category": "small_cold",
-      "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
-    },
-    {
       "unit_id": "DIGESTER",
       "level": "L-2",
       "block_id": "FARM_AQ",
@@ -936,6 +917,25 @@
       "category": "skid",
       "status": "STUDY",
       "source": "graph size_mm; packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "H2_PURIFIER",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        23400,
+        8400,
+        -6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        600,
+        400,
+        1326
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "graph size_mm; packed in CRYO 600 mm clear"
     },
     {
       "unit_id": "ABE",
