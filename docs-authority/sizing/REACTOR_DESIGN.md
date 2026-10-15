@@ -20,15 +20,15 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | Shell DN x height, mm | 450 x 390 | 350 x 300 | 200 x 170 |
 | Wall, mm | 4.0 | 4.0 | 4.5 |
 | Mixing | PBT D150 at 318 rpm, 18.7 W shaft, 0.09 kW motor | biogas recirculation through the base (no shaft seal) | none (static retort) |
-| Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 4.8 W losses and feed | 1.119 kW process, 1.599 kW electric |
-| Electrical, kW | 0.09 | 0.025 | 1.599 |
+| Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 4.8 W losses and feed | 1.119 kW process, 1.664 kW electric |
+| Electrical, kW | 0.09 | 0.025 | 1.664 |
 | Material | CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve | HDPE (PE100) shell, 50 mm PIR insulation (U about 0.5 W/(m2 K)) | ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters |
 
 ## 2. Basis
 
 - GLASS_DIGEST. 12.7 % of the cullet dissolves (IA-GLASS-03 less S08G). For 100 um fines the shrinking-sphere recession to that conversion is 2.21 um. At the zero-order rate of JMS2017_GLASSFIBRE (2.0e-4 g/(m2 s) at 80 C in 3 M NaOH, order 0.31, corrected to 2 M; glass 2500 kg/m3) that takes 31284 s. Residence is 3 x kinetic, floored at 1.0 h for mixing, heat-up and level control. The rate is for glass fibre; soda-lime cullet is checked at the bench (MARAGHECHI2016 reports constant-rate soda-lime dissolution in 1 M NaOH at 20-80 C).
 - DIGESTER. SRT 20 d on the whole wet feed (METCALF5, high-rate mesophilic 15-20 d at 35 C); 80 % fill, gas headspace above.
-- OIL_PYRO. 500 C and 1 h (ANUAR2016: 400-550 C, 30-90 min). Heat = feed x (cp x dT + heat of pyrolysis 1.3 MJ/kg, GAO2010) / heater efficiency 0.7. Half-full retort for foam and char. The graph carried 0 kW for this unit before this issue; the bus takes the 1.599 kW.
+- OIL_PYRO. 500 C and 1 h (ANUAR2016: 400-550 C, 30-90 min). Heat = feed x (cp x dT + heat of pyrolysis 1.3 MJ/kg, GAO2010) / heater efficiency 0.7, plus the insulated shell loss 65 W at 125 mm mineral wool (AQS-THM-003). Half-full retort for foam and char. The graph carried 0 kW for this unit before this issue; the bus takes the 1.664 kW.
 - Walls. Thermoplastic hoop stress from the hydrostatic head with a 3-4 mm practical minimum (DVS2205). Steel UG-16(b) 1.5 mm + 1.5 mm corrosion allowance (ASME_VIII1_UG16).
 
 ## 3. Not designed here
@@ -42,7 +42,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 - Product 2.82 L of Cu/ZnO/Al2O3 (3.10 kg): methanol 1.261 kg/h at a weight-time yield of 1.22 kg/(kg h) (CTC2020_CZA, CO2-only feed, 60 bar, 523 K) / margin 3.0 for 50 bar and ageing.
 - 1 x DN50 Sch 40 SA-106 B, bed 1302 mm, in a DN100 thermal-oil jacket. 250 C, 50 bar operating, 5.50 MPa design (A-M-156).
 - Wall: UG-27 (ASME_VIII1_UG27) with S = 118.0 MPa (ASME_II_D, SA-106 B at 260 C), E = 1, CA 1.5 mm: required 2.88 mm; Sch 40 nominal 3.91 mm less 12.5 % mill tolerance = 3.42 mm: adequate.
-- Heat: exotherm 0.541 kW (49.5 kJ/mol, PONTZEN2011) to the jacket; feed preheat 0.421 kW electric, no feed/effluent interchanger credit.
+- Heat: exotherm 0.541 kW (49.5 kJ/mol, PONTZEN2011) to the jacket; feed preheat 0.739 kW electric, no feed/effluent interchanger credit.
 - Relief: API 520 gas, blocked outlet at the full feed (flow_graph/param/pressure_nodes.py).
 
 ## 5. Biological and hydrothermal reactors
@@ -52,7 +52,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | YEAST | 32 | 48 | 2.0 / 2.7 | 200 x 170 | 4.0 | 1.6 | HDPE (PE100), 50 mm PIR | BAI2008 |
 | ABE | 37 | 72 | 1.9 / 2.6 | 150 x 150 | 4.0 | 1.4 | HDPE (PE100), 50 mm PIR, N2-blanketed (anaerobic) | JONES1986 |
 | ACETOX | 30 | 24 | 0.3 / 0.4 | 80 x 80 | 4.0 | 0.3 | PP, 50 mm PIR; O2 sparger PVDF | GULLO2014 |
-| HTC | 200 | 4 | 0.5 / 0.7 | 100 x 90 | 3.0 | 31.7 | SA-240 316L, 50 mm mineral wool | LIBRA2011 |
+| HTC | 200 | 4 | 0.5 / 0.7 | 100 x 90 | 3.0 | 39.6 | SA-240 316L, 50 mm mineral wool | LIBRA2011 |
 
 HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = 1.71 MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: 2.25 mm required.
 
@@ -60,9 +60,9 @@ HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1
 
 | Unit | T, C | Catalyst, g | Bed, mL | Tube | Bed length, mm | Heater, W | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ALD | 250 | 8.3 | 8.3 | DN15 Sch 40 | 300 | 9.6 | Cu/SiO2 pellets, 250 C, atmospheric (CUSIO2_ALD2023) |
-| FORM | 350 | 7.9 | 7.9 | DN15 Sch 40 | 300 | 2.8 | iron molybdate, 350 C bed, atmospheric; feed must be diluted to about 10 mol% MeOH and 10 mol% O2 in N2 (FORMOX_REVIEW2021): the graph feeds pure O2 from HDR_O2, a N2 diluent loop is required (X-SAF-02) |
-| MEAM | 400 | 2.6 | 2.6 | DN15 Sch 40 | 300 | 2.5 | amorphous silica-alumina, 400 C, 20.7 bar (EP0064380, US1875746) |
+| ALD | 250 | 8.3 | 8.3 | DN15 Sch 40 | 300 | 51.5 | Cu/SiO2 pellets, 250 C, atmospheric (CUSIO2_ALD2023) |
+| FORM | 350 | 7.9 | 7.9 | DN15 Sch 40 | 300 | 63.7 | iron molybdate, 350 C bed, atmospheric; feed must be diluted to about 10 mol% MeOH and 10 mol% O2 in N2 (FORMOX_REVIEW2021): the graph feeds pure O2 from HDR_O2, a N2 diluent loop is required (X-SAF-02) |
+| MEAM | 400 | 2.6 | 2.6 | DN15 Sch 40 | 300 | 76.7 | amorphous silica-alumina, 400 C, 20.7 bar (EP0064380, US1875746) |
 
 MEAM is pressure equipment: 20.7 bar x 1.10 = 2.28 MPa design; UG-27 316L at 400 C (S 80 MPa lower bound, A-M-157) 1.80 mm required against 2.42 mm minimum of DN15 Sch 40.
 

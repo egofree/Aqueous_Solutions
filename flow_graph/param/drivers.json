@@ -1394,5 +1394,68 @@
   "register": "A-M-157",
   "needs_verification": true,
   "verification_test": "read ASME II-D Table 1A for SA-312 TP316L at 400 C"
+ },
+ "ins_h_surface_W_m2K": {
+  "value": 10.0,
+  "units": "W/(m2 K) combined outer coefficient",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_hot_surface_max_C": {
+  "value": 50.0,
+  "units": "C (below the ASTM C1055 60 C contact threshold)",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_ambient_C": {
+  "value": 25.0,
+  "units": "C",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_RH": {
+  "value": 0.6,
+  "units": "-",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_k_mw_a": {
+  "value": 0.037,
+  "units": "W/(m K) mineral wool k at 0 C mean",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_k_mw_b": {
+  "value": 0.00017,
+  "units": "W/(m K2) slope",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_k_elast": {
+  "value": 0.04,
+  "units": "W/(m K) elastomeric (C534 max)",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_hot_threshold_C": {
+  "value": 50.0,
+  "units": "C, lines above are insulated",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_loss_frac_of_duty": {
+  "value": 0.1,
+  "units": "-",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
  }
 }

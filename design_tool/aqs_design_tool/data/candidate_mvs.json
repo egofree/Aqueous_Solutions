@@ -3694,23 +3694,23 @@
           "t_nom_mm": 3.91,
           "t_ok": true,
           "exotherm_kW": 0.5411,
-          "preheat_kW": 0.4207,
+          "preheat_kW": 0.7388,
           "D_mm": 114,
           "H_mm": 1902,
           "wall_mm": 3.91,
           "V_work_L": 2.8186,
           "V_L": 2.8186,
           "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
-          "kW": 0.4207
+          "kW": 0.7388
         }
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.4207,
+        "value": 0.7388,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed preheat 0.421 kW (no interchanger credit), exotherm 0.541 kW to the jacket"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed preheat 0.739 kW (no interchanger credit), exotherm 0.541 kW to the jacket"
       }
     },
     {
@@ -4299,7 +4299,9 @@
           "H_mm": 170,
           "wall_mm": 4.5,
           "Q_process_kW": 1.1192,
-          "kW": 1.5988,
+          "insulation_mm": 125,
+          "loss_W": 65.1293,
+          "kW": 1.664,
           "material": "ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters",
           "relief": "vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)"
         },
@@ -4313,7 +4315,7 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
-        "value": 1.5988,
+        "value": 1.664,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). retort heat 1.119 kW / heater efficiency"
@@ -4500,13 +4502,13 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8428,
+        "count": 8442,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.231 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 295.946 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4214,
+        "nameplate_kw": 4221,
         "area_m2": 37071,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
@@ -4546,12 +4548,12 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 2107
+        "balance_kWp": 2111
       },
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 295.9456,
+        "value": 296.5138,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -4847,8 +4849,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3236.1,
-          "export_kWh_d_clear": 9117,
+          "export_peak_kW": 3235.5,
+          "export_kWh_d_clear": 9134,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -4884,9 +4886,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 304.7,
+          "bus_demand_kW": 305.3,
           "section_rating_A": 600,
-          "basis_A": 407.3,
+          "basis_A": 408.0,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -5432,8 +5434,8 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 1382,
-        "kWh": 4255,
+        "kW": 1384,
+        "kWh": 4263,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -5443,7 +5445,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1272.8557,
+              "value": 1275.2355,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -5467,7 +5469,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1282.537 kg/d, out 1282.537 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1281.343 kg/d, out 1281.343 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5477,24 +5479,24 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2813,
+          "pump_in_m3_h": 1.2837,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.563,
+          "out_breathing_Nm3_h": 2.567,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.3,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1382,
-        "discharge_kW": 304,
+        "charge_kW": 1384,
+        "discharge_kW": 305,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 59 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 59 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.787,
-          "purge_m3_h": 44.95,
+          "H2_m3_d": 10.807,
+          "purge_m3_h": 45.03,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2783.0
+          "electrode_area_m2": 2788.2
         }
       },
       "modules": [],
@@ -5528,7 +5530,7 @@
             }
           ]
         },
-        "duty": "In 1274.050 kg/d, out 1274.050 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1272.856 kg/d, out 1272.856 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -5539,9 +5541,9 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 1.2729,
+          "pump_out_m3_h": 1.2752,
           "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 1.273,
+          "in_breathing_Nm3_h": 1.275,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.2,
           "vent_DN": 25,
@@ -7187,16 +7189,16 @@
         "design_kPa": 1710.5,
         "relief_mm": 3.3,
         "relief_basis": {
-          "case": "blocked outlet at full inflow 0.059 kg/h (steam from the heater at full power); operating 16 bar, design 17.1 bar g",
+          "case": "blocked outlet at full inflow 0.073 kg/h (steam from the heater at full power); operating 16 bar, design 17.1 bar g",
           "P1_kPa_abs": 1982.9,
           "T_K": 473.15,
           "M_kg_kmol": 18.015,
           "k": 1.33,
           "Z": 0.95,
-          "W_kg_h": 0.0588,
+          "W_kg_h": 0.0735,
           "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
           "A_req_mm2": 0.01,
-          "bore_req_mm": 0.09,
+          "bore_req_mm": 0.1,
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "adequate": true
         },
@@ -7210,10 +7212,10 @@
           "wall_mm": 3.0,
           "design_MPa": 1.7105,
           "t_req_mm": 2.2504,
-          "heat_W": 31.738,
+          "heat_W": 39.6461,
           "mixer": "static autoclave, batch",
           "material": "SA-240 316L, 50 mm mineral wool",
-          "kW": 0.0317
+          "kW": 0.0396
         },
         "size_mm": [
           400,
@@ -7225,10 +7227,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.0317,
+        "value": 0.0396,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 31.7 W"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). losses and feed heat 39.6 W"
       }
     },
     {
@@ -7625,7 +7627,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/ALD.md.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.010 kW. Sheet docs-authority/duties/ALD.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7651,7 +7653,9 @@
           "OD_mm": 21.3,
           "t_nom_mm": 2.77,
           "L_bed_mm": 300,
-          "heat_W": 9.6437,
+          "heat_W": 51.4744,
+          "insulation_mm": 38,
+          "loss_W": 41.8307,
           "material": "SA-312 TP316L tube in a band heater and mineral wool",
           "basis": "Cu/SiO2 pellets, 250 C, atmospheric (CUSIO2_ALD2023)",
           "D_mm": 21,
@@ -7659,7 +7663,7 @@
           "wall_mm": 2.77,
           "V_work_L": 0.0083,
           "V_L": 0.0083,
-          "kW": 0.0096
+          "kW": 0.0515
         },
         "size_mm": [
           321,
@@ -7671,10 +7675,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.0096,
+        "value": 0.0515,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed vaporisation and preheat 9.6 W"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed vaporisation and preheat 51.5 W"
       }
     },
     {
@@ -7721,7 +7725,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/FORM.md.",
+        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.003 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7747,7 +7751,9 @@
           "OD_mm": 21.3,
           "t_nom_mm": 2.77,
           "L_bed_mm": 300,
-          "heat_W": 2.8274,
+          "heat_W": 63.7379,
+          "insulation_mm": 50,
+          "loss_W": 60.9105,
           "material": "SA-312 TP316L tube in a band heater and mineral wool",
           "basis": "iron molybdate, 350 C bed, atmospheric; feed must be diluted to about 10 mol% MeOH and 10 mol% O2 in N2 (FORMOX_REVIEW2021): the graph feeds pure O2 from HDR_O2, a N2 diluent loop is required (X-SAF-02)",
           "D_mm": 21,
@@ -7755,7 +7761,7 @@
           "wall_mm": 2.77,
           "V_work_L": 0.0079,
           "V_L": 0.0079,
-          "kW": 0.0028
+          "kW": 0.0637
         },
         "size_mm": [
           321,
@@ -7767,10 +7773,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.0028,
+        "value": 0.0637,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed vaporisation and preheat 2.8 W"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed vaporisation and preheat 63.7 W"
       }
     },
     {
@@ -7781,7 +7787,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.100 kW. Sheet docs-authority/duties/MEAM.md.",
+        "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.003 kW. Sheet docs-authority/duties/MEAM.md.",
         "internals": "none",
         "design_kPa": 2277.0,
         "relief_mm": 3.3,
@@ -7807,7 +7813,9 @@
           "OD_mm": 21.3,
           "t_nom_mm": 2.77,
           "L_bed_mm": 300,
-          "heat_W": 2.5066,
+          "heat_W": 76.7148,
+          "insulation_mm": 50,
+          "loss_W": 74.2082,
           "material": "SA-312 TP316L tube in a band heater and mineral wool",
           "basis": "amorphous silica-alumina, 400 C, 20.7 bar (EP0064380, US1875746)",
           "D_mm": 21,
@@ -7815,7 +7823,7 @@
           "wall_mm": 2.77,
           "V_work_L": 0.0026,
           "V_L": 0.0026,
-          "kW": 0.0025,
+          "kW": 0.0767,
           "design_MPa": 2.277,
           "t_req_mm": 1.7997
         },
@@ -7829,10 +7837,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.0025,
+        "value": 0.0767,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed vaporisation and preheat 2.5 W"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed vaporisation and preheat 76.7 W"
       }
     },
     {
@@ -9503,9 +9511,9 @@
           "thermal_term": "envelope volume"
         },
         "redundancy": {
-          "rejection_kW": 162.43,
+          "rejection_kW": 163.0,
           "modules": 3,
-          "module_kW": 81.22,
+          "module_kW": 81.5,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       },
@@ -13020,10 +13028,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 1272.855678,
+        "value": 1275.235499,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 44.9 m3/h holds H2 at 25 % LFL: HER 9.18 + open-circuit 1.60 m3/d H2 on 6078 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 45.0 m3/h holds H2 at 25 % LFL: HER 9.20 + open-circuit 1.61 m3/d H2 on 6089 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -13037,7 +13045,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 1272.855678,
+        "value": 1275.235499,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -13547,7 +13555,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 295.9456,
+        "value": 296.5138,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -18358,7 +18366,7 @@
       "phase": "E",
       "carries": "solar into the array",
       "rate": {
-        "value": 162.4459,
+        "value": 162.7578,
         "unit": "kW",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
@@ -20432,7 +20440,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.4207,
+        "value": 0.7388,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -20449,7 +20457,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 0.4207,
+        "value": 0.7388,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -20942,7 +20950,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.0317,
+        "value": 0.0396,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -20959,7 +20967,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 0.0317,
+        "value": 0.0396,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -21282,7 +21290,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.0096,
+        "value": 0.0515,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -21299,7 +21307,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 0.0096,
+        "value": 0.0515,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -21350,7 +21358,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.0028,
+        "value": 0.0637,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -21367,7 +21375,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 0.0028,
+        "value": 0.0637,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -21384,7 +21392,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.0025,
+        "value": 0.0767,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -21401,7 +21409,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 0.0025,
+        "value": 0.0767,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -23577,7 +23585,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 1.5988,
+        "value": 1.664,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -23594,7 +23602,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 1.5988,
+        "value": 1.664,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."

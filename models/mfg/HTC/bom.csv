@@ -3,6 +3,6 @@ item,description,qty,material,basis
 2,Weld-neck flange DN100 Class 300 RF,1,SA-182 F316L,ASME B16.5
 3,Blind flange DN100 Class 300 with DN15 feed/discharge and thermowell,2,SA-182 F316L,ASME B16.5
 4,Spiral-wound gasket DN100 Class 300,2,316L / flexible graphite,ASME B16.20
-5,Band heater 63 W with PID and high-limit,1,mica,AQS-DUTY-062 section 5
+5,Band heater 79 W with PID and high-limit,1,mica,AQS-DUTY-062 section 5
 6,Mineral wool 50 mm with SS cladding,1,mineral wool,ASTM C547
 7,Safety valve DN15, set at design pressure,1,316L,API 520 (graph relief_basis)

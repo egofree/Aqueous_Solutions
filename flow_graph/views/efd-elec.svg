@@ -467,7 +467,7 @@
 <title>SOL_ARK_60K&#45;&gt;HTC</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.21,-6731.75C478.87,-6415.73 528.86,-2100.85 534,-2095 596.26,-2024.09 721.45,-2035.26 783.47,-2046.16"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.1,-2049.65 793.57,-2048.04 784.38,-2042.77 783.1,-2049.65"/>
-<text text-anchor="middle" x="602.5" y="-2097.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;HTC\n0.0317 kW</text>
+<text text-anchor="middle" x="602.5" y="-2097.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;HTC\n0.0396 kW</text>
 </g>
 <!-- YEAST -->
 <g id="node30" class="node">
@@ -519,7 +519,7 @@
 <title>SOL_ARK_60K&#45;&gt;ALD</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.21,-6731.82C478.94,-6407.83 531.35,-1863.12 534,-1860 595.59,-1787.59 721.65,-1794.73 783.76,-1803.51"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.47,-1807.01 793.88,-1805.04 784.51,-1800.09 783.47,-1807.01"/>
-<text text-anchor="middle" x="602.5" y="-1862.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALD\n0.0096 kW</text>
+<text text-anchor="middle" x="602.5" y="-1862.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALD\n0.0515 kW</text>
 </g>
 <!-- GLYOXAL -->
 <g id="node34" class="node">
@@ -545,7 +545,7 @@
 <title>SOL_ARK_60K&#45;&gt;FORM</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.21,-6731.84C479.08,-6403.51 534,-1734 534,-1734 595.93,-1662.17 721.83,-1671.21 783.83,-1680.95"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.49,-1684.44 793.93,-1682.63 784.64,-1677.53 783.49,-1684.44"/>
-<text text-anchor="middle" x="602.5" y="-1736.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;FORM\n0.0028 kW</text>
+<text text-anchor="middle" x="602.5" y="-1736.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;FORM\n0.0637 kW</text>
 </g>
 <!-- MEAM -->
 <g id="node36" class="node">
@@ -558,7 +558,7 @@
 <title>SOL_ARK_60K&#45;&gt;MEAM</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.13,-6731.52C476.35,-6572.53 486.65,-5440.11 534,-5388 597.43,-5318.2 722.07,-5329.38 783.71,-5340.22"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.29,-5343.7 793.76,-5342.08 784.56,-5336.82 783.29,-5343.7"/>
-<text text-anchor="middle" x="602.5" y="-5390.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEAM\n0.0025 kW</text>
+<text text-anchor="middle" x="602.5" y="-5390.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEAM\n0.0767 kW</text>
 </g>
 <!-- IMID -->
 <g id="node37" class="node">
@@ -1312,7 +1312,7 @@
 <title>SOL_ARK_60K&#45;&gt;MEOH_SYNTH</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.23,-6731.9C477.76,-6536.84 500.07,-4803.71 514,-3401 514.34,-3367.18 511.87,-991.58 534,-966 592.18,-898.74 706.66,-903.46 771.75,-912.78"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="771.35,-916.26 781.76,-914.3 772.4,-909.33 771.35,-916.26"/>
-<text text-anchor="middle" x="602.5" y="-968.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEOH_SYNTH\n0.4207 kW</text>
+<text text-anchor="middle" x="602.5" y="-968.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEOH_SYNTH\n0.7388 kW</text>
 </g>
 <!-- MFG_SHOP -->
 <g id="node97" class="node">
@@ -1390,7 +1390,7 @@
 <title>SOL_ARK_60K&#45;&gt;OIL_PYRO</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.24,-6731.9C477.87,-6536.84 501.01,-4803.72 514,-3401 514.19,-3380.8 521.05,-507.51 534,-492 594.27,-419.79 718.1,-424.04 781.19,-431.74"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="780.77,-435.21 791.14,-433.04 781.68,-428.27 780.77,-435.21"/>
-<text text-anchor="middle" x="602.5" y="-494.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;OIL_PYRO\n1.5988 kW</text>
+<text text-anchor="middle" x="602.5" y="-494.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;OIL_PYRO\n1.664 kW</text>
 </g>
 <!-- BMED_ACID -->
 <g id="node104" class="node">
@@ -1663,7 +1663,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M790.26,-5746.1C731.38,-5736.34 599.97,-5724.51 534,-5797 470.33,-5866.97 473.3,-6569.99 474.69,-6721.37"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="471.19,-6721.72 474.79,-6731.68 478.19,-6721.65 471.19,-6721.72"/>
-<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n295.9456 kW</text>
+<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n296.5138 kW</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node84" class="node">

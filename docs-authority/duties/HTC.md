@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.19 kg/d. Mass out 3.19 kg/d. Electrical duty 0.0317 kW. In: IA-COMP-01 3.19 kg/d (woody trim). Out: IA-HTC-01 3.19 kg/d (hydrochar slurry).
+1. Basis. Mass in 3.19 kg/d. Mass out 3.19 kg/d. Electrical duty 0.0396 kW. In: IA-COMP-01 3.19 kg/d (woody trim). Out: IA-HTC-01 3.19 kg/d (hydrochar slurry).
 
 2. Size.
 - In 3.19 kg/d, out 3.19 kg/d. No holdup claimed.

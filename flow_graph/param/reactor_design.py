@@ -48,7 +48,9 @@ def design(d, g):
     m = inflow('OIL_PYRO'); Vw = m/850.0*v('rx_pyro_tau_h')/24
     ves = vessel(Vw, 0.5, 850.0, t_min=3.0, CA=1.5, steel=True)     # half full: foaming and char
     Q_kW = m*(v('rx_pyro_cp_kJ_kgK')*(v('rx_pyro_T_C') - 25)/1000 + v('rx_pyro_dH_MJ_kg'))/86.4
-    out['OIL_PYRO'] = dict(T_C=v('rx_pyro_T_C'), tau_h=v('rx_pyro_tau_h'), **ves, Q_process_kW=Q_kW, kW=Q_kW/v('rx_pyro_heater_eff'),
+    from .sizing.heat import insulated_cylinder
+    ins_p, loss_p = insulated_cylinder(v('rx_pyro_T_C'), ves['D_mm'], ves['H_mm']/1000)
+    out['OIL_PYRO'] = dict(T_C=v('rx_pyro_T_C'), tau_h=v('rx_pyro_tau_h'), **ves, Q_process_kW=Q_kW, insulation_mm=ins_p, loss_W=loss_p, kW=Q_kW/v('rx_pyro_heater_eff') + loss_p/1000,
                            material='ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters', relief='vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)')
     # MEOH_SYNTH (A-M-156): cooled fixed-bed tube(s) of Cu/ZnO/Al2O3; catalyst from the CO2-only weight-time yield [CTC2020_CZA] / margin;
     # shell UG-27 [ASME_VIII1_UG27] on SA-106 B [ASME_II_D] + 1.5 mm CA; exotherm 49.5 kJ/mol to the jacket; feed preheat on the bus.
@@ -59,7 +61,9 @@ def design(d, g):
     Pd = 50.0*v('press_design_margin')/10                  # MPa
     t_req = Pd*(OD/2)/(v('meoh_S_MPa')*1.0 + 0.4*Pd) + 1.5   # UG-27 in outside-radius form (Appendix 1-1) + CA
     q_kW = m_me/32.042*1000*v('meoh_dH_kJ_mol')/3.6e6*1000
-    pre_kW = (E_('S74')*14.3 + E_('S73')*0.95)*(250 - 40)/86400/0.7
+    from .sizing.heat import insulated_cylinder
+    ins_m, loss_m = insulated_cylinder(250, 114.3, (L + 0.6))
+    pre_kW = (E_('S74')*14.3 + E_('S73')*0.95)*(250 - 40)/86400/0.7 + loss_m/1000
     out['MEOH_SYNTH'] = dict(T_C=250, P_bar=50.0, design_MPa=Pd, MeOH_kg_h=m_me, cat_kg=cat, V_bed_L=Vb*1000, tubes=ntube, tube='DN50 Sch 40 SA-106 B', L_bed_mm=round(L*1000),
                              t_req_mm=t_req, t_nom_mm=t_nom, t_ok=bool(t_nom*0.875 >= t_req), exotherm_kW=q_kW, preheat_kW=pre_kW,
                              D_mm=114, H_mm=round(L*1000) + 600, wall_mm=t_nom, V_work_L=Vb*1000, V_L=Vb*1000,
@@ -78,7 +82,10 @@ def design(d, g):
             extra = dict(design_MPa=Pd, t_req_mm=t_req)
         else: ves = vessel(Vw, c['fill'], 1000.0, sigma_MPa=5.0, t_min=4.0); extra = {}
         A = math.pi*ves['D_mm']/1000*ves['H_mm']/1000 + math.pi*(ves['D_mm']/1000)**2/2
-        W = 0.5*A*(T - 20) + m*4.18*(T - 20)/86.4
+        if T > 50:
+            from .sizing.heat import insulated_cylinder
+            W = insulated_cylinder(T, ves['D_mm'], ves['H_mm']/1000)[1] + m*4.18*(T - 20)/86.4
+        else: W = 0.5*A*(T - 20) + m*4.18*(T - 20)/86.4
         out[u] = dict(T_C=T, tau_h=tau, **ves, **extra, heat_W=W, mixer=c['mix'], material=c['mat'], kW=round(W/1000 + (0.02 if u != 'HTC' else 0), 4))
     # Catalytic tube reactors (X-MFG-31 batch 3, A-M-157): catalyst from the cited space velocity; bed in DN15/DN25 Sch 40 tube, >= 300 mm;
     # heater = feed sensible (cp 2.5 kJ/(kg K)) + vaporisation [NIST_WEBBOOK] + endotherm, / 0.7; exotherms not credited.
@@ -99,8 +106,11 @@ def design(d, g):
             'FORM': 'iron molybdate, 350 C bed, atmospheric; feed must be diluted to about 10 mol% MeOH and 10 mol% O2 in N2 (FORMOX_REVIEW2021): the graph feeds pure O2 from HDR_O2, a N2 diluent loop is required (X-SAF-02)',
             'MEAM': 'amorphous silica-alumina, 400 C, 20.7 bar (EP0064380, US1875746)'}
     for u in ('ALD', 'FORM', 'MEAM'):
-        Vb = cat[u]/v('rx_cat_bulk_kg_L'); tb = tube_bed(Vb); kw = heat[u]/86.4/0.7
-        r = dict(T_C=v({'ALD': 'rx_ald_T_C', 'FORM': 'rx_form_T_C', 'MEAM': 'rx_meam_T_C'}[u]), cat_kg=cat[u], V_bed_L=Vb, **tb, heat_W=kw*1000,
+        Vb = cat[u]/v('rx_cat_bulk_kg_L'); tb = tube_bed(Vb)
+        from .sizing.heat import insulated_cylinder
+        T_ = v({'ALD': 'rx_ald_T_C', 'FORM': 'rx_form_T_C', 'MEAM': 'rx_meam_T_C'}[u]); ins_t, loss = insulated_cylinder(T_, tb['OD_mm'], (tb['L_bed_mm'] + 300)/1000)
+        kw = heat[u]/86.4/0.7 + loss/1000
+        r = dict(T_C=T_, cat_kg=cat[u], V_bed_L=Vb, **tb, heat_W=kw*1000, insulation_mm=ins_t, loss_W=loss,
                  material='SA-312 TP316L tube in a band heater and mineral wool', basis=note[u], D_mm=round(tb['OD_mm']), H_mm=tb['L_bed_mm'] + 300, wall_mm=tb['t_nom_mm'],
                  V_work_L=Vb, V_L=Vb, kW=round(kw, 4))
         if u == 'MEAM':
@@ -158,7 +168,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 
 - GLASS_DIGEST. {G['X']*100:.1f} % of the cullet dissolves (IA-GLASS-03 less S08G). For {DR.val(d,'rx_glass_d_um'):.0f} um fines the shrinking-sphere recession to that conversion is {G['delta_um']:.2f} um. At the zero-order rate of JMS2017_GLASSFIBRE (2.0e-4 g/(m2 s) at 80 C in 3 M NaOH, order 0.31, corrected to 2 M; glass 2500 kg/m3) that takes {G['t_kin_h']*3600:.0f} s. Residence is 3 x kinetic, floored at {DR.val(d,'rx_glass_tau_min_h')} h for mixing, heat-up and level control. The rate is for glass fibre; soda-lime cullet is checked at the bench (MARAGHECHI2016 reports constant-rate soda-lime dissolution in 1 M NaOH at 20-80 C).
 - DIGESTER. SRT {Dg['srt_d']:.0f} d on the whole wet feed (METCALF5, high-rate mesophilic 15-20 d at 35 C); 80 % fill, gas headspace above.
-- OIL_PYRO. 500 C and 1 h (ANUAR2016: 400-550 C, 30-90 min). Heat = feed x (cp x dT + heat of pyrolysis 1.3 MJ/kg, GAO2010) / heater efficiency 0.7. Half-full retort for foam and char. The graph carried 0 kW for this unit before this issue; the bus takes the {P['kW']:.3f} kW.
+- OIL_PYRO. 500 C and 1 h (ANUAR2016: 400-550 C, 30-90 min). Heat = feed x (cp x dT + heat of pyrolysis 1.3 MJ/kg, GAO2010) / heater efficiency 0.7, plus the insulated shell loss {P['loss_W']:.0f} W at {P['insulation_mm']} mm mineral wool (AQS-THM-003). Half-full retort for foam and char. The graph carried 0 kW for this unit before this issue; the bus takes the {P['kW']:.3f} kW.
 - Walls. Thermoplastic hoop stress from the hydrostatic head with a 3-4 mm practical minimum (DVS2205). Steel UG-16(b) 1.5 mm + 1.5 mm corrosion allowance (ASME_VIII1_UG16).
 
 ## 3. Not designed here
