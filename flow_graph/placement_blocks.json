@@ -629,16 +629,5 @@
    "frame": "plate_world"
   }
  ],
- "overflow": [
-  {
-   "block": [
-    15000.0,
-    6000.0,
-    -6000.0
-   ],
-   "level": "L-1",
-   "need_W_mm": 8660.0,
-   "have_W_mm": 6000
-  }
- ]
+ "overflow": []
 }

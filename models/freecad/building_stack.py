@@ -80,7 +80,7 @@ def _stairs_elev(doc):
                 P.SERVICE_ENTRY_X, P.SERVICE_ENTRY_Y - 200, z=P.Z_L0 + 500)
     # Exterior service door on north wall
     add(doc, "SERVICE_DOOR_N", box_at(
-        P.SERVICE_ENTRY_X + 400, P.PLATE_W - 100, P.Z_L0, 1800, 200, 2400))
+        P.SERVICE_ENTRY_X + 400, P.PLATE_W - 200, P.Z_L0, 1800, 200, 2400))  # Rev B: door leaf inside the wall line, off the apron
     label_plate(doc, "SERVICE_DOOR_N",
                 P.SERVICE_ENTRY_X + 400, P.PLATE_W + 200, z=P.Z_L0 + 1200)
     # STAIR_SERVICE: full height L-2 FFL to L0 + headroom; doors at L-1 / L-2

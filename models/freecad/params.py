@@ -319,7 +319,8 @@ if FAB_Y + FAB_W > PLATE_W:
 # Vertical growth = BASEMENT_LEVELS; one cold-box bay per basement level.
 # Layout relief (AQS-AUD-001 Rev D): 6×6 → 9×6 m using free east strip to
 # plate edge (CRYO_X + 9000 ≤ PLATE_L at M1). Bay grid unchanged.
-CRYO_L, CRYO_W, CRYO_H = 9000, 6000, 4000
+# Rev E (2026-10-16): W 6000 -> 8700 to hold the A-M-214 block (8.66 m) and the 1 h H2 / O2 partition.
+CRYO_L, CRYO_W, CRYO_H = 9000, 8700, 4000
 CRYO_X = CORE_X + CORE_L
 CRYO_Y = CORE_Y
 CRYO_Z = Z_Lm1  # primary (uppermost basement); replicas use basement_z(i)
@@ -441,3 +442,8 @@ D1B_TBD_STUB_W = STUB_W
 D1B_TBD_STUB_H = STUB_H
 # Reagent-tote pitch (reuse polish-bank pitch class)
 D1B_WS_PITCH = PK_PITCH
+
+# GA relocations applied after placement (build_plant.py), world mm, bbox centre in plan. Rev 2026-10-16 (GA_CHECK CAD clash fix):
+# AFTERBURNER sat in the 100-200 mm-gap pyrolysis line (overlapping NaOH_DIGEST, touching PROD_C5_C10), where no 1 h room
+# fits; moved to the nearest free 2 x 2 m L-1 bay (17.4-19.4 m E, 1.7-3.7 m N), about 3 m of NCG duct from the fractionator.
+RELOCATE = {"AFTERBURNER": (18400, 2700)}

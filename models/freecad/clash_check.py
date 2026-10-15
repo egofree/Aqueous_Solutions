@@ -2,15 +2,15 @@
 STAIR_*, ELEV_*, DOCK_APRON_N, SERVICE_ENTRY) against every other Part solid. A clash = common volume > 0.001 m3, excluding slabs,
 horizontal assemblies, groups, labels and the elements' own family. Writes ../../docs-authority/inventory/CAD_CLASH.json.
     freecadcmd clash_check.py"""
-import json, FreeCAD as App
+import json, re, FreeCAD as App
 from pathlib import Path
 here = Path(__file__).resolve().parent
 doc = App.openDocument(str(here / "plant.FCStd"))
-NEW = ("FR_", "STAIR_", "ELEV_", "DOCK_APRON", "SERVICE_ENTRY")
+NEW = ("FR_", "STAIR_", "ELEV_", "DOCK_APRON", "SERVICE_ENTRY", "FB_CRYO_H2_PART", "CRYO_EGRESS")
 SKIPP = ("LOBBY", "CORR_", "TOILET", "WETROOM", "OVERFLOW_APRON", "GROUND_PLANE", "RACK_", "HDR_", "MASSING_", "LED_", "GROW_TRAY", "HABITATION", "FARM", "MFG_SHOP", "WAFER_FAB", "FAB_PREP", "DOCK", "HA_", "SLAB", "LBL", "LABEL", "SIGN", "TXT", "FB_", "ENV_", "PLATE", "CORE", "TERRACE", "RAIL", "ROOF", "ARRAY", "GRID", "LEVEL", "CAMPUS", "SITE")
 objs = [o for o in doc.Objects if hasattr(o, "Shape") and o.TypeId.startswith("Part::") and not o.Shape.isNull() and o.Shape.Volume > 1e3]
 new = [o for o in objs if o.Name.startswith(NEW) or o.Label.startswith(NEW)]
-oth = [o for o in objs if not (o.Name.startswith(NEW) or o.Label.startswith(NEW)) and not any(k in o.Label.upper() for k in SKIPP)]
+oth = [o for o in objs if not (o.Name.startswith(NEW) or o.Label.startswith(NEW)) and not any(k in o.Label.upper() for k in SKIPP) and not re.match(r"^CRYO(_B\d+)?$", o.Label)]  # CRYO = room envelope
 hits = []
 for a in new:
     ba = a.Shape.BoundBox

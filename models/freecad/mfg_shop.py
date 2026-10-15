@@ -48,8 +48,8 @@ def _metal_forming(doc, x, y, z, suffix):
     label_plate(doc, "MET_AHU%s" % suffix, x + 7200, y + 2000, z=z + 1400)
 
     add(doc, "MET_SCRUB%s" % suffix,
-        box_at(x + 8400, y + 2200, z, 900, 800, 1600))
-    label_plate(doc, "MET_SCRUB%s" % suffix, x + 8400, y + 2000, z=z + 1400)
+        box_at(x + 8400, y + 4000, z, 900, 800, 1600))  # Rev B: north of REGEN, clear of STAIR_S2
+    label_plate(doc, "MET_SCRUB%s" % suffix, x + 8400, y + 4800, z=z + 1400)
 
     add(doc, "MET_SCRUB_REGEN%s" % suffix,
         box_at(x + 8400, y + 3200, z, 900, 700, 1200))

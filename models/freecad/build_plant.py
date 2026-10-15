@@ -113,6 +113,17 @@ def build():
     fire_barriers.attach(doc)
     fitout.attach(doc)
     d1b_massing.attach(doc)  # WP-D1b TBD massing (unit_id Features)
+    doc.recompute()
+    for u, (cx, cy) in getattr(P, "RELOCATE", {}).items():
+        src = [o for o in doc.Objects if o.Label == u and hasattr(o, "Shape")]
+        if not src: continue
+        b = src[0].Shape.BoundBox; d = App.Vector(cx - b.Center.x, cy - b.Center.y, 0)
+        for o in doc.Objects:
+            if o.Label in (u, "LBL_" + u, "LBL_%s_L0" % u, "SIGN_NCG_" + u) or (o.TypeId.startswith("Mesh::") and o.Label.startswith(u)):
+                pl = o.Placement; pl.Base = pl.Base + d; o.Placement = pl
+        print("  relocated", u, "by", round(d.x), round(d.y))
+    doc.recompute()
+    fire_barriers._rated_rooms(doc)  # last: rooms are fitted to every placed solid
     stamp_materials.stamp(doc, stamp_materials.load_rows())
     transparency.apply_document(doc)
 

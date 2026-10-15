@@ -17,10 +17,12 @@ def rank(u):
     if c in ('thermal', 'pyro', 'melt', 'genset', 'hcl_synthesis') or 'BURN' in u: return 0
     if any(k in u for k in ('H2', 'O2', 'MEOH', 'OIL', 'FRAC', 'PYRO')): return 2
     return 1
+import sys; sys.path.insert(0, 'models/freecad'); import params as FP
 AISLE = 1000; out = []; grown = []
 for (o, sz, lv), mem in B.items():
     if len(mem) < 2: continue
     mem = sorted(dict.fromkeys(mem), key=lambda u: (rank(u), u)); x = y = 0; row_d = 0; W = sz[1]; L = sz[0]
+    if (o[0], o[1]) == (FP.CRYO_X, FP.CRYO_Y): L, W = FP.CRYO_L, FP.CRYO_W  # CRYO room Rev E (8.7 m) holds the block
     for u in mem:
         p = (N.get(u) or {}).get('params') or {}; z = p.get('size_mm')
         if z and len(z) >= 2 and z[0] <= L and z[1] <= W: a, b = z[0], z[1]
