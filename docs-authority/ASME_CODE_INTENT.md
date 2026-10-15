@@ -127,7 +127,7 @@ Caution: 197 atmospheric units still carry the older head-plus-10 kPa study figu
 | GROW_BED | FARM | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | H2O_ELYZ | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - |
 | H2_DRYER | GAS | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
-| H2_PURIFIER | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
+| H2_PURIFIER | CRYO | 17.8 | 250.0 | 52 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | HABITATION | HAB | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | HAB_GALLEY | HAB | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | HAB_MED | HAB | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |

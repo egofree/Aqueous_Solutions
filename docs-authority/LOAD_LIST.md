@@ -30,7 +30,7 @@ Loads: graph sum 292.5 kW; with calculated values substituted 269.9 kW.
 | EW_5 | load | 0.000 | 0.440 | AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum) |
 | EW_4 | load | 0.000 | 0.425 | AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum) |
 | BMED_UPW_POLISH | load | 0.038 | 0.054 | S25 369.21 kg/d feed; brackish RO 3.0 kWh/m3 upper (S24 Greenlee 2009) + EDI 0.5 kWh/m3 upper (S25 Alvarado and Chen 2014) |
-| H2_PURIFIER | load | 0.050 | 0.050 | TSA regeneration average (study) |
+| H2_PURIFIER | load | 0.044 | 0.050 | TSA regeneration average (study) |
 | WS_PEROX | load | 0.000 | 0.031 | AQS-DSN-OX-001 cell 12.31 A at 2.5 V |
 | PV_ARRAY | generation | 302.433 |  | study share; held for unit task 02 |
 | EXT_HALL | load | 115.256 |  | study share; held for unit task 02 |

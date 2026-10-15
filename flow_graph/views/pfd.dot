@@ -436,8 +436,8 @@ digraph G {
   "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n119.082851 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n13.810366 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n78.987901 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n1300.025839 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n1300.025839 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n1299.999034 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n1299.999034 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU_COND_CONDENSABLE" -> "FLUE_KO" [label="S70\\n0.0521 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -467,7 +467,7 @@ digraph G {
   "EVAP_ACID" -> "LEACH_CSTR_1" [label="IA-ACID-01\\n439.5222 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EVAP_BASE" -> "GLASS_DIGEST" [label="IA-BASE-01\\n25.2964 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "GEO_ORC" [label="HL-Q4-REJ\\n10.1627 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n302.4327 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n302.4263 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "GREY_TREAT" [label="IA-ZNBR-BD\\n8.4872 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "VCD_TRAIN" [label="IA-NUT-01\\n13.930007 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -750,7 +750,7 @@ digraph G {
   "IODIDE" -> "HABITATION" [label="IA-I-DOSE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "COMPOST_TOILET" [label="IA-NPK-0\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "COMPOST" -> "WORMS" [label="IA-NPK-1\\n0.4 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "CURTAIL" -> "PV_ARRAY" [label="IA-E-SUN\\n166.0067 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
+  "CURTAIL" -> "PV_ARRAY" [label="IA-E-SUN\\n166.0032 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "CURTAIL" -> "FUEL_CELL" [label="IA-E-H2\\n4.6 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "CURTAIL" -> "EW_1" [label="IA-E-RECT\\n0.0 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "CURTAIL" -> "HABITATION" [label="IA-E-HABIN\\n3.0 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
@@ -1038,8 +1038,8 @@ digraph G {
   "EXPANDER" -> "HEAT_SINK" [label="SQ-EXPANDER\\n0.614 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "SOL_ARK_60K" -> "SIC_FURNACE" [label="SF-SIC_FURNACE\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SIC_FURNACE" -> "HEAT_SINK" [label="SQ-SIC_FURNACE\\n0.3 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
-  "SOL_ARK_60K" -> "H2_PURIFIER" [label="SF-H2_PURIFIER\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "H2_PURIFIER" -> "HEAT_SINK" [label="SQ-H2_PURIFIER\\n0.05 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2_PURIFIER" [label="SF-H2_PURIFIER\\n0.0436 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "H2_PURIFIER" -> "HEAT_SINK" [label="SQ-H2_PURIFIER\\n0.0436 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "BMED_ACID" -> "EVAP_ACID" [label="IA-EVAP_ACID-FEED\\n1304.5179 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EVAP_ACID" -> "BMED_ACID" [label="IA-EVAP_ACID-COND\\n864.9665 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "EVAP_ACID" [label="SF-EVAP_ACID\\n1.497 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];

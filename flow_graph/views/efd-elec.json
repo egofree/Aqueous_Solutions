@@ -2486,7 +2486,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 302.4327,
+        "value": 302.4263,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -2494,13 +2494,13 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8608,
+        "count": 8606,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.433 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.426 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4304,
+        "nameplate_kw": 4303,
         "area_m2": 37898,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
@@ -2812,7 +2812,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1300.0258,
+              "value": 1299.999,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -2836,7 +2836,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1308.513 kg/d, out 1308.513 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1308.486 kg/d, out 1308.486 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -2863,7 +2863,7 @@
           "H2_m3_d": 11.017,
           "purge_m3_h": 45.9,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2842.4
+          "electrode_area_m2": 2842.3
         }
       }
     },
@@ -6564,10 +6564,10 @@
       "notes": "ISO 14687 Grade D for FUEL_CELL: deoxo catalyst, chloride guard bed, TSA polish.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.05,
+        "value": 0.0436,
         "unit": "kW",
         "status": "study",
-        "note": "TSA regeneration heater average (study)"
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 2.8 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
@@ -6580,16 +6580,58 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.318,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.114,
+          "in_breathing_Nm3_h": 2.916,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
+          "vent_bore_req_mm": 7.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
-        }
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "H2_kg_d": 5.02372333716816,
+          "Nm3_h": 2.3272514649323566,
+          "O2_mol_d": 2.4919262585159525,
+          "water_kg_d": 0.09481285518358719,
+          "HCl_kg_d": 9.085812331175014e-05,
+          "guard_kg": 0.08177231098057511,
+          "sieve_kg": 0.948128551835872,
+          "beds": {
+            "deoxo": {
+              "V_L": 0.4654502929864713,
+              "tube": "DN50 Sch 40 316L",
+              "L_mm": 300,
+              "count": 2
+            },
+            "guard": {
+              "V_L": 0.10221538872571888,
+              "tube": "DN25 Sch 40 316L",
+              "L_mm": 300,
+              "count": 2
+            },
+            "TSA": {
+              "V_L": 1.3544693597655315,
+              "tube": "DN50 Sch 40 316L",
+              "L_mm": 626,
+              "count": 2
+            }
+          },
+          "regen_W": 2.764695134875804,
+          "loss_W": 79.2574249482279,
+          "insulation_mm": 38,
+          "kW": 0.0436,
+          "D_mm": 60,
+          "H_mm": 926,
+          "T_C": 250.0,
+          "wall_mm": 3.91
+        },
+        "size_mm": [
+          600,
+          400,
+          1326
+        ]
       }
     },
     {
@@ -7327,7 +7369,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 302.4327,
+        "value": 302.4263,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -10032,7 +10074,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.05,
+        "value": 0.0436,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."

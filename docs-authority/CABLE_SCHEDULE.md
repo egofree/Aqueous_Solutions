@@ -61,7 +61,7 @@ Plant demand 310.4 kW at 480 V, power factor 0.9 assumed: 415 A. EW process bars
 | CB-5 | section main to CB-5 transformer LV | 400 kcmil | 3 | 1000.0 | 1005 | 15.0 | 460 | 0.20 | 2 | yes |
 | CB-6 | inverter AC output to section bus | 3 AWG | 1 | 72.2 | 100 | 25.0 | 460 | 0.55 | 3 | yes |
 | CB-6 | section main to CB-6 transformer LV | 400 kcmil | 3 | 1000.0 | 1005 | 15.0 | 460 | 0.20 | 2 | yes |
-| CLARIFIER | transfer pump IA-CLAR-BIO to BIOFILTER feeder | 14 AWG | 1 | 2.4 | 15 | 23.4 | 460 | 0.22 | 3 | yes |
+| CLARIFIER | transfer pump IA-CLAR-BIO to BIOFILTER feeder | 14 AWG | 1 | 2.4 | 15 | 24.0 | 460 | 0.22 | 3 | yes |
 | COLD_MILL | Two-high cold rolling mill: main drive feeder | 14 AWG | 1 | 7.6 | 15 | 3.0 | 460 | 0.09 | 3 | yes |
 | CRYO_AR | cryocooler compressor feeder | 14 AWG | 1 | 1.1 | 15 | 4.3 | 460 | 0.02 | 3 | yes |
 | CRYO_ASU | air compressor (cold box feed) feeder | 8 AWG | 1 | 34.0 | 50 | 6.1 | 460 | 0.20 | 3 | yes |
@@ -97,8 +97,8 @@ Plant demand 310.4 kW at 480 V, power factor 0.9 assumed: 415 A. EW process bars
 | EXT_HALL | air-source heat pump compressor feeder | 6 AWG | 1 | 40.0 | 65 | 104.6 | 460 | 2.54 | 3 | yes |
 | EXT_HALL | heat pump condenser fan feeder | 14 AWG | 1 | 3.0 | 15 | 104.6 | 460 | 1.22 | 3 | yes |
 | EXT_HALL | lighting branch circuit 277 V | 6 AWG | 1 | 16.0 | 65 | 120.0 | 277 | 2.23 | 3 | yes |
-| FISH | transfer pump IA-FISH-OUT to CLARIFIER feeder | 14 AWG | 1 | 2.4 | 15 | 20.1 | 460 | 0.19 | 3 | yes |
-| FISH_SUMP | transfer pump IA-SUMP-FISH to FISH feeder | 14 AWG | 1 | 2.4 | 15 | 17.5 | 460 | 0.16 | 3 | yes |
+| FISH | transfer pump IA-FISH-OUT to CLARIFIER feeder | 14 AWG | 1 | 2.4 | 15 | 20.7 | 460 | 0.19 | 3 | yes |
+| FISH_SUMP | transfer pump IA-SUMP-FISH to FISH feeder | 14 AWG | 1 | 2.4 | 15 | 18.1 | 460 | 0.17 | 3 | yes |
 | FUEL_CELL | cathode air blower feeder | 14 AWG | 1 | 2.4 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | GAS_ATOMIZER | Close-coupled gas atomizer with Ar recirculation: cooling-water pump feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
 | GAS_ATOMIZER | atomizer gas recirculation blower feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
@@ -109,13 +109,13 @@ Plant demand 310.4 kW at 480 V, power factor 0.9 assumed: 415 A. EW process bars
 | HOPPER | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 4.9 | 460 | 0.05 | 3 | yes |
 | HYDRO_SET | pump-turbine motor-generator feeder | 14 AWG | 1 | 4.8 | 15 | 15.0 | 460 | 0.28 | 3 | yes |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 14.7 | 460 | 0.17 | 3 | yes |
-| LITHO_STUB | main drive feeder | 14 AWG | 1 | 2.4 | 15 | 7.7 | 460 | 0.07 | 3 | yes |
+| LITHO_STUB | main drive feeder | 14 AWG | 1 | 2.4 | 15 | 8.9 | 460 | 0.08 | 3 | yes |
 | LP-BACKUP_GEN | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 15.0 | 460 | 0.31 | 2 | yes |
 | LP-CRYO | panel feeder 460 V | 6 AWG | 1 | 61.6 | 65 | 46.6 | 460 | 1.74 | 2 | yes |
 | LP-DOCK | panel feeder 460 V | 14 AWG | 1 | 12.8 | 15 | 15.6 | 460 | 0.77 | 2 | yes |
 | LP-ELEC_PV | panel feeder 460 V | 4/0 AWG | 2 | 438.4 | 460 | 31.6 | 460 | 0.52 | 2 | yes |
-| LP-FARM | panel feeder 208 V | 10 AWG | 1 | 10.2 | 30 | 37.3 | 208 | 1.26 | 2 | yes |
-| LP-FARM | panel feeder 460 V | 14 AWG | 1 | 7.8 | 15 | 37.3 | 460 | 1.13 | 2 | yes |
+| LP-FARM | panel feeder 208 V | 10 AWG | 1 | 10.2 | 30 | 38.5 | 208 | 1.30 | 2 | yes |
+| LP-FARM | panel feeder 460 V | 14 AWG | 1 | 7.8 | 15 | 38.5 | 460 | 1.16 | 2 | yes |
 | LP-FUEL_CELL | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 10.6 | 208 | 0.27 | 2 | yes |
 | LP-GEO | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 22.4 | 208 | 0.58 | 2 | yes |
 | LP-GEO | panel feeder 460 V | 14 AWG | 1 | 6.0 | 15 | 22.4 | 460 | 0.52 | 2 | yes |
@@ -141,8 +141,8 @@ Plant demand 310.4 kW at 480 V, power factor 0.9 assumed: 415 A. EW process bars
 | POLISH_BANK | screw conveyor IA-POL-CAKE to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 10.2 | 460 | 0.06 | 3 | yes |
 | ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 30.2 | 460 | 0.25 | 3 | yes |
 | SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 10.2 | 460 | 0.09 | 3 | yes |
-| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 9.9 | 460 | 0.04 | 3 | yes |
-| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 9.7 | 460 | 0.11 | 3 | yes |
-| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 9.7 | 460 | 0.11 | 3 | yes |
+| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 11.1 | 460 | 0.05 | 3 | yes |
+| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 9.1 | 460 | 0.11 | 3 | yes |
+| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 9.1 | 460 | 0.11 | 3 | yes |
 | WIRE_DRAW | Bull-block wire drawer: main drive feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
 | ZNBR2 | electrolyte pump (anolyte, catholyte) per stack string feeder | 14 AWG | 1 | 1.1 | 15 | 3.0 | 460 | 0.01 | 3 | yes |

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 5.029 kg/d. Mass out 5.029 kg/d. Electrical duty 0.0500 kW. In: S49 5.029 kg/d (H2 to purifier). Out: S49P 5.029 kg/d (H2 fuel).
+1. Basis. Mass in 5.029 kg/d. Mass out 5.029 kg/d. Electrical duty 0.0436 kW. In: S49 5.029 kg/d (H2 to purifier). Out: S49P 5.029 kg/d (H2 fuel).
 
 2. Size.
 - Deoxo bed, chloride guard, TSA pair for 5.03 kg/d H2 at 1.5 bar a to ISO 14687 Grade D. Study skid 600 × 400 × 1200 mm (assumption).

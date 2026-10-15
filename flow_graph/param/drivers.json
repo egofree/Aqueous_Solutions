@@ -1622,5 +1622,68 @@
   "register": "A-M-167 (receiver banks)",
   "needs_verification": true,
   "verification_test": "rack layout check against the CRYO bay"
+ },
+ "h2p_o2_ppmv": {
+  "value": 1000.0,
+  "units": "ppm v O2 in the purifier feed",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "O2 analyser on S49 in operation"
+ },
+ "h2p_deoxo_ghsv_h": {
+  "value": 5000.0,
+  "units": "1/h over Pd/Al2O3 deoxo",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "outlet O2 below 5 ppm at the design rate on the first charge"
+ },
+ "h2p_hcl_ppmv": {
+  "value": 1.0,
+  "units": "ppm v HCl in the feed (EW cathode gas trace)",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "HCl sampling of S49 (Draeger tube or IC)"
+ },
+ "h2p_guard_cap": {
+  "value": 0.1,
+  "units": "kg HCl per kg promoted alumina",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "breakthrough test on a sample of the guard charge"
+ },
+ "h2p_guard_days": {
+  "value": 90.0,
+  "units": "d between guard change-outs",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2p_sieve_work_cap": {
+  "value": 0.1,
+  "units": "kg water per kg 4A/13X sieve, working capacity at the cycle",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "breakthrough test on the sieve charge with a dew-point analyser"
+ },
+ "h2p_cycle_h": {
+  "value": 8.0,
+  "units": "h adsorption half-cycle",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2p_bed_margin": {
+  "value": 3.0,
+  "units": "bed mass margin over the cycle load (mass-transfer zone, ageing)",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2p_regen_T_C": {
+  "value": 250.0,
+  "units": "C TSA regeneration temperature",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
  }
 }

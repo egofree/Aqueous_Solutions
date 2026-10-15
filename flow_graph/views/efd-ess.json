@@ -218,7 +218,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 302.4327,
+        "value": 302.4263,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -226,13 +226,13 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8608,
+        "count": 8606,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.433 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.426 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4304,
+        "nameplate_kw": 4303,
         "area_m2": 37898,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
@@ -437,7 +437,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1300.0258,
+              "value": 1299.999,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -461,7 +461,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1308.513 kg/d, out 1308.513 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1308.486 kg/d, out 1308.486 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -488,7 +488,7 @@
           "H2_m3_d": 11.017,
           "purge_m3_h": 45.9,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2842.4
+          "electrode_area_m2": 2842.3
         }
       }
     }

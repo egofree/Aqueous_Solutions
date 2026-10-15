@@ -2748,5 +2748,25 @@
     "verification": "H2 36 tubes (6.2 t steel), O2 16 + 2 crew-reserve tubes (3.1 t)",
     "replace_when": "first-article pressure-cycle test (fatigue, hydrogen-assisted fatigue) and rack fit in the CRYO bay",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-168",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "H2_PURIFIER bed inputs",
+    "statement": "Deoxo Pd/Al2O3 at GHSV 5000 1/h on 1000 ppm v O2; chloride guard promoted alumina at 0.10 kg/kg for 1 ppm v HCl, 90 d change-out; TSA 4A/13X working capacity 0.10 kg/kg, 8 h half-cycle, margin 3, regenerated at 250 C; every bed duplicated",
+    "verification": "deoxo 0.47 L, guard 0.10 L, TSA 1.35 L per bed; load 0.05 -> 0.044 kW",
+    "replace_when": "bed breakthrough tests with O2 and dew-point analysers",
+    "doc": "AQS-PAR-003"
   }
 ]
