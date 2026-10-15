@@ -32,7 +32,7 @@ Units by layer: mass in kg/d (kg/h for air streams sized in m³/h), thermal in k
 | Decision | Value | Basis |
 |---|---|---|
 | Design day | daily average, plant running normal, dry weather, one hydro cycle per day | Rev L basis |
-| Feed | 150 kg/d wet WEEE; ELECTRICAL assay | ELECTRICAL |
+| Feed | 150 kg/d wet reference feed; ELECTRICAL mixed WEEE row as the reference point. Feed class is not fixed: AQS-ASSAY-001 Rev C envelope | ELECTRICAL, FEED_ASSAY |
 | Au/Ag leach | 0.90 | ELECTRICAL 0.85–0.95 mid |
 | Leach slurry to float/sink | 20 wt % solids | Rev L |
 | Float cake moisture | 7.5 kg/d (18.5 %) | AQS-DUTY-008 dryer basis governs |
@@ -397,7 +397,7 @@ Sums of edge rates, not net throughput. Air streams are included in the mass sum
 | IA-POL-02 ★ | POLISH_BANK → CONTINUOUS_RECYCLE | raffinate | mass | 3,754 | kg/d | raffinate 3983.2 less brine bleed 229.4 to the AEM bank (level control) |
 | IA-REC-01 ★ | CONTINUOUS_RECYCLE → LEACH_CSTR_1 | regenerated leach liquor | mass | 3,978 | kg/d | recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis) |
 | IA-WET-FLOAT-01 ★ | FLOAT_SINK → LEACH_CSTR_1 | leach liquor return | mass | 343.10 | kg/d | slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 |
-| S19 ★ | BAGHOUSE → LEACH_CSTR_1 | WEEE fines | mass | 0.750 | kg/d | baghouse catch 0.5% of shredded feed |
+| S19 ★ | BAGHOUSE → LEACH_CSTR_1 | shredded feed fines | mass | 0.750 | kg/d | baghouse catch 0.5% of shredded feed |
 | S28 ★ | VCD_TRAIN → LEACH_CSTR_1 | VCD brine | mass | 17.89 | kg/d | VCD brine 10% of feed |
 | S68 ★ | CRYO_AHU → LEACH_CSTR_1 | AHU coil condensate (carries text says flue condensate: flag | mass | 173.67 | kg/d | CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW |
 | S72 ★ | MET_SCRUB → LEACH_CSTR_1 | metal fines in aqueous scrub liquor | mass | 2.437 | kg/d | fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids |

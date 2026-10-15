@@ -199,7 +199,7 @@ Same plant. Different feed.
 - Bucket wheel / strip: high fines, high moisture, high soil. Looks like **landfill bulk**. Dryer and digest run hard. EW string loafs. Aux still 9 kW.
 - TBM: you can drive the head into a 1990s e-waste trench or a construction cell. Assays swing toward **TBM / WEEE cell** or toward bulk soil. The electrical plant does not change; RECT-EW current setpoint does.
 
-Do not size the rectifier for bucket-wheel dirt and then feed it PCBs. Do the opposite: size RECT-EW for mixed WEEE (180 A string) and turn current down on tailings days.
+Do not size the rectifier for the leanest feed. Size RECT-EW at the top of the plateable-metal envelope in AQS-ASSAY-001 Rev C and turn current down for lean feeds. The cell currents are the duty values; the 180 A string figure is superseded by the EW_1 node, 2105 A (AQS-PWR-001 Rev C).
 
 ## What the 100 A / 480 V service actually holds
 
