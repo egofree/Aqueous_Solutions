@@ -93,3 +93,12 @@ Each class gets its own bund at 110 % of its largest tank (assumption): oxidizin
 ## Dilution water, X-SAF-10
 
 IA-H2O2-SRC carried 3.0 kg/d, the full product mass, against 0.176 kg/d of oxygen the cell uses. It is now 0.176 kg/d. The balance, 2.824 kg/d, is IA-PEROX-H2O from ROOF_TANK; S40 overflow drops by the same amount. Deionising at the point of use is held (assumption that tower water quality suffices is not made).
+
+## Storage holdups and bunds, X-SAF-09
+
+| Reagent | Use | Holdup | Net | Tank | Bund |
+| --- | --- | --- | --- | --- | --- |
+| 2 M nitric (WS_NITRIC) | S34 1.2456 kg/d at 1.064 kg/L = 1.17 L/d | 14 d (assumption) | 16.4 L | 25 L | 30 L |
+| 5 wt% peroxide (WS_PEROX) | S32 3.0 kg/d at 1.02 kg/L = 2.94 L/d | 1 d (product_spec) | 2.9 L | 5 L | 6 L |
+
+HNO3 holds no separate stock: its absorber sump is part of the unit and feeds WS_NITRIC continuously. The two reagents sit in separate bunds, away from organics and reducing agents. Bunds are 110 % of the single tank they serve.

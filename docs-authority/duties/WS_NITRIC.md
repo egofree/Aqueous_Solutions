@@ -5,6 +5,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 1. Basis. Mass in 1.25 kg/d. Mass out 1.25 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-01 0.6456 kg/d (HCl product); IA-HNO3 0.6000 kg/d (nitric acid). Out: S34 1.25 kg/d (HNO3).
 
 2. Size.
+- Storage (X-SAF-09): 14 d holdup at 1.17 L/d = 16.4 L net; tank 25 L nominal; own bund 30 L (≥110 %). Holdup days are an assumption: weak 2 M acid is stable; covers a two-week absorber outage.
 - In 1.25 kg/d, out 1.25 kg/d. No holdup claimed.
 
 3. Material. PVC-U tank and piping, PVDF pumps and valves, FKM or PTFE gaskets. 2 M HNO₃ at no more than 40 °C (graph product_spec). 304L excluded (M3). AQS-DSN-OX-001 section 1.

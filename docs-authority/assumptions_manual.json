@@ -310,5 +310,31 @@
    "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
   ],
   "id": "A-M-024"
+ },
+ {
+  "value": "14",
+  "units": "d",
+  "where": "WS_NITRIC storage",
+  "basis": "Covers a two-week HNO3 absorber outage; 2 M acid is stable",
+  "sensitivity": "Tank volume linear",
+  "replaced_by": "Owner operating policy and absorber availability",
+  "task": "X-SAF-09",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ],
+  "id": "A-M-025"
+ },
+ {
+  "value": "1",
+  "units": "d",
+  "where": "WS_PEROX storage",
+  "basis": "Unstabilised peroxide; product_spec holdup_max_d",
+  "sensitivity": "Tank volume linear; longer holdup needs a decomposition check",
+  "replaced_by": "Measured decomposition rate of the cell product",
+  "task": "X-SAF-09",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ],
+  "id": "A-M-026"
  }
 ]

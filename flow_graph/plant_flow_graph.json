@@ -3494,7 +3494,18 @@
           "max_stored_M": 2.0,
           "T_max_C": 40,
           "basis": "S34 on the graph: 2 M at 1.064 kg/L. wt% derived: 2.0 mol/L x 63.01 g/mol / 1064 g/L = 11.8 %. T_max assumption. AQS-DSN-OX-001."
-        }
+        },
+        "storage": {
+          "holdup_d": 14,
+          "use_L_d": 1.171,
+          "net_L": 16.4,
+          "tank_nominal_L": 25,
+          "bund_L": 30,
+          "bund_rule": "110 % of the tank, AQS-DSN-OX-001",
+          "status": "study",
+          "basis": "weak 2 M acid is stable; covers a two-week absorber outage"
+        },
+        "V_m3": 0.025
       },
       "continuous_kw": null
     },
@@ -3537,7 +3548,18 @@
           "status": "study",
           "basis": "S32 3.0 kg/d at 5 wt% (product_spec assumption); 2 e- O2 reduction; faradaic efficiency 0.80, current density 0.050 A/cm2, cell voltage 2.5 V are assumptions. AQS-DSN-OX-001 section 2.1.",
           "anode": "held: no lead or iridium in an electronic-grade product without a membrane; divided cell with cation membrane assumed"
-        }
+        },
+        "storage": {
+          "holdup_d": 1,
+          "use_L_d": 2.941,
+          "net_L": 2.9,
+          "tank_nominal_L": 5,
+          "bund_L": 6,
+          "bund_rule": "110 % of the tank, AQS-DSN-OX-001",
+          "status": "study",
+          "basis": "unstabilised peroxide decomposes; product_spec holdup_max_d 1.0"
+        },
+        "V_m3": 0.005
       },
       "continuous_kw": null
     },
