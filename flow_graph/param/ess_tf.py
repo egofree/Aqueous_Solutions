@@ -63,7 +63,11 @@ def tf(g, ps=None):
     if 'IA-DR-VAP' not in E:
         from flow_graph.param.o2_close import _edge
         g['edges'].append(_edge('IA-DR-VAP', 'DUAL_ROOT', 'CRYO_AHU', 'G', ['mass'], 'dual-root transpiration', 0, 'kg/d', 'FARM', 'CRYO', {'H2O': 1.0})); E = {e['stream_id']: e for e in g['edges']}
-    from flow_graph.param.o2_close import BED_M2, CO2_M2
+    from flow_graph.param.o2_close import CO2_M2
+    # GROW_BED area from need (owner Q-008, A-M-151): inedible fresh biomass must meet the residue lines (IA-RES-01, IA-COMP-01, browse, straw).
+    PB = N['GROW_BED']['params']; lines = ('IA-RES-01', 'IA-COMP-01', 'IA-GOAT-TRIM', 'IA-STRAW')
+    claim0 = PB.setdefault('residue_lines_base_kg_d', round(sum(E[k]['rate']['value'] for k in lines), 6))
+    ined_m2 = CO2_M2/1000*12.011/44.01/BVAD_TOM_C*(1 - BVAD_TOM_HI)/(1 - 0.90); BED_M2 = round(claim0/ined_m2, 1); PB['area_m2'] = BED_M2
     P = N['DUAL_ROOT']['params']; P.pop('bed_h2o_base', None)
     t_m2 = BVAD_TOM_T*CO2_M2/BVAD_TOM_CO2; bed_et = t_m2*BED_M2; b0 = bed_et       # BVAD tomato water/CO2 ratio at the bed's light-limited CO2
     put('IA-BED-VAP', bed_et, f'{BED_M2:.0f} m2 x {t_m2:.3f} kg/m2/d: BVAD2022 tomato {BVAD_TOM_T} kg/m2/d per {BVAD_TOM_CO2} g CO2, scaled to {CO2_M2:.1f} g CO2/m2/d')
@@ -106,9 +110,9 @@ def tf(g, ps=None):
     co2f = CO2_M2*BED_M2/1000; dm = co2f*12.011/44.01/BVAD_TOM_C; ed = dm*BVAD_TOM_HI/(1 - 0.94); ined = dm*(1 - BVAD_TOM_HI)/(1 - 0.90)
     put('S14X', ed - E['S14']['rate']['value'], f'edible {ed:.2f} kg/d fresh (DM {dm:.3f} kg/d from {co2f:.3f} kg CO2, HI {BVAD_TOM_HI:.0%}, BVAD2022) less crew food S14')
     r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, f'frass closes the larvae bin on S14X ({r:+.3f})')
-    lines = ('IA-RES-01', 'IA-COMP-01', 'IA-GOAT-TRIM', 'IA-STRAW'); claim = sum(E[k]['rate']['value'] for k in lines)
+    claim = sum(E[k]['rate']['value'] for k in lines)
     N['GROW_BED']['params']['crop_carbon'] = {'co2_fixed_kg_d': round(co2f, 3), 'dm_kg_d': round(dm, 3), 'edible_fresh_kg_d': round(ed, 3), 'inedible_fresh_kg_d': round(ined, 3),
-        'inedible_lines_claimed_kg_d': round(claim, 3), 'gap_kg_d': round(claim - ined, 3), 'basis': 'BVAD2022 tomato; A-M-141; Q-008'}
+        'inedible_lines_claimed_kg_d': round(claim, 3), 'gap_kg_d': round(claim - ined, 3), 'basis': 'BVAD2022 tomato; A-M-141; area from need A-M-151 (Q-008 closed)'}
     # VEG_BED crops (A-M-142): harvest is the study need; area, CO2 uptake, O2, transpiration and trim per BVAD2022 Tables 4-90/4-91 per m2.
     # The crops had no carbon source on the graph; CO2 now comes from HDR_CO2 (taken off the methanol feed in o2_close), O2 joins CRYO_O2.
     for sid, a, b, ph, what, comp in (('IA-VEG-CO2', 'HDR_CO2', 'VEG_BED', 'G', 'CO2 uptake, vegetable crops', {'CO2': 1.0}), ('IA-VEG-O2', 'VEG_BED', 'CRYO_O2', 'G', 'photosynthetic O2, vegetable crops', {'O2': 0.99, 'Ar': 0.01}),
@@ -144,9 +148,9 @@ def tf(g, ps=None):
     # pre-existing pump/aux study load kept as the base.
     from flow_graph.param.o2_close import DLI, LED
     wm2 = DLI*1e6/LED/86400
-    for u in ['VEG_BED'] + [x[0] for x in FARM_UNITS]:
-        A_ = N[u]['params']['crop_basis']['area_m2'] if u != 'VEG_BED' else tot['A']; ck = N[u]['continuous_kw']
-        aux = N[u]['params'].setdefault('aux_kw_base', ck['value']); kw = aux + A_*wm2/1000
+    for u in ['GROW_BED', 'VEG_BED'] + [x[0] for x in FARM_UNITS]:
+        A_ = BED_M2 if u == 'GROW_BED' else (N[u]['params']['crop_basis']['area_m2'] if u != 'VEG_BED' else tot['A']); ck = N[u]['continuous_kw']
+        aux = N[u]['params'].setdefault('aux_kw_base', round(ck['value'] - (28*wm2/1000 if u == 'GROW_BED' else 0), 4)); kw = aux + A_*wm2/1000
         ck.update(value=round(kw, 4), note=f'LED {A_:.2f} m2 x {wm2:.1f} W/m2 (DLI {DLI}, {LED} umol/J) + aux {aux} kW (A-M-144)')
         for k in (f'SF-{u}', f'SQ-{u}'):
             if k in E: E[k]['rate']['value'] = round(kw, 4)

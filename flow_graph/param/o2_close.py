@@ -150,8 +150,8 @@ def tf(g):
     put('IA-CO2-RET', 0.0, 'no CO2 recycle into the cold box'); put('IA-ASU-CO2', v('IA-NOX-CO2'), 'CO2 out = CO2 in'); put('IA-ASU-O2', xs, 'O2 out = O2 in (combustion excess)')
     L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_co + ab_org, xs=xs)
     # --- CO2: light-limited bed, rest to methanol
-    bed = BED_M2*CO2_M2/1000; veg = sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-CO2') and E[k]['from_unit_id'] == 'HDR_CO2' and E[k]['to_unit_id'] not in ('MEOH_SYNTH',)); others = sum(v(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
-    put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {BED_M2} m2 x {CO2_M2:.1f} g/m2/d')
+    bm2 = N['GROW_BED']['params'].get('area_m2', BED_M2); bed = bm2*CO2_M2/1000; veg = sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-CO2') and E[k]['from_unit_id'] == 'HDR_CO2' and E[k]['to_unit_id'] not in ('MEOH_SYNTH',)); others = sum(v(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
+    put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {bm2} m2 x {CO2_M2:.1f} g/m2/d')
     put('IA-HCO2-MEOH', v('S85') + others - bed - veg, 'header CO2 the bed cannot fix'); put('S73', v('S73') + resid('CRYO_CO2'), 'cold-box CO2 to methanol by difference')
     co2m = v('S73') + v('IA-HCO2-MEOH')
     put('S74', co2m*3*2.016/44.01, 'CO2 + 3 H2'); put('S75', co2m*(1 + 3*2.016/44.01 - 18.015/44.01), '-> CH3OH (mass closed)'); put('IA-MEOH-H2O', co2m*18.015/44.01, '+ H2O')

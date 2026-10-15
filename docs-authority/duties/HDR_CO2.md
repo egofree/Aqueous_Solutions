@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 4.901 kg/d. Mass out 4.901 kg/d. Electrical duty 0.0000 kW. In: S85 0 kg/d (CO2 product after FLUE_KO); S90 4.021 kg/d (metabolic CO2 (desorbed from the HAB CO2 sorbent bed)); IA-COMP-CO2 0.19 kg/d (compost CO2); IA-COMP-FIX 0 kg/d (compost CO2 trim); 2 more. Out: S89 0.8484 kg/d (CO2 enrichment dose (FARM AHU supply)); IA-HCO2-MEOH 2.05 kg/d (CO2 not taken by the bed); IA-VEG-CO2 0.09324 kg/d (CO2 uptake, vegetable crops); IA-FRUIT_GUTTER-CO2 0.1118 kg/d (CO2 uptake); 2 more.
+1. Basis. Mass in 5.651 kg/d. Mass out 5.651 kg/d. Electrical duty 0.0000 kW. In: S85 0.7499 kg/d (CO2 product after FLUE_KO); S90 4.021 kg/d (metabolic CO2 (desorbed from the HAB CO2 sorbent bed)); IA-COMP-CO2 0.19 kg/d (compost CO2); IA-COMP-FIX 0 kg/d (compost CO2 trim); 2 more. Out: S89 3.648 kg/d (CO2 enrichment dose (FARM AHU supply)); IA-HCO2-MEOH 0 kg/d (CO2 not taken by the bed); IA-VEG-CO2 0.09324 kg/d (CO2 uptake, vegetable crops); IA-FRUIT_GUTTER-CO2 0.1118 kg/d (CO2 uptake); 2 more.
 
 2. Size.
 - Duct at 10 m/s. Gas 0.5927 m³/h. Bore 5 mm, DN15. Not a packed tower.

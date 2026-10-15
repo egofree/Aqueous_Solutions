@@ -107,6 +107,7 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 6. X-BLD-04 closed 2026-10-15 (seed Rev K): AQS-BLD-010 0 overlaps / 0 pairs; AQS-BLD-011 10/10 incompatible pairs; AQS-BLD-012 9/9 NEC 110.26 rows and 139/139 rows with a 914 mm face; L1 farm re-rowed to 914 mm paths (`flow_graph/farm_rerow.py`, A-M-102). Next: X-PAR-07 roof-only PV, X-STD-01, X-MFG-30..32, X-GOV-20 (owner decisions 2026-10-15).
 7. X-PAR-07 closed 2026-10-15 (conditioned hall, owner decision): roof_close in the solver (156 x 84 m, 26 x 14 bays, 13,104 m²; PV 1336 kWp roof-only, roof capacity 1341 kWp), gate test_roof_carries_pv, EXT_HALL node with SF-EXT_HALL 37.26 kW and duty sheet, IA-PV-01 carries it, ground field removed, seed Rev L (`flow_graph/place_roof.py`). Follow-ups: bin-hour load calculation; FreeCAD extension massing; hall egress under X-STD-01.
 23. 2026-10-15: X-INV-04 closed (pipe inventory AQS-INV-003 from the iso quantities: 6220 m in 24 families, 1054 stock lengths of 6.096 m, A-M-124); X-INV-05 closed (other building blocks AQS-INV-004: valves, instruments, electronics, protection, bearings, seals, supports, fasteners, fabricated part sets; 53 families, A-M-125); X-INV-02 closed (motor family designs AQS-INV-005: one design basis and in-house manufacturing plan per family, output-equation sizing PYRHONEN2014 / HENDERSHOT2010, IEC 60072-1 frames, IE3 targets; A-M-126). Per-family tasks X-INV-04-PFnn and X-INV-05-OFnn generated; X-INV-02B first articles and type tests opened.
+55. 2026-10-15 Owner Q-008 (A-M-151): GROW_BED 28 -> 120.4 m2 to meet 12.73 kg/d residue lines. Bed CO2 0.85 -> 3.65 kg/d, O2 0.62 -> 2.65, LED load 2.25 -> 8.74 kW, ET 64.8 -> 279 kg/d (AHU condensate 463), S14X 1.22 -> 14.6 kg/d to larvae; methanol 27.3 -> 25.2 kg/d, electrolyser H2 11.1 -> 10.7 kg/d; PV 4035 -> 4010 kWp, ZNBR2 4050 kWh.
 54. 2026-10-15 X-RED-07 done (A-M-150): HEAT_SINK 146.5 kW rejection in 3 x 73.2 kW modules; GEO_HP 2 x 100 %.
 53. 2026-10-15 X-RED-05 and X-RED-09 done (A-M-149): VCD_TRAIN 2 x 100 %, feed 0.187 -> 0.383 m3/d, load 0.27 kW now on the bus; COMPOST_TOILET 2 x 100 %; roof-tank inventory is the diverse water backup.
 52. 2026-10-15 X-RED-08 done (A-M-148): HAB_GALLEY dry reserve 80 d (BVAD2022 tomato tM) x 2.81 kg/d crew food at 6 % DM = 13.5 kg DM; ration placeholder noted.
@@ -872,7 +873,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] MET-HX8-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MET-HX8-13, X-BLD-05, X-ASM-01.
   - [ ] MET-HX8-15 Test and commission. Done when: test procedure and acceptance record. Depends: MET-HX8-14, X-COM-01.
 - **MET-LEACH_CSTR_1** (vessel, sector WET)
-  - [x] MET-LEACH_CSTR_1-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LEACH_CSTR_1.md` §1; graph duty 6432.810 kg/d in = out.
+  - [x] MET-LEACH_CSTR_1-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LEACH_CSTR_1.md` §1; graph duty 6443.846 kg/d in = out.
   - [x] MET-LEACH_CSTR_1-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: MET-LEACH_CSTR_1-01. Evidence: `docs-authority/sizing/LEACH_CSTR_1.md` (AQS-DUTY-050).
   - [ ] MET-LEACH_CSTR_1-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: MET-LEACH_CSTR_1-01, MET-LEACH_CSTR_1-02.
   - [x] MET-LEACH_CSTR_1-04 Nozzle schedule. Done when: docs-authority/nozzles/LEACH_CSTR_1.csv, one row per edge. Depends: MET-LEACH_CSTR_1-03. Evidence: `docs-authority/nozzles/LEACH_CSTR_1.csv` (bores not calculated).
@@ -1361,7 +1362,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] GAS-HDR_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_H2-13, X-BLD-05, X-ASM-01.
   - [ ] GAS-HDR_H2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-HDR_H2-14, X-COM-01.
 - **GAS-HDR_O2** (header, sector GAS)
-  - [x] GAS-HDR_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_O2.md` §1; graph duty 90.387 kg/d in = out.
+  - [x] GAS-HDR_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_O2.md` §1; graph duty 89.369 kg/d in = out.
   - [ ] GAS-HDR_O2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: GAS-HDR_O2-01. Status: partial: graph envelope only.
   - [ ] GAS-HDR_O2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: GAS-HDR_O2-01, GAS-HDR_O2-02.
   - [x] GAS-HDR_O2-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_O2.csv, one row per edge. Depends: GAS-HDR_O2-03. Evidence: `docs-authority/nozzles/HDR_O2.csv` (bores not calculated).
@@ -1412,7 +1413,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
 ### CRYO. Cryogenic air separation, gas storage, expander
 
 - **CRYO-CRYO_AHU** (ahu, sector CRYO)
-  - [x] CRYO-CRYO_AHU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_AHU.md` §1; graph duty 327.779 kg/d in = out.
+  - [x] CRYO-CRYO_AHU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_AHU.md` §1; graph duty 541.781 kg/d in = out.
   - [ ] CRYO-CRYO_AHU-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_AHU-01. Status: partial: graph envelope only.
   - [ ] CRYO-CRYO_AHU-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_AHU-01, CRYO-CRYO_AHU-02.
   - [x] CRYO-CRYO_AHU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_AHU.csv, one row per edge. Depends: CRYO-CRYO_AHU-03. Evidence: `docs-authority/nozzles/CRYO_AHU.csv` (bores not calculated).
@@ -1508,7 +1509,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] CRYO-CRYO_DED_COOL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_DED_COOL-13, X-BLD-05, X-ASM-01.
   - [ ] CRYO-CRYO_DED_COOL-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_DED_COOL-14, X-COM-01.
 - **CRYO-CRYO_H2** (cold_box, sector CRYO)
-  - [x] CRYO-CRYO_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_H2.md` §1; graph duty 11.125 kg/d in = out.
+  - [x] CRYO-CRYO_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_H2.md` §1; graph duty 10.740 kg/d in = out.
   - [ ] CRYO-CRYO_H2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_H2-01. Status: partial: graph envelope only.
   - [ ] CRYO-CRYO_H2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_H2-01, CRYO-CRYO_H2-02.
   - [x] CRYO-CRYO_H2-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_H2.csv, one row per edge. Depends: CRYO-CRYO_H2-03. Evidence: `docs-authority/nozzles/CRYO_H2.csv` (bores not calculated).
@@ -1604,7 +1605,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] CRYO-CRYO_NE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_NE-13, X-BLD-05, X-ASM-01.
   - [ ] CRYO-CRYO_NE-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_NE-14, X-COM-01.
 - **CRYO-CRYO_O2** (cold_box, sector CRYO)
-  - [x] CRYO-CRYO_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_O2.md` §1; graph duty 90.387 kg/d in = out.
+  - [x] CRYO-CRYO_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_O2.md` §1; graph duty 89.369 kg/d in = out.
   - [ ] CRYO-CRYO_O2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_O2-01. Status: partial: graph envelope only.
   - [ ] CRYO-CRYO_O2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_O2-01, CRYO-CRYO_O2-02.
   - [x] CRYO-CRYO_O2-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_O2.csv, one row per edge. Depends: CRYO-CRYO_O2-03. Evidence: `docs-authority/nozzles/CRYO_O2.csv` (bores not calculated).
@@ -2250,7 +2251,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] BIO-CLARIFIER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: BIO-CLARIFIER-13, X-BLD-05, X-ASM-01.
   - [ ] BIO-CLARIFIER-15 Test and commission. Done when: test procedure and acceptance record. Depends: BIO-CLARIFIER-14, X-COM-01.
 - **BIO-COMPOST** (farm, sector FARM)
-  - [x] BIO-COMPOST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/COMPOST.md` §1; graph duty 131.860 kg/d in = out.
+  - [x] BIO-COMPOST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/COMPOST.md` §1; graph duty 145.951 kg/d in = out.
   - [ ] BIO-COMPOST-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: BIO-COMPOST-01. Status: partial: graph envelope only.
   - [ ] BIO-COMPOST-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: BIO-COMPOST-01, BIO-COMPOST-02.
   - [x] BIO-COMPOST-04 Nozzle schedule. Done when: docs-authority/nozzles/COMPOST.csv, one row per edge. Depends: BIO-COMPOST-03. Evidence: `docs-authority/nozzles/COMPOST.csv` (bores not calculated).
@@ -2490,7 +2491,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] BIO-MEOH_FERM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: BIO-MEOH_FERM-13, X-BLD-05, X-ASM-01.
   - [ ] BIO-MEOH_FERM-15 Test and commission. Done when: test procedure and acceptance record. Depends: BIO-MEOH_FERM-14, X-COM-01.
 - **BIO-MEOH_SYNTH** (reactor, sector MEOH)
-  - [x] BIO-MEOH_SYNTH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_SYNTH.md` §1; graph duty 50.458 kg/d in = out.
+  - [x] BIO-MEOH_SYNTH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_SYNTH.md` §1; graph duty 47.274 kg/d in = out.
   - [ ] BIO-MEOH_SYNTH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: BIO-MEOH_SYNTH-01. Status: partial: graph envelope only.
   - [ ] BIO-MEOH_SYNTH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: BIO-MEOH_SYNTH-01, BIO-MEOH_SYNTH-02.
   - [x] BIO-MEOH_SYNTH-04 Nozzle schedule. Done when: docs-authority/nozzles/MEOH_SYNTH.csv, one row per edge. Depends: BIO-MEOH_SYNTH-03. Evidence: `docs-authority/nozzles/MEOH_SYNTH.csv` (bores not calculated).
@@ -2506,7 +2507,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] BIO-MEOH_SYNTH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: BIO-MEOH_SYNTH-13, X-BLD-05, X-ASM-01.
   - [ ] BIO-MEOH_SYNTH-15 Test and commission. Done when: test procedure and acceptance record. Depends: BIO-MEOH_SYNTH-14, X-COM-01.
 - **BIO-MEOH_TANK** (tank, sector MEOH)
-  - [x] BIO-MEOH_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_TANK.md` §1; graph duty 33.295 kg/d in = out.
+  - [x] BIO-MEOH_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_TANK.md` §1; graph duty 31.256 kg/d in = out.
   - [ ] BIO-MEOH_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: BIO-MEOH_TANK-01. Status: partial: graph envelope only.
   - [ ] BIO-MEOH_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: BIO-MEOH_TANK-01, BIO-MEOH_TANK-02.
   - [x] BIO-MEOH_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/MEOH_TANK.csv, one row per edge. Depends: BIO-MEOH_TANK-03. Evidence: `docs-authority/nozzles/MEOH_TANK.csv` (bores not calculated).
@@ -2669,7 +2670,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] FARM-BEES-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BEES-13, X-BLD-05, X-ASM-01.
   - [ ] FARM-BEES-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BEES-14, X-COM-01.
 - **FARM-BSFL** (farm, sector FARM)
-  - [x] FARM-BSFL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BSFL.md` §1; graph duty 2.644 kg/d in = out.
+  - [x] FARM-BSFL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BSFL.md` §1; graph duty 15.971 kg/d in = out.
   - [ ] FARM-BSFL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BSFL-01. Status: partial: graph envelope only.
   - [ ] FARM-BSFL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BSFL-01, FARM-BSFL-02.
   - [x] FARM-BSFL-04 Nozzle schedule. Done when: docs-authority/nozzles/BSFL.csv, one row per edge. Depends: FARM-BSFL-03. Evidence: `docs-authority/nozzles/BSFL.csv` (bores not calculated).
@@ -2973,7 +2974,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] FARM-GOATS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GOATS-13, X-BLD-05, X-ASM-01.
   - [ ] FARM-GOATS-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GOATS-14, X-COM-01.
 - **FARM-GROW_BED** (farm, sector FARM)
-  - [x] FARM-GROW_BED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROW_BED.md` §1; graph duty 19146.065 kg/d in = out.
+  - [x] FARM-GROW_BED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROW_BED.md` §1; graph duty 19362.867 kg/d in = out.
   - [ ] FARM-GROW_BED-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROW_BED-01. Status: partial: graph envelope only.
   - [ ] FARM-GROW_BED-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROW_BED-01, FARM-GROW_BED-02.
   - [x] FARM-GROW_BED-04 Nozzle schedule. Done when: docs-authority/nozzles/GROW_BED.csv, one row per edge. Depends: FARM-GROW_BED-03. Evidence: `docs-authority/nozzles/GROW_BED.csv` (bores not calculated).
@@ -3053,7 +3054,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] FARM-NFT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-NFT-13, X-BLD-05, X-ASM-01.
   - [ ] FARM-NFT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-NFT-14, X-COM-01.
 - **FARM-NUTRIENT_DOSE** (dose, sector NUT)
-  - [x] FARM-NUTRIENT_DOSE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NUTRIENT_DOSE.md` §1; graph duty 260.786 kg/d in = out.
+  - [x] FARM-NUTRIENT_DOSE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NUTRIENT_DOSE.md` §1; graph duty 274.877 kg/d in = out.
   - [ ] FARM-NUTRIENT_DOSE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-NUTRIENT_DOSE-01. Status: partial: graph envelope only.
   - [ ] FARM-NUTRIENT_DOSE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-NUTRIENT_DOSE-01, FARM-NUTRIENT_DOSE-02.
   - [x] FARM-NUTRIENT_DOSE-04 Nozzle schedule. Done when: docs-authority/nozzles/NUTRIENT_DOSE.csv, one row per edge. Depends: FARM-NUTRIENT_DOSE-03. Evidence: `docs-authority/nozzles/NUTRIENT_DOSE.csv` (bores not calculated).
@@ -3264,7 +3265,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] HAB-HAB_WASH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HAB_WASH-13, X-BLD-05, X-ASM-01.
   - [ ] HAB-HAB_WASH-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-HAB_WASH-14, X-COM-01.
 - **HAB-HDR_CO2** (header, sector HAB)
-  - [x] HAB-HDR_CO2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_CO2.md` §1; graph duty 4.901 kg/d in = out.
+  - [x] HAB-HDR_CO2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_CO2.md` §1; graph duty 5.651 kg/d in = out.
   - [ ] HAB-HDR_CO2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-HDR_CO2-01. Status: partial: graph envelope only.
   - [ ] HAB-HDR_CO2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-HDR_CO2-01, HAB-HDR_CO2-02.
   - [x] HAB-HDR_CO2-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_CO2.csv, one row per edge. Depends: HAB-HDR_CO2-03. Evidence: `docs-authority/nozzles/HDR_CO2.csv` (bores not calculated).
@@ -3379,7 +3380,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] WTR-BLACK_PASTEUR-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BLACK_PASTEUR-13, X-BLD-05, X-ASM-01.
   - [ ] WTR-BLACK_PASTEUR-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BLACK_PASTEUR-14, X-COM-01.
 - **WTR-BMED_UPW_POLISH** (skid, sector WTR)
-  - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; graph duty 358.178 kg/d in = out.
+  - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; graph duty 369.214 kg/d in = out.
   - [ ] WTR-BMED_UPW_POLISH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BMED_UPW_POLISH-01. Status: partial: graph envelope only.
   - [ ] WTR-BMED_UPW_POLISH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BMED_UPW_POLISH-01, WTR-BMED_UPW_POLISH-02.
   - [x] WTR-BMED_UPW_POLISH-04 Nozzle schedule. Done when: docs-authority/nozzles/BMED_UPW_POLISH.csv, one row per edge. Depends: WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/nozzles/BMED_UPW_POLISH.csv` (bores not calculated).
@@ -3443,7 +3444,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] WTR-HDR_UPW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-HDR_UPW-13, X-BLD-05, X-ASM-01.
   - [ ] WTR-HDR_UPW-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-HDR_UPW-14, X-COM-01.
 - **WTR-REMIN** (tank, sector WTR)
-  - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; graph duty 224.833 kg/d in = out.
+  - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; graph duty 235.868 kg/d in = out.
   - [ ] WTR-REMIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-REMIN-01. Status: partial: graph envelope only.
   - [ ] WTR-REMIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-REMIN-01, WTR-REMIN-02.
   - [x] WTR-REMIN-04 Nozzle schedule. Done when: docs-authority/nozzles/REMIN.csv, one row per edge. Depends: WTR-REMIN-03. Evidence: `docs-authority/nozzles/REMIN.csv` (bores not calculated).
@@ -3459,7 +3460,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01.
   - [ ] WTR-REMIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-REMIN-14, X-COM-01.
 - **WTR-ROOF_TANK** (tank, sector WTR)
-  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; graph duty 708.579 kg/d in = out.
+  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; graph duty 932.471 kg/d in = out.
   - [ ] WTR-ROOF_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-ROOF_TANK-01. Status: partial: graph envelope only.
   - [ ] WTR-ROOF_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-ROOF_TANK-01, WTR-ROOF_TANK-02.
   - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (bores not calculated).
@@ -3475,7 +3476,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] WTR-ROOF_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-ROOF_TANK-13, X-BLD-05, X-ASM-01.
   - [ ] WTR-ROOF_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-ROOF_TANK-14, X-COM-01.
 - **WTR-VCD_TRAIN** (vessel, sector WTR)
-  - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; graph duty 382.769 kg/d in = out.
+  - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; graph duty 393.805 kg/d in = out.
   - [ ] WTR-VCD_TRAIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-VCD_TRAIN-01. Status: partial: graph envelope only.
   - [ ] WTR-VCD_TRAIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-VCD_TRAIN-01, WTR-VCD_TRAIN-02.
   - [x] WTR-VCD_TRAIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VCD_TRAIN.csv, one row per edge. Depends: WTR-VCD_TRAIN-03. Evidence: `docs-authority/nozzles/VCD_TRAIN.csv` (bores not calculated).
@@ -3560,7 +3561,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
 - **ELEC-LOAD_AGG** (boundary, sector ELEC)
   - [x] ELEC-LOAD_AGG-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LOAD_AGG.md` §1; graph duty 0.000 kg/d in = out.
 - **ELEC-MEOH_COND** (separator, sector ELEC)
-  - [x] ELEC-MEOH_COND-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_COND.md` §1; graph duty 19.814 kg/d in = out.
+  - [x] ELEC-MEOH_COND-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_COND.md` §1; graph duty 18.668 kg/d in = out.
   - [ ] ELEC-MEOH_COND-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-MEOH_COND-01. Status: partial: graph envelope only.
   - [ ] ELEC-MEOH_COND-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-MEOH_COND-01, ELEC-MEOH_COND-02.
   - [x] ELEC-MEOH_COND-04 Nozzle schedule. Done when: docs-authority/nozzles/MEOH_COND.csv, one row per edge. Depends: ELEC-MEOH_COND-03. Evidence: `docs-authority/nozzles/MEOH_COND.csv` (bores not calculated).
@@ -3640,7 +3641,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01.
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01.
 - **ELEC-ZNBR2** (flow_battery, sector ZNBR2)
-  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; graph duty 1227.267 kg/d in = out.
+  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; graph duty 1219.969 kg/d in = out.
   - [ ] ELEC-ZNBR2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2-01. Status: partial: graph envelope only.
   - [ ] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02.
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (bores not calculated).
@@ -3656,7 +3657,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
   - [ ] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01.
   - [ ] ELEC-ZNBR2-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2-14, X-COM-01.
 - **ELEC-ZNBR2_BR2_REGEN** (scrubber, sector ELEC)
-  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; graph duty 1218.780 kg/d in = out.
+  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; graph duty 1211.482 kg/d in = out.
   - [ ] ELEC-ZNBR2_BR2_REGEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2_BR2_REGEN-01. Status: partial: graph envelope only.
   - [ ] ELEC-ZNBR2_BR2_REGEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2_BR2_REGEN-01, ELEC-ZNBR2_BR2_REGEN-02.
   - [x] ELEC-ZNBR2_BR2_REGEN-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2_BR2_REGEN.csv, one row per edge. Depends: ELEC-ZNBR2_BR2_REGEN-03. Evidence: `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` (bores not calculated).
@@ -3904,7 +3905,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
 - **DOCK-BOUNDARY_EXPORT** (boundary, sector DOCK)
   - [x] DOCK-BOUNDARY_EXPORT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BOUNDARY_EXPORT.md` §1; graph duty 0.000 kg/d in = out.
 - **DOCK-NORTH_DOCK** (dock, sector DOCK)
-  - [x] DOCK-NORTH_DOCK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NORTH_DOCK.md` §1; graph duty 87.887 kg/d in = out.
+  - [x] DOCK-NORTH_DOCK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NORTH_DOCK.md` §1; graph duty 84.831 kg/d in = out.
   - [ ] DOCK-NORTH_DOCK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: DOCK-NORTH_DOCK-01. Status: partial: graph envelope only.
   - [ ] DOCK-NORTH_DOCK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DOCK-NORTH_DOCK-01, DOCK-NORTH_DOCK-02.
   - [x] DOCK-NORTH_DOCK-04 Nozzle schedule. Done when: docs-authority/nozzles/NORTH_DOCK.csv, one row per edge. Depends: DOCK-NORTH_DOCK-03. Evidence: `docs-authority/nozzles/NORTH_DOCK.csv` (bores not calculated).

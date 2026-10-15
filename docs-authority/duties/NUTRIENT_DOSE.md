@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 260.8 kg/d. Mass out 260.8 kg/d. Electrical duty 0.1000 kW. In: S30 0 kg/d (digest liquor / nutrients); IA-LEACH-BD 109.6 kg/d (bleed salts to nutrient); IA-DIG-SOL 0.5228 kg/d (shop scrap and spent solvent); IA-EM-DIG 0 kg/d (EM effluent); 9 more. Out: S07 2.5 kg/d (nutrients); IA-NUT-01 13.93 kg/d (digest surplus); IA-NUT-LEACH 114.2 kg/d (nutrient surplus); IA-NUT-BED 129.7 kg/d (nitrate and bleed salts); 1 more.
+1. Basis. Mass in 274.9 kg/d. Mass out 274.9 kg/d. Electrical duty 0.1000 kW. In: S30 0 kg/d (digest liquor / nutrients); IA-LEACH-BD 109.6 kg/d (bleed salts to nutrient); IA-DIG-SOL 0.5228 kg/d (shop scrap and spent solvent); IA-EM-DIG 0 kg/d (EM effluent); 9 more. Out: S07 2.5 kg/d (nutrients); IA-NUT-01 13.93 kg/d (digest surplus); IA-NUT-LEACH 128.3 kg/d (nutrient surplus); IA-NUT-BED 129.7 kg/d (nitrate and bleed salts); 1 more.
 
 2. Size.
 - In 273.6 kg/d, out 273.6 kg/d. No holdup claimed.

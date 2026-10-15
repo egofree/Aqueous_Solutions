@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.915e+04 kg/d. Mass out 1.915e+04 kg/d. Electrical duty 2.2500 kW. In: S04 0 kg/d (CO2); S07 2.5 kg/d (nutrients); S88 0 kg/d (N2 make-up); S89 0.8484 kg/d (CO2 enrichment dose (FARM AHU supply)); 11 more. Out: S11 0.8 kg/d (organics); S13 3.799 kg/d (condensate); S14 2.807 kg/d (food); S14X 1.231 kg/d (food waste to larvae); 19 more.
+1. Basis. Mass in 1.936e+04 kg/d. Mass out 1.936e+04 kg/d. Electrical duty 8.7430 kW. In: S04 0 kg/d (CO2); S07 2.5 kg/d (nutrients); S88 0 kg/d (N2 make-up); S89 3.648 kg/d (CO2 enrichment dose (FARM AHU supply)); 11 more. Out: S11 0.8 kg/d (organics); S13 3.799 kg/d (condensate); S14 2.807 kg/d (food); S14X 14.56 kg/d (food waste to larvae); 19 more.
 
 2. Size.
 - Circulation 19100.9 kg/d. Two-minute holdup 0.0265 m³. A 20-day volume at this rate is not a tank.
