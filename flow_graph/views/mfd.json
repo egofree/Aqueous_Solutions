@@ -122,7 +122,7 @@
             }
           ]
         },
-        "duty": "In 7.853 kg/d, out 7.853 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
+        "duty": "In 8.752 kg/d, out 8.752 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -179,7 +179,7 @@
             }
           ]
         },
-        "duty": "In 119.023 kg/d, out 119.023 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
+        "duty": "In 119.083 kg/d, out 119.083 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -872,18 +872,18 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
+        "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
         "relief_mm": 3.3,
         "relief_basis": {
-          "case": "blocked outlet at full inflow 14.369 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
+          "case": "blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
           "P1_kPa_abs": 24301.3,
           "T_K": 313.15,
           "M_kg_kmol": 31.999,
           "k": 1.4,
           "Z": 0.97,
-          "W_kg_h": 14.3695,
+          "W_kg_h": 14.372,
           "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
           "A_req_mm2": 0.07,
           "bore_req_mm": 0.3,
@@ -1008,7 +1008,7 @@
             }
           ]
         },
-        "duty": "In 279.287 kg/d, out 279.287 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
+        "duty": "In 279.347 kg/d, out 279.347 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
@@ -1692,7 +1692,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
+        "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -1703,7 +1703,7 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0008,
+          "pump_out_m3_h": 0.0009,
           "out_breathing_Nm3_h": 0.0,
           "in_breathing_Nm3_h": 0.001,
           "vent_dP_Pa": 500,
@@ -2582,7 +2582,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 461.769 kg/d, out 461.769 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "duty": "In 461.829 kg/d, out 461.829 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -5937,10 +5937,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 119.02293,
+        "value": 119.082851,
         "unit": "kg/d",
         "status": "study",
-        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
+        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM excess O2 (AQS-PAR-005)."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -6536,7 +6536,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 89.368947,
+        "value": 89.428868,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."

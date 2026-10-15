@@ -322,7 +322,7 @@
 <title>CRYO_O2&#45;&gt;HDR_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M885.76,-471.69C906.58,-413.63 971.8,-231.8 996.77,-162.18"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1000.07,-163.35 1000.15,-152.76 993.48,-160.99 1000.07,-163.35"/>
-<text text-anchor="middle" x="896.76" y="-310.54" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n89.368947 kg/d</text>
+<text text-anchor="middle" x="896.76" y="-310.54" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n89.428868 kg/d</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node29" class="node">
@@ -1039,7 +1039,7 @@
 <title>AFTERBURNER_FLUE&#45;&gt;FLUE_KO</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1135.16,-336.7C1105.54,-306.17 1045.88,-244.67 1012.11,-209.86"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1014.39,-207.19 1004.91,-202.45 1009.37,-212.06 1014.39,-207.19"/>
-<text text-anchor="middle" x="1029.14" y="-266.88" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S67\n119.02293 kg/d</text>
+<text text-anchor="middle" x="1026.64" y="-266.88" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S67\n119.082851 kg/d</text>
 </g>
 <!-- BMED_ACID -->
 <g id="node62" class="node">

@@ -433,7 +433,7 @@ digraph G {
   "H2_DRYER" -> "CRYO_H2" [label="S64\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ALK_SCRUBBER" -> "ACID_POLISH_SCRUB" [label="S65\\n37509.8546 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ACID_POLISH_SCRUB" -> "CRU" [label="S66\\n27.372033 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n119.02293 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n119.082851 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n13.810366 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n78.987901 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n1275.235499 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -452,7 +452,7 @@ digraph G {
   "MEOH_FC" -> "Q4_BUS" [label="S80\\n0.3689 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
   "MEOH_FC" -> "MEOH_COND" [label="S81\\n1.65491 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
   "MEOH_FC" -> "CRYO_CO2" [label="S82\\n6.875 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
-  "CRYO_O2" -> "HDR_O2" [label="S83\\n89.368947 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CRYO_O2" -> "HDR_O2" [label="S83\\n89.428868 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_N2" -> "HDR_N2" [label="S84\\n193.576601 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_CO2" -> "HDR_CO2" [label="S85\\n0.749899 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "RELIEF_CRYO" [label="S86\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -474,7 +474,7 @@ digraph G {
   "BMED_UPW_POLISH" -> "REMIN" [label="IA-UPW-REMIN\\n235.868229 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "LEACH_CSTR_1" [label="IA-UPW-REJ\\n6.045005 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "HABITATION" [label="IA-Q4-LIFE\\n3.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "AFTERBURNER" -> "AFTERBURNER_FLUE" [label="IA-AB-FLUE\\n7.85293 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "AFTERBURNER" -> "AFTERBURNER_FLUE" [label="IA-AB-FLUE\\n8.75214 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LEACH_CSTR_1" -> "ZNBR2" [label="IA-ZNBR-MU\\n8.4872 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "MFG_SHOP" [label="IA-EW-MET-1\\n59.869999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "MFG_SHOP" [label="IA-EW-MET-2\\n59.889999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -486,8 +486,8 @@ digraph G {
   "EW_8" -> "MFG_SHOP" [label="IA-EW-MET-8\\n5.05 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_9" -> "MFG_SHOP" [label="IA-EW-MET-9\\n61.341099 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLISH_BANK" -> "MFG_SHOP" [label="IA-POL-CAKE\\n217.369993 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HDR_N2" -> "AFTERBURNER_FLUE" [label="IA-AB-AIR\\n111.17 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "FLUE_KO" -> "NOX_SCRUB" [label="IA-FLUE-EXH\\n265.476564 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_N2" -> "AFTERBURNER_FLUE" [label="IA-AB-AIR\\n110.330712 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FLUE_KO" -> "NOX_SCRUB" [label="IA-FLUE-EXH\\n265.536485 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLASS_DIGEST" -> "LEACH_CSTR_1" [label="IA-DIG-LIQ\\n25.2964 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLASS_MILL" -> "BAGHOUSE" [label="IA-MILL-LOSS\\n6.82 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MFG_SHOP" -> "HABITATION" [label="IA-MFG-OUT\\n596.862802 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -554,7 +554,7 @@ digraph G {
   "NOX_SCRUB" -> "ROOF_TANK" [label="IA-NOX-H2O\\n224.775308 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NOX_SCRUB" -> "NUTRIENT_DOSE" [label="IA-NOX-N\\n20.047016 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NOX_SCRUB" -> "CRYO_ASU" [label="IA-NOX-CO2\\n21.626763 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NOX_SCRUB" -> "CRYO_ASU" [label="IA-NOX-N2\\n193.670154 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NOX_SCRUB" -> "CRYO_ASU" [label="IA-NOX-N2\\n193.730075 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-SPENT\\n66.502511 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_N2" -> "BACKUP_GEN" [label="IA-GEN-AIR\\n0.006137 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ROOF_TANK" -> "HABITATION" [label="IA-NOX-HAB\\n207.279999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -563,7 +563,7 @@ digraph G {
   "CRYO_N2" -> "NORTH_DOCK" [label="IA-N2-VENT\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HOPPER" -> "LEACH_CSTR_1" [label="IA-HOP-01\\n530.28594 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_ASU" -> "CRYO_N2" [label="IA-ASU-N2\\n193.576601 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "CRYO_ASU" -> "CRYO_O2" [label="IA-ASU-O2\\n0.093553 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CRYO_ASU" -> "CRYO_O2" [label="IA-ASU-O2\\n0.153474 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_ASU" -> "CRYO_CO2" [label="IA-ASU-CO2\\n21.626763 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_ASU" -> "CRYO_AR" [label="IA-ASU-AR\\n5.299999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "H2_DRYER" -> "CRYO_ASU" [label="IA-H2-AIR\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -821,7 +821,7 @@ digraph G {
   "LIGNO_PRE" -> "DIGESTER" [label="IA-IL-SPENT\\n0.232829 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "GLYOXAL" [label="IA-GLX-O2\\n0.13891336907681956 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLYOXAL" -> "ROOF_TANK" [label="IA-GLX-H2O\\n0.078209 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HDR_O2" -> "FORM" [label="IA-FORM-O2\\n0.059917608139317145 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_O2" -> "FORM" [label="IA-FORM-O2\\n0.119843 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEAM" -> "ROOF_TANK" [label="IA-MEAM-H2O\\n0.02249 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEAM" -> "WS_AMMONIA" [label="IA-NH3-RET\\n0.008739 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ACETOX" -> "WS_SOLV" [label="IA-AC-EX\\n0.001628 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -1084,12 +1084,12 @@ digraph G {
   "H2O_ELYZ" -> "HEAT_SINK" [label="SQ-H2O_ELYZ\\n6.9756 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "HDR_O2" -> "BACKUP_GEN" [label="IA-GEN-O2\\n0.207942 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "AFTERBURNER" [label="IA-AB-O2\\n0.821142 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HDR_O2" -> "PROD_O2" [label="IA-O2-PROD\\n43.433398 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_O2" -> "PROD_O2" [label="IA-O2-PROD\\n43.433394 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_CO2" -> "MEOH_SYNTH" [label="IA-HCO2-MEOH\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEOH_TANK" -> "PROD_MEOH" [label="IA-MEOH-PROD\\n25.237076 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HCL_BURNER" -> "LEACH_CSTR_1" [label="IA-HCL-SYN\\n71.45326 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HCL_BURNER" -> "HEAT_SINK" [label="IA-E-HCLB\\n2.093825 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
-  "PROD_O2" -> "NORTH_DOCK" [label="IA-O2-SHIP\\n43.433398 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_O2" -> "NORTH_DOCK" [label="IA-O2-SHIP\\n43.433394 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_MEOH" -> "NORTH_DOCK" [label="IA-MEOH-SHIP\\n25.237076 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n79.771878 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "LEACH_CSTR_1" [label="IA-EW1-CL2\\n74.867979 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -1140,4 +1140,6 @@ digraph G {
   "NFIX_BED" -> "CRYO_AHU" [label="IA-NFIX_BED-VAP\\n8.636956 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_AHU" [label="SF-CRYO_AHU\\n4.4402 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "CRYO_AHU" -> "HEAT_SINK" [label="SQ-CRYO_AHU\\n17.5834 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
+  "HDR_N2" -> "FORM" [label="IA-FORM-N2\\n0.839288 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FORM" -> "AFTERBURNER" [label="IA-FORM-TAIL\\n0.89921 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

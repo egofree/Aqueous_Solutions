@@ -132,7 +132,7 @@
             }
           ]
         },
-        "duty": "In 7.853 kg/d, out 7.853 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
+        "duty": "In 8.752 kg/d, out 8.752 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -189,7 +189,7 @@
             }
           ]
         },
-        "duty": "In 119.023 kg/d, out 119.023 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
+        "duty": "In 119.083 kg/d, out 119.083 kg/d, 0.000 kW. Sheet docs-authority/duties/AFTERBURNER_FLUE.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -1101,18 +1101,18 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
+        "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
         "relief_mm": 3.3,
         "relief_basis": {
-          "case": "blocked outlet at full inflow 14.369 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
+          "case": "blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
           "P1_kPa_abs": 24301.3,
           "T_K": 313.15,
           "M_kg_kmol": 31.999,
           "k": 1.4,
           "Z": 0.97,
-          "W_kg_h": 14.3695,
+          "W_kg_h": 14.372,
           "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
           "A_req_mm2": 0.07,
           "bore_req_mm": 0.3,
@@ -2109,7 +2109,7 @@
             }
           ]
         },
-        "duty": "In 279.287 kg/d, out 279.287 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
+        "duty": "In 279.347 kg/d, out 279.347 kg/d, 0.000 kW. Sheet docs-authority/duties/FLUE_KO.md.",
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
@@ -2953,7 +2953,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
+        "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_O2.md.",
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
@@ -2964,7 +2964,7 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0008,
+          "pump_out_m3_h": 0.0009,
           "out_breathing_Nm3_h": 0.0,
           "in_breathing_Nm3_h": 0.001,
           "vent_dP_Pa": 500,
@@ -4056,7 +4056,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (H2 genset exhaust 10.4 kg/h: DN100 packed column 0.6 m + sump + demister)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 461.769 kg/d, out 461.769 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "duty": "In 461.829 kg/d, out 461.829 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -7304,7 +7304,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 1796.231 kg/d, out 1796.231 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "duty": "In 1796.291 kg/d, out 1796.291 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7827,7 +7827,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
+        "duty": "In 1.079 kg/d, out 1.079 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7838,7 +7838,7 @@
           "V_tk_m3": 0.113,
           "pump_in_m3_h": 0.0002,
           "pump_out_m3_h": 0.0002,
-          "out_breathing_Nm3_h": 0.045,
+          "out_breathing_Nm3_h": 0.046,
           "in_breathing_Nm3_h": 1.416,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.4,
@@ -7870,7 +7870,10 @@
           321,
           1100
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "dilution_base": {
+          "IA-AB-AIR": 111.17
+        }
       }
     },
     {
@@ -16700,10 +16703,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 119.02293,
+        "value": 119.082851,
         "unit": "kg/d",
         "status": "study",
-        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
+        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM excess O2 (AQS-PAR-005)."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -17370,7 +17373,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 89.368947,
+        "value": 89.428868,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -18106,10 +18109,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.85293,
+        "value": 8.75214,
         "unit": "kg/d",
         "status": "study",
-        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
+        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM tail (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18539,10 +18542,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 111.17,
+        "value": 110.330712,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-12 TF: dilution air less the N2 routed through FORM (X-SAF-11) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18568,10 +18571,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 265.476564,
+        "value": 265.536485,
         "unit": "kg/d",
         "status": "study",
-        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into H2O + excess O2 (AQS-PAR-005)."
+        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: FORM excess O2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20821,7 +20824,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 193.670154,
+        "value": 193.730075,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: N2 replaced by O2; excess O2 rides to the cold box (AQS-PAR-005)."
@@ -20833,8 +20836,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 0.9995,
-        "O2": 0.0005
+        "N2": 0.9992,
+        "O2": 0.0008
       }
     },
     {
@@ -21098,7 +21101,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.093553,
+        "value": 0.153474,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005)."
@@ -22278,7 +22281,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S83"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S83 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -29228,10 +29231,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.059917608139317145,
+        "value": 0.119843,
         "unit": "kg/d",
         "status": "study",
-        "note": "Half an O2 per methanol."
+        "note": "Half an O2 per methanol. | X-PAR-12 TF: 1 O2 per MeOH at 10/10 mol% (X-SAF-11) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FARM",
@@ -36224,7 +36227,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 43.433398,
+        "value": 43.433394,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005)."
@@ -36368,7 +36371,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 43.433398,
+        "value": 43.433394,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005)."
@@ -37851,6 +37854,65 @@
       "gap_flags": [],
       "notes": null,
       "composition": null
+    },
+    {
+      "stream_id": "IA-FORM-N2",
+      "from_unit_id": "HDR_N2",
+      "to_unit_id": "FORM",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "N2 diluent to the iron-molybdate bed (lean side, FORMOX_REVIEW2021)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.839288,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 8 N2 per MeOH (X-SAF-11) (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "N2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-FORM-TAIL",
+      "from_unit_id": "FORM",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "FORM tail gas: N2, excess O2, trace CH2O/CO to the afterburner",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.89921,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: N2 + unreacted O2 (X-SAF-11) (AQS-PAR-005)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "N2": 0.93,
+        "O2": 0.07
+      }
     }
   ],
   "view_presets": [

@@ -1204,13 +1204,13 @@
         "design_kPa": 22000.0,
         "relief_mm": 3.3,
         "relief_basis": {
-          "case": "blocked outlet at full inflow 14.369 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
+          "case": "blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
           "P1_kPa_abs": 24301.3,
           "T_K": 313.15,
           "M_kg_kmol": 31.999,
           "k": 1.4,
           "Z": 0.97,
-          "W_kg_h": 14.3695,
+          "W_kg_h": 14.372,
           "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
           "A_req_mm2": 0.07,
           "bore_req_mm": 0.3,
@@ -3018,7 +3018,7 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0008,
+          "pump_out_m3_h": 0.0009,
           "out_breathing_Nm3_h": 0.0,
           "in_breathing_Nm3_h": 0.001,
           "vent_dP_Pa": 500,
@@ -3652,7 +3652,7 @@
             }
           ]
         },
-        "duty": "In 47.274 kg/d, out 47.274 kg/d, 0.421 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
+        "duty": "In 47.274 kg/d, out 47.274 kg/d, 0.739 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
         "internals": "none",
         "design_kPa": 5500.0,
         "relief_mm": 3.3,
@@ -4266,7 +4266,7 @@
             }
           ]
         },
-        "duty": "In 38.873 kg/d, out 38.873 kg/d, 1.599 kW. Sheet docs-authority/duties/OIL_PYRO.md.",
+        "duty": "In 38.873 kg/d, out 38.873 kg/d, 1.664 kW. Sheet docs-authority/duties/OIL_PYRO.md.",
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
@@ -4504,7 +4504,7 @@
         "module_kw": 0.5,
         "count": 8442,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 295.946 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.514 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5469,7 +5469,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1281.343 kg/d, out 1281.343 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1283.723 kg/d, out 1283.723 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5530,7 +5530,7 @@
             }
           ]
         },
-        "duty": "In 1272.856 kg/d, out 1272.856 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1275.235 kg/d, out 1275.235 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -7184,7 +7184,7 @@
       "params": {
         "presence": "present",
         "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost.",
-        "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.032 kW. Sheet docs-authority/duties/HTC.md.",
+        "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.040 kW. Sheet docs-authority/duties/HTC.md.",
         "internals": "none",
         "design_kPa": 1710.5,
         "relief_mm": 3.3,
@@ -7627,7 +7627,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.010 kW. Sheet docs-authority/duties/ALD.md.",
+        "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.051 kW. Sheet docs-authority/duties/ALD.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7725,7 +7725,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.003 kW. Sheet docs-authority/duties/FORM.md.",
+        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7736,7 +7736,7 @@
           "V_tk_m3": 0.113,
           "pump_in_m3_h": 0.0002,
           "pump_out_m3_h": 0.0002,
-          "out_breathing_Nm3_h": 0.045,
+          "out_breathing_Nm3_h": 0.046,
           "in_breathing_Nm3_h": 1.416,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.4,
@@ -7768,7 +7768,10 @@
           321,
           1100
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "dilution_base": {
+          "IA-AB-AIR": 111.17
+        }
       },
       "modules": [],
       "electrical_role": "load",
@@ -7787,7 +7790,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.003 kW. Sheet docs-authority/duties/MEAM.md.",
+        "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.077 kW. Sheet docs-authority/duties/MEAM.md.",
         "internals": "none",
         "design_kPa": 2277.0,
         "relief_mm": 3.3,
@@ -12977,10 +12980,10 @@
       "phase": "G",
       "carries": "flue N2/O2/CO2/NOx",
       "rate": {
-        "value": 119.02293,
+        "value": 119.082851,
         "unit": "kg/d",
         "status": "study",
-        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
+        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM excess O2 (AQS-PAR-005)."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -13300,7 +13303,7 @@
       "phase": "G",
       "carries": "O2 product",
       "rate": {
-        "value": 89.368947,
+        "value": 89.428868,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -13674,10 +13677,10 @@
       "phase": "G",
       "carries": "flue",
       "rate": {
-        "value": 7.85293,
+        "value": 8.75214,
         "unit": "kg/d",
         "status": "study",
-        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
+        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM tail (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13878,10 +13881,10 @@
       "phase": "G",
       "carries": "combustion air",
       "rate": {
-        "value": 111.17,
+        "value": 110.330712,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-12 TF: dilution air less the N2 routed through FORM (X-SAF-11) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -13895,10 +13898,10 @@
       "phase": "G",
       "carries": "flue to the NOx scrubber",
       "rate": {
-        "value": 265.476564,
+        "value": 265.536485,
         "unit": "kg/d",
         "status": "study",
-        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into H2O + excess O2 (AQS-PAR-005)."
+        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: FORM excess O2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15034,7 +15037,7 @@
       "phase": "S/L",
       "carries": "scrubbed flue nitrogen to the cold box",
       "rate": {
-        "value": 193.670154,
+        "value": 193.730075,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: N2 replaced by O2; excess O2 rides to the cold box (AQS-PAR-005)."
@@ -15187,7 +15190,7 @@
       "phase": "G",
       "carries": "oxygen product",
       "rate": {
-        "value": 0.093553,
+        "value": 0.153474,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005)."
@@ -15785,7 +15788,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S83"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S83 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19573,10 +19576,10 @@
       "phase": "L",
       "carries": "oxygen to formaldehyde",
       "rate": {
-        "value": 0.059917608139317145,
+        "value": 0.119843,
         "unit": "kg/d",
         "status": "study",
-        "note": "Half an O2 per methanol."
+        "note": "Half an O2 per methanol. | X-PAR-12 TF: 1 O2 per MeOH at 10/10 mol% (X-SAF-11) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FARM",
@@ -24044,7 +24047,7 @@
       "phase": "G",
       "carries": "surplus O2 to product cylinders",
       "rate": {
-        "value": 43.433398,
+        "value": 43.433394,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005)."
@@ -24129,7 +24132,7 @@
       "phase": "G",
       "carries": "O2 cylinders shipped at the dock",
       "rate": {
-        "value": 43.433398,
+        "value": 43.433394,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005)."
@@ -24988,6 +24991,40 @@
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=energy"
+    },
+    {
+      "stream_id": "IA-FORM-N2",
+      "from_unit_id": "HDR_N2",
+      "to_unit_id": "FORM",
+      "phase": "G",
+      "carries": "N2 diluent to the iron-molybdate bed (lean side, FORMOX_REVIEW2021)",
+      "rate": {
+        "value": 0.839288,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 8 N2 per MeOH (X-SAF-11) (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-FORM-TAIL",
+      "from_unit_id": "FORM",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "G",
+      "carries": "FORM tail gas: N2, excess O2, trace CH2O/CO to the afterburner",
+      "rate": {
+        "value": 0.89921,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: N2 + unreacted O2 (X-SAF-11) (AQS-PAR-005)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
     }
   ],
   "electrical": {

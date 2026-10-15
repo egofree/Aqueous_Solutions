@@ -86,6 +86,9 @@ def patch(g):
 def tf(g):
     if not any(e['stream_id'] == 'IA-C5-SHIP' for e in g['edges']):
         g['edges'].append(_edge('IA-C5-SHIP', 'PROD_C5_C10', 'NORTH_DOCK', 'L', ['mass'], 'C5-C10 product shipped', 0, 'kg/d', 'CRYO', 'DOCK', {'C5-C10': 1.0}))
+    if not any(e['stream_id'] == 'IA-FORM-N2' for e in g['edges']):   # X-SAF-11 FORM dilution edges (A-M-159)
+        g['edges'] += [_edge('IA-FORM-N2', 'HDR_N2', 'FORM', 'G', ['mass'], 'N2 diluent to the iron-molybdate bed (lean side, FORMOX_REVIEW2021)', 0, 'kg/d', 'CRYO', 'FARM', {'N2': 1.0}),
+                       _edge('IA-FORM-TAIL', 'FORM', 'AFTERBURNER', 'G', ['mass'], 'FORM tail gas: N2, excess O2, trace CH2O/CO to the afterburner', 0, 'kg/d', 'FARM', 'GAS', {'N2': 0.93, 'O2': 0.07})]
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; B = N['CRYO_O2']['params']['x_par_12_base']
     v = lambda k: float(E[k]['rate']['value'] or 0)
     def put(k, x, why):
@@ -145,6 +148,14 @@ def tf(g):
     put('IA-AB-FLUE', B['IA-AB-FLUE'] + oa, 'flue carries the O2 drawn'); put('S67', B['S67'] + oa, 'flue carries the O2 drawn')
     put('S67B', B['S67B'] + ab_co + ab_org/2, 'bound O2 into CO2'); put('IA-FLUE-EXH', B['IA-FLUE-EXH'] + ab_org/2 + (oa - ab_co - ab_org), 'bound O2 into H2O + excess O2')
     xs = (og - gen_b) + (oa - ab_co - ab_org)
+    # X-SAF-11 (A-M-159): FORM feed at about 10 mol% MeOH, 10 mol% O2, 80 mol% N2 (FORMOX_REVIEW2021): O2 = 1 mol per MeOH (half reacts),
+    # N2 = 8 mol per MeOH taken from the afterburner dilution air (IA-AB-AIR) so the flue N2 is unchanged; tail to the afterburner.
+    fb = N['FORM']['params'].setdefault('dilution_base', {'IA-AB-AIR': v('IA-AB-AIR')})
+    nm = (v('IA-FORM-S') + v('IA-MEOH-FORM'))/32.042; n2f = 8*nm*28.013; xo = nm*16.0
+    put('IA-FORM-O2', nm*32.0, '1 O2 per MeOH at 10/10 mol% (X-SAF-11)'); put('IA-FORM-N2', n2f, '8 N2 per MeOH (X-SAF-11)'); put('IA-FORM-TAIL', n2f + xo, 'N2 + unreacted O2 (X-SAF-11)')
+    put('IA-AB-AIR', fb['IA-AB-AIR'] - n2f, 'dilution air less the N2 routed through FORM (X-SAF-11)')
+    put('IA-AB-FLUE', v('IA-AB-FLUE') + n2f + xo, 'flue carries the FORM tail'); put('S67', v('S67') + xo, 'flue carries the FORM excess O2')
+    put('IA-FLUE-EXH', v('IA-FLUE-EXH') + xo, 'FORM excess O2'); xs += xo
     put('IA-NOX-CO2', B['IA-NOX-CO2'] - dC + gco2, 'genset bound O2 into CO2, less the carbon of the fuel no longer burned'); put('IA-NOX-H2O', B['IA-NOX-H2O'] - dH + gh2o + ab_org/2, 'bound O2 into water, less the H no longer burned')
     put('IA-NOX-N2', B['IA-NOX-N2'] - dn2 + xs, 'N2 replaced by O2; excess O2 rides to the cold box'); E['IA-NOX-N2']['composition'] = {'N2': round(1 - xs/v('IA-NOX-N2'), 4), 'O2': round(xs/v('IA-NOX-N2'), 4)}
     put('IA-ASU-N2', v('IA-NOX-N2') - xs, 'N2 out = N2 in'); put('S84', v('IA-ASU-N2') - v('S88') - v('IA-N2-VENT') - v('IA-AHU-FIX'), 'N2 pass-through')

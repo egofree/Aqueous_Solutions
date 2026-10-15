@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 195 kg/d. Mass out 195 kg/d. Electrical duty 0.0000 kW. In: S84 193.6 kg/d (N2 product); IA-EW4-N2 0.7095 kg/d (sweep nitrogen); IA-CLOSE-3 0.5 kg/d (worm bin vent to the nitrogen header); IA-CLOSE-9 0.1798 kg/d (larvae bin vent to the nitrogen header). Out: S03 1.5 kg/d (N2); IA-AB-AIR 111.2 kg/d (combustion air); IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-NH3-SRC 3.25 kg/d (nitrogen to ammonia); 2 more.
+1. Basis. Mass in 195 kg/d. Mass out 195 kg/d. Electrical duty 0.0000 kW. In: S84 193.6 kg/d (N2 product); IA-EW4-N2 0.7095 kg/d (sweep nitrogen); IA-CLOSE-3 0.5 kg/d (worm bin vent to the nitrogen header); IA-CLOSE-9 0.1798 kg/d (larvae bin vent to the nitrogen header). Out: S03 1.5 kg/d (N2); IA-AB-AIR 110.3 kg/d (combustion air); IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-NH3-SRC 3.25 kg/d (nitrogen to ammonia); 3 more.
 
 2. Size.
 - Duct at 10 m/s. Gas 8.51 m³/h. Bore 17 mm, DN20. Not a packed tower.

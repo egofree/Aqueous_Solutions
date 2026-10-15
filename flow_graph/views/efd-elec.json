@@ -3132,7 +3132,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 1796.231 kg/d, out 1796.231 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "duty": "In 1796.291 kg/d, out 1796.291 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3655,7 +3655,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
+        "duty": "In 1.079 kg/d, out 1.079 kg/d, 0.064 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3666,7 +3666,7 @@
           "V_tk_m3": 0.113,
           "pump_in_m3_h": 0.0002,
           "pump_out_m3_h": 0.0002,
-          "out_breathing_Nm3_h": 0.045,
+          "out_breathing_Nm3_h": 0.046,
           "in_breathing_Nm3_h": 1.416,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.4,
@@ -3698,7 +3698,10 @@
           321,
           1100
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "dilution_base": {
+          "IA-AB-AIR": 111.17
+        }
       }
     },
     {

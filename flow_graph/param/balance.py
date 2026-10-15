@@ -10,7 +10,7 @@ GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 SINK = {'RELIEF_H2', 'RELIEF_CRYO'}
 MARK = ('X-PAR', 'X-SAN', 'X-MFG', 'AQS-DUTY-06', 'X-SAF-10', 'X-ELS')
 STOICH = {'S49': 'H2 to the fuel cell (load)', 'S50': 'O2 = 8 x H2 by mass', 'S02': 'crew O2 0.84 kg/p.d', 'IA-FC-AIR': 'MEOH_FC oxidant',
-          'IA-AC-O2': 'acetic acid oxidation', 'IA-O2-NIT': 'nitric acid', 'IA-GLX-O2': 'one O2 per acetaldehyde', 'IA-FORM-O2': 'half O2 per methanol',
+          'IA-AC-O2': 'acetic acid oxidation', 'IA-O2-NIT': 'nitric acid', 'IA-GLX-O2': 'one O2 per acetaldehyde', 'IA-FORM-O2': 'one O2 per methanol at 10/10 mol% (X-SAF-11)', 'IA-FORM-N2': 'FORM N2 diluent', 'IA-FORM-TAIL': 'FORM tail gas', 'IA-AB-AIR': 'afterburner dilution air less FORM N2',
           'IA-H2O2-SRC': 'Faraday at the cell current', 'S40': 'terrace irrigation demand', 'S14': 'crew food', 'S21': 'crew water', 'IA-WASH': 'wash water'}
 GROSS = 0.05
 TRIM = ('-RET', '-FIX', '-MAKE')
