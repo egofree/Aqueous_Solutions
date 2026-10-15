@@ -83,5 +83,80 @@
   "basis": "AQS-DUTY-049 glass natural case",
   "replaced_by": "Coil heat-transfer test",
   "sensitivity": ""
+ },
+ "graph EW_1 continuous_kw": {
+  "basis": "Cu-equivalent Faraday current at 2.5 V; matches AQS-DUTY-051 EW_1",
+  "replaced_by": "Measured EW_1 DC power at commissioning",
+  "sensitivity": "DC power linear in current and voltage"
+ },
+ "graph EW_1 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_2 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_3 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_4 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_5 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_6 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_7 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_8 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph EW_9 params.sizing": {
+  "basis": "AQS-DUTY-051 bounding Cu-equivalent current, 200 A/m2, 2.5 V (A-M-036 to 040)",
+  "replaced_by": "Cell current, voltage and deposit quality trials",
+  "sensitivity": "Cathode count and tank length linear in current"
+ },
+ "graph WS_NITRIC params.product_spec": {
+  "basis": "S34 2 M at 1.064 kg/L; 40 C maximum assumed (A-M-010)",
+  "replaced_by": "Wet-bench recipe and tank temperature log",
+  "sensitivity": ""
+ },
+ "graph WS_NITRIC params.storage": {
+  "basis": "14 d holdup (A-M-025)",
+  "replaced_by": "Owner operating policy",
+  "sensitivity": ""
+ },
+ "graph WS_PEROX params.product_spec": {
+  "basis": "5 wt% bench strength (A-M-001)",
+  "replaced_by": "Fab process sheet recipe",
+  "sensitivity": ""
+ },
+ "graph WS_PEROX params.cell": {
+  "basis": "FE 0.80, 0.050 A/cm2, 2.5 V (A-M-002 to 004)",
+  "replaced_by": "Bench cell test",
+  "sensitivity": ""
+ },
+ "graph WS_PEROX params.storage": {
+  "basis": "1 d holdup (A-M-026)",
+  "replaced_by": "Measured decomposition rate",
+  "sensitivity": ""
  }
 }
