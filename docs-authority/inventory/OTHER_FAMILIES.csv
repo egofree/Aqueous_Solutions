@@ -10,45 +10,49 @@ OF-08,electronics,variable-frequency drive,IEC 61800-5-1,55,1.1 kW x25; 1.5 kW x
 OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,44,24 V DC x44,20
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,15,22 kW hermetic x8; 0.25 kW hermetic x5; 0.75 kW hermetic x1; 2.2 kW hermetic x1,8
 OF-11,electronics,stepper driver,IEC 61800-5-1,11,24/48 V DC x11,5
-OF-12,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,12,6 BOM lines x3; 5 BOM lines x2; 13 BOM lines x1; 7 BOM lines x1; 11 BOM lines x1; 9 BOM lines x1; 17 BOM lines x1; 8 BOM lines x1; 4 BOM lines x1,12
+OF-12,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,26,6 BOM lines x10; 7 BOM lines x5; 8 BOM lines x3; 9 BOM lines x2; 5 BOM lines x2; 13 BOM lines x1; 11 BOM lines x1; 17 BOM lines x1; 4 BOM lines x1,26
 OF-13,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,14158,M10 x14158,147
-OF-14,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,48,M8 x 30 lid bolt with nut and washers x48,4
-OF-15,fastener,M12x40 hex bolt + nut + 2 washers,PVDF,36,M12x40 hex bolt + nut + 2 washers x36,1
-OF-16,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,28,M10 x 40 lid bolt with nut and washers x28,2
-OF-17,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 3506 A4-70 outside the wetted zone,24,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24,1
-OF-18,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8 zinc,24,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24,1
-OF-19,fastener,M10 anchor,ISO 3506 A4-70,16,M10 anchor x16,4
-OF-20,fastener,M12 anchor,ISO 3506 A4-70,10,M12 anchor x10,3
-OF-21,fastener,M10,A4-70,8,M10 x8,1
-OF-22,fastener,M10 x 40 lid bolt,ASTM A193 B8,8,M10 x 40 lid bolt with nut and washers x8,1
-OF-23,fastener,M12,A4-70,4,M12 x4,1
-OF-24,fastener,M8,A4-70,4,M8 x4,1
-OF-25,fastener,Flange gasket,PTFE envelope,2,Flange gasket x2,1
-OF-26,fastener,Flange gasket,graphite sheet,2,Flange gasket x2,1
-OF-27,fastener,M10 U-bolt for DN150,ISO 3506 A4-70,2,M10 U-bolt for DN150 x2,1
-OF-28,fastener,Lid gasket 40 mm wide,FKM,1,Lid gasket 40 mm wide x1,1
-OF-29,fastener,Solvent cement,PVC-U per ASTM D2564,1,Solvent cement x1,1
-OF-30,instrument,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",238,DN15 x190; DN50 x39; DN20 x3; DN25 x3; DN250 x1; DN300 x1; DN40 x1,95
-OF-31,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",186,0-10 bar x186,186
-OF-32,instrument,temperature element,"IEC 60751, 316L thermowell",186,Pt100 class A x186,186
-OF-33,instrument,high-level switch,"IEC 60947-5, 316L",113,vibrating fork x113,113
-OF-34,instrument,level transmitter,"IEC 62828, PTFE lens",113,radar 80 GHz x113,113
-OF-35,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,217,15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1,57
-OF-36,seal,"mechanical seal, single","SiC/SiC faces, FKM",144,EN 12756 x144,29
-OF-37,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5895,DN15 x4597; DN50 x1179; DN20 x58; DN25 x42; DN250 x7; DN40 x6; DN200 x3; DN300 x3,127
-OF-38,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1184,DN15 x1064; DN20 x89; DN25 x31,42
-OF-39,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",202,DN15 x174; DN50 x28,70
-OF-40,valve,isolation valve,"PP ball valve with HDPE stub ends, ISO 16135",198,DN15 x124; DN50 x64; DN25 x6; DN20 x4,53
-OF-41,valve,isolation valve,"316L ball valve, ASME B16.34 Cl 150, RF flanged",152,DN15 x136; DN20 x12; DN25 x4,37
-OF-42,valve,isolation valve,"CPVC true-union ball valve, MSS SP-122, FKM seals",100,DN15 x58; DN50 x42,25
-OF-43,valve,check valve,"PP swing/ball check valve with HDPE stub ends, ISO 16137",82,DN15 x55; DN50 x22; DN25 x3; DN20 x2,44
-OF-44,valve,check valve,"PVC-U true-union swing/ball check valve, EPDM seals",78,DN15 x72; DN50 x6,53
-OF-45,valve,isolation valve,"PVDF ball valve, ISO 16135, PTFE seats",56,DN15 x48; DN50 x4; DN300 x2; DN40 x2,25
-OF-46,valve,check valve,"CPVC true-union swing/ball check valve, FKM seals",30,DN15 x19; DN50 x11,21
-OF-47,valve,isolation valve,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",24,DN15 x16; DN25 x4; DN20 x4,6
-OF-48,valve,check valve,"PVDF swing/ball check valve, ISO 16137, PTFE seats",22,DN15 x20; DN300 x1; DN40 x1,20
-OF-49,valve,isolation valve,"PVC-lined ball valve in FRP service, ISO 16135",20,DN15 x10; DN250 x6; DN20 x2; DN200 x2,9
-OF-50,valve,check valve,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",14,DN15 x13; DN20 x1,10
-OF-51,valve,isolation valve,"PP-H ball valve, ISO 16135, EPDM seals",14,DN15 x14,4
-OF-52,valve,check valve,"PP-H swing/ball check valve, ISO 16137, EPDM seals",7,DN15 x7,4
-OF-53,valve,check valve,"PVC-lined swing/ball check valve in FRP service, ISO 16137",5,DN15 x4; DN250 x1,5
+OF-14,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,100,M10 x 40 lid bolt with nut and washers x100,11
+OF-15,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,48,M8 x 30 lid bolt with nut and washers x48,4
+OF-16,fastener,M12 anchor,ISO 3506 A4-70,37,M12 anchor x37,12
+OF-17,fastener,M12x40 hex bolt + nut + 2 washers,PVDF,36,M12x40 hex bolt + nut + 2 washers x36,1
+OF-18,fastener,1/2 in stud bolt,ASTM A193 B8M / A194 8M,24,1/2 in stud bolt with 2 heavy hex nuts x24,3
+OF-19,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 3506 A4-70 outside the wetted zone,24,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24,1
+OF-20,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8 zinc,24,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24,1
+OF-21,fastener,3/4 in stud bolt,ASTM A193 B8M / A194 8M,16,3/4 in stud bolt with 2 heavy hex nuts x16,1
+OF-22,fastener,5/8 in stud bolt,ASTM A193 B7 / A194 2H,16,5/8 in stud bolt with 2 heavy hex nuts x16,1
+OF-23,fastener,M10 anchor,ISO 3506 A4-70,16,M10 anchor x16,4
+OF-24,fastener,M10,A4-70,8,M10 x8,1
+OF-25,fastener,M10 x 40 lid bolt,ASTM A193 B8,8,M10 x 40 lid bolt with nut and washers x8,1
+OF-26,fastener,M12,A4-70,4,M12 x4,1
+OF-27,fastener,M8,A4-70,4,M8 x4,1
+OF-28,fastener,Flange gasket,PTFE envelope,2,Flange gasket x2,1
+OF-29,fastener,Flange gasket,graphite sheet,2,Flange gasket x2,1
+OF-30,fastener,M10 U-bolt for DN150,ISO 3506 A4-70,2,M10 U-bolt for DN150 x2,1
+OF-31,fastener,Lid gasket 40 mm wide,FKM,1,Lid gasket 40 mm wide x1,1
+OF-32,fastener,Solvent cement,PVC-U per ASTM D2564,1,Solvent cement x1,1
+OF-33,instrument,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",238,DN15 x190; DN50 x39; DN20 x3; DN25 x3; DN250 x1; DN300 x1; DN40 x1,95
+OF-34,instrument,temperature element,"IEC 60751, 316L thermowell",186,Pt100 class A x186,186
+OF-35,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",180,0-10 bar x180,180
+OF-36,instrument,high-level switch,"IEC 60947-5, 316L",113,vibrating fork x113,113
+OF-37,instrument,level transmitter,"IEC 62828, PTFE lens",113,radar 80 GHz x113,113
+OF-38,instrument,pressure transmitter,"316L thin-film strain gauge, IEC 61298",6,0-40 bar x2; 0-400 bar x2; 0-25 bar x1; 0-100 bar x1,6
+OF-39,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,217,15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1,57
+OF-40,seal,"mechanical seal, single","SiC/SiC faces, FKM",144,EN 12756 x144,29
+OF-41,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5895,DN15 x4597; DN50 x1179; DN20 x58; DN25 x42; DN250 x7; DN40 x6; DN200 x3; DN300 x3,127
+OF-42,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1184,DN15 x1064; DN20 x89; DN25 x31,42
+OF-43,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",202,DN15 x174; DN50 x28,70
+OF-44,valve,isolation valve,"PP ball valve with HDPE stub ends, ISO 16135",198,DN15 x124; DN50 x64; DN25 x6; DN20 x4,53
+OF-45,valve,isolation valve,"316L ball valve, ASME B16.34 Cl 150, RF flanged",152,DN15 x136; DN20 x12; DN25 x4,37
+OF-46,valve,isolation valve,"CPVC true-union ball valve, MSS SP-122, FKM seals",100,DN15 x58; DN50 x42,25
+OF-47,valve,check valve,"PP swing/ball check valve with HDPE stub ends, ISO 16137",82,DN15 x55; DN50 x22; DN25 x3; DN20 x2,44
+OF-48,valve,check valve,"PVC-U true-union swing/ball check valve, EPDM seals",78,DN15 x72; DN50 x6,53
+OF-49,valve,isolation valve,"PVDF ball valve, ISO 16135, PTFE seats",56,DN15 x48; DN50 x4; DN300 x2; DN40 x2,25
+OF-50,valve,check valve,"CPVC true-union swing/ball check valve, FKM seals",30,DN15 x19; DN50 x11,21
+OF-51,valve,isolation valve,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",24,DN15 x16; DN25 x4; DN20 x4,6
+OF-52,valve,check valve,"PVDF swing/ball check valve, ISO 16137, PTFE seats",22,DN15 x20; DN300 x1; DN40 x1,20
+OF-53,valve,isolation valve,"PVC-lined ball valve in FRP service, ISO 16135",20,DN15 x10; DN250 x6; DN20 x2; DN200 x2,9
+OF-54,valve,check valve,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",14,DN15 x13; DN20 x1,10
+OF-55,valve,isolation valve,"PP-H ball valve, ISO 16135, EPDM seals",14,DN15 x14,4
+OF-56,valve,check valve,"PP-H swing/ball check valve, ISO 16137, EPDM seals",7,DN15 x7,4
+OF-57,valve,check valve,"PVC-lined swing/ball check valve in FRP service, ISO 16137",5,DN15 x4; DN250 x1,5

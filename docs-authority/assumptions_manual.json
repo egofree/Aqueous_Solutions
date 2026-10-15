@@ -3248,5 +3248,25 @@
     "verification": "L-1 5 t (CRYO_H2 half 3.1 t), L0 1 t, L1 0.5 t",
     "replace_when": "Lift plans with the final unit weights (X-ASM-02)",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-193",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Instrument ranges",
+    "statement": "Flow range 2 x normal at edge density or 1000 kg/m3; pressure range next standard >= 1.25 x design gauge (ceramic to 16 bar, 316L thin-film above); temperature bands cryogenic -200..50, hot 0..600, ambient -20..150 C; level 0-100 % of the A-M-182 liquid height, LSH at 90 %",
+    "verification": "836 instruments; 6 pressure ranges raised from the 0-10 bar default (receivers 0-400 bar)",
+    "replace_when": "Loop check at commissioning (X-COM-01)",
+    "doc": "AQS-PAR-003"
   }
 ]

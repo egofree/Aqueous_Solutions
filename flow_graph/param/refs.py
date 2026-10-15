@@ -47,6 +47,8 @@ REFS = {
  'ASME_B30_2': 'ASME B30.2-2022, Overhead and Gantry Cranes: rated load, load test at 125 % of rated load (2-2.2.2).',
  'ASME_B30_16': 'ASME B30.16-2022, Overhead Underhung and Stationary Hoists.',
  'CMAA70_2020': 'CMAA Specification 70-2020, Top Running Bridge and Gantry Type Multiple Girder Electric Overhead Traveling Cranes: service classes A-F by load spectrum and cycles.',
+ 'ISA5_1_2022': 'ANSI/ISA-5.1-2022, Instrumentation and Control Symbols and Identification: first letter measured variable (F, P, T, L), succeeding letters function (T transmitter, E element, S switch, H high).',
+ 'IEC61131_2': 'IEC 61131-2:2017, Programmable controllers, equipment requirements: 4-20 mA analogue inputs, 24 V DC digital inputs.',
  'ACI350_3': 'ACI 350.3-20, Seismic Design of Liquid-Containing Concrete Structures: impulsive and convective components, rectangular tank convective frequency lambda = sqrt(3.16 g tanh(3.16 HL/L)).',
  'ACI350_20': 'ACI 350-20, Code Requirements for Environmental Engineering Concrete Structures: liquid-retaining walls and slabs, durability and crack control.',
  'AHRI340_ASHRAE901': 'ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360.',
