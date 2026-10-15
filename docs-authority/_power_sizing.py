@@ -12,12 +12,16 @@ PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.va
 CRIT={'HABITATION':3.0,'CRYO_H2':4.0,'CRYO_ASU':18.0,'GROW_BED':5.0,'controls and instruments':2.0}
 ref_rect=ew['I_elem_A']*2.8/0.80/1000
 cases={'bounding':ol['demand'],'reference':ol['demand']-rect['Pac_kW']+ref_rect}
+from flow_graph.param import solver as SV
+roof=SV.roof_close(_d,cases['bounding'])   # X-PAR-07: roof-only PV; extension loads added to both cases
+cases={k:P+roof['ext']['total_kW'] for k,P in cases.items()}
 out={}
 for k,P in cases.items():
     E=P*24                         # flat profile, continuous process (study)
     Edirect=P*(24-NIGHT); Estore=P*NIGHT
     pv=PW.pv_kWp(P,NIGHT,RT,PSH,DER)
     out[k]=dict(P_kW=P,E_kWh_d=E,pv_kWp=pv,store_kWh=Estore,store_kW=P,inverters=math.ceil(P/INV),inv_kW=math.ceil(P/INV)*INV)
+out['roof']=roof
 crit=sum(CRIT.values())
 out['backup']=dict(critical_kW=crit,critical_list=CRIT,gen_kW=math.ceil(crit*1.25/5)*5,autonomy_d=AUT_CRIT,energy_kWh=crit*24*AUT_CRIT)
 g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}

@@ -1,7 +1,7 @@
 # Storage and generation sizing
 
 Document number: AQS-ELEC-007
-Revision: C
+Revision: D
 Date: 2026-10-15
 Authority: AQS-PLAN-007 X-ELS-05. From AQS-ELEC-002 Rev C bus demand. Script `docs-authority/_power_sizing.py`. Study. Not a PE stamp. Study values in AQS-REG-002 (A-M-060 to A-M-062). Graph sources are not changed (the EW power rate change awaits the owner).
 
@@ -29,6 +29,8 @@ Flat 24 h profile (continuous process; study). PV yield 5.41 kWh/kWp/d before lo
 Backup. Critical loads 32 kW (HABITATION 3, CRYO_H2 4, CRYO_ASU 18, GROW_BED 5, controls 2; study list). Generator 40 kW (125 %, rounded). Two days' critical energy 1536 kWh; on H₂ at about 33 kWh/kg LHV and 40 % engine efficiency that is about 115 kg H₂ held in CRYO_H2 (study). Graph: BACKUP_GEN 2.5 kW, FUEL_CELL 4.0 kW.
 
 ## 3. Findings
+
+Rev D (X-PAR-07, owner decision 2026-10-15: roof-only PV, grow the building). `flow_graph/param/solver.py` roof_close iterates the footprint on the 6 m bay grid until the roof, after IFC 2021 1205.3 / NFPA 1 11.12 pathways (1829 mm perimeter, 1219 mm between arrays of at most 45.72 m), carries the PV that closes the balance including the extension's own loads (IECC 2021 lighting, ASHRAE 62.1 ventilation, ISO 16798-3 fans; unconditioned hall). Converged: 120 x 96 m (20 x 16 bays, 11,520 m2, extension 11,088 m2), extension load 13.9 kW, bus 169.3 kW, PV 1174 kWp on 10,379 m2 of arrays (roof capacity 1183 kWp), ZNBR2 2371 kWh / 170 kW, SOL_ARK_60K 3 x 60 kW unchanged. Roof framing LRFD 1.72 kPa (ASCE 7-22). Ground field removed. Sensitivity: a conditioned extension needs about 33,500 m2. A-M-103 to A-M-105.
 
 Rev C (X-PAR acid-loop decision, AQS-PAR-001, 2026-10-15). BMED_ACID at the published SEC 26.93 kW (was 16.13), EVAP_ACID 2.41 kW and EVAP_BASE 2.51 kW added (2.40 kW after the NaOH balance, X-PAR-06), RECT_EW 38.66 kW AC (was 38.02). Bus load +16.36 kW, carried on IA-PV-01. Graph: PV_ARRAY 1078 kWp (was 984), about 5390 m²; ZNBR2 2176 kWh / 156 kW (was 1987 / 142); SOL_ARK_60K 3 × 60 kW unchanged. Rev B text below keeps its own figures.
 

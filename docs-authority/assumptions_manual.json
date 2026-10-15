@@ -1160,7 +1160,7 @@
   "verification_test": "BMED stack vendor data and leach-loop precipitation test (unit task 02)"
  },
  {
-  "value": "PV 1078 kWp, ground field 89.9 x 60.0 m (5390 m2 at 5 m2/kWp) west of the yard",
+  "value": "PV 1174 kWp roof-only on a 120 x 96 m roof (X-PAR-07); ground field removed",
   "units": "kWp, m2",
   "where": "PV_ARRAY params",
   "basis": "AQS-ELEC-007 bounding case; 5 m2/kWp; plate cannot carry it (sizing rule revises the restriction)",
@@ -1170,9 +1170,9 @@
   "files": [
    "docs-authority/POWER_SIZING.md",
    "docs-authority/PROTECTION.md",
-   "flow_graph/place_pv_field.py",
    "flow_graph/placement_seed.json",
-   "flow_graph/plant_flow_graph.json"
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/solver.py"
   ],
   "id": "A-M-078",
   "needs_verification": true,
@@ -1487,7 +1487,7 @@
   "needs_verification": true
  },
  {
-  "value": "PV field rectangle aspect 1.5 (E-W long), 2.5 m mount height, east edge 600 mm west of the yard, south edge on the yard south line",
+  "value": "Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground field removed)",
   "units": "-, mm",
   "where": "PV_ARRAY seed row",
   "basis": "Study layout pending the owner site area (X-BAS-03)",
@@ -1495,7 +1495,6 @@
   "replaced_by": "Site plan with parcel boundary",
   "task": "X-BLD-04",
   "files": [
-   "flow_graph/place_pv_field.py",
    "flow_graph/placement_seed.json"
   ],
   "id": "A-M-098",
@@ -1566,5 +1565,59 @@
   ],
   "needs_verification": true,
   "verification_test": "Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan"
+ },
+ {
+  "task": "X-PAR-07",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/solver.py",
+   "flow_graph/param/sizing/roof.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/placement_seed.json"
+  ],
+  "id": "A-M-103",
+  "value": "Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield equal to the PVWatts site yield (factor 1.0); one roof plane for the layout (base block and extension treated together); ROOF datum 14400 mm",
+  "units": "-, mm",
+  "where": "drivers pv_roof_gcr, pv_roof_yield_factor; PV_ARRAY seed row",
+  "basis": "No published roof GCR for this site; PVWatts default fixed-array GCR is 0.4 to 0.5 for ground arrays, roof low-tilt rows run denser",
+  "sensitivity": "Footprint scales about 1/(GCR x yield factor)",
+  "replaced_by": "PVWatts run at roof tilt and row spacing; roof plan with both roof levels",
+  "verification_test": "Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close"
+ },
+ {
+  "task": "X-PAR-07",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/solver.py",
+   "flow_graph/param/sizing/roof.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/placement_seed.json"
+  ],
+  "id": "A-M-104",
+  "value": "Extension is a single-storey unconditioned hall: lighting 8.8 W/m2 lit 10 % of hours (occupant sensors), mechanical ventilation 0.30 L/(s m2) at SFP 1.25 W/(L/s), no heating or cooling; mean |dT| 8 K and COP 3.2 apply only if conditioned (sensitivity: conditioned hall needs about 33,500 m2); NORTH_DOCK keeps a 6 m truck lane through EXT_HALL_N",
+  "units": "W/m2, L/(s m2), K",
+  "where": "drivers ext_*; EXT_HALL_E/N blocks",
+  "basis": "IECC 2021 C405, C405.2.1; ASHRAE 62.1-2019 Table 6.2.2.1; ISO 16798-3; ASHRAE 90.1-2019 Table 6.8.1-2",
+  "sensitivity": "Extension load 13.9 kW here; conditioning would roughly triple the footprint",
+  "replaced_by": "Room programme and load calculation for the extension",
+  "verification_test": "Bin-hour load calculation (TMY3) and lighting design; confirm the hall programme needs no conditioning"
+ },
+ {
+  "task": "X-PAR-07",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/solver.py",
+   "flow_graph/param/sizing/roof.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/placement_seed.json"
+  ],
+  "id": "A-M-105",
+  "value": "Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof snow 0.24 kPa (study); LRFD 1.2D + 1.6Lr = 1.72 kPa on the roof framing",
+  "units": "kPa",
+  "where": "drivers roof_*; PV_ARRAY params.roof",
+  "basis": "ASCE 7-22 Table 4.3-1, 4.17, 2.3.1",
+  "sensitivity": "Roof framing tonnage",
+  "replaced_by": "Racking weight and ASCE 7 Hazard Tool snow at the site",
+  "verification_test": "ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays"
  }
 ]

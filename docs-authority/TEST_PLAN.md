@@ -15,21 +15,25 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 16 | Owner decision or site investigation report |
+| T1 | Owner and site data | 22 | Owner decision or site investigation report |
 | T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
 | T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
 | T4 | Pilot runs | 8 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 30 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 11 | Commissioning record |
+| T5 | Design calculations and drawings | 49 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 12 | Commissioning record |
 
-Total 126 items: 27 drivers, 99 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 152 items: 47 drivers, 105 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
-| driver pv_field_aspect | 1.5 E-W length / N-S depth | Site plan with parcel boundary (X-BAS-03) | X-PAR |
-| driver pv_ground_m2_per_kWp | 5.0 m2 ground per kWp including row spacing | Site survey area check (X-BAS-03) and PV row layout at the chosen tilt and ground-cover ratio | X-PAR |
+| driver ifc_array_max_mm | 45720 mm | AHJ fire-code review | X-PAR |
+| driver ifc_axis_limit_mm | 76200 mm | AHJ fire-code review | X-PAR |
+| driver ifc_path_mm | 1219 mm | AHJ fire-code review | X-PAR |
+| driver ifc_perim_large_mm | 1829 mm | AHJ fire-code review | X-PAR |
+| driver ifc_perim_small_mm | 1219 mm | AHJ fire-code review | X-PAR |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow (study) | ASCE 7 Hazard Tool ground snow load at the site | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
@@ -41,9 +45,11 @@ Total 126 items: 27 drivers, 99 register entries. Classification rule: first mat
 | A-M-051 | 35 x 20 m ring, 12 rods 3 m m | Site plan (X-BLD) | X-ELS-08 |
 | A-M-052 | 5 ohm | Utility or AHJ requirement and IEEE 80 step/touch study | X-ELS-08 |
 | A-M-063 | HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 kW, d | Owner critical-load list | X-ELS-05 |
-| A-M-078 | PV 1078 kWp, ground field 89.9 x 60.0 m (5390 m2 at 5 m2/kWp kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
+| A-M-078 | PV 1174 kWp roof-only on a 120 x 96 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
 | A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and compressor vendor data | X-ELS-02 |
-| A-M-098 | PV field rectangle aspect 1.5 (E-W long), 2.5 m mount height -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout | X-BLD-04 |
+| A-M-098 | Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground fiel -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout | X-BLD-04 |
+| A-M-101 | Access check: 914 mm clear on at least one face per row; roo mm | Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths | X-BLD-04 |
+| A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays | X-PAR-07 |
 
 ## 3. T2 Vendor and manufacturer data
 
@@ -133,12 +139,27 @@ Total 126 items: 27 drivers, 99 register entries. Classification rule: first mat
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver base_bays_x | 4 bays | Structural grid review | X-PAR |
+| driver base_bays_y | 3 bays | Structural grid review | X-PAR |
+| driver bay_mm | 6000 mm structural bay | Structural grid review | X-PAR |
 | driver bmed_sec_design_kWh_per_kg_pair | 2.1 kWh per kg acid+base (current graph basis) | Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision) | X-PAR |
 | driver cp_hcl20_kJ_kgK | 3.0 kJ/(kg K) | Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C | X-PAR |
 | driver cp_naoh20_kJ_kgK | 3.6 kJ/(kg K) | Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C | X-PAR |
+| driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension | X-PAR |
+| driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design | X-PAR |
+| driver ext_conditioned | 0.0 1 conditioned, 0 unconditioned hall | Room programme for the extension: confirm no process in it needs heating or cooling; otherwise set 1 and re-solve | X-PAR |
+| driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating | X-PAR |
+| driver ext_dT_mean_K | 8.0 K mean /T_in - T_out/ over the year | Bin-hour load calculation from TMY3 (AQS-SITE-002 site) | X-PAR |
+| driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
+| driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile | X-PAR |
+| driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC | X-PAR |
+| driver pv_roof_gcr | 0.6 ground coverage ratio, low-tilt rows | Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt | X-PAR |
+| driver pv_roof_yield_factor | 1.0 roof yield / pv_yield_kWh_kWp_d | PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio | X-PAR |
 | driver pv_system_derate | 0.8 - | PVsyst loss tree for the selected modules and inverters | X-PAR |
 | driver pv_yield_kWh_kWp_d | 5.41 kWh/kWp/d before losses | PVsyst or measured site irradiance year at the chosen tilt | X-PAR |
+| driver roof_live_kPa | 0.96 kPa | Structural review | X-PAR |
+| driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 | X-PAR |
 | A-M-005 | 300 / 1000 W/m2K | Agitator selection and coil test | X-MAT-11 |
 | A-M-008 | 88 degC | Wall check at temperature (unit task 02) | MET-LEACH_CSTR_1-02 |
 | A-M-009 | 0 kg/d | HNO3 absorber design (tail-gas flow) | X-SAF-08 |
@@ -163,6 +184,10 @@ Total 126 items: 27 drivers, 99 register entries. Classification rule: first mat
 | A-M-086 | electrical input to each fed load leaves as heat to HEAT_SIN kW | Per-unit energy balance at unit task 01 | X-RSZ-07 |
 | A-M-093 | SOL_ARK bus change carried on IA-PV-01 average; PV, storage, kW | Hourly load profile and PVsyst site run | X-PAR-04 |
 | A-M-099 | seed rows moved the smallest distance (100 mm grid, 4 m radi mm | Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation | X-BLD-04 |
+| A-M-100 | 1 h partition at X=15000 (FAB acid room) credited as the IFC mm | Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations | X-BLD-04 |
+| A-M-102 | L1 farm re-row: 914 mm minimum between all farm rows; farm r mm | Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan | X-BLD-04 |
+| A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close | X-PAR-07 |
+| A-M-104 | Extension is a single-storey unconditioned hall: lighting 8. W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) and lighting design; confirm the hall programme needs no conditioning | X-PAR-07 |
 
 ## 7. T6 Commissioning measurements
 
@@ -171,6 +196,7 @@ Total 126 items: 27 drivers, 99 register entries. Classification rule: first mat
 | driver U_free_convection_W_m2K | 7.0 W/(m2 K) | Coil outlet temperature on the installed air cooler | X-PAR |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |
+| driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study | X-PAR |
 | A-M-007 | 0.0002 m2K/W | Operating record | X-MAT-11 |
 | A-M-012 | 4.22 m2 | Coil heat-transfer test on the built tank | X-MAT-16 |
 | A-M-019 | 2.0 spray / evaporation ratio | Quench outlet temperature and drain flow on commissioning | X-SAF-07 |

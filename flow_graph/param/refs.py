@@ -1,6 +1,16 @@
 """Citation registry for the parametric model. Code cites by key; docs print the full entry.
 Only published sources: standards, textbooks, peer-reviewed papers, manufacturer data."""
 REFS = {
+ 'IFC2021_1205': 'International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access.',
+ 'NFPA1_2021_11_12': 'NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3).',
+ 'NREL_PVWATTS8': 'Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input.',
+ 'IECC2021_C405': 'International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2).',
+ 'ASHRAE621_2019': 'ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas.',
+ 'ISO16798_3': 'ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s).',
+ 'IECC2021_C402': 'International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K).',
+ 'ASCE7_22': 'ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R).',
+ 'AHRI340_ASHRAE901': 'ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360.',
+
  'IFC2021_5003': 'International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets.',
  'NFPA400_2022': 'NFPA 400, Hazardous Materials Code (2022) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8.',
  'CAMEO_REACT': 'NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases.',

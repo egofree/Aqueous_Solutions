@@ -80,7 +80,10 @@ def solve():
     ea = evap(d, R['IA-ACID-01']*DR.val(d,'acid_conc_design_wt'), DR.val(d,'bmed_product_wt_acid'), DR.val(d,'acid_conc_design_wt'))
     nb = naoh_balance(d, g, la['hcl_mol_d'])
     eb = evap(d, bm['base_kg_d'], DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'))
-    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb, naoh=nb)
+    import subprocess, sys as _s, os as _o
+    root = _o.path.dirname(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))))
+    roof = json.loads(subprocess.run([_s.executable, 'docs-authority/_power_sizing.py'], cwd=root, capture_output=True, text=True, check=True).stdout)['roof']
+    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb, naoh=nb, roof=roof)
 
 def check():
     d, g, s = solve(); E = {x['stream_id']: x for x in g['edges']}; N = {x['unit_id']: x for x in g['nodes']}
@@ -108,9 +111,34 @@ def check():
             cmp('RECT_EW AC kW', N['RECT_EW']['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW'); continue
         dc = next((x['rate']['value'] for x in g['edges'] if x['stream_id']==f'IA-DC-{c}'), None)
         if dc is not None: cmp(f'{c} DC kW (cell + bus drop)', dc, v['P_bus_kW'], 'CODATA2018, USBM_CL_EW')
+    pv = N['PV_ARRAY']['params']; rf = s.get('roof')
+    if rf:
+        cmp('PV_ARRAY nameplate kWp vs roof-closed need', pv['nameplate_kw'], rf['pv_need_kWp'], 'NREL_PVWATTS, X-PAR-07')
+        if pv['nameplate_kw'] > rf['pv_roof_kWp']: errs.append(f"PV {pv['nameplate_kw']} kWp exceeds roof capacity {rf['pv_roof_kWp']:.1f} kWp")
     return errs, mis, s, d
 
 if __name__ == '__main__':
     errs, mis, s, d = check()
     for m in mis: print(f'{m[0]}: graph {m[1]:.3f}, solved {m[2]:.3f}, deviation {m[3]*100:+.1f} %')
     if errs: raise SystemExit('; '.join(errs))
+
+def roof_close(d, P_base_kW):
+    """X-PAR-07. Smallest footprint on the structural bay grid whose roof carries the PV that closes the energy balance,
+    including the extension's own lighting, ventilation and envelope loads (sizing.roof). The base plate is kept; bays are
+    added (single-storey extension). Returns the converged case."""
+    from .sizing import roof as RF, power as PW
+    v = lambda k: DR.val(d, k); bay = v('bay_mm'); bx0, by0 = int(v('base_bays_x')), int(v('base_bays_y'))
+    A0 = bx0*by0*bay*bay/1e6; best = None
+    for nx in range(bx0, bx0+40):
+        for ny in range(by0, by0+40):
+            W, D = nx*bay, ny*bay; A = W*D/1e6
+            if best and A > best['footprint_m2']: continue
+            ext = RF.extension_kW(A-A0, v('ext_lpd_W_m2'), v('ext_light_frac'), v('ext_Ra_L_s_m2'), v('ext_dT_mean_K'), v('ext_cop'), v('ext_sfp_W_per_L_s'), v('ext_U_roof'), v('ext_conditioned'))
+            P = P_base_kW + ext['total_kW']
+            need = PW.pv_kWp(P, v('night_hours'), v('storage_round_trip'), v('pv_yield_kWh_kWp_d')*v('pv_roof_yield_factor'), v('pv_system_derate'))
+            arr, lay = RF.array_area_m2(W, D, v('ifc_perim_small_mm'), v('ifc_perim_large_mm'), v('ifc_axis_limit_mm'), v('ifc_array_max_mm'), v('ifc_path_mm'))
+            have = RF.roof_kWp(arr, v('pv_module_eff'), v('pv_roof_gcr'))
+            if have >= need and (best is None or A < best['footprint_m2'] or (A == best['footprint_m2'] and abs(nx*1.0/ny-4/3) < abs(best['bays_x']/best['bays_y']-4/3))):
+                best = dict(bays_x=nx, bays_y=ny, W_mm=W, D_mm=D, footprint_m2=A, added_m2=A-A0, ext=ext, P_kW=P, pv_need_kWp=need,
+                            array_m2=arr, layout=lay, pv_roof_kWp=have, load=RF.roof_load_kPa(v('roof_pv_dead_kPa'), v('roof_live_kPa'), v('roof_snow_kPa')))
+    return best

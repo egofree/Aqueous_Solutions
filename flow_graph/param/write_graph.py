@@ -97,9 +97,15 @@ def process():
 
 def power():
     g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}
-    p = json.loads(subprocess.run([sys.executable,'docs-authority/_power_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['bounding']
+    o = json.loads(subprocess.run([sys.executable,'docs-authority/_power_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout); p = o['bounding']; rf = o['roof']
     pv = N['PV_ARRAY']['params']; kwp = math.ceil(p['pv_kWp'])
-    pv.update({'nameplate_kw': kwp, 'count': math.ceil(kwp/pv['module_kw']), 'area_m2': round(kwp*5)})
+    pv.update({'nameplate_kw': kwp, 'count': math.ceil(kwp/pv['module_kw']), 'area_m2': round(rf['array_m2']),
+               'mounting': 'roof only (X-PAR-07); ground field removed',
+               'roof': {'footprint_mm': [rf['W_mm'], rf['D_mm']], 'bays': [rf['bays_x'], rf['bays_y']], 'footprint_m2': rf['footprint_m2'],
+                        'extension_m2': rf['added_m2'], 'roof_capacity_kWp': round(rf['pv_roof_kWp'], 1), 'perimeter_pathway_mm': rf['layout']['perimeter_mm'],
+                        'arrays': rf['layout']['arrays'], 'extension_load_kW': round(rf['ext']['total_kW'], 2),
+                        'roof_load_kPa': {k: round(v, 3) for k, v in rf['load'].items()},
+                        'basis': 'flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)'}})
     N['ZNBR2']['params'].update({'kW': math.ceil(p['store_kW']), 'kWh': math.ceil(p['store_kWh'])})
     N['SOL_ARK_60K']['params'].update({'count': p['inverters'], 'kW': p['inv_kW']})
     open(GP,'w').write(json.dumps(g, indent=2))

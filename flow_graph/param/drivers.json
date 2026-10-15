@@ -270,18 +270,158 @@
   "needs_verification": true,
   "verification_test": "Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot"
  },
- "pv_ground_m2_per_kWp": {
-  "value": 5.0,
-  "units": "m2 ground per kWp including row spacing",
-  "register": "A-M-078 (AQS-ELEC-007 study)",
+ "bay_mm": {
+  "value": 6000,
+  "units": "mm structural bay",
+  "register": "params.py BAY",
   "needs_verification": true,
-  "verification_test": "Site survey area check (X-BAS-03) and PV row layout at the chosen tilt and ground-cover ratio"
+  "verification_test": "Structural grid review"
  },
- "pv_field_aspect": {
-  "value": 1.5,
-  "units": "E-W length / N-S depth",
-  "register": "A-M-098 (X-BLD-04 study)",
+ "base_bays_x": {
+  "value": 4,
+  "units": "bays",
+  "register": "params.py",
   "needs_verification": true,
-  "verification_test": "Site plan with parcel boundary (X-BAS-03)"
+  "verification_test": "Structural grid review"
+ },
+ "base_bays_y": {
+  "value": 3,
+  "units": "bays",
+  "register": "params.py",
+  "needs_verification": true,
+  "verification_test": "Structural grid review"
+ },
+ "pv_module_eff": {
+  "value": 0.19,
+  "units": "STC efficiency",
+  "ref": "NREL_PVWATTS8",
+  "needs_verification": true,
+  "verification_test": "Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC"
+ },
+ "pv_roof_gcr": {
+  "value": 0.6,
+  "units": "ground coverage ratio, low-tilt rows",
+  "register": "A-M-103",
+  "needs_verification": true,
+  "verification_test": "Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt"
+ },
+ "pv_roof_yield_factor": {
+  "value": 1.0,
+  "units": "roof yield / pv_yield_kWh_kWp_d",
+  "register": "A-M-103",
+  "needs_verification": true,
+  "verification_test": "PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio"
+ },
+ "ifc_perim_small_mm": {
+  "value": 1219,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_perim_large_mm": {
+  "value": 1829,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_axis_limit_mm": {
+  "value": 76200,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_array_max_mm": {
+  "value": 45720,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_path_mm": {
+  "value": 1219,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ext_lpd_W_m2": {
+  "value": 8.8,
+  "units": "W/m2",
+  "ref": "IECC2021_C405",
+  "needs_verification": true,
+  "verification_test": "Lighting design of the extension"
+ },
+ "ext_light_frac": {
+  "value": 0.1,
+  "units": "fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1)",
+  "register": "A-M-104",
+  "needs_verification": true,
+  "verification_test": "Operating schedule and daylight study"
+ },
+ "ext_Ra_L_s_m2": {
+  "value": 0.3,
+  "units": "L/(s m2)",
+  "ref": "ASHRAE621_2019",
+  "needs_verification": true,
+  "verification_test": "Occupancy classification of the extension"
+ },
+ "ext_dT_mean_K": {
+  "value": 8.0,
+  "units": "K mean |T_in - T_out| over the year",
+  "register": "A-M-104",
+  "needs_verification": true,
+  "verification_test": "Bin-hour load calculation from TMY3 (AQS-SITE-002 site)"
+ },
+ "ext_cop": {
+  "value": 3.2,
+  "units": "heat pump COP",
+  "ref": "AHRI340_ASHRAE901",
+  "needs_verification": true,
+  "verification_test": "Selected heat-pump rating"
+ },
+ "ext_sfp_W_per_L_s": {
+  "value": 1.25,
+  "units": "W per L/s",
+  "ref": "ISO16798_3",
+  "needs_verification": true,
+  "verification_test": "Fan selection"
+ },
+ "ext_U_roof": {
+  "value": 0.199,
+  "units": "W/(m2 K)",
+  "ref": "IECC2021_C402",
+  "needs_verification": true,
+  "verification_test": "Roof assembly design"
+ },
+ "roof_pv_dead_kPa": {
+  "value": 0.15,
+  "units": "kPa PV modules and ballasted racking",
+  "register": "A-M-105",
+  "needs_verification": true,
+  "verification_test": "Racking design weight per m2"
+ },
+ "roof_live_kPa": {
+  "value": 0.96,
+  "units": "kPa",
+  "ref": "ASCE7_22",
+  "needs_verification": true,
+  "verification_test": "Structural review"
+ },
+ "roof_snow_kPa": {
+  "value": 0.24,
+  "units": "kPa flat-roof snow (study)",
+  "register": "A-M-105",
+  "needs_verification": true,
+  "verification_test": "ASCE 7 Hazard Tool ground snow load at the site"
+ },
+ "ext_conditioned": {
+  "value": 0.0,
+  "units": "1 conditioned, 0 unconditioned hall",
+  "register": "A-M-104",
+  "needs_verification": true,
+  "verification_test": "Room programme for the extension: confirm no process in it needs heating or cooling; otherwise set 1 and re-solve"
  }
 }

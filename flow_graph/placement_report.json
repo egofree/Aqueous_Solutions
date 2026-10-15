@@ -9,7 +9,8 @@
     "L-1": -6000.0,
     "L-2": -10500.0,
     "L1": 6000.0,
-    "L2": 10800.0
+    "L2": 10800.0,
+    "ROOF": 14400.0
   },
   "move_count": 136,
   "apply_count": 41,
@@ -1907,19 +1908,19 @@
       "freecad_names": [
         "PV_ARRAY"
       ],
-      "level": "L0",
+      "level": "ROOF",
       "origin_mm": [
-        -99300.0,
-        -3000.0,
-        0.0
+        1829.0,
+        1829.0,
+        14400.0
       ],
       "size_mm": [
-        89900,
-        60000,
-        2500
+        116342,
+        92342,
+        300
       ],
       "source": "PV_ARRAY",
-      "source_doc": "X-BLD-04 study PV ground field (flow_graph/place_pv_field.py): 1078 kWp x 5.0 m2/kWp = 5390 m2, 89.9 x 60.0 m, 2.5 m mount height (study), 600 mm west of the yard. Site area pending owner (X-BAS-03); A-M-078, A-M-098.",
+      "source_doc": "X-PAR-07 roof-only PV (owner decision 2026-10-15; ground field removed). Envelope of 6 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 96 m roof (solver.roof_close); 1219 mm interior pathways; array area 10379 m2. ROOF datum 14400 mm is a study value (A-M-103).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3932,19 +3933,19 @@
       "freecad_names": [
         "PV_ARRAY"
       ],
-      "level": "L0",
+      "level": "ROOF",
       "origin_mm": [
-        -99300.0,
-        -3000.0,
-        0.0
+        1829.0,
+        1829.0,
+        14400.0
       ],
       "size_mm": [
-        89900,
-        60000,
-        2500
+        116342,
+        92342,
+        300
       ],
       "source": "PV_ARRAY",
-      "source_doc": "X-BLD-04 study PV ground field (flow_graph/place_pv_field.py): 1078 kWp x 5.0 m2/kWp = 5390 m2, 89.9 x 60.0 m, 2.5 m mount height (study), 600 mm west of the yard. Site area pending owner (X-BAS-03); A-M-078, A-M-098.",
+      "source_doc": "X-PAR-07 roof-only PV (owner decision 2026-10-15; ground field removed). Envelope of 6 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 96 m roof (solver.roof_close); 1219 mm interior pathways; array area 10379 m2. ROOF datum 14400 mm is a study value (A-M-103).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,

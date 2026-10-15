@@ -282,6 +282,7 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 4. X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the in-house design (X-MFG-30; no bought skid, owner decision 2026-10-15); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).
 5. X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).
 6. X-BLD-04 closed 2026-10-15 (seed Rev K): AQS-BLD-010 0 overlaps / 0 pairs; AQS-BLD-011 10/10 incompatible pairs; AQS-BLD-012 9/9 NEC 110.26 rows and 139/139 rows with a 914 mm face; L1 farm re-rowed to 914 mm paths (`flow_graph/farm_rerow.py`, A-M-102). Next: X-PAR-07 roof-only PV, X-STD-01, X-MFG-30..32, X-GOV-20 (owner decisions 2026-10-15).
+7. X-PAR-07 Remaining: EXT_HALL graph node with duty sheet and bus feed so the 13.9 kW extension load closes on the graph (today it is carried in AQS-ELEC-007 and PV_ARRAY params.roof only); FreeCAD extension massing. Done 2026-10-15: roof_close in the solver (20 x 16 bays, 1174 kWp on the roof), gate test_roof_carries_pv, ground field removed, seed Rev L.
 7. X-PIP-03 Fabrication isometrics from AQS-ISO-001.
 8. X-ELS-02 Remaining study-share loads; CRYO_ASU basis.
 9. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.

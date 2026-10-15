@@ -14,3 +14,9 @@ def test_graph_within_misfit_tolerance():
 def test_acid_loop_below_azeotrope():
     d, _, _ = solver.solve()
     assert d['acid_conc_design_wt']['value'] < d['hcl_azeotrope_wt']['value']
+
+def test_roof_carries_pv():
+    """X-PAR-07: PV is roof-only; the converged roof carries the nameplate."""
+    _, g, s = solver.solve()
+    pv = next(n for n in g['nodes'] if n['unit_id'] == 'PV_ARRAY')['params']
+    assert pv['nameplate_kw'] <= s['roof']['pv_roof_kWp'] and pv['nameplate_kw'] >= s['roof']['pv_need_kWp']

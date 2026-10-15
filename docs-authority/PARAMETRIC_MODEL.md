@@ -60,6 +60,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
+| PV_ARRAY nameplate kWp vs roof-closed need | 1174.000 | 1173.727 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -115,16 +116,40 @@ All solved units close.
 | ppt_naoh_per_cl | 1.0 | mol NaOH per mol chloride precipitated as hydroxide | GREENWOOD | yes |
 | digest_naoh_per_sio2 | 2.0 | mol NaOH per mol SiO2 dissolved | GREENWOOD | yes |
 | naoh_makeup_form | 1.0 | mass fraction NaOH in purchased make-up (anhydrous flake) | X-PAR NaOH balance (owner decision 2026-10-15) | yes |
-| pv_ground_m2_per_kWp | 5.0 | m2 ground per kWp including row spacing | A-M-078 (AQS-ELEC-007 study) | yes |
-| pv_field_aspect | 1.5 | E-W length / N-S depth | A-M-098 (X-BLD-04 study) | yes |
+| bay_mm | 6000 | mm structural bay | params.py BAY | yes |
+| base_bays_x | 4 | bays | params.py | yes |
+| base_bays_y | 3 | bays | params.py | yes |
+| pv_module_eff | 0.19 | STC efficiency | NREL_PVWATTS8 | yes |
+| pv_roof_gcr | 0.6 | ground coverage ratio, low-tilt rows | A-M-103 | yes |
+| pv_roof_yield_factor | 1.0 | roof yield / pv_yield_kWh_kWp_d | A-M-103 | yes |
+| ifc_perim_small_mm | 1219 | mm | IFC2021_1205 | yes |
+| ifc_perim_large_mm | 1829 | mm | IFC2021_1205 | yes |
+| ifc_axis_limit_mm | 76200 | mm | IFC2021_1205 | yes |
+| ifc_array_max_mm | 45720 | mm | IFC2021_1205 | yes |
+| ifc_path_mm | 1219 | mm | IFC2021_1205 | yes |
+| ext_lpd_W_m2 | 8.8 | W/m2 | IECC2021_C405 | yes |
+| ext_light_frac | 0.1 | fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | A-M-104 | yes |
+| ext_Ra_L_s_m2 | 0.3 | L/(s m2) | ASHRAE621_2019 | yes |
+| ext_dT_mean_K | 8.0 | K mean |T_in - T_out| over the year | A-M-104 | yes |
+| ext_cop | 3.2 | heat pump COP | AHRI340_ASHRAE901 | yes |
+| ext_sfp_W_per_L_s | 1.25 | W per L/s | ISO16798_3 | yes |
+| ext_U_roof | 0.199 | W/(m2 K) | IECC2021_C402 | yes |
+| roof_pv_dead_kPa | 0.15 | kPa PV modules and ballasted racking | A-M-105 | yes |
+| roof_live_kPa | 0.96 | kPa | ASCE7_22 | yes |
+| roof_snow_kPa | 0.24 | kPa flat-roof snow (study) | A-M-105 | yes |
+| ext_conditioned | 0.0 | 1 conditioned, 0 unconditioned hall | A-M-104 | yes |
 
 ## 6. References
 
 | Key | Citation |
 | --- | --- |
+| AHRI340_ASHRAE901 | ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360. |
 | API520 | API Standard 520 Part I, Sizing, Selection, and Installation of Pressure-relieving Devices, 10th ed. (2020): liquid A = Q/(38 Kd Kw Kc Kv) sqrt(G/(p1-p2)) (US units, eq. 32); gas critical flow A = W/(C K P1 Kb Kc) sqrt(T Z/M) (US units, eq. 3), C = 520 sqrt(k (2/(k+1))^((k+1)/(k-1))). |
+| ASCE7_22 | ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R). |
+| ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas. |
 | ASHRAE_SYS2020 | ASHRAE Handbook, HVAC Systems and Equipment (2020), ch. 13 hydronic heating and cooling: design temperature difference about 10-11 K (20 F) for chilled/condenser water loops. |
 | ASTM_D1785 | ASTM D1785-15, Standard Specification for PVC Plastic Pipe, Schedules 40, 80 and 120; maximum service 60 C (140 F). |
+| CAMEO_REACT | NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases. |
 | CARLETON_HCL_2023 | Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid. |
 | CIAAW2021 | IUPAC CIAAW, Standard atomic weights 2021, Pure Appl. Chem. 94(5), 573-600 (2022). |
 | CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K). |
@@ -134,11 +159,19 @@ All solved units close.
 | EDBM_WHEY_2021 | Transforming salty whey into cleaning chemicals using electrodialysis with bipolar membranes, Desalination (2021), ScienceDirect pii S0011916420312765: maximum 3.6 M acid / 3.0 M base from NaCl; 6.7 kWh/kg to produce 2 M acid or base. |
 | EVAPCRYST_MVR | EvapCryst / manufacturer application notes on MVR evaporators: 15-25 kWh/t water for low boiling-point elevation, 30-60 kWh/t for high. |
 | GREENWOOD | Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl). |
+| IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K). |
+| IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2). |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding: eq. 29 (step), eq. 32 (touch), Cs eq. 27. |
+| IFC2021_1205 | International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access. |
+| IFC2021_5003 | International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
 | INCROPERA7 | Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1). |
+| ISO16798_3 | ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
 | NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
+| NFPA1_2021_11_12 | NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3). |
+| NFPA400_2022 | NFPA 400, Hazardous Materials Code (2022) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8. |
 | NREL_PVWATTS | NREL PVWatts Calculator v8, site run recorded in AQS-SITE-002 (5.41 kWh/kWp/d). |
+| NREL_PVWATTS8 | Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input. |
 | PERRY9 | Green D.W., Southard M.Z. (eds), Perry's Chemical Engineers' Handbook, 9th ed., McGraw-Hill (2019), sec. 2 physical properties (heat capacity of aqueous HCl and NaOH solutions); sec. 6 fluid transport (line sizing by velocity). |
 | PERRY9_ABS | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 14 equipment for gas-liquid operations: packed-column capacity by a flooding velocity u_f = C_s sqrt((rho_L - rho_G)/rho_G) with C_s from the packing correlation or vendor; design at 0.7-0.8 of flood; height Z = HTU x NTU; for absorption with negligible equilibrium back-pressure (fast reaction, m y* ~ 0) NTU = ln(y_in/y_out). |
 | PERRY9_HCL | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 and sec. 13: HCl-water maximum-boiling azeotrope 20.2 wt% HCl at 108.6 C, 101.3 kPa; below the azeotrope the vapour is water-rich, so boiling concentrates the liquid toward 20.2 wt%; density of 2 M HCl 1.032 kg/L and of 2 M NaOH 1.081 kg/L at 20 C. |
@@ -182,8 +215,28 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES |
 | driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet |
 | driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot |
-| driver pv_ground_m2_per_kWp | 5.0 m2 ground per kWp including row spacing | Site survey area check (X-BAS-03) and PV row layout at the chosen tilt and ground-cover ratio |
-| driver pv_field_aspect | 1.5 E-W length / N-S depth | Site plan with parcel boundary (X-BAS-03) |
+| driver bay_mm | 6000 mm structural bay | Structural grid review |
+| driver base_bays_x | 4 bays | Structural grid review |
+| driver base_bays_y | 3 bays | Structural grid review |
+| driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC |
+| driver pv_roof_gcr | 0.6 ground coverage ratio, low-tilt rows | Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt |
+| driver pv_roof_yield_factor | 1.0 roof yield / pv_yield_kWh_kWp_d | PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio |
+| driver ifc_perim_small_mm | 1219 mm | AHJ fire-code review |
+| driver ifc_perim_large_mm | 1829 mm | AHJ fire-code review |
+| driver ifc_axis_limit_mm | 76200 mm | AHJ fire-code review |
+| driver ifc_array_max_mm | 45720 mm | AHJ fire-code review |
+| driver ifc_path_mm | 1219 mm | AHJ fire-code review |
+| driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension |
+| driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study |
+| driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension |
+| driver ext_dT_mean_K | 8.0 K mean |T_in - T_out| over the year | Bin-hour load calculation from TMY3 (AQS-SITE-002 site) |
+| driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating |
+| driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection |
+| driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design |
+| driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 |
+| driver roof_live_kPa | 0.96 kPa | Structural review |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow (study) | ASCE 7 Hazard Tool ground snow load at the site |
+| driver ext_conditioned | 0.0 1 conditioned, 0 unconditioned hall | Room programme for the extension: confirm no process in it needs heating or cooling; otherwise set 1 and re-solve |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -261,7 +314,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-075 | FARM second tier floor at L1 datum + 2250 mm, beds and skids mm | X-BLD-01 tier deck design and X-BLD-04 access check |
 | A-M-076 | FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm mm | X-BLD-04 general arrangement |
 | A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | BMED stack vendor data and leach-loop precipitation test (unit task 02) |
-| A-M-078 | PV 1078 kWp, ground field 89.9 x 60.0 m (5390 m2 at 5 m2/kWp kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
+| A-M-078 | PV 1174 kWp roof-only on a 120 x 96 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
 | A-M-079 | EW cell DC less existing heat outlets goes to HEAT_SINK as c kW | Cell heat balance at unit task 03 |
 | A-M-080 | RECT_EW cabinet 2400 x 800 x 2000 mm mm | Vendor GA |
 | A-M-081 | potable path: leach bleed -> VCD -> UPW polish (2.3% reject) - | Condensate chloride and pH test against the potable standard (unit task 06) |
@@ -281,5 +334,11 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-095 | dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol mol/mol | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg |
 | A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week |
 | A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration |
-| A-M-098 | PV field rectangle aspect 1.5 (E-W long), 2.5 m mount height -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout |
+| A-M-098 | Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground fiel -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout |
 | A-M-099 | seed rows moved the smallest distance (100 mm grid, 4 m radi mm | Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation |
+| A-M-100 | 1 h partition at X=15000 (FAB acid room) credited as the IFC mm | Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations |
+| A-M-101 | Access check: 914 mm clear on at least one face per row; roo mm | Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths |
+| A-M-102 | L1 farm re-row: 914 mm minimum between all farm rows; farm r mm | Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan |
+| A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close |
+| A-M-104 | Extension is a single-storey unconditioned hall: lighting 8. W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) and lighting design; confirm the hall programme needs no conditioning |
+| A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays |
