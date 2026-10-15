@@ -122,7 +122,7 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 
 - [x] **X-BAS-01** Feedstock assay schema and bounding envelope. Done when: AQS-ASSAY-001 Rev C: seven-class schema, regolith-like to metal-rich PCB. Depends: —. Evidence: `docs-authority/FEED_ASSAY.md`.
 - [ ] **X-BAS-02** Bounding-case check of every held rate. Done when: each held rate recalculated at both bounding cases, or stated as held with reason. Depends: X-BAS-01.
-- [ ] **X-BAS-03** Site basis. Done when: site, climate, seismic, soil, wind, snow values with source. Depends: —.
+- [ ] **X-BAS-03** Site basis. Done when: site, climate, seismic, soil, wind, snow values with source. Depends: —. Start from `docs-authority/SITE_BASIS.md` (partial).
 - [ ] **X-BAS-04** Units and standards basis. Done when: codes and standards list per discipline. Depends: —.
 
 ### X-PIP. Piping and line list

@@ -154,5 +154,83 @@
    "docs-authority/POLYMER_HX_SIZING.md"
   ],
   "id": "A-M-012"
+ },
+ {
+  "value": "115",
+  "units": "mph 3 s gust",
+  "where": "AQS-SITE-002",
+  "basis": "Upper end of published Dallas Risk II band",
+  "sensitivity": "Wind pressure scales with V squared",
+  "replaced_by": "ASCE Hazard Tool at the parcel",
+  "task": "X-BAS-03",
+  "files": [
+   "docs-authority/SITE_BASIS.md"
+  ],
+  "id": "A-M-013"
+ },
+ {
+  "value": "Ss 0.10, S1 0.05",
+  "units": "g",
+  "where": "AQS-SITE-002",
+  "basis": "Low-hazard North Texas; no lookup run",
+  "sensitivity": "Sets SDC; SDC A exempts nonstructural components",
+  "replaced_by": "ASCE Hazard Tool at the parcel",
+  "task": "X-BAS-03",
+  "files": [
+   "docs-authority/SITE_BASIS.md"
+  ],
+  "id": "A-M-014"
+ },
+ {
+  "value": "D",
+  "units": "site class",
+  "where": "AQS-SITE-002",
+  "basis": "IBC 1613.2.2 default",
+  "sensitivity": "Site amplification factors",
+  "replaced_by": "Geotechnical report",
+  "task": "X-BAS-03",
+  "files": [
+   "docs-authority/SITE_BASIS.md"
+  ],
+  "id": "A-M-015"
+ },
+ {
+  "value": "5",
+  "units": "psf ground snow",
+  "where": "AQS-SITE-002",
+  "basis": "Low North Texas value; not looked up",
+  "sensitivity": "Roof loads only",
+  "replaced_by": "ASCE Hazard Tool at the parcel",
+  "task": "X-BAS-03",
+  "files": [
+   "docs-authority/SITE_BASIS.md"
+  ],
+  "id": "A-M-016"
+ },
+ {
+  "value": "2000",
+  "units": "psf allowable bearing",
+  "where": "AQS-SITE-002",
+  "basis": "IBC Table 1806.2 presumptive clay value",
+  "sensitivity": "Footing size for tanks and slabs",
+  "replaced_by": "Geotechnical report",
+  "task": "X-BAS-03",
+  "files": [
+   "docs-authority/SITE_BASIS.md"
+  ],
+  "id": "A-M-017"
+ },
+ {
+  "value": "150",
+  "units": "mm frost depth",
+  "where": "AQS-SITE-002",
+  "basis": "Local practice",
+  "sensitivity": "Buried water lines",
+  "replaced_by": "Building official value",
+  "task": "X-BAS-03",
+  "files": [
+   "docs-authority/SITE_BASIS.md"
+  ],
+  "id": "A-M-018"
  }
 ]

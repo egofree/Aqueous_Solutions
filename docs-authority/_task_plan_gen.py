@@ -67,7 +67,7 @@ X=[
 ('BAS','Design basis',[
 ('X-BAS-01','Feedstock assay schema and bounding envelope','AQS-ASSAY-001 Rev C: seven-class schema, regolith-like to metal-rich PCB','—','docs-authority/FEED_ASSAY.md'),
 ('X-BAS-02','Bounding-case check of every held rate','each held rate recalculated at both bounding cases, or stated as held with reason','X-BAS-01',None),
-('X-BAS-03','Site basis','site, climate, seismic, soil, wind, snow values with source','—',None),
+('X-BAS-03','Site basis','site, climate, seismic, soil, wind, snow values with source','—','docs-authority/SITE_BASIS.md'),
 ('X-BAS-04','Units and standards basis','codes and standards list per discipline','—',None)]),
 ('PIP','Piping and line list',[
 ('X-PIP-01','Piping class sheets','class sheets per service and material','X-MAT-01',None),

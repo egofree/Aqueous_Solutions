@@ -180,3 +180,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | B | 2026-10-01 | Water purification — habitation and fab UPW | canonical |
 | AQS-REG-001 | `docs-authority/DOC_REGISTER.md` | A | 2026-10-15 | Document number register | canonical |
 | AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | A | 2026-10-15 | Assumptions register | canonical |
+| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | A | 2026-10-15 | Site basis — climate, wind, seismic, soil | canonical |
