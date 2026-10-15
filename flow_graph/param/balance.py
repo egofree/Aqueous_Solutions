@@ -47,6 +47,8 @@ def physics(g):
     T4 roof-tank shortfall is made up on the potable path by difference: IA-POT-01, IA-UPW-REMIN, S25 and the leach water bleed IA-LEACH-VCD.
     T5 the leach dissolved-gas edge IA-LEACH-ASU closes the leach and the cold box. It is reduced, toward the Henry's-law solubility bound
        (SANDER2015); the remaining excess over that bound is task X-PAR-11."""
+    from flow_graph.param import o2_close
+    o2_close.patch(g); o2_close.tf(g); XL = o2_close.tf(g)     # second pass settles EW_4 after the N2 trim
     E = {e['stream_id']: e for e in g['edges']}
     v = lambda k: float(E[k]['rate']['value'] or 0)
     def put(k, x, why):
@@ -62,17 +64,17 @@ def physics(g):
         if k in E: E[k]['composition'] = {'CO2': 1.0}
     put('IA-TERR-VAP', v('S40') - v('S41') - v('S42'), 'transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest')
     put('IA-HVAC-COND', v('IA-TERR-VAP') + v('IA-BED-VAP') + v('IA-HAB-VAP'), 'condensate = greenhouse vapour in')
-    draw = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['from_unit_id'] == 'HDR_O2' and e['stream_id'] != 'IA-O2-RET'
-               and e['presence'] == 'present' and 'mass' in (e.get('layers') or []))
-    put('IA-O2-RET', 0.0, 'no surplus O2 return; product follows draw')
-    put('S83', draw - v('IA-O2-MAKE'), 'O2 product = header draw'); put('IA-ASU-O2', v('S83') + v('IA-O2-MAKE') - v('S87'), 'O2 product = header draw')
+    put('IA-O2-RET', 0.0, 'no surplus O2 return')
+    src, draw = o2_close.close_o2(g)     # T3 (X-PAR-12): O2 product = cold-box O2 in + bed + electrolyser; surplus to PROD_O2. No O2 from CO2.
     d = -_unit_resid(g, 'ROOF_TANK')
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):
         put(k, v(k) + d, f'roof-tank shortfall {d:+.4f} kg/d by difference on the potable path')
     a = _unit_resid(g, 'CRYO_ASU')
     lim = henry_bound(g)
-    put('IA-LEACH-ASU', v('IA-LEACH-ASU') - a, f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')
+    put('IA-LEACH-ASU', max(0.0, v('IA-LEACH-ASU') - a), f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')
     assert v('IA-LEACH-ASU') <= lim + 1e-6, ('IA-LEACH-ASU above the Henry-law bound', v('IA-LEACH-ASU'), lim)
+    put('IA-H2O-MU', v('IA-H2O-MU') - _unit_resid(g, 'LEACH_CSTR_1'), 'leach water make-up by difference (H and O leave as methanol and O2 product)')
+    o2_close.LAST.clear(); o2_close.LAST.update(XL, power=o2_close.close_power(g), o2=(src, draw))
     return d, a
 
 def reconcile(g):

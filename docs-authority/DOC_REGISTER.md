@@ -207,7 +207,9 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | A | 2026-10-15 | Motor and actuator inventory with family rollup (CSV beside) | canonical |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | A | 2026-10-15 | Mass balance reconciliation (X-PAR-02 closure layer) | canonical |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | A | 2026-10-15 | Oxygen species ledger | canonical |
-| AQS-PAR-005 | `docs-authority/O2_SOURCE.md` | A | 2026-10-15 | O2 source study (X-PAR-12) | canonical |
+| AQS-PAR-005 | `docs-authority/O2_SOURCE.md` | A | 2026-10-15 | O2 source study and species closure (X-PAR-12), Rev B | canonical |
+| AQS-PAR-005A | `docs-authority/O2_SOURCE_AUDIT.md` | A | 2026-10-15 | O2 source audit (X-PAR-12 Rev A, frozen) | canonical |
+| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | A | 2026-10-15 | Open questions log (owner away) | canonical |
 | AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheet per line (SVG + quantities CSV) | canonical |
 | AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | A | 2026-10-15 | Wire inventory with family rollup (CSV beside) | canonical |
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | A | 2026-10-15 | Pipe inventory with family rollup (CSV beside) | canonical |

@@ -2048,5 +2048,25 @@
     "verification": "Measure bed CO2 drawdown (closed-chamber, IRGA) at DLI 17 against 30 g CO2/m2/d; electrolyser stack kWh/kg at commissioning; anode-hood O2 by paramagnetic analyser.",
     "replace_when": "Measured canopy uptake or stack energy differs by > 20 %.",
     "doc": "AQS-PAR-005"
+  },
+  {
+    "id": "A-M-133",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "X-PAR-12 closure basis",
+    "statement": "EW cathode CE 0.85 (AQS-DUTY-051), anode 2 % O2 (O_BRIEN2005); main anode Cl2 oxidises the metallic scrap loop in the leach, side Cl2 + H2 to HCl synthesis (NIST_WEBBOOK 92.31 kJ/mol); PEM 55 kWh/kg H2 (IEA_GHR2023) on a 6 h PV window; combustion at 10 % excess O2 (TURNS2012); 200 bar store Z: H2 1.13, O2 0.93 (NIST_WEBBOOK); fuel cell 16.5 kWh/kg H2 from S51/S49.",
+    "verification": "EW cell gas analysis (H2 in cathode hood, O2/Cl2 in anode hood) against Faraday per cell; electrolyser kWh/kg at commissioning; flue O2 at 1.5-2 vol % dry at the genset; store mass by weighing.",
+    "replace_when": "Measured CE, O2 fraction or stack energy differ by more than 10 %.",
+    "doc": "AQS-PAR-005 Rev B"
   }
 ]

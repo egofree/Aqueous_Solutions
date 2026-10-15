@@ -631,8 +631,8 @@
               "layer": "mass",
               "dir": "in",
               "label": "REGEN LEACH make-up (BMED HCl + CRU NaClO3)",
-              "value": 223.8036,
-              "basis": "Cl2 + H2 evolved at EW, element basis",
+              "value": 0.0,
+              "basis": "withdrawn: chloride returns on the anode Cl2 and IA-HCL-SYN (X-PAR-12)",
               "kind": "derived"
             }
           ]
@@ -895,7 +895,36 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "x_par_12_base": {
+          "IA-GEN-AIR": 50.000001,
+          "IA-NOX-N2": 243.570465,
+          "IA-NOX-CO2": 30.826308,
+          "IA-NOX-H2O": 226.899758,
+          "IA-ASU-N2": 243.280002,
+          "IA-AB-FLUE": 7.031788,
+          "S67": 118.201788,
+          "S67B": 13.304,
+          "IA-FLUE-EXH": 265.161788,
+          "IA-BMED-03": 449.523584,
+          "IA-EVAP_ACID-COND": 864.9665,
+          "S17-BMED": 26.9276,
+          "SF-EVAP_ACID": 1.497,
+          "IA-PV-01": 234.1518,
+          "IA-E-SUN": 128.527,
+          "BMED_kW": 26.9276,
+          "EVAP_kW": 1.497,
+          "bus_r0": 0.17510000000010445,
+          "PV": {
+            "count": 6784,
+            "nameplate_kw": 3392,
+            "area_m2": 29784
+          }
+        },
+        "storage_mode": "compressed gas, 200 bar, Type I cylinder bank, O2-cleaned (ASTM G93), separate from H2 (NFPA 2 ch. 7 separation)",
+        "store_kg": 912.8,
+        "store_water_volume_m3": 3.18,
+        "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)"
       }
     },
     {
@@ -941,8 +970,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 56.278,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1050,8 +1079,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 56.2829,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1126,8 +1155,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 9.8015,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1201,8 +1230,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 0.2433,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1276,8 +1305,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 0.4247,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1351,8 +1380,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 0.8591,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1426,8 +1455,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 37.6197,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1501,8 +1530,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 0.4485,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1577,8 +1606,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 57.0458,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -1824,6 +1853,12 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "reversible_loop": {
+          "electrolyser": "H2O_ELYZ",
+          "round_trip": 0.3,
+          "basis": "PEM 55.0 kWh/kg H2 in, 16.5 kWh/kg out",
+          "oxidant": "pure O2 from HDR_O2; H2 and O2 never mixed (NFPA 2, ISO 22734, IEC 62282-3-100)"
         }
       }
     },
@@ -3679,7 +3714,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 234.1518,
+        "value": 272.5135,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -3687,14 +3722,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6784,
+        "count": 8444,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 3392,
-        "area_m2": 29784,
+        "nameplate_kw": 4222,
+        "area_m2": 37071,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -3704,19 +3739,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            186000,
-            174000
+            216000,
+            186000
           ],
           "bays": [
-            31,
-            29
+            36,
+            31
           ],
-          "footprint_m2": 32364.0,
-          "extension_m2": 31932.0,
-          "roof_capacity_kWp": 3395.4,
+          "footprint_m2": 40176.0,
+          "extension_m2": 39744.0,
+          "roof_capacity_kWp": 4226.1,
           "perimeter_pathway_mm": 1829,
-          "arrays": 16,
-          "extension_load_kW": 91.34,
+          "arrays": 20,
+          "extension_load_kW": 112.85,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -3724,7 +3759,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 1696
+        "balance_kWp": 2111
       }
     },
     {
@@ -3950,13 +3985,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2880.0,
+        "kW": 3540.0,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "count": 48,
+        "count": 59,
         "relief_basis": {
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
@@ -3964,18 +3999,19 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2635.4,
-          "export_kWh_d_clear": 7338,
+          "export_peak_kW": 3235.5,
+          "export_kWh_d_clear": 9135,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
-          "count": 5,
+          "count": 6,
           "inverters": [
             10,
             10,
             10,
-            9,
+            10,
+            10,
             9
           ],
           "breaker_A": [
@@ -3983,9 +4019,11 @@
             1000,
             1000,
             1000,
+            1000,
             1000
           ],
           "xfmr_kVA": [
+            750,
             750,
             750,
             750,
@@ -4470,8 +4508,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1112,
-        "kWh": 3425,
+        "kW": 1384,
+        "kWh": 4263,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -4515,10 +4553,10 @@
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         },
-        "charge_kW": 1112,
-        "discharge_kW": 245,
+        "charge_kW": 1384,
+        "discharge_kW": 305,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 48 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
+        "distribution": "distributed over the 59 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)"
       }
     },
     {
@@ -8465,34 +8503,34 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "footprint_m2": 31932.0,
+        "footprint_m2": 39744.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 91.340 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 112.852 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "hvac": {
-          "light_kW": 28.1,
-          "vent_kW": 39.827,
-          "envelope_kW": 23.412,
-          "total_kW": 91.339,
-          "vent_L_s": 9579.6,
-          "Qh_kW": 55.41,
-          "Qc_kW": 111.006,
-          "slab_kW": 3.147,
-          "gains_kW": 40.075,
+          "light_kW": 34.975,
+          "vent_kW": 49.57,
+          "envelope_kW": 28.307,
+          "total_kW": 112.852,
+          "vent_L_s": 11923.2,
+          "Qh_kW": 67.542,
+          "Qc_kW": 136.87,
+          "slab_kW": 3.514,
+          "gains_kW": 49.879,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 492.467,
-          "peak_c_kW": 438.524
+          "peak_h_kW": 603.354,
+          "peak_c_kW": 539.99
         }
       },
       "continuous_kw": {
-        "value": 91.3395,
+        "value": 112.8521,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 31932 m2; lighting 28.10 kW (IECC 2021 C405, 10 % lit), ventilation 39.83 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.41 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.4 kW and cooling 111.0 kW thermal average after internal gains 40.1 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 39744 m2; lighting 34.97 kW (IECC 2021 C405, 10 % lit), ventilation 49.57 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.31 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 67.5 kW and cooling 136.9 kW thermal average after internal gains 49.9 kW and slab edge 3.51 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -8664,6 +8702,81 @@
         "unit": "kW",
         "status": "study",
         "note": "X-SAN-01 AQS-DUTY-063."
+      }
+    },
+    {
+      "unit_id": "H2O_ELYZ",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "pem_electrolyser",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 38.3617,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-12 TF: 16.74 kg/d H2 x 55.0 kWh/kg / 24 h; rated 153.4 kW on a 6.0 h PV window."
+      },
+      "modules": [],
+      "params": {
+        "internals": "PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer",
+        "presence": "present",
+        "note": "X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734)."
+      }
+    },
+    {
+      "unit_id": "HCL_BURNER",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "hcl_synthesis",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "internals": "graphite burner, quartz sight glass, graphite absorber",
+        "presence": "present",
+        "note": "X-PAR-12: H2 + Cl2 -> 2 HCl; graphite burner and falling-film graphite absorber (AQS-STD-002 sec. 9); separate H2 and Cl2 feeds."
+      }
+    },
+    {
+      "unit_id": "PROD_MEOH",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "product",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "X-PAR-12: methanol product store (carbon leaves the plant as product, no vent)."
+      }
+    },
+    {
+      "unit_id": "PROD_O2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "product",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent)."
       }
     }
   ],
@@ -10492,7 +10605,7 @@
         "value": 449.523584,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d HCl as 20 wt%. Brine from the leach bleed. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d HCl as 20 wt%. Brine from the leach bleed. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: BMED brine scales with HCl make (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -10851,10 +10964,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4226.039998,
+        "value": 4139.222213,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89",
@@ -10898,10 +11011,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4164.239998,
+        "value": 3990.594815,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89",
@@ -10945,10 +11058,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4141.759998,
+        "value": 3934.806269,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
@@ -11039,10 +11152,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4128.069998,
+        "value": 3909.603252,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
@@ -11086,10 +11199,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4122.599998,
+        "value": 3896.027852,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
@@ -11133,10 +11246,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4051.459999,
+        "value": 3719.480635,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
@@ -11180,10 +11293,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4046.409999,
+        "value": 3706.948613,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
@@ -11227,10 +11340,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 3971.08,
+        "value": 3520.002783,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89",
@@ -11273,10 +11386,10 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "rate": {
-        "value": 4133.089998,
+        "value": 3922.060852,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89",
@@ -11413,10 +11526,10 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 2.1333,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GAS",
@@ -11463,10 +11576,10 @@
       "forbidden": "HDR_O2, hab air, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 6.628752,
+        "value": 0.008752,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Dryer inlet equals the pool. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Dryer inlet equals the pool. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: header passes ALD vent H2 only (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "GAS",
@@ -11504,10 +11617,10 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 2.1333,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GAS",
@@ -11552,10 +11665,10 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 2.1333,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Hood share of the 5.74 kg/d pool. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GAS",
@@ -11757,10 +11870,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 3753.710007,
+        "value": 3302.63279,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: raffinate 3983.2 less brine bleed 229.4 to the AEM bank (level control) | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: raffinate 3983.2 less brine bleed 229.4 to the AEM bank (level control) | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: polish return by difference (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -11802,10 +11915,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 3753.710007,
+        "value": 3302.63279,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: recycle out = polish return (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "recycle = IA-POL-02 3753.7 + REGEN LEACH make-up 223.8 (Cl2 + H2 removed at EW, element basis)",
@@ -12021,10 +12134,10 @@
       "forbidden": "raw AFTERBURNER flue",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": 1.575188,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Bed takes the added CO2. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Bed takes the added CO2. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: bed dosed from HDR_CO2 only (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
@@ -12050,10 +12163,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 6.628752,
+        "value": 0.008752,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: dryer pass-through (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12848,10 +12961,10 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 266.639999,
+        "value": 366.517335,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall +99.8773 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -14420,10 +14533,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 118.201788,
+        "value": 119.02293,
         "unit": "kg/d",
         "status": "study",
-        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion."
+        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -14451,10 +14564,10 @@
       "forbidden": "N2/O2/NOx reject, raw flue, HDR_CO2 direct",
       "claim_status": "Claimed",
       "rate": {
-        "value": 13.304,
+        "value": 13.810366,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: bound O2 into CO2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -14747,10 +14860,10 @@
       "forbidden": "HDR_H2, potable",
       "claim_status": null,
       "rate": {
-        "value": 6.9,
+        "value": 76.486224,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: cold-box CO2 to methanol by difference (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -14776,10 +14889,10 @@
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
-        "value": 0.948243,
+        "value": 11.067909,
         "unit": "kg/d",
         "status": "study",
-        "note": "Three H2 per CO2. Excess does not enter. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Three H2 per CO2. Excess does not enter. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: CO2 + 3 H2 (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -14814,10 +14927,10 @@
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 5.023741,
+        "value": 58.639053,
         "unit": "kg/d",
         "status": "study",
-        "note": "CO2 + 3 H2 \u2192 methanol + water. CO2 limits. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "CO2 + 3 H2 \u2192 methanol + water. CO2 limits. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: -> CH3OH (mass closed) (AQS-PAR-005)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -15090,7 +15203,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 44.906465,
+        "value": 137.967713,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -15123,10 +15236,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 243.280002,
+        "value": 194.840696,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 pass-through (AQS-PAR-005)."
       },
       "params": {
         "rate_basis": "HDR_O2/HDR_N2 have no consumer edge; hab O2 is S02, N2 is S03. A non-zero fill would double count.",
@@ -15155,10 +15268,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 12.53012,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: cold-box CO2 to header only if the bed needs it (AQS-PAR-005)."
       },
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
@@ -15218,10 +15331,10 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "rate": {
-        "value": 13.819629,
+        "value": 0.616896,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 19.006 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 0.848 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003)."
       },
       "params": {
         "hold_reason": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint.",
@@ -15346,10 +15459,10 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 17.43112,
+        "value": 0.848425,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: light-limited uptake 28.0 m2 x 30.3 g/m2/d (AQS-PAR-005)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
@@ -15517,7 +15630,7 @@
         "value": 439.5222,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid to leach by difference (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "CRYO",
@@ -15610,7 +15723,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 234.1518,
+        "value": 294.0261,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -15730,10 +15843,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 133.294599,
+        "value": 233.171935,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall +99.8773 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15826,10 +15939,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.031788,
+        "value": 7.85293,
         "unit": "kg/d",
         "status": "study",
-        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion."
+        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16288,10 +16401,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 265.161788,
+        "value": 265.476564,
         "unit": "kg/d",
         "status": "study",
-        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion."
+        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into H2O + excess O2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16445,10 +16558,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.824502,
+        "value": 32.967654,
         "unit": "kg/d",
         "status": "study",
-        "note": "One water per methanol. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "One water per methanol. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: + H2O (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17538,7 +17651,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 126.430669,
+        "value": 121.475519,
         "unit": "kg/d",
         "status": "study",
         "note": "Compost passes the added trim. | X-PAR-02 TF: compost passes the trim (AQS-PAR-003)."
@@ -17598,7 +17711,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 113.210032,
+        "value": 108.254882,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. | X-PAR-02 TF: nutrient surplus by difference (AQS-PAR-003)."
@@ -17815,10 +17928,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 123.29456,
+        "value": 223.171896,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall +99.8773 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "CRYO",
@@ -18447,10 +18560,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 226.899758,
+        "value": 246.465125,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into water (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18512,10 +18625,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 30.826308,
+        "value": 55.800858,
         "unit": "kg/d",
         "status": "study",
-        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
+        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: genset bound O2 into CO2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18541,10 +18654,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 243.570465,
+        "value": 199.345324,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: N2 replaced by O2; excess O2 rides to the cold box (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18553,7 +18666,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "N2": 0.99
+        "N2": 0.9774,
+        "O2": 0.0226
       }
     },
     {
@@ -18606,10 +18720,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 50.000001,
+        "value": 1.270232,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 diluent = former air less O2 (same oxidant mass) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18696,7 +18810,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 116.276558,
+        "value": 111.321408,
         "unit": "kg/d",
         "status": "study",
         "note": "The fixed carbon leaves in the trim. | X-PAR-02 TF: trim less the photosynthetic O2 (AQS-PAR-003)."
@@ -18788,10 +18902,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 243.280002,
+        "value": 194.840696,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 out = N2 in (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18817,10 +18931,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 31.086836,
+        "value": 4.504628,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18847,10 +18961,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 30.826308,
+        "value": 55.800858,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
+        "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: CO2 out = CO2 in (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19007,7 +19121,7 @@
         "value": 0.01,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19037,7 +19151,7 @@
         "value": 0.05,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19067,7 +19181,7 @@
         "value": 0.02,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19097,7 +19211,7 @@
         "value": 0.01,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19127,7 +19241,7 @@
         "value": 0.01,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19157,7 +19271,7 @@
         "value": 0.05,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19187,7 +19301,7 @@
         "value": 0.02,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19217,7 +19331,7 @@
         "value": 0.01,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented."
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19306,7 +19420,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 TF: no surplus O2 return; product follows draw (AQS-PAR-003)."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 TF: no surplus O2 return (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19333,10 +19447,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 30.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: no CO2 recycle into the cold box (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19362,10 +19476,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.479412,
+        "value": 34.622564,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: condensate to roof (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19781,10 +19895,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.796371,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.0000 kg/d); Henry bound 2.892 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.7964 kg/d); Henry bound 3.569 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19821,10 +19935,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.89,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022."
+        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19867,10 +19981,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.910001,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19913,10 +20027,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.819999,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19959,10 +20073,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.0,
+        "value": 0.709537,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: sweep N2 trimmed +0.000: the former cold box turned this N2 into O2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20911,7 +21025,7 @@
         "value": 0.04,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20941,7 +21055,7 @@
         "value": 0.03,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20968,10 +21082,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.038771612258910175,
+        "value": 0.038771,
         "unit": "kg/d",
         "status": "study",
-        "note": "Methanol plus ammonia. Methanol limits."
+        "note": "Methanol plus ammonia. Methanol limits. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21001,7 +21115,7 @@
         "value": 0.02,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21122,10 +21236,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1269488178177629,
+        "value": 0.126949,
         "unit": "kg/d",
         "status": "study",
-        "note": "HCl limits. n \u00d7 92.566."
+        "note": "HCl limits. n \u00d7 92.566. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21152,10 +21266,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.024706511602391793,
+        "value": 0.024706,
         "unit": "kg/d",
         "status": "study",
-        "note": "Coproduct water."
+        "note": "Coproduct water. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24480,10 +24594,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.01824586437991424,
+        "value": 0.018246,
         "unit": "kg/d",
         "status": "study",
-        "note": "Whichever reagent remains."
+        "note": "Whichever reagent remains. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24895,7 +25009,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 128.527,
+        "value": 149.5839,
         "unit": "kW",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
@@ -25857,10 +25971,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1124499094937894,
+        "value": 0.112451,
         "unit": "kg/d",
         "status": "study",
-        "note": "Methanol oxidation."
+        "note": "Methanol oxidation. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26507,7 +26621,7 @@
         "value": 1575.544287,
         "unit": "kg/d",
         "status": "study",
-        "note": "Displacement 1.57 L/s at 11.61 kg/m3. Inlet 500 kPa, 150 K. P/RT."
+        "note": "Displacement 1.57 L/s at 11.61 kg/m3. Inlet 500 kPa, 150 K. P/RT. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26537,7 +26651,7 @@
         "value": 1575.544287,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass back to the column."
+        "note": "Same mass back to the column. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26976,10 +27090,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.02248923288184258,
+        "value": 0.02249,
         "unit": "kg/d",
         "status": "study",
-        "note": "Coproduct water."
+        "note": "Coproduct water. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -27038,10 +27152,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0016279142446402883,
+        "value": 0.001628,
         "unit": "kg/d",
         "status": "study",
-        "note": "Oxygen-limited remainder."
+        "note": "Oxygen-limited remainder. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "FAB",
@@ -27326,7 +27440,7 @@
         "value": 26.9276,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw. | X-PAR-12 TF: BMED HCl make 31.61 of 31.61 kg/d (k 1.000) (AQS-PAR-005)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -27945,10 +28059,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 126.119999,
+        "value": 225.997335,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall +99.8773 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WTR",
@@ -32766,7 +32880,7 @@
         "value": 1304.5179,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.90 kg/d HCl / 0.0707."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.90 kg/d HCl / 0.0707. | X-PAR-12 TF: BMED product by difference (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -32792,7 +32906,7 @@
         "value": 864.9665,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10). | X-PAR-12 TF: condensate scales with HCl make (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -32825,7 +32939,7 @@
         "value": 1.497,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw. | X-PAR-12 TF: evaporator scales with HCl make (AQS-PAR-005)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -33034,7 +33148,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 91.3395,
+        "value": 112.8521,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -33729,6 +33843,1240 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-ELY-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "H2O_ELYZ",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "electrolyser feed water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 149.585855,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "water": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-ELY-H2",
+      "from_unit_id": "H2O_ELYZ",
+      "to_unit_id": "CRYO_H2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "electrolyser H2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 16.739666,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand: genset + fuel cell + methanol (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-ELY-O2",
+      "from_unit_id": "H2O_ELYZ",
+      "to_unit_id": "CRYO_O2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "electrolyser O2",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 132.846189,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
+    },
+    {
+      "stream_id": "SF-H2O_ELYZ",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "H2O_ELYZ",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC (daily average)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 38.3617,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "SQ-H2O_ELYZ",
+      "from_unit_id": "H2O_ELYZ",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "stack heat",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.8808,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-GEN-O2",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "BACKUP_GEN",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "combustion O2, 10 % excess",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 48.729769,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (0.652 H2 x 7.94 + 11.16 C7.5H17 x 3.51) (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 0.99,
+        "Ar": 0.01
+      }
+    },
+    {
+      "stream_id": "IA-AB-O2",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "combustion O2, 10 % excess",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.821142,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (CO 0.266 + organics 0.480); S11 is 99.8 % water (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 0.99,
+        "Ar": 0.01
+      }
+    },
+    {
+      "stream_id": "IA-O2-PROD",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "PROD_O2",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "surplus O2 to product cylinders",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 43.510337,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 0.99,
+        "Ar": 0.01
+      }
+    },
+    {
+      "stream_id": "IA-HCO2-MEOH",
+      "from_unit_id": "HDR_CO2",
+      "to_unit_id": "MEOH_SYNTH",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "CO2 not taken by the bed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.052575,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: header CO2 the bed cannot fix (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-MEOH-PROD",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "PROD_MEOH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol product",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 53.615312,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: methanol product by difference (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CH3OH": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-HCL-SYN",
+      "from_unit_id": "HCL_BURNER",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "synthesis HCl absorbed into the leach",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 71.45326,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 + Cl2 -> 2 HCl (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "HCl": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-E-HCLB",
+      "from_unit_id": "HCL_BURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "HCl synthesis heat (92.3 kJ/mol)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.093825,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: HCl synthesis heat 92.31 kJ/mol HCl (NIST) (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-O2-SHIP",
+      "from_unit_id": "PROD_O2",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "O2 cylinders shipped at the dock",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 43.510337,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 0.99,
+        "Ar": 0.01
+      }
+    },
+    {
+      "stream_id": "IA-MEOH-SHIP",
+      "from_unit_id": "PROD_MEOH",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol shipped at the dock",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 53.615312,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: shipped (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CH3OH": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-H2O-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "water make-up for H and O leaving as product",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 97.125652,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "water": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW1-CL2",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 74.867979,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW1-CL2B",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 13.457191,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW1-H2B",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.382615,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 2826 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW2-CL2",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 74.892973,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW2-CL2B",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 13.461683,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW2-H2B",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.382743,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 2827 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW3-CL2",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 28.11189,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW3-CL2B",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.052989,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW3-H2B",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.143667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 1061 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW4-CL2",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.06477,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW4-CL2B",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.090116,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW4-H2B",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.030994,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 229 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW5-CL2",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.277218,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW5-CL2B",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.128302,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW5-H2B",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.03208,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 237 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW6-CL2",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.840831,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW6-CL2B",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.229609,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW6-H2B",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.03496,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 258 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW7-CL2",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 88.962039,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW7-CL2B",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 15.990536,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW7-H2B",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.454643,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 3358 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW8-CL2",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 6.314709,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW8-CL2B",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.135041,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW8-H2B",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.032272,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 238 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
+    },
+    {
+      "stream_id": "IA-EW9-CL2",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "anode Cl2 (+ O2 side) to leach oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 94.202011,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 0.9946,
+        "O2": 0.0054
+      }
+    },
+    {
+      "stream_id": "IA-EW9-CL2B",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "side-reaction anode Cl2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 16.932398,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: Cl2 equimolar with cathode H2 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-EW9-H2B",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "HCL_BURNER",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode H2 to HCl synthesis",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.481422,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 3556 A, CE 0.85 (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
+      }
     }
   ],
   "view_presets": [
