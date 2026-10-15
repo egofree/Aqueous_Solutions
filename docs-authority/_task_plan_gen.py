@@ -262,16 +262,16 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 
 ## 5. Next 10 tasks
 
-1. X-ELS-02 Remaining loads: BMED_UPW_POLISH, GROW_BED, then onward; MFG_SHOP needs a tool list, CRYO_H2 a storage mode.
-2. X-PIP-03 Isometrics for positioned lines.
-3. X-RSZ-01 Acid regeneration resize for the class A feed.
-4. X-RSZ-02 EW power on the graph and supply resize to AQS-ELEC-007.
-5. X-RSZ-03 EW aisle re-placement at sized cell lengths.
-6. X-RSZ-04 BMED trim cooling edge.
-7. X-RSZ-05 FARM capacity (HAB_* to HAB; stack or grow farm).
-8. X-RSZ-06 Treatment step on the IA-POT-01 potable path.
-9. X-RSZ-07 Held-rate and undersized-unit sweep.
-10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test.
+1. X-ELS-02 CRYO_H2 storage mode sized from need, then its load; add the H₂ purifier unit (ISO 14687 Grade D).
+2. X-ELS-02 MFG_SHOP tool list sized from the MET_MELT/COLD_MILL/GAS_ATOMIZER/WIRE_DRAW duties, then its load.
+3. X-RSZ-07 Feed edges for every load without a SOL_ARK feed (MCC-1, PP-1), PV average rebalanced.
+4. X-ELS-02 Remaining study-share loads, largest first (RECTIFIER trims, HABITATION, GEO_HP, WAFER_FAB).
+5. X-RSZ-07 CRYO_ASU vendor-class basis to replace the lower bound.
+6. X-MAT-07 Launder lengths at the re-placed EW aisle (cells no longer in one line).
+7. X-PIP-03 close-out: fabrication isometrics from AQS-ISO-001.
+8. X-PIP-04 Supports and stress.
+9. X-BLD-04 General arrangement check with the PV ground field and FARM_AQ.
+10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.
 
 Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are approved by default (X-RSZ group).
 
