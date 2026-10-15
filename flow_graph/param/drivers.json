@@ -1746,5 +1746,29 @@
   "register": "A-M-169 (X-MFG-36 H2 compressor)",
   "needs_verification": true,
   "verification_test": "hourly electrolyser log"
+ },
+ "bmed_j_A_m2": {
+  "value": 200.0,
+  "units": "A/m2 design current density",
+  "ref": "EDBM_PILOT_2023"
+ },
+ "bmed_CE": {
+  "value": 0.8,
+  "units": "current efficiency at 200 A/m2",
+  "ref": "EDBM_PILOT_2023"
+ },
+ "bmed_cell_area_m2": {
+  "value": 0.04,
+  "units": "m2 active area per membrane (200 x 200 mm)",
+  "register": "A-M-170 (X-MFG-35 BMED stack)",
+  "needs_verification": true,
+  "verification_test": "stack polarisation test on the first-article stack"
+ },
+ "bmed_cells_per_stack_max": {
+  "value": 100,
+  "units": "cell triplets per stack (manifold flow distribution)",
+  "register": "A-M-170 (X-MFG-35 BMED stack)",
+  "needs_verification": true,
+  "verification_test": "same test: per-cell voltage spread"
  }
 }

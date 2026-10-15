@@ -2788,5 +2788,25 @@
     "verification": "2.27 kWh/kg, 1.01 kW average (was 0.565 kW on a stale 6.63 kg/d), 3.04 kW peak",
     "replace_when": "first-article bench run",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-170",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "BMED stack geometry",
+    "statement": "In-house BMED stack: 0.04 m2 cells, at most 100 triplets per stack, 200 A/m2 and CE 0.80 (EDBM_PILOT_2023), one spare stack; energy stays on the 2 M SEC",
+    "verification": "421 triplets in 5 stacks of 85 + 1 spare, 8 A, 50.5 m2 membrane; implied 8.0 V per triplet",
+    "replace_when": "stack polarisation test on the first article",
+    "doc": "AQS-PAR-003"
   }
 ]
