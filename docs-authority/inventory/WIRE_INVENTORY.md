@@ -192,7 +192,7 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | EXT_HALL_N | EXT_HALL | heat pump condenser fan feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 104.6 | 16 | 5022.7 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-ELEC_PV (Manhattan x 1.1 + 3 m drop, assumed) |
 | distribution | LP-ELEC_PV | panel feeder 460 V | 4/0 AWG | XHHW-2 Cu, tray cable TC-ER | 8 | 31.6 | 1 | 253.1 | NEC 430.24: 438.4 A in 2 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | hall | EXT_HALL | lighting branch circuit 277 V | 6 AWG | THHN/THWN-2 Cu in EMT | 3 | 120.0 | 81 | 29160.0 | installed 357 kW (average 35.735 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06) |
-| roof array | PV_ARRAY | PV source circuit home run (+/-) | 10 AWG | PV Wire, UL 4703, 2 kV | 2 | 60.0 | 479 | 57480.0 | 8606 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 479 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed) |
+| roof array | PV_ARRAY | PV source circuit home run (+/-) | 10 AWG | PV Wire, UL 4703, 2 kV | 2 | 60.0 | 479 | 57480.0 | 8620 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 479 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed) |
 | roof array | PV_ARRAY | array EGC | 10 AWG | bare Cu | 1 | 60.0 | 479 | 28740.0 | NEC 690.45 / 250.122 |
 
 ### FAB

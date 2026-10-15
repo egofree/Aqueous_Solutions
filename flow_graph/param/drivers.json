@@ -1685,5 +1685,66 @@
   "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
   "needs_verification": true,
   "verification_test": "same"
+ },
+ "h2c_P1_bar": {
+  "value": 10.0,
+  "units": "bar a suction (electrolyser outlet)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "electrolyser outlet pressure log"
+ },
+ "h2c_P2_bar": {
+  "value": 200.0,
+  "units": "bar a discharge (CRYO_H2 bank)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "bank pressure log"
+ },
+ "h2c_k": {
+  "value": 1.41,
+  "units": "cp/cv H2 near ambient",
+  "ref": "NIST_WEBBOOK"
+ },
+ "h2c_eta_ad": {
+  "value": 0.65,
+  "units": "stage adiabatic efficiency incl. valve losses",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "bench run of the first-article head: indicator diagram and flow"
+ },
+ "h2c_eta_motor": {
+  "value": 0.9,
+  "units": "motor and drive",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "motor test (AQS-INV-005 family)"
+ },
+ "h2c_eta_v": {
+  "value": 0.8,
+  "units": "volumetric efficiency",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "same bench run"
+ },
+ "h2c_rpm": {
+  "value": 300.0,
+  "units": "crank speed",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2c_cavity_h_mm": {
+  "value": 3.0,
+  "units": "diaphragm cavity depth (spherical-cap profile)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "cavity machining trial"
+ },
+ "h2c_run_h": {
+  "value": 8.0,
+  "units": "h/d at full rate (follows the electrolyser on PV hours)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "hourly electrolyser log"
  }
 }

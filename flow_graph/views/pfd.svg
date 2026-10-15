@@ -346,7 +346,7 @@
 <title>CRYO_H2&#45;&gt;HEAT_SINK</title>
 <path fill="none" stroke="#334155" stroke-width="1.2" d="M2180.03,-13030.06C2212,-13031.79 2263.18,-13028.88 2289,-12997 2323.32,-12954.62 2269.83,-11078.74 2301,-11034 2344.97,-10970.87 2408.23,-11027.03 2463,-10973 2480.33,-10955.9 2462.89,-10935.72 2483,-10922 2538.44,-10884.19 2580.1,-10882.01 2634,-10922 2658.62,-10940.26 2631.78,-10966.89 2654,-10988 2699.48,-11031.22 2752.21,-10972.7 2791,-11022 2821.02,-11060.16 2781.28,-14479.6 2811,-14518 2820.56,-14530.36 2836.21,-14536.28 2851.35,-14538.97"/>
 <polygon fill="#334155" stroke="#334155" stroke-width="1.2" points="2851.3,-14542.5 2861.68,-14540.36 2852.23,-14535.56 2851.3,-14542.5"/>
-<text text-anchor="middle" x="2558.5" y="-10924.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#334155">SQ&#45;CRYO_H2\n0.565 kW</text>
+<text text-anchor="middle" x="2558.5" y="-10924.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#334155">SQ&#45;CRYO_H2\n1.0138 kW</text>
 </g>
 <!-- CRYO_H2&#45;&gt;MEOH_SYNTH -->
 <g id="edge148" class="edge">
@@ -872,7 +872,7 @@
 <title>SOL_ARK_60K&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M780.07,-6745.06C789.09,-6740.63 797.62,-6734.48 803,-6726 831.33,-6681.34 785.4,-4859.2 823,-4822 918.09,-4727.9 990.36,-4816.01 1124,-4822 1198.45,-4825.34 1218.68,-4819 1291,-4837 1453.36,-4877.41 1544.96,-4843.94 1638,-4983 1660.84,-5017.14 1651.14,-7899.51 1658,-7940 1694.09,-8152.99 1778.86,-8187.02 1815,-8400 1821.42,-8437.86 1814.3,-11132.66 1835,-11165 1878.95,-11233.66 1957.07,-11174.34 2001,-11243 2027.26,-11284.04 1982.32,-12959.15 2013,-12997 2036.21,-13025.64 2079.88,-13030.9 2111.69,-13030.41"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="2112.11,-13033.9 2121.98,-13030.05 2111.86,-13026.9 2112.11,-13033.9"/>
-<text text-anchor="middle" x="1387" y="-4868.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n0.565 kW</text>
+<text text-anchor="middle" x="1387" y="-4868.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n1.0138 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;CRYO_ASU -->
 <g id="edge609" class="edge">
@@ -2162,7 +2162,7 @@
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M791.8,-6676.95C796.19,-6673.6 800.07,-6669.65 803,-6665 838.36,-6608.86 775.99,-1934.82 823,-1888 875.5,-1835.72 971.02,-1868.73 1022.63,-1892.65"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1021.21,-1895.85 1031.74,-1896.99 1024.22,-1889.53 1021.21,-1895.85"/>
-<text text-anchor="middle" x="898.5" y="-1890.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n1299.999034 kg/d</text>
+<text text-anchor="middle" x="898.5" y="-1890.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n1301.878766 kg/d</text>
 </g>
 <!-- RECT_EW&#45;&gt;HEAT_SINK -->
 <g id="edge539" class="edge">
@@ -2306,7 +2306,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M404.71,-110.89C436.73,-109.39 486.52,-112.78 512,-144 542.25,-181.06 493.87,-967.85 524,-1005 562.17,-1052.06 619.08,-987.74 657,-1035 706.47,-1096.65 634.89,-6659.11 677,-6726 680.51,-6731.58 685.39,-6736.15 690.87,-6739.88"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="689.48,-6743.12 699.89,-6745.08 692.98,-6737.05 689.48,-6743.12"/>
-<text text-anchor="middle" x="590.5" y="-1037.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n302.4263 kW</text>
+<text text-anchor="middle" x="590.5" y="-1037.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n302.8751 kW</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node31" class="node">
@@ -4571,7 +4571,7 @@
 <title>CURTAIL&#45;&gt;PV_ARRAY</title>
 <path fill="none" stroke="#334155" stroke-width="1.2" d="M2531.14,-14788.82C2514.32,-14785.28 2493.74,-14777.8 2483,-14762 2435.6,-14692.31 2493.02,-11806.75 2463,-11728 2424.18,-11626.19 2339.6,-11645.89 2301,-11544 2287.99,-11509.65 2313.36,-6282.49 2289,-6255 2207.02,-6162.51 2095.08,-6313.4 2013,-6221 2000.38,-6206.79 2003.4,-3502.85 2001,-3484 1922.84,-2870.76 1739.31,-2748.83 1658,-2136 1653.01,-2098.38 1662.42,-799.05 1638,-770 1614.2,-741.69 1342.15,-727.92 1311,-708 1298.12,-699.76 1304.13,-687.85 1291,-680 1143.52,-591.83 639.3,-709.41 524,-582 491.33,-545.9 543.04,-181.51 512,-144 488.92,-116.11 446.43,-110.5 414.87,-110.69"/>
 <polygon fill="#334155" stroke="#334155" stroke-width="1.2" points="414.53,-107.2 404.63,-110.96 414.71,-114.2 414.53,-107.2"/>
-<text text-anchor="middle" x="1387" y="-737.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#334155">IA&#45;E&#45;SUN\n166.0032 kW</text>
+<text text-anchor="middle" x="1387" y="-737.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#334155">IA&#45;E&#45;SUN\n166.2495 kW</text>
 </g>
 <!-- CURTAIL&#45;&gt;FUEL_CELL -->
 <g id="edge456" class="edge">
@@ -7059,7 +7059,7 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1031.98,-1906.8C982.29,-1900.45 874.26,-1895 823,-1957 781.33,-2007.4 837.86,-6609.67 803,-6665 801.9,-6666.75 800.67,-6668.39 799.32,-6669.94"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="796.73,-6667.58 791.79,-6676.95 801.5,-6672.7 796.73,-6667.58"/>
-<text text-anchor="middle" x="898.5" y="-1959.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n1299.999034 kg/d</text>
+<text text-anchor="middle" x="898.5" y="-1959.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n1301.878766 kg/d</text>
 </g>
 <!-- ZNBR2&#45;&gt;Q4_BUS -->
 <g id="edge205" class="edge">
@@ -7077,5 +7077,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="2974.3" y="15631.3" width="1997.7" height="532.7" fill="white" stroke="black" stroke-width="5.55"/><text x="3007.6" y="15720.1" font-family="sans-serif" font-size="49.9">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3007.6" y="15814.4" font-family="sans-serif" font-size="49.9">Process flow diagram</text><text x="3007.6" y="15908.7" font-family="sans-serif" font-size="49.9">Type: flow diagram (ISO_10628_2)   Rev 9853dfb9   Issued 2026-10-15</text><text x="3007.6" y="16003.1" font-family="sans-serif" font-size="49.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3007.6" y="16097.4" font-family="sans-serif" font-size="49.9">Graph SHA-256 47b298581af9da41   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="2974.3" y="15631.3" width="1997.7" height="532.7" fill="white" stroke="black" stroke-width="5.55"/><text x="3007.6" y="15720.1" font-family="sans-serif" font-size="49.9">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3007.6" y="15814.4" font-family="sans-serif" font-size="49.9">Process flow diagram</text><text x="3007.6" y="15908.7" font-family="sans-serif" font-size="49.9">Type: flow diagram (ISO_10628_2)   Rev b9797193   Issued 2026-10-15</text><text x="3007.6" y="16003.1" font-family="sans-serif" font-size="49.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3007.6" y="16097.4" font-family="sans-serif" font-size="49.9">Graph SHA-256 e5c1db217a19bb73   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>
