@@ -24,6 +24,6 @@ def main():
         if s != s0: open(p, 'w').write(s); ch += 1
     open(GP, 'w').write(json.dumps(g, indent=2))
     import hashlib   # manifest: every sheet was checked against this exact graph (read by _rev_stamp.py)
-    json.dump({'graph_sha256': hashlib.sha256(open(GP, 'rb').read()).hexdigest(), 'sheets': len(os.listdir(D))}, open(os.path.join(D, '_generated.json'), 'w'), indent=1)
+    json.dump({'graph_sha256': hashlib.sha256(open(GP, 'rb').read()).hexdigest(), 'sheets': len(os.listdir(D)), 'patterns': ['docs-authority/duties/*.md']}, open(os.path.join(D, '_generated.json'), 'w'), indent=1)
     print('duty sheets refreshed', ch)
 if __name__ == '__main__': main()

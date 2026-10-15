@@ -1,0 +1,10 @@
+{
+ "graph_sha256": "8a23d1136388d745ee12a4139c96f30123d4dc7c6d46fa00c5b2d3004edb5f0b",
+ "patterns": [
+  "flow_graph/views/*",
+  "media/pfd/*",
+  "media/D*.png",
+  "media/F0_campus.png",
+  "media/plant_phase_d.mp4"
+ ]
+}

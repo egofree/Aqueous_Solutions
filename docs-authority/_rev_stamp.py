@@ -21,15 +21,16 @@ def main():
     files = [f for f in git('ls-files').splitlines() if any(fnmatch.fnmatch(f, p) for p in DERIVED)]
     head_g = graph[0]; rev = json.load(open(os.path.join(ROOT, GP)))['revision']; rows = []; bad = []
     dirty = set(git('status', '--porcelain').split())
-    import hashlib; man = os.path.join(ROOT, 'docs-authority/duties/_generated.json')
-    gsha = hashlib.sha256(open(os.path.join(ROOT, GP), 'rb').read()).hexdigest()
-    checked = os.path.exists(man) and json.load(open(man)).get('graph_sha256') == gsha   # _duty_basis.py re-derived every sheet from this graph
+    import hashlib; gsha = hashlib.sha256(open(os.path.join(ROOT, GP), 'rb').read()).hexdigest(); checked = []
+    for man in ('docs-authority/duties/_generated.json', 'media/_generated.json'):   # generators re-derived these outputs from this exact graph
+        m = os.path.join(ROOT, man)
+        if os.path.exists(m) and json.load(open(m)).get('graph_sha256') == gsha: checked += json.load(open(m)).get('patterns', [])
     for f in sorted(files):
         c = last.get(f)
         if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue
         cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
         if cl: rows.append((f, '-', cl)); continue
-        if checked and fnmatch.fnmatch(f, 'docs-authority/duties/*.md'): rows.append((f, head_g[0][:7] + ' (re-derived, unchanged)', 'current')); continue
+        if any(fnmatch.fnmatch(f, k) for k in checked): rows.append((f, head_g[0][:7] + ' (re-derived, unchanged)', 'current')); continue
         made = next((g for g in graph if g[1] <= c[1]), None)
         st = 'current' if made and made[0] == head_g[0] else 'stale'
         rows.append((f, (made[0][:7] if made else '-'), st))
