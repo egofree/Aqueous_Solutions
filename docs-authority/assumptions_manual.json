@@ -3128,5 +3128,25 @@
     "verification": "Rated 0.082 kW cold, 220 kg/d N2, 0.44 kW net",
     "replace_when": "Commissioning run of the loop at rated CO2 load",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-187",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Water tower reservoirs",
+    "statement": "Upper reservoir on the top floors, lower in CATCH_TANK, both over the plate less 15 % cores; max 4.5 m water per 6 m level; >=2 cells per level, cell <=12 m; penstock loss 5 % of head; freeboard 0.5 m lower; site SDS 1.0 g, SD1 0.6 g, TL 8 s, R 3, Ie 1.5, wind 50 m/s exposure C; LIFE_LEVELS = 1 + 2 (SHOP_LEVELS - 1)",
+    "verification": "Head 32.65 m, 2,962 m3, 2 levels, seismic shear 14,530 kN",
+    "replace_when": "Geotechnical report and the structural design of the reservoir floors",
+    "doc": "AQS-PAR-003"
   }
 ]

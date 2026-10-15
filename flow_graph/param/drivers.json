@@ -2397,5 +2397,94 @@
   "register": "A-M-186",
   "needs_verification": true,
   "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "wt_core_frac": {
+  "value": 0.15,
+  "units": "- plate fraction kept for stair, lift and penstock cores",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_level_clear_mm": {
+  "value": 6000,
+  "units": "mm reservoir storey floor-to-floor",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_water_max_m": {
+  "value": 4.5,
+  "units": "m max water depth per reservoir level (slab load 44 kPa)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_penstock_loss_frac": {
+  "value": 0.05,
+  "units": "- penstock friction as fraction of head",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_freeboard_m": {
+  "value": 0.5,
+  "units": "m freeboard, lower reservoir",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_cell_len_m": {
+  "value": 12.0,
+  "units": "m max reservoir cell length (sloshing; min 2 cells per level)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_SDS": {
+  "value": 1.0,
+  "units": "g design short-period spectral acceleration (site unknown; high-seismic default)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_SD1": {
+  "value": 0.6,
+  "units": "g design 1 s spectral acceleration",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_TL_s": {
+  "value": 8.0,
+  "units": "s long-period transition",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_R": {
+  "value": 3.0,
+  "units": "- response modification, elevated-mass structure (conservative)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_Ie": {
+  "value": 1.5,
+  "units": "- importance factor, Risk Category IV (life-support energy)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_wind_ms": {
+  "value": 50.0,
+  "units": "m/s basic wind speed (site unknown)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_life_per_shop": {
+  "value": 2,
+  "units": "- HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009)",
+  "register": "A-M-187"
  }
 }

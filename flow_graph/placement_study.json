@@ -482,63 +482,6 @@
       "source": "row of VEG_BED 4.7 m2 from the graph (A-M-154); packed in FARM 600 mm clear"
     },
     {
-      "unit_id": "FISH",
-      "level": "L-2",
-      "block_id": "FARM_AQ",
-      "origin_mm": [
-        18600,
-        4000,
-        -10500
-      ],
-      "tier": 1,
-      "size_mm": [
-        2400,
-        1800,
-        1500
-      ],
-      "category": "tank",
-      "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
-    },
-    {
-      "unit_id": "CLARIFIER",
-      "level": "L-2",
-      "block_id": "FARM_AQ",
-      "origin_mm": [
-        21600,
-        4000,
-        -10500
-      ],
-      "tier": 1,
-      "size_mm": [
-        2400,
-        1800,
-        1500
-      ],
-      "category": "tank",
-      "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
-    },
-    {
-      "unit_id": "FISH_SUMP",
-      "level": "L-2",
-      "block_id": "FARM_AQ",
-      "origin_mm": [
-        18600,
-        6400,
-        -10500
-      ],
-      "tier": 1,
-      "size_mm": [
-        2400,
-        1800,
-        1500
-      ],
-      "category": "tank",
-      "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
-    },
-    {
       "unit_id": "NFIX_BED/R1",
       "level": "L1",
       "block_id": "FARM",
@@ -881,25 +824,6 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
     },
     {
-      "unit_id": "DIGESTER",
-      "level": "L-2",
-      "block_id": "FARM_AQ",
-      "origin_mm": [
-        21600,
-        6400,
-        -10500
-      ],
-      "tier": 1,
-      "size_mm": [
-        650,
-        650,
-        800
-      ],
-      "category": "tank",
-      "status": "STUDY",
-      "source": "graph size_mm; packed in FARM_AQ 600 mm clear"
-    },
-    {
       "unit_id": "YEAST",
       "level": "L1",
       "block_id": "FARM",
@@ -1185,5 +1109,22 @@
       "source": "graph size_mm; packed in FARM_EXT 600 mm clear"
     }
   ],
-  "unplaced": []
+  "unplaced": [
+    [
+      "FISH",
+      "FARM_AQ"
+    ],
+    [
+      "CLARIFIER",
+      "FARM_AQ"
+    ],
+    [
+      "FISH_SUMP",
+      "FARM_AQ"
+    ],
+    [
+      "DIGESTER",
+      "FARM_AQ"
+    ]
+  ]
 }

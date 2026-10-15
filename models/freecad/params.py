@@ -204,7 +204,12 @@ CASSETTE_ID = ("M1", "M2", "M3")[CASSETTE_COUNT - 1]
 # Discrete stacked floors (not continuous height stretch of one plate).
 # LIFE_LEVELS: HAB∥FARM pairs between roof tank and L0 MFG/grade.
 # BASEMENT_LEVELS: wet + CRYO process plates underground (CATCH below all).
-LIFE_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
+# Owner rule (Q-009): as the building grows, HAB/FARM levels are added at wt_life_per_shop x the rate of shop levels.
+import json as _json, os as _os, sys as _sys
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+_DRV = _json.load(open(_os.path.join(_ROOT, 'flow_graph/param/drivers.json')))
+SHOP_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
+LIFE_LEVELS = 1 + int(round(_DRV['wt_life_per_shop']['value'])) * (SHOP_LEVELS - 1)
 BASEMENT_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
 
 SLAB_THK = 300
@@ -223,8 +228,8 @@ def basement_z(i):
 
 Z_Lm1 = basement_z(0)  # uppermost process basement FFL
 # CATCH always deepest: below the lowest process basement clear
-Z_Lm2 = basement_z(BASEMENT_LEVELS - 1) - CLEAR_Lm2
-Z_L1 = CLEAR_L0                    # first life FFL (above grade)
+Z_Lm2 = basement_z(BASEMENT_LEVELS - 1) - CLEAR_Lm2   # replaced below by the lower-reservoir depth
+Z_L1 = SHOP_LEVELS * CLEAR_L0      # first life FFL above the shop levels
 Z_L2 = Z_L1 + LIFE_LEVELS * CLEAR_L1  # roof / tank plate above top life floor
 Z_PROCESS = Z_Lm1                  # primary wet cassette on uppermost basement
 
@@ -330,12 +335,28 @@ ROOF_TANK_X = max(0, (PLATE_L - ROOF_TANK_L) // 2)
 ROOF_TANK_Y = max(0, (PLATE_W - ROOF_TANK_W) // 2)
 ROOF_TANK_Z = Z_L2
 
-CATCH_TANK_L = int(round(_CT_L0 * _FOOT_SCALE))
-CATCH_TANK_W = int(round(_CT_W0 * _FOOT_SCALE))
-CATCH_TANK_H = _CT_H0
+# Q-009 closed: water tower. Upper reservoir = HYDRO_RES levels above the ROOF_TANK storey; lower = CATCH_TANK (A-M-187).
+_sys.path.insert(0, _ROOT)
+from flow_graph.param import water_tower as _WT
+try:
+    _E = [n for n in _json.load(open(_os.path.join(_ROOT, 'flow_graph/plant_flow_graph.json')))['nodes'] if n['unit_id'] == 'HYDRO_SET'][0]['params']['backup_basis']['energy_kWh_bus']
+except Exception:
+    _E = 200.3
+HYDRO = _WT.solve(_E, PLATE_L, PLATE_W, Z_L2 + _DRV['wt_level_clear_mm']['value'], basement_z(BASEMENT_LEVELS - 1), _DRV)
+HYDRO_RES_LEVELS = HYDRO['levels']
+HYDRO_RES_Z0 = int(round(HYDRO['z_res0_m'] * 1000))
+HYDRO_RES_CLEAR = int(_DRV['wt_level_clear_mm']['value'])
+HYDRO_RES_WATER_H = int(round(HYDRO['depth_per_level_m'] * 1000))
+HYDRO_HEAD_M = HYDRO['head_m']
+Z_ROOF = int(round(HYDRO['z_roof_m'] * 1000))      # roof slab over the reservoir; PV array sits here
+CLEAR_Lm2 = max(CLEAR_Lm2, int(round(HYDRO['catch_clear_m'] * 1000)))
+Z_Lm2 = basement_z(BASEMENT_LEVELS - 1) - CLEAR_Lm2
+CATCH_TANK_L = PLATE_L
+CATCH_TANK_W = int(round(PLATE_W * (1 - _DRV['wt_core_frac']['value'])))
+CATCH_TANK_H = int(round((HYDRO['catch_depth_m'] + _DRV['wt_freeboard_m']['value']) * 1000))
 CATCH_TANK_X = 0
 CATCH_TANK_Y = max(0, (PLATE_W - CATCH_TANK_W) // 2)
-CATCH_TANK_Z = Z_Lm2
+CATCH_TANK_Z = Z_Lm2 + SLAB_THK
 
 # Electrical discrete jumps (AQS-SCALE-001)
 ELEC_NEED_KW_BASE = 50.0

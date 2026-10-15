@@ -23,6 +23,10 @@ for u in json.load(open('flow_graph/placement_seed.json'))['units'] + json.load(
     liq = (float(m.group(1))/nrow if m else V*FILL)*SG*1000 if wet else 0.0
     test = V*1000 if wet else 0.0
     rows.append((u['unit_id'], lv, empty, empty + liq, empty + test, z[0]*z[1]*1e-6))
+sys.path.insert(0, os.path.join(R, 'models/freecad')); import params as FP     # Q-009 water tower: reservoir levels (AQS-BLD-014)
+for i in range(FP.HYDRO_RES_LEVELS):
+    a = FP.HYDRO['area_m2']; w = a*FP.HYDRO['depth_per_level_m']*1000; e = a*FP.HYDRO_RES_CLEAR/1000*DR.val(d, 'struct_tank_kg_m3')
+    rows.append((f'HYDRO_RES_R{i+1}', f'R{i+1}', e, e + w, e + w, a))
 L = collections.defaultdict(lambda: [0, 0, 0, 0, 0])
 for r in rows:
     a = L[r[1]]; a[0] += r[2]; a[1] += r[3]; a[2] += r[4]; a[3] += r[5]; a[4] += 1

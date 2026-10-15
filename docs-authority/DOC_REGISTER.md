@@ -200,6 +200,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | canonical |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | canonical |
 | AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | A | 2026-10-16 | Equipment structural loads per level (X-BLD-02) | canonical |
+| AQS-BLD-014 | `docs-authority/WATER_TOWER.md` | A | 2026-10-16 | Water tower: pumped-hydro reservoirs in the building (Q-009) | canonical |
 | AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | A | 2026-10-15 | Incompatible hazardous-material separation check | canonical |
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | A | 2026-10-15 | Access aisle and NEC 110.26 working-space check | canonical |
 | AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | A | 2026-10-15 | In-house MVR evaporators: design, interchange, relief | canonical |

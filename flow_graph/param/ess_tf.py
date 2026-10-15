@@ -47,14 +47,18 @@ def tf(g, ps=None):
     # HYDRO_SET (owner guideline: redundancy in every energy and life-support system; A-M-145): diverse N+1 backup of the night store.
     # NFPA 111 Level 1, Class X = the night hours the failed ZNBR2 would carry, at the AQS-ELEC-007 critical life-support load.
     crit = float(ps.get('critical_kW') or _crit()); night = DRV['night_hours']['value']; e_bus = crit*night
-    h = N['HYDRO_SET']['params'].get('head_m_m1', 18); vol = e_bus*3.6e6/(1000*9.81*h*ETA_TURB)
+    import importlib.util as _iu, os as _os                                              # Q-009 closed: water tower, head from the building (A-M-187)
+    _sp = _iu.spec_from_file_location('_fp', _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '../../models/freecad/params.py')); FP = _iu.module_from_spec(_sp); _sp.loader.exec_module(FP)
+    from . import water_tower as WT
+    wt = WT.solve(e_bus, FP.PLATE_L, FP.PLATE_W, FP.HYDRO_RES_Z0, FP.basement_z(FP.BASEMENT_LEVELS - 1)); h = round(wt['head_m'], 2); vol = wt['V_m3']
+    N['HYDRO_SET']['params']['head_m_m1'] = h; N['HYDRO_SET']['params']['volume_m3_m1'] = round(vol, 0)
     for k in ('IA-ESS-HYDRO-CHG', 'IA-ESS-HYDRO-DIS', 'S22', 'S23', 'IA-ESS-HYDRO-ELEC'):
         put(k, 0.0, 'standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus')
     N['HYDRO_SET']['params'].pop('role_from_need', None)
     N['HYDRO_SET']['params'].update(backup_basis={'role': 'diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL', 'standard': 'NFPA 111 Level 1, Class X',
         'critical_kW': round(crit, 2), 'class_hours': night, 'energy_kWh_bus': round(e_bus, 1), 'head_m': h, 'eta_turbine_generator': ETA_TURB,
         'eta_pump_motor': ETA_PUMP, 'round_trip': round(ETA_TURB*ETA_PUMP, 3), 'upper_reservoir_m3': round(vol, 0), 'rated_kW_discharge': round(crit, 2),
-        'recharge_kW_over_PV_window': round(e_bus/ETA_TURB/ETA_PUMP/PSH_RECHG, 1), 'A-M': 'A-M-145', 'Q': 'Q-006 closed; Q-009 reservoir siting'})
+        'recharge_kW_over_PV_window': round(e_bus/ETA_TURB/ETA_PUMP/PSH_RECHG, 1), 'A-M': 'A-M-145', 'Q': 'Q-006 closed; Q-009 closed: water tower', 'upper': f"{wt['levels']} reservoir levels x {wt['depth_per_level_m']:.2f} m water over {wt['area_m2']:.0f} m2, {wt['cells_per_level']} cells per level", 'lower': f"CATCH_TANK {wt['catch_depth_m']:.2f} m deep over {wt['area_m2']:.0f} m2", 'eta_net_with_penstock': wt['eta_net']})
     L, W = [x/1000 for x in N['NFT']['params']['size_mm'][:2]]; n = int(W/GULLY_PITCH); qn = n*GULLY_LPM*1440
     put('IA-NFT-IN', qn, f'{n} gullies x {GULLY_LPM} L/min (COOPER1996) over {L:.0f} m'); put('IA-NFT-OUT', qn, 'film return = supply')
     A = (lambda d: d[0]*d[1]/1e6)(N['MISTER']['params']['size_mm']); qm = A*NOZ_M2*NOZ_LPM*1440*T_ON/(T_ON + T_OFF)

@@ -1825,8 +1825,8 @@
         "energy_kwh_ideal_study": 9.8,
         "energy_kwh_recoverable_study": 7.0,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 200,
-        "head_m_m1": 18,
+        "volume_m3_m1": 2963.0,
+        "head_m_m1": 32.65,
         "vs_znbr2_kwh": 120,
         "fraction_of_znbr2_study": 0.082,
         "continuous_kw_status": "incomplete",
@@ -1873,15 +1873,18 @@
           "critical_kW": 14.31,
           "class_hours": 14.0,
           "energy_kWh_bus": 200.3,
-          "head_m": 18,
+          "head_m": 32.65,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 5106.0,
+          "upper_reservoir_m3": 2963.0,
           "rated_kW_discharge": 14.31,
           "recharge_kW_over_PV_window": 49.1,
           "A-M": "A-M-145",
-          "Q": "Q-006 closed; Q-009 reservoir siting"
+          "Q": "Q-006 closed; Q-009 closed: water tower",
+          "upper": "2 reservoir levels x 4.03 m water over 367 m2, 2 cells per level",
+          "lower": "CATCH_TANK 8.07 m deep over 367 m2",
+          "eta_net_with_penstock": 0.76
         }
       }
     },
