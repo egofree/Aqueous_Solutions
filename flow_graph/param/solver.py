@@ -40,8 +40,12 @@ def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
     Power: in-house MVR design (X-MFG-30, flow_graph/param/evap_design.py: IAPWS-IF97 compression ratio, isentropic blower,
     recirculation pump, trim heat) when unit is given; else water off x specific MVR energy [VOGELBUSCH_MVR] (upper bound)."""
     assert w_out > w_in
-    feed = solute_kg_d/w_in; prod = (solute_kg_d+added_kg_d)/w_out; water = feed + added_kg_d - prod
-    r = dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water,
+    c = DR.val(d,'evap_cond_hcl_wt') if unit == 'EVAP_ACID' else 0.0   # HCl in the condensate (X-MFG-30 column, PERRY7_HCL_VLE)
+    prod = (solute_kg_d+added_kg_d)/w_out
+    feed = solute_kg_d/w_in if not c else prod*(w_out - c)/(w_in - c)   # condensate HCl recycles to BMED_ACID and returns in the feed
+    water = feed + added_kg_d - prod
+    r = dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water, cond_hcl_wt=c,
+             recycle_hcl_kg_d=water*c,
              kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed+added_kg_d, prod+water))
     if unit:
         from .evap_design import design

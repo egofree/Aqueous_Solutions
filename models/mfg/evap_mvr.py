@@ -29,6 +29,13 @@ body = body.union(sep)
 blower = cq.Workplane('XY').box(450, 450, 450).translate((D/2 + 220, 0, sump + L + head + 300))          # in-house blower envelope (X-MFG-32)
 ix = cq.Workplane('XY').box(200, 300, 600).translate((D/2 + 95, 0, 400))                                  # interchanger block
 model = body.union(blower).union(ix)
+col = d.get('column')
+if col:   # free-standing glass column beside the body, on the same frame (AQS-DUTY-060 section 7)
+    Dc = col['DN'] + 20; xc = -(D/2 + 125 + Dc/2)
+    column = cq.Workplane('XY').circle(Dc/2).circle(Dc/2 - 8).extrude(col['height_mm']).translate((xc, 0, 0))
+    column = column.union(cq.Workplane('XY').circle(Dc/2).extrude(8).translate((xc, 0, 0)))
+    duct = cq.Workplane('YZ').circle(40).extrude(abs(xc) - D/2 + 10).translate((xc + Dc/2 - 10, 0, sump + L + head + 400))
+    model = model.union(column).union(duct)
 out = f'models/mfg/{U}/export'; os.makedirs(out, exist_ok=True)
 cq.exporters.export(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
 mat_t = 'impregnated graphite (PERRY9_MAT)' if acid else 'nickel 200 (PERRY9_MAT)'
@@ -42,6 +49,10 @@ rows = [('1', f'Shell DN{int(D)} x {int(sump+L+head)} mm, wall {t_sh} mm', 1, ma
         ('7', f'Recirculation pump {d["recirc_kg_h"]} kg/h at 4 m', 1, 'PVDF (acid) or nickel (base) wetted', 'X-MFG-32'),
         ('8', 'Body relief valve API 526 D orifice, set 100 kPa g', 1, 'PTFE-lined (acid) or nickel trim (base)', 'fire case ISO 23251, sized in-house'),
         ('9', 'Shell relief valve API 526 D orifice, set 350 kPa g', 1, 'stainless trim on steam side', 'blocked outlet, sized in-house')]
+if d.get('column'):
+    c = d['column']
+    rows += [('10', f"HCl column DN{c['DN']}, packed {c['packed_mm']} mm ({c['column_stages']} ideal stages x HETP x margin), height {c['height_mm']} mm", 1, c['material'].replace(',', ';'), 'PERRY7_HCL_VLE stage count; condensate %.2f wt%% HCl' % c['cond_hcl_wt_pct']),
+             ('11', 'Vapour duct DN80 separator to column; column bottoms line DN15 back to the body', 1, 'PTFE-lined steel / PVDF', 'AQS-DUTY-060')]
 open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
 open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n'
     f'1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),{"ISO 3506 A4-70 outside the wetted zone" if acid else "ISO 898-1 8.8 zinc"},{2*12},body flanges,ISO 7005-1 PN10 DN{int(D)} pattern (study)\n'

@@ -183,8 +183,8 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S90 | HABITATION | HDR_CO2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 12.7 | HABITATION → HDR_CO2, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | edge line_DN |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | DN50 | P2 | hot leach liquor | 21.3 | GREY_TREAT → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | CRU → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 21.8 | EVAP_ACID → LEACH_CSTR_1, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-BASE-01 | EVAP_BASE | GLASS_DIGEST | DN15 | P4 | alkaline | 30.8 | EVAP_BASE → GLASS_DIGEST, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 22.5 | EVAP_ACID → LEACH_CSTR_1, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-BASE-01 | EVAP_BASE | GLASS_DIGEST | DN15 | P4 | alkaline | 31.2 | EVAP_BASE → GLASS_DIGEST, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | HL-Q4-REJ | Q4_BUS | GEO_ORC | DN20 | M1 | Q3/Q4 water loop | 33.4 | Q4_BUS → GEO_ORC, orthogonal × 1.2 (duty origin; duty origin) | heat loop 11.7617 kW at ΔT 10 K, 1 m/s |
 | IA-PV-01 | PV_ARRAY | SOL_ARK_60K | cable | — | — | 15.1 | PV_ARRAY → SOL_ARK_60K, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 26.3 | ZNBR2 → GREY_TREAT, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -550,7 +550,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-HNO3-VENT | HNO3 | NOX_SCRUB | DN15 | F1 | flue or acid gas | 38.8 | HNO3 → NOX_SCRUB, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-FLUE-QUENCH | ROOF_TANK | FLUE_KO | DN15 | P5 | quench water | 34.0 | ROOF_TANK → FLUE_KO, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-PEROX-H2O | ROOF_TANK | WS_PEROX | DN15 | P3 | oxidizer, HF or PVDF unit | 21.3 | ROOF_TANK → WS_PEROX, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 24.1 | EVAP_BASE → LEACH_CSTR_1, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 24.5 | EVAP_BASE → LEACH_CSTR_1, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | S17-EW | SOL_ARK_60K | RECT_EW | cable | — | — | 28.4 | SOL_ARK_60K → RECT_EW, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | S17-BMED | SOL_ARK_60K | BMED_ACID | cable | — | — | 36.1 | SOL_ARK_60K → BMED_ACID, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | IA-RECT-EW-LOSS | RECT_EW | HEAT_SINK | cable | — | — |  | RECT_EW → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
@@ -759,14 +759,14 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SQ-SIC_FURNACE | SIC_FURNACE | HEAT_SINK | cable | — | — |  | SIC_FURNACE → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-H2_PURIFIER | SOL_ARK_60K | H2_PURIFIER | cable | — | — | 41.5 | SOL_ARK_60K → H2_PURIFIER, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-H2_PURIFIER | H2_PURIFIER | HEAT_SINK | cable | — | — |  | H2_PURIFIER → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-EVAP_ACID-FEED | BMED_ACID | EVAP_ACID | DN15 | P1 | acid or brine, at or below 60 C | 5.1 | BMED_ACID → EVAP_ACID, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | DN15 | P1 | acid or brine, at or below 60 C | 5.1 | EVAP_ACID → BMED_ACID, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| SF-EVAP_ACID | SOL_ARK_60K | EVAP_ACID | cable | — | — | 41.1 | SOL_ARK_60K → EVAP_ACID, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| IA-EVAP_ACID-FEED | BMED_ACID | EVAP_ACID | DN15 | P1 | acid or brine, at or below 60 C | 5.2 | BMED_ACID → EVAP_ACID, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | DN15 | P1 | acid or brine, at or below 60 C | 5.2 | EVAP_ACID → BMED_ACID, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| SF-EVAP_ACID | SOL_ARK_60K | EVAP_ACID | cable | — | — | 40.9 | SOL_ARK_60K → EVAP_ACID, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | cable | — | — |  | EVAP_ACID → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-EVAP_BASE-FEED | BMED_BASE | EVAP_BASE | DN15 | P4 | alkaline | 7.3 | BMED_BASE → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | DN15 | P1 | acid or brine, at or below 60 C | 7.3 | EVAP_BASE → BMED_BASE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| SF-EVAP_BASE | SOL_ARK_60K | EVAP_BASE | cable | — | — | 43.4 | SOL_ARK_60K → EVAP_BASE, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| IA-EVAP_BASE-FEED | BMED_BASE | EVAP_BASE | DN15 | P4 | alkaline | 7.8 | BMED_BASE → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | DN15 | P1 | acid or brine, at or below 60 C | 7.8 | EVAP_BASE → BMED_BASE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| SF-EVAP_BASE | SOL_ARK_60K | EVAP_BASE | cable | — | — | 43.8 | SOL_ARK_60K → EVAP_BASE, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | cable | — | — |  | EVAP_BASE → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-NAOH-MU | NORTH_DOCK | EVAP_BASE | solids | — | — | 32.9 | NORTH_DOCK → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-NAOH-MU | NORTH_DOCK | EVAP_BASE | solids | — | — | 33.3 | NORTH_DOCK → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-NA-PURGE | LEACH_CSTR_1 | NORTH_DOCK | DN15 | P2 | hot leach liquor | 21.4 | LEACH_CSTR_1 → NORTH_DOCK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | cable | — | — | 137.3 | SOL_ARK_60K → EXT_HALL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |

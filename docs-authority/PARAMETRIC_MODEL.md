@@ -46,8 +46,8 @@ All solved units close.
 | IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
 | IA-BASE-01 NaOH, kg/d | 5.059 | 5.059 | -0.0 % | GREENWOOD |
 | IA-NAOH-MU make-up, kg/d | 5.059 | 5.059 | +0.0 % | NaOH balance |
-| EVAP_ACID kW | 1.391 | 1.391 | +0.0 % | X-MFG-30 in-house MVR design |
-| EVAP_ACID water off, kg/d | 803.822 | 803.822 | +0.0 % | PERRY9_HCL |
+| EVAP_ACID kW | 1.497 | 1.497 | +0.0 % | X-MFG-30 in-house MVR design |
+| EVAP_ACID water off, kg/d | 864.996 | 864.996 | -0.0 % | PERRY9_HCL |
 | EVAP_BASE kW | 1.324 | 1.324 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_BASE water off, kg/d | 799.194 | 799.194 | +0.0 % | PERRY9_HCL |
 | EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
@@ -60,12 +60,12 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 1318.000 | 1317.044 | +0.1 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 1318.000 | 1317.779 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
 1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 26.93 kW from 6.7 kWh/kg NaOH at 2 M (was 16.13 kW on an unsourced 2.1 kWh/kg pair). Study.
-2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1243.3 kg/d, water off 803.8 kg/d, 1.39 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
+2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.5 kg/d, water off 865.0 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 799.2 kg/d, 1.32 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
 5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
@@ -160,6 +160,10 @@ All solved units close.
 | evap_body_design_kPag | 100.0 | kPa g body design (plus full vacuum) | A-M-107 | yes |
 | evap_shell_design_kPag | 350.0 | kPa g steam shell design | A-M-107 | yes |
 | evap_sump_h_mm | 400.0 | mm liquid in the sump | A-M-107 | yes |
+| evap_cond_hcl_wt | 0.005 | mass fraction HCl in the acid condensate (column top vapour) | A-M-108 | yes |
+| evap_col_hetp_mm | 500.0 | mm HETP, 25 mm random rings | PERRY9_ABS | yes |
+| evap_col_margin | 1.5 | packed height margin on ideal stages x HETP | A-M-108 | yes |
+| evap_col_u_m_s | 1.0 | m/s superficial vapour velocity (below flooding for 25 mm rings at this load) | PERRY9_ABS | yes |
 
 ## 6. References
 
@@ -199,6 +203,7 @@ All solved units close.
 | NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
 | NREL_PVWATTS | NREL PVWatts Calculator v8, site run recorded in AQS-SITE-002 (5.41 kWh/kWp/d). |
 | NREL_PVWATTS8 | Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input. |
+| PERRY7_HCL_VLE | Perry R.H., Green D.W. (eds), Perry's Chemical Engineers' Handbook, 7th ed., McGraw-Hill (1997), Table 2-9 Partial pressures of water over aqueous solutions of HCl and Table 2-10 Partial pressures of HCl over aqueous solutions of HCl, p. 2-76 (log10 p = A - B/T fits per wt% row; 8th ed. Tables 2-11/2-12). |
 | PERRY9 | Green D.W., Southard M.Z. (eds), Perry's Chemical Engineers' Handbook, 9th ed., McGraw-Hill (2019), sec. 2 physical properties (heat capacity of aqueous HCl and NaOH solutions); sec. 6 fluid transport (line sizing by velocity). |
 | PERRY9_ABS | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 14 equipment for gas-liquid operations: packed-column capacity by a flooding velocity u_f = C_s sqrt((rho_L - rho_G)/rho_G) with C_s from the packing correlation or vendor; design at 0.7-0.8 of flood; height Z = HTU x NTU; for absorption with negligible equilibrium back-pressure (fast reaction, m y* ~ 0) NTU = ln(y_in/y_out). |
 | PERRY9_EVAP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 11 heat-transfer equipment, evaporators: falling-film evaporators, overall coefficients, minimum wetting rate and recirculation; mechanical vapour recompression. |
@@ -288,6 +293,10 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver evap_body_design_kPag | 100.0 kPa g body design (plus full vacuum) | Pressure test per ASME VIII-1 UG-99 / ISO 16528 |
 | driver evap_shell_design_kPag | 350.0 kPa g steam shell design | Pressure test |
 | driver evap_sump_h_mm | 400.0 mm liquid in the sump | Level control setpoint |
+| driver evap_cond_hcl_wt | 0.005 mass fraction HCl in the acid condensate (column top vapour) | Titrate the condensate on the pilot; must sit above the 0.0034 equilibrium over the 2 M feed (PERRY7_HCL_VLE) |
+| driver evap_col_hetp_mm | 500.0 mm HETP, 25 mm random rings | Pilot column composition profile |
+| driver evap_col_margin | 1.5 packed height margin on ideal stages x HETP | Pilot column |
+| driver evap_col_u_m_s | 1.0 m/s superficial vapour velocity (below flooding for 25 mm rings at this load) | Flooding check with the selected packing C_s (sizing/scrubber.py) |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -395,3 +404,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays |
 | A-M-106 | Evaporator operating basis: body 101.3 kPa abs, 6 K driving  kPa, K, C, - | Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log |
 | A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials |
+| A-M-108 | EVAP_ACID counter-current column, feed at the top, no reflux wt%, mm, m/s | Pilot: titrate condensate and column bottoms; flooding check with the packing C_s |

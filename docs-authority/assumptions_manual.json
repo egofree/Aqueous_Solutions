@@ -1652,5 +1652,22 @@
   "sensitivity": "Wetted area and relief load",
   "replaced_by": "Detailed mechanical design (ASME VIII-1 / EN 13445)",
   "verification_test": "Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials"
+ },
+ {
+  "id": "A-M-108",
+  "task": "X-MFG-30",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/evap_design.py",
+   "flow_graph/param/sizing/hcl_vle.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "value": "EVAP_ACID counter-current column, feed at the top, no reflux: condensate 0.5 wt% HCl; packed height = ideal stages x HETP 500 mm x 1.5; DN150 at 1.0 m/s; equimass overflow in the stage count",
+  "units": "wt%, mm, m/s",
+  "where": "drivers evap_cond_hcl_wt, evap_col_*",
+  "basis": "PERRY7_HCL_VLE Tables 2-9/2-10 (fits, 5-20 % accuracy below 15 wt%); PERRY9_ABS HETP for 25 mm random packing",
+  "sensitivity": "A lower condensate HCl target adds stages; below 0.34 wt% it needs reflux (option a)",
+  "replaced_by": "Pilot column profile",
+  "verification_test": "Pilot: titrate condensate and column bottoms; flooding check with the packing C_s"
  }
 ]

@@ -18,11 +18,11 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T1 | Owner and site data | 22 | Owner decision or site investigation report |
 | T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
 | T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
-| T4 | Pilot runs | 13 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 68 | Calculation or drawing issued under the named task |
+| T4 | Pilot runs | 17 | Pilot campaign on plant brine / feed |
+| T5 | Design calculations and drawings | 69 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 12 | Commissioning record |
 
-Total 176 items: 69 drivers, 107 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 181 items: 73 drivers, 108 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -130,6 +130,9 @@ Total 176 items: 69 drivers, 107 register entries. Classification rule: first ma
 | driver bmed_sec_kWh_per_kg_base | 6.7 kWh/kg NaOH at 2 M product | EDBM pilot on the plant chloride brine: SEC and current efficiency at the design product concentration | X-PAR |
 | driver evap_U_ff | 1500.0 W/(m2 K) falling film, condensing steam outside | Pilot measurement of U | X-PAR |
 | driver evap_body_kPa | 101.325 kPa abs body pressure | Bench or pilot measurement | X-PAR |
+| driver evap_col_hetp_mm | 500.0 mm HETP, 25 mm random rings | Pilot column composition profile | X-PAR |
+| driver evap_col_margin | 1.5 packed height margin on ideal stages x HETP | Pilot column | X-PAR |
+| driver evap_cond_hcl_wt | 0.005 mass fraction HCl in the acid condensate (column top vapour) | Titrate the condensate on the pilot; must sit above the 0.0034 equilibrium over the 2 M feed (PERRY7_HCL_VLE) | X-PAR |
 | driver evap_dT_drive_K | 6.0 K condensing minus boiling | Pilot run: compressor ratio vs heat flux | X-PAR |
 | driver evap_wet_min | 0.05 kg/(m s) minimum falling-film wetting rate | Pilot wetting test | X-PAR |
 | driver mvr_kWh_per_t | 72.0 kWh/t water evaporated | Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot | X-PAR |
@@ -139,6 +142,7 @@ Total 176 items: 69 drivers, 107 register entries. Classification rule: first ma
 | A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week | X-PAR-06 |
 | A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration | X-PAR-06 |
 | A-M-106 | Evaporator operating basis: body 101.3 kPa abs, 6 K driving  kPa, K, C, - | Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log | X-MFG-30 |
+| A-M-108 | EVAP_ACID counter-current column, feed at the top, no reflux wt%, mm, m/s | Pilot: titrate condensate and column bottoms; flooding check with the packing C_s | X-MFG-30 |
 
 ## 6. T5 Design calculations and drawings
 
@@ -155,6 +159,7 @@ Total 176 items: 69 drivers, 107 register entries. Classification rule: first ma
 | driver evap_body_design_kPag | 100.0 kPa g body design (plus full vacuum) | Pressure test per ASME VIII-1 UG-99 / ISO 16528 | X-PAR |
 | driver evap_bp_acid_C | 108.6 C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding) | Boiling-point measurement on the product at the body pressure | X-PAR |
 | driver evap_bp_base_C | 108.0 C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines) | Read-off check on the Duhring chart and boiling-point measurement | X-PAR |
+| driver evap_col_u_m_s | 1.0 m/s superficial vapour velocity (below flooding for 25 mm rings at this load) | Flooding check with the selected packing C_s (sizing/scrubber.py) | X-PAR |
 | driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
 | driver evap_cp_acid_prod | 3.1 kJ/(kg K) 20 wt% HCl | Perry sec. 2 heat-capacity table read-off | X-PAR |
 | driver evap_cp_base_prod | 3.55 kJ/(kg K) 20 wt% NaOH | Perry sec. 2 heat-capacity table read-off | X-PAR |

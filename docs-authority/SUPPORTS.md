@@ -146,8 +146,8 @@ Status. 358 lines, 5699 supports, 3 lines need a loop or offset.
 | S90 | DN15 | M1 | 25 | 1.5 | 11 | 0.6 | 0.25 | 3.05 | ok |
 | IA-GREY-01 | DN50 | P2 | 40 | 1.58 | 16 | 18.3 | 1.09 | 5.30 | ok |
 | IA-CRU-01 | DN15 | P2 | 40 | 1.05 | 20 | 18.1 | 0.65 | 2.50 | ok |
-| IA-ACID-01 | DN15 | P2 | 49 | 1.05 | 22 | 28.6 | 0.81 | 2.50 | ok |
-| IA-BASE-01 | DN15 | P4 | 51 | 1.12 | 26 | 65.8 | 1.05 | 10.60 | ok |
+| IA-ACID-01 | DN15 | P2 | 49 | 1.05 | 22 | 29.4 | 0.82 | 2.50 | ok |
+| IA-BASE-01 | DN15 | P4 | 51 | 1.12 | 26 | 67.4 | 1.06 | 10.60 | ok |
 | HL-Q4-REJ | DN20 | M1 | 25 | 1.8 | 20 | 1.9 | 0.51 | 3.96 | ok |
 | IA-ZNBR-BD | DN15 | P1 | 25 | 0.98 | 24 | 2.7 | 0.27 | 6.15 | ok |
 | IA-NUT-01 | DN15 | P5 | 25 | 0.84 | 35 | 14.6 | 0.46 | 8.00 | ok |
@@ -361,11 +361,11 @@ Status. 358 lines, 5699 supports, 3 lines need a loop or offset.
 | IA-HNO3-VENT | DN15 | F1 | 25 | 1.82 | 19 | 2.2 | 0.28 | 8.60 | ok |
 | IA-FLUE-QUENCH | DN15 | P5 | 25 | 0.84 | 35 | 19.5 | 0.53 | 7.10 | ok |
 | IA-PEROX-H2O | DN15 | P3 | 25 | 1.19 | 16 | 8.1 | 0.33 | 3.60 | ok |
-| IA-BASE-PPT | DN15 | P2 | 51 | 1.05 | 24 | 34.2 | 0.89 | 2.50 | ok |
+| IA-BASE-PPT | DN15 | P2 | 51 | 1.05 | 24 | 34.8 | 0.90 | 2.50 | ok |
 | IA-LEACH-VCD | DN15 | P2 | 85 | 1.05 | 22 | 48.7 | 1.06 | 4.90 | ok |
 | S49P | DN15 | M1 | 25 | 1.5 | 28 | 2.2 | 0.48 | 6.90 | ok |
-| IA-EVAP_ACID-FEED | DN15 | P1 | 25 | 0.98 | 9 | 0.7 | 0.14 | 1.65 | ok |
-| IA-EVAP_ACID-COND | DN15 | P1 | 49 | 0.98 | 9 | 4.0 | 0.33 | 1.65 | ok |
-| IA-EVAP_BASE-FEED | DN15 | P4 | 25 | 1.12 | 10 | 2.5 | 0.20 | 2.60 | ok |
-| IA-EVAP_BASE-COND | DN15 | P1 | 51 | 0.98 | 11 | 5.5 | 0.38 | 2.60 | ok |
+| IA-EVAP_ACID-FEED | DN15 | P1 | 25 | 0.98 | 9 | 0.7 | 0.14 | 1.62 | ok |
+| IA-EVAP_ACID-COND | DN15 | P1 | 49 | 0.98 | 9 | 4.1 | 0.33 | 1.62 | ok |
+| IA-EVAP_BASE-FEED | DN15 | P4 | 25 | 1.12 | 10 | 2.8 | 0.21 | 2.60 | ok |
+| IA-EVAP_BASE-COND | DN15 | P1 | 51 | 0.98 | 11 | 6.1 | 0.40 | 2.60 | ok |
 | IA-NA-PURGE | DN15 | P2 | 25 | 1.05 | 18 | 2.6 | 0.24 | 4.40 | ok |
