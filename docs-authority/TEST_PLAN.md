@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 120 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 121 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 17 | Commissioning record |
 
-Total 241 items: 120 drivers, 121 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 242 items: 120 drivers, 122 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -272,6 +272,7 @@ Total 241 items: 120 drivers, 121 register entries. Classification rule: first m
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list | X-INV-01 |
 | A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero | X-PAR-02 |
 | A-M-121 | Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic mm, m | 3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class | X-PIP-03 |
+| A-M-122 | Wire inventory: branch-circuit lengths = Manhattan distance  m, AWG | Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature | X-INV-03 |
 
 ## 7. T6 Commissioning measurements
 

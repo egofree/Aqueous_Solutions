@@ -1877,5 +1877,20 @@
   "sensitivity": "Cut lengths change by tens of mm per fitting; routes change when clash checking and supports land (X-PIP-04)",
   "replaced_by": "Clash-checked 3D routing and fabrication take-offs",
   "verification_test": "3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class"
+ },
+ {
+  "id": "A-M-122",
+  "task": "X-INV-03",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/wire.py"
+  ],
+  "value": "Wire inventory: branch-circuit lengths = Manhattan distance from unit to the electrical room (SOL_ARK_60K) x 1.2 + 5 m, 30 m where unpositioned; 3 control pairs per AC motor; DC items 10 m from a local panel; inverter output runs 25 m; section mains 3 parallel sets, 15 m; MV runs 100 m at 2 AWG; PV 18 modules per string, 60 m mean home run; hall lighting installed = average / 0.10 at 4.43 kW per 20 A circuit, 120 m; grid conductor 4/0 Cu",
+  "units": "m, AWG",
+  "where": "AQS-INV-002",
+  "basis": "NEC 2023 430.22, 430.52, Table 430.250, 310.16, 240.4(D), 250.122, 690.8, 705.28; AQS-ELEC-005, AQS-ELEC-008",
+  "sensitivity": "Lengths dominate copper quantity; panel locations will shorten most branch runs",
+  "replaced_by": "Cable schedule with routed tray lengths and voltage-drop check (X-ELS-02)",
+  "verification_test": "Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature"
  }
 ]
