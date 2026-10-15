@@ -252,16 +252,18 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 
 ## 5. Next 10 tasks
 
-1. X-BAS-02 Bounding-case check of every held rate against AQS-ASSAY-001 Rev C.
-2. MET-LEACH_CSTR_1-02 Sizing: agitator, liquor density, CPVC wall at 85 °C (study values, entered in AQS-REG-002).
-3. MET-EW_1-02 Sizing for EW_1, then EW_2 to EW_9.
-4. X-ELS-02 Load list from calculations.
-5. X-ELS-04 Rectifier sizing at the bounding case current.
-6. X-PIP-01 Piping class sheets.
-7. X-MAT-09 Liquor temperatures on the PVC-U loop units (CONTINUOUS_RECYCLE, FLOAT_SINK, S13_CLASS_TREAT); HX-5 coil guard.
-8. X-BAS-03 Site basis: ASCE Hazard Tool run (seismic, wind, snow) and a geotechnical basis. Needs a parcel or a lookup by the owner.
-9. X-ELS-08 Grounding and bonding (X-BAS-03 soil is an assumption).
-10. X-COD-02 Permit list for the study site.
+1. X-MAT-18 EW electrode materials in chloride with anodic Cl₂.
+2. X-MAT-19 Cool the hot LEACH draws to BMED_ACID, BMED_BASE and ROOF_TANK.
+3. X-ELS-03 Single-line diagram against AQS-ELEC-003 and AQS-ELEC-004.
+4. X-ELS-07 Protection and fault current (unlocks step and touch in X-ELS-08).
+5. X-ELS-05 Storage and generation sizing with the 38 kW RECT-EW bounding AC load.
+6. X-MAT-07 Galvanic and stray-current design for the EW aisle.
+7. X-PIP-02 Plant line list with the AQS-PIP-003 class on every edge.
+8. EW aisle re-placement (unit task 14 / X-BLD): sized cells 370–2670 mm long against the 750 mm pitch.
+9. X-ELS-02 Remaining unit task 02 loads, largest first (CRYO_ASU, MFG_SHOP, BMED_UPW_POLISH, GROW_BED, CRYO_H2).
+10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test.
+
+Owner decisions open: class A (regolith-like) feed acid limit (AQS-ASSAY-001 Rev D §8); EW side-reaction H₂ and IA-E-RECT 4.57 kW against the 38 kW bounding AC (rate changes not approved).
 
 ## 6. Cross-cutting tasks
 {xs}
