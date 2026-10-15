@@ -11,6 +11,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
 CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
 NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20
+BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
+def cut_fractions():
+    return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
 def _ps():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
 def tf(g, ps=None):
@@ -44,4 +47,21 @@ def tf(g, ps=None):
     put('IA-DR-IN', sup, f'ET {et:.2f} kg/d ({adr:.0f} m2 at the bed rate {b0/BED_M2:.3f} kg/m2/d) / (1 - {DRAIN} drain) (PLOSONE2017_DRAIN)')
     put('IA-DR-OUT', sup - et, f'drain {DRAIN:.0%} of supply back to the bed'); put('IA-DR-VAP', et, 'transpiration to the CRYO AHU coil')
     put('IA-BED-H2O', b0 + et, f'bed irrigation {b0} + dual-root ET {et:.2f} drawn through the bed')
-    return dict(dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
+    # OIL_FRAC cuts (replaces the ASF fit, a Fischer-Tropsch growth law that does not describe random-scission cracking): thermal pyrolysis
+    # of a 50/50 PE/PP float, oil 34 % C7-C12, 31.5 % C13-C20, 34.5 % C21-C40 (SU2018_PYRO: LDPE 24/30/46, PP 44/33/23), spread uniformly
+    # over the carbon numbers of each reported band and re-binned to the plant cuts; C29+ recycled to extinction (re-cracked at the same split).
+    vol = N['OIL_FRAC']['params'].setdefault('vol_net_base', round(E['IA-OIL-02']['rate']['value'] - E['C29_TO_PYRO']['rate']['value'], 6))
+    oil = vol - E['IA-OIL-03']['rate']['value']; f = cut_fractions(); rec = oil/(1 - f[3])*f[3]; p123 = sum(f[:3])
+    for k in ('CUT-4', 'C29_RECYCLE', 'C29_TO_PYRO'): put(k, rec, f'C29+ {f[3]:.1%} of per-pass oil, recycled to extinction (SU2018_PYRO bands)')
+    put('IA-OIL-02', vol + rec, f'per-pass volatiles: net {vol:.2f} + C29 recycle {rec:.2f}')
+    put('CUT-2', oil*f[1]/p123, f'C11-C18 {f[1]/p123:.1%} of net oil {oil:.2f} (SU2018_PYRO bands)')
+    put('CUT-3', oil*f[2]/p123 + E['S72B']['rate']['value'], f'C19-C28 {f[2]/p123:.1%} of net oil + S72B lube mist (SU2018_PYRO bands)')
+    ins = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == 'OIL_FRAC' and 'mass' in e['layers'])
+    put('CUT-1', ins - sum(E[k]['rate']['value'] for k in ('CUT-2', 'CUT-3', 'CUT-4', 'IA-OIL-03')), f'C5-C10 {f[0]/p123:.1%} of net oil + solvent and resist feeds (by difference)')
+    from flow_graph.param.o2_close import _edge
+    for sid, tank, cut, use, comp in (('IA-C11-SHIP', 'PROD_C11_C18', 'CUT-2', 'IA-BLOW-IN', 'C11-C18'), ('IA-C19-SHIP', 'PROD_C19_C28', 'CUT-3', 'CUT-3-OUT', 'C19-C28')):
+        if sid not in E:
+            g['edges'].append(_edge(sid, tank, 'NORTH_DOCK', 'L', ['mass'], f'{comp} surplus shipped', 0, 'kg/d', 'CRYO', 'DOCK', {comp: 1.0})); E[sid] = g['edges'][-1]
+        put(sid, E[cut]['rate']['value'] - E[use]['rate']['value'], f'{comp} make less the plant draw ({use}), shipped (Q-002 pattern)')
+    N['OIL_FRAC']['params']['cut_basis'] = {'source': 'SU2018_PYRO', 'per_pass_fractions_C5-10_C11-18_C19-28_C29+': [round(x, 4) for x in f], 'A-M': 'A-M-138'}
+    return dict(c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)

@@ -16,19 +16,19 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | Duty | alkaline digest of milled cullet | mesophilic anaerobic | slow pyrolysis retort |
 | Temperature, C | 85 | 35 | 500 |
 | Residence | 26.07 h | 20 d | 1.0 h |
-| Working / vessel volume, L | 46.2 / 61.6 | 23.0 / 28.7 | 1.69 / 3.37 |
+| Working / vessel volume, L | 46.2 / 61.6 | 23.0 / 28.7 | 1.91 / 3.81 |
 | Shell DN x height, mm | 450 x 390 | 350 x 300 | 200 x 170 |
 | Wall, mm | 4.0 | 4.0 | 4.5 |
 | Mixing | PBT D150 at 318 rpm, 18.7 W shaft, 0.09 kW motor | biogas recirculation through the base (no shaft seal) | none (static retort) |
-| Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 4.8 W losses and feed | 0.991 kW process, 1.415 kW electric |
-| Electrical, kW | 0.09 | 0.025 | 1.415 |
+| Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 4.8 W losses and feed | 1.119 kW process, 1.599 kW electric |
+| Electrical, kW | 0.09 | 0.025 | 1.599 |
 | Material | CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve | HDPE (PE100) shell, 50 mm PIR insulation (U about 0.5 W/(m2 K)) | ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters |
 
 ## 2. Basis
 
 - GLASS_DIGEST. 12.7 % of the cullet dissolves (IA-GLASS-03 less S08G). For 100 um fines the shrinking-sphere recession to that conversion is 2.21 um. At the zero-order rate of JMS2017_GLASSFIBRE (2.0e-4 g/(m2 s) at 80 C in 3 M NaOH, order 0.31, corrected to 2 M; glass 2500 kg/m3) that takes 31284 s. Residence is 3 x kinetic, floored at 1.0 h for mixing, heat-up and level control. The rate is for glass fibre; soda-lime cullet is checked at the bench (MARAGHECHI2016 reports constant-rate soda-lime dissolution in 1 M NaOH at 20-80 C).
 - DIGESTER. SRT 20 d on the whole wet feed (METCALF5, high-rate mesophilic 15-20 d at 35 C); 80 % fill, gas headspace above.
-- OIL_PYRO. 500 C and 1 h (ANUAR2016: 400-550 C, 30-90 min). Heat = feed x (cp x dT + heat of pyrolysis 1.3 MJ/kg, GAO2010) / heater efficiency 0.7. Half-full retort for foam and char. The graph carried 0 kW for this unit before this issue; the bus takes the 1.415 kW.
+- OIL_PYRO. 500 C and 1 h (ANUAR2016: 400-550 C, 30-90 min). Heat = feed x (cp x dT + heat of pyrolysis 1.3 MJ/kg, GAO2010) / heater efficiency 0.7. Half-full retort for foam and char. The graph carried 0 kW for this unit before this issue; the bus takes the 1.599 kW.
 - Walls. Thermoplastic hoop stress from the hydrostatic head with a 3-4 mm practical minimum (DVS2205). Steel UG-16(b) 1.5 mm + 1.5 mm corrosion allowance (ASME_VIII1_UG16).
 
 ## 3. Not designed here

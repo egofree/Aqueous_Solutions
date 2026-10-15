@@ -3514,6 +3514,17 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "vol_net_base": 27.5,
+        "cut_basis": {
+          "source": "SU2018_PYRO",
+          "per_pass_fractions_C5-10_C11-18_C19-28_C29+": [
+            0.2267,
+            0.3496,
+            0.2167,
+            0.207
+          ],
+          "A-M": "A-M-138"
         }
       },
       "continuous_kw": null
@@ -3562,13 +3573,13 @@
         "design": {
           "T_C": 500.0,
           "tau_h": 1.0,
-          "V_work_L": 1.6865,
-          "V_L": 3.373,
+          "V_work_L": 1.9056,
+          "V_L": 3.8111,
           "D_mm": 200,
           "H_mm": 170,
           "wall_mm": 4.5,
-          "Q_process_kW": 0.9905,
-          "kW": 1.415,
+          "Q_process_kW": 1.1192,
+          "kW": 1.5988,
           "material": "ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters",
           "relief": "vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)"
         },
@@ -3580,10 +3591,10 @@
         "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       },
       "continuous_kw": {
-        "value": 1.415,
+        "value": 1.5988,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). retort heat 0.991 kW / heater efficiency"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). retort heat 1.119 kW / heater efficiency"
       }
     },
     {
@@ -3724,7 +3735,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 278.0246,
+        "value": 278.2084,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -3732,13 +3743,13 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7922,
+        "count": 7928,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 3961,
+        "nameplate_kw": 3964,
         "area_m2": 34790,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
@@ -3769,7 +3780,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 1981
+        "balance_kWp": 1982
       }
     },
     {
@@ -4009,8 +4020,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3074.3,
-          "export_kWh_d_clear": 8571,
+          "export_peak_kW": 3074.1,
+          "export_kWh_d_clear": 8577,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -4518,8 +4529,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1299,
-        "kWh": 4000,
+        "kW": 1300,
+        "kWh": 4003,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -4529,7 +4540,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1196.6276,
+              "value": 1197.3974,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -4563,15 +4574,15 @@
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         },
-        "charge_kW": 1299,
+        "charge_kW": 1300,
         "discharge_kW": 286,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 56 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 56 hybrid inverters, 71.5 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.141,
-          "purge_m3_h": 42.25,
+          "H2_m3_d": 10.147,
+          "purge_m3_h": 42.28,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2616.3
+          "electrode_area_m2": 2618.0
         }
       }
     },
@@ -8812,10 +8823,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1.4046,
+        "value": 5.873266,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: = CUT-4"
+        "note": "AQS-DUTY-010: = CUT-4 | X-PAR-02 TF: C29+ 20.7% of per-pass oil, recycled to extinction (SU2018_PYRO bands) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "= CUT-4",
@@ -8845,10 +8856,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1.4046,
+        "value": 5.873266,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: = C29_RECYCLE"
+        "note": "AQS-DUTY-010: = C29_RECYCLE | X-PAR-02 TF: C29+ 20.7% of per-pass oil, recycled to extinction (SU2018_PYRO bands) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "= C29_RECYCLE",
@@ -8878,10 +8889,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 11.155299,
+        "value": 7.424773,
         "unit": "kg/d",
         "status": "study",
-        "note": "C5-C10 into the cut tank. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "C5-C10 into the cut tank. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: C5-C10 28.6% of net oil + solvent and resist feeds (by difference) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "ASF C5-C10 share 10.16 of net oil 22.5 + S38 + S39B solvent",
@@ -8911,10 +8922,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 8.4068,
+        "value": 9.918821,
         "unit": "kg/d",
         "status": "study",
-        "note": "C11-C18 into the cut tank."
+        "note": "C11-C18 into the cut tank. | X-PAR-02 TF: C11-C18 44.1% of net oil 22.50 (SU2018_PYRO bands) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "ASF C11-C18 share of net oil 22.5",
@@ -8944,10 +8955,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 3.9472,
+        "value": 6.165705,
         "unit": "kg/d",
         "status": "study",
-        "note": "C19-C28 into the cut tank."
+        "note": "C19-C28 into the cut tank. | X-PAR-02 TF: C19-C28 27.3% of net oil + S72B lube mist (SU2018_PYRO bands) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "ASF C19-C28 share 3.93 + S72B lube mist",
@@ -8977,10 +8988,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1.4046,
+        "value": 5.873266,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: C29+ per pass, recycled to extinction"
+        "note": "AQS-DUTY-010: C29+ per pass, recycled to extinction | X-PAR-02 TF: C29+ 20.7% of per-pass oil, recycled to extinction (SU2018_PYRO bands) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "C29+ per pass, recycled to extinction",
@@ -11810,10 +11821,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 28.9046,
+        "value": 33.373266,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456) | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456) | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: per-pass volatiles: net 27.50 + C29 recycle 5.87 (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -14667,10 +14678,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1196.627606,
+        "value": 1197.397425,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 42.3 m3/h holds H2 at 25 % LFL: HER 8.63 + open-circuit 1.51 m3/d H2 on 5714 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 42.3 m3/h holds H2 at 25 % LFL: HER 8.64 + open-circuit 1.51 m3/d H2 on 5718 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2",
@@ -14703,7 +14714,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1196.627606,
+        "value": 1197.397425,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -15740,7 +15751,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 278.0246,
+        "value": 278.2084,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -25026,7 +25037,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 152.609,
+        "value": 152.7099,
         "unit": "kW",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
@@ -33355,7 +33366,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.415,
+        "value": 1.5988,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -33381,7 +33392,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.415,
+        "value": 1.5988,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
@@ -35109,7 +35120,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 11.101403,
+        "value": 7.370877,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock (AQS-PAR-005)."
@@ -35151,6 +35162,64 @@
       "notes": null,
       "composition": {
         "H2O": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-C11-SHIP",
+      "from_unit_id": "PROD_C11_C18",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C11-C18 surplus shipped",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.512021,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C11-C18 make less the plant draw (IA-BLOW-IN), shipped (Q-002 pattern) (AQS-PAR-003)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "C11-C18": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-C19-SHIP",
+      "from_unit_id": "PROD_C19_C28",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C19-C28 surplus shipped",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.218505,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT), shipped (Q-002 pattern) (AQS-PAR-003)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "C19-C28": 1.0
       }
     }
   ],

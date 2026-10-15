@@ -43,8 +43,8 @@ Loads: graph sum 276.1 kW; with calculated values substituted 259.9 kW.
 | HABITATION | load | 3.000 |  | study share; held for unit task 02 |
 | GEO_HP | load | 2.000 |  | study share; held for unit task 02 |
 | WAFER_FAB | load | 2.000 |  | study share; held for unit task 02 |
+| OIL_PYRO | — | 1.599 |  | study share; held for unit task 02 |
 | EVAP_ACID | load | 1.497 |  | study share; held for unit task 02 |
-| OIL_PYRO | — | 1.415 |  | study share; held for unit task 02 |
 | EVAP_BASE | load | 1.324 |  | study share; held for unit task 02 |
 | MEOH_FC | generation | 1.000 |  | study share; held for unit task 02 |
 | WET_BENCH | load | 1.000 |  | study share; held for unit task 02 |
