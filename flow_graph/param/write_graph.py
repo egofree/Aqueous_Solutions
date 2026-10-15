@@ -164,6 +164,7 @@ def power():
     pv1 = E['IA-PV-01']['rate']; pv1['value'] = round(pv1['value'] + kw - old, 4)
     if 'X-PAR-07' not in pv1.get('note', ''): pv1['note'] = pv1.get('note', '') + f' X-PAR-07 extension hall: +{kw:.2f} kW.'
     open(GP,'w').write(json.dumps(g, indent=2))
+    subprocess.run([sys.executable,'docs-authority/_collection_bus.py'],cwd=ROOT,capture_output=True,text=True,check=True)   # X-ELS-11 sections
     print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW")
 
 def relief():

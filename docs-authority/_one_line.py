@@ -60,7 +60,12 @@ out.append(f'  BUS --> MCC["MCC-1 480 V {bus.get("MCC-1 480 V",0):.1f} kW"]')
 out.append(f'  BUS --> XF["T-1 {xf} kVA 480–208/120 V"] --> PP["PP-1 {pp:.1f} kW"]')
 for u,(sid,kw) in fed.items(): out.append(f'  BUS -->|{sid}| {u.replace("-","_")}["{u} {kw:.2f} kW"]')
 IC=INV.get('interconnection',{})
-out.append(f'  BUS --> PCC["705.20 disconnect, 705.30 OCPD, ANSI C12.20 bidirectional meter"] --> GRID(["Utility PCC, export up to {IC.get("export_peak_kW",0):.0f} kW"])')
+SEC=INV.get('sections',{})
+if SEC:
+    for i,(k,kva) in enumerate(zip(SEC['inverters'],SEC['xfmr_kVA']),1): out.append(f'  CB{i}["CB-{i} 480 V, {k} inverters, {SEC["breaker_A"][i-1]} A"] --> TX{i}["{kva:g} kVA 480 V / {SEC["mv_kV"]} kV"] --> MV')
+    out.append(f'  MV(["MV collection {SEC["mv_kV"]} kV (AQS-ELEC-008)"])')
+    out.append(f'  CB1 --- BUS')
+out.append(f'  {"MV" if SEC else "BUS"} --> PCC["705.20 disconnect, 705.30 OCPD, ANSI C12.20 bidirectional meter"] --> GRID(["Utility PCC, export up to {IC.get("export_peak_kW",0):.0f} kW"])')
 out.append(f'  BUS --> RECTEW["RECT-EW 9 × 6 V DC channels, {rect["Pac_kW"]:.1f} kW AC"]')
 out.append('```\n')
 out.append('| Bus | Load | kW | A | Breaker A | Basis |\n| --- | --- | --- | --- | --- | --- |')
@@ -83,7 +88,7 @@ out.append(f"""
 2. {sum(1 for r in rows if 'study share' in r[3])} feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.
-5. Grid export (D75, owner decision 2026-10-15). PV is sized at {g_pv.get('oversize_factor',1):.1f} x the balancing nameplate ({g_pv.get('balance_kWp')} of {g_pv.get('nameplate_kw')} kWp). Inverters at the NREL PVWatts DC/AC ratio {INV.get('dc_ac_ratio')}: {INVTXT}. Clear-day export at noon with storage full is up to {IC.get('export_peak_kW',0):.0f} kW, about {IC.get('export_kWh_d_clear',0):.0f} kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
+5. Grid export (D75, owner decision 2026-10-15). PV is sized at {g_pv.get('oversize_factor',1):.1f} x the balancing nameplate ({g_pv.get('balance_kWp')} of {g_pv.get('nameplate_kw')} kWp). Inverters at the NREL PVWatts DC/AC ratio {INV.get('dc_ac_ratio')}: {INVTXT}. The inverters are split into {INV.get('sections',{}).get('count','?')} collection sections at 480 V, each through a pad-mount transformer to the {INV.get('sections',{}).get('mv_kV','?')} kV collection bus; the plant bus hangs on {INV.get('sections',{}).get('plant_bus_on','?')} (AQS-ELEC-008). Clear-day export at noon with storage full is up to {IC.get('export_peak_kW',0):.0f} kW, about {IC.get('export_kWh_d_clear',0):.0f} kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
 """)
 open('docs-authority/ONE_LINE.md','w').write('\n'.join(out)+'\n')
 print(json.dumps(dict(bus=bus,xf=xf,gen=gen,demand=demand)))

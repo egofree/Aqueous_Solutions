@@ -3844,6 +3844,33 @@
           "export_kWh_d_clear": 7344,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
+        },
+        "sections": {
+          "count": 5,
+          "inverters": [
+            10,
+            10,
+            10,
+            9,
+            9
+          ],
+          "breaker_A": [
+            1000,
+            1000,
+            1000,
+            1000,
+            1000
+          ],
+          "xfmr_kVA": [
+            750,
+            750,
+            750,
+            750,
+            750
+          ],
+          "mv_kV": 12.47,
+          "plant_bus_on": "CB-1",
+          "doc": "AQS-ELEC-008"
         }
       },
       "modules": [],
@@ -4322,7 +4349,8 @@
         },
         "charge_kW": 1113,
         "discharge_kW": 245,
-        "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load"
+        "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
+        "distribution": "distributed over the 48 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
       },
       "modules": [],
       "electrical_role": "storage",

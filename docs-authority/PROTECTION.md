@@ -1,19 +1,20 @@
 # Protection and coordination
 
 Document number: AQS-ELEC-006
-Revision: C
+Revision: D
 Date: 2026-10-15
 Authority: AQS-PLAN-007 X-ELS-07; one-line AQS-ELEC-002 Rev C. Script `docs-authority/_protection.py`. Study. Not a PE stamp. Study values in AQS-REG-002 (A-M-057 to A-M-059).
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue. Inverter-limited fault, device types and settings, selectivity, DC channels, IEEE 80 check. | 2026-10-15 |
+| D | X-ELS-11: five collection sections, 1000 A mains, 750 kVA step-up to 12.47 kV (AQS-ELEC-008). | 2026-10-15 |
 | C | X-PAR-09 (D75) and X-PAR-08 (D77): 48 inverters (2880 kW), fault 6928 A, main 5000 A; grid export interconnection; ground grid over the grown building, IEEE 80 mesh and step voltages pass on bare soil. | 2026-10-15 |
 | B | X-RSZ-02: three inverters (180 kW). Fault 433 A; main 300 A; GPR 494 V; bare-soil touch fails, crushed rock required everywhere on the grid. | 2026-10-15 |
 
 ## 1. Available fault current
 
-All plant AC sources sit behind SOL_ARK_60K, 48 × 60 kW = 2880 kW (X-PAR-09 D75, X-PAR-08 D77; was 4 × 60 kW). Rated 3464 A at 480 V; fault contribution 2 × rated = 6928 A (study; AQS-ELEC-002 Rev B method). The utility connection for export (AQS-ELEC-002 Rev D item 5) adds the utility's available fault current, which is not known until the interconnection study (A-M-110); this study is redone with it. Export protection: UL 1741 SB inverters with IEEE 1547-2018 Category III voltage/frequency ride-through and trip settings, unintentional islanding cleared within 2 s; NEC 2023 705.30 overcurrent device and 705.20 lockable disconnect at the PCC; loss of utility (705.40) trips export and leaves the plant islanded on storage. A 3464 A bus is split in practice into collection sections; the section arrangement is held to X-ELS-02.
+All plant AC sources sit behind SOL_ARK_60K, 48 × 60 kW = 2880 kW (X-PAR-09 D75, X-PAR-08 D77; was 4 × 60 kW). Rated 3464 A at 480 V; fault contribution 2 × rated = 6928 A (study; AQS-ELEC-002 Rev B method). The utility connection for export (AQS-ELEC-002 Rev D item 5) adds the utility's available fault current, which is not known until the interconnection study (A-M-110); this study is redone with it. Export protection: UL 1741 SB inverters with IEEE 1547-2018 Category III voltage/frequency ride-through and trip settings, unintentional islanding cleared within 2 s; NEC 2023 705.30 overcurrent device and 705.20 lockable disconnect at the PCC; loss of utility (705.40) trips export and leaves the plant islanded on storage. The inverters are split into five 480 V collection sections (10, 10, 10, 9, 9 inverters), each with a 1000 A breaker (below the NEC 240.87 1200 A threshold) and a 750 kVA transformer to the 12.47 kV collection bus (AQS-ELEC-008, X-ELS-11). The plant bus hangs on CB-1.
 
 ## 2. Device rule
 
@@ -125,7 +126,7 @@ A thermal-magnetic breaker clears instantly only if its magnetic pickup is below
 | SOL_ARK 480 V | BMED_UPW_POLISH | 15 | 6928 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | EVAP_ACID_VS | 15 | 6928 | thermal-magnetic, instantaneous 5× | 75 A |
 
-Bus main: 5000 A frame, electronic trip, short-time 0.3 s; selective over the 0.1 s feeders by time. T-1 per NEC 450.3(B); 208 V faults limited by the T-1 5 % impedance (study).
+Section mains (CB-1 to CB-5): 1000 A frame, electronic trip, short-time 0.3 s, 65 kA interrupting; selective over the 0.1 s feeders by time. T-1 per NEC 450.3(B); 208 V faults limited by the T-1 5 % impedance (study).
 
 ## 3. DC
 
@@ -140,7 +141,7 @@ Earth-fault current is bounded by the inverters, 6928 A (utility contribution he
 | bare soil | 176 | 213 | 140 / 60 | safe |
 | crushed rock 0.1 m, 3000 ohm m | 677 | 2216 | 140 / 60 | safe |
 
-Crushed rock 0.1 m, ≥ 3000 Ω·m, is kept on the outdoor yard (ZNBR2, MeOH train) as margin against the unknown utility contribution. Indoors, slab rebar is bonded to the grid as an equipotential mat (AQS-ELEC-005). Main 5000 A frame (1.25 × 3464 A), electronic trip.
+Crushed rock 0.1 m, ≥ 3000 Ω·m, is kept on the outdoor yard (ZNBR2, MeOH train) as margin against the unknown utility contribution. Indoors, slab rebar is bonded to the grid as an equipotential mat (AQS-ELEC-005). Section mains 1000 A (AQS-ELEC-008); MV fuses 65 A per transformer.
 
 ## 5. Held
 

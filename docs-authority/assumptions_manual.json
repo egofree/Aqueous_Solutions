@@ -1753,5 +1753,20 @@
   "sensitivity": "Utility fault current raises bus and earth-fault levels; an export limit below 2576 kW curtails surplus",
   "replaced_by": "Utility interconnection agreement",
   "verification_test": "Owner files the interconnection application; utility study results entered as drivers and the protection study re-run"
+ },
+ {
+  "id": "A-M-114",
+  "task": "X-ELS-11",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/_collection_bus.py"
+  ],
+  "value": "Collection at 480 V in sections with breakers <= 1000 A (NEC 240.87 threshold), 750 kVA 5.75 % Z pad-mount step-up to 12.47 kV; storage distributed evenly over the hybrid inverters; plant bus on CB-1; microgrid controller per IEEE 2030.7 for islanding",
+  "units": "A, kVA, kV",
+  "where": "SOL_ARK_60K params.sections, AQS-ELEC-008",
+  "basis": "NEC2023_240, IEEE_C57_12_34, UL891, IEEE1547_2018, IEEE2030_7",
+  "sensitivity": "Service voltage from the utility study (A-M-113) may change the MV level and transformer ratio",
+  "replaced_by": "Utility interconnection agreement and switchgear selection",
+  "verification_test": "Utility service voltage; short-circuit and coordination study with the utility source"
  }
 ]

@@ -16,7 +16,7 @@ for b,u,kw,a,br,bs in rows:
     if inst_tm<=If*0.8: dev,setg='thermal-magnetic, instantaneous 5×',f'{inst_tm:.0f} A'
     else: dev,setg='electronic trip, short-time pickup 1.5×, 0.1 s',f'{1.5*br:.0f} A'
     fe.append(dict(bus=b.strip(),load=u.strip(),A=a,breaker=br,If=If,device=dev,setting=setg))
-main=dict(breaker=next(b for b in (100,125,150,175,200,225,250,300,350,400,450,500,600,700,800,1000,1200,1600,2000,2500,3000,4000,5000,6000) if b>=1.25*Irated),If=Ifault)
+main=dict(breaker=max(_n.get('sections',{}).get('breaker_A',[0])) or next(b for b in (100,125,150,175,200,225,250,300,350,400,450,500,600,700,800,1000,1200,1600,2000,2500,3000,4000,5000,6000) if b>=1.25*Irated),If=Ifault)
 # IEEE 80-2013 touch and step, 50 kg person
 G=json.loads(subprocess.run(['python3','docs-authority/_grounding_study.py'],capture_output=True,text=True).stdout); Rg=G['Rg_ohm']
 # IEEE 80-2013 mesh and step voltage (eqs 85-94), rectangular grid, rods on the perimeter (Kii=1), 2/0 AWG (d 0.0105 m), h 0.75 m

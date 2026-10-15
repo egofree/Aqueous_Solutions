@@ -798,5 +798,25 @@
   "units": "C balance (65 F, degree-day base)",
   "ref": "NOAA_NORMALS_DFW",
   "needs_verification": false
+ },
+ "sec_ocpd_max_A": {
+  "value": 1000,
+  "units": "A, largest section breaker (stays below the NEC 240.87 1200 A arc-energy-reduction threshold)",
+  "ref": "NEC2023_240",
+  "needs_verification": false
+ },
+ "mv_kV": {
+  "value": 12.47,
+  "units": "kV collection and point of common coupling",
+  "register": "A-M-114",
+  "needs_verification": true,
+  "verification_test": "Utility interconnection study (owner input A-M-113): service voltage"
+ },
+ "xfmr_Z_pu": {
+  "value": 0.0575,
+  "units": "pu pad-mount transformer impedance",
+  "ref": "IEEE_C57_12_34",
+  "needs_verification": true,
+  "verification_test": "Transformer nameplate"
  }
 }
