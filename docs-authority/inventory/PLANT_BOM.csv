@@ -191,6 +191,535 @@ unit,YEAST,Nozzles DN25: sugar in; beer out; CO2 out; recirculation; drain,5,"HD
 unit,YEAST,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",study
 unit,YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily recirculation pump,1,PIR,AQS-DUTY-062 section 5
 unit,YEAST,Heater mat 5 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit envelope BOM,ACID_POLISH_SCRUB,Body D600 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/ACID_POLISH_SCRUB.md
+unit envelope BOM,ACID_POLISH_SCRUB,Process nozzle DN15,3,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ACID_POLISH_SCRUB,Process nozzle DN250,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ACID_POLISH_SCRUB,Open vent DN25,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,AFTERBURNER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/AFTERBURNER.md
+unit envelope BOM,AFTERBURNER,Process nozzle DN15,9,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,AFTERBURNER,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,ALK_SCRUBBER,Body D600 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/ALK_SCRUBBER.md
+unit envelope BOM,ALK_SCRUBBER,Process nozzle DN15,2,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ALK_SCRUBBER,Process nozzle DN250,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ALK_SCRUBBER,Open vent DN25,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,AMF,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/AMF.md
+unit envelope BOM,AMF,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,AMF,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,ANIMAL_PEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/ANIMAL_PEN.md
+unit envelope BOM,ANIMAL_PEN,Process nozzle DN15,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ANIMAL_PEN,Process nozzle DN50,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ANIMAL_PEN,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,ASH,Body / envelope 1000 x 1000 x 1500 mm,1,HDPE or PVC for the water.,docs-authority/duties/ASH.md
+unit envelope BOM,ASH,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ASH,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,AZOLLA,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/AZOLLA.md
+unit envelope BOM,AZOLLA,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,AZOLLA,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,AZOLLA_BED,Body / envelope 18000 x 5000 x 400 mm,1,HDPE or PVC for the water.,docs-authority/duties/AZOLLA_BED.md
+unit envelope BOM,AZOLLA_BED,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,AZOLLA_BED,Open vent DN50,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,BACKUP_GEN,Body / envelope 2000 x 1000 x 1600 mm,1,No wetted alloy.,docs-authority/duties/BACKUP_GEN.md
+unit envelope BOM,BACKUP_GEN,Process nozzle DN15,5,No wetted alloy.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BACKUP_GEN,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+unit envelope BOM,BAGHOUSE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",docs-authority/duties/BAGHOUSE.md
+unit envelope BOM,BAGHOUSE,Process nozzle DN15,4,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BAGHOUSE,Process nozzle DN50,1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BAGHOUSE,Open vent DN25,1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).","API 2000, A-M-155"
+unit envelope BOM,BEES,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/BEES.md
+unit envelope BOM,BEES,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BEES,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,BIOFILTER,Body / envelope 3000 x 5000 x 1200 mm,1,HDPE or PVC for the water.,docs-authority/duties/BIOFILTER.md
+unit envelope BOM,BIOFILTER,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BIOFILTER,Process nozzle DN20,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BIOFILTER,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BIOFILTER,Open vent DN50,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,BLOW_MOLD,Body / envelope 1200 x 800 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/BLOW_MOLD.md
+unit envelope BOM,BLOW_MOLD,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BLOW_MOLD,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,BMED_ACID,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/BMED_ACID.md
+unit envelope BOM,BMED_ACID,Process nozzle DN15,7,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BMED_ACID,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,BMED_BASE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/BMED_BASE.md
+unit envelope BOM,BMED_BASE,Process nozzle DN15,6,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BMED_BASE,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,BMED_UPW_POLISH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/BMED_UPW_POLISH.md
+unit envelope BOM,BMED_UPW_POLISH,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BMED_UPW_POLISH,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,BOARD_MILL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/BOARD_MILL.md
+unit envelope BOM,BOARD_MILL,Process nozzle DN15,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BOARD_MILL,Process nozzle DN50,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BOARD_MILL,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,BSFL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/BSFL.md
+unit envelope BOM,BSFL,Process nozzle DN15,8,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BSFL,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BSFL,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,BUOH_STILL,Body / envelope 300 x 300 x 1200 mm,1,Borosilicate glass 3.,docs-authority/duties/BUOH_STILL.md
+unit envelope BOM,BUOH_STILL,Process nozzle DN15,2,Borosilicate glass 3.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BUOH_STILL,Open vent DN25,1,Borosilicate glass 3.,"API 2000, A-M-155"
+unit envelope BOM,C29_RECYCLE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/C29_RECYCLE.md
+unit envelope BOM,C29_RECYCLE,Process nozzle DN15,2,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,C29_RECYCLE,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,CATCH_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/CATCH_TANK.md
+unit envelope BOM,CATCH_TANK,Process nozzle DN15,3,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CATCH_TANK,Open vent DN25,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.","API 2000, A-M-155"
+unit envelope BOM,CHICKENS,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CHICKENS.md
+unit envelope BOM,CHICKENS,Process nozzle DN15,4,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CHICKENS,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CLARIFIER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CLARIFIER.md
+unit envelope BOM,CLARIFIER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CLARIFIER,Process nozzle DN25,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CLARIFIER,Open vent DN50,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CLOVER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CLOVER.md
+unit envelope BOM,CLOVER,Process nozzle DN15,5,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CLOVER,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,COLD_MILL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/COLD_MILL.md
+unit envelope BOM,COLD_MILL,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,COLD_MILL,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,COMPOST,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/COMPOST.md
+unit envelope BOM,COMPOST,Process nozzle DN15,14,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,COMPOST,Process nozzle DN50,5,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,COMPOST,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,COMPOST_MYC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/COMPOST_MYC.md
+unit envelope BOM,COMPOST_MYC,Process nozzle DN15,4,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,COMPOST_MYC,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,COMPOST_TOILET,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/COMPOST_TOILET.md
+unit envelope BOM,COMPOST_TOILET,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,COMPOST_TOILET,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CONTINUOUS_RECYCLE,Body / envelope 1500 x 60 x 60 mm,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/CONTINUOUS_RECYCLE.md
+unit envelope BOM,CONTINUOUS_RECYCLE,Process nozzle DN15,2,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CONTINUOUS_RECYCLE,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,CRAYFISH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CRAYFISH.md
+unit envelope BOM,CRAYFISH,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRAYFISH,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRAYFISH,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_ALLIUM,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_ALLIUM.md
+unit envelope BOM,CROP_ALLIUM,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_ALLIUM,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_BASIL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_BASIL.md
+unit envelope BOM,CROP_BASIL,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_BASIL,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_CUCUMBER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_CUCUMBER.md
+unit envelope BOM,CROP_CUCUMBER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_CUCUMBER,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_KALE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_KALE.md
+unit envelope BOM,CROP_KALE,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_KALE,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_LETTUCE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_LETTUCE.md
+unit envelope BOM,CROP_LETTUCE,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_LETTUCE,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_PEPPER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_PEPPER.md
+unit envelope BOM,CROP_PEPPER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_PEPPER,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_ROSEMARY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_ROSEMARY.md
+unit envelope BOM,CROP_ROSEMARY,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_ROSEMARY,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_SPINACH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_SPINACH.md
+unit envelope BOM,CROP_SPINACH,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_SPINACH,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CROP_TOMATO,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CROP_TOMATO.md
+unit envelope BOM,CROP_TOMATO,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CROP_TOMATO,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,CRU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/CRU.md
+unit envelope BOM,CRU,Process nozzle DN15,2,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRU,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,CRYO_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU.md
+unit envelope BOM,CRYO_AHU,Process nozzle DN15,15,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_AHU,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_AHU_COND_CONDENSABLE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md
+unit envelope BOM,CRYO_AHU_COND_CONDENSABLE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_AHU_COND_CONDENSABLE,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_AR,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AR.md
+unit envelope BOM,CRYO_AR,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_AR,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_ASU,Body D415 x 1244 mm,1,316L.,docs-authority/duties/CRYO_ASU.md
+unit envelope BOM,CRYO_ASU,Process nozzle DN15,23,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_ASU,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_CO2,Body D114 x 450 mm,1,316L.,docs-authority/duties/CRYO_CO2.md
+unit envelope BOM,CRYO_CO2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_CO2,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+unit envelope BOM,CRYO_DED_COOL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_DED_COOL.md
+unit envelope BOM,CRYO_DED_COOL,Process nozzle DN15,1,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_DED_COOL,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_H2,Body D114 x 1050 mm,1,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",docs-authority/duties/CRYO_H2.md
+unit envelope BOM,CRYO_H2,Process nozzle DN15,6,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_H2,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+unit envelope BOM,CRYO_HE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_HE.md
+unit envelope BOM,CRYO_HE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_HE,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_HX_Q4,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_HX_Q4.md
+unit envelope BOM,CRYO_HX_Q4,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_KR,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_KR.md
+unit envelope BOM,CRYO_KR,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_KR,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_N2,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_N2.md
+unit envelope BOM,CRYO_N2,Process nozzle DN15,4,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_N2,Process nozzle DN50,1,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_N2,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_NE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_NE.md
+unit envelope BOM,CRYO_NE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_NE,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CRYO_O2,Body D114 x 750 mm,1,316L.,docs-authority/duties/CRYO_O2.md
+unit envelope BOM,CRYO_O2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_O2,Process nozzle DN50,1,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_O2,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+unit envelope BOM,CRYO_XE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_XE.md
+unit envelope BOM,CRYO_XE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_XE,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,CURTAIL,Body / envelope 800 x 600 x 2000 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/CURTAIL.md
+unit envelope BOM,CURTAIL,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,DUAL_ROOT,Body / envelope 6000 x 2000 x 600 mm,1,HDPE or PVC for the water.,docs-authority/duties/DUAL_ROOT.md
+unit envelope BOM,DUAL_ROOT,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,DUAL_ROOT,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,DUCKWEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/DUCKWEED.md
+unit envelope BOM,DUCKWEED,Process nozzle DN15,7,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,DUCKWEED,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,ELECTRODE_COAT,Body / envelope 1200 x 800 x 1800 mm,1,316L where the stream is wet.,docs-authority/duties/ELECTRODE_COAT.md
+unit envelope BOM,ELECTRODE_COAT,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ELECTRODE_COAT,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,EMETH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/EMETH.md
+unit envelope BOM,EMETH,Process nozzle DN15,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EMETH,Process nozzle DN50,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EMETH,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,ETOH_STILL,Body / envelope 400 x 400 x 1500 mm,1,Borosilicate glass 3.,docs-authority/duties/ETOH_STILL.md
+unit envelope BOM,ETOH_STILL,Process nozzle DN15,4,Borosilicate glass 3.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ETOH_STILL,Open vent DN25,1,Borosilicate glass 3.,"API 2000, A-M-155"
+unit envelope BOM,EW_1,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_1.md
+unit envelope BOM,EW_1,Process nozzle DN15,8,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_1,Process nozzle DN50,1,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_1,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_2,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_2.md
+unit envelope BOM,EW_2,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_2,Process nozzle DN50,1,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_2,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_3,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_3.md
+unit envelope BOM,EW_3,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_3,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_4,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_4.md
+unit envelope BOM,EW_4,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_4,Process nozzle DN50,2,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_4,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_5,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_5.md
+unit envelope BOM,EW_5,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_5,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_6,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_6.md
+unit envelope BOM,EW_6,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_6,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_7,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_7.md
+unit envelope BOM,EW_7,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_7,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_8,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_8.md
+unit envelope BOM,EW_8,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_8,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EW_9,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_9.md
+unit envelope BOM,EW_9,Process nozzle DN15,7,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,EW_9,Open vent DN25,1,"Cathode titanium Grade 2, 3 mm.","API 2000, A-M-155"
+unit envelope BOM,EXT_HALL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Steel portal frames on the 6 m grid; insulated metal roof and wall panels to the IECC U-factors; roof framing for LRFD 1.,docs-authority/duties/EXT_HALL.md
+unit envelope BOM,FAB_UPW_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L if the stream is wet or chloride.,docs-authority/duties/FAB_UPW_TANK.md
+unit envelope BOM,FAB_UPW_TANK,Process nozzle DN15,2,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FAB_UPW_TANK,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,FISH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/FISH.md
+unit envelope BOM,FISH,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FISH,Process nozzle DN25,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FISH,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FISH,Open vent DN50,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,FISH_SUMP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/FISH_SUMP.md
+unit envelope BOM,FISH_SUMP,Process nozzle DN15,5,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FISH_SUMP,Process nozzle DN25,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FISH_SUMP,Open vent DN50,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,FLOAT_SINK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/FLOAT_SINK.md
+unit envelope BOM,FLOAT_SINK,Process nozzle DN15,2,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FLOAT_SINK,Process nozzle DN50,1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FLOAT_SINK,Open vent DN25,1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,FLUE_KO,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",docs-authority/duties/FLUE_KO.md
+unit envelope BOM,FLUE_KO,Process nozzle DN15,5,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FLUE_KO,Process nozzle DN20,1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FLUE_KO,Open vent DN25,1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.","API 2000, A-M-155"
+unit envelope BOM,FRUIT_GUTTER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/FRUIT_GUTTER.md
+unit envelope BOM,FRUIT_GUTTER,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FRUIT_GUTTER,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,FUEL_CELL,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,docs-authority/duties/FUEL_CELL.md
+unit envelope BOM,FUEL_CELL,Process nozzle DN15,4,No wetted alloy.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FUEL_CELL,Process nozzle DN50,1,No wetted alloy.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FUEL_CELL,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+unit envelope BOM,GAS_ATOMIZER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GAS_ATOMIZER.md
+unit envelope BOM,GAS_ATOMIZER,Process nozzle DN15,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GAS_ATOMIZER,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GEO_GHEX,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GEO_GHEX.md
+unit envelope BOM,GEO_GHEX,Process nozzle DN15,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GEO_GHEX,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GEO_HP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GEO_HP.md
+unit envelope BOM,GEO_HP,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GEO_HP_CLOSED_LOOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GEO_HP_CLOSED_LOOP.md
+unit envelope BOM,GEO_HP_CLOSED_LOOP,Process nozzle DN15,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GEO_HP_CLOSED_LOOP,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GEO_ORC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L if the stream is wet or chloride.,docs-authority/duties/GEO_ORC.md
+unit envelope BOM,GEO_ORC,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,GLASS_BURNOUT,Body / envelope 800 x 600 x 1200 mm,1,316L where the stream is wet.,docs-authority/duties/GLASS_BURNOUT.md
+unit envelope BOM,GLASS_BURNOUT,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GLASS_BURNOUT,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GLASS_MILL,Body / envelope 800 x 600 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/GLASS_MILL.md
+unit envelope BOM,GLASS_MILL,Process nozzle DN15,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GLASS_MILL,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GLASS_RINSE,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/GLASS_RINSE.md
+unit envelope BOM,GLASS_RINSE,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GLASS_RINSE,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,GOATS,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/GOATS.md
+unit envelope BOM,GOATS,Process nozzle DN15,4,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GOATS,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,GREY_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/GREY_TREAT.md
+unit envelope BOM,GREY_TREAT,Process nozzle DN15,7,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GREY_TREAT,Process nozzle DN50,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GREY_TREAT,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,GROW_BED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/GROW_BED.md
+unit envelope BOM,GROW_BED,Process nozzle DN15,34,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GROW_BED,Process nozzle DN20,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GROW_BED,Process nozzle DN50,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GROW_BED,Open vent DN32,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,H2O_ELYZ,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/H2O_ELYZ.md
+unit envelope BOM,H2O_ELYZ,Process nozzle DN15,3,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
+unit envelope BOM,H2_DRYER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
+unit envelope BOM,H2_DRYER,Process nozzle DN15,6,Inlet knock-out PVC-U (wet).,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,H2_DRYER,Open vent DN25,1,Inlet knock-out PVC-U (wet).,"API 2000, A-M-155"
+unit envelope BOM,H2_PURIFIER,Body D60 x 926 mm,1,"316L, annealed (AQS-REV-H2-001).",docs-authority/duties/H2_PURIFIER.md
+unit envelope BOM,H2_PURIFIER,Process nozzle DN15,3,"316L, annealed (AQS-REV-H2-001).",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,H2_PURIFIER,Open vent DN25,1,"316L, annealed (AQS-REV-H2-001).","API 2000, A-M-155"
+unit envelope BOM,HABITATION,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/HABITATION.md
+unit envelope BOM,HABITATION,Process nozzle DN15,46,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HABITATION,Process nozzle DN50,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HABITATION,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,HAB_GALLEY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/HAB_GALLEY.md
+unit envelope BOM,HAB_GALLEY,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HAB_GALLEY,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,HAB_MED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/HAB_MED.md
+unit envelope BOM,HAB_MED,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HAB_MED,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,HAB_SLEEP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/HAB_SLEEP.md
+unit envelope BOM,HAB_SLEEP,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HAB_SLEEP,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,HAB_WASH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/HAB_WASH.md
+unit envelope BOM,HAB_WASH,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HAB_WASH,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,HCL_BURNER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/HCL_BURNER.md
+unit envelope BOM,HCL_BURNER,Process nozzle DN15,19,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HEAT_SINK,Body / envelope 6000 x 6000 x 1500 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/HEAT_SINK.md
+unit envelope BOM,HEAT_SINK,Open vent DN50,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,HOPPER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/HOPPER.md
+unit envelope BOM,HOPPER,Process nozzle DN15,6,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HOPPER,Process nozzle DN50,1,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HOPPER,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,HX8,Body / envelope 600 x 400 x 600 mm,1,"PVDF tubes and tube sheets on the liquor side, PVC-U shell on the Q4 water side.",docs-authority/duties/HX8.md
+unit envelope BOM,HX8,Open vent DN25,1,"PVDF tubes and tube sheets on the liquor side, PVC-U shell on the Q4 water side.","API 2000, A-M-155"
+unit envelope BOM,HYDRO_SET,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/HYDRO_SET.md
+unit envelope BOM,HYDRO_SET,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,IODIDE,Body / envelope 500 x 500 x 800 mm,1,HDPE or PVC for the water.,docs-authority/duties/IODIDE.md
+unit envelope BOM,IODIDE,Process nozzle DN15,5,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,IODIDE,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,LIGNO_PRE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/LIGNO_PRE.md
+unit envelope BOM,LIGNO_PRE,Process nozzle DN15,7,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,LIGNO_PRE,Process nozzle DN50,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,LIGNO_PRE,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,LITHO_ALIGN,Body / envelope 500 x 500 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_ALIGN.md
+unit envelope BOM,LITHO_ALIGN,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,LITHO_COAT,Body / envelope 600 x 500 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_COAT.md
+unit envelope BOM,LITHO_COAT,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,LITHO_DEV,Body / envelope 500 x 500 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_DEV.md
+unit envelope BOM,LITHO_DEV,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,LITHO_STUB,Body / envelope 1600 x 800 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_STUB.md
+unit envelope BOM,LITHO_STUB,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,LITHO_STUB,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,MEOH_COND,Body / envelope 400 x 400 x 600 mm,1,316L where the stream is wet.,docs-authority/duties/MEOH_COND.md
+unit envelope BOM,MEOH_COND,Process nozzle DN15,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MEOH_COND,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,MEOH_FC,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,docs-authority/duties/MEOH_FC.md
+unit envelope BOM,MEOH_FC,Process nozzle DN15,7,No wetted alloy.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MEOH_FC,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+unit envelope BOM,MEOH_TANK,Body / envelope 800 x 800 x 1100 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/MEOH_TANK.md
+unit envelope BOM,MEOH_TANK,Process nozzle DN15,9,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MEOH_TANK,Process nozzle DN50,1,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MEOH_TANK,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,MET_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/MET_AHU.md
+unit envelope BOM,MET_AHU,Process nozzle DN15,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_AHU,Process nozzle DN200,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_AHU,Process nozzle DN250,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_AHU,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,MET_HX_Q4,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L if the stream is wet or chloride.,docs-authority/duties/MET_HX_Q4.md
+unit envelope BOM,MET_HX_Q4,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,MET_MELT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphite or refractory on the hot face.,docs-authority/duties/MET_MELT.md
+unit envelope BOM,MET_MELT,Process nozzle DN15,4,Graphite or refractory on the hot face.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_MELT,Process nozzle DN50,1,Graphite or refractory on the hot face.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_MELT,Open vent DN25,1,Graphite or refractory on the hot face.,"API 2000, A-M-155"
+unit envelope BOM,MET_SCRUB,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/MET_SCRUB.md
+unit envelope BOM,MET_SCRUB,Process nozzle DN15,4,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MET_SCRUB,Open vent DN25,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/MFG_SHOP.md
+unit envelope BOM,MFG_SHOP,Process nozzle DN15,23,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MFG_SHOP,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MFG_SHOP,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,MISTER,Body / envelope 4000 x 1000 x 800 mm,1,HDPE or PVC for the water.,docs-authority/duties/MISTER.md
+unit envelope BOM,MISTER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MISTER,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,MUSHROOM,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/MUSHROOM.md
+unit envelope BOM,MUSHROOM,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MUSHROOM,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,MUSH_BLOCK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/MUSH_BLOCK.md
+unit envelope BOM,MUSH_BLOCK,Process nozzle DN15,4,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MUSH_BLOCK,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,MUSH_STRAW,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/MUSH_STRAW.md
+unit envelope BOM,MUSH_STRAW,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MUSH_STRAW,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,NFIX_BED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/NFIX_BED.md
+unit envelope BOM,NFIX_BED,Process nozzle DN15,8,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NFIX_BED,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,NFT,Body / envelope 6000 x 1000 x 300 mm,1,HDPE or PVC for the water.,docs-authority/duties/NFT.md
+unit envelope BOM,NFT,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NFT,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,NORTH_DOCK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/NORTH_DOCK.md
+unit envelope BOM,NORTH_DOCK,Process nozzle DN15,10,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NORTH_DOCK,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NORTH_DOCK,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,NOX_SCRUB,Body D200 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/NOX_SCRUB.md
+unit envelope BOM,NOX_SCRUB,Process nozzle DN15,9,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NOX_SCRUB,Process nozzle DN50,4,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NOX_SCRUB,Open vent DN25,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,NUTRIENT_DOSE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/NUTRIENT_DOSE.md
+unit envelope BOM,NUTRIENT_DOSE,Process nozzle DN15,17,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NUTRIENT_DOSE,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NUTRIENT_DOSE,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,OIL_DRYER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/OIL_DRYER.md
+unit envelope BOM,OIL_DRYER,Process nozzle DN15,2,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,OIL_DRYER,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,OIL_FRAC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/OIL_FRAC.md
+unit envelope BOM,OIL_FRAC,Process nozzle DN15,10,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,OIL_FRAC,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,PEANUT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/PEANUT.md
+unit envelope BOM,PEANUT,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,PEANUT,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,POLISH_BANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/POLISH_BANK.md
+unit envelope BOM,POLISH_BANK,Process nozzle DN15,3,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,POLISH_BANK,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,PROD_C11_C18,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/PROD_C11_C18.md
+unit envelope BOM,PROD_C11_C18,Process nozzle DN15,3,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,PROD_C11_C18,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,PROD_C19_C28,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/PROD_C19_C28.md
+unit envelope BOM,PROD_C19_C28,Process nozzle DN15,3,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,PROD_C19_C28,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,PROD_C29,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/PROD_C29.md
+unit envelope BOM,PROD_C29,Process nozzle DN15,2,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,PROD_C29,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,PROD_C5_C10,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/PROD_C5_C10.md
+unit envelope BOM,PROD_C5_C10,Process nozzle DN15,3,Carbon steel.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,PROD_C5_C10,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
+unit envelope BOM,Q1_A,Body / envelope 800 x 800 x 1200 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q1_A.md
+unit envelope BOM,Q1_A,Open vent DN25,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.","API 2000, A-M-155"
+unit envelope BOM,Q1_B,Body / envelope 800 x 800 x 1200 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q1_B.md
+unit envelope BOM,Q1_B,Open vent DN25,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.","API 2000, A-M-155"
+unit envelope BOM,Q2_A,Body / envelope 800 x 800 x 1200 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q2_A.md
+unit envelope BOM,Q2_A,Open vent DN25,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.","API 2000, A-M-155"
+unit envelope BOM,Q2_B,Body / envelope 800 x 800 x 1200 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q2_B.md
+unit envelope BOM,Q2_B,Open vent DN25,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.","API 2000, A-M-155"
+unit envelope BOM,Q3_A,Body / envelope 800 x 800 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/Q3_A.md
+unit envelope BOM,Q3_A,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,Q3_B,Body / envelope 800 x 800 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/Q3_B.md
+unit envelope BOM,Q3_B,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,Q4_A,Body / envelope 800 x 800 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/Q4_A.md
+unit envelope BOM,Q4_A,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,Q4_B,Body / envelope 800 x 800 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/Q4_B.md
+unit envelope BOM,Q4_B,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,QUAT,Body / envelope 400 x 400 x 800 mm,1,"Glass or PVC-U, per AQS-STD-002 rule M1.",docs-authority/duties/QUAT.md
+unit envelope BOM,QUAT,Process nozzle DN15,5,"Glass or PVC-U, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,QUAT,Open vent DN25,1,"Glass or PVC-U, per AQS-STD-002 rule M1.","API 2000, A-M-155"
+unit envelope BOM,RECTIFIER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/RECTIFIER.md
+unit envelope BOM,RECTIFIER,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+unit envelope BOM,RECT_EW,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/RECT_EW.md
+unit envelope BOM,RELIEF_CRYO,Body / envelope 600 x 400 x 600 mm,1,316L.,docs-authority/duties/RELIEF_CRYO.md
+unit envelope BOM,RELIEF_CRYO,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,RELIEF_CRYO,Open vent DN25,1,316L.,"API 2000, A-M-155"
+unit envelope BOM,RELIEF_H2,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L, annealed, bonded and grounded; open stack, no cap that traps H₂ (M7 flame exposure).",docs-authority/duties/RELIEF_H2.md
+unit envelope BOM,RELIEF_H2,Process nozzle DN15,1,"316L, annealed, bonded and grounded; open stack, no cap that traps H₂ (M7 flame exposure).",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,RELIEF_H2,Open vent DN25,1,"316L, annealed, bonded and grounded; open stack, no cap that traps H₂ (M7 flame exposure).","API 2000, A-M-155"
+unit envelope BOM,REMIN,Body / envelope 600 x 400 x 800 mm,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/REMIN.md
+unit envelope BOM,REMIN,Process nozzle DN15,3,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,REMIN,Open vent DN25,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.","API 2000, A-M-155"
+unit envelope BOM,ROOF_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/ROOF_TANK.md
+unit envelope BOM,ROOF_TANK,Process nozzle DN15,23,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ROOF_TANK,Open vent DN25,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.","API 2000, A-M-155"
+unit envelope BOM,S13_CLASS_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/S13_CLASS_TREAT.md
+unit envelope BOM,S13_CLASS_TREAT,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,SALT_FEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/SALT_FEED.md
+unit envelope BOM,SALT_FEED,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,SEED_BANK,Body / envelope 2000 x 2000 x 2200 mm,1,HDPE or PVC for the water.,docs-authority/duties/SEED_BANK.md
+unit envelope BOM,SEED_BANK,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SEED_BANK,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,SIC_FURNACE,Body / envelope 1500 x 1500 x 1800 mm,1,Graphite or refractory on the hot face.,docs-authority/duties/SIC_FURNACE.md
+unit envelope BOM,SIC_FURNACE,Process nozzle DN15,4,Graphite or refractory on the hot face.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SIC_FURNACE,Open vent DN25,1,Graphite or refractory on the hot face.,"API 2000, A-M-155"
+unit envelope BOM,SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
+unit envelope BOM,SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SOLAR_PV_CELL,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/SOL_ARK_60K.md
+unit envelope BOM,SOL_ARK_60K,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+unit envelope BOM,STRUVITE,Body / envelope 1000 x 1000 x 1200 mm,1,HDPE or PVC for the water.,docs-authority/duties/STRUVITE.md
+unit envelope BOM,STRUVITE,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,STRUVITE,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,SUNFLOWER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/SUNFLOWER.md
+unit envelope BOM,SUNFLOWER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SUNFLOWER,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,VCD_TRAIN,Body / envelope 1400 x 600 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/VCD_TRAIN.md
+unit envelope BOM,VCD_TRAIN,Process nozzle DN15,9,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,VCD_TRAIN,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
+unit envelope BOM,VEG_BED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/VEG_BED.md
+unit envelope BOM,VEG_BED,Process nozzle DN15,19,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,VEG_BED,Open vent DN32,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,WAFER_FAB,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WAFER_FAB.md
+unit envelope BOM,WAFER_FAB,Process nozzle DN15,11,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WAFER_FAB,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WAFER_FAB,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,WET_BENCH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WET_BENCH.md
+unit envelope BOM,WET_BENCH,Process nozzle DN15,11,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WET_BENCH,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,WIRE_DRAW,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WIRE_DRAW.md
+unit envelope BOM,WIRE_DRAW,Process nozzle DN15,4,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WIRE_DRAW,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,WORMS,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/WORMS.md
+unit envelope BOM,WORMS,Process nozzle DN15,8,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WORMS,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WORMS,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
+unit envelope BOM,WS_AMMONIA,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_AMMONIA.md
+unit envelope BOM,WS_AMMONIA,Process nozzle DN15,6,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_AMMONIA,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,WS_DOPE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WS_DOPE.md
+unit envelope BOM,WS_DOPE,Process nozzle DN15,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_DOPE,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,WS_HF_ED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVDF wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_HF_ED.md
+unit envelope BOM,WS_HF_ED,Process nozzle DN15,2,"PVDF wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_HF_ED,Open vent DN25,1,"PVDF wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,WS_KOH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_KOH.md
+unit envelope BOM,WS_KOH,Process nozzle DN15,2,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_KOH,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,WS_NITRIC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U tank and piping, PVDF pumps and valves, FKM or PTFE gaskets.",docs-authority/duties/WS_NITRIC.md
+unit envelope BOM,WS_NITRIC,Process nozzle DN15,5,"PVC-U tank and piping, PVDF pumps and valves, FKM or PTFE gaskets.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_NITRIC,Open vent DN25,1,"PVC-U tank and piping, PVDF pumps and valves, FKM or PTFE gaskets.","API 2000, A-M-155"
+unit envelope BOM,WS_PEROX,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals.",docs-authority/duties/WS_PEROX.md
+unit envelope BOM,WS_PEROX,Process nozzle DN15,3,"HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_PEROX,Open vent DN25,1,"HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals.","API 2000, A-M-155"
+unit envelope BOM,WS_PHOS,Body / envelope 800 x 800 x 1100 mm,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_PHOS.md
+unit envelope BOM,WS_PHOS,Process nozzle DN15,3,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_PHOS,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
+unit envelope BOM,WS_SLURRY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WS_SLURRY.md
+unit envelope BOM,WS_SLURRY,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_SLURRY,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,WS_SOLV,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WS_SOLV.md
+unit envelope BOM,WS_SOLV,Process nozzle DN15,7,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WS_SOLV,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+unit envelope BOM,ZNBR2,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/ZNBR2.md
+unit envelope BOM,ZNBR2,Process nozzle DN15,3,No wetted alloy.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ZNBR2,Process nozzle DN40,1,No wetted alloy.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ZNBR2,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+unit envelope BOM,ZNBR2_BR2_REGEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",docs-authority/duties/ZNBR2_BR2_REGEN.md
+unit envelope BOM,ZNBR2_BR2_REGEN,Process nozzle DN15,2,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ZNBR2_BR2_REGEN,Open vent DN25,1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.","API 2000, A-M-155"
 motor family,MF-01 x 176,stator laminations M270-35A 0.35 mm,3168,,EN 10106
 motor family,MF-01 x 176,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),176,,X-INV-02D
 motor family,MF-01 x 176,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line

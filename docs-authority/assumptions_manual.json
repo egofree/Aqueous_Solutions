@@ -3048,5 +3048,25 @@
     "verification": "Of the 118 vapour-only units: 28 get a hold-up head, 15 a bed depth, 5 are pipes, 70 have no liquid inflow; max design stays 49 kPa g; all remain atmospheric",
     "replace_when": "Each unit's sized volume at unit task 02",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-183",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Envelope unit BOMs",
+    "statement": "Every present unit without a CAD BOM gets an envelope BOM from the graph: body from size or vessel design, material from its duty sheet, one nozzle per mass edge at its pipe-inventory DN, vent or relief valve, motors and building blocks from AQS-INV-001/004",
+    "verification": "172 envelope BOMs; plant BOM 507 -> about 1030 lines; units without any BOM 174 -> 2 boundary nodes",
+    "replace_when": "CAD BOM per unit replaces the envelope BOM when its model is built",
+    "doc": "AQS-PAR-003"
   }
 ]

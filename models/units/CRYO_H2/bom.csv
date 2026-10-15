@@ -1,0 +1,19 @@
+item,description,qty,material,basis
+1,Body D114 x 1050 mm,1,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",docs-authority/duties/CRYO_H2.md
+2,Process nozzle DN15,6,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",one per mass edge; DN from AQS-INV-003
+3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+4,"Motor: cryocooler compressor (hermetic induction (scroll), 0.75 kW hermetic)",1,-,AQS-INV-001 / AQS-INV-005
+5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+6,electronics: compressor contactor + overload 0.75 kW hermetic,1,IEC 60947-4-1,AQS-INV-004
+7,fastener: anchor bolt M10,40,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+8,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+9,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+10,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+11,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+12,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+13,support: U-bolt with guide DN15,20,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+14,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+15,support: U-bolt with guide DN15,25,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+16,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+17,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+18,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
