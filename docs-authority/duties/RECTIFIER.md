@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 24.00 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 24.0000 kW. In: none. Out: none.
 
 2. Size.
 - 24.00 kW. No exchanger area. A heat-transfer area does not belong on this class.

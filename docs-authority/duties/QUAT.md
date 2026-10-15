@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.223 kg/d. Mass out 0.223 kg/d. Electrical duty 0.1000 kW. In: IA-BUCL 0.127 kg/d (1-chlorobutane); IA-IMID 0.0964 kg/d (1-methylimidazole). Out: IA-BMIM 0.205 kg/d ([Bmim]Cl); IA-CLOSE-13 0.0182 kg/d (unreacted quaternization feed); IA-QUAT-H2O 0 kg/d (no quaternization water).
+1. Basis. Mass in 0.2234 kg/d. Mass out 0.2234 kg/d. Electrical duty 0.1000 kW. In: IA-IMID 0.09642 kg/d (1-methylimidazole); IA-BUCL 0.1269 kg/d (1-chlorobutane). Out: IA-BMIM 0.2051 kg/d ([Bmim]Cl); IA-QUAT-H2O 0 kg/d (no quaternization water); IA-CLOSE-13 0.01825 kg/d (unreacted quaternization feed).
 
 2. Size.
-- Envelope 400×400×800 mm, 0.1280 m³. That box over this flow would be 13753.1 h if it were full. It is not a residence time.
+- Envelope 400×400×800 mm, 0.1280 m³. That box over this flow would be 13753.0 h if it were full. It is not a residence time.
 - Seven-day charge V = (0.2234/1000)×(168/24) = 0.0016 m³.
 - Addition, C4H6N2 + C4H9Cl → C8H15ClN2. No water. The smaller feed limits. Product is the [Bmim]Cl edge. The other edge is the unreacted feed.
 

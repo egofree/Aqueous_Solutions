@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.27 kg/d. Mass out 0.27 kg/d. Electrical duty 0.1000 kW. In: IA-ETOH-AC 0.16 kg/d (ethanol to acetic); IA-AC-O2 0.11 kg/d (oxygen to acetic acid). Out: IA-ACOH 0.206 kg/d (acetic acid); IA-AC-H2O 0.0619 kg/d (oxidation water); IA-AC-EX 0.00163 kg/d (unreacted ethanol).
+1. Basis. Mass in 0.27 kg/d. Mass out 0.27 kg/d. Electrical duty 0.1000 kW. In: IA-ETOH-AC 0.16 kg/d (ethanol to acetic); IA-AC-O2 0.11 kg/d (oxygen to acetic acid). Out: IA-ACOH 0.2064 kg/d (acetic acid); IA-AC-H2O 0.06193 kg/d (oxidation water); IA-AC-EX 0.001628 kg/d (unreacted ethanol).
 
 2. Size.
 - In 0.2700 kg/d, out 0.2700 kg/d. No holdup claimed.

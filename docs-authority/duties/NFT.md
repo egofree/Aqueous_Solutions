@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 200.0 kg/d. Mass out 200.0 kg/d. Electrical duty 0.3000 kW. In: IA-NFT-IN 200.0 kg/d (film supply). Out: IA-NFT-OUT 200.0 kg/d (film return).
+1. Basis. Mass in 7200 kg/d. Mass out 7200 kg/d. Electrical duty 0.3000 kW. In: IA-NFT-IN 7200 kg/d (film supply). Out: IA-NFT-OUT 7200 kg/d (film return).
 
 2. Size.
-- Envelope 6000×1000×300 mm, 1.80 m³. That box over this flow would be 216.0 h if it were full. It is not a residence time.
+- Envelope 6000×1000×300 mm, 1.80 m³. That box over this flow would be 6.0 h if it were full. It is not a residence time.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 

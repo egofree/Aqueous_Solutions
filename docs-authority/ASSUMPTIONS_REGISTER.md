@@ -205,7 +205,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-4a144b | 3.98 | kW | graph MFG_SHOP continuous_kw | X-ELS-02: AQS-MFG-010 tool list from graph throughputs, one shift. |  | unit task 02 (MFG_SHOP) |
 | A-G-3a2c73 | 0.1 | kW | graph NUTRIENT_DOSE continuous_kw | Study dose pumps |  | unit task 02 (NUTRIENT_DOSE) |
 | A-G-9552a6 | 1.5988 | kW | graph OIL_PYRO continuous_kw | X-MFG-31 in-house reactor design (AQS-DUTY-062). retort heat 1.119 kW / heater efficiency |  | unit task 02 (OIL_PYRO) |
-| A-G-dddba0 | 277.5777 | kW | graph PV_ARRAY continuous_kw | Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw. |  | unit task 02 (PV_ARRAY) |
+| A-G-dddba0 | 282.1819 | kW | graph PV_ARRAY continuous_kw | Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw. |  | unit task 02 (PV_ARRAY) |
 | A-G-18e3f1 | 24.0 | kW | graph RECTIFIER continuous_kw | AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. |  | unit task 02 (RECTIFIER) |
 | A-G-c0d11f | 2.0 | kW | graph WAFER_FAB continuous_kw | PECVD+belt avg study |  | unit task 02 (WAFER_FAB) |
 | A-G-80b832 | 1.0 | kW | graph WET_BENCH continuous_kw | Study fab wet-bench share |  | unit task 02 (WET_BENCH) |
@@ -255,13 +255,13 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-5c8d63 | 0.1 | kW | graph AZOLLA continuous_kw | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |  | unit task 02 (AZOLLA) |
 | A-G-0fcab0 | 0.1 | kW | graph MUSHROOM continuous_kw | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |  | unit task 02 (MUSHROOM) |
 | A-G-5bbe68 | 0.05 | kW | graph COMPOST_TOILET continuous_kw | AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed. |  | unit task 02 (COMPOST_TOILET) |
-| A-G-7730da | 0.2 | kW | graph NFIX_BED continuous_kw | AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed. |  | unit task 02 (NFIX_BED) |
+| A-G-7730da | 0.4396 | kW | graph NFIX_BED continuous_kw | LED 3.41 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J) + aux 0.2 kW (A-M-144) |  | unit task 02 (NFIX_BED) |
 | A-G-5edb41 | 0.15 | kW | graph MUSH_STRAW continuous_kw | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | unit task 02 (MUSH_STRAW) |
 | A-G-129c72 | 0.15 | kW | graph MUSH_BLOCK continuous_kw | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | unit task 02 (MUSH_BLOCK) |
 | A-G-c5a4f0 | 0.15 | kW | graph AMF continuous_kw | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | unit task 02 (AMF) |
 | A-G-8a5345 | 0.05 | kW | graph COMPOST_MYC continuous_kw | AQS-DUTY-030. Mycelium on the compost after the hot phase. |  | unit task 02 (COMPOST_MYC) |
-| A-G-ee62c9 | 0.4 | kW | graph FRUIT_GUTTER continuous_kw | AQS-DUTY-031. Fruit gutter and vegetable beds. |  | unit task 02 (FRUIT_GUTTER) |
-| A-G-2ce1c3 | 0.4 | kW | graph VEG_BED continuous_kw | AQS-DUTY-031. Fruit gutter and vegetable beds. |  | unit task 02 (VEG_BED) |
+| A-G-ee62c9 | 0.6256 | kW | graph FRUIT_GUTTER continuous_kw | LED 3.21 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J) + aux 0.4 kW (A-M-144) |  | unit task 02 (FRUIT_GUTTER) |
+| A-G-2ce1c3 | 0.7333 | kW | graph VEG_BED continuous_kw | LED 4.74 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J) + aux 0.4 kW (A-M-144) |  | unit task 02 (VEG_BED) |
 | A-G-a8d766 | 0.3 | kW | graph CLARIFIER continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (CLARIFIER) |
 | A-G-e5ecbd | 0.3 | kW | graph BIOFILTER continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (BIOFILTER) |
 | A-G-b84340 | 0.3 | kW | graph FISH_SUMP continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (FISH_SUMP) |
@@ -287,7 +287,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-f429f4 | 0.3 | kW | graph AZOLLA_BED continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (AZOLLA_BED) |
 | A-G-5f43f5 | 0.3 | kW | graph ETOH_STILL continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (ETOH_STILL) |
 | A-G-17a0c1 | 0.3 | kW | graph BUOH_STILL continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (BUOH_STILL) |
-| A-G-3993f1 | 0.3 | kW | graph PEANUT continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (PEANUT) |
+| A-G-3993f1 | 2.6583 | kW | graph PEANUT continuous_kw | LED 33.56 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J) + aux 0.3 kW (A-M-144) |  | unit task 02 (PEANUT) |
 | A-G-deeece | 0.3 | kW | graph SUNFLOWER continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (SUNFLOWER) |
 | A-G-494842 | 0.3 | kW | graph HAB_SLEEP continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (HAB_SLEEP) |
 | A-G-a334f8 | 0.3 | kW | graph HAB_GALLEY continuous_kw | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |  | unit task 02 (HAB_GALLEY) |
@@ -299,7 +299,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-9ad348 | 0.05 | kW | graph H2_PURIFIER continuous_kw | TSA regeneration heater average (study) |  | unit task 02 (H2_PURIFIER) |
 | A-G-98d38c | 1.497 | kW | graph EVAP_ACID continuous_kw | X-PAR acid-loop decision (AQS-PAR-001 §3). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.0 kg/ |  | unit task 02 (EVAP_ACID) |
 | A-G-3a21ef | 1.324 | kW | graph EVAP_BASE continuous_kw | X-PAR acid-loop decision (AQS-PAR-001 §3). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30,  |  | unit task 02 (EVAP_BASE) |
-| A-G-e432ac | 106.3231 | kW | graph EXT_HALL continuous_kw | X-PAR-07 solver.roof_close: conditioned extension 37368 m2; lighting 32.88 kW (IECC 2021 C405, 10 % lit), ventilation 46.61 kW (ASHRAE 62.1-2019 air at COP per  |  | unit task 02 (EXT_HALL) |
+| A-G-e432ac | 107.7705 | kW | graph EXT_HALL continuous_kw | X-PAR-07 solver.roof_close: conditioned extension 37872 m2; lighting 33.33 kW (IECC 2021 C405, 10 % lit), ventilation 47.24 kW (ASHRAE 62.1-2019 air at COP per  |  | unit task 02 (EXT_HALL) |
 | A-G-6702d8 | 0.0238 | kW | graph EVAP_ACID_VS continuous_kw | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m |  | unit task 02 (EVAP_ACID_VS) |
 | A-G-3b1661 | 0.0075 | kW | graph BLACK_DEWATER continuous_kw | X-SAN-01 AQS-DUTY-063. |  | unit task 02 (BLACK_DEWATER) |
 | A-G-dcef0e | 0.0622 | kW | graph BLACK_PASTEUR continuous_kw | X-SAN-01 AQS-DUTY-063. |  | unit task 02 (BLACK_PASTEUR) |
@@ -443,8 +443,8 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-09568e | 119.02293 | kg/d | graph S67 rate | Flue includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. / X-PAR-12 TF: flue carries the O2 drawn (AQS-P |  | X-BAS-02 |
 | A-G-121660 | 13.810366 | kg/d | graph S67B rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: bound O2 in |  | X-BAS-02 |
 | A-G-e2f3f4 | 78.987901 | kg/d | graph S68 rate | AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-b66bb4 | 1194.755831 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 42.2 m3/h holds H2 at 25 % LFL: H |  | X-BAS-02 |
-| A-G-ec8519 | 1194.755831 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in th |  | X-BAS-02 |
+| A-G-b66bb4 | 1214.039879 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 42.9 m3/h holds H2 at 25 % LFL: H |  | X-BAS-02 |
+| A-G-ec8519 | 1214.039879 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in th |  | X-BAS-02 |
 | A-G-5863c6 | 0.0521 | kg/d | graph S70 rate | AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box |  | X-BAS-02 |
 | A-G-7073c8 | 20458.32 | kg/d | graph S71 rate | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. |  | X-BAS-02 |
 | A-G-14c1dd | 2.4442 | kg/d | graph S72 rate | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -474,7 +474,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-db23aa | 439.5222 | kg/d | graph IA-ACID-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-A |  | X-BAS-02 |
 | A-G-45a156 | 25.2964 | kg/d | graph IA-BASE-01 rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 126.5 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2,  |  | X-BAS-02 |
 | A-G-ec5c10 | 11.7617 | kW | graph HL-Q4-REJ rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. |  | X-BAS-02 |
-| A-G-a59b7e | 277.5777 | kW | graph IA-PV-01 rate | AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 REC |  | X-BAS-02 |
+| A-G-a59b7e | 282.1819 | kW | graph IA-PV-01 rate | AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 REC |  | X-BAS-02 |
 | A-G-181fa6 | 8.4872 | kg/d | graph IA-ZNBR-BD rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. |  | X-BAS-02 |
 | A-G-3a0716 | 13.930007 | kg/d | graph IA-NUT-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-225194 | 60.000181 | kg/d | graph IA-UPW-FAB rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -757,7 +757,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-52ec53 | 0.0 | kg/d | graph IA-I-DOSE rate | Retired. Live path is IA-MED / IA-MED-R. |  | X-BAS-02 |
 | A-G-eda6f5 | 0.2 | kg/d | graph IA-NPK-0 rate | AQS-DUTY-049 |  | X-BAS-02 |
 | A-G-55bf87 | 0.4 | kg/d | graph IA-NPK-1 rate | AQS-DUTY-049 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-b44ac2 | 152.3637 | kW | graph IA-E-SUN rate | AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.7 |  | X-BAS-02 |
+| A-G-b44ac2 | 154.8909 | kW | graph IA-E-SUN rate | AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.7 |  | X-BAS-02 |
 | A-G-51d32b | 4.6 | kW | graph IA-E-H2 rate | AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. |  | X-BAS-02 |
 | A-G-7c6d5c | 0.0 | kW | graph IA-E-RECT rate | AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. |  | X-BAS-02 |
 | A-G-0e5319 | 3.0 | kW | graph IA-E-HABIN rate | AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. |  | X-BAS-02 |
@@ -971,8 +971,8 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-a86c86 | 0.1 | kW | graph SQ-MUSHROOM rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-d1d82e | 0.05 | kW | graph SF-COMPOST_TOILET rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-5d2c67 | 0.05 | kW | graph SQ-COMPOST_TOILET rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-70b0b6 | 0.2 | kW | graph SF-NFIX_BED rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-83ead3 | 0.2 | kW | graph SQ-NFIX_BED rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
+| A-G-70b0b6 | 0.4396 | kW | graph SF-NFIX_BED rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
+| A-G-83ead3 | 0.4396 | kW | graph SQ-NFIX_BED rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-3fc3aa | 0.15 | kW | graph SF-MUSH_STRAW rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-dd9880 | 0.15 | kW | graph SQ-MUSH_STRAW rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-e224a1 | 0.15 | kW | graph SF-MUSH_BLOCK rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
@@ -981,10 +981,10 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-97214d | 0.15 | kW | graph SQ-AMF rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-87cf79 | 0.05 | kW | graph SF-COMPOST_MYC rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-864a21 | 0.05 | kW | graph SQ-COMPOST_MYC rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-35b8fe | 0.4 | kW | graph SF-FRUIT_GUTTER rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-dcb1d5 | 0.4 | kW | graph SQ-FRUIT_GUTTER rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-e351e8 | 0.4 | kW | graph SF-VEG_BED rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-f1ece3 | 0.4 | kW | graph SQ-VEG_BED rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
+| A-G-35b8fe | 0.6256 | kW | graph SF-FRUIT_GUTTER rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
+| A-G-dcb1d5 | 0.6256 | kW | graph SQ-FRUIT_GUTTER rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
+| A-G-e351e8 | 0.7333 | kW | graph SF-VEG_BED rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
+| A-G-f1ece3 | 0.7333 | kW | graph SQ-VEG_BED rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-dd9f60 | 0.3 | kW | graph SF-CLARIFIER rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-b24b22 | 0.3 | kW | graph SQ-CLARIFIER rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-b45e66 | 0.3 | kW | graph SF-BIOFILTER rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
@@ -1031,8 +1031,8 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-fbcadd | 0.3 | kW | graph SQ-ETOH_STILL rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-fa86e4 | 0.3 | kW | graph SF-BUOH_STILL rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-f4c410 | 0.3 | kW | graph SQ-BUOH_STILL rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
-| A-G-a156ac | 0.3 | kW | graph SF-PEANUT rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
-| A-G-9cc01c | 0.3 | kW | graph SQ-PEANUT rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
+| A-G-a156ac | 2.6583 | kW | graph SF-PEANUT rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
+| A-G-9cc01c | 2.6583 | kW | graph SQ-PEANUT rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-281699 | 0.3 | kW | graph SF-SUNFLOWER rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-48d1c4 | 0.3 | kW | graph SQ-SUNFLOWER rate | X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study). |  | X-BAS-02 |
 | A-G-56ba3a | 0.3 | kW | graph SF-HAB_SLEEP rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
@@ -1059,7 +1059,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-G-1cb7e1 | 1.324 | kW | graph SQ-EVAP_BASE rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Compressor work leaves as heat (A-M-086). |  | X-BAS-02 |
 | A-G-6bf96e | 5.0593 | kg/d | graph IA-NAOH-MU rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). Demand 2538 mol/d less BMED 2412 mol/d; worst case, no credit for sodium re |  | X-BAS-02 |
 | A-G-a88856 | 5.0593 | kg/d | graph IA-NA-PURGE rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the  |  | X-BAS-02 |
-| A-G-7f5dc1 | 106.3231 | kW | graph SF-EXT_HALL rate | Equals EXT_HALL continuous_kw (X-PAR-07). |  | X-BAS-02 |
+| A-G-7f5dc1 | 107.7705 | kW | graph SF-EXT_HALL rate | Equals EXT_HALL continuous_kw (X-PAR-07). |  | X-BAS-02 |
 | A-G-78dfca | 0.0292 | kg/d | graph IA-EVAP_ACID-VENT rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Air from the feed (WEISS1970) saturated at the vent condenser; design case 490 |  | X-BAS-02 |
 | A-G-7ca7ef | 0.0005 | kg/d | graph IA-VS-NAOH rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.008 mmol/d = 2.0 x HCl absorbed. |  | X-BAS-02 |
 | A-G-209cda | 0.0006 | kg/d | graph IA-VS-SPENT rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Bleed plus HCl absorbed. |  | X-BAS-02 |
@@ -1231,7 +1231,7 @@ Counts: 144 curated, 981 graph, 22 model params, 89 document lines. Total 1236. 
 | A-D-07f279 |  |  | docs-authority/POLYMER_HX_SIZING.md:16 | - Film coefficients: tube side Dittus–Boelter with water properties from steam tables. The liquor is taken as water; that is an assumption. Outside films are as |  | see page |
 | A-D-081902 |  |  | docs-authority/POLYMER_HX_SIZING.md:17 | - Fouling 0.0002 m²K/W (assumption). |  | see page |
 | A-D-92f652 |  |  | docs-authority/POLYMER_HX_SIZING.md:18 | - Tubes: HX-5 PVDF 25 × 1.9 mm. HX8 PVDF 16 × 1.5 mm, 3 tubes per pass, 0.79 m/s, Re 20 010. Both are assumptions. |  | see page |
-| A-D-69bb08 |  |  | docs-authority/REMAINING_BLD.md:140 | study throughputs with labeled assumptions; closed vs open loops from |  | see page |
+| A-D-69bb08 |  |  | docs-authority/REMAINING_BLD.md:142 | study throughputs with labeled assumptions; closed vs open loops from |  | see page |
 | A-D-6a7771 |  |  | docs-authority/RESIZE_SWEEP.md:20 | / Unassigned class (MSW 35.0 kg/d) / held with reason / reports to FLOAT_SINK capacity / assumption / done / |  | see page |
 | A-D-f561f3 |  |  | docs-authority/SITE_BASIS.md:3 | Date 2026-10-15. Owner decision: study site at 33.0° N, Dallas–Fort Worth class. No parcel is chosen. Values marked assumption are in AQS-REG-002 and are replac |  | see page |
 | A-D-d3169c |  |  | docs-authority/SITE_BASIS.md:15 | / Wind, Risk II, 3 s gust / 105–115 mph band; 115 mph used / band published, value assumption / ASCE 7-22 map band for Dallas [B4] / |  | see page |

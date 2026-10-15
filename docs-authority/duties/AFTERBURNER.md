@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 6.27 kg/d. Mass out 6.27 kg/d. Electrical duty 0.5000 kW. In: NCG_TO_AB 5.00 kg/d (NCG); S11 0.8000 kg/d (organics); IA-SIC-CO 0.4662 kg/d (carbon monoxide). Out: IA-AB-FLUE 6.27 kg/d (flue).
+1. Basis. Mass in 7.853 kg/d. Mass out 7.853 kg/d. Electrical duty 0.5000 kW. In: NCG_TO_AB 5 kg/d (NCG); S11 0.8 kg/d (organics); IA-SIC-CO 0.4662 kg/d (carbon monoxide); IA-BLK-GAS 0.0986 kg/d (digester biogas, flared in the afterburner); 2 more. Out: S18 0 kg/d (flue-carbon claim reference (no CO2 mass since Rev J)); IA-AB-FLUE 7.853 kg/d (flue).
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. No present mass edge. Heat in 4.572 kW on IA-HX8 (EW_1 to HX8). Heat out 2.286 kW on HL-HX8-Q4-A and 2.286 kW on HL-HX8-Q4-B. Liquor 55 to 51 °C, 1112.1 kg/h, is on the IA-HX8 params. It is not a mass-layer rate. Water 45 to 49 °C, 0.34181 kg/s each leg, is on the two outlet edges.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
 
 2. Size.
 - Area 0.51 m², U 1500 W/m²K, LMTD 6 K, all on the node. 1500 × 0.51 × 6 / 1000 = 4.59 kW. The edges sum to 4.572 kW. Area was not resized.

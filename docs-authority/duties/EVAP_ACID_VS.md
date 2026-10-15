@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Study. Not a PE stamp. Sizing AQS-DUTY-061 (`docs-authority/sizing/VENT_SCRUBBER.md`).
 
-1. Basis. Packed alkali scrubber on the EVAP_ACID column vent (owner decision 2026-10-15, X-PAR-10). In: vent 29.2 g/d (IA-EVAP_ACID-VENT), NaOH 2 M bleed 544 mg/d from BMED_BASE (IA-VS-NAOH). Out: scrubbed gas 29.2 g/d to ALK_SCRUBBER (IA-VS-OFF), spent liquor 563 mg/d to BMED_ACID (IA-VS-SPENT). Electrical 24 W (SF-EVAP_ACID_VS).
+1. Basis. Mass in 0.0297 kg/d. Mass out 0.0298 kg/d. Electrical duty 0.0238 kW. In: IA-EVAP_ACID-VENT 0.0292 kg/d (column vent: non-condensables, water vapour, trace HCl); IA-VS-NAOH 0.0005 kg/d (NaOH 2 M bleed). Out: IA-VS-SPENT 0.0006 kg/d (spent scrub liquor (NaCl in NaOH) to the BMED brine); IA-VS-OFF 0.0292 kg/d (scrubbed vent to the house acid-gas header).
 
 2. Size. DN150 PVC-U Sch 80, overall 1400 mm; bed 500 mm of 16 mm PVC rings; sump 20 L charged with 2 M NaOH. Design case: column bypassed, 490 ppmv HCl in, 1 ppmv out (NTU 6.2). Normal: 0.63 ppmv in.
 

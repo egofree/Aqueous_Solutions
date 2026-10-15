@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2 kg/d. Mass out 0.2 kg/d. Electrical duty 0.3000 kW. In: IA-PN-S 0.2 kg/d (bed spill). Out: IA-PN-R 0.2 kg/d (peanut).
+1. Basis. Mass in 100 kg/d. Mass out 100 kg/d. Electrical duty 2.6583 kW. In: IA-PN-S 98.36 kg/d (bed spill); IA-PEANUT-CO2 1.654 kg/d (CO2 uptake). Out: IA-PN-R 0.2 kg/d (peanut); IA-PEANUT-O2 1.203 kg/d (photosynthetic O2); IA-PEANUT-VAP 92.95 kg/d (transpiration); IA-PN-TRIM 5.663 kg/d (crop residue).
 
 2. Size.
 - In 0.2000 kg/d, out 0.2000 kg/d. No holdup claimed.

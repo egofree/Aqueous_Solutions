@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 55.3 kg/d. Mass out 55.3 kg/d. Electrical duty 1.5000 kW. In: IA-GLASS-03 30.0 kg/d (burned cullet); IA-BASE-01 25.3 kg/d (digest NaOH, 20 wt%). Out: S08G 26.2 kg/d (glass and ceramic stock); IA-DIG-LIQ 25.3 kg/d (silicate liquor); IA-SIL-SRC 3.3 kg/d (silicate to slurry); IA-SIC-IN 0.5 kg/d (silica charge).
+1. Basis. Mass in 55.3 kg/d. Mass out 55.3 kg/d. Electrical duty 0.0900 kW. In: IA-GLASS-03 30 kg/d (burned cullet); IA-BASE-01 25.3 kg/d (digest NaOH, 20 wt%). Out: S08G 26.2 kg/d (glass and ceramic stock); IA-DIG-LIQ 25.3 kg/d (silicate liquor); IA-SIL-SRC 3.3 kg/d (silicate to slurry); IA-SIC-IN 0.5 kg/d (silica charge).
 
 2. Size.
 - V = (148.4/1000)×(480/24) = 2.9686 m³. 20 days, anaerobic.

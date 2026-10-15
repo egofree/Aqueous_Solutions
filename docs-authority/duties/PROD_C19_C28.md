@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.95 kg/d. Mass out 3.95 kg/d. Electrical duty 0.0000 kW. In: CUT-3 3.95 kg/d (fractionator cut). Out: CUT-3-OUT 3.95 kg/d (C19-C28 from the tank).
+1. Basis. Mass in 6.166 kg/d. Mass out 6.166 kg/d. Electrical duty 0.0000 kW. In: CUT-3 6.166 kg/d (fractionator cut). Out: CUT-3-OUT 3.947 kg/d (C19-C28 from the tank); IA-C19-SHIP 2.219 kg/d (C19-C28 surplus shipped).
 
 2. Size.
 - V = (3.95/1000)×(168/24) = 0.0276 m³. 7 days of the cut.

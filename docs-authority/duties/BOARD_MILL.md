@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 8.700 kg/d. Mass out 8.700 kg/d. Electrical duty 1.00 kW. In: IA-LIG-01 3.870 kg/d (lignin); IA-CEL-01 3.180 kg/d (cellulose); IA-NOX-BOARD 1.650 kg/d (recovered carbon). Out: IA-BOARD-SCRAP 8.010 kg/d (board scrap); IA-BOARD 0.69 kg/d (board, paper, cardboard).
+1. Basis. Mass in 8.7 kg/d. Mass out 8.7 kg/d. Electrical duty 1.0000 kW. In: IA-LIG-01 3.87 kg/d (lignin); IA-CEL-01 3.18 kg/d (cellulose); IA-NOX-BOARD 1.65 kg/d (recovered carbon). Out: IA-BOARD 0.69 kg/d (board, paper, cardboard); IA-BOARD-SCRAP 8.01 kg/d (board scrap).
 
 2. Size.
 - In 8.70 kg/d, out 8.70 kg/d. No holdup claimed.

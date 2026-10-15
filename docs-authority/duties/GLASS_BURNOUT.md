@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 30.00 kg/d. Mass out 30.00 kg/d. Electrical duty 0.0000 kW. In: IA-GLASS-02 30.00 kg/d (milled cullet). Out: IA-GLASS-03 30.00 kg/d (burned cullet).
+1. Basis. Mass in 30 kg/d. Mass out 30 kg/d. Electrical duty 0.0000 kW. In: IA-GLASS-02 30 kg/d (milled cullet). Out: IA-GLASS-03 30 kg/d (burned cullet).
 
 2. Size.
 - Envelope 800×600×1200 mm, 0.5760 m³. That box over this flow would be 460.8 h if it were full. It is not a residence time.

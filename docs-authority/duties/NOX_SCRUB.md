@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 522.2 kg/d. Mass out 522.2 kg/d. Electrical duty 0.0000 kW. In: IA-FLUE-EXH 264.4 kg/d (flue to the NOx scrubber); IA-LEACH-NOX 195.0 kg/d (leach offgas); S46 61.81 kg/d (exhaust condensate / NOx); IA-CLOSE-1 1.000 kg/d (leach vent to the NOx scrubber); 5 more. Out: IA-NOX-N2 243.9 kg/d (scrubbed flue nitrogen to the cold box); IA-NOX-H2O 226.2 kg/d (scrubber condensate); IA-NOX-CO2 30.47 kg/d (scrubbed CO2 to the cold box); IA-NOX-N 20.00 kg/d (nitrate liquor); 1 more.
+1. Basis. Mass in 461.8 kg/d. Mass out 461.8 kg/d. Electrical duty 0.0000 kW. In: S46 0.268 kg/d (exhaust condensate / NOx); IA-FLUE-EXH 265.5 kg/d (flue to the NOx scrubber); IA-FC-EXH 0 kg/d (cell exhaust); IA-LEACH-NOX 195 kg/d (leach offgas); 5 more. Out: IA-NOX-H2O 224.8 kg/d (scrubber condensate); IA-NOX-N 20.05 kg/d (nitrate liquor); IA-NOX-CO2 21.63 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 193.7 kg/d (scrubbed flue nitrogen to the cold box); 1 more.
 
 2. Size.
-- Envelope 600×400×1200 mm, 0.2880 m³. That box over this flow would be 13.88 h if it were full. It is not a residence time.
+- Envelope 600×400×1200 mm, 0.2880 m³. That box over this flow would be 15.0 h if it were full. It is not a residence time.
 
 3. Material. CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. IA-LEACH-NOX and IA-CLOSE-1 arrive from LEACH_CSTR_1 at up to 85 °C (X-MAT-09). Inlet section and sump CPVC per M5; the packed section above the quench may stay PVC-U once the gas temperature there is calculated (held). Corrosion allowance does not apply to the polymer.
 

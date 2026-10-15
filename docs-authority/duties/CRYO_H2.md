@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 6.629 kg/d. Mass out 6.629 kg/d. Electrical duty 4.00 kW. In: S05 6.629 kg/d (process H2); S64 0 kg/d (H2 normal path). Out: S49 5.029 kg/d (H2 to purifier); S74 0.948 kg/d (hydrogen consumed); S45 0.652 kg/d (unused synthesis hydrogen).
+1. Basis. Mass in 11.13 kg/d. Mass out 11.13 kg/d. Electrical duty 0.5650 kW. In: S05 0.008752 kg/d (process H2); S64 0 kg/d (H2 normal path); IA-ELY-H2 11.12 kg/d (electrolyser H2). Out: S45 0 kg/d (unused synthesis hydrogen); S49 5.029 kg/d (H2 to purifier); S74 6.096 kg/d (hydrogen consumed).
 
 2. Size.
 - Not a packed tower. The column diameter and the tray count are on CRYO_ASU only.

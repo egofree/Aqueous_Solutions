@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 48001.0 kg/d. Mass out 48001.0 kg/d. Electrical duty 0.1000 kW. In: IA-SUMP-FISH 48000.0 kg/d (return); IA-WEED-FISH 0.5 kg/d (duckweed); IA-BSFL-FISH 0.4 kg/d (larvae); IA-AZOLLA 0.1 kg/d (azolla). Out: IA-FISH-OUT 48000.0 kg/d (tank water); IA-CLOSE-4 0.5 kg/d (fish solids liquor to the nutrient tank); IA-FISH-HAB 0.3 kg/d (fish); IA-FISH-DET 0.2 kg/d (detritus).
+1. Basis. Mass in 4.8e+04 kg/d. Mass out 4.8e+04 kg/d. Electrical duty 0.1000 kW. In: IA-BSFL-FISH 0.4 kg/d (larvae); IA-WEED-FISH 0.5 kg/d (duckweed); IA-AZOLLA 0.1 kg/d (azolla); IA-SUMP-FISH 4.8e+04 kg/d (return). Out: IA-FISH-HAB 0.3 kg/d (fish); IA-FISH-DET 0.2 kg/d (detritus); IA-FISH-OUT 4.8e+04 kg/d (tank water); IA-CLOSE-4 0.5 kg/d (fish solids liquor to the nutrient tank).
 
 2. Size.
 - Circulation 48001.0 kg/d. Two-minute holdup 0.0667 m³. A 20-day volume at this rate is not a tank.

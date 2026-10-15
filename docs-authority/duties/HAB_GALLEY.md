@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.180 kg/d. Mass out 1.180 kg/d. Electrical duty 0.3000 kW. In: IA-GAL 1.180 kg/d (food). Out: IA-GAL-R 1.180 kg/d (plate waste).
+1. Basis. Mass in 1.18 kg/d. Mass out 1.18 kg/d. Electrical duty 0.3000 kW. In: IA-GAL 1.18 kg/d (food). Out: IA-GAL-R 1.18 kg/d (plate waste).
 
 2. Size.
 - In 1.18 kg/d, out 1.18 kg/d. No holdup claimed.

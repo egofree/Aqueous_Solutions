@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 943.1 kg/d. Mass out 943.1 kg/d. Electrical duty 3.00 kW. In: IA-MFG-OUT 596.9 kg/d (goods in service); IA-NOX-HAB 207.3 kg/d (scrubber water); S21 120.0 kg/d (clean tower water); S26 10.00 kg/d (potable); 26 more. Out: IA-WEAR 596.9 kg/d (worn goods); S12 258.7 kg/d (grey/solids); IA-WASH 80.00 kg/d (wash water); S90 4.02 kg/d (metabolic CO2 (desorbed from the HAB CO2 sorbent bed)); 5 more.
+1. Basis. Mass in 943.9 kg/d. Mass out 943.9 kg/d. Electrical duty 3.0000 kW. In: S02 3.04 kg/d (O2); S14 2.807 kg/d (food); S15 0 kg/d (photosynthetic O2); S21 120.7 kg/d (clean tower water); 32 more. Out: S12 240.2 kg/d (grey/solids); S78 0.36 kg/d (ferment feed); S90 4.021 kg/d (metabolic CO2 (desorbed from the HAB CO2 sorbent bed)); IA-HAB-VAP 0 kg/d (respired and evaporated water); 9 more.
 
 2. Size.
 - In 943.1 kg/d, out 943.1 kg/d. No holdup claimed.

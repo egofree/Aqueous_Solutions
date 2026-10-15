@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: S56 0 kg/d (non-condensable residual after KO); S86 0 kg/d (cryo residual contingency). Out: none.
 
 2. Size.
 - Envelope 600×400×600 mm, 0.1440 m³. No mass throughput, so this is not a residence time.

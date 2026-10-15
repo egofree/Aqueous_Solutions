@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 67.30 kg/d. Mass out 67.30 kg/d. Electrical duty 0.0000 kW. In: S01 67.30 kg/d (UPW). Out: IA-UPW-USE 66.50 kg/d (fab UPW); IA-UPW-HAB 0.8000 kg/d (potable makeup).
+1. Basis. Mass in 67.3 kg/d. Mass out 67.3 kg/d. Electrical duty 0.0000 kW. In: S01 67.3 kg/d (UPW). Out: IA-UPW-HAB 0.8 kg/d (potable makeup); IA-UPW-USE 66.5 kg/d (fab UPW).
 
 2. Size.
 - In 67.30 kg/d, out 67.30 kg/d. No holdup claimed.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.25 kg/d. Mass out 0.25 kg/d. Electrical duty 0.1500 kW. In: IA-HW 0.25 kg/d (hardwood and bran). Out: IA-BLOCK-SPENT 0.14 kg/d (spent blocks); IA-BLOCK-FOOD 0.08 kg/d (shiitake and lion's mane); IA-BLOCK-MED 0.03 kg/d (reishi and turkey tail).
+1. Basis. Mass in 0.25 kg/d. Mass out 0.25 kg/d. Electrical duty 0.1500 kW. In: IA-HW 0.25 kg/d (hardwood and bran). Out: IA-BLOCK-FOOD 0.08 kg/d (shiitake and lion's mane); IA-BLOCK-MED 0.03 kg/d (reishi and turkey tail); IA-BLOCK-SPENT 0.14 kg/d (spent blocks).
 
 2. Size.
 - In 0.2500 kg/d, out 0.2500 kg/d. No holdup claimed.

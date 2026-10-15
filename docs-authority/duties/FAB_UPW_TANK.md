@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 60.00 kg/d. Mass out 60.00 kg/d. Electrical duty 0.0000 kW. In: IA-UPW-FAB 60.00 kg/d (fab UPW). Out: S27 60.00 kg/d (fab UPW > 18 MΩ·cm class).
+1. Basis. Mass in 60 kg/d. Mass out 60 kg/d. Electrical duty 0.0000 kW. In: IA-UPW-FAB 60 kg/d (fab UPW). Out: S27 60 kg/d (fab UPW > 18 MΩ·cm class).
 
 2. Size.
 - V = (60.00/1000)×(168/24) = 0.4200 m³. 7 days of throughput.

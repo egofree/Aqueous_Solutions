@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 7.848 kg/d. Mass out 7.848 kg/d. Electrical duty 0.5000 kW. In: S73 6.900 kg/d (CO2 feedstock); S74 0.948 kg/d (hydrogen consumed). Out: S75 5.024 kg/d (methanol); IA-MEOH-H2O 2.825 kg/d (synthesis water).
+1. Basis. Mass in 50.46 kg/d. Mass out 50.46 kg/d. Electrical duty 0.5000 kW. In: S73 42.31 kg/d (CO2 feedstock); S74 6.096 kg/d (hydrogen consumed); IA-HCO2-MEOH 2.05 kg/d (CO2 not taken by the bed). Out: S75 32.3 kg/d (methanol); IA-MEOH-H2O 18.16 kg/d (synthesis water).
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.

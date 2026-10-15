@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1302.0 kg/d. Mass out 1302.0 kg/d. Electrical duty 0.0000 kW. In: IA-EVAP_BASE-COND 799.2 kg/d (evaporator condensate return (BMED water make-up)); IA-BMED-04 502.8 kg/d (CRU → BMED base regen loop). Out: IA-EVAP_BASE-FEED 1301.7 kg/d (NaOH 2 M from BMED); IA-BMED-02 0.27 kg/d (NaOH product).
+1. Basis. Mass in 1302 kg/d. Mass out 1302 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-04 502.8 kg/d (CRU → BMED base regen loop); IA-EVAP_BASE-COND 799.2 kg/d (evaporator condensate return (BMED water make-up)). Out: IA-BMED-02 0.2701 kg/d (NaOH product); IA-EVAP_BASE-FEED 1302 kg/d (NaOH 2 M from BMED); IA-VS-NAOH 0.0005 kg/d (NaOH 2 M bleed); IA-BLK-NAOH 0 kg/d (NaOH for the standby alkaline barrier (normally zero)).
 
 2. Size.
 - In 118.7 kg/d, out 118.7 kg/d. No holdup claimed.

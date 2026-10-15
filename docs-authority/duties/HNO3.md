@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.7 kg/d. Mass out 0.7 kg/d. Electrical duty 0.3000 kW. In: IA-O2-NIT 0.5 kg/d (oxygen to nitric); IA-NH3-NIT 0.2 kg/d (ammonia to nitric). Out: IA-HNO3 0.6 kg/d (nitric acid); IA-NIT-H2O 0.1 kg/d (absorber water); IA-HNO3-VENT 0 kg/d (nitric absorber tail gas).
+1. Basis. Mass in 0.7 kg/d. Mass out 0.7 kg/d. Electrical duty 0.3000 kW. In: IA-NH3-NIT 0.2 kg/d (ammonia to nitric); IA-O2-NIT 0.5 kg/d (oxygen to nitric). Out: IA-HNO3 0.6 kg/d (nitric acid); IA-NIT-H2O 0.1 kg/d (absorber water); IA-HNO3-VENT 0 kg/d (nitric absorber tail gas).
 
 2. Size.
 - In 0.7000 kg/d, out 0.7000 kg/d. No holdup claimed.

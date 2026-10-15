@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4 kg/d. Mass out 0.4 kg/d. Electrical duty 0.4000 kW. In: IA-BED-FRUIT 0.4 kg/d (irrigation spill). Out: IA-FRUIT 0.25 kg/d (strawberry and fig); IA-FRUIT-TRIM 0.15 kg/d (fruit trim).
+1. Basis. Mass in 7.921 kg/d. Mass out 7.921 kg/d. Electrical duty 0.6256 kW. In: IA-BED-FRUIT 7.81 kg/d (irrigation spill); IA-FRUIT_GUTTER-CO2 0.1118 kg/d (CO2 uptake). Out: IA-FRUIT 0.25 kg/d (strawberry and fig); IA-FRUIT-TRIM 0.4637 kg/d (fruit trim); IA-FRUIT_GUTTER-O2 0.08128 kg/d (photosynthetic O2); IA-FRUIT_GUTTER-VAP 7.126 kg/d (transpiration).
 
 2. Size.
 - In 0.4000 kg/d, out 0.4000 kg/d. No holdup claimed.

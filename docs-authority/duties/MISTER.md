@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 50.00 kg/d. Mass out 50.00 kg/d. Electrical duty 0.3000 kW. In: IA-MIST-IN 50.00 kg/d (mister supply). Out: IA-MIST-OUT 50.00 kg/d (mister return).
+1. Basis. Mass in 32.17 kg/d. Mass out 32.17 kg/d. Electrical duty 0.3000 kW. In: IA-MIST-IN 32.17 kg/d (mister supply). Out: IA-MIST-OUT 32.17 kg/d (mister return).
 
 2. Size.
-- Envelope 4000×1000×800 mm, 3.20 m³. That box over this flow would be 1536.0 h if it were full. It is not a residence time.
+- Envelope 4000×1000×800 mm, 3.20 m³. That box over this flow would be 2387.6 h if it were full. It is not a residence time.
 
 3. Material. HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.
 

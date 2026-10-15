@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 37509.8 kg/d. Mass out 37509.8 kg/d. Electrical duty 0.4000 kW. In: IA-ACID-AIR-RET 37509.8 kg/d (acid-gas dilution air returned to the alkaline scrubber). Out: S65 37509.8 kg/d (acid-gas residual).
+1. Basis. Mass in 3.751e+04 kg/d. Mass out 3.751e+04 kg/d. Electrical duty 0.4000 kW. In: IA-ACID-AIR-RET 3.751e+04 kg/d (acid-gas dilution air returned to the alkaline scrubber); IA-VS-OFF 0.0292 kg/d (scrubbed vent to the house acid-gas header). Out: S65 3.751e+04 kg/d (acid-gas residual).
 
 2. Size.
 - Gas 1500.0 m³/h. Tower area at 1.5 m/s = 1500.0/3600/1.5 = 0.2778 m². Diameter 595 mm.

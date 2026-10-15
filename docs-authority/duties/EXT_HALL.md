@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.000 kg/d. Mass out 0.000 kg/d. Electrical duty 91.34 kW (SF-EXT_HALL from SOL_ARK_60K). Single-storey conditioned extension of 31,860 m2 east (EXT_HALL_E) and north (EXT_HALL_N) of the base plate. It exists so that the roof carries the full PV array at 2.0 x requirement (X-PAR-09, D75; X-PAR-07, owner decisions 2026-10-15: option A, conditioned). Sized by `flow_graph/param/solver.py` roof_close.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 107.7705 kW. In: none. Out: none.
 
 2. Size. Building 186 x 174 m on the 6 m bay grid (31 x 29 bays); extension 31,932 m2; eave 6 m. Loads (X-PAR-08, A-M-104, A-M-112), heating and cooling split by NOAA DFW degree days (mean heating dT 3.46 K, cooling 4.38 K):
 - Lighting 28.10 kW: 8.8 W/m2 (IECC 2021 Table C405.3.2(1)) lit 10 % of hours (IECC 2021 C405.2.1).

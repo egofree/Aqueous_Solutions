@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.004 kg/d. Mass out 0.004 kg/d. Electrical duty 0.2000 kW. In: IA-I-SRC 0.002 kg/d (iodide startup); IA-I-RET 0.002 kg/d (urine iodide return). Out: IA-I-MAKE 0.002 kg/d (KI dose return); IA-MED 0.002 kg/d (iodide stock); IA-I-DOSE 0 kg/d (KI dose).
+1. Basis. Mass in 0.004 kg/d. Mass out 0.004 kg/d. Electrical duty 0.2000 kW. In: IA-I-SRC 0.002 kg/d (iodide startup); IA-I-RET 0.002 kg/d (urine iodide return). Out: IA-I-DOSE 0 kg/d (KI dose); IA-I-MAKE 0.002 kg/d (KI dose return); IA-MED 0.002 kg/d (iodide stock).
 
 2. Size.
 - Envelope 500×500×800 mm, 0.2000 m³. That box over this flow would be 1200000.0 h if it were full. It is not a residence time.

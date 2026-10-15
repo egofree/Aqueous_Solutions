@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 33.00 kg/d. Mass out 33.00 kg/d. Electrical duty 0.0000 kW. In: IA-PLAST-01 33.00 kg/d (float plastics). Out: IA-OIL-01 33.00 kg/d (Dryer → pyro).
+1. Basis. Mass in 33 kg/d. Mass out 33 kg/d. Electrical duty 0.0000 kW. In: IA-PLAST-01 33 kg/d (float plastics). Out: IA-OIL-01 33 kg/d (Dryer → pyro).
 
 2. Size.
 - In 33.00 kg/d, out 33.00 kg/d. No holdup claimed.

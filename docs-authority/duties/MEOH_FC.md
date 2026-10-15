@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 8.53 kg/d. Mass out 8.53 kg/d. Electrical duty 1.00 kW. In: S76 4.58 kg/d (MeOH fuel); IA-FC-AIR 2.48 kg/d (cell air); IA-MEOH-REST 1.28 kg/d (tank draw); IA-CLOSE-10 0.1896 kg/d (leach condensate to the methanol cell). Out: S82 6.88 kg/d (CO₂ return from MeOH FC); S81 1.65 kg/d (MeOH FC condensate).
+1. Basis. Mass in 8.53 kg/d. Mass out 8.53 kg/d. Electrical duty 1.0000 kW. In: S76 4.579 kg/d (MeOH fuel); IA-FC-AIR 2.481 kg/d (cell air); IA-MEOH-REST 1.28 kg/d (tank draw); IA-CLOSE-10 0.1896 kg/d (leach condensate to the methanol cell). Out: S81 1.655 kg/d (MeOH FC condensate); S82 6.875 kg/d (CO₂ return from MeOH FC); IA-FC-EXH 0 kg/d (cell exhaust).
 
 2. Size.
 - 1.00 kW. No exchanger area. A heat-transfer area does not belong on this class.

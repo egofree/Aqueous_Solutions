@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 347.1 kg/d. Mass out 347.1 kg/d. Electrical duty 0.0000 kW. In: S12 258.7 kg/d (grey/solids); IA-WASH-R 80.00 kg/d (grey); IA-ZNBR-BD 8.49 kg/d (electrolyte bleed). Out: IA-GREY-01 242.6 kg/d (grey sludge); S29 104.5 kg/d (treated grey).
+1. Basis. Mass in 347.1 kg/d. Mass out 347.1 kg/d. Electrical duty 0.0000 kW. In: S12 240.2 kg/d (grey/solids); S42 0 kg/d (dilute nutrient drain); IA-ZNBR-BD 8.487 kg/d (electrolyte bleed); IA-WASH-R 80 kg/d (grey); 1 more. Out: S29 104.5 kg/d (treated grey); IA-GREY-01 242.6 kg/d (grey sludge); IA-GREY-RET 0 kg/d (treated grey to the water cycle).
 
 2. Size.
 - In 347.1 kg/d, out 347.1 kg/d. No holdup claimed.

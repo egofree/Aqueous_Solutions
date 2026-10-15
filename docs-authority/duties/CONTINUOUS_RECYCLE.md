@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3753.7 kg/d. Mass out 3753.7 kg/d. Electrical duty 0.0000 kW. In: IA-POL-02 3753.7 kg/d (raffinate (EW tail after polish) to continuous recycle). Out: IA-REC-01 3753.7 kg/d (continuous recycle liquor).
+1. Basis. Mass in 3303 kg/d. Mass out 3303 kg/d. Electrical duty 0.0000 kW. In: IA-POL-02 3303 kg/d (raffinate (EW tail after polish) to continuous recycle). Out: IA-REC-01 3303 kg/d (continuous recycle liquor).
 
 2. Size.
-- Envelope 1500×60×60 mm, 0.0054 m³. That box over this flow would be 0.0345 h if it were full. It is not a residence time.
+- Envelope 1500×60×60 mm, 0.0054 m³. That box over this flow would be 0.0 h if it were full. It is not a residence time.
 
 3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 °C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.
 

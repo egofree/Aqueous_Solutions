@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.000 kg/d. Mass out 1.000 kg/d. Electrical duty 0.2000 kW. In: IA-SUGAR 1.000 kg/d (reducing sugars). Out: IA-ETOH-S 0.46 kg/d (ethanol feed); IA-YEAST-CO2 0.44 kg/d (fermentation CO2); IA-STILL 0.1 kg/d (stillage); IA-ETOH-SOL 0 kg/d (retired direct solvent edge).
+1. Basis. Mass in 1 kg/d. Mass out 1 kg/d. Electrical duty 0.2000 kW. In: IA-SUGAR 1 kg/d (reducing sugars). Out: IA-ETOH-SOL 0 kg/d (retired direct solvent edge); IA-YEAST-CO2 0.44 kg/d (fermentation CO2); IA-STILL 0.1 kg/d (stillage); IA-ETOH-S 0.46 kg/d (ethanol feed).
 
 2. Size.
 - In 1.00 kg/d, out 1.00 kg/d. No holdup claimed.

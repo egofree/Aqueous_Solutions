@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.40 kg/d. Mass out 1.40 kg/d. Electrical duty 0.0000 kW. In: C29_RECYCLE 1.40 kg/d (C29 heavy cut). Out: C29_TO_PYRO 1.40 kg/d (C29 heavy cut).
+1. Basis. Mass in 5.873 kg/d. Mass out 5.873 kg/d. Electrical duty 0.0000 kW. In: C29_RECYCLE 5.873 kg/d (C29 heavy cut). Out: C29_TO_PYRO 5.873 kg/d (C29 heavy cut).
 
 2. Size.
 - In 1.40 kg/d, out 1.40 kg/d. No holdup claimed.

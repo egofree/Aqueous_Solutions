@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.4000 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.4000 kW. In: none. Out: none.
 
 2. Size.
 - A = 0.4000 × 1000 / (500 × 10) = 0.0800 m². U = 500 W/m²K and ΔT = 10 K are assumed for liquid water.

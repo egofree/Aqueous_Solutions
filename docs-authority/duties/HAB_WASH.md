@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 80.00 kg/d. Mass out 80.00 kg/d. Electrical duty 0.3000 kW. In: IA-WASH 80.00 kg/d (wash water). Out: IA-WASH-R 80.00 kg/d (grey).
+1. Basis. Mass in 80 kg/d. Mass out 80 kg/d. Electrical duty 0.3000 kW. In: IA-WASH 80 kg/d (wash water). Out: IA-WASH-R 80 kg/d (grey).
 
 2. Size.
 - In 80.00 kg/d, out 80.00 kg/d. No holdup claimed.

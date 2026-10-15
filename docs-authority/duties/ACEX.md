@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.412 kg/d. Mass out 0.412 kg/d. Electrical duty 0.1000 kW. In: IA-ACOH 0.206 kg/d (acetic acid); IA-BMIM 0.205 kg/d ([Bmim]Cl). Out: IA-IL 0.233 kg/d ([Bmim]OAc to the pretreat); IA-IL-BRINE 0.179 kg/d (exchange coproducts and unused feed); IA-CLOSE-6 0 kg/d (withdrawn).
+1. Basis. Mass in 0.4116 kg/d. Mass out 0.4116 kg/d. Electrical duty 0.1000 kW. In: IA-ACOH 0.2064 kg/d (acetic acid); IA-BMIM 0.2051 kg/d ([Bmim]Cl). Out: IA-IL 0.2328 kg/d ([Bmim]OAc to the pretreat); IA-IL-BRINE 0.1787 kg/d (exchange coproducts and unused feed); IA-CLOSE-6 0 kg/d (withdrawn).
 
 2. Size.
 - In 0.4116 kg/d, out 0.4116 kg/d. No holdup claimed.

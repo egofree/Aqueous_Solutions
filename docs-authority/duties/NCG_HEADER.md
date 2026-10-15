@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 5.00 kg/d. Mass out 5.00 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-03 5.00 kg/d (NCG only). Out: NCG_TO_AB 5.00 kg/d (NCG).
+1. Basis. Mass in 5 kg/d. Mass out 5 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-03 5 kg/d (NCG only). Out: NCG_TO_AB 5 kg/d (NCG).
 
 2. Size.
 - Duct at 10 m/s. Gas 0.1736 m³/h. Bore 2 mm, DN15. Not a packed tower.

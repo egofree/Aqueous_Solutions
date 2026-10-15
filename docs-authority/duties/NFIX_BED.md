@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.75 kg/d. Mass out 0.75 kg/d. Electrical duty 0.2000 kW. In: IA-BED-NFIX 0.75 kg/d (bed spill). Out: IA-NFIX-RES 0.35 kg/d (legume residue); IA-COVER 0.2 kg/d (cover crop); IA-PN-S 0.2 kg/d (bed spill); IA-NFIX-FOOD 0 kg/d (cowpea and peanut).
+1. Basis. Mass in 107.7 kg/d. Mass out 107.7 kg/d. Electrical duty 0.4396 kW. In: IA-BED-NFIX 107.5 kg/d (bed spill); IA-NFIX_BED-CO2 0.144 kg/d (CO2 uptake). Out: IA-COVER 0.2 kg/d (cover crop); IA-NFIX-RES 0.35 kg/d (legume residue); IA-NFIX-FOOD 0 kg/d (cowpea and peanut); IA-PN-S 98.36 kg/d (bed spill); 2 more.
 
 2. Size.
 - In 0.7500 kg/d, out 0.7500 kg/d. No holdup claimed.

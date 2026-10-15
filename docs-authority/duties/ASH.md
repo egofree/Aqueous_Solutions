@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.3 kg/d. Mass out 0.3 kg/d. Electrical duty 0.2000 kW. In: IA-SF-R 0.3 kg/d (stalks); IA-STALK 0 kg/d (stalks). Out: IA-ASH-BED 0.3 kg/d (ash).
+1. Basis. Mass in 0.3 kg/d. Mass out 0.3 kg/d. Electrical duty 0.2000 kW. In: IA-STALK 0 kg/d (stalks); IA-SF-R 0.3 kg/d (stalks). Out: IA-ASH-BED 0.3 kg/d (ash).
 
 2. Size.
 - Envelope 1000×1000×1500 mm, 1.50 m³. That box over this flow would be 120000.0 h if it were full. It is not a residence time.

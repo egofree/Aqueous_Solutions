@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.40 kg/d. Mass out 1.40 kg/d. Electrical duty 0.0000 kW. In: CUT-4 1.40 kg/d (fractionator cut). Out: C29_RECYCLE 1.40 kg/d (C29 heavy cut).
+1. Basis. Mass in 5.873 kg/d. Mass out 5.873 kg/d. Electrical duty 0.0000 kW. In: CUT-4 5.873 kg/d (fractionator cut). Out: C29_RECYCLE 5.873 kg/d (C29 heavy cut).
 
 2. Size.
 - V = (1.40/1000)×(168/24) = 0.0098 m³. 7 days of the cut.

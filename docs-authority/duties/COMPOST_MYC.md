@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.020 kg/d. Mass out 3.020 kg/d. Electrical duty 0.0500 kW. In: IA-COMP-MYC 2.700 kg/d (cooled compost); IA-STRAW-SPENT 0.18 kg/d (spent oyster spawn); IA-BLOCK-SPENT 0.14 kg/d (spent blocks). Out: IA-MYC-WORM 3.020 kg/d (myceliated compost).
+1. Basis. Mass in 3.02 kg/d. Mass out 3.02 kg/d. Electrical duty 0.0500 kW. In: IA-STRAW-SPENT 0.18 kg/d (spent oyster spawn); IA-BLOCK-SPENT 0.14 kg/d (spent blocks); IA-COMP-MYC 2.7 kg/d (cooled compost). Out: IA-MYC-WORM 3.02 kg/d (myceliated compost).
 
 2. Size.
 - In 3.02 kg/d, out 3.02 kg/d. No holdup claimed.

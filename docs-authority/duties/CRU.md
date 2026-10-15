@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 27.36 kg/d. Mass out 27.36 kg/d. Electrical duty 0.0000 kW. In: S66 27.36 kg/d (scrub liquor → chlorate finish). Out: IA-CRU-01 27.36 kg/d (sodium chlorate liquor).
+1. Basis. Mass in 27.37 kg/d. Mass out 27.37 kg/d. Electrical duty 0.0000 kW. In: S66 27.37 kg/d (scrub liquor → chlorate finish). Out: IA-CRU-01 27.37 kg/d (sodium chlorate liquor).
 
 2. Size.
 - In 27.36 kg/d, out 27.36 kg/d. No holdup claimed.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2700 kg/d. Mass out 0.2700 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-02 0.2700 kg/d (NaOH product). Out: S35 0.2700 kg/d (KOH).
+1. Basis. Mass in 0.2701 kg/d. Mass out 0.2701 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-02 0.2701 kg/d (NaOH product). Out: S35 0.2701 kg/d (KOH).
 
 2. Size.
 - In 0.2700 kg/d, out 0.2700 kg/d. No holdup claimed.

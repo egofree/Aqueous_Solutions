@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 19100.9 kg/d. Mass out 19100.9 kg/d. Electrical duty 5.00 kW. In: IA-BIO-BED 18909.0 kg/d (nitrate water); IA-NUT-BED 129.6 kg/d (nitrate and bleed salts); IA-DR-OUT 20.00 kg/d (correction return, not to the tank); S89 17.07 kg/d (CO2 enrichment dose (FARM AHU supply)); 11 more. Out: IA-BED-SUMP 18909.0 kg/d (bed return); IA-BED-COMP 130.1 kg/d (salt-laden trim); IA-DR-IN 20.00 kg/d (correction supply); IA-BED-VAP 16.70 kg/d (bed transpiration); 19 more.
+1. Basis. Mass in 1.915e+04 kg/d. Mass out 1.915e+04 kg/d. Electrical duty 2.2500 kW. In: S04 0 kg/d (CO2); S07 2.5 kg/d (nutrients); S88 0 kg/d (N2 make-up); S89 0.8484 kg/d (CO2 enrichment dose (FARM AHU supply)); 11 more. Out: S11 0.8 kg/d (organics); S13 3.799 kg/d (condensate); S14 2.807 kg/d (food); S14X 1.231 kg/d (food waste to larvae); 19 more.
 
 2. Size.
 - Circulation 19100.9 kg/d. Two-minute holdup 0.0265 m³. A 20-day volume at this rate is not a tank.

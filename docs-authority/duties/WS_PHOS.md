@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.6200 kg/d. Mass out 0.6200 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-SRC 0.6200 kg/d (phosphate). Out: S34B 0.6100 kg/d (H3PO4); IA-PHOS-DOPE 0.0100 kg/d (phosphate to dopant).
+1. Basis. Mass in 0.62 kg/d. Mass out 0.62 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-SRC 0.62 kg/d (phosphate). Out: S34B 0.61 kg/d (H3PO4); IA-PHOS-DOPE 0.01 kg/d (phosphate to dopant).
 
 2. Size.
 - Envelope 800×800×1100 mm, 0.7040 m³. That box over this flow would be 27251.6 h if it were full. It is not a residence time.
