@@ -186,3 +186,5 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | A | 2026-10-15 | Load list | canonical |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | A | 2026-10-15 | EW rectifier sizing | canonical |
 | AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | A | 2026-10-15 | Piping class sheets | canonical |
+| AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | canonical |
+| AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | canonical |

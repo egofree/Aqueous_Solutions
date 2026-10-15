@@ -635,5 +635,44 @@
    "docs-authority/MATERIALS_STD.md"
   ],
   "id": "A-M-049"
+ },
+ {
+  "value": "50",
+  "units": "ohm m",
+  "where": "AQS-ELEC-005 soil resistivity",
+  "basis": "Moist clay range; AQS-SITE-002 soil assumption",
+  "sensitivity": "Grid resistance linear in resistivity",
+  "replaced_by": "Wenner four-pin test at the parcel",
+  "task": "X-ELS-08",
+  "files": [
+   "docs-authority/GROUNDING.md"
+  ],
+  "id": "A-M-050"
+ },
+ {
+  "value": "35 x 20 m ring, 12 rods 3 m",
+  "units": "m",
+  "where": "AQS-ELEC-005 grid",
+  "basis": "Placement extents of the plate",
+  "sensitivity": "Resistance falls with area and length",
+  "replaced_by": "Site plan (X-BLD)",
+  "task": "X-ELS-08",
+  "files": [
+   "docs-authority/GROUNDING.md"
+  ],
+  "id": "A-M-051"
+ },
+ {
+  "value": "5",
+  "units": "ohm",
+  "where": "AQS-ELEC-005 target",
+  "basis": "IEEE 142 common industrial target",
+  "sensitivity": "Rod count",
+  "replaced_by": "Utility or AHJ requirement and IEEE 80 step/touch study",
+  "task": "X-ELS-08",
+  "files": [
+   "docs-authority/GROUNDING.md"
+  ],
+  "id": "A-M-052"
  }
 ]
