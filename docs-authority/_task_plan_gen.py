@@ -65,7 +65,16 @@ X=[
 ('X-GOV-04','Document number register','one register lists every AQS- number once; duplicates resolved','—','docs-authority/DOC_REGISTER.md'),
 ('X-GOV-05','Superseded plans marked','AQS-PLAN-001..003, AQS-MFG-001, AQS-REM-*, AQS-MVS-* carry a pointer to AQS-PLAN-007','X-GOV-04',None),
 ('X-GOV-07','Assumptions register','AQS-REG-002 lists every study and assumed value with where used, basis, and owning task; curated entries carry sensitivity and the replacing test; script validates','X-GOV-04','docs-authority/ASSUMPTIONS_REGISTER.md'),
+('X-GOV-08','Sizing rule','AGENTS.md §Sizing: bounding-case sizing; restrictions revised when they block a sized design; sizing-driven changes approved by default','—','AGENTS.md'),
 ('X-GOV-06','Revision control of drawings and derived files','each drawing and derived file names the graph revision it was made from; stale ones flagged by a script','X-GOV-04',None)]),
+('RSZ','Bounding-case resizing (owner approval 2026-10-15)',[
+('X-RSZ-01','Acid regeneration resize','BMED_ACID and dependents sized for the regolith-like (class A) feed','X-BAS-02',None),
+('X-RSZ-02','EW power on the graph and supply resize','RECT-EW and EW cell power booked on the graph; PV, storage, inverters to the AQS-ELEC-007 bounding case','X-ELS-05',None),
+('X-RSZ-03','EW aisle re-placement','cells placed at sized lengths, cathode count justified; block grown as needed','X-RSZ-02',None),
+('X-RSZ-04','BMED trim cooling edge','energy edge for the IA-BMED-03/04 water-cooled trim','X-MAT-19',None),
+('X-RSZ-05','FARM capacity','HAB_* units moved to the HAB block; farm stacked or grown to bed area','X-BLD-09',None),
+('X-RSZ-06','Potable makeup treatment','treatment step on the IA-POT-01 path from LEACH_CSTR_1 to ROOF_TANK','X-MAT-19',None),
+('X-RSZ-07','Held-rate sweep','every held rate and undersized unit checked against the bounding cases and resized','X-RSZ-01..06',None)]),
 ('BAS','Design basis',[
 ('X-BAS-01','Feedstock assay schema and bounding envelope','AQS-ASSAY-001 Rev C: seven-class schema, regolith-like to metal-rich PCB','—','docs-authority/FEED_ASSAY.md'),
 ('X-BAS-02','Bounding-case check of every held rate','each held rate recalculated at both bounding cases, or stated as held with reason','X-BAS-01','docs-authority/FEED_ASSAY.md'),
@@ -175,7 +184,7 @@ X=[
 ('X-TOOL-02','CadQuery installed and proven','EXPANDER and LEACH_CSTR_1 at M2 (D6, D7)','X-TOOL-01','models/mfg/EXPANDER/expander.py'),
 ('X-TOOL-03','STL storage in LFS','all cad/stl files are LFS pointers','—','cad/stl'),
 ('X-TOOL-04','Design tool phases','AQS-UI-001 phases beyond P0, P1, B-prime','—',None)])]
-DONE_X={'X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
+DONE_X={'X-GOV-08','X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
 out=[];cnt=[]
 def box(d): return '[x]' if d else '[ ]'
 for code,title,items in X:
@@ -253,18 +262,18 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 
 ## 5. Next 10 tasks
 
-1. X-BLD-09 FARM sector capacity: 31 FARM units need about 161 m² more than the block has (owner decision: grow FARM, use HAB for HAB_*, or stack).
-2. X-MAT-19 edge corrections (IA-BMED-03/04 temperature label, IA-POT-01 composition), no rate change.
-3. X-ELS-02 Remaining unit task 02 loads, largest first (CRYO_ASU, MFG_SHOP, BMED_UPW_POLISH, GROW_BED, CRYO_H2).
-4. X-PIP-03 Isometrics for positioned lines.
-5. X-PIP-02 close once X-BLD-09 places the FARM units.
-6. EW aisle re-placement (awaiting Mike).
-7. BMED cooling energy edge (awaiting Mike).
-8. Acid resize (awaiting Mike).
-9. EW power rate change and power-system resize (awaiting Mike).
+1. X-ELS-02 Remaining loads: BMED_UPW_POLISH, GROW_BED, then onward; MFG_SHOP needs a tool list, CRYO_H2 a storage mode.
+2. X-PIP-03 Isometrics for positioned lines.
+3. X-RSZ-01 Acid regeneration resize for the class A feed.
+4. X-RSZ-02 EW power on the graph and supply resize to AQS-ELEC-007.
+5. X-RSZ-03 EW aisle re-placement at sized cell lengths.
+6. X-RSZ-04 BMED trim cooling edge.
+7. X-RSZ-05 FARM capacity (HAB_* to HAB; stack or grow farm).
+8. X-RSZ-06 Treatment step on the IA-POT-01 potable path.
+9. X-RSZ-07 Held-rate and undersized-unit sweep.
 10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test.
 
-Owner decisions open: class A (regolith-like) feed acid limit (AQS-ASSAY-001 Rev D §8); EW side-reaction H₂ and IA-E-RECT 4.57 kW against the 38 kW bounding AC (rate changes not approved).
+Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are approved by default (X-RSZ group).
 
 ## 6. Cross-cutting tasks
 {xs}

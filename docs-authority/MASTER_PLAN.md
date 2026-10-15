@@ -96,3 +96,4 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | D45 | — | Study placement | X-BLD-09. Unplaced units given study boxes in sector blocks. | open. 13 of 44 placed (CRYO 6, HAB headers 2, MFG BOARD_MILL, FARM 4). FARM full: 31 units need about 161 m² incl. clearance. Owner decision. |
 | D46 | — | Edge corrections | X-MAT-19 follow-up. | IA-BMED-03/04 conditions now state the draw temperature. IA-POT-01 leach stencil composition removed and flagged composition_undefined; potable-from-leach topology flagged for owner. No rate change. |
 | D47 | — | CRYO_ASU load | X-ELS-02, largest first. | 3.03 kW calculated as a lower bound against 18.0 kW on the graph. Graph not changed (no rate change). Vendor quote needed to close it. |
+| D48 | — | Sizing rule | X-GOV-08. | AGENTS.md §Sizing records the owner rule; X-RSZ-01..07 added; next 10 updated, stale X-MAT-19 slot removed. |
