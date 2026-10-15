@@ -1,0 +1,6 @@
+item,description,qty,material,basis
+1,Hold tank DN350 x 280 mm x 4.0 mm,3,HDPE PE100, extrusion-welded (DVS 2207-4),AQS-DUTY-063
+2,NaOH dosing pump, solenoid diaphragm,1,PVDF/PTFE,X-INV-01
+3,pH probe per tank (high-pH glass),3,PVDF body,pH > 12 standby barrier
+4,Release valve per tank, actuated, interlocked to the batch test result,3,PVDF ball valve,AQS-DUTY-063
+5,Sample valve per tank,3,PVDF,EPA 1680/1682 batch test

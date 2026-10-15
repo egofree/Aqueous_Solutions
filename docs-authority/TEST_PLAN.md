@@ -15,25 +15,31 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 22 | Owner decision or site investigation report |
-| T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
-| T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
-| T4 | Pilot runs | 17 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 69 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 12 | Commissioning record |
+| T1 | Owner and site data | 32 | Owner decision or site investigation report |
+| T2 | Vendor and manufacturer data | 31 | Vendor data sheet, quote or curve filed against the item |
+| T3 | Bench and laboratory tests | 36 | Bench test report with method, data and result |
+| T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
+| T5 | Design calculations and drawings | 104 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 14 | Commissioning record |
 
-Total 181 items: 73 drivers, 108 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 238 items: 120 drivers, 118 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver ext_hvac | "air" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison | X-PAR |
 | driver ifc_array_max_mm | 45720 mm | AHJ fire-code review | X-PAR |
 | driver ifc_axis_limit_mm | 76200 mm | AHJ fire-code review | X-PAR |
 | driver ifc_path_mm | 1219 mm | AHJ fire-code review | X-PAR |
 | driver ifc_perim_large_mm | 1829 mm | AHJ fire-code review | X-PAR |
 | driver ifc_perim_small_mm | 1219 mm | AHJ fire-code review | X-PAR |
+| driver mv_kV | 12.47 kV collection and point of common coupling | Utility interconnection study (owner input A-M-113): service voltage | X-PAR |
+| driver pv_oversize_factor | 2.0 PV nameplate / PV needed to close the daily balance | NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility | X-PAR |
 | driver roof_snow_kPa | 0.24 kPa flat-roof snow (study) | ASCE 7 Hazard Tool ground snow load at the site | X-PAR |
+| driver san_compost_fraction | 0.25 share of excreta to compost toilets (daily average; each path sized for 100 %) | Owner HAB fit-out (number of each toilet type) and use log | X-PAR |
+| driver san_crew | 4 persons, HAB design occupancy (HABITATION params.crew_study) | Owner occupancy schedule | X-PAR |
+| driver san_farm_sep_m | 7.62 m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
@@ -50,6 +56,10 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | A-M-098 | Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground fiel -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout | X-BLD-04 |
 | A-M-101 | Access check: 914 mm clear on at least one face per row; roo mm | Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths | X-BLD-04 |
 | A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays | X-PAR-07 |
+| A-M-110 | Grid export through a supply-side connection (NEC 2023 705.1 - | Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid | X-PAR-09 |
+| A-M-113 | OWNER INPUT: utility interconnection study (service size, av - | Owner files the interconnection application; utility study results entered as drivers and the protection study re-run | X-PAR-09 |
+| A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source | X-ELS-11 |
+| A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model | X-STD-01 |
 
 ## 3. T2 Vendor and manufacturer data
 
@@ -57,6 +67,7 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | --- | --- | --- | --- |
 | driver rect_efficiency | 0.8 - | Vendor efficiency curve for the selected rectifier at the operating current | X-PAR |
 | driver storage_round_trip | 0.7 - | ZnBr2 vendor round-trip efficiency at the duty cycle | X-PAR |
+| driver xfmr_Z_pu | 0.0575 pu pad-mount transformer impedance | Transformer nameplate | X-PAR |
 | A-M-006 | 1500 W/m2K | Exchanger maker rating | X-MAT-12 |
 | A-M-011 | two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm p geometry | Glass-coil vendor drawing | X-MAT-16 |
 | A-M-023 | 1.5 bar a, 25 C, 99.97 mol% bar a, C, mol% | Fuel-cell vendor inlet specification | X-MAT-15 |
@@ -99,7 +110,12 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | driver ew_current_efficiency_design | 0.85 - | Bench chloride EW cell per metal: deposit mass vs charge (current efficiency) | X-PAR |
 | driver feed_case_A_silicate_oxide | 0.99 mass fraction | XRF/XRD assay of a representative class A lot | X-PAR |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES | X-PAR |
+| driver rx_glass_d_um | 100.0 um milled cullet fines diameter to the digest | Sieve analysis of GLASS_MILL product | X-PAR |
+| driver rx_glass_k0_g_m2_s | 0.0002 g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-] | Bench digest of milled cullet at 2 M / 20 wt% NaOH, 85 C: SiO2 in liquor vs time | X-PAR |
+| driver rx_glass_tau_min_h | 1.0 h practical minimum residence (mixing, heat-up, level control) | Bench digest | X-PAR |
+| driver rx_tip_m_s | 2.5 m/s impeller tip speed for suspension | Just-suspended speed (Zwietering) at the bench | X-PAR |
 | driver slurry_min_DN | 50 DN | Deposition-velocity check of each slurry line at its solids loading (Durand/Wilson correlation) and a flow-loop trial with the plant solids | X-PAR |
+| driver vs_p_shell_case | "upset" design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | Condensate titration during start-up before the column profile forms | X-PAR |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet | X-ELS-10 |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed | X-ELS-10 |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test | X-ELS-10 |
@@ -137,17 +153,23 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | driver evap_wet_min | 0.05 kg/(m s) minimum falling-film wetting rate | Pilot wetting test | X-PAR |
 | driver mvr_kWh_per_t | 72.0 kWh/t water evaporated | Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot | X-PAR |
 | driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot | X-PAR |
+| driver rx_digester_srt_d | 20.0 d mesophilic SRT (high-rate, 35 C; typical 15-20 d) | VS destruction and gas yield in the pilot digester | X-PAR |
+| driver rx_pyro_heater_eff | 0.7 electric to process, insulated retort | Heater energy meter on the pilot retort | X-PAR |
 | A-M-088 | 2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH) mol/L | EDBM pilot at 2 M product: SEC, current efficiency and product purity | X-PAR-04 |
 | A-M-089 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D kWh/t water evaporated | Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement | X-PAR-04 |
 | A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week | X-PAR-06 |
 | A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration | X-PAR-06 |
 | A-M-106 | Evaporator operating basis: body 101.3 kPa abs, 6 K driving  kPa, K, C, - | Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log | X-MFG-30 |
 | A-M-108 | EVAP_ACID counter-current column, feed at the top, no reflux wt%, mm, m/s | Pilot: titrate condensate and column bottoms; flooding check with the packing C_s | X-MFG-30 |
+| A-M-112 | Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K, W/(m K), -, m/kW, m, C | TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station | X-PAR-08 |
+| A-M-116 | In-house reactors: GLASS_DIGEST residence 3 x shrinking-sphe h, d, MJ/kg, kJ/(kg K), m/s | Bench digest of milled cullet (SiO2 vs time at 85 C); sieve analysis of GLASS_MILL product; DSC/TGA of dried float oil; pilot digester VS destruction; heater energy meter | X-MFG-31 |
 
 ## 6. T5 Design calculations and drawings
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating | X-PAR |
+| driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run | X-PAR |
 | driver base_bays_x | 4 bays | Structural grid review | X-PAR |
 | driver base_bays_y | 3 bays | Structural grid review | X-PAR |
 | driver bay_mm | 6000 mm structural bay | Structural grid review | X-PAR |
@@ -171,16 +193,28 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | driver evap_sump_h_mm | 400.0 mm liquid in the sump | Level control setpoint | X-PAR |
 | driver evap_tube_L_mm | 1500.0 mm | Envelope fit | X-PAR |
 | driver evap_tube_id_mm | 25.0 mm | Tube stock | X-PAR |
+| driver ext_F_slab | 1.264 W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | Slab edge detail | X-PAR |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension | X-PAR |
+| driver ext_T_design_c_C | 38.0 C cooling design dry bulb 0.4 % (DFW) | ASHRAE 2021 climatic data for the station | X-PAR |
+| driver ext_T_design_h_C | -5.0 C heating design dry bulb 99.6 % (DFW) | ASHRAE 2021 climatic data for the station | X-PAR |
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design | X-PAR |
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design | X-PAR |
 | driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme | X-PAR |
 | driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating | X-PAR |
 | driver ext_dT_mean_K | 7.9 K mean /T_in - T_out/: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation | X-PAR |
+| driver ext_dTc_K | 4.381 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
+| driver ext_dTh_K | 3.458 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
+| driver gsh_bore_depth_m | 120.0 m bore depth | Drilling log | X-PAR |
+| driver gsh_bore_m_per_kWt | 55.0 m vertical bore per kW peak block load (mid of 43-65 m/kW typical range) | Thermal response test and ASHRAE bore-length method | X-PAR |
+| driver gsh_bore_spacing_m | 6.0 m bore spacing | Bore-field simulation (g-functions) | X-PAR |
+| driver gsh_cop_c | 4.13 ground-source heat pump cooling COP (EER 14.1 at 25 C entering fluid, ISO 13256-1) | Selected unit rating at design loop temperature | X-PAR |
+| driver gsh_cop_h | 3.2 ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1) | Selected unit rating at design loop temperature | X-PAR |
+| driver gsh_pump_W_per_kWt | 37.0 W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A) | Loop hydraulic design | X-PAR |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile | X-PAR |
+| driver pv_dc_ac_ratio | 1.2 DC kWp / inverter AC kW | Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio | X-PAR |
 | driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC | X-PAR |
 | driver pv_roof_gcr | 0.6 ground coverage ratio, low-tilt rows | Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt | X-PAR |
 | driver pv_roof_yield_factor | 1.0 roof yield / pv_yield_kWh_kWp_d | PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio | X-PAR |
@@ -188,6 +222,23 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | driver pv_yield_kWh_kWp_d | 5.41 kWh/kWp/d before losses | PVsyst or measured site irradiance year at the chosen tilt | X-PAR |
 | driver roof_live_kPa | 0.96 kPa | Structural review | X-PAR |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 | X-PAR |
+| driver rx_pyro_T_C | 500.0 C slow pyrolysis of oils and polymer residue | TGA of the dried float oil | X-PAR |
+| driver rx_pyro_cp_kJ_kgK | 2.5 kJ/(kg K) mean feed heat capacity 25-500 C | DSC | X-PAR |
+| driver rx_pyro_dH_MJ_kg | 1.3 MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements) | DSC of the dried float oil | X-PAR |
+| driver rx_pyro_tau_h | 1.0 h solid/liquid residence, batch-equivalent | TGA conversion vs time at 500 C | X-PAR |
+| driver san_cake_TS | 0.2 cake dry solids fraction after screw press | Cake TS on the in-house screw press | X-PAR |
+| driver san_cover_dry | 0.3 dry fraction of compost-toilet cover and bed return | TS of cover material | X-PAR |
+| driver san_digest_srt_d | 15.0 d thermophilic SRT | Digester stability (VFA/alkalinity) at 15 d | X-PAR |
+| driver san_flush_L | 1.0 L per flush, vacuum toilet | Flush volume on the in-house vacuum toilet prototype | X-PAR |
+| driver san_flushes_cap_d | 5.0 flushes per person per day | Flush counter on the HAB toilets for 30 days | X-PAR |
+| driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log | X-PAR |
+| driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) | X-PAR |
+| driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed | X-PAR |
+| driver vs_T_C | 40.0 C, vent condenser outlet | Vent condenser outlet temperature at design cooling water | X-PAR |
+| driver vs_dp_mm | 16.0 mm, nominal packing (in-house cut PVC tube rings) | Pressure drop and wetting test on the cut rings | X-PAR |
+| driver vs_margin | 1.5 packed height margin | as vs_htu_m | X-PAR |
+| driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate | X-PAR |
+| driver vs_y_out_ppm | 1.0 ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | Outlet HCl by NIOSH 7903 sampling | X-PAR |
 | A-M-005 | 300 / 1000 W/m2K | Agitator selection and coil test | X-MAT-11 |
 | A-M-008 | 88 degC | Wall check at temperature (unit task 02) | MET-LEACH_CSTR_1-02 |
 | A-M-009 | 0 kg/d | HNO3 absorber design (tail-gas flow) | X-SAF-08 |
@@ -217,6 +268,10 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | A-M-103 | Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield -, mm | Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close | X-PAR-07 |
 | A-M-104 | Extension is a single-storey CONDITIONED hall (owner decisio W/m2, L/(s m2), K | Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme | X-PAR-07 |
 | A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials | X-MFG-30 |
+| A-M-109 | PV nameplate = 2.0 x balancing nameplate; design cloudy day  -, kW, kWh | NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2 | X-PAR-09 |
+| A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate | X-PAR-10 |
+| A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design | X-MFG-32 |
+| A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room | X-SAN-01 |
 
 ## 7. T6 Commissioning measurements
 
@@ -226,6 +281,8 @@ Total 181 items: 73 drivers, 108 register entries. Classification rule: first ma
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |
 | driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study | X-PAR |
+| driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry | X-PAR |
+| driver vs_air_mg_kg | 21.7 mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water) | Vent gas flow meter on the column vent during commissioning | X-PAR |
 | A-M-007 | 0.0002 m2K/W | Operating record | X-MAT-11 |
 | A-M-012 | 4.22 m2 | Coil heat-transfer test on the built tank | X-MAT-16 |
 | A-M-019 | 2.0 spray / evaporation ratio | Quench outlet temperature and drain flow on commissioning | X-SAF-07 |

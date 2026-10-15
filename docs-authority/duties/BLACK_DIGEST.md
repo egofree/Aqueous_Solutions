@@ -18,3 +18,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/BLACK_DIGEST.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. None.
+
+## X-SAN-01 (2026-10-15)
+
+Superseded for sizing by AQS-DUTY-063 (`docs-authority/sizing/SANITATION.md`): thermophilic anaerobic digester, barrier 1 of the multi-barrier train. Values on the graph and in that document govern.

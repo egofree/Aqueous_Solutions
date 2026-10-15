@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3389.000 | 3388.797 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3392.000 | 3391.142 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -207,6 +207,24 @@ All solved units close.
 | rx_fill | 0.75 | working / total volume | PERRY9_MIX | — |
 | rx_tip_m_s | 2.5 | m/s impeller tip speed for suspension | PERRY9_MIX | yes |
 | rx_Np_pbt | 1.27 | power number, 4-blade 45 deg PBT, turbulent | PERRY9_MIX | — |
+| san_crew | 4 | persons, HAB design occupancy (HABITATION params.crew_study) | A-M-118 | yes |
+| san_feces_wet_kg_cap_d | 0.128 | kg/(cap d) wet faeces, median | ROSE2015 | — |
+| san_feces_dry_kg_cap_d | 0.028 | kg/(cap d) faecal dry solids, median | ROSE2015 | — |
+| san_urine_kg_cap_d | 1.42 | kg/(cap d) urine, median | ROSE2015 | — |
+| san_flush_L | 1.0 | L per flush, vacuum toilet | LARSEN2013 | yes |
+| san_flushes_cap_d | 5.0 | flushes per person per day | A-M-118 | yes |
+| san_compost_fraction | 0.25 | share of excreta to compost toilets (daily average; each path sized for 100 %) | A-M-118 | yes |
+| san_vs_fraction | 0.85 | VS / TS of faeces | ROSE2015 | yes |
+| san_vs_destruction | 0.5 | fraction of VS destroyed, thermophilic anaerobic | METCALF5 | yes |
+| san_digest_T_C | 55.0 | C thermophilic digestion | METCALF5 | — |
+| san_digest_srt_d | 15.0 | d thermophilic SRT | METCALF5 | yes |
+| san_past_T_C | 70.0 | C pasteurisation, held >= 30 min (40 CFR 503 App. B PFRP) | EPA503 | — |
+| san_past_min | 30.0 | min hold at temperature | EPA503 | — |
+| san_past_batches_d | 4 | batches per day | A-M-118 | yes |
+| san_hold_d | 3.0 | d batch hold before release (72 h alkaline contact when used; release on test) | EPA503 | — |
+| san_cake_TS | 0.2 | cake dry solids fraction after screw press | METCALF5 | yes |
+| san_cover_dry | 0.3 | dry fraction of compost-toilet cover and bed return | A-M-118 | yes |
+| san_farm_sep_m | 7.62 | m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | A-M-118 | yes |
 
 ## 6. References
 
@@ -234,6 +252,7 @@ All solved units close.
 | EDBM_MEMBRANES_2023 | Analysis of Operational Parameters in Acid and Base Production Using an Electrodialysis with Bipolar Membranes Pilot Plant, Membranes 13(2), 200 (2023), https://www.mdpi.com/2077-0375/13/2/200: SEC 1.02-1.18 kWh/kg, CE 87-99 % at 200 A/m2, single pass. |
 | EDBM_PILOT_2023 | Herrero-Gonzalez M. et al., Electrodialysis with Bipolar Membranes for the Sustainable Production of Chemicals from Seawater Brines at Pilot Plant Scale, ACS Sustainable Chem. Eng. (2023), PMC9945178: SEC 1.4 kWh/kg NaOH at 200 A/m2 (CE 80 %), 1.9-2.6 kWh/kg at 300-500 A/m2. |
 | EDBM_WHEY_2021 | Transforming salty whey into cleaning chemicals using electrodialysis with bipolar membranes, Desalination (2021), ScienceDirect pii S0011916420312765: maximum 3.6 M acid / 3.0 M base from NaCl; 6.7 kWh/kg to produce 2 M acid or base. |
+| EPA503 | US EPA 40 CFR Part 503 (Standards for the use or disposal of sewage sludge), 503.32(a) Class A: faecal coliform < 1000 MPN/g TS or Salmonella < 3 MPN/4 g TS; enteric virus < 1 PFU/4 g TS and helminth ova < 1/4 g TS where required; Appendix B PFRP: pasteurisation >= 70 C for >= 30 min; 503.32(a)(4) alkaline: pH > 12 for 72 h with > 52 C for 12 h. |
 | EVAPCRYST_MVR | EvapCryst / manufacturer application notes on MVR evaporators: 15-25 kWh/t water for low boiling-point elevation, 30-60 kWh/t for high. |
 | GAO2010 | Gao F., Pyrolysis of waste plastics into fuels, PhD thesis, University of Canterbury (2010): measured heat of pyrolysis of polyolefins about 1.0-1.3 MJ/kg. |
 | GREENWOOD | Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl). |
@@ -256,11 +275,13 @@ All solved units close.
 | ISO16528_1 | ISO 16528-1:2007 boilers and pressure vessels, performance requirements. |
 | ISO16798_3 | ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
 | ISO23251 | ISO 23251:2006 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade. |
+| ISO30500 | ISO 30500:2018 Non-sewered sanitation systems: prefabricated integrated treatment units: log reduction for treated outputs: E. coli >= 6, MS2 coliphage >= 7, Clostridium perfringens spores >= 6, Ascaris suum eggs >= 4. |
 | ISO4126_1 | ISO 4126-1:2013, Safety devices for protection against excessive pressure, Part 1: safety valves (set pressure, overpressure, discharge capacity). |
 | ISO45001 | ISO 45001:2018 occupational health and safety management. |
 | ISO7010 | ISO 7010:2019 graphical symbols, registered safety signs. |
 | JMS2017_GLASSFIBRE | Kinetics of dissolution of glass fibre in hot alkaline solution, J. Materials Science 53 (2018) doi:10.1007/s10853-017-1627-z: NaOH 3 mol/L, zero-order k 2.0e-4 g/(m2 s) at 80 C, 4.3e-4 at 95 C; reaction order in hydroxide 0.31-0.44. |
 | KAVANAUGH2014 | Kavanaugh S.P. and Rafferty K., Geothermal Heating and Cooling: Design of Ground-Source Heat Pump Systems, ASHRAE (2014): bore length method, typical bore length per kW, pumping grade A <= 5 hp per 100 tons. |
+| LARSEN2013 | Larsen T.A., Udert K.M., Lienert J. (eds.), Source Separation and Decentralization for Wastewater Management, IWA Publishing (2013): vacuum toilets about 0.5-1.5 L per flush. |
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
 | MARAGHECHI2016 | Maraghechi H. et al., Effect of calcium on dissolution and precipitation reactions of amorphous silica at high alkalinity, Cement and Concrete Research 87 (2016) 1-13: soda-lime glass dissolves at constant rate in 1 M NaOH, 20-80 C. |
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
@@ -293,6 +314,7 @@ All solved units close.
 | PERRY9_MIX | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 18 liquid-solid operations and mixing: turbulent agitator power P = Np rho N^3 D^5; pitched-blade turbine Np about 1.27 (4 blades, 45 deg). |
 | PERRY9_PUMP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 10 transport of fluids: pump hydraulic power P = rho g Q H; shaft power = hydraulic / efficiency. |
 | ROARK8 | Young W.C., Budynas R.G., Sadegh A.M., Roark's Formulas for Stress and Strain, 8th ed., McGraw-Hill (2012): table 11.4 rectangular plates (long plate, uniform load, edges simply supported: sigma = beta q b^2 / t^2, y = alpha q b^4 / (E t^3)); table 8.1 beams (simply supported, uniform load: M = w L^2 / 8, y = 5 w L^4 / (384 E I)). |
+| ROSE2015 | Rose C., Parker A., Jefferson B., Cartmell E., The characterization of feces and urine: a review of the literature to inform advanced treatment technology, Critical Reviews in Environmental Science and Technology 45 (2015) 1827-1879: median wet faeces 128 g/cap/d, dry about 28 g/cap/d, organic fraction 84-93 % of dry; urine 1.42 L/cap/d. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
 | UL1741_SB | UL 1741, 3rd ed. (2021), Supplement SB: inverters certified to IEEE 1547.1-2020 as grid-support utility-interactive. |
@@ -301,6 +323,7 @@ All solved units close.
 | USBM_CL_EW | U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte. |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
 | WEISS1970 | Weiss R.F., The solubility of nitrogen, oxygen and argon in water and seawater, Deep-Sea Research 17 (1970) 721-735 (fresh water at 25 C, air-saturated: about 13.4 mg/kg N2 and 8.3 mg/kg O2). |
+| WHO2006_V4 | WHO, Guidelines for the safe use of wastewater, excreta and greywater, Vol. 4 Excreta and greywater use in agriculture (2006): multi-barrier approach, health-based target 1e-6 DALY per person per year; treated faeces and sludge < 1 helminth egg/g TS and < 1000 E. coli/g TS. |
 | WILSON2006 | Wilson K.C., Addie G.R., Sellgren A., Clift R., Slurry Transport Using Centrifugal Pumps, 3rd ed., Springer (2006): deposition velocity and minimum bore for settling slurries. |
 
 ## 7. Verification list
@@ -418,6 +441,17 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver rx_pyro_cp_kJ_kgK | 2.5 kJ/(kg K) mean feed heat capacity 25-500 C | DSC |
 | driver rx_pyro_heater_eff | 0.7 electric to process, insulated retort | Heater energy meter on the pilot retort |
 | driver rx_tip_m_s | 2.5 m/s impeller tip speed for suspension | Just-suspended speed (Zwietering) at the bench |
+| driver san_crew | 4 persons, HAB design occupancy (HABITATION params.crew_study) | Owner occupancy schedule |
+| driver san_flush_L | 1.0 L per flush, vacuum toilet | Flush volume on the in-house vacuum toilet prototype |
+| driver san_flushes_cap_d | 5.0 flushes per person per day | Flush counter on the HAB toilets for 30 days |
+| driver san_compost_fraction | 0.25 share of excreta to compost toilets (daily average; each path sized for 100 %) | Owner HAB fit-out (number of each toilet type) and use log |
+| driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed |
+| driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) |
+| driver san_digest_srt_d | 15.0 d thermophilic SRT | Digester stability (VFA/alkalinity) at 15 d |
+| driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log |
+| driver san_cake_TS | 0.2 cake dry solids fraction after screw press | Cake TS on the in-house screw press |
+| driver san_cover_dry | 0.3 dry fraction of compost-toilet cover and bed return | TS of cover material |
+| driver san_farm_sep_m | 7.62 m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -533,3 +567,6 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-113 | OWNER INPUT: utility interconnection study (service size, av - | Owner files the interconnection application; utility study results entered as drivers and the protection study re-run |
 | A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source |
 | A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model |
+| A-M-116 | In-house reactors: GLASS_DIGEST residence 3 x shrinking-sphe h, d, MJ/kg, kJ/(kg K), m/s | Bench digest of milled cullet (SiO2 vs time at 85 C); sieve analysis of GLASS_MILL product; DSC/TGA of dried float oil; pilot digester VS destruction; heater energy meter |
+| A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design |
+| A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room |

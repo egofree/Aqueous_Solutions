@@ -1,0 +1,6 @@
+item,description,qty,material,basis
+1,Batch vessel DN250 x 200 mm x 2.0 mm,2,316L, GTAW (ASME IX),AQS-DUTY-063
+2,Immersion heater 500 W each, 480 V,2,Incoloy 800 sheath,AQS-DUTY-063
+3,Two independent RTDs per vessel (IEC 60751 class A),4,316L,hold timer restarts below 70 C
+4,Transfer pump, magnetic drive,1,PVDF,X-INV-01
+5,Insulation 50 mm mineral wool, SS cladding,2,ASTM C547,AQS-DUTY-063

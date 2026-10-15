@@ -903,5 +903,124 @@
   "units": "power number, 4-blade 45 deg PBT, turbulent",
   "ref": "PERRY9_MIX",
   "needs_verification": false
+ },
+ "san_crew": {
+  "value": 4,
+  "units": "persons, HAB design occupancy (HABITATION params.crew_study)",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Owner occupancy schedule"
+ },
+ "san_feces_wet_kg_cap_d": {
+  "value": 0.128,
+  "units": "kg/(cap d) wet faeces, median",
+  "ref": "ROSE2015",
+  "needs_verification": false
+ },
+ "san_feces_dry_kg_cap_d": {
+  "value": 0.028,
+  "units": "kg/(cap d) faecal dry solids, median",
+  "ref": "ROSE2015",
+  "needs_verification": false
+ },
+ "san_urine_kg_cap_d": {
+  "value": 1.42,
+  "units": "kg/(cap d) urine, median",
+  "ref": "ROSE2015",
+  "needs_verification": false
+ },
+ "san_flush_L": {
+  "value": 1.0,
+  "units": "L per flush, vacuum toilet",
+  "ref": "LARSEN2013",
+  "needs_verification": true,
+  "verification_test": "Flush volume on the in-house vacuum toilet prototype"
+ },
+ "san_flushes_cap_d": {
+  "value": 5.0,
+  "units": "flushes per person per day",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Flush counter on the HAB toilets for 30 days"
+ },
+ "san_compost_fraction": {
+  "value": 0.25,
+  "units": "share of excreta to compost toilets (daily average; each path sized for 100 %)",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Owner HAB fit-out (number of each toilet type) and use log"
+ },
+ "san_vs_fraction": {
+  "value": 0.85,
+  "units": "VS / TS of faeces",
+  "ref": "ROSE2015",
+  "needs_verification": true,
+  "verification_test": "TS/VS (Standard Methods 2540 G) on the digester feed"
+ },
+ "san_vs_destruction": {
+  "value": 0.5,
+  "units": "fraction of VS destroyed, thermophilic anaerobic",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "VS reduction across BLACK_DIGEST (Standard Methods 2540 G)"
+ },
+ "san_digest_T_C": {
+  "value": 55.0,
+  "units": "C thermophilic digestion",
+  "ref": "METCALF5",
+  "needs_verification": false
+ },
+ "san_digest_srt_d": {
+  "value": 15.0,
+  "units": "d thermophilic SRT",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "Digester stability (VFA/alkalinity) at 15 d"
+ },
+ "san_past_T_C": {
+  "value": 70.0,
+  "units": "C pasteurisation, held >= 30 min (40 CFR 503 App. B PFRP)",
+  "ref": "EPA503",
+  "needs_verification": false
+ },
+ "san_past_min": {
+  "value": 30.0,
+  "units": "min hold at temperature",
+  "ref": "EPA503",
+  "needs_verification": false
+ },
+ "san_past_batches_d": {
+  "value": 4,
+  "units": "batches per day",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Pasteuriser cycle log"
+ },
+ "san_hold_d": {
+  "value": 3.0,
+  "units": "d batch hold before release (72 h alkaline contact when used; release on test)",
+  "ref": "EPA503",
+  "needs_verification": false
+ },
+ "san_cake_TS": {
+  "value": 0.2,
+  "units": "cake dry solids fraction after screw press",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "Cake TS on the in-house screw press"
+ },
+ "san_cover_dry": {
+  "value": 0.3,
+  "units": "dry fraction of compost-toilet cover and bed return",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "TS of cover material"
+ },
+ "san_farm_sep_m": {
+  "value": 7.62,
+  "units": "m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room"
  }
 }

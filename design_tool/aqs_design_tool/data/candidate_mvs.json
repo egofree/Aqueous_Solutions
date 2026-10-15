@@ -461,20 +461,37 @@
           "basis": "daily-average design day; off-graph terms",
           "terms": []
         },
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BLACK_DIGEST.md.",
+        "duty": "X-SAN-01 AQS-DUTY-063. Sheet docs-authority/sizing/SANITATION.md.",
         "presence": "present",
-        "internals": "pitched-blade agitator",
+        "internals": "gas-mixed (biogas recirculation), no shaft seal",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "design": {
+          "V_work_L": 302.58,
+          "V_L": 378.2249999999999,
+          "D_mm": 800,
+          "H_mm": 760,
+          "wall_mm": 5.0
+        },
+        "size_mm": [
+          1100,
+          1100,
+          1260
+        ]
       },
       "modules": [],
-      "electrical_role": null,
-      "continuous_kw": null
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.1052,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      }
     },
     {
       "unit_id": "BMED_ACID",
@@ -2332,8 +2349,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "hab AHU condensate + non-grey remainder",
-              "value": 4.8994,
-              "basis": "S12 governs grey",
+              "value": 4.1338,
+              "basis": "S12 governs grey; X-SAN-01 excreta from occupancy (by difference)",
               "kind": "by_difference"
             }
           ]
@@ -2346,6 +2363,13 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "san_base": {
+          "S12": 258.6599999999997,
+          "IA-COMP-OUT": 141.150288,
+          "outs": 943.0868119999998,
+          "cond": 4.8994,
+          "S11": 0.8
         }
       },
       "modules": [],
@@ -3625,14 +3649,14 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6778,
+        "count": 6784,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 3389,
-        "area_m2": 29740,
+        "nameplate_kw": 3392,
+        "area_m2": 29784,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -3642,19 +3666,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            234000,
-            138000
+            186000,
+            174000
           ],
           "bays": [
-            39,
-            23
+            31,
+            29
           ],
-          "footprint_m2": 32292.0,
-          "extension_m2": 31860.0,
-          "roof_capacity_kWp": 3390.3,
+          "footprint_m2": 32364.0,
+          "extension_m2": 31932.0,
+          "roof_capacity_kWp": 3395.4,
           "perimeter_pathway_mm": 1829,
-          "arrays": 15,
-          "extension_load_kW": 91.37,
+          "arrays": 16,
+          "extension_load_kW": 91.34,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -3662,12 +3686,12 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 1695
+        "balance_kWp": 1696
       },
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 233.2728,
+        "value": 234.1775,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -3891,8 +3915,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2635.6,
-          "export_kWh_d_clear": 7333,
+          "export_peak_kW": 2635.4,
+          "export_kWh_d_clear": 7338,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -4354,7 +4378,7 @@
       "tags": [],
       "params": {
         "kW": 1112,
-        "kWh": 3423,
+        "kWh": 3425,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -4401,7 +4425,7 @@
         "charge_kW": 1112,
         "discharge_kW": 245,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 48 hybrid inverters, 71.3 kWh and 23.2 kW charge each (AQS-ELEC-008)"
+        "distribution": "distributed over the 48 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
       },
       "modules": [],
       "electrical_role": "storage",
@@ -8125,36 +8149,36 @@
       "class": "building",
       "tags": [],
       "params": {
-        "footprint_m2": 31860.0,
+        "footprint_m2": 31932.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 91.365 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 91.340 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "hvac": {
-          "light_kW": 28.037,
-          "vent_kW": 39.737,
-          "envelope_kW": 23.591,
-          "total_kW": 91.365,
-          "vent_L_s": 9558.0,
-          "Qh_kW": 55.681,
-          "Qc_kW": 111.115,
-          "slab_kW": 3.252,
-          "gains_kW": 39.984,
+          "light_kW": 28.1,
+          "vent_kW": 39.827,
+          "envelope_kW": 23.412,
+          "total_kW": 91.339,
+          "vent_L_s": 9579.6,
+          "Qh_kW": 55.41,
+          "Qc_kW": 111.006,
+          "slab_kW": 3.147,
+          "gains_kW": 40.075,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 494.024,
-          "peak_c_kW": 439.152
+          "peak_h_kW": 492.467,
+          "peak_c_kW": 438.524
         }
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 91.3652,
+        "value": 91.3395,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 39.74 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.59 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.7 kW and cooling 111.1 kW thermal average after internal gains 40.0 kW and slab edge 3.25 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 31932 m2; lighting 28.10 kW (IECC 2021 C405, 10 % lit), ventilation 39.83 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.41 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.4 kW and cooling 111.0 kW thermal average after internal gains 40.1 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       }
     },
     {
@@ -8188,6 +8212,131 @@
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
+      }
+    },
+    {
+      "unit_id": "BLACK_DEWATER",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "digest",
+      "tags": [],
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": []
+        },
+        "duty": "X-SAN-01 AQS-DUTY-063. Sheet docs-authority/sizing/SANITATION.md.",
+        "presence": "present",
+        "internals": "pitched-blade agitator",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "size_mm": [
+          800,
+          600,
+          900
+        ]
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.0075,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      }
+    },
+    {
+      "unit_id": "BLACK_PASTEUR",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "digest",
+      "tags": [],
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": []
+        },
+        "duty": "X-SAN-01 AQS-DUTY-063. Sheet docs-authority/sizing/SANITATION.md.",
+        "presence": "present",
+        "internals": "pitched-blade agitator",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "design": {
+          "V_work_L": 5.206599999999998,
+          "V_L": 6.508249999999997,
+          "D_mm": 250,
+          "H_mm": 200,
+          "wall_mm": 2.0
+        },
+        "size_mm": [
+          550,
+          550,
+          700
+        ]
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.0622,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      }
+    },
+    {
+      "unit_id": "BLACK_ALK_HOLD",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "digest",
+      "tags": [],
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": []
+        },
+        "duty": "X-SAN-01 AQS-DUTY-063. Sheet docs-authority/sizing/SANITATION.md.",
+        "presence": "present",
+        "internals": "pitched-blade agitator",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "design": {
+          "V_work_L": 20.826399999999992,
+          "V_L": 23.140444444444437,
+          "D_mm": 350,
+          "H_mm": 280,
+          "wall_mm": 4.0
+        },
+        "size_mm": [
+          1800,
+          650,
+          780
+        ]
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
       }
     }
   ],
@@ -9576,10 +9725,10 @@
       "phase": "S",
       "carries": "organics",
       "rate": {
-        "value": 0.8,
+        "value": 0.0344,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 \u00a712)"
+        "note": "X-SAN-01 AQS-DUTY-063. Afterburner feed held at the AQS-DUTY-008 design; grow-bed organics to the afterburner reduced by the sanitation cake and biogas (0.766 kg/d), retained in GROW_BED (A-M-118)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "OIL",
@@ -9593,10 +9742,10 @@
       "phase": "L/S",
       "carries": "grey/solids",
       "rate": {
-        "value": 258.6599999999997,
+        "value": 240.2336,
         "unit": "kg/d",
         "status": "study",
-        "note": "Grey less the 80 kg/d that now passes through HAB_WASH."
+        "note": "X-SAN-01 AQS-DUTY-063. Grey less the flush water drawn by the vacuum toilets (returned as released liquor IA-BLK-GREY)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "NUT",
@@ -11106,7 +11255,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 234.1775,
+        "value": 234.1518,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -11988,14 +12137,14 @@
       "from_unit_id": "HABITATION",
       "to_unit_id": "COMPOST_TOILET",
       "phase": "S/L",
-      "carries": "feces",
+      "carries": "faeces (compost-toilet share)",
       "rate": {
-        "value": 0.8,
+        "value": 0.128,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "X-SAN-01 AQS-DUTY-063. 4 x 0.128 kg/d x 0.25 [ROSE2015]."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -12160,7 +12309,7 @@
       "phase": "S/L",
       "carries": "compost",
       "rate": {
-        "value": 141.150288,
+        "value": 140.2503,
         "unit": "kg/d",
         "status": "study",
         "note": "Compost passes the added trim."
@@ -14555,14 +14704,14 @@
       "from_unit_id": "HABITATION",
       "to_unit_id": "COMPOST_TOILET",
       "phase": "S",
-      "carries": "urine",
+      "carries": "urine (compost-toilet share)",
       "rate": {
-        "value": 1.2,
+        "value": 1.42,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+        "note": "X-SAN-01 AQS-DUTY-063. 4 x 1.42 kg/d x 0.25 [ROSE2015]."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -14587,34 +14736,34 @@
     {
       "stream_id": "IA-TOIL-SOL",
       "from_unit_id": "COMPOST_TOILET",
-      "to_unit_id": "COMPOST",
+      "to_unit_id": "BLACK_DIGEST",
       "phase": "S",
-      "carries": "covered solids",
+      "carries": "compost-toilet solids and cover to the barrier train (not to FARM)",
       "rate": {
-        "value": 0.9,
+        "value": 0.528,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+        "note": "X-SAN-01 AQS-DUTY-063. Owner decision: compost-toilet output through the same barriers."
       },
       "from_sector_id": "HAB",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-TOIL-URN",
       "from_unit_id": "COMPOST_TOILET",
-      "to_unit_id": "BIOFILTER",
+      "to_unit_id": "BLACK_PASTEUR",
       "phase": "S",
-      "carries": "urine to the biofilter",
+      "carries": "compost-toilet urine to pasteurisation",
       "rate": {
-        "value": 1.3,
+        "value": 1.42,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+        "note": "X-SAN-01 AQS-DUTY-063."
       },
       "from_sector_id": "HAB",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15776,18 +15925,18 @@
     },
     {
       "stream_id": "IA-URN-STR",
-      "from_unit_id": "COMPOST_TOILET",
+      "from_unit_id": "BLACK_ALK_HOLD",
       "to_unit_id": "STRUVITE",
       "phase": "S",
-      "carries": "urine slip",
+      "carries": "released liquor to struvite (after test)",
       "rate": {
         "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+        "note": "X-SAN-01 AQS-DUTY-063. Batch release."
       },
-      "from_sector_id": "HAB",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -21017,7 +21166,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 91.3652,
+        "value": 91.3395,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -21159,6 +21308,312 @@
         "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "OIL",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "IA-BLK-01",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "L",
+      "carries": "vacuum-toilet blackwater",
+      "rate": {
+        "value": 19.644,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Excreta 4.644 + flush 15.00 kg/d [ROSE2015, LARSEN2013]."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-GAS",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "G",
+      "carries": "digester biogas, flared in the afterburner",
+      "rate": {
+        "value": 0.0986,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. VS destroyed 0.0986 kg/d [METCALF5]."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-DIG",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "BLACK_DEWATER",
+      "phase": "L",
+      "carries": "thermophilic digestate",
+      "rate": {
+        "value": 20.0734,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-CAKE",
+      "from_unit_id": "BLACK_DEWATER",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "S",
+      "carries": "dewatered cake in sealed bins to incineration",
+      "rate": {
+        "value": 0.667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. TS 0.2 [METCALF5]."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-CEN",
+      "from_unit_id": "BLACK_DEWATER",
+      "to_unit_id": "BLACK_PASTEUR",
+      "phase": "L",
+      "carries": "centrate",
+      "rate": {
+        "value": 19.4064,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-PAST",
+      "from_unit_id": "BLACK_PASTEUR",
+      "to_unit_id": "BLACK_ALK_HOLD",
+      "phase": "L",
+      "carries": "pasteurised liquor",
+      "rate": {
+        "value": 20.8264,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. 70 C >= 30 min [EPA503]."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-NAOH",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "BLACK_ALK_HOLD",
+      "phase": "L",
+      "carries": "NaOH for the standby alkaline barrier (normally zero)",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Standby: 0.167 kg/d NaOH when run."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-BIO",
+      "from_unit_id": "BLACK_ALK_HOLD",
+      "to_unit_id": "BIOFILTER",
+      "phase": "L",
+      "carries": "released liquor to the biofilter (after test)",
+      "rate": {
+        "value": 1.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Batch release."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-NUT",
+      "from_unit_id": "BLACK_ALK_HOLD",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "L",
+      "carries": "released liquor to nutrient dosing (after test)",
+      "rate": {
+        "value": 0.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Batch release; replaces the compost-toilet solids that went to COMPOST."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "NUT",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-BLK-GREY",
+      "from_unit_id": "BLACK_ALK_HOLD",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "L",
+      "carries": "released liquor to grey treatment (after test)",
+      "rate": {
+        "value": 18.4264,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Balance."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-BLACK_DIGEST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 0.1052,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Equals node continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "SQ-BLACK_DIGEST",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 0.1052,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "SF-BLACK_DEWATER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BLACK_DEWATER",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 0.0075,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Equals node continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "SQ-BLACK_DEWATER",
+      "from_unit_id": "BLACK_DEWATER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 0.0075,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "SF-BLACK_PASTEUR",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BLACK_PASTEUR",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 0.0622,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Equals node continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "SQ-BLACK_PASTEUR",
+      "from_unit_id": "BLACK_PASTEUR",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 0.0622,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "SF-BLACK_ALK_HOLD",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BLACK_ALK_HOLD",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063. Equals node continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "SQ-BLACK_ALK_HOLD",
+      "from_unit_id": "BLACK_ALK_HOLD",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-SAN-01 AQS-DUTY-063."
+      },
+      "from_sector_id": "WTR",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"

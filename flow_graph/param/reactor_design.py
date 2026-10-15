@@ -108,7 +108,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 ## 3. Not designed here
 
 - LEACH_CSTR_1: AQS-DUTY-050, models/mfg/LEACH_CSTR_1 (in-house, CPVC).
-- BLACK_DIGEST: no mass throughput on the graph (habitation uses compost toilets). No volume is invented; removal of the node is an owner review item.
+- BLACK_DIGEST: designed in AQS-DUTY-063 (X-SAN-01 multi-barrier sanitation train, owner decision 2026-10-15).
 - MEOH_FERM and MEOH_SYNTH: deferred methanol train. Designed when the train is activated (X-MFG-31 follow-up item); MEOH_SYNTH needs a 50 bar, 250 C pressure design to ASME VIII-1 and API 941.
 """
     open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN.md'), 'w').write(md)
