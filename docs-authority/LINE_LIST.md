@@ -60,24 +60,24 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-ESS-ZNBR2-SRC | PV_ARRAY | SOL_ARK_60K | cable | — | — | 15.1 | PV_ARRAY → SOL_ARK_60K, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ESS-ZNBR2-CHG | SOL_ARK_60K | ZNBR2 | cable | — | — | 8.8 | SOL_ARK_60K → ZNBR2, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ESS-ZNBR2-DIS | ZNBR2 | SOL_ARK_60K | cable | — | — | 8.8 | ZNBR2 → SOL_ARK_60K, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| IA-EW-01 | EW_1 | EW_2 | DN15 | P2 | hot leach liquor | 1.4 | EW_1 → EW_2, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-02 | EW_2 | EW_3 | DN15 | P1 | acid or brine, at or below 60 C | 6.8 | EW_2 → EW_3, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-03 | EW_3 | EW_4 | DN15 | P1 | acid or brine, at or below 60 C | 1.4 | EW_3 → EW_4, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-04 | LEACH_CSTR_1 | EW_1 | DN15 | P2 | hot leach liquor | 3.2 | LEACH_CSTR_1 → EW_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-05 | EW_5 | EW_6 | DN15 | P1 | acid or brine, at or below 60 C | 1.4 | EW_5 → EW_6, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-06 | EW_6 | EW_7 | DN15 | P1 | acid or brine, at or below 60 C | 4.2 | EW_6 → EW_7, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-07 | EW_7 | EW_8 | DN15 | P1 | acid or brine, at or below 60 C | 1.4 | EW_7 → EW_8, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-08 | EW_8 | EW_9 | DN15 | P1 | acid or brine, at or below 60 C | 4.8 | EW_8 → EW_9, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-09 | EW_9 | POLISH_BANK | DN15 | P1 | acid or brine, at or below 60 C | 15.6 | EW_9 → POLISH_BANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-EW-10 | EW_4 | EW_5 | DN15 | P1 | acid or brine, at or below 60 C | 1.4 | EW_4 → EW_5, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-01 | EW_1 | EW_2 | DN15 | P2 | hot leach liquor | 3.6 | EW_1 → EW_2, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-02 | EW_2 | EW_3 | DN15 | P1 | acid or brine, at or below 60 C | 5.0 | EW_2 → EW_3, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-03 | EW_3 | EW_4 | DN15 | P1 | acid or brine, at or below 60 C | 2.6 | EW_3 → EW_4, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-04 | LEACH_CSTR_1 | EW_1 | DN15 | P2 | hot leach liquor | 5.1 | LEACH_CSTR_1 → EW_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-05 | EW_5 | EW_6 | DN15 | P1 | acid or brine, at or below 60 C | 1.2 | EW_5 → EW_6, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-06 | EW_6 | EW_7 | DN15 | P1 | acid or brine, at or below 60 C | 8.6 | EW_6 → EW_7, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-07 | EW_7 | EW_8 | DN15 | P1 | acid or brine, at or below 60 C | 9.8 | EW_7 → EW_8, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-08 | EW_8 | EW_9 | DN15 | P1 | acid or brine, at or below 60 C | 6.5 | EW_8 → EW_9, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-EW-09 | EW_9 | POLISH_BANK | DN15 | P1 | acid or brine, at or below 60 C | 13.8 | EW_9 → POLISH_BANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-EW-10 | EW_4 | EW_5 | DN15 | P1 | acid or brine, at or below 60 C | 5.3 | EW_4 → EW_5, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-GLASS-01 | GLASS_RINSE | GLASS_MILL | solids | — | — | 1.4 | GLASS_RINSE → GLASS_MILL, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-GLASS-02 | GLASS_MILL | GLASS_BURNOUT | solids | — | — | 3.6 | GLASS_MILL → GLASS_BURNOUT, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-GLASS-03 | GLASS_BURNOUT | GLASS_DIGEST | solids | — | — | 9.8 | GLASS_BURNOUT → GLASS_DIGEST, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-HDR-H2-01 | EW_1 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 8.3 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-HDR-H2-01 | EW_1 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | IA-HDR-H2-02 | HDR_H2 | H2_DRYER | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 26.7 | HDR_H2 → H2_DRYER, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-HDR-H2-03 | EW_2 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 6.9 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-HDR-H2-04 | EW_9 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 5.4 | EW_9 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-HX8 | EW_1 | HX8 | DN25 | P3 | oxidizer, HF or PVDF unit | 6.5 | EW_1 → HX8, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
+| IA-HDR-H2-03 | EW_2 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-HDR-H2-04 | EW_9 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 9.7 | EW_9 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-HX8 | EW_1 | HX8 | DN25 | P3 | oxidizer, HF or PVDF unit | 7.4 | EW_1 → HX8, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
 | IA-OIL-01 | OIL_DRYER | OIL_PYRO | solids | — | — | 0.0 | OIL_DRYER → OIL_PYRO, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-OIL-02 | OIL_PYRO | OIL_FRAC | DN15 | P1 | aqueous process, default thermoplastic | 0.0 | OIL_PYRO → OIL_FRAC, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | DN15 | P3 | process vent gas | 5.8 | OIL_FRAC → NCG_HEADER, orthogonal × 1.2 (placement_report; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
@@ -195,15 +195,15 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-Q4-LIFE | Q4_BUS | HABITATION | DN25 | M1 | Q3/Q4 water loop | 33.0 | Q4_BUS → HABITATION, orthogonal × 1.2 (duty origin; placement_report) | heat-loop default DN25 (study) |
 | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | DN15 | F1 | flue or acid gas | 19.5 | AFTERBURNER → AFTERBURNER_FLUE, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ZNBR-MU | LEACH_CSTR_1 | ZNBR2 | DN15 | P2 | hot leach liquor | 19.6 | LEACH_CSTR_1 → ZNBR2, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-EW-MET-1 | EW_1 | MFG_SHOP | solids | — | — | 29.0 | EW_1 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-2 | EW_2 | MFG_SHOP | solids | — | — | 27.6 | EW_2 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-3 | EW_3 | MFG_SHOP | solids | — | — | 31.3 | EW_3 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-4 | EW_4 | MFG_SHOP | solids | — | — | 29.9 | EW_4 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-5 | EW_5 | MFG_SHOP | solids | — | — | 28.4 | EW_5 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-6 | EW_6 | MFG_SHOP | solids | — | — | 27.0 | EW_6 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-7 | EW_7 | MFG_SHOP | solids | — | — | 22.8 | EW_7 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-8 | EW_8 | MFG_SHOP | solids | — | — | 21.3 | EW_8 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-MET-9 | EW_9 | MFG_SHOP | solids | — | — | 26.1 | EW_9 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-1 | EW_1 | MFG_SHOP | solids | — | — | 29.8 | EW_1 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-2 | EW_2 | MFG_SHOP | solids | — | — | 26.5 | EW_2 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-3 | EW_3 | MFG_SHOP | solids | — | — | 21.5 | EW_3 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-4 | EW_4 | MFG_SHOP | solids | — | — | 18.8 | EW_4 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-5 | EW_5 | MFG_SHOP | solids | — | — | 24.1 | EW_5 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-6 | EW_6 | MFG_SHOP | solids | — | — | 22.9 | EW_6 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-7 | EW_7 | MFG_SHOP | solids | — | — | 27.9 | EW_7 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-8 | EW_8 | MFG_SHOP | solids | — | — | 21.7 | EW_8 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-MET-9 | EW_9 | MFG_SHOP | solids | — | — | 21.5 | EW_9 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-POL-CAKE | POLISH_BANK | MFG_SHOP | solids | — | — | 14.1 | POLISH_BANK → MFG_SHOP, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-AB-AIR | HDR_N2 | AFTERBURNER_FLUE | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 46.3 | HDR_N2 → AFTERBURNER_FLUE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | DN20 | F1 | flue or acid gas | 35.9 | FLUE_KO → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
@@ -302,7 +302,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | solids | — | — | 6.1 | CRYO_CO2 → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-MEOH-COND | MEOH_COND | ROOF_TANK | solids | — | — | 44.2 | MEOH_COND → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-H2-IN | H2_DRYER | HDR_H2 | solids | — | — | 26.7 | H2_DRYER → HDR_H2, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-EW-SHEET | EW_9 | MET_MELT | solids | — | — | 26.1 | EW_9 → MET_MELT, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-EW-SHEET | EW_9 | MET_MELT | solids | — | — | 21.5 | EW_9 → MET_MELT, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-PHOS-SRC | LEACH_CSTR_1 | WS_PHOS | solids | — | — | 29.7 | LEACH_CSTR_1 → WS_PHOS, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-FERM-RES | MEOH_FERM | DIGESTER | solids | — | — | 42.2 | MEOH_FERM → DIGESTER, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-MELT-MILL | MET_MELT | COLD_MILL | solids | — | — | 0.0 | MET_MELT → COLD_MILL, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
@@ -313,10 +313,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LEACH-FLUE | LEACH_CSTR_1 | FLUE_KO | DN50 | P2 | hot leach liquor | 23.2 | LEACH_CSTR_1 → FLUE_KO, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LEACH-HOP | LEACH_CSTR_1 | HOPPER | DN50 | P2 | hot leach liquor | 9.7 | LEACH_CSTR_1 → HOPPER, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | DN50 | P2 | hot leach liquor | 25.7 | LEACH_CSTR_1 → CRYO_ASU, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1100; min DN50 |
-| IA-EW1-H2 | EW_1 | HDR_H2 | DN50 | P2 | hot leach liquor | 8.3 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EW2-H2 | EW_2 | HDR_H2 | DN50 | P1 | acid or brine, at or below 60 C | 6.9 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EW4-H2 | EW_4 | HDR_H2 | DN50 | P1 | acid or brine, at or below 60 C | 12.3 | EW_4 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EW4-N2 | EW_4 | HDR_N2 | DN50 | P1 | acid or brine, at or below 60 C | 21.2 | EW_4 → HDR_N2, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW1-H2 | EW_1 | HDR_H2 | DN50 | P2 | hot leach liquor | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW2-H2 | EW_2 | HDR_H2 | DN50 | P1 | acid or brine, at or below 60 C | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW4-H2 | EW_4 | HDR_H2 | DN50 | P1 | acid or brine, at or below 60 C | 12.4 | EW_4 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW4-N2 | EW_4 | HDR_N2 | DN50 | P1 | acid or brine, at or below 60 C | 23.8 | EW_4 → HDR_N2, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-O2-MAKE | CRYO_O2 | HDR_O2 | DN50 | P1 | aqueous process, default thermoplastic | 31.0 | CRYO_O2 → HDR_O2, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-DIG-FIX | DIGESTER | NUTRIENT_DOSE | DN50 | P5 | water | 28.7 | DIGESTER → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-FC-FIX | FUEL_CELL | NOX_SCRUB | DN50 | P2 | hot leach liquor | 14.0 | FUEL_CELL → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
@@ -520,8 +520,8 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LITHO-OUT | LITHO_STUB | OIL_FRAC | solids | — | — | 25.1 | LITHO_STUB → OIL_FRAC, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-BLOW-IN | PROD_C11_C18 | BLOW_MOLD | solids | — | — | 33.5 | PROD_C11_C18 → BLOW_MOLD, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-BLOW-OUT | BLOW_MOLD | MFG_SHOP | solids | — | — | 7.1 | BLOW_MOLD → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-COAT-IN | EW_1 | ELECTRODE_COAT | solids | — | — | 31.9 | EW_1 → ELECTRODE_COAT, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
-| IA-COAT-OUT | ELECTRODE_COAT | EW_1 | solids | — | — | 31.9 | ELECTRODE_COAT → EW_1, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-COAT-IN | EW_1 | ELECTRODE_COAT | solids | — | — | 32.7 | EW_1 → ELECTRODE_COAT, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-COAT-OUT | ELECTRODE_COAT | EW_1 | solids | — | — | 32.7 | ELECTRODE_COAT → EW_1, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-PV-IN | WS_DOPE | SOLAR_PV_CELL | solids | — | — | 4.9 | WS_DOPE → SOLAR_PV_CELL, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-PV-OUT | SOLAR_PV_CELL | WAFER_FAB | solids | — | — | 2.6 | SOLAR_PV_CELL → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-EXP-IN | CRYO_ASU | EXPANDER | solids | — | — | 6.4 | CRYO_ASU → EXPANDER, orthogonal × 1.2 (placement_study (STUDY); duty origin) | solids: conveyor, bin or hand transfer; not piped |
@@ -551,24 +551,24 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-FLUE-QUENCH | ROOF_TANK | FLUE_KO | DN15 | P5 | quench water | 34.0 | ROOF_TANK → FLUE_KO, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-PEROX-H2O | ROOF_TANK | WS_PEROX | DN15 | P3 | oxidizer, HF or PVDF unit | 21.3 | ROOF_TANK → WS_PEROX, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-BASE-PPT | BMED_BASE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | BMED_BASE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| S17-EW | SOL_ARK_60K | RECT_EW | cable | — | — |  | SOL_ARK_60K → RECT_EW, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| S17-EW | SOL_ARK_60K | RECT_EW | cable | — | — | 28.4 | SOL_ARK_60K → RECT_EW, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | S17-BMED | SOL_ARK_60K | BMED_ACID | cable | — | — | 36.1 | SOL_ARK_60K → BMED_ACID, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
-| IA-RECT-EW-LOSS | RECT_EW | HEAT_SINK | cable | — | — |  | RECT_EW → HEAT_SINK, position missing for RECT_EW, HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_1 | RECT_EW | EW_1 | cable | — | — |  | RECT_EW → EW_1, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-RECT-EW-LOSS | RECT_EW | HEAT_SINK | cable | — | — |  | RECT_EW → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_1 | RECT_EW | EW_1 | cable | — | — | 6.3 | RECT_EW → EW_1, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_1 | EW_1 | HEAT_SINK | cable | — | — |  | EW_1 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_2 | RECT_EW | EW_2 | cable | — | — |  | RECT_EW → EW_2, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_2 | RECT_EW | EW_2 | cable | — | — | 2.9 | RECT_EW → EW_2, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_2 | EW_2 | HEAT_SINK | cable | — | — |  | EW_2 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_3 | RECT_EW | EW_3 | cable | — | — |  | RECT_EW → EW_3, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_3 | RECT_EW | EW_3 | cable | — | — | 3.5 | RECT_EW → EW_3, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_3 | EW_3 | HEAT_SINK | cable | — | — |  | EW_3 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_4 | RECT_EW | EW_4 | cable | — | — |  | RECT_EW → EW_4, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_4 | RECT_EW | EW_4 | cable | — | — | 6.2 | RECT_EW → EW_4, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_4 | EW_4 | HEAT_SINK | cable | — | — |  | EW_4 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_5 | RECT_EW | EW_5 | cable | — | — |  | RECT_EW → EW_5, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_5 | RECT_EW | EW_5 | cable | — | — | 4.2 | RECT_EW → EW_5, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_5 | EW_5 | HEAT_SINK | cable | — | — |  | EW_5 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_6 | RECT_EW | EW_6 | cable | — | — |  | RECT_EW → EW_6, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_6 | RECT_EW | EW_6 | cable | — | — | 5.4 | RECT_EW → EW_6, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_6 | EW_6 | HEAT_SINK | cable | — | — |  | EW_6 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_7 | RECT_EW | EW_7 | cable | — | — |  | RECT_EW → EW_7, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_7 | RECT_EW | EW_7 | cable | — | — | 4.7 | RECT_EW → EW_7, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_7 | EW_7 | HEAT_SINK | cable | — | — |  | EW_7 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_8 | RECT_EW | EW_8 | cable | — | — |  | RECT_EW → EW_8, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_8 | RECT_EW | EW_8 | cable | — | — | 6.6 | RECT_EW → EW_8, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_8 | EW_8 | HEAT_SINK | cable | — | — |  | EW_8 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| IA-DC-EW_9 | RECT_EW | EW_9 | cable | — | — |  | RECT_EW → EW_9, position missing for RECT_EW | electrical: cable schedule X-ELS-06 |
+| IA-DC-EW_9 | RECT_EW | EW_9 | cable | — | — | 3.5 | RECT_EW → EW_9, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EWQ-EW_9 | EW_9 | HEAT_SINK | cable | — | — |  | EW_9 → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |

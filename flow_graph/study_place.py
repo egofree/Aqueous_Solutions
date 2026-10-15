@@ -19,9 +19,11 @@ EXTRA=[{'block_id':'FARM_AQ','level':'L-2','origin_mm':[18000,4000],'size_mm':[6
 GROW={('FARM','tank'):'FARM_AQ'}
 def boxes(seed,rep):
     B={}
+    BLK={tuple(b['size_mm'][:2]) for b in seed['blocks']}
     for r in seed['units']+rep.get('moves',[])+rep.get('create_moves',[])+rep.get('apply_moves',[]):
         o,z=r.get('origin_mm'),r.get('size_mm')
         if o and z and len(z)>=2:
+            if r['unit_id'] in B and tuple(z[:2]) in BLK: continue   # keep a real envelope over a block-sized placeholder
             B[r['unit_id']]=(r.get('level'),o[0],o[1],z[0],z[1])
             if len(z)>2 and z[2]>2250-CLR: B[r['unit_id']+'#T2']=((r.get('level') or '')+'T2',o[0],o[1],z[0],z[1])
     return B

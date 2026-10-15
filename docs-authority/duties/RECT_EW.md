@@ -10,12 +10,12 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. No wetted alloy. Conductors are copper; DC bars per AQS-ELEC-004 §2.
 
-4. Nozzles. No origin yet; placed with the EW aisle (X-RSZ-03). Conductor connections only: S17-EW AC in; IA-DC-EW_1 … IA-DC-EW_9 DC out.
+4. Nozzles. Origin 6500, 5400, -6000 mm. Size 2400 × 800 × 2000 mm (X-RSZ-03). Conductor connections only: S17-EW AC in; IA-DC-EW_1 … IA-DC-EW_9 DC out.
 
 5. Instruments. Current and voltage per channel. Current limit 1.05 × channel rating; insulation monitor (AQS-ELEC-006).
 
 6. Relief. None. Not a pressure unit.
 
-7. Code. Shop. Not stamped. No envelope file yet.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/RECT_EW.stl`.
 
 8. Open items. Vendor channel data.

@@ -13,12 +13,12 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 3. Material. Cathode titanium Grade 2, 3 mm. Anode titanium mesh, 1.5 mm, mixed-metal-oxide coated (AQS-STD-002 section 9). Tank and racks PVC/FRP; 316L frame withdrawn (AQS-STD-002 M3). Corrosion allowance 0 mm on the titanium; hydride check per AQS-STD-002 section 9. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001). Cell-to-cell transfer by free-fall launder with air break; floating DC; protection current on trip (AQS-STD-002 section 11).
 
-4. Nozzles. Origin 4400, 5300, -6000 mm. Size 600 × 420 × 650 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
-- N1, IA-EW-01, inlet, -Y face center, 4700, 5300, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
-- N2, IA-EW-02, outlet, +Y face center, 4700, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
-- N3, IA-EW-MET-2, outlet, +Y face center, 4700, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
-- N4, IA-EW2-H2, outlet, +Y face center, 4700, 5720, -5675 mm. Height 325 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
-- N5, IA-HDR-H2-03, outlet, +Y face center, 4700, 5720, -5675 mm. Height 325 mm from the bottom. Rating conductor. Not a hose.
+4. Nozzles. Origin 6100, 6800, -6000 mm. Size 2270 × 720 × 760 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
+- N1, IA-EW-01, inlet, -Y face center, 7235, 6800, -5620 mm. Height 380 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N2, IA-EW-02, outlet, +Y face center, 7235, 7520, -5620 mm. Height 380 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N3, IA-EW-MET-2, outlet, +Y face center, 7235, 7520, -5620 mm. Height 380 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, IA-EW2-H2, outlet, +Y face center, 7235, 7520, -5620 mm. Height 380 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N5, IA-HDR-H2-03, outlet, +Y face center, 7235, 7520, -5620 mm. Height 380 mm from the bottom. Rating conductor. Not a hose.
 5. Instruments. Cell voltage, current, liquor temperature. High temperature or low flow trips the rectifier.
 
 6. Relief. Atmospheric. The vent is IA-EW2-H2 to HDR_H2. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.

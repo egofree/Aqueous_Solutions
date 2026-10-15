@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "H",
+  "revision": "I",
   "date": "2026-10-07",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
@@ -1386,175 +1386,383 @@
     {
       "unit_id": "LEACH_CSTR_1",
       "level": "L-1",
-      "origin_mm": [600, 5300, -6000],
-      "size_mm": [2000, 1200, 1400],
+      "origin_mm": [
+        600,
+        5300,
+        -6000
+      ],
+      "size_mm": [
+        2000,
+        1200,
+        1400
+      ],
       "source": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1."
-    },
-    {
-      "unit_id": "EW_1",
-      "level": "L-1",
-      "origin_mm": [3200, 5300, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1."
-    },
-    {
-      "unit_id": "EW_2",
-      "level": "L-1",
-      "origin_mm": [4400, 5300, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1."
-    },
-    {
-      "unit_id": "EW_9",
-      "level": "L-1",
-      "origin_mm": [5600, 5300, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1."
-    },
-    {
-      "unit_id": "EW_3",
-      "level": "L-1",
-      "origin_mm": [0, 4000, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C5. Node envelope in LEACH_EW."
-    },
-    {
-      "unit_id": "EW_4",
-      "level": "L-1",
-      "origin_mm": [1200, 4000, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C5. Node envelope in LEACH_EW."
-    },
-    {
-      "unit_id": "EW_5",
-      "level": "L-1",
-      "origin_mm": [2400, 4000, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C5. Node envelope in LEACH_EW."
-    },
-    {
-      "unit_id": "EW_6",
-      "level": "L-1",
-      "origin_mm": [3600, 4000, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C5. Node envelope in LEACH_EW."
-    },
-    {
-      "unit_id": "EW_7",
-      "level": "L-1",
-      "origin_mm": [7100, 4000, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C5. Node envelope in LEACH_EW."
-    },
-    {
-      "unit_id": "EW_8",
-      "level": "L-1",
-      "origin_mm": [8300, 4000, -6000],
-      "size_mm": [600, 420, 650],
-      "source": "C5. Node envelope in LEACH_EW."
     },
     {
       "unit_id": "EXPANDER",
       "level": "L-1",
-      "origin_mm": [17600, 6000, -6000],
-      "size_mm": [600, 400, 500],
+      "origin_mm": [
+        17600,
+        6000,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        400,
+        500
+      ],
       "source": "C5. Node envelope in the CRYO block."
     },
     {
       "unit_id": "SIC_FURNACE",
       "level": "L-1",
-      "origin_mm": [5900, 12000, -6000],
-      "size_mm": [1500, 1500, 1800],
+      "origin_mm": [
+        5900,
+        12000,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1500,
+        1800
+      ],
       "source": "C5. Node envelope in OIL_GLASS."
     },
     {
       "unit_id": "AZOLLA_BED",
       "level": "L1",
-      "origin_mm": [12000, 0, 6000],
-      "size_mm": [5000, 18000, 400],
+      "origin_mm": [
+        12000,
+        0,
+        6000
+      ],
+      "size_mm": [
+        5000,
+        18000,
+        400
+      ],
       "source": "C5. Issued envelope 18000 x 5000 x 400 mm. Long side along the farm block. Not shrunk."
     },
     {
       "unit_id": "BIOFILTER",
       "level": "L1",
-      "origin_mm": [17600, 0, 6000],
-      "size_mm": [3000, 5000, 1200],
+      "origin_mm": [
+        17600,
+        0,
+        6000
+      ],
+      "size_mm": [
+        3000,
+        5000,
+        1200
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "DUAL_ROOT",
       "level": "L1",
-      "origin_mm": [17600, 5600, 6000],
-      "size_mm": [6000, 2000, 600],
+      "origin_mm": [
+        17600,
+        5600,
+        6000
+      ],
+      "size_mm": [
+        6000,
+        2000,
+        600
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "NFT",
       "level": "L1",
-      "origin_mm": [17600, 8200, 6000],
-      "size_mm": [6000, 1000, 300],
+      "origin_mm": [
+        17600,
+        8200,
+        6000
+      ],
+      "size_mm": [
+        6000,
+        1000,
+        300
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "MISTER",
       "level": "L1",
-      "origin_mm": [17600, 9800, 6000],
-      "size_mm": [4000, 1000, 800],
+      "origin_mm": [
+        17600,
+        9800,
+        6000
+      ],
+      "size_mm": [
+        4000,
+        1000,
+        800
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "SEED_BANK",
       "level": "L1",
-      "origin_mm": [21200, 0, 6000],
-      "size_mm": [2000, 2000, 2200],
+      "origin_mm": [
+        21200,
+        0,
+        6000
+      ],
+      "size_mm": [
+        2000,
+        2000,
+        2200
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "ASH",
       "level": "L1",
-      "origin_mm": [21200, 2600, 6000],
-      "size_mm": [1000, 1000, 1500],
+      "origin_mm": [
+        21200,
+        2600,
+        6000
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "STRUVITE",
       "level": "L1",
-      "origin_mm": [22800, 2600, 6000],
-      "size_mm": [1000, 1000, 1200],
+      "origin_mm": [
+        22800,
+        2600,
+        6000
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1200
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "IODIDE",
       "level": "L1",
-      "origin_mm": [21200, 4200, 6000],
-      "size_mm": [500, 500, 800],
+      "origin_mm": [
+        21200,
+        4200,
+        6000
+      ],
+      "size_mm": [
+        500,
+        500,
+        800
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "ETOH_STILL",
       "level": "L1",
-      "origin_mm": [22300, 4200, 6000],
-      "size_mm": [400, 400, 1500],
+      "origin_mm": [
+        22300,
+        4200,
+        6000
+      ],
+      "size_mm": [
+        400,
+        400,
+        1500
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "QUAT",
       "level": "L1",
-      "origin_mm": [23300, 4200, 6000],
-      "size_mm": [400, 400, 800],
+      "origin_mm": [
+        23300,
+        4200,
+        6000
+      ],
+      "size_mm": [
+        400,
+        400,
+        800
+      ],
       "source": "C5. Node envelope in the farm block."
     },
     {
       "unit_id": "BUOH_STILL",
       "level": "L1",
-      "origin_mm": [22200, 9800, 6000],
-      "size_mm": [300, 300, 1200],
+      "origin_mm": [
+        22200,
+        9800,
+        6000
+      ],
+      "size_mm": [
+        300,
+        300,
+        1200
+      ],
       "source": "C5. Node envelope in the farm block."
+    },
+    {
+      "unit_id": "EW_9",
+      "level": "L-1",
+      "origin_mm": [
+        7100,
+        4000,
+        -6000
+      ],
+      "size_mm": [
+        2870,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 27); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_7",
+      "level": "L-1",
+      "origin_mm": [
+        3200,
+        5300,
+        -6000
+      ],
+      "size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "RECT_EW",
+      "level": "L-1",
+      "origin_mm": [
+        6500,
+        5400,
+        -6000
+      ],
+      "size_mm": [
+        2400,
+        800,
+        2000
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051, study cabinet); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_1",
+      "level": "L-1",
+      "origin_mm": [
+        3200,
+        6700,
+        -6000
+      ],
+      "size_mm": [
+        2270,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 21); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_2",
+      "level": "L-1",
+      "origin_mm": [
+        6100,
+        6800,
+        -6000
+      ],
+      "size_mm": [
+        2270,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 21); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_3",
+      "level": "L-1",
+      "origin_mm": [
+        9500,
+        5400,
+        -6000
+      ],
+      "size_mm": [
+        970,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 8); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_4",
+      "level": "L-1",
+      "origin_mm": [
+        10600,
+        4000,
+        -6000
+      ],
+      "size_mm": [
+        370,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_5",
+      "level": "L-1",
+      "origin_mm": [
+        9000,
+        6800,
+        -6000
+      ],
+      "size_mm": [
+        370,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_6",
+      "level": "L-1",
+      "origin_mm": [
+        10000,
+        6800,
+        -6000
+      ],
+      "size_mm": [
+        370,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_8",
+      "level": "L-1",
+      "origin_mm": [
+        11000,
+        6800,
+        -6000
+      ],
+      "size_mm": [
+        370,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
     }
   ],
   "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",
   "notes_rev_g": "2026-10-07, graph Rev J. Q1_A..Q4_B rows reissued: the Rev F study origins (ladder A at x 6000, B at x 12000) collided with LEACH_CSTR_1, BMED_REGEN, SALT_FEED, HVAC_Q4 and the process core on the placed copy. New origins: ladder A along the west wall (x 1200/2700/4200/5700, y 9000), ladder B in the north-east bay (x 15000/16500/18000/19500, y 15000), all L-1 at z -6000, 1500 mm pitch. Checked against every solid on the placed copy and every seed box: >= 600 mm (maint_clear_mm) to equipment and walls, no overlap with corridors or fit-out. Issued envelope 800x800x1200 and store volumes unchanged. Cross-tie coils sized in AQS-DUTY-008 Rev B. GEO_ORC pad untouched. Plate-world origins; PROCESS_DX/DY not applied.",
   "notes_rev_h": "2026-10-07, graph Rev K. Heat-ladder stores stepped for gravity thermosyphons (AQS-DUTY-008 Rev C s14): Q1 z -6000, Q2 -5150, Q3 -4250, Q4 -3350 on both ladders; plan positions unchanged; Q4 top -2150, 1850 mm under the L0 slab soffit. New or moved rows for the Rev K solids: FLUE_KO (= FLUE_CAP), NOX_SCRUB, MEOH_COND, HX8, CONTINUOUS_RECYCLE, VCD_TRAIN, RELIEF_CRYO, REMIN, WS_PHOS, LITHO_STUB bench + LITHO_COAT/ALIGN/DEV, SOLAR_PV_CELL, ELECTRODE_COAT, BLOW_MOLD. Every row checked against every solid on the placed copy and every seed box: 0 intersections, >= 600 mm within a level (lines and group members: no overlap). GEO_ORC pad untouched. Record rows (fixed_feature, never written): CATCH_TANK, FLUE_KO (= FLUE_CAP), RELIEF_H2 (= H2_STACK bounding box). Plate-world origins; PROCESS_DX/DY not applied.",
   "notes_rev_c4": "Four node envelopes placed in LEACH_EW, z -6000, 600 mm clear: LEACH_CSTR_1 at 600, 5300; EW_1 at 3200, 5300; EW_2 at 4400, 5300; EW_9 at 5600, 5300. The other 39 block members have no envelope. No origin was written for them. The plate did not grow.",
-  "notes_rev_c5": "Twenty envelopes placed in the sector block. AZOLLA_BED keeps 18000 by 5000 by 400 mm with the long side on the farm block. CURTAIL and HEAT_SINK have envelopes and no GEO block, so they were not placed. Sixty-two others have no envelope. The plate did not grow."
+  "notes_rev_c5": "Twenty envelopes placed in the sector block. AZOLLA_BED keeps 18000 by 5000 by 400 mm with the long side on the farm block. CURTAIL and HEAT_SINK have envelopes and no GEO block, so they were not placed. Sixty-two others have no envelope. The plate did not grow.",
+  "notes_rev_i": "2026-10-15, X-RSZ-03. EW_1..EW_9 at sized envelopes 370-2670 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows."
 }
