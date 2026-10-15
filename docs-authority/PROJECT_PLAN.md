@@ -91,7 +91,7 @@ These stay named. They do not block a nozzle, a class, or a vent that the files 
 | EW-1 current | Reconciled by D3. The node is 5.263 kW, 2105 A at 2.5 V, and `POWER.md` copies it. Current efficiency 1.0 and 2.5 V are assumed. IA-E-RECT stays 4.57 kW and is named. |
 | `HEAT_LADDER_DUTIES.md` | Still the Rev K note. The graph is the duty. |
 | IA-HDR-H2-01, 03, 04 | 2.1333 kg/d, empty layer list. Outside the mass cut. |
-| EXPANDER `relief_mm` | 3.6 mm. Not recalculated at 550 kPa. Isentropic efficiency 70% is assumed. |
+| EXPANDER efficiency | Isentropic efficiency 70% is assumed. `relief_mm` 3.6 was checked by D4 at 550 kPa: 9.37 mm² required, 10.18 mm² installed. k, Z, and the absolute set basis are assumed. |
 | MVS flag | `mvs.mvs_criteria.loops_closed` stays false. |
 | No holdup basis | The duty says so. Envelope divided by flow is not used in its place. |
 | Not measured | The unit, the coat life, the methane fraction, the tray efficiency, the approach, or the coefficient. |
@@ -185,3 +185,5 @@ D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. The feed is not one materi
 D2 is the S08 split. Silicon is carried as entrained silicate, from the rate residual. It is not plated.
 
 D3 is the EW-1 current. The graph node is the one figure: 5.263 kW, 2105 A at 2.5 V. The bar is sized from the node, not the page.
+
+D4 is the expander relief. API 520 gas sizing at the 550 kPa set point, 10 % overpressure, blocked discharge at the edge rate. The 3.6 mm orifice meets it.

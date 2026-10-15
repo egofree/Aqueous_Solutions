@@ -14,8 +14,15 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N2, IA-EXP-OUT, outlet, +Y face center, 17900, 6400, -5750 mm. Height 250 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Inlet pressure, discharge pressure, and speed. Overspeed or high inlet pressure trips the drive.
 
-6. Relief. Set point 550 kPa, 110% of the 500 kPa inlet. Destination is CRYO_ASU, on IA-EXP-OUT, not the room. The node design_kPa is 550. relief_mm is 3.6 and was not resized for that set point.
+6. Relief. Set point 550 kPa, 110% of the 500 kPa inlet. Destination is CRYO_ASU, on IA-EXP-OUT, not the room. The node design_kPa is 550.
+- Case. Blocked discharge. Relieving load W is the whole IA-EXP-IN rate, 1575.544 / 24 = 65.65 kg/h.
+- Method. API 520 Part I, gas, critical flow. A = W / (C · Kd · P1 · Kb · Kc) · √(T · Z / M), A in mm², W in kg/h, P1 in kPa absolute.
+- Pressure. Set 550 kPa, taken as absolute like the 500 kPa in P/RT. Overpressure 10 %. P1 = 605 kPa a. Back pressure 130 kPa a. 130 / 605 = 0.215, below the critical ratio 0.528. Critical flow.
+- Fluid, from the edge. M = ρRT/P = 11.61 × 8.314 × 150 / 500 = 28.96 kg/kmol. T = 150 K. k = 1.40 and Z = 1.0 are assumed.
+- Coefficients. C = 0.03948 · √(k · (2/(k+1))^((k+1)/(k−1))) = 0.02703. Kd = 0.975. Kb = 1.0. Kc = 1.0, no rupture disk.
+- Result. A = 65.65 / (0.02703 × 0.975 × 605 × 1 × 1) × √(150 / 28.96) = 9.37 mm². Bore 3.45 mm.
+- relief_mm 3.6 is 10.18 mm². It meets the case with 8.6 % area margin. It stays. On a gauge basis P1 is 706 kPa a and the area is 8.03 mm², so the absolute basis governs. The smallest API 526 letter orifice, D at 71 mm², also covers it. No valve is selected.
 
 7. Code. Shop. Not stamped. The envelope is `cad/stl/EXPANDER.stl`.
 
-8. Open items. Isentropic efficiency 70% is assumed. The relief orifice is not calculated at 550 kPa.
+8. Open items. Isentropic efficiency 70% is assumed. Relief: k, Z, the absolute set basis, and a supply that is not limited below the edge rate are assumed. IA-EXP-IN composition is the liquid stencil, water 0.97; the molar mass is taken from the edge density, not from it.

@@ -1,8 +1,9 @@
 # EXPANDER fabrication
 
 Envelope 600 x 400 x 500 mm.
-Design pressure 0.0 kPa gauge. Atmospheric if 0.
-Internals: media or gutter.
+Design pressure 550 kPa, the expander inlet set point. Not atmospheric.
+Internals: none, per the graph node.
+Relief: 3.6 mm orifice, 10.18 mm². Required 9.37 mm² at 605 kPa a. Destination CRYO_ASU on IA-EXP-OUT. Basis in `duties/EXPANDER.md` section 6.
 
 Nozzles:
 N-in  x=0 y=200 z=100  face -X
