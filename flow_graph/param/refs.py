@@ -106,6 +106,7 @@ REFS = {
  'NFPA99_2021': "NFPA 99, Health Care Facilities Code, 2021 ed., 5.1.3.5: bulk medical gas systems carry a reserve supply of at least one average day's supply.",
  'NASA_5A1998': 'Mulloth L.M., Finn J.E., Carbon Dioxide Adsorption on a 5A Zeolite Designed for CO2 Removal in Spacecraft Cabins, NASA/TM-1998-208752: ASRT 5A isotherms 0-250 C, about 1.0 wt% CO2 at 0.4 kPa (3 torr), 25 C.',
  'NASA_CDRA2015': 'Knox J.C. et al., Optimization of the Carbon Dioxide Removal Assembly (CDRA-4EU), NTRS 20150016500 (2015): two desiccant and two adsorbent beds, one pair adsorbing while the other regenerates at 204 C, nominal half-cycle 144 min, 34.7 m3/h.',
+ 'AWWA_D100_2021': 'AWWA D100-21, Welded Carbon Steel Tanks for Water Storage: elevated and ground tanks, wind and seismic design.',
  'CROPKING_NFT': 'CropKing, NFT production of lettuce (knowledge centre, citing Cooper 1996): 80 mm wide, 40 mm deep gullies at 1.5 % slope best in a comparison of 60-150 mm widths.',
  'TURNS2012': 'Turns S.R., An Introduction to Combustion: Concepts and Applications, 3rd ed., McGraw-Hill (2012), ch. 2: stoichiometric oxidizer-fuel ratios for hydrocarbons, H2 and CO.',
  'COEY2010': 'Coey J.M.D., Magnetism and Magnetic Materials, Cambridge University Press (2010), ch. 11: properties of hard magnets (sintered Nd2Fe14B, sintered and bonded hexaferrite).',
