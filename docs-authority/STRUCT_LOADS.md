@@ -9,10 +9,10 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 
 | Level | Units | Footprint m2 | Empty kN | Operating kN | Test kN | Operating kPa on footprint | 1.2 D + 1.6 L kN (ops) |
 |---|---|---|---|---|---|---|---|
-| L-1 | 71 | 83.1 | 221 | 476 | 618 | 5.7 | 674 |
+| L-1 | 71 | 84.1 | 224 | 482 | 621 | 5.7 | 682 |
 | L-2 | 2 | 368.2 | 1384 | 22979 | 35935 | 62.4 | 36212 |
-| L0 | 62 | 142.5 | 179 | 583 | 878 | 4.1 | 860 |
-| L1 | 50 | 280.8 | 393 | 1661 | 2443 | 5.9 | 2501 |
+| L0 | 62 | 142.5 | 179 | 608 | 878 | 4.3 | 901 |
+| L1 | 50 | 281.6 | 394 | 1669 | 2455 | 5.9 | 2512 |
 | L2 | 1 | 1.1 | 1 | 18 | 18 | 15.8 | 28 |
 | R1 | 1 | 367.2 | 864 | 11781 | 11781 | 32.1 | 18504 |
 | R2 | 1 | 367.2 | 864 | 11781 | 11781 | 32.1 | 18504 |
@@ -52,7 +52,6 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | FLOAT_SINK | 1200 x 800 x 1500 | A-M-199 separator: float-sink bath, 1 h hold-up, two dewatering screens; hold-up 0.01 m3 |
 | GAS_ATOMIZER | 1500 x 800 x 1500 | A-M-199 forming: bench forming machine with guards; hold-up 0.00 m3 |
 | H2_DRYER | 800 x 600 x 1200 | A-M-199 dryer: 1 h hold-up, heated chamber; hold-up 0.00 m3 |
-| HOPPER | 1010 x 1010 x 1570 | A-M-199 hopper: one day of feed buffer ahead of the shredder; hold-up 0.42 m3 |
 | HYDRO_SET | 1200 x 800 x 1200 | A-M-199 hydro: pump-turbine, generator and inlet valve on one bedplate; hold-up 0.00 m3 |
 | MET_MELT | 1000 x 1000 x 1500 | A-M-199 melt: induction crucible and pouring frame; hold-up 0.00 m3 |
 | OIL_DRYER | 800 x 600 x 1200 | A-M-199 dryer: 1 h hold-up, heated chamber; hold-up 0.00 m3 |

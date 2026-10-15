@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope 600 x 400 x 800 mm,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/REMIN.md
+1,Body / envelope 950 x 950 x 1200 mm,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/REMIN.md
 2,Process nozzle DN15,3,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
 3,Open vent DN25,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.","API 2000, A-M-155"
 4,"Motor: on/off valve IA-POT-01 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005

@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/HOPPER.md
+1,Body / envelope 1450 x 1450 x 1850 mm,1,Carbon steel.,docs-authority/duties/HOPPER.md
 2,Process nozzle DN15,6,Carbon steel.,one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,Carbon steel.,one per mass edge; DN from AQS-INV-003
 4,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"

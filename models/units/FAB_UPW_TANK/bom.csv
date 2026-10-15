@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L if the stream is wet or chloride.,docs-authority/duties/FAB_UPW_TANK.md
+1,Body / envelope 700 x 700 x 900 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/FAB_UPW_TANK.md
 2,Process nozzle DN15,2,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
 3,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
 4,"Motor: on/off valve S27 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005

@@ -2312,22 +2312,36 @@
         "duty": "In 60.000 kg/d, out 60.000 kg/d, 0.000 kW. Sheet docs-authority/duties/FAB_UPW_TANK.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 11.0,
+        "design_kPa": 13.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.441,
           "pump_in_m3_h": 0.06,
           "pump_out_m3_h": 0.06,
-          "out_breathing_Nm3_h": 0.12,
-          "in_breathing_Nm3_h": 0.06,
+          "out_breathing_Nm3_h": 0.273,
+          "in_breathing_Nm3_h": 3.725,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 1.6,
+          "vent_bore_req_mm": 8.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.6 kPa (0.70 m full at SG 1.25; store hold-up 2 d = 0.120 m3, H/D 1.5, A-M-182) = 11.0 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 11.0 kPa (0.90 m full at SG 1.25) = 13.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          700,
+          700,
+          900
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.0752,
+          "D_mm": 400,
+          "H_mm": 600,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -3378,22 +3392,36 @@
         "duty": "In 633.416 kg/d, out 633.416 kg/d, 0.000 kW. Sheet docs-authority/duties/HOPPER.md.",
         "presence": "present",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 25.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 3.89,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.1027,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.103,
+          "out_breathing_Nm3_h": 1.087,
+          "in_breathing_Nm3_h": 16.924,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 1.5,
+          "vent_bore_req_mm": 18.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 22.7 kPa (1.85 m full at SG 1.25) = 25.0 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          1450,
+          1450,
+          1850
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 1.5835,
+          "D_mm": 1150,
+          "H_mm": 1550,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -4014,29 +4042,37 @@
         "days_at_mid_synth": 3,
         "presence": "present",
         "size_mm": [
-          800,
-          800,
-          1100
+          1150,
+          1150,
+          1550
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "duty": "In 31.256 kg/d, out 31.256 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 15.5,
+        "design_kPa": 21.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.704,
+          "V_tk_m3": 2.05,
           "pump_in_m3_h": 0.0303,
           "pump_out_m3_h": 0.03,
-          "out_breathing_Nm3_h": 0.294,
-          "in_breathing_Nm3_h": 5.114,
+          "out_breathing_Nm3_h": 0.671,
+          "in_breathing_Nm3_h": 10.773,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 10.3,
+          "vent_bore_req_mm": 15.0,
           "vent_DN": 25,
           "thermal_term": "envelope volume",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 13.5 kPa (1.10 m full at SG 1.25) = 15.5 kPa g (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.0 kPa (1.55 m full at SG 1.25) = 21.5 kPa g (A-M-174)"
+        },
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.6906,
+          "D_mm": 850,
+          "H_mm": 1250,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       }
     },
@@ -4480,22 +4516,36 @@
         "presence": "present",
         "duty": "In 274.877 kg/d, out 274.877 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "none",
-        "design_kPa": 10.5,
+        "design_kPa": 17.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 1.2,
           "pump_in_m3_h": 0.1109,
           "pump_out_m3_h": 0.2724,
-          "out_breathing_Nm3_h": 0.222,
-          "in_breathing_Nm3_h": 0.272,
+          "out_breathing_Nm3_h": 0.599,
+          "in_breathing_Nm3_h": 7.657,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 2.4,
+          "vent_bore_req_mm": 12.6,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.4 kPa (0.68 m full at SG 1.25; process hold-up 1 d = 0.111 m3, H/D 1.5, A-M-182) = 10.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          1200
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.3272,
+          "D_mm": 700,
+          "H_mm": 900,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       }
     },
@@ -4772,28 +4822,42 @@
         "duty": "In 9.919 kg/d, out 9.919 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C11_C18.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 7.0,
+        "design_kPa": 17.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 1.128,
           "pump_in_m3_h": 0.0099,
           "pump_out_m3_h": 0.0015,
-          "out_breathing_Nm3_h": 0.02,
-          "in_breathing_Nm3_h": 0.002,
+          "out_breathing_Nm3_h": 0.377,
+          "in_breathing_Nm3_h": 7.074,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.6,
+          "vent_bore_req_mm": 12.1,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.7 kPa (0.38 m full at SG 1.25; store hold-up 2 d = 0.020 m3, H/D 1.5, A-M-182) = 7.0 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.3 kPa (1.25 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
         },
         "design_capacity_kg_d": {
           "value": 13.4,
           "case": "MSW",
           "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
           "task": "X-RSZ-07 sweep"
+        },
+        "size_mm": [
+          950,
+          950,
+          1250
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.3045,
+          "D_mm": 650,
+          "H_mm": 950,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       }
     },
@@ -4810,28 +4874,42 @@
         "duty": "In 6.166 kg/d, out 6.166 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C19_C28.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 6.5,
+        "design_kPa": 15.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.795,
           "pump_in_m3_h": 0.0062,
           "pump_out_m3_h": 0.0062,
-          "out_breathing_Nm3_h": 0.012,
-          "in_breathing_Nm3_h": 0.006,
+          "out_breathing_Nm3_h": 0.273,
+          "in_breathing_Nm3_h": 5.541,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.5,
+          "vent_bore_req_mm": 10.7,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.0 kPa (0.33 m full at SG 1.25; store hold-up 2 d = 0.012 m3, H/D 1.5, A-M-182) = 6.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 13.5 kPa (1.10 m full at SG 1.25) = 15.5 kPa g (A-M-174)"
         },
         "design_capacity_kg_d": {
           "value": 8.33,
           "case": "MSW",
           "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
           "task": "X-RSZ-07 sweep"
+        },
+        "size_mm": [
+          850,
+          850,
+          1100
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.1822,
+          "D_mm": 550,
+          "H_mm": 800,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       }
     },
@@ -4848,28 +4926,42 @@
         "duty": "In 5.873 kg/d, out 5.873 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C29.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 6.0,
+        "design_kPa": 11.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.296,
           "pump_in_m3_h": 0.0059,
           "pump_out_m3_h": 0.0059,
-          "out_breathing_Nm3_h": 0.012,
-          "in_breathing_Nm3_h": 0.006,
+          "out_breathing_Nm3_h": 0.119,
+          "in_breathing_Nm3_h": 2.776,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.5,
+          "vent_bore_req_mm": 7.6,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.0 kPa (0.32 m full at SG 1.25; store hold-up 2 d = 0.012 m3, H/D 1.5, A-M-182) = 6.0 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.6 kPa (0.70 m full at SG 1.25) = 11.0 kPa g (A-M-174)"
         },
         "design_capacity_kg_d": {
           "value": 7.94,
           "case": "MSW",
           "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
           "task": "X-RSZ-07 sweep"
+        },
+        "size_mm": [
+          650,
+          650,
+          700
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 3,
+          "V_nom_m3": 0.035,
+          "D_mm": 350,
+          "H_mm": 400,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       }
     },
@@ -4886,28 +4978,42 @@
         "duty": "In 7.425 kg/d, out 7.425 kg/d, 0.000 kW. Sheet docs-authority/duties/PROD_C5_C10.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 6.5,
+        "design_kPa": 17.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.972,
           "pump_in_m3_h": 0.0074,
           "pump_out_m3_h": 0.0074,
-          "out_breathing_Nm3_h": 0.015,
-          "in_breathing_Nm3_h": 0.007,
+          "out_breathing_Nm3_h": 0.327,
+          "in_breathing_Nm3_h": 6.379,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.6,
+          "vent_bore_req_mm": 11.5,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.3 kPa (0.35 m full at SG 1.25; store hold-up 2 d = 0.015 m3, H/D 1.5, A-M-182) = 6.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         },
         "design_capacity_kg_d": {
           "value": 10.03,
           "case": "MSW",
           "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
           "task": "X-RSZ-07 sweep"
+        },
+        "size_mm": [
+          900,
+          900,
+          1200
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.2438,
+          "D_mm": 600,
+          "H_mm": 900,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       }
     },
@@ -5491,22 +5597,36 @@
       "params": {
         "duty": "In 3.259 kg/d, out 3.259 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
         "internals": "none",
-        "design_kPa": 2.5,
+        "design_kPa": 14.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.64,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0033,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.003,
+          "out_breathing_Nm3_h": 0.214,
+          "in_breathing_Nm3_h": 4.759,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.3,
+          "vent_bore_req_mm": 10.0,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 0.5 kPa (0.04 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 2.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 12.3 kPa (1.00 m full at SG 1.25) = 14.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          800,
+          800,
+          1000
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.1358,
+          "D_mm": 500,
+          "H_mm": 700,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5525,22 +5645,36 @@
       "params": {
         "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_DOPE.md.",
         "internals": "none",
-        "design_kPa": 2.5,
+        "design_kPa": 9.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.216,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.081,
+          "in_breathing_Nm3_h": 2.223,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
+          "vent_bore_req_mm": 6.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 0.5 kPa (0.04 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 2.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.4 kPa (0.60 m full at SG 1.25) = 9.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5559,22 +5693,36 @@
       "params": {
         "duty": "In 1.500 kg/d, out 1.500 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_HF_ED.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 12.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.359,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0015,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.002,
+          "out_breathing_Nm3_h": 0.127,
+          "in_breathing_Nm3_h": 3.175,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.2,
+          "vent_bore_req_mm": 8.1,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 10.4 kPa (0.85 m full at SG 1.25) = 12.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          650,
+          650,
+          850
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.0489,
+          "D_mm": 350,
+          "H_mm": 550,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5615,22 +5763,36 @@
         },
         "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
         "internals": "none",
-        "design_kPa": 3.5,
+        "design_kPa": 9.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.216,
           "pump_in_m3_h": 0.0003,
           "pump_out_m3_h": 0.0003,
-          "out_breathing_Nm3_h": 0.001,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.081,
+          "in_breathing_Nm3_h": 2.224,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.1,
+          "vent_bore_req_mm": 6.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.4 kPa (0.12 m full at SG 1.25; store hold-up 2 d = 0.001 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.4 kPa (0.60 m full at SG 1.25) = 9.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5671,7 +5833,7 @@
         },
         "duty": "In 1.610 kg/d, out 1.610 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
         "internals": "none",
-        "design_kPa": 5.0,
+        "design_kPa": 11.5,
         "relief_mm": 3.3,
         "product_spec": {
           "HNO3_M": 2.0,
@@ -5696,16 +5858,30 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.317,
           "pump_in_m3_h": 0.0016,
           "pump_out_m3_h": 0.0016,
-          "out_breathing_Nm3_h": 0.003,
-          "in_breathing_Nm3_h": 0.002,
+          "out_breathing_Nm3_h": 0.117,
+          "in_breathing_Nm3_h": 2.909,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.3,
+          "vent_bore_req_mm": 7.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 2.6 kPa (0.21 m full at SG 1.25; store hold-up 2 d = 0.003 m3, H/D 1.5, A-M-182) = 5.0 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 9.2 kPa (0.75 m full at SG 1.25) = 11.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          650,
+          650,
+          750
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.0431,
+          "D_mm": 350,
+          "H_mm": 450,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5724,7 +5900,7 @@
       "params": {
         "duty": "In 3.000 kg/d, out 3.000 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PEROX.md.",
         "internals": "none",
-        "design_kPa": 5.5,
+        "design_kPa": 14.0,
         "relief_mm": 3.3,
         "product_spec": {
           "H2O2_wt_pct_nominal": 5.0,
@@ -5765,16 +5941,30 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.534,
           "pump_in_m3_h": 0.0028,
           "pump_out_m3_h": 0.003,
-          "out_breathing_Nm3_h": 0.006,
-          "in_breathing_Nm3_h": 0.003,
+          "out_breathing_Nm3_h": 0.188,
+          "in_breathing_Nm3_h": 4.195,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.3,
+          "vent_bore_req_mm": 9.4,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.1 kPa (0.25 m full at SG 1.25; store hold-up 2 d = 0.006 m3, H/D 1.5, A-M-182) = 5.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 11.6 kPa (0.95 m full at SG 1.25) = 14.0 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          750,
+          750,
+          950
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.1014,
+          "D_mm": 450,
+          "H_mm": 650,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5793,22 +5983,36 @@
       "params": {
         "duty": "In 3.300 kg/d, out 3.300 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SLURRY.md.",
         "internals": "none",
-        "design_kPa": 2.0,
+        "design_kPa": 14.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.534,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0033,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.003,
+          "out_breathing_Nm3_h": 0.182,
+          "in_breathing_Nm3_h": 4.195,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.3,
+          "vent_bore_req_mm": 9.4,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 11.6 kPa (0.95 m full at SG 1.25) = 14.0 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          750,
+          750,
+          950
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.1031,
+          "D_mm": 450,
+          "H_mm": 650,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       },
       "continuous_kw": null
@@ -5827,22 +6031,36 @@
       "params": {
         "duty": "In 0.210 kg/d, out 0.210 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
         "internals": "none",
-        "design_kPa": 3.5,
+        "design_kPa": 9.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.216,
           "pump_in_m3_h": 0.0002,
           "pump_out_m3_h": 0.0002,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.081,
+          "in_breathing_Nm3_h": 2.224,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.1,
+          "vent_bore_req_mm": 6.8,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.3 kPa (0.11 m full at SG 1.25; store hold-up 2 d = 0.000 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.4 kPa (0.60 m full at SG 1.25) = 9.5 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       },
       "continuous_kw": null
@@ -5991,29 +6209,37 @@
         "separate_from": "WS_HF_ED",
         "study_L_d": "0.5-2",
         "size_mm": [
-          800,
-          800,
-          1100
+          600,
+          600,
+          600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "duty": "In 0.620 kg/d, out 0.620 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
         "internals": "none",
-        "design_kPa": 15.5,
+        "design_kPa": 9.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.704,
+          "V_tk_m3": 0.216,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0006,
-          "out_breathing_Nm3_h": 0.233,
-          "in_breathing_Nm3_h": 5.085,
+          "out_breathing_Nm3_h": 0.081,
+          "in_breathing_Nm3_h": 2.224,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 10.3,
+          "vent_bore_req_mm": 6.8,
           "vent_DN": 25,
           "thermal_term": "envelope volume",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 13.5 kPa (1.10 m full at SG 1.25) = 15.5 kPa g (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.4 kPa (0.60 m full at SG 1.25) = 9.5 kPa g (A-M-174)"
+        },
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       }
     },
@@ -6286,11 +6512,11 @@
         "uv": "after dose",
         "source": "hydroxide crib",
         "size_mm": [
-          600,
-          400,
-          800
+          950,
+          950,
+          1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -6308,22 +6534,30 @@
         "duty": "In 235.868 kg/d, out 235.868 kg/d, 0.000 kW. Sheet docs-authority/duties/REMIN.md.",
         "presence": "present",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 12.0,
+        "design_kPa": 17.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.192,
+          "V_tk_m3": 1.083,
           "pump_in_m3_h": 0.2359,
           "pump_out_m3_h": 0.2359,
-          "out_breathing_Nm3_h": 0.544,
-          "in_breathing_Nm3_h": 2.283,
+          "out_breathing_Nm3_h": 0.816,
+          "in_breathing_Nm3_h": 7.109,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 6.9,
+          "vent_bore_req_mm": 12.2,
           "vent_DN": 25,
           "thermal_term": "envelope volume",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 9.8 kPa (0.80 m full at SG 1.25) = 12.0 kPa g (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
+        },
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.2948,
+          "D_mm": 650,
+          "H_mm": 900,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       }
     },

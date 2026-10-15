@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope 800 x 800 x 1100 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/MEOH_TANK.md
+1,Body / envelope 1150 x 1150 x 1550 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/MEOH_TANK.md
 2,Process nozzle DN15,9,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
 4,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"

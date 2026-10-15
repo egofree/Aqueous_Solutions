@@ -3888,5 +3888,25 @@
     "verification": "Section 2a counts; Triage tag on every open line.",
     "replace_when": "When a task closes or the owner re-prioritises.",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-225",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Storage hold times and vessel rule",
+    "statement": "Hold times per service (30 d reagent resupply, 14 d product cuts and methanol, 3 d C29 recycle buffer, 1 d UPW, remineralisation, dosing and hopper); 80 % fill; upright cylinder H/D 1.5; PE per ASTM D1998 for aqueous, SA-240 304L per NFPA 30 ch. 21 for flammables. 6 units exceed the issued GA envelope (MEOH_TANK, REMIN, four PROD_ cut tanks); graph size_mm updated, FreeCAD GA dims still to follow.",
+    "verification": "docs-authority/sizing/STORAGE_HOLDUP.md",
+    "replace_when": "Replace with first-article / rig test results",
+    "doc": "AQS-PAR-003"
   }
 ]

@@ -15,7 +15,7 @@ Rules from the Section VIII-1 scope (ASME_VIII1_U1): design pressure at or below
 | Section VIII-1 (ID not yet sized) | 1 |
 | not a vessel (no design pressure on the graph) | 4 |
 
-Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 28 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
+Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 16 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
 ## Stamp and test requirement (X-COD-03)
 
@@ -116,7 +116,7 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | EW_9 | WET | 11.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | EXPANDER | CRYO | 550.0 |  |  | Machine casing (outside Section VIII) | U-1(c)(2)(c): reciprocating expander, cylinder and head are parts of the machine (models/mfg/EXPANDER); hydrotest 1.5 x 550 kPa g | none (part of the machine, ASME_VIII1_U1 U-1(c)(2)(c)) | casing hydrotest 1.5 x design by the builder |
 | EXT_HALL | ELEC_PV |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| FAB_UPW_TANK | FAB | 11.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| FAB_UPW_TANK | FAB | 13.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | FISH | FARM | 6.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | FISH_SUMP | FARM | 6.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | FLOAT_SINK | WET | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
@@ -153,7 +153,7 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | HDR_UPW | WTR | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | HEAT_SINK | GEO | 20.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | HNO3 | FARM | 3.0 | 900 | 61 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| HOPPER | OIL | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| HOPPER | OIL | 25.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | HTC | FARM | 1710.5 | 200 | 94 | B31.3 piping component | U-1(c)(2)(j): ID 94 mm <= 152 mm | none (piping carries no Certification Mark, ASME_B31_3) | hydrostatic 1.5 x design (ASME_B31_3 345.4.2); 341 examination |
 | HX8 | WET | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | HYDRO_SET | PUMPED_HYDRO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
@@ -171,7 +171,7 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | MEOH_FC | MEOH | 22.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | MEOH_FERM | MEOH | 3.5 | 35 | 117 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | MEOH_SYNTH | MEOH | 5500.0 | 250 | 106 | B31.3 piping component | U-1(c)(2)(j): ID 106 mm <= 152 mm | none (piping carries no Certification Mark, ASME_B31_3) | hydrostatic 1.5 x design (ASME_B31_3 345.4.2); 341 examination |
-| MEOH_TANK | MEOH | 15.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| MEOH_TANK | MEOH | 21.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | MET_AHU | MFG | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | MET_HX_Q4 | MFG | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | MET_MELT | MFG | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
@@ -186,16 +186,16 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | NFT | FARM | 6.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | NORTH_DOCK | DOCK | 10.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | NOX_SCRUB | GAS | 49.0 |  | 200 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| NUTRIENT_DOSE | NUT | 10.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| NUTRIENT_DOSE | NUT | 17.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | OIL_DRYER | OIL | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | OIL_FRAC | OIL | 8.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | OIL_PYRO | OIL | 4.5 | 500.0 | 191 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | PEANUT | FARM | 6.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | POLISH_BANK | WET | 28.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| PROD_C11_C18 | OIL | 7.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| PROD_C19_C28 | OIL | 6.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| PROD_C29 | OIL | 6.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| PROD_C5_C10 | OIL | 6.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| PROD_C11_C18 | OIL | 17.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| PROD_C19_C28 | OIL | 15.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| PROD_C29 | OIL | 11.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| PROD_C5_C10 | OIL | 17.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | PROD_MEOH | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | PROD_O2 | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | PV_ARRAY | ELEC_PV | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
@@ -213,7 +213,7 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | RECT_EW | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RELIEF_CRYO | CRYO | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | RELIEF_H2 | GAS | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| REMIN | WTR | 12.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| REMIN | WTR | 17.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | ROOF_TANK | WTR | 21.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | S13_CLASS_TREAT | WET | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | SALT_FEED | WET | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
@@ -230,15 +230,15 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | WET_BENCH | FAB | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | WIRE_DRAW | MFG | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | WORMS | FARM | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_AMMONIA | FAB | 2.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_DOPE | FAB | 2.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_HF_ED | FAB | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_KOH | FAB | 3.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_NITRIC | FAB | 5.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_PEROX | FAB | 5.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_PHOS | FAB | 15.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_SLURRY | FAB | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
-| WS_SOLV | FAB | 3.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_AMMONIA | FAB | 14.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_DOPE | FAB | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_HF_ED | FAB | 12.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_KOH | FAB | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_NITRIC | FAB | 11.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_PEROX | FAB | 14.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_PHOS | FAB | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_SLURRY | FAB | 14.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| WS_SOLV | FAB | 9.5 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | YEAST | FARM | 4.5 | 32 | 192 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | ZNBR2 | ZNBR2 | 20.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | ZNBR2_BR2_REGEN | ELEC | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |

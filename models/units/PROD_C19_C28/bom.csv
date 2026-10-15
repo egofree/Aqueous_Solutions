@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/PROD_C19_C28.md
+1,Body / envelope 850 x 850 x 1100 mm,1,Carbon steel.,docs-authority/duties/PROD_C19_C28.md
 2,Process nozzle DN15,3,Carbon steel.,one per mass edge; DN from AQS-INV-003
 3,Open vent DN25,1,Carbon steel.,"API 2000, A-M-155"
 4,"Motor: on/off valve CUT-3-OUT (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005

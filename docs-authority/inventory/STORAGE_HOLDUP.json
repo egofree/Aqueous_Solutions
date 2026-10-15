@@ -1,0 +1,336 @@
+[
+ {
+  "unit": "FAB_UPW_TANK",
+  "service": "UPW buffer to the fab (1 d limits TOC pickup)",
+  "Q_kg_d": 60.0,
+  "hold_d": 1.0,
+  "rho": 998,
+  "V_work_m3": 0.0601,
+  "V_nom_m3": 0.0752,
+  "D_mm": 400,
+  "H_mm": 600,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   500,
+   500,
+   800
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "MEOH_TANK",
+  "service": "methanol day store, 14 d campaign",
+  "Q_kg_d": 31.256,
+  "hold_d": 14,
+  "rho": 792,
+  "V_work_m3": 0.5525,
+  "V_nom_m3": 0.6906,
+  "D_mm": 850,
+  "H_mm": 1250,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": false
+ },
+ {
+  "unit": "REMIN",
+  "service": "remineralisation contact, 1 d buffer",
+  "Q_kg_d": 235.868,
+  "hold_d": 1.0,
+  "rho": 1000,
+  "V_work_m3": 0.2359,
+  "V_nom_m3": 0.2948,
+  "D_mm": 650,
+  "H_mm": 900,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   600,
+   400,
+   800
+  ],
+  "fits_envelope": false
+ },
+ {
+  "unit": "WS_AMMONIA",
+  "service": "aqueous NH3 25 %, 30 d resupply",
+  "Q_kg_d": 3.259,
+  "hold_d": 30,
+  "rho": 900,
+  "V_work_m3": 0.1086,
+  "V_nom_m3": 0.1358,
+  "D_mm": 500,
+  "H_mm": 700,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_DOPE",
+  "service": "dopant solution, 30 d resupply",
+  "Q_kg_d": 0.01,
+  "hold_d": 30,
+  "rho": 1000,
+  "V_work_m3": 0.0003,
+  "V_nom_m3": 0.02,
+  "D_mm": 300,
+  "H_mm": 300,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_HF_ED",
+  "service": "HF etch 49 %, 30 d resupply",
+  "Q_kg_d": 1.5,
+  "hold_d": 30,
+  "rho": 1150,
+  "V_work_m3": 0.0391,
+  "V_nom_m3": 0.0489,
+  "D_mm": 350,
+  "H_mm": 550,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_KOH",
+  "service": "KOH 45 %, 30 d resupply",
+  "Q_kg_d": 0.27,
+  "hold_d": 30,
+  "rho": 1450,
+  "V_work_m3": 0.0056,
+  "V_nom_m3": 0.02,
+  "D_mm": 300,
+  "H_mm": 300,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_NITRIC",
+  "service": "HNO3 65 %, 30 d resupply",
+  "Q_kg_d": 1.61,
+  "hold_d": 30,
+  "rho": 1400,
+  "V_work_m3": 0.0345,
+  "V_nom_m3": 0.0431,
+  "D_mm": 350,
+  "H_mm": 450,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_PEROX",
+  "service": "H2O2 30 %, 30 d resupply",
+  "Q_kg_d": 3.0,
+  "hold_d": 30,
+  "rho": 1110,
+  "V_work_m3": 0.0811,
+  "V_nom_m3": 0.1014,
+  "D_mm": 450,
+  "H_mm": 650,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_SLURRY",
+  "service": "CMP slurry, 30 d resupply",
+  "Q_kg_d": 3.3,
+  "hold_d": 30,
+  "rho": 1200,
+  "V_work_m3": 0.0825,
+  "V_nom_m3": 0.1031,
+  "D_mm": 450,
+  "H_mm": 650,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_SOLV",
+  "service": "solvent (IPA), 30 d resupply",
+  "Q_kg_d": 0.21,
+  "hold_d": 30,
+  "rho": 790,
+  "V_work_m3": 0.008,
+  "V_nom_m3": 0.02,
+  "D_mm": 300,
+  "H_mm": 300,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "WS_PHOS",
+  "service": "H3PO4 85 %, 30 d resupply",
+  "Q_kg_d": 0.62,
+  "hold_d": 30,
+  "rho": 1690,
+  "V_work_m3": 0.011,
+  "V_nom_m3": 0.02,
+  "D_mm": 300,
+  "H_mm": 300,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": [
+   800,
+   800,
+   1100
+  ],
+  "fits_envelope": true
+ },
+ {
+  "unit": "PROD_C5_C10",
+  "service": "naphtha cut, 14 d to dispatch",
+  "Q_kg_d": 10.03,
+  "hold_d": 14,
+  "rho": 720,
+  "V_work_m3": 0.195,
+  "V_nom_m3": 0.2438,
+  "D_mm": 600,
+  "H_mm": 900,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": [
+   600,
+   300,
+   700
+  ],
+  "fits_envelope": false
+ },
+ {
+  "unit": "PROD_C11_C18",
+  "service": "middle distillate cut, 14 d",
+  "Q_kg_d": 13.4,
+  "hold_d": 14,
+  "rho": 770,
+  "V_work_m3": 0.2436,
+  "V_nom_m3": 0.3045,
+  "D_mm": 650,
+  "H_mm": 950,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": [
+   600,
+   300,
+   700
+  ],
+  "fits_envelope": false
+ },
+ {
+  "unit": "PROD_C19_C28",
+  "service": "heavy distillate cut, 14 d",
+  "Q_kg_d": 8.33,
+  "hold_d": 14,
+  "rho": 800,
+  "V_work_m3": 0.1458,
+  "V_nom_m3": 0.1822,
+  "D_mm": 550,
+  "H_mm": 800,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": [
+   600,
+   300,
+   700
+  ],
+  "fits_envelope": false
+ },
+ {
+  "unit": "PROD_C29",
+  "service": "C29+ to recycle, 3 d buffer",
+  "Q_kg_d": 7.94,
+  "hold_d": 3,
+  "rho": 850,
+  "V_work_m3": 0.028,
+  "V_nom_m3": 0.035,
+  "D_mm": 350,
+  "H_mm": 400,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": [
+   600,
+   300,
+   700
+  ],
+  "fits_envelope": false
+ },
+ {
+  "unit": "NUTRIENT_DOSE",
+  "service": "dosing solution day tank, 1 d (stock concentrate is stored dry)",
+  "Q_kg_d": 274.877,
+  "hold_d": 1.0,
+  "rho": 1050,
+  "V_work_m3": 0.2618,
+  "V_nom_m3": 0.3272,
+  "D_mm": 700,
+  "H_mm": 900,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": null,
+  "fits_envelope": false
+ },
+ {
+  "unit": "HOPPER",
+  "service": "shredded feed, 1 d (bulk density)",
+  "Q_kg_d": 633.416,
+  "hold_d": 1.0,
+  "rho": 500,
+  "V_work_m3": 1.2668,
+  "V_nom_m3": 1.5835,
+  "D_mm": 1150,
+  "H_mm": 1550,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": null,
+  "fits_envelope": false
+ }
+]

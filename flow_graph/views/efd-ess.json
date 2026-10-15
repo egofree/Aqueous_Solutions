@@ -185,29 +185,37 @@
         "days_at_mid_synth": 3,
         "presence": "present",
         "size_mm": [
-          800,
-          800,
-          1100
+          1150,
+          1150,
+          1550
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "duty": "In 31.256 kg/d, out 31.256 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 15.5,
+        "design_kPa": 21.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.704,
+          "V_tk_m3": 2.05,
           "pump_in_m3_h": 0.0303,
           "pump_out_m3_h": 0.03,
-          "out_breathing_Nm3_h": 0.294,
-          "in_breathing_Nm3_h": 5.114,
+          "out_breathing_Nm3_h": 0.671,
+          "in_breathing_Nm3_h": 10.773,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 10.3,
+          "vent_bore_req_mm": 15.0,
           "vent_DN": 25,
           "thermal_term": "envelope volume",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 13.5 kPa (1.10 m full at SG 1.25) = 15.5 kPa g (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.0 kPa (1.55 m full at SG 1.25) = 21.5 kPa g (A-M-174)"
+        },
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.6906,
+          "D_mm": 850,
+          "H_mm": 1250,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
         }
       }
     },

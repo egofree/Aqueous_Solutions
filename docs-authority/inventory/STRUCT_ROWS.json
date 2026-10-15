@@ -59,7 +59,7 @@
 "unit": "WS_NITRIC",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 109.4,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -67,7 +67,7 @@
 "unit": "WS_PEROX",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 113.1,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -75,7 +75,7 @@
 "unit": "WS_AMMONIA",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 105.6,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -83,7 +83,7 @@
 "unit": "WS_KOH",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 106.9,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -91,7 +91,7 @@
 "unit": "WS_DOPE",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 105.6,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -107,7 +107,7 @@
 "unit": "WS_SOLV",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 105.6,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -115,7 +115,7 @@
 "unit": "FAB_UPW_TANK",
 "level": "L0",
 "empty_kg": 8.0,
-"op_kg": 158.0,
+"op_kg": 133.0,
 "test_kg": 208.0,
 "foot_m2": 0.25
 },
@@ -435,7 +435,7 @@
 "unit": "PROD_C5_C10",
 "level": "L-1",
 "empty_kg": 5.0,
-"op_kg": 23.8,
+"op_kg": 83.8,
 "test_kg": 131.0,
 "foot_m2": 0.18
 },
@@ -443,7 +443,7 @@
 "unit": "PROD_C11_C18",
 "level": "L-1",
 "empty_kg": 5.0,
-"op_kg": 30.0,
+"op_kg": 83.8,
 "test_kg": 131.0,
 "foot_m2": 0.18
 },
@@ -451,7 +451,7 @@
 "unit": "PROD_C19_C28",
 "level": "L-1",
 "empty_kg": 5.0,
-"op_kg": 20.0,
+"op_kg": 83.8,
 "test_kg": 131.0,
 "foot_m2": 0.18
 },
@@ -459,7 +459,7 @@
 "unit": "PROD_C29",
 "level": "L-1",
 "empty_kg": 5.0,
-"op_kg": 20.0,
+"op_kg": 83.8,
 "test_kg": 131.0,
 "foot_m2": 0.18
 },
@@ -1386,10 +1386,10 @@
 {
 "unit": "HOPPER",
 "level": "L-1",
-"empty_kg": 240.2,
-"op_kg": 240.2,
-"test_kg": 240.2,
-"foot_m2": 1.02
+"empty_kg": 583.4,
+"op_kg": 583.4,
+"test_kg": 583.4,
+"foot_m2": 2.103
 },
 {
 "unit": "HYDRO_SET",
@@ -1418,10 +1418,10 @@
 {
 "unit": "NUTRIENT_DOSE",
 "level": "L1",
-"empty_kg": 21.2,
-"op_kg": 159.9,
-"test_kg": 162.5,
-"foot_m2": 0.207
+"empty_kg": 180.0,
+"op_kg": 930.0,
+"test_kg": 1380.0,
+"foot_m2": 1.0
 },
 {
 "unit": "OIL_DRYER",

@@ -2489,22 +2489,36 @@
         "presence": "present",
         "duty": "In 274.877 kg/d, out 274.877 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "none",
-        "design_kPa": 10.5,
+        "design_kPa": 17.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 1.2,
           "pump_in_m3_h": 0.1109,
           "pump_out_m3_h": 0.2724,
-          "out_breathing_Nm3_h": 0.222,
-          "in_breathing_Nm3_h": 0.272,
+          "out_breathing_Nm3_h": 0.599,
+          "in_breathing_Nm3_h": 7.657,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 2.4,
+          "vent_bore_req_mm": 12.6,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 8.4 kPa (0.68 m full at SG 1.25; process hold-up 1 d = 0.111 m3, H/D 1.5, A-M-182) = 10.5 kPa g (A-M-174)"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          1200
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.3272,
+          "D_mm": 700,
+          "H_mm": 900,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
         }
       }
     },
