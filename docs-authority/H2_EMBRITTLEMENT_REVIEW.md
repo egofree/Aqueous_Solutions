@@ -1,12 +1,13 @@
 # Hydrogen embrittlement review
 
 Document number: AQS-REV-H2-001
-Revision: A
+Revision: B
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Materials per AQS-STD-002 Rev E, rule M6. No rate change.
 
 | Rev | Description | Date |
 | --- | --- | --- |
+| B | H₂ edge conditions (X-MAT-15) and MEOH_SYNTH API 941 check (X-MAT-14). | 2026-10-15 |
 | A | First issue. Every H₂-wetted unit, with conditions from the graph, material, and fixes. | 2026-10-15 |
 
 ## 1. Basis
@@ -28,7 +29,7 @@ Conditions on the graph. No H₂ edge carries pressure, temperature, or purity. 
 | H2_DRYER | Wet H₂ in, dry H₂ out to CRYO_H2 and RELIEF_H2 | Wet inlet; dry outlet | Inlet knock-out PVC-U; dryer vessel and outlet 316L, annealed | Dry H₂ on 316L is the CHMC1 screening case [S15]. Regeneration temperature and pressure are held. Sensitization: low-carbon grade, no post-weld exposure 500 to 800 °C [S13]. |
 | RELIEF_H2 | H₂ contingency relief from H2_DRYER to an 8 m vent stack (NFPA 2) | Dry H₂, flame exposure | 316L, annealed, grounded | Metal under M7 (flame). Open stack with no cap that traps H₂; bonded and grounded. CGA G-5.5 vent system principles. |
 | CRYO_H2 | Dry H₂ to liquid or cold storage; feeds FUEL_CELL, BACKUP_GEN, MEOH_SYNTH | Dry, cryogenic, cycling to ambient | 316L, annealed, nickel toward the top of the grade range | Susceptibility rises at subambient temperature [S13], so the warm-up range matters more than the cold end. Pressure held. No ferritic or high-strength steel. |
-| MEOH_SYNTH | H₂ (S74) with CO₂ (S73) to methanol | Dry hot H₂ at pressure | Held | Pressure and temperature are not on the graph. If above 200 °C with H₂ partial pressure, high-temperature hydrogen attack applies (API 941): no carbon steel; 316L or Cr-Mo chosen from the Nelson curves. Held. |
+| MEOH_SYNTH | H₂ (S74) with CO₂ (S73) to methanol | Dry H₂ 50 bar a, 250 °C, pH₂ 37.5 bar (study, section 5) | 316L | HTHA applies (API 941). Austenitic stainless is not susceptible; carbon steel and C-0.5Mo excluded. See section 5. |
 | FUEL_CELL | H₂ (S49) and O₂ (S50) to a PEM stack | Dry H₂ feed; wet stack | Feed tubing 316L, annealed; stack internals per the stack maker | Stack plates are electrodes (M6). Dielectric break between stack and plant piping. |
 | BACKUP_GEN | H₂ fuel (S45) | Dry H₂ | 316L, annealed, fuel line | Engine internals per the maker. |
 | ALD, LEACH_CSTR_1, ZNBR2 | Trace or dissolved H₂ (IA-ALD-H2, IA-LEACH-H2 at 0 kg/d, Zn side reaction) | Wet, polymer equipment | As AQS-STD-002 | No embrittlement case in polymer. Vent to HDR_H2 or the stack. |
@@ -44,14 +45,33 @@ Conditions on the graph. No H₂ edge carries pressure, temperature, or purity. 
 ## 4. Held
 
 - P, T, and purity on every H₂ edge (X-MAT-09).
-- MEOH_SYNTH conditions and alloy.
 - HDR_H2 dilution basis.
 - H2_DRYER regeneration conditions.
 - CRYO_H2 pressure.
 - Cathode life record.
+
+## 5. H₂ edge conditions and API 941, Rev B
+
+Study values (AQS-REG-002 A-M-021 to 024), written on each edge as P_bar_a, T_C, purity_mol_pct:
+
+| Segment | Edges | P bar a | T °C | Purity mol% |
+| --- | --- | --- | --- | --- |
+| Cell offgas and header, wet | IA-EW1/2/4-H2, IA-HDR-H2-01 to 04, IA-LEACH-H2, IA-ALD-H2 | 1.05 | 40 | 98, water-saturated |
+| Dryer outlet to storage | S05, S64, S24, IA-H2-IN, IA-H2-AIR | 10 | 30 | 99.9, dew −40 °C |
+| Storage to fuel cell and generator | S49, S45 | 1.5 | 25 | 99.97 (ISO 14687 Grade D) |
+| Storage to methanol synthesis | S74 | 50 | 40 | 99.9 |
+
+S52 and IA-E-H2 are not H₂ gas service (fuel-cell product water; electricity) and carry no conditions.
+
+API 941 check, MEOH_SYNTH. Reactor 250 °C (482 °F), 50 bar a, H₂:CO₂ 3:1, so pH₂ = 37.5 bar a (544 psia). API 941 applies above 400 °F (204 °C) with H₂ partial pressure above 50 psia; both are exceeded. Carbon steel and C-0.5Mo are not used at this point; API 941 states austenitic stainless steels are not susceptible to HTHA at any listed condition, so 316L is chosen and the Nelson-curve reading does not govern the choice. 316L also matches the low-temperature embrittlement rules of section 3 for the S74 feed. Gas H₂ embrittlement at 50 bar and ambient applies to the feed compressor; 316L with nickel at the top of the grade range, no high-strength fasteners.
+
+Held. A purifier for Grade D if dryer output is below grade. CRYO_H2 storage pressure.
 
 ## References
 
 - [S13] Sandia, Technical Reference on Hydrogen Compatibility of Materials, 316/316L, https://www.sandia.gov/app/uploads/sites/158/2021/12/2103TechRef_316SS.pdf
 - [S14] ASME B31.12 Hydrogen Piping and Pipelines, https://www.asme.org/codes-standards/find-codes-standards/b31-12-hydrogen-piping-pipelines
 - [S15] Sandia/OSTI, Materials Qualification for Hydrogen Service using CSA CHMC1, https://www.osti.gov/servlets/purl/1673694
+- S18. API RP 941, Steels for Hydrogen Service at Elevated Temperatures and Pressures in Petroleum Refineries and Petrochemical Plants, 8th ed., 2016.
+- S19. ISO 14687:2019, Hydrogen fuel quality — Product specification.
+- S20. Bertau M. et al. (eds.), Methanol: The Basic Chemical and Energy Feedstock of the Future, Springer, 2014.

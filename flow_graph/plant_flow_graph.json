@@ -2461,7 +2461,17 @@
         "duty": "In 7.848 kg/d, out 7.848 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "synthesis": {
+          "P_bar_a": 50.0,
+          "T_C": 250,
+          "H2_CO2_molar": 3.0,
+          "pH2_bar": 37.5,
+          "catalyst": "Cu/ZnO/Al2O3",
+          "status": "study",
+          "source": "Bertau et al. 2014 (200-300 C, 50-100 bar)",
+          "material": "316L (API 941: austenitic stainless not susceptible to HTHA)"
+        }
       }
     },
     {
@@ -9528,6 +9538,18 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
+      },
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -9563,6 +9585,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -9599,6 +9629,18 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
+      },
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -9635,6 +9677,18 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
+      },
+      "composition": {
+        "H2": 0.98,
+        "water": 0.02
       }
     },
     {
@@ -10108,6 +10162,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 10.0,
+        "T_C": 30,
+        "purity_mol_pct": 99.9,
+        "purity_note": "dew point -40 C after H2_DRYER",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment dry; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -10853,7 +10915,13 @@
         "medium": "relief gas",
         "conditions": "event only",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "P_bar_a": 10.0,
+        "T_C": 30,
+        "purity_mol_pct": 99.9,
+        "purity_note": "dew point -40 C after H2_DRYER",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment dry; AQS-REV-H2-001 Rev B"
       },
       "composition": {
         "H2": 0.98,
@@ -11670,6 +11738,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 1.5,
+        "T_C": 25,
+        "purity_mol_pct": 99.97,
+        "purity_note": "ISO 14687 Grade D at the fuel cell; purifier held",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment use; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -11760,6 +11836,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 1.5,
+        "T_C": 25,
+        "purity_mol_pct": 99.97,
+        "purity_note": "ISO 14687 Grade D at the fuel cell; purifier held",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment use; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -12312,6 +12396,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 10.0,
+        "T_C": 30,
+        "purity_mol_pct": 99.9,
+        "purity_note": "dew point -40 C after H2_DRYER",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment dry; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -12772,6 +12864,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 50.0,
+        "T_C": 40,
+        "purity_mol_pct": 99.9,
+        "purity_note": "compressed to synthesis pressure",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment meoh; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -16796,6 +16896,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 10.0,
+        "T_C": 30,
+        "purity_mol_pct": 99.9,
+        "purity_note": "dew point -40 C after H2_DRYER",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment dry; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -17275,6 +17383,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 10.0,
+        "T_C": 30,
+        "purity_mol_pct": 99.9,
+        "purity_note": "dew point -40 C after H2_DRYER",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment dry; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -17700,6 +17816,14 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -17738,6 +17862,14 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -17776,6 +17908,14 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -18000,6 +18140,14 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
       }
     },
     {
@@ -18542,6 +18690,14 @@
       "composition": {
         "H2": 0.98,
         "water": 0.02
+      },
+      "params": {
+        "P_bar_a": 1.05,
+        "T_C": 40,
+        "purity_mol_pct": 98.0,
+        "purity_note": "water-saturated at 40 C; O2 below 1 mol% (cell separator)",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment wet; AQS-REV-H2-001 Rev B"
       }
     },
     {

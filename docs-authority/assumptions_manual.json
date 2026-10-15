@@ -258,5 +258,57 @@
    "docs-authority/duties/FLUE_KO.md"
   ],
   "id": "A-M-020"
+ },
+ {
+  "value": "1.05 bar a, 40 C, 98 mol%, wet",
+  "units": "bar a, C, mol%",
+  "where": "EW and header H2 edges (9)",
+  "basis": "Atmospheric cell offgas to a low-pressure header",
+  "sensitivity": "Header sizing; no embrittlement concern at this pressure",
+  "replaced_by": "Header pressure and gas analysis at commissioning",
+  "task": "X-MAT-15",
+  "files": [
+   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+  ],
+  "id": "A-M-021"
+ },
+ {
+  "value": "10 bar a, 30 C, 99.9 mol%, dew -40 C",
+  "units": "bar a, C, mol%",
+  "where": "H2_DRYER outlet edges (5)",
+  "basis": "Small compressor ahead of storage; not on the graph",
+  "sensitivity": "Storage volume inverse to pressure; 316L at this pressure",
+  "replaced_by": "CRYO_H2 storage design (pressure held)",
+  "task": "X-MAT-15",
+  "files": [
+   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+  ],
+  "id": "A-M-022"
+ },
+ {
+  "value": "1.5 bar a, 25 C, 99.97 mol%",
+  "units": "bar a, C, mol%",
+  "where": "S45, S49",
+  "basis": "ISO 14687 Grade D for PEM; regulator outlet",
+  "sensitivity": "A purifier is needed if dryer output is below grade",
+  "replaced_by": "Fuel-cell vendor inlet specification",
+  "task": "X-MAT-15",
+  "files": [
+   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+  ],
+  "id": "A-M-023"
+ },
+ {
+  "value": "50 bar a synthesis, 250 C, H2:CO2 3:1",
+  "units": "bar a, C",
+  "where": "S74, MEOH_SYNTH params.synthesis",
+  "basis": "Low end of the Cu/ZnO/Al2O3 range, Bertau et al. 2014",
+  "sensitivity": "pH2 37.5 bar at 250 C sets the API 941 point",
+  "replaced_by": "MEOH_SYNTH reactor design",
+  "task": "X-MAT-14",
+  "files": [
+   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+  ],
+  "id": "A-M-024"
  }
 ]

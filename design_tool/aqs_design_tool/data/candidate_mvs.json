@@ -2487,7 +2487,17 @@
         "duty": "In 7.848 kg/d, out 7.848 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "synthesis": {
+          "P_bar_a": 50.0,
+          "T_C": 250,
+          "H2_CO2_molar": 3.0,
+          "pH2_bar": 37.5,
+          "catalyst": "Cu/ZnO/Al2O3",
+          "status": "study",
+          "source": "Bertau et al. 2014 (200-300 C, 50-100 bar)",
+          "material": "316L (API 941: austenitic stainless not susceptible to HTHA)"
+        }
       },
       "modules": [],
       "electrical_role": "load",
