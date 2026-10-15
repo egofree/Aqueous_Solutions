@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M10x30 hex bolt + nut + 2 washers,A4-70,36,lid flange 150 mm pitch,assumption
+2,Lid gasket EPDM 40 mm wide,EPDM,1,lid flange,assumption; elastomer compatibility across the assay envelope held

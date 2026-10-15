@@ -1,0 +1,19 @@
+{
+ "unit_id": "LEACH_CSTR_1",
+ "graph": {"size_mm": [2000,1200,1400], "origin_mm": [600,5300,-6000], "design_kPa": 25.1, "relief_mm": 2.8, "internals": "none", "continuous_kw": 2.0,
+  "nozzle_face_height_mm": 700, "inlets": 25, "outlets_process": 20, "outlet_conductor": "IA-E-LEACH",
+  "dn_from_edge": {"HL-Q3-A-HX5": 20, "HL-Q3-B-HX5": 20}},
+ "material": {"wetted": "316L", "basis": "Duty sheet section 3: wet or chloride service. Not selected for any feed; holds across the AQS-ASSAY-001 Rev C envelope as written. Pit rate not measured.", "density_kg_m3": 8000},
+ "assumptions": {
+  "header_zone_mm": {"value": 60, "note": "Assumption. Depth reserved on each Y face inside the envelope for the inlet and outlet headers."},
+  "wall_mm": {"value": 6, "note": "Assumption. Not checked against hydrostatic load; liquor density is held."},
+  "floor_mm": {"value": 8, "note": "Assumption."},
+  "lid_mm": {"value": 6, "note": "Assumption. Closed lid because the vents go to NOX_SCRUB and FLUE_KO."},
+  "lid_flange_w_mm": {"value": 40, "note": "Assumption."},
+  "lid_bolt": {"value": "M10 A4-70", "pitch_mm": 150, "note": "Assumption."},
+  "header_od_mm": {"value": 60.3, "note": "Assumption. DN50 manifold carrying the face-center ports."},
+  "port_od_mm_bore_not_calculated": {"value": 33.7, "note": "Assumption. DN25 placeholder where the edge gives no bore."},
+  "port_od_mm_dn20": 26.9,
+  "port_pitch_mm": {"value": 70, "note": "Assumption. Ports spread along X about the face center at Z 700."}
+ }
+}
