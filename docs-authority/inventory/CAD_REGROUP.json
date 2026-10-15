@@ -1,0 +1,92 @@
+{
+ "units": 23,
+ "moves": 12,
+ "adjacency_before_m": 701.2,
+ "adjacency_after_m": 518.0,
+ "moves_list": [
+  {
+   "unit": "CRYO_H2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -12000,
+   "dy_mm": 4000,
+   "gain_m": 47.8
+  },
+  {
+   "unit": "CRYO_CO2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -12000,
+   "dy_mm": 2000,
+   "gain_m": 8.2
+  },
+  {
+   "unit": "PROD_C5_C10",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -12000,
+   "dy_mm": 12000,
+   "gain_m": 24.0
+  },
+  {
+   "unit": "AFTERBURNER",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -8500,
+   "dy_mm": 8500,
+   "gain_m": 22.5
+  },
+  {
+   "unit": "BMED_UPW_POLISH",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -2500,
+   "dy_mm": 9000,
+   "gain_m": 3.2
+  },
+  {
+   "unit": "H2_DRYER",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -9000,
+   "dy_mm": 5000,
+   "gain_m": 17.5
+  },
+  {
+   "unit": "ACID_POLISH_SCRUB",
+   "from_clash_with": "REGROUP",
+   "dx_mm": 3000,
+   "dy_mm": -500,
+   "gain_m": 2.6
+  },
+  {
+   "unit": "BAGHOUSE",
+   "from_clash_with": "REGROUP",
+   "dx_mm": 2500,
+   "dy_mm": -3000,
+   "gain_m": 7.3
+  },
+  {
+   "unit": "CRYO_O2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": 0,
+   "dy_mm": 3000,
+   "gain_m": 3.0
+  },
+  {
+   "unit": "CRYO_H2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -7500,
+   "dy_mm": 3500,
+   "gain_m": 25.4
+  },
+  {
+   "unit": "PROD_C5_C10",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -3000,
+   "dy_mm": 1500,
+   "gain_m": 4.5
+  },
+  {
+   "unit": "H2_DRYER",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -3000,
+   "dy_mm": -500,
+   "gain_m": 3.7
+  }
+ ]
+}

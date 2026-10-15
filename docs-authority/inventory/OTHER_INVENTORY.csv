@@ -17,7 +17,7 @@ BACKUP_GEN,genset,BACKUP_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, 
 BACKUP_GEN,genset,BACKUP_GEN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S46: one at each end nozzle (assumed)
 CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,132,2098 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,1020,one per instrument
-CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 162 SIFs, redundant pair"
+CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 163 SIFs, redundant pair"
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-HVAC-COND to ROOF_TANK (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S68 to LEACH_CSTR_1 (assumed size)
@@ -194,7 +194,7 @@ CRYO,CRYO,H2_PURIFIER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced
 CRYO,CRYO,H2_PURIFIER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
 CRYO,CRYO,H2_PURIFIER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,S49P: 2 per support (assumed)
 CRYO,CRYO,H2_PURIFIER,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
-CRYO,CRYO,H2_PURIFIER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-019 SIL 1
+CRYO,CRYO,H2_PURIFIER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-020 SIL 1
 CRYO,CRYO,H2_PURIFIER,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",28,S49P: AQS-PIP-005 span count
 CRYO,CRYO,H2_PURIFIER,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S49P: one at each end nozzle (assumed)
 CRYO,CRYO,H2_PURIFIER,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-H2P-H2O: one at each end nozzle (assumed)
@@ -869,7 +869,7 @@ FARM,FARM,HNO3,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1
 FARM,FARM,HNO3,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,HNO3,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM,HNO3,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,HNO3,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-016 SIL 1
+FARM,FARM,HNO3,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-017 SIL 1
 FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,IA-HNO3: AQS-PIP-005 span count
 FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,IA-NIT-H2O: AQS-PIP-005 span count
 FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-HNO3-VENT: AQS-PIP-005 span count
@@ -891,7 +891,7 @@ FARM,FARM,HTC,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,
 FARM,FARM,HTC,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,HTC,instrument,pressure transmitter,0-25 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM,HTC,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,HTC,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-012 SIL 1
+FARM,FARM,HTC,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-013 SIL 1
 FARM,FARM,HTC,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-HTC-01: AQS-PIP-005 span count
 FARM,FARM,HTC,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-HTC-01: pump discharge (assumed)
 FARM,FARM,HTC,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-HTC-01: one at each end nozzle (assumed)
@@ -1054,7 +1054,7 @@ FARM,FARM_EXT,ALD,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L
 FARM,FARM_EXT,ALD,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM_EXT,ALD,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM_EXT,ALD,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM_EXT,ALD,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-013 SIL 1
+FARM,FARM_EXT,ALD,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-014 SIL 1
 FARM,FARM_EXT,ALD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-ALD: AQS-PIP-005 span count
 FARM,FARM_EXT,ALD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",43,IA-ALD-H2: AQS-PIP-005 span count
 FARM,FARM_EXT,ALD,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ALD: pump discharge (assumed)
@@ -1083,7 +1083,7 @@ FARM,FARM_EXT,BUCL,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316
 FARM,FARM_EXT,BUCL,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM_EXT,BUCL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM_EXT,BUCL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM_EXT,BUCL,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-017 SIL 1
+FARM,FARM_EXT,BUCL,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-018 SIL 1
 FARM,FARM_EXT,BUCL,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",26,IA-BUCL-EX: AQS-PIP-005 span count
 FARM,FARM_EXT,BUCL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,IA-BUCL: AQS-PIP-005 span count
 FARM,FARM_EXT,BUCL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",44,IA-BUCL-H2O: AQS-PIP-005 span count
@@ -1131,7 +1131,7 @@ FARM,FARM_EXT,FORM,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316
 FARM,FARM_EXT,FORM,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM_EXT,FORM,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM_EXT,FORM,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM_EXT,FORM,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-014 SIL 1
+FARM,FARM_EXT,FORM,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-015 SIL 1
 FARM,FARM_EXT,FORM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-CH2O: AQS-PIP-005 span count
 FARM,FARM_EXT,FORM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",48,IA-FORM-H2O: AQS-PIP-005 span count
 FARM,FARM_EXT,FORM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-FORM-R: AQS-PIP-005 span count
@@ -1164,7 +1164,7 @@ FARM,FARM_EXT,MEAM,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316
 FARM,FARM_EXT,MEAM,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM_EXT,MEAM,instrument,pressure transmitter,0-40 bar,"316L thin-film strain gauge, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM_EXT,MEAM,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM_EXT,MEAM,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-015 SIL 1
+FARM,FARM_EXT,MEAM,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-016 SIL 1
 FARM,FARM_EXT,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-MEAM: AQS-PIP-005 span count
 FARM,FARM_EXT,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",41,IA-MEAM-H2O: AQS-PIP-005 span count
 FARM,FARM_EXT,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-NH3-RET: AQS-PIP-005 span count
@@ -1747,7 +1747,7 @@ GLASS,melt,SIC_FURNACE,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 GLASS,melt,SIC_FURNACE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 GLASS,melt,SIC_FURNACE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GLASS,melt,SIC_FURNACE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-GLASS,melt,SIC_FURNACE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-018 SIL 1
+GLASS,melt,SIC_FURNACE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-019 SIL 1
 GLASS,melt,SIC_FURNACE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-SIC-CO: AQS-PIP-005 span count
 GLASS,melt,SIC_FURNACE,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-SIC-CO: pump discharge (assumed)
 GLASS,melt,SIC_FURNACE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-SIC-CO: one at each end nozzle (assumed)
@@ -2065,8 +2065,8 @@ MEOH,tank,MEOH_TANK,valve,isolation valve,DN50,"PP ball valve with HDPE stub end
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-MEOH-FORM: one at each end nozzle (assumed)
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-MEOH-MEAM: one at each end nozzle (assumed)
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-FORM-S: one at each end nozzle (assumed)
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-159 one per bank half
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-161 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-160 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-162 one per bank half
 MFG,MFG,BOARD_MILL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"main drive: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 MFG,MFG,BOARD_MILL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BOARD to MFG_SHOP (assumed size)
 MFG,MFG,BOARD_MILL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BOARD-SCRAP to COMPOST (assumed size)
@@ -2336,7 +2336,7 @@ OIL,OIL_GLASS,OIL_DRYER,instrument,high-level switch,vibrating fork,"IEC 60947-5
 OIL,OIL_GLASS,OIL_DRYER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_DRYER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,OIL_DRYER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-OIL,OIL_GLASS,OIL_DRYER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-010 SIL 1
+OIL,OIL_GLASS,OIL_DRYER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-011 SIL 1
 OIL,OIL_GLASS,OIL_FRAC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-1 to PROD_C5_C10 (assumed size)
 OIL,OIL_GLASS,OIL_FRAC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-2 to PROD_C11_C18 (assumed size)
 OIL,OIL_GLASS,OIL_FRAC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-3 to PROD_C19_C28 (assumed size)
@@ -2397,7 +2397,7 @@ OIL,OIL_GLASS,OIL_PYRO,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 OIL,OIL_GLASS,OIL_PYRO,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_PYRO,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,OIL_PYRO,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-OIL,OIL_GLASS,OIL_PYRO,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-011 SIL 2
+OIL,OIL_GLASS,OIL_PYRO,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-012 SIL 2
 OIL,OIL_GLASS,OIL_PYRO,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",3,IA-OIL-02: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_PYRO,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-SIC-C: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_PYRO,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-OIL-02: pump discharge (assumed)
@@ -2600,7 +2600,7 @@ WET,BMED_CRU,EVAP_ACID,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 WET,BMED_CRU,EVAP_ACID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,BMED_CRU,EVAP_ACID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WET,BMED_CRU,EVAP_ACID,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-WET,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-020 SIL 1
+WET,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-021 SIL 1
 WET,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_ACID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 311.0 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -2633,7 +2633,7 @@ WET,BMED_CRU,EVAP_BASE,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 WET,BMED_CRU,EVAP_BASE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,BMED_CRU,EVAP_BASE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WET,BMED_CRU,EVAP_BASE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-WET,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-021 SIL 1
+WET,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-022 SIL 1
 WET,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 282.7 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -3065,7 +3065,7 @@ WET,scrubber,EVAP_ACID_VS,instrument,high-level switch,vibrating fork,"IEC 60947
 WET,scrubber,EVAP_ACID_VS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,scrubber,EVAP_ACID_VS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WET,scrubber,EVAP_ACID_VS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-WET,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-022 SIL 1
+WET,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-023 SIL 1
 WET,scrubber,EVAP_ACID_VS,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,scrubber,EVAP_ACID_VS,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Sump recirculation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 WET,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-VS-SPENT: AQS-PIP-005 span count

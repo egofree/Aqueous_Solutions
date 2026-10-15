@@ -5668,14 +5668,14 @@
 <title>AFTERBURNER&#45;&gt;HEAT_SINK</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M2192.67,-12047.2C2224.4,-12045.71 2266.7,-12037.85 2289,-12009 2311.46,-11979.94 2275.2,-10713.13 2301,-10687 2404.98,-10581.67 2512.26,-10598.82 2634,-10683 2654.71,-10697.32 2635.18,-10719.27 2654,-10736 2700.89,-10777.68 2752.22,-10720.69 2791,-10770 2823.18,-10810.92 2779.14,-14476.83 2811,-14518 2820.56,-14530.36 2836.21,-14536.28 2851.35,-14538.97"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2851.3,-14542.5 2861.67,-14540.36 2852.23,-14535.56 2851.3,-14542.5"/>
-<text text-anchor="middle" x="2558.5" y="-10685.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;A\n0.7862 kW</text>
+<text text-anchor="middle" x="2558.5" y="-10685.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;A\n0.3934 kW</text>
 </g>
 <!-- AFTERBURNER&#45;&gt;HEAT_SINK -->
 <g id="edge859" class="edge">
 <title>AFTERBURNER&#45;&gt;HEAT_SINK</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M2192.67,-12047.21C2224.4,-12045.71 2266.71,-12037.85 2289,-12009 2312.71,-11978.31 2274.37,-10641.19 2301,-10613 2338.38,-10573.42 2754.02,-10574.04 2791,-10614 2827.83,-10653.8 2777.82,-14475.11 2811,-14518 2820.56,-14530.36 2836.21,-14536.29 2851.35,-14538.98"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2851.3,-14542.5 2861.67,-14540.36 2852.23,-14535.56 2851.3,-14542.5"/>
-<text text-anchor="middle" x="2558.5" y="-10587.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;B\n0.5575 kW</text>
+<text text-anchor="middle" x="2558.5" y="-10587.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;B\n0.3817 kW</text>
 </g>
 <!-- AFTERBURNER&#45;&gt;Q1_A -->
 <g id="edge8" class="edge">
@@ -7077,5 +7077,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="2974.3" y="15631.3" width="1997.7" height="532.7" fill="white" stroke="black" stroke-width="5.55"/><text x="3007.6" y="15720.1" font-family="sans-serif" font-size="49.9">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3007.6" y="15814.4" font-family="sans-serif" font-size="49.9">Process flow diagram</text><text x="3007.6" y="15908.7" font-family="sans-serif" font-size="49.9">Type: flow diagram (ISO_10628_2)   Rev 015dc755   Issued 2026-10-15</text><text x="3007.6" y="16003.1" font-family="sans-serif" font-size="49.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3007.6" y="16097.4" font-family="sans-serif" font-size="49.9">Graph SHA-256 f8c9a5d5d2849759   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="2974.3" y="15631.3" width="1997.7" height="532.7" fill="white" stroke="black" stroke-width="5.55"/><text x="3007.6" y="15720.1" font-family="sans-serif" font-size="49.9">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3007.6" y="15814.4" font-family="sans-serif" font-size="49.9">Process flow diagram</text><text x="3007.6" y="15908.7" font-family="sans-serif" font-size="49.9">Type: flow diagram (ISO_10628_2)   Rev 61e4806e   Issued 2026-10-15</text><text x="3007.6" y="16003.1" font-family="sans-serif" font-size="49.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3007.6" y="16097.4" font-family="sans-serif" font-size="49.9">Graph SHA-256 3d1a418952b495c5   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

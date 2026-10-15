@@ -126,6 +126,9 @@ def build():
     import resolve_overlaps
     resolve_overlaps.resolve(doc, (P.PLATE_L, P.PLATE_W), OUT.parents[1] / "docs-authority/inventory/CAD_MOVES.json")
     doc.recompute()
+    import regroup
+    regroup.regroup(doc, (P.PLATE_L, P.PLATE_W), OUT.parents[1] / "flow_graph/plant_flow_graph.json", OUT.parents[1] / "docs-authority/inventory/CAD_MOVES.json", OUT.parents[1] / "docs-authority/inventory/CAD_REGROUP.json")
+    doc.recompute()
     fire_barriers._rated_rooms(doc)  # last: rooms are fitted to every placed solid
     stamp_materials.stamp(doc, stamp_materials.load_rows())
     transparency.apply_document(doc)

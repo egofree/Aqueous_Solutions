@@ -633,14 +633,14 @@
 <title>AFTERBURNER&#45;&gt;HEAT_SINK</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M978.64,-358.64C1054.38,-360.19 1212.72,-368.05 1249,-406.3 1274.97,-433.68 1245.25,-543.77 1266,-575.3 1269.36,-580.41 1273.9,-584.73 1278.93,-588.36"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1277.4,-591.52 1287.74,-593.83 1281.1,-585.58 1277.4,-591.52"/>
-<text text-anchor="middle" x="1168" y="-408.9" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;A\n0.7862 kW</text>
+<text text-anchor="middle" x="1168" y="-408.9" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;A\n0.3934 kW</text>
 </g>
 <!-- AFTERBURNER&#45;&gt;HEAT_SINK -->
 <g id="edge52" class="edge">
 <title>AFTERBURNER&#45;&gt;HEAT_SINK</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M978.54,-358.03C1008.31,-359.88 1048.11,-366.91 1075,-389.3 1085.41,-397.96 1076.71,-408.5 1087,-417.3 1143.47,-465.53 1199.27,-403.13 1249,-458.3 1284.18,-497.33 1236.16,-532.05 1266,-575.3 1269.47,-580.33 1274.08,-584.61 1279.14,-588.22"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1277.62,-591.4 1287.96,-593.68 1281.3,-585.44 1277.62,-591.4"/>
-<text text-anchor="middle" x="1168" y="-460.9" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;B\n0.5575 kW</text>
+<text text-anchor="middle" x="1168" y="-460.9" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HLL&#45;AFTERBURNER&#45;Q1&#45;B\n0.3817 kW</text>
 </g>
 <!-- AFTERBURNER&#45;&gt;Q1_A -->
 <g id="edge1" class="edge">
@@ -718,5 +718,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="1287.0" y="1312.4" width="590.6" height="157.5" fill="white" stroke="black" stroke-width="1.64"/><text x="1296.9" y="1338.7" font-family="sans-serif" font-size="14.8">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-THERMAL</text><text x="1296.9" y="1366.6" font-family="sans-serif" font-size="14.8">Thermal flow diagram</text><text x="1296.9" y="1394.5" font-family="sans-serif" font-size="14.8">Type: flow diagram (ISO_10628_2)   Rev 534f8678   Issued 2026-10-15</text><text x="1296.9" y="1422.4" font-family="sans-serif" font-size="14.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1296.9" y="1450.3" font-family="sans-serif" font-size="14.8">Graph SHA-256 f8c9a5d5d2849759   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="1287.0" y="1312.4" width="590.6" height="157.5" fill="white" stroke="black" stroke-width="1.64"/><text x="1296.9" y="1338.7" font-family="sans-serif" font-size="14.8">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-THERMAL</text><text x="1296.9" y="1366.6" font-family="sans-serif" font-size="14.8">Thermal flow diagram</text><text x="1296.9" y="1394.5" font-family="sans-serif" font-size="14.8">Type: flow diagram (ISO_10628_2)   Rev 8415292f   Issued 2026-10-15</text><text x="1296.9" y="1422.4" font-family="sans-serif" font-size="14.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1296.9" y="1450.3" font-family="sans-serif" font-size="14.8">Graph SHA-256 3d1a418952b495c5   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

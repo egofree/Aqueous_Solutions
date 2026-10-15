@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,199.2 560.0,60.0 40.0,360.2 58.9,371.1 58.9,379.3" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="125.6">Z +5100</text>
-<text x="306.0" y="206.1">X -22000</text>
-<text x="55.5" y="361.7">Y -800</text>
-<text x="64.9" y="371.2">Z -300</text>
-<circle cx="560.0" cy="199.2" r="5" fill="black"/><text x="568.0" y="213.2">CRYO_H2</text>
-<circle cx="58.9" cy="379.3" r="5" fill="none" stroke="black"/><text x="66.9" y="393.3">BACKUP_GEN</text>
+<polyline points="196.6,428.9 196.6,60.0 40.0,150.4 560.0,450.7 560.0,472.4" fill="none" stroke="black" stroke-width="3"/>
+<text x="202.6" y="240.5">Z +5100</text>
+<text x="124.3" y="101.2">X -2500</text>
+<text x="306.0" y="296.5">Y -8300</text>
+<text x="566.0" y="457.5">Z -300</text>
+<circle cx="196.6" cy="428.9" r="5" fill="black"/><text x="204.6" y="442.9">CRYO_H2</text>
+<circle cx="560.0" cy="472.4" r="5" fill="none" stroke="black"/><text x="568.0" y="486.4">BACKUP_GEN</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S45</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">CRYO_H2 -> BACKUP_GEN</text>
-<text x="20" y="642">pipe 27.97 m in 7 pieces; cut 5062 6000 6000 6000 3924 724 262 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>
+<text x="20" y="642">pipe 15.97 m in 5 pieces; cut 5062 2424 6000 2224 262 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

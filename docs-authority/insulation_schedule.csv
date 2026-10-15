@@ -1,6 +1,6 @@
 item,kind,DN,T_C,duty,material,thk_mm,surface_C,k,loss_W_m,length_m,loss_W,loss_frac_of_duty,meets_limit,insulation_m3
-HL-AFTERBURNER-Q1-A,line,15,250.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0625,29.31,26.82,786.2,0.568,False,3.7292
-HL-AFTERBURNER-Q1-B,line,15,250.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0625,29.31,19.02,557.5,0.403,False,2.6447
+HL-AFTERBURNER-Q1-A,line,15,250.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0625,29.31,13.42,393.4,0.284,False,1.866
+HL-AFTERBURNER-Q1-B,line,15,250.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0625,29.31,13.02,381.7,0.276,False,1.8104
 HL-GLASS_BURNOUT-Q2-A,line,15,150.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.1,0.054,14.09,9.32,131.3,0.141,False,1.2959
 HL-GLASS_BURNOUT-Q2-B,line,15,150.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.1,0.054,14.09,22.92,322.9,0.348,False,3.187
 HL-Q1-A-DOWN,line,25,200.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.8,0.0582,24.73,5.7,141.0,0.124,False,0.8359
@@ -47,7 +47,7 @@ IA-HVAC-COND,line,15,10.0,"cold, anti-condensation","flexible elastomeric (ASTM 
 IA-SINK-01,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,9.77,379.2,,True,0.0292
 IA-PLAST-01,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,9.72,377.3,,True,0.0291
 IA-CULLET,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,12.72,493.7,,True,0.0381
-IA-SCRUB-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,27.86,1081.3,,True,0.0834
+IA-SCRUB-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,30.36,1178.4,,True,0.0909
 IA-HF-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,19.07,740.2,,True,0.0571
 IA-NOX-N,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,32.27,1252.5,,True,0.0966
 IA-NOX-CO2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,35.87,1392.2,,True,0.1074

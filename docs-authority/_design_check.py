@@ -104,6 +104,9 @@ fa2 = json.load(open('docs-authority/inventory/MOTOR_FA.json')); bad = [r['famil
 C.append(dict(check='QC-28', module='flow_graph/inventory/motor_designs.py', item='induction slot + yoke fit the sheet OD (AQS-INV-008 re-derivation)', model=len(bad), independent=0, tol='0', result='pass' if not bad else 'FAIL ' + ' '.join(bad)))
 # 29 catch tank top below the L-1 slab
 C.append(dict(check='QC-29', module='flow_graph/param/water_tower.py', item='catch tank top below L-1 FFL - slab (mm)', model=FP.CATCH_TANK_Z + FP.CATCH_TANK_H, independent=FP.Z_Lm1 - FP.SLAB_THK, tol='<=', result='pass' if FP.CATCH_TANK_Z + FP.CATCH_TANK_H <= FP.Z_Lm1 - FP.SLAB_THK else 'FAIL'))
+# 30 L-1 flow adjacency did not get worse after the regroup
+rg_ = json.load(open('docs-authority/inventory/CAD_REGROUP.json'))
+C.append(dict(check='QC-30', module='models/freecad/regroup.py', item=f"L-1 flow adjacency m ({rg_['units']} units, {rg_['moves']} moves)", model=rg_['adjacency_after_m'], independent=rg_['adjacency_before_m'], tol='<=', result='pass' if rg_['adjacency_after_m'] <= rg_['adjacency_before_m'] else 'FAIL'))
 covered = {c['module'] for c in C}
 mods = sorted([m for m in glob.glob('flow_graph/param/*.py') + glob.glob('flow_graph/param/sizing/*.py') + glob.glob('docs-authority/_*.py') if not os.path.basename(m).startswith(('test_', '__'))])
 rec = [dict(module=m, independent_check=', '.join(sorted({c['check'] for c in C if c['module'] == m})) or '-', status=('auto-checked' if m in covered else 'second-person review required'), checker='') for m in mods]

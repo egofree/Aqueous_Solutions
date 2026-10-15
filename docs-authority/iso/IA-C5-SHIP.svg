@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="78.6,580.0 78.6,171.6 155.9,126.9 40.0,60.0 40.0,80.6" fill="none" stroke="black" stroke-width="3"/>
-<text x="84.6" y="371.8">Z +5950</text>
-<text x="123.3" y="145.2">X +1300</text>
-<text x="104.0" y="89.5">Y +1950</text>
-<text x="46.0" y="66.3">Z -300</text>
-<circle cx="78.6" cy="580.0" r="5" fill="black"/><text x="86.6" y="594.0">PROD_C5_C10</text>
-<circle cx="40.0" cy="80.6" r="5" fill="none" stroke="black"/><text x="48.0" y="94.6">NORTH_DOCK</text>
+<polyline points="40.0,364.0 40.0,235.7 344.3,60.0 560.0,184.5 560.0,191.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="295.9">Z +5950</text>
+<text x="198.2" y="143.9">X +16300</text>
+<text x="458.2" y="118.3">Y -11550</text>
+<text x="566.0" y="183.7">Z -300</text>
+<circle cx="40.0" cy="364.0" r="5" fill="black"/><text x="48.0" y="378.0">PROD_C5_C10</text>
+<circle cx="560.0" cy="191.0" r="5" fill="none" stroke="black"/><text x="568.0" y="205.0">NORTH_DOCK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-C5-SHIP</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">PROD_C5_C10 -> NORTH_DOCK</text>
-<text x="20" y="642">pipe 9.44 m in 4 pieces; cut 5939 1279 1929 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
+<text x="20" y="642">pipe 34.04 m in 7 pieces; cut 5939 6000 6000 4279 6000 5529 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

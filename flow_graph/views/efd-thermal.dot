@@ -139,8 +139,8 @@ digraph G {
   "Q2_B" -> "BOUNDARY_EXPORT" [label="IA-Q2B-LOSS\\n0.17 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-03-TRIM\\n0.78 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-04-TRIM\\n1.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.7862 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.5575 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.3934 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.3817 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-A\\n0.1313 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-B\\n0.3229 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q1_A" -> "HEAT_SINK" [label="HLL-Q1-A-DOWN\\n0.141 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];

@@ -1153,8 +1153,8 @@ digraph G {
   "SOL_ARK_60K" -> "MET_SCRUB" [label="SF-MET_SCRUB\\n2.1234 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MET_SCRUB" -> "HEAT_SINK" [label="SQ-MET_SCRUB\\n2.1234 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "H2_PURIFIER" -> "VCD_TRAIN" [label="IA-H2P-H2O\\n0.005029 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.7862 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.5575 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.3934 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.3817 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-A\\n0.1313 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-B\\n0.3229 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q1_A" -> "HEAT_SINK" [label="HLL-Q1-A-DOWN\\n0.141 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];

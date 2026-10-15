@@ -42,32 +42,32 @@ Earlier fixes: core re-packed (CORE 8 x 6 m; STAIR_P, ELEV_SVC, STAIR_MAINT and 
 
 Fixes: the L-1 corridors were re-routed round the process hall (`fitout.LM1_ROUTE`: south aisle, west aisle, link and north aisle to STAIR_SERVICE, approach to the CRYO west door, all >= 1,200 mm); the old E-W and N-S spines ran through the pyrolysis, BMED and leach lines. The catch tank top was dropped 0.5 m below L-1 floor (slab plus bund-sump recess; `water_tower.TOP`), which deepens L-2 and changes the hydro head. The rest by `resolve_overlaps.py` (A-M-220), which moves the smaller unit of each overlapping pair to the nearest clear position on its level:
 
-53 moves; the largest are listed. Moves above 2 m change the piping runs, which are drawn from the old positions until the isometrics are regenerated (X-BLD-04 follow-up).
+65 moves; the largest are listed. Moves above 2 m change the piping runs, which are drawn from the old positions until the isometrics are regenerated (X-BLD-04 follow-up).
 
 | Unit | Was clashing with | dx mm | dy mm |
 |---|---|---|---|
+| PROD_C5_C10 | REGROUP | -12000 | 12000 |
+| AFTERBURNER | REGROUP | -8500 | 8500 |
+| CRYO_H2 | REGROUP | -12000 | 4000 |
+| CRYO_CO2 | REGROUP | -12000 | 2000 |
+| H2_DRYER | REGROUP | -9000 | 5000 |
+| BMED_UPW_POLISH | REGROUP | -2500 | 9000 |
+| CRYO_H2 | REGROUP | -7500 | 3500 |
 | FAN_STACK | CORR_L0_EW | -8092 | 0 |
 | HYDRO_SET | CORR_Lm2_NS | 0 | -6900 |
+| BAGHOUSE | REGROUP | 2500 | -3000 |
 | GROW_BED | CORR_L1_FARM | 0 | 4500 |
+| PROD_C5_C10 | REGROUP | -3000 | 1500 |
 | MELT | NaOH_DIGEST | 4380 | 0 |
 | PROD_METALS | BURNOUT_ROTARY | 4320 | 0 |
 | PK_3 | PK_4_CEM_BOX | 4050 | 0 |
 | ACID_POLISH_SCRUB | NaOH_PRODUCT | -3662 | 0 |
+| ACID_POLISH_SCRUB | REGROUP | 3000 | -500 |
+| H2_DRYER | REGROUP | -3000 | -500 |
 | NaOH_PRODUCT | LOBBY_ELEV_Lm1 | 0 | 3476 |
 | PK_2 | PK_3 | 0 | 3144 |
+| CRYO_O2 | REGROUP | 0 | 3000 |
 | COMP_EXPAND | COLD_BOX | -2800 | 0 |
 | PK_7 | PK_8 | 2674 | 0 |
 | PK_4_CEM_BOX | PK_5_CEM_BOX | 0 | 2520 |
 | DIST_COL_SEC | COLD_BOX | 0 | 2400 |
-| MET_POWDER_CRIB | CORR_L0_EW | 0 | 2300 |
-| COLD_BOX | SHAFT_DUST | 2200 | 0 |
-| H2_STACK | BURNOUT_ROTARY | 0 | -2153 |
-| BIOFILTER | PART_FARM_SERVICE | 2100 | 0 |
-| MET_SCRUB | CORR_L0_EW | 0 | 2100 |
-| HCl_PRODUCT | FAN_STACK | -1848 | 0 |
-| STIRLING_COLD_HEAD | SHAFT_DUST | 0 | 1800 |
-| HAB_WASTE | PART_HAB_SLEEP_GALLEY | 1600 | 0 |
-| GEO_HDR | FUEL_CELL | 0 | -1600 |
-| FRACTIONATOR | NaOH_DIGEST | 1526 | 0 |
-| RINSE_DEWATER | EW_BUND | 0 | -1516 |
-| VIBRATORY_SPLIT | DRYER | 0 | -1455 |

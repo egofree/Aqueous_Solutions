@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,81.7 560.0,60.0 40.0,360.2 283.9,501.0 283.9,578.4" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="66.8">Z +700</text>
-<text x="306.0" y="206.1">X -19400</text>
-<text x="168.0" y="426.6">Y -9100</text>
-<text x="289.9" y="535.7">Z -2500</text>
-<circle cx="560.0" cy="81.7" r="5" fill="black"/><text x="568.0" y="95.7">BAGHOUSE</text>
-<circle cx="283.9" cy="578.4" r="5" fill="none" stroke="black"/><text x="291.9" y="592.4">LEACH_CSTR_1</text>
+<polyline points="560.0,79.2 560.0,60.0 40.0,360.2 184.8,443.8 184.8,512.4" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="65.6">Z +700</text>
+<text x="306.0" y="206.1">X -21900</text>
+<text x="118.4" y="398.0">Y -6100</text>
+<text x="190.8" y="474.1">Z -2500</text>
+<circle cx="560.0" cy="79.2" r="5" fill="black"/><text x="568.0" y="93.2">BAGHOUSE</text>
+<circle cx="184.8" cy="512.4" r="5" fill="none" stroke="black"/><text x="192.8" y="526.4">LEACH_CSTR_1</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-BAG-01</text>
 <text x="20" y="614">DN50  class P2  CPVC Sch 80 ASTM F441</text>
 <text x="20" y="628">BAGHOUSE -> LEACH_CSTR_1</text>
-<text x="20" y="642">pipe 31.52 m in 8 pieces; cut 670 6000 6000 6000 1340 6000 3040 2470 mm</text>
+<text x="20" y="642">pipe 31.02 m in 8 pieces; cut 670 6000 6000 6000 3840 6000 40 2470 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 12 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

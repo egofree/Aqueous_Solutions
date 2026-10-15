@@ -2353,9 +2353,9 @@
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 18.4 kPa (1.50 m full at SG 1.25) = 20.5 kPa g (A-M-174)"
         },
         "redundancy": {
-          "rejection_kW": 151.7,
+          "rejection_kW": 152.26,
           "modules": 3,
-          "module_kW": 75.85,
+          "module_kW": 76.13,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }
@@ -2404,9 +2404,9 @@
         "line_id_mm": 15.8,
         "velocity_m_s": 0.117,
         "velocity_basis_m_s": 1.0,
-        "line_loss_W": 786.2,
-        "line_loss_normal_W": 786.2,
-        "duty_source_rated_kw": 2.1692,
+        "line_loss_W": 393.4,
+        "line_loss_normal_W": 393.4,
+        "duty_source_rated_kw": 1.7764,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
@@ -2452,9 +2452,9 @@
         "line_id_mm": 15.8,
         "velocity_m_s": 0.117,
         "velocity_basis_m_s": 1.0,
-        "line_loss_W": 557.5,
-        "line_loss_normal_W": 557.5,
-        "duty_source_rated_kw": 1.9405,
+        "line_loss_W": 381.7,
+        "line_loss_normal_W": 381.7,
+        "duty_source_rated_kw": 1.7647,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
@@ -4678,10 +4678,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.7862,
+        "value": 0.3934,
         "unit": "kW",
         "status": "study",
-        "note": "X-THM-04: 29.31 W/m x 26.82 m at 200 mm (AQS-THM-003, A-M-165)."
+        "note": "X-THM-04: 29.31 W/m x 13.42 m at 200 mm (AQS-THM-003, A-M-165)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": null,
@@ -4704,10 +4704,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5575,
+        "value": 0.3817,
         "unit": "kW",
         "status": "study",
-        "note": "X-THM-04: 29.31 W/m x 19.02 m at 200 mm (AQS-THM-003, A-M-165)."
+        "note": "X-THM-04: 29.31 W/m x 13.02 m at 200 mm (AQS-THM-003, A-M-165)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": null,
