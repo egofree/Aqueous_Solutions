@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 123 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 124 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 22 | Commissioning record |
 
-Total 249 items: 120 drivers, 129 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 250 items: 120 drivers, 130 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -275,6 +275,7 @@ Total 249 items: 120 drivers, 129 register entries. Classification rule: first m
 | A-M-124 | Pipe stock 6.096 m (20 ft) random lengths with 3 mm kerf, fi m | Cut-plan reconciliation at fabrication: issued lengths against consumed stock, offcut within 5 % | X-INV-04 |
 | A-M-125 | Counting rules: 2 isolation valves per line; check valve and count | P&ID take-off count against AQS-INV-004 per family; difference reported per family | X-INV-05 |
 | A-M-126 | Design coefficients inside published ranges: B_delta 0.75 T, T, kA/m, A/mm2 | IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K | X-INV-02 |
+| A-M-130 | Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotr T, mm, % | Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 % | X-INV-02D |
 
 ## 7. T6 Commissioning measurements
 

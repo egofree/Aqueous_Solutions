@@ -46,6 +46,32 @@ PLAN = {'induction': ['Laminations: laser-cut then stamped M400-50A (EN 10106) 0
         'stepper': ['Hybrid 2-phase 1.8 deg: 8-pole stator, 50-tooth rotor, axially magnetised NdFeB ring between two toothed caps', 'Laminations 0.35 mm (EN 10106); bifilar or unipolar windings from the wire line', 'Flange to NEMA ICS 16', 'Test: holding torque, step accuracy (+/- 5 %), resistance and inductance'],
         'solenoid': ['Coil: class H enamelled wire (IEC 60317-13) on a PA66-GF bobbin, 22 mm ISO 15218 interface', 'Plunger and frame: ferritic stainless 430F', 'Encapsulation in epoxy; DIN EN 175301-803 connector', 'Test: coil resistance, pull-in voltage at 85 % rated, insulation 1000 V'],
         'actuator': ['BLDC motor of family MF-01 driving a worm gear (bronze wheel, steel worm)', 'Output to ISO 5211 F03 square, end stops and position switches', 'Housing PA66-GF or Al, IP67', 'Test: breakaway torque at the ISO 5211 F03 rating, travel time, cycle life sample']}
+MAG = {'NdFeB': dict(Br=1.30, Hc=1000, rho=7500, lm=3.0, grade='sintered N42, Br 1.29-1.32 T, Hcj >= 955 kA/m', RE=0.31),
+       'ferrite': dict(Br=0.27, Hc=190, rho=3600, lm=6.0, grade='anisotropic polymer-bonded Sr-ferrite, Br 0.25-0.29 T, HcB 180-200 kA/m', RE=0.0)}   # COEY2010 table 11.4; IEC 60404-8-1
+GAP, MUR, LEAK, BSAT, PFE = 0.5, 1.05, 0.9, 0.8, 0.05
+def bg(m): M = MAG[m]; return min(BSAT, LEAK*M['Br']*M['lm']/(M['lm'] + MUR*GAP))    # air-gap flux, magnet circuit (HENDERSHOT2010 ch. 4); tooth-limited at BSAT
+def pm_variant(kw, rpm, flange, mag, A=15e3, J=5.0):
+    T = kw*1e3/(rpm*2*math.pi/60); B = bg(mag); DL = T/(math.pi/2*A*B)
+    Dg = min(flange*0.5e-3, (DL/1.0)**(1/3)); L = DL/Dg**2
+    lt = 2*(L + 1.2*math.pi*Dg/8)                                  # turn length, 8 poles
+    Pcu = 1.72e-8*(J*1e6)*A*math.pi*Dg*lt/2                          # rho J A (pi D) (l_turn/2), W
+    eta = kw*1e3/(kw*1e3*(1 + PFE) + Pcu)
+    mm = math.pi*Dg*MAG[mag]['lm']*1e-3*L*MAG[mag]['rho']
+    nxt = 'fits' if L*1e3 <= 2.5*flange else ('next flange (NEMA 23)' if flange < 57 else 'next flange (NEMA 34)' if flange < 86 else 'longer than 2.5 x flange: review')
+    return dict(T=T*1e3, B=B, D=Dg*1e3, L=L*1e3, eta=eta, mag_g=mm*1e3, RE_g=mm*1e3*MAG[mag]['RE'], frame=nxt)
+ROUTE = {'NdFeB': 'Nd/Pr from feedstock magnets (IA-FEED-01 scrap): hydrogen decrepitation and re-sintering of recovered NdFeB (WALTON2015), or full RE separation by solvent extraction + NdF3 molten-salt electrolysis (not on the graph); strip cast, jet mill, field press, sinter 1080 C, Ni coat',
+         'ferrite': 'Fe2O3 from the leach iron (hematite) + SrCO3 (Sr not in the plant feed: celestite import or Sr from feedstock ceramics); calcine 1250 C, mill, compound in PA12, injection-mould in an orienting field; no sintering line'}
+def magnets(fam):
+    out = []
+    for f in fam:
+        if f['family'] not in ('MF-01', 'MF-02', 'MF-03', 'MF-22', 'MF-23'): continue
+        n = int(f['count']); per = float(f['installed_shaft_kW'])/n
+        if f['family'] == 'MF-03': per, fl, rpm = float([x for x in fam if x['family'] == 'MF-01'][0]['installed_shaft_kW'])/int([x for x in fam if x['family'] == 'MF-01'][0]['count']), 42, 3000
+        else: fl = 42 if '42' in f['size'] else 57 if '57' in f['size'] else 86; rpm = 3000 if f['motor_type'].startswith('BLDC') else 600
+        for m in ('NdFeB', 'ferrite'):
+            d = pm_variant(per, rpm, fl, m); out.append(dict(family=f['family'], magnet=m, count=n, torque_mNm=round(d['T'], 1), Bg_T=round(d['B'], 2), D_mm=round(d['D'], 1), L_mm=round(d['L'], 1),
+                                                           frame=d['frame'], eta=round(d['eta']*100, 1), magnet_g=round(d['mag_g'], 1), RE_g=round(d['RE_g'], 1), fleet_magnet_kg=round(d['mag_g']*n/1000, 2), fleet_RE_kg=round(d['RE_g']*n/1000, 2)))
+    return out
 def main():
     fam = list(csv.DictReader(open(os.path.join(D, 'MOTOR_FAMILIES.csv')))); rows = []
     for f in fam:
@@ -92,6 +118,16 @@ def main():
          f'{len(rows)} families. Induction and hermetic: output-equation sizing (PYRHONEN2014), IEC 60072-1 frames, IE3 targets from the IEC 60034-30-1 60 Hz table. BLDC: torque equation (HENDERSHOT2010). Families with core length/bore above 2.5 in their IEC frame: {", ".join(bad) or "none"}.', '',
          '| Family | Type | Rating | Bore mm | Core L mm | OD / flange mm | Turns/ph | I A | Conductor | Steel kg | Cu kg | Fits |', '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
     M += [f"| [{r['family']}](motor_families/{r['family']}.md) | {r['type']} | {r['rating']} | {r['Dg_mm']} | {r['L_mm']} | {r['Dout_mm']} | {r['turns']} | {r['current_A']} | {r['conductor']} | {r['steel_kg']} | {r['copper_kg']} | {r['fits']} |" for r in rows]
+    C = magnets(fam)
+    with open(os.path.join(D, 'MAGNET_COMPARISON.csv'), 'w', newline='') as fh: w = csv.DictWriter(fh, list(C[0].keys())); w.writeheader(); w.writerows(C)
+    M += ['', '## Magnet comparison, NdFeB vs bonded ferrite (X-INV-02D, owner 2026-10-15; basis held at NdFeB until Mike decides)', '',
+          f"Properties: NdFeB {MAG['NdFeB']['grade']}; ferrite {MAG['ferrite']['grade']} (COEY2010, IEC 60404-8-1). Air gap {GAP} mm, magnet thickness {MAG['NdFeB']['lm']} / {MAG['ferrite']['lm']} mm, leakage {LEAK}, tooth limit {BSAT} T, electric loading 15 kA/m, J 5 A/mm2, iron loss {PFE*100:.0f} % (A-M-130).", '',
+          '| Family | Magnet | Count | Torque mN m | B gap T | Rotor D x L mm | Frame | Efficiency % | Magnet g/unit | Rare earth g/unit | Fleet magnet kg | Fleet RE kg |', '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
+    M += [f"| {c['family']} | {c['magnet']} | {c['count']} | {c['torque_mNm']} | {c['Bg_T']} | {c['D_mm']} x {c['L_mm']} | {c['frame']} | {c['eta']} | {c['magnet_g']} | {c['RE_g']} | {c['fleet_magnet_kg']} | {c['fleet_RE_kg']} |" for c in C]
+    M += ['', '| Item | NdFeB | Bonded ferrite |', '| --- | --- | --- |', f"| Material route | {ROUTE['NdFeB']} | {ROUTE['ferrite']} |",
+          '| Production line | magnet line with sintering furnace (vacuum/argon), field press, coating; rotor bonding | injection moulding press with orienting fixture; magnets moulded onto the rotor hub, no coating |',
+          '| Imported element | none if feedstock magnets suffice; otherwise Nd/Pr and Dy | Sr (or Ba) |',
+          '| Motor consequence | smallest frames, highest efficiency | longer rotors or next flange; lower efficiency at equal electric loading |']
     open(os.path.join(D, 'MOTOR_DESIGNS.md'), 'w').write('\n'.join(M) + '\n'); return rows, bad
 if __name__ == '__main__':
     rows, bad = main(); print(len(rows), 'families; not fitting', bad)

@@ -1998,5 +1998,20 @@
   "sensitivity": "Fuel formula moves the combustion oxidant by about +/-5 %; the deficit sign does not change",
   "replaced_by": "Owner decision on the O2 source (X-PAR-12) and the cold-box species split (X-PAR-11)",
   "verification_test": "Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 %"
+ },
+ {
+  "id": "A-M-130",
+  "task": "X-INV-02D",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/motor_designs.py"
+  ],
+  "value": "Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotropic Sr-ferrite Br 0.27 T, 6 mm; air gap 0.5 mm, recoil permeability 1.05, leakage 0.9, tooth-limited 0.8 T; electric loading 15 kA/m, J 5 A/mm2, iron loss 5 %, 8 poles; RE content of NdFeB 31 wt%; BLDC 3000 rpm, stepper 600 rpm",
+  "units": "T, mm, %",
+  "where": "AQS-INV-005 magnet comparison; MAGNET_COMPARISON.csv",
+  "basis": "COEY2010 ch. 11; IEC 60404-8-1; HENDERSHOT2010; WALTON2015",
+  "sensitivity": "Ferrite rotor volume scales with 1/B_gap; a thicker ferrite magnet or a spoke rotor narrows the gap",
+  "replaced_by": "First-article back-EMF and torque tests of both variants (X-INV-02B)",
+  "verification_test": "Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 %"
  }
 ]
