@@ -5,13 +5,15 @@ ID <= 152 mm at higher pressure -> outside Section VIII by size, designed as a p
 otherwise Section VIII Division 1 (in-house design, no stamp in this study). Replaces the "Vendor" class. Run: python3 docs-authority/_asme_class.py"""
 import collections, json, os
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MACHINES = {'EXPANDER': 'reciprocating expander, cylinder and head are parts of the machine (models/mfg/EXPANDER); hydrotest 1.5 x 550 kPa g'}
 def main():
     g = json.load(open(os.path.join(R, 'flow_graph/plant_flow_graph.json'))); rows = []
     for n in sorted(g['nodes'], key=lambda n: n['unit_id']):
         p = n.get('params') or {}; ds = p.get('design') or {}
         P = p.get('design_kPa'); T = ds.get('T_C'); D = ds.get('D_mm'); t = ds.get('wall_mm') or ds.get('t_nom_mm') or 0
         ID = (D - 2*t) if D else None
-        if P is None: cls, why = 'not a vessel (no design pressure on the graph)', '-'
+        if n['unit_id'] in MACHINES: cls, why = 'Machine casing (outside Section VIII)', 'U-1(c)(2)(c): ' + MACHINES[n['unit_id']]
+        elif P is None: cls, why = 'not a vessel (no design pressure on the graph)', '-'
         elif P <= 103.0: cls, why = 'Atmospheric', 'U-1(c)(2)(h): <= 103 kPa g'
         elif ID is not None and ID <= 152.0: cls, why = 'B31.3 piping component', f'U-1(c)(2)(j): ID {ID:.0f} mm <= 152 mm'
         elif ID is None: cls, why = 'Section VIII-1 (ID not yet sized)', f'{P:.0f} kPa g > 103; size from its unit design'

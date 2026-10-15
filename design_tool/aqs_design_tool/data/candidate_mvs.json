@@ -2392,7 +2392,7 @@
             }
           ]
         },
-        "duty": "In 43.424 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "duty": "In 43.424 kg/d, out 43.424 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4923,7 +4923,7 @@
             }
           ]
         },
-        "duty": "In 932.476 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
+        "duty": "In 932.471 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
