@@ -1,5 +1,7 @@
 # Build plan
 
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+
 Document number: AQS-PLAN-002
 Revision: A
 Date: 2026-10-10

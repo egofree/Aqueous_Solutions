@@ -1,5 +1,7 @@
 # MVS equipment issue
 
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+
 Document: AQS-MVS-EQP-001
 Date: 2026-10-02; Rev K 2026-10-07; Rev L 2026-10-07
 Graph Rev L (no envelope changes from Rev K). L×W×H are issued envelopes in millimetres, not vendor nameplates, except the study envelopes in the second table.

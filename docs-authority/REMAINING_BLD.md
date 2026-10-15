@@ -1,5 +1,7 @@
 # Remaining after BLD CAD pass (2026-09-27)
 
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+
 Document number: AQS-REM-BLD-001  
 Revision: Y
 Date: 2026-10-01  
