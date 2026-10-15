@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2000 kg/d. Mass out 0.2000 kg/d. Electrical duty 0.1000 kW. In: IA-FISH-DET 0.2000 kg/d (detritus). Out: IA-CLOSE-11 0.1000 kg/d (crayfish molt liquor to imidazole makeup); IA-CRAY-HAB 0.0800 kg/d (crayfish); IA-CRAY-DET 0.0200 kg/d (unassimilated detritus).
+1. Basis. Mass in 0.2 kg/d. Mass out 0.2 kg/d. Electrical duty 0.1000 kW. In: IA-FISH-DET 0.2 kg/d (detritus). Out: IA-CLOSE-11 0.1 kg/d (crayfish molt liquor to imidazole makeup); IA-CRAY-HAB 0.08 kg/d (crayfish); IA-CRAY-DET 0.02 kg/d (unassimilated detritus).
 
 2. Size.
 - In 0.2000 kg/d, out 0.2000 kg/d. No holdup claimed.

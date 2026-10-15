@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0600 kg/d. Mass out 0.0600 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_ALLIUM 0.0600 kg/d (onion, garlic, leek). Out: IA-CROP_ALLIUM-HAB 0.0600 kg/d (harvest).
+1. Basis. Mass in 0.06 kg/d. Mass out 0.06 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_ALLIUM 0.06 kg/d (onion, garlic, leek). Out: IA-CROP_ALLIUM-HAB 0.06 kg/d (harvest).
 
 2. Size.
 - In 0.0600 kg/d, out 0.0600 kg/d. No holdup claimed.

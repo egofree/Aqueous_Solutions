@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0200 kg/d. Mass out 0.0200 kg/d. Electrical duty 0.3000 kW. In: IA-COAT-IN 0.0200 kg/d (nickel sheet to the booth). Out: IA-COAT-OUT 0.0200 kg/d (coated anode).
+1. Basis. Mass in 0.02 kg/d. Mass out 0.02 kg/d. Electrical duty 0.3000 kW. In: IA-COAT-IN 0.02 kg/d (nickel sheet to the booth). Out: IA-COAT-OUT 0.02 kg/d (coated anode).
 
 2. Size.
 - Envelope 1200×800×1800 mm, 1.73 m³. The box is the machine. It is not a liquid holdup.

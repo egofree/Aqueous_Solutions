@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.3000 kg/d. Mass out 0.3000 kg/d. Electrical duty 0.1500 kW. In: IA-STRAW 0.3000 kg/d (wheat straw). Out: IA-STRAW-SPENT 0.1800 kg/d (spent oyster spawn); IA-OYSTER 0.1200 kg/d (oyster).
+1. Basis. Mass in 0.3 kg/d. Mass out 0.3 kg/d. Electrical duty 0.1500 kW. In: IA-STRAW 0.3 kg/d (wheat straw). Out: IA-STRAW-SPENT 0.18 kg/d (spent oyster spawn); IA-OYSTER 0.12 kg/d (oyster).
 
 2. Size.
 - In 0.3000 kg/d, out 0.3000 kg/d. No holdup claimed.

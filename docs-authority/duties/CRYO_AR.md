@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 5.30 kg/d. Mass out 5.30 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-AR 5.30 kg/d (argon). Out: IA-AR-FAB 5.30 kg/d (argon cover).
+1. Basis. Mass in 5.300 kg/d. Mass out 5.300 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-AR 5.300 kg/d (argon). Out: IA-AR-FAB 5.300 kg/d (argon cover).
 
 2. Size.
 - Receiver 1 L. Not a packed tower. The inventory is held.

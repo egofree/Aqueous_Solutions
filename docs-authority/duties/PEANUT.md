@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2000 kg/d. Mass out 0.2000 kg/d. Electrical duty 0.3000 kW. In: IA-PN-S 0.2000 kg/d (bed spill). Out: IA-PN-R 0.2000 kg/d (peanut).
+1. Basis. Mass in 0.2 kg/d. Mass out 0.2 kg/d. Electrical duty 0.3000 kW. In: IA-PN-S 0.2 kg/d (bed spill). Out: IA-PN-R 0.2 kg/d (peanut).
 
 2. Size.
 - In 0.2000 kg/d, out 0.2000 kg/d. No holdup claimed.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2000 kg/d. Mass out 0.2000 kg/d. Electrical duty 0.1000 kW. In: IA-ETOH 0.2000 kg/d (ethanol). Out: IA-ALD 0.1912 kg/d (acetaldehyde); IA-ALD-H2 0.0088 kg/d (dehydrogenation hydrogen).
+1. Basis. Mass in 0.2 kg/d. Mass out 0.2 kg/d. Electrical duty 0.1000 kW. In: IA-ETOH 0.2 kg/d (ethanol). Out: IA-ALD 0.191 kg/d (acetaldehyde); IA-ALD-H2 0.00875 kg/d (dehydrogenation hydrogen).
 
 2. Size.
 - In 0.2000 kg/d, out 0.2000 kg/d. No holdup claimed.

@@ -3178,7 +3178,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 79.28,
+        "value": 128.527,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -14019,10 +14019,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 79.28,
+        "value": 128.527,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked)."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23311,10 +23311,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 79.28,
+        "value": 128.527,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked)."
+        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23735,10 +23735,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 97.09,
+        "value": 146.337,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +49.58 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked)."
+        "note": "AQS-PLAN-001 Rev B X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +49.58 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26431,6 +26431,4738 @@
         "conditions_status": "study",
         "conditions_basis": "X-MAT-15 segment use; AQS-REV-H2-001 Rev B"
       }
+    },
+    {
+      "stream_id": "SF-ALK_SCRUBBER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ALK_SCRUBBER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ALK_SCRUBBER",
+      "from_unit_id": "ALK_SCRUBBER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BMED_UPW_POLISH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BMED_UPW_POLISH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.038,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BMED_UPW_POLISH",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.038,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_H2",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_H2",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.565,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_H2",
+      "from_unit_id": "CRYO_H2",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.565,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-GEO_HP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GEO_HP",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-GEO_HP",
+      "from_unit_id": "GEO_HP",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-GLASS_DIGEST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-GLASS_DIGEST",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-H2_DRYER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "H2_DRYER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-H2_DRYER",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-LEACH_CSTR_1",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-LEACH_CSTR_1",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MEOH_SYNTH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MEOH_SYNTH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MEOH_SYNTH",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MFG_SHOP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 3.98,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MFG_SHOP",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 3.98,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-NUTRIENT_DOSE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "NUT",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-NUTRIENT_DOSE",
+      "from_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "NUT",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-WAFER_FAB",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-WAFER_FAB",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-WET_BENCH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "WET_BENCH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-WET_BENCH",
+      "from_unit_id": "WET_BENCH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-LITHO_STUB",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LITHO_STUB",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-LITHO_STUB",
+      "from_unit_id": "LITHO_STUB",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ELECTRODE_COAT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ELECTRODE_COAT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ELECTRODE_COAT",
+      "from_unit_id": "ELECTRODE_COAT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BLOW_MOLD",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BLOW_MOLD",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BLOW_MOLD",
+      "from_unit_id": "BLOW_MOLD",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-SOLAR_PV_CELL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SOLAR_PV_CELL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-SOLAR_PV_CELL",
+      "from_unit_id": "SOLAR_PV_CELL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ANIMAL_PEN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ANIMAL_PEN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ANIMAL_PEN",
+      "from_unit_id": "ANIMAL_PEN",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-COMPOST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "COMPOST",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-COMPOST",
+      "from_unit_id": "COMPOST",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-DIGESTER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "DIGESTER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-DIGESTER",
+      "from_unit_id": "DIGESTER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-EMETH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EMETH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-EMETH",
+      "from_unit_id": "EMETH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-LIGNO_PRE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LIGNO_PRE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.8,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-LIGNO_PRE",
+      "from_unit_id": "LIGNO_PRE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.8,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BOARD_MILL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BOARD_MILL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BOARD_MILL",
+      "from_unit_id": "BOARD_MILL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-HTC",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HTC",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-HTC",
+      "from_unit_id": "HTC",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_ASU",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 18.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_ASU",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 18.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_HE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_HE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_HE",
+      "from_unit_id": "CRYO_HE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_NE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_NE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_NE",
+      "from_unit_id": "CRYO_NE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_KR",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_KR",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_KR",
+      "from_unit_id": "CRYO_KR",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_XE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_XE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_XE",
+      "from_unit_id": "CRYO_XE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRYO_AR",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_AR",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRYO_AR",
+      "from_unit_id": "CRYO_AR",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-YEAST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "YEAST",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-YEAST",
+      "from_unit_id": "YEAST",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ABE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ABE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ABE",
+      "from_unit_id": "ABE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ACETOX",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ACETOX",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ACETOX",
+      "from_unit_id": "ACETOX",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ALD",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ALD",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ALD",
+      "from_unit_id": "ALD",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-GLYOXAL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GLYOXAL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-GLYOXAL",
+      "from_unit_id": "GLYOXAL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-FORM",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FORM",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-FORM",
+      "from_unit_id": "FORM",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MEAM",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MEAM",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MEAM",
+      "from_unit_id": "MEAM",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-IMID",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "IMID",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-IMID",
+      "from_unit_id": "IMID",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-QUAT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "QUAT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-QUAT",
+      "from_unit_id": "QUAT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ACEX",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ACEX",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ACEX",
+      "from_unit_id": "ACEX",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-HNO3",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HNO3",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-HNO3",
+      "from_unit_id": "HNO3",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BUCL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BUCL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BUCL",
+      "from_unit_id": "BUCL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BSFL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BSFL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BSFL",
+      "from_unit_id": "BSFL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-DUCKWEED",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "DUCKWEED",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-DUCKWEED",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-WORMS",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "WORMS",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-WORMS",
+      "from_unit_id": "WORMS",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BEES",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BEES",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BEES",
+      "from_unit_id": "BEES",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CHICKENS",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CHICKENS",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CHICKENS",
+      "from_unit_id": "CHICKENS",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-GOATS",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GOATS",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-GOATS",
+      "from_unit_id": "GOATS",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-FISH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FISH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-FISH",
+      "from_unit_id": "FISH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CRAYFISH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRAYFISH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CRAYFISH",
+      "from_unit_id": "CRAYFISH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-AZOLLA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AZOLLA",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-AZOLLA",
+      "from_unit_id": "AZOLLA",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MUSHROOM",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MUSHROOM",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MUSHROOM",
+      "from_unit_id": "MUSHROOM",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-COMPOST_TOILET",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "COMPOST_TOILET",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-COMPOST_TOILET",
+      "from_unit_id": "COMPOST_TOILET",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-NFIX_BED",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "NFIX_BED",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-NFIX_BED",
+      "from_unit_id": "NFIX_BED",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MUSH_STRAW",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MUSH_STRAW",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MUSH_STRAW",
+      "from_unit_id": "MUSH_STRAW",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MUSH_BLOCK",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MUSH_BLOCK",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MUSH_BLOCK",
+      "from_unit_id": "MUSH_BLOCK",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-AMF",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AMF",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-AMF",
+      "from_unit_id": "AMF",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-COMPOST_MYC",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "COMPOST_MYC",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-COMPOST_MYC",
+      "from_unit_id": "COMPOST_MYC",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-FRUIT_GUTTER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FRUIT_GUTTER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-FRUIT_GUTTER",
+      "from_unit_id": "FRUIT_GUTTER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-VEG_BED",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "VEG_BED",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-VEG_BED",
+      "from_unit_id": "VEG_BED",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CLARIFIER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CLARIFIER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CLARIFIER",
+      "from_unit_id": "CLARIFIER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BIOFILTER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BIOFILTER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BIOFILTER",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-FISH_SUMP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FISH_SUMP",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-FISH_SUMP",
+      "from_unit_id": "FISH_SUMP",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_TOMATO",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_TOMATO",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_TOMATO",
+      "from_unit_id": "CROP_TOMATO",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_CUCUMBER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_CUCUMBER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_CUCUMBER",
+      "from_unit_id": "CROP_CUCUMBER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_PEPPER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_PEPPER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_PEPPER",
+      "from_unit_id": "CROP_PEPPER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_LETTUCE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_LETTUCE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_LETTUCE",
+      "from_unit_id": "CROP_LETTUCE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_SPINACH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_SPINACH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_SPINACH",
+      "from_unit_id": "CROP_SPINACH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_KALE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_KALE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_KALE",
+      "from_unit_id": "CROP_KALE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_ALLIUM",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_ALLIUM",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_ALLIUM",
+      "from_unit_id": "CROP_ALLIUM",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_BASIL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_BASIL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_BASIL",
+      "from_unit_id": "CROP_BASIL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CROP_ROSEMARY",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CROP_ROSEMARY",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CROP_ROSEMARY",
+      "from_unit_id": "CROP_ROSEMARY",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-CLOVER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CLOVER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-CLOVER",
+      "from_unit_id": "CLOVER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-SEED_BANK",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SEED_BANK",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-SEED_BANK",
+      "from_unit_id": "SEED_BANK",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-STRUVITE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "STRUVITE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-STRUVITE",
+      "from_unit_id": "STRUVITE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ASH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ASH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ASH",
+      "from_unit_id": "ASH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-IODIDE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "IODIDE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-IODIDE",
+      "from_unit_id": "IODIDE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-NFT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "NFT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-NFT",
+      "from_unit_id": "NFT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-MISTER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MISTER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-MISTER",
+      "from_unit_id": "MISTER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-DUAL_ROOT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "DUAL_ROOT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-DUAL_ROOT",
+      "from_unit_id": "DUAL_ROOT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-AZOLLA_BED",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AZOLLA_BED",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-AZOLLA_BED",
+      "from_unit_id": "AZOLLA_BED",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-ETOH_STILL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ETOH_STILL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-ETOH_STILL",
+      "from_unit_id": "ETOH_STILL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-BUOH_STILL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BUOH_STILL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-BUOH_STILL",
+      "from_unit_id": "BUOH_STILL",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-PEANUT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "PEANUT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-PEANUT",
+      "from_unit_id": "PEANUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-SUNFLOWER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SUNFLOWER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-SUNFLOWER",
+      "from_unit_id": "SUNFLOWER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-HAB_SLEEP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HAB_SLEEP",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-HAB_SLEEP",
+      "from_unit_id": "HAB_SLEEP",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-HAB_GALLEY",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HAB_GALLEY",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-HAB_GALLEY",
+      "from_unit_id": "HAB_GALLEY",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-HAB_MED",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HAB_MED",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-HAB_MED",
+      "from_unit_id": "HAB_MED",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-HAB_WASH",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HAB_WASH",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-HAB_WASH",
+      "from_unit_id": "HAB_WASH",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-EXPANDER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EXPANDER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.614,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-EXPANDER",
+      "from_unit_id": "EXPANDER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.614,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-SIC_FURNACE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SIC_FURNACE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-SIC_FURNACE",
+      "from_unit_id": "SIC_FURNACE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SF-H2_PURIFIER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "H2_PURIFIER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "SQ-H2_PURIFIER",
+      "from_unit_id": "H2_PURIFIER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-RSZ-07 feed edges for unfed loads"
     }
   ],
   "view_presets": [

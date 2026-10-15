@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0100 kg/d. Mass out 0.0100 kg/d. Electrical duty 0.2000 kW. In: IA-SEED-CLOVER 0.0100 kg/d (clover seed). Out: IA-SEED-OUT 0.0100 kg/d (seeded clover).
+1. Basis. Mass in 0.01 kg/d. Mass out 0.01 kg/d. Electrical duty 0.2000 kW. In: IA-SEED-CLOVER 0.01 kg/d (clover seed). Out: IA-SEED-OUT 0.01 kg/d (seeded clover).
 
 2. Size.
 - Envelope 2000×2000×2200 mm, 8.80 m³. That box over this flow would be 21120000.0 h if it were full. It is not a residence time.

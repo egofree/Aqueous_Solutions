@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 4.02 kg/d. Mass out 4.02 kg/d. Electrical duty 0.1000 kW. In: IA-MYC-WORM 3.02 kg/d (myceliated compost); IA-NPK-1 0.4000 kg/d (castings return); IA-HEN-MAN 0.3000 kg/d (manure); IA-GOAT-MAN 0.3000 kg/d (manure). Out: IA-MYC-BED 2.52 kg/d (finished castings); IA-CAST 0.5000 kg/d (castings); IA-CLOSE-3 0.5000 kg/d (worm bin vent to the nitrogen header); IA-CAST-CLOVER 0.4000 kg/d (finished castings); 1 more.
+1. Basis. Mass in 4.020 kg/d. Mass out 4.020 kg/d. Electrical duty 0.1000 kW. In: IA-MYC-WORM 3.020 kg/d (myceliated compost); IA-NPK-1 0.4 kg/d (castings return); IA-HEN-MAN 0.3 kg/d (manure); IA-GOAT-MAN 0.3 kg/d (manure). Out: IA-MYC-BED 2.520 kg/d (finished castings); IA-CAST 0.5 kg/d (castings); IA-CLOSE-3 0.5 kg/d (worm bin vent to the nitrogen header); IA-CAST-CLOVER 0.4 kg/d (finished castings); 1 more.
 
 2. Size.
 - In 4.02 kg/d, out 4.02 kg/d. No holdup claimed.

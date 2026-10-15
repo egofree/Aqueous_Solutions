@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 48000.0 kg/d. Mass out 48000.0 kg/d. Electrical duty 0.3000 kW. In: IA-VEG-SUMP 19393.0 kg/d (bed return); IA-BED-SUMP 18909.0 kg/d (bed return); IA-WEED-SUMP 9697.0 kg/d (raceway return); IA-CLAR-SOL 1.00 kg/d (settled solids). Out: IA-SUMP-FISH 48000.0 kg/d (return).
+1. Basis. Mass in 48000.0 kg/d. Mass out 48000.0 kg/d. Electrical duty 0.3000 kW. In: IA-VEG-SUMP 19393.0 kg/d (bed return); IA-BED-SUMP 18909.0 kg/d (bed return); IA-WEED-SUMP 9697.0 kg/d (raceway return); IA-CLAR-SOL 1.000 kg/d (settled solids). Out: IA-SUMP-FISH 48000.0 kg/d (return).
 
 2. Size.
 - Circulation 48000.0 kg/d. Two-minute holdup 0.0667 m³. A 20-day volume at this rate is not a tank.

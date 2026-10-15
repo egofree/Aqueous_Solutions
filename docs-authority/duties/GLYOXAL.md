@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.3302 kg/d. Mass out 0.3302 kg/d. Electrical duty 0.1000 kW. In: IA-ALD 0.1912 kg/d (acetaldehyde); IA-GLX-O2 0.1389 kg/d (oxygen to glyoxal). Out: IA-GLX 0.2520 kg/d (glyoxal); IA-GLX-H2O 0.0782 kg/d (glyoxal water).
+1. Basis. Mass in 0.33 kg/d. Mass out 0.33 kg/d. Electrical duty 0.1000 kW. In: IA-ALD 0.191 kg/d (acetaldehyde); IA-GLX-O2 0.139 kg/d (oxygen to glyoxal). Out: IA-GLX 0.252 kg/d (glyoxal); IA-GLX-H2O 0.0782 kg/d (glyoxal water); IA-GLX-NOX 0 kg/d (no NOx from this oxidation).
 
 2. Size.
 - In 0.3302 kg/d, out 0.3302 kg/d. No holdup claimed.

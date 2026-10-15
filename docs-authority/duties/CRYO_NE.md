@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0500 kg/d. Mass out 0.0500 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-NE 0.0500 kg/d (neon). Out: IA-NE-RET 0.0500 kg/d (neon return).
+1. Basis. Mass in 0.05 kg/d. Mass out 0.05 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-NE 0.05 kg/d (neon). Out: IA-NE-RET 0.05 kg/d (neon return).
 
 2. Size.
 - Receiver 1 L. Not a packed tower. The inventory is held.

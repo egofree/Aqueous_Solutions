@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1500 kg/d. Mass out 0.1500 kg/d. Electrical duty 0.3000 kW. In: IA-AZ-IN 0.1500 kg/d (rice-bed spill). Out: IA-AZ-OUT 0.1500 kg/d (azolla residue).
+1. Basis. Mass in 0.15 kg/d. Mass out 0.15 kg/d. Electrical duty 0.3000 kW. In: IA-AZ-IN 0.15 kg/d (rice-bed spill). Out: IA-AZ-OUT 0.15 kg/d (azolla residue).
 
 2. Size.
 - Envelope 18000×5000×400 mm, 36.00 m³. That box over this flow would be 5760000.0 h if it were full. It is not a residence time.

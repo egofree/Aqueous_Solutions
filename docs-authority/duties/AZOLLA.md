@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1000 kg/d. Mass out 0.1000 kg/d. Electrical duty 0.1000 kW. In: IA-RICE-AZ 0.1000 kg/d (rice-bed spill). Out: IA-AZOLLA 0.1000 kg/d (azolla).
+1. Basis. Mass in 0.1 kg/d. Mass out 0.1 kg/d. Electrical duty 0.1000 kW. In: IA-RICE-AZ 0.1 kg/d (rice-bed spill). Out: IA-AZOLLA 0.1 kg/d (azolla).
 
 2. Size.
 - In 0.1000 kg/d, out 0.1000 kg/d. No holdup claimed.

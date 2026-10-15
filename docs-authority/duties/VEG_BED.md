@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 19443.8 kg/d. Mass out 19443.8 kg/d. Electrical duty 0.4000 kW. In: IA-BIO-VEG 19393.0 kg/d (nitrate water); IA-MIST-OUT 50.00 kg/d (mister return); IA-BED-VEG 0.8000 kg/d (fish water). Out: IA-VEG-SUMP 19393.0 kg/d (bed return); IA-MIST-IN 50.00 kg/d (mister supply); IA-VEG-TRIM 0.2500 kg/d (vegetable trim); IA-CROP_TOMATO 0.1200 kg/d (tomato); 8 more.
+1. Basis. Mass in 19443.8 kg/d. Mass out 19443.8 kg/d. Electrical duty 0.4000 kW. In: IA-BIO-VEG 19393.0 kg/d (nitrate water); IA-MIST-OUT 50.00 kg/d (mister return); IA-BED-VEG 0.8 kg/d (fish water). Out: IA-VEG-SUMP 19393.0 kg/d (bed return); IA-MIST-IN 50.00 kg/d (mister supply); IA-VEG-TRIM 0.25 kg/d (vegetable trim); IA-CROP_TOMATO 0.12 kg/d (tomato); 9 more.
 
 2. Size.
 - Circulation 19443.8 kg/d. Two-minute holdup 0.0270 m³. A 20-day volume at this rate is not a tank.

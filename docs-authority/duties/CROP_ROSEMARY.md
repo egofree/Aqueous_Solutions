@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0200 kg/d. Mass out 0.0200 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_ROSEMARY 0.0200 kg/d (rosemary). Out: IA-CROP_ROSEMARY-HAB 0.0200 kg/d (harvest).
+1. Basis. Mass in 0.02 kg/d. Mass out 0.02 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_ROSEMARY 0.02 kg/d (rosemary). Out: IA-CROP_ROSEMARY-HAB 0.02 kg/d (harvest).
 
 2. Size.
 - In 0.0200 kg/d, out 0.0200 kg/d. No holdup claimed.

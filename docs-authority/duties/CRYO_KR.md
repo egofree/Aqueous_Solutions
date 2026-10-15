@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0200 kg/d. Mass out 0.0200 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-KR 0.0200 kg/d (krypton). Out: IA-KR-RET 0.0200 kg/d (krypton return).
+1. Basis. Mass in 0.02 kg/d. Mass out 0.02 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-KR 0.02 kg/d (krypton). Out: IA-KR-RET 0.02 kg/d (krypton return).
 
 2. Size.
 - Receiver 1 L. Not a packed tower. The inventory is held.

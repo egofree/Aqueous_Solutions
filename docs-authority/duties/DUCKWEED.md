@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 9697.9 kg/d. Mass out 9697.9 kg/d. Electrical duty 0.1000 kW. In: IA-BIO-WEED 9697.0 kg/d (nitrate water); IA-BED-WEED 0.9000 kg/d (nutrient water). Out: IA-WEED-SUMP 9697.0 kg/d (raceway return); IA-WEED-FISH 0.5000 kg/d (duckweed); IA-WEED-HEN 0.2000 kg/d (duckweed); IA-WEED-GOAT 0.1500 kg/d (duckweed); 1 more.
+1. Basis. Mass in 9697.9 kg/d. Mass out 9697.9 kg/d. Electrical duty 0.1000 kW. In: IA-BIO-WEED 9697.0 kg/d (nitrate water); IA-BED-WEED 0.9 kg/d (nutrient water). Out: IA-WEED-SUMP 9697.0 kg/d (raceway return); IA-WEED-FISH 0.5 kg/d (duckweed); IA-WEED-HEN 0.2 kg/d (duckweed); IA-WEED-GOAT 0.15 kg/d (duckweed); 1 more.
 
 2. Size.
 - Circulation 9697.9 kg/d. Two-minute holdup 0.0135 m³. A 20-day volume at this rate is not a tank.

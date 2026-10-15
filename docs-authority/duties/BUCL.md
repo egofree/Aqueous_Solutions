@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1800 kg/d. Mass out 0.1800 kg/d. Electrical duty 0.1000 kW. In: IA-BUOH-R 0.1300 kg/d (butanol product); IA-HCL-BU 0.0500 kg/d (HCl to chlorobutane). Out: IA-BUCL 0.1269 kg/d (1-chlorobutane); IA-BUCL-EX 0.0283 kg/d (unreacted butanol); IA-BUCL-H2O 0.0247 kg/d (chlorination water).
+1. Basis. Mass in 0.18 kg/d. Mass out 0.18 kg/d. Electrical duty 0.1000 kW. In: IA-BUOH-R 0.13 kg/d (butanol product); IA-HCL-BU 0.05 kg/d (HCl to chlorobutane); IA-BUOH 0 kg/d (n-butanol). Out: IA-BUCL 0.127 kg/d (1-chlorobutane); IA-BUCL-EX 0.0283 kg/d (unreacted butanol); IA-BUCL-H2O 0.0247 kg/d (chlorination water).
 
 2. Size.
 - In 0.1800 kg/d, out 0.1800 kg/d. No holdup claimed.

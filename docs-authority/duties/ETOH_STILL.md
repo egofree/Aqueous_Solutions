@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4600 kg/d. Mass out 0.4600 kg/d. Electrical duty 0.3000 kW. In: IA-ETOH-S 0.4600 kg/d (ethanol feed). Out: IA-ETOH 0.2000 kg/d (ethanol); IA-ETOH-AC 0.1600 kg/d (ethanol to acetic); IA-ETOH-R 0.1000 kg/d (ethanol product).
+1. Basis. Mass in 0.46 kg/d. Mass out 0.46 kg/d. Electrical duty 0.3000 kW. In: IA-ETOH-S 0.46 kg/d (ethanol feed). Out: IA-ETOH 0.2 kg/d (ethanol); IA-ETOH-AC 0.16 kg/d (ethanol to acetic); IA-ETOH-R 0.1 kg/d (ethanol product).
 
 2. Size.
 - Envelope 400×400×1500 mm. Taken as a column, the width is 400 mm and the height is 1.50 m. Stages and reflux are not on the node.

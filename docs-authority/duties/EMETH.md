@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.6254 kg/d. Mass out 0.6254 kg/d. Electrical duty 0.5000 kW. In: IA-DIG-GAS 0.6254 kg/d (biogas from the biological feeds). Out: IA-EM-CH4 0.6254 kg/d (methane).
+1. Basis. Mass in 0.625 kg/d. Mass out 0.625 kg/d. Electrical duty 0.5000 kW. In: IA-DIG-GAS 0.625 kg/d (biogas from the biological feeds). Out: IA-EM-CH4 0.625 kg/d (methane); IA-EM-DIG 0 kg/d (EM effluent).
 
 2. Size.
 - In 0.6254 kg/d, out 0.6254 kg/d. No holdup claimed.

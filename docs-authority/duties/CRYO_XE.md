@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0100 kg/d. Mass out 0.0100 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-XE 0.0100 kg/d (xenon). Out: IA-XE-RET 0.0100 kg/d (xenon return).
+1. Basis. Mass in 0.01 kg/d. Mass out 0.01 kg/d. Electrical duty 0.2000 kW. In: IA-ASU-XE 0.01 kg/d (xenon). Out: IA-XE-RET 0.01 kg/d (xenon return).
 
 2. Size.
 - Receiver 1 L. Not a packed tower. The inventory is held.

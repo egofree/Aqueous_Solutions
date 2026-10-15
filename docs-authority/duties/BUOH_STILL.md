@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1300 kg/d. Mass out 0.1300 kg/d. Electrical duty 0.3000 kW. In: IA-BUOH-S 0.1300 kg/d (butanol feed). Out: IA-BUOH-R 0.1300 kg/d (butanol product).
+1. Basis. Mass in 0.13 kg/d. Mass out 0.13 kg/d. Electrical duty 0.3000 kW. In: IA-BUOH-S 0.13 kg/d (butanol feed). Out: IA-BUOH-R 0.13 kg/d (butanol product).
 
 2. Size.
 - Envelope 300×300×1200 mm. Taken as a column, the width is 300 mm and the height is 1.20 m. Stages and reflux are not on the node.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0500 kg/d. Mass out 0.0500 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_SPINACH 0.0500 kg/d (spinach). Out: IA-CROP_SPINACH-HAB 0.0500 kg/d (harvest).
+1. Basis. Mass in 0.05 kg/d. Mass out 0.05 kg/d. Electrical duty 0.0500 kW. In: IA-CROP_SPINACH 0.05 kg/d (spinach). Out: IA-CROP_SPINACH-HAB 0.05 kg/d (harvest).
 
 2. Size.
 - In 0.0500 kg/d, out 0.0500 kg/d. No holdup claimed.
