@@ -10045,7 +10045,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "metals/Si",
+      "carries": "metals and entrained silicate (Si as SiO2)",
       "header": "crib",
       "forbidden": "FR-4 to pyro",
       "claim_status": "Closed",
@@ -10053,24 +10053,25 @@
         "value": 42.0021,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE plated metals \u224842 kg/d at 150 kg/d wet feed"
+        "note": "AQS-AUD-001 \u00a74.1 plated metals \u224842 kg/d at the 150 kg/d reference feed"
       },
       "from_sector_id": "WET",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Study split of the cathode harvest booked on this edge. Deposits sum to 42.0000 kg/d. Rate stays 42.0021. Silicon is named in carries and is not in the split. Not a weighed sample. Do not resize.",
+      "notes": "Study split of the cathode harvest booked on this edge. Nine deposits 42.0000 kg/d. The 0.0021 kg/d the deposits do not account for is booked as entrained silicate, SiO2, on the harvested crib. That is an assumption, not a measurement. Si is 0.4675 of SiO2, 0.00098 kg/d. Silicate is present in every case of the AQS-ASSAY-001 Rev C envelope. Rate stays 42.0021. Not a weighed sample. Do not resize.",
       "composition": {
-        "Au": 0.00015000,
-        "Ag": 0.00059762,
-        "Cu": 0.20914524,
-        "Pb": 0.01693095,
-        "Sn": 0.01693095,
-        "Ni": 0.01693095,
-        "Fe": 0.70545239,
-        "Cd": 0.01693095,
-        "Zn": 0.01693095
+        "Au": 0.00014999,
+        "Ag": 0.00059759,
+        "Cu": 0.20913478,
+        "Pb": 0.01693011,
+        "Sn": 0.01693011,
+        "Ni": 0.01693011,
+        "Fe": 0.70541709,
+        "Cd": 0.01693011,
+        "Zn": 0.01693011,
+        "SiO2_entrained": 5e-05
       },
       "assay_g_L": {
         "Fe": 20,
@@ -10428,17 +10429,18 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Study composition follows S08. Not a weighed sample. Rate stays 12.0 kg/d. No polymer fraction was added. Do not resize.",
+      "notes": "Study composition follows S08, including the entrained silicate fraction. Not a weighed sample. Rate stays 12.0 kg/d. No polymer fraction was added. Do not resize.",
       "composition": {
-        "Au": 0.00015000,
-        "Ag": 0.00059762,
-        "Cu": 0.20914524,
-        "Pb": 0.01693095,
-        "Sn": 0.01693095,
-        "Ni": 0.01693095,
-        "Fe": 0.70545239,
-        "Cd": 0.01693095,
-        "Zn": 0.01693095
+        "Au": 0.00014999,
+        "Ag": 0.00059759,
+        "Cu": 0.20913478,
+        "Pb": 0.01693011,
+        "Sn": 0.01693011,
+        "Ni": 0.01693011,
+        "Fe": 0.70541709,
+        "Cd": 0.01693011,
+        "Zn": 0.01693011,
+        "SiO2_entrained": 5e-05
       }
     },
     {
@@ -25203,5 +25205,6 @@
   "notes_rev_d1": "D1. Feed assay is not in the repo. IA-FEED-01, S08, and S16 keep the placeholder. ELECTRICAL.md working averages were not copied. assay_g_L was not used. No rate change.",
   "notes_rev_d1_assay": "D1 revision B. Study assay on IA-FEED-01, S08, and S16. Not a weighed sample. Rates unchanged. No resize.",
   "notes_rev_d1_agnostic": "D1 revision C. Feed is feedstock-agnostic. IA-FEED-01 carries the AQS-ASSAY-001 Rev C class point and the envelope, regolith-like through metal-rich PCB. Plateable element mass is bounded by the sheet edges. Silicate, water, organic, and unassigned are held. Rates unchanged. No resize.",
+  "notes_rev_d2": "D2. S08 carries metals and entrained silicate. The 0.0021 kg/d residual between the 42.0021 kg/d rate and the 42.0000 kg/d deposits is booked as SiO2, fraction 5.0e-5, Si 2.34e-5. Assumption, not a measurement. S16 follows S08. Rates unchanged. No resize.",
   "loops_closed": true
 }

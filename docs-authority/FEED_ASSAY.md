@@ -8,7 +8,7 @@ Authority: graph Rev BH. Not a PE stamp. Not a weighed sample.
 | Rev | Description | Date |
 | --- | --- | --- |
 | B | Study fractions on IA-FEED-01, S08, and S16 | 2026-10-14 |
-| C | Feedstock-agnostic basis. Class schema, bounding cases, bounded and held list. IA-FEED-01 carries a class point and the envelope. | 2026-10-15 |
+| C | Feedstock-agnostic basis. Class schema, bounding cases, bounded and held list. IA-FEED-01 carries a class point and the envelope. S08 and S16 carry the entrained silicate fraction. | 2026-10-15 |
 
 The plant feed is not one material. It can be anything from a silicate and oxide regolith to a metal-rich printed circuit board, and any mixture between. This page is the schema every feed is characterized against, and the check of the held design across the range. No rate changes. Nothing is resized.
 
@@ -93,29 +93,32 @@ These units are not resized. A held class stays held until a lot is characterize
 
 ## 5. S08
 
-LEACH_CSTR_1 to MFG_SHOP, 42.0021 kg/d, phase S. The rate stays.
+LEACH_CSTR_1 to MFG_SHOP, 42.0021 kg/d, phase S. The rate stays. The edge carries metals and entrained silicate.
 
-Source: `EDGE_RATING_DUTY.md` cathode deposits booked on S08. The nine deposits sum to 42.0000 kg/d. The edge is 42.0021 kg/d. The difference is left on the rate.
+Source: `EDGE_RATING_DUTY.md` cathode deposits booked on S08. The nine deposits sum to 42.0000 kg/d. The edge is 42.0021 kg/d. The 0.0021 kg/d the deposits do not account for is booked as entrained silicate, SiO₂, carried on the harvested crib.
 
-| Metal | kg/d | Fraction |
-| --- | --- | --- |
-| Au | 0.0063 | 0.00015000 |
-| Ag | 0.0251 | 0.00059762 |
-| Cu | 8.7841 | 0.20914524 |
-| Pb | 0.7111 | 0.01693095 |
-| Sn | 0.7111 | 0.01693095 |
-| Ni | 0.7111 | 0.01693095 |
-| Fe | 29.6290 | 0.70545239 |
-| Cd | 0.7111 | 0.01693095 |
-| Zn | 0.7111 | 0.01693095 |
+That silicate line is an assumption, not a measurement. It is sourced from the rate residual and from section 2: every case of the envelope carries `silicate_oxide`, 0.05 to 0.99, and the leach solids are in contact with the cathodes. Aqueous cells do not make silicon. The silicon here is carried, not plated.
 
-The carries line says metals and silicon. Silicon is not in this split. None was added. `assay_g_L` on this edge is the 50 g/L liquor stencil. It was not used.
+| Component | kg/d | Fraction | Source |
+| --- | --- | --- | --- |
+| Au | 0.0063 | 0.00014999 | deposit |
+| Ag | 0.0251 | 0.00059759 | deposit |
+| Cu | 8.7841 | 0.20913478 | deposit |
+| Pb | 0.7111 | 0.01693011 | deposit |
+| Sn | 0.7111 | 0.01693011 | deposit |
+| Ni | 0.7111 | 0.01693011 | deposit |
+| Fe | 29.6290 | 0.70541709 | deposit |
+| Cd | 0.7111 | 0.01693011 | deposit |
+| Zn | 0.7111 | 0.01693011 | deposit |
+| SiO₂, entrained | 0.0021 | 0.00005000 | rate residual, assumption |
+
+Fractions are on the 42.0021 kg/d rate and sum to 1.0. Si as the element is 0.4675 × 0.0021 = 0.00098 kg/d, fraction 0.0000234. The entrained fraction at the regolith-like end of the envelope is not known. It is held, not resized. `assay_g_L` on this edge is the 50 g/L liquor stencil. It was not used.
 
 ## 6. S16
 
 MFG_SHOP to LEACH_CSTR_1, 12.0 kg/d, phase S. The rate stays.
 
-`EDGE_RATING_DUTY.md` says the composition is unstated and S08 governs. The fractions are the S08 fractions. The rate note calls the stream a polymer and metal band. No polymer fraction was added.
+`EDGE_RATING_DUTY.md` says the composition is unstated and S08 governs. The fractions are the S08 fractions, including the entrained silicate. The rate note calls the stream a polymer and metal band. No polymer fraction was added.
 
 ## 7. What this is not
 

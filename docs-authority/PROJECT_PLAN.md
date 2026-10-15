@@ -181,3 +181,5 @@ Active item: D1. The study assay is written. It is not a weighed sample. No resi
 ## After Rev C
 
 D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. The feed is not one material. It is anything from a silicate and oxide regolith to a metal-rich PCB. Every lot is characterized against the AQS-ASSAY-001 schema, and the held design is checked across the bounding range, not one average. Plateable element mass is bounded by the sheet edges. Silicate, water, organic, and unassigned loads are held. The study fractions are not a weighed sample. The rate stays. The bore stays. The cell stays.
+
+D2 is the S08 split. Silicon is carried as entrained silicate, from the rate residual. It is not plated.
