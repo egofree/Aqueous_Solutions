@@ -15,6 +15,7 @@ if len(ids) != len(set(ids)): err.append('duplicate manual id')
 for m in man:
     for k in REQ:
         if not str(m.get(k, '')).strip(): err.append(f"{m.get('id')}: missing {k}")
+    if m.get('needs_verification') and not str(m.get('verification_test','')).strip(): err.append(f"{m.get('id')}: needs_verification without verification_test")
     for w in m.get('files', []):
         if not os.path.exists(w): err.append(f"{m['id']}: file {w} missing")
 def hid(p, s): return p + hashlib.sha1(s.encode()).hexdigest()[:6]

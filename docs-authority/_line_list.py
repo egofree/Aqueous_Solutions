@@ -1,5 +1,10 @@
 """AQS-PIP-004 plant line list, generated from the graph. Every piped edge gets DN, class (AQS-PIP-003),
 estimated length and route; solids and electrical edges are listed as not piped. Study rules below."""
+import json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from flow_graph.param import drivers as DR
+from flow_graph.param.sizing import lines as LN
+_d=DR.load()
 import json, re, math, glob, os, sys
 sys.path.insert(0,'docs-authority')
 g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}
@@ -65,11 +70,14 @@ for e in g['edges']:
     p=e.get('params') or {}
     if p.get('line_DN'): dn=int(p['line_DN']); basis='edge line_DN'
     elif u=='kW':
-        dn=25; basis='heat-loop default DN25 (study)'
+        mw_=e['rate']['value']/(DR.val(_d,'water_cp_kJ_kgK')*DR.val(_d,'heat_loop_dT_K'))   # kg/s water, INCROPERA7 / ASHRAE_SYS2020
+        need=LN.min_id_mm(mw_,1000.0,DR.val(_d,'line_velocity_liquid_m_s')) if mw_>0 else 0
+        dn=next((d for d in DN if ID[d]>=need and d>=DR.val(_d,'line_min_DN')),None) or 500
+        basis=f"heat loop {e['rate']['value']:g} kW at ΔT {DR.val(_d,'heat_loop_dT_K'):g} K, 1 m/s"
     else:
-        m=e['rate']['value']/86400; r=rho(e); v=10.0 if ph=='G' else 1.0
-        need=math.sqrt(4*m/r/v/math.pi)*1000 if m>0 else 0
-        mn=50 if ph in ('S/L','L/S') else 15
+        m=e['rate']['value']/86400; r=rho(e); v=DR.val(_d,'line_velocity_gas_m_s') if ph=='G' else DR.val(_d,'line_velocity_liquid_m_s')
+        need=LN.min_id_mm(m,r,v) if m>0 else 0
+        mn=DR.val(_d,'slurry_min_DN') if ph in ('S/L','L/S') else DR.val(_d,'line_min_DN')
         dn=next((d for d in DN if ID[d]>=need and d>=mn),None)
         basis=f"velocity {v:g} m/s, ρ {r:g}; min DN{mn}"
         if dn is None: print("BIG",sid,round(need),ph,e["rate"]["value"]); dn=500

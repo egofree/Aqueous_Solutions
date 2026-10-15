@@ -77,7 +77,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-HDR-H2-02 | HDR_H2 | H2_DRYER | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 26.7 | HDR_H2 → H2_DRYER, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | IA-HDR-H2-03 | EW_2 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | IA-HDR-H2-04 | EW_9 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 9.7 | EW_9 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-HX8 | EW_1 | HX8 | DN25 | P3 | oxidizer, HF or PVDF unit | 7.4 | EW_1 → HX8, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
+| IA-HX8 | EW_1 | HX8 | DN15 | P3 | oxidizer, HF or PVDF unit | 7.4 | EW_1 → HX8, orthogonal × 1.2 (duty origin; duty origin) | heat loop 4.572 kW at ΔT 10 K, 1 m/s |
 | IA-OIL-01 | OIL_DRYER | OIL_PYRO | solids | — | — | 0.0 | OIL_DRYER → OIL_PYRO, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-OIL-02 | OIL_PYRO | OIL_FRAC | DN15 | P1 | aqueous process, default thermoplastic | 0.0 | OIL_PYRO → OIL_FRAC, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | DN15 | P3 | process vent gas | 5.8 | OIL_FRAC → NCG_HEADER, orthogonal × 1.2 (placement_report; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
@@ -129,7 +129,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S40 | ROOF_TANK | TERRACE_IRRIG | DN15 | P1 | acid or brine, at or below 60 C | 31.3 | ROOF_TANK → TERRACE_IRRIG, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S41 | TERRACE_IRRIG | CATCH_TANK | DN15 | P1 | acid or brine, at or below 60 C | 31.6 | TERRACE_IRRIG → CATCH_TANK, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | S42 | TERRACE_IRRIG | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 23.7 | TERRACE_IRRIG → GREY_TREAT, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| S43 | GEO_GHEX | GEO_HP_CLOSED_LOOP | DN25 | P5 | water | 1.7 | GEO_GHEX → GEO_HP_CLOSED_LOOP, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
+| S43 | GEO_GHEX | GEO_HP_CLOSED_LOOP | DN15 | P5 | water | 1.7 | GEO_GHEX → GEO_HP_CLOSED_LOOP, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0 kW at ΔT 10 K, 1 m/s |
 | S44 | GEO_HP | Q4_BUS | cable | — | — | 35.3 | GEO_HP → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | S45 | CRYO_H2 | BACKUP_GEN | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 33.1 | CRYO_H2 → BACKUP_GEN, orthogonal × 1.2 (placement_report; duty origin) | velocity 10 m/s, ρ 0.09; min DN15 |
 | S46 | BACKUP_GEN | NOX_SCRUB | DN15 | P2 | hot leach liquor | 3.7 | BACKUP_GEN → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -140,7 +140,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S52 | FUEL_CELL | VCD_TRAIN | DN15 | P1 | aqueous process, default thermoplastic | 47.3 | FUEL_CELL → VCD_TRAIN, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | S53 | FUEL_CELL | Q4_BUS | cable | — | — | 46.1 | FUEL_CELL → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | S54 | CRYO_HX_Q4 | Q4_BUS | cable | — | — | 15.1 | CRYO_HX_Q4 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| S55 | CRYO_DED_COOL | CRYO_DED_COOL | DN25 | P5 | water | 0.0 | CRYO_DED_COOL → CRYO_DED_COOL, orthogonal × 1.2 (placement_report; placement_report) | heat-loop default DN25 (study) |
+| S55 | CRYO_DED_COOL | CRYO_DED_COOL | DN15 | P5 | water | 0.0 | CRYO_DED_COOL → CRYO_DED_COOL, orthogonal × 1.2 (placement_report; placement_report) | heat loop 4.2838 kW at ΔT 10 K, 1 m/s |
 | S56 | CRYO_AHU | RELIEF_CRYO | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 4.0 | CRYO_AHU → RELIEF_CRYO, orthogonal × 1.2 (placement_report; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S57 | MET_MELT | WIRE_DRAW | DN50 | P5 | water | 0.0 | MET_MELT → WIRE_DRAW, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | S58 | WIRE_DRAW | MFG_SHOP | solids | — | — | 0.0 | WIRE_DRAW → MFG_SHOP, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
@@ -185,14 +185,14 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | CRU → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-ACID-01 | BMED_ACID | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | BMED_ACID → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-BASE-01 | BMED_BASE | GLASS_DIGEST | DN15 | P4 | alkaline | 23.4 | BMED_BASE → GLASS_DIGEST, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| HL-Q4-REJ | Q4_BUS | GEO_ORC | DN25 | M1 | Q3/Q4 water loop | 33.4 | Q4_BUS → GEO_ORC, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
+| HL-Q4-REJ | Q4_BUS | GEO_ORC | DN20 | M1 | Q3/Q4 water loop | 33.4 | Q4_BUS → GEO_ORC, orthogonal × 1.2 (duty origin; duty origin) | heat loop 11.7617 kW at ΔT 10 K, 1 m/s |
 | IA-PV-01 | PV_ARRAY | SOL_ARK_60K | cable | — | — | 15.1 | PV_ARRAY → SOL_ARK_60K, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 26.3 | ZNBR2 → GREY_TREAT, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | DN15 | P5 | water | 31.4 | NUTRIENT_DOSE → VCD_TRAIN, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | DN15 | P5 | water | 18.8 | BMED_UPW_POLISH → FAB_UPW_TANK, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | DN15 | P1 | acid or brine, at or below 60 C | 27.8 | BMED_UPW_POLISH → REMIN, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-UPW-REJ | BMED_UPW_POLISH | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 17.7 | BMED_UPW_POLISH → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| IA-Q4-LIFE | Q4_BUS | HABITATION | DN25 | M1 | Q3/Q4 water loop | 33.0 | Q4_BUS → HABITATION, orthogonal × 1.2 (duty origin; placement_report) | heat-loop default DN25 (study) |
+| IA-Q4-LIFE | Q4_BUS | HABITATION | DN15 | M1 | Q3/Q4 water loop | 33.0 | Q4_BUS → HABITATION, orthogonal × 1.2 (duty origin; placement_report) | heat loop 3 kW at ΔT 10 K, 1 m/s |
 | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | DN15 | F1 | flue or acid gas | 19.5 | AFTERBURNER → AFTERBURNER_FLUE, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ZNBR-MU | LEACH_CSTR_1 | ZNBR2 | DN15 | P2 | hot leach liquor | 19.6 | LEACH_CSTR_1 → ZNBR2, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-EW-MET-1 | EW_1 | MFG_SHOP | solids | — | — | 29.8 | EW_1 → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
@@ -219,15 +219,15 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 20.3 | VCD_TRAIN → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-CHAR | OIL_PYRO | MFG_SHOP | solids | — | — | 36.3 | OIL_PYRO → MFG_SHOP, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | DN15 | F1 | flue or acid gas | 7.6 | MEOH_FC → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN25 | P1 | aqueous process, default thermoplastic | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
+| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN15 | P1 | aqueous process, default thermoplastic | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 1.67 kW at ΔT 10 K, 1 m/s |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | cable | — | — | 17.6 | RECTIFIER → Q4_A, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-Q4B-TRIM | RECTIFIER | Q4_B | cable | — | — | 32.2 | RECTIFIER → Q4_B, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-FAB-LOSS | WAFER_FAB | BAGHOUSE | solids | — | — | 12.6 | WAFER_FAB → BAGHOUSE, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-WIRE-LOSS | WIRE_DRAW | BAGHOUSE | solids | — | — | 24.0 | WIRE_DRAW → BAGHOUSE, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-Q1A-LOSS | Q1_A | BOUNDARY_EXPORT | DN25 | P1 | aqueous process, default thermoplastic | 9.6 | Q1_A → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
-| IA-Q1B-LOSS | Q1_B | BOUNDARY_EXPORT | DN25 | P1 | aqueous process, default thermoplastic | 30.5 | Q1_B → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
-| IA-Q2A-LOSS | Q2_A | BOUNDARY_EXPORT | DN25 | P1 | aqueous process, default thermoplastic | 9.9 | Q2_A → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
-| IA-Q2B-LOSS | Q2_B | BOUNDARY_EXPORT | DN25 | P1 | aqueous process, default thermoplastic | 31.3 | Q2_B → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat-loop default DN25 (study) |
+| IA-Q1A-LOSS | Q1_A | BOUNDARY_EXPORT | DN15 | P1 | aqueous process, default thermoplastic | 9.6 | Q1_A → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.25 kW at ΔT 10 K, 1 m/s |
+| IA-Q1B-LOSS | Q1_B | BOUNDARY_EXPORT | DN15 | P1 | aqueous process, default thermoplastic | 30.5 | Q1_B → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.25 kW at ΔT 10 K, 1 m/s |
+| IA-Q2A-LOSS | Q2_A | BOUNDARY_EXPORT | DN15 | P1 | aqueous process, default thermoplastic | 9.9 | Q2_A → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.17 kW at ΔT 10 K, 1 m/s |
+| IA-Q2B-LOSS | Q2_B | BOUNDARY_EXPORT | DN15 | P1 | aqueous process, default thermoplastic | 31.3 | Q2_B → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.17 kW at ΔT 10 K, 1 m/s |
 | IA-TERR-VAP | TERRACE_IRRIG | CRYO_AHU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 28.0 | TERRACE_IRRIG → CRYO_AHU, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-BED-VAP | GROW_BED | CRYO_AHU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 16.5 | GROW_BED → CRYO_AHU, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-HAB-VAP | HABITATION | CRYO_AHU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 30.1 | HABITATION → CRYO_AHU, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |

@@ -1,0 +1,160 @@
+{
+ "feed_rate_kg_d": {
+  "value": 102.68,
+  "units": "kg/d",
+  "owner": "AQS-ASSAY-001 Rev C design feed rate (owner basis)"
+ },
+ "feed_case_A_silicate_oxide": {
+  "value": 0.99,
+  "units": "mass fraction",
+  "owner": "AQS-ASSAY-001 Rev C class A (regolith-like) point",
+  "needs_verification": true,
+  "verification_test": "XRF/XRD assay of a representative class A lot"
+ },
+ "case_A_oxide_fractions": {
+  "value": {
+   "Al2O3": 0.19,
+   "CaO": 0.125,
+   "MgO": 0.09,
+   "FeO": 0.13
+  },
+  "units": "mass fraction of silicate_oxide",
+  "ref": "LUNAR_SOURCEBOOK",
+  "needs_verification": true,
+  "verification_test": "XRF major-oxide analysis of the accepted feed"
+ },
+ "case_A_leach_extent": {
+  "value": 1.0,
+  "units": "fraction of listed oxides dissolved",
+  "register": "A-M (X-BAS-02 full-leach bound)",
+  "needs_verification": true,
+  "verification_test": "Bench leach of class A feed in HCl at 85 C, ICP-OES of liquor for Al, Ca, Mg, Fe extraction"
+ },
+ "hcl_stoich": {
+  "value": {
+   "Al2O3": 6,
+   "CaO": 2,
+   "MgO": 2,
+   "FeO": 2
+  },
+  "units": "mol HCl per mol oxide",
+  "ref": "GREENWOOD"
+ },
+ "acid_conc_design_wt": {
+  "value": 0.2,
+  "units": "mass fraction HCl on IA-ACID-01",
+  "register": "graph IA-ACID-01 (current design)",
+  "needs_verification": true,
+  "verification_test": "Conventional EDBM is limited to about 3.6 M acid (EDBM_WHEY_2021); 20 wt% (about 6 M) needs a concentration step or a lower loop concentration; bench EDBM run on the leach brine",
+  "published": "EDBM_WHEY_2021 max 3.6 M HCl"
+ },
+ "bmed_sec_kWh_per_kg_base": {
+  "value": 6.7,
+  "units": "kWh/kg NaOH at 2 M product",
+  "ref": "EDBM_WHEY_2021",
+  "needs_verification": true,
+  "verification_test": "EDBM pilot on the plant chloride brine: SEC and current efficiency at the design product concentration"
+ },
+ "bmed_sec_design_kWh_per_kg_pair": {
+  "value": 2.1,
+  "units": "kWh per kg acid+base (current graph basis)",
+  "register": "graph BMED_ACID continuous_kw (X-RSZ-01)",
+  "needs_verification": true,
+  "verification_test": "Superseded by bmed_sec_kWh_per_kg_base once the loop concentration is fixed",
+  "published": "EDBM_PILOT_2023 1.4-2.6 kWh/kg NaOH at 0.5-1 M; EDBM_WHEY_2021 6.7 kWh/kg at 2 M"
+ },
+ "ew_current_density_A_m2": {
+  "value": 200.0,
+  "units": "A/m2",
+  "ref": "SCHLESINGER2011"
+ },
+ "ew_current_efficiency_design": {
+  "value": 1.0,
+  "units": "-",
+  "register": "_ew_sizing.py FE (current design)",
+  "needs_verification": true,
+  "verification_test": "Bench chloride EW cell per metal: deposit mass vs charge (current efficiency)",
+  "published": "SCHLESINGER2011 0.85-0.92 for Cu sulfate EW"
+ },
+ "ew_cell_voltage_V": {
+  "value": 2.5,
+  "units": "V",
+  "register": "graph EW_1 cell_voltage_V",
+  "needs_verification": true,
+  "verification_test": "Bench chloride EW cell polarisation at 200 A/m2 with MMO anode",
+  "published": "SCHLESINGER2011 about 2.0 V for Cu sulfate EW"
+ },
+ "site_design_dry_bulb_C": {
+  "value": 37.8,
+  "units": "C",
+  "register": "AQS-SITE-002"
+ },
+ "pv_yield_kWh_per_kWp_d": {
+  "value": 5.41,
+  "units": "kWh/kWp/d",
+  "ref": "NREL_PVWATTS"
+ },
+ "continuous_load_factor": {
+  "value": 1.25,
+  "units": "-",
+  "ref": "NEC2023"
+ },
+ "pvc_u_max_C": {
+  "value": 60.0,
+  "units": "C",
+  "ref": "ASTM_D1785"
+ },
+ "cp_hcl20_kJ_kgK": {
+  "value": 3.0,
+  "units": "kJ/(kg K)",
+  "ref": "PERRY9",
+  "needs_verification": true,
+  "verification_test": "Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C"
+ },
+ "cp_naoh20_kJ_kgK": {
+  "value": 3.6,
+  "units": "kJ/(kg K)",
+  "ref": "PERRY9",
+  "needs_verification": true,
+  "verification_test": "Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C"
+ },
+ "U_free_convection_W_m2K": {
+  "value": 7.0,
+  "units": "W/(m2 K)",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "Coil outlet temperature on the installed air cooler"
+ },
+ "line_velocity_liquid_m_s": {
+  "value": 1.0,
+  "units": "m/s",
+  "ref": "PERRY9"
+ },
+ "line_velocity_gas_m_s": {
+  "value": 10.0,
+  "units": "m/s",
+  "ref": "PERRY9"
+ },
+ "heat_loop_dT_K": {
+  "value": 10.0,
+  "units": "K",
+  "ref": "ASHRAE_SYS2020"
+ },
+ "water_cp_kJ_kgK": {
+  "value": 4.18,
+  "units": "kJ/(kg K)",
+  "ref": "INCROPERA7"
+ },
+ "slurry_min_DN": {
+  "value": 50,
+  "units": "DN",
+  "ref": "WILSON2006",
+  "needs_verification": true,
+  "verification_test": "Deposition-velocity check of each slurry line at its solids loading (Durand/Wilson correlation) and a flow-loop trial with the plant solids"
+ },
+ "line_min_DN": {
+  "value": 15,
+  "units": "DN",
+  "owner": "smallest DN in AQS-PIP-003 classes"
+ }
+}

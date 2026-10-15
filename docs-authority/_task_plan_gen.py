@@ -67,6 +67,12 @@ X=[
 ('X-GOV-07','Assumptions register','AQS-REG-002 lists every study and assumed value with where used, basis, and owning task; curated entries carry sensitivity and the replacing test; script validates','X-GOV-04','docs-authority/ASSUMPTIONS_REGISTER.md'),
 ('X-GOV-08','Sizing rule','AGENTS.md §Sizing: bounding-case sizing; restrictions revised when they block a sized design; sizing-driven changes approved by default','—','AGENTS.md'),
 ('X-GOV-06','Revision control of drawings and derived files','each drawing and derived file names the graph revision it was made from; stale ones flagged by a script','X-GOV-04',None)]),
+('PAR','Parametric model (owner priority 2026-10-15; AQS-PAR-001)',[
+('X-PAR-01','Drivers file','flow_graph/param/drivers.json holds every independent input (feed rate, bounding compositions, site climate, margins, material limits) with a published reference, register id or owner basis; needs_verification values carry verification_test; linked to AQS-REG-002','—','flow_graph/param/drivers.json'),
+('X-PAR-02','Balance solver','per-unit transfer functions compute all edge rates, compositions and duties from the drivers; mass and energy closure checks fail on imbalance','X-PAR-01','flow_graph/param/solver.py'),
+('X-PAR-03','Per-class sizing functions','tank, EW cell (Faraday), HX (LMTD/U), scrubber, relief (API 520), lines, pumps, agitators in flow_graph/param/sizing with cited equations; one-off scripts converted (LEACH, EW, HX-5, relief, lines, power)','X-PAR-01','flow_graph/param/sizing'),
+('X-PAR-04','Generated outputs and gates','graph values, duty sheets, CadQuery params, BOMs, load list, placement and isometrics regenerated from sized values; repo checks fail on imbalance or misfit','X-PAR-02, X-PAR-03',None),
+('X-PAR-05','Verification list to test plan','every needs_verification driver and register entry mapped to a test or prototype in a rollout plan','X-PAR-01',None)]),
 ('RSZ','Bounding-case resizing (owner approval 2026-10-15)',[
 ('X-RSZ-01','Acid regeneration resize','BMED_ACID and dependents sized for the regolith-like (class A) feed','X-BAS-02','docs-authority/FEED_ASSAY.md'),
 ('X-RSZ-02','EW power on the graph and supply resize','RECT-EW and EW cell power booked on the graph; PV, storage, inverters to the AQS-ELEC-007 bounding case','X-ELS-05','docs-authority/POWER_SIZING.md'),
@@ -262,15 +268,15 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 
 ## 5. Next 10 tasks
 
-1. X-ELS-02 CRYO_H2 storage mode sized from need, then its load; add the H₂ purifier unit (ISO 14687 Grade D).
-2. X-ELS-02 MFG_SHOP tool list sized from the MET_MELT/COLD_MILL/GAS_ATOMIZER/WIRE_DRAW duties, then its load.
-3. X-RSZ-07 Feed edges for every load without a SOL_ARK feed (MCC-1, PP-1), PV average rebalanced.
-4. X-ELS-02 Remaining study-share loads, largest first (RECTIFIER trims, HABITATION, GEO_HP, WAFER_FAB).
-5. X-RSZ-07 CRYO_ASU vendor-class basis to replace the lower bound.
-6. X-MAT-07 Launder lengths at the re-placed EW aisle (cells no longer in one line).
-7. X-PIP-03 close-out: fabrication isometrics from AQS-ISO-001.
-8. X-PIP-04 Supports and stress.
-9. X-BLD-04 General arrangement check with the PV ground field and FARM_AQ.
+1. X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.
+2. X-PAR-03 Convert relief (API 520), LEACH_CSTR_1 sizing, HX-5, power sizing and the rectifier script to the library.
+3. X-PAR-03 Add tank, pump, agitator and scrubber sizing functions with cited equations.
+4. X-PAR-04 Resolve the solver misfits (BMED SEC and loop concentration, EW cell voltage) and write graph values from the solver.
+5. X-PAR-04 Gate: repo checks fail on solver misfit.
+6. X-PAR-05 Testing and prototyping rollout plan from the verification list.
+7. X-BLD-04 Clear the 20 sub-600 mm pairs and lay out the PV ground field.
+8. X-PIP-03 Fabrication isometrics from AQS-ISO-001.
+9. X-ELS-02 Remaining study-share loads; CRYO_ASU basis.
 10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.
 
 Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are approved by default (X-RSZ group).
