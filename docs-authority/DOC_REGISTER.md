@@ -248,6 +248,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register, vessels and interstage valves (X-SAF-04) | canonical |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | A | 2026-10-16 | Fire protection and detection, gas-receiver API 521 fire case (X-SAF-05) | canonical |
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | A | 2026-10-16 | Gas detection: H2, O2 deficiency and enrichment, CO, NOx, Cl2/HCl, HF (X-SAF-06) | canonical |
+| AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | A | 2026-10-16 | Motor first-article drawings, traveller and type-test rig (X-INV-02B desk package) | canonical |
 | AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | A | 2026-10-16 | Wire family specifications and production plans (X-INV-03-WF-01..27 desk package) | canonical |
 | AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | A | 2026-10-16 | Enclosure, floor plates, stairs and egress (X-BLD-05) | canonical |
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check against vehicle and container sizes (X-BLD-07) | canonical |
