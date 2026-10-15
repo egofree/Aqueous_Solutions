@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - In 376.1 kg/d, out 376.1 kg/d. No holdup claimed.
 
-3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 °C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.
+3. Material. CPVC wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. IA-SINK-01 arrives from LEACH_CSTR_1 at up to 85 °C (X-MAT-09). Wetted parts CPVC per M5 (93 °C limit), no metal. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 1.92 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

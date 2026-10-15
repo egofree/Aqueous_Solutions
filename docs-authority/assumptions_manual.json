@@ -609,5 +609,31 @@
    "docs-authority/PIPING_CLASSES.md"
   ],
   "id": "A-M-047"
+ },
+ {
+  "value": "40",
+  "units": "C",
+  "where": "Liquid edges into thermoplastic units with no stated temperature (X-MAT-09)",
+  "basis": "0.4 % site dry bulb 37.8 C (AQS-SITE-002), no heat input stated upstream",
+  "sensitivity": "Only matters near the 60 C PVC-U limit",
+  "replaced_by": "Edge temperature from each unit task 01 heat balance",
+  "task": "X-MAT-09",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-048"
+ },
+ {
+  "value": "85",
+  "units": "C",
+  "where": "LEACH_CSTR_1 outlet edges without their own temperature",
+  "basis": "Leach liquor band maximum (GLOSSARY 70-85 C)",
+  "sensitivity": "Drives the CPVC choices of X-MAT-09",
+  "replaced_by": "Measured outlet temperatures",
+  "task": "X-MAT-09",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-049"
  }
 ]

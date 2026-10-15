@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: H
+Revision: I
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -15,6 +15,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | F | Leach liquor temperature 70-85 C found in the repo; LEACH_CSTR_1 tank corrected from PVC-U to CPVC. | 2026-10-15 |
 | G | HX-5 adopted as a borosilicate glass 3.3 coil (X-MAT-16). | 2026-10-15 |
 | H | HX8 adopted as a PVDF bundle (X-MAT-17). | 2026-10-15 |
+| I | Material temperatures on thermoplastic inlets (X-MAT-09); HX-5 coil guard. | 2026-10-15 |
 
 ## 1. Rules
 
@@ -189,3 +190,97 @@ Decision (owner approval 2026-10-15). HX8 is a PVDF shell-and-tube bundle, 7.53 
 - Graphite is brittle and fails on thermal or pressure shock; PVDF tolerates handling and water hammer.
 - The penalty is area and footprint (about nine times), which is acceptable at 7.5 m².
 Graphite is not clearly better, so the approved default stands. Section 4.1's open graphite option is closed.
+
+## 8. Material temperatures on thermoplastic inlets, Rev I
+
+X-MAT-09. Script `docs-authority/_material_temps.py` writes `params.T_C` and `T_basis` on every liquid edge into a thermoplastic unit that lacked one, from: the edge's own text; the upstream unit's other outlets; LEACH_CSTR_1 outlets at the band maximum 85 °C; otherwise 40 °C (assumption, the 0.4 % site dry bulb 37.8 °C of AQS-SITE-002 rounded up).
+
+| Edge | From | To | Material | T °C | Limit °C | Check | Basis |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| IA-SCRUB-SRC | LEACH_CSTR_1 | ACID_POLISH_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-BMED-03 | LEACH_CSTR_1 | BMED_ACID | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-BMED-04 | LEACH_CSTR_1 | BMED_BASE | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-EW-04 | LEACH_CSTR_1 | EW_1 | PVC-U | 77.5 | 60 | EXCEEDS | edge T_C |
+| IA-SINK-01 | LEACH_CSTR_1 | FLOAT_SINK | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-POT-01 | LEACH_CSTR_1 | ROOF_TANK | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-HF-SRC | LEACH_CSTR_1 | WS_HF_ED | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-DIG-BLK | DIGESTER | BLACK_DIGEST | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-ESS-HYDRO-DIS | ROOF_TANK | CATCH_TANK | PVC-U | 25.0 | 60 | ok | edge T_C |
+| S41 | TERRACE_IRRIG | CATCH_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | PVC-U | 50.0 | 60 | ok | edge T_C |
+| S66 | ACID_POLISH_SCRUB | CRU | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-EW-01 | EW_1 | EW_2 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-02 | EW_2 | EW_3 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-03 | EW_3 | EW_4 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-10 | EW_4 | EW_5 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-05 | EW_5 | EW_6 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-06 | EW_6 | EW_7 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-07 | EW_7 | EW_8 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-EW-08 | EW_8 | EW_9 | PVC-U | 55.0 | 60 | ok | edge T_C |
+| S42 | TERRACE_IRRIG | GREY_TREAT | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-ZNBR-BD | ZNBR2 | GREY_TREAT | PVC-U | 25.0 | 60 | ok | edge T_C |
+| IA-WASH-R | HAB_WASH | GREY_TREAT | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-NH3-NIT | WS_AMMONIA | HNO3 | PVDF | 40.0 | 120 | ok | edge T_C |
+| IA-O2-NIT | HDR_O2 | HNO3 | PVDF | 40.0 | 120 | ok | edge T_C |
+| IA-REC-01 | CONTINUOUS_RECYCLE | LEACH_CSTR_1 | CPVC | 35.0 | 93 | ok | edge T_C |
+| IA-WET-FLOAT-01 | FLOAT_SINK | LEACH_CSTR_1 | CPVC | 60.0 | 93 | ok | edge T_C |
+| S10 | WET_BENCH | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| S28 | VCD_TRAIN | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| S68 | CRYO_AHU | LEACH_CSTR_1 | CPVC | 10.0 | 93 | ok | edge T_C |
+| IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-CRU-01 | CRU | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-ACID-01 | BMED_ACID | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-UPW-REJ | BMED_UPW_POLISH | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-DIG-LIQ | GLASS_DIGEST | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-FEED-01 | HOPPER | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-BAG-01 | BAGHOUSE | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-FC-LEACH | FUEL_CELL | LEACH_CSTR_1 | CPVC | 60.0 | 93 | ok | edge T_C |
+| IA-IL-BRINE | ACEX | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| IA-SIC-RET | NUTRIENT_DOSE | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
+| S46 | BACKUP_GEN | NOX_SCRUB | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-FC-FIX | FUEL_CELL | NOX_SCRUB | PVC-U | 60.0 | 60 | ok | edge T_C |
+| IA-GLX-NOX | GLYOXAL | NOX_SCRUB | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-EW-09 | EW_9 | POLISH_BANK | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-ESS-HYDRO-CHG | CATCH_TANK | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-HVAC-COND | CRYO_AHU | ROOF_TANK | PVC-U | 10.0 | 60 | ok | edge T_C |
+| IA-GREY-RET | GREY_TREAT | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-AC-H2O | ACETOX | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-FORM-H2O | FORM | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-IMID-H2O | IMID | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-BUCL-H2O | BUCL | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-QUAT-H2O | QUAT | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-NIT-H2O | HNO3 | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-GLX-H2O | GLYOXAL | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-MEAM-H2O | MEAM | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S09 | BMED_ACID | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S27 | FAB_UPW_TANK | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S31 | WS_HF_ED | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S32 | WS_PEROX | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S33 | WS_AMMONIA | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S35 | WS_KOH | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S34 | WS_NITRIC | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S34B | WS_PHOS | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-SOLV-WB | WS_SOLV | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-NH3-SRC | HDR_N2 | WS_AMMONIA | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-NH3-RET | MEAM | WS_AMMONIA | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-BMED-02 | BMED_BASE | WS_KOH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-BMED-01 | BMED_ACID | WS_NITRIC | PVDF | 40.0 | 120 | ok | edge T_C |
+| IA-HNO3 | HNO3 | WS_NITRIC | PVDF | 40.0 | 120 | ok | edge T_C |
+| IA-H2O2-SRC | HDR_O2 | WS_PEROX | PVDF | 40.0 | 120 | ok | edge T_C |
+| IA-PEROX-H2O | ROOF_TANK | WS_PEROX | PVDF | 25.0 | 120 | ok | edge T_C |
+
+78 edges; 9 exceed; 0 on the ambient assumption.
+
+Resolution of the exceedances:
+- CPVC per M5: FLOAT_SINK, EW_1 (EW_2 to EW_9 at 55 °C stay PVC-U), ACID_POLISH_SCRUB, NOX_SCRUB inlet and sump.
+- PVDF: WS_HF_ED (HF at 85 °C).
+- Cooling, not material: BMED_ACID, BMED_BASE (ion-exchange membranes) and ROOF_TANK (water) — X-MAT-19.
+
+HX-5 coil guard. The impeller (D 450 mm, AQS-DUTY-050) turns inside the coil (ID 575 mm), 62 mm radial clearance. The coil is clamped to four PVDF guide posts from the pads to the lid so it cannot move into the impeller; no separate guard sleeve, which would cut the flow across the coil.

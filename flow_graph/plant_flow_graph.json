@@ -8752,7 +8752,9 @@
         "medium": "HCl 2 M",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -8785,7 +8787,9 @@
         "medium": "NaOH 2 M",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -8829,7 +8833,9 @@
         "rate_kind": "derived",
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
-        "rev_l_outcome": "present: BMED acid loop make (energy basis)"
+        "rev_l_outcome": "present: BMED acid loop make (energy basis)",
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       },
       "composition": {
         "water": 0.9,
@@ -8883,7 +8889,9 @@
         "rate_kind": "derived",
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
-        "rev_l_outcome": "present: BMED base loop make (energy basis)"
+        "rev_l_outcome": "present: BMED base loop make (energy basis)",
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       },
       "composition": {
         "water": 0.9,
@@ -8935,7 +8943,9 @@
         "medium": "water",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -8977,7 +8987,9 @@
         "medium": "water",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 25.0,
+        "T_basis": "X-MAT-09: upstream ROOF_TANK outlet IA-FLUE-QUENCH (edge conditions)"
       },
       "composition": {
         "water": 0.97,
@@ -9165,7 +9177,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.0063,
         "anode_cl2_kg_d": 56.278,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9210,7 +9224,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.0251,
         "anode_cl2_kg_d": 56.283,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9255,7 +9271,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 8.7841,
         "anode_cl2_kg_d": 9.802,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9299,7 +9317,9 @@
         "conditions": "77.5 C, atm",
         "rate_kind": "derived",
         "m3_h": 0.17,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 77.5,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.9,
@@ -9345,7 +9365,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.425,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9390,7 +9412,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.859,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9435,7 +9459,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 29.629,
         "anode_cl2_kg_d": 37.62,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9480,7 +9506,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.449,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -9525,7 +9553,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 57.046,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.97,
@@ -9569,7 +9599,9 @@
         "rate_kind": "derived",
         "deposit_kg_d": 0.7111,
         "anode_cl2_kg_d": 0.243,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 55.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.92,
@@ -10060,7 +10092,9 @@
         "conditions": "~50 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
-        "rev_l_outcome": "present: retargeted from the POLISH_BANK self-loop stub to POLISH_BANK -> CONTINUOUS_RECYCLE (raffinate return; STUDIES_COMPLETE precedent)"
+        "rev_l_outcome": "present: retargeted from the POLISH_BANK self-loop stub to POLISH_BANK -> CONTINUOUS_RECYCLE (raffinate return; STUDIES_COMPLETE precedent)",
+        "T_C": 50.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.97,
@@ -10092,7 +10126,9 @@
         "medium": "regenerated leach liquor",
         "conditions": "35.0 C",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 35.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.9,
@@ -10138,7 +10174,9 @@
         "rate_kind": "derived",
         "slurry_solids_kg_d": 90.94,
         "doc": "AQS-DUTY-010",
-        "rev_l_outcome": "present: float/sink liquor return"
+        "rev_l_outcome": "present: float/sink liquor return",
+        "T_C": 60.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.9,
@@ -10521,7 +10559,9 @@
         "medium": "HCl 2 M",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream BMED_ACID outlet IA-BMED-01 (edge T_C)"
       },
       "composition": {
         "water": 0.97,
@@ -10560,7 +10600,9 @@
         "conditions": "ambient",
         "rate_kind": "by_difference",
         "doc": "AQS-DUTY-010",
-        "rev_k_value": 10.0
+        "rev_k_value": 10.0,
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.9,
@@ -11217,7 +11259,9 @@
         "medium": "UPW >18 MOhm.cm",
         "conditions": "ambient, 1.0 kg/L",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -11256,7 +11300,9 @@
         "conditions": "~40 C",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010",
-        "rev_l_outcome": "present: VCD brine to REGEN LEACH"
+        "rev_l_outcome": "present: VCD brine to REGEN LEACH",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.9,
@@ -11379,7 +11425,9 @@
         "medium": "HF (aq) dilute",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -11419,7 +11467,9 @@
         "medium": "H2O2 dilute (SC-1/SC-2)",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -11459,7 +11509,9 @@
         "medium": "NH4OH dilute (SC-1)",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -11500,7 +11552,9 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "L_d": 0.25,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -11761,7 +11815,9 @@
         "medium": "water",
         "conditions": "event only",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -11801,7 +11857,9 @@
         "medium": "water",
         "conditions": "event only",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream TERRACE_IRRIG outlet S41 (edge T_C)"
       },
       "composition": {
         "water": 0.97,
@@ -11953,7 +12011,9 @@
         "conditions": "hot exhaust",
         "rate_kind": "derived",
         "kg_h": 10.44,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -12650,7 +12710,9 @@
         "medium": "hypochlorite/chloride scrub liquor",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -12764,7 +12826,9 @@
         "medium": "AHU coil condensate (carries text says flue condensate: flagged)",
         "conditions": "~10 C",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 10.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 0.9,
@@ -13541,7 +13605,9 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "L_d": 0.625,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -13574,7 +13640,9 @@
         "conditions": "ambient",
         "rate_kind": "derived",
         "L_d": 0.625,
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       },
       "composition": {
         "water": 0.97,
@@ -13709,6 +13777,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -13741,6 +13813,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -13773,6 +13849,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream BMED_ACID outlet IA-BMED-01 (edge T_C)"
       }
     },
     {
@@ -13885,6 +13965,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 25.0,
+        "T_basis": "X-MAT-09: upstream ZNBR2 outlet S69 (edge conditions)"
       }
     },
     {
@@ -13975,6 +14059,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -14007,6 +14095,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream BMED_UPW_POLISH outlet IA-UPW-REMIN (edge T_C)"
       }
     },
     {
@@ -14557,6 +14649,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -14832,6 +14928,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream VCD_TRAIN outlet S25 (edge conditions)"
       }
     },
     {
@@ -15255,6 +15355,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 10.0,
+        "T_basis": "X-MAT-09: upstream CRYO_AHU outlet S68 (edge T_C)"
       }
     },
     {
@@ -15367,6 +15471,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream GREY_TREAT outlet IA-GREY-01 (edge T_C)"
       }
     },
     {
@@ -15821,6 +15929,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -15999,7 +16111,9 @@
           },
           "bounded": "Plateable element mass to EW_1 to EW_9, and metal_reactive, at the held rate.",
           "held": "silicate_oxide, water, organic, unassigned, other_inorganic, and oxide-bound Al, Ca, Mg, Ti. Not resized."
-        }
+        },
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -16040,6 +16154,10 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       }
     },
     {
@@ -16192,6 +16310,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -16292,6 +16414,10 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       }
     },
     {
@@ -16392,6 +16518,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -16432,6 +16562,10 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       }
     },
     {
@@ -16502,6 +16636,10 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       }
     },
     {
@@ -16531,6 +16669,10 @@
       "notes": null,
       "composition": {
         "N2": 0.99
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -16561,6 +16703,10 @@
       "composition": {
         "O2": 0.99,
         "Ar": 0.01
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -16621,6 +16767,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -16743,6 +16893,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -17836,6 +17990,10 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       }
     },
     {
@@ -18221,6 +18379,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 60.0,
+        "T_basis": "X-MAT-09: upstream FUEL_CELL outlet S52 (edge conditions)"
       }
     },
     {
@@ -18358,6 +18520,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 60.0,
+        "T_basis": "X-MAT-09: upstream FUEL_CELL outlet S52 (edge conditions)"
       }
     },
     {
@@ -18808,6 +18974,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -18936,6 +19106,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19026,6 +19200,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19206,6 +19384,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19296,6 +19478,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19356,6 +19542,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19417,6 +19607,10 @@
         "HCl": 0.05,
         "Fe": 0.02,
         "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19447,6 +19641,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream WS_AMMONIA outlet S33 (edge T_C)"
       }
     },
     {
@@ -19477,6 +19675,10 @@
       "composition": {
         "O2": 0.99,
         "Ar": 0.01
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream HDR_O2 outlet IA-H2O2-SRC (edge T_C)"
       }
     },
     {
@@ -19507,6 +19709,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -19537,6 +19743,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream HNO3 outlet IA-HNO3 (edge T_C)"
       }
     },
     {
@@ -19597,6 +19807,10 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -22073,6 +22287,10 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      },
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
       }
     },
     {
@@ -24330,6 +24548,10 @@
         "K2CO3": 0.4,
         "CaO": 0.3,
         "other": 0.3
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
     },
     {
@@ -24906,7 +25128,11 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream NUTRIENT_DOSE outlet IA-NUT-LEACH (edge T_C)"
+      }
     },
     {
       "stream_id": "IA-CRAY-DET",
@@ -25015,7 +25241,11 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null,
-      "composition": null
+      "composition": null,
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream GLYOXAL outlet IA-GLX-NOX (edge T_C)"
+      }
     },
     {
       "stream_id": "IA-FORM-O2",
@@ -25069,7 +25299,11 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null,
-      "composition": null
+      "composition": null,
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+      }
     },
     {
       "stream_id": "IA-NH3-RET",
@@ -25096,7 +25330,11 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null,
-      "composition": null
+      "composition": null,
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: upstream MEAM outlet IA-MEAM-H2O (edge T_C)"
+      }
     },
     {
       "stream_id": "IA-AC-EX",
@@ -25315,7 +25553,9 @@
         "conditions": "25 C",
         "rate_kind": "derived",
         "doc": "AQS-DSN-OX-001",
-        "material": "PVC-U"
+        "material": "PVC-U",
+        "T_C": 25.0,
+        "T_basis": "X-MAT-09: edge conditions"
       },
       "composition": {
         "water": 1.0

@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - Liquid in 27.36 kg/d. Sump at 10 min: V = (27.36/1000)×(10/60)/24 = 0.00019 m³.
 - Packed height 3.0 m. HTU 0.5 m on 25 mm pall rings. NTU 6. Removal 1 − e^(−6) = 99.75% if the acid gas is irreversible.
 
-3. Material. PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. The graph gives no temperature for this unit; above 60 °C, CPVC. Corrosion allowance does not apply to the polymer.
+3. Material. CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. IA-SCRUB-SRC arrives from LEACH_CSTR_1 at up to 85 °C (X-MAT-09). Shell, sump and inlet CPVC per M5. Corrosion allowance does not apply to the polymer.
 
 4. Nozzles. Gas duct DN250 at 10 m/s. Bore from 1500.0 m³/h is 230 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
 
