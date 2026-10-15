@@ -211,5 +211,40 @@
   "needs_verification": true,
   "verification_test": "EDBM pilot on the plant chloride brine at 2 M product: SEC and current efficiency",
   "published": "EDBM_WHEY_2021 maximum 3.6 M acid / 3.0 M base; SEC 6.7 kWh/kg quoted at 2 M"
+ },
+ "pv_yield_kWh_kWp_d": {
+  "value": 5.41,
+  "units": "kWh/kWp/d before losses",
+  "ref": "NREL_PVWATTS",
+  "needs_verification": true,
+  "verification_test": "PVsyst or measured site irradiance year at the chosen tilt"
+ },
+ "pv_system_derate": {
+  "value": 0.8,
+  "units": "-",
+  "register": "A-M-061",
+  "needs_verification": true,
+  "verification_test": "PVsyst loss tree for the selected modules and inverters"
+ },
+ "storage_round_trip": {
+  "value": 0.7,
+  "units": "-",
+  "register": "A-M-061",
+  "needs_verification": true,
+  "verification_test": "ZnBr2 vendor round-trip efficiency at the duty cycle"
+ },
+ "night_hours": {
+  "value": 14.0,
+  "units": "h/d served from storage",
+  "register": "A-M-060",
+  "needs_verification": true,
+  "verification_test": "Hourly load and irradiance profile"
+ },
+ "bus_power_factor": {
+  "value": 0.9,
+  "units": "-",
+  "register": "AQS-ELEC-002 PF (study)",
+  "needs_verification": true,
+  "verification_test": "Measured power factor on the 480 V bus"
  }
 }

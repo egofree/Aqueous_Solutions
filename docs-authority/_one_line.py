@@ -1,8 +1,12 @@
 """AQS-ELEC-002 Rev C one-line, generated from the graph electrical edges, AQS-ELEC-003 load list and AQS-ELEC-004.
 Writes docs-authority/ONE_LINE.md and returns the bus table as JSON on stdout."""
-import json, math, re, subprocess
+import json, math, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from flow_graph.param import drivers as DR
+from flow_graph.param.sizing import power as PW
+_d = DR.load()
 g=json.load(open('flow_graph/plant_flow_graph.json'))
-V=480.0; PF=0.90; BRK=[15,20,25,30,40,50,60,70,80,90,100,110,125,150,175,200,225,250,300,350,400]   # NEC 240.6(A)
+V=480.0; PF=DR.val(_d,'bus_power_factor'); BRK=[15,20,25,30,40,50,60,70,80,90,100,110,125,150,175,200,225,250,300,350,400]   # NEC 240.6(A)
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 ll=[l.split('|')[1:-1] for l in open('docs-authority/LOAD_LIST.md') if l.startswith('| ') and not l.startswith('| Unit') and not l.startswith('| ---')]
 L={}
@@ -14,8 +18,8 @@ el=[e for e in g['edges'] if 'elec' in (e.get('layers') or [])]
 src=[(e['from_unit_id'],e['stream_id'],e['rate']['value']) for e in el if e['to_unit_id']=='SOL_ARK_60K']
 fed={e['to_unit_id']:(e['stream_id'],e['rate']['value']) for e in el if e['from_unit_id']=='SOL_ARK_60K'}
 PK={n['unit_id']:n.get('params',{}).get('peak_kw') for n in g['nodes'] if isinstance(n.get('params',{}).get('peak_kw'),(int,float))}
-def amps(kw,ph=3,v=V): return kw*1000/((math.sqrt(3) if ph==3 else 1)*v*PF)
-def brk(a): return next(b for b in BRK if b>=1.25*a)
+def amps(kw,ph=3,v=V): return PW.amps_3ph(kw,v,PF) if ph==3 else kw*1000/(v*PF)
+def brk(a): return PW.breaker(a,BRK)   # NEC2023 125 %
 INV=next(n for n in g['nodes'] if n['unit_id']=='SOL_ARK_60K')['params']
 INVTXT=f"{INV.get('count',1)} × 60 = {INV.get('kW',60):.0f} kW inverters"
 rows=[]
