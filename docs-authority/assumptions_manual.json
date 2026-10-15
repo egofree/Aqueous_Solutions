@@ -2988,5 +2988,25 @@
     "verification": "Round-trip basis now the in-house prediction and test plan; no size change",
     "replace_when": "AQS-TST-002 10-cell stack test",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-180",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Interstage relief basis",
+    "statement": "Every compressor stage discharge carries a PSV set at 1.10 x stage outlet, sized for blocked discharge at the stage peak flow with 10 % overpressure (API 520 critical gas flow); in-house bores 6-15 mm in a DN15 body; CO2 compressor peak = one bed desorbed over 8 h; CRYO_CO2 liquid store at 20 bar, -20 C is a pressure vessel",
+    "verification": "5 H2 and 4 CO2 interstage PSVs, all 6 mm bore; CO2 compressor 2 -> 4 stages (225 -> 122 C); CRYO_CO2 2 kPa -> 2200 kPa g design, Section VIII-1 pending its size",
+    "replace_when": "Valve set-pressure bench test on the first article",
+    "doc": "AQS-PAR-003"
   }
 ]

@@ -1870,15 +1870,15 @@
         "backup_basis": {
           "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
           "standard": "NFPA 111 Level 1, Class X",
-          "critical_kW": 14.32,
+          "critical_kW": 14.31,
           "class_hours": 14.0,
-          "energy_kWh_bus": 200.5,
+          "energy_kWh_bus": 200.3,
           "head_m": 18,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 5109.0,
-          "rated_kW_discharge": 14.32,
+          "upper_reservoir_m3": 5106.0,
+          "rated_kW_discharge": 14.31,
           "recharge_kW_over_PV_window": 49.1,
           "A-M": "A-M-145",
           "Q": "Q-006 closed; Q-009 reservoir siting"
@@ -2592,7 +2592,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 242.075,
+        "value": 242.0676,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -2602,7 +2602,7 @@
         "module_kw": 0.5,
         "count": 6934,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 242.075 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 242.068 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -2767,7 +2767,7 @@
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
-          "critical_kW": 14.32,
+          "critical_kW": 14.31,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
         }
@@ -2920,7 +2920,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1047.2265,
+              "value": 1047.1955,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -2944,7 +2944,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1055.714 kg/d, out 1055.714 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1055.683 kg/d, out 1055.683 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -2972,7 +2972,7 @@
           "H2_m3_d": 8.875,
           "purge_m3_h": 36.98,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2289.7
+          "electrode_area_m2": 2289.6
         }
       }
     },
@@ -3621,7 +3621,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 220.747 kg/d, out 220.747 kg/d, 1.667 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "duty": "In 220.747 kg/d, out 220.747 kg/d, 1.660 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through",
         "design_kPa": 17.5,
         "relief_mm": 3.3,
@@ -3651,20 +3651,22 @@
           "bed_L_mm": 1244.005508301287,
           "regen_kW": 1.4022351446514685,
           "blower_kW": 0.04335324075661783,
-          "co2_comp_kW": 0.08871876851469153,
+          "co2_comp_kW": 0.08126780228278249,
           "co2_chill_kW": 0.03291573303819444,
           "getter_kW": 0.1,
-          "total_kW": 1.6672228869609722,
-          "comp_ratio_per_stage": 4.47213595499958,
+          "total_kW": 1.659771920729063,
+          "comp_stages": 4,
+          "comp_ratio_per_stage": 2.114742526881128,
+          "comp_T_out_C": 121.93064278721914,
           "H_mm": 1244,
           "D_mm": 415
         }
       },
       "continuous_kw": {
-        "value": 1.6672,
+        "value": 1.6598,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.043 + CO2 compressor 0.089 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.043 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
       },
       "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through"
     },
@@ -7628,7 +7630,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 242.075,
+        "value": 242.0676,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -8591,7 +8593,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.6672,
+        "value": 1.6598,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."

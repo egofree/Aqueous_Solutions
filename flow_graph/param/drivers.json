@@ -2255,5 +2255,10 @@
   "register": "A-M-179",
   "needs_verification": true,
   "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
+ },
+ "cb_T_out_max_C": {
+  "value": 150.0,
+  "units": "C predicted stage discharge, general service",
+  "ref": "API618"
  }
 }

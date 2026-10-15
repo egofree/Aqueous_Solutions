@@ -1493,7 +1493,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1047.2265,
+              "value": 1047.1955,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -1517,7 +1517,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1055.714 kg/d, out 1055.714 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1055.683 kg/d, out 1055.683 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -1545,7 +1545,7 @@
           "H2_m3_d": 8.875,
           "purge_m3_h": 36.98,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2289.7
+          "electrode_area_m2": 2289.6
         }
       }
     },

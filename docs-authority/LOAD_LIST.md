@@ -22,7 +22,7 @@ Loads: graph sum 232.0 kW; with calculated values substituted 224.3 kW.
 | MFG_SHOP | load | 2.903 | 2.900 | AQS-MFG-010 tool list, one shift; peak 24.5 kW |
 | GROW_BED | load | 8.743 | 2.250 | LED: 28 m2 x DLI 17 mol/m2/d (S26 Both, Cornell CEA lettuce) / 2.5 umol/J = 2.20 kW; recirculation 18909 kg/d at 10 m head, 50% wire-to-water = 0.043 kW |
 | EW_3 | load | 0.000 | 1.971 | AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum) |
-| CRYO_ASU | — | 1.667 | 1.667 | AQS-DUTY-069 (X-MFG-33): 13X TSA, CO2 compressor and condenser, Ar getter; no cryogenic column |
+| CRYO_ASU | — | 1.660 | 1.660 | AQS-DUTY-069 (X-MFG-33): 13X TSA, CO2 compressor and condenser, Ar getter; no cryogenic column |
 | CRYO_H2 | load | 0.884 | 0.884 | AQS-DUTY-067 (X-MFG-36): 5-stage intercooled diaphragm compressor, average over the day |
 | LEACH_CSTR_1 | load | 2.000 | 0.750 | AQS-DUTY-050 agitator motor; heat by Q3 (HX-5), not electric |
 | EW_6 | load | 0.000 | 0.480 | AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum) |
@@ -32,7 +32,7 @@ Loads: graph sum 232.0 kW; with calculated values substituted 224.3 kW.
 | H2_PURIFIER | load | 0.044 | 0.050 | TSA regeneration average (study) |
 | WS_PEROX | load | 0.000 | 0.031 | AQS-DSN-OX-001 cell 12.31 A at 2.5 V |
 | BMED_UPW_POLISH | load | 0.018 | 0.018 | AQS-DUTY-070 (X-MFG-34): RO + EDI on the UPW share, potable bypass, UV-TOC |
-| PV_ARRAY | generation | 242.075 |  | study share; held for unit task 02 |
+| PV_ARRAY | generation | 242.068 |  | study share; held for unit task 02 |
 | EXT_HALL | load | 93.839 |  | study share; held for unit task 02 |
 | RECT_EW | load | 38.663 |  | study share; held for unit task 02 |
 | H2O_ELYZ | load | 24.593 |  | study share; held for unit task 02 |

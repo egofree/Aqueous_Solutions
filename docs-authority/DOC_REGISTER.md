@@ -237,3 +237,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | canonical |
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | canonical |
 | AQS-TST-002 | `docs-authority/ZNBR2_STACK_TEST.md` | A | 2026-10-16 | ZNBR2 stack test plan and prediction (X-MFG-41) | canonical |
+| AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register, vessels and interstage valves (X-SAF-04) | canonical |
