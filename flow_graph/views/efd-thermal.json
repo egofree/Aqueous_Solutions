@@ -1462,8 +1462,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1413,
-        "kWh": 4352,
+        "kW": 1264,
+        "kWh": 3891,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -1473,7 +1473,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1301.8788,
+              "value": 1163.9799,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -1497,7 +1497,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1310.366 kg/d, out 1310.366 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1172.467 kg/d, out 1172.467 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -1507,24 +1507,24 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.3104,
+          "pump_in_m3_h": 1.1725,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.621,
+          "out_breathing_Nm3_h": 2.345,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 7.4,
+          "vent_bore_req_mm": 7.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1413,
-        "discharge_kW": 311,
+        "charge_kW": 1264,
+        "discharge_kW": 278,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 60 hybrid inverters, 72.5 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 54 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 11.033,
-          "purge_m3_h": 45.97,
+          "H2_m3_d": 9.864,
+          "purge_m3_h": 41.1,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2846.5
+          "electrode_area_m2": 2545.0
         }
       }
     },

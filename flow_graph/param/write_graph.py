@@ -27,8 +27,10 @@ def process():
     before = bus_load(g)
     # BMED energy from published SEC at 2 M
     kw = s['bmed']['kW_published']
-    N['BMED_ACID']['continuous_kw'] = rate(kw,'kW',f"{TAG}. BMED stack at 2 M product: {s['bmed']['base_kg_d']:.2f} kg/d NaOH x {DR.val(d,'bmed_sec_kWh_per_kg_base')} kWh/kg (EDBM_WHEY_2021) / 24 h. Solver flow_graph/param/solver.py bmed().")
+    N['BMED_ACID']['continuous_kw'] = rate(kw,'kW',f"{TAG}. BMED stack: {s['bmed']['base_kg_d']:.2f} kg/d NaOH x {s['bmed']['sec_kWh_kg']:.2f} kWh/kg from triplet voltage {s['bmed']['voltage']['V_design']:.2f} V at CE {DR.val(d,'bmed_CE')} (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed().")
     E['S17-BMED']['rate'] = rate(kw,'kW',f'{TAG}. 480 V feed equal to BMED_ACID continuous_kw.')
+    B12 = N['CRYO_O2']['params'].get('x_par_12_base')
+    if B12: B12['BMED_kW'] = round(kw,4); B12['S17-BMED'] = round(kw,4)   # X-PAR-12 rescaling base follows the solver BMED energy
     # NaOH balance (owner decision 2026-10-15): stoichiometric draws, make-up from the dock, sodium purge
     nb = s['naoh']; wb = DR.val(d,'base_conc_design_wt'); NT = f'{TAG}; NaOH balance (owner decision 2026-10-15)'
     E['IA-BASE-PPT']['rate'] = rate(nb['ppt_kg_d']/wb,'kg/d',f"{NT}. {nb['ppt_mol']:.0f} mol/d NaOH, one per leached chloride (GREENWOOD), as {wb*100:.0f} wt%.")

@@ -43,7 +43,7 @@
  "acid_conc_design_wt": {
   "value": 0.2,
   "units": "mass fraction HCl on IA-ACID-01",
-  "register": "X-PAR acid-loop decision (AQS-PAR-001 §Acid loop)",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
   "needs_verification": true,
   "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time",
   "published": "CARLETON_HCL_2023 38 % HCl; PERRY9_HCL azeotrope 20.2 wt% caps evaporative concentration"
@@ -199,7 +199,7 @@
  "base_conc_design_wt": {
   "value": 0.2,
   "units": "mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT",
-  "register": "X-PAR acid-loop decision (AQS-PAR-001 §Acid loop)",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
   "needs_verification": true,
   "verification_test": "Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt%",
   "published": "Matches the acid side; no azeotrope limit on NaOH-water"
@@ -1770,5 +1770,52 @@
   "register": "A-M-170 (X-MFG-35 BMED stack)",
   "needs_verification": true,
   "verification_test": "same test: per-cell voltage spread"
+ },
+ "bmed_V_bpm_V": {
+  "value": 1.0,
+  "units": "V per bipolar membrane at 200 A/m2 (reversible 0.83 V plus overpotential)",
+  "ref": "STRATHMANN2004",
+  "needs_verification": true,
+  "verification_test": "Bipolar membrane I-V curve on the first-article stack (X-MFG-41)"
+ },
+ "bmed_R_mono_ohm_cm2": {
+  "value": 3.0,
+  "units": "ohm cm2 per monopolar membrane",
+  "ref": "STRATHMANN2004",
+  "needs_verification": true,
+  "verification_test": "Membrane area resistance by EIS in plant brine (X-MFG-41)"
+ },
+ "bmed_kappa_S_cm": {
+  "value": {
+   "salt": 0.045,
+   "base": 0.29,
+   "acid": 0.5
+  },
+  "units": "S/cm: salt about 3 % NaCl depleted, base 2 M (7.4 %) NaOH, acid 2 M (7 %) HCl, interpolated",
+  "ref": "CRC_COND"
+ },
+ "bmed_spacer_mm": {
+  "value": 0.8,
+  "units": "mm compartment gap",
+  "register": "A-M-170"
+ },
+ "bmed_spacer_shadow": {
+  "value": 1.5,
+  "units": "- solution resistance multiplier for a woven mesh spacer",
+  "register": "A-M-171",
+  "needs_verification": true,
+  "verification_test": "Stack ohmic resistance at three flow rates (X-MFG-41)"
+ },
+ "bmed_V_end_per_stack_V": {
+  "value": 3.0,
+  "units": "V per stack for the end electrode pair (O2/H2 rinse cell)",
+  "register": "A-M-171",
+  "needs_verification": true,
+  "verification_test": "Stack voltage minus sum of triplet voltages (X-MFG-41)"
+ },
+ "bmed_sec_pilot_kWh_kg": {
+  "value": 1.4,
+  "units": "kWh/kg NaOH at 200 A/m2, CE 0.80",
+  "ref": "EDBM_PILOT_2023"
  }
 }

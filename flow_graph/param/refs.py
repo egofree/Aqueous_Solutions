@@ -1,6 +1,8 @@
 """Citation registry for the parametric model. Code cites by key; docs print the full entry.
 Only published sources: standards, textbooks, peer-reviewed papers, manufacturer data."""
 REFS = {
+ 'STRATHMANN2004': 'Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance.',
+ 'CRC_COND': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), Electrical conductivity of aqueous solutions (20 C): NaCl 2.5 % 39 and 5 % 70 mS/cm; NaOH 5 % 223 and 10 % 358 mS/cm; HCl 5 % 394 and 10 % 630 mS/cm.',
  'PERRY7_HCL_VLE': "Perry R.H., Green D.W. (eds), Perry's Chemical Engineers' Handbook, 7th ed., McGraw-Hill (1997), Table 2-9 Partial pressures of water over aqueous solutions of HCl and Table 2-10 Partial pressures of HCl over aqueous solutions of HCl, p. 2-76 (log10 p = A - B/T fits per wt% row; 8th ed. Tables 2-11/2-12).",
  'NOAA_NORMALS_DFW': 'NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878.',
  'IAPWS_IF97': 'IAPWS, Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam (2007): region 4 saturation equation; latent heat of vaporisation 2257 kJ/kg at 100 C.',

@@ -25,12 +25,24 @@ def leach_acid(d):
     m_out = sum(mol_ox[o]*CHLORIDE[o][2]*mw(CHLORIDE[o][1]) for o in mol_ox)/1000 + sum(mol_ox[o]*H2O_PER[o]*H2O for o in mol_ox)/1000
     return dict(hcl_kg_d=hcl_mol*HCL/1000, hcl_mol_d=hcl_mol, closure=(m_in, m_out))
 
+def bmed_voltage(d):
+    """Triplet voltage from physics (X-FND BMED): V = V_bpm + j (2 R_mono + shadow x gap x sum(1/kappa)) + V_end/N_stack
+    [STRATHMANN2004, CRC_COND]; design voltage is the larger of that and the measured pilot voltage SEC x M x CE / F [EDBM_PILOT_2023]."""
+    v = lambda k: DR.val(d,k); j = v('bmed_j_A_m2')/1e4; k = v('bmed_kappa_S_cm'); gap = v('bmed_spacer_mm')/10
+    sol = v('bmed_spacer_shadow')*gap*sum(1/k[c] for c in ('salt','base','acid'))
+    V_mem = 2*j*v('bmed_R_mono_ohm_cm2'); V_sol = j*sol; V_end = v('bmed_V_end_per_stack_V')/v('bmed_cells_per_stack_max')
+    V_model = v('bmed_V_bpm_V') + V_mem + V_sol + V_end
+    V_pilot = v('bmed_sec_pilot_kWh_kg')*3.6e6*NAOH/1000*v('bmed_CE')/96485.33212
+    V = max(V_model, V_pilot)
+    return dict(V_bpm=v('bmed_V_bpm_V'), V_mem=V_mem, V_sol=V_sol, V_end=V_end, V_model=V_model, V_pilot=V_pilot, V_design=V,
+                sec_kWh_kg=V*96485.33212/(NAOH/1000*v('bmed_CE'))/3.6e6)
+
 def bmed(d, hcl_mol):
-    """Salt split 1:1 acid:base; energy from published SEC per kg base [EDBM_WHEY_2021]."""
+    """Salt split 1:1 acid:base; energy from the physics triplet voltage (bmed_voltage) at the design current efficiency."""
     base_kg = hcl_mol*NAOH/1000
-    c = DR.val(d,'acid_conc_design_wt')
-    return dict(acid_solution_kg_d=hcl_mol*HCL/1000/c, base_kg_d=base_kg,
-                kW_published=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
+    c = DR.val(d,'acid_conc_design_wt'); bv = bmed_voltage(d)
+    return dict(acid_solution_kg_d=hcl_mol*HCL/1000/c, base_kg_d=base_kg, voltage=bv, sec_kWh_kg=bv['sec_kWh_kg'],
+                kW_published=bv['sec_kWh_kg']*base_kg/24, kW_whey_2M=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
                 kW_design=DR.val(d,'bmed_sec_design_kWh_per_kg_pair')*(hcl_mol*HCL/1000+base_kg)/24)
 
 def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
@@ -109,7 +121,7 @@ def check():
         dev = (graph-solved)/solved if solved else 0
         mis.append((what, graph, solved, dev, ref))
     cmp('IA-ACID-01 HCl content, kg/d', E['IA-ACID-01']['rate']['value']*DR.val(d,'acid_conc_design_wt'), s['leach']['hcl_kg_d'], 'GREENWOOD, LUNAR_SOURCEBOOK')
-    cmp('BMED_ACID kW vs published SEC at 2 M', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'EDBM_WHEY_2021')
+    cmp('BMED_ACID kW vs physics triplet voltage', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'STRATHMANN2004')
     w = DR.val(d,'base_conc_design_wt'); nb = s['naoh']
     cmp('IA-BASE-PPT NaOH, kg/d', E['IA-BASE-PPT']['rate']['value']*w, nb['ppt_kg_d'], 'GREENWOOD')
     cmp('IA-BASE-01 NaOH, kg/d', E['IA-BASE-01']['rate']['value']*w, nb['digest_kg_d'], 'GREENWOOD')
