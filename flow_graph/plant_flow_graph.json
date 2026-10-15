@@ -1974,7 +1974,9 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "units_installed": 2,
+        "redundancy": "2 x 100 % (X-RED-07)"
       }
     },
     {
@@ -7871,6 +7873,12 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "redundancy": {
+          "rejection_kW": 146.47,
+          "modules": 3,
+          "module_kW": 73.23,
+          "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }
     },

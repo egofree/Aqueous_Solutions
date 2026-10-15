@@ -167,5 +167,10 @@ def tf(g, ps=None):
     for k in ('SF-VCD_TRAIN', 'SQ-VCD_TRAIN'):
         if k in E: E[k]['rate']['value'] = round(vin*17/24, 4)
     N['COMPOST_TOILET']['params'].update(units_installed=2, redundancy='2 x 100 % of crew use; alternate chambers (X-RED-09)')
+    # X-RED-07 thermal N+1 (A-M-150): heat rejection = sum of heat edges into HEAT_SINK; 3 x 50 % plate-pack modules (any one out, 100 % kept);
+    # GEO_HP 2 x 100 %.
+    qhs = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == 'HEAT_SINK' and e['rate'].get('unit') == 'kW')
+    N['HEAT_SINK']['params']['redundancy'] = {'rejection_kW': round(qhs, 2), 'modules': 3, 'module_kW': round(qhs/2, 2), 'rule': '3 x 50 %, N+1 (X-RED-07, A-M-150)'}
+    N['GEO_HP']['params'].update(units_installed=2, redundancy='2 x 100 % (X-RED-07)')
     N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
     return dict(veg=tot, ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)

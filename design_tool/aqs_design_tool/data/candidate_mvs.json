@@ -2047,7 +2047,9 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "units_installed": 2,
+        "redundancy": "2 x 100 % (X-RED-07)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -3758,7 +3760,7 @@
         "module_kw": 0.5,
         "count": 8070,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 282.182 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 283.043 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4522,7 +4524,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1222.527 kg/d, out 1222.527 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1227.267 kg/d, out 1227.267 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4574,7 +4576,7 @@
             }
           ]
         },
-        "duty": "In 1214.040 kg/d, out 1214.040 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1218.780 kg/d, out 1218.780 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -4813,7 +4815,7 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "duty": "In 382.769 kg/d, out 382.769 kg/d, 0.000 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
+        "duty": "In 382.769 kg/d, out 382.769 kg/d, 0.271 kW. Sheet docs-authority/duties/VCD_TRAIN.md.",
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
@@ -7639,6 +7641,12 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "redundancy": {
+          "rejection_kW": 146.47,
+          "modules": 3,
+          "module_kW": 73.23,
+          "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       },
       "modules": [],
