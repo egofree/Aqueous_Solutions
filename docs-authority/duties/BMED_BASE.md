@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 118.7 kg/d. Mass out 118.7 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-04 118.7 kg/d (CRU → BMED base regen loop). Out: IA-BASE-01 118.4 kg/d (digest NaOH, 20 wt%); IA-BMED-02 0.2700 kg/d (NaOH product).
+1. Basis. Mass in 493.1 kg/d. Mass out 493.1 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-04 493.1 kg/d (CRU → BMED base regen loop). Out: IA-BASE-PPT 374.4 kg/d (NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)); IA-BASE-01 118.4 kg/d (digest NaOH, 20 wt%); IA-BMED-02 0.27 kg/d (NaOH product).
 
 2. Size.
 - In 118.7 kg/d, out 118.7 kg/d. No holdup claimed.

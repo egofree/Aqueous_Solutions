@@ -295,7 +295,7 @@
       "presence": "present",
       "class": "bmed",
       "tags": [],
-      "electrical_role": null,
+      "electrical_role": "load",
       "diagram_gap": null,
       "notes": "BMED acid loop node",
       "enabled": true,
@@ -306,7 +306,12 @@
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 16.13,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl. BMED stack, acid and base sides: 87.9 kg/d HCl + 96.4 kg/d NaOH = 184.3 kg/d pair x 2.1 kWh/kg (ELECTRICAL BMED 1.8-2.4)."
+      }
     },
     {
       "unit_id": "BMED_BASE",
@@ -8815,10 +8820,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 108.245,
+        "value": 449.495,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d HCl as 20 wt%. Brine from the leach bleed."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d HCl as 20 wt%. Brine from the leach bleed. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -8879,10 +8884,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 118.7,
+        "value": 493.08,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d NaOH as 20 wt%. Digest takes 593 mol/d."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d NaOH as 20 wt%. Digest takes 593 mol/d. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +374.38 kg/d."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -13854,10 +13859,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 98.2722,
+        "value": 439.5222,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25595,6 +25600,39 @@
       },
       "composition": {
         "water": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-BASE-PPT",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 374.38,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl. Equal molar base from the BMED split, 1872 mol/d NaOH as 20 wt%."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl",
+      "params": {
+        "rate_basis": "1872 mol/d NaOH equal to the added HCl; 20 wt%",
+        "rate_kind": "derived",
+        "T_C": 40.0,
+        "medium": "NaOH 20 wt%",
+        "doc": "AQS-ASSAY-001 Rev D \u00a78"
       }
     }
   ],

@@ -150,4 +150,6 @@ Result per held line:
 | unassigned | MSW 35.0 kg/d | ×2.3 | Held with reason. Not identified, so no unit can be assigned. |
 | other_inorganic | A 0.51 kg/d | — | Bounded. Reports to sink, inside the FLOAT_SINK line. |
 
-The governing bound is acid. The owner choice is either to cap accepted feed at the silicate fraction the regeneration covers (about 0.22 of feed at full leach of the case A oxides, by ratio) or to approve an acid-system resize.
+Rev E (X-RSZ-01, 2026-10-15): acid system resized to the case A bound. IA-ACID-01 439.52 kg/d (87.9 kg/d HCl), IA-BMED-03 449.50 kg/d, IA-BMED-04 493.08 kg/d, new IA-BASE-PPT 374.38 kg/d NaOH 20 wt% to hydroxide precipitation, BMED_ACID 16.13 kW. The acid line is no longer held.
+
+The governing bound was acid. The owner choice is either to cap accepted feed at the silicate fraction the regeneration covers (about 0.22 of feed at full leach of the case A oxides, by ratio) or to approve an acid-system resize.

@@ -990,5 +990,19 @@
    "flow_graph/study_place.py"
   ],
   "id": "A-M-076"
+ },
+ {
+  "value": "BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to added HCl; base consumed by hydroxide precipitation in the leach loop",
+  "units": "kWh/kg",
+  "where": "BMED_ACID continuous_kw, IA-BASE-PPT",
+  "basis": "ELECTRICAL BMED 1.8-2.4 kWh/kg (graph rate_source); BMED splits salt 1:1; leached Al, Ca, Mg, Fe recovered as hydroxides to free chloride for regeneration",
+  "sensitivity": "16.1 kW linear in acid demand; base return linear",
+  "replaced_by": "BMED stack vendor data and leach-loop precipitation test (unit task 02)",
+  "task": "X-RSZ-01",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/FEED_ASSAY.md"
+  ],
+  "id": "A-M-077"
  }
 ]

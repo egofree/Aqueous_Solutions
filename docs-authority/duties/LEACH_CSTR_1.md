@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 5622.7 kg/d. Mass out 5622.7 kg/d. Electrical duty 2.00 kW. In: IA-REC-01 3753.7 kg/d (continuous recycle liquor); IA-HOP-01 530.3 kg/d (returned scrap); IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); IA-GREY-01 242.6 kg/d (grey sludge); 18 more. Out: IA-EW-04 4287.8 kg/d (CSTR to EW-1); IA-SINK-01 376.1 kg/d (sink solids); IA-LEACH-NOX 195.0 kg/d (leach offgas); IA-LEACH-FLUE 135.9 kg/d (leach vent); 15 more.
+1. Basis. Mass in 6338.3 kg/d. Mass out 6338.3 kg/d. Electrical duty 2.00 kW. In: IA-REC-01 3753.7 kg/d (continuous recycle liquor); IA-HOP-01 530.3 kg/d (returned scrap); IA-ACID-01 439.5 kg/d (regen HCl, 20 wt%); IA-BASE-PPT 374.4 kg/d (NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)); 20 more. Out: IA-EW-04 4287.8 kg/d (CSTR to EW-1); IA-BMED-04 493.1 kg/d (CRU → BMED base regen loop); IA-BMED-03 449.5 kg/d (CRU → BMED acid regen loop); IA-SINK-01 376.1 kg/d (sink solids); 16 more.
 
 2. Size.
 - Envelope 2000×1200×1400 mm. Sized in AQS-DUTY-050: working level 1100 mm, 2.14 m³ at 1100 kg/m³ (study), residence 13.2 h on IA-EW-04, 10.0 h on total inflow. Agitator PBT D450 at 150 rpm, 403 W shaft, 0.75 kW motor. Wall 16 mm CPVC with three FRP belts; panel stress 1.37 MPa against 3.03 MPa at 85 °C.
