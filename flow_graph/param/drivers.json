@@ -2486,5 +2486,38 @@
   "value": 2,
   "units": "- HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009)",
   "register": "A-M-187"
+ },
+ "maint_insert_life_y": {
+  "value": {
+   "BMED_ACID": 5,
+   "BMED_BASE": 5,
+   "BMED_UPW_POLISH": 5,
+   "CRYO_ASU": 5,
+   "CRYO_H2": 2,
+   "H2_PURIFIER": 3,
+   "MEOH_SYNTH": 3,
+   "ALD": 2,
+   "FORM": 1,
+   "MEAM": 2,
+   "HNO3": 0.5,
+   "ACEX": 3,
+   "ZNBR2": 5
+  },
+  "units": "years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack)",
+  "register": "A-M-189",
+  "needs_verification": true,
+  "verification_test": "Performance trending from the first operating year (pressure drop, conversion, current efficiency, breakthrough) sets the interval"
+ },
+ "maint_rotating": {
+  "value": {
+   "lube_mo": 6,
+   "vibration_mo": 3,
+   "bearing_y": 5,
+   "seal_y": 3
+  },
+  "units": "months/years for motors, pumps, fans and compressors",
+  "register": "A-M-189",
+  "needs_verification": true,
+  "verification_test": "Vibration and temperature trending; bearing L10 life from the motor design load"
  }
 }

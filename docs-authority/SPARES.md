@@ -95,5 +95,8 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | ACEX | OH-form anion resin charge (AQS-DUTY-062) | 1 | 1 | one charge or set |
 | process insert | ZNBR2 | electrode and separator set for one stack (AQS-TST-002 stack design) | 1 | 1 | one charge or set |
 | process insert | RELIEF | PSV, 6 mm bore DN15 body, one per set-pressure class (AQS-SAF-004) | 1 | 3 | one charge or set |
+| process insert | CRYO_H2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
+| process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
+| process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-86 lines; 43 spare motors, 900 building-block spares, 13 process insert sets. Intervals and failure rates are X-OPS-02.
+89 lines; 43 spare motors, 900 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
