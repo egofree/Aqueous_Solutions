@@ -597,7 +597,7 @@
 <title>SOL_ARK_60K&#45;&gt;ACEX</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.04,-6731.81C475.46,-6562.5 480.44,-5266.66 534,-5207 597.07,-5136.75 721.88,-5147.07 783.64,-5157.47"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.24,-5160.96 793.7,-5159.27 784.47,-5154.07 783.24,-5160.96"/>
-<text text-anchor="middle" x="602.5" y="-5209.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACEX\n0.1 kW</text>
+<text text-anchor="middle" x="602.5" y="-5209.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACEX\n0.02 kW</text>
 </g>
 <!-- HNO3 -->
 <g id="node40" class="node">
@@ -1663,7 +1663,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M790.26,-5746.1C731.38,-5736.34 599.97,-5724.51 534,-5797 470.33,-5866.97 473.3,-6569.99 474.69,-6721.37"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="471.19,-6721.72 474.79,-6731.68 478.19,-6721.65 471.19,-6721.72"/>
-<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n296.1017 kW</text>
+<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n296.0217 kW</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node84" class="node">

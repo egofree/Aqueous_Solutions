@@ -213,7 +213,7 @@ digraph G {
   "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n0.008219 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n3.46 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n296.1017 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n296.0217 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "RECT_EW" [label="S17-EW\\n38.6629 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -265,7 +265,7 @@ digraph G {
   "SOL_ARK_60K" -> "MEAM" [label="SF-MEAM\\n0.0767 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "IMID" [label="SF-IMID\\n0.0236 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "QUAT" [label="SF-QUAT\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "ACEX" [label="SF-ACEX\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ACEX" [label="SF-ACEX\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "HNO3" [label="SF-HNO3\\n0.1199 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BUCL" [label="SF-BUCL\\n0.0237 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BSFL" [label="SF-BSFL\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];

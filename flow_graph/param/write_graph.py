@@ -33,6 +33,7 @@ def process():
     nb = s['naoh']; wb = DR.val(d,'base_conc_design_wt'); NT = f'{TAG}; NaOH balance (owner decision 2026-10-15)'
     E['IA-BASE-PPT']['rate'] = rate(nb['ppt_kg_d']/wb,'kg/d',f"{NT}. {nb['ppt_mol']:.0f} mol/d NaOH, one per leached chloride (GREENWOOD), as {wb*100:.0f} wt%.")
     E['IA-BASE-01']['rate'] = rate(nb['digest_kg_d']/wb,'kg/d',f"{NT}. {nb['digest_mol']:.1f} mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as {wb*100:.0f} wt%.")
+    if 'IA-ACEX-NAOH' in E: E['IA-ACEX-NAOH']['rate'] = rate(nb['acex_kg_d']/wb,'kg/d',f"{NT}. {nb['acex_mol']:.2f} mol/d NaOH, one per [Bmim]Cl, OH-form resin regeneration (X-PAR-14, A-M-162), as {wb*100:.0f} wt%.")
     E['IA-DIG-LIQ']['rate'] = rate(E['IA-BASE-01']['rate']['value'],'kg/d',f'{NT}. Silicate liquor equal to the digest NaOH draw (digest closes on IA-GLASS-03, S08G, IA-SIL-SRC, IA-SIC-IN).')
     for t in (N['GLASS_DIGEST']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['layer']=='mass' and ('digest liquor' in t['label'] or 'silicate liquor' in t['label']):

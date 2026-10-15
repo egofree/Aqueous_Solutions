@@ -73,4 +73,5 @@ MEAM is pressure equipment: 20.7 bar x 1.10 = 2.28 MPa design; UG-27 316L at 400
 
 Ostwald route (ULLMANN_NITRIC): Pt-Rh gauze in DN25 Sch 40 SA-312 310S, 300 mm at 900 C, 200 mm insulation, loss 96 W; absorber 65 x 60 mm, 0.06 L hold-up (2 h). Heater 120 W. At this rate the burner does not run autothermally; the bus holds the gauze.
 
-GLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). Not designed here: ACEX (the graph exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not thermodynamically driven; a hydroxide-form anion-exchange step is needed first, X-PAR-14).
+GLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). ACEX (X-PAR-14, A-M-162): the direct exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not driven (HCl the stronger acid); the route is an OH-form strong-base anion resin then acetic acid neutralisation, resin regenerated with 20 wt% NaOH from EVAP_BASE (PERRY9_IX).
+ACEX columns: 2 x DN50 Sch 40 PP, bed 1.96 L (905 mm), 1.17 eq per 24 h cycle; one on line, one regenerating.

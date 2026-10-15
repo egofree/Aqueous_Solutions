@@ -1509,5 +1509,24 @@
   "register": "A-M-161 (X-MFG-31 batch 4)",
   "needs_verification": true,
   "verification_test": "NO absorption test of the HNO3 column at plant rate: outlet NOx"
+ },
+ "ix_sba_cap_eq_L": {
+  "value": 1.2,
+  "units": "eq/L bed",
+  "ref": "PERRY9_IX"
+ },
+ "ix_util": {
+  "value": 0.5,
+  "units": "fraction of total capacity used per cycle",
+  "register": "A-M-162 (X-PAR-14)",
+  "needs_verification": true,
+  "verification_test": "breakthrough curve of [Bmim]Cl on the OH-form resin at the plant rate"
+ },
+ "ix_cycle_h": {
+  "value": 24,
+  "units": "h between regenerations",
+  "register": "A-M-162 (X-PAR-14)",
+  "needs_verification": true,
+  "verification_test": "same breakthrough test"
  }
 }

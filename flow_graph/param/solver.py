@@ -61,11 +61,12 @@ def naoh_balance(d, g, hcl_mol, vs_mol=0.0):
     ppt = hcl_mol*DR.val(d,'ppt_naoh_per_cl')
     sio2 = max(0.0, R['IA-GLASS-03'] - R['S08G'])*1000/SIO2
     dig = sio2*DR.val(d,'digest_naoh_per_sio2')
-    mk = max(0.0, ppt + dig + vs_mol - hcl_mol)          # vs_mol: vent-scrubber bleed (X-PAR-10)
-    return dict(ppt_mol=ppt, digest_mol=dig, bmed_mol=hcl_mol, makeup_mol=mk, vs_mol=vs_mol, makeup_kg_d=mk*NAOH/1000/DR.val(d,'naoh_makeup_form'),
+    acex = R.get('IA-BMIM', 0.0)*1000/174.67              # X-PAR-14: one NaOH per [Bmim]Cl to regenerate the OH-form anion resin (A-M-162)
+    mk = max(0.0, ppt + dig + vs_mol + acex - hcl_mol)    # vs_mol: vent-scrubber bleed (X-PAR-10)
+    return dict(ppt_mol=ppt, digest_mol=dig, acex_mol=acex, acex_kg_d=acex*NAOH/1000, bmed_mol=hcl_mol, makeup_mol=mk, vs_mol=vs_mol, makeup_kg_d=mk*NAOH/1000/DR.val(d,'naoh_makeup_form'),
                 ppt_kg_d=ppt*NAOH/1000, digest_kg_d=dig*NAOH/1000)
 
-BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
+BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT','IA-ACEX-NAOH')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
 
 def ew(d, g):
     """Copper-equivalent sheet edges -> current by Faraday [CODATA2018, SCHLESINGER2011]."""
@@ -119,7 +120,7 @@ def check():
             cmp(f'{u} water off, kg/d', E[f'IA-{u}-COND']['rate']['value'] + (E['IA-EVAP_ACID-VENT']['rate']['value'] if u=='EVAP_ACID' and 'IA-EVAP_ACID-VENT' in E else 0), s[k]['water_kg_d'], 'PERRY9_HCL')
     if 'IA-VS-NAOH' in E:
         cmp('IA-VS-NAOH NaOH, mol/d', E['IA-VS-NAOH']['params']['NaOH_mol_d'], s['vs']['upset']['naoh_mol_d'], 'X-PAR-10, PERRY9_ABS')
-        bal = nb['ppt_mol'] + nb['digest_mol'] + nb['vs_mol'] - nb['bmed_mol'] - nb['makeup_mol']
+        bal = nb['ppt_mol'] + nb['digest_mol'] + nb['vs_mol'] + nb['acex_mol'] - nb['bmed_mol'] - nb['makeup_mol']
         if abs(bal) > 0.01*nb['bmed_mol']: errs.append(f'NaOH balance off by {bal:.3f} mol/d')
     for c,v in s['ew'].items():
         if c == 'RECT_EW':

@@ -13,6 +13,7 @@ SPEC = {'GLASS_DIGEST': dict(mat='CPVC sheet, rolled and extrusion-welded (DVS 2
         'IMID': dict(mat='SA-240 316L plate, rolled, GTAW (ASME IX)', noz=('glyoxal in', 'CH2O in', 'amines in', 'imidazole out', 'drain'), coil=False, agit=False, legs=3),
         'BUCL': dict(mat='glass-lined carbon steel (ISO 28721)', noz=('butanol in', 'HCl in', 'reflux condenser', 'product out', 'drain'), coil=False, agit=False, legs=3),
         'HNO3': dict(mat='SA-240 304L plate, rolled, GTAW (ASME IX)', noz=('NO/air from burner', 'water in', 'HNO3 out', 'tail gas vent', 'drain'), coil=False, agit=False, legs=3),
+        'ACEX': dict(mat='PP-H pipe Sch 40, socket-fused (DVS 2207-11)', noz=('[Bmim]Cl in', 'eluate to neutraliser', 'NaOH regenerant in', 'spent regenerant out', 'drain'), coil=False, agit=False, legs=3),
         'OIL_PYRO': dict(mat='SA-240 304H plate, rolled, GTAW (ASME IX)', noz=('oil feed in', 'vapour out to OIL_FRAC', 'char out', 'thermowell', 'bursting disc'), coil=False, agit=False, legs=3)}
 for U, s in SPEC.items():
     d = N[U]['params']['design']; D = d['D_mm']; H = d['H_mm']; t = d['wall_mm']
@@ -42,6 +43,7 @@ for U, s in SPEC.items():
     if U in ('GLYOXAL', 'IMID', 'BUCL'): rows += [('5', f"Mineral wool insulation with SS cladding; {d['mixer']}", 1, 'mineral wool', 'AQS-DUTY-062 section 5'), ('6', f"Heater mat {max(5, round(d['heat_W']*2))} W with thermostat", 1, 'silicone', 'AQS-DUTY-062 section 5')]
     if U == 'BUCL': rows += [('7', 'Reflux condenser, glass, Q1 cooling water', 1, 'borosilicate 3.3', 'AQS-DUTY-062 section 5')]
     if U == 'HNO3': rows += [('5', d['gauze'] + f", {d['insulation_mm']} mm insulation", 1, 'Pt-Rh 90/10 gauze; 310S', 'ULLMANN_NITRIC'), ('6', f"Burner heater {max(50, round(d['heat_W']*2))} W with PID and high-limit; feed preheater", 1, 'NiCr / 310S', 'AQS-DUTY-062 section 7'), ('7', 'Absorber packing, 304L random rings', 1, '304L', 'ULLMANN_NITRIC')]
+    if U == 'ACEX': rows += [('5', f"Strong-base type I anion resin, OH form, {d['V_bed_L']:.2f} L per column; second identical column (lead/regenerate)", 2, 'polystyrene-DVB gel', 'PERRY9_IX'), ('6', 'Acetic acid neutraliser vessel 0.5 L with pH probe', 1, 'PP-H', 'AQS-DUTY-062')]
     if U == 'DIGESTER': rows += [('5', 'Biogas recirculation blower, diaphragm, about 1 L/min', 1, 'PP/EPDM', 'AQS-DUTY-062'), ('6', 'PIR insulation 50 mm with PE cladding', 1, 'PIR', 'AQS-DUTY-062')]
     if U == 'OIL_PYRO': rows += [('5', f"Ceramic band heaters, {d['kW']:.2f} kW installed rounded up to 2.0 kW, 480 V", 1, 'mica/ceramic', 'AQS-DUTY-062'), ('6', 'Ceramic fibre insulation 60 mm with SS cladding', 1, 'Al2O3-SiO2 fibre', 'ASTM C892'), ('7', 'Bursting disc DN25 to flare header', 1, 'Inconel', 'ASME VIII-1 UG-127')]
     open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
@@ -55,8 +57,8 @@ Authority: AQS-DUTY-062 (X-MFG-31). In-house fabrication; no bought vessel.
 2. Weld the longitudinal seam and the bottom; weld the lid flange ring.
 3. Cut and weld {len(s['noz'])} DN25 nozzles: {', '.join(s['noz'])}.
 4. Weld {s['legs']} legs; drill {bolts} lid bolt holes.
-5. {'Fit the agitator and the Q3 coil.' if s['agit'] else 'Fit the gas recirculation sparge and insulation.' if U in ('DIGESTER', 'ABE') else 'Fit the O2 sparger, heater mat and insulation.' if U == 'ACETOX' else 'Fit the recirculation connection, heater mat and insulation.' if U == 'YEAST' else 'Fit the heater mat, insulation and the reflux condenser.' if U == 'BUCL' else 'Fit the heater mat and insulation.' if U in ('GLYOXAL', 'IMID') else 'Fit the gauze burner, heater, packing and insulation.' if U == 'HNO3' else 'Fit the band heaters, thermowell, insulation and bursting disc.'}
-6. Test: {'hydrostatic fill to the brim, 24 h, no leak (DVS 2205)' if U in ('GLASS_DIGEST', 'DIGESTER', 'YEAST', 'ABE', 'ACETOX') else 'fill test 24 h and dye-penetrant on welds (ASME V); spark test of the lining (BUCL)' if U != 'OIL_PYRO' else 'hydrostatic test at 1.3 x design pressure (ASME VIII-1 UG-99); heater insulation resistance; dry-run to 500 C'}.
+5. {'Fit the agitator and the Q3 coil.' if s['agit'] else 'Fit the gas recirculation sparge and insulation.' if U in ('DIGESTER', 'ABE') else 'Fit the O2 sparger, heater mat and insulation.' if U == 'ACETOX' else 'Fit the recirculation connection, heater mat and insulation.' if U == 'YEAST' else 'Fit the heater mat, insulation and the reflux condenser.' if U == 'BUCL' else 'Fit the heater mat and insulation.' if U in ('GLYOXAL', 'IMID') else 'Load the resin, fit the second column and the neutraliser.' if U == 'ACEX' else 'Fit the gauze burner, heater, packing and insulation.' if U == 'HNO3' else 'Fit the band heaters, thermowell, insulation and bursting disc.'}
+6. Test: {'hydrostatic fill to the brim, 24 h, no leak (DVS 2205)' if U in ('GLASS_DIGEST', 'DIGESTER', 'YEAST', 'ABE', 'ACETOX', 'ACEX') else 'fill test 24 h and dye-penetrant on welds (ASME V); spark test of the lining (BUCL)' if U != 'OIL_PYRO' else 'hydrostatic test at 1.3 x design pressure (ASME VIII-1 UG-99); heater insulation resistance; dry-run to 500 C'}.
 7. Inspect against models/mfg/{U}/export/{U.lower()}.step; record dimensions on the traveller.
 """)
     print(U, D, H, t)

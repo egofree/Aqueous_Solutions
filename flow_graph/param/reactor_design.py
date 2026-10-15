@@ -119,6 +119,12 @@ def design(d, g):
         if u == 'MEAM':
             Pd = v('rx_meam_P_bar')*v('press_design_margin')/10; r.update(design_MPa=Pd, t_req_mm=Pd*(tb['OD_mm']/2)/(v('s_316L_400C_MPa_lower_bound') + 0.4*Pd) + 1.5)
         out[u] = r
+    # ACEX (X-PAR-14, A-M-162): two OH-form strong-base anion columns, one on line and one regenerating (redundant pair) [PERRY9_IX]
+    eq = R('IA-BMIM')*1000/174.67*v('ix_cycle_h')/24; Vb = eq/(v('ix_sba_cap_eq_L')*v('ix_util'))
+    tb = tube_bed(Vb)
+    out['ACEX'] = dict(T_C=25, eq_per_cycle=eq, V_bed_L=Vb, columns=2, **tb, D_mm=round(tb['OD_mm']), H_mm=tb['L_bed_mm'] + 300, wall_mm=tb['t_nom_mm'], V_work_L=Vb, V_L=Vb*1.5,
+                   heat_W=0.0, material='PP-H column (Sch 40 PP pipe), resin strong-base type I gel, OH form; acetic acid neutraliser vessel', kW=0.02,
+                   basis=f'[Bmim]Cl over OH-form resin, neutralised with AcOH; NaOH 20 wt% regenerant (PERRY9_IX); capacity {v("ix_sba_cap_eq_L")} eq/L x {v("ix_util")} utilisation')
     # HNO3 (X-MFG-31 batch 4, A-M-161): Ostwald [ULLMANN_NITRIC]: Pt-Rh gauze burner in a DN25 tube held at temperature (losses on the bus,
     # feed preheat to 250 C; the oxidation exotherm holds the gauze at plant scale but not at this rate), then a stainless absorber of liquid hold-up tau.
     nh3n = R('IA-NH3-NIT'); o2n = R('IA-O2-NIT'); Tg = v('rx_hno3_gauze_T_C')
@@ -138,7 +144,7 @@ def write(d, g, R):
         n = N[u]; p = n.setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'
-        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC', 'GLYOXAL', 'IMID', 'BUCL', 'HNO3') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
+        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC', 'GLYOXAL', 'IMID', 'BUCL', 'HNO3', 'ACEX') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
             if sid in E: E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
             else:
@@ -208,7 +214,8 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
     md += f"\nMEAM is pressure equipment: 20.7 bar x 1.10 = {R['MEAM']['design_MPa']:.2f} MPa design; UG-27 316L at 400 C (S 80 MPa lower bound, A-M-157) {R['MEAM']['t_req_mm']:.2f} mm required against {R['MEAM']['t_nom_mm']*0.875:.2f} mm minimum of {R['MEAM']['tube']}.\n"
     H = R['HNO3']
     md += f"\n## 7. Nitric acid (A-M-161)\n\nOstwald route (ULLMANN_NITRIC): {H['gauze']} at {H['T_C']:.0f} C, {H['insulation_mm']} mm insulation, loss {H['loss_W']:.0f} W; absorber {H['D_mm']} x {H['H_mm']} mm, {H['V_work_L']:.2f} L hold-up ({H['tau_h']} h). Heater {H['heat_W']:.0f} W. At this rate the burner does not run autothermally; the bus holds the gauze.\n"
-    md += '\nGLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). Not designed here: ACEX (the graph exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not thermodynamically driven; a hydroxide-form anion-exchange step is needed first, X-PAR-14).\n'
+    md += '\nGLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). ACEX (X-PAR-14, A-M-162): the direct exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not driven (HCl the stronger acid); the route is an OH-form strong-base anion resin then acetic acid neutralisation, resin regenerated with 20 wt% NaOH from EVAP_BASE (PERRY9_IX).\n'
+    A_ = R['ACEX']; md += f"ACEX columns: {A_['columns']} x {A_['tube']} PP, bed {A_['V_bed_L']:.2f} L ({A_['L_bed_mm']} mm), {A_['eq_per_cycle']:.2f} eq per {DR.val(d,'ix_cycle_h')} h cycle; one on line, one regenerating.\n"
     open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN.md'), 'w').write(md)
 
 def main():
