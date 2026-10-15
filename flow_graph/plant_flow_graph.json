@@ -14233,10 +14233,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 240.086188,
+        "value": 264.396188,
         "unit": "kg/d",
         "status": "study",
-        "note": "Knockout passes the added CO mass."
+        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16329,10 +16329,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 201.91175759503741,
+        "value": 226.221758,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24915,6 +24915,41 @@
       "composition": {
         "air": 0.99,
         "NOx": 0.01
+      }
+    },
+    {
+      "stream_id": "IA-FLUE-QUENCH",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "FLUE_KO",
+      "phase": "L",
+      "presence": "present",
+      "carries": "flue quench water",
+      "forbidden": "potable",
+      "notes": "X-SAF-07. Spray quench of S67 at the FLUE_KO inlet spool.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "WTR",
+      "to_sector_id": "GAS",
+      "rate": {
+        "value": 24.31,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAF-07 energy balance. S67 117.44 kg/d cooled 300->60 C at cp 1.08 kJ/kgK = 30439 kJ/d; water 25 C to vapour at 60 C 2504 kJ/kg; evaporated 12.15 kg/d; spray 2.0 x evaporation"
+      },
+      "params": {
+        "rate_basis": "S67 117.44 kg/d cooled 300->60 C at cp 1.08 kJ/kgK = 30439 kJ/d; water 25 C to vapour at 60 C 2504 kJ/kg; evaporated 12.15 kg/d; spray 2.0 x evaporation",
+        "rate_source": "X-SAF-07 energy balance",
+        "medium": "tower water",
+        "conditions": "25 C, pumped",
+        "rate_kind": "derived",
+        "doc": "AQS-STD-002 4.3",
+        "material": "PVC-U to the spool; PTFE spray nozzle"
+      },
+      "composition": {
+        "water": 1.0
       }
     }
   ],

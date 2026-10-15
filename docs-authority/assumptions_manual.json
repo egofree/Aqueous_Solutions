@@ -232,5 +232,31 @@
    "docs-authority/SITE_BASIS.md"
   ],
   "id": "A-M-018"
+ },
+ {
+  "value": "2.0",
+  "units": "spray / evaporation ratio",
+  "where": "IA-FLUE-QUENCH rate",
+  "basis": "Keeps the quench spool wetted; common wet-quench practice, not measured",
+  "sensitivity": "Edge rate linear; 12.15 kg/d is the evaporative minimum",
+  "replaced_by": "Quench outlet temperature and drain flow on commissioning",
+  "task": "X-SAF-07",
+  "files": [
+   "docs-authority/duties/FLUE_KO.md"
+  ],
+  "id": "A-M-019"
+ },
+ {
+  "value": "60 C quench outlet; cp 1.08 kJ/kgK; water 25 C",
+  "units": "C, kJ/kgK",
+  "where": "IA-FLUE-QUENCH energy balance",
+  "basis": "Approximate adiabatic saturation of the S67 flue; mean cp of N2/CO2/H2O mix",
+  "sensitivity": "Evaporation scales with (300 - T_out)",
+  "replaced_by": "Flue analysis and quench outlet temperature",
+  "task": "X-SAF-07",
+  "files": [
+   "docs-authority/duties/FLUE_KO.md"
+  ],
+  "id": "A-M-020"
  }
 ]
