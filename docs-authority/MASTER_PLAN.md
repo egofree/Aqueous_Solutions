@@ -110,3 +110,4 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | D59 | — | MFG_SHOP load | X-ELS-02. | AQS-MFG-010 tool list from graph throughputs: 3.98 kW average (graph was 12.0 study), connected 58.0 kW, coincident peak 38.5 kW. Graph booked; MCC-1 feeder sized on peak. |
 | D60 | — | Feed edges | X-RSZ-07. | 91 loads without a feed got SF-* edges from SOL_ARK_60K (49.25 kW) and SQ-* heat edges to HEAT_SINK. PV average +49.25 kW to 128.5 kW, inside the 984 kWp field (about 177 kW average). |
 | D61 | — | Launders | X-MAT-07. | done. 9 inter-cell and leach-cell liquor lines checked on the Rev I layout against the 3.44 m path; air-break launders kept on all, required on the short ones. |
+| D62 | — | Supports | X-PIP-04. | open. AQS-PIP-005 generated: 353 routed lines, 5703 supports; 3 lines need an expansion loop or offset. Formal B31.3 flexibility on a routed model still to do. |

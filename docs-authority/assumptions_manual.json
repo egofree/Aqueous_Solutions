@@ -1126,5 +1126,18 @@
    "flow_graph/plant_flow_graph.json"
   ],
   "id": "A-M-086"
+ },
+ {
+  "value": "spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3 0.85, P4 0.8, P5 0.6, F1 1.3); metal B31.1 Table 121.5; alpha, E, S per class as in _supports.py; install 20 C",
+  "units": "m, 1/K, MPa",
+  "where": "AQS-PIP-005",
+  "basis": "Manufacturer PVC Sch 80 support tables; ASME B31.1 Table 121.5; handbook moduli and expansion coefficients; guided-cantilever leg formula",
+  "sensitivity": "Support count and loop need",
+  "replaced_by": "Manufacturer span tables per material and B31.3 flexibility analysis on the routed model",
+  "task": "X-PIP-04",
+  "files": [
+   "docs-authority/SUPPORTS.md"
+  ],
+  "id": "A-M-087"
  }
 ]
