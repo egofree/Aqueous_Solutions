@@ -1100,5 +1100,18 @@
    "flow_graph/plant_flow_graph.json"
   ],
   "id": "A-M-084"
+ },
+ {
+  "value": "melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0.2 kWh/kg; one 8 h shift; tool utilisation 0.1-0.5; nameplates as listed",
+  "units": "kWh/kg, kW",
+  "where": "AQS-MFG-010 and MFG_SHOP continuous_kw",
+  "basis": "Small induction melting of Cu about 0.5-1.0 kWh/kg incl. losses (upper taken); atomiser includes remelt and gas recirculation; shop nameplates typical for the tool class",
+  "sensitivity": "Average 3.98 kW; peak 38.5 kW sets the feeder",
+  "replaced_by": "Tool vendor data and the production schedule (unit task 02)",
+  "task": "X-ELS-02",
+  "files": [
+   "docs-authority/MFG_TOOLS.md"
+  ],
+  "id": "A-M-085"
  }
 ]

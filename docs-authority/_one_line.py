@@ -13,6 +13,7 @@ for r in ll:
 el=[e for e in g['edges'] if 'elec' in (e.get('layers') or [])]
 src=[(e['from_unit_id'],e['stream_id'],e['rate']['value']) for e in el if e['to_unit_id']=='SOL_ARK_60K']
 fed={e['to_unit_id']:(e['stream_id'],e['rate']['value']) for e in el if e['from_unit_id']=='SOL_ARK_60K'}
+PK={n['unit_id']:n.get('params',{}).get('peak_kw') for n in g['nodes'] if isinstance(n.get('params',{}).get('peak_kw'),(int,float))}
 def amps(kw,ph=3,v=V): return kw*1000/((math.sqrt(3) if ph==3 else 1)*v*PF)
 def brk(a): return next(b for b in BRK if b>=1.25*a)
 INV=next(n for n in g['nodes'] if n['unit_id']=='SOL_ARK_60K')['params']
@@ -56,7 +57,7 @@ out.append(f'  BUS --> RECTEW["RECT-EW 9 × 6 V DC channels, {rect["Pac_kW"]:.1f
 out.append('```\n')
 out.append('| Bus | Load | kW | A | Breaker A | Basis |\n| --- | --- | --- | --- | --- | --- |')
 for b,u,k,bs in sorted(rows,key=lambda r:(r[0],-r[2])):
-    a=amps(k) if '480' in b else amps(k,3,208); out.append(f'| {b} | {u} | {k:.2f} | {a:.1f} | {brk(a)} | {bs} |')
+    kp=max(k,PK.get(u) or 0); a=amps(kp) if '480' in b else amps(kp,3,208); bs=bs+(f'; feeder on peak {kp:.1f} kW' if kp>k else ''); out.append(f'| {b} | {u} | {k:.2f} | {a:.1f} | {brk(a)} | {bs} |')
 out.append(f"""
 ## Totals
 

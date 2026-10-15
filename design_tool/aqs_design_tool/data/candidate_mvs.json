@@ -2846,15 +2846,17 @@
         "duty": "In 610.350 kg/d, out 610.350 kg/d, 12.000 kW. Sheet docs-authority/duties/MFG_SHOP.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "peak_kw": 38.5,
+        "tool_list": "docs-authority/MFG_TOOLS.md"
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 12.0,
+        "value": 3.98,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-MFG-TOTAL-CONT mid"
+        "note": "X-ELS-02: AQS-MFG-010 tool list from graph throughputs, one shift."
       }
     },
     {

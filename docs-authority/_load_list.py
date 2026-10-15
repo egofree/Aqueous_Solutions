@@ -12,6 +12,8 @@ CALC['BMED_UPW_POLISH']=(round(_s25/1000*3.5/24,3),f'S25 {_s25:.2f} kg/d feed; b
 CALC['GROW_BED']=(2.25,'LED: 28 m2 x DLI 17 mol/m2/d (S26 Both, Cornell CEA lettuce) / 2.5 umol/J = 2.20 kW; recirculation 18909 kg/d at 10 m head, 50% wire-to-water = 0.043 kW')
 CALC['CRYO_H2']=(0.565,'S05 6.63 kg/d, 10 to 200 bar, RT ln(20)/M / 0.5 = 2.05 kWh/kg (compressed basis, A-M register)')
 CALC['H2_PURIFIER']=(0.05,'TSA regeneration average (study)')
+_mf=json.loads(subprocess.run(['python3','docs-authority/_mfg_tools.py'],capture_output=True,text=True,check=True).stdout)
+CALC['MFG_SHOP']=(_mf['avg'],f"AQS-MFG-010 tool list, one shift; peak {_mf['peak']} kW")
 CALC['WS_PEROX']=(0.0308,'AQS-DSN-OX-001 cell 12.31 A at 2.5 V')
 rows=[]
 for n in g['nodes']:

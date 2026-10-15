@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 610.3 kg/d. Mass out 610.3 kg/d. Electrical duty 12.00 kW. In: IA-POL-CAKE 217.4 kg/d (recovered cake); IA-EW-MET-7 71.14 kg/d (plated sheet); IA-EW-MET-9 61.34 kg/d (plated sheet); IA-EW-MET-2 59.89 kg/d (plated sheet); 16 more. Out: IA-MFG-OUT 596.9 kg/d (goods in service); S16 12.00 kg/d (scrap); S61 1.20 kg/d (metal scrap); IA-CLOSE-8 0.2900 kg/d (shop scrap to the digester).
+1. Basis. Mass in 610.3 kg/d. Mass out 610.3 kg/d. Electrical duty 12.00 kW. In: IA-POL-CAKE 217.4 kg/d (recovered cake); IA-EW-MET-7 71.14 kg/d (plated sheet); IA-EW-MET-9 61.34 kg/d (plated sheet); IA-EW-MET-2 59.89 kg/d (plated sheet); 16 more. Out: IA-MFG-OUT 596.9 kg/d (goods in service); S16 12.00 kg/d (scrap); S61 1.197 kg/d (metal scrap); IA-CLOSE-8 0.29 kg/d (shop scrap to the digester).
 
 2. Size.
 - In 610.3 kg/d, out 610.3 kg/d. No holdup claimed.
