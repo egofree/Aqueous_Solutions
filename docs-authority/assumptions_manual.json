@@ -336,5 +336,31 @@
    "docs-authority/OXIDIZER_REAGENTS.md"
   ],
   "id": "A-M-026"
+ },
+ {
+  "value": "Al2O3 0.19, CaO 0.125, MgO 0.09, FeO 0.13; full leach; TiO2 and SiO2 not leached",
+  "units": "mass fraction of silicate",
+  "where": "X-BAS-02 acid demand",
+  "basis": "Mid-range of Lunar Sourcebook Apollo soils (AQS-ASSAY-001 class A)",
+  "sensitivity": "HCl demand linear in each oxide; full leach is the upper bound",
+  "replaced_by": "Leach test of a class A lot with acid consumption measured",
+  "task": "X-BAS-02",
+  "files": [
+   "docs-authority/FEED_ASSAY.md"
+  ],
+  "id": "A-M-027"
+ },
+ {
+  "value": "regolith silicate reports to sink",
+  "units": "routing",
+  "where": "X-BAS-02 FLOAT_SINK line",
+  "basis": "Silicate is dense and not glass cullet",
+  "sensitivity": "If part reports to the glass train, glass edges rise instead",
+  "replaced_by": "Float/sink test of a class A lot",
+  "task": "X-BAS-02",
+  "files": [
+   "docs-authority/FEED_ASSAY.md"
+  ],
+  "id": "A-M-028"
  }
 ]

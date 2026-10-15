@@ -8,6 +8,7 @@ Authority: graph Rev BH. Not a PE stamp. Not a weighed sample.
 | Rev | Description | Date |
 | --- | --- | --- |
 | B | Study fractions on IA-FEED-01, S08, and S16 | 2026-10-14 |
+| D | Held rates recalculated at the bounding cases (X-BAS-02). No rate change. | 2026-10-15 |
 | C | Feedstock-agnostic basis. Class schema, bounding cases, bounded and held list. IA-FEED-01 carries a class point and the envelope. S08 and S16 carry the entrained silicate fraction. | 2026-10-15 |
 
 The plant feed is not one material. It can be anything from a silicate and oxide regolith to a metal-rich printed circuit board, and any mixture between. This page is the schema every feed is characterized against, and the check of the held design across the range. No rate changes. Nothing is resized.
@@ -123,3 +124,30 @@ MFG_SHOP to LEACH_CSTR_1, 12.0 kg/d, phase S. The rate stays.
 ## 7. What this is not
 
 Not a weighed sample. Not a design feed. Not a reason to change a bore, a cell, or a holdup. `assay_g_L` is not this assay. A characterized lot replaces the reference point. It does not resize in the same commit. The station that reports a lot against section 1 is `docs-authority/INSTRUMENT_LOOPS.md`.
+
+## 8. Held rates at the bounding cases, Rev D
+
+X-BAS-02. From `docs-authority/_bounding_case_study.py`. Feed held at 102.68 kg/d. Rates are what the edge would carry at each case. Nothing is resized here; rate changes are not approved for this task.
+
+| Class | Unit | Edge | Graph kg/d | Case A | Case B | MSW | Method |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| silicate_oxide | FLOAT_SINK | IA-SINK-01 | 376.10 | 459.27 | 388.42 | 362.75 | increment on sink solids; regolith silicate assumed to report to sink, not to the glass train |
+| water | LEACH_CSTR_1 | IA-EW-04 | 4287.80 | 4282.67 | 4285.75 | 4308.34 | feed water joins the liquor |
+| organic | OIL_DRYER | IA-PLAST-01 | 33.00 | 0.00 | 37.50 | 45.00 | scales with organic fraction |
+| organic | OIL_PYRO | IA-OIL-01 | 33.00 | 0.00 | 37.50 | 45.00 | scales with organic fraction |
+
+Acid. IA-ACID-01 carries 98.27 kg/d of 20 wt% HCl = 19.65 kg/d HCl. Case A with Al2O3 0.19, CaO 0.125, MgO 0.09, FeO 0.13 of the silicate fully leached needs 87.9 kg/d HCl, 4.5 times the edge. TiO2 and SiO2 are taken as not leached.
+
+Result per held line:
+
+| Line | Worst case | Change | Status |
+| --- | --- | --- | --- |
+| FLOAT_SINK solids (IA-SINK-01) | A | +22 % | Held. FLOAT_SINK sizing must take 459 kg/d if regolith-like feed is accepted. |
+| Leach liquor water (IA-EW-04) | MSW | +0.5 % | Bounded. Inside the rounding of the liquor balance. |
+| OIL_DRYER, OIL_PYRO (IA-PLAST-01, IA-OIL-01) | MSW | +36 % | Held. 45 kg/d at MSW; zero at A. |
+| Acid demand (IA-ACID-01) | A | ×4.5 | Held, governing. Regolith-like feed cannot be leached on the present BMED_ACID regeneration. Accepting class A feed needs a BMED_ACID resize or a cap on silicate fraction. |
+| Glass train (IA-CULLET, IA-GLASS-01) | — | — | Held with reason. Cullet is glass from WEEE, not class silicate; regolith silicate is taken to report to sink (assumption). |
+| unassigned | MSW 35.0 kg/d | ×2.3 | Held with reason. Not identified, so no unit can be assigned. |
+| other_inorganic | A 0.51 kg/d | — | Bounded. Reports to sink, inside the FLOAT_SINK line. |
+
+The governing bound is acid. The owner choice is either to cap accepted feed at the silicate fraction the regeneration covers (about 0.22 of feed at full leach of the case A oxides, by ratio) or to approve an acid-system resize.
