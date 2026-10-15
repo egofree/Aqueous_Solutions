@@ -32,7 +32,7 @@ Loads: graph sum 232.0 kW; with calculated values substituted 224.3 kW.
 | H2_PURIFIER | load | 0.044 | 0.050 | TSA regeneration average (study) |
 | WS_PEROX | load | 0.000 | 0.031 | AQS-DSN-OX-001 cell 12.31 A at 2.5 V |
 | BMED_UPW_POLISH | load | 0.018 | 0.018 | AQS-DUTY-070 (X-MFG-34): RO + EDI on the UPW share, potable bypass, UV-TOC |
-| PV_ARRAY | generation | 241.983 |  | study share; held for unit task 02 |
+| PV_ARRAY | generation | 242.075 |  | study share; held for unit task 02 |
 | EXT_HALL | load | 93.839 |  | study share; held for unit task 02 |
 | RECT_EW | load | 38.663 |  | study share; held for unit task 02 |
 | H2O_ELYZ | load | 24.593 |  | study share; held for unit task 02 |

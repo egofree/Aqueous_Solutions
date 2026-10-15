@@ -236,3 +236,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-STD-002 | `docs-authority/AQS-STD-002_CODE_BASIS.md` | A | 2026-10-15 | NFPA / ISO code basis and editions per check | canonical |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | canonical |
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | canonical |
+| AQS-TST-002 | `docs-authority/ZNBR2_STACK_TEST.md` | A | 2026-10-16 | ZNBR2 stack test plan and prediction (X-MFG-41) | canonical |

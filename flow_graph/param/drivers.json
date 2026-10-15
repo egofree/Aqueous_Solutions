@@ -229,9 +229,9 @@
  "storage_round_trip": {
   "value": 0.7,
   "units": "-",
-  "register": "A-M-061",
+  "register": "A-M-179",
   "needs_verification": true,
-  "verification_test": "ZnBr2 vendor round-trip efficiency at the duty cycle"
+  "verification_test": "ZNBR2 in-house stack test (X-MFG-41, AQS-TST-002): round trip at 20 mA/cm2 over the daily cycle; the 0.70 design value is held below the physics prediction until then"
  },
  "night_hours": {
   "value": 14.0,
@@ -2234,5 +2234,26 @@
   "value": 0.25,
   "units": "h",
   "register": "A-M-178"
+ },
+ "znbr_ASR_ohm_cm2": {
+  "value": 5.0,
+  "units": "ohm cm2 cell area-specific resistance",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
+ },
+ "znbr_crossover_loss": {
+  "value": 0.05,
+  "units": "- coulombic loss to Br2 crossover and self-discharge over the day",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
+ },
+ "znbr_aux_frac": {
+  "value": 0.03,
+  "units": "- pump and control energy as a fraction of throughput",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
  }
 }
