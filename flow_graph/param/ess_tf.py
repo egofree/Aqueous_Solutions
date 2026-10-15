@@ -17,7 +17,10 @@ def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
 # BVAD2022 Table 4-90/4-91: edible fresh g/m2/d -> kg, inedible fresh kg/m2/d, CO2 g/m2/d, O2 g/m2/d, transpiration kg/m2/d
 BVAD_CROP = {'tomato': (0.17376, 0.12743, 36.24, 26.36, 2.77), 'pepper': (0.14894, 0.12743, 33.98, 24.71, 2.77), 'lettuce': (0.13135, 0.0073, 10.70, 7.78, 2.10),
-             'spinach': (0.07297, 0.0073, 10.70, 7.78, 1.77), 'cabbage': (0.07578, 0.00674, 9.88, 7.19, 1.77), 'onion': (0.08182, 0.0225, 16.50, 12.00, 1.74)}
+             'spinach': (0.07297, 0.0073, 10.70, 7.78, 1.77), 'cabbage': (0.07578, 0.00674, 9.88, 7.19, 1.77), 'onion': (0.08182, 0.0225, 16.50, 12.00, 1.74),
+             'strawberry': (0.07788, 0.14446, 34.82, 25.32, 2.22), 'peanut': (0.00596, 0.16875, 49.28, 35.84, 2.77), 'drybean': (0.01111, 0.150, 42.17, 30.67, 2.53)}
+FARM_UNITS = [('FRUIT_GUTTER', 'strawberry', ['IA-FRUIT'], ['IA-FRUIT-TRIM'], 'IA-BED-FRUIT'), ('PEANUT', 'peanut', ['IA-PN-R'], ['IA-PN-TRIM'], 'IA-PN-S'),
+              ('NFIX_BED', 'drybean', [], ['IA-NFIX-RES', 'IA-COVER'], 'IA-BED-NFIX')]
 VEG_PROXY = {'TOMATO': 'tomato', 'CUCUMBER': 'tomato', 'PEPPER': 'pepper', 'LETTUCE': 'lettuce', 'SPINACH': 'spinach', 'KALE': 'cabbage',
              'ALLIUM': 'onion', 'BASIL': 'lettuce', 'ROSEMARY': 'spinach'}
 def _resid(g, u):
@@ -107,9 +110,24 @@ def tf(g, ps=None):
     put('IA-VEG-CO2', tot['co2'], f"{tot['A']:.2f} m2 of crops at BVAD2022 CO2 uptake"); put('IA-VEG-O2', tot['o2'], 'BVAD2022 O2 production')
     put('IA-VEG-VAP', tot['t'], 'BVAD2022 transpiration'); put('IA-VEG-TRIM', tot['ined'], 'BVAD2022 inedible fresh biomass to larvae')
     r = _resid(g, 'VEG_BED'); put('IA-VEG-SUMP', E['IA-VEG-SUMP']['rate']['value'] + r, 'bed return closes the crop water')
+    r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, 'frass closes the larvae bin')
+    # Other terrestrial crop units (A-M-143): same BVAD2022 per-m2 basis; water by difference on the bed-spill supply edge.
+    for u, proxy, harv, trims, sup in FARM_UNITS:
+        for sid, a_, b_, what, comp in ((f'IA-{u}-CO2', 'HDR_CO2', u, 'CO2 uptake', {'CO2': 1.0}), (f'IA-{u}-O2', u, 'CRYO_O2', 'photosynthetic O2', {'O2': 0.99, 'Ar': 0.01}),
+                                        (f'IA-{u}-VAP', u, 'CRYO_AHU', 'transpiration', {'H2O': 1.0})) + (((trims[0], u, 'COMPOST', 'crop residue', {'biomass': 1.0}),) if trims[0] not in E else ()):
+            if sid not in E: g['edges'].append(_edge(sid, a_, b_, 'G' if 'VAP' in sid or 'O2' in sid else ('G' if 'CO2' in sid else 'S'), ['mass'], what, 0, 'kg/d', 'FARM', 'CRYO', comp)); E[sid] = g['edges'][-1]
+        ed, ined_m2, co2_m2, o2_m2, t_m2c = BVAD_CROP[proxy]
+        base = N[u]['params'].setdefault('crop_claim_base', {k: E[k]['rate']['value'] for k in harv + trims if k in E})
+        if harv: h = sum(E[k]['rate']['value'] for k in harv); A = h/ed
+        else: h = sum(base.get(k, 0) for k in trims); A = h/(ed + ined_m2); ined_m2 = ed + ined_m2   # cover crop: whole plant returned
+        put(f'IA-{u}-CO2', A*co2_m2/1000, f'{A:.2f} m2 {proxy} (BVAD2022) for {h:.3f} kg/d harvest'); put(f'IA-{u}-O2', A*o2_m2/1000, 'BVAD2022 O2')
+        put(f'IA-{u}-VAP', A*t_m2c, 'BVAD2022 transpiration'); w = [base.get(k, 0) for k in trims]; tw = sum(w) or 1.0
+        for k, x in zip(trims, w): put(k, A*ined_m2*(x/tw if sum(w) else 1/len(trims)), f'BVAD2022 inedible share ({proxy})')
+        r = _resid(g, u); put(sup, E[sup]['rate']['value'] - r, f'supply closes the crop water ({-r:+.3f})')
+        N[u]['params']['crop_basis'] = {'proxy': proxy, 'area_m2': round(A, 2), 'source': 'BVAD2022', 'A-M': 'A-M-143'}
+    r = _resid(g, 'GROW_BED'); put('IA-BED-SUMP', E['IA-BED-SUMP']['rate']['value'] + r, f'bed return carries the spill-crop water ({r:+.3f})')
     if 'IA-SUMP-MU' not in E:
         g['edges'].append(_edge('IA-SUMP-MU', 'ROOF_TANK', 'FISH_SUMP', 'L', ['mass'], 'aquaponic loop make-up (crop transpiration)', 0, 'kg/d', 'GEO', 'FARM', {'H2O': 1.0})); E['IA-SUMP-MU'] = g['edges'][-1]
     put('IA-SUMP-MU', 0.0, 'reset'); put('IA-SUMP-MU', max(0.0, -_resid(g, 'FISH_SUMP')), 'make-up = water the crops transpired off the loop; AHU condensate returns it to the roof tank')
-    r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, 'frass closes the larvae bin')
     N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
     return dict(veg=tot, ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
