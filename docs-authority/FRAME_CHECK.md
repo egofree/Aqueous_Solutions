@@ -15,9 +15,9 @@ Grid 4 x 3 bays of 6 m (24 x 18 m), 20 columns. Welded sections in ASTM A992 pla
 | L0 | 0.0 | 8.55 | 0.00 | 6.00 | 19.86 |
 | L1 | 6.0 | 11.04 | 0.00 | 4.79 | 20.92 |
 | L2 | 10.8 | 7.24 | 0.00 | 4.79 | 16.35 |
-| R1 | 16.8 | 7.20 | 27.56 | 0.00 | 48.66 |
-| R2 | 22.8 | 7.20 | 27.56 | 0.00 | 48.66 |
-| R3 | 28.8 | 7.20 | 27.56 | 0.00 | 48.66 |
+| R1 | 16.8 | 7.20 | 27.27 | 0.00 | 48.26 |
+| R2 | 22.8 | 7.20 | 27.27 | 0.00 | 48.26 |
+| R3 | 28.8 | 7.20 | 27.27 | 0.00 | 48.26 |
 | ROOF | 34.8 | 7.37 | 0.00 | 0.96 | 10.38 |
 
 ## Beams (span 6 m)
@@ -28,9 +28,9 @@ Grid 4 x 3 bays of 6 m (24 x 18 m), 20 columns. Welded sections in ASTM A992 pla
 | L0 | 268 | 350 x 175 x 12 x 6 | 539 | 440 x 220 x 15 x 8 | 540 | 7.1 (L/360 = 16.7) |
 | L1 | 282 | 360 x 180 x 12 x 6 | 567 | 460 x 230 x 16 x 8 | 621 | 4.7 (L/360 = 16.7) |
 | L2 | 221 | 330 x 165 x 11 x 6 | 444 | 420 x 210 x 14 x 7 | 454 | 7.0 (L/360 = 16.7) |
-| R1 | 657 | 480 x 240 x 16 x 8 | 1319 | 600 x 300 x 20 x 10 | 1324 | 9.7 (L/360 = 16.7) |
-| R2 | 657 | 480 x 240 x 16 x 8 | 1319 | 600 x 300 x 20 x 10 | 1324 | 9.7 (L/360 = 16.7) |
-| R3 | 657 | 480 x 240 x 16 x 8 | 1319 | 600 x 300 x 20 x 10 | 1324 | 9.7 (L/360 = 16.7) |
+| R1 | 651 | 480 x 240 x 16 x 8 | 1308 | 600 x 300 x 20 x 10 | 1324 | 9.6 (L/360 = 16.7) |
+| R2 | 651 | 480 x 240 x 16 x 8 | 1308 | 600 x 300 x 20 x 10 | 1324 | 9.6 (L/360 = 16.7) |
+| R3 | 651 | 480 x 240 x 16 x 8 | 1308 | 600 x 300 x 20 x 10 | 1324 | 9.6 (L/360 = 16.7) |
 | ROOF | 140 | 280 x 140 x 10 x 6 | 282 | 360 x 180 x 12 x 6 | 286 | 2.6 (L/360 = 16.7) |
 
 ## Columns (welded box b x t, storey below each level)
@@ -38,16 +38,16 @@ Grid 4 x 3 bays of 6 m (24 x 18 m), 20 columns. Welded sections in ASTM A992 pla
 | Level | KL m | Interior Pu kN | Interior b x t | Edge Pu | Edge b x t | Corner Pu | Corner b x t |
 |---|---|---|---|---|---|---|---|
 | ROOF | 6.0 | 374 | 150 x 10 (KL/r 105) | 187 | 150 x 10 (KL/r 105) | 93 | 150 x 10 (KL/r 105) |
-| R3 | 6.0 | 2125 | 250 x 10 (KL/r 61) | 1063 | 170 x 10 (KL/r 92) | 531 | 150 x 10 (KL/r 105) |
-| R2 | 6.0 | 3877 | 340 x 12 (KL/r 45) | 1939 | 230 x 10 (KL/r 67) | 969 | 170 x 10 (KL/r 92) |
-| R1 | 6.0 | 5629 | 400 x 14 (KL/r 38) | 2814 | 290 x 10 (KL/r 52) | 1407 | 200 x 10 (KL/r 77) |
-| L2 | 4.8 | 6218 | 400 x 14 (KL/r 30) | 3109 | 300 x 10 (KL/r 41) | 1554 | 190 x 10 (KL/r 65) |
-| L1 | 6.0 | 6971 | 430 x 15 (KL/r 35) | 3485 | 320 x 11 (KL/r 48) | 1743 | 220 x 10 (KL/r 70) |
-| L0 | 6.0 | 7686 | 460 x 16 (KL/r 33) | 3843 | 340 x 12 (KL/r 45) | 1921 | 230 x 10 (KL/r 67) |
-| L-1 | 6.0 | 8390 | 480 x 16 (KL/r 32) | 4195 | 340 x 12 (KL/r 45) | 2097 | 240 x 10 (KL/r 64) |
+| R3 | 6.0 | 2111 | 240 x 10 (KL/r 64) | 1055 | 170 x 10 (KL/r 92) | 528 | 150 x 10 (KL/r 105) |
+| R2 | 6.0 | 3848 | 340 x 12 (KL/r 45) | 1924 | 230 x 10 (KL/r 67) | 962 | 170 x 10 (KL/r 92) |
+| R1 | 6.0 | 5586 | 400 x 14 (KL/r 38) | 2793 | 290 x 10 (KL/r 52) | 1396 | 200 x 10 (KL/r 77) |
+| L2 | 4.8 | 6174 | 400 x 14 (KL/r 30) | 3087 | 300 x 10 (KL/r 41) | 1544 | 190 x 10 (KL/r 65) |
+| L1 | 6.0 | 6927 | 430 x 15 (KL/r 35) | 3464 | 320 x 11 (KL/r 48) | 1732 | 220 x 10 (KL/r 70) |
+| L0 | 6.0 | 7642 | 460 x 16 (KL/r 33) | 3821 | 340 x 12 (KL/r 45) | 1911 | 230 x 10 (KL/r 67) |
+| L-1 | 6.0 | 8346 | 470 x 16 (KL/r 32) | 4173 | 340 x 12 (KL/r 45) | 2087 | 240 x 10 (KL/r 64) |
 
 ## Lateral
 
-Design shear 1657 kN (seismic; AQS-BLD-014). Two braced lines per direction, two braced bays per line, tension-only diagonals at 45 deg: T = 586 kN per diagonal, A >= 1887 mm2 (D2), welded box about 120 mm. Overturning on the braced-bay columns goes to X-BLD-03.
+Design shear 1640 kN (seismic; AQS-BLD-014). Two braced lines per direction, two braced bays per line, tension-only diagonals at 45 deg: T = 580 kN per diagonal, A >= 1868 mm2 (D2), welded box about 120 mm. Overturning on the braced-bay columns goes to X-BLD-03.
 
 Result: every member above has a section that passes; the reservoir storeys govern the columns, which step down in size above R3. Sections are welded from plate, sized here, not picked from a catalogue.

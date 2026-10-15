@@ -3788,5 +3788,25 @@
     "verification": "docs-authority/TEST_RIGS.md",
     "replace_when": "Replace with first-article / rig test results",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-220",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Automatic equipment overlap resolution",
+    "statement": "The smaller unit of each overlapping pair moves to the nearest clear position on its level with 100 mm gap; containers and internals are exempt; L-1 corridors re-routed round the process hall; catch tank top 0.5 m below L-1 FFL.",
+    "verification": "clash_equip.py 0 overlaps, 0 corridor intrusions; clash_check.py 0",
+    "replace_when": "when a process-adjacency layout study re-packs L-1",
+    "doc": "AQS-PAR-003"
   }
 ]

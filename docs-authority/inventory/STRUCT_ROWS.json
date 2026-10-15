@@ -554,9 +554,9 @@
 {
 "unit": "CATCH_TANK",
 "level": "L-2",
-"empty_kg": 142444.2,
-"op_kg": 2368135.2,
-"test_kg": 3703549.8,
+"empty_kg": 140931.4,
+"op_kg": 2342983.9,
+"test_kg": 3664215.4,
 "foot_m2": 367.2
 },
 {
@@ -1499,24 +1499,24 @@
 "unit": "HYDRO_RES_R1",
 "level": "R1",
 "empty_kg": 88128.0,
-"op_kg": 1213988.2,
-"test_kg": 1213988.2,
+"op_kg": 1201342.2,
+"test_kg": 1201342.2,
 "foot_m2": 367.2
 },
 {
 "unit": "HYDRO_RES_R2",
 "level": "R2",
 "empty_kg": 88128.0,
-"op_kg": 1213988.2,
-"test_kg": 1213988.2,
+"op_kg": 1201342.2,
+"test_kg": 1201342.2,
 "foot_m2": 367.2
 },
 {
 "unit": "HYDRO_RES_R3",
 "level": "R3",
 "empty_kg": 88128.0,
-"op_kg": 1213988.2,
-"test_kg": 1213988.2,
+"op_kg": 1201342.2,
+"test_kg": 1201342.2,
 "foot_m2": 367.2
 }
 ]

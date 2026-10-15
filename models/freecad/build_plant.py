@@ -123,6 +123,9 @@ def build():
                 pl = o.Placement; pl.Base = pl.Base + d; o.Placement = pl
         print("  relocated", u, "by", round(d.x), round(d.y))
     doc.recompute()
+    import resolve_overlaps
+    resolve_overlaps.resolve(doc, (P.PLATE_L, P.PLATE_W), OUT.parents[1] / "docs-authority/inventory/CAD_MOVES.json")
+    doc.recompute()
     fire_barriers._rated_rooms(doc)  # last: rooms are fitted to every placed solid
     stamp_materials.stamp(doc, stamp_materials.load_rows())
     transparency.apply_document(doc)

@@ -12,7 +12,8 @@ def solve(E_kWh, plate_L, plate_W, z_res0, z_catch_top, d=None, V_dead=0.0):
     d = d or json.load(open(_D))
     A = plate_L*plate_W/1e6*(1 - _v(d, 'wt_core_frac')); clr = _v(d, 'wt_level_clear_mm')/1000; hw = _v(d, 'wt_water_max_m')
     eta = _v(d, 'hydro_eta_turbine')*(1 - _v(d, 'wt_penstock_loss_frac')); fb = _v(d, 'wt_freeboard_m')
-    zr, zc = z_res0/1000, z_catch_top/1000; V = 1000.0
+    TOP = 0.5  # L-1 slab 0.3 m + 0.2 m for bund sumps recessed into it (GA rev C: EW_BUND sump had cut into the tank)
+    zr, zc = z_res0/1000, z_catch_top/1000 - TOP; V = 1000.0
     for _ in range(60):
         n = max(1, math.ceil((V + V_dead)/A/hw - 1e-9)); dl = (V + V_dead)/A/n                                   # equal depth on n levels
         zu = zr + 0.3 + (n - 1)*clr/2 + dl/2                                               # centroid of the stack (slab 0.3 m)
@@ -22,7 +23,7 @@ def solve(E_kWh, plate_L, plate_W, z_res0, z_catch_top, d=None, V_dead=0.0):
         V = Vn
     L = plate_L/1000; ncell = max(2, math.ceil(L/_v(d, 'wt_cell_len_m')))
     return dict(V_m3=V, head_m=h, area_m2=A, levels=n, depth_per_level_m=dl, level_clear_m=clr, z_res0_m=zr, z_roof_m=zr + n*clr,
-                catch_depth_m=dc, catch_clear_m=dc + fb + 0.3, z_catch_floor_m=zc - fb - dc, cells_per_level=ncell, cell_len_m=L/ncell,
+                catch_depth_m=dc, catch_clear_m=dc + fb + 0.3 + TOP, z_catch_floor_m=zc - fb - dc, cells_per_level=ncell, cell_len_m=L/ncell,
                 water_t=V + V_dead, V_fire_m3=V_dead, eta_net=eta, E_kWh=E_kWh)
 def seismic_wind(r, plate_L, plate_W, d=None):
     """ASCE7_22 12.8 equivalent lateral force on the water mass (impulsive, rigid), 15.7.6 sloshing freeboard (convective, rectangular cell
