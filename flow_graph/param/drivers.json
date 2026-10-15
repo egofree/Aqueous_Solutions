@@ -1610,5 +1610,17 @@
   "register": "A-M-164 (X-PAR-03 house scrubbers)",
   "needs_verification": true,
   "verification_test": "pump test"
+ },
+ "s_316L_38C_MPa": {
+  "value": 115.0,
+  "units": "MPa allowable, SA-312 TP316L seamless, -29 to 38 C",
+  "ref": "ASME_II_D"
+ },
+ "rcv_tube_len_m": {
+  "value": 6.096,
+  "units": "m, one random length per tube (as AQS-INV-003)",
+  "register": "A-M-167 (receiver banks)",
+  "needs_verification": true,
+  "verification_test": "rack layout check against the CRYO bay"
  }
 }

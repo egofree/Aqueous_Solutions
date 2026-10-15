@@ -10,8 +10,8 @@ Rules from the Section VIII-1 scope (ASME_VIII1_U1): design pressure at or below
 | Class | Units |
 |---|---|
 | Atmospheric | 199 |
-| B31.3 piping component | 3 |
-| Section VIII-1 (ID not yet sized) | 3 |
+| B31.3 piping component | 5 |
+| Section VIII-1 (ID not yet sized) | 1 |
 | not a vessel (no design pressure on the graph) | 7 |
 
 Caution: 197 atmospheric units still carry the older head-plus-10 kPa study figure as design pressure rather than a pressure case of their own. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
@@ -75,13 +75,13 @@ Caution: 197 atmospheric units still carry the older head-plus-10 kPa study figu
 | CRYO_ASU | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_CO2 | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_DED_COOL | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
-| CRYO_H2 | CRYO | 22000.0 |  |  | Section VIII-1 (ID not yet sized) | 22000 kPa g > 103; size from its unit design |
+| CRYO_H2 | CRYO | 22000.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm |
 | CRYO_HE | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_HX_Q4 | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_KR | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_N2 | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_NE | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
-| CRYO_O2 | CRYO | 22000.0 |  |  | Section VIII-1 (ID not yet sized) | 22000 kPa g > 103; size from its unit design |
+| CRYO_O2 | CRYO | 22000.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm |
 | CRYO_XE | CRYO | 17.8 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CURTAIL | GEO | 29.6 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | DIGESTER | FARM | 17.8 | 35 | 342 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
