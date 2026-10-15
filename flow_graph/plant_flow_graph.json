@@ -41,7 +41,12 @@
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -121,7 +126,12 @@
         "duty": "In 6.266 kg/d, out 6.266 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -154,7 +164,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -180,7 +195,12 @@
         "duty": "In 37509.840 kg/d, out 37509.840 kg/d, 0.400 kW. Sheet docs-authority/duties/ALK_SCRUBBER.md.",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -241,7 +261,12 @@
         "duty": "In 61.807 kg/d, out 61.807 kg/d, 2.500 kW. Sheet docs-authority/duties/BACKUP_GEN.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -260,7 +285,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -285,7 +315,12 @@
         "presence": "present",
         "internals": "pitched-blade agitator",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -304,7 +339,12 @@
         "duty": "In 1253.317 kg/d, out 1253.317 kg/d, 26.928 kW. Sheet docs-authority/duties/BMED_ACID.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 26.9276,
@@ -328,7 +368,12 @@
         "duty": "In 1330.391 kg/d, out 1330.391 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -384,7 +429,12 @@
         "duty": "In 140.520 kg/d, out 140.520 kg/d, 6.000 kW. Sheet docs-authority/duties/BMED_UPW_POLISH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -408,7 +458,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -431,7 +486,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -458,7 +518,12 @@
         "duty": "In 200000.000 kg/d, out 200000.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CATCH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -499,7 +564,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -543,7 +613,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -562,7 +637,12 @@
         "duty": "In 27.362 kg/d, out 27.362 kg/d, 0.000 kW. Sheet docs-authority/duties/CRU.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -582,7 +662,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -602,7 +687,12 @@
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -637,7 +727,12 @@
         "duty": "In 50.645 kg/d, out 50.645 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_CO2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -656,7 +751,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -687,7 +787,12 @@
         "store_kg": 115.0,
         "store_water_volume_m3": 7.72,
         "store_basis": "two days of critical load on H2 (AQS-ELEC-007 \u00a72, about 115 kg)",
-        "compressor": "two-stage diaphragm, 10 to 200 bar"
+        "compressor": "two-stage diaphragm, 10 to 200 bar",
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -706,7 +811,12 @@
         "presence": "present",
         "internals": "plate pack",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -726,7 +836,12 @@
         "presence": "present",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -747,7 +862,12 @@
         "duty": "In 48.050 kg/d, out 48.050 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -860,6 +980,11 @@
           "P_dc_kW": 5.25,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -931,6 +1056,11 @@
           "P_dc_kW": 5.25,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -1002,6 +1132,11 @@
           "P_dc_kW": 1.97,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1072,6 +1207,11 @@
           "P_dc_kW": 0.43,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1142,6 +1282,11 @@
           "P_dc_kW": 0.44,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1212,6 +1357,11 @@
           "P_dc_kW": 0.48,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1282,6 +1432,11 @@
           "P_dc_kW": 6.24,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1352,6 +1507,11 @@
           "P_dc_kW": 0.44,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1423,6 +1583,11 @@
           "P_dc_kW": 6.6,
           "status": "study",
           "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -1457,7 +1622,12 @@
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -1512,6 +1682,11 @@
           "value": 459.27,
           "basis": "IA-SINK-01 case A (AQS-ASSAY-001 Rev D \u00a78); covers MSW sink 362.75 + unassigned 35.0",
           "task": "X-RSZ-07 sweep"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -1550,7 +1725,12 @@
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -1611,7 +1791,12 @@
         "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -1660,7 +1845,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -1686,7 +1876,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -1715,7 +1910,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 2.000 kW. Sheet docs-authority/duties/GEO_HP.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -1734,7 +1934,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -1803,7 +2008,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.400 kW. Sheet docs-authority/duties/GEO_ORC.md.",
         "internals": "plate pack",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -1866,7 +2076,12 @@
         "duty": "In 148.430 kg/d, out 148.430 kg/d, 1.500 kW. Sheet docs-authority/duties/GLASS_DIGEST.md.",
         "internals": "pitched-blade agitator",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -1885,7 +2100,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -1967,7 +2187,12 @@
         "duty": "In 19100.926 kg/d, out 19100.926 kg/d, 5.000 kW. Sheet docs-authority/duties/GROW_BED.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -1992,7 +2217,12 @@
         "duty": "In 6.629 kg/d, out 6.629 kg/d, 0.300 kW. Sheet docs-authority/duties/H2_DRYER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2031,7 +2261,12 @@
         "duty": "In 943.087 kg/d, out 943.087 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2062,7 +2297,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2082,7 +2322,12 @@
         "duty": "In 6.629 kg/d, out 6.629 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_H2.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2098,7 +2343,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2117,7 +2367,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2152,7 +2407,12 @@
         "duty": "In 67.300 kg/d, out 67.300 kg/d, 0.000 kW. Sheet docs-authority/duties/HDR_UPW.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2171,7 +2431,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2268,6 +2533,11 @@
           "area_m2": 7.53,
           "status": "study",
           "source": "AQS-DUTY-049; AQS-STD-002 4.4"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -2318,7 +2588,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/HYDRO_SET.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2439,6 +2714,11 @@
           "agitator_motor_kW": 0.75,
           "status": "study",
           "source": "AQS-DUTY-050"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -2463,7 +2743,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2487,7 +2772,12 @@
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2548,7 +2838,12 @@
         "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2587,7 +2882,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2643,6 +2943,11 @@
           "status": "study",
           "source": "Bertau et al. 2014 (200-300 C, 50-100 bar)",
           "material": "316L (API 941: austenitic stainless not susceptible to HTHA)"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -2676,7 +2981,12 @@
         "duty": "In 6.019 kg/d, out 6.019 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2695,7 +3005,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2715,7 +3030,12 @@
         "presence": "present",
         "internals": "plate pack",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2757,7 +3077,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2782,7 +3107,12 @@
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -2840,7 +3170,12 @@
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "peak_kw": 38.5,
-        "tool_list": "docs-authority/MFG_TOOLS.md"
+        "tool_list": "docs-authority/MFG_TOOLS.md",
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2856,7 +3191,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2891,7 +3231,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/NORTH_DOCK.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2915,7 +3260,12 @@
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -2940,7 +3290,12 @@
         "duty": "In 273.555 kg/d, out 273.555 kg/d, 0.100 kW. Sheet docs-authority/duties/NUTRIENT_DOSE.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3002,6 +3357,11 @@
           "value": 45.0,
           "basis": "IA-PLAST-01 MSW case",
           "task": "X-RSZ-07 sweep"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -3022,7 +3382,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3061,6 +3426,11 @@
           "value": 45.0,
           "basis": "IA-OIL-01 MSW case",
           "task": "X-RSZ-07 sweep"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -3095,7 +3465,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3113,7 +3488,12 @@
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3130,7 +3510,12 @@
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3147,7 +3532,12 @@
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3164,7 +3554,12 @@
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3194,7 +3589,12 @@
         "relief_mm": 3.3,
         "nameplate_kw": 1079,
         "area_m2": 5395,
-        "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed"
+        "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3229,7 +3629,12 @@
         "presence": "present",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3255,7 +3660,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 24.000 kW. Sheet docs-authority/duties/RECTIFIER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3278,7 +3688,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3295,7 +3710,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3329,7 +3749,12 @@
         "duty": "In 200383.980 kg/d, out 200383.980 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3348,7 +3773,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3368,7 +3798,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3391,7 +3826,12 @@
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "count": 3
+        "count": 3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3413,7 +3853,12 @@
         "duty": "In 40.000 kg/d, out 40.000 kg/d, 0.000 kW. Sheet docs-authority/duties/TERRACE_IRRIG.md.",
         "internals": "pipe only",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3462,7 +3907,12 @@
         "duty": "In 76.610 kg/d, out 76.610 kg/d, 2.000 kW. Sheet docs-authority/duties/WAFER_FAB.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3501,7 +3951,12 @@
         "duty": "In 79.122 kg/d, out 79.122 kg/d, 1.000 kW. Sheet docs-authority/duties/WET_BENCH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3534,7 +3989,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3553,7 +4013,12 @@
         "duty": "In 3.259 kg/d, out 3.259 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_AMMONIA.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3572,7 +4037,12 @@
         "duty": "In 0.010 kg/d, out 0.010 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_DOPE.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3591,7 +4061,12 @@
         "duty": "In 1.500 kg/d, out 1.500 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_HF_ED.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3632,7 +4107,12 @@
         "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_KOH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3692,7 +4172,12 @@
           "status": "study",
           "basis": "weak 2 M acid is stable; covers a two-week absorber outage"
         },
-        "V_m3": 0.025
+        "V_m3": 0.025,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3746,7 +4231,12 @@
           "status": "study",
           "basis": "unstabilised peroxide decomposes; product_spec holdup_max_d 1.0"
         },
-        "V_m3": 0.005
+        "V_m3": 0.005,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3765,7 +4255,12 @@
         "duty": "In 3.300 kg/d, out 3.300 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SLURRY.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3784,7 +4279,12 @@
         "duty": "In 0.210 kg/d, out 0.210 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_SOLV.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -3845,7 +4345,12 @@
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "peak_kw": 60
+        "peak_kw": 60,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3876,7 +4381,12 @@
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3900,7 +4410,12 @@
         "duty": "In 0.620 kg/d, out 0.620 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PHOS.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3947,7 +4462,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -3986,7 +4506,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4057,7 +4582,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4085,7 +4615,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4127,7 +4662,12 @@
         "presence": "present",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4151,7 +4691,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4175,7 +4720,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4199,7 +4749,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4249,7 +4804,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.1,
@@ -4281,7 +4841,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.3,
@@ -4313,7 +4878,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.5,
@@ -4388,7 +4958,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.3,
@@ -4455,7 +5030,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4530,7 +5110,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4605,7 +5190,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4666,7 +5256,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4727,7 +5322,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4802,7 +5402,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4877,7 +5482,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4938,7 +5548,12 @@
         "presence": "present",
         "internals": "stratification plate",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4964,7 +5579,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.200 kW. Sheet docs-authority/duties/ANIMAL_PEN.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -4990,7 +5610,12 @@
         "duty": "In 145.576 kg/d, out 145.576 kg/d, 0.100 kW. Sheet docs-authority/duties/COMPOST.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5016,7 +5641,12 @@
         "duty": "In 1.148 kg/d, out 1.148 kg/d, 0.400 kW. Sheet docs-authority/duties/DIGESTER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5042,7 +5672,12 @@
         "duty": "In 0.625 kg/d, out 0.625 kg/d, 0.500 kW. Sheet docs-authority/duties/EMETH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5068,7 +5703,12 @@
         "duty": "In 9.373 kg/d, out 9.373 kg/d, 0.800 kW. Sheet docs-authority/duties/LIGNO_PRE.md.",
         "internals": "dip pipe, stilling well",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5094,7 +5734,12 @@
         "duty": "In 8.700 kg/d, out 8.700 kg/d, 1.000 kW. Sheet docs-authority/duties/BOARD_MILL.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5120,7 +5765,12 @@
         "duty": "In 3.190 kg/d, out 3.190 kg/d, 0.600 kW. Sheet docs-authority/duties/HTC.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5139,7 +5789,12 @@
         "duty": "In 1902.730 kg/d, out 1902.730 kg/d, 18.000 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 18.0,
@@ -5165,7 +5820,12 @@
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.2,
@@ -5191,7 +5851,12 @@
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.2,
@@ -5217,7 +5882,12 @@
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.2,
@@ -5243,7 +5913,12 @@
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.2,
@@ -5269,7 +5944,12 @@
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": {
         "value": 0.2,
@@ -5300,7 +5980,12 @@
         "duty": "In 1.000 kg/d, out 1.000 kg/d, 0.200 kW. Sheet docs-authority/duties/YEAST.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5325,7 +6010,12 @@
         "duty": "In 0.640 kg/d, out 0.640 kg/d, 0.200 kW. Sheet docs-authority/duties/ABE.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5350,7 +6040,12 @@
         "duty": "In 0.270 kg/d, out 0.270 kg/d, 0.100 kW. Sheet docs-authority/duties/ACETOX.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5375,7 +6070,12 @@
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/ALD.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5400,7 +6100,12 @@
         "duty": "In 0.330 kg/d, out 0.330 kg/d, 0.100 kW. Sheet docs-authority/duties/GLYOXAL.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5425,7 +6130,12 @@
         "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/FORM.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5450,7 +6160,12 @@
         "duty": "In 0.070 kg/d, out 0.070 kg/d, 0.100 kW. Sheet docs-authority/duties/MEAM.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5475,7 +6190,12 @@
         "duty": "In 0.523 kg/d, out 0.523 kg/d, 0.100 kW. Sheet docs-authority/duties/IMID.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5505,7 +6225,12 @@
           400,
           400,
           800
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5530,7 +6255,12 @@
         "duty": "In 0.412 kg/d, out 0.412 kg/d, 0.100 kW. Sheet docs-authority/duties/ACEX.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5559,6 +6289,11 @@
         "product_spec": {
           "HNO3_max_M": 2.0,
           "basis": "Decision, AQS-DSN-OX-001: weak-acid absorption to 2 M; no concentrated nitric is made or stored."
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -5584,7 +6319,12 @@
         "duty": "In 0.180 kg/d, out 0.180 kg/d, 0.100 kW. Sheet docs-authority/duties/BUCL.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5609,7 +6349,12 @@
         "duty": "In 3.230 kg/d, out 3.230 kg/d, 0.100 kW. Sheet docs-authority/duties/BSFL.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5634,7 +6379,12 @@
         "duty": "In 9697.900 kg/d, out 9697.900 kg/d, 0.100 kW. Sheet docs-authority/duties/DUCKWEED.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5659,7 +6409,12 @@
         "duty": "In 4.020 kg/d, out 4.020 kg/d, 0.100 kW. Sheet docs-authority/duties/WORMS.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5684,7 +6439,12 @@
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.100 kW. Sheet docs-authority/duties/BEES.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5709,7 +6469,12 @@
         "duty": "In 0.500 kg/d, out 0.500 kg/d, 0.100 kW. Sheet docs-authority/duties/CHICKENS.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5734,7 +6499,12 @@
         "duty": "In 0.700 kg/d, out 0.700 kg/d, 0.100 kW. Sheet docs-authority/duties/GOATS.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5759,7 +6529,12 @@
         "duty": "In 48001.000 kg/d, out 48001.000 kg/d, 0.100 kW. Sheet docs-authority/duties/FISH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5784,7 +6559,12 @@
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/CRAYFISH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5809,7 +6589,12 @@
         "duty": "In 0.100 kg/d, out 0.100 kg/d, 0.100 kW. Sheet docs-authority/duties/AZOLLA.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5834,7 +6619,12 @@
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.100 kW. Sheet docs-authority/duties/MUSHROOM.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5859,7 +6649,12 @@
         "duty": "In 2.400 kg/d, out 2.400 kg/d, 0.050 kW. Sheet docs-authority/duties/COMPOST_TOILET.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
     },
@@ -5885,7 +6680,12 @@
         "duty": "In 0.750 kg/d, out 0.750 kg/d, 0.200 kW. Sheet docs-authority/duties/NFIX_BED.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5910,7 +6710,12 @@
         "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.150 kW. Sheet docs-authority/duties/MUSH_STRAW.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5935,7 +6740,12 @@
         "duty": "In 0.250 kg/d, out 0.250 kg/d, 0.150 kW. Sheet docs-authority/duties/MUSH_BLOCK.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5960,7 +6770,12 @@
         "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.150 kW. Sheet docs-authority/duties/AMF.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -5985,7 +6800,12 @@
         "duty": "In 3.020 kg/d, out 3.020 kg/d, 0.050 kW. Sheet docs-authority/duties/COMPOST_MYC.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6010,7 +6830,12 @@
         "duty": "In 0.400 kg/d, out 0.400 kg/d, 0.400 kW. Sheet docs-authority/duties/FRUIT_GUTTER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6035,7 +6860,12 @@
         "duty": "In 19443.800 kg/d, out 19443.800 kg/d, 0.400 kW. Sheet docs-authority/duties/VEG_BED.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6060,7 +6890,12 @@
         "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/CLARIFIER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6090,7 +6925,12 @@
           3000,
           5000,
           1200
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6115,7 +6955,12 @@
         "duty": "In 48000.000 kg/d, out 48000.000 kg/d, 0.300 kW. Sheet docs-authority/duties/FISH_SUMP.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6140,7 +6985,12 @@
         "duty": "In 0.120 kg/d, out 0.120 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_TOMATO.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6165,7 +7015,12 @@
         "duty": "In 0.080 kg/d, out 0.080 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_CUCUMBER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6190,7 +7045,12 @@
         "duty": "In 0.060 kg/d, out 0.060 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_PEPPER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6215,7 +7075,12 @@
         "duty": "In 0.080 kg/d, out 0.080 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_LETTUCE.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6240,7 +7105,12 @@
         "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_SPINACH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6265,7 +7135,12 @@
         "duty": "In 0.050 kg/d, out 0.050 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_KALE.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6290,7 +7165,12 @@
         "duty": "In 0.060 kg/d, out 0.060 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_ALLIUM.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6315,7 +7195,12 @@
         "duty": "In 0.030 kg/d, out 0.030 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_BASIL.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6340,7 +7225,12 @@
         "duty": "In 0.020 kg/d, out 0.020 kg/d, 0.050 kW. Sheet docs-authority/duties/CROP_ROSEMARY.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6365,7 +7255,12 @@
         "duty": "In 0.410 kg/d, out 0.410 kg/d, 0.200 kW. Sheet docs-authority/duties/CLOVER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6440,7 +7335,12 @@
           2000,
           2000,
           2200
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6470,7 +7370,12 @@
           1000,
           1000,
           1200
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6500,7 +7405,12 @@
           1000,
           1000,
           1500
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6530,7 +7440,12 @@
           500,
           500,
           800
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6564,7 +7479,12 @@
           800,
           600,
           2000
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6598,7 +7518,12 @@
           6000,
           6000,
           1500
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6628,7 +7553,12 @@
           6000,
           1000,
           300
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6658,7 +7588,12 @@
           4000,
           1000,
           800
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6688,7 +7623,12 @@
           6000,
           2000,
           600
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6718,7 +7658,12 @@
           18000,
           5000,
           400
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6748,7 +7693,12 @@
           400,
           400,
           1500
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6778,7 +7728,12 @@
           300,
           300,
           1200
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6803,7 +7758,12 @@
         "duty": "In 0.200 kg/d, out 0.200 kg/d, 0.300 kW. Sheet docs-authority/duties/PEANUT.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6828,7 +7788,12 @@
         "duty": "In 0.300 kg/d, out 0.300 kg/d, 0.300 kW. Sheet docs-authority/duties/SUNFLOWER.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -6853,7 +7818,12 @@
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_SLEEP.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
     },
@@ -6879,7 +7849,12 @@
         "duty": "In 1.180 kg/d, out 1.180 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_GALLEY.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
     },
@@ -6905,7 +7880,12 @@
         "duty": "In 0.002 kg/d, out 0.002 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_MED.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
     },
@@ -6931,7 +7911,12 @@
         "duty": "In 80.000 kg/d, out 80.000 kg/d, 0.300 kW. Sheet docs-authority/duties/HAB_WASH.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "notes_sector": "X-RSZ-05: sector FARM -> HAB (habitation function)"
     },
@@ -6989,7 +7974,12 @@
           "required_bore_mm": 3.45,
           "installed_bore_mm": 3.6,
           "installed_area_mm2": 10.18,
-          "result": "3.6 mm meets the 550 kPa case with 8.6 % area margin. Not a selected valve. The smallest API 526 letter orifice, D, 71 mm2, also covers it."
+          "result": "3.6 mm meets the 550 kPa case with 8.6 % area margin. Not a selected valve. The smallest API 526 letter orifice, D, 71 mm2, also covers it.",
+          "W_kg_h": 65.65,
+          "A_req_mm2": 9.36,
+          "bore_req_mm": 3.45,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
         }
       }
     },
@@ -7020,7 +8010,12 @@
           1500,
           1500,
           1800
-        ]
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -7071,7 +8066,12 @@
         "internals": "deoxo Pd/Al2O3, activated alumina HCl/Cl2 guard, 13X TSA pair",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "outlet_purity_mol_pct": 99.97
+        "outlet_purity_mol_pct": 99.97,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {

@@ -90,5 +90,31 @@ def power():
     open(GP,'w').write(json.dumps(g, indent=2))
     print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW")
 
+def relief():
+    """Relief: pressurised nodes (design_kPa above the atmospheric study band) are sized by API 520
+    (sizing.relief); the case inputs are read from params.relief_basis. Atmospheric nodes are marked:
+    relief_mm is the older study figure and venting is an API 2000 case at unit task 07."""
+    from .sizing import relief as RL
+    from .refs import cite
+    g = json.load(open(GP)); n_api = n_atm = 0
+    for n in g['nodes']:
+        p = n.get('params') or {}
+        if 'relief_mm' not in p: continue
+        rb = p.get('relief_basis')
+        if isinstance(rb, dict) and 'P1_kPa_abs' in rb:
+            W = rb.get('W_kg_h') or float(rb['case'].split('= ')[-1].split(' kg/h')[0])
+            A = RL.gas_area_in2(W*2.20462, rb.get('k', 1.4), rb['P1_kPa_abs']/6.894757, rb['T_K']*1.8, rb.get('Z', 1.0), rb['M_kg_kmol'],
+                                Kd=rb.get('Kd', 0.975), Kb=rb.get('Kb', 1.0), Kc=rb.get('Kc', 1.0))
+            rb.update(W_kg_h=W, A_req_mm2=round(A*RL.IN2_TO_MM2, 2), bore_req_mm=round(RL.equiv_bore_mm(A), 2),
+                      computed_by=f"flow_graph/param/sizing/relief.py gas_area_in2 ({cite('API520')})",
+                      adequate=bool(p['relief_mm'] >= RL.equiv_bore_mm(A)))
+            n_api += 1
+        else:
+            p['relief_basis'] = {'case': 'atmospheric', 'method': 'not an API 520 case; tank venting per API Std 2000 at unit task 07',
+                                 'relief_mm_status': 'older study figure (head-plus-10 design_kPa), not a sized orifice'}
+            n_atm += 1
+    open(GP, 'w').write(json.dumps(g, indent=2))
+    print(f'API 520 sized {n_api}; atmospheric marked {n_atm}')
+
 if __name__ == '__main__':
-    {'process': process, 'power': power}[sys.argv[1] if len(sys.argv) > 1 else 'process']()
+    {'process': process, 'power': power, 'relief': relief}[sys.argv[1] if len(sys.argv) > 1 else 'process']()

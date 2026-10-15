@@ -270,8 +270,8 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 ## 5. Next 10 tasks
 
 1. X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.
-2. X-PAR-03 Size each relief case with `flow_graph/param/sizing/relief.py` (API 520) and replace the graph relief_mm study figures. Converted 2026-10-15: rectifier, LEACH_CSTR_1, HX-5/HX8, power and one-line scripts (AQS-PAR-001 section 2).
-3. X-PAR-03 Add scrubber sizing (packed-tower diameter and height) with a cited method. Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).
+2. X-PAR-03 Atmospheric venting (API 2000) per unit task 07; API 520 relief recomputed for EXPANDER 2026-10-15 by `write_graph.py relief`. Converted 2026-10-15: rectifier, LEACH_CSTR_1, HX-5/HX8, power and one-line scripts (AQS-PAR-001 section 2).
+3. X-PAR-03 Apply the scrubber function to ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB with packing vendor C_s and HTU (function added 2026-10-15, `flow_graph/param/sizing/scrubber.py`). Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).
 4. X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the vendor MVR quote (bought skids, no models/mfg build); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).
 5. X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).
 6. X-BLD-04 Clear the 20 sub-600 mm pairs and lay out the PV ground field.

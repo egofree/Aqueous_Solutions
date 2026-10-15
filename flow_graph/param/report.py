@@ -14,7 +14,7 @@ def main():
          "## 1. Framework","",
          "1. Drivers (`flow_graph/param/drivers.json`, loader `drivers.py`): independent inputs. Each has units and a published reference key, a register id, or an owner basis. A value no published source fixes carries `needs_verification` and `verification_test`; the loader fails otherwise.",
          "2. Balance solver (`solver.py`): per-unit transfer functions (stoichiometry, splits, Faraday, energy) compute edge rates and duties from the drivers. `check()` fails on a closure error of a solved unit and lists misfits against the graph.",
-         "3. Sizing library (`sizing/`): electrochem (Faraday current, cathode count, DC power), heat (sensible duty, LMTD, area), lines (velocity bore, DN pick), power (PV kWp, 3-phase amps, NEC breaker, rectifier channel), tank (hydrostatic, volume, agitator power, plate and beam stress, pump power), relief (API 520). Each function names its equation and reference.",
+         "3. Sizing library (`sizing/`): electrochem (Faraday current, cathode count, DC power), heat (sensible duty, LMTD, area), lines (velocity bore, DN pick), power (PV kWp, 3-phase amps, NEC breaker, rectifier channel), tank (hydrostatic, volume, agitator power, plate and beam stress, pump power), relief (API 520), scrubber (packed column, Perry sec. 14). Each function names its equation and reference.",
          "4. Generated outputs: scripts in `docs-authority/` call the library with drivers; the commit regenerates them. `write_graph.py` writes solved values into the graph (stage `process`: acid loop, BMED, EW, RECT_EW, bus balance; stage `power`: PV, storage, inverters from AQS-ELEC-007).",
          f"5. Gate: `flow_graph/param/test_param_misfit.py` fails when a solved unit does not close or a compared graph value deviates from the solver by more than {solver.MISFIT_TOL*100:.0f} %.","",
          "| Rev | Description | Date |","| --- | --- | --- |","| A | First issue: drivers, references, solver for the acid loop and EW, sizing library. | 2026-10-15 |",
@@ -28,7 +28,8 @@ def main():
          "| `_leach_sizing.py` (AQS-DUTY-050) | tank (ROARK8 plates and beams, PERRY9_MIX agitator) | equations only; g = 9.80665 (was 9.81, results within 0.04 %) |",
          "| `_polymer_hx_study.py` (AQS-DUTY-049, HX-5 and HX8) | heat (Dittus-Boelter, series U, LMTD) | equations only; results unchanged |",
          "| `_power_sizing.py` (AQS-ELEC-007), `_one_line.py` (AQS-ELEC-002) | power (PV kWp, 3-phase amps, NEC breaker) | PV yield, derate, round trip, night hours, bus power factor; results unchanged |",
-         "| relief | relief (API520 liquid and gas area) | function added; no relief script existed to convert (graph relief_mm values remain the older study figures) |",
+         "| relief (`write_graph.py relief`) | relief (API520 liquid and gas area) | EXPANDER blocked-discharge case recomputed: 9.36 mm², 3.45 mm required against the 3.6 mm orifice (D4: 9.37 mm²). The other 199 nodes are atmospheric: relief_basis marks relief_mm as the older study figure and venting as an API 2000 case at unit task 07 |",
+         "| scrubber (new) | scrubber (PERRY9_ABS flooding velocity, diameter, HTU x NTU) | packing C_s and HTU are vendor inputs; not yet applied to a unit |",
          "| solver: LEACH acid (case A), BMED, EVAP_ACID/EVAP_BASE, EW currents, RECT_EW | electrochem, constants | feed rate, class A oxides, leach extent, HCl stoichiometry, BMED SEC and molarity, loop concentrations, MVR energy |","",
          "## 3. Solver closure","", ("All solved units close." if not errs else "FAILS: "+"; ".join(errs)),"",
          "## 4. Misfits against the graph","","| Item | Graph | Solved | Deviation | Reference |","| --- | --- | --- | --- | --- |"]
