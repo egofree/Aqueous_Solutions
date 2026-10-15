@@ -72,9 +72,10 @@ def physics(g):
     N_ = {n['unit_id']: n for n in g['nodes']}
     for sid, a, b, lay in (('SF-CRYO_AHU', 'SOL_ARK_60K', 'CRYO_AHU', ['elec']), ('SQ-CRYO_AHU', 'CRYO_AHU', 'HEAT_SINK', ['energy'])):
         if sid not in E: g['edges'].append(_edge(sid, a, b, 'E', lay, 'AHU coil chiller' if sid[1] == 'F' else 'AHU latent + compressor heat', 0, 'kW', 'ELEC', 'CRYO')); E[sid] = g['edges'][-1]
-    ql = v('IA-HVAC-COND')*2.454e3/86400; we = ql/2.96
+    from . import drivers as _dv; COP = _dv.load()['ahu_chiller_COP']['value']
+    ql = v('IA-HVAC-COND')*2.454e3/86400; we = ql/COP
     E['SF-CRYO_AHU']['rate']['value'] = round(we, 4); E['SQ-CRYO_AHU']['rate']['value'] = round(ql + we, 4)
-    N_['CRYO_AHU']['continuous_kw'] = {'value': round(we, 4), 'unit': 'kW', 'status': 'study', 'note': f'latent {ql:.2f} kW (condensate {v("IA-HVAC-COND"):.1f} kg/d x 2.454 MJ/kg) / COP 2.96 (A-M-153)'}
+    N_['CRYO_AHU']['continuous_kw'] = {'value': round(we, 4), 'unit': 'kW', 'status': 'study', 'note': f'latent {ql:.2f} kW (condensate {v("IA-HVAC-COND"):.1f} kg/d x 2.454 MJ/kg) / COP {COP} (A-M-153)'}
     src, draw = o2_close.close_o2(g); o2_close.LAST['storage'] = o2_close.storage(g)     # T3; H2/O2 banks re-sized every pass (X-PAR-12): O2 product = cold-box O2 in + bed + electrolyser; surplus to PROD_O2. No O2 from CO2.
     d = -_unit_resid(g, 'ROOF_TANK')
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):

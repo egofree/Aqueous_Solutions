@@ -7183,7 +7183,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 19426.060 kg/d, out 19426.060 kg/d, 0.733 kW. Sheet docs-authority/duties/VEG_BED.md.",
+        "duty": "In 19426.074 kg/d, out 19426.074 kg/d, 0.733 kW. Sheet docs-authority/duties/VEG_BED.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -7956,7 +7956,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 32.166 kg/d, out 32.166 kg/d, 0.300 kW. Sheet docs-authority/duties/MISTER.md.",
+        "duty": "In 32.180 kg/d, out 32.180 kg/d, 0.300 kW. Sheet docs-authority/duties/MISTER.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -25799,10 +25799,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 32.166295,
+        "value": 32.180459,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Mister supply. 100 \u00b5m screen. | X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.056775 L/min, 4 s on / 4 min off (schedule within LAKHIAR2018 range; nozzle flow HPA_PRACTICE; JAE2022_AERO) (AQS-PAR-003)."
+        "note": "AQS-P9. Mister supply. 100 \u00b5m screen. | X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.0568 L/min, 4 s on / 4 min off (schedule within LAKHIAR2018 range; nozzle flow HPA_PRACTICE; JAE2022_AERO) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25830,7 +25830,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 32.166295,
+        "value": 32.180459,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-P9. Mister return. | X-PAR-02 TF: chamber drain return = supply (AQS-PAR-003)."

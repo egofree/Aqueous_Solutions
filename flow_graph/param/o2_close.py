@@ -15,10 +15,11 @@ X-PAR-12 rate from those bases on each run.
 """
 import math
 F = 96485.0; MOL_A = 86400/F             # mol e- per A-day
-CE, FO2, VCELL = 0.85, 0.02, 2.12
-KWH_H2 = 55.0; HHV_H2 = 39.4; PSH_ELY = 6.0   # PEM system kWh/kg; HHV kWh/kg; electrolyser runs on the PV window (A-M-133)
-QY, ABS, LED, DLI, BED_M2 = 0.045, 0.90, 2.8, 17.0, 28.0
-EXC = 1.10
+from . import drivers as _drv1; _D = _drv1.load()   # X-PAR-01
+CE, FO2, VCELL = _D['ew_cathode_CE']['value'], _D['ew_anode_O2_frac']['value'], 2.12
+KWH_H2 = _D['pem_kWh_kg_H2']['value']; HHV_H2 = 39.4; PSH_ELY = 6.0   # PEM system kWh/kg; HHV kWh/kg; electrolyser runs on the PV window (A-M-133)
+QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorptance', 'led_efficacy_umol_J', 'bed_DLI')); BED_M2 = 28.0   # BED_M2 fallback only; live area comes from GROW_BED params
+EXC = _D['combustion_excess_O2']['value']
 GEN_KW, EX_LOAD, EX_H, GEN_ETA, LHV_C5 = 40.0, 0.30, 0.5, 0.30, 12.2   # AQS-ELEC-007 backup 40 kW; NFPA110 8.4.2; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
 PSH_STORE_D = 2.0   # AQS-ELEC-007 AUT_CRIT autonomy days
 CO2_M2 = DLI*ABS*QY*44.01                # g CO2/m2/d

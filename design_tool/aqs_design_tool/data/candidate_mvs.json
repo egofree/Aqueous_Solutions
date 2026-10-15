@@ -808,7 +808,7 @@
       "class": "ahu",
       "tags": [],
       "params": {
-        "duty": "In 541.781 kg/d, out 541.781 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_AHU.md.",
+        "duty": "In 541.781 kg/d, out 541.781 kg/d, 4.440 kW. Sheet docs-authority/duties/CRYO_AHU.md.",
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
@@ -3768,7 +3768,7 @@
         "module_kw": 0.5,
         "count": 8510,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 291.536 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 298.909 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4544,7 +4544,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1262.873 kg/d, out 1262.873 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1293.757 kg/d, out 1293.757 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -4596,7 +4596,7 @@
             }
           ]
         },
-        "duty": "In 1254.386 kg/d, out 1254.386 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1285.269 kg/d, out 1285.269 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -16756,10 +16756,10 @@
       "phase": "L",
       "carries": "mister supply",
       "rate": {
-        "value": 32.166295,
+        "value": 32.180459,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Mister supply. 100 \u00b5m screen. | X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.056775 L/min, 4 s on / 4 min off (schedule within LAKHIAR2018 range; nozzle flow HPA_PRACTICE; JAE2022_AERO) (AQS-PAR-003)."
+        "note": "AQS-P9. Mister supply. 100 \u00b5m screen. | X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.0568 L/min, 4 s on / 4 min off (schedule within LAKHIAR2018 range; nozzle flow HPA_PRACTICE; JAE2022_AERO) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16773,7 +16773,7 @@
       "phase": "L",
       "carries": "mister return",
       "rate": {
-        "value": 32.166295,
+        "value": 32.180459,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-P9. Mister return. | X-PAR-02 TF: chamber drain return = supply (AQS-PAR-003)."

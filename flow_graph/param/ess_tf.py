@@ -7,11 +7,12 @@ NFT: 1 L/min per gully (COOPER1996), gullies at 200 mm pitch across the 1 m unit
 MISTER: high-pressure aeroponics, 6 nozzles/m2 at 0.057 L/min, 4 s on / 4 min off (HPA_PRACTICE, JAE2022_AERO); A-M-136."""
 import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
-CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
-NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20; SWARF = 0.10; ZEO_LOAD = 0.010; BVAD_TOM_TM = 80
-BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = 2.77, 36.24, 0.43, 0.45   # BVAD2022 Table 4-91 tomato transpiration kg/m2/d and CO2 uptake g/m2/d
-BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
+from . import drivers as _drv0; _D = _drv0.load()   # X-PAR-01: constants live in drivers.json
+F = 96485.0; VZB = _D['znbr_cell_V']['value']; J = _D['znbr_j_mA_cm2']['value']; F_HER = _D['znbr_her_mL_h_cm2']['value']/(J/1000/(2*F)*22414*3600); OC = _D['znbr_oc_corr_mL_h_cm2']['value']; LFL25 = 0.04*_D['h2_purge_frac_of_LFL']['value']; RHO_AIR = 1.18
+CHG_H = _D['znbr_charge_h']['value']; GULLY_PITCH = _D['nft_gully_pitch_m']['value']; GULLY_LPM = _D['nft_gully_L_min']['value']
+NOZ_M2 = _D['hpa_nozzles_m2']['value']; NOZ_LPM = _D['hpa_nozzle_L_min']['value']; T_ON = _D['hpa_on_s']['value']; T_OFF = _D['hpa_off_s']['value']; DRAIN = _D['substrate_drain_frac']['value']; SWARF = _D['atomizer_offspec_frac']['value']; ZEO_LOAD = _D['zeolite5A_CO2_wt_frac']['value']; BVAD_TOM_TM = _D['bvad_tomato_tM_d']['value']
+BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = _D['bvad_tomato_T_kg_m2_d']['value'], _D['bvad_tomato_CO2_g_m2_d']['value'], _D['bvad_tomato_C_frac']['value'], _D['bvad_tomato_HI']['value']
+BANDS = [(a, b, f) for (a, b), f in zip([(7, 12), (13, 20), (21, 40)], _D['pyro_band_fracs']['value'])]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
 # BVAD2022 Table 4-90/4-91: edible fresh g/m2/d -> kg, inedible fresh kg/m2/d, CO2 g/m2/d, O2 g/m2/d, transpiration kg/m2/d
@@ -27,7 +28,7 @@ def _resid(g, u):
 def _crit():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['backup']['critical_kW']
 from flow_graph.param import drivers as _drv
-DRV = _drv.load(); ETA_TURB, ETA_PUMP, PSH_RECHG = 0.80, 0.85, 6.0   # DOE_PSH: pumped storage round trip 70-80 %; small set at the low end
+DRV = _drv.load(); ETA_TURB, ETA_PUMP, PSH_RECHG = DRV['hydro_eta_turbine']['value'], DRV['hydro_eta_pump']['value'], 6.0   # DOE_PSH: pumped storage round trip 70-80 %; small set at the low end
 def _ps():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
 def tf(g, ps=None):

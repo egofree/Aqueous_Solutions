@@ -1022,5 +1022,189 @@
   "register": "A-M-118",
   "needs_verification": true,
   "verification_test": "Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room"
+ },
+ "znbr_cell_V": {
+  "value": 1.82,
+  "units": "V",
+  "ref": "SAND2000-0893"
+ },
+ "znbr_her_mL_h_cm2": {
+  "value": 0.055,
+  "units": "mL/h/cm2 at 20 mA/cm2",
+  "ref": "ZBFB_REVIEW2023"
+ },
+ "znbr_oc_corr_mL_h_cm2": {
+  "value": 0.0032,
+  "units": "mL/h/cm2",
+  "ref": "ZBFB_REVIEW2023"
+ },
+ "znbr_j_mA_cm2": {
+  "value": 20.0,
+  "units": "mA/cm2",
+  "ref": "ZBFB_REVIEW2023"
+ },
+ "h2_purge_frac_of_LFL": {
+  "value": 0.25,
+  "units": "-",
+  "ref": "NFPA69_2019"
+ },
+ "znbr_charge_h": {
+  "value": 6.0,
+  "units": "h/d",
+  "register": "A-M-135",
+  "needs_verification": true,
+  "verification_test": "see A-M-135"
+ },
+ "nft_gully_pitch_m": {
+  "value": 0.2,
+  "units": "m",
+  "ref": "CROPKING_NFT"
+ },
+ "nft_gully_L_min": {
+  "value": 1.0,
+  "units": "L/min",
+  "ref": "COOPER1996"
+ },
+ "hpa_nozzles_m2": {
+  "value": 6,
+  "units": "1/m2",
+  "ref": "HPA_PRACTICE"
+ },
+ "hpa_nozzle_L_min": {
+  "value": 0.0568,
+  "units": "L/min",
+  "ref": "HPA_PRACTICE"
+ },
+ "hpa_on_s": {
+  "value": 4.0,
+  "units": "s",
+  "ref": "LAKHIAR2018"
+ },
+ "hpa_off_s": {
+  "value": 240.0,
+  "units": "s",
+  "ref": "LAKHIAR2018"
+ },
+ "substrate_drain_frac": {
+  "value": 0.2,
+  "units": "-",
+  "ref": "PLOSONE2017_DRAIN"
+ },
+ "atomizer_offspec_frac": {
+  "value": 0.1,
+  "units": "-",
+  "register": "A-M-139",
+  "needs_verification": true,
+  "verification_test": "see A-M-139"
+ },
+ "bvad_tomato_T_kg_m2_d": {
+  "value": 2.77,
+  "units": "kg/m2/d",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_CO2_g_m2_d": {
+  "value": 36.24,
+  "units": "g/m2/d",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_C_frac": {
+  "value": 0.43,
+  "units": "-",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_HI": {
+  "value": 0.45,
+  "units": "-",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_tM_d": {
+  "value": 80,
+  "units": "d",
+  "ref": "BVAD2022"
+ },
+ "zeolite5A_CO2_wt_frac": {
+  "value": 0.01,
+  "units": "kg/kg at 0.4 kPa",
+  "ref": "NASA_5A1998"
+ },
+ "hydro_eta_turbine": {
+  "value": 0.8,
+  "units": "-",
+  "ref": "DOE_PSH"
+ },
+ "hydro_eta_pump": {
+  "value": 0.85,
+  "units": "-",
+  "ref": "DOE_PSH"
+ },
+ "pyro_band_fracs": {
+  "value": [
+   0.34,
+   0.315,
+   0.345
+  ],
+  "units": "mass fraction C7-12/C13-20/C21-40",
+  "ref": "SU2018_PYRO"
+ },
+ "bed_quantum_yield": {
+  "value": 0.045,
+  "units": "mol CO2/mol photon",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "bed_absorptance": {
+  "value": 0.9,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "led_efficacy_umol_J": {
+  "value": 2.8,
+  "units": "umol/J",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "bed_DLI": {
+  "value": 17.0,
+  "units": "mol/m2/d",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "pem_kWh_kg_H2": {
+  "value": 55.0,
+  "units": "kWh/kg",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "ew_cathode_CE": {
+  "value": 0.85,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "ew_anode_O2_frac": {
+  "value": 0.02,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "combustion_excess_O2": {
+  "value": 1.1,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "ahu_chiller_COP": {
+  "value": 2.96,
+  "units": "-",
+  "ref": "ASHRAE901_2022"
  }
 }
