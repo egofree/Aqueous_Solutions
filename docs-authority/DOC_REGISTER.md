@@ -64,7 +64,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-EGR-001 | `docs-authority/EGRESS_CALC.md` | C | 2026-10-01 | Means of egress — study calculation (NFPA 101 / IBC Ch. 10 themes) | canonical |
 | AQS-ELC-001 | `docs-authority/ELECTRICAL.md` | B | 2026-10-01 | Electrical analysis | canonical |
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | canonical |
-| AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | B | 2026-10-12 | One line | canonical |
+| AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | C | 2026-10-15 | One line | canonical |
 | AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryo / ALCRM equipment list | canonical |
 | AQS-EQP-CRY-001 | `docs-authority/process/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryo / ALCRM equipment list | mirror of docs-authority/CRYO_EQUIPMENT.md (identical) |
 | AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | B | 2026-09-27 | Wafer fab equipment / process list | canonical |

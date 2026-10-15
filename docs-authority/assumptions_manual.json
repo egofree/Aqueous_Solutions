@@ -713,5 +713,31 @@
    "docs-authority/MATERIALS_STD.md"
   ],
   "id": "A-M-055"
+ },
+ {
+  "value": "0.90",
+  "units": "power factor",
+  "where": "AQS-ELEC-002 feeder currents",
+  "basis": "Typical mixed motor and electronic load",
+  "sensitivity": "Feeder current inverse",
+  "replaced_by": "Motor and rectifier data sheets",
+  "task": "X-ELS-03",
+  "files": [
+   "docs-authority/ONE_LINE.md"
+  ],
+  "id": "A-M-056"
+ },
+ {
+  "value": ">= 1 kW on MCC-1 480 V; < 1 kW on PP-1 208/120 V",
+  "units": "assignment rule",
+  "where": "AQS-ELEC-002",
+  "basis": "Common split of three-phase motors and small single-phase loads",
+  "sensitivity": "Transformer size",
+  "replaced_by": "Equipment nameplates",
+  "task": "X-ELS-03",
+  "files": [
+   "docs-authority/ONE_LINE.md"
+  ],
+  "id": "A-M-057"
  }
 ]
