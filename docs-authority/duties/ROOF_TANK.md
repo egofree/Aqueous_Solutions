@@ -17,3 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/ROOF_TANK.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. If this node is also a reservoir, that volume is not the two-minute holdup.
+9. Balance (AQS-PAR-003 Rev B). Shortfall from the peroxide make-up water (X-SAF-10) made up on IA-POT-01 123.295 kg/d (T4).

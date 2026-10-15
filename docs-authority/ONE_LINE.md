@@ -124,7 +124,7 @@ flowchart LR
   BUS -->|SF-EVAP_BASE| EVAP_BASE["EVAP_BASE 1.32 kW"]
   BUS -->|SF-EXT_HALL| EXT_HALL["EXT_HALL 91.34 kW"]
   BUS -->|SF-EVAP_ACID_VS| EVAP_ACID_VS["EVAP_ACID_VS 0.02 kW"]
-  BUS -->|SF-OIL_PYRO| OIL_PYRO["OIL_PYRO 1.41 kW"]
+  BUS -->|SF-OIL_PYRO| OIL_PYRO["OIL_PYRO 1.42 kW"]
   BUS -->|SF-BLACK_DIGEST| BLACK_DIGEST["BLACK_DIGEST 0.11 kW"]
   BUS -->|SF-BLACK_DEWATER| BLACK_DEWATER["BLACK_DEWATER 0.01 kW"]
   BUS -->|SF-BLACK_PASTEUR| BLACK_PASTEUR["BLACK_PASTEUR 0.06 kW"]
@@ -157,7 +157,7 @@ flowchart LR
 | SOL_ARK 480 V | LEACH_CSTR_1 | 2.00 | 2.7 | 15 | graph SF-LEACH_CSTR_1 |
 | SOL_ARK 480 V | WAFER_FAB | 2.00 | 2.7 | 15 | graph SF-WAFER_FAB |
 | SOL_ARK 480 V | EVAP_ACID | 1.50 | 2.0 | 15 | graph SF-EVAP_ACID |
-| SOL_ARK 480 V | OIL_PYRO | 1.41 | 1.9 | 15 | graph SF-OIL_PYRO |
+| SOL_ARK 480 V | OIL_PYRO | 1.42 | 1.9 | 15 | graph SF-OIL_PYRO |
 | SOL_ARK 480 V | EVAP_BASE | 1.32 | 1.8 | 15 | graph SF-EVAP_BASE |
 | SOL_ARK 480 V | WET_BENCH | 1.00 | 1.3 | 15 | graph SF-WET_BENCH |
 | SOL_ARK 480 V | BOARD_MILL | 1.00 | 1.3 | 15 | graph SF-BOARD_MILL |
@@ -256,10 +256,10 @@ flowchart LR
 | Item | kW |
 | --- | --- |
 | Sources on the bus (graph edges) | 245.90 |
-| Demand on the bus (this page) | 244.62 |
+| Demand on the bus (this page) | 244.61 |
 | Inverter rating (SOL_ARK_60K) | 2880.0 |
 | Shortfall against sources | -1.29 |
-| Shortfall against inverter | -2635.38 |
+| Shortfall against inverter | -2635.39 |
 
 ## Findings
 

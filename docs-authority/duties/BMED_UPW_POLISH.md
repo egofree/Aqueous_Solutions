@@ -21,3 +21,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/BMED_UPW_POLISH.stl`.
 
 8. Open items. No holdup basis for this class.
+9. Balance (AQS-PAR-003 Rev B). S25 266.640, IA-UPW-REMIN 133.295 kg/d (T4).

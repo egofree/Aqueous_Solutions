@@ -1854,13 +1854,13 @@
   "files": [
    "flow_graph/param/balance.py"
   ],
-  "value": "Held study mass rates reconciled by minimum weighted least squares to close every unit; transfer-function and stoichiometric edges held. Gross moves (> 5 %): IA-TERR-VAP 40.0 -> 37.176 kg/d (terrace vapour equals irrigation on the dry design day), IA-O2-RET 0 -> 2.824 kg/d (cold-box O2 surplus returned to CRYO_ASU)",
+  "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation",
   "units": "kg/d",
   "where": "AQS-PAR-003",
   "basis": "NARASIMHAN2000",
-  "sensitivity": "Reconciled study rates move as transfer functions replace them; the O2 surplus disappears when CRYO_ASU is driven by O2 demand (X-MFG-33)",
-  "replaced_by": "Per-unit transfer functions (X-PAR-02) and the in-house cold box design (X-MFG-33)",
-  "verification_test": "Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero"
+  "sensitivity": "Tolerance 2 % is a flow-meter class assumption; tighter meters tighten the gate",
+  "replaced_by": "Per-unit transfer functions (X-PAR-02) and the gas-exchange species layer (X-PAR-11)",
+  "verification_test": "test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123)"
  },
  {
   "id": "A-M-121",
@@ -1892,5 +1892,20 @@
   "sensitivity": "Lengths dominate copper quantity; panel locations will shorten most branch runs",
   "replaced_by": "Cable schedule with routed tray lengths and voltage-drop check (X-ELS-02)",
   "verification_test": "Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature"
+ },
+ {
+  "id": "A-M-123",
+  "task": "X-PAR-02",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/balance.py"
+  ],
+  "value": "T1 terrace transpiration = irrigation - drains (37.176 kg/d; no terrace CO2 supply or harvest, net fixation 0); T2 AHU condensate = greenhouse vapour in (53.876 kg/d); T3 cold-box O2 product = HDR_O2 draw (44.906 kg/d), no O2 return; T4 roof shortfall 2.824 kg/d by difference on IA-POT-01, IA-UPW-REMIN, S25, IA-LEACH-VCD; T5 IA-LEACH-ASU 17.44 -> 14.616 kg/d, still above the Henry-law bound (X-PAR-11)",
+  "units": "kg/d",
+  "where": "AQS-PAR-003 section 0",
+  "basis": "TAIZ2015 (photosynthesis and transpiration stoichiometry); SANDER2015 (Henry constants); AQS-DUTY-013/017/019; X-SAF-10 Faraday cell O2",
+  "sensitivity": "T5 carries the cross-species link; the leach dissolved-gas rate is the least certain figure in the chain",
+  "replaced_by": "Gas-exchange species layer X-PAR-11",
+  "verification_test": "T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound"
  }
 ]

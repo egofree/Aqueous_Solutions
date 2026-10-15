@@ -23,3 +23,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/VCD_TRAIN.stl`.
 
 8. Open items. None.
+9. Balance (AQS-PAR-003 Rev B). IA-LEACH-VCD 126.120, S25 266.640 kg/d (T4).

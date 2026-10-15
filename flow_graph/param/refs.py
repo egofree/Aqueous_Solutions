@@ -78,6 +78,8 @@ REFS = {
  'EU_IED2010': 'Directive 2010/75/EU (Industrial Emissions), Art. 50(2): gas from the combustion of waste raised to at least 850 C for at least 2 s after the last injection of combustion air; 1100 C where halogenated organics exceed 1 % as chlorine.',
  'METCALF5_BIOMASS': 'Metcalf & Eddy 5th ed. (2014) ch. 7: biomass composition C5H7O2N (113 g/mol), 1.42 g COD/g cells; digester gas about 65 % CH4 by volume (ch. 13).',
  'NARASIMHAN2000': 'Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints.',
+ 'TAIZ2015': 'Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass.',
+ 'SANDER2015': 'Sander R., Compilation of Henry\'s law constants (version 4.0) for water as solvent, Atmos. Chem. Phys. 15 (2015) 4399-4981: O2, N2, CO2 solubility in water.',
  'NREL_NSRDB': 'Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8.',
  'IEEE1547_2018': 'IEEE 1547-2018, Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (with 1547a-2020): abnormal-voltage Category II/III, ride-through, anti-islanding 2 s.',
  'UL1741_SB': 'UL 1741, 3rd ed. (2021), Supplement SB: inverters certified to IEEE 1547.1-2020 as grid-support utility-interactive.',

@@ -20,7 +20,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | Shell DN x height, mm | 450 x 390 | 350 x 300 | 200 x 170 |
 | Wall, mm | 4.0 | 4.0 | 4.5 |
 | Mixing | PBT D150 at 318 rpm, 18.7 W shaft, 0.09 kW motor | biogas recirculation through the base (no shaft seal) | none (static retort) |
-| Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 4.8 W losses and feed | 0.990 kW process, 1.415 kW electric |
+| Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 4.8 W losses and feed | 0.991 kW process, 1.415 kW electric |
 | Electrical, kW | 0.09 | 0.025 | 1.415 |
 | Material | CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve | HDPE (PE100) shell, 50 mm PIR insulation (U about 0.5 W/(m2 K)) | ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters |
 

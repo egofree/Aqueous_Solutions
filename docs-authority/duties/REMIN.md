@@ -18,3 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/REMIN.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. None.
+9. Balance (AQS-PAR-003 Rev B). IA-UPW-REMIN 133.295, IA-POT-01 123.295 kg/d (T4).

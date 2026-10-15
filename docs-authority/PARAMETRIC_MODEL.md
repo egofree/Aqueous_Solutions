@@ -49,19 +49,19 @@ All solved units close.
 | EVAP_ACID kW | 1.497 | 1.497 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_ACID water off, kg/d | 864.996 | 864.996 | -0.0 % | PERRY9_HCL |
 | EVAP_BASE kW | 1.324 | 1.324 | +0.0 % | X-MFG-30 in-house MVR design |
-| EVAP_BASE water off, kg/d | 799.193 | 799.193 | -0.0 % | PERRY9_HCL |
+| EVAP_BASE water off, kg/d | 799.193 | 799.193 | +0.0 % | PERRY9_HCL |
 | IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | -0.0 % | X-PAR-10, PERRY9_ABS |
-| EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_3 DC kW (cell + bus drop) | 2.249 | 2.250 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_3 DC kW (cell + bus drop) | 2.249 | 2.249 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_4 DC kW (cell + bus drop) | 0.485 | 0.485 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_5 DC kW (cell + bus drop) | 0.502 | 0.502 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_6 DC kW (cell + bus drop) | 0.547 | 0.547 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_7 DC kW (cell + bus drop) | 7.119 | 7.119 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
-| RECT_EW AC kW | 38.664 | 38.664 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3392.000 | 3391.157 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3392.000 | 3391.142 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -69,7 +69,7 @@ All solved units close.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.5 kg/d, water off 865.0 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 799.2 kg/d, 1.32 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
-5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12782 A, DC 30.93 kW, AC 38.66 kW.
+5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
 7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 126.5 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 5.06 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 799.2 kg/d, 1.32 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
@@ -318,7 +318,9 @@ All solved units close.
 | PERRY9_PUMP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 10 transport of fluids: pump hydraulic power P = rho g Q H; shaft power = hydraulic / efficiency. |
 | ROARK8 | Young W.C., Budynas R.G., Sadegh A.M., Roark's Formulas for Stress and Strain, 8th ed., McGraw-Hill (2012): table 11.4 rectangular plates (long plate, uniform load, edges simply supported: sigma = beta q b^2 / t^2, y = alpha q b^4 / (E t^3)); table 8.1 beams (simply supported, uniform load: M = w L^2 / 8, y = 5 w L^4 / (384 E I)). |
 | ROSE2015 | Rose C., Parker A., Jefferson B., Cartmell E., The characterization of feces and urine: a review of the literature to inform advanced treatment technology, Critical Reviews in Environmental Science and Technology 45 (2015) 1827-1879: median wet faeces 128 g/cap/d, dry about 28 g/cap/d, organic fraction 84-93 % of dry; urine 1.42 L/cap/d. |
+| SANDER2015 | Sander R., Compilation of Henry's law constants (version 4.0) for water as solvent, Atmos. Chem. Phys. 15 (2015) 4399-4981: O2, N2, CO2 solubility in water. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
+| TAIZ2015 | Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass. |
 | TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
 | UL1741_SB | UL 1741, 3rd ed. (2021), Supplement SB: inverters certified to IEEE 1547.1-2020 as grid-support utility-interactive. |
 | UL891 | UL 891, Switchboards (12th ed., 2019). |
@@ -574,4 +576,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design |
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50) |
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list |
-| A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero |
+| A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123) |
+| A-M-121 | Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic mm, m | 3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class |
+| A-M-122 | Wire inventory: branch-circuit lengths = Manhattan distance  m, AWG | Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature |
+| A-M-123 | T1 terrace transpiration = irrigation - drains (37.176 kg/d; kg/d | T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound |

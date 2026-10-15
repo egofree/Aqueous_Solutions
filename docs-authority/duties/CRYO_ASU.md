@@ -17,3 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_ASU.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. Tray efficiency is not measured.
+9. Balance (AQS-PAR-003 Rev B). IA-ASU-O2 44.906 kg/d follows the O2 draw (T3); IA-LEACH-ASU 14.616 kg/d (T5, above the Henry bound, X-PAR-11).

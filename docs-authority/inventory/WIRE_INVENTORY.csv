@@ -724,8 +724,6 @@ WTR,tank,REMIN,transfer pump S26 to HABITATION power,DC power pair,16 AWG,TC-ER 
 WTR,tank,REMIN,transfer pump S26 to HABITATION signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-WTR,treat,GREY_TREAT,transfer pump IA-GREY-RET to ROOF_TANK power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
-WTR,treat,GREY_TREAT,transfer pump IA-GREY-RET to ROOF_TANK signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,treat,GREY_TREAT,transfer pump S29 to VCD_TRAIN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 WTR,treat,GREY_TREAT,transfer pump S29 to VCD_TRAIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,vessel,VCD_TRAIN,transfer pump IA-VCD-BD to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

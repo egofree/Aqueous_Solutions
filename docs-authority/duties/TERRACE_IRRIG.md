@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 37.18 kg/d. Mass out 40.00 kg/d. Electrical duty 0.0000 kW. In: S40 37.18 kg/d (clean overflow). Out: IA-TERR-VAP 40.00 kg/d (greenhouse transpiration); S41 0 kg/d (rain + S40 return); S42 0 kg/d (dilute nutrient drain).
+1. Basis. Mass in 37.18 kg/d. Mass out 37.18 kg/d. Electrical duty 0.0000 kW. In: S40 37.18 kg/d (clean overflow). Out: IA-TERR-VAP 37.18 kg/d (greenhouse transpiration); S41 0 kg/d (rain + S40 return); S42 0 kg/d (dilute nutrient drain).
 
 2. Size.
-- In 40.00 kg/d, out 40.00 kg/d. No holdup claimed.
+- In 37.18 kg/d, out 37.18 kg/d. Transpiration = irrigation - drains (AQS-PAR-003 Rev B T1; TAIZ2015). No CO2 supply and no harvest edge, so net photosynthetic fixation on this node is zero. No holdup claimed.
 
 3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
 

@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 121 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 17 | Commissioning record |
+| T5 | Design calculations and drawings | 120 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 19 | Commissioning record |
 
-Total 242 items: 120 drivers, 122 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 243 items: 120 drivers, 123 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -270,7 +270,6 @@ Total 242 items: 120 drivers, 122 register entries. Classification rule: first m
 | A-M-109 | PV nameplate = 2.0 x balancing nameplate; design cloudy day  -, kW, kWh | NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2 | X-PAR-09 |
 | A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate | X-PAR-10 |
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list | X-INV-01 |
-| A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero | X-PAR-02 |
 | A-M-121 | Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic mm, m | 3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class | X-PIP-03 |
 | A-M-122 | Wire inventory: branch-circuit lengths = Manhattan distance  m, AWG | Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature | X-INV-03 |
 
@@ -295,3 +294,5 @@ Total 242 items: 120 drivers, 122 register entries. Classification rule: first m
 | A-M-055 | U 7 W/m2K; cp 3.0 (20 % HCl), 3.6 (20 % NaOH), 4.18 (water) W/m2K, kJ/kgK | Outlet temperature measured on the installed coil | X-MAT-19 |
 | A-M-065 | 0.1 A stray limit; 50 mm air break; 1 % protection current A, mm, fraction | Commissioning measurement of stray current and anode vendor rule | X-MAT-07 |
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50) | X-SAN-01 |
+| A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123) | X-PAR-02 |
+| A-M-123 | T1 terrace transpiration = irrigation - drains (37.176 kg/d; kg/d | T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound | X-PAR-02 |

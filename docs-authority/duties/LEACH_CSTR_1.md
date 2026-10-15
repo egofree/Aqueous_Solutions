@@ -64,3 +64,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 8. Open items. This unit has not been measured. IA-FEED-01 is feedstock-agnostic, checked across the AQS-ASSAY-001 Rev C envelope. Silicate solids at the regolith-like end are 5.5 times the reference and are held. S08 is the cathode split. S16 follows S08. Not a weighed sample. No resize.
 
 9. Revision (NaOH balance, owner decision 2026-10-15). IA-BASE-PPT re-derived at one NaOH per leached chloride (GREENWOOD), 2412 mol/d, 482.29 kg/d (was 1872 mol/d, 374.38 kg/d). IA-DIG-LIQ 25.30 kg/d (was 118.43). Sodium purge IA-NA-PURGE to NORTH_DOCK equal to the make-up mass, 5.06 kg/d.
+9. Balance (AQS-PAR-003 Rev B). IA-LEACH-VCD 126.120 kg/d (T4); IA-LEACH-ASU 14.616 kg/d (T5).

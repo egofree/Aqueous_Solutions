@@ -17,3 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/CRYO_AHU.stl`.
 
 8. Open items. Gas volume uses 1.2 kg/m³ because the edge has no m³/h. Duct bore uses 1.2 kg/m³.
+9. Balance (AQS-PAR-003 Rev B). IA-HVAC-COND 53.876 kg/d = greenhouse vapour in (T2).
