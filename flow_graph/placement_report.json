@@ -3000,8 +3000,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        23300.0,
-        4200.0,
+        23100.0,
+        4900.0,
         6000.0
       ],
       "size_mm": [
@@ -3010,7 +3010,7 @@
         800
       ],
       "source": "QUAT",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3022,8 +3022,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        17600.0,
-        0.0,
+        16600.0,
+        12400.0,
         6000.0
       ],
       "size_mm": [
@@ -3032,7 +3032,7 @@
         1200
       ],
       "source": "BIOFILTER",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3044,8 +3044,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        21200.0,
-        0.0,
+        16600.0,
+        4000.0,
         6000.0
       ],
       "size_mm": [
@@ -3054,7 +3054,7 @@
         2200
       ],
       "source": "SEED_BANK",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3066,8 +3066,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        22800.0,
-        2600.0,
+        16600.0,
+        2000.0,
         6000.0
       ],
       "size_mm": [
@@ -3076,7 +3076,7 @@
         1200
       ],
       "source": "STRUVITE",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3088,8 +3088,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        21200.0,
-        2600.0,
+        16600.0,
+        7000.0,
         6000.0
       ],
       "size_mm": [
@@ -3098,7 +3098,7 @@
         1500
       ],
       "source": "ASH",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3110,8 +3110,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        21200.0,
-        4200.0,
+        18600.0,
+        2000.0,
         6000.0
       ],
       "size_mm": [
@@ -3120,7 +3120,7 @@
         800
       ],
       "source": "IODIDE",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3132,8 +3132,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        17600.0,
-        8200.0,
+        16600.0,
+        0.0,
         6000.0
       ],
       "size_mm": [
@@ -3142,7 +3142,7 @@
         300
       ],
       "source": "NFT",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3154,17 +3154,17 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        17600.0,
-        9800.0,
+        22800.0,
+        9000.0,
         6000.0
       ],
       "size_mm": [
-        4000,
         1000,
+        4000,
         800
       ],
       "source": "MISTER",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3176,17 +3176,17 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        17600.0,
-        5600.0,
+        20100.0,
+        2000.0,
         6000.0
       ],
       "size_mm": [
-        6000,
         2000,
+        6000,
         600
       ],
       "source": "DUAL_ROOT",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3198,7 +3198,7 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        12000.0,
+        10600.0,
         0.0,
         6000.0
       ],
@@ -3208,7 +3208,7 @@
         400
       ],
       "source": "AZOLLA_BED",
-      "source_doc": "C5. Issued envelope 18000 x 5000 x 400 mm. Long side along the farm block. Not shrunk.",
+      "source_doc": "C5. Issued envelope 18000 x 5000 x 400 mm. Long side along the farm block. Not shrunk. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3220,8 +3220,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        22300.0,
-        4200.0,
+        23600.0,
+        0.0,
         6000.0
       ],
       "size_mm": [
@@ -3230,7 +3230,7 @@
         1500
       ],
       "source": "ETOH_STILL",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,
@@ -3242,8 +3242,8 @@
       "freecad_names": [],
       "level": "L1",
       "origin_mm": [
-        22200.0,
-        9800.0,
+        23600.0,
+        1400.0,
         6000.0
       ],
       "size_mm": [
@@ -3252,7 +3252,7 @@
         1200
       ],
       "source": "BUOH_STILL",
-      "source_doc": "C5. Node envelope in the farm block.",
+      "source_doc": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102).",
       "issued_size_mm": null,
       "apply": false,
       "fixed_feature": false,

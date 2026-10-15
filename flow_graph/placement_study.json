@@ -125,8 +125,8 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        17600,
-        11400,
+        20600,
+        14800,
         6000
       ],
       "tier": 1,
@@ -137,15 +137,15 @@
       ],
       "category": "pen",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "COMPOST",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        17600,
-        14400,
+        16600,
+        9000,
         6000
       ],
       "tier": 1,
@@ -156,15 +156,15 @@
       ],
       "category": "pen",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "DUCKWEED",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        22200,
-        10700,
+        20600,
+        9000,
         6000
       ],
       "tier": 1,
@@ -175,7 +175,7 @@
       ],
       "category": "bed",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "NFIX_BED",
@@ -372,27 +372,27 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        21200,
-        16100,
+        23100,
+        6300,
         6000
       ],
       "tier": 1,
       "size_mm": [
-        1200,
         800,
+        1200,
         1800
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "LIGNO_PRE",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        23000,
-        16100,
+        23100,
+        2700,
         6000
       ],
       "tier": 1,
@@ -403,7 +403,7 @@
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "BOARD_MILL",
@@ -733,8 +733,8 @@
       "level": "L1",
       "block_id": "HAB",
       "origin_mm": [
-        9800,
-        1800,
+        8800,
+        400,
         6000
       ],
       "tier": 1,
@@ -745,7 +745,7 @@
       ],
       "category": "skid",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in HAB 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in HAB 600 mm clear Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "EVAP_ACID",

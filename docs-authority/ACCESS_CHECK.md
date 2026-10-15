@@ -22,10 +22,7 @@ Basis: NEC 2023 110.26(A)(1)-(2); NFPA 101 (2024) 7.3.4.1.1 and IBC 2021 1018.5 
 
 | Row | Level | Faces with 914 mm clear |
 |---|---|---|
-| MISTER | L1 | none |
-| ASH | L1 | none |
-| IODIDE | L1 | none |
 
-Rows checked for access: 139; rows without a 914 mm face: 3.
+Rows checked for access: 139; rows without a 914 mm face: 0.
 
-Failing items: 3.
+Failing items: 0.

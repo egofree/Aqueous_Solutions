@@ -236,26 +236,26 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-AHU-AIR | HDR_N2 | CRYO_AHU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 37.9 | HDR_N2 → CRYO_AHU, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ZNBR-LOSS | ZNBR2 | BOUNDARY_EXPORT | cable | — | — | 7.9 | ZNBR2 → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 31.1 | GREY_TREAT → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-RES-01 | GROW_BED | LIGNO_PRE | DN50 | P5 | water | 17.3 | GROW_BED → LIGNO_PRE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-MAN-01 | ANIMAL_PEN | DIGESTER | DN50 | P5 | water | 30.2 | ANIMAL_PEN → DIGESTER, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-FEC-01 | HABITATION | COMPOST_TOILET | DN50 | P5 | water | 14.3 | HABITATION → COMPOST_TOILET, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-RES-01 | GROW_BED | LIGNO_PRE | DN50 | P5 | water | 15.1 | GROW_BED → LIGNO_PRE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-MAN-01 | ANIMAL_PEN | DIGESTER | DN50 | P5 | water | 36.2 | ANIMAL_PEN → DIGESTER, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-FEC-01 | HABITATION | COMPOST_TOILET | DN50 | P5 | water | 14.8 | HABITATION → COMPOST_TOILET, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-COMP-01 | GROW_BED | HTC | DN50 | P5 | water | 12.1 | GROW_BED → HTC, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-DIG-GAS | DIGESTER | EMETH | DN50 | P5 | water | 36.3 | DIGESTER → EMETH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-DIG-GAS | DIGESTER | EMETH | DN50 | P5 | water | 26.8 | DIGESTER → EMETH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-DIG-SOL | DIGESTER | NUTRIENT_DOSE | DN50 | P5 | water | 28.7 | DIGESTER → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EM-CH4 | EMETH | MEOH_TANK | DN50 | P5 | water | 53.2 | EMETH → MEOH_TANK, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EM-DIG | EMETH | NUTRIENT_DOSE | DN50 | P5 | water | 15.2 | EMETH → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-LIG-01 | LIGNO_PRE | BOARD_MILL | DN50 | P5 | water | 27.0 | LIGNO_PRE → BOARD_MILL, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-CEL-01 | LIGNO_PRE | BOARD_MILL | DN50 | P5 | water | 27.0 | LIGNO_PRE → BOARD_MILL, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EM-CH4 | EMETH | MEOH_TANK | DN50 | P5 | water | 43.7 | EMETH → MEOH_TANK, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EM-DIG | EMETH | NUTRIENT_DOSE | DN50 | P5 | water | 10.7 | EMETH → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-LIG-01 | LIGNO_PRE | BOARD_MILL | DN50 | P5 | water | 11.0 | LIGNO_PRE → BOARD_MILL, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-CEL-01 | LIGNO_PRE | BOARD_MILL | DN50 | P5 | water | 11.0 | LIGNO_PRE → BOARD_MILL, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-BOARD | BOARD_MILL | MFG_SHOP | DN50 | P5 | water | 12.5 | BOARD_MILL → MFG_SHOP, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-BOARD-SCRAP | BOARD_MILL | COMPOST | DN50 | P5 | water | 30.5 | BOARD_MILL → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-COMP-OUT | COMPOST | NUTRIENT_DOSE | DN50 | P5 | water | 10.7 | COMPOST → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-MEAT | ANIMAL_PEN | HABITATION | DN50 | P5 | water | 20.8 | ANIMAL_PEN → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-BOARD-SCRAP | BOARD_MILL | COMPOST | DN50 | P5 | water | 25.2 | BOARD_MILL → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-COMP-OUT | COMPOST | NUTRIENT_DOSE | DN50 | P5 | water | 3.1 | COMPOST → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-MEAT | ANIMAL_PEN | HABITATION | DN50 | P5 | water | 28.4 | ANIMAL_PEN → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 39.7 | NUTRIENT_DOSE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-FEED-01 | HOPPER | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 9.7 | HOPPER → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-POT-01 | REMIN | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 24.7 | REMIN → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-HTC-01 | HTC | COMPOST | DN50 | P5 | water | 21.4 | HTC → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-COMP-CO2 | COMPOST | HDR_CO2 | DN50 | P1 | aqueous process, default thermoplastic | 35.6 | COMPOST → HDR_CO2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-SUGAR | LIGNO_PRE | YEAST | DN50 | P5 | water | 28.0 | LIGNO_PRE → YEAST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-HTC-01 | HTC | COMPOST | DN50 | P5 | water | 14.9 | HTC → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-COMP-CO2 | COMPOST | HDR_CO2 | DN50 | P1 | aqueous process, default thermoplastic | 28.0 | COMPOST → HDR_CO2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-SUGAR | LIGNO_PRE | YEAST | DN50 | P5 | water | 18.1 | LIGNO_PRE → YEAST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-UPW-HAB | HDR_UPW | HABITATION | DN50 | P5 | water | 19.1 | HDR_UPW → HABITATION, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-BAG-01 | BAGHOUSE | LEACH_CSTR_1 | DN50 | P2 | hot leach liquor | 36.4 | BAGHOUSE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | DN50 | P5 | water | 26.8 | HDR_UPW → WAFER_FAB, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
@@ -278,7 +278,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-GEN-AIR | HDR_N2 | BACKUP_GEN | DN15 | P1 | aqueous process, default thermoplastic | 23.0 | HDR_N2 → BACKUP_GEN, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-NOX-HAB | ROOF_TANK | HABITATION | DN15 | P1 | acid or brine, at or below 60 C | 15.2 | ROOF_TANK → HABITATION, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-NUT-BED | NUTRIENT_DOSE | GROW_BED | DN15 | P5 | water | 0.0 | NUTRIENT_DOSE → GROW_BED, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-BED-COMP | GROW_BED | COMPOST | DN15 | P5 | water | 10.7 | GROW_BED → COMPOST, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-BED-COMP | GROW_BED | COMPOST | DN15 | P5 | water | 3.1 | GROW_BED → COMPOST, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-N2-VENT | CRYO_N2 | NORTH_DOCK | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 27.0 | CRYO_N2 → NORTH_DOCK, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-HOP-01 | HOPPER | LEACH_CSTR_1 | solids | — | — | 9.7 | HOPPER → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-ASU-N2 | CRYO_ASU | CRYO_N2 | DN20 | M1 | dry gas, H2/O2/N2/CO2 | 6.1 | CRYO_ASU → CRYO_N2, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
@@ -320,12 +320,12 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-O2-MAKE | CRYO_O2 | HDR_O2 | DN50 | P1 | aqueous process, default thermoplastic | 31.0 | CRYO_O2 → HDR_O2, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-DIG-FIX | DIGESTER | NUTRIENT_DOSE | DN50 | P5 | water | 28.7 | DIGESTER → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-FC-FIX | FUEL_CELL | NOX_SCRUB | DN50 | P2 | hot leach liquor | 14.0 | FUEL_CELL → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-COMP-FIX | COMPOST | HDR_CO2 | DN50 | P1 | aqueous process, default thermoplastic | 35.6 | COMPOST → HDR_CO2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-COMP-FIX | COMPOST | HDR_CO2 | DN50 | P1 | aqueous process, default thermoplastic | 28.0 | COMPOST → HDR_CO2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-AHU-FIX | CRYO_N2 | CRYO_AHU | DN50 | P1 | aqueous process, default thermoplastic | 0.0 | CRYO_N2 → CRYO_AHU, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-LEACH-H2 | LEACH_CSTR_1 | HDR_H2 | DN50 | P2 | hot leach liquor | 9.7 | LEACH_CSTR_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-FC-LEACH | FUEL_CELL | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 27.0 | FUEL_CELL → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-NOX-BOARD | NOX_SCRUB | BOARD_MILL | solids | — | — | 38.8 | NOX_SCRUB → BOARD_MILL, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-SUGAR-ABE | LIGNO_PRE | ABE | DN15 | P5 | water | 25.9 | LIGNO_PRE → ABE, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-SUGAR-ABE | LIGNO_PRE | ABE | DN15 | P5 | water | 15.9 | LIGNO_PRE → ABE, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-ETOH | ETOH_STILL | ALD | DN15 | P5 | water | 10.2 | ETOH_STILL → ALD, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-ETOH-AC | ETOH_STILL | ACETOX | DN15 | P5 | water | 11.4 | ETOH_STILL → ACETOX, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-ETOH-SOL | YEAST | WS_SOLV | DN15 | P5 | water | 23.8 | YEAST → WS_SOLV, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -357,7 +357,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-BUCL-H2O | BUCL | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 17.5 | BUCL → ROOF_TANK, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-BMIM | QUAT | ACEX | DN15 | P5 | water | 14.7 | QUAT → ACEX, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-QUAT-H2O | QUAT | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 28.8 | QUAT → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-IL | ACEX | LIGNO_PRE | DN15 | P1 | aqueous process, default thermoplastic | 22.0 | ACEX → LIGNO_PRE, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-IL | ACEX | LIGNO_PRE | DN15 | P1 | aqueous process, default thermoplastic | 15.4 | ACEX → LIGNO_PRE, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-IL-BRINE | ACEX | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 37.1 | ACEX → LEACH_CSTR_1, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-NH3-NIT | WS_AMMONIA | HNO3 | DN15 | P3 | oxidizer, HF or PVDF unit | 16.1 | WS_AMMONIA → HNO3, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-O2-NIT | HDR_O2 | HNO3 | DN15 | P3 | oxidizer, HF or PVDF unit | 20.5 | HDR_O2 → HNO3, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -367,12 +367,12 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | DN15 | P1 | acid or brine, at or below 60 C | 12.3 | WS_SOLV → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-BSFL-FISH | BSFL | FISH | solids | — | — | 27.1 | BSFL → FISH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-BSFL-HEN | BSFL | CHICKENS | solids | — | — |  | BSFL → CHICKENS, position missing for CHICKENS | solids: conveyor, bin or hand transfer; not piped |
-| IA-BSFL-FRASS | BSFL | COMPOST | solids | — | — | 15.4 | BSFL → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-WEED-FISH | DUCKWEED | FISH | solids | — | — | 29.1 | DUCKWEED → FISH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-BSFL-FRASS | BSFL | COMPOST | solids | — | — | 10.1 | BSFL → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-WEED-FISH | DUCKWEED | FISH | solids | — | — | 29.0 | DUCKWEED → FISH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-WEED-HEN | DUCKWEED | CHICKENS | solids | — | — |  | DUCKWEED → CHICKENS, position missing for CHICKENS | solids: conveyor, bin or hand transfer; not piped |
 | IA-WEED-GOAT | DUCKWEED | GOATS | solids | — | — |  | DUCKWEED → GOATS, position missing for GOATS | solids: conveyor, bin or hand transfer; not piped |
-| IA-WEED-HAB | DUCKWEED | HABITATION | solids | — | — | 26.6 | DUCKWEED → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-BED-WEED | GROW_BED | DUCKWEED | solids | — | — | 13.0 | GROW_BED → DUCKWEED, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-WEED-HAB | DUCKWEED | HABITATION | solids | — | — | 22.7 | DUCKWEED → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-BED-WEED | GROW_BED | DUCKWEED | solids | — | — | 9.1 | GROW_BED → DUCKWEED, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-AZOLLA | AZOLLA | FISH | solids | — | — |  | AZOLLA → FISH, position missing for AZOLLA | solids: conveyor, bin or hand transfer; not piped |
 | IA-RICE-AZ | GROW_BED | AZOLLA | solids | — | — |  | GROW_BED → AZOLLA, position missing for AZOLLA | solids: conveyor, bin or hand transfer; not piped |
 | IA-HEN-EGG | CHICKENS | HABITATION | solids | — | — |  | CHICKENS → HABITATION, position missing for CHICKENS | solids: conveyor, bin or hand transfer; not piped |
@@ -384,16 +384,16 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-FISH-DET | FISH | CRAYFISH | solids | — | — | 34.3 | FISH → CRAYFISH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CRAY-HAB | CRAYFISH | HABITATION | solids | — | — | 15.3 | CRAYFISH → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CAST | WORMS | GROW_BED | solids | — | — | 7.3 | WORMS → GROW_BED, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-WORM-MAN | WORMS | COMPOST | solids | — | — | 18.1 | WORMS → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-WORM-MAN | WORMS | COMPOST | solids | — | — | 10.4 | WORMS → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-HONEY | BEES | HABITATION | solids | — | — | 13.1 | BEES → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-MUSH | MUSHROOM | HABITATION | solids | — | — |  | MUSHROOM → HABITATION, position missing for MUSHROOM | solids: conveyor, bin or hand transfer; not piped |
 | IA-MUSH-SPENT | MUSHROOM | COMPOST | solids | — | — |  | MUSHROOM → COMPOST, position missing for MUSHROOM | solids: conveyor, bin or hand transfer; not piped |
 | IA-LIG-MUSH | LIGNO_PRE | MUSHROOM | solids | — | — |  | LIGNO_PRE → MUSHROOM, position missing for MUSHROOM | solids: conveyor, bin or hand transfer; not piped |
-| IA-URINE | HABITATION | COMPOST_TOILET | solids | — | — | 14.3 | HABITATION → COMPOST_TOILET, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-COVER | NFIX_BED | COMPOST_TOILET | solids | — | — | 9.4 | NFIX_BED → COMPOST_TOILET, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-TOIL-SOL | COMPOST_TOILET | COMPOST | solids | — | — | 26.6 | COMPOST_TOILET → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-TOIL-URN | COMPOST_TOILET | BIOFILTER | solids | — | — | 11.2 | COMPOST_TOILET → BIOFILTER, orthogonal × 1.2 (placement_study (STUDY); duty origin) | solids: conveyor, bin or hand transfer; not piped |
-| IA-NFIX-RES | NFIX_BED | COMPOST | solids | — | — | 24.8 | NFIX_BED → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-URINE | HABITATION | COMPOST_TOILET | solids | — | — | 14.8 | HABITATION → COMPOST_TOILET, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-COVER | NFIX_BED | COMPOST_TOILET | solids | — | — | 8.9 | NFIX_BED → COMPOST_TOILET, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-TOIL-SOL | COMPOST_TOILET | COMPOST | solids | — | — | 21.8 | COMPOST_TOILET → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-TOIL-URN | COMPOST_TOILET | BIOFILTER | solids | — | — | 14.0 | COMPOST_TOILET → BIOFILTER, orthogonal × 1.2 (placement_study (STUDY); duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-NFIX-RES | NFIX_BED | COMPOST | solids | — | — | 17.1 | NFIX_BED → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-NFIX-FOOD | NFIX_BED | HABITATION | solids | — | — | 22.0 | NFIX_BED → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-BED-NFIX | GROW_BED | NFIX_BED | solids | — | — | 14.0 | GROW_BED → NFIX_BED, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-STRAW | GROW_BED | MUSH_STRAW | solids | — | — |  | GROW_BED → MUSH_STRAW, position missing for MUSH_STRAW | solids: conveyor, bin or hand transfer; not piped |
@@ -418,10 +418,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CLAR-BIO | CLARIFIER | BIOFILTER | DN25 | P5 | water | 26.2 | CLARIFIER → BIOFILTER, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CLAR-SOL | CLARIFIER | FISH_SUMP | DN15 | P5 | water | 3.6 | CLARIFIER → FISH_SUMP, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-BIO-VEG | BIOFILTER | VEG_BED | DN20 | P5 | water | 7.4 | BIOFILTER → VEG_BED, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-BIO-WEED | BIOFILTER | DUCKWEED | DN15 | P5 | water | 17.5 | BIOFILTER → DUCKWEED, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-BIO-WEED | BIOFILTER | DUCKWEED | DN15 | P5 | water | 13.6 | BIOFILTER → DUCKWEED, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-BIO-BED | BIOFILTER | GROW_BED | DN20 | P5 | water | 11.1 | BIOFILTER → GROW_BED, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-VEG-SUMP | VEG_BED | FISH_SUMP | DN20 | P5 | water | 37.2 | VEG_BED → FISH_SUMP, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-WEED-SUMP | DUCKWEED | FISH_SUMP | DN15 | P5 | water | 26.2 | DUCKWEED → FISH_SUMP, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-WEED-SUMP | DUCKWEED | FISH_SUMP | DN15 | P5 | water | 26.1 | DUCKWEED → FISH_SUMP, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-BED-SUMP | GROW_BED | FISH_SUMP | DN20 | P5 | water | 29.4 | GROW_BED → FISH_SUMP, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-SUMP-FISH | FISH_SUMP | FISH | DN25 | P5 | water | 2.9 | FISH_SUMP → FISH, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CROP_TOMATO | VEG_BED | CROP_TOMATO | solids | — | — |  | VEG_BED → CROP_TOMATO, position missing for CROP_TOMATO | solids: conveyor, bin or hand transfer; not piped |
@@ -445,12 +445,12 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-HAB-WASTE | HABITATION | BSFL | solids | — | — | 22.5 | HABITATION → BSFL, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CLOSE-0 | BIOFILTER | NUTRIENT_DOSE | DN50 | P5 | water | 11.1 | BIOFILTER → NUTRIENT_DOSE, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | DN50 | P2 | hot leach liquor | 13.0 | LEACH_CSTR_1 → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
-| IA-CLOSE-2 | COMPOST | GROW_BED | DN50 | P5 | water | 10.7 | COMPOST → GROW_BED, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-CLOSE-2 | COMPOST | GROW_BED | DN50 | P5 | water | 3.1 | COMPOST → GROW_BED, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-CLOSE-3 | WORMS | HDR_N2 | DN50 | P1 | aqueous process, default thermoplastic | 21.3 | WORMS → HDR_N2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-CLOSE-4 | FISH | NUTRIENT_DOSE | DN50 | P5 | water | 32.3 | FISH → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-CLOSE-5 | HOPPER | LIGNO_PRE | DN50 | P5 | water | 44.1 | HOPPER → LIGNO_PRE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-CLOSE-6 | ACEX | ANIMAL_PEN | DN50 | P5 | water | 11.8 | ACEX → ANIMAL_PEN, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-CLOSE-7 | COMPOST | MEOH_TANK | DN50 | P5 | water | 49.0 | COMPOST → MEOH_TANK, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-CLOSE-5 | HOPPER | LIGNO_PRE | DN50 | P5 | water | 39.4 | HOPPER → LIGNO_PRE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-CLOSE-6 | ACEX | ANIMAL_PEN | DN50 | P5 | water | 19.5 | ACEX → ANIMAL_PEN, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-CLOSE-7 | COMPOST | MEOH_TANK | DN50 | P5 | water | 41.3 | COMPOST → MEOH_TANK, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-CLOSE-8 | MFG_SHOP | DIGESTER | DN50 | P5 | water | 17.9 | MFG_SHOP → DIGESTER, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-CLOSE-9 | BSFL | HDR_N2 | DN50 | P1 | aqueous process, default thermoplastic | 31.4 | BSFL → HDR_N2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-CLOSE-10 | LEACH_CSTR_1 | MEOH_FC | DN50 | P2 | hot leach liquor | 20.3 | LEACH_CSTR_1 → MEOH_FC, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
@@ -458,17 +458,17 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CLOSE-12 | BSFL | NUTRIENT_DOSE | solids | — | — | 7.3 | BSFL → NUTRIENT_DOSE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CLOSE-13 | QUAT | NUTRIENT_DOSE | DN15 | P5 | water | 14.3 | QUAT → NUTRIENT_DOSE, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CAST-CLOVER | WORMS | CLOVER | solids | — | — | 15.8 | WORMS → CLOVER, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-CLOVER-CUT | CLOVER | COMPOST | solids | — | — | 18.3 | CLOVER → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-CLOVER-CUT | CLOVER | COMPOST | solids | — | — | 13.0 | CLOVER → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-SEED-CLOVER | CLOVER | SEED_BANK | solids | — | — | 6.5 | CLOVER → SEED_BANK, orthogonal × 1.2 (placement_study (STUDY); duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-SEED-OUT | SEED_BANK | CLOVER | solids | — | — | 6.5 | SEED_BANK → CLOVER, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-URN-STR | COMPOST_TOILET | STRUVITE | solids | — | — | 16.9 | COMPOST_TOILET → STRUVITE, orthogonal × 1.2 (placement_study (STUDY); duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-URN-STR | COMPOST_TOILET | STRUVITE | solids | — | — | 19.8 | COMPOST_TOILET → STRUVITE, orthogonal × 1.2 (placement_study (STUDY); duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-STR-BED | STRUVITE | GROW_BED | solids | — | — | 15.4 | STRUVITE → GROW_BED, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-STALK | GROW_BED | ASH | solids | — | — | 13.3 | GROW_BED → ASH, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-ASH-BED | ASH | GROW_BED | solids | — | — | 13.3 | ASH → GROW_BED, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-I-SRC | LEACH_CSTR_1 | IODIDE | solids | — | — | 39.6 | LEACH_CSTR_1 → IODIDE, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-I-DOSE | IODIDE | HABITATION | solids | — | — | 25.4 | IODIDE → HABITATION, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-NPK-0 | GROW_BED | COMPOST_TOILET | solids | — | — | 18.9 | GROW_BED → COMPOST_TOILET, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-NPK-1 | COMPOST | WORMS | solids | — | — | 18.1 | COMPOST → WORMS, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-NPK-0 | GROW_BED | COMPOST_TOILET | solids | — | — | 21.8 | GROW_BED → COMPOST_TOILET, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-NPK-1 | COMPOST | WORMS | solids | — | — | 10.4 | COMPOST → WORMS, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-E-SUN | CURTAIL | PV_ARRAY | cable | — | — |  | CURTAIL → PV_ARRAY, position missing for CURTAIL | electrical: cable schedule X-ELS-06 |
 | IA-E-H2 | CURTAIL | FUEL_CELL | cable | — | — |  | CURTAIL → FUEL_CELL, position missing for CURTAIL | electrical: cable schedule X-ELS-06 |
 | IA-E-RECT | CURTAIL | EW_1 | cable | — | — |  | CURTAIL → EW_1, position missing for CURTAIL | electrical: cable schedule X-ELS-06 |
@@ -536,8 +536,8 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-SIC-C | OIL_PYRO | SIC_FURNACE | DN15 | P1 | aqueous process, default thermoplastic | 6.3 | OIL_PYRO → SIC_FURNACE, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-SIC-CO | SIC_FURNACE | AFTERBURNER | DN15 | P1 | aqueous process, default thermoplastic | 6.3 | SIC_FURNACE → AFTERBURNER, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-SIC-RET | NUTRIENT_DOSE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 39.7 | NUTRIENT_DOSE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-CRAY-DET | CRAYFISH | COMPOST | solids | — | — | 13.7 | CRAYFISH → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
-| IA-IL-SPENT | LIGNO_PRE | DIGESTER | DN15 | P1 | aqueous process, default thermoplastic | 38.5 | LIGNO_PRE → DIGESTER, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-CRAY-DET | CRAYFISH | COMPOST | solids | — | — | 6.1 | CRAYFISH → COMPOST, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
+| IA-IL-SPENT | LIGNO_PRE | DIGESTER | DN15 | P1 | aqueous process, default thermoplastic | 26.3 | LIGNO_PRE → DIGESTER, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-GLX-O2 | HDR_O2 | GLYOXAL | DN15 | P1 | aqueous process, default thermoplastic | 20.9 | HDR_O2 → GLYOXAL, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-GLX-H2O | GLYOXAL | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 19.1 | GLYOXAL → ROOF_TANK, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-FORM-O2 | HDR_O2 | FORM | DN15 | P1 | aqueous process, default thermoplastic | 23.1 | HDR_O2 → FORM, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -609,15 +609,15 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SQ-BLOW_MOLD | BLOW_MOLD | HEAT_SINK | cable | — | — |  | BLOW_MOLD → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | cable | — | — | 24.7 | SOL_ARK_60K → SOLAR_PV_CELL, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | SQ-SOLAR_PV_CELL | SOLAR_PV_CELL | HEAT_SINK | cable | — | — |  | SOLAR_PV_CELL → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SF-ANIMAL_PEN | SOL_ARK_60K | ANIMAL_PEN | cable | — | — | 34.7 | SOL_ARK_60K → ANIMAL_PEN, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| SF-ANIMAL_PEN | SOL_ARK_60K | ANIMAL_PEN | cable | — | — | 36.6 | SOL_ARK_60K → ANIMAL_PEN, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-ANIMAL_PEN | ANIMAL_PEN | HEAT_SINK | cable | — | — |  | ANIMAL_PEN → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SF-COMPOST | SOL_ARK_60K | COMPOST | cable | — | — | 32.5 | SOL_ARK_60K → COMPOST, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| SF-COMPOST | SOL_ARK_60K | COMPOST | cable | — | — | 36.4 | SOL_ARK_60K → COMPOST, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-COMPOST | COMPOST | HEAT_SINK | cable | — | — |  | COMPOST → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-DIGESTER | SOL_ARK_60K | DIGESTER | cable | — | — | 49.7 | SOL_ARK_60K → DIGESTER, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-DIGESTER | DIGESTER | HEAT_SINK | cable | — | — |  | DIGESTER → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SF-EMETH | SOL_ARK_60K | EMETH | cable | — | — | 36.7 | SOL_ARK_60K → EMETH, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| SF-EMETH | SOL_ARK_60K | EMETH | cable | — | — | 46.7 | SOL_ARK_60K → EMETH, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-EMETH | EMETH | HEAT_SINK | cable | — | — |  | EMETH → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SF-LIGNO_PRE | SOL_ARK_60K | LIGNO_PRE | cable | — | — | 38.9 | SOL_ARK_60K → LIGNO_PRE, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| SF-LIGNO_PRE | SOL_ARK_60K | LIGNO_PRE | cable | — | — | 51.0 | SOL_ARK_60K → LIGNO_PRE, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-LIGNO_PRE | LIGNO_PRE | HEAT_SINK | cable | — | — |  | LIGNO_PRE → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-BOARD_MILL | SOL_ARK_60K | BOARD_MILL | cable | — | — | 46.9 | SOL_ARK_60K → BOARD_MILL, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-BOARD_MILL | BOARD_MILL | HEAT_SINK | cable | — | — |  | BOARD_MILL → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
@@ -661,7 +661,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SQ-BUCL | BUCL | HEAT_SINK | cable | — | — |  | BUCL → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-BSFL | SOL_ARK_60K | BSFL | cable | — | — | 46.5 | SOL_ARK_60K → BSFL, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-BSFL | BSFL | HEAT_SINK | cable | — | — |  | BSFL → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SF-DUCKWEED | SOL_ARK_60K | DUCKWEED | cable | — | — | 37.7 | SOL_ARK_60K → DUCKWEED, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| SF-DUCKWEED | SOL_ARK_60K | DUCKWEED | cable | — | — | 37.8 | SOL_ARK_60K → DUCKWEED, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-DUCKWEED | DUCKWEED | HEAT_SINK | cable | — | — |  | DUCKWEED → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-WORMS | SOL_ARK_60K | WORMS | cable | — | — | 35.0 | SOL_ARK_60K → WORMS, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-WORMS | WORMS | HEAT_SINK | cable | — | — |  | WORMS → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
@@ -679,7 +679,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SQ-AZOLLA | AZOLLA | HEAT_SINK | cable | — | — |  | AZOLLA → HEAT_SINK, position missing for AZOLLA, HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-MUSHROOM | SOL_ARK_60K | MUSHROOM | cable | — | — |  | SOL_ARK_60K → MUSHROOM, position missing for MUSHROOM | electrical: cable schedule X-ELS-06 |
 | SQ-MUSHROOM | MUSHROOM | HEAT_SINK | cable | — | — |  | MUSHROOM → HEAT_SINK, position missing for MUSHROOM, HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SF-COMPOST_TOILET | SOL_ARK_60K | COMPOST_TOILET | cable | — | — | 36.6 | SOL_ARK_60K → COMPOST_TOILET, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
+| SF-COMPOST_TOILET | SOL_ARK_60K | COMPOST_TOILET | cable | — | — | 37.1 | SOL_ARK_60K → COMPOST_TOILET, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-COMPOST_TOILET | COMPOST_TOILET | HEAT_SINK | cable | — | — |  | COMPOST_TOILET → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SF-NFIX_BED | SOL_ARK_60K | NFIX_BED | cable | — | — | 46.0 | SOL_ARK_60K → NFIX_BED, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
 | SQ-NFIX_BED | NFIX_BED | HEAT_SINK | cable | — | — |  | NFIX_BED → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |

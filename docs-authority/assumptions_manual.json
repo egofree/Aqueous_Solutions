@@ -1549,5 +1549,22 @@
    "flow_graph/place_ew_aisle.py"
   ],
   "verification_test": "Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths"
+ },
+ {
+  "id": "A-M-102",
+  "value": "L1 farm re-row: 914 mm minimum between all farm rows; farm rows at x 10600..24000 (FARM/HAB line moved 1400 mm west of x=12000); COMPOST_TOILET moved to (8800, 400); issued envelope sizes unchanged, 90 deg rotation allowed",
+  "units": "mm",
+  "where": "flow_graph/farm_rerow.py, placement seed/study Rev K",
+  "basis": "NFPA 101 (2024) 7.3.4.1.1 / IBC 2021 1018.5 914 mm minimum clear width; owner rule 2026-10-15 (sizing-driven layout changes approved, no position fixed)",
+  "sensitivity": "Farm pipe and grow-light runs; HAB floor area reduced by 1400 x 18000 mm",
+  "replaced_by": "Farm fit-out model with irrigation and lighting",
+  "task": "X-BLD-04",
+  "files": [
+   "flow_graph/farm_rerow.py",
+   "flow_graph/placement_seed.json",
+   "flow_graph/placement_study.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan"
  }
 ]

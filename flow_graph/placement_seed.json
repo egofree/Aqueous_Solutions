@@ -1444,7 +1444,7 @@
       "unit_id": "AZOLLA_BED",
       "level": "L1",
       "origin_mm": [
-        12000,
+        10600,
         0,
         6000
       ],
@@ -1453,14 +1453,14 @@
         18000,
         400
       ],
-      "source": "C5. Issued envelope 18000 x 5000 x 400 mm. Long side along the farm block. Not shrunk."
+      "source": "C5. Issued envelope 18000 x 5000 x 400 mm. Long side along the farm block. Not shrunk. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "BIOFILTER",
       "level": "L1",
       "origin_mm": [
-        17600,
-        0,
+        16600,
+        12400,
         6000
       ],
       "size_mm": [
@@ -1468,29 +1468,29 @@
         5000,
         1200
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "DUAL_ROOT",
       "level": "L1",
       "origin_mm": [
-        17600,
-        5600,
+        20100,
+        2000,
         6000
       ],
       "size_mm": [
-        6000,
         2000,
+        6000,
         600
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "NFT",
       "level": "L1",
       "origin_mm": [
-        17600,
-        8200,
+        16600,
+        0,
         6000
       ],
       "size_mm": [
@@ -1498,29 +1498,29 @@
         1000,
         300
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "MISTER",
       "level": "L1",
       "origin_mm": [
-        17600,
-        9800,
+        22800,
+        9000,
         6000
       ],
       "size_mm": [
-        4000,
         1000,
+        4000,
         800
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "SEED_BANK",
       "level": "L1",
       "origin_mm": [
-        21200,
-        0,
+        16600,
+        4000,
         6000
       ],
       "size_mm": [
@@ -1528,14 +1528,14 @@
         2000,
         2200
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "ASH",
       "level": "L1",
       "origin_mm": [
-        21200,
-        2600,
+        16600,
+        7000,
         6000
       ],
       "size_mm": [
@@ -1543,14 +1543,14 @@
         1000,
         1500
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "STRUVITE",
       "level": "L1",
       "origin_mm": [
-        22800,
-        2600,
+        16600,
+        2000,
         6000
       ],
       "size_mm": [
@@ -1558,14 +1558,14 @@
         1000,
         1200
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "IODIDE",
       "level": "L1",
       "origin_mm": [
-        21200,
-        4200,
+        18600,
+        2000,
         6000
       ],
       "size_mm": [
@@ -1573,14 +1573,14 @@
         500,
         800
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "ETOH_STILL",
       "level": "L1",
       "origin_mm": [
-        22300,
-        4200,
+        23600,
+        0,
         6000
       ],
       "size_mm": [
@@ -1588,14 +1588,14 @@
         400,
         1500
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "QUAT",
       "level": "L1",
       "origin_mm": [
-        23300,
-        4200,
+        23100,
+        4900,
         6000
       ],
       "size_mm": [
@@ -1603,14 +1603,14 @@
         400,
         800
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "BUOH_STILL",
       "level": "L1",
       "origin_mm": [
-        22200,
-        9800,
+        23600,
+        1400,
         6000
       ],
       "size_mm": [
@@ -1618,7 +1618,7 @@
         300,
         1200
       ],
-      "source": "C5. Node envelope in the farm block."
+      "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
     },
     {
       "unit_id": "EW_9",
@@ -1778,5 +1778,6 @@
   "notes_rev_c5": "Twenty envelopes placed in the sector block. AZOLLA_BED keeps 18000 by 5000 by 400 mm with the long side on the farm block. CURTAIL and HEAT_SINK have envelopes and no GEO block, so they were not placed. Sixty-two others have no envelope. The plate did not grow.",
   "notes_rev_i": "2026-10-15, X-RSZ-03, re-run for the X-PAR acid-loop decision (CE 0.85, AQS-PAR-001). EW_1..EW_9 at sized envelopes 370-3270 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear, 914 mm access aisle between cells (Rev K, AQS-BLD-012). Supersedes the 750 mm pitch rows.",
   "notes_rev_j": "2026-10-15, X-BLD-04. 12 rows moved the smallest distance to clear maint_clear_mm 600 (flow_graph/clear_pairs.py); partition sides kept.",
-  "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2021 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review."
+  "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2021 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review.",
+  "notes_rev_k_farm": "2026-10-15, X-BLD-04 farm re-row: farm rows occupy x 10600..24000 on L1, west of the AQS-BLD-001 FARM/HAB line at x=12000; HAB rows displaced: ['COMPOST_TOILET']. 914 mm between farm rows (A-M-102)."
 }
