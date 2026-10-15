@@ -249,10 +249,10 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | SCRUB | BAGHOUSE | transfer pump IA-BAG-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 7.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | SCRUB | H2_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | 1 | 6.6 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | NOX_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | NOX_SCRUB | transfer pump IA-NOX-CO2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | 1 | 30.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| scrubber | NOX_SCRUB | transfer pump IA-NOX-H2O to ROOF_TANK | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | 1 | 226.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-CO2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | 1 | 30.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-H2O to ROOF_TANK | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | 1 | 226.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | scrubber | NOX_SCRUB | transfer pump IA-NOX-N to NUTRIENT_DOSE | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | 1 | 20.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| scrubber | NOX_SCRUB | transfer pump IA-NOX-N2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | 1 | 243.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-N2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | 1 | 243.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### GEO
 
@@ -336,7 +336,7 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | FARM | NUTRIENT_DOSE | on/off valve IA-SIC-RET | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | 1 | assumed one per dosed line |
 | FARM | NUTRIENT_DOSE | on/off valve S07 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | 1 | assumed one per dosed line |
 | FARM | NUTRIENT_DOSE | transfer pump IA-NUT-01 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 13.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| FARM | NUTRIENT_DOSE | transfer pump IA-NUT-BED to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 129.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| FARM | NUTRIENT_DOSE | transfer pump IA-NUT-BED to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 129.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | NUTRIENT_DOSE | transfer pump IA-NUT-LEACH to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 127.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | NUTRIENT_DOSE | transfer pump IA-SIC-RET to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | NUTRIENT_DOSE | transfer pump S07 to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 2.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -349,7 +349,7 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | LEACH_EW | HOPPER | screw feeder | induction IE3 | IEC 71 / 0.25 kW | 0.18 | 208 V 3-ph | S3 | 1 | assumed |
 | LEACH_EW | HOPPER | transfer pump IA-CLOSE-5 to LIGNO_PRE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | LEACH_EW | HOPPER | transfer pump IA-FEED-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | 1 | 102.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| OIL_GLASS | AFTERBURNER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | 1 | 6.3 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| OIL_GLASS | AFTERBURNER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | 1 | 7.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | OIL_GLASS | OIL_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | OIL_GLASS | OIL_FRAC | transfer pump CUT-1 to PROD_C5_C10 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 11.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | OIL_GLASS | OIL_FRAC | transfer pump CUT-2 to PROD_C11_C18 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 8.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -438,7 +438,7 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | ROOF | ROOF_TANK | transfer pump IA-FLUE-QUENCH to FLUE_KO | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | 1 | 24.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-NOX-HAB to HABITATION | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | 1 | 207.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-PEROX-H2O to WS_PEROX | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 2.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| ROOF | ROOF_TANK | transfer pump S21 to HABITATION | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | 1 | 120.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| ROOF | ROOF_TANK | transfer pump S21 to HABITATION | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | 1 | 120.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | digest | BLACK_ALK_HOLD | NaOH dosing pump | solenoid | ISO 15218 coil, 22 mm | 0.03 | 24 V DC | S3 | 1 | BOM; shaft assumed (A-M-119) |
 | digest | BLACK_ALK_HOLD | Release valve per tank | BLDC actuator | ISO 5211 F03 mount | 0.01 | 24 V DC | S2 | 1 | BOM |
 | digest | BLACK_DEWATER | Gearmotor 0.09 kW | induction IE3 | IEC 63 / 0.12 kW | 0.09 | 208 V 3-ph | S1 | 1 | BOM (sized) |

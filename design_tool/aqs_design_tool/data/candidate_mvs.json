@@ -290,7 +290,18 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "design": {
+          "flue_kg_h": 10.1019,
+          "Q_m3_s_850C": 0.009,
+          "V_m3": 0.0179,
+          "D_mm": 200,
+          "L_mm": 600,
+          "net_heat_kW": 0.0307,
+          "feed_kg_d": 7.0318,
+          "basis": "X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated"
+        },
+        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1813,7 +1824,7 @@
           700,
           1100
         ],
-        "duty_check": "flue 10.07 kg/h (S67): DN300 KO drum with mesh pad fits the 600x700 plan even at the 180 m3/h AQS-GAS-003 NCG case (0.7 m/s)",
+        "duty_check": "flue 10.10 kg/h (S67, X-SAN-01 Rev B): DN300 KO drum superficial 0.040 m/s at 80 C; fits the 600x700 plan (AQS-GAS-003 NCG case 0.7 m/s governs)",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -2349,7 +2360,7 @@
               "layer": "mass",
               "dir": "out",
               "label": "hab AHU condensate + non-grey remainder",
-              "value": 4.1338,
+              "value": 4.8994,
               "basis": "S12 governs grey; X-SAN-01 excreta from occupancy (by difference)",
               "kind": "by_difference"
             }
@@ -2369,7 +2380,26 @@
           "IA-COMP-OUT": 141.150288,
           "outs": 943.0868119999998,
           "cond": 4.8994,
-          "S11": 0.8
+          "S11": 0.8,
+          "edges": {
+            "IA-AB-FLUE": 6.266188,
+            "S67": 117.436188,
+            "IA-FLUE-EXH": 264.396188,
+            "IA-NOX-H2O": 226.221758,
+            "IA-NOX-CO2": 30.466188,
+            "IA-NOX-N": 20.0,
+            "IA-NOX-N2": 243.89,
+            "S21": 120.0,
+            "IA-ASU-CO2": 30.466188,
+            "IA-ASU-O2": 48.05,
+            "S83": 48.05,
+            "S02": 3.36,
+            "S85": 12.17,
+            "S89": 17.071,
+            "IA-NUT-BED": 129.629,
+            "S14": 2.4
+          },
+          "ins": 943.086812
         }
       },
       "modules": [],
@@ -3328,7 +3358,8 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "duty_check": "inlet 20.78 kg/h (X-SAN-01 Rev B): DN100 superficial 0.61 m/s; full packing design at X-PAR-03"
       },
       "modules": [],
       "electrical_role": null,
@@ -3691,7 +3722,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 234.1775,
+        "value": 234.1518,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -9555,10 +9586,10 @@
       "phase": "G",
       "carries": "O2",
       "rate": {
-        "value": 3.36,
+        "value": 3.040465,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: 0.84 kg O2/p.d x 4 crew"
+        "note": "AQS-DUTY-010: 0.84 kg O2/p.d x 4 crew | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
@@ -9725,10 +9756,10 @@
       "phase": "S",
       "carries": "organics",
       "rate": {
-        "value": 0.0344,
+        "value": 0.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-SAN-01 AQS-DUTY-063. Afterburner feed held at the AQS-DUTY-008 design; grow-bed organics to the afterburner reduced by the sanitation cake and biogas (0.766 kg/d), retained in GROW_BED (A-M-118)."
+        "note": "Grow-bed organics to the afterburner (S11 restored, X-SAN-01 Rev B)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "OIL",
@@ -9776,10 +9807,10 @@
       "phase": "S",
       "carries": "food",
       "rate": {
-        "value": 2.4,
+        "value": 2.807136,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: crew ration 0.6 kg/p.d x 4; production 4.2 = S14 + S14X 1.8"
+        "note": "AQS-DUTY-010: crew ration 0.6 kg/p.d x 4; production 4.2 = S14 + S14X 1.8 | X-SAN-01 Rev B: +0.4071 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "HAB",
@@ -9912,10 +9943,10 @@
       "phase": "L",
       "carries": "clean tower water",
       "rate": {
-        "value": 120.0,
+        "value": 120.678,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: hab hygiene water 30.0 L/p.d x 4"
+        "note": "AQS-DUTY-010: hab hygiene water 30.0 L/p.d x 4 | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -10677,10 +10708,10 @@
       "phase": "G",
       "carries": "flue N2/O2/CO2/NOx",
       "rate": {
-        "value": 117.436188,
+        "value": 118.201788,
         "unit": "kg/d",
         "status": "study",
-        "note": "Flue includes the silicon-carbide CO."
+        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -11000,10 +11031,10 @@
       "phase": "G",
       "carries": "O2 product",
       "rate": {
-        "value": 48.05,
+        "value": 47.730465,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -11034,10 +11065,10 @@
       "phase": "G",
       "carries": "CO2 product after FLUE_KO",
       "rate": {
-        "value": 12.17,
+        "value": 12.53012,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": null,
       "to_sector_id": null,
@@ -11136,10 +11167,10 @@
       "phase": "G",
       "carries": "CO2 enrichment dose (FARM AHU supply)",
       "rate": {
-        "value": 17.071,
+        "value": 17.43112,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
@@ -11374,10 +11405,10 @@
       "phase": "G",
       "carries": "flue",
       "rate": {
-        "value": 6.266188,
+        "value": 7.031788,
         "unit": "kg/d",
         "status": "study",
-        "note": "Includes the silicon-carbide CO."
+        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -11595,10 +11626,10 @@
       "phase": "G",
       "carries": "flue to the NOx scrubber",
       "rate": {
-        "value": 264.396188,
+        "value": 265.161788,
         "unit": "kg/d",
         "status": "study",
-        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07)."
+        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12683,10 +12714,10 @@
       "phase": "S/L",
       "carries": "scrubber condensate",
       "rate": {
-        "value": 226.221758,
+        "value": 226.899758,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07)."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12700,10 +12731,10 @@
       "phase": "S/L",
       "carries": "nitrate liquor",
       "rate": {
-        "value": 20.0,
+        "value": 20.047016,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12717,10 +12748,10 @@
       "phase": "S/L",
       "carries": "scrubbed CO2 to the cold box",
       "rate": {
-        "value": 30.466188,
+        "value": 30.826308,
         "unit": "kg/d",
         "status": "study",
-        "note": "The added flue mass leaves with the CO2 cut."
+        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12734,10 +12765,10 @@
       "phase": "S/L",
       "carries": "scrubbed flue nitrogen to the cold box",
       "rate": {
-        "value": 243.89,
+        "value": 243.570465,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12802,10 +12833,10 @@
       "phase": "L",
       "carries": "nitrate and bleed salts",
       "rate": {
-        "value": 129.629,
+        "value": 129.676016,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016."
+        "note": "AQS-DUTY-016. | X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12887,10 +12918,10 @@
       "phase": "G",
       "carries": "oxygen product",
       "rate": {
-        "value": 48.05,
+        "value": 47.730465,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue."
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12904,10 +12935,10 @@
       "phase": "G",
       "carries": "CO2 product",
       "rate": {
-        "value": 30.466188,
+        "value": 30.826308,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cold box passes the added CO2."
+        "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

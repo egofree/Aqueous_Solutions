@@ -134,7 +134,7 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-M-115 | Hall classed general industrial ordinary hazard, sprinklered (NFPA 13); 9.29 m2/person; travel 76.2 m governs (NFPA 101 Table 40.2.6); doors as 1626 mm clear pairs at 90 m spacing; 2.2 m 2 h exit passageway at mid-depth; rectilinear travel bound on a 2 m grid; code editions per AQS-STD-002 | m, m2/person | AQS-EGR-002, AQS-STD-002 | NFPA101_2024, IBC2021_CH10, NFPA13_2022 | Low-hazard contents remove the travel limit and the passageway; high-piled storage changes sprinkler design | Hall programme and AHJ review | X-STD-01 |
 | A-M-116 | In-house reactors: GLASS_DIGEST residence 3 x shrinking-sphere kinetic time on 100 um fines at 2.0e-4 g/(m2 s) (glass-fibre rate, order 0.31 to 2 M), floor 1 h; DIGESTER SRT 20 d; OIL_PYRO 500 C, 1 h, heat of pyrolysis 1.3 MJ/kg, cp 2.5 kJ/(kg K), heater efficiency 0.7; standard tank H = T, fill 0.75, tip 2.5 m/s, Np 1.27 | h, d, MJ/kg, kJ/(kg K), m/s | AQS-DUTY-062 | JMS2017_GLASSFIBRE, MARAGHECHI2016, METCALF5, ANUAR2016, GAO2010, PERRY9_MIX, PERRY9_HEAT, DVS2205, ASME_VIII1_UG16, ASME_II_D | Soda-lime cullet may dissolve slower than glass fibre (residence scales with 1/k); pyrolysis heat scales the OIL_PYRO bus load linearly | Bench and pilot data | X-MFG-31 |
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x shaft power; 4-pole IEC 60072-1 frame per CENELEC HD 231; drive-end bearing per frame is typical maker practice (not standardised); unsized pumps take the 0.18 kW class; make/buy split per family at current plant volume | kW | AQS-MFG-011 | IEC 60034-1, IEC 60034-30-1, IEC 60072-1, ISO 15, ISO 492, ISO 4014/4017/4032/7089, ISO 3506-1, ISO 898-1, ISO 3601-1, ISO 6194-1, EN 1514-1, ASME B16.21, ASTM D1785, ISO 1452-2, ISO 2858, ISO 15783 | Pump motors move one or two frame sizes when the pump curves are sized; bearing sizes depend on the chosen motor maker or in-house design | Pump curves per unit (X-ELS-02) and the in-house motor drawings | X-MFG-32 |
-| A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; afterburner feed held at design by reducing S11 by the cake and biogas mass | persons, L, kg/d, m | AQS-DUTY-063 | ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500 | Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly | Occupancy schedule, toilet fit-out, challenge-test results | X-SAN-01 |
+| A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; cake and biogas burned on top of the existing afterburner feed (S11 unchanged), products carried downstream by species (VS as C5H7O2N, biogas 65 % CH4, dry VS LHV about 20 MJ/kg); afterburner chamber >= 850 C for >= 2 s | persons, L, kg/d, m | AQS-DUTY-063 | ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500, METCALF5_BIOMASS, EU_IED2010 | Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly | Occupancy schedule, toilet fit-out, challenge-test results | X-SAN-01 |
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet line at 10 m head, efficiency 0.4, gravity not credited; induced-draft fan per scrubber/dryer/baghouse/AHU/thermal/fab unit at 1 kPa, 0.5; screw conveyor 0.37 kW per solids line >= 50 kg/d; one solenoid valve per dosed line; agitators 0.25 kW; EXT_HALL 8 heat-pump modules with 2 condenser fans each and 8 AHUs at 500 Pa, 0.6; flow battery 2 pumps x 48 strings at 0.25 kW; cold-box compressor 0.85 x graph kW; < 60 W shaft as 24 V DC BLDC | m, kPa, kW | AQS-INV-001 | Study rules pending each unit's task 02 sizing; IEC 60034-1 / IEC 60072-1 for ratings and frames | Pump and fan counts fall where gravity or shared headers are used; family counts shift accordingly | Unit sizing (task 02), P&IDs (task 03) and mfg models | X-INV-01 |
 
 ## 2. Graph study and assumed values
@@ -350,7 +350,7 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-203fca | 343.1 | kg/d | graph IA-WET-FLOAT-01 rate | AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 |  | X-BAS-02 |
 | A-G-ba860f | 5.0 | kg/d | graph NCG_TO_AB rate | AQS-DUTY-010: = IA-OIL-03 (header pass-through) |  | X-BAS-02 |
 | A-G-195090 | 67.3 | kg/d | graph S01 rate | Mid of AQS-AUD-001 §11 FARM_SUMP / UPW makeup S01/S21 ~50–140 L/d |  | X-BAS-02 |
-| A-G-50d0d3 | 3.36 | kg/d | graph S02 rate | AQS-DUTY-010: 0.84 kg O2/p.d x 4 crew |  | X-BAS-02 |
+| A-G-50d0d3 | 3.040465 | kg/d | graph S02 rate | AQS-DUTY-010: 0.84 kg O2/p.d x 4 crew / X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-354461 | 1.4998 | kg/d | graph S03 rate | AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L |  | X-BAS-02 |
 | A-G-ef283a | 1.575188 | kg/d | graph S04 rate | Bed takes the added CO2. |  | X-BAS-02 |
 | A-G-b2650b | 6.628752089257418 | kg/d | graph S05 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. FC 4.8 + MeOH 0.94. Genset not on the design day. |  | X-BAS-02 |
@@ -360,10 +360,10 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-bb03be | 26.2 | kg/d | graph S08G rate | Glass stock less the 0.50 kg/d charge that now passes through SIC_FURNACE. |  | X-BAS-02 |
 | A-G-ebcef8 | 9.2772 | kg/d | graph S09 rate | AQS-DUTY-010: SC-2 1:1:5 -> HCl volume = H2O2 SC-2 share 1.5 L/d (37 % eq, 0.655 kg HCl) delivered as 2 M BMED acid |  | X-BAS-02 |
 | A-G-1344d3 | 79.11551173968371 | kg/d | graph S10 rate | AQS-DUTY-010: WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38 |  | X-BAS-02 |
-| A-G-01380a | 0.0344 | kg/d | graph S11 rate | X-SAN-01 AQS-DUTY-063. Afterburner feed held at the AQS-DUTY-008 design; grow-bed organics to the afterburner reduced by the sanitation cake and biogas (0.766 k |  | X-BAS-02 |
+| A-G-01380a | 0.8 | kg/d | graph S11 rate | Grow-bed organics to the afterburner (S11 restored, X-SAN-01 Rev B). |  | X-BAS-02 |
 | A-G-72cdab | 240.2336 | kg/d | graph S12 rate | X-SAN-01 AQS-DUTY-063. Grey less the flush water drawn by the vacuum toilets (returned as released liquor IA-BLK-GREY). |  | X-BAS-02 |
 | A-G-f09add | 3.7995 | kg/d | graph S13 rate | AQS-DUTY-014. Fiber taken from the still feed. Still resized. |  | X-BAS-02 |
-| A-G-855495 | 2.4 | kg/d | graph S14 rate | AQS-DUTY-010: crew ration 0.6 kg/p.d x 4; production 4.2 = S14 + S14X 1.8 |  | X-BAS-02 |
+| A-G-855495 | 2.807136 | kg/d | graph S14 rate | AQS-DUTY-010: crew ration 0.6 kg/p.d x 4; production 4.2 = S14 + S14X 1.8 / X-SAN-01 Rev B: +0.4071 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-8a8639 | 1.8 | kg/d | graph S14X rate | AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. 1.8 kg/d ration. |  | X-BAS-02 |
 | A-G-6a75ae | 0.0 | kg/d | graph S15 rate | AQS-DUTY-010: photosynthetic O2 (0.806 kg/d) leaves with FARM AHU exhaust; HAB is sealed with its own AHU and is supplied by S02 |  | X-BAS-02 |
 | A-G-b19de4 | 12.0 | kg/d | graph S16 rate | Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 §10.6) |  | X-BAS-02 |
@@ -371,7 +371,7 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-32f0fe | 0.0 | kg/d | graph S18 rate | Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (scale_down_map OIL, pfd_bridge, C2 noz |  | X-BAS-02 |
 | A-G-7977d7 | 0.0 | kg/d | graph S19 rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01 |  | X-BAS-02 |
 | A-G-573eb2 | 2.25 | kW | graph S20 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Direction reversed. Power flows to the farm. X-RSZ-07 sweep: calculated load (AQS-ELEC-003). |  | X-BAS-02 |
-| A-G-61bb34 | 120.0 | kg/d | graph S21 rate | AQS-DUTY-010: hab hygiene water 30.0 L/p.d x 4 |  | X-BAS-02 |
+| A-G-61bb34 | 120.678 | kg/d | graph S21 rate | AQS-DUTY-010: hab hygiene water 30.0 L/p.d x 4 / X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-449ebc | 0.4088 | kW | graph S22 rate | AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h |  | X-BAS-02 |
 | A-G-f3656f | 0.4088 | kW | graph S23 rate | AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h |  | X-BAS-02 |
 | A-G-47edc1 | 0.0 | kg/d | graph S24 rate | AQS-DUTY-010: contingency relief only; no continuous flow on the design day |  | X-BAS-02 |
@@ -414,7 +414,7 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-b3e7ce | 0.0 | kg/d | graph S64 rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S05 |  | X-BAS-02 |
 | A-G-760762 | 37509.84 | kg/d | graph S65 rate | AQS-DUTY-010: polish 1500.0 m3/h at 50.0 C saturated Converted kg/h to kg/d. Air returns; it does not leave the building. |  | X-BAS-02 |
 | A-G-963e09 | 27.3623 | kg/d | graph S66 rate | AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts |  | X-BAS-02 |
-| A-G-09568e | 117.436188 | kg/d | graph S67 rate | Flue includes the silicon-carbide CO. |  | X-BAS-02 |
+| A-G-09568e | 118.201788 | kg/d | graph S67 rate | Flue includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-121660 | 13.304 | kg/d | graph S67B rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. |  | X-BAS-02 |
 | A-G-e2f3f4 | 78.9879 | kg/d | graph S68 rate | AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW |  | X-BAS-02 |
 | A-G-b66bb4 | 852.47 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 |  | X-BAS-02 |
@@ -433,15 +433,15 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-7012fe | 0.3689 | kW | graph S80 rate | AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return |  | X-BAS-02 |
 | A-G-13e34e | 1.6549096212978096 | kg/d | graph S81 rate | AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d |  | X-BAS-02 |
 | A-G-5e4fa6 | 6.875 | kg/d | graph S82 rate | S76 5.0 kg/d MeOH x 1.375 kg CO2/kg MeOH (complete oxidation, same factor as S73). Rev J. |  | X-BAS-02 |
-| A-G-2b8711 | 48.05 | kg/d | graph S83 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | X-BAS-02 |
+| A-G-2b8711 | 47.730465 | kg/d | graph S83 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. / X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-a47159 | 243.28 | kg/d | graph S84 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | X-BAS-02 |
-| A-G-40e9d5 | 12.17 | kg/d | graph S85 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. |  | X-BAS-02 |
+| A-G-40e9d5 | 12.53012 | kg/d | graph S85 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. / X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-c84d6a | 0.0 | kg/d | graph S86 rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency |  | X-BAS-02 |
 | A-G-28739c | 0.0 | kg/d | graph S87 rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency |  | X-BAS-02 |
 | A-G-3a1cf4 | 0.0 | kg/d | graph S88 rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency |  | X-BAS-02 |
 | A-G-2b2007 | 1.2456 | kg/d | graph S34 rate | AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L |  | X-BAS-02 |
 | A-G-330711 | 0.61 | kg/d | graph S34B rate | Phosphate feed 0.620 less dopant 0.010. |  | X-BAS-02 |
-| A-G-5621db | 17.071 | kg/d | graph S89 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. |  | X-BAS-02 |
+| A-G-5621db | 17.43112 | kg/d | graph S89 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. / X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and  |  | X-BAS-02 |
 | A-G-a49eb8 | 4.021 | kg/d | graph S90 rate | AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00 |  | X-BAS-02 |
 | A-G-75b109 | 242.64719999999969 | kg/d | graph IA-GREY-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. |  | X-BAS-02 |
 | A-G-c27d95 | 27.3623 | kg/d | graph IA-CRU-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. CRU re-scoped to chlorate. Closes on S66. |  | X-BAS-02 |
@@ -455,7 +455,7 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-125f17 | 130.4706 | kg/d | graph IA-UPW-REMIN rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. |  | X-BAS-02 |
 | A-G-86cb48 | 6.045 | kg/d | graph IA-UPW-REJ rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +2.825 kg/d. |  | X-BAS-02 |
 | A-G-4c2912 | 3.0 | kW | graph IA-Q4-LIFE rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. |  | X-BAS-02 |
-| A-G-40860f | 6.266188 | kg/d | graph IA-AB-FLUE rate | Includes the silicon-carbide CO. |  | X-BAS-02 |
+| A-G-40860f | 7.031788 | kg/d | graph IA-AB-FLUE rate | Includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-d5326b | 8.4872 | kg/d | graph IA-ZNBR-MU rate | AQS-DUTY-011 Rev M. Water make-up from the leach header, equal to the bleed. |  | X-BAS-02 |
 | A-G-506958 | 59.87 | kg/d | graph IA-EW-MET-1 rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |  | X-BAS-02 |
 | A-G-4dadf8 | 59.89 | kg/d | graph IA-EW-MET-2 rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |  | X-BAS-02 |
@@ -468,7 +468,7 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-e7553e | 61.3411 | kg/d | graph IA-EW-MET-9 rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |  | X-BAS-02 |
 | A-G-5a1e82 | 217.37 | kg/d | graph IA-POL-CAKE rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |  | X-BAS-02 |
 | A-G-cf4300 | 111.17 | kg/d | graph IA-AB-AIR rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |  | X-BAS-02 |
-| A-G-a50093 | 264.396188 | kg/d | graph IA-FLUE-EXH rate | Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). |  | X-BAS-02 |
+| A-G-a50093 | 265.161788 | kg/d | graph IA-FLUE-EXH rate | Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-e977d4 | 25.2964 | kg/d | graph IA-DIG-LIQ rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). Silicate liquor equal to the digest NaOH draw (digest closes on IA-GLASS-03 |  | X-BAS-02 |
 | A-G-2fd9e5 | 6.82 | kg/d | graph IA-MILL-LOSS rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |  | X-BAS-02 |
 | A-G-62938a | 596.862812 | kg/d | graph IA-MFG-OUT rate | Goods less the mass that left as CO. |  | X-BAS-02 |
@@ -532,20 +532,20 @@ Counts: 119 curated, 919 graph, 22 model params, 89 document lines. Total 1149. 
 | A-G-9aa862 | 3.25 | kg/d | graph IA-NH3-SRC rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. |  | X-BAS-02 |
 | A-G-da663a | 0.176 | kg/d | graph IA-H2O2-SRC rate | X-SAF-10. O2 to the cell at 12.31 A, FE 0.80 (WS_PEROX params.cell). Was 3.0 kg/d, which counted dilution water as oxygen. |  | X-BAS-02 |
 | A-G-e01af3 | 0.0 | kg/d | graph IA-AIR-IN rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: startup inventory, not a flow |  | X-BAS-02 |
-| A-G-c90b96 | 226.221758 | kg/d | graph IA-NOX-H2O rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). |  | X-BAS-02 |
-| A-G-966788 | 20.0 | kg/d | graph IA-NOX-N rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. |  | X-BAS-02 |
-| A-G-c0284f | 30.466188 | kg/d | graph IA-NOX-CO2 rate | The added flue mass leaves with the CO2 cut. |  | X-BAS-02 |
-| A-G-30d5d0 | 243.89 | kg/d | graph IA-NOX-N2 rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. |  | X-BAS-02 |
+| A-G-c90b96 | 226.899758 | kg/d | graph IA-NOX-H2O rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). / X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake a |  | X-BAS-02 |
+| A-G-966788 | 20.047016 | kg/d | graph IA-NOX-N rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. / X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
+| A-G-c0284f | 30.826308 | kg/d | graph IA-NOX-CO2 rate | The added flue mass leaves with the CO2 cut. / X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
+| A-G-30d5d0 | 243.570465 | kg/d | graph IA-NOX-N2 rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. / X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-441808 | 66.5023 | kg/d | graph IA-FAB-SPENT rate | AQS-DUTY-016. |  | X-BAS-02 |
 | A-G-6b4b5a | 50.0 | kg/d | graph IA-GEN-AIR rate | AQS-DUTY-016. |  | X-BAS-02 |
 | A-G-ce7030 | 207.28 | kg/d | graph IA-NOX-HAB rate | AQS-DUTY-016. |  | X-BAS-02 |
-| A-G-8975e6 | 129.629 | kg/d | graph IA-NUT-BED rate | AQS-DUTY-016. |  | X-BAS-02 |
+| A-G-8975e6 | 129.676016 | kg/d | graph IA-NUT-BED rate | AQS-DUTY-016. / X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-ddcec0 | 130.096188 | kg/d | graph IA-BED-COMP rate | The fixed carbon leaves in the trim. |  | X-BAS-02 |
 | A-G-9bde4e | 0.0 | kg/d | graph IA-N2-VENT rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent |  | X-BAS-02 |
 | A-G-3a2c47 | 530.285912 | kg/d | graph IA-HOP-01 rate | Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH. |  | X-BAS-02 |
 | A-G-29a308 | 243.28 | kg/d | graph IA-ASU-N2 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | X-BAS-02 |
-| A-G-09c7d9 | 48.05 | kg/d | graph IA-ASU-O2 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | X-BAS-02 |
-| A-G-68299b | 30.466188 | kg/d | graph IA-ASU-CO2 rate | Cold box passes the added CO2. |  | X-BAS-02 |
+| A-G-09c7d9 | 47.730465 | kg/d | graph IA-ASU-O2 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. / X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
+| A-G-68299b | 30.826308 | kg/d | graph IA-ASU-CO2 rate | Cold box passes the added CO2. / X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
 | A-G-579bef | 5.3 | kg/d | graph IA-ASU-AR rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | X-BAS-02 |
 | A-G-1afdd7 | 0.0 | kg/d | graph IA-H2-AIR rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. |  | X-BAS-02 |
 | A-G-4d7d62 | 5.3 | kg/d | graph IA-AR-FAB rate | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |  | X-BAS-02 |

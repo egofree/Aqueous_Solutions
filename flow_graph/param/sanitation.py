@@ -26,6 +26,17 @@ def design(d, g):
     past = centrate + ur_c
     fixed = {'IA-URN-STR': R['IA-URN-STR'], 'IA-BLK-BIO': R.get('IA-BLK-BIO', R['IA-TOIL-URN']), 'IA-BLK-NUT': R.get('IA-BLK-NUT', R['IA-TOIL-SOL'])}   # downstream feeds kept at their pre-X-SAN-01 rates
     grey = past - sum(fixed.values())
+    # combustion of cake and biogas [METCALF5_BIOMASS]: VS as C5H7O2N + 5.75 O2 -> 5 CO2 + 3.5 H2O + 0.5 N2 (N scrubbed as nitrate); biogas 65 % CH4 by volume
+    vs_rem = VS - G; ash = TS - G - vs_rem; w_cake = cake - (TS - G); x = 0.65*16/(0.65*16 + 0.35*44); ch4, co2g = G*x, G*(1 - x)
+    comb = {'CO2': co2g + ch4*44/16 + vs_rem*220/113, 'H2O': w_cake + ch4*36/16 + vs_rem*63/113, 'O2': ch4*64/16 + vs_rem*184/113, 'N': vs_rem*14/113, 'ash': ash}
+    comb['check'] = comb['CO2'] + comb['H2O'] - comb['O2'] + comb['N'] + comb['ash'] - (cake + G)
+    # AFTERBURNER chamber: >= 850 C for >= 2 s [EU_IED2010]; flue = DUTY-008 241.68 kg/d + sanitation fuel
+    flue = 241.68 + cake + G; rho = 1.2*293/1123; Q = flue/86400/rho; Vc = Q*2.0
+    Dc = next(x for x in (150, 200, 250, 300, 350, 400) if 3*(x/1000) >= (4*Vc/math.pi/(x/1000)**2) or x == 400); Lc = 4*Vc/math.pi/(Dc/1000)**2
+    q_extra = (ch4*50.0 + vs_rem*20.0 - w_cake*2.45)/86.4      # kW: LHV CH4 50 MJ/kg, dry VS about 20 MJ/kg, evaporation 2.45 MJ/kg (study)
+    ab = dict(flue_kg_h=flue/24, Q_m3_s_850C=Q, V_m3=Vc, D_mm=Dc, L_mm=math.ceil(Lc*1000/50)*50, net_heat_kW=q_extra, feed_kg_d=6.2662 + cake + G)
+    ko_v = (flue/24/3600)/(1.2*293/353)/(math.pi*0.3**2/4)            # FLUE_KO DN300 at 80 C
+    nox_v = (497.918 + cake + G)/86400/1.2/(math.pi*0.1**2/4)           # NOX_SCRUB DN100 superficial
     # vessels
     Vd = dig_in/1000*v('san_digest_srt_d'); dg = vessel(Vd, 0.8, 1000.0, sigma_MPa=3.0, t_min=5.0)
     A = math.pi*dg['D_mm']/1000*dg['H_mm']/1000 + math.pi*(dg['D_mm']/1000)**2/2
@@ -37,11 +48,12 @@ def design(d, g):
     naoh = past*0.2*40/1000                                                                                # kg/d NaOH at 0.2 mol/L dose when the standby barrier runs
     kW = {'BLACK_DIGEST': q_dig/1000 + 0.02, 'BLACK_DEWATER': 0.09*2/24, 'BLACK_PASTEUR': q_past/1000 + 0.01, 'BLACK_ALK_HOLD': 0.02}
     return dict(n=n, fc=fc, fec_c=fec_c, ur_c=ur_c, E_f=E_f, F=F, blk=blk, sol=sol, dig_in=dig_in, TS=TS, VS=VS, G=G, cake=cake, centrate=centrate,
-                past=past, fixed=fixed, grey=grey, dg=dg, ps=ps, hd=hd, q_dig=q_dig, q_past=q_past, T_mix=T_mix, naoh_standby=naoh, kW=kW)
+                past=past, comb=comb, ab=ab, ko_v=ko_v, nox_v=nox_v, fixed=fixed, grey=grey, dg=dg, ps=ps, hd=hd, q_dig=q_dig, q_past=q_past, T_mix=T_mix, naoh_standby=naoh, kW=kW)
 
 def write(d, g, r):
     N = {x['unit_id']: x for x in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
     tmpl = N['BLACK_DIGEST']
+    base0_ins = sum(e['rate']['value'] for e in g['edges'] if e['to_unit_id'] == 'HABITATION' and e['rate'].get('unit') == 'kg/d')
     base0_outs = sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id'] == 'HABITATION' and e['rate'].get('unit') == 'kg/d')
     notes = {'BLACK_DIGEST': 'Thermophilic anaerobic digester 55 C, 15 d SRT; barrier 1 (X-SAN-01).',
              'BLACK_DEWATER': 'Screw press; cake to AFTERBURNER in sealed bins (incineration, barrier 2).',
@@ -86,9 +98,24 @@ def write(d, g, r):
     base.setdefault('outs', base0_outs); base.setdefault('cond', cond['value'])
     cond['value'] = round(base['cond'] - (outs() - base['outs']), 4); cond['basis'] = 'S12 governs grey; X-SAN-01 excreta from occupancy (by difference)'
     assert cond['value'] >= 0, 'HABITATION remainder negative'
-    E['S11']['rate']['value'] = round(base.setdefault('S11', 0.8) - r['cake'] - r['G'], 4)
-    E['S11']['rate']['note'] = f"{TAG}. Afterburner feed held at the AQS-DUTY-008 design; grow-bed organics to the afterburner reduced by the sanitation cake and biogas ({r['cake'] + r['G']:.3f} kg/d), retained in GROW_BED (A-M-118)."
-    assert E['S11']['rate']['value'] >= 0
+    # X-SAN-01 Rev B (owner 2026-10-15): S11 restored; the cake and biogas are burned on top of the existing AFTERBURNER feed and the products are
+    # carried downstream species by species [METCALF5_BIOMASS]: water to ROOF_TANK -> HABITATION, CO2 via CRYO_ASU/CRYO_CO2/HDR_CO2 -> GROW_BED -> food,
+    # ash and N via NOX_SCRUB liquor -> NUTRIENT_DOSE -> GROW_BED -> food, O2 consumed out of the air remainder -> CRYO_O2 -> HDR_O2 -> HABITATION.
+    E['S11']['rate']['value'] = round(base.setdefault('S11', 0.8), 4); E['S11']['rate']['note'] = 'Grow-bed organics to the afterburner (S11 restored, X-SAN-01 Rev B).'
+    c = r['comb']; D = r['cake'] + r['G']
+    deltas = {'IA-AB-FLUE': D, 'S67': D, 'IA-FLUE-EXH': D, 'IA-NOX-H2O': c['H2O'], 'IA-NOX-CO2': c['CO2'], 'IA-NOX-N': c['ash'] + c['N'], 'IA-NOX-N2': -c['O2'],
+              'S21': c['H2O'], 'IA-ASU-CO2': c['CO2'], 'IA-ASU-O2': -c['O2'], 'S83': -c['O2'], 'S02': -c['O2'], 'S85': c['CO2'], 'S89': c['CO2'],
+              'IA-NUT-BED': c['ash'] + c['N'], 'S14': c['CO2'] + c['ash'] + c['N']}
+    eb = base.setdefault('edges', {k: E[k]['rate']['value'] for k in deltas})
+    for k, dv in deltas.items():
+        E[k]['rate']['value'] = round(eb[k] + dv, 6); E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | X-SAN-01')[0] + f' | X-SAN-01 Rev B: {dv:+.4f} kg/d from sanitation cake and biogas combustion.'
+    base.setdefault('ins', base0_ins)
+    ins = sum(e['rate']['value'] for e in g['edges'] if e['to_unit_id'] == 'HABITATION' and e['rate'].get('unit') == 'kg/d')
+    cond['value'] = round(base['cond'] + (ins - base['ins']) - (outs() - base['outs']), 4)
+    A = r['ab']; N['AFTERBURNER']['params']['design'] = {k: round(v, 4) for k, v in A.items()} | {'basis': 'X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated'}
+    N['AFTERBURNER']['params']['size_note'] = f"combustion chamber ID {A['D_mm']} x {A['L_mm']} mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)"
+    N['FLUE_KO']['params']['duty_check'] = f"flue {A['flue_kg_h']:.2f} kg/h (S67, X-SAN-01 Rev B): DN300 KO drum superficial {r['ko_v']:.3f} m/s at 80 C; fits the 600x700 plan (AQS-GAS-003 NCG case 0.7 m/s governs)"
+    N['NOX_SCRUB']['params']['duty_check'] = f"inlet {(497.918 + D)/24:.2f} kg/h (X-SAN-01 Rev B): DN100 superficial {r['nox_v']:.2f} m/s; full packing design at X-PAR-03"
     ab = N['AFTERBURNER']['params']['balance_rev_l']['terms']
     ab[:] = [t for t in ab if t.get('label') != 'sanitation cake and biogas combustion products to flue']
     for u in ('BLACK_DIGEST',) + NEW:
@@ -131,13 +158,14 @@ def write_doc(d, r, S):
     md = f"""# Blackwater and excreta multi-barrier train
 
 Document number: AQS-DUTY-063
-Revision: A
+Revision: B
 Date: 2026-10-15
 Authority: AQS-PLAN-007 X-SAN-01 (owner decision 2026-10-15: BLACK_DIGEST fully integrated; no reliance on compost toilets alone; no pathogen pathway to FARM). Generated by `flow_graph/param/sanitation.py`. Study. A-M-118.
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue. | 2026-10-15 |
+| B | S11 trim withdrawn (owner): AFTERBURNER, FLUE_KO, NOX_SCRUB and downstream carry the cake and biogas mass; afterburner chamber sized. | 2026-10-15 |
 
 ## 1. Flow basis
 
@@ -188,7 +216,21 @@ The train sits in a 1 h-rated sanitation room on the HAB west wall, with its own
 
 - IA-TOIL-SOL, IA-TOIL-URN and IA-URN-STR no longer go straight to COMPOST, BIOFILTER or STRUVITE. Those units receive the same masses from BLACK_ALK_HOLD after release, and COMPOST to NUTRIENT_DOSE is reduced by the solids it no longer gets.
 - S12 (grey) is reduced by the flush water; the same mass returns to GREY_TREAT as released liquor IA-BLK-GREY, so the GREY_TREAT inflow is unchanged.
-- The HABITATION remainder term is recomputed by difference. AFTERBURNER feed is held at the AQS-DUTY-008 design rate: S11 (grow-bed organics) is reduced by the cake and biogas mass, which stays in GROW_BED (A-M-118).
+- The HABITATION remainder term is recomputed by difference. S11 is unchanged. The cake and biogas are burned on top of the existing AFTERBURNER feed, and the products are carried downstream species by species (section 6).
+
+## 6. Downstream resize (Rev B)
+
+Combustion of the cake and biogas (METCALF5_BIOMASS: VS as C5H7O2N; biogas 65 % CH4 by volume): CO2 {r['comb']['CO2']:.3f}, H2O {r['comb']['H2O']:.3f} (cake water included), O2 consumed {r['comb']['O2']:.3f}, N {r['comb']['N']:.4f}, ash {r['comb']['ash']:.4f} kg/d; closure {r['comb']['check']:.1e}.
+
+| Item | Before | After | Basis |
+| --- | --- | --- | --- |
+| AFTERBURNER feed, kg/d | 6.27 | {r['ab']['feed_kg_d']:.2f} | graph |
+| AFTERBURNER chamber | not sized | ID {r['ab']['D_mm']} x {r['ab']['L_mm']} mm, {r['ab']['V_m3']*1000:.0f} L | >= 850 C for >= 2 s at {r['ab']['flue_kg_h']:.2f} kg/h flue (EU_IED2010) |
+| AFTERBURNER net heat added, kW | — | {r['ab']['net_heat_kW']:.3f} | LHV CH4 50 MJ/kg, VS about 20 MJ/kg, less evaporation (study) |
+| FLUE_KO DN300 superficial, m/s | — | {r['ko_v']:.3f} | NCG case 0.7 m/s still governs |
+| NOX_SCRUB DN100 superficial, m/s | — | {r['nox_v']:.2f} | packing design at X-PAR-03 |
+
+Edges raised or lowered: IA-AB-FLUE, S67, IA-FLUE-EXH (+{r['cake'] + r['G']:.3f}); NOX_SCRUB water to ROOF_TANK and S21 to HABITATION (+H2O); CO2 through IA-NOX-CO2, IA-ASU-CO2, S85, S89 to GROW_BED; ash and N through IA-NOX-N and IA-NUT-BED to GROW_BED; S14 food (+CO2 + ash + N); O2 through IA-NOX-N2, IA-ASU-O2, S83, S02 (-O2). The HABITATION remainder term returns to its pre-X-SAN-01 basis by difference.
 """
     open(os.path.join(ROOT, 'docs-authority/sizing/SANITATION.md'), 'w').write(md)
 

@@ -16,4 +16,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/AFTERBURNER.stl`.
 
-8. Open items. No vessel diameter.
+8. Open items. Chamber sized in AQS-DUTY-063 Rev B section 6 (X-SAN-01): ID 200 x 600 mm, >= 850 C for >= 2 s (Directive 2010/75/EU Art. 50), feed 7.03 kg/d including sanitation cake and biogas. Refractory and burner detail open.

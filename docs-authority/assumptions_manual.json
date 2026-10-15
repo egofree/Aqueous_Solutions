@@ -1824,13 +1824,13 @@
    "flow_graph/param/sanitation.py",
    "models/mfg/sanitation.py"
   ],
-  "value": "Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; afterburner feed held at design by reducing S11 by the cake and biogas mass",
+  "value": "Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; cake and biogas burned on top of the existing afterburner feed (S11 unchanged), products carried downstream by species (VS as C5H7O2N, biogas 65 % CH4, dry VS LHV about 20 MJ/kg); afterburner chamber >= 850 C for >= 2 s",
   "units": "persons, L, kg/d, m",
   "where": "AQS-DUTY-063",
-  "basis": "ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500",
+  "basis": "ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500, METCALF5_BIOMASS, EU_IED2010",
   "sensitivity": "Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly",
   "replaced_by": "Occupancy schedule, toilet fit-out, challenge-test results",
-  "verification_test": "ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room"
+  "verification_test": "ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50)"
  },
  {
   "id": "A-M-119",
