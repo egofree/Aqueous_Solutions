@@ -1,9 +1,9 @@
 item,description,qty,material,basis
-1,Reactor tube DN15 Sch 40, 600 mm,1,SA-312 TP316L,AQS-DUTY-062 section 6
+1,"Reactor tube DN15 Sch 40, 600 mm",1,SA-312 TP316L,AQS-DUTY-062 section 6
 2,Weld-neck flange DN15 Class 300 RF,2,SA-182 F316L,ASME B16.5
 3,Blind flange DN15 Class 300 with DN8 port and thermowell,2,SA-182 F316L,ASME B16.5
 4,Spiral-wound gasket DN15 Class 300,2,316L / flexible graphite,ASME B16.20
 5,Catalyst 2.6 g (amorphous silica-alumina) with inert alumina balls and 316L mesh retainers,1,see basis,AQS-DUTY-062 section 6
 6,Band heater 153 W with PID and high-limit; feed vaporiser coil,1,mica / 316L,AQS-DUTY-062 section 6
 7,Mineral wool 40 mm with SS cladding,1,mineral wool,ASTM C547
-8,Safety valve DN8, set at design pressure,1,316L,API 520 (graph relief_basis)
+8,"Safety valve DN8, set at design pressure",1,316L,API 520 (graph relief_basis)

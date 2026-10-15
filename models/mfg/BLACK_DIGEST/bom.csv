@@ -1,7 +1,7 @@
 item,description,qty,material,basis
-1,Shell DN800 x 760 mm x 5.0 mm, flat bottom, domed gas lid,1,PP-H sheet, extrusion-welded (DVS 2207-11),AQS-DUTY-063 section 2
-2,Nozzles DN25: blackwater in, toilet solids in, digestate out, biogas out, gas recirc in,5,PP-H,AQS-DUTY-063
+1,"Shell DN800 x 760 mm x 5.0 mm, flat bottom, domed gas lid",1,"PP-H sheet, extrusion-welded (DVS 2207-11)",AQS-DUTY-063 section 2
+2,"Nozzles DN25: blackwater in, toilet solids in, digestate out, biogas out, gas recirc in",5,PP-H,AQS-DUTY-063
 3,Biogas recirculation diaphragm blower about 2 L/min,1,PP/EPDM,X-INV-01 family
-4,Heating mat 150 W, thermostat 55 C, two RTDs,1,silicone / 316L,AQS-DUTY-063
-5,PIR insulation 50 mm, PE cladding,1,PIR,AQS-DUTY-063
+4,"Heating mat 150 W, thermostat 55 C, two RTDs",1,silicone / 316L,AQS-DUTY-063
+5,"PIR insulation 50 mm, PE cladding",1,PIR,AQS-DUTY-063
 6,Water seal and flame arrester on the biogas line to AFTERBURNER,1,316L,NFPA 54 / ISO 16852

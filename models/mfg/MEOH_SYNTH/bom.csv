@@ -1,10 +1,10 @@
 item,description,qty,material,basis
-1,Reactor tube DN50 Sch 40 SA-106 B, 1702 mm, 1 off,1,SA-106 B,AQS-DUTY-062 section 4; UG-27
+1,"Reactor tube DN50 Sch 40 SA-106 B, 1702 mm, 1 off",1,SA-106 B,AQS-DUTY-062 section 4; UG-27
 2,Weld-neck flange DN50 Class 600 RF,2,SA-105,ASME B16.5
 3,Blind flange DN50 Class 600 with DN15 nozzle,2,SA-105,ASME B16.5
-4,Spiral-wound gasket DN50 Class 600, 316/graphite,2,316L / flexible graphite,ASME B16.20
-5,Jacket DN100 Sch 40, 1402 mm, thermal oil in/out DN25,1,SA-106 B,AQS-DUTY-062
+4,"Spiral-wound gasket DN50 Class 600, 316/graphite",2,316L / flexible graphite,ASME B16.20
+5,"Jacket DN100 Sch 40, 1402 mm, thermal oil in/out DN25",1,SA-106 B,AQS-DUTY-062
 6,Cu/ZnO/Al2O3 catalyst pellets 3.10 kg (2.82 L),1,Cu/ZnO/Al2O3,CTC2020_CZA
 7,Catalyst support grid and inert alumina balls top and bottom,1,316L / alpha-alumina,study
-8,Feed preheater, 0.74 kW electric,1,mineral-insulated cable on 316L,AQS-DUTY-062
-9,Safety valve, conventional, set at design pressure (API 520 sized orifice in the graph relief_basis),1,316L,API 520
+8,"Feed preheater, 0.74 kW electric",1,mineral-insulated cable on 316L,AQS-DUTY-062
+9,"Safety valve, conventional, set at design pressure (API 520 sized orifice in the graph relief_basis)",1,316L,API 520

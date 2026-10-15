@@ -27,6 +27,6 @@ rows = [('1', f'Shell PVC-U DN{DN} Sch 80 x {H} mm with solvent-welded caps', 1,
         ('6', 'Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m', 1, 'PVDF or PP wetted', 'X-MFG-32 in-house pump line'),
         ('7', 'Nozzles DN25: vent in, liquor in, spent out, NaOH in, off-gas out', 5, 'PVC-U socket', 'AQS-DUTY-061'),
         ('8', 'Sump level switch and pH probe', 1, 'PVDF body', 'pH > 12 control of the NaOH bleed (A-M-111)')]
-open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+__import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
 open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n1,M10 U-bolt for DN%d,ISO 3506 A4-70,2,frame clamps to the EVAP_ACID frame,study\n2,Solvent cement,PVC-U per ASTM D2564,1,all joints,ASTM D2564\n' % DN)
 print(U, 'DN', DN, 'H', H, 'bed', bed)

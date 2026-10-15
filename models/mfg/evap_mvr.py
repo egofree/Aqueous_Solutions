@@ -53,7 +53,7 @@ if d.get('column'):
     c = d['column']
     rows += [('10', f"HCl column DN{c['DN']}, packed {c['packed_mm']} mm ({c['column_stages']} ideal stages x HETP x margin), height {c['height_mm']} mm", 1, c['material'].replace(',', ';'), 'PERRY7_HCL_VLE stage count; condensate %.2f wt%% HCl' % c['cond_hcl_wt_pct']),
              ('11', 'Vapour duct DN80 separator to column; column bottoms line DN15 back to the body', 1, 'PTFE-lined steel / PVDF', 'AQS-DUTY-060')]
-open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+__import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
 open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n'
     f'1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),{"ISO 3506 A4-70 outside the wetted zone" if acid else "ISO 898-1 8.8 zinc"},{2*12},body flanges,ISO 7005-1 PN10 DN{int(D)} pattern (study)\n'
     f'2,Flange gasket,{"PTFE envelope" if acid else "graphite sheet"},2,body flanges,AQS-NZ-001\n')

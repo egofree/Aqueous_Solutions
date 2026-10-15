@@ -1,9 +1,9 @@
 item,description,qty,material,basis
 1,Shell PVC-U DN150 Sch 80 x 1400 mm with solvent-welded caps,1,PVC-U (ASTM D1785),AQS-DUTY-061 section 2
-2,Packing support plate, perforated, 50 % open,1,PVC-U sheet,PERRY9_ABS
-3,Random packing: 16 mm PVC tube rings cut L = D, bed 500 mm,1,PVC-U (in-house cut, X-MFG-32 jellybean line),16 mm x 500 mm bed; D/dp 8 (PERRY9_ABS)
-4,Liquid distributor, drip pipe with 4 holes,1,PVC-U,PERRY9_ABS
+2,"Packing support plate, perforated, 50 % open",1,PVC-U sheet,PERRY9_ABS
+3,"Random packing: 16 mm PVC tube rings cut L = D, bed 500 mm",1,"PVC-U (in-house cut, X-MFG-32 jellybean line)",16 mm x 500 mm bed; D/dp 8 (PERRY9_ABS)
+4,"Liquid distributor, drip pipe with 4 holes",1,PVC-U,PERRY9_ABS
 5,Mesh demister pad 100 mm,1,PVC or PP mesh,AQS-DUTY-061
-6,Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m,1,PVDF or PP wetted,X-MFG-32 in-house pump line
-7,Nozzles DN25: vent in, liquor in, spent out, NaOH in, off-gas out,5,PVC-U socket,AQS-DUTY-061
+6,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m",1,PVDF or PP wetted,X-MFG-32 in-house pump line
+7,"Nozzles DN25: vent in, liquor in, spent out, NaOH in, off-gas out",5,PVC-U socket,AQS-DUTY-061
 8,Sump level switch and pH probe,1,PVDF body,pH > 12 control of the NaOH bleed (A-M-111)

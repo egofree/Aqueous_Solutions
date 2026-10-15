@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Reactor tube DN15 Sch 40, 600 mm,1,SA-312 TP316L,AQS-DUTY-062 section 6
+1,"Reactor tube DN15 Sch 40, 600 mm",1,SA-312 TP316L,AQS-DUTY-062 section 6
 2,Weld-neck flange DN15 Class 150 RF,2,SA-182 F316L,ASME B16.5
 3,Blind flange DN15 Class 150 with DN8 port and thermowell,2,SA-182 F316L,ASME B16.5
 4,Spiral-wound gasket DN15 Class 150,2,316L / flexible graphite,ASME B16.20

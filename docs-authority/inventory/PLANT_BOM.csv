@@ -1,0 +1,508 @@
+source,unit,item,qty,material,basis
+unit,ABE,Shell DN150 x 150 mm x 4.0 mm wall with flat bottom,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062 section 1
+unit,ABE,Bolted flat lid with gasket,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,ABE,Nozzles DN25: sugar in; broth out; gas out; N2 blanket; drain,5,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,ABE,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",study
+unit,ABE,PIR insulation 50 mm with PE cladding; gas recirculation (no shaft seal),1,PIR,AQS-DUTY-062 section 5
+unit,ABE,Heater mat 5 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit,ACETOX,Shell DN80 x 80 mm x 4.0 mm wall with flat bottom,1,"PP-H sheet, extrusion-welded (DVS 2207-11)",AQS-DUTY-062 section 1
+unit,ACETOX,Bolted flat lid with gasket,1,"PP-H sheet, extrusion-welded (DVS 2207-11)",AQS-DUTY-062
+unit,ACETOX,Nozzles DN25: ethanol in; acid out; O2 sparge; vent; drain,5,"PP-H sheet, extrusion-welded (DVS 2207-11)",AQS-DUTY-062
+unit,ACETOX,Legs 40x40 x 300 mm,3,"PP-H sheet, extrusion-welded (DVS 2207-11)",study
+unit,ACETOX,PIR insulation 50 mm with PE cladding; O2 sparge from HDR_O2,1,PIR,AQS-DUTY-062 section 5
+unit,ACETOX,Heater mat 5 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit,ACEX,Shell DN60 x 1205 mm x 3.91 mm wall with flat bottom,1,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",AQS-DUTY-062 section 1
+unit,ACEX,Bolted flat lid with gasket,1,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",AQS-DUTY-062
+unit,ACEX,Nozzles DN25: [Bmim]Cl in; eluate to neutraliser; NaOH regenerant in; spent regenerant out; drain,5,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",AQS-DUTY-062
+unit,ACEX,Legs 40x40 x 300 mm,3,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",study
+unit,ACEX,"Strong-base type I anion resin, OH form, 1.96 L per column; second identical column (lead/regenerate)",2,polystyrene-DVB gel,PERRY9_IX
+unit,ACEX,Acetic acid neutraliser vessel 0.5 L with pH probe,1,PP-H,AQS-DUTY-062
+unit,ALD,"Reactor tube DN15 Sch 40, 600 mm",1,SA-312 TP316L,AQS-DUTY-062 section 6
+unit,ALD,Weld-neck flange DN15 Class 150 RF,2,SA-182 F316L,ASME B16.5
+unit,ALD,Blind flange DN15 Class 150 with DN8 port and thermowell,2,SA-182 F316L,ASME B16.5
+unit,ALD,Spiral-wound gasket DN15 Class 150,2,316L / flexible graphite,ASME B16.20
+unit,ALD,Catalyst 8.3 g (Cu/SiO2 pellets) with inert alumina balls and 316L mesh retainers,1,see basis,AQS-DUTY-062 section 6
+unit,ALD,Band heater 103 W with PID and high-limit; feed vaporiser coil,1,mica / 316L,AQS-DUTY-062 section 6
+unit,ALD,Mineral wool 40 mm with SS cladding,1,mineral wool,ASTM C547
+unit,BLACK_ALK_HOLD,Hold tank DN350 x 280 mm x 4.0 mm,3,"HDPE PE100, extrusion-welded (DVS 2207-4)",AQS-DUTY-063
+unit,BLACK_ALK_HOLD,"NaOH dosing pump, solenoid diaphragm",1,PVDF/PTFE,X-INV-01
+unit,BLACK_ALK_HOLD,pH probe per tank (high-pH glass),3,PVDF body,pH > 12 standby barrier
+unit,BLACK_ALK_HOLD,"Release valve per tank, actuated, interlocked to the batch test result",3,PVDF ball valve,AQS-DUTY-063
+unit,BLACK_ALK_HOLD,Sample valve per tank,3,PVDF,EPA 1680/1682 batch test
+unit,BLACK_DEWATER,"Screw press, 100 mm screw in 0.5 mm wedge-wire screen, 700 mm long",1,316L,METCALF5 cake 20 % TS
+unit,BLACK_DEWATER,"Gearmotor 0.09 kW, 10 rpm output",1,IEC 63 frame,X-INV-01
+unit,BLACK_DEWATER,Sealed cake bin 20 L with gasketed lid,2,HDPE,AQS-DUTY-063: cake to AFTERBURNER in sealed bins
+unit,BLACK_DEWATER,Centrate trough and DN25 outlet,1,PP-H,AQS-DUTY-063
+unit,BLACK_DIGEST,"Shell DN800 x 760 mm x 5.0 mm, flat bottom, domed gas lid",1,"PP-H sheet, extrusion-welded (DVS 2207-11)",AQS-DUTY-063 section 2
+unit,BLACK_DIGEST,"Nozzles DN25: blackwater in, toilet solids in, digestate out, biogas out, gas recirc in",5,PP-H,AQS-DUTY-063
+unit,BLACK_DIGEST,Biogas recirculation diaphragm blower about 2 L/min,1,PP/EPDM,X-INV-01 family
+unit,BLACK_DIGEST,"Heating mat 150 W, thermostat 55 C, two RTDs",1,silicone / 316L,AQS-DUTY-063
+unit,BLACK_DIGEST,"PIR insulation 50 mm, PE cladding",1,PIR,AQS-DUTY-063
+unit,BLACK_DIGEST,Water seal and flame arrester on the biogas line to AFTERBURNER,1,316L,NFPA 54 / ISO 16852
+unit,BLACK_PASTEUR,Batch vessel DN250 x 200 mm x 2.0 mm,2,"316L, GTAW (ASME IX)",AQS-DUTY-063
+unit,BLACK_PASTEUR,"Immersion heater 500 W each, 480 V",2,Incoloy 800 sheath,AQS-DUTY-063
+unit,BLACK_PASTEUR,Two independent RTDs per vessel (IEC 60751 class A),4,316L,hold timer restarts below 70 C
+unit,BLACK_PASTEUR,"Transfer pump, magnetic drive",1,PVDF,X-INV-01
+unit,BLACK_PASTEUR,"Insulation 50 mm mineral wool, SS cladding",2,ASTM C547,AQS-DUTY-063
+unit,BUCL,Shell DN50 x 50 mm x 4.0 mm wall with flat bottom,1,glass-lined carbon steel (ISO 28721),AQS-DUTY-062 section 1
+unit,BUCL,Bolted flat lid with gasket,1,glass-lined carbon steel (ISO 28721),AQS-DUTY-062
+unit,BUCL,Nozzles DN25: butanol in; HCl in; reflux condenser; product out; drain,5,glass-lined carbon steel (ISO 28721),AQS-DUTY-062
+unit,BUCL,Legs 40x40 x 300 mm,3,glass-lined carbon steel (ISO 28721),study
+unit,BUCL,Mineral wool insulation with SS cladding; boiling at reflux,1,mineral wool,AQS-DUTY-062 section 5
+unit,BUCL,Heater mat 7 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit,BUCL,"Reflux condenser, glass, Q1 cooling water",1,borosilicate 3.3,AQS-DUTY-062 section 5
+unit,DIGESTER,Shell DN350 x 300 mm x 4.0 mm wall with flat bottom,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062 section 1
+unit,DIGESTER,Bolted flat lid with gasket,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,DIGESTER,Nozzles DN25: feed in; digestate out; gas out; gas recirc in; drain,5,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,DIGESTER,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",study
+unit,DIGESTER,"Biogas recirculation blower, diaphragm, about 1 L/min",1,PP/EPDM,AQS-DUTY-062
+unit,DIGESTER,PIR insulation 50 mm with PE cladding,1,PIR,AQS-DUTY-062
+unit,EVAP_ACID,"Shell DN350 x 2050 mm, wall 10.0 mm",1,"carbon steel, PTFE-lined process side",AQS-DUTY-060 section 2
+unit,EVAP_ACID,Tubes ID 25.0 x OD 37.0 x 1500 mm,22,impregnated graphite (PERRY9_MAT),falling film 2.51 m2 at U from PERRY9_EVAP
+unit,EVAP_ACID,Tubesheets 40.0 mm,2,impregnated graphite (PERRY9_MAT),AQS-DUTY-060
+unit,EVAP_ACID,Vapour separator DN350 x 900 mm with mesh pad,1,"carbon steel, PTFE-lined process side; PTFE or PVDF mesh",AQS-DUTY-060
+unit,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft",1,impeller titanium grade 7 or PVDF-lined (acid); nickel (base),X-MFG-32 in-house line; motor IEC 60034 frame
+unit,EVAP_ACID,Feed/condensate/product interchanger 0.155 m2,1,impregnated graphite (PERRY9_MAT),"3.7 kW, outlets 49.1 C"
+unit,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m,1,PVDF (acid) or nickel (base) wetted,X-MFG-32
+unit,EVAP_ACID,"Body relief valve API 526 D orifice, set 100 kPa g",1,PTFE-lined (acid) or nickel trim (base),"fire case ISO 23251, sized in-house"
+unit,EVAP_ACID,"Shell relief valve API 526 D orifice, set 350 kPa g",1,stainless trim on steam side,"blocked outlet, sized in-house"
+unit,EVAP_ACID,"HCl column DN150, packed 3000 mm (4 ideal stages x HETP x margin), height 3800 mm",1,borosilicate glass 3.3 sections (ISO 3585); PTFE Pall rings; PTFE-lined flanges (PERRY9_MAT),PERRY7_HCL_VLE stage count; condensate 0.50 wt% HCl
+unit,EVAP_ACID,Vapour duct DN80 separator to column; column bottoms line DN15 back to the body,1,PTFE-lined steel / PVDF,AQS-DUTY-060
+unit,EVAP_ACID_VS,Shell PVC-U DN150 Sch 80 x 1400 mm with solvent-welded caps,1,PVC-U (ASTM D1785),AQS-DUTY-061 section 2
+unit,EVAP_ACID_VS,"Packing support plate, perforated, 50 % open",1,PVC-U sheet,PERRY9_ABS
+unit,EVAP_ACID_VS,"Random packing: 16 mm PVC tube rings cut L = D, bed 500 mm",1,"PVC-U (in-house cut, X-MFG-32 jellybean line)",16 mm x 500 mm bed; D/dp 8 (PERRY9_ABS)
+unit,EVAP_ACID_VS,"Liquid distributor, drip pipe with 4 holes",1,PVC-U,PERRY9_ABS
+unit,EVAP_ACID_VS,Mesh demister pad 100 mm,1,PVC or PP mesh,AQS-DUTY-061
+unit,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m",1,PVDF or PP wetted,X-MFG-32 in-house pump line
+unit,EVAP_ACID_VS,"Nozzles DN25: vent in, liquor in, spent out, NaOH in, off-gas out",5,PVC-U socket,AQS-DUTY-061
+unit,EVAP_ACID_VS,Sump level switch and pH probe,1,PVDF body,pH > 12 control of the NaOH bleed (A-M-111)
+unit,EVAP_BASE,"Shell DN350 x 2050 mm, wall 6.0 mm",1,nickel 200,AQS-DUTY-060 section 2
+unit,EVAP_BASE,Tubes ID 25.0 x OD 29.0 x 1500 mm,20,nickel 200 (PERRY9_MAT),falling film 2.32 m2 at U from PERRY9_EVAP
+unit,EVAP_BASE,Tubesheets 25.0 mm,2,nickel 200 (PERRY9_MAT),AQS-DUTY-060
+unit,EVAP_BASE,Vapour separator DN350 x 900 mm with mesh pad,1,nickel 200; PTFE or PVDF mesh,AQS-DUTY-060
+unit,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaft",1,impeller titanium grade 7 or PVDF-lined (acid); nickel (base),X-MFG-32 in-house line; motor IEC 60034 frame
+unit,EVAP_BASE,Feed/condensate/product interchanger 0.146 m2,1,nickel 200 (PERRY9_MAT),"3.67 kW, outlets 50.6 C"
+unit,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m,1,PVDF (acid) or nickel (base) wetted,X-MFG-32
+unit,EVAP_BASE,"Body relief valve API 526 D orifice, set 100 kPa g",1,PTFE-lined (acid) or nickel trim (base),"fire case ISO 23251, sized in-house"
+unit,EVAP_BASE,"Shell relief valve API 526 D orifice, set 350 kPa g",1,stainless trim on steam side,"blocked outlet, sized in-house"
+unit,EXPANDER,baseplate,1,316L,make
+unit,EXPANDER,crankcase,1,316L,make
+unit,EXPANDER,cylinder,1,316L,make
+unit,EXPANDER,head,1,316L,make
+unit,EXPANDER,piston,1,316L,make
+unit,EXPANDER,con_rod,1,316L,make
+unit,EXPANDER,flywheel,1,316L,make
+unit,EXPANDER,shaft,1,316L,make
+unit,EXPANDER,N1_inlet,1,316L,make
+unit,EXPANDER,N2_outlet,1,316L,make
+unit,EXPANDER,N1_line,1,316L,make
+unit,EXPANDER,N2_line,1,316L,make
+unit,EXPANDER,PSV_boss,1,316L,make
+unit,FORM,"Reactor tube DN15 Sch 40, 600 mm",1,SA-312 TP316L,AQS-DUTY-062 section 6
+unit,FORM,Weld-neck flange DN15 Class 150 RF,2,SA-182 F316L,ASME B16.5
+unit,FORM,Blind flange DN15 Class 150 with DN8 port and thermowell,2,SA-182 F316L,ASME B16.5
+unit,FORM,Spiral-wound gasket DN15 Class 150,2,316L / flexible graphite,ASME B16.20
+unit,FORM,Catalyst 7.9 g (iron molybdate) with inert alumina balls and 316L mesh retainers,1,see basis,AQS-DUTY-062 section 6
+unit,FORM,Band heater 127 W with PID and high-limit; feed vaporiser coil,1,mica / 316L,AQS-DUTY-062 section 6
+unit,FORM,Mineral wool 40 mm with SS cladding,1,mineral wool,ASTM C547
+unit,FORM,N2 diluent mixing tee and O2/MeOH ratio interlock (feed below LOC),1,316L,FORMOX_REVIEW2021; X-SAF-02
+unit,GLASS_DIGEST,Shell DN450 x 390 mm x 4.0 mm wall with flat bottom,1,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062 section 1
+unit,GLASS_DIGEST,Bolted flat lid with gasket,1,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062
+unit,GLASS_DIGEST,Nozzles DN25: feed slurry in; NaOH in; liquor out; drain; vent,5,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062
+unit,GLASS_DIGEST,Legs 40x40 x 300 mm,4,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",study
+unit,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 kW motor, PVDF sleeve",1,PVDF / 316L,PERRY9_MIX
+unit,GLASS_DIGEST,"Q3 heating coil, PVDF tube DN15",1,PVDF,graph HL-Q3-A/B-HX6
+unit,GLYOXAL,Shell DN65 x 60 mm x 4.0 mm wall with flat bottom,1,"SA-240 304L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062 section 1
+unit,GLYOXAL,Bolted flat lid with gasket,1,"SA-240 304L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,GLYOXAL,Nozzles DN25: acetaldehyde in; HNO3 in; glyoxal out; NO off-gas to HNO3; drain,5,"SA-240 304L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,GLYOXAL,Legs 40x40 x 300 mm,3,"SA-240 304L plate, rolled, GTAW (ASME IX)",study
+unit,GLYOXAL,"Mineral wool insulation with SS cladding; recirculation pump, nitrite-initiated (HOTANAHALLI1972)",1,mineral wool,AQS-DUTY-062 section 5
+unit,GLYOXAL,Heater mat 5 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit,HNO3,Shell DN65 x 60 mm x 2.0 mm wall with flat bottom,1,"SA-240 304L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062 section 1
+unit,HNO3,Bolted flat lid with gasket,1,"SA-240 304L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,HNO3,Nozzles DN25: NO/air from burner; water in; HNO3 out; tail gas vent; drain,5,"SA-240 304L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,HNO3,Legs 40x40 x 300 mm,3,"SA-240 304L plate, rolled, GTAW (ASME IX)",study
+unit,HNO3,"Pt-Rh gauze in DN25 Sch 40 SA-312 310S, 300 mm, 200 mm insulation",1,Pt-Rh 90/10 gauze; 310S,ULLMANN_NITRIC
+unit,HNO3,Burner heater 240 W with PID and high-limit; feed preheater,1,NiCr / 310S,AQS-DUTY-062 section 7
+unit,HNO3,"Absorber packing, 304L random rings",1,304L,ULLMANN_NITRIC
+unit,HTC,"Autoclave spool DN100 Sch 10S, 200 mm",1,SA-312 TP316L,AQS-DUTY-062 section 5; UG-27 t_req 2.25 mm vs 2.67 mm min
+unit,HTC,Weld-neck flange DN100 Class 300 RF,1,SA-182 F316L,ASME B16.5
+unit,HTC,Blind flange DN100 Class 300 with DN15 feed/discharge and thermowell,2,SA-182 F316L,ASME B16.5
+unit,HTC,Spiral-wound gasket DN100 Class 300,2,316L / flexible graphite,ASME B16.20
+unit,HTC,Band heater 79 W with PID and high-limit,1,mica,AQS-DUTY-062 section 5
+unit,HTC,Mineral wool 50 mm with SS cladding,1,mineral wool,ASTM C547
+unit,HTC,"Safety valve DN15, set at design pressure",1,316L,API 520 (graph relief_basis)
+unit,IMID,Shell DN65 x 60 mm x 4.0 mm wall with flat bottom,1,"SA-240 316L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062 section 1
+unit,IMID,Bolted flat lid with gasket,1,"SA-240 316L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,IMID,Nozzles DN25: glyoxal in; CH2O in; amines in; imidazole out; drain,5,"SA-240 316L plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,IMID,Legs 40x40 x 300 mm,3,"SA-240 316L plate, rolled, GTAW (ASME IX)",study
+unit,IMID,Mineral wool insulation with SS cladding; recirculation pump,1,mineral wool,AQS-DUTY-062 section 5
+unit,IMID,Heater mat 7 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit,LEACH_CSTR_1,Tank shell 2000x1080x1394 mm open top welded wall 12 mm floor 16 mm,1,CPVC,duty section 3; dimensions assumption inside graph envelope
+unit,LEACH_CSTR_1,Lid flange ring 40 mm x 10 mm,1,CPVC,assumption
+unit,LEACH_CSTR_1,Lid plate 12 mm,1,CPVC,assumption; closed lid for vents to NOX_SCRUB and FLUE_KO
+unit,LEACH_CSTR_1,Inlet header DN50 on -Y face Z 700,1,CPVC,graph nozzle rule; header is assumption
+unit,LEACH_CSTR_1,Inlet port stub DN20 (HL-Q3-A-HX5 HL-Q3-B-HX5) Q3 water 95 C,2,CPVC (flagged: 95 C exceeds PVC-U; above usual CPVC limit; held X-MAT-05),DN from edge
+unit,LEACH_CSTR_1,Inlet port stub DN25 placeholder bore not calculated,23,CPVC,assumption
+unit,LEACH_CSTR_1,Outlet header DN50 on +Y face Z 700,1,CPVC,graph nozzle rule; header is assumption
+unit,LEACH_CSTR_1,Outlet port stub DN25 placeholder bore not calculated,20,CPVC,assumption
+unit,LEACH_CSTR_1,Cable gland boss IA-E-LEACH,1,CPVC,assumption; conductor not a hose
+unit,LEACH_CSTR_1,HX-5 coil two concentric helices 25x3 mm tube 53.7 m 4.22 m2,1,borosilicate glass 3.3,AQS-DUTY-049; AQS-STD-002 3.3
+unit,LEACH_CSTR_1,HX-5 coil support pad,4,PTFE,assumption
+unit,LEACH_CSTR_1,Belt FRP pultruded channel C203x56x6.4 wrapped,3,FRP vinyl ester,AQS-DUTY-050 (study)
+unit,LEACH_CSTR_1,Agitator 4-blade 45 deg PBT D450 solid PVDF impeller,1,PVDF,AQS-DUTY-050 (study)
+unit,LEACH_CSTR_1,Agitator shaft D50 PVDF-sheathed,1,PVDF over steel core (not wetted),AQS-STD-002 M3
+unit,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge,1,bought,AQS-DUTY-050 (study)
+unit,LEACH_CSTR_1,Lid shaft seal,1,PTFE lip,assumption
+unit,LEACH_CSTR_1,HX-5 coil guide post,4,PVDF,AQS-STD-002 section 8
+unit,MEAM,"Reactor tube DN15 Sch 40, 600 mm",1,SA-312 TP316L,AQS-DUTY-062 section 6
+unit,MEAM,Weld-neck flange DN15 Class 300 RF,2,SA-182 F316L,ASME B16.5
+unit,MEAM,Blind flange DN15 Class 300 with DN8 port and thermowell,2,SA-182 F316L,ASME B16.5
+unit,MEAM,Spiral-wound gasket DN15 Class 300,2,316L / flexible graphite,ASME B16.20
+unit,MEAM,Catalyst 2.6 g (amorphous silica-alumina) with inert alumina balls and 316L mesh retainers,1,see basis,AQS-DUTY-062 section 6
+unit,MEAM,Band heater 153 W with PID and high-limit; feed vaporiser coil,1,mica / 316L,AQS-DUTY-062 section 6
+unit,MEAM,Mineral wool 40 mm with SS cladding,1,mineral wool,ASTM C547
+unit,MEAM,"Safety valve DN8, set at design pressure",1,316L,API 520 (graph relief_basis)
+unit,MEOH_FERM,Shell DN125 x 100 mm x 4.0 mm wall with flat bottom,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062 section 1
+unit,MEOH_FERM,Bolted flat lid with gasket,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,MEOH_FERM,Nozzles DN25: feed in; methanol vapour out; residue out; recirculation; drain,5,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,MEOH_FERM,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",study
+unit,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation pump,1,PIR,AQS-DUTY-062 section 5
+unit,MEOH_FERM,Heater mat 5 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+unit,MEOH_SYNTH,"Reactor tube DN50 Sch 40 SA-106 B, 1702 mm, 1 off",1,SA-106 B,AQS-DUTY-062 section 4; UG-27
+unit,MEOH_SYNTH,Weld-neck flange DN50 Class 600 RF,2,SA-105,ASME B16.5
+unit,MEOH_SYNTH,Blind flange DN50 Class 600 with DN15 nozzle,2,SA-105,ASME B16.5
+unit,MEOH_SYNTH,"Spiral-wound gasket DN50 Class 600, 316/graphite",2,316L / flexible graphite,ASME B16.20
+unit,MEOH_SYNTH,"Jacket DN100 Sch 40, 1402 mm, thermal oil in/out DN25",1,SA-106 B,AQS-DUTY-062
+unit,MEOH_SYNTH,Cu/ZnO/Al2O3 catalyst pellets 3.10 kg (2.82 L),1,Cu/ZnO/Al2O3,CTC2020_CZA
+unit,MEOH_SYNTH,Catalyst support grid and inert alumina balls top and bottom,1,316L / alpha-alumina,study
+unit,MEOH_SYNTH,"Feed preheater, 0.74 kW electric",1,mineral-insulated cable on 316L,AQS-DUTY-062
+unit,MEOH_SYNTH,"Safety valve, conventional, set at design pressure (API 520 sized orifice in the graph relief_basis)",1,316L,API 520
+unit,OIL_PYRO,Shell DN200 x 170 mm x 4.5 mm wall with flat bottom,1,"SA-240 304H plate, rolled, GTAW (ASME IX)",AQS-DUTY-062 section 1
+unit,OIL_PYRO,Bolted flat lid with gasket,1,"SA-240 304H plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,OIL_PYRO,Nozzles DN25: oil feed in; vapour out to OIL_FRAC; char out; thermowell; bursting disc,5,"SA-240 304H plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
+unit,OIL_PYRO,Legs 40x40 x 300 mm,3,"SA-240 304H plate, rolled, GTAW (ASME IX)",study
+unit,OIL_PYRO,"Ceramic band heaters, 1.66 kW installed rounded up to 2.0 kW, 480 V",1,mica/ceramic,AQS-DUTY-062
+unit,OIL_PYRO,Ceramic fibre insulation 60 mm with SS cladding,1,Al2O3-SiO2 fibre,ASTM C892
+unit,OIL_PYRO,Bursting disc DN25 to flare header,1,Inconel,ASME VIII-1 UG-127
+unit,YEAST,Shell DN200 x 170 mm x 4.0 mm wall with flat bottom,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062 section 1
+unit,YEAST,Bolted flat lid with gasket,1,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,YEAST,Nozzles DN25: sugar in; beer out; CO2 out; recirculation; drain,5,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",AQS-DUTY-062
+unit,YEAST,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)",study
+unit,YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily recirculation pump,1,PIR,AQS-DUTY-062 section 5
+unit,YEAST,Heater mat 5 W with thermostat,1,silicone,AQS-DUTY-062 section 5
+motor family,MF-01 x 176,stator laminations M270-35A 0.35 mm,3168,,EN 10106
+motor family,MF-01 x 176,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),176,,X-INV-02D
+motor family,MF-01 x 176,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-01 x 176,"housing extruded 6063, NEMA ICS 16 42 mm flange",176,,extruded + machined
+motor family,MF-01 x 176,bearing 6000-2Z,352,,X-INV-05
+motor family,MF-01 x 176,Hall sensor PCB,176,,X-INV-05 electronics
+motor family,MF-02 x 66,stator laminations M270-35A 0.35 mm,3828,,EN 10106
+motor family,MF-02 x 66,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),66,,X-INV-02D
+motor family,MF-02 x 66,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-02 x 66,"housing extruded 6063, NEMA ICS 16 57 mm flange",66,,extruded + machined
+motor family,MF-02 x 66,bearing 6000-2Z,132,,X-INV-05
+motor family,MF-02 x 66,Hall sensor PCB,66,,X-INV-05 electronics
+motor family,MF-03 x 25,stator laminations M270-35A 0.35 mm,450,,EN 10106
+motor family,MF-03 x 25,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),25,,X-INV-02D
+motor family,MF-03 x 25,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-03 x 25,"housing extruded 6063, NEMA ICS 16 42 mm flange",25,,extruded + machined
+motor family,MF-03 x 25,bearing 6000-2Z,50,,X-INV-05
+motor family,MF-03 x 25,Hall sensor PCB,25,,X-INV-05 electronics
+motor family,MF-03 x 25,"worm gear set (bronze wheel, steel worm)",25,,cut in-house
+motor family,MF-03 x 25,ISO 5211 F03 output flange + 9 mm square,25,,machined
+motor family,MF-04 x 8,stator laminations M400-50A (EN 10106) 0.5 mm,1840,,EN 10106
+motor family,MF-04 x 8,rotor laminations M400-50A 0.5 mm,1840,,EN 10106
+motor family,MF-04 x 8,magnet wire IEC 60317-13 12 AWG (11.952 mm2),12.27 kg,,X-INV-03 wire line
+motor family,MF-04 x 8,die-cast Al cage (bars + rings),4.70 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-04 x 8,shaft C45,8,,turned
+motor family,MF-04 x 8,compressor shell (scroll line X-MFG-35),0,,not in this model
+motor family,MF-05 x 5,stator laminations M400-50A (EN 10106) 0.5 mm,360,,EN 10106
+motor family,MF-05 x 5,rotor laminations M400-50A 0.5 mm,360,,EN 10106
+motor family,MF-05 x 5,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.61 kg,,X-INV-03 wire line
+motor family,MF-05 x 5,die-cast Al cage (bars + rings),0.14 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-05 x 5,shaft C45,5,,turned
+motor family,MF-05 x 5,compressor shell (scroll line X-MFG-35),0,,not in this model
+motor family,MF-06 x 1,stator laminations M400-50A (EN 10106) 0.5 mm,102,,EN 10106
+motor family,MF-06 x 1,rotor laminations M400-50A 0.5 mm,102,,EN 10106
+motor family,MF-06 x 1,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,X-INV-03 wire line
+motor family,MF-06 x 1,die-cast Al cage (bars + rings),0.40 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-06 x 1,shaft C45,1,,turned
+motor family,MF-06 x 1,compressor shell (scroll line X-MFG-35),0,,not in this model
+motor family,MF-07 x 1,stator laminations M400-50A (EN 10106) 0.5 mm,122,,EN 10106
+motor family,MF-07 x 1,rotor laminations M400-50A 0.5 mm,122,,EN 10106
+motor family,MF-07 x 1,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.58 kg,,X-INV-03 wire line
+motor family,MF-07 x 1,die-cast Al cage (bars + rings),0.70 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-07 x 1,shaft C45,1,,turned
+motor family,MF-07 x 1,compressor shell (scroll line X-MFG-35),0,,not in this model
+motor family,MF-08 x 105,stator laminations M400-50A (EN 10106) 0.5 mm,9660,,EN 10106
+motor family,MF-08 x 105,rotor laminations M400-50A 0.5 mm,9660,,EN 10106
+motor family,MF-08 x 105,magnet wire IEC 60317-13 21 AWG (0.184 mm2),0.77 kg,,X-INV-03 wire line
+motor family,MF-08 x 105,die-cast Al cage (bars + rings),0.32 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-08 x 105,"shaft C45 (EN 10083-2) D14 x 196 mm, key to IEC 60072-1",105,,turned
+motor family,MF-08 x 105,"frame A356 IEC 71, feet A112 x B90, holes K7",105,,cast + machined
+motor family,MF-08 x 105,end shields A356,210,,cast + machined
+motor family,MF-08 x 105,bearing 6202-2Z,210,,X-INV-05 OF bearing family
+motor family,MF-08 x 105,fan PP + fan cover steel,105,,IC 411
+motor family,MF-08 x 105,terminal box + 6-stud block,105,,IEC 60034-8 marking
+motor family,MF-09 x 27,stator laminations M400-50A (EN 10106) 0.5 mm,2808,,EN 10106
+motor family,MF-09 x 27,rotor laminations M400-50A 0.5 mm,2808,,EN 10106
+motor family,MF-09 x 27,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
+motor family,MF-09 x 27,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-09 x 27,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",27,,turned
+motor family,MF-09 x 27,"frame A356 IEC 90S, feet A140 x B100, holes K10",27,,cast + machined
+motor family,MF-09 x 27,end shields A356,54,,cast + machined
+motor family,MF-09 x 27,bearing 6205-2Z,54,,X-INV-05 OF bearing family
+motor family,MF-09 x 27,fan PP + fan cover steel,27,,IC 411
+motor family,MF-09 x 27,terminal box + 6-stud block,27,,IEC 60034-8 marking
+motor family,MF-10 x 20,stator laminations M400-50A (EN 10106) 0.5 mm,2840,,EN 10106
+motor family,MF-10 x 20,rotor laminations M400-50A 0.5 mm,2840,,EN 10106
+motor family,MF-10 x 20,magnet wire IEC 60317-13 18 AWG (0.597 mm2),2.03 kg,,X-INV-03 wire line
+motor family,MF-10 x 20,die-cast Al cage (bars + rings),0.78 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-10 x 20,"shaft C45 (EN 10083-2) D24 x 241 mm, key to IEC 60072-1",20,,turned
+motor family,MF-10 x 20,"frame A356 IEC 90L, feet A140 x B125, holes K10",20,,cast + machined
+motor family,MF-10 x 20,end shields A356,40,,cast + machined
+motor family,MF-10 x 20,bearing 6205-2Z,40,,X-INV-05 OF bearing family
+motor family,MF-10 x 20,fan PP + fan cover steel,20,,IC 411
+motor family,MF-10 x 20,terminal box + 6-stud block,20,,IEC 60034-8 marking
+motor family,MF-11 x 16,stator laminations M400-50A (EN 10106) 0.5 mm,1056,,EN 10106
+motor family,MF-11 x 16,rotor laminations M400-50A 0.5 mm,1056,,EN 10106
+motor family,MF-11 x 16,magnet wire IEC 60317-13 21 AWG (0.184 mm2),0.55 kg,,X-INV-03 wire line
+motor family,MF-11 x 16,die-cast Al cage (bars + rings),0.18 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-11 x 16,"shaft C45 (EN 10083-2) D11 x 176 mm, key to IEC 60072-1",16,,turned
+motor family,MF-11 x 16,"frame A356 IEC 63, feet A100 x B80, holes K7",16,,cast + machined
+motor family,MF-11 x 16,end shields A356,32,,cast + machined
+motor family,MF-11 x 16,bearing 6201-2Z,32,,X-INV-05 OF bearing family
+motor family,MF-11 x 16,fan PP + fan cover steel,16,,IC 411
+motor family,MF-11 x 16,terminal box + 6-stud block,16,,IEC 60034-8 marking
+motor family,MF-12 x 13,stator laminations M400-50A (EN 10106) 0.5 mm,1352,,EN 10106
+motor family,MF-12 x 13,rotor laminations M400-50A 0.5 mm,1352,,EN 10106
+motor family,MF-12 x 13,magnet wire IEC 60317-13 20 AWG (0.266 mm2),0.98 kg,,X-INV-03 wire line
+motor family,MF-12 x 13,die-cast Al cage (bars + rings),0.46 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-12 x 13,"shaft C45 (EN 10083-2) D19 x 212 mm, key to IEC 60072-1",13,,turned
+motor family,MF-12 x 13,"frame A356 IEC 80, feet A125 x B100, holes K10",13,,cast + machined
+motor family,MF-12 x 13,end shields A356,26,,cast + machined
+motor family,MF-12 x 13,bearing 6204-2Z,26,,X-INV-05 OF bearing family
+motor family,MF-12 x 13,fan PP + fan cover steel,13,,IC 411
+motor family,MF-12 x 13,terminal box + 6-stud block,13,,IEC 60034-8 marking
+motor family,MF-13 x 5,stator laminations M400-50A (EN 10106) 0.5 mm,810,,EN 10106
+motor family,MF-13 x 5,rotor laminations M400-50A 0.5 mm,810,,EN 10106
+motor family,MF-13 x 5,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.54 kg,,X-INV-03 wire line
+motor family,MF-13 x 5,die-cast Al cage (bars + rings),1.10 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-13 x 5,"shaft C45 (EN 10083-2) D28 x 261 mm, key to IEC 60072-1",5,,turned
+motor family,MF-13 x 5,"frame A356 IEC 100L, feet A160 x B140, holes K12",5,,cast + machined
+motor family,MF-13 x 5,end shields A356,10,,cast + machined
+motor family,MF-13 x 5,bearing 6206-2Z,10,,X-INV-05 OF bearing family
+motor family,MF-13 x 5,fan PP + fan cover steel,5,,IC 411
+motor family,MF-13 x 5,terminal box + 6-stud block,5,,IEC 60034-8 marking
+motor family,MF-14 x 4,stator laminations M400-50A (EN 10106) 0.5 mm,552,,EN 10106
+motor family,MF-14 x 4,rotor laminations M400-50A 0.5 mm,552,,EN 10106
+motor family,MF-14 x 4,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.12 kg,,X-INV-03 wire line
+motor family,MF-14 x 4,die-cast Al cage (bars + rings),0.61 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-14 x 4,"shaft C45 (EN 10083-2) D19 x 229 mm, key to IEC 60072-1",4,,turned
+motor family,MF-14 x 4,"frame A356 IEC 80, feet A125 x B100, holes K10",4,,cast + machined
+motor family,MF-14 x 4,end shields A356,8,,cast + machined
+motor family,MF-14 x 4,bearing 6204-2Z,8,,X-INV-05 OF bearing family
+motor family,MF-14 x 4,fan PP + fan cover steel,4,,IC 411
+motor family,MF-14 x 4,terminal box + 6-stud block,4,,IEC 60034-8 marking
+motor family,MF-15 x 4,stator laminations M400-50A (EN 10106) 0.5 mm,232,,EN 10106
+motor family,MF-15 x 4,rotor laminations M400-50A 0.5 mm,232,,EN 10106
+motor family,MF-15 x 4,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.44 kg,,X-INV-03 wire line
+motor family,MF-15 x 4,die-cast Al cage (bars + rings),0.12 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-15 x 4,"shaft C45 (EN 10083-2) D11 x 172 mm, key to IEC 60072-1",4,,turned
+motor family,MF-15 x 4,"frame A356 IEC 63, feet A100 x B80, holes K7",4,,cast + machined
+motor family,MF-15 x 4,end shields A356,8,,cast + machined
+motor family,MF-15 x 4,bearing 6201-2Z,8,,X-INV-05 OF bearing family
+motor family,MF-15 x 4,fan PP + fan cover steel,4,,IC 411
+motor family,MF-15 x 4,terminal box + 6-stud block,4,,IEC 60034-8 marking
+motor family,MF-16 x 3,stator laminations M400-50A (EN 10106) 0.5 mm,216,,EN 10106
+motor family,MF-16 x 3,rotor laminations M400-50A 0.5 mm,216,,EN 10106
+motor family,MF-16 x 3,magnet wire IEC 60317-13 20 AWG (0.266 mm2),0.66 kg,,X-INV-03 wire line
+motor family,MF-16 x 3,die-cast Al cage (bars + rings),0.23 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-16 x 3,"shaft C45 (EN 10083-2) D14 x 186 mm, key to IEC 60072-1",3,,turned
+motor family,MF-16 x 3,"frame A356 IEC 71, feet A112 x B90, holes K7",3,,cast + machined
+motor family,MF-16 x 3,end shields A356,6,,cast + machined
+motor family,MF-16 x 3,bearing 6202-2Z,6,,X-INV-05 OF bearing family
+motor family,MF-16 x 3,fan PP + fan cover steel,3,,IC 411
+motor family,MF-16 x 3,terminal box + 6-stud block,3,,IEC 60034-8 marking
+motor family,MF-17 x 2,stator laminations M400-50A (EN 10106) 0.5 mm,588,,EN 10106
+motor family,MF-17 x 2,rotor laminations M400-50A 0.5 mm,588,,EN 10106
+motor family,MF-17 x 2,magnet wire IEC 60317-13 15 AWG (2.400 mm2),5.23 kg,,X-INV-03 wire line
+motor family,MF-17 x 2,die-cast Al cage (bars + rings),3.52 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-17 x 2,"shaft C45 (EN 10083-2) D38 x 347 mm, key to IEC 60072-1",2,,turned
+motor family,MF-17 x 2,"frame A356 IEC 132M, feet A216 x B178, holes K12",2,,cast + machined
+motor family,MF-17 x 2,end shields A356,4,,cast + machined
+motor family,MF-17 x 2,bearing 6308-2Z,4,,X-INV-05 OF bearing family
+motor family,MF-17 x 2,fan PP + fan cover steel,2,,IC 411
+motor family,MF-17 x 2,terminal box + 6-stud block,2,,IEC 60034-8 marking
+motor family,MF-18 x 1,stator laminations M400-50A (EN 10106) 0.5 mm,288,,EN 10106
+motor family,MF-18 x 1,rotor laminations M400-50A 0.5 mm,288,,EN 10106
+motor family,MF-18 x 1,magnet wire IEC 60317-13 13 AWG (6.835 mm2),10.89 kg,,X-INV-03 wire line
+motor family,MF-18 x 1,die-cast Al cage (bars + rings),6.37 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-18 x 1,"shaft C45 (EN 10083-2) D48 x 374 mm, key to IEC 60072-1",1,,turned
+motor family,MF-18 x 1,"frame A356 IEC 180M, feet A279 x B241, holes K15",1,,cast + machined
+motor family,MF-18 x 1,end shields A356,2,,cast + machined
+motor family,MF-18 x 1,bearing 6310-2Z,2,,X-INV-05 OF bearing family
+motor family,MF-18 x 1,fan PP + fan cover steel,1,,IC 411
+motor family,MF-18 x 1,terminal box + 6-stud block,1,,IEC 60034-8 marking
+motor family,MF-19 x 1,stator laminations M400-50A (EN 10106) 0.5 mm,222,,EN 10106
+motor family,MF-19 x 1,rotor laminations M400-50A 0.5 mm,222,,EN 10106
+motor family,MF-19 x 1,magnet wire IEC 60317-13 16 AWG (1.474 mm2),2.98 kg,,X-INV-03 wire line
+motor family,MF-19 x 1,die-cast Al cage (bars + rings),1.51 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-19 x 1,"shaft C45 (EN 10083-2) D28 x 291 mm, key to IEC 60072-1",1,,turned
+motor family,MF-19 x 1,"frame A356 IEC 100L, feet A160 x B140, holes K12",1,,cast + machined
+motor family,MF-19 x 1,end shields A356,2,,cast + machined
+motor family,MF-19 x 1,bearing 6206-2Z,2,,X-INV-05 OF bearing family
+motor family,MF-19 x 1,fan PP + fan cover steel,1,,IC 411
+motor family,MF-19 x 1,terminal box + 6-stud block,1,,IEC 60034-8 marking
+motor family,MF-20 x 1,stator laminations M400-50A (EN 10106) 0.5 mm,222,,EN 10106
+motor family,MF-20 x 1,rotor laminations M400-50A 0.5 mm,222,,EN 10106
+motor family,MF-20 x 1,magnet wire IEC 60317-13 16 AWG (1.474 mm2),3.53 kg,,X-INV-03 wire line
+motor family,MF-20 x 1,die-cast Al cage (bars + rings),1.91 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-20 x 1,"shaft C45 (EN 10083-2) D28 x 291 mm, key to IEC 60072-1",1,,turned
+motor family,MF-20 x 1,"frame A356 IEC 112M, feet A190 x B140, holes K12",1,,cast + machined
+motor family,MF-20 x 1,end shields A356,2,,cast + machined
+motor family,MF-20 x 1,bearing 6306-2Z,2,,X-INV-05 OF bearing family
+motor family,MF-20 x 1,fan PP + fan cover steel,1,,IC 411
+motor family,MF-20 x 1,terminal box + 6-stud block,1,,IEC 60034-8 marking
+motor family,MF-21 x 44,"coil PA66-GF bobbin, class H wire IEC 60317-13",44,,X-INV-03
+motor family,MF-21 x 44,plunger and frame 430F,44,,turned
+motor family,MF-21 x 44,connector EN 175301-803,44,,
+motor family,MF-22 x 8,stator laminations M270-35A 0.35 mm,1192,,EN 10106
+motor family,MF-22 x 8,NdFeB magnets 104.7 g (basis; ferrite variant in AQS-INV-005),8,,X-INV-02D
+motor family,MF-22 x 8,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-22 x 8,"housing extruded 6063, NEMA ICS 16 57 mm flange",8,,extruded + machined
+motor family,MF-22 x 8,bearing 608-2Z,16,,X-INV-05
+motor family,MF-22 x 8,connector 4-pin,8,,X-INV-05 electronics
+motor family,MF-23 x 3,stator laminations M270-35A 0.35 mm,1566,,EN 10106
+motor family,MF-23 x 3,NdFeB magnets 555.2 g (basis; ferrite variant in AQS-INV-005),3,,X-INV-02D
+motor family,MF-23 x 3,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-23 x 3,"housing extruded 6063, NEMA ICS 16 86 mm flange",3,,extruded + machined
+motor family,MF-23 x 3,bearing 608-2Z,6,,X-INV-05
+motor family,MF-23 x 3,connector 4-pin,3,,X-INV-05 electronics
+bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 281 x 6.096 m",1683.9 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,249 / 174 / 174 / 696,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-02,"316L ASTM A312 DN15 pipe, 217 x 6.096 m",1300.6 m,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,199 / 136 / 136 / 544,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-03,"HDPE PE4710 DR 11 (ASTM D3035) DN15 pipe, 205 x 6.096 m",1225.0 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-03,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/2 in studs,176 / 124 / 124 / 496,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-04,"HDPE PE4710 DR 11 (ASTM D3035) DN50 pipe, 110 x 6.096 m",661.5 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-04,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 5/8 in studs,94 / 64 / 64 / 256,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-05,"CPVC Sch 80 ASTM F441 DN15 pipe, 110 x 6.096 m",647.2 m,CPVC Sch 80 ASTM F441,AQS-INV-003
+bulk pipe,PF-05,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 1/2 in studs,87 / 58 / 58 / 232,CPVC Sch 80 ASTM F441,AQS-INV-003
+bulk pipe,PF-06,"CPVC Sch 80 ASTM F441 DN50 pipe, 75 x 6.096 m",446.7 m,CPVC Sch 80 ASTM F441,AQS-INV-003
+bulk pipe,PF-06,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 5/8 in studs,63 / 42 / 42 / 168,CPVC Sch 80 ASTM F441,AQS-INV-003
+bulk pipe,PF-07,"PVDF SDR 21 ISO 10931 DN15 pipe, 67 x 6.096 m",399.0 m,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-07,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,71 / 48 / 48 / 192,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-08,"PVC-U Sch 80 ASTM D1785 DN50 pipe, 59 x 6.096 m",353.1 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-08,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 5/8 in studs,38 / 28 / 28 / 112,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-09,"FRP vinyl ester DN15 pipe, 20 x 6.096 m",116.9 m,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-09,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 1/2 in studs,14 / 10 / 10 / 40,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-10,"CS ASTM A106 Gr B DN15 pipe, 20 x 6.096 m",116.1 m,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-10,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,22 / 16 / 16 / 64,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-11,"316L ASTM A312 DN20 pipe, 16 x 6.096 m",93.1 m,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-11,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,15 / 12 / 12 / 48,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-12,"PP-H ISO 15494 DN15 pipe, 15 x 6.096 m",88.0 m,PP-H ISO 15494,AQS-INV-003
+bulk pipe,PF-12,ISO 15494 butt-fusion 90 elbow; ISO 15494 stub end + backing ring; gaskets; 1/2 in studs,21 / 14 / 14 / 56,PP-H ISO 15494,AQS-INV-003
+bulk pipe,PF-13,"CS ASTM A106 Gr B DN20 pipe, 8 x 6.096 m",46.3 m,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-13,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,6 / 4 / 4 / 16,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-14,"PVDF SDR 21 ISO 10931 DN50 pipe, 8 x 6.096 m",43.1 m,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-14,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 5/8 in studs,6 / 4 / 4 / 16,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-15,"316L ASTM A312 DN25 pipe, 8 x 6.096 m",42.2 m,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-15,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,6 / 4 / 4 / 16,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-16,"HDPE PE4710 DR 11 (ASTM D3035) DN25 pipe, 7 x 6.096 m",38.0 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-16,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/2 in studs,7 / 6 / 6 / 24,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-17,"HDPE PE4710 DR 11 (ASTM D3035) DN20 pipe, 6 x 6.096 m",34.4 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-17,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/2 in studs,6 / 4 / 4 / 16,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-18,"FRP vinyl ester DN20 pipe, 6 x 6.096 m",30.4 m,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-18,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-19,"CS ASTM A106 Gr B DN25 pipe, 3 x 6.096 m",11.4 m,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-19,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,4 / 4 / 4 / 16,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-20,"FRP vinyl ester DN250 pipe, 2 x 6.096 m",7.4 m,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-20,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 7/8 in studs,4 / 6 / 6 / 72,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN40 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-22,"FRP vinyl ester DN200 pipe, 1 x 6.096 m",5.3 m,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-22,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 3/4 in studs,2 / 2 / 2 / 16,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-23,"PVDF SDR 21 ISO 10931 DN300 pipe, 1 x 6.096 m",5.0 m,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-23,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 7/8 in studs,2 / 2 / 2 / 24,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",46320 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",30884 m,Cu,AQS-INV-002
+bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",23760 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",23160 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",12903 m,Cu,AQS-INV-002
+bulk wire,WF-06,"control 18 AWG shielded pair, 300 V",6440 m,Cu,AQS-INV-002
+bulk wire,WF-07,"DC power pair 16 AWG TC-ER 2-cond, 600 V",6380 m,Cu,AQS-INV-002
+bulk wire,WF-08,"bare grounding 4/0 AWG bare soft-drawn Cu, -",6144 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4292 m,Cu,AQS-INV-002
+bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3675 m,Cu,AQS-INV-002
+bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",2511 m,Cu,AQS-INV-002
+bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1500 m,Cu,AQS-INV-002
+bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",843 m,Cu,AQS-INV-002
+bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",675 m,Cu,AQS-INV-002
+bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",597 m,Cu,AQS-INV-002
+bulk wire,WF-16,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",332 m,Cu,AQS-INV-002
+bulk wire,WF-17,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",298 m,Cu,AQS-INV-002
+bulk wire,WF-18,"power 4/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",253 m,Cu,AQS-INV-002
+bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",225 m,Cu,AQS-INV-002
+bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,AQS-INV-002
+bulk wire,WF-21,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",101 m,Cu,AQS-INV-002
+bulk wire,WF-22,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,AQS-INV-002
+bulk wire,WF-23,"power 2 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",55 m,Cu,AQS-INV-002
+bulk wire,WF-24,"power 8 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18 m,Cu,AQS-INV-002
+bulk wire,WF-25,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",9 m,Cu,AQS-INV-002
+bulk wire,WF-26,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,AQS-INV-002
+bulk wire,WF-27,"equipment ground 12 AWG green XHHW-2 Cu, 600 V",3 m,Cu,AQS-INV-002
+building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",556,,AQS-INV-004
+building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,AQS-INV-004
+building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),1078,,AQS-INV-004
+building block,OF-04,electronics: PLC analog input point (IEC 61131-2),836,,AQS-INV-004
+building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),267,,AQS-INV-004
+building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),147,,AQS-INV-004
+building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",120,,AQS-INV-004
+building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),55,,AQS-INV-004
+building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),44,,AQS-INV-004
+building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),15,,AQS-INV-004
+building block,OF-11,electronics: stepper driver (IEC 61800-5-1),11,,AQS-INV-004
+building block,OF-12,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),12,,AQS-INV-004
+building block,OF-13,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14158,,AQS-INV-004
+building block,OF-14,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,AQS-INV-004
+building block,OF-15,fastener: M12x40 hex bolt + nut + 2 washers (PVDF),36,,AQS-INV-004
+building block,OF-16,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),28,,AQS-INV-004
+building block,OF-17,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 3506 A4-70 outside the wetted zone),24,,AQS-INV-004
+building block,OF-18,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 898-1 8.8 zinc),24,,AQS-INV-004
+building block,OF-19,fastener: M10 anchor (ISO 3506 A4-70),16,,AQS-INV-004
+building block,OF-20,fastener: M12 anchor (ISO 3506 A4-70),10,,AQS-INV-004
+building block,OF-21,fastener: M10 (A4-70),8,,AQS-INV-004
+building block,OF-22,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,AQS-INV-004
+building block,OF-23,fastener: M12 (A4-70),4,,AQS-INV-004
+building block,OF-24,fastener: M8 (A4-70),4,,AQS-INV-004
+building block,OF-25,fastener: Flange gasket (PTFE envelope),2,,AQS-INV-004
+building block,OF-26,fastener: Flange gasket (graphite sheet),2,,AQS-INV-004
+building block,OF-27,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,AQS-INV-004
+building block,OF-28,fastener: Lid gasket 40 mm wide (FKM),1,,AQS-INV-004
+building block,OF-29,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-004
+building block,OF-30,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",238,,AQS-INV-004
+building block,OF-31,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",186,,AQS-INV-004
+building block,OF-32,"instrument: temperature element (IEC 60751, 316L thermowell)",186,,AQS-INV-004
+building block,OF-33,"instrument: high-level switch (IEC 60947-5, 316L)",113,,AQS-INV-004
+building block,OF-34,"instrument: level transmitter (IEC 62828, PTFE lens)",113,,AQS-INV-004
+building block,OF-35,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",217,,AQS-INV-004
+building block,OF-36,"seal: mechanical seal, single (SiC/SiC faces, FKM)",144,,AQS-INV-004
+building block,OF-37,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5895,,AQS-INV-004
+building block,OF-38,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1184,,AQS-INV-004
+building block,OF-39,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",202,,AQS-INV-004
+building block,OF-40,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",198,,AQS-INV-004
+building block,OF-41,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",152,,AQS-INV-004
+building block,OF-42,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",100,,AQS-INV-004
+building block,OF-43,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",82,,AQS-INV-004
+building block,OF-44,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",78,,AQS-INV-004
+building block,OF-45,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",56,,AQS-INV-004
+building block,OF-46,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",30,,AQS-INV-004
+building block,OF-47,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",24,,AQS-INV-004
+building block,OF-48,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",22,,AQS-INV-004
+building block,OF-49,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",20,,AQS-INV-004
+building block,OF-50,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",14,,AQS-INV-004
+building block,OF-51,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",14,,AQS-INV-004
+building block,OF-52,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",7,,AQS-INV-004
+building block,OF-53,"valve: check valve (PVC-lined swing/ball check valve in FRP service, ISO 16137)",5,,AQS-INV-004

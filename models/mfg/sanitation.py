@@ -31,7 +31,7 @@ d = N['BLACK_ALK_HOLD']['params']['design']; S['BLACK_ALK_HOLD'] = (tank(d['D_mm
 for U, (m, rows) in S.items():
     o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
     cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
-    open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+    __import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
     open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n1,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,lid flange,study\n2,M10 anchor,ISO 3506 A4-70,4,feet,study\n')
     open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"# Work order {U}\n\nAuthority: AQS-DUTY-063 (X-SAN-01). In-house fabrication.\n\n" + '\n'.join(f'{i+1}. Make and fit item {r[0]}: {r[1]} ({r[3]}).' for i, r in enumerate(rows)) +
         f"\n{len(rows)+1}. Test: {'hydrostatic fill 24 h, no leak; gas-tightness of the lid at 5 kPa' if U == 'BLACK_DIGEST' else 'temperature mapping at 70 C, both RTDs within 0.5 K, hold timer trip test' if U == 'BLACK_PASTEUR' else 'release interlock test with a failed and a passed result' if U == 'BLACK_ALK_HOLD' else 'run test on water and bran slurry, cake TS'}.\n")

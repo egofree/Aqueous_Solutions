@@ -47,7 +47,7 @@ for U, s in SPEC.items():
     if U == 'ACEX': rows += [('5', f"Strong-base type I anion resin, OH form, {d['V_bed_L']:.2f} L per column; second identical column (lead/regenerate)", 2, 'polystyrene-DVB gel', 'PERRY9_IX'), ('6', 'Acetic acid neutraliser vessel 0.5 L with pH probe', 1, 'PP-H', 'AQS-DUTY-062')]
     if U == 'DIGESTER': rows += [('5', 'Biogas recirculation blower, diaphragm, about 1 L/min', 1, 'PP/EPDM', 'AQS-DUTY-062'), ('6', 'PIR insulation 50 mm with PE cladding', 1, 'PIR', 'AQS-DUTY-062')]
     if U == 'OIL_PYRO': rows += [('5', f"Ceramic band heaters, {d['kW']:.2f} kW installed rounded up to 2.0 kW, 480 V", 1, 'mica/ceramic', 'AQS-DUTY-062'), ('6', 'Ceramic fibre insulation 60 mm with SS cladding', 1, 'Al2O3-SiO2 fibre', 'ASTM C892'), ('7', 'Bursting disc DN25 to flare header', 1, 'Inconel', 'ASME VIII-1 UG-127')]
-    open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+    __import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
     bolts = max(8, int(3.14159*(D + 60)/100)//4*4)
     open(f'models/mfg/{U}/fasteners.csv', 'w').write(f"item,size,grade,qty,location,basis\n1,M10 x 40 lid bolt with nut and washers,{'ASTM A193 B8' if U == 'OIL_PYRO' else 'ISO 3506 A4-70'},{bolts},lid flange at 100 mm pitch,study\n2,M12 anchor,ISO 3506 A4-70,{s['legs']},leg feet,study\n")
     open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
@@ -81,7 +81,7 @@ rows = [('1', f"Reactor tube {d['tube']}, {L} mm, {d['tubes']} off", d['tubes'],
         ('7', 'Catalyst support grid and inert alumina balls top and bottom', 1, '316L / alpha-alumina', 'study'),
         ('8', f"Feed preheater, {d['preheat_kW']:.2f} kW electric", 1, 'mineral-insulated cable on 316L', 'AQS-DUTY-062'),
         ('9', 'Safety valve, conventional, set at design pressure (API 520 sized orifice in the graph relief_basis)', 1, '316L', 'API 520')]
-open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+__import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
 open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n1,5/8 in stud bolt with 2 heavy hex nuts,ASTM A193 B7 / A194 2H,' + str(8*2*d['tubes']) + ',DN50 Class 600 flanges (8 per joint),ASME B16.5\n')
 open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
 
@@ -109,7 +109,7 @@ rows = [('1', f'Autoclave spool DN100 Sch 10S, {L} mm', 1, 'SA-312 TP316L', f"AQ
         ('4', 'Spiral-wound gasket DN100 Class 300', 2, '316L / flexible graphite', 'ASME B16.20'),
         ('5', f"Band heater {max(50, round(d['heat_W']*2))} W with PID and high-limit", 1, 'mica', 'AQS-DUTY-062 section 5'),
         ('6', 'Mineral wool 50 mm with SS cladding', 1, 'mineral wool', 'ASTM C547'), ('7', 'Safety valve DN15, set at design pressure', 1, '316L', 'API 520 (graph relief_basis)')]
-open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+__import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
 open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n1,3/4 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,16,two DN100 Class 300 joints (8 each),ASME B16.5\n')
 open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
 
@@ -139,7 +139,7 @@ for U, cls, flod, flt in (('ALD', 150, 88.9, 11.2), ('FORM', 150, 88.9, 11.2), (
             ('7', 'Mineral wool 40 mm with SS cladding', 1, 'mineral wool', 'ASTM C547')]
     if U == 'MEAM': rows.append(('8', 'Safety valve DN8, set at design pressure', 1, '316L', 'API 520 (graph relief_basis)'))
     if U == 'FORM': rows.append(('8', 'N2 diluent mixing tee and O2/MeOH ratio interlock (feed below LOC)', 1, '316L', 'FORMOX_REVIEW2021; X-SAF-02'))
-    open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+    __import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
     open(f'models/mfg/{U}/fasteners.csv', 'w').write(f"item,size,grade,qty,location,basis\n1,1/2 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,8,two DN15 Class {cls} joints (4 each),ASME B16.5\n")
     open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
 

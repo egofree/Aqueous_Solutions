@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Screw press, 100 mm screw in 0.5 mm wedge-wire screen, 700 mm long,1,316L,METCALF5 cake 20 % TS
-2,Gearmotor 0.09 kW, 10 rpm output,1,IEC 63 frame,X-INV-01
+1,"Screw press, 100 mm screw in 0.5 mm wedge-wire screen, 700 mm long",1,316L,METCALF5 cake 20 % TS
+2,"Gearmotor 0.09 kW, 10 rpm output",1,IEC 63 frame,X-INV-01
 3,Sealed cake bin 20 L with gasketed lid,2,HDPE,AQS-DUTY-063: cake to AFTERBURNER in sealed bins
 4,Centrate trough and DN25 outlet,1,PP-H,AQS-DUTY-063
