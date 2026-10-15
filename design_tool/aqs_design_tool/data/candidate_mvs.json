@@ -5667,7 +5667,7 @@
     },
     {
       "unit_id": "COMPOST_TOILET",
-      "sector_id": "FARM",
+      "sector_id": "HAB",
       "enabled": true,
       "class": "farm",
       "tags": [],
@@ -6555,7 +6555,7 @@
     },
     {
       "unit_id": "HAB_SLEEP",
-      "sector_id": "FARM",
+      "sector_id": "HAB",
       "enabled": true,
       "class": "farm",
       "tags": [],
@@ -6577,7 +6577,7 @@
     },
     {
       "unit_id": "HAB_GALLEY",
-      "sector_id": "FARM",
+      "sector_id": "HAB",
       "enabled": true,
       "class": "farm",
       "tags": [],
@@ -6599,7 +6599,7 @@
     },
     {
       "unit_id": "HAB_MED",
-      "sector_id": "FARM",
+      "sector_id": "HAB",
       "enabled": true,
       "class": "farm",
       "tags": [],
@@ -6621,7 +6621,7 @@
     },
     {
       "unit_id": "HAB_WASH",
-      "sector_id": "FARM",
+      "sector_id": "HAB",
       "enabled": true,
       "class": "farm",
       "tags": [],
@@ -10529,7 +10529,7 @@
         "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -13096,7 +13096,7 @@
         "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -13113,7 +13113,7 @@
         "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -13129,7 +13129,7 @@
         "status": "study",
         "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -13146,7 +13146,7 @@
         "status": "study",
         "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -14319,7 +14319,7 @@
         "status": "study",
         "note": "AQS-DUTY-049. Struvite, ash, iodide."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -14422,7 +14422,7 @@
         "note": "AQS-DUTY-049"
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15119,7 +15119,7 @@
         "note": "Not a mass flow. Four occupants. The room is not a process vessel."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15135,7 +15135,7 @@
         "status": "study",
         "note": "Not a mass flow."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15153,7 +15153,7 @@
         "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15169,7 +15169,7 @@
         "status": "study",
         "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15187,7 +15187,7 @@
         "note": "The iodide dose, through the medical room."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15203,7 +15203,7 @@
         "status": "study",
         "note": "Dose leaves the medical room into habitation."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15221,7 +15221,7 @@
         "note": "Four people, 20 kg/d each. Split out of S12 so grey does not change."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15237,7 +15237,7 @@
         "status": "study",
         "note": "Wash water into grey treatment. S12 reduced by the same 80."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"

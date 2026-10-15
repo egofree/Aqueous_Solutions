@@ -962,5 +962,33 @@
    "docs-authority/ISO_ROUTES.md"
   ],
   "id": "A-M-074"
+ },
+ {
+  "value": "FARM second tier floor at L1 datum + 2250 mm, beds and skids only; floor items over 1650 mm block the tier",
+  "units": "mm",
+  "where": "AQS-PLACE-STUDY-001 FARM",
+  "basis": "FARM block 4500 mm high; skid 1800 mm + 2250 = 4050 mm under the block top",
+  "sensitivity": "Structure (tier deck load) and access",
+  "replaced_by": "X-BLD-01 tier deck design and X-BLD-04 access check",
+  "task": "X-RSZ-05",
+  "files": [
+   "flow_graph/placement_study.json",
+   "flow_graph/study_place.py"
+  ],
+  "id": "A-M-075"
+ },
+ {
+  "value": "FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm",
+  "units": "mm",
+  "where": "AQS-PLACE-STUDY-001 water tanks (DIGESTER, FISH, CLARIFIER, FISH_SUMP)",
+  "basis": "Floor-bound wet tanks do not fit FARM; L-2 east of HYDRO is free in the seed",
+  "sensitivity": "Lift head to L1 beds; slab loads",
+  "replaced_by": "X-BLD-04 general arrangement",
+  "task": "X-RSZ-05",
+  "files": [
+   "flow_graph/placement_study.json",
+   "flow_graph/study_place.py"
+  ],
+  "id": "A-M-076"
  }
 ]

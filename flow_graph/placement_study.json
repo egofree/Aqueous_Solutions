@@ -47,12 +47,13 @@
     {
       "unit_id": "HAB_SLEEP",
       "level": "L1",
-      "block_id": "FARM",
+      "block_id": "HAB",
       "origin_mm": [
-        17600,
-        11400,
+        0,
+        1800,
         6000
       ],
+      "tier": 1,
       "size_mm": [
         3000,
         3000,
@@ -60,17 +61,18 @@
       ],
       "category": "room",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in HAB 600 mm clear"
     },
     {
       "unit_id": "HAB_GALLEY",
       "level": "L1",
-      "block_id": "FARM",
+      "block_id": "HAB",
       "origin_mm": [
-        17600,
-        15000,
+        6200,
+        1800,
         6000
       ],
+      "tier": 1,
       "size_mm": [
         3000,
         3000,
@@ -78,20 +80,59 @@
       ],
       "category": "room",
       "status": "STUDY",
-      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in FARM 600 mm clear"
+      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in HAB 600 mm clear"
+    },
+    {
+      "unit_id": "HAB_MED",
+      "level": "L1",
+      "block_id": "HAB",
+      "origin_mm": [
+        0,
+        5400,
+        6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        3000,
+        3000,
+        2600
+      ],
+      "category": "room",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in HAB 600 mm clear"
+    },
+    {
+      "unit_id": "HAB_WASH",
+      "level": "L1",
+      "block_id": "HAB",
+      "origin_mm": [
+        3600,
+        5400,
+        6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        3000,
+        3000,
+        2600
+      ],
+      "category": "room",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in HAB 600 mm clear"
     },
     {
       "unit_id": "ANIMAL_PEN",
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        21200,
+        17600,
         11400,
         6000
       ],
+      "tier": 1,
       "size_mm": [
-        2400,
         3000,
+        2400,
         2000
       ],
       "category": "pen",
@@ -103,18 +144,209 @@
       "level": "L1",
       "block_id": "FARM",
       "origin_mm": [
-        21200,
-        15000,
+        17600,
+        14400,
         6000
       ],
+      "tier": 1,
       "size_mm": [
-        2400,
         3000,
+        2400,
         2000
       ],
       "category": "pen",
       "status": "STUDY",
       "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "DUCKWEED",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        22200,
+        10700,
+        6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        1200,
+        4800,
+        600
+      ],
+      "category": "bed",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "NFIX_BED",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        12600,
+        0,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        4800,
+        1200,
+        600
+      ],
+      "category": "bed",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "VEG_BED",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        12600,
+        1800,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        4800,
+        1200,
+        600
+      ],
+      "category": "bed",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "CLOVER",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        18000,
+        2600,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        4800,
+        1200,
+        600
+      ],
+      "category": "bed",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "PEANUT",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        12600,
+        3600,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        4800,
+        1200,
+        600
+      ],
+      "category": "bed",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "SUNFLOWER",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        18000,
+        4400,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        4800,
+        1200,
+        600
+      ],
+      "category": "bed",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'bed' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "DIGESTER",
+      "level": "L-2",
+      "block_id": "FARM_AQ",
+      "origin_mm": [
+        18600,
+        4000,
+        -10500
+      ],
+      "tier": 1,
+      "size_mm": [
+        2400,
+        1800,
+        1500
+      ],
+      "category": "tank",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
+    },
+    {
+      "unit_id": "FISH",
+      "level": "L-2",
+      "block_id": "FARM_AQ",
+      "origin_mm": [
+        21600,
+        4000,
+        -10500
+      ],
+      "tier": 1,
+      "size_mm": [
+        2400,
+        1800,
+        1500
+      ],
+      "category": "tank",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
+    },
+    {
+      "unit_id": "CLARIFIER",
+      "level": "L-2",
+      "block_id": "FARM_AQ",
+      "origin_mm": [
+        18600,
+        6400,
+        -10500
+      ],
+      "tier": 1,
+      "size_mm": [
+        2400,
+        1800,
+        1500
+      ],
+      "category": "tank",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
+    },
+    {
+      "unit_id": "FISH_SUMP",
+      "level": "L-2",
+      "block_id": "FARM_AQ",
+      "origin_mm": [
+        21600,
+        6400,
+        -10500
+      ],
+      "tier": 1,
+      "size_mm": [
+        2400,
+        1800,
+        1500
+      ],
+      "category": "tank",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'tank' (assumption); packed in FARM_AQ 600 mm clear"
     },
     {
       "unit_id": "CRYO_ASU",
@@ -125,6 +357,7 @@
         6000,
         -6000
       ],
+      "tier": 1,
       "size_mm": [
         2000,
         1500,
@@ -135,6 +368,44 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'cold_box' (assumption); packed in CRYO 600 mm clear"
     },
     {
+      "unit_id": "EMETH",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        21200,
+        16100,
+        6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "LIGNO_PRE",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        23000,
+        16100,
+        6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        800,
+        1200,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
       "unit_id": "BOARD_MILL",
       "level": "L0",
       "block_id": "MFG",
@@ -143,6 +414,7 @@
         0,
         0
       ],
+      "tier": 1,
       "size_mm": [
         1200,
         800,
@@ -153,6 +425,329 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in MFG 600 mm clear"
     },
     {
+      "unit_id": "HTC",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        18000,
+        0,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "YEAST",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        12600,
+        5400,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "ABE",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        14400,
+        5400,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "ACETOX",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        16200,
+        5400,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "ALD",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        18000,
+        6200,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "GLYOXAL",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        19800,
+        6200,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "FORM",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        21600,
+        6200,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "MEAM",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        12600,
+        6800,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "IMID",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        14400,
+        6800,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "ACEX",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        16200,
+        6800,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "HNO3",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        18000,
+        7600,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "BUCL",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        19800,
+        7600,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "BSFL",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        21600,
+        7600,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "WORMS",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        12600,
+        8200,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "BEES",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        14400,
+        8200,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "CRAYFISH",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        16200,
+        8200,
+        8250
+      ],
+      "tier": 2,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "COMPOST_TOILET",
+      "level": "L1",
+      "block_id": "HAB",
+      "origin_mm": [
+        9800,
+        1800,
+        6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in HAB 600 mm clear"
+    },
+    {
       "unit_id": "CRYO_HE",
       "level": "L-1",
       "block_id": "CRYO",
@@ -161,6 +756,7 @@
         6000,
         -6000
       ],
+      "tier": 1,
       "size_mm": [
         800,
         600,
@@ -179,6 +775,7 @@
         7200,
         -6000
       ],
+      "tier": 1,
       "size_mm": [
         800,
         600,
@@ -197,6 +794,7 @@
         8100,
         -6000
       ],
+      "tier": 1,
       "size_mm": [
         800,
         600,
@@ -215,6 +813,7 @@
         8400,
         -6000
       ],
+      "tier": 1,
       "size_mm": [
         800,
         600,
@@ -233,6 +832,7 @@
         9300,
         -6000
       ],
+      "tier": 1,
       "size_mm": [
         800,
         600,
@@ -247,10 +847,11 @@
       "level": "L1",
       "block_id": "HAB",
       "origin_mm": [
-        0,
+        3600,
         1800,
         6000
       ],
+      "tier": 1,
       "size_mm": [
         600,
         300,
@@ -265,10 +866,11 @@
       "level": "L1",
       "block_id": "HAB",
       "origin_mm": [
-        1200,
+        4800,
         1800,
         6000
       ],
+      "tier": 1,
       "size_mm": [
         600,
         300,
@@ -279,130 +881,5 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'manifold' (assumption); packed in HAB 600 mm clear"
     }
   ],
-  "unplaced": [
-    [
-      "HAB_MED",
-      "FARM"
-    ],
-    [
-      "HAB_WASH",
-      "FARM"
-    ],
-    [
-      "DUCKWEED",
-      "FARM"
-    ],
-    [
-      "NFIX_BED",
-      "FARM"
-    ],
-    [
-      "VEG_BED",
-      "FARM"
-    ],
-    [
-      "CLOVER",
-      "FARM"
-    ],
-    [
-      "PEANUT",
-      "FARM"
-    ],
-    [
-      "SUNFLOWER",
-      "FARM"
-    ],
-    [
-      "DIGESTER",
-      "FARM"
-    ],
-    [
-      "FISH",
-      "FARM"
-    ],
-    [
-      "CLARIFIER",
-      "FARM"
-    ],
-    [
-      "FISH_SUMP",
-      "FARM"
-    ],
-    [
-      "EMETH",
-      "FARM"
-    ],
-    [
-      "LIGNO_PRE",
-      "FARM"
-    ],
-    [
-      "HTC",
-      "FARM"
-    ],
-    [
-      "YEAST",
-      "FARM"
-    ],
-    [
-      "ABE",
-      "FARM"
-    ],
-    [
-      "ACETOX",
-      "FARM"
-    ],
-    [
-      "ALD",
-      "FARM"
-    ],
-    [
-      "GLYOXAL",
-      "FARM"
-    ],
-    [
-      "FORM",
-      "FARM"
-    ],
-    [
-      "MEAM",
-      "FARM"
-    ],
-    [
-      "IMID",
-      "FARM"
-    ],
-    [
-      "ACEX",
-      "FARM"
-    ],
-    [
-      "HNO3",
-      "FARM"
-    ],
-    [
-      "BUCL",
-      "FARM"
-    ],
-    [
-      "BSFL",
-      "FARM"
-    ],
-    [
-      "WORMS",
-      "FARM"
-    ],
-    [
-      "BEES",
-      "FARM"
-    ],
-    [
-      "CRAYFISH",
-      "FARM"
-    ],
-    [
-      "COMPOST_TOILET",
-      "FARM"
-    ]
-  ]
+  "unplaced": []
 }
