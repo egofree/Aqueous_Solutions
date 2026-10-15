@@ -13,6 +13,7 @@ Vessel cases come from the graph (write_graph relief, API520). Machine interstag
 | CRYO_H2 | vessel | 22000.0 | blocked outlet at full inflow 1.789 kg/h (hydrogen); operating 200 bar, design 220.0 bar g | 1.789 | 0.22 | 13.0 | yes |
 | CRYO_O2 | vessel | 22000.0 | blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g | 14.372 | 0.3 | 10.0 | yes |
 | EXPANDER | vessel | 550 | blocked discharge | 65.65 | 3.45 | 3.6 | yes |
+| H2O_ELYZ | vessel | 990.0 | blocked outlet at full inflow 1.789 kg/h (hydrogen side of the PEM stack at the compressor | 1.7886 | 0.98 | 3.3 | yes |
 | HTC | vessel | 1710.5 | blocked outlet at full inflow 0.073 kg/h (steam from the heater at full power); operating  | 0.0735 | 0.1 | 3.3 | yes |
 | MEAM | vessel | 2277.0 | blocked outlet at full inflow 0.003 kg/h (MeOH/NH3 vapour); operating 21 bar, design 22.8  | 0.0029 | 0.02 | 3.3 | yes |
 | MEOH_SYNTH | vessel | 5500.0 | blocked outlet at full inflow 1.970 kg/h (3 H2 : 1 CO2 loop gas); operating 50 bar, design | 1.9697 | 0.32 | 3.3 | yes |
@@ -26,4 +27,4 @@ Vessel cases come from the graph (write_graph relief, API520). Machine interstag
 | CO2 compressor stage 3 | interstage PSV | 939.0 | blocked discharge at 2.703 kg/h, 122 C | 2.703 | 0.57 | 6.0 | yes |
 | CO2 compressor stage 4 | interstage PSV | 2098.7 | blocked discharge at 2.703 kg/h, 122 C | 2.703 | 0.4 | 6.0 | yes |
 
-7 pressurised vessels and 9 interstage valves; all adequate. Atmospheric units are open-vented per API 2000 (A-M-155, A-M-174). Fire case on the gas receivers (API 521 unwetted vessel) is carried to X-SAF-05.
+8 pressurised vessels and 9 interstage valves; all adequate. Atmospheric units are open-vented per API 2000 (A-M-155, A-M-174). Fire case on the gas receivers (API 521 unwetted vessel) is carried to X-SAF-05.

@@ -1,3 +1,4 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/H2O_ELYZ.md
 2,Process nozzle DN15,3,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
+3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004

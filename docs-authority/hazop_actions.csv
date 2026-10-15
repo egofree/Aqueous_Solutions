@@ -24,33 +24,19 @@ HZ-022,EVAP_ACID,level,Low,level indication,detail P&ID,open
 HZ-023,EVAP_BASE,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-024,EVAP_BASE,level,High,high-level switch,X-CTL-03,open
 HZ-025,EVAP_BASE,level,Low,level indication,detail P&ID,open
-HZ-026,EVAP_ACID_VS,flow,More,high-level or high-flow protection,X-CTL-03,open
-HZ-027,EVAP_ACID_VS,pressure,High,relief case,X-SAF-04,open
-HZ-028,EVAP_ACID_VS,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
-HZ-029,EVAP_ACID_VS,level,High,high-level switch,X-CTL-03,open
-HZ-030,EVAP_ACID_VS,level,Low,level indication,detail P&ID,open
-HZ-031,BLACK_DEWATER,temperature,High,temperature indication,detail P&ID,open
-HZ-032,BLACK_DEWATER,level,High,high-level switch,X-CTL-03,open
-HZ-033,BLACK_DEWATER,level,Low,level indication,detail P&ID,open
-HZ-034,BLACK_PASTEUR,temperature,High,temperature indication,detail P&ID,open
-HZ-035,BLACK_PASTEUR,level,High,high-level switch,X-CTL-03,open
-HZ-036,BLACK_PASTEUR,level,Low,level indication,detail P&ID,open
-HZ-037,BLACK_ALK_HOLD,temperature,High,temperature indication,detail P&ID,open
-HZ-038,BLACK_ALK_HOLD,level,High,high-level switch,X-CTL-03,open
-HZ-039,BLACK_ALK_HOLD,level,Low,level indication,detail P&ID,open
-HZ-040,H2O_ELYZ,flow,More,high-level or high-flow protection,X-CTL-03,open
-HZ-041,H2O_ELYZ,pressure,High,relief case,X-SAF-04,open
-HZ-042,H2O_ELYZ,temperature,High,temperature indication,detail P&ID,open
-HZ-043,H2O_ELYZ,level,High,high-level switch,X-CTL-03,open
-HZ-044,H2O_ELYZ,level,Low,level indication,detail P&ID,open
-HZ-045,HCL_BURNER,flow,More,high-level or high-flow protection,X-CTL-03,open
-HZ-046,HCL_BURNER,pressure,High,relief case,X-SAF-04,open
-HZ-047,HCL_BURNER,temperature,High,temperature indication,detail P&ID,open
-HZ-048,PROD_MEOH,flow,More,high-level or high-flow protection,X-CTL-03,open
-HZ-049,PROD_MEOH,pressure,High,relief case,X-SAF-04,open
-HZ-050,PROD_MEOH,temperature,High,temperature indication,detail P&ID,open
-HZ-051,PROD_MEOH,level,High,high-level switch,X-CTL-03,open
-HZ-052,PROD_MEOH,level,Low,level indication,detail P&ID,open
-HZ-053,PROD_O2,flow,More,high-level or high-flow protection,X-CTL-03,open
-HZ-054,PROD_O2,pressure,High,relief case,X-SAF-04,open
-HZ-055,PROD_O2,temperature,High,temperature indication,detail P&ID,open
+HZ-026,EVAP_ACID_VS,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-027,EVAP_ACID_VS,level,High,high-level switch,X-CTL-03,open
+HZ-028,EVAP_ACID_VS,level,Low,level indication,detail P&ID,open
+HZ-029,BLACK_DEWATER,temperature,High,temperature indication,detail P&ID,open
+HZ-030,BLACK_DEWATER,level,High,high-level switch,X-CTL-03,open
+HZ-031,BLACK_DEWATER,level,Low,level indication,detail P&ID,open
+HZ-032,BLACK_PASTEUR,temperature,High,temperature indication,detail P&ID,open
+HZ-033,BLACK_PASTEUR,level,High,high-level switch,X-CTL-03,open
+HZ-034,BLACK_PASTEUR,level,Low,level indication,detail P&ID,open
+HZ-035,BLACK_ALK_HOLD,temperature,High,temperature indication,detail P&ID,open
+HZ-036,BLACK_ALK_HOLD,level,High,high-level switch,X-CTL-03,open
+HZ-037,BLACK_ALK_HOLD,level,Low,level indication,detail P&ID,open
+HZ-038,H2O_ELYZ,temperature,High,temperature indication,detail P&ID,open
+HZ-039,H2O_ELYZ,level,High,high-level switch,X-CTL-03,open
+HZ-040,H2O_ELYZ,level,Low,level indication,detail P&ID,open
+HZ-041,HCL_BURNER,temperature,High,temperature indication,detail P&ID,open

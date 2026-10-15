@@ -11470,7 +11470,24 @@
           1400
         ],
         "size_note": "L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)",
-        "doc": "AQS-DUTY-061"
+        "doc": "AQS-DUTY-061",
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.224,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.083,
+          "in_breathing_Nm3_h": 2.281,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 6.9,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 17.2 kPa (1.40 m full at SG 1.25) = 19.5 kPa g (A-M-174)"
+        },
+        "design_kPa": 19.5
       },
       "notes": "Packed PVC alkali scrubber on the EVAP_ACID column vent; NaOH bleed from BMED_BASE; spent liquor to BMED_ACID. Duty sheet docs-authority/duties/EVAP_ACID_VS.md.",
       "continuous_kw": {
@@ -11664,7 +11681,23 @@
       "params": {
         "internals": "PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer",
         "presence": "present",
-        "note": "X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734)."
+        "note": "X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734).",
+        "design_kPa": 990.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "blocked outlet at full inflow 1.789 kg/h (hydrogen side of the PEM stack at the compressor suction (h2c_P1_bar 10 bar a); O2 side on its own valve at the same set, A-M-196); operating 9 bar, design 9.9 bar g",
+          "P1_kPa_abs": 1190.3,
+          "T_K": 353.15,
+          "M_kg_kmol": 2.016,
+          "k": 1.41,
+          "Z": 1.0,
+          "W_kg_h": 1.7886,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 0.75,
+          "bore_req_mm": 0.98,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
+        }
       }
     },
     {
@@ -11682,7 +11715,23 @@
       "params": {
         "internals": "graphite burner, quartz sight glass, graphite absorber",
         "presence": "present",
-        "note": "X-PAR-12: H2 + Cl2 -> 2 HCl; graphite burner and falling-film graphite absorber (AQS-STD-002 sec. 9); separate H2 and Cl2 feeds."
+        "note": "X-PAR-12: H2 + Cl2 -> 2 HCl; graphite burner and falling-film graphite absorber (AQS-STD-002 sec. 9); separate H2 and Cl2 feeds.",
+        "design_kPa": 55.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "blocked outlet at full inflow 2.977 kg/h (HCl flame products; deflagration case is a rupture disc to NFPA 68 at detail, A-M-196); operating 0 bar, design 0.6 bar g",
+          "P1_kPa_abs": 161.8,
+          "T_K": 1273.15,
+          "M_kg_kmol": 36.46,
+          "k": 1.3,
+          "Z": 1.0,
+          "W_kg_h": 2.9772,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 4.23,
+          "bore_req_mm": 2.32,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
+        }
       }
     },
     {

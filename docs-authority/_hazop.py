@@ -21,7 +21,7 @@ GASFIRE = {'CRYO_H2', 'CRYO_O2', 'CRYO_CO2'}; HOT = ('PYRO', 'FURNACE', 'MELT', 
 nodes = []; acts = []
 for n in g['nodes']:
     u = n['unit_id']; p = n.get('params') or {}; c = n.get('class') or ''
-    if p.get('presence') == 'absent' or c in ('boundary', 'building', 'header', 'recycle_pipe', 'farm', 'rectifier', 'inverter', 'pv') and u not in ('HNO3', 'ACEX', 'FORM', 'ALD', 'MEAM', 'HTC', 'BUCL', 'IMID'): continue
+    if p.get('presence') == 'absent' or c in ('boundary', 'building', 'header', 'recycle_pipe', 'farm', 'rectifier', 'inverter', 'pv', 'product') and u not in ('HNO3', 'ACEX', 'FORM', 'ALD', 'MEAM', 'HTC', 'BUCL', 'IMID'): continue
     if not inflow[u]: continue
     rb = p.get('relief_basis') or {}; I = INS[u]; W = []
     def row(par, gw, cause, cons, sg, act=None, task=None):

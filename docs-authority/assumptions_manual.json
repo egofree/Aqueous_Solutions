@@ -3308,5 +3308,25 @@
     "verification": "126 nodes, 55 open actions (17 heater trips, 3 bank isolation trips, 5 relief cases incl. H2O_ELYZ, 8 LSH, 8 LT, 7 TE, 2 dry-run, 5 overfill)",
     "replace_when": "Facilitated team HAZOP (rev B)",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-196",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "HAZOP relief cases",
+    "statement": "H2O_ELYZ H2 side at 9 bar g (compressor suction 10 bar a), blocked outlet = H2 production over the PV window, O2 side on its own valve at the same set; HCL_BURNER 0.5 bar g, 1000 C products, blocked outlet = Cl2 + H2 feed, deflagration rupture disc at detail; EVAP_ACID_VS API 2000 vent; product nodes are boundaries, not vessels",
+    "verification": "H2O_ELYZ 3.3 mm (0.98 req), HCL_BURNER 3.3 mm (2.32 req), EVAP_ACID_VS vented",
+    "replace_when": "Stack pressure rating and burner deflagration test",
+    "doc": "AQS-PAR-003"
   }
 ]

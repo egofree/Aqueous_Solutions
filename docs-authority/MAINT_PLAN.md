@@ -210,13 +210,13 @@ Fire protection (AQS-SAF-005) per NFPA 25: weekly fire pump churn test, quarterl
 | H2_PURIFIER | dryer | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (3 y, A-M-189 maint_insert_life_y) |
 | EVAP_ACID | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_BASE | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| EVAP_ACID_VS | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| EVAP_ACID_VS | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | BLACK_DEWATER | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
 | BLACK_PASTEUR | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
 | BLACK_ALK_HOLD | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| H2O_ELYZ | pem_electrolyser | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| HCL_BURNER | hcl_synthesis | external visual (1 y, A-M-189) |
+| H2O_ELYZ | pem_electrolyser | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
+| HCL_BURNER | hcl_synthesis | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (2 y, API 576) |
 | PROD_MEOH | product | external visual (1 y, A-M-189) |
 | PROD_O2 | product | external visual (1 y, A-M-189) |
 
-209 units, 636 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+209 units, 643 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

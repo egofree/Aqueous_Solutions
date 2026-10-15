@@ -9,7 +9,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 463 | 45 % |
+| metal_plateable | 465 | 45 % |
 | organic | 435 | 42 % |
 | metal_reactive | 85 | 8 % |
 | silicate_oxide | 30 | 3 % |
@@ -137,7 +137,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | GOATS | 0 | 3 | 0 | 0 | 0 |
 | GREY_TREAT | 0 | 4 | 0 | 0 | 0 |
 | GROW_BED | 0 | 5 | 0 | 0 | 0 |
-| H2O_ELYZ | 0 | 0 | 0 | 0 | 2 |
+| H2O_ELYZ | 1 | 0 | 0 | 0 | 2 |
 | H2_DRYER | 0 | 3 | 0 | 0 | 0 |
 | H2_PURIFIER | 3 | 0 | 0 | 0 | 0 |
 | HABITATION | 4 | 0 | 0 | 0 | 0 |
@@ -145,7 +145,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | HAB_MED | 0 | 3 | 0 | 0 | 0 |
 | HAB_SLEEP | 0 | 3 | 0 | 0 | 0 |
 | HAB_WASH | 0 | 3 | 0 | 0 | 0 |
-| HCL_BURNER | 0 | 0 | 0 | 0 | 2 |
+| HCL_BURNER | 1 | 0 | 0 | 0 | 2 |
 | HEAT_SINK | 2 | 0 | 0 | 0 | 0 |
 | HNO3 | 6 | 1 | 0 | 0 | 0 |
 | HOPPER | 4 | 0 | 0 | 0 | 0 |
