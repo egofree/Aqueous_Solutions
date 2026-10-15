@@ -2288,5 +2288,25 @@
     "verification": "Metered LED circuit per bed.",
     "replace_when": "Photoperiod or fixture efficacy fixed by the lighting task.",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-145",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Pumped hydro as the ZNBR2 backup store",
+    "statement": "HYDRO_SET is a diverse N+1 backup of ZNBR2 (owner redundancy rule): NFPA 111 Level 1, Class X = night_hours 14 h at the AQS-ELEC-007 critical load 32 kW = 448 kWh at the bus; 18 m head; turbine-generator 0.80, pump 0.85 (round trip 0.68, small set below the DOE_PSH 70-80 % range); upper reservoir 11,417 m3, held full; recharge on PV surplus over 6 h after an event.",
+    "verification": "Commissioning discharge test at critical load for the class duration.",
+    "replace_when": "Head or reservoir site fixed (Q-009), or critical-load list changed.",
+    "doc": "AQS-PAR-003"
   }
 ]

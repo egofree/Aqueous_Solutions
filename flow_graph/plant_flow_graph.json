@@ -2713,7 +2713,22 @@
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         },
-        "role_from_need": "none: ZNBR2 covers the night deficit, H2 bank the multi-day case (AQS-ELEC-007); 7 kWh/cycle = 0.2 % of ZNBR2. Recommend removal of turbine-pump; tanks stay as water inventory."
+        "backup_basis": {
+          "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
+          "standard": "NFPA 111 Level 1, Class X",
+          "critical_kW": 32.0,
+          "class_hours": 14.0,
+          "energy_kWh_bus": 448.0,
+          "head_m": 18,
+          "eta_turbine_generator": 0.8,
+          "eta_pump_motor": 0.85,
+          "round_trip": 0.68,
+          "upper_reservoir_m3": 11417.0,
+          "rated_kW_discharge": 32.0,
+          "recharge_kW_over_PV_window": 109.8,
+          "A-M": "A-M-145",
+          "Q": "Q-006 closed; Q-009 reservoir siting"
+        }
       }
     },
     {
@@ -10824,7 +10839,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10868,7 +10883,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10911,7 +10926,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "PUMPED_HYDRO",
       "to_sector_id": "ELEC",
@@ -12951,7 +12966,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -12986,7 +13001,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",

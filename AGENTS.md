@@ -23,6 +23,10 @@ Values the parametric model solves (AQS-PAR-001) come from `flow_graph/param/sol
 
 The plant produces commodities beyond its internal needs, so it sustains itself in money as well as in material. Production rates, power and storage are sized for internal demand plus a saleable surplus, and every surplus stream has a defined outlet (product store, export meter). PV is sized at `pv_oversize_factor` (2.0) times the nameplate that closes the daily balance: storage still fills on a day at half the mean yield, and the clear-day surplus is exported to the grid when a utility connection exists. Owner rule, Mike Matthews, 2026-10-15 (MASTER_PLAN D75).
 
+## Redundancy
+
+Build redundancy into every energy and life-support system wherever possible (power, O2, water, CO2 removal, thermal, food, sanitation) so the plant rides through failure or downtime of a primary system. A backup that looks surplus to the daily balance is intentional: do not recommend removing it on need alone. Size each backup by calculation for a defined outage of the primary (N+1, or a diverse technology), with the duration taken from a cited reliability or code basis (for example NFPA 110 / NFPA 111 class), and track it in the X-RED tasks. Owner rule, Mike Matthews, 2026-10-15.
+
 ## Done
 
 Housekeeping is part of the item, not a later pass. A commit that changes the work and leaves the board or a contradicted page behind is not done.

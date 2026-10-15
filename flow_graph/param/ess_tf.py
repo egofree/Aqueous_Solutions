@@ -25,6 +25,10 @@ VEG_PROXY = {'TOMATO': 'tomato', 'CUCUMBER': 'tomato', 'PEPPER': 'pepper', 'LETT
              'ALLIUM': 'onion', 'BASIL': 'lettuce', 'ROSEMARY': 'spinach'}
 def _resid(g, u):
     from flow_graph.param.balance import _unit_resid; return _unit_resid(g, u)
+def _crit():
+    return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['backup']['critical_kW']
+from flow_graph.param import drivers as _drv
+DRV = _drv.load(); ETA_TURB, ETA_PUMP, PSH_RECHG = 0.80, 0.85, 6.0   # DOE_PSH: pumped storage round trip 70-80 %; small set at the low end
 def _ps():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
 def tf(g, ps=None):
@@ -40,9 +44,17 @@ def tf(g, ps=None):
     for t in (N['ZNBR2']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['label'].startswith('purge air'): t['value'] = round(q*RHO_AIR, 4); t['basis'] = 'X-PAR-02 TF ess_tf.py'
     N['ZNBR2']['params']['purge_basis'] = {'H2_m3_d': round(h2, 3), 'purge_m3_h': round(q/24, 2), 'HER_fraction': round(F_HER, 5), 'electrode_area_m2': round(area/1e4, 1)}
+    # HYDRO_SET (owner guideline: redundancy in every energy and life-support system; A-M-145): diverse N+1 backup of the night store.
+    # NFPA 111 Level 1, Class X = the night hours the failed ZNBR2 would carry, at the AQS-ELEC-007 critical life-support load.
+    crit = float(ps.get('critical_kW') or _crit()); night = DRV['night_hours']['value']; e_bus = crit*night
+    h = N['HYDRO_SET']['params'].get('head_m_m1', 18); vol = e_bus*3.6e6/(1000*9.81*h*ETA_TURB)
     for k in ('IA-ESS-HYDRO-CHG', 'IA-ESS-HYDRO-DIS', 'S22', 'S23', 'IA-ESS-HYDRO-ELEC'):
-        put(k, 0.0, 'no storage gap after ZNBR2 (night) and the H2/fuel-cell bank (multi-day): hydro cycle not needed (A-M-135)')
-    N['HYDRO_SET']['params'].update(role_from_need='none: ZNBR2 covers the night deficit, H2 bank the multi-day case (AQS-ELEC-007); 7 kWh/cycle = 0.2 % of ZNBR2. Recommend removal of turbine-pump; tanks stay as water inventory.')
+        put(k, 0.0, 'standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus')
+    N['HYDRO_SET']['params'].pop('role_from_need', None)
+    N['HYDRO_SET']['params'].update(backup_basis={'role': 'diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL', 'standard': 'NFPA 111 Level 1, Class X',
+        'critical_kW': round(crit, 2), 'class_hours': night, 'energy_kWh_bus': round(e_bus, 1), 'head_m': h, 'eta_turbine_generator': ETA_TURB,
+        'eta_pump_motor': ETA_PUMP, 'round_trip': round(ETA_TURB*ETA_PUMP, 3), 'upper_reservoir_m3': round(vol, 0), 'rated_kW_discharge': round(crit, 2),
+        'recharge_kW_over_PV_window': round(e_bus/ETA_TURB/ETA_PUMP/PSH_RECHG, 1), 'A-M': 'A-M-145', 'Q': 'Q-006 closed; Q-009 reservoir siting'})
     L, W = [x/1000 for x in N['NFT']['params']['size_mm'][:2]]; n = int(W/GULLY_PITCH); qn = n*GULLY_LPM*1440
     put('IA-NFT-IN', qn, f'{n} gullies x {GULLY_LPM} L/min (COOPER1996) over {L:.0f} m'); put('IA-NFT-OUT', qn, 'film return = supply')
     A = (lambda d: d[0]*d[1]/1e6)(N['MISTER']['params']['size_mm']); qm = A*NOZ_M2*NOZ_LPM*1440*T_ON/(T_ON + T_OFF)
