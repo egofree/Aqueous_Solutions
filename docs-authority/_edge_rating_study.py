@@ -377,7 +377,7 @@ def rate_all(g):
 
     # ================================================================ dust, flue, acid gas
     s19 = A_RL_DUST * feed
-    R.set("S19", s19, "kg/d", f"baghouse catch {A_RL_DUST:.1%} of shredded feed", "shredder fines class", "WEEE fines", "ambient")
+    R.set("S19", s19, "kg/d", f"baghouse catch {A_RL_DUST:.1%} of shredded feed", "shredder fines class", "shredded feed fines", "ambient")
     src = hl.sources()[0]
     m_flue = src["m_flue_kg_h"] * 24
     fuel = src["fuel_kg_d"]

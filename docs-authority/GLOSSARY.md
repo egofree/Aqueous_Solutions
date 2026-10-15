@@ -463,7 +463,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {LOTO -- Lockout/tagout. Energy isolation for rectifiers, shredder, pyro, melt, Sol-Ark.}
 
-{WEEE -- Waste electrical and electronic equipment. Primary wet-line feed class for RECT-EW sizing theme.}
+{WEEE -- Waste electrical and electronic equipment. One case inside the AQS-ASSAY-001 feed envelope. Mixed WEEE is the reference point the held rates were built on, not the design feed.}
 
 {SPDX -- Software Package Data Exchange. Licence identifier convention (CERN-OHL-S-2.0).}
 

@@ -1,6 +1,6 @@
 # Aqueous Solutions
 
-Closed-loop plant that takes waste or natural mineral feedstock and returns metals, salts, silica, hydrocarbons, and regenerated acid. Energy may be external. A second plant is the replication bar: the mass input is waste or feedstock, not a purchased reagent kit.
+Closed-loop plant that takes any feed, from silicate and oxide regolith to metal-rich scrap (AQS-ASSAY-001), and returns metals, salts, silica, hydrocarbons, and regenerated acid. Energy may be external. A second plant is the replication bar: the mass input is waste or feedstock, not a purchased reagent kit.
 
 License: CERN-OHL-S-2.0.
 

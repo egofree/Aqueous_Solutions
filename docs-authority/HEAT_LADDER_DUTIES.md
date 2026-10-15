@@ -23,7 +23,7 @@ Rev B (§13) adds HX-8 on Q4, the Q3 process draws, the S18/S67B carbon fix and 
 
 | Input | Value | Source |
 |---|---|---|
-| Plant rate | 150 kg/d wet feed, mixed WEEE | ELECTRICAL.md; AQS-AUD-001 |
+| Plant rate | 150 kg/d wet reference feed (AQS-ASSAY-001 Rev C reference point; feed class not fixed) | ELECTRICAL.md; AQS-AUD-001 |
 | Afterburner CO₂ | 15.0 kg/d (study) | Graph S67 (S18 until Rev J); AQS-AUD-001 mid of 12–22.5 kg/d |
 | Burnout cullet | 30 kg/d silicate + grit | Graph S08G; AQS-AUD-001 §4.1 |
 | Burnout electric duty | 1.0 kW, issued | GLASS_BURNOUT params |
@@ -289,7 +289,7 @@ Rev B applies the four §12 findings. Every number below is reproduced by `pytho
 
 The EW aisle runs at 40–60 °C (FAN_STACK.md). HX-8 cannot lift that heat into Q3 (80–120 °C). It now preheats the Q4 return.
 
-The duty is the net heat the EW cells must reject to hold the liquor at 55 °C. Inputs are EW_1 (6.0 kW, RECT-EW class share), the ELECTRICAL.md cell table and the mixed-WEEE EW energy split (Fe 790, Cu 137, other 80 kWh/t; "other" is taken at Zn).
+The duty is the net heat the EW cells must reject to hold the liquor at 55 °C. Inputs are EW_1 (6.0 kW, RECT-EW class share), the ELECTRICAL.md cell table and the reference-point EW energy split (AQS-ASSAY-001 Rev C) (Fe 790, Cu 137, other 80 kWh/t; "other" is taken at Zn).
 
 Ohmic heat. The anode makes Cl₂ for the CRU, so the thermoneutral voltage is for MCl₂ → M + Cl₂. Current lost to H₂ (1 − CE) is charged at 2HCl → H₂ + Cl₂, which is 1.733 V:
 
