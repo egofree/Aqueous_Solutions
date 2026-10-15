@@ -1,2032 +1,2052 @@
 [
- {
-  "id": "A-M-001",
-  "value": "5",
-  "units": "wt% H2O2",
-  "where": "WS_PEROX product_spec; AQS-DSN-OX-001",
-  "basis": "Bench SC-1/SC-2 strength; S32 dilute at 1.0 kg/L",
-  "sensitivity": "Cell current and O2 scale linearly",
-  "replaced_by": "Wet-bench recipe from the fab process sheet",
-  "task": "X-ELS-10",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Wet-bench recipe from the fab process sheet"
- },
- {
-  "id": "A-M-002",
-  "value": "0.80",
-  "units": "-",
-  "where": "WS_PEROX cell faradaic efficiency",
-  "basis": "Study value for 2 e- ORR on carbon GDE",
-  "sensitivity": "Current 1/eff",
-  "replaced_by": "Cell test: H2O2 titration against charge passed",
-  "task": "X-ELS-10",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Cell test: H2O2 titration against charge passed"
- },
- {
-  "id": "A-M-003",
-  "value": "0.050",
-  "units": "A/cm2",
-  "where": "WS_PEROX cell current density",
-  "basis": "Study value",
-  "sensitivity": "Area 1/j",
-  "replaced_by": "Cell polarization test",
-  "task": "X-ELS-10",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Cell polarization test"
- },
- {
-  "id": "A-M-004",
-  "value": "2.5",
-  "units": "V",
-  "where": "WS_PEROX cell voltage",
-  "basis": "Study value",
-  "sensitivity": "Power linear",
-  "replaced_by": "Cell polarization test",
-  "task": "X-ELS-10",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Cell polarization test"
- },
- {
-  "id": "A-M-005",
-  "value": "300 / 1000",
-  "units": "W/m2K",
-  "where": "HX-5 outside film, natural / agitated; AQS-DUTY-049",
-  "basis": "Study range; agitator held",
-  "sensitivity": "Area changes 1.6x across the range for glass",
-  "replaced_by": "Agitator selection and coil test",
-  "task": "X-MAT-11",
-  "files": [
-   "docs-authority/POLYMER_HX_SIZING.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Agitator selection and coil test"
- },
- {
-  "id": "A-M-006",
-  "value": "1500",
-  "units": "W/m2K",
-  "where": "HX8 shell-side film; AQS-DUTY-049",
-  "basis": "Study value, treated water",
-  "sensitivity": "Minor; PVDF wall controls",
-  "replaced_by": "Exchanger maker rating",
-  "task": "X-MAT-12",
-  "files": [
-   "docs-authority/POLYMER_HX_SIZING.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Exchanger maker rating"
- },
- {
-  "id": "A-M-007",
-  "value": "0.0002",
-  "units": "m2K/W",
-  "where": "Fouling, AQS-DUTY-049",
-  "basis": "Study value",
-  "sensitivity": "Minor",
-  "replaced_by": "Operating record",
-  "task": "X-MAT-11",
-  "files": [
-   "docs-authority/POLYMER_HX_SIZING.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Operating record"
- },
- {
-  "id": "A-M-008",
-  "value": "88",
-  "units": "degC",
-  "where": "LEACH_CSTR_1 liquor high-temperature trip",
-  "basis": "5 K below CPVC 93 C limit (Spears)",
-  "sensitivity": "Protects the CPVC wall",
-  "replaced_by": "Wall check at temperature (unit task 02)",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/duties/LEACH_CSTR_1.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Wall check at temperature (unit task 02)"
- },
- {
-  "id": "A-M-009",
-  "value": "0",
-  "units": "kg/d",
-  "where": "IA-NIT-VENT, IA-HNO3-VENT",
-  "basis": "Breathing and upset only on the design day",
-  "sensitivity": "NOX_SCRUB load if absorber tail gas is continuous",
-  "replaced_by": "HNO3 absorber design (tail-gas flow)",
-  "task": "X-SAF-08",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "HNO3 absorber design (tail-gas flow)"
- },
- {
-  "id": "A-M-010",
-  "value": "40",
-  "units": "degC",
-  "where": "WS_NITRIC storage maximum and trip",
-  "basis": "Study value",
-  "sensitivity": "PVC-U rating with nitric",
-  "replaced_by": "Tank thermal check",
-  "task": "X-SAF-09",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "needs_verification": true,
-  "verification_test": "Tank thermal check"
- },
- {
-  "value": "two concentric helices D 600/900 mm, 25 \u00d7 3 mm tube, 50 mm pitch",
-  "units": "geometry",
-  "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
-  "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
-  "sensitivity": "Area fixed by AQS-DUTY-049; geometry affects fit and agitator clearance only",
-  "replaced_by": "Glass-coil vendor drawing",
-  "task": "X-MAT-16",
-  "files": [
-   "models/mfg/LEACH_CSTR_1/params.json"
-  ],
-  "id": "A-M-011",
-  "needs_verification": true,
-  "verification_test": "Glass-coil vendor drawing"
- },
- {
-  "value": "4.22",
-  "units": "m2",
-  "where": "LEACH_CSTR_1 params hx5_coil",
-  "basis": "AQS-DUTY-049 glass natural case; liquor film 300 W/m2K (A-M-005)",
-  "sensitivity": "2.65 m2 if agitated; area roughly inverse to liquor film",
-  "replaced_by": "Coil heat-transfer test on the built tank",
-  "task": "X-MAT-16",
-  "files": [
-   "docs-authority/POLYMER_HX_SIZING.md"
-  ],
-  "id": "A-M-012",
-  "needs_verification": true,
-  "verification_test": "Coil heat-transfer test on the built tank"
- },
- {
-  "value": "115",
-  "units": "mph 3 s gust",
-  "where": "AQS-SITE-002",
-  "basis": "Upper end of published Dallas Risk II band",
-  "sensitivity": "Wind pressure scales with V squared",
-  "replaced_by": "ASCE Hazard Tool at the parcel",
-  "task": "X-BAS-03",
-  "files": [
-   "docs-authority/SITE_BASIS.md"
-  ],
-  "id": "A-M-013",
-  "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool at the parcel"
- },
- {
-  "value": "Ss 0.10, S1 0.05",
-  "units": "g",
-  "where": "AQS-SITE-002",
-  "basis": "Low-hazard North Texas; no lookup run",
-  "sensitivity": "Sets SDC; SDC A exempts nonstructural components",
-  "replaced_by": "ASCE Hazard Tool at the parcel",
-  "task": "X-BAS-03",
-  "files": [
-   "docs-authority/SITE_BASIS.md"
-  ],
-  "id": "A-M-014",
-  "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool at the parcel"
- },
- {
-  "value": "D",
-  "units": "site class",
-  "where": "AQS-SITE-002",
-  "basis": "IBC 1613.2.2 default",
-  "sensitivity": "Site amplification factors",
-  "replaced_by": "Geotechnical report",
-  "task": "X-BAS-03",
-  "files": [
-   "docs-authority/SITE_BASIS.md"
-  ],
-  "id": "A-M-015",
-  "needs_verification": true,
-  "verification_test": "Geotechnical report"
- },
- {
-  "value": "5",
-  "units": "psf ground snow",
-  "where": "AQS-SITE-002",
-  "basis": "Low North Texas value; not looked up",
-  "sensitivity": "Roof loads only",
-  "replaced_by": "ASCE Hazard Tool at the parcel",
-  "task": "X-BAS-03",
-  "files": [
-   "docs-authority/SITE_BASIS.md"
-  ],
-  "id": "A-M-016",
-  "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool at the parcel"
- },
- {
-  "value": "2000",
-  "units": "psf allowable bearing",
-  "where": "AQS-SITE-002",
-  "basis": "IBC Table 1806.2 presumptive clay value",
-  "sensitivity": "Footing size for tanks and slabs",
-  "replaced_by": "Geotechnical report",
-  "task": "X-BAS-03",
-  "files": [
-   "docs-authority/SITE_BASIS.md"
-  ],
-  "id": "A-M-017",
-  "needs_verification": true,
-  "verification_test": "Geotechnical report"
- },
- {
-  "value": "150",
-  "units": "mm frost depth",
-  "where": "AQS-SITE-002",
-  "basis": "Local practice",
-  "sensitivity": "Buried water lines",
-  "replaced_by": "Building official value",
-  "task": "X-BAS-03",
-  "files": [
-   "docs-authority/SITE_BASIS.md"
-  ],
-  "id": "A-M-018",
-  "needs_verification": true,
-  "verification_test": "Building official value"
- },
- {
-  "value": "2.0",
-  "units": "spray / evaporation ratio",
-  "where": "IA-FLUE-QUENCH rate",
-  "basis": "Keeps the quench spool wetted; common wet-quench practice, not measured",
-  "sensitivity": "Edge rate linear; 12.15 kg/d is the evaporative minimum",
-  "replaced_by": "Quench outlet temperature and drain flow on commissioning",
-  "task": "X-SAF-07",
-  "files": [
-   "docs-authority/duties/FLUE_KO.md"
-  ],
-  "id": "A-M-019",
-  "needs_verification": true,
-  "verification_test": "Quench outlet temperature and drain flow on commissioning"
- },
- {
-  "value": "60 C quench outlet; cp 1.08 kJ/kgK; water 25 C",
-  "units": "C, kJ/kgK",
-  "where": "IA-FLUE-QUENCH energy balance",
-  "basis": "Approximate adiabatic saturation of the S67 flue; mean cp of N2/CO2/H2O mix",
-  "sensitivity": "Evaporation scales with (300 - T_out)",
-  "replaced_by": "Flue analysis and quench outlet temperature",
-  "task": "X-SAF-07",
-  "files": [
-   "docs-authority/duties/FLUE_KO.md"
-  ],
-  "id": "A-M-020",
-  "needs_verification": true,
-  "verification_test": "Flue analysis and quench outlet temperature"
- },
- {
-  "value": "1.05 bar a, 40 C, 98 mol%, wet",
-  "units": "bar a, C, mol%",
-  "where": "EW and header H2 edges (9)",
-  "basis": "Atmospheric cell offgas to a low-pressure header",
-  "sensitivity": "Header sizing; no embrittlement concern at this pressure",
-  "replaced_by": "Header pressure and gas analysis at commissioning",
-  "task": "X-MAT-15",
-  "files": [
-   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
-  ],
-  "id": "A-M-021",
-  "needs_verification": true,
-  "verification_test": "Header pressure and gas analysis at commissioning"
- },
- {
-  "value": "10 bar a, 30 C, 99.9 mol%, dew -40 C",
-  "units": "bar a, C, mol%",
-  "where": "H2_DRYER outlet edges (5)",
-  "basis": "Small compressor ahead of storage; not on the graph",
-  "sensitivity": "Storage volume inverse to pressure; 316L at this pressure",
-  "replaced_by": "CRYO_H2 storage design (pressure held)",
-  "task": "X-MAT-15",
-  "files": [
-   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
-  ],
-  "id": "A-M-022",
-  "needs_verification": true,
-  "verification_test": "CRYO_H2 storage design (pressure held)"
- },
- {
-  "value": "1.5 bar a, 25 C, 99.97 mol%",
-  "units": "bar a, C, mol%",
-  "where": "S45, S49",
-  "basis": "ISO 14687 Grade D for PEM; regulator outlet",
-  "sensitivity": "A purifier is needed if dryer output is below grade",
-  "replaced_by": "Fuel-cell vendor inlet specification",
-  "task": "X-MAT-15",
-  "files": [
-   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
-  ],
-  "id": "A-M-023",
-  "needs_verification": true,
-  "verification_test": "Fuel-cell vendor inlet specification"
- },
- {
-  "value": "50 bar a synthesis, 250 C, H2:CO2 3:1",
-  "units": "bar a, C",
-  "where": "S74, MEOH_SYNTH params.synthesis",
-  "basis": "Low end of the Cu/ZnO/Al2O3 range, Bertau et al. 2014",
-  "sensitivity": "pH2 37.5 bar at 250 C sets the API 941 point",
-  "replaced_by": "MEOH_SYNTH reactor design",
-  "task": "X-MAT-14",
-  "files": [
-   "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
-  ],
-  "id": "A-M-024",
-  "needs_verification": true,
-  "verification_test": "MEOH_SYNTH reactor design"
- },
- {
-  "value": "14",
-  "units": "d",
-  "where": "WS_NITRIC storage",
-  "basis": "Covers a two-week HNO3 absorber outage; 2 M acid is stable",
-  "sensitivity": "Tank volume linear",
-  "replaced_by": "Owner operating policy and absorber availability",
-  "task": "X-SAF-09",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "id": "A-M-025",
-  "needs_verification": true,
-  "verification_test": "Owner operating policy and absorber availability"
- },
- {
-  "value": "1",
-  "units": "d",
-  "where": "WS_PEROX storage",
-  "basis": "Unstabilised peroxide; product_spec holdup_max_d",
-  "sensitivity": "Tank volume linear; longer holdup needs a decomposition check",
-  "replaced_by": "Measured decomposition rate of the cell product",
-  "task": "X-SAF-09",
-  "files": [
-   "docs-authority/OXIDIZER_REAGENTS.md"
-  ],
-  "id": "A-M-026",
-  "needs_verification": true,
-  "verification_test": "Measured decomposition rate of the cell product"
- },
- {
-  "value": "Al2O3 0.19, CaO 0.125, MgO 0.09, FeO 0.13; full leach; TiO2 and SiO2 not leached",
-  "units": "mass fraction of silicate",
-  "where": "X-BAS-02 acid demand",
-  "basis": "Mid-range of Lunar Sourcebook Apollo soils (AQS-ASSAY-001 class A)",
-  "sensitivity": "HCl demand linear in each oxide; full leach is the upper bound",
-  "replaced_by": "Leach test of a class A lot with acid consumption measured",
-  "task": "X-BAS-02",
-  "files": [
-   "docs-authority/FEED_ASSAY.md"
-  ],
-  "id": "A-M-027",
-  "needs_verification": true,
-  "verification_test": "Leach test of a class A lot with acid consumption measured"
- },
- {
-  "value": "regolith silicate reports to sink",
-  "units": "routing",
-  "where": "X-BAS-02 FLOAT_SINK line",
-  "basis": "Silicate is dense and not glass cullet",
-  "sensitivity": "If part reports to the glass train, glass edges rise instead",
-  "replaced_by": "Float/sink test of a class A lot",
-  "task": "X-BAS-02",
-  "files": [
-   "docs-authority/FEED_ASSAY.md"
-  ],
-  "id": "A-M-028",
-  "needs_verification": true,
-  "verification_test": "Float/sink test of a class A lot"
- },
- {
-  "value": "1100",
-  "units": "kg/m3",
-  "where": "LEACH_CSTR_1 liquor density",
-  "basis": "Dilute HCl with dissolved metal chlorides; not measured",
-  "sensitivity": "Hydrostatic load and agitator power linear",
-  "replaced_by": "Density of a liquor sample",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-029",
-  "needs_verification": true,
-  "verification_test": "Density of a liquor sample"
- },
- {
-  "value": "1100",
-  "units": "mm",
-  "where": "LEACH_CSTR_1 working level",
-  "basis": "Leaves 288 mm freeboard below the lid; nozzles at 700",
-  "sensitivity": "Holdup and wall load",
-  "replaced_by": "Operating level set at commissioning",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-030",
-  "needs_verification": true,
-  "verification_test": "Operating level set at commissioning"
- },
- {
-  "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
-  "units": "\u2014",
-  "where": "LEACH_CSTR_1 agitator",
-  "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
-  "sensitivity": "Power with N cubed and D to the fifth",
-  "replaced_by": "Just-suspended speed test with a class A lot; vendor curve",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-031",
-  "needs_verification": true,
-  "verification_test": "Just-suspended speed test with a class A lot; vendor curve"
- },
- {
-  "value": "0.22",
-  "units": "derating factor",
-  "where": "CPVC allowable at 85 C",
-  "basis": "Interpolated from manufacturer CPVC derating tables on 2000 psi HDS",
-  "sensitivity": "Wall and panel thickness",
-  "replaced_by": "Manufacturer sheet-stock creep data at 85 C",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-032",
-  "needs_verification": true,
-  "verification_test": "Manufacturer sheet-stock creep data at 85 C"
- },
- {
-  "value": "700",
-  "units": "MPa",
-  "where": "CPVC creep modulus at 85 C",
-  "basis": "Approximate long-term modulus; not sourced to one table",
-  "sensitivity": "Panel deflection only",
-  "replaced_by": "Manufacturer creep modulus",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-033",
-  "needs_verification": true,
-  "verification_test": "Manufacturer creep modulus"
- },
- {
-  "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
-  "units": "\u2014",
-  "where": "LEACH_CSTR_1 FRP belts",
-  "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
-  "sensitivity": "Belt stress and deflection",
-  "replaced_by": "In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21)",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-034",
-  "needs_verification": true,
-  "verification_test": "In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21)"
- },
- {
-  "value": "0.75",
-  "units": "kW",
-  "where": "LEACH_CSTR_1 agitator motor",
-  "basis": "Shaft 403 W with gear and motor losses and start margin",
-  "sensitivity": "Load list",
-  "replaced_by": "Vendor motor rating",
-  "task": "MET-LEACH_CSTR_1-02",
-  "files": [
-   "docs-authority/sizing/LEACH_CSTR_1.md"
-  ],
-  "id": "A-M-035",
-  "needs_verification": true,
-  "verification_test": "Vendor motor rating"
- },
- {
-  "value": "0.85",
-  "units": "current efficiency",
-  "where": "EW bounding current",
-  "basis": "USBM_CL_EW chloride EW 0.85-0.90; lower bound taken (bounding current). drivers.json ew_current_efficiency_design",
-  "sensitivity": "Current, cathode count and DC power inverse to CE",
-  "replaced_by": "Measured current efficiency per cell",
-  "task": "X-PAR-04",
-  "files": [
-   "docs-authority/sizing/EW_CELLS.md"
-  ],
-  "id": "A-M-036",
-  "needs_verification": true,
-  "verification_test": "Bench diaphragm chloride EW cell per metal: deposit mass vs charge"
- },
- {
-  "value": "200",
-  "units": "A/m2",
-  "where": "EW cathode current density",
-  "basis": "AQS-EW-MOD-001; typical copper EW range 200-350",
-  "sensitivity": "Cathode count inverse",
-  "replaced_by": "Deposit quality trial per metal",
-  "task": "MET-EW_1-02",
-  "files": [
-   "docs-authority/sizing/EW_CELLS.md"
-  ],
-  "id": "A-M-037",
-  "needs_verification": true,
-  "verification_test": "Deposit quality trial per metal"
- },
- {
-  "value": "100 mm cathode pitch; tank allowances 75/50/150/100/80 mm",
-  "units": "mm",
-  "where": "EW tank geometry",
-  "basis": "Common EW practice; room for sludge and covers",
-  "sensitivity": "Tank length linear in cathode count",
-  "replaced_by": "Fabrication drawing",
-  "task": "MET-EW_1-02",
-  "files": [
-   "docs-authority/sizing/EW_CELLS.md"
-  ],
-  "id": "A-M-038",
-  "needs_verification": true,
-  "verification_test": "Fabrication drawing"
- },
- {
-  "value": "2.12",
-  "units": "V",
-  "where": "EW cell voltage, all cells",
-  "basis": "USBM_CL_EW 2.1 kWh/kg Cu from cupric chloride at CE 0.85, z 2: V = E M CE/(zF) = 2.12 V. drivers.json ew_cell_voltage_V; not per metal",
-  "sensitivity": "DC power linear; Zn and Fe likely higher",
-  "replaced_by": "Measured cell voltage per metal",
-  "task": "X-PAR-04",
-  "files": [
-   "docs-authority/sizing/EW_CELLS.md"
-  ],
-  "id": "A-M-039",
-  "needs_verification": true,
-  "verification_test": "Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage per metal"
- },
- {
-  "value": "0.60 x 0.42 m immersed plate",
-  "units": "m",
-  "where": "EW plates",
-  "basis": "AQS-EW-MOD-001",
-  "sensitivity": "Cathode count",
-  "replaced_by": "Cathode blank drawing",
-  "task": "MET-EW_1-02",
-  "files": [
-   "docs-authority/sizing/EW_CELLS.md"
-  ],
-  "id": "A-M-040",
-  "needs_verification": true,
-  "verification_test": "Cathode blank drawing"
- },
- {
-  "value": "1.10",
-  "units": "margin",
-  "where": "RECT-EW channel rating",
-  "basis": "Allowance over bounding current for control headroom",
-  "sensitivity": "Frame size step",
-  "replaced_by": "Vendor selection",
-  "task": "X-ELS-04",
-  "files": [
-   "docs-authority/RECT_EW.md"
-  ],
-  "id": "A-M-041",
-  "needs_verification": true,
-  "verification_test": "Vendor selection"
- },
- {
-  "value": "6 V rated; 0.3 V bus drop",
-  "units": "V",
-  "where": "RECT-EW voltage",
-  "basis": "Cell 2.12 V (A-M-039) plus 0.3 V bus drop (drivers.json ew_bus_drop_V) and aging room",
-  "sensitivity": "Nameplate kW linear",
-  "replaced_by": "Measured cell and bus voltage",
-  "task": "X-PAR-04",
-  "files": [
-   "docs-authority/RECT_EW.md"
-  ],
-  "id": "A-M-042",
-  "needs_verification": true,
-  "verification_test": "Measured cell and bus voltage"
- },
- {
-  "value": "0.80",
-  "units": "efficiency",
-  "where": "RECT-EW AC/DC",
-  "basis": "Low-voltage high-current rectifiers lose a large share in diodes and transformer. drivers.json rect_efficiency",
-  "sensitivity": "AC input inverse",
-  "replaced_by": "Vendor efficiency at 2.42 V channel voltage",
-  "task": "X-PAR-04",
-  "files": [
-   "docs-authority/RECT_EW.md"
-  ],
-  "id": "A-M-043",
-  "needs_verification": true,
-  "verification_test": "Vendor efficiency curve at 2.42 V channel voltage and bounding current"
- },
- {
-  "value": "250/500/1000/1500/2000/2500/3000/4000",
-  "units": "A",
-  "where": "RECT-EW frame sizes",
-  "basis": "Common modular rectifier frames; not a vendor list",
-  "sensitivity": "Rating step",
-  "replaced_by": "Vendor catalog",
-  "task": "X-ELS-04",
-  "files": [
-   "docs-authority/RECT_EW.md"
-  ],
-  "id": "A-M-044",
-  "needs_verification": true,
-  "verification_test": "Vendor catalog"
- },
- {
-  "value": "0.22 at 60 C (PVC-U); 0.25 at 82 C (CPVC)",
-  "units": "pressure factor",
-  "where": "Classes P1, P2",
-  "basis": "Published manufacturer temperature-derating tables (Spears, Charlotte class)",
-  "sensitivity": "Allowable pressure linear",
-  "replaced_by": "Chosen brand table",
-  "task": "X-PIP-01",
-  "files": [
-   "docs-authority/PIPING_CLASSES.md"
-  ],
-  "id": "A-M-045",
-  "needs_verification": true,
-  "verification_test": "Chosen brand table"
- },
- {
-  "value": "PN16 at 20 C (PVDF SDR21); PN10 (PP-H)",
-  "units": "bar",
-  "where": "Classes P3, P4",
-  "basis": "ISO 10931 / ISO 15494 series ratings",
-  "sensitivity": "Allowable at temperature from the regression curve",
-  "replaced_by": "Chosen brand regression curve",
-  "task": "X-PIP-01",
-  "files": [
-   "docs-authority/PIPING_CLASSES.md"
-  ],
-  "id": "A-M-046",
-  "needs_verification": true,
-  "verification_test": "Chosen brand regression curve"
- },
- {
-  "value": "120 C PVDF; 80 C PP-H; 60 C HDPE; 200 C glass; 100 C FRP",
-  "units": "C",
-  "where": "Class temperature limits",
-  "basis": "Common published service limits",
-  "sensitivity": "Class choice at the margins",
-  "replaced_by": "Chosen brand data",
-  "task": "X-PIP-01",
-  "files": [
-   "docs-authority/PIPING_CLASSES.md"
-  ],
-  "id": "A-M-047",
-  "needs_verification": true,
-  "verification_test": "Chosen brand data"
- },
- {
-  "value": "40",
-  "units": "C",
-  "where": "Liquid edges into thermoplastic units with no stated temperature (X-MAT-09)",
-  "basis": "0.4 % site dry bulb 37.8 C (AQS-SITE-002), no heat input stated upstream",
-  "sensitivity": "Only matters near the 60 C PVC-U limit",
-  "replaced_by": "Edge temperature from each unit task 01 heat balance",
-  "task": "X-MAT-09",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-048",
-  "needs_verification": true,
-  "verification_test": "Edge temperature from each unit task 01 heat balance"
- },
- {
-  "value": "85",
-  "units": "C",
-  "where": "LEACH_CSTR_1 outlet edges without their own temperature",
-  "basis": "Leach liquor band maximum (GLOSSARY 70-85 C)",
-  "sensitivity": "Drives the CPVC choices of X-MAT-09",
-  "replaced_by": "Measured outlet temperatures",
-  "task": "X-MAT-09",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-049",
-  "needs_verification": true,
-  "verification_test": "Measured outlet temperatures"
- },
- {
-  "value": "50",
-  "units": "ohm m",
-  "where": "AQS-ELEC-005 soil resistivity",
-  "basis": "Moist clay range; AQS-SITE-002 soil assumption",
-  "sensitivity": "Grid resistance linear in resistivity",
-  "replaced_by": "Wenner four-pin test at the parcel",
-  "task": "X-ELS-08",
-  "files": [
-   "docs-authority/GROUNDING.md"
-  ],
-  "id": "A-M-050",
-  "needs_verification": true,
-  "verification_test": "Wenner four-pin test at the parcel"
- },
- {
-  "value": "35 x 20 m ring, 12 rods 3 m",
-  "units": "m",
-  "where": "AQS-ELEC-005 grid",
-  "basis": "Placement extents of the plate",
-  "sensitivity": "Resistance falls with area and length",
-  "replaced_by": "Site plan (X-BLD)",
-  "task": "X-ELS-08",
-  "files": [
-   "docs-authority/GROUNDING.md"
-  ],
-  "id": "A-M-051",
-  "needs_verification": true,
-  "verification_test": "Site plan (X-BLD)"
- },
- {
-  "value": "5",
-  "units": "ohm",
-  "where": "AQS-ELEC-005 target",
-  "basis": "IEEE 142 common industrial target",
-  "sensitivity": "Rod count",
-  "replaced_by": "Utility or AHJ requirement and IEEE 80 step/touch study",
-  "task": "X-ELS-08",
-  "files": [
-   "docs-authority/GROUNDING.md"
-  ],
-  "id": "A-M-052",
-  "needs_verification": true,
-  "verification_test": "Utility or AHJ requirement and IEEE 80 step/touch study"
- },
- {
-  "value": "hydride check each strip cycle, first year",
-  "units": "inspection",
-  "where": "EW_1, EW_2, EW_4, EW_9 Ti cathodes",
-  "basis": "Ti hydriding mainly above about 80 C (ASM Vol 13); EW_1 inlet 77.5 C is near it",
-  "sensitivity": "Blank life",
-  "replaced_by": "Hydrogen content analysis of a used blank",
-  "task": "X-MAT-18",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-053",
-  "needs_verification": true,
-  "verification_test": "Hydrogen content analysis of a used blank"
- },
- {
-  "value": "35",
-  "units": "C",
-  "where": "BMED membrane inlet target",
-  "basis": "Bipolar-membrane stacks are commonly limited to about 40 C; 5 K margin",
-  "sensitivity": "Cooler duty",
-  "replaced_by": "Membrane vendor temperature limit",
-  "task": "X-MAT-19",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-054",
-  "needs_verification": true,
-  "verification_test": "Membrane vendor temperature limit"
- },
- {
-  "value": "U 7 W/m2K; cp 3.0 (20 % HCl), 3.6 (20 % NaOH), 4.18 (water)",
-  "units": "W/m2K, kJ/kgK",
-  "where": "X-MAT-19 cooler sizing",
-  "basis": "Natural convection to still air; handbook cp values",
-  "sensitivity": "Coil length inverse to U",
-  "replaced_by": "Outlet temperature measured on the installed coil",
-  "task": "X-MAT-19",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-055",
-  "needs_verification": true,
-  "verification_test": "Outlet temperature measured on the installed coil"
- },
- {
-  "value": "0.90",
-  "units": "power factor",
-  "where": "AQS-ELEC-002 feeder currents",
-  "basis": "Typical mixed motor and electronic load",
-  "sensitivity": "Feeder current inverse",
-  "replaced_by": "Motor and rectifier data sheets",
-  "task": "X-ELS-03",
-  "files": [
-   "docs-authority/ONE_LINE.md"
-  ],
-  "id": "A-M-056",
-  "needs_verification": true,
-  "verification_test": "Motor and rectifier data sheets"
- },
- {
-  "value": ">= 1 kW on MCC-1 480 V; < 1 kW on PP-1 208/120 V",
-  "units": "assignment rule",
-  "where": "AQS-ELEC-002",
-  "basis": "Common split of three-phase motors and small single-phase loads",
-  "sensitivity": "Transformer size",
-  "replaced_by": "Equipment nameplates",
-  "task": "X-ELS-03",
-  "files": [
-   "docs-authority/ONE_LINE.md"
-  ],
-  "id": "A-M-057",
-  "needs_verification": true,
-  "verification_test": "Equipment nameplates"
- },
- {
-  "value": "2 x rated",
-  "units": "fault current",
-  "where": "AQS-ELEC-006 inverter fault contribution",
-  "basis": "AQS-ELEC-002 Rev B figure; typical inverter limit 1.1-2.0 x",
-  "sensitivity": "Device choice and GPR linear",
-  "replaced_by": "SOL_ARK vendor fault data",
-  "task": "X-ELS-07",
-  "files": [
-   "docs-authority/PROTECTION.md"
-  ],
-  "id": "A-M-058",
-  "needs_verification": true,
-  "verification_test": "SOL_ARK vendor fault data"
- },
- {
-  "value": "5x low instantaneous; electronic 1.5x / 0.1 s; main 1.25x / 0.3 s",
-  "units": "settings",
-  "where": "AQS-ELEC-006 devices",
-  "basis": "Pickups set below the inverter-limited fault",
-  "sensitivity": "Clearing time",
-  "replaced_by": "Chosen brand time-current curves",
-  "task": "X-ELS-07",
-  "files": [
-   "docs-authority/PROTECTION.md"
-  ],
-  "id": "A-M-059",
-  "needs_verification": true,
-  "verification_test": "Chosen brand time-current curves"
- },
- {
-  "value": "0.5",
-  "units": "s",
-  "where": "IEEE 80 clearing time",
-  "basis": "Feeders clear in 0.1 s; margin",
-  "sensitivity": "Tolerable voltage with 1/sqrt(t)",
-  "replaced_by": "Device curves at the fault current",
-  "task": "X-ELS-08",
-  "files": [
-   "docs-authority/PROTECTION.md"
-  ],
-  "id": "A-M-060",
-  "needs_verification": true,
-  "verification_test": "Device curves at the fault current"
- },
- {
-  "value": "flat 24 h profile; night 14 h",
-  "units": "profile",
-  "where": "AQS-ELEC-007",
-  "basis": "Continuous process; winter-leaning night length at 33 N",
-  "sensitivity": "Storage linear in night hours",
-  "replaced_by": "Hourly load profile from unit duties",
-  "task": "X-ELS-05",
-  "files": [
-   "docs-authority/POWER_SIZING.md"
-  ],
-  "id": "A-M-061",
-  "needs_verification": true,
-  "verification_test": "Hourly load profile from unit duties"
- },
- {
-  "value": "derate 0.80; round trip 0.70",
-  "units": "fraction",
-  "where": "AQS-ELEC-007 PV and storage",
-  "basis": "Typical PV system losses; flow battery round trip",
-  "sensitivity": "PV size inverse",
-  "replaced_by": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)",
-  "task": "X-ELS-05",
-  "files": [
-   "docs-authority/POWER_SIZING.md"
-  ],
-  "id": "A-M-062",
-  "needs_verification": true,
-  "verification_test": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)"
- },
- {
-  "value": "HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 days",
-  "units": "kW, d",
-  "where": "AQS-ELEC-007 backup",
-  "basis": "Life support, H2 storage cooling, air separation, food",
-  "sensitivity": "Generator and H2 store linear",
-  "replaced_by": "Owner critical-load list",
-  "task": "X-ELS-05",
-  "files": [
-   "docs-authority/POWER_SIZING.md"
-  ],
-  "id": "A-M-063",
-  "needs_verification": true,
-  "verification_test": "Owner critical-load list"
- },
- {
-  "value": "30",
-  "units": "S/m",
-  "where": "EW liquor conductivity (X-MAT-07)",
-  "basis": "About 1.4 M HCl with metal chlorides; HCl conductivity tables",
-  "sensitivity": "Shunt current linear",
-  "replaced_by": "Conductivity meter reading on the liquor",
-  "task": "X-MAT-07",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-064",
-  "needs_verification": true,
-  "verification_test": "Conductivity meter reading on the liquor"
- },
- {
-  "value": "0.1 A stray limit; 50 mm air break; 1 % protection current",
-  "units": "A, mm, fraction",
-  "where": "EW aisle (X-MAT-07)",
-  "basis": "Engineering limits for stray current and reverse-current protection",
-  "sensitivity": "Launder design and rectifier standby mode",
-  "replaced_by": "Commissioning measurement of stray current and anode vendor rule",
-  "task": "X-MAT-07",
-  "files": [
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-065",
-  "needs_verification": true,
-  "verification_test": "Commissioning measurement of stray current and anode vendor rule"
- },
- {
-  "value": "1 m/s liquid, 10 m/s gas; min DN15; DN50 slurry",
-  "units": "m/s, DN",
-  "where": "AQS-PIP-004 bores",
-  "basis": "Common line-sizing velocities; slurry minimum against plugging",
-  "sensitivity": "DN with square root of flow",
-  "replaced_by": "Unit task 04 bore calculation with pressure drop",
-  "task": "X-PIP-02",
-  "files": [
-   "docs-authority/LINE_LIST.md"
-  ],
-  "id": "A-M-066",
-  "needs_verification": true,
-  "verification_test": "Unit task 04 bore calculation with pressure drop"
- },
- {
-  "value": "orthogonal centre distance x 1.2",
-  "units": "m",
-  "where": "AQS-PIP-004 lengths",
-  "basis": "Rack routing allowance",
-  "sensitivity": "Pressure drop and cost",
-  "replaced_by": "Isometrics (X-PIP-03)",
-  "task": "X-PIP-02",
-  "files": [
-   "docs-authority/LINE_LIST.md"
-  ],
-  "id": "A-M-067",
-  "needs_verification": true,
-  "verification_test": "Isometrics (X-PIP-03)"
- },
- {
-  "value": "rule-based class assignment",
-  "units": "class",
-  "where": "AQS-PIP-004 classes",
-  "basis": "AQS-PIP-003 service map applied by unit material, temperature, phase and composition; default P1 for aqueous process",
-  "sensitivity": "Material per line",
-  "replaced_by": "Line-by-line review at unit task 05",
-  "task": "X-PIP-02",
-  "files": [
-   "docs-authority/LINE_LIST.md"
-  ],
-  "id": "A-M-068",
-  "needs_verification": true,
-  "verification_test": "Line-by-line review at unit task 05"
- },
- {
-  "value": "{\"skid\": [1200, 800, 1800], \"tank\": [2400, 1800, 1500], \"bed\": [4800, 1200, 600], \"pen\": [3000, 2400, 2000], \"room\": [3000, 3000, 2600], \"manifold\": [600, 300, 300], \"cold_box\": [2000, 1500, 2600], \"small_cold\": [800, 600, 1500]}",
-  "units": "mm",
-  "where": "AQS-PLACE-STUDY-001 footprints by category",
-  "basis": "Study envelopes by equipment type (skid, tank, bed, pen, room, manifold, cold box); no unit envelope exists",
-  "sensitivity": "Packing, line lengths",
-  "replaced_by": "Unit task 02/14 envelopes",
-  "task": "X-BLD-09",
-  "files": [
-   "flow_graph/placement_study.json",
-   "flow_graph/study_place.py"
-  ],
-  "id": "A-M-069",
-  "needs_verification": true,
-  "verification_test": "Unit task 02/14 envelopes"
- },
- {
-  "value": "block-sized placeholder boxes of the target block are not obstacles",
-  "units": "-",
-  "where": "study_place.py packing",
-  "basis": "Rows sized to the whole sector block are sector stand-ins, not equipment",
-  "sensitivity": "Free area in FARM, HAB, CRYO, MFG",
-  "replaced_by": "Unit envelopes for GROW_BED, HABITATION, CRYO_* and MFG_SHOP",
-  "task": "X-BLD-09",
-  "files": [
-   "flow_graph/placement_study.json",
-   "flow_graph/study_place.py"
-  ],
-  "id": "A-M-070",
-  "needs_verification": true,
-  "verification_test": "Unit envelopes for GROW_BED, HABITATION, CRYO_* and MFG_SHOP"
- },
- {
-  "value": "1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2",
-  "units": "kWh/Nm3",
-  "where": "CRYO_ASU load (AQS-ELEC-003)",
-  "basis": "S23: Energy saving opportunities in oxygen plant, IJRET 2013, doi 10.15623/ijret.2013.0202018 (80 m3/h plant, 1.30-1.40 before optimisation); air ratio from 21 vol% O2 at about 100% recovery",
-  "sensitivity": "Linear in load; scale penalty below 80 m3/h not included, so the value is a lower bound",
-  "replaced_by": "In-house micro cold box design and commissioning measurement (X-MFG-33)",
-  "task": "X-ELS-02",
-  "files": [
-   "docs-authority/LOAD_LIST.md"
-  ],
-  "id": "A-M-071",
-  "needs_verification": true,
-  "verification_test": "In-house micro cold box design and commissioning measurement (X-MFG-33)"
- },
- {
-  "value": "RO 3.0 kWh/m3, EDI 0.5 kWh/m3",
-  "units": "kWh/m3",
-  "where": "BMED_UPW_POLISH load",
-  "basis": "S24 Greenlee et al. 2009 Water Res 43:2317 (brackish RO 0.5-3); S25 Alvarado and Chen 2014 Electrochim Acta 132:583 (EDI); upper ends taken",
-  "sensitivity": "Linear; load is under 0.1 kW",
-  "replaced_by": "In-house RO/EDI design and bench test (X-MFG-34)",
-  "task": "X-ELS-02",
-  "files": [
-   "docs-authority/LOAD_LIST.md"
-  ],
-  "id": "A-M-072",
-  "needs_verification": true,
-  "verification_test": "In-house RO/EDI design and bench test (X-MFG-34)"
- },
- {
-  "value": "DLI 17 mol/m2/d; LED 2.5 umol/J; 10 m head; 50% pump",
-  "units": "mixed",
-  "where": "GROW_BED load",
-  "basis": "S26 Both et al., Cornell CEA lettuce handbook DLI 17; LED efficacy per DLC horticultural QPL range; 28 m2 bed area from GROW_BED params",
-  "sensitivity": "LED term linear in area and DLI",
-  "replaced_by": "Crop plan lighting schedule and fixture data (unit task 02)",
-  "task": "X-ELS-02",
-  "files": [
-   "docs-authority/LOAD_LIST.md"
-  ],
-  "id": "A-M-073",
-  "needs_verification": true,
-  "verification_test": "Crop plan lighting schedule and fixture data (unit task 02)"
- },
- {
-  "value": "rack at level datum + 3200 mm; rise, X, Y, drop",
-  "units": "mm",
-  "where": "AQS-ISO-001 routes",
-  "basis": "AQS-PIP-002 header elevation Z 3200; orthogonal rack routing",
-  "sensitivity": "Line lengths and elbow counts",
-  "replaced_by": "3D routed model (X-PIP-03 close-out with X-BLD-04)",
-  "task": "X-PIP-03",
-  "files": [
-   "docs-authority/ISO_ROUTES.md"
-  ],
-  "id": "A-M-074",
-  "needs_verification": true,
-  "verification_test": "3D routed model (X-PIP-03 close-out with X-BLD-04)"
- },
- {
-  "value": "FARM second tier floor at L1 datum + 2250 mm, beds and skids only; floor items over 1650 mm block the tier",
-  "units": "mm",
-  "where": "AQS-PLACE-STUDY-001 FARM",
-  "basis": "FARM block 4500 mm high; skid 1800 mm + 2250 = 4050 mm under the block top",
-  "sensitivity": "Structure (tier deck load) and access",
-  "replaced_by": "X-BLD-01 tier deck design and X-BLD-04 access check",
-  "task": "X-RSZ-05",
-  "files": [
-   "flow_graph/placement_study.json",
-   "flow_graph/study_place.py"
-  ],
-  "id": "A-M-075",
-  "needs_verification": true,
-  "verification_test": "X-BLD-01 tier deck design and X-BLD-04 access check"
- },
- {
-  "value": "FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm",
-  "units": "mm",
-  "where": "AQS-PLACE-STUDY-001 water tanks (DIGESTER, FISH, CLARIFIER, FISH_SUMP)",
-  "basis": "Floor-bound wet tanks do not fit FARM; L-2 east of HYDRO is free in the seed",
-  "sensitivity": "Lift head to L1 beds; slab loads",
-  "replaced_by": "X-BLD-04 general arrangement",
-  "task": "X-RSZ-05",
-  "files": [
-   "flow_graph/placement_study.json",
-   "flow_graph/study_place.py"
-  ],
-  "id": "A-M-076",
-  "needs_verification": true,
-  "verification_test": "X-BLD-04 general arrangement"
- },
- {
-  "value": "BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to added HCl; base consumed by hydroxide precipitation in the leach loop",
-  "units": "kWh/kg",
-  "where": "BMED_ACID continuous_kw, IA-BASE-PPT",
-  "basis": "ELECTRICAL BMED 1.8-2.4 kWh/kg (graph rate_source); BMED splits salt 1:1; leached Al, Ca, Mg, Fe recovered as hydroxides to free chloride for regeneration",
-  "sensitivity": "16.1 kW linear in acid demand; base return linear",
-  "replaced_by": "In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35)",
-  "task": "X-RSZ-01",
-  "files": [
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/FEED_ASSAY.md"
-  ],
-  "id": "A-M-077",
-  "needs_verification": true,
-  "verification_test": "In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35)"
- },
- {
-  "value": "PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); ground field removed",
-  "units": "kWp, m2",
-  "where": "PV_ARRAY params",
-  "basis": "AQS-ELEC-007 bounding case; 5 m2/kWp; plate cannot carry it (sizing rule revises the restriction)",
-  "sensitivity": "Site area and land cost; PV average linear",
-  "replaced_by": "Site survey area check (X-BAS-03) and PV layout",
-  "task": "X-RSZ-02",
-  "files": [
-   "docs-authority/POWER_SIZING.md",
-   "docs-authority/PROTECTION.md",
-   "flow_graph/placement_seed.json",
-   "flow_graph/plant_flow_graph.json",
-   "flow_graph/param/solver.py"
-  ],
-  "id": "A-M-078",
-  "needs_verification": true,
-  "verification_test": "Site survey area check (X-BAS-03) and PV layout"
- },
- {
-  "value": "EW cell DC less existing heat outlets goes to HEAT_SINK as cell heat and deposit enthalpy",
-  "units": "kW",
-  "where": "IA-EWQ-EW_n edges",
-  "basis": "Energy balance per cell; split between heat and metal enthalpy not resolved",
-  "sensitivity": "Aisle ventilation and HX8 duty",
-  "replaced_by": "Cell heat balance at unit task 03",
-  "task": "X-RSZ-02",
-  "files": [
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/POWER_SIZING.md",
-   "docs-authority/PROTECTION.md"
-  ],
-  "id": "A-M-079",
-  "needs_verification": true,
-  "verification_test": "Cell heat balance at unit task 03"
- },
- {
-  "value": "RECT_EW cabinet 2400 x 800 x 2000 mm",
-  "units": "mm",
-  "where": "RECT_EW duty sheet",
-  "basis": "Study envelope for a 78 kW DC multi-channel rectifier",
-  "sensitivity": "EW aisle placement",
-  "replaced_by": "Vendor GA",
-  "task": "X-RSZ-02",
-  "files": [
-   "docs-authority/duties/RECT_EW.md"
-  ],
-  "id": "A-M-080",
-  "needs_verification": true,
-  "verification_test": "Vendor GA"
- },
- {
-  "value": "potable path: leach bleed -> VCD -> UPW polish (2.3% reject) -> REMIN -> ROOF_TANK; HCl carry-over held by VCD and removed by RO/EDI",
-  "units": "-",
-  "where": "IA-LEACH-VCD, S25, IA-UPW-REMIN, IA-POT-01",
-  "basis": "Compared with a dedicated treatment unit on the leach line: the reroute reuses the existing distillation and polish train and gives a potable source with a defined composition; a separate unit would duplicate VCD and RO. Reject fraction from the existing UPW balance (3.22/140.52)",
-  "sensitivity": "VCD and UPW throughput +123 kg/d; HCl in condensate",
-  "replaced_by": "Condensate chloride and pH test against the potable standard (unit task 06)",
-  "task": "X-RSZ-06",
-  "files": [
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/MATERIALS_STD.md"
-  ],
-  "id": "A-M-081",
-  "needs_verification": true,
-  "verification_test": "Condensate chloride and pH test against the potable standard (unit task 06)"
- },
- {
-  "value": "unassigned class reports to FLOAT_SINK",
-  "units": "kg/d",
-  "where": "FLOAT_SINK design capacity",
-  "basis": "Unidentified material is taken as inert solids to sink (conservative for sink sizing)",
-  "sensitivity": "If soluble, leach and acid load rise",
-  "replaced_by": "Lot characterisation per AQS-ASSAY-001",
-  "task": "X-RSZ-07",
-  "files": [
-   "docs-authority/RESIZE_SWEEP.md"
-  ],
-  "id": "A-M-082",
-  "needs_verification": true,
-  "verification_test": "Lot characterisation per AQS-ASSAY-001"
- },
- {
-  "value": "CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water volume at 14.9 kg/m3); compressor 10 to 200 bar, isothermal efficiency 0.5",
-  "units": "bar, kg, m3",
-  "where": "CRYO_H2 params and load",
-  "basis": "Study basis set by Mike 2026-10-15 (owner may override); store = two days of critical load on H2 (AQS-ELEC-007); H2 density at 200 bar 25 C from NIST webbook",
-  "sensitivity": "Load 0.57 kW linear in throughput; store volume linear in days of backup",
-  "replaced_by": "Owner storage-mode decision and in-house compressor bench run (X-MFG-36)",
-  "task": "X-ELS-02",
-  "files": [
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-083",
-  "needs_verification": true,
-  "verification_test": "Owner storage-mode decision and in-house compressor bench run (X-MFG-36)"
- },
- {
-  "value": "H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol%",
-  "units": "-",
-  "where": "S49, S49P",
-  "basis": "Gas is dried to -40 C dew at H2_DRYER; the 2 wt% water stencil on S49 was inconsistent with that; deoxo water and TSA purge are trace",
-  "sensitivity": "Fuel-cell feed rate",
-  "replaced_by": "Purifier vendor mass balance",
-  "task": "X-ELS-02",
-  "files": [
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-084",
-  "needs_verification": true,
-  "verification_test": "Purifier vendor mass balance"
- },
- {
-  "value": "melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0.2 kWh/kg; one 8 h shift; tool utilisation 0.1-0.5; nameplates as listed",
-  "units": "kWh/kg, kW",
-  "where": "AQS-MFG-010 and MFG_SHOP continuous_kw",
-  "basis": "Small induction melting of Cu about 0.5-1.0 kWh/kg incl. losses (upper taken); atomiser includes remelt and gas recirculation; shop nameplates typical for the tool class",
-  "sensitivity": "Average 3.98 kW; peak 38.5 kW sets the feeder",
-  "replaced_by": "In-house tool design, trial runs and the production schedule (X-MFG-37)",
-  "task": "X-ELS-02",
-  "files": [
-   "docs-authority/MFG_TOOLS.md"
-  ],
-  "id": "A-M-085",
-  "needs_verification": true,
-  "verification_test": "In-house tool design, trial runs and the production schedule (X-MFG-37)"
- },
- {
-  "value": "electrical input to each fed load leaves as heat to HEAT_SINK",
-  "units": "kW",
-  "where": "SQ-* edges",
-  "basis": "Energy conservation; work stored in products neglected (study)",
-  "sensitivity": "HEAT_SINK and HVAC duty",
-  "replaced_by": "Per-unit energy balance at unit task 01",
-  "task": "X-RSZ-07",
-  "files": [
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-086",
-  "needs_verification": true,
-  "verification_test": "Per-unit energy balance at unit task 01"
- },
- {
-  "value": "spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3 0.85, P4 0.8, P5 0.6, F1 1.3); metal B31.1 Table 121.5; alpha, E, S per class as in _supports.py; install 20 C",
-  "units": "m, 1/K, MPa",
-  "where": "AQS-PIP-005",
-  "basis": "Manufacturer PVC Sch 80 support tables; ASME B31.1 Table 121.5; handbook moduli and expansion coefficients; guided-cantilever leg formula",
-  "sensitivity": "Support count and loop need",
-  "replaced_by": "Manufacturer span tables per material and B31.3 flexibility analysis on the routed model",
-  "task": "X-PIP-04",
-  "files": [
-   "docs-authority/SUPPORTS.md"
-  ],
-  "id": "A-M-087",
-  "needs_verification": true,
-  "verification_test": "Manufacturer span tables per material and B31.3 flexibility analysis on the routed model"
- },
- {
-  "value": "2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH)",
-  "units": "mol/L",
-  "where": "BMED_ACID, BMED_BASE, EVAP_ACID/EVAP_BASE feed",
-  "basis": "EDBM_WHEY_2021: conventional EDBM reaches 3.6 M acid; SEC 6.7 kWh/kg quoted at 2 M. Densities PERRY9_HCL",
-  "sensitivity": "Evaporator water load and BMED SEC; higher molarity lowers evaporation but raises SEC",
-  "replaced_by": "EDBM pilot on the plant chloride brine",
-  "verification_test": "EDBM pilot at 2 M product: SEC, current efficiency and product purity",
-  "task": "X-PAR-04",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/PARAMETRIC_MODEL.md"
-  ],
-  "id": "A-M-088",
-  "needs_verification": true
- },
- {
-  "value": "Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-DUTY-060): 72",
-  "units": "kWh/t water evaporated",
-  "where": "EVAP_ACID, EVAP_BASE power",
-  "basis": "VOGELBUSCH_MVR 19-72 kWh/t; upper bound for high boiling-point elevation and a small unit",
-  "sensitivity": "Evaporator kW linear",
-  "replaced_by": "Vendor MVR quote at about 0.8 t/d",
-  "verification_test": "Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement",
-  "task": "X-PAR-04",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/PARAMETRIC_MODEL.md"
-  ],
-  "id": "A-M-089",
-  "needs_verification": true
- },
- {
-  "value": "20 wt% HCl on IA-ACID-01",
-  "units": "mass fraction",
-  "where": "EVAP_ACID product, LEACH_CSTR_1 feed",
-  "basis": "Below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL), so simple evaporation reaches it; CARLETON_HCL_2023 leach basis is 38 %",
-  "sensitivity": "Leach extraction rate and residence time",
-  "replaced_by": "Bench leach at 20 wt%",
-  "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C; ICP-OES extraction vs time",
-  "task": "X-PAR-04",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/PARAMETRIC_MODEL.md"
-  ],
-  "id": "A-M-090",
-  "needs_verification": true
- },
- {
-  "value": "20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT",
-  "units": "mass fraction",
-  "where": "EVAP_BASE product",
-  "basis": "Matches the acid side; no azeotrope limit",
-  "sensitivity": "Evaporator water load",
-  "replaced_by": "Bench precipitation and digest at the chosen strength",
-  "verification_test": "Bench hydroxide precipitation and glass digest with 20 wt% NaOH",
-  "task": "X-PAR-04",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/PARAMETRIC_MODEL.md"
-  ],
-  "id": "A-M-091",
-  "needs_verification": true
- },
- {
-  "value": "Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-DUTY-060): 1200 x 800 x 1800 mm skid each; placed in BMED_CRU",
-  "units": "mm",
-  "where": "EVAP_ACID, EVAP_BASE envelope and placement",
-  "basis": "AQS-PLACE-STUDY-001 skid category",
-  "sensitivity": "BMED_CRU block fill",
-  "replaced_by": "Vendor MVR skid drawing",
-  "verification_test": "Vendor MVR skid general arrangement",
-  "task": "X-PAR-04",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/PARAMETRIC_MODEL.md"
-  ],
-  "id": "A-M-092",
-  "needs_verification": true
- },
- {
-  "value": "SOL_ARK bus change carried on IA-PV-01 average; PV, storage, inverters from AQS-ELEC-007 bounding case",
-  "units": "kW",
-  "where": "IA-PV-01, PV_ARRAY, ZNBR2, SOL_ARK_60K",
-  "basis": "Flat profile, A-M-060 to A-M-062",
-  "sensitivity": "PV kWp and storage kWh linear in bus demand",
-  "replaced_by": "Hourly load profile and PVsyst site run",
-  "verification_test": "Hourly load profile and PVsyst site run",
-  "task": "X-PAR-04",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/plant_flow_graph.json",
-   "docs-authority/PARAMETRIC_MODEL.md"
-  ],
-  "id": "A-M-093",
-  "needs_verification": true
- },
- {
-  "value": "1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe precipitated",
-  "units": "mol/mol",
-  "where": "IA-BASE-PPT",
-  "basis": "GREENWOOD hydroxide stoichiometry; Ca(OH)2 is sparingly soluble, so full Ca precipitation is a bounding NaOH demand",
-  "sensitivity": "IA-BASE-PPT and EVAP_BASE linear",
-  "replaced_by": "Bench precipitation to target pH",
-  "verification_test": "Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES",
-  "task": "X-PAR-06",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/param/solver.py",
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-094",
-  "needs_verification": true
- },
- {
-  "value": "dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol NaOH per mol SiO2",
-  "units": "mol/mol",
-  "where": "IA-BASE-01, IA-DIG-LIQ",
-  "basis": "GREENWOOD SiO2 + 2 NaOH; soda-lime cullet is below 100 % SiO2, so this bounds NaOH",
-  "sensitivity": "IA-BASE-01 linear in dissolved mass",
-  "replaced_by": "Bench caustic digest of burned cullet",
-  "verification_test": "Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg",
-  "task": "X-PAR-06",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/param/solver.py",
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-095",
-  "needs_verification": true
- },
- {
-  "value": "NaOH make-up = precipitation + digest demand less BMED production (1:1 with leach HCl); no credit for sodium returned in the silicate liquor",
-  "units": "kg/d NaOH flake",
-  "where": "IA-NAOH-MU (NORTH_DOCK to EVAP_BASE)",
-  "basis": "Owner decision 2026-10-15; worst case keeps the 1 % misfit gate passing",
-  "sensitivity": "Make-up and purge equal the digest draw (5.06 kg/d)",
-  "replaced_by": "Sodium balance on the pilot including silicate neutralisation in the leach",
-  "verification_test": "Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week",
-  "task": "X-PAR-06",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/param/solver.py",
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-096",
-  "needs_verification": true
- },
- {
-  "value": "sodium salt purge IA-NA-PURGE equal in mass to the make-up",
-  "units": "kg/d",
-  "where": "LEACH_CSTR_1 to NORTH_DOCK",
-  "basis": "Mass conservation on the closed graph; composition not resolved (study)",
-  "sensitivity": "Leach bleed composition",
-  "replaced_by": "Purge composition from the pilot sodium balance",
-  "verification_test": "Pilot purge sample: Na, Cl, water by ICP-OES and titration",
-  "task": "X-PAR-06",
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/param/solver.py",
-   "flow_graph/plant_flow_graph.json"
-  ],
-  "id": "A-M-097",
-  "needs_verification": true
- },
- {
-  "value": "Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground field removed)",
-  "units": "-, mm",
-  "where": "PV_ARRAY seed row",
-  "basis": "Study layout pending the owner site area (X-BAS-03)",
-  "sensitivity": "Cable lengths on IA-PV-01; site fit",
-  "replaced_by": "Site plan with parcel boundary",
-  "task": "X-BLD-04",
-  "files": [
-   "flow_graph/placement_seed.json"
-  ],
-  "id": "A-M-098",
-  "needs_verification": true,
-  "verification_test": "Site plan with parcel boundary (X-BAS-03) and PV row layout"
- },
- {
-  "value": "seed rows moved the smallest distance (100 mm grid, 4 m radius) inside their block, no partition X line crossed, to clear 600 mm",
-  "units": "mm",
-  "where": "12 seed rows (placement seed Rev J)",
-  "basis": "maint_clear_mm 600 (seed rules); row cabinets and process trains spread rather than ganged",
-  "sensitivity": "Room fit; local pipe runs",
-  "replaced_by": "Room layout review with access and egress (X-BLD-04)",
-  "task": "X-BLD-04",
-  "files": [
-   "flow_graph/clear_pairs.py",
-   "flow_graph/placement_seed.json"
-  ],
-  "id": "A-M-099",
-  "needs_verification": true,
-  "verification_test": "Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation"
- },
- {
-  "units": "mm",
-  "task": "X-BLD-04",
-  "needs_verification": true,
-  "id": "A-M-100",
-  "value": "1 h partition at X=15000 (FAB acid room) credited as the IFC 5003.9.8 fire barrier for every pair across it; hazardous materials cabinets not credited",
-  "where": "flow_graph/sep_check.py, AQS-BLD-011",
-  "basis": "WS_HF_ED seed source names the 1 h partition at X=15000; full FAB depth assumed",
-  "sensitivity": "Nitric, HF and phosphoric pairs to the alkaline bund pass only by the partition",
-  "replaced_by": "Architectural fire-barrier plan",
-  "files": [
-   "flow_graph/sep_check.py",
-   "flow_graph/placement_seed.json"
-  ],
-  "verification_test": "Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations"
- },
- {
-  "units": "mm",
-  "task": "X-BLD-04",
-  "needs_verification": true,
-  "id": "A-M-101",
-  "value": "Access check: 914 mm clear on at least one face per row; room walls other than X=15000 not modelled; tier-2 shelf rows reached from the tier-1 aisle; RECT_EW 1219 mm on all faces until its working face is fixed",
-  "where": "flow_graph/access_check.py, flow_graph/place_ew_aisle.py, AQS-BLD-012",
-  "basis": "NFPA 101 (2024) 7.3.4.1.1, IBC 2021 1018.5; NEC 2023 Table 110.26(A)(1) Condition 3",
-  "sensitivity": "Rows against a wall may lose their only clear face",
-  "replaced_by": "Room-by-room fit-out model with walls and doors",
-  "files": [
-   "flow_graph/access_check.py",
-   "flow_graph/place_ew_aisle.py"
-  ],
-  "verification_test": "Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths"
- },
- {
-  "id": "A-M-102",
-  "value": "L1 farm re-row: 914 mm minimum between all farm rows; farm rows at x 10600..24000 (FARM/HAB line moved 1400 mm west of x=12000); COMPOST_TOILET moved to (8800, 400); issued envelope sizes unchanged, 90 deg rotation allowed",
-  "units": "mm",
-  "where": "flow_graph/farm_rerow.py, placement seed/study Rev K",
-  "basis": "NFPA 101 (2024) 7.3.4.1.1 / IBC 2021 1018.5 914 mm minimum clear width; owner rule 2026-10-15 (sizing-driven layout changes approved, no position fixed)",
-  "sensitivity": "Farm pipe and grow-light runs; HAB floor area reduced by 1400 x 18000 mm",
-  "replaced_by": "Farm fit-out model with irrigation and lighting",
-  "task": "X-BLD-04",
-  "files": [
-   "flow_graph/farm_rerow.py",
-   "flow_graph/placement_seed.json",
-   "flow_graph/placement_study.json"
-  ],
-  "needs_verification": true,
-  "verification_test": "Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan"
- },
- {
-  "task": "X-PAR-07",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/solver.py",
-   "flow_graph/param/sizing/roof.py",
-   "flow_graph/param/drivers.json",
-   "flow_graph/placement_seed.json"
-  ],
-  "id": "A-M-103",
-  "value": "Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield equal to the PVWatts site yield (factor 1.0); one roof plane for the layout (base block and extension treated together); ROOF datum 14400 mm",
-  "units": "-, mm",
-  "where": "drivers pv_roof_gcr, pv_roof_yield_factor; PV_ARRAY seed row",
-  "basis": "No published roof GCR for this site; PVWatts default fixed-array GCR is 0.4 to 0.5 for ground arrays, roof low-tilt rows run denser",
-  "sensitivity": "Footprint scales about 1/(GCR x yield factor)",
-  "replaced_by": "PVWatts run at roof tilt and row spacing; roof plan with both roof levels",
-  "verification_test": "Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close"
- },
- {
-  "task": "X-PAR-07",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/drivers.json",
-   "flow_graph/param/sizing/roof.py",
-   "flow_graph/param/solver.py",
-   "flow_graph/place_roof.py",
-   "flow_graph/placement_seed.json"
-  ],
-  "id": "A-M-104",
-  "value": "Extension is a single-storey CONDITIONED hall (owner decision 2026-10-15): lighting 8.8 W/m2 lit 10 % of hours (occupant sensors), outdoor air 0.30 L/(s m2) at SFP 1.25 W/(L/s), heat pump COP 3.2, roof U 0.199 and wall U 0.534 W/(m2 K) over the full new perimeter at 6 m eave (bounding), mean |dT| 7.9 K from DFW degree days; slab and internal gains not counted; GEO_GHEX not coupled; NORTH_DOCK keeps a 6 m truck lane through EXT_HALL_N",
-  "units": "W/m2, L/(s m2), K",
-  "where": "drivers ext_*; EXT_HALL_E/N blocks",
-  "basis": "IECC 2021 C405, C405.2.1, C402.1.4; ASHRAE 62.1-2019 Table 6.2.2.1; ASHRAE 90.1-2019 Table 6.8.1-2; ISO 16798-3; NOAA 1991-2020 normals DFW",
-  "sensitivity": "Lighting at 100 % of hours drives the footprint to about 33,500 m2; ground-source COP 3.6 trims the conditioning load about 11 %",
-  "replaced_by": "Room programme and load calculation for the extension",
-  "verification_test": "Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme"
- },
- {
-  "task": "X-PAR-07",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/solver.py",
-   "flow_graph/param/sizing/roof.py",
-   "flow_graph/param/drivers.json",
-   "flow_graph/placement_seed.json"
-  ],
-  "id": "A-M-105",
-  "value": "Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof snow 0.24 kPa (study); LRFD 1.2D + 1.6Lr = 1.72 kPa on the roof framing",
-  "units": "kPa",
-  "where": "drivers roof_*; PV_ARRAY params.roof",
-  "basis": "ASCE 7-22 Table 4.3-1, 4.17, 2.3.1",
-  "sensitivity": "Roof framing tonnage",
-  "replaced_by": "Racking weight and ASCE 7 Hazard Tool snow at the site",
-  "verification_test": "ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays"
- },
- {
-  "task": "X-MFG-30",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/evap_design.py",
-   "flow_graph/param/drivers.json"
-  ],
-  "id": "A-M-106",
-  "value": "Evaporator operating basis: body 101.3 kPa abs, 6 K driving difference, feed 35 C, 10 K interchanger approach, motor efficiency 0.90",
-  "units": "kPa, K, C, -",
-  "where": "drivers evap_*",
-  "basis": "Design choices; motor class IEC 60034-30-1 IE3 at about 1 kW is near 0.85-0.88",
-  "sensitivity": "Blower power scales with the compression ratio set by the driving difference",
-  "replaced_by": "Pilot evaporator data",
-  "verification_test": "Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log"
- },
- {
-  "task": "X-MFG-30",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/evap_design.py",
-   "flow_graph/param/drivers.json"
-  ],
-  "id": "A-M-107",
-  "value": "Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sump 400 mm, body design 100 kPa g and full vacuum, steam shell 350 kPa g",
-  "units": "mm, kPa g",
-  "where": "drivers evap_*",
-  "basis": "Design choices fitted to the BMED_CRU envelope",
-  "sensitivity": "Wetted area and relief load",
-  "replaced_by": "Detailed mechanical design (ASME VIII-1 / EN 13445)",
-  "verification_test": "Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials"
- },
- {
-  "id": "A-M-108",
-  "task": "X-MFG-30",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/evap_design.py",
-   "flow_graph/param/sizing/hcl_vle.py",
-   "flow_graph/param/drivers.json"
-  ],
-  "value": "EVAP_ACID counter-current column, feed at the top, no reflux: condensate 0.5 wt% HCl; packed height = ideal stages x HETP 500 mm x 1.5; DN150 at 1.0 m/s; equimass overflow in the stage count",
-  "units": "wt%, mm, m/s",
-  "where": "drivers evap_cond_hcl_wt, evap_col_*",
-  "basis": "PERRY7_HCL_VLE Tables 2-9/2-10 (fits, 5-20 % accuracy below 15 wt%); PERRY9_ABS HETP for 25 mm random packing",
-  "sensitivity": "A lower condensate HCl target adds stages; below 0.34 wt% it needs reflux (option a)",
-  "replaced_by": "Pilot column profile",
-  "verification_test": "Pilot: titrate condensate and column bottoms; flooding check with the packing C_s"
- },
- {
-  "id": "A-M-109",
-  "task": "X-PAR-09",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/sizing/power.py",
-   "flow_graph/param/solver.py",
-   "docs-authority/_power_sizing.py"
-  ],
-  "value": "PV nameplate = 2.0 x balancing nameplate; design cloudy day = mean yield / 2.0; storage charge rate = PV peak on that day less direct load (1107 kW); storage energy = load x 14 h night (3409 kWh); inverter AC = kWp / 1.2",
-  "units": "-, kW, kWh",
-  "where": "drivers pv_oversize_factor, pv_dc_ac_ratio",
-  "basis": "Owner decision D75; NREL_PVWATTS8 (output scales with plane-of-array irradiance; default DC/AC 1.2); NREL_NSRDB for the daily yield distribution",
-  "sensitivity": "A cloudy-day profile with a lower peak than the scaled clear day lowers the charge rate need; days below half the mean yield draw on backup (AQS-ELEC-007 backup case)",
-  "replaced_by": "Hourly PVWatts/NSRDB TMY simulation with the storage model",
-  "verification_test": "NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2"
- },
- {
-  "id": "A-M-110",
-  "task": "X-PAR-09",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/_one_line.py",
-   "docs-authority/_protection.py",
-   "docs-authority/_grounding_study.py"
-  ],
-  "value": "Grid export through a supply-side connection (NEC 2023 705.11), UL 1741 SB inverters at IEEE 1547-2018 Cat. B / III, ANSI C12.20 class 0.2 bidirectional meter; utility fault contribution not included; ground grid over the building plus 10 m west yard, 12 m mesh, 2/0 AWG, rods at 10 m, rho 50 ohm m",
-  "units": "-",
-  "where": "ONE_LINE item 5, PROTECTION Rev C",
-  "basis": "IEEE1547_2018, UL1741_SB, NEC2023_705, ANSI_C12_20; IEEE 80-2013 eqs 52, 85-94",
-  "sensitivity": "Utility fault current raises the bus fault level and the earth-fault current; mesh voltage scales with it",
-  "replaced_by": "Utility interconnection study and service agreement; Wenner soil test",
-  "verification_test": "Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid"
- },
- {
-  "id": "A-M-111",
-  "task": "X-PAR-10",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/vent_scrubber.py",
-   "flow_graph/param/sizing/scrubber.py",
-   "flow_graph/param/drivers.json"
-  ],
-  "value": "Vent = air dissolved in the feed (21.7 mg/kg) saturated at a 40 C vent condenser; design case column bypassed (condensate 17.1 wt% HCl); outlet 1 ppmv; gas-film HTU by Fick film of half the 16 mm ring size; 0.5 m minimum bed; NaOH bleed 2 x HCl; 20 L sump charge; pump 10 m head at 40 %",
-  "units": "mg/kg, C, ppmv, m, L",
-  "where": "drivers vs_*",
-  "basis": "WEISS1970, PERRY7_HCL_VLE, ACGIH_HCL, PERRY9_DIFF, TREYBAL3, PERRY9_ABS",
-  "sensitivity": "HCl load is milligrams per day; size is set by minimum practical dimensions, not by mass transfer",
-  "replaced_by": "Commissioning measurements",
-  "verification_test": "Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate"
- },
- {
-  "id": "A-M-112",
-  "task": "X-PAR-08",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/sizing/roof.py",
-   "flow_graph/param/solver.py",
-   "flow_graph/param/drivers.json"
-  ],
-  "value": "Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K mean); internal gains = lighting + fans, shared by the dT split; slab F 1.264 W/(m K) heating only; ground-source COP 3.2/4.13 + 37 W/kW pumping; bore 55 m per kW peak, 120 m bores at 6 m; design temps -5 / 38 C; air-source adopted by owner decision D77 (ground-source 0.2 % smaller footprint not worth 27 km of bores; inside input uncertainty, major build complexity)",
-  "units": "K, W/(m K), -, m/kW, m, C",
-  "where": "drivers ext_dTh_K, ext_dTc_K, ext_F_slab, ext_hvac, gsh_*, ash_*, ext_T_design_*",
-  "basis": "NOAA_NORMALS_DFW, IECC2021_C402, ASHRAE901_2019_T6812, KAVANAUGH2014, ASHRAE_FUND_2021",
-  "sensitivity": "Lighting and fans are 44 % of the hall load and independent of the heat-pump choice; the ground/air difference is 0.9 kW",
-  "replaced_by": "TMY3 bin-hour load model with the hall programme; thermal response test",
-  "verification_test": "TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station"
- },
- {
-  "id": "A-M-113",
-  "task": "X-PAR-09",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/ONE_LINE.md",
-   "docs-authority/PROTECTION.md"
-  ],
-  "value": "OWNER INPUT: utility interconnection study (service size, available fault current, export limit, protection settings, tariff) not yet obtained; export and protection rest on the inverter-only fault level",
-  "units": "-",
-  "where": "AQS-ELEC-002 Rev D item 5, AQS-ELEC-006 Rev C section 1",
-  "basis": "IEEE1547_2018, NEC2023_705; serving utility process",
-  "sensitivity": "Utility fault current raises bus and earth-fault levels; an export limit below 2576 kW curtails surplus",
-  "replaced_by": "Utility interconnection agreement",
-  "verification_test": "Owner files the interconnection application; utility study results entered as drivers and the protection study re-run"
- },
- {
-  "id": "A-M-114",
-  "task": "X-ELS-11",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/_collection_bus.py"
-  ],
-  "value": "Collection at 480 V in sections with breakers <= 1000 A (NEC 240.87 threshold), 750 kVA 5.75 % Z pad-mount step-up to 12.47 kV; storage distributed evenly over the hybrid inverters; plant bus on CB-1; microgrid controller per IEEE 2030.7 for islanding",
-  "units": "A, kVA, kV",
-  "where": "SOL_ARK_60K params.sections, AQS-ELEC-008",
-  "basis": "NEC2023_240, IEEE_C57_12_34, UL891, IEEE1547_2018, IEEE2030_7",
-  "sensitivity": "Service voltage from the utility study (A-M-113) may change the MV level and transformer ratio",
-  "replaced_by": "Utility interconnection agreement and switchgear selection",
-  "verification_test": "Utility service voltage; short-circuit and coordination study with the utility source"
- },
- {
-  "id": "A-M-115",
-  "task": "X-STD-01",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/_egress_hall.py",
-   "flow_graph/param/code_basis.py"
-  ],
-  "value": "Hall classed general industrial ordinary hazard, sprinklered (NFPA 13); 9.29 m2/person; travel 76.2 m governs (NFPA 101 Table 40.2.6); doors as 1626 mm clear pairs at 90 m spacing; 2.2 m 2 h exit passageway at mid-depth; rectilinear travel bound on a 2 m grid; code editions per AQS-STD-002",
-  "units": "m, m2/person",
-  "where": "AQS-EGR-002, AQS-STD-002",
-  "basis": "NFPA101_2024, IBC2021_CH10, NFPA13_2022",
-  "sensitivity": "Low-hazard contents remove the travel limit and the passageway; high-piled storage changes sprinkler design",
-  "replaced_by": "Hall programme and AHJ review",
-  "verification_test": "Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model"
- },
- {
-  "id": "A-M-116",
-  "task": "X-MFG-31",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/reactor_design.py",
-   "models/mfg/reactors.py"
-  ],
-  "value": "In-house reactors: GLASS_DIGEST residence 3 x shrinking-sphere kinetic time on 100 um fines at 2.0e-4 g/(m2 s) (glass-fibre rate, order 0.31 to 2 M), floor 1 h; DIGESTER SRT 20 d; OIL_PYRO 500 C, 1 h, heat of pyrolysis 1.3 MJ/kg, cp 2.5 kJ/(kg K), heater efficiency 0.7; standard tank H = T, fill 0.75, tip 2.5 m/s, Np 1.27",
-  "units": "h, d, MJ/kg, kJ/(kg K), m/s",
-  "where": "AQS-DUTY-062",
-  "basis": "JMS2017_GLASSFIBRE, MARAGHECHI2016, METCALF5, ANUAR2016, GAO2010, PERRY9_MIX, PERRY9_HEAT, DVS2205, ASME_VIII1_UG16, ASME_II_D",
-  "sensitivity": "Soda-lime cullet may dissolve slower than glass fibre (residence scales with 1/k); pyrolysis heat scales the OIL_PYRO bus load linearly",
-  "replaced_by": "Bench and pilot data",
-  "verification_test": "Bench digest of milled cullet (SiO2 vs time at 85 C); sieve analysis of GLASS_MILL product; DSC/TGA of dried float oil; pilot digester VS destruction; heater energy meter"
- },
- {
-  "id": "A-M-117",
-  "task": "X-MFG-32",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/_jellybean.py"
-  ],
-  "value": "Motor rating = next IEC 60034-1 preferred rating >= 1.15 x shaft power; 4-pole IEC 60072-1 frame per CENELEC HD 231; drive-end bearing per frame is typical maker practice (not standardised); unsized pumps take the 0.18 kW class; make/buy split per family at current plant volume",
-  "units": "kW",
-  "where": "AQS-MFG-011",
-  "basis": "IEC 60034-1, IEC 60034-30-1, IEC 60072-1, ISO 15, ISO 492, ISO 4014/4017/4032/7089, ISO 3506-1, ISO 898-1, ISO 3601-1, ISO 6194-1, EN 1514-1, ASME B16.21, ASTM D1785, ISO 1452-2, ISO 2858, ISO 15783",
-  "sensitivity": "Pump motors move one or two frame sizes when the pump curves are sized; bearing sizes depend on the chosen motor maker or in-house design",
-  "replaced_by": "Pump curves per unit (X-ELS-02) and the in-house motor drawings",
-  "verification_test": "Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design"
- },
- {
-  "id": "A-M-118",
-  "task": "X-SAN-01",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/sanitation.py",
-   "models/mfg/sanitation.py"
-  ],
-  "value": "Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; cake and biogas burned on top of the existing afterburner feed (S11 unchanged), products carried downstream by species (VS as C5H7O2N, biogas 65 % CH4, dry VS LHV about 20 MJ/kg); afterburner chamber >= 850 C for >= 2 s",
-  "units": "persons, L, kg/d, m",
-  "where": "AQS-DUTY-063",
-  "basis": "ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500, METCALF5_BIOMASS, EU_IED2010",
-  "sensitivity": "Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly",
-  "replaced_by": "Occupancy schedule, toilet fit-out, challenge-test results",
-  "verification_test": "ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50)"
- },
- {
-  "id": "A-M-119",
-  "task": "X-INV-01",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/inventory/motors.py"
-  ],
-  "value": "Unsized driven items: one transfer pump per liquid outlet line at 10 m head, efficiency 0.4, gravity not credited; induced-draft fan per scrubber/dryer/baghouse/AHU/thermal/fab unit at 1 kPa, 0.5; screw conveyor 0.37 kW per solids line >= 50 kg/d; one solenoid valve per dosed line; agitators 0.25 kW; EXT_HALL 8 heat-pump modules with 2 condenser fans each and 8 AHUs at 500 Pa, 0.6; flow battery 2 pumps x 48 strings at 0.25 kW; cold-box compressor 0.85 x graph kW; < 60 W shaft as 24 V DC BLDC",
-  "units": "m, kPa, kW",
-  "where": "AQS-INV-001",
-  "basis": "Study rules pending each unit's task 02 sizing; IEC 60034-1 / IEC 60072-1 for ratings and frames",
-  "sensitivity": "Pump and fan counts fall where gravity or shared headers are used; family counts shift accordingly",
-  "replaced_by": "Unit sizing (task 02), P&IDs (task 03) and mfg models",
-  "verification_test": "Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list"
- },
- {
-  "id": "A-M-120",
-  "task": "X-PAR-02",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/balance.py"
-  ],
-  "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation; closure layer complete: 117 study edges are closure transfer functions (balance of a named unit, elimination order) and 57 are design inputs with their stated basis (AQS-PAR-003 section 5)",
-  "units": "kg/d",
-  "where": "AQS-PAR-003",
-  "basis": "NARASIMHAN2000",
-  "sensitivity": "Tolerance 2 % is a flow-meter class assumption; tighter meters tighten the gate",
-  "replaced_by": "Unit sizing tasks (BIO-*/unit task 02) replace the 57 design inputs with calculations; X-PAR-11/12 species layer",
-  "verification_test": "test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123)"
- },
- {
-  "id": "A-M-121",
-  "task": "X-PIP-03",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/_iso_sheets.py",
-   "docs-authority/_line_list.py"
-  ],
-  "value": "Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic elbow take-off 0.5 x OD; 6 m random lengths; flanges at both equipment nozzles; ASME B16.5 Class 150 bolting for all classes; EVAP_ACID_VS lines from the EVAP_ACID frame centre + 650 mm north; seed units used for line ends where no duty origin",
-  "units": "mm, m",
-  "where": "AQS-ISO-002",
-  "basis": "ASME B16.9, ASME B16.5, ASME B36.10M, ASTM D2467, ISO 15494",
-  "sensitivity": "Cut lengths change by tens of mm per fitting; routes change when clash checking and supports land (X-PIP-04)",
-  "replaced_by": "Clash-checked 3D routing and fabrication take-offs",
-  "verification_test": "3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class"
- },
- {
-  "id": "A-M-122",
-  "task": "X-INV-03",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/inventory/wire.py"
-  ],
-  "value": "Wire inventory: Rev B (X-ELS-02A): one local panel per sector at the sector median point; branch lengths = Manhattan unit-to-panel x 1.1 + 3 m on routed tray; panel feeders Manhattan to the electrical room (SOL_ARK_60K) x 1.2 + 5 m; conductors upsized for 3 % branch / 2 % feeder drop, 30 m where unpositioned; 3 control pairs per AC motor; DC items 10 m from a local panel; inverter output runs 25 m; section mains 3 parallel sets, 15 m; MV runs 100 m at 2 AWG; PV 18 modules per string, 60 m mean home run; hall lighting installed = average / 0.10 at 4.43 kW per 20 A circuit, 120 m; grid conductor 4/0 Cu; Rev C: panels merged by calculation (merge_panels: no copper increase, drop limits held), 16 -> 12 panels; merges rejected by < 5 kg copper are held for an owner cost basis",
-  "units": "m, AWG",
-  "where": "AQS-INV-002",
-  "basis": "NEC 2023 430.22, 430.52, Table 430.250, 310.16, 240.4(D), 250.122, 690.8, 705.28; AQS-ELEC-005, AQS-ELEC-008",
-  "sensitivity": "Lengths dominate copper quantity; panel locations will shorten most branch runs",
-  "replaced_by": "Panel locations on the GA and tray routes from the router (X-ELS-02 cable schedule)",
-  "verification_test": "Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature"
- },
- {
-  "id": "A-M-123",
-  "task": "X-PAR-02",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/balance.py"
-  ],
-  "value": "T1 terrace transpiration = irrigation - drains (37.176 kg/d; no terrace CO2 supply or harvest, net fixation 0); T2 AHU condensate = greenhouse vapour in (53.876 kg/d); T3 cold-box O2 product = HDR_O2 draw (44.906 kg/d), no O2 return; T4 roof shortfall 2.824 kg/d by difference on IA-POT-01, IA-UPW-REMIN, S25, IA-LEACH-VCD; T5 IA-LEACH-ASU 17.44 -> 14.616 kg/d, still above the Henry-law bound (X-PAR-11)",
-  "units": "kg/d",
-  "where": "AQS-PAR-003 section 0",
-  "basis": "TAIZ2015 (photosynthesis and transpiration stoichiometry); SANDER2015 (Henry constants); AQS-DUTY-013/017/019; X-SAF-10 Faraday cell O2",
-  "sensitivity": "T5 carries the cross-species link; the leach dissolved-gas rate is the least certain figure in the chain",
-  "replaced_by": "Gas-exchange species layer X-PAR-11",
-  "verification_test": "T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound"
- },
- {
-  "id": "A-M-124",
-  "task": "X-INV-04",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/inventory/pipe.py"
-  ],
-  "value": "Pipe stock 6.096 m (20 ft) random lengths with 3 mm kerf, first-fit decreasing on the iso cut lists; fitting standards assigned by class; tees, reducers, valves, supports counted in X-INV-05",
-  "units": "m",
-  "where": "AQS-INV-003",
-  "basis": "ASTM D1785 / ASTM A312 standard lengths; ASME B16.9, B16.5, B16.20; ASTM D2467, F439, D3261; ISO 10931, ISO 15494",
-  "sensitivity": "Stock length changes offcut, not pipe metres",
-  "replaced_by": "Purchase/production cut plan from the issued isos",
-  "verification_test": "Cut-plan reconciliation at fabrication: issued lengths against consumed stock, offcut within 5 %"
- },
- {
-  "id": "A-M-125",
-  "task": "X-INV-05",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/inventory/other.py"
-  ],
-  "value": "Counting rules: 2 isolation valves per line; check valve and mag-flow meter on lines leaving a pumped unit; TT + PT per unit with nozzles, LT + LSHH per liquid holdup class; 2 anchors per support; bearings sized by IEC frame; seal only on induction-driven pumps (BLDC pumps magnetic drive); VFD at >= 0.75 kW; 2 DI per motor, one AI per instrument, 16-channel I/O modules",
-  "units": "count",
-  "where": "AQS-INV-004",
-  "basis": "Duty item 5 (AQS-STD-001); AQS-PIP-005 support spans; NEC 430.52",
-  "sensitivity": "Valve and instrument counts move with the P&ID",
-  "replaced_by": "P&ID per unit (valves and instruments by tag)",
-  "verification_test": "P&ID take-off count against AQS-INV-004 per family; difference reported per family"
- },
- {
-  "id": "A-M-126",
-  "task": "X-INV-02",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/inventory/motor_designs.py"
-  ],
-  "value": "Design coefficients inside published ranges: B_delta 0.75 T, A 20/30/40 kA/m by rating, k_w 0.92, J 5 A/mm2, power factor 0.80 (<4 kW) / 0.84, split ratio 0.55 (4-pole) / 0.50 (2-pole), lamination OD <= 0.85 x 2H in the IEC frame, core length/bore <= 2.5; BLDC A 15 kA/m, B 0.8 T, 3000 rpm; bearing sizes by frame; IE3 targets from the IEC 60034-30-1:2014 60 Hz table (4-pole IEC frames, 2-pole hermetic), linear interpolation for 3 and 4 kW (standard 5.4.7 formula applied on the type test)",
-  "units": "T, kA/m, A/mm2",
-  "where": "AQS-INV-005",
-  "basis": "PYRHONEN2014 tables 6.3-6.4; HENDERSHOT2010; IEC 60072-1; IEC 60034-30-1; IEC60034_30_1 60 Hz table",
-  "sensitivity": "Core length scales inversely with B and A",
-  "replaced_by": "First-article type tests (X-INV-02B)",
-  "verification_test": "IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K"
- },
- {
-  "id": "A-M-127",
-  "task": "X-PIP-04",
-  "needs_verification": true,
-  "files": [
-   "docs-authority/_iso_routes.py",
-   "docs-authority/_iso_sheets.py"
-  ],
-  "value": "Route rule: rack elevation for a line is at least 300 mm above the higher end, so the riser is an expansion leg; covers the guided-cantilever need (max 0.16 m on IA-ACOH, IA-ALD, IA-MEAM, HDPE DN15)",
-  "units": "mm",
-  "where": "AQS-ISO-001, AQS-PIP-005",
-  "basis": "Guided-cantilever leg L = sqrt(3 E D dL / S) (AQS-PIP-005); HDPE E 900 MPa, S 4 MPa (study values)",
-  "sensitivity": "Larger dT on these lines would need a longer riser",
-  "replaced_by": "Stress analysis to ASME B31.3 Appendix S for the hot and thermoplastic lines",
-  "verification_test": "Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning)"
- },
- {
-  "id": "A-M-128",
-  "task": "X-PAR-11",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/balance.py"
-  ],
-  "value": "T6: all CO2 dosed to GROW_BED (S04 + S89 = 19.0 kg/d) is fixed at steady state, photosynthetic quotient 1.0, O2 = 13.82 kg/d on S87 to CRYO_O2; trim carries CO2 + H2O - O2. Leach dissolved gas bounded by fresh liquid inflow saturated at 25 C under 1 atm CO2 plus air O2/N2 (Henry Hcp CO2 3.3e-4, O2 1.3e-5, N2 6.4e-6 mol/m3/Pa); IA-LEACH-ASU 0.796 kg/d against a 2.89 kg/d bound",
-  "units": "kg/d",
-  "where": "AQS-PAR-003 Rev C",
-  "basis": "TAIZ2015 (photosynthesis stoichiometry, PQ near 1.0); SANDER2015 (Henry constants)",
-  "sensitivity": "PQ 0.9-1.1 moves S87 by +/-1.4 kg/d; uncaptured CO2 (bed leakage) lowers it",
-  "replaced_by": "Species balance at the cold box (X-PAR-11 remaining)",
-  "verification_test": "T-PAR-03 commissioning measurement: grow-bed enclosure CO2 dose and exhaust CO2/O2 by NDIR and paramagnetic analysers over 7 days, O2 release within 10 % of 32/44 x CO2 fixed; leach off-gas by headspace GC, desorbed gas below the Henry bound"
- },
- {
-  "id": "A-M-129",
-  "task": "X-PAR-11",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/param/gas_species.py"
-  ],
-  "value": "O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), organics as CH2O (1.066), H2 7.94, CO 0.571; NCG composition not counted; deficit 76.5 kg/d O2 with no source on the graph",
-  "units": "kg/d",
-  "where": "AQS-PAR-004",
-  "basis": "TURNS2012 ch. 2; TAIZ2015",
-  "sensitivity": "Fuel formula moves the combustion oxidant by about +/-5 %; the deficit sign does not change",
-  "replaced_by": "Owner decision on the O2 source (X-PAR-12) and the cold-box species split (X-PAR-11)",
-  "verification_test": "Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 %"
- },
- {
-  "id": "A-M-130",
-  "task": "X-INV-02D",
-  "needs_verification": true,
-  "files": [
-   "flow_graph/inventory/motor_designs.py"
-  ],
-  "value": "Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotropic Sr-ferrite Br 0.27 T, 6 mm; air gap 0.5 mm, recoil permeability 1.05, leakage 0.9, tooth-limited 0.8 T; electric loading 15 kA/m, J 5 A/mm2, iron loss 5 %, 8 poles; RE content of NdFeB 31 wt%; BLDC 3000 rpm, stepper 600 rpm",
-  "units": "T, mm, %",
-  "where": "AQS-INV-005 magnet comparison; MAGNET_COMPARISON.csv",
-  "basis": "COEY2010 ch. 11; IEC 60404-8-1; HENDERSHOT2010; WALTON2015",
-  "sensitivity": "Ferrite rotor volume scales with 1/B_gap; a thicker ferrite magnet or a spoke rotor narrows the gap",
-  "replaced_by": "First-article back-EMF and torque tests of both variants (X-INV-02B)",
-  "verification_test": "Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 %"
- },
- {
-  "id": "A-M-131",
-  "task": "X-INV-02C",
-  "needs_verification": true,
-  "files": [
-   "models/motors/build.py"
-  ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
-  "units": "mm",
-  "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
-  "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
-  "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
-  "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator"
- }
+  {
+    "id": "A-M-001",
+    "value": "5",
+    "units": "wt% H2O2",
+    "where": "WS_PEROX product_spec; AQS-DSN-OX-001",
+    "basis": "Bench SC-1/SC-2 strength; S32 dilute at 1.0 kg/L",
+    "sensitivity": "Cell current and O2 scale linearly",
+    "replaced_by": "Wet-bench recipe from the fab process sheet",
+    "task": "X-ELS-10",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Wet-bench recipe from the fab process sheet"
+  },
+  {
+    "id": "A-M-002",
+    "value": "0.80",
+    "units": "-",
+    "where": "WS_PEROX cell faradaic efficiency",
+    "basis": "Study value for 2 e- ORR on carbon GDE",
+    "sensitivity": "Current 1/eff",
+    "replaced_by": "Cell test: H2O2 titration against charge passed",
+    "task": "X-ELS-10",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Cell test: H2O2 titration against charge passed"
+  },
+  {
+    "id": "A-M-003",
+    "value": "0.050",
+    "units": "A/cm2",
+    "where": "WS_PEROX cell current density",
+    "basis": "Study value",
+    "sensitivity": "Area 1/j",
+    "replaced_by": "Cell polarization test",
+    "task": "X-ELS-10",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Cell polarization test"
+  },
+  {
+    "id": "A-M-004",
+    "value": "2.5",
+    "units": "V",
+    "where": "WS_PEROX cell voltage",
+    "basis": "Study value",
+    "sensitivity": "Power linear",
+    "replaced_by": "Cell polarization test",
+    "task": "X-ELS-10",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Cell polarization test"
+  },
+  {
+    "id": "A-M-005",
+    "value": "300 / 1000",
+    "units": "W/m2K",
+    "where": "HX-5 outside film, natural / agitated; AQS-DUTY-049",
+    "basis": "Study range; agitator held",
+    "sensitivity": "Area changes 1.6x across the range for glass",
+    "replaced_by": "Agitator selection and coil test",
+    "task": "X-MAT-11",
+    "files": [
+      "docs-authority/POLYMER_HX_SIZING.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Agitator selection and coil test"
+  },
+  {
+    "id": "A-M-006",
+    "value": "1500",
+    "units": "W/m2K",
+    "where": "HX8 shell-side film; AQS-DUTY-049",
+    "basis": "Study value, treated water",
+    "sensitivity": "Minor; PVDF wall controls",
+    "replaced_by": "Exchanger maker rating",
+    "task": "X-MAT-12",
+    "files": [
+      "docs-authority/POLYMER_HX_SIZING.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Exchanger maker rating"
+  },
+  {
+    "id": "A-M-007",
+    "value": "0.0002",
+    "units": "m2K/W",
+    "where": "Fouling, AQS-DUTY-049",
+    "basis": "Study value",
+    "sensitivity": "Minor",
+    "replaced_by": "Operating record",
+    "task": "X-MAT-11",
+    "files": [
+      "docs-authority/POLYMER_HX_SIZING.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Operating record"
+  },
+  {
+    "id": "A-M-008",
+    "value": "88",
+    "units": "degC",
+    "where": "LEACH_CSTR_1 liquor high-temperature trip",
+    "basis": "5 K below CPVC 93 C limit (Spears)",
+    "sensitivity": "Protects the CPVC wall",
+    "replaced_by": "Wall check at temperature (unit task 02)",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/duties/LEACH_CSTR_1.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Wall check at temperature (unit task 02)"
+  },
+  {
+    "id": "A-M-009",
+    "value": "0",
+    "units": "kg/d",
+    "where": "IA-NIT-VENT, IA-HNO3-VENT",
+    "basis": "Breathing and upset only on the design day",
+    "sensitivity": "NOX_SCRUB load if absorber tail gas is continuous",
+    "replaced_by": "HNO3 absorber design (tail-gas flow)",
+    "task": "X-SAF-08",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "HNO3 absorber design (tail-gas flow)"
+  },
+  {
+    "id": "A-M-010",
+    "value": "40",
+    "units": "degC",
+    "where": "WS_NITRIC storage maximum and trip",
+    "basis": "Study value",
+    "sensitivity": "PVC-U rating with nitric",
+    "replaced_by": "Tank thermal check",
+    "task": "X-SAF-09",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "Tank thermal check"
+  },
+  {
+    "value": "two concentric helices D 600/900 mm, 25 \u00d7 3 mm tube, 50 mm pitch",
+    "units": "geometry",
+    "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
+    "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
+    "sensitivity": "Area fixed by AQS-DUTY-049; geometry affects fit and agitator clearance only",
+    "replaced_by": "Glass-coil vendor drawing",
+    "task": "X-MAT-16",
+    "files": [
+      "models/mfg/LEACH_CSTR_1/params.json"
+    ],
+    "id": "A-M-011",
+    "needs_verification": true,
+    "verification_test": "Glass-coil vendor drawing"
+  },
+  {
+    "value": "4.22",
+    "units": "m2",
+    "where": "LEACH_CSTR_1 params hx5_coil",
+    "basis": "AQS-DUTY-049 glass natural case; liquor film 300 W/m2K (A-M-005)",
+    "sensitivity": "2.65 m2 if agitated; area roughly inverse to liquor film",
+    "replaced_by": "Coil heat-transfer test on the built tank",
+    "task": "X-MAT-16",
+    "files": [
+      "docs-authority/POLYMER_HX_SIZING.md"
+    ],
+    "id": "A-M-012",
+    "needs_verification": true,
+    "verification_test": "Coil heat-transfer test on the built tank"
+  },
+  {
+    "value": "115",
+    "units": "mph 3 s gust",
+    "where": "AQS-SITE-002",
+    "basis": "Upper end of published Dallas Risk II band",
+    "sensitivity": "Wind pressure scales with V squared",
+    "replaced_by": "ASCE Hazard Tool at the parcel",
+    "task": "X-BAS-03",
+    "files": [
+      "docs-authority/SITE_BASIS.md"
+    ],
+    "id": "A-M-013",
+    "needs_verification": true,
+    "verification_test": "ASCE Hazard Tool at the parcel"
+  },
+  {
+    "value": "Ss 0.10, S1 0.05",
+    "units": "g",
+    "where": "AQS-SITE-002",
+    "basis": "Low-hazard North Texas; no lookup run",
+    "sensitivity": "Sets SDC; SDC A exempts nonstructural components",
+    "replaced_by": "ASCE Hazard Tool at the parcel",
+    "task": "X-BAS-03",
+    "files": [
+      "docs-authority/SITE_BASIS.md"
+    ],
+    "id": "A-M-014",
+    "needs_verification": true,
+    "verification_test": "ASCE Hazard Tool at the parcel"
+  },
+  {
+    "value": "D",
+    "units": "site class",
+    "where": "AQS-SITE-002",
+    "basis": "IBC 1613.2.2 default",
+    "sensitivity": "Site amplification factors",
+    "replaced_by": "Geotechnical report",
+    "task": "X-BAS-03",
+    "files": [
+      "docs-authority/SITE_BASIS.md"
+    ],
+    "id": "A-M-015",
+    "needs_verification": true,
+    "verification_test": "Geotechnical report"
+  },
+  {
+    "value": "5",
+    "units": "psf ground snow",
+    "where": "AQS-SITE-002",
+    "basis": "Low North Texas value; not looked up",
+    "sensitivity": "Roof loads only",
+    "replaced_by": "ASCE Hazard Tool at the parcel",
+    "task": "X-BAS-03",
+    "files": [
+      "docs-authority/SITE_BASIS.md"
+    ],
+    "id": "A-M-016",
+    "needs_verification": true,
+    "verification_test": "ASCE Hazard Tool at the parcel"
+  },
+  {
+    "value": "2000",
+    "units": "psf allowable bearing",
+    "where": "AQS-SITE-002",
+    "basis": "IBC Table 1806.2 presumptive clay value",
+    "sensitivity": "Footing size for tanks and slabs",
+    "replaced_by": "Geotechnical report",
+    "task": "X-BAS-03",
+    "files": [
+      "docs-authority/SITE_BASIS.md"
+    ],
+    "id": "A-M-017",
+    "needs_verification": true,
+    "verification_test": "Geotechnical report"
+  },
+  {
+    "value": "150",
+    "units": "mm frost depth",
+    "where": "AQS-SITE-002",
+    "basis": "Local practice",
+    "sensitivity": "Buried water lines",
+    "replaced_by": "Building official value",
+    "task": "X-BAS-03",
+    "files": [
+      "docs-authority/SITE_BASIS.md"
+    ],
+    "id": "A-M-018",
+    "needs_verification": true,
+    "verification_test": "Building official value"
+  },
+  {
+    "value": "2.0",
+    "units": "spray / evaporation ratio",
+    "where": "IA-FLUE-QUENCH rate",
+    "basis": "Keeps the quench spool wetted; common wet-quench practice, not measured",
+    "sensitivity": "Edge rate linear; 12.15 kg/d is the evaporative minimum",
+    "replaced_by": "Quench outlet temperature and drain flow on commissioning",
+    "task": "X-SAF-07",
+    "files": [
+      "docs-authority/duties/FLUE_KO.md"
+    ],
+    "id": "A-M-019",
+    "needs_verification": true,
+    "verification_test": "Quench outlet temperature and drain flow on commissioning"
+  },
+  {
+    "value": "60 C quench outlet; cp 1.08 kJ/kgK; water 25 C",
+    "units": "C, kJ/kgK",
+    "where": "IA-FLUE-QUENCH energy balance",
+    "basis": "Approximate adiabatic saturation of the S67 flue; mean cp of N2/CO2/H2O mix",
+    "sensitivity": "Evaporation scales with (300 - T_out)",
+    "replaced_by": "Flue analysis and quench outlet temperature",
+    "task": "X-SAF-07",
+    "files": [
+      "docs-authority/duties/FLUE_KO.md"
+    ],
+    "id": "A-M-020",
+    "needs_verification": true,
+    "verification_test": "Flue analysis and quench outlet temperature"
+  },
+  {
+    "value": "1.05 bar a, 40 C, 98 mol%, wet",
+    "units": "bar a, C, mol%",
+    "where": "EW and header H2 edges (9)",
+    "basis": "Atmospheric cell offgas to a low-pressure header",
+    "sensitivity": "Header sizing; no embrittlement concern at this pressure",
+    "replaced_by": "Header pressure and gas analysis at commissioning",
+    "task": "X-MAT-15",
+    "files": [
+      "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+    ],
+    "id": "A-M-021",
+    "needs_verification": true,
+    "verification_test": "Header pressure and gas analysis at commissioning"
+  },
+  {
+    "value": "10 bar a, 30 C, 99.9 mol%, dew -40 C",
+    "units": "bar a, C, mol%",
+    "where": "H2_DRYER outlet edges (5)",
+    "basis": "Small compressor ahead of storage; not on the graph",
+    "sensitivity": "Storage volume inverse to pressure; 316L at this pressure",
+    "replaced_by": "CRYO_H2 storage design (pressure held)",
+    "task": "X-MAT-15",
+    "files": [
+      "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+    ],
+    "id": "A-M-022",
+    "needs_verification": true,
+    "verification_test": "CRYO_H2 storage design (pressure held)"
+  },
+  {
+    "value": "1.5 bar a, 25 C, 99.97 mol%",
+    "units": "bar a, C, mol%",
+    "where": "S45, S49",
+    "basis": "ISO 14687 Grade D for PEM; regulator outlet",
+    "sensitivity": "A purifier is needed if dryer output is below grade",
+    "replaced_by": "Fuel-cell vendor inlet specification",
+    "task": "X-MAT-15",
+    "files": [
+      "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+    ],
+    "id": "A-M-023",
+    "needs_verification": true,
+    "verification_test": "Fuel-cell vendor inlet specification"
+  },
+  {
+    "value": "50 bar a synthesis, 250 C, H2:CO2 3:1",
+    "units": "bar a, C",
+    "where": "S74, MEOH_SYNTH params.synthesis",
+    "basis": "Low end of the Cu/ZnO/Al2O3 range, Bertau et al. 2014",
+    "sensitivity": "pH2 37.5 bar at 250 C sets the API 941 point",
+    "replaced_by": "MEOH_SYNTH reactor design",
+    "task": "X-MAT-14",
+    "files": [
+      "docs-authority/H2_EMBRITTLEMENT_REVIEW.md"
+    ],
+    "id": "A-M-024",
+    "needs_verification": true,
+    "verification_test": "MEOH_SYNTH reactor design"
+  },
+  {
+    "value": "14",
+    "units": "d",
+    "where": "WS_NITRIC storage",
+    "basis": "Covers a two-week HNO3 absorber outage; 2 M acid is stable",
+    "sensitivity": "Tank volume linear",
+    "replaced_by": "Owner operating policy and absorber availability",
+    "task": "X-SAF-09",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "id": "A-M-025",
+    "needs_verification": true,
+    "verification_test": "Owner operating policy and absorber availability"
+  },
+  {
+    "value": "1",
+    "units": "d",
+    "where": "WS_PEROX storage",
+    "basis": "Unstabilised peroxide; product_spec holdup_max_d",
+    "sensitivity": "Tank volume linear; longer holdup needs a decomposition check",
+    "replaced_by": "Measured decomposition rate of the cell product",
+    "task": "X-SAF-09",
+    "files": [
+      "docs-authority/OXIDIZER_REAGENTS.md"
+    ],
+    "id": "A-M-026",
+    "needs_verification": true,
+    "verification_test": "Measured decomposition rate of the cell product"
+  },
+  {
+    "value": "Al2O3 0.19, CaO 0.125, MgO 0.09, FeO 0.13; full leach; TiO2 and SiO2 not leached",
+    "units": "mass fraction of silicate",
+    "where": "X-BAS-02 acid demand",
+    "basis": "Mid-range of Lunar Sourcebook Apollo soils (AQS-ASSAY-001 class A)",
+    "sensitivity": "HCl demand linear in each oxide; full leach is the upper bound",
+    "replaced_by": "Leach test of a class A lot with acid consumption measured",
+    "task": "X-BAS-02",
+    "files": [
+      "docs-authority/FEED_ASSAY.md"
+    ],
+    "id": "A-M-027",
+    "needs_verification": true,
+    "verification_test": "Leach test of a class A lot with acid consumption measured"
+  },
+  {
+    "value": "regolith silicate reports to sink",
+    "units": "routing",
+    "where": "X-BAS-02 FLOAT_SINK line",
+    "basis": "Silicate is dense and not glass cullet",
+    "sensitivity": "If part reports to the glass train, glass edges rise instead",
+    "replaced_by": "Float/sink test of a class A lot",
+    "task": "X-BAS-02",
+    "files": [
+      "docs-authority/FEED_ASSAY.md"
+    ],
+    "id": "A-M-028",
+    "needs_verification": true,
+    "verification_test": "Float/sink test of a class A lot"
+  },
+  {
+    "value": "1100",
+    "units": "kg/m3",
+    "where": "LEACH_CSTR_1 liquor density",
+    "basis": "Dilute HCl with dissolved metal chlorides; not measured",
+    "sensitivity": "Hydrostatic load and agitator power linear",
+    "replaced_by": "Density of a liquor sample",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-029",
+    "needs_verification": true,
+    "verification_test": "Density of a liquor sample"
+  },
+  {
+    "value": "1100",
+    "units": "mm",
+    "where": "LEACH_CSTR_1 working level",
+    "basis": "Leaves 288 mm freeboard below the lid; nozzles at 700",
+    "sensitivity": "Holdup and wall load",
+    "replaced_by": "Operating level set at commissioning",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-030",
+    "needs_verification": true,
+    "verification_test": "Operating level set at commissioning"
+  },
+  {
+    "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
+    "units": "\u2014",
+    "where": "LEACH_CSTR_1 agitator",
+    "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
+    "sensitivity": "Power with N cubed and D to the fifth",
+    "replaced_by": "Just-suspended speed test with a class A lot; vendor curve",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-031",
+    "needs_verification": true,
+    "verification_test": "Just-suspended speed test with a class A lot; vendor curve"
+  },
+  {
+    "value": "0.22",
+    "units": "derating factor",
+    "where": "CPVC allowable at 85 C",
+    "basis": "Interpolated from manufacturer CPVC derating tables on 2000 psi HDS",
+    "sensitivity": "Wall and panel thickness",
+    "replaced_by": "Manufacturer sheet-stock creep data at 85 C",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-032",
+    "needs_verification": true,
+    "verification_test": "Manufacturer sheet-stock creep data at 85 C"
+  },
+  {
+    "value": "700",
+    "units": "MPa",
+    "where": "CPVC creep modulus at 85 C",
+    "basis": "Approximate long-term modulus; not sourced to one table",
+    "sensitivity": "Panel deflection only",
+    "replaced_by": "Manufacturer creep modulus",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-033",
+    "needs_verification": true,
+    "verification_test": "Manufacturer creep modulus"
+  },
+  {
+    "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
+    "units": "\u2014",
+    "where": "LEACH_CSTR_1 FRP belts",
+    "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
+    "sensitivity": "Belt stress and deflection",
+    "replaced_by": "In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21)",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-034",
+    "needs_verification": true,
+    "verification_test": "In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21)"
+  },
+  {
+    "value": "0.75",
+    "units": "kW",
+    "where": "LEACH_CSTR_1 agitator motor",
+    "basis": "Shaft 403 W with gear and motor losses and start margin",
+    "sensitivity": "Load list",
+    "replaced_by": "Vendor motor rating",
+    "task": "MET-LEACH_CSTR_1-02",
+    "files": [
+      "docs-authority/sizing/LEACH_CSTR_1.md"
+    ],
+    "id": "A-M-035",
+    "needs_verification": true,
+    "verification_test": "Vendor motor rating"
+  },
+  {
+    "value": "0.85",
+    "units": "current efficiency",
+    "where": "EW bounding current",
+    "basis": "USBM_CL_EW chloride EW 0.85-0.90; lower bound taken (bounding current). drivers.json ew_current_efficiency_design",
+    "sensitivity": "Current, cathode count and DC power inverse to CE",
+    "replaced_by": "Measured current efficiency per cell",
+    "task": "X-PAR-04",
+    "files": [
+      "docs-authority/sizing/EW_CELLS.md"
+    ],
+    "id": "A-M-036",
+    "needs_verification": true,
+    "verification_test": "Bench diaphragm chloride EW cell per metal: deposit mass vs charge"
+  },
+  {
+    "value": "200",
+    "units": "A/m2",
+    "where": "EW cathode current density",
+    "basis": "AQS-EW-MOD-001; typical copper EW range 200-350",
+    "sensitivity": "Cathode count inverse",
+    "replaced_by": "Deposit quality trial per metal",
+    "task": "MET-EW_1-02",
+    "files": [
+      "docs-authority/sizing/EW_CELLS.md"
+    ],
+    "id": "A-M-037",
+    "needs_verification": true,
+    "verification_test": "Deposit quality trial per metal"
+  },
+  {
+    "value": "100 mm cathode pitch; tank allowances 75/50/150/100/80 mm",
+    "units": "mm",
+    "where": "EW tank geometry",
+    "basis": "Common EW practice; room for sludge and covers",
+    "sensitivity": "Tank length linear in cathode count",
+    "replaced_by": "Fabrication drawing",
+    "task": "MET-EW_1-02",
+    "files": [
+      "docs-authority/sizing/EW_CELLS.md"
+    ],
+    "id": "A-M-038",
+    "needs_verification": true,
+    "verification_test": "Fabrication drawing"
+  },
+  {
+    "value": "2.12",
+    "units": "V",
+    "where": "EW cell voltage, all cells",
+    "basis": "USBM_CL_EW 2.1 kWh/kg Cu from cupric chloride at CE 0.85, z 2: V = E M CE/(zF) = 2.12 V. drivers.json ew_cell_voltage_V; not per metal",
+    "sensitivity": "DC power linear; Zn and Fe likely higher",
+    "replaced_by": "Measured cell voltage per metal",
+    "task": "X-PAR-04",
+    "files": [
+      "docs-authority/sizing/EW_CELLS.md"
+    ],
+    "id": "A-M-039",
+    "needs_verification": true,
+    "verification_test": "Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage per metal"
+  },
+  {
+    "value": "0.60 x 0.42 m immersed plate",
+    "units": "m",
+    "where": "EW plates",
+    "basis": "AQS-EW-MOD-001",
+    "sensitivity": "Cathode count",
+    "replaced_by": "Cathode blank drawing",
+    "task": "MET-EW_1-02",
+    "files": [
+      "docs-authority/sizing/EW_CELLS.md"
+    ],
+    "id": "A-M-040",
+    "needs_verification": true,
+    "verification_test": "Cathode blank drawing"
+  },
+  {
+    "value": "1.10",
+    "units": "margin",
+    "where": "RECT-EW channel rating",
+    "basis": "Allowance over bounding current for control headroom",
+    "sensitivity": "Frame size step",
+    "replaced_by": "Vendor selection",
+    "task": "X-ELS-04",
+    "files": [
+      "docs-authority/RECT_EW.md"
+    ],
+    "id": "A-M-041",
+    "needs_verification": true,
+    "verification_test": "Vendor selection"
+  },
+  {
+    "value": "6 V rated; 0.3 V bus drop",
+    "units": "V",
+    "where": "RECT-EW voltage",
+    "basis": "Cell 2.12 V (A-M-039) plus 0.3 V bus drop (drivers.json ew_bus_drop_V) and aging room",
+    "sensitivity": "Nameplate kW linear",
+    "replaced_by": "Measured cell and bus voltage",
+    "task": "X-PAR-04",
+    "files": [
+      "docs-authority/RECT_EW.md"
+    ],
+    "id": "A-M-042",
+    "needs_verification": true,
+    "verification_test": "Measured cell and bus voltage"
+  },
+  {
+    "value": "0.80",
+    "units": "efficiency",
+    "where": "RECT-EW AC/DC",
+    "basis": "Low-voltage high-current rectifiers lose a large share in diodes and transformer. drivers.json rect_efficiency",
+    "sensitivity": "AC input inverse",
+    "replaced_by": "Vendor efficiency at 2.42 V channel voltage",
+    "task": "X-PAR-04",
+    "files": [
+      "docs-authority/RECT_EW.md"
+    ],
+    "id": "A-M-043",
+    "needs_verification": true,
+    "verification_test": "Vendor efficiency curve at 2.42 V channel voltage and bounding current"
+  },
+  {
+    "value": "250/500/1000/1500/2000/2500/3000/4000",
+    "units": "A",
+    "where": "RECT-EW frame sizes",
+    "basis": "Common modular rectifier frames; not a vendor list",
+    "sensitivity": "Rating step",
+    "replaced_by": "Vendor catalog",
+    "task": "X-ELS-04",
+    "files": [
+      "docs-authority/RECT_EW.md"
+    ],
+    "id": "A-M-044",
+    "needs_verification": true,
+    "verification_test": "Vendor catalog"
+  },
+  {
+    "value": "0.22 at 60 C (PVC-U); 0.25 at 82 C (CPVC)",
+    "units": "pressure factor",
+    "where": "Classes P1, P2",
+    "basis": "Published manufacturer temperature-derating tables (Spears, Charlotte class)",
+    "sensitivity": "Allowable pressure linear",
+    "replaced_by": "Chosen brand table",
+    "task": "X-PIP-01",
+    "files": [
+      "docs-authority/PIPING_CLASSES.md"
+    ],
+    "id": "A-M-045",
+    "needs_verification": true,
+    "verification_test": "Chosen brand table"
+  },
+  {
+    "value": "PN16 at 20 C (PVDF SDR21); PN10 (PP-H)",
+    "units": "bar",
+    "where": "Classes P3, P4",
+    "basis": "ISO 10931 / ISO 15494 series ratings",
+    "sensitivity": "Allowable at temperature from the regression curve",
+    "replaced_by": "Chosen brand regression curve",
+    "task": "X-PIP-01",
+    "files": [
+      "docs-authority/PIPING_CLASSES.md"
+    ],
+    "id": "A-M-046",
+    "needs_verification": true,
+    "verification_test": "Chosen brand regression curve"
+  },
+  {
+    "value": "120 C PVDF; 80 C PP-H; 60 C HDPE; 200 C glass; 100 C FRP",
+    "units": "C",
+    "where": "Class temperature limits",
+    "basis": "Common published service limits",
+    "sensitivity": "Class choice at the margins",
+    "replaced_by": "Chosen brand data",
+    "task": "X-PIP-01",
+    "files": [
+      "docs-authority/PIPING_CLASSES.md"
+    ],
+    "id": "A-M-047",
+    "needs_verification": true,
+    "verification_test": "Chosen brand data"
+  },
+  {
+    "value": "40",
+    "units": "C",
+    "where": "Liquid edges into thermoplastic units with no stated temperature (X-MAT-09)",
+    "basis": "0.4 % site dry bulb 37.8 C (AQS-SITE-002), no heat input stated upstream",
+    "sensitivity": "Only matters near the 60 C PVC-U limit",
+    "replaced_by": "Edge temperature from each unit task 01 heat balance",
+    "task": "X-MAT-09",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-048",
+    "needs_verification": true,
+    "verification_test": "Edge temperature from each unit task 01 heat balance"
+  },
+  {
+    "value": "85",
+    "units": "C",
+    "where": "LEACH_CSTR_1 outlet edges without their own temperature",
+    "basis": "Leach liquor band maximum (GLOSSARY 70-85 C)",
+    "sensitivity": "Drives the CPVC choices of X-MAT-09",
+    "replaced_by": "Measured outlet temperatures",
+    "task": "X-MAT-09",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-049",
+    "needs_verification": true,
+    "verification_test": "Measured outlet temperatures"
+  },
+  {
+    "value": "50",
+    "units": "ohm m",
+    "where": "AQS-ELEC-005 soil resistivity",
+    "basis": "Moist clay range; AQS-SITE-002 soil assumption",
+    "sensitivity": "Grid resistance linear in resistivity",
+    "replaced_by": "Wenner four-pin test at the parcel",
+    "task": "X-ELS-08",
+    "files": [
+      "docs-authority/GROUNDING.md"
+    ],
+    "id": "A-M-050",
+    "needs_verification": true,
+    "verification_test": "Wenner four-pin test at the parcel"
+  },
+  {
+    "value": "35 x 20 m ring, 12 rods 3 m",
+    "units": "m",
+    "where": "AQS-ELEC-005 grid",
+    "basis": "Placement extents of the plate",
+    "sensitivity": "Resistance falls with area and length",
+    "replaced_by": "Site plan (X-BLD)",
+    "task": "X-ELS-08",
+    "files": [
+      "docs-authority/GROUNDING.md"
+    ],
+    "id": "A-M-051",
+    "needs_verification": true,
+    "verification_test": "Site plan (X-BLD)"
+  },
+  {
+    "value": "5",
+    "units": "ohm",
+    "where": "AQS-ELEC-005 target",
+    "basis": "IEEE 142 common industrial target",
+    "sensitivity": "Rod count",
+    "replaced_by": "Utility or AHJ requirement and IEEE 80 step/touch study",
+    "task": "X-ELS-08",
+    "files": [
+      "docs-authority/GROUNDING.md"
+    ],
+    "id": "A-M-052",
+    "needs_verification": true,
+    "verification_test": "Utility or AHJ requirement and IEEE 80 step/touch study"
+  },
+  {
+    "value": "hydride check each strip cycle, first year",
+    "units": "inspection",
+    "where": "EW_1, EW_2, EW_4, EW_9 Ti cathodes",
+    "basis": "Ti hydriding mainly above about 80 C (ASM Vol 13); EW_1 inlet 77.5 C is near it",
+    "sensitivity": "Blank life",
+    "replaced_by": "Hydrogen content analysis of a used blank",
+    "task": "X-MAT-18",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-053",
+    "needs_verification": true,
+    "verification_test": "Hydrogen content analysis of a used blank"
+  },
+  {
+    "value": "35",
+    "units": "C",
+    "where": "BMED membrane inlet target",
+    "basis": "Bipolar-membrane stacks are commonly limited to about 40 C; 5 K margin",
+    "sensitivity": "Cooler duty",
+    "replaced_by": "Membrane vendor temperature limit",
+    "task": "X-MAT-19",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-054",
+    "needs_verification": true,
+    "verification_test": "Membrane vendor temperature limit"
+  },
+  {
+    "value": "U 7 W/m2K; cp 3.0 (20 % HCl), 3.6 (20 % NaOH), 4.18 (water)",
+    "units": "W/m2K, kJ/kgK",
+    "where": "X-MAT-19 cooler sizing",
+    "basis": "Natural convection to still air; handbook cp values",
+    "sensitivity": "Coil length inverse to U",
+    "replaced_by": "Outlet temperature measured on the installed coil",
+    "task": "X-MAT-19",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-055",
+    "needs_verification": true,
+    "verification_test": "Outlet temperature measured on the installed coil"
+  },
+  {
+    "value": "0.90",
+    "units": "power factor",
+    "where": "AQS-ELEC-002 feeder currents",
+    "basis": "Typical mixed motor and electronic load",
+    "sensitivity": "Feeder current inverse",
+    "replaced_by": "Motor and rectifier data sheets",
+    "task": "X-ELS-03",
+    "files": [
+      "docs-authority/ONE_LINE.md"
+    ],
+    "id": "A-M-056",
+    "needs_verification": true,
+    "verification_test": "Motor and rectifier data sheets"
+  },
+  {
+    "value": ">= 1 kW on MCC-1 480 V; < 1 kW on PP-1 208/120 V",
+    "units": "assignment rule",
+    "where": "AQS-ELEC-002",
+    "basis": "Common split of three-phase motors and small single-phase loads",
+    "sensitivity": "Transformer size",
+    "replaced_by": "Equipment nameplates",
+    "task": "X-ELS-03",
+    "files": [
+      "docs-authority/ONE_LINE.md"
+    ],
+    "id": "A-M-057",
+    "needs_verification": true,
+    "verification_test": "Equipment nameplates"
+  },
+  {
+    "value": "2 x rated",
+    "units": "fault current",
+    "where": "AQS-ELEC-006 inverter fault contribution",
+    "basis": "AQS-ELEC-002 Rev B figure; typical inverter limit 1.1-2.0 x",
+    "sensitivity": "Device choice and GPR linear",
+    "replaced_by": "SOL_ARK vendor fault data",
+    "task": "X-ELS-07",
+    "files": [
+      "docs-authority/PROTECTION.md"
+    ],
+    "id": "A-M-058",
+    "needs_verification": true,
+    "verification_test": "SOL_ARK vendor fault data"
+  },
+  {
+    "value": "5x low instantaneous; electronic 1.5x / 0.1 s; main 1.25x / 0.3 s",
+    "units": "settings",
+    "where": "AQS-ELEC-006 devices",
+    "basis": "Pickups set below the inverter-limited fault",
+    "sensitivity": "Clearing time",
+    "replaced_by": "Chosen brand time-current curves",
+    "task": "X-ELS-07",
+    "files": [
+      "docs-authority/PROTECTION.md"
+    ],
+    "id": "A-M-059",
+    "needs_verification": true,
+    "verification_test": "Chosen brand time-current curves"
+  },
+  {
+    "value": "0.5",
+    "units": "s",
+    "where": "IEEE 80 clearing time",
+    "basis": "Feeders clear in 0.1 s; margin",
+    "sensitivity": "Tolerable voltage with 1/sqrt(t)",
+    "replaced_by": "Device curves at the fault current",
+    "task": "X-ELS-08",
+    "files": [
+      "docs-authority/PROTECTION.md"
+    ],
+    "id": "A-M-060",
+    "needs_verification": true,
+    "verification_test": "Device curves at the fault current"
+  },
+  {
+    "value": "flat 24 h profile; night 14 h",
+    "units": "profile",
+    "where": "AQS-ELEC-007",
+    "basis": "Continuous process; winter-leaning night length at 33 N",
+    "sensitivity": "Storage linear in night hours",
+    "replaced_by": "Hourly load profile from unit duties",
+    "task": "X-ELS-05",
+    "files": [
+      "docs-authority/POWER_SIZING.md"
+    ],
+    "id": "A-M-061",
+    "needs_verification": true,
+    "verification_test": "Hourly load profile from unit duties"
+  },
+  {
+    "value": "derate 0.80; round trip 0.70",
+    "units": "fraction",
+    "where": "AQS-ELEC-007 PV and storage",
+    "basis": "Typical PV system losses; flow battery round trip",
+    "sensitivity": "PV size inverse",
+    "replaced_by": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)",
+    "task": "X-ELS-05",
+    "files": [
+      "docs-authority/POWER_SIZING.md"
+    ],
+    "id": "A-M-062",
+    "needs_verification": true,
+    "verification_test": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)"
+  },
+  {
+    "value": "HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 days",
+    "units": "kW, d",
+    "where": "AQS-ELEC-007 backup",
+    "basis": "Life support, H2 storage cooling, air separation, food",
+    "sensitivity": "Generator and H2 store linear",
+    "replaced_by": "Owner critical-load list",
+    "task": "X-ELS-05",
+    "files": [
+      "docs-authority/POWER_SIZING.md"
+    ],
+    "id": "A-M-063",
+    "needs_verification": true,
+    "verification_test": "Owner critical-load list"
+  },
+  {
+    "value": "30",
+    "units": "S/m",
+    "where": "EW liquor conductivity (X-MAT-07)",
+    "basis": "About 1.4 M HCl with metal chlorides; HCl conductivity tables",
+    "sensitivity": "Shunt current linear",
+    "replaced_by": "Conductivity meter reading on the liquor",
+    "task": "X-MAT-07",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-064",
+    "needs_verification": true,
+    "verification_test": "Conductivity meter reading on the liquor"
+  },
+  {
+    "value": "0.1 A stray limit; 50 mm air break; 1 % protection current",
+    "units": "A, mm, fraction",
+    "where": "EW aisle (X-MAT-07)",
+    "basis": "Engineering limits for stray current and reverse-current protection",
+    "sensitivity": "Launder design and rectifier standby mode",
+    "replaced_by": "Commissioning measurement of stray current and anode vendor rule",
+    "task": "X-MAT-07",
+    "files": [
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-065",
+    "needs_verification": true,
+    "verification_test": "Commissioning measurement of stray current and anode vendor rule"
+  },
+  {
+    "value": "1 m/s liquid, 10 m/s gas; min DN15; DN50 slurry",
+    "units": "m/s, DN",
+    "where": "AQS-PIP-004 bores",
+    "basis": "Common line-sizing velocities; slurry minimum against plugging",
+    "sensitivity": "DN with square root of flow",
+    "replaced_by": "Unit task 04 bore calculation with pressure drop",
+    "task": "X-PIP-02",
+    "files": [
+      "docs-authority/LINE_LIST.md"
+    ],
+    "id": "A-M-066",
+    "needs_verification": true,
+    "verification_test": "Unit task 04 bore calculation with pressure drop"
+  },
+  {
+    "value": "orthogonal centre distance x 1.2",
+    "units": "m",
+    "where": "AQS-PIP-004 lengths",
+    "basis": "Rack routing allowance",
+    "sensitivity": "Pressure drop and cost",
+    "replaced_by": "Isometrics (X-PIP-03)",
+    "task": "X-PIP-02",
+    "files": [
+      "docs-authority/LINE_LIST.md"
+    ],
+    "id": "A-M-067",
+    "needs_verification": true,
+    "verification_test": "Isometrics (X-PIP-03)"
+  },
+  {
+    "value": "rule-based class assignment",
+    "units": "class",
+    "where": "AQS-PIP-004 classes",
+    "basis": "AQS-PIP-003 service map applied by unit material, temperature, phase and composition; default P1 for aqueous process",
+    "sensitivity": "Material per line",
+    "replaced_by": "Line-by-line review at unit task 05",
+    "task": "X-PIP-02",
+    "files": [
+      "docs-authority/LINE_LIST.md"
+    ],
+    "id": "A-M-068",
+    "needs_verification": true,
+    "verification_test": "Line-by-line review at unit task 05"
+  },
+  {
+    "value": "{\"skid\": [1200, 800, 1800], \"tank\": [2400, 1800, 1500], \"bed\": [4800, 1200, 600], \"pen\": [3000, 2400, 2000], \"room\": [3000, 3000, 2600], \"manifold\": [600, 300, 300], \"cold_box\": [2000, 1500, 2600], \"small_cold\": [800, 600, 1500]}",
+    "units": "mm",
+    "where": "AQS-PLACE-STUDY-001 footprints by category",
+    "basis": "Study envelopes by equipment type (skid, tank, bed, pen, room, manifold, cold box); no unit envelope exists",
+    "sensitivity": "Packing, line lengths",
+    "replaced_by": "Unit task 02/14 envelopes",
+    "task": "X-BLD-09",
+    "files": [
+      "flow_graph/placement_study.json",
+      "flow_graph/study_place.py"
+    ],
+    "id": "A-M-069",
+    "needs_verification": true,
+    "verification_test": "Unit task 02/14 envelopes"
+  },
+  {
+    "value": "block-sized placeholder boxes of the target block are not obstacles",
+    "units": "-",
+    "where": "study_place.py packing",
+    "basis": "Rows sized to the whole sector block are sector stand-ins, not equipment",
+    "sensitivity": "Free area in FARM, HAB, CRYO, MFG",
+    "replaced_by": "Unit envelopes for GROW_BED, HABITATION, CRYO_* and MFG_SHOP",
+    "task": "X-BLD-09",
+    "files": [
+      "flow_graph/placement_study.json",
+      "flow_graph/study_place.py"
+    ],
+    "id": "A-M-070",
+    "needs_verification": true,
+    "verification_test": "Unit envelopes for GROW_BED, HABITATION, CRYO_* and MFG_SHOP"
+  },
+  {
+    "value": "1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2",
+    "units": "kWh/Nm3",
+    "where": "CRYO_ASU load (AQS-ELEC-003)",
+    "basis": "S23: Energy saving opportunities in oxygen plant, IJRET 2013, doi 10.15623/ijret.2013.0202018 (80 m3/h plant, 1.30-1.40 before optimisation); air ratio from 21 vol% O2 at about 100% recovery",
+    "sensitivity": "Linear in load; scale penalty below 80 m3/h not included, so the value is a lower bound",
+    "replaced_by": "In-house micro cold box design and commissioning measurement (X-MFG-33)",
+    "task": "X-ELS-02",
+    "files": [
+      "docs-authority/LOAD_LIST.md"
+    ],
+    "id": "A-M-071",
+    "needs_verification": true,
+    "verification_test": "In-house micro cold box design and commissioning measurement (X-MFG-33)"
+  },
+  {
+    "value": "RO 3.0 kWh/m3, EDI 0.5 kWh/m3",
+    "units": "kWh/m3",
+    "where": "BMED_UPW_POLISH load",
+    "basis": "S24 Greenlee et al. 2009 Water Res 43:2317 (brackish RO 0.5-3); S25 Alvarado and Chen 2014 Electrochim Acta 132:583 (EDI); upper ends taken",
+    "sensitivity": "Linear; load is under 0.1 kW",
+    "replaced_by": "In-house RO/EDI design and bench test (X-MFG-34)",
+    "task": "X-ELS-02",
+    "files": [
+      "docs-authority/LOAD_LIST.md"
+    ],
+    "id": "A-M-072",
+    "needs_verification": true,
+    "verification_test": "In-house RO/EDI design and bench test (X-MFG-34)"
+  },
+  {
+    "value": "DLI 17 mol/m2/d; LED 2.5 umol/J; 10 m head; 50% pump",
+    "units": "mixed",
+    "where": "GROW_BED load",
+    "basis": "S26 Both et al., Cornell CEA lettuce handbook DLI 17; LED efficacy per DLC horticultural QPL range; 28 m2 bed area from GROW_BED params",
+    "sensitivity": "LED term linear in area and DLI",
+    "replaced_by": "Crop plan lighting schedule and fixture data (unit task 02)",
+    "task": "X-ELS-02",
+    "files": [
+      "docs-authority/LOAD_LIST.md"
+    ],
+    "id": "A-M-073",
+    "needs_verification": true,
+    "verification_test": "Crop plan lighting schedule and fixture data (unit task 02)"
+  },
+  {
+    "value": "rack at level datum + 3200 mm; rise, X, Y, drop",
+    "units": "mm",
+    "where": "AQS-ISO-001 routes",
+    "basis": "AQS-PIP-002 header elevation Z 3200; orthogonal rack routing",
+    "sensitivity": "Line lengths and elbow counts",
+    "replaced_by": "3D routed model (X-PIP-03 close-out with X-BLD-04)",
+    "task": "X-PIP-03",
+    "files": [
+      "docs-authority/ISO_ROUTES.md"
+    ],
+    "id": "A-M-074",
+    "needs_verification": true,
+    "verification_test": "3D routed model (X-PIP-03 close-out with X-BLD-04)"
+  },
+  {
+    "value": "FARM second tier floor at L1 datum + 2250 mm, beds and skids only; floor items over 1650 mm block the tier",
+    "units": "mm",
+    "where": "AQS-PLACE-STUDY-001 FARM",
+    "basis": "FARM block 4500 mm high; skid 1800 mm + 2250 = 4050 mm under the block top",
+    "sensitivity": "Structure (tier deck load) and access",
+    "replaced_by": "X-BLD-01 tier deck design and X-BLD-04 access check",
+    "task": "X-RSZ-05",
+    "files": [
+      "flow_graph/placement_study.json",
+      "flow_graph/study_place.py"
+    ],
+    "id": "A-M-075",
+    "needs_verification": true,
+    "verification_test": "X-BLD-01 tier deck design and X-BLD-04 access check"
+  },
+  {
+    "value": "FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm",
+    "units": "mm",
+    "where": "AQS-PLACE-STUDY-001 water tanks (DIGESTER, FISH, CLARIFIER, FISH_SUMP)",
+    "basis": "Floor-bound wet tanks do not fit FARM; L-2 east of HYDRO is free in the seed",
+    "sensitivity": "Lift head to L1 beds; slab loads",
+    "replaced_by": "X-BLD-04 general arrangement",
+    "task": "X-RSZ-05",
+    "files": [
+      "flow_graph/placement_study.json",
+      "flow_graph/study_place.py"
+    ],
+    "id": "A-M-076",
+    "needs_verification": true,
+    "verification_test": "X-BLD-04 general arrangement"
+  },
+  {
+    "value": "BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to added HCl; base consumed by hydroxide precipitation in the leach loop",
+    "units": "kWh/kg",
+    "where": "BMED_ACID continuous_kw, IA-BASE-PPT",
+    "basis": "ELECTRICAL BMED 1.8-2.4 kWh/kg (graph rate_source); BMED splits salt 1:1; leached Al, Ca, Mg, Fe recovered as hydroxides to free chloride for regeneration",
+    "sensitivity": "16.1 kW linear in acid demand; base return linear",
+    "replaced_by": "In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35)",
+    "task": "X-RSZ-01",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/FEED_ASSAY.md"
+    ],
+    "id": "A-M-077",
+    "needs_verification": true,
+    "verification_test": "In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35)"
+  },
+  {
+    "value": "PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); ground field removed",
+    "units": "kWp, m2",
+    "where": "PV_ARRAY params",
+    "basis": "AQS-ELEC-007 bounding case; 5 m2/kWp; plate cannot carry it (sizing rule revises the restriction)",
+    "sensitivity": "Site area and land cost; PV average linear",
+    "replaced_by": "Site survey area check (X-BAS-03) and PV layout",
+    "task": "X-RSZ-02",
+    "files": [
+      "docs-authority/POWER_SIZING.md",
+      "docs-authority/PROTECTION.md",
+      "flow_graph/placement_seed.json",
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/solver.py"
+    ],
+    "id": "A-M-078",
+    "needs_verification": true,
+    "verification_test": "Site survey area check (X-BAS-03) and PV layout"
+  },
+  {
+    "value": "EW cell DC less existing heat outlets goes to HEAT_SINK as cell heat and deposit enthalpy",
+    "units": "kW",
+    "where": "IA-EWQ-EW_n edges",
+    "basis": "Energy balance per cell; split between heat and metal enthalpy not resolved",
+    "sensitivity": "Aisle ventilation and HX8 duty",
+    "replaced_by": "Cell heat balance at unit task 03",
+    "task": "X-RSZ-02",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/POWER_SIZING.md",
+      "docs-authority/PROTECTION.md"
+    ],
+    "id": "A-M-079",
+    "needs_verification": true,
+    "verification_test": "Cell heat balance at unit task 03"
+  },
+  {
+    "value": "RECT_EW cabinet 2400 x 800 x 2000 mm",
+    "units": "mm",
+    "where": "RECT_EW duty sheet",
+    "basis": "Study envelope for a 78 kW DC multi-channel rectifier",
+    "sensitivity": "EW aisle placement",
+    "replaced_by": "Vendor GA",
+    "task": "X-RSZ-02",
+    "files": [
+      "docs-authority/duties/RECT_EW.md"
+    ],
+    "id": "A-M-080",
+    "needs_verification": true,
+    "verification_test": "Vendor GA"
+  },
+  {
+    "value": "potable path: leach bleed -> VCD -> UPW polish (2.3% reject) -> REMIN -> ROOF_TANK; HCl carry-over held by VCD and removed by RO/EDI",
+    "units": "-",
+    "where": "IA-LEACH-VCD, S25, IA-UPW-REMIN, IA-POT-01",
+    "basis": "Compared with a dedicated treatment unit on the leach line: the reroute reuses the existing distillation and polish train and gives a potable source with a defined composition; a separate unit would duplicate VCD and RO. Reject fraction from the existing UPW balance (3.22/140.52)",
+    "sensitivity": "VCD and UPW throughput +123 kg/d; HCl in condensate",
+    "replaced_by": "Condensate chloride and pH test against the potable standard (unit task 06)",
+    "task": "X-RSZ-06",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/MATERIALS_STD.md"
+    ],
+    "id": "A-M-081",
+    "needs_verification": true,
+    "verification_test": "Condensate chloride and pH test against the potable standard (unit task 06)"
+  },
+  {
+    "value": "unassigned class reports to FLOAT_SINK",
+    "units": "kg/d",
+    "where": "FLOAT_SINK design capacity",
+    "basis": "Unidentified material is taken as inert solids to sink (conservative for sink sizing)",
+    "sensitivity": "If soluble, leach and acid load rise",
+    "replaced_by": "Lot characterisation per AQS-ASSAY-001",
+    "task": "X-RSZ-07",
+    "files": [
+      "docs-authority/RESIZE_SWEEP.md"
+    ],
+    "id": "A-M-082",
+    "needs_verification": true,
+    "verification_test": "Lot characterisation per AQS-ASSAY-001"
+  },
+  {
+    "value": "CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water volume at 14.9 kg/m3); compressor 10 to 200 bar, isothermal efficiency 0.5",
+    "units": "bar, kg, m3",
+    "where": "CRYO_H2 params and load",
+    "basis": "Study basis set by Mike 2026-10-15 (owner may override); store = two days of critical load on H2 (AQS-ELEC-007); H2 density at 200 bar 25 C from NIST webbook",
+    "sensitivity": "Load 0.57 kW linear in throughput; store volume linear in days of backup",
+    "replaced_by": "Owner storage-mode decision and in-house compressor bench run (X-MFG-36)",
+    "task": "X-ELS-02",
+    "files": [
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-083",
+    "needs_verification": true,
+    "verification_test": "Owner storage-mode decision and in-house compressor bench run (X-MFG-36)"
+  },
+  {
+    "value": "H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol%",
+    "units": "-",
+    "where": "S49, S49P",
+    "basis": "Gas is dried to -40 C dew at H2_DRYER; the 2 wt% water stencil on S49 was inconsistent with that; deoxo water and TSA purge are trace",
+    "sensitivity": "Fuel-cell feed rate",
+    "replaced_by": "Purifier vendor mass balance",
+    "task": "X-ELS-02",
+    "files": [
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-084",
+    "needs_verification": true,
+    "verification_test": "Purifier vendor mass balance"
+  },
+  {
+    "value": "melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0.2 kWh/kg; one 8 h shift; tool utilisation 0.1-0.5; nameplates as listed",
+    "units": "kWh/kg, kW",
+    "where": "AQS-MFG-010 and MFG_SHOP continuous_kw",
+    "basis": "Small induction melting of Cu about 0.5-1.0 kWh/kg incl. losses (upper taken); atomiser includes remelt and gas recirculation; shop nameplates typical for the tool class",
+    "sensitivity": "Average 3.98 kW; peak 38.5 kW sets the feeder",
+    "replaced_by": "In-house tool design, trial runs and the production schedule (X-MFG-37)",
+    "task": "X-ELS-02",
+    "files": [
+      "docs-authority/MFG_TOOLS.md"
+    ],
+    "id": "A-M-085",
+    "needs_verification": true,
+    "verification_test": "In-house tool design, trial runs and the production schedule (X-MFG-37)"
+  },
+  {
+    "value": "electrical input to each fed load leaves as heat to HEAT_SINK",
+    "units": "kW",
+    "where": "SQ-* edges",
+    "basis": "Energy conservation; work stored in products neglected (study)",
+    "sensitivity": "HEAT_SINK and HVAC duty",
+    "replaced_by": "Per-unit energy balance at unit task 01",
+    "task": "X-RSZ-07",
+    "files": [
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-086",
+    "needs_verification": true,
+    "verification_test": "Per-unit energy balance at unit task 01"
+  },
+  {
+    "value": "spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3 0.85, P4 0.8, P5 0.6, F1 1.3); metal B31.1 Table 121.5; alpha, E, S per class as in _supports.py; install 20 C",
+    "units": "m, 1/K, MPa",
+    "where": "AQS-PIP-005",
+    "basis": "Manufacturer PVC Sch 80 support tables; ASME B31.1 Table 121.5; handbook moduli and expansion coefficients; guided-cantilever leg formula",
+    "sensitivity": "Support count and loop need",
+    "replaced_by": "Manufacturer span tables per material and B31.3 flexibility analysis on the routed model",
+    "task": "X-PIP-04",
+    "files": [
+      "docs-authority/SUPPORTS.md"
+    ],
+    "id": "A-M-087",
+    "needs_verification": true,
+    "verification_test": "Manufacturer span tables per material and B31.3 flexibility analysis on the routed model"
+  },
+  {
+    "value": "2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH)",
+    "units": "mol/L",
+    "where": "BMED_ACID, BMED_BASE, EVAP_ACID/EVAP_BASE feed",
+    "basis": "EDBM_WHEY_2021: conventional EDBM reaches 3.6 M acid; SEC 6.7 kWh/kg quoted at 2 M. Densities PERRY9_HCL",
+    "sensitivity": "Evaporator water load and BMED SEC; higher molarity lowers evaporation but raises SEC",
+    "replaced_by": "EDBM pilot on the plant chloride brine",
+    "verification_test": "EDBM pilot at 2 M product: SEC, current efficiency and product purity",
+    "task": "X-PAR-04",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/PARAMETRIC_MODEL.md"
+    ],
+    "id": "A-M-088",
+    "needs_verification": true
+  },
+  {
+    "value": "Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-DUTY-060): 72",
+    "units": "kWh/t water evaporated",
+    "where": "EVAP_ACID, EVAP_BASE power",
+    "basis": "VOGELBUSCH_MVR 19-72 kWh/t; upper bound for high boiling-point elevation and a small unit",
+    "sensitivity": "Evaporator kW linear",
+    "replaced_by": "Vendor MVR quote at about 0.8 t/d",
+    "verification_test": "Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement",
+    "task": "X-PAR-04",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/PARAMETRIC_MODEL.md"
+    ],
+    "id": "A-M-089",
+    "needs_verification": true
+  },
+  {
+    "value": "20 wt% HCl on IA-ACID-01",
+    "units": "mass fraction",
+    "where": "EVAP_ACID product, LEACH_CSTR_1 feed",
+    "basis": "Below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL), so simple evaporation reaches it; CARLETON_HCL_2023 leach basis is 38 %",
+    "sensitivity": "Leach extraction rate and residence time",
+    "replaced_by": "Bench leach at 20 wt%",
+    "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C; ICP-OES extraction vs time",
+    "task": "X-PAR-04",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/PARAMETRIC_MODEL.md"
+    ],
+    "id": "A-M-090",
+    "needs_verification": true
+  },
+  {
+    "value": "20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT",
+    "units": "mass fraction",
+    "where": "EVAP_BASE product",
+    "basis": "Matches the acid side; no azeotrope limit",
+    "sensitivity": "Evaporator water load",
+    "replaced_by": "Bench precipitation and digest at the chosen strength",
+    "verification_test": "Bench hydroxide precipitation and glass digest with 20 wt% NaOH",
+    "task": "X-PAR-04",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/PARAMETRIC_MODEL.md"
+    ],
+    "id": "A-M-091",
+    "needs_verification": true
+  },
+  {
+    "value": "Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-DUTY-060): 1200 x 800 x 1800 mm skid each; placed in BMED_CRU",
+    "units": "mm",
+    "where": "EVAP_ACID, EVAP_BASE envelope and placement",
+    "basis": "AQS-PLACE-STUDY-001 skid category",
+    "sensitivity": "BMED_CRU block fill",
+    "replaced_by": "Vendor MVR skid drawing",
+    "verification_test": "Vendor MVR skid general arrangement",
+    "task": "X-PAR-04",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/PARAMETRIC_MODEL.md"
+    ],
+    "id": "A-M-092",
+    "needs_verification": true
+  },
+  {
+    "value": "SOL_ARK bus change carried on IA-PV-01 average; PV, storage, inverters from AQS-ELEC-007 bounding case",
+    "units": "kW",
+    "where": "IA-PV-01, PV_ARRAY, ZNBR2, SOL_ARK_60K",
+    "basis": "Flat profile, A-M-060 to A-M-062",
+    "sensitivity": "PV kWp and storage kWh linear in bus demand",
+    "replaced_by": "Hourly load profile and PVsyst site run",
+    "verification_test": "Hourly load profile and PVsyst site run",
+    "task": "X-PAR-04",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/plant_flow_graph.json",
+      "docs-authority/PARAMETRIC_MODEL.md"
+    ],
+    "id": "A-M-093",
+    "needs_verification": true
+  },
+  {
+    "value": "1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe precipitated",
+    "units": "mol/mol",
+    "where": "IA-BASE-PPT",
+    "basis": "GREENWOOD hydroxide stoichiometry; Ca(OH)2 is sparingly soluble, so full Ca precipitation is a bounding NaOH demand",
+    "sensitivity": "IA-BASE-PPT and EVAP_BASE linear",
+    "replaced_by": "Bench precipitation to target pH",
+    "verification_test": "Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES",
+    "task": "X-PAR-06",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/param/solver.py",
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-094",
+    "needs_verification": true
+  },
+  {
+    "value": "dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol NaOH per mol SiO2",
+    "units": "mol/mol",
+    "where": "IA-BASE-01, IA-DIG-LIQ",
+    "basis": "GREENWOOD SiO2 + 2 NaOH; soda-lime cullet is below 100 % SiO2, so this bounds NaOH",
+    "sensitivity": "IA-BASE-01 linear in dissolved mass",
+    "replaced_by": "Bench caustic digest of burned cullet",
+    "verification_test": "Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg",
+    "task": "X-PAR-06",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/param/solver.py",
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-095",
+    "needs_verification": true
+  },
+  {
+    "value": "NaOH make-up = precipitation + digest demand less BMED production (1:1 with leach HCl); no credit for sodium returned in the silicate liquor",
+    "units": "kg/d NaOH flake",
+    "where": "IA-NAOH-MU (NORTH_DOCK to EVAP_BASE)",
+    "basis": "Owner decision 2026-10-15; worst case keeps the 1 % misfit gate passing",
+    "sensitivity": "Make-up and purge equal the digest draw (5.06 kg/d)",
+    "replaced_by": "Sodium balance on the pilot including silicate neutralisation in the leach",
+    "verification_test": "Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week",
+    "task": "X-PAR-06",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/param/solver.py",
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-096",
+    "needs_verification": true
+  },
+  {
+    "value": "sodium salt purge IA-NA-PURGE equal in mass to the make-up",
+    "units": "kg/d",
+    "where": "LEACH_CSTR_1 to NORTH_DOCK",
+    "basis": "Mass conservation on the closed graph; composition not resolved (study)",
+    "sensitivity": "Leach bleed composition",
+    "replaced_by": "Purge composition from the pilot sodium balance",
+    "verification_test": "Pilot purge sample: Na, Cl, water by ICP-OES and titration",
+    "task": "X-PAR-06",
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/param/solver.py",
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "id": "A-M-097",
+    "needs_verification": true
+  },
+  {
+    "value": "Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground field removed)",
+    "units": "-, mm",
+    "where": "PV_ARRAY seed row",
+    "basis": "Study layout pending the owner site area (X-BAS-03)",
+    "sensitivity": "Cable lengths on IA-PV-01; site fit",
+    "replaced_by": "Site plan with parcel boundary",
+    "task": "X-BLD-04",
+    "files": [
+      "flow_graph/placement_seed.json"
+    ],
+    "id": "A-M-098",
+    "needs_verification": true,
+    "verification_test": "Site plan with parcel boundary (X-BAS-03) and PV row layout"
+  },
+  {
+    "value": "seed rows moved the smallest distance (100 mm grid, 4 m radius) inside their block, no partition X line crossed, to clear 600 mm",
+    "units": "mm",
+    "where": "12 seed rows (placement seed Rev J)",
+    "basis": "maint_clear_mm 600 (seed rules); row cabinets and process trains spread rather than ganged",
+    "sensitivity": "Room fit; local pipe runs",
+    "replaced_by": "Room layout review with access and egress (X-BLD-04)",
+    "task": "X-BLD-04",
+    "files": [
+      "flow_graph/clear_pairs.py",
+      "flow_graph/placement_seed.json"
+    ],
+    "id": "A-M-099",
+    "needs_verification": true,
+    "verification_test": "Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation"
+  },
+  {
+    "units": "mm",
+    "task": "X-BLD-04",
+    "needs_verification": true,
+    "id": "A-M-100",
+    "value": "1 h partition at X=15000 (FAB acid room) credited as the IFC 5003.9.8 fire barrier for every pair across it; hazardous materials cabinets not credited",
+    "where": "flow_graph/sep_check.py, AQS-BLD-011",
+    "basis": "WS_HF_ED seed source names the 1 h partition at X=15000; full FAB depth assumed",
+    "sensitivity": "Nitric, HF and phosphoric pairs to the alkaline bund pass only by the partition",
+    "replaced_by": "Architectural fire-barrier plan",
+    "files": [
+      "flow_graph/sep_check.py",
+      "flow_graph/placement_seed.json"
+    ],
+    "verification_test": "Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations"
+  },
+  {
+    "units": "mm",
+    "task": "X-BLD-04",
+    "needs_verification": true,
+    "id": "A-M-101",
+    "value": "Access check: 914 mm clear on at least one face per row; room walls other than X=15000 not modelled; tier-2 shelf rows reached from the tier-1 aisle; RECT_EW 1219 mm on all faces until its working face is fixed",
+    "where": "flow_graph/access_check.py, flow_graph/place_ew_aisle.py, AQS-BLD-012",
+    "basis": "NFPA 101 (2024) 7.3.4.1.1, IBC 2021 1018.5; NEC 2023 Table 110.26(A)(1) Condition 3",
+    "sensitivity": "Rows against a wall may lose their only clear face",
+    "replaced_by": "Room-by-room fit-out model with walls and doors",
+    "files": [
+      "flow_graph/access_check.py",
+      "flow_graph/place_ew_aisle.py"
+    ],
+    "verification_test": "Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths"
+  },
+  {
+    "id": "A-M-102",
+    "value": "L1 farm re-row: 914 mm minimum between all farm rows; farm rows at x 10600..24000 (FARM/HAB line moved 1400 mm west of x=12000); COMPOST_TOILET moved to (8800, 400); issued envelope sizes unchanged, 90 deg rotation allowed",
+    "units": "mm",
+    "where": "flow_graph/farm_rerow.py, placement seed/study Rev K",
+    "basis": "NFPA 101 (2024) 7.3.4.1.1 / IBC 2021 1018.5 914 mm minimum clear width; owner rule 2026-10-15 (sizing-driven layout changes approved, no position fixed)",
+    "sensitivity": "Farm pipe and grow-light runs; HAB floor area reduced by 1400 x 18000 mm",
+    "replaced_by": "Farm fit-out model with irrigation and lighting",
+    "task": "X-BLD-04",
+    "files": [
+      "flow_graph/farm_rerow.py",
+      "flow_graph/placement_seed.json",
+      "flow_graph/placement_study.json"
+    ],
+    "needs_verification": true,
+    "verification_test": "Fit-out walk-through: 914 mm paths hold with irrigation, trays and lights; HAB room areas still meet the occupancy plan"
+  },
+  {
+    "task": "X-PAR-07",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/solver.py",
+      "flow_graph/param/sizing/roof.py",
+      "flow_graph/param/drivers.json",
+      "flow_graph/placement_seed.json"
+    ],
+    "id": "A-M-103",
+    "value": "Roof PV: ground-cover ratio 0.6 on low-tilt rows; roof yield equal to the PVWatts site yield (factor 1.0); one roof plane for the layout (base block and extension treated together); ROOF datum 14400 mm",
+    "units": "-, mm",
+    "where": "drivers pv_roof_gcr, pv_roof_yield_factor; PV_ARRAY seed row",
+    "basis": "No published roof GCR for this site; PVWatts default fixed-array GCR is 0.4 to 0.5 for ground arrays, roof low-tilt rows run denser",
+    "sensitivity": "Footprint scales about 1/(GCR x yield factor)",
+    "replaced_by": "PVWatts run at roof tilt and row spacing; roof plan with both roof levels",
+    "verification_test": "Row-shading study at the chosen tilt and PVWatts yield ratio; re-solve roof_close"
+  },
+  {
+    "task": "X-PAR-07",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/drivers.json",
+      "flow_graph/param/sizing/roof.py",
+      "flow_graph/param/solver.py",
+      "flow_graph/place_roof.py",
+      "flow_graph/placement_seed.json"
+    ],
+    "id": "A-M-104",
+    "value": "Extension is a single-storey CONDITIONED hall (owner decision 2026-10-15): lighting 8.8 W/m2 lit 10 % of hours (occupant sensors), outdoor air 0.30 L/(s m2) at SFP 1.25 W/(L/s), heat pump COP 3.2, roof U 0.199 and wall U 0.534 W/(m2 K) over the full new perimeter at 6 m eave (bounding), mean |dT| 7.9 K from DFW degree days; slab and internal gains not counted; GEO_GHEX not coupled; NORTH_DOCK keeps a 6 m truck lane through EXT_HALL_N",
+    "units": "W/m2, L/(s m2), K",
+    "where": "drivers ext_*; EXT_HALL_E/N blocks",
+    "basis": "IECC 2021 C405, C405.2.1, C402.1.4; ASHRAE 62.1-2019 Table 6.2.2.1; ASHRAE 90.1-2019 Table 6.8.1-2; ISO 16798-3; NOAA 1991-2020 normals DFW",
+    "sensitivity": "Lighting at 100 % of hours drives the footprint to about 33,500 m2; ground-source COP 3.6 trims the conditioning load about 11 %",
+    "replaced_by": "Room programme and load calculation for the extension",
+    "verification_test": "Bin-hour load calculation (TMY3) with internal gains and slab losses; lighting design and schedule for the hall programme"
+  },
+  {
+    "task": "X-PAR-07",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/solver.py",
+      "flow_graph/param/sizing/roof.py",
+      "flow_graph/param/drivers.json",
+      "flow_graph/placement_seed.json"
+    ],
+    "id": "A-M-105",
+    "value": "Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof snow 0.24 kPa (study); LRFD 1.2D + 1.6Lr = 1.72 kPa on the roof framing",
+    "units": "kPa",
+    "where": "drivers roof_*; PV_ARRAY params.roof",
+    "basis": "ASCE 7-22 Table 4.3-1, 4.17, 2.3.1",
+    "sensitivity": "Roof framing tonnage",
+    "replaced_by": "Racking weight and ASCE 7 Hazard Tool snow at the site",
+    "verification_test": "ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays"
+  },
+  {
+    "task": "X-MFG-30",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/evap_design.py",
+      "flow_graph/param/drivers.json"
+    ],
+    "id": "A-M-106",
+    "value": "Evaporator operating basis: body 101.3 kPa abs, 6 K driving difference, feed 35 C, 10 K interchanger approach, motor efficiency 0.90",
+    "units": "kPa, K, C, -",
+    "where": "drivers evap_*",
+    "basis": "Design choices; motor class IEC 60034-30-1 IE3 at about 1 kW is near 0.85-0.88",
+    "sensitivity": "Blower power scales with the compression ratio set by the driving difference",
+    "replaced_by": "Pilot evaporator data",
+    "verification_test": "Pilot run: U, ratio and power at the design heat flux; BMED outlet temperature log"
+  },
+  {
+    "task": "X-MFG-30",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/evap_design.py",
+      "flow_graph/param/drivers.json"
+    ],
+    "id": "A-M-107",
+    "value": "Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sump 400 mm, body design 100 kPa g and full vacuum, steam shell 350 kPa g",
+    "units": "mm, kPa g",
+    "where": "drivers evap_*",
+    "basis": "Design choices fitted to the BMED_CRU envelope",
+    "sensitivity": "Wetted area and relief load",
+    "replaced_by": "Detailed mechanical design (ASME VIII-1 / EN 13445)",
+    "verification_test": "Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials"
+  },
+  {
+    "id": "A-M-108",
+    "task": "X-MFG-30",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/evap_design.py",
+      "flow_graph/param/sizing/hcl_vle.py",
+      "flow_graph/param/drivers.json"
+    ],
+    "value": "EVAP_ACID counter-current column, feed at the top, no reflux: condensate 0.5 wt% HCl; packed height = ideal stages x HETP 500 mm x 1.5; DN150 at 1.0 m/s; equimass overflow in the stage count",
+    "units": "wt%, mm, m/s",
+    "where": "drivers evap_cond_hcl_wt, evap_col_*",
+    "basis": "PERRY7_HCL_VLE Tables 2-9/2-10 (fits, 5-20 % accuracy below 15 wt%); PERRY9_ABS HETP for 25 mm random packing",
+    "sensitivity": "A lower condensate HCl target adds stages; below 0.34 wt% it needs reflux (option a)",
+    "replaced_by": "Pilot column profile",
+    "verification_test": "Pilot: titrate condensate and column bottoms; flooding check with the packing C_s"
+  },
+  {
+    "id": "A-M-109",
+    "task": "X-PAR-09",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/sizing/power.py",
+      "flow_graph/param/solver.py",
+      "docs-authority/_power_sizing.py"
+    ],
+    "value": "PV nameplate = 2.0 x balancing nameplate; design cloudy day = mean yield / 2.0; storage charge rate = PV peak on that day less direct load (1107 kW); storage energy = load x 14 h night (3409 kWh); inverter AC = kWp / 1.2",
+    "units": "-, kW, kWh",
+    "where": "drivers pv_oversize_factor, pv_dc_ac_ratio",
+    "basis": "Owner decision D75; NREL_PVWATTS8 (output scales with plane-of-array irradiance; default DC/AC 1.2); NREL_NSRDB for the daily yield distribution",
+    "sensitivity": "A cloudy-day profile with a lower peak than the scaled clear day lowers the charge rate need; days below half the mean yield draw on backup (AQS-ELEC-007 backup case)",
+    "replaced_by": "Hourly PVWatts/NSRDB TMY simulation with the storage model",
+    "verification_test": "NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2"
+  },
+  {
+    "id": "A-M-110",
+    "task": "X-PAR-09",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/_one_line.py",
+      "docs-authority/_protection.py",
+      "docs-authority/_grounding_study.py"
+    ],
+    "value": "Grid export through a supply-side connection (NEC 2023 705.11), UL 1741 SB inverters at IEEE 1547-2018 Cat. B / III, ANSI C12.20 class 0.2 bidirectional meter; utility fault contribution not included; ground grid over the building plus 10 m west yard, 12 m mesh, 2/0 AWG, rods at 10 m, rho 50 ohm m",
+    "units": "-",
+    "where": "ONE_LINE item 5, PROTECTION Rev C",
+    "basis": "IEEE1547_2018, UL1741_SB, NEC2023_705, ANSI_C12_20; IEEE 80-2013 eqs 52, 85-94",
+    "sensitivity": "Utility fault current raises the bus fault level and the earth-fault current; mesh voltage scales with it",
+    "replaced_by": "Utility interconnection study and service agreement; Wenner soil test",
+    "verification_test": "Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid"
+  },
+  {
+    "id": "A-M-111",
+    "task": "X-PAR-10",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/vent_scrubber.py",
+      "flow_graph/param/sizing/scrubber.py",
+      "flow_graph/param/drivers.json"
+    ],
+    "value": "Vent = air dissolved in the feed (21.7 mg/kg) saturated at a 40 C vent condenser; design case column bypassed (condensate 17.1 wt% HCl); outlet 1 ppmv; gas-film HTU by Fick film of half the 16 mm ring size; 0.5 m minimum bed; NaOH bleed 2 x HCl; 20 L sump charge; pump 10 m head at 40 %",
+    "units": "mg/kg, C, ppmv, m, L",
+    "where": "drivers vs_*",
+    "basis": "WEISS1970, PERRY7_HCL_VLE, ACGIH_HCL, PERRY9_DIFF, TREYBAL3, PERRY9_ABS",
+    "sensitivity": "HCl load is milligrams per day; size is set by minimum practical dimensions, not by mass transfer",
+    "replaced_by": "Commissioning measurements",
+    "verification_test": "Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate"
+  },
+  {
+    "id": "A-M-112",
+    "task": "X-PAR-08",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/sizing/roof.py",
+      "flow_graph/param/solver.py",
+      "flow_graph/param/drivers.json"
+    ],
+    "value": "Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K mean); internal gains = lighting + fans, shared by the dT split; slab F 1.264 W/(m K) heating only; ground-source COP 3.2/4.13 + 37 W/kW pumping; bore 55 m per kW peak, 120 m bores at 6 m; design temps -5 / 38 C; air-source adopted by owner decision D77 (ground-source 0.2 % smaller footprint not worth 27 km of bores; inside input uncertainty, major build complexity)",
+    "units": "K, W/(m K), -, m/kW, m, C",
+    "where": "drivers ext_dTh_K, ext_dTc_K, ext_F_slab, ext_hvac, gsh_*, ash_*, ext_T_design_*",
+    "basis": "NOAA_NORMALS_DFW, IECC2021_C402, ASHRAE901_2019_T6812, KAVANAUGH2014, ASHRAE_FUND_2021",
+    "sensitivity": "Lighting and fans are 44 % of the hall load and independent of the heat-pump choice; the ground/air difference is 0.9 kW",
+    "replaced_by": "TMY3 bin-hour load model with the hall programme; thermal response test",
+    "verification_test": "TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station"
+  },
+  {
+    "id": "A-M-113",
+    "task": "X-PAR-09",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/ONE_LINE.md",
+      "docs-authority/PROTECTION.md"
+    ],
+    "value": "OWNER INPUT: utility interconnection study (service size, available fault current, export limit, protection settings, tariff) not yet obtained; export and protection rest on the inverter-only fault level",
+    "units": "-",
+    "where": "AQS-ELEC-002 Rev D item 5, AQS-ELEC-006 Rev C section 1",
+    "basis": "IEEE1547_2018, NEC2023_705; serving utility process",
+    "sensitivity": "Utility fault current raises bus and earth-fault levels; an export limit below 2576 kW curtails surplus",
+    "replaced_by": "Utility interconnection agreement",
+    "verification_test": "Owner files the interconnection application; utility study results entered as drivers and the protection study re-run"
+  },
+  {
+    "id": "A-M-114",
+    "task": "X-ELS-11",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/_collection_bus.py"
+    ],
+    "value": "Collection at 480 V in sections with breakers <= 1000 A (NEC 240.87 threshold), 750 kVA 5.75 % Z pad-mount step-up to 12.47 kV; storage distributed evenly over the hybrid inverters; plant bus on CB-1; microgrid controller per IEEE 2030.7 for islanding",
+    "units": "A, kVA, kV",
+    "where": "SOL_ARK_60K params.sections, AQS-ELEC-008",
+    "basis": "NEC2023_240, IEEE_C57_12_34, UL891, IEEE1547_2018, IEEE2030_7",
+    "sensitivity": "Service voltage from the utility study (A-M-113) may change the MV level and transformer ratio",
+    "replaced_by": "Utility interconnection agreement and switchgear selection",
+    "verification_test": "Utility service voltage; short-circuit and coordination study with the utility source"
+  },
+  {
+    "id": "A-M-115",
+    "task": "X-STD-01",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/_egress_hall.py",
+      "flow_graph/param/code_basis.py"
+    ],
+    "value": "Hall classed general industrial ordinary hazard, sprinklered (NFPA 13); 9.29 m2/person; travel 76.2 m governs (NFPA 101 Table 40.2.6); doors as 1626 mm clear pairs at 90 m spacing; 2.2 m 2 h exit passageway at mid-depth; rectilinear travel bound on a 2 m grid; code editions per AQS-STD-002",
+    "units": "m, m2/person",
+    "where": "AQS-EGR-002, AQS-STD-002",
+    "basis": "NFPA101_2024, IBC2021_CH10, NFPA13_2022",
+    "sensitivity": "Low-hazard contents remove the travel limit and the passageway; high-piled storage changes sprinkler design",
+    "replaced_by": "Hall programme and AHJ review",
+    "verification_test": "Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model"
+  },
+  {
+    "id": "A-M-116",
+    "task": "X-MFG-31",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/reactor_design.py",
+      "models/mfg/reactors.py"
+    ],
+    "value": "In-house reactors: GLASS_DIGEST residence 3 x shrinking-sphere kinetic time on 100 um fines at 2.0e-4 g/(m2 s) (glass-fibre rate, order 0.31 to 2 M), floor 1 h; DIGESTER SRT 20 d; OIL_PYRO 500 C, 1 h, heat of pyrolysis 1.3 MJ/kg, cp 2.5 kJ/(kg K), heater efficiency 0.7; standard tank H = T, fill 0.75, tip 2.5 m/s, Np 1.27",
+    "units": "h, d, MJ/kg, kJ/(kg K), m/s",
+    "where": "AQS-DUTY-062",
+    "basis": "JMS2017_GLASSFIBRE, MARAGHECHI2016, METCALF5, ANUAR2016, GAO2010, PERRY9_MIX, PERRY9_HEAT, DVS2205, ASME_VIII1_UG16, ASME_II_D",
+    "sensitivity": "Soda-lime cullet may dissolve slower than glass fibre (residence scales with 1/k); pyrolysis heat scales the OIL_PYRO bus load linearly",
+    "replaced_by": "Bench and pilot data",
+    "verification_test": "Bench digest of milled cullet (SiO2 vs time at 85 C); sieve analysis of GLASS_MILL product; DSC/TGA of dried float oil; pilot digester VS destruction; heater energy meter"
+  },
+  {
+    "id": "A-M-117",
+    "task": "X-MFG-32",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/_jellybean.py"
+    ],
+    "value": "Motor rating = next IEC 60034-1 preferred rating >= 1.15 x shaft power; 4-pole IEC 60072-1 frame per CENELEC HD 231; drive-end bearing per frame is typical maker practice (not standardised); unsized pumps take the 0.18 kW class; make/buy split per family at current plant volume",
+    "units": "kW",
+    "where": "AQS-MFG-011",
+    "basis": "IEC 60034-1, IEC 60034-30-1, IEC 60072-1, ISO 15, ISO 492, ISO 4014/4017/4032/7089, ISO 3506-1, ISO 898-1, ISO 3601-1, ISO 6194-1, EN 1514-1, ASME B16.21, ASTM D1785, ISO 1452-2, ISO 2858, ISO 15783",
+    "sensitivity": "Pump motors move one or two frame sizes when the pump curves are sized; bearing sizes depend on the chosen motor maker or in-house design",
+    "replaced_by": "Pump curves per unit (X-ELS-02) and the in-house motor drawings",
+    "verification_test": "Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design"
+  },
+  {
+    "id": "A-M-118",
+    "task": "X-SAN-01",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/sanitation.py",
+      "models/mfg/sanitation.py"
+    ],
+    "value": "Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; cake and biogas burned on top of the existing afterburner feed (S11 unchanged), products carried downstream by species (VS as C5H7O2N, biogas 65 % CH4, dry VS LHV about 20 MJ/kg); afterburner chamber >= 850 C for >= 2 s",
+    "units": "persons, L, kg/d, m",
+    "where": "AQS-DUTY-063",
+    "basis": "ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500, METCALF5_BIOMASS, EU_IED2010",
+    "sensitivity": "Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly",
+    "replaced_by": "Occupancy schedule, toilet fit-out, challenge-test results",
+    "verification_test": "ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50)"
+  },
+  {
+    "id": "A-M-119",
+    "task": "X-INV-01",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/inventory/motors.py"
+    ],
+    "value": "Unsized driven items: one transfer pump per liquid outlet line at 10 m head, efficiency 0.4, gravity not credited; induced-draft fan per scrubber/dryer/baghouse/AHU/thermal/fab unit at 1 kPa, 0.5; screw conveyor 0.37 kW per solids line >= 50 kg/d; one solenoid valve per dosed line; agitators 0.25 kW; EXT_HALL 8 heat-pump modules with 2 condenser fans each and 8 AHUs at 500 Pa, 0.6; flow battery 2 pumps x 48 strings at 0.25 kW; cold-box compressor 0.85 x graph kW; < 60 W shaft as 24 V DC BLDC",
+    "units": "m, kPa, kW",
+    "where": "AQS-INV-001",
+    "basis": "Study rules pending each unit's task 02 sizing; IEC 60034-1 / IEC 60072-1 for ratings and frames",
+    "sensitivity": "Pump and fan counts fall where gravity or shared headers are used; family counts shift accordingly",
+    "replaced_by": "Unit sizing (task 02), P&IDs (task 03) and mfg models",
+    "verification_test": "Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list"
+  },
+  {
+    "id": "A-M-120",
+    "task": "X-PAR-02",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/balance.py"
+    ],
+    "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation; closure layer complete: 117 study edges are closure transfer functions (balance of a named unit, elimination order) and 57 are design inputs with their stated basis (AQS-PAR-003 section 5)",
+    "units": "kg/d",
+    "where": "AQS-PAR-003",
+    "basis": "NARASIMHAN2000",
+    "sensitivity": "Tolerance 2 % is a flow-meter class assumption; tighter meters tighten the gate",
+    "replaced_by": "Unit sizing tasks (BIO-*/unit task 02) replace the 57 design inputs with calculations; X-PAR-11/12 species layer",
+    "verification_test": "test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123)"
+  },
+  {
+    "id": "A-M-121",
+    "task": "X-PIP-03",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/_iso_sheets.py",
+      "docs-authority/_line_list.py"
+    ],
+    "value": "Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic elbow take-off 0.5 x OD; 6 m random lengths; flanges at both equipment nozzles; ASME B16.5 Class 150 bolting for all classes; EVAP_ACID_VS lines from the EVAP_ACID frame centre + 650 mm north; seed units used for line ends where no duty origin",
+    "units": "mm, m",
+    "where": "AQS-ISO-002",
+    "basis": "ASME B16.9, ASME B16.5, ASME B36.10M, ASTM D2467, ISO 15494",
+    "sensitivity": "Cut lengths change by tens of mm per fitting; routes change when clash checking and supports land (X-PIP-04)",
+    "replaced_by": "Clash-checked 3D routing and fabrication take-offs",
+    "verification_test": "3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class"
+  },
+  {
+    "id": "A-M-122",
+    "task": "X-INV-03",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/inventory/wire.py"
+    ],
+    "value": "Wire inventory: Rev B (X-ELS-02A): one local panel per sector at the sector median point; branch lengths = Manhattan unit-to-panel x 1.1 + 3 m on routed tray; panel feeders Manhattan to the electrical room (SOL_ARK_60K) x 1.2 + 5 m; conductors upsized for 3 % branch / 2 % feeder drop, 30 m where unpositioned; 3 control pairs per AC motor; DC items 10 m from a local panel; inverter output runs 25 m; section mains 3 parallel sets, 15 m; MV runs 100 m at 2 AWG; PV 18 modules per string, 60 m mean home run; hall lighting installed = average / 0.10 at 4.43 kW per 20 A circuit, 120 m; grid conductor 4/0 Cu; Rev C: panels merged by calculation (merge_panels: no copper increase, drop limits held), 16 -> 12 panels; merges rejected by < 5 kg copper are held for an owner cost basis",
+    "units": "m, AWG",
+    "where": "AQS-INV-002",
+    "basis": "NEC 2023 430.22, 430.52, Table 430.250, 310.16, 240.4(D), 250.122, 690.8, 705.28; AQS-ELEC-005, AQS-ELEC-008",
+    "sensitivity": "Lengths dominate copper quantity; panel locations will shorten most branch runs",
+    "replaced_by": "Panel locations on the GA and tray routes from the router (X-ELS-02 cable schedule)",
+    "verification_test": "Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature"
+  },
+  {
+    "id": "A-M-123",
+    "task": "X-PAR-02",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/balance.py"
+    ],
+    "value": "T1 terrace transpiration = irrigation - drains (37.176 kg/d; no terrace CO2 supply or harvest, net fixation 0); T2 AHU condensate = greenhouse vapour in (53.876 kg/d); T3 cold-box O2 product = HDR_O2 draw (44.906 kg/d), no O2 return; T4 roof shortfall 2.824 kg/d by difference on IA-POT-01, IA-UPW-REMIN, S25, IA-LEACH-VCD; T5 IA-LEACH-ASU 17.44 -> 14.616 kg/d, still above the Henry-law bound (X-PAR-11)",
+    "units": "kg/d",
+    "where": "AQS-PAR-003 section 0",
+    "basis": "TAIZ2015 (photosynthesis and transpiration stoichiometry); SANDER2015 (Henry constants); AQS-DUTY-013/017/019; X-SAF-10 Faraday cell O2",
+    "sensitivity": "T5 carries the cross-species link; the leach dissolved-gas rate is the least certain figure in the chain",
+    "replaced_by": "Gas-exchange species layer X-PAR-11",
+    "verification_test": "T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound"
+  },
+  {
+    "id": "A-M-124",
+    "task": "X-INV-04",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/inventory/pipe.py"
+    ],
+    "value": "Pipe stock 6.096 m (20 ft) random lengths with 3 mm kerf, first-fit decreasing on the iso cut lists; fitting standards assigned by class; tees, reducers, valves, supports counted in X-INV-05",
+    "units": "m",
+    "where": "AQS-INV-003",
+    "basis": "ASTM D1785 / ASTM A312 standard lengths; ASME B16.9, B16.5, B16.20; ASTM D2467, F439, D3261; ISO 10931, ISO 15494",
+    "sensitivity": "Stock length changes offcut, not pipe metres",
+    "replaced_by": "Purchase/production cut plan from the issued isos",
+    "verification_test": "Cut-plan reconciliation at fabrication: issued lengths against consumed stock, offcut within 5 %"
+  },
+  {
+    "id": "A-M-125",
+    "task": "X-INV-05",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/inventory/other.py"
+    ],
+    "value": "Counting rules: 2 isolation valves per line; check valve and mag-flow meter on lines leaving a pumped unit; TT + PT per unit with nozzles, LT + LSHH per liquid holdup class; 2 anchors per support; bearings sized by IEC frame; seal only on induction-driven pumps (BLDC pumps magnetic drive); VFD at >= 0.75 kW; 2 DI per motor, one AI per instrument, 16-channel I/O modules",
+    "units": "count",
+    "where": "AQS-INV-004",
+    "basis": "Duty item 5 (AQS-STD-001); AQS-PIP-005 support spans; NEC 430.52",
+    "sensitivity": "Valve and instrument counts move with the P&ID",
+    "replaced_by": "P&ID per unit (valves and instruments by tag)",
+    "verification_test": "P&ID take-off count against AQS-INV-004 per family; difference reported per family"
+  },
+  {
+    "id": "A-M-126",
+    "task": "X-INV-02",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/inventory/motor_designs.py"
+    ],
+    "value": "Design coefficients inside published ranges: B_delta 0.75 T, A 20/30/40 kA/m by rating, k_w 0.92, J 5 A/mm2, power factor 0.80 (<4 kW) / 0.84, split ratio 0.55 (4-pole) / 0.50 (2-pole), lamination OD <= 0.85 x 2H in the IEC frame, core length/bore <= 2.5; BLDC A 15 kA/m, B 0.8 T, 3000 rpm; bearing sizes by frame; IE3 targets from the IEC 60034-30-1:2014 60 Hz table (4-pole IEC frames, 2-pole hermetic), linear interpolation for 3 and 4 kW (standard 5.4.7 formula applied on the type test)",
+    "units": "T, kA/m, A/mm2",
+    "where": "AQS-INV-005",
+    "basis": "PYRHONEN2014 tables 6.3-6.4; HENDERSHOT2010; IEC 60072-1; IEC 60034-30-1; IEC60034_30_1 60 Hz table",
+    "sensitivity": "Core length scales inversely with B and A",
+    "replaced_by": "First-article type tests (X-INV-02B)",
+    "verification_test": "IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K"
+  },
+  {
+    "id": "A-M-127",
+    "task": "X-PIP-04",
+    "needs_verification": true,
+    "files": [
+      "docs-authority/_iso_routes.py",
+      "docs-authority/_iso_sheets.py"
+    ],
+    "value": "Route rule: rack elevation for a line is at least 300 mm above the higher end, so the riser is an expansion leg; covers the guided-cantilever need (max 0.16 m on IA-ACOH, IA-ALD, IA-MEAM, HDPE DN15)",
+    "units": "mm",
+    "where": "AQS-ISO-001, AQS-PIP-005",
+    "basis": "Guided-cantilever leg L = sqrt(3 E D dL / S) (AQS-PIP-005); HDPE E 900 MPa, S 4 MPa (study values)",
+    "sensitivity": "Larger dT on these lines would need a longer riser",
+    "replaced_by": "Stress analysis to ASME B31.3 Appendix S for the hot and thermoplastic lines",
+    "verification_test": "Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning)"
+  },
+  {
+    "id": "A-M-128",
+    "task": "X-PAR-11",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/balance.py"
+    ],
+    "value": "T6: all CO2 dosed to GROW_BED (S04 + S89 = 19.0 kg/d) is fixed at steady state, photosynthetic quotient 1.0, O2 = 13.82 kg/d on S87 to CRYO_O2; trim carries CO2 + H2O - O2. Leach dissolved gas bounded by fresh liquid inflow saturated at 25 C under 1 atm CO2 plus air O2/N2 (Henry Hcp CO2 3.3e-4, O2 1.3e-5, N2 6.4e-6 mol/m3/Pa); IA-LEACH-ASU 0.796 kg/d against a 2.89 kg/d bound",
+    "units": "kg/d",
+    "where": "AQS-PAR-003 Rev C",
+    "basis": "TAIZ2015 (photosynthesis stoichiometry, PQ near 1.0); SANDER2015 (Henry constants)",
+    "sensitivity": "PQ 0.9-1.1 moves S87 by +/-1.4 kg/d; uncaptured CO2 (bed leakage) lowers it",
+    "replaced_by": "Species balance at the cold box (X-PAR-11 remaining)",
+    "verification_test": "T-PAR-03 commissioning measurement: grow-bed enclosure CO2 dose and exhaust CO2/O2 by NDIR and paramagnetic analysers over 7 days, O2 release within 10 % of 32/44 x CO2 fixed; leach off-gas by headspace GC, desorbed gas below the Henry bound"
+  },
+  {
+    "id": "A-M-129",
+    "task": "X-PAR-11",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/param/gas_species.py"
+    ],
+    "value": "O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), organics as CH2O (1.066), H2 7.94, CO 0.571; NCG composition not counted; deficit 76.5 kg/d O2 with no source on the graph",
+    "units": "kg/d",
+    "where": "AQS-PAR-004",
+    "basis": "TURNS2012 ch. 2; TAIZ2015",
+    "sensitivity": "Fuel formula moves the combustion oxidant by about +/-5 %; the deficit sign does not change",
+    "replaced_by": "Owner decision on the O2 source (X-PAR-12) and the cold-box species split (X-PAR-11)",
+    "verification_test": "Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 %"
+  },
+  {
+    "id": "A-M-130",
+    "task": "X-INV-02D",
+    "needs_verification": true,
+    "files": [
+      "flow_graph/inventory/motor_designs.py"
+    ],
+    "value": "Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotropic Sr-ferrite Br 0.27 T, 6 mm; air gap 0.5 mm, recoil permeability 1.05, leakage 0.9, tooth-limited 0.8 T; electric loading 15 kA/m, J 5 A/mm2, iron loss 5 %, 8 poles; RE content of NdFeB 31 wt%; BLDC 3000 rpm, stepper 600 rpm",
+    "units": "T, mm, %",
+    "where": "AQS-INV-005 magnet comparison; MAGNET_COMPARISON.csv",
+    "basis": "COEY2010 ch. 11; IEC 60404-8-1; HENDERSHOT2010; WALTON2015",
+    "sensitivity": "Ferrite rotor volume scales with 1/B_gap; a thicker ferrite magnet or a spoke rotor narrows the gap",
+    "replaced_by": "First-article back-EMF and torque tests of both variants (X-INV-02B)",
+    "verification_test": "Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 %"
+  },
+  {
+    "id": "A-M-131",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator"
+  },
+  {
+    "id": "A-M-132",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "X-PAR-12 O2 source study basis",
+    "statement": "Grow-bed O2 is light-limited: net canopy quantum yield 0.045 mol CO2/mol absorbed, absorptance 0.90, LED 2.8 umol/J (WHEELER1996, KUSUMA2020); PEM electrolysis 55 kWh/kg H2 (IEA_GHR2023); EW anode O2 side reaction 2 % of current in chloride electrolyte (OBRIEN2005), not captured.",
+    "verification": "Measure bed CO2 drawdown (closed-chamber, IRGA) at DLI 17 against 30 g CO2/m2/d; electrolyser stack kWh/kg at commissioning; anode-hood O2 by paramagnetic analyser.",
+    "replace_when": "Measured canopy uptake or stack energy differs by > 20 %.",
+    "doc": "AQS-PAR-005"
+  }
 ]
