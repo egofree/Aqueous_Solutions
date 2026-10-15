@@ -72,5 +72,17 @@
    "value": 70,
    "note": "Assumption. Ports spread along X about the face center at Z 700."
   }
+ },
+ "hx5_coil": {
+  "material": "borosilicate glass 3.3",
+  "area_m2": 4.22,
+  "basis": "AQS-DUTY-049, natural convection case (agitator held), 7.941 kW rated",
+  "tube_od_mm": 25,
+  "tube_wall_mm": 3,
+  "tube_length_m": 53.7,
+  "arrangement": {
+   "value": "two concentric helices D 600 and 900 mm, 11.5 turns at 50 mm pitch, 600 mm tall, on four PTFE pads at z 100 mm",
+   "note": "Assumption. Envelope modeled as one annulus OD 925 / ID 575 x 600 mm."
+  }
  }
 }

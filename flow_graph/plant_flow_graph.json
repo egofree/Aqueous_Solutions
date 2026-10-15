@@ -2254,6 +2254,13 @@
           "glass_agitated": 2.65,
           "status": "study",
           "doc": "AQS-DUTY-049"
+        },
+        "hx5_coil": {
+          "material": "borosilicate glass 3.3",
+          "area_m2": 4.22,
+          "case": "glass_natural",
+          "status": "study",
+          "source": "AQS-DUTY-049"
         }
       }
     },

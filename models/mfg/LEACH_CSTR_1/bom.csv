@@ -8,3 +8,5 @@ item,description,qty,material,basis
 7,Outlet header DN50 on +Y face Z 700,1,CPVC,graph nozzle rule; header is assumption
 8,Outlet port stub DN25 placeholder bore not calculated,20,CPVC,assumption
 9,Cable gland boss IA-E-LEACH,1,CPVC,assumption; conductor not a hose
+10,HX-5 coil two concentric helices 25x3 mm tube 53.7 m 4.22 m2,1,borosilicate glass 3.3,AQS-DUTY-049; AQS-STD-002 3.3
+11,HX-5 coil support pad,4,PTFE,assumption

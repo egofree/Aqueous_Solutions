@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: F
+Revision: G
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -13,6 +13,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | D | Nitric and peroxide materials (AQS-DSN-OX-001). Sources S10 to S12. | 2026-10-15 |
 | E | H2 embrittlement review AQS-REV-H2-001; M6 applied to every H2-wetted unit. | 2026-10-15 |
 | F | Leach liquor temperature 70-85 C found in the repo; LEACH_CSTR_1 tank corrected from PVC-U to CPVC. | 2026-10-15 |
+| G | HX-5 adopted as a borosilicate glass 3.3 coil (X-MAT-16). | 2026-10-15 |
 
 ## 1. Rules
 
@@ -173,3 +174,9 @@ AQS-REV-H2-001, `docs-authority/H2_EMBRITTLEMENT_REVIEW.md`, applies M6 to every
 The Rev A to E text treated the leach liquor temperature as absent from the graph. It is in the repo: GLOSSARY gives Leach / Salria at 70–85 °C, and the AQS-DUTY-008 HX-5 duty is built at 77.5 °C. It is now on the LEACH_CSTR_1 node as `liquor_T_C` (77.5 °C, band 70–85 °C, study).
 
 Under M5 this exceeds PVC-U (60 °C). The tank, headers, and stubs are CPVC (limit 93 °C [S3], specific gravity 1.51 [S3]). This is the material AQS-NZ-001 had originally. The high-temperature trip is 88 °C (assumption). CPVC strength derates steeply with temperature (factor 0.25 at 82 °C for pressure pipe [S5]), so the wall check at 85 °C is part of the LEACH_CSTR_1 sizing task. Units on the same liquor loop with no temperature on the graph (CONTINUOUS_RECYCLE, FLOAT_SINK, S13_CLASS_TREAT) stay on PVC-U only if their liquor is at or below 60 °C. That check is X-MAT-09.
+
+### 3.3 HX-5 glass coil, Rev G
+
+Decision (owner approval 2026-10-15). HX-5 is a borosilicate glass 3.3 coil. Glass is inert to HCl and chlorate at 95 °C and conducts heat about six times better than PVDF (1.2 vs 0.18 W/mK), so the coil is smaller: 4.22 m² in the natural-convection case of AQS-DUTY-049, 2.65 m² if agitation is confirmed. The 4.22 m² case is built. Tube 25 × 3 mm, 53.7 m, two concentric helices D 600 and 900 mm (arrangement is an assumption, see AQS-REG-002). Glass density 2230 kg/m³ and permitted thermal shock 120 K per ISO 3585 (S17); Q3 supply 95 °C into liquor 70–85 °C is a 25 K step. The coil sits on PTFE pads. An agitator guard is held for X-MAT-09. Section 3.2's PVDF coil is superseded; the 88 °C trip stands.
+
+S17. ISO 3585:1998, Borosilicate glass 3.3 — Properties.

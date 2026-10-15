@@ -11,7 +11,7 @@ Measurement: metric
 | A | GF Type 546 / 546 Pro article numbers (family only) | 2026-09-27 |
 | B | N1–N12 locked. Vented PVC-C FKM SKUs from GF 546 Pro V ASTM list | 2026-09-27 |
 
-Wall: CPVC sheet 12 mm, floor 16 mm, per AQS-STD-002 Rev F (liquor 70–85 °C exceeds PVC-U; the 316L on the duty is withdrawn). The HX-5 Q3 ports at 95 °C are PVDF per AQS-STD-002 section 3.2.
+Wall: CPVC sheet 12 mm, floor 16 mm, per AQS-STD-002 Rev F (liquor 70–85 °C exceeds PVC-U; the 316L on the duty is withdrawn). HX-5 is a borosilicate glass 3.3 coil, 4.22 m² (AQS-DUTY-049 natural-convection case, 7.941 kW rated), two concentric helices of 25 × 3 mm tube, 53.7 m, on PTFE pads, entering through CPVC stubs at N6a/N6b with FKM gaskets (AQS-STD-002 section 3.3); the Q3 metal piping ends at a dielectric isolating flange outside the tank.
 Not PP, not 316L, not Ti. Cement: Weld-On 724 family on CPVC.
 
 Oxidizer isolation valves are **vented-ball PVC-C FKM** (hypochlorite /

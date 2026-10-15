@@ -1,12 +1,158 @@
 [
- {"id":"A-M-001","value":"5","units":"wt% H2O2","where":"WS_PEROX product_spec; AQS-DSN-OX-001","basis":"Bench SC-1/SC-2 strength; S32 dilute at 1.0 kg/L","sensitivity":"Cell current and O2 scale linearly","replaced_by":"Wet-bench recipe from the fab process sheet","task":"X-ELS-10","files":["docs-authority/OXIDIZER_REAGENTS.md"]},
- {"id":"A-M-002","value":"0.80","units":"-","where":"WS_PEROX cell faradaic efficiency","basis":"Study value for 2 e- ORR on carbon GDE","sensitivity":"Current 1/eff","replaced_by":"Cell test: H2O2 titration against charge passed","task":"X-ELS-10","files":["docs-authority/OXIDIZER_REAGENTS.md"]},
- {"id":"A-M-003","value":"0.050","units":"A/cm2","where":"WS_PEROX cell current density","basis":"Study value","sensitivity":"Area 1/j","replaced_by":"Cell polarization test","task":"X-ELS-10","files":["docs-authority/OXIDIZER_REAGENTS.md"]},
- {"id":"A-M-004","value":"2.5","units":"V","where":"WS_PEROX cell voltage","basis":"Study value","sensitivity":"Power linear","replaced_by":"Cell polarization test","task":"X-ELS-10","files":["docs-authority/OXIDIZER_REAGENTS.md"]},
- {"id":"A-M-005","value":"300 / 1000","units":"W/m2K","where":"HX-5 outside film, natural / agitated; AQS-DUTY-049","basis":"Study range; agitator held","sensitivity":"Area changes 1.6x across the range for glass","replaced_by":"Agitator selection and coil test","task":"X-MAT-11","files":["docs-authority/POLYMER_HX_SIZING.md"]},
- {"id":"A-M-006","value":"1500","units":"W/m2K","where":"HX8 shell-side film; AQS-DUTY-049","basis":"Study value, treated water","sensitivity":"Minor; PVDF wall controls","replaced_by":"Exchanger maker rating","task":"X-MAT-12","files":["docs-authority/POLYMER_HX_SIZING.md"]},
- {"id":"A-M-007","value":"0.0002","units":"m2K/W","where":"Fouling, AQS-DUTY-049","basis":"Study value","sensitivity":"Minor","replaced_by":"Operating record","task":"X-MAT-11","files":["docs-authority/POLYMER_HX_SIZING.md"]},
- {"id":"A-M-008","value":"88","units":"degC","where":"LEACH_CSTR_1 liquor high-temperature trip","basis":"5 K below CPVC 93 C limit (Spears)","sensitivity":"Protects the CPVC wall","replaced_by":"Wall check at temperature (unit task 02)","task":"MET-LEACH_CSTR_1-02","files":["docs-authority/duties/LEACH_CSTR_1.md"]},
- {"id":"A-M-009","value":"0","units":"kg/d","where":"IA-NIT-VENT, IA-HNO3-VENT","basis":"Breathing and upset only on the design day","sensitivity":"NOX_SCRUB load if absorber tail gas is continuous","replaced_by":"HNO3 absorber design (tail-gas flow)","task":"X-SAF-08","files":["docs-authority/OXIDIZER_REAGENTS.md"]},
- {"id":"A-M-010","value":"40","units":"degC","where":"WS_NITRIC storage maximum and trip","basis":"Study value","sensitivity":"PVC-U rating with nitric","replaced_by":"Tank thermal check","task":"X-SAF-09","files":["docs-authority/OXIDIZER_REAGENTS.md"]}
+ {
+  "id": "A-M-001",
+  "value": "5",
+  "units": "wt% H2O2",
+  "where": "WS_PEROX product_spec; AQS-DSN-OX-001",
+  "basis": "Bench SC-1/SC-2 strength; S32 dilute at 1.0 kg/L",
+  "sensitivity": "Cell current and O2 scale linearly",
+  "replaced_by": "Wet-bench recipe from the fab process sheet",
+  "task": "X-ELS-10",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ]
+ },
+ {
+  "id": "A-M-002",
+  "value": "0.80",
+  "units": "-",
+  "where": "WS_PEROX cell faradaic efficiency",
+  "basis": "Study value for 2 e- ORR on carbon GDE",
+  "sensitivity": "Current 1/eff",
+  "replaced_by": "Cell test: H2O2 titration against charge passed",
+  "task": "X-ELS-10",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ]
+ },
+ {
+  "id": "A-M-003",
+  "value": "0.050",
+  "units": "A/cm2",
+  "where": "WS_PEROX cell current density",
+  "basis": "Study value",
+  "sensitivity": "Area 1/j",
+  "replaced_by": "Cell polarization test",
+  "task": "X-ELS-10",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ]
+ },
+ {
+  "id": "A-M-004",
+  "value": "2.5",
+  "units": "V",
+  "where": "WS_PEROX cell voltage",
+  "basis": "Study value",
+  "sensitivity": "Power linear",
+  "replaced_by": "Cell polarization test",
+  "task": "X-ELS-10",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ]
+ },
+ {
+  "id": "A-M-005",
+  "value": "300 / 1000",
+  "units": "W/m2K",
+  "where": "HX-5 outside film, natural / agitated; AQS-DUTY-049",
+  "basis": "Study range; agitator held",
+  "sensitivity": "Area changes 1.6x across the range for glass",
+  "replaced_by": "Agitator selection and coil test",
+  "task": "X-MAT-11",
+  "files": [
+   "docs-authority/POLYMER_HX_SIZING.md"
+  ]
+ },
+ {
+  "id": "A-M-006",
+  "value": "1500",
+  "units": "W/m2K",
+  "where": "HX8 shell-side film; AQS-DUTY-049",
+  "basis": "Study value, treated water",
+  "sensitivity": "Minor; PVDF wall controls",
+  "replaced_by": "Exchanger maker rating",
+  "task": "X-MAT-12",
+  "files": [
+   "docs-authority/POLYMER_HX_SIZING.md"
+  ]
+ },
+ {
+  "id": "A-M-007",
+  "value": "0.0002",
+  "units": "m2K/W",
+  "where": "Fouling, AQS-DUTY-049",
+  "basis": "Study value",
+  "sensitivity": "Minor",
+  "replaced_by": "Operating record",
+  "task": "X-MAT-11",
+  "files": [
+   "docs-authority/POLYMER_HX_SIZING.md"
+  ]
+ },
+ {
+  "id": "A-M-008",
+  "value": "88",
+  "units": "degC",
+  "where": "LEACH_CSTR_1 liquor high-temperature trip",
+  "basis": "5 K below CPVC 93 C limit (Spears)",
+  "sensitivity": "Protects the CPVC wall",
+  "replaced_by": "Wall check at temperature (unit task 02)",
+  "task": "MET-LEACH_CSTR_1-02",
+  "files": [
+   "docs-authority/duties/LEACH_CSTR_1.md"
+  ]
+ },
+ {
+  "id": "A-M-009",
+  "value": "0",
+  "units": "kg/d",
+  "where": "IA-NIT-VENT, IA-HNO3-VENT",
+  "basis": "Breathing and upset only on the design day",
+  "sensitivity": "NOX_SCRUB load if absorber tail gas is continuous",
+  "replaced_by": "HNO3 absorber design (tail-gas flow)",
+  "task": "X-SAF-08",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ]
+ },
+ {
+  "id": "A-M-010",
+  "value": "40",
+  "units": "degC",
+  "where": "WS_NITRIC storage maximum and trip",
+  "basis": "Study value",
+  "sensitivity": "PVC-U rating with nitric",
+  "replaced_by": "Tank thermal check",
+  "task": "X-SAF-09",
+  "files": [
+   "docs-authority/OXIDIZER_REAGENTS.md"
+  ]
+ },
+ {
+  "value": "two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm pitch",
+  "units": "geometry",
+  "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
+  "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
+  "sensitivity": "Area fixed by AQS-DUTY-049; geometry affects fit and agitator clearance only",
+  "replaced_by": "Glass-coil vendor drawing",
+  "task": "X-MAT-16",
+  "files": [
+   "models/mfg/LEACH_CSTR_1/params.json"
+  ],
+  "id": "A-M-011"
+ },
+ {
+  "value": "4.22",
+  "units": "m2",
+  "where": "LEACH_CSTR_1 params hx5_coil",
+  "basis": "AQS-DUTY-049 glass natural case; liquor film 300 W/m2K (A-M-005)",
+  "sensitivity": "2.65 m2 if agitated; area roughly inverse to liquor film",
+  "replaced_by": "Coil heat-transfer test on the built tank",
+  "task": "X-MAT-16",
+  "files": [
+   "docs-authority/POLYMER_HX_SIZING.md"
+  ],
+  "id": "A-M-012"
+ }
 ]

@@ -28,6 +28,12 @@ for i in range(nx+1):
 for j in range(1, ny):
     for x in (t+fw/2, L-t-fw/2): holes.append((x, z0+t+fw/2+j*(Wt-2*t-fw)/ny))
 for (x, y) in holes: body = body.cut(cyl(6.5, tl+10, (x, y, HT-tl-10), (0,0,1)))
+C = P['hx5_coil']
+cx, cy = L/2, W/2
+coil = cq.Workplane().circle(462.5).circle(287.5).extrude(600).translate((cx, cy, tf+100))
+for (dx, dy) in ((375,0),(-375,0),(0,375),(0,-375)):
+    coil = coil.union(cyl(30, 100, (cx+dx, cy+dy, tf), (0,0,1)))
+body = body.union(coil)
 solid = body.val()
 out = H/"export"; out.mkdir(exist_ok=True)
 cq.exporters.export(body, str(out/"leach_cstr_1.step")); body.val().exportStl(str(out/"leach_cstr_1.stl"), 0.3, 0.3, True)
