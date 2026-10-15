@@ -143,7 +143,7 @@ Status. 371 positioned piped lines routed, 6339 m total. 0 piped lines wait on u
 | S34 | DN15 | P3 | WS_NITRIC | WET_BENCH | 2650 | 4400 | 4400 | -1200 | 12.7 | 3 |
 | S34B | DN15 | P1 | WS_PHOS | WET_BENCH | 2650 | 4600 | 0 | -1200 | 8.4 | 2 |
 | S89 | DN15 | M1 | HDR_CO2 | GROW_BED | 3050 | 14100 | 7050 | -950 | 25.1 | 3 |
-| S90 | DN15 | M1 | HABITATION | HDR_CO2 | 1600 | -2100 | -7050 | -3050 | 13.8 | 3 |
+| S90 | DN15 | P3 | HABITATION | HDR_CO2 | 1600 | -2100 | -7050 | -3050 | 13.8 | 3 |
 | IA-GREY-01 | DN50 | P2 | GREY_TREAT | LEACH_CSTR_1 | 2650 | -600 | 5300 | -14500 | 23.1 | 3 |
 | IA-CRU-01 | DN15 | P2 | CRU | LEACH_CSTR_1 | 1450 | -14400 | -1100 | -2500 | 19.4 | 3 |
 | IA-ACID-01 | DN15 | P2 | EVAP_ACID | LEACH_CSTR_1 | 1300 | -16025 | 1250 | -2500 | 21.1 | 3 |

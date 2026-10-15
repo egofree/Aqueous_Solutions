@@ -11,7 +11,7 @@ OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,44,24 V DC x44,20
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,15,22 kW hermetic x8; 0.25 kW hermetic x5; 0.75 kW hermetic x1; 2.2 kW hermetic x1,8
 OF-11,electronics,stepper driver,IEC 61800-5-1,11,24/48 V DC x11,5
 OF-12,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,12,6 BOM lines x3; 5 BOM lines x2; 13 BOM lines x1; 7 BOM lines x1; 11 BOM lines x1; 9 BOM lines x1; 17 BOM lines x1; 8 BOM lines x1; 4 BOM lines x1,12
-OF-13,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,11976,M10 x11976,150
+OF-13,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,11980,M10 x11980,150
 OF-14,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,48,M8 x 30 lid bolt with nut and washers x48,4
 OF-15,fastener,M12x40 hex bolt + nut + 2 washers,PVDF,36,M12x40 hex bolt + nut + 2 washers x36,1
 OF-16,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,28,M10 x 40 lid bolt with nut and washers x28,2
@@ -36,7 +36,7 @@ OF-34,instrument,level transmitter,"IEC 62828, PTFE lens",113,radar 80 GHz x113,
 OF-35,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,217,15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1,57
 OF-36,seal,"mechanical seal, single","SiC/SiC faces, FKM",144,EN 12756 x144,29
 OF-37,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",4881,DN15 x3575; DN50 x1094; DN20 x109; DN25 x44; DN65 x40; DN250 x7; DN32 x6; DN200 x3; DN300 x3,130
-OF-38,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1107,DN15 x972; DN20 x104; DN25 x31,41
+OF-38,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1109,DN15 x974; DN20 x104; DN25 x31,41
 OF-39,valve,isolation valve,"PP ball valve with HDPE stub ends, ISO 16135",212,DN15 x132; DN50 x66; DN20 x8; DN25 x6,58
 OF-40,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",192,DN15 x162; DN50 x26; DN65 x4,68
 OF-41,valve,isolation valve,"316L ball valve, ASME B16.34 Cl 150, RF flanged",146,DN15 x128; DN20 x14; DN25 x4,36

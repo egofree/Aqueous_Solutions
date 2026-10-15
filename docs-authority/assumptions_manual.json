@@ -1968,5 +1968,20 @@
   "sensitivity": "Larger dT on these lines would need a longer riser",
   "replaced_by": "Stress analysis to ASME B31.3 Appendix S for the hot and thermoplastic lines",
   "verification_test": "Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning)"
+ },
+ {
+  "id": "A-M-128",
+  "task": "X-PAR-11",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/balance.py"
+  ],
+  "value": "T6: all CO2 dosed to GROW_BED (S04 + S89 = 19.0 kg/d) is fixed at steady state, photosynthetic quotient 1.0, O2 = 13.82 kg/d on S87 to CRYO_O2; trim carries CO2 + H2O - O2. Leach dissolved gas bounded by fresh liquid inflow saturated at 25 C under 1 atm CO2 plus air O2/N2 (Henry Hcp CO2 3.3e-4, O2 1.3e-5, N2 6.4e-6 mol/m3/Pa); IA-LEACH-ASU 0.796 kg/d against a 2.89 kg/d bound",
+  "units": "kg/d",
+  "where": "AQS-PAR-003 Rev C",
+  "basis": "TAIZ2015 (photosynthesis stoichiometry, PQ near 1.0); SANDER2015 (Henry constants)",
+  "sensitivity": "PQ 0.9-1.1 moves S87 by +/-1.4 kg/d; uncaptured CO2 (bed leakage) lowers it",
+  "replaced_by": "Species balance at the cold box (X-PAR-11 remaining)",
+  "verification_test": "T-PAR-03 commissioning measurement: grow-bed enclosure CO2 dose and exhaust CO2/O2 by NDIR and paramagnetic analysers over 7 days, O2 release within 10 % of 32/44 x CO2 fixed; leach off-gas by headspace GC, desorbed gas below the Henry bound"
  }
 ]

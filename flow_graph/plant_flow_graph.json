@@ -11640,7 +11640,7 @@
         "value": 33.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: dry plastic + paper float 0.22 x 150.0"
+        "note": "AQS-DUTY-010: dry plastic + paper float 0.22 x 150.0 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -11683,7 +11683,7 @@
         "value": 28.9046,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456)"
+        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456) | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -11841,7 +11841,7 @@
         "value": 343.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17"
+        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -12033,8 +12033,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -13647,10 +13646,10 @@
       "forbidden": "HDR_O2, hab AHU",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.6517575950373788,
+        "value": 0.651757,
         "unit": "kg/d",
         "status": "study",
-        "note": "Not methanol. Dispatched to the genset."
+        "note": "Not methanol. Dispatched to the genset. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "BACKUP_GEN",
@@ -14233,7 +14232,7 @@
         "value": 51145.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building."
+        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -14455,7 +14454,7 @@
         "value": 13.304,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -14483,8 +14482,7 @@
         "sink_duty_basis": "CRYO_CO2 cooling 30 to -20 C plus condensation at about 20 bar, 282 kJ/kg"
       },
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -14761,8 +14759,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -14817,10 +14814,10 @@
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 5.023740598513941,
+        "value": 5.023741,
         "unit": "kg/d",
         "status": "study",
-        "note": "CO2 + 3 H2 \u2192 methanol + water. CO2 limits."
+        "note": "CO2 + 3 H2 \u2192 methanol + water. CO2 limits. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -14848,10 +14845,10 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 4.579140598513943,
+        "value": 4.579141,
         "unit": "kg/d",
         "status": "study",
-        "note": "Fuel draw reduced by the biogas correction."
+        "note": "Fuel draw reduced by the biogas correction. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -14921,7 +14918,7 @@
         "value": 0.36,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: food waste 15% of ration"
+        "note": "AQS-DUTY-010: food waste 15% of ration | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "MEOH",
@@ -15030,10 +15027,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1.6549096212978096,
+        "value": 1.65491,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d"
+        "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d",
@@ -15065,7 +15062,7 @@
         "value": 6.875,
         "unit": "kg/d",
         "status": "study",
-        "note": "S76 5.0 kg/d MeOH x 1.375 kg CO2/kg MeOH (complete oxidation, same factor as S73). Rev J."
+        "note": "S76 5.0 kg/d MeOH x 1.375 kg CO2/kg MeOH (complete oxidation, same factor as S73). Rev J. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "CRYO",
@@ -15168,8 +15165,7 @@
         "balance": "CRYO_CO2 remainder"
       },
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -15222,10 +15218,10 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "rate": {
-        "value": 0.0,
+        "value": 13.819629,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 19.006 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003)."
       },
       "params": {
         "hold_reason": "HOLD placeholder: the surplus O2 is the photosynthetic O2 (0.806 kg/d) in FARM AHU exhaust air at ~21 %. Capturing it means sending farm air into a process header (CRYO_O2), which the rule forbids, and it is already counted in S15. No clean endpoint.",
@@ -15318,7 +15314,7 @@
         "value": 0.61,
         "unit": "kg/d",
         "status": "study",
-        "note": "Phosphate feed 0.620 less dopant 0.010."
+        "note": "Phosphate feed 0.620 less dopant 0.010. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "50/50 split of the same band, 0.625 L/d dilute 1.0 kg/L",
@@ -15390,8 +15386,7 @@
         "rev_k_value": 11.616
       },
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -15411,7 +15406,7 @@
         "value": 4.021,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00"
+        "note": "AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "HAB",
@@ -15430,8 +15425,7 @@
         "material": "316L"
       },
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -16451,10 +16445,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.824501806448681,
+        "value": 2.824502,
         "unit": "kg/d",
         "status": "study",
-        "note": "One water per methanol."
+        "note": "One water per methanol. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17307,7 +17301,7 @@
         "value": 0.6254,
         "unit": "kg/d",
         "status": "study",
-        "note": "Shop scrap and spent solvent are not gas."
+        "note": "Shop scrap and spent solvent are not gas. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17334,10 +17328,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5228295461217779,
+        "value": 0.522829,
         "unit": "kg/d",
         "status": "study",
-        "note": "Passthrough. Biological feeds stay on the gas edge."
+        "note": "Passthrough. Biological feeds stay on the gas edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17367,7 +17361,7 @@
         "value": 0.6254,
         "unit": "kg/d",
         "status": "study",
-        "note": "Matches IA-DIG-GAS. Shop scrap is not in this edge."
+        "note": "Matches IA-DIG-GAS. Shop scrap is not in this edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17544,10 +17538,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 140.2503,
+        "value": 126.430669,
         "unit": "kg/d",
         "status": "study",
-        "note": "Compost passes the added trim. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Compost passes the added trim. | X-PAR-02 TF: compost passes the trim (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17604,10 +17598,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 127.029664,
+        "value": 113.210032,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-014. | X-PAR-02 TF: nutrient surplus by difference (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17917,8 +17911,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -17938,7 +17931,7 @@
         "value": 1.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost."
+        "note": "AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18094,7 +18087,7 @@
         "value": 376.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18138,7 +18131,7 @@
         "value": 33.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18531,8 +18524,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -18704,10 +18696,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 130.096188,
+        "value": 116.276558,
         "unit": "kg/d",
         "status": "study",
-        "note": "The fixed carbon leaves in the trim. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "The fixed carbon leaves in the trim. | X-PAR-02 TF: trim less the photosynthetic O2 (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -18825,7 +18817,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 44.906465,
+        "value": 31.086836,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -18867,8 +18859,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -19283,10 +19274,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19345,7 +19336,7 @@
         "value": 30.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19354,8 +19345,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -19372,10 +19362,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.4794114277464905,
+        "value": 4.479412,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19480,7 +19470,7 @@
         "value": 0.62,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19520,7 +19510,7 @@
         "value": 0.3454,
         "unit": "kg/d",
         "status": "study",
-        "note": "Feed 0.36 less biogenic methanol. The residue had been larger than the feed allowed."
+        "note": "Feed 0.36 less biogenic methanol. The residue had been larger than the feed allowed. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -19791,10 +19781,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 14.616,
+        "value": 0.796371,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.0000 kg/d); above the Henry bound, X-PAR-11 (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.0000 kg/d); Henry bound 2.892 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20039,7 +20029,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-DIG-SOL"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-DIG-SOL | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20103,7 +20093,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-COMP-CO2"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-COMP-CO2 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20112,8 +20102,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -20274,7 +20263,7 @@
         "value": 0.64,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20304,7 +20293,7 @@
         "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "From the still. Same mass as before."
+        "note": "From the still. Same mass as before. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20394,7 +20383,7 @@
         "value": 0.44,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20403,8 +20392,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -20484,7 +20472,7 @@
         "value": 0.06,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20544,7 +20532,7 @@
         "value": 0.25,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20553,8 +20541,7 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "O2": 0.99,
-        "Ar": 0.01
+        "CO2": 1.0
       }
     },
     {
@@ -20695,10 +20682,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.19124791074258177,
+        "value": 0.191248,
         "unit": "kg/d",
         "status": "study",
-        "note": "Ethanol dehydrogenation. n \u00d7 44.053."
+        "note": "Ethanol dehydrogenation. n \u00d7 44.053. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20763,10 +20750,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.25195250602357333,
+        "value": 0.251952,
         "unit": "kg/d",
         "status": "study",
-        "note": "Acetaldehyde plus oxygen."
+        "note": "Acetaldehyde plus oxygen. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21041,10 +21028,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.09641947037754683,
+        "value": 0.09642,
         "unit": "kg/d",
         "status": "study",
-        "note": "Ammonia limits the four-reagent condensation."
+        "note": "Ammonia limits the four-reagent condensation. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21199,10 +21186,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.2051224238153955,
+        "value": 0.205123,
         "unit": "kg/d",
         "status": "study",
-        "note": "Addition. The smaller feed limits."
+        "note": "Addition. The smaller feed limits. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21263,10 +21250,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.23282954612177795,
+        "value": 0.232829,
         "unit": "kg/d",
         "status": "study",
-        "note": "Acetate exchange."
+        "note": "Acetate exchange. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21292,10 +21279,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.17873453029690525,
+        "value": 0.178735,
         "unit": "kg/d",
         "status": "study",
-        "note": "Everything that is not the acetate."
+        "note": "Everything that is not the acetate. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21494,10 +21481,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.2099725848244856,
+        "value": 0.209973,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026"
+        "note": "AQS-DUTY-026 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21531,7 +21518,7 @@
         "value": 0.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21562,7 +21549,7 @@
         "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21622,7 +21609,7 @@
         "value": 0.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21743,7 +21730,7 @@
         "value": 0.9,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21866,7 +21853,7 @@
         "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21926,7 +21913,7 @@
         "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21956,7 +21943,7 @@
         "value": 0.55,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21987,7 +21974,7 @@
         "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22080,7 +22067,7 @@
         "value": 0.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22443,7 +22430,7 @@
         "value": 0.75,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed."
+        "note": "AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22868,7 +22855,7 @@
         "value": 0.25,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22928,7 +22915,7 @@
         "value": 0.8,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22987,10 +22974,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.25,
+        "value": 0.250001,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds."
+        "note": "AQS-DUTY-031. Fruit gutter and vegetable beds. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23111,10 +23098,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 19393,
+        "value": 19393.000001,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23142,10 +23129,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 9697,
+        "value": 9697.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23204,10 +23191,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 19393,
+        "value": 19393.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23235,10 +23222,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 9697,
+        "value": 9697.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it."
+        "note": "AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23331,7 +23318,7 @@
         "value": 0.12,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter."
+        "note": "AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24055,7 +24042,7 @@
         "value": 0.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24271,7 +24258,7 @@
         "value": 0.29,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24356,7 +24343,7 @@
         "value": 0.1896,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24539,7 +24526,7 @@
         "value": 0.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-045. Clover on worm castings. Cuttings return."
+        "note": "AQS-DUTY-045. Clover on worm castings. Cuttings return. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24881,7 +24868,7 @@
         "value": 0.4,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-049"
+        "note": "AQS-DUTY-049 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25753,7 +25740,7 @@
         "value": 0.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "Solvent cut. Replaces the direct yeast-to-store edge."
+        "note": "Solvent cut. Replaces the direct yeast-to-store edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26086,7 +26073,7 @@
         "value": 1.18,
         "unit": "kg/d",
         "status": "study",
-        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
+        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "HAB",
@@ -26116,7 +26103,7 @@
         "value": 1.18,
         "unit": "kg/d",
         "status": "study",
-        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted."
+        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
@@ -26640,7 +26627,7 @@
         "value": 71604.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "S62 + S71. Closed aisle. No stack."
+        "note": "S62 + S71. Closed aisle. No stack. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -26819,10 +26806,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 0.466188,
+        "value": 0.466189,
         "unit": "kg/d",
         "status": "study",
-        "note": "Closes the silicon-carbide carbon. Same mass as the CO. Not IA-NUT-LEACH."
+        "note": "Closes the silicon-carbide carbon. Same mass as the CO. Not IA-NUT-LEACH. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "NUT",
       "to_sector_id": "WET",
@@ -26875,10 +26862,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.23282954612177795,
+        "value": 0.232829,
         "unit": "kg/d",
         "status": "study",
-        "note": "Equals IA-IL. The pretreat does not store it."
+        "note": "Equals IA-IL. The pretreat does not store it. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "FARM",
@@ -27210,7 +27197,7 @@
         "value": 24.31,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-SAF-07 energy balance. S67 117.44 kg/d cooled 300->60 C at cp 1.08 kJ/kgK = 30439 kJ/d; water 25 C to vapour at 60 C 2504 kJ/kg; evaporated 12.15 kg/d; spray 2.0 x evaporation"
+        "note": "X-SAF-07 energy balance. S67 117.44 kg/d cooled 300->60 C at cp 1.08 kJ/kgK = 30439 kJ/d; water 25 C to vapour at 60 C 2504 kJ/kg; evaporated 12.15 kg/d; spray 2.0 x evaporation | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "S67 117.44 kg/d cooled 300->60 C at cp 1.08 kJ/kgK = 30439 kJ/d; water 25 C to vapour at 60 C 2504 kJ/kg; evaporated 12.15 kg/d; spray 2.0 x evaporation",

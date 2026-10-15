@@ -180,7 +180,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S34 | WS_NITRIC | WET_BENCH | DN15 | P3 | oxidizer, HF or PVDF unit | 12.3 | WS_NITRIC → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S34B | WS_PHOS | WET_BENCH | DN15 | P1 | acid or brine, at or below 60 C | 7.3 | WS_PHOS → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S89 | HDR_CO2 | GROW_BED | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 27.9 | HDR_CO2 → GROW_BED, orthogonal × 1.2 (placement_study (STUDY); placement_report) | edge line_DN |
-| S90 | HABITATION | HDR_CO2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 12.7 | HABITATION → HDR_CO2, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | edge line_DN |
+| S90 | HABITATION | HDR_CO2 | DN15 | P3 | process vent gas | 12.7 | HABITATION → HDR_CO2, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | edge line_DN |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | DN50 | P2 | hot leach liquor | 21.3 | GREY_TREAT → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | CRU → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 22.2 | EVAP_ACID → LEACH_CSTR_1, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 1 m/s, ρ 1100; min DN15 |

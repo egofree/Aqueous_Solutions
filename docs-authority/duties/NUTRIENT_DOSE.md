@@ -17,3 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/NUTRIENT_DOSE.stl`.
 
 8. Open items. No holdup basis for this class.
+9. Balance (AQS-PAR-003 Rev C). IA-NUT-LEACH 113.210 kg/d by difference (T6).

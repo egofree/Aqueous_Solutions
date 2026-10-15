@@ -163,7 +163,7 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | FARM | CLOVER | transfer pump IA-NECTAR to BEES | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | COMPOST | transfer pump IA-CLOSE-2 to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | COMPOST | transfer pump IA-CLOSE-7 to MEOH_TANK | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| FARM | COMPOST | transfer pump IA-COMP-OUT to NUTRIENT_DOSE | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 140.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| FARM | COMPOST | transfer pump IA-COMP-OUT to NUTRIENT_DOSE | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 126.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | CRAYFISH | transfer pump IA-CLOSE-11 to IMID | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | DUCKWEED | transfer pump IA-WEED-SUMP to FISH_SUMP | BLDC | 57 mm (NEMA 23 flange) | 0.0275 | 24 V DC | S1 | 1 | 9697.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | EMETH | transfer pump IA-EM-CH4 to MEOH_TANK | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -172,7 +172,7 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | FARM | GLYOXAL | transfer pump IA-GLX to IMID | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | GLYOXAL | transfer pump IA-GLX-H2O to ROOF_TANK | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | GROW_BED | transfer pump IA-AZ-IN to AZOLLA_BED | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| FARM | GROW_BED | transfer pump IA-BED-COMP to COMPOST | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 130.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| FARM | GROW_BED | transfer pump IA-BED-COMP to COMPOST | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | 1 | 116.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | GROW_BED | transfer pump IA-BED-SUMP to FISH_SUMP | BLDC | 57 mm (NEMA 23 flange) | 0.0537 | 24 V DC | S1 | 1 | 18909.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | GROW_BED | transfer pump IA-COMP-01 to HTC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 3.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | GROW_BED | transfer pump IA-DR-IN to DUAL_ROOT | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | 1 | 20.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -337,7 +337,7 @@ Rules for unsized items: one transfer pump per liquid outlet line at 10 m head a
 | FARM | NUTRIENT_DOSE | on/off valve S07 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | 1 | assumed one per dosed line |
 | FARM | NUTRIENT_DOSE | transfer pump IA-NUT-01 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 13.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | NUTRIENT_DOSE | transfer pump IA-NUT-BED to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 129.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| FARM | NUTRIENT_DOSE | transfer pump IA-NUT-LEACH to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0004 | 24 V DC | S3 | 1 | 127.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| FARM | NUTRIENT_DOSE | transfer pump IA-NUT-LEACH to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | 1 | 113.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | NUTRIENT_DOSE | transfer pump IA-SIC-RET to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 0.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FARM | NUTRIENT_DOSE | transfer pump S07 to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | 1 | 2.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 

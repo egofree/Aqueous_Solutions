@@ -27,6 +27,17 @@ def _unit_resid(g, u):
             r -= v if e['from_unit_id'] == u else 0.0
     return r
 
+CO2_EDGES = ('S04', 'S67B', 'S73', 'S85', 'S89', 'S90', 'IA-COMP-CO2', 'IA-NOX-CO2', 'IA-ASU-CO2', 'IA-CO2-RET', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2')
+LEACH_SOLIDS = ('IA-FEED-01', 'IA-HOP-01', 'S16', 'IA-BAG-01', 'IA-SIC-RET', 'IA-REC-01')     # solids and the equilibrated EW recycle carry no fresh dissolved gas
+HENRY = {'CO2': (3.3e-4, 101325.0, 44.01), 'O2': (1.3e-5, 0.2095*101325, 32.00), 'N2': (6.4e-6, 0.7808*101325, 28.01)}   # Hcp mol/(m3 Pa) at 298 K [SANDER2015], partial pressure Pa, g/mol
+
+def henry_bound(g):
+    """Upper bound on gas desorbed from the leach liquor: every fresh liquid inflow saturated at 25 C under 1 atm CO2 (bounding) plus air O2/N2."""
+    gkg = sum(H*p*M/1000.0 for H, p, M in HENRY.values())/1000.0          # kg gas per kg liquor (density 1000 kg/m3)
+    flow = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['to_unit_id'] == 'LEACH_CSTR_1' and e['presence'] == 'present'
+               and 'mass' in (e.get('layers') or []) and e['stream_id'] not in LEACH_SOLIDS)
+    return flow*gkg
+
 def physics(g):
     """Transfer functions that replace the held study rates which X-SAF-10 left inconsistent (A-M-120, AQS-PAR-003 section 0).
     T1 closed greenhouse at steady state: transpiration = irrigation - drains. The terrace has no CO2 supply and no harvest edge, so net
@@ -40,7 +51,15 @@ def physics(g):
     v = lambda k: float(E[k]['rate']['value'] or 0)
     def put(k, x, why):
         E[k]['rate']['value'] = round(x, 6)
-        E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | ' + PHYS_TAG)[0] + f' | {PHYS_TAG}: {why} (AQS-PAR-003).'
+        E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | X-PAR-02')[0] + f' | {PHYS_TAG}: {why} (AQS-PAR-003).'
+    # T6 grow-bed net photosynthesis (X-PAR-11): CO2 + H2O -> CH2O + O2, PQ 1.0 [TAIZ2015]; all CO2 dosed to the bed is fixed at steady state
+    #    (the dose is sized to uptake, AQS-DUTY-011). O2 = 32/44 x CO2 leaves on S87 to CRYO_O2; the trim carries CO2 + H2O - O2.
+    co2 = v('S04') + v('S89'); put('S87', co2*32.0/44.01, f'grow-bed photosynthetic O2 = 32/44 x {co2:.3f} kg/d CO2 (PQ 1.0, TAIZ2015)')
+    E['S87']['composition'] = {'O2': 0.99, 'Ar': 0.01}
+    for u, k, why in (('GROW_BED', 'IA-BED-COMP', 'trim less the photosynthetic O2'), ('COMPOST', 'IA-COMP-OUT', 'compost passes the trim'), ('NUTRIENT_DOSE', 'IA-NUT-LEACH', 'nutrient surplus by difference')):
+        r = _unit_resid(g, u); put(k, v(k) + r, why)
+    for k in CO2_EDGES:
+        if k in E: E[k]['composition'] = {'CO2': 1.0}
     put('IA-TERR-VAP', v('S40') - v('S41') - v('S42'), 'transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest')
     put('IA-HVAC-COND', v('IA-TERR-VAP') + v('IA-BED-VAP') + v('IA-HAB-VAP'), 'condensate = greenhouse vapour in')
     draw = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['from_unit_id'] == 'HDR_O2' and e['stream_id'] != 'IA-O2-RET'
@@ -51,7 +70,9 @@ def physics(g):
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):
         put(k, v(k) + d, f'roof-tank shortfall {d:+.4f} kg/d by difference on the potable path')
     a = _unit_resid(g, 'CRYO_ASU')
-    put('IA-LEACH-ASU', v('IA-LEACH-ASU') - a, f'closes leach and cold box ({-a:+.4f} kg/d); above the Henry bound, X-PAR-11')
+    lim = henry_bound(g)
+    put('IA-LEACH-ASU', v('IA-LEACH-ASU') - a, f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')
+    assert v('IA-LEACH-ASU') <= lim + 1e-6, ('IA-LEACH-ASU above the Henry-law bound', v('IA-LEACH-ASU'), lim)
     return d, a
 
 def reconcile(g):
@@ -80,18 +101,18 @@ ROOT_CAUSE = ("X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.1
   "made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared "
   "small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 "
   "supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short "
-  "water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. Separate finding: GROW_BED takes 19.0 kg/d CO2 (S04 + S89) "
-  "with its photosynthetic O2 (32/44 x CO2 = 13.8 kg/d at PQ 1.0) lumped in the trim; S87 is retired. That and the IA-LEACH-ASU excess over "
-  "the Henry bound are task X-PAR-11 (gas-exchange species layer). Verification: T-PAR-02 (A-M-123).")
+  "water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, "
+  "leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the "
+  "leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).")
 
 def report(R):
     E, x0, x = R['E'], R['x0'], R['x']
     ch = sorted([(abs(x[i] - x0[i]), i) for i in R['free'] if abs(x[i] - x0[i]) > 1e-4], reverse=True)
     gross = [i for _, i in ch if abs(x[i] - x0[i]) > TOL*max(x0[i], 0.05)]
     off0 = [(R['nodes'][k], R['r0'][k]) for k in range(len(R['nodes'])) if abs(R['r0'][k]) > 1e-4]
-    L = ['# Mass balance reconciliation', '', 'Document number: AQS-PAR-003', 'Revision: B', 'Date: 2026-10-15',
+    L = ['# Mass balance reconciliation', '', 'Document number: AQS-PAR-003', 'Revision: C', 'Date: 2026-10-15',
          'Authority: AQS-PLAN-007 X-PAR-02. Generated by `flow_graph/param/balance.py`. Method NARASIMHAN2000 (minimum weighted least squares on the held study rates; transfer-function and stoichiometric edges held).', '',
-         '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue. | 2026-10-15 |', '| B | Owner: no fudge. X-SAF-10 imbalance (IA-TERR-VAP / IA-O2-RET, 2.824 kg/d) traced and fixed by transfer functions T1-T5; reconciled moves within measurement tolerance. | 2026-10-15 |', '', '## 0. Root cause and physics fix', '', ROOT_CAUSE, '',
+         '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue. | 2026-10-15 |', '| C | X-PAR-11 T6: grow-bed photosynthetic O2 on S87; leach dissolved gas under the Henry bound; CO2 edges carry CO2. | 2026-10-15 |', '| B | Owner: no fudge. X-SAF-10 imbalance (IA-TERR-VAP / IA-O2-RET, 2.824 kg/d) traced and fixed by transfer functions T1-T5; reconciled moves within measurement tolerance. | 2026-10-15 |', '', '## 0. Root cause and physics fix', '', ROOT_CAUSE, '',
          f"Mass edges {len(E)}; held by a transfer function or stoichiometry {len(E) - len(R['free'])}; reconciled {len(R['free'])}. Units {len(R['nodes'])}.",
          f"Before: {len(off0)} units out of balance (sum of residuals {sum(abs(v) for _, v in off0):.3f} kg/d). After: max unit residual {np.abs(R['r']).max():.2e} kg/d. Negative rates after reconciliation: {int((x < -1e-9).sum())}.", '',
          '## 1. Units out of balance before reconciliation', '', '| Unit | In - out, kg/d |', '| --- | --- |'] + [f'| {n} | {v:+.4f} |' for n, v in off0] + [

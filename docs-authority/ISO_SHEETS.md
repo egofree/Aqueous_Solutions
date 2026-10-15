@@ -21,7 +21,7 @@ Basis: route rule of AQS-ISO-001; elbow take-off ASME B16.9 long-radius (metal) 
 | F1 | FRP vinyl ester | 20 | 1 | 30.4 | 3 | 2 | 12 |
 | F1 | FRP vinyl ester | 200 | 1 | 5.3 | 2 | 2 | 6 |
 | F1 | FRP vinyl ester | 250 | 3 | 7.4 | 4 | 6 | 14 |
-| M1 | 316L ASTM A312 | 15 | 64 | 1172.3 | 186 | 128 | 614 |
+| M1 | 316L ASTM A312 | 15 | 63 | 1158.7 | 183 | 126 | 605 |
 | M1 | 316L ASTM A312 | 20 | 7 | 116.9 | 19 | 14 | 62 |
 | M1 | 316L ASTM A312 | 25 | 2 | 42.2 | 6 | 4 | 21 |
 | M2 | CS ASTM A106 Gr B | 15 | 8 | 116.1 | 22 | 16 | 67 |
@@ -32,7 +32,7 @@ Basis: route rule of AQS-ISO-001; elbow take-off ASME B16.9 long-radius (metal) 
 | P1 | PVC-U Sch 80 ASTM D1785 | 65 | 2 | 58.5 | 4 | 4 | 18 |
 | P2 | CPVC Sch 80 ASTM F441 | 15 | 28 | 594.5 | 84 | 56 | 276 |
 | P2 | CPVC Sch 80 ASTM F441 | 50 | 21 | 446.7 | 63 | 42 | 214 |
-| P3 | PVDF SDR 21 ISO 10931 | 15 | 14 | 186.1 | 41 | 28 | 121 |
+| P3 | PVDF SDR 21 ISO 10931 | 15 | 15 | 199.8 | 44 | 30 | 130 |
 | P3 | PVDF SDR 21 ISO 10931 | 32 | 1 | 7.4 | 3 | 2 | 8 |
 | P3 | PVDF SDR 21 ISO 10931 | 50 | 2 | 43.1 | 6 | 4 | 20 |
 | P3 | PVDF SDR 21 ISO 10931 | 300 | 1 | 5.0 | 2 | 2 | 6 |
@@ -178,7 +178,7 @@ Basis: route rule of AQS-ISO-001; elbow take-off ASME B16.9 long-radius (metal) 
 | S34 | 15 | P3 | WS_NITRIC | WET_BENCH | 12.59 | 3 | [svg](iso/S34.svg) |
 | S34B | 15 | P1 | WS_PHOS | WET_BENCH | 8.41 | 2 | [svg](iso/S34B.svg) |
 | S89 | 15 | M1 | HDR_CO2 | GROW_BED | 24.92 | 3 | [svg](iso/S89.svg) |
-| S90 | 15 | M1 | HABITATION | HDR_CO2 | 13.57 | 3 | [svg](iso/S90.svg) |
+| S90 | 15 | P3 | HABITATION | HDR_CO2 | 13.74 | 3 | [svg](iso/S90.svg) |
 | IA-GREY-01 | 50 | P2 | GREY_TREAT | LEACH_CSTR_1 | 22.87 | 3 | [svg](iso/IA-GREY-01.svg) |
 | IA-CRU-01 | 15 | P2 | CRU | LEACH_CSTR_1 | 19.39 | 3 | [svg](iso/IA-CRU-01.svg) |
 | IA-ACID-01 | 15 | P2 | EVAP_ACID | LEACH_CSTR_1 | 21.01 | 3 | [svg](iso/IA-ACID-01.svg) |

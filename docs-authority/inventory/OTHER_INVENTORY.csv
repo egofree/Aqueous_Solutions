@@ -1749,7 +1749,7 @@ HAB,HAB,COMPOST_TOILET,instrument,pressure transmitter,0-10 bar,"ceramic diaphra
 HAB,HAB,COMPOST_TOILET,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,S12: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,S78: 2 per support (assumed)
-HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S90: 2 per support (assumed)
+HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,S90: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-HAB-VAP: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-FEC-01: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-SLEEP: 2 per support (assumed)
@@ -1758,7 +1758,7 @@ HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-WA
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-BLK-01: 2 per support (assumed)
 HAB,HAB,HABITATION,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 HAB,HAB,HABITATION,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-HAB,HAB,HABITATION,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,S90: AQS-PIP-005 span count
+HAB,HAB,HABITATION,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",13,S90: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-HAB-VAP: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,S12: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,S78: AQS-PIP-005 span count

@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_O2.stl` is the box, not the internal. FreeCAD is not in this session.
 
 8. Open items. No diameter on this node.
-9. Balance (AQS-PAR-003 Rev B). S83 = IA-ASU-O2 = 44.906 kg/d (T3).
+9. Balance (AQS-PAR-003 Rev C). S87 13.820 kg/d photosynthetic O2 in; IA-ASU-O2 31.087 kg/d; S83 44.906 kg/d = header draw (T3, T6).

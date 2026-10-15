@@ -17,3 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/GROW_BED.stl`.
 
 8. Open items. If this node is also a reservoir, that volume is not the two-minute holdup.
+9. Balance (AQS-PAR-003 Rev C). Net photosynthesis (T6): CO2 in 19.006 kg/d fixed; O2 13.820 kg/d out on S87; trim IA-BED-COMP 116.277 kg/d.
