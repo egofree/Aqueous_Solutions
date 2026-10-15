@@ -7865,8 +7865,7 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        },
-        "bed_h2o_base": 16.7
+        }
       }
     },
     {
@@ -12977,7 +12976,7 @@
         "value": 354.405473,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -15857,7 +15856,7 @@
         "value": 221.060073,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16538,10 +16537,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 23.857143,
+        "value": 92.641779,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: bed irrigation 16.7 + dual-root ET 7.16 drawn through the bed (AQS-PAR-003)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: bed ET 64.85 + dual-root ET 27.79 drawn through the bed (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17089,10 +17088,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 16.7,
+        "value": 64.849245,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: 28 m2 x 2.316 kg/m2/d: BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2, scaled to 30.3 g CO2/m2/d (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -17150,7 +17149,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 61.033143,
+        "value": 129.817779,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet. | X-PAR-02 TF: condensate = greenhouse vapour in (AQS-PAR-003)."
@@ -17942,7 +17941,7 @@
         "value": 211.060034,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "CRYO",
@@ -25706,10 +25705,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.946429,
+        "value": 34.740667,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-P9. Dual-root supply. | X-PAR-02 TF: ET 7.16 kg/d (12 m2 at the bed rate 0.596 kg/m2/d) / (1 - 0.2 drain) (PLOSONE2017_DRAIN) (AQS-PAR-003)."
+        "note": "AQS-P9. Dual-root supply. | X-PAR-02 TF: ET 27.79 kg/d (12 m2 at the bed rate 2.316 kg/m2/d) / (1 - 0.2 drain) (PLOSONE2017_DRAIN) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25737,7 +25736,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.789286,
+        "value": 6.948133,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-P9. Returns to the bed, not the fish tank. | X-PAR-02 TF: drain 20% of supply back to the bed (AQS-PAR-003)."
@@ -28071,7 +28070,7 @@
         "value": 213.885473,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WTR",
@@ -35130,7 +35129,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.157143,
+        "value": 27.792534,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: transpiration to the CRYO AHU coil (AQS-PAR-003)."

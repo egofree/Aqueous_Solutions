@@ -11,6 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
 CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
 NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20; SWARF = 0.10
+BVAD_TOM_T, BVAD_TOM_CO2 = 2.77, 36.24   # BVAD2022 Table 4-91 tomato transpiration kg/m2/d and CO2 uptake g/m2/d
 BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
@@ -43,12 +44,14 @@ def tf(g, ps=None):
     if 'IA-DR-VAP' not in E:
         from flow_graph.param.o2_close import _edge
         g['edges'].append(_edge('IA-DR-VAP', 'DUAL_ROOT', 'CRYO_AHU', 'G', ['mass'], 'dual-root transpiration', 0, 'kg/d', 'FARM', 'CRYO', {'H2O': 1.0})); E = {e['stream_id']: e for e in g['edges']}
-    P = N['DUAL_ROOT']['params']; b0 = P.setdefault('bed_h2o_base', E['IA-BED-H2O']['rate']['value'])
-    from flow_graph.param.o2_close import BED_M2
-    adr = (lambda d: d[0]*d[1]/1e6)(P['size_mm']); et = b0/BED_M2*adr; sup = et/(1 - DRAIN)
-    put('IA-DR-IN', sup, f'ET {et:.2f} kg/d ({adr:.0f} m2 at the bed rate {b0/BED_M2:.3f} kg/m2/d) / (1 - {DRAIN} drain) (PLOSONE2017_DRAIN)')
+    from flow_graph.param.o2_close import BED_M2, CO2_M2
+    P = N['DUAL_ROOT']['params']; P.pop('bed_h2o_base', None)
+    t_m2 = BVAD_TOM_T*CO2_M2/BVAD_TOM_CO2; bed_et = t_m2*BED_M2; b0 = bed_et       # BVAD tomato water/CO2 ratio at the bed's light-limited CO2
+    put('IA-BED-VAP', bed_et, f'{BED_M2:.0f} m2 x {t_m2:.3f} kg/m2/d: BVAD2022 tomato {BVAD_TOM_T} kg/m2/d per {BVAD_TOM_CO2} g CO2, scaled to {CO2_M2:.1f} g CO2/m2/d')
+    adr = (lambda d: d[0]*d[1]/1e6)(P['size_mm']); et = t_m2*adr; sup = et/(1 - DRAIN)
+    put('IA-DR-IN', sup, f'ET {et:.2f} kg/d ({adr:.0f} m2 at the bed rate {t_m2:.3f} kg/m2/d) / (1 - {DRAIN} drain) (PLOSONE2017_DRAIN)')
     put('IA-DR-OUT', sup - et, f'drain {DRAIN:.0%} of supply back to the bed'); put('IA-DR-VAP', et, 'transpiration to the CRYO AHU coil')
-    put('IA-BED-H2O', b0 + et, f'bed irrigation {b0} + dual-root ET {et:.2f} drawn through the bed')
+    put('IA-BED-H2O', b0 + et, f'bed ET {b0:.2f} + dual-root ET {et:.2f} drawn through the bed')
     # OIL_FRAC cuts (replaces the ASF fit, a Fischer-Tropsch growth law that does not describe random-scission cracking): thermal pyrolysis
     # of a 50/50 PE/PP float, oil 34 % C7-C12, 31.5 % C13-C20, 34.5 % C21-C40 (SU2018_PYRO: LDPE 24/30/46, PP 44/33/23), spread uniformly
     # over the carbon numbers of each reported band and re-binned to the plant cuts; C29+ recycled to extinction (re-cracked at the same split).
