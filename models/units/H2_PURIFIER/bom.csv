@@ -11,3 +11,4 @@ item,description,qty,material,basis
 10,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
 11,support: U-bolt with guide DN15,28,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 12,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+13,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004

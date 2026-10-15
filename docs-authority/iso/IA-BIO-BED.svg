@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,478.7 560.0,273.3 484.7,316.8 40.0,60.0 40.0,135.1" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="372.0">Z +2600</text>
-<text x="528.4" y="291.0">X -1100</text>
-<text x="268.4" y="184.4">Y +6500</text>
-<text x="46.0" y="93.5">Z -950</text>
-<circle cx="560.0" cy="478.7" r="5" fill="black"/><text x="568.0" y="492.7">BIOFILTER</text>
-<circle cx="40.0" cy="135.1" r="5" fill="none" stroke="black"/><text x="48.0" y="149.1">GROW_BED</text>
+<polyline points="560.0,334.9 560.0,224.9 442.8,292.6 40.0,60.0 40.0,100.2" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="275.9">Z +2600</text>
+<text x="507.4" y="254.7">X -3200</text>
+<text x="247.4" y="172.3">Y +11000</text>
+<text x="46.0" y="76.1">Z -950</text>
+<circle cx="560.0" cy="334.9" r="5" fill="black"/><text x="568.0" y="348.9">BIOFILTER</text>
+<circle cx="40.0" cy="100.2" r="5" fill="none" stroke="black"/><text x="48.0" y="114.2">GROW_BED</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-BIO-BED</text>
 <text x="20" y="614">DN20  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">BIOFILTER -> GROW_BED</text>
-<text x="20" y="642">pipe 11.07 m in 5 pieces; cut 2587 1073 6000 473 937 mm</text>
+<text x="20" y="642">pipe 17.67 m in 5 pieces; cut 2587 3173 6000 4973 937 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-BIO-BED</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-BIO-BED</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 2f3abb50   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,253.1 560.0,162.9 389.1,261.6 40.0,60.0 40.0,425.1" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="204.0">Z +3200</text>
-<text x="480.6" y="208.2">X -7000</text>
-<text x="220.6" y="156.8">Y +14300</text>
-<text x="46.0" y="238.5">Z -12950</text>
-<circle cx="560.0" cy="253.1" r="5" fill="black"/><text x="568.0" y="267.1">HDR_O2</text>
-<circle cx="40.0" cy="425.1" r="5" fill="none" stroke="black"/><text x="48.0" y="439.1">AFTERBURNER</text>
+<polyline points="40.0,357.1 40.0,228.6 262.6,100.2 193.0,60.0 193.0,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="288.9">Z +3200</text>
+<text x="157.3" y="160.4">X +6400</text>
+<text x="233.8" y="76.1">Y +2000</text>
+<text x="199.0" y="316.0">Z -12950</text>
+<circle cx="40.0" cy="357.1" r="5" fill="black"/><text x="48.0" y="371.1">HDR_O2</text>
+<circle cx="193.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="201.0" y="594.0">AFTERBURNER</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-AB-O2</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">HDR_O2 -> AFTERBURNER</text>
-<text x="20" y="642">pipe 37.22 m in 9 pieces; cut 3162 6000 924 6000 6000 2224 6000 6000 912 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 13 butt weld joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-AB-O2</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-AB-O2</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev d816893e   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="642">pipe 24.32 m in 7 pieces; cut 3162 6000 324 1924 6000 6000 912 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

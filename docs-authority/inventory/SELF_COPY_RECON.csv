@@ -958,36 +958,35 @@ PF-22,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 3/4 in studs,2 / 
 PF-23,"PVDF SDR 21 ISO 10931 DN300 pipe, 1 x 6.096 m",5.0 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
 PF-23,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 7/8 ,2 / 2 / 2 / 24,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
 WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",46320 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",30990 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",31179 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",23760 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-04,"equipment ground 10 AWG bare Cu, -",23160 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",12956 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",13051 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-06,"control 18 AWG shielded pair, 300 V",6440 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-07,"DC power pair 16 AWG TC-ER 2-cond, 600 V",6380 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-08,"bare grounding 4/0 AWG bare soft-drawn Cu, -",6144 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4310 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4341 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3675 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",2511 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1500 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",843 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-14,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",688 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-13,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",863 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-14,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",843 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-15,"power 400 kcmil XHHW-2 Cu, 600 V",675 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",346 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-17,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",332 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",330 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-17,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",315 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-18,"power 4/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",253 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",225 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-21,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",101 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-22,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-23,"power 2 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",55 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-24,"power 8 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-25,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",9 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-26,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-27,"equipment ground 12 AWG green XHHW-2 Cu, 600 V",3 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-22,"power 2 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",55 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-23,"power 8 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",9 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-26,"equipment ground 12 AWG green XHHW-2 Cu, 600 V",3 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",556,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,Unstated,-,material not stated on the unit BOM line
 OF-03,electronics: PLC digital I/O point (IEC 61131-2),1078,,Unstated,-,material not stated on the unit BOM line
-OF-04,electronics: PLC analog input point (IEC 61131-2),1029,,Unstated,-,material not stated on the unit BOM line
+OF-04,electronics: PLC analog input point (IEC 61131-2),1020,,Unstated,-,material not stated on the unit BOM line
 OF-05,electronics: BLDC driver (IEC 61800-5-1),267,,Unstated,-,material not stated on the unit BOM line
 OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),147,,Unstated,-,material not stated on the unit BOM line
 OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",132,,Unstated,-,material not stated on the unit BOM line
@@ -997,7 +996,7 @@ OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),15,,Unstated,
 OF-11,electronics: stepper driver (IEC 61800-5-1),11,,Unstated,-,material not stated on the unit BOM line
 OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511",2,,Unstated,-,material not stated on the unit BOM line
 OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),26,,Unstated,-,material not stated on the unit BOM line
-OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14158,,Unstated,-,material not stated on the unit BOM line
+OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),13270,,Unstated,-,material not stated on the unit BOM line
 OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,Unstated,-,material not stated on the unit BOM line
 OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,Unstated,-,material not stated on the unit BOM line
 OF-17,fastener: M12 anchor (ISO 3506 A4-70),37,,Unstated,-,material not stated on the unit BOM line
@@ -1017,7 +1016,7 @@ OF-30,fastener: Flange gasket (graphite sheet),2,,Unstated,-,material not stated
 OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
 OF-32,fastener: Lid gasket 40 mm wide (FKM),1,,Unstated,-,material not stated on the unit BOM line
 OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
-OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",238,,Unstated,-,material not stated on the unit BOM line
+OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",229,,Unstated,-,material not stated on the unit BOM line
 OF-35,"instrument: temperature element (IEC 60751, 316L thermowell)",194,,Unstated,-,material not stated on the unit BOM line
 OF-36,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",188,,Unstated,-,material not stated on the unit BOM line
 OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",136,,Unstated,-,material not stated on the unit BOM line
@@ -1032,21 +1031,21 @@ OF-45,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)
 OF-46,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing he",4,,Unstated,-,material not stated on the unit BOM line
 OF-47,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",217,,Unstated,-,material not stated on the unit BOM line
 OF-48,"seal: mechanical seal, single (SiC/SiC faces, FKM)",144,,Unstated,-,material not stated on the unit BOM line
-OF-49,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5895,,Unstated,-,material not stated on the unit BOM line
+OF-49,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5451,,Unstated,-,material not stated on the unit BOM line
 OF-50,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1184,,Unstated,-,material not stated on the unit BOM line
-OF-51,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",202,,Unstated,-,material not stated on the unit BOM line
-OF-52,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",198,,Unstated,-,material not stated on the unit BOM line
-OF-53,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",152,,Unstated,-,material not stated on the unit BOM line
-OF-54,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",100,,Unstated,-,material not stated on the unit BOM line
-OF-55,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",82,,Unstated,-,material not stated on the unit BOM line
-OF-56,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",78,,Unstated,-,material not stated on the unit BOM line
-OF-57,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",56,,Unstated,-,material not stated on the unit BOM line
-OF-58,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",30,,Unstated,-,material not stated on the unit BOM line
-OF-59,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",24,,Unstated,-,material not stated on the unit BOM line
-OF-60,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",22,,Unstated,-,material not stated on the unit BOM line
+OF-51,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",192,,Unstated,-,material not stated on the unit BOM line
+OF-52,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",172,,Unstated,-,material not stated on the unit BOM line
+OF-53,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",154,,Unstated,-,material not stated on the unit BOM line
+OF-54,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",98,,Unstated,-,material not stated on the unit BOM line
+OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",75,,Unstated,-,material not stated on the unit BOM line
+OF-56,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",73,,Unstated,-,material not stated on the unit BOM line
+OF-57,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",64,,Unstated,-,material not stated on the unit BOM line
+OF-58,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",29,,Unstated,-,material not stated on the unit BOM line
+OF-59,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",25,,Unstated,-,material not stated on the unit BOM line
+OF-60,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",24,,Unstated,-,material not stated on the unit BOM line
 OF-61,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",20,,Unstated,-,material not stated on the unit BOM line
-OF-62,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",14,,Unstated,-,material not stated on the unit BOM line
-OF-63,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",14,,Unstated,-,material not stated on the unit BOM line
+OF-62,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",16,,Unstated,-,material not stated on the unit BOM line
+OF-63,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",14,,Unstated,-,material not stated on the unit BOM line
 OF-64,"valve: ESD valve, spring-return actuator (316L, fail-safe, IEC 61511)",10,,Unstated,-,material not stated on the unit BOM line
-OF-65,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",7,,Unstated,-,material not stated on the unit BOM line
+OF-65,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",8,,Unstated,-,material not stated on the unit BOM line
 OF-66,"valve: check valve (PVC-lined swing/ball check valve in FRP service, ISO 16137)",5,,Unstated,-,material not stated on the unit BOM line

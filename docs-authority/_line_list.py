@@ -29,6 +29,17 @@ for r in seed['units']:   # seed units (issued table) where no duty origin
     o,z=r.get('origin_mm'),r.get('size_mm')
     if o and z and len(z)>=2:
         o=list(o)+[LV.get(r.get('level'),0)]*(3-len(o)); z=list(z)+[0]*(3-len(z)); C.setdefault(r['unit_id'],([o[i]+z[i]/2 for i in range(3)],'placement_seed'))
+# GA rev C / C2 moves (A-M-215, A-M-220): CAD relocations and overlap moves carry into the line centres (X-PIP-03 rev B)
+import sys as _s; _s.path.insert(0, 'models/freecad')
+try:
+    import params as _FP
+    for _u, (_cx, _cy) in getattr(_FP, 'RELOCATE', {}).items():
+        if _u in C: C[_u] = ([_cx, _cy, C[_u][0][2]], C[_u][1] + ' + GA relocate')
+except Exception: pass
+if os.path.exists('docs-authority/inventory/CAD_MOVES.json'):
+    for _m in json.load(open('docs-authority/inventory/CAD_MOVES.json')):
+        if _m['unit'] in C:
+            _c = C[_m['unit']][0]; C[_m['unit']] = ([_c[0] + _m['dx_mm'], _c[1] + _m['dy_mm'], _c[2]], C[_m['unit']][1] + ' + GA move')
 if 'EVAP_ACID_VS' not in C and 'EVAP_ACID' in C:   # EVAP_ACID_VS rides on the EVAP_ACID frame, north edge (X-PAR-10)
     c=C['EVAP_ACID'][0]; C['EVAP_ACID_VS']=([c[0],c[1]+650,c[2]],'on EVAP_ACID frame')
 for b in seed['blocks']:

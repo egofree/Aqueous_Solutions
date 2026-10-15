@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="195.0,580.0 195.0,285.9 313.2,217.7 40.0,60.0 40.0,85.6" fill="none" stroke="black" stroke-width="3"/>
-<text x="201.0" y="429.0">Z +3450</text>
-<text x="260.1" y="247.8">X +1600</text>
-<text x="182.6" y="134.9">Y +3700</text>
-<text x="46.0" y="68.8">Z -300</text>
-<circle cx="195.0" cy="580.0" r="5" fill="black"/><text x="203.0" y="594.0">HDR_O2</text>
-<circle cx="40.0" cy="85.6" r="5" fill="none" stroke="black"/><text x="48.0" y="99.6">ACETOX</text>
+<polyline points="176.9,580.0 176.9,484.6 476.1,311.8 40.0,60.0 40.0,146.8" fill="none" stroke="black" stroke-width="3"/>
+<text x="182.9" y="528.3">Z +3200</text>
+<text x="332.5" y="394.2">X +11590</text>
+<text x="264.1" y="181.9">Y +16890</text>
+<text x="46.0" y="99.4">Z -2910</text>
+<circle cx="176.9" cy="580.0" r="5" fill="black"/><text x="184.9" y="594.0">HDR_O2</text>
+<circle cx="40.0" cy="146.8" r="5" fill="none" stroke="black"/><text x="48.0" y="160.8">ACETOX</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-AC-O2</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">HDR_O2 -> ACETOX</text>
-<text x="20" y="642">pipe 8.99 m in 4 pieces; cut 3439 1579 3679 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-AC-O2</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-AC-O2</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 1044bc01   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="642">pipe 34.53 m in 7 pieces; cut 3189 6000 5569 6000 6000 4869 2899 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

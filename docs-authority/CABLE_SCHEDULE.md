@@ -38,17 +38,17 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 
 | Unit | Circuit | Size | Sets | Design A | Ampacity A | Length m | V | Drop % | Limit % | OK |
 |---|---|---|---|---|---|---|---|---|---|---|
-| ACID_POLISH_SCRUB | induced-draft fan feeder | 14 AWG | 1 | 3.0 | 15 | 7.5 | 460 | 0.09 | 3 | yes |
-| ALK_SCRUBBER | induced-draft fan feeder | 14 AWG | 1 | 3.0 | 15 | 7.5 | 460 | 0.09 | 3 | yes |
+| ACID_POLISH_SCRUB | induced-draft fan feeder | 14 AWG | 1 | 3.0 | 15 | 11.5 | 460 | 0.13 | 3 | yes |
+| ALK_SCRUBBER | induced-draft fan feeder | 14 AWG | 1 | 3.0 | 15 | 8.1 | 460 | 0.09 | 3 | yes |
 | BACKUP_GEN | radiator fan feeder | 14 AWG | 1 | 1.1 | 15 | 3.0 | 460 | 0.01 | 3 | yes |
 | BACKUP_GEN | starter motor feeder | 14 AWG | 1 | 3.4 | 15 | 3.0 | 460 | 0.04 | 3 | yes |
-| BLACK_DEWATER | Gearmotor 0.09 kW feeder | 14 AWG | 1 | 2.4 | 15 | 21.6 | 460 | 0.20 | 3 | yes |
-| BLACK_PASTEUR | Transfer pump feeder | 14 AWG | 1 | 2.4 | 15 | 22.9 | 460 | 0.21 | 3 | yes |
+| BLACK_DEWATER | Gearmotor 0.09 kW feeder | 14 AWG | 1 | 2.4 | 15 | 17.7 | 460 | 0.16 | 3 | yes |
+| BLACK_PASTEUR | Transfer pump feeder | 14 AWG | 1 | 2.4 | 15 | 19.3 | 460 | 0.18 | 3 | yes |
 | BLOW_MOLD | main drive feeder | 14 AWG | 1 | 1.6 | 15 | 9.5 | 460 | 0.06 | 3 | yes |
-| BMED_ACID | stack loop pumps (acid, base, salt) feeder | 14 AWG | 1 | 1.1 | 15 | 10.2 | 460 | 0.04 | 3 | yes |
-| BMED_BASE | stack loop pumps (acid, base, salt) feeder | 14 AWG | 1 | 1.1 | 15 | 10.2 | 460 | 0.04 | 3 | yes |
+| BMED_ACID | stack loop pumps (acid, base, salt) feeder | 14 AWG | 1 | 1.1 | 15 | 11.5 | 460 | 0.05 | 3 | yes |
+| BMED_BASE | stack loop pumps (acid, base, salt) feeder | 14 AWG | 1 | 1.1 | 15 | 11.5 | 460 | 0.05 | 3 | yes |
 | BOARD_MILL | main drive feeder | 14 AWG | 1 | 3.0 | 15 | 9.7 | 460 | 0.11 | 3 | yes |
-| CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 9.0 | 460 | 0.07 | 3 | yes |
+| CATCH_TANK | transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 26.0 | 460 | 0.21 | 3 | yes |
 | CB-1 | inverter AC output to section bus | 3 AWG | 1 | 72.2 | 100 | 25.0 | 460 | 0.55 | 3 | yes |
 | CB-1 | section main to CB-1 transformer LV | 400 kcmil | 3 | 1000.0 | 1005 | 15.0 | 460 | 0.20 | 2 | yes |
 | CB-2 | inverter AC output to section bus | 3 AWG | 1 | 72.2 | 100 | 25.0 | 460 | 0.55 | 3 | yes |
@@ -70,24 +70,24 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | CRYO_NE | cryocooler compressor feeder | 14 AWG | 1 | 1.1 | 15 | 6.9 | 460 | 0.03 | 3 | yes |
 | CRYO_XE | cryocooler compressor feeder | 14 AWG | 1 | 1.1 | 15 | 4.9 | 460 | 0.02 | 3 | yes |
 | ELECTRODE_COAT | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 9.2 | 460 | 0.04 | 3 | yes |
-| EVAP_ACID | Blower feeder | 14 AWG | 1 | 4.8 | 15 | 14.8 | 460 | 0.28 | 3 | yes |
-| EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 14.8 | 460 | 0.14 | 3 | yes |
-| EVAP_ACID_VS | Sump recirculation pump feeder | 14 AWG | 1 | 2.4 | 15 | 14.1 | 460 | 0.13 | 3 | yes |
-| EVAP_BASE | Blower feeder | 14 AWG | 1 | 3.4 | 15 | 8.0 | 460 | 0.11 | 3 | yes |
-| EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 8.0 | 460 | 0.07 | 3 | yes |
-| EW_1 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 10.2 | 460 | 0.09 | 3 | yes |
-| EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 10.2 | 460 | 0.06 | 3 | yes |
-| EW_2 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 7.1 | 460 | 0.07 | 3 | yes |
-| EW_2 | screw conveyor IA-EW-MET-2 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 7.1 | 460 | 0.04 | 3 | yes |
-| EW_3 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 5.2 | 460 | 0.05 | 3 | yes |
-| EW_4 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 5.9 | 460 | 0.05 | 3 | yes |
-| EW_5 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 4.9 | 460 | 0.05 | 3 | yes |
-| EW_6 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 3.8 | 460 | 0.04 | 3 | yes |
-| EW_7 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 11.3 | 460 | 0.11 | 3 | yes |
-| EW_7 | screw conveyor IA-EW-MET-7 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 11.3 | 460 | 0.07 | 3 | yes |
-| EW_8 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 3.6 | 460 | 0.03 | 3 | yes |
-| EW_9 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 8.4 | 460 | 0.08 | 3 | yes |
-| EW_9 | screw conveyor IA-EW-MET-9 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 8.4 | 460 | 0.05 | 3 | yes |
+| EVAP_ACID | Blower feeder | 14 AWG | 1 | 4.8 | 15 | 16.0 | 460 | 0.30 | 3 | yes |
+| EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 16.0 | 460 | 0.15 | 3 | yes |
+| EVAP_ACID_VS | Sump recirculation pump feeder | 14 AWG | 1 | 2.4 | 15 | 15.3 | 460 | 0.14 | 3 | yes |
+| EVAP_BASE | Blower feeder | 14 AWG | 1 | 3.4 | 15 | 9.2 | 460 | 0.12 | 3 | yes |
+| EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 9.2 | 460 | 0.09 | 3 | yes |
+| EW_1 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 8.9 | 460 | 0.08 | 3 | yes |
+| EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 8.9 | 460 | 0.06 | 3 | yes |
+| EW_2 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 5.8 | 460 | 0.05 | 3 | yes |
+| EW_2 | screw conveyor IA-EW-MET-2 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 5.8 | 460 | 0.04 | 3 | yes |
+| EW_3 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 7.3 | 460 | 0.07 | 3 | yes |
+| EW_4 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 9.7 | 460 | 0.09 | 3 | yes |
+| EW_5 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 5.1 | 460 | 0.05 | 3 | yes |
+| EW_6 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 6.2 | 460 | 0.06 | 3 | yes |
+| EW_7 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 10.2 | 460 | 0.09 | 3 | yes |
+| EW_7 | screw conveyor IA-EW-MET-7 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 10.2 | 460 | 0.06 | 3 | yes |
+| EW_8 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 7.3 | 460 | 0.07 | 3 | yes |
+| EW_9 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 7.3 | 460 | 0.07 | 3 | yes |
+| EW_9 | screw conveyor IA-EW-MET-9 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 7.3 | 460 | 0.05 | 3 | yes |
 | EXPANDER | main drive feeder | 14 AWG | 1 | 2.1 | 15 | 9.4 | 460 | 0.08 | 3 | yes |
 | EXPANDER | screw conveyor IA-EXP-OUT to CRYO_ASU feeder | 14 AWG | 1 | 1.6 | 15 | 9.4 | 460 | 0.06 | 3 | yes |
 | EXT_HALL | AHU exhaust fan feeder | 14 AWG | 1 | 3.4 | 15 | 104.6 | 460 | 1.38 | 3 | yes |
@@ -102,31 +102,31 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | GAS_ATOMIZER | atomizer gas recirculation blower feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
 | GEO_HP | ground-loop circulator feeder | 14 AWG | 1 | 2.4 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | GEO_HP | heat pump compressor feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
-| GLASS_DIGEST | Top-entry agitator feeder | 14 AWG | 1 | 2.4 | 15 | 9.9 | 460 | 0.09 | 3 | yes |
-| HOPPER | screw conveyor IA-HOP-01 to LEACH_CSTR_1 feeder | 14 AWG | 1 | 1.6 | 15 | 4.9 | 460 | 0.03 | 3 | yes |
-| HOPPER | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 4.9 | 460 | 0.05 | 3 | yes |
-| HYDRO_SET | pump-turbine motor-generator feeder | 14 AWG | 1 | 4.8 | 15 | 15.0 | 460 | 0.28 | 3 | yes |
-| LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 14.7 | 460 | 0.17 | 3 | yes |
-| LITHO_STUB | main drive feeder | 14 AWG | 1 | 2.4 | 15 | 5.5 | 460 | 0.05 | 3 | yes |
+| GLASS_DIGEST | Top-entry agitator feeder | 14 AWG | 1 | 2.4 | 15 | 16.4 | 460 | 0.15 | 3 | yes |
+| HOPPER | screw conveyor IA-HOP-01 to LEACH_CSTR_1 feeder | 14 AWG | 1 | 1.6 | 15 | 7.6 | 460 | 0.05 | 3 | yes |
+| HOPPER | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 7.6 | 460 | 0.07 | 3 | yes |
+| HYDRO_SET | pump-turbine motor-generator feeder | 14 AWG | 1 | 4.8 | 15 | 22.6 | 460 | 0.42 | 3 | yes |
+| LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 12.8 | 460 | 0.15 | 3 | yes |
+| LITHO_STUB | main drive feeder | 14 AWG | 1 | 2.4 | 15 | 5.9 | 460 | 0.05 | 3 | yes |
 | LP-BACKUP_GEN | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 15.0 | 460 | 0.31 | 2 | yes |
 | LP-CRYO | panel feeder 460 V | 6 AWG | 1 | 61.6 | 65 | 46.6 | 460 | 1.74 | 2 | yes |
 | LP-DOCK | panel feeder 460 V | 14 AWG | 1 | 12.8 | 15 | 15.6 | 460 | 0.77 | 2 | yes |
 | LP-ELEC_PV | panel feeder 460 V | 4/0 AWG | 2 | 438.4 | 460 | 31.6 | 460 | 0.52 | 2 | yes |
-| LP-FAB | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 30.4 | 208 | 0.78 | 2 | yes |
-| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 7.8 | 15 | 30.4 | 460 | 0.92 | 2 | yes |
+| LP-FAB | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 30.0 | 208 | 0.77 | 2 | yes |
+| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 7.8 | 15 | 30.0 | 460 | 0.91 | 2 | yes |
 | LP-FARM | panel feeder 208 V | 10 AWG | 1 | 7.8 | 30 | 50.1 | 208 | 1.29 | 2 | yes |
 | LP-FUEL_CELL | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 10.6 | 208 | 0.27 | 2 | yes |
 | LP-GEO | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 22.4 | 208 | 0.58 | 2 | yes |
 | LP-GEO | panel feeder 460 V | 14 AWG | 1 | 6.0 | 15 | 22.4 | 460 | 0.52 | 2 | yes |
 | LP-MFG | panel feeder 460 V | 3 AWG | 1 | 95.7 | 100 | 43.3 | 460 | 1.25 | 2 | yes |
-| LP-WET | panel feeder 208 V | 6 AWG | 1 | 31.8 | 65 | 36.4 | 208 | 1.55 | 2 | yes |
-| LP-WET | panel feeder 460 V | 10 AWG | 1 | 27.0 | 30 | 36.4 | 460 | 1.47 | 2 | yes |
-| LP-WTR | panel feeder 208 V | 12 AWG | 1 | 10.2 | 20 | 25.2 | 208 | 1.35 | 2 | yes |
-| LP-WTR | panel feeder 460 V | 14 AWG | 1 | 6.3 | 15 | 25.2 | 460 | 0.62 | 2 | yes |
+| LP-WET | panel feeder 208 V | 6 AWG | 1 | 36.6 | 65 | 32.3 | 208 | 1.58 | 2 | yes |
+| LP-WET | panel feeder 460 V | 10 AWG | 1 | 28.6 | 30 | 32.3 | 460 | 1.38 | 2 | yes |
+| LP-WTR | panel feeder 208 V | 14 AWG | 1 | 5.4 | 15 | 34.8 | 208 | 1.61 | 2 | yes |
+| LP-WTR | panel feeder 460 V | 14 AWG | 1 | 4.7 | 15 | 34.8 | 460 | 0.63 | 2 | yes |
 | LP-ZNBR2 | panel feeder 460 V | 2 AWG | 1 | 105.9 | 115 | 13.8 | 460 | 0.35 | 2 | yes |
 | MET_AHU | induced-draft fan feeder | 14 AWG | 1 | 4.8 | 15 | 14.2 | 460 | 0.26 | 3 | yes |
 | MET_MELT | Induction melt furnace, 25 kg Cu charge: cooling-water pump feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
-| MET_SCRUB | induced-draft fan feeder | 14 AWG | 1 | 4.8 | 15 | 12.8 | 460 | 0.24 | 3 | yes |
+| MET_SCRUB | induced-draft fan feeder | 14 AWG | 1 | 4.8 | 15 | 10.5 | 460 | 0.20 | 3 | yes |
 | MFG_SHOP | Band saw: main drive feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
 | MFG_SHOP | CNC vertical mill: main drive feeder | 10 AWG | 1 | 21.0 | 30 | 3.0 | 460 | 0.09 | 3 | yes |
 | MFG_SHOP | Engine lathe: main drive feeder | 14 AWG | 1 | 11.0 | 15 | 3.0 | 460 | 0.13 | 3 | yes |
@@ -137,11 +137,11 @@ Plant demand 250.0 kW at 480 V, power factor 0.9 assumed: 334 A. EW process bars
 | MFG_SHOP | screw conveyor IA-MFG-OUT to HABITATION feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
 | NORTH_DOCK | dock leveller hydraulic pump feeder | 14 AWG | 1 | 3.0 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | NORTH_DOCK | overhead door operator feeder | 14 AWG | 1 | 3.0 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
-| POLISH_BANK | screw conveyor IA-POL-CAKE to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 10.2 | 460 | 0.06 | 3 | yes |
-| ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 30.2 | 460 | 0.25 | 3 | yes |
-| SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 10.2 | 460 | 0.09 | 3 | yes |
-| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 7.4 | 460 | 0.03 | 3 | yes |
-| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 7.6 | 460 | 0.09 | 3 | yes |
-| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 7.6 | 460 | 0.09 | 3 | yes |
+| POLISH_BANK | screw conveyor IA-POL-CAKE to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 11.5 | 460 | 0.07 | 3 | yes |
+| ROOF_TANK | transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK feeder | 14 AWG | 1 | 2.1 | 15 | 11.6 | 460 | 0.09 | 3 | yes |
+| SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 11.5 | 460 | 0.11 | 3 | yes |
+| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 7.8 | 460 | 0.03 | 3 | yes |
+| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 8.0 | 460 | 0.09 | 3 | yes |
+| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 8.0 | 460 | 0.09 | 3 | yes |
 | WIRE_DRAW | Bull-block wire drawer: main drive feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
 | ZNBR2 | electrolyte pump (anolyte, catholyte) per stack string feeder | 14 AWG | 1 | 1.1 | 15 | 3.0 | 460 | 0.01 | 3 | yes |

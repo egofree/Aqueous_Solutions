@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="368.1,580.0 368.1,370.4 472.9,309.9 40.0,60.0 40.0,305.9" fill="none" stroke="black" stroke-width="3"/>
-<text x="374.1" y="471.2">Z +2600</text>
-<text x="426.5" y="336.2">X +1500</text>
-<text x="262.4" y="181.0">Y +6200</text>
-<text x="46.0" y="178.9">Z -3050</text>
-<circle cx="368.1" cy="580.0" r="5" fill="black"/><text x="376.1" y="594.0">BIOFILTER</text>
-<circle cx="40.0" cy="305.9" r="5" fill="none" stroke="black"/><text x="48.0" y="319.9">NFT</text>
+<polyline points="560.0,536.8 560.0,307.2 514.1,333.7 40.0,60.0 40.0,329.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="418.0">Z +2600</text>
+<text x="543.1" y="316.5">X -600</text>
+<text x="283.1" y="192.9">Y +6200</text>
+<text x="46.0" y="190.7">Z -3050</text>
+<circle cx="560.0" cy="536.8" r="5" fill="black"/><text x="568.0" y="550.8">BIOFILTER</text>
+<circle cx="40.0" cy="329.3" r="5" fill="none" stroke="black"/><text x="48.0" y="343.3">NFT</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-NFT-IN</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">BIOFILTER -> NFT</text>
-<text x="20" y="642">pipe 13.29 m in 5 pieces; cut 2589 1479 6000 179 3039 mm</text>
+<text x="20" y="642">pipe 12.39 m in 5 pieces; cut 2589 579 6000 179 3039 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-NFT-IN</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-NFT-IN</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev c5e2285a   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

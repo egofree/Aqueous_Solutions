@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,580.0 40.0,110.5 127.5,60.0 300.2,159.7 300.2,176.7" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="341.3">Z +8280</text>
+<text x="89.8" y="81.3">X +1782</text>
+<text x="219.9" y="105.9">Y -3518</text>
+<text x="306.2" y="164.2">Z -300</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">WS_NITRIC</text>
+<circle cx="300.2" cy="176.7" r="5" fill="none" stroke="black"/><text x="308.2" y="190.7">GLYOXAL</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-NIT-GLX</text>
+<text x="20" y="614">DN15  class P3  PVDF SDR 21 ISO 10931</text>
+<text x="20" y="628">WS_NITRIC -> GLYOXAL</text>
+<text x="20" y="642">pipe 13.82 m in 5 pieces; cut 6000 2269 1761 3496 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

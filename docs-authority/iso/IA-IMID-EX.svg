@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,277.7 560.0,60.0 44.9,357.4 40.0,354.5 40.0,363.1" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="164.8">Z +7650</text>
-<text x="308.5" y="204.7">X -20900</text>
-<text x="48.5" y="352.0">Y +200</text>
-<text x="46.0" y="354.8">Z -300</text>
-<circle cx="560.0" cy="277.7" r="5" fill="black"/><text x="568.0" y="291.7">IMID</text>
-<circle cx="40.0" cy="363.1" r="5" fill="none" stroke="black"/><text x="48.0" y="377.1">NUTRIENT_DOSE</text>
+<polyline points="560.0,102.8 560.0,60.0 256.7,235.1 40.0,110.0 40.0,170.7" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="77.4">Z +670</text>
+<text x="414.4" y="143.6">X -5482</text>
+<text x="154.4" y="168.5">Y +3918</text>
+<text x="46.0" y="136.3">Z -950</text>
+<circle cx="560.0" cy="102.8" r="5" fill="black"/><text x="568.0" y="116.8">IMID</text>
+<circle cx="40.0" cy="170.7" r="5" fill="none" stroke="black"/><text x="48.0" y="184.7">NUTRIENT_DOSE</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-IMID-EX</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">IMID -> NUTRIENT_DOSE</text>
-<text x="20" y="642">pipe 28.99 m in 8 pieces; cut 6000 1639 6000 6000 6000 2879 179 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 fusion joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-IMID-EX</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-IMID-EX</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 0316d604   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="642">pipe 10.96 m in 4 pieces; cut 659 5461 3896 939 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

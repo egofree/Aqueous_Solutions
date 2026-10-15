@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="387.6,169.5 387.6,60.0 40.0,260.7 545.6,552.6 545.6,580.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="393.6" y="110.7">Z +1200</text>
-<text x="219.8" y="156.4">X -4400</text>
-<text x="298.8" y="402.7">Y -6400</text>
-<text x="551.6" y="562.3">Z -300</text>
-<circle cx="387.6" cy="169.5" r="5" fill="black"/><text x="395.6" y="183.5">GROW_BED</text>
-<circle cx="545.6" cy="580.0" r="5" fill="none" stroke="black"/><text x="553.6" y="594.0">HTC</text>
+<polyline points="40.0,580.0 40.0,483.1 410.9,269.0 48.8,60.0 48.8,356.2" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="527.6">Z +950</text>
+<text x="231.4" y="372.1">X +4200</text>
+<text x="235.8" y="160.5">Y +4100</text>
+<text x="54.8" y="204.1">Z -2905</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">GROW_BED</text>
+<circle cx="48.8" cy="356.2" r="5" fill="none" stroke="black"/><text x="56.8" y="370.2">HTC</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-COMP-01</text>
 <text x="20" y="614">DN50  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">GROW_BED -> HTC</text>
-<text x="20" y="642">pipe 12.12 m in 5 pieces; cut 1170 4340 6000 340 270 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 fusion joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
-<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-COMP-01</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-COMP-01</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 03f24dba   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+<text x="20" y="642">pipe 11.97 m in 4 pieces; cut 920 4140 4040 2875 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 8 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

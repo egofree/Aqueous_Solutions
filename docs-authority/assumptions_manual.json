@@ -3828,5 +3828,25 @@
     "verification": "docs-authority/WIRE_SPECS.md rev B",
     "replace_when": "on reading the purchased UL 4703 and UL 1277 texts",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-222",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Isometrics follow the GA moves",
+    "statement": "Line centres in _line_list.py take the GA rev C relocation (params.RELOCATE) and every GA rev C2 overlap move (CAD_MOVES.json) as plan offsets; 19 of 53 moves touch piped units. ISO-001/002 regenerated: 370 lines, route total 6949 -> 7030 m.",
+    "verification": "Re-run _iso_routes.py after build_plant; compare ISO_ROUTES totals.",
+    "replace_when": "When unit centres are exported directly from the CAD model.",
+    "doc": "AQS-PAR-003"
   }
 ]

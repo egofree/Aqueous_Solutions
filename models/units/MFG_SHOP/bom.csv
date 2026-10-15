@@ -43,21 +43,16 @@ item,description,qty,material,basis
 42,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
 43,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
 44,electronics: variable-frequency drive 4 kW,1,IEC 61800-5-1,AQS-INV-004
-45,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-46,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-47,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-48,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-49,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-50,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-51,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-52,"protection: inverse-time circuit breaker, 3-pole 60 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-53,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-54,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+45,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+46,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+47,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+48,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+49,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+50,"protection: inverse-time circuit breaker, 3-pole 60 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+51,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+52,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+53,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+54,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
 55,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
 56,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-57,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-58,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-59,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
-60,support: pipe clamp DN50,18,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-61,valve: check valve DN50,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-62,valve: isolation valve DN50,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+57,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004

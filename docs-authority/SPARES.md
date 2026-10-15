@@ -12,7 +12,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x556) | 556 | 56 | 10 % min 2 |
 | building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x216; 6205-2Z x94; 6201-2Z x40; 6204-2Z x34; 6206-2Z) | 404 | 41 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x1078) | 1078 | 108 | 10 % min 1 |
-| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x1029) | 1029 | 103 | 10 % min 1 |
+| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x1020) | 1020 | 102 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x267) | 267 | 27 | 10 % min 1 |
 | building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x105; 0.18 kW x16; 0.55 kW x13; 0.75 kW x4; 0.12 kW ) | 147 | 15 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x132) | 132 | 14 | 10 % min 1 |
@@ -21,7 +21,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-10 | electronics: compressor contactor + overload (22 kW hermetic x8; 0.25 kW hermetic x5; 0.75 kW hermetic x1;) | 15 | 2 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x11) | 11 | 2 | 10 % min 1 |
 | building block | OF-12 | electronics: safety PLC (SIL 2 capable), CPU and I/O rack (- x2) | 2 | 1 | 10 % min 1 |
-| building block | OF-14 | fastener: anchor bolt (M10 x14158) | 14158 | 284 | 2 % min 4 |
+| building block | OF-14 | fastener: anchor bolt (M10 x13270) | 13270 | 266 | 2 % min 4 |
 | building block | OF-15 | fastener: M10 x 40 lid bolt (M10 x 40 lid bolt with nut and washers x100) | 100 | 4 | 2 % min 4 |
 | building block | OF-16 | fastener: M8 x 30 lid bolt (M8 x 30 lid bolt with nut and washers x48) | 48 | 4 | 2 % min 4 |
 | building block | OF-17 | fastener: M12 anchor (M12 anchor x37) | 37 | 4 | 2 % min 4 |
@@ -41,7 +41,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-31 | fastener: M10 U-bolt for DN150 (M10 U-bolt for DN150 x2) | 2 | 4 | 2 % min 4 |
 | building block | OF-32 | fastener: Lid gasket 40 mm wide (Lid gasket 40 mm wide x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-33 | fastener: Solvent cement (Solvent cement x1) | 1 | 4 | 2 % min 4 |
-| building block | OF-34 | instrument: flow transmitter (DN15 x190; DN50 x39; DN20 x3; DN25 x3; DN250 x1; DN300 x1; D) | 238 | 24 | 10 % min 1 |
+| building block | OF-34 | instrument: flow transmitter (DN15 x187; DN50 x37; DN20 x2; DN250 x1; DN300 x1; DN40 x1) | 229 | 23 | 10 % min 1 |
 | building block | OF-35 | instrument: temperature element (Pt100 class A x194) | 194 | 20 | 10 % min 1 |
 | building block | OF-36 | instrument: pressure transmitter (0-10 bar x187; 0-16 bar x1) | 188 | 19 | 10 % min 1 |
 | building block | OF-37 | instrument: high-level switch (vibrating fork x136) | 136 | 14 | 10 % min 1 |
@@ -56,21 +56,21 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-46 | instrument: gas detector, NOx (electrochemical NO2 x4) | 4 | 1 | 10 % min 1 |
 | building block | OF-47 | protection: inverse-time circuit breaker, 3-pole (15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1) | 217 | 22 | 10 % min 1 |
 | building block | OF-48 | seal: mechanical seal, single (EN 12756 x144) | 144 | 29 | 20 % min 2 |
-| building block | OF-51 | valve: isolation valve (DN15 x174; DN50 x28) | 202 | 11 | 5 % min 1 |
-| building block | OF-52 | valve: isolation valve (DN15 x124; DN50 x64; DN25 x6; DN20 x4) | 198 | 10 | 5 % min 1 |
-| building block | OF-53 | valve: isolation valve (DN15 x136; DN20 x12; DN25 x4) | 152 | 8 | 5 % min 1 |
-| building block | OF-54 | valve: isolation valve (DN15 x58; DN50 x42) | 100 | 5 | 5 % min 1 |
-| building block | OF-55 | valve: check valve (DN15 x55; DN50 x22; DN25 x3; DN20 x2) | 82 | 5 | 5 % min 1 |
-| building block | OF-56 | valve: check valve (DN15 x72; DN50 x6) | 78 | 4 | 5 % min 1 |
-| building block | OF-57 | valve: isolation valve (DN15 x48; DN50 x4; DN300 x2; DN40 x2) | 56 | 3 | 5 % min 1 |
-| building block | OF-58 | valve: check valve (DN15 x19; DN50 x11) | 30 | 2 | 5 % min 1 |
-| building block | OF-59 | valve: isolation valve (DN15 x16; DN25 x4; DN20 x4) | 24 | 2 | 5 % min 1 |
-| building block | OF-60 | valve: check valve (DN15 x20; DN300 x1; DN40 x1) | 22 | 2 | 5 % min 1 |
+| building block | OF-51 | valve: isolation valve (DN15 x166; DN50 x26) | 192 | 10 | 5 % min 1 |
+| building block | OF-52 | valve: isolation valve (DN15 x120; DN50 x50; DN20 x2) | 172 | 9 | 5 % min 1 |
+| building block | OF-53 | valve: isolation valve (DN15 x138; DN20 x12; DN25 x4) | 154 | 8 | 5 % min 1 |
+| building block | OF-54 | valve: isolation valve (DN15 x56; DN50 x42) | 98 | 5 | 5 % min 1 |
+| building block | OF-55 | valve: check valve (DN15 x69; DN50 x6) | 75 | 4 | 5 % min 1 |
+| building block | OF-56 | valve: check valve (DN15 x52; DN50 x20; DN20 x1) | 73 | 4 | 5 % min 1 |
+| building block | OF-57 | valve: isolation valve (DN15 x56; DN50 x4; DN300 x2; DN40 x2) | 64 | 4 | 5 % min 1 |
+| building block | OF-58 | valve: check valve (DN15 x18; DN50 x11) | 29 | 2 | 5 % min 1 |
+| building block | OF-59 | valve: check valve (DN15 x23; DN300 x1; DN40 x1) | 25 | 2 | 5 % min 1 |
+| building block | OF-60 | valve: isolation valve (DN15 x16; DN25 x4; DN20 x4) | 24 | 2 | 5 % min 1 |
 | building block | OF-61 | valve: isolation valve (DN15 x10; DN250 x6; DN20 x2; DN200 x2) | 20 | 1 | 5 % min 1 |
-| building block | OF-62 | valve: check valve (DN15 x13; DN20 x1) | 14 | 1 | 5 % min 1 |
-| building block | OF-63 | valve: isolation valve (DN15 x14) | 14 | 1 | 5 % min 1 |
+| building block | OF-62 | valve: isolation valve (DN15 x16) | 16 | 1 | 5 % min 1 |
+| building block | OF-63 | valve: check valve (DN15 x13; DN20 x1) | 14 | 1 | 5 % min 1 |
 | building block | OF-64 | valve: ESD valve, spring-return actuator (DN15 x10) | 10 | 1 | 5 % min 1 |
-| building block | OF-65 | valve: check valve (DN15 x7) | 7 | 1 | 5 % min 1 |
+| building block | OF-65 | valve: check valve (DN15 x8) | 8 | 1 | 5 % min 1 |
 | building block | OF-66 | valve: check valve (DN15 x4; DN250 x1) | 5 | 1 | 5 % min 1 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 176 | 9 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 66 | 4 | 5 % min 1 |
@@ -112,4 +112,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-102 lines; 43 spare motors, 958 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+102 lines; 43 spare motors, 936 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

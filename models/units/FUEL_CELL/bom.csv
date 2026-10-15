@@ -33,9 +33,9 @@ item,description,qty,material,basis
 32,support: pipe clamp DN15,47,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 33,support: pipe clamp DN50,12,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 34,support: pipe clamp DN15,27,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-35,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
+35,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
 36,valve: check valve DN50,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
 37,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-38,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+38,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
 39,valve: isolation valve DN50,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
 40,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004

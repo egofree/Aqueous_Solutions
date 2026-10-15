@@ -24,21 +24,21 @@ Acceptance at each step: no leak, every loop and trip verified, rates within 10 
 | 4 | BACKUP_GEN | 1 | 4 | 1 | 1 | Ar, N2, O2 |
 | 5 | FUEL_CELL | 1 | 5 | 0 | 0 | Ar, H2, O2 |
 | 6 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
-| 7 | WTR | 10 | 65 | 10 | 9 | CaO, Fe, HCl, K2CO3, hydrocarbon, other, other_metals, solute |
+| 7 | WTR | 10 | 64 | 10 | 9 | CaO, Fe, HCl, K2CO3, hydrocarbon, other, other_metals, solute |
 | 8 | HEAT | 8 | 16 | 0 | 0 |  |
 | 9 | GAS | 7 | 30 | 6 | 1 | Ar, Fe, H2, HCl, O2, other_metals, solute |
 | 10 | CRYO | 20 | 42 | 6 | 2 | Ar, CH3OH, CO2, H2, H2O, N2, O2, solute |
 | 11 | GEO | 6 | 12 | 1 | 0 |  |
-| 12 | WET | 23 | 135 | 23 | 18 | AcOH, Cd, Cl2, Cu, Fe, H2, HCl, NaCl, Ni, O2, Pb, Sn … |
+| 12 | WET | 23 | 136 | 23 | 18 | AcOH, Cd, Cl2, Cu, Fe, H2, HCl, NaCl, Ni, O2, Pb, Sn … |
 | 13 | MEOH | 4 | 24 | 3 | 2 | Ar, CO2, Fe, H2, HCl, O2, other_metals, solute |
 | 14 | OIL | 10 | 55 | 12 | 8 | Ar, Fe, HCl, N2, O2, hydrocarbon, other_metals, solute |
 | 15 | GLASS | 5 | 16 | 3 | 2 | Fe, HCl, other_metals, solute |
 | 16 | NUT | 1 | 9 | 1 | 1 | Fe, HCl, other_metals, solute |
-| 17 | FARM | 61 | 333 | 66 | 32 | Ar, CO2, CaO, Fe, H2O, HCl, HNO3, K2CO3, KCl, MgNH4PO4, N2, NO … |
+| 17 | FARM | 61 | 324 | 66 | 32 | Ar, CO2, CaO, Fe, H2O, HCl, HNO3, K2CO3, KCl, MgNH4PO4, N2, NO … |
 | 18 | HAB | 6 | 27 | 6 | 4 | Ar, CaO, K2CO3, O2, hydrocarbon, other, solute |
-| 19 | MFG | 11 | 34 | 4 | 1 | Cd, Cu, Fe, Ni, Pb, Pb/Sn/Ni/Cd/Zn blend, Sn, Zn, hydrocarbon, metal, solute |
-| 20 | FAB | 17 | 78 | 12 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
+| 19 | MFG | 11 | 33 | 5 | 1 | Cd, Cu, Fe, Ni, Pb, Pb/Sn/Ni/Cd/Zn blend, Sn, Zn, hydrocarbon, metal, solute |
+| 20 | FAB | 17 | 79 | 12 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
 
-Totals: 199 units, 909 loops, 158 unit SIF proof tests plus 3 area SIFs (gas and flame detection) proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps. Per unit: `docs-authority/inventory/COMMISSIONING.csv`.
+Totals: 199 units, 900 loops, 159 unit SIF proof tests plus 3 area SIFs (gas and flame detection) proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps. Per unit: `docs-authority/inventory/COMMISSIONING.csv`.
 
 Battery (ZNBR2) is commissioned per NFPA 855 with the purge and H2 detection live before first charge; H2 and O2 systems per NFPA 2 with gas detection (AQS-SAF-006) in service.

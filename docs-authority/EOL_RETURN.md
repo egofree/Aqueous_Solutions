@@ -9,7 +9,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 467 | 44 % |
+| metal_plateable | 466 | 44 % |
 | organic | 435 | 41 % |
 | metal_reactive | 85 | 8 % |
 | unassigned | 34 | 3 % |
@@ -261,11 +261,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | OF-56 | 0 | 1 | 0 | 0 | 0 |
 | OF-57 | 0 | 1 | 0 | 0 | 0 |
 | OF-58 | 0 | 1 | 0 | 0 | 0 |
-| OF-59 | 1 | 0 | 0 | 0 | 0 |
-| OF-60 | 0 | 1 | 0 | 0 | 0 |
+| OF-59 | 0 | 1 | 0 | 0 | 0 |
+| OF-60 | 1 | 0 | 0 | 0 | 0 |
 | OF-61 | 0 | 1 | 0 | 0 | 0 |
-| OF-62 | 1 | 0 | 0 | 0 | 0 |
-| OF-63 | 0 | 1 | 0 | 0 | 0 |
+| OF-62 | 0 | 1 | 0 | 0 | 0 |
+| OF-63 | 1 | 0 | 0 | 0 | 0 |
 | OF-64 | 1 | 0 | 0 | 0 | 0 |
 | OF-65 | 0 | 1 | 0 | 0 | 0 |
 | OF-66 | 0 | 1 | 0 | 0 | 0 |
@@ -354,7 +354,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | WF-24 | 1 | 0 | 0 | 0 | 0 |
 | WF-25 | 1 | 0 | 0 | 0 | 0 |
 | WF-26 | 1 | 0 | 0 | 0 | 0 |
-| WF-27 | 1 | 0 | 0 | 0 | 0 |
 | WIRE_DRAW | 3 | 0 | 0 | 0 | 0 |
 | WORMS | 0 | 4 | 0 | 0 | 0 |
 | WS_AMMONIA | 0 | 3 | 0 | 0 | 0 |
