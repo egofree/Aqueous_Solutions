@@ -209,7 +209,13 @@
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
         },
         "rated_kW": 40.0,
-        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)"
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)",
+        "design_capacity_kg_d": {
+          "value": 0.29,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
+        }
       }
     },
     {
@@ -2534,8 +2540,9 @@
         "design_kPa": 4.5,
         "relief_mm": 3.3,
         "design_capacity_kg_d": {
-          "value": 45.0,
-          "basis": "IA-OIL-01 MSW case",
+          "value": 52.94,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
           "task": "X-RSZ-07 sweep"
         },
         "relief_basis": {
@@ -3133,6 +3140,12 @@
           "vent_DN": 25,
           "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 11.36,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       },
       "continuous_kw": {
@@ -6791,6 +6804,12 @@
           "vent_DN": 25,
           "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 22.1 kPa (1.80 m full at SG 1.25) = 24.5 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 0.91,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },

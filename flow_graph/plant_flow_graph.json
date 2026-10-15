@@ -188,7 +188,13 @@
           "feed_kg_d": 7.0318,
           "basis": "X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated"
         },
-        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)"
+        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)",
+        "design_capacity_kg_d": {
+          "value": 10.59,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
+        }
       }
     },
     {
@@ -236,6 +242,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 121.87,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       },
       "continuous_kw": null
@@ -376,7 +388,13 @@
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
         },
         "rated_kW": 40.0,
-        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)"
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)",
+        "design_capacity_kg_d": {
+          "value": 0.29,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
+        }
       }
     },
     {
@@ -705,6 +723,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; pipe only, no standing liquid (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 7.94,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       },
       "continuous_kw": null
@@ -4362,6 +4386,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 6.76,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },
@@ -4412,6 +4442,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.6 kPa (0.62 m full at SG 1.25; store hold-up 2 d = 0.083 m3, H/D 1.5, A-M-182) = 10.0 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 89.21,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },
@@ -4636,6 +4672,12 @@
             0.207
           ],
           "A-M": "A-M-138"
+        },
+        "design_capacity_kg_d": {
+          "value": 46.46,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       },
       "continuous_kw": null
@@ -4672,8 +4714,9 @@
         "design_kPa": 4.5,
         "relief_mm": 3.3,
         "design_capacity_kg_d": {
-          "value": 45.0,
-          "basis": "IA-OIL-01 MSW case",
+          "value": 52.94,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
           "task": "X-RSZ-07 sweep"
         },
         "relief_basis": {
@@ -4798,6 +4841,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.7 kPa (0.38 m full at SG 1.25; store hold-up 2 d = 0.020 m3, H/D 1.5, A-M-182) = 7.0 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 13.4,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },
@@ -4830,6 +4879,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.0 kPa (0.33 m full at SG 1.25; store hold-up 2 d = 0.012 m3, H/D 1.5, A-M-182) = 6.5 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 8.33,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },
@@ -4862,6 +4917,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.0 kPa (0.32 m full at SG 1.25; store hold-up 2 d = 0.012 m3, H/D 1.5, A-M-182) = 6.0 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 7.94,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },
@@ -4894,6 +4955,12 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.3 kPa (0.35 m full at SG 1.25; store hold-up 2 d = 0.015 m3, H/D 1.5, A-M-182) = 6.5 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 10.03,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },
@@ -6656,6 +6723,12 @@
           "vent_DN": 25,
           "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 11.36,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       },
       "continuous_kw": {
@@ -11082,6 +11155,12 @@
           "vent_DN": 25,
           "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 22.1 kPa (1.80 m full at SG 1.25) = 24.5 kPa g (A-M-174)"
+        },
+        "design_capacity_kg_d": {
+          "value": 0.91,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
         }
       }
     },

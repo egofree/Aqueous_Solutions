@@ -3708,5 +3708,25 @@
     "verification": "clash_check.py: 0 contacts > 0.001 m3 for 27 new elements vs 246 solids",
     "replace_when": "when an equipment-to-equipment clash check or a fire-engineer GA review moves units",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-216",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "X-RSZ-07 linear class-increment carry",
+    "statement": "Bounding cases A, B and MSW are carried downstream from their class edges in proportion to design-day out-edge rates; a unit more than 2 % over design day gets design_capacity_kg_d at the governing case. Separation splits are held at design day (bound, not model).",
+    "verification": "docs-authority/RESIZE_SWEEP.md",
+    "replace_when": "Replace with project data when available",
+    "doc": "AQS-PAR-003"
   }
 ]

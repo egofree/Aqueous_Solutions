@@ -109,7 +109,13 @@
           "feed_kg_d": 7.0318,
           "basis": "X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated"
         },
-        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)"
+        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)",
+        "design_capacity_kg_d": {
+          "value": 10.59,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
+        }
       }
     },
     {
