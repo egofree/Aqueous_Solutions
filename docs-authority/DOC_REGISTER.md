@@ -162,7 +162,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-SIGN-001 | `docs-authority/SIGN_SCHEDULE.md` | A | 2026-09-26 | Sign and label schedule | canonical |
 | AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | D | 2026-10-01 | Site access — orientation, north dock, service / egress | canonical |
 | AQS-STD-001 | `docs-authority/AQS-STD-001.md` | A | 2026-10-10 | Unit duty standard | canonical |
-| AQS-STD-002 | `docs-authority/MATERIALS_STD.md` | F | 2026-10-15 | Materials standard | canonical |
+| AQS-STD-002 | `docs-authority/MATERIALS_STD.md` | H | 2026-10-15 | Materials standard | canonical |
 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` | — | 2026-10-02 | Standards basis for the audit fixes | canonical |
 | AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | A | 2026-09-27 | STL rebuild manifest | canonical |
 | AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | K | 2026-10-01 | Stream register — inter-block only | canonical |
@@ -185,3 +185,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | A | 2026-10-15 | EW_1 to EW_9 cell sizing | canonical |
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | A | 2026-10-15 | Load list | canonical |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | A | 2026-10-15 | EW rectifier sizing | canonical |
+| AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | A | 2026-10-15 | Piping class sheets | canonical |

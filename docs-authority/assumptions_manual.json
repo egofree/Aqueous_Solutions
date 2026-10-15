@@ -570,5 +570,44 @@
    "docs-authority/RECT_EW.md"
   ],
   "id": "A-M-044"
+ },
+ {
+  "value": "0.22 at 60 C (PVC-U); 0.25 at 82 C (CPVC)",
+  "units": "pressure factor",
+  "where": "Classes P1, P2",
+  "basis": "Published manufacturer temperature-derating tables (Spears, Charlotte class)",
+  "sensitivity": "Allowable pressure linear",
+  "replaced_by": "Chosen brand table",
+  "task": "X-PIP-01",
+  "files": [
+   "docs-authority/PIPING_CLASSES.md"
+  ],
+  "id": "A-M-045"
+ },
+ {
+  "value": "PN16 at 20 C (PVDF SDR21); PN10 (PP-H)",
+  "units": "bar",
+  "where": "Classes P3, P4",
+  "basis": "ISO 10931 / ISO 15494 series ratings",
+  "sensitivity": "Allowable at temperature from the regression curve",
+  "replaced_by": "Chosen brand regression curve",
+  "task": "X-PIP-01",
+  "files": [
+   "docs-authority/PIPING_CLASSES.md"
+  ],
+  "id": "A-M-046"
+ },
+ {
+  "value": "120 C PVDF; 80 C PP-H; 60 C HDPE; 200 C glass; 100 C FRP",
+  "units": "C",
+  "where": "Class temperature limits",
+  "basis": "Common published service limits",
+  "sensitivity": "Class choice at the margins",
+  "replaced_by": "Chosen brand data",
+  "task": "X-PIP-01",
+  "files": [
+   "docs-authority/PIPING_CLASSES.md"
+  ],
+  "id": "A-M-047"
  }
 ]

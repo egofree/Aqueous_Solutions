@@ -182,7 +182,7 @@ Decision (owner approval 2026-10-15). HX-5 is a borosilicate glass 3.3 coil. Gla
 
 S17. ISO 3585:1998, Borosilicate glass 3.3 — Properties.
 
-### 4.4 HX8 PVDF bundle, Rev H
+### 4.5 HX8 PVDF bundle, Rev H
 
 Decision (owner approval 2026-10-15). HX8 is a PVDF shell-and-tube bundle, 7.53 m² at U 101 W/m²K (AQS-DUTY-049). Rationale against isolated impregnated graphite (0.85 m²):
 - Graphite conducts. In the EW aisle it would sit in the liquor path between cells at different potentials; isolation must hold at both liquor connections and the Q4 side for the life of the plant. A failed isolator gives a stray-current path and a noble galvanic partner (M6). PVDF has no such failure mode.
