@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,203.6 40.0,78.3 71.7,60.0 560.0,341.9 560.0,477.7" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="136.9">Z +2400</text>
+<text x="61.8" y="65.1">X +700</text>
+<text x="321.8" y="197.0">Y -10800</text>
+<text x="566.0" y="405.8">Z -2600</text>
+<circle cx="40.0" cy="203.6" r="5" fill="black"/><text x="48.0" y="217.6">FUEL_CELL</text>
+<circle cx="560.0" cy="477.7" r="5" fill="none" stroke="black"/><text x="568.0" y="491.7">NOX_SCRUB</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-FC-FIX</text>
+<text x="20" y="614">DN50  class P2  CPVC Sch 80 ASTM F441</text>
+<text x="20" y="628">FUEL_CELL -> NOX_SCRUB</text>
+<text x="20" y="642">pipe 16.32 m in 5 pieces; cut 2370 640 6000 4740 2570 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,154.7 560.0,60.0 40.0,360.2 120.5,406.7 120.5,499.6" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="103.4">Z +2650</text>
+<text x="306.0" y="206.1">X -16800</text>
+<text x="86.2" y="379.5">Y -2600</text>
+<text x="126.5" y="449.1">Z -2600</text>
+<circle cx="560.0" cy="154.7" r="5" fill="black"/><text x="568.0" y="168.7">WS_NITRIC</text>
+<circle cx="120.5" cy="499.6" r="5" fill="none" stroke="black"/><text x="128.5" y="513.6">NOX_SCRUB</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-NIT-VENT</text>
+<text x="20" y="614">DN15  class F1  FRP vinyl ester</text>
+<text x="20" y="628">WS_NITRIC -> NOX_SCRUB</text>
+<text x="20" y="642">pipe 24.59 m in 6 pieces; cut 2639 6000 6000 4779 2579 2589 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt-and-strap joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

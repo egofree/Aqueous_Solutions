@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,381.7 560.0,360.2 560.0,360.2 40.0,60.0 40.0,81.4" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="366.9">Z +50</text>
+<text x="306.0" y="206.1">Y +1400</text>
+<text x="46.0" y="66.7">Z -50</text>
+<circle cx="560.0" cy="381.7" r="5" fill="black"/><text x="568.0" y="395.7">ACETOX</text>
+<circle cx="40.0" cy="81.4" r="5" fill="none" stroke="black"/><text x="48.0" y="95.4">ACEX</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-ACOH</text>
+<text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">ACETOX -> ACEX</text>
+<text x="20" y="642">pipe 1.46 m in 3 pieces; cut 39 1379 39 mm</text>
+<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 6 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

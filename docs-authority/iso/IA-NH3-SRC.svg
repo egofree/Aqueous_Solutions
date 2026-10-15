@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,580.0 40.0,450.3 426.8,227.0 137.6,60.0 137.6,427.9" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="511.1">Z +3050</text>
+<text x="239.4" y="334.6">X +10500</text>
+<text x="288.2" y="139.5">Y +7850</text>
+<text x="143.6" y="240.0">Z -8650</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">HDR_N2</text>
+<circle cx="137.6" cy="427.9" r="5" fill="none" stroke="black"/><text x="145.6" y="441.9">WS_AMMONIA</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-NH3-SRC</text>
+<text x="20" y="614">DN50  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="628">HDR_N2 -> WS_AMMONIA</text>
+<text x="20" y="642">pipe 29.87 m in 7 pieces; cut 3020 6000 4440 6000 1790 6000 2620 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 11 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

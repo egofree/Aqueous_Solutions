@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,334.0 560.0,331.1 534.8,345.6 40.0,60.0 40.0,188.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="328.5">Z +50</text>
+<text x="553.4" y="334.4">X -500</text>
+<text x="293.4" y="198.8">Y +9800</text>
+<text x="46.0" y="120.1">Z -2200</text>
+<circle cx="560.0" cy="334.0" r="5" fill="black"/><text x="568.0" y="348.0">HTC</text>
+<circle cx="40.0" cy="188.3" r="5" fill="none" stroke="black"/><text x="48.0" y="202.3">COMPOST</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-HTC-01</text>
+<text x="20" y="614">DN50  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">HTC -> COMPOST</text>
+<text x="20" y="642">pipe 12.37 m in 5 pieces; cut 20 440 6000 3740 2170 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

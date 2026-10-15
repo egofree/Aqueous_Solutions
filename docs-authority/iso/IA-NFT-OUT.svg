@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="144.7,305.9 144.7,60.0 40.0,120.5 472.9,370.4 472.9,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="150.7" y="178.9">Z +3050</text>
+<text x="98.4" y="86.2">X -1500</text>
+<text x="262.4" y="241.4">Y -6200</text>
+<text x="478.9" y="471.2">Z -2600</text>
+<circle cx="144.7" cy="305.9" r="5" fill="black"/><text x="152.7" y="319.9">NFT</text>
+<circle cx="472.9" cy="580.0" r="5" fill="none" stroke="black"/><text x="480.9" y="594.0">BIOFILTER</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-NFT-OUT</text>
+<text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">NFT -> BIOFILTER</text>
+<text x="20" y="642">pipe 13.29 m in 5 pieces; cut 3039 1479 6000 179 2589 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

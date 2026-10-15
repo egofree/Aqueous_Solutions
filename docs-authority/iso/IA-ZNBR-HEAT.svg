@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,305.3 40.0,259.6 385.7,60.0 560.0,160.6 560.0,220.8" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="278.5">Z +2400</text>
+<text x="218.9" y="155.8">X +20948</text>
+<text x="478.9" y="106.3">Y -10560</text>
+<text x="566.0" y="186.7">Z -3160</text>
+<circle cx="40.0" cy="305.3" r="5" fill="black"/><text x="48.0" y="319.3">ZNBR2</text>
+<circle cx="560.0" cy="220.8" r="5" fill="none" stroke="black"/><text x="568.0" y="234.8">Q4_BUS</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-ZNBR-HEAT</text>
+<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="628">ZNBR2 -> Q4_BUS</text>
+<text x="20" y="642">pipe 37.00 m in 8 pieces; cut 2389 6000 6000 6000 2927 6000 4539 3149 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

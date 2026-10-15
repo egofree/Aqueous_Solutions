@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="323.2,105.8 323.2,60.0 40.0,223.5 493.2,485.2 493.2,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="329.2" y="78.9">Z +700</text>
+<text x="187.6" y="137.8">X -5000</text>
+<text x="272.6" y="350.3">Y -8000</text>
+<text x="499.2" y="528.6">Z -1450</text>
+<circle cx="323.2" cy="105.8" r="5" fill="black"/><text x="331.2" y="119.8">ACID_POLISH_SCRUB</text>
+<circle cx="493.2" cy="580.0" r="5" fill="none" stroke="black"/><text x="501.2" y="594.0">CRU</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  S66</text>
+<text x="20" y="614">DN15  class P2  CPVC Sch 80 ASTM F441</text>
+<text x="20" y="628">ACID_POLISH_SCRUB -> CRU</text>
+<text x="20" y="642">pipe 15.09 m in 5 pieces; cut 689 4979 6000 1979 1439 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

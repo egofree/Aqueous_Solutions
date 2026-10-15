@@ -25,6 +25,12 @@ for r in pr.get('moves',[])+pr.get('create_moves',[]):
 for r in json.load(open('flow_graph/placement_study.json'))['units']:
     o,z=r['origin_mm'],r['size_mm']; C.setdefault(r['unit_id'],([o[i]+z[i]/2 for i in range(3)],'placement_study (STUDY)'))
 LV={'L-1':-6000,'L0':0,'L1':6000}
+for r in seed['units']:   # seed units (issued table) where no duty origin
+    o,z=r.get('origin_mm'),r.get('size_mm')
+    if o and z and len(z)>=2:
+        o=list(o)+[LV.get(r.get('level'),0)]*(3-len(o)); z=list(z)+[0]*(3-len(z)); C.setdefault(r['unit_id'],([o[i]+z[i]/2 for i in range(3)],'placement_seed'))
+if 'EVAP_ACID_VS' not in C and 'EVAP_ACID' in C:   # EVAP_ACID_VS rides on the EVAP_ACID frame, north edge (X-PAR-10)
+    c=C['EVAP_ACID'][0]; C['EVAP_ACID_VS']=([c[0],c[1]+650,c[2]],'on EVAP_ACID frame')
 for b in seed['blocks']:
     o=b['origin_mm']; z=b['size_mm']; c=[o[0]+z[0]/2,o[1]+z[1]/2,LV.get(b['level'],0)+500]
     for u in b.get('unit_ids',[]): C.setdefault(u,(c,'placement block '+b['block_id']))

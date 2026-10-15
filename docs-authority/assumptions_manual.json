@@ -1861,5 +1861,21 @@
   "sensitivity": "Reconciled study rates move as transfer functions replace them; the O2 surplus disappears when CRYO_ASU is driven by O2 demand (X-MFG-33)",
   "replaced_by": "Per-unit transfer functions (X-PAR-02) and the in-house cold box design (X-MFG-33)",
   "verification_test": "Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero"
+ },
+ {
+  "id": "A-M-121",
+  "task": "X-PIP-03",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/_iso_sheets.py",
+   "docs-authority/_line_list.py"
+  ],
+  "value": "Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic elbow take-off 0.5 x OD; 6 m random lengths; flanges at both equipment nozzles; ASME B16.5 Class 150 bolting for all classes; EVAP_ACID_VS lines from the EVAP_ACID frame centre + 650 mm north; seed units used for line ends where no duty origin",
+  "units": "mm, m",
+  "where": "AQS-ISO-002",
+  "basis": "ASME B16.9, ASME B16.5, ASME B36.10M, ASTM D2467, ISO 15494",
+  "sensitivity": "Cut lengths change by tens of mm per fitting; routes change when clash checking and supports land (X-PIP-04)",
+  "replaced_by": "Clash-checked 3D routing and fabrication take-offs",
+  "verification_test": "3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class"
  }
 ]

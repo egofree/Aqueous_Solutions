@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,580.0 40.0,196.0 275.6,60.0 303.3,76.0 303.3,540.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="384.0">Z +2400</text>
+<text x="163.8" y="124.0">X +1700</text>
+<text x="295.4" y="64.0">Y -200</text>
+<text x="309.3" y="304.0">Z -2900</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">MEOH_FC</text>
+<circle cx="303.3" cy="540.0" r="5" fill="none" stroke="black"/><text x="311.3" y="554.0">MEOH_COND</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  S81</text>
+<text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">MEOH_FC -> MEOH_COND</text>
+<text x="20" y="642">pipe 7.14 m in 4 pieces; cut 2389 1679 179 2889 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

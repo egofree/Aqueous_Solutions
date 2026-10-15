@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,418.2 560.0,323.0 391.4,420.3 40.0,217.4 40.0,60.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="366.6">Z +2300</text>
+<text x="481.7" y="367.6">X -4700</text>
+<text x="221.7" y="314.8">Y +9800</text>
+<text x="46.0" y="134.7">Z +3800</text>
+<circle cx="560.0" cy="418.2" r="5" fill="black"/><text x="568.0" y="432.2">BOARD_MILL</text>
+<circle cx="40.0" cy="60.0" r="5" fill="none" stroke="black"/><text x="48.0" y="74.0">COMPOST</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-BOARD-SCRAP</text>
+<text x="20" y="614">DN50  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">BOARD_MILL -> COMPOST</text>
+<text x="20" y="642">pipe 20.42 m in 5 pieces; cut 2270 4640 6000 3740 3770 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

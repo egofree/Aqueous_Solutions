@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,60.0 560.0,74.4 161.8,304.3 40.0,233.9 40.0,510.9" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="63.2">Z -130</text>
+<text x="366.9" y="185.3">X -4150</text>
+<text x="106.9" y="265.1">Y +1270</text>
+<text x="46.0" y="368.4">Z -2500</text>
+<circle cx="560.0" cy="60.0" r="5" fill="black"/><text x="568.0" y="74.0">CONTINUOUS_RECYCLE</text>
+<circle cx="40.0" cy="510.9" r="5" fill="none" stroke="black"/><text x="48.0" y="524.9">LEACH_CSTR_1</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-REC-01</text>
+<text x="20" y="614">DN15  class P2  CPVC Sch 80 ASTM F441</text>
+<text x="20" y="628">CONTINUOUS_RECYCLE -> LEACH_CSTR_1</text>
+<text x="20" y="642">pipe 7.99 m in 4 pieces; cut 119 4129 1249 2489 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

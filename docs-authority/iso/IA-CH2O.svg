@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,63.8 560.0,60.0 80.0,337.1 40.0,314.0 40.0,317.9" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="57.9">Z +50</text>
+<text x="326.0" y="194.6">X -7200</text>
+<text x="66.0" y="321.6">Y +600</text>
+<text x="46.0" y="312.0">Z -50</text>
+<circle cx="560.0" cy="63.8" r="5" fill="black"/><text x="568.0" y="77.8">FORM</text>
+<circle cx="40.0" cy="317.9" r="5" fill="none" stroke="black"/><text x="48.0" y="331.9">IMID</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-CH2O</text>
+<text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">FORM -> IMID</text>
+<text x="20" y="642">pipe 7.84 m in 5 pieces; cut 39 6000 1179 579 39 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

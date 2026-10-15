@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,580.0 40.0,464.9 510.8,193.1 280.3,60.0 280.3,558.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="518.4">Z +3050</text>
+<text x="281.4" y="325.0">X +14400</text>
+<text x="401.5" y="122.5">Y +7050</text>
+<text x="286.3" y="305.1">Z -13200</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">HDR_N2</text>
+<circle cx="280.3" cy="558.3" r="5" fill="none" stroke="black"/><text x="288.3" y="572.3">CRYO_AHU</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-AHU-AIR</text>
+<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="628">HDR_N2 -> CRYO_AHU</text>
+<text x="20" y="642">pipe 37.47 m in 9 pieces; cut 3012 6000 6000 2324 6000 974 6000 6000 1162 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 13 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

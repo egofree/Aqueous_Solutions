@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="389.9,62.5 389.9,60.0 40.0,262.0 327.3,427.9 327.3,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="395.9" y="57.2">Z +50</text>
+<text x="220.9" y="157.0">X -8100</text>
+<text x="189.6" y="340.9">Y -6650</text>
+<text x="333.3" y="499.9">Z -3050</text>
+<circle cx="389.9" cy="62.5" r="5" fill="black"/><text x="397.9" y="76.5">WORMS</text>
+<circle cx="327.3" cy="580.0" r="5" fill="none" stroke="black"/><text x="335.3" y="594.0">HDR_N2</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-CLOSE-3</text>
+<text x="20" y="614">DN50  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="628">WORMS -> HDR_N2</text>
+<text x="20" y="642">pipe 17.67 m in 6 pieces; cut 20 6000 2040 6000 590 3020 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 10 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>
