@@ -3408,5 +3408,25 @@
     "verification": "COMMISSIONING.md",
     "replace_when": "Replace with project data when available",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-201",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Startup durations basis",
+    "statement": "ZnBr2 charge to 80 % at charge_kW; heat batteries warmed from 20 C (oil 850 kg/m3 2.2 kJ/kgK, water 4.18) by GEO_HP one per ladder; CO2 condenser cold mass 20 kg 316L cp 0.5; H2 bank at 200 bar 14.9 kg/m3",
+    "verification": "STARTUP.md",
+    "replace_when": "Replace with project data when available",
+    "doc": "AQS-PAR-003"
   }
 ]
