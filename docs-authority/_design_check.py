@@ -68,6 +68,28 @@ fd = open('docs-authority/FOUNDATION.md').read()
 import re as _re
 m = _re.search(r'Uplift[^|]*\| ([0-9,]+) kN \| ([0-9,]+) kN, FS ([0-9.]+)', fd)
 if m: U_, W_, F_ = [float(x.replace(',', '')) for x in m.groups()]; chk('QC-18', 'docs-authority/_foundation.py', 'uplift FS = W/U', F_, W_/U_, 0.01)
+# 19 wire conductor resistance vs NEC Chapter 9 Table 8 (75 C, stranded) brought to 20 C
+ws = {r['size']: r['R20'] for r in json.load(open('docs-authority/inventory/WIRE_SPECS.json'))}
+for sz, t8 in (('14 AWG', 3.14), ('10 AWG', 1.24), ('6 AWG', 0.491), ('4/0 AWG', 0.0608), ('400 kcmil', 0.0321)):
+    if sz in ws: chk('QC-19', 'docs-authority/_wire_specs.py', f'{sz} R20 ohm/km vs NEC Ch. 9 Table 8', round(t8*3.2808/(1 + 0.00393*55), 4), ws[sz], 0.03)
+# 20 motor line current = P / (eta pf sqrt3 V), MF-10 sheet values
+import csv as _csv
+md10 = {r['family']: r for r in _csv.DictReader(open('docs-authority/inventory/MOTOR_DESIGNS.csv'))}.get('MF-10')
+if md10: chk('QC-20', 'flow_graph/inventory/motor_designs.py', 'MF-10 line current A', float(md10['current_A']), 1500/(0.865*0.80*math.sqrt(3)*480), 0.02)
+# 21 first-article rated torque = 9549 P / n at 3 % slip
+fa = {r['family']: r for r in json.load(open('docs-authority/inventory/MOTOR_FA.json'))}
+if 'MF-18' in fa: chk('QC-21', 'docs-authority/_motor_fa.py', 'MF-18 rated torque N m', fa['MF-18']['T_Nm'], 9549*18.5/(1800*0.97), 0.01)
+# 22 BMED bench output g/h = N I CE M / F
+tr = json.load(open('docs-authority/inventory/TEST_RIGS.json'))
+chk('QC-22', 'docs-authority/_test_rigs.py', 'BMED bench NaOH g/h (10 triplets, 8 A, CE 0.80)', tr['bmed']['naoh_g_h'], 10*8.0*0.80/96485*39.997*3600, 0.01)
+# 23 resize sweep: OIL_DRYER MSW capacity = design day x organic ratio 0.30 / 0.22
+od = (N.get('OIL_DRYER') or {}).get('params', {}).get('design_capacity_kg_d') if 'N' in dir() else None
+if od is None:
+    od = next((n['params'].get('design_capacity_kg_d') for n in g['nodes'] if n['unit_id'] == 'OIL_DRYER'), None)
+if od: chk('QC-23', 'docs-authority/_resize_sweep.py', 'OIL_DRYER capacity kg/d at MSW', od['value'], 33.0*0.30/0.22, 0.01)
+# 24 CAD clash gate
+cc = json.load(open('docs-authority/inventory/CAD_CLASH.json'))
+C.append(dict(check='QC-24', module='models/freecad/clash_check.py', item=f"CAD clashes, {cc['new']} new elements vs {cc['others']} solids", model=len(cc['clashes']), independent=0, tol='0', result='pass' if not cc['clashes'] else f"FAIL {len(cc['clashes'])}"))
 covered = {c['module'] for c in C}
 mods = sorted([m for m in glob.glob('flow_graph/param/*.py') + glob.glob('flow_graph/param/sizing/*.py') + glob.glob('docs-authority/_*.py') if not os.path.basename(m).startswith(('test_', '__'))])
 rec = [dict(module=m, independent_check=', '.join(sorted({c['check'] for c in C if c['module'] == m})) or '-', status=('auto-checked' if m in covered else 'second-person review required'), checker='') for m in mods]
