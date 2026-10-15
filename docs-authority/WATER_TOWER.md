@@ -33,13 +33,13 @@ The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3
 | Load | Value | Basis |
 |---|---|---|
 | Water weight, upper | 30979 kN (28.1 kPa per reservoir slab) | operating = test (full) |
-| Seismic base shear from the water mass | 15490 kN (Cs 0.50) | ASCE 7 12.8, SDS 1.0, R 3.0, Ie 1.5 (Risk Cat. IV), impulsive mass taken rigid |
-| Seismic overturning at grade | 399632 kN m | water centroid height |
-| Convective period, sloshing height | 4.78 s, 1.42 m (Sac 0.188 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
+| Seismic base shear from the water mass | 1657 kN (Cs 0.05) | ASCE 7 12.8, SDS 0.107, R 3.0, Ie 1.5 (Risk Cat. IV), impulsive mass taken rigid |
+| Seismic overturning at grade | 42761 kN m | water centroid height |
+| Convective period, sloshing height | 4.78 s, 0.19 m (Sac 0.025 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
 | Freeboard in each reservoir level | 2.63 m, covers the sloshing height | soffit must not take wave impact |
 | Wind on the reservoir storeys | 809 kN (qz 1.70 kPa at 34.8 m) | ASCE 7 ch. 26-27, exposure C, 50.0 m/s |
 
-Seismic governs over wind by 19 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
+Seismic governs over wind by 2 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
 
 ## Egress and access (IBC2021_CH10, NFPA101_2024)
 

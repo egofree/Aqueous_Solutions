@@ -2441,18 +2441,18 @@
   "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
  },
  "wt_SDS": {
-  "value": 1.0,
-  "units": "g design short-period spectral acceleration (site unknown; high-seismic default)",
-  "register": "A-M-187",
+  "value": 0.107,
+  "units": "g design short-period spectral acceleration = 2/3 Fa Ss, AQS-SITE-002 Ss 0.10 g, site class D, Fa 1.6 (ASCE 7-22 Table 11.4-1)",
   "needs_verification": true,
-  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
+  "ref": "ASCE7_22"
  },
  "wt_SD1": {
-  "value": 0.6,
-  "units": "g design 1 s spectral acceleration",
-  "register": "A-M-187",
+  "value": 0.08,
+  "units": "g design 1 s spectral acceleration = 2/3 Fv S1, AQS-SITE-002 S1 0.05 g, site class D, Fv 2.4 (ASCE 7-22 Table 11.4-2)",
   "needs_verification": true,
-  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
+  "ref": "ASCE7_22"
  },
  "wt_TL_s": {
   "value": 8.0,
@@ -2519,5 +2519,33 @@
   "register": "A-M-189",
   "needs_verification": true,
   "verification_test": "Vibration and temperature trending; bearing L10 life from the motor design load"
+ },
+ "soil_allow_kPa": {
+  "value": 72.0,
+  "units": "kPa allowable bearing, presumptive clay (CL/ML/MH/CH)",
+  "ref": "IBC2021_1806",
+  "needs_verification": true,
+  "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus"
+ },
+ "soil_unit_weight_kN_m3": {
+  "value": 18.0,
+  "units": "kN/m3 moist clay",
+  "register": "A-M-208",
+  "needs_verification": true,
+  "verification_test": "Geotechnical report unit weight"
+ },
+ "gw_depth_m": {
+  "value": 0.0,
+  "units": "m below grade, groundwater (worst case at grade until measured)",
+  "register": "A-M-208",
+  "needs_verification": true,
+  "verification_test": "Piezometer readings at the parcel through a wet season"
+ },
+ "raft_fc_MPa": {
+  "value": 35.0,
+  "units": "MPa concrete strength, raft and basement walls",
+  "register": "A-M-208",
+  "needs_verification": true,
+  "verification_test": "Mix design and cylinder tests"
  }
 }

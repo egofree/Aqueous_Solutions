@@ -3548,5 +3548,25 @@
     "verification": "FRAME_CHECK.md",
     "replace_when": "Replace with project data when available",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-208",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Foundation basis",
+    "statement": "Mat under the plate at the CATCH_TANK floor; IBC 1806.2 clay 72 kPa (SITE_BASIS corrected from 2000 psf) with the 1806.3.1 depth increase; groundwater at grade until measured; uplift FS 1.10 with plant empty sets raft ballast; 600 mm basement walls; fc 35 MPa; seismic from AQS-SITE-002 (SDS 0.107, SD1 0.08) replacing the 1.0 g placeholder",
+    "verification": "FOUNDATION.md",
+    "replace_when": "Replace with project data when available",
+    "doc": "AQS-PAR-003"
   }
 ]

@@ -248,6 +248,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register, vessels and interstage valves (X-SAF-04) | canonical |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | A | 2026-10-16 | Fire protection and detection, gas-receiver API 521 fire case (X-SAF-05) | canonical |
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | A | 2026-10-16 | Gas detection: H2, O2 deficiency and enrichment, CO, NOx, Cl2/HCl, HF (X-SAF-06) | canonical |
+| AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design against the soil data (X-BLD-03) | canonical |
 | AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | A | 2026-10-16 | Building frame member check: beams, columns, bracing (X-BLD-01) | canonical |
 | AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | A | 2026-10-16 | Independent design check record per calculation (X-QA-02) | canonical |
 | AQS-END-001 | `docs-authority/DECOMMISSIONING.md` | A | 2026-10-16 | Decommissioning plan: drain, purge, dismantle per system (X-END-01) | canonical |

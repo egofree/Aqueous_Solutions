@@ -48,6 +48,6 @@ Grid 4 x 3 bays of 6 m (24 x 18 m), 20 columns. Welded sections in ASTM A992 pla
 
 ## Lateral
 
-Design shear 15490 kN (seismic; AQS-BLD-014). Two braced lines per direction, two braced bays per line, tension-only diagonals at 45 deg: T = 5476 kN per diagonal, A >= 17637 mm2 (D2), welded box about 350 mm. Overturning on the braced-bay columns goes to X-BLD-03.
+Design shear 1657 kN (seismic; AQS-BLD-014). Two braced lines per direction, two braced bays per line, tension-only diagonals at 45 deg: T = 586 kN per diagonal, A >= 1887 mm2 (D2), welded box about 120 mm. Overturning on the braced-bay columns goes to X-BLD-03.
 
 Result: every member above has a section that passes; the reservoir storeys govern the columns, which step down in size above R3. Sections are welded from plate, sized here, not picked from a catalogue.

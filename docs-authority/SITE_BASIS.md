@@ -17,7 +17,7 @@ Date 2026-10-15. Owner decision: study site at 33.0° N, Dallas–Fort Worth cla
 | Site class | D (default) | assumption | IBC 1613.2.2 default where soil is unknown |
 | Seismic design category | A expected | assumption | Follows from the assumed Ss/S1 at class D; confirm with [B5] |
 | Ground snow | 5 psf (0.24 kPa) | assumption | Pending [B5] |
-| Soil | expansive clay, allowable bearing 2000 psf (96 kPa) | assumption | IBC Table 1806.2 presumptive value for clay; geotechnical report replaces it |
+| Soil | expansive clay, allowable bearing 1500 psf (72 kPa) | assumption | IBC Table 1806.2 presumptive value for clay (CL, ML, MH, CH); corrected from 2000 psf, which is the sand value (X-BLD-03, 2026-10-16); geotechnical report replaces it |
 | Frost depth | 6 in (150 mm) | assumption | Local practice; replaced by the building official's value |
 
 Use. Outdoor equipment and cooling loops are rated at the 0.4 % cooling dry bulb (37.8 °C) and the 99.6 % heating dry bulb (−7.2 °C). Q4 and air-cooled duties that used another ambient are checked under X-BAS-03 follow-up items in TASK_PLAN.
