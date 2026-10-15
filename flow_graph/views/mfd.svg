@@ -270,7 +270,7 @@
 <title>CRYO_H2&#45;&gt;H2_PURIFIER</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M886.86,-601.31C864.59,-599.25 833.37,-596.37 807.44,-593.98"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="807.71,-590.49 797.43,-593.06 807.07,-597.46 807.71,-590.49"/>
-<text text-anchor="middle" x="912.65" y="-600.24" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S49\n5.028752089257418 kg/d</text>
+<text text-anchor="middle" x="781.65" y="-600.24" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S49\n5.028752089257418 kg/d</text>
 </g>
 <!-- CRYO_H2&#45;&gt;MEOH_SYNTH -->
 <g id="edge68" class="edge">
@@ -904,8 +904,8 @@
 <!-- MET_AHU -->
 <g id="node50" class="node">
 <title>MET_AHU</title>
-<path fill="#ffffff" stroke="black" d="M508.87,-402.44C508.87,-402.44 473.87,-402.44 473.87,-402.44 467.87,-402.44 461.87,-396.44 461.87,-390.44 461.87,-390.44 461.87,-378.44 461.87,-378.44 461.87,-372.44 467.87,-366.44 473.87,-366.44 473.87,-366.44 508.87,-366.44 508.87,-366.44 514.87,-366.44 520.87,-372.44 520.87,-378.44 520.87,-378.44 520.87,-390.44 520.87,-390.44 520.87,-396.44 514.87,-402.44 508.87,-402.44"/>
-<text text-anchor="middle" x="491.37" y="-382.24" font-family="Helvetica,sans-Serif" font-size="9.00">MET_AHU</text>
+<path fill="#ffffff" stroke="black" d="M571.87,-500.44C571.87,-500.44 536.87,-500.44 536.87,-500.44 530.87,-500.44 524.87,-494.44 524.87,-488.44 524.87,-488.44 524.87,-476.44 524.87,-476.44 524.87,-470.44 530.87,-464.44 536.87,-464.44 536.87,-464.44 571.87,-464.44 571.87,-464.44 577.87,-464.44 583.87,-470.44 583.87,-476.44 583.87,-476.44 583.87,-488.44 583.87,-488.44 583.87,-494.44 577.87,-500.44 571.87,-500.44"/>
+<text text-anchor="middle" x="554.37" y="-480.24" font-family="Helvetica,sans-Serif" font-size="9.00">MET_AHU</text>
 </g>
 <!-- MET_SCRUB -->
 <g id="node52" class="node">
@@ -916,22 +916,22 @@
 <!-- MET_AHU&#45;&gt;MET_SCRUB -->
 <g id="edge54" class="edge">
 <title>MET_AHU&#45;&gt;MET_SCRUB</title>
-<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M480.3,-402.76C475.39,-417.74 470.96,-439.14 469.11,-456.27"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="465.62,-456.03 468.3,-466.28 472.59,-456.59 465.62,-456.03"/>
-<text text-anchor="middle" x="432.71" y="-432.11" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S62\n51145.68 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M524.84,-474.45C522.45,-474.37 520,-474.33 517.54,-474.33"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="517.28,-470.83 507.37,-474.58 517.45,-477.83 517.28,-470.83"/>
+<text text-anchor="middle" x="563.19" y="-476.99" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S62\n51145.68 kg/d</text>
 </g>
 <!-- MET_AHU&#45;&gt;MET_SCRUB -->
 <g id="edge64" class="edge">
 <title>MET_AHU&#45;&gt;MET_SCRUB</title>
-<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M495.45,-402.83C494.9,-417.75 491.24,-439.01 486.54,-456.08"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="483.07,-455.48 483.5,-466.07 489.76,-457.52 483.07,-455.48"/>
-<text text-anchor="middle" x="449" y="-423.05" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S71\n20458.32 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M524.78,-492.52C522.41,-492.72 519.98,-492.88 517.53,-492.99"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="517.36,-489.49 507.42,-493.17 517.49,-496.49 517.36,-489.49"/>
+<text text-anchor="middle" x="563.15" y="-495.35" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S71\n20458.32 kg/d</text>
 </g>
 <!-- MET_MELT -->
 <g id="node51" class="node">
 <title>MET_MELT</title>
-<path fill="#ffffff" stroke="black" d="M575.37,-500.44C575.37,-500.44 537.37,-500.44 537.37,-500.44 531.37,-500.44 525.37,-494.44 525.37,-488.44 525.37,-488.44 525.37,-476.44 525.37,-476.44 525.37,-470.44 531.37,-464.44 537.37,-464.44 537.37,-464.44 575.37,-464.44 575.37,-464.44 581.37,-464.44 587.37,-470.44 587.37,-476.44 587.37,-476.44 587.37,-488.44 587.37,-488.44 587.37,-494.44 581.37,-500.44 575.37,-500.44"/>
-<text text-anchor="middle" x="556.37" y="-480.24" font-family="Helvetica,sans-Serif" font-size="9.00">MET_MELT</text>
+<path fill="#ffffff" stroke="black" d="M512.37,-402.44C512.37,-402.44 474.37,-402.44 474.37,-402.44 468.37,-402.44 462.37,-396.44 462.37,-390.44 462.37,-390.44 462.37,-378.44 462.37,-378.44 462.37,-372.44 468.37,-366.44 474.37,-366.44 474.37,-366.44 512.37,-366.44 512.37,-366.44 518.37,-366.44 524.37,-372.44 524.37,-378.44 524.37,-378.44 524.37,-390.44 524.37,-390.44 524.37,-396.44 518.37,-402.44 512.37,-402.44"/>
+<text text-anchor="middle" x="493.37" y="-382.24" font-family="Helvetica,sans-Serif" font-size="9.00">MET_MELT</text>
 </g>
 <!-- WIRE_DRAW -->
 <g id="node54" class="node">
@@ -942,9 +942,9 @@
 <!-- MET_MELT&#45;&gt;WIRE_DRAW -->
 <g id="edge49" class="edge">
 <title>MET_MELT&#45;&gt;WIRE_DRAW</title>
-<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M555.72,-500.47C555.61,-503.5 555.5,-506.72 555.38,-509.94"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="551.88,-509.95 555.02,-520.06 558.88,-510.19 551.88,-509.95"/>
-<text text-anchor="middle" x="519.05" y="-507.81" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S57\n6.8389 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M500.6,-402.71C511.2,-429.46 531.01,-479.47 543.4,-510.75"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="540.2,-512.19 547.14,-520.19 546.71,-509.61 540.2,-512.19"/>
+<text text-anchor="middle" x="485.5" y="-459.33" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S57\n6.8389 kg/d</text>
 </g>
 <!-- MET_SCRUB&#45;&gt;OIL_FRAC -->
 <g id="edge66" class="edge">
@@ -979,7 +979,7 @@
 <title>WIRE_DRAW&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M535.36,-520.15C517.68,-503.14 491.19,-477.63 471.5,-458.68"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="473.68,-455.93 464.05,-451.52 468.83,-460.97 473.68,-455.93"/>
-<text text-anchor="middle" x="503.43" y="-483.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S58\n3.9389 kg/d</text>
+<text text-anchor="middle" x="485.18" y="-483.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S58\n3.9389 kg/d</text>
 </g>
 <!-- NUTRIENT_DOSE&#45;&gt;GROW_BED -->
 <g id="edge7" class="edge">
@@ -1143,5 +1143,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="1328.6" y="1911.3" width="860.1" height="229.4" fill="white" stroke="black" stroke-width="2.39"/><text x="1342.9" y="1949.5" font-family="sans-serif" font-size="21.5">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1342.9" y="1990.1" font-family="sans-serif" font-size="21.5">Mass flow diagram</text><text x="1342.9" y="2030.7" font-family="sans-serif" font-size="21.5">Type: flow diagram (ISO_10628_2)   Rev d020fed6   Issued 2026-10-15</text><text x="1342.9" y="2071.4" font-family="sans-serif" font-size="21.5">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1342.9" y="2112.0" font-family="sans-serif" font-size="21.5">Graph SHA-256 bf746a38a60bc120   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="1328.6" y="1911.3" width="860.1" height="229.4" fill="white" stroke="black" stroke-width="2.39"/><text x="1342.9" y="1949.5" font-family="sans-serif" font-size="21.5">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1342.9" y="1990.1" font-family="sans-serif" font-size="21.5">Mass flow diagram</text><text x="1342.9" y="2030.7" font-family="sans-serif" font-size="21.5">Type: flow diagram (ISO_10628_2)   Rev 44401a4b   Issued 2026-10-15</text><text x="1342.9" y="2071.4" font-family="sans-serif" font-size="21.5">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1342.9" y="2112.0" font-family="sans-serif" font-size="21.5">Graph SHA-256 bf746a38a60bc120   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>
