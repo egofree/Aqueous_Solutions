@@ -148,6 +148,7 @@ digraph G {
     label="MEOH";
     style=rounded; color="#94a3b8";
     "MEOH_FC" [fillcolor="#ffffff", label="MEOH_FC"];
+    "MEOH_FERM" [fillcolor="#ffffff", label="MEOH_FERM"];
     "MEOH_SYNTH" [fillcolor="#ffffff", label="MEOH_SYNTH"];
   }
   subgraph "cluster_MFG" {
@@ -213,7 +214,7 @@ digraph G {
   "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n0.008219 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n3.46 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n296.0217 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n296.0424 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "RECT_EW" [label="S17-EW\\n38.6629 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -329,4 +330,5 @@ digraph G {
   "SOL_ARK_60K" -> "BLACK_ALK_HOLD" [label="SF-BLACK_ALK_HOLD\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n24.5933 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_AHU" [label="SF-CRYO_AHU\\n4.4402 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MEOH_FERM" [label="SF-MEOH_FERM\\n0.0207 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

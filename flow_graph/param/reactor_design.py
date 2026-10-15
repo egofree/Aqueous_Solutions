@@ -72,6 +72,7 @@ def design(d, g):
           'ABE': dict(tau='rx_abe_tau_h', T='rx_abe_T_C', mat='HDPE (PE100), 50 mm PIR, N2-blanketed (anaerobic)', mix='gas recirculation (no shaft seal)', fill=0.75),
           'ACETOX': dict(tau='rx_acetox_tau_h', T='rx_acetox_T_C', mat='PP, 50 mm PIR; O2 sparger PVDF', mix='O2 sparge from HDR_O2', fill=0.7),
           'HTC': dict(tau='rx_htc_tau_h', T='rx_htc_T_C', mat='SA-240 316L, 50 mm mineral wool', mix='static autoclave, batch', fill=0.8),
+          'MEOH_FERM': dict(tau='rx_meohferm_tau_h', T='rx_meohferm_T_C', mat='HDPE (PE100), 50 mm PIR', mix='daily recirculation pump', fill=0.75),
           'GLYOXAL': dict(tau='rx_glyoxal_tau_h', T='rx_glyoxal_T_C', mat='SA-240 304L (nitric service, ULLMANN_NITRIC); NO off-gas to HNO3', mix='recirculation pump, nitrite-initiated (HOTANAHALLI1972)', fill=0.7),
           'IMID': dict(tau='rx_imid_tau_h', T='rx_imid_T_C', mat='SA-240 316L, 50 mm mineral wool', mix='recirculation pump', fill=0.7),
           'BUCL': dict(tau='rx_bucl_tau_h', T='rx_bucl_T_C', mat='glass-lined steel (HCl/ZnCl2 at reflux), reflux condenser to Q1', mix='boiling at reflux', fill=0.6)}
@@ -144,7 +145,7 @@ def write(d, g, R):
         n = N[u]; p = n.setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'
-        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC', 'GLYOXAL', 'IMID', 'BUCL', 'HNO3', 'ACEX') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
+        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC', 'GLYOXAL', 'IMID', 'BUCL', 'HNO3', 'ACEX', 'MEOH_FERM') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
             if sid in E: E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
             else:
@@ -194,7 +195,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 
 - LEACH_CSTR_1: AQS-DUTY-050, models/mfg/LEACH_CSTR_1 (in-house, CPVC).
 - BLACK_DIGEST: designed in AQS-DUTY-063 (X-SAN-01 multi-barrier sanitation train, owner decision 2026-10-15).
-- MEOH_FERM: deferred.
+- MEOH_FERM: section 5 (A-M-163).
 
 ## 4. MEOH_SYNTH (A-M-156)
 
@@ -205,7 +206,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 - Relief: API 520 gas, blocked outlet at the full feed (flow_graph/param/pressure_nodes.py).
 """
     md += '\n## 5. Biological and hydrothermal reactors\n\n| Unit | T, C | Residence, h | Working / vessel, L | DN x H, mm | Wall, mm | Heat, W | Material | Source |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n'
-    for u, src in (('YEAST', 'BAI2008'), ('ABE', 'JONES1986'), ('ACETOX', 'GULLO2014'), ('HTC', 'LIBRA2011'), ('GLYOXAL', 'HOTANAHALLI1972, A-M-161'), ('IMID', 'A-M-161'), ('BUCL', 'A-M-161')):
+    for u, src in (('YEAST', 'BAI2008'), ('ABE', 'JONES1986'), ('ACETOX', 'GULLO2014'), ('HTC', 'LIBRA2011'), ('GLYOXAL', 'HOTANAHALLI1972, A-M-161'), ('IMID', 'A-M-161'), ('BUCL', 'A-M-161'), ('MEOH_FERM', 'A-M-163')):
         r = R[u]; md += f"| {u} | {r['T_C']} | {r['tau_h']} | {r['V_work_L']:.1f} / {r['V_L']:.1f} | {r['D_mm']} x {r['H_mm']} | {r['wall_mm']} | {r['heat_W']:.1f} | {r['material']} | {src} |\n"
     md += f"\nHTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = {R['HTC']['design_MPa']:.2f} MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: {R['HTC']['t_req_mm']:.2f} mm required.\n"
     md += '\n## 6. Catalytic tube reactors (A-M-157)\n\n| Unit | T, C | Catalyst, g | Bed, mL | Tube | Bed length, mm | Heater, W | Basis |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n'

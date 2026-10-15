@@ -35,7 +35,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 
 - LEACH_CSTR_1: AQS-DUTY-050, models/mfg/LEACH_CSTR_1 (in-house, CPVC).
 - BLACK_DIGEST: designed in AQS-DUTY-063 (X-SAN-01 multi-barrier sanitation train, owner decision 2026-10-15).
-- MEOH_FERM: deferred.
+- MEOH_FERM: section 5 (A-M-163).
 
 ## 4. MEOH_SYNTH (A-M-156)
 
@@ -56,6 +56,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | GLYOXAL | 40 | 6 | 0.1 / 0.2 | 65 x 60 | 4.0 | 0.7 | SA-240 304L (nitric service, ULLMANN_NITRIC); NO off-gas to HNO3 | HOTANAHALLI1972, A-M-161 |
 | IMID | 70 | 4 | 0.1 / 0.1 | 65 x 60 | 4.0 | 3.6 | SA-240 316L, 50 mm mineral wool | A-M-161 |
 | BUCL | 105 | 6 | 0.0 / 0.1 | 50 x 50 | 4.0 | 3.7 | glass-lined steel (HCl/ZnCl2 at reflux), reflux condenser to Q1 | A-M-161 |
+| MEOH_FERM | 35 | 48 | 0.7 / 1.0 | 125 x 100 | 4.0 | 0.7 | HDPE (PE100), 50 mm PIR | A-M-163 |
 
 HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = 1.71 MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: 2.25 mm required.
 

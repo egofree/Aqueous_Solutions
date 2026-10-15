@@ -2648,5 +2648,25 @@
     "verification": "NaOH make-up +0.047 kg/d, IA-ACEX-NAOH 0.235 kg/d, IA-IL-BRINE 0.179 -> 0.414 kg/d (NaCl replaces HCl)",
     "replace_when": "breakthrough curve and regenerant excess from a bench column",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-163",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "MEOH_FERM residence",
+    "statement": "MEOH_FERM sized as an insulated HDPE tank at 35 C and 48 h on its 0.36 kg/d feed; methanol release basis not yet cited (pectin demethylation assumed)",
+    "verification": "small HDPE vessel and heater mat in AQS-DUTY-062 section 5",
+    "replace_when": "bench ferment",
+    "doc": "AQS-PAR-003"
   }
 ]

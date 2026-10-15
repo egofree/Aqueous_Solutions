@@ -1528,5 +1528,19 @@
   "register": "A-M-162 (X-PAR-14)",
   "needs_verification": true,
   "verification_test": "same breakthrough test"
+ },
+ "rx_meohferm_tau_h": {
+  "value": 48,
+  "units": "h",
+  "register": "A-M-163 (X-MFG-31 MEOH_FERM)",
+  "needs_verification": true,
+  "verification_test": "bench ferment of habitation organics: methanol release (pectin demethylation) against time"
+ },
+ "rx_meohferm_T_C": {
+  "value": 35,
+  "units": "C",
+  "register": "A-M-163 (X-MFG-31 MEOH_FERM)",
+  "needs_verification": true,
+  "verification_test": "same bench run"
  }
 }

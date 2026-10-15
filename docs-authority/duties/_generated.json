@@ -1,5 +1,5 @@
 {
- "graph_sha256": "b7a3d16a701aa56a7f366ff9f808e38b782d9f7b04a9d68039f426eddbb9cd67",
+ "graph_sha256": "823230f5f2ad4957c9daa7a583cce0e06e6638d1d837618cf65463b78a61690b",
  "sheets": 206,
  "patterns": [
   "docs-authority/duties/*.md"

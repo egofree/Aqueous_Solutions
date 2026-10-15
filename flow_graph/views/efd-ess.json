@@ -218,7 +218,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 296.0217,
+        "value": 296.0424,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -228,7 +228,7 @@
         "module_kw": 0.5,
         "count": 8430,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.022 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.042 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -360,7 +360,7 @@
         "dc_ac_ratio": 1.2,
         "interconnection": {
           "export_peak_kW": 3236.0,
-          "export_kWh_d_clear": 9119,
+          "export_kWh_d_clear": 9120,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -427,7 +427,7 @@
       "modules": [],
       "params": {
         "kW": 1382,
-        "kWh": 4256,
+        "kWh": 4257,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -437,7 +437,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1273.1744,
+              "value": 1273.2611,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -461,7 +461,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1281.662 kg/d, out 1281.662 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1281.748 kg/d, out 1281.748 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -471,9 +471,9 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.282,
+          "pump_in_m3_h": 1.2817,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.564,
+          "out_breathing_Nm3_h": 2.563,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.3,
@@ -481,14 +481,14 @@
           "thermal_term": "no sized volume: pump terms only"
         },
         "charge_kW": 1382,
-        "discharge_kW": 304,
+        "discharge_kW": 305,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 59 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 59 hybrid inverters, 72.2 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
           "H2_m3_d": 10.79,
           "purge_m3_h": 44.96,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2783.7
+          "electrode_area_m2": 2783.9
         }
       }
     }

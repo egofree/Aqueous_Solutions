@@ -19,7 +19,7 @@ flowchart LR
   BACKUP_GEN["BACKUP_GEN 0.01 kW"] -->|S47| BUS
   FUEL_CELL["FUEL_CELL 3.46 kW"] -->|S51| BUS
   MEOH_FC["MEOH_FC 0.50 kW"] -->|S79| BUS
-  PV_ARRAY["PV_ARRAY 296.02 kW"] -->|IA-PV-01| BUS
+  PV_ARRAY["PV_ARRAY 296.04 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 59 × 60 = 3540 kW inverters"])
   BUS --> MCC["MCC-1 480 V 3.0 kW"]
   BUS --> XF["T-1 15 kVA 480–208/120 V"] --> PP["PP-1 0.8 kW"]
@@ -131,6 +131,7 @@ flowchart LR
   BUS -->|SF-BLACK_ALK_HOLD| BLACK_ALK_HOLD["BLACK_ALK_HOLD 0.02 kW"]
   BUS -->|SF-H2O_ELYZ| H2O_ELYZ["H2O_ELYZ 24.59 kW"]
   BUS -->|SF-CRYO_AHU| CRYO_AHU["CRYO_AHU 4.44 kW"]
+  BUS -->|SF-MEOH_FERM| MEOH_FERM["MEOH_FERM 0.02 kW"]
   CB1["CB-1 480 V, 10 inverters, 1000 A"] --> TX1["750 kVA 480 V / 12.47 kV"] --> MV
   CB2["CB-2 480 V, 10 inverters, 1000 A"] --> TX2["750 kVA 480 V / 12.47 kV"] --> MV
   CB3["CB-3 480 V, 10 inverters, 1000 A"] --> TX3["750 kVA 480 V / 12.47 kV"] --> MV
@@ -252,6 +253,7 @@ flowchart LR
 | SOL_ARK 480 V | YEAST | 0.02 | 0.0 | 15 | graph SF-YEAST |
 | SOL_ARK 480 V | ABE | 0.02 | 0.0 | 15 | graph SF-ABE |
 | SOL_ARK 480 V | GLYOXAL | 0.02 | 0.0 | 15 | graph SF-GLYOXAL |
+| SOL_ARK 480 V | MEOH_FERM | 0.02 | 0.0 | 15 | graph SF-MEOH_FERM |
 | SOL_ARK 480 V | ACETOX | 0.02 | 0.0 | 15 | graph SF-ACETOX |
 | SOL_ARK 480 V | ACEX | 0.02 | 0.0 | 15 | graph SF-ACEX |
 | SOL_ARK 480 V | BLACK_ALK_HOLD | 0.02 | 0.0 | 15 | graph SF-BLACK_ALK_HOLD |
@@ -261,11 +263,11 @@ flowchart LR
 
 | Item | kW |
 | --- | --- |
-| Sources on the bus (graph edges) | 304.99 |
-| Demand on the bus (this page) | 303.98 |
+| Sources on the bus (graph edges) | 305.01 |
+| Demand on the bus (this page) | 304.00 |
 | Inverter rating (SOL_ARK_60K) | 3540.0 |
 | Shortfall against sources | -1.01 |
-| Shortfall against inverter | -3236.02 |
+| Shortfall against inverter | -3236.00 |
 
 ## Findings
 
@@ -273,7 +275,7 @@ flowchart LR
 2. 3 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.
-5. Grid export (D75, owner decision 2026-10-15). PV is sized at 2.0 x the balancing nameplate (2108 of 4215 kWp). Inverters at the NREL PVWatts DC/AC ratio 1.2: 59 × 60 = 3540 kW inverters. The inverters are split into 6 collection sections at 480 V, each through a pad-mount transformer to the 12.47 kV collection bus; the plant bus hangs on CB-1 (AQS-ELEC-008). Clear-day export at noon with storage full is up to 3236 kW, about 9119 kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
+5. Grid export (D75, owner decision 2026-10-15). PV is sized at 2.0 x the balancing nameplate (2108 of 4215 kWp). Inverters at the NREL PVWatts DC/AC ratio 1.2: 59 × 60 = 3540 kW inverters. The inverters are split into 6 collection sections at 480 V, each through a pad-mount transformer to the 12.47 kV collection bus; the plant bus hangs on CB-1 (AQS-ELEC-008). Clear-day export at noon with storage full is up to 3236 kW, about 9120 kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
 
 ## Code basis (X-STD-01)
 
