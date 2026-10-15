@@ -49,19 +49,19 @@ All solved units close.
 | EVAP_ACID kW | 1.497 | 1.497 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_ACID water off, kg/d | 864.996 | 864.996 | -0.0 % | PERRY9_HCL |
 | EVAP_BASE kW | 1.324 | 1.324 | +0.0 % | X-MFG-30 in-house MVR design |
-| EVAP_BASE water off, kg/d | 799.193 | 799.193 | +0.0 % | PERRY9_HCL |
+| EVAP_BASE water off, kg/d | 799.193 | 799.193 | -0.0 % | PERRY9_HCL |
 | IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | -0.0 % | X-PAR-10, PERRY9_ABS |
-| EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_3 DC kW (cell + bus drop) | 2.249 | 2.249 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_3 DC kW (cell + bus drop) | 2.249 | 2.250 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_4 DC kW (cell + bus drop) | 0.485 | 0.485 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_5 DC kW (cell + bus drop) | 0.502 | 0.502 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_6 DC kW (cell + bus drop) | 0.547 | 0.547 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_7 DC kW (cell + bus drop) | 7.119 | 7.119 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
-| RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3392.000 | 3391.142 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| RECT_EW AC kW | 38.664 | 38.664 | -0.0 % | USBM_CL_EW |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3392.000 | 3391.157 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -69,7 +69,7 @@ All solved units close.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.5 kg/d, water off 865.0 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 799.2 kg/d, 1.32 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
-5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
+5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12782 A, DC 30.93 kW, AC 38.66 kW.
 7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 126.5 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 5.06 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 799.2 kg/d, 1.32 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
@@ -288,6 +288,7 @@ All solved units close.
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | METCALF5 | Metcalf & Eddy / Tchobanoglous G. et al., Wastewater Engineering: Treatment and Resource Recovery, 5th ed. (2014), ch. 13 anaerobic digestion: high-rate mesophilic SRT 15-20 d at 35 C. |
 | METCALF5_BIOMASS | Metcalf & Eddy 5th ed. (2014) ch. 7: biomass composition C5H7O2N (113 g/mol), 1.42 g COD/g cells; digester gas about 65 % CH4 by volume (ch. 13). |
+| NARASIMHAN2000 | Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints. |
 | NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
 | NEC2023_240 | NFPA 70-2023 240.6(A) standard ampere ratings; 240.87 arc energy reduction for breakers rated or adjustable to 1200 A or higher. |
 | NEC2023_705 | NFPA 70-2023 Article 705 Interconnected Electric Power Production Sources: 705.11 supply-side connection, 705.12 load-side 120 % rule, 705.20 disconnect, 705.30 overcurrent protection, 705.40 loss of primary source. |
@@ -573,3 +574,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design |
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50) |
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list |
+| A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero |

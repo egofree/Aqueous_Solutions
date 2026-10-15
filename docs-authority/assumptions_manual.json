@@ -1846,5 +1846,20 @@
   "sensitivity": "Pump and fan counts fall where gravity or shared headers are used; family counts shift accordingly",
   "replaced_by": "Unit sizing (task 02), P&IDs (task 03) and mfg models",
   "verification_test": "Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list"
+ },
+ {
+  "id": "A-M-120",
+  "task": "X-PAR-02",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/balance.py"
+  ],
+  "value": "Held study mass rates reconciled by minimum weighted least squares to close every unit; transfer-function and stoichiometric edges held. Gross moves (> 5 %): IA-TERR-VAP 40.0 -> 37.176 kg/d (terrace vapour equals irrigation on the dry design day), IA-O2-RET 0 -> 2.824 kg/d (cold-box O2 surplus returned to CRYO_ASU)",
+  "units": "kg/d",
+  "where": "AQS-PAR-003",
+  "basis": "NARASIMHAN2000",
+  "sensitivity": "Reconciled study rates move as transfer functions replace them; the O2 surplus disappears when CRYO_ASU is driven by O2 demand (X-MFG-33)",
+  "replaced_by": "Per-unit transfer functions (X-PAR-02) and the in-house cold box design (X-MFG-33)",
+  "verification_test": "Re-run balance.py after each transfer function lands; the gross-error list must shrink to zero"
  }
 ]

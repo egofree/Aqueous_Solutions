@@ -205,6 +205,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-DUTY-062 | `docs-authority/sizing/REACTOR_DESIGN.md` | A | 2026-10-15 | In-house reaction chambers (GLASS_DIGEST, DIGESTER, OIL_PYRO) | canonical |
 | AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | A | 2026-10-15 | Blackwater and excreta multi-barrier train | canonical |
 | AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | A | 2026-10-15 | Motor and actuator inventory with family rollup (CSV beside) | canonical |
+| AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | A | 2026-10-15 | Mass balance reconciliation (X-PAR-02 closure layer) | canonical |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | A | 2026-10-15 | Inverter collection bus sections and MV step-up | canonical |
 | AQS-EGR-002 | `docs-authority/HALL_EGRESS.md` | A | 2026-10-15 | Extension hall means of egress | canonical |
 | AQS-STD-002 | `docs-authority/AQS-STD-002_CODE_BASIS.md` | A | 2026-10-15 | NFPA / ISO code basis and editions per check | canonical |

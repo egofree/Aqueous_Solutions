@@ -2,8 +2,8 @@ sector,subsystem,unit,device,motor_type,size,shaft_kW,voltage,duty,qty,basis
 BACKUP_GEN,genset,BACKUP_GEN,radiator fan,induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,1,assumed
 BACKUP_GEN,genset,BACKUP_GEN,starter motor,induction IE3,IEC 90L / 1.5 kW,1.0,480 V 3-ph,S2,1,assumed
 CRYO,CRYO,CRYO_AHU,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-CRYO,CRYO,CRYO_AHU,transfer pump IA-HVAC-COND to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,1,"56.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-CRYO,CRYO,CRYO_AHU,transfer pump S68 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,1,"79.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+CRYO,CRYO,CRYO_AHU,transfer pump IA-HVAC-COND to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,1,"56.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+CRYO,CRYO,CRYO_AHU,transfer pump S68 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,1,"78.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 CRYO,CRYO,CRYO_AR,cryocooler compressor,hermetic induction (scroll),0.25 kW hermetic,0.2,480 V 3-ph,S1,1,graph continuous_kw (assumed all compressor)
 CRYO,CRYO,CRYO_ASU,air compressor (cold box feed),induction IE3,IEC 180M / 18.5 kW,15.3,480 V 3-ph,S1,1,graph continuous_kw x 0.85 (assumed)
 CRYO,CRYO,CRYO_ASU,expander brake / generator,induction IE3,IEC 90S / 1.1 kW,0.9,480 V 3-ph,S1,1,assumed
@@ -154,7 +154,7 @@ FUEL_CELL,pem_fc,FUEL_CELL,transfer pump IA-FC-LEACH to LEACH_CSTR_1,BLDC,42 mm 
 FUEL_CELL,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,1,"42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 GAS,SCRUB,ACID_POLISH_SCRUB,induced-draft fan,induction IE3,IEC 90S / 1.1 kW,0.7236,480 V 3-ph,S1,1,"37509.8 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 GAS,SCRUB,ACID_POLISH_SCRUB,transfer pump S66 to CRU,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,1,"27.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-GAS,SCRUB,ALK_SCRUBBER,induced-draft fan,induction IE3,IEC 90S / 1.1 kW,0.7236,480 V 3-ph,S1,1,"37509.8 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
+GAS,SCRUB,ALK_SCRUBBER,induced-draft fan,induction IE3,IEC 90S / 1.1 kW,0.7236,480 V 3-ph,S1,1,"37509.9 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 GAS,SCRUB,BAGHOUSE,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 GAS,SCRUB,BAGHOUSE,pulse-jet solenoid valve,solenoid,"ISO 15218 coil, 22 mm",0.01,24 V DC,S3,4,assumed 4 rows
 GAS,SCRUB,BAGHOUSE,transfer pump IA-BAG-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"7.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -205,9 +205,9 @@ MFG,MFG,MFG_SHOP,drill press spindle,induction IE3,IEC 80 / 0.75 kW,0.55,480 V 3
 MFG,MFG,MFG_SHOP,screw conveyor IA-MFG-OUT to HABITATION,induction IE3,IEC 80 / 0.55 kW,0.37,480 V 3-ph,S3,1,"597 kg/d solids (>= 50 kg/d conveyed, assumed)"
 MFG,MFG,MFG_SHOP,transfer pump IA-CLOSE-8 to DIGESTER,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MFG,MFG,WIRE_DRAW,Bull-block wire drawer: main drive,induction IE3,IEC 90L / 1.5 kW,1.3043,480 V 3-ph,S3,1,MFG_TOOLS nameplate
-MFG,ahu,MET_AHU,induced-draft fan,induction IE3,IEC 100L / 2.2 kW,1.3813,480 V 3-ph,S1,1,"71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
+MFG,ahu,MET_AHU,induced-draft fan,induction IE3,IEC 100L / 2.2 kW,1.3812,480 V 3-ph,S1,1,"71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 MFG,forming,BLOW_MOLD,main drive,induction IE3,IEC 80 / 0.55 kW,0.4,480 V 3-ph,S3,1,graph continuous_kw x 0.8 (assumed)
-MFG,scrubber,MET_SCRUB,induced-draft fan,induction IE3,IEC 100L / 2.2 kW,1.3813,480 V 3-ph,S1,1,"71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
+MFG,scrubber,MET_SCRUB,induced-draft fan,induction IE3,IEC 100L / 2.2 kW,1.3812,480 V 3-ph,S1,1,"71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 MFG,scrubber,MET_SCRUB,transfer pump S72 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"2.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MFG,scrubber,MET_SCRUB,transfer pump S72B to OIL_FRAC,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MFG,tool,ELECTRODE_COAT,main drive,induction IE3,IEC 71 / 0.37 kW,0.24,480 V 3-ph,S3,1,graph continuous_kw x 0.8 (assumed)
@@ -227,7 +227,7 @@ OIL,LEACH_EW,HOPPER,transfer pump IA-CLOSE-5 to LIGNO_PRE,BLDC,42 mm (NEMA 17 fl
 OIL,LEACH_EW,HOPPER,transfer pump IA-FEED-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,1,"102.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,AFTERBURNER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,1,"7.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 OIL,OIL_GLASS,OIL_DRYER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-1 to PROD_C5_C10,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"11.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-1 to PROD_C5_C10,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"11.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-2 to PROD_C11_C18,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"8.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-3 to PROD_C19_C28,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"3.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-4 to PROD_C29,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"1.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -238,7 +238,7 @@ OIL,cut_tank,PROD_C19_C28,transfer pump CUT-3-OUT to MFG_SHOP,BLDC,42 mm (NEMA 1
 OIL,cut_tank,PROD_C29,on/off valve C29_RECYCLE,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,1,assumed one per dosed line
 OIL,cut_tank,PROD_C29,transfer pump C29_RECYCLE to C29_RECYCLE,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"1.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,cut_tank,PROD_C5_C10,on/off valve CUT-1-OUT,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,1,assumed one per dosed line
-OIL,cut_tank,PROD_C5_C10,transfer pump CUT-1-OUT to BACKUP_GEN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"11.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+OIL,cut_tank,PROD_C5_C10,transfer pump CUT-1-OUT to BACKUP_GEN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"11.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 PUMPED_HYDRO,HYDRO,HYDRO_SET,pump-turbine motor-generator,induction IE3,IEC 100L / 2.2 kW,1.6333,480 V 3-ph,S2,1,AQS-ESS-001 9.8 kWh over 6 h (assumed)
 WET,BMED_CRU,BMED_ACID,"stack loop pumps (acid, base, salt)",induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,3,assumed 3 per stack
 WET,BMED_CRU,BMED_ACID,transfer pump IA-BMED-01 to WS_NITRIC,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"0.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -297,7 +297,7 @@ WTR,ROOF,ROOF_TANK,on/off valve S21,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V 
 WTR,ROOF,ROOF_TANK,transfer pump IA-BED-H2O to GROW_BED,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"16.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,ROOF,ROOF_TANK,transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK,induction IE3,IEC 80 / 0.75 kW,0.5677,480 V 3-ph,S1,1,"200000.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,ROOF,ROOF_TANK,transfer pump IA-FLUE-QUENCH to FLUE_KO,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,1,"24.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-WTR,ROOF,ROOF_TANK,transfer pump IA-NOX-HAB to HABITATION,BLDC,42 mm (NEMA 17 flange),0.0006,24 V DC,S3,1,"207.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+WTR,ROOF,ROOF_TANK,transfer pump IA-NOX-HAB to HABITATION,BLDC,42 mm (NEMA 17 flange),0.0006,24 V DC,S3,1,"207.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,ROOF,ROOF_TANK,transfer pump IA-PEROX-H2O to WS_PEROX,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"2.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,ROOF,ROOF_TANK,transfer pump S21 to HABITATION,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,1,"120.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,digest,BLACK_ALK_HOLD,NaOH dosing pump,solenoid,"ISO 15218 coil, 22 mm",0.03,24 V DC,S3,1,BOM; shaft assumed (A-M-119)
@@ -310,6 +310,7 @@ WTR,tank,REMIN,on/off valve S26,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S
 WTR,tank,REMIN,transfer pump IA-POT-01 to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,1,"120.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,tank,REMIN,transfer pump S26 to HABITATION,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"10.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0007,24 V DC,S3,1,"242.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+WTR,treat,GREY_TREAT,transfer pump IA-GREY-RET to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,treat,GREY_TREAT,transfer pump S29 to VCD_TRAIN,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,1,"104.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,vessel,VCD_TRAIN,transfer pump IA-VCD-BD to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,1,"6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,vessel,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH,BLDC,42 mm (NEMA 17 flange),0.0007,24 V DC,S3,1,"263.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
