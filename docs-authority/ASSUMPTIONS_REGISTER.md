@@ -1254,7 +1254,7 @@ Counts: 183 curated, 1016 graph, 22 model params, 116 document lines. Total 1337
 | ID | Value | Units | Where used | Basis | Replaced by | Task |
 | --- | --- | --- | --- | --- | --- | --- |
 | A-D-bafc40 |  |  | docs-authority/COMPLETION_DUTIES.md:3 | AQS-DUTY-007. Plant rate is the assumptions-sheet point: leach discharge 2 m³/h at 2 g/L dissolved metal. Concentrate to EW-1 is 0.17 m³/h at 20 g/L. Energy may |  | see page |
-| A-D-71cc1c |  |  | docs-authority/DOC_REGISTER.md:182 | / AQS-REG-002 / `docs-authority/ASSUMPTIONS_REGISTER.md` / A / 2026-10-15 / Assumptions register / canonical / |  | see page |
+| A-D-71cc1c |  |  | docs-authority/DOC_REGISTER.md:183 | / AQS-REG-002 / `docs-authority/ASSUMPTIONS_REGISTER.md` / A / 2026-10-15 / Assumptions register / canonical / |  | see page |
 | A-D-11657a |  |  | docs-authority/EGRESS_CALC.md:26 | assumptions where code factors are not locked in authority docs. |  | see page |
 | A-D-cd150a |  |  | docs-authority/EGRESS_CALC.md:35 | / Exit / stair width capacity study from occupant-load assumptions / Invented truck counts (AQS-SITE-001) / |  | see page |
 | A-D-a97f93 |  |  | docs-authority/EGRESS_CALC.md:98 | **Clear-width assumption (study):** enclosure short dimension minus |  | see page |

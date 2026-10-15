@@ -177,6 +177,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | D | 2026-10-01 | Design-tool architecture — Aqueous MVS sandbox | canonical |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | canonical |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | canonical |
+| AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | A | 2026-10-16 | WPS and PQR register per material (X-PIP-05) | canonical |
 | AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | B | 2026-10-01 | Water purification — habitation and fab UPW | canonical |
 | AQS-REG-001 | `docs-authority/DOC_REGISTER.md` | A | 2026-10-15 | Document number register | canonical |
 | AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | A | 2026-10-15 | Assumptions register | canonical |
