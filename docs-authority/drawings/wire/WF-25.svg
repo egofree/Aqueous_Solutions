@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="170" font-family="sans-serif" font-size="10">
+<text x="170" y="20" font-weight="bold">WF-25 10 AWG XHHW-2</text>
+<circle cx="80" cy="80" r="60.0" fill="#2c7" stroke="#000"/>
+<circle cx="80" cy="80" r="39.5" fill="#c87533" stroke="#000"/>
+<text x="170" y="40">conductor 5.261 mm2, 7 x 0.978 mm soft Cu, ASTM B8 class B</text>
+<text x="170" y="54">XLPE insulation (XHHW-2), green 0.76 mm</text>
+<text x="170" y="68">core OD 4.45 mm</text>
+<text x="170" y="82">R20 3.343 ohm/km; UL44_2018</text>
+</svg>

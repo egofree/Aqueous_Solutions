@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="170" font-family="sans-serif" font-size="10">
+<text x="170" y="20" font-weight="bold">WF-08 4/0 AWG bare, no covering</text>
+<circle cx="80" cy="80" r="60.0" fill="#c87533" stroke="#000"/>
+<text x="170" y="40">conductor 107.219 mm2, 19 x 2.680 mm soft Cu, ASTM B8 class B</text>
+<text x="170" y="54">core OD 13.40 mm</text>
+<text x="170" y="68">R20 0.164 ohm/km; ASTM_B3_2013 / ASTM_B8_2023</text>
+</svg>
