@@ -8,6 +8,7 @@ Authority: graph Rev BH until `flow_graph/plant_flow_graph.json` says otherwise.
 The status of these lines is `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004).
 AQS-PLAN-003 is the module order against the tech tree. It is not this sequence.
 AQS-PLAN-002 is the definition of a buildable unit.
+AQS-PLAN-006 is the manufacturing model plan for every present unit.
 AQS-PLAN-001, AQS-REM-001, and AQS-MVS-CHK-001 are history.
 
 ## Buildable
@@ -187,3 +188,5 @@ D2 is the S08 split. Silicon is carried as entrained silicate, from the rate res
 D3 is the EW-1 current. The graph node is the one figure: 5.263 kW, 2105 A at 2.5 V. The bar is sized from the node, not the page.
 
 D4 is the expander relief. API 520 gas sizing at the 550 kPa set point, 10 % overpressure, blocked discharge at the edge rate. The 3.6 mm orifice meets it.
+
+D5 is the manufacturing model plan, AQS-PLAN-006, `docs-authority/MFG_MODEL_PLAN.md`. It is the work order for phase 5 and line 5.1: a parametric source, internals, nozzles, fasteners, materials, drawings, STEP and STL, BOM, fabrication route, and self-copy relevance for each of the 199 present units, in tier order, with acceptance per unit. The tracker starts at 167 M0, 30 M1, 2 accounting nodes. No unit is modeled by D5.
