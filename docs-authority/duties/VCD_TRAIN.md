@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 165.1 kg/d. Mass out 165.1 kg/d. Electrical duty 0.0000 kW. In: S29 104.5 kg/d (treated grey); S52 42.88 kg/d (PEM product H2O); IA-NUT-01 13.93 kg/d (digest surplus); S13 3.80 kg/d (condensate). Out: S25 140.5 kg/d (VCD distillate); S28 17.88 kg/d (VCD brine); IA-VCD-BD 6.71 kg/d (still bottoms).
+1. Basis. Mass in 288.4 kg/d. Mass out 288.4 kg/d. Electrical duty 0.0000 kW. In: IA-LEACH-VCD 123.3 kg/d (leach liquor water bleed to vapour-compression distillation); S29 104.5 kg/d (treated grey); S52 42.88 kg/d (PEM product H2O); IA-NUT-01 13.93 kg/d (digest surplus); 1 more. Out: S25 263.8 kg/d (VCD distillate); S28 17.88 kg/d (VCD brine); IA-VCD-BD 6.710 kg/d (still bottoms).
 
 2. Size.
 - Envelope 1400×600×1200 mm is the shell. It is not full. Working volume, 2 h: V = (165.1/1000)×(2/24) = 0.0138 m³.

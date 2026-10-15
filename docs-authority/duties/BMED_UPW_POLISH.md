@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 140.5 kg/d. Mass out 140.5 kg/d. Electrical duty 6.00 kW. In: S25 140.5 kg/d (VCD distillate). Out: S01 67.30 kg/d (UPW); IA-UPW-FAB 60.00 kg/d (fab UPW); IA-UPW-REMIN 10.00 kg/d (remineralizer); IA-UPW-REJ 3.22 kg/d (polish reject).
+1. Basis. Mass in 263.8 kg/d. Mass out 263.8 kg/d. Electrical duty 6.00 kW. In: S25 263.8 kg/d (VCD distillate). Out: IA-UPW-REMIN 130.5 kg/d (remineralizer); S01 67.30 kg/d (UPW); IA-UPW-FAB 60.00 kg/d (fab UPW); IA-UPW-REJ 6.045 kg/d (polish reject).
 
 2. Size.
 - In 140.5 kg/d, out 140.5 kg/d. No holdup claimed.

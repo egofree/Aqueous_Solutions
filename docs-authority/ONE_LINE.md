@@ -124,8 +124,8 @@ flowchart LR
 | PP-1 208/120 V | CROP_ALLIUM | 0.05 | 0.2 | 15 | AQS-ELEC-003 study share |
 | PP-1 208/120 V | CROP_BASIL | 0.05 | 0.2 | 15 | AQS-ELEC-003 study share |
 | PP-1 208/120 V | CROP_ROSEMARY | 0.05 | 0.2 | 15 | AQS-ELEC-003 study share |
+| PP-1 208/120 V | BMED_UPW_POLISH | 0.04 | 0.1 | 15 | AQS-ELEC-003 calculated |
 | PP-1 208/120 V | WS_PEROX | 0.03 | 0.1 | 15 | AQS-ELEC-003 calculated |
-| PP-1 208/120 V | BMED_UPW_POLISH | 0.02 | 0.1 | 15 | AQS-ELEC-003 calculated |
 | SOL_ARK 480 V | RECT_EW | 38.02 | 50.8 | 70 | graph S17-EW |
 | SOL_ARK 480 V | RECTIFIER | 23.32 | 31.2 | 40 | graph S17 |
 | SOL_ARK 480 V | BMED_ACID | 16.13 | 21.6 | 30 | graph S17-BMED |
@@ -137,10 +137,10 @@ flowchart LR
 | Item | kW |
 | --- | --- |
 | Sources on the bus (graph edges) | 93.78 |
-| Demand on the bus (this page) | 137.08 |
+| Demand on the bus (this page) | 137.10 |
 | Inverter rating (SOL_ARK_60K) | 60.0 |
-| Shortfall against sources | 43.30 |
-| Shortfall against inverter | 77.08 |
+| Shortfall against sources | 43.32 |
+| Shortfall against inverter | 77.10 |
 
 ## Findings
 

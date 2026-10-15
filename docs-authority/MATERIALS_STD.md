@@ -206,7 +206,7 @@ X-MAT-09. Script `docs-authority/_material_temps.py` writes `params.T_C` and `T_
 | IA-SINK-01 | LEACH_CSTR_1 | FLOAT_SINK | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
 | IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
 | IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-POT-01 | LEACH_CSTR_1 | ROOF_TANK | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
+| IA-POT-01 | REMIN | ROOF_TANK | PVC-U | 25.0 | 60 | ok (X-RSZ-06) | edge T_C |
 | IA-HF-SRC | LEACH_CSTR_1 | WS_HF_ED | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
 | IA-DIG-BLK | DIGESTER | BLACK_DIGEST | PVC-U | 40.0 | 60 | ok | edge T_C |
 | IA-ESS-HYDRO-DIS | ROOF_TANK | CATCH_TANK | PVC-U | 25.0 | 60 | ok | edge T_C |
@@ -310,11 +310,10 @@ Script `docs-authority/_hot_draw_coolers.py`.
 | --- | --- | --- | --- | --- | --- |
 | IA-BMED-03 | 108.2 | 3.0 | 85 → 35 | 188 | BMED_ACID membrane inlet 35 C |
 | IA-BMED-04 | 118.7 | 3.6 | 85 → 35 | 247 | BMED_BASE membrane inlet 35 C |
-| IA-POT-01 | 120.5 | 4.18 | 85 → 40 | 262 | ROOF_TANK, below PVC-U 60 C with margin |
 
-- IA-POT-01: passive air-cooled PVDF DN25 coil, 25.4 m (U 7 W/m²K natural convection, air 37.8 °C design, LMTD 14.7 K). No graph energy edge: the heat goes to the room air (about 0.26 kW, inside the HVAC study share). Edge T_C now 40 °C.
+- IA-POT-01: superseded by X-RSZ-06. The potable makeup now comes from REMIN at 25 °C; the hot leach water bleed goes to VCD_TRAIN on IA-LEACH-VCD (123.296 kg/d, 85 °C), which is an evaporator duty, not a cooler. No coil. VCD_TRAIN wetted parts on this feed are Ti Gr 2 or PVDF-lined (acid chloride at 85 °C, §9 basis); the condensate is polished by BMED_UPW_POLISH before REMIN.
 - IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They take a water-cooled trim exchanger on the GEO_GHEX ground loop. X-RSZ-04 books it at the resized flows: IA-BMED-03-TRIM 0.780 kW and IA-BMED-04-TRIM 1.027 kW (1.81 kW), taken from IA-E-LEACH, rejected by IA-GHEX-REJ. Outlet 35 °C.
-- The IA-BMED-03/04 edges say "ambient" in their conditions and IA-POT-01 carries the leach stencil composition; both are inconsistent with a direct draw from the hot tank and are flagged for the unit task 01 balances.
+- The IA-BMED-03/04 conditions and the IA-POT-01 composition were corrected (5c311be, X-RSZ-06).
 
 ## 11. Galvanic and stray current, EW aisle, Rev K
 

@@ -2,7 +2,7 @@
 Study values; register A-M entries."""
 import json, math
 g=json.load(open('flow_graph/plant_flow_graph.json')); R={e['stream_id']:e for e in g['edges']}
-D={'IA-BMED-03':(3.0,35.0,'BMED_ACID membrane inlet 35 C'),'IA-BMED-04':(3.6,35.0,'BMED_BASE membrane inlet 35 C'),'IA-POT-01':(4.18,40.0,'ROOF_TANK, below PVC-U 60 C with margin')}
+D={'IA-BMED-03':(3.0,35.0,'BMED_ACID membrane inlet 35 C'),'IA-BMED-04':(3.6,35.0,'BMED_BASE membrane inlet 35 C')}
 Tin=85.0; Tair=37.8; U=7.0; OD=0.032   # W/m2K natural convection outside, PVDF DN25 OD 32 mm
 rows=[]
 for s,(cp,Tout,why) in D.items():

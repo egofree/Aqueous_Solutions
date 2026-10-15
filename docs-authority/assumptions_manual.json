@@ -1047,5 +1047,19 @@
    "docs-authority/duties/RECT_EW.md"
   ],
   "id": "A-M-080"
+ },
+ {
+  "value": "potable path: leach bleed -> VCD -> UPW polish (2.3% reject) -> REMIN -> ROOF_TANK; HCl carry-over held by VCD and removed by RO/EDI",
+  "units": "-",
+  "where": "IA-LEACH-VCD, S25, IA-UPW-REMIN, IA-POT-01",
+  "basis": "Compared with a dedicated treatment unit on the leach line: the reroute reuses the existing distillation and polish train and gives a potable source with a defined composition; a separate unit would duplicate VCD and RO. Reject fraction from the existing UPW balance (3.22/140.52)",
+  "sensitivity": "VCD and UPW throughput +123 kg/d; HCl in condensate",
+  "replaced_by": "Condensate chloride and pH test against the potable standard (unit task 06)",
+  "task": "X-RSZ-06",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-081"
  }
 ]

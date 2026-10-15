@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 200408.3 kg/d. Mass out 200408.3 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-CHG 200000.0 kg/d (Pumped hydro charge (pump up; peers S23)); IA-NOX-H2O 226.2 kg/d (scrubber condensate); IA-POT-01 120.5 kg/d (treated water makeup); IA-HVAC-COND 56.70 kg/d (AHU condensate to the water cycle); 10 more. Out: IA-ESS-HYDRO-DIS 200000.0 kg/d (Pumped hydro discharge (penstock; peers S22)); IA-NOX-HAB 207.3 kg/d (scrubber water); S21 120.0 kg/d (clean tower water); S40 37.18 kg/d (clean overflow); 3 more.
+1. Basis. Mass in 200408.3 kg/d. Mass out 200408.3 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-CHG 200000.0 kg/d (Pumped hydro charge (pump up; peers S23)); IA-NOX-H2O 226.2 kg/d (scrubber condensate); IA-POT-01 120.5 kg/d (potable makeup, remineralised); IA-HVAC-COND 56.70 kg/d (AHU condensate to the water cycle); 10 more. Out: IA-ESS-HYDRO-DIS 200000.0 kg/d (Pumped hydro discharge (penstock; peers S22)); IA-NOX-HAB 207.3 kg/d (scrubber water); S21 120.0 kg/d (clean tower water); S40 37.18 kg/d (clean overflow); 3 more.
 
 2. Size.
 - Circulation 200384.0 kg/d. Two-minute holdup 0.2783 m³. A 20-day volume at this rate is not a tank.

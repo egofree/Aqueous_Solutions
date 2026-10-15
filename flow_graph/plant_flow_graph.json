@@ -11208,10 +11208,10 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 140.52,
+        "value": 263.816,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate."
+        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -14091,10 +14091,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 10.0,
+        "value": 130.4706,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -14125,10 +14125,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.22,
+        "value": 6.045,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +2.825 kg/d."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16164,14 +16164,14 @@
     },
     {
       "stream_id": "IA-POT-01",
-      "from_unit_id": "LEACH_CSTR_1",
+      "from_unit_id": "REMIN",
       "to_unit_id": "ROOF_TANK",
       "phase": "L",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "treated water makeup",
+      "carries": "potable makeup, remineralised",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -16181,27 +16181,19 @@
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "WTR",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "IA",
-      "gap_flags": [
-        "composition_undefined",
-        "potable_from_leach_reactor_topology"
-      ],
-      "notes": "Composition removed (stencil). A potable draw from LEACH_CSTR_1 needs a treatment step in the path; topology question for owner. Rate unchanged.",
+      "gap_flags": [],
+      "notes": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Rerouted from LEACH_CSTR_1. Rate unchanged.",
       "params": {
-        "T_C": 40.0,
-        "T_basis": "X-MAT-19: after the passive air cooler; inlet 85 C",
-        "cooler": {
-          "type": "passive air-cooled PVDF DN25 pipe coil (class P3)",
-          "duty_W": 262,
-          "length_m": 25.4,
-          "T_in_C": 85,
-          "T_out_C": 40,
-          "status": "study",
-          "source": "X-MAT-19"
-        }
+        "T_C": 25.0,
+        "T_basis": "REMIN outlet, room temperature",
+        "medium": "potable water",
+        "conditions": "25 C potable",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-014"
       },
       "composition_superseded": {
         "composition": {
@@ -16219,6 +16211,9 @@
           "other": 9
         },
         "why": "X-MAT-19: leach liquor stencil copied onto a potable makeup edge"
+      },
+      "composition": {
+        "water": 1.0
       }
     },
     {
@@ -26294,6 +26289,54 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-LEACH-VCD",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "VCD_TRAIN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "leach liquor water bleed to vapour-compression distillation",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 123.296,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-06 (potable via VCD, UPW polish and REMIN)",
+      "params": {
+        "T_C": 85.0,
+        "T_basis": "LEACH liquor band maximum (X-MAT-09)",
+        "medium": "acid chloride liquor bleed",
+        "conditions": "85 C, to the VCD evaporator",
+        "rate_kind": "derived",
+        "doc": "AQS-DUTY-014"
+      },
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "Fe": 0.02,
+        "other_metals": 0.03
+      },
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
