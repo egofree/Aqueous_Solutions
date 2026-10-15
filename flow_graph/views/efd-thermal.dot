@@ -1,6 +1,5 @@
-// NOT CURRENT. Graph is Rev BH. This drawing is Rev N.
 digraph G {
-  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev N", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD thermal layer\nVIEW-EFD-THERMAL  ·  AQS-FLOW-GRAPH-001 rev BH", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
   edge [fontname="Helvetica", fontsize=8];
   subgraph "cluster_CRYO" {
@@ -35,7 +34,7 @@ digraph G {
     "GEO_GHEX" [fillcolor="#ffffff", label="GEO_GHEX"];
     "GEO_HP" [fillcolor="#ffffff", label="GEO_HP"];
     "GEO_HP_CLOSED_LOOP" [fillcolor="#ffffff", label="GEO_HP_CLOSED_LOOP"];
-    "GEO_ORC" [fillcolor="#e2e8f0", label="GEO_ORC\n(placeholder)"];
+    "GEO_ORC" [fillcolor="#ffffff", label="GEO_ORC"];
   }
   subgraph "cluster_GLASS" {
     label="GLASS";
@@ -137,4 +136,6 @@ digraph G {
   "Q1_B" -> "BOUNDARY_EXPORT" [label="IA-Q1B-LOSS\\n0.25 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q2_A" -> "BOUNDARY_EXPORT" [label="IA-Q2A-LOSS\\n0.17 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q2_B" -> "BOUNDARY_EXPORT" [label="IA-Q2B-LOSS\\n0.17 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-03-TRIM\\n0.78 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-04-TRIM\\n1.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
 }

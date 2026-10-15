@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field
 class Presence(str, Enum):
     PRESENT = "present"
     PLACEHOLDER = "placeholder"
+    RETIRED = "retired"   # kept for traceability, carries no rate (e.g. IA-E-RECT superseded by Faraday EW ledger)
 
 
 class LayerTag(str, Enum):
@@ -24,6 +25,7 @@ class LayerTag(str, Enum):
     ELEC = "elec"
     THERMAL = "thermal"
     ESS = "ess"
+    ENERGY = "energy"   # unit energy ledger edges (IA-E-*), in use since the 2026-10-09 energy-cut closure
 
 
 class Phase(str, Enum):
@@ -161,6 +163,8 @@ class PlantFlowGraph(BaseModel):
     ) -> list[FlowEdge]:
         out: list[FlowEdge] = []
         for e in self.edges:
+            if e.presence == Presence.RETIRED:
+                continue
             if not include_placeholders and e.presence == Presence.PLACEHOLDER:
                 continue
             if not include_intra_aisle and e.namespace == "IA":

@@ -1,112 +1,616 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1690" height="4630" viewBox="0 0 1690 4630">
-<rect width="100%" height="100%" fill="#f3efe6"/>
-<text x="20" y="24" font-size="16" font-family="sans-serif">efd-thermal rev N — not current; graph is BH</text>
-<line x1="100" y1="58" x2="100" y2="4310" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="58" x2="100" y2="4240" stroke="#444" stroke-width="1.2"/>
-<line x1="1000" y1="58" x2="550" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="1000" y1="58" x2="250" y2="4310" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="128" x2="400" y2="4520" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="128" x2="400" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="4328" x2="550" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="4258" x2="250" y2="4310" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="4328" x2="100" y2="4240" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="4258" x2="100" y2="4310" stroke="#444" stroke-width="1.2"/>
-<line x1="550" y1="4398" x2="250" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4328" x2="700" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="550" y1="4398" x2="250" y2="4310" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4328" x2="550" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4468" x2="400" y2="4520" stroke="#444" stroke-width="1.2"/>
-<line x1="700" y1="4398" x2="400" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4468" x2="400" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4468" x2="250" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4468" x2="100" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="700" y1="4398" x2="400" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="700" y1="4398" x2="250" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="700" y1="4398" x2="100" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4468" x2="700" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="700" y1="4398" x2="250" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="4538" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="4468" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="4538" x2="400" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="4468" x2="400" y2="4520" stroke="#444" stroke-width="1.2"/>
-<line x1="400" y1="58" x2="400" y2="110" stroke="#444" stroke-width="1.2"/>
-<line x1="850" y1="58" x2="250" y2="110" stroke="#444" stroke-width="1.2"/>
-<line x1="700" y1="58" x2="100" y2="110" stroke="#444" stroke-width="1.2"/>
-<line x1="850" y1="58" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="550" y1="58" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="58" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="2158" x2="100" y2="2140" stroke="#444" stroke-width="1.2"/>
-<line x1="1300" y1="58" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="1150" y1="58" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="550" y1="4468" x2="100" y2="4520" stroke="#444" stroke-width="1.2"/>
-<line x1="550" y1="4468" x2="250" y2="4520" stroke="#444" stroke-width="1.2"/>
-<line x1="1450" y1="58" x2="250" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="1450" y1="58" x2="700" y2="4380" stroke="#444" stroke-width="1.2"/>
-<line x1="1600" y1="58" x2="550" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="1450" y1="58" x2="400" y2="4520" stroke="#444" stroke-width="1.2"/>
-<line x1="1450" y1="58" x2="400" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="4328" x2="100" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="100" y1="4258" x2="100" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="550" y1="4398" x2="100" y2="4450" stroke="#444" stroke-width="1.2"/>
-<line x1="250" y1="4328" x2="100" y2="4450" stroke="#444" stroke-width="1.2"/>
-<rect x="40" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="58" font-size="10" font-family="sans-serif">AFTERBURNER</text>
-<rect x="190" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="196" y="58" font-size="10" font-family="sans-serif">CRYO_HX_Q4</text>
-<rect x="340" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="346" y="58" font-size="10" font-family="sans-serif">EW_1</text>
-<rect x="490" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="496" y="58" font-size="10" font-family="sans-serif">FUEL_CELL</text>
-<rect x="640" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="646" y="58" font-size="10" font-family="sans-serif">GEO_GHEX</text>
-<rect x="790" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="796" y="58" font-size="10" font-family="sans-serif">GEO_HP</text>
-<rect x="940" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="946" y="58" font-size="10" font-family="sans-serif">GLASS_BURNOUT</text>
-<rect x="1090" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="1096" y="58" font-size="10" font-family="sans-serif">MEOH_FC</text>
-<rect x="1240" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="1246" y="58" font-size="10" font-family="sans-serif">MET_HX_Q4</text>
-<rect x="1390" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="1396" y="58" font-size="10" font-family="sans-serif">RECTIFIER</text>
-<rect x="1540" y="40" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="1546" y="58" font-size="10" font-family="sans-serif">ZNBR2</text>
-<rect x="40" y="4450" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="4468" font-size="10" font-family="sans-serif">BOUNDARY_EXPORT</text>
-<rect x="190" y="4450" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="196" y="4468" font-size="10" font-family="sans-serif">Q3_A</text>
-<rect x="340" y="4450" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="346" y="4468" font-size="10" font-family="sans-serif">Q4_B</text>
-<rect x="490" y="4450" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="496" y="4468" font-size="10" font-family="sans-serif">Q4_BUS</text>
-<rect x="40" y="2140" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="2158" font-size="10" font-family="sans-serif">CRYO_DED_COOL</text>
-<rect x="40" y="110" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="128" font-size="10" font-family="sans-serif">GEO_HP_CLOSED_LOOP</text>
-<rect x="190" y="110" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="196" y="128" font-size="10" font-family="sans-serif">GROW_BED</text>
-<rect x="340" y="110" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="346" y="128" font-size="10" font-family="sans-serif">HX8</text>
-<rect x="40" y="4520" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="4538" font-size="10" font-family="sans-serif">GEO_ORC</text>
-<rect x="190" y="4520" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="196" y="4538" font-size="10" font-family="sans-serif">HABITATION</text>
-<rect x="340" y="4520" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="346" y="4538" font-size="10" font-family="sans-serif">Q4_A</text>
-<rect x="40" y="4380" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="4398" font-size="10" font-family="sans-serif">GLASS_DIGEST</text>
-<rect x="190" y="4380" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="196" y="4398" font-size="10" font-family="sans-serif">LEACH_CSTR_1</text>
-<rect x="340" y="4380" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="346" y="4398" font-size="10" font-family="sans-serif">OIL_DRYER</text>
-<rect x="490" y="4380" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="496" y="4398" font-size="10" font-family="sans-serif">Q2_A</text>
-<rect x="640" y="4380" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="646" y="4398" font-size="10" font-family="sans-serif">Q3_B</text>
-<rect x="40" y="4310" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="4328" font-size="10" font-family="sans-serif">Q1_A</text>
-<rect x="190" y="4310" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="196" y="4328" font-size="10" font-family="sans-serif">Q2_B</text>
-<rect x="40" y="4240" width="120" height="28" rx="3" fill="#fff" stroke="#222"/>
-<text x="46" y="4258" font-size="10" font-family="sans-serif">Q1_B</text>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.42.4 (0)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="1822pt" height="1471pt"
+ viewBox="0.00 0.00 1822.20 1471.20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(21.6 1449.6)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-21.6,21.6 -21.6,-1449.6 1800.6,-1449.6 1800.6,21.6 -21.6,21.6"/>
+<text text-anchor="middle" x="889.5" y="-1415.2" font-family="Helvetica,sans-Serif" font-size="11.00">EFD thermal layer</text>
+<text text-anchor="middle" x="889.5" y="-1403.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;THERMAL &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev BH</text>
+<g id="clust1" class="cluster">
+<title>cluster_CRYO</title>
+<path fill="none" stroke="#94a3b8" d="M1226,-1228C1226,-1228 1312,-1228 1312,-1228 1318,-1228 1324,-1234 1324,-1240 1324,-1240 1324,-1376 1324,-1376 1324,-1382 1318,-1388 1312,-1388 1312,-1388 1226,-1388 1226,-1388 1220,-1388 1214,-1382 1214,-1376 1214,-1376 1214,-1240 1214,-1240 1214,-1234 1220,-1228 1226,-1228"/>
+<text text-anchor="middle" x="1269" y="-1375.2" font-family="Helvetica,sans-Serif" font-size="11.00">CRYO</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_DOCK</title>
+<path fill="none" stroke="#94a3b8" d="M811,-149C811,-149 1063,-149 1063,-149 1069,-149 1075,-155 1075,-161 1075,-161 1075,-209 1075,-209 1075,-215 1069,-221 1063,-221 1063,-221 811,-221 811,-221 805,-221 799,-215 799,-209 799,-209 799,-161 799,-161 799,-155 805,-149 811,-149"/>
+<text text-anchor="middle" x="937" y="-208.2" font-family="Helvetica,sans-Serif" font-size="11.00">DOCK</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_ELEC</title>
+<path fill="none" stroke="#94a3b8" d="M223,-697C223,-697 278,-697 278,-697 284,-697 290,-703 290,-709 290,-709 290,-757 290,-757 290,-763 284,-769 278,-769 278,-769 223,-769 223,-769 217,-769 211,-763 211,-757 211,-757 211,-709 211,-709 211,-703 217,-697 223,-697"/>
+<text text-anchor="middle" x="250.5" y="-756.2" font-family="Helvetica,sans-Serif" font-size="11.00">ELEC</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_FARM</title>
+<path fill="none" stroke="#94a3b8" d="M1484.5,-431C1484.5,-431 1544.5,-431 1544.5,-431 1550.5,-431 1556.5,-437 1556.5,-443 1556.5,-443 1556.5,-491 1556.5,-491 1556.5,-497 1550.5,-503 1544.5,-503 1544.5,-503 1484.5,-503 1484.5,-503 1478.5,-503 1472.5,-497 1472.5,-491 1472.5,-491 1472.5,-443 1472.5,-443 1472.5,-437 1478.5,-431 1484.5,-431"/>
+<text text-anchor="middle" x="1514.5" y="-490.2" font-family="Helvetica,sans-Serif" font-size="11.00">FARM</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_FUEL_CELL</title>
+<path fill="none" stroke="#94a3b8" d="M1239.5,-1148C1239.5,-1148 1298.5,-1148 1298.5,-1148 1304.5,-1148 1310.5,-1154 1310.5,-1160 1310.5,-1160 1310.5,-1208 1310.5,-1208 1310.5,-1214 1304.5,-1220 1298.5,-1220 1298.5,-1220 1239.5,-1220 1239.5,-1220 1233.5,-1220 1227.5,-1214 1227.5,-1208 1227.5,-1208 1227.5,-1160 1227.5,-1160 1227.5,-1154 1233.5,-1148 1239.5,-1148"/>
+<text text-anchor="middle" x="1269" y="-1207.2" font-family="Helvetica,sans-Serif" font-size="11.00">FUEL_CELL</text>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_GEO</title>
+<path fill="none" stroke="#94a3b8" d="M1240,-511C1240,-511 1571,-511 1571,-511 1577,-511 1583,-517 1583,-523 1583,-523 1583,-693 1583,-693 1583,-699 1577,-705 1571,-705 1571,-705 1240,-705 1240,-705 1234,-705 1228,-699 1228,-693 1228,-693 1228,-523 1228,-523 1228,-517 1234,-511 1240,-511"/>
+<text text-anchor="middle" x="1405.5" y="-692.2" font-family="Helvetica,sans-Serif" font-size="11.00">GEO</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_GLASS</title>
+<path fill="none" stroke="#94a3b8" d="M893.5,-229C893.5,-229 980.5,-229 980.5,-229 986.5,-229 992.5,-235 992.5,-241 992.5,-241 992.5,-350 992.5,-350 992.5,-356 986.5,-362 980.5,-362 980.5,-362 893.5,-362 893.5,-362 887.5,-362 881.5,-356 881.5,-350 881.5,-350 881.5,-241 881.5,-241 881.5,-235 887.5,-229 893.5,-229"/>
+<text text-anchor="middle" x="937" y="-349.2" font-family="Helvetica,sans-Serif" font-size="11.00">GLASS</text>
+</g>
+<g id="clust8" class="cluster">
+<title>cluster_HAB</title>
+<path fill="none" stroke="#94a3b8" d="M1491.5,-873C1491.5,-873 1759,-873 1759,-873 1765,-873 1771,-879 1771,-885 1771,-885 1771,-933 1771,-933 1771,-939 1765,-945 1759,-945 1759,-945 1491.5,-945 1491.5,-945 1485.5,-945 1479.5,-939 1479.5,-933 1479.5,-933 1479.5,-885 1479.5,-885 1479.5,-879 1485.5,-873 1491.5,-873"/>
+<text text-anchor="middle" x="1625.25" y="-932.2" font-family="Helvetica,sans-Serif" font-size="11.00">HAB</text>
+</g>
+<g id="clust9" class="cluster">
+<title>cluster_HEAT</title>
+<path fill="none" stroke="#94a3b8" d="M20,-953C20,-953 1292,-953 1292,-953 1298,-953 1304,-959 1304,-965 1304,-965 1304,-1128 1304,-1128 1304,-1134 1298,-1140 1292,-1140 1292,-1140 20,-1140 20,-1140 14,-1140 8,-1134 8,-1128 8,-1128 8,-965 8,-965 8,-959 14,-953 20,-953"/>
+<text text-anchor="middle" x="656" y="-1127.2" font-family="Helvetica,sans-Serif" font-size="11.00">HEAT</text>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_MEOH</title>
+<path fill="none" stroke="#94a3b8" d="M1243.5,-873C1243.5,-873 1294.5,-873 1294.5,-873 1300.5,-873 1306.5,-879 1306.5,-885 1306.5,-885 1306.5,-933 1306.5,-933 1306.5,-939 1300.5,-945 1294.5,-945 1294.5,-945 1243.5,-945 1243.5,-945 1237.5,-945 1231.5,-939 1231.5,-933 1231.5,-933 1231.5,-885 1231.5,-885 1231.5,-879 1237.5,-873 1243.5,-873"/>
+<text text-anchor="middle" x="1269" y="-932.2" font-family="Helvetica,sans-Serif" font-size="11.00">MEOH</text>
+</g>
+<g id="clust11" class="cluster">
+<title>cluster_MFG</title>
+<path fill="none" stroke="#94a3b8" d="M1238,-793C1238,-793 1300,-793 1300,-793 1306,-793 1312,-799 1312,-805 1312,-805 1312,-853 1312,-853 1312,-859 1306,-865 1300,-865 1300,-865 1238,-865 1238,-865 1232,-865 1226,-859 1226,-853 1226,-853 1226,-805 1226,-805 1226,-799 1232,-793 1238,-793"/>
+<text text-anchor="middle" x="1269" y="-852.2" font-family="Helvetica,sans-Serif" font-size="11.00">MFG</text>
+</g>
+<g id="clust12" class="cluster">
+<title>cluster_OIL</title>
+<path fill="none" stroke="#94a3b8" d="M899.5,-8C899.5,-8 974.5,-8 974.5,-8 980.5,-8 986.5,-14 986.5,-20 986.5,-20 986.5,-129 986.5,-129 986.5,-135 980.5,-141 974.5,-141 974.5,-141 899.5,-141 899.5,-141 893.5,-141 887.5,-135 887.5,-129 887.5,-129 887.5,-20 887.5,-20 887.5,-14 893.5,-8 899.5,-8"/>
+<text text-anchor="middle" x="937" y="-128.2" font-family="Helvetica,sans-Serif" font-size="11.00">OIL</text>
+</g>
+<g id="clust13" class="cluster">
+<title>cluster_WET</title>
+<path fill="none" stroke="#94a3b8" d="M898.5,-370C898.5,-370 1292,-370 1292,-370 1298,-370 1304,-376 1304,-382 1304,-382 1304,-491 1304,-491 1304,-497 1298,-503 1292,-503 1292,-503 898.5,-503 898.5,-503 892.5,-503 886.5,-497 886.5,-491 886.5,-491 886.5,-382 886.5,-382 886.5,-376 892.5,-370 898.5,-370"/>
+<text text-anchor="middle" x="1095.25" y="-490.2" font-family="Helvetica,sans-Serif" font-size="11.00">WET</text>
+</g>
+<g id="clust14" class="cluster">
+<title>cluster_ZNBR2</title>
+<path fill="none" stroke="#94a3b8" d="M1246,-713C1246,-713 1292,-713 1292,-713 1298,-713 1304,-719 1304,-725 1304,-725 1304,-773 1304,-773 1304,-779 1298,-785 1292,-785 1292,-785 1246,-785 1246,-785 1240,-785 1234,-779 1234,-773 1234,-773 1234,-725 1234,-725 1234,-719 1240,-713 1246,-713"/>
+<text text-anchor="middle" x="1269" y="-772.2" font-family="Helvetica,sans-Serif" font-size="11.00">ZNBR2</text>
+</g>
+<!-- CRYO_DED_COOL -->
+<g id="node1" class="node">
+<title>CRYO_DED_COOL</title>
+<path fill="#ffffff" stroke="black" d="M1304,-1333C1304,-1333 1234,-1333 1234,-1333 1228,-1333 1222,-1327 1222,-1321 1222,-1321 1222,-1309 1222,-1309 1222,-1303 1228,-1297 1234,-1297 1234,-1297 1304,-1297 1304,-1297 1310,-1297 1316,-1303 1316,-1309 1316,-1309 1316,-1321 1316,-1321 1316,-1327 1310,-1333 1304,-1333"/>
+<text text-anchor="middle" x="1269" y="-1312.8" font-family="Helvetica,sans-Serif" font-size="9.00">CRYO_DED_COOL</text>
+</g>
+<!-- CRYO_DED_COOL&#45;&gt;CRYO_DED_COOL -->
+<g id="edge35" class="edge">
+<title>CRYO_DED_COOL&#45;&gt;CRYO_DED_COOL</title>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M1249.37,-1333.12C1243.43,-1345.65 1249.97,-1358 1269,-1358 1282.83,-1358 1290.06,-1351.48 1290.7,-1343.11"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1294.09,-1342.19 1288.63,-1333.12 1287.23,-1343.62 1294.09,-1342.19"/>
+<text text-anchor="middle" x="1269" y="-1360.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S55\n4.2838 kW</text>
+</g>
+<!-- CRYO_HX_Q4 -->
+<g id="node2" class="node">
+<title>CRYO_HX_Q4</title>
+<path fill="#ffffff" stroke="black" d="M1294.5,-1272C1294.5,-1272 1243.5,-1272 1243.5,-1272 1237.5,-1272 1231.5,-1266 1231.5,-1260 1231.5,-1260 1231.5,-1248 1231.5,-1248 1231.5,-1242 1237.5,-1236 1243.5,-1236 1243.5,-1236 1294.5,-1236 1294.5,-1236 1300.5,-1236 1306.5,-1242 1306.5,-1248 1306.5,-1248 1306.5,-1260 1306.5,-1260 1306.5,-1266 1300.5,-1272 1294.5,-1272"/>
+<text text-anchor="middle" x="1269" y="-1251.8" font-family="Helvetica,sans-Serif" font-size="9.00">CRYO_HX_Q4</text>
+</g>
+<!-- Q4_BUS -->
+<g id="node14" class="node">
+<title>Q4_BUS</title>
+<path fill="#ffffff" stroke="black" d="M1529.5,-917C1529.5,-917 1499.5,-917 1499.5,-917 1493.5,-917 1487.5,-911 1487.5,-905 1487.5,-905 1487.5,-893 1487.5,-893 1487.5,-887 1493.5,-881 1499.5,-881 1499.5,-881 1529.5,-881 1529.5,-881 1535.5,-881 1541.5,-887 1541.5,-893 1541.5,-893 1541.5,-905 1541.5,-905 1541.5,-911 1535.5,-917 1529.5,-917"/>
+<text text-anchor="middle" x="1514.5" y="-896.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q4_BUS</text>
+</g>
+<!-- CRYO_HX_Q4&#45;&gt;Q4_BUS -->
+<g id="edge34" class="edge">
+<title>CRYO_HX_Q4&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1306.6,-1240.59C1344.1,-1224.99 1401.39,-1195.65 1434,-1152 1486.24,-1082.07 1504.7,-976.96 1510.77,-927.13"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1514.26,-927.42 1511.92,-917.09 1507.31,-926.63 1514.26,-927.42"/>
+<text text-anchor="middle" x="1385" y="-1228.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S54\n0.5448 kW</text>
+</g>
+<!-- BOUNDARY_EXPORT -->
+<g id="node3" class="node">
+<title>BOUNDARY_EXPORT</title>
+<path fill="#fde68a" stroke="black" d="M1055,-193C1055,-193 819,-193 819,-193 813,-193 807,-187 807,-181 807,-181 807,-169 807,-169 807,-163 813,-157 819,-157 819,-157 1055,-157 1055,-157 1061,-157 1067,-163 1067,-169 1067,-169 1067,-181 1067,-181 1067,-187 1061,-193 1055,-193"/>
+<text text-anchor="middle" x="937" y="-177.8" font-family="Helvetica,sans-Serif" font-size="9.00">BOUNDARY_EXPORT</text>
+<text text-anchor="middle" x="937" y="-167.8" font-family="Helvetica,sans-Serif" font-size="9.00">DOCK export boundary — no inter&#45;block S## for go…</text>
+</g>
+<!-- RECTIFIER -->
+<g id="node4" class="node">
+<title>RECTIFIER</title>
+<path fill="#ffffff" stroke="black" d="M270,-741C270,-741 231,-741 231,-741 225,-741 219,-735 219,-729 219,-729 219,-717 219,-717 219,-711 225,-705 231,-705 231,-705 270,-705 270,-705 276,-705 282,-711 282,-717 282,-717 282,-729 282,-729 282,-735 276,-741 270,-741"/>
+<text text-anchor="middle" x="250.5" y="-720.8" font-family="Helvetica,sans-Serif" font-size="9.00">RECTIFIER</text>
+</g>
+<!-- Q3_A -->
+<g id="node17" class="node">
+<title>Q3_A</title>
+<path fill="#ffffff" stroke="black" d="M555,-1066C555,-1066 525,-1066 525,-1066 519,-1066 513,-1060 513,-1054 513,-1054 513,-1042 513,-1042 513,-1036 519,-1030 525,-1030 525,-1030 555,-1030 555,-1030 561,-1030 567,-1036 567,-1042 567,-1042 567,-1054 567,-1054 567,-1060 561,-1066 555,-1066"/>
+<text text-anchor="middle" x="540" y="-1045.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q3_A</text>
+</g>
+<!-- RECTIFIER&#45;&gt;Q3_A -->
+<g id="edge40" class="edge">
+<title>RECTIFIER&#45;&gt;Q3_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M268.25,-741.09C304.07,-780.48 389.33,-877.95 444,-971 455.5,-990.57 447.77,-1002.12 464,-1018 474.73,-1028.5 489.59,-1035.46 503.26,-1040.01"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="502.34,-1043.39 512.93,-1042.91 504.36,-1036.68 502.34,-1043.39"/>
+<text text-anchor="middle" x="373" y="-973.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q3A&#45;TRIM\n10.048 kW</text>
+</g>
+<!-- Q4_A -->
+<g id="node18" class="node">
+<title>Q4_A</title>
+<path fill="#ffffff" stroke="black" d="M952,-997C952,-997 922,-997 922,-997 916,-997 910,-991 910,-985 910,-985 910,-973 910,-973 910,-967 916,-961 922,-961 922,-961 952,-961 952,-961 958,-961 964,-967 964,-973 964,-973 964,-985 964,-985 964,-991 958,-997 952,-997"/>
+<text text-anchor="middle" x="937" y="-976.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q4_A</text>
+</g>
+<!-- RECTIFIER&#45;&gt;Q4_A -->
+<g id="edge43" class="edge">
+<title>RECTIFIER&#45;&gt;Q4_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M282.22,-720.26C383.24,-711.87 703.44,-690.23 787,-745 864.06,-795.51 909.16,-901.22 927.03,-951.41"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="923.76,-952.65 930.34,-960.96 930.37,-950.36 923.76,-952.65"/>
+<text text-anchor="middle" x="540" y="-712.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q4A&#45;TRIM\n1.61 kW</text>
+</g>
+<!-- Q3_B -->
+<g id="node21" class="node">
+<title>Q3_B</title>
+<path fill="#ffffff" stroke="black" d="M952,-1058C952,-1058 922,-1058 922,-1058 916,-1058 910,-1052 910,-1046 910,-1046 910,-1034 910,-1034 910,-1028 916,-1022 922,-1022 922,-1022 952,-1022 952,-1022 958,-1022 964,-1028 964,-1034 964,-1034 964,-1046 964,-1046 964,-1052 958,-1058 952,-1058"/>
+<text text-anchor="middle" x="937" y="-1037.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q3_B</text>
+</g>
+<!-- RECTIFIER&#45;&gt;Q3_B -->
+<g id="edge41" class="edge">
+<title>RECTIFIER&#45;&gt;Q3_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M282.12,-729.61C288.66,-730.87 295.54,-732.08 302,-733 355.56,-740.65 749.46,-737.04 787,-776 805.06,-794.75 782.16,-990.14 799,-1010 823.26,-1038.62 867.95,-1043.65 899.68,-1043.13"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="900.03,-1046.62 909.9,-1042.76 899.78,-1039.62 900.03,-1046.62"/>
+<text text-anchor="middle" x="540" y="-748.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q3B&#45;TRIM\n10.048 kW</text>
+</g>
+<!-- Q4_B -->
+<g id="node22" class="node">
+<title>Q4_B</title>
+<path fill="#ffffff" stroke="black" d="M1284,-1048C1284,-1048 1254,-1048 1254,-1048 1248,-1048 1242,-1042 1242,-1036 1242,-1036 1242,-1024 1242,-1024 1242,-1018 1248,-1012 1254,-1012 1254,-1012 1284,-1012 1284,-1012 1290,-1012 1296,-1018 1296,-1024 1296,-1024 1296,-1036 1296,-1036 1296,-1042 1290,-1048 1284,-1048"/>
+<text text-anchor="middle" x="1269" y="-1027.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q4_B</text>
+</g>
+<!-- RECTIFIER&#45;&gt;Q4_B -->
+<g id="edge44" class="edge">
+<title>RECTIFIER&#45;&gt;Q4_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M282.03,-709.79C288.51,-707.48 295.4,-705.38 302,-704 407.58,-682.01 684.29,-654.13 787,-687 890.25,-720.04 1150.98,-932.41 1238.69,-1005.4"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1236.47,-1008.11 1246.39,-1011.82 1240.95,-1002.73 1236.47,-1008.11"/>
+<text text-anchor="middle" x="711.5" y="-689.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q4B&#45;TRIM\n1.61 kW</text>
+</g>
+<!-- GROW_BED -->
+<g id="node5" class="node">
+<title>GROW_BED</title>
+<path fill="#ffffff" stroke="black" d="M1536.5,-475C1536.5,-475 1492.5,-475 1492.5,-475 1486.5,-475 1480.5,-469 1480.5,-463 1480.5,-463 1480.5,-451 1480.5,-451 1480.5,-445 1486.5,-439 1492.5,-439 1492.5,-439 1536.5,-439 1536.5,-439 1542.5,-439 1548.5,-445 1548.5,-451 1548.5,-451 1548.5,-463 1548.5,-463 1548.5,-469 1542.5,-475 1536.5,-475"/>
+<text text-anchor="middle" x="1514.5" y="-454.8" font-family="Helvetica,sans-Serif" font-size="9.00">GROW_BED</text>
+</g>
+<!-- FUEL_CELL -->
+<g id="node6" class="node">
+<title>FUEL_CELL</title>
+<path fill="#ffffff" stroke="black" d="M1290.5,-1192C1290.5,-1192 1247.5,-1192 1247.5,-1192 1241.5,-1192 1235.5,-1186 1235.5,-1180 1235.5,-1180 1235.5,-1168 1235.5,-1168 1235.5,-1162 1241.5,-1156 1247.5,-1156 1247.5,-1156 1290.5,-1156 1290.5,-1156 1296.5,-1156 1302.5,-1162 1302.5,-1168 1302.5,-1168 1302.5,-1180 1302.5,-1180 1302.5,-1186 1296.5,-1192 1290.5,-1192"/>
+<text text-anchor="middle" x="1269" y="-1171.8" font-family="Helvetica,sans-Serif" font-size="9.00">FUEL_CELL</text>
+</g>
+<!-- FUEL_CELL&#45;&gt;Q4_BUS -->
+<g id="edge33" class="edge">
+<title>FUEL_CELL&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1302.58,-1159.01C1309.86,-1155.14 1317.38,-1150.73 1324,-1146 1379,-1106.72 1392.59,-1094.41 1434,-1041 1462.46,-1004.29 1487.16,-956.16 1501.18,-926.42"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1504.48,-927.63 1505.52,-917.09 1498.13,-924.68 1504.48,-927.63"/>
+<text text-anchor="middle" x="1385" y="-1139.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S53\n1.1419 kW</text>
+</g>
+<!-- GEO_GHEX -->
+<g id="node7" class="node">
+<title>GEO_GHEX</title>
+<path fill="#ffffff" stroke="black" d="M1290,-555C1290,-555 1248,-555 1248,-555 1242,-555 1236,-549 1236,-543 1236,-543 1236,-531 1236,-531 1236,-525 1242,-519 1248,-519 1248,-519 1290,-519 1290,-519 1296,-519 1302,-525 1302,-531 1302,-531 1302,-543 1302,-543 1302,-549 1296,-555 1290,-555"/>
+<text text-anchor="middle" x="1269" y="-534.8" font-family="Helvetica,sans-Serif" font-size="9.00">GEO_GHEX</text>
+</g>
+<!-- GEO_HP_CLOSED_LOOP -->
+<g id="node9" class="node">
+<title>GEO_HP_CLOSED_LOOP</title>
+<path fill="#ffffff" stroke="black" d="M1563,-562C1563,-562 1466,-562 1466,-562 1460,-562 1454,-556 1454,-550 1454,-550 1454,-538 1454,-538 1454,-532 1460,-526 1466,-526 1466,-526 1563,-526 1563,-526 1569,-526 1575,-532 1575,-538 1575,-538 1575,-550 1575,-550 1575,-556 1569,-562 1563,-562"/>
+<text text-anchor="middle" x="1514.5" y="-541.8" font-family="Helvetica,sans-Serif" font-size="9.00">GEO_HP_CLOSED_LOOP</text>
+</g>
+<!-- GEO_GHEX&#45;&gt;GEO_HP_CLOSED_LOOP -->
+<g id="edge31" class="edge">
+<title>GEO_GHEX&#45;&gt;GEO_HP_CLOSED_LOOP</title>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M1302.08,-537.92C1337.94,-538.95 1397.07,-540.65 1443.69,-541.99"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1443.65,-545.49 1453.74,-542.28 1443.85,-538.5 1443.65,-545.49"/>
+<text text-anchor="middle" x="1385" y="-543.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S43\n0.0 kW</text>
+</g>
+<!-- GEO_HP -->
+<g id="node8" class="node">
+<title>GEO_HP</title>
+<path fill="#ffffff" stroke="black" d="M1284,-616C1284,-616 1254,-616 1254,-616 1248,-616 1242,-610 1242,-604 1242,-604 1242,-592 1242,-592 1242,-586 1248,-580 1254,-580 1254,-580 1284,-580 1284,-580 1290,-580 1296,-586 1296,-592 1296,-592 1296,-604 1296,-604 1296,-610 1290,-616 1284,-616"/>
+<text text-anchor="middle" x="1269" y="-595.8" font-family="Helvetica,sans-Serif" font-size="9.00">GEO_HP</text>
+</g>
+<!-- GEO_HP&#45;&gt;GROW_BED -->
+<g id="edge30" class="edge">
+<title>GEO_HP&#45;&gt;GROW_BED</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1296.11,-588.65C1306.13,-583.88 1316.85,-577.11 1324,-568 1336.51,-552.05 1322.36,-539 1336,-524 1370.86,-485.67 1429.9,-469.15 1470.24,-462.11"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1471.01,-465.53 1480.32,-460.47 1469.89,-458.62 1471.01,-465.53"/>
+<text text-anchor="middle" x="1385" y="-526.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S06\n0.0 kW</text>
+</g>
+<!-- GEO_HP&#45;&gt;Q4_BUS -->
+<g id="edge32" class="edge">
+<title>GEO_HP&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1296.23,-603.26C1332.18,-611.78 1396.53,-631.96 1434,-673 1447.83,-688.14 1487.54,-814.09 1505.04,-871.13"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1501.77,-872.39 1508.04,-880.93 1508.46,-870.35 1501.77,-872.39"/>
+<text text-anchor="middle" x="1385" y="-675.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S44\n0.0 kW</text>
+</g>
+<!-- GEO_ORC -->
+<g id="node10" class="node">
+<title>GEO_ORC</title>
+<path fill="#ffffff" stroke="black" d="M1286.5,-677C1286.5,-677 1251.5,-677 1251.5,-677 1245.5,-677 1239.5,-671 1239.5,-665 1239.5,-665 1239.5,-653 1239.5,-653 1239.5,-647 1245.5,-641 1251.5,-641 1251.5,-641 1286.5,-641 1286.5,-641 1292.5,-641 1298.5,-647 1298.5,-653 1298.5,-653 1298.5,-665 1298.5,-665 1298.5,-671 1292.5,-677 1286.5,-677"/>
+<text text-anchor="middle" x="1269" y="-656.8" font-family="Helvetica,sans-Serif" font-size="9.00">GEO_ORC</text>
+</g>
+<!-- GLASS_DIGEST -->
+<g id="node11" class="node">
+<title>GLASS_DIGEST</title>
+<path fill="#ffffff" stroke="black" d="M967.5,-334C967.5,-334 906.5,-334 906.5,-334 900.5,-334 894.5,-328 894.5,-322 894.5,-322 894.5,-310 894.5,-310 894.5,-304 900.5,-298 906.5,-298 906.5,-298 967.5,-298 967.5,-298 973.5,-298 979.5,-304 979.5,-310 979.5,-310 979.5,-322 979.5,-322 979.5,-328 973.5,-334 967.5,-334"/>
+<text text-anchor="middle" x="937" y="-313.8" font-family="Helvetica,sans-Serif" font-size="9.00">GLASS_DIGEST</text>
+</g>
+<!-- GLASS_BURNOUT -->
+<g id="node12" class="node">
+<title>GLASS_BURNOUT</title>
+<path fill="#ffffff" stroke="black" d="M972.5,-273C972.5,-273 901.5,-273 901.5,-273 895.5,-273 889.5,-267 889.5,-261 889.5,-261 889.5,-249 889.5,-249 889.5,-243 895.5,-237 901.5,-237 901.5,-237 972.5,-237 972.5,-237 978.5,-237 984.5,-243 984.5,-249 984.5,-249 984.5,-261 984.5,-261 984.5,-267 978.5,-273 972.5,-273"/>
+<text text-anchor="middle" x="937" y="-252.8" font-family="Helvetica,sans-Serif" font-size="9.00">GLASS_BURNOUT</text>
+</g>
+<!-- Q2_A -->
+<g id="node16" class="node">
+<title>Q2_A</title>
+<path fill="#ffffff" stroke="black" d="M265.5,-1073C265.5,-1073 235.5,-1073 235.5,-1073 229.5,-1073 223.5,-1067 223.5,-1061 223.5,-1061 223.5,-1049 223.5,-1049 223.5,-1043 229.5,-1037 235.5,-1037 235.5,-1037 265.5,-1037 265.5,-1037 271.5,-1037 277.5,-1043 277.5,-1049 277.5,-1049 277.5,-1061 277.5,-1061 277.5,-1067 271.5,-1073 265.5,-1073"/>
+<text text-anchor="middle" x="250.5" y="-1052.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q2_A</text>
+</g>
+<!-- GLASS_BURNOUT&#45;&gt;Q2_A -->
+<g id="edge3" class="edge">
+<title>GLASS_BURNOUT&#45;&gt;Q2_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M889.21,-252.18C858.62,-253.12 820.49,-260.1 799,-286 775.93,-313.81 810.09,-583.2 787,-611 743.05,-663.92 681.11,-593.07 636,-645 600.03,-686.41 650.82,-848.62 616,-891 523.91,-1003.07 406.47,-879.37 302,-980 289.55,-991.99 299.08,-1002.29 290,-1017 287.3,-1021.38 283.98,-1025.63 280.45,-1029.6"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="277.88,-1027.23 273.47,-1036.86 282.93,-1032.08 277.88,-1027.23"/>
+<text text-anchor="middle" x="540" y="-943.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;GLASS_BURNOUT&#45;Q2&#45;A\n0.928 kW</text>
+</g>
+<!-- Q2_B -->
+<g id="node20" class="node">
+<title>Q2_B</title>
+<path fill="#ffffff" stroke="black" d="M555,-1005C555,-1005 525,-1005 525,-1005 519,-1005 513,-999 513,-993 513,-993 513,-981 513,-981 513,-975 519,-969 525,-969 525,-969 555,-969 555,-969 561,-969 567,-975 567,-981 567,-981 567,-993 567,-993 567,-999 561,-1005 555,-1005"/>
+<text text-anchor="middle" x="540" y="-984.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q2_B</text>
+</g>
+<!-- GLASS_BURNOUT&#45;&gt;Q2_B -->
+<g id="edge4" class="edge">
+<title>GLASS_BURNOUT&#45;&gt;Q2_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M889.47,-252.11C858.79,-252.98 820.45,-259.91 799,-286 768.65,-322.92 809.73,-673.95 787,-716 748.13,-787.91 679.32,-751.68 636,-821 605.26,-870.2 650.33,-903.23 616,-950 606.51,-962.93 591.24,-971.6 576.94,-977.26"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="575.52,-974.06 567.29,-980.73 577.88,-980.65 575.52,-974.06"/>
+<text text-anchor="middle" x="711.5" y="-823.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;GLASS_BURNOUT&#45;Q2&#45;B\n0.928 kW</text>
+</g>
+<!-- HABITATION -->
+<g id="node13" class="node">
+<title>HABITATION</title>
+<path fill="#ffffff" stroke="black" d="M1751,-917C1751,-917 1705,-917 1705,-917 1699,-917 1693,-911 1693,-905 1693,-905 1693,-893 1693,-893 1693,-887 1699,-881 1705,-881 1705,-881 1751,-881 1751,-881 1757,-881 1763,-887 1763,-893 1763,-893 1763,-905 1763,-905 1763,-911 1757,-917 1751,-917"/>
+<text text-anchor="middle" x="1728" y="-896.8" font-family="Helvetica,sans-Serif" font-size="9.00">HABITATION</text>
+</g>
+<!-- Q4_BUS&#45;&gt;GEO_ORC -->
+<g id="edge38" class="edge">
+<title>Q4_BUS&#45;&gt;GEO_ORC</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1507.01,-880.79C1495.85,-851.56 1470.66,-793.65 1434,-756 1397.56,-718.58 1343.69,-690.42 1307.75,-674.33"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1309.13,-671.12 1298.56,-670.31 1306.32,-677.53 1309.13,-671.12"/>
+<text text-anchor="middle" x="1385" y="-758.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;REJ\n11.7617 kW</text>
+</g>
+<!-- Q4_BUS&#45;&gt;HABITATION -->
+<g id="edge39" class="edge">
+<title>Q4_BUS&#45;&gt;HABITATION</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1541.86,-899C1577.15,-899 1640.25,-899 1682.86,-899"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1682.95,-902.5 1692.95,-899 1682.95,-895.5 1682.95,-902.5"/>
+<text text-anchor="middle" x="1634" y="-901.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q4&#45;LIFE\n3.0 kW</text>
+</g>
+<!-- Q1_A -->
+<g id="node15" class="node">
+<title>Q1_A</title>
+<path fill="#ffffff" stroke="black" d="M58,-1004C58,-1004 28,-1004 28,-1004 22,-1004 16,-998 16,-992 16,-992 16,-980 16,-980 16,-974 22,-968 28,-968 28,-968 58,-968 58,-968 64,-968 70,-974 70,-980 70,-980 70,-992 70,-992 70,-998 64,-1004 58,-1004"/>
+<text text-anchor="middle" x="43" y="-983.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q1_A</text>
+</g>
+<!-- Q1_A&#45;&gt;BOUNDARY_EXPORT -->
+<g id="edge45" class="edge">
+<title>Q1_A&#45;&gt;BOUNDARY_EXPORT</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M51.61,-967.66C72.32,-919.11 133.37,-784.5 211,-691 424.36,-434.03 500.51,-372.87 799,-223 819.51,-212.7 842.76,-203.66 864.21,-196.28"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="865.56,-199.52 873.92,-193.01 863.33,-192.88 865.56,-199.52"/>
+<text text-anchor="middle" x="373" y="-582.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q1A&#45;LOSS\n0.25 kW</text>
+</g>
+<!-- Q1_A&#45;&gt;Q2_A -->
+<g id="edge7" class="edge">
+<title>Q1_A&#45;&gt;Q2_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M70.05,-1003.67C76.39,-1007.46 83.28,-1011.17 90,-1014 130.65,-1031.15 180.24,-1042.52 213.23,-1048.85"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="212.85,-1052.34 223.32,-1050.73 214.13,-1045.46 212.85,-1052.34"/>
+<text text-anchor="middle" x="144.5" y="-1047.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;A&#45;DOWN\n1.133 kW</text>
+</g>
+<!-- Q1_B -->
+<g id="node19" class="node">
+<title>Q1_B</title>
+<path fill="#ffffff" stroke="black" d="M265.5,-1004C265.5,-1004 235.5,-1004 235.5,-1004 229.5,-1004 223.5,-998 223.5,-992 223.5,-992 223.5,-980 223.5,-980 223.5,-974 229.5,-968 235.5,-968 235.5,-968 265.5,-968 265.5,-968 271.5,-968 277.5,-974 277.5,-980 277.5,-980 277.5,-992 277.5,-992 277.5,-998 271.5,-1004 265.5,-1004"/>
+<text text-anchor="middle" x="250.5" y="-983.8" font-family="Helvetica,sans-Serif" font-size="9.00">Q1_B</text>
+</g>
+<!-- Q1_A&#45;&gt;Q1_B -->
+<g id="edge9" class="edge">
+<title>Q1_A&#45;&gt;Q1_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M70.03,-986C106.29,-986 172.18,-986 213.24,-986"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="213.36,-989.5 223.36,-986 213.36,-982.5 213.36,-989.5"/>
+<text text-anchor="middle" x="144.5" y="-988.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;X\n1.383 kW</text>
+</g>
+<!-- Q2_A&#45;&gt;BOUNDARY_EXPORT -->
+<g id="edge47" class="edge">
+<title>Q2_A&#45;&gt;BOUNDARY_EXPORT</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M274.69,-1036.93C280.58,-1031.18 286.29,-1024.39 290,-1017 307.32,-982.51 277.32,-960.67 302,-931 350.53,-872.65 391.74,-900.21 464,-877 531.32,-855.37 572.12,-885.45 616,-830 656.63,-778.65 602.68,-592.37 636,-536 676.59,-467.33 746.84,-507.92 787,-439 811.21,-397.46 770.11,-261.43 799,-223 806.97,-212.41 817.44,-204.14 829.06,-197.69"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="830.79,-200.73 838.14,-193.1 827.64,-194.49 830.79,-200.73"/>
+<text text-anchor="middle" x="540" y="-879.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q2A&#45;LOSS\n0.17 kW</text>
+</g>
+<!-- Q2_A&#45;&gt;Q3_A -->
+<g id="edge11" class="edge">
+<title>Q2_A&#45;&gt;Q3_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M277.72,-1066.9C285.39,-1069.82 293.89,-1072.52 302,-1074 364.09,-1085.29 381.45,-1082.4 444,-1074 463.83,-1071.33 485.39,-1065.67 502.94,-1060.31"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="504.29,-1063.56 512.77,-1057.21 502.19,-1056.88 504.29,-1063.56"/>
+<text text-anchor="middle" x="373" y="-1083.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;A&#45;DOWN\n1.888 kW</text>
+</g>
+<!-- Q2_A&#45;&gt;Q2_B -->
+<g id="edge13" class="edge">
+<title>Q2_A&#45;&gt;Q2_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M277.62,-1057.04C315.81,-1059 388.39,-1058.78 444,-1035 454.73,-1030.41 454.04,-1024.08 464,-1018 476.17,-1010.57 490.44,-1004.17 503.24,-999.14"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="504.57,-1002.38 512.69,-995.58 502.1,-995.84 504.57,-1002.38"/>
+<text text-anchor="middle" x="373" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;X\n2.027 kW</text>
+</g>
+<!-- Q3_A&#45;&gt;GLASS_DIGEST -->
+<g id="edge19" class="edge">
+<title>Q3_A&#45;&gt;GLASS_DIGEST</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.28,-1044.34C583.87,-1040.6 604.31,-1033.07 616,-1018 658.3,-963.46 589.18,-914.71 636,-864 682.54,-813.6 743.13,-884.74 787,-832 820.26,-792.01 768.37,-406.04 799,-364 818.54,-337.19 854.2,-325.26 884.24,-320"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="884.84,-323.45 894.18,-318.45 883.76,-316.53 884.84,-323.45"/>
+<text text-anchor="middle" x="711.5" y="-866.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;A&#45;HX6\n2.079 kW</text>
+</g>
+<!-- Q3_A&#45;&gt;Q4_A -->
+<g id="edge15" class="edge">
+<title>Q3_A&#45;&gt;Q4_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.15,-1042.16C586.19,-1037.99 612.64,-1032.36 636,-1028 730.79,-1010.29 843.1,-992.9 899.63,-984.39"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="900.48,-987.81 909.85,-982.86 899.44,-980.88 900.48,-987.81"/>
+<text text-anchor="middle" x="711.5" y="-1030.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;A&#45;DOWN\n1.614 kW</text>
+</g>
+<!-- Q3_A&#45;&gt;Q3_B -->
+<g id="edge23" class="edge">
+<title>Q3_A&#45;&gt;Q3_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.22,-1047.47C635.77,-1046.08 820.41,-1042.34 899.37,-1040.74"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="899.86,-1044.23 909.79,-1040.53 899.72,-1037.23 899.86,-1044.23"/>
+<text text-anchor="middle" x="711.5" y="-1048.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;X\n1.831 kW</text>
+</g>
+<!-- OIL_DRYER -->
+<g id="node26" class="node">
+<title>OIL_DRYER</title>
+<path fill="#ffffff" stroke="black" d="M958,-113C958,-113 916,-113 916,-113 910,-113 904,-107 904,-101 904,-101 904,-89 904,-89 904,-83 910,-77 916,-77 916,-77 958,-77 958,-77 964,-77 970,-83 970,-89 970,-89 970,-101 970,-101 970,-107 964,-113 958,-113"/>
+<text text-anchor="middle" x="937" y="-92.8" font-family="Helvetica,sans-Serif" font-size="9.00">OIL_DRYER</text>
+</g>
+<!-- Q3_A&#45;&gt;OIL_DRYER -->
+<g id="edge17" class="edge">
+<title>Q3_A&#45;&gt;OIL_DRYER</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.3,-1044.71C584.13,-1041.12 604.82,-1033.63 616,-1018 665.98,-948.15 585.94,-701.8 636,-632 678.09,-573.32 745.61,-631.18 787,-572 814.33,-532.92 770.87,-181.51 799,-143 820.64,-113.38 861.95,-101.92 893.58,-97.55"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="894.38,-100.98 903.89,-96.33 893.55,-94.03 894.38,-100.98"/>
+<text text-anchor="middle" x="711.5" y="-634.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;A&#45;HX4\n0.302 kW</text>
+</g>
+<!-- LEACH_CSTR_1 -->
+<g id="node29" class="node">
+<title>LEACH_CSTR_1</title>
+<path fill="#ffffff" stroke="black" d="M967.5,-475C967.5,-475 906.5,-475 906.5,-475 900.5,-475 894.5,-469 894.5,-463 894.5,-463 894.5,-451 894.5,-451 894.5,-445 900.5,-439 906.5,-439 906.5,-439 967.5,-439 967.5,-439 973.5,-439 979.5,-445 979.5,-451 979.5,-451 979.5,-463 979.5,-463 979.5,-469 973.5,-475 967.5,-475"/>
+<text text-anchor="middle" x="937" y="-454.8" font-family="Helvetica,sans-Serif" font-size="9.00">LEACH_CSTR_1</text>
+</g>
+<!-- Q3_A&#45;&gt;LEACH_CSTR_1 -->
+<g id="edge18" class="edge">
+<title>Q3_A&#45;&gt;LEACH_CSTR_1</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.32,-1043.59C583.5,-1039.56 603.46,-1032 616,-1018 638.16,-993.27 613.45,-970.39 636,-946 684.49,-893.56 736.97,-941.97 787,-891 902.69,-773.14 928.72,-561.57 934.43,-485.34"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="937.94,-485.32 935.14,-475.11 930.96,-484.84 937.94,-485.32"/>
+<text text-anchor="middle" x="711.5" y="-948.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;A&#45;HX5\n7.941 kW</text>
+</g>
+<!-- Q4_A&#45;&gt;Q4_BUS -->
+<g id="edge25" class="edge">
+<title>Q4_A&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M964.41,-978.59C1027.19,-977.24 1190.13,-971.67 1324,-949 1378.28,-939.81 1439.64,-922.26 1477.45,-910.6"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1478.96,-913.79 1487.46,-907.47 1476.87,-907.11 1478.96,-913.79"/>
+<text text-anchor="middle" x="1269" y="-965.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;A&#45;BUS\n5.51 kW</text>
+</g>
+<!-- Q4_A&#45;&gt;Q4_B -->
+<g id="edge27" class="edge">
+<title>Q4_A&#45;&gt;Q4_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M964.17,-983.04C1022.78,-992.1 1164.66,-1014.03 1231.73,-1024.39"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1231.41,-1027.89 1241.83,-1025.96 1232.48,-1020.97 1231.41,-1027.89"/>
+<text text-anchor="middle" x="1144.5" y="-1020.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;X\n1.565 kW</text>
+</g>
+<!-- Q1_B&#45;&gt;BOUNDARY_EXPORT -->
+<g id="edge46" class="edge">
+<title>Q1_B&#45;&gt;BOUNDARY_EXPORT</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M253.6,-967.81C257.78,-939.98 269.71,-886.91 302,-857 409.06,-757.83 524.69,-874.84 616,-761 651.7,-716.49 613.67,-557.51 636,-505 675.55,-412 746.12,-427.42 787,-335 797.13,-312.11 783.45,-242.62 799,-223 807.5,-212.27 818.57,-203.94 830.72,-197.46"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="832.28,-200.59 839.74,-193.06 829.22,-194.3 832.28,-200.59"/>
+<text text-anchor="middle" x="540" y="-817.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q1B&#45;LOSS\n0.25 kW</text>
+</g>
+<!-- Q1_B&#45;&gt;Q1_A -->
+<g id="edge10" class="edge">
+<title>Q1_B&#45;&gt;Q1_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M223.43,-992.17C215.62,-993.75 207.01,-995.22 199,-996 150.79,-1000.73 138.17,-1001.18 90,-996 86.75,-995.65 83.39,-995.17 80.04,-994.6"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="80.59,-991.14 70.11,-992.69 79.27,-998.01 80.59,-991.14"/>
+<text text-anchor="middle" x="144.5" y="-1001.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;X&#45;BA\n1.383 kW</text>
+</g>
+<!-- Q1_B&#45;&gt;Q2_B -->
+<g id="edge8" class="edge">
+<title>Q1_B&#45;&gt;Q2_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M277.52,-986.09C328.92,-986.27 443.58,-986.67 502.51,-986.87"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="502.82,-990.37 512.83,-986.91 502.84,-983.37 502.82,-990.37"/>
+<text text-anchor="middle" x="373" y="-988.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;B&#45;DOWN\n1.133 kW</text>
+</g>
+<!-- Q2_B&#45;&gt;BOUNDARY_EXPORT -->
+<g id="edge48" class="edge">
+<title>Q2_B&#45;&gt;BOUNDARY_EXPORT</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.09,-981.33C584.05,-976.18 604.98,-966.74 616,-950 639.67,-914.03 607.83,-595.56 636,-563 680.76,-511.25 742.57,-585.04 787,-533 809.38,-506.78 778.52,-250.73 799,-223 806.82,-212.42 817.14,-204.16 828.62,-197.71"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="830.29,-200.79 837.61,-193.12 827.11,-194.55 830.29,-200.79"/>
+<text text-anchor="middle" x="711.5" y="-565.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;Q2B&#45;LOSS\n0.17 kW</text>
+</g>
+<!-- Q2_B&#45;&gt;Q2_A -->
+<g id="edge14" class="edge">
+<title>Q2_B&#45;&gt;Q2_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M512.8,-990.11C459.58,-996.63 340.59,-1012.25 302,-1026 296.82,-1027.84 291.56,-1030.21 286.5,-1032.8"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="284.74,-1029.77 277.63,-1037.63 288.09,-1035.92 284.74,-1029.77"/>
+<text text-anchor="middle" x="373" y="-1028.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;X&#45;BA\n2.027 kW</text>
+</g>
+<!-- Q2_B&#45;&gt;Q3_B -->
+<g id="edge12" class="edge">
+<title>Q2_B&#45;&gt;Q3_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M567.03,-978.82C614.64,-965.53 717.24,-944.71 787,-987 796.86,-992.98 789.84,-1003 799,-1010 827.98,-1032.16 869.97,-1038.66 899.81,-1040.23"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="899.69,-1043.73 909.82,-1040.6 899.95,-1036.74 899.69,-1043.73"/>
+<text text-anchor="middle" x="711.5" y="-989.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;B&#45;DOWN\n1.888 kW</text>
+</g>
+<!-- Q3_B&#45;&gt;GLASS_DIGEST -->
+<g id="edge22" class="edge">
+<title>Q3_B&#45;&gt;GLASS_DIGEST</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M909.89,-1039.32C880.56,-1037.46 833.38,-1031.09 799,-1010 739.09,-973.26 722.59,-953.7 699,-887.5 659.25,-775.93 721.44,-453.51 799,-364 820.32,-339.39 854.96,-327.39 884.2,-321.55"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="885.06,-324.95 894.28,-319.72 883.82,-318.06 885.06,-324.95"/>
+<text text-anchor="middle" x="711.5" y="-881.1" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;B&#45;HX6\n2.079 kW</text>
+</g>
+<!-- Q3_B&#45;&gt;Q3_A -->
+<g id="edge24" class="edge">
+<title>Q3_B&#45;&gt;Q3_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M909.74,-1044.84C880.07,-1050.04 830.26,-1057.97 787,-1061 720.05,-1065.69 702.96,-1065.56 636,-1061 616.42,-1059.67 594.74,-1056.81 577.03,-1054.11"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="577.53,-1050.64 567.11,-1052.55 576.45,-1057.56 577.53,-1050.64"/>
+<text text-anchor="middle" x="711.5" y="-1066.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;X&#45;BA\n1.831 kW</text>
+</g>
+<!-- Q3_B&#45;&gt;Q4_B -->
+<g id="edge16" class="edge">
+<title>Q3_B&#45;&gt;Q4_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M964,-1049.41C1011.95,-1065.34 1117.14,-1093.71 1202,-1070 1214.1,-1066.62 1226.19,-1060.35 1236.65,-1053.76"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1238.62,-1056.65 1245.02,-1048.21 1234.75,-1050.82 1238.62,-1056.65"/>
+<text text-anchor="middle" x="1144.5" y="-1081.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;B&#45;DOWN\n1.614 kW</text>
+</g>
+<!-- Q3_B&#45;&gt;OIL_DRYER -->
+<g id="edge20" class="edge">
+<title>Q3_B&#45;&gt;OIL_DRYER</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M909.93,-1041.81C879.06,-1042.33 829,-1038.23 799,-1010 679.77,-897.82 721.43,-817.66 699,-655.5 667.2,-425.62 646.66,-318.08 799,-143 822.79,-115.66 863,-103.89 893.89,-98.82"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="894.59,-102.26 903.98,-97.35 893.58,-95.33 894.59,-102.26"/>
+<text text-anchor="middle" x="711.5" y="-649.1" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;B&#45;HX4\n0.302 kW</text>
+</g>
+<!-- Q3_B&#45;&gt;LEACH_CSTR_1 -->
+<g id="edge21" class="edge">
+<title>Q3_B&#45;&gt;LEACH_CSTR_1</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M909.88,-1041.56C879.2,-1041.82 829.55,-1037.44 799,-1010 691.45,-913.41 644.44,-834.37 699,-700.5 739.76,-600.47 843.59,-519.18 899.68,-480.84"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="901.93,-483.55 908.26,-475.06 898.01,-477.75 901.93,-483.55"/>
+<text text-anchor="middle" x="711.5" y="-703.1" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;B&#45;HX5\n7.941 kW</text>
+</g>
+<!-- Q4_B&#45;&gt;Q4_BUS -->
+<g id="edge26" class="edge">
+<title>Q4_B&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1296.08,-1029.85C1330.16,-1028.53 1390.59,-1022.28 1434,-996 1462.16,-978.95 1484.78,-948.22 1498.59,-925.9"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1501.66,-927.59 1503.79,-917.21 1495.65,-924 1501.66,-927.59"/>
+<text text-anchor="middle" x="1385" y="-1028.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;B&#45;BUS\n5.51 kW</text>
+</g>
+<!-- Q4_B&#45;&gt;Q4_A -->
+<g id="edge28" class="edge">
+<title>Q4_B&#45;&gt;Q4_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1241.98,-1030.49C1229.84,-1030.69 1215.18,-1030.9 1202,-1031 1150.89,-1031.39 1131.21,-1056.65 1087,-1031 1077.7,-1025.6 1083.64,-1016.39 1075,-1010 1045.76,-988.36 1004.07,-981.41 974.38,-979.38"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="974.2,-975.87 964.03,-978.84 973.83,-982.86 974.2,-975.87"/>
+<text text-anchor="middle" x="1144.5" y="-1044.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;X&#45;BA\n1.565 kW</text>
+</g>
+<!-- MEOH_FC -->
+<g id="node23" class="node">
+<title>MEOH_FC</title>
+<path fill="#ffffff" stroke="black" d="M1286.5,-917C1286.5,-917 1251.5,-917 1251.5,-917 1245.5,-917 1239.5,-911 1239.5,-905 1239.5,-905 1239.5,-893 1239.5,-893 1239.5,-887 1245.5,-881 1251.5,-881 1251.5,-881 1286.5,-881 1286.5,-881 1292.5,-881 1298.5,-887 1298.5,-893 1298.5,-893 1298.5,-905 1298.5,-905 1298.5,-911 1292.5,-917 1286.5,-917"/>
+<text text-anchor="middle" x="1269" y="-896.8" font-family="Helvetica,sans-Serif" font-size="9.00">MEOH_FC</text>
+</g>
+<!-- MEOH_FC&#45;&gt;Q4_BUS -->
+<g id="edge37" class="edge">
+<title>MEOH_FC&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="2.2" stroke-dasharray="5,2" d="M1298.89,-899C1343.37,-899 1428.57,-899 1477.17,-899"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="2.2" points="1477.24,-902.5 1487.24,-899 1477.24,-895.5 1477.24,-902.5"/>
+<text text-anchor="middle" x="1385" y="-901.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S80\n0.3689 kW</text>
+</g>
+<!-- MET_HX_Q4 -->
+<g id="node24" class="node">
+<title>MET_HX_Q4</title>
+<path fill="#ffffff" stroke="black" d="M1292,-837C1292,-837 1246,-837 1246,-837 1240,-837 1234,-831 1234,-825 1234,-825 1234,-813 1234,-813 1234,-807 1240,-801 1246,-801 1246,-801 1292,-801 1292,-801 1298,-801 1304,-807 1304,-813 1304,-813 1304,-825 1304,-825 1304,-831 1298,-837 1292,-837"/>
+<text text-anchor="middle" x="1269" y="-816.8" font-family="Helvetica,sans-Serif" font-size="9.00">MET_HX_Q4</text>
+</g>
+<!-- MET_HX_Q4&#45;&gt;Q4_BUS -->
+<g id="edge36" class="edge">
+<title>MET_HX_Q4&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1304.11,-830.21C1349.96,-845.27 1431.09,-871.92 1477.76,-887.26"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1476.85,-890.64 1487.44,-890.44 1479.04,-883.99 1476.85,-890.64"/>
+<text text-anchor="middle" x="1385" y="-872.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S63\n0.0171 kW</text>
+</g>
+<!-- AFTERBURNER -->
+<g id="node25" class="node">
+<title>AFTERBURNER</title>
+<path fill="#ffffff" stroke="black" d="M966.5,-52C966.5,-52 907.5,-52 907.5,-52 901.5,-52 895.5,-46 895.5,-40 895.5,-40 895.5,-28 895.5,-28 895.5,-22 901.5,-16 907.5,-16 907.5,-16 966.5,-16 966.5,-16 972.5,-16 978.5,-22 978.5,-28 978.5,-28 978.5,-40 978.5,-40 978.5,-46 972.5,-52 966.5,-52"/>
+<text text-anchor="middle" x="937" y="-31.8" font-family="Helvetica,sans-Serif" font-size="9.00">AFTERBURNER</text>
+</g>
+<!-- AFTERBURNER&#45;&gt;Q1_A -->
+<g id="edge1" class="edge">
+<title>AFTERBURNER&#45;&gt;Q1_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M895.41,-30.79C785.6,-24.39 479.01,-21.99 302,-175 54.29,-389.12 42.11,-840.24 43.31,-957.6"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="39.81,-957.95 43.46,-967.9 46.81,-957.85 39.81,-957.95"/>
+<text text-anchor="middle" x="373" y="-177.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;AFTERBURNER&#45;Q1&#45;A\n1.383 kW</text>
+</g>
+<!-- AFTERBURNER&#45;&gt;Q1_B -->
+<g id="edge2" class="edge">
+<title>AFTERBURNER&#45;&gt;Q1_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M895.23,-33.45C865.33,-35.16 825.49,-42.14 799,-65 787.82,-74.65 797.44,-85.54 787,-96 623.6,-259.77 434.88,-95.62 302,-285 286.36,-307.29 292.79,-747.91 290,-775 283.2,-841.14 267.16,-917.66 258.07,-957.9"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="254.63,-957.26 255.82,-967.79 261.45,-958.82 254.63,-957.26"/>
+<text text-anchor="middle" x="540" y="-187.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;AFTERBURNER&#45;Q1&#45;B\n1.383 kW</text>
+</g>
+<!-- EW_1 -->
+<g id="node27" class="node">
+<title>EW_1</title>
+<path fill="#ffffff" stroke="black" d="M952,-414C952,-414 922,-414 922,-414 916,-414 910,-408 910,-402 910,-402 910,-390 910,-390 910,-384 916,-378 922,-378 922,-378 952,-378 952,-378 958,-378 964,-384 964,-390 964,-390 964,-402 964,-402 964,-408 958,-414 952,-414"/>
+<text text-anchor="middle" x="937" y="-393.8" font-family="Helvetica,sans-Serif" font-size="9.00">EW_1</text>
+</g>
+<!-- HX8 -->
+<g id="node28" class="node">
+<title>HX8</title>
+<path fill="#ffffff" stroke="black" d="M1284,-471C1284,-471 1254,-471 1254,-471 1248,-471 1242,-465 1242,-459 1242,-459 1242,-447 1242,-447 1242,-441 1248,-435 1254,-435 1254,-435 1284,-435 1284,-435 1290,-435 1296,-441 1296,-447 1296,-447 1296,-459 1296,-459 1296,-465 1290,-471 1284,-471"/>
+<text text-anchor="middle" x="1269" y="-450.8" font-family="Helvetica,sans-Serif" font-size="9.00">HX8</text>
+</g>
+<!-- EW_1&#45;&gt;HX8 -->
+<g id="edge29" class="edge">
+<title>EW_1&#45;&gt;HX8</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M964.34,-392.57C1012.83,-387.24 1118.87,-380.27 1202,-408 1215.52,-412.51 1228.83,-420.65 1239.91,-428.79"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1237.86,-431.62 1247.92,-434.94 1242.12,-426.07 1237.86,-431.62"/>
+<text text-anchor="middle" x="1144.5" y="-410.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;HX8\n4.572 kW</text>
+</g>
+<!-- HX8&#45;&gt;Q4_A -->
+<g id="edge5" class="edge">
+<title>HX8&#45;&gt;Q4_A</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1241.83,-442.88C1203.26,-429.87 1131,-412.93 1087,-449 1065.97,-466.24 1081.48,-482.59 1075,-509 1033.42,-678.55 970.37,-878.59 947.07,-951.04"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="943.66,-950.2 943.93,-960.79 950.33,-952.35 943.66,-950.2"/>
+<text text-anchor="middle" x="1144.5" y="-451.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;HX8&#45;Q4&#45;A\n2.286 kW</text>
+</g>
+<!-- HX8&#45;&gt;Q4_B -->
+<g id="edge6" class="edge">
+<title>HX8&#45;&gt;Q4_B</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1241.83,-452.59C1206.03,-453.71 1144.18,-461.72 1115,-501.5 1082.05,-546.42 1182.98,-946.73 1214,-993 1218.93,-1000.35 1225.86,-1006.63 1233.14,-1011.81"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1231.46,-1014.89 1241.76,-1017.38 1235.27,-1009.01 1231.46,-1014.89"/>
+<text text-anchor="middle" x="1144.5" y="-504.1" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;HX8&#45;Q4&#45;B\n2.286 kW</text>
+</g>
+<!-- LEACH_CSTR_1&#45;&gt;GEO_GHEX -->
+<g id="edge49" class="edge">
+<title>LEACH_CSTR_1&#45;&gt;GEO_GHEX</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M979.7,-457.4C1044.71,-458.77 1166.44,-464.49 1202,-488 1210.97,-493.93 1206.25,-501.56 1214,-509 1217.81,-512.65 1222.18,-515.95 1226.77,-518.89"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1225.32,-522.1 1235.73,-524.09 1228.84,-516.04 1225.32,-522.1"/>
+<text text-anchor="middle" x="1144.5" y="-490.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;BMED&#45;03&#45;TRIM\n0.78 kW</text>
+</g>
+<!-- LEACH_CSTR_1&#45;&gt;GEO_GHEX -->
+<g id="edge50" class="edge">
+<title>LEACH_CSTR_1&#45;&gt;GEO_GHEX</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M979.62,-475.13C1009.09,-487.27 1049.82,-502.69 1087,-512 1133.63,-523.68 1188.48,-530.29 1225.48,-533.74"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1225.61,-537.27 1235.89,-534.68 1226.24,-530.3 1225.61,-537.27"/>
+<text text-anchor="middle" x="1144.5" y="-532.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;BMED&#45;04&#45;TRIM\n1.027 kW</text>
+</g>
+<!-- ZNBR2 -->
+<g id="node30" class="node">
+<title>ZNBR2</title>
+<path fill="#ffffff" stroke="black" d="M1284,-757C1284,-757 1254,-757 1254,-757 1248,-757 1242,-751 1242,-745 1242,-745 1242,-733 1242,-733 1242,-727 1248,-721 1254,-721 1254,-721 1284,-721 1284,-721 1290,-721 1296,-727 1296,-733 1296,-733 1296,-745 1296,-745 1296,-751 1290,-757 1284,-757"/>
+<text text-anchor="middle" x="1269" y="-736.8" font-family="Helvetica,sans-Serif" font-size="9.00">ZNBR2</text>
+</g>
+<!-- ZNBR2&#45;&gt;Q4_BUS -->
+<g id="edge42" class="edge">
+<title>ZNBR2&#45;&gt;Q4_BUS</title>
+<path fill="none" stroke="#b45309" stroke-width="1.2" d="M1296.13,-750.59C1329.48,-765.92 1388.32,-794.78 1434,-827 1453.57,-840.8 1473.54,-858.9 1488.56,-873.5"/>
+<polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1486.37,-876.25 1495.95,-880.78 1491.28,-871.26 1486.37,-876.25"/>
+<text text-anchor="middle" x="1385" y="-829.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">IA&#45;ZNBR&#45;HEAT\n1.67 kW</text>
+</g>
+</g>
 </svg>

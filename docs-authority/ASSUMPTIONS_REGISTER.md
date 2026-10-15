@@ -791,8 +791,8 @@ Counts: 153 curated, 985 graph, 22 model params, 89 document lines. Total 1249. 
 | A-G-dd0c23 | 0.002 | kg/d | graph IA-I-MAKE rate | AQS-PLAN-001 Rev B / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-8cbf2a | 7200.0 | kg/d | graph IA-NFT-IN rate | AQS-P9. Film supply. Returns on IA-NFT-OUT. / X-PAR-02 TF: 5 gullies x 1.0 L/min (COOPER1996) over 6 m (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-568206 | 7200.0 | kg/d | graph IA-NFT-OUT rate | AQS-P9. Film return. / X-PAR-02 TF: film return = supply (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-9a12e8 | 32.166295 | kg/d | graph IA-MIST-IN rate | AQS-P9. Mister supply. 100 µm screen. / X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.056775 L/min, 4 s on / 4 min off (schedule within LAKHIAR2018 range; nozzle flow HP |  | X-BAS-02 |
-| A-G-562359 | 32.166295 | kg/d | graph IA-MIST-OUT rate | AQS-P9. Mister return. / X-PAR-02 TF: chamber drain return = supply (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-9a12e8 | 32.180459 | kg/d | graph IA-MIST-IN rate | AQS-P9. Mister supply. 100 µm screen. / X-PAR-02 TF: 4 m2 x 6 nozzles/m2 x 0.0568 L/min, 4 s on / 4 min off (schedule within LAKHIAR2018 range; nozzle flow HPA_ |  | X-BAS-02 |
+| A-G-562359 | 32.180459 | kg/d | graph IA-MIST-OUT rate | AQS-P9. Mister return. / X-PAR-02 TF: chamber drain return = supply (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-41f792 | 34.740667 | kg/d | graph IA-DR-IN rate | AQS-P9. Dual-root supply. / X-PAR-02 TF: ET 27.79 kg/d (12 m2 at the bed rate 2.316 kg/m2/d) / (1 - 0.2 drain) (PLOSONE2017_DRAIN) (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-3786c7 | 6.948133 | kg/d | graph IA-DR-OUT rate | AQS-P9. Returns to the bed, not the fish tank. / X-PAR-02 TF: drain 20% of supply back to the bed (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-646256 | 0.15 | kg/d | graph IA-AZ-IN rate | AQS-P9. Rice-bed spill to azolla. |  | X-BAS-02 |

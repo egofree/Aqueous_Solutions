@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "N",
+  "source_revision": "BH",
   "node_count": 30,
-  "edge_count": 48,
+  "edge_count": 50,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -79,7 +79,27 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "In 7.853 kg/d, out 7.853 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "design": {
+          "flue_kg_h": 10.1019,
+          "Q_m3_s_850C": 0.009,
+          "V_m3": 0.0179,
+          "D_mm": 200,
+          "L_mm": 600,
+          "net_heat_kW": 0.0307,
+          "feed_kg_d": 7.0318,
+          "basis": "X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated"
+        },
+        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)"
       }
     },
     {
@@ -99,7 +119,16 @@
         "presence": "present",
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
-        "boundary_kind": "dock freight door (logical)"
+        "boundary_kind": "dock freight door (logical)",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -113,7 +142,18 @@
       "notes": "Dedicated cryo cool loop (S55)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_DED_COOL.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -127,7 +167,18 @@
       "notes": "CRYO warm reject HX (S54)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_HX_Q4.md.",
+        "presence": "present",
+        "internals": "plate pack",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -143,10 +194,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 6.0,
+        "value": 5.2483,
         "unit": "kW",
         "status": "study",
-        "note": "RECT-EW class share; study"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW)."
       },
       "modules": [],
       "params": {
@@ -173,8 +224,8 @@
               "layer": "mass",
               "dir": "out",
               "label": "anode Cl2 to HDR_ACID_GAS",
-              "value": 56.278,
-              "basis": "Faraday: n/2 Cl2 per metal; 1 Cl2 per side-reaction H2",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
               "kind": "derived"
             },
             {
@@ -218,6 +269,33 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 4287.820 kg/d, out 4287.820 kg/d, 5.248 kW. Sheet docs-authority/duties/EW_1.md.",
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder",
+        "design_kPa": 17.0,
+        "relief_mm": 3.4,
+        "cell_current_A": 2476,
+        "cell_voltage_V": 2.12,
+        "sizing": {
+          "size_mm": [
+            2670,
+            720,
+            760
+          ],
+          "I_bounding_A": 2476,
+          "I_element_A": 0.1,
+          "cathodes": 25,
+          "anodes": 26,
+          "j_A_m2": 196,
+          "V_liq_m3": 1.243,
+          "P_dc_kW": 5.25,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -275,6 +353,21 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 43.429 kg/d, out 43.429 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "reversible_loop": {
+          "electrolyser": "H2O_ELYZ",
+          "round_trip": 0.3,
+          "basis": "PEM 55.0 kWh/kg H2 in, 16.5 kWh/kg out",
+          "oxidant": "pure O2 from HDR_O2; H2 and O2 never mixed (NFPA 2, ISO 22734, IEC 62282-3-100)"
         }
       }
     },
@@ -295,7 +388,17 @@
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_GHEX.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       },
       "continuous_kw": null
     },
@@ -320,28 +423,50 @@
         "presence": "present",
         "T_source_K": 285.0,
         "coupled_GHEX": true,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 2.000 kW. Sheet docs-authority/duties/GEO_HP.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "units_installed": 2,
+        "redundancy": "2 x 100 % (X-RED-07)"
       }
     },
     {
       "unit_id": "GEO_HP_CLOSED_LOOP",
       "sector_id": "GEO",
       "presence": "present",
-      "class": null,
+      "class": "thermal",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": null,
+      "notes": "S43 geothermal loop fluid at 0 kW. Not the GEO_HP machine. No mass rate.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_HP_CLOSED_LOOP.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
+      },
       "continuous_kw": null
     },
     {
       "unit_id": "GEO_ORC",
       "sector_id": "GEO",
-      "presence": "placeholder",
-      "class": "study_stub",
+      "presence": "present",
+      "class": "hx",
       "tags": [
         "ORC",
         "carnot_study",
@@ -352,10 +477,10 @@
       "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
       "enabled": true,
       "continuous_kw": {
-        "value": null,
+        "value": 0.4,
         "unit": "kW",
         "status": "study",
-        "note": "Carnot-limited study: M1 shallow ~0 kW_e; illus. 0\u20132 if Q_surplus 0\u201320 kW_th. ST-ORC-01 survey queued \u2014 forbid 100 kW; not accepted zero-power endpoint without study."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path."
       },
       "modules": [],
       "params": {
@@ -375,7 +500,7 @@
         "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
         "study_phase_a_status": "physics_closed_external_measurement_queued",
         "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
-        "presence": "placeholder",
+        "presence": "present",
         "ghex_study_defaults": {
           "T_source_K": 285.0,
           "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
@@ -398,7 +523,16 @@
         "Q_surplus_kW_th": 0.0,
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.400 kW. Sheet docs-authority/duties/GEO_ORC.md.",
+        "internals": "plate pack",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -412,10 +546,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "Study digest duty class"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). agitator motor"
       },
       "modules": [],
       "params": {
@@ -428,16 +562,16 @@
               "layer": "mass",
               "dir": "in",
               "label": "2 M NaOH digest liquor",
-              "value": 320.76,
-              "basis": "DUTY-008 digest 593 mol/d at 2 M",
+              "value": 68.369,
+              "basis": "126.5 mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15)",
               "kind": "derived"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "sodium silicate liquor (carries the caustic)",
-              "value": 320.76,
-              "basis": "same liquor; S08G is on the cullet-equivalent yield basis",
+              "value": 68.369,
+              "basis": "126.5 mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15)",
               "kind": "derived"
             },
             {
@@ -457,7 +591,43 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "In 55.296 kg/d, out 55.296 kg/d, 0.090 kW. Sheet docs-authority/duties/GLASS_DIGEST.md.",
+        "internals": "pitched-blade agitator",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "design": {
+          "X": 0.1267,
+          "delta_um": 2.2071,
+          "t_kin_h": 8.69,
+          "tau_h": 26.0699,
+          "V_work_L": 46.2043,
+          "V_L": 61.6057,
+          "D_mm": 450,
+          "H_mm": 390,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 150,
+            "rpm": 318,
+            "shaft_W": 18.719748052457465,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          750,
+          750,
+          890
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -471,10 +641,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 5.0,
+        "value": 8.743,
         "unit": "kW",
         "status": "study",
-        "note": "LED canopy share; study"
+        "note": "LED 120.40 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J) + aux 0.2824 kW (A-M-144)"
       },
       "modules": [],
       "params": {
@@ -534,7 +704,28 @@
               "kind": "derived"
             }
           ]
-        }
+        },
+        "duty": "In 19362.867 kg/d, out 19362.867 kg/d, 8.743 kW. Sheet docs-authority/duties/GROW_BED.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "crop_carbon": {
+          "co2_fixed_kg_d": 3.648,
+          "dm_kg_d": 2.315,
+          "edible_fresh_kg_d": 17.366,
+          "inedible_fresh_kg_d": 12.735,
+          "inedible_lines_claimed_kg_d": 12.73,
+          "gap_kg_d": -0.005,
+          "basis": "BVAD2022 tomato; A-M-141; area from need A-M-151 (Q-008 closed)"
+        },
+        "residue_lines_base_kg_d": 12.730008,
+        "area_m2": 120.4,
+        "aux_kw_base": 0.2824
       }
     },
     {
@@ -563,20 +754,56 @@
             {
               "layer": "mass",
               "dir": "out",
-              "label": "black water to BLACK_DIGEST",
-              "value": 16.48,
-              "basis": "BVAD urine/feces/flush",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
               "label": "hab AHU condensate + non-grey remainder",
               "value": 4.8994,
-              "basis": "S12 governs grey",
+              "basis": "S12 governs grey; X-SAN-01 excreta from occupancy (by difference)",
               "kind": "by_difference"
             }
           ]
+        },
+        "duty": "In 943.852 kg/d, out 943.852 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "san_base": {
+          "S12": 258.6599999999997,
+          "IA-COMP-OUT": 141.150288,
+          "outs": 943.0868119999998,
+          "cond": 4.8994,
+          "S11": 0.8,
+          "edges": {
+            "IA-AB-FLUE": 6.266188,
+            "S67": 117.436188,
+            "IA-FLUE-EXH": 264.396188,
+            "IA-NOX-H2O": 226.221758,
+            "IA-NOX-CO2": 30.466188,
+            "IA-NOX-N": 20.0,
+            "IA-NOX-N2": 243.89,
+            "S21": 120.0,
+            "IA-ASU-CO2": 30.466188,
+            "IA-ASU-O2": 48.05,
+            "S83": 48.05,
+            "S02": 3.36,
+            "S85": 12.17,
+            "S89": 17.071,
+            "IA-NUT-BED": 129.629,
+            "S14": 2.4
+          },
+          "ins": 943.086812
+        },
+        "co2_removal": {
+          "metabolic_CO2_kg_d": 4.021,
+          "half_cycle_min": 144.0,
+          "zeolite_5A_kg_per_bed": 40.2,
+          "beds_per_assembly": 2,
+          "assemblies": 2,
+          "zeolite_total_kg": 160.8,
+          "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
         }
       }
     },
@@ -611,7 +838,74 @@
           600
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "Heat in 4.572 kW, out 4.572 kW. No mass edge. Sheet docs-authority/duties/HX8.md.",
+        "presence": "present",
+        "internals": "plate pack",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "nozzles": [
+          {
+            "tag": "N1",
+            "stream_id": "IA-HX8",
+            "service": "inlet",
+            "face": "-Y",
+            "xyz_mm": [
+              5500,
+              1900,
+              -5700
+            ],
+            "height_mm": 300,
+            "rating": "hose, atmospheric",
+            "dn": null
+          },
+          {
+            "tag": "N2",
+            "stream_id": "HL-HX8-Q4-A",
+            "service": "outlet",
+            "face": "+Y",
+            "xyz_mm": [
+              5500,
+              2300,
+              -5700
+            ],
+            "height_mm": 300,
+            "rating": "hose, atmospheric",
+            "dn": 25
+          },
+          {
+            "tag": "N3",
+            "stream_id": "HL-HX8-Q4-B",
+            "service": "outlet",
+            "face": "+Y",
+            "xyz_mm": [
+              5500,
+              2300,
+              -5700
+            ],
+            "height_mm": 300,
+            "rating": "hose, atmospheric",
+            "dn": 25
+          }
+        ],
+        "area_m2_pvdf": {
+          "value": 7.53,
+          "U_W_m2K": 101.1,
+          "status": "study",
+          "doc": "AQS-DUTY-049",
+          "note": "The plate area_m2 0.51 is for titanium plates, which are withdrawn (AQS-STD-002 4.1)."
+        },
+        "exchanger": {
+          "type": "PVDF shell-and-tube bundle",
+          "area_m2": 7.53,
+          "status": "study",
+          "source": "AQS-DUTY-049; AQS-STD-002 4.4"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -632,7 +926,7 @@
       },
       "modules": [],
       "params": {
-        "V_m3": null,
+        "V_m3": 2.14,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -687,6 +981,56 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 6443.846 kg/d, out 6443.846 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
+        "internals": "agitator PBT D450 150 rpm; HX-5 glass coil (AQS-DUTY-050)",
+        "design_kPa": 25.1,
+        "relief_mm": 2.8,
+        "size_mm": [
+          2000,
+          1200,
+          1400
+        ],
+        "liquor_T_C": {
+          "value": 77.5,
+          "band": [
+            70,
+            85
+          ],
+          "status": "study",
+          "source": "GLOSSARY Leach / Salria 70-85 C; AQS-DUTY-008 HX-5 basis at the mid, 77.5 C. Not measured."
+        },
+        "hx5_area_m2": {
+          "pvdf_natural": 10.06,
+          "pvdf_agitated": 8.49,
+          "glass_natural": 4.22,
+          "glass_agitated": 2.65,
+          "status": "study",
+          "doc": "AQS-DUTY-049"
+        },
+        "hx5_coil": {
+          "material": "borosilicate glass 3.3",
+          "area_m2": 4.22,
+          "case": "glass_natural",
+          "status": "study",
+          "source": "AQS-DUTY-049"
+        },
+        "sizing": {
+          "level_mm": 1100,
+          "liquor_density_kg_m3": 1100,
+          "V_work_m3": 2.14,
+          "tau_h_EW04": 13.2,
+          "wall_mm": 16,
+          "belts": "FRP C203x56x6.4 at Z 300/560/900",
+          "agitator_shaft_W": 403,
+          "agitator_motor_kW": 0.75,
+          "status": "study",
+          "source": "AQS-DUTY-050"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -744,6 +1088,15 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -758,7 +1111,18 @@
       "notes": "MET HX \u2192 Q4 (S63)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_HX_Q4.md.",
+        "presence": "present",
+        "internals": "plate pack",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -810,6 +1174,21 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 33.000 kg/d, out 33.000 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_DRYER.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "design_capacity_kg_d": {
+          "value": 45.0,
+          "basis": "IA-PLAST-01 MSW case",
+          "task": "X-RSZ-07 sweep"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -841,6 +1220,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_BUS.md.",
+        "presence": "present",
+        "internals": "pipe only",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       },
       "continuous_kw": null
@@ -856,13 +1245,23 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 12.0,
+        "value": 24.0,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 24.000 kW. Sheet docs-authority/duties/RECTIFIER.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        }
       }
     },
     {
@@ -876,14 +1275,15 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 60.0,
+        "value": 6.6667,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "Average charge. Peak remains 60 kW. Discharge is 5.0 kW."
       },
       "modules": [],
       "params": {
-        "kW": 60,
-        "kWh": 120,
+        "kW": 1395,
+        "kWh": 4297,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -893,8 +1293,8 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 843.9862,
-              "basis": "headspace purge",
+              "value": 1285.2694,
+              "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
             {
@@ -914,6 +1314,28 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty_fraction": 0.3,
+        "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
+        "duty": "In 1293.757 kg/d, out 1293.757 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "peak_kw": 60,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "charge_kW": 1395,
+        "discharge_kW": 307,
+        "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
+        "distribution": "distributed over the 60 hybrid inverters, 71.6 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "purge_basis": {
+          "H2_m3_d": 10.892,
+          "purge_m3_h": 45.38,
+          "HER_fraction": 0.00658,
+          "electrode_area_m2": 2810.1
         }
       }
     },
@@ -980,6 +1402,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 30.000 kg/d, out 30.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_BURNOUT.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -995,7 +1427,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 250,
-        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "relief": "No vent edge. Not a set point. Not a hab vent.",
         "ladder": "A",
         "tier": "Q1",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1036,6 +1468,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q1_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1051,7 +1493,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 150,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "A",
         "tier": "Q2",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1106,6 +1548,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q2_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1121,7 +1573,7 @@
         "fluid": "water",
         "vol_m3": 0.4,
         "t_nom_C": 100,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "A",
         "tier": "Q3",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1176,6 +1628,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q3_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1191,7 +1653,7 @@
         "fluid": "water",
         "vol_m3": 0.6,
         "t_nom_C": 70,
-        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "A",
         "tier": "Q4",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1232,6 +1694,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1247,7 +1719,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 250,
-        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "relief": "No vent edge. Not a set point. Not a hab vent.",
         "ladder": "B",
         "tier": "Q1",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1288,6 +1760,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q1_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1303,7 +1785,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 150,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "B",
         "tier": "Q2",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1358,6 +1840,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q2_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1373,7 +1865,7 @@
         "fluid": "water",
         "vol_m3": 0.4,
         "t_nom_C": 100,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "B",
         "tier": "Q3",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1428,6 +1920,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q3_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     },
@@ -1443,7 +1945,7 @@
         "fluid": "water",
         "vol_m3": 0.6,
         "t_nom_C": 70,
-        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "B",
         "tier": "Q4",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1484,6 +1986,16 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         }
       }
     }
@@ -3012,6 +3524,14 @@
         "liquor_in_C": 55.0,
         "liquor_out_C": 51.0,
         "liquor_kg_h": 1112.1
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
       }
     },
     {
@@ -3086,6 +3606,10 @@
         "standby_kw": 2.126,
         "cop": 3.43,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -3234,6 +3758,10 @@
         "rate_kind": "derived",
         "glycol_kg_h": 857.0,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -3593,8 +4121,75 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-BMED-03-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "trim cooler heat from IA-BMED-03 (to BMED_ACID)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.78,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-BMED-04-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "trim cooler heat from IA-BMED-04 (to BMED_BASE)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
     }
   ],
-  "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed",
-  "not_current": "Graph is Rev BH. This export is Rev N."
+  "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"
 }

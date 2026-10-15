@@ -7,6 +7,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); GP = 'flow_g
 DERIVED = ['docs-authority/iso/*', 'iso/*', 'media/*', 'media/pfd/*', 'flow_graph/views/*', 'flow_graph/derived/*', 'docs-authority/duties/*.md',
            'docs-authority/sizing/*.md', 'docs-authority/LOAD_LIST.md', 'docs-authority/ONE_LINE.md', 'docs-authority/BALANCE_RECONCILIATION.md',
            'docs-authority/O2_SOURCE.md', 'docs-authority/ASSUMPTIONS_REGISTER.md', 'design_tool/aqs_design_tool/data/candidate_mvs.json']
+CLASS = {'iso/*': 'superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired',
+         'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}
 GATED = ['docs-authority/BALANCE_RECONCILIATION.md', 'design_tool/aqs_design_tool/data/candidate_mvs.json', 'docs-authority/sizing/REACTOR_DESIGN.md']
 def git(*a): return subprocess.run(['git', *a], cwd=ROOT, capture_output=True, text=True, check=True).stdout
 def main():
@@ -19,9 +21,15 @@ def main():
     files = [f for f in git('ls-files').splitlines() if any(fnmatch.fnmatch(f, p) for p in DERIVED)]
     head_g = graph[0]; rev = json.load(open(os.path.join(ROOT, GP)))['revision']; rows = []; bad = []
     dirty = set(git('status', '--porcelain').split())
+    import hashlib; man = os.path.join(ROOT, 'docs-authority/duties/_generated.json')
+    gsha = hashlib.sha256(open(os.path.join(ROOT, GP), 'rb').read()).hexdigest()
+    checked = os.path.exists(man) and json.load(open(man)).get('graph_sha256') == gsha   # _duty_basis.py re-derived every sheet from this graph
     for f in sorted(files):
         c = last.get(f)
         if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue
+        cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
+        if cl: rows.append((f, '-', cl)); continue
+        if checked and fnmatch.fnmatch(f, 'docs-authority/duties/*.md'): rows.append((f, head_g[0][:7] + ' (re-derived, unchanged)', 'current')); continue
         made = next((g for g in graph if g[1] <= c[1]), None)
         st = 'current' if made and made[0] == head_g[0] else 'stale'
         rows.append((f, (made[0][:7] if made else '-'), st))

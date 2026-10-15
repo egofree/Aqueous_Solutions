@@ -23,5 +23,7 @@ def main():
         if m and mi > 0: s = s.replace(m.group(0), re.sub(r'would be [\d.]+ h', f'would be {float(m.group(1))*1000/mi*24:.1f} h', m.group(0)))
         if s != s0: open(p, 'w').write(s); ch += 1
     open(GP, 'w').write(json.dumps(g, indent=2))
+    import hashlib   # manifest: every sheet was checked against this exact graph (read by _rev_stamp.py)
+    json.dump({'graph_sha256': hashlib.sha256(open(GP, 'rb').read()).hexdigest(), 'sheets': len(os.listdir(D))}, open(os.path.join(D, '_generated.json'), 'w'), indent=1)
     print('duty sheets refreshed', ch)
 if __name__ == '__main__': main()
