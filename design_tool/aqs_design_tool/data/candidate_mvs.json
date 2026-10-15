@@ -509,7 +509,7 @@
       "class": "bmed",
       "tags": [],
       "params": {
-        "duty": "In 1330.391 kg/d, out 1330.391 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
+        "duty": "In 1301.987 kg/d, out 1301.987 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -2107,16 +2107,16 @@
               "layer": "mass",
               "dir": "in",
               "label": "2 M NaOH digest liquor",
-              "value": 320.76,
-              "basis": "DUTY-008 digest 593 mol/d at 2 M",
+              "value": 68.369,
+              "basis": "126.5 mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15)",
               "kind": "derived"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "sodium silicate liquor (carries the caustic)",
-              "value": 320.76,
-              "basis": "same liquor; S08G is on the cullet-equivalent yield basis",
+              "value": 68.369,
+              "basis": "126.5 mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15)",
               "kind": "derived"
             },
             {
@@ -2137,7 +2137,7 @@
             }
           ]
         },
-        "duty": "In 148.430 kg/d, out 148.430 kg/d, 1.500 kW. Sheet docs-authority/duties/GLASS_DIGEST.md.",
+        "duty": "In 55.296 kg/d, out 55.296 kg/d, 1.500 kW. Sheet docs-authority/duties/GLASS_DIGEST.md.",
         "internals": "pitched-blade agitator",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -2707,7 +2707,7 @@
             }
           ]
         },
-        "duty": "In 5622.650 kg/d, out 5622.650 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
+        "duty": "In 6355.878 kg/d, out 6355.878 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
         "internals": "agitator PBT D450 150 rpm; HX-5 glass coil (AQS-DUTY-050)",
         "design_kPa": 25.1,
         "relief_mm": 2.8,
@@ -3239,7 +3239,7 @@
             }
           ]
         },
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/NORTH_DOCK.md.",
+        "duty": "In 5.059 kg/d, out 5.059 kg/d, 0.000 kW. Sheet docs-authority/duties/NORTH_DOCK.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3574,14 +3574,14 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 2158,
+        "count": 2156,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 1079,
-        "area_m2": 5395,
+        "nameplate_kw": 1078,
+        "area_m2": 5390,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -3592,7 +3592,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 144.8909,
+        "value": 144.7766,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -4245,7 +4245,7 @@
       "tags": [],
       "params": {
         "kW": 156,
-        "kWh": 2178,
+        "kWh": 2176,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -7837,7 +7837,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 837.31,
+        "water_off_kg_d": 799.19,
         "feed_wt": 0.0741,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 72.0,
@@ -7848,15 +7848,15 @@
         ],
         "size_note": "L x W x H mm, study envelope pending vendor MVR quote",
         "doc": "AQS-PAR-001",
-        "duty": "In 1330.121 kg/d, out 1330.121 kg/d, 2.512 kW. Sheet docs-authority/duties/EVAP_BASE.md."
+        "duty": "In 1306.776 kg/d, out 1306.776 kg/d, 2.398 kW. Sheet docs-authority/duties/EVAP_BASE.md."
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 2.5119,
+        "value": 2.3976,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 837.3 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.51 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.2 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.40 kW. Study."
       }
     }
   ],
@@ -8514,10 +8514,10 @@
       "phase": "L",
       "carries": "CRU \u2192 BMED base regen loop",
       "rate": {
-        "value": 493.08,
+        "value": 502.7933,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593.5 mol/d NaOH as 20 wt%. Digest takes 593 mol/d. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +374.38 kg/d."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Brine to BMED_BASE closing the stack balance with the condensate return."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -10741,10 +10741,10 @@
       "phase": "L",
       "carries": "digest NaOH, 20 wt%",
       "rate": {
-        "value": 118.43,
+        "value": 25.2964,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593 mol/d. Resin exchange keeps IA-BMED-02."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 126.5 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as 20 wt%."
       },
       "from_sector_id": "WET",
       "to_sector_id": "CRYO",
@@ -10775,7 +10775,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 144.8909,
+        "value": 144.7766,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
@@ -11132,10 +11132,10 @@
       "phase": "L",
       "carries": "silicate liquor",
       "rate": {
-        "value": 118.43,
+        "value": 25.2964,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Silicate liquor equal to the digest NaOH draw (digest closes on IA-GLASS-03, S08G, IA-SIL-SRC, IA-SIC-IN)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16963,10 +16963,10 @@
       "phase": "L",
       "carries": "NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",
       "rate": {
-        "value": 374.38,
+        "value": 482.2861,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl. Equal molar base from the BMED split, 1872 mol/d NaOH as 20 wt%."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -20584,10 +20584,10 @@
       "phase": "L",
       "carries": "NaOH 2 M from BMED",
       "rate": {
-        "value": 1330.1215,
+        "value": 1301.7169,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 98.56 kg/d NaOH / 0.0741."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 96.46 kg/d NaOH / 0.0741."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -20601,7 +20601,7 @@
       "phase": "L",
       "carries": "evaporator condensate return (BMED water make-up)",
       "rate": {
-        "value": 837.3115,
+        "value": 799.1937,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_BASE."
@@ -20618,7 +20618,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 2.5119,
+        "value": 2.3976,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
@@ -20635,7 +20635,7 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 2.5119,
+        "value": 2.3976,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
@@ -20644,6 +20644,40 @@
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
+    },
+    {
+      "stream_id": "IA-NAOH-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "EVAP_BASE",
+      "phase": "S",
+      "carries": "purchased NaOH flake make-up",
+      "rate": {
+        "value": 5.0593,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Demand 2538 mol/d less BMED 2412 mol/d; worst case, no credit for sodium returned in the silicate liquor."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NA-PURGE",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "L",
+      "carries": "sodium salt purge equal to the make-up mass",
+      "rate": {
+        "value": 5.0593,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
     }
   ],
   "electrical": {

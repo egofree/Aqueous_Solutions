@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 13 | Owner decision or site investigation report |
 | T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
-| T3 | Bench and laboratory tests | 27 | Bench test report with method, data and result |
-| T4 | Pilot runs | 5 | Pilot campaign on plant brine / feed |
+| T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
+| T4 | Pilot runs | 8 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 29 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 11 | Commissioning record |
 
-Total 115 items: 22 drivers, 93 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 122 items: 25 drivers, 97 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -85,9 +85,11 @@ Total 115 items: 22 drivers, 93 register entries. Classification rule: first mat
 | driver base_conc_design_wt | 0.2 mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT | Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt% | X-PAR |
 | driver case_A_leach_extent | 1.0 fraction of listed oxides dissolved | Bench leach of class A feed in HCl at 85 C, ICP-OES of liquor for Al, Ca, Mg, Fe extraction | X-PAR |
 | driver case_A_oxide_fractions | {"Al2O3": 0.19, "CaO": 0.125, "MgO": 0.09, "FeO": 0.13} mass fraction of silicate_oxide | XRF major-oxide analysis of the accepted feed | X-PAR |
+| driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet | X-PAR |
 | driver ew_cell_voltage_V | 2.12 V | Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage and energy per kg Cu | X-PAR |
 | driver ew_current_efficiency_design | 0.85 - | Bench chloride EW cell per metal: deposit mass vs charge (current efficiency) | X-PAR |
 | driver feed_case_A_silicate_oxide | 0.99 mass fraction | XRF/XRD assay of a representative class A lot | X-PAR |
+| driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES | X-PAR |
 | driver slurry_min_DN | 50 DN | Deposition-velocity check of each slurry line at its solids loading (Durand/Wilson correlation) and a flow-loop trial with the plant solids | X-PAR |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet | X-ELS-10 |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed | X-ELS-10 |
@@ -108,6 +110,8 @@ Total 115 items: 22 drivers, 93 register entries. Classification rule: first mat
 | A-M-082 | unassigned class reports to FLOAT_SINK kg/d | Lot characterisation per AQS-ASSAY-001 | X-RSZ-07 |
 | A-M-090 | 20 wt% HCl on IA-ACID-01 mass fraction | Bench leach of class A feed at 20 wt% HCl, 90-108 C; ICP-OES extraction vs time | X-PAR-04 |
 | A-M-091 | 20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT mass fraction | Bench hydroxide precipitation and glass digest with 20 wt% NaOH | X-PAR-04 |
+| A-M-094 | 1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe p mol/mol | Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES | X-PAR-06 |
+| A-M-095 | dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol mol/mol | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg | X-PAR-06 |
 
 ## 5. T4 Pilot runs
 
@@ -116,8 +120,11 @@ Total 115 items: 22 drivers, 93 register entries. Classification rule: first mat
 | driver bmed_product_molarity | 2.0 mol/L acid and base leaving BMED | EDBM pilot on the plant chloride brine at 2 M product: SEC and current efficiency | X-PAR |
 | driver bmed_sec_kWh_per_kg_base | 6.7 kWh/kg NaOH at 2 M product | EDBM pilot on the plant chloride brine: SEC and current efficiency at the design product concentration | X-PAR |
 | driver mvr_kWh_per_t | 72.0 kWh/t water evaporated | Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot | X-PAR |
+| driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot | X-PAR |
 | A-M-088 | 2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH) mol/L | EDBM pilot at 2 M product: SEC, current efficiency and product purity | X-PAR-04 |
 | A-M-089 | 72 kWh/t water evaporated | Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement | X-PAR-04 |
+| A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week | X-PAR-06 |
+| A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration | X-PAR-06 |
 
 ## 6. T5 Design calculations and drawings
 

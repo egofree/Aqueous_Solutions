@@ -43,10 +43,13 @@ All solved units close.
 | --- | --- | --- | --- | --- |
 | IA-ACID-01 HCl content, kg/d | 87.904 | 87.923 | -0.0 % | GREENWOOD, LUNAR_SOURCEBOOK |
 | BMED_ACID kW vs published SEC at 2 M | 26.928 | 26.928 | -0.0 % | EDBM_WHEY_2021 |
+| IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
+| IA-BASE-01 NaOH, kg/d | 5.059 | 5.059 | -0.0 % | GREENWOOD |
+| IA-NAOH-MU make-up, kg/d | 5.059 | 5.059 | +0.0 % | NaOH balance |
 | EVAP_ACID kW | 2.412 | 2.411 | +0.0 % | VOGELBUSCH_MVR |
 | EVAP_ACID water off, kg/d | 803.822 | 803.822 | +0.0 % | PERRY9_HCL |
-| EVAP_BASE kW | 2.512 | 2.512 | -0.0 % | VOGELBUSCH_MVR |
-| EVAP_BASE water off, kg/d | 837.312 | 837.311 | +0.0 % | PERRY9_HCL |
+| EVAP_BASE kW | 2.398 | 2.398 | +0.0 % | VOGELBUSCH_MVR |
+| EVAP_BASE water off, kg/d | 799.194 | 799.194 | +0.0 % | PERRY9_HCL |
 | EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_3 DC kW (cell + bus drop) | 2.249 | 2.249 | +0.0 % | CODATA2018, USBM_CL_EW |
@@ -62,9 +65,10 @@ All solved units close.
 
 1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 26.93 kW from 6.7 kWh/kg NaOH at 2 M (was 16.13 kW on an unsourced 2.1 kWh/kg pair). Study.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1243.3 kg/d, water off 803.8 kg/d, 2.41 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
-3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1330.1 kg/d, water off 837.3 kg/d, 2.51 kW. Study.
+3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 799.2 kg/d, 2.40 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
 5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
+7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 126.5 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 5.06 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 799.2 kg/d, 2.40 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
 ## 5. Drivers
@@ -108,6 +112,9 @@ All solved units close.
 | storage_round_trip | 0.7 | - | A-M-061 | yes |
 | night_hours | 14.0 | h/d served from storage | A-M-060 | yes |
 | bus_power_factor | 0.9 | - | AQS-ELEC-002 PF (study) | yes |
+| ppt_naoh_per_cl | 1.0 | mol NaOH per mol chloride precipitated as hydroxide | GREENWOOD | yes |
+| digest_naoh_per_sio2 | 2.0 | mol NaOH per mol SiO2 dissolved | GREENWOOD | yes |
+| naoh_makeup_form | 1.0 | mass fraction NaOH in purchased make-up (anhydrous flake) | X-PAR NaOH balance (owner decision 2026-10-15) | yes |
 
 ## 6. References
 
@@ -170,6 +177,9 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver storage_round_trip | 0.7 - | ZnBr2 vendor round-trip efficiency at the duty cycle |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus |
+| driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES |
+| driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet |
+| driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -263,3 +273,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-091 | 20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT mass fraction | Bench hydroxide precipitation and glass digest with 20 wt% NaOH |
 | A-M-092 | 1200 x 800 x 1800 mm skid each; placed in BMED_CRU mm | Vendor MVR skid general arrangement |
 | A-M-093 | SOL_ARK bus change carried on IA-PV-01 average; PV, storage, kW | Hourly load profile and PVsyst site run |
+| A-M-094 | 1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe p mol/mol | Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES |
+| A-M-095 | dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol mol/mol | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg |
+| A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week |
+| A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration |

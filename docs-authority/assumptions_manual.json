@@ -1415,5 +1415,73 @@
   ],
   "id": "A-M-093",
   "needs_verification": true
+ },
+ {
+  "value": "1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe precipitated",
+  "units": "mol/mol",
+  "where": "IA-BASE-PPT",
+  "basis": "GREENWOOD hydroxide stoichiometry; Ca(OH)2 is sparingly soluble, so full Ca precipitation is a bounding NaOH demand",
+  "sensitivity": "IA-BASE-PPT and EVAP_BASE linear",
+  "replaced_by": "Bench precipitation to target pH",
+  "verification_test": "Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES",
+  "task": "X-PAR-06",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/solver.py",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "id": "A-M-094",
+  "needs_verification": true
+ },
+ {
+  "value": "dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol NaOH per mol SiO2",
+  "units": "mol/mol",
+  "where": "IA-BASE-01, IA-DIG-LIQ",
+  "basis": "GREENWOOD SiO2 + 2 NaOH; soda-lime cullet is below 100 % SiO2, so this bounds NaOH",
+  "sensitivity": "IA-BASE-01 linear in dissolved mass",
+  "replaced_by": "Bench caustic digest of burned cullet",
+  "verification_test": "Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg",
+  "task": "X-PAR-06",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/solver.py",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "id": "A-M-095",
+  "needs_verification": true
+ },
+ {
+  "value": "NaOH make-up = precipitation + digest demand less BMED production (1:1 with leach HCl); no credit for sodium returned in the silicate liquor",
+  "units": "kg/d NaOH flake",
+  "where": "IA-NAOH-MU (NORTH_DOCK to EVAP_BASE)",
+  "basis": "Owner decision 2026-10-15; worst case keeps the 1 % misfit gate passing",
+  "sensitivity": "Make-up and purge equal the digest draw (5.06 kg/d)",
+  "replaced_by": "Sodium balance on the pilot including silicate neutralisation in the leach",
+  "verification_test": "Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week",
+  "task": "X-PAR-06",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/solver.py",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "id": "A-M-096",
+  "needs_verification": true
+ },
+ {
+  "value": "sodium salt purge IA-NA-PURGE equal in mass to the make-up",
+  "units": "kg/d",
+  "where": "LEACH_CSTR_1 to NORTH_DOCK",
+  "basis": "Mass conservation on the closed graph; composition not resolved (study)",
+  "sensitivity": "Leach bleed composition",
+  "replaced_by": "Purge composition from the pilot sodium balance",
+  "verification_test": "Pilot purge sample: Na, Cl, water by ICP-OES and titration",
+  "task": "X-PAR-06",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/solver.py",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "id": "A-M-097",
+  "needs_verification": true
  }
 ]

@@ -33,15 +33,28 @@ def bmed(d, hcl_mol):
                 kW_published=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
                 kW_design=DR.val(d,'bmed_sec_design_kWh_per_kg_pair')*(hcl_mol*HCL/1000+base_kg)/24)
 
-def evap(d, solute_kg_d, w_in, w_out):
+def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0):
     """Evaporative concentration of a BMED product from w_in to w_out by MVR.
     Mass: feed = solute/w_in, product = solute/w_out, water off = feed - product.
     HCl side: w_out must stay below the HCl-water azeotrope [PERRY9_HCL]; vapour is then water-rich.
     Power: water off x specific MVR energy [VOGELBUSCH_MVR]."""
     assert w_out > w_in
-    feed = solute_kg_d/w_in; prod = solute_kg_d/w_out; water = feed - prod
-    return dict(solute_kg_d=solute_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water,
-                kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed, prod+water))
+    feed = solute_kg_d/w_in; prod = (solute_kg_d+added_kg_d)/w_out; water = feed + added_kg_d - prod
+    return dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water,
+                kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed+added_kg_d, prod+water))
+
+SIO2 = mw({'Si':1,'O':2})
+def naoh_balance(d, g, hcl_mol):
+    """NaOH demand and make-up. Precipitation: one NaOH per chloride [GREENWOOD]. Digest: SiO2 + 2 NaOH
+    [GREENWOOD] on the dissolved cullet (IA-GLASS-03 less S08G, all as SiO2, bounding). BMED makes NaOH 1:1
+    with the leach HCl. Make-up = demand - BMED, no credit for sodium returned in the silicate liquor (worst case)."""
+    R = {x['stream_id']: x['rate']['value'] for x in g['edges']}
+    ppt = hcl_mol*DR.val(d,'ppt_naoh_per_cl')
+    sio2 = max(0.0, R['IA-GLASS-03'] - R['S08G'])*1000/SIO2
+    dig = sio2*DR.val(d,'digest_naoh_per_sio2')
+    mk = max(0.0, ppt + dig - hcl_mol)
+    return dict(ppt_mol=ppt, digest_mol=dig, bmed_mol=hcl_mol, makeup_mol=mk, makeup_kg_d=mk*NAOH/1000/DR.val(d,'naoh_makeup_form'),
+                ppt_kg_d=ppt*NAOH/1000, digest_kg_d=dig*NAOH/1000)
 
 BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
 
@@ -65,8 +78,9 @@ def solve():
     R = {x['stream_id']: x['rate']['value'] for x in g['edges']}
     assert DR.val(d,'acid_conc_design_wt') < DR.val(d,'hcl_azeotrope_wt'), 'acid loop above the HCl azeotrope'
     ea = evap(d, R['IA-ACID-01']*DR.val(d,'acid_conc_design_wt'), DR.val(d,'bmed_product_wt_acid'), DR.val(d,'acid_conc_design_wt'))
-    eb = evap(d, sum(R[k] for k in BASE_DEMAND)*DR.val(d,'base_conc_design_wt'), DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'))
-    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb)
+    nb = naoh_balance(d, g, la['hcl_mol_d'])
+    eb = evap(d, bm['base_kg_d'], DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'))
+    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb, naoh=nb)
 
 def check():
     d, g, s = solve(); E = {x['stream_id']: x for x in g['edges']}; N = {x['unit_id']: x for x in g['nodes']}
@@ -81,6 +95,10 @@ def check():
         mis.append((what, graph, solved, dev, ref))
     cmp('IA-ACID-01 HCl content, kg/d', E['IA-ACID-01']['rate']['value']*DR.val(d,'acid_conc_design_wt'), s['leach']['hcl_kg_d'], 'GREENWOOD, LUNAR_SOURCEBOOK')
     cmp('BMED_ACID kW vs published SEC at 2 M', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'EDBM_WHEY_2021')
+    w = DR.val(d,'base_conc_design_wt'); nb = s['naoh']
+    cmp('IA-BASE-PPT NaOH, kg/d', E['IA-BASE-PPT']['rate']['value']*w, nb['ppt_kg_d'], 'GREENWOOD')
+    cmp('IA-BASE-01 NaOH, kg/d', E['IA-BASE-01']['rate']['value']*w, nb['digest_kg_d'], 'GREENWOOD')
+    if 'IA-NAOH-MU' in E: cmp('IA-NAOH-MU make-up, kg/d', E['IA-NAOH-MU']['rate']['value'], nb['makeup_kg_d'], 'NaOH balance')
     for k,u in (('evap_acid','EVAP_ACID'),('evap_base','EVAP_BASE')):
         if u in N:
             cmp(f'{u} kW', N[u]['continuous_kw']['value'], s[k]['kW'], 'VOGELBUSCH_MVR')

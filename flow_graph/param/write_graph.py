@@ -29,6 +29,19 @@ def process():
     kw = s['bmed']['kW_published']
     N['BMED_ACID']['continuous_kw'] = rate(kw,'kW',f"{TAG}. BMED stack at 2 M product: {s['bmed']['base_kg_d']:.2f} kg/d NaOH x {DR.val(d,'bmed_sec_kWh_per_kg_base')} kWh/kg (EDBM_WHEY_2021) / 24 h. Solver flow_graph/param/solver.py bmed().")
     E['S17-BMED']['rate'] = rate(kw,'kW',f'{TAG}. 480 V feed equal to BMED_ACID continuous_kw.')
+    # NaOH balance (owner decision 2026-10-15): stoichiometric draws, make-up from the dock, sodium purge
+    nb = s['naoh']; wb = DR.val(d,'base_conc_design_wt'); NT = f'{TAG}; NaOH balance (owner decision 2026-10-15)'
+    E['IA-BASE-PPT']['rate'] = rate(nb['ppt_kg_d']/wb,'kg/d',f"{NT}. {nb['ppt_mol']:.0f} mol/d NaOH, one per leached chloride (GREENWOOD), as {wb*100:.0f} wt%.")
+    E['IA-BASE-01']['rate'] = rate(nb['digest_kg_d']/wb,'kg/d',f"{NT}. {nb['digest_mol']:.1f} mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as {wb*100:.0f} wt%.")
+    E['IA-DIG-LIQ']['rate'] = rate(E['IA-BASE-01']['rate']['value'],'kg/d',f'{NT}. Silicate liquor equal to the digest NaOH draw (digest closes on IA-GLASS-03, S08G, IA-SIL-SRC, IA-SIC-IN).')
+    for t in (N['GLASS_DIGEST']['params'].get('balance_rev_l') or {}).get('terms', []):
+        if t['layer']=='mass' and ('digest liquor' in t['label'] or 'silicate liquor' in t['label']):
+            t['value'] = round(nb['digest_mol']/DR.val(d,'bmed_product_molarity')*1.081, 3); t['basis'] = f"{nb['digest_mol']:.1f} mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); {NT}"
+    mk = [edge('IA-NAOH-MU','NORTH_DOCK','EVAP_BASE','S',['mass'],'purchased NaOH flake make-up',rate(nb['makeup_kg_d'],'kg/d',f"{NT}. Demand {nb['ppt_mol']+nb['digest_mol']:.0f} mol/d less BMED {nb['bmed_mol']:.0f} mol/d; worst case, no credit for sodium returned in the silicate liquor."),'DOCK','WET'),
+          edge('IA-NA-PURGE','LEACH_CSTR_1','NORTH_DOCK','L',['mass'],'sodium salt purge equal to the make-up mass',rate(nb['makeup_kg_d'],'kg/d',f'{NT}. Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study).'),'WET','DOCK')]
+    for e in mk:
+        if e['stream_id'] in E: E[e['stream_id']]['rate'] = e['rate']
+        else: g['edges'].append(e); E[e['stream_id']] = e
     # evaporators
     for side, key, src, prods, sa in (('ACID','evap_acid','BMED_ACID',('IA-ACID-01',),'HCl'),('BASE','evap_base','BMED_BASE',solver.BASE_DEMAND,'NaOH')):
         u = f'EVAP_{side}'; v = s[key]; w = DR.val(d,'acid_conc_design_wt' if side=='ACID' else 'base_conc_design_wt')
@@ -51,6 +64,8 @@ def process():
             else: g['edges'].append(e); E[e['stream_id']] = e
         for p in prods:
             E[p]['from_unit_id'] = u; E[p]['from_sector_id'] = 'WET'
+    # BMED_BASE closes on its brine feed: out (EVAP_BASE feed + IA-BMED-02) = IA-BMED-04 + condensate
+    E['IA-BMED-04']['rate'] = rate(s['evap_base']['feed_kg_d'] + E['IA-BMED-02']['rate']['value'] - s['evap_base']['water_kg_d'],'kg/d',f'{TAG}. Brine to BMED_BASE closing the stack balance with the condensate return.')
     # EW cells and rectifier
     rows = {r['cell']: r for r in json.loads(subprocess.run([sys.executable,'docs-authority/_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['rows']}
     rect = json.loads(subprocess.run([sys.executable,'docs-authority/_rect_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['total']

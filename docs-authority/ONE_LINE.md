@@ -18,7 +18,7 @@ flowchart LR
   BACKUP_GEN["BACKUP_GEN 2.50 kW"] -->|S47| BUS
   FUEL_CELL["FUEL_CELL 3.46 kW"] -->|S51| BUS
   MEOH_FC["MEOH_FC 0.50 kW"] -->|S79| BUS
-  PV_ARRAY["PV_ARRAY 144.89 kW"] -->|IA-PV-01| BUS
+  PV_ARRAY["PV_ARRAY 144.78 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 3 × 60 = 180 kW inverters"])
   BUS --> MCC["MCC-1 480 V 3.0 kW"]
   BUS --> XF["T-1 15 kVA 480–208/120 V"] --> PP["PP-1 0.5 kW"]
@@ -120,7 +120,7 @@ flowchart LR
   BUS -->|SF-SIC_FURNACE| SIC_FURNACE["SIC_FURNACE 0.30 kW"]
   BUS -->|SF-H2_PURIFIER| H2_PURIFIER["H2_PURIFIER 0.05 kW"]
   BUS -->|SF-EVAP_ACID| EVAP_ACID["EVAP_ACID 2.41 kW"]
-  BUS -->|SF-EVAP_BASE| EVAP_BASE["EVAP_BASE 2.51 kW"]
+  BUS -->|SF-EVAP_BASE| EVAP_BASE["EVAP_BASE 2.40 kW"]
   BUS --> RECTEW["RECT-EW 9 × 6 V DC channels, 38.7 kW AC"]
 ```
 
@@ -135,8 +135,8 @@ flowchart LR
 | SOL_ARK 480 V | CRYO_ASU | 18.00 | 24.1 | 40 | graph SF-CRYO_ASU |
 | SOL_ARK 480 V | ZNBR2 | 6.67 | 80.2 | 110 | graph IA-ESS-ZNBR2-CHG; feeder on peak 60.0 kW |
 | SOL_ARK 480 V | MFG_SHOP | 3.98 | 51.5 | 70 | graph SF-MFG_SHOP; feeder on peak 38.5 kW |
-| SOL_ARK 480 V | EVAP_BASE | 2.51 | 3.4 | 15 | graph SF-EVAP_BASE |
 | SOL_ARK 480 V | EVAP_ACID | 2.41 | 3.2 | 15 | graph SF-EVAP_ACID |
+| SOL_ARK 480 V | EVAP_BASE | 2.40 | 3.2 | 15 | graph SF-EVAP_BASE |
 | SOL_ARK 480 V | GROW_BED | 2.25 | 3.0 | 15 | graph S20 |
 | SOL_ARK 480 V | GEO_HP | 2.00 | 2.7 | 15 | graph SF-GEO_HP |
 | SOL_ARK 480 V | LEACH_CSTR_1 | 2.00 | 2.7 | 15 | graph SF-LEACH_CSTR_1 |
@@ -232,15 +232,15 @@ flowchart LR
 
 | Item | kW |
 | --- | --- |
-| Sources on the bus (graph edges) | 156.64 |
-| Demand on the bus (this page) | 155.53 |
+| Sources on the bus (graph edges) | 156.53 |
+| Demand on the bus (this page) | 155.41 |
 | Inverter rating (SOL_ARK_60K) | 60.0 |
 | Shortfall against sources | -1.11 |
-| Shortfall against inverter | 95.53 |
+| Shortfall against inverter | 95.41 |
 
 ## Findings
 
-1. Bus demand at the bounding EW case is 155.5 kW against 156.6 kW of graph sources and 3 × 60 = 180 kW inverters. The RECT-EW feeder alone is 38.7 kW. Supply nameplates follow AQS-ELEC-007 bounding case (X-RSZ-02); the gap between graph sources and bus demand is loads without graph feeds, booked in the X-RSZ-07 sweep.
+1. Bus demand at the bounding EW case is 155.4 kW against 156.5 kW of graph sources and 3 × 60 = 180 kW inverters. The RECT-EW feeder alone is 38.7 kW. Supply nameplates follow AQS-ELEC-007 bounding case (X-RSZ-02); the gap between graph sources and bus demand is loads without graph feeds, booked in the X-RSZ-07 sweep.
 2. 2 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.

@@ -80,7 +80,7 @@ kWh/kg = V_cell × Ah/kg / (1000 × CE)
 
 Al, Mg, Ca, Li, REE are not electrowon here. Their energy is BMED NaOH + mixing, ~0.3–0.6 kWh/kg hydroxide cake.
 
-BMED: 1.8–2.4 kWh per kg of (NaOH + HCl) pair at 50–100 A, 1.8–2.2 V per repeating unit. Superseded for sizing by AQS-PAR-001 Rev B: 6.7 kWh/kg NaOH at 2 M product (EDBM_WHEY_2021), BMED_ACID 26.93 kW; acid and base concentrated to 20 wt% by EVAP_ACID (2.41 kW) and EVAP_BASE (2.51 kW) on 480 V.
+BMED: 1.8–2.4 kWh per kg of (NaOH + HCl) pair at 50–100 A, 1.8–2.2 V per repeating unit. Superseded for sizing by AQS-PAR-001 Rev B: 6.7 kWh/kg NaOH at 2 M product (EDBM_WHEY_2021), BMED_ACID 26.93 kW; acid and base concentrated to 20 wt% by EVAP_ACID (2.41 kW) and EVAP_BASE (2.40 kW) on 480 V.
 
 Induction pyro: 0.8–1.2 kWh/kg dry plastic to the coil, plus afterburner heat from NCG.
 Dryer: 0.70–0.85 kWh/kg water evaporated (Q3 through HX-4). Since graph Rev J the EW reject goes to Q4 through HX-8 (AQS-DUTY-008 Rev B).
@@ -99,7 +99,7 @@ Shredder: 10–25 kWh/wet t, peaked.
 | Induction coil drive | AC 5–20 kHz | 0–25 kW |
 | RECT-EW | Nine channels, 6 V, 250–4000 A frames, 16500 A total (AQS-ELEC-004 Rev B; cell 2.12 V, CE 0.85) | 99 kW nameplate; 38.7 kW AC at the bounding case |
 | RECT-BMED | DC 0–80 V, 0–120 A steady | 5–8 kW class (study row; graph BMED_ACID books 26.93 kW, AQS-PAR-001 Rev B) |
-| EVAP_ACID, EVAP_BASE | AC 480 V, MVR compressor | 2.41 kW and 2.51 kW (AQS-PAR-001 Rev B) |
+| EVAP_ACID, EVAP_BASE | AC 480 V, MVR compressor | 2.41 kW and 2.40 kW (AQS-PAR-001 Rev B; X-PAR-06) |
 | RECT-PK | DC 0–12 V, 0–40 A avg, pulsed | <0.5 kW |
 
 Continuous AC parasitics ≈ 9 kW → 216 kWh/day whether the feed is e-waste or dirt. That term dominates every lean feedstock.

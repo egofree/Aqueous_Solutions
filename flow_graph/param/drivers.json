@@ -246,5 +246,28 @@
   "register": "AQS-ELEC-002 PF (study)",
   "needs_verification": true,
   "verification_test": "Measured power factor on the 480 V bus"
+ },
+ "ppt_naoh_per_cl": {
+  "value": 1.0,
+  "units": "mol NaOH per mol chloride precipitated as hydroxide",
+  "ref": "GREENWOOD",
+  "basis": "AlCl3 + 3 NaOH -> Al(OH)3 + 3 NaCl; MCl2 + 2 NaOH -> M(OH)2 + 2 NaCl",
+  "needs_verification": true,
+  "verification_test": "Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES"
+ },
+ "digest_naoh_per_sio2": {
+  "value": 2.0,
+  "units": "mol NaOH per mol SiO2 dissolved",
+  "ref": "GREENWOOD",
+  "basis": "SiO2 + 2 NaOH -> Na2SiO3 + H2O; dissolved mass = IA-GLASS-03 cullet in less S08G glass stock out, all taken as SiO2 (bounding)",
+  "needs_verification": true,
+  "verification_test": "Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet"
+ },
+ "naoh_makeup_form": {
+  "value": 1.0,
+  "units": "mass fraction NaOH in purchased make-up (anhydrous flake)",
+  "register": "X-PAR NaOH balance (owner decision 2026-10-15)",
+  "needs_verification": true,
+  "verification_test": "Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot"
  }
 }

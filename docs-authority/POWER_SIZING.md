@@ -18,19 +18,19 @@ Flat 24 h profile (continuous process; study). PV yield 5.41 kWh/kWp/d before lo
 
 | Item | Bounding EW | Reference EW | Graph now |
 | --- | --- | --- | --- |
-| Bus demand, kW | 155.5 | 122.4 | PV average 144.9 |
-| Energy, kWh/d | 3733 | 2938 | — |
-| PV, kWp | 1078 | 848 | 1079 |
-| PV area at about 5 m²/kWp, m² | 5390 | 4242 | — |
-| Storage energy, kWh | 2177 | 1714 | 2178 |
-| Storage power, kW | 156 | 122 | 156 |
+| Bus demand, kW | 155.4 | 122.3 | PV average 144.8 |
+| Energy, kWh/d | 3730 | 2935 | — |
+| PV, kWp | 1077 | 848 | 1078 |
+| PV area at about 5 m²/kWp, m² | 5386 | 4238 | — |
+| Storage energy, kWh | 2176 | 1712 | 2176 |
+| Storage power, kW | 155 | 122 | 156 |
 | Inverters | 3 × 60 = 180.0 kW | 3 × 60 = 180.0 kW | 180.0 kW |
 
 Backup. Critical loads 32 kW (HABITATION 3, CRYO_H2 4, CRYO_ASU 18, GROW_BED 5, controls 2; study list). Generator 40 kW (125 %, rounded). Two days' critical energy 1536 kWh; on H₂ at about 33 kWh/kg LHV and 40 % engine efficiency that is about 115 kg H₂ held in CRYO_H2 (study). Graph: BACKUP_GEN 2.5 kW, FUEL_CELL 4.0 kW.
 
 ## 3. Findings
 
-Rev C (X-PAR acid-loop decision, AQS-PAR-001, 2026-10-15). BMED_ACID at the published SEC 26.93 kW (was 16.13), EVAP_ACID 2.41 kW and EVAP_BASE 2.51 kW added, RECT_EW 38.66 kW AC (was 38.02). Bus load +16.36 kW, carried on IA-PV-01. Graph: PV_ARRAY 1079 kWp (was 984), about 5395 m²; ZNBR2 2178 kWh / 156 kW (was 1987 / 142); SOL_ARK_60K 3 × 60 kW unchanged. Rev B text below keeps its own figures.
+Rev C (X-PAR acid-loop decision, AQS-PAR-001, 2026-10-15). BMED_ACID at the published SEC 26.93 kW (was 16.13), EVAP_ACID 2.41 kW and EVAP_BASE 2.51 kW added (2.40 kW after the NaOH balance, X-PAR-06), RECT_EW 38.66 kW AC (was 38.02). Bus load +16.36 kW, carried on IA-PV-01. Graph: PV_ARRAY 1078 kWp (was 984), about 5390 m²; ZNBR2 2176 kWh / 156 kW (was 1987 / 142); SOL_ARK_60K 3 × 60 kW unchanged. Rev B text below keeps its own figures.
 
 Rev B (X-RSZ-02, 2026-10-15). The bounding case is booked on the graph: PV_ARRAY 984 kWp nameplate (1968 × 0.5 kW, about 4918 m² ground field off the plate), ZNBR2 1987 kWh / 142 kW, SOL_ARK_60K 3 × 60 kW. RECT_EW (38.02 kW AC) and BMED_ACID (16.13 kW) have graph feeds; PV average raised by 54.15 kW to carry them. Items 1 and 2 below are superseded: the plate restriction is revised by the off-plate PV field (site area to confirm, X-BAS-03).
 

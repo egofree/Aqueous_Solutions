@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.0000 kg/d. Mass out 0.0000 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+1. Basis. Mass in 5.059 kg/d. Mass out 5.059 kg/d. Electrical duty 0.0000 kW. In: IA-NA-PURGE 5.059 kg/d (sodium salt purge equal to the make-up mass); IA-N2-VENT 0 kg/d (nitrogen vent). Out: IA-NAOH-MU 5.059 kg/d (purchased NaOH flake make-up); DOCK_EXPORT_TBD 0 kg/d (returned freight); IA-AIR-IN 0 kg/d (intake air).
 
 2. Size.
 - No mass throughput. No volume is invented.
@@ -17,3 +17,5 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/NORTH_DOCK.stl`.
 
 8. Open items. None.
+
+9. Revision (NaOH balance, owner decision 2026-10-15). Receives purchased NaOH flake and issues it on IA-NAOH-MU to EVAP_BASE; receives the equal-mass sodium salt purge IA-NA-PURGE from LEACH_CSTR_1 for export.
