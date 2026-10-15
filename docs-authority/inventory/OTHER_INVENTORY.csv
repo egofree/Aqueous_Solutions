@@ -1758,10 +1758,10 @@ HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-WA
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-BLK-01: 2 per support (assumed)
 HAB,HAB,HABITATION,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 HAB,HAB,HABITATION,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-HAB,HAB,HABITATION,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",13,S90: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-HAB-VAP: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,S12: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,S78: AQS-PIP-005 span count
+HAB,HAB,HABITATION,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,S90: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-FEC-01: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-SLEEP: AQS-PIP-005 span count
 HAB,HAB,HABITATION,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-GAL: AQS-PIP-005 span count
@@ -1769,7 +1769,7 @@ HAB,HAB,HABITATION,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 
 HAB,HAB,HABITATION,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-BLK-01: AQS-PIP-005 span count
 HAB,HAB,HABITATION,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S12: one at each end nozzle (assumed)
 HAB,HAB,HABITATION,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S78: one at each end nozzle (assumed)
-HAB,HAB,HABITATION,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S90: one at each end nozzle (assumed)
+HAB,HAB,HABITATION,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,S90: one at each end nozzle (assumed)
 HAB,HAB,HABITATION,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-HAB-VAP: one at each end nozzle (assumed)
 HAB,HAB,HABITATION,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-FEC-01: one at each end nozzle (assumed)
 HAB,HAB,HABITATION,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-SLEEP: one at each end nozzle (assumed)

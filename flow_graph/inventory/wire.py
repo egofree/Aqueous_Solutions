@@ -17,26 +17,49 @@ OCPD = [15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 110, 125, 150, 175,
 def cond(I):
     return next(s for s, a in AMP if a >= I)
 def egc(ocpd): return next(s for a, s in EGC if a >= ocpd)
-def rows():
+RKM = {'14 AWG': 10.3, '12 AWG': 6.33, '10 AWG': 3.97, '8 AWG': 2.51, '6 AWG': 1.61, '4 AWG': 1.01, '3 AWG': 0.804, '2 AWG': 0.636, '1 AWG': 0.505, '1/0 AWG': 0.400, '2/0 AWG': 0.317,
+       '3/0 AWG': 0.251, '4/0 AWG': 0.199, '250 kcmil': 0.169, '300 kcmil': 0.141, '350 kcmil': 0.120, '400 kcmil': 0.105, '500 kcmil': 0.0847, '600 kcmil': 0.0702}   # ohm/km, NEC Ch. 9 Table 8 uncoated Cu
+SIZES = [s for s, _ in AMP]
+def vd(size, I, L, V): return math.sqrt(3)*I*L/1000*RKM[size]/V*100      # % three-phase, resistive (NEC 210.19 IN No. 4 / 215.2 IN No. 2 limits 3 % / 5 %)
+def upsize(size, I, L, V, lim):
+    i = SIZES.index(size)
+    while vd(SIZES[i], I, L, V) > lim and i < len(SIZES) - 1: i += 1
+    return SIZES[i]
+LOCAL = True      # X-ELS-02A: branch circuits from a local panel per sector on routed tray
+def rows(local=None):
+    local = LOCAL if local is None else local
     inv = list(csv.DictReader(open(os.path.join(ROOT, 'docs-authority/inventory/MOTOR_INVENTORY.csv'))))
     C = runpy.run_path(os.path.join(ROOT, 'docs-authority/_line_list.py'))['C']
     g = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json'))); N = {n['unit_id']: n for n in g['nodes']}
     er = C.get('SOL_ARK_60K', ([0, 0, 0], ''))[0]
-    def run(u):
+    man = lambda a, b: (abs(a[0] - b[0]) + abs(a[1] - b[1]) + abs(a[2] - b[2]))/1000
+    PAN = {}
+    if local:
+        pts = collections.defaultdict(list)
+        for m in inv:
+            if m['unit'] in C: pts[m['sector']].append(C[m['unit']][0])
+        for sec, P in pts.items():
+            PAN[sec] = [sorted(p[k] for p in P)[len(P)//2] for k in range(3)]     # panel at the sector median point (Manhattan-optimal), A-M-122 Rev B
+    def run(u, sec=None):
         c = C.get(u)
         if not c: return 30.0, 'no position: 30 m (assumed)'
-        p = c[0]; return (abs(p[0] - er[0]) + abs(p[1] - er[1]) + abs(p[2] - er[2]))/1000*1.2 + 5, 'Manhattan to the electrical room x 1.2 + 5 m (assumed)'
+        p = c[0]
+        if local and sec in PAN: return man(p, PAN[sec])*1.1 + 3, f'routed tray from panel LP-{sec} (Manhattan x 1.1 + 3 m drop, assumed)'
+        return man(p, er)*1.2 + 5, 'Manhattan to the electrical room x 1.2 + 5 m (assumed)'
+    load = collections.defaultdict(list)
     R = []
     def add(sec, sub, unit, circ, ctype, size, ins, V, n, L, basis, qty=1):
         R.append(dict(sector=sec, subsystem=sub, unit=unit, circuit=circ, type=ctype, size=size, insulation=ins, voltage_class=V, conductors=n, length_m=round(L, 1), qty=qty,
                       total_m=round(n*L*qty, 1), basis=basis))
     for m in inv:
-        q = int(m['qty']); kw = float(m['shaft_kW']); u = m['unit']; L, lb = run(u)
+        q = int(m['qty']); kw = float(m['shaft_kW']); u = m['unit']; L, lb = run(u, m['sector'])
         if m['voltage'].startswith(('480', '208')):
             hp = kw*1.341*1.15; tbl = FLC460 if m['voltage'].startswith('480') else FLC208
             flc = next((a for h, a in tbl if h >= hp), None)
             if flc is None: flc = hp*746/(math.sqrt(3)*(460 if tbl is FLC460 else 208)*0.85*0.9)
             I = 1.25*flc; s = cond(I); oc = next(o for o in OCPD if o >= 2.5*flc)          # NEC 430.52 inverse-time breaker 250 %
+            Vl = 460 if tbl is FLC460 else 208; s0 = s; s = upsize(s, flc, L, Vl, 3.0); load[m['sector']].append((flc, q, Vl))
+            if s != s0: lb += f'; upsized from {s0} for 3 % drop'
             add(m['sector'], m['subsystem'], u, f"{m['device']} feeder", 'power, 3 ph + EGC', s, 'XHHW-2 Cu, 600 V, tray cable TC-ER', '600 V', 3, L, f'NEC 430.22: 1.25 x {flc:.1f} A FLC; {lb}', q)
             add(m['sector'], m['subsystem'], u, f"{m['device']} EGC", 'equipment ground', egc(oc), 'green XHHW-2 Cu', '600 V', 1, L, f'NEC 250.122 at {oc} A OCPD', q)
             add(m['sector'], m['subsystem'], u, f"{m['device']} control", 'control', '18 AWG', 'TFFN 3-pair, shielded', '600 V', 6, L, 'start/stop, run, fault (assumed)', q)
@@ -44,6 +67,13 @@ def rows():
             Lc = 10.0
             add(m['sector'], m['subsystem'], u, f"{m['device']} power", 'DC power pair', '16 AWG' if kw < 0.06 else '14 AWG', 'TC-ER 2-cond', '600 V', 2, Lc, 'from the local 24/48 V DC panel at the unit, 10 m (assumed)', q)
             add(m['sector'], m['subsystem'], u, f"{m['device']} signal", 'control', '18 AWG', 'shielded pair', '300 V', 2, Lc, 'speed/position feedback (assumed)', q)
+    for sec, ld in load.items():                                            # panel feeders, NEC 430.24
+        if not (local and sec in PAN): continue
+        for Vl in (460, 208):
+            fl = [f for f, q, v in ld for _ in range(q) if v == Vl]
+            if not fl: continue
+            I = 1.25*max(fl) + sum(fl) - max(fl); L = man(PAN[sec], er)*1.2 + 5; ns = math.ceil(I/380); s = upsize(cond(I/ns), I/ns, L, Vl, 2.0)
+            add(sec, 'distribution', f'LP-{sec}', f'panel feeder {Vl} V', 'power, 3 ph + EGC', s, 'XHHW-2 Cu, tray cable TC-ER', '600 V', 4*ns, L, f'NEC 430.24: {I:.1f} A in {ns} parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m')
     # collection bus and MV
     cb = [l.split('|')[1:-1] for l in open(os.path.join(ROOT, 'docs-authority/COLLECTION_BUS.md')) if l.startswith('| CB-')]
     for c in cb:
@@ -74,9 +104,9 @@ def write(R):
         w = csv.writer(f); w.writerow(['family', 'type', 'size', 'insulation', 'voltage_class', 'conductor_m', 'circuits'])
         for i, ((t, s, ins, V), (m, n)) in enumerate(FF, 1): w.writerow([f'WF-{i:02d}', t, s, ins, V, round(m), n])
     tot = sum(r['total_m'] for r in R); a = sum(r['total_m'] for r in R if 'assumed' in r['basis'])
-    L = ['# Wire inventory', '', 'Document number: AQS-INV-002', 'Revision: A', 'Date: 2026-10-15',
-         'Authority: AQS-PLAN-007 X-INV-03. Generated by `flow_graph/inventory/wire.py`; CSVs beside this file. A-M-122.', '', '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue. | 2026-10-15 |', '',
-         f'{len(R)} circuit rows, {tot/1000:.1f} km of conductor; {a/1000:.1f} km rests on assumed lengths or counts (A-M-122). Sizing: NEC 2023 430.22 / Table 430.250 for motor branch circuits, Table 310.16 75 C copper with 240.4(D), 250.122 equipment grounding, 705.28 inverter outputs, 690.8 PV source circuits. Voltage drop and tray fill are checked with the cable schedule (X-ELS-02).', '',
+    L = ['# Wire inventory', '', 'Document number: AQS-INV-002', 'Revision: B', 'Date: 2026-10-15',
+         'Authority: AQS-PLAN-007 X-INV-03. Generated by `flow_graph/inventory/wire.py`; CSVs beside this file. A-M-122.', '', '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue. | 2026-10-15 |', '| B | X-ELS-02A: branch circuits from a local panel per sector (LP-<sector>) on routed tray; panel feeders NEC 430.24; conductors upsized for 3 % branch / 2 % feeder drop (NEC Ch. 9 Table 8). Conductor 216.1 -> 130.0 km; copper mass 14.2 -> 13.9 t (mass is dominated by the collection bus, MV and grid, which do not change). | 2026-10-15 |', '',
+         f'{len(R)} circuit rows, {tot/1000:.1f} km of conductor; {a/1000:.1f} km rests on assumed lengths or counts (A-M-122). Sizing: NEC 2023 430.22 / Table 430.250 for motor branch circuits, Table 310.16 75 C copper with 240.4(D), 250.122 equipment grounding, 705.28 inverter outputs, 690.8 PV source circuits. Voltage drop: branch <= 3 %, feeder <= 2 % (resistive, NEC Ch. 9 Table 8). Tray fill is checked with the cable schedule (X-ELS-02).', '',
          '## 1. Family rollup', '', '| Family | Type | Size | Insulation | Voltage class | Conductor m | Circuits |', '| --- | --- | --- | --- | --- | --- | --- |']
     L += [f'| WF-{i:02d} | {t} | {s} | {ins} | {V} | {m:.0f} | {n} |' for i, ((t, s, ins, V), (m, n)) in enumerate(FF, 1)]
     L += ['', '## 2. Circuits by sector > sub-system > unit', '']
