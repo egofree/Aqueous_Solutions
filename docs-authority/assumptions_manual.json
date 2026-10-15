@@ -2608,5 +2608,25 @@
     "verification": "HNO3 0.365 kg/d to GLYOXAL, NO 0.174 kg/d recycled, net O2 unchanged at 0.139 kg/d",
     "replace_when": "yield and by-product split from a bench run or a cited yield table",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-161",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "X-MFG-31 batch 4 residence and temperatures",
+    "statement": "GLYOXAL 6 h at 40 C (HOTANAHALLI1972 temperature, residence assumed), IMID 4 h at 70 C, BUCL 6 h ZnCl2-catalysed at reflux 105 C, HNO3 Pt-Rh gauze 900 C (ULLMANN_NITRIC) with 2 h absorber hold-up; burner held at temperature by the bus at this rate",
+    "verification": "vessel volumes and heater loads in AQS-DUTY-062 sections 5 and 7",
+    "replace_when": "bench runs listed per driver in drivers.json",
+    "doc": "AQS-PAR-003"
   }
 ]

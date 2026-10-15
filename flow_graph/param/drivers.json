@@ -43,7 +43,7 @@
  "acid_conc_design_wt": {
   "value": 0.2,
   "units": "mass fraction HCl on IA-ACID-01",
-  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 §Acid loop)",
   "needs_verification": true,
   "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time",
   "published": "CARLETON_HCL_2023 38 % HCl; PERRY9_HCL azeotrope 20.2 wt% caps evaporative concentration"
@@ -199,7 +199,7 @@
  "base_conc_design_wt": {
   "value": 0.2,
   "units": "mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT",
-  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 §Acid loop)",
   "needs_verification": true,
   "verification_test": "Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt%",
   "published": "Matches the acid side; no azeotrope limit on NaOH-water"
@@ -1457,5 +1457,57 @@
   "register": "A-M-158",
   "needs_verification": true,
   "verification_test": "see A-M-158"
+ },
+ "rx_glyoxal_T_C": {
+  "value": 40,
+  "units": "C",
+  "ref": "HOTANAHALLI1972"
+ },
+ "rx_glyoxal_tau_h": {
+  "value": 6,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "bench oxidation of acetaldehyde in 40 % HNO3 at 40 C: glyoxal yield against time"
+ },
+ "rx_imid_T_C": {
+  "value": 70,
+  "units": "C",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "bench Debus-Radziszewski condensation of glyoxal, formaldehyde, methylamine and ammonia: conversion against T"
+ },
+ "rx_imid_tau_h": {
+  "value": 4,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "same bench run: 1-methylimidazole yield against time"
+ },
+ "rx_bucl_T_C": {
+  "value": 105,
+  "units": "C",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "bench ZnCl2-catalysed n-butanol + HCl at reflux: conversion against time"
+ },
+ "rx_bucl_tau_h": {
+  "value": 6,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "same bench run"
+ },
+ "rx_hno3_gauze_T_C": {
+  "value": 900,
+  "units": "C",
+  "ref": "ULLMANN_NITRIC"
+ },
+ "rx_hno3_absorber_tau_h": {
+  "value": 2,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "NO absorption test of the HNO3 column at plant rate: outlet NOx"
  }
 }

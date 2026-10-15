@@ -71,7 +71,10 @@ def design(d, g):
     SM = {'YEAST': dict(tau='rx_yeast_tau_h', T='rx_yeast_T_C', mat='HDPE (PE100), 50 mm PIR', mix='CO2 evolution; daily recirculation pump', fill=0.75),
           'ABE': dict(tau='rx_abe_tau_h', T='rx_abe_T_C', mat='HDPE (PE100), 50 mm PIR, N2-blanketed (anaerobic)', mix='gas recirculation (no shaft seal)', fill=0.75),
           'ACETOX': dict(tau='rx_acetox_tau_h', T='rx_acetox_T_C', mat='PP, 50 mm PIR; O2 sparger PVDF', mix='O2 sparge from HDR_O2', fill=0.7),
-          'HTC': dict(tau='rx_htc_tau_h', T='rx_htc_T_C', mat='SA-240 316L, 50 mm mineral wool', mix='static autoclave, batch', fill=0.8)}
+          'HTC': dict(tau='rx_htc_tau_h', T='rx_htc_T_C', mat='SA-240 316L, 50 mm mineral wool', mix='static autoclave, batch', fill=0.8),
+          'GLYOXAL': dict(tau='rx_glyoxal_tau_h', T='rx_glyoxal_T_C', mat='SA-240 304L (nitric service, ULLMANN_NITRIC); NO off-gas to HNO3', mix='recirculation pump, nitrite-initiated (HOTANAHALLI1972)', fill=0.7),
+          'IMID': dict(tau='rx_imid_tau_h', T='rx_imid_T_C', mat='SA-240 316L, 50 mm mineral wool', mix='recirculation pump', fill=0.7),
+          'BUCL': dict(tau='rx_bucl_tau_h', T='rx_bucl_T_C', mat='glass-lined steel (HCl/ZnCl2 at reflux), reflux condenser to Q1', mix='boiling at reflux', fill=0.6)}
     # Biological and hydrothermal reactors (X-MFG-31 batch 2): working volume = feed / rho x residence [BAI2008, JONES1986, GULLO2014, LIBRA2011];
     # heat = insulated losses (U 0.5 W/(m2 K)) + feed sensible heat from 20 C; HTC is a pressure vessel at water saturation (UG-27, 316L).
     for u, c in SM.items():
@@ -116,6 +119,16 @@ def design(d, g):
         if u == 'MEAM':
             Pd = v('rx_meam_P_bar')*v('press_design_margin')/10; r.update(design_MPa=Pd, t_req_mm=Pd*(tb['OD_mm']/2)/(v('s_316L_400C_MPa_lower_bound') + 0.4*Pd) + 1.5)
         out[u] = r
+    # HNO3 (X-MFG-31 batch 4, A-M-161): Ostwald [ULLMANN_NITRIC]: Pt-Rh gauze burner in a DN25 tube held at temperature (losses on the bus,
+    # feed preheat to 250 C; the oxidation exotherm holds the gauze at plant scale but not at this rate), then a stainless absorber of liquid hold-up tau.
+    nh3n = R('IA-NH3-NIT'); o2n = R('IA-O2-NIT'); Tg = v('rx_hno3_gauze_T_C')
+    from .sizing.heat import insulated_cylinder
+    ins_g, loss_g = insulated_cylinder(Tg, 33.4, 0.3)
+    pre = (nh3n*2.2 + o2n*0.95)*(250 - 20)/86.4/0.7
+    Vw = R('IA-HNO3')/1400*v('rx_hno3_absorber_tau_h')/24; ves = vessel(Vw, 0.5, 1400.0, steel=True, t_min=2.0)
+    kw = (pre + loss_g)/1000 + 0.02
+    out['HNO3'] = dict(T_C=Tg, gauze='Pt-Rh gauze in DN25 Sch 40 SA-312 310S, 300 mm', insulation_mm=ins_g, loss_W=loss_g, heat_W=kw*1000, tau_h=v('rx_hno3_absorber_tau_h'),
+                       **ves, material='burner 310S tube; absorber SA-240 304L packed column', kW=round(kw, 4))
     return out
 
 def write(d, g, R):
@@ -125,7 +138,7 @@ def write(d, g, R):
         n = N[u]; p = n.setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'
-        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
+        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC', 'GLYOXAL', 'IMID', 'BUCL', 'HNO3') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
             if sid in E: E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
             else:
@@ -186,14 +199,16 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 - Relief: API 520 gas, blocked outlet at the full feed (flow_graph/param/pressure_nodes.py).
 """
     md += '\n## 5. Biological and hydrothermal reactors\n\n| Unit | T, C | Residence, h | Working / vessel, L | DN x H, mm | Wall, mm | Heat, W | Material | Source |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n'
-    for u, src in (('YEAST', 'BAI2008'), ('ABE', 'JONES1986'), ('ACETOX', 'GULLO2014'), ('HTC', 'LIBRA2011')):
+    for u, src in (('YEAST', 'BAI2008'), ('ABE', 'JONES1986'), ('ACETOX', 'GULLO2014'), ('HTC', 'LIBRA2011'), ('GLYOXAL', 'HOTANAHALLI1972, A-M-161'), ('IMID', 'A-M-161'), ('BUCL', 'A-M-161')):
         r = R[u]; md += f"| {u} | {r['T_C']} | {r['tau_h']} | {r['V_work_L']:.1f} / {r['V_L']:.1f} | {r['D_mm']} x {r['H_mm']} | {r['wall_mm']} | {r['heat_W']:.1f} | {r['material']} | {src} |\n"
     md += f"\nHTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = {R['HTC']['design_MPa']:.2f} MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: {R['HTC']['t_req_mm']:.2f} mm required.\n"
     md += '\n## 6. Catalytic tube reactors (A-M-157)\n\n| Unit | T, C | Catalyst, g | Bed, mL | Tube | Bed length, mm | Heater, W | Basis |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n'
     for u in ('ALD', 'FORM', 'MEAM'):
         r = R[u]; md += f"| {u} | {r['T_C']} | {r['cat_kg']*1000:.1f} | {r['V_bed_L']*1000:.1f} | {r['tube']} | {r['L_bed_mm']} | {r['heat_W']:.1f} | {r['basis']} |\n"
     md += f"\nMEAM is pressure equipment: 20.7 bar x 1.10 = {R['MEAM']['design_MPa']:.2f} MPa design; UG-27 316L at 400 C (S 80 MPa lower bound, A-M-157) {R['MEAM']['t_req_mm']:.2f} mm required against {R['MEAM']['t_nom_mm']*0.875:.2f} mm minimum of {R['MEAM']['tube']}.\n"
-    md += '\nNot designed in this issue: GLYOXAL (the graph route CH3CHO + O2 -> glyoxal is not an established process; industrial glyoxal is acetaldehyde + HNO3 or gas-phase ethylene glycol oxidation over Ag: route to be fixed first), IMID, ACEX, HNO3, BUCL (next batch).\n'
+    H = R['HNO3']
+    md += f"\n## 7. Nitric acid (A-M-161)\n\nOstwald route (ULLMANN_NITRIC): {H['gauze']} at {H['T_C']:.0f} C, {H['insulation_mm']} mm insulation, loss {H['loss_W']:.0f} W; absorber {H['D_mm']} x {H['H_mm']} mm, {H['V_work_L']:.2f} L hold-up ({H['tau_h']} h). Heater {H['heat_W']:.0f} W. At this rate the burner does not run autothermally; the bus holds the gauze.\n"
+    md += '\nGLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). Not designed here: ACEX (the graph exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not thermodynamically driven; a hydroxide-form anion-exchange step is needed first, X-PAR-14).\n'
     open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN.md'), 'w').write(md)
 
 def main():

@@ -1,0 +1,8 @@
+item,description,qty,material,basis
+1,Shell DN65 x 60 mm x 2.0 mm wall with flat bottom,1,SA-240 304L plate, rolled, GTAW (ASME IX),AQS-DUTY-062 section 1
+2,Bolted flat lid with gasket,1,SA-240 304L plate, rolled, GTAW (ASME IX),AQS-DUTY-062
+3,Nozzles DN25: NO/air from burner; water in; HNO3 out; tail gas vent; drain,5,SA-240 304L plate, rolled, GTAW (ASME IX),AQS-DUTY-062
+4,Legs 40x40 x 300 mm,3,SA-240 304L plate, rolled, GTAW (ASME IX),study
+5,Pt-Rh gauze in DN25 Sch 40 SA-312 310S, 300 mm, 200 mm insulation,1,Pt-Rh 90/10 gauze; 310S,ULLMANN_NITRIC
+6,Burner heater 240 W with PID and high-limit; feed preheater,1,NiCr / 310S,AQS-DUTY-062 section 7
+7,Absorber packing, 304L random rings,1,304L,ULLMANN_NITRIC

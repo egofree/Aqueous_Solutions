@@ -53,6 +53,9 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | ABE | 37 | 72 | 1.9 / 2.6 | 150 x 150 | 4.0 | 1.4 | HDPE (PE100), 50 mm PIR, N2-blanketed (anaerobic) | JONES1986 |
 | ACETOX | 30 | 24 | 0.3 / 0.4 | 80 x 80 | 4.0 | 0.3 | PP, 50 mm PIR; O2 sparger PVDF | GULLO2014 |
 | HTC | 200 | 4 | 0.5 / 0.7 | 100 x 90 | 3.0 | 39.6 | SA-240 316L, 50 mm mineral wool | LIBRA2011 |
+| GLYOXAL | 40 | 6 | 0.1 / 0.2 | 65 x 60 | 4.0 | 0.7 | SA-240 304L (nitric service, ULLMANN_NITRIC); NO off-gas to HNO3 | HOTANAHALLI1972, A-M-161 |
+| IMID | 70 | 4 | 0.1 / 0.1 | 65 x 60 | 4.0 | 3.6 | SA-240 316L, 50 mm mineral wool | A-M-161 |
+| BUCL | 105 | 6 | 0.0 / 0.1 | 50 x 50 | 4.0 | 3.7 | glass-lined steel (HCl/ZnCl2 at reflux), reflux condenser to Q1 | A-M-161 |
 
 HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = 1.71 MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: 2.25 mm required.
 
@@ -66,4 +69,8 @@ HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1
 
 MEAM is pressure equipment: 20.7 bar x 1.10 = 2.28 MPa design; UG-27 316L at 400 C (S 80 MPa lower bound, A-M-157) 1.80 mm required against 2.42 mm minimum of DN15 Sch 40.
 
-Not designed in this issue: GLYOXAL (the graph route CH3CHO + O2 -> glyoxal is not an established process; industrial glyoxal is acetaldehyde + HNO3 or gas-phase ethylene glycol oxidation over Ag: route to be fixed first), IMID, ACEX, HNO3, BUCL (next batch).
+## 7. Nitric acid (A-M-161)
+
+Ostwald route (ULLMANN_NITRIC): Pt-Rh gauze in DN25 Sch 40 SA-312 310S, 300 mm at 900 C, 200 mm insulation, loss 96 W; absorber 65 x 60 mm, 0.06 L hold-up (2 h). Heater 120 W. At this rate the burner does not run autothermally; the bus holds the gauze.
+
+GLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). Not designed here: ACEX (the graph exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not thermodynamically driven; a hydroxide-form anion-exchange step is needed first, X-PAR-14).

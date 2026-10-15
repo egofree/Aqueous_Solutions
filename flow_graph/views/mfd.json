@@ -3351,8 +3351,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1384,
-        "kWh": 4263,
+        "kW": 1383,
+        "kWh": 4257,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -3362,7 +3362,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1275.2355,
+              "value": 1273.5095,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -3386,7 +3386,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1283.723 kg/d, out 1283.723 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1281.997 kg/d, out 1281.997 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3405,15 +3405,15 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1384,
+        "charge_kW": 1383,
         "discharge_kW": 305,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 59 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 59 hybrid inverters, 72.2 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.807,
-          "purge_m3_h": 45.03,
+          "H2_m3_d": 10.792,
+          "purge_m3_h": 44.97,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2788.2
+          "electrode_area_m2": 2784.4
         }
       }
     },
@@ -3441,7 +3441,7 @@
             }
           ]
         },
-        "duty": "In 1275.235 kg/d, out 1275.235 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1273.509 kg/d, out 1273.509 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -6054,10 +6054,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1275.235499,
+        "value": 1273.50948,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 45.0 m3/h holds H2 at 25 % LFL: HER 9.20 + open-circuit 1.61 m3/d H2 on 6089 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 45.0 m3/h holds H2 at 25 % LFL: HER 9.19 + open-circuit 1.60 m3/d H2 on 6081 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2",
@@ -6090,7 +6090,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1275.235499,
+        "value": 1273.50948,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

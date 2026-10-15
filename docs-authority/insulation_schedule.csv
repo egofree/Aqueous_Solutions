@@ -72,3 +72,6 @@ HTC,vessel,100,200,"hot, personnel protection and heat conservation","mineral wo
 ALD,vessel,21,250,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,42.5,0.0625,53.26,0.6,41.5,,True,0.0055
 FORM,vessel,21,350,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",50,45.4,0.071,77.59,0.6,60.5,,True,0.0087
 MEAM,vessel,21,400,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",50,49.9,0.0753,94.53,0.6,73.7,,True,0.0087
+IMID,vessel,65,70,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",13,35.6,0.0472,30.32,0.06,2.4,,True,0.0002
+HNO3,vessel,65,900,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",200,47.0,0.1177,320.75,0.06,25.0,,True,0.013
+BUCL,vessel,50,105,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",13,44.2,0.0502,45.79,0.05,3.0,,True,0.0002
