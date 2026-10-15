@@ -2239,6 +2239,14 @@
           ],
           "status": "study",
           "source": "GLOSSARY Leach / Salria 70-85 C; AQS-DUTY-008 HX-5 basis at the mid, 77.5 C. Not measured."
+        },
+        "hx5_area_m2": {
+          "pvdf_natural": 10.06,
+          "pvdf_agitated": 8.49,
+          "glass_natural": 4.22,
+          "glass_agitated": 2.65,
+          "status": "study",
+          "doc": "AQS-DUTY-049"
         }
       }
     },
