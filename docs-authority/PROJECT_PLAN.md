@@ -85,7 +85,7 @@ These stay named. They do not block a nozzle, a class, or a vent that the files 
 
 | Hold | Why it stays |
 | --- | --- |
-| IA-FEED-01, S08, S16 | Study fractions are on the edges. Not a weighed sample. |
+| IA-FEED-01, S08, S16 | Feedstock-agnostic. IA-FEED-01 carries the AQS-ASSAY-001 Rev C class point and envelope. Not a weighed sample. Silicate, water, organic, and unassigned loads across the envelope are held. |
 | IA-EW-SHEET | `metal` 1.0. The cell sheets are undifferentiated plate. Not an element split. |
 | IA-FERM-RES, IA-STILL, IA-ABE-STILL | No volatile-solids measurement. They leave on IA-DIG-GAS. The gas composition is the liquid placeholder. |
 | EW-1 current | `POWER.md` says 5.3 kW. The node is 6.0 kW study. The cell duties state the 2.5 V product against the node. No conductor is sized from the page. |
@@ -180,4 +180,4 @@ Active item: D1. The study assay is written. It is not a weighed sample. No resi
 
 ## After Rev C
 
-D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. The study fractions are on IA-FEED-01, S08, and S16. They are not a weighed sample. The rate stays. The bore stays. The cell stays.
+D1 is the feed assay. `docs-authority/FEED_ASSAY.md`. The feed is not one material. It is anything from a silicate and oxide regolith to a metal-rich PCB. Every lot is characterized against the AQS-ASSAY-001 schema, and the held design is checked across the bounding range, not one average. Plateable element mass is bounded by the sheet edges. Silicate, water, organic, and unassigned loads are held. The study fractions are not a weighed sample. The rate stays. The bore stays. The cell stays.

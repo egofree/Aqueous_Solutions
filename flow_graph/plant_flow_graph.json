@@ -10527,7 +10527,7 @@
       "params": {
         "rate_basis": "baghouse catch 0.5% of shredded feed",
         "rate_source": "shredder fines class",
-        "medium": "WEEE fines",
+        "medium": "shredded feed fines",
         "conditions": "ambient",
         "rate_kind": "derived",
         "doc": "AQS-DUTY-010"
@@ -15412,7 +15412,7 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "mineral feedstock",
+      "carries": "plant feedstock, any class",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
@@ -15420,25 +15420,166 @@
         "value": 102.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. Feed is returned scrap, not a dock intake."
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Feed class is not fixed. Characterized against AQS-ASSAY-001 Rev C."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Study assay. ELECTRICAL.md mixed WEEE wet average. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize.",
+      "notes": "Feedstock-agnostic. Composition is the AQS-ASSAY-001 Rev C reference point in seven phase classes, carried because the held rates were built on it. It is not the feed. params.assay_envelope holds the bounding cases, regolith-like through metal-rich PCB. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize.",
       "composition": {
-        "moisture": 0.05,
-        "Fe": 0.25,
-        "Cu": 0.07,
-        "Al": 0.05,
-        "other_plateable": 0.03,
-        "Au": 0.00005,
-        "Ag": 0.0002,
-        "plastic_paper": 0.22,
-        "glass_silicate": 0.18,
+        "water": 0.05,
+        "metal_plateable": 0.35025,
+        "metal_reactive": 0.05,
+        "silicate_oxide": 0.18,
+        "organic": 0.22,
+        "other_inorganic": 0.0,
         "unassigned": 0.14975
+      },
+      "params": {
+        "assay_envelope": {
+          "doc": "AQS-ASSAY-001 Rev C",
+          "basis": "mass fraction, as received, by phase class. Classes sum to 1.0.",
+          "status": "study. Literature range and published working averages. Not a weighed sample.",
+          "classes": [
+            "water",
+            "metal_plateable",
+            "metal_reactive",
+            "silicate_oxide",
+            "organic",
+            "other_inorganic",
+            "unassigned"
+          ],
+          "element_report": [
+            "Fe",
+            "Cu",
+            "Ni",
+            "Zn",
+            "Sn",
+            "Pb",
+            "Cd",
+            "Co",
+            "Ag",
+            "Au",
+            "Al",
+            "Si"
+          ],
+          "reference_point_elements": {
+            "Fe": 0.25,
+            "Cu": 0.07,
+            "other_plateable": 0.03,
+            "Au": 5e-05,
+            "Ag": 0.0002,
+            "Al": 0.05
+          },
+          "cases": {
+            "A_silicate_oxide_regolith_like": {
+              "water": 0.0,
+              "metal_plateable": 0.005,
+              "metal_reactive": 0.0,
+              "silicate_oxide": 0.99,
+              "organic": 0.0,
+              "other_inorganic": 0.005,
+              "unassigned": 0.0
+            },
+            "B_metal_rich_pcb": {
+              "water": 0.03,
+              "metal_plateable": 0.28095,
+              "metal_reactive": 0.04,
+              "silicate_oxide": 0.3,
+              "organic": 0.25,
+              "other_inorganic": 0.0,
+              "unassigned": 0.09905
+            },
+            "reference_point": {
+              "water": 0.05,
+              "metal_plateable": 0.35025,
+              "metal_reactive": 0.05,
+              "silicate_oxide": 0.18,
+              "organic": 0.22,
+              "other_inorganic": 0.0,
+              "unassigned": 0.14975
+            },
+            "ELC_msw": {
+              "water": 0.25,
+              "metal_plateable": 0.044,
+              "metal_reactive": 0.015,
+              "silicate_oxide": 0.05,
+              "organic": 0.3,
+              "other_inorganic": 0.0,
+              "unassigned": 0.341
+            },
+            "ELC_landfill_bulk": {
+              "water": 0.2,
+              "metal_plateable": 0.028,
+              "metal_reactive": 0.008,
+              "silicate_oxide": 0.53,
+              "organic": 0.12,
+              "other_inorganic": 0.0,
+              "unassigned": 0.114
+            },
+            "ELC_landfill_weee_cell": {
+              "water": 0.15,
+              "metal_plateable": 0.1951,
+              "metal_reactive": 0.03,
+              "silicate_oxide": 0.35,
+              "organic": 0.18,
+              "other_inorganic": 0.0,
+              "unassigned": 0.0949
+            },
+            "ELC_cu_tailings": {
+              "water": 0.15,
+              "metal_plateable": 0.083502,
+              "metal_reactive": 0.03,
+              "silicate_oxide": 0.7,
+              "organic": 0.0,
+              "other_inorganic": 0.0,
+              "unassigned": 0.036498
+            },
+            "ELC_au_tailings": {
+              "water": 0.18,
+              "metal_plateable": 0.050502,
+              "metal_reactive": 0.02,
+              "silicate_oxide": 0.75,
+              "organic": 0.0,
+              "other_inorganic": 0.0,
+              "unassigned": 0.0
+            }
+          },
+          "bounds": {
+            "water": [
+              0.0,
+              0.25
+            ],
+            "metal_plateable": [
+              0.005,
+              0.35025
+            ],
+            "metal_reactive": [
+              0.0,
+              0.05
+            ],
+            "silicate_oxide": [
+              0.05,
+              0.99
+            ],
+            "organic": [
+              0.0,
+              0.3
+            ],
+            "other_inorganic": [
+              0.0,
+              0.005
+            ],
+            "unassigned": [
+              0.0,
+              0.341
+            ]
+          },
+          "bounded": "Plateable element mass to EW_1 to EW_9, and metal_reactive, at the held rate.",
+          "held": "silicate_oxide, water, organic, unassigned, other_inorganic, and oxide-bound Al, Ca, Mg, Ti. Not resized."
+        }
       }
     },
     {
@@ -25061,5 +25202,6 @@
   "notes_rev_c10": "C10. Self-copy matrix is AQS-BOM-SC-001 Rev F. reprap_bom_complete set true to match that matrix. On-site flags stay false. No rate change.",
   "notes_rev_d1": "D1. Feed assay is not in the repo. IA-FEED-01, S08, and S16 keep the placeholder. ELECTRICAL.md working averages were not copied. assay_g_L was not used. No rate change.",
   "notes_rev_d1_assay": "D1 revision B. Study assay on IA-FEED-01, S08, and S16. Not a weighed sample. Rates unchanged. No resize.",
+  "notes_rev_d1_agnostic": "D1 revision C. Feed is feedstock-agnostic. IA-FEED-01 carries the AQS-ASSAY-001 Rev C class point and the envelope, regolith-like through metal-rich PCB. Plateable element mass is bounded by the sheet edges. Silicate, water, organic, and unassigned are held. Rates unchanged. No resize.",
   "loops_closed": true
 }
