@@ -778,5 +778,44 @@
    "docs-authority/PROTECTION.md"
   ],
   "id": "A-M-060"
+ },
+ {
+  "value": "flat 24 h profile; night 14 h",
+  "units": "profile",
+  "where": "AQS-ELEC-007",
+  "basis": "Continuous process; winter-leaning night length at 33 N",
+  "sensitivity": "Storage linear in night hours",
+  "replaced_by": "Hourly load profile from unit duties",
+  "task": "X-ELS-05",
+  "files": [
+   "docs-authority/POWER_SIZING.md"
+  ],
+  "id": "A-M-061"
+ },
+ {
+  "value": "derate 0.80; round trip 0.70",
+  "units": "fraction",
+  "where": "AQS-ELEC-007 PV and storage",
+  "basis": "Typical PV system losses; flow battery round trip",
+  "sensitivity": "PV size inverse",
+  "replaced_by": "PVWatts run with the chosen modules; battery vendor data",
+  "task": "X-ELS-05",
+  "files": [
+   "docs-authority/POWER_SIZING.md"
+  ],
+  "id": "A-M-062"
+ },
+ {
+  "value": "HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 days",
+  "units": "kW, d",
+  "where": "AQS-ELEC-007 backup",
+  "basis": "Life support, H2 storage cooling, air separation, food",
+  "sensitivity": "Generator and H2 store linear",
+  "replaced_by": "Owner critical-load list",
+  "task": "X-ELS-05",
+  "files": [
+   "docs-authority/POWER_SIZING.md"
+  ],
+  "id": "A-M-063"
  }
 ]

@@ -189,3 +189,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | canonical |
 | AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | canonical |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | A | 2026-10-15 | Protection and coordination | canonical |
+| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | A | 2026-10-15 | Storage and generation sizing | canonical |
