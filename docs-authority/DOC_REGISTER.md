@@ -198,3 +198,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | canonical |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | canonical |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | canonical |
+| AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | canonical |
