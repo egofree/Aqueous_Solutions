@@ -21,8 +21,8 @@ out={}
 for k,P in cases.items():
     E=P*24                         # flat profile, continuous process (study)
     Edirect=P*(24-NIGHT); Estore=P*NIGHT
-    pv=PW.pv_kWp(P,NIGHT,RT,PSH,DER)
-    out[k]=dict(P_kW=P,E_kWh_d=E,pv_kWp=pv,store_kWh=Estore,store_kW=P,inverters=math.ceil(P/INV),inv_kW=math.ceil(P/INV)*INV)
+    o=PW.oversized(P,NIGHT,RT,PSH*DR.val(_d,'pv_roof_yield_factor'),DER,DR.val(_d,'pv_oversize_factor'),DR.val(_d,'pv_dc_ac_ratio'),INV)   # D75
+    out[k]=dict(P_kW=P,E_kWh_d=E,**o)
 out['roof']=roof
 crit=sum(CRIT.values())
 out['backup']=dict(critical_kW=crit,critical_list=CRIT,gen_kW=math.ceil(crit*1.25/5)*5,autonomy_d=AUT_CRIT,energy_kWh=crit*24*AUT_CRIT)

@@ -299,8 +299,8 @@
         0
       ],
       "size_mm": [
-        96000,
-        108000,
+        210000,
+        138000,
         6000
       ],
       "unit_ids": [
@@ -317,7 +317,7 @@
       ],
       "size_mm": [
         24000,
-        90000,
+        120000,
         6000
       ],
       "unit_ids": [
@@ -411,11 +411,11 @@
         14400
       ],
       "size_mm": [
-        116342,
-        104342,
+        230342,
+        134342,
         300
       ],
-      "source": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103)."
+      "source": "X-PAR-07 roof-only PV (ground field removed). Envelope of 15 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 234 x 138 m roof (solver.roof_close); 1219 mm interior pathways; array area 29740 m2. ROOF datum 14400 mm is a study value (A-M-103)."
     },
     {
       "unit_id": "WS_HF_ED",
@@ -1815,5 +1815,5 @@
   "notes_rev_j": "2026-10-15, X-BLD-04. 12 rows moved the smallest distance to clear maint_clear_mm 600 (flow_graph/clear_pairs.py); partition sides kept.",
   "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2021 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review.",
   "notes_rev_k_farm": "2026-10-15, X-BLD-04 farm re-row: farm rows occupy x 10600..24000 on L1, west of the AQS-BLD-001 FARM/HAB line at x=12000; HAB rows displaced: ['COMPOST_TOILET']. 914 mm between farm rows (A-M-102).",
-  "notes_rev_l": "2026-10-15, X-PAR-07: building grown to 120 x 108 m (20 x 18 bays of 6 m, conditioned extension) so the roof carries the full PV array; EXT_HALL_E/N blocks; PV_ARRAY on ROOF; ground field removed. Base-plate rows not moved: no sizing driver warrants it."
+  "notes_rev_l": "2026-10-15, X-PAR-07: building grown to 234 x 138 m (39 x 23 bays of 6 m, conditioned extension) so the roof carries the full PV array; EXT_HALL_E/N blocks; PV_ARRAY on ROOF; ground field removed. Base-plate rows not moved: no sizing driver warrants it."
 }

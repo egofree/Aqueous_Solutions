@@ -107,8 +107,12 @@ def power():
                         'arrays': rf['layout']['arrays'], 'extension_load_kW': round(rf['ext']['total_kW'], 2),
                         'roof_load_kPa': {k: round(v, 3) for k, v in rf['load'].items()},
                         'basis': 'flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)'}})
-    N['ZNBR2']['params'].update({'kW': math.ceil(p['store_kW']), 'kWh': math.ceil(p['store_kWh'])})
-    N['SOL_ARK_60K']['params'].update({'count': p['inverters'], 'kW': p['inv_kW']})
+    N['ZNBR2']['params'].update({'kW': math.ceil(p['store_kW']), 'kWh': math.ceil(p['store_kWh']), 'charge_kW': math.ceil(p['charge_kW']), 'discharge_kW': math.ceil(p['discharge_kW']),
+        'charge_basis': f"D75 cloudy-day case: yield {p['cloudy_yield_frac']:.2f} x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load"})
+    N['SOL_ARK_60K']['params'].update({'count': p['inverters'], 'kW': p['inv_kW'], 'dc_ac_ratio': DR.val(DR.load(), 'pv_dc_ac_ratio'),
+        'interconnection': {'export_peak_kW': round(p['export_peak_kW'], 1), 'export_kWh_d_clear': round(p['export_kWh_d_clear']),
+            'standards': 'IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter', 'decision': 'D75'}})
+    pv['oversize_factor'] = DR.val(DR.load(), 'pv_oversize_factor'); pv['balance_kWp'] = math.ceil(p['pv_base_kWp'])
     # X-PAR-07: extension hall load on the graph (unconditioned until the owner decides; A-M-104)
     kw = round(rf['ext']['total_kW'], 4); E = {x['stream_id']: x for x in g['edges']}
     cond = "conditioned" if DR.val(DR.load(), "ext_conditioned") else "unconditioned"

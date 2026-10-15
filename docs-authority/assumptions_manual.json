@@ -150,7 +150,7 @@
   "verification_test": "Tank thermal check"
  },
  {
-  "value": "two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm pitch",
+  "value": "two concentric helices D 600/900 mm, 25 \u00d7 3 mm tube, 50 mm pitch",
   "units": "geometry",
   "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
   "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
@@ -451,7 +451,7 @@
  },
  {
   "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
-  "units": "—",
+  "units": "\u2014",
   "where": "LEACH_CSTR_1 agitator",
   "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
   "sensitivity": "Power with N cubed and D to the fifth",
@@ -496,7 +496,7 @@
  },
  {
   "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
-  "units": "—",
+  "units": "\u2014",
   "where": "LEACH_CSTR_1 FRP belts",
   "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
   "sensitivity": "Belt stress and deflection",
@@ -1669,5 +1669,39 @@
   "sensitivity": "A lower condensate HCl target adds stages; below 0.34 wt% it needs reflux (option a)",
   "replaced_by": "Pilot column profile",
   "verification_test": "Pilot: titrate condensate and column bottoms; flooding check with the packing C_s"
+ },
+ {
+  "id": "A-M-109",
+  "task": "X-PAR-09",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/sizing/power.py",
+   "flow_graph/param/solver.py",
+   "docs-authority/_power_sizing.py"
+  ],
+  "value": "PV nameplate = 2.0 x balancing nameplate; design cloudy day = mean yield / 2.0; storage charge rate = PV peak on that day less direct load (1107 kW); storage energy = load x 14 h night (3409 kWh); inverter AC = kWp / 1.2",
+  "units": "-, kW, kWh",
+  "where": "drivers pv_oversize_factor, pv_dc_ac_ratio",
+  "basis": "Owner decision D75; NREL_PVWATTS8 (output scales with plane-of-array irradiance; default DC/AC 1.2); NREL_NSRDB for the daily yield distribution",
+  "sensitivity": "A cloudy-day profile with a lower peak than the scaled clear day lowers the charge rate need; days below half the mean yield draw on backup (AQS-ELEC-007 backup case)",
+  "replaced_by": "Hourly PVWatts/NSRDB TMY simulation with the storage model",
+  "verification_test": "NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2"
+ },
+ {
+  "id": "A-M-110",
+  "task": "X-PAR-09",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/_one_line.py",
+   "docs-authority/_protection.py",
+   "docs-authority/_grounding_study.py"
+  ],
+  "value": "Grid export through a supply-side connection (NEC 2023 705.11), UL 1741 SB inverters at IEEE 1547-2018 Cat. B / III, ANSI C12.20 class 0.2 bidirectional meter; utility fault contribution not included; ground grid over the building plus 10 m west yard, 12 m mesh, 2/0 AWG, rods at 10 m, rho 50 ohm m",
+  "units": "-",
+  "where": "ONE_LINE item 5, PROTECTION Rev C",
+  "basis": "IEEE1547_2018, UL1741_SB, NEC2023_705, ANSI_C12_20; IEEE 80-2013 eqs 52, 85-94",
+  "sensitivity": "Utility fault current raises the bus fault level and the earth-fault current; mesh voltage scales with it",
+  "replaced_by": "Utility interconnection study and service agreement; Wenner soil test",
+  "verification_test": "Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid"
  }
 ]

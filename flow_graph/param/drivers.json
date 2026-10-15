@@ -605,5 +605,21 @@
   "ref": "PERRY9_ABS",
   "needs_verification": true,
   "verification_test": "Flooding check with the selected packing C_s (sizing/scrubber.py)"
+ },
+ "pv_oversize_factor": {
+  "value": 2.0,
+  "units": "PV nameplate / PV needed to close the daily balance",
+  "register": "A-M-109",
+  "needs_verification": true,
+  "verification_test": "NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility",
+  "published": "Owner decision, Mike Matthews 2026-10-15 (D75): 200 % of plant requirement; storage still charges on a day at half the mean yield, surplus exported"
+ },
+ "pv_dc_ac_ratio": {
+  "value": 1.2,
+  "units": "DC kWp / inverter AC kW",
+  "ref": "NREL_PVWATTS8",
+  "needs_verification": true,
+  "verification_test": "Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio",
+  "published": "NREL PVWatts v8 default DC to AC size ratio 1.2"
  }
 }
