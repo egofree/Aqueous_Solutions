@@ -31,9 +31,20 @@ def induction(kw, V, p, frame=None):
     L = S/(C*ns*Dg**2)
     tau = math.pi*Dg/(2*p); Phi = 2/math.pi*B_D*tau*L; Vph = V/math.sqrt(3); N = 0.95*Vph/(4.44*F*KW*Phi)
     I = S/(math.sqrt(3)*V); a = I/J; Qs = 24 if (frame or '90')[:2] in ('63', '71', '80') else 36; Qr = 22 if Qs == 24 else 28
+    # Rev B (X-INV-02B, A-M-218): the slots and yoke must fit inside Dout. Slot area from the winding (fill 0.40, enamel 15 %),
+    # parallel tooth at 1.6 T, yoke at 1.5 T; if Dg + 2 (h_slot + h_yoke) > 1.02 Dout the core lengthens (N and slot area fall as 1/L).
+    lengthened = 1.0
+    for _ in range(60):
+        Phi = 2/math.pi*B_D*tau*L; N = 0.95*Vph/(4.44*F*KW*Phi)
+        aw = next((sz for n_, sz in reversed(AWG) if sz >= a), a)
+        As = 2*3*N/Qs*aw*1.15/0.40; ts = math.pi*Dg*1e3/Qs; bt = B_D*ts/(0.97*1.6); b1 = ts - bt; k = 2*math.pi/Qs
+        hs = (-b1 + math.sqrt(b1**2 + 2*k*As))/k; hy = Phi/(2*0.97*L*1.5)*1e3
+        gap = 0.18 + 0.006*(kw*1e3)**0.4 if p > 1 else 0.2 + 0.01*(kw*1e3)**0.4
+        if Dg*1e3 + gap + 2*(hs + hy) <= Dout*1e3: break
+        L *= 1.02; lengthened *= 1.02
     m_fe = math.pi/4*(Dout**2 - (Dg*0.33)**2)*L*0.97*7650*0.7; m_cu = 3*N*2*(L + 1.2*tau)*a*1e-6*8960
     out = dict(eta=eta, pf=pf, A=A, Dg=Dg*1e3, L=L*1e3, Dout=Dout*1e3, N=round(N), I=I, cond=awg(a), Qs=Qs, Qr=Qr, m_fe=m_fe, m_cu=m_cu, rpm=round(120*F/(2*p)))
-    out['held'] = held; out['LD'] = L/Dg
+    out['held'] = held; out['LD'] = L/Dg; out['slot_fit_L_factor'] = round(lengthened, 3)
     if frame in IEC72: out['fits'] = L/Dg <= 2.5
     return out
 def pm(kw, rpm, Dmax):
@@ -90,7 +101,7 @@ def main():
                   f'| Active mass, steel / copper | {d["m_fe"]:.1f} / {d["m_cu"]:.2f} kg | geometry estimate |']
             if fr in IEC72:
                 H, Ds, E, A_, B_, K = IEC72[fr]; L += [f'| Frame | IEC {fr}: H {H}, shaft D {Ds} x E {E}, feet A {A_} x B {B_}, holes K {K} mm | IEC 60072-1 |', f'| Bearings | 2 x {BRG[fr]} | ISO 15 (assumed size) |',
-                                                     f'| Lamination OD held by the frame | {"yes, core lengthened" if d["held"] else "no"} (OD <= 0.85 x 2H, A-M-126) | IEC 60072-1 |', f'| Core length / bore | {d["LD"]:.2f} ({"ok" if d.get("fits") else "above 2.5: review"}) | practical limit, A-M-126 |']
+                                                     f'| Lamination OD held by the frame | {"yes, core lengthened" if d["held"] else "no"} (OD <= 0.85 x 2H, A-M-126) | IEC 60072-1 |', f'| Core length / bore | {d["LD"]:.2f} ({"ok" if d.get("fits") else "above 2.5: review"}) | practical limit, A-M-126 |', f'| Slot fit | {"core lengthened x %.2f so slots and yoke fit the OD (rev B)" % d["slot_fit_L_factor"] if d["slot_fit_L_factor"] > 1 else "fits"} | fill 0.40, tooth 1.6 T, yoke 1.5 T (AQS-INV-008) |']
             rows.append(dict(family=fid, type=t, rating=sz, Dg_mm=round(d['Dg']), L_mm=round(d['L']), Dout_mm=round(d['Dout']), turns=d['N'], current_A=round(d['I'], 2), conductor=d['cond'], steel_kg=round(d['m_fe'], 1), copper_kg=round(d['m_cu'], 2), fits=d.get('fits', '-')))
         elif t.startswith('BLDC') and 'actuator' not in t:
             per = float(f['installed_shaft_kW'])/int(f['count']); fl = 42 if '42' in sz else 57; d = pm(per, 3000, fl/1000); kind = 'BLDC'

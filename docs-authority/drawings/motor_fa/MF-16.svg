@@ -51,7 +51,7 @@
 <circle cx="203.6" cy="164.7" r="3.7" fill="#999"/>
 <circle cx="206.6" cy="174.7" r="3.7" fill="#999"/>
 <circle cx="170" cy="180" r="9.0" fill="#555"/>
-<text x="360" y="50">Stator OD 117 mm (check 112.6 mm from slot + yoke: fits)</text>
+<text x="360" y="50">Stator OD 117 mm (check 112.9 mm from slot + yoke: fits)</text>
 <text x="360" y="66">Bore 64.23 mm; rotor OD 63.77 mm; air gap 0.23 mm</text>
 <text x="360" y="82">Core length 36 mm, stacking factor 0.97</text>
 <text x="360" y="98">Stator 24 slots: area 103 mm2 at fill 0.4, depth 16.1 mm, parallel tooth 4.05 mm (1.6 T)</text>

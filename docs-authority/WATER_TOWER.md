@@ -49,4 +49,4 @@ The reservoir levels are unoccupied: maintenance access only. The two exit stair
 
 The PV array moves to the reservoir roof at +34.8 m (datum ROOF). The footprint is unchanged, so the roof area and the PV area (solver.roof_close) are unchanged; the PV dead load now lands on the reservoir roof slab.
 
-Placement datums changed: L-2 -15998 -> -16395 mm, ROOF 34800 -> 34800 mm, added R1 16800, R2 22800, R3 28800 mm.
+Placement datums changed: L-2 -16395 -> -16395 mm, ROOF 34800 -> 34800 mm, added R1 16800, R2 22800, R3 28800 mm.

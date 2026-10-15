@@ -183,7 +183,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 14,WTR,BLACK_DIGEST,953,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",229,yes
 14,WTR,BLACK_PASTEUR,132,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",32,no
 14,WTR,BMED_UPW_POLISH,461,solute,-,416,no
-14,WTR,CATCH_TANK,2225691,,-,142444,yes
+14,WTR,CATCH_TANK,2202052,,-,140931,yes
 14,WTR,GREY_TREAT,134,CaO K2CO3 other solute,-,106,no
 14,WTR,REMIN,120,solute,-,8,no
 14,WTR,ROOF_TANK,1722,solute,-,70,yes

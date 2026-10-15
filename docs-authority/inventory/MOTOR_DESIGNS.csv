@@ -2,13 +2,13 @@ family,type,rating,Dg_mm,L_mm,Dout_mm,turns,current_A,conductor,steel_kg,copper_
 MF-01,BLDC,42 mm (NEMA 17 flange),6.3,6.3,42,-,0.0,-,-,-,True
 MF-02,BLDC,57 mm (NEMA 23 flange),20.2,20.2,57,-,0.003,-,-,-,True
 MF-03,BLDC actuator,ISO 5211 F03 mount,-,-,-,-,-,-,-,-,-
-MF-04,hermetic induction (scroll),22 kW hermetic,147,115,293,85,34.35,12 AWG (11.952 mm2),39.2,12.27,-
-MF-05,hermetic induction (scroll),0.25 kW hermetic,46,36,93,852,0.54,22 AWG (0.130 mm2),1.2,0.61,-
-MF-06,hermetic induction (scroll),0.75 kW hermetic,64,51,129,438,1.46,19 AWG (0.394 mm2),3.3,1.19,-
-MF-07,hermetic induction (scroll),2.2 kW hermetic,78,61,155,303,3.82,17 AWG (0.927 mm2),5.8,2.58,-
+MF-04,hermetic induction (scroll),22 kW hermetic,147,168,293,58,34.35,12 AWG (11.952 mm2),57.2,9.56,-
+MF-05,hermetic induction (scroll),0.25 kW hermetic,46,57,93,540,0.54,22 AWG (0.130 mm2),1.9,0.45,-
+MF-06,hermetic induction (scroll),0.75 kW hermetic,64,64,129,346,1.46,19 AWG (0.394 mm2),4.2,1.01,-
+MF-07,hermetic induction (scroll),2.2 kW hermetic,78,87,155,212,3.82,17 AWG (0.927 mm2),8.3,2.03,-
 MF-08,induction IE3,IEC 71 / 0.37 kW,66,46,121,929,0.71,21 AWG (0.184 mm2),2.7,0.77,True
 MF-09,induction IE3,IEC 90S / 1.1 kW,84,52,153,657,1.91,19 AWG (0.394 mm2),4.8,1.77,True
-MF-10,induction IE3,IEC 90L / 1.5 kW,84,71,153,482,2.61,18 AWG (0.597 mm2),6.5,2.03,True
+MF-10,induction IE3,IEC 90L / 1.5 kW,84,72,153,472,2.61,18 AWG (0.597 mm2),6.7,2.0,True
 MF-11,induction IE3,IEC 63 / 0.18 kW,59,33,107,650,0.9,21 AWG (0.184 mm2),1.5,0.55,True
 MF-12,induction IE3,IEC 80 / 0.55 kW,75,52,136,730,1.02,20 AWG (0.266 mm2),3.8,0.98,True
 MF-13,induction IE3,IEC 100L / 2.2 kW,94,81,170,378,3.7,17 AWG (0.927 mm2),9.2,2.54,True
@@ -17,7 +17,7 @@ MF-15,induction IE3,IEC 63 / 0.12 kW,52,29,95,823,0.63,22 AWG (0.130 mm2),1.0,0.
 MF-16,induction IE3,IEC 71 / 0.25 kW,64,36,117,541,1.18,20 AWG (0.266 mm2),1.9,0.66,True
 MF-17,induction IE3,IEC 132M / 7.5 kW,123,147,224,157,11.71,15 AWG (2.400 mm2),29.3,5.23,True
 MF-18,induction IE3,IEC 180M / 18.5 kW,168,144,306,118,28.3,13 AWG (6.835 mm2),53.1,10.89,True
-MF-19,induction IE3,IEC 100L / 3 kW,94,111,170,277,5.04,16 AWG (1.474 mm2),12.6,2.98,True
+MF-19,induction IE3,IEC 100L / 3 kW,94,130,170,236,5.04,16 AWG (1.474 mm2),14.8,2.79,True
 MF-20,induction IE3,IEC 112M / 4 kW,105,111,190,245,6.37,16 AWG (1.474 mm2),15.9,3.53,True
 MF-21,solenoid,"ISO 15218 coil, 22 mm",-,-,22,-,0.36,-,-,-,-
 MF-22,stepper,NEMA 23 (57 mm),-,-,57,-,-,-,-,-,-

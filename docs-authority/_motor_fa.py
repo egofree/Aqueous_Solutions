@@ -25,13 +25,13 @@ for d in D:
         Phi = 2/math.pi*Bd*tau_p*L*1e-6; hy = Phi/(2*KFE*L*1e-3*BY)*1000
         # parallel-tooth slot: width grows with radius; solve depth hs from area
         b1 = tau_s - bt; k = 2*math.pi/Qs; hs = (-b1 + math.sqrt(b1**2 + 2*k*As))/k
-        Do_calc = Dg + 2*(hs + hy)
+        Do_calc = Dg + dl + 2*(hs + hy)
         fL = 1.0
         if Do_calc > Do*1.02:  # longer core: N and slot area fall as 1/L at the same E and B; yoke depth unchanged
             lo, hi = 1.0, 4.0
             for _ in range(40):
                 fL = (lo + hi)/2; A2 = As/fL; h2 = (-b1 + math.sqrt(b1**2 + 2*k*A2))/k
-                lo, hi = (fL, hi) if Dg + 2*(h2 + hy) > Do*1.02 else (lo, fL)
+                lo, hi = (fL, hi) if Dg + dl + 2*(h2 + hy) > Do*1.02 else (lo, fL)
             fL = hi
         Ibar = 2*3*N*0.95*I*pf/Qr; Abar = Ibar/5.0                                        # A, mm2 at 5 A/mm2 die-cast Al
         fr = g('Frame'); fm = re.search(r'H (\d+), shaft D (\d+) x E (\d+), feet A (\d+) x B (\d+), holes K (\d+)', fr)
