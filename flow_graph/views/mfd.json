@@ -2078,16 +2078,16 @@
         "backup_basis": {
           "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
           "standard": "NFPA 111 Level 1, Class X",
-          "critical_kW": 32.0,
+          "critical_kW": 14.32,
           "class_hours": 14.0,
-          "energy_kWh_bus": 448.0,
+          "energy_kWh_bus": 200.5,
           "head_m": 18,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 11417.0,
-          "rated_kW_discharge": 32.0,
-          "recharge_kW_over_PV_window": 109.8,
+          "upper_reservoir_m3": 5109.0,
+          "rated_kW_discharge": 14.32,
+          "recharge_kW_over_PV_window": 49.1,
           "A-M": "A-M-145",
           "Q": "Q-006 closed; Q-009 reservoir siting"
         }
@@ -3660,8 +3660,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1262,
-        "kWh": 3885,
+        "kW": 1143,
+        "kWh": 3520,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -3671,7 +3671,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1162.2333,
+              "value": 1053.0393,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -3695,7 +3695,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1170.720 kg/d, out 1170.720 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1061.527 kg/d, out 1061.527 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -3705,25 +3705,25 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.1707,
+          "pump_in_m3_h": 1.0615,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.341,
+          "out_breathing_Nm3_h": 2.123,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 7.0,
+          "vent_bore_req_mm": 6.7,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         },
-        "charge_kW": 1262,
-        "discharge_kW": 278,
+        "charge_kW": 1143,
+        "discharge_kW": 252,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 54 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 49 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.849,
-          "purge_m3_h": 41.04,
+          "H2_m3_d": 8.924,
+          "purge_m3_h": 37.18,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2541.1
+          "electrode_area_m2": 2302.4
         }
       }
     },
@@ -3751,7 +3751,7 @@
             }
           ]
         },
-        "duty": "In 1162.233 kg/d, out 1162.233 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1053.039 kg/d, out 1053.039 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 2.0,
@@ -3762,11 +3762,11 @@
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 1.1622,
+          "pump_out_m3_h": 1.053,
           "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 1.162,
+          "in_breathing_Nm3_h": 1.053,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 4.9,
+          "vent_bore_req_mm": 4.7,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
@@ -6413,10 +6413,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1162.233288,
+        "value": 1053.039325,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 41.0 m3/h holds H2 at 25 % LFL: HER 8.39 + open-circuit 1.46 m3/d H2 on 5550 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 37.2 m3/h holds H2 at 25 % LFL: HER 7.60 + open-circuit 1.33 m3/d H2 on 5028 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2",
@@ -6449,7 +6449,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1162.233288,
+        "value": 1053.039325,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

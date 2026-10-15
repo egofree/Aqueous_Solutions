@@ -9,7 +9,8 @@ ol=json.loads(subprocess.run(['python3','docs-authority/_one_line.py'],capture_o
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); INV=60.0; AUT_CRIT=2.0   # study; PSH from AQS-SITE-002 (NREL PVWatts)
-CRIT={'HABITATION':3.0,'CRYO_H2':4.0,'CRYO_ASU':18.0,'GROW_BED':5.0,'controls and instruments':2.0}
+_gc={n['unit_id']:n for n in json.load(open('flow_graph/plant_flow_graph.json'))['nodes']}
+CRIT={'HABITATION':3.0,'CRYO_H2':round(_gc['CRYO_H2']['params'].get('compressor_design',{}).get('P_peak_kW',4.0),2),'CRYO_ASU':round(_gc['CRYO_ASU']['continuous_kw']['value'],2),'GROW_BED':5.0,'controls and instruments':2.0}   # CRYO_H2 peak (AQS-DUTY-067) and CRYO_ASU (AQS-DUTY-069) from the graph
 ref_rect=ew['I_elem_A']*2.8/0.80/1000
 cases={'bounding':ol['demand'],'reference':ol['demand']-rect['Pac_kW']+ref_rect}
 from flow_graph.param import solver as SV

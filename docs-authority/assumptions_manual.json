@@ -920,14 +920,14 @@
     "where": "AQS-ELEC-007 PV and storage",
     "basis": "Typical PV system losses; flow battery round trip",
     "sensitivity": "PV size inverse",
-    "replaced_by": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)",
+    "replaced_by": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-35)",
     "task": "X-ELS-05",
     "files": [
       "docs-authority/POWER_SIZING.md"
     ],
     "id": "A-M-062",
     "needs_verification": true,
-    "verification_test": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)"
+    "verification_test": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-35)"
   },
   {
     "value": "HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 days",
@@ -2826,7 +2826,7 @@
     "title": "BMED triplet voltage from physics",
     "statement": "Triplet voltage = bipolar membrane 1.0 V + 2 x 3 ohm cm2 monopolar + 1.5 x 0.8 mm x sum(1/kappa) solution + 3 V/stack end electrodes; design takes the larger of this (1.22 V) and the pilot-measured 1.67 V",
     "verification": "BMED SEC 6.7 -> 1.40 kWh/kg; BMED_ACID 26.9 -> 5.6 kW",
-    "replace_when": "X-MFG-41 stack I-V and current efficiency at 2 M",
+    "replace_when": "X-MFG-35 stack I-V and current efficiency at 2 M",
     "doc": "AQS-PAR-003"
   },
   {
@@ -2887,6 +2887,26 @@
     "statement": "Atmospheric design pressure = 4 x open-vent dP (vent dP held to 25 % of design) + full-height hydrostatic head at SG 1.25; units without a sized height carry the vapour case only",
     "verification": "197 head-plus-10 placeholders replaced: 77 with hydrostatic case (up to 49 kPa g NOX_SCRUB), 120 at the 2 kPa vapour case pending unit sizing; classification unchanged (199 atmospheric)",
     "replace_when": "Per-unit liquid density and height at each unit sizing task",
+    "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-175",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "CRYO_ASU separation train",
+    "statement": "No air intake: CO2 removed from the scrubbed flue by 3 x 13X TSA beds (1.5 mol/kg working capacity, 8 h half-cycle, dH 36 kJ/mol, steel mass equal to sorbent, 20 % regen loss), CO2 compressed to 20 bar and condensed at -20 C (chiller COP 2.5), 100 W Ar getter; no cryogenic column",
+    "verification": "CRYO_ASU 18.0 -> 1.67 kW; EXPANDER loop idle; critical load and hydro backup follow",
+    "replace_when": "13X bed breakthrough and regeneration energy test",
     "doc": "AQS-PAR-003"
   }
 ]

@@ -223,6 +223,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-DUTY-066 | `docs-authority/sizing/H2_PURIFIER_BEDS.md` | A | 2026-10-15 | H2_PURIFIER deoxo, guard and TSA beds (X-MFG-39) | canonical |
 | AQS-DUTY-067 | `docs-authority/sizing/H2_COMPRESSOR.md` | A | 2026-10-15 | In-house H2 diaphragm compressor (X-MFG-36) | canonical |
 | AQS-DUTY-068 | `docs-authority/sizing/BMED_STACK.md` | A | 2026-10-15 | In-house BMED stack (X-MFG-35) | canonical |
+| AQS-DUTY-069 | `docs-authority/sizing/COLD_BOX.md` | A | 2026-10-16 | CRYO_ASU separation train (X-MFG-33) | canonical |
 | AQS-DUTY-064 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | A | 2026-10-15 | House scrubbers sized with the X-PAR-03 scrubber function | canonical |
 | AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | A | 2026-10-15 | Wire inventory with family rollup (CSV beside) | canonical |
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | A | 2026-10-15 | Pipe inventory with family rollup (CSV beside) | canonical |

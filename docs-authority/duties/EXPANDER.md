@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1576 kg/d. Mass out 1576 kg/d. Electrical duty 0.6140 kW. In: IA-EXP-IN 1576 kg/d (cold gas). Out: IA-EXP-OUT 1576 kg/d (expanded gas).
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-EXP-IN 0 kg/d (cold gas). Out: IA-EXP-OUT 0 kg/d (expanded gas).
 
 2. Size.
 - Bore 50 mm, stroke 80 mm, 600 rpm, displacement 1.57 L/s. Inlet 500 kPa and 150 K. Density P/RT = 11.61 kg/m³. Shaft 614.4 W at 70% of the isentropic drop from 500 kPa to 130 kPa. Torque 614.4 / (600×2π/60) = 9.8 N·m. The 5 kW figure is the cold-box load, not this cylinder.

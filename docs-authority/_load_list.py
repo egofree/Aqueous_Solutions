@@ -6,11 +6,11 @@ ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_
 CALC={r['cell']:(r['P_kW'],'AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)') for r in ew}
 DC_BEHIND={r['cell'] for r in ew}
 CALC['LEACH_CSTR_1']=(0.75,'AQS-DUTY-050 agitator motor; heat by Q3 (HX-5), not electric')
-CALC['CRYO_ASU']=(3.03,'Air set by IA-ASU-N2 243.28 kg/d / 0.755 N2 mass fraction = 322 kg/d = 249 Nm3/d; 1.4 kWh/Nm3 O2 (80 m3/h plant, S23 IJRET 2013) / 4.8 Nm3 air per Nm3 O2 = 0.292 kWh/Nm3 air. Lower bound: the plant is about 57x smaller than the reference')
+CALC['CRYO_ASU']=(round(next(n['continuous_kw']['value'] for n in json.load(open('flow_graph/plant_flow_graph.json'))['nodes'] if n['unit_id']=='CRYO_ASU'),3),'AQS-DUTY-069 (X-MFG-33): 13X TSA, CO2 compressor and condenser, Ar getter; no cryogenic column')
 _s25=next(e['rate']['value'] for e in g['edges'] if e['stream_id']=='S25')
 CALC['BMED_UPW_POLISH']=(round(_s25/1000*3.5/24,3),f'S25 {_s25:.2f} kg/d feed; brackish RO 3.0 kWh/m3 upper (S24 Greenlee 2009) + EDI 0.5 kWh/m3 upper (S25 Alvarado and Chen 2014)')
 CALC['GROW_BED']=(2.25,'LED: 28 m2 x DLI 17 mol/m2/d (S26 Both, Cornell CEA lettuce) / 2.5 umol/J = 2.20 kW; recirculation 18909 kg/d at 10 m head, 50% wire-to-water = 0.043 kW')
-CALC['CRYO_H2']=(0.565,'S05 6.63 kg/d, 10 to 200 bar, RT ln(20)/M / 0.5 = 2.05 kWh/kg (compressed basis, A-M register)')
+CALC['CRYO_H2']=(round(next(n['continuous_kw']['value'] for n in json.load(open('flow_graph/plant_flow_graph.json'))['nodes'] if n['unit_id']=='CRYO_H2'),3),'AQS-DUTY-067 (X-MFG-36): 5-stage intercooled diaphragm compressor, average over the day')
 CALC['H2_PURIFIER']=(0.05,'TSA regeneration average (study)')
 _mf=json.loads(subprocess.run(['python3','docs-authority/_mfg_tools.py'],capture_output=True,text=True,check=True).stdout)
 CALC['MFG_SHOP']=(_mf['avg'],f"AQS-MFG-010 tool list, one shift; peak {_mf['peak']} kW")

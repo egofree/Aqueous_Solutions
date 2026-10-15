@@ -14,7 +14,7 @@ Rules from the Section VIII-1 scope (ASME_VIII1_U1): design pressure at or below
 | Machine casing (outside Section VIII) | 1 |
 | not a vessel (no design pressure on the graph) | 7 |
 
-Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 120 atmospheric units have no sized height yet and carry the vapour case only until their unit sizing adds the liquid head. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
+Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 119 atmospheric units have no sized height yet and carry the vapour case only until their unit sizing adds the liquid head. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
 | Unit | Sector | Design kPa g | Design T C | ID mm | Code intent | Basis |
 |---|---|---|---|---|---|---|
@@ -72,7 +72,7 @@ Atmospheric design pressure is set from the actual cases by the vent stage (A-M-
 | CRYO_AHU | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_AHU_COND_CONDENSABLE | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_AR | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
-| CRYO_ASU | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
+| CRYO_ASU | CRYO | 17.5 |  | 415 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_CO2 | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_DED_COOL | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_H2 | CRYO | 22000.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm |
