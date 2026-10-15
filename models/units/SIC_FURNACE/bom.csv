@@ -12,6 +12,7 @@ item,description,qty,material,basis
 11,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
 12,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
 13,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-14,support: pipe clamp DN15,9,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-15,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-16,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+14,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
+15,support: pipe clamp DN15,9,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+16,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
+17,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004

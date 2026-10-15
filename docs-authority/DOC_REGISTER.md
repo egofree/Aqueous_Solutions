@@ -44,6 +44,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | D | 2026-10-16 | Compliance matrix — design intent vs code themes | canonical |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index: tag, range, signal, loop (X-CTL-01) | canonical |
 | AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | A | 2026-10-16 | Control philosophy and PLC architecture (X-CTL-02) | canonical |
+| AQS-CTL-003 | `docs-authority/CAUSE_EFFECT.md` | A | 2026-10-16 | Safety instrumented functions and cause and effect (X-CTL-03) | canonical |
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals — ALCRM | canonical |
 | AQS-DOC-001 | `docs-authority/DOCUMENTATION_STYLE.md` | A | 2026-10-01 | Documentation style — Aqueous house style | canonical |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | canonical |

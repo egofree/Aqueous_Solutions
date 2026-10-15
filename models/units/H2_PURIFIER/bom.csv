@@ -7,5 +7,6 @@ item,description,qty,material,basis
 6,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 7,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 8,fastener: anchor bolt M10,56,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-9,support: U-bolt with guide DN15,28,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-10,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+9,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
+10,support: U-bolt with guide DN15,28,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+11,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

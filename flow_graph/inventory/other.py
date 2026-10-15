@@ -51,6 +51,14 @@ def rows():
             if n.get('class') in HOLD or u in LIQ_IN:                                                     # X-SAF-01 HZ: every liquid-receiving unit gets level and high level
                 add(u, 'instrument', 'level transmitter', 'radar 80 GHz', 'IEC 62828, PTFE lens', 1, 'duty item 5: liquid holdup')
                 add(u, 'instrument', 'high-level switch', 'vibrating fork', 'IEC 60947-5, 316L', 1, 'duty item 5: high level trips the inlet')
+    sp = os.path.join(ROOT, 'docs-authority/sif_list.csv')                    # X-CTL-03: SIF hardware (AQS-CTL-003)
+    if os.path.exists(sp):
+        sl = list(csv.DictReader(open(sp)))
+        for r in sl:
+            u = r['unit'] if r['unit'] in N else 'CONTROL'
+            if 'TE-90' in r['initiator']: add(u, 'instrument', 'temperature element (SIF, independent)', 'Pt100 class A', 'IEC 60751, own thermowell', 1, f"{r['id']} SIL {r['SIL']}")
+            if 'ESD' in r['final_element']: add(u, 'valve', 'ESD valve, spring-return actuator', 'DN15', '316L, fail-safe, IEC 61511', 2, f"{r['id']} one per bank half")
+        add('PLC', 'electronics', 'safety PLC (SIL 2 capable), CPU and I/O rack', '-', 'IEC 61508 / IEC 61511', 2, f"AQS-CTL-003: {len(sl)} SIFs, redundant pair", sector='CONTROL', sub='SIS')
     for m in mot:
         q = int(m['qty']); u = m['unit']; mt = m['motor_type']; sz = m['size']; kw = float(m['shaft_kW'])
         if mt.startswith('induction'):

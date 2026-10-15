@@ -987,57 +987,60 @@ bulk wire,WF-27,"equipment ground 12 AWG green XHHW-2 Cu, 600 V",3 m,Cu,AQS-INV-
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",556,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW (52100 steel)",
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW (52100 steel)",
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),1078,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
-building block,OF-04,electronics: PLC analog input point (IEC 61131-2),898,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
+building block,OF-04,electronics: PLC analog input point (IEC 61131-2),915,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),267,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
 building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),147,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
-building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",124,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
+building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",125,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
 building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),55,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
 building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),44,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
 building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),15,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),11,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
-building block,OF-12,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),26,,AQS-INV-004,unassigned,-,material not identified
-building block,OF-13,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14158,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-14,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-15,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-16,fastener: M12 anchor (ISO 3506 A4-70),37,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-17,fastener: M12x40 hex bolt + nut + 2 washers (PVDF),36,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-18,fastener: 1/2 in stud bolt (ASTM A193 B8M / A194 8M),24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-19,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 3506 A4-70 outside the wetted zone),24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-20,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 898-1 8.8 zinc),24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-21,fastener: 3/4 in stud bolt (ASTM A193 B8M / A194 8M),16,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-22,fastener: 5/8 in stud bolt (ASTM A193 B7 / A194 2H),16,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-23,fastener: M10 anchor (ISO 3506 A4-70),16,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-24,fastener: M10 (A4-70),8,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-25,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-26,fastener: M12 (A4-70),4,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-27,fastener: M8 (A4-70),4,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-28,fastener: Flange gasket (PTFE envelope),2,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-29,fastener: Flange gasket (graphite sheet),2,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
-building block,OF-30,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-31,fastener: Lid gasket 40 mm wide (FKM),1,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-32,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
-building block,OF-33,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",238,,AQS-INV-004,unassigned,-,material not identified
-building block,OF-34,"instrument: temperature element (IEC 60751, 316L thermowell)",194,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",188,,AQS-INV-004,silicate_oxide,"FLOAT_SINK, glass line, or IA-SINK-01",
-building block,OF-36,"instrument: high-level switch (IEC 60947-5, 316L)",136,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-37,"instrument: level transmitter (IEC 62828, PTFE lens)",136,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-38,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)",6,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-39,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",217,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW (Cu, Sn, Zn)",
-building block,OF-40,"seal: mechanical seal, single (SiC/SiC faces, FKM)",144,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-41,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5895,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
-building block,OF-42,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1184,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-43,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",202,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
-building block,OF-44,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",198,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
-building block,OF-45,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",152,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-46,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",100,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-47,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",82,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
-building block,OF-48,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",78,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
-building block,OF-49,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",56,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-50,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",30,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-51,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-52,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",22,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
-building block,OF-53,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",20,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
-building block,OF-54,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",14,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
-building block,OF-55,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",14,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
-building block,OF-56,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",7,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
-building block,OF-57,"valve: check valve (PVC-lined swing/ball check valve in FRP service, ISO 16137)",5,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
+building block,OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511)",2,,AQS-INV-004,metal_plateable,"WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)",
+building block,OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),26,,AQS-INV-004,unassigned,-,material not identified
+building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14158,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-17,fastener: M12 anchor (ISO 3506 A4-70),37,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-18,fastener: M12x40 hex bolt + nut + 2 washers (PVDF),36,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-19,fastener: 1/2 in stud bolt (ASTM A193 B8M / A194 8M),24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-20,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 3506 A4-70 outside the wetted zone),24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-21,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 898-1 8.8 zinc),24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-22,fastener: 3/4 in stud bolt (ASTM A193 B8M / A194 8M),16,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-23,fastener: 5/8 in stud bolt (ASTM A193 B7 / A194 2H),16,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-24,fastener: M10 anchor (ISO 3506 A4-70),16,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-25,fastener: M10 (A4-70),8,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-26,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-27,fastener: M12 (A4-70),4,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-28,fastener: M8 (A4-70),4,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-29,fastener: Flange gasket (PTFE envelope),2,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-30,fastener: Flange gasket (graphite sheet),2,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
+building block,OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-32,fastener: Lid gasket 40 mm wide (FKM),1,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
+building block,OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",238,,AQS-INV-004,unassigned,-,material not identified
+building block,OF-35,"instrument: temperature element (IEC 60751, 316L thermowell)",194,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-36,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",188,,AQS-INV-004,silicate_oxide,"FLOAT_SINK, glass line, or IA-SINK-01",
+building block,OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",136,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",136,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-39,"instrument: temperature element (SIF, independent) (IEC 60751, own thermowell)",17,,AQS-INV-004,unassigned,-,material not identified
+building block,OF-40,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)",6,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-41,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",217,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW (Cu, Sn, Zn)",
+building block,OF-42,"seal: mechanical seal, single (SiC/SiC faces, FKM)",144,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-43,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5895,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
+building block,OF-44,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1184,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-45,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",202,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
+building block,OF-46,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",198,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
+building block,OF-47,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",152,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-48,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",100,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-49,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",82,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
+building block,OF-50,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",78,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
+building block,OF-51,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",56,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-52,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",30,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-53,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",24,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-54,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",22,,AQS-INV-004,organic,held,"fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for"
+building block,OF-55,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",20,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",
+building block,OF-56,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",14,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-57,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",14,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
+building block,OF-58,"valve: ESD valve, spring-return actuator (316L, fail-safe, IEC 61511)",10,,AQS-INV-004,metal_plateable,"LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake",
+building block,OF-59,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",7,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO",
+building block,OF-60,"valve: check valve (PVC-lined swing/ball check valve in FRP service, ISO 16137)",5,,AQS-INV-004,organic,"OIL_DRYER, OIL_PYRO; chlorine to the HCl loop",

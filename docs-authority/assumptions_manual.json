@@ -3328,5 +3328,25 @@
     "verification": "H2O_ELYZ 3.3 mm (0.98 req), HCL_BURNER 3.3 mm (2.32 req), EVAP_ACID_VS vented",
     "replace_when": "Stack pressure rating and burner deflagration test",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-197",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "SIF and SIL basis",
+    "statement": "Consequence class sets SIL: fire or explosion with people = SIL 2 (1oo2), equipment damage or bunded toxic release = SIL 1, overfill to bund = basic control trip; safety PLC separate from BPCS, de-energise to trip, 1-year proof test; independent TE per heater trip; ESD valve per bank half",
+    "verification": "162 functions: 8 SIL 2, 18 SIL 1, 136 basic trips; all 22 HAZOP trip actions closed",
+    "replace_when": "SIL verification (PFDavg) with the selected hardware at detail design",
+    "doc": "AQS-PAR-003"
   }
 ]

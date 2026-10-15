@@ -14,11 +14,12 @@ item,description,qty,material,basis
 13,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
 14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
 15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-16,support: U-bolt with guide DN15,10,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-17,support: U-bolt with guide DN15,11,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-18,support: U-bolt with guide DN15,17,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-19,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-20,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+16,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
+17,support: U-bolt with guide DN15,10,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+18,support: U-bolt with guide DN15,11,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+19,support: U-bolt with guide DN15,17,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+20,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 21,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-22,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-23,valve: isolation valve DN15,2,"PVC-lined ball valve in FRP service, ISO 16135",AQS-INV-004
+22,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+23,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+24,valve: isolation valve DN15,2,"PVC-lined ball valve in FRP service, ISO 16135",AQS-INV-004

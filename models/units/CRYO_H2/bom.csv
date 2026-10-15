@@ -14,6 +14,7 @@ item,description,qty,material,basis
 13,support: U-bolt with guide DN15,20,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 14,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 15,support: U-bolt with guide DN15,25,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-16,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+16,"valve: ESD valve, spring-return actuator DN15",2,"316L, fail-safe, IEC 61511",AQS-INV-004
 17,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
 18,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+19,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

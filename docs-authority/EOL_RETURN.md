@@ -9,11 +9,11 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 465 | 45 % |
+| metal_plateable | 467 | 45 % |
 | organic | 435 | 42 % |
 | metal_reactive | 85 | 8 % |
 | silicate_oxide | 30 | 3 % |
-| unassigned | 27 | 3 % |
+| unassigned | 28 | 3 % |
 
 ## Held lines (no route in the present plant)
 
@@ -22,7 +22,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 58 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 32 |
 | material not stated on the line | 19 |
-| material not identified | 8 |
+| material not identified | 9 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house | 1 |
 
@@ -214,13 +214,13 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | OF-09 | 1 | 0 | 0 | 0 | 0 |
 | OF-10 | 1 | 0 | 0 | 0 | 0 |
 | OF-11 | 1 | 0 | 0 | 0 | 0 |
-| OF-12 | 0 | 0 | 0 | 0 | 1 |
-| OF-13 | 1 | 0 | 0 | 0 | 0 |
+| OF-12 | 1 | 0 | 0 | 0 | 0 |
+| OF-13 | 0 | 0 | 0 | 0 | 1 |
 | OF-14 | 1 | 0 | 0 | 0 | 0 |
 | OF-15 | 1 | 0 | 0 | 0 | 0 |
 | OF-16 | 1 | 0 | 0 | 0 | 0 |
-| OF-17 | 0 | 1 | 0 | 0 | 0 |
-| OF-18 | 1 | 0 | 0 | 0 | 0 |
+| OF-17 | 1 | 0 | 0 | 0 | 0 |
+| OF-18 | 0 | 1 | 0 | 0 | 0 |
 | OF-19 | 1 | 0 | 0 | 0 | 0 |
 | OF-20 | 1 | 0 | 0 | 0 | 0 |
 | OF-21 | 1 | 0 | 0 | 0 | 0 |
@@ -230,36 +230,39 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals) cannot go to OIL_PY
 | OF-25 | 1 | 0 | 0 | 0 | 0 |
 | OF-26 | 1 | 0 | 0 | 0 | 0 |
 | OF-27 | 1 | 0 | 0 | 0 | 0 |
-| OF-28 | 0 | 1 | 0 | 0 | 0 |
+| OF-28 | 1 | 0 | 0 | 0 | 0 |
 | OF-29 | 0 | 1 | 0 | 0 | 0 |
-| OF-30 | 1 | 0 | 0 | 0 | 0 |
-| OF-31 | 0 | 1 | 0 | 0 | 0 |
+| OF-30 | 0 | 1 | 0 | 0 | 0 |
+| OF-31 | 1 | 0 | 0 | 0 | 0 |
 | OF-32 | 0 | 1 | 0 | 0 | 0 |
-| OF-33 | 0 | 0 | 0 | 0 | 1 |
-| OF-34 | 1 | 0 | 0 | 0 | 0 |
-| OF-35 | 0 | 0 | 0 | 1 | 0 |
-| OF-36 | 1 | 0 | 0 | 0 | 0 |
-| OF-37 | 0 | 1 | 0 | 0 | 0 |
-| OF-38 | 1 | 0 | 0 | 0 | 0 |
-| OF-39 | 1 | 0 | 0 | 0 | 0 |
-| OF-40 | 0 | 1 | 0 | 0 | 0 |
-| OF-41 | 0 | 1 | 0 | 0 | 0 |
-| OF-42 | 1 | 0 | 0 | 0 | 0 |
+| OF-33 | 0 | 1 | 0 | 0 | 0 |
+| OF-34 | 0 | 0 | 0 | 0 | 1 |
+| OF-35 | 1 | 0 | 0 | 0 | 0 |
+| OF-36 | 0 | 0 | 0 | 1 | 0 |
+| OF-37 | 1 | 0 | 0 | 0 | 0 |
+| OF-38 | 0 | 1 | 0 | 0 | 0 |
+| OF-39 | 0 | 0 | 0 | 0 | 1 |
+| OF-40 | 1 | 0 | 0 | 0 | 0 |
+| OF-41 | 1 | 0 | 0 | 0 | 0 |
+| OF-42 | 0 | 1 | 0 | 0 | 0 |
 | OF-43 | 0 | 1 | 0 | 0 | 0 |
-| OF-44 | 0 | 1 | 0 | 0 | 0 |
-| OF-45 | 1 | 0 | 0 | 0 | 0 |
+| OF-44 | 1 | 0 | 0 | 0 | 0 |
+| OF-45 | 0 | 1 | 0 | 0 | 0 |
 | OF-46 | 0 | 1 | 0 | 0 | 0 |
-| OF-47 | 0 | 1 | 0 | 0 | 0 |
+| OF-47 | 1 | 0 | 0 | 0 | 0 |
 | OF-48 | 0 | 1 | 0 | 0 | 0 |
 | OF-49 | 0 | 1 | 0 | 0 | 0 |
 | OF-50 | 0 | 1 | 0 | 0 | 0 |
-| OF-51 | 1 | 0 | 0 | 0 | 0 |
+| OF-51 | 0 | 1 | 0 | 0 | 0 |
 | OF-52 | 0 | 1 | 0 | 0 | 0 |
-| OF-53 | 0 | 1 | 0 | 0 | 0 |
-| OF-54 | 1 | 0 | 0 | 0 | 0 |
+| OF-53 | 1 | 0 | 0 | 0 | 0 |
+| OF-54 | 0 | 1 | 0 | 0 | 0 |
 | OF-55 | 0 | 1 | 0 | 0 | 0 |
-| OF-56 | 0 | 1 | 0 | 0 | 0 |
+| OF-56 | 1 | 0 | 0 | 0 | 0 |
 | OF-57 | 0 | 1 | 0 | 0 | 0 |
+| OF-58 | 1 | 0 | 0 | 0 | 0 |
+| OF-59 | 0 | 1 | 0 | 0 | 0 |
+| OF-60 | 0 | 1 | 0 | 0 | 0 |
 | OIL_DRYER | 3 | 0 | 0 | 0 | 0 |
 | OIL_FRAC | 3 | 0 | 0 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 0 | 2 | 0 |
