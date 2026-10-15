@@ -3208,5 +3208,25 @@
     "verification": "172 units assigned: R4 77, R2 54, R3 15, R6 9, R8 9, R7 4, R1 3, R5 1",
     "replace_when": "Owner quality manual adoption (X-COD-01)",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-191",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "End-of-life feed classing",
+    "statement": "BOM line classed by keyword in its material (or item) text to the AQS-ASSAY-001 classes, first rule wins; classing by line count until unit masses exist; Ti, NdFeB, Pt-Rh and fluoropolymer lines held with reason",
+    "verification": "1036 lines: metal_plateable 459, organic 435, metal_reactive 85, silicate_oxide 30, unassigned 27; held 123",
+    "replace_when": "Unit masses from the fabrication drawings (mass split)",
+    "doc": "AQS-PAR-003"
   }
 ]
