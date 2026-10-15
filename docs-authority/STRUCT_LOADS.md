@@ -9,10 +9,11 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 
 | Level | Units | Footprint m2 | Empty kN | Operating kN | Test kN | Operating kPa on footprint | 1.2 D + 1.6 L kN (ops) |
 |---|---|---|---|---|---|---|---|
-| L-1 | 49 | 38.8 | 83 | 258 | 391 | 6.7 | 380 |
+| L-1 | 61 | 76.2 | 206 | 461 | 598 | 6.1 | 656 |
 | L-2 | 1 | 367.2 | 1397 | 23223 | 36319 | 63.2 | 36599 |
-| L0 | 55 | 137.7 | 169 | 571 | 867 | 4.1 | 846 |
-| L1 | 49 | 280.6 | 392 | 1659 | 2441 | 5.9 | 2498 |
+| L0 | 58 | 137.9 | 169 | 572 | 868 | 4.2 | 848 |
+| L1 | 50 | 280.8 | 393 | 1661 | 2443 | 5.9 | 2501 |
+| L2 | 1 | 1.1 | 1 | 18 | 18 | 15.8 | 28 |
 | R1 | 1 | 367.2 | 864 | 11905 | 11905 | 32.4 | 18703 |
 | R2 | 1 | 367.2 | 864 | 11905 | 11905 | 32.4 | 18703 |
 | R3 | 1 | 367.2 | 864 | 11905 | 11905 | 32.4 | 18703 |
@@ -37,5 +38,7 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | GROW_BED/R1 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R2 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R3 | L1 | 10.7 | 55.3 | 82.0 |
+
+Units placed only by a block-sized report move are loaded at their graph size_mm (17 rows); with no graph size they are not loaded and listed here: AFTERBURNER, BAGHOUSE, COLD_MILL, CRYO_AHU, CRYO_DED_COOL, CRYO_N2, FLOAT_SINK, GAS_ATOMIZER, H2_DRYER, HABITATION, HOPPER, HYDRO_SET, MET_MELT, OIL_DRYER, SALT_FEED, WIRE_DRAW.
 
 The point loads feed X-BLD-01 (frame members) and X-BLD-03 (foundations). The ASCE7_22 Table 4.3-1 flat-roof and floor live loads are added there, not here.

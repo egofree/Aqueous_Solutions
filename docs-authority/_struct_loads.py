@@ -11,7 +11,18 @@ d = DR.load(); RHO_EQ = DR.val(d, 'struct_equip_density_kg_m3'); FILL = DR.val(d
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 liq_in = {e['to_unit_id'] for e in g['edges'] if e['presence'] == 'present' and e.get('phase') == 'L' and (e['rate']['value'] or 0) > 0}
 rows = []
-for u in json.load(open('flow_graph/placement_seed.json'))['units'] + json.load(open('flow_graph/placement_study.json'))['units']:
+_U = json.load(open('flow_graph/placement_seed.json'))['units'] + json.load(open('flow_graph/placement_study.json'))['units']
+_have = {u['unit_id'].split('/')[0] for u in _U}; _rep = json.load(open('flow_graph/placement_report.json')); _ph = []
+for _r in [r for k in ('moves', 'create_moves', 'apply_moves') for r in _rep.get(k, [])]:   # units placed only by report moves (block-sized boxes): take the graph size
+    b = _r['unit_id']; zz = ((N.get(b) or {}).get('params') or {}).get('size_mm')
+    if b in _have or not _r.get('level') or (N.get(b) or {}).get('class') in ('header', 'building', 'dock', 'boundary'): continue
+    pp = (N.get(b) or {}).get('params') or {}; ds_ = pp.get('design') or {}; vt = (pp.get('relief_basis') or {}).get('V_tk_m3') or 0
+    _m = re.search(r'= ([0-9.]+) m3', (pp.get('relief_basis') or {}).get('design_case') or ''); vt = vt or (float(_m.group(1)) if _m else 0)
+    if not (zz and len(zz) >= 3) and ds_.get('D_mm') and ds_.get('H_mm'): zz = [ds_['D_mm'], ds_['D_mm'], ds_['H_mm']]
+    if not (zz and len(zz) >= 3) and vt > 0: Dm = (4*vt/(3.1416*DR.val(d, 'atm_HD')))**(1/3)*1000; zz = [Dm, Dm, Dm*DR.val(d, 'atm_HD')]
+    if zz and len(zz) >= 3: _U.append(dict(unit_id=b, level=_r['level'], size_mm=zz[:3], _rep=1)); _have.add(b)
+    else: _ph.append(b)
+for u in _U:
     z = u.get('size_mm'); lv = u.get('level')
     if not (z and len(z) >= 3 and lv): continue
     base = u['unit_id'].split('/')[0]; n = N.get(base); p = (n or {}).get('params') or {}
@@ -38,5 +49,7 @@ for lv in sorted(L):
     a = L[lv]; md.append(f'| {lv} | {a[4]} | {a[3]:.1f} | {kN(a[0]):.0f} | {kN(a[1]):.0f} | {kN(a[2]):.0f} | {kN(a[1])/a[3]:.1f} | {1.2*kN(a[0]) + 1.6*kN(a[1]-a[0]):.0f} |')
 md += ['', '## Heaviest units (test case)', '', '| Unit | Level | Empty kN | Operating kN | Test kN |', '|---|---|---|---|---|']
 md += [f'| {r[0]} | {r[1]} | {kN(r[2]):.1f} | {kN(r[3]):.1f} | {kN(r[4]):.1f} |' for r in sorted(rows, key=lambda r: -r[4])[:15]]
+md += ['', f'Units placed only by a block-sized report move are loaded at their graph size_mm ({sum(1 for u in _U if u.get("_rep"))} rows); with no graph size they are not loaded and listed here: ' + (', '.join(sorted(_ph)) or 'none') + '.']
 md += ['', 'The point loads feed X-BLD-01 (frame members) and X-BLD-03 (foundations). The ASCE7_22 Table 4.3-1 flat-roof and floor live loads are added there, not here.']
+json.dump([dict(unit=r[0], level=r[1], empty_kg=round(r[2], 1), op_kg=round(r[3], 1), test_kg=round(r[4], 1), foot_m2=round(r[5], 3)) for r in rows], open('docs-authority/inventory/STRUCT_ROWS.json', 'w'), indent=0)
 open('docs-authority/STRUCT_LOADS.md', 'w').write('\n'.join(md) + '\n'); print({k: [round(kN(x)) for x in v[:3]] for k, v in L.items()})
