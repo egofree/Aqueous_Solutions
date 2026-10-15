@@ -98,3 +98,4 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | D47 | — | CRYO_ASU load | X-ELS-02, largest first. | 3.03 kW calculated as a lower bound against 18.0 kW on the graph. Graph not changed (no rate change). Vendor quote needed to close it. |
 | D48 | — | Sizing rule | X-GOV-08. | AGENTS.md §Sizing records the owner rule; X-RSZ-01..07 added; next 10 updated, stale X-MAT-19 slot removed. |
 | D49 | — | Loads | X-ELS-02. | BMED_UPW_POLISH 0.02 kW (graph 6.0); GROW_BED 2.25 kW (graph 5.0). Graph values kept until the X-RSZ-07 sweep. MFG_SHOP needs a tool list; CRYO_H2 needs a storage mode. |
+| D50 | — | Isometric routes | X-PIP-03. | open. AQS-ISO-001 generated: 255 positioned piped lines routed (4426 m); 95 wait on unit positions. Supports and stress in X-PIP-04. |

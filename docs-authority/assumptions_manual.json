@@ -949,5 +949,18 @@
    "docs-authority/LOAD_LIST.md"
   ],
   "id": "A-M-073"
+ },
+ {
+  "value": "rack at level datum + 3200 mm; rise, X, Y, drop",
+  "units": "mm",
+  "where": "AQS-ISO-001 routes",
+  "basis": "AQS-PIP-002 header elevation Z 3200; orthogonal rack routing",
+  "sensitivity": "Line lengths and elbow counts",
+  "replaced_by": "3D routed model (X-PIP-03 close-out with X-BLD-04)",
+  "task": "X-PIP-03",
+  "files": [
+   "docs-authority/ISO_ROUTES.md"
+  ],
+  "id": "A-M-074"
  }
 ]
