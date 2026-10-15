@@ -191,7 +191,7 @@ def relief():
             n_api += 1
         else:
             p['relief_basis'] = {'case': 'atmospheric', 'method': 'not an API 520 case; tank venting per API Std 2000 at unit task 07',
-                                 'relief_mm_status': 'older study figure (head-plus-10 design_kPa), not a sized orifice'}
+                                 'relief_mm_status': 'atmospheric; design pressure set by the vent stage (A-M-174)'}
             n_atm += 1
     open(GP, 'w').write(json.dumps(g, indent=2))
     print(f'API 520 sized {n_api}; atmospheric marked {n_atm}')
@@ -205,7 +205,7 @@ def vent():
     from . import drivers as DV
     D = DV.load(); Y, C, TH, DPA = (D[k]['value'] for k in ('api2000_Y', 'api2000_C', 'vent_transfer_h', 'vent_dP_Pa'))
     DNS = (25, 32, 40, 50, 65, 80, 100, 125, 150, 200, 250, 300)
-    g = json.load(open(GP)); n = 0; nv = 0
+    g = json.load(open(GP)); n = 0; nv = 0; nh = 0; SG = D['atm_design_sg']['value']
     liq = lambda e: e['presence'] == 'present' and e.get('phase') == 'L' and (e['rate'] or {}).get('unit') == 'kg/d'
     for u in g['nodes']:
         p = u.get('params') or {}; rb = p.get('relief_basis')
@@ -220,9 +220,18 @@ def vent():
                   V_tk_m3=round(V, 3), pump_in_m3_h=round(qi, 4), pump_out_m3_h=round(qo, 4), out_breathing_Nm3_h=round(vo, 3),
                   in_breathing_Nm3_h=round(vi, 3), vent_dP_Pa=round(dp), vent_bore_req_mm=round(bore, 1), vent_DN=next(d for d in DNS if d >= bore),
                   thermal_term='envelope volume' if V else 'no sized volume: pump terms only')
+        # A-M-174: design pressure from the actual cases, replacing the head-plus-10 study figure. Vapour space: the open-vent dP
+        # is held to 25 % of design, so design >= 4 x vent dP; bottom of shell adds the full-height hydrostatic head at SG atm_design_sg.
+        H = ((p.get('design') or {}).get('H_mm') or (sz[2] if sz and len(sz) >= 3 else 0))/1000
+        P_vap = 4*dp/1000; P_liq = SG*1000*9.80665*H/1000
+        p['design_kPa'] = math.ceil((P_vap + P_liq)*2)/2
+        rb['relief_mm_status'] = 'atmospheric; no relief orifice, open vent per API 2000'
+        rb['design_case'] = (f"vapour {P_vap:.1f} kPa (4 x vent dP) + hydrostatic {P_liq:.1f} kPa ({H:.2f} m full at SG {SG}) = {p['design_kPa']} kPa g (A-M-174)" if H else
+                             f"vapour {P_vap:.1f} kPa (4 x vent dP) only = {p['design_kPa']} kPa g; hydrostatic case added when the unit is sized (A-M-174)")
+        nh += bool(H)
         n += 1
     open(GP, 'w').write(json.dumps(g, indent=2))
-    print(f'API 2000 vents sized {n} ({nv} with a volume)')
+    print(f'API 2000 vents sized {n} ({nv} with a volume); design pressure from cases on {n} ({nh} with a hydrostatic case)')
 
 if __name__ == '__main__':
     {'process': process, 'power': power, 'relief': relief, 'vent': vent}[sys.argv[1] if len(sys.argv) > 1 else 'process']()

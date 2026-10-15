@@ -1856,5 +1856,12 @@
   "register": "AQS-BUS-001 rev B",
   "needs_verification": true,
   "verification_test": "Joint millivolt drop at rated current"
+ },
+ "atm_design_sg": {
+  "value": 1.25,
+  "units": "- liquid specific gravity for the hydrostatic case of atmospheric vessels (covers 20 wt% HCl 1.10 and 20 wt% NaOH 1.22)",
+  "register": "A-M-174",
+  "needs_verification": true,
+  "verification_test": "Replace with the stored liquid density per unit at its unit sizing task"
  }
 }

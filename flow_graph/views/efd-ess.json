@@ -27,12 +27,12 @@
         "boundary_kind": "dock freight door (logical)",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 2.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
@@ -41,7 +41,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         }
       }
     },
@@ -67,12 +68,12 @@
         "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CATCH_TANK.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 17.8,
+        "design_kPa": 2.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
@@ -81,7 +82,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         }
       }
     },
@@ -142,12 +144,12 @@
         },
         "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 22.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 2.304,
           "pump_in_m3_h": 0.0046,
           "pump_out_m3_h": 0.0017,
@@ -156,7 +158,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 15.6,
           "vent_DN": 25,
-          "thermal_term": "envelope volume"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
         }
       }
     },
@@ -189,12 +192,12 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "duty": "In 31.256 kg/d, out 31.256 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 17.8,
+        "design_kPa": 15.5,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.704,
           "pump_in_m3_h": 0.0303,
           "pump_out_m3_h": 0.03,
@@ -203,7 +206,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 10.3,
           "vent_DN": 25,
-          "thermal_term": "envelope volume"
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 13.5 kPa (1.10 m full at SG 1.25) = 15.5 kPa g (A-M-174)"
         }
       }
     },
@@ -230,7 +234,7 @@
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 269.534 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 2.0,
         "relief_mm": 3.3,
         "nameplate_kw": 3847,
         "area_m2": 33754,
@@ -238,7 +242,7 @@
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
@@ -247,7 +251,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         },
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -305,12 +310,12 @@
         },
         "duty": "In 932.471 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
         "internals": "dip pipe, stilling well",
-        "design_kPa": 17.8,
+        "design_kPa": 2.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.689,
           "pump_out_m3_h": 0.9325,
@@ -319,7 +324,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.4,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         }
       }
     },
@@ -340,13 +346,13 @@
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 2.0,
         "relief_mm": 3.3,
         "count": 54,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
@@ -355,7 +361,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
@@ -460,13 +467,13 @@
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
         "duty": "In 1170.720 kg/d, out 1170.720 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 2.0,
         "relief_mm": 3.3,
         "peak_kw": 60,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 1.1707,
           "pump_out_m3_h": 0.0085,
@@ -475,7 +482,8 @@
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.0,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         },
         "charge_kW": 1262,
         "discharge_kW": 278,
