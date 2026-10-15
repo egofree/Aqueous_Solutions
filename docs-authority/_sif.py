@@ -10,7 +10,9 @@ from flow_graph.param.refs import cite
 for k in ('IEC61511_2016', 'NFPA2_2023', 'NFPA69_2019'): cite(k)
 A = list(csv.DictReader(open('docs-authority/hazop_actions.csv'))); I = list(csv.DictReader(open('docs-authority/inventory/INSTRUMENT_INDEX.csv')))
 tags = collections.defaultdict(dict)
-for r in I: tags[r['unit']].setdefault(r['tag'].split('-')[-2], r['tag'])
+for r in I:
+    if int(r['tag'].split('-')[-1]) < 90: tags[r['unit']].setdefault(r['tag'].split('-')[-2], r['tag'])
+ALL = {r['tag'] for r in I}
 S = []
 def sif(unit, init, cause, effect, final, sil, src):
     S.append(dict(id=f'SIF-{len(S)+1:03d}', unit=unit, initiator=init, cause=cause, effect=effect, final_element=final, SIL=sil, voting='1oo2' if sil == 2 else '1oo1', source=src))
@@ -29,6 +31,10 @@ sif('CRYO_H2 area', 'H2 gas detectors 2oo3', 'H2 at 25 % LFL', 'trip H2O_ELYZ an
 sif('CRYO_H2 / CRYO_O2', 'UV/IR flame detectors 2oo2', 'flame at a receiver', 'water spray on, depressuring valves open (API 521 5.20)', 'deluge valve, depressuring valves fail open', 2, 'AQS-SAF-005')
 sif('CRYO_O2 area', 'O2 detectors 2oo3', 'O2 above 23.5 %', 'close O2 bank and IA-ELY-O2 isolation, ventilation to high', 'ESD valves fail closed', 1, 'AQS-SAF-005')
 sif('ZNBR2', 'H2 detectors in the headspace 1oo2', 'H2 at 25 % LFL in the purge', 'stop charging, purge fan to high', 'charge contactor', 1, 'NFPA 855, NFPA 69, ess_tf purge basis')
+bad = [s['initiator'].split()[0] for s in S if s['initiator'].split()[0].count('-') >= 2 and s['initiator'].split()[0] not in ALL and 'TE-90' not in s['initiator']]
+assert not bad, f'SIF initiators missing from AQS-CTL-001: {bad[:5]}'
+miss90 = [s['unit'] for s in S if 'TE-90' in s['initiator'] and f"{s['unit']}-TE-90" not in ALL]
+if miss90: print('note: TE-90 not yet in index (first pass):', len(miss90))
 closed = {s['source']: s['id'] for s in S}
 for a in A:
     if a['action_id'] in closed: a['status'] = f"closed by {closed[a['action_id']]} (AQS-CTL-003)"

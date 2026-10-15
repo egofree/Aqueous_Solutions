@@ -18,7 +18,7 @@ rows = []; cnt = collections.Counter(); flags = []
 for r in csv.DictReader(open('docs-authority/inventory/OTHER_INVENTORY.csv')):
     if r['category'] != 'instrument': continue
     if r['item'].startswith('gas detector'): continue          # gas detectors are listed in AQS-SAF-006, wired to the fire panel and SIS
-    u = r['unit']; n = N.get(u) or {}; p = n.get('params') or {}; L = LET[r['item']]; cnt[(u, L)] += 1; tag = f'{u}-{L}-{cnt[(u, L)]:02d}'
+    u = r['unit']; n = N.get(u) or {}; p = n.get('params') or {}; L = LET[r['item']]; cnt[(u, L, 'SIF' in r['item'])] += 1; tag = f"{u}-{L}-{(89 if 'SIF' in r['item'] else 0) + cnt[(u, L, 'SIF' in r['item'])]:02d}"   # SIF elements numbered 90+ (AQS-CTL-003)
     sig = '24 V DC discrete (DI)' if L == 'LSH' else '4-20 mA HART (AI)'
     if L == 'FT':
         sid = r['basis'].split(':')[0].strip(); e = E.get(sid) or {}; q = (e.get('rate') or {}).get('value') or 0
