@@ -2688,5 +2688,25 @@
     "verification": "diameters 600/600/200/800 mm, beds 2.3 m, loads 1.11/1.11/0.04/2.12 kW (ALK placeholder 0.4 kW, others 0)",
     "replace_when": "flooding and absorption test on a 200 mm column of the in-house packing",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-165",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Heat-ladder line losses",
+    "statement": "Insulated heat-ladder line losses from AQS-THM-003 carried on the graph: lines in flow lose continuously to HEAT_SINK (HLL- edges); normally-off same-tier ties lose only while running and are covered by duty_source_rated_kw = rated + loss; the 10 % loss target is relaxed for the 12 small loops where it is set by duty, not insulation",
+    "verification": "2.83 kW continuous line loss to HEAT_SINK",
+    "replace_when": "loop source checks under X-THM-01; surface temperature survey at commissioning",
+    "doc": "AQS-PAR-003"
   }
 ]

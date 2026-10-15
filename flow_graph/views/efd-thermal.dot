@@ -35,6 +35,7 @@ digraph G {
     "GEO_HP" [fillcolor="#ffffff", label="GEO_HP"];
     "GEO_HP_CLOSED_LOOP" [fillcolor="#ffffff", label="GEO_HP_CLOSED_LOOP"];
     "GEO_ORC" [fillcolor="#ffffff", label="GEO_ORC"];
+    "HEAT_SINK" [fillcolor="#ffffff", label="HEAT_SINK"];
   }
   subgraph "cluster_GLASS" {
     label="GLASS";
@@ -138,4 +139,18 @@ digraph G {
   "Q2_B" -> "BOUNDARY_EXPORT" [label="IA-Q2B-LOSS\\n0.17 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-03-TRIM\\n0.78 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-04-TRIM\\n1.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.3611 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.4139 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-A\\n0.1313 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-B\\n0.3229 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_A" -> "HEAT_SINK" [label="HLL-Q1-A-DOWN\\n0.141 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_B" -> "HEAT_SINK" [label="HLL-Q1-B-DOWN\\n0.141 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_A" -> "HEAT_SINK" [label="HLL-Q2-A-DOWN\\n0.1266 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_B" -> "HEAT_SINK" [label="HLL-Q2-B-DOWN\\n0.1266 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "HEAT_SINK" [label="HLL-Q3-A-HX4\\n0.0546 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "HEAT_SINK" [label="HLL-Q3-A-HX6\\n0.1632 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "HEAT_SINK" [label="HLL-Q3-B-HX4\\n0.1108 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "HEAT_SINK" [label="HLL-Q3-B-HX6\\n0.2058 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_A" -> "HEAT_SINK" [label="HLL-Q4-A-BUS\\n0.2765 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_B" -> "HEAT_SINK" [label="HLL-Q4-B-BUS\\n0.2529 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
 }

@@ -4,7 +4,7 @@
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "BH",
   "node_count": 206,
-  "edge_count": 856,
+  "edge_count": 870,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -5533,12 +5533,12 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2817,
+          "pump_in_m3_h": 1.3085,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.563,
+          "out_breathing_Nm3_h": 2.617,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 7.3,
+          "vent_bore_req_mm": 7.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
@@ -5589,9 +5589,9 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 1.2733,
+          "pump_out_m3_h": 1.3,
           "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 1.273,
+          "in_breathing_Nm3_h": 1.3,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.2,
           "vent_DN": 25,
@@ -9727,9 +9727,9 @@
           "thermal_term": "envelope volume"
         },
         "redundancy": {
-          "rejection_kW": 166.51,
+          "rejection_kW": 169.34,
           "modules": 3,
-          "module_kW": 83.26,
+          "module_kW": 84.67,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }
@@ -11214,7 +11214,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.117,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 361.1,
+        "line_loss_normal_W": 361.1,
+        "duty_source_rated_kw": 1.7441,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11258,7 +11262,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.117,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 413.9,
+        "line_loss_normal_W": 413.9,
+        "duty_source_rated_kw": 1.7969,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11302,7 +11310,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.085,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 131.3,
+        "line_loss_normal_W": 131.3,
+        "duty_source_rated_kw": 1.0593,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11346,7 +11358,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.085,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 322.9,
+        "line_loss_normal_W": 322.9,
+        "duty_source_rated_kw": 1.2509,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11502,7 +11518,11 @@
         "store_z_mm": {
           "src": -6000,
           "dst": -5150
-        }
+        },
+        "line_loss_W": 141.0,
+        "line_loss_normal_W": 141.0,
+        "duty_source_rated_kw": 1.274,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11568,7 +11588,11 @@
         "store_z_mm": {
           "src": -6000,
           "dst": -5150
-        }
+        },
+        "line_loss_W": 141.0,
+        "line_loss_normal_W": 141.0,
+        "duty_source_rated_kw": 1.274,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11627,7 +11651,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 2.101,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 705.2,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0882,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11686,7 +11714,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 2.101,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 705.2,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0882,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11752,7 +11784,11 @@
         "store_z_mm": {
           "src": -5150,
           "dst": -4250
-        }
+        },
+        "line_loss_W": 126.6,
+        "line_loss_normal_W": 126.6,
+        "duty_source_rated_kw": 2.0146,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11818,7 +11854,11 @@
         "store_z_mm": {
           "src": -5150,
           "dst": -4250
-        }
+        },
+        "line_loss_W": 126.6,
+        "line_loss_normal_W": 126.6,
+        "duty_source_rated_kw": 2.0146,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11877,7 +11917,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 3.1386,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 334.1,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.3611,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -11936,7 +11980,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 3.1386,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 334.1,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.3611,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12003,7 +12051,11 @@
         "store_z_mm": {
           "src": -4250,
           "dst": -3350
-        }
+        },
+        "line_loss_W": 60.9,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.6749,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12070,7 +12122,11 @@
         "store_z_mm": {
           "src": -4250,
           "dst": -3350
-        }
+        },
+        "line_loss_W": 60.9,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.6749,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12116,7 +12172,11 @@
         "thermal_relief_L_h": 0.1344,
         "exchanger": "HX-4",
         "trim_normal_kw_per_ladder": 0.0,
-        "trim_single_kw": 0.0
+        "trim_single_kw": 0.0,
+        "line_loss_W": 54.6,
+        "line_loss_normal_W": 54.6,
+        "duty_source_rated_kw": 0.3566,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12162,7 +12222,11 @@
         "thermal_relief_L_h": 3.5294,
         "exchanger": "HX-5",
         "trim_normal_kw_per_ladder": 3.176,
-        "trim_single_kw": 6.353
+        "trim_single_kw": 6.353,
+        "line_loss_W": 242.2,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 8.1832,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12208,7 +12272,11 @@
         "thermal_relief_L_h": 0.9239,
         "exchanger": "HX-6",
         "trim_normal_kw_per_ladder": 0.542,
-        "trim_single_kw": 0.614
+        "trim_single_kw": 0.614,
+        "line_loss_W": 163.2,
+        "line_loss_normal_W": 163.2,
+        "duty_source_rated_kw": 2.2422,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12254,7 +12322,11 @@
         "thermal_relief_L_h": 0.1344,
         "exchanger": "HX-4",
         "trim_normal_kw_per_ladder": 0.0,
-        "trim_single_kw": 0.0
+        "trim_single_kw": 0.0,
+        "line_loss_W": 110.8,
+        "line_loss_normal_W": 110.8,
+        "duty_source_rated_kw": 0.4128,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12300,7 +12372,11 @@
         "thermal_relief_L_h": 3.5294,
         "exchanger": "HX-5",
         "trim_normal_kw_per_ladder": 3.176,
-        "trim_single_kw": 6.353
+        "trim_single_kw": 6.353,
+        "line_loss_W": 737.5,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 8.6785,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12346,7 +12422,11 @@
         "thermal_relief_L_h": 0.9239,
         "exchanger": "HX-6",
         "trim_normal_kw_per_ladder": 0.542,
-        "trim_single_kw": 0.614
+        "trim_single_kw": 0.614,
+        "line_loss_W": 205.8,
+        "line_loss_normal_W": 205.8,
+        "duty_source_rated_kw": 2.2848,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12405,7 +12485,11 @@
         "P_loop_bar_a": 2.5,
         "thermal_relief_L_h": 1.1393,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 178.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0098,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12464,7 +12548,11 @@
         "P_loop_bar_a": 2.5,
         "thermal_relief_L_h": 1.1393,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 178.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0098,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12507,7 +12595,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.341,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 276.5,
+        "line_loss_normal_W": 276.5,
+        "duty_source_rated_kw": 5.7865,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12550,7 +12642,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.341,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 252.9,
+        "line_loss_normal_W": 252.9,
+        "duty_source_rated_kw": 5.7629,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12609,7 +12705,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 0.7564,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 146.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.7118,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -12668,7 +12768,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 0.7564,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 146.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.7118,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -38155,6 +38259,370 @@
       },
       "from_sector_id": "MFG",
       "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-AFTERBURNER-Q1-A",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-AFTERBURNER-Q1-A to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3611,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 29.31 W/m x 12.32 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-AFTERBURNER-Q1-B",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-AFTERBURNER-Q1-B to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.4139,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 29.31 W/m x 14.12 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-GLASS_BURNOUT-Q2-A",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-GLASS_BURNOUT-Q2-A to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1313,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 14.09 W/m x 9.32 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-GLASS_BURNOUT-Q2-B",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-GLASS_BURNOUT-Q2-B to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3229,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 14.09 W/m x 22.92 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q1-A-DOWN",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q1-A-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.141,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 24.73 W/m x 5.7 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q1-B-DOWN",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q1-B-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.141,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 24.73 W/m x 5.7 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q2-A-DOWN",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q2-A-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1266,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 32.04 W/m x 3.95 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q2-B-DOWN",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q2-B-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1266,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 32.04 W/m x 3.95 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-A-HX4",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-A-HX4 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0546,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 7.21 W/m x 7.57 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-A-HX6",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-A-HX6 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1632,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 21.56 W/m x 7.57 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-B-HX4",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-B-HX4 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1108,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 7.21 W/m x 15.37 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-B-HX6",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-B-HX6 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2058,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 13.39 W/m x 15.37 m at 38 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q4-A-BUS",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q4-A-BUS to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2765,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 11.81 W/m x 23.42 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q4-B-BUS",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q4-B-BUS to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2529,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 11.81 W/m x 21.42 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],

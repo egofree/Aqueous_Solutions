@@ -1152,4 +1152,18 @@ digraph G {
   "NOX_SCRUB" -> "HEAT_SINK" [label="SQ-NOX_SCRUB\\n0.0385 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "SOL_ARK_60K" -> "MET_SCRUB" [label="SF-MET_SCRUB\\n2.1234 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MET_SCRUB" -> "HEAT_SINK" [label="SQ-MET_SCRUB\\n2.1234 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-A\\n0.3611 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "AFTERBURNER" -> "HEAT_SINK" [label="HLL-AFTERBURNER-Q1-B\\n0.4139 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-A\\n0.1313 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GLASS_BURNOUT" -> "HEAT_SINK" [label="HLL-GLASS_BURNOUT-Q2-B\\n0.3229 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_A" -> "HEAT_SINK" [label="HLL-Q1-A-DOWN\\n0.141 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q1_B" -> "HEAT_SINK" [label="HLL-Q1-B-DOWN\\n0.141 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_A" -> "HEAT_SINK" [label="HLL-Q2-A-DOWN\\n0.1266 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q2_B" -> "HEAT_SINK" [label="HLL-Q2-B-DOWN\\n0.1266 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "HEAT_SINK" [label="HLL-Q3-A-HX4\\n0.0546 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_A" -> "HEAT_SINK" [label="HLL-Q3-A-HX6\\n0.1632 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "HEAT_SINK" [label="HLL-Q3-B-HX4\\n0.1108 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q3_B" -> "HEAT_SINK" [label="HLL-Q3-B-HX6\\n0.2058 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_A" -> "HEAT_SINK" [label="HLL-Q4-A-BUS\\n0.2765 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_B" -> "HEAT_SINK" [label="HLL-Q4-B-BUS\\n0.2529 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
 }

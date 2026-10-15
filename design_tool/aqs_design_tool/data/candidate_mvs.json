@@ -205,7 +205,7 @@
           "basis": "daily-average design day; off-graph terms",
           "terms": []
         },
-        "duty": "In 37537.197 kg/d, out 37537.197 kg/d, 0.000 kW. Sheet docs-authority/duties/ACID_POLISH_SCRUB.md.",
+        "duty": "In 37537.197 kg/d, out 37537.197 kg/d, 1.112 kW. Sheet docs-authority/duties/ACID_POLISH_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -409,7 +409,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "duty": "In 37509.855 kg/d, out 37509.855 kg/d, 0.400 kW. Sheet docs-authority/duties/ALK_SCRUBBER.md.",
+        "duty": "In 37509.855 kg/d, out 37509.855 kg/d, 1.112 kW. Sheet docs-authority/duties/ALK_SCRUBBER.md.",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3949,7 +3949,7 @@
           "basis": "daily-average design day; off-graph terms",
           "terms": []
         },
-        "duty": "In 71606.460 kg/d, out 71606.460 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_SCRUB.md.",
+        "duty": "In 71606.460 kg/d, out 71606.460 kg/d, 2.123 kW. Sheet docs-authority/duties/MET_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -4159,7 +4159,7 @@
         ],
         "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)",
         "size_doc": "MVS_EQUIPMENT Rev K",
-        "duty": "In 461.829 kg/d, out 461.829 kg/d, 0.000 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "duty": "In 461.829 kg/d, out 461.829 kg/d, 0.038 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -4615,7 +4615,7 @@
         "module_kw": 0.5,
         "count": 8608,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.042 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.433 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5580,7 +5580,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1281.748 kg/d, out 1281.748 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1308.513 kg/d, out 1308.513 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -5590,12 +5590,12 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2817,
+          "pump_in_m3_h": 1.3085,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.563,
+          "out_breathing_Nm3_h": 2.617,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 7.3,
+          "vent_bore_req_mm": 7.4,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
@@ -5641,7 +5641,7 @@
             }
           ]
         },
-        "duty": "In 1273.261 kg/d, out 1273.261 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1300.026 kg/d, out 1300.026 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -5652,9 +5652,9 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 1.2733,
+          "pump_out_m3_h": 1.3,
           "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 1.273,
+          "in_breathing_Nm3_h": 1.3,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 5.2,
           "vent_DN": 25,
@@ -9728,9 +9728,9 @@
           "thermal_term": "envelope volume"
         },
         "redundancy": {
-          "rejection_kW": 166.51,
+          "rejection_kW": 169.34,
           "modules": 3,
-          "module_kW": 83.26,
+          "module_kW": 84.67,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       },
@@ -25409,6 +25409,244 @@
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
+    },
+    {
+      "stream_id": "HLL-AFTERBURNER-Q1-A",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-AFTERBURNER-Q1-A to the hall air",
+      "rate": {
+        "value": 0.3611,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 29.31 W/m x 12.32 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-AFTERBURNER-Q1-B",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-AFTERBURNER-Q1-B to the hall air",
+      "rate": {
+        "value": 0.4139,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 29.31 W/m x 14.12 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-GLASS_BURNOUT-Q2-A",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-GLASS_BURNOUT-Q2-A to the hall air",
+      "rate": {
+        "value": 0.1313,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 14.09 W/m x 9.32 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-GLASS_BURNOUT-Q2-B",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-GLASS_BURNOUT-Q2-B to the hall air",
+      "rate": {
+        "value": 0.3229,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 14.09 W/m x 22.92 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q1-A-DOWN",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q1-A-DOWN to the hall air",
+      "rate": {
+        "value": 0.141,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 24.73 W/m x 5.7 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q1-B-DOWN",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q1-B-DOWN to the hall air",
+      "rate": {
+        "value": 0.141,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 24.73 W/m x 5.7 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q2-A-DOWN",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q2-A-DOWN to the hall air",
+      "rate": {
+        "value": 0.1266,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 32.04 W/m x 3.95 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q2-B-DOWN",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q2-B-DOWN to the hall air",
+      "rate": {
+        "value": 0.1266,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 32.04 W/m x 3.95 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q3-A-HX4",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q3-A-HX4 to the hall air",
+      "rate": {
+        "value": 0.0546,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 7.21 W/m x 7.57 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q3-A-HX6",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q3-A-HX6 to the hall air",
+      "rate": {
+        "value": 0.1632,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 21.56 W/m x 7.57 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q3-B-HX4",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q3-B-HX4 to the hall air",
+      "rate": {
+        "value": 0.1108,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 7.21 W/m x 15.37 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q3-B-HX6",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q3-B-HX6 to the hall air",
+      "rate": {
+        "value": 0.2058,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 13.39 W/m x 15.37 m at 38 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q4-A-BUS",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q4-A-BUS to the hall air",
+      "rate": {
+        "value": 0.2765,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 11.81 W/m x 23.42 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "HLL-Q4-B-BUS",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "insulated line loss of HL-Q4-B-BUS to the hall air",
+      "rate": {
+        "value": 0.2529,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 11.81 W/m x 21.42 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "note": "layers=thermal"
     }
   ],
   "electrical": {

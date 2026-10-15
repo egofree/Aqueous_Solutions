@@ -89,3 +89,9 @@ Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most 10 %
 | IA-EVAP_BASE-COND | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 6.71 | 49.6 |  |
 | S68 | line | 15 | 10.0 | cold, anti-condensation | flexible elastomeric (ASTM C534), vapour-sealed | 13 | 22.4 | -3.9 | 24.64 | -96.1 |  |
 | IA-HVAC-COND | line | 15 | 10.0 | cold, anti-condensation | flexible elastomeric (ASTM C534), vapour-sealed | 13 | 22.4 | -3.9 | 26.36 | -102.8 |  |
+
+## Heat-ladder line losses (X-THM-04, A-M-165)
+
+All 26 heat-ladder lines carry their loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK (2.828 kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their 3831 W is covered by the rated source duty. Total if every line ran: 6.660 kW.
+
+Why the 10 % target is not met on 12 lines, and why that is accepted: the loops are 0.3-2 kW at 95-250 C on DN15-25 over 12-29 m; above about 150 C mineral wool at 200 mm still loses 14-29 W/m (k rises with temperature, ASTM_C547), so the fraction is set by the small duty, not by the insulation. Moving the batteries next to their sources would trade these runs for the same length on the user side, since each store serves several users across the hall (AQS-HEAT-LADDER-001). The absolute loss is small against the 146.5 kW HEAT_SINK and is now carried in the ladder duties; the loop sources are checked against duty_source_rated_kw under X-THM-01.

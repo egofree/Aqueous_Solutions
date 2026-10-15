@@ -54,6 +54,26 @@ def main():
           f"Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most {LOSS_FRAC*100:.0f} % of the rated loop duty. {sum(1 for x in rows if not x['meets_limit'])} lines cannot meet it even at {THK[-1]} mm: their loss fraction is listed and carried to X-THM-01 (heat ladder duty balance).", '',
           '| Item | Kind | DN/D mm | T C | Duty | Material | Thickness mm | Surface C | Loss W/m | Length m | Loss W | Loss / duty |', '|---|---|---|---|---|---|---|---|---|---|---|---|']
     md += [f"| {x['item']} | {x['kind']} | {x['DN']} | {x['T_C']} | {x['duty']} | {x['material']} | {x['thk_mm']} | {x['surface_C']} | {x['loss_W_m']} | {x['length_m']} | {x['loss_W']} | {x['loss_frac_of_duty']}{'' if x['meets_limit'] else ' (limit not met)'} |" for x in sorted(rows, key=lambda x: -x['T_C'])]
+    # X-THM-04 (A-M-165): heat-ladder line losses on the graph. A line in flow loses q x L continuously; a normally-off tie (duty_normal 0)
+    # is stagnant in normal operation and loses only while it runs (single-ladder case). Each HL line gets its loss in params and the rated
+    # duty its source must cover (rated + loss); the normal loss goes to HEAT_SINK on a thermal edge HLL-<line> from the source unit.
+    hl = [x for x in rows if x['item'].startswith('HL-') and x['kind'] == 'line']; N = {n['unit_id'] for n in g['nodes']}
+    g['edges'] = [e for e in g['edges'] if not e['stream_id'].startswith('HLL-')]
+    tot_n = tot_r = 0.0
+    for x in hl:
+        e = E[x['item']]; p = e['params']; on = (p.get('duty_normal_kw') or 0) > 0
+        p['line_loss_W'] = x['loss_W']; p['line_loss_normal_W'] = x['loss_W'] if on else 0.0
+        p['duty_source_rated_kw'] = round(p['duty_rated_kw'] + x['loss_W']/1000, 4); p['line_loss_basis'] = 'X-THM-04 (AQS-THM-003, A-M-165)'
+        tot_r += x['loss_W']; tot_n += p['line_loss_normal_W']
+        if on and 'HEAT_SINK' in N:
+            g['edges'].append({'stream_id': 'HLL-' + x['item'][3:], 'from_unit_id': e['from_unit_id'], 'to_unit_id': 'HEAT_SINK', 'phase': 'E', 'layers': ['thermal'], 'presence': 'present',
+                               'carries': f"insulated line loss of {x['item']} to the hall air", 'header': 'tray', 'forbidden': 'HDR_O2, HDR_CO2', 'claim_status': 'Claimed / Partial',
+                               'rate': {'value': round(x['loss_W']/1000, 4), 'unit': 'kW', 'status': 'study', 'note': f"X-THM-04: {x['loss_W_m']} W/m x {x['length_m']} m at {x['thk_mm']} mm (AQS-THM-003, A-M-165)."},
+                               'from_sector_id': e.get('from_sector_id'), 'to_sector_id': None, 'open_boundary': False, 'namespace': 'S', 'gap_flags': [], 'notes': None})
+    if '--graph' in sys.argv: open(os.path.join(R, 'flow_graph/plant_flow_graph.json'), 'w').write(json.dumps(g, indent=2))
+    md += ['', '## Heat-ladder line losses (X-THM-04, A-M-165)', '',
+           f"All {len(hl)} heat-ladder lines carry their loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK ({tot_n/1000:.3f} kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their {sum(x['loss_W'] for x in hl if not ((E[x['item']]['params'].get('duty_normal_kw') or 0) > 0)):.0f} W is covered by the rated source duty. Total if every line ran: {tot_r/1000:.3f} kW.",
+           '', "Why the 10 % target is not met on 12 lines, and why that is accepted: the loops are 0.3-2 kW at 95-250 C on DN15-25 over 12-29 m; above about 150 C mineral wool at 200 mm still loses 14-29 W/m (k rises with temperature, ASTM_C547), so the fraction is set by the small duty, not by the insulation. Moving the batteries next to their sources would trade these runs for the same length on the user side, since each store serves several users across the hall (AQS-HEAT-LADDER-001). The absolute loss is small against the 146.5 kW HEAT_SINK and is now carried in the ladder duties; the loop sources are checked against duty_source_rated_kw under X-THM-01."]
     open(os.path.join(R, 'docs-authority/INSULATION_SCHEDULE.md'), 'w').write('\n'.join(md) + '\n')
     print(len(rows), 'items', len(hot), 'hot', len(cold), 'cold', round(TDEW, 1))
 if __name__ == '__main__': main()
