@@ -1206,5 +1206,29 @@
   "value": 2.96,
   "units": "-",
   "ref": "ASHRAE901_2022"
+ },
+ "api2000_Y": {
+  "value": 0.32,
+  "units": "-",
+  "ref": "API2000_2020"
+ },
+ "api2000_C": {
+  "value": 6.5,
+  "units": "-",
+  "ref": "API2000_2020"
+ },
+ "vent_transfer_h": {
+  "value": 1.0,
+  "units": "h",
+  "register": "A-M-155",
+  "needs_verification": true,
+  "verification_test": "see A-M-155"
+ },
+ "vent_dP_Pa": {
+  "value": 500.0,
+  "units": "Pa",
+  "register": "A-M-155",
+  "needs_verification": true,
+  "verification_test": "see A-M-155"
  }
 }

@@ -193,5 +193,33 @@ def relief():
     open(GP, 'w').write(json.dumps(g, indent=2))
     print(f'API 520 sized {n_api}; atmospheric marked {n_atm}')
 
+def vent():
+    """X-PAR-03: API 2000 normal venting for every atmospheric node (relief_basis case 'atmospheric'), A-M-155. Pump-in/out = the node's
+    daily liquid in/out volume moved in a TRANSFER_H window; thermal term on the envelope volume where one is sized; vent bore at the
+    allowed open-vent dP = min(VENT_DP_PA, 25 % of design_kPa); DN 25 minimum."""
+    from .sizing import vent as VT
+    from .refs import cite
+    from . import drivers as DV
+    D = DV.load(); Y, C, TH, DPA = (D[k]['value'] for k in ('api2000_Y', 'api2000_C', 'vent_transfer_h', 'vent_dP_Pa'))
+    DNS = (25, 32, 40, 50, 65, 80, 100, 125, 150, 200, 250, 300)
+    g = json.load(open(GP)); n = 0; nv = 0
+    liq = lambda e: e['presence'] == 'present' and e.get('phase') == 'L' and (e['rate'] or {}).get('unit') == 'kg/d'
+    for u in g['nodes']:
+        p = u.get('params') or {}; rb = p.get('relief_basis')
+        if not (isinstance(rb, dict) and rb.get('case') == 'atmospheric'): continue
+        sz = (p.get('sizing') or {}).get('size_mm') or p.get('size_mm')
+        V = sz[0]*sz[1]*sz[2]*1e-9 if sz and len(sz) >= 3 else 0.0; nv += bool(V)
+        qi = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == u['unit_id'] and liq(e))/1000/TH
+        qo = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == u['unit_id'] and liq(e))/1000/TH
+        vo = VT.out_breathing_Nm3_h(V, qi, Y); vi = VT.in_breathing_Nm3_h(V, qo, C)
+        dp = min(DPA, 0.25*(p.get('design_kPa') or 2)*1000); bore = VT.open_vent_bore_mm(max(vo, vi), dp)
+        rb.update(method=f"API 2000 normal venting ({cite('API2000_2020')}), flow_graph/param/sizing/vent.py, A-M-155",
+                  V_tk_m3=round(V, 3), pump_in_m3_h=round(qi, 4), pump_out_m3_h=round(qo, 4), out_breathing_Nm3_h=round(vo, 3),
+                  in_breathing_Nm3_h=round(vi, 3), vent_dP_Pa=round(dp), vent_bore_req_mm=round(bore, 1), vent_DN=next(d for d in DNS if d >= bore),
+                  thermal_term='envelope volume' if V else 'no sized volume: pump terms only')
+        n += 1
+    open(GP, 'w').write(json.dumps(g, indent=2))
+    print(f'API 2000 vents sized {n} ({nv} with a volume)')
+
 if __name__ == '__main__':
-    {'process': process, 'power': power, 'relief': relief}[sys.argv[1] if len(sys.argv) > 1 else 'process']()
+    {'process': process, 'power': power, 'relief': relief, 'vent': vent}[sys.argv[1] if len(sys.argv) > 1 else 'process']()
