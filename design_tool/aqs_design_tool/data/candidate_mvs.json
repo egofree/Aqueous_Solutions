@@ -2145,15 +2145,42 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "design": {
+          "X": 0.1267,
+          "delta_um": 2.2071,
+          "t_kin_h": 8.69,
+          "tau_h": 26.0699,
+          "V_work_L": 46.2043,
+          "V_L": 61.6057,
+          "D_mm": 450,
+          "H_mm": 390,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 150,
+            "rpm": 318,
+            "shaft_W": 18.719748052457465,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          750,
+          750,
+          890
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "Study digest duty class"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). agitator motor"
       }
     },
     {
@@ -3432,11 +3459,35 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "design": {
+          "T_C": 500.0,
+          "tau_h": 1.0,
+          "V_work_L": 1.6865,
+          "V_L": 3.373,
+          "D_mm": 200,
+          "H_mm": 170,
+          "wall_mm": 4.5,
+          "Q_process_kW": 0.9905,
+          "kW": 1.415,
+          "material": "ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters",
+          "relief": "vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)"
+        },
+        "size_mm": [
+          500,
+          500,
+          670
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 1.415,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). retort heat 0.991 kW / heater efficiency"
+      }
     },
     {
       "unit_id": "POLISH_BANK",
@@ -3574,14 +3625,14 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6788,
+        "count": 6778,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 3394,
-        "area_m2": 29784,
+        "nameplate_kw": 3389,
+        "area_m2": 29740,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -3591,19 +3642,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            186000,
-            174000
+            234000,
+            138000
           ],
           "bays": [
-            31,
-            29
+            39,
+            23
           ],
-          "footprint_m2": 32364.0,
-          "extension_m2": 31932.0,
-          "roof_capacity_kWp": 3395.4,
+          "footprint_m2": 32292.0,
+          "extension_m2": 31860.0,
+          "roof_capacity_kWp": 3390.3,
           "perimeter_pathway_mm": 1829,
-          "arrays": 16,
-          "extension_load_kW": 91.34,
+          "arrays": 15,
+          "extension_load_kW": 91.37,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -3611,7 +3662,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 1697
+        "balance_kWp": 1695
       },
       "modules": [],
       "electrical_role": "generation",
@@ -3840,8 +3891,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2635.2,
-          "export_kWh_d_clear": 7344,
+          "export_peak_kW": 2635.6,
+          "export_kWh_d_clear": 7333,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -4302,8 +4353,8 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 1113,
-        "kWh": 3428,
+        "kW": 1112,
+        "kWh": 3423,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -4347,10 +4398,10 @@
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
         },
-        "charge_kW": 1113,
+        "charge_kW": 1112,
         "discharge_kW": 245,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 48 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
+        "distribution": "distributed over the 48 hybrid inverters, 71.3 kWh and 23.2 kW charge each (AQS-ELEC-008)"
       },
       "modules": [],
       "electrical_role": "storage",
@@ -5655,15 +5706,34 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
-        }
+        },
+        "design": {
+          "srt_d": 20.0,
+          "V_work_L": 22.9646,
+          "V_L": 28.7057,
+          "D_mm": 350,
+          "H_mm": 300,
+          "wall_mm": 4.0,
+          "T_C": 35,
+          "heat_W": 4.7504,
+          "mixer": "biogas recirculation through the base (no shaft seal)",
+          "material": "HDPE (PE100) shell, 50 mm PIR insulation (U about 0.5 W/(m2 K))",
+          "kW": 0.025
+        },
+        "size_mm": [
+          650,
+          650,
+          800
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.4,
+        "value": 0.025,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). heating and mixing"
       }
     },
     {
@@ -7933,10 +8003,10 @@
           "T_K": 405.3,
           "M_kg_kmol": 18.02,
           "k": 1.33,
-          "A_req_mm2": 34.0,
+          "A_req_mm2": 34.01,
           "orifice": "API 526 D (71 mm2)",
           "adequate": true,
-          "computed_by": "flow_graph/param/evap_design.py (ISO23251; API520)",
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
             "W_kg_h": 43.25,
@@ -7947,7 +8017,8 @@
             "A_req_mm2": 16.642,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
-          }
+          },
+          "bore_req_mm": 6.58
         },
         "design_kPa": 100.0
       },
@@ -8022,7 +8093,7 @@
           "A_req_mm2": 33.98,
           "orifice": "API 526 D (71 mm2)",
           "adequate": true,
-          "computed_by": "flow_graph/param/evap_design.py (ISO23251; API520)",
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
             "W_kg_h": 39.96,
@@ -8033,7 +8104,8 @@
             "A_req_mm2": 15.376,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
-          }
+          },
+          "bore_req_mm": 6.58
         },
         "design_kPa": 100.0
       },
@@ -8053,36 +8125,36 @@
       "class": "building",
       "tags": [],
       "params": {
-        "footprint_m2": 31932.0,
+        "footprint_m2": 31860.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 91.340 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 91.365 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "hvac": {
-          "light_kW": 28.1,
-          "vent_kW": 39.827,
-          "envelope_kW": 23.412,
-          "total_kW": 91.339,
-          "vent_L_s": 9579.6,
-          "Qh_kW": 55.41,
-          "Qc_kW": 111.006,
-          "slab_kW": 3.147,
-          "gains_kW": 40.075,
+          "light_kW": 28.037,
+          "vent_kW": 39.737,
+          "envelope_kW": 23.591,
+          "total_kW": 91.365,
+          "vent_L_s": 9558.0,
+          "Qh_kW": 55.681,
+          "Qc_kW": 111.115,
+          "slab_kW": 3.252,
+          "gains_kW": 39.984,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 492.467,
-          "peak_c_kW": 438.524
+          "peak_h_kW": 494.024,
+          "peak_c_kW": 439.152
         }
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 91.3395,
+        "value": 91.3652,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 31932 m2; lighting 28.10 kW (IECC 2021 C405, 10 % lit), ventilation 39.83 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.41 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.4 kW and cooling 111.0 kW thermal average after internal gains 40.1 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 39.74 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.59 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.7 kW and cooling 111.1 kW thermal average after internal gains 40.0 kW and slab edge 3.25 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       }
     },
     {
@@ -11034,7 +11106,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 234.1518,
+        "value": 234.1775,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -17817,10 +17889,10 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "GLASS",
@@ -17834,10 +17906,10 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "GEO",
@@ -18293,10 +18365,10 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.4,
+        "value": 0.025,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FARM",
@@ -18310,10 +18382,10 @@
       "phase": "E",
       "carries": "electrical input leaving as heat",
       "rate": {
-        "value": 0.4,
+        "value": 0.025,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Electrical input ends as heat (study)."
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "GEO",
@@ -20945,7 +21017,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 91.3395,
+        "value": 91.3652,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -21053,6 +21125,40 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat."
       },
       "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "SF-OIL_PYRO",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "OIL_PYRO",
+      "phase": "E",
+      "carries": "480 V AC",
+      "rate": {
+        "value": 1.415,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "SQ-OIL_PYRO",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 1.415,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062)."
+      },
+      "from_sector_id": "OIL",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
