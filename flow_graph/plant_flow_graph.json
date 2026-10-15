@@ -8829,7 +8829,7 @@
         "rate_basis": "BMED 12.0 kWh/d / 2.1 kWh/kg pair = 5.71 kg/d = 74.7 mol/d HCl as 2 M",
         "rate_source": "ELECTRICAL BMED 80 kWh/t, 1.8-2.4 kWh/kg",
         "medium": "HCl 2 M acid loop",
-        "conditions": "ambient",
+        "conditions": "85.0 C at the LEACH_CSTR_1 draw (X-MAT-19); was labelled ambient",
         "rate_kind": "derived",
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
@@ -8893,7 +8893,7 @@
         "rate_basis": "74.7 mol/d NaOH as 2 M",
         "rate_source": "ELECTRICAL BMED",
         "medium": "NaOH 2 M base loop",
-        "conditions": "ambient",
+        "conditions": "85.0 C at the LEACH_CSTR_1 draw (X-MAT-19); was labelled ambient",
         "rate_kind": "derived",
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
@@ -16155,22 +16155,11 @@
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "IA",
-      "gap_flags": [],
-      "notes": null,
-      "composition": {
-        "water": 0.9,
-        "HCl": 0.05,
-        "Fe": 0.02,
-        "other_metals": 0.03
-      },
-      "assay_g_L": {
-        "Fe": 20,
-        "Cu": 8,
-        "Ni": 3,
-        "Zn": 4,
-        "Al": 6,
-        "other": 9
-      },
+      "gap_flags": [
+        "composition_undefined",
+        "potable_from_leach_reactor_topology"
+      ],
+      "notes": "Composition removed (stencil). A potable draw from LEACH_CSTR_1 needs a treatment step in the path; topology question for owner. Rate unchanged.",
       "params": {
         "T_C": 40.0,
         "T_basis": "X-MAT-19: after the passive air cooler; inlet 85 C",
@@ -16183,6 +16172,23 @@
           "status": "study",
           "source": "X-MAT-19"
         }
+      },
+      "composition_superseded": {
+        "composition": {
+          "water": 0.9,
+          "HCl": 0.05,
+          "Fe": 0.02,
+          "other_metals": 0.03
+        },
+        "assay_g_L": {
+          "Fe": 20,
+          "Cu": 8,
+          "Ni": 3,
+          "Zn": 4,
+          "Al": 6,
+          "other": 9
+        },
+        "why": "X-MAT-19: leach liquor stencil copied onto a potable makeup edge"
       }
     },
     {

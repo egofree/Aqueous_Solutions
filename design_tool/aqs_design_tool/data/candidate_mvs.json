@@ -10769,7 +10769,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "namespace=IA; layers=mass"
+      "note": "Composition removed (stencil). A potable draw from LEACH_CSTR_1 needs a treatment step in the path; topology question for owner. Rate unchanged.; gap_flags=composition_undefined,potable_from_leach_reactor_topology; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-HTC-01",

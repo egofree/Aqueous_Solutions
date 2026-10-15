@@ -252,7 +252,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-MEAT | ANIMAL_PEN | HABITATION | DN50 | P5 | water | 25.1 | ANIMAL_PEN → HABITATION, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 39.7 | NUTRIENT_DOSE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-FEED-01 | HOPPER | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 9.7 | HOPPER → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-POT-01 | LEACH_CSTR_1 | ROOF_TANK | DN15 | P2 | hot leach liquor | 39.7 | LEACH_CSTR_1 → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-POT-01 | LEACH_CSTR_1 | ROOF_TANK | DN15 | P2 | hot leach liquor | 39.7 | LEACH_CSTR_1 → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-HTC-01 | HTC | COMPOST | DN50 | P5 | water |  | HTC → COMPOST, position missing for HTC | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-COMP-CO2 | COMPOST | HDR_CO2 | DN50 | P1 | aqueous process, default thermoplastic | 45.0 | COMPOST → HDR_CO2, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-SUGAR | LIGNO_PRE | YEAST | DN50 | P5 | water |  | LIGNO_PRE → YEAST, position missing for LIGNO_PRE, YEAST | velocity 1 m/s, ρ 1000; min DN50 |
