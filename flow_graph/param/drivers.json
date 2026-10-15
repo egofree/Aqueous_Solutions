@@ -2260,5 +2260,20 @@
   "value": 150.0,
   "units": "C predicted stage discharge, general service",
   "ref": "API618"
+ },
+ "co2_store_hold_d": {
+  "value": 2.0,
+  "units": "d of CRYO_CO2 inflow held as liquid",
+  "register": "A-M-181"
+ },
+ "co2_liq_rho_kg_m3": {
+  "value": 1032.0,
+  "units": "kg/m3 liquid CO2 at -20 C",
+  "ref": "NIST_WEBBOOK"
+ },
+ "co2_fill": {
+  "value": 0.9,
+  "units": "- maximum liquid fill",
+  "register": "A-M-181"
  }
 }

@@ -10,9 +10,8 @@ Rules from the Section VIII-1 scope (ASME_VIII1_U1): design pressure at or below
 | Class | Units |
 |---|---|
 | Atmospheric | 198 |
-| B31.3 piping component | 5 |
+| B31.3 piping component | 6 |
 | Machine casing (outside Section VIII) | 1 |
-| Section VIII-1 (ID not yet sized) | 1 |
 | not a vessel (no design pressure on the graph) | 7 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 118 atmospheric units have no sized height yet and carry the vapour case only until their unit sizing adds the liquid head. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
@@ -74,7 +73,7 @@ Atmospheric design pressure is set from the actual cases by the vent stage (A-M-
 | CRYO_AHU_COND_CONDENSABLE | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_AR | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_ASU | CRYO | 17.5 |  | 415 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
-| CRYO_CO2 | CRYO | 2200.0 |  |  | Section VIII-1 (ID not yet sized) | 2200 kPa g > 103; size from its unit design |
+| CRYO_CO2 | CRYO | 2200.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm |
 | CRYO_DED_COOL | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |
 | CRYO_H2 | CRYO | 22000.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm |
 | CRYO_HE | CRYO | 2.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g |

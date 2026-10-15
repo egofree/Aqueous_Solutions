@@ -3008,5 +3008,25 @@
     "verification": "5 H2 and 4 CO2 interstage PSVs, all 6 mm bore; CO2 compressor 2 -> 4 stages (225 -> 122 C); CRYO_CO2 2 kPa -> 2200 kPa g design, Section VIII-1 pending its size",
     "replace_when": "Valve set-pressure bench test on the first article",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-181",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "CRYO_CO2 liquid store size",
+    "statement": "CRYO_CO2 holds 2 d of its inflow as liquid at 20 bar, -20 C (1032 kg/m3, NIST_WEBBOOK) at 90 % fill, in the same DN100 Sch 160 316L tubes as the gas receivers",
+    "verification": "84.6 kg, 0.091 m3, 4 tubes x 6.1 m in two halves; ID 87 mm puts it under the Section VIII size limit (B31.3 component)",
+    "replace_when": "Boil-off and hold time on the installed store",
+    "doc": "AQS-PAR-003"
   }
 ]
