@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 2000×1200×1400 mm, 3.36 m³. Flow 5622.7 kg/d is circulation. If the box were full the residence would be 14.34 h. It is not sized as a 20-day tank.
 
-3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. Wall 12 mm, floor 16 mm (AQS-NZ-001). PVDF lid bolts. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles for the Q3 water at 95 °C (AQS-STD-002 section 3.2); the Q3 metal piping ends at a dielectric isolating flange outside the tank. Liquor high-temperature trip 55 °C (assumption). Coil area and liquor temperature are held.
+3. Material. CPVC wetted, per AQS-STD-002 rules M2 and M5: liquor 70–85 °C (graph liquor_T_C 77.5 °C) is above PVC-U 60 °C and inside CPVC 93 °C. No metal wetted part. Wall 12 mm, floor 16 mm (AQS-NZ-001). PVDF lid bolts. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles for the Q3 water at 95 °C (AQS-STD-002 section 3.2); the Q3 metal piping ends at a dielectric isolating flange outside the tank. Liquor high-temperature trip 88 °C (assumption). Wall strength at temperature is held.
 
 4. Nozzles. Origin 600, 5300, -6000 mm. Size 2000 × 1200 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, HL-Q3-A-HX5, inlet, -Y face center, 1600, 5300, -5300 mm. Height 700 mm from the bottom. DN20 from the edge. Rating hose, atmospheric.
@@ -59,6 +59,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. Atmospheric. The vents are IA-CLOSE-1 to NOX_SCRUB and IA-LEACH-FLUE to FLUE_KO. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is `cad/stl/LEACH_CSTR_1.stl`, from `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` (AQS-PLAN-006). PVC-U per AQS-STD-002. Drawings are not made.
+7. Code. Shop. Not stamped. The solid is `cad/stl/LEACH_CSTR_1.stl`, from `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` (AQS-PLAN-006). CPVC per AQS-STD-002 (liquor 70–85 °C). Drawings are not made.
 
 8. Open items. This unit has not been measured. IA-FEED-01 is feedstock-agnostic, checked across the AQS-ASSAY-001 Rev C envelope. Silicate solids at the regolith-like end are 5.5 times the reference and are held. S08 is the cathode split. S16 follows S08. Not a weighed sample. No resize.

@@ -11,7 +11,7 @@ Measurement: metric
 | A | GF Type 546 / 546 Pro article numbers (family only) | 2026-09-27 |
 | B | N1–N12 locked. Vented PVC-C FKM SKUs from GF 546 Pro V ASTM list | 2026-09-27 |
 
-Wall: PVC-U sheet 12 mm, floor 16 mm, per AQS-STD-002 M2 (2026-10-15; was CPVC; the 316L on the duty is withdrawn). Above 60 °C: CPVC. The HX-5 Q3 ports at 95 °C are PVDF per AQS-STD-002 section 3.2.
+Wall: CPVC sheet 12 mm, floor 16 mm, per AQS-STD-002 Rev F (liquor 70–85 °C exceeds PVC-U; the 316L on the duty is withdrawn). The HX-5 Q3 ports at 95 °C are PVDF per AQS-STD-002 section 3.2.
 Not PP, not 316L, not Ti. Cement: Weld-On 724 family on CPVC.
 
 Oxidizer isolation valves are **vented-ball PVC-C FKM** (hypochlorite /

@@ -25,13 +25,13 @@
   }
  },
  "material": {
-  "wetted": "PVC-U",
-  "rule": "AQS-STD-002 Rev A, rules M1 and M2. Acid-regen and leach liquor service: PVC. No metal wetted part.",
+  "wetted": "CPVC",
+  "rule": "AQS-STD-002 Rev F, rules M2 and M5. Leach liquor 70-85 C (GLOSSARY Leach/Salria; AQS-DUTY-008 HX-5 basis 77.5 C) exceeds PVC-U 60 C; CPVC to 93 C [S3]. No metal wetted part.",
   "density_kg_m3": {
-   "value": 1400,
-   "note": "Assumption. Typical PVC-U sheet density, not measured."
+   "value": 1510,
+   "note": "Spears engineering guide, CPVC specific gravity 1.51 [S3]."
   },
-  "temperature_check": "HL-Q3-A/B-HX5 carry Q3 water at supply 95 C, return 85 C (graph). Above PVC-U 60 C and CPVC 93 C. HX-5 ports and coil are PVDF per AQS-STD-002 section 3.2. Liquor temperature not on the graph; trip at 55 C (assumption)."
+  "temperature_check": "Liquor 77.5 C design, 70-85 C band (graph param liquor_T_C). CPVC limit 93 C [S3]; high trip 88 C (assumption). HX-5 coil and ports PVDF for Q3 water at 95 C (AQS-STD-002 3.2). Wall strength at temperature is held under the LEACH_CSTR_1 sizing task."
  },
  "assumptions": {
   "header_zone_mm": {

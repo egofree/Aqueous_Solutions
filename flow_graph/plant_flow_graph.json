@@ -2230,7 +2230,16 @@
           2000,
           1200,
           1400
-        ]
+        ],
+        "liquor_T_C": {
+          "value": 77.5,
+          "band": [
+            70,
+            85
+          ],
+          "status": "study",
+          "source": "GLOSSARY Leach / Salria 70-85 C; AQS-DUTY-008 HX-5 basis at the mid, 77.5 C. Not measured."
+        }
       }
     },
     {

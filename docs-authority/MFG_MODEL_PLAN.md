@@ -131,7 +131,7 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | Seq | Unit | Sector | Class | Tier | Internal on node | Seed origin | `cad/stl` now | Existing source | Route | Acceptance | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | EXPANDER | CRYO | tool | 1 | none | yes | envelope, ~23 f | `models/mfg/EXPANDER/expander.py` | F-MACH | A-core, A-MACH, A-P | M2. Builds, STEP, one closed STL, `cad/stl` replaced. No drawings |
-| 2 | LEACH_CSTR_1 | WET | vessel | 2 | none | yes | envelope, ~23 f | `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` | F-VES | A-core, A-VES | M2. Builds, STEP, one closed STL, `cad/stl` replaced. PVC-U per AQS-STD-002. No drawings |
+| 2 | LEACH_CSTR_1 | WET | vessel | 2 | none | yes | envelope, ~23 f | `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` | F-VES | A-core, A-VES | M2. Builds, STEP, one closed STL, `cad/stl` replaced. CPVC per AQS-STD-002 Rev F. No drawings |
 | 3 | EW_1 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
 | 4 | EW_2 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
 | 5 | EW_3 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~106 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |

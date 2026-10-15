@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: E
+Revision: F
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -12,6 +12,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | C | M7 cases extended. Decisions for HX8, ETOH_STILL, BUOH_STILL, AFTERBURNER_FLUE, FLUE_KO, BAGHOUSE, Q1 and Q2. | 2026-10-15 |
 | D | Nitric and peroxide materials (AQS-DSN-OX-001). Sources S10 to S12. | 2026-10-15 |
 | E | H2 embrittlement review AQS-REV-H2-001; M6 applied to every H2-wetted unit. | 2026-10-15 |
+| F | Leach liquor temperature 70-85 C found in the repo; LEACH_CSTR_1 tank corrected from PVC-U to CPVC. | 2026-10-15 |
 
 ## 1. Rules
 
@@ -43,7 +44,7 @@ Fixed in this pass (clear violations, section 3 rewritten, no rate change):
 - PVC-U scrubbers (M2, M3): ACID_POLISH_SCRUB, ALK_SCRUBBER, NOX_SCRUB, MET_SCRUB.
 - PVC-U or HDPE water tanks (M1): CATCH_TANK, ROOF_TANK, REMIN.
 - Glass or PVC-U, 316L removed (M3): ACETOX, ACEX, ALD, BUCL, FORM, GLYOXAL, IMID, MEAM, QUAT.
-- LEACH_CSTR_1 tank PVC-U; the 316L / CPVC conflict with AQS-NZ-001 is resolved for PVC.
+- LEACH_CSTR_1 tank: 316L withdrawn. PVC-U in Rev A, corrected to CPVC in Rev F on the liquor temperature (section 7).
 
 Flagged on temperature (M5):
 - LEACH_CSTR_1, HL-Q3-A/B-HX5 ports. Q3 supply 95 °C on the graph exceeds PVC-U and the CPVC limit. CPVC is the thermoplastic alternative. Held.
@@ -88,7 +89,7 @@ Decision. PVC-U shell, sump, liquor piping, and Pall-ring packing. FKM gaskets. 
 
 ### 3.2 LEACH_CSTR_1, HX-5 ports at 95 °C
 
-Service from the graph: HL-Q3-A/B-HX5 bring Q3 water at 95 °C supply and 85 °C return. The exchanger sits in leach liquor (HCl and NaClO₃, high ORP, chloride). The PVC-U tank holds the liquor at no more than 60 °C (M5).
+Service from the graph: HL-Q3-A/B-HX5 bring Q3 water at 95 °C supply and 85 °C return. The exchanger sits in leach liquor (HCl and NaClO₃, high ORP, chloride). The leach liquor itself runs at 70–85 °C (GLOSSARY Leach/Salria; 77.5 °C in the AQS-DUTY-008 HX-5 basis; graph param liquor_T_C since Rev F). The tank is therefore CPVC, not PVC-U (M5); see section 7.
 
 | Candidate | Chemistry | Temperature | Cost and supply | Result |
 | --- | --- | --- | --- | --- |
@@ -101,7 +102,7 @@ Service from the graph: HL-Q3-A/B-HX5 bring Q3 water at 95 °C supply and 85 °C
 
 Design change considered. Lowering the Q3 supply is not taken: Q3 also serves HX-4 and HX-6 at the same tier (AQS-HEAT-LADDER-001), so the tier temperature stays. A blending loop to below 60 °C would need a new edge and is not taken.
 
-Decision. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles, bolted through PVDF flanges to PVC-U stub flanges on the tank, FKM gaskets. The Q3 metal piping ends at a dielectric isolating flange outside the tank (M6). A liquor high-temperature trip at 55 °C (assumption, 5 K below M5) closes the Q3 supply. Held: coil area at the lower conductivity of PVDF is not calculated; liquor temperature is not on the graph.
+Decision. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles, bolted through PVDF flanges to PVC-U stub flanges on the tank, FKM gaskets. The Q3 metal piping ends at a dielectric isolating flange outside the tank (M6). A liquor high-temperature trip at 88 °C (assumption, 5 K below the CPVC limit) closes the Q3 supply. Coil area: TASK_PLAN X-MAT-11.
 
 ## References
 
@@ -166,3 +167,9 @@ AQS-REV-H2-001, `docs-authority/H2_EMBRITTLEMENT_REVIEW.md`, applies M6 to every
 - PVC-U for the wet acid HDR_H2 header.
 - HDPE, PA, or copper only for dry low-pressure lines.
 - Pressure-dependent checks are held until the graph carries P, T, and purity. Sources S13 to S15.
+
+## 7. Leach liquor temperature, Rev F
+
+The Rev A to E text treated the leach liquor temperature as absent from the graph. It is in the repo: GLOSSARY gives Leach / Salria at 70–85 °C, and the AQS-DUTY-008 HX-5 duty is built at 77.5 °C. It is now on the LEACH_CSTR_1 node as `liquor_T_C` (77.5 °C, band 70–85 °C, study).
+
+Under M5 this exceeds PVC-U (60 °C). The tank, headers, and stubs are CPVC (limit 93 °C [S3], specific gravity 1.51 [S3]). This is the material AQS-NZ-001 had originally. The high-temperature trip is 88 °C (assumption). CPVC strength derates steeply with temperature (factor 0.25 at 82 °C for pressure pipe [S5]), so the wall check at 85 °C is part of the LEACH_CSTR_1 sizing task. Units on the same liquor loop with no temperature on the graph (CONTINUOUS_RECYCLE, FLOAT_SINK, S13_CLASS_TREAT) stay on PVC-U only if their liquor is at or below 60 °C. That check is X-MAT-09.
