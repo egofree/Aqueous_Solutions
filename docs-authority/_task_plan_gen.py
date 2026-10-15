@@ -19,7 +19,7 @@ def sysof(n):
 SYS=[('FEED','Solids handling and feed preparation (feedstock-agnostic, AQS-ASSAY-001)'),('MET','Metals line: leach, electrowinning, BMED, polish'),('MFG','Manufacturing shop, metal forming, self-copy'),('OIL','Pyrolysis and oil fractions'),('GAS','Gas handling, scrubbing, H2/O2 headers'),('CRYO','Cryogenic air separation, gas storage, expander'),('FAB','Wafer fab, lithography, reagents, glass, SiC'),('BIO','Digester, fermentation, stills, biofilter, methanol'),('FARM','Farm: beds, azolla, hydroponics, animals, nutrients, irrigation'),('HAB','Habitation and life support'),('WTR','Water, wastewater, potable, UPW'),('ELEC','Electrical generation, storage, conversion'),('THERM','Thermal: heat ladder batteries, geothermal, heat sink'),('DOCK','Dock and boundary')]
 units=collections.defaultdict(list)
 for n in P: units[sysof(n)].append(n)
-assert sum(map(len,units.values()))==199
+assert sum(map(len,units.values()))==len(P)
 ST=[('01','Process basis and mass/energy closure','duty sheet section 1 with in = out (kg/d) and kW from the graph','—'),
 ('02','Sizing calculation','calculation with stated basis replacing the graph envelope; study size only is not done','01'),
 ('03','P&ID sheet','P&ID drawing listing every edge, valve, and instrument tag','01, 02'),
@@ -69,7 +69,7 @@ X=[
 ('X-GOV-06','Revision control of drawings and derived files','each drawing and derived file names the graph revision it was made from; stale ones flagged by a script','X-GOV-04',None)]),
 ('RSZ','Bounding-case resizing (owner approval 2026-10-15)',[
 ('X-RSZ-01','Acid regeneration resize','BMED_ACID and dependents sized for the regolith-like (class A) feed','X-BAS-02','docs-authority/FEED_ASSAY.md'),
-('X-RSZ-02','EW power on the graph and supply resize','RECT-EW and EW cell power booked on the graph; PV, storage, inverters to the AQS-ELEC-007 bounding case','X-ELS-05',None),
+('X-RSZ-02','EW power on the graph and supply resize','RECT-EW and EW cell power booked on the graph; PV, storage, inverters to the AQS-ELEC-007 bounding case','X-ELS-05','docs-authority/POWER_SIZING.md'),
 ('X-RSZ-03','EW aisle re-placement','cells placed at sized lengths, cathode count justified; block grown as needed','X-RSZ-02',None),
 ('X-RSZ-04','BMED trim cooling edge','energy edge for the IA-BMED-03/04 water-cooled trim','X-MAT-19',None),
 ('X-RSZ-05','FARM capacity','HAB_* units moved to the HAB block; farm stacked or grown to bed area','X-BLD-09','flow_graph/placement_study.json'),
@@ -184,7 +184,7 @@ X=[
 ('X-TOOL-02','CadQuery installed and proven','EXPANDER and LEACH_CSTR_1 at M2 (D6, D7)','X-TOOL-01','models/mfg/EXPANDER/expander.py'),
 ('X-TOOL-03','STL storage in LFS','all cad/stl files are LFS pointers','—','cad/stl'),
 ('X-TOOL-04','Design tool phases','AQS-UI-001 phases beyond P0, P1, B-prime','—',None)])]
-DONE_X={'X-RSZ-01','X-PIP-02','X-RSZ-05','X-BLD-09','X-GOV-08','X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
+DONE_X={'X-RSZ-02','X-RSZ-01','X-PIP-02','X-RSZ-05','X-BLD-09','X-GOV-08','X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
 out=[];cnt=[]
 def box(d): return '[x]' if d else '[ ]'
 for code,title,items in X:

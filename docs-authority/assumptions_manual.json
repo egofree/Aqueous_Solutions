@@ -1004,5 +1004,48 @@
    "docs-authority/FEED_ASSAY.md"
   ],
   "id": "A-M-077"
+ },
+ {
+  "value": "PV 984 kWp as 1968 x 0.5 kW modules, ground field about 4918 m2 off the plate",
+  "units": "kWp, m2",
+  "where": "PV_ARRAY params",
+  "basis": "AQS-ELEC-007 bounding case; 5 m2/kWp; plate cannot carry it (sizing rule revises the restriction)",
+  "sensitivity": "Site area and land cost; PV average linear",
+  "replaced_by": "Site survey area check (X-BAS-03) and PV layout",
+  "task": "X-RSZ-02",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/POWER_SIZING.md",
+   "docs-authority/PROTECTION.md"
+  ],
+  "id": "A-M-078"
+ },
+ {
+  "value": "EW cell DC less existing heat outlets goes to HEAT_SINK as cell heat and deposit enthalpy",
+  "units": "kW",
+  "where": "IA-EWQ-EW_n edges",
+  "basis": "Energy balance per cell; split between heat and metal enthalpy not resolved",
+  "sensitivity": "Aisle ventilation and HX8 duty",
+  "replaced_by": "Cell heat balance at unit task 03",
+  "task": "X-RSZ-02",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/POWER_SIZING.md",
+   "docs-authority/PROTECTION.md"
+  ],
+  "id": "A-M-079"
+ },
+ {
+  "value": "RECT_EW cabinet 2400 x 800 x 2000 mm",
+  "units": "mm",
+  "where": "RECT_EW duty sheet",
+  "basis": "Study envelope for a 78 kW DC multi-channel rectifier",
+  "sensitivity": "EW aisle placement",
+  "replaced_by": "Vendor GA",
+  "task": "X-RSZ-02",
+  "files": [
+   "docs-authority/duties/RECT_EW.md"
+  ],
+  "id": "A-M-080"
  }
 ]

@@ -3155,21 +3155,23 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 27.88,
+        "value": 82.03,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
       },
       "modules": [],
       "params": {
-        "module_kw": 70,
-        "count": 1,
+        "module_kw": 0.5,
+        "count": 1968,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 70
+        "nameplate_kw": 984,
+        "area_m2": 4918,
+        "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed"
       }
     },
     {
@@ -3360,12 +3362,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 60,
+        "kW": 180,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "count": 3
       }
     },
     {
@@ -3780,8 +3783,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 60,
-        "kWh": 400,
+        "kW": 142,
+        "kWh": 1987,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -6995,6 +6998,31 @@
           1500,
           1800
         ]
+      }
+    },
+    {
+      "unit_id": "RECT_EW",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "rectifier",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). Nine-channel EW rectifier, 13000 A, 78 kW DC nameplate at 6 V.",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 38.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). AC input at the bounding current; DC 30.41 kW to cells, 7.61 kW conversion loss."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "channels": 9,
+        "rated_A": 13000,
+        "nameplate_kw_dc": 78.0,
+        "doc": "AQS-ELEC-004"
       }
     }
   ],
@@ -13951,10 +13979,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 27.88,
+        "value": 82.03,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23248,10 +23276,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 27.88,
+        "value": 82.03,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out."
+        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23294,13 +23322,13 @@
       "layers": [
         "energy"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "rectifier into the cell",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.57,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out."
@@ -23310,7 +23338,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": null
+      "notes": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): superseded by RECT_EW channels."
     },
     {
       "stream_id": "IA-E-HABIN",
@@ -23672,10 +23700,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 50.26,
+        "value": 99.84,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B"
+        "note": "AQS-PLAN-001 Rev B X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +49.58 kW average."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25634,6 +25662,552 @@
         "medium": "NaOH 20 wt%",
         "doc": "AQS-ASSAY-001 Rev D \u00a78"
       }
+    },
+    {
+      "stream_id": "S17-EW",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "RECT_EW",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 38.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). RECT-EW AC input"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S17-BMED",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BMED_ACID",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 16.13,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). BMED stack (X-RSZ-01)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-RECT-EW-LOSS",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "heat",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 7.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). rectifier conversion loss"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_1",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_1",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 5.89,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_1",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 1.318,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_2",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_2",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 5.89,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_2",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 5.89,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_3",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_3",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.21,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_3",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 2.21,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_4",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_4",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.48,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_4",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.48,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_5",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_5",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.49,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_5",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.49,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_6",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_6",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.54,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_6",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.54,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_7",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_7",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 7.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_7",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 7.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_8",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_8",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_8",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-DC-EW_9",
+      "from_unit_id": "RECT_EW",
+      "to_unit_id": "EW_9",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "DC bus bar",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 7.41,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EWQ-EW_9",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "cell heat and deposit enthalpy",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 7.41,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [

@@ -1,7 +1,9 @@
 """AQS-ELEC-006 protection and coordination, and the IEEE 80 touch/step check for AQS-ELEC-005.
 Sources are inverter-limited (SOL_ARK_60K). Study values; register A-M entries."""
 import json, math, subprocess
-INV_KW=60.0; V=480.0; KF=2.0          # inverter fault contribution 2 x rated (AQS-ELEC-002 Rev B figure, study)
+import json as _j
+_n={n['unit_id']:n for n in _j.load(open('flow_graph/plant_flow_graph.json'))['nodes']}['SOL_ARK_60K']['params']
+INV_KW=float(_n.get('kW',60)); V=480.0; KF=2.0          # inverter fault contribution 2 x rated (AQS-ELEC-002 Rev B figure, study)
 Irated=INV_KW*1000/(math.sqrt(3)*V); Ifault=KF*Irated
 rows=[l.split('|')[1:-1] for l in open('docs-authority/ONE_LINE.md') if l.count('|')==7 and ('480' in l or '208' in l) and not l.startswith('| Bus')]
 fe=[]
@@ -12,7 +14,7 @@ for b,u,kw,a,br,bs in rows:
     if inst_tm<=If*0.8: dev,setg='thermal-magnetic, instantaneous 5×',f'{inst_tm:.0f} A'
     else: dev,setg='electronic trip, short-time pickup 1.5×, 0.1 s',f'{1.5*br:.0f} A'
     fe.append(dict(bus=b.strip(),load=u.strip(),A=a,breaker=br,If=If,device=dev,setting=setg))
-main=dict(breaker=100,If=Ifault)
+main=dict(breaker=next(b for b in (100,125,150,175,200,225,250,300,350,400,450,500,600,700,800) if b>=1.25*Irated),If=Ifault)
 # IEEE 80-2013 touch and step, 50 kg person
 Rg=json.loads(subprocess.run(['python3','docs-authority/_grounding_study.py'],capture_output=True,text=True).stdout)['Rg_ohm']
 GPR=Ifault*Rg

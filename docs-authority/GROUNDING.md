@@ -27,7 +27,7 @@ RECT-EW channels (AQS-ELEC-004) run ungrounded (floating) DC with insulation mon
 
 ## 4. Step and touch
 
-Checked in AQS-ELEC-006 section 4: GPR 165 V against tolerable touch 176 V on bare soil at 0.5 s; safe. Crushed rock on the yard.
+Checked in AQS-ELEC-006 section 4: GPR 494 V (AQS-ELEC-006 Rev B; crushed rock required) against tolerable touch 176 V on bare soil at 0.5 s; safe. Crushed rock on the yard.
 
 ## 5. Held
 

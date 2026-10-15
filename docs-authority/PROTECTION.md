@@ -8,14 +8,15 @@ Authority: AQS-PLAN-007 X-ELS-07; one-line AQS-ELEC-002 Rev C. Script `docs-auth
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue. Inverter-limited fault, device types and settings, selectivity, DC channels, IEEE 80 check. | 2026-10-15 |
+| B | X-RSZ-02: three inverters (180 kW). Fault 433 A; main 300 A; GPR 494 V; bare-soil touch fails, crushed rock required everywhere on the grid. | 2026-10-15 |
 
 ## 1. Available fault current
 
-All AC sources sit behind SOL_ARK_60K. Rated 72.2 A at 480 V; fault contribution 2 × rated = 144 A (study; AQS-ELEC-002 Rev B). No utility service is on the graph. If one is added, this study is redone.
+All AC sources sit behind SOL_ARK_60K, 3 × 60 kW (X-RSZ-02). Rated 216.5 A at 480 V; fault contribution 2 × rated = 433 A (study; AQS-ELEC-002 Rev B). No utility service is on the graph. If one is added, this study is redone.
 
 ## 2. Device rule
 
-A thermal-magnetic breaker clears instantly only if its magnetic pickup is below the available fault. With 5× low-instantaneous trip units, every feeder up to 25 A meets that (93 feeders, pickup ≤ 125 A against 144 A; 80 % margin rule). Larger feeders use electronic trip units with short-time pickup 1.5 × rating and 0.1 s delay:
+A thermal-magnetic breaker clears instantly only if its magnetic pickup is below the available fault. With 5× low-instantaneous trip units, every feeder up to 25 A meets that (pickup ≤ 0.8 × 433 A = 346 A; every feeder to 60 A qualifies). Larger feeders use electronic trip units with short-time pickup 1.5 × rating and 0.1 s delay:
 
 | Bus | Load | Breaker A | Fault A | Device | Pickup |
 | --- | --- | --- | --- | --- | --- |
@@ -32,14 +33,14 @@ RECT-EW channels: rectifier current limit at 1.05 × channel rating as primary p
 
 ## 4. Earth fault, touch and step (closes the AQS-ELEC-005 hold)
 
-Earth-fault current is bounded by the inverter, 144 A. Grid 1.14 Ω gives ground potential rise 165 V. Taking touch voltage ≤ GPR (conservative), clearing time 0.5 s (feeders clear in ≤ 0.1 s; margin), 50 kg body, IEEE 80-2013 equations 32 and 29:
+Earth-fault current is bounded by the inverters, 433 A. Grid 1.14 Ω gives ground potential rise 494 V. Taking touch voltage ≤ GPR (conservative), clearing time 0.5 s (feeders clear in ≤ 0.1 s; margin), 50 kg body, IEEE 80-2013 equations 32 and 29:
 
 | Surface | Tolerable touch V | Tolerable step V | GPR V | Result |
 | --- | --- | --- | --- | --- |
-| bare soil | 176 | 213 | 165 | safe |
-| crushed rock 0.1 m, 3000 ohm m | 677 | 2216 | 165 | safe |
+| bare soil | 176 | 213 | 494 | fails |
+| crushed rock 0.1 m, 3000 ohm m | 677 | 2216 | 494 | safe |
 
-Crushed rock is specified on the outdoor yard (MeOH train, ZNBR2, PV) for margin.
+Crushed rock 0.1 m, ≥ 3000 Ω·m, is required (not margin) on every outdoor surface over the grid: yard, ZNBR2, MeOH train and the PV field. Indoors, slab rebar is bonded to the grid as an equipotential mat (AQS-ELEC-005). Main breaker 300 A (1.25 × 216.5 A).
 
 ## 5. Held
 

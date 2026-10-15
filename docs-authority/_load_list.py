@@ -3,7 +3,8 @@ where a sizing document exists. Writes docs-authority/LOAD_LIST.md. Calculated e
 import json, subprocess, os
 g=json.load(open('flow_graph/plant_flow_graph.json'))
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['rows']
-CALC={r['cell']:(r['P_kW'],'AQS-DUTY-051 DC at the bounding current; cell power only, rectifier losses in AQS-ELEC-004') for r in ew}
+CALC={r['cell']:(r['P_kW'],'AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)') for r in ew}
+DC_BEHIND={r['cell'] for r in ew}
 CALC['LEACH_CSTR_1']=(0.75,'AQS-DUTY-050 agitator motor; heat by Q3 (HX-5), not electric')
 CALC['CRYO_ASU']=(3.03,'Air set by IA-ASU-N2 243.28 kg/d / 0.755 N2 mass fraction = 322 kg/d = 249 Nm3/d; 1.4 kWh/Nm3 O2 (80 m3/h plant, S23 IJRET 2013) / 4.8 Nm3 air per Nm3 O2 = 0.292 kWh/Nm3 air. Lower bound: the plant is about 57x smaller than the reference')
 CALC['BMED_UPW_POLISH']=(0.02,'S25 140.52 kg/d feed; brackish RO 3.0 kWh/m3 upper (S24 Greenlee 2009) + EDI 0.5 kWh/m3 upper (S25 Alvarado and Chen 2014)')
@@ -17,7 +18,7 @@ for n in g['nodes']:
 for u,c in CALC.items():
     if not any(r[0]==u for r in rows): rows.append((u,'load',0,c[0],c[1]))
 rows.sort(key=lambda r:(r[3] is None,-(r[3] if r[3] is not None else r[2])))
-nc=sum(1 for r in rows if r[3] is not None); loads=[r for r in rows if r[1]=='load' or r[3] is not None]
+nc=sum(1 for r in rows if r[3] is not None); loads=[r for r in rows if (r[1]=='load' or r[3] is not None) and r[0] not in DC_BEHIND]
 gsum=sum(r[2] for r in loads); csum=sum((r[3] if r[3] is not None else r[2]) for r in loads)
 out=[f"""# Load list
 

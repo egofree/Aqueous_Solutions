@@ -29,6 +29,9 @@ Backup. Critical loads 32 kW (HABITATION 3, CRYO_H2 4, CRYO_ASU 18, GROW_BED 5, 
 
 ## 3. Findings
 
+Rev B (X-RSZ-02, 2026-10-15). The bounding case is booked on the graph: PV_ARRAY 984 kWp nameplate (1968 × 0.5 kW, about 4918 m² ground field off the plate), ZNBR2 1987 kWh / 142 kW, SOL_ARK_60K 3 × 60 kW. RECT_EW (38.02 kW AC) and BMED_ACID (16.13 kW) have graph feeds; PV average raised by 54.15 kW to carry them. Items 1 and 2 below are superseded: the plate restriction is revised by the off-plate PV field (site area to confirm, X-BAS-03).
+
+
 1. The graph's energy system (70 kWp PV, 120 kWh ZnBr₂, one 60 kW inverter) covers about a tenth of the calculated demand. Most of the demand is still study shares (AQS-ELEC-003); CRYO_ASU 18 kW, MFG_SHOP 12 kW and RECT-EW dominate.
 2. PV at 758–984 kWp needs 3792–4918 m², far beyond the plate. Owner choices: a utility service, a smaller plant rate, or load reduction. None is taken here.
 3. Pumped hydro (HYDRO_SET, about 7 kWh recoverable) does not change the result.

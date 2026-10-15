@@ -35,7 +35,7 @@ Authority: graph Rev BH; AQS-PLAN-007 X-ELS-04. Script `docs-authority/_rect_ew_
 
 ## 3. Findings
 
-1. RECT-EW is nine channels, 13000 A total, 78 kW nameplate at 6 V. Bounding AC input is 38.0 kW. The ELECTRICAL.md row (0–36 V, 0–250 A, 5–7 kW) and the graph IA-E-RECT 4.57 kW do not cover it. They are not changed here (no rate change approved); X-ELS-02 and X-ELS-05 take the AC figure.
+1. RECT-EW is nine channels, 13000 A total, 78 kW nameplate at 6 V. Bounding AC input is 38.0 kW. The ELECTRICAL.md row (0–36 V, 0–250 A, 5–7 kW) and the graph IA-E-RECT 4.57 kW do not cover it. X-RSZ-02 books it: node RECT_EW (38.02 kW AC), S17-EW feed, IA-DC-EW_n channels, IA-RECT-EW-LOSS 7.61 kW; IA-E-RECT retired.
 2. Turndown. At the element basis (AQS-DUTY-051) EW_1 and EW_2 need under 1 A against 2500 A channels. A low-range module (0–50 A) on each precious-metal cell is needed for lean feeds (study recommendation; held for X-ELS-03).
 3. Side-reaction H₂ current (AQS-DUTY-051 finding 4) is not in these ratings; the 10 % margin does not cover it at the graph H₂ rates.
 4. A 36 V output is not needed for one cell per channel; 6 V reduces conversion loss and bar cost. If cells are later grouped in series by equal current, the channel voltage rises with the cell count.
