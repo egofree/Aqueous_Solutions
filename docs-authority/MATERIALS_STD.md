@@ -328,3 +328,20 @@ Frames and earthing. Tanks and racks are CPVC or PVC-U (no metal frame, M3). Any
 Metal piping. HDR_H2 (316L, class M1) leaves each H₂-making cell through a dielectric isolating flange and a condensate trap with a free-fall drain, so wet gas cannot carry liquor current into the header. Q4 water to HX8 is isolated by the PVDF bundle (section 4.5).
 
 Electrode dissolution. Mixed-metal-oxide anodes (section 9) wear by coating loss; life is a vendor figure at the cell current density, not assumed here. Titanium cathodes are passive. On shutdown a cell with metal on the cathode and Cl₂ on the anode is a galvanic cell; reverse current strips the deposit and damages the oxide coating. Rule: on rectifier trip, the channel holds a protection current of 1 % of rating (study) or the cell is drained within 30 minutes; anodes are never left wetted and unpolarized against a loaded cathode.
+
+
+### §11 check at the re-placed aisle (X-RSZ-03, seed Rev I)
+
+Routes from AQS-ISO-001. Required continuous electrolyte path for ≤ 1 % protection current: 3.44 m (`_shunt_current.py`). Every inter-cell liquor line keeps the free-fall air break; where the route is shorter than the required path the break is the only protection.
+
+| Line | From | To | Route m | ≥ 3.44 m continuous path | Break |
+| --- | --- | --- | --- | --- | --- |
+| IA-EW-01 | EW_1 | EW_2 | 8.6 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-02 | EW_2 | EW_3 | 9.8 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-03 | EW_3 | EW_4 | 7.8 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-04 | LEACH_CSTR_1 | EW_1 | 9.2 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-05 | EW_5 | EW_6 | 6.6 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-06 | EW_6 | EW_7 | 12.8 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-07 | EW_7 | EW_8 | 13.8 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-08 | EW_8 | EW_9 | 11.1 | yes | air-break launder (kept; path alone would also do) |
+| IA-EW-10 | EW_4 | EW_5 | 10.0 | yes | air-break launder (kept; path alone would also do) |

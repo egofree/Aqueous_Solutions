@@ -109,3 +109,4 @@ AQS-PLAN-005 Rev C is the completion sequence. Line 2.2 is closed by C2 and C3.
 | D58 | — | CRYO_H2 and purifier | X-ELS-02. | CRYO_H2 compressed 200 bar, 115 kg store, 0.565 kW compressor (study basis, owner may override). H2_PURIFIER added on S49 (deoxo, chloride guard, TSA) to ISO 14687 Grade D, 0.05 kW, placed in CRYO. |
 | D59 | — | MFG_SHOP load | X-ELS-02. | AQS-MFG-010 tool list from graph throughputs: 3.98 kW average (graph was 12.0 study), connected 58.0 kW, coincident peak 38.5 kW. Graph booked; MCC-1 feeder sized on peak. |
 | D60 | — | Feed edges | X-RSZ-07. | 91 loads without a feed got SF-* edges from SOL_ARK_60K (49.25 kW) and SQ-* heat edges to HEAT_SINK. PV average +49.25 kW to 128.5 kW, inside the 984 kWp field (about 177 kW average). |
+| D61 | — | Launders | X-MAT-07. | done. 9 inter-cell and leach-cell liquor lines checked on the Rev I layout against the 3.44 m path; air-break launders kept on all, required on the short ones. |
