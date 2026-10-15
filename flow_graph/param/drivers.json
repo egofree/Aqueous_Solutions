@@ -1827,5 +1827,34 @@
   "value": 14.3,
   "units": "kJ/kg K, H2 at 300 K",
   "ref": "NIST_WEBBOOK"
+ },
+ "ew_bar_rise_K": {
+  "value": 30.0,
+  "units": "K bar temperature rise over 40 C ambient",
+  "register": "A-M-173",
+  "needs_verification": true,
+  "verification_test": "Thermocouple on EW-7 bar at rated current (RECT-EW first article)"
+ },
+ "ew_bar_emissivity": {
+  "value": 0.8,
+  "units": "- painted bar",
+  "ref": "CDA_PUB22"
+ },
+ "ew_bar_t_mm": {
+  "value": 6.3,
+  "units": "mm bar thickness",
+  "ref": "CDA_PUB22"
+ },
+ "ew_bar_L_m": {
+  "value": 2.0,
+  "units": "m rectifier to cell",
+  "register": "AQS-BUS-001 rev B"
+ },
+ "ew_contact_drop_V": {
+  "value": 0.05,
+  "units": "V both bolted joints",
+  "register": "AQS-BUS-001 rev B",
+  "needs_verification": true,
+  "verification_test": "Joint millivolt drop at rated current"
  }
 }

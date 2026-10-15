@@ -2848,5 +2848,25 @@
     "verification": "5 stages at ratio 1.82, 125 C discharge, 1.97 kWh/kg, 0.88 kW average",
     "replace_when": "First-article bench run: head temperature and stage efficiency",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-173",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "EW bus bar temperature rise",
+    "statement": "EW bars sized so I2R heat is shed by free convection and radiation at a 30 K rise over 40 C, painted (emissivity 0.8), 6.3 mm flats spaced one thickness apart; section also held to the UL891 155 A/cm2 default",
+    "verification": "EW bars 200 -> 136-153 A/cm2; packs up to 2 x 130 x 6.3 mm; drop 162-176 mV within the 0.3 V budget",
+    "replace_when": "Thermocouple on EW-7 at rated current",
+    "doc": "AQS-PAR-003"
   }
 ]

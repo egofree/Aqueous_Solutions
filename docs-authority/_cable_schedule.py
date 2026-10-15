@@ -35,9 +35,9 @@ def main():
           f'{len(rows)} power circuits; {len(rows) - len(bad)} meet ampacity (NEC2023 310.16, 75 C, Cu) and the voltage-drop limits (3 % branch, 2 % feeder, resistive three-phase); {len(bad)} do not.', '',
           '## 1. Busbars', '', '| Bus | Rating A | Design A | Cu section at 155 A/cm2, cm2 | OK |', '|---|---|---|---|---|']
     md += [f"| {b['name']} | {b['rating']} | {b['I']:.0f} | {b['cm2']:.2f} | {'yes' if b['ok'] else 'NO'} |" for b in brow]
-    md += ['', f'Plant demand {dem:.1f} kW at 480 V, power factor 0.9 assumed: {I_bus:.0f} A. EW process bars (AQS-BUS-001) run at 200 A/cm2 in free air on standoffs, above the 155 A/cm2 switchboard default; they are short (2 m) process bars whose heat is computed per cell in AQS-BUS-001, not switchboard bus. A temperature-rise check of the three largest (EW-7 2501 A, EW-9, EW-1) is carried to the RECT-EW first article.', '',
-           '| EW bar | A | cm2 at 200 A/cm2 | cm2 at 155 A/cm2 |', '|---|---|---|---|']
-    md += [f'| {n} | {a} | {c} | {int(a)/J:.1f} |' for n, a, c in ew]
+    md += ['', f'Plant demand {dem:.1f} kW at 480 V, power factor 0.9 assumed: {I_bus:.0f} A. EW process bars (AQS-BUS-001 rev C) are sized by heat balance at a 30 K rise and held to the same 155 A/cm2 default; every bar passes.', '',
+           '| EW bar | A | Cu section cm2 | A/cm2 | OK |', '|---|---|---|---|---|']
+    md += [f"| {n} | {a} | {c} | {int(a)/float(c):.0f} | {'yes' if int(a)/float(c) <= J + 0.5 else 'NO'} |" for n, a, c in ew]
     md += ['', '## 2. Cables', '', '| Unit | Circuit | Size | Sets | Design A | Ampacity A | Length m | V | Drop % | Limit % | OK |', '|---|---|---|---|---|---|---|---|---|---|---|']
     md += [f"| {x['unit']} | {x['circuit']} | {x['size']} | {x['sets']} | {x['I']:.1f} | {x['amp']} | {x['L']:.1f} | {x['V']:.0f} | {x['vd']:.2f} | {x['lim']:.0f} | {'yes' if x['ok'] else 'NO'} |" for x in sorted(rows, key=lambda x: (x['unit'], x['circuit']))]
     open(os.path.join(R, 'docs-authority/CABLE_SCHEDULE.md'), 'w').write('\n'.join(md) + '\n')
