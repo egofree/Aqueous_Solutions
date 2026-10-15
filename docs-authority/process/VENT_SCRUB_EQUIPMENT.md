@@ -1,5 +1,7 @@
 # Vent / scrub / regenerator equipment stubs
 
+Superseded copy. The current page is `docs-authority/VENT_SCRUB_EQUIPMENT.md`, B. This copy is history (AQS-REG-001).
+
 Document number: AQS-EQP-VENT-001  
 Revision: A  
 Date: 2026-09-28  

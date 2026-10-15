@@ -1,6 +1,7 @@
 # One line
 
-Document number: AQS-ELEC-001
+Document number: AQS-ELEC-002
+Renumbered 2026-10-15 from AQS-ELEC-001 to clear a duplicate (AQS-REG-001).
 Revision: B
 Date: 2026-10-12
 Not a PE stamp.

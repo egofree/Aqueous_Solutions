@@ -1,6 +1,7 @@
 # Compliance matrix — design intent vs code themes
 
-Document number: AQS-CMP-001  
+Document number: AQS-COMPL-001  
+Renumbered 2026-10-15 from AQS-CMP-001 to clear a duplicate (AQS-REG-001).
 Revision: C
 Date: 2026-10-01  
 Authority: AQS-AUTH-001, AQS-HSE-001, AQS-SITE-001, hub `ELECTRICAL.md`,

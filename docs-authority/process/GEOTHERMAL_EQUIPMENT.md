@@ -1,5 +1,7 @@
 # Geothermal equipment list
 
+Superseded copy. The current page is `docs-authority/GEOTHERMAL_EQUIPMENT.md`, C. This copy is history (AQS-REG-001).
+
 Document number: AQS-EQP-GEO-001  
 Revision: A  
 Date: 2026-09-27  

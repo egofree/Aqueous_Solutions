@@ -1,6 +1,7 @@
 # Phase 9 interfaces
 
-Document number: AQS-PLAN-001
+Document number: AQS-IF-009
+Renumbered 2026-10-15 from AQS-PLAN-001 to clear a duplicate (AQS-REG-001).
 Revision: C
 Date: 2026-10-09
 Authority: graph Rev AS. Not a PE stamp.
