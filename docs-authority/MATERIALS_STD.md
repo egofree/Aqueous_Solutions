@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: J
+Revision: K
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -17,6 +17,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | H | HX8 adopted as a PVDF bundle (X-MAT-17). | 2026-10-15 |
 | I | Material temperatures on thermoplastic inlets (X-MAT-09); HX-5 coil guard. | 2026-10-15 |
 | J | EW electrode materials in chloride (X-MAT-18). | 2026-10-15 |
+| K | Galvanic and stray-current design for the EW aisle (X-MAT-07). | 2026-10-15 |
 
 ## 1. Rules
 
@@ -314,3 +315,17 @@ Script `docs-authority/_hot_draw_coolers.py`.
 - IA-POT-01: passive air-cooled PVDF DN25 coil, 25.4 m (U 7 W/m²K natural convection, air 37.8 °C design, LMTD 14.7 K). No graph energy edge: the heat goes to the room air (about 0.26 kW, inside the HVAC study share). Edge T_C now 40 °C.
 - IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They need a water-cooled trim exchanger on a ground-loop source (about 0.44 kW together). That adds an energy edge, which is a rate change and is held for owner approval. Until then BMED_ACID and BMED_BASE must not receive liquor above the membrane limit.
 - The IA-BMED-03/04 edges say "ambient" in their conditions and IA-POT-01 carries the leach stencil composition; both are inconsistent with a direct draw from the hot tank and are flagged for the unit task 01 balances.
+
+## 11. Galvanic and stray current, EW aisle, Rev K
+
+X-MAT-07. Script `docs-authority/_shunt_current.py`.
+
+Electrolyte path. Liquor runs EW_1 → EW_9 in series (IA-EW-01 to IA-EW-08). Each cell has its own floating 6 V channel (AQS-ELEC-004), so in normal service no cell is referenced to another and no shunt current flows. With two simultaneous earth faults on opposite poles of two channels, up to 6 V can appear across the liquor link. At 30 S/m (assumption) a full DN50 link has 13.1 Ω at the 0.75 m pitch, 0.46 A. To hold stray current under 0.1 A (assumption) a full pipe needs 3.4 m. Decision: every cell-to-cell transfer is a free-fall overflow launder with an air break (open drop of at least 50 mm) into the next cell's feed box, so the liquid path is broken. Pipe length is then not relied on. Drains to a common sump also fall freely.
+
+Busbars. Copper on non-conductive standoffs (glass-polyester or porcelain), creepage per the rectifier voltage; no busbar touches a tank lip, rack or pipe. Each channel's positive and negative bars run as a pair to keep loops small.
+
+Frames and earthing. Tanks and racks are CPVC or PVC-U (no metal frame, M3). Any metal structure near the aisle (crane rail, walkway steel) is earthed to the ring (AQS-ELEC-005) and kept 150 mm clear of liquor and bars. DC stays floating with an insulation monitor per channel; the first earth fault alarms and is cleared before a second can complete a shunt path.
+
+Metal piping. HDR_H2 (316L, class M1) leaves each H₂-making cell through a dielectric isolating flange and a condensate trap with a free-fall drain, so wet gas cannot carry liquor current into the header. Q4 water to HX8 is isolated by the PVDF bundle (section 4.5).
+
+Electrode dissolution. Mixed-metal-oxide anodes (section 9) wear by coating loss; life is a vendor figure at the cell current density, not assumed here. Titanium cathodes are passive. On shutdown a cell with metal on the cathode and Cl₂ on the anode is a galvanic cell; reverse current strips the deposit and damages the oxide coating. Rule: on rectifier trip, the channel holds a protection current of 1 % of rating (study) or the cell is drained within 30 minutes; anodes are never left wetted and unpolarized against a loaded cathode.

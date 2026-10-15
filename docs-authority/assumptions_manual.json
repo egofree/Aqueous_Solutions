@@ -817,5 +817,31 @@
    "docs-authority/POWER_SIZING.md"
   ],
   "id": "A-M-063"
+ },
+ {
+  "value": "30",
+  "units": "S/m",
+  "where": "EW liquor conductivity (X-MAT-07)",
+  "basis": "About 1.4 M HCl with metal chlorides; HCl conductivity tables",
+  "sensitivity": "Shunt current linear",
+  "replaced_by": "Conductivity meter reading on the liquor",
+  "task": "X-MAT-07",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-064"
+ },
+ {
+  "value": "0.1 A stray limit; 50 mm air break; 1 % protection current",
+  "units": "A, mm, fraction",
+  "where": "EW aisle (X-MAT-07)",
+  "basis": "Engineering limits for stray current and reverse-current protection",
+  "sensitivity": "Launder design and rectifier standby mode",
+  "replaced_by": "Commissioning measurement of stray current and anode vendor rule",
+  "task": "X-MAT-07",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-065"
  }
 ]
