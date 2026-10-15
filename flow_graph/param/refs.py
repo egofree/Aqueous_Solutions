@@ -55,6 +55,8 @@ REFS = {
  'IEC61511_2016': 'IEC 61511-1:2016, Functional safety, safety instrumented systems for the process industry sector.',
  'ACGIH_TLV_2024': 'ACGIH, TLVs and BEIs (2024): CO TWA 25 ppm; NO2 TWA 0.2 ppm; Cl2 TWA 0.1 ppm, STEL 0.4 ppm; HF ceiling 2 ppm (as F); HCl ceiling 2 ppm.',
  'OSHA_1910_146': '29 CFR 1910.146 (b): oxygen-deficient atmosphere below 19.5 % by volume; oxygen-enriched above 23.5 % by volume.',
+ 'AISC360_22': 'ANSI/AISC 360-22, Specification for Structural Steel Buildings: E3 flexural buckling Fcr = 0.658^(Fy/Fe) Fy for KL/r <= 4.71 sqrt(E/Fy), else 0.877 Fe, phi_c 0.90; F2 compact doubly symmetric I-members Mn = Fy Zx, phi_b 0.90; D2 tension yielding phi_t 0.90; Table B4.1 width-thickness limits; E = 200 GPa.',
+ 'ASTM_A992': 'ASTM A992/A992M, Standard Specification for Structural Steel Shapes: Fy 345 MPa (50 ksi) minimum, Fu 450 MPa.',
  'ACI350_3': 'ACI 350.3-20, Seismic Design of Liquid-Containing Concrete Structures: impulsive and convective components, rectangular tank convective frequency lambda = sqrt(3.16 g tanh(3.16 HL/L)).',
  'ACI350_20': 'ACI 350-20, Code Requirements for Environmental Engineering Concrete Structures: liquid-retaining walls and slabs, durability and crack control.',
  'AHRI340_ASHRAE901': 'ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360.',
