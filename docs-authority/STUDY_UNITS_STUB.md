@@ -309,7 +309,7 @@ sectors (e.g. electrode coat in MFG using FAB wet practice) — AQS-SEC-001
 | ST-VCD-01 | WP-A5b | VCD compressor + equipment IDs | **Closed** (duty §3) — 0.08 kW_e | Compressor selection; equipment IDs |
 | ST-REMIN-01 | WP-A5c | Mineral source + UV + IDs | **Closed** (balance §4) | Source vs S07; UV; equipment IDs |
 | ST-ORC-01 | WP-A5d | GHEX survey / T_source / Q_surplus | **Closed** (Carnot §5) — M1 ~0 | Site GHEX survey |
-| ST-SOLAR-01 | WP-A5e | PECVD/belt nameplates; PV_COUNT | **Reopened** 2026-10-15 (X-GOV-20: it rested on bought-tool datasheets); 1.0 kW share kept as study | In-house tool designs (X-MFG-38); offtake decision |
+| ST-SOLAR-01 | WP-A5e | PECVD/belt nameplates; PV_COUNT | **Closed** 2026-10-16 by X-MFG-38 (AQS-DUTY-071): in-house tools, 9.4 kWh/d, 0.39 kW average, 3.8 kW peak | In-house tool designs (X-MFG-38); offtake decision |
 
 ---
 

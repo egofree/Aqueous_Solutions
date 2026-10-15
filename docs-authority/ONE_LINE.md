@@ -19,7 +19,7 @@ flowchart LR
   BACKUP_GEN["BACKUP_GEN 0.01 kW"] -->|S47| BUS
   FUEL_CELL["FUEL_CELL 3.46 kW"] -->|S51| BUS
   MEOH_FC["MEOH_FC 0.50 kW"] -->|S79| BUS
-  PV_ARRAY["PV_ARRAY 241.98 kW"] -->|IA-PV-01| BUS
+  PV_ARRAY["PV_ARRAY 242.07 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 49 × 60 = 2940 kW inverters"])
   BUS --> MCC["MCC-1 480 V 3.0 kW"]
   BUS --> XF["T-1 15 kVA 480–208/120 V"] --> PP["PP-1 0.8 kW"]
@@ -44,7 +44,7 @@ flowchart LR
   BUS -->|SF-LITHO_STUB| LITHO_STUB["LITHO_STUB 0.10 kW"]
   BUS -->|SF-ELECTRODE_COAT| ELECTRODE_COAT["ELECTRODE_COAT 0.30 kW"]
   BUS -->|SF-BLOW_MOLD| BLOW_MOLD["BLOW_MOLD 0.50 kW"]
-  BUS -->|SF-SOLAR_PV_CELL| SOLAR_PV_CELL["SOLAR_PV_CELL 0.30 kW"]
+  BUS -->|SF-SOLAR_PV_CELL| SOLAR_PV_CELL["SOLAR_PV_CELL 0.39 kW"]
   BUS -->|SF-ANIMAL_PEN| ANIMAL_PEN["ANIMAL_PEN 0.20 kW"]
   BUS -->|SF-COMPOST| COMPOST["COMPOST 0.10 kW"]
   BUS -->|SF-DIGESTER| DIGESTER["DIGESTER 0.03 kW"]
@@ -182,9 +182,9 @@ flowchart LR
 | SOL_ARK 480 V | BLOW_MOLD | 0.50 | 0.7 | 15 | graph SF-BLOW_MOLD |
 | SOL_ARK 480 V | EMETH | 0.50 | 0.7 | 15 | graph SF-EMETH |
 | SOL_ARK 480 V | NFIX_BED | 0.44 | 0.6 | 15 | graph SF-NFIX_BED |
+| SOL_ARK 480 V | SOLAR_PV_CELL | 0.39 | 0.5 | 15 | graph SF-SOLAR_PV_CELL |
 | SOL_ARK 480 V | H2_DRYER | 0.30 | 0.4 | 15 | graph SF-H2_DRYER |
 | SOL_ARK 480 V | ELECTRODE_COAT | 0.30 | 0.4 | 15 | graph SF-ELECTRODE_COAT |
-| SOL_ARK 480 V | SOLAR_PV_CELL | 0.30 | 0.4 | 15 | graph SF-SOLAR_PV_CELL |
 | SOL_ARK 480 V | CLARIFIER | 0.30 | 0.4 | 15 | graph SF-CLARIFIER |
 | SOL_ARK 480 V | BIOFILTER | 0.30 | 0.4 | 15 | graph SF-BIOFILTER |
 | SOL_ARK 480 V | FISH_SUMP | 0.30 | 0.4 | 15 | graph SF-FISH_SUMP |
@@ -268,19 +268,19 @@ flowchart LR
 
 | Item | kW |
 | --- | --- |
-| Sources on the bus (graph edges) | 250.95 |
-| Demand on the bus (this page) | 249.94 |
+| Sources on the bus (graph edges) | 251.04 |
+| Demand on the bus (this page) | 250.03 |
 | Inverter rating (SOL_ARK_60K) | 2940.0 |
 | Shortfall against sources | -1.01 |
-| Shortfall against inverter | -2690.06 |
+| Shortfall against inverter | -2689.97 |
 
 ## Findings
 
-1. Bus demand at the bounding EW case is 249.9 kW against 251.0 kW of graph sources and 49 × 60 = 2940 kW inverters. The RECT-EW feeder alone is 38.7 kW. Supply nameplates follow AQS-ELEC-007 bounding case (X-RSZ-02); the gap between graph sources and bus demand is loads without graph feeds, booked in the X-RSZ-07 sweep.
+1. Bus demand at the bounding EW case is 250.0 kW against 251.0 kW of graph sources and 49 × 60 = 2940 kW inverters. The RECT-EW feeder alone is 38.7 kW. Supply nameplates follow AQS-ELEC-007 bounding case (X-RSZ-02); the gap between graph sources and bus demand is loads without graph feeds, booked in the X-RSZ-07 sweep.
 2. 3 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.
-5. Grid export (D75, owner decision 2026-10-15). PV is sized at 2.0 x the balancing nameplate (1733 of 3465 kWp). Inverters at the NREL PVWatts DC/AC ratio 1.2: 49 × 60 = 2940 kW inverters. The inverters are split into 5 collection sections at 480 V, each through a pad-mount transformer to the 12.47 kV collection bus; the plant bus hangs on CB-1 (AQS-ELEC-008). Clear-day export at noon with storage full is up to 2690 kW, about 7498 kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
+5. Grid export (D75, owner decision 2026-10-15). PV is sized at 2.0 x the balancing nameplate (1734 of 3467 kWp). Inverters at the NREL PVWatts DC/AC ratio 1.2: 49 × 60 = 2940 kW inverters. The inverters are split into 5 collection sections at 480 V, each through a pad-mount transformer to the 12.47 kV collection bus; the plant bus hangs on CB-1 (AQS-ELEC-008). Clear-day export at noon with storage full is up to 2690 kW, about 7501 kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
 
 ## Code basis (X-STD-01)
 

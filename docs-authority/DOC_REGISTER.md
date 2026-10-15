@@ -225,6 +225,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-DUTY-068 | `docs-authority/sizing/BMED_STACK.md` | A | 2026-10-15 | In-house BMED stack (X-MFG-35) | canonical |
 | AQS-DUTY-069 | `docs-authority/sizing/COLD_BOX.md` | A | 2026-10-16 | CRYO_ASU separation train (X-MFG-33) | canonical |
 | AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | A | 2026-10-16 | UPW polish RO/EDI (X-MFG-34) | canonical |
+| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | A | 2026-10-16 | PV cell line tools (X-MFG-38) | canonical |
 | AQS-DUTY-064 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | A | 2026-10-15 | House scrubbers sized with the X-PAR-03 scrubber function | canonical |
 | AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | A | 2026-10-15 | Wire inventory with family rollup (CSV beside) | canonical |
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | A | 2026-10-15 | Pipe inventory with family rollup (CSV beside) | canonical |

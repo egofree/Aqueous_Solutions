@@ -2100,5 +2100,139 @@
   "value": 1.0,
   "units": "h/d run",
   "register": "A-M-177"
+ },
+ "pv_cells_per_d": {
+  "value": 3,
+  "units": "cells/d M2 156 mm (ST-SOLAR-01 study rate)",
+  "register": "ST-SOLAR-01"
+ },
+ "pvl_tex_L": {
+  "value": 10.0,
+  "units": "L KOH texture bath",
+  "register": "A-M-178"
+ },
+ "pvl_tex_C": {
+  "value": 80.0,
+  "units": "C texture bath",
+  "register": "A-M-178"
+ },
+ "pvl_tex_heat_h": {
+  "value": 0.33,
+  "units": "h heat-up",
+  "register": "A-M-178"
+ },
+ "pvl_tex_run_h": {
+  "value": 1.0,
+  "units": "h at temperature",
+  "register": "A-M-178"
+ },
+ "pvl_diff_C": {
+  "value": 850.0,
+  "units": "C POCl3 diffusion tube",
+  "register": "A-M-178"
+ },
+ "pvl_diff_D_mm": {
+  "value": 200.0,
+  "units": "mm quartz tube OD",
+  "register": "A-M-178"
+ },
+ "pvl_diff_L_m": {
+  "value": 1.0,
+  "units": "m heated length",
+  "register": "A-M-178"
+ },
+ "pvl_diff_mass_kg": {
+  "value": 20.0,
+  "units": "kg heated mass (tube, boat, heater, hot-face insulation)",
+  "register": "A-M-178",
+  "needs_verification": true,
+  "verification_test": "First-article tool run (X-MFG-38)"
+ },
+ "pvl_diff_heat_h": {
+  "value": 1.5,
+  "units": "h heat-up",
+  "register": "A-M-178"
+ },
+ "pvl_diff_run_h": {
+  "value": 1.0,
+  "units": "h at temperature",
+  "register": "A-M-178"
+ },
+ "pvl_hot_k_a": {
+  "value": 0.035,
+  "units": "W/m K ceramic-fibre k at 0 C",
+  "register": "A-M-178"
+ },
+ "pvl_hot_k_b": {
+  "value": 0.0002,
+  "units": "W/m K2 ceramic-fibre k slope",
+  "register": "A-M-178"
+ },
+ "pvl_pecvd_W_cm2": {
+  "value": 0.1,
+  "units": "W/cm2 RF power density on the electrode",
+  "register": "A-M-178",
+  "needs_verification": true,
+  "verification_test": "First-article tool run (X-MFG-38)"
+ },
+ "pvl_pecvd_area_m2": {
+  "value": 0.05,
+  "units": "m2 electrode (two cells)",
+  "register": "A-M-178"
+ },
+ "pvl_pecvd_dep_h": {
+  "value": 0.25,
+  "units": "h deposition per batch",
+  "register": "A-M-178"
+ },
+ "pvl_pecvd_C": {
+  "value": 400.0,
+  "units": "C substrate",
+  "register": "A-M-178"
+ },
+ "pvl_vac_kW": {
+  "value": 1.5,
+  "units": "kW dry vacuum pump",
+  "register": "A-M-178"
+ },
+ "pvl_vac_h": {
+  "value": 1.0,
+  "units": "h pump run per batch",
+  "register": "A-M-178"
+ },
+ "pvl_print_kW": {
+  "value": 0.2,
+  "units": "kW screen-printer drives",
+  "register": "A-M-178"
+ },
+ "pvl_dry_kW": {
+  "value": 0.5,
+  "units": "kW 200 C dryer",
+  "register": "A-M-178"
+ },
+ "pvl_print_h": {
+  "value": 0.5,
+  "units": "h per batch",
+  "register": "A-M-178"
+ },
+ "pvl_fire_kW": {
+  "value": 3.0,
+  "units": "kW IR lamp fast-firing furnace",
+  "register": "A-M-178"
+ },
+ "pvl_fire_h": {
+  "value": 0.17,
+  "units": "h lamp on per batch",
+  "register": "A-M-178"
+ },
+ "pvl_iv_kW": {
+  "value": 0.1,
+  "units": "kW flash IV tester",
+  "register": "A-M-178"
+ },
+ "pvl_iv_h": {
+  "value": 0.25,
+  "units": "h",
+  "register": "A-M-178"
  }
 }

@@ -2948,5 +2948,25 @@
     "verification": "MFG_SHOP 3.98 -> 2.90 kW average; coincident peak 38.5 -> 24.5 kW; melt 15 -> 7.5 kW, atomiser 12 -> 5.5 kW",
     "replace_when": "Trial heats, atomiser run and rolling/drawing passes on the first articles",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-178",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "PV cell line tool designs",
+    "statement": "One batch of 3 cells/d; texture 10 L at 80 C; diffusion 20 kg heated mass to 850 C in 1.5 h, ceramic fibre k 0.035 + 0.0002 T; PECVD 0.1 W/cm2 on 0.05 m2 for 15 min, 5 kg platen at 400 C, 1.5 kW vacuum pump 1 h; printer 0.2 + dryer 0.5 kW 0.5 h; IR firing 3 kW 10 min; IV 0.1 kW",
+    "verification": "SOLAR_PV_CELL 0.30 -> 0.39 kW average; peak 3.8 kW (diffusion heat-up)",
+    "replace_when": "First-article tool runs",
+    "doc": "AQS-PAR-003"
   }
 ]

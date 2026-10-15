@@ -1483,7 +1483,7 @@
       "modules": [],
       "params": {
         "kW": 1137,
-        "kWh": 3500,
+        "kWh": 3501,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -1493,7 +1493,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1046.8425,
+              "value": 1047.2265,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -1517,7 +1517,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1055.330 kg/d, out 1055.330 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1055.714 kg/d, out 1055.714 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -1527,25 +1527,25 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.0614,
+          "pump_in_m3_h": 1.0553,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.123,
+          "out_breathing_Nm3_h": 2.111,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 6.7,
+          "vent_bore_req_mm": 6.6,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
         },
         "charge_kW": 1137,
-        "discharge_kW": 250,
+        "discharge_kW": 251,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 49 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.872,
-          "purge_m3_h": 36.96,
+          "H2_m3_d": 8.875,
+          "purge_m3_h": 36.98,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2288.8
+          "electrode_area_m2": 2289.7
         }
       }
     },
@@ -2347,9 +2347,9 @@
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 18.4 kPa (1.50 m full at SG 1.25) = 20.5 kPa g (A-M-174)"
         },
         "redundancy": {
-          "rejection_kW": 151.61,
+          "rejection_kW": 151.7,
           "modules": 3,
-          "module_kW": 75.81,
+          "module_kW": 75.85,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }
