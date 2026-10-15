@@ -2334,6 +2334,15 @@
           "case": "atmospheric",
           "method": "not an API 520 case; tank venting per API Std 2000 at unit task 07",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice"
+        },
+        "crop_carbon": {
+          "co2_fixed_kg_d": 0.848,
+          "dm_kg_d": 0.538,
+          "edible_fresh_kg_d": 4.039,
+          "inedible_fresh_kg_d": 2.962,
+          "inedible_lines_claimed_kg_d": 12.73,
+          "gap_kg_d": 9.768,
+          "basis": "BVAD2022 tomato; A-M-141; Q-008"
         }
       },
       "modules": [],
@@ -9937,10 +9946,10 @@
       "phase": "S",
       "carries": "food waste to larvae",
       "rate": {
-        "value": 1.800001,
+        "value": 1.231493,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. 1.8 kg/d ration. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-014. Food to people and animals. Waste to compost and the digester. Lignin to board. 1.8 kg/d ration. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: edible 4.04 kg/d fresh (DM 0.538 kg/d from 0.848 kg CO2, HI 45%, BVAD2022) less crew food S14 (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "DOCK",
@@ -12963,7 +12972,7 @@
       "phase": "L",
       "carries": "salt-laden trim",
       "rate": {
-        "value": 111.321408,
+        "value": 111.889916,
         "unit": "kg/d",
         "status": "study",
         "note": "The fixed carbon leaves in the trim. | X-PAR-02 TF: trim less the photosynthetic O2 (AQS-PAR-003)."
@@ -14476,10 +14485,10 @@
       "phase": "S",
       "carries": "frass",
       "rate": {
-        "value": 2.280001,
+        "value": 1.711493,
         "unit": "kg/d",
         "status": "study",
-        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Waste follows the added 0.05 kg/d peanut. The honey was already counted. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: frass closes the larvae bin on S14X (+0.000) (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

@@ -11,7 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
 CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
 NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20; SWARF = 0.10
-BVAD_TOM_T, BVAD_TOM_CO2 = 2.77, 36.24   # BVAD2022 Table 4-91 tomato transpiration kg/m2/d and CO2 uptake g/m2/d
+BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = 2.77, 36.24, 0.43, 0.45   # BVAD2022 Table 4-91 tomato transpiration kg/m2/d and CO2 uptake g/m2/d
 BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
@@ -82,4 +82,12 @@ def tf(g, ps=None):
     rl['note'] = 'blend charge retired (melt feed IA-MELT-ATOM); off-spec on-graph IA-ATOM-REMELT (A-M-139)'
     # MET_MELT closes on the remelt: sheet + remelt = billet + mill + atomizer feed
     r = _resid(g, 'MET_MELT'); put('IA-MELT-MILL', E['IA-MELT-MILL']['rate']['value'] + r, f'mill draw closes the melt ({r:+.4f})')
-    return dict(atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
+    # GROW_BED crop carbon (A-M-141): total DM = fixed CO2 x 12/44 / C 43 %; edible = HI 45 % at 94 % water, inedible 90 % water (BVAD2022 tomato).
+    # Edible leaves as crew food S14 plus surplus to larvae S14X. The inedible lines (residue, trim, browse, straw) exceed the carbon; Q-008.
+    co2f = CO2_M2*BED_M2/1000; dm = co2f*12.011/44.01/BVAD_TOM_C; ed = dm*BVAD_TOM_HI/(1 - 0.94); ined = dm*(1 - BVAD_TOM_HI)/(1 - 0.90)
+    put('S14X', ed - E['S14']['rate']['value'], f'edible {ed:.2f} kg/d fresh (DM {dm:.3f} kg/d from {co2f:.3f} kg CO2, HI {BVAD_TOM_HI:.0%}, BVAD2022) less crew food S14')
+    r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, f'frass closes the larvae bin on S14X ({r:+.3f})')
+    lines = ('IA-RES-01', 'IA-COMP-01', 'IA-GOAT-TRIM', 'IA-STRAW'); claim = sum(E[k]['rate']['value'] for k in lines)
+    N['GROW_BED']['params']['crop_carbon'] = {'co2_fixed_kg_d': round(co2f, 3), 'dm_kg_d': round(dm, 3), 'edible_fresh_kg_d': round(ed, 3), 'inedible_fresh_kg_d': round(ined, 3),
+        'inedible_lines_claimed_kg_d': round(claim, 3), 'gap_kg_d': round(claim - ined, 3), 'basis': 'BVAD2022 tomato; A-M-141; Q-008'}
+    return dict(ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
