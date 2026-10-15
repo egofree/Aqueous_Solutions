@@ -15,19 +15,21 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 13 | Owner decision or site investigation report |
+| T1 | Owner and site data | 16 | Owner decision or site investigation report |
 | T2 | Vendor and manufacturer data | 30 | Vendor data sheet, quote or curve filed against the item |
 | T3 | Bench and laboratory tests | 31 | Bench test report with method, data and result |
 | T4 | Pilot runs | 8 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 29 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 30 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 11 | Commissioning record |
 
-Total 122 items: 25 drivers, 97 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 126 items: 27 drivers, 99 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver pv_field_aspect | 1.5 E-W length / N-S depth | Site plan with parcel boundary (X-BAS-03) | X-PAR |
+| driver pv_ground_m2_per_kWp | 5.0 m2 ground per kWp including row spacing | Site survey area check (X-BAS-03) and PV row layout at the chosen tilt and ground-cover ratio | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
@@ -39,8 +41,9 @@ Total 122 items: 25 drivers, 97 register entries. Classification rule: first mat
 | A-M-051 | 35 x 20 m ring, 12 rods 3 m m | Site plan (X-BLD) | X-ELS-08 |
 | A-M-052 | 5 ohm | Utility or AHJ requirement and IEEE 80 step/touch study | X-ELS-08 |
 | A-M-063 | HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 kW, d | Owner critical-load list | X-ELS-05 |
-| A-M-078 | PV 984 kWp as 1968 x 0.5 kW modules, ground field about 4918 kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
+| A-M-078 | PV 1078 kWp, ground field 89.9 x 60.0 m (5390 m2 at 5 m2/kWp kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
 | A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and compressor vendor data | X-ELS-02 |
+| A-M-098 | PV field rectangle aspect 1.5 (E-W long), 2.5 m mount height -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout | X-BLD-04 |
 
 ## 3. T2 Vendor and manufacturer data
 
@@ -159,6 +162,7 @@ Total 122 items: 25 drivers, 97 register entries. Classification rule: first mat
 | A-M-079 | EW cell DC less existing heat outlets goes to HEAT_SINK as c kW | Cell heat balance at unit task 03 | X-RSZ-02 |
 | A-M-086 | electrical input to each fed load leaves as heat to HEAT_SIN kW | Per-unit energy balance at unit task 01 | X-RSZ-07 |
 | A-M-093 | SOL_ARK bus change carried on IA-PV-01 average; PV, storage, kW | Hourly load profile and PVsyst site run | X-PAR-04 |
+| A-M-099 | seed rows moved the smallest distance (100 mm grid, 4 m radi mm | Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation | X-BLD-04 |
 
 ## 7. T6 Commissioning measurements
 

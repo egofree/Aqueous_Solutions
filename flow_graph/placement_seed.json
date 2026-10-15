@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "I",
+  "revision": "J",
   "date": "2026-10-07",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
@@ -371,23 +371,23 @@
       "unit_id": "PV_ARRAY",
       "level": "L0",
       "origin_mm": [
-        -11000,
-        10000,
+        -99300,
+        -3000,
         0
       ],
       "size_mm": [
-        4000,
-        2000,
-        80
+        89900,
+        60000,
+        2500
       ],
-      "source": "params.py PV_* one module at M1. West of ESS. Tilt +33 deg about +X, equator face. Not on the roof tank. Rev F: from (-9200, 10000). Footprint cleared ZNBR2_BR2_REGEN (was intersecting); 600 mm to the Br2 tower. Still west of ESS."
+      "source": "X-BLD-04 study PV ground field (flow_graph/place_pv_field.py): 1078 kWp x 5.0 m2/kWp = 5390 m2, 89.9 x 60.0 m, 2.5 m mount height (study), 600 mm west of the yard. Site area pending owner (X-BAS-03); A-M-078, A-M-098."
     },
     {
       "unit_id": "WS_HF_ED",
       "level": "L0",
       "origin_mm": [
         12200,
-        8200,
+        9600,
         0
       ],
       "size_mm": [
@@ -395,7 +395,8 @@
         800,
         1100
       ],
-      "source": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH."
+      "source": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH.",
+      "source_doc": " X-BLD-04: moved from (12200, 8200) to (12200, 9600) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "WS_NITRIC",
@@ -417,7 +418,7 @@
       "level": "L0",
       "origin_mm": [
         15200,
-        8200,
+        8000,
         0
       ],
       "size_mm": [
@@ -425,14 +426,15 @@
         800,
         1100
       ],
-      "source": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV."
+      "source": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV.",
+      "source_doc": " X-BLD-04: moved from (15200, 8200) to (15200, 8000) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "WS_AMMONIA",
       "level": "L0",
       "origin_mm": [
         15200,
-        9400,
+        10800,
         0
       ],
       "size_mm": [
@@ -440,13 +442,14 @@
         800,
         1100
       ],
-      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room."
+      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room.",
+      "source_doc": " X-BLD-04: moved from (15200, 9400) to (15200, 10800) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "WS_KOH",
       "level": "L0",
       "origin_mm": [
-        16200,
+        15800,
         9400,
         0
       ],
@@ -455,7 +458,8 @@
         800,
         1100
       ],
-      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub."
+      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub.",
+      "source_doc": " X-BLD-04: moved from (16200, 9400) to (15800, 9400) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "WS_DOPE",
@@ -597,7 +601,7 @@
       "level": "L0",
       "origin_mm": [
         13600,
-        200,
+        1600,
         0
       ],
       "size_mm": [
@@ -605,7 +609,8 @@
         800,
         2000
       ],
-      "source": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4."
+      "source": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4.",
+      "source_doc": " X-BLD-04: moved from (13600, 200) to (13600, 1600) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "MET_HX_Q4",
@@ -626,7 +631,7 @@
       "unit_id": "CRYO_AHU_COND_CONDENSABLE",
       "level": "L-1",
       "origin_mm": [
-        15600,
+        15200,
         6400,
         -6000
       ],
@@ -635,7 +640,8 @@
         400,
         600
       ],
-      "source": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab."
+      "source": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab.",
+      "source_doc": " X-BLD-04: moved from (15600, 6400) to (15200, 6400) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "CRYO_HX_Q4",
@@ -671,7 +677,7 @@
       "unit_id": "GREY_TREAT",
       "level": "L1",
       "origin_mm": [
-        1800,
+        2200,
         200,
         6000
       ],
@@ -680,7 +686,8 @@
         800,
         1100
       ],
-      "source": "Downstream of black digest. HDR_GREY only. Not Salria."
+      "source": "Downstream of black digest. HDR_GREY only. Not Salria.",
+      "source_doc": " X-BLD-04: moved from (1800, 200) to (2200, 200) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "S13_CLASS_TREAT",
@@ -745,8 +752,8 @@
       "unit_id": "GEO_GHEX",
       "level": "L0",
       "origin_mm": [
-        -8600,
-        5200,
+        -8800,
+        5400,
         0
       ],
       "size_mm": [
@@ -754,7 +761,8 @@
         800,
         800
       ],
-      "source": "West of GEO_HP. Bore field tie. Massing only."
+      "source": "West of GEO_HP. Bore field tie. Massing only.",
+      "source_doc": " X-BLD-04: moved from (-8600, 5200) to (-8800, 5400) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "GEO_HP_CLOSED_LOOP",
@@ -835,8 +843,8 @@
       "unit_id": "GLASS_MILL",
       "level": "L-1",
       "origin_mm": [
-        3400,
-        12200,
+        3000,
+        13600,
         -6000
       ],
       "size_mm": [
@@ -844,7 +852,8 @@
         600,
         800
       ],
-      "source": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class."
+      "source": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class.",
+      "source_doc": " X-BLD-04: moved from (3400, 12200) to (3000, 13600) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "GLASS_BURNOUT",
@@ -1127,7 +1136,7 @@
       "level": "L-1",
       "origin_mm": [
         4400,
-        12200,
+        14300,
         -6000
       ],
       "size_mm": [
@@ -1135,14 +1144,15 @@
         300,
         700
       ],
-      "source": "Cut tank. Product. NFPA 30."
+      "source": "Cut tank. Product. NFPA 30.",
+      "source_doc": " X-BLD-04: moved from (4400, 12200) to (4400, 14300) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "PROD_C11_C18",
       "level": "L-1",
       "origin_mm": [
         4400,
-        12600,
+        12100,
         -6000
       ],
       "size_mm": [
@@ -1150,14 +1160,15 @@
         300,
         700
       ],
-      "source": "Cut tank."
+      "source": "Cut tank.",
+      "source_doc": " X-BLD-04: moved from (4400, 12600) to (4400, 12100) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "PROD_C19_C28",
       "level": "L-1",
       "origin_mm": [
         4400,
-        13000,
+        15200,
         -6000
       ],
       "size_mm": [
@@ -1165,7 +1176,8 @@
         300,
         700
       ],
-      "source": "Cut tank."
+      "source": "Cut tank.",
+      "source_doc": " X-BLD-04: moved from (4400, 13000) to (4400, 15200) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
       "unit_id": "PROD_C29",
@@ -1764,5 +1776,6 @@
   "notes_rev_h": "2026-10-07, graph Rev K. Heat-ladder stores stepped for gravity thermosyphons (AQS-DUTY-008 Rev C s14): Q1 z -6000, Q2 -5150, Q3 -4250, Q4 -3350 on both ladders; plan positions unchanged; Q4 top -2150, 1850 mm under the L0 slab soffit. New or moved rows for the Rev K solids: FLUE_KO (= FLUE_CAP), NOX_SCRUB, MEOH_COND, HX8, CONTINUOUS_RECYCLE, VCD_TRAIN, RELIEF_CRYO, REMIN, WS_PHOS, LITHO_STUB bench + LITHO_COAT/ALIGN/DEV, SOLAR_PV_CELL, ELECTRODE_COAT, BLOW_MOLD. Every row checked against every solid on the placed copy and every seed box: 0 intersections, >= 600 mm within a level (lines and group members: no overlap). GEO_ORC pad untouched. Record rows (fixed_feature, never written): CATCH_TANK, FLUE_KO (= FLUE_CAP), RELIEF_H2 (= H2_STACK bounding box). Plate-world origins; PROCESS_DX/DY not applied.",
   "notes_rev_c4": "Four node envelopes placed in LEACH_EW, z -6000, 600 mm clear: LEACH_CSTR_1 at 600, 5300; EW_1 at 3200, 5300; EW_2 at 4400, 5300; EW_9 at 5600, 5300. The other 39 block members have no envelope. No origin was written for them. The plate did not grow.",
   "notes_rev_c5": "Twenty envelopes placed in the sector block. AZOLLA_BED keeps 18000 by 5000 by 400 mm with the long side on the farm block. CURTAIL and HEAT_SINK have envelopes and no GEO block, so they were not placed. Sixty-two others have no envelope. The plate did not grow.",
-  "notes_rev_i": "2026-10-15, X-RSZ-03, re-run for the X-PAR acid-loop decision (CE 0.85, AQS-PAR-001). EW_1..EW_9 at sized envelopes 370-3270 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows."
+  "notes_rev_i": "2026-10-15, X-RSZ-03, re-run for the X-PAR acid-loop decision (CE 0.85, AQS-PAR-001). EW_1..EW_9 at sized envelopes 370-3270 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows.",
+  "notes_rev_j": "2026-10-15, X-BLD-04. 12 rows moved the smallest distance to clear maint_clear_mm 600 (flow_graph/clear_pairs.py); partition sides kept."
 }

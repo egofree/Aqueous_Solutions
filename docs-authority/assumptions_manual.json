@@ -1160,7 +1160,7 @@
   "verification_test": "BMED stack vendor data and leach-loop precipitation test (unit task 02)"
  },
  {
-  "value": "PV 984 kWp as 1968 x 0.5 kW modules, ground field about 4918 m2 off the plate",
+  "value": "PV 1078 kWp, ground field 89.9 x 60.0 m (5390 m2 at 5 m2/kWp) west of the yard",
   "units": "kWp, m2",
   "where": "PV_ARRAY params",
   "basis": "AQS-ELEC-007 bounding case; 5 m2/kWp; plate cannot carry it (sizing rule revises the restriction)",
@@ -1168,9 +1168,11 @@
   "replaced_by": "Site survey area check (X-BAS-03) and PV layout",
   "task": "X-RSZ-02",
   "files": [
-   "flow_graph/plant_flow_graph.json",
    "docs-authority/POWER_SIZING.md",
-   "docs-authority/PROTECTION.md"
+   "docs-authority/PROTECTION.md",
+   "flow_graph/place_pv_field.py",
+   "flow_graph/placement_seed.json",
+   "flow_graph/plant_flow_graph.json"
   ],
   "id": "A-M-078",
   "needs_verification": true,
@@ -1483,5 +1485,37 @@
   ],
   "id": "A-M-097",
   "needs_verification": true
+ },
+ {
+  "value": "PV field rectangle aspect 1.5 (E-W long), 2.5 m mount height, east edge 600 mm west of the yard, south edge on the yard south line",
+  "units": "-, mm",
+  "where": "PV_ARRAY seed row",
+  "basis": "Study layout pending the owner site area (X-BAS-03)",
+  "sensitivity": "Cable lengths on IA-PV-01; site fit",
+  "replaced_by": "Site plan with parcel boundary",
+  "task": "X-BLD-04",
+  "files": [
+   "flow_graph/place_pv_field.py",
+   "flow_graph/placement_seed.json"
+  ],
+  "id": "A-M-098",
+  "needs_verification": true,
+  "verification_test": "Site plan with parcel boundary (X-BAS-03) and PV row layout"
+ },
+ {
+  "value": "seed rows moved the smallest distance (100 mm grid, 4 m radius) inside their block, no partition X line crossed, to clear 600 mm",
+  "units": "mm",
+  "where": "12 seed rows (placement seed Rev J)",
+  "basis": "maint_clear_mm 600 (seed rules); row cabinets and process trains spread rather than ganged",
+  "sensitivity": "Room fit; local pipe runs",
+  "replaced_by": "Room layout review with access and egress (X-BLD-04)",
+  "task": "X-BLD-04",
+  "files": [
+   "flow_graph/clear_pairs.py",
+   "flow_graph/placement_seed.json"
+  ],
+  "id": "A-M-099",
+  "needs_verification": true,
+  "verification_test": "Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation"
  }
 ]

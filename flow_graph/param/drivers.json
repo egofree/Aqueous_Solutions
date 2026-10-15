@@ -269,5 +269,19 @@
   "register": "X-PAR NaOH balance (owner decision 2026-10-15)",
   "needs_verification": true,
   "verification_test": "Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot"
+ },
+ "pv_ground_m2_per_kWp": {
+  "value": 5.0,
+  "units": "m2 ground per kWp including row spacing",
+  "register": "A-M-078 (AQS-ELEC-007 study)",
+  "needs_verification": true,
+  "verification_test": "Site survey area check (X-BAS-03) and PV row layout at the chosen tilt and ground-cover ratio"
+ },
+ "pv_field_aspect": {
+  "value": 1.5,
+  "units": "E-W length / N-S depth",
+  "register": "A-M-098 (X-BLD-04 study)",
+  "needs_verification": true,
+  "verification_test": "Site plan with parcel boundary (X-BAS-03)"
  }
 }

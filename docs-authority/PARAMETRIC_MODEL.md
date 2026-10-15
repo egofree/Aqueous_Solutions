@@ -115,6 +115,8 @@ All solved units close.
 | ppt_naoh_per_cl | 1.0 | mol NaOH per mol chloride precipitated as hydroxide | GREENWOOD | yes |
 | digest_naoh_per_sio2 | 2.0 | mol NaOH per mol SiO2 dissolved | GREENWOOD | yes |
 | naoh_makeup_form | 1.0 | mass fraction NaOH in purchased make-up (anhydrous flake) | X-PAR NaOH balance (owner decision 2026-10-15) | yes |
+| pv_ground_m2_per_kWp | 5.0 | m2 ground per kWp including row spacing | A-M-078 (AQS-ELEC-007 study) | yes |
+| pv_field_aspect | 1.5 | E-W length / N-S depth | A-M-098 (X-BLD-04 study) | yes |
 
 ## 6. References
 
@@ -180,6 +182,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES |
 | driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet |
 | driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot |
+| driver pv_ground_m2_per_kWp | 5.0 m2 ground per kWp including row spacing | Site survey area check (X-BAS-03) and PV row layout at the chosen tilt and ground-cover ratio |
+| driver pv_field_aspect | 1.5 E-W length / N-S depth | Site plan with parcel boundary (X-BAS-03) |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -257,7 +261,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-075 | FARM second tier floor at L1 datum + 2250 mm, beds and skids mm | X-BLD-01 tier deck design and X-BLD-04 access check |
 | A-M-076 | FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm mm | X-BLD-04 general arrangement |
 | A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | BMED stack vendor data and leach-loop precipitation test (unit task 02) |
-| A-M-078 | PV 984 kWp as 1968 x 0.5 kW modules, ground field about 4918 kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
+| A-M-078 | PV 1078 kWp, ground field 89.9 x 60.0 m (5390 m2 at 5 m2/kWp kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
 | A-M-079 | EW cell DC less existing heat outlets goes to HEAT_SINK as c kW | Cell heat balance at unit task 03 |
 | A-M-080 | RECT_EW cabinet 2400 x 800 x 2000 mm mm | Vendor GA |
 | A-M-081 | potable path: leach bleed -> VCD -> UPW polish (2.3% reject) - | Condensate chloride and pH test against the potable standard (unit task 06) |
@@ -277,3 +281,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-095 | dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol mol/mol | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg |
 | A-M-096 | NaOH make-up = precipitation + digest demand less BMED produ kg/d NaOH flake | Pilot sodium balance: Na in make-up, purge and products by ICP-OES over a steady week |
 | A-M-097 | sodium salt purge IA-NA-PURGE equal in mass to the make-up kg/d | Pilot purge sample: Na, Cl, water by ICP-OES and titration |
+| A-M-098 | PV field rectangle aspect 1.5 (E-W long), 2.5 m mount height -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout |
+| A-M-099 | seed rows moved the smallest distance (100 mm grid, 4 m radi mm | Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation |
