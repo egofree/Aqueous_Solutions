@@ -59,6 +59,7 @@ ELEC,MV,CB-2,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105
 ELEC,MV,CB-3,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
 ELEC,MV,CB-4,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
 ELEC,MV,CB-5,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
+ELEC,MV,CB-6,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
 ELEC,collection bus,CB-1,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-1,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-1,section main to CB-1 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
@@ -68,13 +69,16 @@ ELEC,collection bus,CB-2,section main to CB-2 transformer LV,"power, 3 ph parall
 ELEC,collection bus,CB-3,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-3,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-3,section main to CB-3 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
-ELEC,collection bus,CB-4,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
+ELEC,collection bus,CB-4,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-4,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-4,section main to CB-4 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
-ELEC,collection bus,CB-5,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
+ELEC,collection bus,CB-5,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-5,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-5,section main to CB-5 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
-ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,5898.0,1,5898.0,AQS-ELEC-005 ring 740 m + mesh 5158 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
+ELEC,collection bus,CB-6,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
+ELEC,collection bus,CB-6,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
+ELEC,collection bus,CB-6,section main to CB-6 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
+ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,7408.0,1,7408.0,AQS-ELEC-005 ring 836 m + mesh 6572 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
 ELEC,inverter,SOL_ARK_60K,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,48,960.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,inverter,SOL_ARK_60K,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,48,960.0,speed/position feedback (assumed)
 ELEC,rectifier,RECTIFIER,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,4,80.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -100,29 +104,27 @@ ELEC_PV,EXT_HALL_N,EXT_HALL,heat pump condenser fan EGC,equipment ground,14 AWG,
 ELEC_PV,EXT_HALL_N,EXT_HALL,heat pump condenser fan control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,104.6,16,10045.4,"start/stop, run, fault (assumed)"
 ELEC_PV,EXT_HALL_N,EXT_HALL,heat pump condenser fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,104.6,16,5022.7,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-ELEC_PV (Manhattan x 1.1 + 3 m drop, assumed)"
 ELEC_PV,distribution,LP-ELEC_PV,panel feeder 460 V,"power, 3 ph + EGC",4/0 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,8,31.6,1,253.1,NEC 430.24: 438.4 A in 2 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-ELEC_PV,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",12 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,64,23040.0,installed 281 kW (average 28.1 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 %; 120 m mean (assumed)
-ELEC_PV,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,377,45240.0,"6784 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 377 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
-ELEC_PV,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,377,22620.0,NEC 690.45 / 250.122
+ELEC_PV,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,81,29160.0,installed 357 kW (average 35.735 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
+ELEC_PV,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,479,57480.0,"8608 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 479 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
+ELEC_PV,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,479,28740.0,NEC 690.45 / 250.122
 FAB,FAB,WAFER_FAB,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WAFER_FAB,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-FAB,FAB,WAFER_FAB,process vacuum pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.6,1,7.6,NEC 250.122 at 15 A OCPD
-FAB,FAB,WAFER_FAB,process vacuum pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.6,1,45.7,"start/stop, run, fault (assumed)"
-FAB,FAB,WAFER_FAB,process vacuum pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.6,1,22.9,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed)"
+FAB,FAB,WAFER_FAB,process vacuum pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.7,1,9.7,NEC 250.122 at 15 A OCPD
+FAB,FAB,WAFER_FAB,process vacuum pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.7,1,58.3,"start/stop, run, fault (assumed)"
+FAB,FAB,WAFER_FAB,process vacuum pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.7,1,29.1,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
 FAB,FAB,WAFER_FAB,transfer pump IA-FAB-SPENT to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WAFER_FAB,transfer pump IA-FAB-SPENT to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FAB,FAB,WAFER_FAB,transfer pump S39 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WAFER_FAB,transfer pump S39 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FAB,FAB,WET_BENCH,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WET_BENCH,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-FAB,FAB,WET_BENCH,process vacuum pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.6,1,7.6,NEC 250.122 at 15 A OCPD
-FAB,FAB,WET_BENCH,process vacuum pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.6,1,45.7,"start/stop, run, fault (assumed)"
-FAB,FAB,WET_BENCH,process vacuum pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.6,1,22.9,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed)"
+FAB,FAB,WET_BENCH,process vacuum pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.7,1,9.7,NEC 250.122 at 15 A OCPD
+FAB,FAB,WET_BENCH,process vacuum pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.7,1,58.3,"start/stop, run, fault (assumed)"
+FAB,FAB,WET_BENCH,process vacuum pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.7,1,29.1,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
 FAB,FAB,WET_BENCH,transfer pump S10 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WET_BENCH,transfer pump S10 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FAB,FAB,WET_BENCH,transfer pump S38 to OIL_FRAC power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,FAB,WET_BENCH,transfer pump S38 to OIL_FRAC signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-FAB,distribution,LP-FAB,panel feeder 208 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,30.4,1,121.8,NEC 430.24: 3.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-FAB,distribution,LP-FAB,panel feeder 460 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,30.4,1,121.8,NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
 FAB,reagent,WS_AMMONIA,on/off valve IA-NH3-IMID power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,reagent,WS_AMMONIA,on/off valve IA-NH3-IMID signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FAB,reagent,WS_AMMONIA,on/off valve IA-NH3-MEAM power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -181,14 +183,14 @@ FAB,tool,LITHO_COAT,wafer stage axis power,DC power pair,16 AWG,TC-ER 2-cond,600
 FAB,tool,LITHO_COAT,wafer stage axis signal,control,18 AWG,shielded pair,300 V,2,10.0,2,40.0,speed/position feedback (assumed)
 FAB,tool,LITHO_DEV,wafer stage axis power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,2,40.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,tool,LITHO_DEV,wafer stage axis signal,control,18 AWG,shielded pair,300 V,2,10.0,2,40.0,speed/position feedback (assumed)
-FAB,tool,LITHO_STUB,main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,5.5,1,5.5,NEC 250.122 at 15 A OCPD
-FAB,tool,LITHO_STUB,main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,5.5,1,33.2,"start/stop, run, fault (assumed)"
-FAB,tool,LITHO_STUB,main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,5.5,1,16.6,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed)"
+FAB,tool,LITHO_STUB,main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.7,1,7.7,NEC 250.122 at 15 A OCPD
+FAB,tool,LITHO_STUB,main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.7,1,46.4,"start/stop, run, fault (assumed)"
+FAB,tool,LITHO_STUB,main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.7,1,23.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
 FAB,tool,LITHO_STUB,wafer stage axis power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,2,40.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FAB,tool,LITHO_STUB,wafer stage axis signal,control,18 AWG,shielded pair,300 V,2,10.0,2,40.0,speed/position feedback (assumed)
-FAB,tool,SOLAR_PV_CELL,main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.4,1,7.4,NEC 250.122 at 15 A OCPD
-FAB,tool,SOLAR_PV_CELL,main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.4,1,44.4,"start/stop, run, fault (assumed)"
-FAB,tool,SOLAR_PV_CELL,main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.4,1,22.2,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed)"
+FAB,tool,SOLAR_PV_CELL,main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.9,1,9.9,NEC 250.122 at 15 A OCPD
+FAB,tool,SOLAR_PV_CELL,main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.9,1,59.6,"start/stop, run, fault (assumed)"
+FAB,tool,SOLAR_PV_CELL,main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.9,1,29.8,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
 FARM,FARM,ABE,transfer pump IA-ABE-ETOH to WS_SOLV power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FARM,FARM,ABE,transfer pump IA-ABE-ETOH to WS_SOLV signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FARM,FARM,ABE,transfer pump IA-ABE-STILL to DIGESTER power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -305,22 +307,23 @@ FARM,FARM,YEAST,transfer pump IA-ETOH-S to ETOH_STILL power,DC power pair,16 AWG
 FARM,FARM,YEAST,transfer pump IA-ETOH-S to ETOH_STILL signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FARM,FARM,YEAST,transfer pump IA-STILL to DIGESTER power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FARM,FARM,YEAST,transfer pump IA-STILL to DIGESTER signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-BIO to BIOFILTER EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,24.3,1,24.3,NEC 250.122 at 15 A OCPD
-FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-BIO to BIOFILTER control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,24.3,1,146.0,"start/stop, run, fault (assumed)"
-FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-BIO to BIOFILTER feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,24.3,1,73.0,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
+FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-BIO to BIOFILTER EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,23.4,1,23.4,NEC 250.122 at 15 A OCPD
+FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-BIO to BIOFILTER control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,23.4,1,140.4,"start/stop, run, fault (assumed)"
+FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-BIO to BIOFILTER feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,23.4,1,70.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
 FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-SOL to FISH_SUMP power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FARM,FARM_AQ,CLARIFIER,transfer pump IA-CLAR-SOL to FISH_SUMP signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FARM,FARM_AQ,DIGESTER,Biogas recirculation blower power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FARM,FARM_AQ,DIGESTER,Biogas recirculation blower signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FARM,FARM_AQ,FISH,transfer pump IA-CLOSE-4 to NUTRIENT_DOSE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FARM,FARM_AQ,FISH,transfer pump IA-CLOSE-4 to NUTRIENT_DOSE signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-FARM,FARM_AQ,FISH,transfer pump IA-FISH-OUT to CLARIFIER EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,28.7,1,28.7,NEC 250.122 at 15 A OCPD
-FARM,FARM_AQ,FISH,transfer pump IA-FISH-OUT to CLARIFIER control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,28.7,1,172.4,"start/stop, run, fault (assumed)"
-FARM,FARM_AQ,FISH,transfer pump IA-FISH-OUT to CLARIFIER feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,28.7,1,86.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
-FARM,FARM_AQ,FISH_SUMP,transfer pump IA-SUMP-FISH to FISH EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,27.6,1,27.6,NEC 250.122 at 15 A OCPD
-FARM,FARM_AQ,FISH_SUMP,transfer pump IA-SUMP-FISH to FISH control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,27.6,1,165.8,"start/stop, run, fault (assumed)"
-FARM,FARM_AQ,FISH_SUMP,transfer pump IA-SUMP-FISH to FISH feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,27.6,1,82.9,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
-FARM,distribution,LP-FARM,panel feeder 208 V,"power, 3 ph + EGC",12 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,48.4,1,193.5,NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+FARM,FARM_AQ,FISH,transfer pump IA-FISH-OUT to CLARIFIER EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,20.1,1,20.1,NEC 250.122 at 15 A OCPD
+FARM,FARM_AQ,FISH,transfer pump IA-FISH-OUT to CLARIFIER control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,20.1,1,120.6,"start/stop, run, fault (assumed)"
+FARM,FARM_AQ,FISH,transfer pump IA-FISH-OUT to CLARIFIER feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,20.1,1,60.3,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
+FARM,FARM_AQ,FISH_SUMP,transfer pump IA-SUMP-FISH to FISH EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,17.5,1,17.5,NEC 250.122 at 15 A OCPD
+FARM,FARM_AQ,FISH_SUMP,transfer pump IA-SUMP-FISH to FISH control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,17.5,1,104.8,"start/stop, run, fault (assumed)"
+FARM,FARM_AQ,FISH_SUMP,transfer pump IA-SUMP-FISH to FISH feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,17.5,1,52.4,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FARM (Manhattan x 1.1 + 3 m drop, assumed)"
+FARM,distribution,LP-FARM,panel feeder 208 V,"power, 3 ph + EGC",10 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,37.3,1,149.1,NEC 430.24: 10.2 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+FARM,distribution,LP-FARM,panel feeder 460 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,37.3,1,149.1,NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
 FARM,farm,AZOLLA_BED,transfer pump IA-AZ-OUT to GROW_BED power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FARM,farm,AZOLLA_BED,transfer pump IA-AZ-OUT to GROW_BED signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FARM,farm,BIOFILTER,transfer pump IA-BIO-BED to GROW_BED power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -438,9 +441,9 @@ MEOH,tank,MEOH_TANK,transfer pump IA-MEOH-REST to MEOH_FC power,DC power pair,16
 MEOH,tank,MEOH_TANK,transfer pump IA-MEOH-REST to MEOH_FC signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 MEOH,tank,MEOH_TANK,transfer pump S76 to MEOH_FC power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 MEOH,tank,MEOH_TANK,transfer pump S76 to MEOH_FC signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-MFG,MFG,BOARD_MILL,main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,14.0,1,14.0,NEC 250.122 at 15 A OCPD
-MFG,MFG,BOARD_MILL,main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,14.0,1,84.0,"start/stop, run, fault (assumed)"
-MFG,MFG,BOARD_MILL,main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,14.0,1,42.0,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
+MFG,MFG,BOARD_MILL,main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.7,1,9.7,NEC 250.122 at 15 A OCPD
+MFG,MFG,BOARD_MILL,main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.7,1,58.3,"start/stop, run, fault (assumed)"
+MFG,MFG,BOARD_MILL,main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.7,1,29.1,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
 MFG,MFG,BOARD_MILL,transfer pump IA-BOARD to MFG_SHOP power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 MFG,MFG,BOARD_MILL,transfer pump IA-BOARD to MFG_SHOP signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 MFG,MFG,BOARD_MILL,transfer pump IA-BOARD-SCRAP to COMPOST power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -596,12 +599,12 @@ WET,BMED_CRU,EVAP_ACID,Blower feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 
 WET,BMED_CRU,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,14.8,1,14.8,NEC 250.122 at 15 A OCPD
 WET,BMED_CRU,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,14.8,1,88.7,"start/stop, run, fault (assumed)"
 WET,BMED_CRU,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,14.8,1,44.3,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WET (Manhattan x 1.1 + 3 m drop, assumed)"
-WET,BMED_CRU,EVAP_BASE,Blower EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,16.9,1,16.9,NEC 250.122 at 15 A OCPD
-WET,BMED_CRU,EVAP_BASE,Blower control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,16.9,1,101.6,"start/stop, run, fault (assumed)"
-WET,BMED_CRU,EVAP_BASE,Blower feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,16.9,1,50.8,"NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-WET (Manhattan x 1.1 + 3 m drop, assumed)"
-WET,BMED_CRU,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,16.9,1,16.9,NEC 250.122 at 15 A OCPD
-WET,BMED_CRU,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,16.9,1,101.6,"start/stop, run, fault (assumed)"
-WET,BMED_CRU,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,16.9,1,50.8,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WET (Manhattan x 1.1 + 3 m drop, assumed)"
+WET,BMED_CRU,EVAP_BASE,Blower EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.0,1,8.0,NEC 250.122 at 15 A OCPD
+WET,BMED_CRU,EVAP_BASE,Blower control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,8.0,1,47.8,"start/stop, run, fault (assumed)"
+WET,BMED_CRU,EVAP_BASE,Blower feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,8.0,1,23.9,"NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-WET (Manhattan x 1.1 + 3 m drop, assumed)"
+WET,BMED_CRU,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.0,1,8.0,NEC 250.122 at 15 A OCPD
+WET,BMED_CRU,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,8.0,1,47.8,"start/stop, run, fault (assumed)"
+WET,BMED_CRU,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,8.0,1,23.9,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-WET (Manhattan x 1.1 + 3 m drop, assumed)"
 WET,BMED_CRU,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.2,1,10.2,NEC 250.122 at 15 A OCPD
 WET,BMED_CRU,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.2,1,61.5,"start/stop, run, fault (assumed)"
 WET,BMED_CRU,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.2,1,30.7,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-WET (Manhattan x 1.1 + 3 m drop, assumed)"
