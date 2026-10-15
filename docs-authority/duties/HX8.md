@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Area 0.51 m², U 1500 W/m²K, LMTD 6 K, all on the node. 1500 × 0.51 × 6 / 1000 = 4.59 kW. The edges sum to 4.572 kW. Area was not resized.
 
-3. Material. PVDF tubes and tube sheets on the liquor side, PVC-U shell on the Q4 water side. Titanium plates withdrawn (AQS-STD-002 section 4.1: reducing chloride, possible fluoride, M3). No metal wetted part. Area at PVDF conductance held.
+3. Material. PVDF tubes and tube sheets on the liquor side, PVC-U shell on the Q4 water side. Titanium plates withdrawn (AQS-STD-002 section 4.1). No metal wetted part. Area 7.53 m² at U 101 W/m²K (AQS-DUTY-049); graphite at 0.85 m² needs owner confirmation and full dielectric isolation.
 
 4. Nozzles. Box origin 5200, 1900, −6000 mm. Size 600 × 400 × 600 mm. Rating on each joint is hose, atmospheric. design_kPa 17.8 is the old head-plus-10 figure and is not a pressure rating.
 - N1, IA-HX8, inlet, −Y face center, 5500, 1900, −5700 mm. Height 300 mm from the bottom. Bore not calculated. The edge has no density.

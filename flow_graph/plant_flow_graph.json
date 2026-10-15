@@ -2095,7 +2095,14 @@
             "rating": "hose, atmospheric",
             "dn": 25
           }
-        ]
+        ],
+        "area_m2_pvdf": {
+          "value": 7.53,
+          "U_W_m2K": 101.1,
+          "status": "study",
+          "doc": "AQS-DUTY-049",
+          "note": "The plate area_m2 0.51 is for titanium plates, which are withdrawn (AQS-STD-002 4.1)."
+        }
       }
     },
     {
