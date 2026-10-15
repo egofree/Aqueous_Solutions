@@ -248,6 +248,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register, vessels and interstage valves (X-SAF-04) | canonical |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | A | 2026-10-16 | Fire protection and detection, gas-receiver API 521 fire case (X-SAF-05) | canonical |
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | A | 2026-10-16 | Gas detection: H2, O2 deficiency and enrichment, CO, NOx, Cl2/HCl, HF (X-SAF-06) | canonical |
+| AQS-THM-002 | `docs-authority/HVAC.md` | A | 2026-10-16 | Ventilation and HVAC: air changes, extract, make-up per room with fan duty (X-THM-02) | canonical |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | A | 2026-10-16 | Hazardous area classification: zones for H2, solvent and fuel areas (X-ELS-09) | canonical |
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | A | 2026-10-16 | Hazard separation applied to the layout (X-SAF-02) | canonical |
 | AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design against the soil data (X-BLD-03) | canonical |
