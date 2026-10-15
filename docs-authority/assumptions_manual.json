@@ -1800,5 +1800,20 @@
   "sensitivity": "Soda-lime cullet may dissolve slower than glass fibre (residence scales with 1/k); pyrolysis heat scales the OIL_PYRO bus load linearly",
   "replaced_by": "Bench and pilot data",
   "verification_test": "Bench digest of milled cullet (SiO2 vs time at 85 C); sieve analysis of GLASS_MILL product; DSC/TGA of dried float oil; pilot digester VS destruction; heater energy meter"
+ },
+ {
+  "id": "A-M-117",
+  "task": "X-MFG-32",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/_jellybean.py"
+  ],
+  "value": "Motor rating = next IEC 60034-1 preferred rating >= 1.15 x shaft power; 4-pole IEC 60072-1 frame per CENELEC HD 231; drive-end bearing per frame is typical maker practice (not standardised); unsized pumps take the 0.18 kW class; make/buy split per family at current plant volume",
+  "units": "kW",
+  "where": "AQS-MFG-011",
+  "basis": "IEC 60034-1, IEC 60034-30-1, IEC 60072-1, ISO 15, ISO 492, ISO 4014/4017/4032/7089, ISO 3506-1, ISO 898-1, ISO 3601-1, ISO 6194-1, EN 1514-1, ASME B16.21, ASTM D1785, ISO 1452-2, ISO 2858, ISO 15783",
+  "sensitivity": "Pump motors move one or two frame sizes when the pump curves are sized; bearing sizes depend on the chosen motor maker or in-house design",
+  "replaced_by": "Pump curves per unit (X-ELS-02) and the in-house motor drawings",
+  "verification_test": "Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design"
  }
 ]

@@ -195,6 +195,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | A | 2026-10-15 | Isometric route data | canonical |
 | AQS-PLAN-010 | `docs-authority/RESIZE_SWEEP.md` | A | 2026-10-15 | Bounding-case resize sweep | canonical |
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | A | 2026-10-15 | MFG_SHOP tool list | canonical |
+| AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | A | 2026-10-15 | Jellybean parts register: standard sizes and in-house lines | canonical |
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | canonical |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | canonical |
 | AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | A | 2026-10-15 | Incompatible hazardous-material separation check | canonical |
