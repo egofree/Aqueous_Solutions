@@ -10,7 +10,7 @@ CAT={'skid':[1200,800,1800],'tank':[2400,1800,1500],'bed':[4800,1200,600],'pen':
 UNIT={'FISH':'tank','FISH_SUMP':'tank','CLARIFIER':'tank','DUCKWEED':'bed','VEG_BED':'bed','NFIX_BED':'bed',
  'PEANUT':'bed','SUNFLOWER':'bed','CLOVER':'bed','ANIMAL_PEN':'pen','DIGESTER':'tank','COMPOST':'pen',
  'HAB_GALLEY':'room','HAB_MED':'room','HAB_SLEEP':'room','HAB_WASH':'room','HDR_CO2':'manifold','HDR_N2':'manifold',
- 'CRYO_ASU':'cold_box','CRYO_AR':'small_cold','CRYO_HE':'small_cold','CRYO_KR':'small_cold','CRYO_NE':'small_cold','CRYO_XE':'small_cold'}
+ 'CRYO_ASU':'cold_box','H2_PURIFIER':'small_cold','CRYO_AR':'small_cold','CRYO_HE':'small_cold','CRYO_KR':'small_cold','CRYO_NE':'small_cold','CRYO_XE':'small_cold'}
 CLR=600
 # Second tier inside a tall block: floor at datum + TIER mm, for beds and skids only (assumption, register).
 TIER={'FARM':2250}

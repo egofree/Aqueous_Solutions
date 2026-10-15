@@ -10,6 +10,8 @@ CALC['CRYO_ASU']=(3.03,'Air set by IA-ASU-N2 243.28 kg/d / 0.755 N2 mass fractio
 _s25=next(e['rate']['value'] for e in g['edges'] if e['stream_id']=='S25')
 CALC['BMED_UPW_POLISH']=(round(_s25/1000*3.5/24,3),f'S25 {_s25:.2f} kg/d feed; brackish RO 3.0 kWh/m3 upper (S24 Greenlee 2009) + EDI 0.5 kWh/m3 upper (S25 Alvarado and Chen 2014)')
 CALC['GROW_BED']=(2.25,'LED: 28 m2 x DLI 17 mol/m2/d (S26 Both, Cornell CEA lettuce) / 2.5 umol/J = 2.20 kW; recirculation 18909 kg/d at 10 m head, 50% wire-to-water = 0.043 kW')
+CALC['CRYO_H2']=(0.565,'S05 6.63 kg/d, 10 to 200 bar, RT ln(20)/M / 0.5 = 2.05 kWh/kg (compressed basis, A-M register)')
+CALC['H2_PURIFIER']=(0.05,'TSA regeneration average (study)')
 CALC['WS_PEROX']=(0.0308,'AQS-DSN-OX-001 cell 12.31 A at 2.5 V')
 rows=[]
 for n in g['nodes']:

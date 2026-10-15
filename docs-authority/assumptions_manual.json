@@ -1074,5 +1074,31 @@
    "docs-authority/RESIZE_SWEEP.md"
   ],
   "id": "A-M-082"
+ },
+ {
+  "value": "CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water volume at 14.9 kg/m3); compressor 10 to 200 bar, isothermal efficiency 0.5",
+  "units": "bar, kg, m3",
+  "where": "CRYO_H2 params and load",
+  "basis": "Study basis set by Mike 2026-10-15 (owner may override); store = two days of critical load on H2 (AQS-ELEC-007); H2 density at 200 bar 25 C from NIST webbook",
+  "sensitivity": "Load 0.57 kW linear in throughput; store volume linear in days of backup",
+  "replaced_by": "Owner storage-mode decision and compressor vendor data",
+  "task": "X-ELS-02",
+  "files": [
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "id": "A-M-083"
+ },
+ {
+  "value": "H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol%",
+  "units": "-",
+  "where": "S49, S49P",
+  "basis": "Gas is dried to -40 C dew at H2_DRYER; the 2 wt% water stencil on S49 was inconsistent with that; deoxo water and TSA purge are trace",
+  "sensitivity": "Fuel-cell feed rate",
+  "replaced_by": "Purifier vendor mass balance",
+  "task": "X-ELS-02",
+  "files": [
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "id": "A-M-084"
  }
 ]

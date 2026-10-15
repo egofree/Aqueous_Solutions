@@ -671,10 +671,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 4.0,
+        "value": 0.565,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-CRY-STIR-CONT study band"
+        "note": "X-ELS-02 CRYO_H2 compressed basis: 6.63 kg/d compressed 10 to 200 bar, isothermal work / 0.5 = 2.05 kWh/kg."
       },
       "modules": [],
       "params": {
@@ -682,7 +682,12 @@
         "duty": "In 6.629 kg/d, out 6.629 kg/d, 4.000 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "storage_mode": "compressed gas, 200 bar, Type I/II cylinder bank (study; owner may override)",
+        "store_kg": 115.0,
+        "store_water_volume_m3": 7.72,
+        "store_basis": "two days of critical load on H2 (AQS-ELEC-007 \u00a72, about 115 kg)",
+        "compressor": "two-stage diaphragm, 10 to 200 bar"
       }
     },
     {
@@ -7040,6 +7045,31 @@
         "nameplate_kw_dc": 78.0,
         "doc": "AQS-ELEC-004"
       }
+    },
+    {
+      "unit_id": "H2_PURIFIER",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "dryer",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "ISO 14687 Grade D for FUEL_CELL: deoxo catalyst, chloride guard bed, TSA polish.",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "TSA regeneration heater average (study)"
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "internals": "deoxo Pd/Al2O3, activated alumina HCl/Cl2 guard, 13X TSA pair",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "outlet_purity_mol_pct": 99.97
+      }
     }
   ],
   "edges": [
@@ -12041,7 +12071,7 @@
         "P_bar_a": 1.5,
         "T_C": 25,
         "purity_mol_pct": 99.97,
-        "purity_note": "ISO 14687 Grade D at the fuel cell; purifier held",
+        "purity_note": "BACKUP_GEN engine fuel; Grade D not required",
         "conditions_status": "study",
         "conditions_basis": "X-MAT-15 segment use; AQS-REV-H2-001 Rev B"
       }
@@ -12111,13 +12141,13 @@
     {
       "stream_id": "S49",
       "from_unit_id": "CRYO_H2",
-      "to_unit_id": "FUEL_CELL",
+      "to_unit_id": "H2_PURIFIER",
       "phase": "G",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "H2 fuel",
+      "carries": "H2 to purifier",
       "header": "FC fuel manifold",
       "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
       "claim_status": "Claimed / Partial",
@@ -12128,20 +12158,20 @@
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "FUEL_CELL",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "H2": 0.98,
-        "water": 0.02
+        "H2": 0.999,
+        "water": 0.001
       },
       "params": {
         "P_bar_a": 1.5,
         "T_C": 25,
-        "purity_mol_pct": 99.97,
-        "purity_note": "ISO 14687 Grade D at the fuel cell; purifier held",
+        "purity_mol_pct": 99.9,
+        "purity_note": "dried H2 from store; purified downstream (H2_PURIFIER)",
         "conditions_status": "study",
         "conditions_basis": "X-MAT-15 segment use; AQS-REV-H2-001 Rev B"
       }
@@ -26360,6 +26390,44 @@
         "Zn": 4,
         "Al": 6,
         "other": 9
+      }
+    },
+    {
+      "stream_id": "S49P",
+      "from_unit_id": "H2_PURIFIER",
+      "to_unit_id": "FUEL_CELL",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "H2 fuel",
+      "header": "FC fuel manifold",
+      "forbidden": "HDR_O2, hab AHU, GEN manifold w/o isolation",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.028752089257418,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FUEL_CELL",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-ELS-02 CRYO_H2 compressed basis",
+      "composition": {
+        "H2": 0.9997,
+        "water": 0.0003
+      },
+      "params": {
+        "P_bar_a": 1.5,
+        "T_C": 25,
+        "purity_mol_pct": 99.97,
+        "purity_note": "ISO 14687 Grade D after H2_PURIFIER",
+        "conditions_status": "study",
+        "conditions_basis": "X-MAT-15 segment use; AQS-REV-H2-001 Rev B"
       }
     }
   ],

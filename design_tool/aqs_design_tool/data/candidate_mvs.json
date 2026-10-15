@@ -784,15 +784,20 @@
         "duty": "In 6.629 kg/d, out 6.629 kg/d, 4.000 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "storage_mode": "compressed gas, 200 bar, Type I/II cylinder bank (study; owner may override)",
+        "store_kg": 115.0,
+        "store_water_volume_m3": 7.72,
+        "store_basis": "two days of critical load on H2 (AQS-ELEC-007 \u00a72, about 115 kg)",
+        "compressor": "two-stage diaphragm, 10 to 200 bar"
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 4.0,
+        "value": 0.565,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-CRY-STIR-CONT study band"
+        "note": "X-ELS-02 CRYO_H2 compressed basis: 6.63 kg/d compressed 10 to 200 bar, isothermal work / 0.5 = 2.05 kWh/kg."
       }
     },
     {
@@ -6768,6 +6773,28 @@
         "status": "study",
         "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). AC input at the bounding current; DC 30.41 kW to cells, 7.61 kW conversion loss."
       }
+    },
+    {
+      "unit_id": "H2_PURIFIER",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "dryer",
+      "tags": [],
+      "params": {
+        "presence": "present",
+        "internals": "deoxo Pd/Al2O3, activated alumina HCl/Cl2 guard, 13X TSA pair",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "outlet_purity_mol_pct": 99.97
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "TSA regeneration heater average (study)"
+      }
     }
   ],
   "streams": [
@@ -8797,9 +8824,9 @@
     {
       "stream_id": "S49",
       "from_unit_id": "CRYO_H2",
-      "to_unit_id": "FUEL_CELL",
+      "to_unit_id": "H2_PURIFIER",
       "phase": "G",
-      "carries": "H2 fuel",
+      "carries": "H2 to purifier",
       "rate": {
         "value": 5.028752089257418,
         "unit": "kg/d",
@@ -8807,7 +8834,7 @@
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "FUEL_CELL",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "layers=mass"
     },
@@ -16307,6 +16334,23 @@
       "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "S49P",
+      "from_unit_id": "H2_PURIFIER",
+      "to_unit_id": "FUEL_CELL",
+      "phase": "G",
+      "carries": "H2 fuel",
+      "rate": {
+        "value": 5.028752089257418,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FUEL_CELL",
+      "open_boundary": false,
+      "note": "X-ELS-02 CRYO_H2 compressed basis; layers=mass"
     }
   ],
   "electrical": {

@@ -843,6 +843,25 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
     },
     {
+      "unit_id": "H2_PURIFIER",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        22000,
+        9600,
+        -6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        800,
+        600,
+        1500
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
       "unit_id": "HDR_CO2",
       "level": "L1",
       "block_id": "HAB",
