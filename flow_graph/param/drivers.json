@@ -2295,5 +2295,31 @@
   "value": 1.5,
   "units": "- vertical tank height to diameter for the hold-up case",
   "register": "A-M-182"
+ },
+ "struct_equip_density_kg_m3": {
+  "value": 150.0,
+  "units": "kg/m3 empty equipment weight per envelope volume",
+  "register": "A-M-184",
+  "needs_verification": true,
+  "verification_test": "Replace with CAD weights per unit as models are built"
+ },
+ "struct_op_fill": {
+  "value": 0.5,
+  "units": "- liquid fraction of envelope for liquid units without a stated hold-up",
+  "register": "A-M-184"
+ },
+ "struct_pv_kg_m2": {
+  "value": 17.0,
+  "units": "kg/m2 PV modules plus ballasted racking on the roof",
+  "register": "A-M-184",
+  "needs_verification": true,
+  "verification_test": "Weigh the in-house module and rack first article"
+ },
+ "struct_tank_kg_m3": {
+  "value": 40.0,
+  "units": "kg/m3 empty storage tank weight per envelope volume (thin shell)",
+  "register": "A-M-184",
+  "needs_verification": true,
+  "verification_test": "CAD weight per tank"
  }
 }
