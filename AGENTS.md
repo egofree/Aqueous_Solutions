@@ -11,6 +11,10 @@ Follow the plan file. Do not keep a second list of exceptions.
 5. Write the proof back. In the same commit, set the line on the status board and update every page the change made untrue. A revision note moves with a revision. A drawing or a derived file that still names an older revision is marked or regenerated. The next session starts from the files alone.
 6. Stop. The item is done when its check passes and the board matches the files. If the check cannot pass, write the missing fact on the board and stop. The next item waits.
 
+## Assumptions
+
+Every new assumption gets an entry in `docs-authority/assumptions_manual.json` in the same commit (value, units, where used, basis, sensitivity, replacing test, task). Run `docs-authority/_assumptions_register.py`; it regenerates AQS-REG-002 and fails on a bad entry.
+
 ## Done
 
 Housekeeping is part of the item, not a later pass. A commit that changes the work and leaves the board or a contradicted page behind is not done.
