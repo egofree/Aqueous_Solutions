@@ -97,7 +97,7 @@ Shredder: 10–25 kWh/wet t, peaked.
 | VDF, mill, vibratory | AC 480 V | 2.0 kW |
 | HVAC / makeup | AC 480 V | 1.5 kW |
 | Induction coil drive | AC 5–20 kHz | 0–25 kW |
-| RECT-EW | DC 0–36 V, 0–250 A | 5–7 kW class |
+| RECT-EW | Nine channels, 6 V, 250–3000 A, 13000 A total (AQS-ELEC-004) | 78 kW nameplate; 38 kW AC at the bounding case |
 | RECT-BMED | DC 0–80 V, 0–120 A steady | 5–8 kW class |
 | RECT-PK | DC 0–12 V, 0–40 A avg, pulsed | <0.5 kW |
 

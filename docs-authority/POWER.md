@@ -21,4 +21,4 @@ Checked against graph Rev BH on 2026-10-15. Current for the EW-1 current. The gr
 
 7. Code. Shop. Not stamped.
 
-8. Open items. None on the fault. The 10 kA figure in ONE_LINE.md is the 480 V array bus. It is not this rail. IA-E-RECT, the energy edge into EW_1, stays 4.57 kW and does not equal the 5.263 kW node. The edge rate was not changed. The RECT-EW row in `ELECTRICAL.md`, 0–250 A, does not cover 2105 A. Rectifier selection waits on that.
+8. Open items. None on the fault. The 10 kA figure in ONE_LINE.md is the 480 V array bus. It is not this rail. IA-E-RECT, the energy edge into EW_1, stays 4.57 kW and does not equal the 5.263 kW node. The edge rate was not changed. The RECT-EW row in `ELECTRICAL.md`, 0–250 A, does not cover 2105 A. Rectifier sizing is AQS-ELEC-004: nine 6 V channels, 13000 A, 38.0 kW AC at the bounding case. IA-E-RECT is not changed.
