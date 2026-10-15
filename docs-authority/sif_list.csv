@@ -17,7 +17,7 @@ SIF-015,MEAM,MEAM-TE-90 (independent element; not MEAM-TE-01),temperature high-h
 SIF-016,HNO3,HNO3-TE-90 (independent element; not HNO3-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-016
 SIF-017,BUCL,BUCL-TE-90 (independent element; not BUCL-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-017
 SIF-018,SIC_FURNACE,SIC_FURNACE-TE-90 (independent element; not SIC_FURNACE-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-018
-SIF-019,H2_PURIFIER,H2_PURIFIER-TE-90 (independent element; not the control TE),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-019
+SIF-019,H2_PURIFIER,H2_PURIFIER-TE-90 (independent element; not H2_PURIFIER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-019
 SIF-020,EVAP_ACID,EVAP_ACID-TE-90 (independent element; not EVAP_ACID-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-020
 SIF-021,EVAP_BASE,EVAP_BASE-TE-90 (independent element; not EVAP_BASE-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-021
 SIF-022,EVAP_ACID_VS,EVAP_ACID_VS-TE-90 (independent element; not EVAP_ACID_VS-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-022

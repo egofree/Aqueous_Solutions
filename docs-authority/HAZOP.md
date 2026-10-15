@@ -1367,7 +1367,7 @@ This is a design-derived study HAZOP: deviations, causes and safeguards come fro
 | flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | ; open vent | - |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | open vent DN25 (API 2000) | - |
-| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | none | independent high-temperature trip on the heater |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | independent high-temperature trip on the heater |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### EVAP_ACID (evaporator)

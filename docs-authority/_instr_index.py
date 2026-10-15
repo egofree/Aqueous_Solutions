@@ -13,7 +13,7 @@ PR = [1, 2.5, 6, 10, 16, 25, 40, 60, 100, 160, 250, 400]          # bar standard
 NICE = [1, 2, 2.5, 5]
 def nice(x):
     k = 10**int(f'{x:e}'.split('e')[1]); return next(m*k for m in NICE + [10] if m*k >= x)
-LET = {'flow transmitter': 'FT', 'pressure transmitter': 'PT', 'temperature element': 'TE', 'level transmitter': 'LT', 'high-level switch': 'LSH'}
+LET = {'temperature element (SIF, independent)': 'TE', 'flow transmitter': 'FT', 'pressure transmitter': 'PT', 'temperature element': 'TE', 'level transmitter': 'LT', 'high-level switch': 'LSH'}
 rows = []; cnt = collections.Counter(); flags = []
 for r in csv.DictReader(open('docs-authority/inventory/OTHER_INVENTORY.csv')):
     if r['category'] != 'instrument': continue
