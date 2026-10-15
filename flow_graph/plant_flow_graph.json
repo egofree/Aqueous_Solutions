@@ -24816,6 +24816,78 @@
       "gap_flags": [],
       "notes": null,
       "composition": null
+    },
+    {
+      "stream_id": "IA-NIT-VENT",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "G",
+      "presence": "present",
+      "carries": "nitric tank vent",
+      "forbidden": "room, hab air",
+      "notes": "AQS-DSN-OX-001 vent. Breathing and upset only.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "FAB",
+      "to_sector_id": "GAS",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+      },
+      "params": {
+        "rate_basis": "breathing and upset vent; no continuous flow on the design day (assumption)",
+        "rate_source": "AQS-DSN-OX-001",
+        "medium": "air with NOx and HNO3 mist",
+        "conditions": "ambient, atm",
+        "rate_kind": "derived",
+        "doc": "AQS-DSN-OX-001",
+        "material": "PVDF or PVC-U (AQS-STD-002)"
+      },
+      "composition": {
+        "air": 0.999,
+        "HNO3": 0.001
+      }
+    },
+    {
+      "stream_id": "IA-HNO3-VENT",
+      "from_unit_id": "HNO3",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "G",
+      "presence": "present",
+      "carries": "nitric absorber tail gas",
+      "forbidden": "room, hab air",
+      "notes": "AQS-DSN-OX-001 vent. Breathing and upset only.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "FARM",
+      "to_sector_id": "GAS",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+      },
+      "params": {
+        "rate_basis": "breathing and upset vent; no continuous flow on the design day (assumption)",
+        "rate_source": "AQS-DSN-OX-001",
+        "medium": "air with NOx and HNO3 mist",
+        "conditions": "ambient, atm",
+        "rate_kind": "derived",
+        "doc": "AQS-DSN-OX-001",
+        "material": "PVDF or PVC-U (AQS-STD-002)"
+      },
+      "composition": {
+        "air": 0.99,
+        "NOx": 0.01
+      }
     }
   ],
   "view_presets": [
@@ -25321,5 +25393,6 @@
   "notes_rev_d3": "D3. EW_1 continuous_kw is 5.263 kW, 2105 A at 2.5 V, copper equivalent of IA-EW-MET-1. Replaces the 6.0 kW class share. POWER.md and the duty carry the same figure. IA-E-RECT stays 4.57 kW and is named. No edge rate change.",
   "notes_rev_d4": "D4. EXPANDER relief orifice calculated at 550 kPa set, 10 % overpressure, 605 kPa a, 150 K, M 28.96, k 1.4, Z 1, Kd 0.975, blocked discharge at 65.65 kg/h. Required 9.37 mm2, 3.45 mm. relief_mm 3.6 stays and is now the checked figure. No edge rate change.",
   "loops_closed": true,
-  "notes_rev_d11_oxidizers": "Concentration specs on WS_NITRIC, HNO3, WS_PEROX (AQS-DSN-OX-001). No rate change. No edge added."
+  "notes_rev_d11_oxidizers": "Concentration specs on WS_NITRIC, HNO3, WS_PEROX (AQS-DSN-OX-001). No rate change. No edge added.",
+  "notes_rev_d16_vents": "IA-NIT-VENT and IA-HNO3-VENT to NOX_SCRUB at 0 kg/d (breathing and upset). X-SAF-08. No rate change."
 }

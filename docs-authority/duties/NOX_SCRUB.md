@@ -17,6 +17,8 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N5, IA-GLX-NOX, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N6, IA-LEACH-NOX, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N7, S46, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N13, IA-NIT-VENT, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N14, IA-HNO3-VENT, inlet, -Y face center, -3200, 5800, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N8, IA-NOX-BOARD, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N9, IA-NOX-CO2, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N10, IA-NOX-H2O, outlet, +Y face center, -3200, 6200, 600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

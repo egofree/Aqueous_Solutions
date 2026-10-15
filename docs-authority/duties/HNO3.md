@@ -10,6 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 3. Material. Reactor gauze and hot dry section metal under M7, ending at a dielectric flange. Gas cooler, absorber, and product line PVDF or borosilicate glass 3.3. Product no more than 2 M (graph product_spec). AQS-DSN-OX-001 section 1.
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.08 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
+- N1, IA-HNO3-VENT, outlet. Bore not calculated. Rating hose, atmospheric.
 
 5. Instruments. No trip is specified.
 

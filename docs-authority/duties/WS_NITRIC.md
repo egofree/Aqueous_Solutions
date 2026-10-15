@@ -13,9 +13,10 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - N1, IA-BMED-01, inlet, -Y face center, 13600, 8200, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N2, IA-HNO3, inlet, -Y face center, 13600, 8200, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N3, S34, outlet, +Y face center, 13600, 9000, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
+- N4, IA-NIT-VENT, outlet, +Y face center, 13600, 9000, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 5. Instruments. Level with high-high trip closing IA-HNO3 and IA-BMED-01. Temperature high trip 40 °C (assumption). Density or conductivity alarm above 2.0 M. Bund sump pH.
 
-6. Relief. Atmospheric tank with breather. The vent carries NOx and acid mist and belongs to NOX_SCRUB; no vent edge exists, held. Overflow to the oxidizing-acid bund.
+6. Relief. Atmospheric tank with breather. The vent goes on IA-NIT-VENT to NOX_SCRUB (0 kg/d design day, breathing and upset). Not to the room. Overflow to the oxidizing-acid bund.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_NITRIC.stl`.
 
-8. Open items. Vent edge to NOX_SCRUB. Tank volume; holdup basis not on the graph. Segregation per AQS-DSN-OX-001 section 3.
+8. Open items. Tank volume; holdup basis not on the graph (X-SAF-09). Segregation per AQS-DSN-OX-001 section 3.

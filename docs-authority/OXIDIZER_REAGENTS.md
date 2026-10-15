@@ -22,7 +22,7 @@ Materials.
 - 304L, the usual nitric metal, is not used: wet nitric is oxidizing (M3). It is allowed only in the hot dry reactor section.
 - Gaskets FKM or PTFE.
 
-Vents and relief. Atmospheric tank with a breather. The tank and absorber vents carry NOx and acid mist and must go to NOX_SCRUB; there is no vent edge on the graph, so this is held for an edge (no edge added here). No closed relief; overflow to the bund.
+Vents and relief. Atmospheric tank with a breather. The tank and absorber vents carry NOx and acid mist to NOX_SCRUB on IA-NIT-VENT and IA-HNO3-VENT (added 2026-10-15, X-SAF-08, 0 kg/d design day). No closed relief; overflow to the bund.
 
 Instruments and trips. Level with high-high trip closing IA-HNO3 and IA-BMED-01. Temperature with a high trip at 40 °C (assumption). Density or conductivity for concentration, alarm above 2.0 M. pH in the bund sump.
 
@@ -64,7 +64,6 @@ Each class gets its own bund at 110 % of its largest tank (assumption): oxidizin
 
 ## 4. Held
 
-- Vent edges from WS_NITRIC and HNO3 to NOX_SCRUB.
 - Tank volumes. The holdup basis is not on the graph.
 - HNO3 absorber design at 2 M.
 - Peroxide cell current and area.

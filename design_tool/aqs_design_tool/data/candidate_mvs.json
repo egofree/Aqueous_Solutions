@@ -2143,7 +2143,14 @@
             "rating": "hose, atmospheric",
             "dn": 25
           }
-        ]
+        ],
+        "area_m2_pvdf": {
+          "value": 7.53,
+          "U_W_m2K": 101.1,
+          "status": "study",
+          "doc": "AQS-DUTY-049",
+          "note": "The plate area_m2 0.51 is for titanium plates, which are withdrawn (AQS-STD-002 4.1)."
+        }
       },
       "modules": [],
       "electrical_role": null,
@@ -2267,7 +2274,24 @@
           2000,
           1200,
           1400
-        ]
+        ],
+        "liquor_T_C": {
+          "value": 77.5,
+          "band": [
+            70,
+            85
+          ],
+          "status": "study",
+          "source": "GLOSSARY Leach / Salria 70-85 C; AQS-DUTY-008 HX-5 basis at the mid, 77.5 C. Not measured."
+        },
+        "hx5_area_m2": {
+          "pvdf_natural": 10.06,
+          "pvdf_agitated": 8.49,
+          "glass_natural": 4.22,
+          "glass_agitated": 2.65,
+          "status": "study",
+          "doc": "AQS-DUTY-049"
+        }
       },
       "modules": [],
       "electrical_role": "load",
@@ -3395,7 +3419,15 @@
         "duty": "In 1.246 kg/d, out 1.246 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_NITRIC.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "product_spec": {
+          "HNO3_M": 2.0,
+          "HNO3_wt_pct": 11.8,
+          "density_kg_L": 1.064,
+          "max_stored_M": 2.0,
+          "T_max_C": 40,
+          "basis": "S34 on the graph: 2 M at 1.064 kg/L. wt% derived: 2.0 mol/L x 63.01 g/mol / 1064 g/L = 11.8 %. T_max assumption. AQS-DSN-OX-001."
+        }
       },
       "modules": [],
       "electrical_role": null,
@@ -3411,7 +3443,16 @@
         "duty": "In 3.000 kg/d, out 3.000 kg/d, 0.000 kW. Sheet docs-authority/duties/WS_PEROX.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "product_spec": {
+          "H2O2_wt_pct_nominal": 5.0,
+          "H2O2_wt_pct_max": 6.0,
+          "stabilizer": "none (electronic grade, wafer clean)",
+          "holdup_max_d": 1.0,
+          "T_max_C": 30,
+          "route": "on-site two-electron O2 reduction from HDR_O2 (IA-H2O2-SRC)",
+          "basis": "Assumption, AQS-DSN-OX-001. S32 on the graph is dilute H2O2 at 1.0 kg/L; 5 wt% is 1.02 kg/L, inside the edge rounding. No rate change."
+        }
       },
       "modules": [],
       "electrical_role": null,
@@ -5151,7 +5192,11 @@
         "duty": "In 0.700 kg/d, out 0.700 kg/d, 0.300 kW. Sheet docs-authority/duties/HNO3.md.",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "product_spec": {
+          "HNO3_max_M": 2.0,
+          "basis": "Decision, AQS-DSN-OX-001: weak-acid absorption to 2 M; no concentrated nitric is made or stored."
+        }
       },
       "modules": [],
       "electrical_role": "load",
@@ -15490,6 +15535,40 @@
       "to_sector_id": "NUT",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NIT-VENT",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "G",
+      "carries": "nitric tank vent",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "note": "AQS-DSN-OX-001 vent. Breathing and upset only.; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-HNO3-VENT",
+      "from_unit_id": "HNO3",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "G",
+      "carries": "nitric absorber tail gas",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "note": "AQS-DSN-OX-001 vent. Breathing and upset only.; namespace=IA; layers=mass"
     }
   ],
   "electrical": {
