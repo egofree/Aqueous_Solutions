@@ -2068,5 +2068,25 @@
     "verification": "EW cell gas analysis (H2 in cathode hood, O2/Cl2 in anode hood) against Faraday per cell; electrolyser kWh/kg at commissioning; flue O2 at 1.5-2 vol % dry at the genset; store mass by weighing.",
     "replace_when": "Measured CE, O2 fraction or stack energy differ by more than 10 %.",
     "doc": "AQS-PAR-005 Rev B"
+  },
+  {
+    "id": "A-M-134",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Standby genset exercise and H2 bank basis",
+    "statement": "BACKUP_GEN 40 kW exercised monthly 30 min at 30 % load (NFPA110_2022 8.4.2), engine efficiency 30 % on C5-C10 LHV 12.2 kWh/kg (TURNS2012); H2 bank = ELY H2 x (1 - 6/24) + 2 d of fuel-cell H2 (AQS-ELEC-007 autonomy).",
+    "verification": "Exercise log fuel per run (weigh tank); bank pressure trend over a 2-day outage drill.",
+    "replace_when": "Measured exercise fuel or outage duration basis changes by more than 25 %.",
+    "doc": "AQS-PAR-005 Rev C"
   }
 ]

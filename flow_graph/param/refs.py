@@ -89,6 +89,7 @@ REFS = {
  'NFPA2_2023': 'NFPA 2, Hydrogen Technologies Code, 2023 ed.: ch. 7 gaseous hydrogen storage and separation from oxidizers, ch. 10 fuel cells, ch. 13 electrolysers.',
  'ISO22734_2019': 'ISO 22734:2019, Hydrogen generators using water electrolysis: industrial, commercial and residential applications (separate H2 and O2 gas paths, gas purity monitoring).',
  'IEC62282_3_100': 'IEC 62282-3-100:2019, Fuel cell technologies, stationary fuel cell power systems: safety.',
+ 'NFPA110_2022': 'NFPA 110, Standard for Emergency and Standby Power Systems, 2022 ed.: 8.4.2 generator sets exercised at least monthly for a minimum of 30 minutes under operating temperature conditions or at not less than 30 % of the EPS nameplate kW rating; 8.4.9 Level 1 load test at least once every 36 months for 4 h.',
  'TURNS2012': 'Turns S.R., An Introduction to Combustion: Concepts and Applications, 3rd ed., McGraw-Hill (2012), ch. 2: stoichiometric oxidizer-fuel ratios for hydrocarbons, H2 and CO.',
  'COEY2010': 'Coey J.M.D., Magnetism and Magnetic Materials, Cambridge University Press (2010), ch. 11: properties of hard magnets (sintered Nd2Fe14B, sintered and bonded hexaferrite).',
  'WALTON2015': 'Walton A. et al., The use of hydrogen to separate and recycle neodymium-iron-boron-type magnets from electronic waste, Journal of Cleaner Production 104 (2015) 236-241.',

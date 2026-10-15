@@ -24,31 +24,31 @@ The total-mass ledger closes (AQS-PAR-003). The O2 species does not: the cold bo
 | IA-O2-NIT | HNO3 | 0.500 | nitric acid: O into HNO3 |
 | IA-GLX-O2 | GLYOXAL | 0.139 | glyoxal oxidation |
 | IA-FORM-O2 | FORM | 0.060 | formaldehyde oxidation |
-| IA-GEN-O2 | BACKUP_GEN | 48.730 | genset combustion, 10 % excess |
+| IA-GEN-O2 | BACKUP_GEN | 0.208 | genset combustion, 10 % excess |
 | IA-AB-O2 | AFTERBURNER | 0.821 | afterburner combustion, 10 % excess |
-| total | | 94.457 | |
+| total | | 45.936 | |
 
 ## 2. Combustion oxidant not on the graph (units fed from HDR_N2)
 
 | Unit | Fuel | Fuel kg/d | kg O2/kg | O2 kg/d |
 | --- | --- | --- | --- | --- |
-| BACKUP_GEN | S45 H2 | 0.652 | 7.94 | 5.17 |
-| BACKUP_GEN | CUT-1-OUT C5-C10 fuel | 11.155 | 3.51 | 39.16 |
+| BACKUP_GEN | S45 H2 | 0.000 | 7.94 | 0.00 |
+| BACKUP_GEN | CUT-1-OUT C5-C10 fuel | 0.054 | 3.51 | 0.19 |
 | AFTERBURNER | IA-SIC-CO carbon monoxide | 0.466 | 0.571 | 0.27 |
 | AFTERBURNER | S11 grow-bed organics (CH2O basis) | 0.800 | 1.066 | 0.85 |
 | total | | | | 0.00 |
 
 Not counted: NCG_TO_AB 5.00 kg/d (composition not on the graph); sanitation cake and biogas 0.32 kg/d O2, already taken on S02 (AQS-DUTY-063 Rev B).
-The 112.4 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at 23.2 wt% O2 synthetic air it would carry 26.1 kg/d O2.
+The 111.2 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at 23.2 wt% O2 synthetic air it would carry 25.8 kg/d O2.
 
 ## 3. O2 regeneration on the graph
 
 | Edge | Path | kg/d |
 | --- | --- | --- |
 | S87 | grow-bed photosynthesis | 0.617 |
-| IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 4.505 |
-| IA-ELY-O2 | PEM electrolyser | 132.846 |
+| IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 0.094 |
+| IA-ELY-O2 | PEM electrolyser | 90.404 |
 
 ## 4. Result
 
-O2 drawn 94.46 (combustion included, on HDR_O2) against real sources 137.97: no species gap; surplus 43.51 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).
+O2 drawn 45.94 (combustion included, on HDR_O2) against real sources 91.11: no species gap; surplus 45.18 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).
