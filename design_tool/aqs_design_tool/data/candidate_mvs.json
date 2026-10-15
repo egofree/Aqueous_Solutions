@@ -11086,10 +11086,10 @@
       "phase": "heat",
       "carries": "downhill heat pipe",
       "rate": {
-        "value": 1.133,
+        "value": 0.992,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -11103,10 +11103,10 @@
       "phase": "heat",
       "carries": "downhill heat pipe",
       "rate": {
-        "value": 1.133,
+        "value": 0.992,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -11154,10 +11154,10 @@
       "phase": "heat",
       "carries": "downhill heat pipe",
       "rate": {
-        "value": 1.888,
+        "value": 1.6204,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -11171,10 +11171,10 @@
       "phase": "heat",
       "carries": "downhill heat pipe",
       "rate": {
-        "value": 1.888,
+        "value": 1.6204,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -11222,10 +11222,10 @@
       "phase": "heat",
       "carries": "downhill heat pipe",
       "rate": {
-        "value": 1.614,
+        "value": 1.1286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.4854 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -11239,10 +11239,10 @@
       "phase": "heat",
       "carries": "downhill heat pipe",
       "rate": {
-        "value": 1.614,
+        "value": 1.0298,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.5842 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -11392,10 +11392,10 @@
       "phase": "heat",
       "carries": "water <80 C",
       "rate": {
-        "value": 5.51,
+        "value": 4.7481,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.7619 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
@@ -11409,10 +11409,10 @@
       "phase": "heat",
       "carries": "water <80 C",
       "rate": {
-        "value": 5.51,
+        "value": 4.6729,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.8371 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
@@ -13755,10 +13755,10 @@
       "phase": "thermal",
       "carries": "Q4 surplus heat",
       "rate": {
-        "value": 11.7617,
+        "value": 10.1627,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. | X-THM-01: 11.7617 kW less 1.5990 kW of line losses (A-M-166)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

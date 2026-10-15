@@ -90,6 +90,22 @@ Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most 10 %
 | S68 | line | 15 | 10.0 | cold, anti-condensation | flexible elastomeric (ASTM C534), vapour-sealed | 13 | 22.4 | -3.9 | 24.64 | -96.1 |  |
 | IA-HVAC-COND | line | 15 | 10.0 | cold, anti-condensation | flexible elastomeric (ASTM C534), vapour-sealed | 13 | 22.4 | -3.9 | 26.36 | -102.8 |  |
 
+## Heat-ladder store closure (X-THM-01, A-M-166)
+
+| Store | Line loss carried down, kW | Residual on graph rates, kW |
+|---|---|---|
+| Q1_A | 0.1410 | 0.0000 |
+| Q1_B | 0.1410 | 0.0000 |
+| Q2_A | 0.2676 | 0.0030 |
+| Q2_B | 0.2676 | 0.0030 |
+| Q3_A | 0.4854 | 0.0000 |
+| Q3_B | 0.5842 | -0.0000 |
+| Q4_A | 0.7619 | 0.0000 |
+| Q4_B | 0.8371 | 0.0000 |
+| Q4_BUS | 0.0000 | 0.0010 |
+
+Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as 1.599 kW less rejected on HL-Q4-REJ (11.7617 -> 10.163 kW). No electric trim is added: Q4 rejects a surplus in normal operation.
+
 ## Heat-ladder line losses (X-THM-04, A-M-165)
 
 All 26 heat-ladder lines carry their loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK (2.828 kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their 3831 W is covered by the rated source duty. Total if every line ran: 6.660 kW.

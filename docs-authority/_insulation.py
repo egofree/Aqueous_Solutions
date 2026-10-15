@@ -70,6 +70,35 @@ def main():
                                'carries': f"insulated line loss of {x['item']} to the hall air", 'header': 'tray', 'forbidden': 'HDR_O2, HDR_CO2', 'claim_status': 'Claimed / Partial',
                                'rate': {'value': round(x['loss_W']/1000, 4), 'unit': 'kW', 'status': 'study', 'note': f"X-THM-04: {x['loss_W_m']} W/m x {x['length_m']} m at {x['thk_mm']} mm (AQS-THM-003, A-M-165)."},
                                'from_sector_id': e.get('from_sector_id'), 'to_sector_id': None, 'open_boundary': False, 'namespace': 'S', 'gap_flags': [], 'notes': None})
+    # X-THM-01 (A-M-166): re-close each store on the graph rates. The store that feeds a lossy line is short by the loss; the shortfall
+    # passes down the ladder as less heat on the downhill step (Q1 -> Q2 -> Q3 -> Q4 -> Q4_BUS) and ends as less heat rejected on HL-Q4-REJ.
+    E2 = {e['stream_id']: e for e in g['edges']}
+    def base(sid):
+        r = E2[sid]['rate']; pp = E2[sid].setdefault('params', {}) or {}
+        if E2[sid].get('params') is None: E2[sid]['params'] = pp
+        if ' | X-THM-01' not in (r.get('note') or '') or 'rate_before_line_loss_kw' not in pp: pp['rate_before_line_loss_kw'] = r['value']   # upstream rewrote the rate
+        return pp['rate_before_line_loss_kw']
+    hll = lambda u: sum(e['rate']['value'] for e in g['edges'] if e['stream_id'].startswith('HLL-') and e['from_unit_id'] == u)
+    ladder = {}
+    for L in ('A', 'B'):
+        dsum = 0.0
+        for q, sid in ((f'Q1_{L}', f'HL-Q1-{L}-DOWN'), (f'Q2_{L}', f'HL-Q2-{L}-DOWN'), (f'Q3_{L}', f'HL-Q3-{L}-DOWN'), (f'Q4_{L}', f'HL-Q4-{L}-BUS')):
+            dsum += hll(q); b0 = base(sid); E2[sid]['rate']['value'] = round(b0 - dsum, 4)
+            assert E2[sid]['rate']['value'] >= 0, (sid, b0, dsum)
+            E2[sid]['rate']['note'] = E2[sid]['rate']['note'].split(' | X-THM-01')[0] + f' | X-THM-01: {b0} kW less {dsum:.4f} kW of insulated line loss upstream (A-M-166).'
+            ladder[q] = dsum
+    b0 = base('HL-Q4-REJ'); dl = ladder['Q4_A'] + ladder['Q4_B']; E2['HL-Q4-REJ']['rate']['value'] = round(b0 - dl, 4)
+    E2['HL-Q4-REJ']['rate']['note'] = E2['HL-Q4-REJ']['rate']['note'].split(' | X-THM-01')[0] + f' | X-THM-01: {b0} kW less {dl:.4f} kW of line losses (A-M-166).'
+    import collections
+    bal = collections.Counter()
+    for e in g['edges']:
+        if 'thermal' in e['layers'] and e.get('presence') != 'retired' and e['rate'].get('unit') == 'kW':
+            bal[e['from_unit_id']] -= float(e['rate']['value'] or 0); bal[e['to_unit_id']] += float(e['rate']['value'] or 0)
+    stores = [u for u in sorted(bal) if u[:3] in ('Q1_', 'Q2_', 'Q3_', 'Q4_')]
+    assert all(abs(bal[u]) < 0.01 for u in stores), {u: bal[u] for u in stores}
+    md += ['', '## Heat-ladder store closure (X-THM-01, A-M-166)', '', '| Store | Line loss carried down, kW | Residual on graph rates, kW |', '|---|---|---|']
+    md += [f'| {u} | {ladder.get(u, 0.0):.4f} | {bal[u]:.4f} |' for u in stores]
+    md += ['', f"Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as {dl:.3f} kW less rejected on HL-Q4-REJ ({b0} -> {b0 - dl:.3f} kW). No electric trim is added: Q4 rejects a surplus in normal operation."]
     if '--graph' in sys.argv: open(os.path.join(R, 'flow_graph/plant_flow_graph.json'), 'w').write(json.dumps(g, indent=2))
     md += ['', '## Heat-ladder line losses (X-THM-04, A-M-165)', '',
            f"All {len(hl)} heat-ladder lines carry their loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK ({tot_n/1000:.3f} kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their {sum(x['loss_W'] for x in hl if not ((E[x['item']]['params'].get('duty_normal_kw') or 0) > 0)):.0f} W is covered by the rated source duty. Total if every line ran: {tot_r/1000:.3f} kW.",

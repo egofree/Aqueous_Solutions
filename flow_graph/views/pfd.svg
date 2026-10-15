@@ -5082,7 +5082,7 @@
 <title>Q4_BUS&#45;&gt;GEO_ORC</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M2178.25,-13175.89C2209.99,-13177.74 2262.46,-13175.23 2289,-13143 2307.79,-13120.18 2279.86,-12631.67 2301,-12611 2326.74,-12585.83 2437.45,-12585.64 2463,-12611 2516.53,-12664.13 2440.56,-15263.66 2483,-15326 2491.27,-15338.15 2505.36,-15345.38 2519.08,-15349.68"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2518.35,-15353.11 2528.91,-15352.33 2520.16,-15346.35 2518.35,-15353.11"/>
-<text text-anchor="middle" x="2382" y="-12613.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;REJ\n11.7617 kW</text>
+<text text-anchor="middle" x="2382" y="-12613.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;REJ\n10.1627 kW</text>
 </g>
 <!-- Q4_BUS&#45;&gt;HABITATION -->
 <g id="edge178" class="edge">
@@ -5172,7 +5172,7 @@
 <title>Q1_A&#45;&gt;Q2_A</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1086.04,-14080.83C1128.87,-14079.18 1216.85,-14077.02 1291,-14083 1310.62,-14084.58 1332.31,-14087.89 1350.01,-14090.99"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1349.46,-14094.45 1359.92,-14092.78 1350.7,-14087.56 1349.46,-14094.45"/>
-<text text-anchor="middle" x="1217.5" y="-14085.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;A&#45;DOWN\n1.133 kW</text>
+<text text-anchor="middle" x="1217.5" y="-14085.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;A&#45;DOWN\n0.992 kW</text>
 </g>
 <!-- Q1_B -->
 <g id="node140" class="node">
@@ -5206,7 +5206,7 @@
 <title>Q2_A&#45;&gt;Q3_A</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1395.52,-14079.91C1411.76,-14039.77 1449.71,-13939.85 1463,-13852 1467.7,-13820.92 1460.72,-9347.18 1483,-9325 1507.41,-9300.7 1613.58,-9300.71 1638,-9325 1676.81,-9363.62 1626.94,-13221.91 1658,-13267 1667.4,-13280.64 1683.96,-13288.08 1699.37,-13292.14"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1698.72,-13295.58 1709.24,-13294.35 1700.25,-13288.75 1698.72,-13295.58"/>
-<text text-anchor="middle" x="1560.5" y="-9327.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;A&#45;DOWN\n1.888 kW</text>
+<text text-anchor="middle" x="1560.5" y="-9327.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;A&#45;DOWN\n1.6204 kW</text>
 </g>
 <!-- Q2_A&#45;&gt;Q2_B -->
 <g id="edge20" class="edge">
@@ -5241,7 +5241,7 @@
 <title>Q3_A&#45;&gt;Q4_A</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1763.76,-13294.35C1781.44,-13291.05 1803.54,-13283.64 1815,-13267 1848.19,-13218.81 1793.53,-9095.28 1835,-9054 1861.15,-9027.98 1974.88,-9027.95 2001,-9054 2024.21,-9077.15 1993.03,-13749 2013,-13775 2036.19,-13805.2 2081.3,-13812.42 2113.42,-13813.4"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2113.73,-13816.91 2123.76,-13813.52 2113.8,-13809.91 2113.73,-13816.91"/>
-<text text-anchor="middle" x="1918" y="-9056.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;A&#45;DOWN\n1.614 kW</text>
+<text text-anchor="middle" x="1918" y="-9056.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;A&#45;DOWN\n1.1286 kW</text>
 </g>
 <!-- Q3_A&#45;&gt;Q3_B -->
 <g id="edge30" class="edge">
@@ -5310,7 +5310,7 @@
 <title>Q1_B&#45;&gt;Q2_B</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1414.31,-13820.79C1431.13,-13819.11 1451.82,-13813.86 1463,-13799 1501.33,-13748.04 1437.81,-9252.99 1483,-9208 1507.41,-9183.7 1613.35,-9183.94 1638,-9208 1714.12,-9282.3 1733.62,-12853.45 1735.37,-13207.77"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="1731.87,-13207.97 1735.42,-13217.95 1738.87,-13207.93 1731.87,-13207.97"/>
-<text text-anchor="middle" x="1560.5" y="-9210.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;B&#45;DOWN\n1.133 kW</text>
+<text text-anchor="middle" x="1560.5" y="-9210.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q1&#45;B&#45;DOWN\n0.992 kW</text>
 </g>
 <!-- Q2_B&#45;&gt;BOUNDARY_EXPORT -->
 <g id="edge213" class="edge">
@@ -5338,7 +5338,7 @@
 <title>Q2_B&#45;&gt;Q3_B</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1737.74,-13217.84C1741.77,-12919.98 1794.71,-9058.36 1835,-9019 1861.38,-8993.22 1974.88,-8992.95 2001,-9019 2024.72,-9042.66 1991.97,-13816.93 2013,-13843 2036.63,-13872.28 2081.65,-13877.15 2113.63,-13876.4"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2114.08,-13879.88 2123.92,-13875.96 2113.78,-13872.89 2114.08,-13879.88"/>
-<text text-anchor="middle" x="1918" y="-9021.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;B&#45;DOWN\n1.888 kW</text>
+<text text-anchor="middle" x="1918" y="-9021.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q2&#45;B&#45;DOWN\n1.6204 kW</text>
 </g>
 <!-- Q3_B&#45;&gt;HEAT_SINK -->
 <g id="edge867" class="edge">
@@ -5373,7 +5373,7 @@
 <title>Q3_B&#45;&gt;Q4_B</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M2178.05,-13875.72C2209.59,-13877.41 2261.85,-13874.73 2289,-13843 2317.8,-13809.34 2271.66,-13677.19 2301,-13644 2349.5,-13589.14 2414.49,-13668.85 2463,-13614 2511.53,-13559.14 2437.39,-13342.31 2483,-13285 2492.19,-13273.45 2507.14,-13267.76 2521.24,-13265.02"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2521.9,-13268.46 2531.27,-13263.51 2520.86,-13261.54 2521.9,-13268.46"/>
-<text text-anchor="middle" x="2382" y="-13646.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;B&#45;DOWN\n1.614 kW</text>
+<text text-anchor="middle" x="2382" y="-13646.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q3&#45;B&#45;DOWN\n1.0298 kW</text>
 </g>
 <!-- Q3_B&#45;&gt;OIL_DRYER -->
 <g id="edge27" class="edge">
@@ -5401,7 +5401,7 @@
 <title>Q4_B&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M2555.64,-13244.67C2548.37,-13176.96 2519.42,-12942.64 2463,-12899 2434.52,-12876.97 2327.07,-12874.18 2301,-12899 2281.34,-12917.72 2306.53,-13122.28 2289,-13143 2264.77,-13171.64 2220.08,-13176.67 2188.33,-13176.14"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2188.23,-13172.63 2178.11,-13175.77 2187.98,-13179.63 2188.23,-13172.63"/>
-<text text-anchor="middle" x="2382" y="-12901.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;B&#45;BUS\n5.51 kW</text>
+<text text-anchor="middle" x="2382" y="-12901.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">HL&#45;Q4&#45;B&#45;BUS\n4.6729 kW</text>
 </g>
 <!-- Q4_B&#45;&gt;Q4_A -->
 <g id="edge35" class="edge">
