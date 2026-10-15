@@ -80,6 +80,32 @@ def design(d, g):
         A = math.pi*ves['D_mm']/1000*ves['H_mm']/1000 + math.pi*(ves['D_mm']/1000)**2/2
         W = 0.5*A*(T - 20) + m*4.18*(T - 20)/86.4
         out[u] = dict(T_C=T, tau_h=tau, **ves, **extra, heat_W=W, mixer=c['mix'], material=c['mat'], kW=round(W/1000 + (0.02 if u != 'HTC' else 0), 4))
+    # Catalytic tube reactors (X-MFG-31 batch 3, A-M-157): catalyst from the cited space velocity; bed in DN15/DN25 Sch 40 tube, >= 300 mm;
+    # heater = feed sensible (cp 2.5 kJ/(kg K)) + vaporisation [NIST_WEBBOOK] + endotherm, / 0.7; exotherms not credited.
+    TUBES = ((15, 21.3, 2.77), (25, 33.4, 3.38), (50, 60.3, 3.91))
+    def tube_bed(V_L):
+        for dn, od, t in TUBES:
+            idm = od - 2*t; L = V_L/1000/(math.pi*(idm/1000)**2/4)*1000
+            if L <= 1500: return dict(tube=f'DN{dn} Sch 40', OD_mm=od, t_nom_mm=t, L_bed_mm=max(300, round(L)))
+        return dict(tube='DN50 Sch 40', OD_mm=60.3, t_nom_mm=3.91, L_bed_mm=round(L))
+    etoh = R('IA-ETOH'); meoh_f = R('IA-FORM-S') + R('IA-MEOH-FORM'); meoh_a = R('IA-MEOH-MEAM'); nh3 = R('IA-NH3-MEAM')
+    cat = {'ALD': etoh/24/v('rx_ald_whsv_h'),
+           'FORM': meoh_f/32.042*1000/24*v('rx_form_space_time_g_h_mol')/1000,
+           'MEAM': (meoh_a/32.042 + nh3/17.031)*1000/24*0.022414/v('rx_meam_ghsv_h')*1000*v('rx_cat_bulk_kg_L')}
+    heat = {'ALD': etoh*(2.5*(v('rx_ald_T_C') - 20)/1000 + v('hvap_ethanol_MJ_kg')) + etoh/46.069*1000*v('rx_ald_dH_kJ_mol')/1000,
+            'FORM': meoh_f*(2.5*(150 - 20)/1000 + v('hvap_methanol_MJ_kg')),          # feed to 150 C; the bed runs on its exotherm (FORMOX_REVIEW2021)
+            'MEAM': meoh_a*(2.5*(v('rx_meam_T_C') - 20)/1000 + v('hvap_methanol_MJ_kg')) + nh3*(2.5*(v('rx_meam_T_C') - 20)/1000 + v('hvap_ammonia_MJ_kg'))}
+    note = {'ALD': 'Cu/SiO2 pellets, 250 C, atmospheric (CUSIO2_ALD2023)',
+            'FORM': 'iron molybdate, 350 C bed, atmospheric; feed must be diluted to about 10 mol% MeOH and 10 mol% O2 in N2 (FORMOX_REVIEW2021): the graph feeds pure O2 from HDR_O2, a N2 diluent loop is required (X-SAF-02)',
+            'MEAM': 'amorphous silica-alumina, 400 C, 20.7 bar (EP0064380, US1875746)'}
+    for u in ('ALD', 'FORM', 'MEAM'):
+        Vb = cat[u]/v('rx_cat_bulk_kg_L'); tb = tube_bed(Vb); kw = heat[u]/86.4/0.7
+        r = dict(T_C=v({'ALD': 'rx_ald_T_C', 'FORM': 'rx_form_T_C', 'MEAM': 'rx_meam_T_C'}[u]), cat_kg=cat[u], V_bed_L=Vb, **tb, heat_W=kw*1000,
+                 material='SA-312 TP316L tube in a band heater and mineral wool', basis=note[u], D_mm=round(tb['OD_mm']), H_mm=tb['L_bed_mm'] + 300, wall_mm=tb['t_nom_mm'],
+                 V_work_L=Vb, V_L=Vb, kW=round(kw, 4))
+        if u == 'MEAM':
+            Pd = v('rx_meam_P_bar')*v('press_design_margin')/10; r.update(design_MPa=Pd, t_req_mm=Pd*(tb['OD_mm']/2)/(v('s_316L_400C_MPa_lower_bound') + 0.4*Pd) + 1.5)
+        out[u] = r
     return out
 
 def write(d, g, R):
@@ -89,7 +115,7 @@ def write(d, g, R):
         n = N[u]; p = n.setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'
-        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
+        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
             if sid in E: E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
             else:
@@ -153,6 +179,11 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
     for u, src in (('YEAST', 'BAI2008'), ('ABE', 'JONES1986'), ('ACETOX', 'GULLO2014'), ('HTC', 'LIBRA2011')):
         r = R[u]; md += f"| {u} | {r['T_C']} | {r['tau_h']} | {r['V_work_L']:.1f} / {r['V_L']:.1f} | {r['D_mm']} x {r['H_mm']} | {r['wall_mm']} | {r['heat_W']:.1f} | {r['material']} | {src} |\n"
     md += f"\nHTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = {R['HTC']['design_MPa']:.2f} MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: {R['HTC']['t_req_mm']:.2f} mm required.\n"
+    md += '\n## 6. Catalytic tube reactors (A-M-157)\n\n| Unit | T, C | Catalyst, g | Bed, mL | Tube | Bed length, mm | Heater, W | Basis |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n'
+    for u in ('ALD', 'FORM', 'MEAM'):
+        r = R[u]; md += f"| {u} | {r['T_C']} | {r['cat_kg']*1000:.1f} | {r['V_bed_L']*1000:.1f} | {r['tube']} | {r['L_bed_mm']} | {r['heat_W']:.1f} | {r['basis']} |\n"
+    md += f"\nMEAM is pressure equipment: 20.7 bar x 1.10 = {R['MEAM']['design_MPa']:.2f} MPa design; UG-27 316L at 400 C (S 80 MPa lower bound, A-M-157) {R['MEAM']['t_req_mm']:.2f} mm required against {R['MEAM']['t_nom_mm']*0.875:.2f} mm minimum of {R['MEAM']['tube']}.\n"
+    md += '\nNot designed in this issue: GLYOXAL (the graph route CH3CHO + O2 -> glyoxal is not an established process; industrial glyoxal is acetaldehyde + HNO3 or gas-phase ethylene glycol oxidation over Ag: route to be fixed first), IMID, ACEX, HNO3, BUCL (next batch).\n'
     open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN.md'), 'w').write(md)
 
 def main():

@@ -112,3 +112,34 @@ Authority: AQS-DUTY-062 section 5 (X-MFG-31). In-house fabrication to ASME VIII-
 5. Inspect against models/mfg/{U}/export/{U.lower()}.step; record on the traveller.
 """)
 print(U, L)
+
+# Catalytic tube reactors ALD, FORM, MEAM (X-MFG-31 batch 3, A-M-157): SA-312 TP316L tube, flanged ends (B16.5), band heater and insulation
+for U, cls, flod, flt in (('ALD', 150, 88.9, 11.2), ('FORM', 150, 88.9, 11.2), ('MEAM', 300, 95.2, 14.2)):
+    d = N[U]['params']['design']; L = d['L_bed_mm'] + 300; OD = d['OD_mm']; t = d['t_nom_mm']
+    m = cq.Workplane('XY').circle(OD/2).circle(OD/2 - t).extrude(L)
+    for z in (-flt, L): m = m.union(cq.Workplane('XY').workplane(offset=z).circle(flod/2).extrude(flt))
+    m = m.union(cq.Workplane('XY').workplane(offset=50).circle(OD/2 + 40).circle(OD/2).extrude(L - 100))
+    o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
+    cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
+    rows = [('1', f"Reactor tube {d['tube']}, {L} mm", 1, 'SA-312 TP316L', 'AQS-DUTY-062 section 6'),
+            ('2', f"Weld-neck flange DN15 Class {cls} RF", 2, 'SA-182 F316L', 'ASME B16.5'), ('3', f"Blind flange DN15 Class {cls} with DN8 port and thermowell", 2, 'SA-182 F316L', 'ASME B16.5'),
+            ('4', f"Spiral-wound gasket DN15 Class {cls}", 2, '316L / flexible graphite', 'ASME B16.20'),
+            ('5', f"Catalyst {d['cat_kg']*1000:.1f} g ({d['basis'].split(',')[0]}) with inert alumina balls and 316L mesh retainers", 1, 'see basis', 'AQS-DUTY-062 section 6'),
+            ('6', f"Band heater {max(25, round(d['heat_W']*2))} W with PID and high-limit; feed vaporiser coil", 1, 'mica / 316L', 'AQS-DUTY-062 section 6'),
+            ('7', 'Mineral wool 40 mm with SS cladding', 1, 'mineral wool', 'ASTM C547')]
+    if U == 'MEAM': rows.append(('8', 'Safety valve DN8, set at design pressure', 1, '316L', 'API 520 (graph relief_basis)'))
+    if U == 'FORM': rows.append(('8', 'N2 diluent mixing tee and O2/MeOH ratio interlock (feed below LOC)', 1, '316L', 'FORMOX_REVIEW2021; X-SAF-02'))
+    open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+    open(f'models/mfg/{U}/fasteners.csv', 'w').write(f"item,size,grade,qty,location,basis\n1,1/2 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,8,two DN15 Class {cls} joints (4 each),ASME B16.5\n")
+    open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
+
+Authority: AQS-DUTY-062 section 6 (X-MFG-31, A-M-157). In-house fabrication; welders and procedure qualified to ASME IX.
+
+1. Cut {d['tube']} 316L to {L} mm; butt-weld the DN15 Class {cls} weld-neck flanges (GTAW, back-purged).
+2. Drill the blind flanges for the feed/product ports and thermowell.
+3. Hydrostatic test at 1.3 x {'%.2f MPa' % d['design_MPa'] if 'design_MPa' in d else 'the Class ' + str(cls) + ' rating at temperature'} (UG-99).
+4. Load inert balls, {d['cat_kg']*1000:.1f} g catalyst, inert balls between mesh retainers; close with spiral-wound gaskets.
+5. Fit the band heater, vaporiser coil, insulation{' and safety valve' if U == 'MEAM' else ''}{' and the N2 dilution/interlock' if U == 'FORM' else ''}.
+6. Inspect against models/mfg/{U}/export/{U.lower()}.step; record on the traveller.
+""")
+    print(U, L)

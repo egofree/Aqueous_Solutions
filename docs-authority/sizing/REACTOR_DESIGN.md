@@ -55,3 +55,15 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | HTC | 200 | 4 | 0.5 / 0.7 | 100 x 90 | 3.0 | 31.7 | SA-240 316L, 50 mm mineral wool | LIBRA2011 |
 
 HTC is a pressure vessel: water saturation 1.555 MPa at 200 C (NIST_WEBBOOK) x 1.10 = 1.71 MPa design; UG-27 (ASME_VIII1_UG27) with S 99 MPa (316L at 200 C, ASME_II_D) + 1.5 mm CA: 2.25 mm required.
+
+## 6. Catalytic tube reactors (A-M-157)
+
+| Unit | T, C | Catalyst, g | Bed, mL | Tube | Bed length, mm | Heater, W | Basis |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ALD | 250 | 8.3 | 8.3 | DN15 Sch 40 | 300 | 9.6 | Cu/SiO2 pellets, 250 C, atmospheric (CUSIO2_ALD2023) |
+| FORM | 350 | 7.9 | 7.9 | DN15 Sch 40 | 300 | 2.8 | iron molybdate, 350 C bed, atmospheric; feed must be diluted to about 10 mol% MeOH and 10 mol% O2 in N2 (FORMOX_REVIEW2021): the graph feeds pure O2 from HDR_O2, a N2 diluent loop is required (X-SAF-02) |
+| MEAM | 400 | 2.6 | 2.6 | DN15 Sch 40 | 300 | 2.5 | amorphous silica-alumina, 400 C, 20.7 bar (EP0064380, US1875746) |
+
+MEAM is pressure equipment: 20.7 bar x 1.10 = 2.28 MPa design; UG-27 316L at 400 C (S 80 MPa lower bound, A-M-157) 1.80 mm required against 2.42 mm minimum of DN15 Sch 40.
+
+Not designed in this issue: GLYOXAL (the graph route CH3CHO + O2 -> glyoxal is not an established process; industrial glyoxal is acetaldehyde + HNO3 or gas-phase ethylene glycol oxidation over Ag: route to be fixed first), IMID, ACEX, HNO3, BUCL (next batch).

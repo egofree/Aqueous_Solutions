@@ -1323,5 +1323,76 @@
   "value": 115.0,
   "units": "MPa, SA-240 316L at 200 C",
   "ref": "ASME_II_D"
+ },
+ "rx_ald_whsv_h": {
+  "value": 1.0,
+  "units": "1/h on ethanol (3.16 h-1 published / about 3)",
+  "register": "A-M-157",
+  "needs_verification": true,
+  "verification_test": "see A-M-157"
+ },
+ "rx_ald_T_C": {
+  "value": 250,
+  "units": "C",
+  "ref": "CUSIO2_ALD2023"
+ },
+ "rx_form_space_time_g_h_mol": {
+  "value": 50.63,
+  "units": "g cat h/mol MeOH",
+  "ref": "CEAT2010_FORM"
+ },
+ "rx_form_T_C": {
+  "value": 350,
+  "units": "C",
+  "ref": "FORMOX_REVIEW2021"
+ },
+ "rx_meam_ghsv_h": {
+  "value": 1100.0,
+  "units": "1/h total gas at NTP",
+  "ref": "US1875746"
+ },
+ "rx_meam_T_C": {
+  "value": 400,
+  "units": "C",
+  "ref": "EP0064380"
+ },
+ "rx_meam_P_bar": {
+  "value": 20.7,
+  "units": "bar",
+  "ref": "EP0064380"
+ },
+ "rx_cat_bulk_kg_L": {
+  "value": 1.0,
+  "units": "kg/L",
+  "register": "A-M-157",
+  "needs_verification": true,
+  "verification_test": "see A-M-157"
+ },
+ "rx_ald_dH_kJ_mol": {
+  "value": 68.7,
+  "units": "kJ/mol endothermic",
+  "ref": "NIST_WEBBOOK"
+ },
+ "hvap_ethanol_MJ_kg": {
+  "value": 0.85,
+  "units": "MJ/kg",
+  "ref": "NIST_WEBBOOK"
+ },
+ "hvap_methanol_MJ_kg": {
+  "value": 1.1,
+  "units": "MJ/kg",
+  "ref": "NIST_WEBBOOK"
+ },
+ "hvap_ammonia_MJ_kg": {
+  "value": 1.37,
+  "units": "MJ/kg",
+  "ref": "NIST_WEBBOOK"
+ },
+ "s_316L_400C_MPa_lower_bound": {
+  "value": 80.0,
+  "units": "MPa",
+  "register": "A-M-157",
+  "needs_verification": true,
+  "verification_test": "read ASME II-D Table 1A for SA-312 TP316L at 400 C"
  }
 }

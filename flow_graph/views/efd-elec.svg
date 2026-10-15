@@ -519,7 +519,7 @@
 <title>SOL_ARK_60K&#45;&gt;ALD</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.21,-6731.82C478.94,-6407.83 531.35,-1863.12 534,-1860 595.59,-1787.59 721.65,-1794.73 783.76,-1803.51"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.47,-1807.01 793.88,-1805.04 784.51,-1800.09 783.47,-1807.01"/>
-<text text-anchor="middle" x="602.5" y="-1862.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALD\n0.1 kW</text>
+<text text-anchor="middle" x="602.5" y="-1862.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALD\n0.0096 kW</text>
 </g>
 <!-- GLYOXAL -->
 <g id="node34" class="node">
@@ -545,7 +545,7 @@
 <title>SOL_ARK_60K&#45;&gt;FORM</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.21,-6731.84C479.08,-6403.51 534,-1734 534,-1734 595.93,-1662.17 721.83,-1671.21 783.83,-1680.95"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.49,-1684.44 793.93,-1682.63 784.64,-1677.53 783.49,-1684.44"/>
-<text text-anchor="middle" x="602.5" y="-1736.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;FORM\n0.1 kW</text>
+<text text-anchor="middle" x="602.5" y="-1736.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;FORM\n0.0028 kW</text>
 </g>
 <!-- MEAM -->
 <g id="node36" class="node">
@@ -558,7 +558,7 @@
 <title>SOL_ARK_60K&#45;&gt;MEAM</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.13,-6731.52C476.35,-6572.53 486.65,-5440.11 534,-5388 597.43,-5318.2 722.07,-5329.38 783.71,-5340.22"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="783.29,-5343.7 793.76,-5342.08 784.56,-5336.82 783.29,-5343.7"/>
-<text text-anchor="middle" x="602.5" y="-5390.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEAM\n0.1 kW</text>
+<text text-anchor="middle" x="602.5" y="-5390.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEAM\n0.0025 kW</text>
 </g>
 <!-- IMID -->
 <g id="node37" class="node">
@@ -1663,7 +1663,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M790.26,-5746.1C731.38,-5736.34 599.97,-5724.51 534,-5797 470.33,-5866.97 473.3,-6569.99 474.69,-6721.37"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="471.19,-6721.72 474.79,-6731.68 478.19,-6721.65 471.19,-6721.72"/>
-<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n296.2307 kW</text>
+<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n295.9456 kW</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node84" class="node">

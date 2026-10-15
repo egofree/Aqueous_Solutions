@@ -2528,5 +2528,25 @@
     "verification": "Relief orifices of 3 nodes, MEOH_SYNTH catalyst 3.1 kg and tube length, 0.42 kW preheat",
     "replace_when": "Bench activity test of the in-house catalyst charge at 50 bar; fire case per cylinder (X-SAF-04)",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-157",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Catalytic tube reactor design margins",
+    "statement": "ALD WHSV 1.0 h-1 (published 3.16 h-1 at 85 % conversion, CUSIO2_ALD2023, reduced about 3 x for ageing and conversion); FORM at the longest published space time 50.63 g h/mol (CEAT2010_FORM); MEAM at GHSV 1100 h-1 (US1875746); catalyst bulk density 1.0 kg/L; feed cp 2.5 kJ/(kg K); heater efficiency 0.7; exotherms not credited",
+    "verification": "Catalyst charge, tube length and heater power of ALD, FORM, MEAM",
+    "replace_when": "Bench conversion test of each in-house catalyst charge",
+    "doc": "AQS-PAR-003"
   }
 ]

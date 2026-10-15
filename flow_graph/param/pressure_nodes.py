@@ -10,6 +10,7 @@ GP = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspat
 GAS = {'MEOH_SYNTH': dict(P_bar=50.0, T_K=523.15, M=12.51, k=1.38, Z=1.0, fluid='3 H2 : 1 CO2 loop gas'),
        'CRYO_H2': dict(P_bar=200.0, T_K=313.15, M=2.016, k=1.41, Z=1.13, fluid='hydrogen'),
        'HTC': dict(P_bar=15.55, T_K=473.15, M=18.015, k=1.33, Z=0.95, fluid='steam from the heater at full power', W_heater=True),
+       'MEAM': dict(P_bar=20.7, T_K=673.15, M=23.4, k=1.25, Z=1.0, fluid='MeOH/NH3 vapour'),
        'CRYO_O2': dict(P_bar=200.0, T_K=313.15, M=31.999, k=1.40, Z=0.97, fluid='oxygen')}
 def main():
     d = DR.load(); m = DR.val(d, 'press_design_margin'); win = DR.val(d, 'ely_window_h'); g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}
