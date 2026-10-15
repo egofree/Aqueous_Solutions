@@ -46,7 +46,7 @@ for f in FAM:
     lay, ins, std = insulation(f, a); D = Dc + 2*sum(t for _, t in lay)
     nc, form = cable(f); Dj = None
     if nc > 1:
-        lay_d = D*(1 if nc == 1 else 2 if nc == 2 else 2.15 if nc == 4 else 3.0 if nc == 6 else 2)
+        lay_d = D*(1 if nc == 1 else 2 if nc == 2 else 2.414 if nc == 4 else 3.0 if nc == 6 else 2)  # circle-packing lay factors (4 cores 1 + sqrt2)
         Dj = lay_d + 2*jacket(lay_d)
     L = float(f['conductor_m']); cu_kg = a*L*CU/1000*k
     ins_kg = sum(math.pi*((Dc/2 + sum(t for _, t in lay[:i + 1]))**2 - (Dc/2 + sum(t for _, t in lay[:i]))**2)*L*(1.40 if 'PVC' in nm else 1.15 if 'nylon' in nm else 0.95 if ('XLPE' in nm or 'EPR' in nm) else 1.2)/1000 for i, (nm, _) in enumerate(lay))

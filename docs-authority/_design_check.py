@@ -90,6 +90,20 @@ if od: chk('QC-23', 'docs-authority/_resize_sweep.py', 'OIL_DRYER capacity kg/d 
 # 24 CAD clash gate
 cc = json.load(open('docs-authority/inventory/CAD_CLASH.json'))
 C.append(dict(check='QC-24', module='models/freecad/clash_check.py', item=f"CAD clashes, {cc['new']} new elements vs {cc['others']} solids", model=len(cc['clashes']), independent=0, tol='0', result='pass' if not cc['clashes'] else f"FAIL {len(cc['clashes'])}"))
+# 25 PV Wire 2 kV insulation wall = UL 4703 75 mil
+w1 = next(r for r in json.load(open('docs-authority/inventory/WIRE_SPECS.json')) if r['fam'] == 'WF-01')
+chk('QC-25', 'docs-authority/_wire_specs.py', 'WF-01 core OD mm = stranded OD + 2 x 1.905 mm', w1['Dc'] + 2*1.905, w1['D'], 0.01)
+# 26 TC-ER 4/c 14 AWG XHHW-2 cable OD vs a published UL 1277 cable table (10.4 mm)
+w5 = next(r for r in json.load(open('docs-authority/inventory/WIRE_SPECS.json')) if r['fam'] == 'WF-05')
+chk('QC-26', 'docs-authority/_wire_specs.py', 'WF-05 4/c 14 AWG TC-ER OD mm vs published 10.4 mm', 10.4, w5['Dj'], 0.05)
+# 27 equipment clash and corridor gate
+ce = json.load(open('docs-authority/inventory/CAD_CLASH_EQUIP.json'))
+C.append(dict(check='QC-27', module='models/freecad/clash_equip.py', item=f"equipment overlaps and corridor intrusions ({ce['solids']} solids)", model=len(ce['clashes']) + len(ce['in_corridor']), independent=0, tol='0', result='pass' if not (ce['clashes'] or ce['in_corridor']) else 'FAIL'))
+# 28 motor slots and yoke fit the lamination OD
+fa2 = json.load(open('docs-authority/inventory/MOTOR_FA.json')); bad = [r['family'] for r in fa2 if 'od_ok' in r and not r['od_ok']]
+C.append(dict(check='QC-28', module='flow_graph/inventory/motor_designs.py', item='induction slot + yoke fit the sheet OD (AQS-INV-008 re-derivation)', model=len(bad), independent=0, tol='0', result='pass' if not bad else 'FAIL ' + ' '.join(bad)))
+# 29 catch tank top below the L-1 slab
+C.append(dict(check='QC-29', module='flow_graph/param/water_tower.py', item='catch tank top below L-1 FFL - slab (mm)', model=FP.CATCH_TANK_Z + FP.CATCH_TANK_H, independent=FP.Z_Lm1 - FP.SLAB_THK, tol='<=', result='pass' if FP.CATCH_TANK_Z + FP.CATCH_TANK_H <= FP.Z_Lm1 - FP.SLAB_THK else 'FAIL'))
 covered = {c['module'] for c in C}
 mods = sorted([m for m in glob.glob('flow_graph/param/*.py') + glob.glob('flow_graph/param/sizing/*.py') + glob.glob('docs-authority/_*.py') if not os.path.basename(m).startswith(('test_', '__'))])
 rec = [dict(module=m, independent_check=', '.join(sorted({c['check'] for c in C if c['module'] == m})) or '-', status=('auto-checked' if m in covered else 'second-person review required'), checker='') for m in mods]
