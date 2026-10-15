@@ -183,3 +183,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | A | 2026-10-15 | Site basis — climate, wind, seismic, soil | canonical |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | A | 2026-10-15 | LEACH_CSTR_1 sizing | canonical |
 | AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | A | 2026-10-15 | EW_1 to EW_9 cell sizing | canonical |
+| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | A | 2026-10-15 | Load list | canonical |

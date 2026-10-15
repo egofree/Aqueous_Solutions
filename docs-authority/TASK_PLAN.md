@@ -136,7 +136,7 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 ### X-ELS. Electrical system (plant level)
 
 - [x] **X-ELS-01** EW-1 power reconciled. Done when: 5.263 kW authoritative (D3 on MASTER_PLAN). Depends: —. Evidence: `docs-authority/duties/EW_1.md`.
-- [ ] **X-ELS-02** Load list. Done when: every node continuous_kw from a calculation, not a study share. Depends: unit task 02.
+- [ ] **X-ELS-02** Load list. Done when: every node continuous_kw from a calculation, not a study share. Depends: unit task 02. Start from `docs-authority/LOAD_LIST.md` (partial).
 - [ ] **X-ELS-03** Single-line diagram. Done when: one-line issued against the load list. Depends: X-ELS-02.
 - [ ] **X-ELS-04** Rectifier sizing across the assay envelope. Done when: RECT-EW rated at the bounding case current. Depends: X-BAS-02, X-ELS-02.
 - [ ] **X-ELS-05** Storage and generation sizing. Done when: PV, ZnBr2, hydro, fuel cell, backup gen sized from the load profile. Depends: X-ELS-02.

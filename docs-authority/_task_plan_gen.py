@@ -79,7 +79,7 @@ X=[
 ('X-PIP-05','Weld map and WPS','AQS-WLD-001 extended with WPS/PQR per material','X-PIP-01',None)]),
 ('ELS','Electrical system (plant level)',[
 ('X-ELS-01','EW-1 power reconciled','5.263 kW authoritative (D3 on MASTER_PLAN)','—','docs-authority/duties/EW_1.md'),
-('X-ELS-02','Load list','every node continuous_kw from a calculation, not a study share','unit task 02',None),
+('X-ELS-02','Load list','every node continuous_kw from a calculation, not a study share','unit task 02','docs-authority/LOAD_LIST.md'),
 ('X-ELS-03','Single-line diagram','one-line issued against the load list','X-ELS-02',None),
 ('X-ELS-04','Rectifier sizing across the assay envelope','RECT-EW rated at the bounding case current','X-BAS-02, X-ELS-02',None),
 ('X-ELS-05','Storage and generation sizing','PV, ZnBr2, hydro, fuel cell, backup gen sized from the load profile','X-ELS-02',None),
