@@ -319,10 +319,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.038,
+        "value": 0.018,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 sweep: RO + EDI on S25 263.8 kg/d (AQS-ELEC-003)."
+        "note": "X-MFG-34 (A-M-176, AQS-DUTY-070): RO pump 2.6 W + EDI 0.39 W + UV 15 W; potable share bypasses."
       },
       "modules": [],
       "params": {
@@ -357,8 +357,8 @@
             }
           ]
         },
-        "duty": "In 369.214 kg/d, out 369.214 kg/d, 0.038 kW. Sheet docs-authority/duties/BMED_UPW_POLISH.md.",
-        "internals": "none",
+        "duty": "In 369.214 kg/d, out 369.214 kg/d, 0.018 kW. Sheet docs-authority/duties/BMED_UPW_POLISH.md.",
+        "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
         "relief_basis": {
@@ -375,6 +375,23 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
           "design_case": "vapour 2.0 kPa (4 x vent dP) only = 2.0 kPa g; hydrostatic case added when the unit is sized (A-M-174)"
+        },
+        "design": {
+          "UPW_kg_d": 127.300395,
+          "bypass_kg_d": 235.868229,
+          "RO_feed_kg_d": 133.34539999999998,
+          "recovery": 0.9546665651758517,
+          "osmotic_bar": 0.19204145086101648,
+          "feed_bar": 6.858708117527684,
+          "membrane_m2": 0.26520915624999997,
+          "modules": 2,
+          "RO_kW": 0.0026463459994646287,
+          "EDI_A": 0.009730285740657567,
+          "EDI_kW": 0.00038921142962630267,
+          "UV_kW": 0.015,
+          "total_kW": 0.01803555742909093,
+          "kWh_per_m3": 3.2461065645922726,
+          "kWh_per_m3_RO_EDI": 0.5463508924805983
         }
       }
     },
@@ -2575,7 +2592,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 243.4628,
+        "value": 243.4428,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -2585,7 +2602,7 @@
         "module_kw": 0.5,
         "count": 6972,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 243.463 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 243.443 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -2711,7 +2728,7 @@
         "dc_ac_ratio": 1.2,
         "interconnection": {
           "export_peak_kW": 2688.6,
-          "export_kWh_d_clear": 7543,
+          "export_kWh_d_clear": 7542,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2744,7 +2761,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 252.3,
+          "bus_demand_kW": 252.2,
           "section_rating_A": 450,
           "basis_A": 337.1,
           "MCC": "MCC-1A / MCC-1B",
@@ -2903,7 +2920,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1053.0393,
+              "value": 1052.9556,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -2927,7 +2944,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1061.527 kg/d, out 1061.527 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1061.443 kg/d, out 1061.443 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -2952,10 +2969,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 49 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.924,
+          "H2_m3_d": 8.923,
           "purge_m3_h": 37.18,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2302.4
+          "electrode_area_m2": 2302.2
         }
       }
     },
@@ -7560,7 +7577,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 243.4628,
+        "value": 243.4428,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -7951,7 +7968,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.038,
+        "value": 0.018,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."

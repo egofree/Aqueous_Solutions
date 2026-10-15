@@ -1931,5 +1931,58 @@
   "register": "A-M-175",
   "needs_verification": true,
   "verification_test": "Getter heater power at temperature"
+ },
+ "ro_A_LMH_bar": {
+  "value": 3.0,
+  "units": "L/(m2 h bar) water permeance, TFC low-pressure",
+  "ref": "BAKER2012",
+  "needs_verification": true,
+  "verification_test": "Permeance of the in-house flat-sheet module on VCD distillate (X-MFG-34)"
+ },
+ "ro_flux_LMH": {
+  "value": 20.0,
+  "units": "L/(m2 h) design flux",
+  "register": "A-M-176"
+ },
+ "ro_feed_TDS_mg_L": {
+  "value": 20.0,
+  "units": "mg/L NaCl equivalent in VCD distillate",
+  "register": "A-M-176",
+  "needs_verification": true,
+  "verification_test": "Conductivity of S25 at commissioning"
+ },
+ "ro_rejection": {
+  "value": 0.98,
+  "units": "- salt rejection",
+  "ref": "BAKER2012"
+ },
+ "ro_pump_eta": {
+  "value": 0.4,
+  "units": "- small positive-displacement pump wire to water",
+  "register": "A-M-176"
+ },
+ "edi_CE": {
+  "value": 0.1,
+  "units": "- EDI current efficiency (water splitting carries the rest)",
+  "register": "A-M-176",
+  "needs_verification": true,
+  "verification_test": "EDI stack current vs product resistivity (X-MFG-34)"
+ },
+ "edi_V_cell": {
+  "value": 4.0,
+  "units": "V per EDI cell pair",
+  "register": "A-M-176",
+  "needs_verification": true,
+  "verification_test": "EDI stack I-V"
+ },
+ "edi_cells": {
+  "value": 10,
+  "units": "cell pairs",
+  "register": "A-M-176"
+ },
+ "upw_uv_W": {
+  "value": 15.0,
+  "units": "W 185/254 nm UV lamp for TOC on the UPW loop",
+  "register": "A-M-176"
  }
 }

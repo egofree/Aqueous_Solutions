@@ -222,7 +222,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 243.4628,
+        "value": 243.4428,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -232,7 +232,7 @@
         "module_kw": 0.5,
         "count": 6972,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 243.463 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 243.443 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -367,7 +367,7 @@
         "dc_ac_ratio": 1.2,
         "interconnection": {
           "export_peak_kW": 2688.6,
-          "export_kWh_d_clear": 7543,
+          "export_kWh_d_clear": 7542,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -400,7 +400,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 252.3,
+          "bus_demand_kW": 252.2,
           "section_rating_A": 450,
           "basis_A": 337.1,
           "MCC": "MCC-1A / MCC-1B",
@@ -441,7 +441,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1053.0393,
+              "value": 1052.9556,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -465,7 +465,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1061.527 kg/d, out 1061.527 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1061.443 kg/d, out 1061.443 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 2.0,
         "relief_mm": 3.3,
@@ -490,10 +490,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 49 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.924,
+          "H2_m3_d": 8.923,
           "purge_m3_h": 37.18,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2302.4
+          "electrode_area_m2": 2302.2
         }
       }
     }

@@ -2908,5 +2908,25 @@
     "verification": "CRYO_ASU 18.0 -> 1.67 kW; EXPANDER loop idle; critical load and hydro backup follow",
     "replace_when": "13X bed breakthrough and regeneration energy test",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-176",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "UPW polish train",
+    "statement": "S25 is VCD distillate at about 20 mg/L; potable share bypasses; UPW share through flat-sheet TFC RO (A 3 LMH/bar, flux 20 LMH, rejection 0.98, pump eta 0.40) then EDI (CE 0.10, 10 cell pairs at 4 V) and a 15 W UV-TOC lamp; 2 x 100 % trains",
+    "verification": "BMED_UPW_POLISH 38 -> 18 W; 0.27 m2 membrane per module at 6.9 bar",
+    "replace_when": "Module permeance and EDI resistivity bench test",
+    "doc": "AQS-PAR-003"
   }
 ]
