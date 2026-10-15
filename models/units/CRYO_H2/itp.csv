@@ -1,0 +1,10 @@
+step,activity,basis,point
+1,material certificates and PMI of every tube,"ASME B31.3 323, A-M-190",R
+2,WPS-01 welder qualification,ASME IX QW,R
+3,100 % visual and 100 % radiography of girth welds,ASME B31.3 K341 (high pressure),H
+4,"hydrostatic test at 1.5 x design, 10 min hold",ASME B31.3 345.4.2,H
+5,cleaning for oxygen service (CRYO_O2),ASTM G93,H
+6,relief valve set and seat test,API 576,W
+7,gas purity at first fill (H2),ISO 14687,R
+8,"motors: routine test (winding resistance, insulation resistance, no-load run)",IEC 60034,W
+9,loop check of every instrument,A-M-190,W

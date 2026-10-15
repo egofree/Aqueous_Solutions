@@ -1,0 +1,7 @@
+step,activity,basis,point
+1,material certificates,ASME B31.3 323,R
+2,"WPS-02, welder qualification",ASME IX,R
+3,"visual 100 %, random 5 % RT",ASME B31.3 Table 341.3.2,W
+4,pressure test as R2,ASME B31.3 345.4 / ASME VIII-1 UG-99,H
+5,coating dry-film thickness,A-M-190,W
+6,loop check of every instrument,A-M-190,W

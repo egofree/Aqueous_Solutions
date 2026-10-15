@@ -3188,5 +3188,25 @@
     "verification": "209 units, 540+ tasks",
     "replace_when": "Condition data from the first operating year",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-190",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "ITP routes and hold points",
+    "statement": "Route from the BOM body material (8 routes); B31.3 / VIII-1 test factors and NDE extents where they apply; PMI on 316L wetted parts, passivation with ferroxyl test, 24 h fill test for atmospheric vessels, and function tests as study practice",
+    "verification": "172 units assigned: R4 77, R2 54, R3 15, R6 9, R8 9, R7 4, R1 3, R5 1",
+    "replace_when": "Owner quality manual adoption (X-COD-01)",
+    "doc": "AQS-PAR-003"
   }
 ]

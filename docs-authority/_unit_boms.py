@@ -33,7 +33,7 @@ for n in sorted(g['nodes'], key=lambda n: n['unit_id']):
     for dn, q in sorted(by.items(), key=lambda x: int(x[0])): rows.append((f'Process nozzle DN{dn}', q, mat, 'one per mass edge; DN from AQS-INV-003'))
     rb = p.get('relief_basis') or {}
     if rb.get('vent_DN'): rows.append((f"Open vent DN{rb['vent_DN']}", 1, mat, 'API 2000, A-M-155'))
-    elif p.get('relief_mm'): rows.append((f"Relief valve, {p['relief_mm']} mm bore, DN15 body", 1, '316L', 'AQS-SAF-004'))
+    elif p.get('relief_mm'): rows.append((f"Relief valve, {p['relief_mm']} mm bore, DN15 body", 2 if (p.get('relief_basis') or {}).get('fire_case') else 1, '316L', 'AQS-SAF-005 (one per bank half, fire case)' if (p.get('relief_basis') or {}).get('fire_case') else 'AQS-SAF-004'))
     for m in mot[u]: rows.append((f"Motor: {m['device']} ({m['motor_type']}, {m['size']})", m['qty'], '-', 'AQS-INV-001 / AQS-INV-005'))
     for o in oth[u]: rows.append((f"{o['category']}: {o['item']} {o['size']}", o['qty'], o['spec'], 'AQS-INV-004'))
     os.makedirs(f'models/units/{u}', exist_ok=True)
