@@ -18,13 +18,13 @@ flowchart LR
   BACKUP_GEN["BACKUP_GEN 2.50 kW"] -->|S47| BUS
   FUEL_CELL["FUEL_CELL 3.46 kW"] -->|S51| BUS
   MEOH_FC["MEOH_FC 0.50 kW"] -->|S79| BUS
-  PV_ARRAY["PV_ARRAY 82.03 kW"] -->|IA-PV-01| BUS
+  PV_ARRAY["PV_ARRAY 79.28 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 3 × 60 = 180 kW inverters"])
   BUS --> MCC["MCC-1 480 V 29.5 kW"]
   BUS --> XF["T-1 30 kVA 480–208/120 V"] --> PP["PP-1 18.4 kW"]
   BUS -->|IA-ESS-ZNBR2-CHG| ZNBR2["ZNBR2 6.67 kW"]
   BUS -->|S17| RECTIFIER["RECTIFIER 23.32 kW"]
-  BUS -->|S20| GROW_BED["GROW_BED 5.00 kW"]
+  BUS -->|S20| GROW_BED["GROW_BED 2.25 kW"]
   BUS -->|IA-PV-CURTAIL| BOUNDARY_EXPORT["BOUNDARY_EXPORT 4.64 kW"]
   BUS -->|S17-EW| RECT_EW["RECT_EW 38.02 kW"]
   BUS -->|S17-BMED| BMED_ACID["BMED_ACID 16.13 kW"]
@@ -130,21 +130,21 @@ flowchart LR
 | SOL_ARK 480 V | RECTIFIER | 23.32 | 31.2 | 40 | graph S17 |
 | SOL_ARK 480 V | BMED_ACID | 16.13 | 21.6 | 30 | graph S17-BMED |
 | SOL_ARK 480 V | ZNBR2 | 6.67 | 8.9 | 15 | graph IA-ESS-ZNBR2-CHG |
-| SOL_ARK 480 V | GROW_BED | 5.00 | 6.7 | 15 | graph S20 |
+| SOL_ARK 480 V | GROW_BED | 2.25 | 3.0 | 15 | graph S20 |
 
 ## Totals
 
 | Item | kW |
 | --- | --- |
-| Sources on the bus (graph edges) | 93.78 |
-| Demand on the bus (this page) | 137.10 |
+| Sources on the bus (graph edges) | 91.03 |
+| Demand on the bus (this page) | 134.35 |
 | Inverter rating (SOL_ARK_60K) | 60.0 |
 | Shortfall against sources | 43.32 |
-| Shortfall against inverter | 77.10 |
+| Shortfall against inverter | 74.35 |
 
 ## Findings
 
-1. Bus demand at the bounding EW case is 137.1 kW against 93.8 kW of graph sources and 3 × 60 = 180 kW inverters. The RECT-EW feeder alone is 38.0 kW. Supply nameplates follow AQS-ELEC-007 bounding case (X-RSZ-02); the gap between graph sources and bus demand is loads without graph feeds, booked in the X-RSZ-07 sweep.
+1. Bus demand at the bounding EW case is 134.3 kW against 91.0 kW of graph sources and 3 × 60 = 180 kW inverters. The RECT-EW feeder alone is 38.0 kW. Supply nameplates follow AQS-ELEC-007 bounding case (X-RSZ-02); the gap between graph sources and bus demand is loads without graph feeds, booked in the X-RSZ-07 sweep.
 2. 89 feeders are study shares; they become calculated as each unit's task 02 closes (X-ELS-02).
 3. Most loads have no electrical edge on the graph; only RECTIFIER (S17) and GROW_BED (S20) do. The one-line assigns the rest to MCC-1 and PP-1 by size. Graph electrical edges for them belong to X-ELS-02.
 4. The 48 V shop and farm rails stay as AQS-PWR-001 behind RECTIFIER (S17). MFG_SHOP's 12 kW share may overlap the 20 kW shop rail; the overlap is resolved with MFG_SHOP task 02.

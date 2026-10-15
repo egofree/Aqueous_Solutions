@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 34.40 kg/d. Mass out 34.40 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-01 33.00 kg/d (Dryer → pyro); C29_TO_PYRO 1.40 kg/d (C29 heavy cut). Out: IA-OIL-02 28.90 kg/d (Pyro → frac); IA-CHAR 5.20 kg/d (char reductant); IA-SIC-C 0.2999 kg/d (carbon reagent).
+1. Basis. Mass in 34.40 kg/d. Mass out 34.40 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-01 33.00 kg/d (Dryer → pyro); C29_TO_PYRO 1.405 kg/d (C29 heavy cut). Out: IA-OIL-02 28.90 kg/d (Pyro → frac); IA-CHAR 5.200 kg/d (char reductant); IA-SIC-C 0.3 kg/d (carbon reagent).
 
 2. Size.
 - V = (34.40/1000)×(1/24) = 0.0014 m³. 1 h. Density 1000 kg/m³.

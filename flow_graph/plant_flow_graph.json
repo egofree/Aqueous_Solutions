@@ -343,9 +343,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 6.0,
+        "value": 0.038,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "X-RSZ-07 sweep: RO + EDI on S25 263.8 kg/d (AQS-ELEC-003)."
       },
       "modules": [],
       "params": {
@@ -1501,7 +1502,12 @@
         "presence": "present",
         "internals": "weir and launder",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "design_capacity_kg_d": {
+          "value": 459.27,
+          "basis": "IA-SINK-01 case A (AQS-ASSAY-001 Rev D \u00a78); covers MSW sink 362.75 + unassigned 35.0",
+          "task": "X-RSZ-07 sweep"
+        }
       },
       "continuous_kw": null
     },
@@ -1889,10 +1895,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 5.0,
+        "value": 2.25,
         "unit": "kW",
         "status": "study",
-        "note": "LED canopy share; study"
+        "note": "X-RSZ-07 sweep: LED 28 m2 DLI 17 + recirculation (AQS-ELEC-003)."
       },
       "modules": [],
       "params": {
@@ -2984,7 +2990,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "design_capacity_kg_d": {
+          "value": 45.0,
+          "basis": "IA-PLAST-01 MSW case",
+          "task": "X-RSZ-07 sweep"
+        }
       },
       "continuous_kw": null
     },
@@ -3038,7 +3049,12 @@
         "presence": "present",
         "internals": "none",
         "design_kPa": 17.8,
-        "relief_mm": 3.3
+        "relief_mm": 3.3,
+        "design_capacity_kg_d": {
+          "value": 45.0,
+          "basis": "IA-OIL-01 MSW case",
+          "task": "X-RSZ-07 sweep"
+        }
       },
       "continuous_kw": null
     },
@@ -3155,7 +3171,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 82.03,
+        "value": 79.28,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -11023,10 +11039,10 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.0,
+        "value": 2.25,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Direction reversed. Power flows to the farm."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Direction reversed. Power flows to the farm. X-RSZ-07 sweep: calculated load (AQS-ELEC-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "ELEC",
@@ -13971,10 +13987,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 82.03,
+        "value": 79.28,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23263,10 +23279,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 82.03,
+        "value": 79.28,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average."
+        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23609,10 +23625,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.0,
+        "value": 2.25,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out."
+        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-07 sweep: calculated load (AQS-ELEC-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -23687,10 +23703,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 99.84,
+        "value": 97.09,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +49.58 kW average."
+        "note": "AQS-PLAN-001 Rev B X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +49.58 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

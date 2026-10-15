@@ -1061,5 +1061,18 @@
    "docs-authority/MATERIALS_STD.md"
   ],
   "id": "A-M-081"
+ },
+ {
+  "value": "unassigned class reports to FLOAT_SINK",
+  "units": "kg/d",
+  "where": "FLOAT_SINK design capacity",
+  "basis": "Unidentified material is taken as inert solids to sink (conservative for sink sizing)",
+  "sensitivity": "If soluble, leach and acid load rise",
+  "replaced_by": "Lot characterisation per AQS-ASSAY-001",
+  "task": "X-RSZ-07",
+  "files": [
+   "docs-authority/RESIZE_SWEEP.md"
+  ],
+  "id": "A-M-082"
  }
 ]
