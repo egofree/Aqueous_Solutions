@@ -1730,7 +1730,7 @@
    "flow_graph/param/solver.py",
    "flow_graph/param/drivers.json"
   ],
-  "value": "Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K mean); internal gains = lighting + fans, shared by the dT split; slab F 1.264 W/(m K) heating only; ground-source COP 3.2/4.13 + 37 W/kW pumping; bore 55 m per kW peak, 120 m bores at 6 m; design temps -5 / 38 C; mode chosen by smaller footprint",
+  "value": "Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K mean); internal gains = lighting + fans, shared by the dT split; slab F 1.264 W/(m K) heating only; ground-source COP 3.2/4.13 + 37 W/kW pumping; bore 55 m per kW peak, 120 m bores at 6 m; design temps -5 / 38 C; air-source adopted by owner decision D77 (ground-source 0.2 % smaller footprint not worth 27 km of bores; inside input uncertainty, major build complexity)",
   "units": "K, W/(m K), -, m/kW, m, C",
   "where": "drivers ext_dTh_K, ext_dTc_K, ext_F_slab, ext_hvac, gsh_*, ash_*, ext_T_design_*",
   "basis": "NOAA_NORMALS_DFW, IECC2021_C402, ASHRAE901_2019_T6812, KAVANAUGH2014, ASHRAE_FUND_2021",

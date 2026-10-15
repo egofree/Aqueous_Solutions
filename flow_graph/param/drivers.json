@@ -715,11 +715,12 @@
   "verification_test": "Slab edge detail"
  },
  "ext_hvac": {
-  "value": "best",
+  "value": "air",
   "units": "'air', 'ground' or 'best' (lower converged footprint)",
   "register": "A-M-112",
   "needs_verification": true,
-  "verification_test": "Owner review of the X-PAR-08 comparison"
+  "verification_test": "Owner review of the X-PAR-08 comparison",
+  "owner": "Mike Matthews 2026-10-15: air-source; 27 km of bores for a 0.2 % footprint gain is inside input uncertainty and adds major build complexity (D77)"
  },
  "ash_cop_h": {
   "value": 3.3,

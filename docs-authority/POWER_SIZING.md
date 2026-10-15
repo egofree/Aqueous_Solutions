@@ -8,7 +8,7 @@ Authority: AQS-PLAN-007 X-ELS-05. From AQS-ELEC-002 Rev C bus demand. Script `do
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue. Two cases; PV, storage, inverters, backup. | 2026-10-15 |
-| F | X-PAR-08: hall HVAC comparison, gains and slab; ground-source adopted. | 2026-10-15 |
+| F | X-PAR-08: hall HVAC comparison, gains and slab; air-source kept (owner, D77); 186 x 174 m. | 2026-10-15 |
 | E | X-PAR-09 (D75): PV at 2.0 x requirement, cloudy-day storage charge rate, inverters for export. | 2026-10-15 |
 | C | X-PAR acid-loop decision: BMED 26.93 kW, EVAP_ACID and EVAP_BASE, RECT-EW at 2.12 V / CE 0.85. Values written by `flow_graph/param/write_graph.py power`. | 2026-10-15 |
 
@@ -20,22 +20,22 @@ Flat 24 h profile (continuous process; study). PV yield 5.41 kWh/kWp/d before lo
 
 | Item | Bounding EW | Reference EW | Graph now |
 | --- | --- | --- | --- |
-| Bus demand incl. EXT_HALL, kW | 243.9 | 210.8 | PV average to plant 232.8 |
-| Energy, kWh/d | 5854 | 5059 | — |
-| PV balancing nameplate, kWp | 1691 | 1461 | 1691 |
-| PV nameplate at 2.0 x, kWp (roof only) | 3381 | 2922 | 3382 |
-| PV array area on the roof, m² | 29,740 | — | 29,740 |
-| Storage energy, kWh | 3415 | 2951 | 3415 |
-| Storage charge / discharge, kW | 1109 / 244 | 958 / 211 | 1109 / 244 |
-| Inverters | 47 x 60 = 2820 kW | 41 x 60 = 2460 kW | 2820 kW |
-| Export at noon, storage full, kW | 2576 | 2249 | 2576 |
-| Export energy, clear day, kWh/d | 7317 | 6323 | 7317 |
+| Bus demand incl. EXT_HALL, kW | 244.8 | 211.7 | PV average to plant 233.3 |
+| Energy, kWh/d | 5875 | 5080 | — |
+| PV balancing nameplate, kWp | 1697 | 1467 | 1697 |
+| PV nameplate at 2.0 x, kWp (roof only) | 3394 | 2934 | 3394 |
+| PV array area on the roof, m² | 29,783 | — | 29,783 |
+| Storage energy, kWh | 3427 | 2963 | 3428 |
+| Storage charge / discharge, kW | 1113 / 245 | 962 / 212 | 1113 / 245 |
+| Inverters | 48 x 60 = 2880 kW | 41 x 60 = 2460 kW | 2880 kW |
+| Export at noon, storage full, kW | 2635 | 2248 | 2635 |
+| Export energy, clear day, kWh/d | 7344 | 6349 | 7344 |
 
 Backup. Critical loads 32 kW (HABITATION 3, CRYO_H2 4, CRYO_ASU 18, GROW_BED 5, controls 2; study list). Generator 40 kW (125 %, rounded). Two days' critical energy 1536 kWh; on H₂ at about 33 kWh/kg LHV and 40 % engine efficiency that is about 115 kg H₂ held in CRYO_H2 (study). Graph: BACKUP_GEN 2.5 kW, FUEL_CELL 4.0 kW.
 
 ## 3. Findings
 
-Rev F (X-PAR-08, 2026-10-15). Hall loads by degree-day split with internal gains, slab edge loss and an air- versus ground-source comparison (ASHRAE 90.1-2019 Table 6.8.1-2): air 91.34 kW / 32,364 m², ground 90.46 kW / 32,292 m². Ground-source adopted (smaller footprint by 72 m²); 227 bores x 120 m under the hall slab. Footprint unchanged at 234 x 138 m; PV 3382 kWp; storage 3415 kWh, charge 1109 kW. Lighting (28.0 kW) and fans (12.0 kW) dominate the hall load. Utility interconnection study is an owner input (A-M-113).
+Rev F (X-PAR-08, 2026-10-15). Hall loads by degree-day split with internal gains, slab edge loss and an air- versus ground-source comparison (ASHRAE 90.1-2019 Table 6.8.1-2): air 91.34 kW / 32,364 m², ground 90.46 kW / 32,292 m². Ground-source first adopted by rule, then reverted by the owner (D77): 27 km of bores for a 0.2 % gain is inside input uncertainty and adds major build complexity. Air-source converged: 186 x 174 m (31 x 29 bays, 32,364 m², 16 arrays, roof capacity 3395 kWp); PV 3394 kWp; storage 3428 kWh, charge 1113 kW; 48 x 60 kW inverters; export up to 2635 kW. Lighting (28.0 kW) and fans (12.0 kW) dominate the hall load. Utility interconnection study is an owner input (A-M-113).
 
 Rev E (X-PAR-09, owner principle D75 2026-10-15: commodity surplus, PV at 200 %). roof_close carries 2.0 x the balancing PV: converged 234 x 138 m (39 x 23 bays, 32,292 m², extension 31,860 m², 15 arrays, roof capacity 3390 kWp); EXT_HALL 90.0 kW (lighting 28.04, ventilation 40.43, envelope 21.54); bus 243.4 kW. A day at half the mean yield still fills the 3409 kWh store; below that the backup case applies. Clear-day surplus is exported through the AQS-ELEC-002 Rev D interconnection; with no utility service the inverters curtail. The footprint grew 2.5 x; X-PAR-08 (ground-source, internal gains) is the next lever on the hall load.
 

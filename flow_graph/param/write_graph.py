@@ -149,6 +149,7 @@ def power():
                  f" internal gains {x['gains_kW']:.1f} kW and slab edge {x['slab_kW']:.2f} kW (IECC F-factor); loop pumping {x['pump_kW']:.2f} kW. Comparison: "
                  + '; '.join(f"{m} {c['footprint_m2']:.0f} m2, {c['ext_kW']:.2f} kW" for m, c in rf.get('compare', {}).items()) + '.')
         N['EXT_HALL'].setdefault('params', {})['hvac'] = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in x.items()}
+        if not x.get('bores'): N['GEO_GHEX'].get('params', {}).pop('hall_field', None)
         if x.get('bores'):
             N['GEO_GHEX'].setdefault('params', {})['hall_field'] = {'bores': x['bores'], 'depth_m': DR.val(DR.load(), 'gsh_bore_depth_m'), 'bore_m': round(x['bore_m']),
                 'area_m2': x['bore_field_m2'], 'location': 'under the EXT_HALL slab', 'basis': 'KAVANAUGH2014 bore length per kW peak block load; X-PAR-08, A-M-112'}

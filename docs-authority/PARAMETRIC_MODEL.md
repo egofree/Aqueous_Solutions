@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3382.000 | 3381.384 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3394.000 | 3393.570 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -180,7 +180,7 @@ All solved units close.
 | ext_dTh_K | 3.458 | K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | NOAA_NORMALS_DFW | yes |
 | ext_dTc_K | 4.381 | K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | NOAA_NORMALS_DFW | yes |
 | ext_F_slab | 1.264 | W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | IECC2021_C402 | yes |
-| ext_hvac | "best" | 'air', 'ground' or 'best' (lower converged footprint) | A-M-112 | yes |
+| ext_hvac | "air" | 'air', 'ground' or 'best' (lower converged footprint) | A-M-112 | yes |
 | ash_cop_h | 3.3 | air-source heat pump heating COP at 8.3 C, >= 19 kW | ASHRAE901_2019_T6812 | yes |
 | ash_cop_c | 3.22 | air-source heat pump cooling COP (EER 11.0), >= 19 kW | ASHRAE901_2019_T6812 | yes |
 | gsh_cop_h | 3.2 | ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1) | ASHRAE901_2019_T6812 | yes |
@@ -352,7 +352,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ext_dTh_K | 3.458 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
 | driver ext_dTc_K | 4.381 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
 | driver ext_F_slab | 1.264 W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | Slab edge detail |
-| driver ext_hvac | "best" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison |
+| driver ext_hvac | "air" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison |
 | driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run |
 | driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating |
 | driver gsh_cop_h | 3.2 ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1) | Selected unit rating at design loop temperature |
@@ -474,3 +474,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-109 | PV nameplate = 2.0 x balancing nameplate; design cloudy day  -, kW, kWh | NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2 |
 | A-M-110 | Grid export through a supply-side connection (NEC 2023 705.1 - | Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid |
 | A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate |
+| A-M-112 | Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K, W/(m K), -, m/kW, m, C | TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station |
+| A-M-113 | OWNER INPUT: utility interconnection study (service size, av - | Owner files the interconnection application; utility study results entered as drivers and the protection study re-run |
