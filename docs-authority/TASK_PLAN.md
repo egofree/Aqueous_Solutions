@@ -130,7 +130,7 @@ Owner decisions open: class A (regolith-like) feed acid limit (AQS-ASSAY-001 Rev
 ### X-PIP. Piping and line list
 
 - [x] **X-PIP-01** Piping class sheets. Done when: class sheets per service and material. Depends: X-MAT-01. Evidence: `docs-authority/PIPING_CLASSES.md`.
-- [ ] **X-PIP-02** Plant line list. Done when: every edge with DN, class, length, route; generated from the graph. Depends: X-PIP-01, unit task 05.
+- [ ] **X-PIP-02** Plant line list. Done when: every edge with DN, class, length, route; generated from the graph. Depends: X-PIP-01, unit task 05. Start from `docs-authority/LINE_LIST.md` (partial).
 - [ ] **X-PIP-03** Header routing and isometrics. Done when: isometric per line; current set AQS-ISO-000 Rev A is partial. Depends: X-PIP-02, X-BLD-04.
 - [ ] **X-PIP-04** Pipe supports and stress. Done when: support spacing and thermal stress for hot and cryogenic lines. Depends: X-PIP-03.
 - [ ] **X-PIP-05** Weld map and WPS. Done when: AQS-WLD-001 extended with WPS/PQR per material. Depends: X-PIP-01.

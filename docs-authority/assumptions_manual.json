@@ -843,5 +843,44 @@
    "docs-authority/MATERIALS_STD.md"
   ],
   "id": "A-M-065"
+ },
+ {
+  "value": "1 m/s liquid, 10 m/s gas; min DN15; DN50 slurry",
+  "units": "m/s, DN",
+  "where": "AQS-PIP-004 bores",
+  "basis": "Common line-sizing velocities; slurry minimum against plugging",
+  "sensitivity": "DN with square root of flow",
+  "replaced_by": "Unit task 04 bore calculation with pressure drop",
+  "task": "X-PIP-02",
+  "files": [
+   "docs-authority/LINE_LIST.md"
+  ],
+  "id": "A-M-066"
+ },
+ {
+  "value": "orthogonal centre distance x 1.2",
+  "units": "m",
+  "where": "AQS-PIP-004 lengths",
+  "basis": "Rack routing allowance",
+  "sensitivity": "Pressure drop and cost",
+  "replaced_by": "Isometrics (X-PIP-03)",
+  "task": "X-PIP-02",
+  "files": [
+   "docs-authority/LINE_LIST.md"
+  ],
+  "id": "A-M-067"
+ },
+ {
+  "value": "rule-based class assignment",
+  "units": "class",
+  "where": "AQS-PIP-004 classes",
+  "basis": "AQS-PIP-003 service map applied by unit material, temperature, phase and composition; default P1 for aqueous process",
+  "sensitivity": "Material per line",
+  "replaced_by": "Line-by-line review at unit task 05",
+  "task": "X-PIP-02",
+  "files": [
+   "docs-authority/LINE_LIST.md"
+  ],
+  "id": "A-M-068"
  }
 ]
