@@ -15,5 +15,5 @@ Each system is listed with its primary source, the backups now on the graph and 
 | Water | ROOF_TANK 200 m3, AHU condensate return, VCD_TRAIN | CATCH_TANK inventory, potable make-up | 200 m3 / 131.5 kg/d potable draw = 1520 d | VCD_TRAIN single still | X-RED-05 |
 | CO2 removal (crew air) | HAB sorbent bed (S90, 4.02 kg/d) | crop uptake 2.8 kg/d on the farm air (partial) | crops cover 70 % of crew CO2 only if the air is shared | closed: second full 2-bed 5A assembly, 40 kg/bed (A-M-147) | X-RED-06 done |
 | Thermal | HEAT_SINK, GEO_HP 2 kW | heat ladder stores Q1-Q4 | not calculated | single heat pump and single heat sink | X-RED-07 |
-| Food | farm units (bed, veg, fruit, peanut, stock, fish, mushrooms) | diversity of crops and stock | no stored reserve | no ration store for a crop failure | X-RED-08 |
+| Food | farm units (bed, veg, fruit, peanut, stock, fish, mushrooms) | diversity of crops and stock | no stored reserve | closed: 80 d dry reserve 13.5 kg DM in HAB_GALLEY (A-M-148) | X-RED-08 done |
 | Sanitation | COMPOST_TOILET | none | - | single toilet | X-RED-09 |
