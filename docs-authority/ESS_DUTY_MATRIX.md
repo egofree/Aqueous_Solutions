@@ -33,14 +33,14 @@ M1 hydro ≪ ZnBr₂ — without inventing nameplates.
 |---|---|---|---|---|---|
 | **ZNBR2** | Required + enabled | **60 kW** class (`ZNBR_MODULE_KW` × count) | **120 kWh** class (2 h × 60 kW) | Storage role; charge preferred per AQS-SCALE-001 §6 | Cycle life / BMS listing **study**; vendor nameplate **unknown** |
 | **MEOH** | Required + enabled; process feed | **REQ-MEOH-FC-CONT 0.5–2 kW_dc** (mid **1.0**) | Synth **~2–8 kg/d** MeOH on surplus H₂ (AQS-MeOH-001); tank inventory study | MEOH_FC generation; MEOH_SYNTH load when priority allows | Dual-role vs process consumers **study**; bank stand-in ≠ purchase |
-| **PUMPED_HYDRO** | Required + enabled | Turbine-pump **study** — no continuous kW nameplate at M1 | Ideal **E=ρVgh ≈ 9.8 kWh** @ 200 m³ / 18 m (AQS-BLD-001 §3); ~7 kWh recoverable study | HYDRO_SET storage; charge/discharge electrical **incomplete** at P0 | Redundancy **symbolic** at M1 vs ZnBr₂ 120 kWh |
+| **PUMPED_HYDRO** | Required + enabled | Turbine-pump **study** — no continuous kW nameplate at M1 | Ideal **E=ρVgh ≈ 263.6 kWh** @ 2,707 m³ / 35.73 m (AQS-BLD-014 water tower, Q-009); 210.9 kWh recoverable study | HYDRO_SET storage; charge/discharge electrical **incomplete** at P0 | Redundancy **symbolic** at M1 vs ZnBr₂ 120 kWh |
 
 ### 2.1 Hydro vs ZnBr₂ energy mismatch (study sizing)
 
 | Store | Study energy | vs ZnBr₂ |
 |---|---|---|
 | ZnBr₂ M1 | 120 kWh | baseline electrical battery |
-| Pumped hydro M1 | ~9.8 kWh ideal / ~7 kWh recoverable | **~6–8 %** of ZnBr₂ — side effect of water tower, not plant battery |
+| Pumped hydro M1 | 263.6 kWh ideal / 210.9 kWh recoverable | **6 %** of ZnBr₂ 3,501 kWh; sized as the NFPA 111 backup of the night store (A-M-145, AQS-BLD-014) |
 
 **Framing (locked):** hydro remains a **required ESS peer** for redundancy /
 closure ontology (AQS-SEC-001 Rev D). At M1 the peer is **present but
@@ -70,7 +70,7 @@ count formula remains P1 if discrete jumps are preferred.
 | Item | Study status |
 |---|---|
 | Continuous charge/discharge kW at M1 | **Incomplete** — no nameplate; HYDRO_SET `continuous_kw.value=null` |
-| Energy store M1 | ~9.8 kWh ideal / ~7 recoverable ≪ ZnBr₂ 120 kWh (**~8%**) — explicit |
+| Energy store M1 | 263.6 kWh ideal / 210.9 recoverable vs ZnBr₂ 3,501 kWh (**6 %**), from AQS-BLD-014 (rev 2026-10-16, X-QA-02) |
 | Scale-up path (AQS-BLD-001 §3) | Grow roof/catch **V×h** — not invent M1 kW equality |
 
 | Volume (m³) | Head (m) | Ideal E=ρVgh (kWh) | Recoverable study | vs ZnBr₂ 120 kWh |

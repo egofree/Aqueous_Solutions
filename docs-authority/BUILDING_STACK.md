@@ -182,7 +182,7 @@ Energy in a water column: \(E = \rho V g h\).
 
 | Roof volume | Head | Stored energy (ideal) | Round-trip ~70% |
 |---|---|---|---|
-| 200 m³ | 18 m | 9.8 kWh | ~7 kWh |
+| 2,707 m³ | 35.73 m | 263.6 kWh | 210.9 kWh (superseded by AQS-BLD-014, Q-009) |
 | 1 000 m³ | 18 m | 49 kWh | ~34 kWh |
 | 5 000 m³ (city cistern) | 25 m | 340 kWh | ~240 kWh |
 
