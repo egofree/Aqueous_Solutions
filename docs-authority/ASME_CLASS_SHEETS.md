@@ -41,6 +41,8 @@ documented (e.g. dryer jacket hydro 6 bar).
 
 ## 3. Vessel / tank inventory
 
+Superseded for code intent by AQS-ASME-002 (`ASME_CODE_INTENT.md`, X-MFG-40), generated from the graph design pressures; the table below is kept for its joint and evidence columns.
+
 Legend — **Code intent:**  
 - **Atm** = atmospheric / sheet / rotomold / fusion tank (not Sec. VIII intent)  
 - **VIII-study** = candidate for BPVC Sec. VIII when P/T issued  
