@@ -1,0 +1,13 @@
+part,qty,material,mass_kg,make_or_buy
+baseplate,1,316L,22.95,make
+crankcase,1,316L,23.82,make
+cylinder,1,316L,2.11,make
+head,1,316L,1.89,make
+piston,1,316L,0.6,make
+flywheel,1,316L,11.77,make
+shaft,1,316L,2.15,make
+N1_inlet,1,316L,0.06,make
+N2_outlet,1,316L,0.06,make
+N1_line,1,316L,0.57,make
+N2_line,1,316L,0.57,make
+PSV_boss,1,316L,0.28,make
