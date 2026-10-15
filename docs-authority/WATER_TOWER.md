@@ -12,34 +12,34 @@ Head is the drop between the water centroids, upper full to lower full. It depen
 
 | Item | Value |
 |---|---|
-| Head (centroid to centroid) | 32.65 m |
-| Water | 2962 m3 (2962 t) |
+| Head (centroid to centroid) | 35.73 m |
+| Water | 2707 m3 live + 451 m3 fire reserve below the hydro outlet (AQS-SAF-005) = 3158 t |
 | Reservoir plan area (plate less 15 % cores) | 367 m2 |
-| Upper reservoir | 2 levels at 6.0 m floor-to-floor above the ROOF_TANK storey, 4.03 m water each (max 4.5 m), 2 cells per level of 12.0 m |
-| Upper reservoir floor / roof | +16.8 m / +28.8 m |
-| Lower reservoir (CATCH_TANK) | 8.07 m water + 0.5 m freeboard over 367 m2, floor at -14.57 m |
-| Penstock static pressure | 0.31 MPa at the turbine |
+| Upper reservoir | 3 levels at 6.0 m floor-to-floor above the ROOF_TANK storey, 3.07 m water each (max 4.5 m), 2 cells per level of 12.0 m |
+| Upper reservoir floor / roof | +16.8 m / +34.8 m |
+| Lower reservoir (CATCH_TANK) | 9.20 m water + 0.5 m freeboard over 367 m2, floor at -15.70 m |
+| Penstock static pressure | 0.32 MPa at the turbine |
 
-Each reservoir level is split into at least two cells, each with its own outlet valve to the penstock, so one cell can be drained for inspection while the store keeps 75 % of its energy (redundancy rule).
+Each reservoir level is split into at least two cells, each with its own outlet valve to the penstock, so one cell can be drained for inspection while the store keeps 83 % of its energy (redundancy rule).
 
 Building rule (owner): as the plant grows, HAB/FARM levels are added at 2 x the rate of shop levels (LIFE_LEVELS = 1 + 2 (SHOP_LEVELS - 1)). A taller life stack raises the head and the reservoir shrinks in step. At this scale: 1 shop, 1 life level(s).
 
 ## CATCH_TANK basis (check)
 
-The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3; 3,916 kN test load in AQS-BLD-013 rev A). That was not from need. It is now the lower reservoir and holds the full upper volume plus freeboard; terrace rain catch uses the freeboard and overflows to the site drain. The tank is 24.0 x 15.3 x 8.57 m.
+The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3; 3,916 kN test load in AQS-BLD-013 rev A). That was not from need. It is now the lower reservoir and holds the full upper volume plus freeboard; terrace rain catch uses the freeboard and overflows to the site drain. The tank is 24.0 x 15.3 x 9.70 m.
 
 ## Structural loads (ASCE7_22, ACI350_3, ACI350_20)
 
 | Load | Value | Basis |
 |---|---|---|
-| Water weight, upper | 29059 kN (39.6 kPa per reservoir slab) | operating = test (full) |
-| Seismic base shear from the water mass | 14530 kN (Cs 0.50) | ASCE 7 12.8, SDS 1.0, R 3.0, Ie 1.5 (Risk Cat. IV), impulsive mass taken rigid |
-| Seismic overturning at grade | 331275 kN m | water centroid height |
-| Convective period, sloshing height | 4.41 s, 1.54 m (Sac 0.204 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
-| Freeboard in each reservoir level | 1.67 m, covers the sloshing height | soffit must not take wave impact |
-| Wind on the reservoir storeys | 518 kN (qz 1.63 kPa at 28.8 m) | ASCE 7 ch. 26-27, exposure C, 50.0 m/s |
+| Water weight, upper | 30979 kN (28.1 kPa per reservoir slab) | operating = test (full) |
+| Seismic base shear from the water mass | 15490 kN (Cs 0.50) | ASCE 7 12.8, SDS 1.0, R 3.0, Ie 1.5 (Risk Cat. IV), impulsive mass taken rigid |
+| Seismic overturning at grade | 399632 kN m | water centroid height |
+| Convective period, sloshing height | 4.78 s, 1.42 m (Sac 0.188 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
+| Freeboard in each reservoir level | 2.63 m, covers the sloshing height | soffit must not take wave impact |
+| Wind on the reservoir storeys | 809 kN (qz 1.70 kPa at 34.8 m) | ASCE 7 ch. 26-27, exposure C, 50.0 m/s |
 
-Seismic governs over wind by 28 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
+Seismic governs over wind by 19 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
 
 ## Egress and access (IBC2021_CH10, NFPA101_2024)
 
@@ -47,6 +47,6 @@ The reservoir levels are unoccupied: maintenance access only. The two exit stair
 
 ## Roof PV
 
-The PV array moves to the reservoir roof at +28.8 m (datum ROOF). The footprint is unchanged, so the roof area and the PV area (solver.roof_close) are unchanged; the PV dead load now lands on the reservoir roof slab.
+The PV array moves to the reservoir roof at +34.8 m (datum ROOF). The footprint is unchanged, so the roof area and the PV area (solver.roof_close) are unchanged; the PV dead load now lands on the reservoir roof slab.
 
-Placement datums changed: L-2 -14867 -> -14867 mm, ROOF 28800 -> 28800 mm, added R1 16800, R2 22800 mm.
+Placement datums changed: L-2 -15998 -> -15998 mm, ROOF 34800 -> 34800 mm, added R1 16800, R2 22800, R3 28800 mm.

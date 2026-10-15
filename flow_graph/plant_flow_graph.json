@@ -1006,7 +1006,7 @@
         "duty": "In 42.312 kg/d, out 42.312 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_CO2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 2200.0,
-        "relief_mm": 3.3,
+        "relief_mm": 9.0,
         "relief_basis": {
           "case": "blocked outlet at full inflow 1.763 kg/h (CO2 vapour off the liquid store at -20 C (AQS-DUTY-069, NIST_WEBBOOK)); operating 20 bar, design 22.0 bar g",
           "P1_kPa_abs": 2521.3,
@@ -1019,7 +1019,21 @@
           "A_req_mm2": 0.06,
           "bore_req_mm": 0.28,
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
-          "adequate": true
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 8.756,
+            "per_half_m2": 4.378,
+            "P1_kPa_abs": 2763.325,
+            "T1_K": 283.15,
+            "A_req_mm2_per_half": 61.073,
+            "bore_req_mm_per_half": 8.818,
+            "valves": 2,
+            "depress_kg": 0.0,
+            "depress_bore_mm": 0.0,
+            "liquid": true,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
         },
         "store_kg": 84.624,
         "store_water_volume_m3": 0.0911,
@@ -1118,7 +1132,7 @@
         "duty": "In 10.740 kg/d, out 10.740 kg/d, 0.884 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
-        "relief_mm": 3.3,
+        "relief_mm": 13.0,
         "storage_mode": "compressed gas, 200 bar, Type I/II cylinder bank (study; owner may override)",
         "store_kg": 19,
         "store_water_volume_m3": 1.28,
@@ -1136,7 +1150,21 @@
           "A_req_mm2": 0.04,
           "bore_req_mm": 0.22,
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
-          "adequate": true
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 78.803,
+            "per_half_m2": 39.402,
+            "P1_kPa_abs": 26721.325,
+            "T1_K": 344.335,
+            "A_req_mm2_per_half": 130.568,
+            "bore_req_mm_per_half": 12.894,
+            "valves": 2,
+            "depress_kg": 9.648,
+            "depress_bore_mm": 1.492,
+            "liquid": false,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
         },
         "design": {
           "P_design_MPa": 22.0,
@@ -1321,7 +1349,7 @@
         "duty": "In 89.429 kg/d, out 89.429 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
-        "relief_mm": 3.3,
+        "relief_mm": 10.0,
         "relief_basis": {
           "case": "blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
           "P1_kPa_abs": 24301.3,
@@ -1334,7 +1362,21 @@
           "A_req_mm2": 0.07,
           "bore_req_mm": 0.3,
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
-          "adequate": true
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 39.402,
+            "per_half_m2": 19.701,
+            "P1_kPa_abs": 26721.325,
+            "T1_K": 344.335,
+            "A_req_mm2_per_half": 65.445,
+            "bore_req_mm_per_half": 9.128,
+            "valves": 2,
+            "depress_kg": 76.849,
+            "depress_bore_mm": 2.034,
+            "liquid": false,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
         },
         "x_par_12_base": {
           "IA-GEN-AIR": 50.000001,
@@ -3477,8 +3519,8 @@
         "energy_kwh_ideal_study": 9.8,
         "energy_kwh_recoverable_study": 7.0,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 2963.0,
-        "head_m_m1": 32.65,
+        "volume_m3_m1": 2707.0,
+        "head_m_m1": 35.73,
         "vs_znbr2_kwh": 120,
         "fraction_of_znbr2_study": 0.082,
         "continuous_kw_status": "incomplete",
@@ -3525,17 +3567,17 @@
           "critical_kW": 14.31,
           "class_hours": 14.0,
           "energy_kWh_bus": 200.3,
-          "head_m": 32.65,
+          "head_m": 35.73,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 2963.0,
+          "upper_reservoir_m3": 2707.0,
           "rated_kW_discharge": 14.31,
           "recharge_kW_over_PV_window": 49.1,
           "A-M": "A-M-145",
           "Q": "Q-006 closed; Q-009 closed: water tower",
-          "upper": "2 reservoir levels x 4.03 m water over 367 m2, 2 cells per level",
-          "lower": "CATCH_TANK 8.07 m deep over 367 m2",
+          "upper": "3 reservoir levels x 3.07 m water over 367 m2, 2 cells per level",
+          "lower": "CATCH_TANK 9.20 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
         }
       }

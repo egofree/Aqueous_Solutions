@@ -336,13 +336,13 @@ unit envelope BOM,CRYO_ASU,Process nozzle DN15,23,316L.,one per mass edge; DN fr
 unit envelope BOM,CRYO_ASU,Open vent DN25,1,316L.,"API 2000, A-M-155"
 unit envelope BOM,CRYO_CO2,Body D114 x 450 mm,1,316L.,docs-authority/duties/CRYO_CO2.md
 unit envelope BOM,CRYO_CO2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,CRYO_CO2,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+unit envelope BOM,CRYO_CO2,"Relief valve, 9.0 mm bore, DN15 body",1,316L,AQS-SAF-004
 unit envelope BOM,CRYO_DED_COOL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_DED_COOL.md
 unit envelope BOM,CRYO_DED_COOL,Process nozzle DN15,1,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_DED_COOL,Open vent DN25,1,316L.,"API 2000, A-M-155"
 unit envelope BOM,CRYO_H2,Body D114 x 1050 mm,1,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",docs-authority/duties/CRYO_H2.md
 unit envelope BOM,CRYO_H2,Process nozzle DN15,6,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",one per mass edge; DN from AQS-INV-003
-unit envelope BOM,CRYO_H2,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+unit envelope BOM,CRYO_H2,"Relief valve, 13.0 mm bore, DN15 body",1,316L,AQS-SAF-004
 unit envelope BOM,CRYO_HE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_HE.md
 unit envelope BOM,CRYO_HE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_HE,Open vent DN25,1,316L.,"API 2000, A-M-155"
@@ -361,7 +361,7 @@ unit envelope BOM,CRYO_NE,Open vent DN25,1,316L.,"API 2000, A-M-155"
 unit envelope BOM,CRYO_O2,Body D114 x 750 mm,1,316L.,docs-authority/duties/CRYO_O2.md
 unit envelope BOM,CRYO_O2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_O2,Process nozzle DN50,1,316L.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,CRYO_O2,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+unit envelope BOM,CRYO_O2,"Relief valve, 10.0 mm bore, DN15 body",1,316L,AQS-SAF-004
 unit envelope BOM,CRYO_XE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_XE.md
 unit envelope BOM,CRYO_XE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_XE,Open vent DN25,1,316L.,"API 2000, A-M-155"
@@ -956,22 +956,22 @@ bulk pipe,PF-22,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 3/4 in 
 bulk pipe,PF-23,"PVDF SDR 21 ISO 10931 DN300 pipe, 1 x 6.096 m",5.0 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-23,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 7/8 in studs,2 / 2 / 2 / 24,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",46320 m,Cu,AQS-INV-002
-bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",30887 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",30990 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",23760 m,Cu,AQS-INV-002
 bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",23160 m,Cu,AQS-INV-002
-bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",12905 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",12956 m,Cu,AQS-INV-002
 bulk wire,WF-06,"control 18 AWG shielded pair, 300 V",6440 m,Cu,AQS-INV-002
 bulk wire,WF-07,"DC power pair 16 AWG TC-ER 2-cond, 600 V",6380 m,Cu,AQS-INV-002
 bulk wire,WF-08,"bare grounding 4/0 AWG bare soft-drawn Cu, -",6144 m,Cu,AQS-INV-002
-bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4293 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",4310 m,Cu,AQS-INV-002
 bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3675 m,Cu,AQS-INV-002
 bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",2511 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1500 m,Cu,AQS-INV-002
 bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",843 m,Cu,AQS-INV-002
-bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",675 m,Cu,AQS-INV-002
-bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",599 m,Cu,AQS-INV-002
-bulk wire,WF-16,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",332 m,Cu,AQS-INV-002
-bulk wire,WF-17,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",300 m,Cu,AQS-INV-002
+bulk wire,WF-14,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",688 m,Cu,AQS-INV-002
+bulk wire,WF-15,"power 400 kcmil XHHW-2 Cu, 600 V",675 m,Cu,AQS-INV-002
+bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",346 m,Cu,AQS-INV-002
+bulk wire,WF-17,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",332 m,Cu,AQS-INV-002
 bulk wire,WF-18,"power 4/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",253 m,Cu,AQS-INV-002
 bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",225 m,Cu,AQS-INV-002
 bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,AQS-INV-002

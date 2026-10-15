@@ -1,7 +1,7 @@
 item,description,qty,material,basis
 1,Body D114 x 450 mm,1,316L.,docs-authority/duties/CRYO_CO2.md
 2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
-3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+3,"Relief valve, 9.0 mm bore, DN15 body",1,316L,AQS-SAF-004
 4,fastener: anchor bolt M10,22,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 5,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 6,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,AQS-INV-004

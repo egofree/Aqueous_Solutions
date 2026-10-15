@@ -188,6 +188,11 @@ def relief():
             rb.update(W_kg_h=W, A_req_mm2=round(A*RL.IN2_TO_MM2, 2), bore_req_mm=round(RL.equiv_bore_mm(A), 2),
                       computed_by=f"flow_graph/param/sizing/relief.py gas_area_in2 ({cite('API520')})",
                       adequate=bool(p['relief_mm'] >= RL.equiv_bore_mm(A)))
+            from . import fire as FI                                                      # X-SAF-05: API 521 fire case on the receivers (A-M-188)
+            if n['unit_id'] in FI.GAS_FIRE and p.get('design'):
+                fc = FI.receiver_fire(p); rb['fire_case'] = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in fc.items()}
+                p['relief_mm'] = float(math.ceil(max(rb['bore_req_mm'], fc['bore_req_mm_per_half']))); rb['relief_mm_basis'] = 'governing of blocked outlet and fire case per half bank, rounded up to whole mm'
+                rb['adequate'] = bool(p['relief_mm'] >= max(rb['bore_req_mm'], fc['bore_req_mm_per_half']))
             n_api += 1
         else:
             p['relief_basis'] = {'case': 'atmospheric', 'method': 'not an API 520 case; tank venting per API Std 2000 at unit task 07',

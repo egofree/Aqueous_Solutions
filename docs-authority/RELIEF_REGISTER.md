@@ -9,9 +9,9 @@ Vessel cases come from the graph (write_graph relief, API520). Machine interstag
 
 | Item | Kind | Set / design kPa g | Case | W kg/h | Bore req mm | Bore mm | Adequate |
 |---|---|---|---|---|---|---|---|
-| CRYO_CO2 | vessel | 2200.0 | blocked outlet at full inflow 1.763 kg/h (CO2 vapour off the liquid store at -20 C (AQS-DU | 1.763 | 0.28 | 3.3 | yes |
-| CRYO_H2 | vessel | 22000.0 | blocked outlet at full inflow 1.789 kg/h (hydrogen); operating 200 bar, design 220.0 bar g | 1.789 | 0.22 | 3.3 | yes |
-| CRYO_O2 | vessel | 22000.0 | blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g | 14.372 | 0.3 | 3.3 | yes |
+| CRYO_CO2 | vessel | 2200.0 | blocked outlet at full inflow 1.763 kg/h (CO2 vapour off the liquid store at -20 C (AQS-DU | 1.763 | 0.28 | 9.0 | yes |
+| CRYO_H2 | vessel | 22000.0 | blocked outlet at full inflow 1.789 kg/h (hydrogen); operating 200 bar, design 220.0 bar g | 1.789 | 0.22 | 13.0 | yes |
+| CRYO_O2 | vessel | 22000.0 | blocked outlet at full inflow 14.372 kg/h (oxygen); operating 200 bar, design 220.0 bar g | 14.372 | 0.3 | 10.0 | yes |
 | EXPANDER | vessel | 550 | blocked discharge | 65.65 | 3.45 | 3.6 | yes |
 | HTC | vessel | 1710.5 | blocked outlet at full inflow 0.073 kg/h (steam from the heater at full power); operating  | 0.0735 | 0.1 | 3.3 | yes |
 | MEAM | vessel | 2277.0 | blocked outlet at full inflow 0.003 kg/h (MeOH/NH3 vapour); operating 21 bar, design 22.8  | 0.0029 | 0.02 | 3.3 | yes |

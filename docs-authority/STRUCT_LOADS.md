@@ -10,20 +10,22 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | Level | Units | Footprint m2 | Empty kN | Operating kN | Test kN | Operating kPa on footprint | 1.2 D + 1.6 L kN (ops) |
 |---|---|---|---|---|---|---|---|
 | L-1 | 49 | 38.8 | 83 | 258 | 391 | 6.7 | 380 |
-| L-2 | 1 | 367.2 | 1234 | 20515 | 32084 | 55.9 | 32331 |
+| L-2 | 1 | 367.2 | 1397 | 23223 | 36319 | 63.2 | 36599 |
 | L0 | 55 | 137.7 | 169 | 571 | 867 | 4.1 | 846 |
 | L1 | 49 | 280.6 | 392 | 1659 | 2441 | 5.9 | 2498 |
-| R1 | 1 | 367.2 | 864 | 15389 | 15389 | 41.9 | 24277 |
-| R2 | 1 | 367.2 | 864 | 15389 | 15389 | 41.9 | 24277 |
+| R1 | 1 | 367.2 | 864 | 11905 | 11905 | 32.4 | 18703 |
+| R2 | 1 | 367.2 | 864 | 11905 | 11905 | 32.4 | 18703 |
+| R3 | 1 | 367.2 | 864 | 11905 | 11905 | 32.4 | 18703 |
 | ROOF | 1 | 31060.5 | 5178 | 5178 | 5178 | 0.2 | 6214 |
 
 ## Heaviest units (test case)
 
 | Unit | Level | Empty kN | Operating kN | Test kN |
 |---|---|---|---|---|
-| CATCH_TANK | L-2 | 1234.0 | 20515.1 | 32083.8 |
-| HYDRO_RES_R1 | R1 | 864.2 | 15388.9 | 15388.9 |
-| HYDRO_RES_R2 | R2 | 864.2 | 15388.9 | 15388.9 |
+| CATCH_TANK | L-2 | 1396.9 | 23223.5 | 36319.4 |
+| HYDRO_RES_R1 | R1 | 864.2 | 11905.2 | 11905.2 |
+| HYDRO_RES_R2 | R2 | 864.2 | 11905.2 | 11905.2 |
+| HYDRO_RES_R3 | R3 | 864.2 | 11905.2 | 11905.2 |
 | PV_ARRAY | ROOF | 5178.2 | 5178.2 | 5178.2 |
 | AZOLLA_BED | L1 | 53.0 | 273.6 | 406.0 |
 | HAB_GALLEY | L1 | 34.4 | 177.8 | 263.9 |
@@ -35,6 +37,5 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | GROW_BED/R1 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R2 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R3 | L1 | 10.7 | 55.3 | 82.0 |
-| GROW_BED/R4 | L1 | 10.7 | 55.3 | 82.0 |
 
 The point loads feed X-BLD-01 (frame members) and X-BLD-03 (foundations). The ASCE7_22 Table 4.3-1 flat-roof and floor live loads are added there, not here.

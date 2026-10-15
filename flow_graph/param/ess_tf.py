@@ -50,7 +50,7 @@ def tf(g, ps=None):
     import importlib.util as _iu, os as _os                                              # Q-009 closed: water tower, head from the building (A-M-187)
     _sp = _iu.spec_from_file_location('_fp', _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '../../models/freecad/params.py')); FP = _iu.module_from_spec(_sp); _sp.loader.exec_module(FP)
     from . import water_tower as WT
-    wt = WT.solve(e_bus, FP.PLATE_L, FP.PLATE_W, FP.HYDRO_RES_Z0, FP.basement_z(FP.BASEMENT_LEVELS - 1)); h = round(wt['head_m'], 2); vol = wt['V_m3']
+    wt = WT.solve(e_bus, FP.PLATE_L, FP.PLATE_W, FP.HYDRO_RES_Z0, FP.basement_z(FP.BASEMENT_LEVELS - 1), V_dead=FP.FIRE_RESERVE_M3); h = round(wt['head_m'], 2); vol = wt['V_m3']
     N['HYDRO_SET']['params']['head_m_m1'] = h; N['HYDRO_SET']['params']['volume_m3_m1'] = round(vol, 0)
     for k in ('IA-ESS-HYDRO-CHG', 'IA-ESS-HYDRO-DIS', 'S22', 'S23', 'IA-ESS-HYDRO-ELEC'):
         put(k, 0.0, 'standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus')

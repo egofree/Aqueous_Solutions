@@ -342,7 +342,9 @@ try:
     _E = [n for n in _json.load(open(_os.path.join(_ROOT, 'flow_graph/plant_flow_graph.json')))['nodes'] if n['unit_id'] == 'HYDRO_SET'][0]['params']['backup_basis']['energy_kWh_bus']
 except Exception:
     _E = 200.3
-HYDRO = _WT.solve(_E, PLATE_L, PLATE_W, Z_L2 + _DRV['wt_level_clear_mm']['value'], basement_z(BASEMENT_LEVELS - 1), _DRV)
+from flow_graph.param import fire as _FIRE
+FIRE_RESERVE_M3 = _FIRE.demand(PLATE_L*PLATE_W/1e6)[1]
+HYDRO = _WT.solve(_E, PLATE_L, PLATE_W, Z_L2 + _DRV['wt_level_clear_mm']['value'], basement_z(BASEMENT_LEVELS - 1), _DRV, V_dead=FIRE_RESERVE_M3)
 HYDRO_RES_LEVELS = HYDRO['levels']
 HYDRO_RES_Z0 = int(round(HYDRO['z_res0_m'] * 1000))
 HYDRO_RES_CLEAR = int(_DRV['wt_level_clear_mm']['value'])

@@ -1,7 +1,7 @@
 item,description,qty,material,basis
 1,Body D114 x 1050 mm,1,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",docs-authority/duties/CRYO_H2.md
 2,Process nozzle DN15,6,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",one per mass edge; DN from AQS-INV-003
-3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+3,"Relief valve, 13.0 mm bore, DN15 body",1,316L,AQS-SAF-004
 4,"Motor: cryocooler compressor (hermetic induction (scroll), 0.75 kW hermetic)",1,-,AQS-INV-001 / AQS-INV-005
 5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 6,electronics: compressor contactor + overload 0.75 kW hermetic,1,IEC 60947-4-1,AQS-INV-004
