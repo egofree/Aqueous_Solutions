@@ -26,11 +26,3 @@ Basis: NEC 2023 110.26(A)(1)-(2); NFPA 101 (2024) 7.3.4.1.1 and IBC 2021 1018.5 
 Rows checked for access: 140; rows without a 914 mm face: 0.
 
 Failing items: 0.
-
-## Code basis (X-STD-01)
-
-| Check | Governing clause |
-| --- | --- |
-| Electrical working space | NFPA 70-2023 (NEC) 110.26(A) |
-| Aisle and egress width | NFPA 101-2024 7.3.4.1.1; IBC 2021 1018.5 |
-| Permanent walkways and platforms | ISO 14122-2:2016 (600 mm minimum; 914 mm used) |

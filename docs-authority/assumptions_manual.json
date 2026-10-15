@@ -1784,5 +1784,21 @@
   "sensitivity": "Low-hazard contents remove the travel limit and the passageway; high-piled storage changes sprinkler design",
   "replaced_by": "Hall programme and AHJ review",
   "verification_test": "Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model"
+ },
+ {
+  "id": "A-M-116",
+  "task": "X-MFG-31",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/reactor_design.py",
+   "models/mfg/reactors.py"
+  ],
+  "value": "In-house reactors: GLASS_DIGEST residence 3 x shrinking-sphere kinetic time on 100 um fines at 2.0e-4 g/(m2 s) (glass-fibre rate, order 0.31 to 2 M), floor 1 h; DIGESTER SRT 20 d; OIL_PYRO 500 C, 1 h, heat of pyrolysis 1.3 MJ/kg, cp 2.5 kJ/(kg K), heater efficiency 0.7; standard tank H = T, fill 0.75, tip 2.5 m/s, Np 1.27",
+  "units": "h, d, MJ/kg, kJ/(kg K), m/s",
+  "where": "AQS-DUTY-062",
+  "basis": "JMS2017_GLASSFIBRE, MARAGHECHI2016, METCALF5, ANUAR2016, GAO2010, PERRY9_MIX, PERRY9_HEAT, DVS2205, ASME_VIII1_UG16, ASME_II_D",
+  "sensitivity": "Soda-lime cullet may dissolve slower than glass fibre (residence scales with 1/k); pyrolysis heat scales the OIL_PYRO bus load linearly",
+  "replaced_by": "Bench and pilot data",
+  "verification_test": "Bench digest of milled cullet (SiO2 vs time at 85 C); sieve analysis of GLASS_MILL product; DSC/TGA of dried float oil; pilot digester VS destruction; heater energy meter"
  }
 ]

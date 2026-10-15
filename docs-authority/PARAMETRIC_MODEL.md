@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3394.000 | 3393.570 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3389.000 | 3388.797 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -192,6 +192,21 @@ All solved units close.
 | ext_T_design_h_C | -5.0 | C heating design dry bulb 99.6 % (DFW) | ASHRAE_FUND_2021 | yes |
 | ext_T_design_c_C | 38.0 | C cooling design dry bulb 0.4 % (DFW) | ASHRAE_FUND_2021 | yes |
 | ext_T_in_C | 18.3 | C balance (65 F, degree-day base) | NOAA_NORMALS_DFW | — |
+| sec_ocpd_max_A | 1000 | A, largest section breaker (stays below the NEC 240.87 1200 A arc-energy-reduction threshold) | NEC2023_240 | — |
+| mv_kV | 12.47 | kV collection and point of common coupling | A-M-114 | yes |
+| xfmr_Z_pu | 0.0575 | pu pad-mount transformer impedance | IEEE_C57_12_34 | yes |
+| rx_glass_k0_g_m2_s | 0.0002 | g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-] | JMS2017_GLASSFIBRE | yes |
+| rx_glass_d_um | 100.0 | um milled cullet fines diameter to the digest | A-M-116 | yes |
+| rx_glass_tau_min_h | 1.0 | h practical minimum residence (mixing, heat-up, level control) | A-M-116 | yes |
+| rx_digester_srt_d | 20.0 | d mesophilic SRT (high-rate, 35 C; typical 15-20 d) | METCALF5 | yes |
+| rx_pyro_T_C | 500.0 | C slow pyrolysis of oils and polymer residue | ANUAR2016 | yes |
+| rx_pyro_tau_h | 1.0 | h solid/liquid residence, batch-equivalent | ANUAR2016 | yes |
+| rx_pyro_dH_MJ_kg | 1.3 | MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements) | GAO2010 | yes |
+| rx_pyro_cp_kJ_kgK | 2.5 | kJ/(kg K) mean feed heat capacity 25-500 C | PERRY9_HEAT | yes |
+| rx_pyro_heater_eff | 0.7 | electric to process, insulated retort | A-M-116 | yes |
+| rx_fill | 0.75 | working / total volume | PERRY9_MIX | — |
+| rx_tip_m_s | 2.5 | m/s impeller tip speed for suspension | PERRY9_MIX | yes |
+| rx_Np_pbt | 1.27 | power number, 4-blade 45 deg PBT, turbulent | PERRY9_MIX | — |
 
 ## 6. References
 
@@ -200,42 +215,68 @@ All solved units close.
 | ACGIH_HCL | ACGIH TLVs and BEIs (2023): hydrogen chloride TLV-Ceiling 2 ppm; NIOSH REL C 5 ppm. |
 | AHRI340_ASHRAE901 | ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360. |
 | ANSI_C12_20 | ANSI C12.20-2015, Electricity Meters 0.1, 0.2 and 0.5 Accuracy Classes (bidirectional revenue metering). |
+| ANUAR2016 | Anuar Sharuddin S.D. et al., A review on pyrolysis of plastic wastes, Energy Conversion and Management 115 (2016) 308-326: 400-550 C, residence 30-90 min in batch and semi-batch reactors. |
 | API520 | API Standard 520 Part I, Sizing, Selection, and Installation of Pressure-relieving Devices, 10th ed. (2020): liquid A = Q/(38 Kd Kw Kc Kv) sqrt(G/(p1-p2)) (US units, eq. 32); gas critical flow A = W/(C K P1 Kb Kc) sqrt(T Z/M) (US units, eq. 3), C = 520 sqrt(k (2/(k+1))^((k+1)/(k-1))). |
 | ASCE7_22 | ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R). |
 | ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas. |
 | ASHRAE901_2019_T6812 | ANSI/ASHRAE/IES 90.1-2019 Table 6.8.1-2: air-cooled heat pumps >= 65 kBtu/h cooling EER 11.0, heating COP 3.3 at 47 F; ground-source (water-to-air, ISO 13256-1) cooling EER 14.1 at 77 F entering, heating COP 3.2 at 32 F entering. |
 | ASHRAE_FUND_2021 | ASHRAE Handbook - Fundamentals (2021), ch. 14 climatic design data and ch. 18 nonresidential load calculation. |
 | ASHRAE_SYS2020 | ASHRAE Handbook, HVAC Systems and Equipment (2020), ch. 13 hydronic heating and cooling: design temperature difference about 10-11 K (20 F) for chilled/condenser water loops. |
+| ASME_II_D | ASME BPVC Section II Part D (2023): maximum allowable stress; carbon steel limited to 425 C in Section VIII-1 service; 304H/316H to 816 C. |
+| ASME_VIII1_UG16 | ASME BPVC VIII-1 (2023) UG-16(b): minimum shell thickness 1.5 mm exclusive of corrosion allowance. |
 | ASTM_D1785 | ASTM D1785-15, Standard Specification for PVC Plastic Pipe, Schedules 40, 80 and 120; maximum service 60 C (140 F). |
 | CAMEO_REACT | NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases. |
 | CARLETON_HCL_2023 | Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid. |
 | CIAAW2021 | IUPAC CIAAW, Standard atomic weights 2021, Pure Appl. Chem. 94(5), 573-600 (2022). |
 | CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K). |
 | DOE_H2_COMP | Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry's 9th ed. sec. 10; efficiency to be taken from compressor vendor data. |
+| DVS2205 | DVS 2205-1 (2015) design of thermoplastic tanks: hoop stress from hydrostatic head with long-term creep factors; allowable stress CPVC and PVC-U at temperature. |
 | EDBM_MEMBRANES_2023 | Analysis of Operational Parameters in Acid and Base Production Using an Electrodialysis with Bipolar Membranes Pilot Plant, Membranes 13(2), 200 (2023), https://www.mdpi.com/2077-0375/13/2/200: SEC 1.02-1.18 kWh/kg, CE 87-99 % at 200 A/m2, single pass. |
 | EDBM_PILOT_2023 | Herrero-Gonzalez M. et al., Electrodialysis with Bipolar Membranes for the Sustainable Production of Chemicals from Seawater Brines at Pilot Plant Scale, ACS Sustainable Chem. Eng. (2023), PMC9945178: SEC 1.4 kWh/kg NaOH at 200 A/m2 (CE 80 %), 1.9-2.6 kWh/kg at 300-500 A/m2. |
 | EDBM_WHEY_2021 | Transforming salty whey into cleaning chemicals using electrodialysis with bipolar membranes, Desalination (2021), ScienceDirect pii S0011916420312765: maximum 3.6 M acid / 3.0 M base from NaCl; 6.7 kWh/kg to produce 2 M acid or base. |
 | EVAPCRYST_MVR | EvapCryst / manufacturer application notes on MVR evaporators: 15-25 kWh/t water for low boiling-point elevation, 30-60 kWh/t for high. |
+| GAO2010 | Gao F., Pyrolysis of waste plastics into fuels, PhD thesis, University of Canterbury (2010): measured heat of pyrolysis of polyolefins about 1.0-1.3 MJ/kg. |
 | GREENWOOD | Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl). |
 | IAPWS_IF97 | IAPWS, Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam (2007): region 4 saturation equation; latent heat of vaporisation 2257 kJ/kg at 100 C. |
+| IBC2021_CH10 | IBC 2021 ch. 10 means of egress (1004.5, 1005.3.2, 1006.3.3, 1017.2, 1017.2.2, 1018.5, 1024, 1028). |
+| IEC60909_0 | IEC 60909-0:2016 short-circuit currents in three-phase AC systems. |
 | IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K); Table C402.1.4 metal building wall U-0.094 Btu/h ft2 F (0.534 W/m2 K). |
 | IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2). |
 | IEEE1547_2018 | IEEE 1547-2018, Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (with 1547a-2020): abnormal-voltage Category II/III, ride-through, anti-islanding 2 s. |
+| IEEE2030_7 | IEEE 2030.7-2017, Standard for the Specification of Microgrid Controllers (planned and unplanned islanding, reconnection). |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding: eq. 29 (step), eq. 32 (touch), Cs eq. 27. |
+| IEEE80_2013 | IEEE 80-2013 guide for safety in AC substation grounding. |
+| IEEE_C57_12_34 | IEEE C57.12.34-2015, pad-mounted three-phase distribution transformers 2500 kVA and smaller: standard kVA ratings 75 to 2500; typical %Z 5.75 at 750 kVA. |
 | IFC2021_1205 | International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access. |
 | IFC2021_5003 | International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
 | INCROPERA7 | Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1). |
+| ISO14122_2 | ISO 14122-2:2016 permanent means of access: working platforms and walkways. |
+| ISO1452_2 | ISO 1452-2:2009 PVC-U piping systems, pipes. |
+| ISO16069 | ISO 16069:2017 safety way guidance systems. |
+| ISO16528_1 | ISO 16528-1:2007 boilers and pressure vessels, performance requirements. |
 | ISO16798_3 | ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
 | ISO23251 | ISO 23251:2006 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade. |
 | ISO4126_1 | ISO 4126-1:2013, Safety devices for protection against excessive pressure, Part 1: safety valves (set pressure, overpressure, discharge capacity). |
+| ISO45001 | ISO 45001:2018 occupational health and safety management. |
+| ISO7010 | ISO 7010:2019 graphical symbols, registered safety signs. |
+| JMS2017_GLASSFIBRE | Kinetics of dissolution of glass fibre in hot alkaline solution, J. Materials Science 53 (2018) doi:10.1007/s10853-017-1627-z: NaOH 3 mol/L, zero-order k 2.0e-4 g/(m2 s) at 80 C, 4.3e-4 at 95 C; reaction order in hydroxide 0.31-0.44. |
 | KAVANAUGH2014 | Kavanaugh S.P. and Rafferty K., Geothermal Heating and Cooling: Design of Ground-Source Heat Pump Systems, ASHRAE (2014): bore length method, typical bore length per kW, pumping grade A <= 5 hp per 100 tons. |
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
+| MARAGHECHI2016 | Maraghechi H. et al., Effect of calcium on dissolution and precipitation reactions of amorphous silica at high alkalinity, Cement and Concrete Research 87 (2016) 1-13: soda-lime glass dissolves at constant rate in 1 M NaOH, 20-80 C. |
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
+| METCALF5 | Metcalf & Eddy / Tchobanoglous G. et al., Wastewater Engineering: Treatment and Resource Recovery, 5th ed. (2014), ch. 13 anaerobic digestion: high-rate mesophilic SRT 15-20 d at 35 C. |
 | NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
+| NEC2023_240 | NFPA 70-2023 240.6(A) standard ampere ratings; 240.87 arc energy reduction for breakers rated or adjustable to 1200 A or higher. |
 | NEC2023_705 | NFPA 70-2023 Article 705 Interconnected Electric Power Production Sources: 705.11 supply-side connection, 705.12 load-side 120 % rule, 705.20 disconnect, 705.30 overcurrent protection, 705.40 loss of primary source. |
 | NEC2023_706 | NFPA 70-2023 Article 706 Energy Storage Systems; NFPA 855-2023 installation of stationary ESS. |
+| NFPA101_2024 | NFPA 101-2024, Life Safety Code: ch. 7 means of egress (7.2.6 exit passageways, Table 7.3.1.2, Table 7.3.3.1, 7.4.1.2, 7.9, 7.10), ch. 40 industrial (Table 40.2.6, 40.2.5). |
+| NFPA13_2022 | NFPA 13-2022, Standard for the Installation of Sprinkler Systems. |
 | NFPA1_2021_11_12 | NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3). |
 | NFPA400_2022 | NFPA 400, Hazardous Materials Code (2022) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8. |
+| NFPA704_2022 | NFPA 704-2022 hazard identification. |
+| NFPA70E_2024 | NFPA 70E-2024, Electrical Safety in the Workplace (130.5 arc flash risk assessment). |
+| NFPA855_2023 | NFPA 855-2023, Installation of Stationary Energy Storage Systems. |
+| NFPA91_2020 | NFPA 91-2020, Exhaust Systems for Air Conveying of Vapors, Gases, Mists and Particulate Solids. |
 | NIOSH7903 | NIOSH Manual of Analytical Methods 7903, Acids, inorganic (HCl by ion chromatography). |
 | NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
 | NREL_NSRDB | Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8. |
@@ -247,6 +288,7 @@ All solved units close.
 | PERRY9_DIFF | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 transport properties: Fuller, Schettler and Giddings (1966) gas diffusivity with atomic diffusion volumes (H 2.31, Cl 21.0, air 19.7). |
 | PERRY9_EVAP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 11 heat-transfer equipment, evaporators: falling-film evaporators, overall coefficients, minimum wetting rate and recirculation; mechanical vapour recompression. |
 | PERRY9_HCL | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 and sec. 13: HCl-water maximum-boiling azeotrope 20.2 wt% HCl at 108.6 C, 101.3 kPa; below the azeotrope the vapour is water-rich, so boiling concentrates the liquid toward 20.2 wt%; density of 2 M HCl 1.032 kg/L and of 2 M NaOH 1.081 kg/L at 20 C. |
+| PERRY9_HEAT | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 heat capacities of hydrocarbons (liquids 2.0-2.9 kJ/(kg K) at 25-400 C). |
 | PERRY9_MAT | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 25 materials of construction: impervious (resin-impregnated) graphite resists hydrochloric acid at all concentrations to the boiling point; nickel 200/201 for hot caustic soda. |
 | PERRY9_MIX | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 18 liquid-solid operations and mixing: turbulent agitator power P = Np rho N^3 D^5; pitched-blade turbine Np about 1.27 (4 blades, 45 deg). |
 | PERRY9_PUMP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 10 transport of fluids: pump hydraulic power P = rho g Q H; shaft power = hydraulic / efficiency. |
@@ -254,6 +296,7 @@ All solved units close.
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
 | UL1741_SB | UL 1741, 3rd ed. (2021), Supplement SB: inverters certified to IEEE 1547.1-2020 as grid-support utility-interactive. |
+| UL891 | UL 891, Switchboards (12th ed., 2019). |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption. |
 | USBM_CL_EW | U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte. |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
@@ -363,6 +406,18 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver gsh_bore_depth_m | 120.0 m bore depth | Drilling log |
 | driver ext_T_design_h_C | -5.0 C heating design dry bulb 99.6 % (DFW) | ASHRAE 2021 climatic data for the station |
 | driver ext_T_design_c_C | 38.0 C cooling design dry bulb 0.4 % (DFW) | ASHRAE 2021 climatic data for the station |
+| driver mv_kV | 12.47 kV collection and point of common coupling | Utility interconnection study (owner input A-M-113): service voltage |
+| driver xfmr_Z_pu | 0.0575 pu pad-mount transformer impedance | Transformer nameplate |
+| driver rx_glass_k0_g_m2_s | 0.0002 g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-] | Bench digest of milled cullet at 2 M / 20 wt% NaOH, 85 C: SiO2 in liquor vs time |
+| driver rx_glass_d_um | 100.0 um milled cullet fines diameter to the digest | Sieve analysis of GLASS_MILL product |
+| driver rx_glass_tau_min_h | 1.0 h practical minimum residence (mixing, heat-up, level control) | Bench digest |
+| driver rx_digester_srt_d | 20.0 d mesophilic SRT (high-rate, 35 C; typical 15-20 d) | VS destruction and gas yield in the pilot digester |
+| driver rx_pyro_T_C | 500.0 C slow pyrolysis of oils and polymer residue | TGA of the dried float oil |
+| driver rx_pyro_tau_h | 1.0 h solid/liquid residence, batch-equivalent | TGA conversion vs time at 500 C |
+| driver rx_pyro_dH_MJ_kg | 1.3 MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements) | DSC of the dried float oil |
+| driver rx_pyro_cp_kJ_kgK | 2.5 kJ/(kg K) mean feed heat capacity 25-500 C | DSC |
+| driver rx_pyro_heater_eff | 0.7 electric to process, insulated retort | Heater energy meter on the pilot retort |
+| driver rx_tip_m_s | 2.5 m/s impeller tip speed for suspension | Just-suspended speed (Zwietering) at the bench |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -476,3 +531,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate |
 | A-M-112 | Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K, W/(m K), -, m/kW, m, C | TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station |
 | A-M-113 | OWNER INPUT: utility interconnection study (service size, av - | Owner files the interconnection application; utility study results entered as drivers and the protection study re-run |
+| A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source |
+| A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model |

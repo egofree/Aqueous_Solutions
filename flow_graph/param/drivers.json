@@ -818,5 +818,90 @@
   "ref": "IEEE_C57_12_34",
   "needs_verification": true,
   "verification_test": "Transformer nameplate"
+ },
+ "rx_glass_k0_g_m2_s": {
+  "value": 0.0002,
+  "units": "g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-]",
+  "ref": "JMS2017_GLASSFIBRE",
+  "needs_verification": true,
+  "register": "A-M-116",
+  "verification_test": "Bench digest of milled cullet at 2 M / 20 wt% NaOH, 85 C: SiO2 in liquor vs time"
+ },
+ "rx_glass_d_um": {
+  "value": 100.0,
+  "units": "um milled cullet fines diameter to the digest",
+  "register": "A-M-116",
+  "needs_verification": true,
+  "verification_test": "Sieve analysis of GLASS_MILL product"
+ },
+ "rx_glass_tau_min_h": {
+  "value": 1.0,
+  "units": "h practical minimum residence (mixing, heat-up, level control)",
+  "register": "A-M-116",
+  "needs_verification": true,
+  "verification_test": "Bench digest"
+ },
+ "rx_digester_srt_d": {
+  "value": 20.0,
+  "units": "d mesophilic SRT (high-rate, 35 C; typical 15-20 d)",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "VS destruction and gas yield in the pilot digester"
+ },
+ "rx_pyro_T_C": {
+  "value": 500.0,
+  "units": "C slow pyrolysis of oils and polymer residue",
+  "ref": "ANUAR2016",
+  "needs_verification": true,
+  "verification_test": "TGA of the dried float oil"
+ },
+ "rx_pyro_tau_h": {
+  "value": 1.0,
+  "units": "h solid/liquid residence, batch-equivalent",
+  "ref": "ANUAR2016",
+  "needs_verification": true,
+  "verification_test": "TGA conversion vs time at 500 C"
+ },
+ "rx_pyro_dH_MJ_kg": {
+  "value": 1.3,
+  "units": "MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements)",
+  "ref": "GAO2010",
+  "needs_verification": true,
+  "register": "A-M-116",
+  "verification_test": "DSC of the dried float oil"
+ },
+ "rx_pyro_cp_kJ_kgK": {
+  "value": 2.5,
+  "units": "kJ/(kg K) mean feed heat capacity 25-500 C",
+  "ref": "PERRY9_HEAT",
+  "needs_verification": true,
+  "register": "A-M-116",
+  "verification_test": "DSC"
+ },
+ "rx_pyro_heater_eff": {
+  "value": 0.7,
+  "units": "electric to process, insulated retort",
+  "register": "A-M-116",
+  "needs_verification": true,
+  "verification_test": "Heater energy meter on the pilot retort"
+ },
+ "rx_fill": {
+  "value": 0.75,
+  "units": "working / total volume",
+  "ref": "PERRY9_MIX",
+  "needs_verification": false
+ },
+ "rx_tip_m_s": {
+  "value": 2.5,
+  "units": "m/s impeller tip speed for suspension",
+  "ref": "PERRY9_MIX",
+  "needs_verification": true,
+  "verification_test": "Just-suspended speed (Zwietering) at the bench"
+ },
+ "rx_Np_pbt": {
+  "value": 1.27,
+  "units": "power number, 4-blade 45 deg PBT, turbulent",
+  "ref": "PERRY9_MIX",
+  "needs_verification": false
  }
 }

@@ -1,0 +1,51 @@
+"""X-MFG-31 parametric in-house reaction chambers (CadQuery): GLASS_DIGEST, DIGESTER, OIL_PYRO. Reads params.design on the graph
+(written by flow_graph/param/reactor_design.py) and writes models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and
+WORK_ORDER.md. Run: /tmp/cqvenv/bin/python models/mfg/reactors.py"""
+import json, os
+import cadquery as cq
+g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
+SPEC = {'GLASS_DIGEST': dict(mat='CPVC sheet, rolled and extrusion-welded (DVS 2207-3)', noz=('feed slurry in', 'NaOH in', 'liquor out', 'drain', 'vent'), coil=True, agit=True, legs=4),
+        'DIGESTER': dict(mat='HDPE PE100 sheet, rolled and extrusion-welded (DVS 2207-4)', noz=('feed in', 'digestate out', 'gas out', 'gas recirc in', 'drain'), coil=False, agit=False, legs=3),
+        'OIL_PYRO': dict(mat='SA-240 304H plate, rolled, GTAW (ASME IX)', noz=('oil feed in', 'vapour out to OIL_FRAC', 'char out', 'thermowell', 'bursting disc'), coil=False, agit=False, legs=3)}
+for U, s in SPEC.items():
+    d = N[U]['params']['design']; D = d['D_mm']; H = d['H_mm']; t = d['wall_mm']
+    body = cq.Workplane('XY').circle(D/2).circle(D/2 - t).extrude(H).union(cq.Workplane('XY').circle(D/2).extrude(t))
+    lid = cq.Workplane('XY').workplane(offset=H).circle(D/2 + 30).circle(D/2 - t).extrude(t + 6).union(cq.Workplane('XY').workplane(offset=H + t + 6).circle(D/2 + 30).extrude(t + 6))
+    m = body.union(lid)
+    for i, _ in enumerate(s['noz']):
+        z = H*0.2 + i*H*0.15
+        m = m.union(cq.Workplane('YZ').circle(16.7).extrude(60).translate((D/2 - 5, 0, z)).rotate((0, 0, 0), (0, 0, 1), i*72))
+    for i in range(s['legs']):
+        m = m.union(cq.Workplane('XY').rect(40, 40).extrude(300).translate((0, 0, -300)).translate(((D/2 - 20), 0, 0)).rotate((0, 0, 0), (0, 0, 1), i*360/s['legs']))
+    if s['agit']:
+        a = d['agitator']; m = m.union(cq.Workplane('XY').workplane(offset=H*0.25).circle(12).extrude(H*0.75 + 2*t + 12 + 150)).union(cq.Workplane('XY').workplane(offset=H*0.25).rect(a['D_imp_mm'], 25).extrude(20))
+    if s['coil']:
+        m = m.union(cq.Workplane('XY').workplane(offset=H*0.15).circle(D/2 - t - 40).circle(D/2 - t - 56).extrude(H*0.5))
+    if U == 'OIL_PYRO':
+        m = m.union(cq.Workplane('XY').workplane(offset=t).circle(D/2 + 60).circle(D/2).extrude(H - t))   # heater band and insulation envelope
+    o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
+    cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
+    rows = [('1', f'Shell DN{D} x {H} mm x {t} mm wall with flat bottom', 1, s['mat'], 'AQS-DUTY-062 section 1'),
+            ('2', f'Bolted flat lid with gasket', 1, s['mat'], 'AQS-DUTY-062'),
+            ('3', 'Nozzles DN25: ' + '; '.join(s['noz']), len(s['noz']), s['mat'], 'AQS-DUTY-062'),
+            ('4', f"Legs 40x40 x 300 mm", s['legs'], s['mat'], 'study')]
+    if s['agit']: rows += [('5', f"Top-entry agitator, 4-blade 45 deg PBT D{d['agitator']['D_imp_mm']} at {d['agitator']['rpm']} rpm, {d['agitator']['motor_kW']} kW motor, PVDF sleeve", 1, 'PVDF / 316L', 'PERRY9_MIX')]
+    if s['coil']: rows += [('6', 'Q3 heating coil, PVDF tube DN15', 1, 'PVDF', 'graph HL-Q3-A/B-HX6')]
+    if U == 'DIGESTER': rows += [('5', 'Biogas recirculation blower, diaphragm, about 1 L/min', 1, 'PP/EPDM', 'AQS-DUTY-062'), ('6', 'PIR insulation 50 mm with PE cladding', 1, 'PIR', 'AQS-DUTY-062')]
+    if U == 'OIL_PYRO': rows += [('5', f"Ceramic band heaters, {d['kW']:.2f} kW installed rounded up to 2.0 kW, 480 V", 1, 'mica/ceramic', 'AQS-DUTY-062'), ('6', 'Ceramic fibre insulation 60 mm with SS cladding', 1, 'Al2O3-SiO2 fibre', 'ASTM C892'), ('7', 'Bursting disc DN25 to flare header', 1, 'Inconel', 'ASME VIII-1 UG-127')]
+    open(f'models/mfg/{U}/bom.csv', 'w').write('item,description,qty,material,basis\n' + '\n'.join(','.join(str(x) for x in r) for r in rows) + '\n')
+    bolts = max(8, int(3.14159*(D + 60)/100)//4*4)
+    open(f'models/mfg/{U}/fasteners.csv', 'w').write(f"item,size,grade,qty,location,basis\n1,M10 x 40 lid bolt with nut and washers,{'ASTM A193 B8' if U == 'OIL_PYRO' else 'ISO 3506 A4-70'},{bolts},lid flange at 100 mm pitch,study\n2,M12 anchor,ISO 3506 A4-70,{s['legs']},leg feet,study\n")
+    open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
+
+Authority: AQS-DUTY-062 (X-MFG-31). In-house fabrication; no bought vessel.
+
+1. Cut and roll the shell DN{D}, {t} mm, height {H} mm; cut the bottom and lid discs ({s['mat']}).
+2. Weld the longitudinal seam and the bottom; weld the lid flange ring.
+3. Cut and weld {len(s['noz'])} DN25 nozzles: {', '.join(s['noz'])}.
+4. Weld {s['legs']} legs; drill {bolts} lid bolt holes.
+5. {'Fit the agitator and the Q3 coil.' if s['agit'] else 'Fit the gas recirculation sparge and insulation.' if U == 'DIGESTER' else 'Fit the band heaters, thermowell, insulation and bursting disc.'}
+6. Test: {'hydrostatic fill to the brim, 24 h, no leak (DVS 2205)' if U != 'OIL_PYRO' else 'hydrostatic test at 1.3 x design pressure (ASME VIII-1 UG-99); heater insulation resistance; dry-run to 500 C'}.
+7. Inspect against models/mfg/{U}/export/{U.lower()}.step; record dimensions on the traveller.
+""")
+    print(U, D, H, t)
