@@ -218,7 +218,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 296.0424,
+        "value": 302.4327,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -226,14 +226,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8430,
+        "count": 8608,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.042 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.433 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4215,
-        "area_m2": 37071,
+        "nameplate_kw": 4304,
+        "area_m2": 37898,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -252,19 +252,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            216000,
-            186000
+            228000,
+            180000
           ],
           "bays": [
-            36,
-            31
+            38,
+            30
           ],
-          "footprint_m2": 40176.0,
-          "extension_m2": 39744.0,
-          "roof_capacity_kWp": 4226.1,
+          "footprint_m2": 41040.0,
+          "extension_m2": 40608.0,
+          "roof_capacity_kWp": 4320.4,
           "perimeter_pathway_mm": 1829,
           "arrays": 20,
-          "extension_load_kW": 112.85,
+          "extension_load_kW": 115.26,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -272,7 +272,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 2108
+        "balance_kWp": 2152
       }
     },
     {
@@ -336,13 +336,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3540.0,
+        "kW": 3600.0,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "count": 59,
+        "count": 60,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
@@ -359,8 +359,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3236.0,
-          "export_kWh_d_clear": 9120,
+          "export_peak_kW": 3289.6,
+          "export_kWh_d_clear": 9312,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -372,7 +372,7 @@
             10,
             10,
             10,
-            9
+            10
           ],
           "breaker_A": [
             1000,
@@ -396,9 +396,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 304.8,
+          "bus_demand_kW": 311.2,
           "section_rating_A": 600,
-          "basis_A": 407.4,
+          "basis_A": 415.9,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -426,8 +426,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1382,
-        "kWh": 4257,
+        "kW": 1411,
+        "kWh": 4346,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -437,7 +437,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1273.2611,
+              "value": 1300.0258,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -461,7 +461,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1281.748 kg/d, out 1281.748 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1308.513 kg/d, out 1308.513 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -480,15 +480,15 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1382,
-        "discharge_kW": 305,
+        "charge_kW": 1411,
+        "discharge_kW": 311,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 59 hybrid inverters, 72.2 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 60 hybrid inverters, 72.4 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.79,
-          "purge_m3_h": 44.96,
+          "H2_m3_d": 11.017,
+          "purge_m3_h": 45.9,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2783.9
+          "electrode_area_m2": 2842.4
         }
       }
     }

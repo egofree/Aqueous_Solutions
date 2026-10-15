@@ -3,10 +3,75 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "BH",
-  "node_count": 124,
-  "edge_count": 125,
+  "node_count": 127,
+  "edge_count": 128,
   "orphan_campus_units": [],
   "nodes": [
+    {
+      "unit_id": "ACID_POLISH_SCRUB",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Acid polish scrub (S65)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": []
+        },
+        "duty": "In 37537.197 kg/d, out 37537.197 kg/d, 1.112 kW. Sheet docs-authority/duties/ACID_POLISH_SCRUB.md.",
+        "presence": "present",
+        "internals": "pall-ring bed, distributor, demister",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "V_tk_m3": 4.103,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0274,
+          "out_breathing_Nm3_h": 1.14,
+          "in_breathing_Nm3_h": 17.489,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 19.1,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "duty": "acid polish of the same air (liquor to CRU)",
+          "gas_kg_d": 37509.8546,
+          "Q_m3_s": 0.3618,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 600,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 3.89,
+          "dP_Pa": 1171.034,
+          "fan_W": 847.3248,
+          "pump_W": 265.006,
+          "kW": 1.1123,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 1.1123,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
+      }
+    },
     {
       "unit_id": "ALK_SCRUBBER",
       "sector_id": "GAS",
@@ -18,15 +83,15 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.4,
+        "value": 1.1123,
         "unit": "kW",
         "status": "study",
-        "note": "Study scrub pump/fan (AQS-EQP-VENT-001)"
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 37509.855 kg/d, out 37509.855 kg/d, 0.400 kW. Sheet docs-authority/duties/ALK_SCRUBBER.md.",
+        "duty": "In 37509.855 kg/d, out 37509.855 kg/d, 1.112 kW. Sheet docs-authority/duties/ALK_SCRUBBER.md.",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -34,16 +99,37 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 4.103,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 1.14,
+          "in_breathing_Nm3_h": 17.462,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
+          "vent_bore_req_mm": 19.1,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
-        }
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "duty": "NaOH scrub of the house acid-gas header",
+          "gas_kg_d": 37509.8546,
+          "Q_m3_s": 0.3618,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 600,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 3.89,
+          "dP_Pa": 1171.034,
+          "fan_W": 847.3248,
+          "pump_W": 265.006,
+          "kW": 1.1123,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       }
     },
     {
@@ -2040,6 +2126,71 @@
       }
     },
     {
+      "unit_id": "MET_SCRUB",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "MET scrub/baghouse (S71/S72)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": []
+        },
+        "duty": "In 71606.460 kg/d, out 71606.460 kg/d, 2.123 kW. Sheet docs-authority/duties/MET_SCRUB.md.",
+        "presence": "present",
+        "internals": "pall-ring bed, distributor, demister",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "V_tk_m3": 5.908,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 1.583,
+          "in_breathing_Nm3_h": 22.539,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 21.7,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume"
+        },
+        "design": {
+          "duty": "metal-aisle fume and mist (wet scrubber ahead of the baghouse filter)",
+          "gas_kg_d": 71604.0,
+          "Q_m3_s": 0.6906,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 800,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 7.4258,
+          "dP_Pa": 1171.034,
+          "fan_W": 1617.4908,
+          "pump_W": 505.8802,
+          "kW": 2.1234,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1200,
+          1200,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 2.1234,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W."
+      }
+    },
+    {
       "unit_id": "MFG_SHOP",
       "sector_id": "MFG",
       "presence": "present",
@@ -2108,6 +2259,66 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         }
+      }
+    },
+    {
+      "unit_id": "NOX_SCRUB",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "scrubber",
+      "notes": "Generator exhaust water and NOx. Not grey treat.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "NFPA 37 / plant acid-gas practice",
+        "size_mm": [
+          600,
+          600,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)",
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "In 461.829 kg/d, out 461.829 kg/d, 0.038 kW. Sheet docs-authority/duties/NOX_SCRUB.md.",
+        "presence": "present",
+        "internals": "pall-ring bed, distributor, demister",
+        "design_kPa": 17.8,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
+          "V_tk_m3": 1.477,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.455,
+          "in_breathing_Nm3_h": 8.541,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 13.3,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume"
+        },
+        "duty_check": "inlet 20.78 kg/h (X-SAN-01 Rev B): DN100 superficial 0.61 m/s; full packing design at X-PAR-03",
+        "design": {
+          "duty": "flue, leach off-gas and nitric vents",
+          "gas_kg_d": 265.8045,
+          "Q_m3_s": 0.0026,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 200,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 0.4775,
+          "dP_Pa": 1171.034,
+          "fan_W": 6.0044,
+          "pump_W": 32.5312,
+          "kW": 0.0385,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0385,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W."
       }
     },
     {
@@ -2239,7 +2450,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 296.0424,
+        "value": 302.4327,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -2247,14 +2458,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8430,
+        "count": 8608,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 296.042 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 302.433 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4215,
-        "area_m2": 37071,
+        "nameplate_kw": 4304,
+        "area_m2": 37898,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -2273,19 +2484,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            216000,
-            186000
+            228000,
+            180000
           ],
           "bays": [
-            36,
-            31
+            38,
+            30
           ],
-          "footprint_m2": 40176.0,
-          "extension_m2": 39744.0,
-          "roof_capacity_kWp": 4226.1,
+          "footprint_m2": 41040.0,
+          "extension_m2": 40608.0,
+          "roof_capacity_kWp": 4320.4,
           "perimeter_pathway_mm": 1829,
           "arrays": 20,
-          "extension_load_kW": 112.85,
+          "extension_load_kW": 115.26,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -2293,7 +2504,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 2108
+        "balance_kWp": 2152
       }
     },
     {
@@ -2348,13 +2559,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3540.0,
+        "kW": 3600.0,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "count": 59,
+        "count": 60,
         "relief_basis": {
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
@@ -2371,8 +2582,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3236.0,
-          "export_kWh_d_clear": 9120,
+          "export_peak_kW": 3289.6,
+          "export_kWh_d_clear": 9312,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2384,7 +2595,7 @@
             10,
             10,
             10,
-            9
+            10
           ],
           "breaker_A": [
             1000,
@@ -2408,9 +2619,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 304.8,
+          "bus_demand_kW": 311.2,
           "section_rating_A": 600,
-          "basis_A": 407.4,
+          "basis_A": 415.9,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -2554,8 +2765,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1382,
-        "kWh": 4257,
+        "kW": 1411,
+        "kWh": 4346,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -2565,7 +2776,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1273.2611,
+              "value": 1300.0258,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -2589,7 +2800,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1281.748 kg/d, out 1281.748 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1308.513 kg/d, out 1308.513 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -2608,15 +2819,15 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1382,
-        "discharge_kW": 305,
+        "charge_kW": 1411,
+        "discharge_kW": 311,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 59 hybrid inverters, 72.2 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 60 hybrid inverters, 72.4 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.79,
-          "purge_m3_h": 44.96,
+          "H2_m3_d": 11.017,
+          "purge_m3_h": 45.9,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2783.9
+          "electrode_area_m2": 2842.4
         }
       }
     },
@@ -6549,34 +6760,34 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "footprint_m2": 39744.0,
+        "footprint_m2": 40608.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 112.852 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 115.256 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "hvac": {
-          "light_kW": 34.975,
-          "vent_kW": 49.57,
-          "envelope_kW": 28.307,
-          "total_kW": 112.852,
-          "vent_L_s": 11923.2,
-          "Qh_kW": 67.542,
-          "Qc_kW": 136.87,
-          "slab_kW": 3.514,
-          "gains_kW": 49.879,
+          "light_kW": 35.735,
+          "vent_kW": 50.648,
+          "envelope_kW": 28.873,
+          "total_kW": 115.256,
+          "vent_L_s": 12182.4,
+          "Qh_kW": 68.926,
+          "Qc_kW": 139.768,
+          "slab_kW": 3.567,
+          "gains_kW": 50.963,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 603.354,
-          "peak_c_kW": 539.99
+          "peak_h_kW": 615.9,
+          "peak_c_kW": 551.383
         }
       },
       "continuous_kw": {
-        "value": 112.8521,
+        "value": 115.2559,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 39744 m2; lighting 34.97 kW (IECC 2021 C405, 10 % lit), ventilation 49.57 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.31 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 67.5 kW and cooling 136.9 kW thermal average after internal gains 49.9 kW and slab edge 3.51 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 40608 m2; lighting 35.74 kW (IECC 2021 C405, 10 % lit), ventilation 50.65 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.87 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 68.9 kW and cooling 139.8 kW thermal average after internal gains 51.0 kW and slab edge 3.57 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -7080,7 +7291,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 296.0424,
+        "value": 302.4327,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -7445,10 +7656,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.4,
+        "value": 1.1123,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
@@ -9863,7 +10074,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 112.8521,
+        "value": 115.2559,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -10107,6 +10318,84 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SF-ACID_POLISH_SCRUB",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ACID_POLISH_SCRUB",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.1123,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SF-NOX_SCRUB",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0385,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SF-MET_SCRUB",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.1234,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],

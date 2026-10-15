@@ -2668,5 +2668,25 @@
     "verification": "small HDPE vessel and heater mat in AQS-DUTY-062 section 5",
     "replace_when": "bench ferment",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-164",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "House scrubber packing inputs",
+    "statement": "ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB sized with the X-PAR-03 scrubber function on in-house 25 mm cut PP rings: C_s 0.07 m/s at flood, HTU 0.5 m, 400 Pa/m, a 190 m2/m3, 99 % removal, fan efficiency 0.5, pump 10 m at 0.4; gas density 1.2 kg/m3",
+    "verification": "diameters 600/600/200/800 mm, beds 2.3 m, loads 1.11/1.11/0.04/2.12 kW (ALK placeholder 0.4 kW, others 0)",
+    "replace_when": "flooding and absorption test on a 200 mm column of the in-house packing",
+    "doc": "AQS-PAR-003"
   }
 ]

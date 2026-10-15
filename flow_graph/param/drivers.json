@@ -1542,5 +1542,73 @@
   "register": "A-M-163 (X-MFG-31 MEOH_FERM)",
   "needs_verification": true,
   "verification_test": "same bench run"
+ },
+ "hs_dp_mm": {
+  "value": 25.0,
+  "units": "mm, in-house cut PP tube rings",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "in-house packing sample: count per m3 and void fraction"
+ },
+ "hs_a_m2_m3": {
+  "value": 190.0,
+  "units": "m2/m3 specific area of 25 mm cut rings",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "geometric area from the packing sample"
+ },
+ "hs_Cs_flood_m_s": {
+  "value": 0.07,
+  "units": "m/s capacity factor at flood, 25 mm cut rings",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "air-water flooding test of a 200 mm column of the in-house packing"
+ },
+ "hs_frac_flood": {
+  "value": 0.7,
+  "units": "design fraction of flood",
+  "ref": "PERRY9_ABS"
+ },
+ "hs_htu_m": {
+  "value": 0.5,
+  "units": "m, overall gas HTU",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "absorption test (NH3 or SO2 in air into water) on the same column"
+ },
+ "hs_removal": {
+  "value": 0.99,
+  "units": "fraction of the absorbable species removed",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "outlet sampling at commissioning"
+ },
+ "hs_dP_Pa_m": {
+  "value": 400.0,
+  "units": "Pa per m of bed at the design fraction of flood",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "pressure drop on the flooding test"
+ },
+ "hs_fan_eff": {
+  "value": 0.5,
+  "units": "fan total efficiency",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "fan test"
+ },
+ "hs_pump_head_m": {
+  "value": 10.0,
+  "units": "m recirculation pump head",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "pump test"
+ },
+ "hs_pump_eff": {
+  "value": 0.4,
+  "units": "small pump efficiency",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "pump test"
  }
 }
