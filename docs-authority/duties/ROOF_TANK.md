@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Circulation 200384.0 kg/d. Two-minute holdup 0.2783 m³. A 20-day volume at this rate is not a tank.
 
-3. Material. PVC-U or HDPE, per AQS-STD-002 rule M1. No metal wetted part. Corrosion allowance does not apply to the polymer. Hot LEACH draw at up to 85 °C exceeds the PVC-U limit (X-MAT-09); cooling before this unit is held under X-MAT-19 (membranes and potable water do not take CPVC as the answer).
+3. Material. PVC-U or HDPE, per AQS-STD-002 rule M1. No metal wetted part. Corrosion allowance does not apply to the polymer. Hot LEACH draw at up to 85 °C exceeds the PVC-U limit (X-MAT-09); IA-POT-01 is cooled to 40 °C by a passive PVDF air coil (AQS-STD-002 section 10).
 
 4. Nozzles. Inlet and outlet DN50. At 1.5 m/s and 1000 kg/m³ the bore is 44.4 mm. Drain DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

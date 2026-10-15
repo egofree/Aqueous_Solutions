@@ -8835,7 +8835,15 @@
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: BMED acid loop make (energy basis)",
         "T_C": 85.0,
-        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)",
+        "cooler": {
+          "type": "water-cooled trim exchanger, PVDF, on a ground-loop water source",
+          "duty_W": 188,
+          "T_in_C": 85,
+          "T_out_C": 35.0,
+          "status": "held: needs a cooling-water energy edge (rate change not approved)",
+          "source": "X-MAT-19"
+        }
       },
       "composition": {
         "water": 0.9,
@@ -8891,7 +8899,15 @@
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: BMED base loop make (energy basis)",
         "T_C": 85.0,
-        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
+        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)",
+        "cooler": {
+          "type": "water-cooled trim exchanger, PVDF, on a ground-loop water source",
+          "duty_W": 247,
+          "T_in_C": 85,
+          "T_out_C": 35.0,
+          "status": "held: needs a cooling-water energy edge (rate change not approved)",
+          "source": "X-MAT-19"
+        }
       },
       "composition": {
         "water": 0.9,
@@ -16156,8 +16172,17 @@
         "other": 9
       },
       "params": {
-        "T_C": 85.0,
-        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)"
+        "T_C": 40.0,
+        "T_basis": "X-MAT-19: after the passive air cooler; inlet 85 C",
+        "cooler": {
+          "type": "passive air-cooled PVDF DN25 pipe coil (class P3)",
+          "duty_W": 262,
+          "length_m": 25.4,
+          "T_in_C": 85,
+          "T_out_C": 40,
+          "status": "study",
+          "source": "X-MAT-19"
+        }
       }
     },
     {

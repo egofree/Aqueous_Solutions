@@ -205,7 +205,7 @@ Owner decisions open: class A (regolith-like) feed acid limit (AQS-ASSAY-001 Rev
 - [x] **X-MAT-16** HX-5 glass coil adopted. Done when: borosilicate 3.3 coil on LEACH_CSTR_1 from AQS-DUTY-049; model, BOM, duty, standard updated. Depends: X-MAT-11. Evidence: `docs-authority/MATERIALS_STD.md`.
 - [x] **X-MAT-17** HX8 PVDF bundle adopted. Done when: PVDF bundle 7.53 m2 recorded as the choice with rationale; duty, standard updated. Depends: X-MAT-12. Evidence: `docs-authority/MATERIALS_STD.md`.
 - [x] **X-MAT-18** EW electrode materials in chloride. Done when: cathode and anode materials for chloride liquor with anodic Cl2 chosen with source (316L cathode and PbO2 anode reviewed against titanium blanks and mixed-oxide anodes). Depends: X-MAT-08. Evidence: `docs-authority/MATERIALS_STD.md`.
-- [ ] **X-MAT-19** Cool hot LEACH draws. Done when: IA-BMED-03, IA-BMED-04 and IA-POT-01 cooled below the receiving limit (BMED membrane limit, PVC-U 60 °C) with a heat duty and exchanger on the graph. Depends: X-MAT-09.
+- [ ] **X-MAT-19** Cool hot LEACH draws. Done when: IA-BMED-03, IA-BMED-04 and IA-POT-01 cooled below the receiving limit (BMED membrane limit, PVC-U 60 °C) with a heat duty and exchanger on the graph. Depends: X-MAT-09. Start from `docs-authority/MATERIALS_STD.md` (partial).
 - [x] **X-MAT-09** Material temperatures on the graph. Done when: liquor temperature carried on every edge into a thermoplastic unit. Depends: X-MAT-05. Evidence: `docs-authority/MATERIALS_STD.md`.
 
 ### X-COD. Codes and permits

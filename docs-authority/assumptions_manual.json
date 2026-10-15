@@ -687,5 +687,31 @@
    "docs-authority/MATERIALS_STD.md"
   ],
   "id": "A-M-053"
+ },
+ {
+  "value": "35",
+  "units": "C",
+  "where": "BMED membrane inlet target",
+  "basis": "Bipolar-membrane stacks are commonly limited to about 40 C; 5 K margin",
+  "sensitivity": "Cooler duty",
+  "replaced_by": "Membrane vendor temperature limit",
+  "task": "X-MAT-19",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-054"
+ },
+ {
+  "value": "U 7 W/m2K; cp 3.0 (20 % HCl), 3.6 (20 % NaOH), 4.18 (water)",
+  "units": "W/m2K, kJ/kgK",
+  "where": "X-MAT-19 cooler sizing",
+  "basis": "Natural convection to still air; handbook cp values",
+  "sensitivity": "Coil length inverse to U",
+  "replaced_by": "Outlet temperature measured on the installed coil",
+  "task": "X-MAT-19",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-055"
  }
 ]
