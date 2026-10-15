@@ -78,6 +78,8 @@ REFS = {
  'EU_IED2010': 'Directive 2010/75/EU (Industrial Emissions), Art. 50(2): gas from the combustion of waste raised to at least 850 C for at least 2 s after the last injection of combustion air; 1100 C where halogenated organics exceed 1 % as chlorine.',
  'METCALF5_BIOMASS': 'Metcalf & Eddy 5th ed. (2014) ch. 7: biomass composition C5H7O2N (113 g/mol), 1.42 g COD/g cells; digester gas about 65 % CH4 by volume (ch. 13).',
  'NARASIMHAN2000': 'Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints.',
+ 'PYRHONEN2014': 'Pyrhonen J., Jokinen T., Hrabovcova V., Design of Rotating Electrical Machines, 2nd ed., Wiley (2014), ch. 6: output equation, permitted air-gap flux density and linear current density (table 6.3), current density (table 6.4), aspect ratio.',
+ 'HENDERSHOT2010': 'Hendershot J.R., Miller T.J.E., Design of Brushless Permanent-Magnet Machines, Motor Design Books (2010), ch. 2: torque per rotor volume T = (pi/2) D^2 L A B.',
  'TAIZ2015': 'Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass.',
  'SANDER2015': 'Sander R., Compilation of Henry\'s law constants (version 4.0) for water as solvent, Atmos. Chem. Phys. 15 (2015) 4399-4981: O2, N2, CO2 solubility in water.',
  'NREL_NSRDB': 'Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8.',

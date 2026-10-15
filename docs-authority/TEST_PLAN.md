@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 120 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 123 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 19 | Commissioning record |
 
-Total 243 items: 120 drivers, 123 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 246 items: 120 drivers, 126 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -272,6 +272,9 @@ Total 243 items: 120 drivers, 123 register entries. Classification rule: first m
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list | X-INV-01 |
 | A-M-121 | Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic mm, m | 3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class | X-PIP-03 |
 | A-M-122 | Wire inventory: branch-circuit lengths = Manhattan distance  m, AWG | Cable schedule from the routed tray model; voltage drop <= 3 % branch / 5 % total; PV string design with module Voc at the record low temperature | X-INV-03 |
+| A-M-124 | Pipe stock 6.096 m (20 ft) random lengths with 3 mm kerf, fi m | Cut-plan reconciliation at fabrication: issued lengths against consumed stock, offcut within 5 % | X-INV-04 |
+| A-M-125 | Counting rules: 2 isolation valves per line; check valve and count | P&ID take-off count against AQS-INV-004 per family; difference reported per family | X-INV-05 |
+| A-M-126 | Design coefficients inside published ranges: B_delta 0.75 T, T, kA/m, A/mm2 | IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K | X-INV-02 |
 
 ## 7. T6 Commissioning measurements
 

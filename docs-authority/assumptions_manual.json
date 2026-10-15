@@ -1907,5 +1907,50 @@
   "sensitivity": "T5 carries the cross-species link; the leach dissolved-gas rate is the least certain figure in the chain",
   "replaced_by": "Gas-exchange species layer X-PAR-11",
   "verification_test": "T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound"
+ },
+ {
+  "id": "A-M-124",
+  "task": "X-INV-04",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/pipe.py"
+  ],
+  "value": "Pipe stock 6.096 m (20 ft) random lengths with 3 mm kerf, first-fit decreasing on the iso cut lists; fitting standards assigned by class; tees, reducers, valves, supports counted in X-INV-05",
+  "units": "m",
+  "where": "AQS-INV-003",
+  "basis": "ASTM D1785 / ASTM A312 standard lengths; ASME B16.9, B16.5, B16.20; ASTM D2467, F439, D3261; ISO 10931, ISO 15494",
+  "sensitivity": "Stock length changes offcut, not pipe metres",
+  "replaced_by": "Purchase/production cut plan from the issued isos",
+  "verification_test": "Cut-plan reconciliation at fabrication: issued lengths against consumed stock, offcut within 5 %"
+ },
+ {
+  "id": "A-M-125",
+  "task": "X-INV-05",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/other.py"
+  ],
+  "value": "Counting rules: 2 isolation valves per line; check valve and mag-flow meter on lines leaving a pumped unit; TT + PT per unit with nozzles, LT + LSHH per liquid holdup class; 2 anchors per support; bearings sized by IEC frame; seal only on induction-driven pumps (BLDC pumps magnetic drive); VFD at >= 0.75 kW; 2 DI per motor, one AI per instrument, 16-channel I/O modules",
+  "units": "count",
+  "where": "AQS-INV-004",
+  "basis": "Duty item 5 (AQS-STD-001); AQS-PIP-005 support spans; NEC 430.52",
+  "sensitivity": "Valve and instrument counts move with the P&ID",
+  "replaced_by": "P&ID per unit (valves and instruments by tag)",
+  "verification_test": "P&ID take-off count against AQS-INV-004 per family; difference reported per family"
+ },
+ {
+  "id": "A-M-126",
+  "task": "X-INV-02",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/motor_designs.py"
+  ],
+  "value": "Design coefficients inside published ranges: B_delta 0.75 T, A 20/30/40 kA/m by rating, k_w 0.92, J 5 A/mm2, power factor 0.80 (<4 kW) / 0.84, split ratio 0.55 (4-pole) / 0.50 (2-pole), lamination OD <= 0.85 x 2H in the IEC frame, core length/bore <= 2.5; BLDC A 15 kA/m, B 0.8 T, 3000 rpm; bearing sizes by frame",
+  "units": "T, kA/m, A/mm2",
+  "where": "AQS-INV-005",
+  "basis": "PYRHONEN2014 tables 6.3-6.4; HENDERSHOT2010; IEC 60072-1; IEC 60034-30-1",
+  "sensitivity": "Core length scales inversely with B and A",
+  "replaced_by": "First-article type tests (X-INV-02B)",
+  "verification_test": "IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K"
  }
 ]
