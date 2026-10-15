@@ -44,7 +44,8 @@ def write(g, r):
     E['IA-H2P-H2O']['rate']['value'] = round(wf, 6); E['IA-H2P-H2O']['rate']['note'] = 'X-PAR-15: feed water (S49 composition) removed by the TSA, condensed from the regeneration purge (A-M-168).'
     E['IA-H2P-H2O']['to_unit_id'] = 'VCD_TRAIN'
     new = round(S49['rate']['value'] - wf, 6); dlt = E['S49P']['rate']['value'] - new
-    E['S52']['rate']['value'] = round(E['S52']['rate']['value'] - dlt, 6)          # fuel-cell water no longer carries the feed water
+    E['S52']['rate']['value'] = round(E['S52']['rate']['value'] - dlt, 6)
+    E['S52']['composition'] = {'water': 1.0}                                       # fuel-cell product water; was mislabelled H2 0.98 (found by X-ELS-09/X-THM-02)          # fuel-cell water no longer carries the feed water
     E['S49P']['rate']['value'] = new; E['S49P']['composition'] = {'H2': 1.0}
     E['S49P']['rate']['note'] = 'X-PAR-15: S49 less the dried water; ISO_14687 Grade D (water and O2 <= 5 umol/mol).'
     open(GP, 'w').write(json.dumps(g, indent=2))

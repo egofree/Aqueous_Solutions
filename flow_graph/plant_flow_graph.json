@@ -17059,8 +17059,7 @@
         "rev_l_outcome": "present: PEM product water to VCD"
       },
       "composition": {
-        "H2": 0.98,
-        "water": 0.02
+        "water": 1.0
       }
     },
     {

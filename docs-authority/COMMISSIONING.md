@@ -24,7 +24,7 @@ Acceptance at each step: no leak, every loop and trip verified, rates within 10 
 | 4 | BACKUP_GEN | 1 | 4 | 1 | 1 | Ar, N2, O2 |
 | 5 | FUEL_CELL | 1 | 5 | 0 | 0 | Ar, H2, O2 |
 | 6 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
-| 7 | WTR | 10 | 65 | 10 | 9 | CaO, Fe, H2, HCl, K2CO3, hydrocarbon, other, other_metals, solute |
+| 7 | WTR | 10 | 65 | 10 | 9 | CaO, Fe, HCl, K2CO3, hydrocarbon, other, other_metals, solute |
 | 8 | HEAT | 8 | 16 | 0 | 0 |  |
 | 9 | GAS | 7 | 30 | 6 | 1 | Ar, Fe, H2, HCl, O2, other_metals, solute |
 | 10 | CRYO | 20 | 42 | 6 | 2 | Ar, CH3OH, CO2, H2, H2O, N2, O2, solute |

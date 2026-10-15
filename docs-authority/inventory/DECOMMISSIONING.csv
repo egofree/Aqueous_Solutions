@@ -187,7 +187,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 14,WTR,GREY_TREAT,134,CaO K2CO3 other solute,-,106,no
 14,WTR,REMIN,120,solute,-,8,no
 14,WTR,ROOF_TANK,1722,solute,-,70,yes
-14,WTR,VCD_TRAIN,630,Fe H2 HCl other_metals solute,"N2 to < 25 % LFL, then < 1 % H2",151,yes
+14,WTR,VCD_TRAIN,630,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",151,yes
 15,PUMPED_HYDRO,HYDRO_SET,0,,-,173,no
 16,FUEL_CELL,FUEL_CELL,0,Ar H2 O2,"N2 to < 25 % LFL, then < 1 % H2",346,no
 17,BACKUP_GEN,BACKUP_GEN,2000,Ar N2 O2,N2/air to 19.5-23.5 % O2,480,yes

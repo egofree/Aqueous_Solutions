@@ -16,7 +16,7 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L-1 HEAT | 8 | 14.6 | 88 | no | 16 | 0.2 | 15 | ASHRAE 62.1 | 0.006 |
 | L-1 OIL | 11 | 8.7 | 52 | yes | 323 | 6.2 | 307 | heat | 0.132 |
 | L-1 WET | 21 | 65.3 | 392 | yes | 2343 | 6.0 | 2226 | heat | 0.954 |
-| L-1 WTR | 2 | 8.1 | 48 | yes | 1947 | 40.3 | 1850 | H2 dilution | 0.793 |
+| L-1 WTR | 2 | 8.1 | 48 | yes | 147 | 3.0 | 140 | IFC 5004.3 | 0.06 |
 | L-2 PUMPED_HYDRO | 1 | 1.1 | 11 | no | 1 | 0.1 | 1 | ASHRAE 62.1 | 0.0 |
 | L-2 WTR | 1 | 430.9 | 4309 | no | 465 | 0.1 | 442 | ASHRAE 62.1 | 0.19 |
 | L0 BACKUP_GEN | 1 | 5.7 | 34 | no | 6 | 0.2 | 6 | ASHRAE 62.1 | 0.003 |
@@ -24,7 +24,7 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L0 ELEC | 5 | 6.2 | 37 | no | 3582 | 96.7 | 3403 | heat | 1.459 |
 | L0 FAB | 17 | 31.9 | 191 | yes | 583 | 3.0 | 554 | IFC 5004.3 | 0.237 |
 | L0 FARM | 8 | 51.0 | 306 | yes | 932 | 3.0 | 886 | IFC 5004.3 | 0.38 |
-| L0 FUEL_CELL | 1 | 4.1 | 25 | yes | 1947 | 78.9 | 1850 | H2 dilution | 0.793 |
+| L0 FUEL_CELL | 1 | 4.1 | 25 | yes | 597 | 24.2 | 567 | heat | 0.243 |
 | L0 GAS | 1 | 0.7 | 4 | yes | 13 | 3.0 | 12 | IFC 5004.3 | 0.005 |
 | L0 GEO | 4 | 11.9 | 71 | no | 358 | 5.0 | 340 | heat | 0.146 |
 | L0 HAB | 1 | 2.3 | 14 | no | 2 | 0.2 | 2 | ASHRAE 62.1 | 0.001 |
@@ -39,5 +39,5 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L1 WTR | 6 | 6.2 | 37 | no | 29 | 0.8 | 28 | heat | 0.012 |
 | L2 WTR | 1 | 3.2 | 15 | no | 3 | 0.2 | 3 | ASHRAE 62.1 | 0.001 |
 
-29 rooms; total extract 28,277 m3/h; duty fan power 11.52 kW (standby fans idle). Life levels (HAB, FARM) also carry their own AHU duties in the graph (CRYO_AHU and farm AHU); this table is the room exhaust and make-up layer.
+29 rooms; total extract 25,127 m3/h; duty fan power 10.24 kW (standby fans idle). Life levels (HAB, FARM) also carry their own AHU duties in the graph (CRYO_AHU and farm AHU); this table is the room exhaust and make-up layer.
 Make-up air is tempered from the Q4 ladder in winter (99.6 % -7.2 C) and by the building chiller in summer (0.4 % 37.8 C), AQS-SITE-002.
