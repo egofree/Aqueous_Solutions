@@ -14072,7 +14072,7 @@
         "value": 3.9389,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S57 less 10% draw swarf"
+        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -14683,7 +14683,7 @@
         "value": 2.4442,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids"
+        "note": "AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids",
@@ -19600,7 +19600,7 @@
         "value": 2.46,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20320,10 +20320,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.16,
+        "value": 0.159999,
         "unit": "kg/d",
         "status": "study",
-        "note": "From the still. Same mass as before."
+        "note": "From the still. Same mass as before. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20412,7 +20412,7 @@
         "value": 0.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20502,7 +20502,7 @@
         "value": 0.02,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20561,7 +20561,7 @@
         "value": 0.18,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20618,10 +20618,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.2064416526032877,
+        "value": 0.206441,
         "unit": "kg/d",
         "status": "study",
-        "note": "Ethanol plus oxygen. Oxygen limits."
+        "note": "Ethanol plus oxygen. Oxygen limits. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20648,10 +20648,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.061930433152072,
+        "value": 0.061931,
         "unit": "kg/d",
         "status": "study",
-        "note": "Coproduct water."
+        "note": "Coproduct water. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20874,10 +20874,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.06746769864552775,
+        "value": 0.067467,
         "unit": "kg/d",
         "status": "study",
-        "note": "Coproduct water."
+        "note": "Coproduct water. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21058,10 +21058,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0634666196935001,
+        "value": 0.063466,
         "unit": "kg/d",
         "status": "study",
-        "note": "Three water per imidazole."
+        "note": "Three water per imidazole. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22036,7 +22036,7 @@
         "value": 0.08,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people."
+        "note": "AQS-DUTY-027. Farm stock and crops. Study rates for four people. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22368,7 +22368,7 @@
         "value": 0.35,
         "unit": "kg/d",
         "status": "study",
-        "note": "Residue less the seed that is now 0.20 kg/d."
+        "note": "Residue less the seed that is now 0.20 kg/d. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -22461,7 +22461,7 @@
         "value": 0.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room."
+        "note": "AQS-DUTY-029. Mycology. Straw room and sterile block room. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24215,7 +24215,7 @@
         "value": 0.3554,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24396,7 +24396,7 @@
         "value": 0.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24437,10 +24437,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0702,
+        "value": 0.070201,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge."
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -24768,7 +24768,7 @@
         "value": 0.002,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-049. Struvite, ash, iodide."
+        "note": "AQS-DUTY-049. Struvite, ash, iodide. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25400,7 +25400,7 @@
         "value": 0.002,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B"
+        "note": "AQS-PLAN-001 Rev B | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25432,7 +25432,7 @@
         "value": 0.002,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B"
+        "note": "AQS-PLAN-001 Rev B | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25707,10 +25707,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.46,
+        "value": 0.459999,
         "unit": "kg/d",
         "status": "study",
-        "note": "0.20 + 0.16 + 0.10 already leaving the yeast. Now via the still."
+        "note": "0.20 + 0.16 + 0.10 already leaving the yeast. Now via the still. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25770,7 +25770,7 @@
         "value": 0.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass as IA-BUOH. The still is now on the path."
+        "note": "Same mass as IA-BUOH. The still is now on the path. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25800,7 +25800,7 @@
         "value": 0.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass as IA-BUOH."
+        "note": "Same mass as IA-BUOH. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25830,7 +25830,7 @@
         "value": 0.12,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass as IA-MEOH-FORM. One reactor: FORM."
+        "note": "Same mass as IA-MEOH-FORM. One reactor: FORM. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25890,7 +25890,7 @@
         "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "10 m2 at 0.02 kg/m2/day."
+        "note": "10 m2 at 0.02 kg/m2/day. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -25921,7 +25921,7 @@
         "value": 0.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same seed into habitation."
+        "note": "Same seed into habitation. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26918,10 +26918,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.078208773795828,
+        "value": 0.078209,
         "unit": "kg/d",
         "status": "study",
-        "note": "Coproduct water."
+        "note": "Coproduct water. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -27065,10 +27065,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.028344670579845327,
+        "value": 0.028345,
         "unit": "kg/d",
         "status": "study",
-        "note": "HCl-limited remainder."
+        "note": "HCl-limited remainder. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "FAB",
@@ -27092,10 +27092,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.36328793770522605,
+        "value": 0.363287,
         "unit": "kg/d",
         "status": "study",
-        "note": "Not imidazole. The molt liquor is not a reactant."
+        "note": "Not imidazole. The molt liquor is not a reactant. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "NUT",

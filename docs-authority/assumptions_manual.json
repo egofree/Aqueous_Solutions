@@ -1854,12 +1854,12 @@
   "files": [
    "flow_graph/param/balance.py"
   ],
-  "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation",
+  "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation; closure layer complete: 117 study edges are closure transfer functions (balance of a named unit, elimination order) and 57 are design inputs with their stated basis (AQS-PAR-003 section 5)",
   "units": "kg/d",
   "where": "AQS-PAR-003",
   "basis": "NARASIMHAN2000",
   "sensitivity": "Tolerance 2 % is a flow-meter class assumption; tighter meters tighten the gate",
-  "replaced_by": "Per-unit transfer functions (X-PAR-02) and the gas-exchange species layer (X-PAR-11)",
+  "replaced_by": "Unit sizing tasks (BIO-*/unit task 02) replace the 57 design inputs with calculations; X-PAR-11/12 species layer",
   "verification_test": "test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123)"
  },
  {

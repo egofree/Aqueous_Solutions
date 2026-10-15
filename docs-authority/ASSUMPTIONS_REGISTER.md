@@ -136,7 +136,7 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x shaft power; 4-pole IEC 60072-1 frame per CENELEC HD 231; drive-end bearing per frame is typical maker practice (not standardised); unsized pumps take the 0.18 kW class; make/buy split per family at current plant volume | kW | AQS-MFG-011 | IEC 60034-1, IEC 60034-30-1, IEC 60072-1, ISO 15, ISO 492, ISO 4014/4017/4032/7089, ISO 3506-1, ISO 898-1, ISO 3601-1, ISO 6194-1, EN 1514-1, ASME B16.21, ASTM D1785, ISO 1452-2, ISO 2858, ISO 15783 | Pump motors move one or two frame sizes when the pump curves are sized; bearing sizes depend on the chosen motor maker or in-house design | Pump curves per unit (X-ELS-02) and the in-house motor drawings | X-MFG-32 |
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toilets (each path sized for 100 %); 5 flushes/person/day at 1.0 L; cover material 30 % dry; pasteuriser 4 batches/d; 3-tank batch hold, release on test; alkaline barrier standby (NaOH 0.2 mol/L when run); per-barrier log credits not assumed, pasteurisation must alone meet ISO 30500 in the challenge test; sanitation units >= 7.62 m from FARM units with 1 h room, own exhaust and pressure cascade; cake and biogas burned on top of the existing afterburner feed (S11 unchanged), products carried downstream by species (VS as C5H7O2N, biogas 65 % CH4, dry VS LHV about 20 MJ/kg); afterburner chamber >= 850 C for >= 2 s | persons, L, kg/d, m | AQS-DUTY-063 | ROSE2015, LARSEN2013, METCALF5, EPA503, WHO2006_V4, ISO30500, METCALF5_BIOMASS, EU_IED2010 | Flush count and occupancy scale blackwater, digester volume and pasteuriser heat linearly | Occupancy schedule, toilet fit-out, challenge-test results | X-SAN-01 |
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet line at 10 m head, efficiency 0.4, gravity not credited; induced-draft fan per scrubber/dryer/baghouse/AHU/thermal/fab unit at 1 kPa, 0.5; screw conveyor 0.37 kW per solids line >= 50 kg/d; one solenoid valve per dosed line; agitators 0.25 kW; EXT_HALL 8 heat-pump modules with 2 condenser fans each and 8 AHUs at 500 Pa, 0.6; flow battery 2 pumps x 48 strings at 0.25 kW; cold-box compressor 0.85 x graph kW; < 60 W shaft as 24 V DC BLDC | m, kPa, kW | AQS-INV-001 | Study rules pending each unit's task 02 sizing; IEC 60034-1 / IEC 60072-1 for ratings and frames | Pump and fan counts fall where gravity or shared headers are used; family counts shift accordingly | Unit sizing (task 02), P&IDs (task 03) and mfg models | X-INV-01 |
-| A-M-120 | Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation | kg/d | AQS-PAR-003 | NARASIMHAN2000 | Tolerance 2 % is a flow-meter class assumption; tighter meters tighten the gate | Per-unit transfer functions (X-PAR-02) and the gas-exchange species layer (X-PAR-11) | X-PAR-02 |
+| A-M-120 | Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation; closure layer complete: 117 study edges are closure transfer functions (balance of a named unit, elimination order) and 57 are design inputs with their stated basis (AQS-PAR-003 section 5) | kg/d | AQS-PAR-003 | NARASIMHAN2000 | Tolerance 2 % is a flow-meter class assumption; tighter meters tighten the gate | Unit sizing tasks (BIO-*/unit task 02) replace the 57 design inputs with calculations; X-PAR-11/12 species layer | X-PAR-02 |
 | A-M-121 | Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic elbow take-off 0.5 x OD; 6 m random lengths; flanges at both equipment nozzles; ASME B16.5 Class 150 bolting for all classes; EVAP_ACID_VS lines from the EVAP_ACID frame centre + 650 mm north; seed units used for line ends where no duty origin | mm, m | AQS-ISO-002 | ASME B16.9, ASME B16.5, ASME B36.10M, ASTM D2467, ISO 15494 | Cut lengths change by tens of mm per fitting; routes change when clash checking and supports land (X-PIP-04) | Clash-checked 3D routing and fabrication take-offs | X-PIP-03 |
 | A-M-122 | Wire inventory: Rev B (X-ELS-02A): one local panel per sector at the sector median point; branch lengths = Manhattan unit-to-panel x 1.1 + 3 m on routed tray; panel feeders Manhattan to the electrical room (SOL_ARK_60K) x 1.2 + 5 m; conductors upsized for 3 % branch / 2 % feeder drop, 30 m where unpositioned; 3 control pairs per AC motor; DC items 10 m from a local panel; inverter output runs 25 m; section mains 3 parallel sets, 15 m; MV runs 100 m at 2 AWG; PV 18 modules per string, 60 m mean home run; hall lighting installed = average / 0.10 at 4.43 kW per 20 A circuit, 120 m; grid conductor 4/0 Cu; Rev C: panels merged by calculation (merge_panels: no copper increase, drop limits held), 16 -> 12 panels; merges rejected by < 5 kg copper are held for an owner cost basis | m, AWG | AQS-INV-002 | NEC 2023 430.22, 430.52, Table 430.250, 310.16, 240.4(D), 250.122, 690.8, 705.28; AQS-ELEC-005, AQS-ELEC-008 | Lengths dominate copper quantity; panel locations will shorten most branch runs | Panel locations on the GA and tray routes from the router (X-ELS-02 cable schedule) | X-INV-03 |
 | A-M-123 | T1 terrace transpiration = irrigation - drains (37.176 kg/d; no terrace CO2 supply or harvest, net fixation 0); T2 AHU condensate = greenhouse vapour in (53.876 kg/d); T3 cold-box O2 product = HDR_O2 draw (44.906 kg/d), no O2 return; T4 roof shortfall 2.824 kg/d by difference on IA-POT-01, IA-UPW-REMIN, S25, IA-LEACH-VCD; T5 IA-LEACH-ASU 17.44 -> 14.616 kg/d, still above the Henry-law bound (X-PAR-11) | kg/d | AQS-PAR-003 section 0 | TAIZ2015 (photosynthesis and transpiration stoichiometry); SANDER2015 (Henry constants); AQS-DUTY-013/017/019; X-SAF-10 Faraday cell O2 | T5 carries the cross-species link; the leach dissolved-gas rate is the least certain figure in the chain | Gas-exchange species layer X-PAR-11 | X-PAR-02 |
@@ -416,7 +416,7 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-531a04 | 4.2838 | kW | graph S55 rate | AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) |  | X-BAS-02 |
 | A-G-64006b | 0.0 | kg/d | graph S56 rate | AQS-DUTY-010: contingency relief only; no continuous flow on the design day |  | X-BAS-02 |
 | A-G-253723 | 6.8389 | kg/d | graph S57 rate | AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% |  | X-BAS-02 |
-| A-G-6fe1ca | 3.9389 | kg/d | graph S58 rate | AQS-DUTY-010: S57 less 10% draw swarf |  | X-BAS-02 |
+| A-G-6fe1ca | 3.9389 | kg/d | graph S58 rate | AQS-DUTY-010: S57 less 10% draw swarf / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-81b3a9 | 3.95 | kg/d | graph S59 rate | AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim |  | X-BAS-02 |
 | A-G-dd76cf | 3.2 | kg/d | graph S60 rate | AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec |  | X-BAS-02 |
 | A-G-0f1616 | 1.197099 | kg/d | graph S61 rate | AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines) / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -432,7 +432,7 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-ec8519 | 852.47 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. |  | X-BAS-02 |
 | A-G-5863c6 | 0.0521 | kg/d | graph S70 rate | AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box |  | X-BAS-02 |
 | A-G-7073c8 | 20458.32 | kg/d | graph S71 rate | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. |  | X-BAS-02 |
-| A-G-14c1dd | 2.4442 | kg/d | graph S72 rate | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids |  | X-BAS-02 |
+| A-G-14c1dd | 2.4442 | kg/d | graph S72 rate | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-24ed43 | 0.0158 | kg/d | graph S72B rate | AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d |  | X-BAS-02 |
 | A-G-98406f | 6.9 | kg/d | graph S73 rate | AQS-MeOH-001: 5 kg/d MeOH mid × 1.375 kg CO2/kg MeOH; surplus-H2 path / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-64c7cf | 0.948243 | kg/d | graph S74 rate | Three H2 per CO2. Excess does not enter. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -580,7 +580,7 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-167e94 | 0.3454 | kg/d | graph IA-FERM-RES rate | Feed 0.36 less biogenic methanol. The residue had been larger than the feed allowed. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-a2c340 | 3.95 | kg/d | graph IA-MELT-MILL rate | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |  | X-BAS-02 |
 | A-G-cd70e7 | 3.2 | kg/d | graph IA-MELT-ATOM rate | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |  | X-BAS-02 |
-| A-G-835164 | 2.46 | kg/d | graph IA-DRAW-FUME rate | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |  | X-BAS-02 |
+| A-G-835164 | 2.46 | kg/d | graph IA-DRAW-FUME rate | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-188747 | 0.0521 | kg/d | graph IA-AHU-POT rate | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |  | X-BAS-02 |
 | A-G-f567d7 | 195.024701 | kg/d | graph IA-LEACH-NOX rate | AQS-DUTY-022. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-fa47b7 | 135.9019 | kg/d | graph IA-LEACH-FLUE rate | AQS-DUTY-022. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -600,31 +600,31 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-6cd20d | 1.650001 | kg/d | graph IA-NOX-BOARD rate | AQS-DUTY-023 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-4ef57d | 0.64 | kg/d | graph IA-SUGAR-ABE rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-9ae9bd | 0.2 | kg/d | graph IA-ETOH rate | From the still. Same mass as before. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-617994 | 0.16 | kg/d | graph IA-ETOH-AC rate | From the still. Same mass as before. |  | X-BAS-02 |
+| A-G-617994 | 0.159999 | kg/d | graph IA-ETOH-AC rate | From the still. Same mass as before. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-5ac203 | 0.0 | kg/d | graph IA-ETOH-SOL rate | Retired. Live path is IA-ETOH-R. |  | X-BAS-02 |
 | A-G-9de614 | 0.44 | kg/d | graph IA-YEAST-CO2 rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-391f8a | 0.1 | kg/d | graph IA-STILL rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
+| A-G-391f8a | 0.1 | kg/d | graph IA-STILL rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-8d57c7 | 0.0 | kg/d | graph IA-BUOH rate | Retired. Live path is IA-BUOH-S / IA-BUOH-R. |  | X-BAS-02 |
 | A-G-e31161 | 0.06 | kg/d | graph IA-ACETONE rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-a26fb9 | 0.02 | kg/d | graph IA-ABE-ETOH rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
+| A-G-a26fb9 | 0.02 | kg/d | graph IA-ABE-ETOH rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-6d9b78 | 0.25 | kg/d | graph IA-ABE-CO2 rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-34e682 | 0.18 | kg/d | graph IA-ABE-STILL rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
+| A-G-34e682 | 0.18 | kg/d | graph IA-ABE-STILL rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-9c5a5b | 0.11 | kg/d | graph IA-AC-O2 rate | From the oxygen header. Not air. |  | X-BAS-02 |
-| A-G-6d4e88 | 0.2064416526032877 | kg/d | graph IA-ACOH rate | Ethanol plus oxygen. Oxygen limits. |  | X-BAS-02 |
-| A-G-9f77b5 | 0.061930433152072 | kg/d | graph IA-AC-H2O rate | Coproduct water. |  | X-BAS-02 |
+| A-G-6d4e88 | 0.206441 | kg/d | graph IA-ACOH rate | Ethanol plus oxygen. Oxygen limits. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-9f77b5 | 0.061931 | kg/d | graph IA-AC-H2O rate | Coproduct water. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-2964ba | 0.191248 | kg/d | graph IA-ALD rate | Ethanol dehydrogenation. n × 44.053. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-2de92b | 0.00875208925741822 | kg/d | graph IA-ALD-H2 rate | n × 2.016. Not 0.020. |  | X-BAS-02 |
 | A-G-33e7f9 | 0.251952 | kg/d | graph IA-GLX rate | Acetaldehyde plus oxygen. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-55a705 | 0.0 | kg/d | graph IA-GLX-NOX rate | The coproduct is water, not NOx. |  | X-BAS-02 |
 | A-G-b367a7 | 0.0 | kg/d | graph IA-MEOH-FORM rate | Retired. Live path is IA-FORM-S. |  | X-BAS-02 |
 | A-G-cb7f49 | 0.0 | kg/d | graph IA-CH2O rate | Retired. Live path is IA-FORM-R. |  | X-BAS-02 |
-| A-G-918166 | 0.06746769864552775 | kg/d | graph IA-FORM-H2O rate | Coproduct water. |  | X-BAS-02 |
+| A-G-918166 | 0.067467 | kg/d | graph IA-FORM-H2O rate | Coproduct water. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-ccb184 | 0.04 | kg/d | graph IA-MEOH-MEAM rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
 | A-G-b82815 | 0.03 | kg/d | graph IA-NH3-MEAM rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
 | A-G-9d4b3e | 0.038771612258910175 | kg/d | graph IA-MEAM rate | Methanol plus ammonia. Methanol limits. |  | X-BAS-02 |
 | A-G-0222c5 | 0.02 | kg/d | graph IA-NH3-IMID rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
 | A-G-c47770 | 0.09642 | kg/d | graph IA-IMID rate | Ammonia limits the four-reagent condensation. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-73cd27 | 0.0634666196935001 | kg/d | graph IA-IMID-H2O rate | Three water per imidazole. |  | X-BAS-02 |
+| A-G-73cd27 | 0.063466 | kg/d | graph IA-IMID-H2O rate | Three water per imidazole. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-33465c | 0.05 | kg/d | graph IA-HCL-BU rate | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |  | X-BAS-02 |
 | A-G-a4aab3 | 0.1269488178177629 | kg/d | graph IA-BUCL rate | HCl limits. n × 92.566. |  | X-BAS-02 |
 | A-G-e503bc | 0.024706511602391793 | kg/d | graph IA-BUCL-H2O rate | Coproduct water. |  | X-BAS-02 |
@@ -655,7 +655,7 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-5cc6fb | 0.55 | kg/d | graph IA-GOAT-TRIM rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-0ce622 | 0.3 | kg/d | graph IA-FISH-HAB rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-59383a | 0.2 | kg/d | graph IA-FISH-DET rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |  | X-BAS-02 |
-| A-G-99a137 | 0.08 | kg/d | graph IA-CRAY-HAB rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |  | X-BAS-02 |
+| A-G-99a137 | 0.08 | kg/d | graph IA-CRAY-HAB rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-0d0062 | 0.5 | kg/d | graph IA-CAST rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-a2b472 | 0.1 | kg/d | graph IA-WORM-MAN rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |  | X-BAS-02 |
 | A-G-8446bf | 0.02 | kg/d | graph IA-HONEY rate | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |  | X-BAS-02 |
@@ -666,10 +666,10 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-56530c | 0.2 | kg/d | graph IA-COVER rate | AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed. |  | X-BAS-02 |
 | A-G-9453bb | 0.528 | kg/d | graph IA-TOIL-SOL rate | X-SAN-01 AQS-DUTY-063. Owner decision: compost-toilet output through the same barriers. |  | X-BAS-02 |
 | A-G-103878 | 1.42 | kg/d | graph IA-TOIL-URN rate | X-SAN-01 AQS-DUTY-063. |  | X-BAS-02 |
-| A-G-67749b | 0.35 | kg/d | graph IA-NFIX-RES rate | Residue less the seed that is now 0.20 kg/d. |  | X-BAS-02 |
+| A-G-67749b | 0.35 | kg/d | graph IA-NFIX-RES rate | Residue less the seed that is now 0.20 kg/d. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-d05364 | 0.0 | kg/d | graph IA-NFIX-FOOD rate | Retired. Live path is IA-PN-S / IA-PN-R. |  | X-BAS-02 |
 | A-G-6618b3 | 0.75 | kg/d | graph IA-BED-NFIX rate | AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-0d4276 | 0.3 | kg/d | graph IA-STRAW rate | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | X-BAS-02 |
+| A-G-0d4276 | 0.3 | kg/d | graph IA-STRAW rate | AQS-DUTY-029. Mycology. Straw room and sterile block room. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-bf7c33 | 0.12 | kg/d | graph IA-OYSTER rate | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | X-BAS-02 |
 | A-G-e180ec | 0.18 | kg/d | graph IA-STRAW-SPENT rate | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | X-BAS-02 |
 | A-G-134ad3 | 0.25 | kg/d | graph IA-HW rate | AQS-DUTY-029. Mycology. Straw room and sterile block room. |  | X-BAS-02 |
@@ -723,12 +723,12 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-07e353 | 0.5 | kg/d | graph IA-CLOSE-4 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-bb32d0 | 0.45 | kg/d | graph IA-CLOSE-5 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-1f7b5a | 0.0 | kg/d | graph IA-CLOSE-6 rate | Acetate brine is not animal feed. Withdrawn. |  | X-BAS-02 |
-| A-G-78a486 | 0.3554 | kg/d | graph IA-CLOSE-7 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. |  | X-BAS-02 |
+| A-G-78a486 | 0.3554 | kg/d | graph IA-CLOSE-7 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-1ff3fc | 0.29 | kg/d | graph IA-CLOSE-8 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-d70455 | 0.1798 | kg/d | graph IA-CLOSE-9 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. |  | X-BAS-02 |
 | A-G-2de38a | 0.1896 | kg/d | graph IA-CLOSE-10 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-bad485 | 0.1 | kg/d | graph IA-CLOSE-11 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. |  | X-BAS-02 |
-| A-G-b4439f | 0.0702 | kg/d | graph IA-CLOSE-12 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. |  | X-BAS-02 |
+| A-G-bad485 | 0.1 | kg/d | graph IA-CLOSE-11 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-b4439f | 0.070201 | kg/d | graph IA-CLOSE-12 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-4b0be5 | 0.01824586437991424 | kg/d | graph IA-CLOSE-13 rate | Whichever reagent remains. |  | X-BAS-02 |
 | A-G-4e6b26 | 0.4 | kg/d | graph IA-CAST-CLOVER rate | AQS-DUTY-045. Clover on worm castings. Cuttings return. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-ef83f7 | 0.38 | kg/d | graph IA-CLOVER-CUT rate | Cuttings less 0.02 kg/d nectar to the bees. |  | X-BAS-02 |
@@ -738,7 +738,7 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-dce67a | 0.2 | kg/d | graph IA-STR-BED rate | AQS-DUTY-049. Struvite, ash, iodide. |  | X-BAS-02 |
 | A-G-efc7f0 | 0.0 | kg/d | graph IA-STALK rate | Retired. Live path is IA-SF-S / IA-SF-R. |  | X-BAS-02 |
 | A-G-286a42 | 0.3 | kg/d | graph IA-ASH-BED rate | AQS-DUTY-049. Struvite, ash, iodide. |  | X-BAS-02 |
-| A-G-a82c75 | 0.002 | kg/d | graph IA-I-SRC rate | AQS-DUTY-049. Struvite, ash, iodide. |  | X-BAS-02 |
+| A-G-a82c75 | 0.002 | kg/d | graph IA-I-SRC rate | AQS-DUTY-049. Struvite, ash, iodide. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-52ec53 | 0.0 | kg/d | graph IA-I-DOSE rate | Retired. Live path is IA-MED / IA-MED-R. |  | X-BAS-02 |
 | A-G-eda6f5 | 0.2 | kg/d | graph IA-NPK-0 rate | AQS-DUTY-049 |  | X-BAS-02 |
 | A-G-55bf87 | 0.4 | kg/d | graph IA-NPK-1 rate | AQS-DUTY-049 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -761,8 +761,8 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-9551ed | 146.337 | kW | graph IA-E-SUNIN rate | AQS-PLAN-001 Rev B X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +49.58 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ- |  | X-BAS-02 |
 | A-G-63f2c7 | 50.25 | kW | graph IA-E-HOUT rate | AQS-PLAN-001 Rev B |  | X-BAS-02 |
 | A-G-b3e592 | 6.0 | kW | graph IA-E-HABOUT rate | AQS-PLAN-001 Rev B |  | X-BAS-02 |
-| A-G-4c8a4d | 0.002 | kg/d | graph IA-I-RET rate | AQS-PLAN-001 Rev B |  | X-BAS-02 |
-| A-G-dd0c23 | 0.002 | kg/d | graph IA-I-MAKE rate | AQS-PLAN-001 Rev B |  | X-BAS-02 |
+| A-G-4c8a4d | 0.002 | kg/d | graph IA-I-RET rate | AQS-PLAN-001 Rev B / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-dd0c23 | 0.002 | kg/d | graph IA-I-MAKE rate | AQS-PLAN-001 Rev B / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-8cbf2a | 200.0 | kg/d | graph IA-NFT-IN rate | AQS-P9. Film supply. Returns on IA-NFT-OUT. |  | X-BAS-02 |
 | A-G-568206 | 200.0 | kg/d | graph IA-NFT-OUT rate | AQS-P9. Film return. |  | X-BAS-02 |
 | A-G-9a12e8 | 50.0 | kg/d | graph IA-MIST-IN rate | AQS-P9. Mister supply. 100 µm screen. |  | X-BAS-02 |
@@ -771,14 +771,14 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-3786c7 | 20.0 | kg/d | graph IA-DR-OUT rate | AQS-P9. Returns to the bed, not the fish tank. |  | X-BAS-02 |
 | A-G-646256 | 0.15 | kg/d | graph IA-AZ-IN rate | AQS-P9. Rice-bed spill to azolla. |  | X-BAS-02 |
 | A-G-45bc96 | 0.15 | kg/d | graph IA-AZ-OUT rate | AQS-P9. Azolla residue back to the bed. |  | X-BAS-02 |
-| A-G-4e4116 | 0.46 | kg/d | graph IA-ETOH-S rate | 0.20 + 0.16 + 0.10 already leaving the yeast. Now via the still. |  | X-BAS-02 |
+| A-G-4e4116 | 0.459999 | kg/d | graph IA-ETOH-S rate | 0.20 + 0.16 + 0.10 already leaving the yeast. Now via the still. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-497bd8 | 0.1 | kg/d | graph IA-ETOH-R rate | Solvent cut. Replaces the direct yeast-to-store edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-58fc3d | 0.13 | kg/d | graph IA-BUOH-S rate | Same mass as IA-BUOH. The still is now on the path. |  | X-BAS-02 |
-| A-G-21dd6b | 0.13 | kg/d | graph IA-BUOH-R rate | Same mass as IA-BUOH. |  | X-BAS-02 |
-| A-G-a72587 | 0.12 | kg/d | graph IA-FORM-S rate | Same mass as IA-MEOH-FORM. One reactor: FORM. |  | X-BAS-02 |
+| A-G-58fc3d | 0.13 | kg/d | graph IA-BUOH-S rate | Same mass as IA-BUOH. The still is now on the path. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-21dd6b | 0.13 | kg/d | graph IA-BUOH-R rate | Same mass as IA-BUOH. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-a72587 | 0.12 | kg/d | graph IA-FORM-S rate | Same mass as IA-MEOH-FORM. One reactor: FORM. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-24a1dd | 0.1124499094937894 | kg/d | graph IA-FORM-R rate | Methanol oxidation. |  | X-BAS-02 |
-| A-G-5f17bf | 0.2 | kg/d | graph IA-PN-S rate | 10 m2 at 0.02 kg/m2/day. |  | X-BAS-02 |
-| A-G-101135 | 0.2 | kg/d | graph IA-PN-R rate | Same seed into habitation. |  | X-BAS-02 |
+| A-G-5f17bf | 0.2 | kg/d | graph IA-PN-S rate | 10 m2 at 0.02 kg/m2/day. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-101135 | 0.2 | kg/d | graph IA-PN-R rate | Same seed into habitation. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-e757c1 | 0.3 | kg/d | graph IA-SF-S rate | The existing stalk edge, through the sunflower bed. |  | X-BAS-02 |
 | A-G-0f87f9 | 0.3 | kg/d | graph IA-SF-R rate | Same 0.30 kg/d to ash. |  | X-BAS-02 |
 | A-G-67c8a1 | 0.0 | kg/d | graph IA-SLEEP rate | Not a mass flow. Four occupants. The room is not a process vessel. |  | X-BAS-02 |
@@ -812,13 +812,13 @@ Counts: 130 curated, 919 graph, 22 model params, 89 document lines. Total 1160. 
 | A-G-76c9c2 | 0.02 | kg/d | graph IA-CRAY-DET rate | 0.200 detritus in, 0.180 leaves as food and molt. |  | X-BAS-02 |
 | A-G-7328a1 | 0.232829 | kg/d | graph IA-IL-SPENT rate | Equals IA-IL. The pretreat does not store it. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-34f48a | 0.13891336907681956 | kg/d | graph IA-GLX-O2 rate | One O2 per acetaldehyde. |  | X-BAS-02 |
-| A-G-fa8615 | 0.078208773795828 | kg/d | graph IA-GLX-H2O rate | Coproduct water. |  | X-BAS-02 |
+| A-G-fa8615 | 0.078209 | kg/d | graph IA-GLX-H2O rate | Coproduct water. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-4aff4e | 0.059917608139317145 | kg/d | graph IA-FORM-O2 rate | Half an O2 per methanol. |  | X-BAS-02 |
 | A-G-079cbe | 0.02248923288184258 | kg/d | graph IA-MEAM-H2O rate | Coproduct water. |  | X-BAS-02 |
 | A-G-7f2477 | 0.008739154859247238 | kg/d | graph IA-NH3-RET rate | Returned. Not methylamine. |  | X-BAS-02 |
 | A-G-8246a7 | 0.0016279142446402883 | kg/d | graph IA-AC-EX rate | Oxygen-limited remainder. |  | X-BAS-02 |
-| A-G-b3bace | 0.028344670579845327 | kg/d | graph IA-BUCL-EX rate | HCl-limited remainder. |  | X-BAS-02 |
-| A-G-7a8a14 | 0.36328793770522605 | kg/d | graph IA-IMID-EX rate | Not imidazole. The molt liquor is not a reactant. |  | X-BAS-02 |
+| A-G-b3bace | 0.028345 | kg/d | graph IA-BUCL-EX rate | HCl-limited remainder. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-7a8a14 | 0.363287 | kg/d | graph IA-IMID-EX rate | Not imidazole. The molt liquor is not a reactant. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-fac8ac | 0.0 | kg/d | graph IA-NIT-VENT rate | AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption). |  | X-BAS-02 |
 | A-G-4e76e2 |  |  | graph IA-NIT-VENT params | breathing and upset vent; no continuous flow on the design day (assumption) |  | X-BAS-02 |
 | A-G-bd9c8c | 0.0 | kg/d | graph IA-HNO3-VENT rate | AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption). |  | X-BAS-02 |

@@ -126,6 +126,7 @@ def report(R):
 
 def main():
     g = json.load(open(GP)); d, a = physics(g); print('physics roof', round(d, 4), 'asu', round(a, 4)); R = reconcile(g); gross, off0 = report(R)
+    from flow_graph.param import closure_tf; print('closure TF / inputs / rederive', closure_tf.write(g))
     print('off before', len(off0), 'max resid after', float(np.abs(R['r']).max()), 'gross', [R['E'][i]['stream_id'] for i in gross])
     if '--write' in sys.argv:
         assert (R['x'] >= -1e-9).all() and np.abs(R["r"]).max() < 1e-3

@@ -51,3 +51,184 @@ Before: 1 units out of balance (sum of residuals 0.000 kg/d). After: max unit re
 | S14 | crew food |
 | S21 | crew water |
 | IA-WASH | wash water |
+
+## 5. Transfer functions for the study edges (closure layer complete)
+
+174 study edges: 117 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 57 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 1.1e-06 kg/d.
+
+| Edge | Role | Closes unit | Rate kg/d | Basis |
+| --- | --- | --- | --- | --- |
+| C29_TO_PYRO | closure | C29_RECYCLE | 1.4046 | AQS-DUTY-010: = C29_RECYCLE |
+| CUT-3-OUT | closure | PROD_C19_C28 | 3.9472 | Same mass as CUT-3. |
+| CUT-4 | closure | PROD_C29 | 1.4046 | AQS-DUTY-010: C29+ per pass, recycled to extinction |
+| IA-AB-AIR | closure | AFTERBURNER_FLUE | 111.1700 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-AC-EX | closure | ACETOX | 0.0016 | Oxygen-limited remainder. |
+| IA-ACID-01 | closure | EVAP_ACID | 439.5222 | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench |
+| IA-ACOH | closure | ACEX | 0.2064 | Ethanol plus oxygen. Oxygen limits. |
+| IA-AHU-FIX | closure | CRYO_N2 | 0.0000 | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live |
+| IA-AHU-POT | closure | CRYO_AHU | 0.0521 | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |
+| IA-ALD-H2 | closure | ALD | 0.0088 | n × 2.016. Not 0.020. |
+| IA-AMF-IN | closure | AMF | 0.0500 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-AZ-OUT | closure | AZOLLA_BED | 0.1500 | AQS-P9. Azolla residue back to the bed. |
+| IA-BLOW-IN | closure | PROD_C11_C18 | 8.4068 | C11-C18 wax from the tank. Not the dryer. |
+| IA-BLOW-OUT | closure | BLOW_MOLD | 8.4068 | Molded parts. Same mass into the shop. |
+| IA-BMED-01 | closure | WS_NITRIC | 0.6456 | AQS-DUTY-010: 1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange |
+| IA-BUCL-EX | closure | WS_SOLV | 0.0283 | HCl-limited remainder. |
+| IA-BUCL-H2O | closure | BUCL | 0.0247 | Coproduct water. |
+| IA-BUOH-R | closure | BUOH_STILL | 0.1300 | Same mass as IA-BUOH. |
+| IA-BUOH-S | closure | ABE | 0.1300 | Same mass as IA-BUOH. The still is now on the path. |
+| IA-CHAR | closure | OIL_PYRO | 5.2001 | Char less the carbon charged to the silicon-carbide furnace. |
+| IA-CLAR-SOL | closure | CLARIFIER | 1.0000 | AQS-DUTY-032. Aquaponic loop. Leach salts stay off it. |
+| IA-CLOSE-12 | closure | BSFL | 0.0702 | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named t |
+| IA-CLOSE-13 | closure | QUAT | 0.0182 | Whichever reagent remains. |
+| IA-CLOSE-9 | closure | HDR_N2 | 0.1798 | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named t |
+| IA-CLOVER-CUT | closure | COMPOST | 0.3800 | Cuttings less 0.02 kg/d nectar to the bees. |
+| IA-COAT-OUT | closure | ELECTRODE_COAT | 0.0200 | Coated anode back to EW-1. Net zero. |
+| IA-COMP-CO2 | closure | HDR_CO2 | 0.1900 | AQS-DUTY-015. EAOP 25 C, 2.0 V, 30 min, 25 wt%. Hydrochar ahead of compost. |
+| IA-CRAY-HAB | closure | CRAYFISH | 0.0800 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-CROP_ALLIUM-HAB | closure | CROP_ALLIUM | 0.0600 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_BASIL-HAB | closure | CROP_BASIL | 0.0300 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_CUCUMBER-HAB | closure | CROP_CUCUMBER | 0.0800 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_KALE-HAB | closure | CROP_KALE | 0.0500 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_LETTUCE-HAB | closure | CROP_LETTUCE | 0.0800 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_PEPPER-HAB | closure | CROP_PEPPER | 0.0600 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_ROSEMARY-HAB | closure | CROP_ROSEMARY | 0.0200 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_SPINACH-HAB | closure | CROP_SPINACH | 0.0500 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_TOMATO-HAB | closure | CROP_TOMATO | 0.1200 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-DR-OUT | closure | DUAL_ROOT | 20.0000 | AQS-P9. Returns to the bed, not the fish tank. |
+| IA-ESS-HYDRO-DIS | closure | CATCH_TANK | 200000.0000 | AQS-DUTY-010: one full cycle per day |
+| IA-ETOH-AC | closure | ETOH_STILL | 0.1600 | From the still. Same mass as before. |
+| IA-ETOH-S | closure | YEAST | 0.4600 | 0.20 + 0.16 + 0.10 already leaving the yeast. Now via the still. |
+| IA-EW-MET-3 | closure | EW_3 | 22.4800 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-EW-MET-5 | closure | EW_5 | 5.0200 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-EW-MET-6 | closure | EW_6 | 5.4700 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-EW-MET-8 | closure | EW_8 | 5.0500 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-EW-SHEET | closure | EW_9 | 13.9889 | AQS-DUTY-019. No vent. Goods and gases return. |
+| IA-EW1-H2 | closure | HDR_H2 | 1.8900 | AQS-DUTY-022. |
+| IA-EXP-OUT | closure | CRYO_ASU | 1575.5443 | Same mass back to the column. |
+| IA-FC-LEACH | closure | FUEL_CELL | 0.5471 | AQS-DUTY-023 |
+| IA-FISH-DET | closure | FISH | 0.2000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-FORM-S | closure | FORM | 0.1200 | Same mass as IA-MEOH-FORM. One reactor: FORM. |
+| IA-FRUIT-TRIM | closure | FRUIT_GUTTER | 0.1500 | AQS-DUTY-031. Fruit gutter and vegetable beds. |
+| IA-GLX-H2O | closure | GLYOXAL | 0.0782 | Coproduct water. |
+| IA-HCL-BU | closure | BMED_ACID | 0.0500 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-HE-RET | closure | CRYO_HE | 0.0100 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-HW | closure | MUSH_BLOCK | 0.2500 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-IMID-EX | closure | NUTRIENT_DOSE | 0.3633 | Not imidazole. The molt liquor is not a reactant. |
+| IA-KR-RET | closure | CRYO_KR | 0.0200 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-LIG-MUSH | closure | LIGNO_PRE | 0.2000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-MEAM-H2O | closure | ROOF_TANK | 0.0225 | Coproduct water. |
+| IA-MED | closure | IODIDE | 0.0020 | The iodide dose, through the medical room. |
+| IA-MED-R | closure | HAB_MED | 0.0020 | Dose leaves the medical room into habitation. |
+| IA-MEOH-MEAM | closure | MEOH_TANK | 0.0400 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-MEOH-REST | closure | MEOH_FC | 1.2800 | AQS-DUTY-016. Each waste has a user. Each chemical has a source. |
+| IA-MILL-LOSS | closure | GLASS_MILL | 6.8200 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-MIST-OUT | closure | MISTER | 50.0000 | AQS-P9. Mister return. |
+| IA-MUSH-SPENT | closure | MUSHROOM | 0.1000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-NE-RET | closure | CRYO_NE | 0.0500 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-NECTAR | closure | BEES | 0.0200 | Matches IA-HONEY. Bees do not create mass. |
+| IA-NFIX-RES | closure | NFIX_BED | 0.3500 | Residue less the seed that is now 0.20 kg/d. |
+| IA-NFT-OUT | closure | BIOFILTER | 200.0000 | AQS-P9. Film return. |
+| IA-NH3-IMID | closure | IMID | 0.0200 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-NH3-RET | closure | MEAM | 0.0087 | Returned. Not methylamine. |
+| IA-NIT-H2O | closure | HNO3 | 0.1000 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-NPK-0 | closure | COMPOST_TOILET | 0.2000 | AQS-DUTY-049 |
+| IA-O2-MAKE | closure | CRYO_O2 | 0.0000 | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live |
+| IA-OYSTER | closure | MUSH_STRAW | 0.1200 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-PHOS-DOPE | closure | WS_PHOS | 0.0100 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-PN-R | closure | HABITATION | 0.2000 | Same seed into habitation. |
+| IA-PN-S | closure | PEANUT | 0.2000 | 10 m2 at 0.02 kg/m2/day. |
+| IA-PV-IN | closure | SOLAR_PV_CELL | 0.0100 | S36 dopant, through the cell line. |
+| IA-PV-OUT | closure | WAFER_FAB | 0.0100 | Same 10 g/d into the wafer fab. |
+| IA-RICE-AZ | closure | AZOLLA | 0.1000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-SEED-OUT | closure | CLOVER | 0.0100 | AQS-DUTY-046. Seed bank. Clover plus inoculant. |
+| IA-SF-R | closure | ASH | 0.3000 | Same 0.30 kg/d to ash. |
+| IA-SF-S | closure | SUNFLOWER | 0.3000 | The existing stalk edge, through the sunflower bed. |
+| IA-SIC-CO | closure | AFTERBURNER | 0.4662 | 2 mol CO per mol SiO2, 0.4662 kg/d. The flue air already contains the oxygen. |
+| IA-SIC-IN | closure | GLASS_DIGEST | 0.5000 | Silica charge. SiO2 + 3C -> SiC + 2CO. |
+| IA-SIC-OUT | closure | SIC_FURNACE | 0.3337 | SiC product 0.3337 kg/d. Not the silica mass. |
+| IA-STILL | closure | DIGESTER | 0.1000 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-STR-BED | closure | STRUVITE | 0.2000 | AQS-DUTY-049. Struvite, ash, iodide. |
+| IA-STRAW | closure | GROW_BED | 0.3000 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-STRAW-SPENT | closure | COMPOST_MYC | 0.1800 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-WASH-R | closure | HAB_WASH | 80.0000 | Wash water into grey treatment. S12 reduced by the same 80. |
+| IA-WEED-GOAT | closure | GOATS | 0.1500 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-WEED-HAB | closure | DUCKWEED | 0.0500 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-WEED-HEN | closure | CHICKENS | 0.2000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-WIRE-LOSS | closure | BAGHOUSE | 0.4400 | AQS-DUTY-012 Rev N. |
+| IA-WORM-MAN | closure | WORMS | 0.1000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-XE-RET | closure | CRYO_XE | 0.0100 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-ZNBR-BD | closure | GREY_TREAT | 8.4872 | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-u |
+| IA-ZNBR-MU | closure | LEACH_CSTR_1 | 8.4872 | AQS-DUTY-011 Rev M. Water make-up from the leach header, equal to the bleed. |
+| NCG_TO_AB | closure | NCG_HEADER | 5.0000 | AQS-DUTY-010: = IA-OIL-03 (header pass-through) |
+| S28 | closure | VCD_TRAIN | 17.8812 | AQS-DUTY-010: VCD brine 10% of feed |
+| S32 | closure | WS_PEROX | 3.0000 | AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L |
+| S38 | closure | WET_BENCH | 0.0060 | AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d |
+| S49P | closure | H2_PURIFIER | 5.0288 | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Continuous fuel cell. |
+| S57 | closure | MET_MELT | 6.8389 | AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% |
+| S58 | closure | WIRE_DRAW | 3.9389 | AQS-DUTY-010: S57 less 10% draw swarf |
+| S59 | closure | COLD_MILL | 3.9500 | AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim |
+| S60 | closure | GAS_ATOMIZER | 3.2000 | AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec |
+| S69B | closure | ZNBR2 | 852.4700 | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. |
+| S70 | closure | FLUE_KO | 0.0521 | AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU c |
+| S71 | closure | MET_AHU | 20458.3200 | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converte |
+| S72 | closure | MET_SCRUB | 2.4442 | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2%  |
+| S72B | closure | OIL_FRAC | 0.0158 | AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d |
+| S77 | closure | MEOH_FERM | 0.0146 | AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% |
+| C29_RECYCLE | input | - | 1.4046 | AQS-DUTY-010: = CUT-4 |
+| CUT-2 | input | - | 8.4068 | C11-C18 into the cut tank. |
+| CUT-3 | input | - | 3.9472 | C19-C28 into the cut tank. |
+| IA-ABE-ETOH | input | - | 0.0200 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-ABE-STILL | input | - | 0.1800 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-AC-H2O | input | - | 0.0619 | Coproduct water. |
+| IA-AMF-BED | input | - | 0.0500 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-ASH-BED | input | - | 0.3000 | AQS-DUTY-049. Struvite, ash, iodide. |
+| IA-ASU-HE | input | - | 0.0100 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-ASU-KR | input | - | 0.0200 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-ASU-NE | input | - | 0.0500 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-ASU-XE | input | - | 0.0100 | AQS-DUTY-018. Closed inventory. Noble gases held, not vented. |
+| IA-AZ-IN | input | - | 0.1500 | AQS-P9. Rice-bed spill to azolla. |
+| IA-AZOLLA | input | - | 0.1000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-BED-FRUIT | input | - | 0.4000 | AQS-DUTY-031. Fruit gutter and vegetable beds. |
+| IA-BLOCK-FOOD | input | - | 0.0800 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-BLOCK-MED | input | - | 0.0300 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-BLOCK-SPENT | input | - | 0.1400 | AQS-DUTY-029. Mycology. Straw room and sterile block room. |
+| IA-BUCL | input | - | 0.1269 | HCl limits. n × 92.566. |
+| IA-CLOSE-11 | input | - | 0.1000 | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named t |
+| IA-CLOSE-7 | input | - | 0.3554 | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named t |
+| IA-COAT-IN | input | - | 0.0200 | Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel de |
+| IA-COVER | input | - | 0.2000 | AQS-DUTY-028. Composting toilet. Nitrogen-fixing bed. |
+| IA-CRAY-DET | input | - | 0.0200 | 0.200 detritus in, 0.180 leaves as food and molt. |
+| IA-CROP_ALLIUM | input | - | 0.0600 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_BASIL | input | - | 0.0300 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_CUCUMBER | input | - | 0.0800 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_KALE | input | - | 0.0500 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_LETTUCE | input | - | 0.0800 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_PEPPER | input | - | 0.0600 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_ROSEMARY | input | - | 0.0200 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-CROP_SPINACH | input | - | 0.0500 | AQS-DUTY-033. Named vegetable crops. Rosemary on a dry gutter. |
+| IA-DR-IN | input | - | 20.0000 | AQS-P9. Dual-root supply. |
+| IA-DRAW-FUME | input | - | 2.4600 | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |
+| IA-ESS-HYDRO-CHG | input | - | 200000.0000 | AQS-DUTY-010: one full 200 m3 cycle per day |
+| IA-EXP-IN | input | - | 1575.5443 | Displacement 1.57 L/s at 11.61 kg/m3. Inlet 500 kPa, 150 K. P/RT. |
+| IA-FORM-H2O | input | - | 0.0675 | Coproduct water. |
+| IA-FORM-R | input | - | 0.1124 | Methanol oxidation. |
+| IA-GOAT-MILK | input | - | 0.4000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-HEN-EGG | input | - | 0.2000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-HONEY | input | - | 0.0200 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-I-MAKE | input | - | 0.0020 | AQS-PLAN-001 Rev B |
+| IA-I-RET | input | - | 0.0020 | AQS-PLAN-001 Rev B |
+| IA-I-SRC | input | - | 0.0020 | AQS-DUTY-049. Struvite, ash, iodide. |
+| IA-IMID-H2O | input | - | 0.0635 | Three water per imidazole. |
+| IA-MEAM | input | - | 0.0388 | Methanol plus ammonia. Methanol limits. |
+| IA-MELT-ATOM | input | - | 3.2000 | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |
+| IA-MELT-MILL | input | - | 3.9500 | AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. |
+| IA-MIST-IN | input | - | 50.0000 | AQS-P9. Mister supply. 100 µm screen. |
+| IA-MUSH | input | - | 0.1000 | AQS-DUTY-027. Farm stock and crops. Study rates for four people. |
+| IA-NFT-IN | input | - | 200.0000 | AQS-P9. Film supply. Returns on IA-NFT-OUT. |
+| IA-NH3-MEAM | input | - | 0.0300 | AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. |
+| IA-OIL-03 | input | - | 5.0000 | AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002) |
+| IA-SEED-CLOVER | input | - | 0.0100 | AQS-DUTY-046. Seed bank. Clover plus inoculant. |
+| IA-SIC-C | input | - | 0.2999 | 3 mol C per mol SiO2. 0.2999 kg/d on 0.500 kg/d silica. Char taken as carbon. |
+| IA-VCD-BD | input | - | 6.7100 | AQS-DUTY-012 Rev N. |
+| S69 | input | - | 852.4700 | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidit |
