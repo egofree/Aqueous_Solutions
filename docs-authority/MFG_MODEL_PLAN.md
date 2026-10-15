@@ -130,7 +130,7 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 
 | Seq | Unit | Sector | Class | Tier | Internal on node | Seed origin | `cad/stl` now | Existing source | Route | Acceptance | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | EXPANDER | CRYO | tool | 1 | none | yes | envelope, ~23 f | `models/mfg/EXPANDER/expander.py` | F-MACH | A-core, A-MACH, A-P | M2. Builds, STEP and STL. No drawings, STL not one manifold, `cad/stl` not replaced |
+| 1 | EXPANDER | CRYO | tool | 1 | none | yes | envelope, ~23 f | `models/mfg/EXPANDER/expander.py` | F-MACH | A-core, A-MACH, A-P | M2. Builds, STEP, one closed STL, `cad/stl` replaced. No drawings |
 | 2 | LEACH_CSTR_1 | WET | vessel | 2 | none | yes | envelope, ~23 f | mfg_leach_cstr.scad, leach_cstr.py, leach_cstr.step | F-VES | A-core, A-VES | M0 |
 | 3 | EW_1 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
 | 4 | EW_2 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |

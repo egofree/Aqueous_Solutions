@@ -61,7 +61,7 @@
       300,
       250
     ],
-    "flywheel_d_mm": 250,
+    "flywheel_d_mm": 240,
     "flywheel_t_mm": 30,
     "DN15_OD_mm": 21.3,
     "nozzle_stub_len_mm": 50,

@@ -25,7 +25,7 @@ for x in (30, L - 30):
 cx, cy, cz = A["crankcase_mm"]
 x0, y0 = 60, (W - cy) / 2
 parts["crankcase"] = (cq.Workplane("XY").box(cx, cy, cz, centered=False)
-                      .translate((x0, y0, tb)).faces(">Z").shell(-8))
+                      .translate((x0, y0, tb)).faces("<Z").shell(-8))
 
 wall = A["cylinder_wall_mm"]
 cyl_len = stroke + 60
@@ -44,6 +44,10 @@ for dx in (-1, 1):
 parts["piston"] = (cq.Workplane("XY").circle(bore / 2 - 0.5).extrude(40)
                    .translate((ccx, ccy, ccz0 + 10)))
 
+# connecting rod, crank axis to piston. Drawn as a round bar so the model is one solid. Proportion is an assumption.
+parts["con_rod"] = (cq.Workplane("XY").circle(8).extrude(ccz0 + 10 - (tb + cz / 2))
+                    .translate((ccx, ccy, tb + cz / 2)))
+
 fd, ft = A["flywheel_d_mm"], A["flywheel_t_mm"]
 parts["flywheel"] = (cq.Workplane("YZ").circle(fd / 2).extrude(ft)
                      .translate((x0 + cx + 20, W / 2, tb + cz / 2)))
@@ -54,9 +58,9 @@ od = A["DN15_OD_mm"]; sl = A["nozzle_stub_len_mm"]
 nz = {n["tag"]: n for n in P["nozzles"]}
 zN = nz["N1"]["height_mm"]
 parts["N1_inlet"] = (cq.Workplane("XZ").circle(od / 2).circle(od / 2 - 2.77).extrude(-sl)
-                     .translate((ccx, 0, zN)))
+                     .translate((ccx + cyl_od / 2 + 20, 0, zN)))
 parts["N2_outlet"] = (cq.Workplane("XZ").circle(od / 2).circle(od / 2 - 2.77).extrude(sl)
-                      .translate((ccx, W, zN)))
+                      .translate((ccx + cyl_od / 2 + 20, W, zN)))
 # side manifolds from the head to each nozzle (pipe, DN15)
 for tag, y1 in (("N1_line", 0), ("N2_line", W)):
     y_start, y_end = sorted((ccy, y1))
@@ -71,7 +75,11 @@ for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
 asm.export(str(out / "expander.step"))
-comp = cq.Compound.makeCompound([v.val() for v in parts.values()])
+vals = list(parts.values())
+solid = vals[0]
+for v in vals[1:]:
+    solid = solid.union(v)
+comp = solid.val()
 comp.exportStl(str(out / "expander.stl"), tolerance=0.5, angularTolerance=0.5, ascii=True)
 
 # acceptance checks that run on files
