@@ -27,8 +27,8 @@ for i in range(nx+1):
     for y in (z0+t+fw/2, W-z0-t-fw/2): holes.append((t+fw/2+i*(L-2*t-fw)/nx, y))
 for j in range(1, ny):
     for x in (t+fw/2, L-t-fw/2): holes.append((x, z0+t+fw/2+j*(Wt-2*t-fw)/ny))
-for (x, y) in holes: body = body.cut(cyl(5.5, tl+10, (x, y, HT-tl-10), (0,0,1)))
+for (x, y) in holes: body = body.cut(cyl(6.5, tl+10, (x, y, HT-tl-10), (0,0,1)))
 solid = body.val()
 out = H/"export"; out.mkdir(exist_ok=True)
 cq.exporters.export(body, str(out/"leach_cstr_1.step")); body.val().exportStl(str(out/"leach_cstr_1.stl"), 0.3, 0.3, True)
-vol = solid.Volume(); print(json.dumps({"solids": len(body.solids().vals()), "volume_mm3": round(vol), "mass_kg": round(vol*1e-9*P["material"]["density_kg_m3"],1), "lid_bolts": len(holes)}))
+vol = solid.Volume(); print(json.dumps({"solids": len(body.solids().vals()), "volume_mm3": round(vol), "mass_kg": round(vol*1e-9*P["material"]["density_kg_m3"]["value"],1), "lid_bolts": len(holes)}))

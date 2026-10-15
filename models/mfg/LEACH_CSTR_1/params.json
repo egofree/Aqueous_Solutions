@@ -1,19 +1,76 @@
 {
  "unit_id": "LEACH_CSTR_1",
- "graph": {"size_mm": [2000,1200,1400], "origin_mm": [600,5300,-6000], "design_kPa": 25.1, "relief_mm": 2.8, "internals": "none", "continuous_kw": 2.0,
-  "nozzle_face_height_mm": 700, "inlets": 25, "outlets_process": 20, "outlet_conductor": "IA-E-LEACH",
-  "dn_from_edge": {"HL-Q3-A-HX5": 20, "HL-Q3-B-HX5": 20}},
- "material": {"wetted": "316L", "basis": "Duty sheet section 3: wet or chloride service. Not selected for any feed; holds across the AQS-ASSAY-001 Rev C envelope as written. Pit rate not measured.", "density_kg_m3": 8000},
+ "graph": {
+  "size_mm": [
+   2000,
+   1200,
+   1400
+  ],
+  "origin_mm": [
+   600,
+   5300,
+   -6000
+  ],
+  "design_kPa": 25.1,
+  "relief_mm": 2.8,
+  "internals": "none",
+  "continuous_kw": 2.0,
+  "nozzle_face_height_mm": 700,
+  "inlets": 25,
+  "outlets_process": 20,
+  "outlet_conductor": "IA-E-LEACH",
+  "dn_from_edge": {
+   "HL-Q3-A-HX5": 20,
+   "HL-Q3-B-HX5": 20
+  }
+ },
+ "material": {
+  "wetted": "PVC-U",
+  "rule": "AQS-STD-002 Rev A, rules M1 and M2. Acid-regen and leach liquor service: PVC. No metal wetted part.",
+  "density_kg_m3": {
+   "value": 1400,
+   "note": "Assumption. Typical PVC-U sheet density, not measured."
+  },
+  "temperature_check": "Liquor temperature is not on the graph. HL-Q3-A/B-HX5 carry Q3 water at supply 95 C, return 85 C (graph). 95 C exceeds the PVC-U limit (60 C, assumption from published PVC-U data) and the usual CPVC limit (93 C, assumption). The HX-5 ports are flagged. CPVC is the thermoplastic alternative. No metal. Held under X-MAT-05."
+ },
  "assumptions": {
-  "header_zone_mm": {"value": 60, "note": "Assumption. Depth reserved on each Y face inside the envelope for the inlet and outlet headers."},
-  "wall_mm": {"value": 6, "note": "Assumption. Not checked against hydrostatic load; liquor density is held."},
-  "floor_mm": {"value": 8, "note": "Assumption."},
-  "lid_mm": {"value": 6, "note": "Assumption. Closed lid because the vents go to NOX_SCRUB and FLUE_KO."},
-  "lid_flange_w_mm": {"value": 40, "note": "Assumption."},
-  "lid_bolt": {"value": "M10 A4-70", "pitch_mm": 150, "note": "Assumption."},
-  "header_od_mm": {"value": 60.3, "note": "Assumption. DN50 manifold carrying the face-center ports."},
-  "port_od_mm_bore_not_calculated": {"value": 33.7, "note": "Assumption. DN25 placeholder where the edge gives no bore."},
-  "port_od_mm_dn20": 26.9,
-  "port_pitch_mm": {"value": 70, "note": "Assumption. Ports spread along X about the face center at Z 700."}
+  "header_zone_mm": {
+   "value": 60,
+   "note": "Assumption. Depth reserved on each Y face inside the envelope for the inlet and outlet headers."
+  },
+  "wall_mm": {
+   "value": 12,
+   "note": "From AQS-NZ-001 (CSTR_NOZZLE_SCHEDULE.md) sheet wall 12 mm, now PVC. Not checked against hydrostatic load; liquor density is held."
+  },
+  "floor_mm": {
+   "value": 16,
+   "note": "From AQS-NZ-001 floor 16 mm, now PVC."
+  },
+  "lid_mm": {
+   "value": 12,
+   "note": "Assumption. PVC lid."
+  },
+  "lid_flange_w_mm": {
+   "value": 40,
+   "note": "Assumption."
+  },
+  "lid_bolt": {
+   "value": "M12 PVDF",
+   "pitch_mm": 150,
+   "note": "Assumption. Non-metallic fasteners in the acid-gas head space (AQS-STD-002 M4)."
+  },
+  "header_od_mm": {
+   "value": 60.3,
+   "note": "Assumption. 2 in Sch 80 PVC, ASTM D1785 OD."
+  },
+  "port_od_mm_bore_not_calculated": {
+   "value": 33.4,
+   "note": "Assumption. 1 in Sch 80 PVC placeholder; bore not calculated."
+  },
+  "port_od_mm_dn20": 26.7,
+  "port_pitch_mm": {
+   "value": 70,
+   "note": "Assumption. Ports spread along X about the face center at Z 700."
+  }
  }
 }

@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 2000×1200×1400 mm, 3.36 m³. Flow 5622.7 kg/d is circulation. If the box were full the residence would be 14.34 h. It is not sized as a 20-day tank.
 
-3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
+3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. Wall 12 mm, floor 16 mm (AQS-NZ-001). PVDF lid bolts. HL-Q3-A/B-HX5 bring Q3 water at 95 °C (graph), above the PVC-U and CPVC limits of AQS-STD-002 M5; those two ports are flagged, CPVC is the thermoplastic alternative, and the case is held. Liquor temperature is not on the graph.
 
 4. Nozzles. Origin 600, 5300, -6000 mm. Size 2000 × 1200 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, HL-Q3-A-HX5, inlet, -Y face center, 1600, 5300, -5300 mm. Height 700 mm from the bottom. DN20 from the edge. Rating hose, atmospheric.
@@ -59,6 +59,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. Atmospheric. The vents are IA-CLOSE-1 to NOX_SCRUB and IA-LEACH-FLUE to FLUE_KO. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is `cad/stl/LEACH_CSTR_1.stl`, from `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` (AQS-PLAN-006). 316L is held, not verified, across the AQS-ASSAY-001 Rev C envelope. Drawings are not made.
+7. Code. Shop. Not stamped. The solid is `cad/stl/LEACH_CSTR_1.stl`, from `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` (AQS-PLAN-006). PVC-U per AQS-STD-002. Drawings are not made.
 
 8. Open items. This unit has not been measured. IA-FEED-01 is feedstock-agnostic, checked across the AQS-ASSAY-001 Rev C envelope. Silicate solids at the regolith-like end are 5.5 times the reference and are held. S08 is the cathode split. S16 follows S08. Not a weighed sample. No resize.
