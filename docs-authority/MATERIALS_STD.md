@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: I
+Revision: J
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -16,6 +16,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | G | HX-5 adopted as a borosilicate glass 3.3 coil (X-MAT-16). | 2026-10-15 |
 | H | HX8 adopted as a PVDF bundle (X-MAT-17). | 2026-10-15 |
 | I | Material temperatures on thermoplastic inlets (X-MAT-09); HX-5 coil guard. | 2026-10-15 |
+| J | EW electrode materials in chloride (X-MAT-18). | 2026-10-15 |
 
 ## 1. Rules
 
@@ -284,3 +285,18 @@ Resolution of the exceedances:
 - Cooling, not material: BMED_ACID, BMED_BASE (ion-exchange membranes) and ROOF_TANK (water) — X-MAT-19.
 
 HX-5 coil guard. The impeller (D 450 mm, AQS-DUTY-050) turns inside the coil (ID 575 mm), 62 mm radial clearance. The coil is clamped to four PVDF guide posts from the pads to the lid so it cannot move into the impeller; no separate guard sleeve, which would cut the flow across the coil.
+
+## 9. EW electrodes in chloride with anodic Cl₂, Rev J
+
+X-MAT-18. Service: chloride liquor (HCl with metal chlorides, 55–77.5 °C), anodic Cl₂ evolution on every cell (EDGE_RATING_DUTY), side-reaction H₂ at EW_1, EW_2, EW_4 and EW_9 cathodes.
+
+| Part | Was | Decision | Reason |
+| --- | --- | --- | --- |
+| Cathode blank | 316L, 3 mm | Titanium Grade 2 (ASTM B265), 3 mm, PVC edge strips | 316L pits in hot chloride with dissolved Cl₂, and the pits fix the deposit; titanium is passive in wet chlorine and hot chloride brine and is the usual blank in chloride electrowinning [S21]. |
+| Anode | Ti mesh with PbO₂ | Ti mesh with mixed metal oxide (RuO₂–IrO₂–TiO₂, dimensionally stable anode) | The chlor-alkali anode; low Cl₂ overpotential and long life in chloride [S22]. PbO₂ adds lead to the liquor and the deposit and does not suit Cl₂ service. |
+| Hanger bars and contacts | copper | Copper above the liquor and the vapor line, Ti-clad where in spray | M6: conductors only, not wetted |
+
+Hydrogen. Titanium takes up hydrogen as a cathode and forms brittle hydride, mostly above about 80 °C and at high current density [S21]. Cells at 55 °C run below that; EW_1 sees 77.5 °C at the inlet (X-MAT-09). Rule: Ti blanks on the H₂-making cells (EW_1, EW_2, EW_4, EW_9) are inspected for hydride (bend test) at each strip cycle for the first year; reverse current is not applied to Ti. AQS-REV-H2-001 carries this.
+
+S21. Schutz R.W., Thomas D.E., "Corrosion of Titanium and Titanium Alloys", ASM Handbook Vol. 13, 1987.
+S22. Trasatti S., "Electrocatalysis: understanding the success of DSA", Electrochimica Acta 45 (2000) 2377–2385.

@@ -67,6 +67,10 @@ API 941 check, MEOH_SYNTH. Reactor 250 °C (482 °F), 50 bar a, H₂:CO₂ 3:1, 
 
 Held. A purifier for Grade D if dryer output is below grade. CRYO_H2 storage pressure.
 
+## 6. EW titanium cathodes
+
+Titanium blanks on EW_1, EW_2, EW_4 and EW_9 make side-reaction H₂. Hydride bend test at each strip cycle for the first year; no reverse current (AQS-STD-002 section 9).
+
 ## References
 
 - [S13] Sandia, Technical Reference on Hydrogen Compatibility of Materials, 316/316L, https://www.sandia.gov/app/uploads/sites/158/2021/12/2103TechRef_316SS.pdf

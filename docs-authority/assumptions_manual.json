@@ -674,5 +674,18 @@
    "docs-authority/GROUNDING.md"
   ],
   "id": "A-M-052"
+ },
+ {
+  "value": "hydride check each strip cycle, first year",
+  "units": "inspection",
+  "where": "EW_1, EW_2, EW_4, EW_9 Ti cathodes",
+  "basis": "Ti hydriding mainly above about 80 C (ASM Vol 13); EW_1 inlet 77.5 C is near it",
+  "sensitivity": "Blank life",
+  "replaced_by": "Hydrogen content analysis of a used blank",
+  "task": "X-MAT-18",
+  "files": [
+   "docs-authority/MATERIALS_STD.md"
+  ],
+  "id": "A-M-053"
  }
 ]
