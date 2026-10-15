@@ -9,7 +9,7 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
   one circuit: IA-BMED-03 -> IA-BMED-01 -> S34 -> S10
   kg/d: nodes off 2, cut in 0.00 out 0.00 fail
 
-## thermal: 48 edges, 4 loops
+## thermal: 50 edges, 4 loops
 - 2 units. Circuits listed: 1 (cap 20).
   Q4_A, Q4_B
   one circuit: HL-Q4-X -> HL-Q4-X-BA

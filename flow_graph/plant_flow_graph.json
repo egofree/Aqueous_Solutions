@@ -8867,20 +8867,16 @@
         "rate_basis": "BMED 12.0 kWh/d / 2.1 kWh/kg pair = 5.71 kg/d = 74.7 mol/d HCl as 2 M",
         "rate_source": "ELECTRICAL BMED 80 kWh/t, 1.8-2.4 kWh/kg",
         "medium": "HCl 2 M acid loop",
-        "conditions": "85.0 C at the LEACH_CSTR_1 draw (X-MAT-19); was labelled ambient",
+        "conditions": "35 C after the trim cooler (X-RSZ-04)",
         "rate_kind": "derived",
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: BMED acid loop make (energy basis)",
-        "T_C": 85.0,
-        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)",
+        "T_C": 35.0,
+        "T_basis": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C); inlet 85 C",
         "cooler": {
-          "type": "water-cooled trim exchanger, PVDF, on a ground-loop water source",
-          "duty_W": 188,
-          "T_in_C": 85,
-          "T_out_C": 35.0,
-          "status": "held: needs a cooling-water energy edge (rate change not approved)",
-          "source": "X-MAT-19"
+          "type": "water-cooled plate trim exchanger, PVDF or Ti plates, ground-loop water",
+          "duty_W": 780
         }
       },
       "composition": {
@@ -8931,20 +8927,16 @@
         "rate_basis": "74.7 mol/d NaOH as 2 M",
         "rate_source": "ELECTRICAL BMED",
         "medium": "NaOH 2 M base loop",
-        "conditions": "85.0 C at the LEACH_CSTR_1 draw (X-MAT-19); was labelled ambient",
+        "conditions": "35 C after the trim cooler (X-RSZ-04)",
         "rate_kind": "derived",
         "mol_d": 74.7,
         "doc": "AQS-DUTY-010",
         "rev_l_outcome": "present: BMED base loop make (energy basis)",
-        "T_C": 85.0,
-        "T_basis": "X-MAT-09: LEACH liquor band maximum 85 C (liquor_T_C band)",
+        "T_C": 35.0,
+        "T_basis": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C); inlet 85 C",
         "cooler": {
-          "type": "water-cooled trim exchanger, PVDF, on a ground-loop water source",
-          "duty_W": 247,
-          "T_in_C": 85,
-          "T_out_C": 35.0,
-          "status": "held: needs a cooling-water energy edge (rate change not approved)",
-          "source": "X-MAT-19"
+          "type": "water-cooled plate trim exchanger, PVDF or Ti plates, ground-loop water",
+          "duty_W": 1027
         }
       },
       "composition": {
@@ -23536,10 +23528,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 15.88,
+        "value": 14.073,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out."
+        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C): less 1.807 kW to the trim coolers."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -26208,6 +26200,108 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-BMED-03-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "trim cooler heat from IA-BMED-03 (to BMED_ACID)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.78,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-BMED-04-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "trim cooler heat from IA-BMED-04 (to BMED_BASE)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-GHEX-REJ",
+      "from_unit_id": "GEO_GHEX",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "heat to ground",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.807,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). Ground loop rejects the BMED trim duty."
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
     }
   ],
   "view_presets": [

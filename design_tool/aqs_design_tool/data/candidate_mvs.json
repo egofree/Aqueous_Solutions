@@ -14650,10 +14650,10 @@
       "phase": "E",
       "carries": "leach reject",
       "rate": {
-        "value": 15.88,
+        "value": 14.073,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out."
+        "note": "AQS-PLAN-001 Rev B. Solar and fuel in. Heat out. X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C): less 1.807 kW to the trim coolers."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -16223,6 +16223,57 @@
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
+    },
+    {
+      "stream_id": "IA-BMED-03-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "carries": "trim cooler heat from IA-BMED-03 (to BMED_ACID)",
+      "rate": {
+        "value": 0.78,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C); namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-BMED-04-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "carries": "trim cooler heat from IA-BMED-04 (to BMED_BASE)",
+      "rate": {
+        "value": 1.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C); namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-GHEX-REJ",
+      "from_unit_id": "GEO_GHEX",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "heat to ground",
+      "rate": {
+        "value": 1.807,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). Ground loop rejects the BMED trim duty."
+      },
+      "from_sector_id": "GEO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C); namespace=IA; layers=energy"
     }
   ],
   "electrical": {

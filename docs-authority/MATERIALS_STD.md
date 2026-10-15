@@ -313,7 +313,7 @@ Script `docs-authority/_hot_draw_coolers.py`.
 | IA-POT-01 | 120.5 | 4.18 | 85 → 40 | 262 | ROOF_TANK, below PVC-U 60 C with margin |
 
 - IA-POT-01: passive air-cooled PVDF DN25 coil, 25.4 m (U 7 W/m²K natural convection, air 37.8 °C design, LMTD 14.7 K). No graph energy edge: the heat goes to the room air (about 0.26 kW, inside the HVAC study share). Edge T_C now 40 °C.
-- IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They need a water-cooled trim exchanger on a ground-loop source (about 0.44 kW together). That adds an energy edge, which is a rate change and is held for owner approval. Until then BMED_ACID and BMED_BASE must not receive liquor above the membrane limit.
+- IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They take a water-cooled trim exchanger on the GEO_GHEX ground loop. X-RSZ-04 books it at the resized flows: IA-BMED-03-TRIM 0.780 kW and IA-BMED-04-TRIM 1.027 kW (1.81 kW), taken from IA-E-LEACH, rejected by IA-GHEX-REJ. Outlet 35 °C.
 - The IA-BMED-03/04 edges say "ambient" in their conditions and IA-POT-01 carries the leach stencil composition; both are inconsistent with a direct draw from the hot tank and are flagged for the unit task 01 balances.
 
 ## 11. Galvanic and stray current, EW aisle, Rev K
