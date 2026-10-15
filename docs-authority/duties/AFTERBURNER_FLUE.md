@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. 316L pipe, dry flue at 300 °C, insulated to hold the wall above the acid dew point (M7; dew point held). Dielectric isolating flange at FLUE_KO (AQS-STD-002 section 4.3).
 
 4. Nozzles. No duct bore. Density is not on the edge, and 1.2 kg/m³ is not used. No flange class. The vent stays on the gas edge, not the room.
 

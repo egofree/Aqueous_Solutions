@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 300×300×1200 mm. Taken as a column, the width is 300 mm and the height is 1.20 m. Stages and reflux are not on the node.
 
-3. Material. 316L. Boiling solvent. Not HDPE. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. Borosilicate glass 3.3 column, reboiler, and condenser; PTFE gaskets; steel guard frame not wetted (AQS-STD-002 section 4.2). No metal wetted part.
 
 4. Nozzles. Origin 22200, 9800, 6000 mm. Size 300 × 300 × 1200 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-BUOH-S, inlet, -Y face center, 22350, 9800, 6600 mm. Height 600 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - In 7.77 kg/d, out 7.77 kg/d. No holdup claimed.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust). Dry and ambient, so M3 does not apply. Dust is wetted only after a dielectric break in a PVC-U sluice (AQS-STD-002 section 4.3).
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.28 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

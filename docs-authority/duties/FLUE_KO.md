@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - In 253.4 kg/d, out 253.4 kg/d. No holdup claimed.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.3 inlet spool (AQS-STD-002 section 4.3). No metal wetted part. The cooling of the 300 °C inlet to below the FRP limit is not on the graph and is held.
 
 4. Nozzles. Origin 18800, 7200, -6000 mm. Size 600 × 700 × 1100 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-LEACH-FLUE, inlet, -Y face center, 19100, 7200, -5450 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

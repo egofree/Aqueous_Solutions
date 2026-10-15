@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - No kilowatts on the node. Area is not calculated.
 
-3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
+3. Material. Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.4, M7). Dielectric isolating flange where the loop meets an exchanger on an electrolyte or a water loop. Corrosion allowance 1.5 mm.
 
 4. Nozzles. Origin 2700, 9000, -5150 mm. Size 800 × 800 × 1200 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, HL-GLASS_BURNOUT-Q2-A, inlet, -Y face center, 3100, 9000, -4550 mm. Height 600 mm from the bottom. DN15 from the edge. Rating hose, atmospheric.
