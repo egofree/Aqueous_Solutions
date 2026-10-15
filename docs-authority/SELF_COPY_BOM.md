@@ -82,7 +82,7 @@ PE stamps, or FreeCAD solids to force either gate.
 | ZnBr₂ stack / Br₂ scrub | Electrolyte make-up study; S69 regen | ZNBR2 + GAS | ZNBR2 / scrub set | Closed (doc) | ESS peer enabled; listing/BMS finish = ops |
 | MeOH synth / DMFC | S73/S74/S76; SI-DMFC / SI-IEM | MEOH | MEOH_SYNTH / MEOH_FC | Closed (doc) | Stand-in ≠ purchase; bank sizing AQS-ESS-001 |
 | Hydro turbine-pump | Metals + seals | MFG + PUMPED_HYDRO | HYDRO_SET | Closed (doc) | M1 energy symbolic (AQS-ESS-001) |
-| PV cells (campus renew) | Solar-cell branch AQS-EQP-FAB-PV-001 | FAB **SOLAR_PV_CELL** | PV-TEX/EMIT/PSG/ARC/CON/FIRE/IV-01 | Closed (doc) | ST-SOLAR-01: 1.0 kW share; 3 cells/d; vendor datasheet = external |
+| PV cells (campus renew) | Solar-cell branch AQS-EQP-FAB-PV-001 | FAB **SOLAR_PV_CELL** | PV-TEX/EMIT/PSG/ARC/CON/FIRE/IV-01 | Reopened (X-GOV-20) | ST-SOLAR-01: 1.0 kW share; 3 cells/d; tool nameplates from in-house designs (X-MFG-38) |
 | Photolithography (coat/align/develop) | WS_SOLV S38/S85; resist | FAB / **LITHO_STUB** | LITHO-COAT-01 / LITHO-ALIGN-01 / LITHO-DEV-01 | Closed (doc) | ST-LITHO-01; `lithography_on_site=false` until FCStd (C3) |
 | Blow mold / shoe mold | Polymer melt from EXTRUSION / oil cuts | MFG **BLOW_MOLD** | BLOW-CLAMP-01 / BLOW-AIR-01 / BLOW-MOLD-TOOL-01 | Closed (doc) | ST-BLOW-01; mold FreeCAD = C3 |
 | Textiles / HEPA | AQS-MFG-TEX-001 stub | MFG optional | — | Partial | Optional for MVS electrical |
@@ -172,7 +172,7 @@ No vendor certificates or PE stamps are asserted for any row.
 ## 5. Gap summary → plan study queue
 
 Rev F: critical-path **matrix complete** (C4). Present CAD / AHJ / field GHEX
-bore / ASME MAWP / vendor datasheets remain **C3 / external** — queued, not
+bore / ASME MAWP / in-house design data remain **C3 / external** — queued, not
 accepted omissions. `loops_closed` still requires C1–C5 including Present
 CAD (C3). Sandbox tracks progress toward MVS as Present studies finish.
 

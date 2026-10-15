@@ -16,11 +16,11 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 32 | Owner decision or site investigation report |
-| T2 | Vendor and manufacturer data | 31 | Vendor data sheet, quote or curve filed against the item |
-| T3 | Bench and laboratory tests | 36 | Bench test report with method, data and result |
+| T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
+| T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 104 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 15 | Commissioning record |
+| T5 | Design calculations and drawings | 118 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 17 | Commissioning record |
 
 Total 239 items: 120 drivers, 119 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
@@ -52,7 +52,7 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | A-M-052 | 5 ohm | Utility or AHJ requirement and IEEE 80 step/touch study | X-ELS-08 |
 | A-M-063 | HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 kW, d | Owner critical-load list | X-ELS-05 |
 | A-M-078 | PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout | X-RSZ-02 |
-| A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and compressor vendor data | X-ELS-02 |
+| A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and in-house compressor bench run (X-MFG-36) | X-ELS-02 |
 | A-M-098 | Superseded 2026-10-15 by X-PAR-07 (roof-only PV; ground fiel -, mm | Site plan with parcel boundary (X-BAS-03) and PV row layout | X-BLD-04 |
 | A-M-101 | Access check: 914 mm clear on at least one face per row; roo mm | Re-run access_check.py against the fit-out model with walls as obstacles; AHJ review of aisle widths | X-BLD-04 |
 | A-M-105 | Roof loads: PV dead 0.15 kPa, roof live 0.96 kPa, flat-roof  kPa | ASCE 7 Hazard Tool ground snow, racking datasheet weight, structural check of 6 m bays | X-PAR-07 |
@@ -61,41 +61,24 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source | X-ELS-11 |
 | A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model | X-STD-01 |
 
-## 3. T2 Vendor and manufacturer data
+## 3. T2 In-house design tests and standard data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
-| driver rect_efficiency | 0.8 - | Vendor efficiency curve for the selected rectifier at the operating current | X-PAR |
-| driver storage_round_trip | 0.7 - | ZnBr2 vendor round-trip efficiency at the duty cycle | X-PAR |
+| driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
+| driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC | X-PAR |
+| driver san_cake_TS | 0.2 cake dry solids fraction after screw press | Cake TS on the in-house screw press | X-PAR |
+| driver san_flush_L | 1.0 L per flush, vacuum toilet | Flush volume on the in-house vacuum toilet prototype | X-PAR |
 | driver xfmr_Z_pu | 0.0575 pu pad-mount transformer impedance | Transformer nameplate | X-PAR |
-| A-M-006 | 1500 W/m2K | Exchanger maker rating | X-MAT-12 |
-| A-M-011 | two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm p geometry | Glass-coil vendor drawing | X-MAT-16 |
-| A-M-023 | 1.5 bar a, 25 C, 99.97 mol% bar a, C, mol% | Fuel-cell vendor inlet specification | X-MAT-15 |
-| A-M-032 | 0.22 derating factor | Manufacturer sheet-stock creep data at 85 C | MET-LEACH_CSTR_1-02 |
-| A-M-033 | 700 MPa | Manufacturer creep modulus | MET-LEACH_CSTR_1-02 |
-| A-M-034 | C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3 — | Pultrusion vendor data sheet | MET-LEACH_CSTR_1-02 |
-| A-M-035 | 0.75 kW | Vendor motor rating | MET-LEACH_CSTR_1-02 |
-| A-M-041 | 1.10 margin | Vendor selection | X-ELS-04 |
-| A-M-043 | 0.80 efficiency | Vendor efficiency curve at 2.42 V channel voltage and bounding current | X-PAR-04 |
-| A-M-044 | 250/500/1000/1500/2000/2500/3000/4000 A | Vendor catalog | X-ELS-04 |
-| A-M-045 | 0.22 at 60 C (PVC-U); 0.25 at 82 C (CPVC) pressure factor | Chosen brand table | X-PIP-01 |
-| A-M-046 | PN16 at 20 C (PVDF SDR21); PN10 (PP-H) bar | Chosen brand regression curve | X-PIP-01 |
-| A-M-047 | 120 C PVDF; 80 C PP-H; 60 C HDPE; 200 C glass; 100 C FRP C | Chosen brand data | X-PIP-01 |
-| A-M-054 | 35 C | Membrane vendor temperature limit | X-MAT-19 |
+| A-M-034 | C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3 — | In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21) | MET-LEACH_CSTR_1-02 |
 | A-M-056 | 0.90 power factor | Motor and rectifier data sheets | X-ELS-03 |
 | A-M-057 | >= 1 kW on MCC-1 480 V; < 1 kW on PP-1 208/120 V assignment rule | Equipment nameplates | X-ELS-03 |
-| A-M-058 | 2 x rated fault current | SOL_ARK vendor fault data | X-ELS-07 |
 | A-M-059 | 5x low instantaneous; electronic 1.5x / 0.1 s; main 1.25x /  settings | Chosen brand time-current curves | X-ELS-07 |
 | A-M-060 | 0.5 s | Device curves at the fault current | X-ELS-08 |
-| A-M-062 | derate 0.80; round trip 0.70 fraction | PVWatts run with the chosen modules; battery vendor data | X-ELS-05 |
-| A-M-065 | 0.1 A stray limit; 50 mm air break; 1 % protection current A, mm, fraction | Commissioning measurement of stray current and anode vendor rule | X-MAT-07 |
-| A-M-071 | 1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2 kWh/Nm3 | Vendor quote for a micro cold box (unit task 02) | X-ELS-02 |
-| A-M-072 | RO 3.0 kWh/m3, EDI 0.5 kWh/m3 kWh/m3 | Skid vendor data (unit task 02) | X-ELS-02 |
-| A-M-080 | RECT_EW cabinet 2400 x 800 x 2000 mm mm | Vendor GA | X-RSZ-02 |
-| A-M-084 | H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol% - | Purifier vendor mass balance | X-ELS-02 |
-| A-M-085 | melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0. kWh/kg, kW | Tool vendor data and the production schedule (unit task 02) | X-ELS-02 |
-| A-M-087 | spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3  m, 1/K, MPa | Manufacturer span tables per material and B31.3 flexibility analysis on the routed model | X-PIP-04 |
-| A-M-092 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D mm | Vendor MVR skid general arrangement | X-PAR-04 |
+| A-M-062 | derate 0.80; round trip 0.70 fraction | PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41) | X-ELS-05 |
+| A-M-071 | 1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2 kWh/Nm3 | In-house micro cold box design and commissioning measurement (X-MFG-33) | X-ELS-02 |
+| A-M-085 | melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0. kWh/kg, kW | In-house tool design, trial runs and the production schedule (X-MFG-37) | X-ELS-02 |
+| A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design | X-MFG-32 |
 
 ## 4. T3 Bench and laboratory tests
 
@@ -130,7 +113,8 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | A-M-039 | 2.12 V | Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage per metal | X-PAR-04 |
 | A-M-053 | hydride check each strip cycle, first year inspection | Hydrogen content analysis of a used blank | X-MAT-18 |
 | A-M-064 | 30 S/m | Conductivity meter reading on the liquor | X-MAT-07 |
-| A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | BMED stack vendor data and leach-loop precipitation test (unit task 02) | X-RSZ-01 |
+| A-M-072 | RO 3.0 kWh/m3, EDI 0.5 kWh/m3 kWh/m3 | In-house RO/EDI design and bench test (X-MFG-34) | X-ELS-02 |
+| A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35) | X-RSZ-01 |
 | A-M-081 | potable path: leach bleed -> VCD -> UPW polish (2.3% reject) - | Condensate chloride and pH test against the potable standard (unit task 06) | X-RSZ-06 |
 | A-M-082 | unassigned class reports to FLOAT_SINK kg/d | Lot characterisation per AQS-ASSAY-001 | X-RSZ-07 |
 | A-M-090 | 20 wt% HCl on IA-ACID-01 mass fraction | Bench leach of class A feed at 20 wt% HCl, 90-108 C; ICP-OES extraction vs time | X-PAR-04 |
@@ -182,7 +166,6 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | driver evap_bp_acid_C | 108.6 C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding) | Boiling-point measurement on the product at the body pressure | X-PAR |
 | driver evap_bp_base_C | 108.0 C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines) | Read-off check on the Duhring chart and boiling-point measurement | X-PAR |
 | driver evap_col_u_m_s | 1.0 m/s superficial vapour velocity (below flooding for 25 mm rings at this load) | Flooding check with the selected packing C_s (sizing/scrubber.py) | X-PAR |
-| driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
 | driver evap_cp_acid_prod | 3.1 kJ/(kg K) 20 wt% HCl | Perry sec. 2 heat-capacity table read-off | X-PAR |
 | driver evap_cp_base_prod | 3.55 kJ/(kg K) 20 wt% NaOH | Perry sec. 2 heat-capacity table read-off | X-PAR |
 | driver evap_cp_feed | 3.85 kJ/(kg K) 2 M HCl or NaOH | Perry sec. 2 heat-capacity table read-off | X-PAR |
@@ -215,7 +198,6 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | driver gsh_pump_W_per_kWt | 37.0 W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A) | Loop hydraulic design | X-PAR |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile | X-PAR |
 | driver pv_dc_ac_ratio | 1.2 DC kWp / inverter AC kW | Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio | X-PAR |
-| driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC | X-PAR |
 | driver pv_roof_gcr | 0.6 ground coverage ratio, low-tilt rows | Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt | X-PAR |
 | driver pv_roof_yield_factor | 1.0 roof yield / pv_yield_kWh_kWp_d | PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio | X-PAR |
 | driver pv_system_derate | 0.8 - | PVsyst loss tree for the selected modules and inverters | X-PAR |
@@ -226,29 +208,42 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | driver rx_pyro_cp_kJ_kgK | 2.5 kJ/(kg K) mean feed heat capacity 25-500 C | DSC | X-PAR |
 | driver rx_pyro_dH_MJ_kg | 1.3 MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements) | DSC of the dried float oil | X-PAR |
 | driver rx_pyro_tau_h | 1.0 h solid/liquid residence, batch-equivalent | TGA conversion vs time at 500 C | X-PAR |
-| driver san_cake_TS | 0.2 cake dry solids fraction after screw press | Cake TS on the in-house screw press | X-PAR |
 | driver san_cover_dry | 0.3 dry fraction of compost-toilet cover and bed return | TS of cover material | X-PAR |
 | driver san_digest_srt_d | 15.0 d thermophilic SRT | Digester stability (VFA/alkalinity) at 15 d | X-PAR |
-| driver san_flush_L | 1.0 L per flush, vacuum toilet | Flush volume on the in-house vacuum toilet prototype | X-PAR |
 | driver san_flushes_cap_d | 5.0 flushes per person per day | Flush counter on the HAB toilets for 30 days | X-PAR |
 | driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log | X-PAR |
 | driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) | X-PAR |
 | driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed | X-PAR |
+| driver storage_round_trip | 0.7 - | ZnBr2 vendor round-trip efficiency at the duty cycle | X-PAR |
 | driver vs_T_C | 40.0 C, vent condenser outlet | Vent condenser outlet temperature at design cooling water | X-PAR |
 | driver vs_dp_mm | 16.0 mm, nominal packing (in-house cut PVC tube rings) | Pressure drop and wetting test on the cut rings | X-PAR |
 | driver vs_margin | 1.5 packed height margin | as vs_htu_m | X-PAR |
 | driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate | X-PAR |
 | driver vs_y_out_ppm | 1.0 ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | Outlet HCl by NIOSH 7903 sampling | X-PAR |
 | A-M-005 | 300 / 1000 W/m2K | Agitator selection and coil test | X-MAT-11 |
+| A-M-006 | 1500 W/m2K | Exchanger maker rating | X-MAT-12 |
 | A-M-008 | 88 degC | Wall check at temperature (unit task 02) | MET-LEACH_CSTR_1-02 |
 | A-M-009 | 0 kg/d | HNO3 absorber design (tail-gas flow) | X-SAF-08 |
 | A-M-010 | 40 degC | Tank thermal check | X-SAF-09 |
+| A-M-011 | two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm p geometry | Glass-coil vendor drawing | X-MAT-16 |
 | A-M-020 | 60 C quench outlet; cp 1.08 kJ/kgK; water 25 C C, kJ/kgK | Flue analysis and quench outlet temperature | X-SAF-07 |
 | A-M-022 | 10 bar a, 30 C, 99.9 mol%, dew -40 C bar a, C, mol% | CRYO_H2 storage design (pressure held) | X-MAT-15 |
+| A-M-023 | 1.5 bar a, 25 C, 99.97 mol% bar a, C, mol% | Fuel-cell vendor inlet specification | X-MAT-15 |
 | A-M-024 | 50 bar a synthesis, 250 C, H2:CO2 3:1 bar a, C | MEOH_SYNTH reactor design | X-MAT-14 |
+| A-M-032 | 0.22 derating factor | Manufacturer sheet-stock creep data at 85 C | MET-LEACH_CSTR_1-02 |
+| A-M-033 | 700 MPa | Manufacturer creep modulus | MET-LEACH_CSTR_1-02 |
+| A-M-035 | 0.75 kW | Vendor motor rating | MET-LEACH_CSTR_1-02 |
 | A-M-038 | 100 mm cathode pitch; tank allowances 75/50/150/100/80 mm mm | Fabrication drawing | MET-EW_1-02 |
 | A-M-040 | 0.60 x 0.42 m immersed plate m | Cathode blank drawing | MET-EW_1-02 |
+| A-M-041 | 1.10 margin | Vendor selection | X-ELS-04 |
+| A-M-043 | 0.80 efficiency | Vendor efficiency curve at 2.42 V channel voltage and bounding current | X-PAR-04 |
+| A-M-044 | 250/500/1000/1500/2000/2500/3000/4000 A | Vendor catalog | X-ELS-04 |
+| A-M-045 | 0.22 at 60 C (PVC-U); 0.25 at 82 C (CPVC) pressure factor | Chosen brand table | X-PIP-01 |
+| A-M-046 | PN16 at 20 C (PVDF SDR21); PN10 (PP-H) bar | Chosen brand regression curve | X-PIP-01 |
+| A-M-047 | 120 C PVDF; 80 C PP-H; 60 C HDPE; 200 C glass; 100 C FRP C | Chosen brand data | X-PIP-01 |
 | A-M-048 | 40 C | Edge temperature from each unit task 01 heat balance | X-MAT-09 |
+| A-M-054 | 35 C | Membrane vendor temperature limit | X-MAT-19 |
+| A-M-058 | 2 x rated fault current | SOL_ARK vendor fault data | X-ELS-07 |
 | A-M-061 | flat 24 h profile; night 14 h profile | Hourly load profile from unit duties | X-ELS-05 |
 | A-M-066 | 1 m/s liquid, 10 m/s gas; min DN15; DN50 slurry m/s, DN | Unit task 04 bore calculation with pressure drop | X-PIP-02 |
 | A-M-067 | orthogonal centre distance x 1.2 m | Isometrics (X-PIP-03) | X-PIP-02 |
@@ -260,7 +255,11 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | A-M-075 | FARM second tier floor at L1 datum + 2250 mm, beds and skids mm | X-BLD-01 tier deck design and X-BLD-04 access check | X-RSZ-05 |
 | A-M-076 | FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm mm | X-BLD-04 general arrangement | X-RSZ-05 |
 | A-M-079 | EW cell DC less existing heat outlets goes to HEAT_SINK as c kW | Cell heat balance at unit task 03 | X-RSZ-02 |
+| A-M-080 | RECT_EW cabinet 2400 x 800 x 2000 mm mm | Vendor GA | X-RSZ-02 |
+| A-M-084 | H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol% - | Purifier vendor mass balance | X-ELS-02 |
 | A-M-086 | electrical input to each fed load leaves as heat to HEAT_SIN kW | Per-unit energy balance at unit task 01 | X-RSZ-07 |
+| A-M-087 | spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3  m, 1/K, MPa | Manufacturer span tables per material and B31.3 flexibility analysis on the routed model | X-PIP-04 |
+| A-M-092 | Superseded 2026-10-15 by the in-house design X-MFG-30 (AQS-D mm | Vendor MVR skid general arrangement | X-PAR-04 |
 | A-M-093 | SOL_ARK bus change carried on IA-PV-01 average; PV, storage, kW | Hourly load profile and PVsyst site run | X-PAR-04 |
 | A-M-099 | seed rows moved the smallest distance (100 mm grid, 4 m radi mm | Room-by-room layout review: access, egress, NEC 110.26 faces, oxidizer separation | X-BLD-04 |
 | A-M-100 | 1 h partition at X=15000 (FAB acid room) credited as the IFC mm | Fire-barrier plan shows a rated 1 h wall on X=15000 over the FAB depth (y 8000-18000), with rated penetrations | X-BLD-04 |
@@ -270,7 +269,6 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials | X-MFG-30 |
 | A-M-109 | PV nameplate = 2.0 x balancing nameplate; design cloudy day  -, kW, kWh | NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2 | X-PAR-09 |
 | A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate | X-PAR-10 |
-| A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design | X-MFG-32 |
 | A-M-119 | Unsized driven items: one transfer pump per liquid outlet li m, kPa, kW | Re-run motors.py after each unit's P&ID; reconcile against the P&ID equipment list | X-INV-01 |
 
 ## 7. T6 Commissioning measurements
@@ -281,6 +279,7 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |
 | driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study | X-PAR |
+| driver rect_efficiency | 0.8 - | Vendor efficiency curve for the selected rectifier at the operating current | X-PAR |
 | driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry | X-PAR |
 | driver vs_air_mg_kg | 21.7 mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water) | Vent gas flow meter on the column vent during commissioning | X-PAR |
 | A-M-007 | 0.0002 m2K/W | Operating record | X-MAT-11 |
@@ -291,4 +290,5 @@ Total 239 items: 120 drivers, 119 register entries. Classification rule: first m
 | A-M-042 | 6 V rated; 0.3 V bus drop V | Measured cell and bus voltage | X-PAR-04 |
 | A-M-049 | 85 C | Measured outlet temperatures | X-MAT-09 |
 | A-M-055 | U 7 W/m2K; cp 3.0 (20 % HCl), 3.6 (20 % NaOH), 4.18 (water) W/m2K, kJ/kgK | Outlet temperature measured on the installed coil | X-MAT-19 |
+| A-M-065 | 0.1 A stray limit; 50 mm air break; 1 % protection current A, mm, fraction | Commissioning measurement of stray current and anode vendor rule | X-MAT-07 |
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50) | X-SAN-01 |

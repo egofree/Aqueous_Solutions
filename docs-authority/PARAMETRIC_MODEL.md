@@ -247,7 +247,7 @@ All solved units close.
 | CARLETON_HCL_2023 | Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid. |
 | CIAAW2021 | IUPAC CIAAW, Standard atomic weights 2021, Pure Appl. Chem. 94(5), 573-600 (2022). |
 | CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K). |
-| DOE_H2_COMP | Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry's 9th ed. sec. 10; efficiency to be taken from compressor vendor data. |
+| DOE_H2_COMP | Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry's 9th ed. sec. 10; efficiency from the in-house compressor design and bench run (X-MFG-36). |
 | DVS2205 | DVS 2205-1 (2015) design of thermoplastic tanks: hoop stress from hydrostatic head with long-term creep factors; allowable stress CPVC and PVC-U at temperature. |
 | EDBM_MEMBRANES_2023 | Analysis of Operational Parameters in Acid and Base Production Using an Electrodialysis with Bipolar Membranes Pilot Plant, Membranes 13(2), 200 (2023), https://www.mdpi.com/2077-0375/13/2/200: SEC 1.02-1.18 kWh/kg, CE 87-99 % at 200 A/m2, single pass. |
 | EDBM_PILOT_2023 | Herrero-Gonzalez M. et al., Electrodialysis with Bipolar Membranes for the Sustainable Production of Chemicals from Seawater Brines at Pilot Plant Scale, ACS Sustainable Chem. Eng. (2023), PMC9945178: SEC 1.4 kWh/kg NaOH at 200 A/m2 (CE 80 %), 1.9-2.6 kWh/kg at 300-500 A/m2. |
@@ -487,7 +487,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-031 | PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27 — | Just-suspended speed test with a class A lot; vendor curve |
 | A-M-032 | 0.22 derating factor | Manufacturer sheet-stock creep data at 85 C |
 | A-M-033 | 700 MPa | Manufacturer creep modulus |
-| A-M-034 | C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3 — | Pultrusion vendor data sheet |
+| A-M-034 | C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3 — | In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21) |
 | A-M-035 | 0.75 kW | Vendor motor rating |
 | A-M-036 | 0.85 current efficiency | Bench diaphragm chloride EW cell per metal: deposit mass vs charge |
 | A-M-037 | 200 A/m2 | Deposit quality trial per metal |
@@ -515,7 +515,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-059 | 5x low instantaneous; electronic 1.5x / 0.1 s; main 1.25x /  settings | Chosen brand time-current curves |
 | A-M-060 | 0.5 s | Device curves at the fault current |
 | A-M-061 | flat 24 h profile; night 14 h profile | Hourly load profile from unit duties |
-| A-M-062 | derate 0.80; round trip 0.70 fraction | PVWatts run with the chosen modules; battery vendor data |
+| A-M-062 | derate 0.80; round trip 0.70 fraction | PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41) |
 | A-M-063 | HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 kW, d | Owner critical-load list |
 | A-M-064 | 30 S/m | Conductivity meter reading on the liquor |
 | A-M-065 | 0.1 A stray limit; 50 mm air break; 1 % protection current A, mm, fraction | Commissioning measurement of stray current and anode vendor rule |
@@ -524,21 +524,21 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-068 | rule-based class assignment class | Line-by-line review at unit task 05 |
 | A-M-069 | {"skid": [1200, 800, 1800], "tank": [2400, 1800, 1500], "bed mm | Unit task 02/14 envelopes |
 | A-M-070 | block-sized placeholder boxes of the target block are not ob - | Unit envelopes for GROW_BED, HABITATION, CRYO_* and MFG_SHOP |
-| A-M-071 | 1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2 kWh/Nm3 | Vendor quote for a micro cold box (unit task 02) |
-| A-M-072 | RO 3.0 kWh/m3, EDI 0.5 kWh/m3 kWh/m3 | Skid vendor data (unit task 02) |
+| A-M-071 | 1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2 kWh/Nm3 | In-house micro cold box design and commissioning measurement (X-MFG-33) |
+| A-M-072 | RO 3.0 kWh/m3, EDI 0.5 kWh/m3 kWh/m3 | In-house RO/EDI design and bench test (X-MFG-34) |
 | A-M-073 | DLI 17 mol/m2/d; LED 2.5 umol/J; 10 m head; 50% pump mixed | Crop plan lighting schedule and fixture data (unit task 02) |
 | A-M-074 | rack at level datum + 3200 mm; rise, X, Y, drop mm | 3D routed model (X-PIP-03 close-out with X-BLD-04) |
 | A-M-075 | FARM second tier floor at L1 datum + 2250 mm, beds and skids mm | X-BLD-01 tier deck design and X-BLD-04 access check |
 | A-M-076 | FARM_AQ block L-2, origin 18000,4000, 6000 x 8000 x 3500 mm mm | X-BLD-04 general arrangement |
-| A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | BMED stack vendor data and leach-loop precipitation test (unit task 02) |
+| A-M-077 | BMED 2.1 kWh per kg acid+base pair; equal molar NaOH to adde kWh/kg | In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35) |
 | A-M-078 | PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); groun kWp, m2 | Site survey area check (X-BAS-03) and PV layout |
 | A-M-079 | EW cell DC less existing heat outlets goes to HEAT_SINK as c kW | Cell heat balance at unit task 03 |
 | A-M-080 | RECT_EW cabinet 2400 x 800 x 2000 mm mm | Vendor GA |
 | A-M-081 | potable path: leach bleed -> VCD -> UPW polish (2.3% reject) - | Condensate chloride and pH test against the potable standard (unit task 06) |
 | A-M-082 | unassigned class reports to FLOAT_SINK kg/d | Lot characterisation per AQS-ASSAY-001 |
-| A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and compressor vendor data |
+| A-M-083 | CRYO_H2 compressed gas 200 bar; store 115 kg (7.72 m3 water  bar, kg, m3 | Owner storage-mode decision and in-house compressor bench run (X-MFG-36) |
 | A-M-084 | H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol% - | Purifier vendor mass balance |
-| A-M-085 | melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0. kWh/kg, kW | Tool vendor data and the production schedule (unit task 02) |
+| A-M-085 | melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0. kWh/kg, kW | In-house tool design, trial runs and the production schedule (X-MFG-37) |
 | A-M-086 | electrical input to each fed load leaves as heat to HEAT_SIN kW | Per-unit energy balance at unit task 01 |
 | A-M-087 | spans: PVC Sch 80 table x class factor (P1 0.7, P2 0.75, P3  m, 1/K, MPa | Manufacturer span tables per material and B31.3 flexibility analysis on the routed model |
 | A-M-088 | 2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH) mol/L | EDBM pilot at 2 M product: SEC, current efficiency and product purity |

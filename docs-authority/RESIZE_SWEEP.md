@@ -20,7 +20,7 @@ Rule. Edges carry the design day. A unit whose bounding case exceeds its design-
 | Unassigned class (MSW 35.0 kg/d) | held with reason | reports to FLOAT_SINK capacity | assumption | done |
 | GROW_BED load | 5.0 kW study | 2.25 kW booked; PV average −2.75 kW | AQS-ELEC-003 | done |
 | BMED_UPW_POLISH load | 6.0 kW study | 0.038 kW booked | AQS-ELEC-003 | done |
-| CRYO_ASU load | 18.0 kW study | kept 18.0 kW | calculation is a lower bound (3.03 kW) | open: vendor data |
+| CRYO_ASU load | 18.0 kW study | kept 18.0 kW | calculation is a lower bound (3.03 kW) | open: in-house cold box design (X-MFG-33) |
 | Loads without graph feeds | bus 137 kW vs graph sources | not booked | most loads have continuous_kw but no SOL_ARK feed | open: X-ELS-02 feed edges |
 | H₂ purifier (S45, S49 "purifier held") | not on the graph | not added | ISO 14687 Grade D needs a unit | open: unit to add with CRYO_H2 storage mode |
 | VCD_TRAIN energy for +123 kg/d | not recalculated | — | about 0.1 kW at 20 kWh/m³ | open: X-ELS-02 |

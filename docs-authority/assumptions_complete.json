@@ -51,7 +51,7 @@
  },
  "models/mfg/LEACH_CSTR_1/params.json belts": {
   "basis": "AQS-DUTY-050 section 4",
-  "replaced_by": "Pultrusion vendor data",
+  "replaced_by": "In-house FRP coupon tests (X-MAT-21)",
   "sensitivity": ""
  },
  "models/mfg/LEACH_CSTR_1/params.json level_mm": {

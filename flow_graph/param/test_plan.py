@@ -10,7 +10,7 @@ PH = [  # (phase, title, regex on verification_test, what closes it)
  ('T1', 'Owner and site data', r'owner|ASCE|geotech|building official|Wenner|AHJ|parcel|site survey|site plan|utility', 'Owner decision or site investigation report'),
  ('T4', 'Pilot runs', r'pilot', 'Pilot campaign on plant brine / feed'),
  ('T3', 'Bench and laboratory tests', r'bench|cell test|polari[sz]ation|leach test|float/sink|density of|titration|assay|XRF|ICP|characteris|analysis of|chloride and pH|decomposition|deposit|hydrogen content|just-suspended|precipitation|conductivity', 'Bench test report with method, data and result'),
- ('T2', 'Vendor and manufacturer data', r'vendor|brand|manufacturer|catalog|data sheet|nameplate|quote|maker|pultrusion|time-current|device curves', 'Vendor data sheet, quote or curve filed against the item'),
+ ('T2', 'In-house design tests and standard data', r'in-house|coupon|bench run|stack test|trial run|data sheet|nameplate|time-current|device curves', 'In-house test record or standard data filed against the item'),
  ('T6', 'Commissioning measurements', r'commissioning|^measured|operating|installed|built tank', 'Commissioning record'),
  ('T5', 'Design calculations and drawings', r'.', 'Calculation or drawing issued under the named task'),
 ]

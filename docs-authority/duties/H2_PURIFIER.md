@@ -17,4 +17,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 7. Code. Shop. Not stamped. No envelope file yet.
 
-8. Open items. Bed sizing at vendor data.
+8. Open items. Bed sizing in-house from published isotherms and kinetics (X-MFG-39).

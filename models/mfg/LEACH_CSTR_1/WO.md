@@ -13,4 +13,4 @@ W8 Exports. `export/leach_cstr_1.step`; `export/leach_cstr_1.stl`, one closed so
 W9 BOM. `bom.csv`.
 W10 Fabrication route. Thermoplastic shop: cut CPVC sheet, hot-gas or extrusion weld the seams, solvent-cement the headers and stubs, weld the lid flange, bolt the lid.
 W11 Self-copy relevance. Sheet, plastic weld, and bolt work only; no bought internals.
-W12 Holds. Port bores; lid gasket elastomer; agitator vendor confirmation and just-suspended speed test; drive bridge and seal; FRP channel vendor data.
+W12 Holds. Port bores; lid gasket elastomer; in-house just-suspended speed test (Zwietering) on the agitator; drive bridge and seal; FRP channel coupon tests (X-MAT-21).

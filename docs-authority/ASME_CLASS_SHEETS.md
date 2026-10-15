@@ -44,7 +44,7 @@ documented (e.g. dryer jacket hydro 6 bar).
 Legend — **Code intent:**  
 - **Atm** = atmospheric / sheet / rotomold / fusion tank (not Sec. VIII intent)  
 - **VIII-study** = candidate for BPVC Sec. VIII when P/T issued  
-- **Vendor** = packaged skid; stamp with vendor datasheet  
+- **In-house** = designed in-house (owner decision 2026-10-15: no bought skids); code intent set by X-MFG-40  
 - **TBD** = not classified this pass
 
 | Tag | Duty | Material / joint (known) | Design P | Design T | Code intent | Evidence |
@@ -57,19 +57,19 @@ Legend — **Code intent:**
 | DRYER | Oil-line dryer | 304 trough; jacket | **Jacket hydro 6 bar** (known) | Q3 TBD | VIII-study (jacket) | JW-011/012 |
 | INDUCTION PYROLYZER | Oil pyro shell | Ti Gr.2 GTAW | TBD | High-T TBD | VIII-study / SB-338 theme | JW-013/014 |
 | QUENCH | Pyro quench | 304 GTAW | TBD | TBD | VIII-study | JW-015 |
-| FRACTIONATOR | Oil cuts | 304 GTAW | TBD | TBD | Vendor / VIII-study | JW-016 |
-| AFTERBURNER | NCG burn | CS / 304 | Atm / slight draft | Q1 TBD | Atm / Vendor | JW-017 |
-| BURNOUT ROTARY | Glass burnout | SiC / Alloy 600 vendor | Vendor | Vendor | Vendor | JW-018 |
+| FRACTIONATOR | Oil cuts | 304 GTAW | TBD | TBD | In-house / VIII-study | JW-016 |
+| AFTERBURNER | NCG burn | CS / 304 | Atm / slight draft | Q1 TBD | Atm / In-house | JW-017 |
+| BURNOUT ROTARY | Glass burnout | SiC / Alloy 600 | TBD | TBD | In-house (X-MFG-40) | JW-018 |
 | NaOH DIGEST | Glass digest | PP extrusion | Atm | TBD | Atm | JW-019 |
 | BMED stack | Bipolar ED | PP fusion frames | Atm / low | TBD | Atm | JW-020 |
-| ALK SCRUBBER | Acid-gas scrub | PP/FRP vendor | TBD | TBD | Vendor | JW-021 |
+| ALK SCRUBBER | Acid-gas scrub | PP/FRP | TBD | TBD | In-house (X-MFG-40) | JW-021 |
 | ZnBr2 tanks | ESS electrolyte | PP fusion | Atm | Ambient | Atm | JW-025; NFPA 855 outdoor |
-| Br₂ tower | ZnBr2 Br₂ | PVDF | TBD | Ambient | Vendor / Atm | FLOW_BATTERY |
+| Br₂ tower | ZnBr2 Br₂ | PVDF | TBD | Ambient | In-house / Atm | FLOW_BATTERY |
 | ACID_POLISH_SCRUB | Post-ALK polish | TBD (scrub train) | TBD | TBD | TBD | AQS-EQP-VENT-001 |
 | ZNBR2_BR2_REGEN | Hold / regen | TBD | Atm class | Ambient | Atm | study 50–150 L |
 | CRYO_AHU_COND | Condensate KO | TBD | TBD | Cryo-adjacent | TBD | AQS-EQP-VENT-001 |
 | MET_SCRUB | Metal fume scrub | TBD | TBD | TBD | TBD | AQS-EQP-VENT-001 |
-| COLD_BOX | Air sep / H₂ cold box | Vendor package | TBD | 77–90 K class | Vendor | AQS-CRY-002 |
+| COLD_BOX | Air sep / H₂ cold box | In-house cold box (X-MFG-33) | TBD | 77–90 K class | In-house (X-MFG-40) | AQS-CRY-002 |
 | CRYO_H2 receiver | H₂ holdup | TBD | TBD | Cryo / gas | VIII-study / NFPA 2 | MAQ / kg TBD |
 | CRYO O₂ / N₂ / CO₂ receivers | Product gas | TBD | TBD | Cryo / gas | VIII-study / NFPA 55 | AQS-EQP-CRY-001 |
 | ROOF_TANK | Clean tower water | Noncombustible tank | Atm | Ambient | Atm | AQS-BLD-001 |
@@ -273,11 +273,11 @@ accumulation ≤ 10% MAWP / 3 psi). Normal operating ≤ ~90% of set
 | DRYER jacket | ≤ 5 barg working | **6 barg** (known hydro) | PSV **5.4–6.0 barg** | Set ≤ MAWP; op ≤ 90% set | VIII-study |
 | INDUCTION PYROLYZER | Near-atm process + N₂ | **1.0 barg** study | PSV **≤ 1.0 barg** + rupture as AHJ | Draft / slight + | VIII-study |
 | QUENCH | Near-atm | **1.0 barg** | PSV ≤ MAWP | — | VIII-study |
-| FRACTIONATOR | Distillation mild P | **3.0 barg** study | PSV ≤ 3.0 barg | Vendor may supersede | Vendor / VIII |
-| AFTERBURNER | Draft / slight + | **Atm / 0.5 barg** | Explosion relief per NFPA 86 theme | Atm | Atm / Vendor |
-| ALK SCRUBBER / ACID_POLISH | Fan discharge slight + | **1.0 barg** study | PSV / vent ≤ MAWP | Fan after pack | Vendor |
+| FRACTIONATOR | Distillation mild P | **3.0 barg** study | PSV ≤ 3.0 barg | In-house design (X-MFG-40) | In-house / VIII |
+| AFTERBURNER | Draft / slight + | **Atm / 0.5 barg** | Explosion relief per NFPA 86 theme | Atm | Atm / In-house |
+| ALK SCRUBBER / ACID_POLISH | Fan discharge slight + | **1.0 barg** study | PSV / vent ≤ MAWP | Fan after pack | In-house |
 | ZnBr2 tanks / Br₂ tower | Atm | **Atm / 0.5 barg** | Cons. vent | NFPA 855 outdoor | Atm |
-| COLD_BOX (vendor package) | Vendor | **Vendor stamp** | Vendor PSVs | Do not override vendor | Vendor |
+| COLD_BOX (in-house, X-MFG-33) | TBD | **TBD (X-MFG-40)** | In-house PSVs sized to API 520 | — | In-house |
 | CRYO_H2 receiver (gas) | Buffer 5–20 barg study | **20 barg** study | PSE/PSV **≤ 20 barg** | Under MAQ kg; SI-V-02 class | VIII-study / NFPA 2 |
 | CRYO O₂ / N₂ / CO₂ receivers | 10–20 barg study | **20 barg** study | PSV ≤ MAWP | NFPA 55 | VIII-study |
 | GEN_H2_BUFFER / FC purge buffer | ≤ 16 barg manifold | **16 barg** study | PSV ≤ 16 barg | Arrestor upstream consumer | VIII-study / TBD |
@@ -357,7 +357,7 @@ AWS qualification. Do not treat WPS-N-* as qualified procedures.
 
 | ID | Before Rev C | After Rev C | Still open |
 |---|---|---|---|
-| CMP-ASM-01 | Partial | **Partial→stronger** (study MAWP table) | PE stamp; vendor datasheets |
+| CMP-ASM-01 | Partial | **Partial→stronger** (study MAWP table) | PE stamp; in-house design data |
 | CMP-ASM-02 | Partial | Partial (PC-11 added; numeric study P/T) | Hydro procedures final |
 | CMP-ASM-03 | Partial | Partial | Formal thermoplastic procedure binder |
 | CMP-ASM-04 | Gap | Gap (**class notes** only — not PQRs) | Fabricator WPS/PQR outside repo |

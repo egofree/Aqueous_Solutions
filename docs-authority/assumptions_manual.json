@@ -500,14 +500,14 @@
   "where": "LEACH_CSTR_1 FRP belts",
   "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
   "sensitivity": "Belt stress and deflection",
-  "replaced_by": "Pultrusion vendor data sheet",
+  "replaced_by": "In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21)",
   "task": "MET-LEACH_CSTR_1-02",
   "files": [
    "docs-authority/sizing/LEACH_CSTR_1.md"
   ],
   "id": "A-M-034",
   "needs_verification": true,
-  "verification_test": "Pultrusion vendor data sheet"
+  "verification_test": "In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21)"
  },
  {
   "value": "0.75",
@@ -920,14 +920,14 @@
   "where": "AQS-ELEC-007 PV and storage",
   "basis": "Typical PV system losses; flow battery round trip",
   "sensitivity": "PV size inverse",
-  "replaced_by": "PVWatts run with the chosen modules; battery vendor data",
+  "replaced_by": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)",
   "task": "X-ELS-05",
   "files": [
    "docs-authority/POWER_SIZING.md"
   ],
   "id": "A-M-062",
   "needs_verification": true,
-  "verification_test": "PVWatts run with the chosen modules; battery vendor data"
+  "verification_test": "PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41)"
  },
  {
   "value": "HABITATION, CRYO_H2, CRYO_ASU, GROW_BED, controls = 32 kW; 2 days",
@@ -1057,14 +1057,14 @@
   "where": "CRYO_ASU load (AQS-ELEC-003)",
   "basis": "S23: Energy saving opportunities in oxygen plant, IJRET 2013, doi 10.15623/ijret.2013.0202018 (80 m3/h plant, 1.30-1.40 before optimisation); air ratio from 21 vol% O2 at about 100% recovery",
   "sensitivity": "Linear in load; scale penalty below 80 m3/h not included, so the value is a lower bound",
-  "replaced_by": "Vendor quote for a micro cold box (unit task 02)",
+  "replaced_by": "In-house micro cold box design and commissioning measurement (X-MFG-33)",
   "task": "X-ELS-02",
   "files": [
    "docs-authority/LOAD_LIST.md"
   ],
   "id": "A-M-071",
   "needs_verification": true,
-  "verification_test": "Vendor quote for a micro cold box (unit task 02)"
+  "verification_test": "In-house micro cold box design and commissioning measurement (X-MFG-33)"
  },
  {
   "value": "RO 3.0 kWh/m3, EDI 0.5 kWh/m3",
@@ -1072,14 +1072,14 @@
   "where": "BMED_UPW_POLISH load",
   "basis": "S24 Greenlee et al. 2009 Water Res 43:2317 (brackish RO 0.5-3); S25 Alvarado and Chen 2014 Electrochim Acta 132:583 (EDI); upper ends taken",
   "sensitivity": "Linear; load is under 0.1 kW",
-  "replaced_by": "Skid vendor data (unit task 02)",
+  "replaced_by": "In-house RO/EDI design and bench test (X-MFG-34)",
   "task": "X-ELS-02",
   "files": [
    "docs-authority/LOAD_LIST.md"
   ],
   "id": "A-M-072",
   "needs_verification": true,
-  "verification_test": "Skid vendor data (unit task 02)"
+  "verification_test": "In-house RO/EDI design and bench test (X-MFG-34)"
  },
  {
   "value": "DLI 17 mol/m2/d; LED 2.5 umol/J; 10 m head; 50% pump",
@@ -1149,7 +1149,7 @@
   "where": "BMED_ACID continuous_kw, IA-BASE-PPT",
   "basis": "ELECTRICAL BMED 1.8-2.4 kWh/kg (graph rate_source); BMED splits salt 1:1; leached Al, Ca, Mg, Fe recovered as hydroxides to free chloride for regeneration",
   "sensitivity": "16.1 kW linear in acid demand; base return linear",
-  "replaced_by": "BMED stack vendor data and leach-loop precipitation test (unit task 02)",
+  "replaced_by": "In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35)",
   "task": "X-RSZ-01",
   "files": [
    "flow_graph/plant_flow_graph.json",
@@ -1157,7 +1157,7 @@
   ],
   "id": "A-M-077",
   "needs_verification": true,
-  "verification_test": "BMED stack vendor data and leach-loop precipitation test (unit task 02)"
+  "verification_test": "In-house BMED stack polarisation test and leach-loop precipitation test (X-MFG-35)"
  },
  {
   "value": "PV 1336 kWp roof-only on a 156 x 84 m roof (X-PAR-07); ground field removed",
@@ -1247,14 +1247,14 @@
   "where": "CRYO_H2 params and load",
   "basis": "Study basis set by Mike 2026-10-15 (owner may override); store = two days of critical load on H2 (AQS-ELEC-007); H2 density at 200 bar 25 C from NIST webbook",
   "sensitivity": "Load 0.57 kW linear in throughput; store volume linear in days of backup",
-  "replaced_by": "Owner storage-mode decision and compressor vendor data",
+  "replaced_by": "Owner storage-mode decision and in-house compressor bench run (X-MFG-36)",
   "task": "X-ELS-02",
   "files": [
    "flow_graph/plant_flow_graph.json"
   ],
   "id": "A-M-083",
   "needs_verification": true,
-  "verification_test": "Owner storage-mode decision and compressor vendor data"
+  "verification_test": "Owner storage-mode decision and in-house compressor bench run (X-MFG-36)"
  },
  {
   "value": "H2_PURIFIER zero net mass loss; S49 upstream water 0.1 mol%",
@@ -1277,14 +1277,14 @@
   "where": "AQS-MFG-010 and MFG_SHOP continuous_kw",
   "basis": "Small induction melting of Cu about 0.5-1.0 kWh/kg incl. losses (upper taken); atomiser includes remelt and gas recirculation; shop nameplates typical for the tool class",
   "sensitivity": "Average 3.98 kW; peak 38.5 kW sets the feeder",
-  "replaced_by": "Tool vendor data and the production schedule (unit task 02)",
+  "replaced_by": "In-house tool design, trial runs and the production schedule (X-MFG-37)",
   "task": "X-ELS-02",
   "files": [
    "docs-authority/MFG_TOOLS.md"
   ],
   "id": "A-M-085",
   "needs_verification": true,
-  "verification_test": "Tool vendor data and the production schedule (unit task 02)"
+  "verification_test": "In-house tool design, trial runs and the production schedule (X-MFG-37)"
  },
  {
   "value": "electrical input to each fed load leaves as heat to HEAT_SINK",

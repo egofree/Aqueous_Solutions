@@ -116,7 +116,7 @@ Ag/Al contact → belt fire → IV test.
 | Dedicated PFD / FreeCAD solids | **Done** Wave 4 — AQS-PFD-FAB-PV-001 + PV_* envelopes |
 
 Do not silently drop this branch. Do not invent belt-furnace or
-PECVD nameplate kW until vendor datasheets land.
+PECVD nameplate kW until the in-house tool designs set them (X-MFG-38).
 
 ---
 

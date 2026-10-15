@@ -46,7 +46,7 @@ recording **first-principles** duty methods (system fit → standards/physics
 | **REMIN** | WTR | Ca/Mg/K potable remineralization | Study — **mineral balance issued** (§4) | S26 potable → HAB | Confirm salt source vs S07; UV integrity; equipment IDs |
 | **GEO_ORC** | GEO | Binary ORC electric (heat→electric) | Study — **Carnot-limited band** (§5) | S48 → Sol-Ark AC couple | GHEX conductivity / T_source survey |
 | **LITHO_STUB** | FAB | Coat / aligner / develop Present-path schedule | **Study duty+mass issued** (§8) | WS_SOLV S38; resist waste → oil/org | FreeCAD children + wafer starts lock + UV datasheet (external) |
-| **SOLAR_PV_CELL** | FAB | Texture→emitter→ARC→contact→fire | **Study duty bands locked** (§6) | PV_* reagents; S03/S02; etch S10 | Vendor datasheets + PV_COUNT offtake (external) |
+| **SOLAR_PV_CELL** | FAB | Texture→emitter→ARC→contact→fire | **Study duty bands locked** (§6) | PV_* reagents; S03/S02; etch S10 | In-house tool designs (X-MFG-38) + PV_COUNT offtake (external) |
 | **BLOW_MOLD** | MFG | Blow / shoe mold polymer forming | **Study duty issued** (§9) | Polymer melt; scrap S16 | Mold FreeCAD + machine datasheet (external) |
 | **ELECTRODE_COAT** | MFG | Electrode coating booth (non-precious M1 class) | **Study duty+class issued** (§10) | MET substrate; exhaust S71–S72 | Booth CAD + lab formulation (external); RuO₂–IrO₂ deferred |
 
@@ -309,7 +309,7 @@ sectors (e.g. electrode coat in MFG using FAB wet practice) — AQS-SEC-001
 | ST-VCD-01 | WP-A5b | VCD compressor + equipment IDs | **Closed** (duty §3) — 0.08 kW_e | Compressor selection; equipment IDs |
 | ST-REMIN-01 | WP-A5c | Mineral source + UV + IDs | **Closed** (balance §4) | Source vs S07; UV; equipment IDs |
 | ST-ORC-01 | WP-A5d | GHEX survey / T_source / Q_surplus | **Closed** (Carnot §5) — M1 ~0 | Site GHEX survey |
-| ST-SOLAR-01 | WP-A5e | PECVD/belt nameplates; PV_COUNT | **Closed** (bands §6) — 1.0 kW share | Vendor datasheets; offtake decision |
+| ST-SOLAR-01 | WP-A5e | PECVD/belt nameplates; PV_COUNT | **Reopened** 2026-10-15 (X-GOV-20: it rested on bought-tool datasheets); 1.0 kW share kept as study | In-house tool designs (X-MFG-38); offtake decision |
 
 ---
 
@@ -409,7 +409,7 @@ formulation trial — **owner/date TBD**.
 
 1. AQS-MFG-ELC-001 Rev B; AQS-VENT-001 exhaust path.
 2. AQS-BOM-SC-001 §3.3; industrial paint-booth / IR-cure class duty bands
-   (order-of-magnitude — not vendor stamp).
+   (order-of-magnitude — not a stamped rating).
 
 ---
 

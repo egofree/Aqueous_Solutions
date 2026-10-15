@@ -89,7 +89,7 @@ REFS = {
  'GREENWOOD': 'Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl).',
  'ASHRAE_SYS2020': 'ASHRAE Handbook, HVAC Systems and Equipment (2020), ch. 13 hydronic heating and cooling: design temperature difference about 10-11 K (20 F) for chilled/condenser water loops.',
  'WILSON2006': 'Wilson K.C., Addie G.R., Sellgren A., Clift R., Slurry Transport Using Centrifugal Pumps, 3rd ed., Springer (2006): deposition velocity and minimum bore for settling slurries.',
- 'DOE_H2_COMP': 'Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry\'s 9th ed. sec. 10; efficiency to be taken from compressor vendor data.',
+ 'DOE_H2_COMP': 'Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry\'s 9th ed. sec. 10; efficiency from the in-house compressor design and bench run (X-MFG-36).',
  'USBM_CL_EW': 'U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte.',
  'CARLETON_HCL_2023': 'Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid.',
  'VOGELBUSCH_MVR': 'Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count.',
