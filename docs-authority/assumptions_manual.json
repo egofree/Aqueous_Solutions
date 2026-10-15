@@ -3108,5 +3108,25 @@
     "verification": "86 lines: 43 motors, 900 building blocks, 13 insert sets",
     "replace_when": "Failure-rate data from the first operating year",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-186",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "EXPANDER backup refrigeration",
+    "statement": "Reverse-Brayton N2 loop backs up the CO2 condenser chiller: pressure ratio 5, inlet 300 K, expander eta_s 0.75, compressor eta_s 0.70, N2 cp 1.04 kJ/kg K (PERRY9), gas warms to -25 C at the condenser",
+    "verification": "Rated 0.082 kW cold, 220 kg/d N2, 0.44 kW net",
+    "replace_when": "Commissioning run of the loop at rated CO2 load",
+    "doc": "AQS-PAR-003"
   }
 ]

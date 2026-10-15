@@ -7817,6 +7817,15 @@
           "comp_stages": 4,
           "comp_ratio_per_stage": 2.114742526881128,
           "comp_T_out_C": 121.93064278721914,
+          "expander_backup": {
+            "cold_kW": 0.08228933259548611,
+            "T_out_C": -56.08836699924316,
+            "loop_kg_d": 219.9004069352681,
+            "shaft_kW": 0.21953365601652078,
+            "net_kW": 0.44275531385620787,
+            "COP": 0.1858573573714599,
+            "chiller_kW": 0.03291573303819444
+          },
           "H_mm": 1244,
           "D_mm": 415
         }
@@ -29614,7 +29623,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): no refrigeration duty; loop idle pending Q-010"
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): no refrigeration duty; loop idle in normal operation; standby backup (Q-010 closed)"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -29644,7 +29653,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): no refrigeration duty; loop idle pending Q-010"
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): no refrigeration duty; loop idle in normal operation; standby backup (Q-010 closed)"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

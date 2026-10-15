@@ -2369,5 +2369,33 @@
   "register": "A-M-185",
   "needs_verification": true,
   "verification_test": "Replace with failure-rate data from the first operating year (X-OPS-02)"
+ },
+ "exp_pr": {
+  "value": 5.0,
+  "units": "- reverse-Brayton N2 loop pressure ratio (backup refrigeration, Q-010)",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "exp_eta_s": {
+  "value": 0.75,
+  "units": "- expander isentropic efficiency",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "exp_eta_comp": {
+  "value": 0.7,
+  "units": "- loop compressor isentropic efficiency",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "exp_T_in_K": {
+  "value": 300.0,
+  "units": "K expander inlet after aftercooler",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
  }
 }
