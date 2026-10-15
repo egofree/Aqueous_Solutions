@@ -15,6 +15,10 @@ Follow the plan file. Do not keep a second list of exceptions.
 
 Every new assumption gets an entry in `docs-authority/assumptions_manual.json` in the same commit (value, units, where used, basis, sensitivity, replacing test, task). Run `docs-authority/_assumptions_register.py`; it regenerates AQS-REG-002 and fails on a bad entry.
 
+## Sizing
+
+Nothing is fixed arbitrarily. Size every unit, rate, and space for the bounding case from actual need (AQS-ASSAY-001 envelope, AQS-ELEC-007 bounding load). Constraints exist only to make the parts integrate. When a restriction (block size, cell pitch, held rate, "no rate change") blocks a sized design, revise the restriction. Sizing-driven rate and layout changes are approved by default. Each one is still documented, propagated to every affected file, register-tracked, and committed with the checks passing. Owner rule, Mike Matthews, 2026-10-15.
+
 ## Done
 
 Housekeeping is part of the item, not a later pass. A commit that changes the work and leaves the board or a contradicted page behind is not done.
