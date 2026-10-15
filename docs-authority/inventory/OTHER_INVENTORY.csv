@@ -89,12 +89,12 @@ CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 1
 CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-XE: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S04: 2 per support (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,S73: 2 per support (assumed)
-CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,S85: 2 per support (assumed)
+CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,S85: 2 per support (assumed)
 CRYO,CRYO,CRYO_CO2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_CO2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_CO2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,S04: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_CO2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",25,S73: AQS-PIP-005 span count
-CRYO,CRYO,CRYO_CO2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",23,S85: AQS-PIP-005 span count
+CRYO,CRYO,CRYO_CO2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",24,S85: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_CO2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S04: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_CO2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S73: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_CO2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S85: one at each end nozzle (assumed)
@@ -135,13 +135,13 @@ CRYO,CRYO,CRYO_KR,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24"
 CRYO,CRYO,CRYO_KR,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-KR-RET: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,S84: 2 per support (assumed)
 CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S88: 2 per support (assumed)
-CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-N2-VENT: 2 per support (assumed)
+CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-N2-VENT: 2 per support (assumed)
 CRYO,CRYO,CRYO_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,6,IA-AHU-FIX: 2 per support (assumed)
 CRYO,CRYO,CRYO_N2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_N2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_N2,support,U-bolt with guide,DN20,"316 U-bolt, MSS SP-58 Type 24",19,S84: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,S88: AQS-PIP-005 span count
-CRYO,CRYO,CRYO_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",16,IA-N2-VENT: AQS-PIP-005 span count
+CRYO,CRYO,CRYO_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,IA-N2-VENT: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_N2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",3,IA-AHU-FIX: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_N2,valve,isolation valve,DN20,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S84: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S88: one at each end nozzle (assumed)
@@ -357,7 +357,7 @@ FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 D
 FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-NH3-NIT
 FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve S33
 FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S33: 2 per support (assumed)
-FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-NH3-MEAM: 2 per support (assumed)
+FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-NH3-MEAM: 2 per support (assumed)
 FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-NH3-IMID: 2 per support (assumed)
 FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-NH3-NIT: 2 per support (assumed)
 FAB,reagent,WS_AMMONIA,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S33: pumped line (assumed)
@@ -369,7 +369,7 @@ FAB,reagent,WS_AMMONIA,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTF
 FAB,reagent,WS_AMMONIA,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FAB,reagent,WS_AMMONIA,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,S33: AQS-PIP-005 span count
-FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-NH3-MEAM: AQS-PIP-005 span count
+FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-NH3-MEAM: AQS-PIP-005 span count
 FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-NH3-IMID: AQS-PIP-005 span count
 FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-NH3-NIT: AQS-PIP-005 span count
 FAB,reagent,WS_AMMONIA,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S33: pump discharge (assumed)
@@ -557,11 +557,11 @@ FARM,FARM,ABE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer p
 FARM,FARM,ABE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ACETONE to WS_SOLV: run and fault (assumed)
 FARM,FARM,ABE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BUOH-S to BUOH_STILL: run and fault (assumed)
 FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-BUOH: 2 per support (assumed)
-FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-ACETONE: 2 per support (assumed)
-FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-ABE-ETOH: 2 per support (assumed)
+FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-ACETONE: 2 per support (assumed)
+FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-ABE-ETOH: 2 per support (assumed)
 FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-ABE-CO2: 2 per support (assumed)
 FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,IA-ABE-STILL: 2 per support (assumed)
-FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-BUOH-S: 2 per support (assumed)
+FARM,FARM,ABE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-BUOH-S: 2 per support (assumed)
 FARM,FARM,ABE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BUOH: pumped line (assumed)
 FARM,FARM,ABE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ACETONE: pumped line (assumed)
 FARM,FARM,ABE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ABE-ETOH: pumped line (assumed)
@@ -573,11 +573,11 @@ FARM,FARM,ABE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1
 FARM,FARM,ABE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,ABE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,IA-BUOH: AQS-PIP-005 span count
-FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-ACETONE: AQS-PIP-005 span count
-FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-ABE-ETOH: AQS-PIP-005 span count
+FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-ACETONE: AQS-PIP-005 span count
+FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-ABE-ETOH: AQS-PIP-005 span count
 FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-ABE-CO2: AQS-PIP-005 span count
 FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,IA-ABE-STILL: AQS-PIP-005 span count
-FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-BUOH-S: AQS-PIP-005 span count
+FARM,FARM,ABE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-BUOH-S: AQS-PIP-005 span count
 FARM,FARM,ABE,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-BUOH: pump discharge (assumed)
 FARM,FARM,ABE,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ACETONE: pump discharge (assumed)
 FARM,FARM,ABE,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ABE-ETOH: pump discharge (assumed)
@@ -599,8 +599,8 @@ FARM,FARM,ACETOX,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pum
 FARM,FARM,ACETOX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-AC-EX to WS_SOLV: run and fault (assumed)
 FARM,FARM,ACETOX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-AC-H2O to ROOF_TANK: run and fault (assumed)
 FARM,FARM,ACETOX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ACOH to ACEX: run and fault (assumed)
-FARM,FARM,ACETOX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,6,IA-ACOH: 2 per support (assumed)
-FARM,FARM,ACETOX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-AC-H2O: 2 per support (assumed)
+FARM,FARM,ACETOX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,IA-ACOH: 2 per support (assumed)
+FARM,FARM,ACETOX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-AC-H2O: 2 per support (assumed)
 FARM,FARM,ACETOX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-AC-EX: 2 per support (assumed)
 FARM,FARM,ACETOX,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ACOH: pumped line (assumed)
 FARM,FARM,ACETOX,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-AC-H2O: pumped line (assumed)
@@ -610,8 +610,8 @@ FARM,FARM,ACETOX,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens
 FARM,FARM,ACETOX,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,ACETOX,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,ACETOX,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,IA-AC-EX: AQS-PIP-005 span count
-FARM,FARM,ACETOX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",3,IA-ACOH: AQS-PIP-005 span count
-FARM,FARM,ACETOX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-AC-H2O: AQS-PIP-005 span count
+FARM,FARM,ACETOX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",4,IA-ACOH: AQS-PIP-005 span count
+FARM,FARM,ACETOX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-AC-H2O: AQS-PIP-005 span count
 FARM,FARM,ACETOX,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ACOH: pump discharge (assumed)
 FARM,FARM,ACETOX,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-AC-H2O: pump discharge (assumed)
 FARM,FARM,ACETOX,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-AC-EX: pump discharge (assumed)
@@ -625,7 +625,7 @@ FARM,FARM,ACEX,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump 
 FARM,FARM,ACEX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-IL to LIGNO_PRE: run and fault (assumed)
 FARM,FARM,ACEX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-IL-BRINE to LEACH_CSTR_1: run and fault (assumed)
 FARM,FARM,ACEX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-IL: 2 per support (assumed)
-FARM,FARM,ACEX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,IA-IL-BRINE: 2 per support (assumed)
+FARM,FARM,ACEX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,IA-IL-BRINE: 2 per support (assumed)
 FARM,FARM,ACEX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-CLOSE-6: 2 per support (assumed)
 FARM,FARM,ACEX,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-IL: pumped line (assumed)
 FARM,FARM,ACEX,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-IL-BRINE: pumped line (assumed)
@@ -635,7 +635,7 @@ FARM,FARM,ACEX,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",
 FARM,FARM,ACEX,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,ACEX,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,ACEX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-IL: AQS-PIP-005 span count
-FARM,FARM,ACEX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,IA-IL-BRINE: AQS-PIP-005 span count
+FARM,FARM,ACEX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",32,IA-IL-BRINE: AQS-PIP-005 span count
 FARM,FARM,ACEX,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-CLOSE-6: AQS-PIP-005 span count
 FARM,FARM,ACEX,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-IL: pump discharge (assumed)
 FARM,FARM,ACEX,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,IA-IL-BRINE: pump discharge (assumed)
@@ -647,7 +647,7 @@ FARM,FARM,ALD,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,t
 FARM,FARM,ALD,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-ALD to GLYOXAL
 FARM,FARM,ALD,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ALD to GLYOXAL: run and fault (assumed)
 FARM,FARM,ALD,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,IA-ALD: 2 per support (assumed)
-FARM,FARM,ALD,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-ALD-H2: 2 per support (assumed)
+FARM,FARM,ALD,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,IA-ALD-H2: 2 per support (assumed)
 FARM,FARM,ALD,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ALD: pumped line (assumed)
 FARM,FARM,ALD,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ALD-H2: pumped line (assumed)
 FARM,FARM,ALD,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -655,7 +655,7 @@ FARM,FARM,ALD,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1
 FARM,FARM,ALD,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,ALD,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,ALD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",4,IA-ALD: AQS-PIP-005 span count
-FARM,FARM,ALD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-ALD-H2: AQS-PIP-005 span count
+FARM,FARM,ALD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",30,IA-ALD-H2: AQS-PIP-005 span count
 FARM,FARM,ALD,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ALD: pump discharge (assumed)
 FARM,FARM,ALD,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ALD-H2: pump discharge (assumed)
 FARM,FARM,ALD,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-ALD: one at each end nozzle (assumed)
@@ -674,12 +674,12 @@ FARM,FARM,BEES,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1
 FARM,FARM,BEES,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,BEES,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,BEES,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,BSFL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-CLOSE-9: 2 per support (assumed)
+FARM,FARM,BSFL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-CLOSE-9: 2 per support (assumed)
 FARM,FARM,BSFL,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,FARM,BSFL,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,BSFL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,BSFL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,BSFL,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-CLOSE-9: AQS-PIP-005 span count
+FARM,FARM,BSFL,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-CLOSE-9: AQS-PIP-005 span count
 FARM,FARM,BSFL,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-CLOSE-9: one at each end nozzle (assumed)
 FARM,FARM,BUCL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BUCL to QUAT (assumed size)
 FARM,FARM,BUCL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BUCL-EX to WS_SOLV (assumed size)
@@ -690,8 +690,8 @@ FARM,FARM,BUCL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump 
 FARM,FARM,BUCL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BUCL to QUAT: run and fault (assumed)
 FARM,FARM,BUCL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BUCL-EX to WS_SOLV: run and fault (assumed)
 FARM,FARM,BUCL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BUCL-H2O to ROOF_TANK: run and fault (assumed)
-FARM,FARM,BUCL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-BUCL: 2 per support (assumed)
-FARM,FARM,BUCL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-BUCL-H2O: 2 per support (assumed)
+FARM,FARM,BUCL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-BUCL: 2 per support (assumed)
+FARM,FARM,BUCL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-BUCL-H2O: 2 per support (assumed)
 FARM,FARM,BUCL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-BUCL-EX: 2 per support (assumed)
 FARM,FARM,BUCL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BUCL: pumped line (assumed)
 FARM,FARM,BUCL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BUCL-H2O: pumped line (assumed)
@@ -701,8 +701,8 @@ FARM,FARM,BUCL,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",
 FARM,FARM,BUCL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,BUCL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,BUCL,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",18,IA-BUCL-EX: AQS-PIP-005 span count
-FARM,FARM,BUCL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-BUCL: AQS-PIP-005 span count
-FARM,FARM,BUCL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-BUCL-H2O: AQS-PIP-005 span count
+FARM,FARM,BUCL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-BUCL: AQS-PIP-005 span count
+FARM,FARM,BUCL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-BUCL-H2O: AQS-PIP-005 span count
 FARM,FARM,BUCL,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-BUCL: pump discharge (assumed)
 FARM,FARM,BUCL,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-BUCL-H2O: pump discharge (assumed)
 FARM,FARM,BUCL,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-BUCL-EX: pump discharge (assumed)
@@ -712,13 +712,13 @@ FARM,FARM,BUCL,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, 
 FARM,FARM,CLOVER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-NECTAR to BEES (assumed size)
 FARM,FARM,CLOVER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-NECTAR to BEES
 FARM,FARM,CLOVER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NECTAR to BEES: run and fault (assumed)
-FARM,FARM,CLOVER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-NECTAR: 2 per support (assumed)
+FARM,FARM,CLOVER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-NECTAR: 2 per support (assumed)
 FARM,FARM,CLOVER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NECTAR: pumped line (assumed)
 FARM,FARM,CLOVER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,FARM,CLOVER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,CLOVER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,CLOVER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,CLOVER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-NECTAR: AQS-PIP-005 span count
+FARM,FARM,CLOVER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-NECTAR: AQS-PIP-005 span count
 FARM,FARM,CLOVER,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-NECTAR: pump discharge (assumed)
 FARM,FARM,CLOVER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-NECTAR: one at each end nozzle (assumed)
 FARM,FARM,COMPOST,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-CLOSE-2 to GROW_BED (assumed size)
@@ -762,13 +762,13 @@ FARM,FARM,COMPOST,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends,
 FARM,FARM,CRAYFISH,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-CLOSE-11 to IMID (assumed size)
 FARM,FARM,CRAYFISH,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-CLOSE-11 to IMID
 FARM,FARM,CRAYFISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-CLOSE-11 to IMID: run and fault (assumed)
-FARM,FARM,CRAYFISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,IA-CLOSE-11: 2 per support (assumed)
+FARM,FARM,CRAYFISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,IA-CLOSE-11: 2 per support (assumed)
 FARM,FARM,CRAYFISH,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-CLOSE-11: pumped line (assumed)
 FARM,FARM,CRAYFISH,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,FARM,CRAYFISH,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,CRAYFISH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,CRAYFISH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,CRAYFISH,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",4,IA-CLOSE-11: AQS-PIP-005 span count
+FARM,FARM,CRAYFISH,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",5,IA-CLOSE-11: AQS-PIP-005 span count
 FARM,FARM,CRAYFISH,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-CLOSE-11: pump discharge (assumed)
 FARM,FARM,CRAYFISH,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-CLOSE-11: one at each end nozzle (assumed)
 FARM,FARM,DUCKWEED,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-WEED-SUMP to FISH_SUMP (assumed size)
@@ -938,8 +938,8 @@ FARM,FARM,HNO3,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump 
 FARM,FARM,HNO3,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-HNO3 to WS_NITRIC: run and fault (assumed)
 FARM,FARM,HNO3,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NIT-H2O to ROOF_TANK: run and fault (assumed)
 FARM,FARM,HNO3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-HNO3: 2 per support (assumed)
-FARM,FARM,HNO3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-NIT-H2O: 2 per support (assumed)
-FARM,FARM,HNO3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-HNO3-VENT: 2 per support (assumed)
+FARM,FARM,HNO3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-NIT-H2O: 2 per support (assumed)
+FARM,FARM,HNO3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-HNO3-VENT: 2 per support (assumed)
 FARM,FARM,HNO3,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HNO3: pumped line (assumed)
 FARM,FARM,HNO3,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NIT-H2O: pumped line (assumed)
 FARM,FARM,HNO3,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HNO3-VENT: pumped line (assumed)
@@ -948,8 +948,8 @@ FARM,FARM,HNO3,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",
 FARM,FARM,HNO3,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,HNO3,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-HNO3: AQS-PIP-005 span count
-FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-NIT-H2O: AQS-PIP-005 span count
-FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-HNO3-VENT: AQS-PIP-005 span count
+FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-NIT-H2O: AQS-PIP-005 span count
+FARM,FARM,HNO3,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-HNO3-VENT: AQS-PIP-005 span count
 FARM,FARM,HNO3,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-HNO3: pump discharge (assumed)
 FARM,FARM,HNO3,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-NIT-H2O: pump discharge (assumed)
 FARM,FARM,HNO3,valve,check valve,DN15,"PVC-lined swing/ball check valve in FRP service, ISO 16137",1,IA-HNO3-VENT: pump discharge (assumed)
@@ -959,13 +959,13 @@ FARM,FARM,HNO3,valve,isolation valve,DN15,"PVC-lined ball valve in FRP service, 
 FARM,FARM,HTC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-HTC-01 to COMPOST (assumed size)
 FARM,FARM,HTC,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-HTC-01 to COMPOST
 FARM,FARM,HTC,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-HTC-01 to COMPOST: run and fault (assumed)
-FARM,FARM,HTC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-HTC-01: 2 per support (assumed)
+FARM,FARM,HTC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-HTC-01: 2 per support (assumed)
 FARM,FARM,HTC,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HTC-01: pumped line (assumed)
 FARM,FARM,HTC,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,FARM,HTC,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,HTC,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,HTC,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,HTC,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,IA-HTC-01: AQS-PIP-005 span count
+FARM,FARM,HTC,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-HTC-01: AQS-PIP-005 span count
 FARM,FARM,HTC,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-HTC-01: pump discharge (assumed)
 FARM,FARM,HTC,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-HTC-01: one at each end nozzle (assumed)
 FARM,FARM,IMID,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-IMID to QUAT (assumed size)
@@ -977,9 +977,9 @@ FARM,FARM,IMID,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump 
 FARM,FARM,IMID,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-IMID to QUAT: run and fault (assumed)
 FARM,FARM,IMID,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-IMID-EX to NUTRIENT_DOSE: run and fault (assumed)
 FARM,FARM,IMID,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-IMID-H2O to ROOF_TANK: run and fault (assumed)
-FARM,FARM,IMID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-IMID: 2 per support (assumed)
+FARM,FARM,IMID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-IMID: 2 per support (assumed)
 FARM,FARM,IMID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-IMID-H2O: 2 per support (assumed)
-FARM,FARM,IMID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-IMID-EX: 2 per support (assumed)
+FARM,FARM,IMID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-IMID-EX: 2 per support (assumed)
 FARM,FARM,IMID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-IMID: pumped line (assumed)
 FARM,FARM,IMID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-IMID-H2O: pumped line (assumed)
 FARM,FARM,IMID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-IMID-EX: pumped line (assumed)
@@ -987,9 +987,9 @@ FARM,FARM,IMID,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1
 FARM,FARM,IMID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,IMID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,IMID,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,IMID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-IMID: AQS-PIP-005 span count
+FARM,FARM,IMID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-IMID: AQS-PIP-005 span count
 FARM,FARM,IMID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-IMID-H2O: AQS-PIP-005 span count
-FARM,FARM,IMID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-IMID-EX: AQS-PIP-005 span count
+FARM,FARM,IMID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-IMID-EX: AQS-PIP-005 span count
 FARM,FARM,IMID,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-IMID: pump discharge (assumed)
 FARM,FARM,IMID,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-IMID-H2O: pump discharge (assumed)
 FARM,FARM,IMID,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-IMID-EX: pump discharge (assumed)
@@ -1024,7 +1024,7 @@ FARM,FARM,LIGNO_PRE,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1
 FARM,FARM,LIGNO_PRE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-LIG-01: 2 per support (assumed)
 FARM,FARM,LIGNO_PRE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-CEL-01: 2 per support (assumed)
 FARM,FARM,LIGNO_PRE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-SUGAR: 2 per support (assumed)
-FARM,FARM,LIGNO_PRE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-SUGAR-ABE: 2 per support (assumed)
+FARM,FARM,LIGNO_PRE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-SUGAR-ABE: 2 per support (assumed)
 FARM,FARM,LIGNO_PRE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-IL-SPENT: 2 per support (assumed)
 FARM,FARM,LIGNO_PRE,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-LIG-01: pumped line (assumed)
 FARM,FARM,LIGNO_PRE,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-CEL-01: pumped line (assumed)
@@ -1038,7 +1038,7 @@ FARM,FARM,LIGNO_PRE,instrument,temperature element,Pt100 class A,"IEC 60751, 316
 FARM,FARM,LIGNO_PRE,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-LIG-01: AQS-PIP-005 span count
 FARM,FARM,LIGNO_PRE,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-CEL-01: AQS-PIP-005 span count
 FARM,FARM,LIGNO_PRE,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-SUGAR: AQS-PIP-005 span count
-FARM,FARM,LIGNO_PRE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-SUGAR-ABE: AQS-PIP-005 span count
+FARM,FARM,LIGNO_PRE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-SUGAR-ABE: AQS-PIP-005 span count
 FARM,FARM,LIGNO_PRE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-IL-SPENT: AQS-PIP-005 span count
 FARM,FARM,LIGNO_PRE,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-LIG-01: pump discharge (assumed)
 FARM,FARM,LIGNO_PRE,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-CEL-01: pump discharge (assumed)
@@ -1061,7 +1061,7 @@ FARM,FARM,MEAM,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer 
 FARM,FARM,MEAM,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NH3-RET to WS_AMMONIA: run and fault (assumed)
 FARM,FARM,MEAM,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,IA-MEAM: 2 per support (assumed)
 FARM,FARM,MEAM,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-MEAM-H2O: 2 per support (assumed)
-FARM,FARM,MEAM,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-NH3-RET: 2 per support (assumed)
+FARM,FARM,MEAM,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-NH3-RET: 2 per support (assumed)
 FARM,FARM,MEAM,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MEAM: pumped line (assumed)
 FARM,FARM,MEAM,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MEAM-H2O: pumped line (assumed)
 FARM,FARM,MEAM,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NH3-RET: pumped line (assumed)
@@ -1071,7 +1071,7 @@ FARM,FARM,MEAM,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 
 FARM,FARM,MEAM,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,FARM,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",4,IA-MEAM: AQS-PIP-005 span count
 FARM,FARM,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-MEAM-H2O: AQS-PIP-005 span count
-FARM,FARM,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-NH3-RET: AQS-PIP-005 span count
+FARM,FARM,MEAM,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-NH3-RET: AQS-PIP-005 span count
 FARM,FARM,MEAM,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-MEAM: pump discharge (assumed)
 FARM,FARM,MEAM,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-MEAM-H2O: pump discharge (assumed)
 FARM,FARM,MEAM,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-NH3-RET: pump discharge (assumed)
@@ -1147,10 +1147,10 @@ FARM,FARM,YEAST,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump
 FARM,FARM,YEAST,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-STILL to DIGESTER
 FARM,FARM,YEAST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ETOH-S to ETOH_STILL: run and fault (assumed)
 FARM,FARM,YEAST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-STILL to DIGESTER: run and fault (assumed)
-FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-ETOH-SOL: 2 per support (assumed)
-FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-YEAST-CO2: 2 per support (assumed)
-FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,IA-STILL: 2 per support (assumed)
-FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-ETOH-S: 2 per support (assumed)
+FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,IA-ETOH-SOL: 2 per support (assumed)
+FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-YEAST-CO2: 2 per support (assumed)
+FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,68,IA-STILL: 2 per support (assumed)
+FARM,FARM,YEAST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-ETOH-S: 2 per support (assumed)
 FARM,FARM,YEAST,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ETOH-SOL: pumped line (assumed)
 FARM,FARM,YEAST,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-YEAST-CO2: pumped line (assumed)
 FARM,FARM,YEAST,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-STILL: pumped line (assumed)
@@ -1159,10 +1159,10 @@ FARM,FARM,YEAST,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",
 FARM,FARM,YEAST,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,YEAST,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM,YEAST,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,IA-ETOH-SOL: AQS-PIP-005 span count
-FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-YEAST-CO2: AQS-PIP-005 span count
-FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,IA-STILL: AQS-PIP-005 span count
-FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-ETOH-S: AQS-PIP-005 span count
+FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,IA-ETOH-SOL: AQS-PIP-005 span count
+FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-YEAST-CO2: AQS-PIP-005 span count
+FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,IA-STILL: AQS-PIP-005 span count
+FARM,FARM,YEAST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-ETOH-S: AQS-PIP-005 span count
 FARM,FARM,YEAST,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ETOH-SOL: pump discharge (assumed)
 FARM,FARM,YEAST,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-YEAST-CO2: pump discharge (assumed)
 FARM,FARM,YEAST,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-STILL: pump discharge (assumed)
@@ -1199,20 +1199,20 @@ FARM,FARM_AQ,DIGESTER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Bi
 FARM,FARM_AQ,DIGESTER,fabricated part,fabricated part set,6 BOM lines,models/mfg/DIGESTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,FARM_AQ,DIGESTER,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/DIGESTER/fasteners.csv
 FARM,FARM_AQ,DIGESTER,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/DIGESTER/fasteners.csv
-FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,S30: 2 per support (assumed)
-FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-DIG-GAS: 2 per support (assumed)
-FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-DIG-SOL: 2 per support (assumed)
+FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,S30: 2 per support (assumed)
+FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-DIG-GAS: 2 per support (assumed)
+FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-DIG-SOL: 2 per support (assumed)
 FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-DIG-BLK: 2 per support (assumed)
-FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-DIG-FIX: 2 per support (assumed)
+FARM,FARM_AQ,DIGESTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-DIG-FIX: 2 per support (assumed)
 FARM,FARM_AQ,DIGESTER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,FARM_AQ,DIGESTER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM_AQ,DIGESTER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,FARM_AQ,DIGESTER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,S30: AQS-PIP-005 span count
-FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-DIG-GAS: AQS-PIP-005 span count
-FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-DIG-SOL: AQS-PIP-005 span count
+FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,S30: AQS-PIP-005 span count
+FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-DIG-GAS: AQS-PIP-005 span count
+FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-DIG-SOL: AQS-PIP-005 span count
 FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-DIG-BLK: AQS-PIP-005 span count
-FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-DIG-FIX: AQS-PIP-005 span count
+FARM,FARM_AQ,DIGESTER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-DIG-FIX: AQS-PIP-005 span count
 FARM,FARM_AQ,DIGESTER,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,S30: one at each end nozzle (assumed)
 FARM,FARM_AQ,DIGESTER,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-DIG-GAS: one at each end nozzle (assumed)
 FARM,FARM_AQ,DIGESTER,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-DIG-SOL: one at each end nozzle (assumed)
@@ -1325,13 +1325,13 @@ FARM,farm,BIOFILTER,valve,isolation valve,DN15,"PP ball valve with HDPE stub end
 FARM,farm,BUOH_STILL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BUOH-R to BUCL (assumed size)
 FARM,farm,BUOH_STILL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-BUOH-R to BUCL
 FARM,farm,BUOH_STILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BUOH-R to BUCL: run and fault (assumed)
-FARM,farm,BUOH_STILL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-BUOH-R: 2 per support (assumed)
+FARM,farm,BUOH_STILL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-BUOH-R: 2 per support (assumed)
 FARM,farm,BUOH_STILL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BUOH-R: pumped line (assumed)
 FARM,farm,BUOH_STILL,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FARM,farm,BUOH_STILL,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,farm,BUOH_STILL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,farm,BUOH_STILL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,farm,BUOH_STILL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-BUOH-R: AQS-PIP-005 span count
+FARM,farm,BUOH_STILL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-BUOH-R: AQS-PIP-005 span count
 FARM,farm,BUOH_STILL,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-BUOH-R: pump discharge (assumed)
 FARM,farm,BUOH_STILL,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-BUOH-R: one at each end nozzle (assumed)
 FARM,farm,CHICKENS,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -1400,7 +1400,7 @@ FARM,farm,ETOH_STILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,tra
 FARM,farm,ETOH_STILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ETOH-AC to ACETOX: run and fault (assumed)
 FARM,farm,ETOH_STILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ETOH-R to WS_SOLV: run and fault (assumed)
 FARM,farm,ETOH_STILL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-ETOH: 2 per support (assumed)
-FARM,farm,ETOH_STILL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-ETOH-AC: 2 per support (assumed)
+FARM,farm,ETOH_STILL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-ETOH-AC: 2 per support (assumed)
 FARM,farm,ETOH_STILL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,82,IA-ETOH-R: 2 per support (assumed)
 FARM,farm,ETOH_STILL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ETOH: pumped line (assumed)
 FARM,farm,ETOH_STILL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ETOH-AC: pumped line (assumed)
@@ -1410,7 +1410,7 @@ FARM,farm,ETOH_STILL,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE 
 FARM,farm,ETOH_STILL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,farm,ETOH_STILL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,farm,ETOH_STILL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-ETOH: AQS-PIP-005 span count
-FARM,farm,ETOH_STILL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-ETOH-AC: AQS-PIP-005 span count
+FARM,farm,ETOH_STILL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-ETOH-AC: AQS-PIP-005 span count
 FARM,farm,ETOH_STILL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",41,IA-ETOH-R: AQS-PIP-005 span count
 FARM,farm,ETOH_STILL,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ETOH: pump discharge (assumed)
 FARM,farm,ETOH_STILL,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-ETOH-AC: pump discharge (assumed)
@@ -1480,8 +1480,8 @@ FARM,farm,QUAT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump 
 FARM,farm,QUAT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-CLOSE-13 to NUTRIENT_DOSE
 FARM,farm,QUAT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BMIM to ACEX: run and fault (assumed)
 FARM,farm,QUAT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-CLOSE-13 to NUTRIENT_DOSE: run and fault (assumed)
-FARM,farm,QUAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-BMIM: 2 per support (assumed)
-FARM,farm,QUAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,IA-QUAT-H2O: 2 per support (assumed)
+FARM,farm,QUAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-BMIM: 2 per support (assumed)
+FARM,farm,QUAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-QUAT-H2O: 2 per support (assumed)
 FARM,farm,QUAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-CLOSE-13: 2 per support (assumed)
 FARM,farm,QUAT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BMIM: pumped line (assumed)
 FARM,farm,QUAT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-QUAT-H2O: pumped line (assumed)
@@ -1490,8 +1490,8 @@ FARM,farm,QUAT,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1
 FARM,farm,QUAT,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,farm,QUAT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 FARM,farm,QUAT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,farm,QUAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-BMIM: AQS-PIP-005 span count
-FARM,farm,QUAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,IA-QUAT-H2O: AQS-PIP-005 span count
+FARM,farm,QUAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-BMIM: AQS-PIP-005 span count
+FARM,farm,QUAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-QUAT-H2O: AQS-PIP-005 span count
 FARM,farm,QUAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-CLOSE-13: AQS-PIP-005 span count
 FARM,farm,QUAT,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-BMIM: pump discharge (assumed)
 FARM,farm,QUAT,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-QUAT-H2O: pump discharge (assumed)
@@ -1546,16 +1546,16 @@ GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-
 GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-H2O2-SRC: 2 per support (assumed)
 GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-AC-O2: 2 per support (assumed)
 GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-O2-NIT: 2 per support (assumed)
-GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-GLX-O2: 2 per support (assumed)
-GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-FORM-O2: 2 per support (assumed)
+GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-GLX-O2: 2 per support (assumed)
+GAS,LIFE_RACK,HDR_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-FORM-O2: 2 per support (assumed)
 GAS,LIFE_RACK,HDR_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",14,S02: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",31,S50: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-FC-AIR: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-H2O2-SRC: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-AC-O2: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-O2-NIT: AQS-PIP-005 span count
-GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-GLX-O2: AQS-PIP-005 span count
-GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-FORM-O2: AQS-PIP-005 span count
+GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-GLX-O2: AQS-PIP-005 span count
+GAS,LIFE_RACK,HDR_O2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,IA-FORM-O2: AQS-PIP-005 span count
 GAS,LIFE_RACK,HDR_O2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S02: one at each end nozzle (assumed)
 GAS,LIFE_RACK,HDR_O2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S50: one at each end nozzle (assumed)
 GAS,LIFE_RACK,HDR_O2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-FC-AIR: one at each end nozzle (assumed)
@@ -1856,12 +1856,12 @@ HEAT,heat_battery,Q1_A,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME 
 HEAT,heat_battery,Q1_A,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-Q1A-LOSS: one at each end nozzle (assumed)
 HEAT,heat_battery,Q1_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,HL-Q1-B-DOWN: 2 per support (assumed)
 HEAT,heat_battery,Q1_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,HL-Q1-X-BA: 2 per support (assumed)
-HEAT,heat_battery,Q1_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-Q1B-LOSS: 2 per support (assumed)
+HEAT,heat_battery,Q1_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-Q1B-LOSS: 2 per support (assumed)
 HEAT,heat_battery,Q1_B,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 HEAT,heat_battery,Q1_B,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HEAT,heat_battery,Q1_B,support,U-bolt with guide,DN25,"316 U-bolt, MSS SP-58 Type 24",4,HL-Q1-B-DOWN: AQS-PIP-005 span count
 HEAT,heat_battery,Q1_B,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",18,HL-Q1-X-BA: AQS-PIP-005 span count
-HEAT,heat_battery,Q1_B,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-Q1B-LOSS: AQS-PIP-005 span count
+HEAT,heat_battery,Q1_B,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-Q1B-LOSS: AQS-PIP-005 span count
 HEAT,heat_battery,Q1_B,valve,isolation valve,DN25,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q1-B-DOWN: one at each end nozzle (assumed)
 HEAT,heat_battery,Q1_B,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q1-X-BA: one at each end nozzle (assumed)
 HEAT,heat_battery,Q1_B,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-Q1B-LOSS: one at each end nozzle (assumed)
@@ -1878,12 +1878,12 @@ HEAT,heat_battery,Q2_A,valve,isolation valve,DN20,"CS A216 WCB ball valve, ASME 
 HEAT,heat_battery,Q2_A,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-Q2A-LOSS: one at each end nozzle (assumed)
 HEAT,heat_battery,Q2_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,HL-Q2-B-DOWN: 2 per support (assumed)
 HEAT,heat_battery,Q2_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,HL-Q2-X-BA: 2 per support (assumed)
-HEAT,heat_battery,Q2_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-Q2B-LOSS: 2 per support (assumed)
+HEAT,heat_battery,Q2_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-Q2B-LOSS: 2 per support (assumed)
 HEAT,heat_battery,Q2_B,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 HEAT,heat_battery,Q2_B,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HEAT,heat_battery,Q2_B,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",4,HL-Q2-B-DOWN: AQS-PIP-005 span count
 HEAT,heat_battery,Q2_B,support,U-bolt with guide,DN20,"316 U-bolt, MSS SP-58 Type 24",14,HL-Q2-X-BA: AQS-PIP-005 span count
-HEAT,heat_battery,Q2_B,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-Q2B-LOSS: AQS-PIP-005 span count
+HEAT,heat_battery,Q2_B,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-Q2B-LOSS: AQS-PIP-005 span count
 HEAT,heat_battery,Q2_B,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q2-B-DOWN: one at each end nozzle (assumed)
 HEAT,heat_battery,Q2_B,valve,isolation valve,DN20,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q2-X-BA: one at each end nozzle (assumed)
 HEAT,heat_battery,Q2_B,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-Q2B-LOSS: one at each end nozzle (assumed)
@@ -2451,7 +2451,7 @@ WET,BMED_CRU,BMED_ACID,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,t
 WET,BMED_CRU,BMED_ACID,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S09 to WET_BENCH: run and fault (assumed)
 WET,BMED_CRU,BMED_ACID,electronics,motor starter (contactor + overload),0.37 kW,IEC 60947-4-1,3,"stack loop pumps (acid, base, salt) (assumed VFD at >= 0.75 kW)"
 WET,BMED_CRU,BMED_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-BMED-01: 2 per support (assumed)
-WET,BMED_CRU,BMED_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,S09: 2 per support (assumed)
+WET,BMED_CRU,BMED_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,S09: 2 per support (assumed)
 WET,BMED_CRU,BMED_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-HCL-BU: 2 per support (assumed)
 WET,BMED_CRU,BMED_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-EVAP_ACID-FEED: 2 per support (assumed)
 WET,BMED_CRU,BMED_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BMED-01: pumped line (assumed)
@@ -2465,7 +2465,7 @@ WET,BMED_CRU,BMED_ACID,instrument,temperature element,Pt100 class A,"IEC 60751, 
 WET,BMED_CRU,BMED_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,3,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,BMED_ACID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",3,"stack loop pumps (acid, base, salt): induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 WET,BMED_CRU,BMED_ACID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-BMED-01: AQS-PIP-005 span count
-WET,BMED_CRU,BMED_ACID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,S09: AQS-PIP-005 span count
+WET,BMED_CRU,BMED_ACID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,S09: AQS-PIP-005 span count
 WET,BMED_CRU,BMED_ACID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-HCL-BU: AQS-PIP-005 span count
 WET,BMED_CRU,BMED_ACID,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-EVAP_ACID-FEED: AQS-PIP-005 span count
 WET,BMED_CRU,BMED_ACID,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-BMED-01: pump discharge (assumed)
@@ -2491,7 +2491,7 @@ WET,BMED_CRU,BMED_BASE,electronics,motor starter (contactor + overload),0.37 kW,
 WET,BMED_CRU,BMED_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-BMED-02: 2 per support (assumed)
 WET,BMED_CRU,BMED_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-EVAP_BASE-FEED: 2 per support (assumed)
 WET,BMED_CRU,BMED_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-VS-NAOH: 2 per support (assumed)
-WET,BMED_CRU,BMED_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,IA-BLK-NAOH: 2 per support (assumed)
+WET,BMED_CRU,BMED_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,IA-BLK-NAOH: 2 per support (assumed)
 WET,BMED_CRU,BMED_BASE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BMED-02: pumped line (assumed)
 WET,BMED_CRU,BMED_BASE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EVAP_BASE-FEED: pumped line (assumed)
 WET,BMED_CRU,BMED_BASE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-VS-NAOH: pumped line (assumed)
@@ -2505,7 +2505,7 @@ WET,BMED_CRU,BMED_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, F
 WET,BMED_CRU,BMED_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-BMED-02: AQS-PIP-005 span count
 WET,BMED_CRU,BMED_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-EVAP_BASE-FEED: AQS-PIP-005 span count
 WET,BMED_CRU,BMED_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-VS-NAOH: AQS-PIP-005 span count
-WET,BMED_CRU,BMED_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",30,IA-BLK-NAOH: AQS-PIP-005 span count
+WET,BMED_CRU,BMED_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,IA-BLK-NAOH: AQS-PIP-005 span count
 WET,BMED_CRU,BMED_BASE,valve,check valve,DN15,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,IA-BMED-02: pump discharge (assumed)
 WET,BMED_CRU,BMED_BASE,valve,check valve,DN15,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,IA-EVAP_BASE-FEED: pump discharge (assumed)
 WET,BMED_CRU,BMED_BASE,valve,check valve,DN15,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,IA-VS-NAOH: pump discharge (assumed)
@@ -2584,12 +2584,12 @@ WET,BMED_CRU,POLISH_BANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,tran
 WET,BMED_CRU,POLISH_BANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-POL-CAKE to MFG_SHOP: run and fault (assumed)
 WET,BMED_CRU,POLISH_BANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-POL-02 to CONTINUOUS_RECYCLE: run and fault (assumed)
 WET,BMED_CRU,POLISH_BANK,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-POL-CAKE to MFG_SHOP (assumed VFD at >= 0.75 kW)
-WET,BMED_CRU,POLISH_BANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-POL-02: 2 per support (assumed)
+WET,BMED_CRU,POLISH_BANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-POL-02: 2 per support (assumed)
 WET,BMED_CRU,POLISH_BANK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-POL-02: pumped line (assumed)
 WET,BMED_CRU,POLISH_BANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 WET,BMED_CRU,POLISH_BANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,BMED_CRU,POLISH_BANK,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WET,BMED_CRU,POLISH_BANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-POL-02: AQS-PIP-005 span count
+WET,BMED_CRU,POLISH_BANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-POL-02: AQS-PIP-005 span count
 WET,BMED_CRU,POLISH_BANK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-POL-02: pump discharge (assumed)
 WET,BMED_CRU,POLISH_BANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-POL-02: one at each end nozzle (assumed)
 WET,BMED_CRU,SALT_FEED,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw feeder: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
@@ -2720,21 +2720,21 @@ WET,LEACH_EW,LEACH_CSTR_1,fastener,M12x40 hex bolt + nut + 2 washers,M12x40 hex 
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-BMED-03: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-BMED-04: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-EW-04: 2 per support (assumed)
-WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-ZNBR-MU: 2 per support (assumed)
+WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-ZNBR-MU: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,IA-LEACH-BD: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-SINK-01: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-CULLET: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-SCRUB-SRC: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-HF-SRC: 2 per support (assumed)
-WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-LEACH-NOX: 2 per support (assumed)
+WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-LEACH-NOX: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-LEACH-FLUE: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-LEACH-HOP: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-LEACH-ASU: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-LEACH-H2: 2 per support (assumed)
-WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-CLOSE-1: 2 per support (assumed)
-WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-CLOSE-10: 2 per support (assumed)
+WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-CLOSE-1: 2 per support (assumed)
+WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-CLOSE-10: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-LEACH-VCD: 2 per support (assumed)
-WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-NA-PURGE: 2 per support (assumed)
+WET,LEACH_EW,LEACH_CSTR_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-NA-PURGE: 2 per support (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,LEACH_EW,LEACH_CSTR_1,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,LEACH_EW,LEACH_CSTR_1,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
@@ -2743,21 +2743,21 @@ WET,LEACH_EW,LEACH_CSTR_1,protection,"inverse-time circuit breaker, 3-pole",15 A
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-BMED-03: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-BMED-04: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-EW-04: AQS-PIP-005 span count
-WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-ZNBR-MU: AQS-PIP-005 span count
+WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-ZNBR-MU: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,IA-LEACH-BD: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-SINK-01: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-CULLET: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,IA-SCRUB-SRC: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-HF-SRC: AQS-PIP-005 span count
-WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-LEACH-NOX: AQS-PIP-005 span count
+WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-LEACH-NOX: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-LEACH-FLUE: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-LEACH-HOP: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-LEACH-ASU: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-LEACH-H2: AQS-PIP-005 span count
-WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-CLOSE-1: AQS-PIP-005 span count
-WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-CLOSE-10: AQS-PIP-005 span count
+WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-CLOSE-1: AQS-PIP-005 span count
+WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-CLOSE-10: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,IA-LEACH-VCD: AQS-PIP-005 span count
-WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-NA-PURGE: AQS-PIP-005 span count
+WET,LEACH_EW,LEACH_CSTR_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-NA-PURGE: AQS-PIP-005 span count
 WET,LEACH_EW,LEACH_CSTR_1,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-BMED-03: one at each end nozzle (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-BMED-04: one at each end nozzle (assumed)
 WET,LEACH_EW,LEACH_CSTR_1,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-EW-04: one at each end nozzle (assumed)
@@ -2903,12 +2903,12 @@ WET,hx,HX8,support,U-bolt with guide,DN25,"316 U-bolt, MSS SP-58 Type 24",7,HL-H
 WET,hx,HX8,support,U-bolt with guide,DN25,"316 U-bolt, MSS SP-58 Type 24",16,HL-HX8-Q4-B: AQS-PIP-005 span count
 WET,hx,HX8,valve,isolation valve,DN25,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-HX8-Q4-A: one at each end nozzle (assumed)
 WET,hx,HX8,valve,isolation valve,DN25,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-HX8-Q4-B: one at each end nozzle (assumed)
-WET,recycle_pipe,CONTINUOUS_RECYCLE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-REC-01: 2 per support (assumed)
+WET,recycle_pipe,CONTINUOUS_RECYCLE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-REC-01: 2 per support (assumed)
 WET,recycle_pipe,CONTINUOUS_RECYCLE,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WET,recycle_pipe,CONTINUOUS_RECYCLE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WET,recycle_pipe,CONTINUOUS_RECYCLE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 WET,recycle_pipe,CONTINUOUS_RECYCLE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-WET,recycle_pipe,CONTINUOUS_RECYCLE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-REC-01: AQS-PIP-005 span count
+WET,recycle_pipe,CONTINUOUS_RECYCLE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-REC-01: AQS-PIP-005 span count
 WET,recycle_pipe,CONTINUOUS_RECYCLE,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-REC-01: one at each end nozzle (assumed)
 WET,scrubber,EVAP_ACID_VS,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Sump recirculation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 WET,scrubber,EVAP_ACID_VS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Sump recirculation pump: run and fault (assumed)
@@ -2941,9 +2941,9 @@ WTR,BMED_CRU,BMED_UPW_POLISH,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,
 WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-UPW-FAB to FAB_UPW_TANK: run and fault (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-UPW-REJ to LEACH_CSTR_1: run and fault (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-UPW-REMIN to REMIN: run and fault (assumed)
-WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,S01: 2 per support (assumed)
-WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-UPW-FAB: 2 per support (assumed)
-WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-UPW-REMIN: 2 per support (assumed)
+WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,S01: 2 per support (assumed)
+WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-UPW-FAB: 2 per support (assumed)
+WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,IA-UPW-REMIN: 2 per support (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-UPW-REJ: 2 per support (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S01: pumped line (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-UPW-FAB: pumped line (assumed)
@@ -2951,9 +2951,9 @@ WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, 
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-UPW-REJ: pumped line (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (assumed one per unit)
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",23,S01: AQS-PIP-005 span count
-WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-UPW-FAB: AQS-PIP-005 span count
-WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,IA-UPW-REMIN: AQS-PIP-005 span count
+WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,S01: AQS-PIP-005 span count
+WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-UPW-FAB: AQS-PIP-005 span count
+WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,IA-UPW-REMIN: AQS-PIP-005 span count
 WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-UPW-REJ: AQS-PIP-005 span count
 WTR,BMED_CRU,BMED_UPW_POLISH,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,S01: pump discharge (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-UPW-FAB: pump discharge (assumed)
@@ -2968,7 +2968,7 @@ WTR,CATCH,CATCH_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/
 WTR,CATCH,CATCH_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK: run and fault (assumed)
 WTR,CATCH,CATCH_TANK,electronics,motor starter (contactor + overload),0.75 kW,IEC 60947-4-1,1,transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK (assumed VFD at >= 0.75 kW)
 WTR,CATCH,CATCH_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-ESS-HYDRO-CHG
-WTR,CATCH,CATCH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-ESS-HYDRO-CHG: 2 per support (assumed)
+WTR,CATCH,CATCH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-ESS-HYDRO-CHG: 2 per support (assumed)
 WTR,CATCH,CATCH_TANK,instrument,flow transmitter,DN65,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ESS-HYDRO-CHG: pumped line (assumed)
 WTR,CATCH,CATCH_TANK,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 WTR,CATCH,CATCH_TANK,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
@@ -2976,7 +2976,7 @@ WTR,CATCH,CATCH_TANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm
 WTR,CATCH,CATCH_TANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,CATCH,CATCH_TANK,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WTR,CATCH,CATCH_TANK,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,transfer pump IA-ESS-HYDRO-CHG to ROOF_TANK: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
-WTR,CATCH,CATCH_TANK,support,pipe clamp,DN65,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-ESS-HYDRO-CHG: AQS-PIP-005 span count
+WTR,CATCH,CATCH_TANK,support,pipe clamp,DN65,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-ESS-HYDRO-CHG: AQS-PIP-005 span count
 WTR,CATCH,CATCH_TANK,valve,check valve,DN65,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ESS-HYDRO-CHG: pump discharge (assumed)
 WTR,CATCH,CATCH_TANK,valve,isolation valve,DN65,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ESS-HYDRO-CHG: one at each end nozzle (assumed)
 WTR,LIFE_RACK,HDR_UPW,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-UPW-HAB: 2 per support (assumed)
@@ -3015,13 +3015,13 @@ WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-NOX-HAB
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-PEROX-H2O
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve S21
-WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-ESS-HYDRO-DIS: 2 per support (assumed)
-WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,S21: 2 per support (assumed)
-WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,S40: 2 per support (assumed)
+WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-ESS-HYDRO-DIS: 2 per support (assumed)
+WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,S21: 2 per support (assumed)
+WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,S40: 2 per support (assumed)
 WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-BED-H2O: 2 per support (assumed)
-WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-NOX-HAB: 2 per support (assumed)
-WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,IA-FLUE-QUENCH: 2 per support (assumed)
-WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-PEROX-H2O: 2 per support (assumed)
+WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-NOX-HAB: 2 per support (assumed)
+WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,72,IA-FLUE-QUENCH: 2 per support (assumed)
+WTR,ROOF,ROOF_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-PEROX-H2O: 2 per support (assumed)
 WTR,ROOF,ROOF_TANK,instrument,flow transmitter,DN65,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ESS-HYDRO-DIS: pumped line (assumed)
 WTR,ROOF,ROOF_TANK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S21: pumped line (assumed)
 WTR,ROOF,ROOF_TANK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S40: pumped line (assumed)
@@ -3035,13 +3035,13 @@ WTR,ROOF,ROOF_TANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, 
 WTR,ROOF,ROOF_TANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,ROOF,ROOF_TANK,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WTR,ROOF,ROOF_TANK,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,transfer pump IA-ESS-HYDRO-DIS to CATCH_TANK: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
-WTR,ROOF,ROOF_TANK,support,pipe clamp,DN65,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-ESS-HYDRO-DIS: AQS-PIP-005 span count
-WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,S21: AQS-PIP-005 span count
-WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,S40: AQS-PIP-005 span count
+WTR,ROOF,ROOF_TANK,support,pipe clamp,DN65,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-ESS-HYDRO-DIS: AQS-PIP-005 span count
+WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,S21: AQS-PIP-005 span count
+WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,S40: AQS-PIP-005 span count
 WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-BED-H2O: AQS-PIP-005 span count
-WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-NOX-HAB: AQS-PIP-005 span count
-WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,IA-FLUE-QUENCH: AQS-PIP-005 span count
-WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-PEROX-H2O: AQS-PIP-005 span count
+WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-NOX-HAB: AQS-PIP-005 span count
+WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",36,IA-FLUE-QUENCH: AQS-PIP-005 span count
+WTR,ROOF,ROOF_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-PEROX-H2O: AQS-PIP-005 span count
 WTR,ROOF,ROOF_TANK,valve,check valve,DN65,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ESS-HYDRO-DIS: pump discharge (assumed)
 WTR,ROOF,ROOF_TANK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S21: pump discharge (assumed)
 WTR,ROOF,ROOF_TANK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S40: pump discharge (assumed)
@@ -3150,7 +3150,7 @@ WTR,treat,GREY_TREAT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,tra
 WTR,treat,GREY_TREAT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S29 to VCD_TRAIN: run and fault (assumed)
 WTR,treat,GREY_TREAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,S29: 2 per support (assumed)
 WTR,treat,GREY_TREAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-GREY-01: 2 per support (assumed)
-WTR,treat,GREY_TREAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-GREY-RET: 2 per support (assumed)
+WTR,treat,GREY_TREAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-GREY-RET: 2 per support (assumed)
 WTR,treat,GREY_TREAT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S29: pumped line (assumed)
 WTR,treat,GREY_TREAT,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-GREY-01: pumped line (assumed)
 WTR,treat,GREY_TREAT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-GREY-RET: pumped line (assumed)
@@ -3160,7 +3160,7 @@ WTR,treat,GREY_TREAT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm
 WTR,treat,GREY_TREAT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,treat,GREY_TREAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,S29: AQS-PIP-005 span count
 WTR,treat,GREY_TREAT,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-GREY-01: AQS-PIP-005 span count
-WTR,treat,GREY_TREAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-GREY-RET: AQS-PIP-005 span count
+WTR,treat,GREY_TREAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-GREY-RET: AQS-PIP-005 span count
 WTR,treat,GREY_TREAT,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S29: pump discharge (assumed)
 WTR,treat,GREY_TREAT,valve,check valve,DN50,"CPVC true-union swing/ball check valve, FKM seals",1,IA-GREY-01: pump discharge (assumed)
 WTR,treat,GREY_TREAT,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-GREY-RET: pump discharge (assumed)

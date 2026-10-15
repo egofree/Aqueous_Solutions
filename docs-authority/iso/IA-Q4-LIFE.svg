@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,256.7 560.0,161.7 273.4,327.1 40.0,192.4 40.0,60.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="205.2">Z +3160</text>
-<text x="422.7" y="240.4">X -11000</text>
-<text x="162.7" y="255.7">Y +8960</text>
-<text x="46.0" y="122.2">Z +4400</text>
-<circle cx="560.0" cy="256.7" r="5" fill="black"/><text x="568.0" y="270.7">Q4_BUS</text>
-<circle cx="40.0" cy="60.0" r="5" fill="none" stroke="black"/><text x="48.0" y="74.0">HABITATION</text>
+<polyline points="560.0,296.4 560.0,60.0 273.4,225.5 40.0,90.7 40.0,99.7" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="174.2">Z +7860</text>
+<text x="422.7" y="138.7">X -11000</text>
+<text x="162.7" y="154.1">Y +8960</text>
+<text x="46.0" y="91.2">Z -300</text>
+<circle cx="560.0" cy="296.4" r="5" fill="black"/><text x="568.0" y="310.4">Q4_BUS</text>
+<circle cx="40.0" cy="99.7" r="5" fill="none" stroke="black"/><text x="48.0" y="113.7">HABITATION</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-Q4-LIFE</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">Q4_BUS -> HABITATION</text>
-<text x="20" y="642">pipe 27.29 m in 6 pieces; cut 3122 6000 4924 6000 2884 4362 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt weld joints</text>
+<text x="20" y="642">pipe 27.89 m in 7 pieces; cut 6000 1822 6000 4924 6000 2884 262 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

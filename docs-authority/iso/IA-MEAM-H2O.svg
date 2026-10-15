@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="265.2,532.3 265.2,528.0 175.1,580.0 40.0,502.0 40.0,60.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="271.2" y="526.2">Z +50</text>
-<text x="226.1" y="550.0">X -1200</text>
-<text x="113.5" y="537.0">Y +1800</text>
-<text x="46.0" y="277.0">Z +5100</text>
-<circle cx="265.2" cy="532.3" r="5" fill="black"/><text x="273.2" y="546.3">MEAM</text>
-<circle cx="40.0" cy="60.0" r="5" fill="none" stroke="black"/><text x="48.0" y="74.0">ROOF_TANK</text>
+<polyline points="275.0,580.0 275.0,87.1 181.0,141.4 40.0,60.0 40.0,87.1" fill="none" stroke="black" stroke-width="3"/>
+<text x="281.0" y="329.6">Z +5450</text>
+<text x="234.0" y="110.3">X -1200</text>
+<text x="116.5" y="96.7">Y +1800</text>
+<text x="46.0" y="69.6">Z -300</text>
+<circle cx="275.0" cy="580.0" r="5" fill="black"/><text x="283.0" y="594.0">MEAM</text>
+<circle cx="40.0" cy="87.1" r="5" fill="none" stroke="black"/><text x="48.0" y="101.1">ROOF_TANK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-MEAM-H2O</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">MEAM -> ROOF_TANK</text>
-<text x="20" y="642">pipe 8.09 m in 4 pieces; cut 39 1179 1779 5089 mm</text>
+<text x="20" y="642">pipe 8.69 m in 4 pieces; cut 5439 1179 1779 289 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="56.6,580.0 56.6,375.8 321.8,222.7 40.0,60.0 40.0,63.2" fill="none" stroke="black" stroke-width="3"/>
-<text x="62.6" y="473.9">Z +3200</text>
-<text x="195.2" y="295.3">X +4800</text>
-<text x="186.9" y="137.3">Y +5100</text>
-<text x="46.0" y="57.6">Z -50</text>
-<circle cx="56.6" cy="580.0" r="5" fill="black"/><text x="64.6" y="594.0">HDR_O2</text>
-<circle cx="40.0" cy="63.2" r="5" fill="none" stroke="black"/><text x="48.0" y="77.2">ACETOX</text>
+<polyline points="56.1,580.0 56.1,366.4 313.4,217.9 40.0,60.0 40.0,78.6" fill="none" stroke="black" stroke-width="3"/>
+<text x="62.1" y="469.2">Z +3450</text>
+<text x="190.7" y="288.1">X +4800</text>
+<text x="182.7" y="134.9">Y +5100</text>
+<text x="46.0" y="65.3">Z -300</text>
+<circle cx="56.1" cy="580.0" r="5" fill="black"/><text x="64.1" y="594.0">HDR_O2</text>
+<circle cx="40.0" cy="78.6" r="5" fill="none" stroke="black"/><text x="48.0" y="92.6">ACETOX</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-AC-O2</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">HDR_O2 -> ACETOX</text>
-<text x="20" y="642">pipe 13.09 m in 4 pieces; cut 3189 4779 5079 39 mm</text>
+<text x="20" y="642">pipe 13.59 m in 4 pieces; cut 3439 4779 5079 289 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

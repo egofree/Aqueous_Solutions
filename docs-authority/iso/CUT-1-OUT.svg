@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,297.7 560.0,60.0 40.0,360.2 339.7,533.3 339.7,233.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="174.8">Z +2850</text>
-<text x="306.0" y="206.1">X -7200</text>
-<text x="195.9" y="442.7">Y -4150</text>
-<text x="345.7" y="379.2">Z +3600</text>
-<circle cx="560.0" cy="297.7" r="5" fill="black"/><text x="568.0" y="311.7">PROD_C5_C10</text>
-<circle cx="339.7" cy="233.0" r="5" fill="none" stroke="black"/><text x="347.7" y="247.0">BACKUP_GEN</text>
+<polyline points="520.4,580.0 520.4,60.0 40.0,337.3 316.9,497.2 316.9,520.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="526.4" y="316.0">Z +6750</text>
+<text x="286.2" y="194.7">X -7200</text>
+<text x="184.4" y="413.3">Y -4150</text>
+<text x="322.9" y="504.7">Z -300</text>
+<circle cx="520.4" cy="580.0" r="5" fill="black"/><text x="528.4" y="594.0">PROD_C5_C10</text>
+<circle cx="316.9" cy="520.3" r="5" fill="none" stroke="black"/><text x="324.9" y="534.3">BACKUP_GEN</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  CUT-1-OUT</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">PROD_C5_C10 -> BACKUP_GEN</text>
-<text x="20" y="642">pipe 17.74 m in 5 pieces; cut 2839 6000 1179 4129 3589 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 solvent joints</text>
+<text x="20" y="642">pipe 18.34 m in 6 pieces; cut 6000 739 6000 1179 4129 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

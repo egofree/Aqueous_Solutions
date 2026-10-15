@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="237.5,502.5 237.5,466.0 40.0,580.0 40.0,580.0 40.0,60.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="243.5" y="480.2">Z +1200</text>
-<text x="144.8" y="519.0">X -7500</text>
-<text x="46.0" y="316.0">Z +17100</text>
-<circle cx="237.5" cy="502.5" r="5" fill="black"/><text x="245.5" y="516.5">CRYO_AHU</text>
-<circle cx="40.0" cy="60.0" r="5" fill="none" stroke="black"/><text x="48.0" y="74.0">ROOF_TANK</text>
+<polyline points="221.6,580.0 221.6,60.0 40.0,164.8 40.0,164.8 40.0,173.2" fill="none" stroke="black" stroke-width="3"/>
+<text x="227.6" y="316.0">Z +18600</text>
+<text x="136.8" y="108.4">X -7500</text>
+<text x="46.0" y="165.0">Z -300</text>
+<circle cx="221.6" cy="580.0" r="5" fill="black"/><text x="229.6" y="594.0">CRYO_AHU</text>
+<circle cx="40.0" cy="173.2" r="5" fill="none" stroke="black"/><text x="48.0" y="187.2">ROOF_TANK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-HVAC-COND</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">CRYO_AHU -> ROOF_TANK</text>
-<text x="20" y="642">pipe 25.76 m in 6 pieces; cut 1189 6000 1479 6000 6000 5089 mm</text>
-<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 solvent joints</text>
+<text x="20" y="642">pipe 26.36 m in 7 pieces; cut 6000 6000 6000 589 6000 1479 289 mm</text>
+<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -13,7 +13,8 @@ BOLT = {15: (4, '1/2'), 20: (4, '1/2'), 25: (4, '1/2'), 32: (4, '1/2'), 40: (4, 
         150: (8, '3/4'), 200: (8, '3/4'), 250: (12, '7/8'), 300: (12, '7/8')}                                                                # ASME B16.5 Class 150
 MAT = {'P1': 'PVC-U Sch 80 ASTM D1785', 'P2': 'CPVC Sch 80 ASTM F441', 'P3': 'PVDF SDR 21 ISO 10931', 'P4': 'PP-H ISO 15494', 'P5': 'HDPE PE4710 DR 11 (ASTM D3035)', 'M1': '316L ASTM A312', 'M2': 'CS ASTM A106 Gr B', 'F1': 'FRP vinyl ester', 'G1': 'borosilicate 3.3'}
 JOINT = {'P1': 'solvent', 'P2': 'solvent', 'P3': 'fusion', 'P4': 'fusion', 'P5': 'fusion', 'M1': 'butt weld', 'M2': 'butt weld', 'F1': 'butt-and-strap', 'G1': 'coupling'}
-RACK = 3200; os.makedirs('docs-authority/iso', exist_ok=True)
+RACK = 3200
+MINRISE = 300   # mm, X-PIP-04 (A-M-127); os.makedirs('docs-authority/iso', exist_ok=True)
 def svg(name, legs, dn, cl, a, b, info):
     pts = [(0.0, 0.0, 0.0)]
     for k, v in zip('zxyz', legs):
@@ -37,7 +38,7 @@ for r in rows:
     if not r[3].startswith('DN'): continue
     a, b = C.get(r[1]), C.get(r[2])
     if not a or not b: miss.append(r[0]); continue
-    (x1, y1, z1), (x2, y2, z2) = a[0], b[0]; zr = D[lvl(z1)] + RACK
+    (x1, y1, z1), (x2, y2, z2) = a[0], b[0]; zr = max(D[lvl(z1)] + RACK, max(z1, z2) + MINRISE)   # X-PIP-04
     legs = [zr - z1, x2 - x1, y2 - y1, z2 - zr]; nz = [v for v in legs if abs(v) > 1]
     dn = int(r[3][2:]); cl = r[4]; el = max(len(nz) - 1, 0)
     to = B169.get(dn, 1.5*dn) if cl.startswith('M') else 0.5*OD.get(dn, dn)

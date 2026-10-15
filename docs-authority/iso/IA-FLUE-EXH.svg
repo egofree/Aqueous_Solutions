@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="560.0,131.4 560.0,60.0 40.0,360.2 76.1,381.1 76.1,289.5" fill="none" stroke="black" stroke-width="3"/>
-<text x="566.0" y="91.7">Z +2650</text>
+<polyline points="560.0,231.0 560.0,60.0 40.0,360.2 76.1,381.1 76.1,389.2" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="141.5">Z +6350</text>
 <text x="306.0" y="206.1">X -22300</text>
 <text x="64.1" y="366.7">Y -1550</text>
-<text x="82.1" y="331.3">Z +3400</text>
-<circle cx="560.0" cy="131.4" r="5" fill="black"/><text x="568.0" y="145.4">FLUE_KO</text>
-<circle cx="76.1" cy="289.5" r="5" fill="none" stroke="black"/><text x="84.1" y="303.5">NOX_SCRUB</text>
+<text x="82.1" y="381.1">Z -300</text>
+<circle cx="560.0" cy="231.0" r="5" fill="black"/><text x="568.0" y="245.0">FLUE_KO</text>
+<circle cx="76.1" cy="389.2" r="5" fill="none" stroke="black"/><text x="84.1" y="403.2">NOX_SCRUB</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-FLUE-EXH</text>
 <text x="20" y="614">DN20  class F1  FRP vinyl ester</text>
 <text x="20" y="628">FLUE_KO -> NOX_SCRUB</text>
-<text x="20" y="642">pipe 29.82 m in 7 pieces; cut 2637 6000 6000 6000 4273 1523 3387 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt-and-strap joints</text>
+<text x="20" y="642">pipe 30.42 m in 8 pieces; cut 6000 337 6000 6000 6000 4273 1523 287 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 butt-and-strap joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

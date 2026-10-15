@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="519.7,397.7 519.7,256.4 40.0,533.4 120.8,580.0 120.8,60.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="525.7" y="323.1">Z +2500</text>
-<text x="285.9" y="390.9">X -9800</text>
-<text x="86.4" y="552.7">Y -1650</text>
-<text x="126.8" y="316.0">Z +9200</text>
-<circle cx="519.7" cy="397.7" r="5" fill="black"/><text x="527.7" y="411.7">BMED_UPW_POLISH</text>
-<circle cx="120.8" cy="60.0" r="5" fill="none" stroke="black"/><text x="128.8" y="74.0">REMIN</text>
+<polyline points="407.8,580.0 407.8,60.0 40.0,272.3 101.9,308.1 101.9,321.1" fill="none" stroke="black" stroke-width="3"/>
+<text x="413.8" y="316.0">Z +12000</text>
+<text x="229.9" y="162.2">X -9800</text>
+<text x="77.0" y="286.2">Y -1650</text>
+<text x="107.9" y="310.6">Z -300</text>
+<circle cx="407.8" cy="580.0" r="5" fill="black"/><text x="415.8" y="594.0">BMED_UPW_POLISH</text>
+<circle cx="101.9" cy="321.1" r="5" fill="none" stroke="black"/><text x="109.9" y="335.1">REMIN</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-UPW-REMIN</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">BMED_UPW_POLISH -> REMIN</text>
-<text x="20" y="642">pipe 23.09 m in 6 pieces; cut 2489 6000 3779 1629 6000 3189 mm</text>
+<text x="20" y="642">pipe 23.69 m in 6 pieces; cut 6000 5989 6000 3779 1629 289 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

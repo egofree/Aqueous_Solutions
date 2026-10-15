@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="377.7,580.0 377.7,60.0 40.0,255.0 377.7,450.0 377.7,460.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="383.7" y="316.0">Z +2600</text>
-<text x="214.9" y="153.5">X -1950</text>
-<text x="214.9" y="348.5">Y -1950</text>
-<text x="383.7" y="451.0">Z -50</text>
-<circle cx="377.7" cy="580.0" r="5" fill="black"/><text x="385.7" y="594.0">BUOH_STILL</text>
-<circle cx="377.7" cy="460.0" r="5" fill="none" stroke="black"/><text x="385.7" y="474.0">BUCL</text>
+<polyline points="348.1,580.0 348.1,60.0 40.0,237.9 348.1,415.8 348.1,470.5" fill="none" stroke="black" stroke-width="3"/>
+<text x="354.1" y="316.0">Z +2850</text>
+<text x="200.1" y="144.9">X -1950</text>
+<text x="200.1" y="322.8">Y -1950</text>
+<text x="354.1" y="439.2">Z -300</text>
+<circle cx="348.1" cy="580.0" r="5" fill="black"/><text x="356.1" y="594.0">BUOH_STILL</text>
+<circle cx="348.1" cy="470.5" r="5" fill="none" stroke="black"/><text x="356.1" y="484.5">BUCL</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-BUOH-R</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">BUOH_STILL -> BUCL</text>
-<text x="20" y="642">pipe 6.49 m in 4 pieces; cut 2589 1929 1929 39 mm</text>
+<text x="20" y="642">pipe 6.99 m in 4 pieces; cut 2839 1929 1929 289 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

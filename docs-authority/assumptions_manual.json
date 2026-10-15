@@ -1945,12 +1945,28 @@
   "files": [
    "flow_graph/inventory/motor_designs.py"
   ],
-  "value": "Design coefficients inside published ranges: B_delta 0.75 T, A 20/30/40 kA/m by rating, k_w 0.92, J 5 A/mm2, power factor 0.80 (<4 kW) / 0.84, split ratio 0.55 (4-pole) / 0.50 (2-pole), lamination OD <= 0.85 x 2H in the IEC frame, core length/bore <= 2.5; BLDC A 15 kA/m, B 0.8 T, 3000 rpm; bearing sizes by frame",
+  "value": "Design coefficients inside published ranges: B_delta 0.75 T, A 20/30/40 kA/m by rating, k_w 0.92, J 5 A/mm2, power factor 0.80 (<4 kW) / 0.84, split ratio 0.55 (4-pole) / 0.50 (2-pole), lamination OD <= 0.85 x 2H in the IEC frame, core length/bore <= 2.5; BLDC A 15 kA/m, B 0.8 T, 3000 rpm; bearing sizes by frame; IE3 targets from the IEC 60034-30-1:2014 60 Hz table (4-pole IEC frames, 2-pole hermetic), linear interpolation for 3 and 4 kW (standard 5.4.7 formula applied on the type test)",
   "units": "T, kA/m, A/mm2",
   "where": "AQS-INV-005",
-  "basis": "PYRHONEN2014 tables 6.3-6.4; HENDERSHOT2010; IEC 60072-1; IEC 60034-30-1",
+  "basis": "PYRHONEN2014 tables 6.3-6.4; HENDERSHOT2010; IEC 60072-1; IEC 60034-30-1; IEC60034_30_1 60 Hz table",
   "sensitivity": "Core length scales inversely with B and A",
   "replaced_by": "First-article type tests (X-INV-02B)",
   "verification_test": "IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K"
+ },
+ {
+  "id": "A-M-127",
+  "task": "X-PIP-04",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/_iso_routes.py",
+   "docs-authority/_iso_sheets.py"
+  ],
+  "value": "Route rule: rack elevation for a line is at least 300 mm above the higher end, so the riser is an expansion leg; covers the guided-cantilever need (max 0.16 m on IA-ACOH, IA-ALD, IA-MEAM, HDPE DN15)",
+  "units": "mm",
+  "where": "AQS-ISO-001, AQS-PIP-005",
+  "basis": "Guided-cantilever leg L = sqrt(3 E D dL / S) (AQS-PIP-005); HDPE E 900 MPa, S 4 MPa (study values)",
+  "sensitivity": "Larger dT on these lines would need a longer riser",
+  "replaced_by": "Stress analysis to ASME B31.3 Appendix S for the hot and thermoplastic lines",
+  "verification_test": "Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning)"
  }
 ]

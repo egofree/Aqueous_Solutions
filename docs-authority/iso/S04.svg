@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="98.7,580.0 98.7,525.7 40.0,559.7 40.0,559.7 40.0,60.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="104.7" y="548.9">Z +1200</text>
-<text x="75.4" y="538.7">X -1500</text>
-<text x="46.0" y="305.8">Z +11050</text>
-<circle cx="98.7" cy="580.0" r="5" fill="black"/><text x="106.7" y="594.0">CRYO_CO2</text>
-<circle cx="40.0" cy="60.0" r="5" fill="none" stroke="black"/><text x="48.0" y="74.0">GROW_BED</text>
+<polyline points="93.8,580.0 93.8,60.0 40.0,91.1 40.0,91.1 40.0,103.5" fill="none" stroke="black" stroke-width="3"/>
+<text x="99.8" y="316.0">Z +12550</text>
+<text x="72.9" y="71.5">X -1500</text>
+<text x="46.0" y="93.3">Z -300</text>
+<circle cx="93.8" cy="580.0" r="5" fill="black"/><text x="101.8" y="594.0">CRYO_CO2</text>
+<circle cx="40.0" cy="103.5" r="5" fill="none" stroke="black"/><text x="48.0" y="117.5">GROW_BED</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S04</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">CRYO_CO2 -> GROW_BED</text>
-<text x="20" y="642">pipe 13.60 m in 4 pieces; cut 1162 1424 6000 5012 mm</text>
-<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 7 butt weld joints</text>
+<text x="20" y="642">pipe 14.20 m in 5 pieces; cut 6000 6000 512 1424 262 mm</text>
+<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

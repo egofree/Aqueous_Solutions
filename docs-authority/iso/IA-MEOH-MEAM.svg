@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,580.0 40.0,506.0 399.0,298.7 273.3,226.1 273.3,60.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="539.0">Z +2650</text>
-<text x="225.5" y="398.4">X +14848</text>
-<text x="342.2" y="258.4">Y +5200</text>
-<text x="279.3" y="139.1">Z +5950</text>
+<polyline points="40.0,580.0 40.0,335.4 393.3,131.4 269.6,60.0 269.6,68.2" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="453.7">Z +8900</text>
+<text x="222.7" y="229.4">X +14848</text>
+<text x="337.5" y="91.7">Y +5200</text>
+<text x="275.6" y="60.1">Z -300</text>
 <circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">MEOH_TANK</text>
-<circle cx="273.3" cy="60.0" r="5" fill="none" stroke="black"/><text x="281.3" y="74.0">MEAM</text>
+<circle cx="269.6" cy="68.2" r="5" fill="none" stroke="black"/><text x="277.6" y="82.2">MEAM</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-MEOH-MEAM</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">MEOH_TANK -> MEAM</text>
-<text x="20" y="642">pipe 28.58 m in 6 pieces; cut 2639 6000 6000 2827 5179 5939 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 fusion joints</text>
+<text x="20" y="642">pipe 29.18 m in 7 pieces; cut 6000 2889 6000 6000 2827 5179 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

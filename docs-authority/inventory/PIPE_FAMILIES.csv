@@ -1,23 +1,23 @@
 family,cls,material,DN,pipe_m,lines,stock_lengths_6m,offcut_m,elbows_90,elbow_std,flanges,flange_std,gaskets,stud_bolts,stud_size,joints,joint_type
-PF-01,P1,PVC-U Sch 80 ASTM D1785,15,1259.1,81,211,26.3,233,ASTM D2467 socket 90 elbow,162,ASTM D2467 flange,162,648,1/2 in,706,solvent
-PF-02,M1,316L ASTM A312,15,1162.1,64,194,19.4,186,ASME B16.9 LR 90 elbow,128,ASME B16.5 Cl 150 flange,128,512,1/2 in,609,butt weld
-PF-03,P5,HDPE PE4710 DR 11 (ASTM D3035),15,906.1,66,152,19.8,187,ASTM D3261 butt-fusion 90 elbow,132,ASTM D3261 stub end + backing ring,132,528,1/2 in,565,fusion
-PF-04,P5,HDPE PE4710 DR 11 (ASTM D3035),50,601.6,33,101,13.6,95,ASTM D3261 butt-fusion 90 elbow,66,ASTM D3261 stub end + backing ring,66,264,5/8 in,308,fusion
-PF-05,P2,CPVC Sch 80 ASTM F441,15,591.1,28,101,24.2,84,ASTM F439 socket 90 elbow,56,ASTM F439 flange,56,224,1/2 in,274,solvent
-PF-06,P2,CPVC Sch 80 ASTM F441,50,443.7,21,75,13.1,63,ASTM F439 socket 90 elbow,42,ASTM F439 flange,42,168,5/8 in,209,solvent
-PF-07,P1,PVC-U Sch 80 ASTM D1785,50,274.7,13,47,11.6,37,ASTM D2467 socket 90 elbow,26,ASTM D2467 flange,26,104,5/8 in,125,solvent
-PF-08,P3,PVDF SDR 21 ISO 10931,15,182.7,14,31,6.2,41,ISO 10931 butt-fusion 90 elbow,28,ISO 10931 stub end + backing ring,28,112,1/2 in,120,fusion
-PF-09,M2,CS ASTM A106 Gr B,15,116.1,8,20,5.7,22,ASME B16.9 LR 90 elbow,16,ASME B16.5 Cl 150 flange,16,64,1/2 in,67,butt weld
-PF-10,M1,316L ASTM A312,20,115.1,7,20,6.7,19,ASME B16.9 LR 90 elbow,14,ASME B16.5 Cl 150 flange,14,56,1/2 in,62,butt weld
-PF-11,F1,FRP vinyl ester,15,100.7,5,17,2.9,14,ASTM D5421 FRP 90 elbow,10,ASTM D5421 FRP flange,10,40,1/2 in,47,butt-and-strap
-PF-12,P4,PP-H ISO 15494,15,97.5,7,17,6.0,21,ISO 15494 butt-fusion 90 elbow,14,ISO 15494 stub end + backing ring,14,56,1/2 in,63,fusion
+PF-01,P1,PVC-U Sch 80 ASTM D1785,15,1280.4,81,213,17.1,233,ASTM D2467 socket 90 elbow,162,ASTM D2467 flange,162,648,1/2 in,723,solvent
+PF-02,M1,316L ASTM A312,15,1172.3,64,196,21.4,186,ASME B16.9 LR 90 elbow,128,ASME B16.5 Cl 150 flange,128,512,1/2 in,614,butt weld
+PF-03,P5,HDPE PE4710 DR 11 (ASTM D3035),15,921.2,66,154,16.9,187,ASTM D3261 butt-fusion 90 elbow,132,ASTM D3261 stub end + backing ring,132,528,1/2 in,568,fusion
+PF-04,P5,HDPE PE4710 DR 11 (ASTM D3035),50,608.9,33,102,12.3,95,ASTM D3261 butt-fusion 90 elbow,66,ASTM D3261 stub end + backing ring,66,264,5/8 in,313,fusion
+PF-05,P2,CPVC Sch 80 ASTM F441,15,594.5,28,100,14.7,84,ASTM F439 socket 90 elbow,56,ASTM F439 flange,56,224,1/2 in,276,solvent
+PF-06,P2,CPVC Sch 80 ASTM F441,50,446.7,21,75,10.1,63,ASTM F439 socket 90 elbow,42,ASTM F439 flange,42,168,5/8 in,214,solvent
+PF-07,P1,PVC-U Sch 80 ASTM D1785,50,277.5,13,47,8.7,37,ASTM D2467 socket 90 elbow,26,ASTM D2467 flange,26,104,5/8 in,126,solvent
+PF-08,P3,PVDF SDR 21 ISO 10931,15,186.1,14,32,8.9,41,ISO 10931 butt-fusion 90 elbow,28,ISO 10931 stub end + backing ring,28,112,1/2 in,121,fusion
+PF-09,M1,316L ASTM A312,20,116.9,7,20,4.9,19,ASME B16.9 LR 90 elbow,14,ASME B16.5 Cl 150 flange,14,56,1/2 in,62,butt weld
+PF-10,M2,CS ASTM A106 Gr B,15,116.1,8,20,5.7,22,ASME B16.9 LR 90 elbow,16,ASME B16.5 Cl 150 flange,16,64,1/2 in,67,butt weld
+PF-11,F1,FRP vinyl ester,15,101.2,5,17,2.4,14,ASTM D5421 FRP 90 elbow,10,ASTM D5421 FRP flange,10,40,1/2 in,47,butt-and-strap
+PF-12,P4,PP-H ISO 15494,15,98.7,7,17,4.8,21,ISO 15494 butt-fusion 90 elbow,14,ISO 15494 stub end + backing ring,14,56,1/2 in,63,fusion
 PF-13,P5,HDPE PE4710 DR 11 (ASTM D3035),20,77.0,4,13,2.2,12,ASTM D3261 butt-fusion 90 elbow,8,ASTM D3261 stub end + backing ring,8,32,1/2 in,40,fusion
-PF-14,P1,PVC-U Sch 80 ASTM D1785,65,57.3,2,10,3.6,4,ASTM D2467 socket 90 elbow,4,ASTM D2467 flange,4,16,5/8 in,18,solvent
+PF-14,P1,PVC-U Sch 80 ASTM D1785,65,58.5,2,10,2.4,4,ASTM D2467 socket 90 elbow,4,ASTM D2467 flange,4,16,5/8 in,18,solvent
 PF-15,M2,CS ASTM A106 Gr B,20,46.3,2,8,2.5,6,ASME B16.9 LR 90 elbow,4,ASME B16.5 Cl 150 flange,4,16,1/2 in,20,butt weld
-PF-16,P3,PVDF SDR 21 ISO 10931,50,42.5,2,8,6.2,6,ISO 10931 butt-fusion 90 elbow,4,ISO 10931 stub end + backing ring,4,16,5/8 in,19,fusion
-PF-17,M1,316L ASTM A312,25,41.0,2,7,1.6,6,ASME B16.9 LR 90 elbow,4,ASME B16.5 Cl 150 flange,4,16,1/2 in,21,butt weld
-PF-18,P5,HDPE PE4710 DR 11 (ASTM D3035),25,39.2,3,8,9.5,8,ASTM D3261 butt-fusion 90 elbow,6,ASTM D3261 stub end + backing ring,6,24,1/2 in,24,fusion
-PF-19,F1,FRP vinyl ester,20,29.8,1,5,0.6,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,8,1/2 in,11,butt-and-strap
+PF-16,P3,PVDF SDR 21 ISO 10931,50,43.1,2,8,5.6,6,ISO 10931 butt-fusion 90 elbow,4,ISO 10931 stub end + backing ring,4,16,5/8 in,20,fusion
+PF-17,M1,316L ASTM A312,25,42.2,2,8,6.5,6,ASME B16.9 LR 90 elbow,4,ASME B16.5 Cl 150 flange,4,16,1/2 in,21,butt weld
+PF-18,P5,HDPE PE4710 DR 11 (ASTM D3035),25,39.8,3,8,8.9,8,ASTM D3261 butt-fusion 90 elbow,6,ASTM D3261 stub end + backing ring,6,24,1/2 in,24,fusion
+PF-19,F1,FRP vinyl ester,20,30.4,1,6,6.1,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,8,1/2 in,12,butt-and-strap
 PF-20,M2,CS ASTM A106 Gr B,25,11.4,2,3,6.9,4,ASME B16.9 LR 90 elbow,4,ASME B16.5 Cl 150 flange,4,16,1/2 in,12,butt weld
 PF-21,F1,FRP vinyl ester,250,7.4,3,2,4.8,4,ASTM D5421 FRP 90 elbow,6,ASTM D5421 FRP flange,6,72,7/8 in,14,butt-and-strap
 PF-22,P3,PVDF SDR 21 ISO 10931,32,7.4,1,2,4.8,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,8,1/2 in,8,fusion
