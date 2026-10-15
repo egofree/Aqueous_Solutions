@@ -17,6 +17,8 @@ for r in pr.get('moves',[])+pr.get('create_moves',[]):
     o,z=r.get('origin_mm'),r.get('size_mm')
     if o and z and len(o)==3 and len(z)>=2:
         z=list(z)+[0]*(3-len(z)); C.setdefault(r['unit_id'],([o[i]+z[i]/2 for i in range(3)],'placement_report'))
+for r in json.load(open('flow_graph/placement_study.json'))['units']:
+    o,z=r['origin_mm'],r['size_mm']; C.setdefault(r['unit_id'],([o[i]+z[i]/2 for i in range(3)],'placement_study (STUDY)'))
 LV={'L-1':-6000,'L0':0,'L1':6000}
 for b in seed['blocks']:
     o=b['origin_mm']; z=b['size_mm']; c=[o[0]+z[0]/2,o[1]+z[1]/2,LV.get(b['level'],0)+500]

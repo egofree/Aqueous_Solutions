@@ -191,3 +191,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | A | 2026-10-15 | Protection and coordination | canonical |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | A | 2026-10-15 | Storage and generation sizing | canonical |
 | AQS-PIP-004 | `docs-authority/LINE_LIST.md` | A | 2026-10-15 | Plant line list | canonical |
+| AQS-PLACE-STUDY-001 | `flow_graph/placement_study.json` | A | 2026-10-15 | Study placement of unplaced units | canonical |

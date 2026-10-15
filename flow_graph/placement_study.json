@@ -1,0 +1,408 @@
+{
+  "doc_id": "AQS-PLACE-STUDY-001",
+  "status": "STUDY. Not issued placement. Footprints are register assumptions.",
+  "categories": {
+    "skid": [
+      1200,
+      800,
+      1800
+    ],
+    "tank": [
+      2400,
+      1800,
+      1500
+    ],
+    "bed": [
+      4800,
+      1200,
+      600
+    ],
+    "pen": [
+      3000,
+      2400,
+      2000
+    ],
+    "room": [
+      3000,
+      3000,
+      2600
+    ],
+    "manifold": [
+      600,
+      300,
+      300
+    ],
+    "cold_box": [
+      2000,
+      1500,
+      2600
+    ],
+    "small_cold": [
+      800,
+      600,
+      1500
+    ]
+  },
+  "units": [
+    {
+      "unit_id": "HAB_SLEEP",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        17600,
+        11400,
+        6000
+      ],
+      "size_mm": [
+        3000,
+        3000,
+        2600
+      ],
+      "category": "room",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "HAB_GALLEY",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        17600,
+        15000,
+        6000
+      ],
+      "size_mm": [
+        3000,
+        3000,
+        2600
+      ],
+      "category": "room",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'room' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "ANIMAL_PEN",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        21200,
+        11400,
+        6000
+      ],
+      "size_mm": [
+        2400,
+        3000,
+        2000
+      ],
+      "category": "pen",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "COMPOST",
+      "level": "L1",
+      "block_id": "FARM",
+      "origin_mm": [
+        21200,
+        15000,
+        6000
+      ],
+      "size_mm": [
+        2400,
+        3000,
+        2000
+      ],
+      "category": "pen",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'pen' (assumption); packed in FARM 600 mm clear"
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        20600,
+        6000,
+        -6000
+      ],
+      "size_mm": [
+        2000,
+        1500,
+        2600
+      ],
+      "category": "cold_box",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'cold_box' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
+      "unit_id": "BOARD_MILL",
+      "level": "L0",
+      "block_id": "MFG",
+      "origin_mm": [
+        22600,
+        0,
+        0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in MFG 600 mm clear"
+    },
+    {
+      "unit_id": "CRYO_HE",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        23200,
+        6000,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        1500
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
+      "unit_id": "CRYO_NE",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        23200,
+        7200,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        1500
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
+      "unit_id": "CRYO_KR",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        20600,
+        8100,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        1500
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
+      "unit_id": "CRYO_XE",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        22000,
+        8400,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        1500
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
+      "unit_id": "CRYO_AR",
+      "level": "L-1",
+      "block_id": "CRYO",
+      "origin_mm": [
+        20600,
+        9300,
+        -6000
+      ],
+      "size_mm": [
+        800,
+        600,
+        1500
+      ],
+      "category": "small_cold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'small_cold' (assumption); packed in CRYO 600 mm clear"
+    },
+    {
+      "unit_id": "HDR_CO2",
+      "level": "L1",
+      "block_id": "HAB",
+      "origin_mm": [
+        0,
+        1800,
+        6000
+      ],
+      "size_mm": [
+        600,
+        300,
+        300
+      ],
+      "category": "manifold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'manifold' (assumption); packed in HAB 600 mm clear"
+    },
+    {
+      "unit_id": "HDR_N2",
+      "level": "L1",
+      "block_id": "HAB",
+      "origin_mm": [
+        1200,
+        1800,
+        6000
+      ],
+      "size_mm": [
+        600,
+        300,
+        300
+      ],
+      "category": "manifold",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'manifold' (assumption); packed in HAB 600 mm clear"
+    }
+  ],
+  "unplaced": [
+    [
+      "HAB_MED",
+      "FARM"
+    ],
+    [
+      "HAB_WASH",
+      "FARM"
+    ],
+    [
+      "DUCKWEED",
+      "FARM"
+    ],
+    [
+      "NFIX_BED",
+      "FARM"
+    ],
+    [
+      "VEG_BED",
+      "FARM"
+    ],
+    [
+      "CLOVER",
+      "FARM"
+    ],
+    [
+      "PEANUT",
+      "FARM"
+    ],
+    [
+      "SUNFLOWER",
+      "FARM"
+    ],
+    [
+      "DIGESTER",
+      "FARM"
+    ],
+    [
+      "FISH",
+      "FARM"
+    ],
+    [
+      "CLARIFIER",
+      "FARM"
+    ],
+    [
+      "FISH_SUMP",
+      "FARM"
+    ],
+    [
+      "EMETH",
+      "FARM"
+    ],
+    [
+      "LIGNO_PRE",
+      "FARM"
+    ],
+    [
+      "HTC",
+      "FARM"
+    ],
+    [
+      "YEAST",
+      "FARM"
+    ],
+    [
+      "ABE",
+      "FARM"
+    ],
+    [
+      "ACETOX",
+      "FARM"
+    ],
+    [
+      "ALD",
+      "FARM"
+    ],
+    [
+      "GLYOXAL",
+      "FARM"
+    ],
+    [
+      "FORM",
+      "FARM"
+    ],
+    [
+      "MEAM",
+      "FARM"
+    ],
+    [
+      "IMID",
+      "FARM"
+    ],
+    [
+      "ACEX",
+      "FARM"
+    ],
+    [
+      "HNO3",
+      "FARM"
+    ],
+    [
+      "BUCL",
+      "FARM"
+    ],
+    [
+      "BSFL",
+      "FARM"
+    ],
+    [
+      "WORMS",
+      "FARM"
+    ],
+    [
+      "BEES",
+      "FARM"
+    ],
+    [
+      "CRAYFISH",
+      "FARM"
+    ],
+    [
+      "COMPOST_TOILET",
+      "FARM"
+    ]
+  ]
+}

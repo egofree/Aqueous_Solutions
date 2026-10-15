@@ -105,7 +105,8 @@ X=[
 ('X-BLD-04','General arrangement and layout','placement seed checked for clearance, access, and maintenance envelopes','unit task 02',None),
 ('X-BLD-05','Enclosure, floors, stairs, egress','envelope, floor plates, stairs; egress per AQS-EGR-001','X-BLD-01',None),
 ('X-BLD-06','Lifting and cranes','crane and hoist duty for the heaviest lift per level','X-BLD-02',None),
-('X-BLD-07','Site access and dock','AQS-SITE-001 checked against vehicle and container sizes','X-BAS-03',None)]),
+('X-BLD-07','Site access and dock','AQS-SITE-001 checked against vehicle and container sizes','X-BAS-03',None),
+('X-BLD-09','Study placement of unplaced units','every present unit has a study box in its sector block, 600 mm clear; FARM sector capacity resolved','X-BLD-04','flow_graph/placement_study.json')]),
 ('SAF','Safety, relief, fire',[
 ('X-SAF-01','HAZOP','HAZOP worksheets per P&ID node with actions closed','unit task 03',None),
 ('X-SAF-02','Hazard separation','AQS-HSE-001 separation distances applied to layout','X-BLD-04',None),
@@ -252,15 +253,15 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 
 ## 5. Next 10 tasks
 
-1. X-MAT-18 EW electrode materials in chloride with anodic Cl₂.
-2. X-MAT-19 Cool the hot LEACH draws to BMED_ACID, BMED_BASE and ROOF_TANK.
-3. X-ELS-03 Single-line diagram against AQS-ELEC-003 and AQS-ELEC-004.
-4. X-ELS-07 Protection and fault current (unlocks step and touch in X-ELS-08).
-5. X-ELS-05 Storage and generation sizing with the 38 kW RECT-EW bounding AC load.
-6. X-MAT-07 Galvanic and stray-current design for the EW aisle.
-7. X-PIP-02 Plant line list with the AQS-PIP-003 class on every edge.
-8. EW aisle re-placement (unit task 14 / X-BLD): sized cells 370–2670 mm long against the 750 mm pitch.
-9. X-ELS-02 Remaining unit task 02 loads, largest first (CRYO_ASU, MFG_SHOP, BMED_UPW_POLISH, GROW_BED, CRYO_H2).
+1. X-BLD-09 FARM sector capacity: 31 FARM units need about 161 m² more than the block has (owner decision: grow FARM, use HAB for HAB_*, or stack).
+2. X-MAT-19 edge corrections (IA-BMED-03/04 temperature label, IA-POT-01 composition), no rate change.
+3. X-ELS-02 Remaining unit task 02 loads, largest first (CRYO_ASU, MFG_SHOP, BMED_UPW_POLISH, GROW_BED, CRYO_H2).
+4. X-PIP-03 Isometrics for positioned lines.
+5. X-PIP-02 close once X-BLD-09 places the FARM units.
+6. EW aisle re-placement (awaiting Mike).
+7. BMED cooling energy edge (awaiting Mike).
+8. Acid resize (awaiting Mike).
+9. EW power rate change and power-system resize (awaiting Mike).
 10. X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test.
 
 Owner decisions open: class A (regolith-like) feed acid limit (AQS-ASSAY-001 Rev D §8); EW side-reaction H₂ and IA-E-RECT 4.57 kW against the 38 kW bounding AC (rate changes not approved).

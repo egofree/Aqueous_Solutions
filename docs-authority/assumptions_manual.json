@@ -882,5 +882,33 @@
    "docs-authority/LINE_LIST.md"
   ],
   "id": "A-M-068"
+ },
+ {
+  "value": "{\"skid\": [1200, 800, 1800], \"tank\": [2400, 1800, 1500], \"bed\": [4800, 1200, 600], \"pen\": [3000, 2400, 2000], \"room\": [3000, 3000, 2600], \"manifold\": [600, 300, 300], \"cold_box\": [2000, 1500, 2600], \"small_cold\": [800, 600, 1500]}",
+  "units": "mm",
+  "where": "AQS-PLACE-STUDY-001 footprints by category",
+  "basis": "Study envelopes by equipment type (skid, tank, bed, pen, room, manifold, cold box); no unit envelope exists",
+  "sensitivity": "Packing, line lengths",
+  "replaced_by": "Unit task 02/14 envelopes",
+  "task": "X-BLD-09",
+  "files": [
+   "flow_graph/placement_study.json",
+   "flow_graph/study_place.py"
+  ],
+  "id": "A-M-069"
+ },
+ {
+  "value": "block-sized placeholder boxes of the target block are not obstacles",
+  "units": "-",
+  "where": "study_place.py packing",
+  "basis": "Rows sized to the whole sector block are sector stand-ins, not equipment",
+  "sensitivity": "Free area in FARM, HAB, CRYO, MFG",
+  "replaced_by": "Unit envelopes for GROW_BED, HABITATION, CRYO_* and MFG_SHOP",
+  "task": "X-BLD-09",
+  "files": [
+   "flow_graph/placement_study.json",
+   "flow_graph/study_place.py"
+  ],
+  "id": "A-M-070"
  }
 ]
