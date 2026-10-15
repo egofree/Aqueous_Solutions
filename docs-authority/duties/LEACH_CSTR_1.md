@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Envelope 2000×1200×1400 mm, 3.36 m³. Flow 5622.7 kg/d is circulation. If the box were full the residence would be 14.34 h. It is not sized as a 20-day tank.
 
-3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. Wall 12 mm, floor 16 mm (AQS-NZ-001). PVDF lid bolts. HL-Q3-A/B-HX5 bring Q3 water at 95 °C (graph), above the PVC-U and CPVC limits of AQS-STD-002 M5; those two ports are flagged, CPVC is the thermoplastic alternative, and the case is held. Liquor temperature is not on the graph.
+3. Material. PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. Wall 12 mm, floor 16 mm (AQS-NZ-001). PVDF lid bolts. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles for the Q3 water at 95 °C (AQS-STD-002 section 3.2); the Q3 metal piping ends at a dielectric isolating flange outside the tank. Liquor high-temperature trip 55 °C (assumption). Coil area and liquor temperature are held.
 
 4. Nozzles. Origin 600, 5300, -6000 mm. Size 2000 × 1200 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, HL-Q3-A-HX5, inlet, -Y face center, 1600, 5300, -5300 mm. Height 700 mm from the bottom. DN20 from the edge. Rating hose, atmospheric.

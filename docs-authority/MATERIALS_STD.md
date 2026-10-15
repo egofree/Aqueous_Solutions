@@ -1,13 +1,14 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: A
+Revision: B
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue. Owner rule: chlor-alkali and acid-regen systems are PVC; no metal wetted part where oxidizing or reducing conditions exist. First audit of every present unit. | 2026-10-15 |
+| B | Decisions for ZNBR2_BR2_REGEN (PVC-U) and LEACH_CSTR_1 HX-5 (PVDF coil). Published sources added. | 2026-10-15 |
 
 ## 1. Rules
 
@@ -62,3 +63,47 @@ Ambiguous, not changed (each is a TASK_PLAN X-MAT-06 item):
 - MFG units with "316L where wet". Wet service not named.
 
 Compliant as written: CRYO sector (M7 cryogenic), MET_MELT and SIC_FURNACE (M7 hot face), electrical nodes and stacks with no wetted alloy (M6 for the stacks), farm and habitation units already HDPE or PVC.
+
+## 3. Decisions, Rev B
+
+### 3.1 ZNBR2_BR2_REGEN, wet bromine scrub
+
+Service from the graph: S69 is the ZNBR2 headspace purge, 30 m³/h at ambient humidity with 10 ppmv Br₂. The liquor (S69B) is NaBr after ORP, with 2 M NaOH make-up. Br₂ + 2 NaOH gives NaBr + NaOBr, so the liquor is a caustic hypobromite: oxidizing (M3) and above pH 12. Temperature is ambient on the edge.
+
+| Candidate | Chemistry | Temperature | Cost and supply | Result |
+| --- | --- | --- | --- | --- |
+| Borosilicate glass 3.3 | Inert to Br₂; etched by hot strong caustic | Well above service | Process-glass sections, moderate cost, fragile | Not chosen: 2 M NaOH make-up point |
+| Glass-lined steel | As glass; steel behind | — | Expensive at this size | Not chosen |
+| PVDF homopolymer | Br₂ water rated to 100 °C, Br₂ gas to 65 °C [S1]; homopolymer limited to pH 12 at ambient [S2] | — | Sheet and pipe common | Not chosen: caustic liquor above pH 12 |
+| ECTFE | Resists halogens and caustic | — | Sheet lining; costly, few fabricators | Fallback only |
+| PTFE/PFA lining | Inert | — | Costly at this size | Not chosen |
+| FRP vinyl ester, C-veil | Wet halogen service is common; caustic needs a synthetic veil, not C-glass | — | Shop fabrication | Not chosen: two-veil liner for one small column |
+| PP | No resistance to halogens or strong oxidants [S4] | — | Cheap | Excluded |
+| PVC-U | Resists NaOH and hypohalite at ambient; Br₂ at ppm level in air; limited in concentrated Br₂ | 60 °C limit [S3] | Cheapest; pipe, sheet, Pall rings common | **Chosen** |
+
+Decision. PVC-U shell, sump, liquor piping, and Pall-ring packing. FKM gaskets. Basis: the Br₂ load is 10 ppmv in air and is converted to bromide and hypobromite in a caustic liquor, where PVC is suitable and PVDF is not. Held: the hypobromite rating at the liquor ORP is not on the cited chart; a coupon test is a TASK_PLAN X-MAT-06 item. If the S69 Br₂ concentration rises above trace, the inlet spool changes to borosilicate glass.
+
+### 3.2 LEACH_CSTR_1, HX-5 ports at 95 °C
+
+Service from the graph: HL-Q3-A/B-HX5 bring Q3 water at 95 °C supply and 85 °C return. The exchanger sits in leach liquor (HCl and NaClO₃, high ORP, chloride). The PVC-U tank holds the liquor at no more than 60 °C (M5).
+
+| Candidate | Chemistry | Temperature | Cost and supply | Result |
+| --- | --- | --- | --- | --- |
+| CPVC | Good with HCl and chlorate | 93 °C limit with derating to 0.20 at 93 °C [S3, S5] | Cheap | Not chosen: 95 °C supply is above the limit |
+| PP-H | Good with hot water; no resistance to strong oxidants [S4] | 100 °C, 80 °C continuous [S4] | Cheap | Not chosen: chlorate liquor on the outside |
+| Borosilicate glass 3.3 coil | Inert to HCl and chlorate | Above service; thermal shock limit | Moderate cost, fragile | Fallback |
+| Impregnated graphite | Inert; electrically conductive | Above service | Costly | Not chosen: conductor in an electrochemical plant |
+| PVDF homopolymer | Chlorinated acid brine rated to 95 °C [S1]; hot water well above | Meets 95 °C | Tube, fittings, and flanges common | **Chosen** |
+| Metal (Ti, 316L) | — | — | — | Excluded by M3 |
+
+Design change considered. Lowering the Q3 supply is not taken: Q3 also serves HX-4 and HX-6 at the same tier (AQS-HEAT-LADDER-001), so the tier temperature stays. A blending loop to below 60 °C would need a new edge and is not taken.
+
+Decision. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles, bolted through PVDF flanges to PVC-U stub flanges on the tank, FKM gaskets. The Q3 metal piping ends at a dielectric isolating flange outside the tank (M6). A liquor high-temperature trip at 55 °C (assumption, 5 K below M5) closes the Q3 supply. Held: coil area at the lower conductivity of PVDF is not calculated; liquor temperature is not on the graph.
+
+## References
+
+- [S1] Arkema, Kynar PVDF Chemical Resistance Chart (maximum use temperatures), https://page.arkema.com/rs/253-HSZ-754/images/kynar-pvdf-chemical-resistance-chart.pdf
+- [S2] Arkema, Kynar Chemical Resistance and Fuel Resistance (pH limits), https://hpp.arkema.com/en/product-families/kynar-fluoropolymer-family/chemical-resistance-fuel-resistance/
+- [S3] Spears Manufacturing, PVC and CPVC Engineering Guide (maximum service temperature PVC 60 °C, CPVC 93 °C), https://spearsmfg.com/listings_approvals/036_IP-4-1125-Complete_web.pdf
+- [S4] SIMONA, PP tech.info (service temperature, no resistance to strong oxidants and halogens), https://www.simona.de/fileadmin/user_upload/Medien/Mediacenter/Technische_Informationen/tech.info_SIMONA_PP_-english-.pdf
+- [S5] PPI TN-62, CPVC piping temperature derating, https://www.plasticpipe.org/common/Uploaded%20files/Technical/PPI-TN-62.pdf

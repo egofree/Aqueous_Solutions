@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - No liquor inlet. No sump volume is invented from the gas mass.
 - Packed height 3.0 m. HTU 0.5 m on 25 mm pall rings. NTU 6. Removal 1 − e^(−6) = 99.75% if the acid gas is irreversible.
 
-3. Material. 316L shell. Wet gas. Packing is polymer. Carbon steel pits. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets. AQS-STD-002 section 3.1: 10 ppmv Br₂ in air into caustic NaBr/NaOBr liquor; PVDF excluded above pH 12, PP excluded for halogens. No metal wetted part. Hypobromite rating held for a coupon test.
 
 4. Nozzles. Origin -6400, 10000, 0 mm. Size 400 × 400 × 1500 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, S69, inlet, -Y face center, -6200, 10000, 750 mm. Height 750 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

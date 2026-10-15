@@ -31,7 +31,7 @@
    "value": 1400,
    "note": "Assumption. Typical PVC-U sheet density, not measured."
   },
-  "temperature_check": "Liquor temperature is not on the graph. HL-Q3-A/B-HX5 carry Q3 water at supply 95 C, return 85 C (graph). 95 C exceeds the PVC-U limit (60 C, assumption from published PVC-U data) and the usual CPVC limit (93 C, assumption). The HX-5 ports are flagged. CPVC is the thermoplastic alternative. No metal. Held under X-MAT-05."
+  "temperature_check": "HL-Q3-A/B-HX5 carry Q3 water at supply 95 C, return 85 C (graph). Above PVC-U 60 C and CPVC 93 C. HX-5 ports and coil are PVDF per AQS-STD-002 section 3.2. Liquor temperature not on the graph; trip at 55 C (assumption)."
  },
  "assumptions": {
   "header_zone_mm": {

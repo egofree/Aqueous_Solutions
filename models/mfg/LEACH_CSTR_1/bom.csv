@@ -3,7 +3,7 @@ item,description,qty,material,basis
 2,Lid flange ring 40 mm x 10 mm,1,PVC-U,assumption
 3,Lid plate 12 mm,1,PVC-U,assumption; closed lid for vents to NOX_SCRUB and FLUE_KO
 4,Inlet header DN50 on -Y face Z 700,1,PVC-U,graph nozzle rule; header is assumption
-5,Inlet port stub DN20 (HL-Q3-A-HX5 HL-Q3-B-HX5) Q3 water 95 C,2,CPVC (flagged: 95 C exceeds PVC-U; above usual CPVC limit; held X-MAT-05),DN from edge
+5,Inlet port stub DN20 (HL-Q3-A-HX5 HL-Q3-B-HX5) Q3 water 95 C,2,PVDF (AQS-STD-002 3.2; Q3 water 95 C),DN from edge
 6,Inlet port stub DN25 placeholder bore not calculated,23,PVC-U,assumption
 7,Outlet header DN50 on +Y face Z 700,1,PVC-U,graph nozzle rule; header is assumption
 8,Outlet port stub DN25 placeholder bore not calculated,20,PVC-U,assumption
