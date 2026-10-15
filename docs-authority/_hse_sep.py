@@ -15,6 +15,8 @@ for f in ('placement_seed', 'placement_study'):
     for u in json.load(open(f'flow_graph/{f}.json'))['units']:
         if u.get('size_mm') and u.get('origin_mm') and u.get('level'): U.setdefault(u['unit_id'].split('/')[0], u)
 rep = json.load(open('flow_graph/placement_report.json'))
+if os.path.exists('flow_graph/placement_blocks.json'):
+    for u in json.load(open('flow_graph/placement_blocks.json'))['units']: U.setdefault(u['unit_id'], u)   # packed block members (A-M-214)
 for r in [r for k in ('moves', 'create_moves', 'apply_moves') for r in rep.get(k, [])]:
     if r['unit_id'] not in U and r.get('origin_mm') and r.get('size_mm') and r.get('level'): U[r['unit_id']] = dict(r, _block=1)
 blk = collections.Counter((tuple(u['origin_mm'][:2]), tuple(u['size_mm'][:2]), u['level']) for u in U.values() if u.get('_block'))

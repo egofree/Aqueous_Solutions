@@ -1,0 +1,644 @@
+{
+ "basis": "A-M-214 packed block members",
+ "units": [
+  {
+   "unit_id": "AFTERBURNER_FLUE",
+   "level": "L-1",
+   "origin_mm": [
+    18000.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1000.0,
+    1000.0,
+    5000
+   ],
+   "block": [
+    18000.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "ACID_POLISH_SCRUB",
+   "level": "L-1",
+   "origin_mm": [
+    20000.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1000,
+    1000,
+    4103
+   ],
+   "block": [
+    18000.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "ALK_SCRUBBER",
+   "level": "L-1",
+   "origin_mm": [
+    22000.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1000,
+    1000,
+    4103
+   ],
+   "block": [
+    18000.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "BAGHOUSE",
+   "level": "L-1",
+   "origin_mm": [
+    18000.0,
+    14000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    800.0,
+    800.0,
+    5000
+   ],
+   "block": [
+    18000.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "H2_DRYER",
+   "level": "L-1",
+   "origin_mm": [
+    19800.0,
+    14000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    690.0,
+    690.0,
+    5000
+   ],
+   "block": [
+    18000.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "AFTERBURNER",
+   "level": "L-1",
+   "origin_mm": [
+    0.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    600,
+    600,
+    4500
+   ],
+   "block": [
+    0.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "OIL_PYRO",
+   "level": "L-1",
+   "origin_mm": [
+    1600.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    500,
+    500,
+    670
+   ],
+   "block": [
+    0.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "GLASS_DIGEST",
+   "level": "L-1",
+   "origin_mm": [
+    3100.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    750,
+    750,
+    890
+   ],
+   "block": [
+    0.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "OIL_DRYER",
+   "level": "L-1",
+   "origin_mm": [
+    4850.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    690.0,
+    690.0,
+    4500
+   ],
+   "block": [
+    0.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "OIL_FRAC",
+   "level": "L-1",
+   "origin_mm": [
+    6540.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    600,
+    600,
+    4500
+   ],
+   "block": [
+    0.0,
+    12000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "BMED_ACID",
+   "level": "L-1",
+   "origin_mm": [
+    12000.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1040.0,
+    1040.0,
+    3500
+   ],
+   "block": [
+    12000.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "BMED_BASE",
+   "level": "L-1",
+   "origin_mm": [
+    14040.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1030.0,
+    1030.0,
+    3500
+   ],
+   "block": [
+    12000.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRU",
+   "level": "L-1",
+   "origin_mm": [
+    16070.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    600,
+    600,
+    3500
+   ],
+   "block": [
+    12000.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "POLISH_BANK",
+   "level": "L-1",
+   "origin_mm": [
+    17670.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1440.0,
+    1440.0,
+    3500
+   ],
+   "block": [
+    12000.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "SALT_FEED",
+   "level": "L-1",
+   "origin_mm": [
+    12000.0,
+    6440.0,
+    -6000.0
+   ],
+   "size_mm": [
+    690.0,
+    690.0,
+    3500
+   ],
+   "block": [
+    12000.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "MET_MELT",
+   "level": "L0",
+   "origin_mm": [
+    12000.0,
+    0.0,
+    0.0
+   ],
+   "size_mm": [
+    1000.0,
+    1000.0,
+    5000
+   ],
+   "block": [
+    12000.0,
+    0.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "COLD_MILL",
+   "level": "L0",
+   "origin_mm": [
+    14000.0,
+    0.0,
+    0.0
+   ],
+   "size_mm": [
+    1100.0,
+    1100.0,
+    5000
+   ],
+   "block": [
+    12000.0,
+    0.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "GAS_ATOMIZER",
+   "level": "L0",
+   "origin_mm": [
+    16100.0,
+    0.0,
+    0.0
+   ],
+   "size_mm": [
+    1100.0,
+    1100.0,
+    5000
+   ],
+   "block": [
+    12000.0,
+    0.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "MFG_SHOP",
+   "level": "L0",
+   "origin_mm": [
+    18200.0,
+    0.0,
+    0.0
+   ],
+   "size_mm": [
+    600,
+    600,
+    5000
+   ],
+   "block": [
+    12000.0,
+    0.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "WIRE_DRAW",
+   "level": "L0",
+   "origin_mm": [
+    19800.0,
+    0.0,
+    0.0
+   ],
+   "size_mm": [
+    1100.0,
+    1100.0,
+    5000
+   ],
+   "block": [
+    12000.0,
+    0.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRYO_AHU",
+   "level": "L-1",
+   "origin_mm": [
+    15000.0,
+    6000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1160.0,
+    1160.0,
+    4000
+   ],
+   "block": [
+    15000.0,
+    6000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRYO_DED_COOL",
+   "level": "L-1",
+   "origin_mm": [
+    17160.0,
+    6000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    690.0,
+    690.0,
+    4000
+   ],
+   "block": [
+    15000.0,
+    6000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRYO_N2",
+   "level": "L-1",
+   "origin_mm": [
+    18850.0,
+    6000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    800.0,
+    800.0,
+    4000
+   ],
+   "block": [
+    15000.0,
+    6000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRYO_CO2",
+   "level": "L-1",
+   "origin_mm": [
+    15000.0,
+    8160.0,
+    -6000.0
+   ],
+   "size_mm": [
+    6696,
+    1500,
+    450
+   ],
+   "block": [
+    15000.0,
+    6000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRYO_H2",
+   "level": "L-1",
+   "origin_mm": [
+    15000.0,
+    10660.0,
+    -6000.0
+   ],
+   "size_mm": [
+    6696,
+    1500,
+    1050
+   ],
+   "block": [
+    15000.0,
+    6000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "CRYO_O2",
+   "level": "L-1",
+   "origin_mm": [
+    15000.0,
+    13160.0,
+    -6000.0
+   ],
+   "size_mm": [
+    6696,
+    1500,
+    750
+   ],
+   "block": [
+    15000.0,
+    6000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "FLOAT_SINK",
+   "level": "L-1",
+   "origin_mm": [
+    0.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    980.0,
+    980.0,
+    4500
+   ],
+   "block": [
+    0.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "HOPPER",
+   "level": "L-1",
+   "origin_mm": [
+    1980.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1010.0,
+    1010.0,
+    4500
+   ],
+   "block": [
+    0.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "HDR_H2",
+   "level": "L-1",
+   "origin_mm": [
+    3990.0,
+    4000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    1000.0,
+    1000.0,
+    4500
+   ],
+   "block": [
+    0.0,
+    4000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "HDR_UPW",
+   "level": "L1",
+   "origin_mm": [
+    0.0,
+    200.0,
+    6000.0
+   ],
+   "size_mm": [
+    1000.0,
+    1000.0,
+    3000
+   ],
+   "block": [
+    0.0,
+    200.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "HDR_O2",
+   "level": "L1",
+   "origin_mm": [
+    2000.0,
+    200.0,
+    6000.0
+   ],
+   "size_mm": [
+    1000.0,
+    1000.0,
+    3000
+   ],
+   "block": [
+    0.0,
+    200.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "WAFER_FAB",
+   "level": "L0",
+   "origin_mm": [
+    12000.0,
+    8000.0,
+    0.0
+   ],
+   "size_mm": [
+    600,
+    600,
+    4000
+   ],
+   "block": [
+    12000.0,
+    8000.0
+   ],
+   "frame": "plate_world"
+  },
+  {
+   "unit_id": "WET_BENCH",
+   "level": "L0",
+   "origin_mm": [
+    13600.0,
+    8000.0,
+    0.0
+   ],
+   "size_mm": [
+    600,
+    600,
+    4000
+   ],
+   "block": [
+    12000.0,
+    8000.0
+   ],
+   "frame": "plate_world"
+  }
+ ],
+ "overflow": [
+  {
+   "block": [
+    15000.0,
+    6000.0,
+    -6000.0
+   ],
+   "level": "L-1",
+   "need_W_mm": 8660.0,
+   "have_W_mm": 6000
+  }
+ ]
+}
