@@ -108,6 +108,24 @@ def power():
                         'basis': 'flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)'}})
     N['ZNBR2']['params'].update({'kW': math.ceil(p['store_kW']), 'kWh': math.ceil(p['store_kWh'])})
     N['SOL_ARK_60K']['params'].update({'count': p['inverters'], 'kW': p['inv_kW']})
+    # X-PAR-07: extension hall load on the graph (unconditioned until the owner decides; A-M-104)
+    kw = round(rf['ext']['total_kW'], 4); E = {x['stream_id']: x for x in g['edges']}
+    note = (f"X-PAR-07 solver.roof_close: unconditioned extension {rf['added_m2']:.0f} m2; lighting {rf['ext']['light_kW']:.2f} kW (IECC 2021 C405, 10 % lit), "
+            f"ventilation fans {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2019, ISO 16798-3), envelope {rf['ext']['envelope_kW']:.2f} kW.")
+    if 'EXT_HALL' not in N:
+        n = dict(unit_id='EXT_HALL', sector_id='ELEC_PV', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
+                 notes='Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.', enabled=True, modules=[], params={}, continuous_kw=None)
+        n['class'] = n.pop('class_'); g['nodes'].append(n); N['EXT_HALL'] = n
+    N['EXT_HALL']['continuous_kw'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': note}
+    N['EXT_HALL']['params'].update({'footprint_m2': rf['added_m2'], 'conditioned': False, 'blocks': ['EXT_HALL_E', 'EXT_HALL_N'],
+        'duty': f"In 0.000 kg/d, out 0.000 kg/d, {kw:.3f} kW. Sheet docs-authority/duties/EXT_HALL.md."})
+    old = E['SF-EXT_HALL']['rate']['value'] if 'SF-EXT_HALL' in E else 0.0
+    if 'SF-EXT_HALL' not in E:
+        e = json.loads(json.dumps(E['SF-MFG_SHOP'])); e.update(stream_id='SF-EXT_HALL', to_unit_id='EXT_HALL', to_sector_id='ELEC_PV', notes='X-PAR-07 extension hall feed')
+        g['edges'].append(e); E['SF-EXT_HALL'] = e
+    E['SF-EXT_HALL']['rate'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': 'Equals EXT_HALL continuous_kw (X-PAR-07).'}
+    pv1 = E['IA-PV-01']['rate']; pv1['value'] = round(pv1['value'] + kw - old, 4)
+    if 'X-PAR-07' not in pv1.get('note', ''): pv1['note'] = pv1.get('note', '') + f' X-PAR-07 extension hall: +{kw:.2f} kW.'
     open(GP,'w').write(json.dumps(g, indent=2))
     print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW")
 

@@ -13,6 +13,8 @@ CRIT={'HABITATION':3.0,'CRYO_H2':4.0,'CRYO_ASU':18.0,'GROW_BED':5.0,'controls an
 ref_rect=ew['I_elem_A']*2.8/0.80/1000
 cases={'bounding':ol['demand'],'reference':ol['demand']-rect['Pac_kW']+ref_rect}
 from flow_graph.param import solver as SV
+_g0=json.load(open('flow_graph/plant_flow_graph.json')); _x=next((n['continuous_kw']['value'] for n in _g0['nodes'] if n['unit_id']=='EXT_HALL' and n.get('continuous_kw')),0.0)
+cases={k:P-_x for k,P in cases.items()}   # base demand without the extension; roof_close adds it back
 roof=SV.roof_close(_d,cases['bounding'])   # X-PAR-07: roof-only PV; extension loads added to both cases
 cases={k:P+roof['ext']['total_kW'] for k,P in cases.items()}
 out={}

@@ -27,11 +27,11 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
   one circuit: HL-Q1-X -> HL-Q1-X-BA
   kW: nodes off 0, cut in 2.77 out 2.77 pass
 
-## elec: 115 edges, 1 loops
+## elec: 116 edges, 1 loops
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 0, cut in 151.53 out 151.53 pass
+  kW: nodes off 0, cut in 165.44 out 165.45 pass
 
 ## ess: 9 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).

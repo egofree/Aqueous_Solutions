@@ -8161,6 +8161,33 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.2 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.40 kW. Study."
       }
+    },
+    {
+      "unit_id": "EXT_HALL",
+      "sector_id": "ELEC_PV",
+      "presence": "present",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "footprint_m2": 11088.0,
+        "conditioned": false,
+        "blocks": [
+          "EXT_HALL_E",
+          "EXT_HALL_N"
+        ],
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 13.915 kW. Sheet docs-authority/duties/EXT_HALL.md."
+      },
+      "continuous_kw": {
+        "value": 13.9154,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-07 solver.roof_close: unconditioned extension 11088 m2; lighting 9.76 kW (IECC 2021 C405, 10 % lit), ventilation fans 4.16 kW (ASHRAE 62.1-2019, ISO 16798-3), envelope 0.00 kW."
+      },
+      "class": "building"
     }
   ],
   "edges": [
@@ -15108,10 +15135,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 144.7766,
+        "value": 158.692,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -32512,6 +32539,32 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "SF-EXT_HALL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EXT_HALL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 13.9154,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC_PV",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-PAR-07 extension hall feed"
     }
   ],
   "view_presets": [
