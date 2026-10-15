@@ -214,7 +214,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PAR-005A | `docs-authority/O2_SOURCE_AUDIT.md` | A | 2026-10-15 | O2 source audit (X-PAR-12 Rev A, frozen) | canonical |
 | AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | A | 2026-10-15 | Open questions log (owner away) | canonical |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | A | 2026-10-15 | Derived file revisions (X-GOV-06) | canonical |
-| AQS-RED-001 | `docs-authority/RED_AUDIT.md` | A | 2026-10-15 | Redundancy audit, energy and life support (X-RED-01) | canonical |
+| AQS-RED-001 | `docs-authority/RED_AUDIT.md` | B | 2026-10-16 | Redundancy audit, energy and life support (X-RED-01) | canonical |
 | AQS-RED-002 | `docs-authority/HYDRO_SITING.md` | A | 2026-10-15 | Pumped-hydro reservoir siting trade study (Q-009) | canonical |
 | AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheet per line (SVG + quantities CSV) | canonical |
 | AQS-DWG-001 | `docs-authority/DRAWING_STANDARD.md` | A | 2026-10-15 | Drawing standard, numbering, sheet sizes, title and revision block (X-DWG-01) | canonical |
