@@ -801,7 +801,7 @@
         "presence": "present",
         "duty": "In 10.740 kg/d, out 10.740 kg/d, 0.565 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
-        "design_kPa": 17.8,
+        "design_kPa": 22000.0,
         "relief_mm": 3.3,
         "storage_mode": "compressed gas, 200 bar, Type I/II cylinder bank (study; owner may override)",
         "store_kg": 19,
@@ -809,18 +809,18 @@
         "store_basis": "need: 8.0 kg dark-hours buffer (10.73 kg/d x (1 - 6/24)) + 10.1 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "compressor": "two-stage diaphragm, 10 to 200 bar",
         "relief_basis": {
-          "case": "atmospheric",
-          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
-          "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
-          "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "case": "blocked outlet at full inflow 1.789 kg/h (hydrogen); operating 200 bar, design 220.0 bar g",
+          "P1_kPa_abs": 24301.3,
+          "T_K": 313.15,
+          "M_kg_kmol": 2.016,
+          "k": 1.41,
+          "Z": 1.13,
+          "W_kg_h": 1.789,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 0.04,
+          "bore_req_mm": 0.22,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
         }
       }
     },
@@ -874,21 +874,21 @@
         "presence": "present",
         "duty": "In 89.369 kg/d, out 89.369 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_O2.md.",
         "internals": "packed section, vacuum jacket",
-        "design_kPa": 17.8,
+        "design_kPa": 22000.0,
         "relief_mm": 3.3,
         "relief_basis": {
-          "case": "atmospheric",
-          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 0.0,
-          "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
-          "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
-          "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only"
+          "case": "blocked outlet at full inflow 14.369 kg/h (oxygen); operating 200 bar, design 220.0 bar g",
+          "P1_kPa_abs": 24301.3,
+          "T_K": 313.15,
+          "M_kg_kmol": 31.999,
+          "k": 1.4,
+          "Z": 0.97,
+          "W_kg_h": 14.3695,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 0.07,
+          "bore_req_mm": 0.3,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
         },
         "x_par_12_base": {
           "IA-GEN-AIR": 50.000001,
@@ -2188,20 +2188,20 @@
       "notes": "CO2 + 3 H2 \u2192 CH3OH + H2O. CO2 limits. Excess hydrogen stays on S45.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.5,
+        "value": 0.4207,
         "unit": "kW",
         "status": "study",
-        "note": "Study synth parasitic mid when surplus-H2 path active (AQS-MeOH-001)"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). feed preheat 0.421 kW (no interchanger credit), exotherm 0.541 kW to the jacket"
       },
       "modules": [],
       "params": {
         "presence": "present",
         "size_mm": [
-          2200,
-          900,
-          1400
+          414,
+          414,
+          2402
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
@@ -2216,9 +2216,9 @@
             }
           ]
         },
-        "duty": "In 47.274 kg/d, out 47.274 kg/d, 0.500 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
+        "duty": "In 47.274 kg/d, out 47.274 kg/d, 0.421 kW. Sheet docs-authority/duties/MEOH_SYNTH.md.",
         "internals": "none",
-        "design_kPa": 17.8,
+        "design_kPa": 5500.0,
         "relief_mm": 3.3,
         "synthesis": {
           "P_bar_a": 50.0,
@@ -2231,18 +2231,41 @@
           "material": "316L (API 941: austenitic stainless not susceptible to HTHA)"
         },
         "relief_basis": {
-          "case": "atmospheric",
-          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
-          "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
-          "V_tk_m3": 2.772,
-          "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 0.0473,
-          "out_breathing_Nm3_h": 0.801,
-          "in_breathing_Nm3_h": 13.317,
-          "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 16.7,
-          "vent_DN": 25,
-          "thermal_term": "envelope volume"
+          "case": "blocked outlet at full inflow 1.970 kg/h (3 H2 : 1 CO2 loop gas); operating 50 bar, design 55.0 bar g",
+          "P1_kPa_abs": 6151.3,
+          "T_K": 523.15,
+          "M_kg_kmol": 12.51,
+          "k": 1.38,
+          "Z": 1.0,
+          "W_kg_h": 1.9697,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 0.08,
+          "bore_req_mm": 0.32,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
+        },
+        "design": {
+          "T_C": 250,
+          "P_bar": 50.0,
+          "design_MPa": 5.5,
+          "MeOH_kg_h": 1.2609,
+          "cat_kg": 3.1005,
+          "V_bed_L": 2.8186,
+          "tubes": 1,
+          "tube": "DN50 Sch 40 SA-106 B",
+          "L_bed_mm": 1302,
+          "t_req_mm": 2.8796,
+          "t_nom_mm": 3.91,
+          "t_ok": true,
+          "exotherm_kW": 0.5411,
+          "preheat_kW": 0.4207,
+          "D_mm": 114,
+          "H_mm": 1902,
+          "wall_mm": 3.91,
+          "V_work_L": 2.8186,
+          "V_L": 2.8186,
+          "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
+          "kW": 0.4207
         }
       }
     },
@@ -3329,7 +3352,7 @@
       "modules": [],
       "params": {
         "kW": 1395,
-        "kWh": 4297,
+        "kWh": 4296,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -3339,7 +3362,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1285.2694,
+              "value": 1284.9373,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -3363,7 +3386,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1293.757 kg/d, out 1293.757 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1293.424 kg/d, out 1293.424 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3373,9 +3396,9 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2938,
+          "pump_in_m3_h": 1.2934,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.588,
+          "out_breathing_Nm3_h": 2.587,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.3,
@@ -3387,10 +3410,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 60 hybrid inverters, 71.6 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.892,
-          "purge_m3_h": 45.38,
+          "H2_m3_d": 10.889,
+          "purge_m3_h": 45.37,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2810.1
+          "electrode_area_m2": 2809.4
         }
       }
     },
@@ -3418,7 +3441,7 @@
             }
           ]
         },
-        "duty": "In 1285.269 kg/d, out 1285.269 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1284.937 kg/d, out 1284.937 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -3429,7 +3452,7 @@
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
           "pump_in_m3_h": 0.0,
-          "pump_out_m3_h": 1.2853,
+          "pump_out_m3_h": 1.2849,
           "out_breathing_Nm3_h": 0.0,
           "in_breathing_Nm3_h": 1.285,
           "vent_dP_Pa": 500,
@@ -6031,10 +6054,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1285.269425,
+        "value": 1284.937289,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 45.4 m3/h holds H2 at 25 % LFL: HER 9.27 + open-circuit 1.62 m3/d H2 on 6137 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 45.4 m3/h holds H2 at 25 % LFL: HER 9.27 + open-circuit 1.62 m3/d H2 on 6136 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2",
@@ -6067,7 +6090,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1285.269425,
+        "value": 1284.937289,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

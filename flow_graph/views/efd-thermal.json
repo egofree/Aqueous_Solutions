@@ -1463,7 +1463,7 @@
       "modules": [],
       "params": {
         "kW": 1395,
-        "kWh": 4297,
+        "kWh": 4296,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -1473,7 +1473,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1285.2694,
+              "value": 1284.9373,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -1497,7 +1497,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1293.757 kg/d, out 1293.757 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1293.424 kg/d, out 1293.424 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -1507,9 +1507,9 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2938,
+          "pump_in_m3_h": 1.2934,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.588,
+          "out_breathing_Nm3_h": 2.587,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.3,
@@ -1521,10 +1521,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 60 hybrid inverters, 71.6 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.892,
-          "purge_m3_h": 45.38,
+          "H2_m3_d": 10.889,
+          "purge_m3_h": 45.37,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2810.1
+          "electrode_area_m2": 2809.4
         }
       }
     },

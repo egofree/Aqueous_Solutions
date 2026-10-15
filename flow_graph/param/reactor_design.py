@@ -50,6 +50,20 @@ def design(d, g):
     Q_kW = m*(v('rx_pyro_cp_kJ_kgK')*(v('rx_pyro_T_C') - 25)/1000 + v('rx_pyro_dH_MJ_kg'))/86.4
     out['OIL_PYRO'] = dict(T_C=v('rx_pyro_T_C'), tau_h=v('rx_pyro_tau_h'), **ves, Q_process_kW=Q_kW, kW=Q_kW/v('rx_pyro_heater_eff'),
                            material='ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters', relief='vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)')
+    # MEOH_SYNTH (A-M-156): cooled fixed-bed tube(s) of Cu/ZnO/Al2O3; catalyst from the CO2-only weight-time yield [CTC2020_CZA] / margin;
+    # shell UG-27 [ASME_VIII1_UG27] on SA-106 B [ASME_II_D] + 1.5 mm CA; exotherm 49.5 kJ/mol to the jacket; feed preheat on the bus.
+    E_ = lambda sid: E[sid]['rate']['value'] if sid in E else 0.0
+    m_me = E_('S75')/24; cat = m_me/(v('meoh_wty_kg_kgcat_h')/v('meoh_wty_margin')); Vb = cat/v('meoh_cat_bulk_kg_L')/1000
+    ID, OD, t_nom = 52.5, 60.3, 3.91                      # DN50 Sch 40 (ASME B36.10M)
+    A = math.pi*(ID/1000)**2/4; L1 = 2.0; ntube = max(1, math.ceil(Vb/A/L1)); L = Vb/A/ntube
+    Pd = 50.0*v('press_design_margin')/10                  # MPa
+    t_req = Pd*(OD/2)/(v('meoh_S_MPa')*1.0 + 0.4*Pd) + 1.5   # UG-27 in outside-radius form (Appendix 1-1) + CA
+    q_kW = m_me/32.042*1000*v('meoh_dH_kJ_mol')/3.6e6*1000
+    pre_kW = (E_('S74')*14.3 + E_('S73')*0.95)*(250 - 40)/86400/0.7
+    out['MEOH_SYNTH'] = dict(T_C=250, P_bar=50.0, design_MPa=Pd, MeOH_kg_h=m_me, cat_kg=cat, V_bed_L=Vb*1000, tubes=ntube, tube='DN50 Sch 40 SA-106 B', L_bed_mm=round(L*1000),
+                             t_req_mm=t_req, t_nom_mm=t_nom, t_ok=bool(t_nom*0.875 >= t_req), exotherm_kW=q_kW, preheat_kW=pre_kW,
+                             D_mm=114, H_mm=round(L*1000) + 600, wall_mm=t_nom, V_work_L=Vb*1000, V_L=Vb*1000,
+                             material='SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets', kW=pre_kW)
     return out
 
 def write(d, g, R):
@@ -59,7 +73,7 @@ def write(d, g, R):
         n = N[u]; p = n.setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'
-        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
+        n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
             if sid in E: E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
             else:
@@ -71,7 +85,7 @@ def write(d, g, R):
     open(GP, 'w').write(json.dumps(g, indent=2))
 
 def write_doc(d, R):
-    G, Dg, P = R['GLASS_DIGEST'], R['DIGESTER'], R['OIL_PYRO']
+    G, Dg, P, M = R['GLASS_DIGEST'], R['DIGESTER'], R['OIL_PYRO'], R['MEOH_SYNTH']
     md = f"""# In-house reaction chambers
 
 Document number: AQS-DUTY-062
@@ -109,7 +123,15 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 
 - LEACH_CSTR_1: AQS-DUTY-050, models/mfg/LEACH_CSTR_1 (in-house, CPVC).
 - BLACK_DIGEST: designed in AQS-DUTY-063 (X-SAN-01 multi-barrier sanitation train, owner decision 2026-10-15).
-- MEOH_FERM and MEOH_SYNTH: deferred methanol train. Designed when the train is activated (X-MFG-31 follow-up item); MEOH_SYNTH needs a 50 bar, 250 C pressure design to ASME VIII-1 and API 941.
+- MEOH_FERM: deferred.
+
+## 4. MEOH_SYNTH (A-M-156)
+
+- Product {M['V_bed_L']:.2f} L of Cu/ZnO/Al2O3 ({M['cat_kg']:.2f} kg): methanol {M['MeOH_kg_h']:.3f} kg/h at a weight-time yield of {DR.val(d,'meoh_wty_kg_kgcat_h')} kg/(kg h) (CTC2020_CZA, CO2-only feed, 60 bar, 523 K) / margin {DR.val(d,'meoh_wty_margin')} for 50 bar and ageing.
+- {M['tubes']} x {M['tube']}, bed {M['L_bed_mm']} mm, in a DN100 thermal-oil jacket. 250 C, 50 bar operating, {M['design_MPa']:.2f} MPa design (A-M-156).
+- Wall: UG-27 (ASME_VIII1_UG27) with S = {DR.val(d,'meoh_S_MPa')} MPa (ASME_II_D, SA-106 B at 260 C), E = 1, CA 1.5 mm: required {M['t_req_mm']:.2f} mm; Sch 40 nominal {M['t_nom_mm']} mm less 12.5 % mill tolerance = {M['t_nom_mm']*0.875:.2f} mm: {'adequate' if M['t_ok'] else 'NOT adequate'}.
+- Heat: exotherm {M['exotherm_kW']:.3f} kW (49.5 kJ/mol, PONTZEN2011) to the jacket; feed preheat {M['preheat_kW']:.3f} kW electric, no feed/effluent interchanger credit.
+- Relief: API 520 gas, blocked outlet at the full feed (flow_graph/param/pressure_nodes.py).
 """
     open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN.md'), 'w').write(md)
 

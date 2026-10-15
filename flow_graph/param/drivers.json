@@ -1230,5 +1230,48 @@
   "register": "A-M-155",
   "needs_verification": true,
   "verification_test": "see A-M-155"
+ },
+ "meoh_wty_kg_kgcat_h": {
+  "value": 1.22,
+  "units": "kg MeOH/(kg cat h) at 60 bar 523 K, CO2-only feed",
+  "ref": "CTC2020_CZA"
+ },
+ "meoh_wty_margin": {
+  "value": 3.0,
+  "units": "-",
+  "register": "A-M-156",
+  "needs_verification": true,
+  "verification_test": "see A-M-156"
+ },
+ "meoh_cat_bulk_kg_L": {
+  "value": 1.1,
+  "units": "kg/L",
+  "register": "A-M-156",
+  "needs_verification": true,
+  "verification_test": "see A-M-156"
+ },
+ "meoh_dH_kJ_mol": {
+  "value": 49.5,
+  "units": "kJ/mol released, CO2 + 3 H2 -> CH3OH + H2O(g)",
+  "ref": "NIST_WEBBOOK"
+ },
+ "meoh_S_MPa": {
+  "value": 118.0,
+  "units": "MPa, SA-106 B at 260 C",
+  "ref": "ASME_II_D"
+ },
+ "press_design_margin": {
+  "value": 1.1,
+  "units": "design / operating pressure",
+  "register": "A-M-156",
+  "needs_verification": true,
+  "verification_test": "see A-M-156"
+ },
+ "ely_window_h": {
+  "value": 6.0,
+  "units": "h/d",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
  }
 }

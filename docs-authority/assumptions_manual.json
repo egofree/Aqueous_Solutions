@@ -2508,5 +2508,25 @@
     "verification": "Vent DN of 202 atmospheric nodes",
     "replace_when": "Transfer pump rates from the control philosophy (X-CTL-02) and site latitude (X-BAS-03)",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-156",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Pressurised node class and MEOH_SYNTH design inputs",
+    "statement": "MEOH_SYNTH, CRYO_H2 and CRYO_O2 are pressure equipment (50, 200, 200 bar operating), design = 1.10 x operating, relief API 520 blocked outlet at full inflow (electrolyser streams over the 6 h PV window); MEOH_SYNTH catalyst sized at the CO2-only weight-time yield 1.22 kg/(kg h) divided by 3 for 50 bar and ageing, bulk density 1.1 kg/L; feed preheat without interchanger credit, heater efficiency 0.7",
+    "verification": "Relief orifices of 3 nodes, MEOH_SYNTH catalyst 3.1 kg and tube length, 0.42 kW preheat",
+    "replace_when": "Bench activity test of the in-house catalyst charge at 50 bar; fire case per cylinder (X-SAF-04)",
+    "doc": "AQS-PAR-003"
   }
 ]

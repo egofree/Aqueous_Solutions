@@ -1312,7 +1312,7 @@
 <title>SOL_ARK_60K&#45;&gt;MEOH_SYNTH</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.23,-6731.9C477.76,-6536.84 500.07,-4803.71 514,-3401 514.34,-3367.18 511.87,-991.58 534,-966 592.18,-898.74 706.66,-903.46 771.75,-912.78"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="771.35,-916.26 781.76,-914.3 772.4,-909.33 771.35,-916.26"/>
-<text text-anchor="middle" x="602.5" y="-968.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEOH_SYNTH\n0.5 kW</text>
+<text text-anchor="middle" x="602.5" y="-968.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEOH_SYNTH\n0.4207 kW</text>
 </g>
 <!-- MFG_SHOP -->
 <g id="node97" class="node">
@@ -1663,7 +1663,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M790.26,-5746.1C731.38,-5736.34 599.97,-5724.51 534,-5797 470.33,-5866.97 473.3,-6569.99 474.69,-6721.37"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="471.19,-6721.72 474.79,-6731.68 478.19,-6721.65 471.19,-6721.72"/>
-<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n298.9095 kW</text>
+<text text-anchor="middle" x="602.5" y="-5799.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n298.8302 kW</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node84" class="node">

@@ -218,7 +218,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 298.9095,
+        "value": 298.8302,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -226,13 +226,13 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 8510,
+        "count": 8508,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 298.909 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 298.830 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 4255,
+        "nameplate_kw": 4254,
         "area_m2": 37333,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
@@ -272,7 +272,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 2128
+        "balance_kWp": 2127
       }
     },
     {
@@ -359,8 +359,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3293.1,
-          "export_kWh_d_clear": 9206,
+          "export_peak_kW": 3293.2,
+          "export_kWh_d_clear": 9204,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -396,9 +396,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 307.7,
+          "bus_demand_kW": 307.6,
           "section_rating_A": 600,
-          "basis_A": 411.2,
+          "basis_A": 411.1,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -427,7 +427,7 @@
       "modules": [],
       "params": {
         "kW": 1395,
-        "kWh": 4297,
+        "kWh": 4296,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -437,7 +437,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1285.2694,
+              "value": 1284.9373,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -461,7 +461,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1293.757 kg/d, out 1293.757 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1293.424 kg/d, out 1293.424 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -471,9 +471,9 @@
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "older study figure (head-plus-10 design_kPa), not a sized orifice",
           "V_tk_m3": 0.0,
-          "pump_in_m3_h": 1.2938,
+          "pump_in_m3_h": 1.2934,
           "pump_out_m3_h": 0.0085,
-          "out_breathing_Nm3_h": 2.588,
+          "out_breathing_Nm3_h": 2.587,
           "in_breathing_Nm3_h": 0.008,
           "vent_dP_Pa": 500,
           "vent_bore_req_mm": 7.3,
@@ -485,10 +485,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 60 hybrid inverters, 71.6 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 10.892,
-          "purge_m3_h": 45.38,
+          "H2_m3_d": 10.889,
+          "purge_m3_h": 45.37,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2810.1
+          "electrode_area_m2": 2809.4
         }
       }
     }
