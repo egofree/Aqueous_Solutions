@@ -1462,8 +1462,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1264,
-        "kWh": 3891,
+        "kW": 1262,
+        "kWh": 3885,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -1473,7 +1473,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1163.9799,
+              "value": 1162.2333,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -1497,7 +1497,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1172.467 kg/d, out 1172.467 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1170.720 kg/d, out 1170.720 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -1516,15 +1516,15 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1264,
+        "charge_kW": 1262,
         "discharge_kW": 278,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 54 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 54 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.864,
-          "purge_m3_h": 41.1,
+          "H2_m3_d": 9.849,
+          "purge_m3_h": 41.04,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2545.0
+          "electrode_area_m2": 2541.1
         }
       }
     },
@@ -2316,9 +2316,9 @@
           "thermal_term": "envelope volume"
         },
         "redundancy": {
-          "rejection_kW": 169.79,
+          "rejection_kW": 169.66,
           "modules": 3,
-          "module_kW": 84.89,
+          "module_kW": 84.83,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }

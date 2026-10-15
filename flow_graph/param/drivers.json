@@ -1817,5 +1817,15 @@
   "value": 1.4,
   "units": "kWh/kg NaOH at 200 A/m2, CE 0.80",
   "ref": "EDBM_PILOT_2023"
+ },
+ "h2c_T_out_max_C": {
+  "value": 135.0,
+  "units": "C predicted stage discharge, hydrogen-rich service",
+  "ref": "API618"
+ },
+ "h2c_cp_kJ_kgK": {
+  "value": 14.3,
+  "units": "kJ/kg K, H2 at 300 K",
+  "ref": "NIST_WEBBOOK"
  }
 }

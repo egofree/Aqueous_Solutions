@@ -460,15 +460,15 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.0138,
+        "value": 0.8837,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-36 (A-M-169): 10.74 kg/d x 2.27 kWh/kg; peak 3.04 kW over the run hours."
+        "note": "X-MFG-36 (A-M-169): 10.74 kg/d x 1.97 kWh/kg; peak 2.65 kW over the run hours."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 10.740 kg/d, out 10.740 kg/d, 1.014 kW. Sheet docs-authority/duties/CRYO_H2.md.",
+        "duty": "In 10.740 kg/d, out 10.740 kg/d, 0.884 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
         "relief_mm": 3.3,
@@ -476,7 +476,7 @@
         "store_kg": 19,
         "store_water_volume_m3": 1.28,
         "store_basis": "need: 8.0 kg dark-hours buffer (10.73 kg/d x (1 - 6/24)) + 10.1 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
-        "compressor": "in-house two-stage diaphragm, 10 to 200 bar, 2 x 100 % (X-MFG-36)",
+        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)",
         "relief_basis": {
           "case": "blocked outlet at full inflow 1.789 kg/h (hydrogen); operating 200 bar, design 220.0 bar g",
           "P1_kPa_abs": 24301.3,
@@ -529,26 +529,57 @@
         "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
         "compressor_design": {
           "H2_kg_d": 10.740371,
-          "ratio_per_stage": 4.47213595499958,
-          "kWh_per_kg": 2.265333291405104,
-          "P_avg_kW": 1.0137716661809137,
-          "P_peak_kW": 3.0413149985427412,
+          "n_stages": 5,
+          "T_limit_C": 135.0,
+          "ratio_per_stage": 1.8205642030260802,
+          "kWh_per_kg": 1.974725678896425,
+          "P_avg_kW": 0.8837202672739363,
+          "P_peak_kW": 2.651160801821809,
           "stages": [
             {
               "stage": 1,
               "P_in_bar": 10.0,
-              "P_out_bar": 44.721359549995796,
-              "T_out_C": 203.19215313715262,
+              "P_out_bar": 18.2056420302608,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
               "swept_cm3": 118.48093386943555,
               "diaphragm_D_mm": 317.127324902493
             },
             {
               "stage": 2,
-              "P_in_bar": 44.721359549995796,
-              "P_out_bar": 200.00000000000003,
-              "T_out_C": 203.19215313715262,
-              "swept_cm3": 26.493142216971506,
-              "diaphragm_D_mm": 149.96025325607832
+              "P_in_bar": 18.2056420302608,
+              "P_out_bar": 33.14454017339987,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 65.07923954151167,
+              "diaphragm_D_mm": 235.03398523836918
+            },
+            {
+              "stage": 3,
+              "P_in_bar": 33.14454017339987,
+              "P_out_bar": 60.34176336545163,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 35.74674237433602,
+              "diaphragm_D_mm": 174.19178317104922
+            },
+            {
+              "stage": 4,
+              "P_in_bar": 60.34176336545163,
+              "P_out_bar": 109.85605433061177,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 19.634980362087198,
+              "diaphragm_D_mm": 129.09953125943247
+            },
+            {
+              "stage": 5,
+              "P_in_bar": 109.85605433061178,
+              "P_out_bar": 200.0,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 10.785107347189733,
+              "diaphragm_D_mm": 95.68010997992465
             }
           ],
           "units": 2,
@@ -2513,7 +2544,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 269.9507,
+        "value": 269.5337,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -2521,14 +2552,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7706,
+        "count": 7694,
         "presence": "present",
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 269.951 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 269.534 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 3853,
-        "area_m2": 33855,
+        "nameplate_kw": 3847,
+        "area_m2": 33754,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
         "relief_basis": {
           "case": "atmospheric",
@@ -2547,19 +2578,19 @@
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            198000,
-            186000
+            204000,
+            180000
           ],
           "bays": [
-            33,
-            31
+            34,
+            30
           ],
-          "footprint_m2": 36828.0,
-          "extension_m2": 36396.0,
-          "roof_capacity_kWp": 3859.4,
+          "footprint_m2": 36720.0,
+          "extension_m2": 36288.0,
+          "roof_capacity_kWp": 3848.0,
           "perimeter_pathway_mm": 1829,
           "arrays": 20,
-          "extension_load_kW": 103.63,
+          "extension_load_kW": 103.35,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -2567,7 +2598,7 @@
           "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         },
         "oversize_factor": 2.0,
-        "balance_kWp": 1927
+        "balance_kWp": 1924
       }
     },
     {
@@ -2645,8 +2676,8 @@
         },
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2962.1,
-          "export_kWh_d_clear": 8337,
+          "export_peak_kW": 2962.5,
+          "export_kWh_d_clear": 8325,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2679,9 +2710,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 278.7,
+          "bus_demand_kW": 278.3,
           "section_rating_A": 500,
-          "basis_A": 372.5,
+          "basis_A": 372.0,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -2825,8 +2856,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1264,
-        "kWh": 3891,
+        "kW": 1262,
+        "kWh": 3885,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -2836,7 +2867,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1163.9799,
+              "value": 1162.2333,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -2860,7 +2891,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1172.467 kg/d, out 1172.467 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1170.720 kg/d, out 1170.720 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -2879,15 +2910,15 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1264,
+        "charge_kW": 1262,
         "discharge_kW": 278,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 54 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 54 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.864,
-          "purge_m3_h": 41.1,
+          "H2_m3_d": 9.849,
+          "purge_m3_h": 41.04,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2545.0
+          "electrode_area_m2": 2541.1
         }
       }
     },
@@ -6862,34 +6893,34 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "footprint_m2": 36396.0,
+        "footprint_m2": 36288.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 103.632 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 103.346 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "hvac": {
-          "light_kW": 32.028,
-          "vent_kW": 45.395,
-          "envelope_kW": 26.209,
-          "total_kW": 103.632,
-          "vent_L_s": 10918.8,
-          "Qh_kW": 62.343,
-          "Qc_kW": 125.785,
+          "light_kW": 31.933,
+          "vent_kW": 45.26,
+          "envelope_kW": 26.152,
+          "total_kW": 103.346,
+          "vent_L_s": 10886.4,
+          "Qh_kW": 62.193,
+          "Qc_kW": 125.444,
           "slab_kW": 3.357,
-          "gains_kW": 45.677,
+          "gains_kW": 45.541,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 555.831,
-          "peak_c_kW": 496.505
+          "peak_h_kW": 554.419,
+          "peak_c_kW": 495.175
         }
       },
       "continuous_kw": {
-        "value": 103.6324,
+        "value": 103.3455,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 36396 m2; lighting 32.03 kW (IECC 2021 C405, 10 % lit), ventilation 45.39 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 26.21 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 62.3 kW and cooling 125.8 kW thermal average after internal gains 45.7 kW and slab edge 3.36 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 36288 m2; lighting 31.93 kW (IECC 2021 C405, 10 % lit), ventilation 45.26 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 26.15 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 62.2 kW and cooling 125.4 kW thermal average after internal gains 45.5 kW and slab edge 3.36 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -7393,7 +7424,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 269.9507,
+        "value": 269.5337,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
@@ -7810,7 +7841,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.0138,
+        "value": 0.8837,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -10176,7 +10207,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 103.6324,
+        "value": 103.3455,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."

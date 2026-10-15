@@ -838,15 +838,15 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.0138,
+        "value": 0.8837,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-36 (A-M-169): 10.74 kg/d x 2.27 kWh/kg; peak 3.04 kW over the run hours."
+        "note": "X-MFG-36 (A-M-169): 10.74 kg/d x 1.97 kWh/kg; peak 2.65 kW over the run hours."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "duty": "In 10.740 kg/d, out 10.740 kg/d, 1.014 kW. Sheet docs-authority/duties/CRYO_H2.md.",
+        "duty": "In 10.740 kg/d, out 10.740 kg/d, 0.884 kW. Sheet docs-authority/duties/CRYO_H2.md.",
         "internals": "packed section, vacuum jacket",
         "design_kPa": 22000.0,
         "relief_mm": 3.3,
@@ -854,7 +854,7 @@
         "store_kg": 19,
         "store_water_volume_m3": 1.28,
         "store_basis": "need: 8.0 kg dark-hours buffer (10.73 kg/d x (1 - 6/24)) + 10.1 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
-        "compressor": "in-house two-stage diaphragm, 10 to 200 bar, 2 x 100 % (X-MFG-36)",
+        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)",
         "relief_basis": {
           "case": "blocked outlet at full inflow 1.789 kg/h (hydrogen); operating 200 bar, design 220.0 bar g",
           "P1_kPa_abs": 24301.3,
@@ -907,26 +907,57 @@
         "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
         "compressor_design": {
           "H2_kg_d": 10.740371,
-          "ratio_per_stage": 4.47213595499958,
-          "kWh_per_kg": 2.265333291405104,
-          "P_avg_kW": 1.0137716661809137,
-          "P_peak_kW": 3.0413149985427412,
+          "n_stages": 5,
+          "T_limit_C": 135.0,
+          "ratio_per_stage": 1.8205642030260802,
+          "kWh_per_kg": 1.974725678896425,
+          "P_avg_kW": 0.8837202672739363,
+          "P_peak_kW": 2.651160801821809,
           "stages": [
             {
               "stage": 1,
               "P_in_bar": 10.0,
-              "P_out_bar": 44.721359549995796,
-              "T_out_C": 203.19215313715262,
+              "P_out_bar": 18.2056420302608,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
               "swept_cm3": 118.48093386943555,
               "diaphragm_D_mm": 317.127324902493
             },
             {
               "stage": 2,
-              "P_in_bar": 44.721359549995796,
-              "P_out_bar": 200.00000000000003,
-              "T_out_C": 203.19215313715262,
-              "swept_cm3": 26.493142216971506,
-              "diaphragm_D_mm": 149.96025325607832
+              "P_in_bar": 18.2056420302608,
+              "P_out_bar": 33.14454017339987,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 65.07923954151167,
+              "diaphragm_D_mm": 235.03398523836918
+            },
+            {
+              "stage": 3,
+              "P_in_bar": 33.14454017339987,
+              "P_out_bar": 60.34176336545163,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 35.74674237433602,
+              "diaphragm_D_mm": 174.19178317104922
+            },
+            {
+              "stage": 4,
+              "P_in_bar": 60.34176336545163,
+              "P_out_bar": 109.85605433061177,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 19.634980362087198,
+              "diaphragm_D_mm": 129.09953125943247
+            },
+            {
+              "stage": 5,
+              "P_in_bar": 109.85605433061178,
+              "P_out_bar": 200.0,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 481.1603855275104,
+              "swept_cm3": 10.785107347189733,
+              "diaphragm_D_mm": 95.68010997992465
             }
           ],
           "units": 2,
@@ -3568,8 +3599,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 1264,
-        "kWh": 3891,
+        "kW": 1262,
+        "kWh": 3885,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -3579,7 +3610,7 @@
               "layer": "mass",
               "dir": "in",
               "label": "purge air (dry)",
-              "value": 1163.9799,
+              "value": 1162.2333,
               "basis": "X-PAR-02 TF ess_tf.py",
               "kind": "derived"
             },
@@ -3603,7 +3634,7 @@
         },
         "duty_fraction": 0.3,
         "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
-        "duty": "In 1172.467 kg/d, out 1172.467 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "duty": "In 1170.720 kg/d, out 1170.720 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
@@ -3622,15 +3653,15 @@
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only"
         },
-        "charge_kW": 1264,
+        "charge_kW": 1262,
         "discharge_kW": 278,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 54 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 54 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.864,
-          "purge_m3_h": 41.1,
+          "H2_m3_d": 9.849,
+          "purge_m3_h": 41.04,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2545.0
+          "electrode_area_m2": 2541.1
         }
       }
     },
@@ -3658,7 +3689,7 @@
             }
           ]
         },
-        "duty": "In 1163.980 kg/d, out 1163.980 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
+        "duty": "In 1162.233 kg/d, out 1162.233 kg/d, 0.000 kW. Sheet docs-authority/duties/ZNBR2_BR2_REGEN.md.",
         "presence": "present",
         "internals": "pall-ring bed, distributor, demister",
         "design_kPa": 17.8,
@@ -6313,10 +6344,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1163.979875,
+        "value": 1162.233288,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 41.1 m3/h holds H2 at 25 % LFL: HER 8.40 + open-circuit 1.47 m3/d H2 on 5558 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 41.0 m3/h holds H2 at 25 % LFL: HER 8.39 + open-circuit 1.46 m3/d H2 on 5550 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "params": {
         "rate_basis": "headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2",
@@ -6349,7 +6380,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1163.979875,
+        "value": 1162.233288,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

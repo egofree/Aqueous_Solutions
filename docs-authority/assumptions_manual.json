@@ -2828,5 +2828,25 @@
     "verification": "BMED SEC 6.7 -> 1.40 kWh/kg; BMED_ACID 26.9 -> 5.6 kW",
     "replace_when": "X-MFG-41 stack I-V and current efficiency at 2 M",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-172",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "H2 compressor staging on the API 618 discharge limit",
+    "statement": "Stage count is the fewest equal-ratio stages with predicted discharge at or below 135 C (API618 hydrogen-rich) at eta_ad 0.65; intercooled to 35 C after each stage",
+    "verification": "5 stages at ratio 1.82, 125 C discharge, 1.97 kWh/kg, 0.88 kW average",
+    "replace_when": "First-article bench run: head temperature and stage efficiency",
+    "doc": "AQS-PAR-003"
   }
 ]

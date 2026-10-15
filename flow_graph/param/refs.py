@@ -1,6 +1,7 @@
 """Citation registry for the parametric model. Code cites by key; docs print the full entry.
 Only published sources: standards, textbooks, peer-reviewed papers, manufacturer data."""
 REFS = {
+ 'API618': 'API Standard 618, Reciprocating Compressors for Petroleum, Chemical, and Gas Industry Services, 5th ed. (2007), 6.1: predicted discharge temperature shall not exceed 150 C (300 F) at any specified operating condition, and 135 C (275 F) for hydrogen-rich service (molecular weight 12 or less).',
  'STRATHMANN2004': 'Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance.',
  'CRC_COND': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), Electrical conductivity of aqueous solutions (20 C): NaCl 2.5 % 39 and 5 % 70 mS/cm; NaOH 5 % 223 and 10 % 358 mS/cm; HCl 5 % 394 and 10 % 630 mS/cm.',
  'PERRY7_HCL_VLE': "Perry R.H., Green D.W. (eds), Perry's Chemical Engineers' Handbook, 7th ed., McGraw-Hill (1997), Table 2-9 Partial pressures of water over aqueous solutions of HCl and Table 2-10 Partial pressures of HCl over aqueous solutions of HCl, p. 2-76 (log10 p = A - B/T fits per wt% row; 8th ed. Tables 2-11/2-12).",
