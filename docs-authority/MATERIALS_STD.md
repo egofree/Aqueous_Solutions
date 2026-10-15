@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: C
+Revision: D
 Date: 2026-10-15
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -10,6 +10,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | A | First issue. Owner rule: chlor-alkali and acid-regen systems are PVC; no metal wetted part where oxidizing or reducing conditions exist. First audit of every present unit. | 2026-10-15 |
 | B | Decisions for ZNBR2_BR2_REGEN (PVC-U) and LEACH_CSTR_1 HX-5 (PVDF coil). Published sources added. | 2026-10-15 |
 | C | M7 cases extended. Decisions for HX8, ETOH_STILL, BUOH_STILL, AFTERBURNER_FLUE, FLUE_KO, BAGHOUSE, Q1 and Q2. | 2026-10-15 |
+| D | Nitric and peroxide materials (AQS-DSN-OX-001). Sources S10 to S12. | 2026-10-15 |
 
 ## 1. Rules
 
@@ -147,3 +148,11 @@ Graph: Q1_A/B at 250 °C and Q2_A/B at 150 °C, synthetic thermal oil, hydrogena
 - [S7] Titanium in the Geothermal Industry (IGA, Szeged), https://pangea.stanford.edu/ERE/pdf/IGAstandard/EGC/szeged/O-7-10.pdf
 - [S8] Eastman, Therminol heat transfer fluids system design (carbon steel pipe A106 Gr B, welded joints), https://www.eastman.com/content/dam/eastman/corporate/en/literature/t/tf8695a.pdf
 - [S9] OSHA Technical Manual Section IV Chapter 6, Combustible Dusts; NFPA 652 and NFPA 660 Chapter 22, https://www.osha.gov/sites/default/files/otm%5FsecIV%5Fchap6.pdf
+
+## 5. Oxidizer reagents, Rev D
+
+WS_NITRIC, HNO3, and WS_PEROX are defined in AQS-DSN-OX-001, `docs-authority/OXIDIZER_REAGENTS.md`. Nitric at no more than 2 M: PVC-U storage, PVDF pumps and absorber, 304L excluded under M3. Peroxide at no more than 6 wt%: HDPE tank, PVDF piping, PTFE/FKM seals; passivated stainless and aluminum, though accepted by the producer, are excluded under M3.
+
+- [S10] Vinidex, Chemical Performance of PVC, https://www.vinidex.com.au/app/uploads/pdf/Chemical-Performance-of-PVC.pdf
+- [S11] Solvay, Materials of Construction for the Storage of H₂O₂, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Materials%20of%20Construction%20for%20the%20Storage%20of%20H2O2.pdf
+- [S12] Solvay, Safety and Handling of Hydrogen Peroxide, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Safety%20and%20Handling%20of%20Hydrogen%20Peroxide.pdf

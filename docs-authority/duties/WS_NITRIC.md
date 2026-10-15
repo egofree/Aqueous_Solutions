@@ -7,15 +7,15 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - In 1.25 kg/d, out 1.25 kg/d. No holdup claimed.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PVC-U tank and piping, PVDF pumps and valves, FKM or PTFE gaskets. 2 M HNO₃ at no more than 40 °C (graph product_spec). 304L excluded (M3). AQS-DSN-OX-001 section 1.
 
 4. Nozzles. Origin 13200, 8200, 0 mm. Size 800 × 800 × 1100 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-BMED-01, inlet, -Y face center, 13600, 8200, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N2, IA-HNO3, inlet, -Y face center, 13600, 8200, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N3, S34, outlet, +Y face center, 13600, 9000, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
-5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
+5. Instruments. Level with high-high trip closing IA-HNO3 and IA-BMED-01. Temperature high trip 40 °C (assumption). Density or conductivity alarm above 2.0 M. Bund sump pH.
 
-6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
+6. Relief. Atmospheric tank with breather. The vent carries NOx and acid mist and belongs to NOX_SCRUB; no vent edge exists, held. Overflow to the oxidizing-acid bund.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_NITRIC.stl`.
 
-8. Open items. No holdup basis for this class.
+8. Open items. Vent edge to NOX_SCRUB. Tank volume; holdup basis not on the graph. Segregation per AQS-DSN-OX-001 section 3.

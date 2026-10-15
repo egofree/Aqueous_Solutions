@@ -7,14 +7,14 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals. No metal wetted part (M3). Cell electrodes under M6. 5 wt% nominal, 6 wt% maximum, no stabilizer (graph product_spec). AQS-DSN-OX-001 section 2.
 
 4. Nozzles. Origin 15200, 8200, 0 mm. Size 800 × 800 × 1100 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-H2O2-SRC, inlet, -Y face center, 15600, 8200, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
 - N2, S32, outlet, +Y face center, 15600, 9000, 550 mm. Height 550 mm from the bottom. Bore not calculated. Rating hose, atmospheric.
-5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
+5. Instruments. Level with high-high trip on the cell. Temperature high trip 30 °C, which closes the cell feed and drains to the bund. Concentration alarm above 6 wt%. Vent flow or tank pressure alarm.
 
-6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
+6. Relief. Atmospheric. Continuous filtered vent and a free-lifting manway cover as the emergency relief for decomposition. Ball and plug valves have vented cavities; no trapped volume. Not to a closed header.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_PEROX.stl`.
 
-8. Open items. No vessel diameter.
+8. Open items. Cell current and area. Tank volume. Segregation per AQS-DSN-OX-001 section 3.
