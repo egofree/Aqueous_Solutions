@@ -96,15 +96,15 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 ## 5. Next 10 tasks
 
 1. X-BAS-02 Bounding-case check of every held rate against AQS-ASSAY-001 Rev C.
-2. X-BAS-03 Site basis. Needs the owner: site, climate, seismic, soil (SITE_ACCESS has only a default latitude of 33.0°).
-3. X-MAT-15 P, T, and purity on H₂ edges. Needs owner design conditions.
-4. X-SAF-07 Flue quench edge into FLUE_KO. Needs owner approval of a rate change.
-5. MET-LEACH_CSTR_1-02 Sizing: agitator, liquor density, CPVC wall at 85 °C.
-6. MET-EW_1-02 Sizing for EW_1, then EW_2 to EW_9.
-7. X-ELS-02 Load list from calculations.
-8. X-ELS-04 Rectifier sizing at the bounding case current.
-9. X-PIP-01 Piping class sheets.
-10. X-MAT-09 Liquor temperatures on the PVC-U loop units (CONTINUOUS_RECYCLE, FLOAT_SINK, S13_CLASS_TREAT).
+2. MET-LEACH_CSTR_1-02 Sizing: agitator, liquor density, CPVC wall at 85 °C (study values, entered in AQS-REG-002).
+3. MET-EW_1-02 Sizing for EW_1, then EW_2 to EW_9.
+4. X-ELS-02 Load list from calculations.
+5. X-ELS-04 Rectifier sizing at the bounding case current.
+6. X-PIP-01 Piping class sheets.
+7. X-MAT-09 Liquor temperatures on the PVC-U loop units (CONTINUOUS_RECYCLE, FLOAT_SINK, S13_CLASS_TREAT); HX-5 coil guard.
+8. X-BAS-03 Site basis: ASCE Hazard Tool run (seismic, wind, snow) and a geotechnical basis. Needs a parcel or a lookup by the owner.
+9. X-ELS-08 Grounding and bonding (X-BAS-03 soil is an assumption).
+10. X-COD-02 Permit list for the study site.
 
 ## 6. Cross-cutting tasks
 
