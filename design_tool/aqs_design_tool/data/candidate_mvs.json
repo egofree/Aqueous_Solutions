@@ -2440,6 +2440,15 @@
             "S14": 2.4
           },
           "ins": 943.086812
+        },
+        "co2_removal": {
+          "metabolic_CO2_kg_d": 4.021,
+          "half_cycle_min": 144.0,
+          "zeolite_5A_kg_per_bed": 40.2,
+          "beds_per_assembly": 2,
+          "assemblies": 2,
+          "zeolite_total_kg": 160.8,
+          "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
         }
       },
       "modules": [],

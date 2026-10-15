@@ -13,7 +13,7 @@ Each system is listed with its primary source, the backups now on the graph and 
 | Electric power, conversion | 56 x 60 kW inverters | inverter count above the 290 kW load | N+50 by count | single collection bus and main panel not yet audited | X-RED-03 |
 | O2 for the crew | H2O_ELYZ (11.1 kg/d H2) | grow-bed and crop O2, cold-box excess O2, CRYO_O2 bank 150.8 kg | bank / crew draw 3.04 kg/d = 49.6 d, but the bank is also the fuel-cell oxidant | closed: separate crew bank 6.08 kg (A-M-146) | X-RED-04 done |
 | Water | ROOF_TANK 200 m3, AHU condensate return, VCD_TRAIN | CATCH_TANK inventory, potable make-up | 200 m3 / 131.5 kg/d potable draw = 1520 d | VCD_TRAIN single still | X-RED-05 |
-| CO2 removal (crew air) | HAB sorbent bed (S90, 4.02 kg/d) | crop uptake 2.8 kg/d on the farm air (partial) | crops cover 70 % of crew CO2 only if the air is shared | single sorbent bed | X-RED-06 |
+| CO2 removal (crew air) | HAB sorbent bed (S90, 4.02 kg/d) | crop uptake 2.8 kg/d on the farm air (partial) | crops cover 70 % of crew CO2 only if the air is shared | closed: second full 2-bed 5A assembly, 40 kg/bed (A-M-147) | X-RED-06 done |
 | Thermal | HEAT_SINK, GEO_HP 2 kW | heat ladder stores Q1-Q4 | not calculated | single heat pump and single heat sink | X-RED-07 |
 | Food | farm units (bed, veg, fruit, peanut, stock, fish, mushrooms) | diversity of crops and stock | no stored reserve | no ration store for a crop failure | X-RED-08 |
 | Sanitation | COMPOST_TOILET | none | - | single toilet | X-RED-09 |

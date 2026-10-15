@@ -9,7 +9,7 @@ import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
 CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
-NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20; SWARF = 0.10
+NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20; SWARF = 0.10; ZEO_LOAD = 0.010
 BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = 2.77, 36.24, 0.43, 0.45   # BVAD2022 Table 4-91 tomato transpiration kg/m2/d and CO2 uptake g/m2/d
 BANDS = [(7, 12, 0.34), (13, 20, 0.315), (21, 40, 0.345)]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
@@ -150,5 +150,10 @@ def tf(g, ps=None):
         ck.update(value=round(kw, 4), note=f'LED {A_:.2f} m2 x {wm2:.1f} W/m2 (DLI {DLI}, {LED} umol/J) + aux {aux} kW (A-M-144)')
         for k in (f'SF-{u}', f'SQ-{u}'):
             if k in E: E[k]['rate']['value'] = round(kw, 4)
+    # X-RED-06 crew CO2 removal N+1 (A-M-147): two-bed swing assembly (one adsorbs, one regenerates, 144 min half-cycle, CDRA practice) per
+    # NASA_CDRA2015; zeolite 5A loading 1.0 wt% at 0.4 kPa CO2 (NASA_5A1998, equilibrium: bed mass is a minimum). N+1 = a second full assembly.
+    co2c = E['S90']['rate']['value']; half = 144.0; per_bed = co2c*half/1440/ZEO_LOAD
+    N['HABITATION']['params']['co2_removal'] = {'metabolic_CO2_kg_d': round(co2c, 3), 'half_cycle_min': half, 'zeolite_5A_kg_per_bed': round(per_bed, 1),
+        'beds_per_assembly': 2, 'assemblies': 2, 'zeolite_total_kg': round(4*per_bed, 1), 'basis': 'NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)'}
     N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
     return dict(veg=tot, ined=ined, claim=claim, atom=fa, c29=rec, dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
