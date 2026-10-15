@@ -2124,9 +2124,29 @@
     "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
     "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
     "title": "Mister (HPA) supply transfer function",
-    "statement": "Mister supply = chamber area x 6 nozzles/m2 x 0.057 L/min (0.3 mm nozzle at 80 psi) x 4 s/244 s duty (HPA_PRACTICE, JAE2022_AERO). Return = supply.",
+    "statement": "Mister supply = chamber area x 6 nozzles/m2 x 0.057 L/min (0.3 mm nozzle at 80 psi) x 4 s/244 s duty (HPA_PRACTICE, JAE2022_AERO). Return = supply. Schedule 4 s/4 min lies within the peer-reviewed HPA range (LAKHIAR2018); nozzle flow remains a manufacturer-class figure.",
     "verification": "Timed catch at the chamber drain over 24 h.",
     "replace_when": "Nozzle model or timer schedule fixed by unit task.",
+    "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-137",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "Dual-root ET split",
+    "statement": "DUAL_ROOT ET per m2 equals the grow bed (same LED, same room); supply = ET/(1-0.20) (PLOSONE2017_DRAIN, AGRIC2024_LF); 20 % drain returns to the bed; ET to CRYO_AHU on new edge IA-DR-VAP; bed irrigation IA-BED-H2O carries the extra ET.",
+    "verification": "Weighing-lysimeter or drain catch over 24 h.",
+    "replace_when": "Crop or light plan for DUAL_ROOT differs from the bed.",
     "doc": "AQS-PAR-003"
   }
 ]

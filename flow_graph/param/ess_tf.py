@@ -10,7 +10,7 @@ import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 F = 96485.0; VZB = 1.82; F_HER = 0.055/(0.020/(2*F)*22414*3600); OC = 3.2e-3; J = 20.0; LFL25 = 0.01; RHO_AIR = 1.18
 CHG_H = 6.0; GULLY_PITCH = 0.2; GULLY_LPM = 1.0
-NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0
+NOZ_M2 = 6; NOZ_LPM = 0.015*3.785; T_ON = 4.0; T_OFF = 240.0; DRAIN = 0.20
 def _ps():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
 def tf(g, ps=None):
@@ -32,5 +32,16 @@ def tf(g, ps=None):
     L, W = [x/1000 for x in N['NFT']['params']['size_mm'][:2]]; n = int(W/GULLY_PITCH); qn = n*GULLY_LPM*1440
     put('IA-NFT-IN', qn, f'{n} gullies x {GULLY_LPM} L/min (COOPER1996) over {L:.0f} m'); put('IA-NFT-OUT', qn, 'film return = supply')
     A = (lambda d: d[0]*d[1]/1e6)(N['MISTER']['params']['size_mm']); qm = A*NOZ_M2*NOZ_LPM*1440*T_ON/(T_ON + T_OFF)
-    put('IA-MIST-IN', qm, f'{A:.0f} m2 x {NOZ_M2} nozzles/m2 x {NOZ_LPM} L/min, {T_ON:.0f} s on / {T_OFF/60:.0f} min off (HPA_PRACTICE, JAE2022_AERO)'); put('IA-MIST-OUT', qm, 'chamber drain return = supply')
-    return dict(mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
+    put('IA-MIST-IN', qm, f'{A:.0f} m2 x {NOZ_M2} nozzles/m2 x {NOZ_LPM} L/min, {T_ON:.0f} s on / {T_OFF/60:.0f} min off (schedule within LAKHIAR2018 range; nozzle flow HPA_PRACTICE; JAE2022_AERO)'); put('IA-MIST-OUT', qm, 'chamber drain return = supply')
+    # DUAL_ROOT: substrate bed on the grow-bed water. ET per m2 = the grow bed's (same LED light, same room; IA-BED-VAP over BED_M2);
+    # supply = ET/(1 - drain fraction 0.20) (PLOSONE2017_DRAIN 10-20 %, AGRIC2024_LF 15-20 %); drain returns to the bed; ET to the AHU.
+    if 'IA-DR-VAP' not in E:
+        from flow_graph.param.o2_close import _edge
+        g['edges'].append(_edge('IA-DR-VAP', 'DUAL_ROOT', 'CRYO_AHU', 'G', ['mass'], 'dual-root transpiration', 0, 'kg/d', 'FARM', 'CRYO', {'H2O': 1.0})); E = {e['stream_id']: e for e in g['edges']}
+    P = N['DUAL_ROOT']['params']; b0 = P.setdefault('bed_h2o_base', E['IA-BED-H2O']['rate']['value'])
+    from flow_graph.param.o2_close import BED_M2
+    adr = (lambda d: d[0]*d[1]/1e6)(P['size_mm']); et = b0/BED_M2*adr; sup = et/(1 - DRAIN)
+    put('IA-DR-IN', sup, f'ET {et:.2f} kg/d ({adr:.0f} m2 at the bed rate {b0/BED_M2:.3f} kg/m2/d) / (1 - {DRAIN} drain) (PLOSONE2017_DRAIN)')
+    put('IA-DR-OUT', sup - et, f'drain {DRAIN:.0%} of supply back to the bed'); put('IA-DR-VAP', et, 'transpiration to the CRYO AHU coil')
+    put('IA-BED-H2O', b0 + et, f'bed irrigation {b0} + dual-root ET {et:.2f} drawn through the bed')
+    return dict(dr_et=et, mist=qm, purge_m3_h=q/24, h2=h2, nft=qn)
