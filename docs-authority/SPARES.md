@@ -12,10 +12,10 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x556) | 556 | 56 | 10 % min 2 |
 | building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x216; 6205-2Z x94; 6201-2Z x40; 6204-2Z x34; 6206-2Z) | 404 | 41 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x1078) | 1078 | 108 | 10 % min 1 |
-| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x868) | 868 | 87 | 10 % min 1 |
+| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x898) | 898 | 90 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x267) | 267 | 27 | 10 % min 1 |
 | building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x105; 0.18 kW x16; 0.55 kW x13; 0.75 kW x4; 0.12 kW ) | 147 | 15 | 10 % min 1 |
-| building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x122) | 122 | 13 | 10 % min 1 |
+| building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x124) | 124 | 13 | 10 % min 1 |
 | building block | OF-08 | electronics: variable-frequency drive (1.1 kW x25; 1.5 kW x20; 2.2 kW x5; 7.5 kW x2; 18.5 kW x1; 3 ) | 55 | 6 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x44) | 44 | 5 | 10 % min 1 |
 | building block | OF-10 | electronics: compressor contactor + overload (22 kW hermetic x8; 0.25 kW hermetic x5; 0.75 kW hermetic x1;) | 15 | 2 | 10 % min 1 |
@@ -41,10 +41,10 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-31 | fastener: Lid gasket 40 mm wide (Lid gasket 40 mm wide x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-32 | fastener: Solvent cement (Solvent cement x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-33 | instrument: flow transmitter (DN15 x190; DN50 x39; DN20 x3; DN25 x3; DN250 x1; DN300 x1; D) | 238 | 24 | 10 % min 1 |
-| building block | OF-34 | instrument: temperature element (Pt100 class A x186) | 186 | 19 | 10 % min 1 |
-| building block | OF-35 | instrument: pressure transmitter (0-10 bar x180) | 180 | 18 | 10 % min 1 |
-| building block | OF-36 | instrument: high-level switch (vibrating fork x129) | 129 | 13 | 10 % min 1 |
-| building block | OF-37 | instrument: level transmitter (radar 80 GHz x129) | 129 | 13 | 10 % min 1 |
+| building block | OF-34 | instrument: temperature element (Pt100 class A x194) | 194 | 20 | 10 % min 1 |
+| building block | OF-35 | instrument: pressure transmitter (0-10 bar x187; 0-16 bar x1) | 188 | 19 | 10 % min 1 |
+| building block | OF-36 | instrument: high-level switch (vibrating fork x136) | 136 | 14 | 10 % min 1 |
+| building block | OF-37 | instrument: level transmitter (radar 80 GHz x136) | 136 | 14 | 10 % min 1 |
 | building block | OF-38 | instrument: pressure transmitter (0-40 bar x2; 0-400 bar x2; 0-25 bar x1; 0-100 bar x1) | 6 | 1 | 10 % min 1 |
 | building block | OF-39 | protection: inverse-time circuit breaker, 3-pole (15 A x204; 100 A x8; 30 A x2; 90 A x1; 20 A x1; 60 A x1) | 217 | 22 | 10 % min 1 |
 | building block | OF-40 | seal: mechanical seal, single (EN 12756 x144) | 144 | 29 | 20 % min 2 |
@@ -103,4 +103,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-93 lines; 43 spare motors, 918 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+93 lines; 43 spare motors, 925 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

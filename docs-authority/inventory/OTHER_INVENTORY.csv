@@ -14,8 +14,8 @@ BACKUP_GEN,genset,BACKUP_GEN,protection,"inverse-time circuit breaker, 3-pole",1
 BACKUP_GEN,genset,BACKUP_GEN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 BACKUP_GEN,genset,BACKUP_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,S46: AQS-PIP-005 span count
 BACKUP_GEN,genset,BACKUP_GEN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S46: one at each end nozzle (assumed)
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,122,1946 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,868,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,124,1976 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,898,one per instrument
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-HVAC-COND to ROOF_TANK (assumed size)
 CRYO,CRYO,CRYO_AHU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S68 to LEACH_CSTR_1 (assumed size)
@@ -181,6 +181,10 @@ CRYO,CRYO,H2_PURIFIER,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type
 CRYO,CRYO,H2_PURIFIER,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S49P: one at each end nozzle (assumed)
 CRYO,hx,CRYO_HX_Q4,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,hx,CRYO_HX_Q4,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,pressure transmitter,0-16 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,separator,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,separator,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
 CRYO,separator,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S70 to FLUE_KO: run and fault (assumed)
@@ -2604,6 +2608,10 @@ WET,BMED_CRU,EVAP_ACID,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,8,IA
 WET,BMED_CRU,EVAP_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ACID-01: pumped line (assumed)
 WET,BMED_CRU,EVAP_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EVAP_ACID-COND: pumped line (assumed)
 WET,BMED_CRU,EVAP_ACID,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EVAP_ACID-VENT: pumped line (assumed)
+WET,BMED_CRU,EVAP_ACID,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WET,BMED_CRU,EVAP_ACID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+WET,BMED_CRU,EVAP_ACID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WET,BMED_CRU,EVAP_ACID,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_ACID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 311.0 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -2631,6 +2639,10 @@ WET,BMED_CRU,EVAP_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,I
 WET,BMED_CRU,EVAP_BASE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BASE-01: pumped line (assumed)
 WET,BMED_CRU,EVAP_BASE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BASE-PPT: pumped line (assumed)
 WET,BMED_CRU,EVAP_BASE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EVAP_BASE-COND: pumped line (assumed)
+WET,BMED_CRU,EVAP_BASE,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WET,BMED_CRU,EVAP_BASE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+WET,BMED_CRU,EVAP_BASE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WET,BMED_CRU,EVAP_BASE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,BMED_CRU,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 282.7 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -3007,6 +3019,8 @@ WET,ew_cell,EW_8,valve,check valve,DN15,"PVC-U true-union swing/ball check valve
 WET,ew_cell,EW_8,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-EW8-CL2: pump discharge (assumed)
 WET,ew_cell,EW_8,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW-08: one at each end nozzle (assumed)
 WET,ew_cell,EW_8,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW8-CL2: one at each end nozzle (assumed)
+WET,hcl_synthesis,HCL_BURNER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WET,hcl_synthesis,HCL_BURNER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,hx,HX8,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,HL-HX8-Q4-A: 2 per support (assumed)
 WET,hx,HX8,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,HL-HX8-Q4-B: 2 per support (assumed)
 WET,hx,HX8,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -3032,6 +3046,10 @@ WET,scrubber,EVAP_ACID_VS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,1
 WET,scrubber,EVAP_ACID_VS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-VS-OFF: 2 per support (assumed)
 WET,scrubber,EVAP_ACID_VS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-VS-SPENT: pumped line (assumed)
 WET,scrubber,EVAP_ACID_VS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-VS-OFF: pumped line (assumed)
+WET,scrubber,EVAP_ACID_VS,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WET,scrubber,EVAP_ACID_VS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+WET,scrubber,EVAP_ACID_VS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WET,scrubber,EVAP_ACID_VS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WET,scrubber,EVAP_ACID_VS,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WET,scrubber,EVAP_ACID_VS,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Sump recirculation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 WET,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-VS-SPENT: AQS-PIP-005 span count
@@ -3189,6 +3207,10 @@ WTR,digest,BLACK_ALK_HOLD,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,4
 WTR,digest,BLACK_ALK_HOLD,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BLK-BIO: pumped line (assumed)
 WTR,digest,BLACK_ALK_HOLD,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BLK-NUT: pumped line (assumed)
 WTR,digest,BLACK_ALK_HOLD,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BLK-GREY: pumped line (assumed)
+WTR,digest,BLACK_ALK_HOLD,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WTR,digest,BLACK_ALK_HOLD,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+WTR,digest,BLACK_ALK_HOLD,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WTR,digest,BLACK_ALK_HOLD,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,digest,BLACK_ALK_HOLD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",36,IA-BLK-BIO: AQS-PIP-005 span count
 WTR,digest,BLACK_ALK_HOLD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,IA-BLK-NUT: AQS-PIP-005 span count
 WTR,digest,BLACK_ALK_HOLD,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-BLK-GREY: AQS-PIP-005 span count
@@ -3205,6 +3227,10 @@ WTR,digest,BLACK_DEWATER,fabricated part,fabricated part set,4 BOM lines,models/
 WTR,digest,BLACK_DEWATER,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_DEWATER/fasteners.csv
 WTR,digest,BLACK_DEWATER,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_DEWATER/fasteners.csv
 WTR,digest,BLACK_DEWATER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-BLK-CEN: 2 per support (assumed)
+WTR,digest,BLACK_DEWATER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WTR,digest,BLACK_DEWATER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+WTR,digest,BLACK_DEWATER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WTR,digest,BLACK_DEWATER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,digest,BLACK_DEWATER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WTR,digest,BLACK_DEWATER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-BLK-CEN: AQS-PIP-005 span count
 WTR,digest,BLACK_DEWATER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-BLK-CEN: one at each end nozzle (assumed)
@@ -3232,6 +3258,10 @@ WTR,digest,BLACK_PASTEUR,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/
 WTR,digest,BLACK_PASTEUR,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_PASTEUR/fasteners.csv
 WTR,digest,BLACK_PASTEUR,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-BLK-PAST: 2 per support (assumed)
 WTR,digest,BLACK_PASTEUR,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BLK-PAST: pumped line (assumed)
+WTR,digest,BLACK_PASTEUR,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+WTR,digest,BLACK_PASTEUR,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+WTR,digest,BLACK_PASTEUR,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WTR,digest,BLACK_PASTEUR,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,digest,BLACK_PASTEUR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 WTR,digest,BLACK_PASTEUR,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Transfer pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 WTR,digest,BLACK_PASTEUR,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,IA-BLK-PAST: AQS-PIP-005 span count

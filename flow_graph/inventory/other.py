@@ -43,7 +43,7 @@ def rows():
     LIQ_IN = {e['to_unit_id'] for e in g['edges'] if e['presence'] == 'present' and e.get('phase') == 'L' and (e['rate']['value'] or 0) > 0}
     for u, n in N.items():
         if n.get('class') in ('boundary', 'header', 'relief') or u.startswith(('HDR_', 'RELIEF_')): continue
-        if os.path.exists(os.path.join(ROOT, f'docs-authority/nozzles/{u}.csv')):
+        if os.path.exists(os.path.join(ROOT, f'docs-authority/nozzles/{u}.csv')) or (u in LIQ_IN and n.get('class') not in ('farm', 'product', 'building', 'hab')) or n.get('class') in ('hcl_synthesis', 'pem_electrolyser'):   # HAZOP HZ: liquid units without a nozzle list too
             add(u, 'instrument', 'temperature element', 'Pt100 class A', 'IEC 60751, 316L thermowell', 1, 'duty item 5 (assumed one per unit)')
             dk = (n.get('params') or {}).get('design_kPa') or 0; need = 1.25*dk/100                       # X-CTL-01: range from the design pressure (AQS-CTL-001)
             top = next((x for x in (10, 16, 25, 40, 60, 100, 160, 250, 400) if x >= need), 400)
