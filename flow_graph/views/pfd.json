@@ -10272,9 +10272,9 @@
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 18.4 kPa (1.50 m full at SG 1.25) = 20.5 kPa g (A-M-174)"
         },
         "redundancy": {
-          "rejection_kW": 152.26,
+          "rejection_kW": 151.7,
           "modules": 3,
-          "module_kW": 76.13,
+          "module_kW": 75.85,
           "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }

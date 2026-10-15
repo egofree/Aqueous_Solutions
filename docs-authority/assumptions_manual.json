@@ -3868,5 +3868,25 @@
     "verification": "CAD_REGROUP.json; QC-30; clash gates 0/0/0.",
     "replace_when": "When a layout review by process and operations staff sets the L-1 arrangement.",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-224",
+    "task": "X-INV-02C",
+    "needs_verification": true,
+    "files": [
+      "models/motors/build.py"
+    ],
+    "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+    "units": "mm",
+    "where": "models/motors/<MF-nn>/",
+    "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+    "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+    "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
+    "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
+    "title": "TASK_PLAN triage",
+    "statement": "Every open task in AQS-PLAN-007 rev B is tagged desk P1..P5, hardware or owner by _task_plan_gen.py: unit task 15 is hardware (acceptance record needs the built unit); cross-cutting tasks whose criteria need a test, coupon, first article, bench, site measurement or as-built are hardware; X-PRO-03 and X-ELS-08 are owner. 2444 open: 2224 desk, 216 hardware, 2 owner (plus X-BAS-03 site).",
+    "verification": "Section 2a counts; Triage tag on every open line.",
+    "replace_when": "When a task closes or the owner re-prioritises.",
+    "doc": "AQS-PAR-003"
   }
 ]
