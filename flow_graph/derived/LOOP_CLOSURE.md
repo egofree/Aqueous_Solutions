@@ -31,7 +31,7 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 0, cut in 239.57 out 239.57 pass
+  kW: nodes off 0, cut in 240.02 out 240.03 pass
 
 ## ess: 9 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).

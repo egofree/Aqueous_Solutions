@@ -28,3 +28,21 @@ def extension_kW(A_add_m2, lpd_W_m2, light_frac, Ra_L_s_m2, dT_K, cop, sfp_W_per
     return dict(light_kW=light, vent_kW=vent, envelope_kW=env, total_kW=light+vent+env, vent_L_s=vent_L_s)
 def roof_load_kPa(pv_dead, Lr, S):
     return dict(service_kPa=pv_dead+max(Lr, S), lrfd_kPa=1.2*pv_dead+1.6*max(Lr, S))
+
+def extension_kW_v2(A_add_m2, lpd_W_m2, light_frac, Ra_L_s_m2, dTh_K, dTc_K, cop_h, cop_c, sfp_W_per_L_s, U_roof, A_wall_m2, U_wall,
+                    F_slab_W_mK, P_slab_m, pump_W_per_kWt=0.0, conditioned=1.0):
+    """X-PAR-08. Heating and cooling split by degree days [NOAA_NORMALS_DFW]: mean heating dT = HDD/365, cooling dT = CDD/365 (K).
+    Conduction UA = roof + walls [IECC2021_C402]; slab-on-grade edge loss F x perimeter [IECC2021_C402 Table C402.1.4, F-factor] in the
+    heating season only (no cooling credit, conservative). Outdoor air rho cp V [ASHRAE621_2019]. Internal gains = lighting and fan power
+    (all ends as heat); they offset heating and add to cooling in proportion to the heating and cooling dT shares (balance-point study
+    method, ASHRAE_FUND_2021 ch. 18). Electric = Q_h/COP_h + Q_c/COP_c (+ ground-loop pumping per kW thermal) + fans + lighting.
+    Occupant and process gains are not counted (hall programme open)."""
+    vent_L_s = Ra_L_s_m2*A_add_m2; UAv = vent_L_s/1000*1.2*1006
+    UAe = U_roof*A_add_m2 + U_wall*A_wall_m2; UAs = F_slab_W_mK*P_slab_m
+    light = lpd_W_m2*A_add_m2*light_frac; fan = vent_L_s*sfp_W_per_L_s; G = light + fan
+    fh = dTh_K/(dTh_K+dTc_K); fc = 1 - fh
+    Qh = max(0.0, (UAe+UAv+UAs)*dTh_K - G*fh)*conditioned; Qc = ((UAe+UAv)*dTc_K + G*fc)*conditioned
+    pump = pump_W_per_kWt*(Qh+Qc)/1000
+    hvac = Qh/cop_h + Qc/cop_c + pump
+    return dict(light_kW=light/1000, vent_kW=(fan + UAv*(dTh_K/cop_h + dTc_K/cop_c)*conditioned)/1000, envelope_kW=(hvac - UAv*(dTh_K/cop_h + dTc_K/cop_c)*conditioned)/1000,
+                total_kW=(light+fan+hvac)/1000, vent_L_s=vent_L_s, Qh_kW=Qh/1000, Qc_kW=Qc/1000, slab_kW=UAs*dTh_K/1000, gains_kW=G/1000, pump_kW=pump/1000)

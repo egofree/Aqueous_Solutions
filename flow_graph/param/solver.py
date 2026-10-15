@@ -2,7 +2,7 @@
 from drivers.json. This first set covers the metals core acid loop and the EW cells.
 check(): mass/energy closure of the solved units (must pass) and misfit against the graph
 (write_graph.py writes the solved values; MISFIT_TOL is the gate in test_param_misfit.py)."""
-import json, os
+import json, math, os
 from . import drivers as DR
 from .constants import M, mw
 from .sizing import electrochem as EC
@@ -137,23 +137,48 @@ if __name__ == '__main__':
     for m in mis: print(f'{m[0]}: graph {m[1]:.3f}, solved {m[2]:.3f}, deviation {m[3]*100:+.1f} %')
     if errs: raise SystemExit('; '.join(errs))
 
-def roof_close(d, P_base_kW):
-    """X-PAR-07. Smallest footprint on the structural bay grid whose roof carries the PV that closes the energy balance,
-    including the extension's own lighting, ventilation and envelope loads (sizing.roof). The base plate is kept; bays are
-    added (single-storey extension). Returns the converged case."""
+def _ext(d, A_add, W, D, mode):
+    from .sizing import roof as RF
+    v = lambda k: DR.val(d, k)
+    Aw = 2*(W+D)/1000*v('ext_wall_h_mm')/1000; P = 2*(W+D)/1000
+    if mode == 'v1':
+        return RF.extension_kW(A_add, v('ext_lpd_W_m2'), v('ext_light_frac'), v('ext_Ra_L_s_m2'), v('ext_dT_mean_K'), v('ext_cop'), v('ext_sfp_W_per_L_s'), v('ext_U_roof'), v('ext_conditioned'), Aw, v('ext_U_wall'))
+    g = mode == 'ground'
+    r = RF.extension_kW_v2(A_add, v('ext_lpd_W_m2'), v('ext_light_frac'), v('ext_Ra_L_s_m2'), v('ext_dTh_K'), v('ext_dTc_K'),
+                           v('gsh_cop_h' if g else 'ash_cop_h'), v('gsh_cop_c' if g else 'ash_cop_c'), v('ext_sfp_W_per_L_s'), v('ext_U_roof'), Aw, v('ext_U_wall'),
+                           v('ext_F_slab'), P, v('gsh_pump_W_per_kWt') if g else 0.0, v('ext_conditioned'))
+    UAe = v('ext_U_roof')*A_add + v('ext_U_wall')*Aw; UAv = v('ext_Ra_L_s_m2')*A_add/1000*1.2*1006; UAs = v('ext_F_slab')*P
+    pk_h = (UAe+UAv+UAs)*(v('ext_T_in_C')-v('ext_T_design_h_C'))/1000; pk_c = ((UAe+UAv)*(v('ext_T_design_c_C')-v('ext_T_in_C')))/1000 + r['gains_kW']
+    r.update(mode=mode, peak_h_kW=pk_h, peak_c_kW=pk_c)
+    if g:   # bore field under the building footprint (KAVANAUGH2014 bore length per kW of peak block load)
+        L = v('gsh_bore_m_per_kWt')*max(pk_h, pk_c); n = math.ceil(L/v('gsh_bore_depth_m'))
+        r.update(bore_m=L, bores=n, bore_field_m2=n*v('gsh_bore_spacing_m')**2, fits_under_building=n*v('gsh_bore_spacing_m')**2 <= W*D/1e6)
+    return r
+
+def roof_close(d, P_base_kW, mode=None):
+    """X-PAR-07 / X-PAR-08. Smallest footprint on the structural bay grid whose roof carries the PV that closes the energy balance
+    (x pv_oversize_factor, D75), including the extension's own lighting, ventilation, envelope and slab loads (sizing.roof). The base
+    plate is kept; bays are added (single-storey extension). X-PAR-08: hall HVAC 'air' or 'ground' source, or 'best' = the mode with
+    the smaller converged footprint (then the lower load). Returns the converged case with the comparison."""
     from .sizing import roof as RF, power as PW
-    v = lambda k: DR.val(d, k); bay = v('bay_mm'); bx0, by0 = int(v('base_bays_x')), int(v('base_bays_y'))
+    import math as _m
+    v = lambda k: DR.val(d, k); mode = mode or v('ext_hvac')
+    if mode == 'best':
+        R = {m: roof_close(d, P_base_kW, m) for m in ('air', 'ground')}
+        b = min(R.values(), key=lambda r: (r['footprint_m2'], r['P_kW'])); b = dict(b); b['compare'] = {m: dict(footprint_m2=r['footprint_m2'], bays=[r['bays_x'], r['bays_y']], ext_kW=r['ext']['total_kW'], pv_kWp=r['pv_need_kWp']) for m, r in R.items()}
+        return b
+    bay = v('bay_mm'); bx0, by0 = int(v('base_bays_x')), int(v('base_bays_y'))
     A0 = bx0*by0*bay*bay/1e6; best = None
-    for nx in range(bx0, bx0+40):
-        for ny in range(by0, by0+40):
+    for nx in range(bx0, bx0+60):
+        for ny in range(by0, by0+60):
             W, D = nx*bay, ny*bay; A = W*D/1e6
             if best and A > best['footprint_m2']: continue
-            ext = RF.extension_kW(A-A0, v('ext_lpd_W_m2'), v('ext_light_frac'), v('ext_Ra_L_s_m2'), v('ext_dT_mean_K'), v('ext_cop'), v('ext_sfp_W_per_L_s'), v('ext_U_roof'), v('ext_conditioned'), 2*(W+D)/1000*v('ext_wall_h_mm')/1000, v('ext_U_wall'))
+            ext = _ext(d, A-A0, W, D, mode)
             P = P_base_kW + ext['total_kW']
             need = PW.pv_kWp(P, v('night_hours'), v('storage_round_trip'), v('pv_yield_kWh_kWp_d')*v('pv_roof_yield_factor'), v('pv_system_derate'))*v('pv_oversize_factor')   # D75: 200 % of requirement
             arr, lay = RF.array_area_m2(W, D, v('ifc_perim_small_mm'), v('ifc_perim_large_mm'), v('ifc_axis_limit_mm'), v('ifc_array_max_mm'), v('ifc_path_mm'))
             have = RF.roof_kWp(arr, v('pv_module_eff'), v('pv_roof_gcr'))
             if have >= need and (best is None or A < best['footprint_m2'] or (A == best['footprint_m2'] and abs(nx*1.0/ny-4/3) < abs(best['bays_x']/best['bays_y']-4/3))):
-                best = dict(bays_x=nx, bays_y=ny, W_mm=W, D_mm=D, footprint_m2=A, added_m2=A-A0, ext=ext, P_kW=P, pv_need_kWp=need,
+                best = dict(bays_x=nx, bays_y=ny, W_mm=W, D_mm=D, footprint_m2=A, added_m2=A-A0, ext=ext, P_kW=P, pv_need_kWp=need, hvac=mode,
                             array_m2=arr, layout=lay, pv_roof_kWp=have, load=RF.roof_load_kPa(v('roof_pv_dead_kPa'), v('roof_live_kPa'), v('roof_snow_kPa')))
     return best

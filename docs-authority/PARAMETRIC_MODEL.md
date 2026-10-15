@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3376.000 | 3375.096 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3382.000 | 3381.384 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -177,6 +177,21 @@ All solved units close.
 | vs_mwr | 0.08 | m3/(m h) minimum wetting rate, packings below 75 mm | PERRY9_ABS | — |
 | vs_naoh_excess | 2.0 | mol NaOH fed / mol HCl absorbed | A-M-111 | yes |
 | vs_p_shell_case | "upset" | design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | A-M-111 | yes |
+| ext_dTh_K | 3.458 | K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | NOAA_NORMALS_DFW | yes |
+| ext_dTc_K | 4.381 | K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | NOAA_NORMALS_DFW | yes |
+| ext_F_slab | 1.264 | W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | IECC2021_C402 | yes |
+| ext_hvac | "best" | 'air', 'ground' or 'best' (lower converged footprint) | A-M-112 | yes |
+| ash_cop_h | 3.3 | air-source heat pump heating COP at 8.3 C, >= 19 kW | ASHRAE901_2019_T6812 | yes |
+| ash_cop_c | 3.22 | air-source heat pump cooling COP (EER 11.0), >= 19 kW | ASHRAE901_2019_T6812 | yes |
+| gsh_cop_h | 3.2 | ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1) | ASHRAE901_2019_T6812 | yes |
+| gsh_cop_c | 4.13 | ground-source heat pump cooling COP (EER 14.1 at 25 C entering fluid, ISO 13256-1) | ASHRAE901_2019_T6812 | yes |
+| gsh_pump_W_per_kWt | 37.0 | W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A) | KAVANAUGH2014 | yes |
+| gsh_bore_m_per_kWt | 55.0 | m vertical bore per kW peak block load (mid of 43-65 m/kW typical range) | KAVANAUGH2014 | yes |
+| gsh_bore_spacing_m | 6.0 | m bore spacing | KAVANAUGH2014 | yes |
+| gsh_bore_depth_m | 120.0 | m bore depth | A-M-112 | yes |
+| ext_T_design_h_C | -5.0 | C heating design dry bulb 99.6 % (DFW) | ASHRAE_FUND_2021 | yes |
+| ext_T_design_c_C | 38.0 | C cooling design dry bulb 0.4 % (DFW) | ASHRAE_FUND_2021 | yes |
+| ext_T_in_C | 18.3 | C balance (65 F, degree-day base) | NOAA_NORMALS_DFW | — |
 
 ## 6. References
 
@@ -188,6 +203,8 @@ All solved units close.
 | API520 | API Standard 520 Part I, Sizing, Selection, and Installation of Pressure-relieving Devices, 10th ed. (2020): liquid A = Q/(38 Kd Kw Kc Kv) sqrt(G/(p1-p2)) (US units, eq. 32); gas critical flow A = W/(C K P1 Kb Kc) sqrt(T Z/M) (US units, eq. 3), C = 520 sqrt(k (2/(k+1))^((k+1)/(k-1))). |
 | ASCE7_22 | ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R). |
 | ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas. |
+| ASHRAE901_2019_T6812 | ANSI/ASHRAE/IES 90.1-2019 Table 6.8.1-2: air-cooled heat pumps >= 65 kBtu/h cooling EER 11.0, heating COP 3.3 at 47 F; ground-source (water-to-air, ISO 13256-1) cooling EER 14.1 at 77 F entering, heating COP 3.2 at 32 F entering. |
+| ASHRAE_FUND_2021 | ASHRAE Handbook - Fundamentals (2021), ch. 14 climatic design data and ch. 18 nonresidential load calculation. |
 | ASHRAE_SYS2020 | ASHRAE Handbook, HVAC Systems and Equipment (2020), ch. 13 hydronic heating and cooling: design temperature difference about 10-11 K (20 F) for chilled/condenser water loops. |
 | ASTM_D1785 | ASTM D1785-15, Standard Specification for PVC Plastic Pipe, Schedules 40, 80 and 120; maximum service 60 C (140 F). |
 | CAMEO_REACT | NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases. |
@@ -211,6 +228,7 @@ All solved units close.
 | ISO16798_3 | ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
 | ISO23251 | ISO 23251:2006 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade. |
 | ISO4126_1 | ISO 4126-1:2013, Safety devices for protection against excessive pressure, Part 1: safety valves (set pressure, overpressure, discharge capacity). |
+| KAVANAUGH2014 | Kavanaugh S.P. and Rafferty K., Geothermal Heating and Cooling: Design of Ground-Source Heat Pump Systems, ASHRAE (2014): bore length method, typical bore length per kW, pumping grade A <= 5 hp per 100 tons. |
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
@@ -331,6 +349,20 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry |
 | driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate |
 | driver vs_p_shell_case | "upset" design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | Condensate titration during start-up before the column profile forms |
+| driver ext_dTh_K | 3.458 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
+| driver ext_dTc_K | 4.381 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
+| driver ext_F_slab | 1.264 W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | Slab edge detail |
+| driver ext_hvac | "best" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison |
+| driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run |
+| driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating |
+| driver gsh_cop_h | 3.2 ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1) | Selected unit rating at design loop temperature |
+| driver gsh_cop_c | 4.13 ground-source heat pump cooling COP (EER 14.1 at 25 C entering fluid, ISO 13256-1) | Selected unit rating at design loop temperature |
+| driver gsh_pump_W_per_kWt | 37.0 W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A) | Loop hydraulic design |
+| driver gsh_bore_m_per_kWt | 55.0 m vertical bore per kW peak block load (mid of 43-65 m/kW typical range) | Thermal response test and ASHRAE bore-length method |
+| driver gsh_bore_spacing_m | 6.0 m bore spacing | Bore-field simulation (g-functions) |
+| driver gsh_bore_depth_m | 120.0 m bore depth | Drilling log |
+| driver ext_T_design_h_C | -5.0 C heating design dry bulb 99.6 % (DFW) | ASHRAE 2021 climatic data for the station |
+| driver ext_T_design_c_C | 38.0 C cooling design dry bulb 0.4 % (DFW) | ASHRAE 2021 climatic data for the station |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |

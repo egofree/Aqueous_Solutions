@@ -143,6 +143,15 @@ def power():
         n = dict(unit_id='EXT_HALL', sector_id='ELEC_PV', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
                  notes='Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.', enabled=True, modules=[], params={}, continuous_kw=None)
         n['class'] = n.pop('class_'); g['nodes'].append(n); N['EXT_HALL'] = n
+    x = rf['ext']
+    if x.get('mode'):
+        note += (f" X-PAR-08: {x['mode']}-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating {x['Qh_kW']:.1f} kW and cooling {x['Qc_kW']:.1f} kW thermal average after"
+                 f" internal gains {x['gains_kW']:.1f} kW and slab edge {x['slab_kW']:.2f} kW (IECC F-factor); loop pumping {x['pump_kW']:.2f} kW. Comparison: "
+                 + '; '.join(f"{m} {c['footprint_m2']:.0f} m2, {c['ext_kW']:.2f} kW" for m, c in rf.get('compare', {}).items()) + '.')
+        N['EXT_HALL'].setdefault('params', {})['hvac'] = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in x.items()}
+        if x.get('bores'):
+            N['GEO_GHEX'].setdefault('params', {})['hall_field'] = {'bores': x['bores'], 'depth_m': DR.val(DR.load(), 'gsh_bore_depth_m'), 'bore_m': round(x['bore_m']),
+                'area_m2': x['bore_field_m2'], 'location': 'under the EXT_HALL slab', 'basis': 'KAVANAUGH2014 bore length per kW peak block load; X-PAR-08, A-M-112'}
     N['EXT_HALL']['continuous_kw'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': note}
     N['EXT_HALL']['params'].update({'footprint_m2': rf['added_m2'], 'conditioned': bool(DR.val(DR.load(), 'ext_conditioned')), 'blocks': ['EXT_HALL_E', 'EXT_HALL_N'],
         'duty': f"In 0.000 kg/d, out 0.000 kg/d, {kw:.3f} kW. Sheet docs-authority/duties/EXT_HALL.md."})

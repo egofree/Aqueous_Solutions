@@ -1720,5 +1720,38 @@
   "sensitivity": "HCl load is milligrams per day; size is set by minimum practical dimensions, not by mass transfer",
   "replaced_by": "Commissioning measurements",
   "verification_test": "Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate"
+ },
+ {
+  "id": "A-M-112",
+  "task": "X-PAR-08",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/sizing/roof.py",
+   "flow_graph/param/solver.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "value": "Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K mean); internal gains = lighting + fans, shared by the dT split; slab F 1.264 W/(m K) heating only; ground-source COP 3.2/4.13 + 37 W/kW pumping; bore 55 m per kW peak, 120 m bores at 6 m; design temps -5 / 38 C; mode chosen by smaller footprint",
+  "units": "K, W/(m K), -, m/kW, m, C",
+  "where": "drivers ext_dTh_K, ext_dTc_K, ext_F_slab, ext_hvac, gsh_*, ash_*, ext_T_design_*",
+  "basis": "NOAA_NORMALS_DFW, IECC2021_C402, ASHRAE901_2019_T6812, KAVANAUGH2014, ASHRAE_FUND_2021",
+  "sensitivity": "Lighting and fans are 44 % of the hall load and independent of the heat-pump choice; the ground/air difference is 0.9 kW",
+  "replaced_by": "TMY3 bin-hour load model with the hall programme; thermal response test",
+  "verification_test": "TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station"
+ },
+ {
+  "id": "A-M-113",
+  "task": "X-PAR-09",
+  "needs_verification": true,
+  "files": [
+   "docs-authority/ONE_LINE.md",
+   "docs-authority/PROTECTION.md"
+  ],
+  "value": "OWNER INPUT: utility interconnection study (service size, available fault current, export limit, protection settings, tariff) not yet obtained; export and protection rest on the inverter-only fault level",
+  "units": "-",
+  "where": "AQS-ELEC-002 Rev D item 5, AQS-ELEC-006 Rev C section 1",
+  "basis": "IEEE1547_2018, NEC2023_705; serving utility process",
+  "sensitivity": "Utility fault current raises bus and earth-fault levels; an export limit below 2576 kW curtails surplus",
+  "replaced_by": "Utility interconnection agreement",
+  "verification_test": "Owner files the interconnection application; utility study results entered as drivers and the protection study re-run"
  }
 ]

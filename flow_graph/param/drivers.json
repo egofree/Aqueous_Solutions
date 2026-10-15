@@ -692,5 +692,110 @@
   "register": "A-M-111",
   "needs_verification": true,
   "verification_test": "Condensate titration during start-up before the column profile forms"
+ },
+ "ext_dTh_K": {
+  "value": 3.458,
+  "units": "K mean heating dT = HDD65 2272 F-d x 5/9 / 365",
+  "ref": "NOAA_NORMALS_DFW",
+  "needs_verification": true,
+  "verification_test": "TMY3 bin-hour calculation"
+ },
+ "ext_dTc_K": {
+  "value": 4.381,
+  "units": "K mean cooling dT = CDD65 2878 F-d x 5/9 / 365",
+  "ref": "NOAA_NORMALS_DFW",
+  "needs_verification": true,
+  "verification_test": "TMY3 bin-hour calculation"
+ },
+ "ext_F_slab": {
+  "value": 1.264,
+  "units": "W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3",
+  "ref": "IECC2021_C402",
+  "needs_verification": true,
+  "verification_test": "Slab edge detail"
+ },
+ "ext_hvac": {
+  "value": "best",
+  "units": "'air', 'ground' or 'best' (lower converged footprint)",
+  "register": "A-M-112",
+  "needs_verification": true,
+  "verification_test": "Owner review of the X-PAR-08 comparison"
+ },
+ "ash_cop_h": {
+  "value": 3.3,
+  "units": "air-source heat pump heating COP at 8.3 C, >= 19 kW",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating; low-ambient derate in bin-hour run"
+ },
+ "ash_cop_c": {
+  "value": 3.22,
+  "units": "air-source heat pump cooling COP (EER 11.0), >= 19 kW",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating"
+ },
+ "gsh_cop_h": {
+  "value": 3.2,
+  "units": "ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1)",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating at design loop temperature"
+ },
+ "gsh_cop_c": {
+  "value": 4.13,
+  "units": "ground-source heat pump cooling COP (EER 14.1 at 25 C entering fluid, ISO 13256-1)",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating at design loop temperature"
+ },
+ "gsh_pump_W_per_kWt": {
+  "value": 37.0,
+  "units": "W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A)",
+  "ref": "KAVANAUGH2014",
+  "needs_verification": true,
+  "verification_test": "Loop hydraulic design"
+ },
+ "gsh_bore_m_per_kWt": {
+  "value": 55.0,
+  "units": "m vertical bore per kW peak block load (mid of 43-65 m/kW typical range)",
+  "ref": "KAVANAUGH2014",
+  "register": "A-M-112",
+  "needs_verification": true,
+  "verification_test": "Thermal response test and ASHRAE bore-length method"
+ },
+ "gsh_bore_spacing_m": {
+  "value": 6.0,
+  "units": "m bore spacing",
+  "ref": "KAVANAUGH2014",
+  "needs_verification": true,
+  "verification_test": "Bore-field simulation (g-functions)"
+ },
+ "gsh_bore_depth_m": {
+  "value": 120.0,
+  "units": "m bore depth",
+  "register": "A-M-112",
+  "needs_verification": true,
+  "verification_test": "Drilling log"
+ },
+ "ext_T_design_h_C": {
+  "value": -5.0,
+  "units": "C heating design dry bulb 99.6 % (DFW)",
+  "ref": "ASHRAE_FUND_2021",
+  "needs_verification": true,
+  "verification_test": "ASHRAE 2021 climatic data for the station"
+ },
+ "ext_T_design_c_C": {
+  "value": 38.0,
+  "units": "C cooling design dry bulb 0.4 % (DFW)",
+  "ref": "ASHRAE_FUND_2021",
+  "needs_verification": true,
+  "verification_test": "ASHRAE 2021 climatic data for the station"
+ },
+ "ext_T_in_C": {
+  "value": 18.3,
+  "units": "C balance (65 F, degree-day base)",
+  "ref": "NOAA_NORMALS_DFW",
+  "needs_verification": false
  }
 }
