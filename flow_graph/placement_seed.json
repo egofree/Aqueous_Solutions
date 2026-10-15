@@ -1617,11 +1617,11 @@
         -6000
       ],
       "size_mm": [
-        2870,
+        3270,
         720,
         760
       ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 27); LEACH_EW block, 600 mm clear"
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 31); LEACH_EW block, 600 mm clear"
     },
     {
       "unit_id": "EW_7",
@@ -1629,6 +1629,36 @@
       "origin_mm": [
         3200,
         5300,
+        -6000
+      ],
+      "size_mm": [
+        3170,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 30); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_1",
+      "level": "L-1",
+      "origin_mm": [
+        7000,
+        5400,
+        -6000
+      ],
+      "size_mm": [
+        2670,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_2",
+      "level": "L-1",
+      "origin_mm": [
+        3200,
+        6700,
         -6000
       ],
       "size_mm": [
@@ -1643,7 +1673,7 @@
       "level": "L-1",
       "origin_mm": [
         6500,
-        5400,
+        6800,
         -6000
       ],
       "size_mm": [
@@ -1654,101 +1684,71 @@
       "source": "X-RSZ-03 sized envelope (AQS-DUTY-051, study cabinet); LEACH_EW block, 600 mm clear"
     },
     {
-      "unit_id": "EW_1",
-      "level": "L-1",
-      "origin_mm": [
-        3200,
-        6700,
-        -6000
-      ],
-      "size_mm": [
-        2270,
-        720,
-        760
-      ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 21); LEACH_EW block, 600 mm clear"
-    },
-    {
-      "unit_id": "EW_2",
-      "level": "L-1",
-      "origin_mm": [
-        6100,
-        6800,
-        -6000
-      ],
-      "size_mm": [
-        2270,
-        720,
-        760
-      ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 21); LEACH_EW block, 600 mm clear"
-    },
-    {
       "unit_id": "EW_3",
       "level": "L-1",
       "origin_mm": [
         9500,
-        5400,
+        6800,
         -6000
       ],
       "size_mm": [
-        970,
+        1170,
         720,
         760
       ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 8); LEACH_EW block, 600 mm clear"
-    },
-    {
-      "unit_id": "EW_4",
-      "level": "L-1",
-      "origin_mm": [
-        10600,
-        4000,
-        -6000
-      ],
-      "size_mm": [
-        370,
-        720,
-        760
-      ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 10); LEACH_EW block, 600 mm clear"
     },
     {
       "unit_id": "EW_5",
       "level": "L-1",
       "origin_mm": [
-        9000,
-        6800,
+        10300,
+        5400,
         -6000
       ],
       "size_mm": [
-        370,
+        470,
         720,
         760
       ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear"
     },
     {
       "unit_id": "EW_6",
       "level": "L-1",
       "origin_mm": [
-        10000,
-        6800,
+        0,
+        7100,
         -6000
       ],
       "size_mm": [
-        370,
+        470,
         720,
         760
       ],
-      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear"
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear"
     },
     {
       "unit_id": "EW_8",
       "level": "L-1",
       "origin_mm": [
+        1100,
+        7100,
+        -6000
+      ],
+      "size_mm": [
+        470,
+        720,
+        760
+      ],
+      "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear"
+    },
+    {
+      "unit_id": "EW_4",
+      "level": "L-1",
+      "origin_mm": [
         11000,
-        6800,
+        4000,
         -6000
       ],
       "size_mm": [
@@ -1764,5 +1764,5 @@
   "notes_rev_h": "2026-10-07, graph Rev K. Heat-ladder stores stepped for gravity thermosyphons (AQS-DUTY-008 Rev C s14): Q1 z -6000, Q2 -5150, Q3 -4250, Q4 -3350 on both ladders; plan positions unchanged; Q4 top -2150, 1850 mm under the L0 slab soffit. New or moved rows for the Rev K solids: FLUE_KO (= FLUE_CAP), NOX_SCRUB, MEOH_COND, HX8, CONTINUOUS_RECYCLE, VCD_TRAIN, RELIEF_CRYO, REMIN, WS_PHOS, LITHO_STUB bench + LITHO_COAT/ALIGN/DEV, SOLAR_PV_CELL, ELECTRODE_COAT, BLOW_MOLD. Every row checked against every solid on the placed copy and every seed box: 0 intersections, >= 600 mm within a level (lines and group members: no overlap). GEO_ORC pad untouched. Record rows (fixed_feature, never written): CATCH_TANK, FLUE_KO (= FLUE_CAP), RELIEF_H2 (= H2_STACK bounding box). Plate-world origins; PROCESS_DX/DY not applied.",
   "notes_rev_c4": "Four node envelopes placed in LEACH_EW, z -6000, 600 mm clear: LEACH_CSTR_1 at 600, 5300; EW_1 at 3200, 5300; EW_2 at 4400, 5300; EW_9 at 5600, 5300. The other 39 block members have no envelope. No origin was written for them. The plate did not grow.",
   "notes_rev_c5": "Twenty envelopes placed in the sector block. AZOLLA_BED keeps 18000 by 5000 by 400 mm with the long side on the farm block. CURTAIL and HEAT_SINK have envelopes and no GEO block, so they were not placed. Sixty-two others have no envelope. The plate did not grow.",
-  "notes_rev_i": "2026-10-15, X-RSZ-03. EW_1..EW_9 at sized envelopes 370-2670 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows."
+  "notes_rev_i": "2026-10-15, X-RSZ-03, re-run for the X-PAR acid-loop decision (CE 0.85, AQS-PAR-001). EW_1..EW_9 at sized envelopes 370-3270 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows."
 }

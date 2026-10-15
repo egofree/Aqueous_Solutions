@@ -18,6 +18,12 @@ REFS = {
  'ASHRAE_SYS2020': 'ASHRAE Handbook, HVAC Systems and Equipment (2020), ch. 13 hydronic heating and cooling: design temperature difference about 10-11 K (20 F) for chilled/condenser water loops.',
  'WILSON2006': 'Wilson K.C., Addie G.R., Sellgren A., Clift R., Slurry Transport Using Centrifugal Pumps, 3rd ed., Springer (2006): deposition velocity and minimum bore for settling slurries.',
  'DOE_H2_COMP': 'Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry\'s 9th ed. sec. 10; efficiency to be taken from compressor vendor data.',
+ 'USBM_CL_EW': 'U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte.',
+ 'CARLETON_HCL_2023': 'Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid.',
+ 'VOGELBUSCH_MVR': 'Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count.',
+ 'EVAPCRYST_MVR': 'EvapCryst / manufacturer application notes on MVR evaporators: 15-25 kWh/t water for low boiling-point elevation, 30-60 kWh/t for high.',
+ 'PERRY9_HCL': "Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 2 and sec. 13: HCl-water maximum-boiling azeotrope 20.2 wt% HCl at 108.6 C, 101.3 kPa; below the azeotrope the vapour is water-rich, so boiling concentrates the liquid toward 20.2 wt%; density of 2 M HCl 1.032 kg/L and of 2 M NaOH 1.081 kg/L at 20 C.",
+ 'ULLMANN_HCL': "Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption.",
 }
 def cite(k):
     assert k in REFS, f'unknown reference {k}'

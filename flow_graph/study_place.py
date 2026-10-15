@@ -17,6 +17,8 @@ TIER={'FARM':2250}
 # FARM growth for floor-bound water tanks (X-RSZ-05): basement block on L-2 east of HYDRO.
 EXTRA=[{'block_id':'FARM_AQ','level':'L-2','origin_mm':[18000,4000],'size_mm':[6000,8000,3500],'source':'X-RSZ-05 study growth','unit_ids':[]}]
 GROW={('FARM','tank'):'FARM_AQ'}
+# Units whose sector has no block: placed in the block of their process neighbour (X-PAR acid loop: BMED evaporators).
+BLOCK_OF={'EVAP_ACID':'BMED_CRU','EVAP_BASE':'BMED_CRU'}
 def boxes(seed,rep):
     B={}
     BLK={tuple(b['size_mm'][:2]) for b in seed['blocks']}
@@ -43,7 +45,7 @@ def main():
         u=n['unit_id']
         if u not in want: continue
         c=UNIT.get(u,'skid'); sz=CAT[c]
-        b=blk.get(GROW.get((n['sector_id'],c),n['sector_id']))
+        b=blk.get(BLOCK_OF.get(u) or GROW.get((n['sector_id'],c),n['sector_id']))
         if not b: fail.append((u,'no block'));continue
         lv=b['level'];ox,oy=b['origin_mm'][:2];bx,by=b['size_mm'][:2];ok=None
         own=(ox,oy,bx,by)  # block-sized placeholder boxes of this block are not obstacles

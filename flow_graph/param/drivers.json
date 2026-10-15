@@ -43,10 +43,10 @@
  "acid_conc_design_wt": {
   "value": 0.2,
   "units": "mass fraction HCl on IA-ACID-01",
-  "register": "graph IA-ACID-01 (current design)",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
   "needs_verification": true,
-  "verification_test": "Conventional EDBM is limited to about 3.6 M acid (EDBM_WHEY_2021); 20 wt% (about 6 M) needs a concentration step or a lower loop concentration; bench EDBM run on the leach brine",
-  "published": "EDBM_WHEY_2021 max 3.6 M HCl"
+  "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time",
+  "published": "CARLETON_HCL_2023 38 % HCl; PERRY9_HCL azeotrope 20.2 wt% caps evaporative concentration"
  },
  "bmed_sec_kWh_per_kg_base": {
   "value": 6.7,
@@ -60,7 +60,7 @@
   "units": "kWh per kg acid+base (current graph basis)",
   "register": "graph BMED_ACID continuous_kw (X-RSZ-01)",
   "needs_verification": true,
-  "verification_test": "Superseded by bmed_sec_kWh_per_kg_base once the loop concentration is fixed",
+  "verification_test": "Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision)",
   "published": "EDBM_PILOT_2023 1.4-2.6 kWh/kg NaOH at 0.5-1 M; EDBM_WHEY_2021 6.7 kWh/kg at 2 M"
  },
  "ew_current_density_A_m2": {
@@ -69,20 +69,20 @@
   "ref": "SCHLESINGER2011"
  },
  "ew_current_efficiency_design": {
-  "value": 1.0,
+  "value": 0.85,
   "units": "-",
-  "register": "_ew_sizing.py FE (current design)",
+  "ref": "USBM_CL_EW",
   "needs_verification": true,
   "verification_test": "Bench chloride EW cell per metal: deposit mass vs charge (current efficiency)",
-  "published": "SCHLESINGER2011 0.85-0.92 for Cu sulfate EW"
+  "published": "USBM_CL_EW 0.85-0.90 chloride; SCHLESINGER2011 0.85-0.92 sulfate; lower bound taken (bounding current)"
  },
  "ew_cell_voltage_V": {
-  "value": 2.5,
+  "value": 2.12,
   "units": "V",
-  "register": "graph EW_1 cell_voltage_V",
+  "ref": "USBM_CL_EW",
   "needs_verification": true,
-  "verification_test": "Bench chloride EW cell polarisation at 200 A/m2 with MMO anode",
-  "published": "SCHLESINGER2011 about 2.0 V for Cu sulfate EW"
+  "verification_test": "Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage and energy per kg Cu",
+  "basis": "V = E_spec M CE / (z F) with E_spec 2.1 kWh/kg (cupric), CE 0.85, z 2: 2.12 V"
  },
  "site_design_dry_bulb_C": {
   "value": 37.8,
@@ -156,5 +156,60 @@
   "value": 15,
   "units": "DN",
   "owner": "smallest DN in AQS-PIP-003 classes"
+ },
+ "ew_bus_drop_V": {
+  "value": 0.3,
+  "units": "V",
+  "register": "AQS-ELEC-004 _rect_ew_sizing VDROP (study)",
+  "needs_verification": true,
+  "verification_test": "Measure bus-bar and contact drop on the installed DC bus at rated current"
+ },
+ "rect_efficiency": {
+  "value": 0.8,
+  "units": "-",
+  "register": "AQS-ELEC-004 _rect_ew_sizing EFF (study)",
+  "needs_verification": true,
+  "verification_test": "Vendor efficiency curve for the selected rectifier at the operating current"
+ },
+ "bmed_product_wt_acid": {
+  "value": 0.0707,
+  "units": "mass fraction HCl at 2 M",
+  "ref": "PERRY9_HCL",
+  "basis": "2 x 36.46 g/L / 1032 g/L"
+ },
+ "bmed_product_wt_base": {
+  "value": 0.0741,
+  "units": "mass fraction NaOH at 2 M",
+  "ref": "PERRY9_HCL",
+  "basis": "2 x 40.00 g/L / 1081 g/L"
+ },
+ "hcl_azeotrope_wt": {
+  "value": 0.202,
+  "units": "mass fraction",
+  "ref": "PERRY9_HCL"
+ },
+ "mvr_kWh_per_t": {
+  "value": 72.0,
+  "units": "kWh/t water evaporated",
+  "ref": "VOGELBUSCH_MVR",
+  "needs_verification": true,
+  "verification_test": "Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot",
+  "published": "VOGELBUSCH_MVR 19-72; EVAPCRYST_MVR 30-60 for high BPE; upper bound taken"
+ },
+ "base_conc_design_wt": {
+  "value": 0.2,
+  "units": "mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+  "needs_verification": true,
+  "verification_test": "Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt%",
+  "published": "Matches the acid side; no azeotrope limit on NaOH-water"
+ },
+ "bmed_product_molarity": {
+  "value": 2.0,
+  "units": "mol/L acid and base leaving BMED",
+  "ref": "EDBM_WHEY_2021",
+  "needs_verification": true,
+  "verification_test": "EDBM pilot on the plant chloride brine at 2 M product: SEC and current efficiency",
+  "published": "EDBM_WHEY_2021 maximum 3.6 M acid / 3.0 M base; SEC 6.7 kWh/kg quoted at 2 M"
  }
 }

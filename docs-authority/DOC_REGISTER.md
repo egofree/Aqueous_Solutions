@@ -182,14 +182,14 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | A | 2026-10-15 | Assumptions register | canonical |
 | AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | A | 2026-10-15 | Site basis — climate, wind, seismic, soil | canonical |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | A | 2026-10-15 | LEACH_CSTR_1 sizing | canonical |
-| AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | A | 2026-10-15 | EW_1 to EW_9 cell sizing | canonical |
+| AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | B | 2026-10-15 | EW_1 to EW_9 cell sizing | canonical |
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | A | 2026-10-15 | Load list | canonical |
-| AQS-ELEC-004 | `docs-authority/RECT_EW.md` | A | 2026-10-15 | EW rectifier sizing | canonical |
+| AQS-ELEC-004 | `docs-authority/RECT_EW.md` | B | 2026-10-15 | EW rectifier sizing | canonical |
 | AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | A | 2026-10-15 | Piping class sheets | canonical |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | canonical |
 | AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | canonical |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | A | 2026-10-15 | Protection and coordination | canonical |
-| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | A | 2026-10-15 | Storage and generation sizing | canonical |
+| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | C | 2026-10-15 | Storage and generation sizing | canonical |
 | AQS-PIP-004 | `docs-authority/LINE_LIST.md` | A | 2026-10-15 | Plant line list | canonical |
 | AQS-PLACE-STUDY-001 | `flow_graph/placement_study.json` | A | 2026-10-15 | Study placement of unplaced units | canonical |
 | AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | A | 2026-10-15 | Isometric route data | canonical |
@@ -197,4 +197,4 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | A | 2026-10-15 | MFG_SHOP tool list | canonical |
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | canonical |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | canonical |
-| AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | A | 2026-10-15 | Parametric model | canonical |
+| AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | canonical |

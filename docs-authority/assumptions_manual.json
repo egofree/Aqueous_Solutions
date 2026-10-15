@@ -525,19 +525,19 @@
   "verification_test": "Vendor motor rating"
  },
  {
-  "value": "1.0",
+  "value": "0.85",
   "units": "current efficiency",
   "where": "EW bounding current",
-  "basis": "Bounding; Cu-equivalent edge is already the sheet mass",
-  "sensitivity": "Current inverse to FE",
+  "basis": "USBM_CL_EW chloride EW 0.85-0.90; lower bound taken (bounding current). drivers.json ew_current_efficiency_design",
+  "sensitivity": "Current, cathode count and DC power inverse to CE",
   "replaced_by": "Measured current efficiency per cell",
-  "task": "MET-EW_1-02",
+  "task": "X-PAR-04",
   "files": [
    "docs-authority/sizing/EW_CELLS.md"
   ],
   "id": "A-M-036",
   "needs_verification": true,
-  "verification_test": "Measured current efficiency per cell"
+  "verification_test": "Bench diaphragm chloride EW cell per metal: deposit mass vs charge"
  },
  {
   "value": "200",
@@ -570,19 +570,19 @@
   "verification_test": "Fabrication drawing"
  },
  {
-  "value": "2.5",
+  "value": "2.12",
   "units": "V",
   "where": "EW cell voltage, all cells",
-  "basis": "Graph EW_1 cell_voltage_V; not per metal",
+  "basis": "USBM_CL_EW 2.1 kWh/kg Cu from cupric chloride at CE 0.85, z 2: V = E M CE/(zF) = 2.12 V. drivers.json ew_cell_voltage_V; not per metal",
   "sensitivity": "DC power linear; Zn and Fe likely higher",
   "replaced_by": "Measured cell voltage per metal",
-  "task": "MET-EW_1-02",
+  "task": "X-PAR-04",
   "files": [
    "docs-authority/sizing/EW_CELLS.md"
   ],
   "id": "A-M-039",
   "needs_verification": true,
-  "verification_test": "Measured cell voltage per metal"
+  "verification_test": "Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage per metal"
  },
  {
   "value": "0.60 x 0.42 m immersed plate",
@@ -618,10 +618,10 @@
   "value": "6 V rated; 0.3 V bus drop",
   "units": "V",
   "where": "RECT-EW voltage",
-  "basis": "Cell 2.5 V plus bus drop and aging room",
+  "basis": "Cell 2.12 V (A-M-039) plus 0.3 V bus drop (drivers.json ew_bus_drop_V) and aging room",
   "sensitivity": "Nameplate kW linear",
   "replaced_by": "Measured cell and bus voltage",
-  "task": "X-ELS-04",
+  "task": "X-PAR-04",
   "files": [
    "docs-authority/RECT_EW.md"
   ],
@@ -633,16 +633,16 @@
   "value": "0.80",
   "units": "efficiency",
   "where": "RECT-EW AC/DC",
-  "basis": "Low-voltage high-current rectifiers lose a large share in diodes and transformer",
+  "basis": "Low-voltage high-current rectifiers lose a large share in diodes and transformer. drivers.json rect_efficiency",
   "sensitivity": "AC input inverse",
-  "replaced_by": "Vendor efficiency at 2.8 V",
-  "task": "X-ELS-04",
+  "replaced_by": "Vendor efficiency at 2.42 V channel voltage",
+  "task": "X-PAR-04",
   "files": [
    "docs-authority/RECT_EW.md"
   ],
   "id": "A-M-043",
   "needs_verification": true,
-  "verification_test": "Vendor efficiency at 2.8 V"
+  "verification_test": "Vendor efficiency curve at 2.42 V channel voltage and bounding current"
  },
  {
   "value": "250/500/1000/1500/2000/2500/3000/4000",
@@ -1313,5 +1313,107 @@
   "id": "A-M-087",
   "needs_verification": true,
   "verification_test": "Manufacturer span tables per material and B31.3 flexibility analysis on the routed model"
+ },
+ {
+  "value": "2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH)",
+  "units": "mol/L",
+  "where": "BMED_ACID, BMED_BASE, EVAP_ACID/EVAP_BASE feed",
+  "basis": "EDBM_WHEY_2021: conventional EDBM reaches 3.6 M acid; SEC 6.7 kWh/kg quoted at 2 M. Densities PERRY9_HCL",
+  "sensitivity": "Evaporator water load and BMED SEC; higher molarity lowers evaporation but raises SEC",
+  "replaced_by": "EDBM pilot on the plant chloride brine",
+  "verification_test": "EDBM pilot at 2 M product: SEC, current efficiency and product purity",
+  "task": "X-PAR-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/PARAMETRIC_MODEL.md"
+  ],
+  "id": "A-M-088",
+  "needs_verification": true
+ },
+ {
+  "value": "72",
+  "units": "kWh/t water evaporated",
+  "where": "EVAP_ACID, EVAP_BASE power",
+  "basis": "VOGELBUSCH_MVR 19-72 kWh/t; upper bound for high boiling-point elevation and a small unit",
+  "sensitivity": "Evaporator kW linear",
+  "replaced_by": "Vendor MVR quote at about 0.8 t/d",
+  "verification_test": "Vendor MVR quote for 7 to 20 wt% HCl and NaOH at 0.8 t/d; pilot power measurement",
+  "task": "X-PAR-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/PARAMETRIC_MODEL.md"
+  ],
+  "id": "A-M-089",
+  "needs_verification": true
+ },
+ {
+  "value": "20 wt% HCl on IA-ACID-01",
+  "units": "mass fraction",
+  "where": "EVAP_ACID product, LEACH_CSTR_1 feed",
+  "basis": "Below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL), so simple evaporation reaches it; CARLETON_HCL_2023 leach basis is 38 %",
+  "sensitivity": "Leach extraction rate and residence time",
+  "replaced_by": "Bench leach at 20 wt%",
+  "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C; ICP-OES extraction vs time",
+  "task": "X-PAR-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/PARAMETRIC_MODEL.md"
+  ],
+  "id": "A-M-090",
+  "needs_verification": true
+ },
+ {
+  "value": "20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT",
+  "units": "mass fraction",
+  "where": "EVAP_BASE product",
+  "basis": "Matches the acid side; no azeotrope limit",
+  "sensitivity": "Evaporator water load",
+  "replaced_by": "Bench precipitation and digest at the chosen strength",
+  "verification_test": "Bench hydroxide precipitation and glass digest with 20 wt% NaOH",
+  "task": "X-PAR-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/PARAMETRIC_MODEL.md"
+  ],
+  "id": "A-M-091",
+  "needs_verification": true
+ },
+ {
+  "value": "1200 x 800 x 1800 mm skid each; placed in BMED_CRU",
+  "units": "mm",
+  "where": "EVAP_ACID, EVAP_BASE envelope and placement",
+  "basis": "AQS-PLACE-STUDY-001 skid category",
+  "sensitivity": "BMED_CRU block fill",
+  "replaced_by": "Vendor MVR skid drawing",
+  "verification_test": "Vendor MVR skid general arrangement",
+  "task": "X-PAR-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/PARAMETRIC_MODEL.md"
+  ],
+  "id": "A-M-092",
+  "needs_verification": true
+ },
+ {
+  "value": "SOL_ARK bus change carried on IA-PV-01 average; PV, storage, inverters from AQS-ELEC-007 bounding case",
+  "units": "kW",
+  "where": "IA-PV-01, PV_ARRAY, ZNBR2, SOL_ARK_60K",
+  "basis": "Flat profile, A-M-060 to A-M-062",
+  "sensitivity": "PV kWp and storage kWh linear in bus demand",
+  "replaced_by": "Hourly load profile and PVsyst site run",
+  "verification_test": "Hourly load profile and PVsyst site run",
+  "task": "X-PAR-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/PARAMETRIC_MODEL.md"
+  ],
+  "id": "A-M-093",
+  "needs_verification": true
  }
 ]

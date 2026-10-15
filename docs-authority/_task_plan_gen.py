@@ -71,7 +71,7 @@ X=[
 ('X-PAR-01','Drivers file','flow_graph/param/drivers.json holds every independent input (feed rate, bounding compositions, site climate, margins, material limits) with a published reference, register id or owner basis; needs_verification values carry verification_test; linked to AQS-REG-002','—','flow_graph/param/drivers.json'),
 ('X-PAR-02','Balance solver','per-unit transfer functions compute all edge rates, compositions and duties from the drivers; mass and energy closure checks fail on imbalance','X-PAR-01','flow_graph/param/solver.py'),
 ('X-PAR-03','Per-class sizing functions','tank, EW cell (Faraday), HX (LMTD/U), scrubber, relief (API 520), lines, pumps, agitators in flow_graph/param/sizing with cited equations; one-off scripts converted (LEACH, EW, HX-5, relief, lines, power)','X-PAR-01','flow_graph/param/sizing'),
-('X-PAR-04','Generated outputs and gates','graph values, duty sheets, CadQuery params, BOMs, load list, placement and isometrics regenerated from sized values; repo checks fail on imbalance or misfit','X-PAR-02, X-PAR-03',None),
+('X-PAR-04','Generated outputs and gates','graph values, duty sheets, CadQuery params, BOMs, load list, placement and isometrics regenerated from sized values; repo checks fail on imbalance or misfit','X-PAR-02, X-PAR-03','flow_graph/param/write_graph.py'),
 ('X-PAR-05','Verification list to test plan','every needs_verification driver and register entry mapped to a test or prototype in a rollout plan','X-PAR-01',None)]),
 ('RSZ','Bounding-case resizing (owner approval 2026-10-15)',[
 ('X-RSZ-01','Acid regeneration resize','BMED_ACID and dependents sized for the regolith-like (class A) feed','X-BAS-02','docs-authority/FEED_ASSAY.md'),
@@ -269,10 +269,10 @@ Critical path: X-BAS-02 → MET unit 02 (LEACH_CSTR_1, EW_1 to EW_9) → X-ELS-0
 ## 5. Next 10 tasks
 
 1. X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.
-2. X-PAR-03 Convert relief (API 520), LEACH_CSTR_1 sizing, HX-5, power sizing and the rectifier script to the library.
+2. X-PAR-03 Convert relief (API 520), LEACH_CSTR_1 sizing, HX-5 and power sizing to the library (rectifier converted 2026-10-15, `docs-authority/_rect_ew_sizing.py`).
 3. X-PAR-03 Add tank, pump, agitator and scrubber sizing functions with cited equations.
-4. X-PAR-04 Resolve the solver misfits (BMED SEC and loop concentration, EW cell voltage) and write graph values from the solver.
-5. X-PAR-04 Gate: repo checks fail on solver misfit.
+4. X-PAR-04 Regenerate CadQuery params, BOMs and isometrics from sized values (EVAP_ACID, EVAP_BASE, resized EW tanks). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).
+5. X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).
 6. X-PAR-05 Testing and prototyping rollout plan from the verification list.
 7. X-BLD-04 Clear the 20 sub-600 mm pairs and lay out the PV ground field.
 8. X-PIP-03 Fabrication isometrics from AQS-ISO-001.

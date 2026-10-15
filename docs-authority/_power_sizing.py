@@ -16,5 +16,7 @@ for k,P in cases.items():
     out[k]=dict(P_kW=P,E_kWh_d=E,pv_kWp=pv,store_kWh=Estore,store_kW=P,inverters=math.ceil(P/INV),inv_kW=math.ceil(P/INV)*INV)
 crit=sum(CRIT.values())
 out['backup']=dict(critical_kW=crit,critical_list=CRIT,gen_kW=math.ceil(crit*1.25/5)*5,autonomy_d=AUT_CRIT,energy_kWh=crit*24*AUT_CRIT)
-out['graph']=dict(pv_nameplate_kW=70,pv_avg_kW=27.88,znbr2_peak_kW=60,znbr2_kWh=120,fc_kW=4.0,gen_kW=2.5,inverter_kW=60)
+g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}
+out['graph']=dict(pv_nameplate_kW=N['PV_ARRAY']['params']['nameplate_kw'],pv_avg_kW=N['PV_ARRAY']['continuous_kw']['value'],
+    znbr2_peak_kW=N['ZNBR2']['params']['kW'],znbr2_kWh=N['ZNBR2']['params']['kWh'],inverter_kW=N['SOL_ARK_60K']['params']['kW'])
 print(json.dumps(out))

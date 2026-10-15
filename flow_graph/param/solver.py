@@ -1,7 +1,7 @@
 """Balance solver (X-PAR-02). Per-unit transfer functions compute edge rates and unit duties
 from drivers.json. This first set covers the metals core acid loop and the EW cells.
 check(): mass/energy closure of the solved units (must pass) and misfit against the graph
-(reported; becomes a gate when X-PAR-04 writes the graph from the solver)."""
+(write_graph.py writes the solved values; MISFIT_TOL is the gate in test_param_misfit.py)."""
 import json, os
 from . import drivers as DR
 from .constants import M, mw
@@ -11,6 +11,7 @@ OX = {'Al2O3':{'Al':2,'O':3},'CaO':{'Ca':1,'O':1},'MgO':{'Mg':1,'O':1},'FeO':{'F
 HCL = mw({'H':1,'Cl':1}); NAOH = mw({'Na':1,'O':1,'H':1}); H2O = mw({'H':2,'O':1})
 CHLORIDE = {'Al2O3':('AlCl3',{'Al':1,'Cl':3},2),'CaO':('CaCl2',{'Ca':1,'Cl':2},1),'MgO':('MgCl2',{'Mg':1,'Cl':2},1),'FeO':('FeCl2',{'Fe':1,'Cl':2},1)}
 H2O_PER = {'Al2O3':3,'CaO':1,'MgO':1,'FeO':1}
+MISFIT_TOL = 0.01   # 1 % relative misfit gate (AQS-PAR-001)
 EW_METAL = {1:('Au',3),2:('Ag',1),3:('Cu',2),4:('Pb',2),5:('Sn',2),6:('Ni',2),7:('Fe',2),8:('Cd',2),9:('Zn',2)}
 
 def leach_acid(d):
@@ -32,6 +33,18 @@ def bmed(d, hcl_mol):
                 kW_published=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
                 kW_design=DR.val(d,'bmed_sec_design_kWh_per_kg_pair')*(hcl_mol*HCL/1000+base_kg)/24)
 
+def evap(d, solute_kg_d, w_in, w_out):
+    """Evaporative concentration of a BMED product from w_in to w_out by MVR.
+    Mass: feed = solute/w_in, product = solute/w_out, water off = feed - product.
+    HCl side: w_out must stay below the HCl-water azeotrope [PERRY9_HCL]; vapour is then water-rich.
+    Power: water off x specific MVR energy [VOGELBUSCH_MVR]."""
+    assert w_out > w_in
+    feed = solute_kg_d/w_in; prod = solute_kg_d/w_out; water = feed - prod
+    return dict(solute_kg_d=solute_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water,
+                kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed, prod+water))
+
+BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
+
 def ew(d, g):
     """Copper-equivalent sheet edges -> current by Faraday [CODATA2018, SCHLESINGER2011]."""
     R = {e['stream_id']: e['rate']['value'] for e in g['edges']}
@@ -39,27 +52,44 @@ def ew(d, g):
     for n in range(1,10):
         m = R[f'IA-EW-MET-{n}'] + (R.get('IA-EW-SHEET',0) if n==9 else 0)
         I = EC.faraday_current_A(m, M['Cu'], 2, DR.val(d,'ew_current_efficiency_design'))
-        out[f'EW_{n}'] = dict(I_A=I, P_kW=EC.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')))
+        out[f'EW_{n}'] = dict(I_A=I, P_kW=EC.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
+                              P_bus_kW=EC.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')+DR.val(d,'ew_bus_drop_V')))
+    dc = sum(v['P_bus_kW'] for v in out.values())
+    out['RECT_EW'] = dict(I_A=sum(v['I_A'] for v in out.values()), P_dc_kW=dc,
+                          P_ac_kW=dc/DR.val(d,'rect_efficiency'), loss_kW=dc/DR.val(d,'rect_efficiency')-dc)
     return out
 
 def solve():
     d = DR.load(); g = json.load(open(os.path.join(ROOT,'flow_graph/plant_flow_graph.json')))
     la = leach_acid(d); bm = bmed(d, la['hcl_mol_d']); e = ew(d, g)
-    return d, g, dict(leach=la, bmed=bm, ew=e)
+    R = {x['stream_id']: x['rate']['value'] for x in g['edges']}
+    assert DR.val(d,'acid_conc_design_wt') < DR.val(d,'hcl_azeotrope_wt'), 'acid loop above the HCl azeotrope'
+    ea = evap(d, R['IA-ACID-01']*DR.val(d,'acid_conc_design_wt'), DR.val(d,'bmed_product_wt_acid'), DR.val(d,'acid_conc_design_wt'))
+    eb = evap(d, sum(R[k] for k in BASE_DEMAND)*DR.val(d,'base_conc_design_wt'), DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'))
+    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb)
 
 def check():
     d, g, s = solve(); E = {x['stream_id']: x for x in g['edges']}; N = {x['unit_id']: x for x in g['nodes']}
     errs = []; mis = []
     mi, mo = s['leach']['closure']
     if abs(mi-mo) > 1e-6*max(mi,1): errs.append(f'LEACH acid stoichiometry does not close: {mi:.4f} vs {mo:.4f} kg/d')
+    for k in ('evap_acid','evap_base'):
+        a, b = s[k]['closure']
+        if abs(a-b) > 1e-6*max(a,1): errs.append(f'{k} mass does not close: {a:.4f} vs {b:.4f} kg/d')
     def cmp(what, graph, solved, ref):
         dev = (graph-solved)/solved if solved else 0
         mis.append((what, graph, solved, dev, ref))
     cmp('IA-ACID-01 HCl content, kg/d', E['IA-ACID-01']['rate']['value']*DR.val(d,'acid_conc_design_wt'), s['leach']['hcl_kg_d'], 'GREENWOOD, LUNAR_SOURCEBOOK')
-    cmp('BMED_ACID kW (graph) vs published SEC at 2 M', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'EDBM_WHEY_2021')
+    cmp('BMED_ACID kW vs published SEC at 2 M', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'EDBM_WHEY_2021')
+    for k,u in (('evap_acid','EVAP_ACID'),('evap_base','EVAP_BASE')):
+        if u in N:
+            cmp(f'{u} kW', N[u]['continuous_kw']['value'], s[k]['kW'], 'VOGELBUSCH_MVR')
+            cmp(f'{u} water off, kg/d', E[f'IA-{u}-COND']['rate']['value'], s[k]['water_kg_d'], 'PERRY9_HCL')
     for c,v in s['ew'].items():
+        if c == 'RECT_EW':
+            cmp('RECT_EW AC kW', N['RECT_EW']['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW'); continue
         dc = next((x['rate']['value'] for x in g['edges'] if x['stream_id']==f'IA-DC-{c}'), None)
-        if dc is not None: cmp(f'{c} DC kW (graph, 2.8 V AQS-ELEC-004) vs solver at ew_cell_voltage_V', dc, v['P_kW'], 'CODATA2018, SCHLESINGER2011')
+        if dc is not None: cmp(f'{c} DC kW (cell + bus drop)', dc, v['P_bus_kW'], 'CODATA2018, USBM_CL_EW')
     return errs, mis, s, d
 
 if __name__ == '__main__':

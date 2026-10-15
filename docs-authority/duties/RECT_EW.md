@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 38.02 kW. In: . Out: .
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 38.6629 kW. In: . Out: .
 
 2. Size.
-- Nine channels, 13000 A total, 78 kW DC nameplate at 6 V (AQS-ELEC-004). AC input 38.02 kW at the bounding current; DC out 30.41 kW; loss 7.61 kW to HEAT_SINK.
+- Nine channels, 16500 A total, 99 kW DC nameplate at 6 V (AQS-ELEC-004 Rev B). AC input 38.66 kW at the bounding current; DC out 30.93 kW at 2.12 V cell + 0.3 V bus drop; loss 7.73 kW to HEAT_SINK (efficiency 0.80).
 - Study cabinet 2400 × 800 × 2000 mm (assumption, AQS-REG-002).
 
 3. Material. No wetted alloy. Conductors are copper; DC bars per AQS-ELEC-004 §2.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 449.5 kg/d. Mass out 449.5 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-03 449.5 kg/d (CRU → BMED acid regen loop). Out: IA-ACID-01 439.5 kg/d (regen HCl, 20 wt%); S09 9.277 kg/d (HCl); IA-BMED-01 0.646 kg/d (HCl product); IA-HCL-BU 0.05 kg/d (HCl to chlorobutane).
+1. Basis. Mass in 1253.3 kg/d. Mass out 1253.3 kg/d. Electrical duty 26.9276 kW. In: IA-EVAP_ACID-COND 803.8 kg/d (evaporator condensate return (BMED water make-up)); IA-BMED-03 449.5 kg/d (CRU → BMED acid regen loop). Out: IA-EVAP_ACID-FEED 1243.3 kg/d (HCl 2 M from BMED); S09 9.277 kg/d (HCl); IA-BMED-01 0.6456 kg/d (HCl product); IA-HCL-BU 0.05 kg/d (HCl to chlorobutane).
 
 2. Size.
 - In 108.2 kg/d, out 108.2 kg/d. No holdup claimed.
@@ -17,3 +17,5 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/BMED_ACID.stl`.
 
 8. Open items. No holdup basis for this class.
+
+9. Revision (X-PAR acid-loop decision, AQS-PAR-001). BMED runs at 2 M (A-M-088). Stack power 26.93 kW from the published SEC 6.7 kWh/kg NaOH at 2 M (EDBM_WHEY_2021), was 16.13 kW. Product to EVAP_ACID on IA-EVAP_ACID-FEED; condensate returns on IA-EVAP_ACID-COND. IA-ACID-01 now leaves EVAP_ACID.

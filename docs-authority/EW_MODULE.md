@@ -7,7 +7,7 @@ Not a PE stamp.
 
 1. Basis. EW-1, 59.87 kg/d sheet. Liquor 4288 kg/d from the leach.
 
-2. Size. 0.02844 kg/d per amp. Current 59.87 / 0.02844 = 2105 A. At 200 A/m², area 10.53 m². Plate 0.6 × 0.42 m, both sides 0.504 m², 21 plates. Pitch 50 mm. Rack 1250 mm. Frame 1400 mm, CPVC (Rev D; 316L withdrawn under AQS-STD-002 M3). Cell voltage 2.5 V. Power 5.3 kW from the cell rectifier. Bus 10.5 cm² copper.
+2. Size. 0.02844 kg/d per amp. Current 59.87 / 0.02844 = 2105 A. At 200 A/m², area 10.53 m². Plate 0.6 × 0.42 m, both sides 0.504 m², 21 plates. Pitch 50 mm. Rack 1250 mm. Frame 1400 mm, CPVC (Rev D; 316L withdrawn under AQS-STD-002 M3). Cell voltage 2.5 V. Power 5.3 kW from the cell rectifier. Bus 10.5 cm² copper. Superseded for sizing by AQS-DUTY-051 Rev B (X-PAR acid-loop decision): 2.12 V, current efficiency 0.85, 2476 A, 25 cathodes, cell DC 5.25 kW.
 
 3. Material. Cathode titanium Grade 2, 3 mm, plastic edge strip so the sheet peels. Anode titanium mesh, 1.5 mm, mixed-metal-oxide coat (Rev D, AQS-STD-002 section 9). Tank PVC/FRP, 10 mm. Frame CPVC (Rev D).
 

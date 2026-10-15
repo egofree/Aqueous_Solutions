@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 493.1 kg/d. Mass out 493.1 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-04 493.1 kg/d (CRU → BMED base regen loop). Out: IA-BASE-PPT 374.4 kg/d (NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)); IA-BASE-01 118.4 kg/d (digest NaOH, 20 wt%); IA-BMED-02 0.27 kg/d (NaOH product).
+1. Basis. Mass in 1330.4 kg/d. Mass out 1330.4 kg/d. Electrical duty 0.0000 kW. In: IA-EVAP_BASE-COND 837.3 kg/d (evaporator condensate return (BMED water make-up)); IA-BMED-04 493.1 kg/d (CRU → BMED base regen loop). Out: IA-EVAP_BASE-FEED 1330.1 kg/d (NaOH 2 M from BMED); IA-BMED-02 0.27 kg/d (NaOH product).
 
 2. Size.
 - In 118.7 kg/d, out 118.7 kg/d. No holdup claimed.
@@ -17,3 +17,5 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. The envelope is `cad/stl/BMED_BASE.stl`.
 
 8. Open items. No holdup basis for this class.
+
+9. Revision (X-PAR acid-loop decision, AQS-PAR-001). BMED runs at 2 M (A-M-088). Product to EVAP_BASE on IA-EVAP_BASE-FEED; condensate returns on IA-EVAP_BASE-COND. IA-BASE-01 and IA-BASE-PPT now leave EVAP_BASE. Stack power is booked on BMED_ACID.

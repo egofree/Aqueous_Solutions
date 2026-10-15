@@ -23,3 +23,5 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 7. Code. Shop. Not stamped. Rack `cad/stl/EW_7.stl` is the plate rack. FreeCAD is not in this session.
 
 8. Open items. The sheet mass is undifferentiated plated metal. It is not an assay. The copper equivalent is the sizing rule, not a metal identification. Kilowatts at 2.5 V do not match the node.
+
+9. Revision (X-PAR acid-loop decision, AQS-PAR-001; AQS-DUTY-051 Rev B). Current efficiency 0.85 and cell voltage 2.12 V (USBM_CL_EW chloride EW). Bounding current 2942 A; 30 cathodes / 31 anodes at 195 A/m²; tank 3170 × 720 × 760 mm; cell DC 6.24 kW; channel DC on IA-DC-EW_7 7.12 kW with 0.3 V bus drop. Figures above at 2.5 V and current efficiency 1.0 are superseded.

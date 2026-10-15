@@ -27,7 +27,8 @@ for u,sz in items:
         source=f'X-RSZ-03 sized envelope (AQS-DUTY-051{" cathode count "+str(next(r["cathodes"] for r in ew if r["cell"]==u)) if u!="RECT_EW" else ", study cabinet"}); LEACH_EW block, 600 mm clear')
 if '--write' in sys.argv:
     seed['units']=[r for r in seed['units'] if r['unit_id'] not in out]+list(out.values())
-    seed['notes_rev_i']='2026-10-15, X-RSZ-03. EW_1..EW_9 at sized envelopes 370-2670 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows.'
+    L=[r['size_mm'][0] for r in ew]
+    seed['notes_rev_i']=f'2026-10-15, X-RSZ-03, re-run for the X-PAR acid-loop decision (CE 0.85, AQS-PAR-001). EW_1..EW_9 at sized envelopes {min(L)}-{max(L)} mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear. Supersedes the 750 mm pitch rows.'
     seed['revision']='I'
     json.dump(seed,open(SEED,'w'),indent=2,ensure_ascii=True)
 print(json.dumps(out))

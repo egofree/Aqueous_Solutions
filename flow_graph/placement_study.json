@@ -748,6 +748,44 @@
       "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in HAB 600 mm clear"
     },
     {
+      "unit_id": "EVAP_ACID",
+      "level": "L-1",
+      "block_id": "BMED_CRU",
+      "origin_mm": [
+        16800,
+        4000,
+        -6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in BMED_CRU 600 mm clear"
+    },
+    {
+      "unit_id": "EVAP_BASE",
+      "level": "L-1",
+      "block_id": "BMED_CRU",
+      "origin_mm": [
+        18600,
+        4000,
+        -6000
+      ],
+      "tier": 1,
+      "size_mm": [
+        1200,
+        800,
+        1800
+      ],
+      "category": "skid",
+      "status": "STUDY",
+      "source": "AQS-PLACE-STUDY-001 study footprint 'skid' (assumption); packed in BMED_CRU 600 mm clear"
+    },
+    {
       "unit_id": "CRYO_HE",
       "level": "L-1",
       "block_id": "CRYO",

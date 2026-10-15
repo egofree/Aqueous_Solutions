@@ -301,16 +301,16 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 108.245 kg/d, out 108.245 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_ACID.md.",
+        "duty": "In 1253.317 kg/d, out 1253.317 kg/d, 26.928 kW. Sheet docs-authority/duties/BMED_ACID.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
       },
       "continuous_kw": {
-        "value": 16.13,
+        "value": 26.9276,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl. BMED stack, acid and base sides: 87.9 kg/d HCl + 96.4 kg/d NaOH = 184.3 kg/d pair x 2.1 kWh/kg (ELECTRICAL BMED 1.8-2.4)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack at 2 M product: 96.46 kg/d NaOH x 6.7 kWh/kg (EDBM_WHEY_2021) / 24 h. Solver flow_graph/param/solver.py bmed()."
       }
     },
     {
@@ -325,7 +325,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "duty": "In 118.700 kg/d, out 118.700 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
+        "duty": "In 1330.391 kg/d, out 1330.391 kg/d, 0.000 kW. Sheet docs-authority/duties/BMED_BASE.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3
@@ -763,10 +763,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 5.263,
+        "value": 5.2483,
         "unit": "kW",
         "status": "study",
-        "note": "Cell DC at the electrode. IA-EW-MET-1 59.87 kg/d as copper, 0.02844 kg/d per A, 2105 A, at 2.5 V. Current efficiency 1.0 is assumed. Replaces the 6.0 kW RECT-EW class share."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW)."
       },
       "modules": [],
       "params": {
@@ -843,21 +843,21 @@
         "internals": "cathode plates, edge strips, PbO2 anodes, launder",
         "design_kPa": 17.0,
         "relief_mm": 3.4,
-        "cell_current_A": 2105,
-        "cell_voltage_V": 2.5,
+        "cell_current_A": 2476,
+        "cell_voltage_V": 2.12,
         "sizing": {
           "size_mm": [
-            2270,
+            2670,
             720,
             760
           ],
-          "I_bounding_A": 2104,
+          "I_bounding_A": 2476,
           "I_element_A": 0.1,
-          "cathodes": 21,
-          "anodes": 22,
-          "j_A_m2": 199,
-          "V_liq_m3": 1.055,
-          "P_dc_kW": 5.26,
+          "cathodes": 25,
+          "anodes": 26,
+          "j_A_m2": 196,
+          "V_liq_m3": 1.243,
+          "P_dc_kW": 5.25,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -918,17 +918,17 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            2270,
+            2670,
             720,
             760
           ],
-          "I_bounding_A": 2105,
+          "I_bounding_A": 2476,
           "I_element_A": 0.3,
-          "cathodes": 21,
-          "anodes": 22,
-          "j_A_m2": 199,
-          "V_liq_m3": 1.055,
-          "P_dc_kW": 5.26,
+          "cathodes": 25,
+          "anodes": 26,
+          "j_A_m2": 197,
+          "V_liq_m3": 1.243,
+          "P_dc_kW": 5.25,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -989,17 +989,17 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            970,
+            1170,
             720,
             760
           ],
-          "I_bounding_A": 790,
+          "I_bounding_A": 930,
           "I_element_A": 308.7,
-          "cathodes": 8,
-          "anodes": 9,
-          "j_A_m2": 196,
-          "V_liq_m3": 0.446,
-          "P_dc_kW": 1.98,
+          "cathodes": 10,
+          "anodes": 11,
+          "j_A_m2": 184,
+          "V_liq_m3": 0.539,
+          "P_dc_kW": 1.97,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1063,11 +1063,11 @@
             720,
             760
           ],
-          "I_bounding_A": 170,
+          "I_bounding_A": 201,
           "I_element_A": 7.7,
           "cathodes": 2,
           "anodes": 3,
-          "j_A_m2": 169,
+          "j_A_m2": 199,
           "V_liq_m3": 0.164,
           "P_dc_kW": 0.43,
           "status": "study",
@@ -1129,16 +1129,16 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            370,
+            470,
             720,
             760
           ],
-          "I_bounding_A": 176,
+          "I_bounding_A": 208,
           "I_element_A": 13.4,
-          "cathodes": 2,
-          "anodes": 3,
-          "j_A_m2": 175,
-          "V_liq_m3": 0.164,
+          "cathodes": 3,
+          "anodes": 4,
+          "j_A_m2": 137,
+          "V_liq_m3": 0.211,
           "P_dc_kW": 0.44,
           "status": "study",
           "source": "AQS-DUTY-051"
@@ -1199,16 +1199,16 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            370,
+            470,
             720,
             760
           ],
-          "I_bounding_A": 192,
+          "I_bounding_A": 226,
           "I_element_A": 27.1,
-          "cathodes": 2,
-          "anodes": 3,
-          "j_A_m2": 191,
-          "V_liq_m3": 0.164,
+          "cathodes": 3,
+          "anodes": 4,
+          "j_A_m2": 150,
+          "V_liq_m3": 0.211,
           "P_dc_kW": 0.48,
           "status": "study",
           "source": "AQS-DUTY-051"
@@ -1269,17 +1269,17 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            2670,
+            3170,
             720,
             760
           ],
-          "I_bounding_A": 2500,
+          "I_bounding_A": 2942,
           "I_element_A": 1185.0,
-          "cathodes": 25,
-          "anodes": 26,
-          "j_A_m2": 198,
-          "V_liq_m3": 1.243,
-          "P_dc_kW": 6.25,
+          "cathodes": 30,
+          "anodes": 31,
+          "j_A_m2": 195,
+          "V_liq_m3": 1.477,
+          "P_dc_kW": 6.24,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1339,16 +1339,16 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            370,
+            470,
             720,
             760
           ],
-          "I_bounding_A": 177,
+          "I_bounding_A": 209,
           "I_element_A": 14.1,
-          "cathodes": 2,
-          "anodes": 3,
-          "j_A_m2": 176,
-          "V_liq_m3": 0.164,
+          "cathodes": 3,
+          "anodes": 4,
+          "j_A_m2": 138,
+          "V_liq_m3": 0.211,
           "P_dc_kW": 0.44,
           "status": "study",
           "source": "AQS-DUTY-051"
@@ -1410,17 +1410,17 @@
         "relief_mm": 3.4,
         "sizing": {
           "size_mm": [
-            2870,
+            3270,
             720,
             760
           ],
-          "I_bounding_A": 2648,
+          "I_bounding_A": 3115,
           "I_element_A": 24.3,
-          "cathodes": 27,
-          "anodes": 28,
-          "j_A_m2": 195,
-          "V_liq_m3": 1.337,
-          "P_dc_kW": 6.62,
+          "cathodes": 31,
+          "anodes": 32,
+          "j_A_m2": 199,
+          "V_liq_m3": 1.524,
+          "P_dc_kW": 6.6,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -3178,7 +3178,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 128.527,
+        "value": 144.8909,
         "unit": "kW",
         "status": "study",
         "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
@@ -3186,14 +3186,14 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 1968,
+        "count": 2158,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 27.880 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
         "internals": "none",
         "design_kPa": 17.8,
         "relief_mm": 3.3,
-        "nameplate_kw": 984,
-        "area_m2": 4918,
+        "nameplate_kw": 1079,
+        "area_m2": 5395,
         "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed"
       }
     },
@@ -3385,7 +3385,7 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 180,
+        "kW": 180.0,
         "presence": "present",
         "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
         "internals": "none",
@@ -3806,8 +3806,8 @@
       },
       "modules": [],
       "params": {
-        "kW": 142,
-        "kWh": 1987,
+        "kW": 156,
+        "kWh": 2178,
         "presence": "present",
         "balance_rev_l": {
           "doc": "AQS-DUTY-010",
@@ -7031,21 +7031,22 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). Nine-channel EW rectifier, 13000 A, 78 kW DC nameplate at 6 V.",
+      "notes": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); AQS-ELEC-004. Nine-channel EW rectifier, 16500 A, 99 kW DC nameplate at 6 V.",
       "enabled": true,
       "continuous_kw": {
-        "value": 38.02,
+        "value": 38.6629,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). AC input at the bounding current; DC 30.41 kW to cells, 7.61 kW conversion loss."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). AC input at the bounding current; DC 30.93 kW to cells, 7.73 kW conversion loss at efficiency 0.8."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "channels": 9,
-        "rated_A": 13000,
-        "nameplate_kw_dc": 78.0,
-        "doc": "AQS-ELEC-004"
+        "rated_A": 16500,
+        "nameplate_kw_dc": 99.0,
+        "doc": "AQS-ELEC-004",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 38.663 kW. Sheet docs-authority/duties/RECT_EW.md."
       }
     },
     {
@@ -7071,6 +7072,72 @@
         "design_kPa": 17.8,
         "relief_mm": 3.3,
         "outlet_purity_mol_pct": 99.97
+      }
+    },
+    {
+      "unit_id": "EVAP_ACID",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "water_off_kg_d": 803.82,
+        "feed_wt": 0.0707,
+        "product_wt": 0.2,
+        "mvr_kWh_per_t": 72.0,
+        "size_mm": [
+          1200,
+          800,
+          1800
+        ],
+        "size_note": "L x W x H mm, study envelope pending vendor MVR quote",
+        "doc": "AQS-PAR-001",
+        "duty": "In 1243.344 kg/d, out 1243.344 kg/d, 2.412 kW. Sheet docs-authority/duties/EVAP_ACID.md."
+      },
+      "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).",
+      "continuous_kw": {
+        "value": 2.4115,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 803.8 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.41 kW. Study."
+      }
+    },
+    {
+      "unit_id": "EVAP_BASE",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "water_off_kg_d": 837.31,
+        "feed_wt": 0.0741,
+        "product_wt": 0.2,
+        "mvr_kWh_per_t": 72.0,
+        "size_mm": [
+          1200,
+          800,
+          1800
+        ],
+        "size_note": "L x W x H mm, study envelope pending vendor MVR quote",
+        "doc": "AQS-PAR-001",
+        "duty": "In 1330.121 kg/d, out 1330.121 kg/d, 2.512 kW. Sheet docs-authority/duties/EVAP_BASE.md."
+      },
+      "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Nickel or fluoropolymer-lined wetted parts (study).",
+      "continuous_kw": {
+        "value": 2.5119,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 837.3 kg/d x 72.0 kWh/t (VOGELBUSCH_MVR upper bound) = 2.51 kW. Study."
       }
     }
   ],
@@ -13915,7 +13982,7 @@
     },
     {
       "stream_id": "IA-ACID-01",
-      "from_unit_id": "BMED_ACID",
+      "from_unit_id": "EVAP_ACID",
       "to_unit_id": "LEACH_CSTR_1",
       "phase": "L",
       "layers": [
@@ -13932,7 +13999,7 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "WET",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "IA",
@@ -13951,7 +14018,7 @@
     },
     {
       "stream_id": "IA-BASE-01",
-      "from_unit_id": "BMED_BASE",
+      "from_unit_id": "EVAP_BASE",
       "to_unit_id": "GLASS_DIGEST",
       "phase": "L",
       "layers": [
@@ -13968,7 +14035,7 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 593 mol/d. Resin exchange keeps IA-BMED-02."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "WET",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "IA",
@@ -14019,7 +14086,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 128.527,
+        "value": 144.8909,
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW."
@@ -25667,7 +25734,7 @@
     },
     {
       "stream_id": "IA-BASE-PPT",
-      "from_unit_id": "BMED_BASE",
+      "from_unit_id": "EVAP_BASE",
       "to_unit_id": "LEACH_CSTR_1",
       "phase": "L",
       "layers": [
@@ -25684,7 +25751,7 @@
         "status": "study",
         "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl. Equal molar base from the BMED split, 1872 mol/d NaOH as 20 wt%."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "WET",
       "to_sector_id": "WET",
       "open_boundary": false,
       "namespace": "IA",
@@ -25712,10 +25779,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 38.02,
+        "value": 38.6629,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). RECT-EW AC input"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). RECT-EW AC input."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -25738,10 +25805,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 16.13,
+        "value": 26.9276,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). BMED stack (X-RSZ-01)"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -25764,10 +25831,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 7.61,
+        "value": 7.7326,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). rectifier conversion loss"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Rectifier conversion loss."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "GEO",
@@ -25790,10 +25857,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 5.89,
+        "value": 5.9909,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -25816,10 +25883,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.318,
+        "value": 1.4189,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -25842,10 +25909,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 5.89,
+        "value": 5.9929,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -25868,10 +25935,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 5.89,
+        "value": 5.9929,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -25894,10 +25961,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 2.21,
+        "value": 2.2495,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -25920,10 +25987,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 2.21,
+        "value": 2.2495,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -25946,10 +26013,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.48,
+        "value": 0.4853,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -25972,10 +26039,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.48,
+        "value": 0.4853,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -25998,10 +26065,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.49,
+        "value": 0.5023,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -26024,10 +26091,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.49,
+        "value": 0.5023,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -26050,10 +26117,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.54,
+        "value": 0.5474,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -26076,10 +26143,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.54,
+        "value": 0.5474,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -26102,10 +26169,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 7.0,
+        "value": 7.1187,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -26128,10 +26195,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 7.0,
+        "value": 7.1187,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -26154,10 +26221,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.5,
+        "value": 0.5053,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -26180,10 +26247,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.5,
+        "value": 0.5053,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -26206,10 +26273,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 7.41,
+        "value": 7.538,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). channel DC at 2.8 V, bounding current"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WET",
@@ -26232,10 +26299,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 7.41,
+        "value": 7.538,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply). DC less existing cell heat outlets; to aisle ventilation and metal product"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). DC input less the HX-8 thermal draw."
       },
       "from_sector_id": "WET",
       "to_sector_id": "GEO",
@@ -31163,6 +31230,214 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": "X-RSZ-07 feed edges for unfed loads"
+    },
+    {
+      "stream_id": "IA-EVAP_ACID-FEED",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "EVAP_ACID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "HCl 2 M from BMED",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1243.3443,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.90 kg/d HCl / 0.0707."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EVAP_ACID-COND",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "BMED_ACID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "evaporator condensate return (BMED water make-up)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 803.8221,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SF-EVAP_ACID",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_ACID",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.4115,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SQ-EVAP_ACID",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.4115,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EVAP_BASE-FEED",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "EVAP_BASE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "NaOH 2 M from BMED",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1330.1215,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 98.56 kg/d NaOH / 0.0741."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-EVAP_BASE-COND",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "BMED_BASE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "evaporator condensate return (BMED water make-up)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 837.3115,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_BASE."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SF-EVAP_BASE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_BASE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.5119,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SQ-EVAP_BASE",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.5119,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "view_presets": [
