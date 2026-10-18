@@ -87,7 +87,7 @@ def main(path=GRAPH):
     rem = node(g, "REMIN")["params"]
     ca_mmol = A_REMIN_CA_MG_L / 40.08
     co2_remin = rem["drink_L_d"] * 2 * ca_mmol * 44.01 / 1e6
-    out["remin"] = dict(co2_kg_d=round(co2_remin, 5), share=round(co2_remin / s85, 6),
+    out["remin"] = dict(co2_kg_d=round(co2_remin, 5), share=round(co2_remin / s85, 6) if s85 else 0.0,   # R11 Rev AC regen: S85 is 0 in Rev AC (cold box sends CO2 only on demand); share guarded
                         note="2 CO2 per Ca as bicarbonate; negligible and REMIN is issued as hydroxide dose.")
 
     # --- candidate 3: GROW_BED enrichment via FARM AHU

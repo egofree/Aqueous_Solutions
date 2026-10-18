@@ -22,7 +22,9 @@ def main():
         m = re.search(r'Envelope [\d×]+ mm, ([\d.]+) m³\. That box over this flow would be [\d.]+ h if it were full\.', s)
         if m and mi > 0: s = s.replace(m.group(0), re.sub(r'would be [\d.]+ h', f'would be {float(m.group(1))*1000/mi*24:.1f} h', m.group(0)))
         if s != s0: open(p, 'w').write(s); ch += 1
-    open(GP, 'w').write(json.dumps(g, indent=2))
+    # R11 Rev AC regen: the graph is closed this lane, so params.duty is refreshed in memory only
+    # (CRYO_ASU duty text trails its balanced rates; a graph-write lane picks it up). The manifest
+    # below hashes the on-disk graph, which this script no longer rewrites.
     import hashlib   # manifest: every sheet was checked against this exact graph (read by _rev_stamp.py)
     json.dump({'graph_sha256': hashlib.sha256(open(GP, 'rb').read()).hexdigest(), 'sheets': len(os.listdir(D)), 'patterns': ['docs-authority/duties/*.md']}, open(os.path.join(D, '_generated.json'), 'w'), indent=1)
     print('duty sheets refreshed', ch)

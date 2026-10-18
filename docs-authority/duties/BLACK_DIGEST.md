@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 20.17 kg/d. Mass out 20.17 kg/d. Electrical duty 0.1052 kW. In: IA-DIG-BLK 0 kg/d (digest liquor); IA-TOIL-SOL 0.528 kg/d (compost-toilet solids and cover to the barrier train (not to FARM)); IA-BLK-01 19.64 kg/d (vacuum-toilet blackwater). Out: IA-BLK-GAS 0.0986 kg/d (digester biogas, flared in the afterburner); IA-BLK-DIG 20.07 kg/d (thermophilic digestate).
+1. Basis. Mass in 22.37 kg/d. Mass out 22.37 kg/d. Electrical duty 0.0000 kW. In: IA-BLK-01 19.64 kg/d (vacuum-toilet blackwater); IA-URINE 1.42 kg/d (urine to the blackwater barrier train); IA-FEC-01 0.13 kg/d (fecal solids to the blackwater barrier train); IA-GAL 1.18 kg/d (galley food waste to the blackwater barrier train). Out: IA-BLK-GAS 0.0986 kg/d (digester biogas, flared in the afterburner); IA-BLK-CAKE 0.67 kg/d (dewatered digestate cake to incineration (barrier 2)); IA-BLK-NUT 0.9 kg/d (released digest-liquor nutrient split); IA-BLK-GREY 20.71 kg/d (released digest liquor to grey treatment).
 
 2. Size.
 - No mass throughput. No volume is invented.

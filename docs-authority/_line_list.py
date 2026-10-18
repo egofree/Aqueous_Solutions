@@ -87,12 +87,12 @@ for e in g['edges']:
     p=e.get('params') or {}
     if p.get('line_DN'): dn=int(p['line_DN']); basis='edge line_DN'
     elif u=='kW':
-        mw_=e['rate']['value']/(DR.val(_d,'water_cp_kJ_kgK')*DR.val(_d,'heat_loop_dT_K'))   # kg/s water, INCROPERA7 / ASHRAE_SYS2020
+        mw_=(e['rate']['value'] or 0)/(DR.val(_d,'water_cp_kJ_kgK')*DR.val(_d,'heat_loop_dT_K'))   # kg/s water, INCROPERA7 / ASHRAE_SYS2020
         need=LN.min_id_mm(mw_,1000.0,DR.val(_d,'line_velocity_liquid_m_s')) if mw_>0 else 0
         dn=next((d for d in DN if ID[d]>=need and d>=DR.val(_d,'line_min_DN')),None) or 500
         basis=f"heat loop {e['rate']['value']:g} kW at ΔT {DR.val(_d,'heat_loop_dT_K'):g} K, 1 m/s"
     else:
-        m=e['rate']['value']/86400; r=rho(e); v=DR.val(_d,'line_velocity_gas_m_s') if ph=='G' else DR.val(_d,'line_velocity_liquid_m_s')
+        m=(e['rate']['value'] or 0)/86400; r=rho(e); v=DR.val(_d,'line_velocity_gas_m_s') if ph=='G' else DR.val(_d,'line_velocity_liquid_m_s')   # R11 Rev AC regen: 80 present edges carry null rates; sized as 0 flow (min DN)
         need=LN.min_id_mm(m,r,v) if m>0 else 0
         mn=DR.val(_d,'slurry_min_DN') if ph in ('S/L','L/S') else DR.val(_d,'line_min_DN')
         dn=next((d for d in DN if ID[d]>=need and d>=mn),None)

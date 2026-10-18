@@ -1,22 +1,22 @@
 item,description,qty,material,basis
 1,Body / envelope 1400 x 600 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/VCD_TRAIN.md
-2,Process nozzle DN15,9,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
-3,Open vent DN25,1,316L if the stream is wet or chloride.,"API 2000, A-M-155"
-4,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+2,Process nozzle DN15,8,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
+3,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+4,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-12,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-16,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+15,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+16,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 17,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-18,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+18,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 21,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
@@ -30,6 +30,8 @@ item,description,qty,material,basis
 29,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
 30,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
 31,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-32,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-33,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+32,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
+33,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
 34,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+35,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+36,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004

@@ -62,7 +62,7 @@ def build():
     for e in g['edges']:
         if e.get('presence') == 'present' and e['rate'].get('unit') == 'kg/d' and (e['rate'].get('value') or 0) > 0: E[e['from_unit_id']].append(e)
     for u, n in N.items():
-        c = n.get('class'); p = n.get('params') or {}; ck = (n.get('continuous_kw') or {}).get('value') or 0
+        c = n.get('class'); p = n.get('params') or {}; kw = n.get('continuous_kw') or {}; ck = (kw.get('value') if isinstance(kw, dict) else kw) or 0   # R11 Rev AC regen: foundry IND_MELT/RF_HEAT/VAC_IND carry scalar continuous_kw; absent reads as 0
         if u in bomu or c in ('boundary',) or n.get('presence') == 'absent': continue
         if u == 'EXT_HALL':
             h = p['hvac']; mods = 8

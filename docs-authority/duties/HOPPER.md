@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 633.4 kg/d. Mass out 633.4 kg/d. Electrical duty 0.0000 kW. In: DOCK_EXPORT_TBD 0 kg/d (returned freight); S61 1.197 kg/d (metal scrap); IA-WEAR 596.9 kg/d (worn goods); IA-LEACH-HOP 35.35 kg/d (returned solids). Out: IA-FEED-01 102.7 kg/d (plant feedstock, any class); IA-HOP-01 530.3 kg/d (returned scrap); IA-CLOSE-5 0.45 kg/d (hopper fines to the pretreat).
+1. Basis. Mass in 633.4 kg/d. Mass out 633 kg/d. Electrical duty 0.0000 kW. In: S61 1.197 kg/d (metal scrap); IA-WEAR 596.9 kg/d (worn goods); IA-LEACH-HOP 35.35 kg/d (returned solids). Out: IA-FEED-01 102.7 kg/d (plant feedstock, any class); IA-HOP-01 530.3 kg/d (returned scrap).
 
 2. Size.
 - In 633.4 kg/d, out 633.4 kg/d. No holdup claimed.

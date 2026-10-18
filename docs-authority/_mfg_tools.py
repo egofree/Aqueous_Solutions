@@ -7,7 +7,10 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert
 from flow_graph.param import drivers as DR
 d = DR.load(); v = lambda k: DR.val(d, k)
 g=json.load(open('flow_graph/plant_flow_graph.json'));N={n['unit_id']:n for n in g['nodes']}
-def thr(u): return float(N[u]['params']['duty'].split('In ')[1].split(' ')[0])
+def thr(u):   # R11 Rev AC regen: params.duty strings were dropped from the graph; throughput falls back to the live mass inflow
+    s = (N[u].get('params') or {}).get('duty')
+    if isinstance(s, str) and 'In ' in s: return float(s.split('In ')[1].split(' ')[0])
+    return sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and 'mass' in (e.get('layers') or []) and (e['rate'] or {}).get('unit') == 'kg/d')
 q_melt = (v('melt_cp_solid_kJ_kgK')*(1084.62 - 25) + v('melt_L_kJ_kg') + v('melt_cp_liq_kJ_kgK')*v('melt_superheat_K'))/v('melt_eta')/3600   # kWh/kg
 m_melt = thr('MET_MELT'); heats = math.ceil(m_melt/v('melt_charge_kg'))
 kw_melt = math.ceil(v('melt_charge_kg')*q_melt/v('melt_time_h')*2)/2

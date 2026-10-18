@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.36 kg/d. Mass out 0.36 kg/d. Electrical duty 0.0207 kW. In: S78 0.36 kg/d (ferment feed). Out: S77 0.0146 kg/d (biogenic MeOH); IA-FERM-RES 0.3454 kg/d (fermenter residue).
+1. Basis. Mass in 0.36 kg/d. Mass out 0.0146 kg/d. Electrical duty 0.0000 kW. In: S78 0.36 kg/d (ferment feed). Out: S77 0.0146 kg/d (biogenic MeOH).
 
 2. Size.
 - Envelope 2200×900×1400 mm is the shell. It is not full. Working volume, 48 h: V = (0.3600/1000)×(48/24) = 0.0007 m³.

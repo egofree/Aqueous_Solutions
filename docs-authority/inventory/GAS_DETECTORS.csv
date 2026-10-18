@@ -1,56 +1,45 @@
 unit,sector,gas,type,mounting,alarm,trip,qty,voting
 CRYO_H2,CRYO,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),3,2oo3 to SIF (AQS-CTL-003)
-EW_1,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_2,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_3,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_4,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_5,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_6,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_7,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_8,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-EW_9,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-FUEL_CELL,FUEL_CELL,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_1,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_2,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_3,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_5,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_6,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_7,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_8,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+EW_9,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+FUEL_CELL,ELEC,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 H2O_ELYZ,CRYO,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),3,2oo3 to SIF (AQS-CTL-003)
 H2_DRYER,GAS,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-H2_PURIFIER,CRYO,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-HCL_BURNER,WET,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 MEOH_SYNTH,MEOH,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
-AFTERBURNER,OIL,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
-CRYO_AR,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
+AFTERBURNER_FLUE,GAS,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 CRYO_ASU,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 CRYO_CO2,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
-CRYO_HE,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
-CRYO_KR,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 CRYO_N2,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
-CRYO_NE,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
-CRYO_XE,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 FLUE_KO,GAS,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 HABITATION,HAB,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 MEOH_SYNTH,MEOH,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 WAFER_FAB,FAB,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 CRYO_ASU,CRYO,O2 enrichment,electrochemical O2,breathing height,23.5 vol %,25 vol %,2,alarm 1oo2
 CRYO_O2,CRYO,O2 enrichment,electrochemical O2,breathing height,23.5 vol %,25 vol %,3,2oo3 to SIF (AQS-CTL-003)
-FUEL_CELL,FUEL_CELL,O2 enrichment,electrochemical O2,breathing height,23.5 vol %,25 vol %,2,alarm 1oo2
+FUEL_CELL,ELEC,O2 enrichment,electrochemical O2,breathing height,23.5 vol %,25 vol %,2,alarm 1oo2
 H2O_ELYZ,CRYO,O2 enrichment,electrochemical O2,breathing height,23.5 vol %,25 vol %,3,2oo3 to SIF (AQS-CTL-003)
 HDR_O2,GAS,O2 enrichment,electrochemical O2,breathing height,23.5 vol %,25 vol %,2,alarm 1oo2
 AFTERBURNER,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
-BACKUP_GEN,BACKUP_GEN,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
-HTC,FARM,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
+BACKUP_GEN,ELEC,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 OIL_DRYER,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 OIL_FRAC,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 OIL_PYRO,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
+AFTERBURNER_FLUE,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 FLUE_KO,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 NOX_SCRUB,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
-EVAP_ACID,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EVAP_ACID_VS,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_1,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_2,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_3,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_4,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_5,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_6,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_7,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_8,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-EW_9,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-HCL_BURNER,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
-LEACH_CSTR_1,WET,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_1,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_2,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_3,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_4,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_5,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_6,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_7,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_8,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+EW_9,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+LEACH_CSTR_1,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2

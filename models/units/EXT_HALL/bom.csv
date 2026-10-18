@@ -3,7 +3,7 @@ item,description,qty,material,basis
 2,"Motor: AHU damper actuator (BLDC actuator, ISO 5211 F03 mount)",24,-,AQS-INV-001 / AQS-INV-005
 3,"Motor: AHU exhaust fan (induction IE3, IEC 90L / 1.5 kW)",8,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: AHU supply fan (induction IE3, IEC 90L / 1.5 kW)",8,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: air-source heat pump compressor (hermetic induction (scroll), 22 kW hermetic)",8,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: air-source heat pump compressor (hermetic induction (scroll), 30 kW hermetic)",8,-,AQS-INV-001 / AQS-INV-005
 6,"Motor: heat pump condenser fan (induction IE3, IEC 90S / 1.1 kW)",16,-,AQS-INV-001 / AQS-INV-005
 7,bearing: deep-groove ball bearing 608-2Z,48,"ISO 15, normal class",AQS-INV-004
 8,bearing: deep-groove ball bearing 6205-2Z,16,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004

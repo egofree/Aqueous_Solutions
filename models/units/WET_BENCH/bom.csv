@@ -1,36 +1,35 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WET_BENCH.md
 2,Process nozzle DN15,11,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
-3,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
-4,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005
-6,"Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-7,"Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
+3,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+4,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+6,"Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+8,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
+9,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 10,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-11,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 12,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 13,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-14,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 15,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 16,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 17,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-18,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-19,electronics: variable-frequency drive 1.1 kW,1,IEC 61800-5-1,AQS-INV-004
-20,fastener: anchor bolt M10,66,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-21,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+18,electronics: variable-frequency drive 1.1 kW,1,IEC 61800-5-1,AQS-INV-004
+19,fastener: anchor bolt M10,66,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+20,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+21,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 22,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-23,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-24,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-25,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-26,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-27,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-28,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-29,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
-30,support: pipe clamp DN15,33,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-31,support: pipe clamp DN15,25,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-32,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-33,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-34,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
-35,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+23,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+24,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+25,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+26,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+27,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+28,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
+29,support: pipe clamp DN15,33,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+30,support: pipe clamp DN15,25,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+31,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
+32,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
+33,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+34,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004

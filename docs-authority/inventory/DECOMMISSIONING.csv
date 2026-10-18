@@ -1,200 +1,163 @@
 step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
-1,FAB,FAB_UPW_TANK,125,solute,-,8,no
-1,FAB,LITHO_ALIGN,0,,-,30,no
-1,FAB,LITHO_COAT,0,,-,36,no
-1,FAB,LITHO_DEV,0,,-,30,no
-1,FAB,LITHO_STUB,0,solute,-,154,no
-1,FAB,SOLAR_PV_CELL,0,solute,-,691,no
-1,FAB,WAFER_FAB,4,N2 solute,-,1,no
-1,FAB,WET_BENCH,99,solute,-,15,no
-1,FAB,WS_AMMONIA,440,N2,-,106,no
-1,FAB,WS_DOPE,440,solute,-,106,no
-1,FAB,WS_HF_ED,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
-1,FAB,WS_KOH,440,solute,-,106,no
-1,FAB,WS_NITRIC,440,solute,-,106,no
-1,FAB,WS_PEROX,440,Ar O2,N2/air to 19.5-23.5 % O2,106,no
-1,FAB,WS_PHOS,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
-1,FAB,WS_SLURRY,0,solute,-,106,no
-1,FAB,WS_SOLV,440,solute,-,106,no
-2,MFG,BLOW_MOLD,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",230,no
-2,MFG,BOARD_MILL,0,solute,-,259,no
-2,MFG,COLD_MILL,0,metal,-,270,no
-2,MFG,ELECTRODE_COAT,0,solute,-,259,no
-2,MFG,GAS_ATOMIZER,0,Pb/Sn/Ni/Cd/Zn blend,-,270,no
-2,MFG,MET_AHU,0,,-,259,no
-2,MFG,MET_HX_Q4,0,,-,22,no
-2,MFG,MET_MELT,0,Pb/Sn/Ni/Cd/Zn blend metal,-,225,no
-2,MFG,MET_SCRUB,0,solute,-,192,no
-2,MFG,MFG_SHOP,5,Cd Cu Fe Ni Pb Pb/Sn/Ni/Cd/Zn blend Sn Zn hydrocarbon metal solute,"N2 to < 25 % LFL, then < 1 % H2",1,no
-2,MFG,WIRE_DRAW,0,Cu,-,270,no
-3,HAB,COMPOST_TOILET,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",259,no
-3,HAB,HABITATION,0,Ar O2 solute,N2/air to 19.5-23.5 % O2,0,no
-3,HAB,HAB_GALLEY,14625,solute,-,3510,yes
-3,HAB,HAB_MED,14625,solute,-,3510,yes
-3,HAB,HAB_SLEEP,0,,-,3510,no
-3,HAB,HAB_WASH,14625,CaO K2CO3 other,-,3510,yes
-4,FARM,ABE,82,solute,-,20,no
-4,FARM,ACETOX,52,Ar O2 solute,N2/air to 19.5-23.5 % O2,13,no
-4,FARM,ACEX,138,NaOH solute,-,33,no
-4,FARM,ALD,71,solute,-,17,no
-4,FARM,AMF,0,solute,-,0,no
-4,FARM,ANIMAL_PEN,0,,-,2160,no
-4,FARM,ASH,938,CaO K2CO3 other,-,225,yes
-4,FARM,AZOLLA,0,,-,0,no
-4,FARM,AZOLLA_BED,22500,,-,5400,yes
-4,FARM,BEES,1080,,-,259,yes
-4,FARM,BIOFILTER,11250,,-,2700,yes
-4,FARM,BSFL,1080,solute,-,259,yes
-4,FARM,BUCL,42,solute,-,10,no
-4,FARM,BUOH_STILL,68,solute,-,16,no
-4,FARM,CHICKENS,0,solute,-,0,no
-4,FARM,CLARIFIER,0,,-,0,no
-4,FARM,CLOVER,0,solute,-,518,no
-4,FARM,COMPOST,9000,biomass hydrocarbon solute,"N2 to < 25 % LFL, then < 1 % H2",2160,yes
-4,FARM,COMPOST_MYC,0,solute,-,0,no
-4,FARM,CRAYFISH,0,,-,259,no
-4,FARM,CROP_ALLIUM,0,,-,0,no
-4,FARM,CROP_BASIL,0,,-,0,no
-4,FARM,CROP_CUCUMBER,0,,-,0,no
-4,FARM,CROP_KALE,0,,-,0,no
-4,FARM,CROP_LETTUCE,0,,-,0,no
-4,FARM,CROP_PEPPER,0,,-,0,no
-4,FARM,CROP_ROSEMARY,0,,-,0,no
-4,FARM,CROP_SPINACH,0,,-,0,no
-4,FARM,CROP_TOMATO,0,,-,0,no
-4,FARM,DIGESTER,0,bmim_oac solute,-,0,no
-4,FARM,DUAL_ROOT,4500,,-,1080,yes
-4,FARM,DUCKWEED,2160,,-,518,yes
-4,FARM,EMETH,0,solute,-,259,no
-4,FARM,ETOH_STILL,150,solute,-,36,no
-4,FARM,FISH,0,,-,0,no
-4,FARM,FISH_SUMP,0,H2O,-,0,no
-4,FARM,FORM,71,N2 solute,-,17,no
-4,FARM,FRUIT_GUTTER,0,CO2,-,0,no
-4,FARM,GLYOXAL,47,HNO3 solute,"air purge, scrubbed to vent (TLV)",11,no
-4,FARM,GOATS,0,solute,-,0,no
-4,FARM,GROW_BED,0,CO2 CaO K2CO3 MgNH4PO4 other,-,0,no
-4,FARM,HNO3,47,Ar NO O2 solute,N2/air to 19.5-23.5 % O2,11,no
-4,FARM,HTC,0,,-,14,no
-4,FARM,IMID,47,solute,-,11,no
-4,FARM,IODIDE,0,Fe HCl KCl other other_metals urea,"air purge, scrubbed to vent (TLV)",30,no
-4,FARM,LIGNO_PRE,0,bmim_oac solute,-,69,no
-4,FARM,MEAM,71,solute,-,17,no
-4,FARM,MISTER,2000,,-,480,yes
-4,FARM,MUSHROOM,0,solute,-,0,no
-4,FARM,MUSH_BLOCK,0,solute,-,0,no
-4,FARM,MUSH_STRAW,0,,-,0,no
-4,FARM,NFIX_BED,0,CO2,-,0,no
-4,FARM,NFT,1125,,-,270,yes
-4,FARM,PEANUT,0,CO2,-,0,no
-4,FARM,QUAT,80,solute,-,19,no
-4,FARM,SEED_BANK,0,solute,-,1320,no
-4,FARM,STRUVITE,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",180,no
-4,FARM,SUNFLOWER,2160,,-,518,yes
-4,FARM,VEG_BED,0,CO2,-,0,no
-4,FARM,WORMS,0,solute,-,259,no
-4,FARM,YEAST,0,solute,-,25,no
-5,NUT,NUTRIENT_DOSE,750,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",180,yes
-6,GLASS,GLASS_BURNOUT,0,solute,-,86,no
-6,GLASS,GLASS_DIGEST,313,solute,-,75,no
-6,GLASS,GLASS_MILL,0,solute,-,58,no
-6,GLASS,GLASS_RINSE,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",86,no
-6,GLASS,SIC_FURNACE,2531,solute,-,608,yes
-7,OIL,AFTERBURNER,0,Ar N2 O2 solute,N2/air to 19.5-23.5 % O2,65,no
-7,OIL,C29_RECYCLE,4,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",1,no
-7,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",583,no
-7,OIL,OIL_DRYER,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",86,no
-7,OIL,OIL_FRAC,41,hydrocarbon solute,"N2 to < 25 % LFL, then < 1 % H2",6,no
-7,OIL,OIL_PYRO,105,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",25,no
-7,OIL,PROD_C11_C18,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-7,OIL,PROD_C19_C28,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-7,OIL,PROD_C29,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-7,OIL,PROD_C5_C10,79,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",5,no
-8,MEOH,MEOH_FC,1440,Ar Fe HCl O2 other_metals solute,N2/air to 19.5-23.5 % O2,346,yes
-8,MEOH,MEOH_FERM,0,solute,-,416,no
-8,MEOH,MEOH_SYNTH,0,CO2 H2,"N2 to < 25 % LFL, then < 1 % H2",416,no
-8,MEOH,MEOH_TANK,440,solute,-,28,no
-9,WET,BMED_ACID,1642,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",251,yes
-9,WET,BMED_BASE,1628,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",249,yes
-9,WET,CONTINUOUS_RECYCLE,3,solute,-,1,no
-9,WET,CRU,34,solute,-,5,no
-9,WET,EVAP_ACID,5094,,-,1223,yes
-9,WET,EVAP_ACID_VS,0,,-,0,no
-9,WET,EVAP_BASE,1938,,-,465,yes
-9,WET,EW_1,913,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",219,yes
-9,WET,EW_2,913,HCl metals,"air purge, scrubbed to vent (TLV)",219,yes
-9,WET,EW_3,400,HCl metals,"air purge, scrubbed to vent (TLV)",96,no
-9,WET,EW_4,126,HCl metals,"air purge, scrubbed to vent (TLV)",30,no
-9,WET,EW_5,161,HCl metals,"air purge, scrubbed to vent (TLV)",39,no
-9,WET,EW_6,161,HCl metals,"air purge, scrubbed to vent (TLV)",39,no
-9,WET,EW_7,1084,HCl metals,"air purge, scrubbed to vent (TLV)",260,yes
-9,WET,EW_8,161,HCl metals,"air purge, scrubbed to vent (TLV)",39,no
-9,WET,EW_9,1118,HCl metals,"air purge, scrubbed to vent (TLV)",268,yes
-9,WET,FLOAT_SINK,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",216,no
-9,WET,HCL_BURNER,0,Cl2 H2,"N2 to < 25 % LFL, then < 1 % H2",0,no
-9,WET,HX8,0,,-,22,no
-9,WET,LEACH_CSTR_1,2100,AcOH Cd Cl2 Cu Fe HCl NaCl Ni O2 Pb Sn Zn metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
-9,WET,POLISH_BANK,4400,solute,-,672,yes
-9,WET,S13_CLASS_TREAT,0,,-,106,no
-9,WET,SALT_FEED,0,,-,86,no
-10,GEO,CURTAIL,0,,-,0,no
-10,GEO,GEO_GHEX,0,,-,115,no
-10,GEO,GEO_HP,0,,-,269,no
-10,GEO,GEO_HP_CLOSED_LOOP,0,,-,77,no
-10,GEO,GEO_ORC,0,,-,269,no
-10,GEO,HEAT_SINK,0,,-,0,no
-11,CRYO,CRYO_AHU,0,H2O N2 solute,-,243,no
-11,CRYO,CRYO_AHU_COND_CONDENSABLE,0,solute,-,22,no
-11,CRYO,CRYO_AR,0,solute,-,108,no
-11,CRYO,CRYO_ASU,0,CO2 N2 solute,-,1170,no
-11,CRYO,CRYO_CO2,0,Ar CO2 O2,N2/air to 19.5-23.5 % O2,690,no
-11,CRYO,CRYO_DED_COOL,0,solute,-,86,no
-11,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",6211,no
-11,CRYO,CRYO_HE,0,solute,-,108,no
-11,CRYO,CRYO_HX_Q4,0,,-,22,no
-11,CRYO,CRYO_KR,0,solute,-,108,no
-11,CRYO,CRYO_N2,0,N2,-,240,no
-11,CRYO,CRYO_NE,0,solute,-,108,no
-11,CRYO,CRYO_O2,0,Ar O2,N2/air to 19.5-23.5 % O2,3105,no
-11,CRYO,CRYO_XE,0,solute,-,108,no
-11,CRYO,EXPANDER,0,,-,18,no
-11,CRYO,H2O_ELYZ,0,,-,0,no
-11,CRYO,H2_PURIFIER,0,H2,"N2 to < 25 % LFL, then < 1 % H2",48,no
-11,CRYO,PROD_MEOH,0,CH3OH,"N2 to < 25 % LFL, then < 1 % H2",0,no
-11,CRYO,PROD_O2,0,Ar O2,N2/air to 19.5-23.5 % O2,0,no
-11,CRYO,RELIEF_CRYO,0,,-,22,no
-12,GAS,ACID_POLISH_SCRUB,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",616,no
-12,GAS,ALK_SCRUBBER,0,,-,616,no
-12,GAS,BAGHOUSE,0,solute,-,192,no
-12,GAS,FLUE_KO,30,Ar Fe HCl O2 other_metals solute,N2/air to 19.5-23.5 % O2,69,no
-12,GAS,H2_DRYER,0,H2,"N2 to < 25 % LFL, then < 1 % H2",86,no
-12,GAS,NOX_SCRUB,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",43,no
-12,GAS,RELIEF_H2,0,,-,75,no
-13,HEAT,Q1_A,0,,-,115,no
-13,HEAT,Q1_B,0,,-,115,no
-13,HEAT,Q2_A,0,,-,115,no
-13,HEAT,Q2_B,0,,-,115,no
-13,HEAT,Q3_A,0,,-,115,no
-13,HEAT,Q3_B,0,,-,115,no
-13,HEAT,Q4_A,0,,-,115,no
-13,HEAT,Q4_B,0,,-,115,no
-14,WTR,BLACK_ALK_HOLD,570,,-,137,yes
-14,WTR,BLACK_DEWATER,270,,-,65,no
-14,WTR,BLACK_DIGEST,953,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",229,yes
-14,WTR,BLACK_PASTEUR,132,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",32,no
-14,WTR,BMED_UPW_POLISH,461,solute,-,416,no
-14,WTR,CATCH_TANK,2202052,,-,140931,yes
-14,WTR,GREY_TREAT,134,CaO K2CO3 other solute,-,106,no
-14,WTR,REMIN,120,solute,-,8,no
-14,WTR,ROOF_TANK,1722,solute,-,70,yes
-14,WTR,VCD_TRAIN,630,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",151,yes
-15,PUMPED_HYDRO,HYDRO_SET,0,,-,173,no
-16,FUEL_CELL,FUEL_CELL,0,Ar H2 O2,"N2 to < 25 % LFL, then < 1 % H2",346,no
-17,BACKUP_GEN,BACKUP_GEN,2000,Ar N2 O2,N2/air to 19.5-23.5 % O2,480,yes
-18,ZNBR2,ZNBR2,1320,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",518,yes
-19,ELEC_PV,PV_ARRAY,0,,-,528028,no
-20,ELEC,MEOH_COND,60,solute,-,14,no
-20,ELEC,RECTIFIER,0,,-,346,no
-20,ELEC,RECT_EW,0,,-,576,no
-20,ELEC,SOL_ARK_60K,0,,-,67,no
-20,ELEC,ZNBR2_BR2_REGEN,0,solute,-,36,no
+1,FOUNDRY,AL_POT,0,,-,0,no
+1,FOUNDRY,CAST_LINE,0,,-,0,no
+1,FOUNDRY,CA_POT,0,,-,0,no
+1,FOUNDRY,COMB_HEAT,0,,-,0,no
+1,FOUNDRY,CONT_CAST,0,,-,0,no
+1,FOUNDRY,CR_CELL,0,,-,0,no
+1,FOUNDRY,DRAW,0,,-,0,no
+1,FOUNDRY,EXTRUDE,0,,-,0,no
+1,FOUNDRY,FLUX_PREP,0,,-,0,no
+1,FOUNDRY,FORGE,0,,-,0,no
+1,FOUNDRY,IND_MELT,0,,-,0,no
+1,FOUNDRY,INV_CAST,0,,-,0,no
+1,FOUNDRY,MG_POT,0,,-,0,no
+1,FOUNDRY,MO_CELL,0,,-,0,no
+1,FOUNDRY,RES_HEAT,0,,-,0,no
+1,FOUNDRY,RF_HEAT,0,,-,0,no
+1,FOUNDRY,ROLL,0,,-,0,no
+1,FOUNDRY,SHELL_BREAK,0,,-,0,no
+1,FOUNDRY,SHELL_BUILD,0,,-,0,no
+1,FOUNDRY,SHELL_BURNOUT,0,,-,0,no
+1,FOUNDRY,SINTER,0,,-,0,no
+1,FOUNDRY,STOCK_OUT,0,,-,0,no
+1,FOUNDRY,TI_CELL,0,,-,0,no
+1,FOUNDRY,VAC_CAST,0,,-,0,no
+1,FOUNDRY,VAC_IND,0,,-,0,no
+1,FOUNDRY,WAX_PATTERN,0,,-,0,no
+2,POLYMERS,FILM_CAST,0,,-,0,no
+2,POLYMERS,HF_GEN,0,,-,0,no
+2,POLYMERS,PELLET,0,,-,0,no
+2,POLYMERS,POLY_COND,0,,-,0,no
+2,POLYMERS,POLY_F,0,,-,0,no
+2,POLYMERS,POLY_OLEFIN,0,,-,0,no
+2,POLYMERS,POLY_STOCK,0,,-,0,no
+2,POLYMERS,POWDER_RESIN,0,,-,0,no
+2,POLYMERS,TFE_SYN,0,,-,0,no
+2,POLYMERS,VDF_SYN,0,,-,0,no
+3,DIGESTER,BMED_ACID,0,,-,0,no
+3,DIGESTER,BMED_BASE,0,,-,0,no
+3,DIGESTER,CONTINUOUS_RECYCLE,3,,-,1,no
+3,DIGESTER,CRU,0,,-,0,no
+3,DIGESTER,EVAP_ACID,5094,,-,1223,yes
+3,DIGESTER,EVAP_BASE,1938,,-,465,yes
+3,DIGESTER,EW_1,913,solute,-,219,yes
+3,DIGESTER,EW_2,913,,-,219,yes
+3,DIGESTER,EW_3,400,,-,96,no
+3,DIGESTER,EW_4,126,,-,30,no
+3,DIGESTER,EW_5,161,,-,39,no
+3,DIGESTER,EW_6,161,,-,39,no
+3,DIGESTER,EW_7,1084,,-,260,yes
+3,DIGESTER,EW_8,161,,-,39,no
+3,DIGESTER,EW_9,1118,,-,268,yes
+3,DIGESTER,FLOAT_SINK,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",216,no
+3,DIGESTER,F_RECOVER,0,,-,0,no
+3,DIGESTER,HX8,0,,-,22,no
+3,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
+3,DIGESTER,LI_RECOVER,0,,-,0,no
+3,DIGESTER,POLISH_BANK,0,,-,0,no
+3,DIGESTER,P_CA,0,,-,0,no
+3,DIGESTER,SALT_FEED,0,,-,86,no
+4,FAB,FAB_UPW_TANK,125,solute,-,8,no
+4,FAB,LITHO_ALIGN,0,,-,30,no
+4,FAB,LITHO_COAT,0,,-,36,no
+4,FAB,LITHO_DEV,0,,-,30,no
+4,FAB,LITHO_STUB,0,solute,-,154,no
+4,FAB,SOLAR_PV_CELL,0,solute,-,691,no
+4,FAB,WAFER_FAB,0,N2 solute,-,0,no
+4,FAB,WET_BENCH,0,solute,-,0,no
+4,FAB,WS_AMMONIA,0,N2,-,106,no
+4,FAB,WS_DOPE,440,solute,-,106,no
+4,FAB,WS_HF_ED,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
+4,FAB,WS_KOH,440,,-,106,no
+4,FAB,WS_NITRIC,440,,-,106,no
+4,FAB,WS_PEROX,440,Ar O2,N2/air to 19.5-23.5 % O2,106,no
+4,FAB,WS_PHOS,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
+4,FAB,WS_SLURRY,0,solute,-,106,no
+4,FAB,WS_SOLV,0,,-,106,no
+5,MFG,BLOW_MOLD,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",230,no
+5,MFG,COLD_MILL,0,metal,-,270,no
+5,MFG,ELECTRODE_COAT,0,solute,-,259,no
+5,MFG,GAS_ATOMIZER,0,Pb/Sn/Ni/Cd/Zn blend,-,270,no
+5,MFG,MET_AHU,0,,-,259,no
+5,MFG,MET_HX_Q4,0,,-,22,no
+5,MFG,MET_MELT,0,Pb/Sn/Ni/Cd/Zn blend metal,-,225,no
+5,MFG,MET_SCRUB,0,solute,-,192,no
+5,MFG,MFG_SHOP,0,Pb/Sn/Ni/Cd/Zn blend hydrocarbon metal solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
+5,MFG,WIRE_DRAW,0,Cu,-,270,no
+6,HAB,HABITATION,0,solute,-,0,no
+7,FARM,GROW_BED,0,CO2,-,0,no
+8,NUT,NUTRIENT_DOSE,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",0,no
+9,GLASS,GLASS_BURNOUT,0,,-,86,no
+9,GLASS,GLASS_DIGEST,0,solute,-,0,no
+9,GLASS,GLASS_MILL,0,,-,58,no
+9,GLASS,GLASS_RINSE,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",86,no
+9,GLASS,SI_REDUCE,0,,-,0,no
+10,OIL,AFTERBURNER,0,Ar O2,N2/air to 19.5-23.5 % O2,65,no
+10,OIL,C29_RECYCLE,4,,-,1,no
+10,OIL,GREASE_CA,0,,-,0,no
+10,OIL,GREASE_LI,0,,-,0,no
+10,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",240,no
+10,OIL,OIL_DRYER,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",86,no
+10,OIL,OIL_FRAC,0,solute,-,0,no
+10,OIL,OIL_PYRO,0,,-,0,no
+10,OIL,PROD_C11_C18,79,,-,5,no
+10,OIL,PROD_C19_C28,79,,-,5,no
+10,OIL,PROD_C29,79,,-,5,no
+10,OIL,PROD_C5_C10,79,,-,5,no
+11,MEOH,MEOH_COND,60,solute,-,14,no
+11,MEOH,MEOH_FC,1440,Ar Fe HCl O2 other_metals solute,N2/air to 19.5-23.5 % O2,346,yes
+11,MEOH,MEOH_FERM,0,,-,416,no
+11,MEOH,MEOH_SYNTH,0,CO2,-,416,no
+11,MEOH,MEOH_TANK,440,,-,28,no
+12,GEO,GEO_GHEX,0,,-,115,no
+12,GEO,GEO_HP,0,,-,269,no
+12,GEO,GEO_HP_CLOSED_LOOP,0,,-,77,no
+13,CRYO,CRYO_AHU,0,N2,-,243,no
+13,CRYO,CRYO_AHU_COND_CONDENSABLE,0,solute,-,22,no
+13,CRYO,CRYO_ASU,0,CO2 N2,-,1170,no
+13,CRYO,CRYO_CO2,0,CO2,-,240,no
+13,CRYO,CRYO_DED_COOL,0,,-,86,no
+13,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",240,no
+13,CRYO,CRYO_HX_Q4,0,,-,22,no
+13,CRYO,CRYO_N2,0,N2,-,240,no
+13,CRYO,CRYO_O2,0,Ar O2,N2/air to 19.5-23.5 % O2,240,no
+13,CRYO,H2O_ELYZ,0,,-,0,no
+13,CRYO,PROD_MEOH,0,CH3OH,"N2 to < 25 % LFL, then < 1 % H2",0,no
+13,CRYO,PROD_O2,0,Ar O2,N2/air to 19.5-23.5 % O2,0,no
+13,CRYO,RELIEF_CRYO,0,,-,22,no
+14,GAS,ACID_POLISH_SCRUB,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",0,no
+14,GAS,AFTERBURNER_FLUE,0,N2 solute,-,0,no
+14,GAS,ALK_SCRUBBER,0,,-,0,no
+14,GAS,BAGHOUSE,0,solute,-,192,no
+14,GAS,FLUE_KO,289,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",69,no
+14,GAS,H2_DRYER,0,,-,86,no
+14,GAS,NOX_SCRUB,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",43,no
+14,GAS,RELIEF_H2,0,,-,75,no
+15,HEAT,ADS_CHILL,0,,-,0,no
+15,HEAT,DRY_COOLER,0,,-,0,no
+15,HEAT,MAU_HX,0,,-,0,no
+15,HEAT,Q1_A,0,,-,115,no
+15,HEAT,Q1_B,0,,-,115,no
+15,HEAT,Q2_A,0,,-,115,no
+15,HEAT,Q2_B,0,,-,115,no
+15,HEAT,Q3_A,0,,-,115,no
+15,HEAT,Q3_B,0,,-,115,no
+15,HEAT,Q4_A,0,,-,115,no
+15,HEAT,Q4_B,0,,-,115,no
+16,WTR,BLACK_DIGEST,953,,-,229,yes
+16,WTR,BMED_UPW_POLISH,1733,,-,416,yes
+16,WTR,CATCH_TANK,2202052,,-,140931,yes
+16,WTR,GREY_TREAT,440,solute,-,106,no
+16,WTR,REMIN,120,solute,-,29,no
+16,WTR,ROOF_TANK,0,solute,-,0,no
+16,WTR,VCD_TRAIN,630,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",151,yes
+17,PUMPED_HYDRO,HYDRO_SET,0,,-,173,no
+18,ELEC,BACKUP_GEN,2000,Ar N2 O2,N2/air to 19.5-23.5 % O2,480,yes
+18,ELEC,FUEL_CELL,0,,-,346,no
+18,ELEC,LOAD_AGG,0,,-,65,no
+18,ELEC,PV_ARRAY,0,,-,528028,no
+18,ELEC,RECTIFIER,0,,-,346,no
+18,ELEC,SOL_ARK_60K,0,,-,67,no
+18,ELEC,ZNBR2,2160,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",518,yes
+18,ELEC,ZNBR2_BR2_REGEN,0,,-,36,no

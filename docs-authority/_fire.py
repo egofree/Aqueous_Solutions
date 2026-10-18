@@ -4,6 +4,8 @@ import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 import params as P
 from flow_graph.param import fire as F
+from flow_graph.param import receivers as RC, pressure_nodes as PN, drivers as DRp
+from flow_graph.param.sizing import relief as RL
 from flow_graph.param.refs import cite
 for k in ('NFPA13_2022', 'NFPA72_2022', 'NFPA20_2022', 'NFPA22_2023', 'NFPA15_2022', 'NFPA2_2023', 'NFPA855_2023', 'API521_2020', 'API520', 'NIST_WEBBOOK'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
@@ -32,8 +34,18 @@ md += ['', f"Governing: {gv['level']} {gv['hazard']}, {gv['sprink_Lmin'] + gv['h
        '## Gas-receiver fire case (API521_2020, carried from X-SAF-04)', '',
        "Gas-filled tubes: A = F' A'/sqrt(P1), F' = 0.1406/(C Kd) (Tw - T1)^1.25 / T1^0.6625 (US units), Tw 1100 F (593 C), P1 at 121 % of set (fire overpressure). Liquid CO2: Q = 21,000 F A^0.82 Btu/h on the wetted tube area (drainage and fire-fighting present, F 1), relieved as vapour.", '',
        '| Receiver | Tubes | Exposed m2 | P1 kPa abs | T1 K | Fire area per half mm2 | Fire bore per half mm | Blocked-outlet bore mm | Installed bore mm (2 valves) | Depressuring release kg | Depressuring bore mm |', '|---|---|---|---|---|---|---|---|---|---|---|']
+_dp = DRp.load(); _mg = DRp.val(_dp, 'press_design_margin'); _win = DRp.val(_dp, 'ely_window_h')
+_RR = RC.design(_dp, g)   # R11 Rev AC regen: the receiver design/relief params were stripped from the Rev AC graph; rebuilt in memory from the same sizing modules, no graph write
+for u in F.GAS_FIRE:
+    c = PN.GAS[u]; p = N[u]['params']; des = c['P_bar']*_mg*100
+    W = sum((e['rate']['value'] or 0)/(_win if e['from_unit_id'] == 'H2O_ELYZ' else 24) for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and (e['rate'] or {}).get('unit') == 'kg/d')
+    P1 = 1.10*des + 101.325
+    p['design'] = _RR[u]; p['design_kPa'] = round(des, 1); p.setdefault('relief_mm', 3.3)
+    p['relief_basis'] = {'P1_kPa_abs': round(P1, 1), 'T_K': c['T_K'], 'M_kg_kmol': c['M'], 'k': c['k'], 'Z': c['Z'], 'W_kg_h': round(W, 4),
+                         'bore_req_mm': round(RL.equiv_bore_mm(RL.gas_area_in2(W*2.20462, c['k'], P1/6.894757, c['T_K']*1.8, c['Z'], c['M'])), 2)}
 for u in F.GAS_FIRE:
     p = N[u]['params']; ds = p['design']; fc = p['relief_basis'].get('fire_case') or F.receiver_fire(p)
+    p['relief_mm'] = float(math.ceil(max(p['relief_basis']['bore_req_mm'], fc['bore_req_mm_per_half'])))   # governing of blocked outlet and fire case per half bank (as the write_graph relief stage propagates)
     md.append(f"| {u} | {ds['tubes']} | {fc['exposed_m2']:.1f} | {fc['P1_kPa_abs']:.0f} | {fc['T1_K']:.0f} | {fc['A_req_mm2_per_half']:.1f} | {fc['bore_req_mm_per_half']:.1f} | {p['relief_basis']['bore_req_mm']} | {p['relief_mm']:.0f} | {fc['depress_kg']:.1f} | {fc['depress_bore_mm']:.2f} |")
 md += ['', "The fire case governs every receiver: the earlier 3.3 mm bore covered only the blocked outlet. Each manifolded half now has its own relief valve sized for the fire on its tubes (bore in the table, propagated to the graph relief_mm and the relief register). For gas-filled tubes API 521 warns that a relief valve alone may not prevent wall rupture in a fire, because the unwetted wall heats and loses strength while the pressure stays near set. The H2 and O2 banks therefore get automatic depressuring on flame detection to 50 % of design gauge in 15 min (API 521 5.20, wall 13.5 mm), sized in the table at twice the average rate for the initial peak, plus NFPA 15 water spray to keep the tubes cool. The depressuring vents go to the same safe-location vent stacks as the relief valves.",
        '', 'Open for the fire engineer of record: hazard classes, hydraulic calculation from the riser, and the site fire-department connection.']

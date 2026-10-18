@@ -7,7 +7,7 @@
   "datums_mm": {
     "L0": 0,
     "L-1": -6000,
-    "L-2": -16395,
+    "L-2": -16486,
     "L1": 6000,
     "L2": 10800,
     "ROOF": 34800,
@@ -295,21 +295,6 @@
       ]
     },
     {
-      "block_id": "EXIT_PASSAGE_HALL",
-      "level": "L0",
-      "origin_mm": [
-        0,
-        85900
-      ],
-      "size_mm": [
-        186000,
-        2200,
-        6000
-      ],
-      "unit_ids": [],
-      "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 2.2 m clear, across the hall at mid-depth, discharging at both ends."
-    },
-    {
       "block_id": "EXT_HALL_E",
       "level": "L0",
       "origin_mm": [
@@ -342,6 +327,21 @@
         "EXT_HALL"
       ],
       "source": "X-PAR-07 extension north of the base plate. NORTH_DOCK opens into it; a 6 m truck lane to the north wall is reserved (accepted 2026-10-15)."
+    },
+    {
+      "block_id": "EXIT_PASSAGE_HALL",
+      "level": "L0",
+      "origin_mm": [
+        0,
+        67650
+      ],
+      "size_mm": [
+        270000,
+        2700,
+        6000
+      ],
+      "unit_ids": [],
+      "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 2.7 m clear, across the hall at mid-depth, discharging at both ends."
     }
   ],
   "units": [
@@ -1422,12 +1422,12 @@
       "origin_mm": [
         0,
         1350,
-        -16095
+        -16186
       ],
       "size_mm": [
         24000,
         15300,
-        9595
+        9686
       ],
       "source": "Rev H record row (no move: equals the existing Feature). Pumped-hydro lower reservoir and terrace rain catch (ASME_CLASS_SHEETS \"Lower reservoir\"; SCALE_MODEL CATCH_TANK_Z = Z_Lm2, always deepest). Below L-1 by function. Inlets: S22/IA-ESS-HYDRO-DIS penstock and S23/IA-ESS-HYDRO-CHG pump return, both inside SHAFT_PENSTOCK [10800..11600, 8200..9000], which is the only slab crossing; S41 terrace drain joins the shaft at L0 through a wall sleeve. No penetration of SLAB_Lm1 into the L-1 process rooms. Not a heat-ladder drain tank: Q-store drain-down goes to the L-1 process bund pump-out (S22 forbids process sumps, S41 forbids the L-1 process bund).",
       "fixed_feature": true

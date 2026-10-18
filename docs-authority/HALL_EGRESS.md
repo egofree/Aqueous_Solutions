@@ -7,7 +7,7 @@ Authority: AQS-PLAN-007 X-STD-01; AQS-EGR-001 Rev C 2.1 (most restrictive code g
 
 | Rev | Description | Date |
 | --- | --- | --- |
-| A | First issue for the 186 x 174 m building (D77). | 2026-10-15 |
+| A | First issue for the 270 x 138 m building (D77). | 2026-10-15 |
 
 ## 1. Basis
 
@@ -28,18 +28,18 @@ Authority: AQS-PLAN-007 X-STD-01; AQS-EGR-001 Rev C 2.1 (most restrictive code g
 
 | Quantity | Value |
 | --- | --- |
-| Hall floor area (excluding the base plate) | 31,932 m2 |
-| Occupant load | 3438 |
-| Door spacing on walls and passageway faces | 90 m |
-| Worst rectilinear travel on a 2 m grid | 70.0 m at (62, 126) (limit 76.2) |
-| Exterior exit door pairs | 9 pairs, 14.6 m clear (need 13.1 m for 2578 occupants) |
-| Exit passageway | 2.2 m clear x 186 m, 3 door pairs, serves 860 occupants, two discharges |
-| Exits to outside | 11 (minimum 4) |
+| Hall floor area (excluding the base plate) | 36,828 m2 |
+| Occupant load | 3965 |
+| Door spacing on walls and passageway faces | 85 m |
+| Worst rectilinear travel on a 2 m grid | 67.2 m at (68, 104) (limit 76.2) |
+| Exterior exit door pairs | 11 pairs, 17.9 m clear (need 14.8 m for 2907 occupants) |
+| Exit passageway | 2.7 m clear x 270 m, 4 door pairs, serves 1058 occupants, two discharges |
+| Exits to outside | 13 (minimum 4) |
 | Travel | pass |
 | Capacity | pass |
 | Number of exits | pass |
 
-Door pairs give two paths from any point within about 45 m along the wall line, so the common path stays inside 30.5 m in the open hall; enclosed rooms in the hall programme are checked when it is set. The base plate keeps its own egress (AQS-EGR-001). Rectilinear distance along aisles is used as a bound for the travel path.
+Door pairs give two paths from any point within about 42 m along the wall line, so the common path stays inside 30.5 m in the open hall; enclosed rooms in the hall programme are checked when it is set. The base plate keeps its own egress (AQS-EGR-001). Rectilinear distance along aisles is used as a bound for the travel path.
 
 ## 3. Consequences
 

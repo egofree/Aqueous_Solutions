@@ -30,7 +30,7 @@ for u in ('Q4_A', 'Q4_B'):
     p = P(u); chk('QC-04', 'docs-authority/HEAT_LADDER.md', f'{u} stored kWh over 30 K (basis 20 kWh_th Q4 hold)', 20, p['vol_m3']*1000*4.18*30/3600, 0.10)
 # 5 power: unit continuous kW sum vs graph electrical edges into units
 SF = {e['stream_id'][3:]: e['rate']['value'] or 0 for e in g['edges'] if e['presence'] == 'present' and str(e['stream_id']).startswith('SF-')}
-kw = sum(float((N[u].get('continuous_kw') or {}).get('value') or 0) for u in SF if u in N)
+kw = sum(float(((N[u].get('continuous_kw') or {}).get('value') if isinstance(N[u].get('continuous_kw'), dict) else N[u].get('continuous_kw')) or 0) for u in SF if u in N)   # R11 Rev AC regen: foundry units carry scalar continuous_kw
 chk('QC-05', 'flow_graph/param/write_graph.py', f'kW of the {len(SF)} feeder-supplied units: node continuous kW vs SF- feeder edges', kw, sum(SF.values()), 0.01)
 # 6 structural: level test load sum from rows
 SR = json.load(open('docs-authority/inventory/STRUCT_ROWS.json')); chk('QC-06', 'docs-authority/_struct_loads.py', 'equipment rows with test >= operating >= empty', sum(1 for r in SR if r['test_kg'] >= r['op_kg'] >= r['empty_kg']), len(SR), 0.0)

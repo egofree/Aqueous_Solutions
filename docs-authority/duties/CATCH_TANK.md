@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-DIS 0 kg/d (Pumped hydro discharge (penstock; peers S22)); S41 0 kg/d (rain + S40 return). Out: IA-ESS-HYDRO-CHG 0 kg/d (Pumped hydro charge (pump up; peers S23)).
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-DIS 0 kg/d (Pumped hydro discharge (penstock; peers S22)). Out: IA-ESS-HYDRO-CHG 0 kg/d (Pumped hydro charge (pump up; peers S23)).
 
 2. Size.
 - Circulation 200000.0 kg/d. Two-minute holdup 0.2778 m³. A 20-day volume at this rate is not a tank.

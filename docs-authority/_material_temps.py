@@ -6,7 +6,7 @@ LIM={'PVC-U':60,'CPVC':93,'PVDF':120}
 U={**{u:'PVC-U' for u in 'BMED_ACID BMED_BASE POLISH_BANK CONTINUOUS_RECYCLE CRU FLOAT_SINK S13_CLASS_TREAT SALT_FEED WS_KOH WS_PHOS WS_AMMONIA WS_HF_ED WET_BENCH GREY_TREAT BLACK_DIGEST MEOH_FERM ACID_POLISH_SCRUB ALK_SCRUBBER NOX_SCRUB MET_SCRUB CATCH_TANK ROOF_TANK REMIN ZNBR2_BR2_REGEN EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9'.split()},
    'LEACH_CSTR_1':'CPVC','HX8':'PVDF','WS_NITRIC':'PVDF','WS_PEROX':'PVDF','HNO3':'PVDF'}
 g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}
-leachT=N['LEACH_CSTR_1']['params']['liquor_T_C']; leachT=leachT.get('value',77.5) if isinstance(leachT,dict) else leachT
+lt=N['LEACH_CSTR_1']['params'].get('liquor_T_C', 77.5); leachT=lt.get('value',77.5) if isinstance(lt,dict) else lt   # R11 Rev AC regen: liquor_T_C param dropped from the graph; design basis 77.5 C (AQS-DUTY-050)
 def parse(e):
     p=e.get('params') or {}
     if isinstance(p.get('T_C'),(int,float)): return p['T_C'],'edge T_C'

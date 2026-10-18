@@ -1,15 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,308.0 40.0,285.2 430.0,60.0 560.0,135.1 560.0,183.3" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="292.6">Z +1200</text>
-<text x="241.0" y="168.6">X +23700</text>
-<text x="501.0" y="93.5">Y -7900</text>
-<text x="566.0" y="155.2">Z -2537</text>
-<circle cx="40.0" cy="308.0" r="5" fill="black"/><text x="48.0" y="322.0">CRYO_H2</text>
-<circle cx="560.0" cy="183.3" r="5" fill="none" stroke="black"/><text x="568.0" y="197.3">H2_PURIFIER</text>
+<polyline points="410.9,580.0 410.9,60.0 66.5,258.8 40.0,243.5 40.0,274.1" fill="none" stroke="black" stroke-width="3"/>
+<text x="416.9" y="316.0">Z +5100</text>
+<text x="244.7" y="155.4">X -3900</text>
+<text x="59.2" y="247.2">Y +300</text>
+<text x="46.0" y="254.8">Z -300</text>
+<circle cx="410.9" cy="580.0" r="5" fill="black"/><text x="418.9" y="594.0">CRYO_H2</text>
+<circle cx="40.0" cy="274.1" r="5" fill="none" stroke="black"/><text x="48.0" y="288.1">FUEL_CELL</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S49</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
-<text x="20" y="628">CRYO_H2 -> H2_PURIFIER</text>
-<text x="20" y="642">pipe 35.11 m in 8 pieces; cut 1162 6000 6000 6000 5624 6000 1824 2499 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 butt weld joints</text>
-<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>
+<text x="20" y="628">CRYO_H2 -> FUEL_CELL</text>
+<text x="20" y="642">pipe 9.37 m in 4 pieces; cut 5062 3824 224 262 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
+<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-S49</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric S49</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 7d9fe590   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
+</svg>

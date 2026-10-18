@@ -37,7 +37,7 @@ def write(g, R):
         n['continuous_kw'] = {'value': r['kW'], 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. Fan {r['fan_W']:.0f} W, pump {r['pump_W']:.0f} W."}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
             if sid in E: E[sid]['rate']['value'] = r['kW']; E[sid]['rate']['note'] = f'{TAG}.'
-            else:
+            elif a in N and b in N:   # R11 Rev AC regen: HEAT_SINK and the SQ-* heat edges died in Rev AC; only create edges whose endpoints exist
                 g['edges'].append({'stream_id': sid, 'from_unit_id': a, 'to_unit_id': b, 'phase': 'E', 'layers': ['elec'] if sid.startswith('SF') else ['energy'], 'presence': 'present',
                      'carries': '480 V AC' if sid.startswith('SF') else 'electrical input leaving as heat', 'header': 'tray', 'forbidden': 'HDR_O2, HDR_CO2', 'claim_status': 'Claimed / Partial',
                      'rate': {'value': r['kW'], 'unit': 'kW', 'status': 'study', 'note': f'{TAG}.'}, 'from_sector_id': N[a].get('sector_id'), 'to_sector_id': N[b].get('sector_id'),

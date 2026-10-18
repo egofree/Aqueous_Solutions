@@ -1,11 +1,9 @@
 item,description,qty,material,basis
 1,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
 2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
-4,"Motor: main drive (induction IE3, IEC 71 / 0.37 kW)",1,-,AQS-INV-001 / AQS-INV-005
-5,bearing: deep-groove ball bearing 6202-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,electronics: motor starter (contactor + overload) 0.37 kW,1,IEC 60947-4-1,AQS-INV-004
-8,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-9,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-10,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+3,bearing: deep-groove ball bearing 6202-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
+4,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+5,electronics: motor starter (contactor + overload) 0.37 kW,1,IEC 60947-4-1,AQS-INV-004
+6,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+7,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+8,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004

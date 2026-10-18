@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 119.1 kg/d. Mass out 119.1 kg/d. Electrical duty 0.0000 kW. In: IA-AB-FLUE 8.752 kg/d (flue); IA-AB-AIR 110.3 kg/d (combustion air). Out: S67 119.1 kg/d (flue N2/O2/CO2/NOx).
+1. Basis. Mass in 119.6 kg/d. Mass out 119.6 kg/d. Electrical duty 0.0000 kW. In: IA-AB-FLUE 9.28 kg/d (flue); IA-AB-AIR 110.3 kg/d (combustion air). Out: S67 119.6 kg/d (flue N2/O2/CO2/NOx).
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.

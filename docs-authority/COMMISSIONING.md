@@ -18,27 +18,25 @@ Acceptance at each step: no leak, every loop and trip verified, rates within 10 
 
 | Seq | System | Units | Loops | SIFs | Water-run units | Chemical run reagents |
 |---|---|---|---|---|---|---|
-| 1 | ELEC | 5 | 13 | 2 | 1 | solute |
-| 2 | ELEC_PV | 1 | 2 | 0 | 0 |  |
-| 3 | ZNBR2 | 1 | 7 | 2 | 1 | Fe, HCl, other_metals, solute |
-| 4 | BACKUP_GEN | 1 | 4 | 1 | 1 | Ar, N2, O2 |
-| 5 | FUEL_CELL | 1 | 5 | 0 | 0 | Ar, H2, O2 |
-| 6 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
-| 7 | WTR | 10 | 64 | 10 | 9 | CaO, Fe, HCl, K2CO3, hydrocarbon, other, other_metals, solute |
-| 8 | HEAT | 8 | 16 | 0 | 0 |  |
-| 9 | GAS | 7 | 30 | 6 | 1 | Ar, Fe, H2, HCl, O2, other_metals, solute |
-| 10 | CRYO | 20 | 42 | 6 | 2 | Ar, CH3OH, CO2, H2, H2O, N2, O2, solute |
-| 11 | GEO | 6 | 12 | 1 | 0 |  |
-| 12 | WET | 23 | 136 | 23 | 18 | AcOH, Cd, Cl2, Cu, Fe, H2, HCl, NaCl, Ni, O2, Pb, Sn … |
-| 13 | MEOH | 4 | 24 | 3 | 2 | Ar, CO2, Fe, H2, HCl, O2, other_metals, solute |
-| 14 | OIL | 10 | 55 | 12 | 8 | Ar, Fe, HCl, N2, O2, hydrocarbon, other_metals, solute |
-| 15 | GLASS | 5 | 16 | 3 | 2 | Fe, HCl, other_metals, solute |
-| 16 | NUT | 1 | 9 | 1 | 1 | Fe, HCl, other_metals, solute |
-| 17 | FARM | 61 | 324 | 66 | 32 | Ar, CO2, CaO, Fe, H2O, HCl, HNO3, K2CO3, KCl, MgNH4PO4, N2, NO … |
-| 18 | HAB | 6 | 27 | 6 | 4 | Ar, CaO, K2CO3, O2, hydrocarbon, other, solute |
-| 19 | MFG | 11 | 33 | 5 | 1 | Cd, Cu, Fe, Ni, Pb, Pb/Sn/Ni/Cd/Zn blend, Sn, Zn, hydrocarbon, metal, solute |
-| 20 | FAB | 17 | 79 | 12 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
+| 1 | ELEC | 8 | 27 | 5 | 2 | Ar, Fe, HCl, N2, O2, other_metals |
+| 2 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
+| 3 | WTR | 7 | 48 | 7 | 6 | Fe, HCl, other_metals, solute |
+| 4 | HEAT | 11 | 16 | 5 | 0 |  |
+| 5 | GAS | 8 | 30 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
+| 6 | CRYO | 13 | 29 | 8 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
+| 7 | GEO | 3 | 6 | 3 | 0 |  |
+| 8 | MEOH | 5 | 28 | 5 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
+| 9 | OIL | 12 | 55 | 14 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
+| 10 | GLASS | 5 | 10 | 4 | 1 | Fe, HCl, other_metals, solute |
+| 11 | NUT | 1 | 9 | 1 | 1 | Fe, HCl, other_metals |
+| 12 | FARM | 1 | 14 | 1 | 1 | CO2 |
+| 13 | HAB | 1 | 4 | 1 | 1 | solute |
+| 14 | MFG | 10 | 29 | 12 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
+| 15 | FAB | 17 | 79 | 14 | 7 | Ar, Fe, HCl, N2, O2, other_metals, solute |
+| 16 | DIGESTER | 23 | 123 | 21 | 17 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
+| 17 | POLYMERS | 10 | 0 | 0 | 0 |  |
+| 18 | FOUNDRY | 26 | 0 | 4 | 0 |  |
 
-Totals: 199 units, 900 loops, 159 unit SIF proof tests plus 3 area SIFs (gas and flame detection) proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps. Per unit: `docs-authority/inventory/COMMISSIONING.csv`.
+Totals: 162 units, 509 loops, 114 unit SIF proof tests plus 72 area SIFs (gas and flame detection) proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps. Per unit: `docs-authority/inventory/COMMISSIONING.csv`.
 
 Battery (ZNBR2) is commissioned per NFPA 855 with the purge and H2 detection live before first charge; H2 and O2 systems per NFPA 2 with gas detection (AQS-SAF-006) in service.

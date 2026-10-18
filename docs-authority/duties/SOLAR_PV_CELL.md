@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.01 kg/d. Mass out 0.01 kg/d. Electrical duty 0.3917 kW. In: IA-PV-IN 0.01 kg/d (dopant concentrate). Out: IA-PV-OUT 0.01 kg/d (dopant into the wafer fab).
+1. Basis. Mass in 0.01 kg/d. Mass out 0.01 kg/d. Electrical duty 0.0000 kW. In: IA-PV-IN 0.01 kg/d (dopant concentrate). Out: IA-PV-OUT 0.01 kg/d (dopant into the wafer fab).
 
 2. Size.
 - Envelope 2400×1200×1600 mm, 4.61 m³. The box is the machine. It is not a liquid holdup.

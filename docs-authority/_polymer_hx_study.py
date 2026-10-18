@@ -18,7 +18,7 @@ lmtd = HT.lmtd
 out = {}
 # HX-5: Q3 water in coil, leach liquor outside
 e = E['HL-Q3-A-HX5']['params']; Q = E['HL-Q3-A-HX5']['rate']['value']*1e3
-TL = N['LEACH_CSTR_1']['params']['liquor_T_C']['value']
+lt = N['LEACH_CSTR_1']['params'].get('liquor_T_C', 77.5); TL = lt.get('value', 77.5) if isinstance(lt, dict) else lt   # R11 Rev AC regen: liquor_T_C param dropped from the graph; design basis 77.5 C (AQS-DUTY-050)
 dT = lmtd(e['supply_C']-TL, e['return_C']-TL)
 do, t = 0.025, 0.0019          # PVDF tube 25 x 1.9 mm, assumption
 hi, v, Re = h_tube(e['m_kg_s'], 1, do-2*t, 90)

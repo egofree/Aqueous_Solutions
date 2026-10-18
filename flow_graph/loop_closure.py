@@ -186,8 +186,9 @@ def report(limit: int = 20) -> str:
         comps = [c for c in tarjan(nodes, pairs) if len(c) > 1]
         lines.append(f"## {layer}: {len(edges)} edges, {len(comps)} loops")
         for comp in sorted(comps, key=len, reverse=True):
-            units = sorted({e["rate"]["unit"] for e in edges
-                            if e["from_unit_id"] in comp or e["to_unit_id"] in comp})
+            units = sorted({e["rate"]["unit"] for e in edges   # R11 Rev AC regen: 80 present edges carry null rates (unit/value None); they carry no balance and are skipped below by the unit test
+                            if (e["from_unit_id"] in comp or e["to_unit_id"] in comp)
+                            and e["rate"]["unit"] is not None})
             triple = [(e["from_unit_id"], e["to_unit_id"], e["stream_id"]) for e in edges]
             named, stopped = johnson(comp, triple, limit)
             witness = one_circuit(comp, triple)

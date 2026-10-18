@@ -9,10 +9,10 @@ Rule: hoist rated load is the next standard size at or above the heaviest lift p
 
 | Level | Heaviest lift | Empty kg | Next three | Hoist rated t | Test load t | Hoists |
 |---|---|---|---|---|---|---|
-| L-1 | CRYO_H2 (one bank half) | 3105 | CRYO_O2 (one bank half) 1553, EVAP_ACID 1223, CRYO_ASU 1170 | 5.0 | 6.25 | 2 |
+| L-1 | EVAP_ACID | 1223 | CRYO_ASU 1170, SIC_FURNACE 608, RECT_EW 576 | 2.0 | 2.50 | 2 |
 | L-2 | HYDRO_SET | 173 |  | 0.25 | 0.31 | 1 |
-| L0 | SOLAR_PV_CELL | 691 | ZNBR2 518, BACKUP_GEN 480, MEOH_FERM 416 | 1.0 | 1.25 | 2 |
-| L1 | EMETH | 259 | BLACK_DIGEST 229, NUTRIENT_DOSE 180, BLACK_ALK_HOLD 137 | 0.5 | 0.62 | 1 |
+| L0 | PEANUT/R1 | 1015 | PEANUT/R2 1015, PEANUT/R3 1015, SOLAR_PV_CELL 691 | 2.0 | 2.50 | 2 |
+| L1 | AZOLLA_BED | 5400 | HAB_SLEEP 3510, HAB_GALLEY 3510, HAB_MED 3510 | 10.0 | 12.50 | 2 |
 
 Levels R1..R3 (reservoir) and L-2 (lower reservoir) have no lifted equipment; cells are entered by hatch for inspection. ROOF: PV modules by hand or by a 0.25 t davit at the roof stair.
 The hoist beams and their supports are loads on X-BLD-01 (frame) at rated load x 1.25 impact.

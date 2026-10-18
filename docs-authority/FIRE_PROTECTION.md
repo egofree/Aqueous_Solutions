@@ -21,7 +21,7 @@ Governing: L0 EH1, 5013 L/min for 90 min = 451 m3.
 ## Water supplies (two independent sources, redundancy rule)
 
 1. Gravity: 451 m3 fire reserve held as dead storage in the bottom of the water tower, below the hydro outlet nozzles (NFPA22_2023), so a hydro discharge can never draw it. Static head at L0 16.8 m (165 kPa), at the top life floor 10.8 m. The reserve is split across the cells; each cell has its own fire outlet, so one cell drained for inspection leaves the rest.
-2. Pumped: an NFPA20_2022 fire pump draws from CATCH_TANK (lower reservoir, 3340 m3 when full; it also takes the sprinkler run-off) and is fed from the critical bus with the genset as its second supply. It boosts the gravity supply where hydraulics need more than the static head.
+2. Pumped: an NFPA20_2022 fire pump draws from CATCH_TANK (lower reservoir, 3373 m3 when full; it also takes the sprinkler run-off) and is fed from the critical bus with the genset as its second supply. It boosts the gravity supply where hydraulics need more than the static head.
 The lower reservoir is sized to hold the hydro volume plus the fire reserve (AQS-BLD-014), so a fire after a hydro discharge still has a full supply in one of the two reservoirs.
 
 ## Detection and special hazards (NFPA72_2022)
@@ -43,8 +43,8 @@ Gas-filled tubes: A = F' A'/sqrt(P1), F' = 0.1406/(C Kd) (Tw - T1)^1.25 / T1^0.6
 
 | Receiver | Tubes | Exposed m2 | P1 kPa abs | T1 K | Fire area per half mm2 | Fire bore per half mm | Blocked-outlet bore mm | Installed bore mm (2 valves) | Depressuring release kg | Depressuring bore mm |
 |---|---|---|---|---|---|---|---|---|---|---|
-| CRYO_H2 | 36 | 78.8 | 26721 | 344 | 130.6 | 12.9 | 0.22 | 13 | 9.6 | 1.49 |
-| CRYO_O2 | 18 | 39.4 | 26721 | 344 | 65.4 | 9.1 | 0.3 | 10 | 76.8 | 2.03 |
+| CRYO_H2 | 34 | 74.4 | 26721 | 344 | 123.3 | 12.5 | 0.23 | 13 | 9.1 | 1.45 |
+| CRYO_O2 | 16 | 35.0 | 26721 | 344 | 58.2 | 8.6 | 0.3 | 9 | 73.0 | 1.98 |
 | CRYO_CO2 | 4 | 8.8 | 2763 | 283 | 61.1 | 8.8 | 0.28 | 9 | 0.0 | 0.00 |
 
 The fire case governs every receiver: the earlier 3.3 mm bore covered only the blocked outlet. Each manifolded half now has its own relief valve sized for the fire on its tubes (bore in the table, propagated to the graph relief_mm and the relief register). For gas-filled tubes API 521 warns that a relief valve alone may not prevent wall rupture in a fire, because the unwetted wall heats and loses strength while the pressure stays near set. The H2 and O2 banks therefore get automatic depressuring on flame detection to 50 % of design gauge in 15 min (API 521 5.20, wall 13.5 mm), sized in the table at twice the average rate for the initial peak, plus NFPA 15 water spray to keep the tubes cool. The depressuring vents go to the same safe-location vent stacks as the relief valves.

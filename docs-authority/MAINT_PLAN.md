@@ -9,214 +9,90 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 
 | Unit | Class | Tasks (interval) |
 |---|---|---|
-| ACID_POLISH_SCRUB | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| AFTERBURNER | thermal | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| AFTERBURNER_FLUE | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| ALK_SCRUBBER | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| AFTERBURNER | thermal | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| ALK_SCRUBBER | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | BACKUP_GEN | genset | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B); inspection (1 wk, NFPA 110 8.4.1); load run 30 min (1 mo, NFPA 110 8.4.2) |
-| BAGHOUSE | baghouse | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| BLACK_DIGEST | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| BMED_ACID | bmed | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
-| BMED_BASE | bmed | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
-| BMED_UPW_POLISH | skid | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
+| BMED_UPW_POLISH | skid | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
 | C29_RECYCLE | recycle_pipe | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| CATCH_TANK | tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| COLD_MILL | forming | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| CATCH_TANK | tank | external visual (1 y, A-M-189) |
 | CONTINUOUS_RECYCLE | recycle_pipe | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| CRU | cru | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| CRYO_AHU | ahu | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CRYO_AHU_COND_CONDENSABLE | separator | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| CRYO_CO2 | cold_box | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576) |
-| CRYO_DED_COOL | cool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| CRYO_H2 | cold_box | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (2 y, A-M-189 maint_insert_life_y) |
-| CRYO_HX_Q4 | hx | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| CRYO_N2 | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| CRYO_O2 | cold_box | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (2 y, API 576) |
-| EW_1 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| EW_2 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_3 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_4 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_5 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_6 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_7 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_8 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| EW_9 | ew_cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| FAB_UPW_TANK | tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| FLOAT_SINK | separator | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| FLUE_KO | separator | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| CRYO_ASU | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
+| CRYO_CO2 | cold_box | external visual (1 y, A-M-189) |
+| CRYO_H2 | cold_box | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (2 y, A-M-189 maint_insert_life_y) |
+| CRYO_O2 | cold_box | external visual (1 y, A-M-189) |
+| H2O_ELYZ | pem_electrolyser | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
+| EW_1 | ew_cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| EW_2 | ew_cell | external visual (1 y, A-M-189) |
+| EW_3 | ew_cell | external visual (1 y, A-M-189) |
+| EW_4 | ew_cell | external visual (1 y, A-M-189) |
+| EW_5 | ew_cell | external visual (1 y, A-M-189) |
+| EW_6 | ew_cell | external visual (1 y, A-M-189) |
+| EW_7 | ew_cell | external visual (1 y, A-M-189) |
+| EW_8 | ew_cell | external visual (1 y, A-M-189) |
+| EW_9 | ew_cell | external visual (1 y, A-M-189) |
 | FUEL_CELL | pem_fc | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| GAS_ATOMIZER | forming | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GEO_GHEX | ghex | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GEO_HP | heat_pump | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| GEO_HP_CLOSED_LOOP | thermal | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GEO_ORC | hx | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| GLASS_DIGEST | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GREY_TREAT | treat | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| GEO_GHEX | ghex | external visual (1 y, A-M-189) |
+| GEO_HP | heat_pump | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| GEO_ORC | study_stub | external visual (1 y, A-M-189) |
+| GLASS_DIGEST | digest | external visual (1 y, A-M-189) |
 | GROW_BED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| H2_DRYER | dryer | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| H2_DRYER | dryer | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | HABITATION | hab | external visual (1 y, A-M-189) |
-| HDR_CO2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | HDR_H2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| HDR_N2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| HDR_O2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | HDR_UPW | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| HOPPER | hopper | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| HX8 | hx | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| HX8 | hx | external visual (1 y, A-M-189) |
 | HYDRO_SET | hydro | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B); turbine-generator load run (1 mo, NFPA 111 8.4); reservoir cell drain-down inspection (one cell at a time) (5 y, A-M-189) |
-| LEACH_CSTR_1 | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| MEOH_COND | separator | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| LEACH_CSTR_1 | vessel | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| LOAD_AGG | load_agg | external visual (1 y, A-M-189) |
 | MEOH_FC | iem_fc | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| MEOH_FERM | ferment | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| MEOH_SYNTH | reactor | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (3 y, A-M-189 maint_insert_life_y) |
-| MEOH_TANK | tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| MET_AHU | ahu | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| MET_HX_Q4 | hx | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| MET_MELT | melt | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| MET_SCRUB | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| MEOH_FERM | ferment | external visual (1 y, A-M-189) |
+| MEOH_SYNTH | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (3 y, A-M-189 maint_insert_life_y) |
+| MEOH_TANK | tank | external visual (1 y, A-M-189) |
 | MFG_SHOP | shop | external visual (1 y, A-M-189) |
-| NCG_HEADER | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | NORTH_DOCK | dock | external visual (1 y, A-M-189) |
-| NOX_SCRUB | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| NUTRIENT_DOSE | dose | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| OIL_DRYER | dryer | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| OIL_FRAC | frac | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| OIL_PYRO | pyro | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| POLISH_BANK | polish | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| PROD_C11_C18 | cut_tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| PROD_C19_C28 | cut_tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| PROD_C29 | cut_tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| PROD_C5_C10 | cut_tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| NOX_SCRUB | scrubber | external visual (1 y, A-M-189) |
+| NUTRIENT_DOSE | dose | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| OIL_FRAC | frac | external visual (1 y, A-M-189) |
+| PROD_C11_C18 | cut_tank | external visual (1 y, A-M-189) |
+| PROD_C19_C28 | cut_tank | external visual (1 y, A-M-189) |
+| PROD_C29 | cut_tank | external visual (1 y, A-M-189) |
+| PROD_O2 | product | external visual (1 y, A-M-189) |
+| PROD_C5_C10 | cut_tank | external visual (1 y, A-M-189) |
 | PV_ARRAY | pv | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
 | Q4_BUS | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | RECTIFIER | rectifier | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| RELIEF_CRYO | relief | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| RELIEF_H2 | relief | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| ROOF_TANK | tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| S13_CLASS_TREAT | treat | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| SALT_FEED | feed | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| ROOF_TANK | tank | external visual (1 y, A-M-189) |
 | SOL_ARK_60K | inverter | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| TERRACE_IRRIG | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
-| WAFER_FAB | fab | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| WET_BENCH | wet_bench | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| WIRE_DRAW | forming | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_AMMONIA | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_DOPE | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_HF_ED | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_KOH | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_NITRIC | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_PEROX | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_SLURRY | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_SOLV | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
+| WAFER_FAB | fab | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| WET_BENCH | wet_bench | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | ZNBR2 | flow_battery | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B); replace process insert (5 y, A-M-189 maint_insert_life_y) |
-| ZNBR2_BR2_REGEN | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| WS_PHOS | reagent | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GLASS_RINSE | intra | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GLASS_MILL | intra | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| GLASS_BURNOUT | intra | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| VCD_TRAIN | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| REMIN | tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| LITHO_COAT | tool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| LITHO_ALIGN | tool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| LITHO_DEV | tool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| LITHO_STUB | tool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| ELECTRODE_COAT | tool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| BLOW_MOLD | forming | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| SOLAR_PV_CELL | tool | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| Q1_A | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q2_A | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q3_A | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q4_A | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q1_B | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q2_B | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q3_B | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| Q4_B | heat_battery | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| ANIMAL_PEN | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| COMPOST | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| DIGESTER | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| EMETH | cell | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| LIGNO_PRE | tank | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| BOARD_MILL | mill | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| HTC | vessel | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CRYO_ASU | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
-| CRYO_HE | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CRYO_NE | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CRYO_KR | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CRYO_XE | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CRYO_AR | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| YEAST | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| ABE | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| ACETOX | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| ALD | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (2 y, A-M-189 maint_insert_life_y) |
-| GLYOXAL | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| FORM | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (1 y, A-M-189 maint_insert_life_y) |
-| MEAM | vessel | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (2 y, A-M-189 maint_insert_life_y) |
-| IMID | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| QUAT | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| ACEX | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (3 y, A-M-189 maint_insert_life_y) |
-| HNO3 | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (6 mo, A-M-189 maint_insert_life_y) |
-| BUCL | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| BSFL | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| DUCKWEED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| WORMS | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| BEES | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CHICKENS | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| GOATS | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| FISH | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CRAYFISH | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| AZOLLA | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| MUSHROOM | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| COMPOST_TOILET | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| NFIX_BED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| MUSH_STRAW | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| MUSH_BLOCK | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| AMF | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| COMPOST_MYC | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| FRUIT_GUTTER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| VEG_BED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CLARIFIER | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| BIOFILTER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| FISH_SUMP | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_TOMATO | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_CUCUMBER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_PEPPER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_LETTUCE | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_SPINACH | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_KALE | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_ALLIUM | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_BASIL | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CROP_ROSEMARY | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| CLOVER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| SEED_BANK | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| STRUVITE | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| ASH | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| IODIDE | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| CURTAIL | hx | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| HEAT_SINK | hx | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| NFT | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| MISTER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| DUAL_ROOT | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| AZOLLA_BED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| ETOH_STILL | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| BUOH_STILL | vessel | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| PEANUT | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| SUNFLOWER | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| HAB_SLEEP | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| HAB_GALLEY | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| HAB_MED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| HAB_WASH | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
-| EXPANDER | tool | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576) |
-| SIC_FURNACE | melt | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| RECT_EW | rectifier | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| H2_PURIFIER | dryer | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (3 y, A-M-189 maint_insert_life_y) |
+| ZNBR2_BR2_REGEN | scrubber | external visual (1 y, A-M-189) |
+| WS_PHOS | reagent | external visual (1 y, A-M-189) |
+| GLASS_RINSE | intra | external visual (1 y, A-M-189) |
+| GLASS_MILL | intra | external visual (1 y, A-M-189) |
+| GLASS_BURNOUT | intra | external visual (1 y, A-M-189) |
+| VCD_TRAIN | study_stub | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| REMIN | study_stub | external visual (1 y, A-M-189) |
+| LITHO_COAT | tool | external visual (1 y, A-M-189) |
+| LITHO_ALIGN | tool | external visual (1 y, A-M-189) |
+| LITHO_DEV | tool | external visual (1 y, A-M-189) |
+| LITHO_STUB | study_stub | external visual (1 y, A-M-189) |
+| ELECTRODE_COAT | study_stub | external visual (1 y, A-M-189) |
+| BLOW_MOLD | study_stub | external visual (1 y, A-M-189) |
+| SOLAR_PV_CELL | study_stub | external visual (1 y, A-M-189) |
+| Q1_A | heat_battery | external visual (1 y, A-M-189) |
+| Q2_A | heat_battery | external visual (1 y, A-M-189) |
+| Q3_A | heat_battery | external visual (1 y, A-M-189) |
+| Q4_A | heat_battery | external visual (1 y, A-M-189) |
+| Q1_B | heat_battery | external visual (1 y, A-M-189) |
+| Q2_B | heat_battery | external visual (1 y, A-M-189) |
+| Q3_B | heat_battery | external visual (1 y, A-M-189) |
+| Q4_B | heat_battery | external visual (1 y, A-M-189) |
 | EVAP_ACID | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_BASE | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| EVAP_ACID_VS | scrubber | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| BLACK_DEWATER | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| BLACK_PASTEUR | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| BLACK_ALK_HOLD | digest | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189) |
-| H2O_ELYZ | pem_electrolyser | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| HCL_BURNER | hcl_synthesis | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (2 y, API 576) |
+| ADS_CHILL | adsorption_chiller | external visual (1 y, A-M-189) |
+| MAU_HX | hx | external visual (1 y, A-M-189) |
+| DRY_COOLER | dry_cooler | external visual (1 y, A-M-189) |
 | PROD_MEOH | product | external visual (1 y, A-M-189) |
-| PROD_O2 | product | external visual (1 y, A-M-189) |
 
-209 units, 643 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+85 units, 167 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 8.407 kg/d. Mass out 8.407 kg/d. Electrical duty 0.5000 kW. In: IA-BLOW-IN 8.407 kg/d (C11-C18 to the mold). Out: IA-BLOW-OUT 8.407 kg/d (blown parts).
+1. Basis. Mass in 8.407 kg/d. Mass out 8.407 kg/d. Electrical duty 0.0000 kW. In: IA-BLOW-IN 8.407 kg/d (C11-C18 to the mold). Out: IA-BLOW-OUT 8.407 kg/d (blown parts).
 
 2. Size.
 - Envelope 1200×800×1600 mm, 1.54 m³. The box is the machine. It is not a liquid holdup.

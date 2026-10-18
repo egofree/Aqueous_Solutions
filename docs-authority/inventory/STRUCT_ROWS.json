@@ -3,7 +3,7 @@
 "unit": "ZNBR2",
 "level": "L0",
 "empty_kg": 518.4,
-"op_kg": 1838.4,
+"op_kg": 2678.4,
 "test_kg": 3974.4,
 "foot_m2": 2.16
 },
@@ -75,8 +75,8 @@
 "unit": "WS_AMMONIA",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 545.6,
-"test_kg": 809.6,
+"op_kg": 105.6,
+"test_kg": 105.6,
 "foot_m2": 0.64
 },
 {
@@ -107,8 +107,8 @@
 "unit": "WS_SOLV",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 545.6,
-"test_kg": 809.6,
+"op_kg": 105.6,
+"test_kg": 105.6,
 "foot_m2": 0.64
 },
 {
@@ -203,7 +203,7 @@
 "unit": "GREY_TREAT",
 "level": "L1",
 "empty_kg": 105.6,
-"op_kg": 239.4,
+"op_kg": 545.6,
 "test_kg": 809.6,
 "foot_m2": 0.64
 },
@@ -219,7 +219,7 @@
 "unit": "BMED_UPW_POLISH",
 "level": "L-1",
 "empty_kg": 415.8,
-"op_kg": 877.0,
+"op_kg": 2148.3,
 "test_kg": 3187.8,
 "foot_m2": 1.98
 },
@@ -306,9 +306,9 @@
 {
 "unit": "REMIN",
 "level": "L1",
-"empty_kg": 7.7,
-"op_kg": 127.7,
-"test_kg": 199.7,
+"empty_kg": 28.8,
+"op_kg": 148.8,
+"test_kg": 220.8,
 "foot_m2": 0.24
 },
 {
@@ -483,7 +483,7 @@
 "unit": "FLUE_KO",
 "level": "L-1",
 "empty_kg": 69.3,
-"op_kg": 99.3,
+"op_kg": 358.1,
 "test_kg": 531.3,
 "foot_m2": 0.42
 },
@@ -587,48 +587,48 @@
 "unit": "SIC_FURNACE",
 "level": "L-1",
 "empty_kg": 607.5,
-"op_kg": 3138.8,
-"test_kg": 4657.5,
+"op_kg": 607.5,
+"test_kg": 607.5,
 "foot_m2": 2.25
 },
 {
 "unit": "AZOLLA_BED",
 "level": "L1",
 "empty_kg": 5400.0,
-"op_kg": 27900.0,
-"test_kg": 41400.0,
+"op_kg": 5400.0,
+"test_kg": 5400.0,
 "foot_m2": 90.0
 },
 {
 "unit": "BIOFILTER",
 "level": "L1",
 "empty_kg": 2700.0,
-"op_kg": 13950.0,
-"test_kg": 20700.0,
+"op_kg": 2700.0,
+"test_kg": 2700.0,
 "foot_m2": 15.0
 },
 {
 "unit": "DUAL_ROOT",
 "level": "L1",
 "empty_kg": 1080.0,
-"op_kg": 5580.0,
-"test_kg": 8280.0,
+"op_kg": 1080.0,
+"test_kg": 1080.0,
 "foot_m2": 12.0
 },
 {
 "unit": "NFT",
 "level": "L1",
 "empty_kg": 270.0,
-"op_kg": 1395.0,
-"test_kg": 2070.0,
+"op_kg": 270.0,
+"test_kg": 270.0,
 "foot_m2": 6.0
 },
 {
 "unit": "MISTER",
 "level": "L1",
 "empty_kg": 480.0,
-"op_kg": 2480.0,
-"test_kg": 3680.0,
+"op_kg": 480.0,
+"test_kg": 480.0,
 "foot_m2": 4.0
 },
 {
@@ -643,8 +643,8 @@
 "unit": "ASH",
 "level": "L1",
 "empty_kg": 225.0,
-"op_kg": 1162.5,
-"test_kg": 1725.0,
+"op_kg": 225.0,
+"test_kg": 225.0,
 "foot_m2": 1.0
 },
 {
@@ -667,24 +667,24 @@
 "unit": "ETOH_STILL",
 "level": "L1",
 "empty_kg": 36.0,
-"op_kg": 186.0,
-"test_kg": 276.0,
+"op_kg": 36.0,
+"test_kg": 36.0,
 "foot_m2": 0.16
 },
 {
 "unit": "QUAT",
 "level": "L1",
 "empty_kg": 19.2,
-"op_kg": 99.2,
-"test_kg": 147.2,
+"op_kg": 19.2,
+"test_kg": 19.2,
 "foot_m2": 0.16
 },
 {
 "unit": "BUOH_STILL",
 "level": "L1",
 "empty_kg": 16.2,
-"op_kg": 83.7,
-"test_kg": 124.2,
+"op_kg": 16.2,
+"test_kg": 16.2,
 "foot_m2": 0.09
 },
 {
@@ -771,24 +771,24 @@
 "unit": "BLACK_DEWATER",
 "level": "L1",
 "empty_kg": 64.8,
-"op_kg": 334.8,
-"test_kg": 496.8,
+"op_kg": 64.8,
+"test_kg": 64.8,
 "foot_m2": 0.48
 },
 {
 "unit": "BLACK_PASTEUR",
 "level": "L1",
 "empty_kg": 31.8,
-"op_kg": 164.1,
-"test_kg": 243.5,
+"op_kg": 31.8,
+"test_kg": 31.8,
 "foot_m2": 0.302
 },
 {
 "unit": "BLACK_ALK_HOLD",
 "level": "L1",
 "empty_kg": 136.9,
-"op_kg": 707.3,
-"test_kg": 1049.5,
+"op_kg": 136.9,
+"test_kg": 136.9,
 "foot_m2": 1.17
 },
 {
@@ -875,24 +875,24 @@
 "unit": "PEANUT/R1",
 "level": "L0",
 "empty_kg": 1015.2,
-"op_kg": 5245.2,
-"test_kg": 7783.2,
+"op_kg": 1015.2,
+"test_kg": 1015.2,
 "foot_m2": 11.28
 },
 {
 "unit": "PEANUT/R2",
 "level": "L0",
 "empty_kg": 1015.2,
-"op_kg": 5245.2,
-"test_kg": 7783.2,
+"op_kg": 1015.2,
+"test_kg": 1015.2,
 "foot_m2": 11.28
 },
 {
 "unit": "PEANUT/R3",
 "level": "L0",
 "empty_kg": 1015.2,
-"op_kg": 5245.2,
-"test_kg": 7783.2,
+"op_kg": 1015.2,
+"test_kg": 1015.2,
 "foot_m2": 11.28
 },
 {
@@ -907,24 +907,24 @@
 "unit": "HAB_GALLEY",
 "level": "L1",
 "empty_kg": 3510.0,
-"op_kg": 18135.0,
-"test_kg": 26910.0,
+"op_kg": 3510.0,
+"test_kg": 3510.0,
 "foot_m2": 9.0
 },
 {
 "unit": "HAB_MED",
 "level": "L1",
 "empty_kg": 3510.0,
-"op_kg": 18135.0,
-"test_kg": 26910.0,
+"op_kg": 3510.0,
+"test_kg": 3510.0,
 "foot_m2": 9.0
 },
 {
 "unit": "HAB_WASH",
 "level": "L1",
 "empty_kg": 3510.0,
-"op_kg": 18135.0,
-"test_kg": 26910.0,
+"op_kg": 3510.0,
+"test_kg": 3510.0,
 "foot_m2": 9.0
 },
 {
@@ -939,16 +939,16 @@
 "unit": "COMPOST",
 "level": "L1",
 "empty_kg": 2160.0,
-"op_kg": 11160.0,
-"test_kg": 16560.0,
+"op_kg": 2160.0,
+"test_kg": 2160.0,
 "foot_m2": 7.2
 },
 {
 "unit": "DUCKWEED",
 "level": "L0",
 "empty_kg": 518.4,
-"op_kg": 2678.4,
-"test_kg": 3974.4,
+"op_kg": 518.4,
+"test_kg": 518.4,
 "foot_m2": 5.76
 },
 {
@@ -963,16 +963,16 @@
 "unit": "SUNFLOWER",
 "level": "L0",
 "empty_kg": 518.4,
-"op_kg": 2678.4,
-"test_kg": 3974.4,
+"op_kg": 518.4,
+"test_kg": 518.4,
 "foot_m2": 5.76
 },
 {
 "unit": "VEG_BED/R1",
 "level": "L1",
 "empty_kg": 432.0,
-"op_kg": 2232.0,
-"test_kg": 3312.0,
+"op_kg": 432.0,
+"test_kg": 432.0,
 "foot_m2": 4.8
 },
 {
@@ -1026,9 +1026,9 @@
 {
 "unit": "LIGNO_PRE",
 "level": "L1",
-"empty_kg": 69.1,
-"op_kg": 69.1,
-"test_kg": 1797.1,
+"empty_kg": 259.2,
+"op_kg": 259.2,
+"test_kg": 259.2,
 "foot_m2": 0.96
 },
 {
@@ -1043,8 +1043,8 @@
 "unit": "BSFL",
 "level": "L1",
 "empty_kg": 259.2,
-"op_kg": 1339.2,
-"test_kg": 1987.2,
+"op_kg": 259.2,
+"test_kg": 259.2,
 "foot_m2": 0.96
 },
 {
@@ -1059,8 +1059,8 @@
 "unit": "BEES",
 "level": "L1",
 "empty_kg": 259.2,
-"op_kg": 1339.2,
-"test_kg": 1987.2,
+"op_kg": 259.2,
+"test_kg": 259.2,
 "foot_m2": 0.96
 },
 {
@@ -1139,16 +1139,16 @@
 "unit": "ABE",
 "level": "L1",
 "empty_kg": 19.7,
-"op_kg": 102.0,
-"test_kg": 151.4,
+"op_kg": 19.7,
+"test_kg": 19.7,
 "foot_m2": 0.202
 },
 {
 "unit": "HDR_CO2",
 "level": "L1",
 "empty_kg": 8.1,
-"op_kg": 41.9,
-"test_kg": 62.1,
+"op_kg": 8.1,
+"test_kg": 8.1,
 "foot_m2": 0.18
 },
 {
@@ -1171,97 +1171,81 @@
 "unit": "ACETOX",
 "level": "L1",
 "empty_kg": 12.6,
-"op_kg": 64.9,
-"test_kg": 96.3,
+"op_kg": 12.6,
+"test_kg": 12.6,
 "foot_m2": 0.144
 },
 {
 "unit": "GLYOXAL",
 "level": "L1",
 "empty_kg": 11.2,
-"op_kg": 57.8,
-"test_kg": 85.8,
+"op_kg": 11.2,
+"test_kg": 11.2,
 "foot_m2": 0.133
 },
 {
 "unit": "IMID",
 "level": "L1",
 "empty_kg": 11.2,
-"op_kg": 57.8,
-"test_kg": 85.8,
+"op_kg": 11.2,
+"test_kg": 11.2,
 "foot_m2": 0.133
 },
 {
 "unit": "HNO3",
 "level": "L1",
 "empty_kg": 11.2,
-"op_kg": 57.8,
-"test_kg": 85.8,
+"op_kg": 11.2,
+"test_kg": 11.2,
 "foot_m2": 0.133
 },
 {
 "unit": "ACEX",
 "level": "L0",
 "empty_kg": 33.1,
-"op_kg": 171.3,
-"test_kg": 254.1,
+"op_kg": 33.1,
+"test_kg": 33.1,
 "foot_m2": 0.13
 },
 {
 "unit": "BUCL",
 "level": "L0",
 "empty_kg": 10.1,
-"op_kg": 52.2,
-"test_kg": 77.5,
+"op_kg": 10.1,
+"test_kg": 10.1,
 "foot_m2": 0.122
 },
 {
 "unit": "ALD",
 "level": "L0",
 "empty_kg": 17.0,
-"op_kg": 87.8,
-"test_kg": 130.3,
+"op_kg": 17.0,
+"test_kg": 17.0,
 "foot_m2": 0.103
 },
 {
 "unit": "FORM",
 "level": "L0",
 "empty_kg": 17.0,
-"op_kg": 87.8,
-"test_kg": 130.3,
+"op_kg": 17.0,
+"test_kg": 17.0,
 "foot_m2": 0.103
 },
 {
 "unit": "MEAM",
 "level": "L0",
 "empty_kg": 17.0,
-"op_kg": 87.8,
-"test_kg": 130.3,
+"op_kg": 17.0,
+"test_kg": 17.0,
 "foot_m2": 0.103
-},
-{
-"unit": "ACID_POLISH_SCRUB",
-"level": "L-1",
-"empty_kg": 615.5,
-"op_kg": 615.5,
-"test_kg": 615.5,
-"foot_m2": 1.0
 },
 {
 "unit": "AFTERBURNER",
 "level": "L-1",
 "empty_kg": 64.8,
 "op_kg": 64.8,
-"test_kg": 496.8,
+"test_kg": 64.8,
 "foot_m2": 0.36
-},
-{
-"unit": "ALK_SCRUBBER",
-"level": "L-1",
-"empty_kg": 615.5,
-"op_kg": 615.5,
-"test_kg": 615.5,
-"foot_m2": 1.0
 },
 {
 "unit": "BAGHOUSE",
@@ -1272,36 +1256,12 @@
 "foot_m2": 0.64
 },
 {
-"unit": "BMED_ACID",
-"level": "L-1",
-"empty_kg": 251.0,
-"op_kg": 1893.5,
-"test_kg": 1924.0,
-"foot_m2": 1.075
-},
-{
-"unit": "BMED_BASE",
-"level": "L-1",
-"empty_kg": 248.7,
-"op_kg": 1876.2,
-"test_kg": 1906.4,
-"foot_m2": 1.069
-},
-{
 "unit": "COLD_MILL",
 "level": "L0",
 "empty_kg": 270.0,
 "op_kg": 270.0,
 "test_kg": 270.0,
 "foot_m2": 1.2
-},
-{
-"unit": "CRU",
-"level": "L-1",
-"empty_kg": 5.2,
-"op_kg": 38.9,
-"test_kg": 39.5,
-"foot_m2": 0.081
 },
 {
 "unit": "CRYO_AHU",
@@ -1314,10 +1274,10 @@
 {
 "unit": "CRYO_CO2",
 "level": "L-1",
-"empty_kg": 690.1,
-"op_kg": 690.1,
-"test_kg": 690.1,
-"foot_m2": 10.044
+"empty_kg": 240.0,
+"op_kg": 240.0,
+"test_kg": 240.0,
+"foot_m2": 0.64
 },
 {
 "unit": "CRYO_DED_COOL",
@@ -1330,10 +1290,10 @@
 {
 "unit": "CRYO_H2",
 "level": "L-1",
-"empty_kg": 6210.6,
-"op_kg": 6210.6,
-"test_kg": 6210.6,
-"foot_m2": 10.044
+"empty_kg": 240.0,
+"op_kg": 240.0,
+"test_kg": 240.0,
+"foot_m2": 0.64
 },
 {
 "unit": "CRYO_N2",
@@ -1346,10 +1306,10 @@
 {
 "unit": "CRYO_O2",
 "level": "L-1",
-"empty_kg": 3105.3,
-"op_kg": 3105.3,
-"test_kg": 3105.3,
-"foot_m2": 10.044
+"empty_kg": 240.0,
+"op_kg": 240.0,
+"test_kg": 240.0,
+"foot_m2": 0.64
 },
 {
 "unit": "FLOAT_SINK",
@@ -1368,14 +1328,6 @@
 "foot_m2": 1.2
 },
 {
-"unit": "GLASS_DIGEST",
-"level": "L-1",
-"empty_kg": 75.1,
-"op_kg": 388.0,
-"test_kg": 575.7,
-"foot_m2": 0.562
-},
-{
 "unit": "H2_DRYER",
 "level": "L-1",
 "empty_kg": 86.4,
@@ -1386,10 +1338,10 @@
 {
 "unit": "HOPPER",
 "level": "L-1",
-"empty_kg": 583.4,
-"op_kg": 583.4,
-"test_kg": 583.4,
-"foot_m2": 2.103
+"empty_kg": 240.2,
+"op_kg": 240.2,
+"test_kg": 240.2,
+"foot_m2": 1.02
 },
 {
 "unit": "HYDRO_SET",
@@ -1408,22 +1360,6 @@
 "foot_m2": 1.0
 },
 {
-"unit": "MFG_SHOP",
-"level": "L0",
-"empty_kg": 0.8,
-"op_kg": 5.8,
-"test_kg": 5.9,
-"foot_m2": 0.023
-},
-{
-"unit": "NUTRIENT_DOSE",
-"level": "L1",
-"empty_kg": 180.0,
-"op_kg": 930.0,
-"test_kg": 1380.0,
-"foot_m2": 1.0
-},
-{
 "unit": "OIL_DRYER",
 "level": "L-1",
 "empty_kg": 86.4,
@@ -1432,60 +1368,12 @@
 "foot_m2": 0.48
 },
 {
-"unit": "OIL_FRAC",
-"level": "L-1",
-"empty_kg": 6.3,
-"op_kg": 47.6,
-"test_kg": 48.3,
-"foot_m2": 0.092
-},
-{
-"unit": "OIL_PYRO",
-"level": "L-1",
-"empty_kg": 25.1,
-"op_kg": 129.8,
-"test_kg": 192.6,
-"foot_m2": 0.25
-},
-{
-"unit": "POLISH_BANK",
-"level": "L-1",
-"empty_kg": 672.3,
-"op_kg": 5072.3,
-"test_kg": 5154.1,
-"foot_m2": 2.074
-},
-{
-"unit": "ROOF_TANK",
-"level": "L2",
-"empty_kg": 70.2,
-"op_kg": 1792.7,
-"test_kg": 1824.7,
-"foot_m2": 1.11
-},
-{
 "unit": "SALT_FEED",
 "level": "L-1",
 "empty_kg": 86.4,
 "op_kg": 86.4,
 "test_kg": 86.4,
 "foot_m2": 0.48
-},
-{
-"unit": "WAFER_FAB",
-"level": "L0",
-"empty_kg": 0.6,
-"op_kg": 4.3,
-"test_kg": 4.4,
-"foot_m2": 0.019
-},
-{
-"unit": "WET_BENCH",
-"level": "L0",
-"empty_kg": 15.1,
-"op_kg": 113.8,
-"test_kg": 115.7,
-"foot_m2": 0.165
 },
 {
 "unit": "WIRE_DRAW",
@@ -1499,24 +1387,24 @@
 "unit": "HYDRO_RES_R1",
 "level": "R1",
 "empty_kg": 88128.0,
-"op_kg": 1201342.2,
-"test_kg": 1201342.2,
+"op_kg": 1212495.6,
+"test_kg": 1212495.6,
 "foot_m2": 367.2
 },
 {
 "unit": "HYDRO_RES_R2",
 "level": "R2",
 "empty_kg": 88128.0,
-"op_kg": 1201342.2,
-"test_kg": 1201342.2,
+"op_kg": 1212495.6,
+"test_kg": 1212495.6,
 "foot_m2": 367.2
 },
 {
 "unit": "HYDRO_RES_R3",
 "level": "R3",
 "empty_kg": 88128.0,
-"op_kg": 1201342.2,
-"test_kg": 1201342.2,
+"op_kg": 1212495.6,
+"test_kg": 1212495.6,
 "foot_m2": 367.2
 }
 ]

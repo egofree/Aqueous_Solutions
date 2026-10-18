@@ -848,7 +848,7 @@ def conserve(g, R):
 
 def species(g, R, X):
     E = {e["stream_id"]: e for e in g["edges"]}
-    v = lambda s: E[s]["rate"]["value"]  # noqa: E731
+    v = lambda s: E[s]["rate"]["value"] if s in E else 0.0  # noqa: E731  # R11 Rev AC regen: retired stream ids (e.g. S05) read as 0
     out = {}
     s67co2 = E["S67"].get("params", {}).get("co2_kg_d", hl.CO2_AB_KG_D)
     a = hl.CO2_AB_KG_D + X["s11_co2"]

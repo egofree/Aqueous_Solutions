@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 42.31 kg/d. Mass out 42.31 kg/d. Electrical duty 0.0000 kW. In: S18 0 kg/d (flue-carbon claim reference (no CO2 mass since Rev J)); S67B 13.81 kg/d (CO2-rich gas after KO); S82 6.875 kg/d (CO₂ return from MeOH FC); IA-ASU-CO2 21.63 kg/d (CO2 product). Out: S04 0 kg/d (CO2); S73 41.56 kg/d (CO2 feedstock); S85 0.7499 kg/d (CO2 product after FLUE_KO); IA-CO2-RET 0 kg/d (CO2 return).
+1. Basis. Mass in 42.67 kg/d. Mass out 42.67 kg/d. Electrical duty 0.0000 kW. In: S18 0 kg/d (captured CO2/air); S67B 14.05 kg/d (CO2-rich gas after KO); S82 6.875 kg/d (CO₂ return from MeOH FC); IA-ASU-CO2 21.75 kg/d (CO2 product). Out: S04 0 kg/d (CO2); S73 42.67 kg/d (CO2 feedstock); S85 0 kg/d (CO2 product after FLUE_KO); IA-CO2-RET 0 kg/d (CO2 return).
 
 2. Size.
 - Not a packed tower. The column diameter and the tray count are on CRYO_ASU only.

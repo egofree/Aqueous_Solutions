@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 31.26 kg/d. Mass out 31.26 kg/d. Electrical duty 0.0000 kW. In: S75 30.26 kg/d (methanol); S77 0.0146 kg/d (biogenic MeOH); IA-EM-CH4 0.6254 kg/d (methane); IA-CLOSE-7 0.3554 kg/d (compost condensate to the methanol tank). Out: S76 4.579 kg/d (MeOH fuel); IA-MEOH-REST 1.28 kg/d (tank draw); IA-MEOH-FORM 0 kg/d (methanol to formaldehyde); IA-MEOH-MEAM 0.04 kg/d (methanol to methylamine); 2 more.
+1. Basis. Mass in 33.37 kg/d. Mass out 33.37 kg/d. Electrical duty 0.0000 kW. In: S75 33.35 kg/d (crude MeOH); S77 0.0146 kg/d (biogenic MeOH). Out: S76 5 kg/d (MeOH fuel); IA-MEOH-REST 1.28 kg/d (tank draw); IA-MEOH-PROD 27.09 kg/d (methanol product).
 
 2. Size.
 - Envelope 800×800×1100 mm is the shell. It is not full. Working volume, 7 days of throughput: V = (6.02/1000)×(168/24) = 0.0421 m³.

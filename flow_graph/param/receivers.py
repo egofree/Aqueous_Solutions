@@ -14,7 +14,8 @@ def design(d, g):
     pc = N['CRYO_CO2']['params']; inflow = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == 'CRYO_CO2' and e['presence'] == 'present' and (e['rate'] or {}).get('unit') == 'kg/d')
     pc['store_kg'] = round(DR.val(d, 'co2_store_hold_d')*inflow, 3); pc['store_water_volume_m3'] = round(pc['store_kg']/DR.val(d, 'co2_liq_rho_kg_m3')/DR.val(d, 'co2_fill'), 4)   # A-M-181
     for u in ('CRYO_H2', 'CRYO_O2', 'CRYO_CO2'):
-        p = N[u]['params']; P = p['design_kPa']/1000; t_req = P*OD/(2*(S + P*0.4)); tmin = T*0.875
+        p = N[u]['params']; P = p.get('design_kPa', 2200 if u == 'CRYO_CO2' else 22000)/1000   # R11 Rev AC regen: params.design_kPa dropped from the graph in Rev AC; module basis A-M-167 (22 MPa) / A-M-180 (2200 kPa g)
+        t_req = P*OD/(2*(S + P*0.4)); tmin = T*0.875
         ID = OD - 2*T; a = math.pi*(ID/1000)**2/4
         banks = [('main', p['store_water_volume_m3'])]
         if u == 'CRYO_O2' and p.get('crew_reserve_kg'): banks.append(('crew reserve', p['store_water_volume_m3']*p['crew_reserve_kg']/p['store_kg']))

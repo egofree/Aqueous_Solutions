@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.21 kg/d. Mass out 0.21 kg/d. Electrical duty 0.0000 kW. In: IA-ETOH-SOL 0 kg/d (retired direct solvent edge); IA-ACETONE 0.06 kg/d (acetone); IA-ABE-ETOH 0.02 kg/d (ABE ethanol); IA-ETOH-R 0.1 kg/d (ethanol product); 2 more. Out: IA-SOLV-WB 0.21 kg/d (ethanol and acetone).
+1. Basis. Mass in 0 kg/d. Mass out 0.21 kg/d. Electrical duty 0.0000 kW. In: none. Out: IA-SOLV-WB 0.21 kg/d (ethanol and acetone).
 
 2. Size.
 - In 0.2100 kg/d, out 0.2100 kg/d. No holdup claimed.
