@@ -29,8 +29,8 @@ from ..models import (
 )
 from ..sector_definitions import (
     ESS_PEER_SECTOR_IDS,
+    SECTOR_CATALOGUE,
     UNRECLAIMED_RESOURCE_REASON,
-    SectorDefinition,
 )
 from .scale_down_map import (
     SECTOR_OFF_UNRECLAIMED,
@@ -238,27 +238,31 @@ def _report_gaps(model: MvsModel) -> list[GapModel]:
                 )
             )
 
-    # Missing Sector Definition classes that the enabled graph may still need
+    # Missing Sector Definition classes that the enabled graph may still need.
+    # Re-derived from SECTOR_CATALOGUE (AQS-SEC-001 Rev E + Rev AC sector
+    # refresh, 2026-10-18): every definition carried by a required sector
+    # must be present on some enabled sector. The former hardcoded list kept
+    # demanding 'Energy Production (Electrical)' after its only sector
+    # (ELEC_PV) became the PV_ARRAY unit in ELEC, leaving the all-on
+    # baseline permanently infeasible via missing_sector_definition.
     present_defs = {
         str(s.sector_definition) for s in model.sectors if s.enabled
     }
-    for needed in (
-        SectorDefinition.PROCESS_MASS_TRANSFORM.value,
-        SectorDefinition.LIFE_SUPPORT_HABITAT.value,
-        SectorDefinition.UTILITY_HEADER.value,
-        SectorDefinition.EXPORT_DOCK.value,
-        SectorDefinition.ENERGY_PRODUCTION_ELECTRICAL.value,
-    ):
-        if needed not in present_defs:
-            gaps.append(
-                GapModel(
-                    sector_definition=needed,
-                    sector_id=None,
-                    stream_id=None,
-                    reason="missing_sector_definition",
-                    detail=f"No enabled sector carries definition '{needed}'.",
-                )
+    required_defs = {
+        row["sector_definition"]
+        for row in SECTOR_CATALOGUE
+        if row["required_for_mvs_closure"]
+    }
+    for needed in sorted(required_defs - present_defs):
+        gaps.append(
+            GapModel(
+                sector_definition=needed,
+                sector_id=None,
+                stream_id=None,
+                reason="missing_sector_definition",
+                detail=f"No enabled sector carries definition '{needed}'.",
             )
+        )
 
     # Orphan stream endpoints
     unit_ids = {u.unit_id for u in model.units}
@@ -285,6 +289,12 @@ def _report_gaps(model: MvsModel) -> list[GapModel]:
 def _report_unclosed(model: MvsModel) -> list[UnclosedStreamModel]:
     enabled = _enabled_sector_ids(model)
     unit_map = _unit_sector_map(model)
+    # Unit-endpoint awareness (Rev AC unit toggles): a stream touching a
+    # disabled unit is open at that endpoint even while both parent sectors
+    # stay enabled. Sector-level checks above are unchanged.
+    disabled_units = {
+        u.unit_id for u in model.units if not getattr(u, "enabled", True)
+    }
     out: list[UnclosedStreamModel] = []
     for st in model.streams:
         if st.open_boundary:
@@ -317,6 +327,24 @@ def _report_unclosed(model: MvsModel) -> list[UnclosedStreamModel]:
                     to_unit_id=st.to_unit_id,
                 )
             )
+        elif st.from_unit_id in disabled_units:
+            out.append(
+                UnclosedStreamModel(
+                    stream_id=st.stream_id,
+                    reason="upstream_unit_off",
+                    from_unit_id=st.from_unit_id,
+                    to_unit_id=st.to_unit_id,
+                )
+            )
+        elif st.to_unit_id in disabled_units:
+            out.append(
+                UnclosedStreamModel(
+                    stream_id=st.stream_id,
+                    reason="downstream_unit_off",
+                    from_unit_id=st.from_unit_id,
+                    to_unit_id=st.to_unit_id,
+                )
+            )
         elif st.rate is None or st.rate.value is None:
             kind = getattr(st, "null_rate_kind", None)
             if kind == "inventory_cycle":
@@ -344,6 +372,10 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
     """Hook electrical generation / storage / load against study envelopes."""
     residuals: list[ResidualItem] = []
     enabled = _enabled_sector_ids(model)
+    # Unit-level toggles (Rev AC): PV_ARRAY / FUEL_CELL / BACKUP_GEN / ZNBR2
+    # are units in ELEC, so their kW follows the unit's own enabled flag —
+    # a disabled unit leaves the envelope even while ELEC stays on.
+    unit_on = {u.unit_id: bool(getattr(u, "enabled", True)) for u in model.units}
     elec = model.electrical
 
     gen_kw = 0.0
@@ -354,6 +386,9 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
 
     for u in model.units:
         if u.sector_id not in enabled:
+            continue
+        if not unit_on.get(u.unit_id, True):
+            # Disabled unit — its kW leaves the envelope.
             continue
         ck = u.continuous_kw
         val = ck.value if ck and ck.value is not None else None
@@ -370,11 +405,15 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
     pv_kw = None
     if elec.pv_count is not None and elec.pv_module_kw is not None:
         pv_kw = elec.pv_count * elec.pv_module_kw
-        if "ELEC_PV" in enabled and "PV_ARRAY" not in gen_sources:
-            # PV_ARRAY already books its nameplate as a generation-role unit;
-            # the electrical-block product is the same plant — count it once.
+        # PV is counted only when its unit is on (ELEC_PV sector deleted at
+        # the Rev AC pivot; PV_ARRAY is a generation-role unit in ELEC). A
+        # model without a PV_ARRAY unit row has nothing to disable, so the
+        # module product stands. Double-count guard kept: when PV_ARRAY
+        # already books its nameplate as a generation-role unit, the
+        # electrical-block product is the same plant — count it once.
+        if unit_on.get("PV_ARRAY", True) and "PV_ARRAY" not in gen_sources:
             gen_kw += pv_kw
-            gen_sources.append("ELEC_PV_modules")
+            gen_sources.append("PV_ARRAY_modules")
 
     need = elec.need_kw.value if elec.need_kw and elec.need_kw.value is not None else None
     target = (
@@ -389,8 +428,12 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
         "target_kw": target,
         "pv_nameplate_kw_study": pv_kw,
         "enabled_storage_options": [
-            s for s in elec.storage_options if s in enabled or s.replace("ELEC_", "") in enabled
-            or any(sec == s for sec in enabled)
+            # Options named as units (ZNBR2 since Rev AC) follow the unit's
+            # enabled flag; options named as sectors (MEOH, PUMPED_HYDRO)
+            # follow the sector toggle.
+            s
+            for s in elec.storage_options
+            if (unit_on.get(s, True) if s in unit_on else s in enabled)
         ],
         "status": "incomplete",
         "note": (
@@ -432,7 +475,11 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
 
 
 def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
-    """Surplus from FARM/WTR/WET·MFG·FAB/ELEC_PV vs AQS-SUR-001 study thresholds."""
+    """Surplus from FARM/WTR/DIGESTER·MFG·FAB/PV_ARRAY vs AQS-SUR-001 study thresholds.
+
+    Energy gate is the PV_ARRAY unit (ELEC_PV sector deleted at the Rev AC
+    pivot; PV is a unit in ELEC).
+    """
     enabled = _enabled_sector_ids(model)
     thr = model.mvs_criteria.surplus_thresholds
     food_thr = thr.food_kg_d_min if thr and thr.food_kg_d_min is not None else 0.5
@@ -485,10 +532,12 @@ def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
         else:
             water_note = "WTR on but S01/S21 rates null — water surplus unknown."
 
-    # Goods: study exportable from metals/polymer when WET+MFG(+FAB)
+    # Goods: study exportable from metals/polymer when DIGESTER·MFG(+FAB)
+    # (WET renamed DIGESTER at the Rev AC sector pivot; the WET test is
+    # kept for legacy sandboxes)
     goods_val = None
     goods_pass = None
-    goods_note = "WET/MFG off — materials gap."
+    goods_note = "DIGESTER/MFG off — materials gap."
     if "WET" in enabled or "MFG" in enabled:
         s08 = rates.get("S08")
         if s08 is not None:
@@ -506,13 +555,22 @@ def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
                     f"threshold {goods_thr} kg/d; pass_study={goods_pass}."
                 )
         else:
-            goods_note = "WET/MFG on; S08 null — goods surplus unknown."
+            goods_note = "DIGESTER/MFG on; S08 null — goods surplus unknown."
 
-    # Energy: (target−need)×study_sun_h
+    # Energy: (target−need)×study_sun_h — gated on the PV_ARRAY unit
+    # (ELEC_PV sector deleted at Rev AC; PV_ARRAY is a unit in ELEC).
+    pv_unit_on = next(
+        (
+            bool(getattr(u, "enabled", True))
+            for u in model.units
+            if u.unit_id == "PV_ARRAY"
+        ),
+        True,
+    )
     energy_val = None
     energy_pass = None
-    energy_note = "ELEC_PV off — energy surplus gap."
-    if "ELEC_PV" in enabled:
+    energy_note = "PV_ARRAY unit off — energy surplus gap."
+    if pv_unit_on:
         need = model.electrical.need_kw.value if model.electrical.need_kw else None
         target = model.electrical.target_kw.value if model.electrical.target_kw else None
         sun_h = 4.0  # AQS-SUR-001 placeholder until SITE_LAT
@@ -526,7 +584,7 @@ def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
                 f"SITE_LAT={'null — insolation unknown' if lat is None else lat}."
             )
         else:
-            energy_note = "ELEC_PV on; need/target incomplete — energy surplus unknown."
+            energy_note = "PV_ARRAY on; need/target incomplete — energy surplus unknown."
 
     return {
         "food": SurplusItem(

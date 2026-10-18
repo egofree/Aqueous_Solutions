@@ -130,6 +130,15 @@ def graph_node_to_unit(node: dict[str, Any]) -> UnitModel:
             status=_map_rate_status(cw_raw.get("status")),
             note=cw_raw.get("note"),
         )
+    elif cw_raw is not None:
+        # Rev AC graph shorthand: bare number = {value: n, unit: kW,
+        # status: study} (same contract as UnitModel._coerce_kw). Passing it
+        # through instead of dropping it keeps the unit's kW in the
+        # electrical envelope — the FOUNDRY furnace feeds (IND_MELT/RF_HEAT/
+        # VAC_IND) arrive in this shape.
+        continuous_kw = Quantity(
+            value=float(cw_raw), unit="kW", status=RateStatus.STUDY
+        )
     return UnitModel(
         unit_id=node["unit_id"],
         sector_id=node["sector_id"],
