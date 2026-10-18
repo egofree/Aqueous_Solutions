@@ -80,7 +80,16 @@ consolidation dropped graph data that the closed-balance stack depends on.
   (PV dedup 77.5 kW live), web build, canonical-vs-working-copy parity (zero
   drift), git hygiene (fsck clean, remote == main).
 
-## Remediation plan (2026-10-17, post-QA)
+## Owner decisions 2026-10-17
+
+- R8 acid loop: restore EVAP_ACID/EVAP_BASE from Rev BH (books still size them).
+- Sector ontology (owner correction): the plant is organized into SECTORS, not
+  task-plan groupings. DIGESTER is the renamed WET line; FOUNDRY, MFG, FAB, FARM,
+  HAB, POLYMERS are each their own sector. A DIGESTER->MET task-plan mapping was
+  applied and REVERTED same day (owner stopped it); the task-plan system structure
+  is pending the sector-hierarchy review — do not fold sectors into other systems
+  without an owner decision.
+
 
 Wave 1 — independent, parallelizable (small, verifiable):
 - R1 `pack_name` validation in `export/pack.py` (reject `/`, `\`, `..`; assert
