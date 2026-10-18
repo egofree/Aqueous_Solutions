@@ -8322,7 +8322,7 @@
   "mvs": {
     "schema_version": "aqs-mvs-0.3",
     "doc_id": "AQS-MVS-001",
-    "revision": "F+local-candidate",
+    "revision": "AC",
     "licence": "CERN-OHL-S-2.0",
     "scale_m": 1.0,
     "status": "candidate",
