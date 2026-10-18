@@ -3980,5 +3980,22 @@
     ],
     "needs_verification": true,
     "verification_test": "python3 -c \"import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)\" runs to completion with no assert; GROW_BED residual 0.000 kg/d; TERRACE_IRRIG absent; python3 flow_graph/check_authority_contract.py exit 0"
+  },
+  {
+    "id": "A-M-230",
+    "value": "H2O_ELYZ restored as the plant O2 source: BH rates on the graph IA-ELY-O2 85.166 + IA-ELY-H2 10.732 + IA-ELY-H2O 95.898 kg/d, SF-H2O_ELYZ 24.59 kW; TF re-basis sizes H2 = S45 + S49 + S74 gross pool draws = 11.226 kg/d H2 -> 89.090 kg/d O2, 100.316 kg/d water, 25.73 kW average / 102.9 kW rated on the 6 h PV window. O2 system closes: sources 89.799 (ELYZ 89.090 + bed S87 0.642 + ASU recovery IA-ASU-O2 0.067) vs draws 45.193 (HDR_O2 3.393: IA-FC-AIR 2.481 + IA-H2O2-SRC 0.176 + IA-GEN-O2 0.208 + IA-AB-O2 0.528; direct CRYO_O2 41.800: S02 crew 3.4 + S50 fuel cell 38.4); surplus 44.605 kg/d shipped on IA-O2-PROD/IA-O2-SHIP; CRYO_O2.params.o2_gap system_short 0.0, system_surplus 44.605",
+    "units": "kg/d; kW",
+    "where": "flow_graph/plant_flow_graph.json: H2O_ELYZ node (BH sector CRYO still extant) + edges IA-ELY-H2O (ROOF_TANK->H2O_ELYZ), IA-ELY-H2 (->CRYO_H2), IA-ELY-O2 (->CRYO_O2), SF-H2O_ELYZ (SOL_ARK_60K->H2O_ELYZ); SQ-H2O_ELYZ NOT restored (BH destination HEAT_SINK retired in Rev AC); flow_graph/param/o2_close.py: ELY tf section re-enabled and re-based, close_o2 S83 = src - direct CRYO_O2 draws - IA-O2-MAKE (S02/S50 were re-homed onto CRYO_O2 in Rev AC; the old BH formula left CRYO_O2 -41.8 kg/d)",
+    "basis": "Owner ruling 2026-10-18 (D-O2, recorded 9b742c4): restore H2O_ELYZ — the ASU proved to be a species-recovery box (no air intake, not an O2 source); the PEM electrolyser is the O2 source and with the crew-duty grow bed (A-M-229) restores the diverse N+1 O2 pair (P19): electric + biological. Node and edges restored verbatim from Rev BH (fa1b4db). ELY sized on gross H2 pool draws (genset S45, standby TF -> 0; fuel cell S49 4.8; methanol S74 6.426 post-TF): the stale EW cathode-H2 study rates (IA-HDR-H2-01/03/04 -> S64, 4.8 kg/d into CRYO_H2) are not credited — the BH Faraday basis routes cathode H2 to HCl synthesis, not the pool, and crediting the phantom would undersize the O2 source below the draws. O2 = 7.937 x H2, 55 kWh/kg H2 (IEA_GHR2023, A-M-133). Resolves the A-M-228 gap record (system gap 44.485 -> surplus 44.605).",
+    "sensitivity": "Residuals reported, not absorbed: (1) CRYO_H2 +4.8 kg/d = the stale EW cathode-H2 phantom arriving with no draw (L['ely']['h2_pool_resid_kg_d']; R10 owns the EW study-rate re-basis); HDR_H2 and H2_DRYER pass 4.8 in = 4.8 out coherently on the same stale rates. (2) Stack heat 7.30 kW computed and reported in H2O_ELYZ.params.stack_heat_kw — BH SQ-H2O_ELYZ destination HEAT_SINK is retired; re-home (e.g. Q4_BUS per AQS-HEAT-STUDY-002) is heat-ladder lane work, NOT done here. (3) SF-H2O_ELYZ adds 25.73 kW average to the SOL_ARK_60K bus; close_power nets IA-PV-01 242.07 -> 241.90 kW (other TF re-solutions offset); the PV nameplate chain stays owned by the D-PV derivation (A-M-209..216). (4) NORTH_DOCK export imbalance grows 38.9 -> 83.5 kg/d pre-reconcile with the O2 product shipped. Failure count (units out of balance before reconcile) 43 -> 41; no new failing units.",
+    "replaced_by": "R10 EW re-basis removing the stale cathode-H2 study rates (closes the CRYO_H2 +4.8 phantom); heat-ladder re-home of the 7.30 kW stack heat; measured PEM efficiency replacing the 55 kWh/kg driver; D-PV re-derivation absorbing the ELY feeder into the bounding load",
+    "task": "R10",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/o2_close.py",
+      "notes/first_principles_audit_2026-10-17.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -c \"import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)\" completes with no assert and no negative rates; CRYO_O2.params.o2_gap.system_short_kg_d == 0.0 and system_surplus_kg_d > 0 with IA-O2-PROD == IA-O2-SHIP == system_surplus; CRYO_O2, HDR_O2, H2O_ELYZ, ROOF_TANK unit residuals 0.000; two independent O2 sources present (P19: IA-ELY-O2 + S87); python3 flow_graph/check_authority_contract.py exit 0"
   }
 ]

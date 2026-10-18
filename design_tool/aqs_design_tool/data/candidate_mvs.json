@@ -585,6 +585,42 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "H2O_ELYZ",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "pem_electrolyser",
+      "tags": [],
+      "params": {
+        "internals": "PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer",
+        "presence": "present",
+        "note": "X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734).",
+        "design_kPa": 990.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "blocked outlet at full inflow 1.789 kg/h (hydrogen side of the PEM stack at the compressor suction (h2c_P1_bar 10 bar a); O2 side on its own valve at the same set, A-M-196); operating 9 bar, design 9.9 bar g",
+          "P1_kPa_abs": 1190.3,
+          "T_K": 353.15,
+          "M_kg_kmol": 2.016,
+          "k": 1.41,
+          "Z": 1.0,
+          "W_kg_h": 1.7886,
+          "method": "API 520 Part I gas critical flow (API520); pressure class A-M-156; fire case per cylinder CGA_S1_1 under X-SAF-04",
+          "A_req_mm2": 0.75,
+          "bore_req_mm": 0.98,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true
+        }
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 24.5933,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-12 TF: 10.73 kg/d H2 x 55.0 kWh/kg / 24 h; rated 98.4 kW on a 6.0 h PV window."
+      }
+    },
+    {
       "unit_id": "EW_1",
       "sector_id": "DIGESTER",
       "enabled": true,
@@ -10606,6 +10642,74 @@
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; layers=elec"
+    },
+    {
+      "stream_id": "IA-ELY-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "H2O_ELYZ",
+      "phase": "L",
+      "carries": "electrolyser feed water",
+      "rate": {
+        "value": 95.897876,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ELY-H2",
+      "from_unit_id": "H2O_ELYZ",
+      "to_unit_id": "CRYO_H2",
+      "phase": "G",
+      "carries": "electrolyser H2",
+      "rate": {
+        "value": 10.731619,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand: genset + fuel cell + methanol (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ELY-O2",
+      "from_unit_id": "H2O_ELYZ",
+      "to_unit_id": "CRYO_O2",
+      "phase": "G",
+      "carries": "electrolyser O2",
+      "rate": {
+        "value": 85.166257,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-H2O_ELYZ",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "H2O_ELYZ",
+      "phase": "E",
+      "carries": "480 V AC (daily average)",
+      "rate": {
+        "value": 24.5933,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=elec"
     },
     {
       "stream_id": "IA-O2-PROD",
