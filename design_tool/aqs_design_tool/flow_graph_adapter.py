@@ -33,6 +33,34 @@ _DIAGRAMS = FLOW_GRAPH_PACKAGE.parent
 if str(_DIAGRAMS) not in sys.path:
     sys.path.insert(0, str(_DIAGRAMS))
 
+# U4a system tree — cached per process; the YAML is static between
+# regens and resolve calls happen on every sandbox create/patch.
+_SYSTEM_TREE = None
+
+
+def _system_tree():
+    global _SYSTEM_TREE
+    if _SYSTEM_TREE is None:
+        from flow_graph.system_tree import load as _load_tree  # type: ignore
+
+        _SYSTEM_TREE = _load_tree()
+    return _SYSTEM_TREE
+
+
+def resolve_tree_units(node_id: str) -> set[str]:
+    """Unit ids under a system-tree node (``FOUNDRY.form-train`` etc.).
+
+    KeyError on an unknown node id — toggle keys must name real tree
+    nodes so typos fail loudly instead of silently no-oping.
+    """
+    return _system_tree().resolve_units(node_id)
+
+
+def tree_override_unit_sets(node_ids: Any) -> dict[str, set[str]]:
+    """Resolve several tree node ids at once -> {node_id: unit set}."""
+    tree = _system_tree()
+    return {str(n): tree.resolve_units(str(n)) for n in node_ids}
+
 
 def load_plant_flow_graph_dict(path: Path | None = None) -> dict[str, Any]:
     p = path or FLOW_GRAPH_JSON

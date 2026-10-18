@@ -115,6 +115,10 @@ export interface FlagsResponse {
 
 export interface SandboxOverrides {
   sector_enabled?: Record<string, boolean>
+  /** U4a system tree: sector-root or train node ids (dotted, e.g. 'FOUNDRY.form-train'). */
+  system_enabled?: Record<string, boolean>
+  /** U4a system tree: subsystem node ids (e.g. 'FOUNDRY.melt-and-cast-train.cast'). */
+  subsystem_enabled?: Record<string, boolean>
   unit_enabled?: Record<string, boolean>
   scale_m?: number | null
   crew?: number | null

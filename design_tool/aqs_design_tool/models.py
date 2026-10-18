@@ -271,9 +271,21 @@ class MvsModel(BaseModel):
 
 
 class SandboxOverrides(BaseModel):
+    """Sandbox toggles over the system tree (U4a) and the MVS model.
+
+    Specificity order, least to most: ``sector_enabled`` →
+    ``system_enabled`` (sector root or train node) → ``subsystem_enabled``
+    (subsystem node) → ``unit_enabled``.  Keys of the tree maps are
+    dotted node ids from ``flow_graph/system_tree.yaml`` (e.g.
+    ``FOUNDRY.melt-and-cast-train``, ``FOUNDRY.melt-and-cast-train.cast``);
+    ``apply_overrides`` resolves them to unit sets, most-specific wins.
+    """
+
     model_config = ConfigDict(extra="forbid")
 
     sector_enabled: dict[str, bool] = Field(default_factory=dict)
+    system_enabled: dict[str, bool] = Field(default_factory=dict)
+    subsystem_enabled: dict[str, bool] = Field(default_factory=dict)
     unit_enabled: dict[str, bool] = Field(default_factory=dict)
     scale_m: Optional[float] = None
     crew: Optional[int] = None

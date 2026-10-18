@@ -50,6 +50,23 @@ def _enabled_sector_ids(model: MvsModel) -> set[str]:
     return {s.sector_id for s in model.sectors if s.enabled}
 
 
+def _enabled_units(model: MvsModel) -> set[str]:
+    """Unit-aware effective on-set (U4a system tree).
+
+    A unit is on only when its own toggle AND its parent sector are on.
+    Train/subsystem toggles (SandboxOverrides.system_enabled /
+    subsystem_enabled) resolve to per-unit flags in
+    ``store.apply_overrides``, so tree offs flow through here without a
+    separate tree dependency in the solver.
+    """
+    sectors = _enabled_sector_ids(model)
+    return {
+        u.unit_id
+        for u in model.units
+        if getattr(u, "enabled", True) and u.sector_id in sectors
+    }
+
+
 def _disabled_sectors(model: MvsModel) -> list:
     return [s for s in model.sectors if not s.enabled]
 
@@ -289,12 +306,11 @@ def _report_gaps(model: MvsModel) -> list[GapModel]:
 def _report_unclosed(model: MvsModel) -> list[UnclosedStreamModel]:
     enabled = _enabled_sector_ids(model)
     unit_map = _unit_sector_map(model)
-    # Unit-endpoint awareness (Rev AC unit toggles): a stream touching a
-    # disabled unit is open at that endpoint even while both parent sectors
-    # stay enabled. Sector-level checks above are unchanged.
-    disabled_units = {
-        u.unit_id for u in model.units if not getattr(u, "enabled", True)
-    }
+    # Unit-endpoint awareness (Rev AC unit toggles; U4a train toggles):
+    # a stream touching a disabled unit — own flag off, or off via a tree
+    # node — is open at that endpoint even while both parent sectors stay
+    # enabled. Sector-level checks above are unchanged.
+    disabled_units = {u.unit_id for u in model.units} - _enabled_units(model)
     out: list[UnclosedStreamModel] = []
     for st in model.streams:
         if st.open_boundary:
@@ -374,8 +390,11 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
     enabled = _enabled_sector_ids(model)
     # Unit-level toggles (Rev AC): PV_ARRAY / FUEL_CELL / BACKUP_GEN / ZNBR2
     # are units in ELEC, so their kW follows the unit's own enabled flag —
-    # a disabled unit leaves the envelope even while ELEC stays on.
-    unit_on = {u.unit_id: bool(getattr(u, "enabled", True)) for u in model.units}
+    # a disabled unit leaves the envelope even while ELEC stays on. U4a:
+    # train/subsystem offs land on the same flags (see _enabled_units).
+    unit_on = {
+        u.unit_id: u.unit_id in _enabled_units(model) for u in model.units
+    }
     elec = model.electrical
 
     gen_kw = 0.0

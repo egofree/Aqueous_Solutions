@@ -93,10 +93,37 @@ def apply_overrides(model: MvsModel, overrides: SandboxOverrides) -> MvsModel:
         data["site"]["crew"] = overrides.crew
     if overrides.site_lat_deg is not None:
         data["site"]["site_lat_deg"] = overrides.site_lat_deg
+    # Least specific first: sector rows (graph mvs.sectors), then tree
+    # nodes (U4a). Tree keys are dotted ids in system_tree.yaml; a sector
+    # id is also a valid tree node (root), so system_enabled{'ELEC'} acts
+    # on units only while sector_enabled also flips the sector row.
     for sec in data.get("sectors", []):
         sid = sec["sector_id"]
         if sid in overrides.sector_enabled:
             sec["enabled"] = bool(overrides.sector_enabled[sid])
+    if overrides.system_enabled or overrides.subsystem_enabled:
+        from ..flow_graph_adapter import tree_override_unit_sets
+
+        # subsystem entries merge after system entries, so a subsystem
+        # flag outranks a train flag on overlap; unit_enabled below
+        # outranks both (most-specific wins).
+        merged: dict[str, bool] = {}
+        for node_id, flag in {
+            **overrides.system_enabled,
+            **overrides.subsystem_enabled,
+        }.items():
+            try:
+                unit_set = tree_override_unit_sets([node_id])[node_id]
+            except KeyError as exc:
+                raise KeyError(
+                    f"override node '{node_id}' is not in "
+                    f"flow_graph/system_tree.yaml: {exc}"
+                ) from None
+            for uid in unit_set:
+                merged[uid] = bool(flag)
+        for unit in data.get("units", []):
+            if unit["unit_id"] in merged:
+                unit["enabled"] = merged[unit["unit_id"]]
     if overrides.unit_enabled:
         for unit in data.get("units", []):
             uid = unit["unit_id"]

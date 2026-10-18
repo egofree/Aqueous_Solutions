@@ -1,0 +1,832 @@
+# AQS-SYS-TREE-001 Rev A — nested system tree over AQS-FLOW-GRAPH-001 (AC).
+#
+# U4a tree-of-trees, owner-confirmed decomposition 2026-10-18:
+#   sector root -> train -> subsystem (where real) -> unit leaf.
+# Single-parent containment; dotted ids derive from the path; cross-cutting
+# concerns (headers, junctions, Q4 services) join the train they serve and
+# never become shared children.  The graph stays sole authority: this file
+# only partitions it, and flow_graph/system_tree.py fails loudly on drift.
+schema_version: aqs-system-tree-0.1
+doc_id: AQS-SYS-TREE-001
+revision: A
+date: "2026-10-18"
+licence: CERN-OHL-S-2.0
+sector_exceptions:
+  EVAP_ACID_VS: WET  # graph sector WET is pre-rename DIGESTER (Rev X); tree root DIGESTER
+notes: >-
+  Standby trains (pot-cell, investment-casting, fluoropolymer, litho) are
+  booked present in the graph with rates TBD; standby is a description here,
+  not a presence.  Levels and children are derived, never hand-edited.
+nodes:
+  - id: DIGESTER
+    description: >-
+      Process (Mass transform) — leach / EW / BMED / polish; 150 kg/d wet feed basis.
+  - id: DIGESTER.metals-leach-train
+    parent: DIGESTER
+    description: >-
+      Brine metals loop: salt feed, leach CSTR, float/sink, polish and recovery; BMED acid/base
+      regeneration with evaporators. F_RECOVER fluoride concentrate feeds POLYMERS.HF_GEN.
+  - id: DIGESTER.metals-leach-train.brine-loop
+    parent: DIGESTER.metals-leach-train
+    description: >-
+      Leach CSTR with float/sink, continuous recycle, polish bank, Li recovery and Ca precip; CRU
+      chlorate regen; fluoride recovery; S13_CLASS_TREAT retired traceability row.
+  - id: DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: LEACH_CSTR_1
+  - id: DIGESTER.metals-leach-train.brine-loop.FLOAT_SINK
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: FLOAT_SINK
+  - id: DIGESTER.metals-leach-train.brine-loop.CONTINUOUS_RECYCLE
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: CONTINUOUS_RECYCLE
+  - id: DIGESTER.metals-leach-train.brine-loop.POLISH_BANK
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: POLISH_BANK
+  - id: DIGESTER.metals-leach-train.brine-loop.LI_RECOVER
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: LI_RECOVER
+  - id: DIGESTER.metals-leach-train.brine-loop.P_CA
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: P_CA
+  - id: DIGESTER.metals-leach-train.brine-loop.CRU
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: CRU
+  - id: DIGESTER.metals-leach-train.brine-loop.SALT_FEED
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: SALT_FEED
+  - id: DIGESTER.metals-leach-train.brine-loop.F_RECOVER
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: F_RECOVER
+  - id: DIGESTER.metals-leach-train.brine-loop.S13_CLASS_TREAT
+    parent: DIGESTER.metals-leach-train.brine-loop
+    unit_id: S13_CLASS_TREAT
+  - id: DIGESTER.metals-leach-train.acid-base-regen
+    parent: DIGESTER.metals-leach-train
+    description: >-
+      BMED acid/base pairs with the 20 wt% regen evaporators; EVAP_ACID_VS vent scrubber returns
+      spent liquor to the BMED brine (graph sector WET = pre-rename DIGESTER).
+  - id: DIGESTER.metals-leach-train.acid-base-regen.BMED_ACID
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: BMED_ACID
+  - id: DIGESTER.metals-leach-train.acid-base-regen.BMED_BASE
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: BMED_BASE
+  - id: DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: EVAP_ACID
+  - id: DIGESTER.metals-leach-train.acid-base-regen.EVAP_BASE
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: EVAP_BASE
+  - id: DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: EVAP_ACID_VS
+  - id: DIGESTER.ew-cascade-train
+    parent: DIGESTER
+    description: >-
+      EW-1 to EW-9 gravity cascade on the leach liquor; HX8 rejects EW heat into the Q4 return.
+  - id: DIGESTER.ew-cascade-train.cascade
+    parent: DIGESTER.ew-cascade-train
+    description: >-
+      EW_1 through EW_9 overflow cascade; DC from RECTIFIER, plated sheet to MFG, Cl2 to leach.
+  - id: DIGESTER.ew-cascade-train.cascade.EW_1
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_1
+  - id: DIGESTER.ew-cascade-train.cascade.EW_2
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_2
+  - id: DIGESTER.ew-cascade-train.cascade.EW_3
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_3
+  - id: DIGESTER.ew-cascade-train.cascade.EW_4
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_4
+  - id: DIGESTER.ew-cascade-train.cascade.EW_5
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_5
+  - id: DIGESTER.ew-cascade-train.cascade.EW_6
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_6
+  - id: DIGESTER.ew-cascade-train.cascade.EW_7
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_7
+  - id: DIGESTER.ew-cascade-train.cascade.EW_8
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_8
+  - id: DIGESTER.ew-cascade-train.cascade.EW_9
+    parent: DIGESTER.ew-cascade-train.cascade
+    unit_id: EW_9
+  - id: DIGESTER.ew-cascade-train.heat-recovery
+    parent: DIGESTER.ew-cascade-train
+    description: >-
+      HX8 EW reject preheat into the Q4 A/B return.
+  - id: DIGESTER.ew-cascade-train.heat-recovery.HX8
+    parent: DIGESTER.ew-cascade-train.heat-recovery
+    unit_id: HX8
+  - id: FOUNDRY
+    description: >-
+      Process (Mass transform) — smelting pots, casting, forging, rolling (goods-surplus train
+      with MFG/FAB).
+  - id: FOUNDRY.pot-cell-train
+    parent: FOUNDRY
+    description: >-
+      STANDBY. Reactive-metal pots (Al/Ca/Cr/Mg), Kroll Ti cell (FFC cold spare), molten-salt Mo
+      cell; Cl2 / anode-gas returns to DIGESTER.CRU; metals to IND_MELT.
+  - id: FOUNDRY.pot-cell-train.AL_POT
+    parent: FOUNDRY.pot-cell-train
+    unit_id: AL_POT
+  - id: FOUNDRY.pot-cell-train.CA_POT
+    parent: FOUNDRY.pot-cell-train
+    unit_id: CA_POT
+  - id: FOUNDRY.pot-cell-train.CR_CELL
+    parent: FOUNDRY.pot-cell-train
+    unit_id: CR_CELL
+  - id: FOUNDRY.pot-cell-train.MG_POT
+    parent: FOUNDRY.pot-cell-train
+    unit_id: MG_POT
+  - id: FOUNDRY.pot-cell-train.MO_CELL
+    parent: FOUNDRY.pot-cell-train
+    unit_id: MO_CELL
+  - id: FOUNDRY.pot-cell-train.TI_CELL
+    parent: FOUNDRY.pot-cell-train
+    unit_id: TI_CELL
+  - id: FOUNDRY.melt-and-cast-train
+    parent: FOUNDRY
+    description: >-
+      Primary melt route: induction and vacuum furnaces with flux prep feeding the cast line,
+      continuous caster, and vacuum cast.
+  - id: FOUNDRY.melt-and-cast-train.melt
+    parent: FOUNDRY.melt-and-cast-train
+    description: >-
+      Induction (primary), vacuum ISM, RF; RES/COMB alternates; flux prep from SALT_FEED.
+  - id: FOUNDRY.melt-and-cast-train.melt.IND_MELT
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: IND_MELT
+  - id: FOUNDRY.melt-and-cast-train.melt.VAC_IND
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: VAC_IND
+  - id: FOUNDRY.melt-and-cast-train.melt.RF_HEAT
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: RF_HEAT
+  - id: FOUNDRY.melt-and-cast-train.melt.RES_HEAT
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: RES_HEAT
+  - id: FOUNDRY.melt-and-cast-train.melt.COMB_HEAT
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: COMB_HEAT
+  - id: FOUNDRY.melt-and-cast-train.melt.FLUX_PREP
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: FLUX_PREP
+  - id: FOUNDRY.melt-and-cast-train.cast
+    parent: FOUNDRY.melt-and-cast-train
+    description: >-
+      Cast line, continuous caster, vacuum cast.
+  - id: FOUNDRY.melt-and-cast-train.cast.CAST_LINE
+    parent: FOUNDRY.melt-and-cast-train.cast
+    unit_id: CAST_LINE
+  - id: FOUNDRY.melt-and-cast-train.cast.CONT_CAST
+    parent: FOUNDRY.melt-and-cast-train.cast
+    unit_id: CONT_CAST
+  - id: FOUNDRY.melt-and-cast-train.cast.VAC_CAST
+    parent: FOUNDRY.melt-and-cast-train.cast
+    unit_id: VAC_CAST
+  - id: FOUNDRY.investment-casting-train
+    parent: FOUNDRY
+    description: >-
+      STANDBY. Wax pattern, shell build and burnout, investment pour, shell break; spent shell to
+      GLASS.MILL, wax reclaim and wax-to-oil.
+  - id: FOUNDRY.investment-casting-train.WAX_PATTERN
+    parent: FOUNDRY.investment-casting-train
+    unit_id: WAX_PATTERN
+  - id: FOUNDRY.investment-casting-train.SHELL_BUILD
+    parent: FOUNDRY.investment-casting-train
+    unit_id: SHELL_BUILD
+  - id: FOUNDRY.investment-casting-train.SHELL_BURNOUT
+    parent: FOUNDRY.investment-casting-train
+    unit_id: SHELL_BURNOUT
+  - id: FOUNDRY.investment-casting-train.INV_CAST
+    parent: FOUNDRY.investment-casting-train
+    unit_id: INV_CAST
+  - id: FOUNDRY.investment-casting-train.SHELL_BREAK
+    parent: FOUNDRY.investment-casting-train
+    unit_id: SHELL_BREAK
+  - id: FOUNDRY.form-train
+    parent: FOUNDRY
+    description: >-
+      Solid forming: roll, extrude, draw, forge, sinter; STOCK_OUT stores and dispatches to MFG /
+      FAB / wire draw.
+  - id: FOUNDRY.form-train.ROLL
+    parent: FOUNDRY.form-train
+    unit_id: ROLL
+  - id: FOUNDRY.form-train.EXTRUDE
+    parent: FOUNDRY.form-train
+    unit_id: EXTRUDE
+  - id: FOUNDRY.form-train.DRAW
+    parent: FOUNDRY.form-train
+    unit_id: DRAW
+  - id: FOUNDRY.form-train.FORGE
+    parent: FOUNDRY.form-train
+    unit_id: FORGE
+  - id: FOUNDRY.form-train.SINTER
+    parent: FOUNDRY.form-train
+    unit_id: SINTER
+  - id: FOUNDRY.form-train.STOCK_OUT
+    parent: FOUNDRY.form-train
+    unit_id: STOCK_OUT
+  - id: POLYMERS
+    description: >-
+      Process (Mass transform) — fluoropolymer synthesis, polyolefin, form factors.
+  - id: POLYMERS.fluoropolymer-train
+    parent: POLYMERS
+    description: >-
+      STANDBY. HF from DIGESTER.F_RECOVER plus CRU chlorine through VDF/TFE synthesis to PVDF/PTFE
+      polymer.
+  - id: POLYMERS.fluoropolymer-train.HF_GEN
+    parent: POLYMERS.fluoropolymer-train
+    unit_id: HF_GEN
+  - id: POLYMERS.fluoropolymer-train.VDF_SYN
+    parent: POLYMERS.fluoropolymer-train
+    unit_id: VDF_SYN
+  - id: POLYMERS.fluoropolymer-train.TFE_SYN
+    parent: POLYMERS.fluoropolymer-train
+    unit_id: TFE_SYN
+  - id: POLYMERS.fluoropolymer-train.POLY_F
+    parent: POLYMERS.fluoropolymer-train
+    unit_id: POLY_F
+  - id: POLYMERS.polyolefin-train
+    parent: POLYMERS
+    description: >-
+      Polyolefin from OIL light cuts and MEOH co-feed; POLY_COND condensation polymer on digester
+      organics.
+  - id: POLYMERS.polyolefin-train.POLY_OLEFIN
+    parent: POLYMERS.polyolefin-train
+    unit_id: POLY_OLEFIN
+  - id: POLYMERS.polyolefin-train.POLY_COND
+    parent: POLYMERS.polyolefin-train
+    unit_id: POLY_COND
+  - id: POLYMERS.forming-train
+    parent: POLYMERS
+    description: >-
+      Form factors and stock: pellet, powder resin, film cast, POLY_STOCK dispatch to MFG / FAB /
+      leach lining returns.
+  - id: POLYMERS.forming-train.PELLET
+    parent: POLYMERS.forming-train
+    unit_id: PELLET
+  - id: POLYMERS.forming-train.POWDER_RESIN
+    parent: POLYMERS.forming-train
+    unit_id: POWDER_RESIN
+  - id: POLYMERS.forming-train.FILM_CAST
+    parent: POLYMERS.forming-train
+    unit_id: FILM_CAST
+  - id: POLYMERS.forming-train.POLY_STOCK
+    parent: POLYMERS.forming-train
+    unit_id: POLY_STOCK
+  - id: FAB
+    description: >-
+      Process (Mass transform) — wafer / solar-cell fab; litho required for MVS.
+  - id: FAB.wet-reagent-train
+    parent: FAB
+    description: >-
+      Wet bench and UPW tank plus the nine WS_* reagent stands feeding bench and wafer fab.
+  - id: FAB.wet-reagent-train.bench
+    parent: FAB.wet-reagent-train
+    description: >-
+      Wet bench with the fab UPW tank.
+  - id: FAB.wet-reagent-train.bench.WET_BENCH
+    parent: FAB.wet-reagent-train.bench
+    unit_id: WET_BENCH
+  - id: FAB.wet-reagent-train.bench.FAB_UPW_TANK
+    parent: FAB.wet-reagent-train.bench
+    unit_id: FAB_UPW_TANK
+  - id: FAB.wet-reagent-train.reagents
+    parent: FAB.wet-reagent-train
+    description: >-
+      Nine WS_* reagent stands (HF, KOH, nitric, peroxide, ammonia, phosphoric, dope, slurry,
+      solvent).
+  - id: FAB.wet-reagent-train.reagents.WS_AMMONIA
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_AMMONIA
+  - id: FAB.wet-reagent-train.reagents.WS_DOPE
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_DOPE
+  - id: FAB.wet-reagent-train.reagents.WS_HF_ED
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_HF_ED
+  - id: FAB.wet-reagent-train.reagents.WS_KOH
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_KOH
+  - id: FAB.wet-reagent-train.reagents.WS_NITRIC
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_NITRIC
+  - id: FAB.wet-reagent-train.reagents.WS_PEROX
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_PEROX
+  - id: FAB.wet-reagent-train.reagents.WS_PHOS
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_PHOS
+  - id: FAB.wet-reagent-train.reagents.WS_SLURRY
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_SLURRY
+  - id: FAB.wet-reagent-train.reagents.WS_SOLV
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: WS_SOLV
+  - id: FAB.litho-train
+    parent: FAB
+    description: >-
+      STANDBY. Coat / align / develop tools with the LITHO_STUB spent-resist handoff to OIL_FRAC
+      (ST-LITHO-01 until Present).
+  - id: FAB.litho-train.LITHO_COAT
+    parent: FAB.litho-train
+    unit_id: LITHO_COAT
+  - id: FAB.litho-train.LITHO_ALIGN
+    parent: FAB.litho-train
+    unit_id: LITHO_ALIGN
+  - id: FAB.litho-train.LITHO_DEV
+    parent: FAB.litho-train
+    unit_id: LITHO_DEV
+  - id: FAB.litho-train.LITHO_STUB
+    parent: FAB.litho-train
+    unit_id: LITHO_STUB
+  - id: FAB.wafer-line-train
+    parent: FAB
+    description: >-
+      Wafer fab line with the SOLAR_PV_CELL study stub (ST-SOLAR-01 until Present).
+  - id: FAB.wafer-line-train.WAFER_FAB
+    parent: FAB.wafer-line-train
+    unit_id: WAFER_FAB
+  - id: FAB.wafer-line-train.SOLAR_PV_CELL
+    parent: FAB.wafer-line-train
+    unit_id: SOLAR_PV_CELL
+  - id: MFG
+    description: >-
+      Process (Mass transform) — shop, metal forming, blow mold, electrode coat.
+  - id: MFG.tools-metal-forming-train
+    parent: MFG
+    description: >-
+      Metal-forming tools (melt, cold mill, wire draw, gas atomizer), hall services (shop, AHU,
+      scrub, Q4 HX) and the blow-mold / electrode-coat study stubs.
+  - id: MFG.tools-metal-forming-train.metal-forming
+    parent: MFG.tools-metal-forming-train
+    description: >-
+      Met melt, cold mill, wire draw, gas atomizer.
+  - id: MFG.tools-metal-forming-train.metal-forming.MET_MELT
+    parent: MFG.tools-metal-forming-train.metal-forming
+    unit_id: MET_MELT
+  - id: MFG.tools-metal-forming-train.metal-forming.COLD_MILL
+    parent: MFG.tools-metal-forming-train.metal-forming
+    unit_id: COLD_MILL
+  - id: MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW
+    parent: MFG.tools-metal-forming-train.metal-forming
+    unit_id: WIRE_DRAW
+  - id: MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER
+    parent: MFG.tools-metal-forming-train.metal-forming
+    unit_id: GAS_ATOMIZER
+  - id: MFG.tools-metal-forming-train.hall-services
+    parent: MFG.tools-metal-forming-train
+    description: >-
+      MFG shop load, metal-aisle AHU and scrub, MET_HX_Q4 furnace-cooling reject (serves FOUNDRY
+      coils, owned by the metal hall).
+  - id: MFG.tools-metal-forming-train.hall-services.MFG_SHOP
+    parent: MFG.tools-metal-forming-train.hall-services
+    unit_id: MFG_SHOP
+  - id: MFG.tools-metal-forming-train.hall-services.MET_AHU
+    parent: MFG.tools-metal-forming-train.hall-services
+    unit_id: MET_AHU
+  - id: MFG.tools-metal-forming-train.hall-services.MET_SCRUB
+    parent: MFG.tools-metal-forming-train.hall-services
+    unit_id: MET_SCRUB
+  - id: MFG.tools-metal-forming-train.hall-services.MET_HX_Q4
+    parent: MFG.tools-metal-forming-train.hall-services
+    unit_id: MET_HX_Q4
+  - id: MFG.tools-metal-forming-train.tool-stubs
+    parent: MFG.tools-metal-forming-train
+    description: >-
+      Blow mold and electrode coat study stubs (ST-BLOW-01 / ST-ELC-01 until Present).
+  - id: MFG.tools-metal-forming-train.tool-stubs.BLOW_MOLD
+    parent: MFG.tools-metal-forming-train.tool-stubs
+    unit_id: BLOW_MOLD
+  - id: MFG.tools-metal-forming-train.tool-stubs.ELECTRODE_COAT
+    parent: MFG.tools-metal-forming-train.tool-stubs
+    unit_id: ELECTRODE_COAT
+  - id: OIL
+    description: >-
+      Process (Mass transform) — organics / oil loop; afterburner to CRYO.
+  - id: OIL.pyro-fractionation-train
+    parent: OIL
+    description: >-
+      Hopper and dryer, pyrolysis, fractionator, cut tanks and headers, C29 recycle, NCG to
+      afterburner; wax cuts to the grease lines.
+  - id: OIL.pyro-fractionation-train.pyro-frac
+    parent: OIL.pyro-fractionation-train
+    description: >-
+      Hopper, dryer, pyrolysis, fractionator.
+  - id: OIL.pyro-fractionation-train.pyro-frac.HOPPER
+    parent: OIL.pyro-fractionation-train.pyro-frac
+    unit_id: HOPPER
+  - id: OIL.pyro-fractionation-train.pyro-frac.OIL_DRYER
+    parent: OIL.pyro-fractionation-train.pyro-frac
+    unit_id: OIL_DRYER
+  - id: OIL.pyro-fractionation-train.pyro-frac.OIL_PYRO
+    parent: OIL.pyro-fractionation-train.pyro-frac
+    unit_id: OIL_PYRO
+  - id: OIL.pyro-fractionation-train.pyro-frac.OIL_FRAC
+    parent: OIL.pyro-fractionation-train.pyro-frac
+    unit_id: OIL_FRAC
+  - id: OIL.pyro-fractionation-train.cuts-and-headers
+    parent: OIL.pyro-fractionation-train
+    description: >-
+      C5-C10 / C11-C18 / C19-C28 / C29 cut tanks, C29 recycle, NCG header.
+  - id: OIL.pyro-fractionation-train.cuts-and-headers.PROD_C5_C10
+    parent: OIL.pyro-fractionation-train.cuts-and-headers
+    unit_id: PROD_C5_C10
+  - id: OIL.pyro-fractionation-train.cuts-and-headers.PROD_C11_C18
+    parent: OIL.pyro-fractionation-train.cuts-and-headers
+    unit_id: PROD_C11_C18
+  - id: OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28
+    parent: OIL.pyro-fractionation-train.cuts-and-headers
+    unit_id: PROD_C19_C28
+  - id: OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29
+    parent: OIL.pyro-fractionation-train.cuts-and-headers
+    unit_id: PROD_C29
+  - id: OIL.pyro-fractionation-train.cuts-and-headers.C29_RECYCLE
+    parent: OIL.pyro-fractionation-train.cuts-and-headers
+    unit_id: C29_RECYCLE
+  - id: OIL.pyro-fractionation-train.cuts-and-headers.NCG_HEADER
+    parent: OIL.pyro-fractionation-train.cuts-and-headers
+    unit_id: NCG_HEADER
+  - id: OIL.pyro-fractionation-train.grease-lines
+    parent: OIL.pyro-fractionation-train
+    description: >-
+      Ca and Li grease kettles on the wax cut with P_CA and Li_RECOVER feeds.
+  - id: OIL.pyro-fractionation-train.grease-lines.GREASE_CA
+    parent: OIL.pyro-fractionation-train.grease-lines
+    unit_id: GREASE_CA
+  - id: OIL.pyro-fractionation-train.grease-lines.GREASE_LI
+    parent: OIL.pyro-fractionation-train.grease-lines
+    unit_id: GREASE_LI
+  - id: OIL.pyro-fractionation-train.AFTERBURNER
+    parent: OIL.pyro-fractionation-train
+    unit_id: AFTERBURNER
+  - id: GAS
+    description: >-
+      Process (Mass transform) — scrub / vent closure; secondary Utility.
+  - id: GAS.scrubbing-headers-train
+    parent: GAS
+    description: >-
+      House acid-gas polishing and alkaline scrub, NOx scrub, baghouse, flue KO and afterburner
+      flue junction; H2 drying and the H2/O2 headers with relief.
+  - id: GAS.scrubbing-headers-train.scrubbing
+    parent: GAS.scrubbing-headers-train
+    description: >-
+      Acid-gas polish and alkaline scrub pair, NOx scrub, baghouse, flue KO, afterburner flue
+      junction.
+  - id: GAS.scrubbing-headers-train.scrubbing.ACID_POLISH_SCRUB
+    parent: GAS.scrubbing-headers-train.scrubbing
+    unit_id: ACID_POLISH_SCRUB
+  - id: GAS.scrubbing-headers-train.scrubbing.ALK_SCRUBBER
+    parent: GAS.scrubbing-headers-train.scrubbing
+    unit_id: ALK_SCRUBBER
+  - id: GAS.scrubbing-headers-train.scrubbing.NOX_SCRUB
+    parent: GAS.scrubbing-headers-train.scrubbing
+    unit_id: NOX_SCRUB
+  - id: GAS.scrubbing-headers-train.scrubbing.BAGHOUSE
+    parent: GAS.scrubbing-headers-train.scrubbing
+    unit_id: BAGHOUSE
+  - id: GAS.scrubbing-headers-train.scrubbing.FLUE_KO
+    parent: GAS.scrubbing-headers-train.scrubbing
+    unit_id: FLUE_KO
+  - id: GAS.scrubbing-headers-train.scrubbing.AFTERBURNER_FLUE
+    parent: GAS.scrubbing-headers-train.scrubbing
+    unit_id: AFTERBURNER_FLUE
+  - id: GAS.scrubbing-headers-train.gas-headers
+    parent: GAS.scrubbing-headers-train
+    description: >-
+      H2 dryer into the H2 header with relief; O2 header to consumers and product.
+  - id: GAS.scrubbing-headers-train.gas-headers.H2_DRYER
+    parent: GAS.scrubbing-headers-train.gas-headers
+    unit_id: H2_DRYER
+  - id: GAS.scrubbing-headers-train.gas-headers.HDR_H2
+    parent: GAS.scrubbing-headers-train.gas-headers
+    unit_id: HDR_H2
+  - id: GAS.scrubbing-headers-train.gas-headers.HDR_O2
+    parent: GAS.scrubbing-headers-train.gas-headers
+    unit_id: HDR_O2
+  - id: GAS.scrubbing-headers-train.gas-headers.RELIEF_H2
+    parent: GAS.scrubbing-headers-train.gas-headers
+    unit_id: RELIEF_H2
+  - id: CRYO
+    description: >-
+      Utility / header — cold-box O2/N2/CO2/H2; not a generation class.
+  - id: CRYO.cold-box-asu-recovery-train
+    parent: CRYO
+    description: >-
+      ASU and the N2/O2/CO2/H2 cold boxes with recovery: PEM electrolysis feed, cryo AHU,
+      dedicated cooling and Q4 HX, product cylinders and relief.
+  - id: CRYO.cold-box-asu-recovery-train.cold-box
+    parent: CRYO.cold-box-asu-recovery-train
+    description: >-
+      ASU with the N2 / O2 / CO2 / H2 cold boxes and their returns.
+  - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU
+    parent: CRYO.cold-box-asu-recovery-train.cold-box
+    unit_id: CRYO_ASU
+  - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_N2
+    parent: CRYO.cold-box-asu-recovery-train.cold-box
+    unit_id: CRYO_N2
+  - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_O2
+    parent: CRYO.cold-box-asu-recovery-train.cold-box
+    unit_id: CRYO_O2
+  - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_CO2
+    parent: CRYO.cold-box-asu-recovery-train.cold-box
+    unit_id: CRYO_CO2
+  - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2
+    parent: CRYO.cold-box-asu-recovery-train.cold-box
+    unit_id: CRYO_H2
+  - id: CRYO.cold-box-asu-recovery-train.ahu
+    parent: CRYO.cold-box-asu-recovery-train
+    description: >-
+      Cryo AHU and its condensable-slip node.
+  - id: CRYO.cold-box-asu-recovery-train.ahu.CRYO_AHU
+    parent: CRYO.cold-box-asu-recovery-train.ahu
+    unit_id: CRYO_AHU
+  - id: CRYO.cold-box-asu-recovery-train.ahu.CRYO_AHU_COND_CONDENSABLE
+    parent: CRYO.cold-box-asu-recovery-train.ahu
+    unit_id: CRYO_AHU_COND_CONDENSABLE
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    parent: CRYO.cold-box-asu-recovery-train
+    description: >-
+      PEM electrolysis H2/O2 feed, dedicated cryo cooling, Q4 residual HX, O2/MeOH product
+      shipping, cryo relief.
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ
+    parent: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    unit_id: H2O_ELYZ
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery.CRYO_DED_COOL
+    parent: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    unit_id: CRYO_DED_COOL
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery.CRYO_HX_Q4
+    parent: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    unit_id: CRYO_HX_Q4
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2
+    parent: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    unit_id: PROD_O2
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH
+    parent: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    unit_id: PROD_MEOH
+  - id: CRYO.cold-box-asu-recovery-train.feed-and-recovery.RELIEF_CRYO
+    parent: CRYO.cold-box-asu-recovery-train.feed-and-recovery
+    unit_id: RELIEF_CRYO
+  - id: WTR
+    description: >-
+      Utility / header — roof / catch / VCD / UPW / grey / black water.
+  - id: WTR.potable-upw-train
+    parent: WTR
+    description: >-
+      Roof and catch tanks (pumped-hydro penstock peers), VCD, BMED UPW polish, UPW header,
+      remineralizer to potable.
+  - id: WTR.potable-upw-train.ROOF_TANK
+    parent: WTR.potable-upw-train
+    unit_id: ROOF_TANK
+  - id: WTR.potable-upw-train.CATCH_TANK
+    parent: WTR.potable-upw-train
+    unit_id: CATCH_TANK
+  - id: WTR.potable-upw-train.BMED_UPW_POLISH
+    parent: WTR.potable-upw-train
+    unit_id: BMED_UPW_POLISH
+  - id: WTR.potable-upw-train.HDR_UPW
+    parent: WTR.potable-upw-train
+    unit_id: HDR_UPW
+  - id: WTR.potable-upw-train.REMIN
+    parent: WTR.potable-upw-train
+    unit_id: REMIN
+  - id: WTR.potable-upw-train.VCD_TRAIN
+    parent: WTR.potable-upw-train
+    unit_id: VCD_TRAIN
+  - id: WTR.grey-black-train
+    parent: WTR
+    description: >-
+      Grey treatment and the blackwater barrier digest (vacuum toilet, urine, fecal, galley).
+  - id: WTR.grey-black-train.GREY_TREAT
+    parent: WTR.grey-black-train
+    unit_id: GREY_TREAT
+  - id: WTR.grey-black-train.BLACK_DIGEST
+    parent: WTR.grey-black-train
+    unit_id: BLACK_DIGEST
+  - id: ELEC
+    description: >-
+      Utility / header — Sol-Ark / ATS / RECT / MCC hub.
+  - id: ELEC.generation-train
+    parent: ELEC
+    description: >-
+      PV array, backup genset (H2 fuel), PEM fuel cell.
+  - id: ELEC.generation-train.PV_ARRAY
+    parent: ELEC.generation-train
+    unit_id: PV_ARRAY
+  - id: ELEC.generation-train.BACKUP_GEN
+    parent: ELEC.generation-train
+    unit_id: BACKUP_GEN
+  - id: ELEC.generation-train.FUEL_CELL
+    parent: ELEC.generation-train
+    unit_id: FUEL_CELL
+  - id: ELEC.storage-train
+    parent: ELEC
+    description: >-
+      ZnBr2 flow battery with its Br2 regeneration scrubber.
+  - id: ELEC.storage-train.ZNBR2
+    parent: ELEC.storage-train
+    unit_id: ZNBR2
+  - id: ELEC.storage-train.ZNBR2_BR2_REGEN
+    parent: ELEC.storage-train
+    unit_id: ZNBR2_BR2_REGEN
+  - id: ELEC.distribution-train
+    parent: ELEC
+    description: >-
+      Sol-Ark 60k inverter bus, rectifier DC bus bars, load aggregation, and the EXT_HALL building
+      service.
+  - id: ELEC.distribution-train.SOL_ARK_60K
+    parent: ELEC.distribution-train
+    unit_id: SOL_ARK_60K
+  - id: ELEC.distribution-train.RECTIFIER
+    parent: ELEC.distribution-train
+    unit_id: RECTIFIER
+  - id: ELEC.distribution-train.LOAD_AGG
+    parent: ELEC.distribution-train
+    unit_id: LOAD_AGG
+  - id: ELEC.distribution-train.EXT_HALL
+    parent: ELEC.distribution-train
+    unit_id: EXT_HALL
+  - id: HEAT
+    description: >-
+      Utility / header — heat ladder batteries Q1-Q4, Q4_BUS, Q4 services.
+  - id: HEAT.ladder-train
+    parent: HEAT
+    description: >-
+      Dual-diode ladder Q1-Q4 A/B stores with the Q4_BUS header (AQS-HEAT-LADDER-001).
+  - id: HEAT.ladder-train.stores
+    parent: HEAT.ladder-train
+    description: >-
+      Q1-Q4 A/B heat batteries plus the Q4_BUS header they feed.
+  - id: HEAT.ladder-train.stores.Q1_A
+    parent: HEAT.ladder-train.stores
+    unit_id: Q1_A
+  - id: HEAT.ladder-train.stores.Q1_B
+    parent: HEAT.ladder-train.stores
+    unit_id: Q1_B
+  - id: HEAT.ladder-train.stores.Q2_A
+    parent: HEAT.ladder-train.stores
+    unit_id: Q2_A
+  - id: HEAT.ladder-train.stores.Q2_B
+    parent: HEAT.ladder-train.stores
+    unit_id: Q2_B
+  - id: HEAT.ladder-train.stores.Q3_A
+    parent: HEAT.ladder-train.stores
+    unit_id: Q3_A
+  - id: HEAT.ladder-train.stores.Q3_B
+    parent: HEAT.ladder-train.stores
+    unit_id: Q3_B
+  - id: HEAT.ladder-train.stores.Q4_A
+    parent: HEAT.ladder-train.stores
+    unit_id: Q4_A
+  - id: HEAT.ladder-train.stores.Q4_B
+    parent: HEAT.ladder-train.stores
+    unit_id: Q4_B
+  - id: HEAT.ladder-train.stores.Q4_BUS
+    parent: HEAT.ladder-train.stores
+    unit_id: Q4_BUS
+  - id: HEAT.ladder-train.q4-services
+    parent: HEAT.ladder-train
+    description: >-
+      Q4 consumers: adsorption chiller, dry cooler rejection, MAU HX.
+  - id: HEAT.ladder-train.q4-services.ADS_CHILL
+    parent: HEAT.ladder-train.q4-services
+    unit_id: ADS_CHILL
+  - id: HEAT.ladder-train.q4-services.DRY_COOLER
+    parent: HEAT.ladder-train.q4-services
+    unit_id: DRY_COOLER
+  - id: HEAT.ladder-train.q4-services.MAU_HX
+    parent: HEAT.ladder-train.q4-services
+    unit_id: MAU_HX
+  - id: GEO
+    description: >-
+      Utility / header — ground loop HP to Q4; ORC study.
+  - id: GEO.ground-loop-train
+    parent: GEO
+    description: >-
+      Ground heat exchanger and closed loop, heat pump to Q4, ORC study stub (ST-ORC-01).
+  - id: GEO.ground-loop-train.GEO_GHEX
+    parent: GEO.ground-loop-train
+    unit_id: GEO_GHEX
+  - id: GEO.ground-loop-train.GEO_HP
+    parent: GEO.ground-loop-train
+    unit_id: GEO_HP
+  - id: GEO.ground-loop-train.GEO_HP_CLOSED_LOOP
+    parent: GEO.ground-loop-train
+    unit_id: GEO_HP_CLOSED_LOOP
+  - id: GEO.ground-loop-train.GEO_ORC
+    parent: GEO.ground-loop-train
+    unit_id: GEO_ORC
+  - id: GLASS
+    description: >-
+      Process (Mass transform) — silicate / ceramic; materials surplus path.
+  - id: GLASS.glass-recycle-train
+    parent: GLASS
+    description: >-
+      Cullet loop: rinse, mill, burnout, NaOH digest; SI_REDUCE carbothermic silicon on pyro char.
+  - id: GLASS.glass-recycle-train.cullet-loop
+    parent: GLASS.glass-recycle-train
+    description: >-
+      Rinse, mill, burnout, NaOH digest of cullet and spent investment shell.
+  - id: GLASS.glass-recycle-train.cullet-loop.GLASS_RINSE
+    parent: GLASS.glass-recycle-train.cullet-loop
+    unit_id: GLASS_RINSE
+  - id: GLASS.glass-recycle-train.cullet-loop.GLASS_MILL
+    parent: GLASS.glass-recycle-train.cullet-loop
+    unit_id: GLASS_MILL
+  - id: GLASS.glass-recycle-train.cullet-loop.GLASS_BURNOUT
+    parent: GLASS.glass-recycle-train.cullet-loop
+    unit_id: GLASS_BURNOUT
+  - id: GLASS.glass-recycle-train.cullet-loop.GLASS_DIGEST
+    parent: GLASS.glass-recycle-train.cullet-loop
+    unit_id: GLASS_DIGEST
+  - id: GLASS.glass-recycle-train.SI_REDUCE
+    parent: GLASS.glass-recycle-train
+    unit_id: SI_REDUCE
+  - id: HAB
+    description: >-
+      Life support / habitat — habitation and life support.
+  - id: HAB.life-support-train
+    parent: HAB
+    description: >-
+      Habitation module with the CO2 and N2 headers.
+  - id: HAB.life-support-train.HABITATION
+    parent: HAB.life-support-train
+    unit_id: HABITATION
+  - id: HAB.life-support-train.HDR_CO2
+    parent: HAB.life-support-train
+    unit_id: HDR_CO2
+  - id: HAB.life-support-train.HDR_N2
+    parent: HAB.life-support-train
+    unit_id: HDR_N2
+  - id: FARM
+    description: >-
+      Life support / habitat — grow beds; food surplus.
+  - id: FARM.grow-bed-train
+    parent: FARM
+    description: >-
+      Grow beds; food and photosynthetic O2 to HAB.
+  - id: FARM.grow-bed-train.GROW_BED
+    parent: FARM.grow-bed-train
+    unit_id: GROW_BED
+  - id: MEOH
+    description: >-
+      Energy Storage System (Electrochemical) — MeOH ESS peer; also feeds processes.
+  - id: MEOH.synthesis-train
+    parent: MEOH
+    description: >-
+      CO2+H2 synthesis, fermenter, condenser, tank, and the MeOH IEM fuel cell ESS peer.
+  - id: MEOH.synthesis-train.MEOH_SYNTH
+    parent: MEOH.synthesis-train
+    unit_id: MEOH_SYNTH
+  - id: MEOH.synthesis-train.MEOH_FERM
+    parent: MEOH.synthesis-train
+    unit_id: MEOH_FERM
+  - id: MEOH.synthesis-train.MEOH_COND
+    parent: MEOH.synthesis-train
+    unit_id: MEOH_COND
+  - id: MEOH.synthesis-train.MEOH_TANK
+    parent: MEOH.synthesis-train
+    unit_id: MEOH_TANK
+  - id: MEOH.synthesis-train.MEOH_FC
+    parent: MEOH.synthesis-train
+    unit_id: MEOH_FC
+  - id: NUT
+    description: >-
+      Process (Mass transform) — nutrient dose.
+  - id: NUT.dosing-train
+    parent: NUT
+    description: >-
+      Nutrient dosing from black digest and NOx scrub liquor to the grow beds.
+  - id: NUT.dosing-train.NUTRIENT_DOSE
+    parent: NUT.dosing-train
+    unit_id: NUTRIENT_DOSE
+  - id: DOCK
+    description: >-
+      Export / dock — north dock / freight; surplus export boundary.
+  - id: DOCK.boundary-train
+    parent: DOCK
+    description: >-
+      North dock and the surplus export boundary.
+  - id: DOCK.boundary-train.NORTH_DOCK
+    parent: DOCK.boundary-train
+    unit_id: NORTH_DOCK
+  - id: DOCK.boundary-train.BOUNDARY_EXPORT
+    parent: DOCK.boundary-train
+    unit_id: BOUNDARY_EXPORT
+  - id: PUMPED_HYDRO
+    description: >-
+      Energy Storage System (Gravity) — roof-catch penstock ESS peer.
+  - id: PUMPED_HYDRO.hydro-train
+    parent: PUMPED_HYDRO
+    description: >-
+      Roof-catch turbine-pump set (M1 symbolic redundancy; AQS-ESS-001).
+  - id: PUMPED_HYDRO.hydro-train.HYDRO_SET
+    parent: PUMPED_HYDRO.hydro-train
+    unit_id: HYDRO_SET
