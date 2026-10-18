@@ -168,7 +168,8 @@ def tf(g):
     N['BACKUP_GEN']['params'].update(rated_kW=kw_gen, duty_basis=f'standby; NFPA 110 8.4.2 monthly exercise {EX_H} h at {EX_LOAD:.0%} load = {e_ex:.3f} kWh/d average; fuel {fuel:.3f} kg/d at {GEN_ETA:.0%} on {LHV_C5} kWh/kg LHV (TURNS2012)')
     N['BACKUP_GEN']['continuous_kw'] = {'value': round(e_ex/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: standby, NFPA 110 exercise average'}
     put('CUT-1-OUT', fuel, 'genset exercise fuel (NFPA 110 8.4.2)'); put('S45', 0.0, 'genset runs on the C5-C10 cut only'); put('S47', e_ex/24, 'exercise energy, daily average')
-    put('IA-C5-SHIP', v('CUT-1') - fuel, 'C5-C10 product not burned: shipped at the dock')
+    poly = v('IA-C5-POLY') if 'IA-C5-POLY' in E else 0.0        # olefin feed drawn at the cut tank (AQS-DUTY-073)
+    put('IA-C5-SHIP', v('CUT-1') - fuel - poly, f'C5-C10 product not burned: shipped at the dock less the olefin draw {poly:.4f} kg/d (AQS-DUTY-073)')
     r = fuel/gf['CUT-1-OUT']
     # --- combustion O2
     gen_b = v('S45')*7.937 + v('CUT-1-OUT')*(11.75*32.0/107.2); og = EXC*gen_b

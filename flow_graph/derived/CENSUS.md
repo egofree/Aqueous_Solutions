@@ -4,8 +4,8 @@ Source: AQS-FLOW-GRAPH-001 Rev AC
 Generated: 2026-10-18
 
 - nodes: **174** (present=172, placeholder=1)
-- edges: **478** (present=450, placeholder=6)
-- by namespace: {'IA': 352, 'TBD': 1, 'S': 124, 'SANDBOX': 1}
+- edges: **479** (present=451, placeholder=6)
+- by namespace: {'IA': 353, 'TBD': 1, 'S': 124, 'SANDBOX': 1}
 - locks: layered_views, full_depth_now, efd_three_layers, typed_graph_sole, present_plus_placeholders, site_lat_design_sandbox, true_closure_residuals_wp, reprap_bom_complete_c4, site_ghex_design_survey_locked, wp_l3_evidence_pack, wp_l4_claim_discipline, wp_ew_cascade_explode
 
 ## Gaps
@@ -23,3 +23,4 @@ Generated: 2026-10-18
 - **WP_L2_PRESENT_CAD** (medium): Equipment IDs / BOM matrix on disk (C4 true). FreeCAD Features for VCD/REMIN/LITHO/BLOW/ELC absent (placeholder_skip). *_on_site=false (C3). AHJ design-basis USA_Dallas_class — no fake certificates. Primary remaining loops_closed gate under Rev E topology.
 - **WP_L2_SITE_SURVEY** (low): CLOSED as design_survey_locked 2026-10-02 (reaffirmed on Rev E sync). SITE_LAT=33.0 Dallas sandbox (params.py); jurisdiction_theme=USA_Dallas_class; GHEX design-basis ST-ORC-01. Field bore/conductivity still external — not claimed as measured.
 - **WP_TRUE_CLOSURE_RESIDUALS** (low): S87/S88 left in place under Mike HOLD pending endpoint write-up (planning/studies/S87_S88_ENDPOINTS.md). IA-HDR-H2-01…04 restored after EW_3…EW_8 nodes. loops_closed still false — C3 Present CAD.
+- **FOUNDRY_POLY_MISSING_EDGES** (medium): Foundry/polymers sizing pass (AQS-DUTY-072/073): absent edges that block positive rates - pot chloride feeds (LEACH->AL/MG/CA_POT), DRAW feed (CAST/ROLL->DRAW), FORGE edges, FILM_CAST feed, POLY_COND outlet to PELLET, wax make-up + shell ceramic for the investment train, SALT_FEED source, F_RECOVER feed (F recovery, Q-013). Each 0-rated edge cites its block in the sizing docs until the feed lands.

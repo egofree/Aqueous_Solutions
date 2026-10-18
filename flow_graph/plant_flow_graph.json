@@ -2778,8 +2778,28 @@
       "notes": "Aqueous HF (WS_HF_ED mandatory). Duty: notes/FLUOROPOLYMER_DUTY.md. Rate unset. Sector POLYMERS.",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby, 0 duty at the bounding case (AQS-DUTY-073 sec. 3). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      }
     },
     {
       "unit_id": "VDF_SYN",
@@ -2795,7 +2815,22 @@
       "notes": "VDF monomer from HF + recovered carbon. Duty: notes/FLUOROPOLYMER_DUTY.md. Route locked: methanol-chloromethane-HF (notes/MONOMER_ROUTE.md). Rate unset. Sector POLYMERS.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2812,7 +2847,22 @@
       "notes": "TFE monomer from HF + recovered carbon. Duty: notes/FLUOROPOLYMER_DUTY.md. Route locked: methanol-chloromethane-HF (notes/MONOMER_ROUTE.md). Rate unset. Sector POLYMERS.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2828,7 +2878,22 @@
       "notes": "PVDF/PTFE polymerization + reclaim. Duty: notes/FLUOROPOLYMER_DUTY.md. Rate unset. Sector POLYMERS.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2845,7 +2910,15 @@
       "notes": "Chromium metal. Primary: molten-salt electrolysis. Anode gas to CRU. Not aqueous. Binding 2026-10-16. Duty: notes/CR_CELL_DUTY.md. Assay missing. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "design_case_kg_d": 0.2,
+          "status_note": "feed assay missing (AQS-DUTY-CR)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2862,7 +2935,24 @@
       "notes": "Titanium metal. Primary: Kroll (chlorinate to TiCl4, Mg reduction). FFC Cambridge is cold spare. MgCl2 returns to existing Mg pot. Cl2 to CRU. Binding + selection 2026-10-16. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "design_case_per_kg_Ti": {
+            "feed_grit_kg_per_kg_Ti": 1.67,
+            "carbon_kg": 0.5,
+            "cl2_kg": 2.96,
+            "ticl4_kg": 3.96,
+            "mg_kg": 1.01,
+            "mgcl2_kg": 3.97,
+            "co_kg": 1.17,
+            "source": "AQS-BAL-KROLL (stoichiometric, no rate until the grit assay)"
+          },
+          "status_note": "grit assay missing (AQS-ASSAY-TI-MO)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2879,7 +2969,15 @@
       "notes": "Molybdenum recovery. Primary: molten-salt electrolysis of molybdate/chloride. H2 reduction is fallback study only. Feeds 316L. Binding + selection 2026-10-16. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "design_case_kg_d": 0.05,
+          "status_note": "liquor Mo tenor missing (AQS-ASSAY-TI-MO)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2896,7 +2994,27 @@
       "notes": "Primary induction melt furnace. Coreless or channel. Feeds castings and alloy. Binding foundry sector 2026-10-16. Electrical load on RECTIFIER/LOAD_AGG. Sized: 10 kg crucible, 25 kW, 2-3 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "charge_kg_d": 14.1414,
+          "stock_out_kg_d": 14.0,
+          "slag_kg_d": 0.1414,
+          "crucible_kg": 10.0,
+          "heats_d": 2,
+          "melt_kWh_d": 7.151,
+          "avg_kW": 0.298,
+          "peak_kW": 11.0,
+          "connected_kW": 25.0,
+          "kWh_per_kg": {
+            "Cu": 0.3616,
+            "Fe": 0.5406,
+            "Zn": 0.1605
+          },
+          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN"
+        }
+      },
       "continuous_kw": 25
     },
     {
@@ -2913,7 +3031,15 @@
       "notes": "RF heating for preheat, sintering, and zone work. Primary electrical heat path. Electrical load on RECTIFIER/LOAD_AGG. 5 kW, 100-400 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "duty_kg_d": 0.0,
+          "connected_kW": 5.0,
+          "status_note": "preheat/sinter standby (A-M-232); sinter feed blocked"
+        }
+      },
       "continuous_kw": 5
     },
     {
@@ -2930,7 +3056,14 @@
       "notes": "Resistive heat. Alternate / redundant path only. Not baseline.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "alternate path only (FOUNDRY_DUTY heat policy)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2947,7 +3080,14 @@
       "notes": "Combustion heat. Alternate / redundant path only. Not baseline. Fuel from existing headers.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "alternate path only; off-gas to MET_SCRUB when energized"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2963,7 +3103,15 @@
       "notes": "Casting and alloy line. Receives melt from IND_MELT. Scrap returns to melt.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "pour_kg_d": 3.0,
+          "products": "Cu ingot/billet, permanent mold",
+          "scrap_return_kg_d": 0.0
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -2979,7 +3127,15 @@
       "notes": "Vacuum induction with induction skull / cold-crucible (ISM/CCIM) for Ti and reactive metals. See notes/ADVANCED_CASTING.md. ISM/CCIM: 2 kg, 15 kW, 5-10 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 15.0,
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)"
+        }
+      },
       "continuous_kw": 15
     },
     {
@@ -2995,7 +3151,14 @@
       "notes": "Vacuum/inert cast tied to VAC_IND. See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby tied to VAC_IND"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3011,7 +3174,15 @@
       "notes": "Plate and sheet rolling. Output stock. See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rolled_kg_d": 13.0,
+          "kWh_d": 0.416,
+          "basis": "0.032 kWh/kg cold-rolling class (A-M-177 DIETER1988); hot rolling cheaper"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3027,7 +3198,14 @@
       "notes": "Rod and profile extrusion. See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: Al/Cu/Mg profile feed blocked"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3043,7 +3221,14 @@
       "notes": "Primary wire and rod drawing in FOUNDRY. Output to STOCK_OUT. MFG WIRE_DRAW does final sizing only.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "no feed edge at Rev AC; wire sizing is MFG WIRE_DRAW (S57)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3059,7 +3244,14 @@
       "notes": "Open-die or small closed-die forging. See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "no edges at Rev AC; open-die work is campaign-scale"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3075,7 +3267,14 @@
       "notes": "RF/induction sinter for powder stock (Ti, Mo, Cr). See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: Ti/Mo/Cr powder feed blocked"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3091,7 +3290,14 @@
       "notes": "Dry and blend digester salts as flux. See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: SALT_FEED unfed at Rev AC"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3107,7 +3313,18 @@
       "notes": "Staged stock to MFG and FAB. See notes/FOUNDRY_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "stock_out_kg_d": 14.0,
+          "draws": {
+            "MFG": 14.0,
+            "FAB": 0.0,
+            "WIRE_DRAW": 0.0
+          }
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3124,7 +3341,16 @@
       "notes": "Continuous/semi-continuous caster for Al, Cu, Fe stock. Vacuum variant for Ti. See notes/ADVANCED_CASTING.md. Horizontal Cu mold, 50-80 mm billet, 0.2-0.5 m/min. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "feed_kg_d": 11.0,
+          "billet_kg_d": 10.0,
+          "ingot_kg_d": 1.0,
+          "mold": "water-cooled copper, horizontal (AQS-SIZE-FOUNDRY)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3141,7 +3367,17 @@
       "notes": "Aluminum electrolytic pot. Chloride melt. Metal to foundry. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "design_case_kg_d": 8.0,
+          "alcl3_kg_per_kg_al": 4.942,
+          "cl2_kg_per_kg_al": 3.942,
+          "status_note": "unfed: Al stays in leach liquor (AQS-BOM-SC-001 sec. 6)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3158,7 +3394,16 @@
       "notes": "Magnesium electrolytic pot. Anhydrous MgCl2. Metal to foundry. Cl2 to CRU. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "mgcl2_kg_per_kg_mg": 3.917,
+          "cl2_kg_per_kg_mg": 2.917,
+          "status_note": "Kroll Mg recycle; no live Ti rate to serve (AQS-BAL-KROLL)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3175,7 +3420,15 @@
       "notes": "Calcium electrolytic pot. Contact cathode. Metal to foundry. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "cacl2_kg_per_kg_ca": 2.769,
+          "status_note": "unfed: no CaCl2 feed edge at Rev AC"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3192,7 +3445,14 @@
       "notes": "Wax or printed pattern for investment casting. Baseline. See notes/INVESTMENT_CASTING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3209,7 +3469,14 @@
       "notes": "Ceramic slurry and stucco shell build. Baseline. See notes/INVESTMENT_CASTING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3226,7 +3493,14 @@
       "notes": "Dewax and fire ceramic shell. Baseline. See notes/INVESTMENT_CASTING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3243,7 +3517,14 @@
       "notes": "Pour into ceramic shell. Fed from IND_MELT or VAC_IND. Baseline. See notes/INVESTMENT_CASTING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3260,7 +3541,14 @@
       "notes": "Remove spent ceramic shell from casting. Shell to solids line. See notes/INVESTMENT_CASTING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3276,7 +3564,18 @@
       "notes": "Polyolefin (PE/PP-type) from oil-line light cuts + methanol. Baseline other-polymer path. Sized in notes/POLYMERS_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "feed_kg_d": 0.414905,
+          "feed": "C5-C10 naphtha at the cut tank (IA-C5-POLY)",
+          "T_C": "150-250",
+          "P_MPa": "1-5",
+          "heat_W": 0.0018,
+          "basis": "AQS-SIZE-OIL-POLY POLY_OLEFIN reactor; feed heating 25->200 C at 2.1 kJ/kg K, exotherm neglected (study)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3292,7 +3591,14 @@
       "notes": "Condensation polymer from digester organics / oil fatty cuts if present. Optional duty. Sized in notes/POLYMERS_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "status_note": "recipe waits on the digester organic assay (AQS-DES-POLY)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3308,7 +3614,14 @@
       "notes": "Pelletize resin. Form factor to other sectors. Sized in notes/POLYMERS_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "pellet_kg_d": 0.414905,
+          "form": "2-4 mm pellets (AQS-DES-POLY)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3324,7 +3637,14 @@
       "notes": "Powder/resin form factor for coatings and linings.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: fluoropolymer feed blocked (Q-013)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3340,7 +3660,14 @@
       "notes": "Film/sheet form factor.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: no feed edge at Rev AC"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3356,7 +3683,15 @@
       "notes": "Staged polymer feedstock to MFG, FAB, WET, FOUNDRY. Sized in notes/POLYMERS_DESIGN.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "out_kg_d": 0.377186,
+          "to_wet_kg_d": 0.037719,
+          "to_fab_kg_d": 0.0
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -3914,10 +4249,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Goods balance (A-M-265): foundry products net 0 (stock loop closes on the shop draw) + mfg goods surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return) - internal use fully looped = 0.0 kg/d goods export at the bounding case. THIS IS THE PLANT SURPLUS STATEMENT: the plant sustains itself in goods with zero saleable goods surplus at Rev AC scope; the NORTH_DOCK residual is the non-goods study-basis imbalance (NOX_SCRUB/CRYO_H2/AFTERBURNER + WS rounding), owned by those lanes, not goods. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
@@ -7720,10 +8055,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "F_RECOVER (DIGESTER) has no in-edge at Rev AC; no fluorine source on site (AQS-BOM-SC-001 43 lines Missing, Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS"
@@ -7742,10 +8077,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer train F-blocked (AQS-BOM-SC-001, Q-013); design case 0.5 kg/d HF in AQS-DUTY-073. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -7764,10 +8099,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer train F-blocked (AQS-BOM-SC-001, Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -7786,10 +8121,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer train F-blocked (AQS-BOM-SC-001, Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -7808,10 +8143,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer train F-blocked (AQS-BOM-SC-001, Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -7830,10 +8165,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "TI_CELL idle; the Kroll MgCl2 return table is in AQS-DUTY-072 sec. 4. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -7852,10 +8187,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MO_CELL idle (feed-blocked, AQS-ASSAY-TI-MO). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -7874,10 +8209,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Ti dense-grit assay missing: no composition is on the edge (AQS-ASSAY-TI-MO); FLOAT_SINK closes on its held liquor/plastics edges, so the grit draw would open it. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FOUNDRY"
@@ -7896,10 +8231,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "A-M-255 alias retired: EW_9 liquor tail fully booked on IA-EW-09 to POLISH_BANK; a parallel Mo draw would double-book it, and the Mo tenor measurement is missing (AQS-ASSAY-TI-MO). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FOUNDRY"
@@ -7918,10 +8253,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "TI_CELL idle; Kroll chlorine closes internally via the Mg pot (AQS-BAL-KROLL). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -7940,10 +8275,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MO_CELL idle (feed-blocked, AQS-ASSAY-TI-MO). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -7962,10 +8297,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Cu-class melt to the cast line: bus/winding stock (AQS-SIZE-FOUNDRY Cu 3 kg/d). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -7984,10 +8319,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Near-net permanent-mold pours at 3 kg/d; sprue/runner returns are campaign events, not a daily continuous rate (the melt loop closes on MFG_SCRAP_TO_IND). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8006,10 +8341,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "TI_CELL idle at the bounding case (grit assay missing, AQS-ASSAY-TI-MO); Kroll per-kg feed table in AQS-DUTY-072 sec. 4 for the day the assay lands. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8028,10 +8363,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "VAC_IND idle (Ti feed-blocked, AQS-ASSAY-TI-MO). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8050,10 +8385,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Cu cast stock to rolling (bus bar / winding strip, FOUNDRY_DESIGN machine table). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8072,10 +8407,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Extrusion is the Al/Cu/Mg profile path (FOUNDRY_DESIGN); Al/Mg pot metal is feed-blocked at the bounding case, so the Cu line rolls. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8094,10 +8429,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 13.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rolled plate/sheet stock (Cu 3 + Fe 10). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8116,10 +8451,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Extrusion idle: Al/Mg profile feed blocked (pots unfed). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8138,10 +8473,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "FOUNDRY DRAW has no feed edge at Rev AC; wire sizing is the MFG WIRE_DRAW S57 line (FOUNDRY_INTEGRATION role split). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8160,10 +8495,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Sinter feed is Ti/Mo/Cr powder; pot/cell train feed-blocked. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8182,10 +8517,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "FLUX_PREP unfed: SALT_FEED has no in-edge (no salt source at the bounding case); flux cover is a campaign addition from the leach salt split when that task assigns it. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8204,10 +8539,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "A-M-255 alias retired: EW_9 metal harvest fully booked on IA-EW-MET-9 (61.341 to the shop) and IA-EW-SHEET (13.989 to MET_MELT); a third draw would double-book the harvest. The melt is fed on shop scrap. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FOUNDRY"
@@ -8226,10 +8561,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Mo recovery feed-blocked: EW9_LIQUOR_TO_MO retired at 0 (A-M-255) and the liquor Mo tenor is unmeasured (AQS-ASSAY-TI-MO); design case 0.05 kg/d Mo with stoichiometric feeds in AQS-DUTY-072. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8248,10 +8583,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Cr feed assay missing, no composition on an edge (AQS-DUTY-CR); chromite-grit route unfed. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8270,10 +8605,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 11.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fe 10 + Zn 1 kg/d to the semi-continuous caster (AQS-SIZE-FOUNDRY Fe/low-alloy and Zn/EW lines). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8292,10 +8627,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 10.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fe billet to rolling (AQS-SIZE-FOUNDRY Fe 10). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8314,10 +8649,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Zn/EW ingot straight to stock (AQS-SIZE-FOUNDRY Zn 1). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8336,10 +8671,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "TI_CELL idle (grit assay missing, AQS-ASSAY-TI-MO). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8358,10 +8693,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 14.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Formed stock to the shop = the foundry product demand Cu 3 + Fe 10 + Zn/EW 1 kg/d (AQS-SIZE-FOUNDRY live stock lines; A-M-261). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG"
@@ -8402,10 +8737,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.141414,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Melt slag+dross 1% of charge by mass conservation on the melt (INDUCT_SOCX 1-2 % band, A-M-262); returns to the leach. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -8424,10 +8759,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "SALT_FEED is a stub source at Rev AC (no in-edges); no salt rate invented. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FOUNDRY"
@@ -8446,10 +8781,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AL_POT unfed at the bounding case: no chloride feed edge exists and Al stays in the leach liquor as solute (AQS-BOM-SC-001 sec. 6, alumina recovery a study); design case 8 kg/d in AQS-DUTY-072 sec. 4. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8468,10 +8803,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MG_POT unfed: the Kroll Mg recycle (AQS-BAL-KROLL) has no live Ti rate to serve; design case per-kg table in AQS-DUTY-072 sec. 4. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8490,10 +8825,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "CA_POT unfed: no CaCl2 feed edge at Rev AC; Ca metal also the grease-thickener source. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8513,10 +8848,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AL_POT idle (unfed); Cl2 return table per kg Al in AQS-DUTY-072 sec. 4. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -8536,10 +8871,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MG_POT idle; Kroll chlorine loop net zero (AQS-BAL-KROLL). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -8615,10 +8950,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "COMB_HEAT is the alternate path, off-baseline (FOUNDRY_DUTY heat policy); off-gas routes to MET_SCRUB only when the alternate is energized. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG"
@@ -8637,10 +8972,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "WIRE_DRAW (MFG) closes on S57 Cu from MET_MELT (A-M-177 line); no foundry wire draw at the bounding case (A-M-257 by-difference pattern). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG"
@@ -8659,10 +8994,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "No powder demand on IND_MELT at the bounding case. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG"
@@ -8681,10 +9016,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Gas-atomizer powder path optional, not baseline (FOUNDRY_INTEGRATION). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "FOUNDRY"
@@ -8703,10 +9038,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked (see IND_TO_INV). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8725,10 +9060,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked (see IND_TO_INV). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8747,10 +9082,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked (see IND_TO_INV). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8769,10 +9104,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment casting blocked: no wax make-up source (WAX_PATTERN closes on reclaim only) and GLASS_DIGEST is fully committed (IA-GLASS-03 30.0 = S08G 26.7 + IA-SIL-SRC 3.3). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8791,10 +9126,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "VAC_IND idle (Ti feed-blocked, AQS-ASSAY-TI-MO). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8813,10 +9148,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked (see IND_TO_INV). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8835,10 +9170,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked (see IND_TO_INV). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8857,10 +9192,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Spent shell has no digest capacity: GLASS_DIGEST closes exactly on IA-GLASS-03 = S08G + IA-SIL-SRC, so GLASS_MILL_TO_DIGEST is 0 by its own closure. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "GLASS"
@@ -8901,10 +9236,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 14.141414,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Shop scrap (charge) to the melt; closes MFG_SHOP on the store draws (AQS-DUTY-072, A-M-261). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "FOUNDRY"
@@ -8923,10 +9258,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked (see IND_TO_INV). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -8945,10 +9280,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Investment train blocked; no unrecovered-wax blowdown to the fractionator. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "OIL"
@@ -8967,10 +9302,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fractionator draw 0: the olefin feed draws as naphtha at the cut tank (IA-C5-POLY); the recovered-wax path (WAX_TO_OIL) is 0 with the investment train blocked. OIL_FRAC closes. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "POLYMERS"
@@ -8989,10 +9324,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Methanol committed to the tank/ship balance (X-PAR-12 TF on S75); the olefin carbon source is the on-site C5-C10 naphtha cut (AQS-DES-POLY: carbon source on site). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "POLYMERS"
@@ -9011,10 +9346,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "POLY_COND recipe waits on the digester organic assay (AQS-DES-POLY / AQS-SIZE-OIL-POLY: no rate treated as design); BLACK_DIGEST closes on IA-BLK-GREY. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "POLYMERS"
@@ -9033,10 +9368,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.414905,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Polyolefin resin = naphtha feed 0.4149 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -9055,10 +9390,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer train F-blocked (AQS-BOM-SC-001, Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -9077,10 +9412,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer train F-blocked (AQS-BOM-SC-001, Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -9099,10 +9434,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.414905,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Pellet line passes the resin to stock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -9121,10 +9456,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Fluoropolymer powder blocked (no F source on site, AQS-BOM-SC-001, Q-011/Q-013). | {TAG}."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -9143,10 +9478,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "FILM_CAST has no feed edge at Rev AC; film/sheet rides the pellet line when a die study issues it. | {TAG}."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -9165,10 +9500,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.377186,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Shop polymer draw by difference on the shop closure (A-M-257 pattern): -r0 -0.235772 + melt loss term f*K/(1-f); molded articles ride BLOW_MOLD (IA-BLOW-OUT 8.407). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "MFG"
@@ -9209,10 +9544,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.037719,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Shop polymer offcut to the wet line, 10% of the issue (the S58/S59/S60 10 % shop-loss class, AQS-DUTY-010; A-M-263). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DIGESTER"
@@ -9231,10 +9566,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "No monomer chlorination draw: fluoropolymer train F-blocked (Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS"
@@ -9253,10 +9588,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "No monomer chlorination draw: fluoropolymer train F-blocked (Q-013). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS"
@@ -14866,7 +15201,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 87.043838,
+        "value": 86.864705,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -15165,10 +15500,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.370877,
+        "value": 6.955972,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0539 and the olefin feed 0.4149 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -16330,10 +16665,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "unrated pending electrical rollup (node HF_GEN has no continuous_kw)"
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "HF_GEN standby at 0 duty (fluoropolymer train F-blocked, Q-013; feed 0 on F_RECOVER_TO_HF_GEN). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "POLYMERS",
@@ -17238,6 +17573,35 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": "X-PAR-07 extension hall feed"
+    },
+    {
+      "stream_id": "IA-C5-POLY",
+      "from_unit_id": "PROD_C5_C10",
+      "to_unit_id": "POLY_OLEFIN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C5-C10 naphtha olefin feed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.414905,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Created by the polymers sizing pass: the olefin feed draws as naphtha at the cut tank (AQS-SIZE-OIL-POLY); the fractionator-side OIL_TO_OLEFIN stays 0 so OIL_FRAC closes.",
+      "composition": {
+        "C5-C10": 1.0
+      }
     }
   ],
   "view_presets": [
@@ -17360,6 +17724,11 @@
       "id": "WP_TRUE_CLOSURE_RESIDUALS",
       "severity": "low",
       "detail": "S87/S88 left in place under Mike HOLD pending endpoint write-up (planning/studies/S87_S88_ENDPOINTS.md). IA-HDR-H2-01\u202604 restored after EW_3\u2026EW_8 nodes. loops_closed still false \u2014 C3 Present CAD."
+    },
+    {
+      "id": "FOUNDRY_POLY_MISSING_EDGES",
+      "severity": "medium",
+      "detail": "Foundry/polymers sizing pass (AQS-DUTY-072/073): absent edges that block positive rates - pot chloride feeds (LEACH->AL/MG/CA_POT), DRAW feed (CAST/ROLL->DRAW), FORGE edges, FILM_CAST feed, POLY_COND outlet to PELLET, wax make-up + shell ceramic for the investment train, SALT_FEED source, F_RECOVER feed (F recovery, Q-013). Each 0-rated edge cites its block in the sizing docs until the feed lands."
     }
   ],
   "notes": [

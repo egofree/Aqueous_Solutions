@@ -10,7 +10,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 
 | ID | Route | Claim status | Presence | Rate | Notes |
 |---|---|---|---|---|---|
-| DOCK_EXPORT_TBD | NORTH_DOCK→BOUNDARY_EXPORT | — | placeholder | — | Audit §7.1 DOCK export — sector required; no inter-block stream ID issued |
+| DOCK_EXPORT_TBD | NORTH_DOCK→BOUNDARY_EXPORT | — | placeholder | 0.0 kg/d | Audit §7.1 DOCK export — sector required; no inter-block stream ID issued |
 | S01 | BMED_UPW_POLISH→HDR_UPW | Closed | present | 67.300214 kg/d | — |
 | S02 | CRYO_O2→HABITATION | Closed | present | 3.4 kg/d | — |
 | S03 | CRYO_N2→WAFER_FAB | — | present | 1.4998 kg/d | Was wrongly sourced from CRYO_H2. |

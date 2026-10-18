@@ -16,7 +16,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CUT-2 | OIL_FRAC | PROD_C11_C18 | L | mass | present | fractionator cut | 9.918821 kg/d | — |
 | CUT-3 | OIL_FRAC | PROD_C19_C28 | L | mass | present | fractionator cut | 6.165705 kg/d | — |
 | CUT-4 | OIL_FRAC | PROD_C29 | L | mass | present | fractionator cut | 5.873266 kg/d | — |
-| DOCK_EXPORT_TBD | NORTH_DOCK | BOUNDARY_EXPORT | S | mass | placeholder | goods / cassettes / surplus freight (ID TBD) | — | no_S_id,do_not_invent_route_or_rate,high_severity_audit |
+| DOCK_EXPORT_TBD | NORTH_DOCK | BOUNDARY_EXPORT | S | mass | placeholder | goods / cassettes / surplus freight (ID TBD) | 0.0 kg/d | no_S_id,do_not_invent_route_or_rate,high_severity_audit |
 | HL-AFTERBURNER-Q1-A | AFTERBURNER | Q1_A | heat | thermal | study | Q1 flue, not Q4 | 1.383 kW | — |
 | HL-AFTERBURNER-Q1-B | AFTERBURNER | Q1_B | heat | thermal | study | Q1 flue, not Q4 | 1.383 kW | — |
 | HL-GLASS_BURNOUT-Q2-A | GLASS_BURNOUT | Q2_A | heat | thermal | study | Q2 burnout, not Q4 | 0.928 kW | — |
@@ -165,76 +165,76 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S88 | CRYO_N2 | GROW_BED | G | mass | present | N2 make-up | 0.0 kg/d | — |
 | S34 | WS_NITRIC | WET_BENCH | L | mass | present | HNO3 | 1.2456 kg/d | — |
 | S34B | WS_PHOS | WET_BENCH | L | mass | present | H3PO4 | 0.61 kg/d | — |
-| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | L | mass | present | fluoride concentrate | — | — |
-| HF_GEN_TO_VDF | HF_GEN | VDF_SYN | L | mass | present | aqueous HF | — | — |
-| HF_GEN_TO_TFE | HF_GEN | TFE_SYN | L | mass | present | aqueous HF | — | — |
-| VDF_TO_POLY_F | VDF_SYN | POLY_F | L | mass | present | VDF monomer | — | — |
-| TFE_TO_POLY_F | TFE_SYN | POLY_F | L | mass | present | TFE monomer | — | — |
-| TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | S | mass | present | slag / residual grit | — | — |
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | L | mass | present | raffinate after Mo cut | — | — |
-| FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | S | mass | present | dense grit (ilmenite/rutile fraction) | — | — |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | L | mass | present | post-EW liquor for Mo cut | — | — |
-| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | G | mass | present | chlorine from Kroll chlorinator / Mg recycle | — | — |
-| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | G | mass | present | anode gas (Cl2 or O2) from molten-salt pot | — | — |
-| IND_MELT_TO_CAST | IND_MELT | CAST_LINE | L | mass | present | molten metal | — | — |
-| CAST_SCRAP_TO_IND | CAST_LINE | IND_MELT | S | mass | present | foundry scrap | — | — |
-| METALS_TO_IND_MELT | TI_CELL | IND_MELT | S | mass | present | Ti and other metal powders/sponge | — | — |
-| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | L | mass | present | vacuum melt to cast | — | — |
-| CAST_TO_ROLL | CAST_LINE | ROLL | S | mass | present | billet to roll | — | — |
-| CAST_TO_EXTRUDE | CAST_LINE | EXTRUDE | S | mass | present | billet to extrude | — | — |
-| ROLL_TO_STOCK | ROLL | STOCK_OUT | S | mass | present | plate/sheet | — | — |
-| EXTRUDE_TO_STOCK | EXTRUDE | STOCK_OUT | S | mass | present | rod/profile | — | — |
-| DRAW_TO_STOCK | DRAW | STOCK_OUT | S | mass | present | wire | — | — |
-| SINTER_TO_STOCK | SINTER | STOCK_OUT | S | mass | present | sintered stock | — | — |
-| FLUX_TO_IND | FLUX_PREP | IND_MELT | S | mass | present | flux | — | — |
-| EW_METALS_TO_IND | EW_9 | IND_MELT | S | mass | present | EW cathode/powder metals | — | — |
-| MO_TO_IND | MO_CELL | IND_MELT | S | mass | present | Mo metal | — | — |
-| CR_TO_IND | CR_CELL | IND_MELT | S | mass | present | Cr metal | — | — |
-| IND_TO_CONT | IND_MELT | CONT_CAST | L | mass | present | melt to continuous caster | — | — |
-| CONT_TO_ROLL | CONT_CAST | ROLL | S | mass | present | continuous billet/slab | — | — |
-| CONT_TO_STOCK | CONT_CAST | STOCK_OUT | S | mass | present | as-cast stock | — | — |
-| VAC_IND_TI | TI_CELL | VAC_IND | S | mass | present | Ti sponge/powder to vacuum melt | — | — |
-| STOCK_TO_MFG | STOCK_OUT | MFG_SHOP | S | mass | present | plate/rod/wire to manufacturing | — | — |
+| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | L | mass | present | fluoride concentrate | 0.0 kg/d | — |
+| HF_GEN_TO_VDF | HF_GEN | VDF_SYN | L | mass | present | aqueous HF | 0.0 kg/d | — |
+| HF_GEN_TO_TFE | HF_GEN | TFE_SYN | L | mass | present | aqueous HF | 0.0 kg/d | — |
+| VDF_TO_POLY_F | VDF_SYN | POLY_F | L | mass | present | VDF monomer | 0.0 kg/d | — |
+| TFE_TO_POLY_F | TFE_SYN | POLY_F | L | mass | present | TFE monomer | 0.0 kg/d | — |
+| TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | S | mass | present | slag / residual grit | 0.0 kg/d | — |
+| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | L | mass | present | raffinate after Mo cut | 0.0 kg/d | — |
+| FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | S | mass | present | dense grit (ilmenite/rutile fraction) | 0.0 kg/d | — |
+| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | L | mass | present | post-EW liquor for Mo cut | 0.0 kg/d | — |
+| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | G | mass | present | chlorine from Kroll chlorinator / Mg recycle | 0.0 kg/d | — |
+| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | G | mass | present | anode gas (Cl2 or O2) from molten-salt pot | 0.0 kg/d | — |
+| IND_MELT_TO_CAST | IND_MELT | CAST_LINE | L | mass | present | molten metal | 3.0 kg/d | — |
+| CAST_SCRAP_TO_IND | CAST_LINE | IND_MELT | S | mass | present | foundry scrap | 0.0 kg/d | — |
+| METALS_TO_IND_MELT | TI_CELL | IND_MELT | S | mass | present | Ti and other metal powders/sponge | 0.0 kg/d | — |
+| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | L | mass | present | vacuum melt to cast | 0.0 kg/d | — |
+| CAST_TO_ROLL | CAST_LINE | ROLL | S | mass | present | billet to roll | 3.0 kg/d | — |
+| CAST_TO_EXTRUDE | CAST_LINE | EXTRUDE | S | mass | present | billet to extrude | 0.0 kg/d | — |
+| ROLL_TO_STOCK | ROLL | STOCK_OUT | S | mass | present | plate/sheet | 13.0 kg/d | — |
+| EXTRUDE_TO_STOCK | EXTRUDE | STOCK_OUT | S | mass | present | rod/profile | 0.0 kg/d | — |
+| DRAW_TO_STOCK | DRAW | STOCK_OUT | S | mass | present | wire | 0.0 kg/d | — |
+| SINTER_TO_STOCK | SINTER | STOCK_OUT | S | mass | present | sintered stock | 0.0 kg/d | — |
+| FLUX_TO_IND | FLUX_PREP | IND_MELT | S | mass | present | flux | 0.0 kg/d | — |
+| EW_METALS_TO_IND | EW_9 | IND_MELT | S | mass | present | EW cathode/powder metals | 0.0 kg/d | — |
+| MO_TO_IND | MO_CELL | IND_MELT | S | mass | present | Mo metal | 0.0 kg/d | — |
+| CR_TO_IND | CR_CELL | IND_MELT | S | mass | present | Cr metal | 0.0 kg/d | — |
+| IND_TO_CONT | IND_MELT | CONT_CAST | L | mass | present | melt to continuous caster | 11.0 kg/d | — |
+| CONT_TO_ROLL | CONT_CAST | ROLL | S | mass | present | continuous billet/slab | 10.0 kg/d | — |
+| CONT_TO_STOCK | CONT_CAST | STOCK_OUT | S | mass | present | as-cast stock | 1.0 kg/d | — |
+| VAC_IND_TI | TI_CELL | VAC_IND | S | mass | present | Ti sponge/powder to vacuum melt | 0.0 kg/d | — |
+| STOCK_TO_MFG | STOCK_OUT | MFG_SHOP | S | mass | present | plate/rod/wire to manufacturing | 14.0 kg/d | — |
 | STOCK_TO_FAB | STOCK_OUT | WAFER_FAB | S | mass | present | specialty stock to fab | 0.0 kg/d | — |
-| FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | — | — |
-| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | present | digester/leach salts to flux | — | — |
-| AL_POT_TO_IND | AL_POT | IND_MELT | S | mass | present | Al metal | — | — |
-| MG_POT_TO_IND | MG_POT | IND_MELT | S | mass | present | Mg metal | — | — |
-| CA_POT_TO_IND | CA_POT | IND_MELT | S | mass | present | Ca metal | — | — |
-| AL_POT_CL2 | AL_POT | CRU | G | mass,energy | present | Cl2 return | — | — |
-| MG_POT_CL2 | MG_POT | CRU | G | mass,energy | present | Cl2 return | — | — |
+| FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | 0.141414 kg/d | — |
+| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | present | digester/leach salts to flux | 0.0 kg/d | — |
+| AL_POT_TO_IND | AL_POT | IND_MELT | S | mass | present | Al metal | 0.0 kg/d | — |
+| MG_POT_TO_IND | MG_POT | IND_MELT | S | mass | present | Mg metal | 0.0 kg/d | — |
+| CA_POT_TO_IND | CA_POT | IND_MELT | S | mass | present | Ca metal | 0.0 kg/d | — |
+| AL_POT_CL2 | AL_POT | CRU | G | mass,energy | present | Cl2 return | 0.0 kg/d | — |
+| MG_POT_CL2 | MG_POT | CRU | G | mass,energy | present | Cl2 return | 0.0 kg/d | — |
 | IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 1.063 kW | — |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 0.638 kW | — |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | present | combustion off-gas when alternate used | — | — |
-| STOCK_TO_WIRE_DRAW | STOCK_OUT | WIRE_DRAW | S | mass | present | rod/wire for final sizing | — | — |
-| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | L | mass | present | melt to atomizer when powder required | — | — |
-| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | S | mass | present | powder stock | — | — |
-| WAX_TO_SHELL | WAX_PATTERN | SHELL_BUILD | S | mass | present | wax pattern | — | — |
-| SHELL_TO_BURNOUT | SHELL_BUILD | SHELL_BURNOUT | S | mass | present | green shell | — | — |
-| BURNOUT_TO_CAST | SHELL_BURNOUT | INV_CAST | S | mass | present | fired shell | — | — |
-| IND_TO_INV | IND_MELT | INV_CAST | L | mass | present | melt for investment pour | — | — |
-| VAC_TO_INV | VAC_IND | INV_CAST | L | mass | present | reactive melt for investment pour | — | — |
-| INV_TO_BREAK | INV_CAST | SHELL_BREAK | S | mass | present | cast + shell | — | — |
-| BREAK_TO_STOCK | SHELL_BREAK | STOCK_OUT | S | mass | present | investment casting | — | — |
-| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | S | mass | present | spent ceramic shell to solids line | — | — |
+| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | present | combustion off-gas when alternate used | 0.0 kg/d | — |
+| STOCK_TO_WIRE_DRAW | STOCK_OUT | WIRE_DRAW | S | mass | present | rod/wire for final sizing | 0.0 kg/d | — |
+| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | L | mass | present | melt to atomizer when powder required | 0.0 kg/d | — |
+| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | S | mass | present | powder stock | 0.0 kg/d | — |
+| WAX_TO_SHELL | WAX_PATTERN | SHELL_BUILD | S | mass | present | wax pattern | 0.0 kg/d | — |
+| SHELL_TO_BURNOUT | SHELL_BUILD | SHELL_BURNOUT | S | mass | present | green shell | 0.0 kg/d | — |
+| BURNOUT_TO_CAST | SHELL_BURNOUT | INV_CAST | S | mass | present | fired shell | 0.0 kg/d | — |
+| IND_TO_INV | IND_MELT | INV_CAST | L | mass | present | melt for investment pour | 0.0 kg/d | — |
+| VAC_TO_INV | VAC_IND | INV_CAST | L | mass | present | reactive melt for investment pour | 0.0 kg/d | — |
+| INV_TO_BREAK | INV_CAST | SHELL_BREAK | S | mass | present | cast + shell | 0.0 kg/d | — |
+| BREAK_TO_STOCK | SHELL_BREAK | STOCK_OUT | S | mass | present | investment casting | 0.0 kg/d | — |
+| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | S | mass | present | spent ceramic shell to solids line | 0.0 kg/d | — |
 | GLASS_MILL_TO_DIGEST | GLASS_MILL | GLASS_DIGEST | S | mass | present | milled shell into digest | — | — |
-| MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | S | mass | present | manufacturing scrap return | — | — |
-| WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | L | mass | present | wax condensate reclaim | — | — |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | L | mass | present | unrecovered wax to oil line | — | — |
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | L | mass | present | light cuts to polyolefin | — | — |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | L | mass | present | methanol co-feed | — | — |
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | L | mass | present | digester organics | — | — |
-| OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | S | mass | present | polyolefin resin | — | — |
-| POLYF_TO_PELLET | POLY_F | PELLET | S | mass | present | PVDF/PTFE resin | — | — |
-| POLYF_TO_POWDER | POLY_F | POWDER_RESIN | S | mass | present | fluoropolymer powder | — | — |
-| PELLET_TO_STOCK | PELLET | POLY_STOCK | S | mass | present | pellet stock | — | — |
-| POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | S | mass | present | powder stock | — | — |
-| FILM_TO_STOCK | FILM_CAST | POLY_STOCK | S | mass | present | film stock | — | — |
-| POLY_TO_MFG | POLY_STOCK | MFG_SHOP | S | mass | present | polymer feedstock to manufacturing | — | — |
+| MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | S | mass | present | manufacturing scrap return | 14.141414 kg/d | — |
+| WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | L | mass | present | wax condensate reclaim | 0.0 kg/d | — |
+| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | L | mass | present | unrecovered wax to oil line | 0.0 kg/d | — |
+| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | L | mass | present | light cuts to polyolefin | 0.0 kg/d | — |
+| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | L | mass | present | methanol co-feed | 0.0 kg/d | — |
+| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | L | mass | present | digester organics | 0.0 kg/d | — |
+| OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | S | mass | present | polyolefin resin | 0.414905 kg/d | — |
+| POLYF_TO_PELLET | POLY_F | PELLET | S | mass | present | PVDF/PTFE resin | 0.0 kg/d | — |
+| POLYF_TO_POWDER | POLY_F | POWDER_RESIN | S | mass | present | fluoropolymer powder | 0.0 kg/d | — |
+| PELLET_TO_STOCK | PELLET | POLY_STOCK | S | mass | present | pellet stock | 0.414905 kg/d | — |
+| POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | S | mass | present | powder stock | 0.0 kg/d | — |
+| FILM_TO_STOCK | FILM_CAST | POLY_STOCK | S | mass | present | film stock | 0.0 kg/d | — |
+| POLY_TO_MFG | POLY_STOCK | MFG_SHOP | S | mass | present | polymer feedstock to manufacturing | 0.377186 kg/d | — |
 | POLY_TO_FAB | POLY_STOCK | WAFER_FAB | S | mass | present | polymer feedstock to fab | 0.0 kg/d | — |
-| POLY_TO_WET | POLY_STOCK | LEACH_CSTR_1 | S | mass | present | lining/gasket stock return path | — | — |
-| CRU_TO_VDF | CRU | VDF_SYN | G | mass | present | chlorine | — | — |
-| CRU_TO_TFE | CRU | TFE_SYN | G | mass | present | chlorine | — | — |
+| POLY_TO_WET | POLY_STOCK | LEACH_CSTR_1 | S | mass | present | lining/gasket stock return path | 0.037719 kg/d | — |
+| CRU_TO_VDF | CRU | VDF_SYN | G | mass | present | chlorine | 0.0 kg/d | — |
+| CRU_TO_TFE | CRU | TFE_SYN | G | mass | present | chlorine | 0.0 kg/d | — |
 | POLISH_TO_LI | POLISH_BANK | LI_RECOVER | L | mass | present | Li-bearing polish liquor | — | — |
 | WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | L | mass | present | wax cut | — | — |
 | WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | L | mass | present | wax cut | — | — |
@@ -403,7 +403,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.207942 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 87.043838 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 86.864705 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -413,7 +413,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW7-CL2 | EW_7 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 104.952575 kg/d | — |
 | IA-EW8-CL2 | EW_8 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.44975 kg/d | — |
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 111.134409 kg/d | — |
-| IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 7.370877 kg/d | — |
+| IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 6.955972 kg/d | — |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | L | mass | present | C11-C18 surplus shipped | 1.512021 kg/d | — |
 | IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.218505 kg/d | — |
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | S | mass | present | off-spec powder to remelt | 0.355556 kg/d | — |
@@ -453,7 +453,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-IND_MELT | SOL_ARK_60K | IND_MELT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 25.0 kW | — |
 | SF-VAC_IND | SOL_ARK_60K | VAC_IND | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 15.0 kW | — |
 | SF-RF_HEAT | SOL_ARK_60K | RF_HEAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 5.0 kW | — |
-| SF-HF_GEN | SOL_ARK_60K | HF_GEN | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | — | — |
+| SF-HF_GEN | SOL_ARK_60K | HF_GEN | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0 kW | — |
 | S100 | Q4_BUS | LEACH_CSTR_1 | E | thermal | present | Q4 water to HX-9 leach make-up preheater | 0.5322 kW | — |
 | S101 | Q4_BUS | GLASS_DIGEST | E | thermal | present | Q4 water to HX-10 digest caustic preheater | 0.2822 kW | — |
 | IA-Q4-ADS | Q4_BUS | ADS_CHILL | E | thermal | present | Q4 water 65 C drive (summer design) | 5.0 kW | — |
@@ -488,3 +488,4 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW7-H2B | EW_7 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.454643 kg/d | — |
 | IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032272 kg/d | — |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 105.214 kW | — |
+| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.414905 kg/d | — |
