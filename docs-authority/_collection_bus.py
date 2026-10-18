@@ -12,7 +12,7 @@ inv = N['SOL_ARK_60K']['params']; n_inv = inv['count']; unit_kW = inv['kW']/n_in
 V = 480.0; I1 = unit_kW*1000/(math.sqrt(3)*V)
 kmax = int(v('sec_ocpd_max_A')/1.25/I1); ns = math.ceil(n_inv/kmax)
 per = [n_inv//ns + (1 if i < n_inv % ns else 0) for i in range(ns)]
-plant_kW = sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and 'elec' in (e.get('layers') or []))
+plant_kW = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and 'elec' in (e.get('layers') or []))   # R10b: null-rated feeder stubs (SF-HF_GEN unrated) count 0
 rows = []
 for i, k in enumerate(per, 1):
     I = k*I1; brk = next(b for b in STD_A if b >= 1.25*I); kva = next(x for x in KVA if x >= k*unit_kW)

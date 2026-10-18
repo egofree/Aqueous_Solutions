@@ -138,8 +138,14 @@ def check():
     for c,v in s['ew'].items():
         if c == 'RECT_EW':
             n_rect = N.get('RECT_EW') or N.get('RECTIFIER')            # R8: Rev AC renamed the EW rectifier RECTIFIER
-            if n_rect and (n_rect.get('continuous_kw') or {}).get('value') is not None:
-                cmp('RECT_EW AC kW', n_rect['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW'); continue
+            if n_rect is None: continue
+            # R10b (A-M-255): on Rev AC the RECTIFIER node continuous_kw is the 12 kW A-M-231 basis, NOT the EW AC
+            # input - the solved bounding AC input is stamped in params.rect_ac_input_kW by write_graph.process();
+            # comparing the node kW against it is the false misfit of note pv_sizing_derivation §10.4
+            stamp = (n_rect.get('params') or {}).get('rect_ac_input_kW')
+            if stamp is not None: cmp('RECT_EW AC kW (params stamp)', stamp, v['P_ac_kW'], 'USBM_CL_EW')
+            elif c == 'RECT_EW' and N.get('RECT_EW') and (n_rect.get('continuous_kw') or {}).get('value') is not None:
+                cmp('RECT_EW AC kW', n_rect['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW')
             continue
         dc = next((x['rate']['value'] for x in g['edges'] if x['stream_id']==f'IA-DC-{c}'), None)
         if dc is not None: cmp(f'{c} DC kW (cell + bus drop)', dc, v['P_bus_kW'], 'CODATA2018, USBM_CL_EW')

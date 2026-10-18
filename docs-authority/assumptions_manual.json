@@ -4389,5 +4389,103 @@
     ],
     "needs_verification": true,
     "verification_test": "python3 -m flow_graph.param.balance (no --write): ledger residual equals NORTH_DOCK residual and minus the sum of all other unit residuals; all other named R10a units < 0.5 kg/d"
+  },
+  {
+    "id": "A-M-255",
+    "value": "EW Faraday cascade re-based on live endpoints: DC feeds IA-DC-EW_1..9 restored at BH kW (5.9909..7.538) on RECTIFIER; full anode Cl2+O2 (IA-EW{n}-CL2) to LEACH_CSTR_1; cathode H2 (0.031-0.481 kg/d per cell) to the H2 pool; EW_1..EW_9 all close",
+    "units": "kW / kg/d",
+    "where": "flow_graph/plant_flow_graph.json: IA-DC-EW_n, IA-EW{n}-CL2, IA-HDR-H2-01/-03/-04, IA-EW3/5/6/7/8-H2B, IA-EW4-H2, IA-HDR-H2-02, S64; flow_graph/param/o2_close.py tf() (R10b block)",
+    "basis": "R10b re-solve of the R10a open lane: Rev AC dropped the DC feeds with the RECT_EW->RECTIFIER rename and the H2B/CL2B burner pair with HCL_BURNER, leaving every cell +1.1..+16.4 kg/d short an outlet. DC feeds restored BH fa1b4db verbatim (they are the solver P_bus at the held metal harvests, docs-authority/_ew_sizing.py); Faraday gases re-solved at I = P_dc/2.12 V, CE 0.85, 98/2 anode split (AQS-DUTY-051, O_BRIEN2005). Cathode H2 goes to HDR_H2 (pool; the electrolyser keeps its gross-draw sizing per A-M-230 - the pool surplus accumulates at CRYO_H2, now the real 1.98 kg/d not the stale 4.8 phantom); the full anode Cl2 rides the leach oxidant line (Cl2 + M -> MCl2, USBM_CL_EW). The EW_9 foundry stubs EW9_LIQUOR_TO_MO / EW_METALS_TO_IND stay unrated: they double-book the IA-EW-09 liquor tail and the IA-EW-MET-9 / IA-EW-SHEET metal harvests and wait on the foundry sizing pass (same lane as DOCK_EXPORT_TBD)",
+    "sensitivity": "cascade transit shifts about 66 kg/d (tail IA-EW-09 3586 -> 3520.3, IA-REC-01 3302.9); leach Cl2 load +69.4 kg/d in, returned by the loop; CRYO_H2 residual 4.8 -> 1.98",
+    "replaced_by": "foundry sizing pass (routes EW_9 metals/liquor and rates the stubs); owner H2-outlet decision for the pool surplus",
+    "task": "R10b mass-failure reduction lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/o2_close.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance (no --write): EW_1..EW_9 residuals < 1e-3 kg/d; HDR_H2 residual < 1e-3; CRYO_H2 residual = 1.98 kg/d reported in L['ew']['h2_pool']"
+  },
+  {
+    "id": "A-M-256",
+    "value": "IA-AR-RET (WAFER_FAB -> CRYO_ASU, 5.3 kg/d Ar return) retired; CRYO_ASU closes",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: edge removed (was WAFER_FAB -> CRYO_ASU)",
+    "basis": "R10b: the Ar return presumed a noble-gas separation that Rev AC does not have - Ar stays in the N2 product stream (TSA box, no noble separation in Rev AC; the CRYO_AR source died in the scope pivot). The return was the whole of the CRYO_ASU +5.3 residual",
+    "sensitivity": "CRYO_ASU residual 5.3 -> 0; WAFER_FAB improves 5.3 of its 6.8",
+    "replaced_by": "a noble-separation box if one is ever scoped (would also need the CRYO_AR source back)",
+    "task": "R10b mass-failure reduction lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "needs_verification": false,
+    "verification_test": "python3 -m flow_graph.param.balance: CRYO_ASU residual < 1e-3 kg/d; no IA-AR-RET edge in the graph"
+  },
+  {
+    "id": "A-M-257",
+    "value": "WAFER_FAB closes: S03 rated 1.4998 kg/d (BH verbatim N2 purge); STOCK_TO_FAB and POLY_TO_FAB rated 0 by difference",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: S03 (CRYO_N2->WAFER_FAB), STOCK_TO_FAB (STOCK_OUT->WAFER_FAB), POLY_TO_FAB (POLY_STOCK->WAFER_FAB)",
+    "basis": "R10b: after A-M-256 the fab deficit is exactly 1.499798 kg/d = the BH S03 N2 purge (AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L, fa1b4db), which Rev AC re-pointed onto CRYO_N2 - rated BH-verbatim on the live endpoint. The stock/polymer feeds rate 0 at steady state (wafer output rides IA-PV-OUT 0.01 kg/d); a net draw appears when the foundry/goods pass sizes the fab product basis. S84 pass-through re-solved to subtract S03; the EW_4 N2 sweep settles the HDR_N2 header (0.397 kg/d) on the second o2_close pass",
+    "sensitivity": "+-0.02 kg/d on the fab; HDR_N2 residual 1.103 -> 0 with the sweep re-solve",
+    "replaced_by": "foundry/goods pass (fab product basis, DOCK_EXPORT_TBD lane)",
+    "task": "R10b mass-failure reduction lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/o2_close.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance: WAFER_FAB and HDR_N2 residuals < 1e-3 kg/d"
+  },
+  {
+    "id": "A-M-258",
+    "value": "Power chain re-derived on the live graph: demand 281.99 kW bounding -> PV 3909 kWp (7818 x 0.5 kWp, 34328 m2 at 8.78 m2/kWp, roof 270 x 138 m), storage 1282 kW / 3948 kWh, inverters 55 x 60 kW in 5 sections",
+    "units": "kW / kWp / kWh / m2",
+    "where": "flow_graph/plant_flow_graph.json: PV_ARRAY.params, SOL_ARK_60K.params, ZNBR2.params, RECTIFIER.params, IA-PV-01; flow_graph/param/write_graph.py power()/process() (RECTIFIER remap); docs-authority/_power_sizing.py; docs-authority/COLLECTION_BUS.md",
+    "basis": "R10b: write_graph power() re-run per A-M-231 replaced_by (live-scope re-derivation). RECT_EW remapped to the Rev AC RECTIFIER node: the solved 38.66 kW bounding AC input is stamped in RECTIFIER.params.rect_ac_input_kW and the node continuous_kw stays the 12 kW A-M-231 basis, so the EW DC load is counted once (behind the AQS-ELEC-004 bounding row in _power_sizing) - writing it onto S17 would double-count. Live demand re-derives 281.99 kW (A-M-231 recorded 285.78 at the D-PV encode; same class, the delta is later elec-scope moves); PV lands 3909 kWp vs the ~3962 expected from the A-M-238 sensitivity - same D75 class (2.0 x the 1955 kWp balancing nameplate). _collection_bus.py null-safe on unrated feeders (SF-HF_GEN) so X-ELS-11 sections are script-written again",
+    "sensitivity": "+-14 kWp per kW of demand; roof stays under capacity (3913.3 kWp) on the converged 270 x 138 m footprint",
+    "replaced_by": "measured loads at first article; foundry sizing pass (adds foundry demand)",
+    "task": "R10b power-chain lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/write_graph.py",
+      "docs-authority/_collection_bus.py",
+      "docs-authority/COLLECTION_BUS.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87)"
+  },
+  {
+    "id": "A-M-259",
+    "value": "Heat-ladder store ledgers re-solved and closed: Q1/Q2 down steps 1.133/1.891 kW, Q3 draws supply-limited pro-rata (scale 0.183 on the rated profile), Q3->Q4 carries 0, Q4 bus links 3.896 kW each, GEO_HP lifts the 1.068 kW Q4 deficit, dry-cooler rejection 0 (rated 12 kW kept)",
+    "units": "kW",
+    "where": "flow_graph/plant_flow_graph.json: HL-Q1/Q2/Q3-*-DOWN, HL-Q3-*-HX4/5/6, HL-Q4-A/B-BUS, S44, HL-Q4-REJ (+ layers fixed to thermal); flow_graph/param/write_graph.py heat()",
+    "basis": "R10b: the kW-unit ladder-family edges carried layer 'mass' (the X-THM-01 ledger counts thermal+kW), and the R6 heat-study branches (HX-9/HX-10, ADS_CHILL, MAU_HX, ELY stack heat, rectifier reject) were added without re-solving the transit - Q3_A/B sat -10.3 and Q4_BUS -18.1 kW. Transit re-solved by difference down the ladder (down-only, HEAT_LADDER.md Duties: Q3 fully drawn, shortfall is electric trim at the process, which stays on IA-TRIM-HX5/HX6); Q3 draws pro-rata on the rated profile frozen in Q3_A/B params.x_thm_rated_draws (no priority assumption); S44 lifts the remaining bus deficit per its AQS-DUTY-010 dispatch rule (lift only on deficit); HL-Q4-REJ is the terminal by difference - 0 on the design day, DRY_COOLER keeps its 12 kW upset rating (A-M-244). ADS (summer) and MAU (winter) both carried at duty as encoded R6: the seasonal split is the study's, not the graph's",
+    "sensitivity": "every kW of branch duty moves REJ/S44 1:1; the GEO_HP source loop (S43/CLOSED_LOOP edge) is unrated Rev AC scope - the lift is booked at the HP only",
+    "replaced_by": "GEO loop rating (S43 + closed-loop edge) in heat work; seasonal branch profile if the owner wants an annual-average graph",
+    "task": "R10b heat-store lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/write_graph.py",
+      "flow_graph/test_heat_ladder.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "pytest flow_graph/test_heat_ladder.py (stores close within 0.01 kW); python3 -m flow_graph.param.write_graph heat prints stores CLOSE"
+  },
+  {
+    "id": "A-M-260",
+    "value": "Register reconciliation: EW_1..9 params.sizing re-stamped live (9 keys); 8 dead keys retired (LEACH_CSTR_1 liquor_T_C/hx5_area_m2/hx5_coil, WS_NITRIC product_spec/storage, WS_PEROX product_spec/cell/storage)",
+    "units": "-",
+    "where": "docs-authority/assumptions_complete.json (8 keys removed); flow_graph/plant_flow_graph.json EW_n params.sizing (re-stamped)",
+    "basis": "R10b: the EW sizing stamps are written again by the R10b EW pass (the write_graph.process() EW block: AQS-DUTY-051 bounding current, cathodes/anodes/j, envelope and DC kW), so their completion records re-attach. The retired keys point at params the Rev AC scope pivot dropped (LEACH hx5 coil / liquor T died with the HX-5 re-base onto HL-Q3-*-HX5; WS_NITRIC/WS_PEROX params were blanked) - nothing to complete, retired with this entry as the record",
+    "sensitivity": "none (register hygiene)",
+    "replaced_by": "unit task 02 re-stamp if those params return (WS_* re-base, LEACH HX-5 design task)",
+    "task": "R10b register reconciliation 2026-10-18",
+    "files": [
+      "docs-authority/assumptions_complete.json",
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors)"
   }
 ]

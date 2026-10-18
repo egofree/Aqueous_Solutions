@@ -128,8 +128,10 @@ def physics(g):
     # R10a site freight ledger (A-M-228 reporting discipline): NORTH_DOCK is the site boundary meter pair - products shipped out
     #    arrive at the dock (in-edges) and raw materials dispatched in leave it (out-edges); the ledger closes iff the whole site
     #    closes (every mass edge is internal since S08G re-pointed to MFG_SHOP, so the dock residual is minus the sum of all other
-    #    unit residuals). The leach make-up above is what the hydromet train draws; the freight credit is what the shipped products
-    #    pay for. The gap is the open R10 EW/H2/gas lane and is reported here, not absorbed by an invented rate.
+    #    unit residuals). R10b: the EW Faraday cascade is re-based (A-M-255), the Ar return is retired (A-M-256) and WAFER_FAB
+    #    closes on the BH N2 purge (A-M-257), so the remaining residual is honestly open: the goods export DOCK_EXPORT_TBD basis
+    #    is owned by the foundry sizing pass - the net product-out stated here IS the plant surplus statement pending that pass.
+    #    No rate is invented to absorb it.
     N_ = {n['unit_id']: n for n in g['nodes']}
     if 'NORTH_DOCK' in N_:
         ships = sum(v(k) for k in ('IA-C5-SHIP', 'IA-C11-SHIP', 'IA-C19-SHIP', 'IA-MEOH-SHIP', 'IA-O2-SHIP', 'IA-NA-PURGE', 'IA-N2-VENT') if k in E)
@@ -138,10 +140,12 @@ def physics(g):
             'ships_in_kg_d': round(ships, 3), 'meters_out_kg_d': round(v('IA-H2O-MU') + v('IA-NAOH-MU'), 3),
             'residual_kg_d': round(rdock, 3),
             'basis': 'import/export freight meter; BH closed at 84.88 in = 79.77 water + 5.11 NaOH out (fa1b4db)',
-            'note': 'residual = -(sum of all other unit residuals): itemised as the open R10 EW/H2/gas lane - EW cells +67.7 (Faraday '
-                    'side-Cl2/cathode-H2 outlets died with HCL_BURNER), CRYO_H2 +4.8 (S64 stale phantom), CRYO_ASU +5.3 (Ar return, '
-                    'CRYO_AR source dead), NOX_SCRUB +5.0 (study bases), WAFER_FAB -6.8 (Ar/N2), AFTERBURNER -2.2, small +-1. Closes '
-                    'only with the R10 EW Faraday / cathode-H2 re-basis (owner decision: HCl-burner vs H2 pool) or a re-instated dock feed import'}
+            'note': 'residual = -(sum of all other unit residuals) and is NET PRODUCT-OUT: the plant ships more product than it '
+                    'imports water/NaOH, so the balance is the plant surplus statement pending the goods pass. R10b closed the EW '
+                    'cascade (Faraday re-base, A-M-255), CRYO_ASU Ar (retired, A-M-256) and WAFER_FAB (BH N2 purge, A-M-257). Still '
+                    'open: goods export DOCK_EXPORT_TBD unrated (foundry sizing pass owns the goods basis), CRYO_H2 +1.5 (EW cathode '
+                    'H2 pool surplus, no outlet decision), NOX_SCRUB +5.0 (study bases), AFTERBURNER -2.2, LEACH water-long (surplus '
+                    'has no outlet). Absorbing any of these here would be an invented rate (A-M-228/A-M-254 discipline).'}
     o2_close.LAST.clear(); o2_close.LAST.update(XL, power=o2_close.close_power(g), o2=(src, draw))
     return d, a
 

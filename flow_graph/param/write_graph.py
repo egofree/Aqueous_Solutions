@@ -91,7 +91,10 @@ def process():
     E['IA-EVAP_ACID-COND']['rate'] = rate(s['evap_acid']['water_kg_d'] - up['vent_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10).')
     # BMED_BASE closes on its brine feed: out (EVAP_BASE feed + IA-BMED-02) = IA-BMED-04 + condensate
     E['IA-BMED-04']['rate'] = rate(s['evap_base']['feed_kg_d'] + E['IA-BMED-02']['rate']['value'] + up['naoh_soln_kg_d'] - s['evap_base']['water_kg_d'],'kg/d',f'{TAG}. Brine to BMED_BASE closing the stack balance with the condensate return.')
-    # EW cells and rectifier
+    # EW cells and rectifier (R10b: RECT_EW remapped to the live RECTIFIER; the DC feeds IA-DC-EW_n are restored on it
+    # by o2_close.tf, A-M-255; the IA-EWQ-* cell-heat and IA-RECT-EW-LOSS edges died with HEAT_SINK in Rev AC and are
+    # guarded; the node continuous_kw stays the 12 kW A-M-231 basis so the EW DC load is counted once, behind the
+    # AQS-ELEC-004 bounding AC row in _power_sizing)
     rows = {r['cell']: r for r in json.loads(subprocess.run([sys.executable,'docs-authority/_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['rows']}
     rect = json.loads(subprocess.run([sys.executable,'docs-authority/_rect_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['total']
     V = DR.val(d,'ew_cell_voltage_V'); CE = DR.val(d,'ew_current_efficiency_design'); VD = DR.val(d,'ew_bus_drop_V')
@@ -104,14 +107,16 @@ def process():
         sz.update({'size_mm': r['size_mm'], 'I_bounding_A': round(v['I_A']), 'cathodes': r['cathodes'], 'anodes': r['anodes'], 'j_A_m2': round(r['j_A_m2']),
                    'V_liq_m3': round(r['V_liq_m3'],3), 'P_dc_kW': round(v['P_kW'],2), 'status': 'study', 'source': 'AQS-DUTY-051'})
         n['params']['sizing'] = sz
-        E[f'IA-DC-{c}']['rate'] = rate(v['P_bus_kW'],'kW',f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, bounding current.')
-        E[f'IA-EWQ-{c}']['rate'] = rate(v['P_bus_kW']-sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id']==c and 'thermal' in (e.get('layers') or [])),'kW',f'{TAG}. DC input less the HX-8 thermal draw.')
-    R = s['ew']['RECT_EW']
-    N['RECT_EW']['continuous_kw'] = rate(R['P_ac_kW'],'kW',f"{TAG}. AC input at the bounding current; DC {R['P_dc_kW']:.2f} kW to cells, {R['loss_kW']:.2f} kW conversion loss at efficiency {DR.val(d,'rect_efficiency')}.")
-    N['RECT_EW']['params'].update({'rated_A': rect['rated_A'], 'nameplate_kw_dc': rect['rated_kW']})
-    N['RECT_EW']['notes'] = f"{TAG}; AQS-ELEC-004. Nine-channel EW rectifier, {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V."
-    E['S17-EW']['rate'] = rate(R['P_ac_kW'],'kW',f'{TAG}. RECT-EW AC input.')
-    E['IA-RECT-EW-LOSS']['rate'] = rate(R['loss_kW'],'kW',f'{TAG}. Rectifier conversion loss.')
+        if f'IA-DC-{c}' in E: E[f'IA-DC-{c}']['rate'] = rate(v['P_bus_kW'],'kW',f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, bounding current.')
+        if f'IA-EWQ-{c}' in E: E[f'IA-EWQ-{c}']['rate'] = rate(v['P_bus_kW']-sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id']==c and 'thermal' in (e.get('layers') or [])),'kW',f'{TAG}. DC input less the HX-8 thermal draw.')
+    R = s['ew']['RECT_EW']; n_rect = N.get('RECT_EW') or N.get('RECTIFIER')   # Rev AC renamed the EW rectifier RECTIFIER
+    if n_rect is not None:
+        n_rect['params'].update({'rated_A': rect['rated_A'], 'nameplate_kw_dc': rect['rated_kW'], 'rect_ac_input_kW': round(R['P_ac_kW'], 3), 'rect_loss_kW': round(R['loss_kW'], 3),
+            'rect_basis': f"{TAG}/R10b: nine-channel EW rectifier {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V; bounding AC input {R['P_ac_kW']:.2f} kW (AQS-ELEC-004). "
+                          "Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255)."})
+        n_rect['notes'] = f"{TAG}; AQS-ELEC-004. Nine-channel EW rectifier, {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V (Rev AC node RECTIFIER; RECT_EW remapped R10b)."
+    if 'S17-EW' in E: E['S17-EW']['rate'] = rate(R['P_ac_kW'],'kW',f'{TAG}. RECT-EW AC input.')
+    if 'IA-RECT-EW-LOSS' in E: E['IA-RECT-EW-LOSS']['rate'] = rate(R['loss_kW'],'kW',f'{TAG}. Rectifier conversion loss.')
     # SOL_ARK bus: PV average carries the change
     delta = bus_load(g) - before
     pv = E['IA-PV-01']['rate']['value'] + delta
@@ -169,6 +174,61 @@ def power():
     open(GP,'w').write(json.dumps(g, indent=2))
     subprocess.run([sys.executable,'docs-authority/_collection_bus.py'],cwd=ROOT,capture_output=True,text=True,check=True)   # X-ELS-11 sections
     print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW")
+
+def heat():
+    """X-THM-01 store-ledger re-solve (R10b, A-M-259). Two Rev AC defects: (1) the kW-unit ladder-family edges
+    (Q4 bus links, Q1/Q2 source feeds, the down and cross-tie steps, the HX-8 duty feed) carry layer 'mass', so the
+    X-THM-01 ledger missed them; (2) the R6 heat-study branches (HX-9/HX-10, adsorption chiller, MAU coil, ELY stack
+    heat, rectifier reject) were added without re-solving the transit, leaving Q3_A/B -10.3 and Q4_BUS -18.1 kW.
+    This stage fixes the layers, then re-solves the transit by difference down the ladder (down-only, HEAT_LADDER.md;
+    cross-tie pairs cancel; standing losses and duty-sheet sources/draws are held; Q3 is supply-limited so its draws
+    run pro-rata on the rated profile and the Q3->Q4 step carries 0), then sets the GEO_HP lift S44 to the Q4 bus
+    deficit (its AQS-DUTY-010 dispatch rule) and the dry-cooler rejection by difference. Idempotent."""
+    import json as _j
+    g = _j.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
+    TAGH = 'X-THM-01 R10b'
+    kw = lambda sid: float(E[sid]['rate']['value'] or 0)
+    def put(sid, x, why):
+        E[sid]['rate']['value'] = round(x, 4)
+        E[sid]['rate']['note'] = (E[sid]['rate'].get('note') or '').split(f' | {TAGH}')[0] + f' | {TAGH}: {why} (A-M-259).'
+    fam = ('HL-AFTERBURNER-Q1-A', 'HL-AFTERBURNER-Q1-B', 'HL-GLASS_BURNOUT-Q2-A', 'HL-GLASS_BURNOUT-Q2-B',
+           'HL-Q1-A-DOWN', 'HL-Q1-B-DOWN', 'HL-Q2-A-DOWN', 'HL-Q2-B-DOWN', 'HL-Q3-A-DOWN', 'HL-Q3-B-DOWN',
+           'HL-Q1-X', 'HL-Q1-X-BA', 'HL-Q2-X', 'HL-Q2-X-BA', 'HL-Q3-X', 'HL-Q3-X-BA', 'HL-Q4-X', 'HL-Q4-X-BA',
+           'HL-Q4-A-BUS', 'HL-Q4-B-BUS', 'IA-HX8')
+    for s in fam:   # kW-unit ladder edges carry layer thermal (the ledger counts thermal + kW; 'mass' on a kW edge is the mislabel)
+        if s in E and 'thermal' not in (E[s].get('layers') or []):
+            E[s]['layers'] = ['thermal'] + [l for l in (E[s].get('layers') or []) if l != 'mass']
+    # Q1 -> Q2 -> Q3 transit by difference (cross-tie pairs cancel; standing losses held at the duty-sheet rates)
+    for A in ('A', 'B'):
+        put(f'HL-Q1-{A}-DOWN', kw(f'HL-AFTERBURNER-Q1-{A}') - kw(f'IA-Q1{A}-LOSS'), 'down transit = tier source less the standing loss')
+        put(f'HL-Q2-{A}-DOWN', kw(f'HL-Q1-{A}-DOWN') + kw(f'HL-GLASS_BURNOUT-Q2-{A}') - kw(f'IA-Q2{A}-LOSS'), 'down transit = Q1 down + burnout source less the standing loss')
+        # Q3 supply-limited (HEAT_LADDER.md Duties: draws running, Q3 -> Q4 carries 0): draws pro-rata on the rated profile
+        p3 = N[f'Q3_{A}']['params'].setdefault('x_thm_rated_draws', {k: kw(k) for k in (f'HL-Q3-{A}-HX4', f'HL-Q3-{A}-HX5', f'HL-Q3-{A}-HX6')})
+        r3 = sum(p3.values()); s3 = kw(f'HL-Q2-{A}-DOWN')
+        for k, rated in p3.items(): put(k, s3*rated/r3, f'supply-limited draw: {s3:.3f} kW Q3 supply pro-rata on the rated profile {r3:.3f} kW')
+        put(f'HL-Q3-{A}-DOWN', 0.0, 'Q3 fully drawn; the Q3 -> Q4 step carries 0 (HEAT_LADDER.md Duties)')
+        # Q4 batteries pass what they receive (HX-8 split + trim) to the header bus
+        put(f'HL-Q4-{A}-BUS', kw(f'HL-HX8-Q4-{A}') + kw(f'IA-Q4{A}-TRIM') + kw(f'HL-Q3-{A}-DOWN'),
+            'store-bus link = HX-8 split + rectifier trim + Q3 down (store closes)')
+    fixed_in = sum(kw(s) for s in ('S53', 'S54', 'S63', 'S80', 'IA-ZNBR-HEAT', 'IA-RECT-Q4', 'SQ-H2O_ELYZ-Q4') if s in E)
+    stores = kw('HL-Q4-A-BUS') + kw('HL-Q4-B-BUS')
+    fixed_out = sum(kw(s) for s in ('IA-Q4-LIFE', 'S100', 'S101', 'IA-Q4-ADS', 'IA-Q4-MAU') if s in E)
+    need = fixed_out - (fixed_in + stores)
+    if need > 1e-6:
+        put('S44', need, f'GEO_HP lifts the Q4 bus deficit {need:.3f} kW (AQS-DUTY-010 dispatch: lift only on deficit)')
+        put('HL-Q4-REJ', 0.0, 'terminal idle on the design day: the study branches absorb the bus; dry cooler stays rated 12 kW for the upset case')
+    else:
+        put('S44', 0.0, 'GEO_HP idle: bus sources cover the branches (AQS-DUTY-010)')
+        put('HL-Q4-REJ', -(need), f'terminal by difference {-(need):.3f} kW; dry cooler rated 12 kW for the upset case (A-M-244)')
+    # ledger check on the stores (X-THM-01 tolerance 0.01 kW)
+    import collections
+    b = collections.Counter()
+    for e in g['edges']:
+        if 'thermal' in (e.get('layers') or []) and e.get('presence') != 'retired' and (e['rate'] or {}).get('unit') == 'kW':
+            x = float(e['rate']['value'] or 0); b[e['from_unit_id']] -= x; b[e['to_unit_id']] += x
+    bad = {u: round(v, 4) for u, v in b.items() if u[:3] in ('Q1_', 'Q2_', 'Q3_', 'Q4_') and abs(v) > 0.01}
+    open(GP, 'w').write(_j.dumps(g, indent=2))
+    print(f"heat ladder re-solved: stores {'CLOSE' if not bad else bad}; GEO_HP lift {kw('S44'):.3f} kW, dry-cooler rejection {kw('HL-Q4-REJ'):.3f} kW")
 
 def relief():
     """Relief: pressurised nodes (design_kPa above the atmospheric study band) are sized by API 520
@@ -248,4 +308,4 @@ def vent():
     print(f'API 2000 vents sized {n} ({nv} with a volume); design pressure from cases on {n} ({nh} with a hydrostatic case)')
 
 if __name__ == '__main__':
-    {'process': process, 'power': power, 'relief': relief, 'vent': vent}[sys.argv[1] if len(sys.argv) > 1 else 'process']()
+    {'process': process, 'power': power, 'heat': heat, 'relief': relief, 'vent': vent}[sys.argv[1] if len(sys.argv) > 1 else 'process']()

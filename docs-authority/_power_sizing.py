@@ -22,7 +22,7 @@ CRIT['controls and instruments']=2.0
 # Graph-native bounding demand (A-M-231): max(node continuous_kw, SOL_ARK_60K elec feed) per unit;
 # EW_1..EW_9 cell DC is covered by the RECT-EW bounding AC row below; storage-charge, curtailment and
 # generation (bus, PV, FC, DMFC, standby genset, ZNBR2) are not demand.
-NOT_DEMAND={'SOL_ARK_60K','PV_ARRAY','ZNBR2','FUEL_CELL','MEOH_FC','BACKUP_GEN','BOUNDARY_EXPORT'}
+NOT_DEMAND={'SOL_ARK_60K','PV_ARRAY','ZNBR2','FUEL_CELL','MEOH_FC','BACKUP_GEN','BOUNDARY_EXPORT','EXT_HALL'}   # R10b: roof_close adds the extension load itself (A-M-231); the EXT_HALL node (created by write_graph power()) must not double-count
 def _kw(n):
     q=n.get('continuous_kw'); v=q.get('value') if isinstance(q,dict) else q
     return float(v) if isinstance(v,(int,float)) else 0.0
