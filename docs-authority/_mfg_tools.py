@@ -11,28 +11,32 @@ def thr(u):   # R11 Rev AC regen: params.duty strings were dropped from the grap
     s = (N[u].get('params') or {}).get('duty')
     if isinstance(s, str) and 'In ' in s: return float(s.split('In ')[1].split(' ')[0])
     return sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and 'mass' in (e.get('layers') or []) and (e['rate'] or {}).get('unit') == 'kg/d')
-q_melt = (v('melt_cp_solid_kJ_kgK')*(1084.62 - 25) + v('melt_L_kJ_kg') + v('melt_cp_liq_kJ_kgK')*v('melt_superheat_K'))/v('melt_eta')/3600   # kWh/kg
+q_melt = (v('melt_cp_solid_kJ_kgK')*(v('MFG.tools-metal-forming-train.metal-forming.MET_MELT.cu_T_melt_C') - v('MFG.tools-metal-forming-train.metal-forming.MET_MELT.charge_T_from_C')) + v('melt_L_kJ_kg') + v('melt_cp_liq_kJ_kgK')*v('melt_superheat_K'))/v('melt_eta')/3600   # kWh/kg
 m_melt = thr('MET_MELT'); heats = math.ceil(m_melt/v('melt_charge_kg'))
 kw_melt = math.ceil(v('melt_charge_kg')*q_melt/v('melt_time_h')*2)/2
-e_melt = q_melt*m_melt + v('melt_hold_kW')*0.5*heats
-w_ar = 8.314*300/0.03995*math.log(v('atom_P_bar'))/v('atom_comp_eta')/3.6e6*v('atom_GMR')                                  # kWh/kg metal
+e_melt = q_melt*m_melt + v('melt_hold_kW')*v('MFG.tools-metal-forming-train.metal-forming.MET_MELT.hold_h')*heats
+w_ar = 8.314*v('MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.ar_T_K')/0.03995*math.log(v('atom_P_bar'))/v('atom_comp_eta')/3.6e6*v('atom_GMR')                                  # kWh/kg metal
 m_at = thr('GAS_ATOMIZER'); kw_at = math.ceil(m_at*w_ar/(v('atom_batch_min')/60)*2)/2
-e_at = w_ar*m_at + v('atom_tundish_kW')*1.0
+e_at = w_ar*m_at + v('atom_tundish_kW')*v('MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.tundish_h')
 w_def = lambda eps: v('cu_flow_stress_MPa')*1e6*eps/8960/v('deform_eta')/3.6e6                                          # kWh/kg
 e_mill = w_def(v('roll_strain'))*thr('COLD_MILL') + v('mill_kW')*v('mill_idle_frac')*v('mill_run_h')
 e_draw = w_def(v('draw_strain'))*thr('WIRE_DRAW') + v('draw_kW')*v('mill_idle_frac')*v('draw_run_h')
+# shop machine tools: study nameplate and utilisation (A-M-177) from drivers.json
+SHOP = v('MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shop_tools'); SHIFT_H = v('MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shift_h')
+def _shop(name):   # (nameplate kW, kWh/d = kW x utilisation x shift)
+    t = SHOP[name]; return t['kw'], t['kw']*t['util']*SHIFT_H
 # (tool, serves, nameplate kW, energy kWh/d, basis)
 T=[('Induction melt furnace, coreless, 10 kg Cu crucible','MET_MELT',kw_melt,e_melt,f"{q_melt:.3f} kWh/kg x {m_melt:.2f} kg/d ((0.43 x 1060 + 208.7 + 0.516 x 100) kJ/kg / 0.55, CRC_CU) + hold 0.5 kW x 0.5 h x {heats} heat"),
    ('Close-coupled gas atomiser with Ar recirculation','GAS_ATOMIZER',kw_at,e_at,f"Ar GMR 2.5 at 30 bar: {w_ar:.3f} kWh/kg x {m_at:.2f} kg/d + tundish 1 kW x 1 h"),
    ('Two-high cold rolling mill','COLD_MILL',v('mill_kW'),e_mill,f"250 MPa x strain 2.3 / 0.55 (DIETER1988) = {w_def(v('roll_strain')):.4f} kWh/kg x {thr('COLD_MILL'):.2f} kg/d + no-load 15 % x 1 h"),
    ('Bull-block wire drawer','WIRE_DRAW',v('draw_kW'),e_draw,f"250 MPa x strain 3.0 / 0.55 (DIETER1988) = {w_def(v('draw_strain')):.4f} kWh/kg x {thr('WIRE_DRAW'):.2f} kg/d + no-load 15 % x 1 h"),
-   ('CNC vertical mill','shop',7.5,7.5*0.3*8,'2.25 kW x 8 h'),
-   ('Engine lathe','shop',5.5,5.5*0.3*8,'1.65 kW x 8 h'),
-   ('Band saw','shop',1.5,1.5*0.1*8,'0.15 kW x 8 h'),
-   ('Rotary-screw air compressor','shop',4.0,4.0*0.5*8,'2.00 kW x 8 h'),
-   ('TIG/MIG welder','shop',6.0,6.0*0.2*8,'1.20 kW x 8 h'),
-   ('Bench grinder, drill press, hand tools','shop',2.0,2.0*0.2*8,'0.40 kW x 8 h')]
-E=sum(t[3] for t in T); peak=sum(t[2] for t in T); avg=E/24; coinc=round(kw_melt+kw_at+7.5+4.0,1)
+   ('CNC vertical mill','shop',*_shop('CNC vertical mill'),'2.25 kW x 8 h'),
+   ('Engine lathe','shop',*_shop('Engine lathe'),'1.65 kW x 8 h'),
+   ('Band saw','shop',*_shop('Band saw'),'0.15 kW x 8 h'),
+   ('Rotary-screw air compressor','shop',*_shop('Rotary-screw air compressor'),'2.00 kW x 8 h'),
+   ('TIG/MIG welder','shop',*_shop('TIG/MIG welder'),'1.20 kW x 8 h'),
+   ('Bench grinder, drill press, hand tools','shop',*_shop('Bench grinder, drill press, hand tools'),'0.40 kW x 8 h')]
+E=sum(t[3] for t in T); peak=sum(t[2] for t in T); avg=E/24; coinc=round(kw_melt+kw_at+SHOP['CNC vertical mill']['kw']+SHOP['Rotary-screw air compressor']['kw'],1)
 rows=[f"| {t} | {s} | {kw:.1f} | {b} | {e:.1f} |" for t,s,kw,e,b in T]
 out=f"""# MFG_SHOP tool list
 

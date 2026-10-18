@@ -23,10 +23,10 @@ import math
 F = 96485.0; MOL_A = 86400/F             # mol e- per A-day
 from . import drivers as _drv1; _D = _drv1.load()   # X-PAR-01
 CE, FO2, VCELL = _D['ew_cathode_CE']['value'], _D['ew_anode_O2_frac']['value'], _D['ew_cell_voltage_V']['value']   # D8: cell voltage single-sourced from drivers (was a 2.12 hardcode)
-KWH_H2 = _D['pem_kWh_kg_H2']['value']; HHV_H2 = 39.4; PSH_ELY = 6.0   # PEM system kWh/kg; HHV kWh/kg; electrolyser runs on the PV window (A-M-133)
-QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorptance', 'led_efficacy_umol_J', 'bed_DLI')); BED_M2 = 28.0   # BED_M2 fallback only; live area comes from GROW_BED params
+KWH_H2 = _D['pem_kWh_kg_H2']['value']; HHV_H2 = _D['CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg']['value']; PSH_ELY = _D['ely_window_h']['value']   # PEM system kWh/kg; HHV kWh/kg (CRC_H2); electrolyser runs on the PV window (A-M-133, ely_window_h)
+QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorptance', 'led_efficacy_umol_J', 'bed_DLI')); BED_M2 = _D['FARM.grow-bed-train.GROW_BED.fallback_area_m2']['value']   # BED_M2 fallback only; live area comes from GROW_BED params (A-M-229)
 EXC = _D['combustion_excess_O2']['value']
-GEN_KW = _D['backup_gen_rated_kW']['value']; EX_LOAD, EX_H, GEN_ETA, LHV_C5 = 0.30, 0.5, 0.30, 12.2   # D3: rated kW single-sourced from drivers (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); NFPA110 8.4.2 exercise; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
+GEN_KW = _D['backup_gen_rated_kW']['value']; EX_LOAD, EX_H, GEN_ETA, LHV_C5 = (_D[k]['value'] for k in ('ELEC.generation-train.BACKUP_GEN.exercise_load_frac', 'ELEC.generation-train.BACKUP_GEN.exercise_h', 'ELEC.generation-train.BACKUP_GEN.eta', 'ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg'))   # D3: rated kW single-sourced from drivers (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); NFPA110 8.4.2 exercise; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
 PSH_STORE_D = _D['crit_autonomy_d']['value']   # D7: AQS-ELEC-007 AUT_CRIT autonomy days, single-sourced from drivers (read here and in _power_sizing.py)
 CO2_M2 = DLI*ABS*QY*44.01                # g CO2/m2/d
 CELLS = [(1, 'IA-EW-01'), (2, 'IA-EW-02'), (3, 'IA-EW-03'), (4, 'IA-EW-10'), (5, 'IA-EW-05'), (6, 'IA-EW-06'), (7, 'IA-EW-07'), (8, 'IA-EW-08'), (9, 'IA-EW-09')]
@@ -318,8 +318,8 @@ def storage(g):
     buf = h2d*(1 - PSH_ELY/24); res = PSH_STORE_D*fc_h2      # PV-window buffer + AQS-ELEC-007 autonomy days of fuel-cell draw (cloudy-day case: PV oversize x cloudy yield >= 1, so the electrolyser keeps running; only the dark hours and an outage need store)
     st = math.ceil(buf + res); hrs = st/(fc_h2/24)
     N['CRYO_H2']['params'].update(store_kg=st, store_basis=f'need: {buf:.1f} kg dark-hours buffer ({h2d:.2f} kg/d x (1 - {PSH_ELY:.0f}/24)) + {res:.1f} kg = {PSH_STORE_D:.0f} d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12')
-    P, T, R = 200e5, 288.15, 8.314; rho = lambda M, Z: P*M/(Z*R*T)
-    rh2, ro2 = rho(2.016e-3, 1.13), rho(31.998e-3, 0.93)
+    P, T, R = _D['CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.store_pressure_Pa']['value'], _D['CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.store_T_K']['value'], 8.314; rho = lambda M, Z: P*M/(Z*R*T)
+    rh2, ro2 = rho(2.016e-3, _D['CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_h2_200bar_15C']['value']), rho(31.998e-3, _D['CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_o2_200bar_15C']['value'])
     N['CRYO_H2']['params']['store_water_volume_m3'] = round(st/rh2, 2)      # Z at 200 bar, 15 C: H2 1.13, O2 0.93 (NIST_WEBBOOK isothermal data; verify, A-M-133)
     o2st = st*7.937
     crew = v('S02'); crew_d = max(1.0, PSH_STORE_D); crew_res = crew*crew_d     # X-RED-04: NFPA 99 reserve >= 1 average day; AQS-ELEC-007 2 d governs

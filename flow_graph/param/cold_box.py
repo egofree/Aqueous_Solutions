@@ -13,28 +13,29 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 def design(d, g):
     v = lambda k: DR.val(d, k); E = {e['stream_id']: e for e in g['edges']}; r = lambda k: float(E[k]['rate']['value'] or 0)
+    CB = 'CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.'   # U4b: sizing literals single-sourced from drivers.json (A-M-175/186)
     co2 = r('IA-NOX-CO2'); n2 = r('IA-NOX-N2'); n = co2/44.01                        # kmol/d CO2
     x_co2 = n/(n + n2/28.013)
     per_cycle = n*v('cb_cycle_h')/24*1000; m_sorb = per_cycle/v('cb_13x_CO2_mol_kg')   # mol, kg per bed
-    dT = v('cb_regen_C') - 25; cyc = 24/v('cb_cycle_h')
-    q_cyc = m_sorb*(1 + v('cb_steel_to_sorbent')*0.50/v('cb_cp_sorbent_kJ_kgK'))*v('cb_cp_sorbent_kJ_kgK')*dT + per_cycle*v('cb_dH_ads_kJ_mol')   # kJ; steel cp 0.50 kJ/kg K
+    dT = v('cb_regen_C') - v(CB+'tsa_regen_start_C'); cyc = 24/v('cb_cycle_h')
+    q_cyc = m_sorb*(1 + v('cb_steel_to_sorbent')*v(CB+'steel_cp_kJ_kgK')/v('cb_cp_sorbent_kJ_kgK'))*v('cb_cp_sorbent_kJ_kgK')*dT + per_cycle*v('cb_dH_ads_kJ_mol')   # kJ; steel cp driver
     P_regen = q_cyc*cyc/86400*(1 + v('cb_regen_loss_frac'))
-    Q = (n + n2/28.013)*1000/86400*8.314*308.15/101325                                 # m3/s feed at 35 C
-    P_blow = Q*v('cb_bed_dP_kPa')*1000/0.5/1000
-    k = 1.29; x = (k - 1)/k; ns = 1
-    while 308.15*(1 + ((v('cb_co2_store_bar')/1.0)**(x/ns) - 1)/0.65) - 273.15 > v('cb_T_out_max_C'): ns += 1   # API618 150 C
-    rr = (v('cb_co2_store_bar')/1.0)**(1/ns); w = ns/x*8.314/0.04401*308.15*(rr**x - 1)/0.65   # J/kg
-    T_st = 308.15*(1 + (rr**x - 1)/0.65) - 273.15
-    P_comp = co2/86400*w/0.9/1000
-    q_cond = 0.85*55 + v('cb_co2_latent_kJ_kg'); P_chill = co2/86400*q_cond/v('cb_chiller_COP')
+    Q = (n + n2/28.013)*1000/86400*8.314*v(CB+'feed_T_K')/101325                                 # m3/s feed at 35 C
+    P_blow = Q*v('cb_bed_dP_kPa')*1000/v(CB+'blower_eta')/1000
+    k = v(CB+'co2_k'); x = (k - 1)/k; ns = 1
+    while v(CB+'feed_T_K')*(1 + ((v('cb_co2_store_bar')/1.0)**(x/ns) - 1)/v(CB+'comp_eta')) - 273.15 > v('cb_T_out_max_C'): ns += 1   # API618 150 C
+    rr = (v('cb_co2_store_bar')/1.0)**(1/ns); w = ns/x*8.314/0.04401*v(CB+'feed_T_K')*(rr**x - 1)/v(CB+'comp_eta')   # J/kg
+    T_st = v(CB+'feed_T_K')*(1 + (rr**x - 1)/v(CB+'comp_eta')) - 273.15
+    P_comp = co2/86400*w/v(CB+'motor_eta')/1000
+    q_cond = v(CB+'co2_liq_cp_kJ_kgK')*v(CB+'co2_subcool_K') + v('cb_co2_latent_kJ_kg'); P_chill = co2/86400*q_cond/v('cb_chiller_COP')
     P_get = v('cb_getter_W')/1000
-    rho_b = 650.0; Vb = m_sorb/rho_b; D = (4*Vb/(math.pi*3))**(1/3)                   # bed L/D 3, 13X bulk 650 kg/m3 (A-M-175)
-    k2 = 1.4; xe = (k2 - 1)/k2; Tin = v('exp_T_in_K'); T_out = Tin*(1 - v('exp_eta_s')*(1 - v('exp_pr')**-xe))      # expander outlet, PERRY9 sec. 2 cp N2 1.04
-    q_cold = co2/86400*q_cond; dq = 1.04*(248.15 - T_out); m_loop = q_cold/dq                                  # kg/s, warms to -25 C at the condenser
-    w_c = 1.04*Tin*(v('exp_pr')**xe - 1)/v('exp_eta_comp'); w_e = 1.04*(Tin - T_out); P_loop = m_loop*(w_c - w_e)
+    rho_b = v(CB+'sorbent_bulk_rho_kg_m3'); Vb = m_sorb/rho_b; D = (4*Vb/(math.pi*v(CB+'bed_LD')))**(1/3)                   # bed L/D driver, 13X bulk 650 kg/m3 (A-M-175)
+    k2 = v(CB+'exp_n2_k'); xe = (k2 - 1)/k2; Tin = v('exp_T_in_K'); T_out = Tin*(1 - v('exp_eta_s')*(1 - v('exp_pr')**-xe))      # expander outlet, N2 cp driver (PERRY9 sec. 2)
+    q_cold = co2/86400*q_cond; dq = v(CB+'exp_n2_cp_kJ_kgK')*(v(CB+'exp_warm_T_K') - T_out); m_loop = q_cold/dq                                  # kg/s, warms to -25 C at the condenser
+    w_c = v(CB+'exp_n2_cp_kJ_kgK')*Tin*(v('exp_pr')**xe - 1)/v('exp_eta_comp'); w_e = v(CB+'exp_n2_cp_kJ_kgK')*(Tin - T_out); P_loop = m_loop*(w_c - w_e)
     exp_bk = dict(cold_kW=q_cold, T_out_C=T_out - 273.15, loop_kg_d=m_loop*86400, shaft_kW=m_loop*w_e, net_kW=P_loop, COP=q_cold/P_loop, chiller_kW=q_cold/v('cb_chiller_COP'))
     tot = P_regen + P_blow + P_comp + P_chill + P_get
-    return dict(feed_N2_kg_d=n2, feed_CO2_kg_d=co2, x_CO2=x_co2, CO2_mol_per_cycle=per_cycle, sorbent_kg_per_bed=m_sorb, beds=3, bed_D_mm=D*1000, bed_L_mm=3*D*1000,
+    return dict(feed_N2_kg_d=n2, feed_CO2_kg_d=co2, x_CO2=x_co2, CO2_mol_per_cycle=per_cycle, sorbent_kg_per_bed=m_sorb, beds=3, bed_D_mm=D*1000, bed_L_mm=v(CB+'bed_LD')*D*1000,
                 regen_kW=P_regen, blower_kW=P_blow, co2_comp_kW=P_comp, co2_chill_kW=P_chill, getter_kW=P_get, total_kW=tot, comp_stages=ns, comp_ratio_per_stage=rr, comp_T_out_C=T_st, expander_backup=exp_bk)
 def write(g, r):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}

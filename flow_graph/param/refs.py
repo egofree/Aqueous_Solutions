@@ -251,6 +251,8 @@ REFS = {
  'CRC_FE': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Fe melting point 1538 C, enthalpy of fusion 13.8 kJ/mol (247 kJ/kg), cp about 0.45 kJ/(kg K) at 25 C rising to about 0.68 near the melting point (mean about 0.49 solid), liquid cp 0.82 kJ/(kg K); density 7.87 g/cm3.',
  'CRC_ZN': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Zn melting point 419.5 C, enthalpy of fusion 7.32 kJ/mol (112 kJ/kg), cp 0.388 kJ/(kg K) solid (mean to the melting point about 0.40), liquid cp 0.48 kJ/(kg K); density 7.14 g/cm3.',
  'INDUCT_SOCX': 'Small coreless induction furnaces (10-50 kW class for charges under 20 kg): 2-3 kHz for steel/Cu charges, specific connected power about 2.5 kW/kg of steel-equivalent charge; melt energy to tap 0.7-0.9 kWh/kg steel, 0.5-0.6 kWh/kg Al/Cu from cold charge; dross/slag make on clean scrap remelt 1-2 % of charge (published small-furnace practice as summarised in notes/FOUNDRY_SIZING.md, AQS-SIZE-FOUNDRY).',
+ 'API526': 'API Standard 526, Flanged Steel Pressure-relief Devices, 7th ed. (2017): effective orifice designations D through T; orifice D area 0.110 in2 (71 mm2), the smallest standard designation.',
+ 'CRC_H2': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of hydrogen: HHV 141.8 MJ/kg (39.4 kWh/kg), LHV 120.0 MJ/kg (33.3 kWh/kg).',
 }
 def cite(k):
     assert k in REFS, f'unknown reference {k}'

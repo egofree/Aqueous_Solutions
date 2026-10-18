@@ -2609,5 +2609,742 @@
   "value": 0.48,
   "units": "kJ/kg K liquid Zn",
   "ref": "CRC_ZN"
+ },
+ "DIGESTER.ew-cascade-train.ew_plate_height_m": {
+  "value": 0.42,
+  "units": "m immersed cathode height",
+  "register": "A-M-040 (AQS-EW-MOD-001 immersed plate 0.60 x 0.42 m)"
+ },
+ "DIGESTER.ew-cascade-train.ew_plate_width_m": {
+  "value": 0.6,
+  "units": "m immersed cathode width",
+  "register": "A-M-040 (AQS-EW-MOD-001 immersed plate 0.60 x 0.42 m)"
+ },
+ "DIGESTER.ew-cascade-train.ew_cathode_pitch_m": {
+  "value": 0.1,
+  "units": "m cathode to cathode (anode between)",
+  "register": "A-M-038 (cathode pitch and tank allowances, common EW practice)"
+ },
+ "DIGESTER.ew-cascade-train.ew_tank_end_margin_m": {
+  "value": 0.075,
+  "units": "m tank end allowance past the electrode pack",
+  "register": "A-M-038 (cathode pitch and tank allowances, common EW practice)"
+ },
+ "DIGESTER.ew-cascade-train.ew_tank_side_margin_m": {
+  "value": 0.05,
+  "units": "m tank side allowance past the plate",
+  "register": "A-M-038 (cathode pitch and tank allowances, common EW practice)"
+ },
+ "DIGESTER.ew-cascade-train.ew_tank_sump_m": {
+  "value": 0.15,
+  "units": "m sludge sump below the plate",
+  "register": "A-M-038 (cathode pitch and tank allowances, common EW practice)"
+ },
+ "DIGESTER.ew-cascade-train.ew_tank_cover_m": {
+  "value": 0.1,
+  "units": "m cover allowance above the plate",
+  "register": "A-M-038 (cathode pitch and tank allowances, common EW practice)"
+ },
+ "DIGESTER.ew-cascade-train.ew_tank_freeboard_m": {
+  "value": 0.08,
+  "units": "m freeboard above the cover allowance",
+  "register": "A-M-038 (cathode pitch and tank allowances, common EW practice)"
+ },
+ "DIGESTER.ew-cascade-train.ew_tank_wall_m": {
+  "value": 0.01,
+  "units": "m thermoplastic tank wall",
+  "owner": "AQS-DUTY-051 Rev A tank wall (10 mm)"
+ },
+ "DIGESTER.ew-cascade-train.ew_liquor_rho_kg_m3": {
+  "value": 1100,
+  "units": "kg/m3 cell liquor",
+  "register": "A-M-029 (dilute HCl with dissolved metal chlorides; same liquor as LEACH_CSTR_1, AQS-DUTY-050)"
+ },
+ "DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d": {
+  "value": {
+   "1": 0.0063,
+   "2": 0.0251,
+   "3": 8.7841,
+   "4": 0.7111,
+   "5": 0.7111,
+   "6": 0.7111,
+   "7": 29.629,
+   "8": 0.7111,
+   "9": 0.7111
+  },
+  "units": "kg/d S08 element deposit per EW_n (element-comparison column only; bounding current is from IA-EW-MET-n)",
+  "owner": "AQS-ASSAY-001 section 5 S08 deposits"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.envelope_mm": {
+  "value": [
+   2000,
+   1200,
+   1400
+  ],
+  "units": "mm L x W x H",
+  "owner": "AQS-DUTY-050 Rev A model envelope (graph envelope kept)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.header_zone_mm": {
+  "value": 60,
+  "units": "mm per Y face",
+  "owner": "AQS-DUTY-050 Rev A model header zone per Y face"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_web_mm": {
+  "value": 56,
+  "units": "mm FRP channel web on the wall",
+  "register": "A-M-034 (pultruded channel C203x56x6.4)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.wall_mm": {
+  "value": 16,
+  "units": "mm CPVC wall",
+  "owner": "AQS-DUTY-050 Rev B wall sizing (16 mm against the A-M-032 allowable)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.level_mm": {
+  "value": 1100,
+  "units": "mm working liquor level",
+  "register": "A-M-030 (leaves 288 mm freeboard below the lid)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.liquor_rho_kg_m3": {
+  "value": 1100,
+  "units": "kg/m3",
+  "register": "A-M-029 (dilute HCl with dissolved metal chlorides)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.imp_Np": {
+  "value": 1.27,
+  "units": "- turbulent power number",
+  "ref": "PERRY9_MIX"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.imp_D_m": {
+  "value": 0.45,
+  "units": "m impeller diameter",
+  "register": "A-M-031 (PBT 4-blade 45 deg, D 450 mm, 150 rpm)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.imp_N_rpm": {
+  "value": 150,
+  "units": "rpm",
+  "register": "A-M-031"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.motor_kW": {
+  "value": 0.75,
+  "units": "kW gearmotor nameplate",
+  "register": "A-M-035 (shaft 403 W with gear, motor losses and start margin)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_z_mm": {
+  "value": [
+   300,
+   560,
+   900
+  ],
+  "units": "mm belt centre heights Z",
+  "owner": "AQS-DUTY-050 Rev B belt layout (panels between belts)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_h_mm": {
+  "value": 203,
+  "units": "mm FRP channel depth",
+  "register": "A-M-034"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_web_t_mm": {
+  "value": 6.4,
+  "units": "mm FRP channel web thickness",
+  "register": "A-M-034"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.frp_E_MPa": {
+  "value": 17200,
+  "units": "MPa flexural modulus",
+  "register": "A-M-034 (E 17.2 GPa)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.frp_allow_MPa": {
+  "value": 50,
+  "units": "MPa allowable bending stress",
+  "register": "A-M-034"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.cpvc_hds_psi": {
+  "value": 2000,
+  "units": "psi hydrostatic design stress at 23 C",
+  "register": "A-M-032 (CPVC HDS basis)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.cpvc_derate_85C": {
+  "value": 0.22,
+  "units": "- strength derating at 85 C",
+  "register": "A-M-032 (interpolated from manufacturer temperature-derating tables)"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.cpvc_creep_E_MPa": {
+  "value": 700,
+  "units": "MPa long-term creep modulus",
+  "register": "A-M-033"
+ },
+ "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.hot_draw_T_C": {
+  "value": 85.0,
+  "units": "C hot liquor draw temperature (X-MAT-19 cooler inlet)",
+  "owner": "AQS-DUTY-050 section 3 operating temperature (CPVC wall basis 85 C)"
+ },
+ "storage_tank_fill_frac": {
+  "value": 0.8,
+  "units": "- working volume fraction (20 % freeboard and dead volume)",
+  "register": "A-M-225"
+ },
+ "storage_tank_HD": {
+  "value": 1.5,
+  "units": "m/m nominal upright cylinder height over diameter",
+  "register": "A-M-225"
+ },
+ "storage_pe_sd_MPa": {
+  "value": 4.14,
+  "units": "MPa PE hydrostatic design stress (SD 600 psi at 23 C)",
+  "ref": "ASTM_D1998"
+ },
+ "storage_pe_min_wall_mm": {
+  "value": 4.75,
+  "units": "mm minimum PE wall (0.187 in)",
+  "ref": "ASTM_D1998"
+ },
+ "storage_steel_allow_MPa": {
+  "value": 115.0,
+  "units": "MPa SA-240 304L allowable stress",
+  "ref": "ASME_VIII_1_UG27"
+ },
+ "storage_steel_min_wall_mm": {
+  "value": 3.0,
+  "units": "mm minimum steel wall",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.bench.FAB_UPW_TANK.hold_d": {
+  "value": 1.0,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.bench.FAB_UPW_TANK.rho_kg_m3": {
+  "value": 998,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "MEOH.synthesis-train.MEOH_TANK.hold_d": {
+  "value": 14,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "MEOH.synthesis-train.MEOH_TANK.rho_kg_m3": {
+  "value": 792,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "WTR.potable-upw-train.REMIN.hold_d": {
+  "value": 1.0,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "WTR.potable-upw-train.REMIN.rho_kg_m3": {
+  "value": 1000,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_AMMONIA.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_AMMONIA.rho_kg_m3": {
+  "value": 900,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_DOPE.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_DOPE.rho_kg_m3": {
+  "value": 1000,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_HF_ED.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_HF_ED.rho_kg_m3": {
+  "value": 1150,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_KOH.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_KOH.rho_kg_m3": {
+  "value": 1450,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_NITRIC.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_NITRIC.rho_kg_m3": {
+  "value": 1400,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_PEROX.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_PEROX.rho_kg_m3": {
+  "value": 1110,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_SLURRY.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_SLURRY.rho_kg_m3": {
+  "value": 1200,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_SOLV.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_SOLV.rho_kg_m3": {
+  "value": 790,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "FAB.wet-reagent-train.reagents.WS_PHOS.hold_d": {
+  "value": 30,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "FAB.wet-reagent-train.reagents.WS_PHOS.rho_kg_m3": {
+  "value": 1690,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C5_C10.hold_d": {
+  "value": 14,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C5_C10.rho_kg_m3": {
+  "value": 720,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C11_C18.hold_d": {
+  "value": 14,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C11_C18.rho_kg_m3": {
+  "value": 770,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28.hold_d": {
+  "value": 14,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28.rho_kg_m3": {
+  "value": 800,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29.hold_d": {
+  "value": 3,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29.rho_kg_m3": {
+  "value": 850,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "NUT.dosing-train.NUTRIENT_DOSE.hold_d": {
+  "value": 1.0,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "NUT.dosing-train.NUTRIENT_DOSE.rho_kg_m3": {
+  "value": 1050,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "OIL.pyro-fractionation-train.pyro-frac.HOPPER.hold_d": {
+  "value": 1.0,
+  "units": "d hold time (A-M-225 basis: resupply interval or batch decoupling)",
+  "register": "A-M-225"
+ },
+ "OIL.pyro-fractionation-train.pyro-frac.HOPPER.rho_kg_m3": {
+  "value": 500,
+  "units": "kg/m3 stored liquid at 20 C",
+  "ref": "PERRY9"
+ },
+ "MFG.tools-metal-forming-train.metal-forming.MET_MELT.charge_T_from_C": {
+  "value": 25,
+  "units": "C cold-charge reference temperature",
+  "register": "A-M-177 (melt study, cold charge)"
+ },
+ "MFG.tools-metal-forming-train.metal-forming.MET_MELT.cu_T_melt_C": {
+  "value": 1084.62,
+  "units": "C Cu melting point",
+  "ref": "CRC_CU"
+ },
+ "MFG.tools-metal-forming-train.metal-forming.MET_MELT.hold_h": {
+  "value": 0.5,
+  "units": "h hold per heat",
+  "register": "A-M-177"
+ },
+ "MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.ar_T_K": {
+  "value": 300,
+  "units": "K atomising argon temperature",
+  "register": "A-M-177 (atomiser study)"
+ },
+ "MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.tundish_h": {
+  "value": 1.0,
+  "units": "h tundish heat per batch",
+  "register": "A-M-177"
+ },
+ "MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shift_h": {
+  "value": 8,
+  "units": "h/d one shift",
+  "register": "A-M-177 (one 8 h shift)"
+ },
+ "MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shop_tools": {
+  "value": {
+   "CNC vertical mill": {
+    "kw": 7.5,
+    "util": 0.3
+   },
+   "Engine lathe": {
+    "kw": 5.5,
+    "util": 0.3
+   },
+   "Band saw": {
+    "kw": 1.5,
+    "util": 0.1
+   },
+   "Rotary-screw air compressor": {
+    "kw": 4.0,
+    "util": 0.5
+   },
+   "TIG/MIG welder": {
+    "kw": 6.0,
+    "util": 0.2
+   },
+   "Bench grinder, drill press, hand tools": {
+    "kw": 2.0,
+    "util": 0.2
+   }
+  },
+  "units": "kW nameplate and utilisation fraction per shop machine tool (study nameplates kept, A-M-177)",
+  "register": "A-M-177"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.cooler_pipe_od_m": {
+  "value": 0.032,
+  "units": "m PVDF DN25 pipe OD",
+  "owner": "X-MAT-19 passive air-cooled hot-draw coolers (PVDF DN25)"
+ },
+ "POLYMERS.polyolefin-train.POLY_OLEFIN.feed_cp_kJ_kgK": {
+  "value": 2.1,
+  "units": "kJ/(kg K) naphtha/polyolefin feed liquid cp",
+  "ref": "PERRY9_HEAT"
+ },
+ "POLYMERS.polyolefin-train.POLY_OLEFIN.feed_dT_K": {
+  "value": 175,
+  "units": "K feed temperature rise 25 -> 200 C",
+  "owner": "AQS-SIZE-OIL-POLY feed heating 25->200 C"
+ },
+ "ELEC.storage-train.ZNBR2.h2_LFL_vol_frac": {
+  "value": 0.04,
+  "units": "vol fraction H2 lower flammability limit in air",
+  "ref": "NFPA69_2019"
+ },
+ "ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3": {
+  "value": 1.18,
+  "units": "kg/m3 purge air density",
+  "register": "A-M-135 (X-PAR-02 ZNBR2 purge basis)"
+ },
+ "PUMPED_HYDRO.hydro-train.recharge_window_h": {
+  "value": 6.0,
+  "units": "h PV-window recharge",
+  "register": "A-M-145 (diverse N+1 backup recharges over the PV surplus window)"
+ },
+ "HAB.life-support-train.HABITATION.cdra_half_cycle_min": {
+  "value": 144.0,
+  "units": "min adsorbent-bed half-cycle",
+  "ref": "NASA_CDRA2015"
+ },
+ "FARM.grow-bed-train.GROW_BED.crop_edible_water_frac": {
+  "value": 0.94,
+  "units": "mass fraction water in edible fresh biomass (tomato proxy)",
+  "ref": "BVAD2022"
+ },
+ "FARM.grow-bed-train.GROW_BED.crop_inedible_water_frac": {
+  "value": 0.9,
+  "units": "mass fraction water in inedible fresh biomass (tomato proxy)",
+  "ref": "BVAD2022"
+ },
+ "WTR.potable-upw-train.VCD_TRAIN.sec_kWh_m3": {
+  "value": 17,
+  "units": "kWh/m3 vapour-compression distillation specific energy (issued 14-20 band midpoint)",
+  "register": "A-M-149 (X-RED-05)"
+ },
+ "ELEC.distribution-train.SOL_ARK_60K.bus_V": {
+  "value": 480,
+  "units": "V three-phase low-voltage bus",
+  "register": "A-M-152 (X-RED-03 main-tie-main 480 V bus)"
+ },
+ "ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A": {
+  "value": [
+   100,
+   125,
+   150,
+   175,
+   200,
+   225,
+   250,
+   300,
+   350,
+   400,
+   450,
+   500,
+   600,
+   700,
+   800,
+   1000,
+   1200,
+   1600,
+   2000
+  ],
+  "units": "A standard ampere ratings for fuses and inverse-time breakers",
+  "ref": "NEC2023_240"
+ },
+ "CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg": {
+  "value": 39.4,
+  "units": "kWh/kg hydrogen higher heating value",
+  "ref": "CRC_H2"
+ },
+ "ELEC.generation-train.BACKUP_GEN.exercise_load_frac": {
+  "value": 0.3,
+  "units": "- nameplate fraction during monthly exercise",
+  "ref": "NFPA110_2022"
+ },
+ "ELEC.generation-train.BACKUP_GEN.exercise_h": {
+  "value": 0.5,
+  "units": "h monthly exercise duration",
+  "ref": "NFPA110_2022"
+ },
+ "ELEC.generation-train.BACKUP_GEN.eta": {
+  "value": 0.3,
+  "units": "- spark-ignition engine efficiency on the C5-C10 cut",
+  "register": "A-M-134 (genset standby study)"
+ },
+ "ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg": {
+  "value": 12.2,
+  "units": "kWh/kg C5-C10 cut LHV (about 44 MJ/kg)",
+  "register": "A-M-134"
+ },
+ "FARM.grow-bed-train.GROW_BED.fallback_area_m2": {
+  "value": 28.0,
+  "units": "m2 fallback bed area (live area comes from GROW_BED params)",
+  "register": "A-M-229 (fallback of the retired fixed-bed basis, A-M-133)"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.store_pressure_Pa": {
+  "value": 20000000.0,
+  "units": "Pa gauge store pressure (200 bar)",
+  "register": "A-M-133 (existing 200 bar basis)"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.store_T_K": {
+  "value": 288.15,
+  "units": "K store reference temperature (15 C)",
+  "register": "A-M-133"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_h2_200bar_15C": {
+  "value": 1.13,
+  "units": "- H2 compressibility factor at 200 bar, 15 C",
+  "ref": "NIST_WEBBOOK",
+  "needs_verification": true,
+  "verification_test": "NIST isothermal pVT data check: H2 Z at 200 bar and 15 C (flagged verify in A-M-133)"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_o2_200bar_15C": {
+  "value": 0.93,
+  "units": "- O2 compressibility factor at 200 bar, 15 C",
+  "ref": "NIST_WEBBOOK",
+  "needs_verification": true,
+  "verification_test": "NIST isothermal pVT data check: O2 Z at 200 bar and 15 C (flagged verify in A-M-133)"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.tsa_regen_start_C": {
+  "value": 25,
+  "units": "C bed temperature at the start of regeneration",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.steel_cp_kJ_kgK": {
+  "value": 0.5,
+  "units": "kJ/(kg K) bed shell steel cp",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.feed_T_K": {
+  "value": 308.15,
+  "units": "K feed temperature (35 C)",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.blower_eta": {
+  "value": 0.5,
+  "units": "- feed blower efficiency",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.co2_k": {
+  "value": 1.29,
+  "units": "- CO2 isentropic exponent",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.comp_eta": {
+  "value": 0.65,
+  "units": "- CO2 compressor adiabatic efficiency",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.motor_eta": {
+  "value": 0.9,
+  "units": "- CO2 compressor motor efficiency",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.co2_liq_cp_kJ_kgK": {
+  "value": 0.85,
+  "units": "kJ/(kg K) liquid CO2 cp",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.co2_subcool_K": {
+  "value": 55,
+  "units": "K liquid CO2 subcooling to the store",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.sorbent_bulk_rho_kg_m3": {
+  "value": 650.0,
+  "units": "kg/m3 13X bulk density",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.bed_LD": {
+  "value": 3,
+  "units": "m/m adsorbent bed length over diameter",
+  "register": "A-M-175"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.exp_n2_k": {
+  "value": 1.4,
+  "units": "- N2 isentropic exponent (reverse-Brayton backup loop)",
+  "register": "A-M-186 (EXPANDER kept as chiller backup, Q-010)"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.exp_n2_cp_kJ_kgK": {
+  "value": 1.04,
+  "units": "kJ/(kg K) N2 cp (PERRY9 sec. 2)",
+  "register": "A-M-186"
+ },
+ "CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.exp_warm_T_K": {
+  "value": 248.15,
+  "units": "K N2 warms to at the condenser (-25 C)",
+  "register": "A-M-186"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_latent_kJ_kg": {
+  "value": 2257.0,
+  "units": "kJ/kg water latent heat at 100 C",
+  "ref": "IAPWS_IF97"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_pump_head_m": {
+  "value": 4.0,
+  "units": "m recirculation pump head",
+  "register": "A-M-106 (evaporator operating basis)"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_pump_eta": {
+  "value": 0.4,
+  "units": "- recirculation pump efficiency",
+  "register": "A-M-106"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_liquor_rho_kg_m3": {
+  "value": 1100,
+  "units": "kg/m3 liquor through the recirculation pump",
+  "register": "A-M-029 (dilute HCl with dissolved metal chlorides)"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_cond_cp_kJ_kgK": {
+  "value": 4.21,
+  "units": "kJ/(kg K) interchanger condensate cp",
+  "register": "A-M-106"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_tube_pitch_ratio": {
+  "value": 1.25,
+  "units": "- tube pitch over tube OD (triangular)",
+  "register": "A-M-107 (evaporator geometry)"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_tube_wall_mm": {
+  "value": 6,
+  "units": "mm graphite tube wall (2 mm Ni on the base unit)",
+  "register": "A-M-107"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_bundle_margin": {
+  "value": 1.1,
+  "units": "- bundle diameter margin in the shell",
+  "register": "A-M-107"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_shell_pitch_allowance": {
+  "value": 2,
+  "units": "- shell allowance in tube pitches beyond the bundle",
+  "register": "A-M-107"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_head_h_mm": {
+  "value": 300,
+  "units": "mm tube-sheet head allowance in vessel height",
+  "register": "A-M-107"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_separator_h_mm": {
+  "value": 900,
+  "units": "mm vapour separator allowance in vessel height",
+  "register": "A-M-107"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_psv_orifice_D_in2": {
+  "value": 0.11,
+  "units": "in2 API 526 orifice D area",
+  "ref": "API526"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_col_skirt_mm": {
+  "value": 800,
+  "units": "mm column skirt and distribution height above the packing",
+  "register": "A-M-108 (counter-current column)"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_frame_len_mm": {
+  "value": 900,
+  "units": "mm frame length allowance past the shell",
+  "owner": "AQS-DUTY-060 Rev B frame (body plus interchanger and compressor)"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_frame_wid_margin_mm": {
+  "value": 400,
+  "units": "mm frame width allowance past the shell",
+  "owner": "AQS-DUTY-060 Rev B frame"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_frame_min_w_mm": {
+  "value": 800,
+  "units": "mm minimum frame width",
+  "owner": "AQS-DUTY-060 Rev B frame"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_frame_col_mm": {
+  "value": 250,
+  "units": "mm column footprint allowance in frame length",
+  "owner": "AQS-DUTY-060 Rev B frame"
+ },
+ "DIGESTER.metals-leach-train.acid-base-regen.evap_frame_acid_w_mm": {
+  "value": 500,
+  "units": "mm extra EVAP_ACID frame width (carries EVAP_ACID_VS)",
+  "owner": "AQS-DUTY-060 Rev B frame (X-PAR-10)"
+ },
+ "storage_envelope_allowance_mm": {
+  "value": 300,
+  "units": "mm access allowance on plan and height around the sized vessel",
+  "register": "A-M-225 (sized vessel + 300 mm access becomes the unit envelope)"
  }
 }

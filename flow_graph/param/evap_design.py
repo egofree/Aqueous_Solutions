@@ -5,7 +5,8 @@ import json, math, sys
 from . import solver, drivers as DR
 from .sizing import evaporator as EV, relief as RL, power as PW, hcl_vle as VLE
 from .refs import cite
-LAT = 2257.0   # kJ/kg at 100 C [IAPWS_IF97]
+_D = DR.load(); EVK = 'DIGESTER.metals-leach-train.acid-base-regen.'   # U4b: sizing literals single-sourced from drivers.json (A-M-106/107/108)
+LAT = DR.val(_D, EVK+'evap_latent_kJ_kg')   # kJ/kg at 100 C [IAPWS_IF97]
 def design(d, e, unit):
     """e: mass result of solver.evap (water_kg_d, product_kg_d, feed_kg_d, added_kg_d)."""
     v = lambda k: DR.val(d, k); acid = unit == 'EVAP_ACID'
@@ -15,14 +16,14 @@ def design(d, e, unit):
     Q = V*LAT; A = Q*1000/(v('evap_U_ff')*v('evap_dT_drive_K'))
     di = v('evap_tube_id_mm')/1000; L = v('evap_tube_L_mm')/1000; n = math.ceil(A/(math.pi*di*L))
     rec = v('evap_wet_min')*n*math.pi*di   # kg/s
-    pump_kW = rec/1100*9.81*4.0*1100/0.4/1000   # 4 m head, 40 % (PERRY9_PUMP)
+    pump_kW = rec/v(EVK+'evap_liquor_rho_kg_m3')*9.81*v(EVK+'evap_pump_head_m')*v(EVK+'evap_liquor_rho_kg_m3')/v(EVK+'evap_pump_eta')/1000   # 4 m head, 40 % (PERRY9_PUMP)
     cpP = v('evap_cp_acid_prod' if acid else 'evap_cp_base_prod')
-    ix = EV.interchanger(F, v('evap_cp_feed'), v('evap_feed_T_C'), V, 4.21, Tc, P, cpP, Tb, v('evap_approach_K'))
+    ix = EV.interchanger(F, v('evap_cp_feed'), v('evap_feed_T_C'), V, v(EVK+'evap_cond_cp_kJ_kgK'), Tc, P, cpP, Tb, v('evap_approach_K'))
     A_ix = ix['Q_kW']*1000/(v('evap_U_ix')*ix['LMTD_K'])
     trim = F*v('evap_cp_feed')*(Tb - ix['T_feed_out_C']) - comp_kW    # sensible deficit not covered by compressor work
     trim_kW = max(0.0, trim)
-    pitch = 1.25*(di*1000 + 2*6); Dsh = math.ceil((1.1*pitch*math.sqrt(n/0.907) + 2*pitch)/50)*50   # mm, triangular pitch, 6 mm graphite or 2 mm Ni wall
-    H = L*1000 + v('evap_sump_h_mm') + 300 + 900   # tubes + sump + heads + separator
+    pitch = v(EVK+'evap_tube_pitch_ratio')*(di*1000 + 2*v(EVK+'evap_tube_wall_mm')); Dsh = math.ceil((v(EVK+'evap_bundle_margin')*pitch*math.sqrt(n/0.907) + v(EVK+'evap_shell_pitch_allowance')*pitch)/50)*50   # mm, triangular pitch, 6 mm graphite or 2 mm Ni wall
+    H = L*1000 + v('evap_sump_h_mm') + v(EVK+'evap_head_h_mm') + v(EVK+'evap_separator_h_mm')   # tubes + sump + heads + separator
     # fire case on the body (ISO 23251 / API 521), set at body design, 21 % overpressure
     Aw = math.pi*Dsh/1000*v('evap_sump_h_mm')/1000 + math.pi*(Dsh/1000)**2/4
     Wf, Qf = EV.fire_relief_kg_h(Aw, LAT)
@@ -31,7 +32,7 @@ def design(d, e, unit):
     # shell side blocked outlet: compressor at 120 % of design flow, 10 % overpressure
     Wb = 1.2*V*3600; P1b = 1.1*v('evap_shell_design_kPag') + 101.325; Tbk = EV.tsat_C(P1b)
     Ab = RL.gas_area_in2(Wb*2.20462, v('evap_k_steam'), P1b/6.894757, (Tbk+273.15)*1.8, 1.0, 18.02)
-    D_letter = 0.110   # in2, API 526 orifice D (smallest letter)
+    D_letter = v(EVK+'evap_psv_orifice_D_in2')   # in2, API 526 orifice D (smallest letter)
     col = None
     if acid:   # counter-current column on the body, feed at the top (X-MFG-30 option d, AQS-DUTY-060 section 7)
         c = e['cond_hcl_wt']*100; ns = VLE.strip_stages(F, v('bmed_product_wt_acid')*100, P, v('acid_conc_design_wt')*100, V, c)
@@ -40,7 +41,7 @@ def design(d, e, unit):
         col = dict(ideal_stages_incl_body=ns, column_stages=ns-1, cond_hcl_wt_pct=c, y_eq_feed_pct=round(VLE.bubble(v('bmed_product_wt_acid')*100)[1], 3),
                    y_eq_body_pct=round(VLE.bubble(v('acid_conc_design_wt')*100)[1], 2), packed_mm=round((ns-1)*v('evap_col_hetp_mm')*v('evap_col_margin')),
                    D_req_mm=round(Dc, 1), DN=DN, recycle_hcl_kg_d=round(e['recycle_hcl_kg_d'], 2), material='borosilicate glass 3.3 sections (ISO 3585), PTFE Pall rings, PTFE-lined flanges (PERRY9_MAT)')
-        col['height_mm'] = col['packed_mm'] + 800; col['placement'] = 'free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body'
+        col['height_mm'] = col['packed_mm'] + v(EVK+'evap_col_skirt_mm'); col['placement'] = 'free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body'
         H = max(H, col['height_mm'])
     return dict(unit=unit, T_boil_C=Tb, T_cond_C=round(Tc, 2), p_body_kPa=p1, p_shell_kPa=round(p2, 2), ratio=round(p2/p1, 3),
                 water_kg_h=round(V*3600, 3), duty_kW=round(Q, 2), comp_shaft_kW=round(comp_kW, 3), comp_elec_kW=round(comp_e, 3), w_kJ_kg=round(w, 1),
@@ -61,7 +62,7 @@ def main():
         N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
         for u, r in R.items():
             p = N[u]['params']; p['design'] = {k: v for k, v in r.items() if not k.startswith('relief')}
-            p['size_mm'] = [r['shell_D_mm'] + 900 + (r['column']['DN'] + 250 if r.get('column') else 0), max(800, r['shell_D_mm'] + 400) + (500 if u == 'EVAP_ACID' else 0), r['height_mm']]   # EVAP_ACID frame also carries EVAP_ACID_VS (X-PAR-10)
+            p['size_mm'] = [r['shell_D_mm'] + DR.val(d, EVK+'evap_frame_len_mm') + (r['column']['DN'] + DR.val(d, EVK+'evap_frame_col_mm') if r.get('column') else 0), max(DR.val(d, EVK+'evap_frame_min_w_mm'), r['shell_D_mm'] + DR.val(d, EVK+'evap_frame_wid_margin_mm')) + (DR.val(d, EVK+'evap_frame_acid_w_mm') if u == 'EVAP_ACID' else 0), r['height_mm']]   # EVAP_ACID frame also carries EVAP_ACID_VS (X-PAR-10)
             p['size_note'] = 'L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)'
             p['relief_mm'] = round(math.sqrt(4*71.0/math.pi), 2)
             p['relief_basis'] = dict(r['relief_body'], computed_by=f"flow_graph/param/evap_design.py ({cite('ISO23251')}; {cite('API520')})", shell_side=r['relief_shell'])

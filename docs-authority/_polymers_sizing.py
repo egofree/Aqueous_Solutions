@@ -4,8 +4,11 @@ Reads the graph, re-derives the polymer chain via flow_graph.param.foundry_poly.
 docs-authority/sizing/POLYMERS_LINE.md. Run: python3 docs-authority/_polymers_sizing.py"""
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from flow_graph.param import drivers as DR
 from flow_graph.param.foundry_poly import solve, DOC_P
 
+_d = DR.load()   # U4b: POLY_OLEFIN feed-heating inputs from drivers.json
+PO = 'POLYMERS.polyolefin-train.POLY_OLEFIN.'
 g = json.load(open('flow_graph/plant_flow_graph.json'))
 s = solve(g)
 E = {e['stream_id']: e for e in g['edges']}
@@ -24,7 +27,7 @@ for u in UNITS:
     tout = sum(v(e['stream_id']) for e in g['edges'] if e['from_unit_id'] == u and (e['rate'] or {}).get('unit') == 'kg/d')
     rows.append(dict(unit=u, in_kg_d=round(tin, 6), out_kg_d=round(tout, 6), sizing=N[u]['params'].get('sizing')))
 
-heat_W = s['poly_feed'] * 2.1 * 175 / 86400
+heat_W = s['poly_feed'] * DR.val(_d, PO+'feed_cp_kJ_kgK') * DR.val(_d, PO+'feed_dT_K') / 86400
 L = []
 A = L.append
 A('# POLYMERS line sizing')

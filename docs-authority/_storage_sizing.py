@@ -6,29 +6,39 @@ Hold times are the A-M-225 basis (resupply interval or batch decoupling per serv
 and docs-authority/inventory/STORAGE_HOLDUP.json."""
 import json, math, re, os, sys
 sys.path.insert(0, '.')
+from flow_graph.param import drivers as DR
 from flow_graph.param.refs import cite
+_d = DR.load()   # U4b: hold times, densities and vessel rules single-sourced from drivers.json
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
-G = 9.80665; SD = 4.14; TMIN = 4.75; FILL = 0.80; HD = 1.5
-# unit: (hold days, density kg/m3, service, phase)
-B = {'FAB_UPW_TANK': (1.0, 998, 'UPW buffer to the fab (1 d limits TOC pickup)', 'L'),
-     'MEOH_TANK': (14, 792, 'methanol day store, 14 d campaign', 'L'),
-     'REMIN': (1.0, 1000, 'remineralisation contact, 1 d buffer', 'L'),
-     'WS_AMMONIA': (30, 900, 'aqueous NH3 25 %, 30 d resupply', 'L'), 'WS_DOPE': (30, 1000, 'dopant solution, 30 d resupply', 'L'),
-     'WS_HF_ED': (30, 1150, 'HF etch 49 %, 30 d resupply', 'L'), 'WS_KOH': (30, 1450, 'KOH 45 %, 30 d resupply', 'L'),
-     'WS_NITRIC': (30, 1400, 'HNO3 65 %, 30 d resupply', 'L'), 'WS_PEROX': (30, 1110, 'H2O2 30 %, 30 d resupply', 'L'),
-     'WS_SLURRY': (30, 1200, 'CMP slurry, 30 d resupply', 'L'), 'WS_SOLV': (30, 790, 'solvent (IPA), 30 d resupply', 'L'),
-     'WS_PHOS': (30, 1690, 'H3PO4 85 %, 30 d resupply', 'L'),
-     'PROD_C5_C10': (14, 720, 'naphtha cut, 14 d to dispatch', 'L'), 'PROD_C11_C18': (14, 770, 'middle distillate cut, 14 d', 'L'),
-     'PROD_C19_C28': (14, 800, 'heavy distillate cut, 14 d', 'L'), 'PROD_C29': (3, 850, 'C29+ to recycle, 3 d buffer', 'L'),
-     'NUTRIENT_DOSE': (1.0, 1050, 'dosing solution day tank, 1 d (stock concentrate is stored dry)', 'L'), 'HOPPER': (1.0, 500, 'shredded feed, 1 d (bulk density)', 'S')}
+G = 9.80665
+SD = DR.val(_d,'storage_pe_sd_MPa'); TMIN = DR.val(_d,'storage_pe_min_wall_mm'); FILL = DR.val(_d,'storage_tank_fill_frac'); HD = DR.val(_d,'storage_tank_HD')
+SS = DR.val(_d,'storage_steel_allow_MPa'); TMIN_S = DR.val(_d,'storage_steel_min_wall_mm')
+# unit: (dotted tree path, service, phase); hold days (A-M-225) and density (PERRY9) per unit in drivers.json
+B = {'FAB_UPW_TANK': ('FAB.wet-reagent-train.bench.FAB_UPW_TANK', 'UPW buffer to the fab (1 d limits TOC pickup)', 'L'),
+     'MEOH_TANK': ('MEOH.synthesis-train.MEOH_TANK', 'methanol day store, 14 d campaign', 'L'),
+     'REMIN': ('WTR.potable-upw-train.REMIN', 'remineralisation contact, 1 d buffer', 'L'),
+     'WS_AMMONIA': ('FAB.wet-reagent-train.reagents.WS_AMMONIA', 'aqueous NH3 25 %, 30 d resupply', 'L'),
+     'WS_DOPE': ('FAB.wet-reagent-train.reagents.WS_DOPE', 'dopant solution, 30 d resupply', 'L'),
+     'WS_HF_ED': ('FAB.wet-reagent-train.reagents.WS_HF_ED', 'HF etch 49 %, 30 d resupply', 'L'),
+     'WS_KOH': ('FAB.wet-reagent-train.reagents.WS_KOH', 'KOH 45 %, 30 d resupply', 'L'),
+     'WS_NITRIC': ('FAB.wet-reagent-train.reagents.WS_NITRIC', 'HNO3 65 %, 30 d resupply', 'L'),
+     'WS_PEROX': ('FAB.wet-reagent-train.reagents.WS_PEROX', 'H2O2 30 %, 30 d resupply', 'L'),
+     'WS_SLURRY': ('FAB.wet-reagent-train.reagents.WS_SLURRY', 'CMP slurry, 30 d resupply', 'L'),
+     'WS_SOLV': ('FAB.wet-reagent-train.reagents.WS_SOLV', 'solvent (IPA), 30 d resupply', 'L'),
+     'WS_PHOS': ('FAB.wet-reagent-train.reagents.WS_PHOS', 'H3PO4 85 %, 30 d resupply', 'L'),
+     'PROD_C5_C10': ('OIL.pyro-fractionation-train.cuts-and-headers.PROD_C5_C10', 'naphtha cut, 14 d to dispatch', 'L'),
+     'PROD_C11_C18': ('OIL.pyro-fractionation-train.cuts-and-headers.PROD_C11_C18', 'middle distillate cut, 14 d', 'L'),
+     'PROD_C19_C28': ('OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28', 'heavy distillate cut, 14 d', 'L'),
+     'PROD_C29': ('OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29', 'C29+ to recycle, 3 d buffer', 'L'),
+     'NUTRIENT_DOSE': ('NUT.dosing-train.NUTRIENT_DOSE', 'dosing solution day tank, 1 d (stock concentrate is stored dry)', 'L'),
+     'HOPPER': ('OIL.pyro-fractionation-train.pyro-frac.HOPPER', 'shredded feed, 1 d (bulk density)', 'S')}
 def qin(n):
     p = n.get('params') or {}; m = re.search(r'In ([\d.]+) kg/d', p.get('duty') or '')
     return max((p.get('design_capacity_kg_d') or {}).get('value') or 0, float(m[1]) if m else 0)
 FLAM = {'MEOH_TANK', 'WS_SOLV', 'PROD_C5_C10', 'PROD_C11_C18', 'PROD_C19_C28', 'PROD_C29'}   # flammable / combustible: steel per NFPA 30 ch. 21
-SS = 115.0; TMIN_S = 3.0
 rows = []
-for u, (td, rho, svc, ph) in B.items():
-    n = N[u]; Q = qin(n); V = Q*td/rho; Vn = max(V/FILL, 0.02)
+for u, (path, svc, ph) in B.items():
+    n = N[u]; Q = qin(n); td = DR.val(_d, path + '.hold_d'); rho = DR.val(_d, path + '.rho_kg_m3'); V = Q*td/rho; Vn = max(V/FILL, 0.02)
     D = math.ceil((4*Vn/(math.pi*HD))**(1/3)*1000/50)*50; H = math.ceil(Vn/(math.pi*(D/1000)**2/4)*1000/50)*50
     P = rho*G*H/1000*1e-6 if ph == 'L' else 0.0
     steel = u in FLAM
@@ -42,7 +52,7 @@ json.dump(rows, open('docs-authority/inventory/STORAGE_HOLDUP.json', 'w'), inden
 if '--write' in sys.argv:   # sized vessel + 300 mm access on plan, + 300 mm on height becomes the unit envelope
     for r in rows:
         p = N[r['unit']].setdefault('params', {})
-        p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 300]; p['size_note'] = 'L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)'
+        p['size_mm'] = [r['D_mm'] + DR.val(_d,'storage_envelope_allowance_mm'), r['D_mm'] + DR.val(_d,'storage_envelope_allowance_mm'), r['H_mm'] + DR.val(_d,'storage_envelope_allowance_mm')]; p['size_note'] = 'L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)'
         p['design_storage'] = {k: r[k] for k in ('hold_d', 'V_nom_m3', 'D_mm', 'H_mm', 'wall_mm', 'material')}
     open('flow_graph/plant_flow_graph.json', 'w').write(json.dumps(g, indent=2))
 L = [f"""# Storage and holdup sizing

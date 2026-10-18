@@ -11,10 +11,12 @@ BSFL, FISH_SUMP, NFT, MISTER) and TERRACE_IRRIG stay retired/deleted; the farm g
 import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from . import drivers as _drv0; _D = _drv0.load()   # X-PAR-01: constants live in drivers.json
-F = 96485.0; VZB = _D['znbr_cell_V']['value']; J = _D['znbr_j_mA_cm2']['value']; F_HER = _D['znbr_her_mL_h_cm2']['value']/(J/1000/(2*F)*22414*3600); OC = _D['znbr_oc_corr_mL_h_cm2']['value']; LFL25 = 0.04*_D['h2_purge_frac_of_LFL']['value']; RHO_AIR = 1.18
+F = 96485.0; VZB = _D['znbr_cell_V']['value']; J = _D['znbr_j_mA_cm2']['value']; F_HER = _D['znbr_her_mL_h_cm2']['value']/(J/1000/(2*F)*22414*3600); OC = _D['znbr_oc_corr_mL_h_cm2']['value']; LFL25 = _D['ELEC.storage-train.ZNBR2.h2_LFL_vol_frac']['value']*_D['h2_purge_frac_of_LFL']['value']; RHO_AIR = _D['ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3']['value']
 CHG_H = _D['znbr_charge_h']['value']; GULLY_PITCH = _D['nft_gully_pitch_m']['value']; GULLY_LPM = _D['nft_gully_L_min']['value']
 NOZ_M2 = _D['hpa_nozzles_m2']['value']; NOZ_LPM = _D['hpa_nozzle_L_min']['value']; T_ON = _D['hpa_on_s']['value']; T_OFF = _D['hpa_off_s']['value']; DRAIN = _D['substrate_drain_frac']['value']; SWARF = _D['atomizer_offspec_frac']['value']; ZEO_LOAD = _D['zeolite5A_CO2_wt_frac']['value']; BVAD_TOM_TM = _D['bvad_tomato_tM_d']['value']
 BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = _D['bvad_tomato_T_kg_m2_d']['value'], _D['bvad_tomato_CO2_g_m2_d']['value'], _D['bvad_tomato_C_frac']['value'], _D['bvad_tomato_HI']['value']
+EDIBLE_W = _D['FARM.grow-bed-train.GROW_BED.crop_edible_water_frac']['value']; INED_W = _D['FARM.grow-bed-train.GROW_BED.crop_inedible_water_frac']['value']   # BVAD2022 tomato water contents
+VCD_SEC = _D['WTR.potable-upw-train.VCD_TRAIN.sec_kWh_m3']['value']   # issued 14-20 kWh/m3 band midpoint (A-M-149)
 BANDS = [(a, b, f) for (a, b), f in zip([(7, 12), (13, 20), (21, 40)], _D['pyro_band_fracs']['value'])]; CUTS = [(5, 10), (11, 18), (19, 28), (29, 99)]
 def cut_fractions():
     return [sum(w*max(0, min(b, hi) - max(a, lo) + 1)/(b - a + 1) for a, b, w in BANDS) for lo, hi in CUTS]
@@ -31,7 +33,7 @@ def _resid(g, u):
 def _crit():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['backup']['critical_kW']
 from flow_graph.param import drivers as _drv
-DRV = _drv.load(); ETA_TURB, ETA_PUMP, PSH_RECHG = DRV['hydro_eta_turbine']['value'], DRV['hydro_eta_pump']['value'], 6.0   # DOE_PSH: pumped storage round trip 70-80 %; small set at the low end
+DRV = _drv.load(); ETA_TURB, ETA_PUMP, PSH_RECHG = DRV['hydro_eta_turbine']['value'], DRV['hydro_eta_pump']['value'], DRV['PUMPED_HYDRO.hydro-train.recharge_window_h']['value']   # DOE_PSH: pumped storage round trip 70-80 %; small set at the low end; recharge over the PV surplus window (A-M-145)
 def _ps():
     return json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
 def tf(g, ps=None):
@@ -74,7 +76,7 @@ def tf(g, ps=None):
         # Edible fresh per m2 at the light-limited CO2 flux (A-M-133: DLI 17, absorptance 0.9, quantum yield 0.045):
         # DM = fixed CO2 x 12.011/44.01 / C 43 %; edible = HI 45 % at 94 % water (BVAD2022 tomato).
         crew_food = E['S14']['rate']['value']
-        ed_m2 = CO2_M2/1000*12.011/44.01/BVAD_TOM_C*BVAD_TOM_HI/(1 - 0.94)
+        ed_m2 = CO2_M2/1000*12.011/44.01/BVAD_TOM_C*BVAD_TOM_HI/(1 - EDIBLE_W)
         BED_M2 = round(crew_food/ed_m2, 2)
         PB = N['GROW_BED']['params']; PB['area_m2'] = BED_M2
         PB['crop_basis'] = {'proxy': 'tomato', 'area_m2': BED_M2, 'crew': (g.get('mvs', {}) or {}).get('site', {}).get('crew'),
@@ -115,7 +117,7 @@ def tf(g, ps=None):
         # GROW_BED crop carbon (A-M-141 basis; crew duty A-M-229): total DM = fixed CO2 x 12/44 / C 43 %; edible = HI 45 % at
         # 94 % water, inedible 90 % water (BVAD2022 tomato). The bed is sized to the crew food S14, so edible = S14 and the
         # food-surplus export is retired (surplus 0 < the AQS-SUR-001 0.5 kg/d threshold); inedible biomass leaves on S11.
-        co2f = CO2_M2*BED_M2/1000; dm = co2f*12.011/44.01/BVAD_TOM_C; ed = dm*BVAD_TOM_HI/(1 - 0.94); ined = dm*(1 - BVAD_TOM_HI)/(1 - 0.90)
+        co2f = CO2_M2*BED_M2/1000; dm = co2f*12.011/44.01/BVAD_TOM_C; ed = dm*BVAD_TOM_HI/(1 - EDIBLE_W); ined = dm*(1 - BVAD_TOM_HI)/(1 - INED_W)
         if 'S14X' in E: put('S14X', max(0.0, ed - E['S14']['rate']['value']), f'edible {ed:.2f} kg/d fresh less crew food S14; export only over the AQS-SUR-001 0.5 kg/d threshold (A-M-229)')
         N['GROW_BED']['params']['crop_carbon'] = {'co2_fixed_kg_d': round(co2f, 3), 'dm_kg_d': round(dm, 3), 'edible_fresh_kg_d': round(ed, 3), 'inedible_fresh_kg_d': round(ined, 3),
             'outlet_inedible': 'S11', 'surplus_export': 'retired: bed sized to the crew food, surplus 0 < 0.5 kg/d (AQS-SUR-001)', 'basis': 'BVAD2022 tomato; crew-duty area from S14 (A-M-229)'}
@@ -128,21 +130,21 @@ def tf(g, ps=None):
             if k in E: E[k]['rate']['value'] = round(kw, 4)
     # X-RED-06 crew CO2 removal N+1 (A-M-147): two-bed swing assembly (one adsorbs, one regenerates, 144 min half-cycle, CDRA practice) per
     # NASA_CDRA2015; zeolite 5A loading 1.0 wt% at 0.4 kPa CO2 (NASA_5A1998, equilibrium: bed mass is a minimum). N+1 = a second full assembly.
-    co2c = E['S90']['rate']['value']; half = 144.0; per_bed = co2c*half/1440/ZEO_LOAD
+    co2c = E['S90']['rate']['value']; half = _D['HAB.life-support-train.HABITATION.cdra_half_cycle_min']['value']; per_bed = co2c*half/1440/ZEO_LOAD
     N['HABITATION']['params']['co2_removal'] = {'metabolic_CO2_kg_d': round(co2c, 3), 'half_cycle_min': half, 'zeolite_5A_kg_per_bed': round(per_bed, 1),
         'beds_per_assembly': 2, 'assemblies': 2, 'zeolite_total_kg': round(4*per_bed, 1), 'basis': 'NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)'}
     if 'HAB_GALLEY' in N:
         # X-RED-08 food reserve (A-M-148): ride through a total loss of the bed crop until the replant is harvested: BVAD2022 Table 4-112 tomato
         # tM 80 d. Stored as dry matter of the crew food S14 (94 % water). Ration is the 0.6 kg/p.d study placeholder (SURPLUS_PASS_THRESHOLDS).
         s14 = E['S14']['rate']['value']; N['HAB_GALLEY']['params']['food_reserve'] = {'days': BVAD_TOM_TM, 'crew_food_fresh_kg_d': round(s14, 3),
-            'reserve_dry_kg': round(s14*(1 - 0.94)*BVAD_TOM_TM, 1), 'basis': 'BVAD2022 Table 4-112 tomato time to harvest; dry store (X-RED-08, A-M-148); retune with the nutrition ration lock'}
+            'reserve_dry_kg': round(s14*(1 - EDIBLE_W)*BVAD_TOM_TM, 1), 'basis': 'BVAD2022 Table 4-112 tomato time to harvest; dry store (X-RED-08, A-M-148); retune with the nutrition ration lock'}
     # X-RED-05 / X-RED-09 (A-M-149): water still and toilet each 2 x 100 % (duty + installed standby); the roof-tank inventory is the diverse
     # water backup (AQS-RED-001). VCD feed and average load re-derived from the present inflow at the issued 14-20 kWh/m3 midpoint.
     vin = sum(e['rate']['value'] for e in g['edges'] if e['to_unit_id'] == 'VCD_TRAIN' and 'mass' in e['layers'] and e['rate']['unit'] == 'kg/d')/1000
-    P = N['VCD_TRAIN']['params']; P.update(feed_m3_d=round(vin, 4), avg_kw=round(vin*17/24, 4), units_installed=2, redundancy='2 x 100 %, standby still on the same feed header (X-RED-05)')
-    N['VCD_TRAIN']['continuous_kw'] = {'value': round(vin*17/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{vin:.3f} m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)'}
+    P = N['VCD_TRAIN']['params']; P.update(feed_m3_d=round(vin, 4), avg_kw=round(vin*VCD_SEC/24, 4), units_installed=2, redundancy='2 x 100 %, standby still on the same feed header (X-RED-05)')
+    N['VCD_TRAIN']['continuous_kw'] = {'value': round(vin*VCD_SEC/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{vin:.3f} m3/d x {VCD_SEC} kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)'}
     for k in ('SF-VCD_TRAIN', 'SQ-VCD_TRAIN'):
-        if k in E: E[k]['rate']['value'] = round(vin*17/24, 4)
+        if k in E: E[k]['rate']['value'] = round(vin*VCD_SEC/24, 4)
     if 'COMPOST_TOILET' in N:
         N['COMPOST_TOILET']['params'].update(units_installed=2, redundancy='2 x 100 % of crew use; alternate chambers (X-RED-09)')
     # X-RED-07 thermal N+1 (A-M-150): heat rejection = sum of heat edges into HEAT_SINK; 3 x 50 % plate-pack modules (any one out, 100 % kept);
@@ -155,10 +157,11 @@ def tf(g, ps=None):
     # MCC and T-1 duplicated; critical life-support loads on an ATS fed from both sections. NEC 240.6 standard ratings.
     import math
     dem = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and e['rate'].get('unit') == 'kW')
-    amps = dem*1000/(math.sqrt(3)*480*0.9); std = [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000]
-    sec = next(x for x in std if x >= amps*1.25); crit = float(ps.get('critical_kW') or _crit()); ca = crit*1000/(math.sqrt(3)*480*0.9)
+    BUS_V = _D['ELEC.distribution-train.SOL_ARK_60K.bus_V']['value']; PF = _D['bus_power_factor']['value']; CLF = _D['continuous_load_factor']['value']
+    amps = dem*1000/(math.sqrt(3)*BUS_V*PF); std = _D['ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A']['value']
+    sec = next(x for x in std if x >= amps*CLF); crit = float(ps.get('critical_kW') or _crit()); ca = crit*1000/(math.sqrt(3)*BUS_V*PF)
     N['SOL_ARK_60K']['params']['redundancy'] = {'arrangement': 'main-tie-main, sections A/B, normally-open tie', 'bus_demand_kW': round(dem, 1),
-        'section_rating_A': sec, 'basis_A': round(amps, 1), 'MCC': 'MCC-1A / MCC-1B', 'transformer': '2 x 100 % T-1 15 kVA', 'critical_ATS_A': next(x for x in std if x >= ca*1.25),
+        'section_rating_A': sec, 'basis_A': round(amps, 1), 'MCC': 'MCC-1A / MCC-1B', 'transformer': '2 x 100 % T-1 15 kVA', 'critical_ATS_A': next(x for x in std if x >= ca*CLF),
         'critical_kW': crit, 'inverter_sections': 6, 'rule': 'X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous'}
     if 'VEG_BED' in N:
         N['VEG_BED']['params']['crop_basis'] = {'crops': rows, 'area_m2': round(tot['A'], 2), 'source': 'BVAD2022', 'A-M': 'A-M-142'}
