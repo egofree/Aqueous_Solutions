@@ -1,0 +1,7 @@
+step,activity,basis,point
+1,Grade 2 certificates,A-M-190,R
+2,flatness and edge check of each cathode,A-M-190,W
+3,cell bus contact resistance,A-M-190,W
+4,bund and tank fill test,A-M-190,H
+5,"motors: routine test (winding resistance, insulation resistance, no-load run)",IEC 60034,W
+6,loop check of every instrument,A-M-190,W

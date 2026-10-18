@@ -39,14 +39,18 @@ def origin():
 def _yard_envelope(doc, x0, y0, z):
     """Pad, fence keep-out, and yard tag — clash / service envelope only."""
     # Rough yard pad covering rectifier–GEN–FC–GEO strip + ZnBr row start
-    pad_l = 9000
-    pad_w = max(12000, P.RECT_COUNT * (P.RECT_W + 400) + P.ZNBR_W + 4000)
+    # Rev B (2026-10-16): pad stops at the building west face (was under ELEV_DOCK / STAIR_SERVICE);
+    # fence moved west of the BACKUP_GEN 1 h room (gen had straddled the fence).
+    gx = min(x0 - 2000, -int(P.YARD_WALL_CLEAR) - 3300)
+    fx = min(x0 - 800, gx - 2400)
+    pad_l = -100 - fx
+    pad_w = max(13000, P.RECT_COUNT * (P.RECT_W + 400) + P.ZNBR_W + 4000)  # Rev B: +500 for the NW generator room
     add(doc, "YARD_PAD",
-        box_at(x0 - 500, y0 - 500, z - YARD_PAD_THK, pad_l, pad_w, YARD_PAD_THK))
+        box_at(fx, y0 - 500, z - YARD_PAD_THK, pad_l, pad_w, YARD_PAD_THK))
     label_plate(doc, "YARD_PAD", x0 - 500, y0 - 900, z=z + 200)
     # Fence / keep-out ribbon on west edge (site boundary side)
     add(doc, "YARD_FENCE_W",
-        box_at(x0 - 800, y0 - 500, z, 100, pad_w, YARD_FENCE_H))
+        box_at(fx - 100, y0 - 500, z, 100, pad_w, YARD_FENCE_H))
     label_plate(doc, "YARD_FENCE_W", x0 - 800, y0 - 900, z=z + 1000)
     # Access gate toward north dock apron
     add(doc, "YARD_GATE_N",
@@ -153,18 +157,23 @@ def attach(doc):
     gx_max = -int(P.YARD_WALL_CLEAR) - _fc_hx_east
     gx = min(x0 - 2000, gx_max)
     gy = y0
+    # Rev B (2026-10-16, GA_CHECK CAD clash fix): BACKUP_GEN moved to the free NW corner of the yard, in its own 1 h room.
+    # Its clearance had overlapped the FUEL_CELL and ZnBr2 aisles and it straddled the old fence line; it is now >= 5 m
+    # from the FUEL_CELL (SEP_GEN_FC 3 m), so the two standby sources do not share a fire area (redundancy rule).
+    _fx = min(x0 - 800, gx - 2400)
+    ggx, ggy = _fx + 300 + CLEAR_GEN, y0 + 9900
     add(doc, "BACKUP_GEN",
-        box_at(gx, gy, z, 1400, 900, 1600))
-    label_plate(doc, "BACKUP_GEN", gx, gy - 200)
+        box_at(ggx, ggy, z, 1400, 900, 1600))
+    label_plate(doc, "BACKUP_GEN", ggx, ggy - 200)
     _clearance(doc, "CLEAR_BACKUP_GEN",
-               gx - CLEAR_GEN, gy - CLEAR_GEN, z,
+               ggx - CLEAR_GEN, ggy - CLEAR_GEN, z,
                1400 + 2 * CLEAR_GEN, 900 + 2 * CLEAR_GEN)
     add(doc, "GEN_H2_BUFFER",
-        box_at(gx + 1500, gy, z, 600, 600, 1200))
-    label_plate(doc, "GEN_H2_BUFFER", gx + 1500, gy - 200)
+        box_at(ggx + 1500, ggy, z, 600, 600, 1200))
+    label_plate(doc, "GEN_H2_BUFFER", ggx + 1500, ggy - 200)
     add(doc, "GEN_EXHAUST_STUB",
-        box_at(gx + 400, gy + 1000, z + 1200, 400, 400, 800))
-    label_plate(doc, "GEN_EXHAUST_STUB", gx + 400, gy + 800, z=z + 1800)
+        box_at(ggx + 400, ggy + 1000, z + 1200, 400, 400, 800))
+    label_plate(doc, "GEN_EXHAUST_STUB", ggx + 400, ggy + 800, z=z + 1800)
 
     # PEM fuel-cell skid — offset +Y by SEP_GEN_FC intent (keep-out between)
     fx = gx

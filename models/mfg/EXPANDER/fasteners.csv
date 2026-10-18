@@ -1,0 +1,4 @@
+joint,size,grade,length_mm,qty,source
+baseplate anchors,M12,A4-70,60,4,assumption. Hole 14 mm in the model
+cylinder head to cylinder flange,M8,A4-70,35,4,assumption. Hole 9 mm in the model
+crankcase to baseplate,M10,A4-70,25,8,assumption. Holes not yet drawn

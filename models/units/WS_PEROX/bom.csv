@@ -1,0 +1,20 @@
+item,description,qty,material,basis
+1,Body / envelope 750 x 750 x 950 mm,1,"HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals.",docs-authority/duties/WS_PEROX.md
+2,Process nozzle DN15,3,"HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals.",one per mass edge; DN from AQS-INV-003
+3,Open vent DN25,1,"HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump, and valves, PTFE or FKM seals.","API 2000, A-M-155"
+4,"Motor: on/off valve S32 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: transfer pump S32 to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+7,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+9,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+10,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
+11,fastener: anchor bolt M10,20,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+12,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+13,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+14,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+15,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+16,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+17,support: pipe clamp DN15,10,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+18,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
+19,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004

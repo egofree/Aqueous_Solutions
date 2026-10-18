@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="220.1,580.0 220.1,164.0 220.1,164.0 40.0,60.0 40.0,476.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="226.1" y="368.0">Z +1300</text>
+<text x="136.1" y="108.0">Y +650</text>
+<text x="46.0" y="264.0">Z -1300</text>
+<circle cx="220.1" cy="580.0" r="5" fill="black"/><text x="228.1" y="594.0">EVAP_ACID</text>
+<circle cx="40.0" cy="476.0" r="5" fill="none" stroke="black"/><text x="48.0" y="490.0">EVAP_ACID_VS</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-EVAP_ACID-VENT</text>
+<text x="20" y="614">DN15  class P3  PVDF SDR 21 ISO 10931</text>
+<text x="20" y="628">EVAP_ACID -> EVAP_ACID_VS</text>
+<text x="20" y="642">pipe 3.21 m in 3 pieces; cut 1289 629 1289 mm</text>
+<text x="20" y="656">2 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 6 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

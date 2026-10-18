@@ -1,0 +1,368 @@
+[
+ {
+  "unit": "VIBRATORY_SPLIT",
+  "from_clash_with": "DRYER",
+  "dx_mm": 0,
+  "dy_mm": -1455
+ },
+ {
+  "unit": "RINSE_DEWATER",
+  "from_clash_with": "EW_BUND",
+  "dx_mm": 0,
+  "dy_mm": -1516
+ },
+ {
+  "unit": "P_Al",
+  "from_clash_with": "HARVEST_VACUUM_DRUM_FILTER",
+  "dx_mm": 0,
+  "dy_mm": -728
+ },
+ {
+  "unit": "P_Mg",
+  "from_clash_with": "HARVEST_VACUUM_DRUM_FILTER",
+  "dx_mm": 0,
+  "dy_mm": -728
+ },
+ {
+  "unit": "PROD_Cu",
+  "from_clash_with": "P_Ca",
+  "dx_mm": 0,
+  "dy_mm": -440
+ },
+ {
+  "unit": "PK_1",
+  "from_clash_with": "PK_2",
+  "dx_mm": -774,
+  "dy_mm": 0
+ },
+ {
+  "unit": "PK_2",
+  "from_clash_with": "PK_3",
+  "dx_mm": 0,
+  "dy_mm": 3144
+ },
+ {
+  "unit": "PK_3",
+  "from_clash_with": "PK_4_CEM_BOX",
+  "dx_mm": 4050,
+  "dy_mm": 0
+ },
+ {
+  "unit": "PK_4_CEM_BOX",
+  "from_clash_with": "PK_5_CEM_BOX",
+  "dx_mm": 0,
+  "dy_mm": 2520
+ },
+ {
+  "unit": "PK_6",
+  "from_clash_with": "PK_5_CEM_BOX",
+  "dx_mm": 0,
+  "dy_mm": 520
+ },
+ {
+  "unit": "PK_7",
+  "from_clash_with": "PK_8",
+  "dx_mm": 2674,
+  "dy_mm": 0
+ },
+ {
+  "unit": "PK_8",
+  "from_clash_with": "PK_9",
+  "dx_mm": 0,
+  "dy_mm": 544
+ },
+ {
+  "unit": "DEMISTER",
+  "from_clash_with": "BMED_REGEN",
+  "dx_mm": 0,
+  "dy_mm": 1300
+ },
+ {
+  "unit": "ALK_SCRUBBER",
+  "from_clash_with": "BMED_REGEN",
+  "dx_mm": 0,
+  "dy_mm": -500
+ },
+ {
+  "unit": "ACID_POLISH_SCRUB",
+  "from_clash_with": "NaOH_PRODUCT",
+  "dx_mm": -3662,
+  "dy_mm": 0
+ },
+ {
+  "unit": "ACID_POLISH_REGEN",
+  "from_clash_with": "NaOH_PRODUCT",
+  "dx_mm": 0,
+  "dy_mm": -1000
+ },
+ {
+  "unit": "NaOH_PRODUCT",
+  "from_clash_with": "LOBBY_ELEV_Lm1",
+  "dx_mm": 0,
+  "dy_mm": 3476
+ },
+ {
+  "unit": "HCl_PRODUCT",
+  "from_clash_with": "FAN_STACK",
+  "dx_mm": -1848,
+  "dy_mm": 0
+ },
+ {
+  "unit": "CRU",
+  "from_clash_with": "LOBBY_ELEV_Lm1",
+  "dx_mm": -200,
+  "dy_mm": 0
+ },
+ {
+  "unit": "HVAC_Q4",
+  "from_clash_with": "SALT_FEED",
+  "dx_mm": -600,
+  "dy_mm": 0
+ },
+ {
+  "unit": "PROD_METALS",
+  "from_clash_with": "BURNOUT_ROTARY",
+  "dx_mm": 4320,
+  "dy_mm": 0
+ },
+ {
+  "unit": "MELT",
+  "from_clash_with": "NaOH_DIGEST",
+  "dx_mm": 4380,
+  "dy_mm": 0
+ },
+ {
+  "unit": "DRYER",
+  "from_clash_with": "BMED_UPW_POLISH",
+  "dx_mm": 0,
+  "dy_mm": -287
+ },
+ {
+  "unit": "PROD_C5_C10",
+  "from_clash_with": "FRACTIONATOR",
+  "dx_mm": 0,
+  "dy_mm": -450
+ },
+ {
+  "unit": "PROD_C11_C18",
+  "from_clash_with": "FRACTIONATOR",
+  "dx_mm": 0,
+  "dy_mm": -825
+ },
+ {
+  "unit": "FRACTIONATOR",
+  "from_clash_with": "NaOH_DIGEST",
+  "dx_mm": 1526,
+  "dy_mm": 0
+ },
+ {
+  "unit": "PROD_C29",
+  "from_clash_with": "PROD_C19_C28",
+  "dx_mm": -950,
+  "dy_mm": 0
+ },
+ {
+  "unit": "H2_DRYER",
+  "from_clash_with": "BURNOUT_ROTARY",
+  "dx_mm": 0,
+  "dy_mm": 1222
+ },
+ {
+  "unit": "H2_STACK",
+  "from_clash_with": "BURNOUT_ROTARY",
+  "dx_mm": 0,
+  "dy_mm": -2153
+ },
+ {
+  "unit": "FAN_STACK",
+  "from_clash_with": "CORR_L0_EW",
+  "dx_mm": -8092,
+  "dy_mm": 0
+ },
+ {
+  "unit": "BIOFILTER",
+  "from_clash_with": "PART_FARM_SERVICE",
+  "dx_mm": 2100,
+  "dy_mm": 0
+ },
+ {
+  "unit": "GROW_BED",
+  "from_clash_with": "CORR_L1_FARM",
+  "dx_mm": 0,
+  "dy_mm": 4500
+ },
+ {
+  "unit": "HAB_WASTE",
+  "from_clash_with": "PART_HAB_SLEEP_GALLEY",
+  "dx_mm": 1600,
+  "dy_mm": 0
+ },
+ {
+  "unit": "DIST_COL_SEC",
+  "from_clash_with": "COLD_BOX",
+  "dx_mm": 0,
+  "dy_mm": 2400
+ },
+ {
+  "unit": "COMP_EXPAND",
+  "from_clash_with": "COLD_BOX",
+  "dx_mm": -2800,
+  "dy_mm": 0
+ },
+ {
+  "unit": "COLD_BOX",
+  "from_clash_with": "SHAFT_DUST",
+  "dx_mm": 2200,
+  "dy_mm": 0
+ },
+ {
+  "unit": "AIR_INTAKE",
+  "from_clash_with": "SHAFT_OIL",
+  "dx_mm": 900,
+  "dy_mm": 0
+ },
+ {
+  "unit": "STIRLING_COLD_HEAD",
+  "from_clash_with": "SHAFT_DUST",
+  "dx_mm": 0,
+  "dy_mm": 1800
+ },
+ {
+  "unit": "MET_POWDER_CRIB",
+  "from_clash_with": "CORR_L0_EW",
+  "dx_mm": 0,
+  "dy_mm": 2300
+ },
+ {
+  "unit": "MET_SCRUB",
+  "from_clash_with": "CORR_L0_EW",
+  "dx_mm": 0,
+  "dy_mm": 2100
+ },
+ {
+  "unit": "ZNBR2_POS_TANK",
+  "from_clash_with": "FC_DCDC",
+  "dx_mm": 0,
+  "dy_mm": -880
+ },
+ {
+  "unit": "ZNBR2_NEG_TANK",
+  "from_clash_with": "FC_HX_Q4",
+  "dx_mm": 600,
+  "dy_mm": 0
+ },
+ {
+  "unit": "GEO_HDR",
+  "from_clash_with": "FUEL_CELL",
+  "dx_mm": 0,
+  "dy_mm": -1600
+ },
+ {
+  "unit": "FC_H2_MANIFOLD",
+  "from_clash_with": "GEO_HP",
+  "dx_mm": 0,
+  "dy_mm": 900
+ },
+ {
+  "unit": "HYDRO_SET",
+  "from_clash_with": "CORR_Lm2_NS",
+  "dx_mm": 0,
+  "dy_mm": -6900
+ },
+ {
+  "unit": "BLACK_DIGEST",
+  "from_clash_with": "PART_HAB_SLEEP_GALLEY",
+  "dx_mm": 1400,
+  "dy_mm": 0
+ },
+ {
+  "unit": "S13_CLASS_TREAT",
+  "from_clash_with": "CORR_Lm1_LINK",
+  "dx_mm": 0,
+  "dy_mm": -104
+ },
+ {
+  "unit": "CRYO_H2",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -12000,
+  "dy_mm": 4000,
+  "gain_m": 47.8
+ },
+ {
+  "unit": "CRYO_CO2",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -12000,
+  "dy_mm": 2000,
+  "gain_m": 8.2
+ },
+ {
+  "unit": "PROD_C5_C10",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -12000,
+  "dy_mm": 12000,
+  "gain_m": 24.0
+ },
+ {
+  "unit": "AFTERBURNER",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -8500,
+  "dy_mm": 8500,
+  "gain_m": 22.5
+ },
+ {
+  "unit": "BMED_UPW_POLISH",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -2500,
+  "dy_mm": 9000,
+  "gain_m": 3.2
+ },
+ {
+  "unit": "H2_DRYER",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -9000,
+  "dy_mm": 5000,
+  "gain_m": 17.5
+ },
+ {
+  "unit": "ACID_POLISH_SCRUB",
+  "from_clash_with": "REGROUP",
+  "dx_mm": 3000,
+  "dy_mm": -500,
+  "gain_m": 2.6
+ },
+ {
+  "unit": "BAGHOUSE",
+  "from_clash_with": "REGROUP",
+  "dx_mm": 2500,
+  "dy_mm": -3000,
+  "gain_m": 7.3
+ },
+ {
+  "unit": "CRYO_O2",
+  "from_clash_with": "REGROUP",
+  "dx_mm": 0,
+  "dy_mm": 3000,
+  "gain_m": 3.0
+ },
+ {
+  "unit": "CRYO_H2",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -7500,
+  "dy_mm": 3500,
+  "gain_m": 25.4
+ },
+ {
+  "unit": "PROD_C5_C10",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -3000,
+  "dy_mm": 1500,
+  "gain_m": 4.5
+ },
+ {
+  "unit": "H2_DRYER",
+  "from_clash_with": "REGROUP",
+  "dx_mm": -3000,
+  "dy_mm": -500,
+  "gain_m": 3.7
+ }
+]

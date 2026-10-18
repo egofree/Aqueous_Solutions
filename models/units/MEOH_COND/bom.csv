@@ -1,0 +1,8 @@
+item,description,qty,material,basis
+1,Body / envelope 400 x 400 x 600 mm,1,316L where the stream is wet.,docs-authority/duties/MEOH_COND.md
+2,Process nozzle DN15,3,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+3,Open vent DN25,1,316L where the stream is wet.,"API 2000, A-M-155"
+4,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+5,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+6,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+7,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

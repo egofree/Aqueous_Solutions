@@ -119,15 +119,32 @@ def _process_corridor_lm1(doc):
                 P.CRYO_Y - 150, z=z + 600)
 
 
+LM1_ROUTE = [  # Rev B (2026-10-16): L-1 corridors routed through free floor found by the equipment clash check
+    # (CAD_CLASH_EQUIP). The old E-W spine at y 4.2-6.0 m and N-S spine at x 6.2-8.0 m ran through the pyrolysis, BMED and
+    # leach lines. Widths >= 1,200 mm (IBC 2021 1020.2, 44 in for occupant load >= 50; L-1 occupant load is under 10).
+    ("CORR_Lm1_EW", 1000, 200, 22000, 1200),          # south aisle, plate width, under every process row
+    ("CORR_Lm1_NS", 1000, 200, 1800, 9700),           # west aisle up to the link
+    ("CORR_Lm1_LINK", 1000, 8600, 4500, 1300),        # west aisle to the stair approach
+    ("CORR_Lm1_NS2", 4000, 8600, 1500, 5600),         # north to STAIR_SERVICE (door at y 14.0 m)
+    ("CORR_Lm1_CRYO_APPROACH", 5500, 12600, None, 1200),  # east to the CRYO west-wall egress door
+]
+
+
+def _lm1_corridors(doc):
+    z, h = P.Z_Lm1, H_Lm1
+    for n, x, y, dx, dy in LM1_ROUTE:
+        if dx is None: dx = P.CRYO_X - x
+        _corr(doc, n, x, y, z, dx, dy, h)
+
+
 def attach(doc):
     # L-2 utility — corridor + maint stair clear only (no hab toilets)
     _level_spine(doc, "Lm2", P.Z_Lm2, H_Lm2)
     _lift_lobby(doc, "Lm2", P.Z_Lm2, H_Lm2)
 
     # L-1 basement process + CRYO
-    _level_spine(doc, "Lm1", P.Z_Lm1, H_Lm1)
+    _lm1_corridors(doc)  # Rev B: routed round the process hall (the old spine ran through it)
     _lift_lobby(doc, "Lm1", P.Z_Lm1, H_Lm1)
-    _process_corridor_lm1(doc)
     # Operator toilet near STAIR_MAINT (not a hab exit)
     add(doc, "TOILET_Lm1_MAINT", box_at(
         P.CORE_X - TOILET_L - 200, P.CORE_Y + 5000, P.Z_Lm1,

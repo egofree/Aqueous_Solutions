@@ -72,6 +72,14 @@ def _children(doc, x, y, z, suffix):
     label_plate(doc, "FLUE_CAP%s" % suffix, ux + 800, y + 820, z=z + 1000)
 
 
+def ry(y, i):
+    """Receiver Y: H2 alone in the south bay; O2/N2/CO2 north of the 1 h partition (Rev E)."""
+    return y + 200 if i == 0 else y + 1200 + i * 700
+
+
+PART_Y = 1050  # partition south face, mm from CRYO_Y (H2 receiver ends at 800)
+
+
 def _vj_envelopes(doc, bx, by, z, rx, suffix):
     """Vacuum-jacketed line keep-outs COLD_BOX → receivers / yard rough-in.
 
@@ -82,19 +90,19 @@ def _vj_envelopes(doc, bx, by, z, rx, suffix):
     L = max(400, rx - x0)
     # VJ-001 LOX/GOX → CRYO_O2 (receiver index 1)
     add(doc, "VJ_001%s" % suffix,
-        box_at(x0, by + 200 + 1 * 700 + 200, z + 900, L, 200, 200))
+        box_at(x0, ry(by - 200, 1) + 200 + 200, z + 900, L, 200, 200))
     label_plate(doc, "VJ_001%s" % suffix, x0, by + 80 + 1 * 700, z=z + 1200)
     # VJ-002 LIN/GN2 → CRYO_N2 (index 2)
     add(doc, "VJ_002%s" % suffix,
-        box_at(x0, by + 200 + 2 * 700 + 200, z + 900, L, 200, 200))
+        box_at(x0, ry(by - 200, 2) + 200 + 200, z + 900, L, 200, 200))
     label_plate(doc, "VJ_002%s" % suffix, x0, by + 80 + 2 * 700, z=z + 1200)
     # VJ-003 LCO2/GCO2 → CRYO_CO2 (index 3)
     add(doc, "VJ_003%s" % suffix,
-        box_at(x0, by + 200 + 3 * 700 + 200, z + 900, L, 200, 200))
+        box_at(x0, ry(by - 200, 3) + 200 + 200, z + 900, L, 200, 200))
     label_plate(doc, "VJ_003%s" % suffix, x0, by + 80 + 3 * 700, z=z + 1200)
     # VJ-004 LH2/GH2 → CRYO_H2 (index 0) — MAQ sensitive
     add(doc, "VJ_004%s" % suffix,
-        box_at(x0, by + 200 + 0 * 700 + 200, z + 1100, L, 200, 200))
+        box_at(x0, ry(by - 200, 0) + 200 + 200, z + 1100, L, 200, 200))
     label_plate(doc, "VJ_004%s" % suffix, x0, by + 80, z=z + 1400)
     # VJ-005 CRYO_H2 → yard UTIL_ROUGH_H2 — east stub past receivers
     add(doc, "VJ_005%s" % suffix,
@@ -108,29 +116,41 @@ def attach(doc):
     for b in range(P.BASEMENT_LEVELS):
         z = P.basement_z(b)
         suffix = "" if b == 0 else "_B%d" % (b + 1)
+        # Rev E: cold box 1,000 mm further into the (now 8.7 m) room so the intake train sits inside CRYO, not in the
+        # pyrolysis aisle south of it (it had overlapped AIR_INTAKE/MOL_SIEVE with the AFTERBURNER room).
         add(doc, "COLD_BOX%s" % suffix,
-            box_at(x + 200, y + 200, z, 2000, 2600, 2600))
-        label_plate(doc, "COLD_BOX%s" % suffix, x + 200, y + 40, z=z + 1600)
-        _children(doc, x + 200, y + 200, z, suffix)
+            box_at(x + 200, y + 1200, z, 2000, 2600, 2600))
+        label_plate(doc, "COLD_BOX%s" % suffix, x + 200, y + 1040, z=z + 1600)
+        _children(doc, x + 200, y + 1200, z, suffix)
         # Receivers east of utility stubs
         px = x + 5000  # east of utility + AHU_COND (9 m CRYO envelope)
         for i, name in enumerate(("CRYO_H2", "CRYO_O2", "CRYO_N2", "CRYO_CO2")):
             tag = name if b == 0 else "%s_B%d" % (name, b + 1)
-            add(doc, tag, box_at(px, y + 200 + i * 700, z, 1400, 600, 1800))
-            label_plate(doc, tag, px, y + 80 + i * 700, z=z + 1600)
+            add(doc, tag, box_at(px, ry(y, i) - 0, z, 1400, 600, 1800))
+            label_plate(doc, tag, px, ry(y, i) - 120, z=z + 1600)
+        # 1 h partition: H2 receiver bay (south-east) vs O2 / ignition side (Rev E, GA_CHECK CAD clash fix).
+        # VJ-004 passes through a firestopped sleeve (cut 50 mm round the line keep-out).
+        import Part
+        pw = box_at(px - 450, y + PART_Y, z, P.CRYO_X + P.CRYO_L - (px - 450), 150, P.CRYO_H)
+        rw = box_at(px - 450, y, z, 150, PART_Y + 150, P.CRYO_H)
+        part = pw.fuse(rw)
         _vj_envelopes(doc, x + 200, y + 200, z, px, suffix)
+        sl = box_at(px - 600, ry(y, 0) + 350, z + 1050, 450, 500, 300)
+        add(doc, "FB_CRYO_H2_PART%s" % suffix, part.cut(sl))
         # Dedicated CRYO egress (NFPA 2/55 / AQS-EGR-001) — rated door +
         # lobby stub to STAIR_SERVICE path; not sole reliance on process aisle.
-        eg_x = x + 200
-        eg_y = y - 200
+        # Rev E: door in the west (process party) wall into the L-1 corridor; vestibule inside the CRYO room at its NW
+        # corner (was a lobby built over the pyrolysis train south of CRYO).
+        eg_x = x - 100
+        eg_y = y + P.CRYO_W - 1700
         add(doc, "CRYO_EGRESS_DOOR%s" % suffix,
-            box_at(eg_x, eg_y, z, 1200, 200, 2200))
+            box_at(eg_x, eg_y, z, 200, 1200, 2200))
         label_plate(doc, "CRYO_EGRESS_DOOR%s" % suffix,
                     eg_x, eg_y - 400, z=z + 1000)
         add(doc, "CRYO_EGRESS_LOBBY%s" % suffix,
-            box_at(eg_x, eg_y - 1800, z, 2400, 1600, 2800))
+            box_at(x + 150, eg_y - 300, z, 2400, 1600, 2800))
         label_plate(doc, "CRYO_EGRESS_LOBBY%s" % suffix,
-                    eg_x, eg_y - 2200, z=z + 1400)
+                    x + 150, eg_y - 500, z=z + 1400)
 
 
 def build():

@@ -1,5 +1,7 @@
 # MVS completion plan
 
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+
 Document: AQS-MVS-PLAN-001
 Date: 2026-10-02; status note 2026-10-08 (graph Rev M)
 Graph on main is the topology. This plan finishes the equipment set. Not a PE stamp.

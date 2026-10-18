@@ -1,0 +1,45 @@
+# LEACH_CSTR_1 sizing
+
+Document number: AQS-DUTY-050
+Revision: A
+Date: 2026-10-15
+Authority: graph Rev BH; AQS-PLAN-007 MET-LEACH_CSTR_1-02. Study. Not a PE stamp. Script `docs-authority/_leach_sizing.py`. Every study value is in AQS-REG-002 (A-M-029 to A-M-035).
+
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue. Liquor, residence, agitator, CPVC wall at 85 °C, FRP belts. | 2026-10-15 |
+
+## 1. Liquor and holdup
+
+Density 1100 kg/m³ (study: dilute HCl with dissolved metal chlorides). Working level 1100 mm in a 1856 × 1048 mm inside plan: 2.14 m³, 2 kg. Residence 13.2 h on IA-EW-04 (3.90 m³/d) and 10.0 h on the total inflow 5622.7 kg/d. The graph envelope 2000 × 1200 × 1400 mm is kept.
+
+## 2. Agitator
+
+4-blade 45° pitched-blade turbine, down-pumping, D 450 mm (D/D_eq 0.29), 150 rpm, Np 1.27 (turbulent, published range for this impeller about 1.2–1.4). P = Np ρ N³ D⁵ = 403 W; 188 W/m³, inside the 100–500 W/m³ band commonly used for suspending light solids. Tip speed 3.5 m/s. Gearmotor 0.75 kW (study, allows gear and motor losses and start). The impeller sits inside the HX-5 coil (ID 575 mm). Wetted parts PVDF; shaft steel core fully PVDF-sheathed (AQS-STD-002 M3). Just-suspended speed is held for a test with a class A lot (X-BAS-02 shows sink solids +22 %).
+
+With agitation, AQS-DUTY-049 gives 2.65 m² for HX-5. The built 4.22 m² is kept as margin and as the agitator-off case.
+
+## 3. CPVC wall at 85 °C
+
+Allowable: CPVC hydrostatic design stress 2000 psi at 23 °C × 0.22 at 85 °C = 3.03 MPa (study derating, interpolated from manufacturer temperature-derating tables; creep-governed long-term value). Hydrostatic at the floor 11.9 kPa. Wall 16 mm. Panels between FRP belts at Z 300, 560, 900 (belt height 203 mm), long plate, edges simply supported, σ = 0.75 q b²/t² (Roark, a/b > 3):
+
+| Panel Z, mm | q at bottom, kPa | σ, MPa |
+| --- | --- | --- |
+| 0–198 | 11.87 | 1.37 |
+| 402–458 | 7.54 | 0.07 |
+| 662–798 | 4.73 | 0.26 |
+| 1002–1100 | 1.06 | 0.03 |
+
+Maximum 1.37 MPa ≤ 3.03 MPa. Panel deflection 0.91 mm at a creep modulus of 700 MPa (study). An unstiffened 12 mm wall would see about 43 MPa and is not acceptable; AQS-NZ-001's 12 mm is superseded.
+
+## 4. FRP belts
+
+Pultruded FRP channel C203 × 56 × 6.4, web on the wall, wrapped round the tank. Lowest belt carries floor-level pressure over its tributary: w 3.57 N/mm, simply supported over 2000 mm (corner continuity ignored, conservative). Sx 104397 mm³; σ 17.1 MPa against 50 MPa allowable (study); deflection 4.1 mm, L/490 (E 17.2 GPa, study). FRP is external and not wetted.
+
+## 5. Mass
+
+From the model, by part: CPVC tank 297.6 kg, FRP belts 66.5 kg, glass coil 24.8 kg, PTFE pads 2.5 kg, PVDF agitator 9.6 kg; empty 401 kg; operating about 2760 kg.
+
+## 6. Held
+
+Agitator vendor and just-suspended speed; FRP vendor section properties; lid seal; drive bridge (outside the graph envelope).

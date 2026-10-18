@@ -1,5 +1,7 @@
 # Fab UPW — equipment list
 
+Superseded copy. The current page is `docs-authority/FAB_UPW.md`, B. This copy is history (AQS-REG-001).
+
 Document number: AQS-EQP-FAB-UPW-001  
 Revision: B  
 Date: 2026-09-27  

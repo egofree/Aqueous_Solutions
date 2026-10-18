@@ -1,0 +1,8 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,settled solids,inlet,80
+N2,DN50,Class 150,bed return,inlet,80
+N3,DN50,Class 150,raceway return,inlet,80
+N4,DN50,Class 150,bed return,inlet,80
+N5,DN50,Class 150,return,outlet,300
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,400

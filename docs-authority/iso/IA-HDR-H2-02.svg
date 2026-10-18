@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="437.4,475.9 437.4,431.0 560.0,360.2 40.0,60.0 40.0,93.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="443.4" y="449.4">Z +950</text>
+<text x="504.7" y="391.6">X +3000</text>
+<text x="306.0" y="206.1">Y +12722</text>
+<text x="46.0" y="72.5">Z -700</text>
+<circle cx="437.4" cy="475.9" r="5" fill="black"/><text x="445.4" y="489.9">HDR_H2</text>
+<circle cx="40.0" cy="93.0" r="5" fill="none" stroke="black"/><text x="48.0" y="107.0">H2_DRYER</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-HDR-H2-02</text>
+<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="628">HDR_H2 -> H2_DRYER</text>
+<text x="20" y="642">pipe 17.14 m in 6 pieces; cut 912 2924 6000 6000 646 662 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

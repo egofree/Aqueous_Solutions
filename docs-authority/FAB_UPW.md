@@ -40,7 +40,9 @@ Remineralized potable (S26) shall not feed this train.
 | Feed conductivity | < 1 µS/cm class | S01 / AQS-STR-001 |
 | Dissolved silica / boron / metals suite | TBD | Industry-class placeholder — not invented here |
 
-Mass rates: TBD (no invented balance).
+Mass rates: makeup is IA-UPW-FAB, 60 kg/d, and the bench draw is S27, 60 kg/d. Resistivity target stays above 18 MΩ·cm. Silica, boron, and metals are not given a number here. There is no assay for them.
+
+The loop is not sized by 60 kg/d. That is 2.5 L/h. The bench wants flow when a valve opens. Recirculation is 5 L/min through a 20 L tank, about 15 minutes a turnover. EDI sees the 2.5 L/h makeup, not the loop. A 20 L tank is the holdup. The old "mass TBD" line is closed.
 
 ## 4. Streams
 

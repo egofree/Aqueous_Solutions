@@ -1,0 +1,8 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,CO2 product after FLUE_KO,inlet,10
+N2,DN15,Class 150,metabolic CO2 (desorbed from the HAB CO2 sorbent bed),inlet,10
+N3,DN15,Class 150,compost CO2,inlet,10
+N4,DN15,Class 150,fermentation CO2,inlet,10
+N5,DN15,Class 150,CO2 enrichment dose (FARM AHU supply),outlet,37
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,50

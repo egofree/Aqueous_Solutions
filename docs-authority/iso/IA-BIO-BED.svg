@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,334.9 560.0,224.9 442.8,292.6 40.0,60.0 40.0,100.2" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="275.9">Z +2600</text>
+<text x="507.4" y="254.7">X -3200</text>
+<text x="247.4" y="172.3">Y +11000</text>
+<text x="46.0" y="76.1">Z -950</text>
+<circle cx="560.0" cy="334.9" r="5" fill="black"/><text x="568.0" y="348.9">BIOFILTER</text>
+<circle cx="40.0" cy="100.2" r="5" fill="none" stroke="black"/><text x="48.0" y="114.2">GROW_BED</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-BIO-BED</text>
+<text x="20" y="614">DN20  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">BIOFILTER -> GROW_BED</text>
+<text x="20" y="642">pipe 17.67 m in 5 pieces; cut 2587 3173 6000 4973 937 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

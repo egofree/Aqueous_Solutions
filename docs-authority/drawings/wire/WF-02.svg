@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="170" font-family="sans-serif" font-size="10">
+<text x="170" y="20" font-weight="bold">WF-02 18 AWG TFFN</text>
+<circle cx="80" cy="80" r="60.0" fill="#ddd" stroke="#000"/>
+<circle cx="80" cy="80" r="6.6" fill="#555" stroke="#000"/>
+<circle cx="80" cy="80" r="6.0" fill="#2c7" stroke="#000"/>
+<circle cx="80" cy="80" r="3.6" fill="#c87533" stroke="#000"/>
+<text x="170" y="40">conductor 0.823 mm2, 7 x 0.387 mm soft Cu, ASTM B8 class B</text>
+<text x="170" y="54">PVC insulation 0.38 mm</text>
+<text x="170" y="68">nylon jacket 0.10 mm</text>
+<text x="170" y="82">core OD 2.12 mm</text>
+<text x="170" y="96">3 twisted pairs, overall Al/PET foil and 7-wire drain, PVC jacket, jacket OD 8.6 mm</text>
+<text x="170" y="110">R20 21.367 ohm/km; UL66_2015</text>
+</svg>

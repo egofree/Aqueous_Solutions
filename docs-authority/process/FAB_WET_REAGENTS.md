@@ -1,5 +1,7 @@
 # Fab wet reagents — wet-line synth forks
 
+Superseded copy. The current page is `docs-authority/FAB_WET_REAGENTS.md`, B. This copy is history (AQS-REG-001).
+
 Document number: AQS-EQP-FAB-RGN-001  
 Revision: A  
 Date: 2026-09-27  

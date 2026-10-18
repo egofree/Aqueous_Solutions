@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,379.2 560.0,195.9 417.7,278.1 40.0,60.0 40.0,120.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="283.5">Z +2900</text>
+<text x="494.8" y="233.0">X -2600</text>
+<text x="234.8" y="165.0">Y +6900</text>
+<text x="46.0" y="86.0">Z -950</text>
+<circle cx="560.0" cy="379.2" r="5" fill="black"/><text x="568.0" y="393.2">DUAL_ROOT</text>
+<circle cx="40.0" cy="120.0" r="5" fill="none" stroke="black"/><text x="48.0" y="134.0">GROW_BED</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-DR-OUT</text>
+<text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">DUAL_ROOT -> GROW_BED</text>
+<text x="20" y="642">pipe 13.29 m in 5 pieces; cut 2889 2579 6000 879 939 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

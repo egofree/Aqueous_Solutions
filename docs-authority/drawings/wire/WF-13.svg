@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="170" font-family="sans-serif" font-size="10">
+<text x="170" y="20" font-weight="bold">WF-13 8 AWG XHHW-2</text>
+<circle cx="80" cy="80" r="60.0" fill="#2c7" stroke="#000"/>
+<circle cx="80" cy="80" r="37.1" fill="#c87533" stroke="#000"/>
+<text x="170" y="40">conductor 8.366 mm2, 7 x 1.234 mm soft Cu, ASTM B8 class B</text>
+<text x="170" y="54">XLPE insulation (XHHW-2), green 1.14 mm</text>
+<text x="170" y="68">core OD 5.98 mm</text>
+<text x="170" y="82">R20 2.102 ohm/km; UL44_2018</text>
+</svg>

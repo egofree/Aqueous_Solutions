@@ -1,0 +1,11 @@
+tag,size,rating,service,face,height_mm
+N1,DN25,Class 150,scrubbed CO2 to the cold box,inlet,400
+N2,DN50,Class 150,scrubbed flue nitrogen to the cold box,inlet,400
+N3,DN15,Class 150,argon return,inlet,400
+N4,DN15,Class 150,helium return,inlet,400
+N5,DN50,Class 150,nitrogen product,outlet,1500
+N6,DN25,Class 150,oxygen product,outlet,1500
+N7,DN25,Class 150,CO2 product,outlet,1500
+N8,DN15,Class 150,argon,outlet,1500
+N9,DN15,Class 150,drain,bottom,50
+N10,DN15,Class 150,vent,top,2000

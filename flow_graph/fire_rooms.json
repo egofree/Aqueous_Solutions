@@ -1,0 +1,174 @@
+{
+ "rating_h": 1,
+ "basis": "AQS-SAF-007 (X-SAF-02, A-M-209): 1 h fire-resistance-rated room with its own exhaust around each unit",
+ "rooms": [
+  {
+   "unit": "AFTERBURNER",
+   "level": "L-1",
+   "origin_mm": [
+    0.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    2600,
+    2600,
+    4500
+   ]
+  },
+  {
+   "unit": "BACKUP_GEN",
+   "level": "L0",
+   "origin_mm": [
+    -3500,
+    7700,
+    0
+   ],
+   "size_mm": [
+    4000,
+    3000,
+    1600
+   ]
+  },
+  {
+   "unit": "CRYO_ASU",
+   "level": "L-1",
+   "origin_mm": [
+    20600,
+    6000,
+    -6000
+   ],
+   "size_mm": [
+    4000,
+    3500,
+    2600
+   ]
+  },
+  {
+   "unit": "CRYO_CO2",
+   "level": "L-1",
+   "origin_mm": [
+    15000.0,
+    8160.0,
+    -6000.0
+   ],
+   "size_mm": [
+    8696,
+    3500,
+    450
+   ]
+  },
+  {
+   "unit": "CRYO_O2",
+   "level": "L-1",
+   "origin_mm": [
+    15000.0,
+    13160.0,
+    -6000.0
+   ],
+   "size_mm": [
+    8696,
+    3500,
+    750
+   ]
+  },
+  {
+   "unit": "FLUE_KO",
+   "level": "L-1",
+   "origin_mm": [
+    18800,
+    7200,
+    -6000
+   ],
+   "size_mm": [
+    2600,
+    2700,
+    1100
+   ]
+  },
+  {
+   "unit": "GLASS_BURNOUT",
+   "level": "L-1",
+   "origin_mm": [
+    600,
+    12200,
+    -6000
+   ],
+   "size_mm": [
+    2800,
+    2600,
+    1200
+   ]
+  },
+  {
+   "unit": "MEOH_FC",
+   "level": "L0",
+   "origin_mm": [
+    -4848,
+    200,
+    0
+   ],
+   "size_mm": [
+    3800,
+    2800,
+    1600
+   ]
+  },
+  {
+   "unit": "MET_MELT",
+   "level": "L0",
+   "origin_mm": [
+    12000.0,
+    0.0,
+    0.0
+   ],
+   "size_mm": [
+    3000.0,
+    3000.0,
+    5000
+   ]
+  },
+  {
+   "unit": "OIL_PYRO",
+   "level": "L-1",
+   "origin_mm": [
+    1600.0,
+    12000.0,
+    -6000.0
+   ],
+   "size_mm": [
+    2500,
+    2500,
+    670
+   ]
+  },
+  {
+   "unit": "PEANUT",
+   "level": "L0",
+   "origin_mm": [
+    25000,
+    8800,
+    0
+   ],
+   "size_mm": [
+    11400,
+    3200,
+    600
+   ]
+  },
+  {
+   "unit": "SIC_FURNACE",
+   "level": "L-1",
+   "origin_mm": [
+    5900,
+    12000,
+    -6000
+   ],
+   "size_mm": [
+    3500,
+    3500,
+    1800
+   ]
+  }
+ ]
+}

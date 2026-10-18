@@ -1,0 +1,5 @@
+task,basis,interval_y
+infrared thermography,NFPA 70B,1
+"electrical service (torque, insulation resistance)",NFPA 70B,3
+turbine-generator load run,NFPA 111 8.4,0.0833
+reservoir cell drain-down inspection (one cell at a time),A-M-189,5

@@ -1,6 +1,11 @@
 # Remaining work checklist
 
-Document number: AQS-REM-001  
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+
+Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+
+Document number: AQS-REM-002  
+Renumbered 2026-10-15 from AQS-REM-001 to clear a duplicate (AQS-REG-001).
 Revision: E  
 Date: 2026-10-01
 

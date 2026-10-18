@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="411.6,441.1 411.6,60.0 68.1,258.3 40.0,242.1 40.0,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="417.6" y="246.6">Z +2820</text>
+<text x="245.9" y="155.2">X -2935</text>
+<text x="60.0" y="246.2">Y +240</text>
+<text x="46.0" y="407.1">Z -2500</text>
+<circle cx="411.6" cy="441.1" r="5" fill="black"/><text x="419.6" y="455.1">EW_7</text>
+<circle cx="40.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="48.0" y="594.0">LEACH_CSTR_1</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-EW7-CL2</text>
+<text x="20" y="614">DN15  class P3  PVDF SDR 21 ISO 10931</text>
+<text x="20" y="628">EW_7 -> LEACH_CSTR_1</text>
+<text x="20" y="642">pipe 8.43 m in 4 pieces; cut 2809 2914 219 2489 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

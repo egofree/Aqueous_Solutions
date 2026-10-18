@@ -1,0 +1,9 @@
+item,description,qty,material,basis
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/RECTIFIER.md
+2,Open vent DN25,1,No wetted alloy.,"API 2000, A-M-155"
+3,"Motor: cooling fan (BLDC, 57 mm (NEMA 23 flange))",4,-,AQS-INV-001 / AQS-INV-005
+4,bearing: deep-groove ball bearing 608-2Z,8,"ISO 15, normal class",AQS-INV-004
+5,electronics: BLDC driver 24/48 V DC,4,IEC 61800-5-1,AQS-INV-004
+6,electronics: PLC digital I/O point 24 V DC,8,IEC 61131-2,AQS-INV-004
+7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

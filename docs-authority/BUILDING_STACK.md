@@ -71,8 +71,8 @@ Building is NFPA 13 throughout. Non-sprinklered R over H is NP.
 
 ## 1. Levels (one module)
 
-Structural bay **6.0 × 6.0 m**. Module plate **24 × 18 m**
-(4 × 3 bays) = 432 m². Add bays on +X to scale throughput.
+Structural bay **6.0 × 6.0 m**. Module plate **24 × 24 m**
+(4 × 4 bays) = 576 m². The 24 × 18 m, 432 m² plate is retired. AQS-PLAN-001 Rev B.
 Clear heights are to underside of the next slab.
 
 | Level | Name | Clear | Occupancy | Holds |
@@ -182,7 +182,7 @@ Energy in a water column: \(E = \rho V g h\).
 
 | Roof volume | Head | Stored energy (ideal) | Round-trip ~70% |
 |---|---|---|---|
-| 200 m³ | 18 m | 9.8 kWh | ~7 kWh |
+| 2,707 m³ | 35.73 m | 263.6 kWh | 210.9 kWh (superseded by AQS-BLD-014, Q-009) |
 | 1 000 m³ | 18 m | 49 kWh | ~34 kWh |
 | 5 000 m³ (city cistern) | 25 m | 340 kWh | ~240 kWh |
 

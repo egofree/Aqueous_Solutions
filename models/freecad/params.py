@@ -204,7 +204,12 @@ CASSETTE_ID = ("M1", "M2", "M3")[CASSETTE_COUNT - 1]
 # Discrete stacked floors (not continuous height stretch of one plate).
 # LIFE_LEVELS: HAB∥FARM pairs between roof tank and L0 MFG/grade.
 # BASEMENT_LEVELS: wet + CRYO process plates underground (CATCH below all).
-LIFE_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
+# Owner rule (Q-009): as the building grows, HAB/FARM levels are added at wt_life_per_shop x the rate of shop levels.
+import json as _json, os as _os, sys as _sys
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+_DRV = _json.load(open(_os.path.join(_ROOT, 'flow_graph/param/drivers.json')))
+SHOP_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
+LIFE_LEVELS = 1 + int(round(_DRV['wt_life_per_shop']['value'])) * (SHOP_LEVELS - 1)
 BASEMENT_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
 
 SLAB_THK = 300
@@ -223,8 +228,8 @@ def basement_z(i):
 
 Z_Lm1 = basement_z(0)  # uppermost process basement FFL
 # CATCH always deepest: below the lowest process basement clear
-Z_Lm2 = basement_z(BASEMENT_LEVELS - 1) - CLEAR_Lm2
-Z_L1 = CLEAR_L0                    # first life FFL (above grade)
+Z_Lm2 = basement_z(BASEMENT_LEVELS - 1) - CLEAR_Lm2   # replaced below by the lower-reservoir depth
+Z_L1 = SHOP_LEVELS * CLEAR_L0      # first life FFL above the shop levels
 Z_L2 = Z_L1 + LIFE_LEVELS * CLEAR_L1  # roof / tank plate above top life floor
 Z_PROCESS = Z_Lm1                  # primary wet cassette on uppermost basement
 
@@ -241,7 +246,7 @@ PROCESS_DY = 4000
 
 SITE_LAT_DEG = 33.0                # Dallas default; ARRAY_ROOF / PV tilt = +φ (south face NH)
 
-CORE_L, CORE_W = 6000, 6000
+CORE_L, CORE_W = 8000, 6000      # X-BLD-05 core re-pack: STAIR_P 2.6x4.8, ELEV_SVC 2.7x3.2, STAIR_MAINT, 6 shafts without overlap (CAD clash check)
 CORE_X = (PLATE_L - CORE_L) // 2
 CORE_Y = (PLATE_W - CORE_W) // 2
 
@@ -264,7 +269,9 @@ DOCK_W = min(8000, PLATE_W)
 DOCK_X = 0
 DOCK_Y = PLATE_W - DOCK_W
 DOCK_Z = Z_L0
-DOCK_APRON_N = 6000          # exterior truck apron north of ENV_WALL_N
+DOCK_APRON_N = 34000         # exterior truck apron north of ENV_WALL_N: 1.5 x WB-67 length 22.4 m, X-BLD-07 / A-M-212 (was 6000)
+DOCK_APRON_W = PLATE_L       # apron along the whole north face for the WB-67 turn (X-BLD-07)
+DOCK_DOOR_H = 4300           # dock door clear height: WB-67 4.11 m + 0.19 m (X-BLD-07)
 DOCK_DOOR_W = 3600           # north-facing door clear (massing)
 # Freight elevator paired with each dock (≠ CORE ELEV_SVC)
 ELEV_DOCK_L, ELEV_DOCK_W = 2700, 3200
@@ -277,7 +284,9 @@ ELEV_DOCK_H_HEAD = 500       # headroom above L0 for shaft massing start
 SERVICE_ENTRY_L, SERVICE_ENTRY_W, SERVICE_ENTRY_H = 3600, 2400, 2800
 SERVICE_ENTRY_X = 200
 SERVICE_ENTRY_Y = PLATE_W - SERVICE_ENTRY_W - 200
-STAIR_SERVICE_L, STAIR_SERVICE_W = 2400, 3600
+STAIR_BOX = 2600             # X-BLD-05: two flights of 1,150 mm clear (IBC 1011.2 min 1,118) + 300 mm for walls and rails
+STAIR_MAINT_W = 1300         # single flight 1,150 mm clear
+STAIR_SERVICE_L, STAIR_SERVICE_W = STAIR_BOX, 3600
 STAIR_SERVICE_X = SERVICE_ENTRY_X + SERVICE_ENTRY_L + 200
 STAIR_SERVICE_Y = PLATE_W - STAIR_SERVICE_W - 200
 
@@ -310,7 +319,8 @@ if FAB_Y + FAB_W > PLATE_W:
 # Vertical growth = BASEMENT_LEVELS; one cold-box bay per basement level.
 # Layout relief (AQS-AUD-001 Rev D): 6×6 → 9×6 m using free east strip to
 # plate edge (CRYO_X + 9000 ≤ PLATE_L at M1). Bay grid unchanged.
-CRYO_L, CRYO_W, CRYO_H = 9000, 6000, 4000
+# Rev E (2026-10-16): W 6000 -> 8700 to hold the A-M-214 block (8.66 m) and the 1 h H2 / O2 partition.
+CRYO_L, CRYO_W, CRYO_H = 9000, 8700, 4000
 CRYO_X = CORE_X + CORE_L
 CRYO_Y = CORE_Y
 CRYO_Z = Z_Lm1  # primary (uppermost basement); replicas use basement_z(i)
@@ -330,12 +340,30 @@ ROOF_TANK_X = max(0, (PLATE_L - ROOF_TANK_L) // 2)
 ROOF_TANK_Y = max(0, (PLATE_W - ROOF_TANK_W) // 2)
 ROOF_TANK_Z = Z_L2
 
-CATCH_TANK_L = int(round(_CT_L0 * _FOOT_SCALE))
-CATCH_TANK_W = int(round(_CT_W0 * _FOOT_SCALE))
-CATCH_TANK_H = _CT_H0
+# Q-009 closed: water tower. Upper reservoir = HYDRO_RES levels above the ROOF_TANK storey; lower = CATCH_TANK (A-M-187).
+_sys.path.insert(0, _ROOT)
+from flow_graph.param import water_tower as _WT
+try:
+    _E = [n for n in _json.load(open(_os.path.join(_ROOT, 'flow_graph/plant_flow_graph.json')))['nodes'] if n['unit_id'] == 'HYDRO_SET'][0]['params']['backup_basis']['energy_kWh_bus']
+except Exception:
+    _E = 200.3
+from flow_graph.param import fire as _FIRE
+FIRE_RESERVE_M3 = _FIRE.demand(PLATE_L*PLATE_W/1e6)[1]
+HYDRO = _WT.solve(_E, PLATE_L, PLATE_W, Z_L2 + _DRV['wt_level_clear_mm']['value'], basement_z(BASEMENT_LEVELS - 1), _DRV, V_dead=FIRE_RESERVE_M3)
+HYDRO_RES_LEVELS = HYDRO['levels']
+HYDRO_RES_Z0 = int(round(HYDRO['z_res0_m'] * 1000))
+HYDRO_RES_CLEAR = int(_DRV['wt_level_clear_mm']['value'])
+HYDRO_RES_WATER_H = int(round(HYDRO['depth_per_level_m'] * 1000))
+HYDRO_HEAD_M = HYDRO['head_m']
+Z_ROOF = int(round(HYDRO['z_roof_m'] * 1000))      # roof slab over the reservoir; PV array sits here
+CLEAR_Lm2 = max(CLEAR_Lm2, int(round(HYDRO['catch_clear_m'] * 1000)))
+Z_Lm2 = basement_z(BASEMENT_LEVELS - 1) - CLEAR_Lm2
+CATCH_TANK_L = PLATE_L
+CATCH_TANK_W = int(round(PLATE_W * (1 - _DRV['wt_core_frac']['value'])))
+CATCH_TANK_H = int(round((HYDRO['catch_depth_m'] + _DRV['wt_freeboard_m']['value']) * 1000))
 CATCH_TANK_X = 0
 CATCH_TANK_Y = max(0, (PLATE_W - CATCH_TANK_W) // 2)
-CATCH_TANK_Z = Z_Lm2
+CATCH_TANK_Z = Z_Lm2 + SLAB_THK
 
 # Electrical discrete jumps (AQS-SCALE-001)
 ELEC_NEED_KW_BASE = 50.0
@@ -414,3 +442,8 @@ D1B_TBD_STUB_W = STUB_W
 D1B_TBD_STUB_H = STUB_H
 # Reagent-tote pitch (reuse polish-bank pitch class)
 D1B_WS_PITCH = PK_PITCH
+
+# GA relocations applied after placement (build_plant.py), world mm, bbox centre in plan. Rev 2026-10-16 (GA_CHECK CAD clash fix):
+# AFTERBURNER sat in the 100-200 mm-gap pyrolysis line (overlapping NaOH_DIGEST, touching PROD_C5_C10), where no 1 h room
+# fits; moved to the nearest free 2 x 2 m L-1 bay (17.4-19.4 m E, 1.7-3.7 m N), about 3 m of NCG duct from the fractionator.
+RELOCATE = {"AFTERBURNER": (18400, 2700)}

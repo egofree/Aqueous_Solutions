@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="542.3,475.9 542.3,60.0 40.0,350.0 412.3,565.0 412.3,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="548.3" y="263.9">Z +8310</text>
+<text x="297.2" y="201.0">X -11590</text>
+<text x="232.2" y="453.5">Y -8590</text>
+<text x="418.3" y="568.5">Z -300</text>
+<circle cx="542.3" cy="475.9" r="5" fill="black"/><text x="550.3" y="489.9">ACETOX</text>
+<circle cx="412.3" cy="580.0" r="5" fill="none" stroke="black"/><text x="420.3" y="594.0">ROOF_TANK</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-AC-H2O</text>
+<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="628">ACETOX -> ROOF_TANK</text>
+<text x="20" y="642">pipe 28.73 m in 7 pieces; cut 6000 2299 6000 5569 6000 2569 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

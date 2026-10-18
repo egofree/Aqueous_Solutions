@@ -1,6 +1,7 @@
 # Standards basis for the audit fixes
 
-Document: AQS-STD-001
+Document: AQS-STD-003
+Renumbered 2026-10-15 from AQS-STD-001 to clear a duplicate (AQS-REG-001).
 Date: 2026-10-02
 Jurisdiction for construction remains USA: NFPA and NEC as in AQS-HSE-001, City of Dallas amendments, OSHA 1910. This file is not a PE stamp and not a NASA safety review.
 

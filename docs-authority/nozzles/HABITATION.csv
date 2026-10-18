@@ -1,0 +1,11 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,O2,inlet,160
+N2,DN15,Class 150,food,inlet,160
+N3,DN50,Class 150,clean tower water,inlet,160
+N4,DN15,Class 150,potable,inlet,160
+N5,DN50,Class 150,grey/solids,outlet,600
+N6,DN15,Class 150,ferment feed,outlet,600
+N7,DN15,Class 150,metabolic CO2 (desorbed from the HAB CO2 sorbent bed),outlet,600
+N8,DN15,Class 150,feces,outlet,600
+N9,DN15,Class 150,drain,bottom,50
+N10,DN15,Class 150,vent,top,800

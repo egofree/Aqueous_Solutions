@@ -1,0 +1,7 @@
+step,activity,basis,point
+1,resin and pipe certificates,ASTM D1785 and the AQS-WLD-002 material rows,R
+2,"WPS-03..07, fusion or solvent operator test",DVS 2207 / ASTM D2855,R
+3,"fusion bead visual 100 %, record of heater temperature and pressure per joint",DVS 2207,W
+4,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",ASME B31.3 A345,H
+5,"motors: routine test (winding resistance, insulation resistance, no-load run)",IEC 60034,W
+6,loop check of every instrument,A-M-190,W

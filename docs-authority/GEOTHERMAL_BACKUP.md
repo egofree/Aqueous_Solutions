@@ -1,6 +1,7 @@
 # Geothermal loop and backup generator — POWER gap close
 
-Document number: AQS-PWR-001  
+Document number: AQS-PWR-002  
+Renumbered 2026-10-15 from AQS-PWR-001 to clear a duplicate (AQS-REG-001).
 Revision: B  
 Date: 2026-09-28  
 PFDs: AQS-PFD-GEO-001 (`geothermal_pfd.png`), AQS-PFD-GEN-001 (`backup_gen_pfd.png`)  

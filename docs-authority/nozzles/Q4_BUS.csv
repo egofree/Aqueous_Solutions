@@ -1,0 +1,9 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,water <80 C,inlet,10
+N2,DN15,Class 150,water <80 C,inlet,10
+N3,DN15,Class 150,heat < 80 °C,inlet,10
+N4,DN15,Class 150,warm residual < 80 °C,inlet,10
+N5,DN15,Class 150,Q4 surplus heat,outlet,37
+N6,DN15,Class 150,life heat,outlet,37
+N7,DN15,Class 150,drain,bottom,50
+N8,DN15,Class 150,vent,top,50

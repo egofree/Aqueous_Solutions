@@ -202,7 +202,7 @@ PV / ZnBr₂ / RECT jump with `ELEC_NEED` / `ELEC_TARGET` (§6). **MeOH** tank a
 FC bank have **no** SCALE_M discrete formula here — study sizing lives in
 **AQS-ESS-001** / **AQS-SCALE-UR-001** Rev B (bank 1–4 modules; synth ∝ Faraday
 H₂). **Pumped hydro** energy is \(E=\rho V g h\) from roof/catch geometry
-(AQS-BLD-001 §3): M1 ~**9.8 kWh** ideal ≪ ZnBr₂ **120 kWh** — documented
+(AQS-BLD-001 §3): M1 **263.6 kWh** ideal vs ZnBr₂ **3,501 kWh** (AQS-BLD-014, Q-009)
 **study sizing asymmetry**, not a silent omission. Growing tank volume (not
 bay count alone) is the path to material hydro energy.
 

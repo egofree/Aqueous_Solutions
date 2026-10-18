@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="398.3,276.2 398.3,60.0 40.0,266.9 156.2,334.0 156.2,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="404.3" y="164.1">Z +1450</text>
+<text x="225.2" y="159.4">X -2775</text>
+<text x="104.1" y="296.4">Y -900</text>
+<text x="162.2" y="453.0">Z -1650</text>
+<circle cx="398.3" cy="276.2" r="5" fill="black"/><text x="406.3" y="290.2">BMED_BASE</text>
+<circle cx="156.2" cy="580.0" r="5" fill="none" stroke="black"/><text x="164.2" y="594.0">EVAP_BASE</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-EVAP_BASE-FEED</text>
+<text x="20" y="614">DN15  class P4  PP-H ISO 15494</text>
+<text x="20" y="628">BMED_BASE -> EVAP_BASE</text>
+<text x="20" y="642">pipe 6.71 m in 4 pieces; cut 1439 2754 879 1639 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -1,0 +1,7 @@
+item,description,qty,material,basis
+1,Shell DN450 x 390 mm x 4.0 mm wall with flat bottom,1,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062 section 1
+2,Bolted flat lid with gasket,1,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062
+3,Nozzles DN25: feed slurry in; NaOH in; liquor out; drain; vent,5,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062
+4,Legs 40x40 x 300 mm,4,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",study
+5,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 kW motor, PVDF sleeve",1,PVDF / 316L,PERRY9_MIX
+6,"Q3 heating coil, PVDF tube DN15",1,PVDF,graph HL-Q3-A/B-HX6

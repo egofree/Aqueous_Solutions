@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="560.0,239.2 560.0,60.0 122.3,312.7 40.0,265.2 40.0,273.5" fill="none" stroke="black" stroke-width="3"/>
+<text x="566.0" y="145.6">Z +6448</text>
+<text x="347.2" y="182.3">X -18180</text>
+<text x="87.2" y="284.9">Y +3420</text>
+<text x="46.0" y="265.3">Z -300</text>
+<circle cx="560.0" cy="239.2" r="5" fill="black"/><text x="568.0" y="253.2">ACEX</text>
+<circle cx="40.0" cy="273.5" r="5" fill="none" stroke="black"/><text x="48.0" y="287.5">ANIMAL_PEN</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-CLOSE-6</text>
+<text x="20" y="614">DN50  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
+<text x="20" y="628">ACEX -> ANIMAL_PEN</text>
+<text x="20" y="642">pipe 28.17 m in 8 pieces; cut 6000 417 6000 6000 6000 120 3360 270 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 12 fusion joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

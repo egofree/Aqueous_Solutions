@@ -1,0 +1,42 @@
+item,description,qty,material,basis
+1,Body D415 x 1244 mm,1,316L.,docs-authority/duties/CRYO_ASU.md
+2,Process nozzle DN15,23,316L.,one per mass edge; DN from AQS-INV-003
+3,Open vent DN25,1,316L.,"API 2000, A-M-155"
+4,"Motor: air compressor (cold box feed) (induction IE3, IEC 180M / 18.5 kW)",1,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: expander brake / generator (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005
+6,bearing: deep-groove ball bearing 6310-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
+7,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
+8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+9,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+10,electronics: variable-frequency drive 18.5 kW,1,IEC 61800-5-1,AQS-INV-004
+11,electronics: variable-frequency drive 1.1 kW,1,IEC 61800-5-1,AQS-INV-004
+12,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+13,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+14,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+15,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+16,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+17,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+18,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+19,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+20,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",AQS-INV-004
+21,"instrument: gas detector, O2 enrichment electrochemical O2",2,"alarm 23.5 vol %, trip 25 vol %, breathing height",AQS-INV-004
+22,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+23,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+24,"protection: inverse-time circuit breaker, 3-pole 90 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+25,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+26,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+27,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+28,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+29,support: U-bolt with guide DN15,7,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+30,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+31,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+32,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+33,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+34,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+35,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+36,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+37,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+38,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+39,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+40,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+41,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

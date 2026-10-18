@@ -1,0 +1,6 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,process H2,inlet,400
+N2,DN15,Class 150,H2 fuel,outlet,1500
+N3,DN15,Class 150,H2 for MeOH,outlet,1500
+N4,DN15,Class 150,drain,bottom,50
+N5,DN15,Class 150,vent,top,2000

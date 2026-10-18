@@ -2,11 +2,50 @@
   "preset_id": "VIEW-EFD-ESS",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "M",
-  "node_count": 7,
+  "source_revision": "BH",
+  "node_count": 8,
   "edge_count": 9,
   "orphan_campus_units": [],
   "nodes": [
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "sector_id": "DOCK",
+      "presence": "present",
+      "class": "boundary",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+      "notes": "North dock door. Freight only. No process stream.",
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+        "presence": "present",
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none",
+        "boundary_kind": "dock freight door (logical)",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      }
+    },
     {
       "unit_id": "CATCH_TANK",
       "sector_id": "WTR",
@@ -26,53 +65,26 @@
         "z_mm": -10500,
         "placement_decision": "Rev K: stays at L-2 by function (deepest point, gravity return). Not a heat-ladder drain tank.",
         "slab_crossing": "SHAFT_PENSTOCK [10800..11600, 8200..9000] only; S22/S23 run in the shaft; S41 terrace drain enters the shaft at L0 by wall sleeve",
-        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out"
-      }
-    },
-    {
-      "unit_id": "HYDRO_SET",
-      "sector_id": "PUMPED_HYDRO",
-      "presence": "present",
-      "class": "hydro",
-      "tags": [],
-      "electrical_role": "storage",
-      "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": {
-        "value": null,
-        "unit": "kW",
-        "status": "study",
-        "note": "M1 hydro ~9.8 kWh ideal / ~7 recoverable \u226a ZnBr2 120 kWh (AQS-ESS-001). Continuous charge/discharge kW model incomplete \u2014 honest incomplete (WP-A4). Scale-up path V=200\u21921000\u21925000 m3 documented in params."
-      },
-      "modules": [],
-      "params": {
-        "energy_kwh_ideal_study": 9.8,
-        "energy_kwh_recoverable_study": 7.0,
-        "ref": "AQS-ESS-001",
-        "volume_m3_m1": 200,
-        "head_m_m1": 18,
-        "vs_znbr2_kwh": 120,
-        "fraction_of_znbr2_study": 0.082,
-        "continuous_kw_status": "incomplete",
-        "scale_up_volume_path_m3": [
-          200,
-          1000,
-          5000
-        ],
-        "scale_up_head_m": [
-          18,
-          18,
-          25
-        ],
-        "scale_up_energy_kwh_ideal": [
-          9.8,
-          49.0,
-          340.0
-        ],
-        "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
-        "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
-        "presence": "present"
+        "not_connected": "no SLAB_Lm1 penetration into L-1 process rooms; Q-store drain-down goes to the L-1 process bund pump-out",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CATCH_TANK.md.",
+        "internals": "dip pipe, stilling well",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
       }
     },
     {
@@ -100,15 +112,15 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "air O2",
-              "value": 2.5778,
+              "value": 7.4897,
               "basis": "stoichiometric",
               "kind": "derived"
             },
@@ -116,7 +128,7 @@
               "layer": "energy",
               "dir": "in",
               "label": "MeOH LHV (S76)",
-              "value": 0.397,
+              "value": 1.1534,
               "basis": "19.93 MJ/kg",
               "kind": "derived"
             },
@@ -124,11 +136,30 @@
               "layer": "energy",
               "dir": "out",
               "label": "low-grade heat",
-              "value": 0.1693,
+              "value": 0.4919,
               "basis": "below Q4 return",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
+        "internals": "none",
+        "design_kPa": 22.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 2.304,
+          "pump_in_m3_h": 0.0046,
+          "pump_out_m3_h": 0.0017,
+          "out_breathing_Nm3_h": 0.687,
+          "in_breathing_Nm3_h": 11.66,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 15.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
         }
       }
     },
@@ -154,11 +185,107 @@
         "days_at_mid_synth": 3,
         "presence": "present",
         "size_mm": [
-          800,
-          800,
-          1100
+          1150,
+          1150,
+          1550
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "duty": "In 31.256 kg/d, out 31.256 kg/d, 0.000 kW. Sheet docs-authority/duties/MEOH_TANK.md.",
+        "internals": "dip pipe, stilling well",
+        "design_kPa": 21.5,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 2.05,
+          "pump_in_m3_h": 0.0303,
+          "pump_out_m3_h": 0.03,
+          "out_breathing_Nm3_h": 0.671,
+          "in_breathing_Nm3_h": 10.773,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 15.0,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.0 kPa (1.55 m full at SG 1.25) = 21.5 kPa g (A-M-174)"
+        },
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.6906,
+          "D_mm": 850,
+          "H_mm": 1250,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
+      }
+    },
+    {
+      "unit_id": "PV_ARRAY",
+      "sector_id": "ELEC_PV",
+      "presence": "present",
+      "class": "pv",
+      "tags": [],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 242.0676,
+        "unit": "kW",
+        "status": "study",
+        "note": "Average on IA-PV-01. Nameplate 70 kW is params.nameplate_kw."
+      },
+      "modules": [],
+      "params": {
+        "module_kw": 0.5,
+        "count": 6934,
+        "presence": "present",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 242.068 kW. Sheet docs-authority/duties/PV_ARRAY.md.",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "nameplate_kw": 3467,
+        "area_m2": 30444,
+        "mount": "ground field off the building plate (X-RSZ-02); site area to be confirmed",
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        },
+        "mounting": "roof only (X-PAR-07); ground field removed",
+        "roof": {
+          "footprint_mm": [
+            198000,
+            168000
+          ],
+          "bays": [
+            33,
+            28
+          ],
+          "footprint_m2": 33264.0,
+          "extension_m2": 32832.0,
+          "roof_capacity_kWp": 3470.7,
+          "perimeter_pathway_mm": 1829,
+          "arrays": 20,
+          "extension_load_kW": 93.84,
+          "roof_load_kPa": {
+            "service_kPa": 1.11,
+            "lrfd_kPa": 1.716
+          },
+          "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
+        },
+        "oversize_factor": 2.0,
+        "balance_kWp": 1734
       }
     },
     {
@@ -175,27 +302,38 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "inventory draw (dry design day, no rain)",
-              "value": 128.4,
-              "basis": "S21 + MFG rinse met from storage",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "MFG harvest rinse water",
-              "value": 8.4,
-              "basis": "S16 basis",
+              "value": 120.0,
+              "basis": "S21 + S40 met from storage",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 932.471 kg/d, out 932.471 kg/d, 0.000 kW. Sheet docs-authority/duties/ROOF_TANK.md.",
+        "internals": "dip pipe, stilling well",
+        "design_kPa": 21.5,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.689,
+          "pump_out_m3_h": 0.9325,
+          "out_breathing_Nm3_h": 1.378,
+          "in_breathing_Nm3_h": 0.932,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 5.4,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.4 kPa (1.58 m full at SG 1.25; store hold-up 2 d = 1.378 m3, H/D 1.5, A-M-182) = 21.5 kPa g (A-M-174)"
         }
       }
     },
@@ -212,29 +350,73 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 60,
+        "kW": 2940.0,
         "presence": "present",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
-          "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "inverter / charger conversion loss",
-              "value": 1.4883,
-              "basis": "3% of AC delivered",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "in",
-              "label": "utility import at the GRID port (ELECTRICAL AQS-ELC-001 Rev B)",
-              "value": 39.9862,
-              "basis": "bus balance",
-              "kind": "by_difference"
-            }
-          ]
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/SOL_ARK_60K.md.",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "count": 49,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        },
+        "dc_ac_ratio": 1.2,
+        "interconnection": {
+          "export_peak_kW": 2690.0,
+          "export_kWh_d_clear": 7501,
+          "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
+          "decision": "D75"
+        },
+        "sections": {
+          "count": 5,
+          "inverters": [
+            10,
+            10,
+            10,
+            10,
+            9
+          ],
+          "breaker_A": [
+            1000,
+            1000,
+            1000,
+            1000,
+            1000
+          ],
+          "xfmr_kVA": [
+            750,
+            750,
+            750,
+            750,
+            750
+          ],
+          "mv_kV": 12.47,
+          "plant_bus_on": "CB-1",
+          "doc": "AQS-ELEC-008"
+        },
+        "redundancy": {
+          "arrangement": "main-tie-main, sections A/B, normally-open tie",
+          "bus_demand_kW": 250.9,
+          "section_rating_A": 450,
+          "basis_A": 335.3,
+          "MCC": "MCC-1A / MCC-1B",
+          "transformer": "2 x 100 % T-1 15 kVA",
+          "critical_ATS_A": 100,
+          "critical_kW": 14.31,
+          "inverter_sections": 6,
+          "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
         }
       }
     },
@@ -249,19 +431,36 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 60.0,
+        "value": 6.6667,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "Average charge. Peak remains 60 kW. Discharge is 5.0 kW."
       },
       "modules": [],
       "params": {
-        "kW": 60,
-        "kWh": 120,
+        "kW": 1137,
+        "kWh": 3501,
         "presence": "present",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "purge air (dry)",
+              "value": 1047.1955,
+              "basis": "X-PAR-02 TF ess_tf.py",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
+              "value": 8.4402,
+              "basis": "no electrolyte bleed on the graph",
+              "kind": "accumulation"
+            },
             {
               "layer": "energy",
               "dir": "out",
@@ -269,32 +468,40 @@
               "value": 1.6667,
               "basis": "1 - RTE",
               "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "purge air (dry)",
-              "value": 843.9862,
-              "basis": "headspace purge",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "purge air ambient humidity",
-              "value": 8.4399,
-              "basis": "w 0.010",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "in",
-              "label": "UPW electrolyte make-up (HDR_UPW)",
-              "value": 2.374,
-              "basis": "evaporation less S69B water",
-              "kind": "derived"
             }
           ]
+        },
+        "duty_fraction": 0.3,
+        "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
+        "duty": "In 1055.683 kg/d, out 1055.683 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "internals": "none",
+        "design_kPa": 20.0,
+        "relief_mm": 3.3,
+        "peak_kw": 60,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 1.0557,
+          "pump_out_m3_h": 0.0085,
+          "out_breathing_Nm3_h": 2.111,
+          "in_breathing_Nm3_h": 0.008,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 6.6,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 17.7 kPa (1.45 m full at SG 1.25; process hold-up 1 d = 1.056 m3, H/D 1.5, A-M-182) = 20.0 kPa g (A-M-174)"
+        },
+        "charge_kW": 1137,
+        "discharge_kW": 251,
+        "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
+        "distribution": "distributed over the 49 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "purge_basis": {
+          "H2_m3_d": 8.875,
+          "purge_m3_h": 36.98,
+          "HER_fraction": 0.00658,
+          "electrode_area_m2": 2289.6
         }
       }
     }
@@ -315,10 +522,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 200000.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full 200 m3 cycle per day"
+        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -335,7 +542,13 @@
         "medium": "water",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+      },
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -353,10 +566,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 200000.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full cycle per day"
+        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -373,46 +586,49 @@
         "medium": "water",
         "conditions": "ambient",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010"
+        "doc": "AQS-DUTY-010",
+        "T_C": 25.0,
+        "T_basis": "X-MAT-09: upstream ROOF_TANK outlet IA-FLUE-QUENCH (edge conditions)"
+      },
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
-      "stream_id": "IA-ESS-HYDRO-ELEC",
-      "from_unit_id": "HYDRO_SET",
+      "stream_id": "IA-ESS-ZNBR2-SRC",
+      "from_unit_id": "PV_ARRAY",
       "to_unit_id": "SOL_ARK_60K",
       "phase": "E",
       "layers": [
-        "elec",
         "ess"
       ],
       "presence": "present",
-      "carries": "Hydro turbine-pump electrical (MISSING on SLD)",
+      "carries": "PV share of the zinc-bromine round-trip loss",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 0.2917,
+        "value": 1.6667,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h"
+        "note": "Ess layer only. Already inside IA-PV-01 on the elec layer. 6.6667 charge minus 5.0 discharge."
       },
-      "from_sector_id": "PUMPED_HYDRO",
+      "from_sector_id": "ELEC_PV",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [
-        "ess_layer",
-        "missing_on_sld"
+        "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
+      "notes": "Not additional generation.",
       "params": {
-        "rate_basis": "7.0 kWh recoverable per cycle over 24 h",
-        "rate_source": "ESS_DUTY_MATRIX ~7 kWh recoverable",
-        "medium": "AC",
-        "conditions": "bus",
+        "rate_basis": "6.6667 - 5.0",
+        "rate_source": "IA-ESS-ZNBR2-CHG minus IA-ESS-ZNBR2-DIS",
+        "medium": "DC",
+        "conditions": "storage layer only",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-010",
-        "rev_l_outcome": "present: hydro set to bus"
+        "doc": "AQS-DUTY-013"
       }
     },
     {
@@ -507,10 +723,10 @@
       "forbidden": "process sumps",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.4088,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -542,10 +758,10 @@
       "forbidden": "HDR_GREY",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.4088,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h"
+        "note": "AQS-DUTY-010: hydraulic power: rho V g h = 9.81 kWh/cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -569,6 +785,7 @@
       "to_unit_id": "MEOH_FC",
       "phase": "L",
       "layers": [
+        "mass",
         "ess"
       ],
       "presence": "present",
@@ -577,10 +794,10 @@
       "forbidden": "HDR_UPW, HAB air",
       "claim_status": null,
       "rate": {
-        "value": 1.7209,
+        "value": 4.579141,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011: S75 1.706 + S77 0.0146"
+        "note": "Fuel draw reduced by the biogas correction. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -588,52 +805,37 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null,
-      "params": {
-        "rate_basis": "S75 1.706 + S77 0.0146",
-        "rate_source": "MEOH_TANK level",
-        "medium": "MeOH fuel",
-        "conditions": "ambient",
-        "rate_kind": "derived",
-        "doc": "AQS-DUTY-011",
-        "rev_l_value": 5.0
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
-      "stream_id": "S79",
-      "from_unit_id": "MEOH_FC",
-      "to_unit_id": "SOL_ARK_60K",
-      "phase": "E",
+      "stream_id": "IA-ZNBR-LOSS",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "electric",
       "layers": [
         "elec",
         "ess"
       ],
       "presence": "present",
-      "carries": "MEOH DC",
-      "header": "BATT DC tray",
-      "forbidden": "GEN port, RECT hard-tee",
-      "claim_status": null,
+      "carries": "round-trip loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1007,
+        "value": 1.67,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: DMFC eta 0.2536 x S76 LHV 0.397 kW"
+        "note": "AQS-DUTY-013. 6.67 charge, 5.0 discharge. Store is 400 kWh."
       },
-      "from_sector_id": "MEOH",
-      "to_sector_id": "ELEC",
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
-      "namespace": "S",
+      "namespace": "IA",
       "gap_flags": [],
-      "notes": null,
-      "params": {
-        "rate_basis": "DMFC eta 0.2536 x S76 LHV 0.397 kW",
-        "rate_source": "EFOY-class fuel use",
-        "medium": "DC power",
-        "conditions": "24 V DC bus",
-        "rate_kind": "derived",
-        "doc": "AQS-DUTY-011",
-        "rev_k_value": 1.0,
-        "rev_l_value": 0.2925
-      }
+      "notes": null
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

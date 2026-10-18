@@ -1,0 +1,4 @@
+task,basis,interval_y
+infrared thermography,NFPA 70B,1
+"electrical service (torque, insulation resistance)",NFPA 70B,3
+replace process insert,A-M-189 maint_insert_life_y,5

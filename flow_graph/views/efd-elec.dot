@@ -1,5 +1,5 @@
 digraph G {
-  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD electrical layer (S17 + peers)\nVIEW-EFD-ELEC  ·  AQS-FLOW-GRAPH-001 rev M", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="EFD electrical layer (S17 + peers)\nVIEW-EFD-ELEC  ·  AQS-FLOW-GRAPH-001 rev BH", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
   edge [fontname="Helvetica", fontsize=8];
   subgraph "cluster_BACKUP_GEN" {
@@ -7,51 +7,334 @@ digraph G {
     style=rounded; color="#94a3b8";
     "BACKUP_GEN" [fillcolor="#ffffff", label="BACKUP_GEN"];
   }
+  subgraph "cluster_CRYO" {
+    label="CRYO";
+    style=rounded; color="#94a3b8";
+    "CRYO_AHU" [fillcolor="#ffffff", label="CRYO_AHU"];
+    "CRYO_H2" [fillcolor="#ffffff", label="CRYO_H2"];
+    "CRYO_ASU" [fillcolor="#ffffff", label="CRYO_ASU"];
+    "CRYO_HE" [fillcolor="#ffffff", label="CRYO_HE"];
+    "CRYO_NE" [fillcolor="#ffffff", label="CRYO_NE"];
+    "CRYO_KR" [fillcolor="#ffffff", label="CRYO_KR"];
+    "CRYO_XE" [fillcolor="#ffffff", label="CRYO_XE"];
+    "CRYO_AR" [fillcolor="#ffffff", label="CRYO_AR"];
+    "EXPANDER" [fillcolor="#ffffff", label="EXPANDER"];
+    "H2_PURIFIER" [fillcolor="#ffffff", label="H2_PURIFIER"];
+    "H2O_ELYZ" [fillcolor="#ffffff", label="H2O_ELYZ"];
+  }
+  subgraph "cluster_DOCK" {
+    label="DOCK";
+    style=rounded; color="#94a3b8";
+    "BOUNDARY_EXPORT" [fillcolor="#fde68a", label="BOUNDARY_EXPORT\nDOCK export boundary — no inter-block S## for go…"];
+  }
   subgraph "cluster_ELEC" {
     label="ELEC";
     style=rounded; color="#94a3b8";
-    "LOAD_AGG" [fillcolor="#ffffff", label="LOAD_AGG"];
     "RECTIFIER" [fillcolor="#ffffff", label="RECTIFIER"];
     "SOL_ARK_60K" [fillcolor="#ffffff", label="SOL_ARK_60K"];
+    "RECT_EW" [fillcolor="#ffffff", label="RECT_EW"];
   }
   subgraph "cluster_ELEC_PV" {
     label="ELEC_PV";
     style=rounded; color="#94a3b8";
     "PV_ARRAY" [fillcolor="#ffffff", label="PV_ARRAY"];
+    "EXT_HALL" [fillcolor="#ffffff", label="EXT_HALL"];
+  }
+  subgraph "cluster_FAB" {
+    label="FAB";
+    style=rounded; color="#94a3b8";
+    "WAFER_FAB" [fillcolor="#ffffff", label="WAFER_FAB"];
+    "WET_BENCH" [fillcolor="#ffffff", label="WET_BENCH"];
+    "LITHO_STUB" [fillcolor="#ffffff", label="LITHO_STUB"];
+    "SOLAR_PV_CELL" [fillcolor="#ffffff", label="SOLAR_PV_CELL"];
   }
   subgraph "cluster_FARM" {
     label="FARM";
     style=rounded; color="#94a3b8";
     "GROW_BED" [fillcolor="#ffffff", label="GROW_BED"];
+    "ANIMAL_PEN" [fillcolor="#ffffff", label="ANIMAL_PEN"];
+    "COMPOST" [fillcolor="#ffffff", label="COMPOST"];
+    "DIGESTER" [fillcolor="#ffffff", label="DIGESTER"];
+    "EMETH" [fillcolor="#ffffff", label="EMETH"];
+    "LIGNO_PRE" [fillcolor="#ffffff", label="LIGNO_PRE"];
+    "HTC" [fillcolor="#ffffff", label="HTC"];
+    "YEAST" [fillcolor="#ffffff", label="YEAST"];
+    "ABE" [fillcolor="#ffffff", label="ABE"];
+    "ACETOX" [fillcolor="#ffffff", label="ACETOX"];
+    "ALD" [fillcolor="#ffffff", label="ALD"];
+    "GLYOXAL" [fillcolor="#ffffff", label="GLYOXAL"];
+    "FORM" [fillcolor="#ffffff", label="FORM"];
+    "MEAM" [fillcolor="#ffffff", label="MEAM"];
+    "IMID" [fillcolor="#ffffff", label="IMID"];
+    "QUAT" [fillcolor="#ffffff", label="QUAT"];
+    "ACEX" [fillcolor="#ffffff", label="ACEX"];
+    "HNO3" [fillcolor="#ffffff", label="HNO3"];
+    "BUCL" [fillcolor="#ffffff", label="BUCL"];
+    "BSFL" [fillcolor="#ffffff", label="BSFL"];
+    "DUCKWEED" [fillcolor="#ffffff", label="DUCKWEED"];
+    "WORMS" [fillcolor="#ffffff", label="WORMS"];
+    "BEES" [fillcolor="#ffffff", label="BEES"];
+    "CHICKENS" [fillcolor="#ffffff", label="CHICKENS"];
+    "GOATS" [fillcolor="#ffffff", label="GOATS"];
+    "FISH" [fillcolor="#ffffff", label="FISH"];
+    "CRAYFISH" [fillcolor="#ffffff", label="CRAYFISH"];
+    "AZOLLA" [fillcolor="#ffffff", label="AZOLLA"];
+    "MUSHROOM" [fillcolor="#ffffff", label="MUSHROOM"];
+    "NFIX_BED" [fillcolor="#ffffff", label="NFIX_BED"];
+    "MUSH_STRAW" [fillcolor="#ffffff", label="MUSH_STRAW"];
+    "MUSH_BLOCK" [fillcolor="#ffffff", label="MUSH_BLOCK"];
+    "AMF" [fillcolor="#ffffff", label="AMF"];
+    "COMPOST_MYC" [fillcolor="#ffffff", label="COMPOST_MYC"];
+    "FRUIT_GUTTER" [fillcolor="#ffffff", label="FRUIT_GUTTER"];
+    "VEG_BED" [fillcolor="#ffffff", label="VEG_BED"];
+    "CLARIFIER" [fillcolor="#ffffff", label="CLARIFIER"];
+    "BIOFILTER" [fillcolor="#ffffff", label="BIOFILTER"];
+    "FISH_SUMP" [fillcolor="#ffffff", label="FISH_SUMP"];
+    "CROP_TOMATO" [fillcolor="#ffffff", label="CROP_TOMATO"];
+    "CROP_CUCUMBER" [fillcolor="#ffffff", label="CROP_CUCUMBER"];
+    "CROP_PEPPER" [fillcolor="#ffffff", label="CROP_PEPPER"];
+    "CROP_LETTUCE" [fillcolor="#ffffff", label="CROP_LETTUCE"];
+    "CROP_SPINACH" [fillcolor="#ffffff", label="CROP_SPINACH"];
+    "CROP_KALE" [fillcolor="#ffffff", label="CROP_KALE"];
+    "CROP_ALLIUM" [fillcolor="#ffffff", label="CROP_ALLIUM"];
+    "CROP_BASIL" [fillcolor="#ffffff", label="CROP_BASIL"];
+    "CROP_ROSEMARY" [fillcolor="#ffffff", label="CROP_ROSEMARY"];
+    "CLOVER" [fillcolor="#ffffff", label="CLOVER"];
+    "SEED_BANK" [fillcolor="#ffffff", label="SEED_BANK"];
+    "STRUVITE" [fillcolor="#ffffff", label="STRUVITE"];
+    "ASH" [fillcolor="#ffffff", label="ASH"];
+    "IODIDE" [fillcolor="#ffffff", label="IODIDE"];
+    "NFT" [fillcolor="#ffffff", label="NFT"];
+    "MISTER" [fillcolor="#ffffff", label="MISTER"];
+    "DUAL_ROOT" [fillcolor="#ffffff", label="DUAL_ROOT"];
+    "AZOLLA_BED" [fillcolor="#ffffff", label="AZOLLA_BED"];
+    "ETOH_STILL" [fillcolor="#ffffff", label="ETOH_STILL"];
+    "BUOH_STILL" [fillcolor="#ffffff", label="BUOH_STILL"];
+    "PEANUT" [fillcolor="#ffffff", label="PEANUT"];
+    "SUNFLOWER" [fillcolor="#ffffff", label="SUNFLOWER"];
   }
   subgraph "cluster_FUEL_CELL" {
     label="FUEL_CELL";
     style=rounded; color="#94a3b8";
     "FUEL_CELL" [fillcolor="#ffffff", label="FUEL_CELL"];
   }
+  subgraph "cluster_GAS" {
+    label="GAS";
+    style=rounded; color="#94a3b8";
+    "ACID_POLISH_SCRUB" [fillcolor="#ffffff", label="ACID_POLISH_SCRUB"];
+    "ALK_SCRUBBER" [fillcolor="#ffffff", label="ALK_SCRUBBER"];
+    "H2_DRYER" [fillcolor="#ffffff", label="H2_DRYER"];
+    "NOX_SCRUB" [fillcolor="#ffffff", label="NOX_SCRUB"];
+  }
+  subgraph "cluster_GEO" {
+    label="GEO";
+    style=rounded; color="#94a3b8";
+    "GEO_HP" [fillcolor="#ffffff", label="GEO_HP"];
+  }
+  subgraph "cluster_GLASS" {
+    label="GLASS";
+    style=rounded; color="#94a3b8";
+    "GLASS_DIGEST" [fillcolor="#ffffff", label="GLASS_DIGEST"];
+    "SIC_FURNACE" [fillcolor="#ffffff", label="SIC_FURNACE"];
+  }
+  subgraph "cluster_HAB" {
+    label="HAB";
+    style=rounded; color="#94a3b8";
+    "COMPOST_TOILET" [fillcolor="#ffffff", label="COMPOST_TOILET"];
+    "HAB_SLEEP" [fillcolor="#ffffff", label="HAB_SLEEP"];
+    "HAB_GALLEY" [fillcolor="#ffffff", label="HAB_GALLEY"];
+    "HAB_MED" [fillcolor="#ffffff", label="HAB_MED"];
+    "HAB_WASH" [fillcolor="#ffffff", label="HAB_WASH"];
+  }
   subgraph "cluster_MEOH" {
     label="MEOH";
     style=rounded; color="#94a3b8";
     "MEOH_FC" [fillcolor="#ffffff", label="MEOH_FC"];
+    "MEOH_FERM" [fillcolor="#ffffff", label="MEOH_FERM"];
+    "MEOH_SYNTH" [fillcolor="#ffffff", label="MEOH_SYNTH"];
+  }
+  subgraph "cluster_MFG" {
+    label="MFG";
+    style=rounded; color="#94a3b8";
+    "MET_SCRUB" [fillcolor="#ffffff", label="MET_SCRUB"];
+    "MFG_SHOP" [fillcolor="#ffffff", label="MFG_SHOP"];
+    "ELECTRODE_COAT" [fillcolor="#ffffff", label="ELECTRODE_COAT"];
+    "BLOW_MOLD" [fillcolor="#ffffff", label="BLOW_MOLD"];
+    "BOARD_MILL" [fillcolor="#ffffff", label="BOARD_MILL"];
+  }
+  subgraph "cluster_NUT" {
+    label="NUT";
+    style=rounded; color="#94a3b8";
+    "NUTRIENT_DOSE" [fillcolor="#ffffff", label="NUTRIENT_DOSE"];
+  }
+  subgraph "cluster_OIL" {
+    label="OIL";
+    style=rounded; color="#94a3b8";
+    "OIL_PYRO" [fillcolor="#ffffff", label="OIL_PYRO"];
   }
   subgraph "cluster_PUMPED_HYDRO" {
     label="PUMPED_HYDRO";
     style=rounded; color="#94a3b8";
     "HYDRO_SET" [fillcolor="#fde68a", label="HYDRO_SET\nDedicated hydro_dock_pfd.png (graph-bridged); ca…"];
   }
+  subgraph "cluster_WET" {
+    label="WET";
+    style=rounded; color="#94a3b8";
+    "BMED_ACID" [fillcolor="#ffffff", label="BMED_ACID"];
+    "EW_1" [fillcolor="#ffffff", label="EW_1"];
+    "EW_2" [fillcolor="#ffffff", label="EW_2"];
+    "EW_3" [fillcolor="#ffffff", label="EW_3"];
+    "EW_4" [fillcolor="#ffffff", label="EW_4"];
+    "EW_5" [fillcolor="#ffffff", label="EW_5"];
+    "EW_6" [fillcolor="#ffffff", label="EW_6"];
+    "EW_7" [fillcolor="#ffffff", label="EW_7"];
+    "EW_8" [fillcolor="#ffffff", label="EW_8"];
+    "EW_9" [fillcolor="#ffffff", label="EW_9"];
+    "LEACH_CSTR_1" [fillcolor="#ffffff", label="LEACH_CSTR_1"];
+    "EVAP_ACID" [fillcolor="#ffffff", label="EVAP_ACID"];
+    "EVAP_BASE" [fillcolor="#ffffff", label="EVAP_BASE"];
+    "EVAP_ACID_VS" [fillcolor="#ffffff", label="EVAP_ACID_VS"];
+  }
+  subgraph "cluster_WTR" {
+    label="WTR";
+    style=rounded; color="#94a3b8";
+    "BLACK_DIGEST" [fillcolor="#ffffff", label="BLACK_DIGEST"];
+    "BMED_UPW_POLISH" [fillcolor="#ffffff", label="BMED_UPW_POLISH"];
+    "BLACK_DEWATER" [fillcolor="#ffffff", label="BLACK_DEWATER"];
+    "BLACK_PASTEUR" [fillcolor="#ffffff", label="BLACK_PASTEUR"];
+    "BLACK_ALK_HOLD" [fillcolor="#ffffff", label="BLACK_ALK_HOLD"];
+  }
   subgraph "cluster_ZNBR2" {
     label="ZNBR2";
     style=rounded; color="#94a3b8";
     "ZNBR2" [fillcolor="#ffffff", label="ZNBR2"];
   }
-  "HYDRO_SET" -> "SOL_ARK_60K" [label="IA-ESS-HYDRO-ELEC\\n0.2917 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "HYDRO_SET" -> "SOL_ARK_60K" [label="IA-ESS-HYDRO-ELEC\\n0.0 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "ZNBR2" [label="IA-ESS-ZNBR2-CHG\\n6.6667 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "SOL_ARK_60K" [label="IA-ESS-ZNBR2-DIS\\n5.0 kW", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "RECTIFIER" [label="S17\\n13.4755 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "SOL_ARK_60K" -> "GROW_BED" [label="S20\\n5.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.1007 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="S93\\n12.3858 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "LOAD_AGG" [label="S94\\n31.1339 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "RECTIFIER" [label="S17\\n23.32 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "SOL_ARK_60K" -> "GROW_BED" [label="S20\\n8.743 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n0.008219 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n3.46 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n242.0676 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "RECT_EW" [label="S17-EW\\n38.6629 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_1" [label="IA-DC-EW_1\\n5.9909 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_2" [label="IA-DC-EW_2\\n5.9929 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_3" [label="IA-DC-EW_3\\n2.2495 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_4" [label="IA-DC-EW_4\\n0.4853 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_5" [label="IA-DC-EW_5\\n0.5023 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_6" [label="IA-DC-EW_6\\n0.5474 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_7" [label="IA-DC-EW_7\\n7.1187 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_8" [label="IA-DC-EW_8\\n0.5053 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECT_EW" -> "EW_9" [label="IA-DC-EW_9\\n7.538 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ALK_SCRUBBER" [label="SF-ALK_SCRUBBER\\n1.1123 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BMED_UPW_POLISH" [label="SF-BMED_UPW_POLISH\\n0.018 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_H2" [label="SF-CRYO_H2\\n0.8837 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GEO_HP" [label="SF-GEO_HP\\n2.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GLASS_DIGEST" [label="SF-GLASS_DIGEST\\n0.09 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2_DRYER" [label="SF-H2_DRYER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "LEACH_CSTR_1" [label="SF-LEACH_CSTR_1\\n2.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MEOH_SYNTH" [label="SF-MEOH_SYNTH\\n0.7388 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MFG_SHOP" [label="SF-MFG_SHOP\\n2.903 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "NUTRIENT_DOSE" [label="SF-NUTRIENT_DOSE\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "WAFER_FAB" [label="SF-WAFER_FAB\\n2.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "WET_BENCH" [label="SF-WET_BENCH\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "LITHO_STUB" [label="SF-LITHO_STUB\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ELECTRODE_COAT" [label="SF-ELECTRODE_COAT\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BLOW_MOLD" [label="SF-BLOW_MOLD\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SOLAR_PV_CELL" [label="SF-SOLAR_PV_CELL\\n0.3917 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ANIMAL_PEN" [label="SF-ANIMAL_PEN\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "COMPOST" [label="SF-COMPOST\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "DIGESTER" [label="SF-DIGESTER\\n0.025 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EMETH" [label="SF-EMETH\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "LIGNO_PRE" [label="SF-LIGNO_PRE\\n0.8 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BOARD_MILL" [label="SF-BOARD_MILL\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "HTC" [label="SF-HTC\\n0.0396 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_ASU" [label="SF-CRYO_ASU\\n1.6598 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_HE" [label="SF-CRYO_HE\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_NE" [label="SF-CRYO_NE\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_KR" [label="SF-CRYO_KR\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_XE" [label="SF-CRYO_XE\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_AR" [label="SF-CRYO_AR\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "YEAST" [label="SF-YEAST\\n0.0216 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ABE" [label="SF-ABE\\n0.0214 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ACETOX" [label="SF-ACETOX\\n0.0203 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ALD" [label="SF-ALD\\n0.0515 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GLYOXAL" [label="SF-GLYOXAL\\n0.0207 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "FORM" [label="SF-FORM\\n0.0637 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MEAM" [label="SF-MEAM\\n0.0767 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "IMID" [label="SF-IMID\\n0.0236 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "QUAT" [label="SF-QUAT\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ACEX" [label="SF-ACEX\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "HNO3" [label="SF-HNO3\\n0.1199 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BUCL" [label="SF-BUCL\\n0.0237 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BSFL" [label="SF-BSFL\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "DUCKWEED" [label="SF-DUCKWEED\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "WORMS" [label="SF-WORMS\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BEES" [label="SF-BEES\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CHICKENS" [label="SF-CHICKENS\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GOATS" [label="SF-GOATS\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "FISH" [label="SF-FISH\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRAYFISH" [label="SF-CRAYFISH\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "AZOLLA" [label="SF-AZOLLA\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MUSHROOM" [label="SF-MUSHROOM\\n0.1 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "COMPOST_TOILET" [label="SF-COMPOST_TOILET\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "NFIX_BED" [label="SF-NFIX_BED\\n0.4396 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MUSH_STRAW" [label="SF-MUSH_STRAW\\n0.15 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MUSH_BLOCK" [label="SF-MUSH_BLOCK\\n0.15 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "AMF" [label="SF-AMF\\n0.15 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "COMPOST_MYC" [label="SF-COMPOST_MYC\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "FRUIT_GUTTER" [label="SF-FRUIT_GUTTER\\n0.6256 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "VEG_BED" [label="SF-VEG_BED\\n0.7333 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CLARIFIER" [label="SF-CLARIFIER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BIOFILTER" [label="SF-BIOFILTER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "FISH_SUMP" [label="SF-FISH_SUMP\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_TOMATO" [label="SF-CROP_TOMATO\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_CUCUMBER" [label="SF-CROP_CUCUMBER\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_PEPPER" [label="SF-CROP_PEPPER\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_LETTUCE" [label="SF-CROP_LETTUCE\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_SPINACH" [label="SF-CROP_SPINACH\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_KALE" [label="SF-CROP_KALE\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_ALLIUM" [label="SF-CROP_ALLIUM\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_BASIL" [label="SF-CROP_BASIL\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CROP_ROSEMARY" [label="SF-CROP_ROSEMARY\\n0.05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CLOVER" [label="SF-CLOVER\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SEED_BANK" [label="SF-SEED_BANK\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "STRUVITE" [label="SF-STRUVITE\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ASH" [label="SF-ASH\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "IODIDE" [label="SF-IODIDE\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "NFT" [label="SF-NFT\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MISTER" [label="SF-MISTER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "DUAL_ROOT" [label="SF-DUAL_ROOT\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "AZOLLA_BED" [label="SF-AZOLLA_BED\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ETOH_STILL" [label="SF-ETOH_STILL\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BUOH_STILL" [label="SF-BUOH_STILL\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "PEANUT" [label="SF-PEANUT\\n2.6583 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SUNFLOWER" [label="SF-SUNFLOWER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "HAB_SLEEP" [label="SF-HAB_SLEEP\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "HAB_GALLEY" [label="SF-HAB_GALLEY\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "HAB_MED" [label="SF-HAB_MED\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "HAB_WASH" [label="SF-HAB_WASH\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EXPANDER" [label="SF-EXPANDER\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SIC_FURNACE" [label="SF-SIC_FURNACE\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2_PURIFIER" [label="SF-H2_PURIFIER\\n0.0436 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EVAP_ACID" [label="SF-EVAP_ACID\\n1.497 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EVAP_BASE" [label="SF-EVAP_BASE\\n1.324 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EXT_HALL" [label="SF-EXT_HALL\\n93.8389 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EVAP_ACID_VS" [label="SF-EVAP_ACID_VS\\n0.0238 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "OIL_PYRO" [label="SF-OIL_PYRO\\n1.664 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BLACK_DIGEST" [label="SF-BLACK_DIGEST\\n0.1052 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BLACK_DEWATER" [label="SF-BLACK_DEWATER\\n0.0075 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BLACK_PASTEUR" [label="SF-BLACK_PASTEUR\\n0.0622 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BLACK_ALK_HOLD" [label="SF-BLACK_ALK_HOLD\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n24.5933 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_AHU" [label="SF-CRYO_AHU\\n4.4402 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MEOH_FERM" [label="SF-MEOH_FERM\\n0.0207 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ACID_POLISH_SCRUB" [label="SF-ACID_POLISH_SCRUB\\n1.1123 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "NOX_SCRUB" [label="SF-NOX_SCRUB\\n0.0385 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MET_SCRUB" [label="SF-MET_SCRUB\\n2.1234 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

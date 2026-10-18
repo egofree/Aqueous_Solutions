@@ -19,7 +19,9 @@ def _story(doc, story, z, suffix):
     add(doc, n("BIOFILTER"), box_at(x + 3900, y + 200, z, 2000, 2500, 1800))
     label_plate(doc, n("BIOFILTER"), x + 3900, y + 40, z=z + 1600)
     grow_l = min(5600, max(2000, P.FARM_L - 6400))
-    add(doc, n("GROW_BED"), box_at(x + 6100, y + 200, z, grow_l, 5000, 1600))
+    # Rev B (2026-10-16): bed starts north of STAIR_S2 + its L1 landing clearance (was cut by the stair; GA_CHECK).
+    gy = max(y + 200, 4100 + 300) if x + 6100 + grow_l > P.PLATE_L - 2800 else y + 200
+    add(doc, n("GROW_BED"), box_at(x + 6100, gy, z, grow_l, 5000, 1600))
     label_plate(doc, n("GROW_BED"), x + 6100, y + 40, z=z + 1600)
     add(doc, n("FARM_SUMP"), box_at(x + 200, y + 3000, z, 2500, 1800, 1200))
     label_plate(doc, n("FARM_SUMP"), x + 200, y + 2900, z=z + 1600)

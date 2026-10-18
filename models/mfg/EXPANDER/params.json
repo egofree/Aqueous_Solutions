@@ -1,0 +1,71 @@
+{
+  "unit_id": "EXPANDER",
+  "graph_revision": "BH",
+  "source": "flow_graph/plant_flow_graph.json node EXPANDER; docs-authority/duties/EXPANDER.md sections 2, 3, 4, 6",
+  "size_mm": [
+    600,
+    400,
+    500
+  ],
+  "origin_mm": [
+    17600,
+    6000,
+    -6000
+  ],
+  "design_kPa": 550,
+  "relief_mm": 3.6,
+  "relief_destination": "CRYO_ASU on IA-EXP-OUT",
+  "internals": "none",
+  "rho_kg_m3": 11.61,
+  "shaft_w": 614.4,
+  "cylinder": {
+    "bore_mm": 50,
+    "stroke_mm": 80,
+    "rpm": 600,
+    "source": "duty section 2"
+  },
+  "material": "316L",
+  "corrosion_allowance_mm": 0,
+  "nozzles": [
+    {
+      "tag": "N1",
+      "stream": "IA-EXP-IN",
+      "face": "-Y",
+      "height_mm": 250,
+      "bore": "not calculated",
+      "drawn_DN": 15,
+      "rating": "duty: hose, atmospheric"
+    },
+    {
+      "tag": "N2",
+      "stream": "IA-EXP-OUT",
+      "face": "+Y",
+      "height_mm": 250,
+      "bore": "not calculated",
+      "drawn_DN": 15,
+      "rating": "duty: hose, atmospheric"
+    },
+    {
+      "tag": "PSV",
+      "stream": "relief to CRYO_ASU",
+      "face": "+Z",
+      "bore_mm": 3.6,
+      "rating": "550 kPa set"
+    }
+  ],
+  "assumptions": {
+    "baseplate_t_mm": 12,
+    "cylinder_wall_mm": 10,
+    "crankcase_mm": [
+      300,
+      300,
+      250
+    ],
+    "flywheel_d_mm": 240,
+    "flywheel_t_mm": 30,
+    "DN15_OD_mm": 21.3,
+    "nozzle_stub_len_mm": 50,
+    "allowable_stress_MPa": 115,
+    "note": "Not on the graph. Shop proportions chosen to fit size_mm. Not measured. Not a design calculation except the wall check."
+  }
+}

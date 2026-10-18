@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="309.8,111.9 309.8,60.0 40.0,215.8 193.2,304.2 193.2,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="315.8" y="82.0">Z +1600</text>
+<text x="180.9" y="133.9">X -9600</text>
+<text x="122.6" y="256.0">Y -5450</text>
+<text x="199.2" y="438.1">Z -8500</text>
+<circle cx="309.8" cy="111.9" r="5" fill="black"/><text x="317.8" y="125.9">HABITATION</text>
+<circle cx="193.2" cy="580.0" r="5" fill="none" stroke="black"/><text x="201.2" y="594.0">MEOH_FERM</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  S78</text>
+<text x="20" y="614">DN50  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="628">HABITATION -> MEOH_FERM</text>
+<text x="20" y="642">pipe 24.97 m in 6 pieces; cut 1570 6000 3540 5390 6000 2470 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 10 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

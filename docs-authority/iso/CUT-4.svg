@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="174.0,177.6 174.0,60.0 40.0,137.4 195.5,227.1 195.5,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="180.0" y="114.8">Z +950</text>
+<text x="113.0" y="94.7">X -1250</text>
+<text x="123.7" y="178.3">Y -1450</text>
+<text x="201.5" y="399.6">Z -2850</text>
+<circle cx="174.0" cy="177.6" r="5" fill="black"/><text x="182.0" y="191.6">OIL_FRAC</text>
+<circle cx="195.5" cy="580.0" r="5" fill="none" stroke="black"/><text x="203.5" y="594.0">PROD_C29</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  CUT-4</text>
+<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="628">OIL_FRAC -> PROD_C29</text>
+<text x="20" y="642">pipe 6.44 m in 4 pieces; cut 939 1229 1429 2839 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

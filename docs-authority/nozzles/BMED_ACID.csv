@@ -1,0 +1,8 @@
+tag,size,rating,service,face,height_mm
+N1,DN25,Class 150,CRU → BMED acid regen loop,inlet,160
+N2,DN15,Class 150,HCl product,outlet,600
+N3,DN15,Class 150,HCl,outlet,600
+N4,DN25,Class 150,regen HCl, 20 wt%,outlet,600
+N5,DN15,Class 150,HCl to chlorobutane,outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800

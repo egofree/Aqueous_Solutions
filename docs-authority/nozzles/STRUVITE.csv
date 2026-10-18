@@ -1,0 +1,5 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,urine slip,inlet,240
+N2,DN15,Class 150,struvite,outlet,900
+N3,DN15,Class 150,drain,bottom,50
+N4,DN15,Class 150,vent,top,1200

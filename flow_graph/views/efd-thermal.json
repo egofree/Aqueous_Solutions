@@ -2,9 +2,9 @@
   "preset_id": "VIEW-EFD-THERMAL",
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
-  "source_revision": "M",
-  "node_count": 25,
-  "edge_count": 40,
+  "source_revision": "BH",
+  "node_count": 31,
+  "edge_count": 64,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -26,8 +26,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -35,15 +35,15 @@
               "dir": "in",
               "label": "combustion air",
               "value": 236.68,
-              "basis": "DUTY-008 flue less fuel",
+              "basis": "DUTY-008 flue 10.07 kg/h less fuel",
               "kind": "derived"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "flue to AFTERBURNER_FLUE",
-              "value": 242.48,
-              "basis": "DUTY-008 + S11",
+              "value": 241.68,
+              "basis": "DUTY-008 m_flue_kg_h",
               "kind": "derived"
             },
             {
@@ -52,14 +52,6 @@
               "label": "NCG heat release",
               "value": 2.744,
               "basis": "DUTY-008",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "in",
-              "label": "S11 trim heat release",
-              "value": 0.0681,
-              "basis": "0.336 kg/d DM x 17.5 MJ/kg",
               "kind": "derived"
             },
             {
@@ -81,12 +73,87 @@
             {
               "layer": "energy",
               "dir": "out",
-              "label": "flue sensible to KO (+ S11 heat)",
-              "value": 0.9371,
-              "basis": "DUTY-008 + S11",
+              "label": "flue sensible to KO",
+              "value": 0.869,
+              "basis": "DUTY-008",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 8.752 kg/d, out 8.752 kg/d, 0.500 kW. Sheet docs-authority/duties/AFTERBURNER.md.",
+        "internals": "none",
+        "design_kPa": 3.5,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0005,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.001,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.1,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 1.3 kPa (0.11 m full at SG 1.25; process hold-up 1 d = 0.000 m3, H/D 1.5, A-M-182) = 3.5 kPa g (A-M-174)"
+        },
+        "design": {
+          "flue_kg_h": 10.1019,
+          "Q_m3_s_850C": 0.009,
+          "V_m3": 0.0179,
+          "D_mm": 200,
+          "L_mm": 600,
+          "net_heat_kW": 0.0307,
+          "feed_kg_d": 7.0318,
+          "basis": "X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated"
+        },
+        "size_note": "combustion chamber ID 200 x 600 mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)",
+        "design_capacity_kg_d": {
+          "value": 10.59,
+          "case": "MSW",
+          "basis": "bounding case MSW, linear class-increment carry (AQS-PLAN-010 rev B)",
+          "task": "X-RSZ-07 sweep"
+        }
+      }
+    },
+    {
+      "unit_id": "BOUNDARY_EXPORT",
+      "sector_id": "DOCK",
+      "presence": "present",
+      "class": "boundary",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+      "notes": "North dock door. Freight only. No process stream.",
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "diagram_gap": "DOCK export boundary \u2014 no inter-block S## for goods freight (use DOCK_EXPORT_TBD)",
+        "presence": "present",
+        "graph_fix": "AQS-HEAT-LADDER-001",
+        "solid": "none",
+        "boundary_kind": "dock freight door (logical)",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/BOUNDARY_EXPORT.md.",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       }
     },
@@ -101,7 +168,28 @@
       "notes": "Dedicated cryo cool loop (S55)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_DED_COOL.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -115,7 +203,28 @@
       "notes": "CRYO warm reject HX (S54)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/CRYO_HX_Q4.md.",
+        "presence": "present",
+        "internals": "plate pack",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -131,10 +240,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 6.0,
+        "value": 5.2483,
         "unit": "kW",
         "status": "study",
-        "note": "RECT-EW class share; study"
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW)."
       },
       "modules": [],
       "params": {
@@ -145,10 +254,34 @@
           650
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "Au cathode harvest (reported on S08)",
+              "value": 0.0063,
+              "basis": "S08 split by leach build-up",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "anode Cl2 to HDR_ACID_GAS",
+              "value": 0.0,
+              "basis": "on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "evaporation to EW hood (ball blanket)",
+              "value": 3.8933,
+              "basis": "DUTY-008 HX-8 bare evaporation x (1 - ball blanket) / 9",
+              "kind": "derived"
+            },
             {
               "layer": "energy",
               "dir": "in",
@@ -180,48 +313,45 @@
               "value": 0.962,
               "basis": "DUTY-008",
               "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "Au cathode harvest (reported on S08)",
-              "value": 0.0063,
-              "basis": "S08 split by leach build-up",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "anode Cl2 to the leach sparge header",
-              "value": 0.0038,
-              "basis": "Faraday: (n_dep + n_side)/2 Cl2",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "evaporation to EW hood (ball blanket)",
-              "value": 3.8933,
-              "basis": "DUTY-008 HX-8",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "electrolyte entrained on harvest (to MFG rinse, returns on S16)",
-              "value": 0.0006,
-              "basis": "0.1 kg/kg deposit",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "cathode H2 to hood sweep (vented, < 1 % LFL)",
-              "value": 0.0,
-              "basis": "minor cell; not collected",
-              "kind": "derived"
             }
           ]
+        },
+        "duty": "In 4287.820 kg/d, out 4287.820 kg/d, 5.248 kW. Sheet docs-authority/duties/EW_1.md.",
+        "internals": "cathode plates, edge strips, PbO2 anodes, launder",
+        "design_kPa": 11.5,
+        "relief_mm": 3.4,
+        "cell_current_A": 2476,
+        "cell_voltage_V": 2.12,
+        "sizing": {
+          "size_mm": [
+            2670,
+            720,
+            760
+          ],
+          "I_bounding_A": 2476,
+          "I_element_A": 0.1,
+          "cathodes": 25,
+          "anodes": 26,
+          "j_A_m2": 196,
+          "V_liq_m3": 1.243,
+          "P_dc_kW": 5.25,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 1.461,
+          "pump_in_m3_h": 4.2878,
+          "pump_out_m3_h": 4.1392,
+          "out_breathing_Nm3_h": 9.026,
+          "in_breathing_Nm3_h": 12.615,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 16.2,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 9.3 kPa (0.76 m full at SG 1.25) = 11.5 kPa g (A-M-174)"
         }
       }
     },
@@ -249,7 +379,62 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "cathode excess O2 vent",
+              "value": 0.3071,
+              "basis": "S50 less stoichiometric O2",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "in",
+              "label": "H2 LHV (S49)",
+              "value": 6.6644,
+              "basis": "119.96 MJ/kg",
+              "kind": "derived"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "low-grade heat to ambient",
+              "value": 1.5225,
+              "basis": "below Q4 return",
+              "kind": "derived"
+            }
+          ]
+        },
+        "duty": "In 43.424 kg/d, out 43.424 kg/d, 4.000 kW. Sheet docs-authority/duties/FUEL_CELL.md.",
+        "internals": "none",
+        "design_kPa": 22.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 2.304,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0434,
+          "out_breathing_Nm3_h": 0.678,
+          "in_breathing_Nm3_h": 11.702,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 15.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
+        },
+        "reversible_loop": {
+          "electrolyser": "H2O_ELYZ",
+          "round_trip": 0.3,
+          "basis": "PEM 55.0 kWh/kg H2 in, 16.5 kWh/kg out",
+          "oxidant": "pure O2 from HDR_O2; H2 and O2 never mixed (NFPA 2, ISO 22734, IEC 62282-3-100)"
+        }
       }
     },
     {
@@ -270,22 +455,26 @@
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
         "survey_status": "design_survey_locked",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
-          "basis": "daily-average design day; off-graph terms",
-          "terms": [
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "heat to ground (borefield recharge)",
-              "value": 0.6738,
-              "basis": "S102",
-              "kind": "derived"
-            }
-          ]
-        },
-        "Q_recharge_kW_th": 0.674,
-        "recharge_note": "Rev M: Q4 surplus to borefield (S102); ORC pad reserved, P_ORC 0"
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_GHEX.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
       },
       "continuous_kw": null
     },
@@ -310,22 +499,147 @@
         "presence": "present",
         "T_source_K": 285.0,
         "coupled_GHEX": true,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 2.000 kW. Sheet docs-authority/duties/GEO_HP.md.",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        },
+        "units_installed": 2,
+        "redundancy": "2 x 100 % (X-RED-07)"
       }
     },
     {
       "unit_id": "GEO_HP_CLOSED_LOOP",
       "sector_id": "GEO",
       "presence": "present",
-      "class": null,
+      "class": "thermal",
       "tags": [],
       "electrical_role": null,
       "diagram_gap": null,
-      "notes": null,
+      "notes": "S43 geothermal loop fluid at 0 kW. Not the GEO_HP machine. No mass rate.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GEO_HP_CLOSED_LOOP.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      },
       "continuous_kw": null
+    },
+    {
+      "unit_id": "GEO_ORC",
+      "sector_id": "GEO",
+      "presence": "present",
+      "class": "hx",
+      "tags": [
+        "ORC",
+        "carnot_study",
+        "study_stub"
+      ],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path."
+      },
+      "modules": [],
+      "params": {
+        "status": "study_carnot_band",
+        "present_path": "study_carnot_band",
+        "blockers": [
+          "GHEX_conductivity_survey",
+          "T_source_survey",
+          "Q_surplus_after_Q4"
+        ],
+        "definition": "geothermal Organic Rankine Cycle (heat\u2192electric)",
+        "method": "P\u2248\u03b7_ORC\u00d7(Q_GHEX_avail\u2212Q4_life); \u03b7 0.08\u20130.12; Carnot-limited",
+        "study_band_kW_e": "0-2 illustrative if Q_surplus 0-20 kW_th; M1 default ~0",
+        "ref": "AQS-EQP-STUDY-001 Rev C \u00a75 / AQS-AUD-001 \u00a710.4",
+        "open_study_queued": true,
+        "study_id": "ST-ORC-01",
+        "gap_framing": "Carnot band issued; survey = open study ST-ORC-01",
+        "study_phase_a_status": "physics_closed_external_measurement_queued",
+        "next_external": "GHEX conductivity / T_source / Q_surplus after Q4 survey \u2014 owner/date TBD",
+        "presence": "present",
+        "ghex_study_defaults": {
+          "T_source_K": 285.0,
+          "T_source_note": "Shallow closed-loop ground ~12 C Dallas-class \u2014 study default until bore survey",
+          "T_sink_K": 303.0,
+          "eta_Carnot": 0.059,
+          "eta_ORC_study": "0.08-0.12 of available surplus",
+          "k_ground_W_mK_study": 1.5,
+          "Q_GHEX_avail_kW_th_study": 3.0,
+          "Q4_life_priority_kW_th_study": 3.0,
+          "Q_surplus_kW_th_M1": 0.0,
+          "P_ORC_kW_e_M1": 0.0,
+          "ref": "AQS-EQP-STUDY-001 \u00a75 / AQS-EQP-GEO-001 / AQS-AUD-001 \u00a710.4",
+          "survey_status": "design_survey_locked",
+          "field_measurement_status": "not_measured_external"
+        },
+        "T_source_K": 285.0,
+        "T_sink_K": 303.0,
+        "k_ground_W_mK": 1.5,
+        "Q_GHEX_avail_kW_th": 3.0,
+        "Q_surplus_kW_th": 0.0,
+        "P_ORC_kW_e": 0.0,
+        "site_lat_deg": 33.0,
+        "survey_status": "design_survey_locked",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.400 kW. Sheet docs-authority/duties/GEO_ORC.md.",
+        "internals": "plate pack",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      }
     },
     {
       "unit_id": "GLASS_DIGEST",
@@ -338,57 +652,98 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "Rev M: heater rating 2.5 kW (AQS-DUTY-011); 1.5 kW study class retired"
+        "note": "X-MFG-31 in-house reactor design (AQS-DUTY-062). agitator motor"
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
+              "dir": "in",
+              "label": "2 M NaOH digest liquor",
+              "value": 68.369,
+              "basis": "126.5 mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15)",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
               "dir": "out",
-              "label": "lid purge vapor to HDR_CAUSTIC",
-              "value": 20.3,
-              "basis": "DUTY-008 digest purge",
+              "label": "sodium silicate liquor (carries the caustic)",
+              "value": 68.369,
+              "basis": "126.5 mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15)",
               "kind": "derived"
             },
             {
               "layer": "energy",
               "dir": "in",
               "label": "electric trim",
-              "value": 0.8016,
-              "basis": "AQS-DUTY-011 ladder run",
+              "value": 1.084,
+              "basis": "DUTY-008 trim_normal",
               "kind": "derived"
             },
             {
               "layer": "energy",
               "dir": "out",
-              "label": "HX-6 duty after HX-10 caustic preheat",
-              "value": 1.3809,
-              "basis": "AQS-DUTY-011",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "HX-10 caustic preheat duty",
-              "value": 0.2822,
-              "basis": "S101",
+              "label": "digest duty",
+              "value": 1.663,
+              "basis": "DUTY-008",
               "kind": "derived"
             }
           ]
         },
-        "heater_rating_kw": 2.5,
-        "heater_rating_basis": "HX-6 rating case 1.663 kW (Q3 and Q4 unavailable) x 1.25, rounded up to 0.5 kW; replaces the 1.5 kW study class",
-        "hx6_normal_kw": 1.381,
-        "hx10_kw": 0.282,
-        "doc_rev_m": "AQS-DUTY-011"
+        "duty": "In 55.296 kg/d, out 55.296 kg/d, 0.090 kW. Sheet docs-authority/duties/GLASS_DIGEST.md.",
+        "internals": "pitched-blade agitator",
+        "design_kPa": 7.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.501,
+          "pump_in_m3_h": 0.0253,
+          "pump_out_m3_h": 0.0253,
+          "out_breathing_Nm3_h": 0.222,
+          "in_breathing_Nm3_h": 4.03,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 9.2,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 4.8 kPa (0.39 m full at SG 1.25) = 7.0 kPa g (A-M-174)"
+        },
+        "design": {
+          "X": 0.1267,
+          "delta_um": 2.2071,
+          "t_kin_h": 8.69,
+          "tau_h": 26.0699,
+          "V_work_L": 46.2043,
+          "V_L": 61.6057,
+          "D_mm": 450,
+          "H_mm": 390,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 150,
+            "rpm": 318,
+            "shaft_W": 18.719748052457465,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          750,
+          750,
+          890
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -402,10 +757,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 5.0,
+        "value": 8.743,
         "unit": "kW",
         "status": "study",
-        "note": "LED canopy share; study"
+        "note": "LED 120.40 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J) + aux 0.2824 kW (A-M-144)"
       },
       "modules": [],
       "params": {
@@ -421,30 +776,30 @@
         "presence": "present",
         "co2_in_kg_d": {
           "S04": 1.109,
-          "S89": 16.1009
+          "S89": 15.637
         },
         "co2_fixed_kg_d": 1.109,
-        "co2_to_exhaust_kg_d": 16.1009,
+        "co2_to_exhaust_kg_d": 15.637,
         "co2_setpoint_ppm": 1000,
-        "farm_oa_m3_h": 961.2,
+        "farm_oa_m3_h": 933.5,
         "co2_doc": "AQS-DUTY-009",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
-              "label": "UPW make-up from HDR_UPW",
-              "value": 74.9024,
-              "basis": "S01 less ZnBr2 make-up",
-              "kind": "by_difference"
+              "label": "UPW make-up from HDR_UPW (S01)",
+              "value": 95.0,
+              "basis": "S01",
+              "kind": "derived"
             },
             {
               "layer": "mass",
               "dir": "out",
               "label": "CO2 to farm exhaust",
-              "value": 16.1009,
+              "value": 15.637,
               "basis": "AQS-DUTY-009 fate",
               "kind": "derived"
             },
@@ -452,7 +807,7 @@
               "layer": "mass",
               "dir": "out",
               "label": "water vapor to farm exhaust",
-              "value": 62.4932,
+              "value": 60.9005,
               "basis": "OA x humidity rise",
               "kind": "derived"
             },
@@ -461,10 +816,130 @@
               "dir": "out",
               "label": "photosynthetic O2 to farm exhaust",
               "value": 0.8063,
-              "basis": "S04 stoichiometry",
+              "basis": "CO2 + H2O -> CH2O + O2 on S04",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 19362.867 kg/d, out 19362.867 kg/d, 8.743 kW. Sheet docs-authority/duties/GROW_BED.md.",
+        "internals": "none",
+        "design_kPa": 6.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 19.3524,
+          "pump_out_m3_h": 18.9331,
+          "out_breathing_Nm3_h": 38.705,
+          "in_breathing_Nm3_h": 18.933,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 28.4,
+          "vent_DN": 32,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
+        },
+        "crop_carbon": {
+          "co2_fixed_kg_d": 3.648,
+          "dm_kg_d": 2.315,
+          "edible_fresh_kg_d": 17.366,
+          "inedible_fresh_kg_d": 12.735,
+          "inedible_lines_claimed_kg_d": 12.73,
+          "gap_kg_d": -0.005,
+          "basis": "BVAD2022 tomato; A-M-141; area from need A-M-151 (Q-008 closed)"
+        },
+        "residue_lines_base_kg_d": 12.730008,
+        "area_m2": 120.4,
+        "aux_kw_base": 0.2824
+      }
+    },
+    {
+      "unit_id": "HABITATION",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "hab",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 3.0,
+        "unit": "kW",
+        "status": "study"
+      },
+      "modules": [],
+      "params": {
+        "crew_study": 4,
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "hab AHU condensate + non-grey remainder",
+              "value": 4.8994,
+              "basis": "S12 governs grey; X-SAN-01 excreta from occupancy (by difference)",
+              "kind": "by_difference"
+            }
+          ]
+        },
+        "duty": "In 943.852 kg/d, out 943.852 kg/d, 3.000 kW. Sheet docs-authority/duties/HABITATION.md.",
+        "internals": "none",
+        "design_kPa": 6.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.3382,
+          "pump_out_m3_h": 0.1008,
+          "out_breathing_Nm3_h": 0.676,
+          "in_breathing_Nm3_h": 0.101,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 3.8,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 3.7 kPa (0.30 m full at SG 1.25; bed or fixture depth 0.3 m, A-M-182) = 6.0 kPa g (A-M-174)"
+        },
+        "san_base": {
+          "S12": 258.6599999999997,
+          "IA-COMP-OUT": 141.150288,
+          "outs": 943.0868119999998,
+          "cond": 4.8994,
+          "S11": 0.8,
+          "edges": {
+            "IA-AB-FLUE": 6.266188,
+            "S67": 117.436188,
+            "IA-FLUE-EXH": 264.396188,
+            "IA-NOX-H2O": 226.221758,
+            "IA-NOX-CO2": 30.466188,
+            "IA-NOX-N": 20.0,
+            "IA-NOX-N2": 243.89,
+            "S21": 120.0,
+            "IA-ASU-CO2": 30.466188,
+            "IA-ASU-O2": 48.05,
+            "S83": 48.05,
+            "S02": 3.36,
+            "S85": 12.17,
+            "S89": 17.071,
+            "IA-NUT-BED": 129.629,
+            "S14": 2.4
+          },
+          "ins": 943.086812
+        },
+        "co2_removal": {
+          "metabolic_CO2_kg_d": 4.021,
+          "half_cycle_min": 144.0,
+          "zeolite_5A_kg_per_bed": 40.2,
+          "beds_per_assembly": 2,
+          "assemblies": 2,
+          "zeolite_total_kg": 160.8,
+          "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
         }
       }
     },
@@ -499,7 +974,84 @@
           600
         ],
         "size_note": "L\u00d7W\u00d7H mm, study envelope (Ti gasketed plate 0.51 m2: 16 plates x 0.032 m2 in an M3-class frame, 600 mm carrying bar)",
-        "size_doc": "MVS_EQUIPMENT Rev K"
+        "size_doc": "MVS_EQUIPMENT Rev K",
+        "duty": "Heat in 4.572 kW, out 4.572 kW. No mass edge. Sheet docs-authority/duties/HX8.md.",
+        "presence": "present",
+        "internals": "plate pack",
+        "design_kPa": 9.5,
+        "relief_mm": 3.3,
+        "nozzles": [
+          {
+            "tag": "N1",
+            "stream_id": "IA-HX8",
+            "service": "inlet",
+            "face": "-Y",
+            "xyz_mm": [
+              5500,
+              1900,
+              -5700
+            ],
+            "height_mm": 300,
+            "rating": "hose, atmospheric",
+            "dn": null
+          },
+          {
+            "tag": "N2",
+            "stream_id": "HL-HX8-Q4-A",
+            "service": "outlet",
+            "face": "+Y",
+            "xyz_mm": [
+              5500,
+              2300,
+              -5700
+            ],
+            "height_mm": 300,
+            "rating": "hose, atmospheric",
+            "dn": 25
+          },
+          {
+            "tag": "N3",
+            "stream_id": "HL-HX8-Q4-B",
+            "service": "outlet",
+            "face": "+Y",
+            "xyz_mm": [
+              5500,
+              2300,
+              -5700
+            ],
+            "height_mm": 300,
+            "rating": "hose, atmospheric",
+            "dn": 25
+          }
+        ],
+        "area_m2_pvdf": {
+          "value": 7.53,
+          "U_W_m2K": 101.1,
+          "status": "study",
+          "doc": "AQS-DUTY-049",
+          "note": "The plate area_m2 0.51 is for titanium plates, which are withdrawn (AQS-STD-002 4.1)."
+        },
+        "exchanger": {
+          "type": "PVDF shell-and-tube bundle",
+          "area_m2": 7.53,
+          "status": "study",
+          "source": "AQS-DUTY-049; AQS-STD-002 4.4"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.144,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.056,
+          "in_breathing_Nm3_h": 1.674,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 5.9,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 7.4 kPa (0.60 m full at SG 1.25) = 9.5 kPa g (A-M-174)"
+        }
       }
     },
     {
@@ -520,10 +1072,10 @@
       },
       "modules": [],
       "params": {
-        "V_m3": null,
+        "V_m3": 2.14,
         "presence": "present",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -544,14 +1096,6 @@
             },
             {
               "layer": "mass",
-              "dir": "in",
-              "label": "anode Cl2 sparge (all EW cells)",
-              "value": 61.9203,
-              "basis": "AQS-DUTY-011 Faraday",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
               "dir": "out",
               "label": "slurry to FLOAT_SINK",
               "value": 454.7062,
@@ -567,52 +1111,83 @@
               "kind": "derived"
             },
             {
-              "layer": "mass",
-              "dir": "out",
-              "label": "unabsorbed Cl2 to lid purge -> ALK_SCRUBBER",
-              "value": 3.096,
-              "basis": "1 - sparge absorption 0.95",
-              "kind": "derived"
-            },
-            {
-              "layer": "mass",
-              "dir": "out",
-              "label": "unused O2 to lid purge",
-              "value": 0.4311,
-              "basis": "1 - utilization 0.9",
-              "kind": "derived"
-            },
-            {
               "layer": "energy",
               "dir": "in",
               "label": "electric trim (ladder short)",
-              "value": 0.4302,
-              "basis": "AQS-DUTY-011 ladder run",
+              "value": 6.353,
+              "basis": "DUTY-008 trim_normal",
               "kind": "derived"
             },
             {
               "layer": "energy",
               "dir": "out",
-              "label": "HX-5 duty, normal (streams + shell + shred + purge - exotherm incl. Cl2/O2 oxidant credit)",
-              "value": 0.4302,
-              "basis": "AQS-DUTY-011",
-              "kind": "derived"
-            },
-            {
-              "layer": "energy",
-              "dir": "out",
-              "label": "HX-9 make-up preheat duty",
-              "value": 0.5322,
-              "basis": "S100",
+              "label": "HX-5 duty (regen + shell + shred + purge - exotherm)",
+              "value": 6.353,
+              "basis": "DUTY-008",
               "kind": "derived"
             }
           ]
         },
-        "heater_rating_kw": 6.0,
-        "heater_rating_basis": "HX-5 rating case 4.602 kW (Q3, Q4 and Cl2 sparge unavailable; DUTY-008 lowest exotherm credit) x 1.25, rounded up to 0.5 kW",
-        "hx5_normal_kw": 0.43,
-        "hx9_kw": 0.532,
-        "doc_rev_m": "AQS-DUTY-011"
+        "duty": "In 6444.081 kg/d, out 6444.081 kg/d, 2.000 kW. Sheet docs-authority/duties/LEACH_CSTR_1.md.",
+        "internals": "agitator PBT D450 150 rpm; HX-5 glass coil (AQS-DUTY-050)",
+        "design_kPa": 19.5,
+        "relief_mm": 2.8,
+        "size_mm": [
+          2000,
+          1200,
+          1400
+        ],
+        "liquor_T_C": {
+          "value": 77.5,
+          "band": [
+            70,
+            85
+          ],
+          "status": "study",
+          "source": "GLOSSARY Leach / Salria 70-85 C; AQS-DUTY-008 HX-5 basis at the mid, 77.5 C. Not measured."
+        },
+        "hx5_area_m2": {
+          "pvdf_natural": 10.06,
+          "pvdf_agitated": 8.49,
+          "glass_natural": 4.22,
+          "glass_agitated": 2.65,
+          "status": "study",
+          "doc": "AQS-DUTY-049"
+        },
+        "hx5_coil": {
+          "material": "borosilicate glass 3.3",
+          "area_m2": 4.22,
+          "case": "glass_natural",
+          "status": "study",
+          "source": "AQS-DUTY-049"
+        },
+        "sizing": {
+          "level_mm": 1100,
+          "liquor_density_kg_m3": 1100,
+          "V_work_m3": 2.14,
+          "tau_h_EW04": 13.2,
+          "wall_mm": 16,
+          "belts": "FRP C203x56x6.4 at Z 300/560/900",
+          "agitator_shaft_W": 403,
+          "agitator_motor_kW": 0.75,
+          "status": "study",
+          "source": "AQS-DUTY-050"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 3.36,
+          "pump_in_m3_h": 5.1876,
+          "pump_out_m3_h": 5.5922,
+          "out_breathing_Nm3_h": 11.328,
+          "in_breathing_Nm3_h": 20.775,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 20.8,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 17.2 kPa (1.40 m full at SG 1.25) = 19.5 kPa g (A-M-174)"
+        }
       }
     },
     {
@@ -640,15 +1215,15 @@
           1600
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
               "layer": "mass",
               "dir": "in",
               "label": "air O2",
-              "value": 2.5778,
+              "value": 7.4897,
               "basis": "stoichiometric",
               "kind": "derived"
             },
@@ -656,7 +1231,7 @@
               "layer": "energy",
               "dir": "in",
               "label": "MeOH LHV (S76)",
-              "value": 0.397,
+              "value": 1.1534,
               "basis": "19.93 MJ/kg",
               "kind": "derived"
             },
@@ -664,11 +1239,30 @@
               "layer": "energy",
               "dir": "out",
               "label": "low-grade heat",
-              "value": 0.1693,
+              "value": 0.4919,
               "basis": "below Q4 return",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 8.530 kg/d, out 8.530 kg/d, 1.000 kW. Sheet docs-authority/duties/MEOH_FC.md.",
+        "internals": "none",
+        "design_kPa": 22.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 2.304,
+          "pump_in_m3_h": 0.0046,
+          "pump_out_m3_h": 0.0017,
+          "out_breathing_Nm3_h": 0.687,
+          "in_breathing_Nm3_h": 11.66,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 15.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 19.6 kPa (1.60 m full at SG 1.25) = 22.0 kPa g (A-M-174)"
         }
       }
     },
@@ -683,7 +1277,28 @@
       "notes": "MET HX \u2192 Q4 (S63)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/MET_HX_Q4.md.",
+        "presence": "present",
+        "internals": "plate pack",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -698,8 +1313,8 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -731,10 +1346,35 @@
               "dir": "in",
               "label": "electric trim",
               "value": 0.0,
-              "basis": "AQS-DUTY-011 ladder run",
+              "basis": "DUTY-008",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 33.000 kg/d, out 33.000 kg/d, 0.000 kW. Sheet docs-authority/duties/OIL_DRYER.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "design_capacity_kg_d": {
+          "value": 45.0,
+          "basis": "IA-PLAST-01 MSW case",
+          "task": "X-RSZ-07 sweep"
+        },
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
@@ -753,8 +1393,8 @@
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
         "solid": "none",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -762,13 +1402,158 @@
               "dir": "out",
               "label": "life load (hab + farm)",
               "value": 3.0,
-              "basis": "DUTY-008 q4_life_kw",
+              "basis": "DUTY-008 q4_life_kw = GHEX Q4 life priority",
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_BUS.md.",
+        "presence": "present",
+        "internals": "pipe only",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
         }
       },
       "continuous_kw": null
+    },
+    {
+      "unit_id": "RECTIFIER",
+      "sector_id": "ELEC",
+      "presence": "present",
+      "class": "rectifier",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 24.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 24.000 kW. Sheet docs-authority/duties/RECTIFIER.md.",
+        "internals": "none",
+        "design_kPa": 2.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) = 2.0 kPa g; no liquid inflow, no hydrostatic case (A-M-174)"
+        }
+      }
+    },
+    {
+      "unit_id": "ZNBR2",
+      "sector_id": "ZNBR2",
+      "presence": "present",
+      "class": "flow_battery",
+      "tags": [],
+      "electrical_role": "storage",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 6.6667,
+        "unit": "kW",
+        "status": "study",
+        "note": "Average charge. Peak remains 60 kW. Discharge is 5.0 kW."
+      },
+      "modules": [],
+      "params": {
+        "kW": 1137,
+        "kWh": 3501,
+        "presence": "present",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
+          "basis": "daily-average design day; off-graph terms",
+          "terms": [
+            {
+              "layer": "mass",
+              "dir": "in",
+              "label": "purge air (dry)",
+              "value": 1047.1955,
+              "basis": "X-PAR-02 TF ess_tf.py",
+              "kind": "derived"
+            },
+            {
+              "layer": "mass",
+              "dir": "out",
+              "label": "electrolyte accumulation (Na + water from S69B, less Br2)",
+              "value": 8.4402,
+              "basis": "no electrolyte bleed on the graph",
+              "kind": "accumulation"
+            },
+            {
+              "layer": "energy",
+              "dir": "out",
+              "label": "round-trip loss",
+              "value": 1.6667,
+              "basis": "1 - RTE",
+              "kind": "derived"
+            }
+          ]
+        },
+        "duty_fraction": 0.3,
+        "note": "120 kWh/d discharge is 30% of the 400 kWh store. Charge 6.67 kW is 11% of 60 kW.",
+        "duty": "In 1055.683 kg/d, out 1055.683 kg/d, 6.667 kW. Sheet docs-authority/duties/ZNBR2.md.",
+        "internals": "none",
+        "design_kPa": 20.0,
+        "relief_mm": 3.3,
+        "peak_kw": 60,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 1.0557,
+          "pump_out_m3_h": 0.0085,
+          "out_breathing_Nm3_h": 2.111,
+          "in_breathing_Nm3_h": 0.008,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 6.6,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 17.7 kPa (1.45 m full at SG 1.25; process hold-up 1 d = 1.056 m3, H/D 1.5, A-M-182) = 20.0 kPa g (A-M-174)"
+        },
+        "charge_kW": 1137,
+        "discharge_kW": 251,
+        "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
+        "distribution": "distributed over the 49 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "purge_basis": {
+          "H2_m3_d": 8.875,
+          "purge_m3_h": 36.98,
+          "HER_fraction": 0.00658,
+          "electrode_area_m2": 2289.6
+        }
+      }
     },
     {
       "unit_id": "GLASS_BURNOUT",
@@ -788,8 +1573,8 @@
           1200
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -833,6 +1618,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 30.000 kg/d, out 30.000 kg/d, 0.000 kW. Sheet docs-authority/duties/GLASS_BURNOUT.md.",
+        "presence": "present",
+        "internals": "none",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.576,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.195,
+          "in_breathing_Nm3_h": 4.418,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 9.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -848,7 +1653,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 250,
-        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "relief": "No vent edge. Not a set point. Not a hab vent.",
         "ladder": "A",
         "tier": "Q1",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -876,8 +1681,8 @@
         },
         "coil_pack_stack_m": 0.76,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -889,6 +1694,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q1_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -904,7 +1729,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 150,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "A",
         "tier": "Q2",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -938,8 +1763,8 @@
         },
         "coil_pack_stack_m": 0.881,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -959,6 +1784,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q2_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -974,7 +1819,7 @@
         "fluid": "water",
         "vol_m3": 0.4,
         "t_nom_C": 100,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "A",
         "tier": "Q3",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1008,8 +1853,8 @@
         },
         "coil_pack_stack_m": 0.63,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1029,6 +1874,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q3_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -1044,7 +1909,7 @@
         "fluid": "water",
         "vol_m3": 0.6,
         "t_nom_C": 70,
-        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "A",
         "tier": "Q4",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1072,8 +1937,8 @@
         },
         "coil_pack_stack_m": 0.549,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1085,6 +1950,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_A.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -1100,7 +1985,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 250,
-        "relief": "thermal 1/2 in, set 10 percent above design, not a hab vent",
+        "relief": "No vent edge. Not a set point. Not a hab vent.",
         "ladder": "B",
         "tier": "Q1",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1128,8 +2013,8 @@
         },
         "coil_pack_stack_m": 0.76,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1141,6 +2026,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q1_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -1156,7 +2061,7 @@
         "fluid": "thermal oil",
         "vol_m3": 0.3,
         "t_nom_C": 150,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "B",
         "tier": "Q2",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1190,8 +2095,8 @@
         },
         "coil_pack_stack_m": 0.881,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1211,6 +2116,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q2_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -1226,7 +2151,7 @@
         "fluid": "water",
         "vol_m3": 0.4,
         "t_nom_C": 100,
-        "relief": "thermal 1/2 in, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "B",
         "tier": "Q3",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1260,8 +2185,8 @@
         },
         "coil_pack_stack_m": 0.63,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1281,6 +2206,26 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q3_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
         }
       }
     },
@@ -1296,7 +2241,7 @@
         "fluid": "water",
         "vol_m3": 0.6,
         "t_nom_C": 70,
-        "relief": "thermal 1/2 in water, set 10 percent above design",
+        "relief": "No vent edge. Not a set point.",
         "ladder": "B",
         "tier": "Q4",
         "basis": "20 kWh_th Q4 hold at 30 K; oil stores 10 kWh at 80 K",
@@ -1324,8 +2269,8 @@
         },
         "coil_pack_stack_m": 0.549,
         "coil_pack_doc": "AQS-DUTY-008 Rev C",
-        "balance_rev_m": {
-          "doc": "AQS-DUTY-011",
+        "balance_rev_l": {
+          "doc": "AQS-DUTY-010",
           "basis": "daily-average design day; off-graph terms",
           "terms": [
             {
@@ -1337,6 +2282,81 @@
               "kind": "derived"
             }
           ]
+        },
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.000 kW. Sheet docs-authority/duties/Q4_B.md.",
+        "presence": "present",
+        "internals": "stratification plate",
+        "design_kPa": 17.0,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.768,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.252,
+          "in_breathing_Nm3_h": 5.403,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 10.6,
+          "vent_DN": 25,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 14.7 kPa (1.20 m full at SG 1.25) = 17.0 kPa g (A-M-174)"
+        }
+      }
+    },
+    {
+      "unit_id": "HEAT_SINK",
+      "sector_id": "GEO",
+      "presence": "present",
+      "class": "hx",
+      "tags": [
+        "ORC",
+        "carnot_study",
+        "study_stub"
+      ],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 0.200 kW. Sheet docs-authority/duties/HEAT_SINK.md.",
+        "internals": "plate pack",
+        "design_kPa": 20.5,
+        "relief_mm": 2.8,
+        "size_mm": [
+          6000,
+          6000,
+          1500
+        ],
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 54.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 11.596,
+          "in_breathing_Nm3_h": 106.069,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 47.0,
+          "vent_DN": 50,
+          "thermal_term": "envelope volume",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 18.4 kPa (1.50 m full at SG 1.25) = 20.5 kPa g (A-M-174)"
+        },
+        "redundancy": {
+          "rejection_kW": 151.7,
+          "modules": 3,
+          "module_kW": 75.85,
+          "rule": "3 x 50 %, N+1 (X-RED-07, A-M-150)"
         }
       }
     }
@@ -1383,7 +2403,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.117,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 393.4,
+        "line_loss_normal_W": 393.4,
+        "duty_source_rated_kw": 1.7764,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -1427,7 +2451,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.117,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 381.7,
+        "line_loss_normal_W": 381.7,
+        "duty_source_rated_kw": 1.7647,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -1471,7 +2499,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.085,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 131.3,
+        "line_loss_normal_W": 131.3,
+        "duty_source_rated_kw": 1.0593,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -1515,7 +2547,11 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.085,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 322.9,
+        "line_loss_normal_W": 322.9,
+        "duty_source_rated_kw": 1.2509,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -1532,10 +2568,10 @@
       "forbidden": "Q3 (no lift), Q4_BUS direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -1577,10 +2613,10 @@
       "forbidden": "Q3 (no lift), Q4_BUS direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.715,
+        "value": 2.286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = HX-8 duty 4.572 kW x 1.25 (single ladder takes all). Normal 2.286 kW per ladder. Approach 6.0 K."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
       "from_sector_id": "WET",
       "to_sector_id": "HEAT",
@@ -1622,10 +2658,10 @@
       "forbidden": "uphill",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.133,
+        "value": 0.992,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -1671,7 +2707,12 @@
         "store_z_mm": {
           "src": -6000,
           "dst": -5150
-        }
+        },
+        "line_loss_W": 141.0,
+        "line_loss_normal_W": 141.0,
+        "duty_source_rated_kw": 1.274,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 1.133
       }
     },
     {
@@ -1688,10 +2729,10 @@
       "forbidden": "uphill",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.133,
+        "value": 0.992,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -1737,7 +2778,12 @@
         "store_z_mm": {
           "src": -6000,
           "dst": -5150
-        }
+        },
+        "line_loss_W": 141.0,
+        "line_loss_normal_W": 141.0,
+        "duty_source_rated_kw": 1.274,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 1.133
       }
     },
     {
@@ -1796,7 +2842,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 2.101,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 705.2,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0882,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -1855,7 +2905,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 2.101,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 705.2,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0882,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -1872,10 +2926,10 @@
       "forbidden": "uphill",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.888,
+        "value": 1.6204,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -1921,7 +2975,12 @@
         "store_z_mm": {
           "src": -5150,
           "dst": -4250
-        }
+        },
+        "line_loss_W": 126.6,
+        "line_loss_normal_W": 126.6,
+        "duty_source_rated_kw": 2.0146,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 1.888
       }
     },
     {
@@ -1938,10 +2997,10 @@
       "forbidden": "uphill",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.888,
+        "value": 1.6204,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW."
+        "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -1987,7 +3046,12 @@
         "store_z_mm": {
           "src": -5150,
           "dst": -4250
-        }
+        },
+        "line_loss_W": 126.6,
+        "line_loss_normal_W": 126.6,
+        "duty_source_rated_kw": 2.0146,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 1.888
       }
     },
     {
@@ -2046,7 +3110,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 3.1386,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 334.1,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.3611,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2105,7 +3173,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 3.1386,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 334.1,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.3611,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2122,10 +3194,10 @@
       "forbidden": "uphill",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.614,
+        "value": 1.1286,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.4854 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -2172,7 +3244,12 @@
         "store_z_mm": {
           "src": -4250,
           "dst": -3350
-        }
+        },
+        "line_loss_W": 60.9,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.6749,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 1.614
       }
     },
     {
@@ -2189,10 +3266,10 @@
       "forbidden": "uphill",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.614,
+        "value": 1.0298,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle."
+        "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.5842 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -2239,7 +3316,12 @@
         "store_z_mm": {
           "src": -4250,
           "dst": -3350
-        }
+        },
+        "line_loss_W": 60.9,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.6749,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 1.614
       }
     },
     {
@@ -2259,7 +3341,7 @@
         "value": 0.302,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: rated 0.302 kW = HX-4 rating-case duty x 1.25; normal 0.121 kW (AQS-DUTY-011 ladder run)"
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "OIL",
@@ -2268,7 +3350,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-011",
+        "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 0.302,
         "duty_normal_kw": 0.121,
         "kind": "pumped loop",
@@ -2285,7 +3367,11 @@
         "thermal_relief_L_h": 0.1344,
         "exchanger": "HX-4",
         "trim_normal_kw_per_ladder": 0.0,
-        "trim_single_kw": 0.0
+        "trim_single_kw": 0.0,
+        "line_loss_W": 54.6,
+        "line_loss_normal_W": 54.6,
+        "duty_source_rated_kw": 0.3566,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2302,10 +3388,10 @@
       "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.753,
+        "value": 7.941,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: rated 5.753 kW = HX-5 rating-case duty x 1.25; normal 0.000 kW (AQS-DUTY-011 ladder run)"
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WET",
@@ -2314,25 +3400,28 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-011",
-        "duty_rated_kw": 5.753,
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 7.941,
         "duty_normal_kw": 0.0,
         "kind": "pumped loop",
         "medium": "treated water (Q3 jacket loop, pressurized)",
         "supply_C": 95.0,
         "return_C": 85.0,
         "dT_K": 10.0,
-        "m_kg_s": 0.13665,
-        "flow_L_min": 8.52,
-        "line_DN": 15,
-        "line_id_mm": 15.8,
-        "velocity_m_s": 0.724,
+        "m_kg_s": 0.18863,
+        "flow_L_min": 11.76,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.57,
         "velocity_basis_m_s": 1.0,
-        "thermal_relief_L_h": 2.5569,
+        "thermal_relief_L_h": 3.5294,
         "exchanger": "HX-5",
-        "trim_normal_kw_per_ladder": 0.215,
-        "trim_single_kw": 0.43,
-        "rev_l_value": 7.941
+        "trim_normal_kw_per_ladder": 3.176,
+        "trim_single_kw": 6.353,
+        "line_loss_W": 242.2,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 8.1832,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2352,7 +3441,7 @@
         "value": 2.079,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: rated 2.079 kW = HX-6 rating-case duty x 1.25; normal 0.290 kW (AQS-DUTY-011 ladder run)"
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS",
@@ -2361,7 +3450,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-011",
+        "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 2.079,
         "duty_normal_kw": 0.29,
         "kind": "pumped loop",
@@ -2377,8 +3466,12 @@
         "velocity_basis_m_s": 1.0,
         "thermal_relief_L_h": 0.9239,
         "exchanger": "HX-6",
-        "trim_normal_kw_per_ladder": 0.401,
-        "trim_single_kw": 0.332
+        "trim_normal_kw_per_ladder": 0.542,
+        "trim_single_kw": 0.614,
+        "line_loss_W": 163.2,
+        "line_loss_normal_W": 163.2,
+        "duty_source_rated_kw": 2.2422,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2398,7 +3491,7 @@
         "value": 0.302,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: rated 0.302 kW = HX-4 rating-case duty x 1.25; normal 0.121 kW (AQS-DUTY-011 ladder run)"
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-4 duty 0.242 kW x 1.25. Q3 serves 0.121 kW per ladder in normal; electric trim 0.0 kW per ladder normal, 0.0 kW single."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "OIL",
@@ -2407,7 +3500,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-011",
+        "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 0.302,
         "duty_normal_kw": 0.121,
         "kind": "pumped loop",
@@ -2424,7 +3517,11 @@
         "thermal_relief_L_h": 0.1344,
         "exchanger": "HX-4",
         "trim_normal_kw_per_ladder": 0.0,
-        "trim_single_kw": 0.0
+        "trim_single_kw": 0.0,
+        "line_loss_W": 110.8,
+        "line_loss_normal_W": 110.8,
+        "duty_source_rated_kw": 0.4128,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2441,10 +3538,10 @@
       "forbidden": "Q4_BUS, CONTINUOUS_RECYCLE",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.753,
+        "value": 7.941,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: rated 5.753 kW = HX-5 rating-case duty x 1.25; normal 0.000 kW (AQS-DUTY-011 ladder run)"
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WET",
@@ -2453,25 +3550,28 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-011",
-        "duty_rated_kw": 5.753,
+        "doc": "AQS-DUTY-008 Rev B",
+        "duty_rated_kw": 7.941,
         "duty_normal_kw": 0.0,
         "kind": "pumped loop",
         "medium": "treated water (Q3 jacket loop, pressurized)",
         "supply_C": 95.0,
         "return_C": 85.0,
         "dT_K": 10.0,
-        "m_kg_s": 0.13665,
-        "flow_L_min": 8.52,
-        "line_DN": 15,
-        "line_id_mm": 15.8,
-        "velocity_m_s": 0.724,
+        "m_kg_s": 0.18863,
+        "flow_L_min": 11.76,
+        "line_DN": 20,
+        "line_id_mm": 20.93,
+        "velocity_m_s": 0.57,
         "velocity_basis_m_s": 1.0,
-        "thermal_relief_L_h": 2.5569,
+        "thermal_relief_L_h": 3.5294,
         "exchanger": "HX-5",
-        "trim_normal_kw_per_ladder": 0.215,
-        "trim_single_kw": 0.43,
-        "rev_l_value": 7.941
+        "trim_normal_kw_per_ladder": 3.176,
+        "trim_single_kw": 6.353,
+        "line_loss_W": 737.5,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 8.6785,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2491,7 +3591,7 @@
         "value": 2.079,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: rated 2.079 kW = HX-6 rating-case duty x 1.25; normal 0.290 kW (AQS-DUTY-011 ladder run)"
+        "note": "AQS-DUTY-008 Rev B s13.2: HX-6 duty 1.663 kW x 1.25. Q3 serves 0.29 kW per ladder in normal; electric trim 0.542 kW per ladder normal, 0.614 kW single."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS",
@@ -2500,7 +3600,7 @@
       "gap_flags": [],
       "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one.",
       "params": {
-        "doc": "AQS-DUTY-011",
+        "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 2.079,
         "duty_normal_kw": 0.29,
         "kind": "pumped loop",
@@ -2516,8 +3616,12 @@
         "velocity_basis_m_s": 1.0,
         "thermal_relief_L_h": 0.9239,
         "exchanger": "HX-6",
-        "trim_normal_kw_per_ladder": 0.401,
-        "trim_single_kw": 0.332
+        "trim_normal_kw_per_ladder": 0.542,
+        "trim_single_kw": 0.614,
+        "line_loss_W": 205.8,
+        "line_loss_normal_W": 205.8,
+        "duty_source_rated_kw": 2.2848,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2576,7 +3680,11 @@
         "P_loop_bar_a": 2.5,
         "thermal_relief_L_h": 1.1393,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 178.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0098,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2635,7 +3743,11 @@
         "P_loop_bar_a": 2.5,
         "thermal_relief_L_h": 1.1393,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 178.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 2.0098,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2652,10 +3764,10 @@
       "forbidden": "Q1-Q3 fluids, flue, oil",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.51,
+        "value": 4.7481,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.7619 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
@@ -2678,7 +3790,12 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.341,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 276.5,
+        "line_loss_normal_W": 276.5,
+        "duty_source_rated_kw": 5.7865,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 5.51
       }
     },
     {
@@ -2695,10 +3812,10 @@
       "forbidden": "Q1-Q3 fluids, flue, oil",
       "claim_status": "Closed",
       "rate": {
-        "value": 5.51,
+        "value": 4.6729,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder."
+        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.8371 kW of insulated line loss upstream (A-M-166)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
@@ -2721,7 +3838,12 @@
         "line_DN": 15,
         "line_id_mm": 15.8,
         "velocity_m_s": 0.341,
-        "velocity_basis_m_s": 1.0
+        "velocity_basis_m_s": 1.0,
+        "line_loss_W": 252.9,
+        "line_loss_normal_W": 252.9,
+        "duty_source_rated_kw": 5.7629,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)",
+        "rate_before_line_loss_kw": 5.51
       }
     },
     {
@@ -2780,7 +3902,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 0.7564,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 146.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.7118,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2839,7 +3965,11 @@
         "P_loop_bar_a": 1.0,
         "thermal_relief_L_h": 0.7564,
         "control": "pump on when |T_A - T_B| > 5 K; heat flows hotter to colder whatever the flow direction; off inside the deadband",
-        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end"
+        "why_not_gravity": "same-tier stores sit at the same elevation and the tie must work in both directions over 25 m; a gravity loop has a fixed hot end",
+        "line_loss_W": 146.8,
+        "line_loss_normal_W": 0.0,
+        "duty_source_rated_kw": 1.7118,
+        "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
       }
     },
     {
@@ -2867,6 +3997,14 @@
         "liquor_in_C": 55.0,
         "liquor_out_C": 51.0,
         "liquor_kg_h": 1112.1
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
       }
     },
     {
@@ -2941,6 +4079,10 @@
         "standby_kw": 2.126,
         "cop": 3.43,
         "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -2994,10 +4136,10 @@
       "forbidden": "Q1 flue / GEN exhaust in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.0,
+        "value": 1.1419,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: standby: 0 on the design day; 1.582 kW while running"
+        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return"
       },
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "HAB",
@@ -3008,14 +4150,12 @@
       ],
       "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
-        "rate_basis": "standby: 0 on the design day; 1.582 kW while running",
-        "rate_source": "AQS-DUTY-011 dispatch",
+        "rate_basis": "FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return",
+        "rate_source": "H2 LHV; S51 authority",
         "medium": "Q4 water",
-        "conditions": "standby",
+        "conditions": "45 C return",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-011",
-        "standby_kw": 1.582,
-        "rev_l_value": 1.1419
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -3032,10 +4172,10 @@
       "forbidden": "Stirling deep reject, GEN exhaust, flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.1001,
+        "value": 0.5448,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: ASU air 36.8 kg/d for O2 7.67 kg/d (S02 + S83): shaft 0.1066 kW x 0.839 + sieve TSA 0.0107"
+        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HAB",
@@ -3046,14 +4186,13 @@
       ],
       "notes": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
-        "rate_basis": "ASU air 36.8 kg/d for O2 7.67 kg/d (S02 + S83): shaft 0.1066 kW x 0.839 + sieve TSA 0.0107",
-        "rate_source": "CRYO_COLD_BOX",
+        "rate_basis": "ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058",
+        "rate_source": "CRYO_COLD_BOX (intercooler residual + sieve cool-down)",
         "medium": "Q4 water",
         "conditions": "45 C return / 60 C supply",
         "rate_kind": "derived",
-        "asu_air_kg_d": 36.8,
-        "doc": "AQS-DUTY-011",
-        "rev_l_value": 0.5448
+        "asu_air_kg_d": 200.5,
+        "doc": "AQS-DUTY-010"
       }
     },
     {
@@ -3071,10 +4210,10 @@
       "forbidden": "Q4 life air, HDR_UPW, CATCH, Salria",
       "claim_status": "Closed",
       "rate": {
-        "value": 4.0606,
+        "value": 4.2838,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: Stirling reject = electric 4.0 + lift 0.0606 kW"
+        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -3085,14 +4224,17 @@
       ],
       "notes": "From register: CRYO_DED_COOL (loop) \u2192 CRYO_DED_COOL",
       "params": {
-        "rate_basis": "Stirling reject = electric 4.0 + lift 0.0606 kW",
-        "rate_source": "CRYO_COLD_BOX",
+        "rate_basis": "Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak)",
+        "rate_source": "CRYO_COLD_BOX; CONTINUOUS_KW 2-8 kW class",
         "medium": "glycol 30 %",
         "conditions": "dT 5 K",
         "rate_kind": "derived",
         "glycol_kg_h": 857.0,
-        "doc": "AQS-DUTY-011",
-        "rev_l_value": 4.2838
+        "doc": "AQS-DUTY-010"
+      },
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
       }
     },
     {
@@ -3145,10 +4287,10 @@
       "forbidden": "Q1 flue / GEN exhaust in AHU",
       "claim_status": null,
       "rate": {
-        "value": 0.127,
+        "value": 0.3689,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: DMFC heat 0.296 kW x 0.4286 above Q4 return"
+        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HAB",
@@ -3159,125 +4301,732 @@
       ],
       "notes": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB",
       "params": {
-        "rate_basis": "DMFC heat 0.296 kW x 0.4286 above Q4 return",
+        "rate_basis": "DMFC heat 0.861 kW x 0.4286 above Q4 return",
         "rate_source": "MeOH LHV",
         "medium": "Q4 water",
         "conditions": "45 C return",
         "rate_kind": "derived",
-        "doc": "AQS-DUTY-011",
-        "rev_l_value": 0.3689
+        "doc": "AQS-DUTY-010"
       }
     },
     {
-      "stream_id": "S100",
+      "stream_id": "HL-Q4-REJ",
       "from_unit_id": "Q4_BUS",
-      "to_unit_id": "LEACH_CSTR_1",
-      "phase": "E",
+      "to_unit_id": "GEO_ORC",
+      "phase": "thermal",
       "layers": [
         "thermal"
       ],
       "presence": "present",
-      "carries": "Q4 water to HX-9 leach make-up preheater",
-      "header": "Q4",
-      "forbidden": "HL-* ladder, CONTINUOUS_RECYCLE",
-      "claim_status": "Closed",
+      "carries": "Q4 surplus heat",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5322,
+        "value": 10.1627,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: HX-9: make-up S68, S10, S16, S39, S72, S28 to 55.0 C"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. | X-THM-01: closes Q4_BUS after the line losses carried down the ladder (A-M-166)."
       },
-      "from_sector_id": "HAB",
-      "to_sector_id": "WET",
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Rev M. HX-9 heats the cold make-up streams (S68, S10, S16, S39, S72, S28) to 55 C. Not on CONTINUOUS_RECYCLE.",
-      "params": {
-        "doc": "AQS-DUTY-011",
-        "rev_m_new": true,
-        "rate_basis": "HX-9: make-up S68, S10, S16, S39, S72, S28 to 55.0 C",
-        "rate_source": "AQS-DUTY-011",
-        "medium": "Q4 water",
-        "conditions": "60 C supply / 45 C return",
-        "rate_kind": "derived",
-        "duty_normal_kw": 0.5322,
-        "duty_rated_kw": 0.665
-      }
+      "notes": null,
+      "params": {}
     },
     {
-      "stream_id": "S101",
+      "stream_id": "IA-Q4-LIFE",
       "from_unit_id": "Q4_BUS",
-      "to_unit_id": "GLASS_DIGEST",
-      "phase": "E",
+      "to_unit_id": "HABITATION",
+      "phase": "thermal",
       "layers": [
         "thermal"
       ],
       "presence": "present",
-      "carries": "Q4 water to HX-10 digest caustic preheater",
-      "header": "Q4",
-      "forbidden": "HL-* ladder",
-      "claim_status": "Closed",
+      "carries": "life heat",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.2822,
+        "value": 3.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: HX-10: S91 320.8 kg/d x 3.8 x (55.0 - 35.0) C"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
       },
-      "from_sector_id": "HAB",
-      "to_sector_id": "GLASS",
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
-      "namespace": "S",
+      "namespace": "IA",
       "gap_flags": [],
-      "notes": "Rev M. HX-10 heats S91 caustic 35 -> 55 C ahead of the HX-6 jacket.",
-      "params": {
-        "doc": "AQS-DUTY-011",
-        "rev_m_new": true,
-        "rate_basis": "HX-10: S91 320.8 kg/d x 3.8 x (55.0 - 35.0) C",
-        "rate_source": "AQS-DUTY-011",
-        "medium": "Q4 water",
-        "conditions": "60 C supply / 45 C return",
-        "rate_kind": "derived",
-        "duty_normal_kw": 0.2822,
-        "duty_rated_kw": 0.353
-      }
+      "notes": null
     },
     {
-      "stream_id": "S102",
-      "from_unit_id": "Q4_BUS",
+      "stream_id": "IA-Q3A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_A",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "leach heater trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q3B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q3_B",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "leach heater trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 10.048,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-ZNBR-HEAT",
+      "from_unit_id": "ZNBR2",
+      "to_unit_id": "Q4_BUS",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "round-trip loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.67,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4A-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_A",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q4B-TRIM",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_B",
+      "phase": "electric",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store trim",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.61,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q1A-LOSS",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q1B-LOSS",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q2A-LOSS",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-Q2B-LOSS",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "store loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.17,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BMED-03-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
       "to_unit_id": "GEO_GHEX",
       "phase": "E",
       "layers": [
         "thermal"
       ],
       "presence": "present",
-      "carries": "Q4 surplus to borefield recharge",
-      "header": "Q4",
-      "forbidden": "GEO_ORC (reserved, 0 kW)",
-      "claim_status": "Closed",
+      "carries": "trim cooler heat from IA-BMED-03 (to BMED_ACID)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.6738,
+        "value": 0.78,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011: Q4 bus in 4.488 - life 3.0 - HX-9 0.532 - HX-10 0.282"
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K."
       },
-      "from_sector_id": "HAB",
+      "from_sector_id": "GAS",
       "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-BMED-04-TRIM",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "GEO_GHEX",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "trim cooler heat from IA-BMED-04 (to BMED_BASE)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.027,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C)",
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "HLL-AFTERBURNER-Q1-A",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-AFTERBURNER-Q1-A to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3934,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 29.31 W/m x 13.42 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": null,
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Rev M. Remaining Q4 surplus to the GHEX loop (seasonal ground store). ORC pad stays empty.",
-      "params": {
-        "doc": "AQS-DUTY-011",
-        "rev_m_new": true,
-        "rate_basis": "Q4 bus in 4.488 - life 3.0 - HX-9 0.532 - HX-10 0.282",
-        "rate_source": "AQS-DUTY-011 Q4 balance",
-        "medium": "Q4 water -> GHEX glycol",
-        "conditions": "60 C supply",
-        "rate_kind": "by_difference",
-        "duty_normal_kw": 0.6738,
-        "duty_rated_kw": 0.842
-      }
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-AFTERBURNER-Q1-B",
+      "from_unit_id": "AFTERBURNER",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-AFTERBURNER-Q1-B to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3817,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 29.31 W/m x 13.02 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-GLASS_BURNOUT-Q2-A",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-GLASS_BURNOUT-Q2-A to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1313,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 14.09 W/m x 9.32 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-GLASS_BURNOUT-Q2-B",
+      "from_unit_id": "GLASS_BURNOUT",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-GLASS_BURNOUT-Q2-B to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.3229,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 14.09 W/m x 22.92 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q1-A-DOWN",
+      "from_unit_id": "Q1_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q1-A-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.141,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 24.73 W/m x 5.7 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q1-B-DOWN",
+      "from_unit_id": "Q1_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q1-B-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.141,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 24.73 W/m x 5.7 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q2-A-DOWN",
+      "from_unit_id": "Q2_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q2-A-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1266,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 32.04 W/m x 3.95 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q2-B-DOWN",
+      "from_unit_id": "Q2_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q2-B-DOWN to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1266,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 32.04 W/m x 3.95 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-A-HX4",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-A-HX4 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0546,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 7.21 W/m x 7.57 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-A-HX6",
+      "from_unit_id": "Q3_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-A-HX6 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1632,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 21.56 W/m x 7.57 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-B-HX4",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-B-HX4 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1108,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 7.21 W/m x 15.37 m at 200 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q3-B-HX6",
+      "from_unit_id": "Q3_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q3-B-HX6 to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2058,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 13.39 W/m x 15.37 m at 38 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q4-A-BUS",
+      "from_unit_id": "Q4_A",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q4-A-BUS to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2765,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 11.81 W/m x 23.42 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "HLL-Q4-B-BUS",
+      "from_unit_id": "Q4_B",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "insulated line loss of HL-Q4-B-BUS to the hall air",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.2529,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-04: 11.81 W/m x 21.42 m at 13 mm (AQS-THM-003, A-M-165)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": null,
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

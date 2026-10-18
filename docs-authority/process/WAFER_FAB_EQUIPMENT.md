@@ -1,5 +1,7 @@
 # Wafer fab equipment / process list
 
+Superseded copy. The current page is `docs-authority/WAFER_FAB_EQUIPMENT.md`, B. This copy is history (AQS-REG-001).
+
 Document number: AQS-EQP-FAB-001  
 Revision: B  
 Date: 2026-09-27  
@@ -116,7 +118,7 @@ Ag/Al contact → belt fire → IV test.
 | Dedicated PFD / FreeCAD solids | Open — next solar pass |
 
 Do not silently drop this branch. Do not invent belt-furnace or
-PECVD nameplate kW until vendor datasheets land.
+PECVD nameplate kW until the in-house tool designs set them (X-MFG-38).
 
 ---
 

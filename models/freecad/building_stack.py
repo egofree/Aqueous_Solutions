@@ -52,21 +52,21 @@ def _core_rooms(doc):
 
 def _stairs_elev(doc):
     z0 = P.Z_Lm2
-    z_roof = P.Z_L2 + 2000
-    add(doc, "STAIR_P", box_at(P.CORE_X + 100, P.CORE_Y + 100,
-                               P.Z_L0, 2400, 4800, z_roof - P.Z_L0))
+    z_roof = max(P.Z_L2 + 2000, getattr(P, 'Z_ROOF', 0) + 2000)   # X-BLD-05: STAIR_P and STAIR_S1 reach the reservoir levels and the roof
+    add(doc, "STAIR_P", box_at(P.CORE_X, P.CORE_Y,
+                               P.Z_L0, P.STAIR_BOX, 4800, z_roof - P.Z_L0))
     label_plate(doc, "STAIR_P", P.CORE_X + 100, P.CORE_Y - 200, z=P.Z_L1 + 500)
-    add(doc, "STAIR_MAINT", box_at(P.CORE_X + 100, P.CORE_Y + 5000,
-                                   z0, 1200, 2400, P.Z_L0 - z0 + 500))
+    add(doc, "STAIR_MAINT", box_at(P.CORE_X + P.STAIR_BOX + 200, P.CORE_Y + 3400,
+                                   z0, P.STAIR_MAINT_W, 2400, P.Z_L0 - z0 + 500))
     label_plate(doc, "STAIR_MAINT", P.CORE_X + 100, P.CORE_Y + 4900,
                 z=P.Z_Lm1 + 500)
-    add(doc, "STAIR_S1", box_at(200, P.PLATE_W - 2600, P.Z_L0,
-                                2400, 2400, P.Z_L2 - P.Z_L0))
+    add(doc, "STAIR_S1", box_at(200, P.PLATE_W - 2800, P.Z_L0,
+                                P.STAIR_BOX, P.STAIR_BOX, max(P.Z_L2, getattr(P, 'Z_ROOF', 0)) - P.Z_L0))
     label_plate(doc, "STAIR_S1", 200, P.PLATE_W - 2800, z=P.Z_L1 + 500)
-    add(doc, "STAIR_S2", box_at(P.PLATE_L - 2600, 200, P.Z_L0,
-                                2400, 2400, P.Z_L2 - P.Z_L0))
+    add(doc, "STAIR_S2", box_at(P.PLATE_L - 2800, 200, P.Z_L0,
+                                P.STAIR_BOX, P.STAIR_BOX, P.Z_L2 - P.Z_L0))
     label_plate(doc, "STAIR_S2", P.PLATE_L - 2600, 0, z=P.Z_L1 + 500)
-    add(doc, "ELEV_SVC", box_at(P.CORE_X + 2600, P.CORE_Y + 100,
+    add(doc, "ELEV_SVC", box_at(P.CORE_X + P.STAIR_BOX + 200, P.CORE_Y,
                                 z0, 2700, 3200, z_roof - z0))
     label_plate(doc, "ELEV_SVC", P.CORE_X + 2600, P.CORE_Y - 200,
                 z=P.Z_L0 + 500)
@@ -80,7 +80,7 @@ def _stairs_elev(doc):
                 P.SERVICE_ENTRY_X, P.SERVICE_ENTRY_Y - 200, z=P.Z_L0 + 500)
     # Exterior service door on north wall
     add(doc, "SERVICE_DOOR_N", box_at(
-        P.SERVICE_ENTRY_X + 400, P.PLATE_W - 100, P.Z_L0, 1800, 200, 2400))
+        P.SERVICE_ENTRY_X + 400, P.PLATE_W - 200, P.Z_L0, 1800, 200, 2400))  # Rev B: door leaf inside the wall line, off the apron
     label_plate(doc, "SERVICE_DOOR_N",
                 P.SERVICE_ENTRY_X + 400, P.PLATE_W + 200, z=P.Z_L0 + 1200)
     # STAIR_SERVICE: full height L-2 FFL to L0 + headroom; doors at L-1 / L-2
@@ -107,16 +107,15 @@ def _stairs_elev(doc):
 def _shafts(doc):
     z_bot = P.basement_z(P.BASEMENT_LEVELS - 1)
     z_top = P.Z_L2 + P.ROOF_TANK_H + 1500
-    px = P.CORE_X + P.CORE_L // 2 + 200
-    py = P.CORE_Y + 200
+    # core re-pack (X-BLD-05 clash check): stair | elevator over STAIR_MAINT | shafts
+    px = P.CORE_X + 5700
+    py = P.CORE_Y
     _shaft(doc, "SHAFT_H2", px, py, z_bot, z_top, 800, 800)
     _shaft(doc, "SHAFT_ACID", px, py + 1000, z_bot, z_top, 800, 800)
-    _shaft(doc, "SHAFT_OIL", px, py + 2000, z_bot, z_top, 800, 800)
-    lx = P.CORE_X + 200
-    ly = P.CORE_Y + 200
-    _shaft(doc, "SHAFT_UTIL", lx, ly + 2000, P.Z_Lm2, z_top, 1200, 2400)
-    _shaft(doc, "SHAFT_PENSTOCK", lx + 1600, ly + 2000, P.Z_Lm2, z_top, 800, 800)
-    _shaft(doc, "SHAFT_DUST", px + 1000, py, z_bot, z_top, 800, 800)
+    _shaft(doc, "SHAFT_OIL", px + 1000, py, z_bot, z_top, 800, 800)
+    _shaft(doc, "SHAFT_DUST", px + 1000, py + 1000, z_bot, z_top, 800, 800)
+    _shaft(doc, "SHAFT_UTIL", P.CORE_X + 4300, py + 3400, P.Z_Lm2, z_top, 1200, 2400)
+    _shaft(doc, "SHAFT_PENSTOCK", px, py + 3400, P.Z_Lm2, z_top, 800, 800)
 
 
 def _tanks(doc):
@@ -130,15 +129,15 @@ def _tanks(doc):
         P.CATCH_TANK_L, P.CATCH_TANK_W, P.CATCH_TANK_H))
     label_plate(doc, "CATCH_TANK", P.CATCH_TANK_X, P.CATCH_TANK_Y - 200,
                 z=P.CATCH_TANK_Z + 2000)
-    hydro_x = min(P.CATCH_TANK_X + P.CATCH_TANK_L, P.PLATE_L - 6000)
-    add(doc, "HYDRO_SET", box_at(hydro_x, P.CATCH_TANK_Y, P.Z_Lm2,
-                                 6000, 6000, 3500))
-    label_plate(doc, "HYDRO_SET", hydro_x, P.CATCH_TANK_Y - 200,
+    hydro_x = P.CORE_X - 2400                 # dry pump room west of the core; envelope from A-M-199 (1.2 x 0.8 x 1.2 m)
+    add(doc, "HYDRO_SET", box_at(hydro_x, P.CORE_Y + 1000, P.Z_Lm2 + P.SLAB_THK,
+                                 1200, 800, 1200))
+    label_plate(doc, "HYDRO_SET", hydro_x, P.CORE_Y + 800,
                 z=P.Z_Lm2 + 2000)
     # North (pole-facing) dock + paired freight elevator — AQS-SITE-001.
     # Discrete jump: DOCK_COUNT = CASSETTE_COUNT; one dock+ELEV_DOCK pair
     # at M1 baseline; add pairs along +X as plate grows E–W.
-    apron_l = max(P.DOCK_L * P.DOCK_COUNT, 12000)
+    apron_l = max(P.DOCK_L * P.DOCK_COUNT, 12000, getattr(P, 'DOCK_APRON_W', 0))
     add(doc, "DOCK_APRON_N", box_at(
         P.DOCK_X, P.PLATE_W, P.Z_L0, apron_l, P.DOCK_APRON_N, 150))
     label_plate(doc, "DOCK_APRON_N",
@@ -155,11 +154,11 @@ def _tanks(doc):
                     dx + 200, P.DOCK_Y + P.DOCK_W + 200, z=P.Z_L0 + 500)
         door_x = dx + (P.DOCK_L - P.DOCK_DOOR_W) // 2
         add(doc, "DOCK_DOOR_N%s" % suf, box_at(
-            door_x, P.PLATE_W - 100, P.Z_L0, P.DOCK_DOOR_W, 200, 4200))
+            door_x, P.PLATE_W - 100, P.Z_L0, P.DOCK_DOOR_W, 200, P.DOCK_DOOR_H))
         label_plate(doc, "DOCK_DOOR_N%s" % suf,
                     door_x, P.PLATE_W + 200, z=P.Z_L0 + 2000)
         # Associated freight elevator — inside dock bay, south of door strip
-        ex = dx + P.DOCK_L - P.ELEV_DOCK_L - 200
+        ex = dx + 200                          # west end of the dock bay, clear of the core (CAD clash check)
         ey = P.DOCK_Y + 200
         add(doc, "ELEV_DOCK%s" % suf, box_at(
             ex, ey, z_elev0, P.ELEV_DOCK_L, P.ELEV_DOCK_W, z_elev1 - z_elev0))
@@ -455,6 +454,28 @@ def _basement_slabs(doc):
     _slab(doc, "SLAB_Lm2", P.Z_Lm2)  # catch plate — deepest
 
 
+def _catch_cut(doc):
+    """Lower reservoir is cellular around the cores (wt_core_frac): cut CATCH_TANK by every stair, elevator and shaft
+    (+300 mm wall) and by a dry pump room for HYDRO_SET (X-BLD-05 CAD clash check)."""
+    ct = doc.getObject("CATCH_TANK")
+    hs = doc.getObject("HYDRO_SET")
+    if ct is None:
+        return
+    cut = []
+    for o in doc.Objects:
+        if o.Name.startswith(("STAIR_", "ELEV_", "SHAFT_")) and hasattr(o, "Shape") and not o.Shape.isNull():
+            b = o.Shape.BoundBox
+            cut.append(box_at(b.XMin - 300, b.YMin - 300, b.ZMin, b.XLength + 600, b.YLength + 600, b.ZLength))
+    if hs is not None:
+        b = hs.Shape.BoundBox
+        cut.append(box_at(b.XMin - 900, b.YMin - 900, b.ZMin, b.XLength + 1800, b.YLength + 1800, b.ZLength + 1000))
+    shp = ct.Shape
+    for c in cut:
+        if shp.BoundBox.intersect(c.BoundBox):
+            shp = shp.cut(c)
+    ct.Shape = shp
+
+
 def attach(doc, lat_deg=None):
     _basement_slabs(doc)
     _slab(doc, "SLAB_L0", P.Z_L0)
@@ -464,6 +485,7 @@ def attach(doc, lat_deg=None):
     _shafts(doc)
     _stairs_elev(doc)
     _tanks(doc)
+    _catch_cut(doc)
     _envelope_walls(doc)
     _array_roof(doc, lat_deg=lat_deg)
     _overflow_terraces(doc)

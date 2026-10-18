@@ -1,0 +1,2551 @@
+{
+ "feed_rate_kg_d": {
+  "value": 102.68,
+  "units": "kg/d",
+  "owner": "AQS-ASSAY-001 Rev C design feed rate (owner basis)"
+ },
+ "feed_case_A_silicate_oxide": {
+  "value": 0.99,
+  "units": "mass fraction",
+  "owner": "AQS-ASSAY-001 Rev C class A (regolith-like) point",
+  "needs_verification": true,
+  "verification_test": "XRF/XRD assay of a representative class A lot"
+ },
+ "case_A_oxide_fractions": {
+  "value": {
+   "Al2O3": 0.19,
+   "CaO": 0.125,
+   "MgO": 0.09,
+   "FeO": 0.13
+  },
+  "units": "mass fraction of silicate_oxide",
+  "ref": "LUNAR_SOURCEBOOK",
+  "needs_verification": true,
+  "verification_test": "XRF major-oxide analysis of the accepted feed"
+ },
+ "case_A_leach_extent": {
+  "value": 1.0,
+  "units": "fraction of listed oxides dissolved",
+  "register": "A-M (X-BAS-02 full-leach bound)",
+  "needs_verification": true,
+  "verification_test": "Bench leach of class A feed in HCl at 85 C, ICP-OES of liquor for Al, Ca, Mg, Fe extraction"
+ },
+ "hcl_stoich": {
+  "value": {
+   "Al2O3": 6,
+   "CaO": 2,
+   "MgO": 2,
+   "FeO": 2
+  },
+  "units": "mol HCl per mol oxide",
+  "ref": "GREENWOOD"
+ },
+ "acid_conc_design_wt": {
+  "value": 0.2,
+  "units": "mass fraction HCl on IA-ACID-01",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+  "needs_verification": true,
+  "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time",
+  "published": "CARLETON_HCL_2023 38 % HCl; PERRY9_HCL azeotrope 20.2 wt% caps evaporative concentration"
+ },
+ "bmed_sec_kWh_per_kg_base": {
+  "value": 6.7,
+  "units": "kWh/kg NaOH at 2 M product",
+  "ref": "EDBM_WHEY_2021",
+  "needs_verification": true,
+  "verification_test": "EDBM pilot on the plant chloride brine: SEC and current efficiency at the design product concentration"
+ },
+ "bmed_sec_design_kWh_per_kg_pair": {
+  "value": 2.1,
+  "units": "kWh per kg acid+base (current graph basis)",
+  "register": "graph BMED_ACID continuous_kw (X-RSZ-01)",
+  "needs_verification": true,
+  "verification_test": "Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision)",
+  "published": "EDBM_PILOT_2023 1.4-2.6 kWh/kg NaOH at 0.5-1 M; EDBM_WHEY_2021 6.7 kWh/kg at 2 M"
+ },
+ "ew_current_density_A_m2": {
+  "value": 200.0,
+  "units": "A/m2",
+  "ref": "SCHLESINGER2011"
+ },
+ "ew_current_efficiency_design": {
+  "value": 0.85,
+  "units": "-",
+  "ref": "USBM_CL_EW",
+  "needs_verification": true,
+  "verification_test": "Bench chloride EW cell per metal: deposit mass vs charge (current efficiency)",
+  "published": "USBM_CL_EW 0.85-0.90 chloride; SCHLESINGER2011 0.85-0.92 sulfate; lower bound taken (bounding current)"
+ },
+ "ew_cell_voltage_V": {
+  "value": 2.12,
+  "units": "V",
+  "ref": "USBM_CL_EW",
+  "needs_verification": true,
+  "verification_test": "Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage and energy per kg Cu",
+  "basis": "V = E_spec M CE / (z F) with E_spec 2.1 kWh/kg (cupric), CE 0.85, z 2: 2.12 V"
+ },
+ "site_design_dry_bulb_C": {
+  "value": 37.8,
+  "units": "C",
+  "register": "AQS-SITE-002"
+ },
+ "pv_yield_kWh_per_kWp_d": {
+  "value": 5.41,
+  "units": "kWh/kWp/d",
+  "ref": "NREL_PVWATTS"
+ },
+ "continuous_load_factor": {
+  "value": 1.25,
+  "units": "-",
+  "ref": "NEC2023"
+ },
+ "pvc_u_max_C": {
+  "value": 60.0,
+  "units": "C",
+  "ref": "ASTM_D1785"
+ },
+ "cp_hcl20_kJ_kgK": {
+  "value": 3.0,
+  "units": "kJ/(kg K)",
+  "ref": "PERRY9",
+  "needs_verification": true,
+  "verification_test": "Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C"
+ },
+ "cp_naoh20_kJ_kgK": {
+  "value": 3.6,
+  "units": "kJ/(kg K)",
+  "ref": "PERRY9",
+  "needs_verification": true,
+  "verification_test": "Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C"
+ },
+ "U_free_convection_W_m2K": {
+  "value": 7.0,
+  "units": "W/(m2 K)",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "Coil outlet temperature on the installed air cooler"
+ },
+ "line_velocity_liquid_m_s": {
+  "value": 1.0,
+  "units": "m/s",
+  "ref": "PERRY9"
+ },
+ "line_velocity_gas_m_s": {
+  "value": 10.0,
+  "units": "m/s",
+  "ref": "PERRY9"
+ },
+ "heat_loop_dT_K": {
+  "value": 10.0,
+  "units": "K",
+  "ref": "ASHRAE_SYS2020"
+ },
+ "water_cp_kJ_kgK": {
+  "value": 4.18,
+  "units": "kJ/(kg K)",
+  "ref": "INCROPERA7"
+ },
+ "slurry_min_DN": {
+  "value": 50,
+  "units": "DN",
+  "ref": "WILSON2006",
+  "needs_verification": true,
+  "verification_test": "Deposition-velocity check of each slurry line at its solids loading (Durand/Wilson correlation) and a flow-loop trial with the plant solids"
+ },
+ "line_min_DN": {
+  "value": 15,
+  "units": "DN",
+  "owner": "smallest DN in AQS-PIP-003 classes"
+ },
+ "ew_bus_drop_V": {
+  "value": 0.3,
+  "units": "V",
+  "register": "AQS-ELEC-004 _rect_ew_sizing VDROP (study)",
+  "needs_verification": true,
+  "verification_test": "Measure bus-bar and contact drop on the installed DC bus at rated current"
+ },
+ "rect_efficiency": {
+  "value": 0.8,
+  "units": "-",
+  "register": "AQS-ELEC-004 _rect_ew_sizing EFF (study)",
+  "needs_verification": true,
+  "verification_test": "Vendor efficiency curve for the selected rectifier at the operating current"
+ },
+ "bmed_product_wt_acid": {
+  "value": 0.0707,
+  "units": "mass fraction HCl at 2 M",
+  "ref": "PERRY9_HCL",
+  "basis": "2 x 36.46 g/L / 1032 g/L"
+ },
+ "bmed_product_wt_base": {
+  "value": 0.0741,
+  "units": "mass fraction NaOH at 2 M",
+  "ref": "PERRY9_HCL",
+  "basis": "2 x 40.00 g/L / 1081 g/L"
+ },
+ "hcl_azeotrope_wt": {
+  "value": 0.202,
+  "units": "mass fraction",
+  "ref": "PERRY9_HCL"
+ },
+ "mvr_kWh_per_t": {
+  "value": 72.0,
+  "units": "kWh/t water evaporated",
+  "ref": "VOGELBUSCH_MVR",
+  "needs_verification": true,
+  "verification_test": "Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot",
+  "published": "VOGELBUSCH_MVR 19-72; EVAPCRYST_MVR 30-60 for high BPE; upper bound taken"
+ },
+ "base_conc_design_wt": {
+  "value": 0.2,
+  "units": "mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT",
+  "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+  "needs_verification": true,
+  "verification_test": "Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt%",
+  "published": "Matches the acid side; no azeotrope limit on NaOH-water"
+ },
+ "bmed_product_molarity": {
+  "value": 2.0,
+  "units": "mol/L acid and base leaving BMED",
+  "ref": "EDBM_WHEY_2021",
+  "needs_verification": true,
+  "verification_test": "EDBM pilot on the plant chloride brine at 2 M product: SEC and current efficiency",
+  "published": "EDBM_WHEY_2021 maximum 3.6 M acid / 3.0 M base; SEC 6.7 kWh/kg quoted at 2 M"
+ },
+ "pv_yield_kWh_kWp_d": {
+  "value": 5.41,
+  "units": "kWh/kWp/d before losses",
+  "ref": "NREL_PVWATTS",
+  "needs_verification": true,
+  "verification_test": "PVsyst or measured site irradiance year at the chosen tilt"
+ },
+ "pv_system_derate": {
+  "value": 0.8,
+  "units": "-",
+  "register": "A-M-061",
+  "needs_verification": true,
+  "verification_test": "PVsyst loss tree for the selected modules and inverters"
+ },
+ "storage_round_trip": {
+  "value": 0.7,
+  "units": "-",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 in-house stack test (X-MFG-41, AQS-TST-002): round trip at 20 mA/cm2 over the daily cycle; the 0.70 design value is held below the physics prediction until then"
+ },
+ "night_hours": {
+  "value": 14.0,
+  "units": "h/d served from storage",
+  "register": "A-M-060",
+  "needs_verification": true,
+  "verification_test": "Hourly load and irradiance profile"
+ },
+ "bus_power_factor": {
+  "value": 0.9,
+  "units": "-",
+  "register": "AQS-ELEC-002 PF (study)",
+  "needs_verification": true,
+  "verification_test": "Measured power factor on the 480 V bus"
+ },
+ "ppt_naoh_per_cl": {
+  "value": 1.0,
+  "units": "mol NaOH per mol chloride precipitated as hydroxide",
+  "ref": "GREENWOOD",
+  "basis": "AlCl3 + 3 NaOH -> Al(OH)3 + 3 NaCl; MCl2 + 2 NaOH -> M(OH)2 + 2 NaCl",
+  "needs_verification": true,
+  "verification_test": "Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES"
+ },
+ "digest_naoh_per_sio2": {
+  "value": 2.0,
+  "units": "mol NaOH per mol SiO2 dissolved",
+  "ref": "GREENWOOD",
+  "basis": "SiO2 + 2 NaOH -> Na2SiO3 + H2O; dissolved mass = IA-GLASS-03 cullet in less S08G glass stock out, all taken as SiO2 (bounding)",
+  "needs_verification": true,
+  "verification_test": "Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet"
+ },
+ "naoh_makeup_form": {
+  "value": 1.0,
+  "units": "mass fraction NaOH in purchased make-up (anhydrous flake)",
+  "register": "X-PAR NaOH balance (owner decision 2026-10-15)",
+  "needs_verification": true,
+  "verification_test": "Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot"
+ },
+ "bay_mm": {
+  "value": 6000,
+  "units": "mm structural bay",
+  "register": "params.py BAY",
+  "needs_verification": true,
+  "verification_test": "Structural grid review"
+ },
+ "base_bays_x": {
+  "value": 4,
+  "units": "bays",
+  "register": "params.py",
+  "needs_verification": true,
+  "verification_test": "Structural grid review"
+ },
+ "base_bays_y": {
+  "value": 3,
+  "units": "bays",
+  "register": "params.py",
+  "needs_verification": true,
+  "verification_test": "Structural grid review"
+ },
+ "pv_module_eff": {
+  "value": 0.19,
+  "units": "STC efficiency",
+  "ref": "NREL_PVWATTS8",
+  "needs_verification": true,
+  "verification_test": "Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC"
+ },
+ "pv_roof_gcr": {
+  "value": 0.6,
+  "units": "ground coverage ratio, low-tilt rows",
+  "register": "A-M-103",
+  "needs_verification": true,
+  "verification_test": "Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt"
+ },
+ "pv_roof_yield_factor": {
+  "value": 1.0,
+  "units": "roof yield / pv_yield_kWh_kWp_d",
+  "register": "A-M-103",
+  "needs_verification": true,
+  "verification_test": "PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio"
+ },
+ "ifc_perim_small_mm": {
+  "value": 1219,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_perim_large_mm": {
+  "value": 1829,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_axis_limit_mm": {
+  "value": 76200,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_array_max_mm": {
+  "value": 45720,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ifc_path_mm": {
+  "value": 1219,
+  "units": "mm",
+  "ref": "IFC2021_1205",
+  "needs_verification": true,
+  "verification_test": "AHJ fire-code review"
+ },
+ "ext_lpd_W_m2": {
+  "value": 8.8,
+  "units": "W/m2",
+  "ref": "IECC2021_C405",
+  "needs_verification": true,
+  "verification_test": "Lighting design of the extension"
+ },
+ "ext_light_frac": {
+  "value": 0.1,
+  "units": "fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1)",
+  "register": "A-M-104",
+  "needs_verification": true,
+  "verification_test": "Operating schedule and daylight study"
+ },
+ "ext_Ra_L_s_m2": {
+  "value": 0.3,
+  "units": "L/(s m2)",
+  "ref": "ASHRAE621_2019",
+  "needs_verification": true,
+  "verification_test": "Occupancy classification of the extension"
+ },
+ "ext_dT_mean_K": {
+  "value": 7.9,
+  "units": "K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals)",
+  "needs_verification": true,
+  "verification_test": "NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation",
+  "ref": "NOAA_NORMALS_DFW"
+ },
+ "ext_cop": {
+  "value": 3.2,
+  "units": "heat pump COP",
+  "ref": "AHRI340_ASHRAE901",
+  "needs_verification": true,
+  "verification_test": "Selected heat-pump rating"
+ },
+ "ext_sfp_W_per_L_s": {
+  "value": 1.25,
+  "units": "W per L/s",
+  "ref": "ISO16798_3",
+  "needs_verification": true,
+  "verification_test": "Fan selection"
+ },
+ "ext_U_roof": {
+  "value": 0.199,
+  "units": "W/(m2 K)",
+  "ref": "IECC2021_C402",
+  "needs_verification": true,
+  "verification_test": "Roof assembly design"
+ },
+ "roof_pv_dead_kPa": {
+  "value": 0.15,
+  "units": "kPa PV modules and ballasted racking",
+  "register": "A-M-105",
+  "needs_verification": true,
+  "verification_test": "Racking design weight per m2"
+ },
+ "roof_live_kPa": {
+  "value": 0.96,
+  "units": "kPa",
+  "ref": "ASCE7_22",
+  "needs_verification": true,
+  "verification_test": "Structural review"
+ },
+ "roof_snow_kPa": {
+  "value": 0.24,
+  "units": "kPa flat-roof snow (study)",
+  "register": "A-M-105",
+  "needs_verification": true,
+  "verification_test": "ASCE 7 Hazard Tool ground snow load at the site"
+ },
+ "ext_conditioned": {
+  "value": 1.0,
+  "units": "1 conditioned, 0 unconditioned hall",
+  "register": "A-M-104 (owner decision 2026-10-15: conditioned)",
+  "needs_verification": true,
+  "verification_test": "Bin-hour load calculation on TMY3 for the hall programme"
+ },
+ "ext_U_wall": {
+  "value": 0.534,
+  "units": "W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3",
+  "ref": "IECC2021_C402",
+  "needs_verification": true,
+  "verification_test": "Wall assembly design"
+ },
+ "ext_wall_h_mm": {
+  "value": 6000,
+  "units": "mm eave height of the extension (EXT_HALL block height)",
+  "register": "A-M-104",
+  "needs_verification": true,
+  "verification_test": "Hall section drawing"
+ },
+ "evap_bp_acid_C": {
+  "value": 108.6,
+  "units": "C boiling at 101.3 kPa, 20 wt% HCl (azeotrope temperature, bounding)",
+  "needs_verification": true,
+  "verification_test": "Boiling-point measurement on the product at the body pressure",
+  "ref": "PERRY9_HCL"
+ },
+ "evap_bp_base_C": {
+  "value": 108.0,
+  "units": "C boiling at 101.3 kPa, 20 wt% NaOH (BPE 8 K from the Duhring lines)",
+  "needs_verification": true,
+  "verification_test": "Read-off check on the Duhring chart and boiling-point measurement",
+  "ref": "MCCABE7_DUHRING"
+ },
+ "evap_body_kPa": {
+  "value": 101.325,
+  "units": "kPa abs body pressure",
+  "needs_verification": true,
+  "verification_test": "Bench or pilot measurement",
+  "register": "A-M-106"
+ },
+ "evap_dT_drive_K": {
+  "value": 6.0,
+  "units": "K condensing minus boiling",
+  "needs_verification": true,
+  "verification_test": "Pilot run: compressor ratio vs heat flux",
+  "register": "A-M-106"
+ },
+ "evap_U_ff": {
+  "value": 1500.0,
+  "units": "W/(m2 K) falling film, condensing steam outside",
+  "needs_verification": true,
+  "verification_test": "Pilot measurement of U",
+  "ref": "PERRY9_EVAP"
+ },
+ "evap_U_ix": {
+  "value": 2000.0,
+  "units": "W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate)",
+  "needs_verification": true,
+  "verification_test": "Thermal test of the interchanger",
+  "ref": "PERRY9_EVAP"
+ },
+ "evap_feed_T_C": {
+  "value": 35.0,
+  "units": "C BMED product temperature",
+  "needs_verification": true,
+  "verification_test": "BMED stack outlet temperature log",
+  "register": "A-M-106"
+ },
+ "evap_approach_K": {
+  "value": 10.0,
+  "units": "K interchanger cold-end approach",
+  "needs_verification": true,
+  "verification_test": "Interchanger thermal test",
+  "register": "A-M-106"
+ },
+ "evap_cp_feed": {
+  "value": 3.85,
+  "units": "kJ/(kg K) 2 M HCl or NaOH",
+  "needs_verification": true,
+  "verification_test": "Perry sec. 2 heat-capacity table read-off",
+  "ref": "PERRY9"
+ },
+ "evap_cp_acid_prod": {
+  "value": 3.1,
+  "units": "kJ/(kg K) 20 wt% HCl",
+  "needs_verification": true,
+  "verification_test": "Perry sec. 2 heat-capacity table read-off",
+  "ref": "PERRY9"
+ },
+ "evap_cp_base_prod": {
+  "value": 3.55,
+  "units": "kJ/(kg K) 20 wt% NaOH",
+  "needs_verification": true,
+  "verification_test": "Perry sec. 2 heat-capacity table read-off",
+  "ref": "PERRY9"
+ },
+ "evap_comp_eta": {
+  "value": 0.7,
+  "units": "isentropic efficiency, single-stage blower",
+  "needs_verification": true,
+  "verification_test": "Compressor map of the in-house blower",
+  "ref": "PERRY9_PUMP"
+ },
+ "evap_motor_eta": {
+  "value": 0.9,
+  "units": "motor efficiency",
+  "needs_verification": true,
+  "verification_test": "IEC 60034-30-1 class of the motor used",
+  "register": "A-M-106"
+ },
+ "evap_k_steam": {
+  "value": 1.33,
+  "units": "cp/cv low-pressure steam",
+  "needs_verification": true,
+  "verification_test": "-",
+  "ref": "IAPWS_IF97"
+ },
+ "evap_tube_id_mm": {
+  "value": 25.0,
+  "units": "mm",
+  "needs_verification": true,
+  "verification_test": "Tube stock",
+  "register": "A-M-107"
+ },
+ "evap_tube_L_mm": {
+  "value": 1500.0,
+  "units": "mm",
+  "needs_verification": true,
+  "verification_test": "Envelope fit",
+  "register": "A-M-107"
+ },
+ "evap_wet_min": {
+  "value": 0.05,
+  "units": "kg/(m s) minimum falling-film wetting rate",
+  "needs_verification": true,
+  "verification_test": "Pilot wetting test",
+  "ref": "PERRY9_EVAP"
+ },
+ "evap_body_design_kPag": {
+  "value": 100.0,
+  "units": "kPa g body design (plus full vacuum)",
+  "needs_verification": true,
+  "verification_test": "Pressure test per ASME VIII-1 UG-99 / ISO 16528",
+  "register": "A-M-107"
+ },
+ "evap_shell_design_kPag": {
+  "value": 350.0,
+  "units": "kPa g steam shell design",
+  "needs_verification": true,
+  "verification_test": "Pressure test",
+  "register": "A-M-107"
+ },
+ "evap_sump_h_mm": {
+  "value": 400.0,
+  "units": "mm liquid in the sump",
+  "needs_verification": true,
+  "verification_test": "Level control setpoint",
+  "register": "A-M-107"
+ },
+ "evap_cond_hcl_wt": {
+  "value": 0.005,
+  "units": "mass fraction HCl in the acid condensate (column top vapour)",
+  "register": "A-M-108",
+  "needs_verification": true,
+  "verification_test": "Titrate the condensate on the pilot; must sit above the 0.0034 equilibrium over the 2 M feed (PERRY7_HCL_VLE)"
+ },
+ "evap_col_hetp_mm": {
+  "value": 500.0,
+  "units": "mm HETP, 25 mm random rings",
+  "ref": "PERRY9_ABS",
+  "needs_verification": true,
+  "verification_test": "Pilot column composition profile"
+ },
+ "evap_col_margin": {
+  "value": 1.5,
+  "units": "packed height margin on ideal stages x HETP",
+  "register": "A-M-108",
+  "needs_verification": true,
+  "verification_test": "Pilot column"
+ },
+ "evap_col_u_m_s": {
+  "value": 1.0,
+  "units": "m/s superficial vapour velocity (below flooding for 25 mm rings at this load)",
+  "ref": "PERRY9_ABS",
+  "needs_verification": true,
+  "verification_test": "Flooding check with the selected packing C_s (sizing/scrubber.py)"
+ },
+ "pv_oversize_factor": {
+  "value": 2.0,
+  "units": "PV nameplate / PV needed to close the daily balance",
+  "register": "A-M-109",
+  "needs_verification": true,
+  "verification_test": "NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility",
+  "published": "Owner decision, Mike Matthews 2026-10-15 (D75): 200 % of plant requirement; storage still charges on a day at half the mean yield, surplus exported"
+ },
+ "pv_dc_ac_ratio": {
+  "value": 1.2,
+  "units": "DC kWp / inverter AC kW",
+  "ref": "NREL_PVWATTS8",
+  "needs_verification": true,
+  "verification_test": "Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio",
+  "published": "NREL PVWatts v8 default DC to AC size ratio 1.2"
+ },
+ "vs_air_mg_kg": {
+  "value": 21.7,
+  "units": "mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water)",
+  "ref": "WEISS1970",
+  "needs_verification": true,
+  "register": "A-M-111",
+  "verification_test": "Vent gas flow meter on the column vent during commissioning"
+ },
+ "vs_T_C": {
+  "value": 40.0,
+  "units": "C, vent condenser outlet",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Vent condenser outlet temperature at design cooling water"
+ },
+ "vs_y_out_ppm": {
+  "value": 1.0,
+  "units": "ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm)",
+  "ref": "ACGIH_HCL",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Outlet HCl by NIOSH 7903 sampling"
+ },
+ "vs_margin": {
+  "value": 1.5,
+  "units": "packed height margin",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "as vs_htu_m"
+ },
+ "vs_dp_mm": {
+  "value": 16.0,
+  "units": "mm, nominal packing (in-house cut PVC tube rings)",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Pressure drop and wetting test on the cut rings"
+ },
+ "vs_d_over_dp": {
+  "value": 8.0,
+  "units": "column / packing diameter minimum (wall channelling)",
+  "ref": "PERRY9_ABS",
+  "needs_verification": false
+ },
+ "vs_a_m2_m3": {
+  "value": 340.0,
+  "units": "m2/m3 specific area of 16 mm rings",
+  "ref": "PERRY9_ABS",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Measured ring geometry"
+ },
+ "vs_mwr": {
+  "value": 0.08,
+  "units": "m3/(m h) minimum wetting rate, packings below 75 mm",
+  "ref": "PERRY9_ABS",
+  "needs_verification": false
+ },
+ "vs_naoh_excess": {
+  "value": 2.0,
+  "units": "mol NaOH fed / mol HCl absorbed",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Sump pH above 12 at the bleed rate"
+ },
+ "vs_p_shell_case": {
+  "value": "upset",
+  "units": "design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported",
+  "register": "A-M-111",
+  "needs_verification": true,
+  "verification_test": "Condensate titration during start-up before the column profile forms"
+ },
+ "ext_dTh_K": {
+  "value": 3.458,
+  "units": "K mean heating dT = HDD65 2272 F-d x 5/9 / 365",
+  "ref": "NOAA_NORMALS_DFW",
+  "needs_verification": true,
+  "verification_test": "TMY3 bin-hour calculation"
+ },
+ "ext_dTc_K": {
+  "value": 4.381,
+  "units": "K mean cooling dT = CDD65 2878 F-d x 5/9 / 365",
+  "ref": "NOAA_NORMALS_DFW",
+  "needs_verification": true,
+  "verification_test": "TMY3 bin-hour calculation"
+ },
+ "ext_F_slab": {
+  "value": 1.264,
+  "units": "W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3",
+  "ref": "IECC2021_C402",
+  "needs_verification": true,
+  "verification_test": "Slab edge detail"
+ },
+ "ext_hvac": {
+  "value": "air",
+  "units": "'air', 'ground' or 'best' (lower converged footprint)",
+  "register": "A-M-112",
+  "needs_verification": true,
+  "verification_test": "Owner review of the X-PAR-08 comparison",
+  "owner": "Mike Matthews 2026-10-15: air-source; 27 km of bores for a 0.2 % footprint gain is inside input uncertainty and adds major build complexity (D77)"
+ },
+ "ash_cop_h": {
+  "value": 3.3,
+  "units": "air-source heat pump heating COP at 8.3 C, >= 19 kW",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating; low-ambient derate in bin-hour run"
+ },
+ "ash_cop_c": {
+  "value": 3.22,
+  "units": "air-source heat pump cooling COP (EER 11.0), >= 19 kW",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating"
+ },
+ "gsh_cop_h": {
+  "value": 3.2,
+  "units": "ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1)",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating at design loop temperature"
+ },
+ "gsh_cop_c": {
+  "value": 4.13,
+  "units": "ground-source heat pump cooling COP (EER 14.1 at 25 C entering fluid, ISO 13256-1)",
+  "ref": "ASHRAE901_2019_T6812",
+  "needs_verification": true,
+  "verification_test": "Selected unit rating at design loop temperature"
+ },
+ "gsh_pump_W_per_kWt": {
+  "value": 37.0,
+  "units": "W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A)",
+  "ref": "KAVANAUGH2014",
+  "needs_verification": true,
+  "verification_test": "Loop hydraulic design"
+ },
+ "gsh_bore_m_per_kWt": {
+  "value": 55.0,
+  "units": "m vertical bore per kW peak block load (mid of 43-65 m/kW typical range)",
+  "ref": "KAVANAUGH2014",
+  "register": "A-M-112",
+  "needs_verification": true,
+  "verification_test": "Thermal response test and ASHRAE bore-length method"
+ },
+ "gsh_bore_spacing_m": {
+  "value": 6.0,
+  "units": "m bore spacing",
+  "ref": "KAVANAUGH2014",
+  "needs_verification": true,
+  "verification_test": "Bore-field simulation (g-functions)"
+ },
+ "gsh_bore_depth_m": {
+  "value": 120.0,
+  "units": "m bore depth",
+  "register": "A-M-112",
+  "needs_verification": true,
+  "verification_test": "Drilling log"
+ },
+ "ext_T_design_h_C": {
+  "value": -5.0,
+  "units": "C heating design dry bulb 99.6 % (DFW)",
+  "ref": "ASHRAE_FUND_2021",
+  "needs_verification": true,
+  "verification_test": "ASHRAE 2021 climatic data for the station"
+ },
+ "ext_T_design_c_C": {
+  "value": 38.0,
+  "units": "C cooling design dry bulb 0.4 % (DFW)",
+  "ref": "ASHRAE_FUND_2021",
+  "needs_verification": true,
+  "verification_test": "ASHRAE 2021 climatic data for the station"
+ },
+ "ext_T_in_C": {
+  "value": 18.3,
+  "units": "C balance (65 F, degree-day base)",
+  "ref": "NOAA_NORMALS_DFW",
+  "needs_verification": false
+ },
+ "sec_ocpd_max_A": {
+  "value": 1000,
+  "units": "A, largest section breaker (stays below the NEC 240.87 1200 A arc-energy-reduction threshold)",
+  "ref": "NEC2023_240",
+  "needs_verification": false
+ },
+ "mv_kV": {
+  "value": 12.47,
+  "units": "kV collection and point of common coupling",
+  "register": "A-M-114",
+  "needs_verification": true,
+  "verification_test": "Utility interconnection study (owner input A-M-113): service voltage"
+ },
+ "xfmr_Z_pu": {
+  "value": 0.0575,
+  "units": "pu pad-mount transformer impedance",
+  "ref": "IEEE_C57_12_34",
+  "needs_verification": true,
+  "verification_test": "Transformer nameplate"
+ },
+ "rx_glass_k0_g_m2_s": {
+  "value": 0.0002,
+  "units": "g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-]",
+  "ref": "JMS2017_GLASSFIBRE",
+  "needs_verification": true,
+  "register": "A-M-116",
+  "verification_test": "Bench digest of milled cullet at 2 M / 20 wt% NaOH, 85 C: SiO2 in liquor vs time"
+ },
+ "rx_glass_d_um": {
+  "value": 100.0,
+  "units": "um milled cullet fines diameter to the digest",
+  "register": "A-M-116",
+  "needs_verification": true,
+  "verification_test": "Sieve analysis of GLASS_MILL product"
+ },
+ "rx_glass_tau_min_h": {
+  "value": 1.0,
+  "units": "h practical minimum residence (mixing, heat-up, level control)",
+  "register": "A-M-116",
+  "needs_verification": true,
+  "verification_test": "Bench digest"
+ },
+ "rx_digester_srt_d": {
+  "value": 20.0,
+  "units": "d mesophilic SRT (high-rate, 35 C; typical 15-20 d)",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "VS destruction and gas yield in the pilot digester"
+ },
+ "rx_pyro_T_C": {
+  "value": 500.0,
+  "units": "C slow pyrolysis of oils and polymer residue",
+  "ref": "ANUAR2016",
+  "needs_verification": true,
+  "verification_test": "TGA of the dried float oil"
+ },
+ "rx_pyro_tau_h": {
+  "value": 1.0,
+  "units": "h solid/liquid residence, batch-equivalent",
+  "ref": "ANUAR2016",
+  "needs_verification": true,
+  "verification_test": "TGA conversion vs time at 500 C"
+ },
+ "rx_pyro_dH_MJ_kg": {
+  "value": 1.3,
+  "units": "MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements)",
+  "ref": "GAO2010",
+  "needs_verification": true,
+  "register": "A-M-116",
+  "verification_test": "DSC of the dried float oil"
+ },
+ "rx_pyro_cp_kJ_kgK": {
+  "value": 2.5,
+  "units": "kJ/(kg K) mean feed heat capacity 25-500 C",
+  "ref": "PERRY9_HEAT",
+  "needs_verification": true,
+  "register": "A-M-116",
+  "verification_test": "DSC"
+ },
+ "rx_pyro_heater_eff": {
+  "value": 0.7,
+  "units": "electric to process, insulated retort",
+  "register": "A-M-116",
+  "needs_verification": true,
+  "verification_test": "Heater energy meter on the pilot retort"
+ },
+ "rx_fill": {
+  "value": 0.75,
+  "units": "working / total volume",
+  "ref": "PERRY9_MIX",
+  "needs_verification": false
+ },
+ "rx_tip_m_s": {
+  "value": 2.5,
+  "units": "m/s impeller tip speed for suspension",
+  "ref": "PERRY9_MIX",
+  "needs_verification": true,
+  "verification_test": "Just-suspended speed (Zwietering) at the bench"
+ },
+ "rx_Np_pbt": {
+  "value": 1.27,
+  "units": "power number, 4-blade 45 deg PBT, turbulent",
+  "ref": "PERRY9_MIX",
+  "needs_verification": false
+ },
+ "san_crew": {
+  "value": 4,
+  "units": "persons, HAB design occupancy (HABITATION params.crew_study)",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Owner occupancy schedule"
+ },
+ "san_feces_wet_kg_cap_d": {
+  "value": 0.128,
+  "units": "kg/(cap d) wet faeces, median",
+  "ref": "ROSE2015",
+  "needs_verification": false
+ },
+ "san_feces_dry_kg_cap_d": {
+  "value": 0.028,
+  "units": "kg/(cap d) faecal dry solids, median",
+  "ref": "ROSE2015",
+  "needs_verification": false
+ },
+ "san_urine_kg_cap_d": {
+  "value": 1.42,
+  "units": "kg/(cap d) urine, median",
+  "ref": "ROSE2015",
+  "needs_verification": false
+ },
+ "san_flush_L": {
+  "value": 1.0,
+  "units": "L per flush, vacuum toilet",
+  "ref": "LARSEN2013",
+  "needs_verification": true,
+  "verification_test": "Flush volume on the in-house vacuum toilet prototype"
+ },
+ "san_flushes_cap_d": {
+  "value": 5.0,
+  "units": "flushes per person per day",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Flush counter on the HAB toilets for 30 days"
+ },
+ "san_compost_fraction": {
+  "value": 0.25,
+  "units": "share of excreta to compost toilets (daily average; each path sized for 100 %)",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Owner HAB fit-out (number of each toilet type) and use log"
+ },
+ "san_vs_fraction": {
+  "value": 0.85,
+  "units": "VS / TS of faeces",
+  "ref": "ROSE2015",
+  "needs_verification": true,
+  "verification_test": "TS/VS (Standard Methods 2540 G) on the digester feed"
+ },
+ "san_vs_destruction": {
+  "value": 0.5,
+  "units": "fraction of VS destroyed, thermophilic anaerobic",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "VS reduction across BLACK_DIGEST (Standard Methods 2540 G)"
+ },
+ "san_digest_T_C": {
+  "value": 55.0,
+  "units": "C thermophilic digestion",
+  "ref": "METCALF5",
+  "needs_verification": false
+ },
+ "san_digest_srt_d": {
+  "value": 15.0,
+  "units": "d thermophilic SRT",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "Digester stability (VFA/alkalinity) at 15 d"
+ },
+ "san_past_T_C": {
+  "value": 70.0,
+  "units": "C pasteurisation, held >= 30 min (40 CFR 503 App. B PFRP)",
+  "ref": "EPA503",
+  "needs_verification": false
+ },
+ "san_past_min": {
+  "value": 30.0,
+  "units": "min hold at temperature",
+  "ref": "EPA503",
+  "needs_verification": false
+ },
+ "san_past_batches_d": {
+  "value": 4,
+  "units": "batches per day",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Pasteuriser cycle log"
+ },
+ "san_hold_d": {
+  "value": 3.0,
+  "units": "d batch hold before release (72 h alkaline contact when used; release on test)",
+  "ref": "EPA503",
+  "needs_verification": false
+ },
+ "san_cake_TS": {
+  "value": 0.2,
+  "units": "cake dry solids fraction after screw press",
+  "ref": "METCALF5",
+  "needs_verification": true,
+  "verification_test": "Cake TS on the in-house screw press"
+ },
+ "san_cover_dry": {
+  "value": 0.3,
+  "units": "dry fraction of compost-toilet cover and bed return",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "TS of cover material"
+ },
+ "san_farm_sep_m": {
+  "value": 7.62,
+  "units": "m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation",
+  "register": "A-M-118",
+  "needs_verification": true,
+  "verification_test": "Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room"
+ },
+ "znbr_cell_V": {
+  "value": 1.82,
+  "units": "V",
+  "ref": "SAND2000-0893"
+ },
+ "znbr_her_mL_h_cm2": {
+  "value": 0.055,
+  "units": "mL/h/cm2 at 20 mA/cm2",
+  "ref": "ZBFB_REVIEW2023"
+ },
+ "znbr_oc_corr_mL_h_cm2": {
+  "value": 0.0032,
+  "units": "mL/h/cm2",
+  "ref": "ZBFB_REVIEW2023"
+ },
+ "znbr_j_mA_cm2": {
+  "value": 20.0,
+  "units": "mA/cm2",
+  "ref": "ZBFB_REVIEW2023"
+ },
+ "h2_purge_frac_of_LFL": {
+  "value": 0.25,
+  "units": "-",
+  "ref": "NFPA69_2019"
+ },
+ "znbr_charge_h": {
+  "value": 6.0,
+  "units": "h/d",
+  "register": "A-M-135",
+  "needs_verification": true,
+  "verification_test": "see A-M-135"
+ },
+ "nft_gully_pitch_m": {
+  "value": 0.2,
+  "units": "m",
+  "ref": "CROPKING_NFT"
+ },
+ "nft_gully_L_min": {
+  "value": 1.0,
+  "units": "L/min",
+  "ref": "COOPER1996"
+ },
+ "hpa_nozzles_m2": {
+  "value": 6,
+  "units": "1/m2",
+  "ref": "HPA_PRACTICE"
+ },
+ "hpa_nozzle_L_min": {
+  "value": 0.0568,
+  "units": "L/min",
+  "ref": "HPA_PRACTICE"
+ },
+ "hpa_on_s": {
+  "value": 4.0,
+  "units": "s",
+  "ref": "LAKHIAR2018"
+ },
+ "hpa_off_s": {
+  "value": 240.0,
+  "units": "s",
+  "ref": "LAKHIAR2018"
+ },
+ "substrate_drain_frac": {
+  "value": 0.2,
+  "units": "-",
+  "ref": "PLOSONE2017_DRAIN"
+ },
+ "atomizer_offspec_frac": {
+  "value": 0.1,
+  "units": "-",
+  "register": "A-M-139",
+  "needs_verification": true,
+  "verification_test": "see A-M-139"
+ },
+ "bvad_tomato_T_kg_m2_d": {
+  "value": 2.77,
+  "units": "kg/m2/d",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_CO2_g_m2_d": {
+  "value": 36.24,
+  "units": "g/m2/d",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_C_frac": {
+  "value": 0.43,
+  "units": "-",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_HI": {
+  "value": 0.45,
+  "units": "-",
+  "ref": "BVAD2022"
+ },
+ "bvad_tomato_tM_d": {
+  "value": 80,
+  "units": "d",
+  "ref": "BVAD2022"
+ },
+ "zeolite5A_CO2_wt_frac": {
+  "value": 0.01,
+  "units": "kg/kg at 0.4 kPa",
+  "ref": "NASA_5A1998"
+ },
+ "hydro_eta_turbine": {
+  "value": 0.8,
+  "units": "-",
+  "ref": "DOE_PSH"
+ },
+ "hydro_eta_pump": {
+  "value": 0.85,
+  "units": "-",
+  "ref": "DOE_PSH"
+ },
+ "pyro_band_fracs": {
+  "value": [
+   0.34,
+   0.315,
+   0.345
+  ],
+  "units": "mass fraction C7-12/C13-20/C21-40",
+  "ref": "SU2018_PYRO"
+ },
+ "bed_quantum_yield": {
+  "value": 0.045,
+  "units": "mol CO2/mol photon",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "bed_absorptance": {
+  "value": 0.9,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "led_efficacy_umol_J": {
+  "value": 2.8,
+  "units": "umol/J",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "bed_DLI": {
+  "value": 17.0,
+  "units": "mol/m2/d",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "pem_kWh_kg_H2": {
+  "value": 55.0,
+  "units": "kWh/kg",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "ew_cathode_CE": {
+  "value": 0.85,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "ew_anode_O2_frac": {
+  "value": 0.02,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "combustion_excess_O2": {
+  "value": 1.1,
+  "units": "-",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "ahu_chiller_COP": {
+  "value": 2.96,
+  "units": "-",
+  "ref": "ASHRAE901_2022"
+ },
+ "api2000_Y": {
+  "value": 0.32,
+  "units": "-",
+  "ref": "API2000_2020"
+ },
+ "api2000_C": {
+  "value": 6.5,
+  "units": "-",
+  "ref": "API2000_2020"
+ },
+ "vent_transfer_h": {
+  "value": 1.0,
+  "units": "h",
+  "register": "A-M-155",
+  "needs_verification": true,
+  "verification_test": "see A-M-155"
+ },
+ "vent_dP_Pa": {
+  "value": 500.0,
+  "units": "Pa",
+  "register": "A-M-155",
+  "needs_verification": true,
+  "verification_test": "see A-M-155"
+ },
+ "meoh_wty_kg_kgcat_h": {
+  "value": 1.22,
+  "units": "kg MeOH/(kg cat h) at 60 bar 523 K, CO2-only feed",
+  "ref": "CTC2020_CZA"
+ },
+ "meoh_wty_margin": {
+  "value": 3.0,
+  "units": "-",
+  "register": "A-M-156",
+  "needs_verification": true,
+  "verification_test": "see A-M-156"
+ },
+ "meoh_cat_bulk_kg_L": {
+  "value": 1.1,
+  "units": "kg/L",
+  "register": "A-M-156",
+  "needs_verification": true,
+  "verification_test": "see A-M-156"
+ },
+ "meoh_dH_kJ_mol": {
+  "value": 49.5,
+  "units": "kJ/mol released, CO2 + 3 H2 -> CH3OH + H2O(g)",
+  "ref": "NIST_WEBBOOK"
+ },
+ "meoh_S_MPa": {
+  "value": 118.0,
+  "units": "MPa, SA-106 B at 260 C",
+  "ref": "ASME_II_D"
+ },
+ "press_design_margin": {
+  "value": 1.1,
+  "units": "design / operating pressure",
+  "register": "A-M-156",
+  "needs_verification": true,
+  "verification_test": "see A-M-156"
+ },
+ "ely_window_h": {
+  "value": 6.0,
+  "units": "h/d",
+  "register": "A-M-133",
+  "needs_verification": true,
+  "verification_test": "see A-M-133"
+ },
+ "rx_yeast_tau_h": {
+  "value": 48,
+  "units": "h",
+  "ref": "BAI2008"
+ },
+ "rx_yeast_T_C": {
+  "value": 32,
+  "units": "C",
+  "ref": "BAI2008"
+ },
+ "rx_abe_tau_h": {
+  "value": 72,
+  "units": "h",
+  "ref": "JONES1986"
+ },
+ "rx_abe_T_C": {
+  "value": 37,
+  "units": "C",
+  "ref": "JONES1986"
+ },
+ "rx_acetox_tau_h": {
+  "value": 24,
+  "units": "h",
+  "ref": "GULLO2014"
+ },
+ "rx_acetox_T_C": {
+  "value": 30,
+  "units": "C",
+  "ref": "GULLO2014"
+ },
+ "rx_htc_tau_h": {
+  "value": 4,
+  "units": "h",
+  "ref": "LIBRA2011"
+ },
+ "rx_htc_T_C": {
+  "value": 200,
+  "units": "C",
+  "ref": "LIBRA2011"
+ },
+ "psat_water_200C_MPa": {
+  "value": 1.555,
+  "units": "MPa",
+  "ref": "NIST_WEBBOOK"
+ },
+ "sa240_316L_S_MPa_200C": {
+  "value": 115.0,
+  "units": "MPa, SA-240 316L at 200 C",
+  "ref": "ASME_II_D"
+ },
+ "rx_ald_whsv_h": {
+  "value": 1.0,
+  "units": "1/h on ethanol (3.16 h-1 published / about 3)",
+  "register": "A-M-157",
+  "needs_verification": true,
+  "verification_test": "see A-M-157"
+ },
+ "rx_ald_T_C": {
+  "value": 250,
+  "units": "C",
+  "ref": "CUSIO2_ALD2023"
+ },
+ "rx_form_space_time_g_h_mol": {
+  "value": 50.63,
+  "units": "g cat h/mol MeOH",
+  "ref": "CEAT2010_FORM"
+ },
+ "rx_form_T_C": {
+  "value": 350,
+  "units": "C",
+  "ref": "FORMOX_REVIEW2021"
+ },
+ "rx_meam_ghsv_h": {
+  "value": 1100.0,
+  "units": "1/h total gas at NTP",
+  "ref": "US1875746"
+ },
+ "rx_meam_T_C": {
+  "value": 400,
+  "units": "C",
+  "ref": "EP0064380"
+ },
+ "rx_meam_P_bar": {
+  "value": 20.7,
+  "units": "bar",
+  "ref": "EP0064380"
+ },
+ "rx_cat_bulk_kg_L": {
+  "value": 1.0,
+  "units": "kg/L",
+  "register": "A-M-157",
+  "needs_verification": true,
+  "verification_test": "see A-M-157"
+ },
+ "rx_ald_dH_kJ_mol": {
+  "value": 68.7,
+  "units": "kJ/mol endothermic",
+  "ref": "NIST_WEBBOOK"
+ },
+ "hvap_ethanol_MJ_kg": {
+  "value": 0.85,
+  "units": "MJ/kg",
+  "ref": "NIST_WEBBOOK"
+ },
+ "hvap_methanol_MJ_kg": {
+  "value": 1.1,
+  "units": "MJ/kg",
+  "ref": "NIST_WEBBOOK"
+ },
+ "hvap_ammonia_MJ_kg": {
+  "value": 1.37,
+  "units": "MJ/kg",
+  "ref": "NIST_WEBBOOK"
+ },
+ "s_316L_400C_MPa_lower_bound": {
+  "value": 80.0,
+  "units": "MPa",
+  "register": "A-M-157",
+  "needs_verification": true,
+  "verification_test": "read ASME II-D Table 1A for SA-312 TP316L at 400 C"
+ },
+ "ins_h_surface_W_m2K": {
+  "value": 10.0,
+  "units": "W/(m2 K) combined outer coefficient",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_hot_surface_max_C": {
+  "value": 50.0,
+  "units": "C (below the ASTM C1055 60 C contact threshold)",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_ambient_C": {
+  "value": 25.0,
+  "units": "C",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_RH": {
+  "value": 0.6,
+  "units": "-",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_k_mw_a": {
+  "value": 0.037,
+  "units": "W/(m K) mineral wool k at 0 C mean",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_k_mw_b": {
+  "value": 0.00017,
+  "units": "W/(m K2) slope",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_k_elast": {
+  "value": 0.04,
+  "units": "W/(m K) elastomeric (C534 max)",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_hot_threshold_C": {
+  "value": 50.0,
+  "units": "C, lines above are insulated",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "ins_loss_frac_of_duty": {
+  "value": 0.1,
+  "units": "-",
+  "register": "A-M-158",
+  "needs_verification": true,
+  "verification_test": "see A-M-158"
+ },
+ "rx_glyoxal_T_C": {
+  "value": 40,
+  "units": "C",
+  "ref": "HOTANAHALLI1972"
+ },
+ "rx_glyoxal_tau_h": {
+  "value": 6,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "bench oxidation of acetaldehyde in 40 % HNO3 at 40 C: glyoxal yield against time"
+ },
+ "rx_imid_T_C": {
+  "value": 70,
+  "units": "C",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "bench Debus-Radziszewski condensation of glyoxal, formaldehyde, methylamine and ammonia: conversion against T"
+ },
+ "rx_imid_tau_h": {
+  "value": 4,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "same bench run: 1-methylimidazole yield against time"
+ },
+ "rx_bucl_T_C": {
+  "value": 105,
+  "units": "C",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "bench ZnCl2-catalysed n-butanol + HCl at reflux: conversion against time"
+ },
+ "rx_bucl_tau_h": {
+  "value": 6,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "same bench run"
+ },
+ "rx_hno3_gauze_T_C": {
+  "value": 900,
+  "units": "C",
+  "ref": "ULLMANN_NITRIC"
+ },
+ "rx_hno3_absorber_tau_h": {
+  "value": 2,
+  "units": "h",
+  "register": "A-M-161 (X-MFG-31 batch 4)",
+  "needs_verification": true,
+  "verification_test": "NO absorption test of the HNO3 column at plant rate: outlet NOx"
+ },
+ "ix_sba_cap_eq_L": {
+  "value": 1.2,
+  "units": "eq/L bed",
+  "ref": "PERRY9_IX"
+ },
+ "ix_util": {
+  "value": 0.5,
+  "units": "fraction of total capacity used per cycle",
+  "register": "A-M-162 (X-PAR-14)",
+  "needs_verification": true,
+  "verification_test": "breakthrough curve of [Bmim]Cl on the OH-form resin at the plant rate"
+ },
+ "ix_cycle_h": {
+  "value": 24,
+  "units": "h between regenerations",
+  "register": "A-M-162 (X-PAR-14)",
+  "needs_verification": true,
+  "verification_test": "same breakthrough test"
+ },
+ "rx_meohferm_tau_h": {
+  "value": 48,
+  "units": "h",
+  "register": "A-M-163 (X-MFG-31 MEOH_FERM)",
+  "needs_verification": true,
+  "verification_test": "bench ferment of habitation organics: methanol release (pectin demethylation) against time"
+ },
+ "rx_meohferm_T_C": {
+  "value": 35,
+  "units": "C",
+  "register": "A-M-163 (X-MFG-31 MEOH_FERM)",
+  "needs_verification": true,
+  "verification_test": "same bench run"
+ },
+ "hs_dp_mm": {
+  "value": 25.0,
+  "units": "mm, in-house cut PP tube rings",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "in-house packing sample: count per m3 and void fraction"
+ },
+ "hs_a_m2_m3": {
+  "value": 190.0,
+  "units": "m2/m3 specific area of 25 mm cut rings",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "geometric area from the packing sample"
+ },
+ "hs_Cs_flood_m_s": {
+  "value": 0.07,
+  "units": "m/s capacity factor at flood, 25 mm cut rings",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "air-water flooding test of a 200 mm column of the in-house packing"
+ },
+ "hs_frac_flood": {
+  "value": 0.7,
+  "units": "design fraction of flood",
+  "ref": "PERRY9_ABS"
+ },
+ "hs_htu_m": {
+  "value": 0.5,
+  "units": "m, overall gas HTU",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "absorption test (NH3 or SO2 in air into water) on the same column"
+ },
+ "hs_removal": {
+  "value": 0.99,
+  "units": "fraction of the absorbable species removed",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "outlet sampling at commissioning"
+ },
+ "hs_dP_Pa_m": {
+  "value": 400.0,
+  "units": "Pa per m of bed at the design fraction of flood",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "pressure drop on the flooding test"
+ },
+ "hs_fan_eff": {
+  "value": 0.5,
+  "units": "fan total efficiency",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "fan test"
+ },
+ "hs_pump_head_m": {
+  "value": 10.0,
+  "units": "m recirculation pump head",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "pump test"
+ },
+ "hs_pump_eff": {
+  "value": 0.4,
+  "units": "small pump efficiency",
+  "register": "A-M-164 (X-PAR-03 house scrubbers)",
+  "needs_verification": true,
+  "verification_test": "pump test"
+ },
+ "s_316L_38C_MPa": {
+  "value": 115.0,
+  "units": "MPa allowable, SA-312 TP316L seamless, -29 to 38 C",
+  "ref": "ASME_II_D"
+ },
+ "rcv_tube_len_m": {
+  "value": 6.096,
+  "units": "m, one random length per tube (as AQS-INV-003)",
+  "register": "A-M-167 (receiver banks)",
+  "needs_verification": true,
+  "verification_test": "rack layout check against the CRYO bay"
+ },
+ "h2p_o2_ppmv": {
+  "value": 1000.0,
+  "units": "ppm v O2 in the purifier feed",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "O2 analyser on S49 in operation"
+ },
+ "h2p_deoxo_ghsv_h": {
+  "value": 5000.0,
+  "units": "1/h over Pd/Al2O3 deoxo",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "outlet O2 below 5 ppm at the design rate on the first charge"
+ },
+ "h2p_hcl_ppmv": {
+  "value": 1.0,
+  "units": "ppm v HCl in the feed (EW cathode gas trace)",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "HCl sampling of S49 (Draeger tube or IC)"
+ },
+ "h2p_guard_cap": {
+  "value": 0.1,
+  "units": "kg HCl per kg promoted alumina",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "breakthrough test on a sample of the guard charge"
+ },
+ "h2p_guard_days": {
+  "value": 90.0,
+  "units": "d between guard change-outs",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2p_sieve_work_cap": {
+  "value": 0.1,
+  "units": "kg water per kg 4A/13X sieve, working capacity at the cycle",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "breakthrough test on the sieve charge with a dew-point analyser"
+ },
+ "h2p_cycle_h": {
+  "value": 8.0,
+  "units": "h adsorption half-cycle",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2p_bed_margin": {
+  "value": 3.0,
+  "units": "bed mass margin over the cycle load (mass-transfer zone, ageing)",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2p_regen_T_C": {
+  "value": 250.0,
+  "units": "C TSA regeneration temperature",
+  "register": "A-M-168 (X-MFG-39 H2_PURIFIER)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2c_P1_bar": {
+  "value": 10.0,
+  "units": "bar a suction (electrolyser outlet)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "electrolyser outlet pressure log"
+ },
+ "h2c_P2_bar": {
+  "value": 200.0,
+  "units": "bar a discharge (CRYO_H2 bank)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "bank pressure log"
+ },
+ "h2c_k": {
+  "value": 1.41,
+  "units": "cp/cv H2 near ambient",
+  "ref": "NIST_WEBBOOK"
+ },
+ "h2c_eta_ad": {
+  "value": 0.65,
+  "units": "stage adiabatic efficiency incl. valve losses",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "bench run of the first-article head: indicator diagram and flow"
+ },
+ "h2c_eta_motor": {
+  "value": 0.9,
+  "units": "motor and drive",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "motor test (AQS-INV-005 family)"
+ },
+ "h2c_eta_v": {
+  "value": 0.8,
+  "units": "volumetric efficiency",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "same bench run"
+ },
+ "h2c_rpm": {
+  "value": 300.0,
+  "units": "crank speed",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "same"
+ },
+ "h2c_cavity_h_mm": {
+  "value": 3.0,
+  "units": "diaphragm cavity depth (spherical-cap profile)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "cavity machining trial"
+ },
+ "h2c_run_h": {
+  "value": 8.0,
+  "units": "h/d at full rate (follows the electrolyser on PV hours)",
+  "register": "A-M-169 (X-MFG-36 H2 compressor)",
+  "needs_verification": true,
+  "verification_test": "hourly electrolyser log"
+ },
+ "bmed_j_A_m2": {
+  "value": 200.0,
+  "units": "A/m2 design current density",
+  "ref": "EDBM_PILOT_2023"
+ },
+ "bmed_CE": {
+  "value": 0.8,
+  "units": "current efficiency at 200 A/m2",
+  "ref": "EDBM_PILOT_2023"
+ },
+ "bmed_cell_area_m2": {
+  "value": 0.04,
+  "units": "m2 active area per membrane (200 x 200 mm)",
+  "register": "A-M-170 (X-MFG-35 BMED stack)",
+  "needs_verification": true,
+  "verification_test": "stack polarisation test on the first-article stack"
+ },
+ "bmed_cells_per_stack_max": {
+  "value": 100,
+  "units": "cell triplets per stack (manifold flow distribution)",
+  "register": "A-M-170 (X-MFG-35 BMED stack)",
+  "needs_verification": true,
+  "verification_test": "same test: per-cell voltage spread"
+ },
+ "bmed_V_bpm_V": {
+  "value": 1.0,
+  "units": "V per bipolar membrane at 200 A/m2 (reversible 0.83 V plus overpotential)",
+  "ref": "STRATHMANN2004",
+  "needs_verification": true,
+  "verification_test": "Bipolar membrane I-V curve on the first-article stack (X-MFG-35)"
+ },
+ "bmed_R_mono_ohm_cm2": {
+  "value": 3.0,
+  "units": "ohm cm2 per monopolar membrane",
+  "ref": "STRATHMANN2004",
+  "needs_verification": true,
+  "verification_test": "Membrane area resistance by EIS in plant brine (X-MFG-35)"
+ },
+ "bmed_kappa_S_cm": {
+  "value": {
+   "salt": 0.045,
+   "base": 0.29,
+   "acid": 0.5
+  },
+  "units": "S/cm: salt about 3 % NaCl depleted, base 2 M (7.4 %) NaOH, acid 2 M (7 %) HCl, interpolated",
+  "ref": "CRC_COND"
+ },
+ "bmed_spacer_mm": {
+  "value": 0.8,
+  "units": "mm compartment gap",
+  "register": "A-M-170"
+ },
+ "bmed_spacer_shadow": {
+  "value": 1.5,
+  "units": "- solution resistance multiplier for a woven mesh spacer",
+  "register": "A-M-171",
+  "needs_verification": true,
+  "verification_test": "Stack ohmic resistance at three flow rates (X-MFG-35)"
+ },
+ "bmed_V_end_per_stack_V": {
+  "value": 3.0,
+  "units": "V per stack for the end electrode pair (O2/H2 rinse cell)",
+  "register": "A-M-171",
+  "needs_verification": true,
+  "verification_test": "Stack voltage minus sum of triplet voltages (X-MFG-35)"
+ },
+ "bmed_sec_pilot_kWh_kg": {
+  "value": 1.4,
+  "units": "kWh/kg NaOH at 200 A/m2, CE 0.80",
+  "ref": "EDBM_PILOT_2023"
+ },
+ "h2c_T_out_max_C": {
+  "value": 135.0,
+  "units": "C predicted stage discharge, hydrogen-rich service",
+  "ref": "API618"
+ },
+ "h2c_cp_kJ_kgK": {
+  "value": 14.3,
+  "units": "kJ/kg K, H2 at 300 K",
+  "ref": "NIST_WEBBOOK"
+ },
+ "ew_bar_rise_K": {
+  "value": 30.0,
+  "units": "K bar temperature rise over 40 C ambient",
+  "register": "A-M-173",
+  "needs_verification": true,
+  "verification_test": "Thermocouple on EW-7 bar at rated current (RECT-EW first article)"
+ },
+ "ew_bar_emissivity": {
+  "value": 0.8,
+  "units": "- painted bar",
+  "ref": "CDA_PUB22"
+ },
+ "ew_bar_t_mm": {
+  "value": 6.3,
+  "units": "mm bar thickness",
+  "ref": "CDA_PUB22"
+ },
+ "ew_bar_L_m": {
+  "value": 2.0,
+  "units": "m rectifier to cell",
+  "register": "AQS-BUS-001 rev B"
+ },
+ "ew_contact_drop_V": {
+  "value": 0.05,
+  "units": "V both bolted joints",
+  "register": "AQS-BUS-001 rev B",
+  "needs_verification": true,
+  "verification_test": "Joint millivolt drop at rated current"
+ },
+ "atm_design_sg": {
+  "value": 1.25,
+  "units": "- liquid specific gravity for the hydrostatic case of atmospheric vessels (covers 20 wt% HCl 1.10 and 20 wt% NaOH 1.22)",
+  "register": "A-M-174",
+  "needs_verification": true,
+  "verification_test": "Replace with the stored liquid density per unit at its unit sizing task"
+ },
+ "cb_13x_CO2_mol_kg": {
+  "value": 1.5,
+  "units": "mol CO2 per kg 13X working capacity at about 6.6 kPa CO2, 25 C adsorb / 200 C regenerate",
+  "register": "A-M-175",
+  "needs_verification": true,
+  "verification_test": "Breakthrough test of one 13X bed on the scrubbed flue gas (X-MFG-33)"
+ },
+ "cb_cycle_h": {
+  "value": 8.0,
+  "units": "h adsorption half-cycle",
+  "register": "A-M-175"
+ },
+ "cb_regen_C": {
+  "value": 204.0,
+  "units": "C bed regeneration",
+  "ref": "NASA_CDRA2015"
+ },
+ "cb_dH_ads_kJ_mol": {
+  "value": 36.0,
+  "units": "kJ/mol CO2 on 13X",
+  "register": "A-M-175",
+  "needs_verification": true,
+  "verification_test": "Regeneration energy measured on the first bed (X-MFG-33)"
+ },
+ "cb_cp_sorbent_kJ_kgK": {
+  "value": 0.92,
+  "units": "kJ/kg K zeolite",
+  "register": "A-M-175"
+ },
+ "cb_steel_to_sorbent": {
+  "value": 1.0,
+  "units": "kg vessel and heater steel heated per kg sorbent",
+  "register": "A-M-175"
+ },
+ "cb_regen_loss_frac": {
+  "value": 0.2,
+  "units": "- regeneration heat lost through insulation",
+  "register": "A-M-175"
+ },
+ "cb_bed_dP_kPa": {
+  "value": 10.0,
+  "units": "kPa feed blower rise",
+  "register": "A-M-175"
+ },
+ "cb_co2_store_bar": {
+  "value": 20.0,
+  "units": "bar a liquid CO2 store at -20 C (saturation 19.7 bar)",
+  "ref": "NIST_WEBBOOK"
+ },
+ "cb_co2_latent_kJ_kg": {
+  "value": 282.0,
+  "units": "kJ/kg CO2 latent heat at -20 C",
+  "ref": "NIST_WEBBOOK"
+ },
+ "cb_chiller_COP": {
+  "value": 2.5,
+  "units": "- condenser chiller at -25 C evaporating",
+  "register": "A-M-175",
+  "needs_verification": true,
+  "verification_test": "Chiller COP on the first article"
+ },
+ "cb_getter_W": {
+  "value": 100.0,
+  "units": "W heated Ar getter (Ar return from WAFER_FAB)",
+  "register": "A-M-175",
+  "needs_verification": true,
+  "verification_test": "Getter heater power at temperature"
+ },
+ "ro_A_LMH_bar": {
+  "value": 3.0,
+  "units": "L/(m2 h bar) water permeance, TFC low-pressure",
+  "ref": "BAKER2012",
+  "needs_verification": true,
+  "verification_test": "Permeance of the in-house flat-sheet module on VCD distillate (X-MFG-34)"
+ },
+ "ro_flux_LMH": {
+  "value": 20.0,
+  "units": "L/(m2 h) design flux",
+  "register": "A-M-176"
+ },
+ "ro_feed_TDS_mg_L": {
+  "value": 20.0,
+  "units": "mg/L NaCl equivalent in VCD distillate",
+  "register": "A-M-176",
+  "needs_verification": true,
+  "verification_test": "Conductivity of S25 at commissioning"
+ },
+ "ro_rejection": {
+  "value": 0.98,
+  "units": "- salt rejection",
+  "ref": "BAKER2012"
+ },
+ "ro_pump_eta": {
+  "value": 0.4,
+  "units": "- small positive-displacement pump wire to water",
+  "register": "A-M-176"
+ },
+ "edi_CE": {
+  "value": 0.1,
+  "units": "- EDI current efficiency (water splitting carries the rest)",
+  "register": "A-M-176",
+  "needs_verification": true,
+  "verification_test": "EDI stack current vs product resistivity (X-MFG-34)"
+ },
+ "edi_V_cell": {
+  "value": 4.0,
+  "units": "V per EDI cell pair",
+  "register": "A-M-176",
+  "needs_verification": true,
+  "verification_test": "EDI stack I-V"
+ },
+ "edi_cells": {
+  "value": 10,
+  "units": "cell pairs",
+  "register": "A-M-176"
+ },
+ "upw_uv_W": {
+  "value": 15.0,
+  "units": "W 185/254 nm UV lamp for TOC on the UPW loop",
+  "register": "A-M-176"
+ },
+ "melt_cp_solid_kJ_kgK": {
+  "value": 0.43,
+  "units": "kJ/kg K mean Cu 25-1085 C",
+  "ref": "CRC_CU"
+ },
+ "melt_L_kJ_kg": {
+  "value": 208.7,
+  "units": "kJ/kg Cu fusion",
+  "ref": "CRC_CU"
+ },
+ "melt_cp_liq_kJ_kgK": {
+  "value": 0.516,
+  "units": "kJ/kg K liquid Cu",
+  "ref": "CRC_CU"
+ },
+ "melt_superheat_K": {
+  "value": 100.0,
+  "units": "K above liquidus at tap",
+  "register": "A-M-177"
+ },
+ "melt_eta": {
+  "value": 0.55,
+  "units": "- coreless induction furnace, coil to melt",
+  "register": "A-M-177",
+  "needs_verification": true,
+  "verification_test": "Trial run on the first article (X-MFG-37)"
+ },
+ "melt_charge_kg": {
+  "value": 10.0,
+  "units": "kg crucible charge (two heats a day cover the need)",
+  "register": "A-M-177"
+ },
+ "melt_time_h": {
+  "value": 0.5,
+  "units": "h melt time per heat",
+  "register": "A-M-177"
+ },
+ "melt_hold_kW": {
+  "value": 0.5,
+  "units": "kW holding loss while tapping",
+  "register": "A-M-177"
+ },
+ "atom_GMR": {
+  "value": 2.5,
+  "units": "kg Ar per kg metal",
+  "register": "A-M-177",
+  "needs_verification": true,
+  "verification_test": "Trial run on the first article (X-MFG-37)"
+ },
+ "atom_P_bar": {
+  "value": 30.0,
+  "units": "bar Ar at the nozzle",
+  "register": "A-M-177"
+ },
+ "atom_comp_eta": {
+  "value": 0.6,
+  "units": "- Ar recirculation compressor, isothermal efficiency",
+  "register": "A-M-177"
+ },
+ "atom_batch_min": {
+  "value": 10.0,
+  "units": "min pour time per heat",
+  "register": "A-M-177"
+ },
+ "atom_tundish_kW": {
+  "value": 1.0,
+  "units": "kW tundish heater for 1 h per heat",
+  "register": "A-M-177"
+ },
+ "cu_flow_stress_MPa": {
+  "value": 250.0,
+  "units": "MPa mean flow stress, Cu cold work",
+  "register": "A-M-177",
+  "needs_verification": true,
+  "verification_test": "Trial run on the first article (X-MFG-37)"
+ },
+ "roll_strain": {
+  "value": 2.3,
+  "units": "- true strain, 10 mm bar to 1 mm strip",
+  "register": "A-M-177"
+ },
+ "draw_strain": {
+  "value": 3.0,
+  "units": "- true strain, 8 mm rod to 1.8 mm wire",
+  "register": "A-M-177"
+ },
+ "deform_eta": {
+  "value": 0.55,
+  "units": "- rolling and drawing efficiency",
+  "ref": "DIETER1988"
+ },
+ "mill_kW": {
+  "value": 2.2,
+  "units": "kW mill motor nameplate",
+  "register": "A-M-177"
+ },
+ "mill_run_h": {
+  "value": 1.0,
+  "units": "h/d run",
+  "register": "A-M-177"
+ },
+ "mill_idle_frac": {
+  "value": 0.15,
+  "units": "- no-load fraction of nameplate while running",
+  "register": "A-M-177"
+ },
+ "draw_kW": {
+  "value": 1.1,
+  "units": "kW bull-block motor nameplate",
+  "register": "A-M-177"
+ },
+ "draw_run_h": {
+  "value": 1.0,
+  "units": "h/d run",
+  "register": "A-M-177"
+ },
+ "pv_cells_per_d": {
+  "value": 3,
+  "units": "cells/d M2 156 mm (ST-SOLAR-01 study rate)",
+  "register": "ST-SOLAR-01"
+ },
+ "pvl_tex_L": {
+  "value": 10.0,
+  "units": "L KOH texture bath",
+  "register": "A-M-178"
+ },
+ "pvl_tex_C": {
+  "value": 80.0,
+  "units": "C texture bath",
+  "register": "A-M-178"
+ },
+ "pvl_tex_heat_h": {
+  "value": 0.33,
+  "units": "h heat-up",
+  "register": "A-M-178"
+ },
+ "pvl_tex_run_h": {
+  "value": 1.0,
+  "units": "h at temperature",
+  "register": "A-M-178"
+ },
+ "pvl_diff_C": {
+  "value": 850.0,
+  "units": "C POCl3 diffusion tube",
+  "register": "A-M-178"
+ },
+ "pvl_diff_D_mm": {
+  "value": 200.0,
+  "units": "mm quartz tube OD",
+  "register": "A-M-178"
+ },
+ "pvl_diff_L_m": {
+  "value": 1.0,
+  "units": "m heated length",
+  "register": "A-M-178"
+ },
+ "pvl_diff_mass_kg": {
+  "value": 20.0,
+  "units": "kg heated mass (tube, boat, heater, hot-face insulation)",
+  "register": "A-M-178",
+  "needs_verification": true,
+  "verification_test": "First-article tool run (X-MFG-38)"
+ },
+ "pvl_diff_heat_h": {
+  "value": 1.5,
+  "units": "h heat-up",
+  "register": "A-M-178"
+ },
+ "pvl_diff_run_h": {
+  "value": 1.0,
+  "units": "h at temperature",
+  "register": "A-M-178"
+ },
+ "pvl_hot_k_a": {
+  "value": 0.035,
+  "units": "W/m K ceramic-fibre k at 0 C",
+  "register": "A-M-178"
+ },
+ "pvl_hot_k_b": {
+  "value": 0.0002,
+  "units": "W/m K2 ceramic-fibre k slope",
+  "register": "A-M-178"
+ },
+ "pvl_pecvd_W_cm2": {
+  "value": 0.1,
+  "units": "W/cm2 RF power density on the electrode",
+  "register": "A-M-178",
+  "needs_verification": true,
+  "verification_test": "First-article tool run (X-MFG-38)"
+ },
+ "pvl_pecvd_area_m2": {
+  "value": 0.05,
+  "units": "m2 electrode (two cells)",
+  "register": "A-M-178"
+ },
+ "pvl_pecvd_dep_h": {
+  "value": 0.25,
+  "units": "h deposition per batch",
+  "register": "A-M-178"
+ },
+ "pvl_pecvd_C": {
+  "value": 400.0,
+  "units": "C substrate",
+  "register": "A-M-178"
+ },
+ "pvl_vac_kW": {
+  "value": 1.5,
+  "units": "kW dry vacuum pump",
+  "register": "A-M-178"
+ },
+ "pvl_vac_h": {
+  "value": 1.0,
+  "units": "h pump run per batch",
+  "register": "A-M-178"
+ },
+ "pvl_print_kW": {
+  "value": 0.2,
+  "units": "kW screen-printer drives",
+  "register": "A-M-178"
+ },
+ "pvl_dry_kW": {
+  "value": 0.5,
+  "units": "kW 200 C dryer",
+  "register": "A-M-178"
+ },
+ "pvl_print_h": {
+  "value": 0.5,
+  "units": "h per batch",
+  "register": "A-M-178"
+ },
+ "pvl_fire_kW": {
+  "value": 3.0,
+  "units": "kW IR lamp fast-firing furnace",
+  "register": "A-M-178"
+ },
+ "pvl_fire_h": {
+  "value": 0.17,
+  "units": "h lamp on per batch",
+  "register": "A-M-178"
+ },
+ "pvl_iv_kW": {
+  "value": 0.1,
+  "units": "kW flash IV tester",
+  "register": "A-M-178"
+ },
+ "pvl_iv_h": {
+  "value": 0.25,
+  "units": "h",
+  "register": "A-M-178"
+ },
+ "znbr_ASR_ohm_cm2": {
+  "value": 5.0,
+  "units": "ohm cm2 cell area-specific resistance",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
+ },
+ "znbr_crossover_loss": {
+  "value": 0.05,
+  "units": "- coulombic loss to Br2 crossover and self-discharge over the day",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
+ },
+ "znbr_aux_frac": {
+  "value": 0.03,
+  "units": "- pump and control energy as a fraction of throughput",
+  "register": "A-M-179",
+  "needs_verification": true,
+  "verification_test": "ZNBR2 stack test (X-MFG-41, AQS-TST-002)"
+ },
+ "cb_T_out_max_C": {
+  "value": 150.0,
+  "units": "C predicted stage discharge, general service",
+  "ref": "API618"
+ },
+ "co2_store_hold_d": {
+  "value": 2.0,
+  "units": "d of CRYO_CO2 inflow held as liquid",
+  "register": "A-M-181"
+ },
+ "co2_liq_rho_kg_m3": {
+  "value": 1032.0,
+  "units": "kg/m3 liquid CO2 at -20 C",
+  "ref": "NIST_WEBBOOK"
+ },
+ "co2_fill": {
+  "value": 0.9,
+  "units": "- maximum liquid fill",
+  "register": "A-M-181"
+ },
+ "atm_hold_d": {
+  "value": {
+   "store": 2.0,
+   "process": 1.0
+  },
+  "units": "d of liquid inflow held: stores (tank, product, reagent, cut_tank, dock, ROOF_TANK, FAB_UPW_TANK) and process units",
+  "register": "A-M-182",
+  "needs_verification": true,
+  "verification_test": "Replace with each unit's sized volume at unit task 02"
+ },
+ "atm_bed_depth_m": {
+  "value": 0.3,
+  "units": "m standing water in farm beds and habitation fixtures",
+  "register": "A-M-182"
+ },
+ "atm_HD": {
+  "value": 1.5,
+  "units": "- vertical tank height to diameter for the hold-up case",
+  "register": "A-M-182"
+ },
+ "struct_equip_density_kg_m3": {
+  "value": 150.0,
+  "units": "kg/m3 empty equipment weight per envelope volume",
+  "register": "A-M-184",
+  "needs_verification": true,
+  "verification_test": "Replace with CAD weights per unit as models are built"
+ },
+ "struct_op_fill": {
+  "value": 0.5,
+  "units": "- liquid fraction of envelope for liquid units without a stated hold-up",
+  "register": "A-M-184"
+ },
+ "struct_pv_kg_m2": {
+  "value": 17.0,
+  "units": "kg/m2 PV modules plus ballasted racking on the roof",
+  "register": "A-M-184",
+  "needs_verification": true,
+  "verification_test": "Weigh the in-house module and rack first article"
+ },
+ "struct_tank_kg_m3": {
+  "value": 40.0,
+  "units": "kg/m3 empty storage tank weight per envelope volume (thin shell)",
+  "register": "A-M-184",
+  "needs_verification": true,
+  "verification_test": "CAD weight per tank"
+ },
+ "spares_rule": {
+  "value": {
+   "bearing": [
+    0.1,
+    2
+   ],
+   "seal": [
+    0.2,
+    2
+   ],
+   "electronics": [
+    0.1,
+    1
+   ],
+   "instrument": [
+    0.1,
+    1
+   ],
+   "valve": [
+    0.05,
+    1
+   ],
+   "protection": [
+    0.1,
+    1
+   ],
+   "fastener": [
+    0.02,
+    4
+   ],
+   "support": [
+    0.0,
+    0
+   ],
+   "fabricated part": [
+    0.0,
+    0
+   ],
+   "motor": [
+    0.05,
+    1
+   ]
+  },
+  "units": "[fraction of installed, minimum] per category; motors per family",
+  "register": "A-M-185",
+  "needs_verification": true,
+  "verification_test": "Replace with failure-rate data from the first operating year (X-OPS-02)"
+ },
+ "exp_pr": {
+  "value": 5.0,
+  "units": "- reverse-Brayton N2 loop pressure ratio (backup refrigeration, Q-010)",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "exp_eta_s": {
+  "value": 0.75,
+  "units": "- expander isentropic efficiency",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "exp_eta_comp": {
+  "value": 0.7,
+  "units": "- loop compressor isentropic efficiency",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "exp_T_in_K": {
+  "value": 300.0,
+  "units": "K expander inlet after aftercooler",
+  "register": "A-M-186",
+  "needs_verification": true,
+  "verification_test": "Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power"
+ },
+ "wt_core_frac": {
+  "value": 0.15,
+  "units": "- plate fraction kept for stair, lift and penstock cores",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_level_clear_mm": {
+  "value": 6000,
+  "units": "mm reservoir storey floor-to-floor",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_water_max_m": {
+  "value": 4.5,
+  "units": "m max water depth per reservoir level (slab load 44 kPa)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_penstock_loss_frac": {
+  "value": 0.05,
+  "units": "- penstock friction as fraction of head",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_freeboard_m": {
+  "value": 0.5,
+  "units": "m freeboard, lower reservoir",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_cell_len_m": {
+  "value": 12.0,
+  "units": "m max reservoir cell length (sloshing; min 2 cells per level)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_SDS": {
+  "value": 0.107,
+  "units": "g design short-period spectral acceleration = 2/3 Fa Ss, AQS-SITE-002 Ss 0.10 g, site class D, Fa 1.6 (ASCE 7-22 Table 11.4-1)",
+  "needs_verification": true,
+  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
+  "ref": "ASCE7_22"
+ },
+ "wt_SD1": {
+  "value": 0.08,
+  "units": "g design 1 s spectral acceleration = 2/3 Fv S1, AQS-SITE-002 S1 0.05 g, site class D, Fv 2.4 (ASCE 7-22 Table 11.4-2)",
+  "needs_verification": true,
+  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
+  "ref": "ASCE7_22"
+ },
+ "wt_TL_s": {
+  "value": 8.0,
+  "units": "s long-period transition",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_R": {
+  "value": 3.0,
+  "units": "- response modification, elevated-mass structure (conservative)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_Ie": {
+  "value": 1.5,
+  "units": "- importance factor, Risk Category IV (life-support energy)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_wind_ms": {
+  "value": 50.0,
+  "units": "m/s basic wind speed (site unknown)",
+  "register": "A-M-187",
+  "needs_verification": true,
+  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+ },
+ "wt_life_per_shop": {
+  "value": 2,
+  "units": "- HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009)",
+  "register": "A-M-187"
+ },
+ "maint_insert_life_y": {
+  "value": {
+   "BMED_ACID": 5,
+   "BMED_BASE": 5,
+   "BMED_UPW_POLISH": 5,
+   "CRYO_ASU": 5,
+   "CRYO_H2": 2,
+   "H2_PURIFIER": 3,
+   "MEOH_SYNTH": 3,
+   "ALD": 2,
+   "FORM": 1,
+   "MEAM": 2,
+   "HNO3": 0.5,
+   "ACEX": 3,
+   "ZNBR2": 5
+  },
+  "units": "years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack)",
+  "register": "A-M-189",
+  "needs_verification": true,
+  "verification_test": "Performance trending from the first operating year (pressure drop, conversion, current efficiency, breakthrough) sets the interval"
+ },
+ "maint_rotating": {
+  "value": {
+   "lube_mo": 6,
+   "vibration_mo": 3,
+   "bearing_y": 5,
+   "seal_y": 3
+  },
+  "units": "months/years for motors, pumps, fans and compressors",
+  "register": "A-M-189",
+  "needs_verification": true,
+  "verification_test": "Vibration and temperature trending; bearing L10 life from the motor design load"
+ },
+ "soil_allow_kPa": {
+  "value": 72.0,
+  "units": "kPa allowable bearing, presumptive clay (CL/ML/MH/CH)",
+  "ref": "IBC2021_1806",
+  "needs_verification": true,
+  "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus"
+ },
+ "soil_unit_weight_kN_m3": {
+  "value": 18.0,
+  "units": "kN/m3 moist clay",
+  "register": "A-M-208",
+  "needs_verification": true,
+  "verification_test": "Geotechnical report unit weight"
+ },
+ "gw_depth_m": {
+  "value": 0.0,
+  "units": "m below grade, groundwater (worst case at grade until measured)",
+  "register": "A-M-208",
+  "needs_verification": true,
+  "verification_test": "Piezometer readings at the parcel through a wet season"
+ },
+ "raft_fc_MPa": {
+  "value": 35.0,
+  "units": "MPa concrete strength, raft and basement walls",
+  "register": "A-M-208",
+  "needs_verification": true,
+  "verification_test": "Mix design and cylinder tests"
+ }
+}

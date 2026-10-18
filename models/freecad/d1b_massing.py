@@ -91,7 +91,7 @@ def _wet_basement(doc):
     by = P.CSTR_W + 2 * P.WALL + 500 + P.PROCESS_DY
     bz = P.Z_Lm1
     _box(doc, "BMED_UPW_POLISH",
-         bx + P.BMED_L + 100 + 2 * P.TOTE_L + 200, by, bz,
+         bx + P.BMED_L + 100 + 2 * P.TOTE_L + 200, min(by, P.CORE_Y - P.D1B_TBD_SKID_W - 200), bz,  # Rev B: kept out of the core / ELEV_SVC
          P.D1B_TBD_SKID_L, P.D1B_TBD_SKID_W, P.D1B_TBD_SKID_H)
     _box(doc, "S13_CLASS_TREAT",
          bx, by + P.BMED_W + 80 + P.TOTE_W + 200, bz,

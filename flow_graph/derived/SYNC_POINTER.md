@@ -1,7 +1,7 @@
 # Derived STREAM / MASS sync pointer — WP-Ap3
 
-Source graph: AQS-FLOW-GRAPH-001 Rev M (`plant_flow_graph.json`)
-Generated: 2026-10-08
+Source graph: AQS-FLOW-GRAPH-001 Rev BH (`plant_flow_graph.json`)
+Generated: 2026-10-15
 Licence: CERN-OHL-S-2.0
 
 ## Generated (this directory)

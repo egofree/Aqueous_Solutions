@@ -1,0 +1,18 @@
+item,description,qty,material,basis
+1,Tank shell 2000x1080x1394 mm open top welded wall 12 mm floor 16 mm,1,CPVC,duty section 3; dimensions assumption inside graph envelope
+2,Lid flange ring 40 mm x 10 mm,1,CPVC,assumption
+3,Lid plate 12 mm,1,CPVC,assumption; closed lid for vents to NOX_SCRUB and FLUE_KO
+4,Inlet header DN50 on -Y face Z 700,1,CPVC,graph nozzle rule; header is assumption
+5,Inlet port stub DN20 (HL-Q3-A-HX5 HL-Q3-B-HX5) Q3 water 95 C,2,CPVC (flagged: 95 C exceeds PVC-U; above usual CPVC limit; held X-MAT-05),DN from edge
+6,Inlet port stub DN25 placeholder bore not calculated,23,CPVC,assumption
+7,Outlet header DN50 on +Y face Z 700,1,CPVC,graph nozzle rule; header is assumption
+8,Outlet port stub DN25 placeholder bore not calculated,20,CPVC,assumption
+9,Cable gland boss IA-E-LEACH,1,CPVC,assumption; conductor not a hose
+10,HX-5 coil two concentric helices 25x3 mm tube 53.7 m 4.22 m2,1,borosilicate glass 3.3,AQS-DUTY-049; AQS-STD-002 3.3
+11,HX-5 coil support pad,4,PTFE,assumption
+12,Belt FRP pultruded channel C203x56x6.4 wrapped,3,FRP vinyl ester,AQS-DUTY-050 (study)
+13,Agitator 4-blade 45 deg PBT D450 solid PVDF impeller,1,PVDF,AQS-DUTY-050 (study)
+14,Agitator shaft D50 PVDF-sheathed,1,PVDF over steel core (not wetted),AQS-STD-002 M3
+15,Gearmotor 0.75 kW 150 rpm output on lid bridge,1,bought,AQS-DUTY-050 (study)
+16,Lid shaft seal,1,PTFE lip,assumption
+17,HX-5 coil guide post,4,PVDF,AQS-STD-002 section 8

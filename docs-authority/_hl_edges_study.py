@@ -15,7 +15,7 @@ import json, math, sys
 
 # ---------------------------------------------------------------- inputs (graph / docs)
 CO2_AB_KG_D = 15.0          # afterburner flue CO2 (S67 basis since Rev J; was S18), AQS-AUD-001 mid of 12-22.5 kg/d
-CULLET_KG_D = 30.0          # S08G silicate + grit, AQS-AUD-001 s4.1, mixed WEEE at 150 kg/d wet
+CULLET_KG_D = 30.0          # S08G silicate + grit, AQS-AUD-001 s4.1, reference feed at 150 kg/d wet, AQS-ASSAY-001
 BURNOUT_KW_E = 1.0          # GLASS_BURNOUT issued duty (electric)
 T_AMB = 25.0
 
@@ -311,17 +311,17 @@ def main():
 F = 96485.0
 DHF = {"Fe2+": -89.1, "Cu2+": 64.8, "Zn2+": -153.9, "Al3+": -531.0, "Cl-": -167.2, "ClO3-": -104.0, "H2O": -285.8}  # kJ/mol, aq, 25 C
 EW_KW = 6.0                 # EW_1 continuous_kw (RECT-EW class share), graph
-EW_SHARE = {"Fe": 790.0, "Cu": 137.0, "Zn": 80.0}   # kWh/t mixed WEEE, ELECTRICAL.md (Ni+Zn+Sn+Pb blend taken at Zn)
+EW_SHARE = {"Fe": 790.0, "Cu": 137.0, "Zn": 80.0}   # kWh/t reference point, ELECTRICAL.md (Ni+Zn+Sn+Pb blend taken at Zn)
 EW_CELL = {"Fe": (3.1, 0.80), "Cu": (2.2, 0.85), "Zn": (3.4, 0.80)}  # V_cell, CE, ELECTRICAL.md
 EW_N, EW_L, EW_W, EW_H = 9, 0.600, 0.420, 0.650     # params.py EW_*; 9 cells
 EW_WALL = (0.012, 0.16)     # m, W/m K CPVC wall
 CONC_M3_H = 0.17            # concentrate to EW-1, AQS-DUTY-007
 RHO_LIQ, CP_LIQ = 1050.0, 3.7   # chloride liquor
 FEED_KG_D = 150.0           # plant rate, wet
-# leach metals per wet t (ELECTRICAL.md mixed WEEE build-up), leach fraction
+# leach metals per wet t (ELECTRICAL.md reference-point build-up), leach fraction
 LEACH_METALS = {"Fe": (250.0, 0.85, 55.85), "Cu": (70.0, 0.90, 63.55), "Zn": (30.0, 0.85, 65.38), "Al": (50.0, 0.85, 26.98)}
 DRYER_KWH_KG = (0.70, 0.85)  # ELECTRICAL.md, per kg water evaporated
-MOIST_FRAC = 0.05           # mixed WEEE moisture, ELECTRICAL.md assay
+MOIST_FRAC = 0.05           # reference-point moisture, ELECTRICAL.md assay
 GLASS_FRAC = (0.72, 0.13)   # soda-lime SiO2, Na2O mass fractions
 CSTR = (2.000, 1.200, 1.400)   # params.py CSTR_L/W/H
 DIGEST = (1.400, 0.900, 1.600)  # params.py DIGEST_L/W/H
@@ -410,7 +410,7 @@ def hx8():
 
 
 def draws():
-    # HX-4 dryer: ELECTRICAL.md 0.70-0.85 kWh/kg water x mixed-WEEE moisture
+    # HX-4 dryer: ELECTRICAL.md 0.70-0.85 kWh/kg water x reference-point moisture
     w_kg_d = FEED_KG_D * MOIST_FRAC
     q4 = w_kg_d * sum(DRYER_KWH_KG) / 2 / 24
     dryer = dict(water_kg_d=w_kg_d, kWh_per_kg=sum(DRYER_KWH_KG) / 2, duty_kw=kw(q4),

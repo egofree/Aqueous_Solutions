@@ -1,0 +1,78 @@
+item,kind,DN,T_C,duty,material,thk_mm,surface_C,k,loss_W_m,length_m,loss_W,loss_frac_of_duty,meets_limit,insulation_m3
+HL-AFTERBURNER-Q1-A,line,15,250.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0625,29.31,13.42,393.4,0.284,False,1.866
+HL-AFTERBURNER-Q1-B,line,15,250.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0625,29.31,13.02,381.7,0.276,False,1.8104
+HL-GLASS_BURNOUT-Q2-A,line,15,150.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.1,0.054,14.09,9.32,131.3,0.141,False,1.2959
+HL-GLASS_BURNOUT-Q2-B,line,15,150.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.1,0.054,14.09,22.92,322.9,0.348,False,3.187
+HL-Q1-A-DOWN,line,25,200.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.8,0.0582,24.73,5.7,141.0,0.124,False,0.8359
+HL-Q1-B-DOWN,line,25,200.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.8,0.0582,24.73,5.7,141.0,0.124,False,0.8359
+HL-Q1-X,line,15,245.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0621,28.47,24.77,705.2,0.51,False,3.4442
+HL-Q1-X-BA,line,15,245.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,27.2,0.0621,28.47,24.77,705.2,0.51,False,3.4442
+HL-Q2-A-DOWN,line,15,125.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,46.6,0.0519,32.04,3.95,126.6,0.067,True,0.0055
+HL-Q2-B-DOWN,line,15,125.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,46.6,0.0519,32.04,3.95,126.6,0.067,True,0.0055
+HL-Q2-X,line,20,145.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.1,0.0536,14.44,23.13,334.1,0.165,False,3.2946
+HL-Q2-X-BA,line,20,145.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,26.1,0.0536,14.44,23.13,334.1,0.165,False,3.2946
+HL-Q3-A-DOWN,line,20,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.8,0.0485,21.15,2.88,60.9,0.038,True,0.0047
+HL-Q3-B-DOWN,line,20,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.8,0.0485,21.15,2.88,60.9,0.038,True,0.0047
+HL-Q3-A-HX4,line,15,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,25.5,0.0493,7.21,7.57,54.6,0.181,False,1.0526
+HL-Q3-A-HX5,line,20,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,40.1,0.0493,25.02,9.68,242.2,0.03,True,0.0157
+HL-Q3-A-HX6,line,15,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.5,0.0493,21.56,7.57,163.2,0.078,True,0.0106
+HL-Q3-B-HX4,line,15,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",200,25.5,0.0493,7.21,15.37,110.8,0.367,False,2.1372
+HL-Q3-B-HX5,line,20,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,40.1,0.0493,25.02,29.48,737.5,0.093,True,0.0478
+HL-Q3-B-HX6,line,15,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",38,29.4,0.0493,13.39,15.37,205.8,0.099,True,0.1088
+HL-Q3-X,line,15,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",125,26.0,0.0493,8.41,21.27,178.8,0.098,True,1.222
+HL-Q3-X-BA,line,15,95.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",125,26.0,0.0493,8.41,21.27,178.8,0.098,True,1.222
+HL-Q4-A-BUS,line,15,65.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,32.9,0.0468,11.81,23.42,276.5,0.05,True,0.0328
+HL-Q4-B-BUS,line,15,65.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,32.9,0.0468,11.81,21.42,252.9,0.046,True,0.03
+HL-Q4-X,line,15,65.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",38,27.4,0.0468,7.28,20.17,146.8,0.094,True,0.1428
+HL-Q4-X-BA,line,15,65.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",38,27.4,0.0468,7.28,20.17,146.8,0.094,True,0.1428
+IA-EW-01,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,8.58,74.9,,True,0.012
+IA-EW-02,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,9.73,84.9,,True,0.0136
+IA-EW-03,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,7.78,67.9,,True,0.0109
+IA-EW-04,line,15,77.5,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,35.6,0.0478,15.78,9.15,144.4,,True,0.0128
+IA-EW-05,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,6.6,57.6,,True,0.0092
+IA-EW-06,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,12.73,111.1,,True,0.0178
+IA-EW-07,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,13.73,119.8,,True,0.0192
+IA-EW-08,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,11.03,96.3,,True,0.0155
+IA-EW-09,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,14.31,124.9,,True,0.02
+IA-EW-10,line,15,55.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.9,0.0459,8.73,9.98,87.1,,True,0.014
+IA-WET-FLOAT-01,line,15,60.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,31.9,0.0464,10.26,9.89,101.4,,True,0.0139
+S39,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,33.02,1281.6,,True,0.0988
+S67,line,15,300.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",38,47.8,0.0668,69.63,12.47,868.3,,True,0.0883
+S68,line,15,10.0,"cold, anti-condensation","flexible elastomeric (ASTM C534), vapour-sealed",13,22.4,0.04,-3.9,24.64,-96.1,,True,0.0345
+S72,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,26.12,1013.8,,True,0.0782
+IA-BASE-01,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.0,0.0456,7.4,19.66,145.4,,True,0.0275
+IA-ZNBR-MU,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,16.88,307.6,,True,0.0236
+IA-LEACH-BD,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,33.59,612.1,,True,0.0471
+IA-HVAC-COND,line,15,10.0,"cold, anti-condensation","flexible elastomeric (ASTM C534), vapour-sealed",13,22.4,0.04,-3.9,26.36,-102.8,,True,0.0369
+IA-SINK-01,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,9.77,379.2,,True,0.0292
+IA-PLAST-01,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,9.72,377.3,,True,0.0291
+IA-CULLET,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,12.72,493.7,,True,0.0381
+IA-SCRUB-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,30.36,1178.4,,True,0.0909
+IA-HF-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,19.07,740.2,,True,0.0571
+IA-NOX-N,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,32.27,1252.5,,True,0.0966
+IA-NOX-CO2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,35.87,1392.2,,True,0.1074
+IA-NOX-N2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,35.87,1392.2,,True,0.1074
+IA-LEACH-NOX,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,11.22,435.5,,True,0.0336
+IA-LEACH-FLUE,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,24.12,936.2,,True,0.0722
+IA-LEACH-HOP,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,9.77,379.2,,True,0.0292
+IA-LEACH-ASU,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,25.07,973.0,,True,0.0751
+IA-FC-FIX,line,50,60.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,33.1,0.0464,21.88,16.32,357.0,,True,0.0489
+IA-FC-LEACH,line,15,60.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,31.9,0.0464,10.26,27.24,279.4,,True,0.0382
+IA-CLOSE-1,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,11.22,435.5,,True,0.0336
+IA-CLOSE-10,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,17.37,674.2,,True,0.052
+IA-BASE-PPT,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.0,0.0456,7.4,15.91,117.7,,True,0.0223
+IA-LEACH-VCD,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,21.84,398.0,,True,0.0306
+IA-EVAP_BASE-COND,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.0,0.0456,7.4,6.71,49.6,,True,0.0094
+IA-NA-PURGE,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,18.34,334.2,,True,0.0257
+IA-H2O-MU,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,24.14,439.9,,True,0.0338
+GLASS_DIGEST,vessel,450,85,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",13,41.0,0.0485,238.77,0.39,121.1,,True,0.0096
+MEOH_SYNTH,vessel,114,250,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",50,44.1,0.0625,128.39,1.902,317.5,,True,0.0637
+OIL_PYRO,vessel,200,500.0,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",125,45.8,0.0837,294.7,0.17,65.1,,True,0.0282
+HTC,vessel,100,200,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,43.3,0.0582,101.42,0.09,11.9,,True,0.0019
+ALD,vessel,21,250,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,42.5,0.0625,53.26,0.6,41.5,,True,0.0055
+FORM,vessel,21,350,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",50,45.4,0.071,77.59,0.6,60.5,,True,0.0087
+MEAM,vessel,21,400,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",50,49.9,0.0753,94.53,0.6,73.7,,True,0.0087
+IMID,vessel,65,70,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",13,35.6,0.0472,30.32,0.06,2.4,,True,0.0002
+HNO3,vessel,65,900,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",200,47.0,0.1177,320.75,0.06,25.0,,True,0.013
+BUCL,vessel,50,105,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",13,44.2,0.0502,45.79,0.05,3.0,,True,0.0002
+H2_PURIFIER,vessel,60,250.0,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,47.7,0.0625,97.07,0.926,116.9,,True,0.0141

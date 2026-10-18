@@ -30,7 +30,7 @@ vendor nameplates.
 |---|---|
 | Named unit tags and sequence | Invented belt-furnace kW or PECVD power |
 | KOH / POCl₃ / SiNₓ / Ag-Al / fire hooks | Electrical yard resize for cell offtake |
-| FreeCAD PV_* envelope stubs | Detailed solids / STL / vendor datasheets |
+| FreeCAD PV_* envelope stubs | Detailed solids / STL / in-house tool designs (X-MFG-38) |
 | Dedicated PFD AQS-PFD-FAB-PV-001 | Claiming Present/Complete CAD |
 | Status = Partial architecture + CAD envelopes | |
 

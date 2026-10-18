@@ -1,5 +1,7 @@
 # MFG shop equipment list
 
+Superseded copy. The current page is `docs-authority/MFG_SHOP_EQUIPMENT.md`, C. This copy is history (AQS-REG-001).
+
 Document number: AQS-EQP-MFG-001  
 Revision: B  
 Date: 2026-09-28  

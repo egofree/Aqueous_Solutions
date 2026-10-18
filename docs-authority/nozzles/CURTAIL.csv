@@ -1,0 +1,8 @@
+tag,size,rating,service,face,height_mm
+N1,DN25,Class 150,solar and fuel in,inlet,400
+N2,DN25,Class 150,solar into the array,outlet,1500
+N3,DN15,Class 150,hydrogen into the cell,outlet,1500
+N4,DN15,Class 150,rectifier into the cell,outlet,1500
+N5,DN15,Class 150,bus into habitation,outlet,1500
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,2000

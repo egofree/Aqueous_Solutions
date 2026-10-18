@@ -1,0 +1,7 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,hardwood and bran,inlet,80
+N2,DN15,Class 150,shiitake and lion's mane,outlet,300
+N3,DN15,Class 150,reishi and turkey tail,outlet,300
+N4,DN15,Class 150,spent blocks,outlet,300
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,400

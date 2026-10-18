@@ -1,0 +1,11 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,Hydro turbine-pump electrical (MISSING on SLD),inlet,160
+N2,DN15,Class 150,ZnBr2 discharge to bus,inlet,160
+N3,DN15,Class 150,GEN AC,inlet,160
+N4,DN15,Class 150,FC DC,inlet,160
+N5,DN15,Class 150,ZnBr2 charge (PV/RECT surplus),outlet,600
+N6,DN15,Class 150,DC/480V,outlet,600
+N7,DN15,Class 150,load,outlet,600
+N8,DN15,Class 150,bus surplus,outlet,600
+N9,DN15,Class 150,drain,bottom,50
+N10,DN15,Class 150,vent,top,800

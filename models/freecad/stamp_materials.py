@@ -15,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import FreeCAD as App
 
 OUT = Path(__file__).resolve().parent
-CSV = OUT.parent / "materials.csv"
+CSV = next((p for p in (OUT.parent / "materials.csv", OUT.parents[1] / "tables" / "materials.csv") if p.exists()), OUT.parent / "materials.csv")
 
 PROPS = (
     ("MatName", "material"),

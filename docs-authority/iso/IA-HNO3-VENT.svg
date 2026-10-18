@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="527.8,79.8 527.8,60.0 53.2,334.0 40.0,326.4 40.0,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="533.8" y="65.9">Z +670</text>
+<text x="296.5" y="193.0">X -18582</text>
+<text x="52.6" y="326.2">Y +518</text>
+<text x="46.0" y="449.2">Z -8600</text>
+<circle cx="527.8" cy="79.8" r="5" fill="black"/><text x="535.8" y="93.8">HNO3</text>
+<circle cx="40.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="48.0" y="594.0">NOX_SCRUB</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-HNO3-VENT</text>
+<text x="20" y="614">DN15  class F1  FRP vinyl ester</text>
+<text x="20" y="628">HNO3 -> NOX_SCRUB</text>
+<text x="20" y="642">pipe 28.31 m in 8 pieces; cut 659 6000 6000 6000 561 496 6000 2589 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 butt-and-strap joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

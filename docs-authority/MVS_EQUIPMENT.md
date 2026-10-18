@@ -1,5 +1,7 @@
 # MVS equipment issue
 
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+
 Document: AQS-MVS-EQP-001
 Date: 2026-10-02; Rev K 2026-10-07; Rev L 2026-10-07; Rev M 2026-10-08
 Graph Rev M (envelope changes: CONTINUOUS_RECYCLE line DN15; ratings for HX-5, HX-6, VCD-COMP-01). L×W×H are issued envelopes in millimetres, not vendor nameplates, except the study envelopes in the second table.

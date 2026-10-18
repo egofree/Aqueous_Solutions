@@ -1,0 +1,20 @@
+# GLYOXAL
+
+Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+
+1. Basis. Mass in 0.556 kg/d. Mass out 0.556 kg/d. Electrical duty 0.0207 kW. In: IA-ALD 0.1912 kg/d (acetaldehyde); IA-NIT-GLX 0.3647 kg/d (nitric acid oxidant to glyoxal). Out: IA-GLX 0.252 kg/d (glyoxal); IA-GLX-NOX 0.1737 kg/d (NO from glyoxal oxidation, recycled to the nitric absorber); IA-GLX-H2O 0.1303 kg/d (glyoxal water).
+
+2. Size.
+- In 0.3302 kg/d, out 0.3302 kg/d. No holdup claimed.
+- CH₃CHO + O₂ → C₂H₂O₂ + H₂O. The oxygen comes from HDR_O2. The coproduct is water. The old NOx edge is zero.
+
+3. Material. Glass or PVC-U, per AQS-STD-002 rule M1. No 316L. Solvent or oxidizer: PVC compatibility with the named chemical is not checked; glass where it is not compatible. Corrosion allowance does not apply.
+
+4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.06 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
+
+5. Instruments. No trip is specified.
+
+6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/GLYOXAL.stl`.
+
+8. Open items. No holdup basis for this class.

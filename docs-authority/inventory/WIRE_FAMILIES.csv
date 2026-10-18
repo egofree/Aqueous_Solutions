@@ -1,0 +1,27 @@
+family,type,size,insulation,voltage_class,conductor_m,circuits
+WF-01,PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,46320,386
+WF-02,control,18 AWG,"TFFN 3-pair, shielded",600 V,31704,217
+WF-03,power,6 AWG,THHN/THWN-2 Cu in EMT,600 V,23760,66
+WF-04,equipment ground,10 AWG,bare Cu,-,23160,386
+WF-05,power,14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,13300,207
+WF-06,control,18 AWG,shielded pair,300 V,6440,322
+WF-07,DC power pair,16 AWG,TC-ER 2-cond,600 V,6380,319
+WF-08,bare grounding,4/0 AWG,bare soft-drawn Cu,-,6144,1
+WF-09,equipment ground,14 AWG,green XHHW-2 Cu,600 V,4424,204
+WF-10,power,3 AWG,XHHW-2 Cu,600 V,3675,49
+WF-11,power,6 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,2525,8
+WF-12,MV power,2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,1500,5
+WF-13,equipment ground,8 AWG,green XHHW-2 Cu,600 V,848,9
+WF-14,power,400 kcmil,XHHW-2 Cu,600 V,675,5
+WF-15,power,14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,574,7
+WF-16,power,10 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,330,2
+WF-17,power,6 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,315,2
+WF-18,power,4/0 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,258,1
+WF-19,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,225,5
+WF-20,power,3 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,173,1
+WF-21,DC power pair,14 AWG,TC-ER 2-cond,600 V,60,3
+WF-22,power,2 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,55,1
+WF-23,power,8 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,18,1
+WF-24,equipment ground,10 AWG,green XHHW-2 Cu,600 V,9,3
+WF-25,power,10 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,9,1
+WF-26,equipment ground,12 AWG,green XHHW-2 Cu,600 V,3,1

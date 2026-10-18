@@ -1,0 +1,8 @@
+tag,size,rating,service,face,height_mm
+N1,DN50,Class 150,EW overflow,inlet,130
+N2,DN50,Class 150,EW tail to polish,outlet,487
+N3,DN15,Class 150,cathode H2 + sweep air,outlet,487
+N4,DN25,Class 150,plated sheet,outlet,487
+N5,DN15,Class 150,cathode sheet,outlet,487
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,650
