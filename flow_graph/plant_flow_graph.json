@@ -7216,7 +7216,11 @@
       "presence": "present",
       "carries": "HNO3",
       "forbidden": "sewer, WS_PHOS bund",
-      "notes": "Nitric only.",
+      "notes": "Nitric only. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC)",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
       "rate_kg_d": null,
       "rate_status": "unset",
       "rate": {
@@ -7234,7 +7238,11 @@
       "presence": "present",
       "carries": "H3PO4",
       "forbidden": "sewer, HF bund",
-      "notes": "Phosphoric etch. Own bund.",
+      "notes": "Phosphoric etch. Own bund. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC)",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
       "rate_kg_d": null,
       "rate_status": "unset",
       "rate": {

@@ -14,5 +14,5 @@ def test_superseded_plans_point_to_plan_007():
 def test_gated_derived_files_not_stale():
     """X-GOV-06: pipeline outputs must be regenerated with the graph."""
     import subprocess, sys
-    r = subprocess.run([sys.executable, os.path.join(D, '_rev_stamp.py'), '--check'], cwd=ROOT, capture_output=True, text=True)
+    r = subprocess.run([sys.executable, os.path.join(D, '_rev_stamp.py'), '--check-only'], cwd=ROOT, capture_output=True, text=True)
     assert r.returncode == 0, r.stdout

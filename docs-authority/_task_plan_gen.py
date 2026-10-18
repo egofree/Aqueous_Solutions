@@ -1,5 +1,5 @@
 import json, os, re, collections
-R='/tmp/aqs.dFW2/Aqueous_Solutions'; os.chdir(R)
+R=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 g=json.load(open('flow_graph/plant_flow_graph.json'))
 P=[n for n in g['nodes'] if n.get('presence')=='present']
 ex=os.path.exists

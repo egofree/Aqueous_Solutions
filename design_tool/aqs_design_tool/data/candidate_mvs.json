@@ -5545,7 +5545,7 @@
       "from_sector_id": null,
       "to_sector_id": null,
       "open_boundary": false,
-      "note": "Nitric only."
+      "note": "Nitric only. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC); layers=mass"
     },
     {
       "stream_id": "S34B",
@@ -5562,7 +5562,7 @@
       "from_sector_id": null,
       "to_sector_id": null,
       "open_boundary": false,
-      "note": "Phosphoric etch. Own bund."
+      "note": "Phosphoric etch. Own bund. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC); layers=mass"
     },
     {
       "stream_id": "F_RECOVER_TO_HF_GEN",
