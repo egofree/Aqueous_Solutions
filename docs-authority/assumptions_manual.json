@@ -3951,7 +3951,7 @@
     "units": "kg/d O2",
     "where": "HDR_O2 draws (IA-FC-AIR 2.481, IA-H2O2-SRC 0.176, IA-GEN-O2 0.208, IA-AB-O2 0.528) vs sources S87 + IA-ASU-O2; H2O_ELYZ retired (BH IA-ELY-O2 = 85.166 kg/d not restored)",
     "basis": "Owner ruling 2026-10-18 (D-AIR): ASU restored, H2O_ELYZ not. Post-TF sources (diagnostic 2026-10-18, asserts disabled): grow-bed S87 0.617 (X-PAR-11 light-limited, 28 m2 fallback) + ASU recovered combustion excess 0.067 = 0.684 kg/d. The retired PEM electrolyser would have added 85.166 kg/d O2 (= 7.937 x 10.732 kg/d H2, 95.898 kg/d ROOF_TANK water, 24.59 kW), which alone covered both the header and cold-box draws; without it the O2 N+1 rule (P19) stays broken and CRYO_O2 residual is -41.80 kg/d.",
-    "sensitivity": "IA-O2-PROD surplus outlet is restored but has no surplus to carry: close_o2 asserts 'O2 short' (0.684 vs 3.393) as soon as IA-ASU-O2/IA-O2-PROD are both present, so balance.physics cannot complete until a source is chosen",
+    "sensitivity": "IA-O2-PROD surplus outlet is restored but has no surplus to carry: close_o2 asserts 'O2 short' (0.684 vs 3.393) as soon as IA-ASU-O2/IA-O2-PROD are both present, so balance.physics cannot complete until a source is chosen. RESOLVED 2026-10-18 (D-FARM lane): the assert is converted to a reported residual (edge notes + CRYO_O2 params o2_gap + o2_close.LAST); at the crew-duty bed basis the header gap is 2.685 kg/d and the system gap 44.485 kg/d; the assert returns with the source pick.",
     "replaced_by": "Owner pick of a new O2 source from the audit D-AIR options: re-based H2O_ELYZ, dock air feed re-basis of the cold boxes, or a named import",
     "task": "R10",
     "files": [
@@ -3961,5 +3961,24 @@
     ],
     "needs_verification": true,
     "verification_test": "o2_close.close_o2 src >= draw (the 'O2 short' assert passes) and two independent O2 sources exist (P19); CRYO_O2 residual >= -1e-4"
+  },
+  {
+    "id": "A-M-229",
+    "value": "GROW_BED crew duty: 29.12 m2 tomato-proxy bed (area = 4.2 kg/d crew food / 0.1442 kg/m2/d edible fresh at the DLI-17 flux); ET IA-BED-VAP 67.443 kg/d; nutrient solution IA-NUT-BED 31.364 kg/d; clean water IA-BED-H2O 42.138 kg/d (by difference, GROW_BED residual 0.000); LED 2.046 kW (70.27 W/m2); CO2 uptake S89 0.882 kg/d; photosynthetic O2 S87 0.642 kg/d",
+    "units": "m2; kg/d; kW",
+    "where": "flow_graph/plant_flow_graph.json: GROW_BED node, S04/S07/S11/S13/S14/S15/S20/S87/S88/S89, CO2_TO_FARM, FARM_O2_TO_HAB, NUT_TO_BED, IA-BED-H2O/VAP, IA-NUT-BED, IA-EW4-N2; deleted: TERRACE_IRRIG node + S40/S41/S42/IA-TERR-VAP/NUT_TO_TERRACE, S06, S14X; flow_graph/param/ess_tf.py (farm gate = GROW_BED presence); flow_graph/param/balance.py (STOICH S40 out, T1 terrace block out, IA-BED-H2O closure, IA-H2O-MU floor); flow_graph/param/o2_close.py (N2 sweep re-solve, S89 note, close_o2 gap report)",
+    "basis": "Owner ruling 2026-10-18 (D-FARM): keep + re-base GROW_BED to crew duty (crew 4 per mvs.site.crew; food S14 4.2 kg/d held), delete TERRACE_IRRIG outright (all-zero false pass; S40 removed from balance STOICH). Per-m2 constants from the retired ess_tf farm block: BVAD2022 tomato carbon chain (DM = fixed CO2 x 12.011/44.01 / C 43 %, HI 45 %, edible 94 % water) at the light-limited CO2 flux 30.30 g/m2/d (A-M-133: DLI 17, absorptance 0.9, quantum yield 0.045); transpiration 2.77 kg/m2/d per 36.24 g CO2/m2/d scaled to the same flux = 2.316 kg/m2/d; LED at 2.8 umol/J = 70.27 W/m2 (A-M-144); O2 = 32/44 x CO2 (PQ 1.0, TAIZ2015; BVAD 26.36/36.24 g/m2/d is the same ratio); nutrient solution scaled from the BH duty 129.676016 kg/d over 120.4 m2 = 1.077 kg/m2/d (AQS-DUTY-016).",
+    "sensitivity": "S14X retired: the bed sized to the crew food leaves zero surplus (AQS-SUR-001 threshold 0.5 kg/d not met); the food-surplus export returns only if S14 or the yield band changes. S06 GEO_HP heat retired: LED 2.05 kW into a 29.12 m2 room removes any Q4 heating duty. S15/FARM_O2_TO_HAB/CO2_TO_FARM/NUT_TO_BED held 0.0: single canonical path per species (S87, S89, IA-NUT-BED; farm is a separate atmosphere from HAB). Knock-ons now reported instead of hidden: the 98.3 kg/d nutrient draw the BH-scale bed absorbed strands in the leach train (LEACH_CSTR_1 water-long ~616 kg/d, IA-H2O-MU floored at 0 with a residual note, was a hidden -464 kg/d negative rate at stock); N2 header over-supplied 1.103 kg/d with the EW_4 sweep at zero (IA-EW4-N2 re-solved from the header balance, stale BH 0.710 retired).",
+    "replaced_by": "Nutritionist ration lock (WP-A2) re-sizing S14 and the bed; measured crop yields replacing the BVAD tomato proxy; R10 outlets for the leach water surplus and the N2 header surplus",
+    "task": "R10",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/ess_tf.py",
+      "flow_graph/param/balance.py",
+      "flow_graph/param/o2_close.py",
+      "notes/first_principles_audit_2026-10-17.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -c \"import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)\" runs to completion with no assert; GROW_BED residual 0.000 kg/d; TERRACE_IRRIG absent; python3 flow_graph/check_authority_contract.py exit 0"
   }
 ]

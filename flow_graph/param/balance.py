@@ -11,7 +11,7 @@ SINK = {'RELIEF_H2', 'RELIEF_CRYO', 'BOUNDARY_EXPORT'}   # boundary meter: in !=
 MARK = ('X-PAR', 'X-SAN', 'X-MFG', 'AQS-DUTY-06', 'X-SAF-10', 'X-ELS')
 STOICH = {'S49': 'H2 to the fuel cell (load)', 'S50': 'O2 = 8 x H2 by mass', 'S02': 'crew O2 0.84 kg/p.d', 'IA-FC-AIR': 'MEOH_FC oxidant',
           'IA-AC-O2': 'acetic acid oxidation', 'IA-O2-NIT': 'nitric acid', 'IA-GLX-O2': 'net one O2 per acetaldehyde via NO recycle (X-PAR-13)', 'IA-FORM-O2': 'one O2 per methanol at 10/10 mol% (X-SAF-11)', 'IA-FORM-N2': 'FORM N2 diluent', 'IA-FORM-TAIL': 'FORM tail gas', 'IA-AB-AIR': 'afterburner dilution air less FORM N2',
-          'IA-H2O2-SRC': 'Faraday at the cell current', 'S40': 'terrace irrigation demand', 'S14': 'crew food', 'S21': 'crew water', 'IA-WASH': 'wash water'}
+          'IA-H2O2-SRC': 'Faraday at the cell current', 'S14': 'crew food', 'S21': 'crew water', 'IA-WASH': 'wash water'}   # S40 removed: TERRACE_IRRIG deleted (D-FARM owner ruling 2026-10-18, A-M-229)
 GROSS = 0.05
 TRIM = ('-RET', '-FIX', '-MAKE')
 
@@ -40,8 +40,9 @@ def henry_bound(g):
 
 def physics(g):
     """Transfer functions that replace the held study rates which X-SAF-10 left inconsistent (A-M-120, AQS-PAR-003 section 0).
-    T1 closed greenhouse at steady state: transpiration = irrigation - drains. The terrace has no CO2 supply and no harvest edge, so net
-       photosynthetic water fixation (CO2 + H2O -> CH2O + O2, TAIZ2015) is zero on this node.
+    T1 closed greenhouse at steady state: transpiration = irrigation - drains. RETIRED with TERRACE_IRRIG (owner ruling
+       2026-10-18, D-FARM): the terrace node and S40/S41/S42/IA-TERR-VAP are deleted; the crew-duty GROW_BED water path
+       is IA-BED-VAP (ET) with IA-BED-H2O closed by difference below (A-M-229).
     T2 AHU condensate = greenhouse vapour in (AQS-DUTY-013: greenhouse vapour condenses to the roof tank, no second outlet).
     T3 O2 product follows the header draw (no storage, no vent; AQS-DUTY-017/019): S83 = IA-ASU-O2 = sum of HDR_O2 draws, IA-O2-RET = 0.
     T4 roof-tank shortfall is made up on the potable path by difference: IA-POT-01, IA-UPW-REMIN, S25 and the leach water bleed IA-LEACH-VCD.
@@ -57,19 +58,20 @@ def physics(g):
         E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | X-PAR-02')[0] + f' | {PHYS_TAG}: {why} (AQS-PAR-003).'
     # T6 grow-bed net photosynthesis (X-PAR-11): CO2 + H2O -> CH2O + O2, PQ 1.0 [TAIZ2015]; all CO2 dosed to the bed is fixed at steady state
     #    (the dose is sized to uptake, AQS-DUTY-011). O2 = 32/44 x CO2 leaves on S87 to CRYO_O2; the trim carries CO2 + H2O - O2.
-    #    R8: presence-gated for Rev AC; GROW_BED survives but its closure neighbourhood is retired, so the bed stays unclosed (R10 owns it).
+    #    D-FARM owner ruling 2026-10-18: GROW_BED re-based to crew duty (A-M-229) — the bed is a live, closed unit again;
+    #    the clean-water make-up IA-BED-H2O closes it by difference (ess_tf.py sets the area, o2_close the CO2 dose).
     if all(k in E for k in ('S04', 'S89', 'S87')):
         co2 = v('S04') + v('S89'); put('S87', co2*32.0/44.01, f'grow-bed photosynthetic O2 = 32/44 x {co2:.3f} kg/d CO2 (PQ 1.0, TAIZ2015)')
         E['S87']['composition'] = {'O2': 0.99, 'Ar': 0.01}
+    if 'IA-BED-H2O' in E:
+        put('IA-BED-H2O', v('IA-BED-H2O') - _unit_resid(g, 'GROW_BED'), 'crew-duty bed closes by difference on the clean-water line (A-M-229)')
     for u, k, why in (('GROW_BED', 'IA-BED-COMP', 'trim less the photosynthetic O2'), ('COMPOST', 'IA-COMP-OUT', 'compost passes the trim'), ('NUTRIENT_DOSE', 'IA-NUT-LEACH', 'nutrient surplus by difference')):
         if k in E:
             r = _unit_resid(g, u); put(k, v(k) + r, why)
     for k in CO2_EDGES:
         if k in E: E[k]['composition'] = {'CO2': 1.0}
-    if all(k in E for k in ('IA-TERR-VAP', 'S40', 'S41', 'S42')):
-        put('IA-TERR-VAP', v('S40') - v('S41') - v('S42'), 'transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest')
     if 'IA-HVAC-COND' in E:
-        vap_fixed = tuple(k for k in ('IA-TERR-VAP', 'IA-BED-VAP', 'IA-HAB-VAP', 'IA-DR-VAP') if k in E)   # R8: IA-DR-VAP retired with DUAL_ROOT
+        vap_fixed = tuple(k for k in ('IA-BED-VAP', 'IA-HAB-VAP', 'IA-DR-VAP') if k in E)   # IA-DR-VAP retired with DUAL_ROOT; IA-TERR-VAP deleted with TERRACE_IRRIG (A-M-229)
         put('IA-HVAC-COND', sum(v(k) for k in vap_fixed) + sum(v(k) for k in E if k.endswith('-VAP') and E[k]['to_unit_id'] == 'CRYO_AHU' and k not in vap_fixed), 'condensate = greenhouse vapour in')
     if 'IA-O2-RET' in E:
         put('IA-O2-RET', 0.0, 'no surplus O2 return')
@@ -96,7 +98,14 @@ def physics(g):
         lim = henry_bound(g)
         put('IA-LEACH-ASU', max(0.0, v('IA-LEACH-ASU') - a), f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')
         assert v('IA-LEACH-ASU') <= lim + 1e-6, ('IA-LEACH-ASU above the Henry-law bound', v('IA-LEACH-ASU'), lim)
-    put('IA-H2O-MU', v('IA-H2O-MU') - _unit_resid(g, 'LEACH_CSTR_1'), 'leach water make-up by difference (H and O leave as methanol and O2 product)')
+    r_leach = _unit_resid(g, 'LEACH_CSTR_1'); h2o_mu = v('IA-H2O-MU') - r_leach
+    if h2o_mu > -1e-6:
+        put('IA-H2O-MU', h2o_mu, 'leach water make-up by difference (H and O leave as methanol and O2 product)')
+    else:
+        # TF re-basis 2026-10-18 (A-M-229 follow-up): the leach train is water-long (hab grey water via NUTRIENT_DOSE
+        # closure has no outlet since the bed takes crew-duty nutrient flow only). Report the surplus — do not write a
+        # negative make-up rate (the stock run hid -464 kg/d this way). Outlet decision is R10 work.
+        put('IA-H2O-MU', 0.0, f'leach water-long {-h2o_mu:.3f} kg/d: no make-up needed, surplus has no outlet; residual reported, not a negative rate (A-M-229)')
     o2_close.LAST.clear(); o2_close.LAST.update(XL, power=o2_close.close_power(g), o2=(src, draw))
     return d, a
 

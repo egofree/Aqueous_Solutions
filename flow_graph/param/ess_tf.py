@@ -4,7 +4,10 @@ ZNBR2 purge (S69/S69B): sized so the headspace stays at or below 25 % of the H2 
   area for the non-charging hours; charge Ah from the AQS-ELEC-007 store_in_kWh at 1.82 V (SAND2000-0893); recombination with Br2 not credited.
 HYDRO_SET: diverse N+1 backup of ZNBR2 per the owner redundancy rule (A-M-145): NFPA 111 Level 1 Class X over the night hours at the critical load.
 NFT: 1 L/min per gully (COOPER1996), gullies at 200 mm pitch across the 1 m unit width (80 mm gully, CROPKING_NFT).
-MISTER: high-pressure aeroponics, 6 nozzles/m2 at 0.057 L/min, 4 s on / 4 min off (HPA_PRACTICE, JAE2022_AERO); A-M-136."""
+MISTER: high-pressure aeroponics, 6 nozzles/m2 at 0.057 L/min, 4 s on / 4 min off (HPA_PRACTICE, JAE2022_AERO); A-M-136.
+FARM: D-FARM owner ruling 2026-10-18 - GROW_BED re-based to crew duty (A-M-229): area from the crew food need S14 at the
+BVAD2022 tomato per-m2 carbon chain scaled to the DLI-17 light-limited CO2 flux; the BH farm neighbourhood (DUAL_ROOT, VEG_BED,
+BSFL, FISH_SUMP, NFT, MISTER) and TERRACE_IRRIG stay retired/deleted; the farm gate is GROW_BED presence alone."""
 import json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from . import drivers as _drv0; _D = _drv0.load()   # X-PAR-01: constants live in drivers.json
@@ -62,31 +65,22 @@ def tf(g, ps=None):
         'critical_kW': round(crit, 2), 'class_hours': night, 'energy_kWh_bus': round(e_bus, 1), 'head_m': h, 'eta_turbine_generator': ETA_TURB,
         'eta_pump_motor': ETA_PUMP, 'round_trip': round(ETA_TURB*ETA_PUMP, 3), 'upper_reservoir_m3': round(vol, 0), 'rated_kW_discharge': round(crit, 2),
         'recharge_kW_over_PV_window': round(e_bus/ETA_TURB/ETA_PUMP/PSH_RECHG, 1), 'A-M': 'A-M-145', 'Q': 'Q-006 closed; Q-009 closed: water tower', 'upper': f"{wt['levels']} reservoir levels x {wt['depth_per_level_m']:.2f} m water over {wt['area_m2']:.0f} m2, {wt['cells_per_level']} cells per level", 'lower': f"CATCH_TANK {wt['catch_depth_m']:.2f} m deep over {wt['area_m2']:.0f} m2", 'eta_net_with_penstock': wt['eta_net']})
-    farm = all(k in N for k in ('GROW_BED','DUAL_ROOT','VEG_BED','BSFL','FISH_SUMP','NFT','MISTER')) and all(k in E for k in ('IA-RES-01','IA-COMP-01','IA-GOAT-TRIM','IA-STRAW'))   # farm scope partial in Rev AC: gate whole loop
+    farm = 'GROW_BED' in N and all(k in E for k in ('S14', 'S89', 'IA-BED-VAP', 'IA-BED-H2O'))   # D-FARM owner ruling 2026-10-18: GROW_BED re-based to crew duty (A-M-229); the BH farm neighbourhood (DUAL_ROOT/VEG_BED/BSFL/FISH_SUMP/NFT/MISTER) stays retired
     qn = qm = et = None; BED_M2 = None; ined = claim = dm = ed = co2f = 0.0
     tot = dict(A=0.0, co2=0.0, o2=0.0, t=0.0, ined=0.0); rows = {}
     if farm:
-        L, W = [x/1000 for x in N['NFT']['params']['size_mm'][:2]]; n = int(W/GULLY_PITCH); qn = n*GULLY_LPM*1440
-        put('IA-NFT-IN', qn, f'{n} gullies x {GULLY_LPM} L/min (COOPER1996) over {L:.0f} m'); put('IA-NFT-OUT', qn, 'film return = supply')
-        A = (lambda d: d[0]*d[1]/1e6)(N['MISTER']['params']['size_mm']); qm = A*NOZ_M2*NOZ_LPM*1440*T_ON/(T_ON + T_OFF)
-        put('IA-MIST-IN', qm, f'{A:.0f} m2 x {NOZ_M2} nozzles/m2 x {NOZ_LPM} L/min, {T_ON:.0f} s on / {T_OFF/60:.0f} min off (schedule within LAKHIAR2018 range; nozzle flow HPA_PRACTICE; JAE2022_AERO)'); put('IA-MIST-OUT', qm, 'chamber drain return = supply')
-        # DUAL_ROOT: substrate bed on the grow-bed water. ET per m2 = the grow bed's (same LED light, same room; IA-BED-VAP over BED_M2);
-        # supply = ET/(1 - drain fraction 0.20) (PLOSONE2017_DRAIN 10-20 %, AGRIC2024_LF 15-20 %); drain returns to the bed; ET to the AHU.
-        if 'IA-DR-VAP' not in E:
-            from flow_graph.param.o2_close import _edge
-            g['edges'].append(_edge('IA-DR-VAP', 'DUAL_ROOT', 'CRYO_AHU', 'G', ['mass'], 'dual-root transpiration', 0, 'kg/d', 'FARM', 'CRYO', {'H2O': 1.0})); E = {e['stream_id']: e for e in g['edges']}
         from flow_graph.param.o2_close import CO2_M2
-        # GROW_BED area from need (owner Q-008, A-M-151): inedible fresh biomass must meet the residue lines (IA-RES-01, IA-COMP-01, browse, straw).
-        PB = N['GROW_BED']['params']; lines = ('IA-RES-01', 'IA-COMP-01', 'IA-GOAT-TRIM', 'IA-STRAW')
-        claim0 = PB.setdefault('residue_lines_base_kg_d', round(sum(E[k]['rate']['value'] for k in lines), 6))
-        ined_m2 = CO2_M2/1000*12.011/44.01/BVAD_TOM_C*(1 - BVAD_TOM_HI)/(1 - 0.90); BED_M2 = round(claim0/ined_m2, 1); PB['area_m2'] = BED_M2
-        P = N['DUAL_ROOT']['params']; P.pop('bed_h2o_base', None)
-        t_m2 = BVAD_TOM_T*CO2_M2/BVAD_TOM_CO2; bed_et = t_m2*BED_M2; b0 = bed_et       # BVAD tomato water/CO2 ratio at the bed's light-limited CO2
-        put('IA-BED-VAP', bed_et, f'{BED_M2:.0f} m2 x {t_m2:.3f} kg/m2/d: BVAD2022 tomato {BVAD_TOM_T} kg/m2/d per {BVAD_TOM_CO2} g CO2, scaled to {CO2_M2:.1f} g CO2/m2/d')
-        adr = (lambda d: d[0]*d[1]/1e6)(P['size_mm']); et = t_m2*adr; sup = et/(1 - DRAIN)
-        put('IA-DR-IN', sup, f'ET {et:.2f} kg/d ({adr:.0f} m2 at the bed rate {t_m2:.3f} kg/m2/d) / (1 - {DRAIN} drain) (PLOSONE2017_DRAIN)')
-        put('IA-DR-OUT', sup - et, f'drain {DRAIN:.0%} of supply back to the bed'); put('IA-DR-VAP', et, 'transpiration to the CRYO AHU coil')
-        put('IA-BED-H2O', b0 + et, f'bed ET {b0:.2f} + dual-root ET {et:.2f} drawn through the bed')
+        # Crew-duty bed (A-M-229): area from the crew food need S14, not the BH residue claim (A-M-151 superseded for Rev AC).
+        # Edible fresh per m2 at the light-limited CO2 flux (A-M-133: DLI 17, absorptance 0.9, quantum yield 0.045):
+        # DM = fixed CO2 x 12.011/44.01 / C 43 %; edible = HI 45 % at 94 % water (BVAD2022 tomato).
+        crew_food = E['S14']['rate']['value']
+        ed_m2 = CO2_M2/1000*12.011/44.01/BVAD_TOM_C*BVAD_TOM_HI/(1 - 0.94)
+        BED_M2 = round(crew_food/ed_m2, 2)
+        PB = N['GROW_BED']['params']; PB['area_m2'] = BED_M2
+        PB['crop_basis'] = {'proxy': 'tomato', 'area_m2': BED_M2, 'crew': (g.get('mvs', {}) or {}).get('site', {}).get('crew'),
+            'crew_food_kg_d': crew_food, 'edible_kg_m2_d': round(ed_m2, 6), 'source': 'BVAD2022', 'A-M': 'A-M-229'}
+        t_m2 = BVAD_TOM_T*CO2_M2/BVAD_TOM_CO2                                                           # BVAD tomato water/CO2 ratio at the bed's light-limited CO2
+        put('IA-BED-VAP', t_m2*BED_M2, f'{BED_M2:.2f} m2 x {t_m2:.3f} kg/m2/d: BVAD2022 tomato {BVAD_TOM_T} kg/m2/d per {BVAD_TOM_CO2} g CO2/m2/d, scaled to the DLI-17 light-limited {CO2_M2:.2f} g CO2/m2/d (A-M-133); crew-duty area {crew_food:.1f} kg/d food / {ed_m2:.4f} kg/m2/d edible (A-M-229)')
     # OIL_FRAC cuts (replaces the ASF fit, a Fischer-Tropsch growth law that does not describe random-scission cracking): thermal pyrolysis
     # of a 50/50 PE/PP float, oil 34 % C7-C12, 31.5 % C13-C20, 34.5 % C21-C40 (SU2018_PYRO: LDPE 24/30/46, PP 44/33/23), spread uniformly
     # over the carbon numbers of each reported band and re-binned to the plant cuts; C29+ recycled to extinction (re-cracked at the same split).
@@ -118,55 +112,20 @@ def tf(g, ps=None):
     # MET_MELT closes on the remelt: sheet + remelt = billet + mill + atomizer feed
     r = _resid(g, 'MET_MELT'); put('IA-MELT-MILL', E['IA-MELT-MILL']['rate']['value'] + r, f'mill draw closes the melt ({r:+.4f})')
     if farm:
-        # GROW_BED crop carbon (A-M-141): total DM = fixed CO2 x 12/44 / C 43 %; edible = HI 45 % at 94 % water, inedible 90 % water (BVAD2022 tomato).
-        # Edible leaves as crew food S14 plus surplus to larvae S14X. The inedible lines (residue, trim, browse, straw) exceed the carbon; Q-008.
+        # GROW_BED crop carbon (A-M-141 basis; crew duty A-M-229): total DM = fixed CO2 x 12/44 / C 43 %; edible = HI 45 % at
+        # 94 % water, inedible 90 % water (BVAD2022 tomato). The bed is sized to the crew food S14, so edible = S14 and the
+        # food-surplus export is retired (surplus 0 < the AQS-SUR-001 0.5 kg/d threshold); inedible biomass leaves on S11.
         co2f = CO2_M2*BED_M2/1000; dm = co2f*12.011/44.01/BVAD_TOM_C; ed = dm*BVAD_TOM_HI/(1 - 0.94); ined = dm*(1 - BVAD_TOM_HI)/(1 - 0.90)
-        put('S14X', ed - E['S14']['rate']['value'], f'edible {ed:.2f} kg/d fresh (DM {dm:.3f} kg/d from {co2f:.3f} kg CO2, HI {BVAD_TOM_HI:.0%}, BVAD2022) less crew food S14')
-        r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, f'frass closes the larvae bin on S14X ({r:+.3f})')
-        claim = sum(E[k]['rate']['value'] for k in lines)
+        if 'S14X' in E: put('S14X', max(0.0, ed - E['S14']['rate']['value']), f'edible {ed:.2f} kg/d fresh less crew food S14; export only over the AQS-SUR-001 0.5 kg/d threshold (A-M-229)')
         N['GROW_BED']['params']['crop_carbon'] = {'co2_fixed_kg_d': round(co2f, 3), 'dm_kg_d': round(dm, 3), 'edible_fresh_kg_d': round(ed, 3), 'inedible_fresh_kg_d': round(ined, 3),
-            'inedible_lines_claimed_kg_d': round(claim, 3), 'gap_kg_d': round(claim - ined, 3), 'basis': 'BVAD2022 tomato; A-M-141; area from need A-M-151 (Q-008 closed)'}
-        # VEG_BED crops (A-M-142): harvest is the study need; area, CO2 uptake, O2, transpiration and trim per BVAD2022 Tables 4-90/4-91 per m2.
-        # The crops had no carbon source on the graph; CO2 now comes from HDR_CO2 (taken off the methanol feed in o2_close), O2 joins CRYO_O2.
-        for sid, a, b, ph, what, comp in (('IA-VEG-CO2', 'HDR_CO2', 'VEG_BED', 'G', 'CO2 uptake, vegetable crops', {'CO2': 1.0}), ('IA-VEG-O2', 'VEG_BED', 'CRYO_O2', 'G', 'photosynthetic O2, vegetable crops', {'O2': 0.99, 'Ar': 0.01}),
-                                           ('IA-VEG-VAP', 'VEG_BED', 'CRYO_AHU', 'G', 'vegetable-crop transpiration', {'H2O': 1.0})):
-            if sid not in E: g['edges'].append(_edge(sid, a, b, ph, ['mass'], what, 0, 'kg/d', 'FARM', 'CRYO', comp)); E[sid] = g['edges'][-1]
-        tot = dict(A=0.0, co2=0.0, o2=0.0, t=0.0, ined=0.0); rows = {}
-        for crop, proxy in VEG_PROXY.items():
-            h = E[f'IA-CROP_{crop}-HAB']['rate']['value']; ed, ined_m2, co2_m2, o2_m2, t_m2c = BVAD_CROP[proxy]; A = h/ed
-            rows[crop] = dict(proxy=proxy, area_m2=round(A, 3)); tot['A'] += A; tot['co2'] += A*co2_m2/1000; tot['o2'] += A*o2_m2/1000; tot['t'] += A*t_m2c; tot['ined'] += A*ined_m2
-        put('IA-VEG-CO2', tot['co2'], f"{tot['A']:.2f} m2 of crops at BVAD2022 CO2 uptake"); put('IA-VEG-O2', tot['o2'], 'BVAD2022 O2 production')
-        put('IA-VEG-VAP', tot['t'], 'BVAD2022 transpiration'); put('IA-VEG-TRIM', tot['ined'], 'BVAD2022 inedible fresh biomass to larvae')
-        r = _resid(g, 'VEG_BED'); put('IA-VEG-SUMP', E['IA-VEG-SUMP']['rate']['value'] + r, 'bed return closes the crop water')
-        r = _resid(g, 'BSFL'); put('IA-BSFL-FRASS', E['IA-BSFL-FRASS']['rate']['value'] + r, 'frass closes the larvae bin')
-        # Other terrestrial crop units (A-M-143): same BVAD2022 per-m2 basis; water by difference on the bed-spill supply edge.
-        for u, proxy, harv, trims, sup in FARM_UNITS:
-            for sid, a_, b_, what, comp in ((f'IA-{u}-CO2', 'HDR_CO2', u, 'CO2 uptake', {'CO2': 1.0}), (f'IA-{u}-O2', u, 'CRYO_O2', 'photosynthetic O2', {'O2': 0.99, 'Ar': 0.01}),
-                                            (f'IA-{u}-VAP', u, 'CRYO_AHU', 'transpiration', {'H2O': 1.0})) + (((trims[0], u, 'COMPOST', 'crop residue', {'biomass': 1.0}),) if trims[0] not in E else ()):
-                if sid not in E: g['edges'].append(_edge(sid, a_, b_, 'G' if 'VAP' in sid or 'O2' in sid else ('G' if 'CO2' in sid else 'S'), ['mass'], what, 0, 'kg/d', 'FARM', 'CRYO', comp)); E[sid] = g['edges'][-1]
-            ed, ined_m2, co2_m2, o2_m2, t_m2c = BVAD_CROP[proxy]
-            base = N[u]['params'].setdefault('crop_claim_base', {k: E[k]['rate']['value'] for k in harv + trims if k in E})
-            if harv: h = sum(E[k]['rate']['value'] for k in harv); A = h/ed
-            else: h = sum(base.get(k, 0) for k in trims); A = h/(ed + ined_m2); ined_m2 = ed + ined_m2   # cover crop: whole plant returned
-            put(f'IA-{u}-CO2', A*co2_m2/1000, f'{A:.2f} m2 {proxy} (BVAD2022) for {h:.3f} kg/d harvest'); put(f'IA-{u}-O2', A*o2_m2/1000, 'BVAD2022 O2')
-            put(f'IA-{u}-VAP', A*t_m2c, 'BVAD2022 transpiration'); w = [base.get(k, 0) for k in trims]; tw = sum(w) or 1.0
-            for k, x in zip(trims, w): put(k, A*ined_m2*(x/tw if sum(w) else 1/len(trims)), f'BVAD2022 inedible share ({proxy})')
-            r = _resid(g, u); put(sup, E[sup]['rate']['value'] - r, f'supply closes the crop water ({-r:+.3f})')
-            N[u]['params']['crop_basis'] = {'proxy': proxy, 'area_m2': round(A, 2), 'source': 'BVAD2022', 'A-M': 'A-M-143'}
-        r = _resid(g, 'GROW_BED'); put('IA-BED-SUMP', E['IA-BED-SUMP']['rate']['value'] + r, f'bed return carries the spill-crop water ({r:+.3f})')
-        if 'IA-SUMP-MU' not in E:
-            g['edges'].append(_edge('IA-SUMP-MU', 'ROOF_TANK', 'FISH_SUMP', 'L', ['mass'], 'aquaponic loop make-up (crop transpiration)', 0, 'kg/d', 'GEO', 'FARM', {'H2O': 1.0})); E['IA-SUMP-MU'] = g['edges'][-1]
-        put('IA-SUMP-MU', 0.0, 'reset'); put('IA-SUMP-MU', max(0.0, -_resid(g, 'FISH_SUMP')), 'make-up = water the crops transpired off the loop; AHU condensate returns it to the roof tank')
-        # Crop lighting (A-M-144): sole-source LED at the bed's DLI 17 mol/m2/d and 2.8 umol/J (o2_close basis) = 70.3 W/m2 average, plus the unit's
-        # pre-existing pump/aux study load kept as the base.
+            'outlet_inedible': 'S11', 'surplus_export': 'retired: bed sized to the crew food, surplus 0 < 0.5 kg/d (AQS-SUR-001)', 'basis': 'BVAD2022 tomato; crew-duty area from S14 (A-M-229)'}
+        # Crew-duty lighting (A-M-144/A-M-229): sole-source LED at the bed's DLI and efficacy (A-M-133) over the crew-duty area;
+        # S20 is the bed's electrical feed (direction corrected to SOL_ARK_60K -> GROW_BED, first-principles audit).
         from flow_graph.param.o2_close import DLI, LED
-        wm2 = DLI*1e6/LED/86400
-        for u in ['GROW_BED', 'VEG_BED'] + [x[0] for x in FARM_UNITS]:
-            A_ = BED_M2 if u == 'GROW_BED' else (N[u]['params']['crop_basis']['area_m2'] if u != 'VEG_BED' else tot['A']); ck = N[u]['continuous_kw']
-            aux = N[u]['params'].setdefault('aux_kw_base', round(ck['value'] - (28*wm2/1000 if u == 'GROW_BED' else 0), 4)); kw = aux + A_*wm2/1000
-            ck.update(value=round(kw, 4), note=f'LED {A_:.2f} m2 x {wm2:.1f} W/m2 (DLI {DLI}, {LED} umol/J) + aux {aux} kW (A-M-144)')
-            for k in (f'SF-{u}', f'SQ-{u}') + (('S20',) if u == 'GROW_BED' else ()):
-                if k in E: E[k]['rate']['value'] = round(kw, 4)
+        wm2 = DLI*1e6/LED/86400; kw = BED_M2*wm2/1000
+        N['GROW_BED']['continuous_kw'].update(value=round(kw, 4), note=f'LED {BED_M2:.2f} m2 x {wm2:.1f} W/m2 (DLI {DLI}, {LED} umol/J, A-M-133/A-M-144); crew duty (A-M-229)')
+        for k in ('S20', f'SF-GROW_BED', f'SQ-GROW_BED'):
+            if k in E: E[k]['rate']['value'] = round(kw, 4)
     # X-RED-06 crew CO2 removal N+1 (A-M-147): two-bed swing assembly (one adsorbs, one regenerates, 144 min half-cycle, CDRA practice) per
     # NASA_CDRA2015; zeolite 5A loading 1.0 wt% at 0.4 kPa CO2 (NASA_5A1998, equilibrium: bed mass is a minimum). N+1 = a second full assembly.
     co2c = E['S90']['rate']['value']; half = 144.0; per_bed = co2c*half/1440/ZEO_LOAD

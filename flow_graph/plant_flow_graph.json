@@ -920,10 +920,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 5.0,
+        "value": 2.0463,
         "unit": "kW",
         "status": "study",
-        "note": "LED canopy share; study"
+        "note": "X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): LED 29.12 m2 x 70.27 W/m2 (DLI 17.0 mol/m2/d, 2.8 umol/J, A-M-133/A-M-144) = 2.0463 kW; BH 5.0 kW canopy-share study value superseded; nutrient pumps on SF-NUTRIENT_DOSE, room latent load on SF-CRYO_AHU"
       },
       "modules": [],
       "params": {
@@ -933,10 +933,30 @@
         ],
         "food_path_study": "upper_band",
         "food_out_kg_d_study": 4.2,
-        "yield_assumption": "0.15 kg/(m2·d) upper × ~28 m2 (AQS-AUD-001 §12) — study",
         "berth_crew_study": 4,
         "ration_kg_person_d_study": 0.6,
-        "presence": "present"
+        "presence": "present",
+        "area_m2": 29.12,
+        "crop_basis": {
+          "proxy": "tomato",
+          "area_m2": 29.12,
+          "crew": 4,
+          "crew_food_kg_d": 4.2,
+          "edible_kg_m2_d": 0.144237,
+          "source": "BVAD2022",
+          "A-M": "A-M-229"
+        },
+        "crop_carbon": {
+          "co2_fixed_kg_d": 0.8824,
+          "dm_kg_d": 0.56,
+          "edible_fresh_kg_d": 4.2002,
+          "inedible_fresh_kg_d": 3.0801,
+          "outlet_inedible": "S11",
+          "surplus_export": "S14X retired: bed sized to the crew food, surplus 0 < 0.5 kg/d threshold (AQS-SUR-001)",
+          "basis": "BVAD2022 tomato; crew-duty area from S14 (A-M-229)"
+        },
+        "yield_assumption": "0.1442 kg/(m2·d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
+        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)"
       }
     },
     {
@@ -1668,22 +1688,6 @@
       "modules": [],
       "params": {
         "kW": 60,
-        "presence": "present"
-      }
-    },
-    {
-      "unit_id": "TERRACE_IRRIG",
-      "sector_id": "FARM",
-      "presence": "present",
-      "class": "header",
-      "tags": [],
-      "electrical_role": "none",
-      "diagram_gap": null,
-      "notes": null,
-      "enabled": true,
-      "continuous_kw": null,
-      "modules": [],
-      "params": {
         "presence": "present"
       }
     },
@@ -4880,43 +4884,20 @@
       "forbidden": "raw AFTERBURNER flue",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "null_rate_kind=unknown | X-PAR-12 TF: bed dosed from HDR_CO2 only (AQS-PAR-005). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty bed, entire light-limited dose 0.882362 kg/d on S89"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S06",
-      "from_unit_id": "GEO_HP",
-      "to_unit_id": "GROW_BED",
-      "phase": "E",
-      "layers": [
-        "thermal"
-      ],
-      "presence": "present",
-      "carries": "heat Q4",
-      "header": "Q4",
-      "forbidden": "Q1 flue in hab air",
-      "claim_status": "Closed",
-      "rate": {
-        "value": null,
-        "unit": "kW",
-        "status": "study",
-        "note": "null_rate_kind=unknown"
-      },
-      "from_sector_id": "GEO",
-      "to_sector_id": "FARM",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S07",
@@ -5106,7 +5087,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "condensate",
       "header": "HDR_GREY",
       "forbidden": "Salria",
@@ -5115,7 +5096,7 @@
         "value": 3.799494,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): endpoints alive on the crew-duty bed (GROW_BED present, VCD_TRAIN present); placeholder flipped, BH rate held"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -5153,35 +5134,6 @@
       "notes": null
     },
     {
-      "stream_id": "S14X",
-      "from_unit_id": "GROW_BED",
-      "to_unit_id": "BOUNDARY_EXPORT",
-      "phase": "S",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "food surplus export",
-      "header": null,
-      "forbidden": null,
-      "claim_status": null,
-      "rate": {
-        "value": 1.8,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "Study residual S14 upper 4.2 − crew×0.6=2.4 → 1.8 kg/d; AQS-SUR-001 threshold ≥0.5 — pass_study expected true (WP-A2)."
-      },
-      "from_sector_id": "FARM",
-      "to_sector_id": "DOCK",
-      "open_boundary": true,
-      "namespace": "SANDBOX",
-      "gap_flags": [
-        "sandbox_extra_not_in_STREAM_REGISTER",
-        "reconcile_or_keep_sandbox"
-      ],
-      "notes": "candidate_mvs extension — do not invent new register ID"
-    },
-    {
       "stream_id": "S15",
       "from_unit_id": "GROW_BED",
       "to_unit_id": "HABITATION",
@@ -5195,10 +5147,10 @@
       "forbidden": "—",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown"
+        "note": "null_rate_kind=unknown | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): photosynthetic O2 captured on S87 to CRYO_O2 (32/44 x CO2 fixed, PQ 1.0); farm is a separate atmosphere from HAB (S89: Farm AHU is not the HAB AHU) — held closed"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "HAB",
@@ -5315,8 +5267,8 @@
     },
     {
       "stream_id": "S20",
-      "from_unit_id": "GROW_BED",
-      "to_unit_id": "SOL_ARK_60K",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GROW_BED",
       "phase": "E",
       "layers": [
         "elec"
@@ -5327,13 +5279,13 @@
       "forbidden": "—",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 2.0463,
         "unit": "kW",
         "status": "study",
-        "note": "null_rate_kind=study_deferred"
+        "note": "X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): direction reversed (was GROW_BED->SOL_ARK_60K, audit finding); LED load 29.12 m2 x 70.27 W/m2 (DLI 17.0 mol/m2/d at 2.8 umol/J, A-M-133/A-M-144) = 2.0463 kW"
       },
-      "from_sector_id": "FARM",
-      "to_sector_id": "ELEC",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
@@ -5833,88 +5785,6 @@
         "status": "study",
         "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT."
       }
-    },
-    {
-      "stream_id": "S40",
-      "from_unit_id": "ROOF_TANK",
-      "to_unit_id": "TERRACE_IRRIG",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "clean overflow",
-      "header": "OVERFLOW_DOWNCOMER_*",
-      "forbidden": "FARM_SUMP, S26 potable, Salria",
-      "claim_status": "Closed",
-      "rate": {
-        "value": null,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "null_rate_kind=event"
-      },
-      "from_sector_id": "WTR",
-      "to_sector_id": "TRR",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S41",
-      "from_unit_id": "TERRACE_IRRIG",
-      "to_unit_id": "CATCH_TANK",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "rain + S40 return",
-      "header": "apron / secondary drain",
-      "forbidden": "L-1 process bund, HDR_GREY fertigation",
-      "claim_status": "Closed",
-      "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "AQS-DUTY-010: event-driven; zero on the dry design day | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
-      },
-      "from_sector_id": "TRR",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: TERRACE underdrain / apron (clean) → CATCH TANK / DRAIN_SEC"
-    },
-    {
-      "stream_id": "S42",
-      "from_unit_id": "TERRACE_IRRIG",
-      "to_unit_id": "GREY_TREAT",
-      "phase": "L",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "dilute nutrient drain",
-      "header": "HDR_GREY",
-      "forbidden": "CATCH, ROOF_TANK, sewer-as-primary",
-      "claim_status": "Closed / Claimed",
-      "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "AQS-DUTY-010: event-driven; zero on the dry design day | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
-      },
-      "from_sector_id": "TRR",
-      "to_sector_id": "WTR",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [
-        "absent_from_candidate_mvs"
-      ],
-      "notes": "From register: Enclosed terrace / GH fertigated drain → GREY treat / VCD_FEED / SALT"
     },
     {
       "stream_id": "S43",
@@ -7117,10 +6987,14 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "rate": {
-        "value": 2.652653,
+        "value": 0.641572,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 3.648 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 0.882362 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty bed 29.12 m2; BVAD2022 tomato O2/CO2 26.36/36.24 g/m2/d = same 32/44 ratio"
+      },
+      "composition": {
+        "O2": 0.99,
+        "Ar": 0.01
       }
     },
     {
@@ -7143,7 +7017,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): N2 make-up stays a closed contingency (crew-duty bed needs no N2 make-up)"
       }
     },
     {
@@ -8765,10 +8639,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology — unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rev AC new topology — unrated pending param pass | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): CO2 dose carried on S89 (canonical register stream, AQS-DUTY-009/011; only consumer of HDR_CO2); this Rev AC edge adds no second path — held closed"
       }
     },
     {
@@ -8785,10 +8659,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology — unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rev AC new topology — unrated pending param pass | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): farm O2 captured on S87 to CRYO_O2; no direct farm-to-hab gas path (separate atmospheres) — held closed"
       }
     },
     {
@@ -8865,30 +8739,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology — unrated pending param pass"
-      }
-    },
-    {
-      "stream_id": "NUT_TO_TERRACE",
-      "from_unit_id": "NUTRIENT_DOSE",
-      "to_unit_id": "TERRACE_IRRIG",
-      "phase": "L",
-      "presence": "present",
-      "carries": "nutrient to terrace",
-      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
-      "namespace": "IA",
-      "layers": [
-        "mass"
-      ],
-      "open_boundary": false,
-      "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology — unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rev AC new topology — unrated pending param pass | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): fertigation carried on IA-NUT-BED (canonical, AQS-DUTY-016 area basis); this Rev AC edge adds no second path — held closed"
       }
     },
     {
@@ -9351,10 +9205,10 @@
       "forbidden": "HDR_O2, hab air / HAB return, BOUNDARY_EXPORT, raw flue",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.648227,
+        "value": 0.882362,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: light-limited uptake 120.4 m2 x 30.3 g/m2/d (AQS-PAR-005)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: light-limited uptake 29.12 m2 x 30.3 g CO2/m2/d (DLI 17.0, A-M-133); crew-duty area = S14 4.2 kg/d crew food / 0.1442 kg/m2/d edible fresh (BVAD2022 tomato carbon chain: DM = CO2 x 12.011/44.01 / C 0.43, HI 0.45, 94 % water) (AQS-PAR-005). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): BH 120.4 m2 residue-claim basis (A-M-151) superseded for Rev AC crew duty"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
@@ -10350,10 +10204,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 306.644287,
+        "value": 42.138417,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: bed ET 278.85 + dual-root ET 27.79 drawn through the bed (AQS-PAR-003)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (out: ET 67.443215 + food 4.2 + organics 0.8 + condensate 3.799 + O2 0.641572; in: nutrient solution 31.363502 + S07 2.5 + CO2 0.882362) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): BH 306.644 kg/d was farm-scale irrigation"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -10858,36 +10712,6 @@
       "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
-      "stream_id": "IA-TERR-VAP",
-      "from_unit_id": "TERRACE_IRRIG",
-      "to_unit_id": "CRYO_AHU",
-      "phase": "G",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "greenhouse transpiration",
-      "header": "dedicated",
-      "forbidden": "HDR_O2, HDR_CO2",
-      "claim_status": "Claimed / Partial",
-      "rate": {
-        "value": 37.176,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 TF: transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest (AQS-PAR-003)."
-      },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
-      "open_boundary": false,
-      "namespace": "IA",
-      "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
-      "composition": {
-        "water": 0.97,
-        "solute": 0.03
-      }
-    },
-    {
       "stream_id": "IA-BED-VAP",
       "from_unit_id": "GROW_BED",
       "to_unit_id": "CRYO_AHU",
@@ -10901,10 +10725,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 278.851754,
+        "value": 67.443215,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: 120 m2 x 2.316 kg/m2/d: BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2, scaled to 30.3 g CO2/m2/d (AQS-PAR-003)."
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: 29.12 m2 x 2.316 kg/m2/d: BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2/m2/d, scaled to the DLI-17 light-limited 30.30 g CO2/m2/d (A-M-133) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty area = 4.2 kg/d food / 0.1442 kg/m2/d edible; BH 278.85 kg/d at 120.4 m2 was farm-scale, not crew duty"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -11968,10 +11792,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 129.676016,
+        "value": 31.363502,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. | X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion."
+        "note": "AQS-DUTY-016. | X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion. | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): nutrient/fertigation solution = BH duty 129.676016 kg/d over 120.4 m2 (AQS-DUTY-016) = 1.0770 kg/m2/d x 29.12 m2 crew-duty bed"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12615,10 +12439,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.709537,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: sweep N2 trimmed +0.000: the former cold box turned this N2 into O2 (AQS-PAR-005)."
+        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: sweep held closed: N2 header over-supplied ~0.950 kg/d even at zero sweep (restored ASU pass-through S84 193.577 vs header draws 192.627); sweep re-solved from the HDR_N2 header balance, stale BH 0.710 retired; residual reported, not absorbed (A-M-227) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",

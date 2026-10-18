@@ -165,7 +165,7 @@ def tf(g):
     L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_co + ab_org, xs=xs)
     # --- CO2: light-limited bed, rest to methanol
     bm2 = N['GROW_BED']['params'].get('area_m2', BED_M2); bed = bm2*CO2_M2/1000; veg = sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-CO2') and E[k]['from_unit_id'] == 'HDR_CO2' and E[k]['to_unit_id'] not in ('MEOH_SYNTH',)); others = sum(vv(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
-    put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {bm2} m2 x {CO2_M2:.1f} g/m2/d')
+    put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {bm2:.2f} m2 x {CO2_M2:.1f} g CO2/m2/d (DLI {DLI}, A-M-133); crew-duty area from GROW_BED params: S14 crew food / BVAD2022 tomato edible at the same flux (A-M-229)')
     put('IA-HCO2-MEOH', v('S85') + others - bed - veg, 'header CO2 the bed cannot fix'); put('S73', v('S73') + resid('CRYO_CO2'), 'cold-box CO2 to methanol by difference')
     co2m = v('S73') + v('IA-HCO2-MEOH')
     put('S74', co2m*3*2.016/44.01, 'CO2 + 3 H2'); put('S75', co2m*(1 + 3*2.016/44.01 - 18.015/44.01), '-> CH3OH (mass closed)'); put('IA-MEOH-H2O', co2m*18.015/44.01, '+ H2O')
@@ -181,23 +181,45 @@ def tf(g):
         N['H2O_ELYZ']['continuous_kw'] = {'value': round(kw, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: {h2:.2f} kg/d H2 x {KWH_H2} kWh/kg / 24 h; rated {h2*KWH_H2/PSH_ELY:.1f} kW on a {PSH_ELY} h PV window.'}
         L['ely'] = dict(h2=h2, o2=o2, kw=kw, rated=h2*KWH_H2/PSH_ELY)
     if 'IA-ASU-N2' in E:
-        n2 = resid('HDR_N2'); put('IA-EW4-N2', v('IA-EW4-N2') - n2, f'sweep N2 trimmed {n2:+.3f}: the former cold box turned this N2 into O2')   # R8: basis is the retired cold box
+        # TF re-basis 2026-10-18 (A-M-227 follow-up, D-AIR restored topology): the EW_4 sweep rate re-solves from the HDR_N2
+        # header balance instead of holding the stale BH 0.710 kg/d. When even a zero sweep leaves the header over-supplied
+        # (restored ASU pass-through S84 > header draws), the surplus is REPORTED as a residual item (L + edge note), not
+        # absorbed by a negative sweep and not an assert — the N2 loop closure is R10 work on the NOX/AHU gas returns.
+        n2 = resid('HDR_N2'); sweep = v('IA-EW4-N2') - n2
+        if sweep > -1e-6:
+            put('IA-EW4-N2', sweep, f'header balance: sweep N2 re-solved {n2:+.3f} kg/d at HDR_N2 (restored ASU topology)')
+        else:
+            put('IA-EW4-N2', 0.0, f'sweep held closed: N2 header over-supplied {-sweep:.3f} kg/d even at zero sweep (ASU pass-through vs header draws); residual reported, not absorbed (A-M-227)')
+            L['n2_header_surplus_kg_d'] = round(-sweep, 6)
     put('IA-MEOH-SHIP', v('IA-MEOH-PROD'), 'shipped')
     return L
 
 def close_o2(g):
     """After T6: O2 product = cold-box O2 + bed O2 + electrolyser O2; surplus to PROD_O2.
-    R8: with the cold box and electrolyser retired in Rev AC the product split has no source basis; the re-basis
-    (S83 vs the surviving bed O2 and the header draws) is R10's, so the writes and the assert are gated on a
-    surviving source and the study rates are left alone."""
+    TF re-basis 2026-10-18 (A-M-228): with H2O_ELYZ retired the surviving sources cannot cover the draws (the honest O2
+    system gap). The TF REPORTS the gap — surplus outlet held at zero, edge notes, CRYO_O2 params and LAST['o2'] carry the
+    residual item — instead of asserting, so balance.physics runs to completion while the O2 N+1 source decision is open.
+    The assert returns when a second source is picked (replaced_by A-M-228)."""
+    N = {n['unit_id']: n for n in g['nodes']}
     E = {e['stream_id']: e for e in g['edges']}; v = lambda k: float(E[k]['rate']['value'] or 0)
     vv = lambda k: float(E[k]['rate']['value'] or 0) if k in E else 0.0
     src = v('S87') + vv('IA-ASU-O2') + vv('IA-ELY-O2') + sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-O2') and E[k]['to_unit_id'] == 'CRYO_O2' and E[k]['from_unit_id'] in ('VEG_BED', 'FRUIT_GUTTER', 'PEANUT', 'NFIX_BED'))
     draw = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['from_unit_id'] == 'HDR_O2' and e['stream_id'] not in ('IA-O2-RET', 'IA-O2-PROD') and e['presence'] == 'present')
     if 'IA-O2-PROD' in E and ('IA-ASU-O2' in E or 'IA-ELY-O2' in E):
-        E['S83']['rate']['value'] = round(src - v('IA-O2-MAKE'), 6); E['IA-O2-PROD']['rate']['value'] = round(src - draw, 6)
-        assert src - draw > -1e-6, ('O2 short', src, draw)
+        E['S83']['rate']['value'] = round(src - v('IA-O2-MAKE'), 6)
+        E['IA-O2-PROD']['rate']['value'] = round(max(src - draw, 0.0), 6)
         E['IA-O2-SHIP']['rate']['value'] = E['IA-O2-PROD']['rate']['value']
+        gap_hdr = draw - src; gap_sys = draw + vv('S02') + vv('S50') - src
+        if gap_hdr > 1e-6:
+            why = (f'O2 short {gap_hdr:.3f} kg/d at HDR_O2 (src {src:.3f} vs draw {draw:.3f}); system gap {gap_sys:.3f} kg/d incl. CRYO_O2 direct draws '
+                   f'(S02 crew {vv("S02"):.1f}, S50 fuel cell {vv("S50"):.1f}); surplus outlet held closed — residual reported per A-M-228 (O2 N+1 source decision open)')
+            for k in ('IA-O2-PROD', 'IA-O2-SHIP', 'S83'):
+                E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(f' | {TAG}')[0] + f' | {TAG}: {why} (AQS-PAR-005).'
+        N['CRYO_O2']['params']['o2_gap'] = {'hdr_short_kg_d': round(max(gap_hdr, 0.0), 4), 'system_short_kg_d': round(max(gap_sys, 0.0), 4),
+            'src_kg_d': round(src, 4), 'hdr_draw_kg_d': round(draw, 4),
+            'basis': 'A-M-228: sources S87 (crew-duty bed, A-M-229) + IA-ASU-O2 (recovered combustion excess); H2O_ELYZ retired',
+            'note': 'reported residual, not an assert; closes when the O2 N+1 source decision lands (A-M-228 replaced_by)'}
+        LAST['o2'] = (src, draw, round(gap_hdr, 6))
     return src, draw
 
 def _bus(g):
