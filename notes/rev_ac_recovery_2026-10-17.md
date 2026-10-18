@@ -50,6 +50,36 @@ consolidation dropped graph data that the closed-balance stack depends on.
   foundry) are unrated; `test_param_misfit` numeric closure over them is open X-PAR
   work, not recoverable from BH.
 
+## QA pass 2026-10-17 (full-repo audit, three independent lanes + hygiene)
+
+- **Regression found and fixed**: the edge-restore rule keyed on topology only and
+  re-added 10 BH routes whose `stream_id` Rev AC had deliberately re-routed
+  (S02/S03/S50 to CRYO_* sources, IA-BMED-03/04 to CRU feed, S12, S08G, S20 reverse,
+  IA-POL-02, DOCK_EXPORT_TBD) — double-booked flows. All 10 restored duplicates
+  removed; AC-native routes kept; graph now 422 edges, 0 duplicate stream_ids
+  (the authority checker's "422 streams" = unique ids). Tests unchanged 10F/17P.
+- Corrections to this note: `test_param_misfit` failures are **4**, not 3
+  (`test_roof_carries_pv` shares the `solver.py KeyError 'IA-ACID-01'` root cause).
+- **Newly recorded gaps**:
+  - `_task_plan_gen.py` cannot regenerate TASK_PLAN: (1) hardcoded
+    `os.chdir('/tmp/aqs.dFW2/Aqueous_Solutions')`, (2) 53 present nodes carry
+    sector_ids unmapped in its `sysof()` (DIGESTER 23, FOUNDRY 20, POLYMERS 10).
+    Committed TASK_PLAN.md still names Rev BH / 212 nodes.
+  - `_assumptions_register.py` exit 1: 18 stale keys (LEACH_CSTR_1 hx5/liquor_T,
+    EW_1..9 params.sizing, WS_NITRIC, WS_PEROX).
+  - `pytest` rewrites tracked `docs-authority/DERIVED_REVISIONS.md` as a side
+    effect (governance test re-stamps it).
+  - `schema/plant_flow_graph.schema.json` drifted: 421 errors vs the live graph
+    (enums predate Rev AC, vestigial `rate_kg_d`/`rate_status` on 247 BH-surviving
+    edges, bare-string modules, `notes_rev_H..AC` case) — unused by any test.
+  - S34/S34B missing `layers`+`namespace`; 10 `presence:'study'` HL-* semantics.
+  - Known open security: `pack_name` traversal in export (live-confirmed escape
+    from `exports/`); non-atomic sandbox mirror writes (`store._mirror`).
+- Verified green: authority contract, export round-trip byte-stable, recovery
+  provenance (full-population verbatim BH match, 0 invented rates), API smoke
+  (PV dedup 77.5 kW live), web build, canonical-vs-working-copy parity (zero
+  drift), git hygiene (fsck clean, remote == main).
+
 ## State when this note was written
 
 - Authority contract: PASS (projection regenerated, revision AC).
