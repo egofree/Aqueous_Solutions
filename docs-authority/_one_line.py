@@ -15,8 +15,8 @@ for r in ll:
     try: L[r[0].strip()]=(r[1].strip(),float(r[2]),float(r[3]) if r[3].strip() else None)
     except ValueError: pass
 el=[e for e in g['edges'] if 'elec' in (e.get('layers') or [])]
-src=[(e['from_unit_id'],e['stream_id'],e['rate']['value']) for e in el if e['to_unit_id']=='SOL_ARK_60K']
-fed={e['to_unit_id']:(e['stream_id'],e['rate']['value']) for e in el if e['from_unit_id']=='SOL_ARK_60K'}
+src=[(e['from_unit_id'],e['stream_id'],e['rate']['value']) for e in el if e['to_unit_id']=='SOL_ARK_60K' and e['rate']['value'] is not None]
+fed={e['to_unit_id']:(e['stream_id'],e['rate']['value']) for e in el if e['from_unit_id']=='SOL_ARK_60K' and e['rate']['value'] is not None}
 PK={n['unit_id']:n.get('params',{}).get('peak_kw') for n in g['nodes'] if isinstance(n.get('params',{}).get('peak_kw'),(int,float))}
 def amps(kw,ph=3,v=V): return PW.amps_3ph(kw,v,PF) if ph==3 else kw*1000/(v*PF)
 def brk(a): return PW.breaker(a,BRK)   # NEC2023 125 %
@@ -26,18 +26,21 @@ INVTXT=f"{INV.get('count',1)} × 60 = {INV.get('kW',60):.0f} kW inverters"
 rows=[]
 for u,(sid,kw) in fed.items():
     if u=='BOUNDARY_EXPORT': continue
+    if kw is None: continue   # unrated Rev AC edge — listed loads only
     rows.append(('SOL_ARK 480 V',u,kw,f'graph {sid}'))
 if 'RECT_EW' not in fed: rows.append(('SOL_ARK 480 V','RECT-EW (EW_1–EW_9)',rect['Pac_kW'],'AQS-ELEC-004 bounding AC'))
 skip=set(fed)|{f'EW_{i}' for i in range(1,10)}|{'SOL_ARK_60K'}
 for u,(role,kw,c) in L.items():
     if u in skip or role not in ('load','—') : continue
     k=c if c is not None else kw
-    if k<=0: continue
+    if k is None or k<=0: continue
     rows.append(('MCC-1 480 V' if k>=1.0 else 'PP-1 208/120 V',u,k,'AQS-ELEC-003 '+('calculated' if c is not None else 'study share')))
 bus={}
-for b,u,k,_ in rows: bus[b]=bus.get(b,0)+k
+for b,u,k,_ in rows:
+    if k is None: continue
+    bus[b]=bus.get(b,0)+k
 pp=bus.get('PP-1 208/120 V',0); xf=next(s for s in (15,30,45,75,112.5) if s>=pp/PF*1.25)
-gen=sum(k for _,_,k in src); demand=sum(bus.values())
+gen=sum(k for _,_,k in src if k is not None); demand=sum(bus.values())
 out=[f"""# One line
 
 Document number: AQS-ELEC-002

@@ -10,7 +10,10 @@ ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); INV=60.0; AUT_CRIT=2.0   # study; PSH from AQS-SITE-002 (NREL PVWatts)
 _gc={n['unit_id']:n for n in json.load(open('flow_graph/plant_flow_graph.json'))['nodes']}
-CRIT={'HABITATION':3.0,'CRYO_H2':round(_gc['CRYO_H2']['params'].get('compressor_design',{}).get('P_peak_kW',4.0),2),'CRYO_ASU':round(_gc['CRYO_ASU']['continuous_kw']['value'],2),'GROW_BED':5.0,'controls and instruments':2.0}   # CRYO_H2 peak (AQS-DUTY-067) and CRYO_ASU (AQS-DUTY-069) from the graph
+CRIT={'HABITATION':3.0,'CRYO_H2':round(_gc['CRYO_H2']['params'].get('compressor_design',{}).get('P_peak_kW',4.0),2)}   # CRYO_H2 peak (AQS-DUTY-067) from the graph
+if 'CRYO_ASU' in _gc: CRIT['CRYO_ASU']=round(_gc['CRYO_ASU']['continuous_kw']['value'],2)   # AQS-DUTY-069; node retired in graph Rev AC
+if 'GROW_BED' in _gc: CRIT['GROW_BED']=5.0   # farm scope retired in graph Rev AC
+CRIT['controls and instruments']=2.0
 ref_rect=ew['I_elem_A']*2.8/0.80/1000
 cases={'bounding':ol['demand'],'reference':ol['demand']-rect['Pac_kW']+ref_rect}
 from flow_graph.param import solver as SV
@@ -28,6 +31,7 @@ out['roof']=roof
 crit=sum(CRIT.values())
 out['backup']=dict(critical_kW=crit,critical_list=CRIT,gen_kW=math.ceil(crit*1.25/5)*5,autonomy_d=AUT_CRIT,energy_kWh=crit*24*AUT_CRIT)
 g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}
-out['graph']=dict(pv_nameplate_kW=N['PV_ARRAY']['params']['nameplate_kw'],pv_avg_kW=N['PV_ARRAY']['continuous_kw']['value'],
+_pv=N['PV_ARRAY']['params']; _np=_pv.get('nameplate_kw') or round(_pv.get('module_kw',0)*_pv.get('count',1),2)   # Rev AC stores module_kw x count
+out['graph']=dict(pv_nameplate_kW=_np,pv_avg_kW=N['PV_ARRAY']['continuous_kw']['value'],
     znbr2_peak_kW=N['ZNBR2']['params']['kW'],znbr2_kWh=N['ZNBR2']['params']['kWh'],inverter_kW=N['SOL_ARK_60K']['params']['kW'])
 print(json.dumps(out))
