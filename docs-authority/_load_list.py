@@ -1,6 +1,7 @@
 """AQS-ELEC-003 load list. Every present node with continuous_kw, the graph value, and the calculated value
-where a sizing document exists. Writes docs-authority/LOAD_LIST.md. Calculated entries are listed in CALC."""
-import json, subprocess, os
+where a sizing document exists. Writes docs-authority/LOAD_LIST.md (display) and docs-authority/LOAD_LIST.json
+(machine sidecar read by _one_line.py; U2a interlock transport). Calculated entries are listed in CALC."""
+import json, subprocess, os, hashlib
 g=json.load(open('flow_graph/plant_flow_graph.json'))
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['rows']
 CALC={r['cell']:(r['P_kW'],'AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)') for r in ew}
@@ -43,4 +44,10 @@ Loads: graph sum {gsum:.1f} kW; with calculated values substituted {csum:.1f} kW
 | Unit | Role | Graph kW | Calculated kW | Basis |
 | --- | --- | --- | --- | --- |"""]
 for u,role,kw,c,b in rows: out.append(f"| {u} | {role} | {kw:.3f} | {'' if c is None else f'{c:.3f}'} | {b} |")
+# JSON sidecar (U2a): the machine face of the same table. kW values are quantised to the 3 decimals
+# the markdown table publishes, so consumers of the json reproduce the markdown-derived numbers exactly.
+sidecar={'_generated_from': {'graph_sha256': hashlib.sha256(open('flow_graph/plant_flow_graph.json','rb').read()).hexdigest(), 'generator': 'docs-authority/_load_list.py'},
+         'rows': [{'unit': u, 'role': role, 'kw': round(kw, 3), 'calc_kw': (None if c is None else round(c, 3)), 'basis': b} for u, role, kw, c, b in rows],
+         'summary': {'calculated': nc, 'rows': len(rows), 'graph_sum_kW': round(gsum, 1), 'calc_sum_kW': round(csum, 1)}}
+json.dump(sidecar, open('docs-authority/LOAD_LIST.json', 'w'), indent=1)
 open('docs-authority/LOAD_LIST.md','w').write('\n'.join(out)+'\n'); print(nc,len(rows),round(gsum,1),round(csum,1))

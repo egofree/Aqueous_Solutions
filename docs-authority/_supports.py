@@ -1,5 +1,6 @@
 """AQS-PIP-005 supports and thermal flexibility per routed line (X-PIP-04).
-Spans and properties are study values (register). Writes docs-authority/SUPPORTS.md."""
+Spans and properties are study values (register). Writes docs-authority/SUPPORTS.md.
+Reads the routed lines from the ISO_ROUTES.json sidecar (U2a); markdown fallback only if absent."""
 import json, math
 g=json.load(open('flow_graph/plant_flow_graph.json')); E={e['stream_id']:e for e in g['edges']}
 OD={15:21.3,20:26.7,25:33.4,32:42.2,40:48.3,50:60.3,65:73.0,80:88.9,100:114.3,125:141.3,150:168.3,200:219.1,250:273.0,300:323.8,400:406.4,500:508.0}
@@ -9,11 +10,19 @@ SMT={15:1.5,20:1.8,25:2.1,32:2.4,40:2.7,50:3.0,65:3.4,80:3.7,100:4.3,125:4.8,150
 # class: (span table, factor at service T, alpha 1/K, E MPa, allowable bending MPa, T limit C)
 C={'P1':(SPV,0.7,54e-6,2900,6.9,60),'P2':(SPV,0.75,63e-6,2500,6.9,93),'P3':(SPV,0.85,120e-6,1700,8.0,120),'P4':(SPV,0.8,150e-6,1300,5.0,80),
    'P5':(SPV,0.6,200e-6,900,4.0,60),'M1':(SMT,1.0,16.5e-6,193000,115,400),'M2':(SMT,1.0,12e-6,200000,138,400),'F1':(SPV,1.3,20e-6,11000,20,100)}
-rows=[l.split('|')[1:-1] for l in open('docs-authority/ISO_ROUTES.md') if l.startswith('| ') and not l.startswith('| Line') and not l.startswith('| ---')]
+try:
+    lines=json.load(open('docs-authority/ISO_ROUTES.json'))['rows']
+except FileNotFoundError:
+    # DEPRECATED markdown fallback (U2a, 2026-10-18): runs ONLY when ISO_ROUTES.json is absent.
+    # Regenerate the sidecar with: python3 docs-authority/_iso_routes.py — do not build on this path.
+    lines=[{'line':c[0].strip(),'dn':int(c[1].strip()[2:]),'class':c[2].strip(),
+            'legs_mm':[int(float(x)) for x in c[5:9]],'length_m':float(c[9])}
+           for c in (l.split('|')[1:-1] for l in open('docs-authority/ISO_ROUTES.md')
+                     if l.startswith('| ') and not l.startswith('| Line') and not l.startswith('| ---'))]
 out=[];nsup=0;flags=0
-for r in rows:
-    sid,dn,cl=r[0].strip(),int(r[1].strip()[2:]),r[2].strip()
-    legs=[abs(float(x))/1000 for x in r[5:9]]; L=float(r[9])
+for r in lines:
+    sid,dn,cl=r['line'],r['dn'],r['class']
+    legs=[abs(x)/1000 for x in r['legs_mm']]; L=r['length_m']
     sp,f,a,Emod,S,Tl=C.get(cl,C['P1'])
     span=round(sp[dn]*f,2); n=math.ceil(L/span)+1; nsup+=n
     T=(E.get(sid,{}).get('params') or {}).get('T_C'); T=float(T) if isinstance(T,(int,float)) else 25.0

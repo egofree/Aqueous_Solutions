@@ -1,0 +1,322 @@
+{
+ "_generated_from": {
+  "graph_sha256": "130bb63c7364bee9a3486f40e046232c3300fc6051de75b17f97956a4c6d1d79",
+  "generator": "docs-authority/_load_list.py"
+ },
+ "rows": [
+  {
+   "unit": "EW_9",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 6.604,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "EW_7",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 6.236,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "BMED_UPW_POLISH",
+   "role": "load",
+   "kw": 6.0,
+   "calc_kw": 6.0,
+   "basis": "AQS-DUTY-070 (X-MFG-34): RO + EDI on the UPW share, potable bypass, UV-TOC"
+  },
+  {
+   "unit": "EW_2",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 5.25,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "EW_1",
+   "role": "load",
+   "kw": 5.248,
+   "calc_kw": 5.248,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "CRYO_H2",
+   "role": "load",
+   "kw": 4.0,
+   "calc_kw": 4.0,
+   "basis": "AQS-DUTY-067 (X-MFG-36): 5-stage intercooled diaphragm compressor, average over the day"
+  },
+  {
+   "unit": "MFG_SHOP",
+   "role": "load",
+   "kw": 12.0,
+   "calc_kw": 2.9,
+   "basis": "AQS-MFG-010 tool list, one shift; peak 24.5 kW"
+  },
+  {
+   "unit": "GROW_BED",
+   "role": "load",
+   "kw": 2.046,
+   "calc_kw": 2.25,
+   "basis": "LED: 28 m2 x DLI 17 mol/m2/d (S26 Both, Cornell CEA lettuce) / 2.5 umol/J = 2.20 kW; recirculation 18909 kg/d at 10 m head, 50% wire-to-water = 0.043 kW"
+  },
+  {
+   "unit": "EW_3",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 1.971,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "CRYO_ASU",
+   "role": "\u2014",
+   "kw": 1.66,
+   "calc_kw": 1.66,
+   "basis": "AQS-DUTY-069 (X-MFG-33): 13X TSA, CO2 compressor and condenser, Ar getter; no cryogenic column"
+  },
+  {
+   "unit": "LEACH_CSTR_1",
+   "role": "load",
+   "kw": 2.0,
+   "calc_kw": 0.75,
+   "basis": "AQS-DUTY-050 agitator motor; heat by Q3 (HX-5), not electric"
+  },
+  {
+   "unit": "EW_6",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.48,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "EW_8",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.443,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "EW_5",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.44,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "EW_4",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.425,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+  },
+  {
+   "unit": "H2_PURIFIER",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.05,
+   "basis": "TSA regeneration average (study)"
+  },
+  {
+   "unit": "WS_PEROX",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.031,
+   "basis": "AQS-DSN-OX-001 cell 12.31 A at 2.5 V"
+  },
+  {
+   "unit": "PV_ARRAY",
+   "role": "generation",
+   "kw": 417.276,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "EXT_HALL",
+   "role": "load",
+   "kw": 105.214,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "ZNBR2",
+   "role": "storage",
+   "kw": 60.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "H2O_ELYZ",
+   "role": "load",
+   "kw": 25.427,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "RECTIFIER",
+   "role": "load",
+   "kw": 12.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "BMED_ACID",
+   "role": "\u2014",
+   "kw": 5.627,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "FUEL_CELL",
+   "role": "generation",
+   "kw": 4.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "HABITATION",
+   "role": "load",
+   "kw": 3.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "GEO_HP",
+   "role": "load",
+   "kw": 2.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "WAFER_FAB",
+   "role": "load",
+   "kw": 2.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "GLASS_DIGEST",
+   "role": "load",
+   "kw": 1.5,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "EVAP_ACID",
+   "role": "load",
+   "kw": 1.498,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "EVAP_BASE",
+   "role": "load",
+   "kw": 1.328,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "MEOH_FC",
+   "role": "generation",
+   "kw": 1.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "WET_BENCH",
+   "role": "load",
+   "kw": 1.0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "CRYO_AHU",
+   "role": "\u2014",
+   "kw": 0.647,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "AFTERBURNER",
+   "role": "load",
+   "kw": 0.5,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "MEOH_SYNTH",
+   "role": "load",
+   "kw": 0.5,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "ALK_SCRUBBER",
+   "role": "load",
+   "kw": 0.4,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "H2_DRYER",
+   "role": "load",
+   "kw": 0.3,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "VCD_TRAIN",
+   "role": "\u2014",
+   "kw": 0.251,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "NUTRIENT_DOSE",
+   "role": "load",
+   "kw": 0.1,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "EVAP_ACID_VS",
+   "role": "load",
+   "kw": 0.024,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "BACKUP_GEN",
+   "role": "generation",
+   "kw": 0.008,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "HYDRO_SET",
+   "role": "storage",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "MEOH_TANK",
+   "role": "storage",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "HF_GEN",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  }
+ ],
+ "summary": {
+  "calculated": 17,
+  "rows": 44,
+  "graph_sum_kW": 184.5,
+  "calc_sum_kW": 174.4
+ }
+}

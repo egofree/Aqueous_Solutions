@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 34.38 kg/d. Mass out 34.38 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-02 33.37 kg/d (Pyro → frac); S38 0.006 kg/d (resist and solvent waste); S39B 0 kg/d (solvent and photoresist); S72B 0.0158 kg/d (organic mist); 1 more. Out: CUT-1 7.425 kg/d (fractionator cut); CUT-2 9.919 kg/d (fractionator cut); CUT-3 6.166 kg/d (fractionator cut); CUT-4 5.873 kg/d (fractionator cut); 1 more.
+1. Basis. Mass in 34.38 kg/d. Mass out 34.38 kg/d. Electrical duty 0.0000 kW. In: IA-OIL-02 33.37 kg/d (Pyro → frac); S38 0.006 kg/d (resist and solvent waste); S39B 0 kg/d (solvent and photoresist); S72B 0.0158 kg/d (organic mist); 2 more. Out: CUT-1 7.425 kg/d (fractionator cut); CUT-2 9.919 kg/d (fractionator cut); CUT-3 6.166 kg/d (fractionator cut); CUT-4 5.873 kg/d (fractionator cut); 2 more.
 
 2. Size.
 - V = (29.91/1000)×(0.5/24) = 0.0006 m³. 30 min sump.

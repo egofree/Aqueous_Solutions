@@ -2,8 +2,9 @@
 Route rule (study, register A-M): rise from the source centre to the rack at the
 source level datum + 3200 mm (AQS-PIP-002 header Z), run X, run Y, drop or rise to
 the target centre. Lines between levels change elevation in the riser at the target
-plan position. Writes docs-authority/ISO_ROUTES.md."""
-import runpy, json
+plan position. Writes docs-authority/ISO_ROUTES.md (display) and ISO_ROUTES.json
+(machine sidecar read by _supports.py; U2a interlock transport)."""
+import runpy, json, hashlib
 ns=runpy.run_path('docs-authority/_line_list.py'); C=ns['C']; rows=ns['rows']
 seed=json.load(open('flow_graph/placement_seed.json')); D=seed['datums_mm']
 def lvl(z): return min(D,key=lambda k:abs(z-D[k]) if z>=D[k] else 1e9)
@@ -20,6 +21,7 @@ Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y
 """]
 tab=["| Line | DN | Class | From | To | ΔZ up | ΔX | ΔY | ΔZ down | Length m | Elbows |","| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
 n=0; miss=0; tot=0
+jrows=[]
 for r in rows:
     if not r[3].startswith('DN'): continue
     a,b=C.get(r[1]),C.get(r[2])
@@ -29,7 +31,14 @@ for r in rows:
     legs=[zr-z1,x2-x1,y2-y1,z2-zr]
     L=sum(abs(v) for v in legs)/1000; el=max(sum(1 for v in legs if abs(v)>1)-1,0)
     tab.append(f"| {r[0]} | {r[3]} | {r[4]} | {r[1]} | {r[2]} | {legs[0]:.0f} | {legs[1]:.0f} | {legs[2]:.0f} | {legs[3]:.0f} | {L:.1f} | {el} |")
+    # sidecar row (U2a): legs rounded to the whole mm and length to the 1 decimal the markdown table
+    # publishes, so consumers of the json reproduce the markdown-derived numbers exactly.
+    jrows.append({'line': r[0], 'dn': int(r[3][2:]), 'class': r[4], 'from': r[1], 'to': r[2],
+                  'legs_mm': [round(v) for v in legs], 'length_m': round(L, 1), 'elbows': el})
     n+=1; tot+=L
 out.append(f"Status. {n} positioned piped lines routed, {tot:.0f} m total. {miss} piped lines wait on unit positions (X-BLD-09 / X-RSZ-05).\n")
 open('docs-authority/ISO_ROUTES.md','w').write('\n'.join(out+tab)+'\n')
+json.dump({'_generated_from': {'graph_sha256': hashlib.sha256(open('flow_graph/plant_flow_graph.json','rb').read()).hexdigest(), 'generator': 'docs-authority/_iso_routes.py'},
+           'rows': jrows, 'summary': {'routed': n, 'missing_position': miss, 'total_m': round(tot)}},
+          open('docs-authority/ISO_ROUTES.json','w'), indent=1)
 print(n,miss,round(tot))

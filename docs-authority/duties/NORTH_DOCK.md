@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 86.87 kg/d. Mass out 92.15 kg/d. Electrical duty 0.0000 kW. In: IA-N2-VENT 0 kg/d (nitrogen vent); IA-NA-PURGE 5.106 kg/d (sodium salt purge equal to the make-up mass); IA-C5-SHIP 7.371 kg/d (C5-C10 product shipped); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped); 3 more. Out: IA-H2O-MU 87.04 kg/d (water make-up for H and O leaving as product); IA-NAOH-MU 5.106 kg/d (purchased NaOH flake make-up); IA-AIR-IN 0 kg/d (intake air).
+1. Basis. Mass in 85.74 kg/d. Mass out 91.26 kg/d. Electrical duty 0.0000 kW. In: IA-N2-VENT 0 kg/d (nitrogen vent); IA-NA-PURGE 4.394 kg/d (sodium salt purge equal to the make-up mass); IA-C5-SHIP 6.956 kg/d (C5-C10 product shipped); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped); 3 more. Out: IA-H2O-MU 86.86 kg/d (water make-up for H and O leaving as product); IA-NAOH-MU 4.394 kg/d (purchased NaOH flake make-up); IA-AIR-IN 0 kg/d (intake air).
 
 2. Size.
 - No mass throughput. No volume is invented.

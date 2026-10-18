@@ -17,10 +17,10 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 | Duty | alkaline digest of milled cullet | slow pyrolysis retort |
 | Temperature, C | 85 | 500 |
 | Residence | 22.50 h | 1.0 h |
-| Working / vessel volume, L | 39.9 / 53.2 | 1.91 / 3.81 |
-| Shell DN x height, mm | 450 x 370 | 200 x 170 |
+| Working / vessel volume, L | 37.5 / 50.0 | 1.91 / 3.81 |
+| Shell DN x height, mm | 400 x 400 | 200 x 170 |
 | Wall, mm | 4.0 | 4.5 |
-| Mixing | PBT D150 at 318 rpm, 18.7 W shaft, 0.09 kW motor | none (static retort) |
+| Mixing | PBT D133 at 358 rpm, 14.8 W shaft, 0.09 kW motor | none (static retort) |
 | Heat | Q3 coil HX-6 (graph HL-Q3-A/B-HX6) | 1.119 kW process, 1.664 kW electric |
 | Electrical, kW | 0.09 | 1.664 |
 | Material | CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve | ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters |

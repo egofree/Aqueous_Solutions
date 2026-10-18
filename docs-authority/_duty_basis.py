@@ -1,6 +1,7 @@
 """X-PAR-04 regenerated duty basis: section 1 (mass in/out, electrical duty, streams) and the section 2 hold-up sentence of every duty sheet,
-and the node params.duty string, from the current graph. Other sections are untouched."""
-import json, os, re, sys
+and the node params.duty string, from the current graph. Other sections are untouched. Also emits duties/_origins.json (U2a): the unit ->
+origin/size edges extracted from the same sheets, read by _line_list.py instead of the markdown."""
+import glob, hashlib, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json'); D = os.path.join(ROOT, 'docs-authority/duties')
 f4 = lambda x: f'{x:.4g}'
 def lst(es):
@@ -25,7 +26,16 @@ def main():
     # R11 Rev AC regen: the graph is closed this lane, so params.duty is refreshed in memory only
     # (CRYO_ASU duty text trails its balanced rates; a graph-write lane picks it up). The manifest
     # below hashes the on-disk graph, which this script no longer rewrites.
-    import hashlib   # manifest: every sheet was checked against this exact graph (read by _rev_stamp.py)
-    json.dump({'graph_sha256': hashlib.sha256(open(GP, 'rb').read()).hexdigest(), 'sheets': len(os.listdir(D)), 'patterns': ['docs-authority/duties/*.md']}, open(os.path.join(D, '_generated.json'), 'w'), indent=1)
-    print('duty sheets refreshed', ch)
+    gsha = hashlib.sha256(open(GP, 'rb').read()).hexdigest()   # manifest: every sheet was checked against this exact graph (read by _rev_stamp.py)
+    json.dump({'graph_sha256': gsha, 'sheets': len(os.listdir(D)), 'patterns': ['docs-authority/duties/*.md']}, open(os.path.join(D, '_generated.json'), 'w'), indent=1)
+    # U2a sidecar: unit -> origin/size for every sheet in the directory (the same glob and regex
+    # _line_list.py used on the markdown), so _line_list reads origins from here instead of the md.
+    origins = {}
+    for f in glob.glob(os.path.join(D, '*.md')):
+        s = open(f).read().replace('\u2212', '-')
+        m = re.search(r'[Oo]rigin (-?\d+), (-?\d+), (-?\d+) mm\. Size (\d+) [×x] (\d+) [×x] (\d+)', s)
+        if m: origins[os.path.basename(f)[:-3]] = {'origin_mm': [int(x) for x in m.groups()[:3]], 'size_mm': [int(x) for x in m.groups()[3:]]}
+    json.dump({'_generated_from': {'graph_sha256': gsha, 'generator': 'docs-authority/_duty_basis.py'}, 'origins': origins},
+              open(os.path.join(D, '_origins.json'), 'w'), indent=1)
+    print('duty sheets refreshed', ch, '| origins', len(origins))
 if __name__ == '__main__': main()

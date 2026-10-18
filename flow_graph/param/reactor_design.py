@@ -5,7 +5,9 @@ conversion of the dissolved fraction, floored at a practical minimum; DIGESTER f
 pyrolysis residence at temperature [ANUAR2016]. Walls: thermoplastic hoop stress from hydrostatic head [DVS2205]; steel minimum
 thickness UG-16(b) plus corrosion allowance [ASME_VIII1_UG16]. Heat: OIL_PYRO sensible + heat of pyrolysis [GAO2010] / heater efficiency.
 Writes params.design and size_mm on the graph, continuous_kw for OIL_PYRO and the agitator duties, and docs-authority/sizing/REACTOR_DESIGN.md
-(AQS-DUTY-062). Run: python3 -m flow_graph.param.reactor_design [--write]"""
+(AQS-DUTY-062) plus sizing/REACTOR_DESIGN._generated.json (staleness manifest read by docs-authority/_rev_stamp.py: the doc regenerates
+byte-identical from an unchanged graph, which cannot clear commit-based staleness on its own).
+Run: python3 -m flow_graph.param.reactor_design [--write | --doc-only]   (--doc-only: doc + manifest, no graph write)"""
 import json, math, os, sys
 from . import drivers as DR
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -227,10 +229,18 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
     if 'ACEX' in R:
         A_ = R['ACEX']; md += f"ACEX columns: {A_['columns']} x {A_['tube']} PP, bed {A_['V_bed_L']:.2f} L ({A_['L_bed_mm']} mm), {A_['eq_per_cycle']:.2f} eq per {DR.val(d,'ix_cycle_h')} h cycle; one on line, one regenerating.\n"
     open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN.md'), 'w').write(md)
+    # U2a staleness manifest (read by docs-authority/_rev_stamp.py): records (file, graph_sha256) so a
+    # byte-identical regeneration still proves the doc was derived from this exact graph.
+    import hashlib
+    sha = hashlib.sha256(open(GP, 'rb').read()).hexdigest()
+    json.dump({'_generated_from': {'graph_sha256': sha, 'generator': 'flow_graph/param/reactor_design.py'},
+               'files': {'docs-authority/sizing/REACTOR_DESIGN.md': sha}},
+              open(os.path.join(ROOT, 'docs-authority/sizing/REACTOR_DESIGN._generated.json'), 'w'), indent=1)
 
 def main():
     d = DR.load(); g = json.load(open(GP)); R = design(d, g)
     for u, r in R.items(): print(u, {k: (round(x, 3) if isinstance(x, float) else x) for k, x in r.items()})
     if '--write' in sys.argv: write(d, g, R); write_doc(d, R)
+    elif '--doc-only' in sys.argv: write_doc(d, R)   # doc + manifest only; the graph is left untouched
 
 if __name__ == '__main__': main()

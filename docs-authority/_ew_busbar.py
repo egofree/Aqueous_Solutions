@@ -4,7 +4,7 @@ convection (vertical-plate laminar correlation Nu = 0.59 Ra^0.25 on the bar widt
 on the outer surface only [CDA_PUB22] at the allowed rise. The section also keeps the UL891 default density of 1000 A/in2 (155 A/cm2), the same rule the switchboard bus uses in AQS-ELEC-010. Width steps 10 mm up to 160 mm, then another bar is added.
 Drop over the 2 m run plus the bolted joints is checked against the 0.3 V bus-drop budget the rectifier and graph use (ew_bus_drop_V).
 Run: python3 docs-authority/_ew_busbar.py"""
-import os, re, sys
+import os, re, sys, json
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, R)
 from flow_graph.param import drivers as DR
 d = DR.load(); v = lambda k: DR.val(d, k)
@@ -33,5 +33,14 @@ def main():
         md.append(f"| {c} | {I} | {s['A_cm2']:.1f} | {s['n']} x {s['w_mm']} x {v('ew_bar_t_mm')} mm | {s['J']:.0f} | {s['q_W_m']:.0f} | {tot*1000:.0f} | {'yes' if tot <= bud else 'NO'} |")
     md += ['', '3. Material. Copper C101 bar, painted. No aluminum on a wet aisle.', '', '4. Joints. Bolted at the rectifier and at the cell bus; joint overlap at least the bar width.', '',
            '5. Instruments. Cell voltage reads at the cell bus. A thermocouple on the largest bar verifies the rise at the RECT-EW first article (A-M-173).']
-    open(os.path.join(R, 'docs-authority/BUSBAR.md'), 'w').write('\n'.join(md) + '\n'); print('\n'.join(md[-16:]))
+    open(os.path.join(R, 'docs-authority/BUSBAR.md'), 'w').write('\n'.join(md) + '\n')
+    # JSON sidecar (U2a): machine face of the table above for _cable_schedule.py. A_cm2 at the 1 decimal
+    # the markdown publishes so the density check reproduces the markdown-derived numbers exactly.
+    import hashlib
+    json.dump({'_generated_from': {'graph_sha256': hashlib.sha256(open(os.path.join(R, 'flow_graph/plant_flow_graph.json'), 'rb').read()).hexdigest(), 'generator': 'docs-authority/_ew_busbar.py'},
+               'rows': [dict(cell=c, A=I, A_cm2=round(s['A_cm2'], 1), pack=f"{s['n']} x {s['w_mm']} x {v('ew_bar_t_mm')} mm", J_A_cm2=round(s['J']), q_W_m=round(s['q_W_m']),
+                             drop_mV=round((s['drop_V'] + v('ew_contact_drop_V')) * 1000), within_budget=bool(s['drop_V'] + v('ew_contact_drop_V') <= bud)) for c, I, s in rows],
+               'budget_mV': round(bud * 1000)},
+              open(os.path.join(R, 'docs-authority/BUSBAR.json'), 'w'), indent=1)
+    print('\n'.join(md[-16:]))
 if __name__ == '__main__': main()

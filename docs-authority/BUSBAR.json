@@ -1,0 +1,99 @@
+{
+ "_generated_from": {
+  "graph_sha256": "130bb63c7364bee9a3486f40e046232c3300fc6051de75b17f97956a4c6d1d79",
+  "generator": "docs-authority/_ew_busbar.py"
+ },
+ "rows": [
+  {
+   "cell": "EW-1",
+   "A": 2105,
+   "A_cm2": 13.9,
+   "pack": "2 x 110 x 6.3 mm",
+   "J_A_cm2": 152,
+   "q_W_m": 66,
+   "drop_mV": 175,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-2",
+   "A": 2106,
+   "A_cm2": 13.9,
+   "pack": "2 x 110 x 6.3 mm",
+   "J_A_cm2": 152,
+   "q_W_m": 66,
+   "drop_mV": 175,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-3",
+   "A": 790,
+   "A_cm2": 5.7,
+   "pack": "1 x 90 x 6.3 mm",
+   "J_A_cm2": 139,
+   "q_W_m": 23,
+   "drop_mV": 165,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-4",
+   "A": 171,
+   "A_cm2": 1.3,
+   "pack": "1 x 20 x 6.3 mm",
+   "J_A_cm2": 136,
+   "q_W_m": 5,
+   "drop_mV": 162,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-5",
+   "A": 177,
+   "A_cm2": 1.3,
+   "pack": "1 x 20 x 6.3 mm",
+   "J_A_cm2": 140,
+   "q_W_m": 5,
+   "drop_mV": 166,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-6",
+   "A": 192,
+   "A_cm2": 1.3,
+   "pack": "1 x 20 x 6.3 mm",
+   "J_A_cm2": 152,
+   "q_W_m": 6,
+   "drop_mV": 176,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-7",
+   "A": 2501,
+   "A_cm2": 16.4,
+   "pack": "2 x 130 x 6.3 mm",
+   "J_A_cm2": 153,
+   "q_W_m": 79,
+   "drop_mV": 176,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-8",
+   "A": 178,
+   "A_cm2": 1.3,
+   "pack": "1 x 20 x 6.3 mm",
+   "J_A_cm2": 141,
+   "q_W_m": 5,
+   "drop_mV": 167,
+   "within_budget": true
+  },
+  {
+   "cell": "EW-9",
+   "A": 2157,
+   "A_cm2": 15.1,
+   "pack": "2 x 120 x 6.3 mm",
+   "J_A_cm2": 143,
+   "q_W_m": 63,
+   "drop_mV": 168,
+   "within_budget": true
+  }
+ ],
+ "budget_mV": 300
+}

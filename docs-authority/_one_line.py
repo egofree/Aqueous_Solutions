@@ -1,5 +1,6 @@
 """AQS-ELEC-002 Rev C one-line, generated from the graph electrical edges, AQS-ELEC-003 load list and AQS-ELEC-004.
-Writes docs-authority/ONE_LINE.md and returns the bus table as JSON on stdout."""
+Writes docs-authority/ONE_LINE.md (display) and docs-authority/ONE_LINE.json (machine sidecar read by
+_cable_schedule.py; U2a interlock transport) and returns the bus table as JSON on stdout."""
 import json, math, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flow_graph.param import drivers as DR
@@ -8,12 +9,19 @@ _d = DR.load()
 g=json.load(open('flow_graph/plant_flow_graph.json'))
 V=480.0; PF=DR.val(_d,'bus_power_factor'); BRK=[15,20,25,30,40,50,60,70,80,90,100,110,125,150,175,200,225,250,300,350,400]   # NEC 240.6(A)
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
-ll=[l.split('|')[1:-1] for l in open('docs-authority/LOAD_LIST.md') if l.startswith('| ') and not l.startswith('| Unit') and not l.startswith('| ---')]
-L={}
-for r in ll:
-    if len(r)!=5: continue
-    try: L[r[0].strip()]=(r[1].strip(),float(r[2]),float(r[3]) if r[3].strip() else None)
-    except ValueError: pass
+# Load list via the JSON sidecar (U2a). kw/calc_kw are quantised to the 3 decimals the LOAD_LIST.md table
+# publishes, so the bus arithmetic below is identical to the old markdown parse.
+try:
+    L={r['unit']:(r['role'],r['kw'],r['calc_kw']) for r in json.load(open('docs-authority/LOAD_LIST.json'))['rows']}
+except FileNotFoundError:
+    # DEPRECATED markdown fallback (U2a, 2026-10-18): runs ONLY when LOAD_LIST.json is absent.
+    # Regenerate the sidecar with: python3 docs-authority/_load_list.py — do not build on this path.
+    ll=[l.split('|')[1:-1] for l in open('docs-authority/LOAD_LIST.md') if l.startswith('| ') and not l.startswith('| Unit') and not l.startswith('| ---')]
+    L={}
+    for r in ll:
+        if len(r)!=5: continue
+        try: L[r[0].strip()]=(r[1].strip(),float(r[2]),float(r[3]) if r[3].strip() else None)
+        except ValueError: pass
 el=[e for e in g['edges'] if 'elec' in (e.get('layers') or [])]
 src=[(e['from_unit_id'],e['stream_id'],e['rate']['value']) for e in el if e['to_unit_id']=='SOL_ARK_60K' and e['rate']['value'] is not None]
 fed={e['to_unit_id']:(e['stream_id'],e['rate']['value']) for e in el if e['from_unit_id']=='SOL_ARK_60K' and e['rate']['value'] is not None}
@@ -94,6 +102,13 @@ out.append(f"""
 5. Grid export (D75, owner decision 2026-10-15). PV is sized at {g_pv.get('oversize_factor',1):.1f} x the balancing nameplate ({g_pv.get('balance_kWp')} of {g_pv.get('nameplate_kw')} kWp). Inverters at the NREL PVWatts DC/AC ratio {INV.get('dc_ac_ratio')}: {INVTXT}. The inverters are split into {INV.get('sections',{}).get('count','?')} collection sections at 480 V, each through a pad-mount transformer to the {INV.get('sections',{}).get('mv_kV','?')} kV collection bus; the plant bus hangs on {INV.get('sections',{}).get('plant_bus_on','?')} (AQS-ELEC-008). Clear-day export at noon with storage full is up to {IC.get('export_peak_kW',0):.0f} kW, about {IC.get('export_kWh_d_clear',0):.0f} kWh/d. Interconnection: inverters listed to UL 1741 SB and set to IEEE 1547-2018 Category B reactive power and Category III ride-through, unintentional islanding cleared within 2 s; supply-side connection per NEC 2023 705.11 (the 705.12 120 % load-side rule cannot carry this rating); lockable visible-break disconnect at the point of common coupling per 705.20; bidirectional revenue meter ANSI C12.20 class 0.2; loss of the utility trips export per 705.40, the plant bus stays islanded on storage. Utility service size, available fault current and export limit are set by the serving utility's interconnection study (review item, A-M-110).
 """)
 open('docs-authority/ONE_LINE.md','w').write('\n'.join(out)+'\n')
+# JSON sidecar (U2a): the bus table persisted for _cable_schedule.py. Values are quantised to the
+# precision the markdown tables publish (bus 1 dp, gen/demand 2 dp) so consumers reproduce the
+# markdown-derived numbers exactly. Stdout keeps the raw table for interactive use.
+import hashlib
+json.dump({'_generated_from': {'graph_sha256': hashlib.sha256(open('flow_graph/plant_flow_graph.json','rb').read()).hexdigest(), 'generator': 'docs-authority/_one_line.py'},
+           'bus': {b: round(k, 1) for b, k in bus.items()}, 'xf': xf, 'gen': round(gen, 2), 'demand': round(demand, 2)},
+          open('docs-authority/ONE_LINE.json', 'w'), indent=1)
 print(json.dumps(dict(bus=bus,xf=xf,gen=gen,demand=demand)))
 import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 from flow_graph.param import code_basis as _CB; _CB.append(_CB.PATHS['ONE_LINE'], 'ONE_LINE')

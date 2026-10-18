@@ -1,0 +1,9 @@
+{
+ "_generated_from": {
+  "graph_sha256": "130bb63c7364bee9a3486f40e046232c3300fc6051de75b17f97956a4c6d1d79",
+  "generator": "flow_graph/param/reactor_design.py"
+ },
+ "files": {
+  "docs-authority/sizing/REACTOR_DESIGN.md": "130bb63c7364bee9a3486f40e046232c3300fc6051de75b17f97956a4c6d1d79"
+ }
+}

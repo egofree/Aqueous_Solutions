@@ -9,14 +9,20 @@ import json, re, math, glob, os, sys
 sys.path.insert(0,'docs-authority')
 g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}
 seed=json.load(open('flow_graph/placement_seed.json'))
-# unit centers: duty sheet origin + size/2, else placement block centre
+# unit centers: duty sheet origin + size/2 (from the duties/_origins.json sidecar, U2a), else placement block centre
 C={}
 num=r'(−?-?\d+(?:\.\d+)?)'
-for f in glob.glob('docs-authority/duties/*.md'):
-    u=os.path.basename(f)[:-3]; s=open(f).read().replace('−','-')
-    m=re.search(r'[Oo]rigin (-?\d+), (-?\d+), (-?\d+) mm\. Size (\d+) [×x] (\d+) [×x] (\d+)',s)
-    if m:
-        o=list(map(float,m.groups()[:3])); z=list(map(float,m.groups()[3:])); C[u]=([o[i]+z[i]/2 for i in range(3)],'duty origin')
+try:
+    for u, o in json.load(open('docs-authority/duties/_origins.json'))['origins'].items():
+        C[u] = ([o['origin_mm'][i] + o['size_mm'][i]/2 for i in range(3)], 'duty origin')
+except FileNotFoundError:
+    # DEPRECATED markdown fallback (U2a, 2026-10-18): runs ONLY when duties/_origins.json is absent.
+    # Regenerate the sidecar with: python3 docs-authority/_duty_basis.py — do not build on this path.
+    for f in glob.glob('docs-authority/duties/*.md'):
+        u=os.path.basename(f)[:-3]; s=open(f).read().replace('−','-')
+        m=re.search(r'[Oo]rigin (-?\d+), (-?\d+), (-?\d+) mm\. Size (\d+) [×x] (\d+) [×x] (\d+)',s)
+        if m:
+            o=list(map(float,m.groups()[:3])); z=list(map(float,m.groups()[3:])); C[u]=([o[i]+z[i]/2 for i in range(3)],'duty origin')
 pr=json.load(open('flow_graph/placement_report.json'))
 for r in pr.get('moves',[])+pr.get('create_moves',[]):
     o,z=r.get('origin_mm'),r.get('size_mm')
