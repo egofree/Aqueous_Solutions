@@ -441,6 +441,73 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "CRYO_ASU",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "cold_box",
+      "tags": [],
+      "params": {
+        "presence": "present",
+        "duty": "In 220.747 kg/d, out 220.747 kg/d, 1.660 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through",
+        "design_kPa": 17.5,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
+        },
+        "design": {
+          "feed_N2_kg_d": 193.730075,
+          "feed_CO2_kg_d": 21.626763,
+          "x_CO2": 0.06634228381003247,
+          "CO2_mol_per_cycle": 163.8018859350148,
+          "sorbent_kg_per_bed": 109.20125729000988,
+          "beds": 3,
+          "bed_D_mm": 414.6685027670957,
+          "bed_L_mm": 1244.005508301287,
+          "regen_kW": 1.4022351446514685,
+          "blower_kW": 0.04335324075661783,
+          "co2_comp_kW": 0.08126780228278249,
+          "co2_chill_kW": 0.03291573303819444,
+          "getter_kW": 0.1,
+          "total_kW": 1.659771920729063,
+          "comp_stages": 4,
+          "comp_ratio_per_stage": 2.114742526881128,
+          "comp_T_out_C": 121.93064278721914,
+          "expander_backup": {
+            "cold_kW": 0.08228933259548611,
+            "T_out_C": -56.08836699924316,
+            "loop_kg_d": 219.9004069352681,
+            "shaft_kW": 0.21953365601652078,
+            "net_kW": 0.44275531385620787,
+            "COP": 0.1858573573714599,
+            "chiller_kW": 0.03291573303819444
+          },
+          "H_mm": 1244,
+          "D_mm": 415
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 1.6598,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.043 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
+      }
+    },
+    {
       "unit_id": "CRYO_CO2",
       "sector_id": "CRYO",
       "enabled": true,
@@ -1431,6 +1498,20 @@
       },
       "modules": [],
       "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "PROD_O2",
+      "sector_id": "CRYO",
+      "enabled": true,
+      "class": "product",
+      "tags": [],
+      "params": {
+        "presence": "present",
+        "note": "X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent)."
+      },
+      "modules": [],
+      "electrical_role": "none",
       "continuous_kw": null
     },
     {
@@ -10425,6 +10506,330 @@
       "to_sector_id": "WET",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-AIR-IN",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S/L",
+      "carries": "intake air",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: startup inventory, not a flow | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NOX-CO2",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S/L",
+      "carries": "scrubbed CO2 to the cold box",
+      "rate": {
+        "value": 21.626763,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: genset bound O2 into CO2, less the carbon of the fuel no longer burned (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NOX-N2",
+      "from_unit_id": "NOX_SCRUB",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S/L",
+      "carries": "scrubbed flue nitrogen to the cold box",
+      "rate": {
+        "value": 193.730075,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: N2 replaced by O2; excess O2 rides to the cold box (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ASU-N2",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_N2",
+      "phase": "G",
+      "carries": "nitrogen product",
+      "rate": {
+        "value": 193.576601,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 out = N2 in (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ASU-O2",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_O2",
+      "phase": "G",
+      "carries": "oxygen product",
+      "rate": {
+        "value": 0.153474,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-ASU-CO2",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "CRYO_CO2",
+      "phase": "G",
+      "carries": "CO2 product",
+      "rate": {
+        "value": 21.626763,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: CO2 out = CO2 in (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-H2-AIR",
+      "from_unit_id": "H2_DRYER",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "carries": "sweep air from the hydrogen hood",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-AR-RET",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "carries": "argon return",
+      "rate": {
+        "value": 5.300001,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-N2-RET",
+      "from_unit_id": "HDR_N2",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "carries": "nitrogen return",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-O2-RET",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "carries": "oxygen return",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 TF: no surplus O2 return (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-CO2-RET",
+      "from_unit_id": "CRYO_CO2",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S",
+      "carries": "CO2 return",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: no CO2 recycle into the cold box (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-LEACH-ASU",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "S/L",
+      "carries": "dissolved gas",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.0000 kg/d); Henry bound 3.719 kg/d (SANDER2015) (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-CRYO_ASU",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 1.6598,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; layers=elec"
+    },
+    {
+      "stream_id": "IA-O2-PROD",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "PROD_O2",
+      "phase": "G",
+      "carries": "surplus O2 to product cylinders",
+      "rate": {
+        "value": 43.433394,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-O2-SHIP",
+      "from_unit_id": "PROD_O2",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "G",
+      "carries": "O2 cylinders shipped at the dock",
+      "rate": {
+        "value": 43.433394,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-IND_MELT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "IND_MELT",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 25.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "equals node continuous_kw (25.0 kW, IND_MELT); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "X-RSZ-07-style feed edge for an unfed load | first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18; layers=elec"
+    },
+    {
+      "stream_id": "SF-VAC_IND",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "VAC_IND",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 15.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "equals node continuous_kw (15.0 kW, VAC_IND); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "X-RSZ-07-style feed edge for an unfed load | first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18; layers=elec"
+    },
+    {
+      "stream_id": "SF-RF_HEAT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "RF_HEAT",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "equals node continuous_kw (5.0 kW, RF_HEAT); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "X-RSZ-07-style feed edge for an unfed load | first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18; layers=elec"
+    },
+    {
+      "stream_id": "SF-HF_GEN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "HF_GEN",
+      "phase": "E",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "unrated pending electrical rollup (node HF_GEN has no continuous_kw)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "null_rate_kind": "unknown",
+      "note": "X-RSZ-07-style feed edge for an unfed load | first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18; layers=elec"
     }
   ],
   "electrical": {

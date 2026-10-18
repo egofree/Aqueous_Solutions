@@ -150,7 +150,7 @@
     "verification_test": "Tank thermal check"
   },
   {
-    "value": "two concentric helices D 600/900 mm, 25 \u00d7 3 mm tube, 50 mm pitch",
+    "value": "two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm pitch",
     "units": "geometry",
     "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
     "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
@@ -451,7 +451,7 @@
   },
   {
     "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
-    "units": "\u2014",
+    "units": "—",
     "where": "LEACH_CSTR_1 agitator",
     "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
     "sensitivity": "Power with N cubed and D to the fifth",
@@ -496,7 +496,7 @@
   },
   {
     "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
-    "units": "\u2014",
+    "units": "—",
     "where": "LEACH_CSTR_1 FRP belts",
     "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
     "sensitivity": "Belt stress and deflection",
@@ -3928,5 +3928,38 @@
     "verification": "CAD_GRAPH_DIMS.json; CAD_CLASH*.json.",
     "replace_when": "When every GA module reads its envelope from the graph.",
     "doc": "AQS-PAR-003"
+  },
+  {
+    "id": "A-M-227",
+    "value": "CRYO_ASU restored BH-verbatim: in 193.730075 kg/d N2 + 21.626763 kg/d CO2 (NOX scrub), out 193.576601 N2 / 21.626763 CO2 / 0.153474 O2; 1.6598 kW",
+    "units": "kg/d; kW",
+    "where": "flow_graph/plant_flow_graph.json: CRYO_ASU node + IA-AIR-IN, IA-NOX-N2, IA-NOX-CO2, IA-ASU-N2/O2/CO2, IA-LEACH-ASU, IA-AR-RET, IA-N2-RET, IA-O2-RET, IA-CO2-RET, IA-H2-AIR, SF-CRYO_ASU, IA-O2-PROD, IA-O2-SHIP, PROD_O2",
+    "basis": "Owner ruling 2026-10-18 (D-AIR): unit accidentally deleted with the farm scope, restored verbatim from Rev BH (fa1b4db) with BH rates and provenance. BH design basis stands: 3x 13X TSA beds + CO2 compressor/condenser + Ar getter, species-conserving, no cryogenic column and no air intake (X-MFG-33, A-M-175, AQS-DUTY-069); IA-AIR-IN is startup inventory only (rate 0). Noble-gas boxes (CRYO_AR/HE/NE/KR/XE), EXPANDER and HEAT_SINK endpoints are absent in Rev AC, so their BH edges were not restored; the 5.300001 kg/d Ar return (IA-AR-RET, WAFER_FAB alive) is restored and currently strands at CRYO_ASU (+5.30 kg/d) pending the noble-box decision.",
+    "sensitivity": "N2/CO2 pass through to the cold-box headers; O2 out = recovered combustion excess only (~0.067 kg/d at the X-PAR-12 TF), so the restoration adds topology and N2/CO2 closure but no new O2 source. Reactivating the cold-box family wakes the R8-gated transfer functions: balance.physics currently trips at o2_close.tf IA-EW4-N2 (sweep-N2 trim basis -1.103 kg/d) and would trip next at close_o2 'O2 short' (0.684 vs 3.393 kg/d).",
+    "replaced_by": "R10 param-pass re-rate of the N2 header trim and the NOX/cold-box species family on the Rev AC rate set",
+    "task": "R10",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "notes/first_principles_audit_2026-10-17.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance runs physics+reconcile to completion with CRYO_ASU present (today it asserts at IA-EW4-N2); NOX_SCRUB/CRYO_N2/HDR_O2 residuals close (diagnostic 2026-10-18: -193.58/+217.30/+86.04 -> +5.04/0.00/0.00 kg/d)"
+  },
+  {
+    "id": "A-M-228",
+    "value": "-2.71 kg/d at the HDR_O2 header (0.684 supply vs 3.393 draws); -44.51 kg/d across the O2 system including CRYO_O2 direct draws (S02 crew 3.4 + S50 fuel cell 38.4)",
+    "units": "kg/d O2",
+    "where": "HDR_O2 draws (IA-FC-AIR 2.481, IA-H2O2-SRC 0.176, IA-GEN-O2 0.208, IA-AB-O2 0.528) vs sources S87 + IA-ASU-O2; H2O_ELYZ retired (BH IA-ELY-O2 = 85.166 kg/d not restored)",
+    "basis": "Owner ruling 2026-10-18 (D-AIR): ASU restored, H2O_ELYZ not. Post-TF sources (diagnostic 2026-10-18, asserts disabled): grow-bed S87 0.617 (X-PAR-11 light-limited, 28 m2 fallback) + ASU recovered combustion excess 0.067 = 0.684 kg/d. The retired PEM electrolyser would have added 85.166 kg/d O2 (= 7.937 x 10.732 kg/d H2, 95.898 kg/d ROOF_TANK water, 24.59 kW), which alone covered both the header and cold-box draws; without it the O2 N+1 rule (P19) stays broken and CRYO_O2 residual is -41.80 kg/d.",
+    "sensitivity": "IA-O2-PROD surplus outlet is restored but has no surplus to carry: close_o2 asserts 'O2 short' (0.684 vs 3.393) as soon as IA-ASU-O2/IA-O2-PROD are both present, so balance.physics cannot complete until a source is chosen",
+    "replaced_by": "Owner pick of a new O2 source from the audit D-AIR options: re-based H2O_ELYZ, dock air feed re-basis of the cold boxes, or a named import",
+    "task": "R10",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/o2_close.py",
+      "notes/first_principles_audit_2026-10-17.md"
+    ],
+    "needs_verification": true,
+    "verification_test": "o2_close.close_o2 src >= draw (the 'O2 short' assert passes) and two independent O2 sources exist (P19); CRYO_O2 residual >= -1e-4"
   }
 ]
