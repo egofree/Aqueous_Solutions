@@ -1,0 +1,5882 @@
+{
+ "counts": {
+  "nodes": 123,
+  "edges": 179,
+  "present": 179,
+  "unrated_present": []
+ },
+ "conservation": {
+  "checked": 94,
+  "closed": 74,
+  "closed_by_difference_unverified": 20,
+  "open": [],
+  "species_open": [],
+  "elements_checked": 27,
+  "elements_closed": 27,
+  "elements_open": [],
+  "by_difference_edges": [
+   "DOCK_EXPORT_TBD",
+   "IA-BMED-05",
+   "S01",
+   "S102",
+   "S12",
+   "S85",
+   "S98",
+   "S99"
+  ],
+  "open_nodes": []
+ },
+ "nodes": {
+  "ACID_POLISH_SCRUB/mass": {
+   "node": "ACID_POLISH_SCRUB",
+   "layer": "mass",
+   "in_total": 37513.3082,
+   "out_total": 37513.3083,
+   "residual": -0.0001,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S65",
+     37509.84
+    ],
+    [
+     "off: make-up water + NaOH",
+     3.4682
+    ]
+   ],
+   "outs": [
+    [
+     "S66",
+     3.77
+    ],
+    [
+     "off: polished air to stack",
+     37509.5383
+    ]
+   ]
+  },
+  "AFTERBURNER/mass": {
+   "node": "AFTERBURNER",
+   "layer": "mass",
+   "in_total": 242.48,
+   "out_total": 242.48,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "NCG_TO_AB",
+     5.0
+    ],
+    [
+     "S11",
+     0.8
+    ],
+    [
+     "off: combustion air",
+     236.68
+    ]
+   ],
+   "outs": [
+    [
+     "S18",
+     0.0
+    ],
+    [
+     "off: flue to AFTERBURNER_FLUE",
+     242.48
+    ]
+   ]
+  },
+  "AFTERBURNER/energy": {
+   "node": "AFTERBURNER",
+   "layer": "energy",
+   "in_total": 2.8121,
+   "out_total": 2.8121,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: NCG heat release",
+     2.744
+    ],
+    [
+     "off: S11 trim heat release",
+     0.0681
+    ]
+   ],
+   "outs": [
+    [
+     "HL-AFTERBURNER-Q1-A",
+     0.553
+    ],
+    [
+     "HL-AFTERBURNER-Q1-B",
+     0.553
+    ],
+    [
+     "off: shell loss",
+     0.137
+    ],
+    [
+     "off: HX-7 to burnout",
+     0.632
+    ],
+    [
+     "off: flue sensible to KO (+ S11 heat)",
+     0.9371
+    ]
+   ]
+  },
+  "AFTERBURNER_FLUE/mass": {
+   "node": "AFTERBURNER_FLUE",
+   "layer": "mass",
+   "in_total": 242.48,
+   "out_total": 242.48,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: flue from AFTERBURNER",
+     242.48
+    ]
+   ],
+   "outs": [
+    [
+     "S67",
+     242.48
+    ]
+   ]
+  },
+  "ALK_SCRUBBER/mass": {
+   "node": "ALK_SCRUBBER",
+   "layer": "mass",
+   "in_total": 37994.7124,
+   "out_total": 37994.71,
+   "residual": 0.0024,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-BMED-07",
+     455.0
+    ],
+    [
+     "off: acid-gas air (EW hood sweep + leach lid purge) incl. unabsorbed sparge Cl2 and the surplus anode Cl2 bypass",
+     37539.7124
+    ]
+   ],
+   "outs": [
+    [
+     "S65",
+     37509.84
+    ],
+    [
+     "IA-BMED-08",
+     484.87
+    ]
+   ]
+  },
+  "BACKUP_GEN/mass": {
+   "node": "BACKUP_GEN",
+   "layer": "mass",
+   "in_total": 0.0,
+   "out_total": 0.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S45",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "S46",
+     0.0
+    ]
+   ]
+  },
+  "BLACK_DIGEST/mass": {
+   "node": "BLACK_DIGEST",
+   "layer": "mass",
+   "in_total": 22.225,
+   "out_total": 22.2249,
+   "residual": 0.0001,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: black water",
+     16.48
+    ],
+    [
+     "off: grey sludge",
+     5.745
+    ]
+   ],
+   "outs": [
+    [
+     "S30",
+     22.1749
+    ],
+    [
+     "off: digester gas",
+     0.05
+    ]
+   ]
+  },
+  "BMED_ACID/mass": {
+   "node": "BMED_ACID",
+   "layer": "mass",
+   "in_total": 935.55,
+   "out_total": 935.5528,
+   "residual": -0.0028,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-BMED-03",
+     935.55
+    ]
+   ],
+   "outs": [
+    [
+     "IA-BMED-01",
+     0.6456
+    ],
+    [
+     "S09",
+     9.2772
+    ],
+    [
+     "IA-BMED-06",
+     925.63
+    ]
+   ]
+  },
+  "BMED_BASE/mass": {
+   "node": "BMED_BASE",
+   "layer": "mass",
+   "in_total": 978.12,
+   "out_total": 978.66,
+   "residual": -0.54,
+   "residual_pct": -0.055,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-BMED-04",
+     978.12
+    ]
+   ],
+   "outs": [
+    [
+     "IA-BMED-02",
+     0.27
+    ],
+    [
+     "IA-BMED-07",
+     455.0
+    ],
+    [
+     "IA-BMED-10",
+     202.63
+    ],
+    [
+     "S91",
+     320.76
+    ]
+   ]
+  },
+  "BMED_UPW_POLISH/mass": {
+   "node": "BMED_UPW_POLISH",
+   "layer": "mass",
+   "in_total": 150.28,
+   "out_total": 150.282,
+   "residual": -0.002,
+   "residual_pct": -0.001,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S25",
+     150.28
+    ]
+   ],
+   "outs": [
+    [
+     "S01",
+     77.2764
+    ],
+    [
+     "off: fab UPW to FAB_UPW_TANK (S27)",
+     60.0
+    ],
+    [
+     "off: potable to REMIN (S26)",
+     10.0
+    ],
+    [
+     "off: polish reject",
+     3.0056
+    ]
+   ]
+  },
+  "C29_RECYCLE/mass": {
+   "node": "C29_RECYCLE",
+   "layer": "mass",
+   "in_total": 1.4046,
+   "out_total": 1.4046,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "C29_RECYCLE",
+     1.4046
+    ]
+   ],
+   "outs": [
+    [
+     "C29_TO_PYRO",
+     1.4046
+    ]
+   ]
+  },
+  "CATCH_TANK/mass": {
+   "node": "CATCH_TANK",
+   "layer": "mass",
+   "in_total": 200000.0,
+   "out_total": 200000.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-ESS-HYDRO-DIS",
+     200000.0
+    ],
+    [
+     "S41",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "IA-ESS-HYDRO-CHG",
+     200000.0
+    ]
+   ]
+  },
+  "COLD_MILL/mass": {
+   "node": "COLD_MILL",
+   "layer": "mass",
+   "in_total": 4.3921,
+   "out_total": 4.3921,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: Cu charge from MFG_SHOP",
+     4.3921
+    ]
+   ],
+   "outs": [
+    [
+     "S59",
+     3.9529
+    ],
+    [
+     "off: mill trim to MFG_SHOP scrap bin",
+     0.4392
+    ]
+   ]
+  },
+  "CONTINUOUS_RECYCLE/mass": {
+   "node": "CONTINUOUS_RECYCLE",
+   "layer": "mass",
+   "in_total": 3870.55,
+   "out_total": 3870.55,
+   "residual": -0.0,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-POL-02",
+     2461.93
+    ],
+    [
+     "IA-BMED-06",
+     925.63
+    ],
+    [
+     "IA-BMED-09",
+     482.99
+    ]
+   ],
+   "outs": [
+    [
+     "IA-REC-01",
+     3870.55
+    ]
+   ]
+  },
+  "CRU/mass": {
+   "node": "CRU",
+   "layer": "mass",
+   "in_total": 488.64,
+   "out_total": 488.6465,
+   "residual": -0.0065,
+   "residual_pct": -0.001,
+   "status": "closed",
+   "ins": [
+    [
+     "S66",
+     3.77
+    ],
+    [
+     "IA-BMED-08",
+     484.87
+    ]
+   ],
+   "outs": [
+    [
+     "IA-BMED-09",
+     482.99
+    ],
+    [
+     "off: O2 from hypochlorite decomposition (surplus anode Cl2) to the CRU vent",
+     5.6565
+    ]
+   ]
+  },
+  "CRYO_CO2/mass": {
+   "node": "CRYO_CO2",
+   "layer": "mass",
+   "in_total": 24.2525,
+   "out_total": 24.2525,
+   "residual": -0.0,
+   "residual_pct": -0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S18",
+     0.0
+    ],
+    [
+     "S67B",
+     13.2209
+    ],
+    [
+     "S82",
+     11.0316
+    ]
+   ],
+   "outs": [
+    [
+     "S04",
+     1.109
+    ],
+    [
+     "S73",
+     11.0115
+    ],
+    [
+     "S85",
+     12.0799
+    ],
+    [
+     "off: boil-off to CRYO AHU (S70)",
+     0.0521
+    ]
+   ]
+  },
+  "CRYO_H2/mass": {
+   "node": "CRYO_H2",
+   "layer": "mass",
+   "in_total": 1.5132,
+   "out_total": 1.5132,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S64",
+     1.5132
+    ]
+   ],
+   "outs": [
+    [
+     "S45",
+     0.0
+    ],
+    [
+     "S49",
+     0.0
+    ],
+    [
+     "S74",
+     1.5132
+    ]
+   ]
+  },
+  "CRYO_N2/mass": {
+   "node": "CRYO_N2",
+   "layer": "mass",
+   "in_total": 1.4998,
+   "out_total": 1.4998,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: N2 from the cold box",
+     1.4998
+    ]
+   ],
+   "outs": [
+    [
+     "S03",
+     1.4998
+    ],
+    [
+     "S84",
+     0.0
+    ]
+   ]
+  },
+  "CRYO_O2/mass": {
+   "node": "CRYO_O2",
+   "layer": "mass",
+   "in_total": 3.36,
+   "out_total": 3.36,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: liquid O2 from the cold box",
+     3.36
+    ]
+   ],
+   "outs": [
+    [
+     "S02",
+     3.36
+    ],
+    [
+     "S50",
+     0.0
+    ],
+    [
+     "S83",
+     0.0
+    ]
+   ]
+  },
+  "EW_1/mass": {
+   "node": "EW_1",
+   "layer": "mass",
+   "in_total": 4284.0,
+   "out_total": 4283.9967,
+   "residual": 0.0033,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-04",
+     4284.0
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-01",
+     4261.95
+    ],
+    [
+     "off: Au cathode harvest (reported on S08)",
+     0.0063
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     18.1465
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0006
+    ],
+    [
+     "off: cathode H2 to hood sweep (vented, < 1 % LFL)",
+     0.0
+    ]
+   ]
+  },
+  "EW_1/energy": {
+   "node": "EW_1",
+   "layer": "energy",
+   "in_total": 8.18,
+   "out_total": 8.181,
+   "residual": -0.001,
+   "residual_pct": -0.012,
+   "status": "closed",
+   "ins": [
+    [
+     "off: cell ohmic heat (9 cells)",
+     4.052
+    ],
+    [
+     "off: feed sensible above 51 C",
+     4.128
+    ]
+   ],
+   "outs": [
+    [
+     "IA-HX8",
+     6.686
+    ],
+    [
+     "off: wall loss",
+     0.533
+    ],
+    [
+     "off: evaporation (ball blanket)",
+     0.962
+    ]
+   ]
+  },
+  "EW_2/mass": {
+   "node": "EW_2",
+   "layer": "mass",
+   "in_total": 4261.95,
+   "out_total": 4261.9541,
+   "residual": -0.0041,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-01",
+     4261.95
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-02",
+     4251.53
+    ],
+    [
+     "off: Ag cathode harvest (reported on S08)",
+     0.0251
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     6.5032
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0025
+    ],
+    [
+     "off: cathode H2 to hood sweep (vented, < 1 % LFL)",
+     0.0
+    ]
+   ]
+  },
+  "EW_3/mass": {
+   "node": "EW_3",
+   "layer": "mass",
+   "in_total": 4251.53,
+   "out_total": 4251.5316,
+   "residual": -0.0016,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-02",
+     4251.53
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-03",
+     4230.75
+    ],
+    [
+     "IA-HDR-H2-03",
+     0.0
+    ],
+    [
+     "off: Cu cathode harvest (reported on S08)",
+     8.7841
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     7.2258
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.8784
+    ]
+   ]
+  },
+  "EW_4/mass": {
+   "node": "EW_4",
+   "layer": "mass",
+   "in_total": 4230.75,
+   "out_total": 4230.7453,
+   "residual": 0.0047,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-03",
+     4230.75
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-10",
+     4224.95
+    ],
+    [
+     "off: Pb cathode harvest (reported on S08)",
+     0.7111
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     1.1186
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0711
+    ],
+    [
+     "off: cathode H2 to hood sweep (vented, < 1 % LFL)",
+     0.0012
+    ]
+   ]
+  },
+  "EW_5/mass": {
+   "node": "EW_5",
+   "layer": "mass",
+   "in_total": 4224.95,
+   "out_total": 4224.9553,
+   "residual": -0.0053,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-10",
+     4224.95
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-05",
+     4219.48
+    ],
+    [
+     "off: Sn cathode harvest (reported on S08)",
+     0.7111
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     0.7977
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0711
+    ],
+    [
+     "off: cathode H2 to hood sweep (vented, < 1 % LFL)",
+     0.0021
+    ]
+   ]
+  },
+  "EW_6/mass": {
+   "node": "EW_6",
+   "layer": "mass",
+   "in_total": 4219.48,
+   "out_total": 4219.4721,
+   "residual": 0.0079,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-05",
+     4219.48
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-06",
+     4213.61
+    ],
+    [
+     "off: Ni cathode harvest (reported on S08)",
+     0.7111
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     1.1805
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0711
+    ],
+    [
+     "off: cathode H2 to hood sweep (vented, < 1 % LFL)",
+     0.0061
+    ]
+   ]
+  },
+  "EW_7/mass": {
+   "node": "EW_7",
+   "layer": "mass",
+   "in_total": 4213.61,
+   "out_total": 4213.6164,
+   "residual": -0.0064,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-06",
+     4213.61
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-07",
+     4082.43
+    ],
+    [
+     "IA-HDR-H2-01",
+     3.9961
+    ],
+    [
+     "off: Fe cathode harvest (reported on S08)",
+     29.629
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     90.7051
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     2.9629
+    ]
+   ]
+  },
+  "EW_8/mass": {
+   "node": "EW_8",
+   "layer": "mass",
+   "in_total": 4082.43,
+   "out_total": 4082.4283,
+   "residual": 0.0017,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-07",
+     4082.43
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-08",
+     4077.22
+    ],
+    [
+     "off: Cd cathode harvest (reported on S08)",
+     0.7111
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     0.5305
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0711
+    ],
+    [
+     "off: cathode H2 to hood sweep (vented, < 1 % LFL)",
+     0.0023
+    ]
+   ]
+  },
+  "EW_9/mass": {
+   "node": "EW_9",
+   "layer": "mass",
+   "in_total": 4079.7173,
+   "out_total": 4077.215,
+   "residual": 2.5023,
+   "residual_pct": 0.061,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-EW-08",
+     4077.22
+    ],
+    [
+     "off: H2 dryer condensate return",
+     2.4973
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-09",
+     4071.56
+    ],
+    [
+     "IA-HDR-H2-04",
+     0.0145
+    ],
+    [
+     "off: Zn cathode harvest (reported on S08)",
+     0.7111
+    ],
+    [
+     "off: anode Cl2 to the Cl2 header (leach sparge; surplus to ALK_SCRUBBER)",
+     0.965
+    ],
+    [
+     "off: evaporation to EW hood (ball blanket)",
+     3.8933
+    ],
+    [
+     "off: electrolyte entrained on harvest (to MFG rinse, returns on S16)",
+     0.0711
+    ]
+   ]
+  },
+  "FAB_UPW_TANK/mass": {
+   "node": "FAB_UPW_TANK",
+   "layer": "mass",
+   "in_total": 60.0,
+   "out_total": 60.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: UPW from BMED_UPW_POLISH",
+     60.0
+    ]
+   ],
+   "outs": [
+    [
+     "S27",
+     60.0
+    ]
+   ]
+  },
+  "FLOAT_SINK/mass": {
+   "node": "FLOAT_SINK",
+   "layer": "mass",
+   "in_total": 454.7062,
+   "out_total": 454.7097,
+   "residual": -0.0035,
+   "residual_pct": -0.001,
+   "status": "closed",
+   "ins": [
+    [
+     "off: leach train slurry (solids + liquor)",
+     454.7062
+    ]
+   ],
+   "outs": [
+    [
+     "IA-WET-FLOAT-01",
+     343.1
+    ],
+    [
+     "off: float cake to OIL_DRYER",
+     40.5
+    ],
+    [
+     "off: sink cake to GLASS_RINSE",
+     71.1097
+    ]
+   ]
+  },
+  "FLUE_KO/mass": {
+   "node": "FLUE_KO",
+   "layer": "mass",
+   "in_total": 242.5321,
+   "out_total": 242.5321,
+   "residual": -0.0,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S67",
+     242.48
+    ],
+    [
+     "S70",
+     0.0521
+    ]
+   ],
+   "outs": [
+    [
+     "S67B",
+     13.2209
+    ],
+    [
+     "off: KO condensate",
+     4.7846
+    ],
+    [
+     "off: VSA tail gas to stack",
+     224.5266
+    ]
+   ]
+  },
+  "FUEL_CELL/mass": {
+   "node": "FUEL_CELL",
+   "layer": "mass",
+   "in_total": 0.0,
+   "out_total": 0.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S49",
+     0.0
+    ],
+    [
+     "S50",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "S52",
+     0.0
+    ]
+   ]
+  },
+  "GAS_ATOMIZER/mass": {
+   "node": "GAS_ATOMIZER",
+   "layer": "mass",
+   "in_total": 3.5555,
+   "out_total": 3.5555,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: blend charge from MFG_SHOP",
+     3.5555
+    ]
+   ],
+   "outs": [
+    [
+     "S60",
+     3.1999
+    ],
+    [
+     "off: off-spec to MFG_SHOP scrap bin",
+     0.32
+    ],
+    [
+     "off: ultrafines to MET LEV (S71)",
+     0.0356
+    ]
+   ]
+  },
+  "GEO_GHEX/energy": {
+   "node": "GEO_GHEX",
+   "layer": "energy",
+   "in_total": 3.4316,
+   "out_total": 3.4316,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S102",
+     3.4316
+    ]
+   ],
+   "outs": [
+    [
+     "S43",
+     0.0
+    ],
+    [
+     "off: heat to ground (borefield recharge)",
+     3.4316
+    ]
+   ]
+  },
+  "GLASS_DIGEST/mass": {
+   "node": "GLASS_DIGEST",
+   "layer": "mass",
+   "in_total": 350.76,
+   "out_total": 350.76,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-GLASS-03",
+     30.0
+    ],
+    [
+     "S91",
+     320.76
+    ]
+   ],
+   "outs": [
+    [
+     "S08G",
+     4.5
+    ],
+    [
+     "S92",
+     325.96
+    ],
+    [
+     "off: lid purge vapor to HDR_CAUSTIC",
+     20.3
+    ]
+   ]
+  },
+  "GLASS_DIGEST/energy": {
+   "node": "GLASS_DIGEST",
+   "layer": "energy",
+   "in_total": 1.6638,
+   "out_total": 1.6631,
+   "residual": 0.0007,
+   "residual_pct": 0.042,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-Q3-A-HX6",
+     0.29
+    ],
+    [
+     "HL-Q3-B-HX6",
+     0.29
+    ],
+    [
+     "S101",
+     0.2822
+    ],
+    [
+     "off: electric trim",
+     0.8016
+    ]
+   ],
+   "outs": [
+    [
+     "off: HX-6 duty after HX-10 caustic preheat",
+     1.3809
+    ],
+    [
+     "off: HX-10 caustic preheat duty",
+     0.2822
+    ]
+   ]
+  },
+  "GREY_TREAT/mass": {
+   "node": "GREY_TREAT",
+   "layer": "mass",
+   "in_total": 114.9,
+   "out_total": 114.895,
+   "residual": 0.005,
+   "residual_pct": 0.004,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S12",
+     114.9
+    ],
+    [
+     "S42",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "S29",
+     109.15
+    ],
+    [
+     "off: sludge / backwash to BLACK_DIGEST",
+     5.745
+    ]
+   ]
+  },
+  "GROW_BED/mass": {
+   "node": "GROW_BED",
+   "layer": "mass",
+   "in_total": 114.3072,
+   "out_total": 114.3072,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S04",
+     1.109
+    ],
+    [
+     "S07",
+     22.1949
+    ],
+    [
+     "S89",
+     16.1009
+    ],
+    [
+     "off: UPW make-up from HDR_UPW",
+     74.9024
+    ]
+   ],
+   "outs": [
+    [
+     "S11",
+     0.8
+    ],
+    [
+     "S13",
+     29.9068
+    ],
+    [
+     "S14",
+     2.4
+    ],
+    [
+     "S14X",
+     1.8
+    ],
+    [
+     "S15",
+     0.0
+    ],
+    [
+     "off: CO2 to farm exhaust",
+     16.1009
+    ],
+    [
+     "off: water vapor to farm exhaust",
+     62.4932
+    ],
+    [
+     "off: photosynthetic O2 to farm exhaust",
+     0.8063
+    ]
+   ]
+  },
+  "H2_DRYER/mass": {
+   "node": "H2_DRYER",
+   "layer": "mass",
+   "in_total": 4.0106,
+   "out_total": 4.0105,
+   "residual": 0.0001,
+   "residual_pct": 0.002,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-HDR-H2-02",
+     4.0106
+    ]
+   ],
+   "outs": [
+    [
+     "S24",
+     0.0
+    ],
+    [
+     "S64",
+     1.5132
+    ],
+    [
+     "off: knock-out condensate to EW_9 sump",
+     2.4973
+    ]
+   ]
+  },
+  "HABITATION/mass": {
+   "node": "HABITATION",
+   "layer": "mass",
+   "in_total": 135.76,
+   "out_total": 135.761,
+   "residual": -0.001,
+   "residual_pct": -0.001,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S02",
+     3.36
+    ],
+    [
+     "S14",
+     2.4
+    ],
+    [
+     "S15",
+     0.0
+    ],
+    [
+     "S21",
+     120.0
+    ],
+    [
+     "S26",
+     10.0
+    ]
+   ],
+   "outs": [
+    [
+     "S12",
+     114.9
+    ],
+    [
+     "S78",
+     0.36
+    ],
+    [
+     "S90",
+     4.021
+    ],
+    [
+     "off: black water to BLACK_DIGEST",
+     16.48
+    ]
+   ]
+  },
+  "HDR_CO2/mass": {
+   "node": "HDR_CO2",
+   "layer": "mass",
+   "in_total": 16.1009,
+   "out_total": 16.1009,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S85",
+     12.0799
+    ],
+    [
+     "S90",
+     4.021
+    ]
+   ],
+   "outs": [
+    [
+     "S89",
+     16.1009
+    ]
+   ]
+  },
+  "HDR_H2/mass": {
+   "node": "HDR_H2",
+   "layer": "mass",
+   "in_total": 4.0106,
+   "out_total": 4.0106,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-HDR-H2-01",
+     3.9961
+    ],
+    [
+     "IA-HDR-H2-03",
+     0.0
+    ],
+    [
+     "IA-HDR-H2-04",
+     0.0145
+    ]
+   ],
+   "outs": [
+    [
+     "IA-HDR-H2-02",
+     4.0106
+    ]
+   ]
+  },
+  "HDR_O2/mass": {
+   "node": "HDR_O2",
+   "layer": "mass",
+   "in_total": 0.0,
+   "out_total": 0.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S83",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "S95",
+     0.0
+    ]
+   ]
+  },
+  "HDR_UPW/mass": {
+   "node": "HDR_UPW",
+   "layer": "mass",
+   "in_total": 77.2764,
+   "out_total": 77.2764,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S01",
+     77.2764
+    ]
+   ],
+   "outs": [
+    [
+     "off: farm make-up to GROW_BED",
+     74.9024
+    ],
+    [
+     "off: ZnBr2 electrolyte make-up",
+     2.374
+    ]
+   ]
+  },
+  "HX8/energy": {
+   "node": "HX8",
+   "layer": "energy",
+   "in_total": 6.686,
+   "out_total": 6.686,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-HX8",
+     6.686
+    ]
+   ],
+   "outs": [
+    [
+     "HL-HX8-Q4-A",
+     3.343
+    ],
+    [
+     "HL-HX8-Q4-B",
+     3.343
+    ]
+   ]
+  },
+  "LEACH_CSTR_1/mass": {
+   "node": "LEACH_CSTR_1",
+   "layer": "mass",
+   "in_total": 4806.1136,
+   "out_total": 4806.1114,
+   "residual": 0.0022,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "IA-REC-01",
+     3870.55
+    ],
+    [
+     "IA-WET-FLOAT-01",
+     343.1
+    ],
+    [
+     "S10",
+     78.3397
+    ],
+    [
+     "S16",
+     12.6
+    ],
+    [
+     "S19",
+     0.75
+    ],
+    [
+     "S28",
+     27.2534
+    ],
+    [
+     "S39",
+     3.31
+    ],
+    [
+     "S68",
+     173.67
+    ],
+    [
+     "S72",
+     2.4366
+    ],
+    [
+     "S95",
+     0.0
+    ],
+    [
+     "off: fresh shredded feed",
+     150.0
+    ],
+    [
+     "off: EW cathode harvest booked onto S08",
+     42.0
+    ],
+    [
+     "off: anode Cl2 sparge (share of the EW Cl2 header set by the oxidant demand)",
+     102.1039
+    ]
+   ],
+   "outs": [
+    [
+     "IA-EW-04",
+     4284.0
+    ],
+    [
+     "S08",
+     42.0
+    ],
+    [
+     "off: slurry to FLOAT_SINK",
+     454.7062
+    ],
+    [
+     "off: purge vapor",
+     20.3
+    ],
+    [
+     "off: unabsorbed Cl2 to lid purge -> ALK_SCRUBBER",
+     5.1052
+    ],
+    [
+     "off: unused O2 to lid purge",
+     0.0
+    ]
+   ]
+  },
+  "LEACH_CSTR_1/energy": {
+   "node": "LEACH_CSTR_1",
+   "layer": "energy",
+   "in_total": 0.2978,
+   "out_total": 0.2978,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-Q3-A-HX5",
+     0.0
+    ],
+    [
+     "HL-Q3-B-HX5",
+     0.0
+    ],
+    [
+     "S100",
+     0.2978
+    ],
+    [
+     "off: electric trim (ladder short)",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "off: HX-5 duty, normal (streams + shell + shred + purge - exotherm incl. Cl2/O2 oxidant credit)",
+     0.0
+    ],
+    [
+     "off: HX-9 make-up preheat duty",
+     0.2978
+    ]
+   ]
+  },
+  "LOAD_AGG/energy": {
+   "node": "LOAD_AGG",
+   "layer": "energy",
+   "in_total": 27.8023,
+   "out_total": 27.8023,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S94",
+     27.8023
+    ]
+   ],
+   "outs": [
+    [
+     "off: MFG_SHOP",
+     12.0
+    ],
+    [
+     "off: HABITATION",
+     3.0
+    ],
+    [
+     "off: CRYO cold head (duty / 0.16 Carnot)",
+     1.1727
+    ],
+    [
+     "off: LEACH_CSTR_1 parasitics",
+     2.0
+    ],
+    [
+     "off: WAFER_FAB",
+     2.0
+    ],
+    [
+     "off: WET_BENCH",
+     1.0
+    ],
+    [
+     "off: AFTERBURNER",
+     0.5
+    ],
+    [
+     "off: ALK_SCRUBBER",
+     0.4
+    ],
+    [
+     "off: H2_DRYER",
+     0.3
+    ],
+    [
+     "off: MEOH_SYNTH",
+     0.5
+    ],
+    [
+     "off: NUTRIENT_DOSE",
+     0.1
+    ],
+    [
+     "off: GLASS_RINSE",
+     0.2
+    ],
+    [
+     "off: GLASS_MILL",
+     0.8
+    ],
+    [
+     "off: GLASS_BURNOUT electric trim",
+     0.238
+    ],
+    [
+     "off: LITHO_STUB",
+     0.1
+    ],
+    [
+     "off: ELECTRODE_COAT",
+     0.3
+    ],
+    [
+     "off: BLOW_MOLD",
+     0.5
+    ],
+    [
+     "off: SOLAR_PV_CELL",
+     1.0
+    ],
+    [
+     "off: UPW polish (EDI)",
+     0.1
+    ],
+    [
+     "off: VCD_TRAIN",
+     0.193
+    ],
+    [
+     "off: ASU compressor",
+     0.0519
+    ],
+    [
+     "off: hydro pump",
+     0.5451
+    ],
+    [
+     "off: HX-4 trim",
+     0.0
+    ],
+    [
+     "off: HX-5 trim",
+     0.0
+    ],
+    [
+     "off: HX-6 trim",
+     0.8016
+    ],
+    [
+     "off: GEO_HP (idle)",
+     0.0
+    ]
+   ]
+  },
+  "MEOH_FC/mass": {
+   "node": "MEOH_FC",
+   "layer": "mass",
+   "in_total": 20.0626,
+   "out_total": 20.0629,
+   "residual": -0.0003,
+   "residual_pct": -0.001,
+   "status": "closed",
+   "ins": [
+    [
+     "S76",
+     8.0317
+    ],
+    [
+     "off: air O2",
+     12.0309
+    ]
+   ],
+   "outs": [
+    [
+     "S81",
+     9.0313
+    ],
+    [
+     "S82",
+     11.0316
+    ]
+   ]
+  },
+  "MEOH_FC/energy": {
+   "node": "MEOH_FC",
+   "layer": "energy",
+   "in_total": 1.8527,
+   "out_total": 1.8526,
+   "residual": 0.0001,
+   "residual_pct": 0.005,
+   "status": "closed",
+   "ins": [
+    [
+     "off: MeOH LHV (S76)",
+     1.8527
+    ]
+   ],
+   "outs": [
+    [
+     "S79",
+     0.4698
+    ],
+    [
+     "S80",
+     0.5926
+    ],
+    [
+     "off: low-grade heat",
+     0.7902
+    ]
+   ]
+  },
+  "MEOH_FERM/mass": {
+   "node": "MEOH_FERM",
+   "layer": "mass",
+   "in_total": 0.36,
+   "out_total": 0.36,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S78",
+     0.36
+    ]
+   ],
+   "outs": [
+    [
+     "S77",
+     0.0146
+    ],
+    [
+     "off: digestate + CO2 + water",
+     0.3454
+    ]
+   ]
+  },
+  "MEOH_SYNTH/mass": {
+   "node": "MEOH_SYNTH",
+   "layer": "mass",
+   "in_total": 12.5247,
+   "out_total": 12.5245,
+   "residual": 0.0002,
+   "residual_pct": 0.002,
+   "status": "closed",
+   "ins": [
+    [
+     "S73",
+     11.0115
+    ],
+    [
+     "S74",
+     1.5132
+    ]
+   ],
+   "outs": [
+    [
+     "S75",
+     8.0171
+    ],
+    [
+     "off: synthesis water",
+     4.5074
+    ]
+   ]
+  },
+  "MEOH_TANK/mass": {
+   "node": "MEOH_TANK",
+   "layer": "mass",
+   "in_total": 8.0317,
+   "out_total": 8.0317,
+   "residual": -0.0,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S75",
+     8.0171
+    ],
+    [
+     "S77",
+     0.0146
+    ]
+   ],
+   "outs": [
+    [
+     "S76",
+     8.0317
+    ]
+   ]
+  },
+  "MET_MELT/mass": {
+   "node": "MET_MELT",
+   "layer": "mass",
+   "in_total": 4.3921,
+   "out_total": 4.3921,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: Cu charge from MFG_SHOP",
+     4.3921
+    ]
+   ],
+   "outs": [
+    [
+     "S57",
+     4.3789
+    ],
+    [
+     "off: melt fume to MET LEV (S71)",
+     0.0132
+    ]
+   ]
+  },
+  "MET_SCRUB/mass": {
+   "node": "MET_SCRUB",
+   "layer": "mass",
+   "in_total": 71606.3878,
+   "out_total": 71606.1812,
+   "residual": 0.2066,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S62",
+     51145.68
+    ],
+    [
+     "S71",
+     20458.32
+    ],
+    [
+     "off: scrub make-up water",
+     2.3878
+    ]
+   ],
+   "outs": [
+    [
+     "S72",
+     2.4366
+    ],
+    [
+     "S72B",
+     0.0158
+    ],
+    [
+     "off: scrubbed air to stack",
+     71603.7288
+    ]
+   ]
+  },
+  "MFG_SHOP/mass": {
+   "node": "MFG_SHOP",
+   "layer": "mass",
+   "in_total": 66.8909,
+   "out_total": 66.8909,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S08",
+     42.0
+    ],
+    [
+     "S58",
+     3.941
+    ],
+    [
+     "S59",
+     3.9529
+    ],
+    [
+     "S60",
+     3.1999
+    ],
+    [
+     "off: scrap bin returns",
+     1.1971
+    ],
+    [
+     "off: electrolyte entrained on harvest",
+     4.2
+    ],
+    [
+     "off: harvest rinse water (tower water)",
+     8.4
+    ]
+   ],
+   "outs": [
+    [
+     "S16",
+     12.6
+    ],
+    [
+     "S61",
+     1.1971
+    ],
+    [
+     "off: charges to MET_MELT, COLD_MILL, GAS_ATOMIZER",
+     12.3396
+    ],
+    [
+     "off: finished goods to NORTH_DOCK",
+     40.7542
+    ]
+   ]
+  },
+  "NCG_HEADER/mass": {
+   "node": "NCG_HEADER",
+   "layer": "mass",
+   "in_total": 5.0,
+   "out_total": 5.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-OIL-03",
+     5.0
+    ]
+   ],
+   "outs": [
+    [
+     "NCG_TO_AB",
+     5.0
+    ]
+   ]
+  },
+  "NORTH_DOCK/mass": {
+   "node": "NORTH_DOCK",
+   "layer": "mass",
+   "in_total": 40.7542,
+   "out_total": 40.7542,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "off: finished goods from MFG_SHOP",
+     40.7542
+    ]
+   ],
+   "outs": [
+    [
+     "DOCK_EXPORT_TBD",
+     40.7542
+    ]
+   ]
+  },
+  "NUTRIENT_DOSE/mass": {
+   "node": "NUTRIENT_DOSE",
+   "layer": "mass",
+   "in_total": 22.1949,
+   "out_total": 22.1949,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S30",
+     22.1749
+    ],
+    [
+     "off: micronutrient salts (Fe chelate, Ca/Mg, trace)",
+     0.02
+    ]
+   ],
+   "outs": [
+    [
+     "S07",
+     22.1949
+    ]
+   ]
+  },
+  "OIL_DRYER/mass": {
+   "node": "OIL_DRYER",
+   "layer": "mass",
+   "in_total": 40.5,
+   "out_total": 40.5,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: float cake",
+     40.5
+    ]
+   ],
+   "outs": [
+    [
+     "IA-OIL-01",
+     33.0
+    ],
+    [
+     "off: dryer vapor",
+     7.5
+    ]
+   ]
+  },
+  "OIL_DRYER/energy": {
+   "node": "OIL_DRYER",
+   "layer": "energy",
+   "in_total": 0.242,
+   "out_total": 0.242,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-Q3-A-HX4",
+     0.121
+    ],
+    [
+     "HL-Q3-B-HX4",
+     0.121
+    ],
+    [
+     "off: electric trim",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "off: dryer duty (evaporation)",
+     0.242
+    ]
+   ]
+  },
+  "OIL_FRAC/mass": {
+   "node": "OIL_FRAC",
+   "layer": "mass",
+   "in_total": 29.9139,
+   "out_total": 29.9139,
+   "residual": -0.0,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-OIL-02",
+     28.9046
+    ],
+    [
+     "S38",
+     0.006
+    ],
+    [
+     "S39B",
+     0.9875
+    ],
+    [
+     "S72B",
+     0.0158
+    ]
+   ],
+   "outs": [
+    [
+     "CUT-1",
+     11.1553
+    ],
+    [
+     "CUT-2",
+     8.4068
+    ],
+    [
+     "CUT-3",
+     3.9472
+    ],
+    [
+     "CUT-4",
+     1.4046
+    ],
+    [
+     "IA-OIL-03",
+     5.0
+    ]
+   ]
+  },
+  "OIL_PYRO/mass": {
+   "node": "OIL_PYRO",
+   "layer": "mass",
+   "in_total": 34.4046,
+   "out_total": 34.4046,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "C29_TO_PYRO",
+     1.4046
+    ],
+    [
+     "IA-OIL-01",
+     33.0
+    ]
+   ],
+   "outs": [
+    [
+     "IA-OIL-02",
+     28.9046
+    ],
+    [
+     "off: char to silicon arc",
+     5.5
+    ]
+   ]
+  },
+  "POLISH_BANK/mass": {
+   "node": "POLISH_BANK",
+   "layer": "mass",
+   "in_total": 4071.56,
+   "out_total": 4071.56,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "IA-EW-09",
+     4071.56
+    ]
+   ],
+   "outs": [
+    [
+     "IA-POL-02",
+     2461.93
+    ],
+    [
+     "IA-BMED-05",
+     1609.63
+    ]
+   ]
+  },
+  "PROD_C29/mass": {
+   "node": "PROD_C29",
+   "layer": "mass",
+   "in_total": 1.4046,
+   "out_total": 1.4046,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "CUT-4",
+     1.4046
+    ]
+   ],
+   "outs": [
+    [
+     "C29_RECYCLE",
+     1.4046
+    ]
+   ]
+  },
+  "Q4_BUS/energy": {
+   "node": "Q4_BUS",
+   "layer": "energy",
+   "in_total": 7.0115,
+   "out_total": 7.0116,
+   "residual": -0.0001,
+   "residual_pct": -0.001,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "HL-Q4-A-BUS",
+     3.179
+    ],
+    [
+     "HL-Q4-B-BUS",
+     3.179
+    ],
+    [
+     "S44",
+     0.0
+    ],
+    [
+     "S53",
+     0.0
+    ],
+    [
+     "S54",
+     0.0438
+    ],
+    [
+     "S63",
+     0.0171
+    ],
+    [
+     "S80",
+     0.5926
+    ]
+   ],
+   "outs": [
+    [
+     "S100",
+     0.2978
+    ],
+    [
+     "S101",
+     0.2822
+    ],
+    [
+     "S102",
+     3.4316
+    ],
+    [
+     "off: life load (hab + farm)",
+     3.0
+    ]
+   ]
+  },
+  "RECTIFIER/energy": {
+   "node": "RECTIFIER",
+   "layer": "energy",
+   "in_total": 18.8665,
+   "out_total": 18.8665,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S17",
+     18.8665
+    ]
+   ],
+   "outs": [
+    [
+     "off: RECT-EW DC to EW cells",
+     11.1993
+    ],
+    [
+     "off: RECT-BMED DC to BMED stack",
+     6.2239
+    ],
+    [
+     "off: RECT-PK DC",
+     0.5
+    ],
+    [
+     "off: conversion loss",
+     0.9433
+    ]
+   ]
+  },
+  "ROOF_TANK/mass": {
+   "node": "ROOF_TANK",
+   "layer": "mass",
+   "in_total": 200128.4,
+   "out_total": 200128.4,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-ESS-HYDRO-CHG",
+     200000.0
+    ],
+    [
+     "off: inventory draw (dry design day, no rain)",
+     128.4
+    ]
+   ],
+   "outs": [
+    [
+     "IA-ESS-HYDRO-DIS",
+     200000.0
+    ],
+    [
+     "S21",
+     120.0
+    ],
+    [
+     "S40",
+     0.0
+    ],
+    [
+     "off: MFG harvest rinse water",
+     8.4
+    ]
+   ]
+  },
+  "SALT_FEED/mass": {
+   "node": "SALT_FEED",
+   "layer": "mass",
+   "in_total": 2138.22,
+   "out_total": 2138.2168,
+   "residual": 0.0032,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "IA-BMED-05",
+     1609.63
+    ],
+    [
+     "IA-BMED-10",
+     202.63
+    ],
+    [
+     "S92",
+     325.96
+    ]
+   ],
+   "outs": [
+    [
+     "IA-BMED-03",
+     935.55
+    ],
+    [
+     "IA-BMED-04",
+     978.12
+    ],
+    [
+     "S97",
+     91.0768
+    ],
+    [
+     "S98",
+     133.47
+    ]
+   ]
+  },
+  "SOL_ARK_60K/energy": {
+   "node": "SOL_ARK_60K",
+   "layer": "energy",
+   "in_total": 53.267,
+   "out_total": 53.2671,
+   "residual": -0.0001,
+   "residual_pct": -0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "IA-ESS-HYDRO-ELEC",
+     0.2917
+    ],
+    [
+     "IA-ESS-ZNBR2-DIS",
+     0.0361
+    ],
+    [
+     "S47",
+     0.0
+    ],
+    [
+     "S51",
+     0.0
+    ],
+    [
+     "S79",
+     0.4698
+    ],
+    [
+     "S93",
+     9.8222
+    ],
+    [
+     "off: utility import at the GRID port (ELECTRICAL AQS-ELC-001 Rev B)",
+     42.6472
+    ]
+   ],
+   "outs": [
+    [
+     "IA-ESS-ZNBR2-CHG",
+     0.0482
+    ],
+    [
+     "S17",
+     18.8665
+    ],
+    [
+     "S20",
+     5.0
+    ],
+    [
+     "S94",
+     27.8023
+    ],
+    [
+     "off: inverter / charger conversion loss",
+     1.5501
+    ]
+   ]
+  },
+  "TERRACE_IRRIG/mass": {
+   "node": "TERRACE_IRRIG",
+   "layer": "mass",
+   "in_total": 0.0,
+   "out_total": 0.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S40",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "S41",
+     0.0
+    ],
+    [
+     "S42",
+     0.0
+    ]
+   ]
+  },
+  "WAFER_FAB/mass": {
+   "node": "WAFER_FAB",
+   "layer": "mass",
+   "in_total": 5.7973,
+   "out_total": 5.7973,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S03",
+     1.4998
+    ],
+    [
+     "S36",
+     0.01
+    ],
+    [
+     "S37",
+     3.3
+    ],
+    [
+     "off: WS_SOLV solvent (litho/strip)",
+     0.9875
+    ]
+   ],
+   "outs": [
+    [
+     "S39",
+     3.31
+    ],
+    [
+     "S39B",
+     0.9875
+    ],
+    [
+     "off: N2 purge to fab exhaust",
+     1.4998
+    ]
+   ]
+  },
+  "WET_BENCH/mass": {
+   "node": "WET_BENCH",
+   "layer": "mass",
+   "in_total": 78.3457,
+   "out_total": 78.3457,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S09",
+     9.2772
+    ],
+    [
+     "S27",
+     60.0
+    ],
+    [
+     "S31",
+     1.5
+    ],
+    [
+     "S32",
+     3.0
+    ],
+    [
+     "S33",
+     3.0
+    ],
+    [
+     "S35",
+     0.2725
+    ],
+    [
+     "S34",
+     0.665
+    ],
+    [
+     "S34B",
+     0.625
+    ],
+    [
+     "off: resist from the litho track",
+     0.006
+    ]
+   ],
+   "outs": [
+    [
+     "S10",
+     78.3397
+    ],
+    [
+     "S38",
+     0.006
+    ]
+   ]
+  },
+  "WIRE_DRAW/mass": {
+   "node": "WIRE_DRAW",
+   "layer": "mass",
+   "in_total": 4.3789,
+   "out_total": 4.3789,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S57",
+     4.3789
+    ]
+   ],
+   "outs": [
+    [
+     "S58",
+     3.941
+    ],
+    [
+     "off: draw swarf to MFG_SHOP scrap bin",
+     0.4379
+    ]
+   ]
+  },
+  "WS_KOH/mass": {
+   "node": "WS_KOH",
+   "layer": "mass",
+   "in_total": 0.3073,
+   "out_total": 0.3073,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "IA-BMED-02",
+     0.27
+    ],
+    [
+     "off: KCl salt",
+     0.0373
+    ]
+   ],
+   "outs": [
+    [
+     "S35",
+     0.2725
+    ],
+    [
+     "off: spent exchange brine",
+     0.0348
+    ]
+   ]
+  },
+  "WS_NITRIC/mass": {
+   "node": "WS_NITRIC",
+   "layer": "mass",
+   "in_total": 0.7518,
+   "out_total": 0.7518,
+   "residual": -0.0,
+   "residual_pct": -0.0,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "IA-BMED-01",
+     0.6456
+    ],
+    [
+     "off: NaNO3 salt",
+     0.1062
+    ]
+   ],
+   "outs": [
+    [
+     "S34",
+     0.665
+    ],
+    [
+     "off: spent exchange brine",
+     0.0868
+    ]
+   ]
+  },
+  "ZNBR2/mass": {
+   "node": "ZNBR2",
+   "layer": "mass",
+   "in_total": 854.8474,
+   "out_total": 854.85,
+   "residual": -0.0026,
+   "residual_pct": -0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S69B",
+     0.0473
+    ],
+    [
+     "off: purge air (dry)",
+     843.9862
+    ],
+    [
+     "off: purge air ambient humidity",
+     8.4399
+    ],
+    [
+     "off: UPW electrolyte make-up (HDR_UPW)",
+     2.374
+    ]
+   ],
+   "outs": [
+    [
+     "S69",
+     854.85
+    ]
+   ]
+  },
+  "ZNBR2/energy": {
+   "node": "ZNBR2",
+   "layer": "energy",
+   "in_total": 0.0482,
+   "out_total": 0.0482,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-ESS-ZNBR2-CHG",
+     0.0482
+    ]
+   ],
+   "outs": [
+    [
+     "IA-ESS-ZNBR2-DIS",
+     0.0361
+    ],
+    [
+     "off: conversion loss (sqrt(RTE) each way)",
+     0.012
+    ],
+    [
+     "off: self-discharge",
+     0.0001
+    ]
+   ]
+  },
+  "ZNBR2_BR2_REGEN/mass": {
+   "node": "ZNBR2_BR2_REGEN",
+   "layer": "mass",
+   "in_total": 854.8503,
+   "out_total": 854.8478,
+   "residual": 0.0025,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "S69",
+     854.85
+    ],
+    [
+     "off: 2 M NaOH make-up",
+     0.0003
+    ]
+   ],
+   "outs": [
+    [
+     "S69B",
+     0.0473
+    ],
+    [
+     "off: scrubbed moist air to stack",
+     854.8005
+    ]
+   ]
+  },
+  "GLASS_RINSE/mass": {
+   "node": "GLASS_RINSE",
+   "layer": "mass",
+   "in_total": 71.1097,
+   "out_total": 71.1097,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: sink cake",
+     71.1097
+    ]
+   ],
+   "outs": [
+    [
+     "IA-GLASS-01",
+     36.8182
+    ],
+    [
+     "S96",
+     34.2915
+    ]
+   ]
+  },
+  "GLASS_MILL/mass": {
+   "node": "GLASS_MILL",
+   "layer": "mass",
+   "in_total": 36.8182,
+   "out_total": 36.8182,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-GLASS-01",
+     36.8182
+    ]
+   ],
+   "outs": [
+    [
+     "IA-GLASS-02",
+     30.0
+    ],
+    [
+     "off: mill dry-step vapor",
+     6.8182
+    ]
+   ]
+  },
+  "GLASS_BURNOUT/mass": {
+   "node": "GLASS_BURNOUT",
+   "layer": "mass",
+   "in_total": 30.0,
+   "out_total": 30.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "IA-GLASS-02",
+     30.0
+    ]
+   ],
+   "outs": [
+    [
+     "IA-GLASS-03",
+     30.0
+    ]
+   ]
+  },
+  "GLASS_BURNOUT/energy": {
+   "node": "GLASS_BURNOUT",
+   "layer": "energy",
+   "in_total": 0.87,
+   "out_total": 0.87,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: HX-7 from afterburner",
+     0.632
+    ],
+    [
+     "off: electric trim",
+     0.238
+    ]
+   ],
+   "outs": [
+    [
+     "HL-GLASS_BURNOUT-Q2-A",
+     0.371
+    ],
+    [
+     "HL-GLASS_BURNOUT-Q2-B",
+     0.371
+    ],
+    [
+     "off: q_offgas_kw",
+     0.03
+    ],
+    [
+     "off: q_end_kw",
+     0.05
+    ],
+    [
+     "off: q_cullet_residual_kw",
+     0.048
+    ]
+   ]
+  },
+  "VCD_TRAIN/mass": {
+   "node": "VCD_TRAIN",
+   "layer": "mass",
+   "in_total": 272.5268,
+   "out_total": 272.5321,
+   "residual": -0.0053,
+   "residual_pct": -0.002,
+   "status": "closed (one term by difference)",
+   "ins": [
+    [
+     "S13",
+     29.9068
+    ],
+    [
+     "S29",
+     109.15
+    ],
+    [
+     "S52",
+     0.0
+    ],
+    [
+     "S98",
+     133.47
+    ]
+   ],
+   "outs": [
+    [
+     "S25",
+     150.28
+    ],
+    [
+     "S28",
+     27.2534
+    ],
+    [
+     "S99",
+     94.9987
+    ]
+   ]
+  },
+  "REMIN/mass": {
+   "node": "REMIN",
+   "layer": "mass",
+   "in_total": 10.0,
+   "out_total": 10.0,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "off: UPW from BMED_UPW_POLISH",
+     10.0
+    ]
+   ],
+   "outs": [
+    [
+     "S26",
+     10.0
+    ]
+   ]
+  },
+  "Q1_A/energy": {
+   "node": "Q1_A",
+   "layer": "energy",
+   "in_total": 0.553,
+   "out_total": 0.553,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-AFTERBURNER-Q1-A",
+     0.553
+    ],
+    [
+     "HL-Q1-X-BA",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q1-A-DOWN",
+     0.353
+    ],
+    [
+     "HL-Q1-X",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.2
+    ]
+   ]
+  },
+  "Q2_A/energy": {
+   "node": "Q2_A",
+   "layer": "energy",
+   "in_total": 0.724,
+   "out_total": 0.7246,
+   "residual": -0.0006,
+   "residual_pct": -0.083,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-GLASS_BURNOUT-Q2-A",
+     0.371
+    ],
+    [
+     "HL-Q1-A-DOWN",
+     0.353
+    ],
+    [
+     "HL-Q2-X-BA",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q2-A-DOWN",
+     0.603
+    ],
+    [
+     "HL-Q2-X",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.111
+    ],
+    [
+     "off: thermosyphon line loss on arrival",
+     0.0106
+    ]
+   ]
+  },
+  "Q3_A/energy": {
+   "node": "Q3_A",
+   "layer": "energy",
+   "in_total": 0.603,
+   "out_total": 0.6031,
+   "residual": -0.0001,
+   "residual_pct": -0.017,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-Q2-A-DOWN",
+     0.603
+    ],
+    [
+     "HL-Q3-X-BA",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q3-A-DOWN",
+     0.0
+    ],
+    [
+     "HL-Q3-A-HX4",
+     0.121
+    ],
+    [
+     "HL-Q3-A-HX5",
+     0.0
+    ],
+    [
+     "HL-Q3-A-HX6",
+     0.29
+    ],
+    [
+     "HL-Q3-X",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.174
+    ],
+    [
+     "off: thermosyphon line loss on arrival",
+     0.0181
+    ]
+   ]
+  },
+  "Q4_A/energy": {
+   "node": "Q4_A",
+   "layer": "energy",
+   "in_total": 3.343,
+   "out_total": 3.343,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-HX8-Q4-A",
+     3.343
+    ],
+    [
+     "HL-Q3-A-DOWN",
+     0.0
+    ],
+    [
+     "HL-Q4-X-BA",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q4-A-BUS",
+     3.179
+    ],
+    [
+     "HL-Q4-X",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.164
+    ]
+   ]
+  },
+  "Q1_B/energy": {
+   "node": "Q1_B",
+   "layer": "energy",
+   "in_total": 0.553,
+   "out_total": 0.553,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-AFTERBURNER-Q1-B",
+     0.553
+    ],
+    [
+     "HL-Q1-X",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q1-B-DOWN",
+     0.353
+    ],
+    [
+     "HL-Q1-X-BA",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.2
+    ]
+   ]
+  },
+  "Q2_B/energy": {
+   "node": "Q2_B",
+   "layer": "energy",
+   "in_total": 0.724,
+   "out_total": 0.7246,
+   "residual": -0.0006,
+   "residual_pct": -0.083,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-GLASS_BURNOUT-Q2-B",
+     0.371
+    ],
+    [
+     "HL-Q1-B-DOWN",
+     0.353
+    ],
+    [
+     "HL-Q2-X",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q2-B-DOWN",
+     0.603
+    ],
+    [
+     "HL-Q2-X-BA",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.111
+    ],
+    [
+     "off: thermosyphon line loss on arrival",
+     0.0106
+    ]
+   ]
+  },
+  "Q3_B/energy": {
+   "node": "Q3_B",
+   "layer": "energy",
+   "in_total": 0.603,
+   "out_total": 0.6031,
+   "residual": -0.0001,
+   "residual_pct": -0.017,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-Q2-B-DOWN",
+     0.603
+    ],
+    [
+     "HL-Q3-X",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q3-B-DOWN",
+     0.0
+    ],
+    [
+     "HL-Q3-B-HX4",
+     0.121
+    ],
+    [
+     "HL-Q3-B-HX5",
+     0.0
+    ],
+    [
+     "HL-Q3-B-HX6",
+     0.29
+    ],
+    [
+     "HL-Q3-X-BA",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.174
+    ],
+    [
+     "off: thermosyphon line loss on arrival",
+     0.0181
+    ]
+   ]
+  },
+  "Q4_B/energy": {
+   "node": "Q4_B",
+   "layer": "energy",
+   "in_total": 3.343,
+   "out_total": 3.343,
+   "residual": 0.0,
+   "residual_pct": 0.0,
+   "status": "closed",
+   "ins": [
+    [
+     "HL-HX8-Q4-B",
+     3.343
+    ],
+    [
+     "HL-Q3-B-DOWN",
+     0.0
+    ],
+    [
+     "HL-Q4-X",
+     0.0
+    ]
+   ],
+   "outs": [
+    [
+     "HL-Q4-B-BUS",
+     3.179
+    ],
+    [
+     "HL-Q4-X-BA",
+     0.0
+    ],
+    [
+     "off: store standing loss",
+     0.164
+    ]
+   ]
+  }
+ },
+ "species": {
+  "AFTERBURNER/CO2": {
+   "in_total": 15.554,
+   "out_total": 15.554,
+   "residual": 0.0,
+   "status": "closed",
+   "note": "S11 trim carbon folded into the S67 CO2 basis (Rev M)"
+  },
+  "CRYO_CO2/CO2": {
+   "in_total": 24.252,
+   "out_total": 24.253,
+   "residual": -0.0,
+   "status": "closed (one term by difference)"
+  },
+  "HDR_CO2/CO2": {
+   "in_total": 16.101,
+   "out_total": 16.1009,
+   "residual": 0.0,
+   "status": "closed"
+  },
+  "H2_DRYER/H2": {
+   "in_total": 1.5132,
+   "out_total": 1.5132,
+   "residual": 4e-05,
+   "status": "closed"
+  },
+  "CRYO_H2/H2": {
+   "in_total": 1.5132,
+   "out_total": 1.5132,
+   "residual": 0.0,
+   "status": "closed"
+  },
+  "LEACH/electrons": {
+   "in_total": 2880.0,
+   "out_total": 2880.0,
+   "residual": 0.0,
+   "status": "closed",
+   "note": "oxidant e- (Cl2 sparge share + chlorate + O2) = fresh metal e- (Fe as Fe(III)) + Al + returning Fe(II)/Cu(I)"
+  },
+  "LEACH_LOOP/Cl": {
+   "in_total": 5397.2,
+   "out_total": 5397.2,
+   "residual": 0.0,
+   "status": "closed",
+   "note": "Cl in: BMED HCl + CRU (NaCl + NaClO3) + fab HCl on S10 + absorbed sparge Cl2; out: all anode Cl2 + bleed"
+  },
+  "SALT_FEED/Na": {
+   "in_total": 1945.2,
+   "out_total": 1935.9,
+   "residual": 9.26,
+   "status": "closed",
+   "note": "Na in: bleed (CRU Na) + digest NaOH + glass Na + IA-BMED-10; out: NaCl to BMED (= Cl in bleed) + Na retained in the cake"
+  },
+  "BMED/pairs": {
+   "in_total": 1811.3,
+   "out_total": 1811.3,
+   "residual": -0.0,
+   "status": "closed",
+   "note": "HCl made = NaOH made; NaOH uses: S91 + IA-BMED-07 + IA-BMED-10 + IA-BMED-02"
+  },
+  "EW/electrons": {
+   "in_total": 3587.08,
+   "out_total": 3587.15,
+   "residual": -0.0618,
+   "status": "closed",
+   "note": "cathodic e- = leach oxidation - bleed metal charge - Al + HER e- (steady state, oxidation states carried)"
+  }
+ },
+ "elements": {
+  "EW_TRAIN/Fe": {
+   "element": "Fe",
+   "in_total": 632.39495,
+   "out_total": 632.39495,
+   "residual": 0.0,
+   "tol_abs": 0.001049,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 632.39495
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 101.731949,
+    "harvest entrainment (S16)": 0.104941,
+    "cathode deposit (S08)": 530.55806
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Cu": {
+   "element": "Cu",
+   "in_total": 164.765426,
+   "out_total": 164.765426,
+   "residual": 0.0,
+   "tol_abs": 0.000273,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 164.765426
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 26.505442,
+    "harvest entrainment (S16)": 0.027342,
+    "cathode deposit (S08)": 138.232642
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Zn": {
+   "element": "Zn",
+   "in_total": 12.964,
+   "out_total": 12.964,
+   "residual": 0.0,
+   "tol_abs": 2.2e-05,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 12.964
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 2.085489,
+    "harvest entrainment (S16)": 0.002151,
+    "cathode deposit (S08)": 10.876359
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Au": {
+   "element": "Au",
+   "in_total": 0.037969,
+   "out_total": 0.037969,
+   "residual": 0.0,
+   "tol_abs": 1e-06,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 0.037969
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 0.006108,
+    "harvest entrainment (S16)": 6e-06,
+    "cathode deposit (S08)": 0.031854
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Ag": {
+   "element": "Ag",
+   "in_total": 0.277323,
+   "out_total": 0.277323,
+   "residual": 0.0,
+   "tol_abs": 1e-06,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 0.277323
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 0.044612,
+    "harvest entrainment (S16)": 4.6e-05,
+    "cathode deposit (S08)": 0.232664
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Al": {
+   "element": "Al",
+   "in_total": 598.302461,
+   "out_total": 598.302461,
+   "residual": 0.0,
+   "tol_abs": 0.006165,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 598.302461
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 597.685921,
+    "harvest entrainment (S16)": 0.61654
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Na": {
+   "element": "Na",
+   "in_total": 2155.088013,
+   "out_total": 2155.088013,
+   "residual": 0.0,
+   "tol_abs": 0.022208,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 2155.088013
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 2152.867235,
+    "harvest entrainment (S16)": 2.220778
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "EW_TRAIN/Cl": {
+   "element": "Cl",
+   "in_total": 8170.404447,
+   "out_total": 8170.404447,
+   "residual": -0.0,
+   "tol_abs": 0.04723,
+   "status": "closed",
+   "ins": {
+    "IA-EW-04": 8170.404447
+   },
+   "outs": {
+    "IA-EW-09 raffinate": 4578.597637,
+    "harvest entrainment (S16)": 4.723027,
+    "anode Cl2": 3587.083783
+   },
+   "note": "EW_1..EW_9 lumped; feed Cl by charge balance (H+ in = raffinate H+ + HER H+)"
+  },
+  "POLISH_BANK/Fe": {
+   "element": "Fe",
+   "in_total": 101.731949,
+   "out_total": 101.731949,
+   "residual": -0.0,
+   "tol_abs": 0.402182,
+   "status": "closed",
+   "ins": {
+    "IA-EW-09": 101.731949
+   },
+   "outs": {
+    "IA-POL-02": 61.513754,
+    "IA-BMED-05 bleed": 40.218196
+   },
+   "note": "bleed composition from the leach-loop definitions (undeposited metal, Al, CRU Na, Cl by charge); IA-POL-02 at raffinate composition"
+  },
+  "POLISH_BANK/Cu": {
+   "element": "Cu",
+   "in_total": 26.505442,
+   "out_total": 26.505442,
+   "residual": -0.0,
+   "tol_abs": 0.104785,
+   "status": "closed",
+   "ins": {
+    "IA-EW-09": 26.505442
+   },
+   "outs": {
+    "IA-POL-02": 16.026915,
+    "IA-BMED-05 bleed": 10.478528
+   },
+   "note": "bleed composition from the leach-loop definitions (undeposited metal, Al, CRU Na, Cl by charge); IA-POL-02 at raffinate composition"
+  },
+  "POLISH_BANK/Zn": {
+   "element": "Zn",
+   "in_total": 2.085489,
+   "out_total": 2.085489,
+   "residual": -0.0,
+   "tol_abs": 0.008245,
+   "status": "closed",
+   "ins": {
+    "IA-EW-09": 2.085489
+   },
+   "outs": {
+    "IA-POL-02": 1.261023,
+    "IA-BMED-05 bleed": 0.824467
+   },
+   "note": "bleed composition from the leach-loop definitions (undeposited metal, Al, CRU Na, Cl by charge); IA-POL-02 at raffinate composition"
+  },
+  "POLISH_BANK/Al": {
+   "element": "Al",
+   "in_total": 597.685921,
+   "out_total": 597.685921,
+   "residual": -0.0,
+   "tol_abs": 2.362861,
+   "status": "closed",
+   "ins": {
+    "IA-EW-09": 597.685921
+   },
+   "outs": {
+    "IA-POL-02": 361.399784,
+    "IA-BMED-05 bleed": 236.286138
+   },
+   "note": "bleed composition from the leach-loop definitions (undeposited metal, Al, CRU Na, Cl by charge); IA-POL-02 at raffinate composition"
+  },
+  "POLISH_BANK/Na": {
+   "element": "Na",
+   "in_total": 2152.867235,
+   "out_total": 2152.867235,
+   "residual": -0.0,
+   "tol_abs": 8.511037,
+   "status": "closed",
+   "ins": {
+    "IA-EW-09": 2152.867235
+   },
+   "outs": {
+    "IA-POL-02": 1301.76356,
+    "IA-BMED-05 bleed": 851.103675
+   },
+   "note": "bleed composition from the leach-loop definitions (undeposited metal, Al, CRU Na, Cl by charge); IA-POL-02 at raffinate composition"
+  },
+  "POLISH_BANK/Cl": {
+   "element": "Cl",
+   "in_total": 4578.597637,
+   "out_total": 4578.597637,
+   "residual": -0.0,
+   "tol_abs": 18.100797,
+   "status": "closed",
+   "ins": {
+    "IA-EW-09": 4578.597637
+   },
+   "outs": {
+    "IA-POL-02": 2768.517938,
+    "IA-BMED-05 bleed": 1810.079699
+   },
+   "note": "bleed composition from the leach-loop definitions (undeposited metal, Al, CRU Na, Cl by charge); IA-POL-02 at raffinate composition"
+  },
+  "LEACH_CSTR_1/Fe": {
+   "element": "Fe",
+   "in_total": 632.39495,
+   "out_total": 632.39495,
+   "residual": 0.0,
+   "tol_abs": 0.001049,
+   "status": "closed",
+   "ins": {
+    "IA-POL-02": 61.513754,
+    "S16 entrained electrolyte": 0.104941,
+    "metal dissolved (off-graph)": 570.776256
+   },
+   "outs": {
+    "IA-EW-04": 632.39495
+   },
+   "note": "IA-REC-01 composition = IA-POL-02 + IA-BMED-06 + IA-BMED-09 (CONTINUOUS_RECYCLE mixing, not separately checked); slurry liquor to FLOAT_SINK returns on IA-WET-FLOAT-01 at leach composition (assumed); S28/S98 salt content not modelled (assumed nil)"
+  },
+  "LEACH_CSTR_1/Cu": {
+   "element": "Cu",
+   "in_total": 164.765426,
+   "out_total": 164.765426,
+   "residual": 0.0,
+   "tol_abs": 0.000273,
+   "status": "closed",
+   "ins": {
+    "IA-POL-02": 16.026915,
+    "S16 entrained electrolyte": 0.027342,
+    "metal dissolved (off-graph)": 148.71117
+   },
+   "outs": {
+    "IA-EW-04": 164.765426
+   },
+   "note": "IA-REC-01 composition = IA-POL-02 + IA-BMED-06 + IA-BMED-09 (CONTINUOUS_RECYCLE mixing, not separately checked); slurry liquor to FLOAT_SINK returns on IA-WET-FLOAT-01 at leach composition (assumed); S28/S98 salt content not modelled (assumed nil)"
+  },
+  "LEACH_CSTR_1/Zn": {
+   "element": "Zn",
+   "in_total": 12.964,
+   "out_total": 12.964,
+   "residual": 0.0,
+   "tol_abs": 2.2e-05,
+   "status": "closed",
+   "ins": {
+    "IA-POL-02": 1.261023,
+    "S16 entrained electrolyte": 0.002151,
+    "metal dissolved (off-graph)": 11.700826
+   },
+   "outs": {
+    "IA-EW-04": 12.964
+   },
+   "note": "IA-REC-01 composition = IA-POL-02 + IA-BMED-06 + IA-BMED-09 (CONTINUOUS_RECYCLE mixing, not separately checked); slurry liquor to FLOAT_SINK returns on IA-WET-FLOAT-01 at leach composition (assumed); S28/S98 salt content not modelled (assumed nil)"
+  },
+  "LEACH_CSTR_1/Al": {
+   "element": "Al",
+   "in_total": 598.302461,
+   "out_total": 598.302461,
+   "residual": 0.0,
+   "tol_abs": 0.006165,
+   "status": "closed",
+   "ins": {
+    "IA-POL-02": 361.399784,
+    "S16 entrained electrolyte": 0.61654,
+    "Al dissolved (off-graph)": 236.286138
+   },
+   "outs": {
+    "IA-EW-04": 598.302461
+   },
+   "note": "IA-REC-01 composition = IA-POL-02 + IA-BMED-06 + IA-BMED-09 (CONTINUOUS_RECYCLE mixing, not separately checked); slurry liquor to FLOAT_SINK returns on IA-WET-FLOAT-01 at leach composition (assumed); S28/S98 salt content not modelled (assumed nil)"
+  },
+  "LEACH_CSTR_1/Na": {
+   "element": "Na",
+   "in_total": 2155.088013,
+   "out_total": 2155.088013,
+   "residual": 0.0,
+   "tol_abs": 0.022208,
+   "status": "closed",
+   "ins": {
+    "IA-POL-02": 1301.76356,
+    "S16 entrained electrolyte": 2.220778,
+    "IA-BMED-09 CRU liquor": 851.103675
+   },
+   "outs": {
+    "IA-EW-04": 2155.088013
+   },
+   "note": "IA-REC-01 composition = IA-POL-02 + IA-BMED-06 + IA-BMED-09 (CONTINUOUS_RECYCLE mixing, not separately checked); slurry liquor to FLOAT_SINK returns on IA-WET-FLOAT-01 at leach composition (assumed); S28/S98 salt content not modelled (assumed nil)"
+  },
+  "LEACH_CSTR_1/Cl": {
+   "element": "Cl",
+   "in_total": 8170.404447,
+   "out_total": 8170.404447,
+   "residual": 0.0,
+   "tol_abs": 0.04723,
+   "status": "closed",
+   "ins": {
+    "IA-POL-02": 2768.517938,
+    "S16 entrained electrolyte": 4.723027,
+    "IA-BMED-06 HCl": 1792.118034,
+    "S10 fab HCl": 17.961665,
+    "IA-BMED-09 CRU liquor (NaCl + NaClO3)": 851.103675,
+    "anode Cl2 absorbed (sparge)": 2735.980108
+   },
+   "outs": {
+    "IA-EW-04": 8170.404447
+   },
+   "note": "IA-REC-01 composition = IA-POL-02 + IA-BMED-06 + IA-BMED-09 (CONTINUOUS_RECYCLE mixing, not separately checked); slurry liquor to FLOAT_SINK returns on IA-WET-FLOAT-01 at leach composition (assumed); S28/S98 salt content not modelled (assumed nil)"
+  },
+  "SALT_FEED/Fe": {
+   "element": "Fe",
+   "in_total": 40.218196,
+   "out_total": 40.218196,
+   "residual": -0.0,
+   "tol_abs": 0.402182,
+   "status": "closed",
+   "ins": {
+    "IA-BMED-05": 40.218196
+   },
+   "outs": {
+    "S97 cake M(OH)n": 40.218196
+   },
+   "note": "bleed metal at raffinate composition x bleed fraction; cake hydroxide from the undeposited metal"
+  },
+  "SALT_FEED/Cu": {
+   "element": "Cu",
+   "in_total": 10.478528,
+   "out_total": 10.478528,
+   "residual": -0.0,
+   "tol_abs": 0.104785,
+   "status": "closed",
+   "ins": {
+    "IA-BMED-05": 10.478528
+   },
+   "outs": {
+    "S97 cake M(OH)n": 10.478528
+   },
+   "note": "bleed metal at raffinate composition x bleed fraction; cake hydroxide from the undeposited metal"
+  },
+  "SALT_FEED/Zn": {
+   "element": "Zn",
+   "in_total": 0.824467,
+   "out_total": 0.824467,
+   "residual": -0.0,
+   "tol_abs": 0.008245,
+   "status": "closed",
+   "ins": {
+    "IA-BMED-05": 0.824467
+   },
+   "outs": {
+    "S97 cake M(OH)n": 0.824467
+   },
+   "note": "bleed metal at raffinate composition x bleed fraction; cake hydroxide from the undeposited metal"
+  },
+  "SALT_FEED/Al": {
+   "element": "Al",
+   "in_total": 236.286138,
+   "out_total": 236.286138,
+   "residual": 0.0,
+   "tol_abs": 2.362861,
+   "status": "closed",
+   "ins": {
+    "IA-BMED-05": 236.286138
+   },
+   "outs": {
+    "S97 cake Al(OH)3 + NaAlSiO4": 236.286138
+   },
+   "note": "bleed metal at raffinate composition x bleed fraction; cake hydroxide from the undeposited metal"
+  },
+  "SALT_FEED/Si": {
+   "element": "Si",
+   "in_total": 359.520639,
+   "out_total": 359.520639,
+   "residual": 0.0,
+   "tol_abs": 3.595206,
+   "status": "closed",
+   "ins": {
+    "S92 dissolved silica": 359.520639
+   },
+   "outs": {
+    "S97 cake SiO2 + NaAlSiO4": 359.520639
+   },
+   "note": "bleed metal at raffinate composition x bleed fraction; cake hydroxide from the undeposited metal"
+  },
+  "ALK_CRU/Cl": {
+   "element": "Cl",
+   "in_total": 851.103675,
+   "out_total": 851.103675,
+   "residual": 0.0,
+   "tol_abs": 8.511037,
+   "status": "closed",
+   "ins": {
+    "Cl2 to ALK (unabsorbed sparge + surplus)": 851.103675
+   },
+   "outs": {
+    "IA-BMED-09 (NaCl + NaClO3)": 851.103675
+   },
+   "note": "Cl2 + 2 NaOH; slip via ACID_POLISH_SCRUB and S66 to CRU"
+  },
+  "ALK_CRU/Na": {
+   "element": "Na",
+   "in_total": 851.103675,
+   "out_total": 851.103675,
+   "residual": 0.0,
+   "tol_abs": 0.08511,
+   "status": "closed",
+   "ins": {
+    "IA-BMED-07": 842.592639,
+    "polish scrub NaOH (S66)": 8.511037
+   },
+   "outs": {
+    "IA-BMED-09": 851.103675
+   },
+   "note": ""
+  }
+ },
+ "compositions": {
+  "feed": {
+   "Au": 0.03796873981829844,
+   "Ag": 0.27732280270734194,
+   "Cu": 164.76542590901616,
+   "Pb": 4.090667490160043,
+   "Sn": 7.139973919308911,
+   "Ni": 14.44101177246283,
+   "Fe": 632.3949502799122,
+   "Cd": 7.540132585723341,
+   "Zn": 12.963999754682789,
+   "Al": 598.3024609644203,
+   "Na": 2155.088013255995,
+   "Cl": 8170.4044467618805
+  },
+  "raff": {
+   "Au": 0.006107945539328105,
+   "Ag": 0.04461229379369455,
+   "Cu": 26.50544245167343,
+   "Pb": 0.658056452991789,
+   "Sn": 1.148591500799415,
+   "Ni": 2.323092993370565,
+   "Fe": 101.73194933886838,
+   "Cd": 1.2129641229418957,
+   "Zn": 2.0854894013444234,
+   "Al": 597.6859213846843,
+   "Na": 2152.867235063231,
+   "Cl": 4578.5976365049155
+  },
+  "bleed": {
+   "Au": 0.002414684385613592,
+   "Ag": 0.017636799237389793,
+   "Cu": 10.478527945237037,
+   "Pb": 0.26015271938170065,
+   "Sn": 0.45407837129044204,
+   "Ni": 0.9183998680573215,
+   "Fe": 40.21819579184079,
+   "Cd": 0.4795271190809392,
+   "Zn": 0.8244668622803362,
+   "Al": 236.28613787991105,
+   "Na": 851.1036752593797,
+   "Cl": 1810.0796985965064
+  },
+  "pol2": {
+   "Au": 0.003693261153726915,
+   "Ag": 0.026975494556395332,
+   "Cu": 16.02691450649021,
+   "Pb": 0.3979037336114241,
+   "Sn": 0.6945131295113047,
+   "Ni": 1.4046931253179595,
+   "Fe": 61.51375354723413,
+   "Cd": 0.7334370038634193,
+   "Zn": 1.261022539068322,
+   "Al": 361.3997835059866,
+   "Na": 1301.7635598082218,
+   "Cl": 2768.5179379169163
+  },
+  "entr": {
+   "Au": 6.300617165522929e-06,
+   "Ag": 4.6019562921778155e-05,
+   "Cu": 0.027341541376802194,
+   "Pb": 0.000678814465012288,
+   "Sn": 0.0011848231585422117,
+   "Ni": 0.0023963736246323405,
+   "Fe": 0.10494102512202368,
+   "Cd": 0.0012512263779961381,
+   "Zn": 0.002151274964064634,
+   "Al": 0.6165395797360007,
+   "Na": 2.2207781927642087,
+   "Cl": 4.723026863425335
+  }
+ },
+ "decisions": {
+  "ew": {
+   "h2_total": 1.524947022156507,
+   "h2_caught": 1.5132381995356006,
+   "h2_hood": 0.011708822620906261,
+   "cl2_total": 127.1728813726512,
+   "ne_dep": 1277.1568467947448,
+   "ne_side": 2309.9269365987957,
+   "p_ew_kw": 11.199304441742283,
+   "entrained": 4.199999999999999,
+   "dep": 42.0,
+   "cells": [
+    {
+     "cell": "EW_1",
+     "metal": "Au",
+     "in_kg_d": 4284.0,
+     "deposit": 0.0063,
+     "n_e_dep": 0.1,
+     "n_e_side": 511.75,
+     "n_e_fe3": 405.97,
+     "n_e_cu2": 105.78,
+     "n_e_h2": 0.0,
+     "ce_derived": 0.0002,
+     "I_A": 571.6,
+     "j_A_m2": 259.2,
+     "V_cell": 1.8,
+     "cl2": 18.1465,
+     "h2": 0.0,
+     "caught": false,
+     "entrained": 0.001,
+     "out": 4261.95,
+     "p_kw": 1.029
+    },
+    {
+     "cell": "EW_2",
+     "metal": "Ag",
+     "in_kg_d": 4261.95,
+     "deposit": 0.0251,
+     "n_e_dep": 0.23,
+     "n_e_side": 183.2,
+     "n_e_fe3": 145.33,
+     "n_e_cu2": 37.87,
+     "n_e_h2": 0.0,
+     "ce_derived": 0.0013,
+     "I_A": 204.8,
+     "j_A_m2": 92.9,
+     "V_cell": 2.0,
+     "cl2": 6.5032,
+     "h2": 0.0,
+     "caught": false,
+     "entrained": 0.003,
+     "out": 4251.53,
+     "p_kw": 0.41
+    },
+    {
+     "cell": "EW_3",
+     "metal": "Cu",
+     "in_kg_d": 4251.53,
+     "deposit": 8.7841,
+     "n_e_dep": 138.23,
+     "n_e_side": 65.58,
+     "n_e_fe3": 52.03,
+     "n_e_cu2": 13.56,
+     "n_e_h2": 0.0,
+     "ce_derived": 0.6782,
+     "I_A": 227.6,
+     "j_A_m2": 103.2,
+     "V_cell": 2.2,
+     "cl2": 7.2258,
+     "h2": 0.0,
+     "caught": true,
+     "entrained": 0.878,
+     "out": 4230.75,
+     "p_kw": 0.501
+    },
+    {
+     "cell": "EW_4",
+     "metal": "Pb",
+     "in_kg_d": 4230.75,
+     "deposit": 0.7111,
+     "n_e_dep": 6.86,
+     "n_e_side": 24.69,
+     "n_e_fe3": 18.62,
+     "n_e_cu2": 4.85,
+     "n_e_h2": 1.21,
+     "ce_derived": 0.2175,
+     "I_A": 35.2,
+     "j_A_m2": 16.0,
+     "V_cell": 2.3,
+     "cl2": 1.1186,
+     "h2": 0.00122,
+     "caught": false,
+     "entrained": 0.071,
+     "out": 4224.95,
+     "p_kw": 0.081
+    },
+    {
+     "cell": "EW_5",
+     "metal": "Sn",
+     "in_kg_d": 4224.95,
+     "deposit": 0.7111,
+     "n_e_dep": 11.98,
+     "n_e_side": 10.52,
+     "n_e_fe3": 6.67,
+     "n_e_cu2": 1.74,
+     "n_e_h2": 2.11,
+     "ce_derived": 0.5325,
+     "I_A": 25.1,
+     "j_A_m2": 11.4,
+     "V_cell": 2.4,
+     "cl2": 0.7977,
+     "h2": 0.00213,
+     "caught": false,
+     "entrained": 0.071,
+     "out": 4219.48,
+     "p_kw": 0.06
+    },
+    {
+     "cell": "EW_6",
+     "metal": "Ni",
+     "in_kg_d": 4219.48,
+     "deposit": 0.7111,
+     "n_e_dep": 24.23,
+     "n_e_side": 9.07,
+     "n_e_fe3": 2.39,
+     "n_e_cu2": 0.62,
+     "n_e_h2": 6.06,
+     "ce_derived": 0.7277,
+     "I_A": 37.2,
+     "j_A_m2": 16.9,
+     "V_cell": 3.0,
+     "cl2": 1.1805,
+     "h2": 0.00611,
+     "caught": false,
+     "entrained": 0.071,
+     "out": 4213.61,
+     "p_kw": 0.112
+    },
+    {
+     "cell": "EW_7",
+     "metal": "Fe",
+     "in_kg_d": 4213.61,
+     "deposit": 29.629,
+     "n_e_dep": 1061.12,
+     "n_e_side": 1497.34,
+     "n_e_fe3": 1.33,
+     "n_e_cu2": 0.22,
+     "n_e_h2": 1495.79,
+     "ce_derived": 0.4147,
+     "I_A": 2857.1,
+     "j_A_m2": 1295.7,
+     "V_cell": 3.1,
+     "cl2": 90.7051,
+     "h2": 1.50776,
+     "caught": true,
+     "entrained": 2.963,
+     "out": 4082.43,
+     "p_kw": 8.857
+    },
+    {
+     "cell": "EW_8",
+     "metal": "Cd",
+     "in_kg_d": 4082.43,
+     "deposit": 0.7111,
+     "n_e_dep": 12.65,
+     "n_e_side": 2.31,
+     "n_e_fe3": 0.0,
+     "n_e_cu2": 0.08,
+     "n_e_h2": 2.23,
+     "ce_derived": 0.8455,
+     "I_A": 16.7,
+     "j_A_m2": 7.6,
+     "V_cell": 2.8,
+     "cl2": 0.5305,
+     "h2": 0.00225,
+     "caught": false,
+     "entrained": 0.071,
+     "out": 4077.22,
+     "p_kw": 0.047
+    },
+    {
+     "cell": "EW_9",
+     "metal": "Zn",
+     "in_kg_d": 4077.22,
+     "deposit": 0.7111,
+     "n_e_dep": 21.75,
+     "n_e_side": 5.47,
+     "n_e_fe3": 0.0,
+     "n_e_cu2": 0.03,
+     "n_e_h2": 5.44,
+     "ce_derived": 0.7992,
+     "I_A": 30.4,
+     "j_A_m2": 13.8,
+     "V_cell": 3.4,
+     "cl2": 0.965,
+     "h2": 0.00548,
+     "caught": true,
+     "entrained": 0.071,
+     "out": 4071.56,
+     "p_kw": 0.103
+    }
+   ],
+   "raff": 4071.56483106983,
+   "ne_fe": 632.3331510060144,
+   "ne_cu": 164.74951758037346,
+   "ne_h2": 1512.8442680124074,
+   "model": {
+    "cl_feed_M": 2.0025501095040528,
+    "au_feed_M": 9.306063680955498e-06,
+    "fe_third_e": 570.7762557077625,
+    "returned_fe2": 61.61869457214974,
+    "returned_cu1": 16.044630356766667,
+    "source_table": "ELECTRICAL.md",
+    "km_m_s": 2.2e-05,
+    "area_m2_per_cell": 2.2049999999999996,
+    "x_shuttle": 0.6420172894265754,
+    "ce_fe": 0.415,
+    "tot": {
+     "ne_dep": 1277.1568467947448,
+     "r_fe": 632.3331510060144,
+     "r_cu": 164.74951758037346,
+     "ne_h2": 1512.8442680124074,
+     "n_tot": 3587.08378339354,
+     "p_kw": 11.199304441742283,
+     "q_heat_kw": 4.052368976010936
+    },
+    "dem_fresh": 2093.457322625204,
+    "al_mol": 236.28613787991105,
+    "al_e": 708.8584136397332,
+    "returned_reduced": 77.6633249289164,
+    "demand": 2879.979061193854,
+    "u_eq": 96.81933289909038,
+    "vol": {
+     "Q_m3_d": 4.08,
+     "raff_m3_d": 3.8776807914910583,
+     "bleed_m3_d": 1.5329827679893173,
+     "b": 0.39533495674868324
+    },
+    "raff_mM": {
+     "Fe3": 0.0,
+     "Fe2": 26.235256280533108,
+     "Cu2": 0.004098309340003565,
+     "Cu1": 6.8312870348676284,
+     "Au": 0.0015751542913823647,
+     "Ag": 0.011504890730456461,
+     "Pb": 0.16970361625324787,
+     "Sn": 0.29620578963585986,
+     "Ni": 0.5990934061587059,
+     "Cd": 0.3128065944993587,
+     "Zn": 0.5378187410167159
+    },
+    "feed_mM": {
+     "Fe3": 154.9836154426506,
+     "Fe2": 0.015146880857317928,
+     "Cu2": 40.38368282083729,
+     "Cu1": 0.0,
+     "Au": 0.009306063680955498,
+     "Ag": 0.06797127517336812,
+     "Pb": 1.0026145809215792,
+     "Sn": 1.7499936076737528,
+     "Ni": 3.5394636697212816,
+     "Cd": 1.8480717121870933,
+     "Zn": 3.177450920265389
+    },
+    "na_mM": 555.1945481955058,
+    "al_mM": 154.13489493415992,
+    "cl_raff_M": 1.180756715861332,
+    "leach": {
+     "orp_V_SHE": 1.05,
+     "range_V_SHE": [
+      1.0,
+      1.1
+     ],
+     "orp_V_AgAgCl_sat_25C": 0.853,
+     "T_C": 77.5,
+     "nernst_slope_V_dec": 0.0696,
+     "cl_M": 2.0025501098379657,
+     "au_M": 9.306063682344744e-06,
+     "fe3_fe2_ratio": 10232.048228449174,
+     "fe2_fraction": 9.772259229853652e-05,
+     "cu2_cu1_ratio": 21381546.895399734,
+     "au_dissolution_E_V": 0.785,
+     "au_dissolution_E_V_cascade_E0": 0.855,
+     "cl2_cl_E_V": 1.339,
+     "margin_to_cl2_V": 0.289,
+     "rev_m_glossary": "ORP > 1.5 V, no reference stated"
+    },
+    "ce_ew_overall": 0.35604321613767764
+   }
+  },
+  "standby": {
+   "fc_lhv_kw": 7.692307692307692,
+   "fc_h2_kg_d": 5.540308307897504,
+   "fc_h2_kg_h": 0.23084617949572936,
+   "inventory_kg": 1.8467694359658349,
+   "fill_days": 1.220408945883465,
+   "fc_o2_stoich_kg_d": 43.96795268752588,
+   "fc_water_kg_d": 49.508260995423385,
+   "fc_heat_kw": 3.6923076923076916,
+   "s53_standby_kw": 1.582
+  },
+  "co2": {
+   "co2_ab": 15.55401815002914,
+   "s11_co2": 0.55401815002914,
+   "q_s11_kw": 0.06805555555555556
+  },
+  "electrons": {
+   "n_e_dep": 1277.1568467947448,
+   "u_e": 96.81933289909038,
+   "al_e": 708.8584136397332,
+   "al_mol": 236.28613787991105,
+   "demand": 2879.979061193854,
+   "dem_fresh": 2093.457322625204,
+   "returned_reduced": 77.6633249289164,
+   "cl2_mol": 1793.5418916967703,
+   "cl2_sparge_mol": 1439.989530596927,
+   "cl2_surplus_mol": 353.55236109984344,
+   "e_cl2": 2735.980108134161,
+   "e_cru": 143.9989530596928,
+   "o2_e": 0.0,
+   "o2_mol": 0.0,
+   "o2_decomp_mol": 176.77618054992172,
+   "na_alk": 842.5926385067859,
+   "na_pol": 8.511036752593796,
+   "na_cru": 851.1036752593797,
+   "c_a_in": 425.5518376296898,
+   "slip_mol": 4.255518376296898,
+   "n_e_side": 2309.9269365987957,
+   "n_e_h2": 1512.8442680124074,
+   "n_e_fe3": 632.3331510060144,
+   "n_e_cu2": 164.74951758037346,
+   "fe_ox_mol": 632.3949502799122,
+   "cathodic_total": 3587.0837833935407
+  },
+  "salt": {
+   "sio2_mol": 359.5206391478029,
+   "na_glass": 125.84704743465636,
+   "al_mol": 236.28613787991105,
+   "dsp_mol": 125.84704743465636,
+   "cake_dry": 45.53838940351052,
+   "u_hyd": 5.008457870561876,
+   "insol": 4.500000000000001
+  },
+  "fab": {
+   "h09": 17.961665053242985,
+   "h01": 1.2499515972894482,
+   "n02": 0.5
+  },
+  "znbr2": {
+   "evap": 2.3743426384368305,
+   "makeup": 2.3740247966219927,
+   "dry": 843.986247870307
+  },
+  "farm": {
+   "oa": 961.2,
+   "oa_min": 251.3,
+   "vap": 62.49321742873627,
+   "et": 92.39999999999999,
+   "farm_makeup": 74.90241179277436,
+   "o2_photo": 0.8063117927743695,
+   "s13": 29.90678257126372
+  },
+  "loop": {
+   "rec": 3870.547830123637,
+   "pol2": 2461.932924687644,
+   "bleed": 1609.6319063821857,
+   "f_h": 153.2982767983034,
+   "cl_bleed": 1810.0796985965064,
+   "L": 1792.1180335432634,
+   "pairs": 1811.329650193796,
+   "n_top": 375.23701168701007,
+   "n_top_req": 365.9760233371269,
+   "dil": 133.47333845640455,
+   "vcd_feed": 272.5341710276683,
+   "s28": 27.253417102682526,
+   "s99": 94.99867577254054,
+   "s25": 150.28207815244525,
+   "bmed_kg_d": 138.49064239451727,
+   "p_bmed_kw": 6.223865430874231,
+   "p_bmed_rev_m_basis_kw": 12.117931209520263,
+   "bmed_kwh_kg_naoh": 2.06179993414036,
+   "raff": 4071.56483106983,
+   "iterations": 11,
+   "o2_vent": 0.0,
+   "acid": 925.6289643250226,
+   "cru": 482.98594111097054
+  },
+  "heat": {
+   "t_rec": 45.164949589219454,
+   "q_hx9": 0.29778460098392656,
+   "q_cold_raw": 0.8497239807338238,
+   "q_warm": 5.617110579354454,
+   "q_fix": 1.1179999999999999,
+   "q_rx_low": 2.562,
+   "q_ox_tot": 5.2531759081784255,
+   "q_ox_extra": 4.725049959104352,
+   "q5_rate": 5.0228345600882776,
+   "q5_norm": 0.0,
+   "hx5_rating": 6.5,
+   "q_hx10": 0.28215,
+   "q6_norm": 1.3808500000000001,
+   "q6_rate": 1.663,
+   "hx6_rating": 2.5,
+   "served": {
+    "HX-4": 0.242,
+    "HX-6": 0.5792099924355075,
+    "HX-5": 0.0
+   },
+   "trim": {
+    "HX-4": 0.0,
+    "HX-6": 0.8016400075644926,
+    "HX-5": 0.0
+   },
+   "trim_single": {
+    "HX-4": 0.0,
+    "HX-6": 0.3317900075644926,
+    "HX-5": 0.0
+   },
+   "bus_n": 6.358,
+   "q3_down": 0.0,
+   "cold": [
+    [
+     "S68",
+     173.67,
+     10.0
+    ],
+    [
+     "S10",
+     78.34,
+     25.0
+    ],
+    [
+     "S16",
+     12.6,
+     25.0
+    ],
+    [
+     "S39",
+     3.31,
+     25.0
+    ],
+    [
+     "S72",
+     2.44,
+     25.0
+    ],
+    [
+     "S28",
+     27.25,
+     40.0
+    ]
+   ],
+   "warm": [
+    [
+     "IA-REC-01",
+     3870.55,
+     45.2
+    ],
+    [
+     "IA-WET-FLOAT-01",
+     343.1,
+     60.0
+    ],
+    [
+     "S19",
+     0.75,
+     25.0
+    ]
+   ],
+   "rev_l_hx5": 6.353,
+   "rev_l_hx6": 1.663,
+   "hx9_full": 0.5314588618768629,
+   "hx9_trim": 0.2336742608929363
+  },
+  "q4": {
+   "bus_n": 6.358,
+   "s54": 0.04383445866146069,
+   "s63": 0.0171,
+   "s80": 0.5926403256171147,
+   "q4_in": 7.011574784278575,
+   "life": 3.0,
+   "s100": 0.29778460098392656,
+   "s101": 0.28215,
+   "s102": 3.431640183294648,
+   "rev_l_surplus": 3.3167
+  },
+  "elec": {
+   "pv": 9.822206451612903,
+   "p_ew": 11.199304441742283,
+   "p_bmed": 6.223865430874231,
+   "bmed_rating_kw": 8,
+   "s17": 18.866494602754226,
+   "s94": 27.802327375238782,
+   "loads": [
+    [
+     "MFG_SHOP",
+     12.0
+    ],
+    [
+     "HABITATION",
+     3.0
+    ],
+    [
+     "CRYO cold head (duty / 0.16 Carnot)",
+     1.172708707214506
+    ],
+    [
+     "LEACH_CSTR_1 parasitics",
+     2.0
+    ],
+    [
+     "WAFER_FAB",
+     2.0
+    ],
+    [
+     "WET_BENCH",
+     1.0
+    ],
+    [
+     "AFTERBURNER",
+     0.5
+    ],
+    [
+     "ALK_SCRUBBER",
+     0.4
+    ],
+    [
+     "H2_DRYER",
+     0.3
+    ],
+    [
+     "MEOH_SYNTH",
+     0.5
+    ],
+    [
+     "NUTRIENT_DOSE",
+     0.1
+    ],
+    [
+     "GLASS_RINSE",
+     0.2
+    ],
+    [
+     "GLASS_MILL",
+     0.8
+    ],
+    [
+     "GLASS_BURNOUT electric trim",
+     0.238
+    ],
+    [
+     "LITHO_STUB",
+     0.1
+    ],
+    [
+     "ELECTRODE_COAT",
+     0.3
+    ],
+    [
+     "BLOW_MOLD",
+     0.5
+    ],
+    [
+     "SOLAR_PV_CELL",
+     1.0
+    ],
+    [
+     "UPW polish (EDI)",
+     0.1
+    ],
+    [
+     "VCD_TRAIN",
+     0.19304503781126506
+    ],
+    [
+     "ASU compressor",
+     0.05186695598185212
+    ],
+    [
+     "hydro pump",
+     0.5450666666666667
+    ],
+    [
+     "HX-4 trim",
+     0.0
+    ],
+    [
+     "HX-5 trim",
+     0.0
+    ],
+    [
+     "HX-6 trim",
+     0.8016400075644926
+    ],
+    [
+     "GEO_HP (idle)",
+     0.0
+    ]
+   ],
+   "inv": 1.5500646593397902,
+   "grid": 42.64723420725568,
+   "supply": 10.619852430077115,
+   "demand": 53.267086637332795,
+   "grid_kwh_d": 1023.5336209741363,
+   "ew_issued_kw": 6.0,
+   "w_shaft": 0.04668026038366691,
+   "p_cryo": 1.172708707214506,
+   "cryo": {
+    "qc_o2_n2_kw": 0.03241431135185185,
+    "q_co2_kw": 0.048,
+    "cop": 0.06857142857142857,
+    "p_kw": 1.172708707214506,
+    "rev_m_kw": 4.0,
+    "o2_out_kg_d": 3.36,
+    "n2_kg_d": 1.4998,
+    "p_kw_co2_at_253K": 0.5282291496399455
+   },
+   "ess": {
+    "monthly": {
+     "1": {
+      "pv": 13.206978360215059,
+      "chg": 0.1549102003134093,
+      "dis": 0.11585679669060915,
+      "grid": 39.289415702276514,
+      "exp": 0.0,
+      "sd": 0.0003762632632067111,
+      "conv": 0.03867714035959348,
+      "need": 53.21888663733234,
+      "dsoc_kw": -4.67343071572372e-29,
+      "soc_max_kwh": 13.770828025317469,
+      "cycles_per_day": 0.026481553529282092
+     },
+     "2": {
+      "pv": 10.203999404761905,
+      "chg": 0.09415188221134312,
+      "dis": 0.0704070367884008,
+      "grid": 42.277086099529754,
+      "exp": 0.0,
+      "sd": 0.00023887852388912927,
+      "conv": 0.023505966899053182,
+      "need": 53.218886637332574,
+      "dsoc_kw": 4.059093920805818e-26,
+      "soc_max_kwh": 14.824469703261213,
+      "cycles_per_day": 0.016093036980205897
+     },
+     "3": {
+      "pv": 12.466586290322585,
+      "chg": 0.25585232485489934,
+      "dis": 0.19118765097984544,
+      "grid": 40.05541904242123,
+      "exp": 0.0,
+      "sd": 0.0008101294237596558,
+      "conv": 0.06385454445129433,
+      "need": 53.21888663733234,
+      "dsoc_kw": -3.6723005298136164e-26,
+      "soc_max_kwh": 24.392038501902224,
+      "cycles_per_day": 0.04370003450967896
+     },
+     "4": {
+      "pv": 14.519239583333338,
+      "chg": 0.21142923385320553,
+      "dis": 0.15808313984637506,
+      "grid": 37.99144716954223,
+      "exp": 0.0,
+      "sd": 0.0005644009302649804,
+      "conv": 0.05278169307656551,
+      "need": 53.21888663733242,
+      "dsoc_kw": 6.587351914191077e-29,
+      "soc_max_kwh": 14.516513027820695,
+      "cycles_per_day": 0.03613328910774287
+     },
+     "5": {
+      "pv": 11.864888037634408,
+      "chg": 0.0019324722327035187,
+      "dis": 0.001446687483776782,
+      "grid": 40.59293840598327,
+      "exp": 0.0,
+      "sd": 3.0792292457051975e-06,
+      "conv": 0.00048270551968103155,
+      "need": 53.21888663733234,
+      "dsoc_kw": 4.316908989030083e-29,
+      "soc_max_kwh": 1.2451361139481847,
+      "cycles_per_day": 0.00033067142486326446
+     },
+     "6": {
+      "pv": 12.255631388888888,
+      "chg": 0.0,
+      "dis": 0.0,
+      "grid": 40.201709269979844,
+      "exp": 0.0,
+      "sd": 0.0,
+      "conv": 0.0,
+      "need": 53.21888663733242,
+      "dsoc_kw": 0.0,
+      "soc_max_kwh": 0.0,
+      "cycles_per_day": 0.0
+     },
+     "7": {
+      "pv": 13.838857526881721,
+      "chg": 0.0,
+      "dis": 0.0,
+      "grid": 38.61848313198706,
+      "exp": 0.0,
+      "sd": 0.0,
+      "conv": 0.0,
+      "need": 53.21888663733234,
+      "dsoc_kw": 0.0,
+      "soc_max_kwh": 0.0,
+      "cycles_per_day": 0.0
+     },
+     "8": {
+      "pv": 15.215272311827956,
+      "chg": 0.0,
+      "dis": 0.0,
+      "grid": 37.24206834704076,
+      "exp": 0.0,
+      "sd": 0.0,
+      "conv": 0.0,
+      "need": 53.21888663733234,
+      "dsoc_kw": 0.0,
+      "soc_max_kwh": 0.0,
+      "cycles_per_day": 0.0
+     },
+     "9": {
+      "pv": 14.41850472222223,
+      "chg": 0.049408089148824975,
+      "dis": 0.03696285150183264,
+      "grid": 38.05128117429353,
+      "exp": 0.0,
+      "sd": 0.00010763582613021996,
+      "conv": 0.012337601820862121,
+      "need": 53.21888663733242,
+      "dsoc_kw": 1.1809809233689715e-102,
+      "soc_max_kwh": 6.175130746613153,
+      "cycles_per_day": 0.00844865177184746
+     },
+     "10": {
+      "pv": 14.022489112903225,
+      "chg": 0.08552808994113617,
+      "dis": 0.0639705356912992,
+      "grid": 38.456409100215396,
+      "exp": 0.0,
+      "sd": 0.00020268662303190744,
+      "conv": 0.02135486762680506,
+      "need": 53.21888663733234,
+      "dsoc_kw": -1.0332003121477986e-35,
+      "soc_max_kwh": 10.569039400542309,
+      "cycles_per_day": 0.014621836729439817
+     },
+     "11": {
+      "pv": 13.17922777777778,
+      "chg": 0.055833501240015355,
+      "dis": 0.04177315520400361,
+      "grid": 39.292173227126995,
+      "exp": 0.0,
+      "sd": 0.00011774565222025181,
+      "conv": 0.013942600383791498,
+      "need": 53.21888663733242,
+      "dsoc_kw": 3.4140062474984736e-33,
+      "soc_max_kwh": 8.117788176888155,
+      "cycles_per_day": 0.009548149760915111
+     },
+     "12": {
+      "pv": 9.822206451612901,
+      "chg": 0.04820884882834058,
+      "dis": 0.03607480877778536,
+      "grid": 42.64726824730647,
+      "exp": 0.0,
+      "sd": 9.448665490932343e-05,
+      "conv": 0.012039553395645917,
+      "need": 53.21888663733234,
+      "dsoc_kw": 3.4854119820998554e-32,
+      "soc_max_kwh": 5.220516673320877,
+      "cycles_per_day": 0.008245670577779512
+     }
+    },
+    "annual": {
+     "pv": 12.93272796803653,
+     "chg": 0.07965963685058668,
+     "dis": 0.059563293958806454,
+     "grid": 39.544709033724004,
+     "exp": 0.0,
+     "sd": 0.00020950156697564817,
+     "conv": 0.019886841324804595,
+     "need": 53.21888663733238
+    },
+    "led_on_kw": 7.5,
+    "eta_each_way": 0.8660254037844386
+   },
+   "pv_month": 12,
+   "ac": 51.668821977993005,
+   "pv_export": 0.0
+  },
+  "recycle_line": {
+   "dn": 15,
+   "velocity_m_s": 0.21760323212437777,
+   "flow_m3_d": 3.686236028689178,
+   "rev_l_velocity_m_s": 0.02
+  },
+  "vcd": {
+   "feed_m3_d": 0.2725341710276683,
+   "rated_m3_d": 0.35,
+   "avg_kw": 0.19304503781126506,
+   "rev_l_issued": 0.11
+  }
+ },
+ "log": [
+  "Rev N H2 1.525 kg/d total, 1.513 kg/d collected; EW DC 11.199 kW"
+ ],
+ "fixed_point": [
+  {
+   "it": 0,
+   "bleed": 1616.636,
+   "na_cru": 857.414,
+   "delta": 834.6360055741125
+  },
+  {
+   "it": 1,
+   "bleed": 1609.5933,
+   "na_cru": 851.069,
+   "delta": 7.042724158704459
+  },
+  {
+   "it": 2,
+   "bleed": 1609.6321,
+   "na_cru": 851.104,
+   "delta": 0.0388388924498031
+  },
+  {
+   "it": 3,
+   "bleed": 1609.6319,
+   "na_cru": 851.104,
+   "delta": 0.0002151104422409844
+  },
+  {
+   "it": 4,
+   "bleed": 1609.6319,
+   "na_cru": 851.104,
+   "delta": 1.1913675734831486e-06
+  },
+  {
+   "it": 5,
+   "bleed": 1609.6319,
+   "na_cru": 851.104,
+   "delta": 6.5974745666608214e-09
+  }
+ ],
+ "ew_cells": [
+  {
+   "cell": "EW_1",
+   "metal": "Au",
+   "V_cell": 1.8,
+   "ce_her_only": 1.0,
+   "ne_dep": 0.09556348098541441,
+   "r_fe3": 405.9688156234468,
+   "r_cu2": 105.7822521333218,
+   "ne_h2": 0.0,
+   "n_total": 511.84663123775397,
+   "ce_derived": 0.00018670335048278348,
+   "I_A": 571.5916923029479,
+   "p_kw": 1.0288650461453062,
+   "heat_kw": 0.2688189627802948,
+   "j_A_m2": 259.2252572802485,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.8389663131893841,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 0.009306063680955498,
+   "i_lim_A_m2": 0.059261106580961426,
+   "dep_mol": 0.0318544936618048,
+   "dep_kg": 0.006274379616565693,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_2",
+   "metal": "Ag",
+   "V_cell": 2.0,
+   "ce_her_only": 1.0,
+   "ne_dep": 0.23266448935072556,
+   "r_fe3": 145.32981702516432,
+   "r_cu2": 37.868217349247956,
+   "ne_h2": 0.0,
+   "n_total": 183.43069886376298,
+   "ce_derived": 0.0012684054021051805,
+   "I_A": 204.84156226701586,
+   "p_kw": 0.4096831245340317,
+   "heat_kw": 0.13729014181147492,
+   "j_A_m2": 92.89866769479178,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.8389663131893839,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 0.06797127517336812,
+   "i_lim_A_m2": 0.1442805866722533,
+   "dep_mol": 0.23266448935072556,
+   "dep_kg": 0.025097518466262767,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_3",
+   "metal": "Cu",
+   "V_cell": 2.2,
+   "ce_her_only": 1.0,
+   "ne_dep": 138.23264191596587,
+   "r_fe3": 52.02556182580813,
+   "r_cu2": 13.556167091267366,
+   "ne_h2": 0.0,
+   "n_total": 203.81437083304135,
+   "ce_derived": 0.6782281413767527,
+   "I_A": 227.6045089100231,
+   "p_kw": 0.5007299196020508,
+   "heat_kw": 0.18767936889230147,
+   "j_A_m2": 103.22199950567943,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.838966313189384,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 40.383682820837286,
+   "i_lim_A_m2": 85.72123201330668,
+   "dep_mol": 138.23264191596587,
+   "dep_kg": 8.784131463191967,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_4",
+   "metal": "Pb",
+   "V_cell": 2.3,
+   "ce_her_only": 0.85,
+   "ne_dep": 6.863864445406482,
+   "r_fe3": 18.62425164150808,
+   "r_cu2": 4.852873440318148,
+   "ne_h2": 1.2112701962482029,
+   "n_total": 31.552259723480915,
+   "ce_derived": 0.217539552018154,
+   "I_A": 35.235182632176574,
+   "p_kw": 0.08104092005400611,
+   "heat_kw": 0.024439826550204012,
+   "j_A_m2": 15.979674663118631,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.8389663131893837,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 1.0026145809215792,
+   "i_lim_A_m2": 4.256439784969617,
+   "dep_mol": 3.431932222703241,
+   "dep_kg": 0.7110963565441115,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_5",
+   "metal": "Sn",
+   "V_cell": 2.4,
+   "ce_her_only": 0.85,
+   "ne_dep": 11.980395190701906,
+   "r_fe3": 6.6671600850286135,
+   "r_cu2": 1.7372447882348712,
+   "ne_h2": 2.1141873865944545,
+   "n_total": 22.498987450559845,
+   "ce_derived": 0.5324859715144112,
+   "I_A": 25.125171344528546,
+   "p_kw": 0.06030041122686851,
+   "heat_kw": 0.009875079270072841,
+   "j_A_m2": 11.394635530398435,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.8389663131893839,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 1.7499936076737528,
+   "i_lim_A_m2": 7.429317862401689,
+   "dep_mol": 5.990197595350953,
+   "dep_kg": 0.7110963565441116,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_6",
+   "metal": "Ni",
+   "V_cell": 3.0,
+   "ce_her_only": 0.8,
+   "ne_dep": 24.23104481093526,
+   "r_fe3": 2.3867280390654875,
+   "r_cu2": 0.6219035982218741,
+   "ne_h2": 6.057761202733813,
+   "n_total": 33.29743765095643,
+   "ce_derived": 0.7277149991221397,
+   "I_A": 37.18406564528392,
+   "p_kw": 0.11155219693585176,
+   "heat_kw": 0.026889469638711305,
+   "j_A_m2": 16.863521834595886,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.8389663131893839,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 3.5394636697212816,
+   "i_lim_A_m2": 15.026226695614545,
+   "dep_mol": 12.11552240546763,
+   "dep_kg": 0.7110963565441116,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_7",
+   "metal": "Fe",
+   "V_cell": 3.1,
+   "ce_her_only": 0.415,
+   "ne_dep": 1061.1161198318434,
+   "r_fe3": 1.330816765992985,
+   "r_cu2": 0.22263073580683243,
+   "ne_h2": 1495.7901930159721,
+   "n_total": 2558.4597603496154,
+   "ce_derived": 0.4147480199910751,
+   "I_A": 2857.094791404313,
+   "p_kw": 8.856993853353371,
+   "heat_kw": 3.3594712761262313,
+   "j_A_m2": 1295.7345992763328,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.838966313189384,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 154.9987623235079,
+   "i_lim_A_m2": 658.022445642481,
+   "dep_mol": 530.5580599159217,
+   "dep_kg": 29.62901485600465,
+   "area_at_j_fe_m2": 9.523649304681044,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_8",
+   "metal": "Cd",
+   "V_cell": 2.8,
+   "ce_her_only": 0.85,
+   "ne_dep": 12.651834472806895,
+   "r_fe3": 0.0,
+   "r_cu2": 0.07969795426108585,
+   "ne_h2": 2.2326766716718054,
+   "n_total": 14.964209098739786,
+   "ce_derived": 0.8454729808521836,
+   "I_A": 16.710899477915603,
+   "p_kw": 0.04679051853816369,
+   "heat_kw": 0.006593849437773379,
+   "j_A_m2": 7.578639219009346,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.838966313189384,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 1.8480717121870933,
+   "i_lim_A_m2": 7.845692762616354,
+   "dep_mol": 6.3259172364034475,
+   "dep_kg": 0.7110963565441115,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  },
+  {
+   "cell": "EW_9",
+   "metal": "Zn",
+   "V_cell": 3.4,
+   "ce_her_only": 0.8,
+   "ne_dep": 21.752718156748596,
+   "r_fe3": 0.0,
+   "r_cu2": 0.02853048969354032,
+   "ne_h2": 5.438179539187147,
+   "n_total": 27.219428185629283,
+   "ce_derived": 0.7991614668905175,
+   "I_A": 30.396603339009737,
+   "p_kw": 0.10334845135263311,
+   "heat_kw": 0.03131100150387213,
+   "j_A_m2": 13.785307636739113,
+   "area_m2": 2.2049999999999996,
+   "x_shuttle": 0.6420172894265754,
+   "x_needed": 0.838966313189384,
+   "area_required_m2": {
+    "1.1e-05": 7.84,
+    "2.2e-05": 3.92,
+    "3.3e-05": 2.61
+   },
+   "c_in_mol_m3": 3.177450920265389,
+   "i_lim_A_m2": 13.489359489839465,
+   "dep_mol": 10.876359078374298,
+   "dep_kg": 0.7110963565441116,
+   "area_at_j_fe_m2": null,
+   "recovery_at_envelope": 0.826785155313426
+  }
+ ],
+ "ew_summary": {
+  "cl_feed_M": 2.0025501095040528,
+  "au_feed_M": 9.306063680955498e-06,
+  "fe_third_e": 570.7762557077625,
+  "returned_fe2": 61.61869457214974,
+  "returned_cu1": 16.044630356766667,
+  "source_table": "ELECTRICAL.md",
+  "km_m_s": 2.2e-05,
+  "area_m2_per_cell": 2.2049999999999996,
+  "x_shuttle": 0.6420172894265754,
+  "ce_fe": 0.415,
+  "tot": {
+   "ne_dep": 1277.1568467947448,
+   "r_fe": 632.3331510060144,
+   "r_cu": 164.74951758037346,
+   "ne_h2": 1512.8442680124074,
+   "n_tot": 3587.08378339354,
+   "p_kw": 11.199304441742283,
+   "q_heat_kw": 4.052368976010936
+  },
+  "dem_fresh": 2093.457322625204,
+  "al_mol": 236.28613787991105,
+  "al_e": 708.8584136397332,
+  "returned_reduced": 77.6633249289164,
+  "demand": 2879.979061193854,
+  "u_eq": 96.81933289909038,
+  "vol": {
+   "Q_m3_d": 4.08,
+   "raff_m3_d": 3.8776807914910583,
+   "bleed_m3_d": 1.5329827679893173,
+   "b": 0.39533495674868324
+  },
+  "raff_mM": {
+   "Fe3": 0.0,
+   "Fe2": 26.235256280533108,
+   "Cu2": 0.004098309340003565,
+   "Cu1": 6.8312870348676284,
+   "Au": 0.0015751542913823647,
+   "Ag": 0.011504890730456461,
+   "Pb": 0.16970361625324787,
+   "Sn": 0.29620578963585986,
+   "Ni": 0.5990934061587059,
+   "Cd": 0.3128065944993587,
+   "Zn": 0.5378187410167159
+  },
+  "feed_mM": {
+   "Fe3": 154.9836154426506,
+   "Fe2": 0.015146880857317928,
+   "Cu2": 40.38368282083729,
+   "Cu1": 0.0,
+   "Au": 0.009306063680955498,
+   "Ag": 0.06797127517336812,
+   "Pb": 1.0026145809215792,
+   "Sn": 1.7499936076737528,
+   "Ni": 3.5394636697212816,
+   "Cd": 1.8480717121870933,
+   "Zn": 3.177450920265389
+  },
+  "na_mM": 555.1945481955058,
+  "al_mM": 154.13489493415992,
+  "cl_raff_M": 1.180756715861332,
+  "leach": {
+   "orp_V_SHE": 1.05,
+   "range_V_SHE": [
+    1.0,
+    1.1
+   ],
+   "orp_V_AgAgCl_sat_25C": 0.853,
+   "T_C": 77.5,
+   "nernst_slope_V_dec": 0.0696,
+   "cl_M": 2.0025501098379657,
+   "au_M": 9.306063682344744e-06,
+   "fe3_fe2_ratio": 10232.048228449174,
+   "fe2_fraction": 9.772259229853652e-05,
+   "cu2_cu1_ratio": 21381546.895399734,
+   "au_dissolution_E_V": 0.785,
+   "au_dissolution_E_V_cascade_E0": 0.855,
+   "cl2_cl_E_V": 1.339,
+   "margin_to_cl2_V": 0.289,
+   "rev_m_glossary": "ORP > 1.5 V, no reference stated"
+  },
+  "ce_ew_overall": 0.35604321613767764
+ },
+ "hx8": {
+  "metals": [
+   {
+    "cell": "EW_1",
+    "metal": "Au",
+    "P_kw": 1.029,
+    "heat_kw": 0.269
+   },
+   {
+    "cell": "EW_2",
+    "metal": "Ag",
+    "P_kw": 0.41,
+    "heat_kw": 0.137
+   },
+   {
+    "cell": "EW_3",
+    "metal": "Cu",
+    "P_kw": 0.501,
+    "heat_kw": 0.188
+   },
+   {
+    "cell": "EW_4",
+    "metal": "Pb",
+    "P_kw": 0.081,
+    "heat_kw": 0.024
+   },
+   {
+    "cell": "EW_5",
+    "metal": "Sn",
+    "P_kw": 0.06,
+    "heat_kw": 0.01
+   },
+   {
+    "cell": "EW_6",
+    "metal": "Ni",
+    "P_kw": 0.112,
+    "heat_kw": 0.027
+   },
+   {
+    "cell": "EW_7",
+    "metal": "Fe",
+    "P_kw": 8.857,
+    "heat_kw": 3.359
+   },
+   {
+    "cell": "EW_8",
+    "metal": "Cd",
+    "P_kw": 0.047,
+    "heat_kw": 0.007
+   },
+   {
+    "cell": "EW_9",
+    "metal": "Zn",
+    "P_kw": 0.103,
+    "heat_kw": 0.031
+   }
+  ],
+  "V_side": 1.733,
+  "q_ohmic_kw": 4.052,
+  "wall_area_m2": 14.2,
+  "wall_U": 1.25,
+  "q_wall_kw": 0.533,
+  "surf_area_m2": 2.268,
+  "evap_bare_kg_h": 7.3,
+  "q_evap_bare_kw": 4.808,
+  "q_evap_kw": 0.962,
+  "conc_mcp_kw_K": 0.1835,
+  "q_feed_kw": 4.128,
+  "duty_kw": 6.686,
+  "water_in_C": 45.0,
+  "water_out_C": 49.0,
+  "liquor_in_C": 55.0,
+  "liquor_out_C": 51.0,
+  "approach_hot_K": 6.0,
+  "approach_cold_K": 6.0,
+  "lmtd_K": 6.0,
+  "area_m2": 0.75,
+  "water_kg_h": 1439.6,
+  "liquor_kg_h": 1626.4,
+  "sens_kw_per_K_feed": 0.1835,
+  "rev_m_q_ohmic_kw": 1.938,
+  "rev_m_duty_kw": 4.572,
+  "basis": "AQS-DUTY-012 per-cell partition: heat = I V - sum(partial current x V_tn)"
+ },
+ "rates": {
+  "IA-EW-01": {
+   "value": 4261.95,
+   "unit": "kg/d",
+   "basis": "EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 18.146 - H2 0.0000 - harvest entrainment 0.001 - evaporation 3.89"
+  },
+  "IA-EW-02": {
+   "value": 4251.53,
+   "unit": "kg/d",
+   "basis": "EW_2 in 4262.0 - Ag deposit 0.025 - anode Cl2 6.503 - H2 0.0000 - harvest entrainment 0.003 - evaporation 3.89"
+  },
+  "IA-EW-03": {
+   "value": 4230.75,
+   "unit": "kg/d",
+   "basis": "EW_3 in 4251.5 - Cu deposit 8.784 - anode Cl2 7.226 - H2 0.0000 - harvest entrainment 0.878 - evaporation 3.89 - H2 saturation water 0.000"
+  },
+  "IA-HDR-H2-03": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "EW_3 Cu: HER 0.0 mol e-/d (HER-only CE 1.0 per ELECTRICAL.md); H2 0.0000 kg/d + saturation water 0.0000 at 55.0 C"
+  },
+  "IA-EW-10": {
+   "value": 4224.95,
+   "unit": "kg/d",
+   "basis": "EW_4 in 4230.7 - Pb deposit 0.711 - anode Cl2 1.119 - H2 0.0012 - harvest entrainment 0.071 - evaporation 3.89"
+  },
+  "IA-EW-05": {
+   "value": 4219.48,
+   "unit": "kg/d",
+   "basis": "EW_5 in 4225.0 - Sn deposit 0.711 - anode Cl2 0.798 - H2 0.0021 - harvest entrainment 0.071 - evaporation 3.89"
+  },
+  "IA-EW-06": {
+   "value": 4213.61,
+   "unit": "kg/d",
+   "basis": "EW_6 in 4219.5 - Ni deposit 0.711 - anode Cl2 1.180 - H2 0.0061 - harvest entrainment 0.071 - evaporation 3.89"
+  },
+  "IA-EW-07": {
+   "value": 4082.43,
+   "unit": "kg/d",
+   "basis": "EW_7 in 4213.6 - Fe deposit 29.629 - anode Cl2 90.705 - H2 1.5078 - harvest entrainment 2.963 - evaporation 3.89 - H2 saturation water 2.488"
+  },
+  "IA-HDR-H2-01": {
+   "value": 3.9961,
+   "unit": "kg/d",
+   "basis": "EW_7 Fe: HER 1495.8 mol e-/d (HER-only CE 0.415 per ELECTRICAL.md); H2 1.5078 kg/d + saturation water 2.4883 at 55.0 C"
+  },
+  "IA-EW-08": {
+   "value": 4077.22,
+   "unit": "kg/d",
+   "basis": "EW_8 in 4082.4 - Cd deposit 0.711 - anode Cl2 0.531 - H2 0.0023 - harvest entrainment 0.071 - evaporation 3.89"
+  },
+  "IA-EW-09": {
+   "value": 4071.56,
+   "unit": "kg/d",
+   "basis": "EW_9 in 4077.2 - Zn deposit 0.711 - anode Cl2 0.965 - H2 0.0055 - harvest entrainment 0.071 - evaporation 3.89 - H2 saturation water 0.009"
+  },
+  "IA-HDR-H2-04": {
+   "value": 0.0145,
+   "unit": "kg/d",
+   "basis": "EW_9 Zn: HER 5.4 mol e-/d (HER-only CE 0.8 per ELECTRICAL.md); H2 0.0055 kg/d + saturation water 0.0090 at 55.0 C"
+  },
+  "IA-HDR-H2-02": {
+   "value": 4.0106,
+   "unit": "kg/d",
+   "basis": "sum of IA-HDR-H2-01/03/04"
+  },
+  "S64": {
+   "value": 1.5132,
+   "unit": "kg/d",
+   "basis": "dried H2 = collected H2 1.5132 kg/d (Fe, Cu, Zn cells)"
+  },
+  "S74": {
+   "value": 1.5132,
+   "unit": "kg/d",
+   "basis": "all dried H2 to MeOH synthesis on the design day (standby FC/GEN inventory held full)"
+  },
+  "S49": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "standby: 0 on the design day; FC H2 5.54 kg/d while running"
+  },
+  "S45": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "standby: 0 on the design day; GEN H2 3.6 kg/d while running"
+  },
+  "S50": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "standby: 0 on the design day; FC O2 (stoichiometric) 43.968 kg/d while running"
+  },
+  "S52": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "standby: 0 on the design day; PEM product water 49.508 kg/d while running"
+  },
+  "S46": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "standby: 0 on the design day; GEN exhaust 250.56 kg/d while running"
+  },
+  "S51": {
+   "value": 0.0,
+   "unit": "kW",
+   "basis": "standby: 0 on the design day; 4.0 kW while running"
+  },
+  "S47": {
+   "value": 0.0,
+   "unit": "kW",
+   "basis": "standby: 0 on the design day; 2.5 kW while running"
+  },
+  "S53": {
+   "value": 0.0,
+   "unit": "kW",
+   "basis": "standby: 0 on the design day; 1.582 kW while running"
+  },
+  "S75": {
+   "value": 8.0171,
+   "unit": "kg/d",
+   "basis": "CO2 + 3 H2 -> CH3OH + H2O on S74 1.5132 kg/d H2"
+  },
+  "S73": {
+   "value": 11.0115,
+   "unit": "kg/d",
+   "basis": "stoichiometric CO2 for S75 8.017 kg/d"
+  },
+  "S76": {
+   "value": 8.0317,
+   "unit": "kg/d",
+   "basis": "S75 8.017 + S77 0.0146"
+  },
+  "S81": {
+   "value": 9.0313,
+   "unit": "kg/d",
+   "basis": "CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 8.032"
+  },
+  "S82": {
+   "value": 11.0316,
+   "unit": "kg/d",
+   "basis": "S76 8.032 x 44.01/32.04"
+  },
+  "S79": {
+   "value": 0.4698,
+   "unit": "kW",
+   "basis": "DMFC eta 0.2536 x S76 LHV 1.853 kW"
+  },
+  "S80": {
+   "value": 0.5926,
+   "unit": "kW",
+   "basis": "DMFC heat 1.383 kW x 0.4286 above Q4 return"
+  },
+  "S67": {
+   "value": 242.48,
+   "unit": "kg/d",
+   "basis": "DUTY-008 flue 241.68 + S11 trim 0.8 (burned within the excess air)"
+  },
+  "S67B": {
+   "value": 13.2209,
+   "unit": "kg/d",
+   "basis": "VSA recovery 0.85 x CO2 15.554 (NCG 15.0 + S11 0.554)"
+  },
+  "S85": {
+   "value": 12.0799,
+   "unit": "kg/d",
+   "basis": "CRYO_CO2 remainder: S67B 13.221 + S82 11.032 - S04 1.109 - S73 11.012 - S70 0.0521"
+  },
+  "S89": {
+   "value": 16.1009,
+   "unit": "kg/d",
+   "basis": "S85 12.080 + S90 4.021"
+  },
+  "S12": {
+   "value": 114.9,
+   "unit": "kg/d",
+   "basis": "HAB balance: S21 120.0 + S26 10.0 + S14 2.4 + S02 3.36 - S78 0.36 - S90 4.021 - black 16.48 (grey + AHU condensate)"
+  },
+  "S29": {
+   "value": 109.15,
+   "unit": "kg/d",
+   "basis": "grey treat recovery 95% of S12"
+  },
+  "S30": {
+   "value": 22.1749,
+   "unit": "kg/d",
+   "basis": "black 16.48 + grey sludge 5.745 - digester gas 0.05"
+  },
+  "S07": {
+   "value": 22.1949,
+   "unit": "kg/d",
+   "basis": "S30 22.175 + micronutrient salts 0.02"
+  },
+  "S16": {
+   "value": 12.6,
+   "unit": "kg/d",
+   "basis": "harvest rinse return: entrained electrolyte 4.200 (0.1 kg/kg on 42.0 kg/d) + 2 rinse volumes 8.400"
+  },
+  "DOCK_EXPORT_TBD": {
+   "value": 40.7542,
+   "unit": "kg/d",
+   "basis": "MFG_SHOP finished goods (Fe plate, wire, sheet, powder): S08 + formed products - charges"
+  },
+  "S96": {
+   "value": 34.2915,
+   "unit": "kg/d",
+   "basis": "sink residue 27.94 kg/d dry (unleached metal, fillers, unassigned assay) + drained moisture"
+  },
+  "S95": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "0: anode Cl2 3587.1 mol e-/d exceeds the leach oxidant demand 2880.0 (fresh metal 2093.5 + Al 708.9 + returning Fe(II)/Cu(I) 77.7); sparge share 1440.0 mol/d Cl2, surplus 353.6 mol/d to ALK_SCRUBBER"
+  },
+  "S83": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "= S95 (HDR_O2 pass-through to the leach sparge)"
+  },
+  "S84": {
+   "value": 0.0,
+   "unit": "kg/d",
+   "basis": "HDR_N2 has no consumer edge (S88 retired; RS-HAB-N2 open)"
+  },
+  "IA-BMED-07": {
+   "value": 455.0,
+   "unit": "kg/d",
+   "basis": "2 x Cl2 absorbed 421.30 mol/d (unabsorbed sparge 72.00 + surplus bypass 353.55, less slip) = 842.6 mol/d NaOH as 2 M"
+  },
+  "IA-BMED-08": {
+   "value": 484.87,
+   "unit": "kg/d",
+   "basis": "IA-BMED-07 455.000 + absorbed Cl2 29.8724"
+  },
+  "S66": {
+   "value": 3.77,
+   "unit": "kg/d",
+   "basis": "Cl2 slip 1% of ALK inlet 30.174 kg/d -> NaCl + NaOCl 0.5655 kg/d at 15% salts"
+  },
+  "IA-BMED-09": {
+   "value": 482.99,
+   "unit": "kg/d",
+   "basis": "IA-BMED-08 484.872 + S66 3.7700 - O2 5.656 from decomposing the surplus hypochlorite (2 NaOCl -> 2 NaCl + O2); chlorate 24.0 mol/d from the sparge share (3 NaOCl -> NaClO3 + 2 NaCl)"
+  },
+  "S91": {
+   "value": 320.76,
+   "unit": "kg/d",
+   "basis": "DUTY-008 digest NaOH 593 mol/d as 2 M (297 L/d x 1.080)"
+  },
+  "S92": {
+   "value": 325.96,
+   "unit": "kg/d",
+   "basis": "S91 320.76 + dissolved cullet 25.50 (SiO2 + Na2O) - lid purge water 20.3"
+  },
+  "S08G": {
+   "value": 4.5,
+   "unit": "kg/d",
+   "basis": "insoluble cullet fraction 0.15 x 30.0 (CaO/MgO/Al2O3 residue, dried)"
+  },
+  "S97": {
+   "value": 91.0768,
+   "unit": "kg/d",
+   "basis": "cake dry 45.54 kg/d (SiO2 14.04, NaAlSiO4 17.88, Al(OH)3 8.61, M(OH)n 5.01) at 50% solids"
+  },
+  "S69": {
+   "value": 854.85,
+   "unit": "kg/d",
+   "basis": "purge 30.0 m3/h: dry air 844.0 + ambient water 8.44 + electrolyte evaporation 2.374 (aw 0.78, 50% approach) + Br2 0.0470"
+  },
+  "S69B": {
+   "value": 0.0473,
+   "unit": "kg/d",
+   "basis": "Br2 0.0470 + NaOH make-up 0.0003; purge humidity not condensed (scrub at ambient, outlet below saturation)"
+  },
+  "S13": {
+   "value": 29.9068,
+   "unit": "kg/d",
+   "basis": "ET 92.4 - farm exhaust vapor 62.5 (OA 961.2 m3/h light, 251.3 dark)"
+  },
+  "S01": {
+   "value": 77.2764,
+   "unit": "kg/d",
+   "basis": "farm make-up 74.90 (GROW_BED balance) + ZnBr2 electrolyte make-up 2.374"
+  },
+  "S25": {
+   "value": 150.28,
+   "unit": "kg/d",
+   "basis": "UPW polish demand (S01 77.28 + S27 60.0 + S26 10.0) / (1 - reject 0.02)"
+  },
+  "S28": {
+   "value": 27.2534,
+   "unit": "kg/d",
+   "basis": "VCD brine 10% of feed 272.5 (S13 + S29 + S98)"
+  },
+  "IA-REC-01": {
+   "value": 3870.55,
+   "unit": "kg/d",
+   "basis": "leach balance: recycle = IA-POL-02 2461.9 + BMED HCl 925.6 + CRU liquor 482.99"
+  },
+  "IA-POL-02": {
+   "value": 2461.93,
+   "unit": "kg/d",
+   "basis": "raffinate 4071.6 less bleed 1609.6"
+  },
+  "IA-BMED-05": {
+   "value": 1609.63,
+   "unit": "kg/d",
+   "basis": "POLISH_BANK level: raffinate 4071.6 - IA-POL-02 2461.9; free HCl 0.1 M, Al 236 mol/d, undeposited metal 97 eq/d"
+  },
+  "IA-BMED-06": {
+   "value": 925.63,
+   "unit": "kg/d",
+   "basis": "HCl 1792.1 mol/d = Cl in bleed 1810.1 - fab HCl returning on S10 18.0, as 2 M"
+  },
+  "IA-BMED-10": {
+   "value": 202.63,
+   "unit": "kg/d",
+   "basis": "BMED pairs 1811.3 - digest 593 - ALK 842.6 - fab 0.50 = 375.2 mol/d NaOH as 2 M (alkalinity need 366.0)"
+  },
+  "IA-BMED-03": {
+   "value": 935.55,
+   "unit": "kg/d",
+   "basis": "acid compartment: 1811.3 mol/d HCl as 2 M (IA-BMED-06 + S09 + IA-BMED-01)"
+  },
+  "IA-BMED-04": {
+   "value": 978.12,
+   "unit": "kg/d",
+   "basis": "base compartment: 1811.3 mol/d NaOH as 2 M (S91 + IA-BMED-07 + IA-BMED-10 + IA-BMED-02)"
+  },
+  "S98": {
+   "value": 133.47,
+   "unit": "kg/d",
+   "basis": "salt loop level: bleed 1609.6 + S92 326.0 + IA-BMED-10 202.6 - transfers 1913.7 - cake 91.08"
+  },
+  "S99": {
+   "value": 94.9987,
+   "unit": "kg/d",
+   "basis": "VCD feed 272.5 - S25 150.3 - S28 27.25"
+  },
+  "S54": {
+   "value": 0.0438,
+   "unit": "kW",
+   "basis": "ASU air 16.1 kg/d for O2 3.36 kg/d (S02 + S83): shaft 0.0467 kW x 0.839 + sieve TSA 0.0047"
+  },
+  "S55": {
+   "value": 1.2531,
+   "unit": "kW",
+   "basis": "cold-head reject = electric 1.1727 + lift 0.0804 kW (O2/N2 0.0324 + CO2 condensing 0.048); electric = lift / (0.16 x Carnot COP 90/210 K)"
+  },
+  "S100": {
+   "value": 0.2978,
+   "unit": "kW",
+   "basis": "HX-9: make-up S68, S10, S16, S39, S72, S28 to 55.0 C"
+  },
+  "S101": {
+   "value": 0.2822,
+   "unit": "kW",
+   "basis": "HX-10: S91 320.8 kg/d x 3.8 x (55.0 - 35.0) C"
+  },
+  "S102": {
+   "value": 3.4316,
+   "unit": "kW",
+   "basis": "Q4 bus in 7.012 - life 3.0 - HX-9 0.298 - HX-10 0.282"
+  },
+  "S93": {
+   "value": 9.8222,
+   "unit": "kW",
+   "basis": "worst-month (month 12) mean of the hourly TMY run: 235.7 kWh/d DC from 70 kWp; annual mean 12.933 kW (1618 kWh/kWp.yr)"
+  },
+  "S17": {
+   "value": 18.8665,
+   "unit": "kW",
+   "basis": "(EW 11.199 + BMED 6.224 + PK 0.5) / 0.95"
+  },
+  "S20": {
+   "value": 5.0,
+   "unit": "kW",
+   "basis": "GROW_BED LED canopy share (graph continuous_kw 5.0)"
+  },
+  "S94": {
+   "value": 27.8023,
+   "unit": "kW",
+   "basis": "sum of itemized daily-average AC loads (LOAD_AGG balance terms)"
+  },
+  "IA-ESS-ZNBR2-CHG": {
+   "value": 0.0482,
+   "unit": "kW",
+   "basis": "hourly SOC simulation, month 12 mean: charge only from PV above the bus load; 0.008 equivalent cycles/d"
+  },
+  "IA-ESS-ZNBR2-DIS": {
+   "value": 0.0361,
+   "unit": "kW",
+   "basis": "hourly SOC simulation, month 12 mean discharge to the bus"
+  },
+  "HL-Q3-A-HX5": {
+   "value": 6.279,
+   "unit": "kW",
+   "basis": "rated 6.279 kW = HX-5 rating-case duty x 1.25; normal 0.000 kW (AQS-DUTY-011 ladder run)"
+  },
+  "HL-Q3-A-HX6": {
+   "value": 2.079,
+   "unit": "kW",
+   "basis": "rated 2.079 kW = HX-6 rating-case duty x 1.25; normal 0.290 kW (AQS-DUTY-011 ladder run)"
+  },
+  "HL-Q3-A-HX4": {
+   "value": 0.302,
+   "unit": "kW",
+   "basis": "rated 0.302 kW = HX-4 rating-case duty x 1.25; normal 0.121 kW (AQS-DUTY-011 ladder run)"
+  },
+  "HL-Q3-B-HX5": {
+   "value": 6.279,
+   "unit": "kW",
+   "basis": "rated 6.279 kW = HX-5 rating-case duty x 1.25; normal 0.000 kW (AQS-DUTY-011 ladder run)"
+  },
+  "HL-Q3-B-HX6": {
+   "value": 2.079,
+   "unit": "kW",
+   "basis": "rated 2.079 kW = HX-6 rating-case duty x 1.25; normal 0.290 kW (AQS-DUTY-011 ladder run)"
+  },
+  "HL-Q3-B-HX4": {
+   "value": 0.302,
+   "unit": "kW",
+   "basis": "rated 0.302 kW = HX-4 rating-case duty x 1.25; normal 0.121 kW (AQS-DUTY-011 ladder run)"
+  }
+ },
+ "changed_vs_rev_m": [
+  [
+   "HL-HX8-Q4-A",
+   5.715,
+   8.357
+  ],
+  [
+   "HL-HX8-Q4-B",
+   5.715,
+   8.357
+  ],
+  [
+   "HL-Q1-A-DOWN",
+   "params",
+   [
+    "ncg_management"
+   ]
+  ],
+  [
+   "HL-Q1-B-DOWN",
+   "params",
+   [
+    "ncg_management"
+   ]
+  ],
+  [
+   "HL-Q2-A-DOWN",
+   "params",
+   [
+    "ncg_management"
+   ]
+  ],
+  [
+   "HL-Q2-B-DOWN",
+   "params",
+   [
+    "ncg_management"
+   ]
+  ],
+  [
+   "HL-Q3-A-DOWN",
+   "params",
+   [
+    "ncg_management"
+   ]
+  ],
+  [
+   "HL-Q3-B-DOWN",
+   "params",
+   [
+    "ncg_management"
+   ]
+  ],
+  [
+   "HL-Q3-A-HX5",
+   5.753,
+   6.279
+  ],
+  [
+   "HL-Q3-B-HX5",
+   5.753,
+   6.279
+  ],
+  [
+   "HL-Q4-A-BUS",
+   5.51,
+   8.152
+  ],
+  [
+   "HL-Q4-B-BUS",
+   5.51,
+   8.152
+  ],
+  [
+   "IA-BMED-03",
+   505.77,
+   935.55
+  ],
+  [
+   "IA-BMED-04",
+   528.78,
+   978.12
+  ],
+  [
+   "IA-ESS-ZNBR2-CHG",
+   6.6667,
+   0.0482
+  ],
+  [
+   "IA-ESS-ZNBR2-DIS",
+   5.0,
+   0.0361
+  ],
+  [
+   "IA-EW-01",
+   4280.1,
+   4261.95
+  ],
+  [
+   "IA-EW-02",
+   4276.17,
+   4251.53
+  ],
+  [
+   "IA-EW-03",
+   4250.95,
+   4230.75
+  ],
+  [
+   "IA-EW-05",
+   4240.81,
+   4219.48
+  ],
+  [
+   "IA-EW-06",
+   4235.05,
+   4213.61
+  ],
+  [
+   "IA-EW-07",
+   4150.83,
+   4082.43
+  ],
+  [
+   "IA-EW-08",
+   4145.63,
+   4077.22
+  ],
+  [
+   "IA-EW-09",
+   4139.97,
+   4071.56
+  ],
+  [
+   "IA-EW-10",
+   4245.99,
+   4224.95
+  ],
+  [
+   "IA-HDR-H2-01",
+   0.7087,
+   3.9961
+  ],
+  [
+   "IA-HDR-H2-02",
+   0.8536,
+   4.0106
+  ],
+  [
+   "IA-HDR-H2-03",
+   0.1303,
+   0.0
+  ],
+  [
+   "IA-HX8",
+   4.572,
+   6.686
+  ],
+  [
+   "IA-POL-02",
+   3357.8,
+   2461.93
+  ],
+  [
+   "IA-REC-01",
+   3903.78,
+   3870.55
+  ],
+  [
+   "S17",
+   13.4755,
+   18.8665
+  ],
+  [
+   "S28",
+   28.3179,
+   27.2534
+  ],
+  [
+   "S54",
+   0.1001,
+   0.0438
+  ],
+  [
+   "S55",
+   4.0606,
+   1.2531
+  ],
+  [
+   "S64",
+   0.3221,
+   1.5132
+  ],
+  [
+   "S66",
+   0.3868,
+   3.77
+  ],
+  [
+   "S73",
+   2.3436,
+   11.0115
+  ],
+  [
+   "S74",
+   0.3221,
+   1.5132
+  ],
+  [
+   "S75",
+   1.7063,
+   8.0171
+  ],
+  [
+   "S76",
+   1.7209,
+   8.0317
+  ],
+  [
+   "S79",
+   0.1007,
+   0.4698
+  ],
+  [
+   "S80",
+   0.127,
+   0.5926
+  ],
+  [
+   "S81",
+   1.935,
+   9.0313
+  ],
+  [
+   "S82",
+   2.3636,
+   11.0316
+  ],
+  [
+   "S83",
+   4.3108,
+   0.0
+  ],
+  [
+   "IA-BMED-05",
+   782.18,
+   1609.63
+  ],
+  [
+   "IA-BMED-06",
+   495.84,
+   925.63
+  ],
+  [
+   "IA-BMED-07",
+   46.6852,
+   455.0
+  ],
+  [
+   "IA-BMED-08",
+   49.7503,
+   484.87
+  ],
+  [
+   "IA-BMED-09",
+   50.1371,
+   482.99
+  ],
+  [
+   "IA-BMED-10",
+   161.6,
+   202.63
+  ],
+  [
+   "S93",
+   12.3858,
+   9.8222
+  ],
+  [
+   "S94",
+   31.1339,
+   27.8023
+  ],
+  [
+   "S95",
+   4.3108,
+   0.0
+  ],
+  [
+   "S98",
+   144.12,
+   133.47
+  ],
+  [
+   "S99",
+   104.58,
+   94.9987
+  ],
+  [
+   "S100",
+   0.5322,
+   0.2978
+  ],
+  [
+   "S102",
+   0.6738,
+   3.4316
+  ]
+ ],
+ "on_site_flips": []
+}

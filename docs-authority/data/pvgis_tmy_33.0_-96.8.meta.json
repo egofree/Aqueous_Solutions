@@ -1,0 +1,70 @@
+{
+ "source": "PVGIS 5.2 TMY API https://re.jrc.ec.europa.eu/api/v5_2/tmy?lat=33.0&lon=-96.8&outputformat=json",
+ "retrieved": "2026-10-08",
+ "inputs": {
+  "location": {
+   "latitude": 33.0,
+   "longitude": -96.8,
+   "elevation": 204.0,
+   "irradiance_time_offset": 0.0
+  },
+  "meteo_data": {
+   "radiation_db": "PVGIS-NSRDB",
+   "meteo_db": "ERA5",
+   "year_min": 2005,
+   "year_max": 2015,
+   "use_horizon": true,
+   "horizon_db": "DEM-calculated"
+  }
+ },
+ "months_selected": [
+  {
+   "month": 1,
+   "year": 2009
+  },
+  {
+   "month": 2,
+   "year": 2005
+  },
+  {
+   "month": 3,
+   "year": 2007
+  },
+  {
+   "month": 4,
+   "year": 2005
+  },
+  {
+   "month": 5,
+   "year": 2007
+  },
+  {
+   "month": 6,
+   "year": 2007
+  },
+  {
+   "month": 7,
+   "year": 2013
+  },
+  {
+   "month": 8,
+   "year": 2013
+  },
+  {
+   "month": 9,
+   "year": 2006
+  },
+  {
+   "month": 10,
+   "year": 2007
+  },
+  {
+   "month": 11,
+   "year": 2005
+  },
+  {
+   "month": 12,
+   "year": 2007
+  }
+ ]
+}

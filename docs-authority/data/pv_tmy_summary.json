@@ -1,0 +1,109 @@
+{
+ "doc": "AQS-DUTY-012 WP-PV-ESS",
+ "site": {
+  "lat": 33.0,
+  "lon": -96.8,
+  "alt_m": 204.0
+ },
+ "array": {
+  "kwp": 70.0,
+  "tilt": 33.0,
+  "azimuth": 180.0,
+  "albedo": 0.2
+ },
+ "model": "pvlib 0.16.1: Perez, SAPM open_rack_glass_polymer, PVWatts DC gamma -0.0037, losses 14.08 %",
+ "annual_kwh": 113291.0,
+ "annual_kwh_per_kwp": 1618.4,
+ "annual_mean_kw": 12.933,
+ "monthly": {
+  "1": {
+   "days": 31,
+   "mean_daily_kwh": 316.97,
+   "mean_kw": 13.207,
+   "min_daily_kwh": 23.97
+  },
+  "2": {
+   "days": 28,
+   "mean_daily_kwh": 244.9,
+   "mean_kw": 10.204,
+   "min_daily_kwh": 39.61
+  },
+  "3": {
+   "days": 31,
+   "mean_daily_kwh": 299.2,
+   "mean_kw": 12.467,
+   "min_daily_kwh": 100.37
+  },
+  "4": {
+   "days": 30,
+   "mean_daily_kwh": 348.46,
+   "mean_kw": 14.519,
+   "min_daily_kwh": 141.75
+  },
+  "5": {
+   "days": 31,
+   "mean_daily_kwh": 284.76,
+   "mean_kw": 11.865,
+   "min_daily_kwh": 101.47
+  },
+  "6": {
+   "days": 30,
+   "mean_daily_kwh": 294.14,
+   "mean_kw": 12.256,
+   "min_daily_kwh": 149.67
+  },
+  "7": {
+   "days": 31,
+   "mean_daily_kwh": 332.13,
+   "mean_kw": 13.839,
+   "min_daily_kwh": 96.86
+  },
+  "8": {
+   "days": 31,
+   "mean_daily_kwh": 365.17,
+   "mean_kw": 15.215,
+   "min_daily_kwh": 175.72
+  },
+  "9": {
+   "days": 30,
+   "mean_daily_kwh": 346.04,
+   "mean_kw": 14.419,
+   "min_daily_kwh": 92.17
+  },
+  "10": {
+   "days": 31,
+   "mean_daily_kwh": 336.54,
+   "mean_kw": 14.022,
+   "min_daily_kwh": 29.82
+  },
+  "11": {
+   "days": 30,
+   "mean_daily_kwh": 316.3,
+   "mean_kw": 13.179,
+   "min_daily_kwh": 96.65
+  },
+  "12": {
+   "days": 31,
+   "mean_daily_kwh": 235.73,
+   "mean_kw": 9.822,
+   "min_daily_kwh": 17.13
+  }
+ },
+ "worst_month": 12,
+ "worst_month_mean_kw": 9.822,
+ "poa_kwh_m2_month": {
+  "1": 166.3,
+  "2": 116.7,
+  "3": 160.6,
+  "4": 182.1,
+  "5": 155.7,
+  "6": 156.9,
+  "7": 187.1,
+  "8": 209.3,
+  "9": 187.5,
+  "10": 185.4,
+  "11": 164.3,
+  "12": 123.1
+ },
+ "peak_dc_kw": 65.09
+}
