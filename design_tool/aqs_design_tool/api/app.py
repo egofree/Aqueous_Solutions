@@ -287,6 +287,10 @@ def export_sandbox(
         raise HTTPException(status_code=404, detail=f"Unknown sandbox {sandbox_id}") from exc
     try:
         return export_pack(rec, body or ExportRequest())
+    except ValueError as exc:  # QA R1: bad pack_name (traversal/shape)
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
     except FileExistsError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
 

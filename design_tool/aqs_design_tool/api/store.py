@@ -6,11 +6,15 @@ from __future__ import annotations
 
 import copy
 import json
+import os
+import threading
 import uuid
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
+
+from pydantic import ValidationError
 
 from ..models import (
     MvsModel,
@@ -128,6 +132,9 @@ class SandboxStore:
     def __init__(self, persist: bool = True) -> None:
         self._items: dict[str, SandboxRecord] = {}
         self._persist = persist
+        # QA R2: FastAPI serves endpoints on a threadpool, so mirror
+        # read-modify-writes need a lock to stay atomic per sandbox file.
+        self._lock = threading.Lock()
         if persist:
             SANDBOX_STORE_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -137,50 +144,66 @@ class SandboxStore:
         label: str | None = None,
         base: MvsModel | None = None,
     ) -> SandboxRecord:
-        # Default base: graph sole authority (WP-Ap1)
-        base = base or load_mvs_from_graph()
-        base_copy = MvsModel.model_validate(
-            copy.deepcopy(base.model_dump(by_alias=True, mode="json"))
-        )
-        model = apply_overrides(base_copy, overrides or SandboxOverrides())
-        sid = f"sbx_{uuid.uuid4().hex[:12]}"
-        now = _now()
-        rec = SandboxRecord(
-            sandbox_id=sid,
-            label=label or sid,
-            model=model,
-            created_at=now,
-            updated_at=now,
-            parent_mvs_revision=base.revision,
-        )
-        self._items[sid] = rec
-        self._mirror(rec)
-        return rec
+        with self._lock:
+            # Default base: graph sole authority (WP-Ap1)
+            base = base or load_mvs_from_graph()
+            base_copy = MvsModel.model_validate(
+                copy.deepcopy(base.model_dump(by_alias=True, mode="json"))
+            )
+            model = apply_overrides(base_copy, overrides or SandboxOverrides())
+            sid = f"sbx_{uuid.uuid4().hex[:12]}"
+            now = _now()
+            rec = SandboxRecord(
+                sandbox_id=sid,
+                label=label or sid,
+                model=model,
+                created_at=now,
+                updated_at=now,
+                parent_mvs_revision=base.revision,
+            )
+            self._items[sid] = rec
+            self._mirror(rec)
+            return rec
 
-    def get(self, sandbox_id: str) -> SandboxRecord:
+    def _get_locked(self, sandbox_id: str) -> SandboxRecord:
+        """Lookup + lazy mirror load. Caller must hold ``self._lock``."""
         if sandbox_id not in self._items:
             path = SANDBOX_STORE_DIR / f"{sandbox_id}.json"
             if path.is_file():
-                raw = json.loads(path.read_text(encoding="utf-8"))
-                rec = SandboxRecord(
-                    sandbox_id=raw["sandbox_id"],
-                    label=raw.get("label", sandbox_id),
-                    model=MvsModel.model_validate(raw["model"]),
-                    created_at=raw["created_at"],
-                    updated_at=raw["updated_at"],
-                    last_solve=(
-                        SolveResponse.model_validate(raw["last_solve"])
-                        if raw.get("last_solve")
-                        else None
-                    ),
-                    parent_mvs_revision=raw.get(
-                        "parent_mvs_revision", "E-candidate"
-                    ),
-                )
+                # QA R2: a truncated / corrupt mirror must surface as
+                # KeyError(sandbox_id) — the API maps that to 404 instead of
+                # leaking JSONDecodeError / ValidationError as a 500.
+                try:
+                    raw = json.loads(path.read_text(encoding="utf-8"))
+                    rec = SandboxRecord(
+                        sandbox_id=raw["sandbox_id"],
+                        label=raw.get("label", sandbox_id),
+                        model=MvsModel.model_validate(raw["model"]),
+                        created_at=raw["created_at"],
+                        updated_at=raw["updated_at"],
+                        last_solve=(
+                            SolveResponse.model_validate(raw["last_solve"])
+                            if raw.get("last_solve")
+                            else None
+                        ),
+                        parent_mvs_revision=raw.get(
+                            "parent_mvs_revision", "E-candidate"
+                        ),
+                    )
+                except (
+                    json.JSONDecodeError,
+                    ValidationError,
+                    KeyError,
+                ) as exc:
+                    raise KeyError(sandbox_id) from exc
                 self._items[sandbox_id] = rec
                 return rec
             raise KeyError(sandbox_id)
         return self._items[sandbox_id]
+
+    def get(self, sandbox_id: str) -> SandboxRecord:
+        with self._lock:
+            return self._get_locked(sandbox_id)
 
     def patch(
         self,
@@ -188,27 +211,29 @@ class SandboxStore:
         overrides: SandboxOverrides,
         label: str | None = None,
     ) -> SandboxRecord:
-        rec = self.get(sandbox_id)
-        rec.model = apply_overrides(rec.model, overrides)
-        if label is not None:
-            rec.label = label
-        rec.updated_at = _now()
-        rec.last_solve = None
-        self._mirror(rec)
-        return rec
+        with self._lock:
+            rec = self._get_locked(sandbox_id)
+            rec.model = apply_overrides(rec.model, overrides)
+            if label is not None:
+                rec.label = label
+            rec.updated_at = _now()
+            rec.last_solve = None
+            self._mirror(rec)
+            return rec
 
     def set_solve(self, sandbox_id: str, result: SolveResponse) -> SandboxRecord:
-        rec = self.get(sandbox_id)
-        rec.last_solve = result
-        rec.updated_at = _now()
-        dump = rec.model.model_dump(by_alias=True, mode="json")
-        dump["gaps"] = [g.model_dump(mode="json") for g in result.gaps]
-        dump["unclosed_streams"] = [
-            u.model_dump(mode="json") for u in result.unclosed_streams
-        ]
-        rec.model = MvsModel.model_validate(dump)
-        self._mirror(rec)
-        return rec
+        with self._lock:
+            rec = self._get_locked(sandbox_id)
+            rec.last_solve = result
+            rec.updated_at = _now()
+            dump = rec.model.model_dump(by_alias=True, mode="json")
+            dump["gaps"] = [g.model_dump(mode="json") for g in result.gaps]
+            dump["unclosed_streams"] = [
+                u.model_dump(mode="json") for u in result.unclosed_streams
+            ]
+            rec.model = MvsModel.model_validate(dump)
+            self._mirror(rec)
+            return rec
 
     def _mirror(self, rec: SandboxRecord) -> None:
         if not self._persist:
@@ -225,7 +250,10 @@ class SandboxStore:
                 rec.last_solve.model_dump(mode="json") if rec.last_solve else None
             ),
         }
-        path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        # QA R2: write-then-rename so readers never see a half-written mirror.
+        tmp = path.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        os.replace(tmp, path)
 
 
 STORE = SandboxStore(persist=True)

@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import shutil
 from datetime import datetime
 from pathlib import Path
@@ -549,11 +550,26 @@ def _emit_3d(
 
 
 
+# QA R1 (2026-10-17): pack_name was joined into EXPORTS_DIR unsanitized, so a
+# name like "../../x" escaped the exports root (path-traversal finding).
+# Allow only a single path segment of [A-Za-z0-9._-] starting alphanumeric,
+# and require the resolved target to stay inside EXPORTS_DIR (symlink belt).
+_PACK_NAME_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
+
+
+def validate_pack_name(name: str) -> None:
+    """Raise ValueError unless ``name`` is a safe single-segment pack name."""
+    if _PACK_NAME_RE.fullmatch(name) is None or not (EXPORTS_DIR / name).resolve(
+    ).is_relative_to(EXPORTS_DIR.resolve()):
+        raise ValueError(f"invalid pack_name: {name!r}")
+
+
 def export_pack(rec: SandboxRecord, req: ExportRequest | None = None) -> ExportResponse:
     req = req or ExportRequest()
     EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(CT).strftime("%Y%m%d_%H%M%S")
     name = req.pack_name or f"{rec.sandbox_id}_{stamp}"
+    validate_pack_name(name)  # QA R1: reject before any path join / mkdir
     pack_dir = EXPORTS_DIR / name
     pack_dir.mkdir(parents=True, exist_ok=False)
 
