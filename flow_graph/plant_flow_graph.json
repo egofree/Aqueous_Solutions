@@ -101,10 +101,10 @@
       "notes": " Duty: notes/POWER_DUTIES.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 2.5,
+        "value": 0.0082,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-GEN-CONT"
+        "note": "X-PAR-12 TF: standby, NFPA 110 exercise average"
       },
       "modules": [],
       "params": {
@@ -114,7 +114,9 @@
           1000,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "rated_kW": 40.0,
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)"
       }
     },
     {
@@ -305,7 +307,12 @@
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.6472,
+        "unit": "kW",
+        "status": "study",
+        "note": "latent 1.92 kW (condensate 67.4 kg/d x 2.454 MJ/kg) / COP 2.96 (A-M-153)"
+      }
     },
     {
       "unit_id": "CRYO_AHU_COND_CONDENSABLE",
@@ -440,7 +447,10 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "store_kg": 18,
+        "store_basis": "need: 8.3 kg dark-hours buffer (11.10 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_water_volume_m3": 1.21
       }
     },
     {
@@ -484,7 +494,54 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "x_par_12_base": {
+          "IA-GEN-AIR": 0.006137,
+          "IA-NOX-N2": 193.730075,
+          "IA-NOX-CO2": 21.626763,
+          "IA-NOX-H2O": 224.775308,
+          "IA-ASU-N2": 193.576601,
+          "IA-AB-FLUE": 8.75214,
+          "S67": 119.082851,
+          "S67B": 13.810366,
+          "IA-FLUE-EXH": 265.536485,
+          "IA-BMED-03": 449.48,
+          "IA-EVAP_ACID-COND": 864.9665,
+          "S17-BMED": 5.6267,
+          "SF-EVAP_ACID": 1.497,
+          "IA-PV-01": 312.5,
+          "BMED_kW": null,
+          "EVAP_kW": 1.497,
+          "bus_r0": 195.99939999999992,
+          "PV": {
+            "count": 6932,
+            "nameplate_kw": 3466,
+            "area_m2": 30444
+          },
+          "gen_full": {
+            "CUT-1-OUT": 0.053896,
+            "S45": 3.6,
+            "S47": 2.5,
+            "S46": 0.267975,
+            "CUT-1": 7.424773
+          }
+        },
+        "o2_gap": {
+          "hdr_short_kg_d": 0.0,
+          "system_short_kg_d": 0.0,
+          "system_surplus_kg_d": 43.5697,
+          "src_kg_d": 88.7631,
+          "hdr_draw_kg_d": 3.3934,
+          "direct_draw_kg_d": 41.8,
+          "basis": "A-M-230 (D-O2): H2O_ELYZ restored \u2014 sources IA-ELY-O2 (PEM electrolyser, the O2 source) + S87 (crew-duty bed, A-M-229) + IA-ASU-O2 (recovered combustion excess); S02/S50 draw directly on CRYO_O2 (Rev AC re-home), the rest via HDR_O2",
+          "note": "reported ledger, not an assert (A-M-228 discipline kept): surplus carried by IA-O2-PROD/IA-O2-SHIP"
+        },
+        "storage_mode": "compressed gas, 200 bar, Type I cylinder bank, O2-cleaned (ASTM G93), separate from H2 (NFPA 2 ch. 7 separation)",
+        "store_kg": 142.9,
+        "store_water_volume_m3": 0.5,
+        "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)",
+        "crew_reserve_kg": 6.8,
+        "crew_reserve_basis": "separate cylinder bank, crew draw 3.40 kg/d x 2 d (NFPA 99 reserve >= 1 average day; AQS-ELEC-007 autonomy 2 d governs); not drawn by FUEL_CELL (X-RED-04, A-M-146)"
       }
     },
     {
@@ -498,10 +555,10 @@
       "notes": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 24.5933,
+        "value": 25.4274,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 10.73 kg/d H2 x 55.0 kWh/kg / 24 h; rated 98.4 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 11.10 kg/d H2 x 55.0 kWh/kg / 24 h; rated 101.7 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -523,6 +580,12 @@
           "bore_req_mm": 0.98,
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "adequate": true
+        },
+        "stack_heat_kw": {
+          "value": 7.2121,
+          "unit": "kW",
+          "status": "study",
+          "note": "X-PAR-12 TF: 7.21 kW stack heat; BH SQ-H2O_ELYZ destination HEAT_SINK retired in Rev AC \u2014 residual reported, not routed (A-M-230)."
         }
       }
     },
@@ -773,7 +836,13 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "reversible_loop": {
+          "electrolyser": "H2O_ELYZ",
+          "round_trip": 0.364,
+          "basis": "PEM 55.0 kWh/kg H2 in, 20.0 kWh/kg out",
+          "oxidant": "pure O2 from HDR_O2; H2 and O2 never mixed (NFPA 2, ISO 22734, IEC 62282-3-100)"
+        }
       }
     },
     {
@@ -832,7 +901,9 @@
         "presence": "present",
         "T_source_K": 285.0,
         "coupled_GHEX": true,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "units_installed": 2,
+        "redundancy": "2 x 100 % (X-RED-07)"
       }
     },
     {
@@ -963,7 +1034,7 @@
         "value": 2.0463,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): LED 29.12 m2 x 70.27 W/m2 (DLI 17.0 mol/m2/d, 2.8 umol/J, A-M-133/A-M-144) = 2.0463 kW; BH 5.0 kW canopy-share study value superseded; nutrient pumps on SF-NUTRIENT_DOSE, room latent load on SF-CRYO_AHU"
+        "note": "LED 29.12 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J, A-M-133/A-M-144); crew duty (A-M-229)"
       },
       "modules": [],
       "params": {
@@ -987,12 +1058,12 @@
           "A-M": "A-M-229"
         },
         "crop_carbon": {
-          "co2_fixed_kg_d": 0.8824,
+          "co2_fixed_kg_d": 0.882,
           "dm_kg_d": 0.56,
-          "edible_fresh_kg_d": 4.2002,
-          "inedible_fresh_kg_d": 3.0801,
+          "edible_fresh_kg_d": 4.2,
+          "inedible_fresh_kg_d": 3.08,
           "outlet_inedible": "S11",
-          "surplus_export": "S14X retired: bed sized to the crew food, surplus 0 < 0.5 kg/d threshold (AQS-SUR-001)",
+          "surplus_export": "retired: bed sized to the crew food, surplus 0 < 0.5 kg/d (AQS-SUR-001)",
           "basis": "BVAD2022 tomato; crew-duty area from S14 (A-M-229)"
         },
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
@@ -1038,7 +1109,16 @@
       "modules": [],
       "params": {
         "crew_study": 4,
-        "presence": "present"
+        "presence": "present",
+        "co2_removal": {
+          "metabolic_CO2_kg_d": 4.021,
+          "half_cycle_min": 144.0,
+          "zeolite_5A_kg_per_bed": 40.2,
+          "beds_per_assembly": 2,
+          "assemblies": 2,
+          "zeolite_total_kg": 160.8,
+          "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
+        }
       }
     },
     {
@@ -1151,32 +1231,35 @@
       },
       "modules": [],
       "params": {
-        "energy_kwh_ideal_study": 9.8,
-        "energy_kwh_recoverable_study": 7.0,
+        "energy_kwh_ideal_study": 288.4,
+        "energy_kwh_recoverable_study": 230.7,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 200,
-        "head_m_m1": 18,
-        "vs_znbr2_kwh": 120,
-        "fraction_of_znbr2_study": 0.082,
+        "volume_m3_m1": 2922.0,
+        "head_m_m1": 36.22,
+        "vs_znbr2_kwh": 3500.0,
+        "fraction_of_znbr2_study": 0.066,
         "continuous_kw_status": "incomplete",
-        "scale_up_volume_path_m3": [
-          200,
-          1000,
-          5000
-        ],
-        "scale_up_head_m": [
-          18,
-          18,
-          25
-        ],
-        "scale_up_energy_kwh_ideal": [
-          9.8,
-          49.0,
-          340.0
-        ],
-        "scale_up_note": "AQS-BLD-001 \u00a73 / AQS-ESS-001 \u2014 grow V\u00d7h for material hydro; M1 remains symbolic \u226a ZnBr2",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
-        "presence": "present"
+        "presence": "present",
+        "backup_basis": {
+          "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
+          "standard": "NFPA 111 Level 1, Class X",
+          "critical_kW": 15.66,
+          "class_hours": 14.0,
+          "energy_kWh_bus": 219.2,
+          "head_m": 36.22,
+          "eta_turbine_generator": 0.8,
+          "eta_pump_motor": 0.85,
+          "round_trip": 0.68,
+          "upper_reservoir_m3": 2922.0,
+          "rated_kW_discharge": 15.66,
+          "recharge_kW_over_PV_window": 53.7,
+          "A-M": "A-M-145",
+          "Q": "Q-006 closed; Q-009 closed: water tower",
+          "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2 cells per level",
+          "lower": "CATCH_TANK 9.19 m deep over 367 m2",
+          "eta_net_with_penstock": 0.76
+        }
       }
     },
     {
@@ -1433,7 +1516,14 @@
       "modules": [],
       "params": {
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus/ground_floor still show footprint",
-        "presence": "present"
+        "presence": "present",
+        "site_freight_ledger": {
+          "ships_in_kg_d": 86.867,
+          "meters_out_kg_d": 161.941,
+          "residual_kg_d": -75.074,
+          "basis": "import/export freight meter; BH closed at 84.88 in = 79.77 water + 5.11 NaOH out (fa1b4db)",
+          "note": "residual = -(sum of all other unit residuals): itemised as the open R10 EW/H2/gas lane - EW cells +67.7 (Faraday side-Cl2/cathode-H2 outlets died with HCL_BURNER), CRYO_H2 +4.8 (S64 stale phantom), CRYO_ASU +5.3 (Ar return, CRYO_AR source dead), NOX_SCRUB +5.0 (study bases), WAFER_FAB -6.8 (Ar/N2), AFTERBURNER -2.2, small +-1. Closes only with the R10 EW Faraday / cathode-H2 re-basis (owner decision: HCl-burner vs H2 pool) or a re-instated dock feed import"
+        }
       }
     },
     {
@@ -1494,7 +1584,19 @@
       "notes": "Oil frac (intra) Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "vol_net_base": 27.5,
+        "cut_basis": {
+          "source": "SU2018_PYRO",
+          "per_pass_fractions_C5-10_C11-18_C19-28_C29+": [
+            0.2267,
+            0.3496,
+            0.2167,
+            0.207
+          ],
+          "A-M": "A-M-138"
+        }
+      },
       "continuous_kw": null
     },
     {
@@ -1601,7 +1703,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 312.5,
+        "value": 312.0329,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1786,6 +1888,18 @@
           "plant_bus_on": "CB-1",
           "doc": "AQS-ELEC-008",
           "note": "Sections written 2026-10-18 replicating docs-authority/_collection_bus.py (X-ELS-11 math verbatim): the script crashes on the pre-existing null-rated SF-HF_GEN plant-feeder edge (D-AIR 0ed33bb), plant_kW sum only. 49 inverters in 5 sections <= 11 (NEC 240.87)."
+        },
+        "redundancy": {
+          "arrangement": "main-tie-main, sections A/B, normally-open tie",
+          "bus_demand_kW": 129.0,
+          "section_rating_A": 225,
+          "basis_A": 172.4,
+          "MCC": "MCC-1A / MCC-1B",
+          "transformer": "2 x 100 % T-1 15 kVA",
+          "critical_ATS_A": 100,
+          "critical_kW": 15.66,
+          "inverter_sections": 6,
+          "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
         }
       }
     },
@@ -1982,7 +2096,13 @@
         "charge_kW": 1137,
         "discharge_kW": 250,
         "charge_basis": "D75 cloudy-day case: charge-governed \u2014 PV peak on the half-yield day less direct load (A-M-237); discharge = converged demand 250 kW",
-        "distribution": "distributed over the 49 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
+        "distribution": "distributed over the 49 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "purge_basis": {
+          "H2_m3_d": 10.144,
+          "purge_m3_h": 42.27,
+          "HER_fraction": 0.00658,
+          "electrode_area_m2": 2617.1
+        }
       }
     },
     {
@@ -2089,15 +2209,23 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.11,
-        "avg_kw": 0.08,
+        "feed_m3_d": 0.3938,
+        "avg_kw": 0.2789,
         "status": "duty_issued",
         "size_mm": [
           1400,
           600,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "units_installed": 2,
+        "redundancy": "2 x 100 %, standby still on the same feed header (X-RED-05)"
+      },
+      "continuous_kw": {
+        "value": 0.2789,
+        "unit": "kW",
+        "status": "study",
+        "note": "0.394 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
       }
     },
     {
@@ -3420,6 +3548,23 @@
       },
       "continuous_kw": null,
       "class": "dry_cooler"
+    },
+    {
+      "unit_id": "PROD_MEOH",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "product",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "X-PAR-12: methanol product store (carbon leaves the plant as product, no vent)."
+      }
     }
   ],
   "edges": [
@@ -4132,7 +4277,7 @@
     },
     {
       "stream_id": "IA-BMED-03",
-      "from_unit_id": "CRU",
+      "from_unit_id": "LEACH_CSTR_1",
       "to_unit_id": "BMED_ACID",
       "phase": "L",
       "layers": [
@@ -4144,10 +4289,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 449.474184,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_close.py); BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 449.52, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-acid purge closes BMED_ACID: feed 1304.52 + S09 9.28 + IA-BMED-01 0.65 - condensate 864.97; BH 449.52 (fa1b4db) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -4162,7 +4307,7 @@
     },
     {
       "stream_id": "IA-BMED-04",
-      "from_unit_id": "CRU",
+      "from_unit_id": "LEACH_CSTR_1",
       "to_unit_id": "BMED_BASE",
       "phase": "L",
       "layers": [
@@ -4174,10 +4319,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 502.9812,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-base purge to the BMED base regen loop, by difference (see o2_close.py); BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 502.98, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-base purge closes BMED_BASE: feed 1301.72 + IA-BMED-02 0.27 - condensate 799.01; BH 502.98 verbatim (fa1b4db) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -4208,7 +4353,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -4237,7 +4382,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -4266,7 +4411,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: 7.0 kWh recoverable per cycle over 24 h | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "PUMPED_HYDRO",
       "to_sector_id": "ELEC",
@@ -4871,7 +5016,7 @@
         "value": 33.373266,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456) | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: per-pass volatiles: net 27.50 + C29 recycle 5.87 (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456) | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: per-pass volatiles: net 27.50 + C29 recycle 5.87 (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -4954,7 +5099,7 @@
         "value": 3302.63279,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18"
+        "note": "Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18 | X-PAR-12 TF: polish return by difference (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -4997,7 +5142,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Float/sink liquor return",
       "header": null,
       "forbidden": null,
@@ -5006,7 +5151,7 @@
         "value": 343.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 | X-PAR-02 TF R10a: float-sink wet heavy fraction back to the leach = IA-SINK-01 376.10 - IA-PLAST-01 33.00; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 343.10; FLOAT_SINK_GRIT_TO_TI stays unrated (TI_CELL ilmenite route is FOUNDRY scope, no basis yet)"
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -5055,10 +5200,10 @@
       "forbidden": "leach, etch, grey",
       "claim_status": "Closed",
       "rate": {
-        "value": 95.0,
+        "value": 67.300214,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d"
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d | X-PAR-02 TF: UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, fa1b4db; Rev AC 95.00 overdrew the header) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5133,7 +5278,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=unknown | X-PAR-12 TF: bed dosed from HDR_CO2 only (AQS-PAR-005). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty bed, entire light-limited dose 0.882362 kg/d on S89"
+        "note": "null_rate_kind=unknown | X-PAR-12 TF: bed dosed from HDR_CO2 only (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
@@ -5200,7 +5345,7 @@
     {
       "stream_id": "S08G",
       "from_unit_id": "GLASS_DIGEST",
-      "to_unit_id": "BOUNDARY_EXPORT",
+      "to_unit_id": "MFG_SHOP",
       "phase": "S",
       "layers": [
         "mass"
@@ -5211,13 +5356,13 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 30.0,
+        "value": 26.7,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary"
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary | X-PAR-02 TF R10a: glass/ceramic goods to the shop = BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 26.20 + IA-SIC-IN 0.50 silica (SIC_FURNACE retired, rides S08G); BOUNDARY_EXPORT re-point retired (AQS-AUD-001 4.1 silicate+grit ~=30 kg/d basis)"
       },
       "from_sector_id": "GLASS",
-      "to_sector_id": "DOCK",
+      "to_sector_id": "MFG",
       "open_boundary": true,
       "namespace": "SANDBOX",
       "gap_flags": [
@@ -5263,10 +5408,10 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 10.0,
+        "value": 79.12,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid)"
+        "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid) | X-PAR-02 TF R10a: spent etch return to leach = bench in-sum (0.21+9.28+60+1.50+3.00+3.01+1.25+0.61+0.27) - S38 0.01; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 79.12"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
@@ -5304,7 +5449,7 @@
     {
       "stream_id": "S12",
       "from_unit_id": "HABITATION",
-      "to_unit_id": "NUTRIENT_DOSE",
+      "to_unit_id": "GREY_TREAT",
       "phase": "L/S",
       "layers": [
         "mass"
@@ -5315,13 +5460,13 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 110.0,
+        "value": 319.60396,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d"
+        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; fa1b4db) (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
-      "to_sector_id": "NUT",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
@@ -5473,10 +5618,10 @@
       "forbidden": "acid-gas header",
       "claim_status": "Claimed",
       "rate": {
-        "value": 15.0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study afterburner\u2192CRYO captured CO2 class mid of oil cuts ~12\u201322.5 kg/d (AQS-AUD-001) \u2014 not flue analyser"
+        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH fa1b4db verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "CRYO",
@@ -5553,10 +5698,10 @@
       "forbidden": "Salria, grey, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": 95.0,
+        "value": 120.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d"
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d | X-PAR-02 TF R10a: crew-4 potable draw; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 120.68 (Rev AC had cut it to 95 with the grey outlet dead)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -5579,10 +5724,10 @@
       "forbidden": "process sumps",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=inventory_cycle"
+        "note": "null_rate_kind=inventory_cycle | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5605,10 +5750,10 @@
       "forbidden": "HDR_GREY",
       "claim_status": "Closed",
       "rate": {
-        "value": null,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "null_rate_kind=inventory_cycle"
+        "note": "null_rate_kind=inventory_cycle | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5654,10 +5799,10 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 369.213629,
+        "value": 330.393672,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -38.8200 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -5674,16 +5819,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "potable",
       "header": "potable + RPZ",
       "forbidden": "wet bench, etch",
       "claim_status": "Closed",
       "rate": {
-        "value": 10.000039,
+        "value": 10.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: REMIN drink_L_d 10 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: REMIN drink_L_d 10 | X-PAR-02 TF R10a: remineralised potable to habitation; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 10.00 (placeholder edge re-activated)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -6111,10 +6256,10 @@
       "forbidden": "HDR_O2, hab AHU",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.6,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max"
+        "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max | X-PAR-12 TF: genset runs on the C5-C10 cut only (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "ELEC",
@@ -6160,10 +6305,10 @@
       "forbidden": "RECT DC bus direct",
       "claim_status": "Closed",
       "rate": {
-        "value": 2.5,
+        "value": 0.008219,
         "unit": "kW",
         "status": "authority",
-        "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock \u2014 not vendor nameplate"
+        "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock \u2014 not vendor nameplate | X-PAR-12 TF: exercise energy, daily average (AQS-PAR-005)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -6438,7 +6583,10 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER"
+      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER",
+      "composition": {
+        "Cu": 1.0
+      }
     },
     {
       "stream_id": "S58",
@@ -6522,7 +6670,10 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap"
+      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap",
+      "composition": {
+        "Pb/Sn/Ni/Cd/Zn blend": 1.0
+      }
     },
     {
       "stream_id": "S61",
@@ -6699,10 +6850,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 119.082851,
+        "value": 119.611129,
         "unit": "kg/d",
         "status": "study",
-        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM excess O2 (AQS-PAR-005)."
+        "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "GAS"
@@ -6712,7 +6863,7 @@
       "from_unit_id": "FLUE_KO",
       "to_unit_id": "CRYO_CO2",
       "phase": "G",
-      "presence": "study",
+      "presence": "present",
       "carries": "CO2-rich gas after KO",
       "notes": "Only the CO2-rich cut. Reject N2/O2/NOx.",
       "namespace": "S",
@@ -6721,13 +6872,16 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 13.810366,
+        "value": 14.050492,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: bound O2 into CO2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO"
+      "to_sector_id": "CRYO",
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S68",
@@ -6767,10 +6921,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1047.195538,
+        "value": 1196.960161,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 37.0 m3/h holds H2 at 25 % LFL: HER 7.56 + open-circuit 1.32 m3/d H2 on 5001 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 42.3 m3/h holds H2 at 25 % LFL: HER 8.64 + open-circuit 1.51 m3/d H2 on 5716 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -6790,7 +6944,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1047.195538,
+        "value": 1196.960161,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -6909,17 +7063,20 @@
       "forbidden": "HDR_H2, potable",
       "claim_status": null,
       "rate": {
-        "value": 6.9,
+        "value": 42.672918,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path"
+        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path | X-PAR-12 TF: cold-box CO2 to methanol by difference (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S74",
@@ -6935,10 +7092,10 @@
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
-        "value": 0.94,
+        "value": 6.295576,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN"
+        "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN | X-PAR-12 TF: CO2 + 3 H2 (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "MEOH",
@@ -6961,10 +7118,10 @@
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 33.354685,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2"
+        "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2 | X-PAR-12 TF: -> CH3OH (mass closed) (AQS-PAR-005)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -7177,7 +7334,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 89.428868,
+        "value": 46.963124,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -7200,7 +7357,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 193.576601,
+        "value": 193.730075,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 pass-through (AQS-PAR-005)."
@@ -7223,13 +7380,16 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.749899,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: cold-box CO2 to header only if the bed needs it (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "HAB"
+      "to_sector_id": "HAB",
+      "composition": {
+        "CO2": 1.0
+      }
     },
     {
       "stream_id": "S86",
@@ -7274,7 +7434,7 @@
         "value": 0.641572,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 0.882362 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty bed 29.12 m2; BVAD2022 tomato O2/CO2 26.36/36.24 g/m2/d = same 32/44 ratio"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 0.882 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003)."
       },
       "composition": {
         "O2": 0.99,
@@ -9676,7 +9836,7 @@
         "value": 0.882362,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: light-limited uptake 29.12 m2 x 30.3 g CO2/m2/d (DLI 17.0, A-M-133); crew-duty area = S14 4.2 kg/d crew food / 0.1442 kg/m2/d edible fresh (BVAD2022 tomato carbon chain: DM = CO2 x 12.011/44.01 / C 0.43, HI 0.45, 94 % water) (AQS-PAR-005). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): BH 120.4 m2 residue-claim basis (A-M-151) superseded for Rev AC crew duty"
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: light-limited uptake 29.12 m2 x 30.3 g CO2/m2/d (DLI 17.0, A-M-133); crew-duty area from GROW_BED params: S14 crew food / BVAD2022 tomato edible at the same flux (A-M-229) (AQS-PAR-005)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
@@ -9769,10 +9929,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 242.647201,
+        "value": 244.296561,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 TF: grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
@@ -9868,7 +10028,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 312.5,
+        "value": 312.0329,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676."
@@ -9988,10 +10148,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 235.868229,
+        "value": 197.048272,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -38.8200 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10084,10 +10244,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.75214,
+        "value": 9.280418,
         "unit": "kg/d",
         "status": "study",
-        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM tail (AQS-PAR-005)."
+        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the O2 drawn (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "GAS",
@@ -10546,10 +10706,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 265.536485,
+        "value": 265.824637,
         "unit": "kg/d",
         "status": "study",
-        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: FORM excess O2 (AQS-PAR-005)."
+        "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into H2O + excess O2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "GAS",
@@ -10675,7 +10835,7 @@
         "value": 42.138417,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (out: ET 67.443215 + food 4.2 + organics 0.8 + condensate 3.799 + O2 0.641572; in: nutrient solution 31.363502 + S07 2.5 + CO2 0.882362) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): BH 306.644 kg/d was farm-scale irrigation"
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (A-M-229) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "FARM",
@@ -10703,7 +10863,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 17.013033,
+        "value": 18.752447,
         "unit": "kg/d",
         "status": "study",
         "note": "One water per methanol. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: + H2O (AQS-PAR-005)."
@@ -11144,7 +11304,7 @@
         "value": 67.443215,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: 29.12 m2 x 2.316 kg/m2/d: BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2/m2/d, scaled to the DLI-17 light-limited 30.30 g CO2/m2/d (A-M-133) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty area = 4.2 kg/d food / 0.1442 kg/m2/d edible; BH 278.85 kg/d at 120.4 m2 was farm-scale, not crew duty"
+        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: 29.12 m2 x 2.316 kg/m2/d: BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2/m2/d, scaled to the DLI-17 light-limited 30.30 g CO2/m2/d (A-M-133); crew-duty area 4.2 kg/d food / 0.1442 kg/m2/d edible (A-M-229) (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "CRYO",
@@ -11202,7 +11362,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 462.741247,
+        "value": 67.443215,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet. | X-PAR-02 TF: condensate = greenhouse vapour in (AQS-PAR-003)."
@@ -11352,7 +11512,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 128.30495,
+        "value": 82.317318,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. | X-PAR-02 TF: nutrient surplus by difference (AQS-PAR-003)."
@@ -11569,10 +11729,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 225.86819,
+        "value": 187.048233,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -38.8200 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -12048,7 +12208,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 224.775308,
+        "value": 221.48381,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into water, less the H no longer burned (AQS-PAR-005)."
@@ -12330,7 +12490,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 18.667943,
+        "value": 20.407357,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: condensate to roof (AQS-PAR-005)."
@@ -12858,7 +13018,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: sweep held closed: N2 header over-supplied ~0.950 kg/d even at zero sweep (restored ASU pass-through S84 193.577 vs header draws 192.627); sweep re-solved from the HDR_N2 header balance, stale BH 0.710 retired; residual reported, not absorbed (A-M-227) (AQS-PAR-005)."
+        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: sweep held closed: N2 header over-supplied 1.103 kg/d even at zero sweep (ASU pass-through vs header draws); residual reported, not absorbed (A-M-227) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "HAB",
@@ -13734,7 +13894,7 @@
         "value": 5.6267,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw. | X-PAR-12 TF: BMED HCl make 31.61 of 31.61 kg/d (k 1.000) (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw. | X-PAR-12 TF: BMED HCl make 31.56 of 31.56 kg/d (k 1.000) (AQS-PAR-005)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -13825,10 +13985,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 228.693629,
+        "value": 189.873672,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -38.8200 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "WTR",
@@ -14449,10 +14609,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.821142,
+        "value": 0.528278,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (CO 0.266 + organics 0.480); S11 is 99.8 % water (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (CO 0.000 + organics 0.480); S11 is 99.8 % water (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "OIL",
@@ -14479,7 +14639,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 3.138638,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: header CO2 the bed cannot fix (AQS-PAR-005)."
@@ -14508,7 +14668,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 79.771928,
+        "value": 156.834665,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -14923,7 +15083,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.4402,
+        "value": 0.6472,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005)."
@@ -15054,7 +15214,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 439.5222,
+        "value": 439.5514,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid to leach by difference (AQS-PAR-005)."
@@ -15124,10 +15284,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 482.2861,
+        "value": 482.521,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%. | X-PAR-12 TF: base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, fa1b4db) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -15381,10 +15541,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.626763,
+        "value": 21.747426,
         "unit": "kg/d",
         "status": "study",
-        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: genset bound O2 into CO2, less the carbon of the fuel no longer burned (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: genset bound O2 into CO2, less the carbon of the fuel no longer burned (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15410,10 +15570,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 193.730075,
+        "value": 193.797004,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: N2 replaced by O2; excess O2 rides to the cold box (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: N2 replaced by O2; excess O2 rides to the cold box (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15422,8 +15582,8 @@
       "gap_flags": [],
       "notes": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope",
       "composition": {
-        "N2": 0.9992,
-        "O2": 0.0008
+        "N2": 0.9997,
+        "O2": 0.0003
       }
     },
     {
@@ -15440,10 +15600,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 193.576601,
+        "value": 193.730075,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 out = N2 in (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 out = N2 in (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -15469,10 +15629,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.153474,
+        "value": 0.066929,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -15499,10 +15659,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.626763,
+        "value": 21.747426,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: CO2 out = CO2 in (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: CO2 out = CO2 in (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -15628,7 +15788,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 TF: no surplus O2 return (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 TF: no surplus O2 return (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -15658,7 +15818,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: no CO2 recycle into the cold box (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: no CO2 recycle into the cold box (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -15687,7 +15847,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.0000 kg/d); Henry bound 3.719 kg/d (SANDER2015) (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-5.3000 kg/d); Henry bound 3.546 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -15750,10 +15910,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 95.897876,
+        "value": 99.150199,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "CRYO",
@@ -15779,10 +15939,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 10.731619,
+        "value": 11.095576,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand: genset + fuel cell + methanol (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand: genset + fuel cell + methanol (gross pool draws; EW cathode H2 not credited, A-M-230) (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -15808,10 +15968,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 85.166257,
+        "value": 88.054623,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -15837,7 +15997,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 24.5933,
+        "value": 25.4274,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -15864,7 +16024,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 43.433394,
+        "value": 43.569735,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -15894,7 +16054,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 43.433394,
+        "value": 43.569735,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -16277,6 +16437,220 @@
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"
+    },
+    {
+      "stream_id": "IA-URINE",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "urine to the blackwater barrier train",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.42,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 1.42 (crew-4, was HABITATION->COMPOST_TOILET; X-SAN-01: compost-toilet solids and urine pass the same barriers, BLACK_DIGEST is the surviving barrier 1)"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FEC-01",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fecal solids to the blackwater barrier train",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.13,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 0.13 (was HABITATION->COMPOST_TOILET; rides the blackwater line, X-SAN-01)"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GAL",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "galley food waste to the blackwater barrier train",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.18,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 1.18 (was HABITATION->HAB_GALLEY; HAB_GALLEY retired Rev AC, organics to barrier 1)"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLK-CAKE",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "AFTERBURNER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dewatered digestate cake to incineration (barrier 2)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.67,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 0.67 (was BLACK_DEWATER->AFTERBURNER; dewater retired Rev AC, cake split carried at the digester)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLK-NUT",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "NUTRIENT_DOSE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "released digest-liquor nutrient split",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 0.90 (was BLACK_ALK_HOLD->NUTRIENT_DOSE; alk-hold retired Rev AC, split carried at the digester)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "NUT",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-BLK-GREY",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "released digest liquor to grey treatment",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 20.7054,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10a: digest liquor by difference (TF); BH 18.43 (was BLACK_ALK_HOLD->GREY_TREAT) + the urine/fecal water now direct (COMPOST_TOILET retirement) | X-PAR-02 TF: released digest liquor by difference (BH 18.43 from the retired BLACK_ALK_HOLD + direct urine/fecal water, fa1b4db) (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-MEOH-PROD",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "PROD_MEOH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol product",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 27.089285,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: methanol product by difference (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CH3OH": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-MEOH-SHIP",
+      "from_unit_id": "PROD_MEOH",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol shipped at the dock",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 27.089285,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: shipped (AQS-PAR-005)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CH3OH": 1.0
+      }
     }
   ],
   "view_presets": [

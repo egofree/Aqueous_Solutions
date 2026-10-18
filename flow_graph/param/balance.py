@@ -65,6 +65,21 @@ def physics(g):
         E['S87']['composition'] = {'O2': 0.99, 'Ar': 0.01}
     if 'IA-BED-H2O' in E:
         put('IA-BED-H2O', v('IA-BED-H2O') - _unit_resid(g, 'GROW_BED'), 'crew-duty bed closes by difference on the clean-water line (A-M-229)')
+    # T7 crew water and the grey/black train (R10a, 2026-10-18): Rev AC cut HABITATION's crew-4 outputs when the farm rebase
+    #    killed their endpoints (HAB_WASH, COMPOST_TOILET, HAB_GALLEY) and diverted the grey water into NUTRIENT_DOSE, where the
+    #    by-difference closure pumped it into the leach (the reported water-long +515 kg/d). Restored on live endpoints, BH crew-4
+    #    values verbatim (fa1b4db): urine/fecal/galley organics to BLACK_DIGEST (X-SAN-01: the blackwater digester is the surviving
+    #    barrier 1; the COMPOST_TOILET pre-stage is retired), grey + wash water on S12 to GREY_TREAT (HAB_WASH retired, the wash
+    #    rides S12). Closures: HABITATION on S12, BLACK_DIGEST on IA-BLK-GREY (gas 0.10 / cake 0.67 / nutrient split 0.90 are BH
+    #    verbatim graph rates; dewater/pasteur/alk-hold barriers retired, splits carried at the digester), GREY_TREAT on IA-GREY-01
+    #    (grey sludge to the leach, Rev M pattern), the treated-water draw S29 stays the BH still feed 104.50.
+    if all(k in E for k in ('S12', 'IA-BLK-GREY', 'IA-GREY-01')):
+        put('S12', v('S12') + _unit_resid(g, 'HABITATION'),
+            'crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; fa1b4db)')
+        put('IA-BLK-GREY', v('IA-BLK-GREY') + _unit_resid(g, 'BLACK_DIGEST'),
+            'released digest liquor by difference (BH 18.43 from the retired BLACK_ALK_HOLD + direct urine/fecal water, fa1b4db)')
+        put('IA-GREY-01', v('IA-GREY-01') + _unit_resid(g, 'GREY_TREAT'),
+            'grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH)')
     for u, k, why in (('GROW_BED', 'IA-BED-COMP', 'trim less the photosynthetic O2'), ('COMPOST', 'IA-COMP-OUT', 'compost passes the trim'), ('NUTRIENT_DOSE', 'IA-NUT-LEACH', 'nutrient surplus by difference')):
         if k in E:
             r = _unit_resid(g, u); put(k, v(k) + r, why)
@@ -92,6 +107,10 @@ def physics(g):
     d = -_unit_resid(g, 'ROOF_TANK')
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):
         if k in E: put(k, v(k) + d, f'roof-tank shortfall {d:+.4f} kg/d by difference on the potable path')
+    if 'S01' in E:
+        # R10a: the UPW header passes its draws (BH 67.30 = IA-UPW-HAB 0.80 + IA-UPW-USE 66.50; Rev AC had 95.00). Runs after
+        # the T4 shift so the header tracks the distillate/remin splits; d cancels (S25 and IA-UPW-REMIN shift together).
+        put('S01', v('S01') + _unit_resid(g, 'BMED_UPW_POLISH'), 'UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, fa1b4db; Rev AC 95.00 overdrew the header)')
     a = _unit_resid(g, 'CRYO_ASU')
     if 'IA-LEACH-ASU' in E:
         # R8: the leach dissolved-gas edge and its Henry bound died with CRYO_ASU in Rev AC; the assert stays for the live path
@@ -106,6 +125,23 @@ def physics(g):
         # closure has no outlet since the bed takes crew-duty nutrient flow only). Report the surplus — do not write a
         # negative make-up rate (the stock run hid -464 kg/d this way). Outlet decision is R10 work.
         put('IA-H2O-MU', 0.0, f'leach water-long {-h2o_mu:.3f} kg/d: no make-up needed, surplus has no outlet; residual reported, not a negative rate (A-M-229)')
+    # R10a site freight ledger (A-M-228 reporting discipline): NORTH_DOCK is the site boundary meter pair - products shipped out
+    #    arrive at the dock (in-edges) and raw materials dispatched in leave it (out-edges); the ledger closes iff the whole site
+    #    closes (every mass edge is internal since S08G re-pointed to MFG_SHOP, so the dock residual is minus the sum of all other
+    #    unit residuals). The leach make-up above is what the hydromet train draws; the freight credit is what the shipped products
+    #    pay for. The gap is the open R10 EW/H2/gas lane and is reported here, not absorbed by an invented rate.
+    N_ = {n['unit_id']: n for n in g['nodes']}
+    if 'NORTH_DOCK' in N_:
+        ships = sum(v(k) for k in ('IA-C5-SHIP', 'IA-C11-SHIP', 'IA-C19-SHIP', 'IA-MEOH-SHIP', 'IA-O2-SHIP', 'IA-NA-PURGE', 'IA-N2-VENT') if k in E)
+        rdock = _unit_resid(g, 'NORTH_DOCK')
+        N_['NORTH_DOCK']['params']['site_freight_ledger'] = {
+            'ships_in_kg_d': round(ships, 3), 'meters_out_kg_d': round(v('IA-H2O-MU') + v('IA-NAOH-MU'), 3),
+            'residual_kg_d': round(rdock, 3),
+            'basis': 'import/export freight meter; BH closed at 84.88 in = 79.77 water + 5.11 NaOH out (fa1b4db)',
+            'note': 'residual = -(sum of all other unit residuals): itemised as the open R10 EW/H2/gas lane - EW cells +67.7 (Faraday '
+                    'side-Cl2/cathode-H2 outlets died with HCL_BURNER), CRYO_H2 +4.8 (S64 stale phantom), CRYO_ASU +5.3 (Ar return, '
+                    'CRYO_AR source dead), NOX_SCRUB +5.0 (study bases), WAFER_FAB -6.8 (Ar/N2), AFTERBURNER -2.2, small +-1. Closes '
+                    'only with the R10 EW Faraday / cathode-H2 re-basis (owner decision: HCl-burner vs H2 pool) or a re-instated dock feed import'}
     o2_close.LAST.clear(); o2_close.LAST.update(XL, power=o2_close.close_power(g), o2=(src, draw))
     return d, a
 

@@ -116,11 +116,24 @@ def tf(g):
     need = regen
     if N['BMED_ACID'].get('continuous_kw') and B.get('BMED_kW') is not None: N['BMED_ACID']['continuous_kw']['value'] = round(B['BMED_kW']*kb, 4)   # R8: node kW absent in Rev AC
     put('S17-BMED', B['S17-BMED']*kb, f'BMED HCl make {prod+need:.2f} of {prod+regen:.2f} kg/d (k {kb:.3f})')
-    put('IA-BMED-03', B['IA-BMED-03']*kb, 'BMED brine scales with HCl make'); put('IA-EVAP_ACID-COND', B['IA-EVAP_ACID-COND']*kb, 'condensate scales with HCl make')
+    put('IA-EVAP_ACID-COND', B['IA-EVAP_ACID-COND']*kb, 'condensate scales with HCl make')
+    # R10a 2026-10-18: the acid/base regen loop is restored to the BH topology (fa1b4db) - IA-BMED-03/04 were Rev AC unrated
+    # CRU placeholders with no CRU source basis. The leach spent-liquor purge closes each BMED by difference against the
+    # loop anchor IA-EVAP_*-FEED (X-PAR acid-loop decision, AQS-PAR-001 s3), the side draws and the condensate return:
+    #   acid: IA-BMED-03 = 1304.52 + 9.28 (S09) + 0.65 (IA-BMED-01) - 864.97 = 449.48  [BH 449.52, d retired IA-HCL-BU 0.05]
+    #   base: IA-BMED-04 = 1301.72 + 0.27 (IA-BMED-02) - 799.01 = 502.98              [BH 502.98 verbatim]
+    # EVAP_ACID then closes on IA-ACID-01 below (the retired 0.03 IA-EVAP_ACID-VENT rides the acid product); EVAP_BASE on
+    # IA-BASE-PPT (absorbs the retired ACEX caustic draw, BH IA-ACEX-NAOH 0.23).
+    put('IA-BMED-03', v('IA-EVAP_ACID-FEED') + v('S09') + v('IA-BMED-01') - v('IA-EVAP_ACID-COND'),
+        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f}; BH 449.52 (fa1b4db)")
+    put('IA-BMED-04', v('IA-EVAP_BASE-FEED') + v('IA-BMED-02') - v('IA-EVAP_BASE-COND'),
+        f"leach spent-base purge closes BMED_BASE: feed {v('IA-EVAP_BASE-FEED'):.2f} + IA-BMED-02 {v('IA-BMED-02'):.2f} - condensate {v('IA-EVAP_BASE-COND'):.2f}; BH 502.98 verbatim (fa1b4db)")
     x_feed = v('IA-EVAP_ACID-FEED') + resid('BMED_ACID')
     if x_feed > -1e-6: put('IA-EVAP_ACID-FEED', x_feed, 'BMED product by difference')   # R8: Rev AC re-routed the brine feed IA-BMED-03 unrated; residuals left for R10
     x_acid = v('IA-ACID-01') + resid('EVAP_ACID')
     if x_acid > -1e-6: put('IA-ACID-01', x_acid, 'acid to leach by difference')
+    if 'IA-BASE-PPT' in E:
+        put('IA-BASE-PPT', v('IA-BASE-PPT') + resid('EVAP_BASE'), 'base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, fa1b4db)')
     put('SF-EVAP_ACID', B['SF-EVAP_ACID']*kb, 'evaporator scales with HCl make')
     if N['EVAP_ACID'].get('continuous_kw'): N['EVAP_ACID']['continuous_kw']['value'] = round(B['EVAP_kW']*kb, 4)
     L['bmed'] = (kb, B['S17-BMED'] - v('S17-BMED') + B['SF-EVAP_ACID'] - v('SF-EVAP_ACID'))

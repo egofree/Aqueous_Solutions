@@ -4310,5 +4310,84 @@
     ],
     "needs_verification": true,
     "verification_test": "GEO_ORC presence stays placeholder, continuous_kw value None/0-class, params.study_close cites AQS-HEAT-STUDY-002; HL-Q4-REJ no longer terminates on GEO_ORC"
+  },
+  {
+    "id": "A-M-250",
+    "value": "S12 crew grey+wash to GREY_TREAT = habitation in-sum minus fixed crew outputs, by difference (2026-10-18 run: 319.60 kg/d)",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: S12 (HABITATION->GREY_TREAT); flow_graph/param/balance.py physics() T7",
+    "basis": "R10a grey-water routing: BH crew-4 pattern 240.23 grey + 80.00 wash (graph fa1b4db) ride S12 because HAB_WASH is retired in Rev AC; the Rev AC diversion S12->NUTRIENT_DOSE at 110 kg/d is retired (the crew-duty bed takes nutrient flow only, A-M-229, and its by-difference closure was pumping the grey water into the leach - the reported +515.5 kg/d water-long). Closed by difference on live crew rates (S21 120.68, S14 4.20, S02 3.40 restored/held)",
+    "sensitivity": "1:1 into IA-GREY-01 (grey sludge, leach make-up) and the NORTH_DOCK freight gap; +-10 % grey moves the leach make-up the same way",
+    "replaced_by": "Sanitation re-barrier study (BLACK_DEWATER/PASTEUR/ALK_HOLD restoration) re-splitting wash vs black streams",
+    "task": "R10a water/wastewater closure lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/balance.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance (no --write): HABITATION and GREY_TREAT residuals < 0.5 kg/d post-physics"
+  },
+  {
+    "id": "A-M-251",
+    "value": "BLACK_DIGEST splits: biogas 0.10 (BH), cake to AFTERBURNER 0.67 (BH), nutrient liquor to NUTRIENT_DOSE 0.90 (BH), released liquor to GREY_TREAT by difference (2026-10-18 run: 20.71 kg/d)",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: IA-BLK-GAS, IA-BLK-CAKE, IA-BLK-NUT, IA-BLK-GREY; flow_graph/param/balance.py physics() T7",
+    "basis": "R10a digester line: the X-SAN-01 barrier chain behind the digester (BLACK_DEWATER, BLACK_PASTEUR, BLACK_ALK_HOLD) is retired in Rev AC, so the BH exit splits are carried at the digester on live endpoints; urine 1.42 / fecal 0.13 / galley 1.18 (BH crew-4 verbatim) now discharge directly to the digester (COMPOST_TOILET/HAB_GALLEY retired; X-SAN-01: compost-toilet solids and urine pass the same barriers)",
+    "sensitivity": "liquor/cake split moves IA-GREY-01 and the leach make-up 1:1; cake moves AFTERBURNER feed 1:1",
+    "replaced_by": "X-SAN-01 barrier-train restoration: the released-liquor edge is a mass-balance fact today, not a Class-A compliance claim (40 CFR 503 / EPA503 re-check required)",
+    "task": "R10a water/wastewater closure lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/balance.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance (no --write): BLACK_DIGEST residual < 0.5 kg/d post-physics"
+  },
+  {
+    "id": "A-M-252",
+    "value": "IA-BMED-03 = 449.47 and IA-BMED-04 = 502.98 kg/d leach spent-liquor purges to the BMED acid/base regen loops (by difference each run)",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: IA-BMED-03 (LEACH_CSTR_1->BMED_ACID), IA-BMED-04 (LEACH_CSTR_1->BMED_BASE); flow_graph/param/o2_close.py tf()",
+    "basis": "R10a acid/base loop restore: BH topology verbatim (fa1b4db: 449.52 / 502.98 from LEACH_CSTR_1); Rev AC had left both edges as unrated CRU placeholders with no CRU source basis. Brine by difference against the loop anchors IA-EVAP_ACID-FEED 1304.52 / IA-EVAP_BASE-FEED 1301.72 (X-PAR acid-loop decision, AQS-PAR-001 s3), side draws S09+IA-BMED-01 / IA-BMED-02, and condensate returns; k = 1 (BMED HCl make unchanged, X-PAR-12). EVAP_ACID closes on IA-ACID-01 (retired 0.03 vent rides the acid product), EVAP_BASE on IA-BASE-PPT (absorbs retired ACEX draw 0.23)",
+    "sensitivity": "brine tracks the evaporator feed 1:1; the 2 M concentration basis of the anchors governs (87.90 kg/d HCl / 0.0707)",
+    "replaced_by": "BMED loop re-sizing if leach acid/base duty changes (solver.leach_acid / X-PAR-12 k != 1)",
+    "task": "R10a water/wastewater closure lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/o2_close.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance (no --write): BMED_ACID, BMED_BASE, EVAP_ACID, EVAP_BASE residuals < 0.5 kg/d post-physics; no vapor>feed inversion on either evaporator"
+  },
+  {
+    "id": "A-M-253",
+    "value": "S08G glass/ceramic goods to MFG_SHOP 26.70 kg/d (BH 26.20 + 0.50 SiC-route silica riding S08G)",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: S08G (GLASS_DIGEST->MFG_SHOP)",
+    "basis": "R10a digester line: BH verbatim 26.20 (fa1b4db, to MFG_SHOP) plus IA-SIC-IN 0.50 silica that BH sent GLASS_DIGEST->SIC_FURNACE (retired Rev AC; BH SIC return IA-SIC-OUT 0.33 and its 0.17 net residue also ride S08G); the Rev AC re-point to BOUNDARY_EXPORT at 30.00 broke MFG_SHOP (-26.94) and inflated site exports. AQS-AUD-001 4.1 silicate+grit ~=30 kg/d feed basis unchanged",
+    "sensitivity": "+-0.5 kg/d on the MFG_SHOP pass-through pair (IA-MFG-OUT/IA-WEAR) and HOPPER",
+    "replaced_by": "SIC_FURNACE restoration in the FOUNDRY scope (splits the silica back out)",
+    "task": "R10a water/wastewater closure lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance (no --write): GLASS_DIGEST residual < 0.5 kg/d post-physics"
+  },
+  {
+    "id": "A-M-254",
+    "value": "NORTH_DOCK freight ledger reported, not force-closed: ships in 86.87 vs meters out 161.94 kg/d (2026-10-18 run), residual -75.07 kg/d",
+    "units": "kg/d",
+    "where": "flow_graph/plant_flow_graph.json: NORTH_DOCK.params.site_freight_ledger; flow_graph/param/balance.py physics() (ledger write)",
+    "basis": "R10a: NORTH_DOCK is the site boundary meter pair (products arrive = imports dispatch); with every mass edge internal, its residual is minus the sum of all other unit residuals. The gap is itemised in the ledger as the open R10 EW/H2/gas lane: EW cells +67.7 (Faraday side-Cl2/cathode-H2 outlets died with HCL_BURNER), CRYO_H2 +4.8 (S64 stale phantom), CRYO_ASU +5.3 (Ar return, CRYO_AR dead), NOX_SCRUB +5.0, WAFER_FAB -6.8, AFTERBURNER -2.2. Absorbing it would pre-empt the owner's parked EW cathode-H2 decision (HCl-burner vs H2 pool, A-M-230 note) - an invented rate; BH closed at 84.88 = 79.77 + 5.11 (fa1b4db)",
+    "sensitivity": "falls 1:1 with the EW/H2 re-basis; also closes if the retired dock feed import is re-instated (owner decision)",
+    "replaced_by": "R10 EW Faraday / cathode-H2 re-basis lane (or dock feed import re-instatement ruling)",
+    "task": "R10a water/wastewater closure lane 2026-10-18",
+    "files": [
+      "flow_graph/plant_flow_graph.json",
+      "flow_graph/param/balance.py"
+    ],
+    "needs_verification": true,
+    "verification_test": "python3 -m flow_graph.param.balance (no --write): ledger residual equals NORTH_DOCK residual and minus the sum of all other unit residuals; all other named R10a units < 0.5 kg/d"
   }
 ]
