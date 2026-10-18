@@ -42,7 +42,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-BMED-01 | BMED_ACID | WS_NITRIC | L | mass | present | HCl product | 0.6456 kg/d | — |
 | IA-BMED-02 | BMED_BASE | WS_KOH | L | mass | present | NaOH product | 0.2701 kg/d | — |
 | IA-BMED-03 | LEACH_CSTR_1 | BMED_ACID | L | mass | present | CRU → BMED acid regen loop | 449.474184 kg/d | intra_aisle,full_depth_now,bmed_regen unlabeled |
-| IA-BMED-04 | LEACH_CSTR_1 | BMED_BASE | L | mass | present | CRU → BMED base regen loop | 502.9812 kg/d | intra_aisle,full_depth_now,bmed_regen unlabeled |
+| IA-BMED-04 | LEACH_CSTR_1 | BMED_BASE | L | mass | present | CRU → BMED base regen loop | 500.1311 kg/d | intra_aisle,full_depth_now,bmed_regen unlabeled |
 | IA-ESS-HYDRO-CHG | CATCH_TANK | ROOF_TANK | L | mass,ess | present | Pumped hydro charge (pump up; peers S23) | 0.0 kg/d | ess_layer |
 | IA-ESS-HYDRO-DIS | ROOF_TANK | CATCH_TANK | L | mass,ess | present | Pumped hydro discharge (penstock; peers S22) | 0.0 kg/d | ess_layer |
 | IA-ESS-HYDRO-ELEC | HYDRO_SET | SOL_ARK_60K | E | elec,ess | placeholder | Hydro turbine-pump electrical (MISSING on SLD) | 0.0 kW | ess_layer,missing_on_sld |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.296561 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.372033 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 417.2469 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 412.0471 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.4872 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -285,7 +285,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-POL-CAKE | POLISH_BANK | MFG_SHOP | S | mass | present | recovered cake | 217.369993 kg/d | — |
 | IA-AB-AIR | HDR_N2 | AFTERBURNER_FLUE | G | mass | present | combustion air | 110.330712 kg/d | — |
 | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | G | mass | present | flue to the NOx scrubber | 265.824637 kg/d | — |
-| IA-DIG-LIQ | GLASS_DIGEST | LEACH_CSTR_1 | L | mass | present | silicate liquor | 25.2964 kg/d | — |
+| IA-DIG-LIQ | GLASS_DIGEST | LEACH_CSTR_1 | L | mass | present | silicate liquor | 21.968 kg/d | — |
 | IA-MILL-LOSS | GLASS_MILL | BAGHOUSE | S | mass | present | mill dust | 6.82 kg/d | — |
 | IA-MFG-OUT | MFG_SHOP | HABITATION | S | mass | present | goods in service | 596.862802 kg/d | — |
 | IA-BED-H2O | ROOF_TANK | GROW_BED | L | mass | present | irrigation | 42.138417 kg/d | — |
@@ -381,10 +381,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 189.873672 kg/d | — |
 | SF-ALK_SCRUBBER | SOL_ARK_60K | ALK_SCRUBBER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.1123 kW | — |
 | SF-BMED_UPW_POLISH | SOL_ARK_60K | BMED_UPW_POLISH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.018 kW | — |
-| SF-CRYO_H2 | SOL_ARK_60K | CRYO_H2 | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.8837 kW | — |
+| SF-CRYO_H2 | SOL_ARK_60K | CRYO_H2 | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.0755 kW | — |
 | SF-GEO_HP | SOL_ARK_60K | GEO_HP | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 2.0 kW | — |
 | SF-GLASS_DIGEST | SOL_ARK_60K | GLASS_DIGEST | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.09 kW | — |
-| SF-H2_DRYER | SOL_ARK_60K | H2_DRYER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3 kW | — |
+| SF-H2_DRYER | SOL_ARK_60K | H2_DRYER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0205 kW | — |
 | SF-LEACH_CSTR_1 | SOL_ARK_60K | LEACH_CSTR_1 | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 2.0 kW | — |
 | SF-MEOH_SYNTH | SOL_ARK_60K | MEOH_SYNTH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.7388 kW | — |
 | SF-MFG_SHOP | SOL_ARK_60K | MFG_SHOP | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 2.903 kW | — |
@@ -395,7 +395,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-ELECTRODE_COAT | SOL_ARK_60K | ELECTRODE_COAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3 kW | — |
 | SF-BLOW_MOLD | SOL_ARK_60K | BLOW_MOLD | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.5 kW | — |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3917 kW | — |
-| IA-NA-PURGE | LEACH_CSTR_1 | NORTH_DOCK | L | mass | present | sodium salt purge equal to the make-up mass | 5.1063 kg/d | — |
+| IA-NA-PURGE | LEACH_CSTR_1 | NORTH_DOCK | L | mass | present | sodium salt purge equal to the make-up mass | 4.3936 kg/d | — |
 | SF-OIL_PYRO | SOL_ARK_60K | OIL_PYRO | E | elec | present | 480 V AC | 1.664 kW | — |
 | IA-BLK-01 | HABITATION | BLACK_DIGEST | L | mass | present | vacuum-toilet blackwater | 19.644 kg/d | — |
 | IA-BLK-GAS | BLACK_DIGEST | AFTERBURNER | G | mass | present | digester biogas, flared in the afterburner | 0.0986 kg/d | — |
@@ -423,15 +423,15 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-NOX_SCRUB | SOL_ARK_60K | NOX_SCRUB | E | elec | present | 480 V AC | 0.0385 kW | — |
 | SF-MET_SCRUB | SOL_ARK_60K | MET_SCRUB | E | elec | present | 480 V AC | 2.1234 kW | — |
 | IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | L | mass | present | regen HCl, 20 wt% | 439.5514 kg/d | — |
-| IA-BASE-01 | EVAP_BASE | GLASS_DIGEST | L | mass | present | digest NaOH, 20 wt% | 25.2964 kg/d | — |
-| IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | L | mass | present | NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A) | 482.521 kg/d | — |
-| IA-EVAP_ACID-FEED | BMED_ACID | EVAP_ACID | L | mass | present | HCl 2 M from BMED | 1304.5179 kg/d | — |
-| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | L | mass | present | evaporator condensate return (BMED water make-up) | 864.9665 kg/d | — |
-| SF-EVAP_ACID | SOL_ARK_60K | EVAP_ACID | E | elec | present | 480 V AC | 1.497 kW | — |
+| IA-BASE-01 | EVAP_BASE | GLASS_DIGEST | L | mass | present | digest NaOH, 20 wt% | 21.968 kg/d | — |
+| IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | L | mass | present | NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A) | 482.2861 kg/d | — |
+| IA-EVAP_ACID-FEED | BMED_ACID | EVAP_ACID | L | mass | present | HCl 2 M from BMED | 1304.6046 kg/d | — |
+| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | L | mass | present | evaporator condensate return (BMED water make-up) | 865.024 kg/d | — |
+| SF-EVAP_ACID | SOL_ARK_60K | EVAP_ACID | E | elec | present | 480 V AC | 1.498 kW | — |
 | IA-EVAP_BASE-FEED | BMED_BASE | EVAP_BASE | L | mass | present | NaOH 2 M from BMED | 1301.7164 kg/d | — |
-| IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | L | mass | present | evaporator condensate return (BMED water make-up) | 799.0053 kg/d | — |
-| SF-EVAP_BASE | SOL_ARK_60K | EVAP_BASE | E | elec | present | 480 V AC | 1.324 kW | — |
-| IA-NAOH-MU | NORTH_DOCK | EVAP_BASE | S | mass | present | purchased NaOH flake make-up | 5.1063 kg/d | — |
+| IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | L | mass | present | evaporator condensate return (BMED water make-up) | 801.8559 kg/d | — |
+| SF-EVAP_BASE | SOL_ARK_60K | EVAP_BASE | E | elec | present | 480 V AC | 1.328 kW | — |
+| IA-NAOH-MU | NORTH_DOCK | EVAP_BASE | S | mass | present | purchased NaOH flake make-up | 4.3936 kg/d | — |
 | IA-AIR-IN | NORTH_DOCK | CRYO_ASU | S/L | mass | present | intake air | 0.0 kg/d | — |
 | IA-NOX-CO2 | NOX_SCRUB | CRYO_ASU | S/L | mass | present | scrubbed CO2 to the cold box | 21.747426 kg/d | — |
 | IA-NOX-N2 | NOX_SCRUB | CRYO_ASU | S/L | mass | present | scrubbed flue nitrogen to the cold box | 193.797004 kg/d | — |
@@ -443,7 +443,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-O2-RET | HDR_O2 | CRYO_ASU | S | mass | present | oxygen return | 0.0 kg/d | — |
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | S | mass | present | CO2 return | 0.0 kg/d | — |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | S/L | mass | present | dissolved gas | 0.0 kg/d | — |
-| SF-CRYO_ASU | SOL_ARK_60K | CRYO_ASU | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.6598 kW | — |
+| SF-CRYO_ASU | SOL_ARK_60K | CRYO_ASU | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.6683 kW | — |
 | IA-ELY-H2O | ROOF_TANK | H2O_ELYZ | L | mass | present | electrolyser feed water | 99.150199 kg/d | — |
 | IA-ELY-H2 | H2O_ELYZ | CRYO_H2 | G | mass | present | electrolyser H2 | 11.095576 kg/d | — |
 | IA-ELY-O2 | H2O_ELYZ | CRYO_O2 | G | mass | present | electrolyser O2 | 88.054623 kg/d | — |
@@ -487,5 +487,14 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW6-H2B | EW_6 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.03496 kg/d | — |
 | IA-EW7-H2B | EW_7 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.454643 kg/d | — |
 | IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032272 kg/d | — |
-| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 105.214 kW | — |
+| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 99.9854 kW | — |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.414905 kg/d | — |
+| SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.498 kW | — |
+| SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.328 kW | — |
+| IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | G | mass | present | column vent: non-condensables, water vapour, trace HCl | 0.0292 kg/d | — |
+| IA-VS-NAOH | BMED_BASE | EVAP_ACID_VS | L | mass | present | NaOH 2 M bleed | 0.0005 kg/d | — |
+| IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | L | mass | present | spent scrub liquor (NaCl in NaOH) to the BMED brine | 0.0006 kg/d | — |
+| IA-VS-OFF | EVAP_ACID_VS | ALK_SCRUBBER | G | mass | present | scrubbed vent to the house acid-gas header | 0.0292 kg/d | — |
+| SF-EVAP_ACID_VS | SOL_ARK_60K | EVAP_ACID_VS | E | elec | present | 480 V AC | 0.0238 kW | — |
+| SQ-EVAP_ACID_VS | EVAP_ACID_VS | HEAT_SINK | E | energy | present | electrical input leaving as heat | 0.0238 kW | — |
+| IA-H2P-H2O | H2_DRYER | VCD_TRAIN | L | mass | present | TSA regeneration condensate | 0.0 kg/d | — |

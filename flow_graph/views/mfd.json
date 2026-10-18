@@ -20,8 +20,35 @@
       "notes": "Acid polish scrub (S65)",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "design": {
+          "duty": "acid polish of the same air (liquor to CRU)",
+          "gas_kg_d": 37509.8546,
+          "Q_m3_s": 0.3618,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 600,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 3.89,
+          "dP_Pa": 1171.034,
+          "fan_W": 847.3248,
+          "pump_W": 265.006,
+          "kW": 1.1123,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 1.1123,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
+      }
     },
     {
       "unit_id": "AFTERBURNER",
@@ -69,14 +96,35 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.4,
+        "value": 1.1123,
         "unit": "kW",
         "status": "study",
-        "note": "Study scrub pump/fan (AQS-EQP-VENT-001)"
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "duty": "NaOH scrub of the house acid-gas header",
+          "gas_kg_d": 37509.8546,
+          "Q_m3_s": 0.3618,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 600,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 3.89,
+          "dP_Pa": 1171.034,
+          "fan_W": 847.3248,
+          "pump_W": 265.006,
+          "kW": 1.1123,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       }
     },
     {
@@ -105,7 +153,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "rated_kW": 40.0,
-        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)"
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)",
+        "rated_kW_basis": "drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py."
       }
     },
     {
@@ -148,7 +197,12 @@
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 5.6267,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed()."
+      }
     },
     {
       "unit_id": "BMED_UPW_POLISH",
@@ -161,13 +215,32 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 6.0,
+        "value": 0.018,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "X-MFG-34 (A-M-176, AQS-DUTY-070): RO pump 2.6 W + EDI 0.39 W + UV 15 W; potable share bypasses."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
+        "design": {
+          "UPW_kg_d": 127.300395,
+          "bypass_kg_d": 197.048272,
+          "RO_feed_kg_d": 133.34539999999998,
+          "recovery": 0.9546665651758517,
+          "osmotic_bar": 0.19204145086101648,
+          "feed_bar": 6.858708117527684,
+          "membrane_m2": 0.26520915624999997,
+          "modules": 2,
+          "RO_kW": 0.0026463459994646287,
+          "EDI_A": 0.009730285740657567,
+          "EDI_kW": 0.00038921142962630267,
+          "UV_kW": 0.015,
+          "total_kW": 0.01803555742909093,
+          "kWh_per_m3": 3.2461065645922726,
+          "kWh_per_m3_RO_EDI": 0.5463508924805983
+        }
       }
     },
     {
@@ -263,7 +336,45 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "store_kg": 85.346,
+        "store_water_volume_m3": 0.0919,
+        "design": {
+          "P_design_MPa": 2.2,
+          "S_MPa": 115.0,
+          "t_req_mm": 1.085,
+          "t_min_mm": 11.8038,
+          "t_ok": true,
+          "OD_mm": 114.3,
+          "ID_mm": 87.32,
+          "tube_m": 6.096,
+          "banks": [
+            {
+              "bank": "main",
+              "V_m3": 0.0919,
+              "tubes": 4,
+              "halves": 2
+            }
+          ],
+          "tubes": 4,
+          "steel_kg": 690.0672,
+          "D_mm": 114,
+          "wall_mm": 13.49,
+          "H_mm": 450,
+          "T_C": 25,
+          "rack_mm": [
+            6696,
+            1500,
+            450
+          ],
+          "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93"
+        },
+        "size_mm": [
+          6696,
+          1500,
+          450
+        ],
+        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)"
       }
     },
     {
@@ -291,17 +402,112 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 4.0,
+        "value": 1.0755,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-CRY-STIR-CONT study band"
+        "note": "X-MFG-36 (A-M-169): 13.07 kg/d x 1.97 kWh/kg; peak 3.23 kW over the run hours."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "store_kg": 18,
         "store_basis": "need: 8.3 kg dark-hours buffer (11.10 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
-        "store_water_volume_m3": 1.21
+        "store_water_volume_m3": 1.21,
+        "design": {
+          "P_design_MPa": 22.0,
+          "S_MPa": 115.0,
+          "t_req_mm": 10.1559,
+          "t_min_mm": 11.8038,
+          "t_ok": true,
+          "OD_mm": 114.3,
+          "ID_mm": 87.32,
+          "tube_m": 6.096,
+          "banks": [
+            {
+              "bank": "main",
+              "V_m3": 1.21,
+              "tubes": 34,
+              "halves": 2
+            }
+          ],
+          "tubes": 34,
+          "steel_kg": 5865.5712,
+          "D_mm": 114,
+          "wall_mm": 13.49,
+          "H_mm": 1050,
+          "T_C": 25,
+          "rack_mm": [
+            6696,
+            1500,
+            1050
+          ],
+          "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93"
+        },
+        "size_mm": [
+          6696,
+          1500,
+          1050
+        ],
+        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
+        "compressor_design": {
+          "H2_kg_d": 13.070972,
+          "n_stages": 5,
+          "T_limit_C": 135.0,
+          "ratio_per_stage": 1.8205642030260802,
+          "kWh_per_kg": 1.974725678896425,
+          "P_avg_kW": 1.0754826690223398,
+          "P_peak_kW": 3.22644800706702,
+          "stages": [
+            {
+              "stage": 1,
+              "P_in_bar": 10.0,
+              "P_out_bar": 18.2056420302608,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 144.19064007577052,
+              "diaphragm_D_mm": 349.8468473729095
+            },
+            {
+              "stage": 2,
+              "P_in_bar": 18.2056420302608,
+              "P_out_bar": 33.14454017339987,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 79.2010739506477,
+              "diaphragm_D_mm": 259.28355049952376
+            },
+            {
+              "stage": 3,
+              "P_in_bar": 33.14454017339987,
+              "P_out_bar": 60.34176336545163,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 43.503587414825766,
+              "diaphragm_D_mm": 192.16397136195798
+            },
+            {
+              "stage": 4,
+              "P_in_bar": 60.34176336545163,
+              "P_out_bar": 109.85605433061177,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 23.895662313098086,
+              "diaphragm_D_mm": 142.41933905354801
+            },
+            {
+              "stage": 5,
+              "P_in_bar": 109.85605433061178,
+              "P_out_bar": 200.0,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 13.125415886668279,
+              "diaphragm_D_mm": 105.55187839162691
+            }
+          ],
+          "units": 2,
+          "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers"
+        },
+        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)"
       }
     },
     {
@@ -347,7 +553,7 @@
           "S17-BMED": 5.6267,
           "SF-EVAP_ACID": 1.497,
           "IA-PV-01": 312.5,
-          "BMED_kW": null,
+          "BMED_kW": 5.6267,
           "EVAP_kW": 1.497,
           "bus_r0": 195.99939999999992,
           "PV": {
@@ -378,7 +584,49 @@
         "store_water_volume_m3": 0.5,
         "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)",
         "crew_reserve_kg": 6.8,
-        "crew_reserve_basis": "separate cylinder bank, crew draw 3.40 kg/d x 2 d (NFPA 99 reserve >= 1 average day; AQS-ELEC-007 autonomy 2 d governs); not drawn by FUEL_CELL (X-RED-04, A-M-146)"
+        "crew_reserve_basis": "separate cylinder bank, crew draw 3.40 kg/d x 2 d (NFPA 99 reserve >= 1 average day; AQS-ELEC-007 autonomy 2 d governs); not drawn by FUEL_CELL (X-RED-04, A-M-146)",
+        "design": {
+          "P_design_MPa": 22.0,
+          "S_MPa": 115.0,
+          "t_req_mm": 10.1559,
+          "t_min_mm": 11.8038,
+          "t_ok": true,
+          "OD_mm": 114.3,
+          "ID_mm": 87.32,
+          "tube_m": 6.096,
+          "banks": [
+            {
+              "bank": "main",
+              "V_m3": 0.5,
+              "tubes": 14,
+              "halves": 2
+            },
+            {
+              "bank": "crew reserve",
+              "V_m3": 0.02379286214135759,
+              "tubes": 2,
+              "halves": 2
+            }
+          ],
+          "tubes": 16,
+          "steel_kg": 2760.2688,
+          "D_mm": 114,
+          "wall_mm": 13.49,
+          "H_mm": 600,
+          "T_C": 25,
+          "rack_mm": [
+            6696,
+            1500,
+            600
+          ],
+          "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93"
+        },
+        "size_mm": [
+          6696,
+          1500,
+          600
+        ],
+        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)"
       }
     },
     {
@@ -583,14 +831,56 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.3,
+        "value": 0.0205,
         "unit": "kW",
         "status": "study",
-        "note": "Study dryer parasitic \u2014 not nameplate"
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "H2_kg_d": 1.975396,
+          "Nm3_h": 0.9151067696759259,
+          "O2_mol_d": 0.9798591269841268,
+          "water_kg_d": 0.035304324345238086,
+          "HCl_kg_d": 3.572664362896825e-05,
+          "guard_kg": 0.03215397926607142,
+          "sieve_kg": 0.35304324345238086,
+          "beds": {
+            "deoxo": {
+              "V_L": 0.18302135393518518,
+              "tube": "DN25 Sch 40 316L",
+              "L_mm": 328,
+              "count": 2
+            },
+            "guard": {
+              "V_L": 0.05,
+              "tube": "DN25 Sch 40 316L",
+              "L_mm": 300,
+              "count": 2
+            },
+            "TSA": {
+              "V_L": 0.5043474906462584,
+              "tube": "DN50 Sch 40 316L",
+              "L_mm": 300,
+              "count": 2
+            }
+          },
+          "regen_W": 1.0310009893078513,
+          "loss_W": 37.98279150873541,
+          "insulation_mm": 38,
+          "kW": 0.0205,
+          "D_mm": 60,
+          "H_mm": 628,
+          "T_C": 250.0,
+          "wall_mm": 3.91
+        },
+        "size_mm": [
+          600,
+          400,
+          1028
+        ]
       }
     },
     {
@@ -911,8 +1201,35 @@
       "notes": "MET scrub/baghouse (S71/S72)",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "design": {
+          "duty": "metal-aisle fume and mist (wet scrubber ahead of the baghouse filter)",
+          "gas_kg_d": 71604.0,
+          "Q_m3_s": 0.6906,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 800,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 7.4258,
+          "dP_Pa": 1171.034,
+          "fan_W": 1617.4908,
+          "pump_W": 505.8802,
+          "kW": 2.1234,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1200,
+          1200,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 2.1234,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W."
+      }
     },
     {
       "unit_id": "MFG_SHOP",
@@ -968,7 +1285,34 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "NFPA 37 / plant acid-gas practice"
+        "ref": "NFPA 37 / plant acid-gas practice",
+        "design": {
+          "duty": "flue, leach off-gas and nitric vents",
+          "gas_kg_d": 266.0926,
+          "Q_m3_s": 0.0026,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 200,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 0.4775,
+          "dP_Pa": 1171.034,
+          "fan_W": 6.0109,
+          "pump_W": 32.5312,
+          "kW": 0.0385,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          600,
+          600,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 0.0385,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W."
       }
     },
     {
@@ -1227,13 +1571,13 @@
       },
       "modules": [],
       "params": {
-        "kW": 1282,
-        "kWh": 3948,
+        "kW": 1217,
+        "kWh": 3747,
         "presence": "present",
-        "charge_kW": 1282,
-        "discharge_kW": 282,
+        "charge_kW": 1217,
+        "discharge_kW": 268,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 55 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 52 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
           "H2_m3_d": 15.806,
           "purge_m3_h": 65.86,
@@ -1344,10 +1688,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Goods balance (A-M-265): foundry products net 0 (stock loop closes on the shop draw) + mfg goods surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return) - internal use fully looped = 0.0 kg/d goods export at the bounding case. THIS IS THE PLANT SURPLUS STATEMENT: the plant sustains itself in goods with zero saleable goods surplus at Rev AC scope; the NORTH_DOCK residual is the non-goods study-basis imbalance (NOX_SCRUB/CRYO_H2/AFTERBURNER + WS rounding), owned by those lanes, not goods. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",

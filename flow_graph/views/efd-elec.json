@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 53,
-  "edge_count": 57,
+  "node_count": 54,
+  "edge_count": 58,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -18,8 +18,35 @@
       "notes": "Acid polish scrub (S65)",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "design": {
+          "duty": "acid polish of the same air (liquor to CRU)",
+          "gas_kg_d": 37509.8546,
+          "Q_m3_s": 0.3618,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 600,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 3.89,
+          "dP_Pa": 1171.034,
+          "fan_W": 847.3248,
+          "pump_W": 265.006,
+          "kW": 1.1123,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 1.1123,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
+      }
     },
     {
       "unit_id": "ALK_SCRUBBER",
@@ -32,14 +59,35 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.4,
+        "value": 1.1123,
         "unit": "kW",
         "status": "study",
-        "note": "Study scrub pump/fan (AQS-EQP-VENT-001)"
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "duty": "NaOH scrub of the house acid-gas header",
+          "gas_kg_d": 37509.8546,
+          "Q_m3_s": 0.3618,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 600,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 3.89,
+          "dP_Pa": 1171.034,
+          "fan_W": 847.3248,
+          "pump_W": 265.006,
+          "kW": 1.1123,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1000,
+          1000,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       }
     },
     {
@@ -68,7 +116,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "rated_kW": 40.0,
-        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)"
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)",
+        "rated_kW_basis": "drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py."
       }
     },
     {
@@ -97,7 +146,12 @@
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 5.6267,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed()."
+      }
     },
     {
       "unit_id": "BMED_UPW_POLISH",
@@ -110,13 +164,32 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 6.0,
+        "value": 0.018,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "X-MFG-34 (A-M-176, AQS-DUTY-070): RO pump 2.6 W + EDI 0.39 W + UV 15 W; potable share bypasses."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
+        "design": {
+          "UPW_kg_d": 127.300395,
+          "bypass_kg_d": 197.048272,
+          "RO_feed_kg_d": 133.34539999999998,
+          "recovery": 0.9546665651758517,
+          "osmotic_bar": 0.19204145086101648,
+          "feed_bar": 6.858708117527684,
+          "membrane_m2": 0.26520915624999997,
+          "modules": 2,
+          "RO_kW": 0.0026463459994646287,
+          "EDI_A": 0.009730285740657567,
+          "EDI_kW": 0.00038921142962630267,
+          "UV_kW": 0.015,
+          "total_kW": 0.01803555742909093,
+          "kWh_per_m3": 3.2461065645922726,
+          "kWh_per_m3_RO_EDI": 0.5463508924805983
+        }
       }
     },
     {
@@ -187,44 +260,44 @@
           "vent_bore_req_mm": 0.0,
           "vent_DN": 25,
           "thermal_term": "no sized volume: pump terms only",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.3 kPa (1.25 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
         },
         "design": {
-          "feed_N2_kg_d": 193.730075,
-          "feed_CO2_kg_d": 21.626763,
-          "x_CO2": 0.06634228381003247,
-          "CO2_mol_per_cycle": 163.8018859350148,
-          "sorbent_kg_per_bed": 109.20125729000988,
+          "feed_N2_kg_d": 193.797004,
+          "feed_CO2_kg_d": 21.747426,
+          "x_CO2": 0.06666624993687276,
+          "CO2_mol_per_cycle": 164.71579186548513,
+          "sorbent_kg_per_bed": 109.81052791032342,
           "beds": 3,
-          "bed_D_mm": 414.6685027670957,
-          "bed_L_mm": 1244.005508301287,
-          "regen_kW": 1.4022351446514685,
-          "blower_kW": 0.04335324075661783,
-          "co2_comp_kW": 0.08126780228278249,
-          "co2_chill_kW": 0.03291573303819444,
+          "bed_D_mm": 415.43826472979714,
+          "bed_L_mm": 1246.3147941893913,
+          "regen_kW": 1.4100586871418115,
+          "blower_kW": 0.043383271626889285,
+          "co2_comp_kW": 0.08172122274273978,
+          "co2_chill_kW": 0.03309938100694444,
           "getter_kW": 0.1,
-          "total_kW": 1.659771920729063,
+          "total_kW": 1.6682625625183851,
           "comp_stages": 4,
           "comp_ratio_per_stage": 2.114742526881128,
           "comp_T_out_C": 121.93064278721914,
           "expander_backup": {
-            "cold_kW": 0.08228933259548611,
+            "cold_kW": 0.08274845251736111,
             "T_out_C": -56.08836699924316,
-            "loop_kg_d": 219.9004069352681,
-            "shaft_kW": 0.21953365601652078,
-            "net_kW": 0.44275531385620787,
+            "loop_kg_d": 221.12730542220444,
+            "shaft_kW": 0.22075850827646934,
+            "net_kW": 0.4452255949813042,
             "COP": 0.1858573573714599,
-            "chiller_kW": 0.03291573303819444
+            "chiller_kW": 0.03309938100694444
           },
-          "H_mm": 1244,
+          "H_mm": 1246,
           "D_mm": 415
         }
       },
       "continuous_kw": {
-        "value": 1.6598,
+        "value": 1.6683,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.043 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.41 + blower 0.043 + CO2 compressor 0.082 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
       },
       "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through"
     },
@@ -239,17 +312,112 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 4.0,
+        "value": 1.0755,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-CRY-STIR-CONT study band"
+        "note": "X-MFG-36 (A-M-169): 13.07 kg/d x 1.97 kWh/kg; peak 3.23 kW over the run hours."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "store_kg": 18,
         "store_basis": "need: 8.3 kg dark-hours buffer (11.10 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
-        "store_water_volume_m3": 1.21
+        "store_water_volume_m3": 1.21,
+        "design": {
+          "P_design_MPa": 22.0,
+          "S_MPa": 115.0,
+          "t_req_mm": 10.1559,
+          "t_min_mm": 11.8038,
+          "t_ok": true,
+          "OD_mm": 114.3,
+          "ID_mm": 87.32,
+          "tube_m": 6.096,
+          "banks": [
+            {
+              "bank": "main",
+              "V_m3": 1.21,
+              "tubes": 34,
+              "halves": 2
+            }
+          ],
+          "tubes": 34,
+          "steel_kg": 5865.5712,
+          "D_mm": 114,
+          "wall_mm": 13.49,
+          "H_mm": 1050,
+          "T_C": 25,
+          "rack_mm": [
+            6696,
+            1500,
+            1050
+          ],
+          "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93"
+        },
+        "size_mm": [
+          6696,
+          1500,
+          1050
+        ],
+        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
+        "compressor_design": {
+          "H2_kg_d": 13.070972,
+          "n_stages": 5,
+          "T_limit_C": 135.0,
+          "ratio_per_stage": 1.8205642030260802,
+          "kWh_per_kg": 1.974725678896425,
+          "P_avg_kW": 1.0754826690223398,
+          "P_peak_kW": 3.22644800706702,
+          "stages": [
+            {
+              "stage": 1,
+              "P_in_bar": 10.0,
+              "P_out_bar": 18.2056420302608,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 144.19064007577052,
+              "diaphragm_D_mm": 349.8468473729095
+            },
+            {
+              "stage": 2,
+              "P_in_bar": 18.2056420302608,
+              "P_out_bar": 33.14454017339987,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 79.2010739506477,
+              "diaphragm_D_mm": 259.28355049952376
+            },
+            {
+              "stage": 3,
+              "P_in_bar": 33.14454017339987,
+              "P_out_bar": 60.34176336545163,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 43.503587414825766,
+              "diaphragm_D_mm": 192.16397136195798
+            },
+            {
+              "stage": 4,
+              "P_in_bar": 60.34176336545163,
+              "P_out_bar": 109.85605433061177,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 23.895662313098086,
+              "diaphragm_D_mm": 142.41933905354801
+            },
+            {
+              "stage": 5,
+              "P_in_bar": 109.85605433061178,
+              "P_out_bar": 200.0,
+              "T_out_C": 125.22502918535349,
+              "intercooler_W": 585.5695233190075,
+              "swept_cm3": 13.125415886668279,
+              "diaphragm_D_mm": 105.55187839162691
+            }
+          ],
+          "units": 2,
+          "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers"
+        },
+        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)"
       }
     },
     {
@@ -823,14 +991,56 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.3,
+        "value": 0.0205,
         "unit": "kW",
         "status": "study",
-        "note": "Study dryer parasitic \u2014 not nameplate"
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "H2_kg_d": 1.975396,
+          "Nm3_h": 0.9151067696759259,
+          "O2_mol_d": 0.9798591269841268,
+          "water_kg_d": 0.035304324345238086,
+          "HCl_kg_d": 3.572664362896825e-05,
+          "guard_kg": 0.03215397926607142,
+          "sieve_kg": 0.35304324345238086,
+          "beds": {
+            "deoxo": {
+              "V_L": 0.18302135393518518,
+              "tube": "DN25 Sch 40 316L",
+              "L_mm": 328,
+              "count": 2
+            },
+            "guard": {
+              "V_L": 0.05,
+              "tube": "DN25 Sch 40 316L",
+              "L_mm": 300,
+              "count": 2
+            },
+            "TSA": {
+              "V_L": 0.5043474906462584,
+              "tube": "DN50 Sch 40 316L",
+              "L_mm": 300,
+              "count": 2
+            }
+          },
+          "regen_W": 1.0310009893078513,
+          "loss_W": 37.98279150873541,
+          "insulation_mm": 38,
+          "kW": 0.0205,
+          "D_mm": 60,
+          "H_mm": 628,
+          "T_C": 250.0,
+          "wall_mm": 3.91
+        },
+        "size_mm": [
+          600,
+          400,
+          1028
+        ]
       }
     },
     {
@@ -990,8 +1200,35 @@
       "notes": "MET scrub/baghouse (S71/S72)",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "design": {
+          "duty": "metal-aisle fume and mist (wet scrubber ahead of the baghouse filter)",
+          "gas_kg_d": 71604.0,
+          "Q_m3_s": 0.6906,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 800,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 7.4258,
+          "dP_Pa": 1171.034,
+          "fan_W": 1617.4908,
+          "pump_W": 505.8802,
+          "kW": 2.1234,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1200,
+          1200,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 2.1234,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W."
+      }
     },
     {
       "unit_id": "MFG_SHOP",
@@ -1023,7 +1260,34 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "NFPA 37 / plant acid-gas practice"
+        "ref": "NFPA 37 / plant acid-gas practice",
+        "design": {
+          "duty": "flue, leach off-gas and nitric vents",
+          "gas_kg_d": 266.0926,
+          "Q_m3_s": 0.0026,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 200,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 0.4775,
+          "dP_Pa": 1171.034,
+          "fan_W": 6.0109,
+          "pump_W": 32.5312,
+          "kW": 0.0385,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          600,
+          600,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 0.0385,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W."
       }
     },
     {
@@ -1072,7 +1336,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 417.2469,
+        "value": 412.0471,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1080,28 +1344,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7818,
+        "count": 7420,
         "presence": "present",
-        "nameplate_kw": 3909,
-        "area_m2": 34328,
-        "balance_kWp": 1955,
+        "nameplate_kw": 3710,
+        "area_m2": 32581,
+        "balance_kWp": 1855,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            270000,
-            138000
+            204000,
+            174000
           ],
           "bays": [
-            45,
-            23
+            34,
+            29
           ],
-          "footprint_m2": 37260.0,
-          "extension_m2": 36828.0,
-          "roof_capacity_kWp": 3913.3,
+          "footprint_m2": 35496.0,
+          "extension_m2": 35064.0,
+          "roof_capacity_kWp": 3714.3,
           "perimeter_pathway_mm": 1829,
-          "arrays": 18,
-          "extension_load_kW": 105.21,
+          "arrays": 20,
+          "extension_load_kW": 99.99,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -1148,13 +1412,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3300.0,
+        "kW": 3120.0,
         "presence": "present",
-        "count": 55,
+        "count": 52,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3018.0,
-          "export_kWh_d_clear": 8459,
+          "export_peak_kW": 2852.4,
+          "export_kWh_d_clear": 8028,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1163,9 +1427,9 @@
           "inverters": [
             11,
             11,
-            11,
-            11,
-            11
+            10,
+            10,
+            10
           ],
           "breaker_A": [
             1000,
@@ -1260,13 +1524,13 @@
       },
       "modules": [],
       "params": {
-        "kW": 1282,
-        "kWh": 3948,
+        "kW": 1217,
+        "kWh": 3747,
         "presence": "present",
-        "charge_kW": 1282,
-        "discharge_kW": 282,
+        "charge_kW": 1217,
+        "discharge_kW": 268,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 55 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 52 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
           "H2_m3_d": 15.806,
           "purge_m3_h": 65.86,
@@ -1359,7 +1623,7 @@
       ],
       "params": {
         "equipment_id": "PV-CELL-01",
-        "avg_kw": 1.0,
+        "avg_kw": 0.3917,
         "koh": "WS_KOH",
         "not": "PV_ARRAY",
         "size_mm": [
@@ -1367,7 +1631,64 @@
           1200,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "design": {
+          "cells_per_d": 3,
+          "tools": [
+            {
+              "id": "PV-TEX-01",
+              "design": "KOH texture bath, 10 L PP tank, immersion heater",
+              "peak_kW": 1.9835999950403127,
+              "kWh_d": 0.6870259209662386
+            },
+            {
+              "id": "PV-EMIT-01",
+              "design": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre",
+              "peak_kW": 3.7942691188488986,
+              "kWh_d": 5.876082069096683
+            },
+            {
+              "id": "PV-PSG-01",
+              "design": "HF PSG etch, room temperature PP bath",
+              "peak_kW": 0.0,
+              "kWh_d": 0.0
+            },
+            {
+              "id": "PV-ARC-01",
+              "design": "PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump",
+              "peak_kW": 2.2514027215504537,
+              "kWh_d": 1.9534860548837867
+            },
+            {
+              "id": "PV-CON-01",
+              "design": "Screen printer and 200 C dryer",
+              "peak_kW": 0.7,
+              "kWh_d": 0.35
+            },
+            {
+              "id": "PV-FIRE-01",
+              "design": "IR lamp fast-firing furnace",
+              "peak_kW": 3.0,
+              "kWh_d": 0.51
+            },
+            {
+              "id": "PV-IV-01",
+              "design": "Flash IV tester",
+              "peak_kW": 0.1,
+              "kWh_d": 0.025
+            }
+          ],
+          "kWh_d": 9.401594044946709,
+          "avg_kW": 0.3917330852061129,
+          "peak_kW": 3.7942691188488986,
+          "kWh_per_cell": 3.133864681648903
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3917,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time)."
       }
     },
     {
@@ -1384,8 +1705,28 @@
       "notes": "Aqueous HF (WS_HF_ED mandatory). Duty: notes/FLUOROPOLYMER_DUTY.md. Rate unset. Sector POLYMERS.",
       "enabled": true,
       "modules": [],
-      "params": {},
-      "continuous_kw": null
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby, 0 duty at the bounding case (AQS-DUTY-073 sec. 3). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      }
     },
     {
       "unit_id": "IND_MELT",
@@ -1401,7 +1742,27 @@
       "notes": "Primary induction melt furnace. Coreless or channel. Feeds castings and alloy. Binding foundry sector 2026-10-16. Electrical load on RECTIFIER/LOAD_AGG. Sized: 10 kg crucible, 25 kW, 2-3 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "charge_kg_d": 14.1414,
+          "stock_out_kg_d": 14.0,
+          "slag_kg_d": 0.1414,
+          "crucible_kg": 10.0,
+          "heats_d": 2,
+          "melt_kWh_d": 7.151,
+          "avg_kW": 0.298,
+          "peak_kW": 11.0,
+          "connected_kW": 25.0,
+          "kWh_per_kg": {
+            "Cu": 0.3616,
+            "Fe": 0.5406,
+            "Zn": 0.1605
+          },
+          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN"
+        }
+      },
       "continuous_kw": 25
     },
     {
@@ -1418,7 +1779,15 @@
       "notes": "RF heating for preheat, sintering, and zone work. Primary electrical heat path. Electrical load on RECTIFIER/LOAD_AGG. 5 kW, 100-400 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "duty_kg_d": 0.0,
+          "connected_kW": 5.0,
+          "status_note": "preheat/sinter standby (A-M-232); sinter feed blocked"
+        }
+      },
       "continuous_kw": 5
     },
     {
@@ -1434,7 +1803,15 @@
       "notes": "Vacuum induction with induction skull / cold-crucible (ISM/CCIM) for Ti and reactive metals. See notes/ADVANCED_CASTING.md. ISM/CCIM: 2 kg, 15 kW, 5-10 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 15.0,
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)"
+        }
+      },
       "continuous_kw": 15
     },
     {
@@ -1449,7 +1826,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 865.0,
+        "water_off_kg_d": 865.05,
         "feed_wt": 0.0707,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 41.5,
@@ -1468,7 +1845,7 @@
           "p_body_kPa": 101.325,
           "p_shell_kPa": 166.98,
           "ratio": 1.648,
-          "water_kg_h": 36.041,
+          "water_kg_h": 36.044,
           "duty_kW": 22.6,
           "comp_shaft_kW": 1.34,
           "comp_elec_kW": 1.489,
@@ -1487,7 +1864,7 @@
           "T_feed_preheat_C": 98.6,
           "T_out_C": 49.1,
           "trim_kW": 0.0,
-          "total_kW": 1.497,
+          "total_kW": 1.498,
           "column": {
             "ideal_stages_incl_body": 5,
             "column_stages": 4,
@@ -1497,7 +1874,7 @@
             "packed_mm": 3000,
             "D_req_mm": 148.9,
             "DN": 150,
-            "recycle_hcl_kg_d": 4.32,
+            "recycle_hcl_kg_d": 4.33,
             "material": "borosilicate glass 3.3 sections (ISO 3585), PTFE Pall rings, PTFE-lined flanges (PERRY9_MAT)",
             "height_mm": 3800,
             "placement": "free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body"
@@ -1524,7 +1901,7 @@
             "T_K": 423.9,
             "M_kg_kmol": 18.02,
             "k": 1.33,
-            "A_req_mm2": 16.642,
+            "A_req_mm2": 16.643,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
           },
@@ -1532,12 +1909,12 @@
         },
         "design_kPa": 100.0
       },
-      "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study). | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; sector_id WET -> DIGESTER per the Rev AC sector rename (owner 2026-10-17)",
+      "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).",
       "continuous_kw": {
-        "value": 1.497,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.0 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.1 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
       }
     },
     {
@@ -1552,7 +1929,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 799.01,
+        "water_off_kg_d": 801.86,
         "feed_wt": 0.0741,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 39.8,
@@ -1571,13 +1948,13 @@
           "p_body_kPa": 101.325,
           "p_shell_kPa": 163.73,
           "ratio": 1.616,
-          "water_kg_h": 33.3,
-          "duty_kW": 20.88,
-          "comp_shaft_kW": 1.185,
-          "comp_elec_kW": 1.316,
+          "water_kg_h": 33.411,
+          "duty_kW": 20.95,
+          "comp_shaft_kW": 1.189,
+          "comp_elec_kW": 1.321,
           "w_kJ_kg": 89.6,
           "kWh_per_t": 39.8,
-          "A_ff_m2": 2.32,
+          "A_ff_m2": 2.33,
           "tubes": 20,
           "tube_id_mm": 25.0,
           "tube_L_mm": 1500.0,
@@ -1590,7 +1967,7 @@
           "T_feed_preheat_C": 98.0,
           "T_out_C": 50.6,
           "trim_kW": 0.0,
-          "total_kW": 1.324,
+          "total_kW": 1.328,
           "column": null
         },
         "relief_mm": 9.51,
@@ -1609,12 +1986,12 @@
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
-            "W_kg_h": 39.96,
+            "W_kg_h": 40.09,
             "P1_kPa_abs": 486.3,
             "T_K": 423.9,
             "M_kg_kmol": 18.02,
             "k": 1.33,
-            "A_req_mm2": 15.376,
+            "A_req_mm2": 15.427,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
           },
@@ -1622,17 +1999,17 @@
         },
         "design_kPa": 100.0
       },
-      "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Nickel or fluoropolymer-lined wetted parts (study). | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; sector_id WET -> DIGESTER per the Rev AC sector rename (owner 2026-10-17)",
+      "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Nickel or fluoropolymer-lined wetted parts (study).",
       "continuous_kw": {
-        "value": 1.324,
+        "value": 1.328,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.0 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.316 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.32 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 801.9 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.321 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.33 kW. Study."
       }
     },
     {
       "unit_id": "EXT_HALL",
-      "sector_id": "ELEC_PV",
+      "sector_id": "ELEC",
       "presence": "present",
       "tags": [],
       "electrical_role": "load",
@@ -1642,35 +2019,71 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 32.409,
-          "vent_kW": 45.933,
-          "envelope_kW": 26.872,
-          "total_kW": 105.214,
-          "vent_L_s": 11048.4,
-          "Qh_kW": 63.683,
-          "Qc_kW": 127.824,
-          "slab_kW": 3.567,
-          "gains_kW": 46.219,
+          "light_kW": 30.856,
+          "vent_kW": 43.733,
+          "envelope_kW": 25.396,
+          "total_kW": 99.985,
+          "vent_L_s": 10519.2,
+          "Qh_kW": 60.31,
+          "Qc_kW": 121.408,
+          "slab_kW": 3.304,
+          "gains_kW": 44.005,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 566.476,
-          "peak_c_kW": 504.852
+          "peak_h_kW": 537.166,
+          "peak_c_kW": 479.35
         },
-        "footprint_m2": 36828.0,
+        "footprint_m2": 35064.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 105.214 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 99.985 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "continuous_kw": {
-        "value": 105.214,
+        "value": 99.9854,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 36828 m2; lighting 32.41 kW (IECC 2021 C405, 10 % lit), ventilation 45.93 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 26.87 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 63.7 kW and cooling 127.8 kW thermal average after internal gains 46.2 kW and slab edge 3.57 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 35064 m2; lighting 30.86 kW (IECC 2021 C405, 10 % lit), ventilation 43.73 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 25.40 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 60.3 kW and cooling 121.4 kW thermal average after internal gains 44.0 kW and slab edge 3.30 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
+    },
+    {
+      "unit_id": "EVAP_ACID_VS",
+      "sector_id": "WET",
+      "presence": "present",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "DN": 150,
+        "packed_mm": 500,
+        "height_mm": 1400,
+        "sump_L": 20.0,
+        "material": "PVC-U pipe and fittings (ASTM D1785 Sch 80), in-house cut PVC tube rings, PVC mesh demister (PERRY9_MAT: PVC to 60 C in HCl and NaOH)",
+        "y_in_ppm_design": 489.8,
+        "y_out_ppm": 1.0,
+        "design_case": "upset: column bypassed (A-M-111)",
+        "size_mm": [
+          400,
+          400,
+          1400
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)",
+        "doc": "AQS-DUTY-061"
+      },
+      "notes": "Packed PVC alkali scrubber on the EVAP_ACID column vent; NaOH bleed from BMED_BASE; spent liquor to BMED_ACID. Duty sheet docs-authority/duties/EVAP_ACID_VS.md.",
+      "continuous_kw": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
+      }
     }
   ],
   "edges": [
@@ -1965,7 +2378,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 417.2469,
+        "value": 412.0471,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -2047,7 +2460,7 @@
         "value": 5.6267,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw. | X-PAR-12 TF: BMED HCl make 31.56 of 31.56 kg/d (k 1.000) (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -2122,7 +2535,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.8837,
+        "value": 1.0755,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -2200,7 +2613,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.3,
+        "value": 0.0205,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -2669,10 +3082,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.497,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw. | X-PAR-12 TF: evaporator scales with HCl make (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -2695,7 +3108,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.324,
+        "value": 1.328,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
@@ -2721,7 +3134,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.6598,
+        "value": 1.6683,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -2852,10 +3265,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "unrated pending electrical rollup (node HF_GEN has no continuous_kw)"
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "HF_GEN standby at 0 duty (fluoropolymer train F-blocked, Q-013; feed 0 on F_RECOVER_TO_HF_GEN). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "POLYMERS",
@@ -2927,7 +3340,7 @@
         "value": 5.9909,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -2954,7 +3367,7 @@
         "value": 5.9929,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -2981,7 +3394,7 @@
         "value": 2.2495,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3008,7 +3421,7 @@
         "value": 0.4853,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3035,7 +3448,7 @@
         "value": 0.5023,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3062,7 +3475,7 @@
         "value": 0.5474,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3089,7 +3502,7 @@
         "value": 7.1187,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3116,7 +3529,7 @@
         "value": 0.5053,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3143,7 +3556,7 @@
         "value": 7.538,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -3167,17 +3580,44 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 105.214,
+        "value": 99.9854,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "ELEC_PV",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
       "notes": "X-PAR-07 extension hall feed"
+    },
+    {
+      "stream_id": "SF-EVAP_ACID_VS",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Feed equal to continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null,
+      "params": {}
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

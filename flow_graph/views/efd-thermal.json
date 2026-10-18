@@ -457,13 +457,13 @@
       },
       "modules": [],
       "params": {
-        "kW": 1282,
-        "kWh": 3948,
+        "kW": 1217,
+        "kWh": 3747,
         "presence": "present",
-        "charge_kW": 1282,
-        "discharge_kW": 282,
+        "charge_kW": 1217,
+        "discharge_kW": 268,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 55 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 52 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
           "H2_m3_d": 15.806,
           "purge_m3_h": 65.86,
@@ -708,7 +708,27 @@
       "notes": "Primary induction melt furnace. Coreless or channel. Feeds castings and alloy. Binding foundry sector 2026-10-16. Electrical load on RECTIFIER/LOAD_AGG. Sized: 10 kg crucible, 25 kW, 2-3 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "charge_kg_d": 14.1414,
+          "stock_out_kg_d": 14.0,
+          "slag_kg_d": 0.1414,
+          "crucible_kg": 10.0,
+          "heats_d": 2,
+          "melt_kWh_d": 7.151,
+          "avg_kW": 0.298,
+          "peak_kW": 11.0,
+          "connected_kW": 25.0,
+          "kWh_per_kg": {
+            "Cu": 0.3616,
+            "Fe": 0.5406,
+            "Zn": 0.1605
+          },
+          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN"
+        }
+      },
       "continuous_kw": 25
     },
     {
@@ -724,7 +744,15 @@
       "notes": "Vacuum induction with induction skull / cold-crucible (ISM/CCIM) for Ti and reactive metals. See notes/ADVANCED_CASTING.md. ISM/CCIM: 2 kg, 15 kW, 5-10 kHz. notes/FOUNDRY_SIZING.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 15.0,
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)"
+        }
+      },
       "continuous_kw": 15
     },
     {

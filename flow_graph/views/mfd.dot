@@ -134,7 +134,7 @@ digraph G {
     "VCD_TRAIN" [fillcolor="#ffffff", label="VCD_TRAIN"];
     "REMIN" [fillcolor="#ffffff", label="REMIN"];
   }
-  "NORTH_DOCK" -> "BOUNDARY_EXPORT" [label="DOCK_EXPORT_TBD\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
+  "NORTH_DOCK" -> "BOUNDARY_EXPORT" [label="DOCK_EXPORT_TBD\\n0.0 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
   "BMED_UPW_POLISH" -> "HDR_UPW" [label="S01\\n67.300214 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_O2" -> "HABITATION" [label="S02\\n3.4 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_N2" -> "WAFER_FAB" [label="S03\\n1.4998 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

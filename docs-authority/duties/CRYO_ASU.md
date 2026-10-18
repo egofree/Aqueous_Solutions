@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 215.5 kg/d. Mass out 215.5 kg/d. Electrical duty 1.6598 kW. In: IA-AIR-IN 0 kg/d (intake air); IA-NOX-CO2 21.75 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 193.8 kg/d (scrubbed flue nitrogen to the cold box); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood); 4 more. Out: IA-ASU-N2 193.7 kg/d (nitrogen product); IA-ASU-O2 0.06693 kg/d (oxygen product); IA-ASU-CO2 21.75 kg/d (CO2 product).
+1. Basis. Mass in 215.5 kg/d. Mass out 215.5 kg/d. Electrical duty 1.6683 kW. In: IA-AIR-IN 0 kg/d (intake air); IA-NOX-CO2 21.75 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 193.8 kg/d (scrubbed flue nitrogen to the cold box); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood); 4 more. Out: IA-ASU-N2 193.7 kg/d (nitrogen product); IA-ASU-O2 0.06693 kg/d (oxygen product); IA-ASU-CO2 21.75 kg/d (CO2 product).
 
 2. Size.
 - Column diameter 150 mm. 20 trays × 0.3 m = 6.0 m. The column is a pipe beside the 600×600×800 mm base. Not a packed scrubber.

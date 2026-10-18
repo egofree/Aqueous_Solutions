@@ -43,3 +43,4 @@ IA-EVAP_BASE-COND,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C
 IA-NOX-CO2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,35.87,1392.2,,True,0.1074
 IA-NOX-N2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,35.87,1392.2,,True,0.1074
 IA-LEACH-ASU,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,25.07,973.0,,True,0.0751
+H2_DRYER,vessel,60,250.0,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,47.7,0.0625,97.07,0.628,79.2,,True,0.0096

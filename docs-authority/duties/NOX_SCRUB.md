@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 462.1 kg/d. Mass out 457.1 kg/d. Electrical duty 0.0000 kW. In: S46 0.268 kg/d (exhaust condensate / NOx); IA-FLUE-EXH 265.8 kg/d (flue to the NOx scrubber); IA-FC-EXH 0 kg/d (cell exhaust); IA-LEACH-NOX 195 kg/d (leach offgas); 3 more. Out: IA-NOX-H2O 221.5 kg/d (scrubber condensate); IA-NOX-N 20.05 kg/d (nitrate liquor); IA-NOX-CO2 21.75 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 193.8 kg/d (scrubbed flue nitrogen to the cold box).
+1. Basis. Mass in 462.1 kg/d. Mass out 457.1 kg/d. Electrical duty 0.0385 kW. In: S46 0.268 kg/d (exhaust condensate / NOx); IA-FLUE-EXH 265.8 kg/d (flue to the NOx scrubber); IA-FC-EXH 0 kg/d (cell exhaust); IA-LEACH-NOX 195 kg/d (leach offgas); 3 more. Out: IA-NOX-H2O 221.5 kg/d (scrubber condensate); IA-NOX-N 20.05 kg/d (nitrate liquor); IA-NOX-CO2 21.75 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 193.8 kg/d (scrubbed flue nitrogen to the cold box).
 
 2. Size.
 - Envelope 600×400×1200 mm, 0.2880 m³. That box over this flow would be 15.0 h if it were full. It is not a residence time.

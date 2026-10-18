@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "130bb63c7364bee9a3486f40e046232c3300fc6051de75b17f97956a4c6d1d79",
+  "graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
@@ -19,13 +19,6 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
   },
   {
-   "unit": "BMED_UPW_POLISH",
-   "role": "load",
-   "kw": 6.0,
-   "calc_kw": 6.0,
-   "basis": "AQS-DUTY-070 (X-MFG-34): RO + EDI on the UPW share, potable bypass, UV-TOC"
-  },
-  {
    "unit": "EW_2",
    "role": "load",
    "kw": 0,
@@ -38,13 +31,6 @@
    "kw": 5.248,
    "calc_kw": 5.248,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
-  },
-  {
-   "unit": "CRYO_H2",
-   "role": "load",
-   "kw": 4.0,
-   "calc_kw": 4.0,
-   "basis": "AQS-DUTY-067 (X-MFG-36): 5-stage intercooled diaphragm compressor, average over the day"
   },
   {
    "unit": "MFG_SHOP",
@@ -70,9 +56,16 @@
   {
    "unit": "CRYO_ASU",
    "role": "\u2014",
-   "kw": 1.66,
-   "calc_kw": 1.66,
+   "kw": 1.668,
+   "calc_kw": 1.668,
    "basis": "AQS-DUTY-069 (X-MFG-33): 13X TSA, CO2 compressor and condenser, Ar getter; no cryogenic column"
+  },
+  {
+   "unit": "CRYO_H2",
+   "role": "load",
+   "kw": 1.075,
+   "calc_kw": 1.075,
+   "basis": "AQS-DUTY-067 (X-MFG-36): 5-stage intercooled diaphragm compressor, average over the day"
   },
   {
    "unit": "LEACH_CSTR_1",
@@ -124,16 +117,23 @@
    "basis": "AQS-DSN-OX-001 cell 12.31 A at 2.5 V"
   },
   {
+   "unit": "BMED_UPW_POLISH",
+   "role": "load",
+   "kw": 0.018,
+   "calc_kw": 0.018,
+   "basis": "AQS-DUTY-070 (X-MFG-34): RO + EDI on the UPW share, potable bypass, UV-TOC"
+  },
+  {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 417.276,
+   "kw": 412.047,
    "calc_kw": null,
    "basis": "study share; held for unit task 02"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 105.214,
+   "kw": 99.985,
    "calc_kw": null,
    "basis": "study share; held for unit task 02"
   },
@@ -180,6 +180,13 @@
    "basis": "study share; held for unit task 02"
   },
   {
+   "unit": "MET_SCRUB",
+   "role": "\u2014",
+   "kw": 2.123,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
    "unit": "GEO_HP",
    "role": "load",
    "kw": 2.0,
@@ -211,6 +218,20 @@
    "unit": "EVAP_BASE",
    "role": "load",
    "kw": 1.328,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "ACID_POLISH_SCRUB",
+   "role": "\u2014",
+   "kw": 1.112,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "ALK_SCRUBBER",
+   "role": "load",
+   "kw": 1.112,
    "calc_kw": null,
    "basis": "study share; held for unit task 02"
   },
@@ -250,16 +271,9 @@
    "basis": "study share; held for unit task 02"
   },
   {
-   "unit": "ALK_SCRUBBER",
-   "role": "load",
-   "kw": 0.4,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "H2_DRYER",
-   "role": "load",
-   "kw": 0.3,
+   "unit": "SOLAR_PV_CELL",
+   "role": "\u2014",
+   "kw": 0.392,
    "calc_kw": null,
    "basis": "study share; held for unit task 02"
   },
@@ -278,9 +292,23 @@
    "basis": "study share; held for unit task 02"
   },
   {
+   "unit": "NOX_SCRUB",
+   "role": "\u2014",
+   "kw": 0.038,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
    "unit": "EVAP_ACID_VS",
    "role": "load",
    "kw": 0.024,
+   "calc_kw": null,
+   "basis": "study share; held for unit task 02"
+  },
+  {
+   "unit": "H2_DRYER",
+   "role": "load",
+   "kw": 0.021,
    "calc_kw": null,
    "basis": "study share; held for unit task 02"
   },
@@ -315,8 +343,8 @@
  ],
  "summary": {
   "calculated": 17,
-  "rows": 44,
-  "graph_sum_kW": 184.5,
-  "calc_sum_kW": 174.4
+  "rows": 48,
+  "graph_sum_kW": 170.8,
+  "calc_sum_kW": 160.7
  }
 }

@@ -185,7 +185,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 417.2469,
+        "value": 412.0471,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -193,28 +193,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7818,
+        "count": 7420,
         "presence": "present",
-        "nameplate_kw": 3909,
-        "area_m2": 34328,
-        "balance_kWp": 1955,
+        "nameplate_kw": 3710,
+        "area_m2": 32581,
+        "balance_kWp": 1855,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            270000,
-            138000
+            204000,
+            174000
           ],
           "bays": [
-            45,
-            23
+            34,
+            29
           ],
-          "footprint_m2": 37260.0,
-          "extension_m2": 36828.0,
-          "roof_capacity_kWp": 3913.3,
+          "footprint_m2": 35496.0,
+          "extension_m2": 35064.0,
+          "roof_capacity_kWp": 3714.3,
           "perimeter_pathway_mm": 1829,
-          "arrays": 18,
-          "extension_load_kW": 105.21,
+          "arrays": 20,
+          "extension_load_kW": 99.99,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -252,13 +252,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3300.0,
+        "kW": 3120.0,
         "presence": "present",
-        "count": 55,
+        "count": 52,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 3018.0,
-          "export_kWh_d_clear": 8459,
+          "export_peak_kW": 2852.4,
+          "export_kWh_d_clear": 8028,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -267,9 +267,9 @@
           "inverters": [
             11,
             11,
-            11,
-            11,
-            11
+            10,
+            10,
+            10
           ],
           "breaker_A": [
             1000,
@@ -320,13 +320,13 @@
       },
       "modules": [],
       "params": {
-        "kW": 1282,
-        "kWh": 3948,
+        "kW": 1217,
+        "kWh": 3747,
         "presence": "present",
-        "charge_kW": 1282,
-        "discharge_kW": 282,
+        "charge_kW": 1217,
+        "discharge_kW": 268,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 55 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 52 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
           "H2_m3_d": 15.806,
           "purge_m3_h": 65.86,

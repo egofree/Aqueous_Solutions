@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.975 kg/d. Mass out 1.975 kg/d. Electrical duty 0.3000 kW. In: IA-HDR-H2-02 1.975 kg/d (process H2). Out: S24 0 kg/d (H2 relief contingency); S64 1.975 kg/d (H2 normal path); IA-H2-IN 0 kg/d (dried hydrogen); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood).
+1. Basis. Mass in 1.975 kg/d. Mass out 1.975 kg/d. Electrical duty 0.0205 kW. In: IA-HDR-H2-02 1.975 kg/d (process H2). Out: S24 0 kg/d (H2 relief contingency); S64 1.975 kg/d (H2 normal path); IA-H2-IN 0 kg/d (dried hydrogen); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood); 1 more.
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.
