@@ -3858,7 +3858,7 @@
     },
     {
       "unit_id": "EXT_HALL",
-      "sector_id": "ELEC_PV",
+      "sector_id": "ELEC",
       "enabled": true,
       "class": "building",
       "tags": [],
@@ -12039,7 +12039,7 @@
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "ELEC_PV",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "X-PAR-07 extension hall feed; layers=elec"
     },

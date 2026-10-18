@@ -148,7 +148,7 @@ def power():
     note = (f"X-PAR-07 solver.roof_close: {cond} extension {rf['added_m2']:.0f} m2; lighting {rf['ext']['light_kW']:.2f} kW (IECC 2021 C405, 10 % lit), "
             f"ventilation {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope {rf['ext']['envelope_kW']:.2f} kW (IECC 2021 C402 roof and walls, NOAA DFW degree days).")
     if 'EXT_HALL' not in N:
-        n = dict(unit_id='EXT_HALL', sector_id='ELEC_PV', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
+        n = dict(unit_id='EXT_HALL', sector_id='ELEC', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
                  notes='Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.', enabled=True, modules=[], params={}, continuous_kw=None)
         n['class'] = n.pop('class_'); g['nodes'].append(n); N['EXT_HALL'] = n
     x = rf['ext']
@@ -166,7 +166,7 @@ def power():
         'duty': f"In 0.000 kg/d, out 0.000 kg/d, {kw:.3f} kW. Sheet docs-authority/duties/EXT_HALL.md."})
     old = E['SF-EXT_HALL']['rate']['value'] if 'SF-EXT_HALL' in E else 0.0
     if 'SF-EXT_HALL' not in E:
-        e = json.loads(json.dumps(E['SF-MFG_SHOP'])); e.update(stream_id='SF-EXT_HALL', to_unit_id='EXT_HALL', to_sector_id='ELEC_PV', notes='X-PAR-07 extension hall feed')
+        e = json.loads(json.dumps(E['SF-MFG_SHOP'])); e.update(stream_id='SF-EXT_HALL', to_unit_id='EXT_HALL', to_sector_id='ELEC', notes='X-PAR-07 extension hall feed')
         g['edges'].append(e); E['SF-EXT_HALL'] = e
     E['SF-EXT_HALL']['rate'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': 'Equals EXT_HALL continuous_kw (X-PAR-07).'}
     pv1 = E['IA-PV-01']['rate']; pv1['value'] = round(pv1['value'] + kw - old, 4)
