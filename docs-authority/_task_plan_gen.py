@@ -6,17 +6,13 @@ ex=os.path.exists
 def need(f):
     assert ex(f), f; return f
 inst=open('docs-authority/INSTRUMENT_LOOPS.md').read()
-BIO={'DIGESTER','EMETH','LIGNO_PRE','HTC','YEAST','ABE','ACETOX','ALD','GLYOXAL','FORM','MEAM','IMID','QUAT','ACEX','HNO3','BUCL','ETOH_STILL','BUOH_STILL','BIOFILTER','COMPOST','COMPOST_TOILET','CLARIFIER','STRUVITE','ASH','IODIDE','MUSH_STRAW','MUSH_BLOCK','COMPOST_MYC','AMF'}
-FEED={'HOPPER','SALT_FEED','FLOAT_SINK'}
 def sysof(n):
-    u,s=n['unit_id'],n['sector_id']
-    if u in FEED: return 'FEED'
-    if u.startswith('HAB_') or s=='HAB': return 'HAB'
-    if u in BIO or s=='MEOH': return 'BIO'
-    if s in('FARM','NUT','TRR'): return 'FARM'
-    if s=='WET': return 'MET'
-    return {'MFG':'MFG','OIL':'OIL','GAS':'GAS','CRYO':'CRYO','FAB':'FAB','GLASS':'FAB','WTR':'WTR','ELEC':'ELEC','ELEC_PV':'ELEC','ZNBR2':'ELEC','BACKUP_GEN':'ELEC','FUEL_CELL':'ELEC','PUMPED_HYDRO':'ELEC','HEAT':'THERM','GEO':'THERM','DOCK':'DOCK'}[s]
-SYS=[('FEED','Solids handling and feed preparation (feedstock-agnostic, AQS-ASSAY-001)'),('MET','Metals line: leach, electrowinning, BMED, polish'),('MFG','Manufacturing shop, metal forming, self-copy'),('OIL','Pyrolysis and oil fractions'),('GAS','Gas handling, scrubbing, H2/O2 headers'),('CRYO','Cryogenic air separation, gas storage, expander'),('FAB','Wafer fab, lithography, reagents, glass, SiC'),('BIO','Digester, fermentation, stills, biofilter, methanol'),('FARM','Farm: beds, azolla, hydroponics, animals, nutrients, irrigation'),('HAB','Habitation and life support'),('WTR','Water, wastewater, potable, UPW'),('ELEC','Electrical generation, storage, conversion'),('THERM','Thermal: heat ladder batteries, geothermal, heat sink'),('DOCK','Dock and boundary')]
+    # Owner ruling 2026-10-18 (first-principles audit): the plant is organized by SECTORS;
+    # task systems mirror sectors 1:1. No folding into legacy systems.
+    return n['sector_id']
+SEC_DEF = {s['sector_id']: (s.get('sector_definition') or '') for s in g.get('mvs', {}).get('sectors', [])}
+_seccount = collections.Counter(n['sector_id'] for n in P)
+SYS = [(sid, SEC_DEF.get(sid) or f'{sid} sector (definition pending in mvs.sectors)') for sid, _c in _seccount.most_common()]
 units=collections.defaultdict(list)
 for n in P: units[sysof(n)].append(n)
 assert sum(map(len,units.values()))==len(P)
@@ -312,6 +308,7 @@ for code,title in SYS:
             if not ev: TRI[tri_u(k)]=TRI.get(tri_u(k),0)+1
     cnt.append((code,title,T,D))
 us='\n'.join(out)
+import pathlib; pathlib.Path('/tmp/tp').mkdir(parents=True, exist_ok=True)   # QA R3 sibling fix: hardcoded tmp dir
 json.dump(cnt,open('/tmp/tp/cnt.json','w'))
 tab='\n'.join(f'| {c} | {t} | {a} | {b} |' for c,t,a,b in cnt)
 TA=sum(c[2] for c in cnt);TD=sum(c[3] for c in cnt)
