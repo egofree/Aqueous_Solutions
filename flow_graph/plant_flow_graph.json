@@ -3399,9 +3399,9 @@
       "from_unit_id": "HX8",
       "to_unit_id": "Q3_A",
       "phase": "heat",
-      "presence": "present",
+      "presence": "retired",
       "carries": "HX-8 residual",
-      "notes": "Exchanger, not EW-1.",
+      "notes": "Exchanger, not EW-1. dead since Rev J, superseded by Q4 cross-ties; per first-principles audit correction 5, owner rulings 2026-10-18",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -3419,9 +3419,9 @@
       "from_unit_id": "HX8",
       "to_unit_id": "Q3_B",
       "phase": "heat",
-      "presence": "present",
+      "presence": "retired",
       "carries": "HX-8 residual",
-      "notes": "Exchanger, not EW-1.",
+      "notes": "Exchanger, not EW-1. dead since Rev J, superseded by Q4 cross-ties; per first-principles audit correction 5, owner rulings 2026-10-18",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -3814,7 +3814,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "CRU → BMED acid regen loop",
       "header": null,
       "forbidden": null,
@@ -3834,7 +3834,7 @@
         "full_depth_now",
         "bmed_regen unlabeled"
       ],
-      "notes": "bmed_regen unlabeled"
+      "notes": "bmed_regen unlabeled. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-BMED-04",
@@ -3844,7 +3844,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "CRU → BMED base regen loop",
       "header": null,
       "forbidden": null,
@@ -3864,7 +3864,7 @@
         "full_depth_now",
         "bmed_regen unlabeled"
       ],
-      "notes": "bmed_regen unlabeled"
+      "notes": "bmed_regen unlabeled. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-ESS-HYDRO-CHG",
@@ -4022,7 +4022,7 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 charge (PV/RECT surplus)",
       "header": null,
       "forbidden": null,
@@ -4040,7 +4040,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -4051,7 +4051,7 @@
         "elec",
         "ess"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "ZnBr2 discharge to bus",
       "header": null,
       "forbidden": null,
@@ -4069,7 +4069,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-EW-01",
@@ -4500,7 +4500,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Dryer → pyro",
       "header": null,
       "forbidden": null,
@@ -4520,7 +4520,7 @@
         "full_depth_now",
         "oil_line internals"
       ],
-      "notes": "oil_line internals"
+      "notes": "oil_line internals. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-OIL-02",
@@ -4530,7 +4530,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "Pyro → frac",
       "header": null,
       "forbidden": null,
@@ -4550,7 +4550,7 @@
         "full_depth_now",
         "oil_line internals"
       ],
-      "notes": "oil_line internals"
+      "notes": "oil_line internals. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-OIL-03",
@@ -4606,21 +4606,21 @@
     {
       "stream_id": "IA-POL-02",
       "from_unit_id": "POLISH_BANK",
-      "to_unit_id": "POLISH_BANK",
+      "to_unit_id": "CONTINUOUS_RECYCLE",
       "phase": "L",
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
-      "carries": "Polish series internals (self-loop stub)",
+      "presence": "present",
+      "carries": "Polish bank liquor return to the continuous recycle",
       "header": null,
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "placeholder — no invented rate (lock present_plus_placeholders)"
+        "value": 3302.63279,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18"
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -4631,7 +4631,7 @@
         "full_depth_now",
         "polish_bank unlabeled"
       ],
-      "notes": "polish_bank unlabeled"
+      "notes": "polish_bank unlabeled. Degenerate self-loop repaired to the BH endpoint; per first-principles audit correction 3, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-REC-01",
@@ -4799,32 +4799,6 @@
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FARM",
-      "open_boundary": false,
-      "namespace": "S",
-      "gap_flags": [],
-      "notes": null
-    },
-    {
-      "stream_id": "S05",
-      "from_unit_id": "H2_DRYER",
-      "to_unit_id": "CRYO_H2",
-      "phase": "G",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "carries": "process H2",
-      "header": "dedicated",
-      "forbidden": "HDR_O2, HDR_CO2",
-      "claim_status": "Claimed / Partial",
-      "rate": {
-        "value": 4.8,
-        "unit": "kg/d",
-        "status": "authority",
-        "note": "AQS-REQ-KW-001 §3.0 / AQS-GAS-003 Faraday ≈0.2 kg/h at 150 kg/d wet feed"
-      },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
@@ -5386,7 +5360,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "VCD distillate",
       "header": "process UPW",
       "forbidden": "potable taps w/o remin + UV",
@@ -5402,7 +5376,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "S26",
@@ -5466,7 +5440,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "VCD brine",
       "header": "process",
       "forbidden": "HDR_UPW, farm beds",
@@ -5482,7 +5456,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "S29",
@@ -5492,7 +5466,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "treated grey",
       "header": "HDR_GREY branch",
       "forbidden": "Salria, etch",
@@ -5510,7 +5484,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GREY_TREAT → VCD_FEED / SALT FEED"
+      "notes": "From register: GREY_TREAT → VCD_FEED / SALT FEED. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "S30",
@@ -6098,7 +6072,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "placeholder",
+      "presence": "present",
       "carries": "PEM product H2O",
       "header": "S13 / grey-condensate",
       "forbidden": "potable taps w/o remin + UV",
@@ -6114,7 +6088,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18"
     },
     {
       "stream_id": "S53",
@@ -6444,7 +6418,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": "S05 deleted as a duplicate parallel edge (same H2_DRYER->CRYO_H2 4.8 kg/d authority pool; Rev M retired S05 as an alias of S64, CO2_HEADER_DUTY AQS-DUTY-011); per first-principles audit correction 5, owner rulings 2026-10-18"
     },
     {
       "stream_id": "S65",
@@ -6773,6 +6747,7 @@
       "to_unit_id": "MEOH_FC",
       "phase": "L",
       "layers": [
+        "mass",
         "ess"
       ],
       "presence": "present",

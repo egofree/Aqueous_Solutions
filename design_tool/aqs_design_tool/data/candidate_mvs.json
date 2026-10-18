@@ -3199,7 +3199,7 @@
       "to_sector_id": null,
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
-      "note": "Exchanger, not EW-1.; namespace=IA; layers=mass"
+      "note": "Exchanger, not EW-1. dead since Rev J, superseded by Q4 cross-ties; per first-principles audit correction 5, owner rulings 2026-10-18; namespace=IA; layers=mass"
     },
     {
       "stream_id": "HL-HX8-Q3-B",
@@ -3217,7 +3217,7 @@
       "to_sector_id": null,
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
-      "note": "Exchanger, not EW-1.; namespace=IA; layers=mass"
+      "note": "Exchanger, not EW-1. dead since Rev J, superseded by Q4 cross-ties; per first-principles audit correction 5, owner rulings 2026-10-18; namespace=IA; layers=mass"
     },
     {
       "stream_id": "HL-Q1-A-DOWN",
@@ -3540,8 +3540,8 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "open_boundary": false,
-      "null_rate_kind": "study_deferred",
-      "note": "bmed_regen unlabeled; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; presence=placeholder; namespace=IA; layers=mass"
+      "null_rate_kind": "inventory_cycle",
+      "note": "bmed_regen unlabeled. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-BMED-04",
@@ -3558,8 +3558,8 @@
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "open_boundary": false,
-      "null_rate_kind": "study_deferred",
-      "note": "bmed_regen unlabeled; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; presence=placeholder; namespace=IA; layers=mass"
+      "null_rate_kind": "inventory_cycle",
+      "note": "bmed_regen unlabeled. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ESS-HYDRO-CHG",
@@ -3663,7 +3663,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "ZNBR2",
       "open_boundary": false,
-      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; presence=placeholder; namespace=IA; layers=elec,ess"
+      "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -3680,7 +3680,7 @@
       "from_sector_id": "ZNBR2",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "EFD chemical-storage / charge-discharge typing; gap_flags=ess_layer; presence=placeholder; namespace=IA; layers=elec,ess"
+      "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
     },
     {
       "stream_id": "IA-EW-01",
@@ -4003,7 +4003,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "oil_line internals; gap_flags=intra_aisle,full_depth_now,oil_line internals; presence=placeholder; namespace=IA; layers=mass"
+      "note": "oil_line internals. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,oil_line internals; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-OIL-02",
@@ -4020,7 +4020,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "oil_line internals; gap_flags=intra_aisle,full_depth_now,oil_line internals; presence=placeholder; namespace=IA; layers=mass"
+      "note": "oil_line internals. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,oil_line internals; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-OIL-03",
@@ -4060,20 +4060,19 @@
     {
       "stream_id": "IA-POL-02",
       "from_unit_id": "POLISH_BANK",
-      "to_unit_id": "POLISH_BANK",
+      "to_unit_id": "CONTINUOUS_RECYCLE",
       "phase": "L",
-      "carries": "Polish series internals (self-loop stub)",
+      "carries": "Polish bank liquor return to the continuous recycle",
       "rate": {
-        "value": null,
-        "unit": "",
-        "status": "tbd",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
+        "value": 3302.63279,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18"
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
       "open_boundary": false,
-      "null_rate_kind": "study_deferred",
-      "note": "polish_bank unlabeled; gap_flags=intra_aisle,full_depth_now,polish_bank unlabeled; presence=placeholder; namespace=IA; layers=mass"
+      "note": "polish_bank unlabeled. Degenerate self-loop repaired to the BH endpoint; per first-principles audit correction 3, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,polish_bank unlabeled; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-REC-01",
@@ -4194,23 +4193,6 @@
       "to_sector_id": "FARM",
       "open_boundary": false,
       "null_rate_kind": "unknown",
-      "note": "layers=mass"
-    },
-    {
-      "stream_id": "S05",
-      "from_unit_id": "H2_DRYER",
-      "to_unit_id": "CRYO_H2",
-      "phase": "G",
-      "carries": "process H2",
-      "rate": {
-        "value": 4.8,
-        "unit": "kg/d",
-        "status": "authority",
-        "note": "AQS-REQ-KW-001 \u00a73.0 / AQS-GAS-003 Faraday \u22480.2 kg/h at 150 kg/d wet feed"
-      },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
-      "open_boundary": false,
       "note": "layers=mass"
     },
     {
@@ -4590,7 +4572,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "presence=placeholder; layers=mass"
+      "note": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; layers=mass"
     },
     {
       "stream_id": "S26",
@@ -4641,7 +4623,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "WET",
       "open_boundary": false,
-      "note": "presence=placeholder; layers=mass"
+      "note": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; layers=mass"
     },
     {
       "stream_id": "S29",
@@ -4658,7 +4640,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED; gap_flags=absent_from_candidate_mvs; presence=placeholder; layers=mass"
+      "note": "From register: GREY_TREAT \u2192 VCD_FEED / SALT FEED. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=absent_from_candidate_mvs; layers=mass"
     },
     {
       "stream_id": "S30",
@@ -5052,7 +5034,7 @@
       "from_sector_id": "FUEL_CELL",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "presence=placeholder; layers=mass"
+      "note": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; layers=mass"
     },
     {
       "stream_id": "S53",
@@ -5256,7 +5238,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "layers=mass"
+      "note": "S05 deleted as a duplicate parallel edge (same H2_DRYER->CRYO_H2 4.8 kg/d authority pool; Rev M retired S05 as an alias of S64, CO2_HEADER_DUTY AQS-DUTY-011); per first-principles audit correction 5, owner rulings 2026-10-18; layers=mass"
     },
     {
       "stream_id": "S65",
@@ -5511,7 +5493,7 @@
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "layers=ess"
+      "note": "layers=mass,ess"
     },
     {
       "stream_id": "S77",
