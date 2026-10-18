@@ -37,7 +37,7 @@ class SectorDefinition(str, Enum):
 
 # Aliases rejected as sector_id (AQS-SEC-001 §4.1)
 NON_SECTOR_ALIASES = {
-    "POWER": "composite → ELEC, ELEC_PV, ZNBR2, BACKUP_GEN, FUEL_CELL, GEO, MEOH",
+    "POWER": "composite → ELEC (PV / ZNBR2 / FC / genset units) + GEO, MEOH",
     "LIFE": "composite → FARM + HAB (+ WTR/TRR)",
     "OIL_GLASS": "FreeCAD group → OIL + GLASS",
     "FRM": "alias → FARM",
@@ -61,12 +61,18 @@ class SectorCatalogueRow(TypedDict):
 # Reconciled to AQS-SEC-001 Rev E §4. FAB/MFG required (A2); all three ESS required (A3).
 SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
     {
-        "sector_id": "WET",
+        # Renamed from WET at the Rev AC sector pivot (graph Rev AC, 6e25619);
+        # refreshed 2026-10-18 per notes/first_principles_audit_2026-10-17.md
+        # §sector definitions (stale-row cleanup, D lane).
+        "sector_id": "DIGESTER",
         "sector_definition": SectorDefinition.PROCESS_MASS_TRANSFORM.value,
         "required_for_mvs_closure": True,
         "enabled_default": True,
         "aqs_sec_required": "true",
-        "notes": "L-1 leach / EW / BMED; 150 kg/d wet feed (AQS-SEC-001)",
+        "notes": (
+            "Leach / EW / BMED / polish; renamed from WET at the Rev AC sector "
+            "pivot. 150 kg/d wet feed (AQS-SEC-001 lineage)."
+        ),
     },
     {
         "sector_id": "OIL",
@@ -83,6 +89,15 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
         "enabled_default": True,
         "aqs_sec_required": "true",
         "notes": "Silicate / ceramic; materials surplus path (AQS-SEC-001)",
+    },
+    {
+        # Rev AC scope (fluoropolymer train: HF_GEN/VDF_SYN/TFE_SYN/POLY_F/...).
+        "sector_id": "POLYMERS",
+        "sector_definition": SectorDefinition.PROCESS_MASS_TRANSFORM.value,
+        "required_for_mvs_closure": True,
+        "enabled_default": True,
+        "aqs_sec_required": "study",
+        "notes": "Fluoropolymer synthesis, film, resins",
     },
     {
         "sector_id": "GAS",
@@ -112,6 +127,20 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
         "notes": (
             "Shop + metal forming (MET folded). Required for MVS goods surplus "
             "(Project decision 2026-10-01 / AQS-SEC-001 A2)."
+        ),
+    },
+    {
+        # Rev AC scope (smelting pots moved in from MFG 2026-10-18 per the
+        # first-principles audit placement findings: 100 % of pot edges go to
+        # FOUNDRY/DIGESTER).
+        "sector_id": "FOUNDRY",
+        "sector_definition": SectorDefinition.PROCESS_MASS_TRANSFORM.value,
+        "required_for_mvs_closure": True,
+        "enabled_default": True,
+        "aqs_sec_required": "study",
+        "notes": (
+            "Smelting pots, casting, forging, rolling — notes/FOUNDRY_SIZING.md; "
+            "goods-surplus train with MFG/FAB (A2 lineage)."
         ),
     },
     {
@@ -154,41 +183,34 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
         "aqs_sec_required": "true",
         "notes": "Roof/catch/VCD/UPW (AQS-WTR-001); was WATER in early seed",
     },
-    {
-        "sector_id": "TRR",
-        "sector_definition": SectorDefinition.UTILITY_HEADER.value,
-        "required_for_mvs_closure": False,
-        "enabled_default": True,
-        "aqs_sec_required": "false",
-        "notes": "Terrace overflow / irrigation (AQS-TRR-001)",
-    },
+    # TRR deleted 2026-10-18: terrace irrigation retired with TERRACE_IRRIG
+    # (D-FARM owner ruling 2026-10-18, A-M-229) — no units, stale row.
     {
         "sector_id": "ELEC",
         "sector_definition": SectorDefinition.UTILITY_HEADER.value,
         "required_for_mvs_closure": True,
         "enabled_default": True,
         "aqs_sec_required": "true",
-        "notes": "Sol-Ark / ATS / RECT / MCC hub — distinct from ELEC_PV",
-    },
-    {
-        "sector_id": "ELEC_PV",
-        "sector_definition": SectorDefinition.ENERGY_PRODUCTION_ELECTRICAL.value,
-        "required_for_mvs_closure": True,
-        "enabled_default": True,
-        "aqs_sec_required": "true",
-        "notes": "PV modules; discrete PV_COUNT",
-    },
-    {
-        "sector_id": "ZNBR2",
-        "sector_definition": SectorDefinition.ESS_ELECTROCHEMICAL.value,
-        "required_for_mvs_closure": True,  # AQS-SEC-001 Rev E / A3
-        "enabled_default": True,
-        "aqs_sec_required": "true",
         "notes": (
-            "ZnBr2 flow battery — required ESS peer in MVS (redundancy). "
-            "Sandbox off → unreclaimed_resource gap (AQS-SEC-001 Rev E)."
+            "Sol-Ark / ATS / RECT / MCC hub — PV, storage and FC units live here "
+            "as units since the Rev AC pivot (ELEC_PV/ZNBR2/BACKUP_GEN/FUEL_CELL "
+            "sector rows deleted 2026-10-18: unit-level, not sector toggles)"
         ),
     },
+    {
+        # Rev AC scope: heat-ladder batteries Q1-Q4 + Q4_BUS and its branches
+        # (AQS-HEAT-LADDER-001; AQS-HEAT-STUDY-002 Q4 expansion).
+        "sector_id": "HEAT",
+        "sector_definition": SectorDefinition.UTILITY_HEADER.value,
+        "required_for_mvs_closure": False,
+        "enabled_default": True,
+        "aqs_sec_required": "study",
+        "notes": "Heat ladder batteries Q1-Q4 (AQS-HEAT-LADDER-001)",
+    },
+    # ELEC_PV deleted 2026-10-18: PV_ARRAY is a unit in ELEC since the Rev AC
+    # pivot; the discrete PV count is carried in PV_ARRAY.params, not a sector.
+    # ZNBR2 deleted 2026-10-18: the flow battery is a unit in ELEC (ESS peer at
+    # unit level, see ESS_PEER_UNIT_IDS), not a sector toggle.
     {
         "sector_id": "MEOH",
         "sector_definition": SectorDefinition.ESS_ELECTROCHEMICAL.value,
@@ -211,22 +233,10 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
             "Sandbox off → unreclaimed_resource gap (AQS-SEC-001 Rev E)."
         ),
     },
-    {
-        "sector_id": "BACKUP_GEN",
-        "sector_definition": SectorDefinition.ENERGY_PRODUCTION_COMBUSTION.value,
-        "required_for_mvs_closure": False,
-        "enabled_default": True,
-        "aqs_sec_required": "false",
-        "notes": "H2 genset; REQ-GEN-CONT study 2.5 kW_e",
-    },
-    {
-        "sector_id": "FUEL_CELL",
-        "sector_definition": SectorDefinition.ENERGY_PRODUCTION_ELECTROCHEMICAL.value,
-        "required_for_mvs_closure": False,
-        "enabled_default": True,
-        "aqs_sec_required": "false",
-        "notes": "PEM FC; own sector_id (AQS-FC-001 / AQS-SEC-001)",
-    },
+    # BACKUP_GEN deleted 2026-10-18: standby H2 genset is a unit (ELEC), not a
+    # sector — no BACKUP_GEN sector units since the Rev AC pivot.
+    # FUEL_CELL deleted 2026-10-18: PEM FC is a unit in ELEC (AQS-FC-001
+    # lineage), not a sector toggle.
     {
         "sector_id": "GEO",
         "sector_definition": SectorDefinition.UTILITY_HEADER.value,
@@ -248,9 +258,17 @@ SECTOR_CATALOGUE: list[SectorCatalogueRow] = [
 # Back-compat alias used by earlier P0 drafts
 PLACEHOLDER_SECTOR_CATALOGUE = SECTOR_CATALOGUE
 
-# MVS ESS peer set (AQS-SEC-001 Rev E / A3): all three required_for_mvs_closure.
-# Sandbox may disable any; solver flags each with unreclaimed_resource.
-ESS_PEER_SECTOR_IDS = frozenset({"ZNBR2", "MEOH", "PUMPED_HYDRO"})
+# MVS ESS peer set (AQS-SEC-001 Rev E / A3): redundancy is a core tenet.
+# 2026-10-18 sector refresh (first-principles audit §sector definitions):
+# ZNBR2 is no longer a sector — the flow battery is a unit in ELEC, so the
+# sector-level peer set keeps the two ESS sectors (MEOH, PUMPED_HYDRO) and the
+# third peer is tracked at unit level below. Sandbox may disable any peer;
+# the solver flags each with unreclaimed_resource.
+ESS_PEER_SECTOR_IDS = frozenset({"MEOH", "PUMPED_HYDRO"})
+# Unit-level ESS peers living inside non-ESS sectors after the Rev AC pivot
+# (ZNBR2 in ELEC). Kept alongside the sector set so redundancy checks can find
+# all three peers; consumers key off ESS_PEER_SECTOR_IDS for sector toggles.
+ESS_PEER_UNIT_IDS = frozenset({"ZNBR2"})
 UNRECLAIMED_RESOURCE_REASON = "unreclaimed_resource"
 # Deprecated (Rev C A3): kept as alias name only for export-pack archaeology.
 ESS_PEER_SET_GAP_REASON = "ess_peer_set_all_disabled"

@@ -45,11 +45,11 @@
   },
   "sectors": [
     {
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "sector_definition": "Process (Mass transform)",
       "enabled": true,
       "required_for_mvs_closure": true,
-      "notes": "L-1 leach / EW / BMED; 150 kg/d wet feed (AQS-SEC-001)"
+      "notes": "Leach / EW / BMED / polish; renamed from WET at the Rev AC sector pivot (AQS-SEC-001 lineage; first_principles_audit_2026-10-17 \u00a7sector definitions). 150 kg/d wet feed basis carried."
     },
     {
       "sector_id": "OIL",
@@ -64,6 +64,13 @@
       "enabled": true,
       "required_for_mvs_closure": true,
       "notes": "Silicate / ceramic; materials surplus path (AQS-SEC-001)"
+    },
+    {
+      "sector_id": "POLYMERS",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Fluoropolymer synthesis, film, resins \u2014 Rev AC scope (HF_GEN/VDF_SYN/TFE_SYN/POLY_F/FILM_CAST/...)."
     },
     {
       "sector_id": "GAS",
@@ -85,6 +92,13 @@
       "enabled": true,
       "required_for_mvs_closure": true,
       "notes": "Shop + metal forming + BLOW_MOLD + ELECTRODE_COAT required for MVS (open studies ST-BLOW-01/ST-ELC-01 until Present). Sandbox tracks progress; not accepted sub-MVS. Cross-use OK (AQS-SEC-001 \u00a73.1)."
+    },
+    {
+      "sector_id": "FOUNDRY",
+      "sector_definition": "Process (Mass transform)",
+      "enabled": true,
+      "required_for_mvs_closure": true,
+      "notes": "Smelting pots, casting, forging, rolling \u2014 Rev AC scope (notes/FOUNDRY_SIZING.md); goods-surplus train with MFG/FAB (A2 lineage)."
     },
     {
       "sector_id": "NUT",
@@ -122,13 +136,6 @@
       "notes": "Roof/catch/VCD/UPW (AQS-WTR-001); was WATER in early seed"
     },
     {
-      "sector_id": "TRR",
-      "sector_definition": "Utility / header",
-      "enabled": true,
-      "required_for_mvs_closure": false,
-      "notes": "Terrace overflow / irrigation (AQS-TRR-001)"
-    },
-    {
       "sector_id": "ELEC",
       "sector_definition": "Utility / header",
       "enabled": true,
@@ -136,18 +143,11 @@
       "notes": "Sol-Ark / ATS / RECT / MCC hub \u2014 distinct from ELEC_PV"
     },
     {
-      "sector_id": "ELEC_PV",
-      "sector_definition": "Energy Production (Electrical)",
+      "sector_id": "HEAT",
+      "sector_definition": "Utility / header",
       "enabled": true,
-      "required_for_mvs_closure": true,
-      "notes": "PV modules; discrete PV_COUNT"
-    },
-    {
-      "sector_id": "ZNBR2",
-      "sector_definition": "Energy Storage System (Electrochemical)",
-      "enabled": true,
-      "required_for_mvs_closure": true,
-      "notes": "ZnBr2 flow battery \u2014 required ESS peer in MVS (redundancy). Sandbox off \u2192 unreclaimed_resource gap (AQS-SEC-001 Rev D)."
+      "required_for_mvs_closure": false,
+      "notes": "Heat ladder batteries Q1-Q4 (AQS-HEAT-LADDER-001), Q4_BUS header, Q4 branches (HX-9/HX-10, ADS_CHILL, MAU_HX, DRY_COOLER per AQS-HEAT-STUDY-002)."
     },
     {
       "sector_id": "MEOH",
@@ -162,20 +162,6 @@
       "enabled": true,
       "required_for_mvs_closure": true,
       "notes": "Roof\u2013catch penstock \u2014 required ESS peer in MVS (redundancy). Sandbox off \u2192 unreclaimed_resource gap (AQS-SEC-001 Rev D)."
-    },
-    {
-      "sector_id": "BACKUP_GEN",
-      "sector_definition": "Energy Production (Combustion Engine)",
-      "enabled": true,
-      "required_for_mvs_closure": false,
-      "notes": "H2 genset; REQ-GEN-CONT study 2.5 kW_e"
-    },
-    {
-      "sector_id": "FUEL_CELL",
-      "sector_definition": "Energy Production (Electrochemical)",
-      "enabled": true,
-      "required_for_mvs_closure": false,
-      "notes": "PEM FC; own sector_id (AQS-FC-001 / AQS-SEC-001)"
     },
     {
       "sector_id": "GEO",
@@ -224,9 +210,9 @@
     },
     {
       "unit_id": "AFTERBURNER_FLUE",
-      "sector_id": "DIGESTER",
+      "sector_id": "GAS",
       "enabled": true,
-      "class": null,
+      "class": "flue_junction",
       "tags": [],
       "params": {},
       "modules": [],
@@ -970,7 +956,8 @@
         "Q_surplus_kW_th": 0.0,
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "study_close": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a72/\u00a79 (A-M-249): ORC rejected 7/20 \u2014 net 0.2-0.4 kW_e at 10.16 kW_th / 65 C (30-45 % of Carnot 8.9 %, Quoilin et al. 2013); collapses on 37.8 C days and cannot remove the mandatory terminal sink. Placeholder held at 0 kW_e; the 0.08-0.12 absolute band was above Carnot and impossible."
       },
       "modules": [],
       "electrical_role": "generation",
@@ -1254,7 +1241,7 @@
     },
     {
       "unit_id": "MEOH_COND",
-      "sector_id": "ELEC",
+      "sector_id": "MEOH",
       "enabled": true,
       "class": "separator",
       "tags": [],
@@ -1590,22 +1577,44 @@
       "class": "pv",
       "tags": [],
       "params": {
-        "module_kw": 70,
-        "count": 1,
-        "presence": "present"
+        "module_kw": 0.5,
+        "count": 6932,
+        "presence": "present",
+        "nameplate_kw": 3466,
+        "area_m2": 30444,
+        "balance_kWp": 1733,
+        "oversize_factor": 2.0,
+        "mounting": "roof only",
+        "roof": {
+          "footprint_mm": [
+            198000,
+            168000
+          ],
+          "bays": [
+            33,
+            28
+          ],
+          "footprint_m2": 33264,
+          "extension_m2": 32832,
+          "array_area_m2": 30444,
+          "roof_capacity_kWp": 3470.7,
+          "arrays": 20,
+          "extension_load_kW": 93.84,
+          "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-235, A-M-236): roof_close on the 6 m bay grid, IFC 2021 1205.3 / NFPA 1 11.12 pathways (1829 mm) \u2014 PV 3466 kWp -> 30 444 m2 array -> 33 264 m2 gross -> 198 x 168 m; the 32 832 m2 extension adds its own 93.84 kW (air-source, D77) inside the converged demand."
+        }
       },
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 70.0,
+        "value": 312.5,
         "unit": "kW",
         "status": "study",
-        "note": "PV_MODULE_KW \u00d7 PV_COUNT from params.py; nameplate class not continuous avg"
+        "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
       }
     },
     {
       "unit_id": "Q4_BUS",
-      "sector_id": "HAB",
+      "sector_id": "HEAT",
       "enabled": true,
       "class": "header",
       "tags": [],
@@ -1698,8 +1707,44 @@
       "class": "inverter",
       "tags": [],
       "params": {
-        "kW": 60,
-        "presence": "present"
+        "kW": 2940,
+        "presence": "present",
+        "count": 49,
+        "dc_ac_ratio": 1.2,
+        "interconnection": {
+          "export_peak_kW": 2690.0,
+          "export_kWh_d_clear": 7500,
+          "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
+          "decision": "D75"
+        },
+        "sections": {
+          "count": 5,
+          "inverters": [
+            10,
+            10,
+            10,
+            10,
+            9
+          ],
+          "breaker_A": [
+            1000,
+            1000,
+            1000,
+            1000,
+            1000
+          ],
+          "xfmr_kVA": [
+            750,
+            750,
+            750,
+            750,
+            750
+          ],
+          "mv_kV": 12.47,
+          "plant_bus_on": "CB-1",
+          "doc": "AQS-ELEC-008",
+          "note": "Sections written 2026-10-18 replicating docs-authority/_collection_bus.py (X-ELS-11 math verbatim): the script crashes on the pre-existing null-rated SF-HF_GEN plant-feeder edge (D-AIR 0ed33bb), plant_kW sum only. 49 inverters in 5 sections <= 11 (NEC 240.87)."
+        }
       },
       "modules": [],
       "electrical_role": "bus",
@@ -1849,9 +1894,13 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 60,
-        "kWh": 120,
-        "presence": "present"
+        "kW": 1137,
+        "kWh": 3500,
+        "presence": "present",
+        "charge_kW": 1137,
+        "discharge_kW": 250,
+        "charge_basis": "D75 cloudy-day case: charge-governed \u2014 PV peak on the half-yield day less direct load (A-M-237); discharge = converged demand 250 kW",
+        "distribution": "distributed over the 49 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)"
       },
       "modules": [],
       "electrical_role": "storage",
@@ -2435,7 +2484,7 @@
     },
     {
       "unit_id": "CR_CELL",
-      "sector_id": "MFG",
+      "sector_id": "FOUNDRY",
       "enabled": true,
       "class": "cell",
       "tags": [
@@ -2449,7 +2498,7 @@
     },
     {
       "unit_id": "TI_CELL",
-      "sector_id": "MFG",
+      "sector_id": "FOUNDRY",
       "enabled": true,
       "class": "cell",
       "tags": [
@@ -2463,7 +2512,7 @@
     },
     {
       "unit_id": "MO_CELL",
-      "sector_id": "MFG",
+      "sector_id": "FOUNDRY",
       "enabled": true,
       "class": "cell",
       "tags": [
@@ -2677,7 +2726,7 @@
     },
     {
       "unit_id": "AL_POT",
-      "sector_id": "MFG",
+      "sector_id": "FOUNDRY",
       "enabled": true,
       "class": "cell",
       "tags": [
@@ -2691,7 +2740,7 @@
     },
     {
       "unit_id": "MG_POT",
-      "sector_id": "MFG",
+      "sector_id": "FOUNDRY",
       "enabled": true,
       "class": "cell",
       "tags": [
@@ -2705,7 +2754,7 @@
     },
     {
       "unit_id": "CA_POT",
-      "sector_id": "MFG",
+      "sector_id": "FOUNDRY",
       "enabled": true,
       "class": "cell",
       "tags": [
@@ -3116,6 +3165,67 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.0 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.316 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.32 kW. Study."
       }
+    },
+    {
+      "unit_id": "ADS_CHILL",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "adsorption_chiller",
+      "tags": [],
+      "params": {
+        "kW_c": 5.0,
+        "derated_kW_c": 3.5,
+        "COP_c": 0.45,
+        "drive_C": 65,
+        "recool_C": 30,
+        "chilled_C": 12,
+        "season": "summer",
+        "drive_kW_th": 5.0,
+        "displaced_kW_e": 1.5,
+        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.2 (A-M-239, A-M-240): vendor class 0.4-0.6 COP_c at 55-90 C (InvenSor/Mayekawa class; Wang & Oliveira 2006); building cooling 4.5 kW_c class, compression chiller draw 1.5 kW_e at COP 3.0 stays as N+1."
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MAU_HX",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "hx",
+      "tags": [],
+      "params": {
+        "kW": 12.0,
+        "kW_per_K": 6.65,
+        "dT_K": 1.8,
+        "season": "winter",
+        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.3 (A-M-241): 6.65 kW/K make-up air (~23 900 m3/h, AQS-THM-002) x 1.8 K = 12 kW; displaces 12 kW of winter resistance tempering."
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "DRY_COOLER",
+      "sector_id": "HEAT",
+      "enabled": true,
+      "class": "dry_cooler",
+      "tags": [],
+      "params": {
+        "rated_kW": 12.0,
+        "design_C": 37.8,
+        "design_basis": "0.4 % summer design temp (AQS-SITE-002 via AQS-THM-002)",
+        "LMTD_K": 15.0,
+        "water_C": [
+          65,
+          45
+        ],
+        "fan_kW": 0.6,
+        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8 (A-M-244): 0.05 kW_fan/kW_th class; rated 12 kW to pass the 10.16 kW no-preheat upset with margin."
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
     }
   ],
   "streams": [
@@ -3131,8 +3241,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: = CUT-4 | X-PAR-02 TF: C29+ 20.7% of per-pass oil, recycled to extinction (SU2018_PYRO bands) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Cut tank to recycle pipe.; namespace=IA; layers=mass"
     },
@@ -3148,8 +3258,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: = C29_RECYCLE | X-PAR-02 TF: C29+ 20.7% of per-pass oil, recycled to extinction (SU2018_PYRO bands) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Pyro inlet. Not burned.; namespace=IA; layers=mass"
     },
@@ -3165,8 +3275,8 @@
         "status": "study",
         "note": "C5-C10 into the cut tank. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: C5-C10 28.6% of net oil + solvent and resist feeds (by difference) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Product. NFPA 30 dike.; namespace=IA; layers=mass"
     },
@@ -3182,8 +3292,8 @@
         "status": "study",
         "note": "C11-C18 into the cut tank. | X-PAR-02 TF: C11-C18 44.1% of net oil 22.50 (SU2018_PYRO bands) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Product. NFPA 30 dike.; namespace=IA; layers=mass"
     },
@@ -3199,8 +3309,8 @@
         "status": "study",
         "note": "C19-C28 into the cut tank. | X-PAR-02 TF: C19-C28 27.3% of net oil + S72B lube mist (SU2018_PYRO bands) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Product. NFPA 30 dike.; namespace=IA; layers=mass"
     },
@@ -3216,8 +3326,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: C29+ per pass, recycled to extinction | X-PAR-02 TF: C29+ 20.7% of per-pass oil, recycled to extinction (SU2018_PYRO bands) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Product. NFPA 30 dike.; namespace=IA; layers=mass"
     },
@@ -3251,8 +3361,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.553 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
     },
@@ -3268,8 +3378,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.553 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
     },
@@ -3285,8 +3395,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
     },
@@ -3302,8 +3412,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.371 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GLASS",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Isolable branch. One ladder may be down.; namespace=IA; layers=mass"
     },
@@ -3319,8 +3429,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Exchanger, not EW-1. dead since Rev J, superseded by Q4 cross-ties; per first-principles audit correction 5, owner rulings 2026-10-18; namespace=IA; layers=mass"
@@ -3337,8 +3447,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Exchanger, not EW-1. dead since Rev J, superseded by Q4 cross-ties; per first-principles audit correction 5, owner rulings 2026-10-18; namespace=IA; layers=mass"
@@ -3355,8 +3465,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
     },
@@ -3372,8 +3482,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
     },
@@ -3389,8 +3499,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
     },
@@ -3406,8 +3516,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
     },
@@ -3423,8 +3533,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
     },
@@ -3440,8 +3550,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
     },
@@ -3457,8 +3567,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
     },
@@ -3474,8 +3584,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
     },
@@ -3491,8 +3601,8 @@
         "status": "study",
         "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.4854 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
     },
@@ -3508,8 +3618,8 @@
         "status": "study",
         "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.5842 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_upper > T_lower + 5 K; namespace=IA; layers=mass"
     },
@@ -3525,8 +3635,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
     },
@@ -3542,8 +3652,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
     },
@@ -3559,8 +3669,8 @@
         "status": "study",
         "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.7619 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Only Q4 batteries feed the bus from the ladder.; namespace=IA; layers=mass"
     },
@@ -3576,8 +3686,8 @@
         "status": "study",
         "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.8371 kW of insulated line loss upstream (A-M-166)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Only Q4 batteries feed the bus from the ladder.; namespace=IA; layers=mass"
     },
@@ -3593,8 +3703,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if |T_A-T_B| > 5 K, from hotter to colder; namespace=IA; layers=mass"
     },
@@ -3610,8 +3720,8 @@
         "status": "study",
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Opens only if T_B > T_A + 5 K. Own thermosyphon. No shared fluid with the other tier.; namespace=IA; layers=mass"
     },
@@ -3627,8 +3737,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: 1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "Acid product to acid use. Not the polish node.; namespace=IA; layers=mass"
     },
@@ -3644,8 +3754,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: 1:1 molar NaOH for S35 (0.50 mol/d KOH) at 2 M, resin exchange | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "Base product. KOH node is a separate synth.; namespace=IA; layers=mass"
     },
@@ -3661,8 +3771,8 @@
         "status": "tbd",
         "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "bmed_regen unlabeled. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; namespace=IA; layers=mass"
@@ -3679,8 +3789,8 @@
         "status": "tbd",
         "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "bmed_regen unlabeled. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,bmed_regen unlabeled; namespace=IA; layers=mass"
@@ -3785,7 +3895,7 @@
         "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "ZNBR2",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
     },
@@ -3801,7 +3911,7 @@
         "status": "study",
         "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
-      "from_sector_id": "ZNBR2",
+      "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
@@ -3818,8 +3928,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3835,8 +3945,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3852,8 +3962,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3869,8 +3979,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: DUTY-008 concentrate 0.17 m3/h x 1050.0 kg/m3 x 24 h | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Feed. Unchanged.; namespace=IA; layers=mass"
     },
@@ -3886,8 +3996,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3903,8 +4013,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3920,8 +4030,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3937,8 +4047,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump.; namespace=IA; layers=mass"
     },
@@ -3954,8 +4064,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Was IA-EW-03.; namespace=IA; layers=mass"
     },
@@ -3971,8 +4081,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Sequential. No jump. Filled missing EW_4\u2192EW_5 hop (Rev F gap; fuller cascade from E+local).; namespace=IA; layers=mass"
     },
@@ -3988,8 +4098,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: cullet 30.0 kg/d dry (DUTY-008 burnout basis = silicate yield) + drained moisture 6.82 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "Drain rinse before heat.; namespace=IA; layers=mass"
     },
@@ -4005,8 +4115,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: dry milled cullet = cullet basis | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "Burnout after a dry step, not on rinse water.; namespace=IA; layers=mass"
     },
@@ -4022,8 +4132,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: burned cullet; organics burnout negligible (DUTY-008 off-gas 0.03 kW) | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "Digest after organics are off.; namespace=IA; layers=mass"
     },
@@ -4039,7 +4149,7 @@
         "status": "study",
         "note": "EW_1 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).; gap_flags=wp_l1_topology,wp_l2_filled,ew_cascade_exploded; namespace=IA; layers=mass"
@@ -4073,7 +4183,7 @@
         "status": "study",
         "note": "EW_2 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).; gap_flags=wp_l2_filled,multi_ew_hood,ew_cascade_exploded; namespace=IA; layers=mass"
@@ -4090,7 +4200,7 @@
         "status": "study",
         "note": "EW_9 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3\u2026EW_8 nodes (was SKIP at Rev E sync).; gap_flags=wp_l2_filled,multi_ew_hood,ew_cascade_exploded; namespace=IA; layers=mass"
@@ -4107,8 +4217,8 @@
         "status": "study",
         "note": "AQS-DUTY-008 Rev B s13.1: EW ohmic heat + concentrate sensible - cell wall loss - surface evaporation."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Cell to exchanger. Separate fluids.; namespace=IA; layers=mass"
     },
@@ -4158,8 +4268,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002)"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "NFPA 30: product cuts stay in tanks. NCG only to the burner.; namespace=IA; layers=mass"
     },
@@ -4175,7 +4285,7 @@
         "status": "tbd",
         "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders)"
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "null_rate_kind": "study_deferred",
@@ -4193,8 +4303,8 @@
         "status": "study",
         "note": "Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18"
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "polish_bank unlabeled. Degenerate self-loop repaired to the BH endpoint; per first-principles audit correction 3, owner rulings 2026-10-18; gap_flags=intra_aisle,full_depth_now,polish_bank unlabeled; namespace=IA; layers=mass"
     },
@@ -4210,8 +4320,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: recycle out = polish return (AQS-PAR-005)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Liquor return only. No heat-ladder duty.; namespace=IA; layers=mass"
     },
@@ -4227,8 +4337,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "STR scope-out; ID was TBD; gap_flags=intra_aisle,full_depth_now,STR scope-out; ID was TBD; presence=placeholder; namespace=IA; layers=mass"
     },
@@ -4244,8 +4354,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: = IA-OIL-03 (header pass-through)"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Burner feed. Not C29.; namespace=IA; layers=mass"
     },
@@ -4347,7 +4457,7 @@
         "status": "study",
         "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE plated metals \u224842 kg/d at 150 kg/d wet feed"
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "layers=mass"
@@ -4381,8 +4491,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: SC-2 1:1:5 -> HCl volume = H2O2 SC-2 share 1.5 L/d (37 % eq, 0.655 kg HCl) delivered as 2 M BMED acid | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "Acid to bench. Polish is not this edge.; layers=mass"
     },
@@ -4399,7 +4509,7 @@
         "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid)"
       },
       "from_sector_id": "FAB",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "layers=mass"
     },
@@ -4501,7 +4611,7 @@
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6)"
       },
       "from_sector_id": "MFG",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "layers=mass"
     },
@@ -4512,10 +4622,10 @@
       "phase": "E",
       "carries": "DC/480V",
       "rate": {
-        "value": 50.0,
+        "value": 12.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-SCALE-001 / params ELEC_NEED_KW_BASE \u224850 kW at SCALE_M=1"
+        "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-231): RECTIFIER 48 V rails at the node basis (AQS-PWR-001); the 50.0 ELEC_NEED_KW_BASE seed was circular and is removed."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -4552,7 +4662,7 @@
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01 | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "From register: BAGHOUSE fines \u2192 LEACH CSTR 1; gap_flags=absent_from_candidate_mvs; layers=mass"
     },
@@ -4639,7 +4749,7 @@
         "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "DOCK",
+      "to_sector_id": "GAS",
       "open_boundary": true,
       "note": "NFPA 2 relief. Not freight.; layers=mass"
     },
@@ -4707,7 +4817,7 @@
         "note": "AQS-DUTY-010: VCD brine 10% of feed | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "WTR",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; layers=mass"
     },
@@ -4860,8 +4970,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Waste leaves the bench.; layers=mass"
     },
@@ -4877,8 +4987,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: spent slurry + dopant residue = S37 + S36 (AUD: spent return same order as forwards) | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "NFPA 400: no organics into chlorate leach.; layers=mass"
     },
@@ -4894,8 +5004,8 @@
         "status": "study",
         "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Organics to the oil line.; layers=mass"
     },
@@ -4929,7 +5039,7 @@
         "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GEO",
-      "to_sector_id": "HAB",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "From register: GEO_HP \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
     },
@@ -4946,7 +5056,7 @@
         "note": "AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool \u2014 cannot all draw Faraday max"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "BACKUP_GEN",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "layers=mass"
     },
@@ -4962,8 +5072,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: S45 3.6 + air at lambda 2.0 (34.3 kg/kg stoich) | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: genset exhaust = inputs (AQS-PAR-005)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "NFPA 37 exhaust. Not life water.; layers=mass"
     },
@@ -4979,7 +5089,7 @@
         "status": "authority",
         "note": "AQS-REQ-KW-001 REQ-GEN-CONT; study requirement lock \u2014 not vendor nameplate"
       },
-      "from_sector_id": "BACKUP_GEN",
+      "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "layers=elec"
@@ -5015,7 +5125,7 @@
         "note": "AQS-REQ-KW-001 ~0.20 kg/h H2 @ REQ-FC-CONT if GEN idle; shared pool with S45/S74"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "FUEL_CELL",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "layers=mass"
     },
@@ -5032,7 +5142,7 @@
         "note": "Stoich O2 for S49 H2 (O2/H2 mass \u2248 8 for 2 H2 + O2 \u2192 2 H2O); study"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "FUEL_CELL",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "layers=mass"
     },
@@ -5048,7 +5158,7 @@
         "status": "authority",
         "note": "AQS-REQ-KW-001 REQ-FC-CONT; study requirement lock \u2014 not vendor nameplate"
       },
-      "from_sector_id": "FUEL_CELL",
+      "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "layers=elec"
@@ -5065,7 +5175,7 @@
         "status": "study",
         "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
-      "from_sector_id": "FUEL_CELL",
+      "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18; layers=mass"
@@ -5082,8 +5192,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
-      "from_sector_id": "FUEL_CELL",
-      "to_sector_id": "HAB",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
     },
@@ -5100,7 +5210,7 @@
         "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058 | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "HAB",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "From register: CRYO_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
     },
@@ -5134,7 +5244,7 @@
         "note": "AQS-DUTY-010: contingency relief only; no continuous flow on the design day"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "DOCK",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "NFPA 55 relief. Not freight.; layers=mass"
     },
@@ -5253,7 +5363,7 @@
         "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
-      "to_sector_id": "HAB",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "From register: MET_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
     },
@@ -5286,8 +5396,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: polish 1500.0 m3/h at 50.0 C saturated Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GAS",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "Not a self-loop. Polish then CRU via S66.; layers=mass"
     },
@@ -5304,7 +5414,7 @@
         "note": "AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "From register: ACID_POLISH / ALK blowdown \u2192 CRU; gap_flags=absent_from_candidate_mvs; layers=mass"
     },
@@ -5320,8 +5430,8 @@
         "status": "study",
         "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM excess O2 (AQS-PAR-005)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GAS",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "Knockout before any CO2 claim.; layers=mass"
     },
@@ -5337,8 +5447,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: bound O2 into CO2 (AQS-PAR-005)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GAS",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "Only the CO2-rich cut. Reject N2/O2/NOx.; layers=mass"
     },
@@ -5354,8 +5464,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Acid condensate stays process.; layers=mass"
     },
@@ -5371,8 +5481,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 37.0 m3/h holds H2 at 25 % LFL: HER 7.56 + open-circuit 1.32 m3/d H2 on 5001 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "Own tower.; layers=mass"
     },
@@ -5388,8 +5498,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "Return to the bromine tank only.; layers=mass"
     },
@@ -5405,8 +5515,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "Not into the hydrogen box.; layers=mass"
     },
@@ -5439,8 +5549,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "MFG",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Fines only.; layers=mass"
     },
@@ -5456,8 +5566,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "MFG",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "Organics off the metal scrub, to oil.; layers=mass"
     },
@@ -5593,7 +5703,7 @@
         "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MEOH",
-      "to_sector_id": "HAB",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "From register: MEOH_HX_Q4 \u2192 Q4 / FARM / HAB; gap_flags=absent_from_candidate_mvs; layers=thermal"
     },
@@ -5609,8 +5719,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "Methanol residual stays process.; layers=mass"
     },
@@ -5643,8 +5753,8 @@
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "Life header fill. Not the dock.; layers=mass"
     },
@@ -5660,8 +5770,8 @@
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 pass-through (AQS-PAR-005)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "Life header fill. Not the dock.; layers=mass"
     },
@@ -5677,8 +5787,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: cold-box CO2 to header only if the bed needs it (AQS-PAR-005)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "Life header fill. Not the dock.; layers=mass"
     },
@@ -5694,8 +5804,8 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "Same sink as S56. Issued so the old dock edge has a number and a legal end.; layers=mass"
     },
@@ -5711,7 +5821,7 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 TF: grow-bed photosynthetic O2 = 32/44 x 0.882362 kg/d CO2 (PQ 1.0, TAIZ2015) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty bed 29.12 m2; BVAD2022 tomato O2/CO2 26.36/36.24 g/m2/d = same 32/44 ratio"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "FARM",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "Capture. Not a vent. Not hab air into a process header.; layers=mass"
@@ -5729,7 +5839,7 @@
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): N2 make-up stays a closed contingency (crew-duty bed needs no N2 make-up)"
       },
       "from_sector_id": "CRYO",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "Make-up from the N2 box only.; layers=mass"
     },
@@ -5745,8 +5855,8 @@
         "status": "study",
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "Nitric only. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC); layers=mass"
     },
@@ -5762,8 +5872,8 @@
         "status": "study",
         "note": "Phosphate feed 0.620 less dopant 0.010. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "Phosphoric etch. Own bund. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC); layers=mass"
     },
@@ -5779,8 +5889,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -5797,8 +5907,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -5815,8 +5925,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -5833,8 +5943,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -5851,8 +5961,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -5869,8 +5979,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder return. Rate TBD.; namespace=IA; layers=mass"
@@ -5887,8 +5997,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -5905,8 +6015,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Missing measurement: dense-grit Ti/Fe assay. See notes/ASSAY_TI_MO.md. Rate not set.; namespace=IA; layers=mass"
@@ -5923,8 +6033,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Missing measurement: Mo + residual Zn/Fe/Ni in EW_9 liquor. See notes/ASSAY_TI_MO.md. Rate not set.; namespace=IA; layers=mass"
@@ -5941,8 +6051,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Cl2 return. Rate TBD.; namespace=IA; layers=mass"
@@ -5959,8 +6069,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Anode-gas return. Rate TBD. H2 reduction not baseline.; namespace=IA; layers=mass"
@@ -5977,8 +6087,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Primary induction melt to cast line. Rate TBD.; namespace=IA; layers=mass"
@@ -5995,8 +6105,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Internal scrap return. Rate TBD.; namespace=IA; layers=mass"
@@ -6013,8 +6123,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder feed from metal cells. Rate TBD.; namespace=IA; layers=mass"
@@ -6031,8 +6141,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6049,8 +6159,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6067,8 +6177,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6085,8 +6195,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6103,8 +6213,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6121,8 +6231,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6139,8 +6249,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6157,8 +6267,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Placeholder. Rate TBD.; namespace=IA; layers=mass"
@@ -6175,8 +6285,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6193,8 +6303,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6211,8 +6321,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6229,8 +6339,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6247,8 +6357,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6265,8 +6375,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6283,8 +6393,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6301,8 +6411,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6319,8 +6429,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6337,8 +6447,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6355,8 +6465,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Integration edge. Rate TBD.; namespace=IA; layers=mass"
@@ -6373,8 +6483,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass"
@@ -6391,8 +6501,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass"
@@ -6409,8 +6519,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass"
@@ -6427,8 +6537,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass,energy"
@@ -6445,8 +6555,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass,energy"
@@ -6455,37 +6565,35 @@
       "stream_id": "IND_HEAT_TO_HX",
       "from_unit_id": "IND_MELT",
       "to_unit_id": "MET_HX_Q4",
-      "phase": "G",
-      "carries": "waste heat",
+      "phase": "E",
+      "carries": "furnace coil + shell cooling water 40-60 C",
       "rate": {
-        "value": null,
-        "unit": "",
-        "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 1.063,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a77.2/\u00a710.10 (A-M-245): foundry coil+shell reject ~1.7 kW average (20-30 % of 45 kW input x 15-20 % duty, FOUNDRY_SIZING.md batch basis), split pro-rata on connected furnace input (IND 25 / VAC 15 kW); batch peak 8-11 kW at 40-60 C into MET_HX_Q4 \u2014 Q4-class by necessity (coil insulation <= 60 C)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass,energy"
+      "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "VAC_HEAT_TO_HX",
       "from_unit_id": "VAC_IND",
       "to_unit_id": "MET_HX_Q4",
-      "phase": "G",
-      "carries": "waste heat",
+      "phase": "E",
+      "carries": "furnace coil + shell cooling water 40-60 C",
       "rate": {
-        "value": null,
-        "unit": "",
-        "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.638,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a77.2/\u00a710.10 (A-M-245): foundry coil+shell reject ~1.7 kW average (20-30 % of 45 kW input x 15-20 % duty, FOUNDRY_SIZING.md batch basis), split pro-rata on connected furnace input (IND 25 / VAC 15 kW); batch peak 8-11 kW at 40-60 C into MET_HX_Q4 \u2014 Q4-class by necessity (coil insulation <= 60 C)."
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
-      "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass,energy"
+      "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "COMB_OFFGAS",
@@ -6499,8 +6607,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass,energy"
@@ -6517,8 +6625,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass"
@@ -6535,8 +6643,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass"
@@ -6553,8 +6661,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "MFG",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Role fix / integration. Rate TBD.; namespace=IA; layers=mass"
@@ -6571,8 +6679,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6589,8 +6697,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6607,8 +6715,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6625,8 +6733,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6643,8 +6751,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6661,8 +6769,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6679,8 +6787,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6697,8 +6805,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6715,8 +6823,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Investment casting baseline. Rate TBD.; namespace=IA; layers=mass"
@@ -6733,8 +6841,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "MFG",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Foundry I/O. Rate per notes/FOUNDRY_SIZING.md.; namespace=IA; layers=mass"
@@ -6751,8 +6859,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Foundry I/O. Rate per notes/FOUNDRY_SIZING.md.; namespace=IA; layers=mass"
@@ -6769,8 +6877,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Foundry I/O. Rate per notes/FOUNDRY_SIZING.md.; namespace=IA; layers=mass"
@@ -6787,8 +6895,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6805,8 +6913,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "MEOH",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6823,8 +6931,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "WTR",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6841,8 +6949,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6859,8 +6967,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6877,8 +6985,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6895,8 +7003,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6913,8 +7021,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6931,8 +7039,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6949,8 +7057,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6967,8 +7075,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -6985,8 +7093,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers sector. Rate TBD.; namespace=IA; layers=mass"
@@ -7003,8 +7111,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers design. Rate per notes/POLYMERS_DESIGN.md.; namespace=IA; layers=mass"
@@ -7021,8 +7129,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Polymers design. Rate per notes/POLYMERS_DESIGN.md.; namespace=IA; layers=mass"
@@ -7039,8 +7147,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7057,8 +7165,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7075,8 +7183,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7093,8 +7201,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7111,8 +7219,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7129,8 +7237,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7147,8 +7255,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
@@ -7165,8 +7273,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "OIL",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "3 kg/d assumption. notes/OIL_SECTOR.md.; namespace=IA; layers=mass"
@@ -7183,8 +7291,8 @@
         "status": "study",
         "note": "Rev AC new topology \u2014 unrated pending param pass | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): CO2 dose carried on S89 (canonical register stream, AQS-DUTY-009/011; only consumer of HDR_CO2); this Rev AC edge adds no second path \u2014 held closed"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
     },
@@ -7200,8 +7308,8 @@
         "status": "study",
         "note": "Rev AC new topology \u2014 unrated pending param pass | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): farm O2 captured on S87 to CRYO_O2; no direct farm-to-hab gas path (separate atmospheres) \u2014 held closed"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
     },
@@ -7217,8 +7325,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HAB",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
@@ -7235,8 +7343,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
@@ -7253,8 +7361,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
@@ -7271,8 +7379,8 @@
         "status": "study",
         "note": "Rev AC new topology \u2014 unrated pending param pass | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): fertigation carried on IA-NUT-BED (canonical, AQS-DUTY-016 area basis); this Rev AC edge adds no second path \u2014 held closed"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "NUT",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
     },
@@ -7288,8 +7396,8 @@
         "status": "tbd",
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
-      "from_sector_id": null,
-      "to_sector_id": null,
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "null_rate_kind": "inventory_cycle",
       "note": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.; namespace=IA; layers=mass"
@@ -7306,7 +7414,7 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
@@ -7323,7 +7431,7 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Split of the 4.572 kW cell duty."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
@@ -7358,7 +7466,7 @@
         "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -7409,7 +7517,7 @@
         "note": "AQS-DUTY-008 Rev B s13.2: HX-5 duty 6.353 kW x 1.25. Q3 serves 0.0 kW per ladder in normal; electric trim 3.176 kW per ladder normal, 6.353 kW single."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -7442,7 +7550,7 @@
         "status": "study",
         "note": "Ess layer only. Already inside IA-PV-01 on the elec layer. 6.6667 charge minus 5.0 discharge."
       },
-      "from_sector_id": "ELEC_PV",
+      "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "Not additional generation. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; gap_flags=ess_layer; namespace=IA; layers=ess"
@@ -7493,8 +7601,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7510,27 +7618,27 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. CRU re-scoped to chlorate. Closes on S66. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "HL-Q4-REJ",
       "from_unit_id": "Q4_BUS",
-      "to_unit_id": "GEO_ORC",
+      "to_unit_id": "DRY_COOLER",
       "phase": "thermal",
       "carries": "Q4 surplus heat",
       "rate": {
-        "value": 10.1627,
+        "value": 9.3493,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 13.09 in - 3.0 life load. Dry cooler, not an ORC. | X-THM-01: closes Q4_BUS after the line losses carried down the ladder (A-M-166)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated 12 kW to pass the 10.16 kW case with all seasonal branches down. AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged Re-homed from GEO_ORC to DRY_COOLER per AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a79/\u00a710.8 (D-GEO_ORC ruling 2026-10-18).; layers=thermal"
     },
     {
       "stream_id": "IA-PV-01",
@@ -7539,13 +7647,13 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 242.0676,
+        "value": 312.5,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. 20% above the matched bus. X-RSZ-02 (AQS-ELEC-004 RECT-EW bounding; AQS-ELEC-007 bounding supply): +54.15 kW average. X-RSZ-07 sweep: -2.75 kW (GROW_BED booked). X-RSZ-07 feed edges for unfed loads: +49.247 kW. X-PAR-07 extension hall: +13.92 kW."
+        "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
     },
@@ -7561,8 +7669,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7578,8 +7686,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "NUT",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7595,8 +7703,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7612,8 +7720,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7629,8 +7737,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +2.825 kg/d. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7646,8 +7754,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -7663,8 +7771,8 @@
         "status": "study",
         "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue carries the FORM tail (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "OIL",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7680,8 +7788,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Water make-up from the leach header, equal to the bleed."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7697,8 +7805,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7714,8 +7822,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7731,8 +7839,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7748,8 +7856,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7765,8 +7873,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7782,8 +7890,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7799,8 +7907,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7816,8 +7924,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7833,8 +7941,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7850,8 +7958,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7867,8 +7975,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-12 TF: dilution air less the N2 routed through FORM (X-SAF-11) (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HAB",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7885,7 +7993,7 @@
         "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: FORM excess O2 (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7901,8 +8009,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Silicate liquor equal to the digest NaOH draw (digest closes on IA-GLASS-03, S08G, IA-SIL-SRC, IA-SIC-IN)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "GLASS",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7918,8 +8026,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7935,8 +8043,8 @@
         "status": "study",
         "note": "Goods less the mass that left as CO. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7952,8 +8060,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (out: ET 67.443215 + food 4.2 + organics 0.8 + condensate 3.799 + O2 0.641572; in: nutrient solution 31.363502 + S07 2.5 + CO2 0.882362) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): BH 306.644 kg/d was farm-scale irrigation"
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7969,8 +8077,8 @@
         "status": "study",
         "note": "One water per methanol. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: + H2O (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -7987,43 +8095,9 @@
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
-    },
-    {
-      "stream_id": "IA-Q3A-TRIM",
-      "from_unit_id": "RECTIFIER",
-      "to_unit_id": "Q3_A",
-      "phase": "electric",
-      "carries": "leach heater trim",
-      "rate": {
-        "value": 10.048,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
-      },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
-      "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
-    },
-    {
-      "stream_id": "IA-Q3B-TRIM",
-      "from_unit_id": "RECTIFIER",
-      "to_unit_id": "Q3_B",
-      "phase": "electric",
-      "carries": "leach heater trim",
-      "rate": {
-        "value": 10.048,
-        "unit": "kW",
-        "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
-      },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
-      "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-LEACH-BD",
@@ -8037,8 +8111,8 @@
         "status": "study",
         "note": "AQS-DUTY-014. Bleed sized so the leach node matches the dock feed. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "NUT",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8054,8 +8128,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8071,8 +8145,8 @@
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8088,8 +8162,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MEOH",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8105,8 +8179,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8122,8 +8196,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8139,8 +8213,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8156,8 +8230,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8173,8 +8247,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8190,8 +8264,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HEAT",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8207,8 +8281,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HEAT",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8224,8 +8298,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HEAT",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8241,8 +8315,8 @@
         "status": "study",
         "note": "AQS-DUTY-012 Rev N."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HEAT",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
@@ -8258,7 +8332,7 @@
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: 29.12 m2 x 2.316 kg/m2/d: BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2/m2/d, scaled to the DLI-17 light-limited 30.30 g CO2/m2/d (A-M-133) (AQS-PAR-003). | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): crew-duty area = 4.2 kg/d food / 0.1442 kg/m2/d edible; BH 278.85 kg/d at 120.4 m2 was farm-scale, not crew duty"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "FARM",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -8275,7 +8349,7 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S12"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -8292,8 +8366,8 @@
         "status": "study",
         "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet. | X-PAR-02 TF: condensate = greenhouse vapour in (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "CRYO",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8309,8 +8383,8 @@
         "status": "study",
         "note": "AQS-DUTY-013. Enclosed greenhouse. HVAC condensate returns to the roof tank. Battery held to 30% of store."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
     },
@@ -8326,7 +8400,7 @@
         "status": "study",
         "note": "AQS-DUTY-013. Greenhouse vapor to the AHU. Condensate to the roof tank. No second outlet. Source of S68. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -8343,8 +8417,8 @@
         "status": "study",
         "note": "AQS-DUTY-013. 6.67 charge, 5.0 discharge. Store is 400 kWh."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec,ess"
     },
@@ -8360,8 +8434,8 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S29 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8377,8 +8451,8 @@
         "status": "study",
         "note": "AQS-DUTY-014. | X-PAR-02 TF: nutrient surplus by difference (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "NUT",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8394,8 +8468,8 @@
         "status": "study",
         "note": "AQS-DUTY-020. Continuous dock feed retired. Feed class is not fixed. Characterized against AQS-ASSAY-001 Rev C. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "OIL",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Feedstock-agnostic. Composition is the AQS-ASSAY-001 Rev C reference point in seven phase classes, carried because the held rates were built on it. It is not the feed. params.assay_envelope holds the bounding cases, regolith-like through metal-rich PCB. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8412,7 +8486,7 @@
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Rerouted from LEACH_CSTR_1. Rate unchanged. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8428,8 +8502,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8446,7 +8520,7 @@
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8462,8 +8536,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8479,8 +8553,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8496,8 +8570,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8513,8 +8587,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8530,8 +8604,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8547,8 +8621,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8564,8 +8638,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "GLASS",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8581,8 +8655,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8598,8 +8672,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8616,7 +8690,7 @@
         "note": "X-SAF-10. O2 to the cell at 12.31 A, FE 0.80 (WS_PEROX params.cell). Was 3.0 kg/d, which counted dilution water as oxygen."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8633,7 +8707,7 @@
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into water, less the H no longer burned (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8650,7 +8724,7 @@
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion."
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "NUT",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8666,8 +8740,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8683,8 +8757,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 diluent, scaled with the exercise fuel (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HAB",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8700,8 +8774,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "WTR",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8717,8 +8791,8 @@
         "status": "study",
         "note": "AQS-DUTY-016. | X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion. | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): nutrient/fertigation solution = BH duty 129.676016 kg/d over 120.4 m2 (AQS-DUTY-016) = 1.0770 kg/m2/d x 29.12 m2 crew-duty bed"
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "NUT",
+      "to_sector_id": "FARM",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8734,8 +8808,8 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent"
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "CRYO",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8751,8 +8825,8 @@
         "status": "study",
         "note": "Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "OIL",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8768,8 +8842,8 @@
         "status": "study",
         "note": "Worn goods follow the goods. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HAB",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8785,8 +8859,8 @@
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: condensate to roof (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MEOH",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8803,7 +8877,7 @@
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S05"
       },
       "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8819,8 +8893,8 @@
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "Not an element split. Composition is metal 1.0. The copper-equivalent sizing rule is not an assay. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8836,8 +8910,8 @@
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8853,8 +8927,8 @@
         "status": "study",
         "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: mill draw closes the melt (-0.0000) (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8870,8 +8944,8 @@
         "status": "study",
         "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: powder 3.200 / (1 - 10% off-spec) (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8887,8 +8961,8 @@
         "status": "study",
         "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8904,7 +8978,7 @@
         "status": "study",
         "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -8921,8 +8995,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8938,8 +9012,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8955,8 +9029,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8972,8 +9046,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -8989,8 +9063,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9006,8 +9080,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9023,8 +9097,8 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: sweep held closed: N2 header over-supplied ~0.950 kg/d even at zero sweep (restored ASU pass-through S84 193.577 vs header draws 192.627); sweep re-solved from the HDR_N2 header balance, stale BH 0.710 retired; residual reported, not absorbed (A-M-227) (AQS-PAR-005)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "HAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9040,8 +9114,8 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S83 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9057,8 +9131,8 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-FC-EXH | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9074,7 +9148,7 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-AHU-AIR"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -9091,8 +9165,8 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-HDR-H2-01"
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9108,8 +9182,8 @@
         "status": "study",
         "note": "AQS-DUTY-023"
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9125,8 +9199,8 @@
         "status": "study",
         "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9142,8 +9216,8 @@
         "status": "study",
         "note": "AQS-DUTY-026 | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9159,8 +9233,8 @@
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9176,8 +9250,8 @@
         "status": "study",
         "note": "AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9193,8 +9267,8 @@
         "status": "study",
         "note": "Spent resist and solvent. Same mass as S39B, through LITHO_STUB. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9210,8 +9284,8 @@
         "status": "study",
         "note": "Same mass into the fractionator. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9227,8 +9301,8 @@
         "status": "study",
         "note": "C11-C18 wax from the tank. Not the dryer."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9244,8 +9318,8 @@
         "status": "study",
         "note": "Molded parts. Same mass into the shop."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9261,8 +9335,8 @@
         "status": "study",
         "note": "Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel deposit."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9278,8 +9352,8 @@
         "status": "study",
         "note": "Coated anode back to EW-1. Net zero."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "MFG",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9295,8 +9369,8 @@
         "status": "study",
         "note": "S36 dopant, through the cell line."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9312,8 +9386,8 @@
         "status": "study",
         "note": "Same 10 g/d into the wafer fab."
       },
-      "from_sector_id": "GAS",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9364,7 +9438,7 @@
         "note": "Same mass as CUT-1. The generator draws the tank, not the column. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: genset exercise fuel (NFPA 110 8.4.2) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
-      "to_sector_id": "BACKUP_GEN",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9398,7 +9472,7 @@
         "note": "Closes the silicon-carbide carbon. Same mass as the CO. Not IA-NUT-LEACH. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "NUT",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9466,7 +9540,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw. | X-PAR-12 TF: BMED HCl make 31.61 of 31.61 kg/d (k 1.000) (AQS-PAR-005)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
@@ -9482,7 +9556,7 @@
         "status": "study",
         "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
@@ -9499,7 +9573,7 @@
         "status": "study",
         "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K."
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
@@ -9516,7 +9590,7 @@
         "status": "study",
         "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -9636,7 +9710,7 @@
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
@@ -9805,7 +9879,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -9890,8 +9964,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (0.000 H2 x 7.94 + 0.054 C7.5H17 x 3.51) (AQS-PAR-005)."
       },
-      "from_sector_id": "CRYO",
-      "to_sector_id": "GAS",
+      "from_sector_id": "GAS",
+      "to_sector_id": "ELEC",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9907,8 +9981,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (CO 0.266 + organics 0.480); S11 is 99.8 % water (AQS-PAR-005)."
       },
-      "from_sector_id": "CRYO",
-      "to_sector_id": "GAS",
+      "from_sector_id": "GAS",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9924,8 +9998,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: header CO2 the bed cannot fix (AQS-PAR-005)."
       },
-      "from_sector_id": "CRYO",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "HAB",
+      "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9942,7 +10016,7 @@
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
       },
       "from_sector_id": "DOCK",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9958,8 +10032,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9975,8 +10049,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -9992,8 +10066,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10009,8 +10083,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10026,8 +10100,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10043,8 +10117,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10060,8 +10134,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10077,8 +10151,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10094,8 +10168,8 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2 less burner share (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
@@ -10111,7 +10185,7 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock (AQS-PAR-005)."
       },
-      "from_sector_id": "CRYO",
+      "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -10128,7 +10202,7 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C11-C18 make less the plant draw (IA-BLOW-IN), shipped (Q-002 pattern) (AQS-PAR-003)."
       },
-      "from_sector_id": "CRYO",
+      "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -10145,7 +10219,7 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT), shipped (Q-002 pattern) (AQS-PAR-003)."
       },
-      "from_sector_id": "CRYO",
+      "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
@@ -10264,8 +10338,8 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid to leach by difference (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10281,8 +10355,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 126.5 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as 20 wt%."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "CRYO",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10298,8 +10372,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10315,8 +10389,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.90 kg/d HCl / 0.0707. | X-PAR-12 TF: BMED product by difference (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10332,8 +10406,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10). | X-PAR-12 TF: condensate scales with HCl make (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10350,7 +10424,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw. | X-PAR-12 TF: evaporator scales with HCl make (AQS-PAR-005)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; layers=elec"
     },
@@ -10366,8 +10440,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 96.46 kg/d NaOH / 0.0741."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10383,8 +10457,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_BASE."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10401,7 +10475,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; layers=elec"
     },
@@ -10418,7 +10492,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Demand 2538 mol/d less BMED 2412 mol/d; worst case, no credit for sodium returned in the silicate liquor."
       },
       "from_sector_id": "DOCK",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
     },
@@ -10434,7 +10508,7 @@
         "status": "study",
         "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: startup inventory, not a flow | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "DOCK",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10485,7 +10559,7 @@
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 out = N2 in (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10502,7 +10576,7 @@
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10519,7 +10593,7 @@
         "status": "study",
         "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: CO2 out = CO2 in (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10553,7 +10627,7 @@
         "status": "study",
         "note": "AQS-DUTY-018. Closed inventory. Noble gases held, not vented. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "FAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10570,7 +10644,7 @@
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10604,7 +10678,7 @@
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: no CO2 recycle into the cold box (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10621,7 +10695,7 @@
         "status": "study",
         "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (-0.0000 kg/d); Henry bound 3.719 kg/d (SANDER2015) (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "GAS",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10723,7 +10797,7 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
-      "from_sector_id": "CRYO",
+      "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
@@ -10813,6 +10887,193 @@
       "open_boundary": false,
       "null_rate_kind": "unknown",
       "note": "X-RSZ-07-style feed edge for an unfed load | first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18; layers=elec"
+    },
+    {
+      "stream_id": "S100",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "E",
+      "carries": "Q4 water to HX-9 leach make-up preheater",
+      "rate": {
+        "value": 0.5322,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011 \u00a74.15 Rev M verbatim: HX-9 heats the cold make-up (S68, S10, S16, S39, S72, S28) to 55.0 C. Restored per AQS-HEAT-STUDY-002 \u00a710.1 (option c winner): all-season Q4_BUS branch."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "S101",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "E",
+      "carries": "Q4 water to HX-10 digest caustic preheater",
+      "rate": {
+        "value": 0.2822,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-011 \u00a74.15 Rev M verbatim: HX-10 heats S91 caustic 35 -> 55 C ahead of the HX-6 jacket. Restored per AQS-HEAT-STUDY-002 \u00a710.1."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q4-ADS",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "ADS_CHILL",
+      "phase": "E",
+      "carries": "Q4 water 65 C drive (summer design)",
+      "rate": {
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.2 (A-M-239, A-M-240): summer design drive duty at COP_c 0.45 \u2014 top of the 3.5-5.0 kW_th absorbed band; complements the winter MAU coil (never coincident)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-ADS-CHW",
+      "from_unit_id": "ADS_CHILL",
+      "to_unit_id": "HABITATION",
+      "phase": "E",
+      "carries": "chilled water 12 C (kW_c cooling service)",
+      "rate": {
+        "value": 2.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a74 table: 5.0 kW_th drive x COP_c 0.45 = 2.25 kW_c delivered (summer building cooling, displaces up to 1.5 kW_e compression chiller; A-M-240)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-ADS-REJ",
+      "from_unit_id": "ADS_CHILL",
+      "to_unit_id": "DRY_COOLER",
+      "phase": "E",
+      "carries": "recooling (absorber + condenser) via the shared terminal",
+      "rate": {
+        "value": 7.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.2: drive 5.0 + chilled 2.25 rejected at 30 C recooling through the shared terminal dry cooler."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-Q4-MAU",
+      "from_unit_id": "Q4_BUS",
+      "to_unit_id": "MAU_HX",
+      "phase": "E",
+      "carries": "Q4 water 65/45 C (winter design)",
+      "rate": {
+        "value": 12.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.3 (A-M-241): winter design duty \u2014 1.8 K on the 6.65 kW/K make-up stream; the winter sink is effectively unbounded (1.5 K alone absorbs 10 kW)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-MAU-AIR",
+      "from_unit_id": "MAU_HX",
+      "to_unit_id": "HABITATION",
+      "phase": "E",
+      "carries": "tempered make-up air (+1.8 K)",
+      "rate": {
+        "value": 12.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.3 (A-M-241): tempered make-up air to the hall; Q4 is the named tempering source per AQS-THM-002."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-RECT-Q4",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "rectifier electronics reject <= 60 C",
+      "rate": {
+        "value": 1.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a77.1/\u00a710.9 (A-M-246): 12 kW rectifier at 92-96 % efficiency rejects 0.5-1.0 kW at <= 60 C \u2014 cannot heat an 85-100 C store (second law; identical to the ruled HX-8 finding, AQS-DUTY-008 \u00a713.1). Bounding 1.0 kW taken."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.9: replaces the mis-booked IA-Q3A/B-TRIM (2 x 10.048 kW into the Q3 stores) \u2014 electronics cooling belongs on Q4.; namespace=IA; layers=thermal"
+    },
+    {
+      "stream_id": "IA-TRIM-HX5",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "E",
+      "carries": "HX-5 electric trim at the process",
+      "rate": {
+        "value": 15.882,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a77.1: the 10.048 kW/ladder Q3 trim decomposes as (HX-5 6.353 + HX-6 1.663) x 1.25 \u2014 it is resistance heat, re-homed from the Q3 store booking to the process unit (Rev M heater nameplate 6.0 kW/ladder; normal with HX-9 in service 0.43 kW_e/ladder, HEAT_LADDER.md Rev M). Rated 2 x 6.353 x 1.25 = 15.882 kW."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.9 (A-M-246): retired the RECTIFIER->Q3_A/B trim booking (double-counted against the ladder closure and inflated Q3 transit).; namespace=IA; layers=elec,thermal"
+    },
+    {
+      "stream_id": "IA-TRIM-HX6",
+      "from_unit_id": "RECTIFIER",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "E",
+      "carries": "HX-6 electric trim at the process",
+      "rate": {
+        "value": 4.158,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a77.1: HX-6 digest trim, rated 2 x 1.663 x 1.25 = 4.158 kW (nameplate 2.5 kW/ladder, HEAT_LADDER.md Rev M; normal with HX-10 in service 0.80 kW_e/ladder). Re-homed from the Q3 store booking to the process unit."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.9 (A-M-246): retired the RECTIFIER->Q3_A/B trim booking.; namespace=IA; layers=elec,thermal"
+    },
+    {
+      "stream_id": "SQ-H2O_ELYZ-Q4",
+      "from_unit_id": "H2O_ELYZ",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "carries": "PEM stack heat above Q4 return",
+      "rate": {
+        "value": 7.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "note": "Restores the BH SQ- convention (SQ-H2O_ELYZ) with the Rev AC destination Q4_BUS per AQS-HEAT-STUDY-002.; namespace=IA; layers=thermal"
     }
   ],
   "electrical": {
@@ -10827,23 +11088,23 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 50.0,
+      "value": 250.0,
       "unit": "kW",
       "status": "study",
-      "note": "ELEC_NEED_KW_BASE at SCALE_M=1"
+      "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-234): converged bounding demand incl. the EXT_HALL extension (roof_close 33x28 bays, ext 93.84 kW). Replaces the ELEC_NEED_KW_BASE 50 kW seed."
     },
     "target_kw": {
-      "value": 70.0,
+      "value": 625.0,
       "unit": "kW",
       "status": "study",
-      "note": "ELEC_NEED \u00d7 1.4 overprod"
+      "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-234): mean-day average generation = 2.0 x balancing (D75) = 2.5 x need incl. round trip. Replaces the ELEC_NEED x 1.4 seed."
     },
-    "pv_module_kw": 70.0,
-    "pv_count": 1,
+    "pv_module_kw": 0.5,
+    "pv_count": 6932,
     "znbr_module_kw": 60.0,
     "znbr_count": 1,
     "rect_count": 1,
-    "notes": "Study values from cad/freecad/params.py and AQS-REQ-KW-001; not vendor nameplates."
+    "notes": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-231..238): demand basis = graph max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC (A-M-231); PV/storage/inverter/roof chain per D75 at pv_oversize_factor 2.0."
   },
   "scale_rules": {
     "tanks": "continuous",
@@ -10874,5 +11135,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev AC (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress. | D-PV encode 2026-10-18 (AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78; A-M-231..238): PV 3466 kWp = 2.0 x 1733 balancing; 6932 x 0.5 kWp modules; array 30 444 m2; derived building 198 x 168 m (33 x 28 bays, 33 264 m2 gross, +32 832 m2 extension at 93.84 kW); 49 x 60 kW inverters; storage 3500 kWh / 1137 kW charge / 250 kW discharge; IA-PV-01 = 312.5 kW absolute; mvs.electrical need 250 / target 625 kW.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev AC (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }

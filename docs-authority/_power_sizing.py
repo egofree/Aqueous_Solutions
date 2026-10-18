@@ -1,25 +1,46 @@
-"""AQS-ELEC-007 storage and generation sizing from the AQS-ELEC-002 bus demand. Two cases:
-bounding (EW at the copper-equivalent current) and reference (EW at the element current). Study values."""
+"""AQS-ELEC-007 storage and generation sizing from the plant bus demand. Two cases:
+bounding (EW at the copper-equivalent current) and reference (EW at the element current). Study values.
+Rev AC re-base 2026-10-18 (A-M-231, notes/pv_sizing_derivation_2026-10-18.md §2/§3): demand is derived
+from the graph itself — unit bound = max(node continuous_kw, SOL_ARK_60K elec feed) — instead of the stale
+Rev BH LOAD_LIST one-line rows (+175 kW contamination: EXT_HALL 93.8 twice, RECT_EW twice, retired farm/
+chem rows). The EXT_HALL subtraction no-op is gone (roof_close adds the extension load itself) and the
+inverter block size is read from the graph (SOL_ARK kW / count), not hardcoded."""
 import json, math, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flow_graph.param import drivers as DR
 from flow_graph.param.sizing import power as PW
 _d = DR.load()   # X-PAR-03: yield, derate, round trip, night hours from drivers.json
-ol=json.loads(subprocess.run(['python3','docs-authority/_one_line.py'],capture_output=True,text=True,check=True).stdout)
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
-PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); INV=60.0; AUT_CRIT=2.0   # study; PSH from AQS-SITE-002 (NREL PVWatts)
-_gc={n['unit_id']:n for n in json.load(open('flow_graph/plant_flow_graph.json'))['nodes']}
+_g=json.load(open('flow_graph/plant_flow_graph.json')); _gc={n['unit_id']:n for n in _g['nodes']}
+PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); AUT_CRIT=2.0   # study; PSH from AQS-SITE-002 (NREL PVWatts)
+INV=_gc['SOL_ARK_60K']['params']['kW']/max(_gc['SOL_ARK_60K']['params'].get('count',1),1)   # inverter block = graph kW / SOL_ARK count (49 x 60 kW), not a single-inverter hardcode
 CRIT={'HABITATION':3.0,'CRYO_H2':round(_gc['CRYO_H2']['params'].get('compressor_design',{}).get('P_peak_kW',4.0),2)}   # CRYO_H2 peak (AQS-DUTY-067) from the graph
-if 'CRYO_ASU' in _gc: CRIT['CRYO_ASU']=round(_gc['CRYO_ASU']['continuous_kw']['value'],2)   # AQS-DUTY-069; node retired in graph Rev AC
-if 'GROW_BED' in _gc: CRIT['GROW_BED']=5.0   # farm scope retired in graph Rev AC
+if 'CRYO_ASU' in _gc: CRIT['CRYO_ASU']=round(_gc['CRYO_ASU']['continuous_kw']['value'],2)   # AQS-DUTY-069 duty 1.66 kW — NOT the legacy 18 kW critical value (A-M-238)
+if 'GROW_BED' in _gc: CRIT['GROW_BED']=5.0
 CRIT['controls and instruments']=2.0
+# Graph-native bounding demand (A-M-231): max(node continuous_kw, SOL_ARK_60K elec feed) per unit;
+# EW_1..EW_9 cell DC is covered by the RECT-EW bounding AC row below; storage-charge, curtailment and
+# generation (bus, PV, FC, DMFC, standby genset, ZNBR2) are not demand.
+NOT_DEMAND={'SOL_ARK_60K','PV_ARRAY','ZNBR2','FUEL_CELL','MEOH_FC','BACKUP_GEN','BOUNDARY_EXPORT'}
+def _kw(n):
+    q=n.get('continuous_kw'); v=q.get('value') if isinstance(q,dict) else q
+    return float(v) if isinstance(v,(int,float)) else 0.0
+B={}
+for n in _g['nodes']:
+    u=n['unit_id']
+    if n.get('presence')=='retired' or u in NOT_DEMAND or (u.startswith('EW_') and u[3:].isdigit()): continue
+    if _kw(n): B[u]=_kw(n)
+for e in _g['edges']:
+    if e.get('from_unit_id')!='SOL_ARK_60K' or 'elec' not in (e.get('layers') or []): continue
+    u=e['to_unit_id']
+    if u in NOT_DEMAND or e.get('presence')=='retired': continue
+    r=e.get('rate') or {}
+    if r.get('unit')=='kW' and isinstance(r.get('value'),(int,float)): B[u]=max(B.get(u,0.0),float(r['value']))
 ref_rect=ew['I_elem_A']*2.8/0.80/1000
-cases={'bounding':ol['demand'],'reference':ol['demand']-rect['Pac_kW']+ref_rect}
+cases={'bounding':round(sum(B.values())+rect['Pac_kW'],2),'reference':round(sum(B.values())+ref_rect,2)}
 from flow_graph.param import solver as SV
-_g0=json.load(open('flow_graph/plant_flow_graph.json')); _x=next((n['continuous_kw']['value'] for n in _g0['nodes'] if n['unit_id']=='EXT_HALL' and n.get('continuous_kw')),0.0)
-cases={k:P-_x for k,P in cases.items()}   # base demand without the extension; roof_close adds it back
-roof=SV.roof_close(_d,cases['bounding'])   # X-PAR-07: roof-only PV; extension loads added to both cases
+roof=SV.roof_close(_d,cases['bounding'])   # X-PAR-07: roof-only PV; the extension load (incl. EXT_HALL) is added by roof_close, counted once
 cases={k:P+roof['ext']['total_kW'] for k,P in cases.items()}
 out={}
 for k,P in cases.items():
