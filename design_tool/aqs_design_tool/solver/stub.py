@@ -369,8 +369,10 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
 
     pv_kw = None
     if elec.pv_count is not None and elec.pv_module_kw is not None:
-        if "ELEC_PV" in enabled:
-            pv_kw = elec.pv_count * elec.pv_module_kw
+        pv_kw = elec.pv_count * elec.pv_module_kw
+        if "ELEC_PV" in enabled and "PV_ARRAY" not in gen_sources:
+            # PV_ARRAY already books its nameplate as a generation-role unit;
+            # the electrical-block product is the same plant — count it once.
             gen_kw += pv_kw
             gen_sources.append("ELEC_PV_modules")
 
