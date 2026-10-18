@@ -2,7 +2,8 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://aqueous.local/schema/plant_flow_graph.schema.json",
   "title": "Aqueous Plant Flow Graph",
-  "description": "Sole typed plant graph authority (AQS-FLOW-GRAPH-001). WP-Ap1: mvs block + node enrichment; candidate_mvs is generated projection. CERN-OHL-S-2.0.",
+  "description": "Sole typed plant graph authority (AQS-FLOW-GRAPH-001). Regenerated R7 from the operative pydantic models in flow_graph/models.py (Rev AC widened models: presence includes retired/study, layers include energy, modules accept dict|string, continuous_kw accepts a bare number coerced by a before-validator). Deliberately stricter than pydantic's ignore-extras default (additionalProperties: false) so graph drift surfaces here first; every extra key the live graph carries today is declared below. CERN-OHL-S-2.0.",
+  "$comment": "Regenerated R7 from flow_graph/models.py via PlantFlowGraph.model_json_schema(). Edge properties rate_kg_d/rate_status: legacy Rev BH residue, cleanup pending R7b.",
   "type": "object",
   "required": [
     "schema_version",
@@ -24,6 +25,8 @@
       "const": "AQS-FLOW-GRAPH-001"
     },
     "revision": {
+      "default": "B",
+      "title": "Revision",
       "type": "string"
     },
     "licence": {
@@ -31,9 +34,13 @@
       "const": "CERN-OHL-S-2.0"
     },
     "date": {
+      "default": "2026-10-01",
+      "title": "Date",
       "type": "string"
     },
     "sole_authority": {
+      "default": true,
+      "title": "Sole Authority",
       "type": "boolean"
     },
     "locks": {
@@ -41,138 +48,110 @@
       "items": {
         "type": "string"
       },
-      "minItems": 5
+      "minItems": 5,
+      "description": "Mike locks held by this document as sole typed topology authority."
     },
     "nodes": {
-      "type": "array",
       "items": {
         "$ref": "#/$defs/node"
-      }
+      },
+      "title": "Nodes",
+      "type": "array"
     },
     "edges": {
-      "type": "array",
       "items": {
         "$ref": "#/$defs/edge"
-      }
+      },
+      "title": "Edges",
+      "type": "array"
     },
     "view_presets": {
-      "type": "array",
       "items": {
         "$ref": "#/$defs/view_preset"
-      }
+      },
+      "title": "View Presets",
+      "type": "array"
     },
     "gaps": {
-      "type": "array",
       "items": {
+        "additionalProperties": true,
         "type": "object"
-      }
+      },
+      "title": "Gaps",
+      "type": "array"
     },
     "notes": {
-      "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "title": "Notes",
+      "type": "array"
     },
     "mvs": {
-      "type": "object",
-      "description": "WP-Ap1: MVS sectors/site/criteria/electrical/ui live on the graph; candidate_mvs is a projection.",
-      "properties": {
-        "schema_version": {
-          "type": "string"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/mvs_block"
         },
-        "doc_id": {
-          "type": "string"
-        },
-        "revision": {
-          "type": "string"
-        },
-        "licence": {
-          "type": "string"
-        },
-        "scale_m": {
-          "type": "number"
-        },
-        "status": {
-          "type": "string"
-        },
-        "mvs_criteria": {
-          "type": "object"
-        },
-        "site": {
-          "type": "object"
-        },
-        "sectors": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "electrical": {
-          "type": "object"
-        },
-        "scale_rules": {
-          "type": "object"
-        },
-        "ui": {
-          "type": "object"
-        },
-        "notes": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "write_path": {
-          "type": [
-            "string",
-            "null"
-          ]
+        {
+          "type": "null"
         }
-      },
-      "additionalProperties": true
+      ],
+      "default": null
+    },
+    "loops_closed": {
+      "type": "boolean",
+      "description": "True only when every material loop closes; false while any rate is an assumption."
     }
   },
   "$defs": {
     "quantity": {
-      "type": "object",
-      "additionalProperties": false,
       "properties": {
         "value": {
-          "type": [
-            "number",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
         },
         "unit": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
         },
         "status": {
-          "type": "string",
-          "enum": [
-            "authority",
-            "study",
-            "null"
-          ]
+          "$ref": "#/$defs/rate_status",
+          "default": "null"
         },
         "note": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
         }
-      }
+      },
+      "title": "Quantity",
+      "type": "object",
+      "additionalProperties": false
     },
     "node": {
-      "type": "object",
-      "required": [
-        "unit_id",
-        "sector_id",
-        "presence"
-      ],
-      "additionalProperties": false,
       "properties": {
         "unit_id": {
           "type": "string",
@@ -183,135 +162,195 @@
           "minLength": 1
         },
         "presence": {
-          "type": "string",
-          "enum": [
-            "present",
-            "placeholder"
-          ]
+          "$ref": "#/$defs/presence",
+          "default": "present"
         },
         "class": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "electrical_role": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "diagram_gap": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "notes": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "enabled": {
-          "type": "boolean"
-        },
-        "continuous_kw": {
-          "oneOf": [
+          "anyOf": [
             {
-              "$ref": "#/$defs/quantity"
+              "type": "string"
             },
             {
               "type": "null"
             }
-          ]
+          ],
+          "default": null,
+          "title": "Class"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "electrical_role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Electrical Role"
+        },
+        "diagram_gap": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Diagram Gap"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "continuous_kw": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/quantity"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Quantity object, or a bare number (kW) coerced by the FlowNode before-validator to {value, unit: 'kW', status: 'study'} (Rev AC shorthand)."
         },
         "modules": {
           "type": "array",
           "items": {
-            "type": "object"
-          }
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "description": "MVS unit modules: structured dicts or bare process-step name strings."
         },
         "params": {
+          "additionalProperties": true,
+          "title": "Params",
           "type": "object"
+        },
+        "class_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Field-name alias of 'class'; accepted because the model sets populate_by_name."
         }
-      }
+      },
+      "required": [
+        "unit_id",
+        "sector_id"
+      ],
+      "title": "FlowNode",
+      "type": "object",
+      "additionalProperties": false
     },
     "edge": {
-      "type": "object",
-      "required": [
-        "stream_id",
-        "from_unit_id",
-        "to_unit_id",
-        "phase",
-        "layers",
-        "presence",
-        "namespace"
-      ],
-      "additionalProperties": false,
       "properties": {
         "stream_id": {
           "type": "string",
           "minLength": 1
         },
         "from_unit_id": {
+          "title": "From Unit Id",
           "type": "string"
         },
         "to_unit_id": {
+          "title": "To Unit Id",
           "type": "string"
         },
         "phase": {
+          "title": "Phase",
           "type": "string"
         },
         "layers": {
-          "type": "array",
           "items": {
-            "type": "string",
-            "enum": [
-              "mass",
-              "elec",
-              "thermal",
-              "ess"
-            ]
+            "$ref": "#/$defs/layer_tag"
           },
+          "title": "Layers",
+          "type": "array",
           "minItems": 1
         },
         "presence": {
-          "type": "string",
-          "enum": [
-            "present",
-            "placeholder"
-          ]
+          "$ref": "#/$defs/presence",
+          "default": "present"
         },
         "carries": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Carries"
         },
         "header": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Header"
         },
         "forbidden": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Forbidden"
         },
         "claim_status": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Claim Status"
         },
         "rate": {
           "anyOf": [
@@ -321,99 +360,317 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "default": null
         },
         "from_sector_id": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Sector Id"
         },
         "to_sector_id": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Sector Id"
         },
         "open_boundary": {
+          "default": false,
+          "title": "Open Boundary",
           "type": "boolean"
         },
         "namespace": {
-          "type": "string",
+          "default": "S",
           "enum": [
             "S",
             "IA",
             "TBD",
             "SANDBOX"
-          ]
+          ],
+          "title": "Namespace",
+          "type": "string"
         },
         "gap_flags": {
-          "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Gap Flags",
+          "type": "array"
         },
         "notes": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
         },
         "params": {
           "type": "object",
           "description": "Engineering basis of the edge: duty, medium, supply/return temperature, flow, line size (AQS-DUTY-008)."
+        },
+        "rate_kg_d": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Legacy Rev BH residue, cleanup pending R7b."
+        },
+        "rate_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Legacy Rev BH residue, cleanup pending R7b (observed values: unset, assumption)."
+        },
+        "composition": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Mass-fraction composition map carried on the edge (model-ignored extra)."
+        },
+        "assay_g_L": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Aqueous assay in g/L carried on the edge (model-ignored extra)."
+        },
+        "composition_superseded": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Tombstone recording the composition/assay this edge superseded, and why."
+        },
+        "nozzle": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Nozzle schedule (tag, dn, rating, service) for vent/relief connections."
+        },
+        "pipe": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Line schedule (dn, velocity, id, service, material)."
         }
-      }
+      },
+      "required": [
+        "stream_id",
+        "from_unit_id",
+        "to_unit_id",
+        "phase",
+        "layers",
+        "presence",
+        "namespace"
+      ],
+      "title": "FlowEdge",
+      "type": "object",
+      "additionalProperties": false
     },
     "view_preset": {
-      "type": "object",
-      "required": [
-        "preset_id",
-        "view_mode"
-      ],
-      "additionalProperties": false,
       "properties": {
         "preset_id": {
+          "title": "Preset Id",
           "type": "string"
         },
         "view_mode": {
-          "type": "string",
           "enum": [
             "PFD",
             "MFD",
             "EFD"
-          ]
+          ],
+          "title": "View Mode",
+          "type": "string"
         },
         "layer_filter": {
-          "type": "array",
           "items": {
-            "type": "string",
-            "enum": [
-              "mass",
-              "elec",
-              "thermal",
-              "ess"
-            ]
-          }
+            "$ref": "#/$defs/layer_tag"
+          },
+          "title": "Layer Filter",
+          "type": "array"
         },
         "include_intra_aisle": {
+          "default": true,
+          "title": "Include Intra Aisle",
           "type": "boolean"
         },
         "include_placeholders": {
+          "default": true,
+          "title": "Include Placeholders",
           "type": "boolean"
         },
         "description": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
         }
-      }
+      },
+      "required": [
+        "preset_id",
+        "view_mode"
+      ],
+      "title": "ViewPreset",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "mvs_block": {
+      "description": "MVS sector/site/criteria/electrical fields living on the graph (WP-Ap1).\n\n``schema_version`` here is the *projected* aqs-mvs-* version for legacy\nconsumers; the graph itself keeps ``aqs-flow-graph-*`` at the root.",
+      "properties": {
+        "schema_version": {
+          "default": "aqs-mvs-0.3",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "doc_id": {
+          "default": "AQS-MVS-001",
+          "title": "Doc Id",
+          "type": "string"
+        },
+        "revision": {
+          "default": "E-candidate",
+          "title": "Revision",
+          "type": "string"
+        },
+        "licence": {
+          "default": "CERN-OHL-S-2.0",
+          "title": "Licence",
+          "type": "string"
+        },
+        "scale_m": {
+          "default": 1.0,
+          "title": "Scale M",
+          "type": "number"
+        },
+        "status": {
+          "default": "candidate",
+          "title": "Status",
+          "type": "string"
+        },
+        "mvs_criteria": {
+          "additionalProperties": true,
+          "title": "Mvs Criteria",
+          "type": "object"
+        },
+        "site": {
+          "additionalProperties": true,
+          "title": "Site",
+          "type": "object"
+        },
+        "sectors": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Sectors",
+          "type": "array"
+        },
+        "electrical": {
+          "additionalProperties": true,
+          "title": "Electrical",
+          "type": "object"
+        },
+        "scale_rules": {
+          "additionalProperties": true,
+          "title": "Scale Rules",
+          "type": "object"
+        },
+        "ui": {
+          "additionalProperties": true,
+          "title": "Ui",
+          "type": "object"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "write_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Write Path"
+        }
+      },
+      "title": "MvsBlock",
+      "type": "object"
+    },
+    "presence": {
+      "enum": [
+        "present",
+        "placeholder",
+        "retired",
+        "study"
+      ],
+      "title": "Presence",
+      "type": "string"
+    },
+    "layer_tag": {
+      "enum": [
+        "mass",
+        "elec",
+        "thermal",
+        "ess",
+        "energy"
+      ],
+      "title": "LayerTag",
+      "type": "string"
+    },
+    "rate_status": {
+      "enum": [
+        "authority",
+        "study",
+        "null"
+      ],
+      "title": "RateStatus",
+      "type": "string"
     }
   },
   "patternProperties": {
-    "^notes_rev_[a-z0-9_]+$": {
-      "type": "string"
+    "^notes_rev_[A-Za-z0-9_]+$": {
+      "type": "string",
+      "description": "Per-revision changelog entry; rev letters past 'g' are uppercase (H..AC)."
     }
   }
 }
