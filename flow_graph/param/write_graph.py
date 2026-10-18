@@ -67,7 +67,9 @@ def process():
             if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')})
             else: g['edges'].append(e); E[e['stream_id']] = e
         for p in prods:
-            E[p]['from_unit_id'] = u; E[p]['from_sector_id'] = 'WET'
+            # R8-style presence gate: IA-ACEX-NAOH was retired with the ACEX train re-homes; only re-point
+            # product edges that exist (the graph no longer carries every BASE_DEMAND member).
+            if p in E: E[p]['from_unit_id'] = u; E[p]['from_sector_id'] = 'WET'
     # X-PAR-10 vent scrubber on the EVAP_ACID column vent (owner decision 2026-10-15; AQS-DUTY-061)
     vs = s['vs']; up = vs['upset']; VT = f'{TAG}; X-PAR-10 vent scrubber (AQS-DUTY-061)'
     nd = N.get('EVAP_ACID_VS') or {'unit_id': 'EVAP_ACID_VS', 'sector_id': 'WET', 'presence': 'present', 'class': 'scrubber', 'tags': [], 'electrical_role': 'load',
@@ -103,6 +105,11 @@ def process():
         n = N[c]; r = rows[c]
         if isinstance(n.get('continuous_kw'), dict): n['continuous_kw'] = rate(v['P_kW'],'kW',f"{TAG}. Cell DC at the electrode: {v['I_A']:.0f} A (Faraday, copper-equivalent, CE {CE}) x {V} V (USBM_CL_EW chloride EW).")
         if 'cell_voltage_V' in n['params']: n['params']['cell_current_A'] = round(v['I_A']); n['params']['cell_voltage_V'] = V
+        # D9 ownership rule (documented, no change): the EW plate GEOMETRY calculator (docs-authority/_ew_sizing.py, AQS-EW-MOD-001
+        # constants) owns the geometry; it reads only the harvest edges from the graph. The params.sizing stamped here (size_mm,
+        # cathodes, anodes, j, V_liq, P_dc) are OUTPUTS of that calculator onto the graph - never inputs back into it - so the
+        # graph -> calculator -> graph round trip cannot self-feed. write_graph.process is the single writer of IA-DC-EW_n;
+        # o2_close.tf only fills gaps with the same live solver values.
         sz = n['params'].get('sizing', {})
         sz.update({'size_mm': r['size_mm'], 'I_bounding_A': round(v['I_A']), 'cathodes': r['cathodes'], 'anodes': r['anodes'], 'j_A_m2': round(r['j_A_m2']),
                    'V_liq_m3': round(r['V_liq_m3'],3), 'P_dc_kW': round(v['P_kW'],2), 'status': 'study', 'source': 'AQS-DUTY-051'})
@@ -128,8 +135,9 @@ def process():
 def power():
     g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}
     o = json.loads(subprocess.run([sys.executable,'docs-authority/_power_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout); p = o['bounding']; rf = o['roof']
-    pv = N['PV_ARRAY']['params']; kwp = math.ceil(p['pv_kWp'])
-    pv.update({'nameplate_kw': kwp, 'count': math.ceil(kwp/pv['module_kw']), 'area_m2': round(rf['array_m2']),
+    d = DR.load()
+    pv = N['PV_ARRAY']['params']; kwp = math.ceil(p['pv_kWp']); count = math.ceil(kwp/pv['module_kw'])
+    pv.update({'nameplate_kw': kwp, 'count': count, 'area_m2': round(rf['array_m2']),
                'mounting': 'roof only (X-PAR-07); ground field removed',
                'roof': {'footprint_mm': [rf['W_mm'], rf['D_mm']], 'bays': [rf['bays_x'], rf['bays_y']], 'footprint_m2': rf['footprint_m2'],
                         'extension_m2': rf['added_m2'], 'roof_capacity_kWp': round(rf['pv_roof_kWp'], 1), 'perimeter_pathway_mm': rf['layout']['perimeter_mm'],
@@ -171,9 +179,42 @@ def power():
     E['SF-EXT_HALL']['rate'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': 'Equals EXT_HALL continuous_kw (X-PAR-07).'}
     pv1 = E['IA-PV-01']['rate']; pv1['value'] = round(pv1['value'] + kw - old, 4)
     if 'X-PAR-07' not in pv1.get('note', ''): pv1['note'] = pv1.get('note', '') + f' X-PAR-07 extension hall: +{kw:.2f} kW.'
+    # D3 (2026-10-18): BACKUP_GEN rated kW stamped on the graph by this writer from the single governed source
+    # drivers.json backup_gen_rated_kW (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); o2_close and _power_sizing read the same key.
+    gen_kw = DR.val(d, 'backup_gen_rated_kW')
+    N['BACKUP_GEN']['params'].update(rated_kW=gen_kw,
+        rated_kW_basis='drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps '
+                        '(AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.')
+    # D4 companion: keep the ZNBR2 per-inverter distribution live with the section count (AQS-ELEC-008)
+    N['ZNBR2']['params']['distribution'] = (f"distributed over the {p['inverters']} hybrid inverters, {p['store_kWh']/p['inverters']:.1f} kWh and "
+                                            f"{p['charge_kW']/p['inverters']:.1f} kW charge each (AQS-ELEC-008)")
+    # D1/D2 (2026-10-18): mvs.electrical is WRITTEN here from the live power-chain derivation (A-M-234 replaced_by; A-M-258
+    # chain) instead of being a seed block that drifts from PV_ARRAY/ZNBR2/SOL_ARK params. Schema keys only
+    # (design_tool ElectricalModel, extra=forbid). need = converged bounding demand incl. the EXT_HALL extension;
+    # target = mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24
+    # (= 2.5 x need at the drivers basis: 2.0 D75 oversize / 0.70 round trip); pv_* mirror PV_ARRAY.params;
+    # znbr_* mirror the SOL_ARK hybrid-inverter block the ZNBR2 store is distributed over; rect = the one nine-channel RECTIFIER.
+    target = p['pv_kWp']*DR.val(d,'pv_yield_kWh_kWp_d')*DR.val(d,'pv_roof_yield_factor')*DR.val(d,'pv_system_derate')/24.0
+    mvs = g.setdefault('mvs', {})
+    old_el = mvs.get('electrical') or {}
+    mvs['electrical'] = {
+        'bus_nodes': old_el.get('bus_nodes', ['SOL_ARK_60K', 'ZNBR2', 'RECTIFIER']),
+        'storage_options': old_el.get('storage_options', ['ZNBR2', 'MEOH', 'PUMPED_HYDRO']),
+        'need_kw': {'value': round(p['P_kW'], 2), 'unit': 'kW', 'status': 'study',
+                    'note': f"write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close {rf['bays_x']}x{rf['bays_y']} bays, ext {rf['ext']['total_kW']:.2f} kW)."},
+        'target_kw': {'value': round(target, 2), 'unit': 'kW', 'status': 'study',
+                      'note': 'write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75).'},
+        'pv_module_kw': pv['module_kw'], 'pv_count': count,
+        'znbr_module_kw': round(p['inv_kW']/p['inverters'], 6), 'znbr_count': p['inverters'],
+        'rect_count': 1,
+        'notes': ('write_graph power() (single writer, D1/D2/D4): need/target/PV/storage chain re-derived per A-M-234 replaced_by / A-M-258 from '
+                  'docs-authority/_power_sizing.py (demand = max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC, A-M-231) and solver.roof_close; '
+                  'pv_module_kw x pv_count = PV_ARRAY.params.nameplate_kw; znbr_* = the SOL_ARK hybrid-inverter block the ZNBR2 store is distributed over; '
+                  'rect_count = the single nine-channel RECTIFIER (Rev AC; RECT_EW remap, A-M-255).')}
     open(GP,'w').write(json.dumps(g, indent=2))
     subprocess.run([sys.executable,'docs-authority/_collection_bus.py'],cwd=ROOT,capture_output=True,text=True,check=True)   # X-ELS-11 sections
-    print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW")
+    print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW; "
+          f"mvs.electrical need {round(p['P_kW'],2)} kW / target {round(target,2)} kW; BACKUP_GEN {gen_kw:.0f} kW")
 
 def heat():
     """X-THM-01 store-ledger re-solve (R10b, A-M-259). Two Rev AC defects: (1) the kW-unit ladder-family edges

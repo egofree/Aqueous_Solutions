@@ -252,7 +252,8 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "rated_kW": 40.0,
-        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)"
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; fuel 0.054 kg/d at 30% on 12.2 kWh/kg LHV (TURNS2012)",
+        "rated_kW_basis": "drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py."
       },
       "modules": [],
       "electrical_role": "generation",
@@ -294,7 +295,12 @@
       "params": {},
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 5.6267,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed()."
+      }
     },
     {
       "unit_id": "BMED_BASE",
@@ -590,7 +596,7 @@
           "S17-BMED": 5.6267,
           "SF-EVAP_ACID": 1.497,
           "IA-PV-01": 312.5,
-          "BMED_kW": null,
+          "BMED_kW": 5.6267,
           "EVAP_kW": 1.497,
           "bus_r0": 195.99939999999992,
           "PV": {
@@ -1815,9 +1821,9 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7818,
+        "count": 7820,
         "presence": "present",
-        "nameplate_kw": 3909,
+        "nameplate_kw": 3910,
         "area_m2": 34328,
         "balance_kWp": 1955,
         "oversize_factor": 2.0,
@@ -1847,7 +1853,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 417.2469,
+        "value": 417.2757,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1959,7 +1965,7 @@
         "dc_ac_ratio": 1.2,
         "interconnection": {
           "export_peak_kW": 3018.0,
-          "export_kWh_d_clear": 8459,
+          "export_kWh_d_clear": 8460,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -3602,7 +3608,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 865.0,
+        "water_off_kg_d": 865.05,
         "feed_wt": 0.0707,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 41.5,
@@ -3688,10 +3694,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 1.497,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.0 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.1 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
       }
     },
     {
@@ -3702,7 +3708,7 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 799.01,
+        "water_off_kg_d": 801.86,
         "feed_wt": 0.0741,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 39.8,
@@ -3775,10 +3781,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 1.324,
+        "value": 1.328,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.0 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.316 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.32 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 801.9 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.321 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.33 kW. Study."
       }
     },
     {
@@ -3893,6 +3899,39 @@
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-07 solver.roof_close: conditioned extension 36828 m2; lighting 32.41 kW (IECC 2021 C405, 10 % lit), ventilation 45.93 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 26.87 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 63.7 kW and cooling 127.8 kW thermal average after internal gains 46.2 kW and slab edge 3.57 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+      }
+    },
+    {
+      "unit_id": "EVAP_ACID_VS",
+      "sector_id": "WET",
+      "enabled": true,
+      "class": "scrubber",
+      "tags": [],
+      "params": {
+        "presence": "present",
+        "DN": 150,
+        "packed_mm": 500,
+        "height_mm": 1400,
+        "sump_L": 20.0,
+        "material": "PVC-U pipe and fittings (ASTM D1785 Sch 80), in-house cut PVC tube rings, PVC mesh demister (PERRY9_MAT: PVC to 60 C in HCl and NaOH)",
+        "y_in_ppm_design": 489.8,
+        "y_out_ppm": 1.0,
+        "design_case": "upset: column bypassed (A-M-111)",
+        "size_mm": [
+          400,
+          400,
+          1400
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)",
+        "doc": "AQS-DUTY-061"
+      },
+      "modules": [],
+      "electrical_role": "load",
+      "continuous_kw": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
       }
     }
   ],
@@ -4450,10 +4489,10 @@
       "phase": "L",
       "carries": "CRU \u2192 BMED base regen loop",
       "rate": {
-        "value": 502.9812,
+        "value": 500.1311,
         "unit": "kg/d",
         "status": "study",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-base purge to the BMED base regen loop, by difference (see o2_close.py); BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 502.98, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-base purge closes BMED_BASE: feed 1301.72 + IA-BMED-02 0.27 - condensate 799.01; BH 502.98 verbatim (fa1b4db) (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Brine to BMED_BASE closing the stack balance with the condensate return."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -8242,7 +8281,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 417.2469,
+        "value": 417.2757,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -8599,7 +8638,7 @@
       "phase": "L",
       "carries": "silicate liquor",
       "rate": {
-        "value": 25.2964,
+        "value": 21.968,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Silicate liquor equal to the digest NaOH draw (digest closes on IA-GLASS-03, S08G, IA-SIL-SRC, IA-SIC-IN)."
@@ -10132,7 +10171,7 @@
         "value": 5.6267,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw. | X-PAR-12 TF: BMED HCl make 31.56 of 31.56 kg/d (k 1.000) (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to BMED_ACID continuous_kw."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -10469,7 +10508,7 @@
       "phase": "L",
       "carries": "sodium salt purge equal to the make-up mass",
       "rate": {
-        "value": 5.1063,
+        "value": 4.3936,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study)."
@@ -10933,7 +10972,7 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid to leach by difference (AQS-PAR-005)."
       },
-      "from_sector_id": "DIGESTER",
+      "from_sector_id": "WET",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
@@ -10945,12 +10984,12 @@
       "phase": "L",
       "carries": "digest NaOH, 20 wt%",
       "rate": {
-        "value": 25.2964,
+        "value": 21.968,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 126.5 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as 20 wt%."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 109.8 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as 20 wt%."
       },
-      "from_sector_id": "DIGESTER",
+      "from_sector_id": "WET",
       "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
@@ -10962,12 +11001,12 @@
       "phase": "L",
       "carries": "NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",
       "rate": {
-        "value": 482.521,
+        "value": 482.2861,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%. | X-PAR-12 TF: base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, fa1b4db) (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%."
       },
-      "from_sector_id": "DIGESTER",
+      "from_sector_id": "WET",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
@@ -10979,10 +11018,10 @@
       "phase": "L",
       "carries": "HCl 2 M from BMED",
       "rate": {
-        "value": 1304.5179,
+        "value": 1304.6046,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.90 kg/d HCl / 0.0707. | X-PAR-12 TF: BMED product by difference (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.91 kg/d HCl / 0.0707."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -10996,10 +11035,10 @@
       "phase": "L",
       "carries": "evaporator condensate return (BMED water make-up)",
       "rate": {
-        "value": 864.9665,
+        "value": 865.024,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10). | X-PAR-12 TF: condensate scales with HCl make (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -11013,10 +11052,10 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 1.497,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw. | X-PAR-12 TF: evaporator scales with HCl make (AQS-PAR-005)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11047,7 +11086,7 @@
       "phase": "L",
       "carries": "evaporator condensate return (BMED water make-up)",
       "rate": {
-        "value": 799.0053,
+        "value": 801.8559,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_BASE."
@@ -11064,7 +11103,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 1.324,
+        "value": 1.328,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
@@ -11081,10 +11120,10 @@
       "phase": "S",
       "carries": "purchased NaOH flake make-up",
       "rate": {
-        "value": 5.1063,
+        "value": 4.3936,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Demand 2538 mol/d less BMED 2412 mol/d; worst case, no credit for sodium returned in the silicate liquor."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). Demand 2521 mol/d less BMED 2412 mol/d; worst case, no credit for sodium returned in the silicate liquor."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DIGESTER",
@@ -11798,7 +11837,7 @@
         "value": 5.9909,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11815,7 +11854,7 @@
         "value": 5.9929,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11832,7 +11871,7 @@
         "value": 2.2495,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11849,7 +11888,7 @@
         "value": 0.4853,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11866,7 +11905,7 @@
         "value": 0.5023,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11883,7 +11922,7 @@
         "value": 0.5474,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11900,7 +11939,7 @@
         "value": 7.1187,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11917,7 +11956,7 @@
         "value": 0.5053,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -11934,7 +11973,7 @@
         "value": 7.538,
         "unit": "kW",
         "status": "study",
-        "note": "R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -12059,6 +12098,142 @@
       "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "note": "Created by the polymers sizing pass: the olefin feed draws as naphtha at the cut tank (AQS-SIZE-OIL-POLY); the fractionator-side OIL_TO_OLEFIN stays 0 so OIL_FRAC closes.; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SQ-EVAP_ACID",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 1.498,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "SQ-EVAP_BASE",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 1.328,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
+    },
+    {
+      "stream_id": "IA-EVAP_ACID-VENT",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "G",
+      "carries": "column vent: non-condensables, water vapour, trace HCl",
+      "rate": {
+        "value": 0.0292,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Air from the feed (WEISS1970) saturated at the vent condenser; design case 490 ppmv HCl."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-VS-NAOH",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "L",
+      "carries": "NaOH 2 M bleed",
+      "rate": {
+        "value": 0.0005,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.008 mmol/d = 2.0 x HCl absorbed."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-VS-SPENT",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "BMED_ACID",
+      "phase": "L",
+      "carries": "spent scrub liquor (NaCl in NaOH) to the BMED brine",
+      "rate": {
+        "value": 0.0006,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Bleed plus HCl absorbed."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-VS-OFF",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "ALK_SCRUBBER",
+      "phase": "G",
+      "carries": "scrubbed vent to the house acid-gas header",
+      "rate": {
+        "value": 0.0292,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.0 ppmv HCl."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-EVAP_ACID_VS",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_ACID_VS",
+      "phase": "E",
+      "carries": "480 V AC",
+      "rate": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Feed equal to continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "note": "layers=elec"
+    },
+    {
+      "stream_id": "SQ-EVAP_ACID_VS",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "HEAT_SINK",
+      "phase": "E",
+      "carries": "electrical input leaving as heat",
+      "rate": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "note": "layers=energy"
     }
   ],
   "electrical": {
@@ -12073,23 +12248,23 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 250.0,
+      "value": 281.99,
       "unit": "kW",
       "status": "study",
-      "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-234): converged bounding demand incl. the EXT_HALL extension (roof_close 33x28 bays, ext 93.84 kW). Replaces the ELEC_NEED_KW_BASE 50 kW seed."
+      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 45x23 bays, ext 105.21 kW)."
     },
     "target_kw": {
-      "value": 625.0,
+      "value": 704.99,
       "unit": "kW",
       "status": "study",
-      "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-234): mean-day average generation = 2.0 x balancing (D75) = 2.5 x need incl. round trip. Replaces the ELEC_NEED x 1.4 seed."
+      "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
     },
     "pv_module_kw": 0.5,
-    "pv_count": 6932,
+    "pv_count": 7820,
     "znbr_module_kw": 60.0,
-    "znbr_count": 1,
+    "znbr_count": 55,
     "rect_count": 1,
-    "notes": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-231..238): demand basis = graph max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC (A-M-231); PV/storage/inverter/roof chain per D75 at pv_oversize_factor 2.0."
+    "notes": "write_graph power() (single writer, D1/D2/D4): need/target/PV/storage chain re-derived per A-M-234 replaced_by / A-M-258 from docs-authority/_power_sizing.py (demand = max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC, A-M-231) and solver.roof_close; pv_module_kw x pv_count = PV_ARRAY.params.nameplate_kw; znbr_* = the SOL_ARK hybrid-inverter block the ZNBR2 store is distributed over; rect_count = the single nine-channel RECTIFIER (Rev AC; RECT_EW remap, A-M-255)."
   },
   "scale_rules": {
     "tanks": "continuous",

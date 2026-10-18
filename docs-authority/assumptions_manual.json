@@ -4608,5 +4608,17 @@
       "docs-authority/sizing/POLYMERS_LINE.md"
     ],
     "needs_verification": false
+  },
+  {
+    "id": "A-M-268",
+    "value": "backup_gen_rated_kW 40.0 / crit_autonomy_d 2.0 (drivers.json, single governed sources)",
+    "units": "kW / d",
+    "where": "flow_graph/param/drivers.json: backup_gen_rated_kW, crit_autonomy_d; read by docs-authority/_power_sizing.py (gen_kW, AUT_CRIT), flow_graph/param/o2_close.py (GEN_KW, PSH_STORE_D); BACKUP_GEN params stamped by flow_graph/param/write_graph.py power()",
+    "basis": "D3/D7 unification 2026-10-18 (parametric drift audit): BACKUP_GEN had four sizes (POWER_SIZING doc 2.5, graph params 40, o2_close GEN_KW 40, _power_sizing ceil formula 20) and the 2.0 d critical autonomy lived in two homes (_power_sizing AUT_CRIT, o2_close PSH_STORE_D). One governed source each: 40 kW = 125 % of the issued 32 kW critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001 rule, NFPA 110 standby; exercise-only duty per 8.4.2); 2.0 d = AQS-ELEC-007 AUT_CRIT. Dead drivers twin pv_yield_kWh_per_kWp_d deleted the same pass (D5; live key pv_yield_kWh_kWp_d unchanged)",
+    "sensitivity": "genset size steps in 5 kW blocks against the critical list; autonomy days scale the CRYO_H2/HYDRO backup energy linearly (2 d = 751.7 kWh at the 15.66 kW live list)",
+    "replaced_by": "Critical-load list confirmation at unit task 02; NFPA 110 8.4.9 4 h load test; owner outage-basis decision vs site PV statistics (AQS-SITE-002)",
+    "task": "X-PAR",
+    "needs_verification": true,
+    "verification_test": "Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h; owner outage-basis decision vs AQS-SITE-002 NSRDB run"
   }
 ]

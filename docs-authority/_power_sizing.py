@@ -13,7 +13,8 @@ _d = DR.load()   # X-PAR-03: yield, derate, round trip, night hours from drivers
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 _g=json.load(open('flow_graph/plant_flow_graph.json')); _gc={n['unit_id']:n for n in _g['nodes']}
-PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); AUT_CRIT=2.0   # study; PSH from AQS-SITE-002 (NREL PVWatts)
+PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); AUT_CRIT=DR.val(_d,'crit_autonomy_d')   # D7: single drivers source (was a 2.0 hardcode duplicated in o2_close PSH_STORE_D); PSH from AQS-SITE-002 (NREL PVWatts)
+GEN_KW=DR.val(_d,'backup_gen_rated_kW')   # D3: single governed source (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule; replaces the local ceil(crit x 1.25 / 5) x 5 formula, one of four drifting BACKUP_GEN sizes)
 INV=_gc['SOL_ARK_60K']['params']['kW']/max(_gc['SOL_ARK_60K']['params'].get('count',1),1)   # inverter block = graph kW / SOL_ARK count (49 x 60 kW), not a single-inverter hardcode
 CRIT={'HABITATION':3.0,'CRYO_H2':round(_gc['CRYO_H2']['params'].get('compressor_design',{}).get('P_peak_kW',4.0),2)}   # CRYO_H2 peak (AQS-DUTY-067) from the graph
 if 'CRYO_ASU' in _gc: CRIT['CRYO_ASU']=round(_gc['CRYO_ASU']['continuous_kw']['value'],2)   # AQS-DUTY-069 duty 1.66 kW — NOT the legacy 18 kW critical value (A-M-238)
@@ -50,7 +51,7 @@ for k,P in cases.items():
     out[k]=dict(P_kW=P,E_kWh_d=E,**o)
 out['roof']=roof
 crit=sum(CRIT.values())
-out['backup']=dict(critical_kW=crit,critical_list=CRIT,gen_kW=math.ceil(crit*1.25/5)*5,autonomy_d=AUT_CRIT,energy_kWh=crit*24*AUT_CRIT)
+out['backup']=dict(critical_kW=crit,critical_list=CRIT,gen_kW=GEN_KW,gen_kW_basis='drivers.json backup_gen_rated_kW: AQS-ELEC-007/AQS-RED-001 NFPA 110 rule (125 % of critical, 5 kW steps; 32 kW issued list -> 40 kW) - single governed source, stamped on the graph by write_graph power()',autonomy_d=AUT_CRIT,autonomy_basis='drivers.json crit_autonomy_d (AQS-ELEC-007 AUT_CRIT)',energy_kWh=crit*24*AUT_CRIT)
 g=json.load(open('flow_graph/plant_flow_graph.json')); N={n['unit_id']:n for n in g['nodes']}
 _pv=N['PV_ARRAY']['params']; _np=_pv.get('nameplate_kw') or round(_pv.get('module_kw',0)*_pv.get('count',1),2)   # Rev AC stores module_kw x count
 out['graph']=dict(pv_nameplate_kW=_np,pv_avg_kW=N['PV_ARRAY']['continuous_kw']['value'],

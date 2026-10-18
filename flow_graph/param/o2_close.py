@@ -22,17 +22,31 @@ X-PAR-12 rate from those bases on each run.
 import math
 F = 96485.0; MOL_A = 86400/F             # mol e- per A-day
 from . import drivers as _drv1; _D = _drv1.load()   # X-PAR-01
-CE, FO2, VCELL = _D['ew_cathode_CE']['value'], _D['ew_anode_O2_frac']['value'], 2.12
+CE, FO2, VCELL = _D['ew_cathode_CE']['value'], _D['ew_anode_O2_frac']['value'], _D['ew_cell_voltage_V']['value']   # D8: cell voltage single-sourced from drivers (was a 2.12 hardcode)
 KWH_H2 = _D['pem_kWh_kg_H2']['value']; HHV_H2 = 39.4; PSH_ELY = 6.0   # PEM system kWh/kg; HHV kWh/kg; electrolyser runs on the PV window (A-M-133)
 QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorptance', 'led_efficacy_umol_J', 'bed_DLI')); BED_M2 = 28.0   # BED_M2 fallback only; live area comes from GROW_BED params
 EXC = _D['combustion_excess_O2']['value']
-GEN_KW, EX_LOAD, EX_H, GEN_ETA, LHV_C5 = 40.0, 0.30, 0.5, 0.30, 12.2   # AQS-ELEC-007 backup 40 kW; NFPA110 8.4.2; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
-PSH_STORE_D = 2.0   # AQS-ELEC-007 AUT_CRIT autonomy days
+GEN_KW = _D['backup_gen_rated_kW']['value']; EX_LOAD, EX_H, GEN_ETA, LHV_C5 = 0.30, 0.5, 0.30, 12.2   # D3: rated kW single-sourced from drivers (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); NFPA110 8.4.2 exercise; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
+PSH_STORE_D = _D['crit_autonomy_d']['value']   # D7: AQS-ELEC-007 AUT_CRIT autonomy days, single-sourced from drivers (read here and in _power_sizing.py)
 CO2_M2 = DLI*ABS*QY*44.01                # g CO2/m2/d
 CELLS = [(1, 'IA-EW-01'), (2, 'IA-EW-02'), (3, 'IA-EW-03'), (4, 'IA-EW-10'), (5, 'IA-EW-05'), (6, 'IA-EW-06'), (7, 'IA-EW-07'), (8, 'IA-EW-08'), (9, 'IA-EW-09')]
-# R10b (A-M-255): the DC cell feeds restored on the live RECTIFIER - BH fa1b4db verbatim (solver P_bus, cell 2.12 V + 0.3 V bus drop
-# at the held metal harvests); per-cell cathode-H2 outlet on the live pool (existing edge where one lives, else the BH H2B name).
-DC_EW = {1: 5.9909, 2: 5.9929, 3: 2.2495, 4: 0.4853, 5: 0.5023, 6: 0.5474, 7: 7.1187, 8: 0.5053, 9: 7.538}
+# D8 (2026-10-18): the DC cell-feed kW table is RE-SOLVED from the solver's Faraday currents (solver.ew: I from the held
+# metal harvests, P_bus = I x (ew_cell_voltage_V + ew_bus_drop_V) from drivers) instead of the frozen BH fa1b4db values.
+# Single-writer rule for IA-DC-EW_n: flow_graph/param/write_graph.py process() is the writer on the committed graph;
+# o2_close.tf() only fills gaps (a missing edge on a not-yet-written graph) using these live solver values, so a gap fill
+# can never disagree with the writer. EW plate GEOMETRY ownership (calculator owns geometry, graph stamps outputs):
+# _ew_sizing.py / solver.ew derive current and tank size from the harvest edges alone; the params.sizing the graph stamps
+# back are outputs only, never inputs - there is no output=input loop.
+DC_EW = None   # lazy: filled by _dc_ew_kw() on first use from the live solver
+
+def _dc_ew_kw(g):
+    """Per-cell DC bus kW from the live solver Faraday chain (D8). Cached per process."""
+    global DC_EW
+    if DC_EW is None:
+        from . import drivers as _drv2, solver as _solver
+        _ew = _solver.ew(_drv2.load(), g)
+        DC_EW = {k: _ew[f'EW_{k}']['P_bus_kW'] for k, _ in CELLS}
+    return DC_EW
 CELL_H2 = {1: 'IA-HDR-H2-01', 2: 'IA-HDR-H2-03', 3: 'IA-EW3-H2B', 4: 'IA-EW4-H2', 5: 'IA-EW5-H2B',
            6: 'IA-EW6-H2B', 7: 'IA-EW7-H2B', 8: 'IA-EW8-H2B', 9: 'IA-HDR-H2-04'}
 OLD_H2 = ('IA-HDR-H2-01', 'IA-HDR-H2-03', 'IA-HDR-H2-04', 'IA-EW1-H2', 'IA-EW2-H2', 'IA-EW4-H2')
@@ -105,10 +119,10 @@ def tf(g):
     #     with HCL_BURNER in the Rev AC pivot: the full anode Cl2 + O2 rides the leach oxidant line and the cathode
     #     H2 goes to HDR_H2 (the electrolyser keeps its gross-draw sizing per A-M-230; the pool surplus accumulates
     #     at CRYO_H2 and is reported, not absorbed).
-    for k, kw in DC_EW.items():
+    for k, kw in _dc_ew_kw(g).items():
         if f'IA-DC-EW_{k}' not in E and 'RECTIFIER' in N and f'EW_{k}' in N:
             g['edges'].append(_edge(f'IA-DC-EW_{k}', 'RECTIFIER', f'EW_{k}', 'E', ['elec'], 'DC bus bar', kw, 'kW', 'ELEC', 'DIGESTER',
-                note='R10b X-PAR-12: BH fa1b4db verbatim kW (solver P_bus, 2.12 V cell + 0.3 V bus drop at the held metal harvests); RECT_EW remapped to the live RECTIFIER (A-M-255).'))
+                note='R10b X-PAR-12 gap fill (D8): solver P_bus re-solved live - Faraday I from the held metal harvests x (ew_cell_voltage_V + ew_bus_drop_V from drivers); write_graph.process is the single writer of these edges, this fills gaps only; RECT_EW remapped to the live RECTIFIER (A-M-255).'))
             E[f'IA-DC-EW_{k}'] = g['edges'][-1]
     for k, sid in CELL_H2.items():
         if sid not in E and f'EW_{k}' in N and 'HDR_H2' in N:

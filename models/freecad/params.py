@@ -366,6 +366,16 @@ CATCH_TANK_Y = max(0, (PLATE_W - CATCH_TANK_W) // 2)
 CATCH_TANK_Z = Z_Lm2 + SLAB_THK
 
 # Electrical discrete jumps (AQS-SCALE-001)
+# D10 (2026-10-18) — PRECEDENCE: the GRAPH wins, unconditionally. These seeds
+# (50 kW base / x1.4 overprod / 70 kW PV module / 60 kW·120 kWh ZNBR) are
+# OFFLINE FALLBACKS for building without a pack. When a design-tool pack
+# params.json is applied (params_overlay_apply.py), the graph's
+# mvs.electrical + PV_ARRAY params (written by flow_graph/param/write_graph.py
+# power(): need 281.96 kW, target = 2.5 x need, 7818 x 0.5 kWp PV, ZNBR2 over
+# the 55 x 60 kW hybrid-inverter block) override the derived ELEC_NEED_KW /
+# ELEC_TARGET_KW / PV_COUNT / ZNBR_COUNT / RECT_COUNT / module kW in the fork
+# (need base and module kW in place; target + counts as end-overrides).
+# ELEC_OVERPROD is inert under a target_kw push and stays a fallback knob.
 ELEC_NEED_KW_BASE = 50.0
 ELEC_OVERPROD = 1.4
 PV_MODULE_KW = 70.0

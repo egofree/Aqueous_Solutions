@@ -89,11 +89,6 @@
   "units": "C",
   "register": "AQS-SITE-002"
  },
- "pv_yield_kWh_per_kWp_d": {
-  "value": 5.41,
-  "units": "kWh/kWp/d",
-  "ref": "NREL_PVWATTS"
- },
  "continuous_load_factor": {
   "value": 1.25,
   "units": "-",
@@ -239,6 +234,21 @@
   "register": "A-M-060",
   "needs_verification": true,
   "verification_test": "Hourly load and irradiance profile"
+ },
+ "crit_autonomy_d": {
+  "value": 2.0,
+  "units": "d of critical-load autonomy without sun",
+  "register": "AQS-ELEC-007 AUT_CRIT (single governed source, D7 unification 2026-10-18); read by docs-authority/_power_sizing.py and flow_graph/param/o2_close.py (was AUT_CRIT / PSH_STORE_D 2.0 in two homes)",
+  "needs_verification": true,
+  "verification_test": "Owner outage-basis decision: NFPA 110/111 class vs the PV cloudy-day statistics of the site (AQS-SITE-002 NSRDB run)"
+ },
+ "backup_gen_rated_kW": {
+  "value": 40.0,
+  "units": "kW",
+  "ref": "NFPA110_2022",
+  "basis": "AQS-ELEC-007 / AQS-RED-001 rule: standby generator at 125 % of the critical load list, rounded up in 5 kW steps (32 kW issued critical list -> 40 kW); BACKUP_GEN runs standby on the 8.4.2 monthly-exercise basis only. Single governed source (D3 unification 2026-10-18): read by docs-authority/_power_sizing.py, flow_graph/param/o2_close.py and stamped onto the graph by flow_graph/param/write_graph.py power()",
+  "needs_verification": true,
+  "verification_test": "Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h"
  },
  "bus_power_factor": {
   "value": 0.9,

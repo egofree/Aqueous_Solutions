@@ -12,13 +12,31 @@ Allow-list (AQS-PLAN-3D-001 §5.3 / §7) — applied to params:
     electrical.znbr_count        → ZNBR_COUNT
     electrical.pv_module_kw      → PV_MODULE_KW
     electrical.znbr_module_kw    → ZNBR_MODULE_KW
+    electrical.need_kw.value     → ELEC_NEED_KW_BASE   (D10, 2026-10-18)
+    electrical.target_kw.value   → ELEC_TARGET_KW      (D10, 2026-10-18)
+    electrical.rect_count        → RECT_COUNT          (D10, 2026-10-18)
     module_bays_x_override       → MODULE_BAYS_X_OVERRIDE  (optional later)
     module_bays_y_override       → MODULE_BAYS_Y_OVERRIDE  (optional later)
 
+D10 precedence rule (which values win): the GRAPH wins, unconditionally.
+``electrical`` in the pack params.json is the graph's ``mvs.electrical``
+block, written by ``flow_graph/param/write_graph.py power()`` from the live
+power chain (A-M-234 replaced_by / A-M-258: need, target = 2.5 x need, PV
+module x count, ZNBR2 over the hybrid-inverter block). When those keys are
+present in the overlay they override the CAD seeds in the fork, always —
+need/target/rect as end-overrides (they are electrical-truth values, not
+scale formulas), module kW in place, counts as end-overrides as before. The
+gold seeds (ELEC_NEED_KW_BASE 50, ELEC_OVERPROD 1.4, PV_MODULE_KW 70,
+ZNBR_MODULE_KW 60, ZNBR_MODULE_KWH 120, RECT_COUNT = cassette count) remain
+OFFLINE FALLBACKS only, used when a pack params.json is absent or a key is
+null (S4 keep-gold). With target_kw pushed, ELEC_OVERPROD is inert in the
+fork; it is deliberately NOT in the apply map.
+
 Pack metadata keys (present in export params.json) are **recognized but not
 applied** as CAD drivers: note, topology_authority, site, scale_rules, and
-electrical bus_nodes / storage_options / need_kw / target_kw / rect_count /
-notes. Vessel mm (CSTR_L, …) and unknown paths → refuse.
+electrical bus_nodes / storage_options / need_kw.unit/.status/.note /
+target_kw.unit/.status/.note / notes. Vessel mm (CSTR_L, …) and unknown
+paths → refuse.
 
 Usage::
 
@@ -43,17 +61,25 @@ GOLD_PARAMS = HERE / "params.py"
 DEFAULT_OUT = HERE / "params_overlay.py"
 
 # Overlay dotted path → gold params.py binding name (apply targets only).
+# D10: need/target/rect added so the graph's mvs.electrical (via pack
+# params.json) pushes over the CAD seeds unconditionally; graph wins.
 APPLY_MAP: dict[str, str] = {
     "scale_m": "SCALE_M",
     "electrical.pv_count": "PV_COUNT",
     "electrical.znbr_count": "ZNBR_COUNT",
     "electrical.pv_module_kw": "PV_MODULE_KW",
     "electrical.znbr_module_kw": "ZNBR_MODULE_KW",
+    "electrical.need_kw.value": "ELEC_NEED_KW_BASE",
+    "electrical.target_kw.value": "ELEC_TARGET_KW",
+    "electrical.rect_count": "RECT_COUNT",
     "module_bays_x_override": "MODULE_BAYS_X_OVERRIDE",
     "module_bays_y_override": "MODULE_BAYS_Y_OVERRIDE",
 }
 
 # Pack schema keys that may appear but must not drive FreeCAD dims.
+# electrical.need_kw / electrical.target_kw stay as recognized dict
+# containers; their .value leaves are applied (APPLY_MAP) and their
+# .unit/.status/.note leaves remain meta.
 RECOGNIZED_META: frozenset[str] = frozenset(
     {
         "note",
@@ -72,16 +98,13 @@ RECOGNIZED_META: frozenset[str] = frozenset(
         "electrical.bus_nodes",
         "electrical.storage_options",
         "electrical.need_kw",
-        "electrical.need_kw.value",
         "electrical.need_kw.unit",
         "electrical.need_kw.status",
         "electrical.need_kw.note",
         "electrical.target_kw",
-        "electrical.target_kw.value",
         "electrical.target_kw.unit",
         "electrical.target_kw.status",
         "electrical.target_kw.note",
-        "electrical.rect_count",
         "electrical.notes",
     }
 )
@@ -94,11 +117,13 @@ _INPLACE_ASSIGN = frozenset(
         "MODULE_BAYS_Y_OVERRIDE",
         "PV_MODULE_KW",
         "ZNBR_MODULE_KW",
+        "ELEC_NEED_KW_BASE",
     }
 )
 
-# Counts are formula-derived mid-file; force at end of fork.
-_END_OVERRIDE = frozenset({"PV_COUNT", "ZNBR_COUNT"})
+# Counts and formula-derived electrical-truth values are forced at end of
+# fork (graph wins over any seed formula; D10).
+_END_OVERRIDE = frozenset({"PV_COUNT", "ZNBR_COUNT", "ELEC_TARGET_KW", "RECT_COUNT"})
 
 _BANNER = (
     "# =============================================================================\n"
@@ -255,12 +280,12 @@ def write_overlay_fork(
             if fv <= 0:
                 raise ValueError(f"scale_m must be > 0, got {val!r}")
             applies[pname] = fv
-        elif pname in ("PV_MODULE_KW", "ZNBR_MODULE_KW"):
+        elif pname in ("PV_MODULE_KW", "ZNBR_MODULE_KW", "ELEC_NEED_KW_BASE", "ELEC_TARGET_KW"):
             fv = float(val)
             if fv <= 0:
                 raise ValueError(f"{pname} must be > 0, got {val!r}")
             applies[pname] = fv
-        elif pname in ("PV_COUNT", "ZNBR_COUNT"):
+        elif pname in ("PV_COUNT", "ZNBR_COUNT", "RECT_COUNT"):
             iv = int(val)
             if iv < 1:
                 raise ValueError(f"{pname} must be >= 1, got {val!r}")
@@ -377,6 +402,9 @@ def roundtrip_equal_gold(
             "ZNBR_MODULE_KW": (gold.ZNBR_MODULE_KW, fork.ZNBR_MODULE_KW),
             "PV_COUNT": (gold.PV_COUNT, fork.PV_COUNT),
             "ZNBR_COUNT": (gold.ZNBR_COUNT, fork.ZNBR_COUNT),
+            "ELEC_NEED_KW_BASE": (gold.ELEC_NEED_KW_BASE, fork.ELEC_NEED_KW_BASE),
+            "ELEC_TARGET_KW": (gold.ELEC_TARGET_KW, fork.ELEC_TARGET_KW),
+            "RECT_COUNT": (gold.RECT_COUNT, fork.RECT_COUNT),
         }
         diffs = {
             k: {"gold": g, "fork": f}
@@ -449,6 +477,50 @@ def self_test() -> int:
         failures.append(f"T3b scale_m-only diffs: {d2.get('diffs')}")
     else:
         print("PASS T3b: scale_m=1.0 alone ≡ gold")
+
+    # T6 (D10): a graph-derived electrical overlay (mvs.electrical written by
+    # write_graph power()) pushes over the CAD seeds unconditionally: the fork
+    # effective electrical values equal the overlay, not the gold seeds.
+    graph_electrical = {
+        "bus_nodes": ["SOL_ARK_60K", "ZNBR2", "RECTIFIER"],
+        "storage_options": ["ZNBR2", "MEOH", "PUMPED_HYDRO"],
+        "need_kw": {"value": 281.96, "unit": "kW", "status": "study", "note": "graph"},
+        "target_kw": {"value": 704.91, "unit": "kW", "status": "study", "note": "graph"},
+        "pv_module_kw": 0.5,
+        "pv_count": 7818,
+        "znbr_module_kw": 60.0,
+        "znbr_count": 55,
+        "rect_count": 1,
+        "notes": "graph mvs.electrical (write_graph power())",
+    }
+    r6 = None
+    try:
+        import tempfile as _tf
+        _t = _tf.NamedTemporaryFile(prefix="params_overlay_", suffix=".py",
+                                    dir=str(HERE), delete=False)
+        _t.close()
+        _out6 = Path(_t.name)
+        r6 = write_overlay_fork({"scale_m": 1.0, "electrical": graph_electrical},
+                                out_path=_out6)
+        f6 = load_module(_out6, "_aqs_overlay_params_t6")
+        want = {
+            "ELEC_NEED_KW_BASE": 281.96,
+            "ELEC_TARGET_KW": 704.91,
+            "PV_MODULE_KW": 0.5,
+            "PV_COUNT": 7818,
+            "ZNBR_MODULE_KW": 60.0,
+            "ZNBR_COUNT": 55,
+            "RECT_COUNT": 1,
+        }
+        bad6 = {k: (getattr(f6, k), v) for k, v in want.items()
+                if abs(float(getattr(f6, k)) - float(v)) > 1e-9}
+        if bad6:
+            failures.append(f"T6 graph overlay did not win over seeds: {bad6}")
+        else:
+            print("PASS T6: graph mvs.electrical pushes over CAD seeds (D10)")
+        _out6.unlink(missing_ok=True)
+    except Exception as exc:  # noqa: BLE001 — self-test must report, not crash
+        failures.append(f"T6 raised: {exc}")
 
     # T4: unknown key fails closed; gold untouched.
     gold_before = GOLD_PARAMS.read_bytes()

@@ -5,10 +5,13 @@ on IA-PLAST-01) is injected on its edge and carried downstream linearly: a unit 
 in proportion to their design-day rates (recycles iterated to convergence). Unit throughput = sum of kg/d in-edges. A unit whose
 bounding throughput exceeds its design-day throughput by more than 2 % gets params.design_capacity_kg_d (value, case, basis).
 Writes the graph, docs-authority/RESIZE_SWEEP.md section 2 and docs-authority/inventory/RESIZE_SWEEP.csv."""
-import json, os, csv, collections
+import json, os, csv, collections, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
+sys.path.insert(0, R)
+from flow_graph.param import drivers as _DR
+_d = _DR.load()
 GP = 'flow_graph/plant_flow_graph.json'; g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}
-F = 102.68
+F = _DR.val(_d, 'feed_rate_kg_d')   # D6: single source (drivers.json; was a 102.68 hardcode duplicating AQS-ASSAY-001 Rev C)
 C = {'A': dict(water=0, silicate_oxide=0.99, organic=0), 'B': dict(water=0.03, silicate_oxide=0.30, organic=0.25),
      'MSW': dict(water=0.25, silicate_oxide=0.05, organic=0.30), 'ref': dict(water=0.05, silicate_oxide=0.18, organic=0.22)}
 M = [e for e in g['edges'] if e.get('presence') == 'present' and (e.get('rate') or {}).get('unit') == 'kg/d' and (e['rate'].get('value') or 0) > 0]

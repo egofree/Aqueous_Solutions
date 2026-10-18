@@ -31,7 +31,7 @@ Flat 24 h profile (continuous process; study). PV yield 5.41 kWh/kWp/d before lo
 | Export at noon, storage full, kW | 2635 | 2248 | 2635 |
 | Export energy, clear day, kWh/d | 7344 | 6349 | 7344 |
 
-Backup. Critical loads 32 kW (HABITATION 3, CRYO_H2 4, CRYO_ASU 18, GROW_BED 5, controls 2; study list). Generator 40 kW (125 %, rounded). Two days' critical energy 1536 kWh; on H₂ at about 33 kWh/kg LHV and 40 % engine efficiency that is about 115 kg H₂ held in CRYO_H2 (study). Graph: BACKUP_GEN 2.5 kW, FUEL_CELL 4.0 kW.
+Backup. Critical loads 15.66 kW graph-derived (HABITATION 3, CRYO_H2 4, CRYO_ASU 1.66 at duty (A-M-238), GROW_BED 5, controls 2; study list). Generator 40 kW — single governed source `drivers.json backup_gen_rated_kW` (this document / AQS-RED-001 rule: 125 % of the issued 32 kW critical list, rounded to 5 kW steps; NFPA 110 standby, 8.4.2 monthly exercise only), read by `_power_sizing.py` and `o2_close.py`, stamped on the graph by `write_graph power()` (D3 unification 2026-10-18; was doc 2.5 / graph 40 / o2_close 40 / ceil formula 20). Two days' critical energy 751.7 kWh; on H₂ at about 33 kWh/kg LHV and 40 % engine efficiency that is about 57 kg H₂ held in CRYO_H2 (study). Graph: BACKUP_GEN rated 40 kW (standby continuous 0.008 kW exercise average), FUEL_CELL 4.0 kW.
 
 ## 3. Findings
 

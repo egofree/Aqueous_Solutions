@@ -42,13 +42,15 @@ All solved units close.
 | Item | Graph | Solved | Deviation | Reference |
 | --- | --- | --- | --- | --- |
 | IA-ACID-01 HCl content, kg/d | 87.910 | 87.923 | -0.0 % | GREENWOOD, LUNAR_SOURCEBOOK |
-| IA-BASE-PPT NaOH, kg/d | 96.504 | 96.457 | +0.0 % | GREENWOOD |
-| IA-BASE-01 NaOH, kg/d | 5.059 | 4.394 | +15.2 % | GREENWOOD |
-| IA-NAOH-MU make-up, kg/d | 5.106 | 4.394 | +16.2 % | NaOH balance |
-| EVAP_ACID kW | 1.497 | 1.498 | -0.1 % | X-MFG-30 in-house MVR design |
-| EVAP_ACID water off, kg/d | 864.966 | 865.053 | -0.0 % | PERRY9_HCL |
-| EVAP_BASE kW | 1.324 | 1.328 | -0.3 % | X-MFG-30 in-house MVR design |
-| EVAP_BASE water off, kg/d | 799.005 | 801.856 | -0.4 % | PERRY9_HCL |
+| BMED_ACID kW vs physics triplet voltage | 5.627 | 5.627 | +0.0 % | STRATHMANN2004 |
+| IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
+| IA-BASE-01 NaOH, kg/d | 4.394 | 4.394 | +0.0 % | GREENWOOD |
+| IA-NAOH-MU make-up, kg/d | 4.394 | 4.394 | -0.0 % | NaOH balance |
+| EVAP_ACID kW | 1.498 | 1.498 | +0.0 % | X-MFG-30 in-house MVR design |
+| EVAP_ACID water off, kg/d | 865.053 | 865.053 | -0.0 % | PERRY9_HCL |
+| EVAP_BASE kW | 1.328 | 1.328 | +0.0 % | X-MFG-30 in-house MVR design |
+| EVAP_BASE water off, kg/d | 801.856 | 801.856 | -0.0 % | PERRY9_HCL |
+| IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | -0.0 % | X-PAR-10, PERRY9_ABS |
 | EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_3 DC kW (cell + bus drop) | 2.249 | 2.249 | +0.0 % | CODATA2018, USBM_CL_EW |
@@ -59,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | +0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3909.000 | 3908.928 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3910.000 | 3909.344 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -87,7 +89,6 @@ All solved units close.
 | ew_current_efficiency_design | 0.85 | - | USBM_CL_EW | yes |
 | ew_cell_voltage_V | 2.12 | V | USBM_CL_EW | yes |
 | site_design_dry_bulb_C | 37.8 | C | AQS-SITE-002 | — |
-| pv_yield_kWh_per_kWp_d | 5.41 | kWh/kWp/d | NREL_PVWATTS | — |
 | continuous_load_factor | 1.25 | - | NEC2023 | — |
 | pvc_u_max_C | 60.0 | C | ASTM_D1785 | — |
 | cp_hcl20_kJ_kgK | 3.0 | kJ/(kg K) | PERRY9 | yes |
@@ -111,6 +112,8 @@ All solved units close.
 | pv_system_derate | 0.8 | - | A-M-061 | yes |
 | storage_round_trip | 0.7 | - | A-M-179 | yes |
 | night_hours | 14.0 | h/d served from storage | A-M-060 | yes |
+| crit_autonomy_d | 2.0 | d of critical-load autonomy without sun | AQS-ELEC-007 AUT_CRIT (single governed source, D7 unification 2026-10-18); read by docs-authority/_power_sizing.py and flow_graph/param/o2_close.py (was AUT_CRIT / PSH_STORE_D 2.0 in two homes) | yes |
+| backup_gen_rated_kW | 40.0 | kW | NFPA110_2022 | yes |
 | bus_power_factor | 0.9 | - | AQS-ELEC-002 PF (study) | yes |
 | ppt_naoh_per_cl | 1.0 | mol NaOH per mol chloride precipitated as hydroxide | GREENWOOD | yes |
 | digest_naoh_per_sio2 | 2.0 | mol NaOH per mol SiO2 dissolved | GREENWOOD | yes |
@@ -467,6 +470,15 @@ All solved units close.
 | soil_unit_weight_kN_m3 | 18.0 | kN/m3 moist clay | A-M-208 | yes |
 | gw_depth_m | 0.0 | m below grade, groundwater (worst case at grade until measured) | A-M-208 | yes |
 | raft_fc_MPa | 35.0 | MPa concrete strength, raft and basement walls | A-M-208 | yes |
+| foundry_stock_demand_kg_d | 14.0 | kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1) | A-M-261 | yes |
+| foundry_melt_loss_frac | 0.01 | kg slag+dross per kg melt charge | INDUCT_SOCX | yes |
+| poly_shop_reject_frac | 0.1 | kg offcut to the wet line per kg polymer issued to MFG_SHOP | A-M-263 | yes |
+| melt_fe_cp_solid_kJ_kgK | 0.49 | kJ/kg K mean Fe 25-1538 C | CRC_FE | — |
+| melt_fe_L_kJ_kg | 247.0 | kJ/kg Fe fusion | CRC_FE | — |
+| melt_fe_cp_liq_kJ_kgK | 0.82 | kJ/kg K liquid Fe | CRC_FE | — |
+| melt_zn_cp_solid_kJ_kgK | 0.4 | kJ/kg K mean Zn 25-419.5 C | CRC_ZN | — |
+| melt_zn_L_kJ_kg | 112.0 | kJ/kg Zn fusion | CRC_ZN | — |
+| melt_zn_cp_liq_kJ_kgK | 0.48 | kJ/kg K liquid Zn | CRC_ZN | — |
 
 ## 6. References
 
@@ -549,6 +561,8 @@ All solved units close.
 | COOPER1996 | Cooper A., The ABC of NFT, 2nd ed., Grower Books, London (1996): about 1 L/min per gully, half at planting, 2 L/min upper limit; slope 1:30-1:100; gully length under 10-15 m. |
 | CRC_COND | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), Electrical conductivity of aqueous solutions (20 C): NaCl 2.5 % 39 and 5 % 70 mS/cm; NaOH 5 % 223 and 10 % 358 mS/cm; HCl 5 % 394 and 10 % 630 mS/cm. |
 | CRC_CU | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements and heat capacity of the elements: Cu melting point 1084.62 C, enthalpy of fusion 13.26 kJ/mol (208.7 kJ/kg), cp 24.44 J/(mol K) at 25 C rising to about 30 J/(mol K) near the melting point, liquid cp 32.8 J/(mol K); density 8.96 g/cm3. Ar molar mass 39.95 g/mol. |
+| CRC_FE | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Fe melting point 1538 C, enthalpy of fusion 13.8 kJ/mol (247 kJ/kg), cp about 0.45 kJ/(kg K) at 25 C rising to about 0.68 near the melting point (mean about 0.49 solid), liquid cp 0.82 kJ/(kg K); density 7.87 g/cm3. |
+| CRC_ZN | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Zn melting point 419.5 C, enthalpy of fusion 7.32 kJ/mol (112 kJ/kg), cp 0.388 kJ/(kg K) solid (mean to the melting point about 0.40), liquid cp 0.48 kJ/(kg K); density 7.14 g/cm3. |
 | CROPKING_NFT | CropKing, NFT production of lettuce (knowledge centre, citing Cooper 1996): 80 mm wide, 40 mm deep gullies at 1.5 % slope best in a comparison of 60-150 mm widths. |
 | CTC2020_CZA | (2020) CO2 Hydrogenation with Cu/ZnO/Al2O3: A Benchmark Study, ChemCatChem 12, doi:10.1002/cctc.202000195, Table: industrial Cu/ZnO/Al2O3 at 60 bar, 523 K, 17 vol% CO2 / 0 CO / 73.5 % H2: methanol weight-time yield 1.22 kg MeOH/(kg cat h). |
 | CUSIO2_ALD2023 | Ethanol Dehydrogenation over Copper-Silica Catalysts: From Sub-Nanometer Clusters to 15 nm Large Particles (2023), open access PMC10394689: Cu/SiO2 at 250-260 C, WHSV 2.37-4.73 h-1, 45-85 % ethanol conversion, acetaldehyde selectivity above 94 %. |
@@ -600,6 +614,7 @@ All solved units close.
 | IFC2021_5003 | International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
 | IFC2021_5004_3 | International Fire Code (2021) 5004.3 / IMC 502.8: mechanical exhaust for indoor storage and use of hazardous materials at not less than 1 cfm/ft2 (5.08 L/s m2) of floor area, continuous, inlet within 12 in of the floor (vapours heavier than air). |
 | INCROPERA7 | Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1). |
+| INDUCT_SOCX | Small coreless induction furnaces (10-50 kW class for charges under 20 kg): 2-3 kHz for steel/Cu charges, specific connected power about 2.5 kW/kg of steel-equivalent charge; melt energy to tap 0.7-0.9 kWh/kg steel, 0.5-0.6 kWh/kg Al/Cu from cold charge; dross/slag make on clean scrap remelt 1-2 % of charge (published small-furnace practice as summarised in notes/FOUNDRY_SIZING.md, AQS-SIZE-FOUNDRY). |
 | ISA5_1_2022 | ANSI/ISA-5.1-2022, Instrumentation and Control Symbols and Identification: first letter measured variable (F, P, T, L), succeeding letters function (T transmitter, E element, S switch, H high). |
 | ISO14120_2015 | ISO 14120:2015, Safety of machinery - Guards - General requirements for the design and construction of fixed and movable guards. |
 | ISO14122_2 | ISO 14122-2:2016 permanent means of access: working platforms and walkways. |
@@ -743,6 +758,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver pv_system_derate | 0.8 - | PVsyst loss tree for the selected modules and inverters |
 | driver storage_round_trip | 0.7 - | ZNBR2 in-house stack test (X-MFG-41, AQS-TST-002): round trip at 20 mA/cm2 over the daily cycle; the 0.70 design value is held below the physics prediction until then |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile |
+| driver crit_autonomy_d | 2.0 d of critical-load autonomy without sun | Owner outage-basis decision: NFPA 110/111 class vs the PV cloudy-day statistics of the site (AQS-SITE-002 NSRDB run) |
+| driver backup_gen_rated_kW | 40.0 kW | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES |
 | driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet |
@@ -959,6 +976,9 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist clay | Geotechnical report unit weight |
 | driver gw_depth_m | 0.0 m below grade, groundwater (worst case at grade until measured) | Piezometer readings at the parcel through a wet season |
 | driver raft_fc_MPa | 35.0 MPa concrete strength, raft and basement walls | Mix design and cylinder tests |
+| driver foundry_stock_demand_kg_d | 14.0 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table |
+| driver foundry_melt_loss_frac | 0.01 kg slag+dross per kg melt charge | weigh dross+slag per heat on the IND_MELT first article |
+| driver poly_shop_reject_frac | 0.1 kg offcut to the wet line per kg polymer issued to MFG_SHOP | shop polymer offcut weigh at the first article (same class as the S58/S59/S60 10 % losses, AQS-DUTY-010) |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -1217,3 +1237,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-258 | Power chain re-derived on the live graph: demand 281.99 kW b kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) |
 | A-M-259 | Heat-ladder store ledgers re-solved and closed: Q1/Q2 down s kW | pytest flow_graph/test_heat_ladder.py (stores close within 0.01 kW); python3 -m flow_graph.param.write_graph heat prints stores CLOSE |
 | A-M-260 | Register reconciliation: EW_1..9 params.sizing re-stamped li - | python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) |
+| A-M-261 | 14.0 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1;  kg/d | python3 -m flow_graph.param.foundry_poly (idempotent re-derivation); shop stock-draw weigh at the first article |
+| A-M-262 | 1.0 % of melt charge to slag+dross (FOUNDRY_SLAG_TO_LEACH) kg/kg | weigh dross+slag per heat on the IND_MELT first article (X-MFG-37 trial class) |
+| A-M-263 | 10 % polymer offcut to the wet line per kg issued to MFG_SHO kg/kg | shop polymer offcut weigh at the first article |
+| A-M-266 | Shop polymer draw P = 0.377186 kg/d = -r0 + f*K/(1-f) (A-M-2 kg/d | python3 -m flow_graph.param.foundry_poly (idempotent closure re-derivation); shop polymer draw weigh at the first article |
+| A-M-268 | backup_gen_rated_kW 40.0 / crit_autonomy_d 2.0 (drivers.json kW / d | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h; owner outage-basis decision vs AQS-SITE-002 NSRDB run |
