@@ -121,7 +121,8 @@ def check():
         dev = (graph-solved)/solved if solved else 0
         mis.append((what, graph, solved, dev, ref))
     cmp('IA-ACID-01 HCl content, kg/d', E['IA-ACID-01']['rate']['value']*DR.val(d,'acid_conc_design_wt'), s['leach']['hcl_kg_d'], 'GREENWOOD, LUNAR_SOURCEBOOK')
-    cmp('BMED_ACID kW vs physics triplet voltage', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'STRATHMANN2004')
+    if (N['BMED_ACID'].get('continuous_kw') or {}).get('value') is not None:      # R8: Rev AC keeps BMED kW on the S17-BMED feed edge only
+        cmp('BMED_ACID kW vs physics triplet voltage', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'STRATHMANN2004')
     w = DR.val(d,'base_conc_design_wt'); nb = s['naoh']
     cmp('IA-BASE-PPT NaOH, kg/d', E['IA-BASE-PPT']['rate']['value']*w, nb['ppt_kg_d'], 'GREENWOOD')
     cmp('IA-BASE-01 NaOH, kg/d', E['IA-BASE-01']['rate']['value']*w, nb['digest_kg_d'], 'GREENWOOD')
@@ -136,13 +137,19 @@ def check():
         if abs(bal) > 0.01*nb['bmed_mol']: errs.append(f'NaOH balance off by {bal:.3f} mol/d')
     for c,v in s['ew'].items():
         if c == 'RECT_EW':
-            cmp('RECT_EW AC kW', N['RECT_EW']['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW'); continue
+            n_rect = N.get('RECT_EW') or N.get('RECTIFIER')            # R8: Rev AC renamed the EW rectifier RECTIFIER
+            if n_rect and (n_rect.get('continuous_kw') or {}).get('value') is not None:
+                cmp('RECT_EW AC kW', n_rect['continuous_kw']['value'], v['P_ac_kW'], 'USBM_CL_EW'); continue
+            continue
         dc = next((x['rate']['value'] for x in g['edges'] if x['stream_id']==f'IA-DC-{c}'), None)
         if dc is not None: cmp(f'{c} DC kW (cell + bus drop)', dc, v['P_bus_kW'], 'CODATA2018, USBM_CL_EW')
     pv = N['PV_ARRAY']['params']; rf = s.get('roof')
+    np_kw = pv.get('nameplate_kw')                                        # R8: Rev AC stores module_kw x count (PV_ARRAY note)
+    if np_kw is None and pv.get('module_kw') is not None: np_kw = pv['module_kw']*pv.get('count', 0)
     if rf:
-        cmp('PV_ARRAY nameplate kWp vs roof-closed need', pv['nameplate_kw'], rf['pv_need_kWp'], 'NREL_PVWATTS, X-PAR-07')
-        if pv['nameplate_kw'] > rf['pv_roof_kWp']: errs.append(f"PV {pv['nameplate_kw']} kWp exceeds roof capacity {rf['pv_roof_kWp']:.1f} kWp")
+        if np_kw is not None:
+            cmp('PV_ARRAY nameplate kWp vs roof-closed need', np_kw, rf['pv_need_kWp'], 'NREL_PVWATTS, X-PAR-07')
+            if np_kw > rf['pv_roof_kWp']: errs.append(f"PV {np_kw} kWp exceeds roof capacity {rf['pv_roof_kWp']:.1f} kWp")
     return errs, mis, s, d
 
 if __name__ == '__main__':

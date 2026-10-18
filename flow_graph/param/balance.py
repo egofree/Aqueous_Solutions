@@ -57,33 +57,45 @@ def physics(g):
         E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | X-PAR-02')[0] + f' | {PHYS_TAG}: {why} (AQS-PAR-003).'
     # T6 grow-bed net photosynthesis (X-PAR-11): CO2 + H2O -> CH2O + O2, PQ 1.0 [TAIZ2015]; all CO2 dosed to the bed is fixed at steady state
     #    (the dose is sized to uptake, AQS-DUTY-011). O2 = 32/44 x CO2 leaves on S87 to CRYO_O2; the trim carries CO2 + H2O - O2.
-    co2 = v('S04') + v('S89'); put('S87', co2*32.0/44.01, f'grow-bed photosynthetic O2 = 32/44 x {co2:.3f} kg/d CO2 (PQ 1.0, TAIZ2015)')
-    E['S87']['composition'] = {'O2': 0.99, 'Ar': 0.01}
+    #    R8: presence-gated for Rev AC; GROW_BED survives but its closure neighbourhood is retired, so the bed stays unclosed (R10 owns it).
+    if all(k in E for k in ('S04', 'S89', 'S87')):
+        co2 = v('S04') + v('S89'); put('S87', co2*32.0/44.01, f'grow-bed photosynthetic O2 = 32/44 x {co2:.3f} kg/d CO2 (PQ 1.0, TAIZ2015)')
+        E['S87']['composition'] = {'O2': 0.99, 'Ar': 0.01}
     for u, k, why in (('GROW_BED', 'IA-BED-COMP', 'trim less the photosynthetic O2'), ('COMPOST', 'IA-COMP-OUT', 'compost passes the trim'), ('NUTRIENT_DOSE', 'IA-NUT-LEACH', 'nutrient surplus by difference')):
-        r = _unit_resid(g, u); put(k, v(k) + r, why)
+        if k in E:
+            r = _unit_resid(g, u); put(k, v(k) + r, why)
     for k in CO2_EDGES:
         if k in E: E[k]['composition'] = {'CO2': 1.0}
-    put('IA-TERR-VAP', v('S40') - v('S41') - v('S42'), 'transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest')
-    put('IA-HVAC-COND', v('IA-TERR-VAP') + v('IA-BED-VAP') + v('IA-HAB-VAP') + v('IA-DR-VAP') + sum(v(k) for k in E if k.endswith('-VAP') and E[k]['to_unit_id'] == 'CRYO_AHU' and k not in ('IA-TERR-VAP', 'IA-BED-VAP', 'IA-HAB-VAP', 'IA-DR-VAP')), 'condensate = greenhouse vapour in')
-    put('IA-O2-RET', 0.0, 'no surplus O2 return')
+    if all(k in E for k in ('IA-TERR-VAP', 'S40', 'S41', 'S42')):
+        put('IA-TERR-VAP', v('S40') - v('S41') - v('S42'), 'transpiration = S40 - S41 - S42, closed greenhouse, no terrace harvest')
+    if 'IA-HVAC-COND' in E:
+        vap_fixed = tuple(k for k in ('IA-TERR-VAP', 'IA-BED-VAP', 'IA-HAB-VAP', 'IA-DR-VAP') if k in E)   # R8: IA-DR-VAP retired with DUAL_ROOT
+        put('IA-HVAC-COND', sum(v(k) for k in vap_fixed) + sum(v(k) for k in E if k.endswith('-VAP') and E[k]['to_unit_id'] == 'CRYO_AHU' and k not in vap_fixed), 'condensate = greenhouse vapour in')
+    if 'IA-O2-RET' in E:
+        put('IA-O2-RET', 0.0, 'no surplus O2 return')
     # AHU dehumidification (A-M-153): latent = condensate x h_fg 2.454 MJ/kg at 20 C (NIST_WEBBOOK); coil chiller COP 2.96 (ASHRAE901_2022
     # air-cooled < 150 ton full-load minimum); electric on SF-CRYO_AHU, latent + electric rejected to HEAT_SINK on SQ-CRYO_AHU.
     from flow_graph.param.o2_close import _edge
     N_ = {n['unit_id']: n for n in g['nodes']}
+    sink = 'HEAT_SINK' in N_                                                            # R8: HEAT_SINK retired in Rev AC
     for sid, a, b, lay in (('SF-CRYO_AHU', 'SOL_ARK_60K', 'CRYO_AHU', ['elec']), ('SQ-CRYO_AHU', 'CRYO_AHU', 'HEAT_SINK', ['energy'])):
+        if sid == 'SQ-CRYO_AHU' and not sink: continue
         if sid not in E: g['edges'].append(_edge(sid, a, b, 'E', lay, 'AHU coil chiller' if sid[1] == 'F' else 'AHU latent + compressor heat', 0, 'kW', 'ELEC', 'CRYO')); E[sid] = g['edges'][-1]
     from . import drivers as _dv; COP = _dv.load()['ahu_chiller_COP']['value']
     ql = v('IA-HVAC-COND')*2.454e3/86400; we = ql/COP
-    E['SF-CRYO_AHU']['rate']['value'] = round(we, 4); E['SQ-CRYO_AHU']['rate']['value'] = round(ql + we, 4)
+    E['SF-CRYO_AHU']['rate']['value'] = round(we, 4)
+    if 'SQ-CRYO_AHU' in E: E['SQ-CRYO_AHU']['rate']['value'] = round(ql + we, 4)
     N_['CRYO_AHU']['continuous_kw'] = {'value': round(we, 4), 'unit': 'kW', 'status': 'study', 'note': f'latent {ql:.2f} kW (condensate {v("IA-HVAC-COND"):.1f} kg/d x 2.454 MJ/kg) / COP {COP} (A-M-153)'}
     src, draw = o2_close.close_o2(g); o2_close.LAST['storage'] = o2_close.storage(g)     # T3; H2/O2 banks re-sized every pass (X-PAR-12): O2 product = cold-box O2 in + bed + electrolyser; surplus to PROD_O2. No O2 from CO2.
     d = -_unit_resid(g, 'ROOF_TANK')
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):
-        put(k, v(k) + d, f'roof-tank shortfall {d:+.4f} kg/d by difference on the potable path')
+        if k in E: put(k, v(k) + d, f'roof-tank shortfall {d:+.4f} kg/d by difference on the potable path')
     a = _unit_resid(g, 'CRYO_ASU')
-    lim = henry_bound(g)
-    put('IA-LEACH-ASU', max(0.0, v('IA-LEACH-ASU') - a), f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')
-    assert v('IA-LEACH-ASU') <= lim + 1e-6, ('IA-LEACH-ASU above the Henry-law bound', v('IA-LEACH-ASU'), lim)
+    if 'IA-LEACH-ASU' in E:
+        # R8: the leach dissolved-gas edge and its Henry bound died with CRYO_ASU in Rev AC; the assert stays for the live path
+        lim = henry_bound(g)
+        put('IA-LEACH-ASU', max(0.0, v('IA-LEACH-ASU') - a), f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')
+        assert v('IA-LEACH-ASU') <= lim + 1e-6, ('IA-LEACH-ASU above the Henry-law bound', v('IA-LEACH-ASU'), lim)
     put('IA-H2O-MU', v('IA-H2O-MU') - _unit_resid(g, 'LEACH_CSTR_1'), 'leach water make-up by difference (H and O leave as methanol and O2 product)')
     o2_close.LAST.clear(); o2_close.LAST.update(XL, power=o2_close.close_power(g), o2=(src, draw))
     return d, a

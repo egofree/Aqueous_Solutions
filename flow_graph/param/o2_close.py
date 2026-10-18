@@ -39,58 +39,46 @@ def _node(uid, sector, cls, role, note, params):
 
 def patch(g):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
-    if 'H2O_ELYZ' in N: return False
+    if N['CRYO_O2']['params'].get('x_par_12_base'): return False   # R8: base frozen in node params (Rev BH idempotency marker H2O_ELYZ retired with the unit)
     v = lambda k: float(E[k]['rate']['value'] or 0)
     base = {k: v(k) for k in ('IA-GEN-AIR', 'IA-NOX-N2', 'IA-NOX-CO2', 'IA-NOX-H2O', 'IA-ASU-N2', 'IA-AB-FLUE', 'S67', 'S67B', 'IA-FLUE-EXH',
-                              'IA-BMED-03', 'IA-EVAP_ACID-COND', 'S17-BMED', 'SF-EVAP_ACID', 'IA-PV-01', 'IA-E-SUN')}
-    base['BMED_kW'] = N['BMED_ACID']['continuous_kw']['value']; base['EVAP_kW'] = (N['EVAP_ACID'].get('continuous_kw') or {}).get('value', base['SF-EVAP_ACID'])
+                              'IA-BMED-03', 'IA-EVAP_ACID-COND', 'S17-BMED', 'SF-EVAP_ACID', 'IA-PV-01', 'IA-E-SUN') if k in E}   # R8: presence-gate retired Rev AC edges
+    base['BMED_kW'] = (N['BMED_ACID'].get('continuous_kw') or {}).get('value')            # R8: Rev AC keeps the BMED kW on the S17-BMED feed edge only
+    base['EVAP_kW'] = ((N['EVAP_ACID'].get('continuous_kw') or {}).get('value') if 'EVAP_ACID' in N else None)
+    if base['EVAP_kW'] is None: base['EVAP_kW'] = base.get('SF-EVAP_ACID')                # restored EVAP_ACID carries continuous_kw (R8 task A)
     base['bus_r0'] = _bus(g)
-    base['PV'] = {k: N['PV_ARRAY']['params'][k] for k in ('count', 'nameplate_kw', 'area_m2')}
+    pv = N['PV_ARRAY']['params']; base['PV'] = {k: pv[k] for k in ('count', 'nameplate_kw', 'area_m2') if k in pv}   # R8: Rev AC stores module_kw x count
+    if 'nameplate_kw' not in base['PV'] and pv.get('module_kw') is not None: base['PV']['nameplate_kw'] = pv['module_kw']*pv.get('count', 0)
     N['CRYO_O2']['params']['x_par_12_base'] = base
-    g['nodes'] += [_node('H2O_ELYZ', 'CRYO', 'pem_electrolyser', 'load', 'X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734).', {'internals': 'PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer'}),
-                       _node('HCL_BURNER', 'WET', 'hcl_synthesis', 'none', 'X-PAR-12: H2 + Cl2 -> 2 HCl; graphite burner and falling-film graphite absorber (AQS-STD-002 sec. 9); separate H2 and Cl2 feeds.', {'internals': 'graphite burner, quartz sight glass, graphite absorber'}),
-                       _node('PROD_MEOH', 'CRYO', 'product', 'none', 'X-PAR-12: methanol product store (carbon leaves the plant as product, no vent).', {}),
-                       _node('PROD_O2', 'CRYO', 'product', 'none', 'X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent).', {})]
-    add = [_edge('IA-ELY-H2O', 'ROOF_TANK', 'H2O_ELYZ', 'L', ['mass'], 'electrolyser feed water', 0, 'kg/d', 'WTR', 'CRYO', {'water': 1.0}),
-           _edge('IA-ELY-H2', 'H2O_ELYZ', 'CRYO_H2', 'G', ['mass'], 'electrolyser H2', 0, 'kg/d', 'CRYO', 'CRYO', {'H2': 1.0}),
-           _edge('IA-ELY-O2', 'H2O_ELYZ', 'CRYO_O2', 'G', ['mass'], 'electrolyser O2', 0, 'kg/d', 'CRYO', 'CRYO', {'O2': 1.0}),
-           _edge('SF-H2O_ELYZ', 'SOL_ARK_60K', 'H2O_ELYZ', 'E', ['elec'], '480 V AC (daily average)', 0, 'kW', 'ELEC', 'CRYO'),
-           _edge('SQ-H2O_ELYZ', 'H2O_ELYZ', 'HEAT_SINK', 'E', ['energy'], 'stack heat', 0, 'kW', 'CRYO', 'ELEC'),
-           _edge('IA-GEN-O2', 'HDR_O2', 'BACKUP_GEN', 'G', ['mass'], 'combustion O2, 10 % excess', 0, 'kg/d', 'CRYO', 'GAS', {'O2': 0.99, 'Ar': 0.01}),
+    # R8 scope gates: H2O_ELYZ, HCL_BURNER and PROD_O2 died with the Rev AC scope pivot (their H2/Cl2/O2 sources and
+    # the EW DC feeds are gone); only PROD_MEOH is still created (MEOH_TANK needs its product outlet).
+    new_nodes = [_node('PROD_MEOH', 'CRYO', 'product', 'none', 'X-PAR-12: methanol product store (carbon leaves the plant as product, no vent).', {})]
+    alive = set(N) | {n['unit_id'] for n in new_nodes}
+    g['nodes'] += new_nodes
+    add = [_edge('IA-GEN-O2', 'HDR_O2', 'BACKUP_GEN', 'G', ['mass'], 'combustion O2, 10 % excess', 0, 'kg/d', 'CRYO', 'GAS', {'O2': 0.99, 'Ar': 0.01}),
            _edge('IA-AB-O2', 'HDR_O2', 'AFTERBURNER', 'G', ['mass'], 'combustion O2, 10 % excess', 0, 'kg/d', 'CRYO', 'GAS', {'O2': 0.99, 'Ar': 0.01}),
-           _edge('IA-O2-PROD', 'HDR_O2', 'PROD_O2', 'G', ['mass'], 'surplus O2 to product cylinders', 0, 'kg/d', 'CRYO', 'CRYO', {'O2': 0.99, 'Ar': 0.01}),
            _edge('IA-HCO2-MEOH', 'HDR_CO2', 'MEOH_SYNTH', 'G', ['mass'], 'CO2 not taken by the bed', 0, 'kg/d', 'CRYO', 'CRYO', {'CO2': 1.0}),
            _edge('IA-MEOH-PROD', 'MEOH_TANK', 'PROD_MEOH', 'L', ['mass'], 'methanol product', 0, 'kg/d', 'CRYO', 'CRYO', {'CH3OH': 1.0}),
-           _edge('IA-HCL-SYN', 'HCL_BURNER', 'LEACH_CSTR_1', 'G', ['mass'], 'synthesis HCl absorbed into the leach', 0, 'kg/d', 'WET', 'WET', {'HCl': 1.0}),
-           _edge('IA-E-HCLB', 'HCL_BURNER', 'HEAT_SINK', 'E', ['energy'], 'HCl synthesis heat (92.3 kJ/mol)', 0, 'kW', 'WET', 'ELEC'),
-           _edge('IA-O2-SHIP', 'PROD_O2', 'NORTH_DOCK', 'G', ['mass'], 'O2 cylinders shipped at the dock', 0, 'kg/d', 'CRYO', 'DOCK', {'O2': 0.99, 'Ar': 0.01}),
-           _edge('IA-MEOH-SHIP', 'PROD_MEOH', 'NORTH_DOCK', 'L', ['mass'], 'methanol shipped at the dock', 0, 'kg/d', 'CRYO', 'DOCK', {'CH3OH': 1.0}),
            _edge('IA-C5-SHIP', 'PROD_C5_C10', 'NORTH_DOCK', 'L', ['mass'], 'C5-C10 product shipped', 0, 'kg/d', 'CRYO', 'DOCK', {'C5-C10': 1.0}),
+           _edge('IA-MEOH-SHIP', 'PROD_MEOH', 'NORTH_DOCK', 'L', ['mass'], 'methanol shipped at the dock', 0, 'kg/d', 'CRYO', 'DOCK', {'CH3OH': 1.0}),
            _edge('IA-H2O-MU', 'NORTH_DOCK', 'LEACH_CSTR_1', 'L', ['mass'], 'water make-up for H and O leaving as product', 0, 'kg/d', 'DOCK', 'WET', {'water': 1.0})]
     for k, _ in CELLS:
-        add += [_edge(f'IA-EW{k}-CL2', f'EW_{k}', 'LEACH_CSTR_1', 'G', ['mass'], 'anode Cl2 (+ O2 side) to leach oxidation', 0, 'kg/d', 'WET', 'WET'),
-                _edge(f'IA-EW{k}-CL2B', f'EW_{k}', 'HCL_BURNER', 'G', ['mass'], 'side-reaction anode Cl2 to HCl synthesis', 0, 'kg/d', 'WET', 'WET', {'Cl2': 1.0}),
-                _edge(f'IA-EW{k}-H2B', f'EW_{k}', 'HCL_BURNER', 'G', ['mass'], 'cathode H2 to HCl synthesis', 0, 'kg/d', 'WET', 'WET', {'H2': 0.98, 'water': 0.02})]
+        add += [_edge(f'IA-EW{k}-CL2', f'EW_{k}', 'LEACH_CSTR_1', 'G', ['mass'], 'anode Cl2 (+ O2 side) to leach oxidation', 0, 'kg/d', 'WET', 'WET')]
+    add = [e for e in add if e['stream_id'] not in E and e['from_unit_id'] in alive and e['to_unit_id'] in alive]   # R8: no duplicate stream_ids, no dead endpoints
     g['edges'] += add
-    for k in OLD_H2: E[k]['rate']['value'] = 0.0; E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | ')[0] + f' | {TAG}: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005).'
-    E['IA-CO2-RET']['rate']['value'] = 0.0
-    for n in g['nodes']:
-        if n['unit_id'].startswith('EW_'):
-            for t in (n['params'].get('balance_rev_l') or {}).get('terms', []):
-                if 'anode Cl2' in t['label']: t['value'] = 0.0; t['basis'] = 'on graph: IA-EWk-CL2 / -CL2B (X-PAR-12)'
-        if n['unit_id'] == 'CONTINUOUS_RECYCLE':
-            for t in (n['params'].get('balance_rev_l') or {}).get('terms', []):
-                if 'make-up' in t['label']: t['value'] = 0.0; t['basis'] = 'withdrawn: chloride returns on the anode Cl2 and IA-HCL-SYN (X-PAR-12)'
+    # R8: the OLD_H2 zeroing, IA-CO2-RET zeroing and the balance_rev_l term rewrites belong to the retired
+    # cathode-H2 -> HCL_BURNER reroute; Rev AC holds those rates as study rates (R10 owns the re-basis).
     return True
 
 def tf(g):
     if not any(e['stream_id'] == 'IA-C5-SHIP' for e in g['edges']):
         g['edges'].append(_edge('IA-C5-SHIP', 'PROD_C5_C10', 'NORTH_DOCK', 'L', ['mass'], 'C5-C10 product shipped', 0, 'kg/d', 'CRYO', 'DOCK', {'C5-C10': 1.0}))
-    if not any(e['stream_id'] == 'IA-FORM-N2' for e in g['edges']):   # X-SAF-11 FORM dilution edges (A-M-159)
+    N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; B = N['CRYO_O2']['params']['x_par_12_base']
+    if 'FORM' in N and not any(e['stream_id'] == 'IA-FORM-N2' for e in g['edges']):   # X-SAF-11 FORM dilution edges (A-M-159); R8: FORM retired in Rev AC
         g['edges'] += [_edge('IA-FORM-N2', 'HDR_N2', 'FORM', 'G', ['mass'], 'N2 diluent to the iron-molybdate bed (lean side, FORMOX_REVIEW2021)', 0, 'kg/d', 'CRYO', 'FARM', {'N2': 1.0}),
                        _edge('IA-FORM-TAIL', 'FORM', 'AFTERBURNER', 'G', ['mass'], 'FORM tail gas: N2, excess O2, trace CH2O/CO to the afterburner', 0, 'kg/d', 'FARM', 'GAS', {'N2': 0.93, 'O2': 0.07})]
-    N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; B = N['CRYO_O2']['params']['x_par_12_base']
     v = lambda k: float(E[k]['rate']['value'] or 0)
+    vv = lambda k: float(E[k]['rate']['value'] or 0) if k in E else 0.0            # R8: optional ref, absent in Rev AC
     def put(k, x, why):
         assert x > -1e-6, (k, x, why)
         E[k]['rate']['value'] = round(max(x, 0.0), 6); E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(f' | {TAG}')[0] + f' | {TAG}: {why} (AQS-PAR-005).'
@@ -101,9 +89,11 @@ def tf(g):
                 x = float(e['rate']['value'] or 0); r += x if e['to_unit_id'] == u else 0; r -= x if e['from_unit_id'] == u else 0
         return r
     L = {}
-    # --- EW Faraday
+    # --- EW Faraday (R8: needs the IA-DC-EW_* cell feeds; Rev AC dropped them with RECT_EW, so the Faraday
+    #     gases stay held study rates and the cells' imbalance is left for the R10 re-basis)
     tot = dict(I=0, cl2=0, o2=0, h2=0, cl2b=0)
     for k, ov in CELLS:
+        if f'IA-DC-EW_{k}' not in E: continue
         I = v(f'IA-DC-EW_{k}')*1000/VCELL; ne = I*MOL_A
         h2 = ne*(1-CE)/2*2.016e-3; cl2 = ne*(1-FO2)/2*70.906e-3; o2 = ne*FO2/4*31.998e-3; cl2b = h2/2.016*70.906
         put(f'IA-EW{k}-H2B', h2, f'cathode H2 = I(1-CE)/2F, I = {I:.0f} A, CE {CE}')
@@ -113,18 +103,25 @@ def tf(g):
         put(ov, v(ov) + resid(f'EW_{k}'), 'overflow by difference after Faraday gases')
         for a, b in (('I', I), ('cl2', cl2), ('o2', o2), ('h2', h2), ('cl2b', cl2b)): tot[a] += b
     put('IA-POL-02', v('IA-POL-02') + resid('POLISH_BANK'), 'polish return by difference'); put('IA-REC-01', v('IA-POL-02'), 'recycle out = polish return')
-    hcl = tot['h2'] + tot['cl2b']; put('IA-HCL-SYN', hcl, 'H2 + Cl2 -> 2 HCl')
-    put('IA-E-HCLB', hcl/36.46e-3*92.31/86400, 'HCl synthesis heat 92.31 kJ/mol HCl (NIST)')
-    put('IA-HDR-H2-02', v('IA-ALD-H2') + v('IA-H2-IN') + v('IA-LEACH-H2'), 'header passes ALD vent H2 only'); put('S05', v('IA-HDR-H2-02'), 'dryer pass-through')
+    h2b_live = 'HCL_BURNER' in N and any(f'IA-EW{k}-H2B' in E for k, _ in CELLS)
+    if h2b_live:
+        hcl = tot['h2'] + tot['cl2b']; put('IA-HCL-SYN', hcl, 'H2 + Cl2 -> 2 HCl')
+        put('IA-E-HCLB', hcl/36.46e-3*92.31/86400, 'HCl synthesis heat 92.31 kJ/mol HCl (NIST)')
+        put('IA-HDR-H2-02', vv('IA-ALD-H2') + v('IA-H2-IN') + v('IA-LEACH-H2'), 'header passes ALD vent H2 only'); put('S05', v('IA-HDR-H2-02'), 'dryer pass-through')
+    L['ew'] = tot; L['hcl'] = tot['h2'] + tot['cl2b']
     # BMED acid regeneration make-up displaced by synthesis HCl
-    regen = 593.5*36.46e-3; prod = v('S09') + v('IA-BMED-01') + v('IA-HCL-BU'); kb = 1.0   # oxide-leach HCl (solver.leach_acid, GREENWOOD) is still made by BMED; synthesis HCl only replaces the HCl the EW side reaction splits (2 HCl -> H2 + Cl2)
+    regen = 593.5*36.46e-3; prod = v('S09') + v('IA-BMED-01') + vv('IA-HCL-BU'); kb = 1.0   # oxide-leach HCl (solver.leach_acid, GREENWOOD) is still made by BMED; synthesis HCl only replaces the HCl the EW side reaction splits (2 HCl -> H2 + Cl2)
     need = regen
-    N['BMED_ACID']['continuous_kw']['value'] = round(B['BMED_kW']*kb, 4); put('S17-BMED', B['S17-BMED']*kb, f'BMED HCl make {prod+need:.2f} of {prod+regen:.2f} kg/d (k {kb:.3f})')
+    if N['BMED_ACID'].get('continuous_kw') and B.get('BMED_kW') is not None: N['BMED_ACID']['continuous_kw']['value'] = round(B['BMED_kW']*kb, 4)   # R8: node kW absent in Rev AC
+    put('S17-BMED', B['S17-BMED']*kb, f'BMED HCl make {prod+need:.2f} of {prod+regen:.2f} kg/d (k {kb:.3f})')
     put('IA-BMED-03', B['IA-BMED-03']*kb, 'BMED brine scales with HCl make'); put('IA-EVAP_ACID-COND', B['IA-EVAP_ACID-COND']*kb, 'condensate scales with HCl make')
-    put('IA-EVAP_ACID-FEED', v('IA-EVAP_ACID-FEED') + resid('BMED_ACID'), 'BMED product by difference'); put('IA-ACID-01', v('IA-ACID-01') + resid('EVAP_ACID'), 'acid to leach by difference')
+    x_feed = v('IA-EVAP_ACID-FEED') + resid('BMED_ACID')
+    if x_feed > -1e-6: put('IA-EVAP_ACID-FEED', x_feed, 'BMED product by difference')   # R8: Rev AC re-routed the brine feed IA-BMED-03 unrated; residuals left for R10
+    x_acid = v('IA-ACID-01') + resid('EVAP_ACID')
+    if x_acid > -1e-6: put('IA-ACID-01', x_acid, 'acid to leach by difference')
     put('SF-EVAP_ACID', B['SF-EVAP_ACID']*kb, 'evaporator scales with HCl make')
     if N['EVAP_ACID'].get('continuous_kw'): N['EVAP_ACID']['continuous_kw']['value'] = round(B['EVAP_kW']*kb, 4)
-    L['ew'] = tot; L['hcl'] = hcl; L['bmed'] = (kb, B['S17-BMED'] - v('S17-BMED') + B['SF-EVAP_ACID'] - v('SF-EVAP_ACID'))
+    L['bmed'] = (kb, B['S17-BMED'] - v('S17-BMED') + B['SF-EVAP_ACID'] - v('SF-EVAP_ACID'))
     # --- BACKUP_GEN on a standby / exercise basis (NFPA110 8.4.2: monthly exercise >= 30 min at >= 30 % of nameplate); daily average
     if 'gen_full' not in B:
         B['gen_full'] = {k: v(k) for k in ('CUT-1-OUT', 'S45', 'S47', 'S46', 'CUT-1')}
@@ -139,54 +136,68 @@ def tf(g):
     # --- combustion O2
     gen_b = v('S45')*7.937 + v('CUT-1-OUT')*(11.75*32.0/107.2); og = EXC*gen_b
     og_full = EXC*(gf['S45']*7.937 + gf['CUT-1-OUT']*(11.75*32.0/107.2))
-    put('IA-GEN-O2', og, f'1.10 x ({v("S45"):.3f} H2 x 7.94 + {v("CUT-1-OUT"):.3f} C7.5H17 x 3.51)'); put('IA-GEN-AIR', (B['IA-GEN-AIR'] - og_full)*r, 'N2 diluent, scaled with the exercise fuel')
+    put('IA-GEN-O2', og, f'1.10 x ({v("S45"):.3f} H2 x 7.94 + {v("CUT-1-OUT"):.3f} C7.5H17 x 3.51)')
+    x_air = (B['IA-GEN-AIR'] - og_full)*r
+    if x_air > -1e-6: put('IA-GEN-AIR', x_air, 'N2 diluent, scaled with the exercise fuel')   # R8: Rev AC froze S45 pre-standby but IA-GEN-AIR post-standby; re-basis is R10's
     put('S46', v('IA-GEN-AIR') + og + v('CUT-1-OUT') + v('S45'), 'genset exhaust = inputs')
     dn2 = B['IA-GEN-AIR'] - v('IA-GEN-AIR'); dC = gf['CUT-1-OUT']*(1 - r)*90.0/107.2; dH = gf['CUT-1-OUT']*(1 - r)*17.2/107.2 + gf['S45']   # fuel mass that left on the old graph as C and H
     gco2 = v('CUT-1-OUT')*(7.5*32.0/107.2); gh2o = gen_b - gco2
-    ab_co, ab_org = v('IA-SIC-CO')*0.5711, v('NCG_TO_AB')*0.03*1.066 + 0.3195 + v('S11')*0.001*1.066
+    ab_co, ab_org = vv('IA-SIC-CO')*0.5711, v('NCG_TO_AB')*0.03*1.066 + 0.3195 + v('S11')*0.001*1.066
     oa = EXC*(ab_co + ab_org); put('IA-AB-O2', oa, f'1.10 x (CO {ab_co:.3f} + organics {ab_org:.3f}); S11 is 99.8 % water'); 
     put('IA-AB-FLUE', B['IA-AB-FLUE'] + oa, 'flue carries the O2 drawn'); put('S67', B['S67'] + oa, 'flue carries the O2 drawn')
     put('S67B', B['S67B'] + ab_co + ab_org/2, 'bound O2 into CO2'); put('IA-FLUE-EXH', B['IA-FLUE-EXH'] + ab_org/2 + (oa - ab_co - ab_org), 'bound O2 into H2O + excess O2')
     xs = (og - gen_b) + (oa - ab_co - ab_org)
-    # X-SAF-11 (A-M-159): FORM feed at about 10 mol% MeOH, 10 mol% O2, 80 mol% N2 (FORMOX_REVIEW2021): O2 = 1 mol per MeOH (half reacts),
-    # N2 = 8 mol per MeOH taken from the afterburner dilution air (IA-AB-AIR) so the flue N2 is unchanged; tail to the afterburner.
-    fb = N['FORM']['params'].setdefault('dilution_base', {'IA-AB-AIR': v('IA-AB-AIR')})
-    nm = (v('IA-FORM-S') + v('IA-MEOH-FORM'))/32.042; n2f = 8*nm*28.013; xo = nm*16.0
-    put('IA-FORM-O2', nm*32.0, '1 O2 per MeOH at 10/10 mol% (X-SAF-11)'); put('IA-FORM-N2', n2f, '8 N2 per MeOH (X-SAF-11)'); put('IA-FORM-TAIL', n2f + xo, 'N2 + unreacted O2 (X-SAF-11)')
-    put('IA-AB-AIR', fb['IA-AB-AIR'] - n2f, 'dilution air less the N2 routed through FORM (X-SAF-11)')
-    put('IA-AB-FLUE', v('IA-AB-FLUE') + n2f + xo, 'flue carries the FORM tail'); put('S67', v('S67') + xo, 'flue carries the FORM excess O2')
-    put('IA-FLUE-EXH', v('IA-FLUE-EXH') + xo, 'FORM excess O2'); xs += xo
-    put('IA-NOX-CO2', B['IA-NOX-CO2'] - dC + gco2, 'genset bound O2 into CO2, less the carbon of the fuel no longer burned'); put('IA-NOX-H2O', B['IA-NOX-H2O'] - dH + gh2o + ab_org/2, 'bound O2 into water, less the H no longer burned')
-    put('IA-NOX-N2', B['IA-NOX-N2'] - dn2 + xs, 'N2 replaced by O2; excess O2 rides to the cold box'); E['IA-NOX-N2']['composition'] = {'N2': round(1 - xs/v('IA-NOX-N2'), 4), 'O2': round(xs/v('IA-NOX-N2'), 4)}
-    put('IA-ASU-N2', v('IA-NOX-N2') - xs, 'N2 out = N2 in'); put('S84', v('IA-ASU-N2') - v('S88') - v('IA-N2-VENT') - v('IA-AHU-FIX'), 'N2 pass-through')
-    put('IA-CO2-RET', 0.0, 'no CO2 recycle into the cold box'); put('IA-ASU-CO2', v('IA-NOX-CO2'), 'CO2 out = CO2 in'); put('IA-ASU-O2', xs, 'O2 out = O2 in (combustion excess)')
+    if 'FORM' in N and all(k in E for k in ('IA-FORM-S', 'IA-MEOH-FORM', 'IA-FORM-O2', 'IA-FORM-N2', 'IA-FORM-TAIL')):
+        # X-SAF-11 (A-M-159): FORM feed at about 10 mol% MeOH, 10 mol% O2, 80 mol% N2 (FORMOX_REVIEW2021): O2 = 1 mol per MeOH (half reacts),
+        # N2 = 8 mol per MeOH taken from the afterburner dilution air (IA-AB-AIR) so the flue N2 is unchanged; tail to the afterburner.
+        fb = N['FORM']['params'].setdefault('dilution_base', {'IA-AB-AIR': v('IA-AB-AIR')})
+        nm = (v('IA-FORM-S') + v('IA-MEOH-FORM'))/32.042; n2f = 8*nm*28.013; xo = nm*16.0
+        put('IA-FORM-O2', nm*32.0, '1 O2 per MeOH at 10/10 mol% (X-SAF-11)'); put('IA-FORM-N2', n2f, '8 N2 per MeOH (X-SAF-11)'); put('IA-FORM-TAIL', n2f + xo, 'N2 + unreacted O2 (X-SAF-11)')
+        put('IA-AB-AIR', fb['IA-AB-AIR'] - n2f, 'dilution air less the N2 routed through FORM (X-SAF-11)')
+        put('IA-AB-FLUE', v('IA-AB-FLUE') + n2f + xo, 'flue carries the FORM tail'); put('S67', v('S67') + xo, 'flue carries the FORM excess O2')
+        put('IA-FLUE-EXH', v('IA-FLUE-EXH') + xo, 'FORM excess O2'); xs += xo
+    if all(k in E for k in ('IA-NOX-N2', 'IA-NOX-CO2', 'IA-ASU-N2', 'IA-ASU-O2', 'IA-ASU-CO2', 'IA-CO2-RET')):
+        # R8: the cold-box species family died with CRYO_ASU in the Rev AC pivot; NOX_SCRUB keeps its study rates (R10 re-basis)
+        put('IA-NOX-CO2', B['IA-NOX-CO2'] - dC + gco2, 'genset bound O2 into CO2, less the carbon of the fuel no longer burned'); put('IA-NOX-H2O', B['IA-NOX-H2O'] - dH + gh2o + ab_org/2, 'bound O2 into water, less the H no longer burned')
+        put('IA-NOX-N2', B['IA-NOX-N2'] - dn2 + xs, 'N2 replaced by O2; excess O2 rides to the cold box'); E['IA-NOX-N2']['composition'] = {'N2': round(1 - xs/v('IA-NOX-N2'), 4), 'O2': round(xs/v('IA-NOX-N2'), 4)}
+        put('IA-ASU-N2', v('IA-NOX-N2') - xs, 'N2 out = N2 in'); put('S84', v('IA-ASU-N2') - v('S88') - v('IA-N2-VENT') - v('IA-AHU-FIX'), 'N2 pass-through')
+        put('IA-CO2-RET', 0.0, 'no CO2 recycle into the cold box'); put('IA-ASU-CO2', v('IA-NOX-CO2'), 'CO2 out = CO2 in'); put('IA-ASU-O2', xs, 'O2 out = O2 in (combustion excess)')
     L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_co + ab_org, xs=xs)
     # --- CO2: light-limited bed, rest to methanol
-    bm2 = N['GROW_BED']['params'].get('area_m2', BED_M2); bed = bm2*CO2_M2/1000; veg = sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-CO2') and E[k]['from_unit_id'] == 'HDR_CO2' and E[k]['to_unit_id'] not in ('MEOH_SYNTH',)); others = sum(v(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
+    bm2 = N['GROW_BED']['params'].get('area_m2', BED_M2); bed = bm2*CO2_M2/1000; veg = sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-CO2') and E[k]['from_unit_id'] == 'HDR_CO2' and E[k]['to_unit_id'] not in ('MEOH_SYNTH',)); others = sum(vv(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
     put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {bm2} m2 x {CO2_M2:.1f} g/m2/d')
     put('IA-HCO2-MEOH', v('S85') + others - bed - veg, 'header CO2 the bed cannot fix'); put('S73', v('S73') + resid('CRYO_CO2'), 'cold-box CO2 to methanol by difference')
     co2m = v('S73') + v('IA-HCO2-MEOH')
     put('S74', co2m*3*2.016/44.01, 'CO2 + 3 H2'); put('S75', co2m*(1 + 3*2.016/44.01 - 18.015/44.01), '-> CH3OH (mass closed)'); put('IA-MEOH-H2O', co2m*18.015/44.01, '+ H2O')
-    put('IA-MEOH-PROD', v('IA-MEOH-PROD') + resid('MEOH_TANK'), 'methanol product by difference'); put('IA-MEOH-COND', v('IA-MEOH-COND') + resid('MEOH_COND'), 'condensate to roof')
+    x_meoh = v('IA-MEOH-PROD') + resid('MEOH_TANK')
+    if x_meoh > -1e-6: put('IA-MEOH-PROD', x_meoh, 'methanol product by difference')   # R8: Rev AC draws more methanol than S75 makes; residual left to R10
+    put('IA-MEOH-COND', v('IA-MEOH-COND') + resid('MEOH_COND'), 'condensate to roof')
     L['co2'] = dict(bed=bed, meoh=co2m, others=others)
-    # --- electrolyser by H2 demand
-    h2 = v('S45') + v('S49') + v('S74') - v('S05') - v('S64'); o2 = h2*31.998/4.032
-    put('IA-ELY-H2', h2, 'H2 demand: genset + fuel cell + methanol'); put('IA-ELY-O2', o2, 'O2 = 7.937 x H2'); put('IA-ELY-H2O', h2 + o2, 'water split')
-    kw = h2*KWH_H2/24; E['SF-H2O_ELYZ']['rate']['value'] = round(kw, 4); E['SQ-H2O_ELYZ']['rate']['value'] = round(kw - h2*HHV_H2/24, 4)
-    N['H2O_ELYZ']['continuous_kw'] = {'value': round(kw, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: {h2:.2f} kg/d H2 x {KWH_H2} kWh/kg / 24 h; rated {h2*KWH_H2/PSH_ELY:.1f} kW on a {PSH_ELY} h PV window.'}
-    n2 = resid('HDR_N2'); put('IA-EW4-N2', v('IA-EW4-N2') - n2, f'sweep N2 trimmed {n2:+.3f}: the former cold box turned this N2 into O2')
+    # --- electrolyser by H2 demand (R8: H2O_ELYZ retired in the Rev AC pivot; H2 demand stays on the CRYO_H2 study rates, source re-basis is R10's)
+    if 'H2O_ELYZ' in N and 'IA-ELY-H2' in E:
+        h2 = v('S45') + v('S49') + v('S74') - v('S05') - v('S64'); o2 = h2*31.998/4.032
+        put('IA-ELY-H2', h2, 'H2 demand: genset + fuel cell + methanol'); put('IA-ELY-O2', o2, 'O2 = 7.937 x H2'); put('IA-ELY-H2O', h2 + o2, 'water split')
+        kw = h2*KWH_H2/24; E['SF-H2O_ELYZ']['rate']['value'] = round(kw, 4); E['SQ-H2O_ELYZ']['rate']['value'] = round(kw - h2*HHV_H2/24, 4)
+        N['H2O_ELYZ']['continuous_kw'] = {'value': round(kw, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: {h2:.2f} kg/d H2 x {KWH_H2} kWh/kg / 24 h; rated {h2*KWH_H2/PSH_ELY:.1f} kW on a {PSH_ELY} h PV window.'}
+        L['ely'] = dict(h2=h2, o2=o2, kw=kw, rated=h2*KWH_H2/PSH_ELY)
+    if 'IA-ASU-N2' in E:
+        n2 = resid('HDR_N2'); put('IA-EW4-N2', v('IA-EW4-N2') - n2, f'sweep N2 trimmed {n2:+.3f}: the former cold box turned this N2 into O2')   # R8: basis is the retired cold box
     put('IA-MEOH-SHIP', v('IA-MEOH-PROD'), 'shipped')
-    L['ely'] = dict(h2=h2, o2=o2, kw=kw, rated=h2*KWH_H2/PSH_ELY)
     return L
 
 def close_o2(g):
-    """After T6: O2 product = cold-box O2 + bed O2 + electrolyser O2; surplus to PROD_O2."""
+    """After T6: O2 product = cold-box O2 + bed O2 + electrolyser O2; surplus to PROD_O2.
+    R8: with the cold box and electrolyser retired in Rev AC the product split has no source basis; the re-basis
+    (S83 vs the surviving bed O2 and the header draws) is R10's, so the writes and the assert are gated on a
+    surviving source and the study rates are left alone."""
     E = {e['stream_id']: e for e in g['edges']}; v = lambda k: float(E[k]['rate']['value'] or 0)
-    src = v('S87') + v('IA-ASU-O2') + v('IA-ELY-O2') + sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-O2') and E[k]['to_unit_id'] == 'CRYO_O2' and E[k]['from_unit_id'] in ('VEG_BED', 'FRUIT_GUTTER', 'PEANUT', 'NFIX_BED'))
+    vv = lambda k: float(E[k]['rate']['value'] or 0) if k in E else 0.0
+    src = v('S87') + vv('IA-ASU-O2') + vv('IA-ELY-O2') + sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-O2') and E[k]['to_unit_id'] == 'CRYO_O2' and E[k]['from_unit_id'] in ('VEG_BED', 'FRUIT_GUTTER', 'PEANUT', 'NFIX_BED'))
     draw = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['from_unit_id'] == 'HDR_O2' and e['stream_id'] not in ('IA-O2-RET', 'IA-O2-PROD') and e['presence'] == 'present')
-    E['S83']['rate']['value'] = round(src - v('IA-O2-MAKE'), 6); E['IA-O2-PROD']['rate']['value'] = round(src - draw, 6)
-    assert src - draw > -1e-6, ('O2 short', src, draw)
-    E['IA-O2-SHIP']['rate']['value'] = E['IA-O2-PROD']['rate']['value']
+    if 'IA-O2-PROD' in E and ('IA-ASU-O2' in E or 'IA-ELY-O2' in E):
+        E['S83']['rate']['value'] = round(src - v('IA-O2-MAKE'), 6); E['IA-O2-PROD']['rate']['value'] = round(src - draw, 6)
+        assert src - draw > -1e-6, ('O2 short', src, draw)
+        E['IA-O2-SHIP']['rate']['value'] = E['IA-O2-PROD']['rate']['value']
     return src, draw
 
 def _bus(g):
@@ -201,15 +212,18 @@ def close_power(g):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; B = N['CRYO_O2']['params']['x_par_12_base']
     r = _bus(g) - B['bus_r0']
     pv = float(E['IA-PV-01']['rate']['value']) - r; f = pv/B['IA-PV-01']
-    E['IA-PV-01']['rate']['value'] = round(pv, 4); E['IA-E-SUN']['rate']['value'] = round(B['IA-E-SUN']*f, 4); N['PV_ARRAY']['continuous_kw']['value'] = round(pv, 4)
-    return pv, B['IA-PV-01'], f, B['PV']['area_m2']*(f - 1)
+    E['IA-PV-01']['rate']['value'] = round(pv, 4)
+    if 'IA-E-SUN' in E: E['IA-E-SUN']['rate']['value'] = round(B['IA-E-SUN']*f, 4)   # R8: solar-resource edge retired in Rev AC
+    if N['PV_ARRAY'].get('continuous_kw') is not None: N['PV_ARRAY']['continuous_kw']['value'] = round(pv, 4)
+    return pv, B['IA-PV-01'], f, (B['PV'].get('area_m2', 0.0)*(f - 1) if B['PV'].get('area_m2') else None)
 LAST = {}
 
 def storage(g):
     """ELY + FUEL_CELL as a reversible water loop and store at the existing 200 bar basis (CRYO_H2 store_kg). Ideal gas x Z (A-M-133)."""
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; v = lambda k: float(E[k]['rate']['value'] or 0)
     fc_h2 = v('S49'); fc_kwh = v('S51')*24; e_fc = fc_kwh/fc_h2; rte = e_fc/KWH_H2
-    h2d = v('IA-ELY-H2'); buf = h2d*(1 - PSH_ELY/24); res = PSH_STORE_D*fc_h2      # PV-window buffer + AQS-ELEC-007 autonomy days of fuel-cell draw (cloudy-day case: PV oversize x cloudy yield >= 1, so the electrolyser keeps running; only the dark hours and an outage need store)
+    h2d = v('IA-ELY-H2') if 'IA-ELY-H2' in E else 0.0                       # R8: electrolyser retired in Rev AC; store sized on the fuel-cell need alone
+    buf = h2d*(1 - PSH_ELY/24); res = PSH_STORE_D*fc_h2      # PV-window buffer + AQS-ELEC-007 autonomy days of fuel-cell draw (cloudy-day case: PV oversize x cloudy yield >= 1, so the electrolyser keeps running; only the dark hours and an outage need store)
     st = math.ceil(buf + res); hrs = st/(fc_h2/24)
     N['CRYO_H2']['params'].update(store_kg=st, store_basis=f'need: {buf:.1f} kg dark-hours buffer ({h2d:.2f} kg/d x (1 - {PSH_ELY:.0f}/24)) + {res:.1f} kg = {PSH_STORE_D:.0f} d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12')
     P, T, R = 200e5, 288.15, 8.314; rho = lambda M, Z: P*M/(Z*R*T)

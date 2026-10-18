@@ -2963,6 +2963,199 @@
       "modules": [],
       "params": {},
       "continuous_kw": null
+    },
+    {
+      "unit_id": "EVAP_ACID",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "water_off_kg_d": 865.0,
+        "feed_wt": 0.0707,
+        "product_wt": 0.2,
+        "mvr_kWh_per_t": 41.5,
+        "size_mm": [
+          1650,
+          1300,
+          3800
+        ],
+        "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+        "doc": "AQS-PAR-001, AQS-DUTY-060",
+        "duty": "In 1304.518 kg/d, out 1304.518 kg/d, 1.497 kW. Sheet docs-authority/duties/EVAP_ACID.md.",
+        "design": {
+          "unit": "EVAP_ACID",
+          "T_boil_C": 108.6,
+          "T_cond_C": 114.6,
+          "p_body_kPa": 101.325,
+          "p_shell_kPa": 166.98,
+          "ratio": 1.648,
+          "water_kg_h": 36.041,
+          "duty_kW": 22.6,
+          "comp_shaft_kW": 1.34,
+          "comp_elec_kW": 1.489,
+          "w_kJ_kg": 93.7,
+          "kWh_per_t": 41.5,
+          "A_ff_m2": 2.51,
+          "tubes": 22,
+          "tube_id_mm": 25.0,
+          "tube_L_mm": 1500.0,
+          "recirc_kg_h": 311.0,
+          "pump_kW": 0.008,
+          "shell_D_mm": 350,
+          "height_mm": 3800,
+          "ix_Q_kW": 3.7,
+          "ix_A_m2": 0.155,
+          "T_feed_preheat_C": 98.6,
+          "T_out_C": 49.1,
+          "trim_kW": 0.0,
+          "total_kW": 1.497,
+          "column": {
+            "ideal_stages_incl_body": 5,
+            "column_stages": 4,
+            "cond_hcl_wt_pct": 0.5,
+            "y_eq_feed_pct": 0.343,
+            "y_eq_body_pct": 17.09,
+            "packed_mm": 3000,
+            "D_req_mm": 148.9,
+            "DN": 150,
+            "recycle_hcl_kg_d": 4.32,
+            "material": "borosilicate glass 3.3 sections (ISO 3585), PTFE Pall rings, PTFE-lined flanges (PERRY9_MAT)",
+            "height_mm": 3800,
+            "placement": "free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body"
+          }
+        },
+        "relief_mm": 9.51,
+        "relief_basis": {
+          "case": "fire, ISO 23251 / API 521 adequate drainage",
+          "A_wetted_m2": 0.536,
+          "Q_kW": 25.9,
+          "W_kg_h": 41.32,
+          "P1_kPa_abs": 222.3,
+          "T_K": 405.3,
+          "M_kg_kmol": 18.02,
+          "k": 1.33,
+          "A_req_mm2": 34.01,
+          "orifice": "API 526 D (71 mm2)",
+          "adequate": true,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "shell_side": {
+            "case": "blocked outlet, compressor at 120 % design flow",
+            "W_kg_h": 43.25,
+            "P1_kPa_abs": 486.3,
+            "T_K": 423.9,
+            "M_kg_kmol": 18.02,
+            "k": 1.33,
+            "A_req_mm2": 16.642,
+            "orifice": "API 526 D (71 mm2)",
+            "adequate": true
+          },
+          "bore_req_mm": 6.58
+        },
+        "design_kPa": 100.0
+      },
+      "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 §3)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study). | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; sector_id WET -> DIGESTER per the Rev AC sector rename (owner 2026-10-17)",
+      "continuous_kw": {
+        "value": 1.497,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.0 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
+      }
+    },
+    {
+      "unit_id": "EVAP_BASE",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "water_off_kg_d": 799.01,
+        "feed_wt": 0.0741,
+        "product_wt": 0.2,
+        "mvr_kWh_per_t": 39.8,
+        "size_mm": [
+          1250,
+          800,
+          3100
+        ],
+        "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+        "doc": "AQS-PAR-001, AQS-DUTY-060",
+        "duty": "In 1306.823 kg/d, out 1306.823 kg/d, 1.324 kW. Sheet docs-authority/duties/EVAP_BASE.md.",
+        "design": {
+          "unit": "EVAP_BASE",
+          "T_boil_C": 108.0,
+          "T_cond_C": 114.0,
+          "p_body_kPa": 101.325,
+          "p_shell_kPa": 163.73,
+          "ratio": 1.616,
+          "water_kg_h": 33.3,
+          "duty_kW": 20.88,
+          "comp_shaft_kW": 1.185,
+          "comp_elec_kW": 1.316,
+          "w_kJ_kg": 89.6,
+          "kWh_per_t": 39.8,
+          "A_ff_m2": 2.32,
+          "tubes": 20,
+          "tube_id_mm": 25.0,
+          "tube_L_mm": 1500.0,
+          "recirc_kg_h": 282.7,
+          "pump_kW": 0.008,
+          "shell_D_mm": 350,
+          "height_mm": 3100,
+          "ix_Q_kW": 3.67,
+          "ix_A_m2": 0.146,
+          "T_feed_preheat_C": 98.0,
+          "T_out_C": 50.6,
+          "trim_kW": 0.0,
+          "total_kW": 1.324,
+          "column": null
+        },
+        "relief_mm": 9.51,
+        "relief_basis": {
+          "case": "fire, ISO 23251 / API 521 adequate drainage",
+          "A_wetted_m2": 0.536,
+          "Q_kW": 25.9,
+          "W_kg_h": 41.32,
+          "P1_kPa_abs": 222.3,
+          "T_K": 404.7,
+          "M_kg_kmol": 18.02,
+          "k": 1.33,
+          "A_req_mm2": 33.98,
+          "orifice": "API 526 D (71 mm2)",
+          "adequate": true,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "shell_side": {
+            "case": "blocked outlet, compressor at 120 % design flow",
+            "W_kg_h": 39.96,
+            "P1_kPa_abs": 486.3,
+            "T_K": 423.9,
+            "M_kg_kmol": 18.02,
+            "k": 1.33,
+            "A_req_mm2": 15.376,
+            "orifice": "API 526 D (71 mm2)",
+            "adequate": true
+          },
+          "bore_req_mm": 6.58
+        },
+        "design_kPa": 100.0
+      },
+      "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 §3)). Nickel or fluoropolymer-lined wetted parts (study). | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; sector_id WET -> DIGESTER per the Rev AC sector rename (owner 2026-10-17)",
+      "continuous_kw": {
+        "value": 1.324,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 799.0 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.316 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.32 kW. Study."
+      }
     }
   ],
   "edges": [
@@ -2979,8 +3172,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 5.873266,
         "unit": "kg/d",
@@ -3002,8 +3193,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 5.873266,
         "unit": "kg/d",
@@ -3025,8 +3214,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 7.424773,
         "unit": "kg/d",
@@ -3048,8 +3235,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 9.918821,
         "unit": "kg/d",
@@ -3071,8 +3256,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 6.165705,
         "unit": "kg/d",
@@ -3094,8 +3277,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 5.873266,
         "unit": "kg/d",
@@ -3131,9 +3312,7 @@
         "do_not_invent_route_or_rate",
         "high_severity_audit"
       ],
-      "notes": "Audit §7.1 DOCK export — sector required; no inter-block stream ID issued",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "Audit §7.1 DOCK export — sector required; no inter-block stream ID issued"
     },
     {
       "stream_id": "HL-AFTERBURNER-Q1-A",
@@ -3148,8 +3327,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.383,
         "unit": "kW",
@@ -3170,8 +3347,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.383,
         "unit": "kW",
@@ -3192,8 +3367,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.928,
         "unit": "kW",
@@ -3214,8 +3387,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.928,
         "unit": "kW",
@@ -3236,8 +3407,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -3258,8 +3427,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -3281,8 +3448,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.992,
         "unit": "kW",
@@ -3304,8 +3469,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.992,
         "unit": "kW",
@@ -3327,8 +3490,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.383,
         "unit": "kW",
@@ -3349,8 +3510,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.383,
         "unit": "kW",
@@ -3372,8 +3531,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.6204,
         "unit": "kW",
@@ -3395,8 +3552,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.6204,
         "unit": "kW",
@@ -3418,8 +3573,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 2.027,
         "unit": "kW",
@@ -3440,8 +3593,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 2.027,
         "unit": "kW",
@@ -3463,8 +3614,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.1286,
         "unit": "kW",
@@ -3486,8 +3635,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.0298,
         "unit": "kW",
@@ -3509,8 +3656,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.831,
         "unit": "kW",
@@ -3531,8 +3676,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.831,
         "unit": "kW",
@@ -3553,8 +3696,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 4.7481,
         "unit": "kW",
@@ -3575,8 +3716,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 4.6729,
         "unit": "kW",
@@ -3598,8 +3737,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.565,
         "unit": "kW",
@@ -3620,8 +3757,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.565,
         "unit": "kW",
@@ -3643,8 +3778,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.6456,
         "unit": "kg/d",
@@ -3666,8 +3799,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.2701,
         "unit": "kg/d",
@@ -3703,9 +3834,7 @@
         "full_depth_now",
         "bmed_regen unlabeled"
       ],
-      "notes": "bmed_regen unlabeled",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "bmed_regen unlabeled"
     },
     {
       "stream_id": "IA-BMED-04",
@@ -3735,9 +3864,7 @@
         "full_depth_now",
         "bmed_regen unlabeled"
       ],
-      "notes": "bmed_regen unlabeled",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "bmed_regen unlabeled"
     },
     {
       "stream_id": "IA-ESS-HYDRO-CHG",
@@ -3766,9 +3893,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-ESS-HYDRO-DIS",
@@ -3797,9 +3922,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-ESS-HYDRO-ELEC",
@@ -3829,9 +3952,7 @@
         "ess_layer",
         "missing_on_sld"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-ESS-MEOH-CHG",
@@ -3860,9 +3981,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-ESS-MEOH-DIS",
@@ -3892,9 +4011,7 @@
         "ess_layer",
         "overlaps_S79_architecture"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-CHG",
@@ -3923,9 +4040,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -3954,9 +4069,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "EFD chemical-storage / charge-discharge typing"
     },
     {
       "stream_id": "IA-EW-01",
@@ -3973,8 +4086,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 4139.222213,
         "unit": "kg/d",
@@ -3997,8 +4108,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3990.594815,
         "unit": "kg/d",
@@ -4021,8 +4130,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3934.806269,
         "unit": "kg/d",
@@ -4045,8 +4152,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 4287.799997,
         "unit": "kg/d",
@@ -4069,8 +4174,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3909.603252,
         "unit": "kg/d",
@@ -4093,8 +4196,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3896.027852,
         "unit": "kg/d",
@@ -4117,8 +4218,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3719.480635,
         "unit": "kg/d",
@@ -4141,8 +4240,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3706.948613,
         "unit": "kg/d",
@@ -4165,8 +4262,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3520.002783,
         "unit": "kg/d",
@@ -4189,8 +4284,6 @@
       "open_boundary": false,
       "from_sector_id": "WET",
       "to_sector_id": "WET",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3922.060852,
         "unit": "kg/d",
@@ -4211,8 +4304,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 36.82,
         "unit": "kg/d",
@@ -4233,8 +4324,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 30.0,
         "unit": "kg/d",
@@ -4255,8 +4344,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 30.0,
         "unit": "kg/d",
@@ -4292,9 +4379,7 @@
         "wp_l2_filled",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync).",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "WP-L1 hypothesis: EW cathode hood capture into HDR_H2 (AQS-MF-001 cathode H2; FAN_STACK). EW_1 proxies EW hood train; cascade peers undrawn. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync)."
     },
     {
       "stream_id": "IA-HDR-H2-02",
@@ -4325,9 +4410,7 @@
         "wp_true_closure",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L1: HDR_H2→H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync).",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "WP-L1: HDR_H2→H2_DRYER; flame arrestor inline (not separate unit) per FAN_STACK / HAZARD_SEPARATION. Downstream S64 CRYO_H2 unchanged. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync)."
     },
     {
       "stream_id": "IA-HDR-H2-03",
@@ -4357,9 +4440,7 @@
         "multi_ew_hood",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync).",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "WP-L2: multi-EW cathode hood (EW_2->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync)."
     },
     {
       "stream_id": "IA-HDR-H2-04",
@@ -4389,9 +4470,7 @@
         "multi_ew_hood",
         "ew_cascade_exploded"
       ],
-      "notes": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync).",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "WP-L2: multi-EW cathode hood (EW_9->HDR_H2). Peer IA-HDR-H2-01. | Reapplied 2026-10-02 after EW_3…EW_8 nodes (was SKIP at Rev E sync)."
     },
     {
       "stream_id": "IA-HX8",
@@ -4406,8 +4485,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 4.572,
         "unit": "kW",
@@ -4443,9 +4520,7 @@
         "full_depth_now",
         "oil_line internals"
       ],
-      "notes": "oil_line internals",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "oil_line internals"
     },
     {
       "stream_id": "IA-OIL-02",
@@ -4475,9 +4550,7 @@
         "full_depth_now",
         "oil_line internals"
       ],
-      "notes": "oil_line internals",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "oil_line internals"
     },
     {
       "stream_id": "IA-OIL-03",
@@ -4493,8 +4566,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 5.0,
         "unit": "kg/d",
@@ -4530,9 +4601,7 @@
         "full_depth_now",
         "polish_bank unlabeled"
       ],
-      "notes": "polish_bank unlabeled",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "polish_bank unlabeled"
     },
     {
       "stream_id": "IA-POL-02",
@@ -4562,9 +4631,7 @@
         "full_depth_now",
         "polish_bank unlabeled"
       ],
-      "notes": "polish_bank unlabeled",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "polish_bank unlabeled"
     },
     {
       "stream_id": "IA-REC-01",
@@ -4579,8 +4646,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3302.63279,
         "unit": "kg/d",
@@ -4616,9 +4681,7 @@
         "full_depth_now",
         "STR scope-out; ID was TBD"
       ],
-      "notes": "STR scope-out; ID was TBD",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "STR scope-out; ID was TBD"
     },
     {
       "stream_id": "NCG_TO_AB",
@@ -4633,8 +4696,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 2.0,
-      "rate_status": "assumption",
       "rate": {
         "value": 5.0,
         "unit": "kg/d",
@@ -4666,9 +4727,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S02",
@@ -4694,9 +4753,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S03",
@@ -4714,8 +4771,6 @@
       "open_boundary": false,
       "from_sector_id": "CRYO",
       "to_sector_id": "FAB",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -4747,9 +4802,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S05",
@@ -4775,9 +4828,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S06",
@@ -4803,9 +4854,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S07",
@@ -4831,9 +4880,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S08",
@@ -4859,9 +4906,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S08G",
@@ -4890,9 +4935,7 @@
         "sandbox_extra_not_in_STREAM_REGISTER",
         "reconcile_or_keep_sandbox"
       ],
-      "notes": "candidate_mvs extension — do not invent new register ID",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "candidate_mvs extension — do not invent new register ID"
     },
     {
       "stream_id": "S09",
@@ -4908,8 +4951,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 9.277184,
         "unit": "kg/d",
@@ -4941,9 +4982,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S11",
@@ -4969,9 +5008,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S12",
@@ -4997,9 +5034,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S13",
@@ -5027,9 +5062,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FARM SUMP + HVAC → UPW POLISH / SALT FEED / VCD_FEED",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: FARM SUMP + HVAC → UPW POLISH / SALT FEED / VCD_FEED"
     },
     {
       "stream_id": "S14",
@@ -5055,9 +5088,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S14X",
@@ -5086,9 +5117,7 @@
         "sandbox_extra_not_in_STREAM_REGISTER",
         "reconcile_or_keep_sandbox"
       ],
-      "notes": "candidate_mvs extension — do not invent new register ID",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "candidate_mvs extension — do not invent new register ID"
     },
     {
       "stream_id": "S15",
@@ -5114,9 +5143,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S16",
@@ -5142,9 +5169,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S17",
@@ -5170,9 +5195,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S18",
@@ -5198,9 +5221,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S19",
@@ -5228,9 +5249,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BAGHOUSE fines → LEACH CSTR 1",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: BAGHOUSE fines → LEACH CSTR 1"
     },
     {
       "stream_id": "S20",
@@ -5256,9 +5275,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S21",
@@ -5284,9 +5301,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S22",
@@ -5312,9 +5327,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S23",
@@ -5340,9 +5353,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S24",
@@ -5360,8 +5371,6 @@
       "open_boundary": true,
       "from_sector_id": "GAS",
       "to_sector_id": "DOCK",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
@@ -5393,9 +5402,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S26",
@@ -5421,9 +5428,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S27",
@@ -5451,9 +5456,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FAB_UPW_TANK → WET_BENCH",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: FAB_UPW_TANK → WET_BENCH"
     },
     {
       "stream_id": "S28",
@@ -5479,9 +5482,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S29",
@@ -5509,9 +5510,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GREY_TREAT → VCD_FEED / SALT FEED",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: GREY_TREAT → VCD_FEED / SALT FEED"
     },
     {
       "stream_id": "S30",
@@ -5539,9 +5538,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BLACK_DIGEST → NUTRIENT DOSE / SALT FEED",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: BLACK_DIGEST → NUTRIENT DOSE / SALT FEED"
     },
     {
       "stream_id": "S31",
@@ -5569,9 +5566,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_HF_ED → WET_BENCH",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WS_HF_ED → WET_BENCH"
     },
     {
       "stream_id": "S32",
@@ -5599,9 +5594,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_PEROX → WET_BENCH",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WS_PEROX → WET_BENCH"
     },
     {
       "stream_id": "S33",
@@ -5629,9 +5622,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_AMMONIA → WET_BENCH",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WS_AMMONIA → WET_BENCH"
     },
     {
       "stream_id": "S35",
@@ -5659,9 +5650,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_KOH → WET_BENCH / solar texture stub",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WS_KOH → WET_BENCH / solar texture stub"
     },
     {
       "stream_id": "S36",
@@ -5689,9 +5678,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_DOPE / CRU polish → FAB_TOOL dopant cabinets",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WS_DOPE / CRU polish → FAB_TOOL dopant cabinets"
     },
     {
       "stream_id": "S37",
@@ -5719,9 +5706,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WS_SLURRY → LAP_CMP / FAB_PREP",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WS_SLURRY → LAP_CMP / FAB_PREP"
     },
     {
       "stream_id": "S38",
@@ -5737,8 +5722,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.006,
         "unit": "kg/d",
@@ -5760,8 +5743,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 3.310001,
         "unit": "kg/d",
@@ -5784,8 +5765,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
@@ -5817,9 +5796,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S41",
@@ -5847,9 +5824,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: TERRACE underdrain / apron (clean) → CATCH TANK / DRAIN_SEC",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: TERRACE underdrain / apron (clean) → CATCH TANK / DRAIN_SEC"
     },
     {
       "stream_id": "S42",
@@ -5877,9 +5852,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Enclosed terrace / GH fertigated drain → GREY treat / VCD_FEED / SALT",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: Enclosed terrace / GH fertigated drain → GREY treat / VCD_FEED / SALT"
     },
     {
       "stream_id": "S43",
@@ -5908,9 +5881,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_GHEX → GEO_HP (closed loop)",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: GEO_GHEX → GEO_HP (closed loop)"
     },
     {
       "stream_id": "S44",
@@ -5938,9 +5909,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_HP → Q4 / FARM / HAB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: GEO_HP → Q4 / FARM / HAB"
     },
     {
       "stream_id": "S45",
@@ -5966,9 +5935,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S46",
@@ -5984,8 +5951,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.267975,
         "unit": "kg/d",
@@ -6017,9 +5982,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S48",
@@ -6047,9 +6010,7 @@
       "gap_flags": [
         "orc_stub_kw_tbd"
       ],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S49",
@@ -6075,9 +6036,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S50",
@@ -6103,9 +6062,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S51",
@@ -6131,9 +6088,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S52",
@@ -6159,9 +6114,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S53",
@@ -6189,9 +6142,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FC_HX_Q4 → Q4 / FARM / HAB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: FC_HX_Q4 → Q4 / FARM / HAB"
     },
     {
       "stream_id": "S54",
@@ -6219,9 +6170,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_HX_Q4 → Q4 / FARM / HAB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: CRYO_HX_Q4 → Q4 / FARM / HAB"
     },
     {
       "stream_id": "S55",
@@ -6250,9 +6199,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: CRYO_DED_COOL (loop) → CRYO_DED_COOL",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: CRYO_DED_COOL (loop) → CRYO_DED_COOL"
     },
     {
       "stream_id": "S56",
@@ -6270,8 +6217,6 @@
       "open_boundary": false,
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
@@ -6305,9 +6250,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: PROD_METALS / MET_MELT → WIRE_DRAW / COLD_MILL / GAS_ATOMIZER",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: PROD_METALS / MET_MELT → WIRE_DRAW / COLD_MILL / GAS_ATOMIZER"
     },
     {
       "stream_id": "S58",
@@ -6335,9 +6278,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: WIRE_DRAW → MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: WIRE_DRAW → MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB"
     },
     {
       "stream_id": "S59",
@@ -6365,9 +6306,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: COLD_MILL → MET_SHEET_BIN / MFG_CRIB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: COLD_MILL → MET_SHEET_BIN / MFG_CRIB"
     },
     {
       "stream_id": "S60",
@@ -6395,9 +6334,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GAS_ATOMIZER → MET_POWDER_CRIB / FAB / RepRap",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: GAS_ATOMIZER → MET_POWDER_CRIB / FAB / RepRap"
     },
     {
       "stream_id": "S61",
@@ -6425,9 +6362,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Forming swarf / trim → HOPPER / leach",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: Forming swarf / trim → HOPPER / leach"
     },
     {
       "stream_id": "S62",
@@ -6455,9 +6390,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_AHU → MET_SCRUB / baghouse (S71)",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: MET_AHU → MET_SCRUB / baghouse (S71)"
     },
     {
       "stream_id": "S63",
@@ -6485,9 +6418,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_HX_Q4 → Q4 / FARM / HAB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: MET_HX_Q4 → Q4 / FARM / HAB"
     },
     {
       "stream_id": "S64",
@@ -6513,9 +6444,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S65",
@@ -6530,8 +6459,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 37509.8546,
         "unit": "kg/d",
@@ -6565,9 +6492,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: ACID_POLISH / ALK blowdown → CRU",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: ACID_POLISH / ALK blowdown → CRU"
     },
     {
       "stream_id": "S67",
@@ -6583,8 +6508,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 119.082851,
         "unit": "kg/d",
@@ -6605,8 +6528,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 13.810366,
         "unit": "kg/d",
@@ -6628,8 +6549,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 78.987901,
         "unit": "kg/d",
@@ -6651,8 +6570,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1047.195538,
         "unit": "kg/d",
@@ -6674,8 +6591,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1047.195538,
         "unit": "kg/d",
@@ -6697,8 +6612,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0521,
         "unit": "kg/d",
@@ -6732,9 +6645,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MET_AHU → MET_SCRUB / baghouse",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: MET_AHU → MET_SCRUB / baghouse"
     },
     {
       "stream_id": "S72",
@@ -6750,8 +6661,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 2.4442,
         "unit": "kg/d",
@@ -6773,8 +6682,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0158,
         "unit": "kg/d",
@@ -6806,9 +6713,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S74",
@@ -6834,9 +6739,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S75",
@@ -6862,9 +6765,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S76",
@@ -6890,9 +6791,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S77",
@@ -6920,9 +6819,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_FERM_STILL → MEOH_TANK",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: MEOH_FERM_STILL → MEOH_TANK"
     },
     {
       "stream_id": "S78",
@@ -6950,9 +6847,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: Farm/hab organics (S12/S30 class) → MEOH_FERM_DIG",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: Farm/hab organics (S12/S30 class) → MEOH_FERM_DIG"
     },
     {
       "stream_id": "S79",
@@ -6979,9 +6874,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null,
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": null
     },
     {
       "stream_id": "S80",
@@ -7009,9 +6902,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_HX_Q4 → Q4 / FARM / HAB",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: MEOH_HX_Q4 → Q4 / FARM / HAB"
     },
     {
       "stream_id": "S81",
@@ -7027,8 +6918,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.65491,
         "unit": "kg/d",
@@ -7062,9 +6951,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed)",
-      "rate_kg_d": null,
-      "rate_status": "unset"
+      "notes": "From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed)"
     },
     {
       "stream_id": "S83",
@@ -7080,8 +6967,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 89.428868,
         "unit": "kg/d",
@@ -7103,8 +6988,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 193.576601,
         "unit": "kg/d",
@@ -7126,8 +7009,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.749899,
         "unit": "kg/d",
@@ -7149,8 +7030,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
@@ -7174,8 +7053,6 @@
       "open_boundary": false,
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 2.652653,
         "unit": "kg/d",
@@ -7199,8 +7076,6 @@
       "open_boundary": false,
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
@@ -7221,8 +7096,6 @@
       "layers": [
         "mass"
       ],
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 1.2456,
         "unit": "kg/d",
@@ -7243,8 +7116,6 @@
       "layers": [
         "mass"
       ],
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": 0.61,
         "unit": "kg/d",
@@ -7265,8 +7136,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.5,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7287,8 +7156,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.3,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7309,8 +7176,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.2,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7331,8 +7196,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.15,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7353,8 +7216,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.1,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7375,8 +7236,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7397,8 +7256,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7419,8 +7276,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7441,8 +7296,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7463,8 +7316,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7485,8 +7336,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7507,8 +7356,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7529,8 +7376,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7551,8 +7396,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7573,8 +7416,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7595,8 +7436,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7617,8 +7456,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7639,8 +7476,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7661,8 +7496,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7683,8 +7516,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7705,8 +7536,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7727,8 +7556,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7749,8 +7576,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 14.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7771,8 +7596,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.05,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7793,8 +7616,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.2,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7815,8 +7636,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7837,8 +7656,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7859,8 +7676,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7881,8 +7696,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.4,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7903,8 +7716,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 20.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7925,8 +7736,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.5,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -7947,8 +7756,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7969,8 +7776,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -7991,8 +7796,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 8.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8013,8 +7816,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.5,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8035,8 +7836,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.2,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8058,8 +7857,6 @@
         "energy"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8081,8 +7878,6 @@
         "energy"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8104,8 +7899,6 @@
         "energy"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8127,8 +7920,6 @@
         "energy"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8150,8 +7941,6 @@
         "energy"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8172,8 +7961,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8194,8 +7981,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8216,8 +8001,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8238,8 +8021,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8260,8 +8041,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8282,8 +8061,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8304,8 +8081,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8326,8 +8101,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8348,8 +8121,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8370,8 +8141,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8392,8 +8161,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 1.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8414,8 +8181,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8436,8 +8201,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8458,8 +8221,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8480,8 +8241,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8502,8 +8261,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 2.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8524,8 +8281,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8546,8 +8301,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8568,8 +8321,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8590,8 +8341,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8612,8 +8361,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8634,8 +8381,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8656,8 +8401,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8678,8 +8421,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8700,8 +8441,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 2.5,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8722,8 +8461,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.3,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8744,8 +8481,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8766,8 +8501,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8788,8 +8521,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8810,8 +8541,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8832,8 +8561,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 1.2,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8854,8 +8581,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.6,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8876,8 +8601,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8898,8 +8621,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8920,8 +8641,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8942,8 +8661,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -8964,8 +8681,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 3.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -8986,8 +8701,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 1.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -9008,8 +8721,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 0.8,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -9030,8 +8741,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": 1.0,
-      "rate_status": "assumption",
       "rate": {
         "value": null,
         "unit": null,
@@ -9052,8 +8761,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -9074,8 +8781,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -9096,8 +8801,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -9118,8 +8821,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -9140,8 +8841,6 @@
         "mass"
       ],
       "open_boundary": false,
-      "rate_kg_d": null,
-      "rate_status": "unset",
       "rate": {
         "value": null,
         "unit": null,
@@ -15037,6 +14736,303 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+    },
+    {
+      "stream_id": "IA-ACID-01",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "regen HCl, 20 wt%",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 439.5222,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D §8, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid to leach by difference (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment",
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "Fe": 0.02,
+        "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 49.1,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
+      }
+    },
+    {
+      "stream_id": "IA-BASE-01",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "GLASS_DIGEST",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "digest NaOH, 20 wt%",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 25.2964,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 126.5 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as 20 wt%."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      },
+      "params": {
+        "T_C": 50.6,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
+      }
+    },
+    {
+      "stream_id": "IA-BASE-PPT",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 482.2861,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D §8, 87.9 kg/d HCl | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment",
+      "params": {
+        "rate_basis": "1872 mol/d NaOH equal to the added HCl; 20 wt%",
+        "rate_kind": "derived",
+        "T_C": 50.6,
+        "medium": "NaOH 20 wt%",
+        "doc": "AQS-ASSAY-001 Rev D §8",
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
+      }
+    },
+    {
+      "stream_id": "IA-EVAP_ACID-FEED",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "EVAP_ACID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "HCl 2 M from BMED",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1304.5179,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). 87.90 kg/d HCl / 0.0707. | X-PAR-12 TF: BMED product by difference (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment"
+    },
+    {
+      "stream_id": "IA-EVAP_ACID-COND",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "BMED_ACID",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "evaporator condensate return (BMED water make-up)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 864.9665,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10). | X-PAR-12 TF: condensate scales with HCl make (AQS-PAR-005)."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment",
+      "params": {
+        "T_C": 49.1,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)",
+        "HCl_wt": 0.005,
+        "HCl_kg_d": 4.32,
+        "composition_basis": "column top vapour, PERRY7_HCL_VLE (AQS-DUTY-060 section 7)"
+      }
+    },
+    {
+      "stream_id": "SF-EVAP_ACID",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_ACID",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.497,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). 480 V feed equal to EVAP_ACID continuous_kw. | X-PAR-12 TF: evaporator scales with HCl make (AQS-PAR-005)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment"
+    },
+    {
+      "stream_id": "IA-EVAP_BASE-FEED",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "EVAP_BASE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "NaOH 2 M from BMED",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1301.7164,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). 96.46 kg/d NaOH / 0.0741."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment"
+    },
+    {
+      "stream_id": "IA-EVAP_BASE-COND",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "BMED_BASE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "evaporator condensate return (BMED water make-up)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 799.0053,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). Water evaporated, condensed and returned to BMED_BASE."
+      },
+      "from_sector_id": "WET",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment",
+      "params": {
+        "T_C": 50.6,
+        "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)"
+      }
+    },
+    {
+      "stream_id": "SF-EVAP_BASE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EVAP_BASE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.324,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3). 480 V feed equal to EVAP_BASE continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment"
+    },
+    {
+      "stream_id": "IA-NAOH-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "EVAP_BASE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "purchased NaOH flake make-up",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.1063,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). Demand 2538 mol/d less BMED 2412 mol/d; worst case, no credit for sodium returned in the silicate liquor."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "WET",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment"
     }
   ],
   "view_presets": [
