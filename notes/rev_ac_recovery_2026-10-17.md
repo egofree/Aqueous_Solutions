@@ -80,6 +80,40 @@ consolidation dropped graph data that the closed-balance stack depends on.
   (PV dedup 77.5 kW live), web build, canonical-vs-working-copy parity (zero
   drift), git hygiene (fsck clean, remote == main).
 
+## Remediation plan (2026-10-17, post-QA)
+
+Wave 1 — independent, parallelizable (small, verifiable):
+- R1 `pack_name` validation in `export/pack.py` (reject `/`, `\`, `..`; assert
+  resolve-containment under `EXPORTS_DIR`) + endpoint error mapping (ValueError→400,
+  FileNotFoundError→404). Accept: traversal attempt returns 400 and nothing is
+  written outside `exports/`; normal export 200.
+- R2 atomic `store._mirror` (tmp + `os.replace`), corrupt-mirror `get()`→KeyError
+  (404), `threading.Lock` on mutations. Accept: truncation test yields 404, not 500.
+- R3 `_task_plan_gen.py`: drop hardcoded `/tmp/aqs.dFW2` chdir, resolve root from
+  `__file__`. Accept: runs from repo root.
+- R4 `_rev_stamp.py`: split check() from write; governance test uses check-only.
+  Accept: pytest leaves the working tree clean.
+- R5 S34/S34B `layers`+`namespace` added (mass/S) with provenance note; delete
+  working-copy `sys` artifact. Accept: pydantic+schema clean on those ids.
+
+Wave 2 — decisions then regeneration:
+- R6 `_task_plan_gen.py` sector mapping for DIGESTER/FOUNDRY/POLYMERS (proposal:
+  DIGESTER→BIO, FOUNDRY→MET, POLYMERS→MFG; owner to confirm; assumption entry
+  required per AGENTS.md). Accept: TASK_PLAN.md regenerates at Rev AC / 164 nodes.
+- R7 Regenerate `schema/plant_flow_graph.schema.json` from the pydantic models
+  (or delete it if unmaintained). Accept: 0 jsonschema errors on the live graph.
+
+Wave 3 — param pipeline (multi-session, ordered):
+- R8 Unblock: gate/remap dead refs in `solver.py` (IA-ACID-01 / EVAP_ACID decision),
+  `o2_close.py` (IA-NOX-N2, FORM, H2O_ELYZ), `balance.physics()` farm tail.
+  Accept: `balance.reconcile()` runs to completion.
+- R9 Reconcile `_assumptions_register.py` 18 stale keys with R8's outcome.
+  Accept: exit 0, AQS-REG-002 regenerates.
+- R10 Rate the 88 new Rev AC edges per system (FOUNDRY 31 gaps first), re-basis or
+  retire GROW_BED, close residuals. Accept: 10 failing tests → 0.
+- R11 Regenerate gated docs (BALANCE_RECONCILIATION, sizing/REACTOR_DESIGN) and
+  sweep the 656 stale derived files. Accept: `_rev_stamp --check` exit 0.
+
 ## State when this note was written
 
 - Authority contract: PASS (projection regenerated, revision AC).
