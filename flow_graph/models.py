@@ -11,13 +11,14 @@ from __future__ import annotations
 from enum import Enum
 from typing import Any, Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class Presence(str, Enum):
     PRESENT = "present"
     PLACEHOLDER = "placeholder"
     RETIRED = "retired"   # kept for traceability, carries no rate (e.g. IA-E-RECT superseded by Faraday EW ledger)
+    STUDY = "study"   # Rev AC shorthand: topology held at study depth (graph books this on BH-era edges)
 
 
 class LayerTag(str, Enum):
@@ -65,10 +66,18 @@ class FlowNode(BaseModel):
     # WP-Ap1 — MVS unit fields live on the graph (not a second master)
     enabled: bool = True
     continuous_kw: Optional[Quantity] = None
-    modules: list[dict[str, Any]] = Field(default_factory=list)
+    modules: list[dict[str, Any] | str] = Field(default_factory=list)
     params: dict[str, Any] = Field(default_factory=dict)
 
     model_config = {"populate_by_name": True}
+
+    @field_validator("continuous_kw", mode="before")
+    @classmethod
+    def _coerce_kw(cls, v: object) -> object:
+        # Rev AC shorthand: bare number means {value: n, unit: kW, status: study}
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            return {"value": float(v), "unit": "kW", "status": "study"}
+        return v
 
 
 class FlowEdge(BaseModel):

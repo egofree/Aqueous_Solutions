@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .sector_definitions import SectorDefinition
 
@@ -85,11 +85,19 @@ class UnitModel(BaseModel):
     class_name: Optional[str] = Field(default=None, alias="class")
     tags: list[str] = Field(default_factory=list)
     params: dict[str, Any] = Field(default_factory=dict)
-    modules: list[dict[str, Any]] = Field(default_factory=list)
+    modules: list[dict[str, Any] | str] = Field(default_factory=list)
     electrical_role: Optional[
         Literal["generation", "storage", "load", "bus", "none"]
     ] = None
     continuous_kw: Optional[Quantity] = None
+
+    @field_validator("continuous_kw", mode="before")
+    @classmethod
+    def _coerce_kw(cls, v: object) -> object:
+        # Rev AC graph shorthand: bare number means {value: n, unit: kW, status: study}
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            return {"value": float(v), "unit": "kW", "status": "study"}
+        return v
 
 
 class StreamModel(BaseModel):
