@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="623" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="615" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit POLY_OLEFIN · reactor · sector POLYMERS · present</text>
-<text x="24" y="54" font-size="10.5">no design params on the graph node</text>
+<text x="24" y="54" font-size="10.5">design T 250 C</text>
 <text x="24" y="72" font-size="10.5">Edges 3 in + 1 out · valves 0 placed / 0 unplaced · instruments 0 (0 SIF) · nozzles 0</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -46,7 +46,7 @@
 <g id="aqs-title-block"><rect x="1116" y="505" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="522" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-POLY_OLEFIN</text>
 <text x="1124" y="539" font-size="9">P&amp;ID POLY_OLEFIN (reactor, POLYMERS sector)</text>
-<text x="1124" y="556" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 0d8464b9   Issued 2026-10-19</text>
+<text x="1124" y="556" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 75620299   Issued 2026-10-19</text>
 <text x="1124" y="573" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="590" font-size="9">Graph SHA-256 bf8e0f2444c6a4c8   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="590" font-size="9">Graph SHA-256 a1b2242b721d1ffb   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

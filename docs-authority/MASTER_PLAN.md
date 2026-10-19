@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-004
 Revision: A
 Date: 2026-10-12
-Authority: graph Rev BH. Not a PE stamp. Line 0.1 closed in this revision. No rate change.
+Authority: graph Rev AC. Not a PE stamp. Line 0.1 closed at Rev BH. No rate change.
 
 This is the work order for AQS-PLAN-005. A line closes only when the cited file holds the result, the check on that line passes, the present kilogram-per-day nodes still close, and this page is updated in the same commit.
 
@@ -19,9 +19,35 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 | One duty page per present unit | `docs-authority/duties/` |
 | MVS loops flag | hold. `mvs.mvs_criteria.loops_closed` is false |
 
+## Closed at Rev AC (2026-10-18/19)
+
+| Item | Where |
+| --- | --- |
+| D-AIR: CRYO_ASU restored verbatim as the species-conserving recovery box (not an O2 source) | commit 0ed33bb; ruling in `notes/first_principles_audit_2026-10-17.md` |
+| D-O2: H2O_ELYZ restored as the oxygen source; diverse N+1 pair with GROW_BED | ruling commit 9b742c4, implementation commit 8189cd1 |
+| D-FARM: GROW_BED re-based to crew duty (29.12 m², BVAD2022 DLI-17); TERRACE_IRRIG deleted | commit aba0c4b |
+| D-GEO_ORC: heat study encoded reuse-first (HX-9/10 restored, DRY_COOLER rated sink, MET_HX_Q4 rated) | commit 1854208 |
+| D-PV: PV parametric from live demand at 2.0× oversize, footprint derived from the array; fixed point 3910 kWp | commits 1854208, ea55066; ruling D-PV 2026-10-18 |
+| D-DOCK: dock reclassified as the inter-plant trade boundary (closure-exempt, reported trade statement +0.003 kg/d net); buffer stores AIR_RECEIVER / FOOD_STORE / METAL_STORE | ruling commit b9f3b55, implementation commit 66187cc |
+| Balance closed: failing units 43 → 0; `balance --write` convergent and restored in the regen manifest | commits 66187cc, ffbfd90 |
+| One governed number: 700+ cited driver keys under dotted tree paths (`flow_graph/param/drivers.json`) | commits dfa2c0a, 8dc0a49 |
+| System tree AQS-SYS-TREE-001: 19 sectors / 30 trains / 178 leaves, most-specific-wins toggles | commit eedb79f, `flow_graph/system_tree.yaml` |
+| One-command regeneration: 44-stage manifest, successive substitution, receipt + staleness gates | commit d44e7de, `flow_graph/param/regen.py` |
+| Generated model workbook (24 sheets, zero hand-maintained numbers) | commit b79ac62, `docs-authority/MODEL_WORKBOOK.xlsx` |
+| Working design UI on the unified engine (system-tree / params / regen-status endpoints; tree, drivers, staleness panels) | commit 5024743, `design_tool/web/` |
+| T03 P&IDs: 174 graph-derived sheets, AQS-PID-001 series | commits ba310b7, bfea3c8, `docs-authority/_pid_sheets.py` |
+| FOUNDRY / POLYMERS study-grade sizing from live demand | commit 882e87a (AQS-DUTY-072/073) |
+| FOUNDRY / POLYMERS CadQuery builders (live trains + standby placeholders) | `models/mfg/foundry.py`, `models/mfg/polymers.py` — pending commit |
+| Suite green: 43 passed / 0 failed, first fully green suite since the Rev AC pivot | commits 049c93e, 2f96524 |
+| Evidence honesty pass: 62 tasks cited, 6 reopened, zero `Evidence: None` | commit 66187cc, `docs-authority/notes/2026-10-19-evidence-pass.md` |
+
 ## Open
 
 Active: 0.2
+
+## Current status (2026-10-19)
+
+Graph Rev AC. The unified parametric system is built and current: drivers, system tree, one-command regen with receipt and staleness gates, generated workbook, design UI, graph-derived P&IDs (see the Closed at Rev AC table). Balance: 0 failing units, `balance --write` convergent, suite 43/43. TASK_PLAN regenerated with the evidence honesty pass (568 of 2871 done; `docs-authority/notes/2026-10-19-evidence-pass.md`). FOUNDRY/POLYMERS CadQuery builders and the restored-unit/store CAD are in flight (pending commit). `loops_closed` false. Line 0.2 (cut test) remains open.
 
 ## Current status (2026-10-17)
 

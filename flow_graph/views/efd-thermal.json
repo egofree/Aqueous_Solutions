@@ -728,7 +728,33 @@
             "Fe": 0.5406,
             "Zn": 0.1605
           },
-          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN"
+          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "Cu/Fe/Zn scrap remelt; medium-frequency coreless induction, tilt pour",
+          "crucible_kg": 10.0,
+          "crucible_D_mm": 110.0,
+          "crucible_H_mm": 165,
+          "heats_d": 2,
+          "connected_kW": 25.0,
+          "peak_kW": 11.0,
+          "melt_kWh_d": 7.151,
+          "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         }
       },
       "continuous_kw": {
@@ -757,7 +783,27 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "connected_kW": 15.0,
-          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)"
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "vacuum induction skull melt (ISM)",
+          "design_case_kg": 2.0,
+          "connected_kW": 15.0
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class; standby envelope at the 2 kg ISM design case"
         }
       },
       "continuous_kw": {

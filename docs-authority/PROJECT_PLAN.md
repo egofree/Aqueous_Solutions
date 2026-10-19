@@ -1,9 +1,14 @@
 # Project plan
 
 Document number: AQS-PLAN-005
-Revision: A
-Date: 2026-10-12
-Authority: graph Rev BH until `flow_graph/plant_flow_graph.json` says otherwise. Not a PE stamp.
+Revision: B
+Date: 2026-10-19
+Authority: graph Rev AC per `flow_graph/plant_flow_graph.json` (2026-10-17). Not a PE stamp.
+
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue | 2026-10-12 |
+| B | Authority restamped AC; limits updated for the closed balance, the D-DOCK trade-boundary ruling, and the D-PV derivation direction. No rate change. | 2026-10-19 |
 
 The status of these lines is `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004).
 AQS-PLAN-003 is the module order against the tech tree. It is not this sequence.
@@ -32,9 +37,13 @@ Active item: 0.2 on AQS-PLAN-004. Cut test. It does not change a rate.
 
 ## Limits
 
-The graph is the plant. A duty page does not outrank an edge.
+The graph is the plant. A duty page does not outrank an edge. Independent numbers live once, in `flow_graph/param/drivers.json`, each with a basis; nothing is fixed arbitrarily (AQS-PAR-001).
 
-`mvs.mvs_criteria.loops_closed` stays false. On-site evidence is not in the repo. A cut-test result is not that flag.
+`mvs.mvs_criteria.loops_closed` stays false. On-site evidence is not in the repo. A cut-test result is not that flag. The balance closing on the graph (0 failing units at Rev AC) is a model result, not that flag either.
+
+The dock is the inter-plant trade boundary, not a process sector. Imports of feedstock and exports of surplus are a reported trade statement; the dock is exempt from intra-plant closure standards, and product buffer storage for what crosses it is assumed built (owner ruling D-DOCK 2026-10-19, `notes/first_principles_audit_2026-10-17.md`).
+
+PV is derived, never assumed: nameplate from the bounding electrical demand at `pv_oversize_factor` (2.0), and the roof area and building footprint derived from the PV array, not the reverse (owner ruling D-PV 2026-10-18, same note; D75).
 
 A missing measurement stays named on the open line.
 

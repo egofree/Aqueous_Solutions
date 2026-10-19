@@ -4724,5 +4724,57 @@
   "sensitivity": "foundry face value dominates: duty-cycling it (A-M-232 sensitivity) would drop ~42 kW of pending and lift the calculated share above 95%",
   "replaced_by": "unit task 02 closings, the X-MFG-37 foundry trial, vendor nameplate selection for the fuel cells",
   "replacing_test": "LOAD_LIST.json summary.pending reaching 0 rows"
+ },
+ {
+  "id": "A-M-277",
+  "task": "X-MFG-31",
+  "title": "FOUNDRY/POLYMERS CAD envelope class minimums and placeholder geometry",
+  "statement": "36 FOUNDRY/POLYMERS units carry params.design + params.envelope (foundry_poly.py stamp): envelope = max(class minimum, hold-up cylinder at atm_HD with +300 mm plan / +500 mm head). The melt/forming/thermal minimums and the 7000 / 2000 kg/m3 densities are registered (A-M-199, AQS-DUTY-064). New study literals: class minimums cell 800x800x1600, reactor 600x600x1200 (DN150 vessel minimum, AQS-DUTY-062 precedent), prep 800x600x1200, rack 1200x800x1500, bin 600x400x800 mm; densities molten-salt bath 1800, pellet bulk 500, polyolefin melt 750, powder 3000 kg/m3; 1 d in-train staging holds for STOCK_OUT / POLY_STOCK. Standby trains (pots, cells, investment, fluoropolymer, alternates) get envelope-only placeholder geometry marked PLACEHOLDER in bom.csv / WORK_ORDER.md (presence-consistent with their 0-rated feeds).",
+  "value": "cell 800x800x1600; reactor 600x600x1200 at DN150; prep 800x600x1200; rack 1200x800x1500; bin 600x400x800 mm; rho 1800 / 500 / 750 / 3000 kg/m3; 1 d staging",
+  "units": "mm; kg/m3; d",
+  "where": "flow_graph/param/foundry_poly.py (stamp); models/mfg/foundry.py; models/mfg/polymers.py; cad/stl/<UNIT>.stl",
+  "basis": "AQS-DUTY-072 / AQS-DUTY-073 section 4 design cases; A-M-199 method; AQS-DUTY-064 wall method (ASME VIII-1 UG-27, S 115 MPa)",
+  "sensitivity": "Envelopes drive placement / GA boxes and clash margins only; no rate, duty or balance depends on them",
+  "replaced_by": "Per-unit machine design at the FOUNDRY/POLYMERS-10..13 tasks when each feed lands (design-case tables in AQS-DUTY-072/073)",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "models/mfg/foundry.py",
+   "models/mfg/polymers.py"
+  ],
+  "doc": "AQS-DUTY-072/073"
+ },
+ {
+  "id": "A-M-278",
+  "task": "X-PAR-02",
+  "title": "D-DOCK shipped-product stores PROD_O2 / PROD_MEOH",
+  "statement": "The two shipped-product stores join the A-M-270 D-DOCK buffer set as _storage_sizing rows: PROD_O2 banks the surplus O2 carried on IA-O2-PROD (22.88 kg/d) as a 200 bar Type I cylinder-bank equivalent volume (CRYO_O2 storage_mode basis, O2-cleaned) held for a 14 d dispatch campaign; PROD_MEOH banks the methanol product on IA-MEOH-PROD (28.36 kg/d) as a welded steel tank (NFPA 30 flammable class, as MEOH_TANK) for the same 14 d campaign. Stores pass their feeds at steady state, so mass closure is unchanged. The PROD_O2 wall figure printed by AQS-DUTY-064 is the thin-wall UG-27 equivalent-vessel number and is outside its P/S validity at 20 MPa - the seamless cylinder bank governs (study).",
+  "value": "PROD_O2 14 d x 22.88 kg/d, rho 293.4 kg/m3 (Z 0.9105 at 200 bar 15 C), P 20.0 MPa; PROD_MEOH 14 d x 28.36 kg/d, rho 792 kg/m3",
+  "units": "d; kg/d; kg/m3; MPa",
+  "where": "flow_graph/param/drivers.json (5 keys under CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2 / PROD_MEOH); docs-authority/_storage_sizing.py; flow_graph/plant_flow_graph.json (params.size_mm + params.design_storage); docs-authority/sizing/STORAGE_HOLDUP.md; cad/stl/PROD_O2.stl, cad/stl/PROD_MEOH.stl",
+  "basis": "A-M-270 D-DOCK product-buffer ruling extended to the shipped products (14 d dispatch cadence of the metal store / oil cuts, A-M-225 pattern); IA-O2-PROD / IA-MEOH-PROD graph rates; O2 density NIST_WEBBOOK isotherm (Peng-Robinson check); methanol density PERRY9; CRYO_O2 params.storage_mode for the 200 bar bank",
+  "sensitivity": "Hold days scale the stored inventory and the dock-side envelope linearly; the O2 Z shifts the bank volume by the same fraction",
+  "replaced_by": "Dispatch logistics study with real cadence data; cylinder-bank vendor sizing at purchase",
+  "files": [
+   "docs-authority/_storage_sizing.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "doc": "AQS-DUTY-064"
+ },
+ {
+  "id": "A-M-279",
+  "task": "X-PAR-12",
+  "title": "H2O_ELYZ PEM skid CAD envelope allowances",
+  "statement": "The restored PEM electrolyser (owner ruling 2026-10-18 D-O2) gets its GA massing in models/freecad/cryo.py from the graph duty, never hand-placed dimensions: rated stack kW = IA-ELY-H2 x pem_kWh_kg_H2 / ely_window_h (55 kWh/kg over the 6.0 h PV window, A-M-133; 85.8 kW at the current rates, cross-checked against the continuous_kw note), then stack skid plan area 0.025 m2/kW and balance-of-plant (H2/O2 separators, deoxo, dryer per params.internals) 0.015 m2/kW, skid width 1050 mm (H2-bay aisle) and height 2200 mm incl. separator deck. Skid sits in a new 1 h partitioned H2 bay of the CRYO room per the FR_CRYO_ASU ruling (H2 side).",
+  "value": "0.025 m2/kW stack; 0.015 m2/kW BoP; W 1050 mm; H 2200 mm",
+  "units": "m2/kW; mm",
+  "where": "flow_graph/param/drivers.json (4 keys under CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ); models/freecad/cryo.py (_elyz skid boxes); models/freecad/unit_freecad_map.json (H2O_ELYZ row)",
+  "basis": "Indoor PEM system skid proportions at the tens-of-kW class (stack enclosure plus separator/deoxo/dryer frame); envelope only - no rate or duty depends on it",
+  "sensitivity": "Skid footprint scales linearly with the rated kW and the two areal densities; placement clears the CRYO H2 bay up to ~4.2 m skid length",
+  "replaced_by": "In-house skid GA at the fabrication-design task (verification test on every driver key)",
+  "files": [
+   "models/freecad/cryo.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "doc": "AQS-BLD-010"
  }
 ]

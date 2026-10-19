@@ -1,0 +1,8 @@
+item,description,qty,material,basis
+1,"Chamber 660 x 1000 x 1100 mm, 150 mm ceramic-fibre lined, 4 mm CS casing, tilt pour",1,SA-240 304L casing over ceramic fibre,"AQS-DUTY-072 section 3; Cu/Fe/Zn scrap remelt; medium-frequency coreless induction, tilt pour"
+2,"Crucible 10 kg, ID 110.0 x 165 mm, 2 heats/d",1,fused SiO2 isostatic (Cu/Fe/Zn classes),"AQS-DUTY-072 section 3; melt 7.151 kWh/d, peak 11.0 kW of 25.0 kW connected"
+3,"Induction coil, medium frequency, with cooled leads",1,"Cu tube, water-cooled",A-M-232 power basis
+4,Extraction stack DN150 with damper,1,SA-240 304L,metal-dust off-gas to MET_SCRUB
+5,"PSU / matchbox cabinet, 25 kW connected",1,"CS enclosure, IP54",A-M-232
+6,Tilt-frame hydraulics with trunnions,1,CS weldment,AQS-DUTY-072 section 3
+7,Slag/skimmings tote under the tilt axis,1,mild steel,"FOUNDRY_SLAG_TO_LEACH, A-M-262"

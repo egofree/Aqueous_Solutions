@@ -7,8 +7,8 @@
    500,
    800
   ],
-  "D_mm": 400.0,
-  "H_mm": 600.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
@@ -24,21 +24,14 @@
    500,
    800
   ],
-  "D_mm": 850.0,
-  "H_mm": 1250.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "SA-240 304L, welded"
  },
  {
   "unit": "NUTRIENT_DOSE",
-  "applied": true,
-  "old_mm": [
-   1600,
-   1400,
-   1400
-  ],
-  "D_mm": 700.0,
-  "H_mm": 900.0,
-  "material": "PE (rotomoulded / fabricated)"
+  "applied": false,
+  "note": "no Part object with this label"
  },
  {
   "unit": "PROD_C11_C18",
@@ -48,8 +41,8 @@
    300,
    700
   ],
-  "D_mm": 650.0,
-  "H_mm": 950.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "SA-240 304L, welded"
  },
  {
@@ -60,8 +53,8 @@
    300,
    700
   ],
-  "D_mm": 550.0,
-  "H_mm": 800.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "SA-240 304L, welded"
  },
  {
@@ -72,9 +65,14 @@
    300,
    700
   ],
-  "D_mm": 350.0,
-  "H_mm": 400.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "SA-240 304L, welded"
+ },
+ {
+  "unit": "PROD_O2",
+  "applied": false,
+  "note": "no Part object with this label"
  },
  {
   "unit": "PROD_C5_C10",
@@ -84,8 +82,8 @@
    300,
    700
   ],
-  "D_mm": 600.0,
-  "H_mm": 900.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "SA-240 304L, welded"
  },
  {
@@ -96,8 +94,8 @@
    800,
    1100
   ],
-  "D_mm": 500.0,
-  "H_mm": 700.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
@@ -120,8 +118,8 @@
    800,
    1100
   ],
-  "D_mm": 350.0,
-  "H_mm": 550.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
@@ -144,8 +142,8 @@
    800,
    1100
   ],
-  "D_mm": 350.0,
-  "H_mm": 450.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
@@ -156,8 +154,8 @@
    800,
    1100
   ],
-  "D_mm": 450.0,
-  "H_mm": 650.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
@@ -168,8 +166,8 @@
    800,
    1100
   ],
-  "D_mm": 450.0,
-  "H_mm": 650.0,
+  "D_mm": 300.0,
+  "H_mm": 300.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
@@ -193,5 +191,46 @@
   "unit": "REMIN",
   "applied": false,
   "note": "no Part object with this label"
+ },
+ {
+  "unit": "PROD_MEOH",
+  "applied": false,
+  "note": "no Part object with this label"
+ },
+ {
+  "unit": "FOOD_STORE",
+  "applied": true,
+  "old_mm": [
+   650,
+   650,
+   750
+  ],
+  "D_mm": 350.0,
+  "H_mm": 450.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "METAL_STORE",
+  "applied": true,
+  "old_mm": [
+   800,
+   800,
+   950
+  ],
+  "D_mm": 500.0,
+  "H_mm": 650.0,
+  "material": "PE (rotomoulded / fabricated)"
+ },
+ {
+  "unit": "AIR_RECEIVER",
+  "applied": true,
+  "old_mm": [
+   1000,
+   1000,
+   1200
+  ],
+  "D_mm": 700.0,
+  "H_mm": 900.0,
+  "material": "SA-240 304L, welded"
  }
 ]

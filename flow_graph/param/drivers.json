@@ -3133,6 +3133,65 @@
     "units": "kWh/kg hydrogen higher heating value",
     "ref": "CRC_H2"
   },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.hold_d": {
+    "value": 14,
+    "units": "d hold time (D-DOCK shipped-product dispatch campaign, A-M-278)",
+    "register": "A-M-278",
+    "needs_verification": true,
+    "verification_test": "dispatch log cadence at the dock"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.rho_kg_m3": {
+    "value": 293.4,
+    "units": "kg/m3 O2 at 200 bar abs 15 C (Z 0.9105, Peng-Robinson check of the NIST isotherm)",
+    "ref": "NIST_WEBBOOK"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.P_MPa": {
+    "value": 20.0,
+    "units": "MPa gauge design pressure (200 bar Type I cylinder-bank service, CRYO_O2 storage_mode)",
+    "register": "A-M-278",
+    "needs_verification": true,
+    "verification_test": "cylinder bank datasheet at purchase"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH.hold_d": {
+    "value": 14,
+    "units": "d hold time (D-DOCK shipped-product dispatch campaign, A-M-278)",
+    "register": "A-M-278",
+    "needs_verification": true,
+    "verification_test": "dispatch log cadence at the dock"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH.rho_kg_m3": {
+    "value": 792,
+    "units": "kg/m3 stored liquid at 20 C",
+    "ref": "PERRY9"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW": {
+    "value": 0.025,
+    "units": "m2 skid plan area per kW rated stack (PEM stack enclosure)",
+    "register": "A-M-279",
+    "needs_verification": true,
+    "verification_test": "in-house skid GA at the fabrication-design task"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.bop_m2_per_kW": {
+    "value": 0.015,
+    "units": "m2 balance-of-plant plan area per kW rated (H2/O2 separators, deoxo, dryer per params.internals)",
+    "register": "A-M-279",
+    "needs_verification": true,
+    "verification_test": "in-house skid GA at the fabrication-design task"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm": {
+    "value": 1050,
+    "units": "mm skid width (fits the CRYO H2-bay aisle)",
+    "register": "A-M-279",
+    "needs_verification": true,
+    "verification_test": "in-house skid GA at the fabrication-design task"
+  },
+  "CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm": {
+    "value": 2200,
+    "units": "mm skid height incl. separator deck",
+    "register": "A-M-279",
+    "needs_verification": true,
+    "verification_test": "in-house skid GA at the fabrication-design task"
+  },
   "ELEC.generation-train.BACKUP_GEN.exercise_load_frac": {
     "value": 0.3,
     "units": "- nameplate fraction during monthly exercise",

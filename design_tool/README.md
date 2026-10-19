@@ -175,6 +175,30 @@ python3 ../models/freecad/graph_geometry_bridge.py --self-test
 **D3/D4 exit:** Yes (local). Pack `3d/` ships; baseline FCStd object count unchanged under gold presence; T6 disable removes mapped Feature.
 
 
+## U6 — working design UI on the unified engine (2026-10-19)
+
+The UI runs on the unified parametric system (graph + `flow_graph/system_tree.yaml` +
+`flow_graph/param/drivers.json` + regen). Three read-only endpoints were added
+(`design_tool/aqs_design_tool/api/app.py`; commit 5024743):
+
+| Method | Path | Role |
+|---|---|---|
+| GET | `/api/v1/system-tree` | Tree nodes with resolved unit sets and kW/presence aggregates, from `flow_graph/system_tree.yaml` + graph (structure break returns 409) |
+| GET | `/api/v1/params` | `drivers.json` listing (key / value / units / ref / register / needs_verification) with the drivers sha |
+| GET | `/api/v1/regen-status` | Derived-artefact staleness via `docs-authority/_rev_stamp.py --check-only` plus the last regen receipt (graph sha, passes, vouched). Uses `--check-only` so a GET never mutates authority docs — documented deviation from the brief |
+
+Web panels (`web/src/components/`): **ParamsPanel** (searchable, needs-verification-filtered
+drivers table with citation badges, read-only), **TreeTogglePanel** (four-level AQS-SYS-TREE
+render with indeterminate parents), **RegenStatusBadge** (staleness indicator, re-checks after
+every solve). Component details: `web/README.md`.
+
+**Toggle precedence.** Sandbox overrides exist at four levels — `sector_enabled` (root),
+`system_enabled` (train), `subsystem_enabled`, `unit_enabled` (leaf) — and resolve
+**most-specific-wins**, server-side in `store.apply_overrides`; the graph stays the authority.
+Verified over HTTP: a train toggle flags exactly that train's units; a unit flag beats the
+train flag. Nothing in the UI writes the graph, drivers, tree, or authority docs — the write
+path is edit → `python3 -m flow_graph.param.regen`.
+
 ## What this is
 
 Typed MVS JSON (`schema_version` **aqs-mvs-0.3**) plus a Python **FastAPI**
@@ -264,6 +288,9 @@ OpenAPI: `http://127.0.0.1:8000/docs`
 | GET | `/sandbox/{id}/flags` | Gap / unclosed / bottleneck / code flags |
 | POST | `/sandbox/{id}/export` | Write pack under `exports/` |
 | GET | `/sector-definitions` | Placeholder catalogue (+ AQS-SEC-001 TODO) |
+| GET | `/system-tree` | **U6** — system tree + aggregates (read-only) |
+| GET | `/params` | **U6** — drivers listing with sha (read-only) |
+| GET | `/regen-status` | **U6** — staleness + last regen receipt (read-only, `--check-only`) |
 
 
 **2026-10-01:** Candidate stream rates filled where authority exists (`study`/`authority`); scale-down unreclaimed map **AQS-SCALE-UR-001** encoded in solver; WTR surplus-key fix.

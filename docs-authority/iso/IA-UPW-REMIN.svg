@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="314.0,580.0 314.0,60.0 40.0,218.2 439.7,448.9 439.7,461.9" fill="none" stroke="black" stroke-width="3"/>
-<text x="320.0" y="316.0">Z +12000</text>
-<text x="183.0" y="135.1">X -7300</text>
-<text x="245.8" y="329.5">Y -10650</text>
-<text x="445.7" y="451.4">Z -300</text>
-<circle cx="314.0" cy="580.0" r="5" fill="black"/><text x="322.0" y="594.0">BMED_UPW_POLISH</text>
-<circle cx="439.7" cy="461.9" r="5" fill="none" stroke="black"/><text x="447.7" y="475.9">REMIN</text>
+<polyline points="456.0,548.5 456.0,60.0 40.0,300.2 503.6,567.8 503.6,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="462.0" y="300.2">Z +12000</text>
+<text x="254.0" y="176.1">X -11800</text>
+<text x="277.8" y="430.0">Y -13150</text>
+<text x="509.6" y="569.9">Z -300</text>
+<circle cx="456.0" cy="548.5" r="5" fill="black"/><text x="464.0" y="562.5">BMED_UPW_POLISH</text>
+<circle cx="503.6" cy="580.0" r="5" fill="none" stroke="black"/><text x="511.6" y="594.0">REMIN</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-UPW-REMIN</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">BMED_UPW_POLISH -> REMIN</text>
-<text x="20" y="642">pipe 30.19 m in 7 pieces; cut 6000 5989 6000 1279 6000 4629 289 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
+<text x="20" y="642">pipe 37.19 m in 8 pieces; cut 6000 5989 6000 5779 6000 6000 1129 289 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 12 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

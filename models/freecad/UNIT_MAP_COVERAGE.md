@@ -2,15 +2,22 @@
 
 | Field | Value |
 |---|---|
-| Doc | **AQS-UNIT-FREECAD-MAP-001** Rev B |
-| Date | 2026-10-01 (America/Chicago) |
+| Doc | **AQS-UNIT-FREECAD-MAP-001** Rev D |
+| Date | 2026-10-19 (America/Chicago) |
 | Licence | CERN-OHL-S-2.0 |
-| Graph | AQS-FLOW-GRAPH-001 Rev B (91 nodes) |
-| Map | `models/freecad/unit_freecad_map.json` (hub: `cad/freecad/`) |
-| Evidence | `plant.FCStd` inventory via `/usr/bin/freecadcmd` (1114 objects, 1030 Part::Feature) |
-| Plan | AQS-PLAN-3D-001 — CAD-M1 massing done 2026-10-01 |
+| Map | `models/freecad/unit_freecad_map.json` at Rev D (137 entries; 93 at Rev C) |
+| Evidence | `plant.FCStd` inventory via `/usr/bin/freecadcmd` (1114 objects, 1030 Part::Feature); CadQuery unit builders under `models/mfg/` |
+| Plan | AQS-PLAN-3D-001 — CAD-M1 massing done 2026-10-01; foundry/polymers builders 2026-10-19 |
 
-## Summary counts
+## Rev D (2026-10-19) — foundry/polymers CadQuery rows (CAD lane, pending commit)
+
+The map gained 44 rows (93 → 137 entries); the full census table below is **not yet regenerated** — the summary counts and full table are the Rev B census and stay until the CAD lane lands and the map is re-stamped against the graph.
+
+- **36 `cadquery_export` rows** from the FOUNDRY/POLYMERS builders: 26 in `models/mfg/foundry.py` (AL_POT, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRAW, EXTRUDE, FLUX_PREP, FORGE, IND_MELT, INV_CAST, MG_POT, MO_CELL, RES_HEAT, RF_HEAT, ROLL, SHELL_BREAK, SHELL_BUILD, SHELL_BURNOUT, SINTER, STOCK_OUT, TI_CELL, VAC_CAST, VAC_IND, WAX_PATTERN) and 10 in `models/mfg/polymers.py` (FILM_CAST, HF_GEN, PELLET, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, POWDER_RESIN, TFE_SYN, VDF_SYN). Each is a parametric CadQuery model reading `params.design`/`params.envelope` from `flow_graph/param/foundry_poly.py` (AQS-DUTY-072/073) and exporting STEP/STL/BOM under `models/mfg/<UNIT>/export/`; live trains and standby placeholders both carry rows (standby rows note their basis).
+- **8 restored-unit/store rows in flight**: AIR_RECEIVER, FOOD_STORE, METAL_STORE (D-DOCK buffer stores, `d1b_massing.py`), CRYO_ASU, H2O_ELYZ, RELIEF_CRYO (`cryo.py`), PROD_MEOH, PROD_O2 — rows present in the map, CAD landing with the same pending commit.
+- The map's `graph_revision` stamp still reads B from the Rev B census; the graph itself is Rev AC (178 nodes, `flow_graph/plant_flow_graph.json`). Re-stamping is part of the CAD lane's close-out.
+
+## Summary counts (Rev B census — historical)
 
 | Status | Count |
 |---|---|
@@ -88,7 +95,7 @@
 | `POLISH_BANK` | `PK_1`, `PK_2`, `PK_3`, `PK_6`, `PK_7`, `PK_8`, `PK_9` | `wet_products.py` |
 | `TERRACE_IRRIG` | `TERRACE_IRRIG_HDR_S` | `building_stack.py` |
 
-## Full table
+## Full table (Rev B census — historical; regenerates when the CAD lane lands)
 
 | unit_id | status | freecad_names | builder | group_path |
 |---|---|---|---|---|

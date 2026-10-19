@@ -2253,7 +2253,21 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "note": "X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent)."
+        "note": "X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent).",
+        "size_mm": [
+          1400,
+          1400,
+          1750
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 1.3645,
+          "D_mm": 1100,
+          "H_mm": 1450,
+          "wall_mm": 106.8,
+          "material": "SA-240 304L, welded"
+        }
       },
       "modules": [],
       "electrical_role": "none",
@@ -3407,7 +3421,29 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "HF generation train",
+          "D_mm": 150,
+          "H_mm": 225,
+          "design_case_kg_d": 0.5,
+          "material": "carbon steel, dry HF service (PERRY9_MAT)"
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "standby",
+          "basis": "reactor-class study minimum; standby envelope (F-blocked, Q-013)"
         }
       },
       "modules": [],
@@ -3441,7 +3477,28 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "VDF monomer synthesis",
+          "D_mm": 150,
+          "H_mm": 225,
+          "design_case_kg_d": 0.15
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "standby",
+          "basis": "reactor-class study minimum; standby envelope (F-blocked, Q-013)"
         }
       },
       "modules": [],
@@ -3470,7 +3527,28 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "TFE monomer synthesis",
+          "D_mm": 150,
+          "H_mm": 225,
+          "design_case_kg_d": 0.1
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "standby",
+          "basis": "reactor-class study minimum; standby envelope (F-blocked, Q-013)"
         }
       },
       "modules": [],
@@ -3498,7 +3576,29 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "fluoropolymer polymerization kettle",
+          "D_mm": 150,
+          "H_mm": 225,
+          "design_case_kg_d": 0.23,
+          "design_case": "PVDF 0.14 + PTFE 0.09 kg/d"
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "standby",
+          "basis": "reactor-class study minimum; standby envelope (monomers 0, Q-013)"
         }
       },
       "modules": [],
@@ -3520,7 +3620,26 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "design_case_kg_d": 0.2,
-          "status_note": "feed assay missing (AQS-DUTY-CR)"
+          "status_note": "feed assay missing (AQS-DUTY-CR)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "style_note": "molten-salt Cr cell",
+          "design_case_kg_d": 0.2
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "standby",
+          "basis": "cell-class study minimum; standby envelope at the 0.20 kg/d Cr design case (feed assay missing)"
         }
       },
       "modules": [],
@@ -3551,7 +3670,26 @@
             "co_kg": 1.17,
             "source": "AQS-BAL-KROLL (stoichiometric, no rate until the grit assay)"
           },
-          "status_note": "grit assay missing (AQS-ASSAY-TI-MO)"
+          "status_note": "grit assay missing (AQS-ASSAY-TI-MO)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "style_note": "Kroll Mg-reduction reactor",
+          "design_case_kg_d": 0.4
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "standby",
+          "basis": "cell-class study minimum; standby envelope at the 0.40 kg/d Ti design case (grit assay missing)"
         }
       },
       "modules": [],
@@ -3573,7 +3711,26 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "design_case_kg_d": 0.05,
-          "status_note": "liquor Mo tenor missing (AQS-ASSAY-TI-MO)"
+          "status_note": "liquor Mo tenor missing (AQS-ASSAY-TI-MO)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "style_note": "molten-salt Mo cell",
+          "design_case_kg_d": 0.05
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "standby",
+          "basis": "cell-class study minimum; standby envelope at the 0.05 kg/d Mo design case (tenor missing)"
         }
       },
       "modules": [],
@@ -3607,7 +3764,33 @@
             "Fe": 0.5406,
             "Zn": 0.1605
           },
-          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN"
+          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "Cu/Fe/Zn scrap remelt; medium-frequency coreless induction, tilt pour",
+          "crucible_kg": 10.0,
+          "crucible_D_mm": 110.0,
+          "crucible_H_mm": 165,
+          "heats_d": 2,
+          "connected_kW": 25.0,
+          "peak_kW": 11.0,
+          "melt_kWh_d": 7.151,
+          "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         }
       },
       "modules": [],
@@ -3634,7 +3817,26 @@
           "source": "AQS-DUTY-072",
           "duty_kg_d": 0.0,
           "connected_kW": 5.0,
-          "status_note": "preheat/sinter standby (A-M-232); sinter feed blocked"
+          "status_note": "preheat/sinter standby (A-M-232); sinter feed blocked",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "RF preheat/sinter unit",
+          "connected_kW": 5.0
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class; standby envelope (A-M-232)"
         }
       },
       "modules": [],
@@ -3660,7 +3862,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "alternate path only (FOUNDRY_DUTY heat policy)"
+          "status_note": "alternate path only (FOUNDRY_DUTY heat policy)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "resistance radiant reheating furnace"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class; standby envelope (alternate heat path, FOUNDRY_DUTY policy)"
         }
       },
       "modules": [],
@@ -3681,7 +3901,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "alternate path only; off-gas to MET_SCRUB when energized"
+          "status_note": "alternate path only; off-gas to MET_SCRUB when energized",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "combustion reheating furnace, off-gas to MET_SCRUB"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class; standby envelope (alternate heat path)"
         }
       },
       "modules": [],
@@ -3702,7 +3940,28 @@
           "source": "AQS-DUTY-072",
           "pour_kg_d": 3.0,
           "products": "Cu ingot/billet, permanent mold",
-          "scrap_return_kg_d": 0.0
+          "scrap_return_kg_d": 0.0,
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "permanent-mould cast line",
+          "pour_kg_d": 3.0,
+          "moulds": 2,
+          "table_L_mm": 700
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum"
         }
       },
       "modules": [],
@@ -3723,7 +3982,27 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "connected_kW": 15.0,
-          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)"
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "vacuum induction skull melt (ISM)",
+          "design_case_kg": 2.0,
+          "connected_kW": 15.0
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class; standby envelope at the 2 kg ISM design case"
         }
       },
       "modules": [],
@@ -3748,7 +4027,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby tied to VAC_IND"
+          "status_note": "installed standby tied to VAC_IND",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "vacuum tilt-pour casting station"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope tied to VAC_IND"
         }
       },
       "modules": [],
@@ -3769,7 +4066,29 @@
           "source": "AQS-DUTY-072",
           "rolled_kg_d": 13.0,
           "kWh_d": 0.416,
-          "basis": "0.032 kWh/kg cold-rolling class (A-M-177 DIETER1988); hot rolling cheaper"
+          "basis": "0.032 kWh/kg cold-rolling class (A-M-177 DIETER1988); hot rolling cheaper",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "two-high bench rolling mill",
+          "rolled_kg_d": 13.0,
+          "rolls_D_mm": 300,
+          "roll_L_mm": 640,
+          "kWh_d": 0.416
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum"
         }
       },
       "modules": [],
@@ -3789,7 +4108,26 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: Al/Cu/Mg profile feed blocked"
+          "status_note": "installed standby: Al/Cu/Mg profile feed blocked",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "horizontal profile press",
+          "design_case_kg_d": 5.0
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope at the 5 kg/d design case (AQS-SIZE-FOUNDRY)"
         }
       },
       "modules": [],
@@ -3809,7 +4147,26 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "no feed edge at Rev AC; wire sizing is MFG WIRE_DRAW (S57)"
+          "status_note": "no feed edge at Rev AC; wire sizing is MFG WIRE_DRAW (S57)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "bench wire/rod draw bench",
+          "design_case_kg_d": 3.0
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (wire sizing is MFG WIRE_DRAW S57)"
         }
       },
       "modules": [],
@@ -3829,7 +4186,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "no edges at Rev AC; open-die work is campaign-scale"
+          "status_note": "no edges at Rev AC; open-die work is campaign-scale",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "open-die hydraulic press"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (no edges at Rev AC)"
         }
       },
       "modules": [],
@@ -3849,7 +4224,26 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: Ti/Mo/Cr powder feed blocked"
+          "status_note": "installed standby: Ti/Mo/Cr powder feed blocked",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "Ti/Mo/Cr powder sinter furnace",
+          "design_case_kg_d": 0.5
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); standby envelope"
         }
       },
       "modules": [],
@@ -3869,7 +4263,26 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: SALT_FEED unfed at Rev AC"
+          "status_note": "installed standby: SALT_FEED unfed at Rev AC",
+          "size_mm": [
+            800,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "bench": "salt flux cover preparation bench",
+          "design_case_kg_d": 0.5
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            600,
+            1200
+          ],
+          "style": "bench_prep",
+          "state": "standby",
+          "basis": "prep-class study minimum; standby envelope (SALT_FEED unfed)"
         }
       },
       "modules": [],
@@ -3893,7 +4306,27 @@
             "MFG": 14.0,
             "FAB": 0.0,
             "WIRE_DRAW": 0.0
-          }
+          },
+          "size_mm": [
+            1200,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "rack": "three-tier bar/plate/ingot staging rack",
+          "issue_kg_d": 14.0,
+          "hold_d": 1.0
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            800,
+            1500
+          ],
+          "style": "store_rack",
+          "state": "live",
+          "basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)"
         }
       },
       "modules": [],
@@ -3916,7 +4349,30 @@
           "feed_kg_d": 11.0,
           "billet_kg_d": 10.0,
           "ingot_kg_d": 1.0,
-          "mold": "water-cooled copper, horizontal (AQS-SIZE-FOUNDRY)"
+          "mold": "water-cooled copper, horizontal (AQS-SIZE-FOUNDRY)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "two-strand horizontal semi-continuous caster",
+          "feed_kg_d": 11.0,
+          "billet_kg_d": 10.0,
+          "ingot_kg_d": 1.0,
+          "strands": 2,
+          "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; hold-up of the 11 kg/d feed is below the class minimum"
         }
       },
       "modules": [],
@@ -3940,7 +4396,27 @@
           "design_case_kg_d": 8.0,
           "alcl3_kg_per_kg_al": 4.942,
           "cl2_kg_per_kg_al": 3.942,
-          "status_note": "unfed: Al stays in leach liquor (AQS-BOM-SC-001 sec. 6)"
+          "status_note": "unfed: Al stays in leach liquor (AQS-BOM-SC-001 sec. 6)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "style_note": "AlCl3 reduction pot",
+          "design_case_kg_d": 8.0,
+          "bath_feed_kg_d": 39.53
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "standby",
+          "basis": "cell-class study minimum; standby envelope at the 8 kg/d Al design case (bath feed AlCl3 39.53 kg/d)"
         }
       },
       "modules": [],
@@ -3963,7 +4439,25 @@
           "rate_kg_d": 0.0,
           "mgcl2_kg_per_kg_mg": 3.917,
           "cl2_kg_per_kg_mg": 2.917,
-          "status_note": "Kroll Mg recycle; no live Ti rate to serve (AQS-BAL-KROLL)"
+          "status_note": "Kroll Mg recycle; no live Ti rate to serve (AQS-BAL-KROLL)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "style_note": "MgCl2 reduction pot (Kroll Mg recycle)"
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "standby",
+          "basis": "cell-class study minimum; standby envelope (no live Ti rate to serve, AQS-BAL-KROLL)"
         }
       },
       "modules": [],
@@ -3985,7 +4479,25 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "cacl2_kg_per_kg_ca": 2.769,
-          "status_note": "unfed: no CaCl2 feed edge at Rev AC"
+          "status_note": "unfed: no CaCl2 feed edge at Rev AC",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "style_note": "CaCl2 reduction pot"
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "standby",
+          "basis": "cell-class study minimum; standby envelope (no CaCl2 feed edge)"
         }
       },
       "modules": [],
@@ -4006,7 +4518,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)",
+          "size_mm": [
+            800,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "bench": "wax pattern injection bench"
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            600,
+            1200
+          ],
+          "style": "bench_prep",
+          "state": "standby",
+          "basis": "prep-class study minimum; standby envelope (no wax make-up source)"
         }
       },
       "modules": [],
@@ -4027,7 +4557,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "dip-coat + stucco shell-building booth"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (train blocked, IND_TO_INV 0)"
         }
       },
       "modules": [],
@@ -4048,7 +4596,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "shell burnout / wax-reclaim furnace"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby",
+          "basis": "A-M-199 melt class; standby envelope (train blocked)"
         }
       },
       "modules": [],
@@ -4069,7 +4635,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "investment casting pour station"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (train blocked)"
         }
       },
       "modules": [],
@@ -4090,7 +4674,25 @@
           "status": "study",
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)"
+          "status_note": "installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "shell knock-out station"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (train blocked)"
         }
       },
       "modules": [],
@@ -4114,7 +4716,34 @@
           "T_C": "150-250",
           "P_MPa": "1-5",
           "heat_W": 0.0018,
-          "basis": "AQS-SIZE-OIL-POLY POLY_OLEFIN reactor; feed heating 25->200 C at 2.1 kJ/kg K, exotherm neglected (study)"
+          "basis": "AQS-SIZE-OIL-POLY POLY_OLEFIN reactor; feed heating 25->200 C at 2.1 kJ/kg K, exotherm neglected (study)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "vertical cylindrical oligomerization reactor",
+          "D_mm": 150,
+          "H_mm": 225,
+          "wall_mm": 3.8,
+          "T_C": 250.0,
+          "P_MPa": 5.0,
+          "op_window": "150-250 C at 1-5 MPa (AQS-SIZE-OIL-POLY)",
+          "feed_kg_d": 0.414905,
+          "heat_W": 0.0018,
+          "material": "SA-240 316L, welded (ASME IX)"
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa"
         }
       },
       "modules": [],
@@ -4134,7 +4763,28 @@
           "status": "study",
           "source": "AQS-DUTY-073",
           "rate_kg_d": 0.0,
-          "status_note": "recipe waits on the digester organic assay (AQS-DES-POLY)"
+          "status_note": "recipe waits on the digester organic assay (AQS-DES-POLY)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "condensation resin kettle",
+          "D_mm": 150,
+          "H_mm": 225,
+          "design_case_kg_d": 0.5
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "standby",
+          "basis": "reactor-class study minimum; standby envelope (recipe waits on the digester organic assay)"
         }
       },
       "modules": [],
@@ -4154,7 +4804,27 @@
           "status": "study",
           "source": "AQS-DUTY-073",
           "pellet_kg_d": 0.414905,
-          "form": "2-4 mm pellets (AQS-DES-POLY)"
+          "form": "2-4 mm pellets (AQS-DES-POLY)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "underwater die-face pelletizer",
+          "rate_kg_d": 0.414905,
+          "pellet_mm": "2-4"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; hold-up of the 0.41 kg/d resin stream is below the class minimum"
         }
       },
       "modules": [],
@@ -4174,7 +4844,26 @@
           "status": "study",
           "source": "AQS-DUTY-073",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: fluoropolymer feed blocked (Q-013)"
+          "status_note": "installed standby: fluoropolymer feed blocked (Q-013)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "powder mill / classifier line",
+          "design_case_kg_d": 0.15
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (fluoropolymer feed blocked)"
         }
       },
       "modules": [],
@@ -4194,7 +4883,25 @@
           "status": "study",
           "source": "AQS-DUTY-073",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: no feed edge at Rev AC"
+          "status_note": "installed standby: no feed edge at Rev AC",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "cast film line"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby",
+          "basis": "A-M-199 forming class; standby envelope (no feed edge at Rev AC)"
         }
       },
       "modules": [],
@@ -4215,7 +4922,28 @@
           "source": "AQS-DUTY-073",
           "out_kg_d": 0.377186,
           "to_wet_kg_d": 0.037719,
-          "to_fab_kg_d": 0.0
+          "to_fab_kg_d": 0.0,
+          "size_mm": [
+            600,
+            400,
+            800
+          ]
+        },
+        "design": {
+          "bin": "pellet tote bin",
+          "issue_kg_d": 0.377186,
+          "to_wet_kg_d": 0.037719,
+          "hold_d": 1.0
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            400,
+            800
+          ],
+          "style": "store_bin",
+          "state": "live",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)"
         }
       },
       "modules": [],
@@ -4543,7 +5271,21 @@
       "tags": [],
       "params": {
         "presence": "present",
-        "note": "X-PAR-12: methanol product store (carbon leaves the plant as product, no vent)."
+        "note": "X-PAR-12: methanol product store (carbon leaves the plant as product, no vent).",
+        "size_mm": [
+          1150,
+          1150,
+          1450
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.6267,
+          "D_mm": 850,
+          "H_mm": 1150,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
       },
       "modules": [],
       "electrical_role": "none",

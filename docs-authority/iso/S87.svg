@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,123.4 40.0,88.0 88.4,60.0 136.8,88.0 136.8,580.0" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="101.7">Z +950</text>
-<text x="70.2" y="70.0">X +1500</text>
-<text x="118.6" y="70.0">Y -1500</text>
-<text x="142.8" y="330.0">Z -13200</text>
-<circle cx="40.0" cy="123.4" r="5" fill="black"/><text x="48.0" y="137.4">GROW_BED</text>
-<circle cx="136.8" cy="580.0" r="5" fill="none" stroke="black"/><text x="144.8" y="594.0">CRYO_O2</text>
+<polyline points="437.0,90.0 437.0,60.0 149.5,226.0 40.0,162.7 40.0,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="443.0" y="71.0">Z +950</text>
+<text x="299.2" y="139.0">X -10500</text>
+<text x="100.8" y="190.3">Y +4000</text>
+<text x="46.0" y="367.4">Z -13200</text>
+<circle cx="437.0" cy="90.0" r="5" fill="black"/><text x="445.0" y="104.0">GROW_BED</text>
+<circle cx="40.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="48.0" y="594.0">CRYO_O2</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S87</text>
 <text x="20" y="614">DN15  class M1  316L ASTM A312</text>
 <text x="20" y="628">GROW_BED -> CRYO_O2</text>
-<text x="20" y="642">pipe 16.92 m in 6 pieces; cut 912 1424 1424 6000 6000 1162 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt weld joints</text>
+<text x="20" y="642">pipe 28.42 m in 7 pieces; cut 912 6000 4424 3924 6000 6000 1162 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

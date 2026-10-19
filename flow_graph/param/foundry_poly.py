@@ -35,6 +35,10 @@ surplus at the bounding case is 0.0 kg/d - that statement IS the plant surplus s
 goods-growth decision; the NORTH_DOCK residual stays the non-goods study-basis imbalance it was.
 
 Run: python3 -m flow_graph.param.foundry_poly [--write]
+
+stamp() also writes params.design + params.envelope (size_mm, style, live|standby state) for the 36 units, read by
+models/mfg/foundry.py and models/mfg/polymers.py (X-MFG-30 CadQuery pattern); cad/stl envelope boxes regenerate with
+`python3 -m flow_graph.param.envelopes <units>` (test_envelopes.py gates the match).
 """
 import json, math, os, sys
 from . import drivers as DR
@@ -328,6 +332,132 @@ def stamp(g, s):
     for u in ('HF_GEN', 'VDF_SYN', 'TFE_SYN', 'POLY_F'):
         st(u, source=src_p, rate_kg_d=0.0, design_case=fp, status_note='F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)')
     st('POLY_COND', source=src_p, rate_kg_d=0.0, status_note='recipe waits on the digester organic assay (AQS-DES-POLY)')
+
+    # ---- CAD stamps (X-MFG-30 pattern): params.design + params.envelope per unit, read by models/mfg/foundry.py and
+    # models/mfg/polymers.py. Envelope = hold-up box grown at the class minimum (the A-M-199 method: cylinder at atm_HD,
+    # +300 mm plan access, +500 mm head). The melt/forming/thermal minimums and the 7000/2000 kg/m3 densities are
+    # registered (A-M-199, AQS-DUTY-064); cell/reactor/prep/rack/bin minimums and the salt/pellet densities are study
+    # values from the AQS-DUTY-072/073 sec. 4 design cases. state: live trains get machine geometry, standby trains an
+    # envelope-only placeholder (presence-consistent with their 0-rated feeds). -----------------------------------
+    HD = DR.val(s['d'], 'atm_HD')
+    MIN = {'melt': (1000, 1000, 1500), 'forming': (1500, 800, 1500), 'thermal': (600, 600, 1200),   # A-M-199
+           'cell': (800, 800, 1600), 'reactor': (600, 600, 1200), 'prep': (800, 600, 1200),
+           'rack': (1200, 800, 1500), 'bin': (600, 400, 800)}                                       # study, this pass
+
+    def D_hold(kg, rho, tau=1.0):
+        V = kg * tau / rho
+        return (4 * V / (math.pi * HD)) ** (1 / 3) * 1000 if V > 0 else 0.0
+
+    def ebox(mn, D):
+        return [int(round(max(mn[0], D + 300), -1)), int(round(max(mn[1], D + 300), -1)), int(round(max(mn[2], D * HD + 500), -1))]
+
+    def hoop(P_MPa, D_mm):
+        return round(max(3.0, P_MPa * (D_mm / 2) / (115.0 - 0.6 * P_MPa)) + 0.49, 1)   # ASME VIII-1 UG-27 class, S 115 MPa (AQS-DUTY-064 method)
+
+    def cad(u, style, mn, D, design, state, why):
+        size = ebox(MIN[mn], D)
+        p = N[u]['params']; p['design'] = design; p['envelope'] = dict(size_mm=size, style=style, state=state, basis=why)
+        p['sizing']['size_mm'] = size
+
+    # foundry: live scrap-remelt train
+    Dc = round(D_hold(s['charge'], 7000.0), -1); Hc = round(Dc * HD)   # the melt_charge_kg crucible at the A-M-199 melt density
+    cad('IND_MELT', 'box_furnace', 'melt', Dc,
+        dict(service='Cu/Fe/Zn scrap remelt; medium-frequency coreless induction, tilt pour', crucible_kg=s['charge'],
+             crucible_D_mm=Dc, crucible_H_mm=Hc, heats_d=s['heats'], connected_kW=25.0, peak_kW=s['kw_peak'],
+             melt_kWh_d=round(s['e_melt'], 3), lining='ceramic-fibre hot face 150 mm + 4 mm CS casing (study)'),
+        'live', 'A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load')
+    cad('CAST_LINE', 'line_machine', 'forming', D_hold(mix['Cu'], 7000.0, 1 / 24),
+        dict(machine='permanent-mould cast line', pour_kg_d=mix['Cu'], moulds=2, table_L_mm=700),
+        'live', 'A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum')
+    cad('CONT_CAST', 'line_machine', 'forming', D_hold(mix['Fe'] + mix['Zn'], 7000.0, 1 / 24),
+        dict(machine='two-strand horizontal semi-continuous caster', feed_kg_d=round(mix['Fe'] + mix['Zn'], 4),
+             billet_kg_d=mix['Fe'], ingot_kg_d=mix['Zn'], strands=2, mould='water-cooled copper (AQS-SIZE-FOUNDRY)'),
+        'live', 'A-M-199 forming class; hold-up of the 11 kg/d feed is below the class minimum')
+    cad('ROLL', 'line_machine', 'forming', D_hold(mix['Cu'] + mix['Fe'], 7000.0, 1 / 24),
+        dict(machine='two-high bench rolling mill', rolled_kg_d=round(mix['Cu'] + mix['Fe'], 4), rolls_D_mm=300,
+             roll_L_mm=640, kWh_d=round(s['e_roll'], 4)),
+        'live', 'A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum')
+    cad('STOCK_OUT', 'store_rack', 'rack', D_hold(s['K'], 2000.0),
+        dict(rack='three-tier bar/plate/ingot staging rack', issue_kg_d=s['K'], hold_d=1.0),
+        'live', '1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)')
+    # foundry: standby forming extras (installed, feed-blocked)
+    cad('EXTRUDE', 'line_machine', 'forming', 0.0, dict(machine='horizontal profile press', design_case_kg_d=5.0), 'standby',
+        'A-M-199 forming class; standby envelope at the 5 kg/d design case (AQS-SIZE-FOUNDRY)')
+    cad('DRAW', 'line_machine', 'forming', 0.0, dict(machine='bench wire/rod draw bench', design_case_kg_d=3.0), 'standby',
+        'A-M-199 forming class; standby envelope (wire sizing is MFG WIRE_DRAW S57)')
+    cad('FORGE', 'line_machine', 'forming', 0.0, dict(machine='open-die hydraulic press'), 'standby',
+        'A-M-199 forming class; standby envelope (no edges at Rev AC)')
+    # foundry: melt/heat units, standby (box furnace class)
+    cad('SINTER', 'box_furnace', 'melt', round(D_hold(0.5, 3000.0), -1), dict(service='Ti/Mo/Cr powder sinter furnace',
+        design_case_kg_d=0.5), 'standby', 'A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); standby envelope')
+    cad('VAC_IND', 'box_furnace', 'melt', round(D_hold(2.0, 7000.0), -1), dict(service='vacuum induction skull melt (ISM)',
+        design_case_kg=2.0, connected_kW=15.0), 'standby', 'A-M-199 melt class; standby envelope at the 2 kg ISM design case')
+    cad('VAC_CAST', 'line_machine', 'forming', 0.0, dict(machine='vacuum tilt-pour casting station'), 'standby',
+        'A-M-199 forming class; standby envelope tied to VAC_IND')
+    cad('RF_HEAT', 'box_furnace', 'melt', 0.0, dict(service='RF preheat/sinter unit', connected_kW=5.0), 'standby',
+        'A-M-199 melt class; standby envelope (A-M-232)')
+    cad('RES_HEAT', 'box_furnace', 'melt', 0.0, dict(service='resistance radiant reheating furnace'), 'standby',
+        'A-M-199 melt class; standby envelope (alternate heat path, FOUNDRY_DUTY policy)')
+    cad('COMB_HEAT', 'box_furnace', 'melt', 0.0, dict(service='combustion reheating furnace, off-gas to MET_SCRUB'), 'standby',
+        'A-M-199 melt class; standby envelope (alternate heat path)')
+    cad('FLUX_PREP', 'bench_prep', 'prep', D_hold(0.5, 1500.0), dict(bench='salt flux cover preparation bench',
+        design_case_kg_d=0.5), 'standby', 'prep-class study minimum; standby envelope (SALT_FEED unfed)')
+    # foundry: pot/cell train (cylindrical cells, standby)
+    for u, dc, rho, note in [('AL_POT', dict(style_note='AlCl3 reduction pot', design_case_kg_d=8.0, bath_feed_kg_d=39.53), 1800.0,
+                              'cell-class study minimum; standby envelope at the 8 kg/d Al design case (bath feed AlCl3 39.53 kg/d)'),
+                             ('MG_POT', dict(style_note='MgCl2 reduction pot (Kroll Mg recycle)'), 1800.0,
+                              'cell-class study minimum; standby envelope (no live Ti rate to serve, AQS-BAL-KROLL)'),
+                             ('CA_POT', dict(style_note='CaCl2 reduction pot'), 1800.0,
+                              'cell-class study minimum; standby envelope (no CaCl2 feed edge)'),
+                             ('TI_CELL', dict(style_note='Kroll Mg-reduction reactor', design_case_kg_d=0.40), 1800.0,
+                              'cell-class study minimum; standby envelope at the 0.40 kg/d Ti design case (grit assay missing)'),
+                             ('MO_CELL', dict(style_note='molten-salt Mo cell', design_case_kg_d=0.05), 1800.0,
+                              'cell-class study minimum; standby envelope at the 0.05 kg/d Mo design case (tenor missing)'),
+                             ('CR_CELL', dict(style_note='molten-salt Cr cell', design_case_kg_d=0.20), 1800.0,
+                              'cell-class study minimum; standby envelope at the 0.20 kg/d Cr design case (feed assay missing)')]:
+        cad(u, 'pot_cell', 'cell', D_hold(dc.get('design_case_kg_d', 0.0), rho), dc, 'standby', note)
+    # foundry: investment-casting train (standby, blocked)
+    cad('WAX_PATTERN', 'bench_prep', 'prep', 0.0, dict(bench='wax pattern injection bench'), 'standby',
+        'prep-class study minimum; standby envelope (no wax make-up source)')
+    cad('SHELL_BUILD', 'line_machine', 'forming', 0.0, dict(machine='dip-coat + stucco shell-building booth'), 'standby',
+        'A-M-199 forming class; standby envelope (train blocked, IND_TO_INV 0)')
+    cad('SHELL_BURNOUT', 'box_furnace', 'melt', 0.0, dict(service='shell burnout / wax-reclaim furnace'), 'standby',
+        'A-M-199 melt class; standby envelope (train blocked)')
+    cad('INV_CAST', 'line_machine', 'forming', 0.0, dict(machine='investment casting pour station'), 'standby',
+        'A-M-199 forming class; standby envelope (train blocked)')
+    cad('SHELL_BREAK', 'line_machine', 'forming', 0.0, dict(machine='shell knock-out station'), 'standby',
+        'A-M-199 forming class; standby envelope (train blocked)')
+    # polymers: live polyolefin line
+    Dp = max(150.0, D_hold(s['poly_feed'], 750.0))   # DN150 vessel minimum (house ABE precedent, AQS-DUTY-062)
+    cad('POLY_OLEFIN', 'reactor', 'reactor', Dp,
+        dict(vessel='vertical cylindrical oligomerization reactor', D_mm=150, H_mm=round(150 * HD), wall_mm=hoop(5.0, 150.0),
+             T_C=250.0, P_MPa=5.0, op_window='150-250 C at 1-5 MPa (AQS-SIZE-OIL-POLY)', feed_kg_d=round(s['poly_feed'], 6),
+             heat_W=round(s['poly_feed'] * 2.1 * 175 / 86400, 4), material='SA-240 316L, welded (ASME IX)'),
+        'live', 'reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa')
+    cad('PELLET', 'line_machine', 'forming', D_hold(s['poly_feed'], 500.0, 1 / 24),
+        dict(machine='underwater die-face pelletizer', rate_kg_d=round(s['poly_feed'], 6), pellet_mm='2-4'),
+        'live', 'A-M-199 forming class; hold-up of the 0.41 kg/d resin stream is below the class minimum')
+    cad('POLY_STOCK', 'store_bin', 'bin', D_hold(s['poly_feed'], 500.0),
+        dict(bin='pellet tote bin', issue_kg_d=round(s['P'], 6), to_wet_kg_d=round(s['poly_wet'], 6), hold_d=1.0),
+        'live', '1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)')
+    # polymers: standby trains (reactors from design-case duty, formers as line machines)
+    for u, design, note in [('POLY_COND', dict(vessel='condensation resin kettle', D_mm=150, H_mm=225, design_case_kg_d=0.5),
+                              'reactor-class study minimum; standby envelope (recipe waits on the digester organic assay)'),
+                             ('HF_GEN', dict(vessel='HF generation train', D_mm=150, H_mm=225, design_case_kg_d=0.5,
+                                             material='carbon steel, dry HF service (PERRY9_MAT)'),
+                              'reactor-class study minimum; standby envelope (F-blocked, Q-013)'),
+                             ('VDF_SYN', dict(vessel='VDF monomer synthesis', D_mm=150, H_mm=225, design_case_kg_d=0.15),
+                              'reactor-class study minimum; standby envelope (F-blocked, Q-013)'),
+                             ('TFE_SYN', dict(vessel='TFE monomer synthesis', D_mm=150, H_mm=225, design_case_kg_d=0.10),
+                              'reactor-class study minimum; standby envelope (F-blocked, Q-013)'),
+                             ('POLY_F', dict(vessel='fluoropolymer polymerization kettle', D_mm=150, H_mm=225,
+                                             design_case_kg_d=0.23, design_case='PVDF 0.14 + PTFE 0.09 kg/d'),
+                              'reactor-class study minimum; standby envelope (monomers 0, Q-013)')]:
+        cad(u, 'reactor', 'reactor', 150.0, design, 'standby', note)
+    cad('POWDER_RESIN', 'line_machine', 'forming', 0.0, dict(machine='powder mill / classifier line', design_case_kg_d=0.15),
+        'standby', 'A-M-199 forming class; standby envelope (fluoropolymer feed blocked)')
+    cad('FILM_CAST', 'line_machine', 'forming', 0.0, dict(machine='cast film line'), 'standby',
+        'A-M-199 forming class; standby envelope (no feed edge at Rev AC)')
 
 
 def main():

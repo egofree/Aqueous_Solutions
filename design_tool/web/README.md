@@ -23,7 +23,7 @@ npm run build                          # gate: tsc -b && vite build
 | `SchematicCanvas` | SVG schematic over graph layer views (PFD/MFD/EFD-*) |
 | `LayerFilters` | Layer view switch (pfd / mfd / efd-elec / efd-thermal / efd-ess) |
 | `SectorToggles` | Sector-row enables (PATCH `sector_enabled`) |
-| `TreeTogglePanel` | **U6** — AQS-SYS-TREE-001 4-level tree with checkboxes (indeterminate parents); root → `sector_enabled`, train → `system_enabled`, subsystem → `subsystem_enabled`, leaf → `unit_enabled`. Most-specific wins is resolved **server-side** (`store.apply_overrides`); the graph stays authority |
+| `TreeTogglePanel` | **U6** — AQS-SYS-TREE-001 4-level tree with checkboxes (indeterminate parents); root → `sector_enabled`, train → `system_enabled`, subsystem → `subsystem_enabled`, leaf → `unit_enabled`. Most-specific wins is resolved **server-side** (`store.apply_overrides`); the graph stays authority. Verified over HTTP at issue: a train off flags exactly that train's units; a unit flag beats the train flag |
 | `SiteInputs` | Crew / SITE_LAT sandbox inputs |
 | `GapPanel` | Solve status, **electrical envelope** (gen/storage/load/need/target + status badge), gaps, unclosed streams |
 | `ParamsPanel` | **U6** — drivers.json table (key/value/units/ref badge/nv badge), searchable + filterable, **read-only** |

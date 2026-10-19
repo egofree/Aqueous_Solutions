@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""CAD-M1 — TBD massing boxes for 18 present unmapped process units.
+"""CAD-M1 — TBD massing boxes for 21 present unmapped process units.
 
 Part::Feature envelopes only. Feature Names = graph unit_id.
 Dims = aliases of existing params stub/tote/digest/tank/BMED classes
-(D1B_TBD_*). No invented PE nameplates or rates.
+(D1B_TBD_*), except the three D-DOCK stores whose seed boxes read
+params.size_mm from the graph (AQS-DUTY-064 / A-M-270). No invented PE
+nameplates or rates.
 
     /usr/bin/freecadcmd d1b_massing.py
 
@@ -23,6 +25,9 @@ import FreeCAD as App
 OUT = Path(__file__).resolve().parent
 
 # In-scope unit_ids (plan WP-D1b). Logical BOUNDARY_EXPORT / LOAD_AGG / Q4_BUS excluded.
+# D-DOCK product buffers (A-M-270) joined 2026-10-19: seed boxes from the graph
+# params.size_mm (AQS-DUTY-064); graph_dims.py rebuilds each as its sized cylinder
+# D x H at the placed plan centre, so the GA follows the sizing calculation.
 D1B_UNITS = (
     "MEOH_FC",
     "MEOH_FERM",
@@ -42,6 +47,9 @@ D1B_UNITS = (
     "WS_SLURRY",
     "WS_SOLV",
     "GEO_HP_CLOSED_LOOP",
+    "FOOD_STORE",
+    "METAL_STORE",
+    "AIR_RECEIVER",
 )
 
 
@@ -136,8 +144,35 @@ def _geo_loop(doc):
          P.D1B_TBD_STUB_L, P.D1B_TBD_STUB_W, P.D1B_TBD_STUB_H)
 
 
+def _store_size(name):
+    """Graph params.size_mm for a D-DOCK store (AQS-DUTY-064); tote-class fallback
+    only if the graph is unreadable, so a sizing regression shows in the GA."""
+    try:
+        import json
+        g = json.load(open(OUT.parents[1] / "flow_graph" / "plant_flow_graph.json"))
+        n = {u["unit_id"]: u for u in g["nodes"]}[name]
+        return [float(v) for v in n["params"]["size_mm"]]
+    except Exception as exc:
+        print("  d1b_massing: %s size_mm unreadable (%s) - TOTE fallback" % (name, exc))
+        return [P.D1B_TBD_TOTE_L, P.D1B_TBD_TOTE_W, P.D1B_TBD_TOTE_H]
+
+
+def _d_dock_stores(doc):
+    """D-DOCK product buffers (A-M-270): FOOD_STORE / METAL_STORE / AIR_RECEIVER
+    staged in the north dock hall at L0, south edge east of ELEV_DOCK (clear of the
+    DOCK_DOOR_N truck lane and STAIR_SERVICE). graph_dims.py rebuilds each store as
+    its sized cylinder at the placed plan centre."""
+    z = P.Z_L0
+    x = P.DOCK_X + 3200          # east of the ELEV_DOCK shaft (x 200..2900)
+    y = P.DOCK_Y + 200           # south edge of the dock hall
+    for name in ("FOOD_STORE", "METAL_STORE", "AIR_RECEIVER"):
+        dx, dy, dz = _store_size(name)
+        _box(doc, name, x, y, z, dx, dy, dz)
+        x += dx + 200             # 200 mm staging gap between buffers
+
+
 def attach(doc):
-    """Emit all 18 D1B massing Features (idempotent replace if re-run)."""
+    """Emit all 21 D1B massing Features (idempotent replace if re-run)."""
     for name in D1B_UNITS:
         obj = doc.getObject(name)
         if obj is not None:
@@ -147,6 +182,7 @@ def attach(doc):
     _wet_basement(doc)
     _fab_reagents(doc)
     _geo_loop(doc)
+    _d_dock_stores(doc)
     print("d1b_massing: attached %d TBD Part::Feature units (SCALE_M=%s)"
           % (len(D1B_UNITS), P.SCALE_M))
 

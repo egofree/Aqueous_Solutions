@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="369.2,555.2 369.2,470.4 560.0,360.2 40.0,60.0 40.0,105.7" fill="none" stroke="black" stroke-width="3"/>
-<text x="375.2" y="508.8">Z +1300</text>
-<text x="470.6" y="411.3">X +3375</text>
-<text x="306.0" y="206.1">Y +9200</text>
-<text x="46.0" y="78.8">Z -700</text>
-<circle cx="369.2" cy="555.2" r="5" fill="black"/><text x="377.2" y="569.2">EVAP_ACID_VS</text>
-<circle cx="40.0" cy="105.7" r="5" fill="none" stroke="black"/><text x="48.0" y="119.7">ALK_SCRUBBER</text>
+<polyline points="379.1,545.2 379.1,464.7 560.0,360.2 40.0,60.0 40.0,103.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="385.1" y="500.9">Z +1300</text>
+<text x="475.5" y="408.5">X +3375</text>
+<text x="306.0" y="206.1">Y +9700</text>
+<text x="46.0" y="77.7">Z -700</text>
+<circle cx="379.1" cy="545.2" r="5" fill="black"/><text x="387.1" y="559.2">EVAP_ACID_VS</text>
+<circle cx="40.0" cy="103.3" r="5" fill="none" stroke="black"/><text x="48.0" y="117.3">ALK_SCRUBBER</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-VS-OFF</text>
 <text x="20" y="614">DN15  class F1  FRP vinyl ester</text>
 <text x="20" y="628">EVAP_ACID_VS -> ALK_SCRUBBER</text>
-<text x="20" y="642">pipe 14.51 m in 5 pieces; cut 1289 3354 6000 3179 689 mm</text>
+<text x="20" y="642">pipe 15.01 m in 5 pieces; cut 1289 3354 6000 3679 689 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 butt-and-strap joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

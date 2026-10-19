@@ -1,22 +1,22 @@
 {
- "units": 23,
- "moves": 12,
- "adjacency_before_m": 702.3,
- "adjacency_after_m": 519.0,
+ "units": 18,
+ "moves": 18,
+ "adjacency_before_m": 320.7,
+ "adjacency_after_m": 142.4,
  "moves_list": [
   {
    "unit": "CRYO_H2",
    "from_clash_with": "REGROUP",
    "dx_mm": -12000,
-   "dy_mm": 4000,
-   "gain_m": 47.8
+   "dy_mm": 8000,
+   "gain_m": 42.3
   },
   {
    "unit": "CRYO_CO2",
    "from_clash_with": "REGROUP",
    "dx_mm": -12000,
-   "dy_mm": 2000,
-   "gain_m": 8.2
+   "dy_mm": 7500,
+   "gain_m": 23.1
   },
   {
    "unit": "PROD_C5_C10",
@@ -26,67 +26,109 @@
    "gain_m": 24.0
   },
   {
-   "unit": "AFTERBURNER",
+   "unit": "CRYO_O2",
    "from_clash_with": "REGROUP",
-   "dx_mm": -8500,
-   "dy_mm": 8500,
-   "gain_m": 22.5
+   "dx_mm": -500,
+   "dy_mm": 1500,
+   "gain_m": 3.6
+  },
+  {
+   "unit": "CRYO_N2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -2500,
+   "dy_mm": 1500,
+   "gain_m": 5.6
   },
   {
    "unit": "BMED_UPW_POLISH",
    "from_clash_with": "REGROUP",
-   "dx_mm": -2500,
-   "dy_mm": 9000,
-   "gain_m": 3.2
+   "dx_mm": 2000,
+   "dy_mm": 11500,
+   "gain_m": 13.5
   },
   {
-   "unit": "H2_DRYER",
+   "unit": "CRYO_ASU",
    "from_clash_with": "REGROUP",
-   "dx_mm": -9000,
-   "dy_mm": 5000,
-   "gain_m": 17.5
+   "dx_mm": -2000,
+   "dy_mm": 1000,
+   "gain_m": 1.0
   },
   {
-   "unit": "ACID_POLISH_SCRUB",
+   "unit": "H2O_ELYZ",
    "from_clash_with": "REGROUP",
-   "dx_mm": 3000,
-   "dy_mm": -500,
-   "gain_m": 2.6
-  },
-  {
-   "unit": "BAGHOUSE",
-   "from_clash_with": "REGROUP",
-   "dx_mm": 2500,
-   "dy_mm": -3000,
-   "gain_m": 7.3
-  },
-  {
-   "unit": "CRYO_O2",
-   "from_clash_with": "REGROUP",
-   "dx_mm": 0,
-   "dy_mm": 3000,
-   "gain_m": 3.0
+   "dx_mm": -6500,
+   "dy_mm": 1000,
+   "gain_m": 5.8
   },
   {
    "unit": "CRYO_H2",
    "from_clash_with": "REGROUP",
    "dx_mm": -7500,
-   "dy_mm": 3500,
-   "gain_m": 25.4
+   "dy_mm": -500,
+   "gain_m": 15.0
+  },
+  {
+   "unit": "CRYO_CO2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -7500,
+   "dy_mm": 0,
+   "gain_m": 7.5
+  },
+  {
+   "unit": "CRYO_O2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -4000,
+   "dy_mm": 2500,
+   "gain_m": 10.5
+  },
+  {
+   "unit": "H2O_ELYZ",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -8500,
+   "dy_mm": 5500,
+   "gain_m": 1.3
   },
   {
    "unit": "PROD_C5_C10",
    "from_clash_with": "REGROUP",
    "dx_mm": -3000,
-   "dy_mm": 1500,
-   "gain_m": 4.5
+   "dy_mm": 0,
+   "gain_m": 3.0
   },
   {
-   "unit": "H2_DRYER",
+   "unit": "CRYO_O2",
    "from_clash_with": "REGROUP",
-   "dx_mm": -3000,
-   "dy_mm": -500,
-   "gain_m": 3.7
+   "dx_mm": -7500,
+   "dy_mm": 0,
+   "gain_m": 7.5
+  },
+  {
+   "unit": "CRYO_H2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": 0,
+   "dy_mm": 2000,
+   "gain_m": 3.1
+  },
+  {
+   "unit": "CRYO_ASU",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -9000,
+   "dy_mm": -1000,
+   "gain_m": 8.0
+  },
+  {
+   "unit": "CRYO_N2",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -11000,
+   "dy_mm": 0,
+   "gain_m": 7.0
+  },
+  {
+   "unit": "CRYO_AHU",
+   "from_clash_with": "REGROUP",
+   "dx_mm": -11500,
+   "dy_mm": 0,
+   "gain_m": 10.8
   }
  ]
 }

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,365.6 40.0,236.7 346.0,60.0 560.0,183.6 560.0,190.1" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="297.2">Z +5950</text>
-<text x="199.0" y="144.3">X +16300</text>
-<text x="459.0" y="117.8">Y -11400</text>
-<text x="566.0" y="182.8">Z -300</text>
-<circle cx="40.0" cy="365.6" r="5" fill="black"/><text x="48.0" y="379.6">PROD_C5_C10</text>
-<circle cx="560.0" cy="190.1" r="5" fill="none" stroke="black"/><text x="568.0" y="204.1">NORTH_DOCK</text>
+<polyline points="40.0,377.7 40.0,243.6 358.0,60.0 560.0,176.6 560.0,183.4" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="306.7">Z +5950</text>
+<text x="205.0" y="147.8">X +16300</text>
+<text x="465.0" y="114.3">Y -10350</text>
+<text x="566.0" y="176.0">Z -300</text>
+<circle cx="40.0" cy="377.7" r="5" fill="black"/><text x="48.0" y="391.7">PROD_C5_C10</text>
+<circle cx="560.0" cy="183.4" r="5" fill="none" stroke="black"/><text x="568.0" y="197.4">NORTH_DOCK</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-C5-SHIP</text>
 <text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">PROD_C5_C10 -> NORTH_DOCK</text>
-<text x="20" y="642">pipe 33.89 m in 7 pieces; cut 5939 6000 6000 4279 6000 5379 289 mm</text>
+<text x="20" y="642">pipe 32.84 m in 7 pieces; cut 5939 6000 6000 4279 6000 4329 289 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

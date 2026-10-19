@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
-<polyline points="40.0,133.1 40.0,115.8 136.6,60.0 560.0,304.4 560.0,368.9" fill="none" stroke="black" stroke-width="3"/>
-<text x="46.0" y="120.5">Z +700</text>
-<text x="94.3" y="83.9">X +4500</text>
-<text x="354.3" y="178.2">Y -19722</text>
-<text x="566.0" y="332.7">Z -2600</text>
-<circle cx="40.0" cy="133.1" r="5" fill="black"/><text x="48.0" y="147.1">H2_DRYER</text>
-<circle cx="560.0" cy="368.9" r="5" fill="none" stroke="black"/><text x="568.0" y="382.9">VCD_TRAIN</text>
+<polyline points="293.0,87.3 293.0,60.0 40.0,206.1 512.3,478.7 512.3,580.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="299.0" y="69.6">Z +700</text>
+<text x="172.5" y="129.0">X -7500</text>
+<text x="282.1" y="338.4">Y -14000</text>
+<text x="518.3" y="525.4">Z -2600</text>
+<circle cx="293.0" cy="87.3" r="5" fill="black"/><text x="301.0" y="101.3">H2_DRYER</text>
+<circle cx="512.3" cy="580.0" r="5" fill="none" stroke="black"/><text x="520.3" y="594.0">VCD_TRAIN</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-H2P-H2O</text>
 <text x="20" y="614">DN15  class P5  HDPE PE4710 DR 11 (ASTM D3035)</text>
 <text x="20" y="628">H2_DRYER -> VCD_TRAIN</text>
-<text x="20" y="642">pipe 27.46 m in 7 pieces; cut 689 4479 6000 6000 6000 1701 2589 mm</text>
+<text x="20" y="642">pipe 24.74 m in 7 pieces; cut 689 6000 1479 6000 6000 1979 2589 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

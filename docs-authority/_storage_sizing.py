@@ -34,7 +34,9 @@ B = {'FAB_UPW_TANK': ('FAB.wet-reagent-train.bench.FAB_UPW_TANK', 'UPW buffer to
      'HOPPER': ('OIL.pyro-fractionation-train.pyro-frac.HOPPER', 'shredded feed, 1 d (bulk density)', 'S'),
      'FOOD_STORE': ('FARM.grow-bed-train.FOOD_STORE', 'D-DOCK food buffer: fresh harvest pass-through + X-RED-08 80 d dry reserve (A-M-270)', 'S'),
      'METAL_STORE': ('FOUNDRY.form-train.METAL_STORE', 'D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270)', 'S'),
-     'AIR_RECEIVER': ('CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER', 'D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270)', 'G')}
+     'AIR_RECEIVER': ('CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER', 'D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270)', 'G'),
+     'PROD_O2': ('CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2', 'D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278)', 'G'),
+     'PROD_MEOH': ('CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH', 'D-DOCK methanol product store, 14 d dispatch campaign (A-M-278)', 'L')}
 def qin(n):
     p = n.get('params') or {}; m = re.search(r'In ([\d.]+) kg/d', p.get('duty') or '')
     return max((p.get('design_capacity_kg_d') or {}).get('value') or 0, float(m[1]) if m else 0)
@@ -44,13 +46,16 @@ EV = {e['stream_id']: float(e['rate']['value'] or 0) for e in g['edges'] if e['p
 #   FOOD_STORE: the X-RED-08 dry-matter draw (crew food S14 fresh x 6 % DM; the 80 d hold is the crop-failure reserve)
 #   METAL_STORE: the foundry product dispatch (sum of the STOCK_TO_* draws from the store)
 #   AIR_RECEIVER: the ASU/vent margin (IA-N2-VENT, the cold-box N2 surplus over header draws) banked for one draw cycle
+#   PROD_O2 / PROD_MEOH (A-M-278): the shipped-product dispatch edges out of the header / day store to NORTH_DOCK
 GRAPH_Q = {
     'FOOD_STORE': round(EV.get('S14', 0.0)*0.06, 4),
     'METAL_STORE': round(sum(EV[k] for k in ('STOCK_TO_MFG', 'STOCK_TO_FAB', 'STOCK_TO_WIRE_DRAW') if k in EV), 4),
     'AIR_RECEIVER': round(EV.get('IA-N2-VENT', 0.0), 4),
+    'PROD_O2': round(EV.get('IA-O2-PROD', 0.0), 4),
+    'PROD_MEOH': round(EV.get('IA-MEOH-PROD', 0.0), 4),
 }
-GAS_STEEL = {'AIR_RECEIVER'}   # compressed-gas service: steel at the working pressure (not hydrostatic PE)
-FLAM = {'MEOH_TANK', 'WS_SOLV', 'PROD_C5_C10', 'PROD_C11_C18', 'PROD_C19_C28', 'PROD_C29'}   # flammable / combustible: steel per NFPA 30 ch. 21
+GAS_STEEL = {'AIR_RECEIVER', 'PROD_O2'}   # compressed-gas service: steel at the working pressure (not hydrostatic PE)
+FLAM = {'MEOH_TANK', 'WS_SOLV', 'PROD_C5_C10', 'PROD_C11_C18', 'PROD_C19_C28', 'PROD_C29', 'PROD_MEOH'}   # flammable / combustible: steel per NFPA 30 ch. 21
 rows = []
 for u, (path, svc, ph) in B.items():
     n = N[u]; Q = GRAPH_Q.get(u, 0.0) or qin(n); td = DR.val(_d, path + '.hold_d'); rho = DR.val(_d, path + '.rho_kg_m3'); V = Q*td/rho; Vn = max(V/FILL, 0.02)
@@ -84,6 +89,6 @@ Unit task 02 for {len(rows)} storage-class units. Method: working volume = Q x h
 for r in rows:
     L.append(f"| {r['unit']} | {r['service']} | {r['Q_kg_d']} | {r['hold_d']} | {r['rho']} | {r['V_work_m3']} | {r['V_nom_m3']} | {r['D_mm']} | {r['H_mm']} | {r['material']} | {r['wall_mm']} | {' x '.join(map(str, r['envelope_mm'])) if r['envelope_mm'] else '—'} | {'yes' if r['fits_envelope'] else 'no' if r['envelope_mm'] else 'no envelope'} |")
 bad = [r['unit'] for r in rows if r['envelope_mm'] and not r['fits_envelope']]
-L.append(f"\nResult. {sum(r['fits_envelope'] for r in rows)} of {len(rows)} fit their graph envelope. Over envelope: {', '.join(bad) or 'none'}. Units without an envelope get the sized vessel as their envelope at the next GA build. Not covered here (sized elsewhere or no flow): CATCH_TANK and ROOF_TANK (`flow_graph/param/water_tower.py`), PROD_MEOH and PROD_O2 (no design flow on the graph), LIGNO_PRE (a pretreatment step, sized with its reactor).\n")
+L.append(f"\nResult. {sum(r['fits_envelope'] for r in rows)} of {len(rows)} fit their graph envelope. Over envelope: {', '.join(bad) or 'none'}. Units without an envelope get the sized vessel as their envelope at the next GA build. Not covered here (sized elsewhere or no flow): CATCH_TANK and ROOF_TANK (`flow_graph/param/water_tower.py`), LIGNO_PRE (a pretreatment step, sized with its reactor). PROD_O2 and PROD_MEOH joined as A-M-278 shipped-product rows (2026-10-19); the PROD_O2 wall is the thin-wall equivalent-vessel number - the 200 bar seamless cylinder bank governs (CRYO_O2 storage_mode basis).\n")
 open('docs-authority/sizing/STORAGE_HOLDUP.md', 'w').write('\n'.join(L))
 print(len(rows), bad)

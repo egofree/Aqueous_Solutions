@@ -16,6 +16,7 @@ plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).
 | B+ | Catalogue pointer | AQS-SEC-001 Rev A issued (`SECTOR_DEFINITIONS.md`); §11.1 item 3 closed by catalogue | 2026-10-01 |
 | C | Colony MVS + all ESS | MVS = self-sustaining colony (manufacture, habit, self-copy, scale); all three ESS peers required; disabled ESS → unreclaimed-resource / incomplete-closure gaps | 2026-10-01 |
 | D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); Odysseus out of runtime; stack re-eval `planning/STACK_REEVAL_2026-10-01.md` | 2026-10-01 |
+| E | Unified-engine wiring | Working UI on the unified parametric system: read-only `/system-tree`, `/params`, `/regen-status` endpoints; ParamsPanel / TreeTogglePanel / RegenStatusBadge; four-level sandbox toggles (sector/system/subsystem/unit) resolving most-specific-wins server-side; regen receipt as the provenance the badge reads (commits eedb79f, d44e7de, 5024743) | 2026-10-19 |
 
 Licence: **CERN-OHL-S-2.0** for CAD, MVS model, authority docs, design-tool UI, and public/cloud surfaces. Full freedom of information — no separate UI/cloud licence.
 
@@ -450,6 +451,9 @@ FastAPI surface (informative). All paths under `/api/v1`.
 | `POST` | `/sandbox/{id}/solve` | Run mass-energy + electrical match + surplus + gaps |
 | `GET` | `/sandbox/{id}/flags` | Bottlenecks, redundant paths, gaps, unclosed streams, code flags |
 | `POST` | `/sandbox/{id}/export` | Build design pack (§8); optional module list |
+| `GET` | `/system-tree` | **Rev E** — AQS-SYS-TREE-001 nodes with resolved unit sets + kW aggregates (read-only) |
+| `GET` | `/params` | **Rev E** — `drivers.json` listing with citations and sha (read-only) |
+| `GET` | `/regen-status` | **Rev E** — derived-artefact staleness (`_rev_stamp.py --check-only`) + last regen receipt (read-only) |
 
 ### 7.1 Solve request / response (sketch)
 
@@ -620,3 +624,19 @@ a phase dependency.
 | SECTOR_DEFINITIONS.md | AQS-SEC-001 | sector_id → Sector Definition catalogue |
 | MeOH_TRAIN.md | AQS-MeOH-001 | MeOH ESS / process peer |
 | Local planning artefacts (not published): MVS_GAP / SECTOR_CAPACITY / LEGACY_PROFILE audits | AQS-MVS-GAP-001 / AQS-AUD-001 / AQS-GAP-001 | Planning audits; not CAD authority |
+
+---
+
+## 13. Unified-engine implementation status (Rev E, 2026-10-19)
+
+Issued, not sketch. The three §7 Rev E endpoints are implemented in
+`design_tool/aqs_design_tool/api/app.py`; the web panels (ParamsPanel, TreeTogglePanel,
+RegenStatusBadge) in `design_tool/web/src/components/`. Sandbox toggles now exist at four
+levels — `sector_enabled`, `system_enabled`, `subsystem_enabled`, `unit_enabled` — resolved
+most-specific-wins server-side (`store.apply_overrides`) against
+`flow_graph/system_tree.yaml` (AQS-SYS-TREE-001: 19 sectors / 30 trains / 178 leaves).
+`/regen-status` reads `flow_graph/derived/_regen_receipt.json`, written by
+`python3 -m flow_graph.param.regen`, and checks staleness through the same evaluator
+(`--check-only`) so a GET stays side-effect free. Panel and precedence details:
+`design_tool/README.md` and `design_tool/web/README.md`. Implementation commits:
+eedb79f (tree), d44e7de (regen), 5024743 (UI).

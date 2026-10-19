@@ -1,0 +1,6 @@
+item,description,qty,material,basis
+1,"Water tank and mould zone, 2 strands",1,SS 304 casing; Cu moulds,AQS-DUTY-072 section 3
+2,"Water-cooled copper moulds, 2 strands (Fe billet 10.0 + Zn ingot 1.0 kg/d)",2,"Cu, water-cooled",water-cooled copper (AQS-SIZE-FOUNDRY) (AQS-SIZE-FOUNDRY)
+3,Withdrawal/straightener roll stand,1,"CS frame, tool-steel rolls",AQS-DUTY-072 section 3
+4,Runout table 650 mm with legs,1,CS rollers,AQS-DUTY-072 section 3
+5,Torch shear at the runout end,1,CS gantry,billet cut lengths

@@ -1,0 +1,8 @@
+item,description,qty,material,basis
+1,"Shell DN150 x 225 mm, 3.8 mm wall, 250.0 C / 5.0 MPa design",1,"SA-240 316L, welded (ASME IX)",AQS-DUTY-073 section 2; wall ASME VIII-1 UG-27 class
+2,Bolted flat lid with gasket and mixer gland,1,"SA-240 316L, welded (ASME IX)",AQS-DUTY-073 section 2
+3,Top-entry agitator with variable-speed drive,1,"316L shaft, PTFE gland","AQS-DUTY-073 section 2 (oligomerization, study)"
+4,Feed and product nozzles DN25,2,"SA-240 316L, welded (ASME IX)",IA-C5-POLY in; resin out to PELLET
+5,"Heater jacket band, 5 W with thermostat",1,silicone / mica,AQS-DUTY-073 section 2; 0.0018 W feed heating
+6,Relief: rupture disc DN25 to the vent header,1,316L / graphite,"blocked-outlet case, API 520 class"
+7,Three legs 40 x 40 x 600 mm with foot plates,3,"SA-240 316L, welded (ASME IX)",study

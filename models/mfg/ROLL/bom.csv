@@ -1,0 +1,5 @@
+item,description,qty,material,basis
+1,"Two-high housing, rolls stacked at 310 mm centres",1,CS weldment,AQS-DUTY-072 section 3; 13.0 kg/d
+2,Work rolls 300 dia x 640 mm,2,forged tool steel,AQS-DUTY-072 section 3
+3,Entry and exit roller tables 400 mm,2,CS rollers,AQS-DUTY-072 section 3
+4,Geared drive with motor,1,"geared motor, IEC frame",0.416 kWh/d (A-M-177 rolling class)

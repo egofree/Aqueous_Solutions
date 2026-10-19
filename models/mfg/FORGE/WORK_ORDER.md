@@ -1,0 +1,6 @@
+# Work order FORGE
+
+Authority: AQS-DUTY-072 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+
+Envelope-only placeholder (1500 x 800 x 1500 mm). no edges at Rev AC; open-die work is campaign-scale.
+This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/FORGE/export/forge.step for the reserved volume only.

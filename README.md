@@ -14,47 +14,52 @@ One leach tank. Hydrochloric acid and sodium chlorate dissolve the feed at 70–
 
 Spent brine is raised to pH 9. An anion-exchange stack concentrates borate, phosphate, sulfate, and fluoride. The cuts are after the stack. Diluate goes to a potassium chloride crystallizer, then to bipolar-membrane electrodialysis, which makes the hydrochloric acid and the sodium hydroxide. Chlorine from the anodes and the pots is absorbed to sodium chlorate and returned with the acid. Aqueous cells do not make aluminum, magnesium, calcium, lithium, titanium, silicon, or the rare earths.
 
+## The spine
+
+The plant is one parametric system, not a folder of documents that disagree.
+
+- `flow_graph/plant_flow_graph.json` (AQS-FLOW-GRAPH-001, Rev AC) is the sole topology authority: 178 nodes, 493 edges, solved rates and duties on the edges. Every mass-closing unit balances to ≤ 1e-4 kg/d (43 failing units at the Rev AC pivot, 0 now; suite 43/43).
+- `flow_graph/param/drivers.json` (AQS-PAR-001) holds every independent number — 700-plus keys under dotted tree paths, each with units and a basis: a published reference, a register id, or a named owner ruling. One number, one door. The loader refuses a value with no basis.
+- `flow_graph/system_tree.yaml` (AQS-SYS-TREE-001) is the decomposition: 19 sectors, 30 trains, 249 nodes, 178 unit leaves. Sandboxing resolves through it at four levels (sector / system / subsystem / unit), most specific wins.
+- `python3 -m flow_graph.param.regen` is the one command. 44 stages in dependency order, graph convergence by successive substitution, then every derived document against the final graph sha: duties, sizing sheets, ISO sheets, line lists, P&IDs, views, load list, one-line, workbook, and the task plan. It writes a receipt (`flow_graph/derived/_regen_receipt.json`) and the staleness gates in `docs-authority/_rev_stamp.py` turn red if any of the ~876 derived files lags the graph.
+- `docs-authority/MODEL_WORKBOOK.xlsx` is the generated 24-sheet view of the same system: drivers with citations, the tree with rolled-up kW, per-sector unit and stream sheets, the electrical chain, and the heat ledger.
+- `docs-authority/TASK_PLAN.md` (AQS-PLAN-007) is the work list: 2871 tasks with done-when checks; a task is checked only where a cited file proves it (evidence pass 2026-10-19, `docs-authority/notes/2026-10-19-evidence-pass.md`).
+
+Owner rulings that fixed the blocking decisions (D-AIR, D-O2, D-FARM, D-GEO_ORC, D-PV, D-DOCK) are recorded in `notes/first_principles_audit_2026-10-17.md`: the electrolyzer is the oxygen source with the grow bed as the diverse N+1 pair; the dock is the inter-plant trade boundary with a reported trade statement, not a closure constraint; PV is derived from the bounding load at 2.0× oversize and the roof footprint derives from it; heat is re-used before it is rejected.
+
 ## Layout
 
 ```
-docs-authority/     duty notes, building stack, CAD protocol, decisions
-flow_graph/         plant graph, schema, SVG views, matplotlib exporters
-media/pfd/          rendered process sheets
-media/              animation stills and plant_phase_d.mp4
+flow_graph/         the graph, system tree, drivers, solver, regen, SVG views
+docs-authority/     authority documents, generated duties/sheets, MODEL_WORKBOOK,
+                    TASK_PLAN, notes/ (rulings and change records)
+design_tool/        FastAPI + React design UI on the unified engine
 models/freecad/     FreeCAD builders. SCALE_M = 1.0 is the build size
-models/openscad/    parametric solids
-models/export/      STL exports
+models/mfg/         CadQuery unit builders (foundry, polymers, reactors, ...) with
+                    per-unit export/ STEP, STL, BOM
+cad/                STL envelopes and study solids
 iso/                ISO sheets
-design_tool/        graph UI source
+media/pfd/          rendered process sheets
 tables/             BOM and material lists
+notes/              audit notes and owner rulings
 ```
 
-The process sheets in `media/pfd/` are the current drawing set. `master_disassembly_pfd.png` is the equipment graph of the disassembly line. The wet line, solids line, oil line, polish bank, and completion sheet are the detail views. Generators live in `flow_graph/exporters/matplotlib/`. Duty notes that are not part of a drawing live in `docs-authority/notes/`.
+Graph SVG views under `flow_graph/views/` are the topology export. They are not a substitute for the equipment sheets. The process sheets in `media/pfd/` are the current disassembly-line drawing set; generators live in `flow_graph/exporters/matplotlib/`. Unit P&IDs are generated (AQS-PID-001-<unit>, 174 sheets, `docs-authority/_pid_sheets.py`) and registered in the drawing register.
 
-Graph SVG views under `flow_graph/views/` are the topology export. They are not a substitute for the equipment sheets.
+## Design tool
+
+`design_tool/` serves the graph read-only: `GET /api/v1/system-tree`, `GET /api/v1/params`, `GET /api/v1/regen-status` (staleness via the same evaluator regen `--check` runs, so a GET never mutates authority docs). The web UI (`design_tool/web/`) renders the tree with four-level toggles, the drivers table with citation badges, and a regen staleness badge. Nothing in the UI writes the graph, the drivers, or the tree; the write path is edit → `python3 -m flow_graph.param.regen`.
 
 ## Rebuild
 
-FreeCAD 1.0 and OpenSCAD are required for the solids. This tree does not vendor those binaries.
-
 ```bash
-cd models && bash REBUILD.sh
+python3 -m flow_graph.param.regen          # graph + every derived document
+cd models && bash REBUILD.sh               # solids
 cd models/freecad && /usr/bin/freecadcmd build_plant.py
 ```
 
-`SCALE_M = 1.0` in `models/freecad/params.py` is the manufacturing size. `2.0` is a review scale only. Level datums and the building stack are in `docs-authority/`. See `docs-authority/REBUILD.md` and `docs-authority/BUILD_3D_FROM_FLOW.md`.
-
-Process sheets:
-
-```bash
-cd flow_graph/exporters/matplotlib
-python3 master_disassembly_pfd.py
-python3 wet_line_factory_pfd.py
-python3 glass_ceramic_pfd.py
-python3 oil_line_pfd.py
-python3 completion_pfd.py
-```
+FreeCAD 1.0 and OpenSCAD are required for the solids; CadQuery for the `models/mfg/` unit builders. This tree does not vendor those binaries. `SCALE_M = 1.0` in `models/freecad/params.py` is the manufacturing size. `2.0` is a review scale only. Level datums and the building stack are in `docs-authority/`. See `docs-authority/REBUILD.md` and `docs-authority/BUILD_3D_FROM_FLOW.md`.
 
 ## Authority
 
-`docs-authority/AUTHORITY.md` is the lock list. The typed plant graph in `flow_graph/plant_flow_graph.json` is the topology source. Equipment duties written on the process sheets are the drawing source for the disassembly line. Where a sheet and an older note disagree, the sheet is the later drawing.
+`docs-authority/AUTHORITY.md` is the lock list. The typed plant graph in `flow_graph/plant_flow_graph.json` is the topology source. Equipment duties written on the process sheets are the drawing source for the disassembly line. Where a sheet and an older note disagree, the sheet is the later drawing. Where a document and the graph disagree, the graph wins and the document is regenerated.

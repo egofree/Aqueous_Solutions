@@ -2,8 +2,8 @@
   "schema": "aqs-unit-freecad-map-1.0",
   "licence": "CERN-OHL-S-2.0",
   "doc_id": "AQS-UNIT-FREECAD-MAP-001",
-  "revision": "C",
-  "date": "2026-10-07",
+  "revision": "D",
+  "date": "2026-10-19",
   "graph_doc_id": "AQS-FLOW-GRAPH-001",
   "graph_revision": "B",
   "freecad_binary": "/usr/bin/freecadcmd",
@@ -105,6 +105,18 @@
         "Gas"
       ],
       "notes": "Label MASSING_ALK_SCRUBBER after import_mfg"
+    },
+    {
+      "unit_id": "AL_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "cell",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/AL_POT/export/al_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/AL_POT.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "BACKUP_GEN",
@@ -256,6 +268,18 @@
       "notes": "presence=placeholder but Feature exists in oil_line; massing stand-in opted in"
     },
     {
+      "unit_id": "CAST_LINE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "caster",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CAST_LINE/export/cast_line.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CAST_LINE.stl study envelope [1500, 800, 1500]"
+    },
+    {
       "unit_id": "CATCH_TANK",
       "sector_id": "WTR",
       "presence": "present",
@@ -272,6 +296,18 @@
         "Cores_Shafts"
       ],
       "notes": ""
+    },
+    {
+      "unit_id": "CA_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "cell",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CA_POT/export/ca_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CA_POT.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "COLD_MILL",
@@ -292,6 +328,18 @@
       "notes": "group via plant_groups MET_/COLD_MILL \u2192 Process/Wet"
     },
     {
+      "unit_id": "COMB_HEAT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/COMB_HEAT/export/comb_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/COMB_HEAT.stl study envelope [1000, 1000, 1500]"
+    },
+    {
       "unit_id": "CONTINUOUS_RECYCLE",
       "sector_id": "WET",
       "presence": "placeholder",
@@ -302,6 +350,18 @@
       "builder": null,
       "group_path": [],
       "notes": "presence=placeholder; no Feature"
+    },
+    {
+      "unit_id": "CONT_CAST",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "caster",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CONT_CAST/export/cont_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CONT_CAST.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "CRU",
@@ -466,6 +526,30 @@
       "notes": ""
     },
     {
+      "unit_id": "CR_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "cell",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CR_CELL/export/cr_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CR_CELL.stl study envelope [800, 800, 1600]"
+    },
+    {
+      "unit_id": "DRAW",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "mill",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/DRAW/export/draw.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/DRAW.stl study envelope [1500, 800, 1500]"
+    },
+    {
       "unit_id": "ELECTRODE_COAT",
       "sector_id": "MFG",
       "presence": "placeholder",
@@ -532,6 +616,18 @@
       "notes": "secondary EW_9_CEM; last-stage proxy"
     },
     {
+      "unit_id": "EXTRUDE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "press",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/EXTRUDE/export/extrude.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/EXTRUDE.stl study envelope [1500, 800, 1500]"
+    },
+    {
       "unit_id": "FAB_UPW_TANK",
       "sector_id": "FAB",
       "presence": "present",
@@ -548,6 +644,18 @@
         "Wet"
       ],
       "notes": "WP-D1b TBD tank = P_TANK_* alias in FAB envelope; \u2260 ROOF/CATCH"
+    },
+    {
+      "unit_id": "FILM_CAST",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "former",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/FILM_CAST/export/film_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FILM_CAST.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "FLOAT_SINK",
@@ -585,6 +693,30 @@
         "Cryo"
       ],
       "notes": "Rev C (graph Rev K): FLUE_CAP is the afterburner flue KO (VENT_SCRUB_EQUIPMENT s2.5). Feature name, not a unit alias: FLUE_CAP is not a graph unit_id."
+    },
+    {
+      "unit_id": "FLUX_PREP",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "prep",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: bench_prep (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FLUX_PREP/export/flux_prep.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FLUX_PREP.stl study envelope [800, 600, 1200]"
+    },
+    {
+      "unit_id": "FORGE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "press",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FORGE/export/forge.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FORGE.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "FUEL_CELL",
@@ -894,6 +1026,18 @@
       "notes": "alias: graph HDR_UPW \u2192 cardinal HDR_UPW_* Features"
     },
     {
+      "unit_id": "HF_GEN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/HF_GEN/export/hf_gen.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/HF_GEN.stl study envelope [600, 600, 1200]"
+    },
+    {
       "unit_id": "HOPPER",
       "sector_id": "OIL",
       "presence": "present",
@@ -928,6 +1072,30 @@
         "Cores_Shafts"
       ],
       "notes": ""
+    },
+    {
+      "unit_id": "IND_MELT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/IND_MELT/export/ind_melt.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/IND_MELT.stl study envelope [1000, 1000, 1500]"
+    },
+    {
+      "unit_id": "INV_CAST",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "caster",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/INV_CAST/export/inv_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/INV_CAST.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "LEACH_CSTR_1",
@@ -1130,6 +1298,30 @@
       "notes": "secondaries MFG_CRIB, MFG_FLOOR"
     },
     {
+      "unit_id": "MG_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "cell",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/MG_POT/export/mg_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/MG_POT.stl study envelope [800, 800, 1600]"
+    },
+    {
+      "unit_id": "MO_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "cell",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/MO_CELL/export/mo_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/MO_CELL.stl study envelope [800, 800, 1600]"
+    },
+    {
       "unit_id": "NORTH_DOCK",
       "sector_id": "DOCK",
       "presence": "present",
@@ -1222,6 +1414,18 @@
       "notes": "alias: graph OIL_PYRO \u2192 Feature INDUCTION_PYROLYZER; secondary QUENCH"
     },
     {
+      "unit_id": "PELLET",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "former",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/PELLET/export/pellet.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/PELLET.stl study envelope [1500, 800, 1500]"
+    },
+    {
       "unit_id": "POLISH_BANK",
       "sector_id": "WET",
       "presence": "present",
@@ -1244,6 +1448,66 @@
         "Wet"
       ],
       "notes": "bank massing = PK_* cells (+ PK_4/5 CEM boxes); no Feature named POLISH_BANK; P_Al/P_Mg/P_Ca precip tanks adjacent"
+    },
+    {
+      "unit_id": "POLY_COND",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_COND/export/poly_cond.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_COND.stl study envelope [600, 600, 1200]"
+    },
+    {
+      "unit_id": "POLY_F",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_F/export/poly_f.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_F.stl study envelope [600, 600, 1200]"
+    },
+    {
+      "unit_id": "POLY_OLEFIN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_OLEFIN/export/poly_olefin.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_OLEFIN.stl study envelope [600, 600, 1200]"
+    },
+    {
+      "unit_id": "POLY_STOCK",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: store_bin (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_STOCK/export/poly_stock.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_STOCK.stl study envelope [600, 400, 800]"
+    },
+    {
+      "unit_id": "POWDER_RESIN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "former",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POWDER_RESIN/export/powder_resin.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POWDER_RESIN.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "PV_ARRAY",
@@ -1322,6 +1586,42 @@
       "notes": "presence=placeholder; no Feature"
     },
     {
+      "unit_id": "RES_HEAT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/RES_HEAT/export/res_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/RES_HEAT.stl study envelope [1000, 1000, 1500]"
+    },
+    {
+      "unit_id": "RF_HEAT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/RF_HEAT/export/rf_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/RF_HEAT.stl study envelope [1000, 1000, 1500]"
+    },
+    {
+      "unit_id": "ROLL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "mill",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/ROLL/export/roll.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/ROLL.stl study envelope [1500, 800, 1500]"
+    },
+    {
       "unit_id": "ROOF_TANK",
       "sector_id": "WTR",
       "presence": "present",
@@ -1376,6 +1676,54 @@
       "notes": ""
     },
     {
+      "unit_id": "SHELL_BREAK",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "separator",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BREAK/export/shell_break.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BREAK.stl study envelope [1500, 800, 1500]"
+    },
+    {
+      "unit_id": "SHELL_BUILD",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "coater",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BUILD/export/shell_build.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BUILD.stl study envelope [1500, 800, 1500]"
+    },
+    {
+      "unit_id": "SHELL_BURNOUT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BURNOUT/export/shell_burnout.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BURNOUT.stl study envelope [1000, 1000, 1500]"
+    },
+    {
+      "unit_id": "SINTER",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SINTER/export/sinter.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SINTER.stl study envelope [1000, 1000, 1500]"
+    },
+    {
       "unit_id": "SOLAR_PV_CELL",
       "sector_id": "FAB",
       "presence": "placeholder",
@@ -1405,6 +1753,18 @@
       "notes": ""
     },
     {
+      "unit_id": "STOCK_OUT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: store_rack (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/STOCK_OUT/export/stock_out.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/STOCK_OUT.stl study envelope [1200, 800, 1500]"
+    },
+    {
       "unit_id": "TERRACE_IRRIG",
       "sector_id": "TRR",
       "presence": "present",
@@ -1423,6 +1783,54 @@
       "notes": "alias: graph TERRACE_IRRIG \u2192 TERRACE_IRRIG_HDR_S; related GH_IRRIG_HDR"
     },
     {
+      "unit_id": "TFE_SYN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/TFE_SYN/export/tfe_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/TFE_SYN.stl study envelope [600, 600, 1200]"
+    },
+    {
+      "unit_id": "TI_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "cell",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/TI_CELL/export/ti_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/TI_CELL.stl study envelope [800, 800, 1600]"
+    },
+    {
+      "unit_id": "VAC_CAST",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "caster",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/VAC_CAST/export/vac_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VAC_CAST.stl study envelope [1500, 800, 1500]"
+    },
+    {
+      "unit_id": "VAC_IND",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "furnace",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/VAC_IND/export/vac_ind.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VAC_IND.stl study envelope [1000, 1000, 1500]"
+    },
+    {
       "unit_id": "VCD_TRAIN",
       "sector_id": "WTR",
       "presence": "placeholder",
@@ -1433,6 +1841,18 @@
       "builder": null,
       "group_path": [],
       "notes": "presence=placeholder; no invented massing"
+    },
+    {
+      "unit_id": "VDF_SYN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": "reactor",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/polymers.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/VDF_SYN/export/vdf_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VDF_SYN.stl study envelope [600, 600, 1200]"
     },
     {
       "unit_id": "WAFER_FAB",
@@ -1451,6 +1871,18 @@
         "Wet"
       ],
       "notes": "secondaries FAB_PREP, FAB_TOOL, ETCH_RETURN, PV_* process stubs"
+    },
+    {
+      "unit_id": "WAX_PATTERN",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "prep",
+      "status": "cadquery_export",
+      "freecad_names": [],
+      "builder": "mfg/foundry.py",
+      "group_path": [],
+      "notes": "P2+P3 2026-10-19: bench_prep (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/WAX_PATTERN/export/wax_pattern.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/WAX_PATTERN.stl study envelope [800, 600, 1200]"
     },
     {
       "unit_id": "WET_BENCH",
@@ -1648,7 +2080,124 @@
         "Electrical"
       ],
       "notes": "secondaries ZNBR2_NEG_TANK, ZNBR2_POS_TANK, ZNBR2_BR2_SCRUBBER, ZNBR2_BR2_REGEN"
+    },
+    {
+      "unit_id": "AIR_RECEIVER",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "massing_only",
+      "freecad_names": [
+        "AIR_RECEIVER"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [],
+      "notes": "Rev D (2026-10-19): D-DOCK plant-air receiver (A-M-270) - seed box from graph params.size_mm in the north dock hall; graph_dims.py rebuilds it as the sized 700 x 900 mm cylinder at the placed centre (CAD_GRAPH_DIMS applied=true closes the P1 audit item). No plant_groups classify rule: Feature sits at the tree root."
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cold_box",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_ASU"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": "Rev D: P4 restored unit. TSA cold box as one Part::Feature compound: enclosure box with the 3 x 13X beds as internal cylinders, every dim from params.design (beds/bed_D_mm/bed_L_mm; no cryogenic column, AQS-DUTY-069 Rev C) - the COLD_BOX internals pattern, so resolve_overlaps / regroup translate it as one solid. Authored on the O2/ignition side of the FB_CRYO_H2_PART split, inside the 2 h CRYO enclosure (fire_rooms gives it no room of its own; its FR_CRYO_ASU entry now finds a solid). Any regroup translation is logged in CAD_MOVES.json (A-M-223)."
+    },
+    {
+      "unit_id": "FOOD_STORE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "massing_only",
+      "freecad_names": [
+        "FOOD_STORE"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [],
+      "notes": "Rev D (2026-10-19): D-DOCK food buffer (A-M-270 X-RED-08 80 d dry reserve) - seed box from graph params.size_mm; graph_dims.py rebuilds it as the sized 350 x 450 mm cylinder. No plant_groups classify rule: Feature sits at the tree root."
+    },
+    {
+      "unit_id": "H2O_ELYZ",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "pem_electrolyser",
+      "status": "mapped",
+      "freecad_names": [
+        "H2O_ELYZ"
+      ],
+      "builder": "cryo.py",
+      "group_path": [],
+      "notes": "Rev D: P4 restored unit (owner ruling D-O2). One Part::Feature compound: PEM stack skid + BoP deck (H2/O2 separators, deoxo, dryer per params.internals) sized from the rated stack kW on the graph - IA-ELY-H2 x pem_kWh_kg_H2 / ely_window_h = 85.8 kW, areal allowances A-M-279; no hand dims. Authored in the H2 bay of the CRYO room behind the new FB_CRYO_ELYZ_PART (FR_CRYO_ASU ruling); a regroup translation is logged in CAD_MOVES.json (A-M-223). No plant_groups classify rule matches the name (H2O_ prefix): the Feature sits at the Plant tree root though the graph sector is CRYO."
+    },
+    {
+      "unit_id": "METAL_STORE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "massing_only",
+      "freecad_names": [
+        "METAL_STORE"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [],
+      "notes": "Rev D (2026-10-19): D-DOCK metal product buffer (A-M-270 14 d dispatch campaign) - seed box from graph params.size_mm; graph_dims.py rebuilds it as the sized 500 x 650 mm cylinder. No plant_groups classify rule: Feature sits at the tree root."
+    },
+    {
+      "unit_id": "PROD_MEOH",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "product",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "Rev D: AQS-DUTY-064 storage row added (A-M-278): sized D850 x H1150 mm welded-steel tank + params.size_mm / design_storage on the graph; no FreeCAD Feature yet, so graph_dims logs applied=false until a CAD lane stages it at the D-DOCK (as REMIN/HOPPER today). cad/stl/PROD_MEOH.stl carries the study envelope."
+    },
+    {
+      "unit_id": "PROD_O2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "product",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "Rev D: AQS-DUTY-064 storage row added (A-M-278): surplus-O2 cylinder-bank equivalent volume D1100 x H1450 mm (200 bar, CRYO_O2 storage_mode basis; thin-wall equivalent figure only) + params.size_mm / design_storage on the graph; no FreeCAD Feature yet (graph_dims applied=false until placed). cad/stl/PROD_O2.stl carries the study envelope."
+    },
+    {
+      "unit_id": "RELIEF_CRYO",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "relief",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_VENT_STACK"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": "Rev D (2026-10-19): CRYO_VENT_STACK (250 mm bore, 8 m from the L-1 floor, per the RELIEF_H2 -> H2_STACK pattern in gas_handling.py) is the RELIEF_CRYO discharge - cryo non-condensable contingency, NFPA 55, not the dock. Riser column (18250, 11000) is the clear aisle over the CRYO room north strip: FAB_TOOL sits over the duty-sheet origin (18300, 9500), so the S56/S86 relief header runs ~1.6 m north to this riser. Feature name, not a unit alias."
     }
   ],
-  "rev_c_note": "Graph Rev K: FLUE_KO -> FLUE_CAP and RELIEF_H2 -> H2_STACK added. LOAD_AGG is class boundary on the graph. Units created on the placed copy from issued or study envelopes carry their own unit_id as the Feature name and are not listed here. Coverage block below is from the original inventory and is not recounted."
+  "rev_c_note": "Graph Rev K: FLUE_KO -> FLUE_CAP and RELIEF_H2 -> H2_STACK added. LOAD_AGG is class boundary on the graph. Units created on the placed copy from issued or study envelopes carry their own unit_id as the Feature name and are not listed here. Coverage block below is from the original inventory and is not recounted.",
+  "rev_d_note": "Graph Rev BH-era audit 2026-10-19, appended rows (P1 stores + P4 restored units, disjoint from the FOUNDRY/POLYMERS rows appended by the sibling lane): D-DOCK stores FOOD_STORE / METAL_STORE / AIR_RECEIVER massing (A-M-270, graph_dims now applies their design_storage), restored H2O_ELYZ PEM skid + CRYO_ASU TSA cold box in cryo.py (graph-driven dims, A-M-279), RELIEF_CRYO -> CRYO_VENT_STACK (H2_STACK pattern), and the PROD_O2 / PROD_MEOH AQS-DUTY-064 storage rows (A-M-278) recorded as unmapped until a CAD lane places them. Coverage block above is from the original Rev C inventory and is not recounted."
 }

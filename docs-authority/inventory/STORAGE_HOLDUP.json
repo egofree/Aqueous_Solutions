@@ -377,5 +377,35 @@
   "material": "SA-240 304L, welded",
   "envelope_mm": null,
   "fits_envelope": false
+ },
+ {
+  "unit": "PROD_O2",
+  "service": "D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278)",
+  "Q_kg_d": 22.876,
+  "hold_d": 14,
+  "rho": 293.4,
+  "V_work_m3": 1.0916,
+  "V_nom_m3": 1.3645,
+  "D_mm": 1100,
+  "H_mm": 1450,
+  "wall_mm": 106.8,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": null,
+  "fits_envelope": false
+ },
+ {
+  "unit": "PROD_MEOH",
+  "service": "D-DOCK methanol product store, 14 d dispatch campaign (A-M-278)",
+  "Q_kg_d": 28.364,
+  "hold_d": 14,
+  "rho": 792,
+  "V_work_m3": 0.5014,
+  "V_nom_m3": 0.6267,
+  "D_mm": 850,
+  "H_mm": 1150,
+  "wall_mm": 3.0,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": null,
+  "fits_envelope": false
  }
 ]
