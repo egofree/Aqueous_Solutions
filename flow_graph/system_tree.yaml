@@ -11,8 +11,8 @@ doc_id: AQS-SYS-TREE-001
 revision: A
 date: "2026-10-18"
 licence: CERN-OHL-S-2.0
-sector_exceptions:
-  EVAP_ACID_VS: WET  # graph sector WET is pre-rename DIGESTER (Rev X); tree root DIGESTER
+# sector_exceptions: closed 2026-10-19 — EVAP_ACID_VS graph stamp fixed WET->DIGESTER, so the
+# tree and graph sectors agree 1:1 with no exceptions.
 notes: >-
   Standby trains (pot-cell, investment-casting, fluoropolymer, litho) are
   booked present in the graph with rates TBD; standby is a description here,

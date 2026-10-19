@@ -99,7 +99,7 @@ def test_roots_are_exactly_the_mvs_sector_ids(tree: SystemTree, graph: dict) -> 
 def test_sector_containment_with_recorded_exceptions(
     tree: SystemTree, graph: dict
 ) -> None:
-    """Every unit sits under its graph sector's root, except EVAP_ACID_VS (WET
+    """Every unit sits under its graph sector's root (the EVAP_ACID_VS WET exception closed 2026-10-19
     is the pre-rename DIGESTER, recorded in sector_exceptions)."""
     sector_of = {n["unit_id"]: n.get("sector_id") for n in graph["nodes"]}
     for n in tree.nodes:
@@ -108,7 +108,7 @@ def test_sector_containment_with_recorded_exceptions(
         root = n.id.split(".", 1)[0]
         sec = sector_of[n.unit_id]
         assert root == sec or tree.sector_exceptions.get(n.unit_id) == sec, n.id
-    assert set(tree.sector_exceptions) == {"EVAP_ACID_VS"}
+    assert set(tree.sector_exceptions) == set()   # 2026-10-19: the WET exception closed (stamp fixed)
 
 
 def test_cycle_free_and_parent_integrity() -> None:
@@ -326,7 +326,7 @@ def test_enabled_units_helper_effective_set() -> None:
     # 178 (2026-10-19): EVAP_ACID_VS sector stamp fixed WET->DIGESTER, so the
     # sector-aware set now includes every unit (the 177 exception is closed).
     assert len(on) == 178
-    assert "EVAP_ACID_VS" not in on
+    assert "EVAP_ACID_VS" in on   # sector stamp fixed WET->DIGESTER 2026-10-19: now included
     # unit off leaves the set even with the sector on
     m2 = copy.deepcopy(m)
     for u in m2.units:
