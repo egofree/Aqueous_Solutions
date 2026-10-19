@@ -26,24 +26,24 @@ Owner decision 2026-10-15: no bought skid; evaporators are designed and built in
 | p_body_kPa | 101.325 | 101.325 |
 | p_shell_kPa | 166.98 | 163.73 |
 | ratio | 1.648 | 1.616 |
-| water_kg_h | 36.235 | 33.411 |
-| duty_kW | 22.72 | 20.95 |
+| water_kg_h | 36.049 | 33.411 |
+| duty_kW | 22.6 | 20.95 |
 | w_kJ_kg | 93.7 | 89.6 |
-| comp_shaft_kW | 1.347 | 1.189 |
-| comp_elec_kW | 1.497 | 1.321 |
+| comp_shaft_kW | 1.34 | 1.189 |
+| comp_elec_kW | 1.489 | 1.321 |
 | pump_kW | 0.008 | 0.008 |
 | trim_kW | 0.0 | 0.0 |
-| total_kW | 1.505 | 1.328 |
+| total_kW | 1.498 | 1.328 |
 | kWh_per_t | 41.5 | 39.8 |
-| A_ff_m2 | 2.52 | 2.33 |
+| A_ff_m2 | 2.51 | 2.33 |
 | tubes | 22 | 20 |
 | tube_id_mm | 25.0 | 25.0 |
 | tube_L_mm | 1500.0 | 1500.0 |
 | recirc_kg_h | 311.0 | 282.7 |
 | shell_D_mm | 350 | 350 |
 | height_mm | 3800 | 3100 |
-| ix_Q_kW | 3.72 | 3.67 |
-| ix_A_m2 | 0.156 | 0.146 |
+| ix_Q_kW | 3.7 | 3.67 |
+| ix_A_m2 | 0.155 | 0.146 |
 | T_feed_preheat_C | 98.6 | 98.0 |
 | T_out_C | 49.1 | 50.6 |
 
@@ -54,7 +54,7 @@ Power 41.5 and 39.8 kWh/t of water against the 72 kWh/t upper bound used before 
 | Case | Unit | W kg/h | P1 kPa abs | A required mm2 | Valve |
 |---|---|---|---|---|---|
 | Body fire | EVAP_ACID | 41.32 | 222.3 | 34.0 | API 526 D (71 mm2), adequate |
-| Shell blocked outlet | EVAP_ACID | 43.48 | 486.3 | 16.731 | API 526 D (71 mm2), adequate |
+| Shell blocked outlet | EVAP_ACID | 43.26 | 486.3 | 16.646 | API 526 D (71 mm2), adequate |
 | Body fire | EVAP_BASE | 41.32 | 222.3 | 33.98 | API 526 D (71 mm2), adequate |
 | Shell blocked outlet | EVAP_BASE | 40.09 | 486.3 | 15.427 | API 526 D (71 mm2), adequate |
 
@@ -74,10 +74,10 @@ From the Perry tables, vapour over the 20 wt% body liquid at 101.3 kPa carries 1
 |---|---|---|---|
 | a | rectifier with reflux on the vapour line (feed to the body) | 6.7 | minimum reflux 5.7 (pinch at the body vapour 17.1 wt%); blower power at least x6.7 |
 | b | two stages, final stage once-through | - | final-stage vapour runs 3.0 to 17.1 wt% HCl, above the 7.07 wt% feed; still needs a column to return HCl |
-| c | lower product strength, 16 wt% | 4.19 | body vapour 5.6 wt% HCl; recycle makes the feed 3942 kg/d and the vapour x4.2; leach takes 25 % more liquor |
-| d | counter-current column on the body, feed at the top (adopted) | 1.076 | no reflux; top vapour 0.50 wt% HCl against 0.34 wt% equilibrium over the feed; recycle 4.35 kg/d HCl to BMED_ACID |
+| c | lower product strength, 16 wt% | 4.19 | body vapour 5.6 wt% HCl; recycle makes the feed 3922 kg/d and the vapour x4.2; leach takes 25 % more liquor |
+| d | counter-current column on the body, feed at the top (adopted) | 1.076 | no reflux; top vapour 0.50 wt% HCl against 0.34 wt% equilibrium over the feed; recycle 4.33 kg/d HCl to BMED_ACID |
 
-Adopted: option d, the smallest complete system. The feed enters the top of a packed column standing on the body frame; liquid runs down against the body vapour and reaches the body at 20 wt%; no reflux is drawn, so the blower duty rises only by the recycled water. 4 ideal stages above the body (stage count from the Perry VLE), packed 3000 mm at HETP 500 mm x 1.5 (PERRY9_ABS, A-M-108), DN150 at 1.0 m/s vapour, column height 3800 mm, free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body. Condensate 0.5 wt% HCl (4.35 kg/d) returns to BMED_ACID with the make-up water and comes back in the feed: the feed rises to 1311.5 kg/d and the water off to 869.6 kg/d; BMED current is unchanged (recycled HCl is not generated). Owner may override, for example with option a if a near-zero-HCl condensate is wanted.
+Adopted: option d, the smallest complete system. The feed enters the top of a packed column standing on the body frame; liquid runs down against the body vapour and reaches the body at 20 wt%; no reflux is drawn, so the blower duty rises only by the recycled water. 4 ideal stages above the body (stage count from the Perry VLE), packed 3000 mm at HETP 500 mm x 1.5 (PERRY9_ABS, A-M-108), DN150 at 1.0 m/s vapour, column height 3800 mm, free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body. Condensate 0.5 wt% HCl (4.33 kg/d) returns to BMED_ACID with the make-up water and comes back in the feed: the feed rises to 1304.8 kg/d and the water off to 865.2 kg/d; BMED current is unchanged (recycled HCl is not generated). Owner may override, for example with option a if a near-zero-HCl condensate is wanted.
 
 ## Code basis (X-STD-01)
 

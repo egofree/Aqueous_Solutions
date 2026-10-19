@@ -253,7 +253,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M176.78,-2075.65C226.26,-2068.25 328.43,-2052.22 414,-2034 417.2,-2033.32 420.5,-2032.58 423.81,-2031.81"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="424.84,-2035.17 433.75,-2029.44 423.21,-2028.36 424.84,-2035.17"/>
-<text text-anchor="middle" x="355" y="-2058.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n405.4928 kW</text>
+<text text-anchor="middle" x="355" y="-2058.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n405.3506 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node22" class="node">

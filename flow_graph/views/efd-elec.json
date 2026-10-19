@@ -175,7 +175,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.233209,
+          "bypass_kg_d": 175.233102,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -1000,16 +1000,16 @@
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 1.975396,
-          "Nm3_h": 0.9151067696759259,
-          "O2_mol_d": 0.9798591269841268,
-          "water_kg_d": 0.035304324345238086,
-          "HCl_kg_d": 3.572664362896825e-05,
-          "guard_kg": 0.03215397926607142,
-          "sieve_kg": 0.35304324345238086,
+          "H2_kg_d": 1.975408,
+          "Nm3_h": 0.9151123287037036,
+          "O2_mol_d": 0.9798650793650794,
+          "water_kg_d": 0.03530453880952381,
+          "HCl_kg_d": 3.572686065873015e-05,
+          "guard_kg": 0.03215417459285713,
+          "sieve_kg": 0.3530453880952381,
           "beds": {
             "deoxo": {
-              "V_L": 0.18302135393518518,
+              "V_L": 0.18302246574074074,
               "tube": "DN25 Sch 40 316L",
               "L_mm": 328,
               "count": 2
@@ -1021,13 +1021,13 @@
               "count": 2
             },
             "TSA": {
-              "V_L": 0.5043474906462584,
+              "V_L": 0.5043505544217688,
               "tube": "DN50 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             }
           },
-          "regen_W": 1.0310009893078513,
+          "regen_W": 1.031007210286295,
           "loss_W": 37.98279150873541,
           "insulation_mm": 38,
           "kW": 0.0205,
@@ -1061,33 +1061,33 @@
       },
       "modules": [],
       "params": {
-        "energy_kwh_ideal_study": 274.5,
-        "energy_kwh_recoverable_study": 219.6,
+        "energy_kwh_ideal_study": 266.5,
+        "energy_kwh_recoverable_study": 213.2,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 2771.0,
-        "head_m_m1": 36.35,
-        "vs_znbr2_kwh": 3747.0,
-        "fraction_of_znbr2_study": 0.059,
+        "volume_m3_m1": 2701.0,
+        "head_m_m1": 36.21,
+        "vs_znbr2_kwh": 3654.0,
+        "fraction_of_znbr2_study": 0.058,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
         "backup_basis": {
           "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
           "standard": "NFPA 111 Level 1, Class X",
-          "critical_kW": 14.9,
+          "critical_kW": 14.47,
           "class_hours": 14.0,
-          "energy_kWh_bus": 208.6,
-          "head_m": 36.35,
+          "energy_kWh_bus": 202.6,
+          "head_m": 36.21,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 2771.0,
-          "rated_kW_discharge": 14.9,
-          "recharge_kW_over_PV_window": 51.1,
+          "upper_reservoir_m3": 2701.0,
+          "rated_kW_discharge": 14.47,
+          "recharge_kW_over_PV_window": 49.7,
           "A-M": "A-M-145",
           "Q": "Q-006 closed; Q-009 closed: water tower",
-          "upper": "3 reservoir levels x 3.12 m water over 367 m2, 2.0 cells per level",
-          "lower": "CATCH_TANK 9.37 m deep over 367 m2",
+          "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2.0 cells per level",
+          "lower": "CATCH_TANK 9.17 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
         }
       }
@@ -1350,7 +1350,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 405.4928,
+        "value": 405.3506,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1465,13 +1465,13 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 222.0,
+          "bus_demand_kW": 219.4,
           "section_rating_A": 400,
-          "basis_A": 296.7,
+          "basis_A": 293.2,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
-          "critical_kW": 14.9,
+          "critical_kW": 14.469999999999999,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
         }
@@ -1546,10 +1546,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 51 hybrid inverters, 71.6 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.267,
-          "purge_m3_h": 38.61,
+          "H2_m3_d": 9.263,
+          "purge_m3_h": 38.59,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2391.0
+          "electrode_area_m2": 2389.7
         }
       }
     },
@@ -2392,7 +2392,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 405.4928,
+        "value": 405.3506,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."

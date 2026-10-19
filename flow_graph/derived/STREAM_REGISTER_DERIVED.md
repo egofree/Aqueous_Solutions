@@ -41,7 +41,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | HL-Q4-X-BA | Q4_B | Q4_A | heat | thermal | study | cross-tie, hot to cold only | 1.565 kW | — |
 | IA-BMED-01 | BMED_ACID | WS_NITRIC | L | mass | present | HCl product | 1.2456 kg/d | — |
 | IA-BMED-02 | BMED_BASE | WS_KOH | L | mass | present | NaOH product | 0.2701 kg/d | — |
-| IA-BMED-03 | LEACH_CSTR_1 | BMED_ACID | L | mass | present | CRU → BMED acid regen loop | 450.163884 kg/d | intra_aisle,full_depth_now,bmed_regen unlabeled |
+| IA-BMED-03 | LEACH_CSTR_1 | BMED_ACID | L | mass | present | CRU → BMED acid regen loop | 450.164184 kg/d | intra_aisle,full_depth_now,bmed_regen unlabeled |
 | IA-BMED-04 | LEACH_CSTR_1 | BMED_BASE | L | mass | present | CRU → BMED base regen loop | 500.1311 kg/d | intra_aisle,full_depth_now,bmed_regen unlabeled |
 | IA-ESS-HYDRO-CHG | CATCH_TANK | ROOF_TANK | L | mass,ess | present | Pumped hydro charge (pump up; peers S23) | 0.0 kg/d | ess_layer |
 | IA-ESS-HYDRO-DIS | ROOF_TANK | CATCH_TANK | L | mass,ess | present | Pumped hydro discharge (penstock; peers S22) | 0.0 kg/d | ess_layer |
@@ -54,17 +54,17 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW-02 | EW_2 | EW_3 | L | mass | present | EW overflow | 3990.594815 kg/d | — |
 | IA-EW-03 | EW_3 | EW_4 | L | mass | present | EW overflow | 3934.805911 kg/d | — |
 | IA-EW-04 | LEACH_CSTR_1 | EW_1 | L | mass | present | CSTR to EW-1 | 4287.799997 kg/d | — |
-| IA-EW-05 | EW_5 | EW_6 | L | mass | present | EW overflow | 3909.915497 kg/d | — |
-| IA-EW-06 | EW_6 | EW_7 | L | mass | present | EW overflow | 3896.339738 kg/d | — |
-| IA-EW-07 | EW_7 | EW_8 | L | mass | present | EW overflow | 3719.792521 kg/d | — |
-| IA-EW-08 | EW_8 | EW_9 | L | mass | present | EW overflow | 3707.26014 kg/d | — |
-| IA-EW-09 | EW_9 | POLISH_BANK | L | mass | present | EW tail to polish | 3520.31431 kg/d | — |
+| IA-EW-05 | EW_5 | EW_6 | L | mass | present | EW overflow | 3909.914016 kg/d | — |
+| IA-EW-06 | EW_6 | EW_7 | L | mass | present | EW overflow | 3896.338257 kg/d | — |
+| IA-EW-07 | EW_7 | EW_8 | L | mass | present | EW overflow | 3719.79104 kg/d | — |
+| IA-EW-08 | EW_8 | EW_9 | L | mass | present | EW overflow | 3707.257179 kg/d | — |
+| IA-EW-09 | EW_9 | POLISH_BANK | L | mass | present | EW tail to polish | 3520.311349 kg/d | — |
 | IA-EW-10 | EW_4 | EW_5 | L | mass | present | EW overflow | 3922.373456 kg/d | — |
 | IA-GLASS-01 | GLASS_RINSE | GLASS_MILL | S | mass | present | rinsed cullet | 36.82 kg/d | — |
 | IA-GLASS-02 | GLASS_MILL | GLASS_BURNOUT | S | mass | present | milled cullet | 30.0 kg/d | — |
 | IA-GLASS-03 | GLASS_BURNOUT | GLASS_DIGEST | S | mass | present | burned cullet | 30.0 kg/d | — |
 | IA-HDR-H2-01 | EW_1 | HDR_H2 | G | mass | present | cathode H2 + sweep air | 0.382615 kg/d | wp_l1_topology,wp_l2_filled,ew_cascade_exploded |
-| IA-HDR-H2-02 | HDR_H2 | H2_DRYER | G | mass | present | process H2 | 1.975396 kg/d | wp_l1_topology,arrestor_inline,wp_true_closure,ew_cascade_exploded |
+| IA-HDR-H2-02 | HDR_H2 | H2_DRYER | G | mass | present | process H2 | 1.975408 kg/d | wp_l1_topology,arrestor_inline,wp_true_closure,ew_cascade_exploded |
 | IA-HDR-H2-03 | EW_2 | HDR_H2 | G | mass | present | cathode H2 + sweep air | 0.382743 kg/d | wp_l2_filled,multi_ew_hood,ew_cascade_exploded |
 | IA-HDR-H2-04 | EW_9 | HDR_H2 | G | mass | present | cathode H2 + sweep air | 0.481422 kg/d | wp_l2_filled,multi_ew_hood,ew_cascade_exploded |
 | IA-HX8 | EW_1 | HX8 | heat | thermal | present | EW heat | 4.572 kW | — |
@@ -72,8 +72,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-OIL-02 | OIL_PYRO | OIL_FRAC | L | mass | present | Pyro → frac | 33.373266 kg/d | intra_aisle,full_depth_now,oil_line internals |
 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | G | mass | present | NCG only | 5.0 kg/d | — |
 | IA-POL-01 | POLISH_BANK | BMED_UPW_POLISH | L | mass | placeholder | Polish bank → UPW polish | — | intra_aisle,full_depth_now,polish_bank unlabeled |
-| IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | L | mass | present | Polish bank liquor return to the continuous recycle | 3302.944317 kg/d | intra_aisle,full_depth_now,polish_bank unlabeled |
-| IA-REC-01 | CONTINUOUS_RECYCLE | LEACH_CSTR_1 | L | mass | present | continuous recycle liquor | 3302.944317 kg/d | — |
+| IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | L | mass | present | Polish bank liquor return to the continuous recycle | 3302.941356 kg/d | intra_aisle,full_depth_now,polish_bank unlabeled |
+| IA-REC-01 | CONTINUOUS_RECYCLE | LEACH_CSTR_1 | L | mass | present | continuous recycle liquor | 3302.941356 kg/d | — |
 | IA-WET-FLOAT-01 | FLOAT_SINK | LEACH_CSTR_1 | L | mass | present | Float/sink liquor return | 343.1 kg/d | intra_aisle,full_depth_now,STR scope-out; ID was TBD |
 | NCG_TO_AB | NCG_HEADER | AFTERBURNER | G | mass | present | NCG | 5.0 kg/d | — |
 | S01 | BMED_UPW_POLISH | HDR_UPW | L | mass | present | UPW | 67.300214 kg/d | — |
@@ -99,7 +99,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S22 | ROOF_TANK | CATCH_TANK | L | ess | present | penstock | 0.0 kg/d | — |
 | S23 | CATCH_TANK | ROOF_TANK | L | ess | present | pump return | 0.0 kg/d | — |
 | S24 | H2_DRYER | RELIEF_H2 | G | mass | present | H2 relief contingency | 0.0 kg/d | — |
-| S25 | VCD_TRAIN | BMED_UPW_POLISH | L | mass | present | VCD distillate | 308.578609 kg/d | — |
+| S25 | VCD_TRAIN | BMED_UPW_POLISH | L | mass | present | VCD distillate | 308.578502 kg/d | — |
 | S26 | REMIN | HABITATION | L | mass | present | potable | 10.0 kg/d | — |
 | S27 | FAB_UPW_TANK | WET_BENCH | L | mass | present | fab UPW > 18 MΩ·cm class | 60.000181 kg/d | absent_from_candidate_mvs |
 | S28 | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | VCD brine | 17.877059 kg/d | — |
@@ -135,14 +135,14 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S61 | MFG_SHOP | HOPPER | S | mass | present | metal scrap | 1.197099 kg/d | absent_from_candidate_mvs |
 | S62 | MET_AHU | MET_SCRUB | G | mass | present | MFG metal-aisle capture feed | 51145.68 kg/d | absent_from_candidate_mvs |
 | S63 | MET_HX_Q4 | Q4_BUS | E | thermal | present | heat < 80 °C | 0.0171 kW | absent_from_candidate_mvs |
-| S64 | H2_DRYER | CRYO_H2 | G | mass | present | H2 normal path | 1.975396 kg/d | — |
+| S64 | H2_DRYER | CRYO_H2 | G | mass | present | H2 normal path | 1.975408 kg/d | — |
 | S65 | ALK_SCRUBBER | ACID_POLISH_SCRUB | G | mass | present | acid-gas residual | 37509.8546 kg/d | — |
 | S66 | ACID_POLISH_SCRUB | CRU | L | mass | present | scrub liquor → chlorate finish | 27.372033 kg/d | absent_from_candidate_mvs |
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 78.987901 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 1093.561663 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 1093.561663 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 1092.975294 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 1092.975294 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -157,7 +157,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S80 | MEOH_FC | Q4_BUS | E | thermal | present | heat < 80 °C | 0.3689 kW | absent_from_candidate_mvs |
 | S81 | MEOH_FC | MEOH_COND | L | mass | present | MeOH FC condensate | 7.251023 kg/d | — |
 | S82 | MEOH_FC | CRYO_CO2 | G | mass | present | CO₂ return from MeOH FC | 8.625641 kg/d | absent_from_candidate_mvs |
-| S83 | CRYO_O2 | HDR_O2 | G | mass | present | O2 product | 33.195596 kg/d | — |
+| S83 | CRYO_O2 | HDR_O2 | G | mass | present | O2 product | 33.195501 kg/d | — |
 | S84 | CRYO_N2 | AIR_RECEIVER | G | mass | present | N2 product | 191.989014 kg/d | — |
 | S85 | CRYO_CO2 | HDR_CO2 | G | mass | present | CO2 product after FLUE_KO | 0.0 kg/d | — |
 | S86 | CRYO_AHU | RELIEF_CRYO | G | mass | present | cryo residual contingency | 0.0 kg/d | — |
@@ -264,11 +264,11 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.372033 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 405.4928 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 405.3506 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
-| IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | L | mass | present | remineralizer | 175.233209 kg/d | — |
+| IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | L | mass | present | remineralizer | 175.233102 kg/d | — |
 | IA-UPW-REJ | BMED_UPW_POLISH | LEACH_CSTR_1 | L | mass | present | polish reject | 6.045005 kg/d | — |
 | IA-Q4-LIFE | Q4_BUS | HABITATION | thermal | thermal | present | life heat | 3.0 kW | — |
 | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | G | mass | present | flue | 7.096878 kg/d | — |
@@ -313,7 +313,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | L | mass | present | treated grey to the water cycle | 0.0 kg/d | — |
 | IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | L | mass | present | nutrient surplus | 82.317318 kg/d | — |
 | IA-FEED-01 | HOPPER | LEACH_CSTR_1 | L | mass | present | plant feedstock, any class | 102.680001 kg/d | — |
-| IA-POT-01 | REMIN | ROOF_TANK | L | mass | present | potable makeup, remineralised | 165.23317 kg/d | — |
+| IA-POT-01 | REMIN | ROOF_TANK | L | mass | present | potable makeup, remineralised | 165.233063 kg/d | — |
 | IA-UPW-HAB | HDR_UPW | HABITATION | S/L | mass | present | potable makeup | 0.800001 kg/d | — |
 | IA-BAG-01 | BAGHOUSE | LEACH_CSTR_1 | S/L | mass | present | captured dust | 7.77 kg/d | — |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | S/L | mass | present | fab UPW | 66.500213 kg/d | — |
@@ -378,7 +378,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S17-BMED | SOL_ARK_60K | BMED_ACID | E | elec | present | 480 V AC | 5.6267 kW | — |
 | IA-BMED-03-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-03 (to BMED_ACID) | 0.78 kW | — |
 | IA-BMED-04-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-04 (to BMED_BASE) | 1.027 kW | — |
-| IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 168.058609 kg/d | — |
+| IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 168.058502 kg/d | — |
 | SF-ALK_SCRUBBER | SOL_ARK_60K | ALK_SCRUBBER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.1123 kW | — |
 | SF-BMED_UPW_POLISH | SOL_ARK_60K | BMED_UPW_POLISH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.018 kW | — |
 | SF-CRYO_H2 | SOL_ARK_60K | CRYO_H2 | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.9327 kW | — |
@@ -403,15 +403,15 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.207942 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.813443 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.813948 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
 | IA-EW4-CL2 | EW_4 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.154886 kg/d | — |
-| IA-EW5-CL2 | EW_5 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.40552 kg/d | — |
+| IA-EW5-CL2 | EW_5 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.406995 kg/d | — |
 | IA-EW6-CL2 | EW_6 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 8.07044 kg/d | — |
 | IA-EW7-CL2 | EW_7 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 104.952575 kg/d | — |
-| IA-EW8-CL2 | EW_8 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.44975 kg/d | — |
+| IA-EW8-CL2 | EW_8 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.451224 kg/d | — |
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 111.134409 kg/d | — |
 | IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 6.955972 kg/d | — |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | L | mass | present | C11-C18 surplus shipped | 1.511662 kg/d | — |
@@ -422,11 +422,11 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-ACID_POLISH_SCRUB | SOL_ARK_60K | ACID_POLISH_SCRUB | E | elec | present | 480 V AC | 1.1123 kW | — |
 | SF-NOX_SCRUB | SOL_ARK_60K | NOX_SCRUB | E | elec | present | 480 V AC | 0.0385 kW | — |
 | SF-MET_SCRUB | SOL_ARK_60K | MET_SCRUB | E | elec | present | 480 V AC | 2.1234 kW | — |
-| IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | L | mass | present | regen HCl, 20 wt% | 439.6125 kg/d | — |
+| IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | L | mass | present | regen HCl, 20 wt% | 439.6127 kg/d | — |
 | IA-BASE-01 | EVAP_BASE | GLASS_DIGEST | L | mass | present | digest NaOH, 20 wt% | 21.968 kg/d | — |
 | IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | L | mass | present | NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A) | 482.2861 kg/d | — |
-| IA-EVAP_ACID-FEED | BMED_ACID | EVAP_ACID | L | mass | present | HCl 2 M from BMED | 1304.786 kg/d | — |
-| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | L | mass | present | evaporator condensate return (BMED water make-up) | 865.1442 kg/d | — |
+| IA-EVAP_ACID-FEED | BMED_ACID | EVAP_ACID | L | mass | present | HCl 2 M from BMED | 1304.7866 kg/d | — |
+| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | L | mass | present | evaporator condensate return (BMED water make-up) | 865.1446 kg/d | — |
 | SF-EVAP_ACID | SOL_ARK_60K | EVAP_ACID | E | elec | present | 480 V AC | 1.498 kW | — |
 | IA-EVAP_BASE-FEED | BMED_BASE | EVAP_BASE | L | mass | present | NaOH 2 M from BMED | 1301.7164 kg/d | — |
 | IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | L | mass | present | evaporator condensate return (BMED water make-up) | 801.8559 kg/d | — |
@@ -444,12 +444,12 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | S | mass | present | CO2 return | 0.0 kg/d | — |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | S/L | mass | present | dissolved gas | 0.0 kg/d | — |
 | SF-CRYO_ASU | SOL_ARK_60K | CRYO_ASU | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.6689 kW | — |
-| IA-ELY-H2O | ROOF_TANK | H2O_ELYZ | L | mass | present | electrolyser feed water | 83.647854 kg/d | — |
-| IA-ELY-H2 | H2O_ELYZ | CRYO_H2 | G | mass | present | electrolyser H2 | 9.360759 kg/d | — |
-| IA-ELY-O2 | H2O_ELYZ | CRYO_O2 | G | mass | present | electrolyser O2 | 74.287095 kg/d | — |
+| IA-ELY-H2O | ROOF_TANK | H2O_ELYZ | L | mass | present | electrolyser feed water | 83.647747 kg/d | — |
+| IA-ELY-H2 | H2O_ELYZ | CRYO_H2 | G | mass | present | electrolyser H2 | 9.360747 kg/d | — |
+| IA-ELY-O2 | H2O_ELYZ | CRYO_O2 | G | mass | present | electrolyser O2 | 74.287 kg/d | — |
 | SF-H2O_ELYZ | SOL_ARK_60K | H2O_ELYZ | E | elec | present | 480 V AC (daily average) | 21.4517 kW | — |
-| IA-O2-PROD | HDR_O2 | PROD_O2 | G | mass | present | surplus O2 to product cylinders | 22.876312 kg/d | — |
-| IA-O2-SHIP | PROD_O2 | NORTH_DOCK | G | mass | present | O2 cylinders shipped at the dock | 22.876312 kg/d | — |
+| IA-O2-PROD | HDR_O2 | PROD_O2 | G | mass | present | surplus O2 to product cylinders | 22.876217 kg/d | — |
+| IA-O2-SHIP | PROD_O2 | NORTH_DOCK | G | mass | present | O2 cylinders shipped at the dock | 22.876217 kg/d | — |
 | SF-IND_MELT | SOL_ARK_60K | IND_MELT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 25.0 kW | — |
 | SF-VAC_IND | SOL_ARK_60K | VAC_IND | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 15.0 kW | — |
 | SF-RF_HEAT | SOL_ARK_60K | RF_HEAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 5.0 kW | — |
@@ -483,10 +483,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-DC-EW_8 | RECTIFIER | EW_8 | E | elec | present | DC bus bar | 0.5054 kW | — |
 | IA-DC-EW_9 | RECTIFIER | EW_9 | E | elec | present | DC bus bar | 7.538 kW | — |
 | IA-EW3-H2B | EW_3 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.143667 kg/d | — |
-| IA-EW5-H2B | EW_5 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.03208 kg/d | — |
+| IA-EW5-H2B | EW_5 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032086 kg/d | — |
 | IA-EW6-H2B | EW_6 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.03496 kg/d | — |
 | IA-EW7-H2B | EW_7 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.454643 kg/d | — |
-| IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032272 kg/d | — |
+| IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032278 kg/d | — |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 97.486 kW | — |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.414905 kg/d | — |
 | SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.498 kW | — |

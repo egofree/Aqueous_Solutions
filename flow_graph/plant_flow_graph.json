@@ -117,7 +117,7 @@
         "presence": "present",
         "design": {
           "duty": "NaOH scrub of the house acid-gas header",
-          "gas_kg_d": 37509.8548,
+          "gas_kg_d": 37509.8546,
           "Q_m3_s": 0.3618,
           "u_flood_m_s": 2.0195,
           "D_mm": 600,
@@ -2303,7 +2303,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 405.3736,
+        "value": 405.3506,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -4444,7 +4444,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 878.78,
+        "water_off_kg_d": 865.17,
         "feed_wt": 0.0707,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 41.5,
@@ -4463,13 +4463,13 @@
           "p_body_kPa": 101.325,
           "p_shell_kPa": 166.98,
           "ratio": 1.648,
-          "water_kg_h": 36.235,
-          "duty_kW": 22.72,
-          "comp_shaft_kW": 1.347,
-          "comp_elec_kW": 1.497,
+          "water_kg_h": 36.049,
+          "duty_kW": 22.6,
+          "comp_shaft_kW": 1.34,
+          "comp_elec_kW": 1.489,
           "w_kJ_kg": 93.7,
           "kWh_per_t": 41.5,
-          "A_ff_m2": 2.52,
+          "A_ff_m2": 2.51,
           "tubes": 22,
           "tube_id_mm": 25.0,
           "tube_L_mm": 1500.0,
@@ -4477,12 +4477,12 @@
           "pump_kW": 0.008,
           "shell_D_mm": 350,
           "height_mm": 3800,
-          "ix_Q_kW": 3.72,
-          "ix_A_m2": 0.156,
+          "ix_Q_kW": 3.7,
+          "ix_A_m2": 0.155,
           "T_feed_preheat_C": 98.6,
           "T_out_C": 49.1,
           "trim_kW": 0.0,
-          "total_kW": 1.505,
+          "total_kW": 1.498,
           "column": {
             "ideal_stages_incl_body": 5,
             "column_stages": 4,
@@ -4490,9 +4490,9 @@
             "y_eq_feed_pct": 0.343,
             "y_eq_body_pct": 17.09,
             "packed_mm": 3000,
-            "D_req_mm": 149.3,
+            "D_req_mm": 148.9,
             "DN": 150,
-            "recycle_hcl_kg_d": 4.35,
+            "recycle_hcl_kg_d": 4.33,
             "material": "borosilicate glass 3.3 sections (ISO 3585), PTFE Pall rings, PTFE-lined flanges (PERRY9_MAT)",
             "height_mm": 3800,
             "placement": "free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body"
@@ -4514,12 +4514,12 @@
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
-            "W_kg_h": 43.48,
+            "W_kg_h": 43.26,
             "P1_kPa_abs": 486.3,
             "T_K": 423.9,
             "M_kg_kmol": 18.02,
             "k": 1.33,
-            "A_req_mm2": 16.731,
+            "A_req_mm2": 16.646,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
           },
@@ -4529,10 +4529,10 @@
       },
       "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).",
       "continuous_kw": {
-        "value": 1.521,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 878.8 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.513 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.52 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.2 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
       }
     },
     {
@@ -5612,10 +5612,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 457.080284,
+        "value": 450.164184,
         "unit": "kg/d",
         "status": "study",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_close.py); BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 449.52, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-acid purge closes BMED_ACID: feed 1311.52 + S09 9.28 + IA-BMED-01 1.25 - condensate 864.97 - vent-scrubber spent return 0.0006; BH 449.52 (fa1b4db); D-DOCK lane: the X-PAR-10 spent return term was missing from the formula, which rattled the loop +0.0006 kg/d per pass once --write resumed (2026-10-19) (AQS-PAR-005)."
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_close.py); BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 449.52, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-acid purge closes BMED_ACID: feed 1304.79 + S09 9.28 + IA-BMED-01 1.25 - condensate 865.14 - vent-scrubber spent return 0.0006 (X-PAR-10 term, restored 2026-10-19 after it rattled the loop +0.0006 kg/d per pass); BH 449.52 (fa1b4db) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -11357,7 +11357,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 405.3736,
+        "value": 405.3506,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -15997,7 +15997,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 64.813548,
+        "value": 64.813948,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -16543,10 +16543,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 446.5287,
+        "value": 439.6127,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid to leach by difference (AQS-PAR-005)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid product sized to the leach HCl demand: 87.9225 kg/d / 20% = 439.6127 kg/d (AQS-DUTY-011 sized-to-draw basis, X-RSZ-01 class A bound on current drivers; write-convergence fix 2026-10-19: the by-difference closure was an identity map that preserved a stale +1.57 % over-supply) (AQS-PAR-005)."
       },
       "from_sector_id": "WET",
       "to_sector_id": "DIGESTER",
@@ -16647,10 +16647,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1325.3135,
+        "value": 1304.7866,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 89.31 kg/d HCl / 0.0707."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 87.92 kg/d HCl / 0.0707."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -16673,7 +16673,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 878.7551,
+        "value": 865.1446,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10)."
@@ -16688,7 +16688,7 @@
         "T_C": 49.1,
         "T_basis": "X-MFG-30 interchanger outlet (AQS-DUTY-060)",
         "HCl_wt": 0.005,
-        "HCl_kg_d": 4.35,
+        "HCl_kg_d": 4.33,
         "composition_basis": "column top vapour, PERRY7_HCL_VLE (AQS-DUTY-060 section 7)"
       }
     },
@@ -16706,7 +16706,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.521,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_ACID continuous_kw."
@@ -17146,7 +17146,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.633 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.622 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -18413,7 +18413,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.521,
+        "value": 1.498,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
@@ -18465,7 +18465,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0297,
+        "value": 0.0293,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Air from the feed (WEISS1970) saturated at the vent condenser; design case 490 ppmv HCl."
@@ -18492,10 +18492,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0006,
+        "value": 0.0005,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.024 mmol/d = 2.0 x HCl absorbed."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.008 mmol/d = 2.0 x HCl absorbed."
       },
       "from_sector_id": "WET",
       "to_sector_id": "WET",
@@ -18504,7 +18504,7 @@
       "gap_flags": [],
       "notes": null,
       "params": {
-        "NaOH_mol_d": 0.001024152
+        "NaOH_mol_d": 0.00100829
       }
     },
     {
@@ -18548,7 +18548,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0297,
+        "value": 0.0292,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.0 ppmv HCl."
@@ -19101,13 +19101,13 @@
         "PUMPED_HYDRO"
       ],
       "need_kw": {
-        "value": 260.98,
+        "value": 260.96,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 31x31 bays, ext 97.49 kW)."
       },
       "target_kw": {
-        "value": 652.44,
+        "value": 652.39,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."

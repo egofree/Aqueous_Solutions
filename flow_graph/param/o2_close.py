@@ -151,27 +151,58 @@ def tf(g):
     regen = 593.5*36.46e-3; prod = v('S09') + v('IA-BMED-01') + vv('IA-HCL-BU'); kb = 1.0   # oxide-leach HCl (solver.leach_acid, GREENWOOD) is still made by BMED; synthesis HCl only replaces the HCl the EW side reaction splits (2 HCl -> H2 + Cl2)
     need = regen
     if N['BMED_ACID'].get('continuous_kw') and B.get('BMED_kW') is not None: N['BMED_ACID']['continuous_kw']['value'] = round(B['BMED_kW']*kb, 4)   # R8: node kW absent in Rev AC
-    put('S17-BMED', B['S17-BMED']*kb, f'BMED HCl make {prod+need:.2f} of {prod+regen:.2f} kg/d (k {kb:.3f})')
-    put('IA-EVAP_ACID-COND', B['IA-EVAP_ACID-COND']*kb, 'condensate scales with HCl make')
+    _s17 = round(B['S17-BMED']*kb, 4)
+    if abs(_s17 - v('S17-BMED')) > 1e-3: put('S17-BMED', _s17, f'BMED HCl make {prod+need:.2f} of {prod+regen:.2f} kg/d (k {kb:.3f})')   # epsilon guard (write-convergence fix 2026-10-19): write_graph owns the edge (it re-syncs B['S17-BMED'] every pass); an unconditional put re-appended the TF note each pass and put the balance-last and process-last orderings on different note attractors, so regen --quick broke --check
     # R10a 2026-10-18: the acid/base regen loop is restored to the BH topology (fa1b4db) - IA-BMED-03/04 were Rev AC unrated
-    # CRU placeholders with no CRU source basis. The leach spent-liquor purge closes each BMED by difference against the
-    # loop anchor IA-EVAP_*-FEED (X-PAR acid-loop decision, AQS-PAR-001 s3), the side draws and the condensate return:
-    #   acid: IA-BMED-03 = 1304.52 + 9.28 (S09) + 0.65 (IA-BMED-01) - 864.97 = 449.48  [BH 449.52, d retired IA-HCL-BU 0.05]
-    #   base: IA-BMED-04 = 1301.72 + 0.27 (IA-BMED-02) - 799.01 = 502.98              [BH 502.98 verbatim]
-    # EVAP_ACID then closes on IA-ACID-01 below (the retired 0.03 IA-EVAP_ACID-VENT rides the acid product); EVAP_BASE on
-    # IA-BASE-PPT (absorbs the retired ACEX caustic draw, BH IA-ACEX-NAOH 0.23).
+    # CRU placeholders with no CRU source basis. Each BMED closes by difference on its leach spent-liquor purge against
+    # the loop anchor IA-EVAP_*-FEED (X-PAR acid-loop decision, AQS-PAR-001 s3), the side draws, the condensate return
+    # and the X-PAR-10 vent-scrubber tie pair (IA-VS-SPENT into BMED_ACID, IA-VS-NAOH out of BMED_BASE). EVAP_BASE
+    # closes on IA-BASE-PPT below (absorbs the retired ACEX caustic draw, BH IA-ACEX-NAOH 0.23).
+    # WRITE-CONVERGENCE FIX 2026-10-19 (balance --write rejoins the regen manifest): this block is a graph writer in
+    #     the regen successive-substitution loop against write_graph.process, so it obeys the D8 single-writer rule
+    #     (as IA-DC-EW_n): write_graph owns the solver-solved edges (EVAP feeds/condensates/vents, the X-PAR-10
+    #     scrubber family, kW stamps); this block owns the leach spent purges and the acid product rate. Defects:
+    #     (1) IA-BMED-04 missed the X-PAR-10 spent-return term IA-VS-NAOH (base twin of the acid-side IA-VS-SPENT
+    #         term): BMED_BASE sat -0.0006 kg/d and the purge flipped +/-0.0006 every write_graph/balance round
+    #         trip (the write_graph writer always carried it).
+    #     (2) the frozen x_par_12_base re-stamps of IA-EVAP_ACID-COND (864.9665), SF-EVAP_ACID (1.497) and the
+    #         EVAP_ACID node kW fought the live solver writer (cond 878.7551): the by-difference purge IA-BMED-03
+    #         absorbed the 13.79 kg/d gap every pass - a repulsive fixed point at 439.4 kg/d that pushed IA-ACID-01
+    #         up +13.79/pass or collapsed it to the IA-BMED-03 -593.49 assert from below. Retired: write_graph
+    #         re-solves those edges from the solver every pass.
+    #     (3) edges shared with write_graph are re-derived through solver.evap - the exact write_graph code path,
+    #         on its 4-dp grid - behind a 1 g/d epsilon guard, so the 6-dp closure of 4-dp inputs can never
+    #         ping-pong against the solver's own rounding (IA-BMED-04: closure 500.1312 vs write_graph 500.1311).
+    #     IA-ACID-01 is SIZED to the leach HCl demand - its stated basis (AQS-DUTY-011 'sized to the continuous
+    #     neighbor draw', X-RSZ-01 class A bound on current drivers): the old by-difference closure was an identity
+    #     map that preserved the stale +1.57 % over-supply (446.5287 vs the 439.6127 the current assay demands)
+    #     and held the X-PAR-04 misfit gate red. The EVAP_ACID family follows on the same solver relations, so
+    #     write_graph re-derives identical numbers the next regen pass.
+    from . import solver as _sol
+    from .vent_scrubber import design as _vsd
+    _lac = _sol.leach_acid(_D)['hcl_kg_d']; _wa = _D['bmed_product_wt_acid']['value']; _wo = _D['acid_conc_design_wt']['value']
+    _pin = round(_lac/_wo, 4); _ea = _sol.evap(_D, _pin*_wo, _wa, _wo, unit='EVAP_ACID')
+    _u = _vsd(_D, _ea)['upset']   # X-PAR-10 family is f(acid feed): carried with the re-sized acid product (write_graph stamps the same floats; 1e-5 guard, the family's natural 1e-4 grid)
+    for _k, _x in (('IA-EVAP_ACID-VENT', _u['vent_kg_d']), ('IA-VS-NAOH', _u['naoh_soln_kg_d']), ('IA-VS-SPENT', _u['spent_kg_d']), ('IA-VS-OFF', _u['offgas_kg_d'])):
+        if _k in E and abs(round(_x, 4) - v(_k)) > 1e-5: put(_k, round(_x, 4), f'X-PAR-10 rate on the re-sized acid family (solver vent_scrubber.design, the write_graph code path; carried by the write-convergence fix 2026-10-19)')
+    if 'IA-VS-NAOH' in E: E['IA-VS-NAOH'].setdefault('params', {})['NaOH_mol_d'] = round(_u['naoh_mol_d'], 9)   # identical float to the write_graph stamp
+    put('IA-ACID-01', _pin, f'acid product sized to the leach HCl demand: {_lac:.4f} kg/d / {_wo:.0%} = {_pin:.4f} kg/d (AQS-DUTY-011 sized-to-draw basis, X-RSZ-01 class A bound on current drivers; write-convergence fix 2026-10-19: the by-difference closure was an identity map that preserved a stale +1.57 % over-supply)')
+    _fd = round(_ea['feed_kg_d'], 4)
+    if abs(_fd - v('IA-EVAP_ACID-FEED')) > 1e-3: put('IA-EVAP_ACID-FEED', _fd, 'EVAP_ACID feed re-derived on the sized acid product through solver.evap (column recycle, PERRY7_HCL_VLE); write_graph.process is the writer of record, epsilon guard 1 g/d (write-convergence fix 2026-10-19)')
+    _cd = round(_fd - _pin - v('IA-EVAP_ACID-VENT'), 4)
+    if abs(_cd - v('IA-EVAP_ACID-COND')) > 1e-3: put('IA-EVAP_ACID-COND', _cd, f'condensate = water off {_ea["water_kg_d"]:.2f} kg/d less the X-PAR-10 vent, on the sized acid product (frozen-base re-stamp 864.9665 retired 2026-10-19: it fought the live solver writer 878.7551 and rattled the purge +13.79 kg/d per pass)')
     put('IA-BMED-03', v('IA-EVAP_ACID-FEED') + v('S09') + v('IA-BMED-01') - v('IA-EVAP_ACID-COND') - vv('IA-VS-SPENT'),
-        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f} - vent-scrubber spent return {vv('IA-VS-SPENT'):.4f}; BH 449.52 (fa1b4db); D-DOCK lane: the X-PAR-10 spent return term was missing from the formula, which rattled the loop +0.0006 kg/d per pass once --write resumed (2026-10-19)")
-    put('IA-BMED-04', v('IA-EVAP_BASE-FEED') + v('IA-BMED-02') - v('IA-EVAP_BASE-COND'),
-        f"leach spent-base purge closes BMED_BASE: feed {v('IA-EVAP_BASE-FEED'):.2f} + IA-BMED-02 {v('IA-BMED-02'):.2f} - condensate {v('IA-EVAP_BASE-COND'):.2f}; BH 502.98 verbatim (fa1b4db)")
-    x_feed = v('IA-EVAP_ACID-FEED') + resid('BMED_ACID')
-    if x_feed > -1e-6: put('IA-EVAP_ACID-FEED', x_feed, 'BMED product by difference')   # R8: Rev AC re-routed the brine feed IA-BMED-03 unrated; residuals left for R10
-    x_acid = v('IA-ACID-01') + resid('EVAP_ACID')
-    if x_acid > -1e-6: put('IA-ACID-01', x_acid, 'acid to leach by difference')
-    if 'IA-BASE-PPT' in E:
-        put('IA-BASE-PPT', v('IA-BASE-PPT') + resid('EVAP_BASE'), 'base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, fa1b4db)')
-    put('SF-EVAP_ACID', B['SF-EVAP_ACID']*kb, 'evaporator scales with HCl make')
-    if N['EVAP_ACID'].get('continuous_kw'): N['EVAP_ACID']['continuous_kw']['value'] = round(B['EVAP_kW']*kb, 4)
+        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f} - vent-scrubber spent return {vv('IA-VS-SPENT'):.4f} (X-PAR-10 term, restored 2026-10-19 after it rattled the loop +0.0006 kg/d per pass); BH 449.52 (fa1b4db)")
+    _b4 = v('IA-EVAP_BASE-FEED') + v('IA-BMED-02') + vv('IA-VS-NAOH') - v('IA-EVAP_BASE-COND')
+    if abs(_b4 - v('IA-BMED-04')) > 1e-3: put('IA-BMED-04', _b4,
+        f"leach spent-base purge closes BMED_BASE: feed {v('IA-EVAP_BASE-FEED'):.2f} + IA-BMED-02 {v('IA-BMED-02'):.2f} + vent-scrubber NaOH bleed {vv('IA-VS-NAOH'):.4f} - condensate {v('IA-EVAP_BASE-COND'):.2f} (the X-PAR-10 spent-return term IA-VS-NAOH was missing from the formula, which rattled the loop +0.0006 kg/d per pass once --write resumed; restored 2026-10-19 to match the write_graph writer); BH 502.98 verbatim (fa1b4db); write_graph owns the 4-dp grid, epsilon guard 1 g/d")
+    _bp = v('IA-BASE-PPT') + resid('EVAP_BASE')
+    if abs(_bp - v('IA-BASE-PPT')) > 1e-3: put('IA-BASE-PPT', _bp, 'base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, fa1b4db)')   # epsilon guard (write-convergence fix 2026-10-19): identity closure at the fixed point - an unconditional put churned the note against the write_graph writer
+    _kw = round(_ea['kW'], 4)
+    if N['EVAP_ACID'].get('continuous_kw') and abs(_kw - N['EVAP_ACID']['continuous_kw']['value']) > 1e-3:
+        N['EVAP_ACID']['continuous_kw']['value'] = _kw   # re-sized family: the live solver kW, identical to the write_graph stamp (frozen-base re-stamp retired)
+    if 'SF-EVAP_ACID' in E and abs(_kw - v('SF-EVAP_ACID')) > 1e-3:
+        put('SF-EVAP_ACID', _kw, '480 V feed equal to EVAP_ACID continuous_kw on the re-sized acid family (live solver.evap value; frozen-base re-stamp retired 2026-10-19)')
     L['bmed'] = (kb, B['S17-BMED'] - v('S17-BMED') + B['SF-EVAP_ACID'] - v('SF-EVAP_ACID'))
     # --- BACKUP_GEN on a standby / exercise basis (NFPA110 8.4.2: monthly exercise >= 30 min at >= 30 % of nameplate); daily average
     if 'gen_full' not in B:

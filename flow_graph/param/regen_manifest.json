@@ -11,7 +11,7 @@
     "DECLARED-DAG NOTE: power -> pv_cell_line is a real feedback edge (PV array size sets the cell-line duty; the cell-line kW enters the demand). The manifest declares pv_cell_line -> power only so the dependency graph stays a DAG; regen.py resolves the cycle by looping the writes_graph block to its fixed point (observed: <= 3 passes from a drifted tree, 1 pass from a converged tree).",
     "EXCLUDED (by design, with reason): flow_graph/param/sanitation.py --write (X-SAN-01 graph-writer; owner-lane port pending, R11 close-out; sizing/SANITATION.md stays classified by-design in _rev_stamp); flow_graph/param/o2_source.py (main is the frozen Rev A study over git-show 6537017; O2_SOURCE.md classified by-design); _mfg_tools --graph and _material_temps --write and _resize_sweep.py (one-shot stampers; their doc/report halves are covered where spawned); pressure_nodes.py (one-shot Rev A pressurised-node marker, superseded by write_graph relief).",
     "--quick = the five write_graph stages only (solver + writer what-if mode): no doc regeneration and NO receipt write (a partial run must not clobber the full-run provenance receipt _rev_stamp vouches from).",
-    "2026-10-19: balance --write RESTORED - the balance lane closed (D-DOCK trade boundary, NOX/AFTERBURNER/CRYO_H2 closures, R10c residual basis pass; test_balance trio green, max residual 7.2e-4 kg/d)."
+    "2026-10-19: balance --write RE-RESTORED (write-convergence fix, same day): the regen acid/base loop had two writer disagreements, not a power<->balance oscillation - (1) the o2_close IA-BMED-04 purge missed the X-PAR-10 spent-return term IA-VS-NAOH (rattle +/-0.0006 kg/d per pass; the write_graph writer always carried it), and (2) the frozen x_par_12_base re-stamps (IA-EVAP_ACID-COND 864.9665, SF-EVAP_ACID, EVAP_ACID node kW) fought the live solver writer (cond 878.7551), a repulsive fixed point that pushed IA-ACID-01 +13.79 kg/d per pass or collapsed it into the IA-BMED-03 -593.49 assert. Fix: D8 single-writer rule in o2_close R10a (write_graph owns solver-solved edges; shared edges re-derived through solver.evap on its 4-dp grid behind a 1 g/d epsilon guard) and IA-ACID-01 sized to the leach HCl demand (AQS-DUTY-011 sized-to-draw basis; was a stale +1.57 % over-supply identity fixed point). Standalone settle: 3 passes to a byte-stable sha, moves < 1 g/d after the re-sizing jump; misfit + balance trio green."
   ],
   "stages": [
     {
@@ -331,7 +331,7 @@
       ],
       "writes_graph": true,
       "quick": false,
-      "note": "physics + reconcile + write (D-DOCK 2026-10-19): NORTH_DOCK reports a trade statement as the inter-plant boundary; --write assert green (max residual 7.2e-4 kg/d)."
+      "note": "physics + reconcile + write (write-convergence fix 2026-10-19): the o2_close R10a block obeys the D8 single-writer rule against write_graph.process - the X-PAR-10 spent-return terms (IA-VS-SPENT/IA-VS-NAOH) are in both purge closures, the stale frozen-base re-stamps are retired, shared edges ride solver.evap behind a 1 g/d epsilon guard, and IA-ACID-01 is sized to the leach HCl demand. Standalone settle byte-stable in 3 passes; assert green (max residual 7.2e-4 kg/d, COLD_MILL rounding family, pre-existing)."
     },
     {
       "name": "load_list",

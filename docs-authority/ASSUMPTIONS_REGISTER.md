@@ -332,7 +332,7 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-4a144b | 12.0 | kW | graph MFG_SHOP continuous_kw | REQ-MFG-TOTAL-CONT mid |  | unit task 02 (MFG_SHOP) |
 | A-G-c8e676 | 0.0385 | kW | graph NOX_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W. |  | unit task 02 (NOX_SCRUB) |
 | A-G-3a2c73 | 0.1 | kW | graph NUTRIENT_DOSE continuous_kw | Study dose pumps |  | unit task 02 (NUTRIENT_DOSE) |
-| A-G-dddba0 | 405.4928 | kW | graph PV_ARRAY continuous_kw | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg — resolved (A-M-233). |  | unit task 02 (PV_ARRAY) |
+| A-G-dddba0 | 405.3506 | kW | graph PV_ARRAY continuous_kw | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg — resolved (A-M-233). |  | unit task 02 (PV_ARRAY) |
 | A-G-18e3f1 | 12.0 | kW | graph RECTIFIER continuous_kw | study |  | unit task 02 (RECTIFIER) |
 | A-G-c0d11f | 2.0 | kW | graph WAFER_FAB continuous_kw | PECVD+belt avg study |  | unit task 02 (WAFER_FAB) |
 | A-G-80b832 | 1.0 | kW | graph WET_BENCH continuous_kw | Study fab wet-bench share |  | unit task 02 (WET_BENCH) |
@@ -409,7 +409,7 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-0ed9b0 | 1.565 | kW | graph HL-Q4-X-BA rate | AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.0 kW. |  | X-BAS-02 |
 | A-G-46beba | 1.2456 | kg/d | graph IA-BMED-01 rate | AQS-DUTY-010: 1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange / X-PAR-02 TF: reagent day tank passes its draw S34; 1.25 mol/d HCl at 36.46 g/mol  |  | X-BAS-02 |
 | A-G-6f8da0 | 0.2701 | kg/d | graph IA-BMED-02 rate | AQS-DUTY-010: 1:1 molar NaOH for S35 (0.50 mol/d KOH) at 2 M, resin exchange / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-6e39bc | 450.163884 | kg/d | graph IA-BMED-03 rate | placeholder — no invented rate (lock present_plus_placeholders) / X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_cl |  | X-BAS-02 |
+| A-G-6e39bc | 450.164184 | kg/d | graph IA-BMED-03 rate | placeholder — no invented rate (lock present_plus_placeholders) / X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_cl |  | X-BAS-02 |
 | A-G-69b8ed | 500.1311 | kg/d | graph IA-BMED-04 rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Brine to BMED_BASE closing the stack balance with the condensate return. |  | X-BAS-02 |
 | A-G-a82994 | 0.0 | kg/d | graph IA-ESS-HYDRO-CHG rate | AQS-DUTY-010: one full 200 m3 cycle per day / X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on  |  | X-BAS-02 |
 | A-G-f6d80d | 0.0 | kg/d | graph IA-ESS-HYDRO-DIS rate | AQS-DUTY-010: one full cycle per day / X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surp |  | X-BAS-02 |
@@ -420,25 +420,25 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-dd335a | 3990.594815 | kg/d | graph IA-EW-02 rate | AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PA |  | X-BAS-02 |
 | A-G-83197d | 3934.805911 | kg/d | graph IA-EW-03 rate | AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
 | A-G-c229e1 | 4287.799997 | kg/d | graph IA-EW-04 rate | AQS-DUTY-010: DUTY-008 concentrate 0.17 m3/h x 1050.0 kg/m3 x 24 h / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-11a026 | 3909.915497 | kg/d | graph IA-EW-05 rate | AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
-| A-G-094d61 | 3896.339738 | kg/d | graph IA-EW-06 rate | AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
-| A-G-9d4a4b | 3719.792521 | kg/d | graph IA-EW-07 rate | AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-P |  | X-BAS-02 |
-| A-G-4e4b06 | 3707.26014 | kg/d | graph IA-EW-08 rate | AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
-| A-G-6a8dce | 3520.31431 | kg/d | graph IA-EW-09 rate | AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PA |  | X-BAS-02 |
+| A-G-11a026 | 3909.914016 | kg/d | graph IA-EW-05 rate | AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
+| A-G-094d61 | 3896.338257 | kg/d | graph IA-EW-06 rate | AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
+| A-G-9d4a4b | 3719.79104 | kg/d | graph IA-EW-07 rate | AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-P |  | X-BAS-02 |
+| A-G-4e4b06 | 3707.257179 | kg/d | graph IA-EW-08 rate | AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
+| A-G-6a8dce | 3520.311349 | kg/d | graph IA-EW-09 rate | AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PA |  | X-BAS-02 |
 | A-G-1c4725 | 3922.373456 | kg/d | graph IA-EW-10 rate | AQS-DUTY-010: EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR |  | X-BAS-02 |
 | A-G-b21d66 | 36.82 | kg/d | graph IA-GLASS-01 rate | AQS-DUTY-010: cullet 30.0 kg/d dry (DUTY-008 burnout basis = silicate yield) + drained moisture 6.82 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-0c42e9 | 30.0 | kg/d | graph IA-GLASS-02 rate | AQS-DUTY-010: dry milled cullet = cullet basis / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-cf1554 | 30.0 | kg/d | graph IA-GLASS-03 rate | AQS-DUTY-010: burned cullet; organics burnout negligible (DUTY-008 off-gas 0.03 kW) / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-d51139 | 0.382615 | kg/d | graph IA-HDR-H2-01 rate | EW_1 cathode H2 share ~4.8/3 kg/d Faraday pool — WP-L2 — catch-point allocation retained (EW_1/EW_2/EW_9); EW_3…EW_8 hood rates HOLD (no invent 4.8/9). / X-PAR- |  | X-BAS-02 |
-| A-G-a5df35 | 1.975396 | kg/d | graph IA-HDR-H2-02 rate | HDR_H2→H2_DRYER = sum EW hood Faraday pool 1.6×3 = 4.8 kg/d — true-closure — plant Faraday pool unchanged 4.8 kg/d (AQS-GAS-003). / X-PAR-12 TF: header passes t |  | X-BAS-02 |
+| A-G-a5df35 | 1.975408 | kg/d | graph IA-HDR-H2-02 rate | HDR_H2→H2_DRYER = sum EW hood Faraday pool 1.6×3 = 4.8 kg/d — true-closure — plant Faraday pool unchanged 4.8 kg/d (AQS-GAS-003). / X-PAR-12 TF: header passes t |  | X-BAS-02 |
 | A-G-e41868 | 0.382743 | kg/d | graph IA-HDR-H2-03 rate | EW_2 cathode H2 share ~4.8/3 kg/d Faraday pool — WP-L2 multi-EW hood — catch-point allocation retained (EW_1/EW_2/EW_9); EW_3…EW_8 hood rates HOLD (no invent 4. |  | X-BAS-02 |
 | A-G-cd0db6 | 0.481422 | kg/d | graph IA-HDR-H2-04 rate | EW_9 cathode H2 share ~4.8/3 kg/d Faraday pool — WP-L2 multi-EW hood — catch-point allocation retained (EW_1/EW_2/EW_9); EW_3…EW_8 hood rates HOLD (no invent 4. |  | X-BAS-02 |
 | A-G-ee64cb | 4.572 | kW | graph IA-HX8 rate | AQS-DUTY-008 Rev B s13.1: EW ohmic heat + concentrate sensible - cell wall loss - surface evaporation. |  | X-BAS-02 |
 | A-G-da4214 | 33.0 | kg/d | graph IA-OIL-01 rate | AQS-DUTY-010: dry plastic + paper float 0.22 x 150.0 / X-PAR-02 reconciled (AQS-PAR-003). / value restored from graph Rev BH (fa1b4db): Rev AC consolidation bla |  | X-BAS-02 |
 | A-G-5d7602 | 33.373266 | kg/d | graph IA-OIL-02 rate | AQS-DUTY-010: per-pass volatiles: net 27.5 (oil 22.5 + NCG 5.0) + C29 recycle 1.40 (ASF alpha 0.8456) / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-02 TF: per-pa |  | X-BAS-02 |
 | A-G-42214e | 5.0 | kg/d | graph IA-OIL-03 rate | AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002) |  | X-BAS-02 |
-| A-G-9d0a55 | 3302.944317 | kg/d | graph IA-POL-02 rate | Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-princ |  | X-BAS-02 |
-| A-G-025fdf | 3302.944317 | kg/d | graph IA-REC-01 rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s. / X-PAR-02 reconciled (AQS-PAR-003). / X- |  | X-BAS-02 |
+| A-G-9d0a55 | 3302.941356 | kg/d | graph IA-POL-02 rate | Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-princ |  | X-BAS-02 |
+| A-G-025fdf | 3302.941356 | kg/d | graph IA-REC-01 rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s. / X-PAR-02 reconciled (AQS-PAR-003). / X- |  | X-BAS-02 |
 | A-G-203fca | 343.1 | kg/d | graph IA-WET-FLOAT-01 rate | AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 / X-PAR-02 TF R10a: float-sink wet heavy fractio |  | X-BAS-02 |
 | A-G-ba860f | 5.0 | kg/d | graph NCG_TO_AB rate | AQS-DUTY-010: = IA-OIL-03 (header pass-through) |  | X-BAS-02 |
 | A-G-195090 | 67.300214 | kg/d | graph S01 rate | Mid of AQS-AUD-001 §11 FARM_SUMP / UPW makeup S01/S21 ~50–140 L/d / X-PAR-02 TF: UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, fa1b4db; Rev AC  |  | X-BAS-02 |
@@ -464,7 +464,7 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-449ebc | 0.0 | kg/d | graph S22 rate | null_rate_kind=inventory_cycle / X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (A |  | X-BAS-02 |
 | A-G-f3656f | 0.0 | kg/d | graph S23 rate | null_rate_kind=inventory_cycle / X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (A |  | X-BAS-02 |
 | A-G-47edc1 | 0.0 | kg/d | graph S24 rate | AQS-DUTY-010: contingency relief only; no continuous flow on the design day |  | X-BAS-02 |
-| A-G-c9e244 | 308.578609 | kg/d | graph S25 rate | AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. / X-PAR-02 TF: roof-tank |  | X-BAS-02 |
+| A-G-c9e244 | 308.578502 | kg/d | graph S25 rate | AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. / X-PAR-02 TF: roof-tank |  | X-BAS-02 |
 | A-G-fc7bbf | 10.0 | kg/d | graph S26 rate | AQS-DUTY-010: REMIN drink_L_d 10 / X-PAR-02 TF R10a: remineralised potable to habitation; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 10.00 (p |  | X-BAS-02 |
 | A-G-f44aca | 60.000181 | kg/d | graph S27 rate | AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts / X-PAR-02 reconciled (AQS-PAR-003). / value restored from graph Rev BH (fa1b4db): Rev AC consolida |  | X-BAS-02 |
 | A-G-2cf58c | 17.877059 | kg/d | graph S28 rate | AQS-DUTY-010: VCD brine 10% of feed / value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology / X-PAR-02 reconciled (A |  | X-BAS-02 |
@@ -501,8 +501,8 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-09568e | 117.42759 | kg/d | graph S67 rate | Flue includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. / X-PAR-12 TF: flue junction passes burner flue |  | X-BAS-02 |
 | A-G-121660 | 14.050492 | kg/d | graph S67B rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: bound O2 in |  | X-BAS-02 |
 | A-G-e2f3f4 | 78.987901 | kg/d | graph S68 rate | AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-b66bb4 | 1093.561663 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 38.6 m3/h holds H2 at 25 % LFL: H |  | X-BAS-02 |
-| A-G-ec8519 | 1093.561663 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in th |  | X-BAS-02 |
+| A-G-b66bb4 | 1092.975294 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 38.6 m3/h holds H2 at 25 % LFL: H |  | X-BAS-02 |
+| A-G-ec8519 | 1092.975294 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in th |  | X-BAS-02 |
 | A-G-5863c6 | 0.0521 | kg/d | graph S70 rate | AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-7073c8 | 20458.32 | kg/d | graph S71 rate | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. / value r |  | X-BAS-02 |
 | A-G-14c1dd | 2.4442 | kg/d | graph S72 rate | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -517,7 +517,7 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-7012fe | 0.3689 | kW | graph S80 rate | AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return / value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology |  | X-BAS-02 |
 | A-G-13e34e | 7.251023 | kg/d | graph S81 rate | AQS-DUTY-010: CH3OH + 1.5 O2 -> CO2 + 2 H2O on S76 5.0 kg/d / X-PAR-02 TF: cell water out by difference closes MEOH_FC (the IA-CLOSE-10 liquor tie rides it) (AQ |  | X-BAS-02 |
 | A-G-5e4fa6 | 8.625641 | kg/d | graph S82 rate | S76 5.0 kg/d MeOH x 1.375 kg CO2/kg MeOH (complete oxidation, same factor as S73). Rev J. / X-PAR-02 TF: stoichiometric CO2 on 6.280 kg/d methanol burned (AQS-D |  | X-BAS-02 |
-| A-G-2b8711 | 33.195596 | kg/d | graph S83 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. / X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. / X-PAR-02 TF: O2 prod |  | X-BAS-02 |
+| A-G-2b8711 | 33.195501 | kg/d | graph S83 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. / X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. / X-PAR-02 TF: O2 prod |  | X-BAS-02 |
 | A-G-a47159 | 191.989014 | kg/d | graph S84 rate | AQS-DUTY-017. Cold box separates intake air and scrubbed flue. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: cold-box N2 product to the air receiver, less |  | X-BAS-02 |
 | A-G-40e9d5 | 0.0 | kg/d | graph S85 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. S11 carbon folded in. / X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. / X- |  | X-BAS-02 |
 | A-G-c84d6a | 0.0 | kg/d | graph S86 rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: closed contingency |  | X-BAS-02 |
@@ -611,11 +611,11 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-75b109 | 244.641602 | kg/d | graph IA-GREY-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. / X-PAR-02 TF: grey sludge to the leach by difference (Rev M: |  | X-BAS-02 |
 | A-G-c27d95 | 27.372033 | kg/d | graph IA-CRU-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. CRU re-scoped to chlorate. Closes on S66. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-ec5c10 | 0.0 | kW | graph HL-Q4-REJ rate | AQS-HEAT-STUDY-002 Rev A 2026-10-18 §10.8/§10.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored — 13.1637 in - 3.0 life - 0.532 HX-9 - 0.2 |  | X-BAS-02 |
-| A-G-a59b7e | 405.4928 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension  |  | X-BAS-02 |
+| A-G-a59b7e | 405.3506 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension  |  | X-BAS-02 |
 | A-G-181fa6 | 8.486841 | kg/d | graph IA-ZNBR-BD rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-3a0716 | 13.930007 | kg/d | graph IA-NUT-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-225194 | 60.000181 | kg/d | graph IA-UPW-FAB rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-125f17 | 175.233209 | kg/d | graph IA-UPW-REMIN rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. / X-PAR-02 TF: roof-tank  |  | X-BAS-02 |
+| A-G-125f17 | 175.233102 | kg/d | graph IA-UPW-REMIN rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. / X-PAR-02 TF: roof-tank  |  | X-BAS-02 |
 | A-G-86cb48 | 6.045005 | kg/d | graph IA-UPW-REJ rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +2.825 kg/d. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-4c2912 | 3.0 | kW | graph IA-Q4-LIFE rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. |  | X-BAS-02 |
 | A-G-40860f | 7.096878 | kg/d | graph IA-AB-FLUE rate | Includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. / X-PAR-12 TF: burner mass balance: NCG 5.000 + S11  |  | X-BAS-02 |
@@ -660,7 +660,7 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-2a4491 | 0.0 | kg/d | graph IA-GREY-RET rate | AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: S29 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-ae86fd | 82.317318 | kg/d | graph IA-NUT-LEACH rate | AQS-DUTY-014. / X-PAR-02 TF: nutrient surplus by difference (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-6e9e37 | 102.680001 | kg/d | graph IA-FEED-01 rate | AQS-DUTY-020. Continuous dock feed retired. Feed class is not fixed. Characterized against AQS-ASSAY-001 Rev C. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-9832ba | 165.23317 | kg/d | graph IA-POT-01 rate | AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. / X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the p |  | X-BAS-02 |
+| A-G-9832ba | 165.233063 | kg/d | graph IA-POT-01 rate | AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. / X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the p |  | X-BAS-02 |
 | A-G-aa3aae | 0.800001 | kg/d | graph IA-UPW-HAB rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-f44d31 | 7.77 | kg/d | graph IA-BAG-01 rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-d0ecfb | 66.500213 | kg/d | graph IA-UPW-USE rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -726,7 +726,7 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-f8939e | 5.6267 | kW | graph S17-BMED rate | X-PAR acid-loop decision (AQS-PAR-001 §3). 480 V feed equal to BMED_ACID continuous_kw. |  | X-BAS-02 |
 | A-G-cd06f5 | 0.78 | kW | graph IA-BMED-03-TRIM rate | X-RSZ-04 (AQS-MAT-001 §10 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K. |  | X-BAS-02 |
 | A-G-6ccfa8 | 1.027 | kW | graph IA-BMED-04-TRIM rate | X-RSZ-04 (AQS-MAT-001 §10 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K. |  | X-BAS-02 |
-| A-G-8e1110 | 168.058609 | kg/d | graph IA-LEACH-VCD rate | X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. / X-PAR-02 TF: roof-tank shortfall +0.0000 kg |  | X-BAS-02 |
+| A-G-8e1110 | 168.058502 | kg/d | graph IA-LEACH-VCD rate | X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. / X-PAR-02 TF: roof-tank shortfall +0.0000 kg |  | X-BAS-02 |
 | A-G-021147 | 1.1123 | kW | graph SF-ALK_SCRUBBER rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
 | A-G-1184e8 | 0.018 | kW | graph SF-BMED_UPW_POLISH rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-438768 | 0.9327 | kW | graph SF-CRYO_H2 rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
@@ -751,15 +751,15 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-131c7e | 0.207942 | kg/d | graph IA-GEN-O2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: 1.10 x (0.000 H2 x 7.94 + 0.054 C7.5H17 x 3.51) (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-f8d83c | 0.528278 | kg/d | graph IA-AB-O2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: 1.10 x (CO 0.000 + organics 0.480); S11 is 99.8 % water (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-b3b603 | 3.138638 | kg/d | graph IA-HCO2-MEOH rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: header CO2 the bed cannot fix (AQS-PAR-005). |  | X-BAS-02 |
-| A-G-7bed9b | 64.813443 | kg/d | graph IA-H2O-MU rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-7bed9b | 64.813948 | kg/d | graph IA-H2O-MU rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-785724 | 88.32517 | kg/d | graph IA-EW1-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-ba6fd6 | 88.354656 | kg/d | graph IA-EW2-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-3f591a | 33.164878 | kg/d | graph IA-EW3-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-d43ee4 | 7.154886 | kg/d | graph IA-EW4-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
-| A-G-883a94 | 7.40552 | kg/d | graph IA-EW5-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
+| A-G-883a94 | 7.406995 | kg/d | graph IA-EW5-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-7cef36 | 8.07044 | kg/d | graph IA-EW6-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-df6e1e | 104.952575 | kg/d | graph IA-EW7-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
-| A-G-69707d | 7.44975 | kg/d | graph IA-EW8-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
+| A-G-69707d | 7.451224 | kg/d | graph IA-EW8-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-6ff097 | 111.134409 | kg/d | graph IA-EW9-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS |  | X-BAS-02 |
 | A-G-8a99ed | 6.955972 | kg/d | graph IA-C5-SHIP rate | X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0539 and the olefin feed 0.4149 (this pass, AQS-DUTY-073); shipped at the dock. / X-PAR-0 |  | X-BAS-02 |
 | A-G-55de32 | 1.511662 | kg/d | graph IA-C11-SHIP rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: C11-C18 make less the plant draw (IA-BLOW-IN), shipped (Q-002 pattern) (AQS-PAR-003). |  | X-BAS-02 |
@@ -770,11 +770,11 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-174d4b | 1.1123 | kW | graph SF-ACID_POLISH_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
 | A-G-4eb992 | 0.0385 | kW | graph SF-NOX_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
 | A-G-6d1e08 | 2.1234 | kW | graph SF-MET_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
-| A-G-db23aa | 439.6125 | kg/d | graph IA-ACID-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-A |  | X-BAS-02 |
+| A-G-db23aa | 439.6127 | kg/d | graph IA-ACID-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-A |  | X-BAS-02 |
 | A-G-45a156 | 21.968 | kg/d | graph IA-BASE-01 rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 109.8 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2,  |  | X-BAS-02 |
 | A-G-59112c | 482.2861 | kg/d | graph IA-BASE-PPT rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%. |  | X-BAS-02 |
-| A-G-8f45ea | 1304.786 | kg/d | graph IA-EVAP_ACID-FEED rate | X-PAR acid-loop decision (AQS-PAR-001 §3). 87.92 kg/d HCl / 0.0707. |  | X-BAS-02 |
-| A-G-50d800 | 865.1442 | kg/d | graph IA-EVAP_ACID-COND rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10). |  | X-BAS-02 |
+| A-G-8f45ea | 1304.7866 | kg/d | graph IA-EVAP_ACID-FEED rate | X-PAR acid-loop decision (AQS-PAR-001 §3). 87.92 kg/d HCl / 0.0707. |  | X-BAS-02 |
+| A-G-50d800 | 865.1446 | kg/d | graph IA-EVAP_ACID-COND rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10). |  | X-BAS-02 |
 | A-G-9fbe2e | 1.498 | kW | graph SF-EVAP_ACID rate | X-PAR acid-loop decision (AQS-PAR-001 §3). 480 V feed equal to EVAP_ACID continuous_kw. |  | X-BAS-02 |
 | A-G-e75047 | 1301.7164 | kg/d | graph IA-EVAP_BASE-FEED rate | X-PAR acid-loop decision (AQS-PAR-001 §3). 96.46 kg/d NaOH / 0.0741. |  | X-BAS-02 |
 | A-G-e40c82 | 801.8559 | kg/d | graph IA-EVAP_BASE-COND rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Water evaporated, condensed and returned to BMED_BASE. |  | X-BAS-02 |
@@ -792,12 +792,12 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-a52a45 | 0.0 | kg/d | graph IA-CO2-RET rate | AQS-DUTY-019. No vent. Goods and gases return. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: no CO2 recycle into the cold box (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-a3727b | 0.0 | kg/d | graph IA-LEACH-ASU rate | AQS-DUTY-022. / X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.622 kg/d (SANDER2015) (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-49e74d | 1.6689 | kW | graph SF-CRYO_ASU rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). / restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidenta |  | X-BAS-02 |
-| A-G-7d951f | 83.647854 | kg/d | graph IA-ELY-H2O rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: water split (AQS-PAR-005). |  | X-BAS-02 |
-| A-G-64725d | 9.360759 | kg/d | graph IA-ELY-H2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.00 + fuel cell 4.80 + methanol 6.54 - S64 1.975 kg/d (A- |  | X-BAS-02 |
-| A-G-793120 | 74.287095 | kg/d | graph IA-ELY-O2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005). |  | X-BAS-02 |
+| A-G-7d951f | 83.647747 | kg/d | graph IA-ELY-H2O rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: water split (AQS-PAR-005). |  | X-BAS-02 |
+| A-G-64725d | 9.360747 | kg/d | graph IA-ELY-H2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.00 + fuel cell 4.80 + methanol 6.54 - S64 1.975 kg/d (A- |  | X-BAS-02 |
+| A-G-793120 | 74.287 | kg/d | graph IA-ELY-O2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-ae56e2 | 21.4517 | kW | graph SF-H2O_ELYZ rate | X-PAR-12 TF (AQS-PAR-005). / restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, |  | X-BAS-02 |
-| A-G-5dbbbb | 22.876312 | kg/d | graph IA-O2-PROD rate | X-PAR-12 TF (AQS-PAR-005). / restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope |  | X-BAS-02 |
-| A-G-7b153e | 22.876312 | kg/d | graph IA-O2-SHIP rate | X-PAR-12 TF (AQS-PAR-005). / restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope |  | X-BAS-02 |
+| A-G-5dbbbb | 22.876217 | kg/d | graph IA-O2-PROD rate | X-PAR-12 TF (AQS-PAR-005). / restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope |  | X-BAS-02 |
+| A-G-7b153e | 22.876217 | kg/d | graph IA-O2-SHIP rate | X-PAR-12 TF (AQS-PAR-005). / restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope |  | X-BAS-02 |
 | A-G-e2c6a7 | 25.0 | kW | graph SF-IND_MELT rate | equals node continuous_kw (25.0 kW, IND_MELT); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2 |  | X-BAS-02 |
 | A-G-fa8850 | 15.0 | kW | graph SF-VAC_IND rate | equals node continuous_kw (15.0 kW, VAC_IND); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 20 |  | X-BAS-02 |
 | A-G-151999 | 5.0 | kW | graph SF-RF_HEAT rate | equals node continuous_kw (5.0 kW, RF_HEAT); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 202 |  | X-BAS-02 |
@@ -831,10 +831,10 @@ Counts: 274 curated, 555 graph, 22 model params, 103 document lines. Total 954. 
 | A-G-16162e | 0.5054 | kW | graph IA-DC-EW_8 rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current. |  | X-BAS-02 |
 | A-G-023f83 | 7.538 | kW | graph IA-DC-EW_9 rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current. |  | X-BAS-02 |
 | A-G-629497 | 0.143667 | kg/d | graph IA-EW3-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 1061 A, CE 0.85; to the  |  | X-BAS-02 |
-| A-G-3d3955 | 0.03208 | kg/d | graph IA-EW5-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 237 A, CE 0.85; to the H |  | X-BAS-02 |
+| A-G-3d3955 | 0.032086 | kg/d | graph IA-EW5-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 237 A, CE 0.85; to the H |  | X-BAS-02 |
 | A-G-cfe8bb | 0.03496 | kg/d | graph IA-EW6-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 258 A, CE 0.85; to the H |  | X-BAS-02 |
 | A-G-3991fe | 0.454643 | kg/d | graph IA-EW7-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 3358 A, CE 0.85; to the  |  | X-BAS-02 |
-| A-G-3cfce3 | 0.032272 | kg/d | graph IA-EW8-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 238 A, CE 0.85; to the H |  | X-BAS-02 |
+| A-G-3cfce3 | 0.032278 | kg/d | graph IA-EW8-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 238 A, CE 0.85; to the H |  | X-BAS-02 |
 | A-G-7f5dc1 | 97.486 | kW | graph SF-EXT_HALL rate | Equals EXT_HALL continuous_kw (X-PAR-07). |  | X-BAS-02 |
 | A-G-8b4e70 | 0.414905 | kg/d | graph IA-C5-POLY rate | Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). / X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). |  | X-BAS-02 |
 | A-G-337dd7 | 1.498 | kW | graph SQ-EVAP_ACID rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Compressor work leaves as heat (A-M-086). |  | X-BAS-02 |

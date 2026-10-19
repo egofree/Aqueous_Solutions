@@ -1,11 +1,14 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "argv": [],
+ "argv": [
+  "--max-passes",
+  "2"
+ ],
  "quick": false,
- "graph_sha256": "e48b3b316462f2465881fadf09cd523551228a1f6957caabe14a81a6e8a41b59",
- "passes": 4,
- "converged": false,
+ "graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed",
+ "passes": 2,
+ "converged": true,
  "stages": [
   {
    "name": "write_graph_process",
@@ -16,215 +19,215 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 0.62,
-   "status": "ok",
-   "post_graph_sha256": "b5f3c191a2f62c081c5312e6ced4676012463738b70786b3fb9406a5ff347a8a"
-  },
-  {
-   "name": "sizing_cold_box",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.cold_box",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "b5f3c191a2f62c081c5312e6ced4676012463738b70786b3fb9406a5ff347a8a"
-  },
-  {
-   "name": "sizing_evap_design",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.evap_design",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.28,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "sizing_receivers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.receivers",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "sizing_h2_compressor",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_compressor",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "sizing_h2_purifier",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_purifier",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "sizing_house_scrubbers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.house_scrubbers",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "sizing_pv_cell_line",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.pv_cell_line",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "sizing_upw_polish",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.upw_polish",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "foundry_poly",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.foundry_poly",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "de6ac6d4f2329243af2bc9ab871a60b4c6a6d548a34b598850589b5e101566a7"
-  },
-  {
-   "name": "write_graph_heat",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "heat"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "a9df6e757e9146aad0b97b17643b9775c9b202894683f9a832b2f4246e0609d2"
-  },
-  {
-   "name": "write_graph_relief",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "relief"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "8917423baafe999ab77540b797acb59e8169c9b88cf74fc0e8bdf554cd2d2d75"
-  },
-  {
-   "name": "write_graph_vent",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "vent"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "b5f3c191a2f62c081c5312e6ced4676012463738b70786b3fb9406a5ff347a8a"
-  },
-  {
-   "name": "storage_sizing",
-   "argv": [
-    "python3",
-    "docs-authority/_storage_sizing.py"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "b5f3c191a2f62c081c5312e6ced4676012463738b70786b3fb9406a5ff347a8a"
-  },
-  {
-   "name": "write_graph_power",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "power"
-   ],
-   "pass": 1,
-   "seconds": 0.3,
-   "status": "ok",
-   "post_graph_sha256": "b5f3c191a2f62c081c5312e6ced4676012463738b70786b3fb9406a5ff347a8a"
-  },
-  {
-   "name": "balance_report",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.balance",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.42,
-   "status": "ok",
-   "post_graph_sha256": "4c1209049a2864ecd1dc7599fb199239f70f7d6644be0854f6d28b850ede672f"
-  },
-  {
-   "name": "write_graph_process",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "process"
-   ],
-   "pass": 2,
    "seconds": 1.21,
    "status": "ok",
-   "post_graph_sha256": "788877b79c2a643173bc07b8fd430d13bf6f4db99bd8d2877292eb0c5ededfa0"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "sizing_cold_box",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.cold_box",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "sizing_evap_design",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.evap_design",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.85,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "sizing_receivers",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.receivers",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "sizing_h2_compressor",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.h2_compressor",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "sizing_h2_purifier",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.h2_purifier",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "sizing_house_scrubbers",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.house_scrubbers",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "sizing_pv_cell_line",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.pv_cell_line",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "sizing_upw_polish",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.upw_polish",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
+  },
+  {
+   "name": "foundry_poly",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.foundry_poly",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "705cb3b2c6f285fc2fd121ec9282067e2d2ad7c8eb4f4f4eb46feedce6d7b41e"
+  },
+  {
+   "name": "write_graph_heat",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.write_graph",
+    "heat"
+   ],
+   "pass": 1,
+   "seconds": 0.14,
+   "status": "ok",
+   "post_graph_sha256": "f6ea6c6f56de655de321dff4740b333acec0dcc56ff13e3f3faa47eac39d9a06"
+  },
+  {
+   "name": "write_graph_relief",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.write_graph",
+    "relief"
+   ],
+   "pass": 1,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "d71f2c0f3d784f665f89ee3b381ec98f7067ccde36a3b08a6d6cefdbc0133964"
+  },
+  {
+   "name": "write_graph_vent",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.write_graph",
+    "vent"
+   ],
+   "pass": 1,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "4f4566f17cb2b634ccd4602e782397eb7a7f9bd355c09282273cfbfe18a45265"
+  },
+  {
+   "name": "storage_sizing",
+   "argv": [
+    "python3",
+    "docs-authority/_storage_sizing.py"
+   ],
+   "pass": 1,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "4f4566f17cb2b634ccd4602e782397eb7a7f9bd355c09282273cfbfe18a45265"
+  },
+  {
+   "name": "write_graph_power",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.write_graph",
+    "power"
+   ],
+   "pass": 1,
+   "seconds": 0.89,
+   "status": "ok",
+   "post_graph_sha256": "4f4566f17cb2b634ccd4602e782397eb7a7f9bd355c09282273cfbfe18a45265"
+  },
+  {
+   "name": "balance_report",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.balance",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.55,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "write_graph_process",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.write_graph",
+    "process"
+   ],
+   "pass": 2,
+   "seconds": 0.64,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
    "name": "sizing_cold_box",
@@ -237,7 +240,7 @@
    "pass": 2,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "788877b79c2a643173bc07b8fd430d13bf6f4db99bd8d2877292eb0c5ededfa0"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
    "name": "sizing_evap_design",
@@ -248,9 +251,9 @@
     "--write"
    ],
    "pass": 2,
-   "seconds": 0.85,
+   "seconds": 0.27,
    "status": "ok",
-   "post_graph_sha256": "cd3464ffb22239e645357ca4ed033df604d104d622e4ea73cf68c751e3d726d5"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "sizing_receivers",
@@ -261,9 +264,9 @@
     "--write"
    ],
    "pass": 2,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "cd3464ffb22239e645357ca4ed033df604d104d622e4ea73cf68c751e3d726d5"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "sizing_h2_compressor",
@@ -276,7 +279,7 @@
    "pass": 2,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "cd3464ffb22239e645357ca4ed033df604d104d622e4ea73cf68c751e3d726d5"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "sizing_h2_purifier",
@@ -289,7 +292,7 @@
    "pass": 2,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "d3aaf79e808c8fc59fa709f830ca1a4fc47462471593dd8fc54f739519e09949"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "sizing_house_scrubbers",
@@ -300,9 +303,9 @@
     "--write"
    ],
    "pass": 2,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "d3aaf79e808c8fc59fa709f830ca1a4fc47462471593dd8fc54f739519e09949"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "sizing_pv_cell_line",
@@ -315,7 +318,7 @@
    "pass": 2,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "d3aaf79e808c8fc59fa709f830ca1a4fc47462471593dd8fc54f739519e09949"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "sizing_upw_polish",
@@ -326,9 +329,9 @@
     "--write"
    ],
    "pass": 2,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "f0a3c31d397926ab465c2b2aab47b5ca0d61c9c4895836c5e59b4d462c4b9845"
+   "post_graph_sha256": "765ce7e02afb723cc0069621ce42887ab4aa6cebe95c64b6aaa414c0e85ccafe"
   },
   {
    "name": "foundry_poly",
@@ -341,7 +344,7 @@
    "pass": 2,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "3e8ad1a15920bef7bdaf705d5506768977a1d926363859e5a4d3386296792913"
+   "post_graph_sha256": "705cb3b2c6f285fc2fd121ec9282067e2d2ad7c8eb4f4f4eb46feedce6d7b41e"
   },
   {
    "name": "write_graph_heat",
@@ -354,7 +357,7 @@
    "pass": 2,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "f5b5f076daae6ba290612c86a2331d903f7dd09d6521be231c771220cda52e39"
+   "post_graph_sha256": "f6ea6c6f56de655de321dff4740b333acec0dcc56ff13e3f3faa47eac39d9a06"
   },
   {
    "name": "write_graph_relief",
@@ -365,9 +368,9 @@
     "relief"
    ],
    "pass": 2,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "1353efaec555cf696a5cb2b435fbc28c6a20a2b285633cb3d775733a68f741f1"
+   "post_graph_sha256": "d71f2c0f3d784f665f89ee3b381ec98f7067ccde36a3b08a6d6cefdbc0133964"
   },
   {
    "name": "write_graph_vent",
@@ -380,7 +383,7 @@
    "pass": 2,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "f26358ef24037a339ac7d1718473f9b8c776d3da162db3c3dda360fa0b65bfeb"
+   "post_graph_sha256": "4f4566f17cb2b634ccd4602e782397eb7a7f9bd355c09282273cfbfe18a45265"
   },
   {
    "name": "storage_sizing",
@@ -391,7 +394,7 @@
    "pass": 2,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "f26358ef24037a339ac7d1718473f9b8c776d3da162db3c3dda360fa0b65bfeb"
+   "post_graph_sha256": "4f4566f17cb2b634ccd4602e782397eb7a7f9bd355c09282273cfbfe18a45265"
   },
   {
    "name": "write_graph_power",
@@ -402,9 +405,9 @@
     "power"
    ],
    "pass": 2,
-   "seconds": 0.89,
+   "seconds": 0.29,
    "status": "ok",
-   "post_graph_sha256": "f26358ef24037a339ac7d1718473f9b8c776d3da162db3c3dda360fa0b65bfeb"
+   "post_graph_sha256": "4f4566f17cb2b634ccd4602e782397eb7a7f9bd355c09282273cfbfe18a45265"
   },
   {
    "name": "balance_report",
@@ -415,425 +418,368 @@
     "--write"
    ],
    "pass": 2,
+   "seconds": 0.56,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "sizing_bmed_stack",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.bmed_stack",
+    "--write"
+   ],
+   "pass": 0,
+   "seconds": 0.2,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "load_list",
+   "argv": [
+    "python3",
+    "docs-authority/_load_list.py"
+   ],
+   "pass": 0,
    "seconds": 0.43,
    "status": "ok",
-   "post_graph_sha256": "74a06606999e77df9f01fc67447f7a0f11ac4af7d59e9bb691cfc8ea896f1767"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "write_graph_process",
+   "name": "one_line",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "process"
+    "docs-authority/_one_line.py"
    ],
-   "pass": 3,
-   "seconds": 1.2,
+   "pass": 0,
+   "seconds": 0.42,
    "status": "ok",
-   "post_graph_sha256": "05da777e56fd658d94667419458172ec566ac17a6ad07c17158078e130187ddf"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_cold_box",
+   "name": "ew_sizing_doc",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.cold_box",
-    "--write"
+    "docs-authority/_ew_sizing.py"
    ],
-   "pass": 3,
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "05da777e56fd658d94667419458172ec566ac17a6ad07c17158078e130187ddf"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_evap_design",
+   "name": "leach_sizing_doc",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.evap_design",
-    "--write"
+    "docs-authority/_leach_sizing.py"
    ],
-   "pass": 3,
-   "seconds": 0.85,
-   "status": "ok",
-   "post_graph_sha256": "08b85fdddf1a56c04cd8fd82e1058cc0f17bae77b8cd03c5255bc8677c263a2d"
-  },
-  {
-   "name": "sizing_receivers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.receivers",
-    "--write"
-   ],
-   "pass": 3,
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "08b85fdddf1a56c04cd8fd82e1058cc0f17bae77b8cd03c5255bc8677c263a2d"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_h2_compressor",
+   "name": "reactor_design_doc",
    "argv": [
     "python3",
     "-m",
-    "flow_graph.param.h2_compressor",
-    "--write"
+    "flow_graph.param.reactor_design",
+    "--doc-only"
    ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "08b85fdddf1a56c04cd8fd82e1058cc0f17bae77b8cd03c5255bc8677c263a2d"
-  },
-  {
-   "name": "sizing_h2_purifier",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_purifier",
-    "--write"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "08b85fdddf1a56c04cd8fd82e1058cc0f17bae77b8cd03c5255bc8677c263a2d"
-  },
-  {
-   "name": "sizing_house_scrubbers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.house_scrubbers",
-    "--write"
-   ],
-   "pass": 3,
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "29c14eac116bdf65544fbb2c2eaf0ef78c45645892762f2c8be4fc2648826102"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_pv_cell_line",
+   "name": "foundry_sizing_doc",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.pv_cell_line",
-    "--write"
+    "docs-authority/_foundry_sizing.py"
    ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "29c14eac116bdf65544fbb2c2eaf0ef78c45645892762f2c8be4fc2648826102"
-  },
-  {
-   "name": "sizing_upw_polish",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.upw_polish",
-    "--write"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "29c14eac116bdf65544fbb2c2eaf0ef78c45645892762f2c8be4fc2648826102"
-  },
-  {
-   "name": "foundry_poly",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.foundry_poly",
-    "--write"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "4bb6444fdcb09e0dca518d0dc0e60e65098aa1b21283ccc12f5eccd2c01e9dd7"
-  },
-  {
-   "name": "write_graph_heat",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "heat"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "7dc5c22202d8f214e0e451ca188f1850fef94bf8a6b57ee2d17795a58233a8e3"
-  },
-  {
-   "name": "write_graph_relief",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "relief"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "ee9f12376d39595984b9b3f85aa3ac2ba49de1d6cca2b30d4545cef3ced50866"
-  },
-  {
-   "name": "write_graph_vent",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "vent"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "ce7c8196684da602827d21a0732166619a767f3027e8a2cb4135883d9987e21f"
-  },
-  {
-   "name": "storage_sizing",
-   "argv": [
-    "python3",
-    "docs-authority/_storage_sizing.py"
-   ],
-   "pass": 3,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "ce7c8196684da602827d21a0732166619a767f3027e8a2cb4135883d9987e21f"
-  },
-  {
-   "name": "write_graph_power",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "power"
-   ],
-   "pass": 3,
-   "seconds": 0.89,
-   "status": "ok",
-   "post_graph_sha256": "ce7c8196684da602827d21a0732166619a767f3027e8a2cb4135883d9987e21f"
-  },
-  {
-   "name": "balance_report",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.balance",
-    "--write"
-   ],
-   "pass": 3,
-   "seconds": 0.46,
-   "status": "ok",
-   "post_graph_sha256": "89686d68bf8b14929d11a2c9a23cf19d9df964be6d1a8ea7c6612e551b1d4c1e"
-  },
-  {
-   "name": "write_graph_process",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "process"
-   ],
-   "pass": 4,
-   "seconds": 1.22,
-   "status": "ok",
-   "post_graph_sha256": "b318feb390ba5921e0dd1cc653b3a97c44c710c49fb1d55d10ab994e14c09904"
-  },
-  {
-   "name": "sizing_cold_box",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.cold_box",
-    "--write"
-   ],
-   "pass": 4,
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "b318feb390ba5921e0dd1cc653b3a97c44c710c49fb1d55d10ab994e14c09904"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_evap_design",
+   "name": "polymers_sizing_doc",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.evap_design",
-    "--write"
+    "docs-authority/_polymers_sizing.py"
    ],
-   "pass": 4,
-   "seconds": 0.86,
+   "pass": 0,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "ab1ac0bccf67c71bd7a0354c1ee14a3b92f799628cde23b1eb5e4be8d3673beb"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_receivers",
+   "name": "vent_scrubber_doc",
    "argv": [
     "python3",
     "-m",
-    "flow_graph.param.receivers",
+    "flow_graph.param.vent_scrubber",
     "--write"
    ],
-   "pass": 4,
+   "pass": 0,
+   "seconds": 0.21,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "duty_basis",
+   "argv": [
+    "python3",
+    "docs-authority/_duty_basis.py"
+   ],
+   "pass": 0,
+   "seconds": 0.16,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "line_list",
+   "argv": [
+    "python3",
+    "docs-authority/_line_list.py"
+   ],
+   "pass": 0,
+   "seconds": 0.16,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "iso_routes",
+   "argv": [
+    "python3",
+    "docs-authority/_iso_routes.py"
+   ],
+   "pass": 0,
+   "seconds": 0.16,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "iso_sheets",
+   "argv": [
+    "python3",
+    "docs-authority/_iso_sheets.py"
+   ],
+   "pass": 0,
+   "seconds": 0.19,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "supports",
+   "argv": [
+    "python3",
+    "docs-authority/_supports.py"
+   ],
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "ab1ac0bccf67c71bd7a0354c1ee14a3b92f799628cde23b1eb5e4be8d3673beb"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_h2_compressor",
+   "name": "insulation",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.h2_compressor",
-    "--write"
+    "docs-authority/_insulation.py"
    ],
-   "pass": 4,
+   "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "ab1ac0bccf67c71bd7a0354c1ee14a3b92f799628cde23b1eb5e4be8d3673beb"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_h2_purifier",
+   "name": "ew_busbar",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.h2_purifier",
-    "--write"
+    "docs-authority/_ew_busbar.py"
    ],
-   "pass": 4,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "ab1ac0bccf67c71bd7a0354c1ee14a3b92f799628cde23b1eb5e4be8d3673beb"
-  },
-  {
-   "name": "sizing_house_scrubbers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.house_scrubbers",
-    "--write"
-   ],
-   "pass": 4,
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "f8a11da2b078e73c87b31be4def36c39956bf2c71647e195ac4c30a842c8a335"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "sizing_pv_cell_line",
+   "name": "cable_schedule",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.pv_cell_line",
-    "--write"
+    "docs-authority/_cable_schedule.py"
    ],
-   "pass": 4,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "f8a11da2b078e73c87b31be4def36c39956bf2c71647e195ac4c30a842c8a335"
-  },
-  {
-   "name": "sizing_upw_polish",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.upw_polish",
-    "--write"
-   ],
-   "pass": 4,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "f8a11da2b078e73c87b31be4def36c39956bf2c71647e195ac4c30a842c8a335"
-  },
-  {
-   "name": "foundry_poly",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.foundry_poly",
-    "--write"
-   ],
-   "pass": 4,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "b829cd2a10e6f2f6474f8cbd1ecd7789dea0c86cf2a09558bb4e73cab54b7b8a"
-  },
-  {
-   "name": "write_graph_heat",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "heat"
-   ],
-   "pass": 4,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "34894f3dfaa25cb7d9ad027d2c816818f97f4b4e9934015c5e7fc860a90cf57b"
-  },
-  {
-   "name": "write_graph_relief",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "relief"
-   ],
-   "pass": 4,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "def15534173a0348155c8a1e7b4fa65eab29d2fbfda3cf9a5926b624840ef105"
-  },
-  {
-   "name": "write_graph_vent",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "vent"
-   ],
-   "pass": 4,
+   "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "053eaa7258c0d89fcd6fa82b1f6c22219ee135215ac27d0299267f0b29de9b6a"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "storage_sizing",
+   "name": "protection",
    "argv": [
     "python3",
-    "docs-authority/_storage_sizing.py"
+    "docs-authority/_protection.py"
    ],
-   "pass": 4,
+   "pass": 0,
+   "seconds": 0.28,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "haz_area",
+   "argv": [
+    "python3",
+    "docs-authority/_haz_area.py"
+   ],
+   "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "053eaa7258c0d89fcd6fa82b1f6c22219ee135215ac27d0299267f0b29de9b6a"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "write_graph_power",
+   "name": "derived_excerpts",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "power"
+    "flow_graph/export_authority_md.py"
    ],
-   "pass": 4,
-   "seconds": 0.9,
+   "pass": 0,
+   "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "053eaa7258c0d89fcd6fa82b1f6c22219ee135215ac27d0299267f0b29de9b6a"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   },
   {
-   "name": "balance_report",
+   "name": "loop_closure",
    "argv": [
     "python3",
-    "-m",
-    "flow_graph.param.balance",
-    "--write"
+    "flow_graph/loop_closure.py"
    ],
-   "pass": 4,
-   "seconds": 0.45,
+   "pass": 0,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "e48b3b316462f2465881fadf09cd523551228a1f6957caabe14a81a6e8a41b59"
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "candidate_mvs",
+   "argv": [
+    "python3",
+    "flow_graph/export_candidate_mvs.py"
+   ],
+   "pass": 0,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "task_plan",
+   "argv": [
+    "python3",
+    "docs-authority/_task_plan_gen.py"
+   ],
+   "pass": 0,
+   "seconds": 0.21,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "model_workbook",
+   "argv": [
+    "python3",
+    "docs-authority/_model_workbook.py"
+   ],
+   "pass": 0,
+   "seconds": 1.31,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "assumptions_register",
+   "argv": [
+    "python3",
+    "docs-authority/_assumptions_register.py"
+   ],
+   "pass": 0,
+   "seconds": 0.18,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "regen_derived",
+   "argv": [
+    "python3",
+    "flow_graph/regen_derived.py"
+   ],
+   "pass": 0,
+   "seconds": 15.52,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
+  },
+  {
+   "name": "rev_stamp",
+   "argv": [
+    "python3",
+    "docs-authority/_rev_stamp.py"
+   ],
+   "pass": 0,
+   "seconds": 0.24,
+   "status": "ok",
+   "post_graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed"
   }
  ],
- "failed": [
-  "(graph-convergence)"
- ],
- "vouched_patterns": []
+ "failed": [],
+ "vouched_patterns": [
+  "design_tool/aqs_design_tool/data/candidate_mvs.json",
+  "docs-authority/ASSUMPTIONS_REGISTER.md",
+  "docs-authority/BALANCE_RECONCILIATION.md",
+  "docs-authority/BUSBAR.json",
+  "docs-authority/BUSBAR.md",
+  "docs-authority/CABLE_SCHEDULE.md",
+  "docs-authority/COLLECTION_BUS.md",
+  "docs-authority/DERIVED_REVISIONS.md",
+  "docs-authority/HAZ_AREA.md",
+  "docs-authority/INSULATION_SCHEDULE.md",
+  "docs-authority/ISO_ROUTES.json",
+  "docs-authority/ISO_ROUTES.md",
+  "docs-authority/LINE_LIST.md",
+  "docs-authority/LOAD_LIST.json",
+  "docs-authority/LOAD_LIST.md",
+  "docs-authority/MODEL_WORKBOOK.xlsx",
+  "docs-authority/ONE_LINE.json",
+  "docs-authority/ONE_LINE.md",
+  "docs-authority/SUPPORTS.md",
+  "docs-authority/TASK_PLAN.md",
+  "docs-authority/duties/*.md",
+  "docs-authority/insulation_schedule.csv",
+  "docs-authority/inventory/STORAGE_HOLDUP.json",
+  "docs-authority/iso/*",
+  "docs-authority/sizing/BMED_STACK.md",
+  "docs-authority/sizing/COLD_BOX.md",
+  "docs-authority/sizing/EVAP_DESIGN.md",
+  "docs-authority/sizing/EW_CELLS.md",
+  "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docs-authority/sizing/GAS_RECEIVERS.md",
+  "docs-authority/sizing/H2_COMPRESSOR.md",
+  "docs-authority/sizing/H2_PURIFIER_BEDS.md",
+  "docs-authority/sizing/HOUSE_SCRUBBERS.md",
+  "docs-authority/sizing/LEACH_CSTR_1.md",
+  "docs-authority/sizing/POLYMERS_LINE.md",
+  "docs-authority/sizing/PV_CELL_LINE.md",
+  "docs-authority/sizing/REACTOR_DESIGN._generated.json",
+  "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docs-authority/sizing/UPW_POLISH.md",
+  "docs-authority/sizing/VENT_SCRUBBER.md",
+  "flow_graph/derived/CENSUS.md",
+  "flow_graph/derived/LOOP_CLOSURE.md",
+  "flow_graph/derived/MASS_FLOW_DERIVED.md",
+  "flow_graph/derived/STREAM_REGISTER_DERIVED.md",
+  "flow_graph/derived/SYNC_POINTER.md",
+  "flow_graph/plant_flow_graph.json",
+  "flow_graph/views/*",
+  "media/D*.png",
+  "media/F0_campus.png",
+  "media/_generated.json",
+  "media/pfd/*",
+  "media/plant_phase_d.mp4"
+ ]
 }
