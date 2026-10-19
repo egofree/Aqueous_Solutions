@@ -4590,7 +4590,7 @@
     },
     {
       "unit_id": "EVAP_ACID_VS",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "enabled": true,
       "class": "scrubber",
       "tags": [],
@@ -12888,7 +12888,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
@@ -12905,7 +12905,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"
@@ -12922,8 +12922,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Air from the feed (WEISS1970) saturated at the vent condenser; design case 490 ppmv HCl."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -12939,8 +12939,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.008 mmol/d = 2.0 x HCl absorbed."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -12956,8 +12956,8 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Bleed plus HCl absorbed."
       },
-      "from_sector_id": "WET",
-      "to_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -12973,7 +12973,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.0 ppmv HCl."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -12991,7 +12991,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Feed equal to continuous_kw."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "layers=elec"
     },
@@ -13007,7 +13007,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=energy"

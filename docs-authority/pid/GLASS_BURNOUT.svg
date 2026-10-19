@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="638" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="630" fill="white" stroke="#111"/>
+<text x="24" y="34" font-size="15" font-weight="600">Unit GLASS_BURNOUT · intra · sector GLASS · present</text>
+<text x="24" y="54" font-size="10.5">no design params on the graph node</text>
+<text x="24" y="72" font-size="10.5">Edges 1 in + 3 out · valves 4 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 7</text>
+<text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
+<rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
+<line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
+<line x1="1182" y1="47" x2="1226" y2="47" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4"/><text x="1234" y="50" font-size="8.5">gas</text>
+<line x1="1182" y1="62" x2="1226" y2="62" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4"/><text x="1234" y="65" font-size="8.5">solids / slurry</text>
+<line x1="1182" y1="77" x2="1226" y2="77" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3"/><text x="1234" y="80" font-size="8.5">electrical</text>
+<line x1="1182" y1="92" x2="1226" y2="92" stroke="#111" stroke-width="2.6"/><text x="1234" y="95" font-size="8.5">heat loop (kW)</text>
+<path d="M 1195.0,106 L 1203.0,112 L 1195.0,118 Z M 1213.0,106 L 1205.0,112 L 1213.0,118 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1204.0" y="101.0" font-size="7.5" text-anchor="middle">isol</text>
+<text x="1234" y="115" font-size="8.5">isolation / check valve (xqty)</text>
+<circle cx="1204" cy="131" r="9" fill="white" stroke="#111"/><text x="1204" y="134" font-size="7" text-anchor="middle">FT-01</text>
+<text x="1234" y="134" font-size="8.5">instrument bubble (SIF: double)</text>
+<text x="24" y="152" font-size="10.5" font-weight="600">Instrument loops (tags are GLASS_BURNOUT-&lt;loop&gt;; range and signal per AQS-CTL-001)</text>
+<circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
+<text x="40" y="175.5" font-size="7.5" text-anchor="middle">PT-01</text>
+<text x="62" y="170" font-size="7">0-10 bar g</text>
+<text x="62" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
+<circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
+<text x="198" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
+<text x="220" y="170" font-size="7">-20 to 150 C</text>
+<text x="220" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
+<rect x="590" y="210" width="320" height="168" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">GLASS_BURNOUT</text>
+<text x="750.0" y="252" font-size="9.5" text-anchor="middle">intra · GLASS sector</text>
+<line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<polygon points="586,240 577,236 577,244" fill="#111"/>
+<text x="24" y="221" font-size="9" fill="#666" text-anchor="start">GLASS_MILL</text>
+<text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-GLASS-02</text>
+<text x="24" y="253" font-size="10" text-anchor="start">30.0 kg/d · solids transfer</text>
+<text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
+<line x1="914" y1="240" x2="1061" y2="240" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-out"/>
+<polygon points="1070,240 1061,236 1061,244" fill="#999"/>
+<text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">Q2_A</text>
+<text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">HL-GLASS_BURNOUT-Q2-A</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.9 kW · DN15 M2 · absent</text>
+<path d="M 1023.6,234 L 1031.6,240 L 1023.6,246 Z M 1041.6,234 L 1033.6,240 L 1041.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
+<line x1="914" y1="286" x2="1061" y2="286" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-out"/>
+<polygon points="1070,286 1061,282 1061,290" fill="#999"/>
+<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">Q2_B</text>
+<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">HL-GLASS_BURNOUT-Q2-B</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.9 kW · DN15 M2 · absent</text>
+<path d="M 1023.6,280 L 1031.6,286 L 1023.6,292 Z M 1041.6,280 L 1033.6,286 L 1041.6,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
+<line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
+<polygon points="1070,332 1061,328 1061,336" fill="#111"/>
+<text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">GLASS_DIGEST</text>
+<text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-GLASS-03</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">30.0 kg/d · solids transfer</text>
+<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
+<text x="24" y="428" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="438" font-size="9">Every incident graph edge is drawn: 1 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="453" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/GLASS_BURNOUT.csv.</text>
+<text x="24" y="468" font-size="9">Nozzles with no matching graph edge (service text): N2 fuel into the burner; N3 Q2 burnout; N4 Q2 burnout; N6 drain; N7 vent</text>
+<text x="24" y="483" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-GLASS_BURNOUT</text>
+<text x="1124" y="554" font-size="9">P&amp;ID GLASS_BURNOUT (intra, GLASS sector)</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev f8683196   Issued 2026-10-19</text>
+<text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="605" font-size="9">Graph SHA-256 bf8e0f2444c6a4c8   Sheet 1 of 1   AQS-DWG-001</text>
+</g></svg>

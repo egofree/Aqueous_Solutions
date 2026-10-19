@@ -2097,7 +2097,7 @@
     },
     {
       "unit_id": "EVAP_ACID_VS",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "class": "scrubber",
       "tags": [],
@@ -3658,7 +3658,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Feed equal to continuous_kw."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "WET",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],

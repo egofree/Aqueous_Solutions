@@ -13,8 +13,8 @@ cover the remaining present units - regen-only, no code change. Run: python3 doc
 import runpy, json, csv, re, os, hashlib, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 DATE = '2026-10-19'
-UNITS = (['LEACH_CSTR_1', 'BMED_ACID', 'BMED_BASE', 'EVAP_ACID', 'EVAP_BASE', 'POLISH_BANK', 'CONTINUOUS_RECYCLE', 'CRU', 'FLOAT_SINK']
-         + ['EW_%d' % i for i in range(1, 10)])
+UNITS = sorted(n['unit_id'] for n in json.load(open('flow_graph/plant_flow_graph.json'))['nodes']
+               if n.get('presence') == 'present' and n.get('class') != 'boundary')   # graph-derived coverage: every present non-boundary unit (T03 at scale; the DIGESTER pilot set is now simply included)
 
 ns = runpy.run_path('docs-authority/_line_list.py'); LL = {r[0]: r for r in ns['rows']}      # sid -> line-list row
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}

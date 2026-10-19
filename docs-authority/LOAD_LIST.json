@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "c1fd2bec1b943618c9607755b0877923a16474da6cd9ae87a03eff07a08299bb",
+  "graph_sha256": "bf8e0f2444c6a4c8237645caaf2f45175ee024ff66edac433c45382b7037c818",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
@@ -335,7 +335,7 @@
    "calc_kw": 0.024,
    "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study).",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "MEOH_FERM",
@@ -533,7 +533,7 @@
     "calculated": 4
    },
    "DIGESTER": {
-    "calculated": 5
+    "calculated": 6
    },
    "ELEC": {
     "calculated": 5,
@@ -584,7 +584,7 @@
     "null": 1
    },
    "WET": {
-    "calculated": 10
+    "calculated": 9
    },
    "WTR": {
     "calculated": 3

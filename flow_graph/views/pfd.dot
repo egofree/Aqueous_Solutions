@@ -46,6 +46,7 @@ digraph G {
     "P_CA" [fillcolor="#ffffff", label="P_CA"];
     "EVAP_ACID" [fillcolor="#ffffff", label="EVAP_ACID"];
     "EVAP_BASE" [fillcolor="#ffffff", label="EVAP_BASE"];
+    "EVAP_ACID_VS" [fillcolor="#ffffff", label="EVAP_ACID_VS"];
   }
   subgraph "cluster_DOCK" {
     label="DOCK";
@@ -235,11 +236,6 @@ digraph G {
     label="PUMPED_HYDRO";
     style=rounded; color="#94a3b8";
     "HYDRO_SET" [fillcolor="#fde68a", label="HYDRO_SET\nDedicated hydro_dock_pfd.png (graph-bridged); ca…"];
-  }
-  subgraph "cluster_WET" {
-    label="WET";
-    style=rounded; color="#94a3b8";
-    "EVAP_ACID_VS" [fillcolor="#ffffff", label="EVAP_ACID_VS"];
   }
   subgraph "cluster_WTR" {
     label="WTR";
