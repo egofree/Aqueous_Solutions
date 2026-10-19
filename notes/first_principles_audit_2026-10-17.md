@@ -1,3 +1,10 @@
+- D-DOCK (2026-10-19): the dock is NOT a regular sector - it is the inter-plant boundary: imports of
+  arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class) and exports of surplus
+  products to other plants. It must not be forced to conform to intra-plant closure standards; its
+  ledger is a reported trade statement, not a balance constraint. Product buffer storage is assumed
+  built for O2/water/compressed air/surplus food/metals etc. Rate rounding at the dock is accepted
+  design-phase noise that vanishes as real data replaces estimates.
+
 ## Owner rulings 2026-10-18 (on the blocking decisions)
 
 - D-AIR: RESTORE the ASU from Rev BH (accidentally deleted with the farm scope; gas headers otherwise complete).
