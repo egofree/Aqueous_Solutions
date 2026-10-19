@@ -253,7 +253,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M176.78,-2075.65C226.26,-2068.25 328.43,-2052.22 414,-2034 417.2,-2033.32 420.5,-2032.58 423.81,-2031.81"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="424.84,-2035.17 433.75,-2029.44 423.21,-2028.36 424.84,-2035.17"/>
-<text text-anchor="middle" x="355" y="-2058.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n412.0471 kW</text>
+<text text-anchor="middle" x="355" y="-2058.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n405.4928 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node22" class="node">
@@ -294,7 +294,7 @@
 <title>RECTIFIER&#45;&gt;EW_5</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M790.22,-2080.75C850.67,-2082.23 984.81,-2085.52 1049.6,-2087.11"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1049.66,-2090.61 1059.74,-2087.36 1049.83,-2083.61 1049.66,-2090.61"/>
-<text text-anchor="middle" x="886.5" y="-2086.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;DC&#45;EW_5\n0.5023 kW</text>
+<text text-anchor="middle" x="886.5" y="-2086.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;DC&#45;EW_5\n0.5024 kW</text>
 </g>
 <!-- RECTIFIER&#45;&gt;EW_6 -->
 <g id="edge53" class="edge">
@@ -315,7 +315,7 @@
 <title>RECTIFIER&#45;&gt;EW_8</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M790.27,-2071.62C801.8,-2067.01 814.03,-2060.11 822,-2050 840.3,-2026.8 816.12,-2006.86 836,-1985 867.68,-1950.17 898.99,-1980.8 937,-1953 944.46,-1947.54 941.31,-1941.14 949,-1936 979.06,-1915.9 1020.27,-1908.69 1049.62,-1906.17"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1050.12,-1909.64 1059.85,-1905.44 1049.63,-1902.66 1050.12,-1909.64"/>
-<text text-anchor="middle" x="886.5" y="-1987.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;DC&#45;EW_8\n0.5053 kW</text>
+<text text-anchor="middle" x="886.5" y="-1987.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;DC&#45;EW_8\n0.5054 kW</text>
 </g>
 <!-- RECTIFIER&#45;&gt;EW_9 -->
 <g id="edge56" class="edge">
@@ -356,21 +356,21 @@
 <title>SOL_ARK_60K&#45;&gt;CRYO_ASU</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.84,-2037.01C480.03,-2123.79 499.92,-2496.26 534,-2534 557.87,-2560.44 657.98,-2573.88 715.8,-2579.56"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="715.79,-2583.08 726.07,-2580.53 716.45,-2576.11 715.79,-2583.08"/>
-<text text-anchor="middle" x="607.5" y="-2577.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_ASU\n1.6683 kW</text>
+<text text-anchor="middle" x="607.5" y="-2577.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_ASU\n1.6689 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;CRYO_H2 -->
 <g id="edge17" class="edge">
 <title>SOL_ARK_60K&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M476,-2037.06C480.72,-2119.2 501.85,-2455.01 534,-2488 559.01,-2513.67 662.09,-2520.02 719.11,-2521.55"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="719.12,-2525.05 729.2,-2521.78 719.28,-2518.05 719.12,-2525.05"/>
-<text text-anchor="middle" x="607.5" y="-2521.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n1.0755 kW</text>
+<text text-anchor="middle" x="607.5" y="-2521.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n0.9327 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;H2O_ELYZ -->
 <g id="edge41" class="edge">
 <title>SOL_ARK_60K&#45;&gt;H2O_ELYZ</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.47,-2037.27C478.18,-2135.83 493.08,-2601.33 534,-2649 579.34,-2701.82 666.31,-2708.71 717.36,-2707.7"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="717.49,-2711.2 727.38,-2707.39 717.27,-2704.2 717.49,-2711.2"/>
-<text text-anchor="middle" x="607.5" y="-2708.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;H2O_ELYZ\n25.4274 kW</text>
+<text text-anchor="middle" x="607.5" y="-2708.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;H2O_ELYZ\n21.4517 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;BMED_ACID -->
 <g id="edge14" class="edge">
@@ -438,7 +438,7 @@
 <title>SOL_ARK_60K&#45;&gt;EXT_HALL</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M484.1,-2037.09C493.94,-2054.72 511.31,-2080.88 534,-2095 590.75,-2130.33 669.79,-2139.07 717.08,-2140.92"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="717.14,-2144.43 727.24,-2141.23 717.35,-2137.43 717.14,-2144.43"/>
-<text text-anchor="middle" x="607.5" y="-2140.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n99.9854 kW</text>
+<text text-anchor="middle" x="607.5" y="-2140.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n97.486 kW</text>
 </g>
 <!-- WAFER_FAB -->
 <g id="node26" class="node">

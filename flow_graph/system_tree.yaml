@@ -213,8 +213,14 @@ nodes:
   - id: FOUNDRY.form-train
     parent: FOUNDRY
     description: >-
-      Solid forming: roll, extrude, draw, forge, sinter; STOCK_OUT stores and dispatches to MFG /
-      FAB / wire draw.
+      Solid forming: roll, extrude, draw, forge, sinter; STOCK_OUT stages and dispatches to the
+      metal product store (METAL_STORE) and on to MFG / FAB / wire draw.
+  - id: FOUNDRY.form-train.METAL_STORE
+    parent: FOUNDRY.form-train
+    unit_id: METAL_STORE
+    description: >-
+      Metal product buffer store (D-DOCK): foundry output held against the MFG / FAB dispatch,
+      14 d campaign.
   - id: FOUNDRY.form-train.ROLL
     parent: FOUNDRY.form-train
     unit_id: ROLL
@@ -532,6 +538,12 @@ nodes:
   - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_N2
     parent: CRYO.cold-box-asu-recovery-train.cold-box
     unit_id: CRYO_N2
+  - id: CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER
+    parent: CRYO.cold-box-asu-recovery-train.cold-box
+    unit_id: AIR_RECEIVER
+    description: >-
+      Plant-air receiver (D-DOCK): banks the cold-box N2 delivery for the HDR_N2 air header;
+      sized on the ASU / vent margin.
   - id: CRYO.cold-box-asu-recovery-train.cold-box.CRYO_O2
     parent: CRYO.cold-box-asu-recovery-train.cold-box
     unit_id: CRYO_O2
@@ -775,6 +787,11 @@ nodes:
   - id: FARM.grow-bed-train.GROW_BED
     parent: FARM.grow-bed-train
     unit_id: GROW_BED
+  - id: FARM.grow-bed-train.FOOD_STORE
+    parent: FARM.grow-bed-train
+    unit_id: FOOD_STORE
+    description: >-
+      Food buffer store (D-DOCK): harvest pass-through plus the X-RED-08 80 d dry reserve.
   - id: MEOH
     description: >-
       Energy Storage System (Electrochemical) — MeOH ESS peer; also feeds processes.

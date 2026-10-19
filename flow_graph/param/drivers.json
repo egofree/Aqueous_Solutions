@@ -4301,5 +4301,40 @@
     "needs_verification": true,
     "verification_test": "0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default",
     "register": "A-M-269"
+  },
+  "FARM.grow-bed-train.FOOD_STORE.hold_d": {
+    "value": 80,
+    "units": "d hold time (A-M-270 D-DOCK product-buffer basis)",
+    "register": "A-M-270"
+  },
+  "FARM.grow-bed-train.FOOD_STORE.rho_kg_m3": {
+    "value": 600,
+    "units": "kg/m3 dry ration bulk density (X-RED-08 dry-matter reserve)",
+    "register": "A-M-270"
+  },
+  "FOUNDRY.form-train.METAL_STORE.hold_d": {
+    "value": 14,
+    "units": "d hold time (A-M-270 D-DOCK product-buffer basis)",
+    "register": "A-M-270"
+  },
+  "FOUNDRY.form-train.METAL_STORE.rho_kg_m3": {
+    "value": 2000,
+    "units": "kg/m3 stacked metal product bulk (plate/rod/ingot with stacking voids; solid steel 7850 PERRY9)",
+    "register": "A-M-270"
+  },
+  "CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.hold_d": {
+    "value": 1.0,
+    "units": "d hold time (A-M-270 D-DOCK product-buffer basis)",
+    "register": "A-M-270"
+  },
+  "CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.rho_kg_m3": {
+    "value": 11.7,
+    "units": "kg/m3 N2 at 10 bar abs 15 C (ideal gas, Z 0.995, NIST_WEBBOOK)",
+    "ref": "NIST_WEBBOOK"
+  },
+  "CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.P_MPa": {
+    "value": 1.0,
+    "units": "MPa gauge design pressure (plant-air receiver, 10 bar service)",
+    "register": "A-M-270"
   }
 }

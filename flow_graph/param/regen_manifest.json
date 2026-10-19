@@ -6,56 +6,774 @@
   "notes": [
     "CORRECTION vs the U3 audit order (verified against code 2026-10-18, commit 0847940): _load_list/_one_line moved AFTER the graph writers. U1 (A-M-231) made _power_sizing.py graph-native (it no longer reads the load list), and the U2a sidecars (LOAD_LIST.json/ONE_LINE.json) record the graph sha at run time, so both must run after the last graph write or they vouch an intermediate sha.",
     "CORRECTION: foundry_poly --write runs BEFORE write_graph heat (it stamps FOUNDRY/POLYMERS rates; heat re-solves the ladder against them) and before the balance report.",
-    "CORRECTION: balance runs REPORT-ONLY (no --write). The --write assert (max unit residual < 1e-3 kg/d) is red at HEAD: the NORTH_DOCK ledger residual 5.5478 kg/d is reported, not force-closed (A-M-254; known-red test_balance trio). The stage still regenerates BALANCE_RECONCILIATION.md. Restore --write when the balance lane closes closure.",
     "CORRECTION: _rect_ew_sizing.py is NOT a stage: it writes no doc (stdout JSON only) and is spawned internally by _power_sizing.py, _one_line.py and write_graph.process.",
     "CORRECTION: write_graph power runs LAST among graph writers: _power_sizing demand = max(node continuous_kw, SOL_ARK feed) over every stamp written by the sizing modules, and power then re-stamps PV/ZNBR2/EXT_HALL/mvs.electrical + runs _collection_bus (itself a graph writer).",
     "DECLARED-DAG NOTE: power -> pv_cell_line is a real feedback edge (PV array size sets the cell-line duty; the cell-line kW enters the demand). The manifest declares pv_cell_line -> power only so the dependency graph stays a DAG; regen.py resolves the cycle by looping the writes_graph block to its fixed point (observed: <= 3 passes from a drifted tree, 1 pass from a converged tree).",
     "EXCLUDED (by design, with reason): flow_graph/param/sanitation.py --write (X-SAN-01 graph-writer; owner-lane port pending, R11 close-out; sizing/SANITATION.md stays classified by-design in _rev_stamp); flow_graph/param/o2_source.py (main is the frozen Rev A study over git-show 6537017; O2_SOURCE.md classified by-design); _mfg_tools --graph and _material_temps --write and _resize_sweep.py (one-shot stampers; their doc/report halves are covered where spawned); pressure_nodes.py (one-shot Rev A pressurised-node marker, superseded by write_graph relief).",
-    "--quick = the five write_graph stages only (solver + writer what-if mode): no doc regeneration and NO receipt write (a partial run must not clobber the full-run provenance receipt _rev_stamp vouches from)."
+    "--quick = the five write_graph stages only (solver + writer what-if mode): no doc regeneration and NO receipt write (a partial run must not clobber the full-run provenance receipt _rev_stamp vouches from).",
+    "2026-10-19: balance --write RESTORED - the balance lane closed (D-DOCK trade boundary, NOX/AFTERBURNER/CRYO_H2 closures, R10c residual basis pass; test_balance trio green, max residual 7.2e-4 kg/d)."
   ],
   "stages": [
-    {"name": "write_graph_process", "argv": ["python3", "-m", "flow_graph.param.write_graph", "process"], "outputs": ["flow_graph/plant_flow_graph.json"], "depends_on": [], "writes_graph": true, "quick": true, "note": "Solver -> graph: BMED/EVAP/vent-scrubber kW and rates, EW cell + RECT stamps, SOL_ARK bus delta. Spawns _ew_sizing/_rect_ew_sizing/_power_sizing (last via solver.solve for roof)."},
-    {"name": "sizing_bmed_stack", "argv": ["python3", "-m", "flow_graph.param.bmed_stack", "--write"], "outputs": ["docs-authority/sizing/BMED_STACK.md"], "depends_on": ["write_graph_process"], "writes_graph": false, "quick": false, "note": "Doc-only sizing writer (AQS-DUTY-068)."},
-    {"name": "sizing_cold_box", "argv": ["python3", "-m", "flow_graph.param.cold_box", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/COLD_BOX.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "Stamps CRYO_ASU continuous_kw (read by _power_sizing CRIT list, A-M-238)."},
-    {"name": "sizing_evap_design", "argv": ["python3", "-m", "flow_graph.param.evap_design", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/EVAP_DESIGN.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "X-MFG-30 MVR design: EVAP params/design/relief_basis and stream T_C stamps (AQS-DUTY-060)."},
-    {"name": "sizing_receivers", "argv": ["python3", "-m", "flow_graph.param.receivers", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/GAS_RECEIVERS.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "AQS-DUTY-065."},
-    {"name": "sizing_h2_compressor", "argv": ["python3", "-m", "flow_graph.param.h2_compressor", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/H2_COMPRESSOR.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "AQS-DUTY-067; CRYO_H2 kW feeds the CRIT list."},
-    {"name": "sizing_h2_purifier", "argv": ["python3", "-m", "flow_graph.param.h2_purifier", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/H2_PURIFIER_BEDS.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "AQS-DUTY-066."},
-    {"name": "sizing_house_scrubbers", "argv": ["python3", "-m", "flow_graph.param.house_scrubbers", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/HOUSE_SCRUBBERS.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "X-PAR-03: ALK/ACID_POLISH scrubber kW stamps enter the demand."},
-    {"name": "sizing_pv_cell_line", "argv": ["python3", "-m", "flow_graph.param.pv_cell_line", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/PV_CELL_LINE.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "X-MFG-38. Declared edge pv_cell_line -> power; the power -> pv_cell_line feedback is resolved by the convergence loop (see notes)."},
-    {"name": "sizing_upw_polish", "argv": ["python3", "-m", "flow_graph.param.upw_polish", "--write"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/UPW_POLISH.md"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "AQS-DUTY-070."},
-    {"name": "foundry_poly", "argv": ["python3", "-m", "flow_graph.param.foundry_poly", "--write"], "outputs": ["flow_graph/plant_flow_graph.json"], "depends_on": ["write_graph_process"], "writes_graph": true, "quick": false, "note": "FOUNDRY/POLYMERS rate stamps (A-M-261/266); before heat and the balance report."},
-    {"name": "write_graph_heat", "argv": ["python3", "-m", "flow_graph.param.write_graph", "heat"], "outputs": ["flow_graph/plant_flow_graph.json"], "depends_on": ["foundry_poly"], "writes_graph": true, "quick": true, "note": "X-THM-01 store-ledger re-solve (A-M-259). Also normalises the trailing-newline byte the foundry_poly writer leaves on the graph."},
-    {"name": "write_graph_relief", "argv": ["python3", "-m", "flow_graph.param.write_graph", "relief"], "outputs": ["flow_graph/plant_flow_graph.json"], "depends_on": ["write_graph_heat"], "writes_graph": true, "quick": true, "note": "API 520 sizing + atmospheric marking; MUST precede vent (vent supersedes the atmospheric relief_basis with the API 2000 case)."},
-    {"name": "write_graph_vent", "argv": ["python3", "-m", "flow_graph.param.write_graph", "vent"], "outputs": ["flow_graph/plant_flow_graph.json"], "depends_on": ["write_graph_relief"], "writes_graph": true, "quick": true, "note": "X-PAR-03 API 2000 venting + design_kPa from cases (A-M-174/182)."},
-    {"name": "storage_sizing", "argv": ["python3", "docs-authority/_storage_sizing.py"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/sizing/STORAGE_HOLDUP.md", "docs-authority/inventory/STORAGE_HOLDUP.json"], "depends_on": ["write_graph_vent"], "writes_graph": true, "quick": false, "note": "AQS-DUTY-064 tank params from final rates; STORAGE_HOLDUP.json is read by _task_plan_gen."},
-    {"name": "write_graph_power", "argv": ["python3", "-m", "flow_graph.param.write_graph", "power"], "outputs": ["flow_graph/plant_flow_graph.json", "docs-authority/COLLECTION_BUS.md"], "depends_on": ["storage_sizing", "sizing_cold_box", "sizing_h2_compressor", "sizing_house_scrubbers", "sizing_pv_cell_line", "sizing_upw_polish"], "writes_graph": true, "quick": true, "note": "LAST graph writer: PV/ZNBR2/SOL_ARK/EXT_HALL/mvs.electrical/BACKUP_GEN from _power_sizing over every kW stamp; spawns _collection_bus (X-ELS-11 sections, another graph writer)."},
-    {"name": "balance_report", "argv": ["python3", "-m", "flow_graph.param.balance"], "outputs": ["docs-authority/BALANCE_RECONCILIATION.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "Report-only (see manifest notes): physics + reconcile + AQS-PAR-003; stdout carries the known NORTH_DOCK ledger residual."},
-    {"name": "load_list", "argv": ["python3", "docs-authority/_load_list.py"], "outputs": ["docs-authority/LOAD_LIST.md", "docs-authority/LOAD_LIST.json"], "depends_on": ["balance_report"], "writes_graph": false, "quick": false, "note": "AQS-ELEC-003 + U2a JSON sidecar (graph-sha manifest). Spawns _ew_sizing (doc) and _mfg_tools (doc+stdout, no --graph)."},
-    {"name": "one_line", "argv": ["python3", "docs-authority/_one_line.py"], "outputs": ["docs-authority/ONE_LINE.md", "docs-authority/ONE_LINE.json"], "depends_on": ["load_list"], "writes_graph": false, "quick": false, "note": "AQS-ELEC-002 Rev C; reads LOAD_LIST.json; ONE_LINE.json read by _cable_schedule; ONE_LINE.md parsed by _protection."},
-    {"name": "ew_sizing_doc", "argv": ["python3", "docs-authority/_ew_sizing.py"], "outputs": ["docs-authority/sizing/EW_CELLS.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "AQS-DUTY-051 Rev C doc writer; stdout JSON unchanged for its internal spawners."},
-    {"name": "leach_sizing_doc", "argv": ["python3", "docs-authority/_leach_sizing.py"], "outputs": ["docs-authority/sizing/LEACH_CSTR_1.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "AQS-DUTY-050 Rev B doc writer."},
-    {"name": "reactor_design_doc", "argv": ["python3", "-m", "flow_graph.param.reactor_design", "--doc-only"], "outputs": ["docs-authority/sizing/REACTOR_DESIGN.md", "docs-authority/sizing/REACTOR_DESIGN._generated.json"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "--doc-only (U2a): REACTOR_DESIGN.md + per-file manifest; graph untouched (gated file)."},
-    {"name": "foundry_sizing_doc", "argv": ["python3", "docs-authority/_foundry_sizing.py"], "outputs": ["docs-authority/sizing/FOUNDRY_LINE.md"], "depends_on": ["foundry_poly"], "writes_graph": false, "quick": false, "note": "AQS-DUTY-072 (doc-only; transfer functions in flow_graph/param/foundry_poly.py)."},
-    {"name": "polymers_sizing_doc", "argv": ["python3", "docs-authority/_polymers_sizing.py"], "outputs": ["docs-authority/sizing/POLYMERS_LINE.md"], "depends_on": ["foundry_poly"], "writes_graph": false, "quick": false, "note": "AQS-DUTY-073 (doc-only)."},
-    {"name": "vent_scrubber_doc", "argv": ["python3", "-m", "flow_graph.param.vent_scrubber", "--write"], "outputs": ["docs-authority/sizing/VENT_SCRUBBER.md"], "depends_on": ["write_graph_process"], "writes_graph": false, "quick": false, "note": "AQS-DUTY-061 doc-only writer (no graph write in this module)."},
-    {"name": "duty_basis", "argv": ["python3", "docs-authority/_duty_basis.py"], "outputs": ["docs-authority/duties/*.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "Section 1/2 refresh of every duty sheet + duties/_generated.json (graph-sha pattern manifest clearing all duties) + duties/_origins.json read by _line_list."},
-    {"name": "line_list", "argv": ["python3", "docs-authority/_line_list.py"], "outputs": ["docs-authority/LINE_LIST.md"], "depends_on": ["duty_basis"], "writes_graph": false, "quick": false, "note": "AQS-PIP-004; unit centres from duties/_origins.json."},
-    {"name": "iso_routes", "argv": ["python3", "docs-authority/_iso_routes.py"], "outputs": ["docs-authority/ISO_ROUTES.md", "docs-authority/ISO_ROUTES.json"], "depends_on": ["line_list"], "writes_graph": false, "quick": false, "note": "AQS-ISO-001 + U2a JSON sidecar read by _supports."},
-    {"name": "iso_sheets", "argv": ["python3", "docs-authority/_iso_sheets.py"], "outputs": ["docs-authority/iso/*"], "depends_on": ["iso_routes"], "writes_graph": false, "quick": false, "note": "AQS-ISO-002: iso/<LINE>.svg per routed line + ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."},
-    {"name": "supports", "argv": ["python3", "docs-authority/_supports.py"], "outputs": ["docs-authority/SUPPORTS.md"], "depends_on": ["iso_routes"], "writes_graph": false, "quick": false, "note": "AQS-PIP-005; reads ISO_ROUTES.json."},
-    {"name": "insulation", "argv": ["python3", "docs-authority/_insulation.py"], "outputs": ["docs-authority/INSULATION_SCHEDULE.md", "docs-authority/insulation_schedule.csv"], "depends_on": ["iso_sheets"], "writes_graph": false, "quick": false, "note": "X-THM-03; reads iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."},
-    {"name": "ew_busbar", "argv": ["python3", "docs-authority/_ew_busbar.py"], "outputs": ["docs-authority/BUSBAR.md", "docs-authority/BUSBAR.json"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "AQS-BUS-001 rev C + U2a JSON sidecar read by _cable_schedule."},
-    {"name": "cable_schedule", "argv": ["python3", "docs-authority/_cable_schedule.py"], "outputs": ["docs-authority/CABLE_SCHEDULE.md"], "depends_on": ["one_line", "ew_busbar"], "writes_graph": false, "quick": false, "note": "AQS-ELEC-010; demand from ONE_LINE.json, EW bars from BUSBAR.json."},
-    {"name": "protection", "argv": ["python3", "docs-authority/_protection.py"], "outputs": [], "depends_on": ["one_line"], "writes_graph": false, "quick": false, "note": "AQS-ELEC-006 study (stdout JSON; parses ONE_LINE.md); spawns _grounding_study."},
-    {"name": "haz_area", "argv": ["python3", "docs-authority/_haz_area.py"], "outputs": ["docs-authority/HAZ_AREA.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "Terminal consumer (graph + committed inventory CSVs)."},
-    {"name": "derived_excerpts", "argv": ["python3", "flow_graph/export_authority_md.py"], "outputs": ["flow_graph/derived/STREAM_REGISTER_DERIVED.md", "flow_graph/derived/MASS_FLOW_DERIVED.md", "flow_graph/derived/CENSUS.md", "flow_graph/derived/SYNC_POINTER.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "AQS-FLOW-GRAPH-001 derived excerpts (WP-Ap3)."},
-    {"name": "loop_closure", "argv": ["python3", "flow_graph/loop_closure.py"], "outputs": ["flow_graph/derived/LOOP_CLOSURE.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "Tarjan cut-closure report."},
-    {"name": "candidate_mvs", "argv": ["python3", "flow_graph/export_candidate_mvs.py"], "outputs": ["design_tool/aqs_design_tool/data/candidate_mvs.json"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "Single write path WP-Ap1; gated file (authority contract test reads it)."},
-    {"name": "task_plan", "argv": ["python3", "docs-authority/_task_plan_gen.py"], "outputs": ["docs-authority/TASK_PLAN.md"], "depends_on": ["storage_sizing"], "writes_graph": false, "quick": false, "note": "AQS-PLAN-007 regen (AGENTS loop step 1); reads graph + STORAGE_HOLDUP.json + committed inventory CSVs."},
-    {"name": "model_workbook", "argv": ["python3", "docs-authority/_model_workbook.py"], "outputs": ["docs-authority/MODEL_WORKBOOK.xlsx"], "depends_on": ["write_graph_power", "task_plan"], "writes_graph": false, "quick": false, "note": "U5 Option A cascading parametric workbook: 24 sheets derived live from drivers.json (696 keys) + the graph + system_tree aggregate (README/DRIVERS/TREE/ELECTRICAL/HEAT_LEDGER + 19 sector sheets); subtotals/counts/store-balance are real SUM/COUNTA/SUMIF formulas; byte-stable (zip timestamps + docProps dates normalised, no wall clock)."},
-    {"name": "assumptions_register", "argv": ["python3", "docs-authority/_assumptions_register.py"], "outputs": ["docs-authority/ASSUMPTIONS_REGISTER.md"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "AQS-REG-002 regen; fails on a bad assumptions_manual.json entry."},
-    {"name": "regen_derived", "argv": ["python3", "flow_graph/regen_derived.py"], "outputs": ["flow_graph/views/*", "media/pfd/*", "media/D*.png", "media/F0_campus.png", "media/plant_phase_d.mp4", "media/_generated.json"], "depends_on": ["write_graph_power"], "writes_graph": false, "quick": false, "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg)."},
-    {"name": "rev_stamp", "argv": ["python3", "docs-authority/_rev_stamp.py"], "outputs": ["docs-authority/DERIVED_REVISIONS.md"], "depends_on": ["duty_basis", "iso_sheets", "derived_excerpts", "loop_closure", "candidate_mvs", "regen_derived", "task_plan", "model_workbook", "assumptions_register"], "writes_graph": false, "quick": false, "note": "LAST: X-GOV-06 derived-revision board incl. the regen receipt vouch and the gated set (U3 expansion)."}
+    {
+      "name": "write_graph_process",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.write_graph",
+        "process"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [],
+      "writes_graph": true,
+      "quick": true,
+      "note": "Solver -> graph: BMED/EVAP/vent-scrubber kW and rates, EW cell + RECT stamps, SOL_ARK bus delta. Spawns _ew_sizing/_rect_ew_sizing/_power_sizing (last via solver.solve for roof)."
+    },
+    {
+      "name": "sizing_bmed_stack",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.bmed_stack",
+        "--write"
+      ],
+      "outputs": [
+        "docs-authority/sizing/BMED_STACK.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "Doc-only sizing writer (AQS-DUTY-068)."
+    },
+    {
+      "name": "sizing_cold_box",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.cold_box",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/COLD_BOX.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "Stamps CRYO_ASU continuous_kw (read by _power_sizing CRIT list, A-M-238)."
+    },
+    {
+      "name": "sizing_evap_design",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.evap_design",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/EVAP_DESIGN.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "X-MFG-30 MVR design: EVAP params/design/relief_basis and stream T_C stamps (AQS-DUTY-060)."
+    },
+    {
+      "name": "sizing_receivers",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.receivers",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/GAS_RECEIVERS.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "AQS-DUTY-065."
+    },
+    {
+      "name": "sizing_h2_compressor",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.h2_compressor",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/H2_COMPRESSOR.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "AQS-DUTY-067; CRYO_H2 kW feeds the CRIT list."
+    },
+    {
+      "name": "sizing_h2_purifier",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.h2_purifier",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/H2_PURIFIER_BEDS.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "AQS-DUTY-066."
+    },
+    {
+      "name": "sizing_house_scrubbers",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.house_scrubbers",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/HOUSE_SCRUBBERS.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "X-PAR-03: ALK/ACID_POLISH scrubber kW stamps enter the demand."
+    },
+    {
+      "name": "sizing_pv_cell_line",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.pv_cell_line",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/PV_CELL_LINE.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "X-MFG-38. Declared edge pv_cell_line -> power; the power -> pv_cell_line feedback is resolved by the convergence loop (see notes)."
+    },
+    {
+      "name": "sizing_upw_polish",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.upw_polish",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/UPW_POLISH.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "AQS-DUTY-070."
+    },
+    {
+      "name": "foundry_poly",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.foundry_poly",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "FOUNDRY/POLYMERS rate stamps (A-M-261/266); before heat and the balance report."
+    },
+    {
+      "name": "write_graph_heat",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.write_graph",
+        "heat"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [
+        "foundry_poly"
+      ],
+      "writes_graph": true,
+      "quick": true,
+      "note": "X-THM-01 store-ledger re-solve (A-M-259). Also normalises the trailing-newline byte the foundry_poly writer leaves on the graph."
+    },
+    {
+      "name": "write_graph_relief",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.write_graph",
+        "relief"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [
+        "write_graph_heat"
+      ],
+      "writes_graph": true,
+      "quick": true,
+      "note": "API 520 sizing + atmospheric marking; MUST precede vent (vent supersedes the atmospheric relief_basis with the API 2000 case)."
+    },
+    {
+      "name": "write_graph_vent",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.write_graph",
+        "vent"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [
+        "write_graph_relief"
+      ],
+      "writes_graph": true,
+      "quick": true,
+      "note": "X-PAR-03 API 2000 venting + design_kPa from cases (A-M-174/182)."
+    },
+    {
+      "name": "storage_sizing",
+      "argv": [
+        "python3",
+        "docs-authority/_storage_sizing.py"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/sizing/STORAGE_HOLDUP.md",
+        "docs-authority/inventory/STORAGE_HOLDUP.json"
+      ],
+      "depends_on": [
+        "write_graph_vent"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "AQS-DUTY-064 tank params from final rates; STORAGE_HOLDUP.json is read by _task_plan_gen."
+    },
+    {
+      "name": "write_graph_power",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.write_graph",
+        "power"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/COLLECTION_BUS.md"
+      ],
+      "depends_on": [
+        "storage_sizing",
+        "sizing_cold_box",
+        "sizing_h2_compressor",
+        "sizing_house_scrubbers",
+        "sizing_pv_cell_line",
+        "sizing_upw_polish"
+      ],
+      "writes_graph": true,
+      "quick": true,
+      "note": "LAST graph writer: PV/ZNBR2/SOL_ARK/EXT_HALL/mvs.electrical/BACKUP_GEN from _power_sizing over every kW stamp; spawns _collection_bus (X-ELS-11 sections, another graph writer)."
+    },
+    {
+      "name": "balance_report",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.balance",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json",
+        "docs-authority/BALANCE_RECONCILIATION.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "physics + reconcile + write (D-DOCK 2026-10-19): NORTH_DOCK reports a trade statement as the inter-plant boundary; --write assert green (max residual 7.2e-4 kg/d)."
+    },
+    {
+      "name": "load_list",
+      "argv": [
+        "python3",
+        "docs-authority/_load_list.py"
+      ],
+      "outputs": [
+        "docs-authority/LOAD_LIST.md",
+        "docs-authority/LOAD_LIST.json"
+      ],
+      "depends_on": [
+        "balance_report"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-ELEC-003 + U2a JSON sidecar (graph-sha manifest). Spawns _ew_sizing (doc) and _mfg_tools (doc+stdout, no --graph)."
+    },
+    {
+      "name": "one_line",
+      "argv": [
+        "python3",
+        "docs-authority/_one_line.py"
+      ],
+      "outputs": [
+        "docs-authority/ONE_LINE.md",
+        "docs-authority/ONE_LINE.json"
+      ],
+      "depends_on": [
+        "load_list"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-ELEC-002 Rev C; reads LOAD_LIST.json; ONE_LINE.json read by _cable_schedule; ONE_LINE.md parsed by _protection."
+    },
+    {
+      "name": "ew_sizing_doc",
+      "argv": [
+        "python3",
+        "docs-authority/_ew_sizing.py"
+      ],
+      "outputs": [
+        "docs-authority/sizing/EW_CELLS.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-DUTY-051 Rev C doc writer; stdout JSON unchanged for its internal spawners."
+    },
+    {
+      "name": "leach_sizing_doc",
+      "argv": [
+        "python3",
+        "docs-authority/_leach_sizing.py"
+      ],
+      "outputs": [
+        "docs-authority/sizing/LEACH_CSTR_1.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-DUTY-050 Rev B doc writer."
+    },
+    {
+      "name": "reactor_design_doc",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.reactor_design",
+        "--doc-only"
+      ],
+      "outputs": [
+        "docs-authority/sizing/REACTOR_DESIGN.md",
+        "docs-authority/sizing/REACTOR_DESIGN._generated.json"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "--doc-only (U2a): REACTOR_DESIGN.md + per-file manifest; graph untouched (gated file)."
+    },
+    {
+      "name": "foundry_sizing_doc",
+      "argv": [
+        "python3",
+        "docs-authority/_foundry_sizing.py"
+      ],
+      "outputs": [
+        "docs-authority/sizing/FOUNDRY_LINE.md"
+      ],
+      "depends_on": [
+        "foundry_poly"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-DUTY-072 (doc-only; transfer functions in flow_graph/param/foundry_poly.py)."
+    },
+    {
+      "name": "polymers_sizing_doc",
+      "argv": [
+        "python3",
+        "docs-authority/_polymers_sizing.py"
+      ],
+      "outputs": [
+        "docs-authority/sizing/POLYMERS_LINE.md"
+      ],
+      "depends_on": [
+        "foundry_poly"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-DUTY-073 (doc-only)."
+    },
+    {
+      "name": "vent_scrubber_doc",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.vent_scrubber",
+        "--write"
+      ],
+      "outputs": [
+        "docs-authority/sizing/VENT_SCRUBBER.md"
+      ],
+      "depends_on": [
+        "write_graph_process"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-DUTY-061 doc-only writer (no graph write in this module)."
+    },
+    {
+      "name": "duty_basis",
+      "argv": [
+        "python3",
+        "docs-authority/_duty_basis.py"
+      ],
+      "outputs": [
+        "docs-authority/duties/*.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "Section 1/2 refresh of every duty sheet + duties/_generated.json (graph-sha pattern manifest clearing all duties) + duties/_origins.json read by _line_list."
+    },
+    {
+      "name": "line_list",
+      "argv": [
+        "python3",
+        "docs-authority/_line_list.py"
+      ],
+      "outputs": [
+        "docs-authority/LINE_LIST.md"
+      ],
+      "depends_on": [
+        "duty_basis"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-PIP-004; unit centres from duties/_origins.json."
+    },
+    {
+      "name": "iso_routes",
+      "argv": [
+        "python3",
+        "docs-authority/_iso_routes.py"
+      ],
+      "outputs": [
+        "docs-authority/ISO_ROUTES.md",
+        "docs-authority/ISO_ROUTES.json"
+      ],
+      "depends_on": [
+        "line_list"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-ISO-001 + U2a JSON sidecar read by _supports."
+    },
+    {
+      "name": "iso_sheets",
+      "argv": [
+        "python3",
+        "docs-authority/_iso_sheets.py"
+      ],
+      "outputs": [
+        "docs-authority/iso/*"
+      ],
+      "depends_on": [
+        "iso_routes"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-ISO-002: iso/<LINE>.svg per routed line + ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
+    },
+    {
+      "name": "supports",
+      "argv": [
+        "python3",
+        "docs-authority/_supports.py"
+      ],
+      "outputs": [
+        "docs-authority/SUPPORTS.md"
+      ],
+      "depends_on": [
+        "iso_routes"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-PIP-005; reads ISO_ROUTES.json."
+    },
+    {
+      "name": "insulation",
+      "argv": [
+        "python3",
+        "docs-authority/_insulation.py"
+      ],
+      "outputs": [
+        "docs-authority/INSULATION_SCHEDULE.md",
+        "docs-authority/insulation_schedule.csv"
+      ],
+      "depends_on": [
+        "iso_sheets"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "X-THM-03; reads iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
+    },
+    {
+      "name": "ew_busbar",
+      "argv": [
+        "python3",
+        "docs-authority/_ew_busbar.py"
+      ],
+      "outputs": [
+        "docs-authority/BUSBAR.md",
+        "docs-authority/BUSBAR.json"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-BUS-001 rev C + U2a JSON sidecar read by _cable_schedule."
+    },
+    {
+      "name": "cable_schedule",
+      "argv": [
+        "python3",
+        "docs-authority/_cable_schedule.py"
+      ],
+      "outputs": [
+        "docs-authority/CABLE_SCHEDULE.md"
+      ],
+      "depends_on": [
+        "one_line",
+        "ew_busbar"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-ELEC-010; demand from ONE_LINE.json, EW bars from BUSBAR.json."
+    },
+    {
+      "name": "protection",
+      "argv": [
+        "python3",
+        "docs-authority/_protection.py"
+      ],
+      "outputs": [],
+      "depends_on": [
+        "one_line"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-ELEC-006 study (stdout JSON; parses ONE_LINE.md); spawns _grounding_study."
+    },
+    {
+      "name": "haz_area",
+      "argv": [
+        "python3",
+        "docs-authority/_haz_area.py"
+      ],
+      "outputs": [
+        "docs-authority/HAZ_AREA.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "Terminal consumer (graph + committed inventory CSVs)."
+    },
+    {
+      "name": "derived_excerpts",
+      "argv": [
+        "python3",
+        "flow_graph/export_authority_md.py"
+      ],
+      "outputs": [
+        "flow_graph/derived/STREAM_REGISTER_DERIVED.md",
+        "flow_graph/derived/MASS_FLOW_DERIVED.md",
+        "flow_graph/derived/CENSUS.md",
+        "flow_graph/derived/SYNC_POINTER.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-FLOW-GRAPH-001 derived excerpts (WP-Ap3)."
+    },
+    {
+      "name": "loop_closure",
+      "argv": [
+        "python3",
+        "flow_graph/loop_closure.py"
+      ],
+      "outputs": [
+        "flow_graph/derived/LOOP_CLOSURE.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "Tarjan cut-closure report."
+    },
+    {
+      "name": "candidate_mvs",
+      "argv": [
+        "python3",
+        "flow_graph/export_candidate_mvs.py"
+      ],
+      "outputs": [
+        "design_tool/aqs_design_tool/data/candidate_mvs.json"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "Single write path WP-Ap1; gated file (authority contract test reads it)."
+    },
+    {
+      "name": "task_plan",
+      "argv": [
+        "python3",
+        "docs-authority/_task_plan_gen.py"
+      ],
+      "outputs": [
+        "docs-authority/TASK_PLAN.md"
+      ],
+      "depends_on": [
+        "storage_sizing"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-PLAN-007 regen (AGENTS loop step 1); reads graph + STORAGE_HOLDUP.json + committed inventory CSVs."
+    },
+    {
+      "name": "model_workbook",
+      "argv": [
+        "python3",
+        "docs-authority/_model_workbook.py"
+      ],
+      "outputs": [
+        "docs-authority/MODEL_WORKBOOK.xlsx"
+      ],
+      "depends_on": [
+        "write_graph_power",
+        "task_plan"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "U5 Option A cascading parametric workbook: 24 sheets derived live from drivers.json (696 keys) + the graph + system_tree aggregate (README/DRIVERS/TREE/ELECTRICAL/HEAT_LEDGER + 19 sector sheets); subtotals/counts/store-balance are real SUM/COUNTA/SUMIF formulas; byte-stable (zip timestamps + docProps dates normalised, no wall clock)."
+    },
+    {
+      "name": "assumptions_register",
+      "argv": [
+        "python3",
+        "docs-authority/_assumptions_register.py"
+      ],
+      "outputs": [
+        "docs-authority/ASSUMPTIONS_REGISTER.md"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-REG-002 regen; fails on a bad assumptions_manual.json entry."
+    },
+    {
+      "name": "regen_derived",
+      "argv": [
+        "python3",
+        "flow_graph/regen_derived.py"
+      ],
+      "outputs": [
+        "flow_graph/views/*",
+        "media/pfd/*",
+        "media/D*.png",
+        "media/F0_campus.png",
+        "media/plant_phase_d.mp4",
+        "media/_generated.json"
+      ],
+      "depends_on": [
+        "write_graph_power"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg)."
+    },
+    {
+      "name": "rev_stamp",
+      "argv": [
+        "python3",
+        "docs-authority/_rev_stamp.py"
+      ],
+      "outputs": [
+        "docs-authority/DERIVED_REVISIONS.md"
+      ],
+      "depends_on": [
+        "duty_basis",
+        "iso_sheets",
+        "derived_excerpts",
+        "loop_closure",
+        "candidate_mvs",
+        "regen_derived",
+        "task_plan",
+        "model_workbook",
+        "assumptions_register"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "LAST: X-GOV-06 derived-revision board incl. the regen receipt vouch and the gated set (U3 expansion)."
+    }
   ]
 }

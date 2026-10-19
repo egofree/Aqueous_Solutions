@@ -4631,5 +4631,72 @@
     "replacing_test": "per-key verification_test fields",
     "task": "U4b",
     "replaced_by": "per-key verification_test fields in drivers.json"
+  },
+  {
+    "id": "A-M-270",
+    "task": "X-PAR-02",
+    "title": "D-DOCK product buffer storage",
+    "statement": "Buffer stores are built for every surplus product: FOOD_STORE (80 d X-RED-08 dry reserve at 6 % DM of the crew food), METAL_STORE (14 d foundry dispatch campaign), AIR_RECEIVER (1 d of the ASU/vent margin at 10 bar); O2 (CRYO_O2 bank) and water (ROOF_TANK) already had stores.",
+    "value": "FOOD_STORE 80 d x 0.252 kg DM/d (rho 600); METAL_STORE 14 d x 14.0 kg/d (rho 2000 stacked bulk); AIR_RECEIVER 1.0 d x 3.1 kg/d N2 (rho 11.7 at 10 bar abs, design P 1.0 MPa g)",
+    "units": "see value (d, kg/d, kg/m3, MPa)",
+    "where": "flow_graph/plant_flow_graph.json (FOOD_STORE/METAL_STORE/AIR_RECEIVER nodes + S14D/IA-STOCK-STORE/S84/IA-AIR-RX-OUT edges); flow_graph/param/drivers.json (7 keys under the three dotted paths); docs-authority/_storage_sizing.py; docs-authority/sizing/STORAGE_HOLDUP.md",
+    "basis": "owner ruling D-DOCK 2026-10-19 (notes/first_principles_audit_2026-10-17.md): product buffer storage assumed built for O2/water/compressed air/surplus food/metals; food hold days from X-RED-08 (A-M-148, BVAD2022 tomato 80 d time-to-harvest); metal hold from the A-M-225 product-dispatch pattern (14 d); air receiver sized on the ASU/vent margin (IA-N2-VENT); stores pass their feeds at steady state so mass closure is unchanged",
+    "sensitivity": "hold days scale the stored inventory linearly; the air receiver volume scales with the cold-box surplus, which tracks the flue-gas recovery loop",
+    "replaced_by": "dispatch/replant logistics study with real demand data",
+    "replacing_test": "stores re-size automatically from their feed edges on every _storage_sizing.py run",
+    "needs_verification": true,
+    "verification_test": "X-INV-02C: confirm hold days against the dispatch cadence and crop-failure duration when the trade-logistics pass issues"
+  },
+  {
+    "id": "A-M-271",
+    "task": "X-PAR-02",
+    "title": "The dock is the inter-plant trade boundary, not a balance-constrained sector",
+    "statement": "NORTH_DOCK is reclassified to class boundary and joins the closure-exempt boundary set; its in/out ledger is reported as a trade statement (params.trade_statement, BALANCE_RECONCILIATION.md section 1a) with imports, exports and net.",
+    "value": "class dock -> boundary; SINK set += NORTH_DOCK; trade statement reported (net +0.006 kg/d at this pass)",
+    "units": "kg/d",
+    "where": "flow_graph/param/balance.py (SINK set, physics trade_statement, report section 1a); flow_graph/plant_flow_graph.json (NORTH_DOCK node)",
+    "basis": "owner ruling D-DOCK 2026-10-19: the dock imports arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class) and exports surplus products to other plants; it must not be forced to intra-plant closure standards and its rate rounding is accepted design-phase noise",
+    "sensitivity": "none on unit closure (exempt); the trade statement tracks every dock edge live",
+    "replaced_by": "real trade contracts / freight manifests",
+    "replacing_test": "test_balance.py test_mass_closes (dock no longer in the failing set); trade statement regenerated every balance run"
+  },
+  {
+    "id": "A-M-272",
+    "task": "X-PAR-02",
+    "title": "Electrolyser sized to the H2 pool draws net of the EW Faraday cathode credit",
+    "statement": "H2O_ELYZ makes S45 + S49 + S74 - S64 kg/d (gross pool draws less the live EW cathode H2 on S64); the H2 side governs - O2 headroom stays large either way (72.4 vs 45.2 kg/d draws after netting, 27.2 kg/d surplus still exported on IA-O2-PROD, P19 intact).",
+    "value": "IA-ELY-H2 = 9.120 kg/d (was 11.096 gross); IA-ELY-O2 = 72.4 kg/d",
+    "units": "kg/d",
+    "where": "flow_graph/param/o2_close.py (ELY block); flow_graph/plant_flow_graph.json (IA-ELY-H2/O2/H2O, SF-H2O_ELYZ); docs-authority/O2_SOURCE.md via L['ely']",
+    "basis": "A-M-230 kept the gross basis because the BH-era cathode H2 routed to HCl synthesis (phantom credit); the R10b re-base (A-M-255) put the full Faraday cathode H2 on the live pool, so netting is real metering now. EW-down case: methanol (S74) throttles before the fuel cell; ELY-down case: the CRYO_H2 autonomy store covers it (AQS-ELEC-007)",
+    "sensitivity": "electrolyser kW scales 1:1 with the netted H2 (-4.5 kW average); O2 surplus scales 7.937:1 but stays exported",
+    "replaced_by": "the pool dispatch study with real EW availability data",
+    "replacing_test": "close_o2 ledger regenerated every run (src/draw/surplus on CRYO_O2 params and IA-O2-PROD)"
+  },
+  {
+    "id": "A-M-273",
+    "task": "X-PAR-02",
+    "title": "Cold-box N2 surplus exports at the dock (IA-N2-VENT reopened)",
+    "statement": "With NOX_SCRUB closed on its gas outlet (BH routing to the restored CRYO_ASU, D-AIR), the cold box delivers more N2 than the plant-air header draws; the surplus (3.1 kg/d) exports at the dock boundary on the existing IA-N2-VENT edge.",
+    "value": "IA-N2-VENT = 3.1 kg/d (was 0, retired)",
+    "units": "kg/d",
+    "where": "flow_graph/param/o2_close.py (hdr_draw/avail/vent block); flow_graph/plant_flow_graph.json (IA-N2-VENT, S84, IA-AIR-RX-OUT); balance trade statement",
+    "basis": "owner ruling D-DOCK (surplus products leave at the dock); BH vent path re-opened with the ASU restored; the surplus is computed by difference each run (available less header need), never held",
+    "sensitivity": "tracks the flue-gas recovery loop 1:1 (NOX scrub through-put); feeding it back would need an N2 consumer or storage",
+    "replaced_by": "an N2 product/export study if the surplus grows",
+    "replacing_test": "balance run: HDR_N2 and CRYO_N2 close exactly with the vent edge"
+  },
+  {
+    "id": "A-M-274",
+    "task": "X-PAR-02",
+    "title": "R10c residual closures on stated bases (graph gaps fixed)",
+    "statement": "Three small pre-existing graph gaps closed so the balance fixed point is byte-stable: MEOH_FERM digestate (water + spent solids, 0.345 kg/d) joins the blackwater barrier on IA-FERM-DIG (galley-organics class, IA-GAL pattern); WS_SOLV gets its missing solvent resupply import at the dock (IA-SOLV-MU = the bench draw); the MEOH_FC oxidant and CO2 are re-based to complete-oxidation stoichiometry on the methanol actually burned (S76 + IA-MEOH-REST).",
+    "value": "IA-FERM-DIG 0.345; IA-SOLV-MU 0.210; IA-FC-AIR 9.407 and S82 8.625 kg/d on 6.28 kg/d methanol burned",
+    "units": "kg/d",
+    "where": "flow_graph/param/balance.py (R10c block); flow_graph/plant_flow_graph.json (IA-FERM-DIG, IA-SOLV-MU, IA-FC-AIR, S81, S82)",
+    "basis": "each edge's own stated basis: galley-organics barrier train for the digestate; D-DOCK reagent imports and AQS-DUTY-016 (each chemical has a source) for the solvent; the AQS-DUTY-012 Rev N oxidation note (CH3OH + 1.5 O2 -> CO2 + 2 H2O) for the fuel-cell rates",
+    "sensitivity": "sub-kg/d streams; none moves any unit over 2 % of its rate",
+    "replaced_by": "the MEOH fuel-cell duty sheet and the fab solvent assay",
+    "replacing_test": "test_balance.py trio green (units close; reconciled moves within tolerance; closures re-derive)"
   }
 ]

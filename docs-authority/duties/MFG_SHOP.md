@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 624.2 kg/d. Mass out 624.2 kg/d. Electrical duty 12.0000 kW. In: S08 42 kg/d (metals/Si); S08G 26.7 kg/d (glass/ceramic goods); S58 3.939 kg/d (wire product); S59 3.95 kg/d (sheet / strip); 16 more. Out: S16 12 kg/d (scrap); S61 1.197 kg/d (metal scrap); MFG_SCRAP_TO_IND 14.14 kg/d (manufacturing scrap return); IA-MFG-OUT 596.9 kg/d (goods in service).
+1. Basis. Mass in 624.5 kg/d. Mass out 624.5 kg/d. Electrical duty 12.0000 kW. In: S08 42 kg/d (metals/Si); S08G 26.7 kg/d (glass/ceramic goods); S58 3.939 kg/d (wire product); S59 3.95 kg/d (sheet / strip); 16 more. Out: S16 12.3 kg/d (scrap); S61 1.197 kg/d (metal scrap); MFG_SCRAP_TO_IND 14.14 kg/d (manufacturing scrap return); IA-MFG-OUT 596.9 kg/d (goods in service).
 
 2. Size.
 - In 610.3 kg/d, out 610.3 kg/d. No holdup claimed.

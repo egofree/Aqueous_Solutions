@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1865 kg/d. Mass out 1865 kg/d. Electrical duty 0.0000 kW. In: S69 1865 kg/d (Br2 vapor). Out: S69B 1865 kg/d (NaBr after ORP).
+1. Basis. Mass in 1094 kg/d. Mass out 1094 kg/d. Electrical duty 0.0000 kW. In: S69 1094 kg/d (Br2 vapor). Out: S69B 1094 kg/d (NaBr after ORP).
 
 2. Size.
 - Gas 30.00 m³/h. Tower area at 1.5 m/s = 30.0/3600/1.5 = 0.0056 m². Diameter 84 mm.

@@ -15,8 +15,8 @@ Non-condensables released in the EVAP_ACID body leave through the condensing sid
 
 | Case | Condensate wt% HCl | Vent mol/d | Vent kg/d | HCl in, ppmv | HCl in, mg/d | NTU | HTU, m | Bed needed, m |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Normal (column working) | 0.50 | 1.054 | 0.0297 | 0.63 | 0.024 | 0.00 | 3.05e-05 | 0.50 |
-| Design: upset, column bypassed | 17.09 | 1.029 | 0.0292 | 490 | 18.4 | 6.19 | 2.98e-05 | 0.50 |
+| Normal (column working) | 0.50 | 1.055 | 0.0297 | 0.63 | 0.024 | 0.00 | 3.05e-05 | 0.50 |
+| Design: upset, column bypassed | 17.09 | 1.029 | 0.0293 | 490 | 18.4 | 6.19 | 2.98e-05 | 0.50 |
 
 Below 2 wt% the Perry fits are not tabulated; the 2 wt% row is used, which over-states the HCl pressure (bounding).
 

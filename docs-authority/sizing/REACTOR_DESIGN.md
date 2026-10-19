@@ -39,10 +39,10 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 
 ## 4. MEOH_SYNTH (A-M-156)
 
-- Product 3.11 L of Cu/ZnO/Al2O3 (3.42 kg): methanol 1.390 kg/h at a weight-time yield of 1.22 kg/(kg h) (CTC2020_CZA, CO2-only feed, 60 bar, 523 K) / margin 3.0 for 50 bar and ageing.
-- 1 x DN50 Sch 40 SA-106 B, bed 1435 mm, in a DN100 thermal-oil jacket. 250 C, 50 bar operating, 5.50 MPa design (A-M-156).
+- Product 3.23 L of Cu/ZnO/Al2O3 (3.55 kg): methanol 1.443 kg/h at a weight-time yield of 1.22 kg/(kg h) (CTC2020_CZA, CO2-only feed, 60 bar, 523 K) / margin 3.0 for 50 bar and ageing.
+- 1 x DN50 Sch 40 SA-106 B, bed 1490 mm, in a DN100 thermal-oil jacket. 250 C, 50 bar operating, 5.50 MPa design (A-M-156).
 - Wall: UG-27 (ASME_VIII1_UG27) with S = 118.0 MPa (ASME_II_D, SA-106 B at 260 C), E = 1, CA 1.5 mm: required 2.88 mm; Sch 40 nominal 3.91 mm less 12.5 % mill tolerance = 3.42 mm: adequate.
-- Heat: exotherm 0.596 kW (49.5 kJ/mol, PONTZEN2011) to the jacket; feed preheat 0.794 kW electric, no feed/effluent interchanger credit.
+- Heat: exotherm 0.619 kW (49.5 kJ/mol, PONTZEN2011) to the jacket; feed preheat 0.821 kW electric, no feed/effluent interchanger credit.
 - Relief: API 520 gas, blocked outlet at the full feed (flow_graph/param/pressure_nodes.py).
 
 ## 5. Biological and hydrothermal reactors

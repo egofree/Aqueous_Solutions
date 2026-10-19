@@ -332,5 +332,50 @@
   "material": "PE (rotomoulded / fabricated)",
   "envelope_mm": null,
   "fits_envelope": false
+ },
+ {
+  "unit": "FOOD_STORE",
+  "service": "D-DOCK food buffer: fresh harvest pass-through + X-RED-08 80 d dry reserve (A-M-270)",
+  "Q_kg_d": 0.252,
+  "hold_d": 80,
+  "rho": 600,
+  "V_work_m3": 0.0336,
+  "V_nom_m3": 0.042,
+  "D_mm": 350,
+  "H_mm": 450,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": null,
+  "fits_envelope": false
+ },
+ {
+  "unit": "METAL_STORE",
+  "service": "D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270)",
+  "Q_kg_d": 14.0,
+  "hold_d": 14,
+  "rho": 2000,
+  "V_work_m3": 0.098,
+  "V_nom_m3": 0.1225,
+  "D_mm": 500,
+  "H_mm": 650,
+  "wall_mm": 4.75,
+  "material": "PE (rotomoulded / fabricated)",
+  "envelope_mm": null,
+  "fits_envelope": false
+ },
+ {
+  "unit": "AIR_RECEIVER",
+  "service": "D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270)",
+  "Q_kg_d": 3.1,
+  "hold_d": 1.0,
+  "rho": 11.7,
+  "V_work_m3": 0.2649,
+  "V_nom_m3": 0.3312,
+  "D_mm": 700,
+  "H_mm": 900,
+  "wall_mm": 3.06,
+  "material": "SA-240 304L, welded",
+  "envelope_mm": null,
+  "fits_envelope": false
  }
 ]

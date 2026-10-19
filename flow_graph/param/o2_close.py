@@ -160,8 +160,8 @@ def tf(g):
     #   base: IA-BMED-04 = 1301.72 + 0.27 (IA-BMED-02) - 799.01 = 502.98              [BH 502.98 verbatim]
     # EVAP_ACID then closes on IA-ACID-01 below (the retired 0.03 IA-EVAP_ACID-VENT rides the acid product); EVAP_BASE on
     # IA-BASE-PPT (absorbs the retired ACEX caustic draw, BH IA-ACEX-NAOH 0.23).
-    put('IA-BMED-03', v('IA-EVAP_ACID-FEED') + v('S09') + v('IA-BMED-01') - v('IA-EVAP_ACID-COND'),
-        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f}; BH 449.52 (fa1b4db)")
+    put('IA-BMED-03', v('IA-EVAP_ACID-FEED') + v('S09') + v('IA-BMED-01') - v('IA-EVAP_ACID-COND') - vv('IA-VS-SPENT'),
+        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f} - vent-scrubber spent return {vv('IA-VS-SPENT'):.4f}; BH 449.52 (fa1b4db); D-DOCK lane: the X-PAR-10 spent return term was missing from the formula, which rattled the loop +0.0006 kg/d per pass once --write resumed (2026-10-19)")
     put('IA-BMED-04', v('IA-EVAP_BASE-FEED') + v('IA-BMED-02') - v('IA-EVAP_BASE-COND'),
         f"leach spent-base purge closes BMED_BASE: feed {v('IA-EVAP_BASE-FEED'):.2f} + IA-BMED-02 {v('IA-BMED-02'):.2f} - condensate {v('IA-EVAP_BASE-COND'):.2f}; BH 502.98 verbatim (fa1b4db)")
     x_feed = v('IA-EVAP_ACID-FEED') + resid('BMED_ACID')
@@ -195,9 +195,17 @@ def tf(g):
     dn2 = B['IA-GEN-AIR'] - v('IA-GEN-AIR'); dC = gf['CUT-1-OUT']*(1 - r)*90.0/107.2; dH = gf['CUT-1-OUT']*(1 - r)*17.2/107.2 + gf['S45']   # fuel mass that left on the old graph as C and H
     gco2 = v('CUT-1-OUT')*(7.5*32.0/107.2); gh2o = gen_b - gco2
     ab_co, ab_org = vv('IA-SIC-CO')*0.5711, v('NCG_TO_AB')*0.03*1.066 + 0.3195 + v('S11')*0.001*1.066
-    oa = EXC*(ab_co + ab_org); put('IA-AB-O2', oa, f'1.10 x (CO {ab_co:.3f} + organics {ab_org:.3f}); S11 is 99.8 % water'); 
-    put('IA-AB-FLUE', B['IA-AB-FLUE'] + oa, 'flue carries the O2 drawn'); put('S67', B['S67'] + oa, 'flue carries the O2 drawn')
-    put('S67B', B['S67B'] + ab_co + ab_org/2, 'bound O2 into CO2'); put('IA-FLUE-EXH', B['IA-FLUE-EXH'] + ab_org/2 + (oa - ab_co - ab_org), 'bound O2 into H2O + excess O2')
+    oa = EXC*(ab_co + ab_org); put('IA-AB-O2', oa, f'1.10 x (CO {ab_co:.3f} + organics {ab_org:.3f}); S11 is 99.8 % water')
+    # D-DOCK lane 2026-10-19 (balance close, AFTERBURNER -2.18): the flue is the burner mass balance, not a frozen base + O2.
+    #    All oxidised inputs (NCG, bed organics S11, sanitation digester gas + cake, combustion O2) leave as flue; the dilution
+    #    air IA-AB-AIR joins at the flue junction AFTERBURNER_FLUE on the restored combustion-air path (STOICH), not through
+    #    the burner — so it enters S67, not IA-AB-FLUE.
+    ab_in = v('NCG_TO_AB') + v('S11') + vv('IA-BLK-GAS') + vv('IA-BLK-CAKE')
+    put('IA-AB-FLUE', ab_in + oa, f'burner mass balance: NCG {v("NCG_TO_AB"):.3f} + S11 {v("S11"):.3f} + digester gas {vv("IA-BLK-GAS"):.3f} + cake {vv("IA-BLK-CAKE"):.2f} + combustion O2 {oa:.3f} (oxidised to CO2/H2O, mass through)')
+    put('S67B', B['S67B'] + ab_co + ab_org/2, 'bound O2 into CO2 (KO CO2 cut keeps the chemistry basis)')
+    put('S67', v('IA-AB-FLUE') + v('IA-AB-AIR'), 'flue junction passes burner flue + dilution air (restored combustion-air path, STOICH IA-AB-AIR)')
+    put('IA-FLUE-EXH', v('S67') + vv('S70') + v('IA-LEACH-FLUE') + v('IA-FLUE-QUENCH') - v('S67B'),
+        'knockout passes the flue less the CO2 cut S67B (X-SAN-01 quench water and the leach vent ride the inputs)')
     xs = (og - gen_b) + (oa - ab_co - ab_org)
     if 'FORM' in N and all(k in E for k in ('IA-FORM-S', 'IA-MEOH-FORM', 'IA-FORM-O2', 'IA-FORM-N2', 'IA-FORM-TAIL')):
         # X-SAF-11 (A-M-159): FORM feed at about 10 mol% MeOH, 10 mol% O2, 80 mol% N2 (FORMOX_REVIEW2021): O2 = 1 mol per MeOH (half reacts),
@@ -211,9 +219,29 @@ def tf(g):
     if all(k in E for k in ('IA-NOX-N2', 'IA-NOX-CO2', 'IA-ASU-N2', 'IA-ASU-O2', 'IA-ASU-CO2', 'IA-CO2-RET')):
         # R8: the cold-box species family died with CRYO_ASU in the Rev AC pivot; NOX_SCRUB keeps its study rates (R10 re-basis)
         put('IA-NOX-CO2', B['IA-NOX-CO2'] - dC + gco2, 'genset bound O2 into CO2, less the carbon of the fuel no longer burned'); put('IA-NOX-H2O', B['IA-NOX-H2O'] - dH + gh2o + ab_org/2, 'bound O2 into water, less the H no longer burned')
-        put('IA-NOX-N2', B['IA-NOX-N2'] - dn2 + xs, 'N2 replaced by O2; excess O2 rides to the cold box'); E['IA-NOX-N2']['composition'] = {'N2': round(1 - xs/v('IA-NOX-N2'), 4), 'O2': round(xs/v('IA-NOX-N2'), 4)}
-        put('IA-ASU-N2', v('IA-NOX-N2') - xs, 'N2 out = N2 in'); put('S84', v('IA-ASU-N2') - v('S88') - v('IA-N2-VENT') - v('IA-AHU-FIX') - v('S03'),
-            'N2 pass-through less the direct CRYO_N2 draws (S03 fab N2 purge, BH 1.4998 AQS-DUTY-010; R10b)')
+        # D-DOCK lane 2026-10-19 (balance close, NOX_SCRUB +5.04): the gas outlet re-homes to its BH routing — the scrubber
+        #    vents to the cold box on IA-NOX-N2/IA-NOX-CO2 (outlets restored with CRYO_ASU per D-AIR) — and closes by
+        #    difference against the live inlets instead of the frozen BH base: X-SAN-01 Rev B moved the sanitation loads onto
+        #    the inlet edges (leach vent, flue quench) and the old base + retirement-delta arithmetic stopped tracking them.
+        nox_in = v('S46') + v('IA-FLUE-EXH') + vv('IA-FC-EXH') + v('IA-LEACH-NOX') + vv('IA-FC-FIX') + v('IA-CLOSE-1') + vv('IA-NIT-VENT')
+        put('IA-NOX-N2', nox_in - v('IA-NOX-H2O') - v('IA-NOX-N') - v('IA-NOX-CO2'),
+            f'scrubber gas outlet by difference: in {nox_in:.3f} (flue {v("IA-FLUE-EXH"):.2f} + leach vent {v("IA-LEACH-NOX"):.2f} + genset/ties {v("S46") + v("IA-CLOSE-1"):.3f}) less water {v("IA-NOX-H2O"):.2f}, nutrients {v("IA-NOX-N"):.2f}, CO2 {v("IA-NOX-CO2"):.2f} — BH routing to the cold box (D-AIR restored the outlets)')
+        E['IA-NOX-N2']['composition'] = {'N2': round(1 - xs/v('IA-NOX-N2'), 4), 'O2': round(xs/v('IA-NOX-N2'), 4)}
+        put('IA-ASU-N2', v('IA-NOX-N2') - xs, 'N2 out = N2 in')
+        # D-DOCK lane 2026-10-19: plant-air chain closed end-to-end. The header (HDR_N2) passes its draws on IA-AIR-RX-OUT
+        #    from the air receiver; the cold box (CRYO_N2) sends S84 to the receiver and exports the surplus N2 on IA-N2-VENT
+        #    at the dock boundary (owner ruling D-DOCK: surplus products leave at the dock; the BH vent path re-opens with the
+        #    ASU restored per D-AIR). The receiver banks the margin (sizing: docs-authority/_storage_sizing.py, A-M-270).
+        hdr_draw = sum(v(k) for k in E if E[k]['from_unit_id'] == 'HDR_N2' and k != 'IA-N2-RET' and E[k]['presence'] == 'present'
+                       and 'mass' in (E[k].get('layers') or []) and E[k]['rate'].get('unit') == 'kg/d')
+        need = hdr_draw - v('IA-EW4-N2')                                                  # sweep N2 returns below the header balance
+        avail = v('IA-ASU-N2') + v('IA-N2-RET') - v('S88') - v('IA-AHU-FIX') - v('S03')    # direct CRYO_N2 draws stay at the cold box
+        vent = max(0.0, avail - need)
+        put('IA-N2-VENT', vent, f'cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available {avail:.3f} less header need {need:.3f} kg/d')
+        put('S84', avail - vent, 'cold-box N2 product to the air receiver, less direct draws (S03 fab N2 purge BH 1.4998 AQS-DUTY-010, R10b) and the dock export')
+        if 'IA-AIR-RX-OUT' in E:
+            put('IA-AIR-RX-OUT', v('S84'), 'air receiver passes the cold-box delivery to the header at steady state (D-DOCK product buffer; A-M-270)')
+        if avail < need - 1e-6: L['n2_header_short_kg_d'] = round(need - avail, 6)
         put('IA-CO2-RET', 0.0, 'no CO2 recycle into the cold box'); put('IA-ASU-CO2', v('IA-NOX-CO2'), 'CO2 out = CO2 in'); put('IA-ASU-O2', xs, 'O2 out = O2 in (combustion excess)')
     L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_co + ab_org, xs=xs)
     # --- CO2: light-limited bed, rest to methanol
@@ -232,8 +260,16 @@ def tf(g):
     #     synthesis, not the pool, and crediting the phantom would undersize the O2 source below the draws (P19). The S64
     #     accumulation at CRYO_H2 is reported in L['ely']['h2_pool_resid_kg_d'] and owned by the R10 EW re-basis.)
     if 'H2O_ELYZ' in N and 'IA-ELY-H2' in E:
-        h2 = v('S45') + v('S49') + v('S74'); o2 = h2*31.998/4.032
-        put('IA-ELY-H2', h2, 'H2 demand: genset + fuel cell + methanol (gross pool draws; EW cathode H2 not credited, A-M-230)')
+        # D-DOCK lane 2026-10-19 (balance close, CRYO_H2 +1.975): the electrolyser is sized to the pool draws NET of the EW
+        #     Faraday cathode credit S64. A-M-230 kept the gross basis because the BH-era cathode H2 was a phantom (it routed
+        #     to HCl synthesis); the R10b re-base (A-M-255) put the full Faraday cathode H2 on the live pool, so the credit is
+        #     now real metering, not phantom accounting. Which side governs: the H2 side — O2 headroom stays large either way
+        #     (IA-ELY-O2 72.4 kg/d vs 45.2 kg/d of header + direct draws after netting; the 27.2 kg/d surplus still exports on
+        #     IA-O2-PROD, so the O2 N+1 rule P19 is intact and O2 does not constrain the electrolyser size). EW-down case:
+        #     methanol (S74) throttles before the fuel cell; ELY-down case: the CRYO_H2 autonomy store covers it (AQS-ELEC-007).
+        ew_credit = v('S64') if 'S64' in E else 0.0
+        h2 = max(0.0, v('S45') + v('S49') + v('S74') - ew_credit); o2 = h2*31.998/4.032
+        put('IA-ELY-H2', h2, f'H2 demand net of the live EW Faraday cathode credit: genset {v("S45"):.2f} + fuel cell {v("S49"):.2f} + methanol {v("S74"):.2f} - S64 {ew_credit:.3f} kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272)')
         put('IA-ELY-O2', o2, 'O2 = 7.937 x H2'); put('IA-ELY-H2O', h2 + o2, 'water split')
         kw = h2*KWH_H2/24; E['SF-H2O_ELYZ']['rate']['value'] = round(kw, 4)
         q = kw - h2*HHV_H2/24   # stack heat: BH carried it on SQ-H2O_ELYZ to HEAT_SINK; HEAT_SINK retired in Rev AC, and the
@@ -245,7 +281,7 @@ def tf(g):
         if 'SQ-H2O_ELYZ' in E: E['SQ-H2O_ELYZ']['rate']['value'] = round(q, 4)
         N['H2O_ELYZ']['continuous_kw'] = {'value': round(kw, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: {h2:.2f} kg/d H2 x {KWH_H2} kWh/kg / 24 h; rated {h2*KWH_H2/PSH_ELY:.1f} kW on a {PSH_ELY} h PV window.'}
         N['H2O_ELYZ']['params']['stack_heat_kw'] = {'value': round(q, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: {q:.2f} kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b.'}
-        L['ely'] = dict(h2=h2, o2=o2, kw=kw, rated=h2*KWH_H2/PSH_ELY, stack_heat_kw=q, h2_pool_resid_kg_d=round(resid('CRYO_H2'), 6))
+        L['ely'] = dict(h2=h2, h2_ew_credit_kg_d=round(ew_credit, 6), h2_gross_draws_kg_d=round(v('S45') + v('S49') + v('S74'), 6), o2=o2, kw=kw, rated=h2*KWH_H2/PSH_ELY, stack_heat_kw=q, h2_pool_resid_kg_d=round(resid('CRYO_H2'), 6))
     if 'IA-ASU-N2' in E:
         # TF re-basis 2026-10-18 (A-M-227 follow-up, D-AIR restored topology): the EW_4 sweep rate re-solves from the HDR_N2
         # header balance instead of holding the stale BH 0.710 kg/d. When even a zero sweep leaves the header over-supplied

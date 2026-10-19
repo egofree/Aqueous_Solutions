@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.6456 kg/d. Mass out 1.246 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-01 0.6456 kg/d (HCl product). Out: S34 1.246 kg/d (HNO3); IA-NIT-VENT 0 kg/d (nitric tank vent).
+1. Basis. Mass in 1.246 kg/d. Mass out 1.246 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-01 1.246 kg/d (HCl product). Out: S34 1.246 kg/d (HNO3); IA-NIT-VENT 0 kg/d (nitric tank vent).
 
 2. Size.
 - Storage (X-SAF-09): 14 d holdup at 1.17 L/d = 16.4 L net; tank 25 L nominal; own bund 30 L (≥110 %). Holdup days are an assumption: weak 2 M acid is stable; covers a two-week absorber outage.

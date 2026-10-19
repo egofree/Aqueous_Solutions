@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 88.76 kg/d. Mass out 88.76 kg/d. Electrical duty 0.0000 kW. In: S87 0.6416 kg/d (surplus O2 capture); IA-ASU-O2 0.06693 kg/d (oxygen product); IA-ELY-O2 88.05 kg/d (electrolyser O2). Out: S02 3.4 kg/d (O2); S50 38.4 kg/d (O2 oxidizer); S83 46.96 kg/d (O2 product); IA-O2-MAKE 0 kg/d (oxygen makeup).
+1. Basis. Mass in 75 kg/d. Mass out 75 kg/d. Electrical duty 0.0000 kW. In: S87 0.6416 kg/d (surplus O2 capture); IA-ASU-O2 0.06693 kg/d (oxygen product); IA-ELY-O2 74.29 kg/d (electrolyser O2). Out: S02 3.4 kg/d (O2); S50 38.4 kg/d (O2 oxidizer); S83 33.2 kg/d (O2 product); IA-O2-MAKE 0 kg/d (oxygen makeup).
 
 2. Size.
 - Not a packed tower. The column diameter and the tray count are on CRYO_ASU only.

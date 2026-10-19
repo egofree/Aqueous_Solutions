@@ -31,17 +31,32 @@ B = {'FAB_UPW_TANK': ('FAB.wet-reagent-train.bench.FAB_UPW_TANK', 'UPW buffer to
      'PROD_C19_C28': ('OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28', 'heavy distillate cut, 14 d', 'L'),
      'PROD_C29': ('OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29', 'C29+ to recycle, 3 d buffer', 'L'),
      'NUTRIENT_DOSE': ('NUT.dosing-train.NUTRIENT_DOSE', 'dosing solution day tank, 1 d (stock concentrate is stored dry)', 'L'),
-     'HOPPER': ('OIL.pyro-fractionation-train.pyro-frac.HOPPER', 'shredded feed, 1 d (bulk density)', 'S')}
+     'HOPPER': ('OIL.pyro-fractionation-train.pyro-frac.HOPPER', 'shredded feed, 1 d (bulk density)', 'S'),
+     'FOOD_STORE': ('FARM.grow-bed-train.FOOD_STORE', 'D-DOCK food buffer: fresh harvest pass-through + X-RED-08 80 d dry reserve (A-M-270)', 'S'),
+     'METAL_STORE': ('FOUNDRY.form-train.METAL_STORE', 'D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270)', 'S'),
+     'AIR_RECEIVER': ('CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER', 'D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270)', 'G')}
 def qin(n):
     p = n.get('params') or {}; m = re.search(r'In ([\d.]+) kg/d', p.get('duty') or '')
     return max((p.get('design_capacity_kg_d') or {}).get('value') or 0, float(m[1]) if m else 0)
+EV = {e['stream_id']: float(e['rate']['value'] or 0) for e in g['edges'] if e['presence'] == 'present'}
+# D-DOCK product buffers (A-M-270): Q is derived from the feed/draw edges, not a duty sheet - the stores pass their
+# feeds at steady state, so the sized hold is the standing inventory each buffer must carry:
+#   FOOD_STORE: the X-RED-08 dry-matter draw (crew food S14 fresh x 6 % DM; the 80 d hold is the crop-failure reserve)
+#   METAL_STORE: the foundry product dispatch (sum of the STOCK_TO_* draws from the store)
+#   AIR_RECEIVER: the ASU/vent margin (IA-N2-VENT, the cold-box N2 surplus over header draws) banked for one draw cycle
+GRAPH_Q = {
+    'FOOD_STORE': round(EV.get('S14', 0.0)*0.06, 4),
+    'METAL_STORE': round(sum(EV[k] for k in ('STOCK_TO_MFG', 'STOCK_TO_FAB', 'STOCK_TO_WIRE_DRAW') if k in EV), 4),
+    'AIR_RECEIVER': round(EV.get('IA-N2-VENT', 0.0), 4),
+}
+GAS_STEEL = {'AIR_RECEIVER'}   # compressed-gas service: steel at the working pressure (not hydrostatic PE)
 FLAM = {'MEOH_TANK', 'WS_SOLV', 'PROD_C5_C10', 'PROD_C11_C18', 'PROD_C19_C28', 'PROD_C29'}   # flammable / combustible: steel per NFPA 30 ch. 21
 rows = []
 for u, (path, svc, ph) in B.items():
-    n = N[u]; Q = qin(n); td = DR.val(_d, path + '.hold_d'); rho = DR.val(_d, path + '.rho_kg_m3'); V = Q*td/rho; Vn = max(V/FILL, 0.02)
+    n = N[u]; Q = GRAPH_Q.get(u, 0.0) or qin(n); td = DR.val(_d, path + '.hold_d'); rho = DR.val(_d, path + '.rho_kg_m3'); V = Q*td/rho; Vn = max(V/FILL, 0.02)
     D = math.ceil((4*Vn/(math.pi*HD))**(1/3)*1000/50)*50; H = math.ceil(Vn/(math.pi*(D/1000)**2/4)*1000/50)*50
-    P = rho*G*H/1000*1e-6 if ph == 'L' else 0.0
-    steel = u in FLAM
+    P = DR.val(_d, path + '.P_MPa') if u in GAS_STEEL else (rho*G*H/1000*1e-6 if ph == 'L' else 0.0)
+    steel = u in FLAM or u in GAS_STEEL
     t = max(P*(D/2)/(SS - 0.6*P), TMIN_S) if steel else max(P*D/(2*SD), TMIN)
     mat = 'SA-240 304L, welded' if steel else 'PE (rotomoulded / fabricated)'
     s = open(f'docs-authority/duties/{u}.md').read() if os.path.exists(f'docs-authority/duties/{u}.md') else ''

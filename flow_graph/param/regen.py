@@ -191,7 +191,7 @@ def main(argv=None):
     # byte-identically against the same final graph sha, so prior vouches remain true and must
     # survive the rewrite - zeroing them on an already-converged tree turns _rev_stamp red
     # until the next content-changing commit.
-    prior = {}
+    prior = set()
     try:
         prev = json.load(open(receipt_path))
         if prev.get('graph_sha256') == final_sha and prev.get('converged'):

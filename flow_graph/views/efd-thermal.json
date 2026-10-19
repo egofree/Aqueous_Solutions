@@ -86,10 +86,10 @@
       "notes": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 25.4274,
+        "value": 21.4517,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 11.10 kg/d H2 x 55.0 kWh/kg / 24 h; rated 101.7 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -113,10 +113,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 7.2121,
+          "value": 6.0845,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 7.21 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 6.08 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         }
       }
     },
@@ -457,18 +457,18 @@
       },
       "modules": [],
       "params": {
-        "kW": 1217,
-        "kWh": 3747,
+        "kW": 1187,
+        "kWh": 3654,
         "presence": "present",
-        "charge_kW": 1217,
-        "discharge_kW": 268,
+        "charge_kW": 1187,
+        "discharge_kW": 261,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 52 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 51 hybrid inverters, 71.6 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 15.806,
-          "purge_m3_h": 65.86,
+          "H2_m3_d": 9.267,
+          "purge_m3_h": 38.61,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 4077.8
+          "electrode_area_m2": 2391.0
         }
       }
     },
@@ -1342,10 +1342,10 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 1.0676,
+        "value": 2.1952,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 1.068 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.195 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HEAT",
@@ -2502,10 +2502,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 7.2121,
+        "value": 6.0845,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 7.21 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.08 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"

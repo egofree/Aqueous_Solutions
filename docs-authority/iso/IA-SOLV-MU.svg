@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,580.0 40.0,363.9 426.0,141.0 285.6,60.0 285.6,239.0" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="467.9">Z +3200</text>
+<text x="239.0" y="248.5">X +6600</text>
+<text x="361.8" y="96.5">Y +2400</text>
+<text x="291.6" y="145.5">Z -2650</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">NORTH_DOCK</text>
+<circle cx="285.6" cy="239.0" r="5" fill="none" stroke="black"/><text x="293.6" y="253.0">WS_SOLV</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-SOLV-MU</text>
+<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="628">NORTH_DOCK -> WS_SOLV</text>
+<text x="20" y="642">pipe 14.62 m in 5 pieces; cut 3162 6000 524 2324 2612 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 9 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

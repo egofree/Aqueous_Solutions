@@ -12,7 +12,7 @@ Authority: AQS-PLAN-007 unit tasks (POLYMERS)-02; graph Rev AC; notes/POLYMERS_D
 ## 1. Demand side (what the sector must supply)
 
 - POLY_TO_FAB = 0 (A-M-257: the fab closes at steady state; a net draw appears when the fab product basis is sized).
-- POLY_TO_MFG P = 0.377186 kg/d by difference on the shop closure (A-M-257 pattern, A-M-266): the shop goods loop is closed (IA-MFG-OUT = IA-WEAR) and the moulded-polymer articles ride BLOW_MOLD on IA-BLOW-IN 8.4068 kg/d C11-C18 wax, so the shop's residual polymer consumable is exactly what closes it with the foundry stock loop.
+- POLY_TO_MFG P = 0.377186 kg/d by difference on the shop closure (A-M-257 pattern, A-M-266): the shop goods loop is closed (IA-MFG-OUT = IA-WEAR) and the moulded-polymer articles ride BLOW_MOLD on IA-BLOW-IN 8.4072 kg/d C11-C18 wax, so the shop's residual polymer consumable is exactly what closes it with the foundry stock loop.
 - POLY_TO_WET = 0.037719 kg/d = 10% of the issue (the S58/S59/S60 10 % shop-loss class, AQS-DUTY-010; A-M-263): the shop offcut returns to the wet line.
 
 ## 2. Results - live loop

@@ -60,33 +60,33 @@
       },
       "modules": [],
       "params": {
-        "energy_kwh_ideal_study": 288.4,
-        "energy_kwh_recoverable_study": 230.7,
+        "energy_kwh_ideal_study": 274.5,
+        "energy_kwh_recoverable_study": 219.6,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 2922.0,
-        "head_m_m1": 36.22,
-        "vs_znbr2_kwh": 3948.0,
-        "fraction_of_znbr2_study": 0.058,
+        "volume_m3_m1": 2771.0,
+        "head_m_m1": 36.35,
+        "vs_znbr2_kwh": 3747.0,
+        "fraction_of_znbr2_study": 0.059,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
         "backup_basis": {
           "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
           "standard": "NFPA 111 Level 1, Class X",
-          "critical_kW": 15.66,
+          "critical_kW": 14.9,
           "class_hours": 14.0,
-          "energy_kWh_bus": 219.2,
-          "head_m": 36.22,
+          "energy_kWh_bus": 208.6,
+          "head_m": 36.35,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 2922.0,
-          "rated_kW_discharge": 15.66,
-          "recharge_kW_over_PV_window": 53.7,
+          "upper_reservoir_m3": 2771.0,
+          "rated_kW_discharge": 14.9,
+          "recharge_kW_over_PV_window": 51.1,
           "A-M": "A-M-145",
           "Q": "Q-006 closed; Q-009 closed: water tower",
-          "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2 cells per level",
-          "lower": "CATCH_TANK 9.19 m deep over 367 m2",
+          "upper": "3 reservoir levels x 3.12 m water over 367 m2, 2.0 cells per level",
+          "lower": "CATCH_TANK 9.37 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
         }
       }
@@ -167,11 +167,19 @@
         "days_at_mid_synth": 3,
         "presence": "present",
         "size_mm": [
-          800,
-          800,
-          1100
+          600,
+          600,
+          600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
       }
     },
     {
@@ -185,7 +193,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 412.0471,
+        "value": 405.4928,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -193,28 +201,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7420,
+        "count": 7236,
         "presence": "present",
-        "nameplate_kw": 3710,
-        "area_m2": 32581,
-        "balance_kWp": 1855,
+        "nameplate_kw": 3618,
+        "area_m2": 31928,
+        "balance_kWp": 1809,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            204000,
-            174000
+            186000,
+            186000
           ],
           "bays": [
-            34,
-            29
+            31,
+            31
           ],
-          "footprint_m2": 35496.0,
-          "extension_m2": 35064.0,
-          "roof_capacity_kWp": 3714.3,
+          "footprint_m2": 34596.0,
+          "extension_m2": 34164.0,
+          "roof_capacity_kWp": 3639.8,
           "perimeter_pathway_mm": 1829,
-          "arrays": 20,
-          "extension_load_kW": 99.99,
+          "arrays": 16,
+          "extension_load_kW": 97.49,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -252,13 +260,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3120.0,
+        "kW": 3060.0,
         "presence": "present",
-        "count": 52,
+        "count": 51,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2852.4,
-          "export_kWh_d_clear": 8028,
+          "export_peak_kW": 2799.0,
+          "export_kWh_d_clear": 7829,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -266,7 +274,7 @@
           "count": 5,
           "inverters": [
             11,
-            11,
+            10,
             10,
             10,
             10
@@ -291,13 +299,13 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 231.3,
+          "bus_demand_kW": 222.0,
           "section_rating_A": 400,
-          "basis_A": 309.1,
+          "basis_A": 296.7,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
-          "critical_kW": 15.66,
+          "critical_kW": 14.9,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
         }
@@ -320,18 +328,18 @@
       },
       "modules": [],
       "params": {
-        "kW": 1217,
-        "kWh": 3747,
+        "kW": 1187,
+        "kWh": 3654,
         "presence": "present",
-        "charge_kW": 1217,
-        "discharge_kW": 268,
+        "charge_kW": 1187,
+        "discharge_kW": 261,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 52 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 51 hybrid inverters, 71.6 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 15.806,
-          "purge_m3_h": 65.86,
+          "H2_m3_d": 9.267,
+          "purge_m3_h": 38.61,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 4077.8
+          "electrode_area_m2": 2391.0
         }
       }
     }

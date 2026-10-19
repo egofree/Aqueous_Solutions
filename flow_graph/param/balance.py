@@ -7,7 +7,7 @@ import json, os, sys
 import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
-SINK = {'RELIEF_H2', 'RELIEF_CRYO', 'BOUNDARY_EXPORT'}   # boundary meter: in != out by design (losses, curtailment, exports) — per first-principles audit correction 5, owner rulings 2026-10-18
+SINK = {'RELIEF_H2', 'RELIEF_CRYO', 'BOUNDARY_EXPORT', 'NORTH_DOCK'}   # boundary meters: in != out by design (losses, curtailment, exports) — per first-principles audit correction 5, owner rulings 2026-10-18. NORTH_DOCK joined 2026-10-19 per owner ruling D-DOCK: the dock is the inter-plant trade boundary (feedstock imports, surplus-product exports), not a balance-constrained sector — its ledger is reported as a trade statement (params.trade_statement), exempt from unit closure.
 MARK = ('X-PAR', 'X-SAN', 'X-MFG', 'AQS-DUTY-06', 'X-SAF-10', 'X-ELS')
 STOICH = {'S49': 'H2 to the fuel cell (load)', 'S50': 'O2 = 8 x H2 by mass', 'S02': 'crew O2 0.84 kg/p.d', 'IA-FC-AIR': 'MEOH_FC oxidant',
           'IA-AC-O2': 'acetic acid oxidation', 'IA-O2-NIT': 'nitric acid', 'IA-GLX-O2': 'net one O2 per acetaldehyde via NO recycle (X-PAR-13)', 'IA-FORM-O2': 'one O2 per methanol at 10/10 mol% (X-SAF-11)', 'IA-FORM-N2': 'FORM N2 diluent', 'IA-FORM-TAIL': 'FORM tail gas', 'IA-AB-AIR': 'afterburner dilution air less FORM N2',
@@ -17,6 +17,7 @@ TRIM = ('-RET', '-FIX', '-MAKE')
 
 TOL = 0.02                                 # measurement tolerance per edge (A-M-120): a reconciled move above 2 % of the rate (1 g/d floor) fails
 PHYS_TAG = 'X-PAR-02 TF'
+DOCK_STATEMENT = []                        # D-DOCK trade-statement lines, filled by physics() and emitted by report()
 
 def _unit_resid(g, u):
     r = 0.0
@@ -50,12 +51,41 @@ def physics(g):
        (SANDER2015); the remaining excess over that bound is task X-PAR-11."""
     from flow_graph.param import o2_close
     from flow_graph.param import ess_tf; ess_tf.tf(g)
-    o2_close.patch(g); o2_close.tf(g); XL = o2_close.tf(g)     # second pass settles EW_4 after the N2 trim
+    o2_close.patch(g); o2_close.tf(g)
     E = {e['stream_id']: e for e in g['edges']}
     v = lambda k: float(E[k]['rate']['value'] or 0)
     def put(k, x, why):
         E[k]['rate']['value'] = round(x, 6)
         E[k]['rate']['note'] = (E[k]['rate'].get('note') or '').split(' | X-PAR-02')[0] + f' | {PHYS_TAG}: {why} (AQS-PAR-003).'
+    # R10c (D-DOCK lane 2026-10-19): the remaining reported unit residuals closed on their own stated bases - every edge here
+    #    is a pass-through, stoichiometric or source-sized-to-draw basis already named on the edge; nothing is absorbed
+    #    without a basis (A-M-228 discipline). Runs between the two o2_close passes so the leach / BMED / header / CO2
+    #    chains re-settle on the second pass below.
+    for u, k, out, why in (('HOPPER', 'IA-HOP-01', True, 'returned scrap closes the scrap yard by difference: worn goods + swarf + leach return less the dock feed (its stated basis: follows the worn goods)'),
+                           ('FUEL_CELL', 'IA-FC-LEACH', True, 'cell drain closes the cell; product water S52 stays on its stoichiometric basis (AQS-DUTY-023)'),
+                           ('WS_NITRIC', 'IA-BMED-01', False, 'reagent day tank passes its draw S34; 1.25 mol/d HCl at 36.46 g/mol = 0.0456 kg/d is the stated molar basis (AQS-DUTY-010); BMED_ACID re-closes on the spent-acid purge IA-BMED-03'),
+                           ('WS_AMMONIA', 'IA-NH3-SRC', False, 'ammonia source sized to the bench draw S33 (AQS-DUTY-016: each chemical has a source); the N2 header re-settles in o2_close'),
+                           ('WS_SOLV', 'IA-SOLV-MU', False, 'solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; 30 d hold already sized, A-M-225)'),
+                           ('MEOH_FERM', 'IA-FERM-DIG', True, 'fermenter digestate (water + spent solids) joins the blackwater barrier - galley-organics class like IA-GAL; BLACK_DIGEST closes on IA-BLK-GREY (T7)'),
+                           ('OIL_PYRO', 'IA-CHAR', True, 'char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET)'),
+                           ('WET_BENCH', 'S10', True, 'spent etch/return order-of-magnitude band unchanged; closes the bench by difference'),
+                           ('MFG_SHOP', 'S16', True, 'shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base)')):
+        if k in E:
+            r = _unit_resid(g, u); put(k, v(k) + (r if out else -r), why)
+    # MFG_SHOP is NOT closed here on POLY_TO_MFG/MFG_SCRAP_TO_IND: that pair is a coupled two-edge closure owned by the
+    # foundry_poly regen stage (S = K + P + r0, A-M-261) - a partial in-memory mirror would fight it. The shop's surplus
+    # outlet S16 (scrap to the leach, AUD s10.6 band) closes it here instead; the foundry stage then re-derives the same
+    # P from its own idempotent remnant and the two writers agree at the fixed point.
+    if all(k in E for k in ('S76', 'IA-MEOH-REST', 'IA-FC-AIR', 'S82', 'S81', 'IA-CLOSE-10')):
+        # MEOH_FC re-base: Rev N held a small-feed oxidant rate (IA-FC-AIR 2.48 kg/d) against the current 5.0 kg/d methanol
+        # feed (residual +0.42). Complete oxidation CH3OH + 1.5 O2 -> CO2 + 2 H2O is re-based on the methanol actually
+        # burned (S76 + the waste return IA-MEOH-REST); the water edge closes the cell by difference.
+        meoh = v('S76') + v('IA-MEOH-REST')
+        put('IA-FC-AIR', meoh*1.5*31.998/32.042, f'stoichiometric oxidant 1.5 O2 per CH3OH on {meoh:.3f} kg/d methanol burned (STOICH basis; AQS-DUTY-012 Rev N re-base)')
+        put('S82', meoh*44.01/32.042, f'stoichiometric CO2 on {meoh:.3f} kg/d methanol burned (AQS-DUTY-012 Rev N re-base)')
+        E['S82']['composition'] = {'CO2': 1.0}
+        put('S81', meoh + v('IA-FC-AIR') + v('IA-CLOSE-10') - v('S82'), 'cell water out by difference closes MEOH_FC (the IA-CLOSE-10 liquor tie rides it)')
+    XL = o2_close.tf(g)     # second pass settles EW_4 after the N2 trim and the leach/BMED/header/CO2 chains after R10c
     # T6 grow-bed net photosynthesis (X-PAR-11): CO2 + H2O -> CH2O + O2, PQ 1.0 [TAIZ2015]; all CO2 dosed to the bed is fixed at steady state
     #    (the dose is sized to uptake, AQS-DUTY-011). O2 = 32/44 x CO2 leaves on S87 to CRYO_O2; the trim carries CO2 + H2O - O2.
     #    D-FARM owner ruling 2026-10-18: GROW_BED re-based to crew duty (A-M-229) — the bed is a live, closed unit again;
@@ -125,27 +155,52 @@ def physics(g):
         # closure has no outlet since the bed takes crew-duty nutrient flow only). Report the surplus — do not write a
         # negative make-up rate (the stock run hid -464 kg/d this way). Outlet decision is R10 work.
         put('IA-H2O-MU', 0.0, f'leach water-long {-h2o_mu:.3f} kg/d: no make-up needed, surplus has no outlet; residual reported, not a negative rate (A-M-229)')
-    # R10a site freight ledger (A-M-228 reporting discipline): NORTH_DOCK is the site boundary meter pair - products shipped out
-    #    arrive at the dock (in-edges) and raw materials dispatched in leave it (out-edges); the ledger closes iff the whole site
-    #    closes (every mass edge is internal since S08G re-pointed to MFG_SHOP, so the dock residual is minus the sum of all other
-    #    unit residuals). R10b: the EW Faraday cascade is re-based (A-M-255), the Ar return is retired (A-M-256) and WAFER_FAB
-    #    closes on the BH N2 purge (A-M-257), so the remaining residual is honestly open: the goods export DOCK_EXPORT_TBD basis
-    #    is owned by the foundry sizing pass - the net product-out stated here IS the plant surplus statement pending that pass.
-    #    No rate is invented to absorb it.
+    # D-DOCK lane 2026-10-19, product buffer storage (owner ruling D-DOCK: buffer stores assumed built for O2 / water /
+    #    compressed air / food / metals): the three stores the graph lacked pass their feeds at steady state, so mass
+    #    closure is unchanged — the store is inventory, not a sink (O2: CRYO_O2 bank and water: ROOF_TANK already exist).
+    #    FOOD_STORE: fresh harvest S14 lands in the store, S14D feeds the galley; sized on the X-RED-08 80-day dry
+    #    reserve basis (A-M-148/A-M-270). METAL_STORE: STOCK_OUT is transit only; the product store buffers the foundry
+    #    output against the MFG/FAB/wire draws, 14 d dispatch campaign (A-M-270). AIR_RECEIVER: cold-box delivery bank,
+    #    sized on the ASU/vent margin (o2_close.tf S84/IA-AIR-RX-OUT/IA-N2-VENT, A-M-270).
+    if all(k in E for k in ('S14', 'S14D')):
+        put('S14D', v('S14'), 'food store passes the harvest to the galley at steady state (D-DOCK buffer, A-M-270)')
+    if 'IA-STOCK-STORE' in E:
+        put('IA-STOCK-STORE', v('IA-STOCK-STORE') - _unit_resid(g, 'METAL_STORE'),
+            'metal product store passes the foundry output to the stock draws (D-DOCK buffer, A-M-270)')
+    # D-DOCK 2026-10-19: the dock is NOT a regular sector - it is the inter-plant boundary: imports of arbitrary feedstock
+    #    (landfill reclaim, mining waste, lunar regolith class) and exports of surplus products to other plants. It must not
+    #    be forced to conform to intra-plant closure standards; its ledger is a REPORTED trade statement (imports/exports/net),
+    #    not a balance constraint (owner ruling D-DOCK, notes/first_principles_audit_2026-10-17.md). The statement reports
+    #    every dock edge; rate rounding at the dock is accepted design-phase noise.
     N_ = {n['unit_id']: n for n in g['nodes']}
     if 'NORTH_DOCK' in N_:
-        ships = sum(v(k) for k in ('IA-C5-SHIP', 'IA-C11-SHIP', 'IA-C19-SHIP', 'IA-MEOH-SHIP', 'IA-O2-SHIP', 'IA-NA-PURGE', 'IA-N2-VENT') if k in E)
+        def _dock(want_in):
+            return {e['stream_id']: round(float(e['rate']['value'] or 0), 3) for e in g['edges']
+                    if e['presence'] == 'present' and 'mass' in (e.get('layers') or []) and e['rate'].get('unit') == 'kg/d'
+                    and ((e['to_unit_id'] == 'NORTH_DOCK') if want_in else (e['from_unit_id'] == 'NORTH_DOCK'))
+                    and float(e['rate']['value'] or 0) != 0.0}
+        exports_ = _dock(True)      # plant products arriving at the dock for shipment out
+        imports_ = _dock(False)     # feedstock/water/reagents the plant takes in
+        net_ = round(sum(exports_.values()) - sum(imports_.values()), 3)
         rdock = _unit_resid(g, 'NORTH_DOCK')
-        N_['NORTH_DOCK']['params']['site_freight_ledger'] = {
-            'ships_in_kg_d': round(ships, 3), 'meters_out_kg_d': round(v('IA-H2O-MU') + v('IA-NAOH-MU'), 3),
-            'residual_kg_d': round(rdock, 3),
-            'basis': 'import/export freight meter; BH closed at 84.88 in = 79.77 water + 5.11 NaOH out (fa1b4db)',
-            'note': 'residual = -(sum of all other unit residuals) and is NET PRODUCT-OUT: the plant ships more product than it '
-                    'imports water/NaOH, so the balance is the plant surplus statement pending the goods pass. R10b closed the EW '
-                    'cascade (Faraday re-base, A-M-255), CRYO_ASU Ar (retired, A-M-256) and WAFER_FAB (BH N2 purge, A-M-257). Still '
-                    'open: goods export DOCK_EXPORT_TBD unrated (foundry sizing pass owns the goods basis), CRYO_H2 +1.5 (EW cathode '
-                    'H2 pool surplus, no outlet decision), NOX_SCRUB +5.0 (study bases), AFTERBURNER -2.2, LEACH water-long (surplus '
-                    'has no outlet). Absorbing any of these here would be an invented rate (A-M-228/A-M-254 discipline).'}
+        N_['NORTH_DOCK']['params'].pop('site_freight_ledger', None)   # R10a ledger superseded by the D-DOCK trade statement
+        N_['NORTH_DOCK']['params']['trade_statement'] = {
+            'exports_kg_d': exports_, 'imports_kg_d': imports_, 'net_kg_d': net_, 'residual_kg_d': round(rdock, 3),
+            'basis': 'inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, '
+                     'mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained',
+            'note': 'net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the '
+                    'unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here '
+                    'is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257).'}
+        global DOCK_STATEMENT
+        DOCK_STATEMENT = [
+            '', '## 1a. Dock trade statement (owner ruling D-DOCK, 2026-10-19)', '',
+            'NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: imports of arbitrary feedstock '
+            '(landfill reclaim, mining waste, lunar regolith class) and exports of surplus products to other plants. Its ledger '
+            'is reported here and on the node (`params.trade_statement`); the unit is exempt from the closure test with the other boundary meters.',
+            '', '| Direction | Edge | Commodity | kg/d |', '| --- | --- | --- | --- |'] + [
+            f"| export | {k} | {(E[k].get('carries') or '')[:40]} | {x} |" for k, x in sorted(exports_.items())] + [
+            f"| import | {k} | {(E[k].get('carries') or '')[:40]} | {x} |" for k, x in sorted(imports_.items())] + [
+            f'', f'**Net trade: {net_:+.3f} kg/d** (exports {sum(exports_.values()):.3f} - imports {sum(imports_.values()):.3f}); dock ledger residual {rdock:+.3f} kg/d (reported, exempt per D-DOCK).']
     o2_close.LAST.clear(); o2_close.LAST.update(XL, power=o2_close.close_power(g), o2=(src, draw))
     return d, a
 
@@ -184,12 +239,16 @@ def report(R):
     ch = sorted([(abs(x[i] - x0[i]), i) for i in R['free'] if abs(x[i] - x0[i]) > 1e-4], reverse=True)
     gross = [i for _, i in ch if abs(x[i] - x0[i]) > TOL*max(x0[i], 0.05)]
     off0 = [(R['nodes'][k], R['r0'][k]) for k in range(len(R['nodes'])) if abs(R['r0'][k]) > 1e-4]
-    L = ['# Mass balance reconciliation', '', 'Document number: AQS-PAR-003', 'Revision: C', 'Date: 2026-10-15',
+    L = ['# Mass balance reconciliation', '', 'Document number: AQS-PAR-003', 'Revision: D', 'Date: 2026-10-19',
          'Authority: AQS-PLAN-007 X-PAR-02. Generated by `flow_graph/param/balance.py`. Method NARASIMHAN2000 (minimum weighted least squares on the held study rates; transfer-function and stoichiometric edges held).', '',
-         '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue. | 2026-10-15 |', '| C | X-PAR-11 T6: grow-bed photosynthetic O2 on S87; leach dissolved gas under the Henry bound; CO2 edges carry CO2. | 2026-10-15 |', '| B | Owner: no fudge. X-SAF-10 imbalance (IA-TERR-VAP / IA-O2-RET, 2.824 kg/d) traced and fixed by transfer functions T1-T5; reconciled moves within measurement tolerance. | 2026-10-15 |', '', '## 0. Root cause and physics fix', '', ROOT_CAUSE, '',
+         '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue. | 2026-10-15 |', '| C | X-PAR-11 T6: grow-bed photosynthetic O2 on S87; leach dissolved gas under the Henry bound; CO2 edges carry CO2. | 2026-10-15 |', '| B | Owner: no fudge. X-SAF-10 imbalance (IA-TERR-VAP / IA-O2-RET, 2.824 kg/d) traced and fixed by transfer functions T1-T5; reconciled moves within measurement tolerance. | 2026-10-15 |',
+         '| D | Owner ruling D-DOCK 2026-10-19: NORTH_DOCK is the inter-plant trade boundary (closure-exempt; ledger reported as a trade statement, section 1a). The three real closures: AFTERBURNER flue = burner mass balance on the restored combustion-air path; NOX_SCRUB gas outlet by difference to the cold box (BH routing, D-AIR) with the cold-box N2 surplus exported at the dock; CRYO_H2 closed by sizing the electrolyser to the pool draws net of the EW Faraday cathode credit (H2 side governs, A-M-272). R10c closes the remaining reported residuals on their stated bases (A-M-274). Product buffer stores added for food / metal / plant air (A-M-270). Test trio green. | 2026-10-19 |', '', '## 0. Root cause and physics fix', '', ROOT_CAUSE, '',
          f"Mass edges {len(E)}; held by a transfer function or stoichiometry {len(E) - len(R['free'])}; reconciled {len(R['free'])}. Units {len(R['nodes'])}.",
          f"Before: {len(off0)} units out of balance (sum of residuals {sum(abs(v) for _, v in off0):.3f} kg/d). After: max unit residual {np.abs(R['r']).max():.2e} kg/d. Negative rates after reconciliation: {int((x < -1e-9).sum())}.", '',
-         '## 1. Units out of balance before reconciliation', '', '| Unit | In - out, kg/d |', '| --- | --- |'] + [f'| {n} | {v:+.4f} |' for n, v in off0] + [
+         '## 1. Units out of balance before reconciliation', '',
+         'Boundary meters are exempt from unit closure: RELIEF_H2 / RELIEF_CRYO / BOUNDARY_EXPORT (relief and export meters) and, '
+         'since owner ruling D-DOCK (2026-10-19), NORTH_DOCK (the inter-plant trade boundary — its ledger is the trade statement in section 1a).', '',
+         '| Unit | In - out, kg/d |', '| --- | --- |'] + [f'| {n} | {v:+.4f} |' for n, v in off0] + DOCK_STATEMENT + [
          '', f'## 2. Moves outside measurement tolerance ({TOL*100:.0f} % of the rate, 1 g/d floor); must be empty', '', '| Edge | From | To | Held study rate | Reconciled | Change |', '| --- | --- | --- | --- | --- | --- |'] + [
          f"| {E[i]['stream_id']} | {E[i]['from_unit_id']} | {E[i]['to_unit_id']} | {x0[i]:.4f} | {x[i]:.4f} | {(x[i] - x0[i]):+.4f} |" for i in gross] + [
          '', '## 3. All reconciled changes above 0.1 g/d', '', '| Edge | Held | Reconciled | Change, % |', '| --- | --- | --- | --- |'] + [

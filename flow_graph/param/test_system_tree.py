@@ -59,7 +59,7 @@ def test_tree_file_passes_validation(tree: SystemTree, graph: dict) -> None:
     """The YAML on disk loads and validates against the live graph."""
     report = tree.validate(graph)
     assert report["ok"] is True
-    assert report["leaves"] == report["graph_units"] == 175
+    assert report["leaves"] == report["graph_units"] == 178
     assert report["roots"] == report["sector_count"] == 19
 
 
@@ -71,7 +71,7 @@ def test_bijection_leaf_set_equals_graph_unit_set_both_directions(
     assert leaves == units
     # each unit at exactly one leaf
     placed = [n.unit_id for n in tree.nodes if n.unit_id is not None]
-    assert len(placed) == len(set(placed)) == 175
+    assert len(placed) == len(set(placed)) == 178
 
 
 def test_drift_guard_graph_unit_removed_without_tree_update_fails(
@@ -151,13 +151,13 @@ def test_cycle_free_and_parent_integrity() -> None:
 
 def test_tree_shape(tree: SystemTree) -> None:
     stats = tree.stats()
-    assert stats["by_level"] == {0: 19, 1: 30, 2: 91, 3: 106}
-    assert stats["nodes"] == 246
+    assert stats["by_level"] == {0: 19, 1: 30, 2: 93, 3: 107}
+    assert stats["nodes"] == 249
     assert stats["trains"] == 30
     assert stats["subsystems"] == 22
-    assert stats["leaves"] == 175
+    assert stats["leaves"] == 178
     # standby trains are descriptions, never hidden units
-    assert sum(stats["units_per_root"].values()) == 175
+    assert sum(stats["units_per_root"].values()) == 178
 
 
 # ----------------------------------------------------------------------
@@ -167,7 +167,7 @@ def test_tree_shape(tree: SystemTree) -> None:
 
 def test_resolve_units(tree: SystemTree) -> None:
     assert tree.resolve_units("FOUNDRY.form-train") == {
-        "ROLL", "EXTRUDE", "DRAW", "FORGE", "SINTER", "STOCK_OUT",
+        "ROLL", "EXTRUDE", "DRAW", "FORGE", "SINTER", "STOCK_OUT", "METAL_STORE",
     }
     assert tree.resolve_units("FOUNDRY.melt-and-cast-train") == {
         "IND_MELT", "VAC_IND", "RF_HEAT", "RES_HEAT", "COMB_HEAT", "FLUX_PREP",
@@ -182,12 +182,12 @@ def test_resolve_units(tree: SystemTree) -> None:
     # root resolves to the whole sector (DIGESTER carries EVAP_ACID_VS from WET)
     digester = tree.resolve_units("DIGESTER")
     assert len(digester) == 25 and "EVAP_ACID_VS" in digester
-    # all 175 units resolve exactly once across roots
+    # all 178 units resolve exactly once across roots
     roots = [n.id for n in tree.nodes if n.parent is None]
     resolved: list[str] = []
     for r in roots:
         resolved += sorted(tree.resolve_units(r))
-    assert len(resolved) == len(set(resolved)) == 175
+    assert len(resolved) == len(set(resolved)) == 178
     with pytest.raises(KeyError):
         tree.resolve_units("FOUNDRY.nonexistent-train")
 
@@ -197,7 +197,9 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     gen = tree.aggregate(tree.resolve_units("ELEC.generation-train"), graph)
     assert gen["count"] == 3
     assert gen["kw_count"] == 3
-    assert gen["kw_sum"] == pytest.approx(412.0471 + 0.0082 + 4.0)
+    # PV 405.4928 (D-DOCK lane 2026-10-19: ELY net of the EW Faraday credit -4.5 kW average and the
+    # MEOH_FC/AHU re-bases shifted the bus; _power_sizing re-solved the PV average to match)
+    assert gen["kw_sum"] == pytest.approx(405.4928 + 0.0082 + 4.0)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(
@@ -292,7 +294,7 @@ def test_solve_with_form_train_off_reports_its_units() -> None:
         load_mvs_from_graph(),
         SandboxOverrides(system_enabled={"FOUNDRY.form-train": False}),
     )
-    expected = {"ROLL", "EXTRUDE", "DRAW", "FORGE", "SINTER", "STOCK_OUT"}
+    expected = {"ROLL", "EXTRUDE", "DRAW", "FORGE", "SINTER", "STOCK_OUT", "METAL_STORE"}
     assert _disabled_units(m) == expected
 
     result = solve(m)
@@ -319,10 +321,10 @@ def test_enabled_units_helper_effective_set() -> None:
 
     m = _model()
     on = _enabled_units(m)
-    # 174 not 175: EVAP_ACID_VS still carries legacy sector WET (pre-rename
+    # 177 not 178: EVAP_ACID_VS still carries legacy sector WET (pre-rename
     # DIGESTER) with no sector row, so the sector-aware set excludes it —
     # same as the P0 sector checks. The tree places it under DIGESTER.
-    assert len(on) == 174
+    assert len(on) == 177
     assert "EVAP_ACID_VS" not in on
     # unit off leaves the set even with the sector on
     m2 = copy.deepcopy(m)

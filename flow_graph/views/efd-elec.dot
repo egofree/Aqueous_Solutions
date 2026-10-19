@@ -138,13 +138,13 @@ digraph G {
   "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n412.0471 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n405.4928 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "ALK_SCRUBBER" [label="SF-ALK_SCRUBBER\\n1.1123 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_UPW_POLISH" [label="SF-BMED_UPW_POLISH\\n0.018 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "CRYO_H2" [label="SF-CRYO_H2\\n1.0755 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_H2" [label="SF-CRYO_H2\\n0.9327 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GEO_HP" [label="SF-GEO_HP\\n2.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GLASS_DIGEST" [label="SF-GLASS_DIGEST\\n0.09 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "H2_DRYER" [label="SF-H2_DRYER\\n0.0205 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -167,8 +167,8 @@ digraph G {
   "SOL_ARK_60K" -> "MET_SCRUB" [label="SF-MET_SCRUB\\n2.1234 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "EVAP_ACID" [label="SF-EVAP_ACID\\n1.498 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "EVAP_BASE" [label="SF-EVAP_BASE\\n1.328 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "CRYO_ASU" [label="SF-CRYO_ASU\\n1.6683 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n25.4274 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "CRYO_ASU" [label="SF-CRYO_ASU\\n1.6689 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n21.4517 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "IND_MELT" [label="SF-IND_MELT\\n25.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "VAC_IND" [label="SF-VAC_IND\\n15.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "RF_HEAT" [label="SF-RF_HEAT\\n5.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -179,11 +179,11 @@ digraph G {
   "RECTIFIER" -> "EW_2" [label="IA-DC-EW_2\\n5.9929 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_3" [label="IA-DC-EW_3\\n2.2495 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_4" [label="IA-DC-EW_4\\n0.4853 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "RECTIFIER" -> "EW_5" [label="IA-DC-EW_5\\n0.5023 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECTIFIER" -> "EW_5" [label="IA-DC-EW_5\\n0.5024 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_6" [label="IA-DC-EW_6\\n0.5474 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_7" [label="IA-DC-EW_7\\n7.1187 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "RECTIFIER" -> "EW_8" [label="IA-DC-EW_8\\n0.5053 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "RECTIFIER" -> "EW_8" [label="IA-DC-EW_8\\n0.5054 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_9" [label="IA-DC-EW_9\\n7.538 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "EXT_HALL" [label="SF-EXT_HALL\\n99.9854 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EXT_HALL" [label="SF-EXT_HALL\\n97.486 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "EVAP_ACID_VS" [label="SF-EVAP_ACID_VS\\n0.0238 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }
