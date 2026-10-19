@@ -28,12 +28,12 @@
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">SHELL_BREAK</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">BREAK_TO_STOCK</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="24" y="299" font-size="10" text-anchor="start">2.0 kg/d · solids transfer</text>
 <line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,332 577,328 577,336" fill="#111"/>
 <text x="24" y="313" font-size="9" fill="#666" text-anchor="start">CONT_CAST</text>
 <text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">CONT_TO_STOCK</text>
-<text x="24" y="345" font-size="10" text-anchor="start">1.0 kg/d · solids transfer</text>
+<text x="24" y="345" font-size="10" text-anchor="start">21.7 kg/d · solids transfer</text>
 <line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,378 577,374 577,382" fill="#111"/>
 <text x="24" y="359" font-size="9" fill="#666" text-anchor="start">DRAW</text>
@@ -58,7 +58,7 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">METAL_STORE</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-STOCK-STORE</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">14.0 kg/d · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">36.7 kg/d · solids transfer</text>
 <text x="24" y="612" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="622" font-size="9">Every incident graph edge is drawn: 7 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="637" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; no nozzle schedule for STOCK_OUT yet (unit task 04).</text>
@@ -66,7 +66,7 @@
 <g id="aqs-title-block"><rect x="1116" y="689" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="706" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-STOCK_OUT</text>
 <text x="1124" y="723" font-size="9">P&amp;ID STOCK_OUT (store, FOUNDRY sector)</text>
-<text x="1124" y="740" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 41cca914   Issued 2026-10-19</text>
+<text x="1124" y="740" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b5d58c9d   Issued 2026-10-19</text>
 <text x="1124" y="757" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="774" font-size="9">Graph SHA-256 a1b2242b721d1ffb   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="774" font-size="9">Graph SHA-256 1c64ea4c788c4803   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

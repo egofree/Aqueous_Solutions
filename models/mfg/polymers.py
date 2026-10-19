@@ -58,7 +58,7 @@ def build(U):
     if e['state'] != 'live':
         return placeholder(U)
     L, W, H = e['size_mm']; style = e['style']
-    if style == 'reactor':                          # POLY_OLEFIN: DN150 vertical oligomerization reactor
+    if style == 'reactor' and 'D_mm' in d:          # POLY_OLEFIN: DN150 vertical oligomerization reactor
         D, Hv, t = d['D_mm'], d['H_mm'], d['wall_mm']
         m = cq.Workplane('XY').circle(D / 2).circle(D / 2 - t).extrude(Hv).translate((L / 2, W / 2, 600))    # shell
         m = m.union(cq.Workplane('XY').circle(D / 2).extrude(t).translate((L / 2, W / 2, 600)))              # bottom
@@ -117,6 +117,39 @@ def build(U):
                   f'5. Inspect against models/mfg/{U}/export/{U.lower()}.step.\n')
             return export(U, m, rows, fast, wo)
         return placeholder(U)
+    if style == 'reactor':                          # VDF_SYN / TFE_SYN: synthesis skid (duty-based, envelope-sized vessel)
+        D = min(L, W) - 200; Hv = H - 700; t = 8
+        cx, cy = L / 2, W / 2
+        m = cq.Workplane('XY').circle(D / 2).circle(D / 2 - t).extrude(Hv).translate((cx, cy, 400))
+        m = m.union(cq.Workplane('XY').circle(D / 2).extrude(t).translate((cx, cy, 400)))
+        m = m.union(cq.Workplane('XY').workplane(offset=400 + Hv).circle(D / 2 + 20).circle(D / 2 - t).extrude(t + 5).translate((cx, cy, 0)))
+        m = m.union(cq.Workplane('XY').workplane(offset=400 + Hv + t + 5).circle(90).circle(70).extrude(220).translate((cx - D / 4, cy, 0)))   # feed hopper
+        m = m.union(box(0, 0, 0, L, 60, H))                                            # skid rail y-min
+        m = m.union(box(0, W - 60, 0, L, W, H))                                        # skid rail y-max
+        m = m.union(box(cx + D / 2 + 40, cy - 100, 0, 150, 200, 500))                  # HCl return pump module
+        m = m.union(box(20, W + 20, 0, 200, 300, 400))                                 # control cabinet
+        rows = [('1', f'Synthesis reactor shell D{D} x {Hv} mm, wall {t} mm, jacketed', 1,
+                 '316L shell, PTFE-lined heads (fluorocarbon service)',
+                 f'{DOC} fluoro train; duty {d.get("duty_kW", "TBD")} kW; '
+                 f'{d.get("machine", {}).get("route", "AQS-SEL-FP route") if isinstance(d.get("machine"), dict) else "AQS-SEL-FP route"}'),
+                ('2', 'Catalyst charge port and dip leg', 1, '316L / PTFE',
+                 str(d.get('catalyst', 'catalyst per route'))),
+                ('3', 'Chlorination / pyrolysis heater circuit with SCR control', 1, 'Inconel 600 sheath',
+                 f'stage temperatures per {DOC} route table'),
+                ('4', 'Dilute-HCl return pump and transfer line to CRU', 1, 'PVDF pump + PTFE line',
+                 f'HCl return {d.get("hcl_return_kg_d", "rated")} kg/d'),
+                ('5', 'Scrub/catch pot with caustic charge', 1, 'PP-H / PVDF', 'vent scrub per AQS-SEL-FP'),
+                ('6', 'Control cabinet with interlocks (high-T, high-P, low-flow)', 1, 'CS enclosure IP54', 'study')]
+        fast = ('item,size,grade,qty,location,basis\n'
+                '1,M12 anchor,ISO 898-1 8.8,6,skid rails to slab,study\n'
+                '2,M10 x 30 jacket screws,ISO 3506 A4-70,16,jacketed heads,study\n')
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.\n\n'
+              f'1. Fabricate the D{D} jacketed shell; line the heads in PTFE (fluorocarbon service).\n'
+              f'2. Fit the heater circuit, dip leg and the HCl-return pump skid module.\n'
+              f'3. Wire interlocks: high-T, high-P, low circulation flow.\n'
+              f'4. Test: inert pressure hold, then the route trial per {DOC}.\n'
+              f'5. Inspect against models/mfg/{U}/export/{U.lower()}.step.\n')
+        return export(U, m, rows, fast, wo)
     if style == 'store_bin':                        # POLY_STOCK: pellet tote bin
         m = box(20, 20, 0, L - 40, W - 40, H - 100)                                   # bin body
         m = m.union(box(0, 0, H - 100, L, W, 30))                                     # lid rim

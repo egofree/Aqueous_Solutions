@@ -18,14 +18,28 @@
       "notes": " Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.5,
+        "value": 0.1332,
         "unit": "kW",
         "status": "study",
-        "note": "Study ignition/blower parasitic"
+        "note": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "equipment": [
+          {
+            "item": "flue ID fan (variable-speed, high-temp class)",
+            "kW": 0.1332
+          },
+          {
+            "item": "ignition transformer + BMS panel",
+            "kW": 0.05
+          },
+          {
+            "item": "dampers and flame monitor",
+            "kW": 0.01
+          }
+        ]
       }
     },
     {
@@ -290,9 +304,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 3.0,
+        "value": 1.157,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
@@ -306,7 +321,53 @@
           "assemblies": 2,
           "zeolite_total_kg": 160.8,
           "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
-        }
+        },
+        "equipment": [
+          {
+            "item": "CDRA CO2 removal: 5A zeolite bed regen heaters + valves (X-RED-06, NASA_CDRA2015 class)",
+            "kW": 0.75
+          },
+          {
+            "item": "ventilation fans: 22 L/s at SFP 750 W/(m3/s) (ASHRAE621_2019 rates, ISO16798_3 SFP3)",
+            "kW": 0.017
+          },
+          {
+            "item": "lighting: 40 m2 x 8.8 W/m2 x 10 % lit (IECC2021_C405 allowance)",
+            "kW": 0.035
+          },
+          {
+            "item": "water pressure + grey lift pumps (shower 6 L/min at 2 bar class, AQS-HAB-001)",
+            "kW": 0.03
+          },
+          {
+            "item": "galley: induction 2 kW x 0.5 h/d + microwave + kettle = 1.4 kWh/d",
+            "kW": 0.058
+          },
+          {
+            "item": "medical fridge/freezer + pharmacy (AQS-HAB-001 medical room)",
+            "kW": 0.08
+          },
+          {
+            "item": "medical equipment duty share",
+            "kW": 0.05
+          },
+          {
+            "item": "comms, electronics, controls at the hab panels",
+            "kW": 0.05
+          },
+          {
+            "item": "wash-water heating: 60 kg/d x 30 K x 4.18 kJ/kg K",
+            "kW": 0.087
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 1.157
+          },
+          {
+            "item": "critical-capacity lock (drivers, NFPA 110)",
+            "kW": 3.0
+          }
+        ]
       }
     },
     {
@@ -452,25 +513,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 240.9944,
+        "value": 179.6238,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.6 kW, charge 816.4 kW, 2515 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1096,
-        "kWh": 3374,
+        "kW": 817,
+        "kWh": 2515,
         "presence": "present",
-        "charge_kW": 1096,
-        "discharge_kW": 241,
+        "charge_kW": 817,
+        "discharge_kW": 180,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 47 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.554,
-          "purge_m3_h": 35.64,
+          "H2_m3_d": 6.376,
+          "purge_m3_h": 26.57,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2206.9
+          "electrode_area_m2": 1644.9
         }
       }
     },
@@ -714,21 +775,23 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-072",
-          "charge_kg_d": 14.1414,
-          "stock_out_kg_d": 14.0,
-          "slag_kg_d": 0.1414,
+          "charge_kg_d": 37.0139,
+          "stock_out_kg_d": 25.9,
+          "slag_kg_d": 0.3565,
           "crucible_kg": 10.0,
-          "heats_d": 2,
-          "melt_kWh_d": 7.151,
-          "avg_kW": 0.298,
-          "peak_kW": 11.0,
+          "heats_d": 4,
+          "melt_kWh_d": 21.249,
+          "avg_kW": 0.8854,
+          "peak_kW": 15.0,
           "connected_kW": 25.0,
           "kWh_per_kg": {
             "Cu": 0.3616,
             "Fe": 0.5406,
-            "Zn": 0.1605
+            "Zn": 0.1605,
+            "Al": 0.5972,
+            "Ti": 0.749
           },
-          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN",
+          "basis": "scrap remelt + pot metal; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN/CRC_AL/CRC_TI (reactive/addition class bounding at Ti)",
           "size_mm": [
             1000,
             1000,
@@ -736,14 +799,14 @@
           ]
         },
         "design": {
-          "service": "Cu/Fe/Zn scrap remelt; medium-frequency coreless induction, tilt pour",
+          "service": "Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour",
           "crucible_kg": 10.0,
           "crucible_D_mm": 110.0,
           "crucible_H_mm": 165,
-          "heats_d": 2,
+          "heats_d": 4,
           "connected_kW": 25.0,
-          "peak_kW": 11.0,
-          "melt_kWh_d": 7.151,
+          "peak_kW": 15.0,
+          "melt_kWh_d": 21.249,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
         "envelope": {
@@ -755,13 +818,21 @@
           "style": "box_furnace",
           "state": "live",
           "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
+        },
+        "duty_cycle": {
+          "avg_kW": 0.8854,
+          "peak_kW": 15.0,
+          "connected_kW": 25.0,
+          "kWh_d": 21.249,
+          "heats_d": 4,
+          "basis": "X-MFG-37 logged batch schedule class"
         }
       },
       "continuous_kw": {
-        "value": 25.0,
+        "value": 0.8854,
         "unit": "kW",
         "status": "study",
-        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
       }
     },
     {
@@ -783,7 +854,9 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "connected_kW": 15.0,
-          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)",
+          "backup_of": "IND_MELT (diverse: vacuum induction skull melt)",
+          "outage_basis": "IND_MELT relining/repair outage 2 d (crucible life 20-50 heats, AQS-SIZE-FOUNDRY sec. Crucibles; AGENTS.md redundancy rule)",
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY)",
           "size_mm": [
             1000,
             1000,
@@ -791,9 +864,12 @@
           ]
         },
         "design": {
-          "service": "vacuum induction skull melt (ISM)",
+          "service": "vacuum induction skull melt (ISM), N+1 diverse of IND_MELT",
           "design_case_kg": 2.0,
-          "connected_kW": 15.0
+          "connected_kW": 15.0,
+          "backup_of": "IND_MELT",
+          "outage_d": 2.0,
+          "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-282)"
         },
         "envelope": {
           "size_mm": [
@@ -802,15 +878,20 @@
             1500
           ],
           "style": "box_furnace",
-          "state": "standby",
-          "basis": "A-M-199 melt class; standby envelope at the 2 kg ISM design case"
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-282): real machine, standby-zero design-day rate"
+        },
+        "duty_cycle": {
+          "avg_kW": 0.0,
+          "connected_kW": 15.0,
+          "basis": "X-MFG-37 logged batch schedule class; standby-zero per A-M-282"
         }
       },
       "continuous_kw": {
-        "value": 15.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+        "note": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02."
       }
     },
     {

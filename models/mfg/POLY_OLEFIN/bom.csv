@@ -3,6 +3,6 @@ item,description,qty,material,basis
 2,Bolted flat lid with gasket and mixer gland,1,"SA-240 316L, welded (ASME IX)",AQS-DUTY-073 section 2
 3,Top-entry agitator with variable-speed drive,1,"316L shaft, PTFE gland","AQS-DUTY-073 section 2 (oligomerization, study)"
 4,Feed and product nozzles DN25,2,"SA-240 316L, welded (ASME IX)",IA-C5-POLY in; resin out to PELLET
-5,"Heater jacket band, 5 W with thermostat",1,silicone / mica,AQS-DUTY-073 section 2; 0.0018 W feed heating
+5,"Heater jacket band, 5 W with thermostat",1,silicone / mica,AQS-DUTY-073 section 2; 0.0013 W feed heating
 6,Relief: rupture disc DN25 to the vent header,1,316L / graphite,"blocked-outlet case, API 520 class"
 7,Three legs 40 x 40 x 600 mm with foot plates,3,"SA-240 316L, welded (ASME IX)",study

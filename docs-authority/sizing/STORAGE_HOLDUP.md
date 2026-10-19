@@ -28,9 +28,9 @@ Unit task 02 for 23 storage-class units. Method: working volume = Q x hold / rho
 | NUTRIENT_DOSE | dosing solution day tank, 1 d (stock concentrate is stored dry) | 0 | 1.0 | 1050 | 0.0 | 0.02 | 300 | 300 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | HOPPER | shredded feed, 1 d (bulk density) | 0 | 1.0 | 500 | 0.0 | 0.02 | 300 | 300 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | FOOD_STORE | D-DOCK food buffer: fresh harvest pass-through + X-RED-08 80 d dry reserve (A-M-270) | 0.252 | 80 | 600 | 0.0336 | 0.042 | 350 | 450 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
-| METAL_STORE | D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270) | 14.0 | 14 | 2000 | 0.098 | 0.1225 | 500 | 650 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
+| METAL_STORE | D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270) | 25.9 | 14 | 2000 | 0.1813 | 0.2266 | 600 | 850 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | AIR_RECEIVER | D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270) | 3.1 | 1.0 | 11.7 | 0.2649 | 0.3312 | 700 | 900 | SA-240 304L, welded | 3.06 | — | no envelope |
 | PROD_O2 | D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278) | 22.876 | 14 | 293.4 | 1.0916 | 1.3645 | 1100 | 1450 | SA-240 304L, welded | 106.8 | — | no envelope |
-| PROD_MEOH | D-DOCK methanol product store, 14 d dispatch campaign (A-M-278) | 28.364 | 14 | 792 | 0.5014 | 0.6267 | 850 | 1150 | SA-240 304L, welded | 3.0 | — | no envelope |
+| PROD_MEOH | D-DOCK methanol product store, 14 d dispatch campaign (A-M-278) | 28.15 | 14 | 792 | 0.4976 | 0.622 | 850 | 1100 | SA-240 304L, welded | 3.0 | — | no envelope |
 
 Result. 16 of 23 fit their graph envelope. Over envelope: none. Units without an envelope get the sized vessel as their envelope at the next GA build. Not covered here (sized elsewhere or no flow): CATCH_TANK and ROOF_TANK (`flow_graph/param/water_tower.py`), LIGNO_PRE (a pretreatment step, sized with its reactor). PROD_O2 and PROD_MEOH joined as A-M-278 shipped-product rows (2026-10-19); the PROD_O2 wall is the thin-wall equivalent-vessel number - the 200 bar seamless cylinder bank governs (CRYO_O2 storage_mode basis).

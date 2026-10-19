@@ -167,6 +167,7 @@ def process():
             n['continuous_kw'] = rate(float(n['continuous_kw']),'kW',
                 f"study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md "
                 f"(IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02.")
+    x_els_residuals(g, N, E, d)   # X-ELS-02 rev C: the 13 load-list residuals get calculated/cited bases (A-M-286)
     # SOL_ARK bus: PV average carries the change
     delta = bus_load(g) - before
     pv = E['IA-PV-01']['rate']['value'] + delta
@@ -174,6 +175,128 @@ def process():
     N['PV_ARRAY']['continuous_kw']['value'] = round(pv,4)
     open(GP,'w').write(json.dumps(g, indent=2))
     print(f'bus load change {delta:+.3f} kW; IA-PV-01 {pv:.3f} kW')
+
+def x_els_residuals(g, N, E, d):
+    """X-ELS-02 rev C (A-M-286): the load-list residual rows get calculated or cited bases so the load list
+    carries no 'basis pending' row beyond the owner requirement locks (FUEL_CELL, MEOH_FC). Single writer of
+    these node stamps; the load list classifies from the note tokens."""
+    v = lambda k: DR.val(d, k)
+    RT = 'X-ELS-02 load-basis (A-M-286)'
+
+    def _st(u, kw, note, design=None):
+        n = N.get(u)
+        if n is None:
+            return
+        n['continuous_kw'] = rate(kw, 'kW', f'{note} | {RT}.')
+        if design is not None:
+            n['params']['equipment'] = design
+        f = E.get(f'SF-{u}')
+        if f is not None and 'elec' in (f.get('layers') or []):
+            f['rate'] = rate(kw, 'kW', f'Feed equal to {u} continuous_kw. | {RT}.')
+
+    # 1) foundry duty-cycle wiring at the X-MFG-37 trial basis (A-M-177 method): the flat A-M-232 nameplates
+    #    become the calculated duty-cycle averages; the connected kW ride in params (batch schedule unchanged)
+    from . import foundry_poly as FX
+    s = FX.solve(g)
+    n = N['IND_MELT']
+    n['continuous_kw'] = rate(round(s['e_melt'] / 24, 4), 'kW',
+        f"X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): {s['e_melt']:.2f} kWh/d over 24 h at "
+        f"{s['heats']} heats/d of the {s['charge']:.0f} kg crucible; peak {s['kw_peak']:.1f} kW, connected 25 kW "
+        f"(A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02.")
+    n['params']['duty_cycle'] = dict(avg_kW=round(s['e_melt'] / 24, 4), peak_kW=s['kw_peak'], connected_kW=25.0,
+                                     kWh_d=round(s['e_melt'], 3), heats_d=s['heats'], basis='X-MFG-37 logged batch schedule class')
+    if 'SF-IND_MELT' in E:
+        E['SF-IND_MELT']['rate'] = rate(round(s['e_melt'] / 24, 4), 'kW', 'Feed equal to IND_MELT continuous_kw. | X-ELS-02.')
+    for u, conn, why in (('VAC_IND', 15.0, 'N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train '
+                                              'feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class'),
+                         ('RF_HEAT', 5.0, 'preheat/sinter N+1 alternate: standby-zero on the design day (A-M-282); duty-cycle '
+                                          'wiring at the X-MFG-37 trial class')):
+        n = N.get(u)
+        if n is not None:
+            n['continuous_kw'] = rate(0.0, 'kW', f'X-MFG-37 trial basis (AQS-DUTY-072): {why}. X-ELS-02.')
+            n['params']['duty_cycle'] = dict(avg_kW=0.0, connected_kW=conn,
+                                             basis='X-MFG-37 logged batch schedule class; standby-zero per A-M-282')
+            f = E.get(f'SF-{u}')
+            if f is not None and 'elec' in (f.get('layers') or []):
+                f['rate'] = rate(0.0, 'kW', f'Feed equal to {u} continuous_kw (standby-zero). | X-ELS-02.')
+
+    # 2) HABITATION: the 3 kW study share decomposed per AQS-HAB-002 (calculated equipment list); the driver
+    #    crit_HABITATION_kW stays the NFPA 110 critical-capacity lock, separate from the connected load
+    hab = [CDRA_CO2, VENT, LIGHT, PUMPS, GALLEY, FRIDGE, MEDICAL, ELEC_COMM, HOTW] = [
+        ('CDRA CO2 removal: 5A zeolite bed regen heaters + valves (X-RED-06, NASA_CDRA2015 class)', 0.75),
+        ('ventilation fans: 22 L/s at SFP 750 W/(m3/s) (ASHRAE621_2019 rates, ISO16798_3 SFP3)', 0.017),
+        ('lighting: 40 m2 x 8.8 W/m2 x 10 % lit (IECC2021_C405 allowance)', 0.035),
+        ('water pressure + grey lift pumps (shower 6 L/min at 2 bar class, AQS-HAB-001)', 0.03),
+        ('galley: induction 2 kW x 0.5 h/d + microwave + kettle = 1.4 kWh/d', 0.058),
+        ('medical fridge/freezer + pharmacy (AQS-HAB-001 medical room)', 0.08),
+        ('medical equipment duty share', 0.05),
+        ('comms, electronics, controls at the hab panels', 0.05),
+        ('wash-water heating: 60 kg/d x 30 K x 4.18 kJ/kg K', 0.087)]
+    hab_kw = round(sum(x[1] for x in hab), 4)
+    _st('HABITATION', hab_kw,
+        f"AQS-HAB-002 equipment list: {len(hab)} line items sum {hab_kw:.3f} kW calculated (CDRA 0.75 kW dominates, "
+        f"NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). "
+        f"Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW {v('ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW'):.1f} kW stays the "
+        f"NFPA 110 critical-capacity lock for the backup sizing - not this connected load.",
+        design=[dict(item=i, kW=round(w, 4)) for i, w in hab] + [
+            dict(item='total connected (calculated)', kW=hab_kw),
+            dict(item='critical-capacity lock (drivers, NFPA 110)', kW=v('ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW'))])
+
+    # 3) WAFER_FAB + WET_BENCH: tool lists from AQS-EQP-FAB-001 (litho now on its own real tools, A-M-284)
+    cp_si, L_si, T_melt = 0.9, 1790.0, 1414.0                      # kJ/kg K, kJ/kg (CRC_SI)
+    cz = v('FAB.wafer-line-train.cz_charge_kg') * (cp_si * (T_melt - 25) + L_si) / 3600   # kWh per pull
+    camp = v('FAB.wafer-line-train.campaign_d')
+    fab = [('CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold', (cz + 0.3 * 4) / camp),
+           ('ingot cool/anneal station: N2 circulator duty share', 0.02),
+           ('crop/grind/edge tools at 5 starts/d', 0.04),
+           ('FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)', 0.12),
+           ('N2 purge distribution (ISO 14644 Class 6 row)', 0.03)]
+    fab_kw = round(sum(x[1] for x in fab), 4)
+    _st('WAFER_FAB', fab_kw,
+        f"AQS-EQP-FAB-001 sec.3 tool train (CZ class) at {v('FAB.litho-train.starts_per_d')} wafer starts/d: CZ charge "
+        f"{cz:.2f} kWh/pull (CRC_SI cp/L) over a {camp:.0f} d campaign + tool-row parasitics; litho moved to the real "
+        f"LITHO_* tools (A-M-284); was the 2 kW PECVD+belt study share.",
+        design=[dict(item=i, kW=round(w, 4)) for i, w in fab] + [dict(item='total connected (calculated)', kW=fab_kw)])
+    from .sizing import heat as HT
+    bath_L, bath_C, n_b = v('FAB.wet-bench-train.bath_L'), v('FAB.wet-bench-train.bath_C'), int(v('FAB.wet-bench-train.heated_baths'))
+    _, b_loss = HT.insulated_cylinder(bath_C, 300.0, 0.4)
+    b_kWh = (bath_L * 4.18 * (bath_C - 25) / 3600 + b_loss * 24 / 1000) * n_b    # daily heat-up + hold, both baths
+    _st('WET_BENCH', round(b_kWh / 24, 4),
+        f"RCA/etch bench list (AQS-EQP-FAB-001 sec.1): {n_b} heated baths {bath_L:.0f} L at {bath_C:.0f} C "
+        f"(SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; "
+        f"{b_kWh:.2f} kWh/d.",
+        design=[dict(item='SC1 bath 10 L PP tank, 80 C immersion heater', kWh_d=round(b_kWh / n_b, 3)),
+                dict(item='SC2 bath 10 L PP tank, 80 C immersion heater', kWh_d=round(b_kWh / n_b, 3)),
+                dict(item='DHF etch bath, ambient', kWh_d=0.0),
+                dict(item='DIW rinse + N2 guns', kWh_d=0.05),
+                dict(item='total', kWh_d=round(b_kWh + 0.05, 3))])
+
+    # 4) AFTERBURNER: ID blower from the flue duty (AQS-SAN-01 850 C chamber, cooled exit duct 300 C class)
+    flue = float(E['IA-AB-FLUE']['rate']['value'] or 0)
+    V = flue / 29.0 * 8314.0 * (273.15 + 300.0) / 101325.0 / 86400.0    # m3/s wet flue at MW 29, 300 C
+    ab_kw = V * 1000.0 * v('OIL.afterburner-train.flue_fan_dP_Pa') / v('OIL.afterburner-train.flue_fan_eta') / 1000.0
+    _st('AFTERBURNER', round(ab_kw, 4),
+        f"ID blower on the {flue:.3f} kg/d flue (IA-AB-FLUE): {V * 1000:.1f} L/s at the 300 C exit duct class "
+        f"(850 C chamber per X-SAN-01, cooled exit), {v('OIL.afterburner-train.flue_fan_dP_Pa'):.0f} Pa at eta "
+        f"{v('OIL.afterburner-train.flue_fan_eta')} - the ignition transformer and burner management ride the "
+        f"combustion panel at < 50 W.",
+        design=[dict(item='flue ID fan (variable-speed, high-temp class)', kW=round(ab_kw, 4)),
+                dict(item='ignition transformer + BMS panel', kW=0.05),
+                dict(item='dampers and flame monitor', kW=0.01)])
+
+    # 5) NUTRIENT_DOSE: metering pumps from the liquor duties (AQS-EQP-NUT-001)
+    bd = float(E['IA-LEACH-BD']['rate']['value'] or 0)
+    q_t = bd / 1000.0 / 7200.0                                        # bleed transfer over a 2 h window, m3/s
+    p_t = 1000.0 * 9.81 * q_t * v('NUT.nutrient-train.dose_head_m') / v('NUT.nutrient-train.pump_eta')
+    nut_kw = (p_t / 1000.0) * (2.0 / 24.0) + 3 * 8 / 1000.0           # transfer window + 3 x 8 W metering pumps
+    _st('NUTRIENT_DOSE', round(nut_kw, 4),
+        f"Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer {bd:.1f} kg/d over a 2 h window at "
+        f"{v('NUT.nutrient-train.dose_head_m'):.0f} m head, eta {v('NUT.nutrient-train.pump_eta')} "
+        f"({p_t:.1f} W) + 3 x 8 W metering pumps on the bed/fish splits.",
+        design=[dict(item='bleed transfer pump (diaphragm)', W=round(p_t, 1)),
+                dict(item='metering pumps x3 (beds, fish, terrace)', W=24.0),
+                dict(item='total average', kW=round(nut_kw, 4))])
+
 
 def power():
     g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}

@@ -61,14 +61,28 @@
       "notes": " Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.5,
+        "value": 0.1332,
         "unit": "kW",
         "status": "study",
-        "note": "Study ignition/blower parasitic"
+        "note": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "equipment": [
+          {
+            "item": "flue ID fan (variable-speed, high-temp class)",
+            "kW": 0.1332
+          },
+          {
+            "item": "ignition transformer + BMS panel",
+            "kW": 0.05
+          },
+          {
+            "item": "dampers and flame monitor",
+            "kW": 0.01
+          }
+        ]
       }
     },
     {
@@ -914,9 +928,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 3.0,
+        "value": 1.157,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
@@ -930,7 +945,53 @@
           "assemblies": 2,
           "zeolite_total_kg": 160.8,
           "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
-        }
+        },
+        "equipment": [
+          {
+            "item": "CDRA CO2 removal: 5A zeolite bed regen heaters + valves (X-RED-06, NASA_CDRA2015 class)",
+            "kW": 0.75
+          },
+          {
+            "item": "ventilation fans: 22 L/s at SFP 750 W/(m3/s) (ASHRAE621_2019 rates, ISO16798_3 SFP3)",
+            "kW": 0.017
+          },
+          {
+            "item": "lighting: 40 m2 x 8.8 W/m2 x 10 % lit (IECC2021_C405 allowance)",
+            "kW": 0.035
+          },
+          {
+            "item": "water pressure + grey lift pumps (shower 6 L/min at 2 bar class, AQS-HAB-001)",
+            "kW": 0.03
+          },
+          {
+            "item": "galley: induction 2 kW x 0.5 h/d + microwave + kettle = 1.4 kWh/d",
+            "kW": 0.058
+          },
+          {
+            "item": "medical fridge/freezer + pharmacy (AQS-HAB-001 medical room)",
+            "kW": 0.08
+          },
+          {
+            "item": "medical equipment duty share",
+            "kW": 0.05
+          },
+          {
+            "item": "comms, electronics, controls at the hab panels",
+            "kW": 0.05
+          },
+          {
+            "item": "wash-water heating: 60 kg/d x 30 K x 4.18 kJ/kg K",
+            "kW": 0.087
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 1.157
+          },
+          {
+            "item": "critical-capacity lock (drivers, NFPA 110)",
+            "kW": 3.0
+          }
+        ]
       }
     },
     {
@@ -1025,8 +1086,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2701.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3374.0,
-        "fraction_of_znbr2_study": 0.063,
+        "vs_znbr2_kwh": 2515.0,
+        "fraction_of_znbr2_study": 0.085,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1309,18 +1370,40 @@
           "exports_kg_d": {
             "IA-N2-VENT": 3.1,
             "IA-NA-PURGE": 4.394,
-            "IA-C5-SHIP": 6.956,
+            "IA-C5-SHIP": 7.077,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
             "IA-O2-SHIP": 22.876,
-            "IA-MEOH-SHIP": 28.364
+            "IA-MEOH-SHIP": 28.15,
+            "IA-GYPSUM-SHIP": 0.576,
+            "IA-CL2-SHIP": 39.419,
+            "IA-CA-CL2-SHIP": 0.097,
+            "IA-KROLL-CO": 0.585,
+            "IA-MO-VENT": 0.043,
+            "IA-CR-VENT": 0.202,
+            "IA-BURNOUT-VENT": 0.2,
+            "IA-SHELL-EXPORT": 1.0,
+            "IA-METAL-SHIP": 10.812
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.814,
+            "IA-H2O-MU": 64.472,
             "IA-NAOH-MU": 4.394,
-            "IA-SOLV-MU": 0.21
+            "IA-SOLV-MU": 0.21,
+            "IA-CAF2-MU": 0.326,
+            "IA-H2SO4-MU": 0.404,
+            "IA-ALCL3-MU": 49.419,
+            "IA-MGCL2-MU": 0.04,
+            "IA-CACL2-MU": 0.152,
+            "IA-TIO2-MU": 0.834,
+            "IA-C-TI": 0.251,
+            "IA-MOO3-MU": 0.094,
+            "IA-C-MO": 0.012,
+            "IA-CR2O3-MU": 0.365,
+            "IA-C-CR": 0.087,
+            "IA-WAX-MU": 0.2,
+            "IA-SILICA-MU": 1.0
           },
-          "net_kg_d": 0.002,
+          "net_kg_d": 0.001,
           "residual_kg_d": 0.002,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
@@ -1377,10 +1460,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.1,
+        "value": 0.0245,
         "unit": "kW",
         "status": "study",
-        "note": "Study dose pumps"
+        "note": "Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer 109.6 kg/d over a 2 h window at 15 m head, eta 0.35 (6.4 W) + 3 x 8 W metering pumps on the bed/fish splits. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
@@ -1398,7 +1481,21 @@
           "H_mm": 300,
           "wall_mm": 4.75,
           "material": "PE (rotomoulded / fabricated)"
-        }
+        },
+        "equipment": [
+          {
+            "item": "bleed transfer pump (diaphragm)",
+            "W": 6.4
+          },
+          {
+            "item": "metering pumps x3 (beds, fish, terrace)",
+            "W": 24.0
+          },
+          {
+            "item": "total average",
+            "kW": 0.0245
+          }
+        ]
       }
     },
     {
@@ -1474,16 +1571,42 @@
       "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
       "enabled": true,
       "continuous_kw": {
-        "value": 2.0,
+        "value": 0.4417,
         "unit": "kW",
         "status": "study",
-        "note": "PECVD+belt avg study"
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-284); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "iso_14644_wet_bench": "Class 7",
-        "iso_14644_tool_row": "Class 6"
+        "iso_14644_tool_row": "Class 6",
+        "equipment": [
+          {
+            "item": "CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold",
+            "kW": 0.2317
+          },
+          {
+            "item": "ingot cool/anneal station: N2 circulator duty share",
+            "kW": 0.02
+          },
+          {
+            "item": "crop/grind/edge tools at 5 starts/d",
+            "kW": 0.04
+          },
+          {
+            "item": "FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)",
+            "kW": 0.12
+          },
+          {
+            "item": "N2 purge distribution (ISO 14644 Class 6 row)",
+            "kW": 0.03
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 0.4417
+          }
+        ]
       }
     },
     {
@@ -1497,14 +1620,36 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.0,
+        "value": 0.2066,
         "unit": "kW",
         "status": "study",
-        "note": "Study fab wet-bench share"
+        "note": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "equipment": [
+          {
+            "item": "SC1 bath 10 L PP tank, 80 C immersion heater",
+            "kWh_d": 2.479
+          },
+          {
+            "item": "SC2 bath 10 L PP tank, 80 C immersion heater",
+            "kWh_d": 2.479
+          },
+          {
+            "item": "DHF etch bath, ambient",
+            "kWh_d": 0.0
+          },
+          {
+            "item": "DIW rinse + N2 guns",
+            "kWh_d": 0.05
+          },
+          {
+            "item": "total",
+            "kWh_d": 5.008
+          }
+        ]
       }
     },
     {
@@ -1740,25 +1885,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 240.9944,
+        "value": 179.6238,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.6 kW, charge 816.4 kW, 2515 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1096,
-        "kWh": 3374,
+        "kW": 817,
+        "kWh": 2515,
         "presence": "present",
-        "charge_kW": 1096,
-        "discharge_kW": 241,
+        "charge_kW": 817,
+        "discharge_kW": 180,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 47 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.554,
-          "purge_m3_h": 35.64,
+          "H2_m3_d": 6.376,
+          "purge_m3_h": 26.57,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2206.9
+          "electrode_area_m2": 1644.9
         }
       }
     },
@@ -1806,8 +1951,8 @@
       "unit_id": "VCD_TRAIN",
       "sector_id": "WTR",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "MVC. Equipment ID VCD-COMP-01.",
+      "class": "evaporator",
+      "notes": "Vapor-compression distillation still stack: evaporator/condenser HX + scroll compressor + separator, 2 x 100 % (X-RED-05); 17 kWh/m3 driver basis (AQS-EQP-STUDY-001 sec.3; A-M-285).",
       "enabled": true,
       "modules": [],
       "params": {
@@ -1824,7 +1969,19 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "units_installed": 2,
-        "redundancy": "2 x 100 %, standby still on the same feed header (X-RED-05)"
+        "redundancy": "2 x 100 %, standby still on the same feed header (X-RED-05)",
+        "design": {
+          "machine": "MVC still stack",
+          "modules": 2,
+          "compressor": "scroll class (small-MVC)",
+          "hx_area_m2": 0.56,
+          "q_latent_kW": 7.834,
+          "feed_m3_d": 0.3332,
+          "distillate_m3_d": 0.2999,
+          "sec_kWh_m3": 17,
+          "duty_kW": 0.236,
+          "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
+        }
       },
       "continuous_kw": {
         "value": 0.236,
@@ -1837,8 +1994,8 @@
       "unit_id": "REMIN",
       "sector_id": "WTR",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Hydroxide dose then UV.",
+      "class": "dose",
+      "notes": "Remineralization dosing skid: Ca(OH)2 + MgCl2 metering into the potable drink stream, then UV (WHO-class Ca 25 / Mg 10 mg/L targets on the 10 L/d drink basis; AQS-EQP-STUDY-001 sec.4; A-M-285).",
       "enabled": true,
       "modules": [],
       "params": {
@@ -1861,7 +2018,23 @@
           "H_mm": 300,
           "wall_mm": 4.75,
           "material": "PE (rotomoulded / fabricated)"
+        },
+        "design": {
+          "machine": "remineralization dosing skid",
+          "pumps": "2 x metering diaphragm (Ca slurry, MgCl2)",
+          "uv": "UV unit after the dose (potable integrity)",
+          "ca_oh2_g_d": 0.4622,
+          "mgcl2_g_d": 0.3917,
+          "drink_L_d": 10,
+          "duty_kW": 0.046,
+          "chemistry": "hydroxide crib salts (AQS-WTR-001); no farm S07 tee"
         }
+      },
+      "continuous_kw": {
+        "value": 0.046,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285)."
       }
     },
     {
@@ -1949,7 +2122,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Goods balance (A-M-265): foundry products net 0 (stock loop closes on the shop draw) + mfg goods surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return) - internal use fully looped = 0.0 kg/d goods export at the bounding case. THIS IS THE PLANT SURPLUS STATEMENT: the plant sustains itself in goods with zero saleable goods surplus at Rev AC scope; the NORTH_DOCK residual is the non-goods study-basis imbalance (NOX_SCRUB/CRYO_H2/AFTERBURNER + WS rounding), owned by those lanes, not goods. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Goods balance (A-M-265 rev): the accounting placeholder stays 0.0 - the real surplus exports ride their own dock edges: foundry pot metal IA-METAL-SHIP 10.8125 kg/d + pot chlorine IA-CL2-SHIP/IA-CA-CL2-SHIP 39.517 kg/d (A-M-284) on top of the shipped products (O2, MeOH, oil cuts); mfg goods surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return). THIS IS THE PLANT SURPLUS STATEMENT at Rev AC scope with the foundry feedstock program live: the plant is a net exporter of metal and chlorine through the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
@@ -3404,10 +3577,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1009.369242,
+        "value": 752.327603,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 35.6 m3/h holds H2 at 25 % LFL: HER 7.28 + open-circuit 1.27 m3/d H2 on 4820 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3592 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -3427,7 +3600,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1009.369242,
+        "value": 752.327603,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

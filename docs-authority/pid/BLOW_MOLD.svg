@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="610" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
-<text x="24" y="34" font-size="15" font-weight="600">Unit BLOW_MOLD · study_stub · sector MFG · present</text>
-<text x="24" y="54" font-size="10.5">no design params on the graph node</text>
+<text x="24" y="34" font-size="15" font-weight="600">Unit BLOW_MOLD · former · sector MFG · present</text>
+<text x="24" y="54" font-size="10.5">0.3691 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 2 in + 1 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 2</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -26,7 +26,7 @@
 <text x="220" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
 <rect x="590" y="210" width="320" height="140" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">BLOW_MOLD</text>
-<text x="750.0" y="252" font-size="9.5" text-anchor="middle">study_stub · MFG sector</text>
+<text x="750.0" y="252" font-size="9.5" text-anchor="middle">former · MFG sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">PROD_C11_C18</text>
@@ -36,7 +36,7 @@
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">SF-BLOW_MOLD</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.5 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="299" font-size="10" text-anchor="start">0.4 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
@@ -49,8 +49,8 @@
 <text x="24" y="455" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-BLOW_MOLD</text>
-<text x="1124" y="526" font-size="9">P&amp;ID BLOW_MOLD (study_stub, MFG sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 1baa9105   Issued 2026-10-19</text>
+<text x="1124" y="526" font-size="9">P&amp;ID BLOW_MOLD (former, MFG sector)</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ba9181fe   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 a1b2242b721d1ffb   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 1c64ea4c788c4803   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

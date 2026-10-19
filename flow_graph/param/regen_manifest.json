@@ -219,6 +219,42 @@
       "note": "FOUNDRY/POLYMERS rate stamps (A-M-261/266); before heat and the balance report."
     },
     {
+      "name": "fluoro_train",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.fluoro_train",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [
+        "foundry_poly"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "Fluoro train activation (A-M-283): runs AFTER foundry_poly which zero-rates the F-blocked edges each pass; re-rates them from S31/S66+drivers; fixed point stable after two passes."
+    },
+    {
+      "name": "stub_activation",
+      "argv": [
+        "python3",
+        "-m",
+        "flow_graph.param.stub_activation",
+        "--write"
+      ],
+      "outputs": [
+        "flow_graph/plant_flow_graph.json"
+      ],
+      "depends_on": [
+        "fluoro_train"
+      ],
+      "writes_graph": true,
+      "quick": false,
+      "note": "Stub activations (A-M-284/285): litho tools, study_stub conversions, GEO_ORC installed standby."
+    },
+    {
       "name": "write_graph_heat",
       "argv": [
         "python3",

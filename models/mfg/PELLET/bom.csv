@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Extruder barrel D90 x 600 mm with L/D 6 feed screw,1,"316L barrel, nitrided screw",AQS-DUTY-073 section 2; 0.414905 kg/d resin
+1,Extruder barrel D90 x 600 mm with L/D 6 feed screw,1,"316L barrel, nitrided screw",AQS-DUTY-073 section 2; 0.294127 kg/d resin
 2,Gearbox and drive with variable speed,1,"geared motor, IEC frame",AQS-DUTY-073 section 2
 3,"Die head, 2-4 mm pellet holes",1,316L,2-4 mm pellets (AQS-DES-POLY)
 4,Underwater die-face pelletizer with water box,1,316L wetted,AQS-DUTY-073 section 2

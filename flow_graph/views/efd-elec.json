@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 54,
-  "edge_count": 58,
+  "node_count": 82,
+  "edge_count": 86,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -853,7 +853,7 @@
       "unit_id": "GEO_ORC",
       "sector_id": "GEO",
       "presence": "placeholder",
-      "class": "study_stub",
+      "class": "orc",
       "tags": [
         "ORC",
         "carnot_study",
@@ -861,7 +861,7 @@
       ],
       "electrical_role": "generation",
       "diagram_gap": null,
-      "notes": "design_survey_locked (ST-ORC-01 / SITE_LAT=33 Dallas sandbox; field bore external). Duty: notes/POWER_DUTIES.md. AQS-HEAT-STUDY-002 Rev A 2026-10-18 (D-GEO_ORC, owner ruling 2026-10-18): study closed the endpoint question \u2014 keep placeholder at 0 kW_e; ST-ORC-01 blockers closed by the study.",
+      "notes": "Binary ORC skid as INSTALLED STANDBY: owner ruling D-GEO_ORC (2026-10-18) keeps the endpoint at 0 kW_e with the Carnot study as record (AQS-HEAT-STUDY-002 Rev A); the machine is geometrically real at the 12 kW_th dry-cooler context (A-M-244) so the day a surplus-heat source is issued the skid is placed, not designed. presence stays placeholder; continuous_kw stays null (A-M-285).",
       "enabled": true,
       "continuous_kw": {
         "value": null,
@@ -911,7 +911,20 @@
         "P_ORC_kW_e": 0.0,
         "site_lat_deg": 33.0,
         "survey_status": "design_survey_locked",
-        "study_close": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a72/\u00a79 (A-M-249): ORC rejected 7/20 \u2014 net 0.2-0.4 kW_e at 10.16 kW_th / 65 C (30-45 % of Carnot 8.9 %, Quoilin et al. 2013); collapses on 37.8 C days and cannot remove the mandatory terminal sink. Placeholder held at 0 kW_e; the 0.08-0.12 absolute band was above Carnot and impossible."
+        "study_close": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a72/\u00a79 (A-M-249): ORC rejected 7/20 \u2014 net 0.2-0.4 kW_e at 10.16 kW_th / 65 C (30-45 % of Carnot 8.9 %, Quoilin et al. 2013); collapses on 37.8 C days and cannot remove the mandatory terminal sink. Placeholder held at 0 kW_e; the 0.08-0.12 absolute band was above Carnot and impossible.",
+        "design": {
+          "machine": "binary ORC skid (installed standby)",
+          "p_rated_kW_e": 1.2,
+          "q_sink_kW_th": 12.0,
+          "eta_th": 0.1,
+          "working_fluid": "R245fa class",
+          "expander": "scroll expander + generator",
+          "evaporator_kW_th": 12.0,
+          "condenser_kW_th": 10.8,
+          "feed_pump_kW": 0.05,
+          "basis": "D-GEO_ORC: study endpoint 0 kW_e; geometry at the A-M-244 12 kW dry-cooler context so the standby is real (A-M-285)",
+          "placement": "electrical_yard.py massing stands in (unit map row)"
+        }
       }
     },
     {
@@ -1071,8 +1084,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2701.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3374.0,
-        "fraction_of_znbr2_study": 0.063,
+        "vs_znbr2_kwh": 2515.0,
+        "fraction_of_znbr2_study": 0.085,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1311,10 +1324,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.1,
+        "value": 0.0245,
         "unit": "kW",
         "status": "study",
-        "note": "Study dose pumps"
+        "note": "Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer 109.6 kg/d over a 2 h window at 15 m head, eta 0.35 (6.4 W) + 3 x 8 W metering pumps on the bed/fish splits. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
@@ -1332,7 +1345,21 @@
           "H_mm": 300,
           "wall_mm": 4.75,
           "material": "PE (rotomoulded / fabricated)"
-        }
+        },
+        "equipment": [
+          {
+            "item": "bleed transfer pump (diaphragm)",
+            "W": 6.4
+          },
+          {
+            "item": "metering pumps x3 (beds, fish, terrace)",
+            "W": 24.0
+          },
+          {
+            "item": "total average",
+            "kW": 0.0245
+          }
+        ]
       }
     },
     {
@@ -1365,7 +1392,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 395.872,
+        "value": 336.7016,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1373,28 +1400,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6682,
+        "count": 4982,
         "presence": "present",
-        "nameplate_kw": 3341,
-        "area_m2": 29308,
-        "balance_kWp": 1671,
+        "nameplate_kw": 2491,
+        "area_m2": 21986,
+        "balance_kWp": 1246,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            198000,
-            162000
+            174000,
+            138000
           ],
           "bays": [
-            33,
-            27
+            29,
+            23
           ],
-          "footprint_m2": 32076.0,
-          "extension_m2": 31644.0,
-          "roof_capacity_kWp": 3341.1,
+          "footprint_m2": 24012.0,
+          "extension_m2": 23580.0,
+          "roof_capacity_kWp": 2506.5,
           "perimeter_pathway_mm": 1829,
-          "arrays": 20,
-          "extension_load_kW": 90.57,
+          "arrays": 12,
+          "extension_load_kW": 68.28,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -1442,38 +1469,35 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2820.0,
+        "kW": 2100.0,
         "presence": "present",
-        "count": 47,
+        "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2579.0,
-          "export_kWh_d_clear": 7230,
+          "export_peak_kW": 1920.4,
+          "export_kWh_d_clear": 5389,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
-          "count": 5,
+          "count": 4,
           "inverters": [
-            10,
-            10,
             9,
             9,
-            9
+            9,
+            8
           ],
           "breaker_A": [
             1000,
             1000,
             1000,
-            1000,
-            1000
+            800
           ],
           "xfmr_kVA": [
             750,
             750,
             750,
-            750,
-            750
+            500
           ],
           "mv_kV": 12.47,
           "plant_bus_on": "CB-1",
@@ -1481,9 +1505,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 209.9,
-          "section_rating_A": 400,
-          "basis_A": 280.5,
+          "bus_demand_kW": 150.7,
+          "section_rating_A": 300,
+          "basis_A": 201.4,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -1504,16 +1528,42 @@
       "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
       "enabled": true,
       "continuous_kw": {
-        "value": 2.0,
+        "value": 0.4417,
         "unit": "kW",
         "status": "study",
-        "note": "PECVD+belt avg study"
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-284); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "iso_14644_wet_bench": "Class 7",
-        "iso_14644_tool_row": "Class 6"
+        "iso_14644_tool_row": "Class 6",
+        "equipment": [
+          {
+            "item": "CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold",
+            "kW": 0.2317
+          },
+          {
+            "item": "ingot cool/anneal station: N2 circulator duty share",
+            "kW": 0.02
+          },
+          {
+            "item": "crop/grind/edge tools at 5 starts/d",
+            "kW": 0.04
+          },
+          {
+            "item": "FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)",
+            "kW": 0.12
+          },
+          {
+            "item": "N2 purge distribution (ISO 14644 Class 6 row)",
+            "kW": 0.03
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 0.4417
+          }
+        ]
       }
     },
     {
@@ -1527,14 +1577,36 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.0,
+        "value": 0.2066,
         "unit": "kW",
         "status": "study",
-        "note": "Study fab wet-bench share"
+        "note": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-286)."
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "equipment": [
+          {
+            "item": "SC1 bath 10 L PP tank, 80 C immersion heater",
+            "kWh_d": 2.479
+          },
+          {
+            "item": "SC2 bath 10 L PP tank, 80 C immersion heater",
+            "kWh_d": 2.479
+          },
+          {
+            "item": "DHF etch bath, ambient",
+            "kWh_d": 0.0
+          },
+          {
+            "item": "DIW rinse + N2 guns",
+            "kWh_d": 0.05
+          },
+          {
+            "item": "total",
+            "kWh_d": 5.008
+          }
+        ]
       }
     },
     {
@@ -1548,34 +1620,191 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 240.9944,
+        "value": 179.6238,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.6 kW, charge 816.4 kW, 2515 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1096,
-        "kWh": 3374,
+        "kW": 817,
+        "kWh": 2515,
         "presence": "present",
-        "charge_kW": 1096,
-        "discharge_kW": 241,
+        "charge_kW": 817,
+        "discharge_kW": 180,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 47 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.554,
-          "purge_m3_h": 35.64,
+          "H2_m3_d": 6.376,
+          "purge_m3_h": 26.57,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2206.9
+          "electrode_area_m2": 1644.9
         }
+      }
+    },
+    {
+      "unit_id": "REMIN",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "dose",
+      "notes": "Remineralization dosing skid: Ca(OH)2 + MgCl2 metering into the potable drink stream, then UV (WHO-class Ca 25 / Mg 10 mg/L targets on the 10 L/d drink basis; AQS-EQP-STUDY-001 sec.4; A-M-285).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "REMIN-01",
+        "drink_L_d": 10,
+        "Ca_mg_L": 25,
+        "Mg_mg_L": 10,
+        "uv": "after dose",
+        "source": "hydroxide crib",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        },
+        "design": {
+          "machine": "remineralization dosing skid",
+          "pumps": "2 x metering diaphragm (Ca slurry, MgCl2)",
+          "uv": "UV unit after the dose (potable integrity)",
+          "ca_oh2_g_d": 0.4622,
+          "mgcl2_g_d": 0.3917,
+          "drink_L_d": 10,
+          "duty_kW": 0.046,
+          "chemistry": "hydroxide crib salts (AQS-WTR-001); no farm S07 tee"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.046,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285)."
+      }
+    },
+    {
+      "unit_id": "LITHO_COAT",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "coater",
+      "notes": "Spin-coater line: spin bowl, vacuum chuck, softbake hotplate. Parent LITHO_STUB retired into the real tools (AQS-LITH-001 rev C; A-M-284).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "starts_d": 5,
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          1200,
+          800,
+          1400
+        ],
+        "size_note": "L x W x H mm, issued envelope (A-M-284)",
+        "equipment_id": "LITHO-COAT-01",
+        "spin_peak_kW": 0.75,
+        "softbake_kW": 0.3,
+        "kWh_d": 0.61,
+        "design": {
+          "machine": "spin-coater line",
+          "chuck_mm": 150,
+          "spin_rpm": 5000,
+          "dispense_mL_per_wafer": 2.0,
+          "softbake_C": 100,
+          "chemistry": "novolac resist, 1 um (AQS-LITH-001)",
+          "duty_kW": 0.0254,
+          "peak_kW": 0.75
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0254,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284)."
+      }
+    },
+    {
+      "unit_id": "LITHO_ALIGN",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "aligner",
+      "notes": "Contact aligner: 365 nm LED array over a 100 mm field, leadscrew stage (AQS-LITH-001 rev C; A-M-284). Not a stepper.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "starts_d": 5,
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          1200,
+          600,
+          800
+        ],
+        "size_note": "L x W x H mm, AQS-LITH-001 rev C frame 6061",
+        "equipment_id": "LITHO-ALIGN-01",
+        "design": {
+          "machine": "contact aligner",
+          "source": "365 nm LED array, 1 W optical (AQS-LITH-001)",
+          "dose": "10 mW/cm2 x 20 s = 200 mJ/cm2",
+          "field_mm": 100,
+          "stage": "leadscrew 1 mm pitch, 10 um repeatability",
+          "mask": "chrome on glass, 100 um pattern",
+          "duty_kW": 0.004,
+          "peak_kW": 0.25
+        }
+      },
+      "continuous_kw": {
+        "value": 0.004,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284)."
+      }
+    },
+    {
+      "unit_id": "LITHO_DEV",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "wet_bench",
+      "notes": "Wet develop bench on the WET_BENCH chemistry class (TMAH/KOH developer fork, S38 resist-waste loop); developer is a share of the fab resist/solvent issue (A-M-284).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "starts_d": 5,
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          1200,
+          600,
+          900
+        ],
+        "size_note": "L x W x H mm, issued envelope (A-M-284)",
+        "equipment_id": "LITHO-DEV-01",
+        "developer_kg_d": 0.2,
+        "design": {
+          "machine": "wet develop bench",
+          "developer": "TMAH 2.38 % class, shared WET_BENCH chemistry fork",
+          "puddle_mL_per_wafer": 40.0,
+          "waste": "S38-class resist/solvent loop to OIL_FRAC",
+          "duty_kW": 0.008,
+          "peak_kW": 0.05
+        }
+      },
+      "continuous_kw": {
+        "value": 0.008,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284)."
       }
     },
     {
       "unit_id": "LITHO_STUB",
       "sector_id": "FAB",
-      "presence": "present",
+      "presence": "retired",
       "class": "study_stub",
-      "notes": "Parent of coat, align, develop. Lamp class: 365 nm LED, not a stepper.",
+      "notes": "Retired 2026-10-19: parent stub replaced by the real tools LITHO_COAT / LITHO_ALIGN / LITHO_DEV, which carry its flows and duty (AQS-EQP-STUDY-001 rev G; A-M-284). Kept as a retired node for history; class value is historical.",
       "enabled": true,
       "modules": [
         "LITHO_COAT",
@@ -1598,50 +1827,86 @@
       "unit_id": "ELECTRODE_COAT",
       "sector_id": "MFG",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Carbon or nickel booth. Exhaust to MET_AHU.",
+      "class": "coater",
+      "notes": "Electrode coating booth for EW/BMED replaceable electrodes (non-precious M1 carbon/Ni class): exhaust to MET_AHU, recoat loop IA-COAT-IN/OUT (AQS-MFG-ELC-001; A-M-285).",
       "enabled": true,
       "modules": [],
       "params": {
         "equipment_id": "ELC-BOOTH-01",
         "formulation": "carbon or nickel",
-        "avg_kw": 0.3,
+        "avg_kw": 0.0792,
         "exhaust": "MET_AHU",
         "size_mm": [
           1200,
           800,
           1800
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "kWh_d": 1.9,
+        "design": {
+          "machine": "coating booth + IR cure",
+          "exhaust_kW": 0.35,
+          "cure_kW": 1.2,
+          "campaign_h_d": 2.0,
+          "cure_h_d": 1.0,
+          "formulation": "carbon / Ni non-precious M1 class (RuO2-IrO2 deferred)",
+          "exhaust": "MET_AHU -> MET_SCRUB (S71-S72)",
+          "recoat_loop": "IA-COAT-IN/OUT 0.02 kg/d, net zero",
+          "duty_kW": 0.0792
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0792,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): booth exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop (AQS-MFG-ELC-001 Rev B; A-M-285)."
       }
     },
     {
       "unit_id": "BLOW_MOLD",
       "sector_id": "MFG",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Clamp and air. Peak 2-4 kW. Scrap to oil line.",
+      "class": "former",
+      "notes": "Continuous-extrusion blow molder (Precious Plastic class): wax/polymer articles for the shop goods loop on IA-BLOW-IN; scrap to the oil line (AQS-EQP-MFG-001; A-M-285).",
       "enabled": true,
       "modules": [],
       "params": {
         "equipment_id": "BLOW-01",
-        "peak_kw": "2-4",
-        "avg_kw": 0.5,
+        "peak_kw": 3.7,
+        "avg_kw": 0.3691,
         "scrap": "OIL_FRAC",
         "size_mm": [
           1200,
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "kWh_d": 8.858,
+        "design": {
+          "machine": "continuous-extrusion blow molder",
+          "extruder_kW": 2.2,
+          "clamp_kW": 0.75,
+          "air_kW": 0.75,
+          "rate_kg_h": 2.8,
+          "run_h_d": 3.0,
+          "feed_kg_d": 8.4072,
+          "products": "molded articles to MFG_SHOP (IA-BLOW-OUT)",
+          "duty_kW": 0.3691
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3691,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): extruder 2.2 kW + clamp/air duty over a 3.0 h/d campaign at 8.41 kg/d wax feed (AQS-EQP-MFG-001 / AQS-REQ-KW-001 SI-MFG-01; A-M-285)."
       }
     },
     {
       "unit_id": "SOLAR_PV_CELL",
       "sector_id": "FAB",
       "presence": "present",
-      "class": "study_stub",
-      "notes": "Texture, emitter, PSG etch, ARC, contact, fire, IV. Not the yard array.",
+      "class": "tool",
+      "notes": "In-house PV cell line (X-MFG-38, AQS-DUTY-071, A-M-178): texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV. Tool table in params.design; not the yard array (PV_ARRAY). Study_stub class retired at the A-M-285 disposition.",
       "enabled": true,
       "modules": [
         "PV_TEXTURE",
@@ -1662,7 +1927,7 @@
           1200,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L x W x H mm, issued envelope (X-MFG-38 tool line)",
         "design": {
           "cells_per_d": 3,
           "tools": [
@@ -1751,17 +2016,92 @@
           },
           "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
           "size_mm": [
+            1200,
+            700,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "indirectly heated rotary kiln, fluorspar + H2SO4 -> HF",
+          "tube_D_mm": 200,
+          "tube_L_mm": 1200,
+          "slope_deg": 2.0,
+          "rpm": 4,
+          "residence_min": 30.0,
+          "T_C": 250.0,
+          "spar_kg_d": 0.32554,
+          "acid_kg_d": 0.403768,
+          "hf_kg_d": 1.673754,
+          "cake_kg_d": 0.575554,
+          "drive_kW": 0.37,
+          "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate",
+          "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
+          "duty_kW": 0.3083
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            700,
+            1500
+          ],
+          "style": "rotary_kiln",
+          "state": "live",
+          "basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-283); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3083,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): rotary kiln at 250 C: insulated shell loss + endotherm 65.7 kJ/mol CaF2 + feed sensible (A-M-283)."
+      }
+    },
+    {
+      "unit_id": "VDF_SYN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [
+        "fluoropolymer",
+        "monomer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "VDF monomer from HF + recovered carbon. Duty: notes/FLUOROPOLYMER_DUTY.md. Route locked: methanol-chloromethane-HF (notes/MONOMER_ROUTE.md). Rate unset. Sector POLYMERS.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
             600,
             600,
             1200
           ]
         },
         "design": {
-          "vessel": "HF generation train",
-          "D_mm": 150,
-          "H_mm": 225,
-          "design_case_kg_d": 0.5,
-          "material": "carbon steel, dry HF service (PERRY9_MAT)"
+          "machine": "VDF train: chlorination + hydrofluorination reactors, 142b cracking furnace, scrub",
+          "chlorination_C": 350,
+          "cracking_C": 650,
+          "catalyst": "Cr2O3 class (ULLMANN_FLUOROPOLY)",
+          "vdf_kg_d": 0.15,
+          "meoh_kg_d": 0.150117,
+          "cl2_kg_d": 0.332195,
+          "hf_kg_d": 0.093738,
+          "hcl_return_kg_d": 0.42605,
+          "duty_kW": 0.5128,
+          "material": "Hastelloy C-276 reactors, Ni cracking tube, PTFE-lined coolers"
         },
         "envelope": {
           "size_mm": [
@@ -1770,15 +2110,356 @@
             1200
           ],
           "style": "reactor",
-          "state": "standby",
-          "basis": "reactor-class study minimum; standby envelope (F-blocked, Q-013)"
+          "state": "live",
+          "basis": "reactor-class study minimum; the two heated stages dominate the duty (A-M-283)"
         }
       },
       "continuous_kw": {
-        "value": 0.0,
+        "value": 0.5128,
         "unit": "kW",
         "status": "study",
-        "note": "standby, 0 duty at the bounding case (AQS-DUTY-073 sec. 3). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): chlorination 350 C + 142b cracking 650 C insulated losses (A-M-283)."
+      }
+    },
+    {
+      "unit_id": "TFE_SYN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [
+        "fluoropolymer",
+        "monomer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "TFE monomer from HF + recovered carbon. Duty: notes/FLUOROPOLYMER_DUTY.md. Route locked: methanol-chloromethane-HF (notes/MONOMER_ROUTE.md). Rate unset. Sector POLYMERS.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "machine": "TFE train: R-22 pyrolysis furnace, quench, scrub",
+          "pyrolysis_C": 750,
+          "quenched": "immediate quench (TFE autopolymerisation hazard; ULLMANN_FLUOROPOLY)",
+          "tfe_kg_d": 0.1,
+          "meoh_kg_d": 0.064071,
+          "cl2_kg_d": 0.283567,
+          "hf_kg_d": 0.080016,
+          "hcl_return_kg_d": 0.327654,
+          "duty_kW": 0.3989,
+          "material": "Inconel 600 pyrolysis tube, Hastelloy C-276 coolers, PTFE-lined scrubber"
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; pyrolysis tube + quench at the 0.10 kg/d duty (A-M-283)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3989,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): R-22 pyrolysis 750 C tube + quench circulation (A-M-283)."
+      }
+    },
+    {
+      "unit_id": "POLY_F",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [
+        "fluoropolymer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "PVDF/PTFE polymerization + reclaim. Duty: notes/FLUOROPOLYMER_DUTY.md. Rate unset. Sector POLYMERS.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "size_mm": [
+            600,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "vessel": "PVDF/PTFE emulsion polymerization kettle",
+          "D_mm": 150,
+          "H_mm": 225,
+          "T_C": 60,
+          "vdf_kg_d": 0.15,
+          "tfe_kg_d": 0.1,
+          "pvdf_kg_d": 0.14,
+          "ptfe_kg_d": 0.09,
+          "reclaim_kg_d": 0.02,
+          "initiator": "persulfate class, emulsion/suspension (ULLMANN_FLUOROPOLY)",
+          "duty_kW": 0.0449,
+          "material": "Hastelloy C-276 wetted, PTFE gasketed"
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-283)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0449,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): emulsion kettle at 60 C: jacket loss + agitator (A-M-283)."
+      }
+    },
+    {
+      "unit_id": "CR_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "chromium",
+        "metal"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Chromium metal. Primary: molten-salt electrolysis. Anode gas to CRU. Not aqueous. Binding 2026-10-16. Duty: notes/CR_CELL_DUTY.md. Assay missing. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "cr_kg_d": 0.25,
+          "cr2o3_kg_d": 0.3654,
+          "c_kg_d": 0.0866,
+          "co_kg_d": 0.202,
+          "chemistry": "Cr2O3 + 3C + 3Cl2 -> 2CrCl3 + 3CO; 2CrCl3 -> 2Cr + 3Cl2 (anode gas recycled)",
+          "I_A": 18.95,
+          "V": 2.8,
+          "dc_kW": 0.0531,
+          "hold_kW": 0.1069,
+          "kW": 0.16,
+          "basis": "dock chromite-equivalent import; internal chlorine loop; A-M-280 (grade envelope 40-52 % Cr2O3)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "Cr(III) molten-salt electrolysis cell with carbochlorination loop, 700 C",
+          "chemistry": "Cr2O3 + 3C + 3Cl2 -> 2CrCl3 + 3CO; 2CrCl3 -> 2Cr + 3Cl2",
+          "feed_kg_d": 0.452,
+          "metal_kg_d": 0.25,
+          "co_kg_d": 0.202,
+          "I_A": 18.95,
+          "cell_V": 2.8,
+          "dc_kW": 0.0531,
+          "hold_kW": 0.1069,
+          "connected_kW": 1,
+          "bath_T_C": 700.0,
+          "anode_D_mm": 50,
+          "anode_imm_mm": 250,
+          "cathodes": 3,
+          "busbar_mm2": 25
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.16,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 Cr(III) molten-salt cell: 18.95 A x 2.8 V = 0.053 kW + hold 0.11 kW (A-M-282)."
+      }
+    },
+    {
+      "unit_id": "TI_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "titanium",
+        "molten_salt"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Titanium metal. Primary: Kroll (chlorinate to TiCl4, Mg reduction). FFC Cambridge is cold spare. MgCl2 returns to existing Mg pot. Cl2 to CRU. Binding + selection 2026-10-16. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "ti_kg_d": 0.5,
+          "tio2_kg_d": 0.8342,
+          "c_kg_d": 0.2509,
+          "cl2_kg_d": 1.4813,
+          "mg_kg_d": 0.5078,
+          "mgcl2_gross_kg_d": 1.9891,
+          "co_kg_d": 0.5852,
+          "chemistry": "TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)",
+          "I_A": 0.0,
+          "V": 0.0,
+          "dc_kW": 0.0,
+          "hold_kW": 0.5,
+          "kW": 0.5,
+          "basis": "dock rutile-equivalent + carbon + Mg-pot loop; A-M-280 (assay envelope on the concentrate)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "Kroll chlorinator + Mg-reduction retort train",
+          "chemistry": "TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)",
+          "tio2_kg_d": 0.8342,
+          "c_kg_d": 0.2509,
+          "ti_kg_d": 0.5,
+          "mg_kg_d": 0.5078,
+          "cl2_kg_d": 1.4813,
+          "mgcl2_gross_kg_d": 1.9891,
+          "co_kg_d": 0.5852,
+          "retort_T_C": 900.0,
+          "chlorinator_T_C": 800.0,
+          "hold_kW": 0.5,
+          "batch_kg": 1.0,
+          "basis": "batch retort campaigns at the 0.5 kg/d Ti scale"
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "kroll_train",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-280)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 Kroll retort + chlorinator hold at 900/800 C under Ar (thermochemical reduction, no electrolysis; A-M-280 study hold)."
+      }
+    },
+    {
+      "unit_id": "MO_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "molybdenum",
+        "metal"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Molybdenum recovery. Primary: molten-salt electrolysis of molybdate/chloride. H2 reduction is fallback study only. Feeds 316L. Binding + selection 2026-10-16. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "mo_kg_d": 0.0625,
+          "moo3_kg_d": 0.0938,
+          "c_kg_d": 0.0117,
+          "co2_kg_d": 0.043,
+          "chemistry": "MoO3 + 1.5C + 1.5Cl2 -> MoCl3 + 1.5CO2; MoCl3 -> Mo + 1.5Cl2 (anode gas recycled)",
+          "I_A": 2.57,
+          "V": 2.8,
+          "dc_kW": 0.0072,
+          "hold_kW": 0.1069,
+          "kW": 0.1141,
+          "basis": "dock tech-oxide import; internal chlorine loop; A-M-280 (grade envelope 95-99 % MoO3)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "Mo(III) molten-salt electrolysis cell with carbochlorination loop, 650 C",
+          "chemistry": "MoO3 + 1.5C + 1.5Cl2 -> MoCl3 + 1.5CO2; MoCl3 -> Mo + 1.5Cl2",
+          "feed_kg_d": 0.1055,
+          "metal_kg_d": 0.0625,
+          "co2_kg_d": 0.043,
+          "I_A": 2.57,
+          "cell_V": 2.8,
+          "dc_kW": 0.0072,
+          "hold_kW": 0.1069,
+          "connected_kW": 1,
+          "bath_T_C": 650.0,
+          "anode_D_mm": 50,
+          "anode_imm_mm": 250,
+          "cathodes": 3,
+          "busbar_mm2": 25
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.1141,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 Mo(III) molten-salt cell: 2.57 A x 2.8 V = 0.007 kW + hold 0.11 kW (A-M-282)."
       }
     },
     {
@@ -1799,21 +2480,23 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-072",
-          "charge_kg_d": 14.1414,
-          "stock_out_kg_d": 14.0,
-          "slag_kg_d": 0.1414,
+          "charge_kg_d": 37.0139,
+          "stock_out_kg_d": 25.9,
+          "slag_kg_d": 0.3565,
           "crucible_kg": 10.0,
-          "heats_d": 2,
-          "melt_kWh_d": 7.151,
-          "avg_kW": 0.298,
-          "peak_kW": 11.0,
+          "heats_d": 4,
+          "melt_kWh_d": 21.249,
+          "avg_kW": 0.8854,
+          "peak_kW": 15.0,
           "connected_kW": 25.0,
           "kWh_per_kg": {
             "Cu": 0.3616,
             "Fe": 0.5406,
-            "Zn": 0.1605
+            "Zn": 0.1605,
+            "Al": 0.5972,
+            "Ti": 0.749
           },
-          "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN",
+          "basis": "scrap remelt + pot metal; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN/CRC_AL/CRC_TI (reactive/addition class bounding at Ti)",
           "size_mm": [
             1000,
             1000,
@@ -1821,14 +2504,14 @@
           ]
         },
         "design": {
-          "service": "Cu/Fe/Zn scrap remelt; medium-frequency coreless induction, tilt pour",
+          "service": "Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour",
           "crucible_kg": 10.0,
           "crucible_D_mm": 110.0,
           "crucible_H_mm": 165,
-          "heats_d": 2,
+          "heats_d": 4,
           "connected_kW": 25.0,
-          "peak_kW": 11.0,
-          "melt_kWh_d": 7.151,
+          "peak_kW": 15.0,
+          "melt_kWh_d": 21.249,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
         "envelope": {
@@ -1840,13 +2523,21 @@
           "style": "box_furnace",
           "state": "live",
           "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
+        },
+        "duty_cycle": {
+          "avg_kW": 0.8854,
+          "peak_kW": 15.0,
+          "connected_kW": 25.0,
+          "kWh_d": 21.249,
+          "heats_d": 4,
+          "basis": "X-MFG-37 logged batch schedule class"
         }
       },
       "continuous_kw": {
-        "value": 25.0,
+        "value": 0.8854,
         "unit": "kW",
         "status": "study",
-        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
       }
     },
     {
@@ -1869,7 +2560,8 @@
           "source": "AQS-DUTY-072",
           "duty_kg_d": 0.0,
           "connected_kW": 5.0,
-          "status_note": "preheat/sinter standby (A-M-232); sinter feed blocked",
+          "backup_of": "IND_MELT (N+1 at equal melt duty)",
+          "outage_basis": "IND_MELT coil/PSU outage; 100-400 kHz through-coil at the 10 kg crucible class (A-M-232 rating held; A-M-282 N+1 envelope)",
           "size_mm": [
             1000,
             1000,
@@ -1877,8 +2569,13 @@
           ]
         },
         "design": {
-          "service": "RF preheat/sinter unit",
-          "connected_kW": 5.0
+          "service": "RF preheat/hold unit, N+1 at equal melt duty of IND_MELT",
+          "connected_kW": 5.0,
+          "backup_of": "IND_MELT",
+          "outage_d": 2.0,
+          "crucible_kg": 10.0,
+          "freq_kHz": "100-400",
+          "duty_note": "equal-duty backup of the 10 kg crucible class (A-M-282; A-M-232 rating held)"
         },
         "envelope": {
           "size_mm": [
@@ -1887,15 +2584,127 @@
             1500
           ],
           "style": "box_furnace",
-          "state": "standby",
-          "basis": "A-M-199 melt class; standby envelope (A-M-232)"
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-282)"
+        },
+        "duty_cycle": {
+          "avg_kW": 0.0,
+          "connected_kW": 5.0,
+          "basis": "X-MFG-37 logged batch schedule class; standby-zero per A-M-282"
         }
       },
       "continuous_kw": {
-        "value": 5.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+        "note": "X-MFG-37 trial basis (AQS-DUTY-072): preheat/sinter N+1 alternate: standby-zero on the design day (A-M-282); duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02."
+      }
+    },
+    {
+      "unit_id": "RES_HEAT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "furnace",
+      "tags": [
+        "resistive",
+        "alternate"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Resistive heat. Alternate / redundant path only. Not baseline.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 12.0,
+          "backup_of": "SHELL_BURNOUT / SINTER heating duty (resistance radiant)",
+          "outage_basis": "burnout-element outage during a shell campaign (A-M-282)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "resistance radiant reheating furnace, N+1 of SHELL_BURNOUT/SINTER heating",
+          "connected_kW": 12.0,
+          "backup_of": "SHELL_BURNOUT/SINTER",
+          "outage_d": 2.0,
+          "T_C": 900.0
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 diverse heat of SHELL_BURNOUT/SINTER (resistance radiant, A-M-282); connected rating in params.design."
+      }
+    },
+    {
+      "unit_id": "COMB_HEAT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "furnace",
+      "tags": [
+        "combustion",
+        "alternate"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Combustion heat. Alternate / redundant path only. Not baseline. Fuel from existing headers.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 30.0,
+          "backup_of": "IND_MELT (tertiary, fuel-fired C5-C10 class)",
+          "outage_basis": "long IND_MELT outage with both electric alternates unavailable (A-M-282); off-gas to MET_SCRUB when energized",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT",
+          "connected_kW": 0.05,
+          "thermal_kW": 30.0,
+          "backup_of": "IND_MELT",
+          "outage_d": 2.0,
+          "offgas": "to MET_SCRUB when energized (COMB_OFFGAS)"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-282); 0.05 kW controls/blower parasitic, fuel on the C5-C10 class when energized."
       }
     },
     {
@@ -1917,7 +2726,9 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "connected_kW": 15.0,
-          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)",
+          "backup_of": "IND_MELT (diverse: vacuum induction skull melt)",
+          "outage_basis": "IND_MELT relining/repair outage 2 d (crucible life 20-50 heats, AQS-SIZE-FOUNDRY sec. Crucibles; AGENTS.md redundancy rule)",
+          "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY)",
           "size_mm": [
             1000,
             1000,
@@ -1925,9 +2736,12 @@
           ]
         },
         "design": {
-          "service": "vacuum induction skull melt (ISM)",
+          "service": "vacuum induction skull melt (ISM), N+1 diverse of IND_MELT",
           "design_case_kg": 2.0,
-          "connected_kW": 15.0
+          "connected_kW": 15.0,
+          "backup_of": "IND_MELT",
+          "outage_d": 2.0,
+          "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-282)"
         },
         "envelope": {
           "size_mm": [
@@ -1936,15 +2750,917 @@
             1500
           ],
           "style": "box_furnace",
-          "state": "standby",
-          "basis": "A-M-199 melt class; standby envelope at the 2 kg ISM design case"
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-282): real machine, standby-zero design-day rate"
+        },
+        "duty_cycle": {
+          "avg_kW": 0.0,
+          "connected_kW": 15.0,
+          "basis": "X-MFG-37 logged batch schedule class; standby-zero per A-M-282"
         }
       },
       "continuous_kw": {
-        "value": 15.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+        "note": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02."
+      }
+    },
+    {
+      "unit_id": "VAC_CAST",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "caster",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Vacuum/inert cast tied to VAC_IND. See notes/FOUNDRY_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 7.5,
+          "backup_of": "CAST_LINE / CONT_CAST (vacuum tilt-pour)",
+          "outage_basis": "cast-line stoppage during the VAC_IND outage window (A-M-282)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "vacuum tilt-pour casting station, N+1 of CAST_LINE",
+          "connected_kW": 7.5,
+          "backup_of": "CAST_LINE",
+          "outage_d": 2.0,
+          "design_case_kg_d": 3.0
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 of CAST_LINE/CONT_CAST (vacuum tilt-pour, A-M-282); connected rating in params.design."
+      }
+    },
+    {
+      "unit_id": "EXTRUDE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "press",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Rod and profile extrusion. See notes/FOUNDRY_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 15.0,
+          "backup_of": "ROLL (profile press at the Al/Cu profile class)",
+          "outage_basis": "roll-stand outage on profile-class lots (A-M-282)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "horizontal profile press, N+1 former of ROLL",
+          "connected_kW": 15.0,
+          "backup_of": "ROLL",
+          "outage_d": 2.0,
+          "press_t": 50,
+          "container_mm": 60
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 former of ROLL (profile press, A-M-282); connected rating in params.design."
+      }
+    },
+    {
+      "unit_id": "DRAW",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "mill",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Primary wire and rod drawing in FOUNDRY. Output to STOCK_OUT. MFG WIRE_DRAW does final sizing only.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 3.0,
+          "backup_of": "ROLL (wire/rod bench at the 3 kg/d class)",
+          "outage_basis": "roll-stand outage on wire-class lots; wire sizing stays MFG WIRE_DRAW S57 (A-M-282)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "bench wire/rod draw bench, N+1 former of ROLL",
+          "connected_kW": 3.0,
+          "backup_of": "ROLL",
+          "outage_d": 2.0,
+          "bench_mm": 1200,
+          "dies": 6
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 former of ROLL (wire/rod bench, A-M-282); connected rating in params.design."
+      }
+    },
+    {
+      "unit_id": "FORGE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "press",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Open-die or small closed-die forging. See notes/FOUNDRY_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 11.0,
+          "backup_of": "ROLL (open-die press)",
+          "outage_basis": "roll-stand outage at the 10 kg/d bar class (A-M-282)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "open-die hydraulic press, N+1 former of ROLL",
+          "connected_kW": 11.0,
+          "backup_of": "ROLL",
+          "outage_d": 2.0,
+          "press_t": 25,
+          "ram_mm": 200
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 former of ROLL (open-die press, A-M-282); connected rating in params.design."
+      }
+    },
+    {
+      "unit_id": "SINTER",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "furnace",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "RF/induction sinter for powder stock (Ti, Mo, Cr). See notes/FOUNDRY_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 8.0,
+          "backup_of": "ROLL consolidation (press-and-sinter P/M route at the 0.5 kg/d powder class)",
+          "outage_basis": "roll-stand outage at the powder-class lots (A-M-282)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL",
+          "connected_kW": 8.0,
+          "backup_of": "ROLL",
+          "outage_d": 2.0,
+          "design_case_kg_d": 0.5,
+          "T_C": 1300.0
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 consolidation of ROLL (press-and-sinter P/M route, A-M-282); connected rating in params.design."
+      }
+    },
+    {
+      "unit_id": "FLUX_PREP",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "prep",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Dry and blend digester salts as flux. See notes/FOUNDRY_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "salt_kg_d": 0.0398,
+          "basis": "Kroll MgCl2-class drag-out (A-M-280); salt-flux cover for the Al-charged melt",
+          "size_mm": [
+            800,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "bench": "salt flux cover preparation bench",
+          "salt_kg_d": 0.0398,
+          "hopper_L": 20,
+          "mixer_kW": 0.1
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            600,
+            1200
+          ],
+          "style": "bench_prep",
+          "state": "live",
+          "basis": "prep-class study minimum; live on the Kroll drag-out (A-M-280)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 flux bench agitator/mixer at the 0.040 kg/d salt duty (study)."
+      }
+    },
+    {
+      "unit_id": "AL_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "molten_salt",
+        "metal"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Aluminum electrolytic pot. Chloride melt. Metal to foundry. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "al_kg_d": 10.0,
+          "line_kg_d": 8.0,
+          "export_kg_d": 2.0,
+          "alcl3_kg_d": 49.4192,
+          "cl2_kg_d": 39.4192,
+          "chemistry": "2 AlCl3 -> 2 Al + 3 Cl2, 700 C NaCl-KCl-AlCl3 bath (GREENWOOD stoichiometry)",
+          "I_A": 1460.77,
+          "V": 3.8,
+          "dc_kW": 5.5509,
+          "hold_kW": 0.1069,
+          "kW": 5.6578,
+          "basis": "D-DOCK anhydrous AlCl3 import; Faraday at CE 0.85 (A-M-282); A-M-284 feedstock ruling",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "molten AlCl3-(NaCl-KCl) electrolysis cell, 700 C",
+          "chemistry": "2 AlCl3 -> 2 Al + 3 Cl2",
+          "feed_kg_d": 49.4192,
+          "metal_kg_d": 10.0,
+          "cl2_kg_d": 39.4192,
+          "I_A": 1460.77,
+          "cell_V": 3.8,
+          "dc_kW": 5.5509,
+          "hold_kW": 0.1069,
+          "connected_kW": 7,
+          "bath_T_C": 700.0,
+          "anode_D_mm": 75,
+          "anode_imm_mm": 400,
+          "cathodes": 5,
+          "busbar_mm2": 975
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 5.6578,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 pot cell: Faraday 1461 A x 3.8 V at CE 0.85 = 5.55 kW DC + bath hold 0.11 kW (150 mm fibre, study; A-M-282)."
+      }
+    },
+    {
+      "unit_id": "MG_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "molten_salt",
+        "metal"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Magnesium electrolytic pot. Anhydrous MgCl2. Metal to foundry. Cl2 to CRU. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "mg_kg_d": 0.5078,
+          "mgcl2_return_kg_d": 1.9493,
+          "mgcl2_makeup_kg_d": 0.0398,
+          "cl2_kg_d": 1.4813,
+          "chemistry": "MgCl2 -> Mg + Cl2, 700 C (AQS-BAL-KROLL closure)",
+          "I_A": 54.89,
+          "V": 4.2,
+          "dc_kW": 0.2306,
+          "hold_kW": 0.1069,
+          "kW": 0.3375,
+          "basis": "Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284/280)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C",
+          "chemistry": "MgCl2 -> Mg + Cl2",
+          "feed_kg_d": 1.9891,
+          "metal_kg_d": 0.5078,
+          "cl2_kg_d": 1.4813,
+          "I_A": 54.89,
+          "cell_V": 4.2,
+          "dc_kW": 0.2306,
+          "hold_kW": 0.1069,
+          "connected_kW": 1,
+          "bath_T_C": 700.0,
+          "anode_D_mm": 50,
+          "anode_imm_mm": 300,
+          "cathodes": 4,
+          "busbar_mm2": 50
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3375,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 Kroll Mg recycle: 54.9 A x 4.2 V = 0.231 kW + hold 0.11 kW (A-M-282)."
+      }
+    },
+    {
+      "unit_id": "CA_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "molten_salt",
+        "metal"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Calcium electrolytic pot. Contact cathode. Metal to foundry. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "ca_kg_d": 0.055069,
+          "cacl2_kg_d": 0.152496,
+          "cl2_kg_d": 0.097428,
+          "chemistry": "CaCl2 -> Ca + Cl2, 700 C",
+          "I_A": 3.61,
+          "V": 4.2,
+          "dc_kW": 0.0152,
+          "hold_kW": 0.1069,
+          "kW": 0.1221,
+          "basis": "grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine import per A-M-284",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "molten CaCl2 electrolysis cell, 700 C",
+          "chemistry": "CaCl2 -> Ca + Cl2",
+          "feed_kg_d": 0.1525,
+          "metal_kg_d": 0.0551,
+          "cl2_kg_d": 0.0974,
+          "I_A": 3.61,
+          "cell_V": 4.2,
+          "dc_kW": 0.0152,
+          "hold_kW": 0.1069,
+          "connected_kW": 1,
+          "bath_T_C": 700.0,
+          "anode_D_mm": 50,
+          "anode_imm_mm": 250,
+          "cathodes": 3,
+          "busbar_mm2": 25
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.1221,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 grease-Ca pot: 3.61 A x 4.2 V = 0.015 kW + hold 0.11 kW (A-M-282)."
+      }
+    },
+    {
+      "unit_id": "WAX_PATTERN",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "prep",
+      "tags": [
+        "foundry",
+        "investment"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Wax or printed pattern for investment casting. Baseline. See notes/INVESTMENT_CASTING.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "wax_kg_d": 2.0,
+          "makeup_kg_d": 0.2,
+          "reclaim_kg_d": 1.8,
+          "basis": "1 kg wax per kg castings, 90 % reclaim (A-M-281)",
+          "size_mm": [
+            800,
+            600,
+            1200
+          ]
+        },
+        "design": {
+          "bench": "wax pattern injection bench",
+          "wax_kg_d": 2.0,
+          "makeup_kg_d": 0.2,
+          "reclaim_kg_d": 1.8,
+          "injector_kW": 0.5,
+          "pot_L": 10
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            600,
+            1200
+          ],
+          "style": "bench_prep",
+          "state": "live",
+          "basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-281)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 pattern injector + wax conditioning pot at 2.0 kg/d patterns (A-M-281 study)."
+      }
+    },
+    {
+      "unit_id": "SHELL_BUILD",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "coater",
+      "tags": [
+        "foundry",
+        "investment"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Ceramic slurry and stucco shell build. Baseline. See notes/INVESTMENT_CASTING.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "shell_kg_d": 8.0,
+          "silica_makeup_kg_d": 1.0,
+          "reclaim_kg_d": 7.0,
+          "basis": "6-dip shell 4 kg/kg castings, 87.5 % reclaim (A-M-281)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "dip-coat + stucco rainfall shell-building booth",
+          "shell_kg_d": 8.0,
+          "silica_makeup_kg_d": 1.0,
+          "reclaim_kg_d": 7.0,
+          "dips": 6,
+          "slurry_L": 40
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class at the 4 kg/kg shell duty (A-M-281); 1 d slurry/flour staging at 1600 kg/m3"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 slurry mixer + stucco rainfall at 8.0 kg/d shell (A-M-281 study)."
+      }
+    },
+    {
+      "unit_id": "SHELL_BURNOUT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "furnace",
+      "tags": [
+        "foundry",
+        "investment"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Dewax and fire ceramic shell. Baseline. See notes/INVESTMENT_CASTING.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "shell_kg_d": 8.0,
+          "wax_reclaim_kg_d": 1.8,
+          "burned_wax_kg_d": 0.2,
+          "T_C": 900.0,
+          "basis": "flash dewax + fire at 900 C (A-M-281)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "flash-dewax + shell fire furnace, 900 C",
+          "shell_kg_d": 8.0,
+          "wax_reclaim_kg_d": 1.8,
+          "burned_wax_kg_d": 0.2,
+          "T_C": 900.0,
+          "kW": 0.25,
+          "condenser": "wax condensate to WAX_PATTERN"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class at the fired-shell duty (A-M-281)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 dewax/firebox at 900 C: shell sensible 8.0 kg/d offset by the 0.20 kg/d wax fire credit; 0.25 kW hold class (A-M-281 study)."
+      }
+    },
+    {
+      "unit_id": "INV_CAST",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "caster",
+      "tags": [
+        "foundry",
+        "investment"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Pour into ceramic shell. Fed from IND_MELT or VAC_IND. Baseline. See notes/INVESTMENT_CASTING.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "pour_kg_d": 2.0,
+          "shell_kg_d": 8.0,
+          "basis": "live melt output 2 kg/d through the fired shell (A-M-281)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "investment casting tilt-pour station",
+          "pour_kg_d": 2.0,
+          "shell_kg_d": 8.0,
+          "molds_per_campaign": 8
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; live on IND_TO_INV (A-M-281)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 tilt-pour station at 2.0 kg/d castings (study)."
+      }
+    },
+    {
+      "unit_id": "SHELL_BREAK",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "separator",
+      "tags": [
+        "foundry",
+        "investment"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Remove spent ceramic shell from casting. Shell to solids line. See notes/INVESTMENT_CASTING.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "castings_kg_d": 2.0,
+          "spent_shell_kg_d": 8.0,
+          "reclaim_kg_d": 7.0,
+          "export_kg_d": 1.0,
+          "basis": "A-M-281 knock-out split",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "vibratory shell knock-out station with reclaim sieve",
+          "spent_shell_kg_d": 8.0,
+          "reclaim_kg_d": 7.0,
+          "export_kg_d": 1.0,
+          "table_kW": 0.4
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class at the spent-shell duty (A-M-281)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 vibratory knock-out table at 8.0 kg/d spent shell (study)."
+      }
+    },
+    {
+      "unit_id": "POWDER_RESIN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "former",
+      "tags": [
+        "polymer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Powder/resin form factor for coatings and linings.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: fluoropolymer feed blocked (Q-013)",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "PTFE powder line: pin mill + cyclone classifier + collector",
+          "ptfe_kg_d": 0.09,
+          "mill_kWh_kg": 0.05,
+          "duty_kW": 0.0152,
+          "product": "fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY)",
+          "material": "316L mill, PE-lined collector"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-283)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0152,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): pin-mill class 0.05 kWh/kg + classifier fan (A-M-283)."
+      }
+    },
+    {
+      "unit_id": "FILM_CAST",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "former",
+      "tags": [
+        "polymer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Film/sheet form factor.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "status_note": "installed standby: no feed edge at Rev AC",
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "PVDF cast film/sheet line",
+          "extruder_D_mm": 25,
+          "die_mm": 200,
+          "chill_roll_D_mm": 150,
+          "pvdf_kg_d": 0.14,
+          "melt_C": 220,
+          "duty_kW": 0.1087,
+          "product": "gasket/lining sheet (AQS-RATE-FP-MET PVDF linings and gaskets)",
+          "material": "316L barrel, Hastelloy die"
+        },
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "forming-class minimum (A-M-199); 25 mm extruder at the 0.14 kg/d sheet duty (A-M-283)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.1087,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): extruder barrel loss at 220 C + drive + melt sensible (A-M-283)."
       }
     },
     {
@@ -2152,33 +3868,33 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 27.847,
-          "vent_kW": 39.468,
-          "envelope_kW": 23.26,
-          "total_kW": 90.574,
-          "vent_L_s": 9493.2,
-          "Qh_kW": 55.011,
-          "Qc_kW": 110.096,
-          "slab_kW": 3.147,
-          "gains_kW": 39.713,
+          "light_kW": 20.75,
+          "vent_kW": 29.41,
+          "envelope_kW": 18.123,
+          "total_kW": 68.284,
+          "vent_L_s": 7074.0,
+          "Qh_kW": 42.344,
+          "Qc_kW": 83.268,
+          "slab_kW": 2.727,
+          "gains_kW": 29.593,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 488.701,
-          "peak_c_kW": 434.978
+          "peak_h_kW": 373.27,
+          "peak_c_kW": 329.652
         },
-        "footprint_m2": 31644.0,
+        "footprint_m2": 23580.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 90.574 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 68.284 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "continuous_kw": {
-        "value": 90.5744,
+        "value": 68.2838,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 31644 m2; lighting 27.85 kW (IECC 2021 C405, 10 % lit), ventilation 39.47 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.26 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.0 kW and cooling 110.1 kW thermal average after internal gains 39.7 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 23580 m2; lighting 20.75 kW (IECC 2021 C405, 10 % lit), ventilation 29.41 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 18.12 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 42.3 kW and cooling 83.3 kW thermal average after internal gains 29.6 kW and slab edge 2.73 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -2511,7 +4227,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 395.872,
+        "value": 336.7016,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -2850,10 +4566,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.1,
+        "value": 0.0245,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "Feed equal to NUTRIENT_DOSE continuous_kw. | X-ELS-02 load-basis (A-M-286)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "NUT",
@@ -2876,10 +4592,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 2.0,
+        "value": 0.4417,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "Feed equal to WAFER_FAB continuous_kw. | X-ELS-02 load-basis (A-M-286)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
@@ -2902,10 +4618,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.0,
+        "value": 0.2066,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "Feed equal to WET_BENCH continuous_kw. | X-ELS-02 load-basis (A-M-286)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
@@ -2922,16 +4638,16 @@
       "layers": [
         "elec"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "header": "tray",
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.1,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "Edge retired with LITHO_STUB; the real tools carry their own SF feeds (A-M-284)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
@@ -2954,10 +4670,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.3,
+        "value": 0.0792,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "Feed equal to ELECTRODE_COAT continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "MFG",
@@ -2980,10 +4696,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.5,
+        "value": 0.3691,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
+        "note": "Feed equal to BLOW_MOLD continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "MFG",
@@ -3320,10 +5036,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 25.0,
+        "value": 0.8854,
         "unit": "kW",
         "status": "study",
-        "note": "equals node continuous_kw (25.0 kW, IND_MELT); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18)"
+        "note": "Feed equal to IND_MELT continuous_kw. | X-ELS-02."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FOUNDRY",
@@ -3346,10 +5062,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 15.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "equals node continuous_kw (15.0 kW, VAC_IND); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18)"
+        "note": "Feed equal to VAC_IND continuous_kw (standby-zero). | X-ELS-02."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FOUNDRY",
@@ -3372,10 +5088,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 5.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "equals node continuous_kw (5.0 kW, RF_HEAT); feed edge for the unwired load block (first-principles audit 2026-10-17 correction 5 (electrical), owner ruling 2026-10-18)"
+        "note": "Feed equal to RF_HEAT continuous_kw (standby-zero). | X-ELS-02."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FOUNDRY",
@@ -3398,10 +5114,10 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.0,
+        "value": 0.3083,
         "unit": "kW",
         "status": "study",
-        "note": "HF_GEN standby at 0 duty (fluoropolymer train F-blocked, Q-013; feed 0 on F_RECOVER_TO_HF_GEN). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Feed equal to HF_GEN continuous_kw. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "POLYMERS",
@@ -3713,7 +5429,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 90.5744,
+        "value": 68.2838,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -3751,6 +5467,734 @@
       "gap_flags": [],
       "notes": null,
       "params": {}
+    },
+    {
+      "stream_id": "SF-VDF_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "VDF_SYN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5128,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to VDF_SYN continuous_kw. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "VDF_SYN feed (A-M-283)"
+    },
+    {
+      "stream_id": "SF-TFE_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "TFE_SYN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3989,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to TFE_SYN continuous_kw. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "TFE_SYN feed (A-M-283)"
+    },
+    {
+      "stream_id": "SF-POLY_F",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "POLY_F",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0449,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to POLY_F continuous_kw. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "POLY_F feed (A-M-283)"
+    },
+    {
+      "stream_id": "SF-FILM_CAST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FILM_CAST",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1087,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to FILM_CAST continuous_kw. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "FILM_CAST feed (A-M-283)"
+    },
+    {
+      "stream_id": "SF-POWDER_RESIN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "POWDER_RESIN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0152,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to POWDER_RESIN continuous_kw. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "POWDER_RESIN feed (A-M-283)"
+    },
+    {
+      "stream_id": "SF-LITHO_COAT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LITHO_COAT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0254,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to LITHO_COAT continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "LITHO_COAT feed (stub activation)"
+    },
+    {
+      "stream_id": "SF-LITHO_ALIGN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LITHO_ALIGN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.004,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to LITHO_ALIGN continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "LITHO_ALIGN feed (stub activation)"
+    },
+    {
+      "stream_id": "SF-LITHO_DEV",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "LITHO_DEV",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.008,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to LITHO_DEV continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "LITHO_DEV feed (stub activation)"
+    },
+    {
+      "stream_id": "SF-REMIN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "REMIN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.046,
+        "unit": "kW",
+        "status": "study",
+        "note": "Feed equal to REMIN continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "REMIN feed (stub activation)"
+    },
+    {
+      "stream_id": "SF-AL_POT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AL_POT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 5.6578,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals AL_POT continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-MG_POT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MG_POT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3375,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals MG_POT continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-CA_POT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CA_POT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1221,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals CA_POT continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-TI_CELL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "TI_CELL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals TI_CELL continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-MO_CELL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MO_CELL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1141,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals MO_CELL continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-CR_CELL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "CR_CELL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.16,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals CR_CELL continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-FLUX_PREP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FLUX_PREP",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.1,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals FLUX_PREP continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-WAX_PATTERN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "WAX_PATTERN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals WAX_PATTERN continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-SHELL_BUILD",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SHELL_BUILD",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals SHELL_BUILD continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-SHELL_BURNOUT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SHELL_BURNOUT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.25,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals SHELL_BURNOUT continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-INV_CAST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "INV_CAST",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals INV_CAST continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-SHELL_BREAK",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SHELL_BREAK",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.4,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals SHELL_BREAK continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-VAC_CAST",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "VAC_CAST",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals VAC_CAST continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-RES_HEAT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "RES_HEAT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals RES_HEAT continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-SINTER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SINTER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals SINTER continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-FORGE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FORGE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals FORGE continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-EXTRUDE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "EXTRUDE",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals EXTRUDE continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-DRAW",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "DRAW",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals DRAW continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
+    },
+    {
+      "stream_id": "SF-COMB_HEAT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "COMB_HEAT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "Equals COMB_HEAT continuous_kw (AQS-DUTY-072)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "Foundry bus feed (AQS-DUTY-072)."
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

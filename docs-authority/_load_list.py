@@ -17,20 +17,13 @@ DC_BEHIND={r['cell'] for r in ew}
 TOK=('AQS-DUTY-','AQS-DSN-','AQS-NOTE-PV-REBASE','X-PAR-','X-MFG-','X-SAN-','roof_close','Faraday','DLI',
      'kWh/m3','kWh/kg','/ 24 h','house_scrubbers','NFPA 110','AQS-ELEC-008','AQS-ELEC-004','AQS-PWR-001','latent','COP')
 # Explicit residuals: honest study shares with the reason no calculation exists yet. X-ELS-02 stays open on these.
+# Rev C (A-M-286): every 2026-10-19 residual except the owner requirement locks now carries a calculated/cited
+# basis on its graph stamp (write_graph x_els_residuals: foundry duty cycles at the X-MFG-37 trial basis,
+# HABITATION equipment list, WAFER_FAB/WET_BENCH tool lists, AFTERBURNER blower, NUTRIENT_DOSE pumps) or moved
+# onto real units (litho tools A-M-284; REMIN/BLOW_MOLD/ELECTRODE_COAT designs A-M-285). Owner locks stay.
 PENDING={
- 'HABITATION':'habitat equipment list not engineered (HAB unit task 02; drivers carry only the 3 kW backup critical share)',
- 'AFTERBURNER':'ignition/blower parasitic has no sizing module (OIL unit task 02; flue 7.097 kg/d is too small to fix a fan class)',
- 'WAFER_FAB':'wafer-line tool list not engineered (X-MFG-38 sizes the SOLAR_PV_CELL line only)',
- 'WET_BENCH':'fab wet-bench share; closes with the wafer-line tool list (FAB unit task 02)',
- 'NUTRIENT_DOSE':'dose pump kW not sized (NUT unit task 02; the tank itself is sized in _storage_sizing)',
- 'LITHO_STUB':'lithography tool not selected (study stub class)',
- 'ELECTRODE_COAT':'electrode coating tool not selected (study stub class)',
- 'BLOW_MOLD':'blow-molding tool not selected (study stub class)',
  'FUEL_CELL':'owner requirement lock AQS-REQ-KW-001 REQ-FC-CONT; not a vendor nameplate (ELEC unit task 02)',
  'MEOH_FC':'owner requirement lock AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)',
- 'IND_MELT':'A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; calculated average 0.298 kW (sizing/FOUNDRY_LINE.md) held for the logged batch schedule (X-MFG-37 trial)',
- 'RF_HEAT':'A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; duty-cycle wiring at the X-MFG-37 trial',
- 'VAC_IND':'A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; Ti Kroll train (AQS-ASSAY-TI-MO), duty-cycle wiring at the X-MFG-37 trial',
 }
 NULL_OK={'HYDRO_SET':'charge/discharge kW model incomplete - honest incomplete (WP-A4, AQS-ESS-001)',
          'MEOH_TANK':'inventory store; no continuous kW (fuel to MEOH_FC)'}

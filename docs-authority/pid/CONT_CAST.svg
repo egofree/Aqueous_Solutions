@@ -23,7 +23,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">IND_MELT</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IND_TO_CONT</text>
-<text x="24" y="253" font-size="10" text-anchor="start">11.0 kg/d · DN15 P1</text>
+<text x="24" y="253" font-size="10" text-anchor="start">31.7 kg/d · DN15 P1</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">ROLL</text>
@@ -33,7 +33,7 @@
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">STOCK_OUT</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">CONT_TO_STOCK</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">1.0 kg/d · solids transfer</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">21.7 kg/d · solids transfer</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 1 in, 2 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; no nozzle schedule for CONT_CAST yet (unit task 04).</text>
@@ -41,7 +41,7 @@
 <g id="aqs-title-block"><rect x="1116" y="477" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="494" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CONT_CAST</text>
 <text x="1124" y="511" font-size="9">P&amp;ID CONT_CAST (caster, FOUNDRY sector)</text>
-<text x="1124" y="528" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b2d5ce00   Issued 2026-10-19</text>
+<text x="1124" y="528" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 2e2ba701   Issued 2026-10-19</text>
 <text x="1124" y="545" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="562" font-size="9">Graph SHA-256 a1b2242b721d1ffb   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="562" font-size="9">Graph SHA-256 1c64ea4c788c4803   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

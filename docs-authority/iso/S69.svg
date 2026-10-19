@@ -8,8 +8,8 @@
 <circle cx="87.7" cy="580.0" r="5" fill="none" stroke="black"/><text x="95.7" y="594.0">ZNBR2_BR2_REGEN</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S69</text>
-<text x="20" y="614">DN40  class P3  PVDF SDR 21 ISO 10931</text>
+<text x="20" y="614">DN32  class P3  PVDF SDR 21 ISO 10931</text>
 <text x="20" y="628">ZNBR2 -> ZNBR2_BR2_REGEN</text>
-<text x="20" y="642">pipe 7.36 m in 4 pieces; cut 2376 2204 352 2426 mm</text>
+<text x="20" y="642">pipe 7.38 m in 4 pieces; cut 2379 2210 358 2429 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

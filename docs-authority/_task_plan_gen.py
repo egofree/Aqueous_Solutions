@@ -270,6 +270,10 @@ _MFD = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'inventory', 'mo
 # 68 DONE_X tasks rendered 'Evidence: `None`'. Each was audited against its Done-when; 62 point at the artifact that
 # proves them, 6 are reopened (box unchecked) because no repo file meets the Done-when. Full table with justifications:
 # docs-authority/notes/2026-10-19-evidence-pass.md. Applied only where the tuple carries no evidence of its own.
+# Same-day closure pass: a fourth value kind, 'PARTIAL:<path>' or 'PARTIAL:<path>|<status note>', renders the box OPEN
+# with 'Start from `<path>` (partial)' and the status note - used where real partial work is issued (bench test
+# procedures AQS-TST-004/005, the HAZOP action register AQS-SAF-008, the Rev B EOL classing) but the Done-when still
+# waits on a hardware run or tracked open actions. REOPEN stays for tasks with nothing citable.
 EVIDENCE_PASS={
  'X-GOV-05':'docs-authority/DOC_REGISTER.md',
  'X-GOV-06':'docs-authority/DERIVED_REVISIONS.md',
@@ -278,8 +282,8 @@ EVIDENCE_PASS={
  'X-FIR-01':'REOPEN',
  'X-MFG-31':'REOPEN',
  'X-MFG-33':'docs-authority/sizing/COLD_BOX.md',
- 'X-MFG-34':'REOPEN',
- 'X-MFG-36':'REOPEN',
+ 'X-MFG-34':'PARTIAL:docs-authority/BENCH_TEST_UPW_POLISH.md|bench test procedure issued as AQS-TST-004; the run is hardware-gated on the first module (A-M-176 open)',
+ 'X-MFG-36':'PARTIAL:docs-authority/BENCH_TEST_H2_COMPRESSOR.md|first-article procedure issued as AQS-TST-005; the run is hardware-gated on the first article (A-M-169 open)',
  'X-MFG-38':'docs-authority/sizing/PV_CELL_LINE.md',
  'X-MFG-32':'docs-authority/JELLYBEAN.md',
  'X-GOV-20':'flow_graph/param/test_no_vendor_basis.py',
@@ -305,7 +309,7 @@ EVIDENCE_PASS={
  'X-BLD-05':'docs-authority/ENCLOSURE_EGRESS.md',
  'X-BLD-06':'docs-authority/LIFTING.md',
  'X-BLD-07':'docs-authority/SITE_ACCESS_CHECK.md',
- 'X-SAF-01':'REOPEN',
+ 'X-SAF-01':'PARTIAL:docs-authority/HAZOP.md|worksheets regenerated at graph Rev AC: 190 actions - 89 closed at issue (duty sheet section 6 relief statements), 67 closed in the SIF pass (AQS-CTL-003); 34 tracked open in AQS-SAF-008 (HAZOP_ACTION_REGISTER.md) on 17 units pending duty sheets or instrument loops',
  'X-SAF-02':'docs-authority/HAZARD_SEPARATION_LAYOUT.md',
  'X-SAF-04':'docs-authority/RELIEF_REGISTER.md',
  'X-SAF-05':'docs-authority/FIRE_PROTECTION.md',
@@ -338,16 +342,15 @@ EVIDENCE_PASS={
  'X-QA-01':'docs-authority/ITP.md',
  'X-QA-02':'docs-authority/DESIGN_CHECK.md',
  'X-END-01':'docs-authority/DECOMMISSIONING.md',
- 'X-END-02':'REOPEN',
+ 'X-END-02':'PARTIAL:docs-authority/EOL_RETURN.md|Rev B classing: 931 of 1020 lines classed; 89 unassigned, each held with a named reason (88 pending unit task 09 duty sheets, 1 roll-up pointer); 199 held total (fluoropolymer, Ti, NdFeB, Pt-Rh holds unchanged)',
 }
 REOPEN_WHY={
- 'X-SAF-01':'99 of 147 actions open in docs-authority/hazop_actions.csv (48 closed by AQS-CTL-003 SIFs, relief cases sized in AQS-SAF-004, 5 temperature-indication actions wait on detail P&IDs)',
  'X-MFG-31':'HF_GEN, VDF_SYN, TFE_SYN, POLY_F, POLY_OLEFIN and POLY_COND have no mfg model or route yet (feed-blocked, AQS-DUTY-072/073); GLASS_DIGEST, OIL_PYRO, LEACH_CSTR_1, MEOH_* and BLACK_DIGEST do (AQS-DUTY-062/050, models/mfg)',
- 'X-MFG-34':'in-house RO/EDI design issued as AQS-DUTY-070; the module bench test (A-M-176) has not run',
- 'X-MFG-36':'compressor design issued as AQS-DUTY-067 Rev B; the first-article bench run (A-M-169) has not run',
  'X-FIR-01':'sprinkler and fire-water design issued as AQS-SAF-005, but the fire water tank and fire pump are not drivers in flow_graph/param/drivers.json',
- 'X-END-02':'907 of 1020 BOM lines classed; 113 unassigned and 192 held with reasons (AQS-END-002 Held lines) - not every material is assigned a feed class',
 }
+# X-SAF-01, X-MFG-34, X-MFG-36 and X-END-02 moved from REOPEN to PARTIAL in the 2026-10-19 closure pass: each now has
+# citable issued work (HAZOP regeneration + AQS-SAF-008 register; bench test procedures AQS-TST-004/005; AQS-END-002
+# Rev B classing) with the remaining gap named in the status note instead of claimed absent.
 DONE_X={"X-RSZ-07","X-BLD-05","X-BLD-07","X-THM-02","X-ELS-09","X-SAF-02","X-BLD-03","X-BLD-01","X-PRO-04","X-QA-02","X-END-01","X-OPS-01","X-COM-03","X-COM-02","X-COM-01","X-SAF-06","X-SAF-01","X-CTL-03","X-THM-03","X-CTL-02","X-CTL-01","X-BLD-06","X-RED-01","X-RED-03","X-RED-04","X-RED-05","X-RED-06","X-RED-07","X-RED-08","X-RED-09","X-GOV-20","X-MFG-32","X-STD-01","X-PAR-10","X-RED-02","X-FIR-01","X-COD-01","X-END-02","X-QA-01","X-OPS-02","X-SAF-05","X-OPS-03","X-BLD-02","X-PIP-05","X-PRO-01","X-COD-03","X-SAF-04","X-MFG-38","X-MFG-37","X-MFG-34","X-MFG-33","X-MFG-36","X-PAR-15","X-MFG-39","X-MFG-40","X-ELS-06","X-BAS-04","X-DWG-03","X-DWG-02","X-DWG-01","X-THM-01","X-THM-04","X-PAR-03","X-MFG-31","X-PAR-14","X-PAR-13","X-SAF-11",'X-THM-03','X-PAR-04','X-PAR-01','X-RED-03','X-RED-07','X-RED-09','X-RED-05','X-RED-08','X-RED-06','X-RED-04','X-RED-01','X-GOV-06','X-GOV-05','X-PAR-11','X-PAR-12','X-INV-02C','X-PAR-02','X-INV-02D','X-ELS-02A','X-PIP-04','X-INV-02','X-INV-04','X-INV-05','X-INV-03','X-PIP-03','X-GOV-20','X-INV-01','X-SAN-01','X-MFG-32','X-STD-01','X-ELS-11','X-PAR-08','X-PAR-10','X-PAR-09','X-MFG-30','X-MAT-20','X-PAR-07','X-BLD-04','X-PAR-05','X-PAR-06','X-MAT-07','X-MAT-19','X-RSZ-06','X-RSZ-04','X-RSZ-03','X-RSZ-02','X-RSZ-01','X-PIP-02','X-RSZ-05','X-BLD-09','X-GOV-08','X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
 if os.path.isdir(_MFD): DONE_X |= {f'X-INV-02-{f[:-3]}' for f in os.listdir(_MFD) if f.endswith('.md')}
 out=[];cnt=[]
@@ -377,6 +380,10 @@ for code,title,items in X:
             _ov=EVIDENCE_PASS.get(tid)
             if _ov=='REOPEN':
                 d=False; ro='reopened 2026-10-19: no cited evidence ('+REOPEN_WHY.get(tid,'no artifact matches the Done-when')+')'
+            elif isinstance(_ov,str) and _ov.startswith('PARTIAL:'):
+                _p=_ov[len('PARTIAL:'):]; _note=''
+                if '|' in _p: _p,_note=_p.split('|',1)
+                d=False; ev=_p; ro=_note
             elif _ov:
                 ev=_ov
         if ev: need(ev)

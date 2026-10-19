@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+1. Basis. Mass in 0.9875 kg/d. Mass out 0.9875 kg/d. Electrical duty 0.0254 kW. In: IA-LITHO-IN 0.9875 kg/d (spent resist and solvent). Out: IA-LITHO-CARRY 0.9875 kg/d (resist/solvent carry (coat catch bowl + developer) to the develop bench).
 
 2. Size.
 - Envelope 600×500×800 mm, 0.2400 m³. The box is the machine. It is not a liquid holdup.

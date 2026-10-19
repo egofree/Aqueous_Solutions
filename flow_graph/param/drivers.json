@@ -2559,8 +2559,8 @@
     "verification_test": "Mix design and cylinder tests"
   },
   "foundry_stock_demand_kg_d": {
-    "value": 14.0,
-    "units": "kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1)",
+    "value": 25.9,
+    "units": "kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2)",
     "register": "A-M-261",
     "needs_verification": true,
     "verification_test": "shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table"
@@ -4395,5 +4395,345 @@
     "value": 1.0,
     "units": "MPa gauge design pressure (plant-air receiver, 10 bar service)",
     "register": "A-M-270"
+  },
+  "foundry_al_line_kg_d": {
+    "value": 8.0,
+    "units": "kg/d Al stock (frames, housings)",
+    "register": "A-M-261 (AQS-SIZE-FOUNDRY consumable-replacement table line)"
+  },
+  "foundry_ss_line_kg_d": {
+    "value": 1.5,
+    "units": "kg/d stainless stock (Cr 0.20 + Mo 0.05 additions in an Fe base)",
+    "register": "A-M-261 (AQS-SIZE-FOUNDRY line)"
+  },
+  "foundry_ti_line_kg_d": {
+    "value": 0.4,
+    "units": "kg/d Ti stock (anode mesh, shells)",
+    "register": "A-M-261 (AQS-RATE-FP-MET line)"
+  },
+  "foundry_inv_line_kg_d": {
+    "value": 2.0,
+    "units": "kg/d investment castings (complex parts, all alloys)",
+    "register": "A-M-261 (AQS-SIZE-FOUNDRY line)"
+  },
+  "foundry_mo_add_kg_d": {
+    "value": 0.05,
+    "units": "kg/d Mo alloying addition (316-class stainless line)",
+    "register": "A-M-261 (AQS-RATE-FP-MET line)"
+  },
+  "foundry_cr_add_kg_d": {
+    "value": 0.2,
+    "units": "kg/d Cr alloying addition (stainless line)",
+    "register": "A-M-261 (AQS-RATE-FP-MET line)"
+  },
+  "foundry_pot_export_frac": {
+    "value": 0.25,
+    "units": "kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products",
+    "register": "A-M-284",
+    "needs_verification": true,
+    "verification_test": "metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals)"
+  },
+  "foundry_kroll_dragout_frac": {
+    "value": 0.02,
+    "units": "kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP",
+    "register": "A-M-280",
+    "needs_verification": true,
+    "verification_test": "retort condensate weigh per campaign: salt drag-out vs the 2 % study allowance"
+  },
+  "foundry_inv_shell_kg_per_kg": {
+    "value": 4.0,
+    "units": "kg green shell per kg casting (6-dip class; envelope 3-6)",
+    "register": "A-M-281",
+    "needs_verification": true,
+    "verification_test": "first shell campaign: built shell mass per kg castings across the 6-dip schedule"
+  },
+  "foundry_inv_shell_reclaim_frac": {
+    "value": 0.875,
+    "units": "kg spent shell reclaimed to stucco/flour per kg spent shell",
+    "register": "A-M-281",
+    "needs_verification": true,
+    "verification_test": "knock-out sieve yield: reclaimed stucco vs 0.5 kg/kg make-up balance (AQS-SIZE-FOUNDRY shell-waste line)"
+  },
+  "foundry_inv_wax_kg_per_kg": {
+    "value": 1.0,
+    "units": "kg wax pattern per kg casting (thin-wall cluster class)",
+    "register": "A-M-281",
+    "needs_verification": true,
+    "verification_test": "pattern weigh vs casting weigh on the first article cluster"
+  },
+  "foundry_inv_wax_reclaim_frac": {
+    "value": 0.9,
+    "units": "kg dewax condensate reclaimed per kg wax pattern",
+    "register": "A-M-281",
+    "needs_verification": true,
+    "verification_test": "dewax condensate weigh per campaign vs the 10 % burn/loss allowance"
+  },
+  "foundry_pot_voltage_V": {
+    "value": {
+      "al": 3.8,
+      "mg": 4.2,
+      "ca": 4.2,
+      "mo": 2.8,
+      "cr": 2.8
+    },
+    "units": "V cell terminal (decomposition + overpotential + bath ohmic)",
+    "register": "A-M-282",
+    "needs_verification": true,
+    "verification_test": "bench molten-chloride cell at the design current density: terminal voltage vs charge"
+  },
+  "foundry_pot_ce": {
+    "value": 0.85,
+    "units": "- current efficiency (Faraday) at the pot electrodes",
+    "ref": "USBM_CL_EW",
+    "needs_verification": true,
+    "verification_test": "bench molten-chloride cell: deposit mass vs charge",
+    "published": "USBM_CL_EW 0.85-0.90 chloride EW class at 200 A/m2"
+  },
+  "foundry_pot_j_A_cm2": {
+    "value": 0.5,
+    "units": "A/cm2 design anode current density (graphite, chloride melt)",
+    "register": "A-M-282",
+    "needs_verification": true,
+    "verification_test": "bench cell anode polarization at 0.3-0.8 A/cm2 (graphite consumption rate)"
+  },
+  "melt_al_cp_solid_kJ_kgK": {
+    "value": 1.05,
+    "units": "kJ/kg K mean Al 25-660 C",
+    "ref": "CRC_AL"
+  },
+  "melt_al_L_kJ_kg": {
+    "value": 397.3,
+    "units": "kJ/kg Al fusion (10.7 kJ/mol)",
+    "ref": "CRC_AL"
+  },
+  "melt_al_cp_liq_kJ_kgK": {
+    "value": 1.18,
+    "units": "kJ/kg K liquid Al",
+    "ref": "CRC_AL"
+  },
+  "melt_ti_cp_solid_kJ_kgK": {
+    "value": 0.68,
+    "units": "kJ/kg K mean Ti 25-1668 C",
+    "ref": "CRC_TI"
+  },
+  "melt_ti_L_kJ_kg": {
+    "value": 295.7,
+    "units": "kJ/kg Ti fusion (14.15 kJ/mol)",
+    "ref": "CRC_TI"
+  },
+  "melt_ti_cp_liq_kJ_kgK": {
+    "value": 0.7,
+    "units": "kJ/kg K liquid Ti",
+    "ref": "CRC_TI"
+  },
+  "fire_nfpa13_hazards": {
+    "value": {
+      "LH": [
+        4.1,
+        139,
+        380,
+        30
+      ],
+      "OH1": [
+        6.1,
+        139,
+        950,
+        60
+      ],
+      "OH2": [
+        8.1,
+        139,
+        950,
+        90
+      ],
+      "EH1": [
+        12.2,
+        232,
+        1900,
+        90
+      ],
+      "EH2": [
+        16.3,
+        232,
+        1900,
+        120
+      ]
+    },
+    "units": "per class: density mm/min, design area m2, hose allowance L/min, duration min",
+    "ref": "NFPA13_2022",
+    "note": "NFPA 13-2022 density/area method, Table 19.2.3.1.1 hazard classes with the Table 19.2.3.1.1 hose allowance and 19.2.3.1.2-duration; moved from flow_graph/param/fire.py module constants by the X-FIR-01 reopen (single governed source, drivers.json)."
+  },
+  "fire_level_hazard": {
+    "value": {
+      "L-1": "OH2",
+      "L0": "EH1",
+      "L1": "OH1"
+    },
+    "units": "NFPA 13 hazard class per level",
+    "ref": "NFPA13_2022",
+    "note": "Occupancy ruling per level (X-SAF-05, A-M-188): L-1 wet process/EW/cold box OH2; L0 shops/pyrolysis/oils/genset/flow battery EH1; L1 farm and digesters OH1 (HAB west half LH). Reservoir and roof levels are unoccupied water/PV (no sprinklered hazard)."
+  },
+  "fire_sprinkler_margin": {
+    "value": 1.1,
+    "units": "fraction",
+    "owner": "X-SAF-05 design margin on the sprinkler hydraulic demand (A-M-188)",
+    "note": "Hydraulic margin over the density x area demand before the hose allowance."
+  },
+  "POLYMERS.fluoropolymer-train.fluorspar_CaF2_wt": {
+    "value": 0.97,
+    "units": "mass fraction",
+    "ref": "ULLMANN_HF"
+  },
+  "POLYMERS.fluoropolymer-train.hf_kiln.CaF2_conversion": {
+    "value": 0.95,
+    "units": "fraction of charged CaF2",
+    "ref": "ULLMANN_HF"
+  },
+  "POLYMERS.fluoropolymer-train.hf_kiln.H2SO4_stoich_frac": {
+    "value": 1.05,
+    "units": "fraction of stoichiometric",
+    "ref": "ULLMANN_HF"
+  },
+  "POLYMERS.fluoropolymer-train.hf_kiln.T_C": {
+    "value": 250.0,
+    "units": "C",
+    "ref": "ULLMANN_HF"
+  },
+  "POLYMERS.fluoropolymer-train.hf_kiln.residence_min": {
+    "value": 30.0,
+    "units": "min",
+    "ref": "ULLMANN_HF",
+    "needs_verification": true,
+    "verification_test": "kiln exit HF strength vs residence at the first-article campaign"
+  },
+  "POLYMERS.fluoropolymer-train.vdf_monomer_kg_d": {
+    "value": 0.15,
+    "units": "kg/d",
+    "owner": "AQS-RATE-FP-MET design rate (PVDF linings and gaskets replacement; A-M-280) (A-M-283)"
+  },
+  "POLYMERS.fluoropolymer-train.tfe_monomer_kg_d": {
+    "value": 0.1,
+    "units": "kg/d",
+    "owner": "AQS-RATE-FP-MET design rate (PTFE gaskets and small parts replacement; A-M-280) (A-M-283)"
+  },
+  "POLYMERS.fluoropolymer-train.pvdf_resin_kg_d": {
+    "value": 0.14,
+    "units": "kg/d",
+    "owner": "AQS-RATE-FP-MET design rate (~90-93 % of monomer at the reclaim loop; A-M-280) (A-M-283)"
+  },
+  "POLYMERS.fluoropolymer-train.ptfe_resin_kg_d": {
+    "value": 0.09,
+    "units": "kg/d",
+    "owner": "AQS-RATE-FP-MET design rate (~90 % of monomer at the reclaim loop; A-M-280) (A-M-283)"
+  },
+  "POLYMERS.fluoropolymer-train.H2SO4_wt": {
+    "value": 0.98,
+    "units": "mass fraction",
+    "ref": "ULLMANN_HF",
+    "note": "98 wt% chamber acid, the commercial form charged to fluorspar kilns."
+  },
+  "FAB.litho-train.starts_per_d": {
+    "value": 5,
+    "units": "wafer starts/d",
+    "owner": "AQS-AUD-001 labeled assumption 1-5/d, bounding value (A-M-282) (A-M-284)",
+    "needs_verification": true,
+    "verification_test": "lock the wafer starts rate at the fab product-basis task"
+  },
+  "FAB.litho-train.developer_mL_per_wafer": {
+    "value": 40.0,
+    "units": "mL/wafer",
+    "owner": "puddle-develop dispense class at 150 mm (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+  },
+  "FAB.litho-train.spin_peak_kW": {
+    "value": 0.75,
+    "units": "kW",
+    "owner": "spin-chuck motor class (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+  },
+  "FAB.litho-train.softbake_kW": {
+    "value": 0.3,
+    "units": "kW",
+    "owner": "hotplate rating at 100 C hold (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+  },
+  "FAB.litho-train.uv_wall_W": {
+    "value": 10.0,
+    "units": "W",
+    "owner": "365 nm LED array 1 W optical at ~10 % wall plug (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+  },
+  "FAB.wet-bench-train.bath_L": {
+    "value": 10.0,
+    "units": "L",
+    "owner": "RCA/etch bath tank size (AQS-EQP-FAB-001 WET_BENCH row; A-M-283) (A-M-286)"
+  },
+  "FAB.wet-bench-train.bath_C": {
+    "value": 80.0,
+    "units": "C",
+    "owner": "SC1/SC2 bath temperature (RCA class, AQS-EQP-FAB-001; A-M-283) (A-M-286)"
+  },
+  "FAB.wet-bench-train.heated_baths": {
+    "value": 2,
+    "units": "count",
+    "owner": "SC1 + SC2 heated; DHF at ambient (AQS-EQP-FAB-001; A-M-283) (A-M-286)"
+  },
+  "FAB.wafer-line-train.campaign_d": {
+    "value": 7.0,
+    "units": "d",
+    "owner": "one CZ pull + tool campaign per week at 5 starts/d (A-M-282) (A-M-286)",
+    "needs_verification": true,
+    "verification_test": "logged campaign schedule at the fab commissioning task"
+  },
+  "FAB.wafer-line-train.cz_charge_kg": {
+    "value": 0.5,
+    "units": "kg",
+    "owner": "small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-282) (A-M-286)"
+  },
+  "OIL.afterburner-train.flue_fan_dP_Pa": {
+    "value": 350.0,
+    "units": "Pa",
+    "owner": "duct + stack draft loss class of a 100 mm bore flue run (A-M-282) (A-M-286)"
+  },
+  "OIL.afterburner-train.flue_fan_eta": {
+    "value": 0.35,
+    "units": "fraction",
+    "owner": "small high-temperature centrifugal fan (A-M-282) (A-M-286)"
+  },
+  "NUT.nutrient-train.dose_head_m": {
+    "value": 15.0,
+    "units": "m",
+    "owner": "dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-283) (A-M-286)"
+  },
+  "NUT.nutrient-train.pump_eta": {
+    "value": 0.35,
+    "units": "fraction",
+    "owner": "small metering-diaphragm pump class (A-M-283) (A-M-286)"
+  },
+  "GEO.orc-train.eta_th": {
+    "value": 0.1,
+    "units": "fraction",
+    "owner": "binary ORC 0.08-0.12 study band mid (AQS-EQP-STUDY-001 sec.5; D-GEO_ORC)"
+  },
+  "GEO.orc-train.q_sink_kW": {
+    "value": 12.0,
+    "units": "kW thermal",
+    "owner": "dry-cooler rejection rating that bounds the ORC heat sink context (A-M-244; D-GEO_ORC)"
+  },
+  "POLYMERS.fluoropolymer-train.hf_kiln.dHrxn_kJ_mol": {
+    "value": 65.7,
+    "units": "kJ/mol CaF2",
+    "ref": "NIST_WEBBOOK",
+    "note": "Standard enthalpy of the kiln reaction CaF2(s) + H2SO4(l) -> CaSO4(s, anhydrite) + 2 HF(g) from heats of formation (dHf kJ/mol: CaSO4 -1434.1, HF(g) -271.1, CaF2 -1228.0, H2SO4(l) -814.0), endothermic (ULLMANN_HF kilns are indirectly fired)."
+  },
+  "POLYMERS.fluoropolymer-train.hf_kiln.feed_cp_kJ_kgK": {
+    "value": 1.1,
+    "units": "kJ/kg K",
+    "ref": "PERRY9",
+    "note": "Blended sensible heat of the spar + chamber-acid charge (Perry sec. 2 solids/acids class)."
+  },
+  "foundry_ca_add_frac": {
+    "value": 0.0015,
+    "units": "kg Ca deoxidizer/desulfurizer per kg melt charge",
+    "register": "A-M-284",
+    "needs_verification": true,
+    "verification_test": "first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge",
+    "published": "Ca treatment 0.10-0.20 % of charge class (steelmaking practice; the grease-thickener Ca(OH)2 draw of AQS-DUTY-GREASE rides the same line)"
   }
 }

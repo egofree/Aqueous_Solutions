@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="791" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="783" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit NUTRIENT_DOSE · dose · sector NUT · present</text>
-<text x="24" y="54" font-size="10.5">0.1 kW continuous</text>
+<text x="24" y="54" font-size="10.5">0.0245 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 5 in + 6 out · valves 18 placed / 10 unplaced · instruments 15 (1 SIF) · nozzles 10</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -39,7 +39,7 @@
 <circle cx="830" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="830" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="830" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="852" y="170" font-size="7">SIF-150 · SIL -</text>
+<text x="852" y="170" font-size="7">SIF-107 · SIL -</text>
 <text x="852" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="988" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="988" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -90,7 +90,7 @@
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
 <text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">SF-NUTRIENT_DOSE</text>
-<text x="24" y="437" font-size="10" text-anchor="start">0.1 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="437" font-size="10" text-anchor="start">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">VCD_TRAIN</text>
@@ -174,7 +174,7 @@
 <g id="aqs-title-block"><rect x="1116" y="673" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="690" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-NUTRIENT_DOSE</text>
 <text x="1124" y="707" font-size="9">P&amp;ID NUTRIENT_DOSE (dose, NUT sector)</text>
-<text x="1124" y="724" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 5dfc0c59   Issued 2026-10-19</text>
+<text x="1124" y="724" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a6d48699   Issued 2026-10-19</text>
 <text x="1124" y="741" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="758" font-size="9">Graph SHA-256 a1b2242b721d1ffb   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="758" font-size="9">Graph SHA-256 1c64ea4c788c4803   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit CRYO_AHU_COND_CONDENSABLE · None · sector CRYO · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 1 in + 1 out · valves 3 placed / 0 unplaced · instruments 3 (0 SIF) · nozzles 4</text>
+<text x="24" y="72" font-size="10.5">Edges 1 in + 1 out · valves 3 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 4</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -55,7 +55,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_AHU_COND_CONDENSABLE</text>
 <text x="1124" y="526" font-size="9">P&amp;ID CRYO_AHU_COND_CONDENSABLE (None, CRYO sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 3a9042bd   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 4509aea7   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 a1b2242b721d1ffb   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 1c64ea4c788c4803   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

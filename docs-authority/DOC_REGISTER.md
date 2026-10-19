@@ -266,6 +266,9 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | A | 2026-10-16 | Commissioning plan: pressure test, loop check, water run, chemical run per system (X-COM-01) | canonical |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up (X-PRO-01, partial) | canonical |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan per fabrication route (X-QA-01) | canonical |
-| AQS-END-002 | `docs-authority/EOL_RETURN.md` | A | 2026-10-16 | End-of-life material return by feed class (X-END-02) | canonical |
+| AQS-END-002 | `docs-authority/EOL_RETURN.md` | B | 2026-10-19 | End-of-life material return by feed class (X-END-02); Rev B: no silently unassigned line | canonical |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan: inspection and replacement intervals per unit (X-OPS-02) | canonical |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list (X-OPS-03) | canonical |
+| AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP open-action register with owner tasks in plan terms (X-SAF-01) | canonical |
+| AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | A | 2026-10-19 | UPW polish module bench test procedure (X-MFG-34, A-M-176; issued, run hardware-gated) | canonical |
+| AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | A | 2026-10-19 | H2 compressor first-article bench run procedure (X-MFG-36, A-M-169; issued, run hardware-gated) | canonical |

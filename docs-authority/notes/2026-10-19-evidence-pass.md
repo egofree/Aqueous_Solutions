@@ -94,3 +94,20 @@ at Rev AC (`flow_graph/plant_flow_graph.json`). Reopening a box does not delete 
 ## Effect on counts
 
 Done 574 -> 568 of 2871 total tasks (the 62 cited tasks were already counted done; the 6 reopens come off).
+
+## Addendum, 2026-10-19 closure pass (same day)
+
+Four of the six reopens moved from `REOPEN` to a new `PARTIAL:<path>|<status>` override in `EVIDENCE_PASS` once
+real partial work was issued against them (box stays open; the task plan renders `Start from <path> (partial)`
+plus the status note). None of the four is claimed done:
+
+| Task | New state | Issued artifact | Remaining gap |
+| --- | --- | --- | --- |
+| X-SAF-01 | PARTIAL `docs-authority/HAZOP.md` | HAZOP regenerated at graph Rev AC: 190 actions, 89 closed at issue by duty-sheet section 6 relief statements (X-SAF-03 C7), 67 by the SIF pass (AQS-CTL-003); action register AQS-SAF-008 (`HAZOP_ACTION_REGISTER.md`) | 34 tracked open actions on 17 units (16 Rev AC-program additions plus EVAP_ACID_VS, whose LT loop is not in the current index) |
+| X-MFG-34 | PARTIAL `docs-authority/BENCH_TEST_UPW_POLISH.md` | bench test procedure AQS-TST-004 | the run needs the first module (A-M-176 stays needs_verification) |
+| X-MFG-36 | PARTIAL `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | first-article procedure AQS-TST-005 | the run needs the first article (A-M-169 stays needs_verification) |
+| X-END-02 | PARTIAL `docs-authority/EOL_RETURN.md` | AQS-END-002 Rev B: 931 of 1020 lines classed; 89 unassigned each held with a named reason | 88 lines wait on unit task 09 duty sheets; fluoropolymer/Ti/NdFeB/Pt-Rh holds stand (Q-011) |
+
+X-MFG-31 and X-FIR-01 stay `REOPEN` (nothing new citable). The committed `hazop_actions.csv` (147 actions) turned out
+to predate the Rev AC graph; the regenerated study reports the true 190-action state, which is why the tracked count is
+34 and not the 11 the stale CSV implied. Detail: `notes/2026-10-19-closure-lane.md`.

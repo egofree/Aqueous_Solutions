@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "a1b2242b721d1ffb39c556686be369c9f623dcef5fe243c6049c6b0888eb8fe4",
+  "graph_sha256": "1c64ea4c788c48032769e68f82cb8fee520e60dfce90a2b88bec1ca35c6f71b5",
   "generator": "docs-authority/_iso_routes.py"
  },
  "rows": [
@@ -1551,7 +1551,7 @@
   },
   {
    "line": "S69",
-   "dn": 40,
+   "dn": 32,
    "class": "P3",
    "from": "ZNBR2",
    "to": "ZNBR2_BR2_REGEN",
@@ -2732,21 +2732,6 @@
     -300
    ],
    "length_m": 23.9,
-   "elbows": 3
-  },
-  {
-   "line": "IA-HF-SRC",
-   "dn": 50,
-   "class": "P3",
-   "from": "LEACH_CSTR_1",
-   "to": "WS_HF_ED",
-   "legs_mm": [
-    6150,
-    11000,
-    2700,
-    -300
-   ],
-   "length_m": 20.1,
    "elbows": 3
   },
   {
@@ -3981,8 +3966,8 @@
   }
  ],
  "summary": {
-  "routed": 265,
-  "missing_position": 39,
-  "total_m": 4616
+  "routed": 264,
+  "missing_position": 59,
+  "total_m": 4596
  }
 }

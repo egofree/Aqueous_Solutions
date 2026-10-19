@@ -197,11 +197,11 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     gen = tree.aggregate(tree.resolve_units("ELEC.generation-train"), graph)
     assert gen["count"] == 3
     assert gen["kw_count"] == 3
-    # PV 395.872 (X-ELS-02 load-basis promotion, A-M-275: node stamps aligned to their calculations -
+    # PV 336.7016 (placeholders-to-real fixed point 2026-10-19/20: foundry duty-cycled, fluoro live, loads promoted -
     # MFG_SHOP 12 -> 2.9 tool-list average, LEACH_CSTR_1 2 -> 0.75 agitator, GLASS_DIGEST 1.5 -> 0.09,
     # MEOH_SYNTH 0.5 -> 0.7388, GEO_HP 2 -> S44/COP 0.686 - took the demand 260.96 -> 240.99 kW, the
     # converged EXT_HALL 97.49 -> 90.57 kW and the bus with it; fixed point in 3 passes)
-    assert gen["kw_sum"] == pytest.approx(395.872 + 0.0082 + 4.0)
+    assert gen["kw_sum"] == pytest.approx(336.7016 + 4.0 + 0.0082)   # PV 336.7016 at the placeholders-to-real fixed point (foundry duty-cycle + fluoro train live)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

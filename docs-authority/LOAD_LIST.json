@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "a1b2242b721d1ffb39c556686be369c9f623dcef5fe243c6049c6b0888eb8fe4",
+  "graph_sha256": "1c64ea4c788c48032769e68f82cb8fee520e60dfce90a2b88bec1ca35c6f71b5",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 395.872,
-   "calc_kw": 395.872,
+   "kw": 336.702,
+   "calc_kw": 336.702,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 240.994,
-   "calc_kw": 240.994,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 179.624,
+   "calc_kw": 179.624,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.6 kW, charge 816.4 kW, 2515 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 90.574,
-   "calc_kw": 90.574,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 31644 m2; lighting 27.85 kW (IECC 2021 C405, 10 % lit), ventilation 39.47 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.26 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.0 kW and cooling 110.1 kW thermal average after internal gains 39.7 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 68.284,
+   "calc_kw": 68.284,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 23580 m2; lighting 20.75 kW (IECC 2021 C405, 10 % lit), ventilation 29.41 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 18.12 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 42.3 kW and cooling 83.3 kW thermal average after internal gains 29.6 kW and slab edge 2.73 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -66,6 +66,15 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "WET"
+  },
+  {
+   "unit": "AL_POT",
+   "role": "load",
+   "kw": 5.658,
+   "calc_kw": 5.658,
+   "basis": "AQS-DUTY-072 pot cell: Faraday 1461 A x 3.8 V at CE 0.85 = 5.55 kW DC + bath hold 0.11 kW (150 mm fibre, study; A-M-282).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
   },
   {
    "unit": "BMED_ACID",
@@ -176,6 +185,15 @@
    "sector": "DIGESTER"
   },
   {
+   "unit": "HABITATION",
+   "role": "load",
+   "kw": 1.157,
+   "calc_kw": 1.157,
+   "basis": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-286).",
+   "class": "calculated",
+   "sector": "HAB"
+  },
+  {
    "unit": "ACID_POLISH_SCRUB",
    "role": "\u2014",
    "kw": 1.112,
@@ -201,6 +219,15 @@
    "basis": "X-MFG-36 (A-M-169): 11.34 kg/d x 1.97 kWh/kg; peak 2.80 kW over the run hours.",
    "class": "calculated",
    "sector": "CRYO"
+  },
+  {
+   "unit": "IND_MELT",
+   "role": "load",
+   "kw": 0.885,
+   "calc_kw": 0.885,
+   "basis": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02.",
+   "class": "calculated",
+   "sector": "FOUNDRY"
   },
   {
    "unit": "LEACH_CSTR_1",
@@ -239,6 +266,33 @@
    "sector": "CRYO"
   },
   {
+   "unit": "VDF_SYN",
+   "role": "\u2014",
+   "kw": 0.513,
+   "calc_kw": 0.513,
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): chlorination 350 C + 142b cracking 650 C insulated losses (A-M-283).",
+   "class": "calculated",
+   "sector": "POLYMERS"
+  },
+  {
+   "unit": "TI_CELL",
+   "role": "\u2014",
+   "kw": 0.5,
+   "calc_kw": 0.5,
+   "basis": "AQS-DUTY-072 Kroll retort + chlorinator hold at 900/800 C under Ar (thermochemical reduction, no electrolysis; A-M-280 study hold).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "WAX_PATTERN",
+   "role": "\u2014",
+   "kw": 0.5,
+   "calc_kw": 0.5,
+   "basis": "AQS-DUTY-072 pattern injector + wax conditioning pot at 2.0 kg/d patterns (A-M-281 study).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
    "unit": "EW_6",
    "role": "load",
    "kw": 0,
@@ -275,6 +329,24 @@
    "sector": "WET"
   },
   {
+   "unit": "SHELL_BREAK",
+   "role": "\u2014",
+   "kw": 0.4,
+   "calc_kw": 0.4,
+   "basis": "AQS-DUTY-072 vibratory knock-out table at 8.0 kg/d spent shell (study).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "TFE_SYN",
+   "role": "\u2014",
+   "kw": 0.399,
+   "calc_kw": 0.399,
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): R-22 pyrolysis 750 C tube + quench circulation (A-M-283).",
+   "class": "calculated",
+   "sector": "POLYMERS"
+  },
+  {
    "unit": "SOLAR_PV_CELL",
    "role": "\u2014",
    "kw": 0.392,
@@ -282,6 +354,51 @@
    "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time).",
    "class": "calculated",
    "sector": "FAB"
+  },
+  {
+   "unit": "BLOW_MOLD",
+   "role": "\u2014",
+   "kw": 0.369,
+   "calc_kw": 0.369,
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): extruder 2.2 kW + clamp/air duty over a 3.0 h/d campaign at 8.41 kg/d wax feed (AQS-EQP-MFG-001 / AQS-REQ-KW-001 SI-MFG-01; A-M-285).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
+   "unit": "MG_POT",
+   "role": "load",
+   "kw": 0.338,
+   "calc_kw": 0.338,
+   "basis": "AQS-DUTY-072 Kroll Mg recycle: 54.9 A x 4.2 V = 0.231 kW + hold 0.11 kW (A-M-282).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "HF_GEN",
+   "role": "\u2014",
+   "kw": 0.308,
+   "calc_kw": 0.308,
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): rotary kiln at 250 C: insulated shell loss + endotherm 65.7 kJ/mol CaF2 + feed sensible (A-M-283).",
+   "class": "calculated",
+   "sector": "POLYMERS"
+  },
+  {
+   "unit": "SHELL_BUILD",
+   "role": "\u2014",
+   "kw": 0.3,
+   "calc_kw": 0.3,
+   "basis": "AQS-DUTY-072 slurry mixer + stucco rainfall at 8.0 kg/d shell (A-M-281 study).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "SHELL_BURNOUT",
+   "role": "\u2014",
+   "kw": 0.25,
+   "calc_kw": 0.25,
+   "basis": "AQS-DUTY-072 dewax/firebox at 900 C: shell sensible 8.0 kg/d offset by the 0.20 kg/d wax fire credit; 0.25 kW hold class (A-M-281 study).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
   },
   {
    "unit": "VCD_TRAIN",
@@ -293,6 +410,69 @@
    "sector": "WTR"
   },
   {
+   "unit": "WET_BENCH",
+   "role": "load",
+   "kw": 0.207,
+   "calc_kw": 0.207,
+   "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-286).",
+   "class": "calculated",
+   "sector": "FAB"
+  },
+  {
+   "unit": "CR_CELL",
+   "role": "\u2014",
+   "kw": 0.16,
+   "calc_kw": 0.16,
+   "basis": "AQS-DUTY-072 Cr(III) molten-salt cell: 18.95 A x 2.8 V = 0.053 kW + hold 0.11 kW (A-M-282).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "INV_CAST",
+   "role": "\u2014",
+   "kw": 0.15,
+   "calc_kw": 0.15,
+   "basis": "AQS-DUTY-072 tilt-pour station at 2.0 kg/d castings (study).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "AFTERBURNER",
+   "role": "load",
+   "kw": 0.133,
+   "calc_kw": 0.133,
+   "basis": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-286).",
+   "class": "calculated",
+   "sector": "OIL"
+  },
+  {
+   "unit": "CA_POT",
+   "role": "load",
+   "kw": 0.122,
+   "calc_kw": 0.122,
+   "basis": "AQS-DUTY-072 grease-Ca pot: 3.61 A x 4.2 V = 0.015 kW + hold 0.11 kW (A-M-282).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "MO_CELL",
+   "role": "\u2014",
+   "kw": 0.114,
+   "calc_kw": 0.114,
+   "basis": "AQS-DUTY-072 Mo(III) molten-salt cell: 2.57 A x 2.8 V = 0.007 kW + hold 0.11 kW (A-M-282).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "FILM_CAST",
+   "role": "\u2014",
+   "kw": 0.109,
+   "calc_kw": 0.109,
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): extruder barrel loss at 220 C + drive + melt sensible (A-M-283).",
+   "class": "calculated",
+   "sector": "POLYMERS"
+  },
+  {
    "unit": "BLACK_DIGEST",
    "role": "\u2014",
    "kw": 0.105,
@@ -302,6 +482,15 @@
    "sector": "WTR"
   },
   {
+   "unit": "FLUX_PREP",
+   "role": "\u2014",
+   "kw": 0.1,
+   "calc_kw": 0.1,
+   "basis": "AQS-DUTY-072 flux bench agitator/mixer at the 0.040 kg/d salt duty (study).",
+   "class": "calculated",
+   "sector": "FOUNDRY"
+  },
+  {
    "unit": "GLASS_DIGEST",
    "role": "load",
    "kw": 0.09,
@@ -309,6 +498,33 @@
    "basis": "X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to GLASS_DIGEST continuous_kw..",
    "class": "calculated",
    "sector": "GLASS"
+  },
+  {
+   "unit": "ELECTRODE_COAT",
+   "role": "\u2014",
+   "kw": 0.079,
+   "calc_kw": 0.079,
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): booth exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop (AQS-MFG-ELC-001 Rev B; A-M-285).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
+   "unit": "REMIN",
+   "role": "\u2014",
+   "kw": 0.046,
+   "calc_kw": 0.046,
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285).",
+   "class": "calculated",
+   "sector": "WTR"
+  },
+  {
+   "unit": "POLY_F",
+   "role": "\u2014",
+   "kw": 0.045,
+   "calc_kw": 0.045,
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): emulsion kettle at 60 C: jacket loss + agitator (A-M-283).",
+   "class": "calculated",
+   "sector": "POLYMERS"
   },
   {
    "unit": "NOX_SCRUB",
@@ -325,6 +541,15 @@
    "kw": 0.031,
    "calc_kw": 0.031,
    "basis": "X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum.",
+   "class": "calculated",
+   "sector": "FAB"
+  },
+  {
+   "unit": "LITHO_COAT",
+   "role": "\u2014",
+   "kw": 0.025,
+   "calc_kw": 0.025,
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -365,6 +590,15 @@
    "sector": "WTR"
   },
   {
+   "unit": "POWDER_RESIN",
+   "role": "\u2014",
+   "kw": 0.015,
+   "calc_kw": 0.015,
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): pin-mill class 0.05 kWh/kg + classifier fan (A-M-283).",
+   "class": "calculated",
+   "sector": "POLYMERS"
+  },
+  {
    "unit": "BACKUP_GEN",
    "role": "generation",
    "kw": 0.008,
@@ -374,39 +608,39 @@
    "sector": "ELEC"
   },
   {
-   "unit": "HF_GEN",
+   "unit": "LITHO_DEV",
    "role": "\u2014",
-   "kw": 0,
-   "calc_kw": 0.0,
-   "basis": "standby, 0 duty at the bounding case (AQS-DUTY-073 sec. 3). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073).",
+   "kw": 0.008,
+   "calc_kw": 0.008,
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284).",
    "class": "calculated",
-   "sector": "POLYMERS"
+   "sector": "FAB"
   },
   {
-   "unit": "IND_MELT",
+   "unit": "LITHO_ALIGN",
+   "role": "\u2014",
+   "kw": 0.004,
+   "calc_kw": 0.004,
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284).",
+   "class": "calculated",
+   "sector": "FAB"
+  },
+  {
+   "unit": "RF_HEAT",
    "role": "load",
-   "kw": 25.0,
-   "calc_kw": null,
-   "basis": "study share - basis pending: A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; calculated average 0.298 kW (sizing/FOUNDRY_LINE.md) held for the logged batch schedule (X-MFG-37 trial)",
-   "class": "pending",
+   "kw": 0,
+   "calc_kw": 0.0,
+   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): preheat/sinter N+1 alternate: standby-zero on the design day (A-M-282); duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
+   "class": "calculated",
    "sector": "FOUNDRY"
   },
   {
    "unit": "VAC_IND",
    "role": "\u2014",
-   "kw": 15.0,
-   "calc_kw": null,
-   "basis": "study share - basis pending: A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; Ti Kroll train (AQS-ASSAY-TI-MO), duty-cycle wiring at the X-MFG-37 trial",
-   "class": "pending",
-   "sector": "FOUNDRY"
-  },
-  {
-   "unit": "RF_HEAT",
-   "role": "load",
-   "kw": 5.0,
-   "calc_kw": null,
-   "basis": "study share - basis pending: A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; duty-cycle wiring at the X-MFG-37 trial",
-   "class": "pending",
+   "kw": 0,
+   "calc_kw": 0.0,
+   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
+   "class": "calculated",
    "sector": "FOUNDRY"
   },
   {
@@ -419,24 +653,6 @@
    "sector": "ELEC"
   },
   {
-   "unit": "HABITATION",
-   "role": "load",
-   "kw": 3.0,
-   "calc_kw": null,
-   "basis": "study share - basis pending: habitat equipment list not engineered (HAB unit task 02; drivers carry only the 3 kW backup critical share)",
-   "class": "pending",
-   "sector": "HAB"
-  },
-  {
-   "unit": "WAFER_FAB",
-   "role": "load",
-   "kw": 2.0,
-   "calc_kw": null,
-   "basis": "study share - basis pending: wafer-line tool list not engineered (X-MFG-38 sizes the SOLAR_PV_CELL line only)",
-   "class": "pending",
-   "sector": "FAB"
-  },
-  {
    "unit": "MEOH_FC",
    "role": "generation",
    "kw": 1.0,
@@ -446,58 +662,31 @@
    "sector": "MEOH"
   },
   {
-   "unit": "WET_BENCH",
+   "unit": "WAFER_FAB",
    "role": "load",
-   "kw": 1.0,
+   "kw": 0.442,
    "calc_kw": null,
-   "basis": "study share - basis pending: fab wet-bench share; closes with the wafer-line tool list (FAB unit task 02)",
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
    "sector": "FAB"
   },
   {
-   "unit": "AFTERBURNER",
-   "role": "load",
-   "kw": 0.5,
+   "unit": "COMB_HEAT",
+   "role": "\u2014",
+   "kw": 0.05,
    "calc_kw": null,
-   "basis": "study share - basis pending: ignition/blower parasitic has no sizing module (OIL unit task 02; flue 7.097 kg/d is too small to fix a fan class)",
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
-   "sector": "OIL"
-  },
-  {
-   "unit": "BLOW_MOLD",
-   "role": "load",
-   "kw": 0.5,
-   "calc_kw": null,
-   "basis": "study share - basis pending: blow-molding tool not selected (study stub class); kW from the SF-BLOW_MOLD feed (node has no continuous_kw stamp)",
-   "class": "pending",
-   "sector": "MFG"
-  },
-  {
-   "unit": "ELECTRODE_COAT",
-   "role": "load",
-   "kw": 0.3,
-   "calc_kw": null,
-   "basis": "study share - basis pending: electrode coating tool not selected (study stub class); kW from the SF-ELECTRODE_COAT feed (node has no continuous_kw stamp)",
-   "class": "pending",
-   "sector": "MFG"
+   "sector": "FOUNDRY"
   },
   {
    "unit": "NUTRIENT_DOSE",
    "role": "load",
-   "kw": 0.1,
+   "kw": 0.025,
    "calc_kw": null,
-   "basis": "study share - basis pending: dose pump kW not sized (NUT unit task 02; the tank itself is sized in _storage_sizing)",
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
    "sector": "NUT"
-  },
-  {
-   "unit": "LITHO_STUB",
-   "role": "load",
-   "kw": 0.1,
-   "calc_kw": null,
-   "basis": "study share - basis pending: lithography tool not selected (study stub class); kW from the SF-LITHO_STUB feed (node has no continuous_kw stamp)",
-   "class": "pending",
-   "sector": "FAB"
   },
   {
    "unit": "HYDRO_SET",
@@ -516,18 +705,72 @@
    "basis": "inventory store; no continuous kW (fuel to MEOH_FC)",
    "class": "null",
    "sector": "MEOH"
+  },
+  {
+   "unit": "RES_HEAT",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "VAC_CAST",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "EXTRUDE",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "DRAW",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "FORGE",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "SINTER",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
   }
  ],
  "summary": {
-  "calculated": 42,
-  "pending": 13,
+  "calculated": 71,
+  "pending": 11,
   "null": 2,
-  "rows": 57,
-  "graph_sum_kW": 202.3,
-  "calc_sum_kW": 202.3,
-  "connected_load_kW": 202.3,
-  "connected_calculated_kW": 149.8,
-  "connected_calculated_pct": 74.1,
+  "rows": 84,
+  "graph_sum_kW": 141.0,
+  "calc_sum_kW": 141.0,
+  "connected_load_kW": 141.0,
+  "connected_calculated_kW": 140.4,
+  "connected_calculated_pct": 99.6,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -540,14 +783,15 @@
     "pending": 1
    },
    "FAB": {
-    "calculated": 2,
-    "pending": 3
+    "calculated": 6,
+    "pending": 1
    },
    "FARM": {
     "calculated": 1
    },
    "FOUNDRY": {
-    "pending": 3
+    "calculated": 15,
+    "pending": 7
    },
    "GAS": {
     "calculated": 4
@@ -559,7 +803,7 @@
     "calculated": 1
    },
    "HAB": {
-    "pending": 1
+    "calculated": 1
    },
    "MEOH": {
     "calculated": 2,
@@ -567,18 +811,16 @@
     "null": 1
    },
    "MFG": {
-    "calculated": 2,
-    "pending": 2
+    "calculated": 4
    },
    "NUT": {
     "pending": 1
    },
    "OIL": {
-    "calculated": 1,
-    "pending": 1
+    "calculated": 2
    },
    "POLYMERS": {
-    "calculated": 1
+    "calculated": 6
    },
    "PUMPED_HYDRO": {
     "null": 1
@@ -587,7 +829,7 @@
     "calculated": 9
    },
    "WTR": {
-    "calculated": 3
+    "calculated": 4
    }
   }
  }
