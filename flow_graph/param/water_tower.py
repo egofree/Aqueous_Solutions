@@ -6,24 +6,25 @@ wall load per ACI 350); each level is split in at least two cells (redundancy: o
 sloshing). The lower reservoir deepens CATCH_TANK below the lowest basement. Head and volume depend on each other, so iterate."""
 import json, math, os
 _D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'drivers.json')
+WTK = 'PUMPED_HYDRO.hydro-train.HYDRO_SET.'   # U4b: sizing literals single-sourced from drivers.json (A-M-187)
 def _v(d, k): return float(d[k]['value'])
 def solve(E_kWh, plate_L, plate_W, z_res0, z_catch_top, d=None, V_dead=0.0):
     """V_dead: fire reserve held below the hydro outlet (X-SAF-05); no head credit, and the lower reservoir also holds it (sprinkler run-off)."""
     d = d or json.load(open(_D))
     A = plate_L*plate_W/1e6*(1 - _v(d, 'wt_core_frac')); clr = _v(d, 'wt_level_clear_mm')/1000; hw = _v(d, 'wt_water_max_m')
     eta = _v(d, 'hydro_eta_turbine')*(1 - _v(d, 'wt_penstock_loss_frac')); fb = _v(d, 'wt_freeboard_m')
-    TOP = 0.5  # L-1 slab 0.3 m + 0.2 m for bund sumps recessed into it (GA rev C: EW_BUND sump had cut into the tank)
+    TOP = _v(d, WTK+'wt_catch_top_deduct_m')  # L-1 slab 0.3 m + 0.2 m for bund sumps recessed into it (GA rev C: EW_BUND sump had cut into the tank)
     zr, zc = z_res0/1000, z_catch_top/1000 - TOP; V = 1000.0
     for _ in range(60):
         n = max(1, math.ceil((V + V_dead)/A/hw - 1e-9)); dl = (V + V_dead)/A/n                                   # equal depth on n levels
-        zu = zr + 0.3 + (n - 1)*clr/2 + dl/2                                               # centroid of the stack (slab 0.3 m)
+        zu = zr + _v(d, WTK+'wt_slab_m') + (n - 1)*clr/2 + dl/2                                               # centroid of the stack (slab 0.3 m)
         dc = (V + V_dead)/A; zl = zc - fb - dc/2                                                      # lower: top fixed under the basement, freeboard
         h = zu - zl; Vn = E_kWh*3.6e6/(1000*9.81*h*eta)
         if abs(Vn - V) < 0.01: break
         V = Vn
-    L = plate_L/1000; ncell = max(2, math.ceil(L/_v(d, 'wt_cell_len_m')))
+    L = plate_L/1000; ncell = max(_v(d, WTK+'wt_cells_min'), math.ceil(L/_v(d, 'wt_cell_len_m')))
     return dict(V_m3=V, head_m=h, area_m2=A, levels=n, depth_per_level_m=dl, level_clear_m=clr, z_res0_m=zr, z_roof_m=zr + n*clr,
-                catch_depth_m=dc, catch_clear_m=dc + fb + 0.3 + TOP, z_catch_floor_m=zc - fb - dc, cells_per_level=ncell, cell_len_m=L/ncell,
+                catch_depth_m=dc, catch_clear_m=dc + fb + _v(d, WTK+'wt_slab_m') + TOP, z_catch_floor_m=zc - fb - dc, cells_per_level=ncell, cell_len_m=L/ncell,
                 water_t=V + V_dead, V_fire_m3=V_dead, eta_net=eta, E_kWh=E_kWh)
 def seismic_wind(r, plate_L, plate_W, d=None):
     """ASCE7_22 12.8 equivalent lateral force on the water mass (impulsive, rigid), 15.7.6 sloshing freeboard (convective, rectangular cell
@@ -36,4 +37,4 @@ def seismic_wind(r, plate_L, plate_W, d=None):
     V = _v(d, 'wt_wind_ms'); H = r['z_roof_m']; Kz = 2.01*(max(H, 4.6)/274.32)**(2/9.5)        # exposure C, Table 26.10-1
     qz = 0.613*Kz*0.85*V**2/1000; Fw = qz*0.85*1.3*(plate_L/1000)*r['levels']*r['level_clear_m']  # kN on the reservoir storeys, G 0.85, Cp 0.8+0.5
     return dict(W_water_kN=W, Cs=Cs, V_seis_kN=Cs*W, M_seis_kNm=Cs*W*(r['z_res0_m'] + r['levels']*r['level_clear_m']/2), Tc_s=Tc, Sac=Sac,
-                slosh_m=slosh, freeboard_ok=slosh <= r['level_clear_m'] - 0.3 - hl, qz_kPa=qz, F_wind_kN=Fw, H_roof_m=H)
+                slosh_m=slosh, freeboard_ok=slosh <= r['level_clear_m'] - _v(d, WTK+'wt_slab_m') - hl, qz_kPa=qz, F_wind_kN=Fw, H_roof_m=H)

@@ -3,10 +3,12 @@
 (air gap PYRHONEN2014 ch. 6, slot area from the winding at fill 0.40, tooth and yoke at 1.6 / 1.5 T), frame outline to
 IEC60072_1_1991 where the sheet gives the frame. Writes docs-authority/drawings/motor_fa/MF-nn.svg, MOTOR_FIRST_ARTICLE.md and
 inventory/MOTOR_FA.json. The builds and type tests (IEC60034_1_2022, IEC60034_2_1_2014) remain open."""
-import csv, json, math, os, re
-R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
+import csv, json, math, os, re, sys
+R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
+from flow_graph.param import drivers as DR   # U4b: design literals single-sourced from drivers.json (A-M-218)
+_d = DR.load(); v = lambda k: DR.val(_d, k)
 D = list(csv.DictReader(open('docs-authority/inventory/MOTOR_DESIGNS.csv'))); os.makedirs('docs-authority/drawings/motor_fa', exist_ok=True)
-FILL, BT, BY, KFE = 0.40, 1.6, 1.5, 0.97
+FILL, BT, BY, KFE = v('MFG.tools-metal-forming-train.mfa_slot_fill'), v('MFG.tools-metal-forming-train.mfa_tooth_T'), v('MFG.tools-metal-forming-train.mfa_yoke_T'), v('MFG.tools-metal-forming-train.mfa_stacking_factor')
 def sheet(fam):
     t = open(f'docs-authority/inventory/motor_families/{fam}.md').read(); g = lambda k: (re.search(r'\| ' + k + r' \| ([^|]+) \|', t) or [None, ''])[1].strip()
     return t, g
@@ -17,27 +19,27 @@ for d in D:
     if 'induction' in d['type']:
         P = float(re.search(r'([\d.]+) kW', rat).group(1))*1000; poles = int(re.search(r'(\d+) poles', rat).group(1)); p = poles//2
         Dg, L, Do = float(d['Dg_mm']), float(d['L_mm']), float(d['Dout_mm']); N = int(d['turns']); I = float(d['current_A'])
-        Qs, Qr = [int(x) for x in g('Slots stator / rotor').split('/')]; Bd = float(g('Air-gap flux density').split()[0]); pf = float(g('Power factor') or 0.85)
+        Qs, Qr = [int(x) for x in g('Slots stator / rotor').split('/')]; Bd = float(g('Air-gap flux density').split()[0]); pf = float(g('Power factor') or v('MFG.tools-metal-forming-train.mfa_pf_default'))
         ac = float(re.search(r'\(([\d.]+) mm2\)', d['conductor']).group(1))
         dl = 0.18 + 0.006*P**0.4 if p > 1 else 0.2 + 0.01*P**0.4                       # mm, PYRHONEN2014 ch. 6
-        zQ = 2*3*N/Qs; As = zQ*ac*1.15/FILL                                               # mm2 per slot, enamel 15 %
+        zQ = 2*3*N/Qs; As = zQ*ac*v('MFG.tools-metal-forming-train.mfa_enamel_margin')/FILL                                               # mm2 per slot, enamel 15 %
         tau_s = math.pi*Dg/Qs; bt = Bd*tau_s/(KFE*BT); tau_p = math.pi*Dg/poles
         Phi = 2/math.pi*Bd*tau_p*L*1e-6; hy = Phi/(2*KFE*L*1e-3*BY)*1000
         # parallel-tooth slot: width grows with radius; solve depth hs from area
         b1 = tau_s - bt; k = 2*math.pi/Qs; hs = (-b1 + math.sqrt(b1**2 + 2*k*As))/k
         Do_calc = Dg + dl + 2*(hs + hy)
         fL = 1.0
-        if Do_calc > Do*1.02:  # longer core: N and slot area fall as 1/L at the same E and B; yoke depth unchanged
+        if Do_calc > Do*v('MFG.tools-metal-forming-train.mfa_od_tol'):  # longer core: N and slot area fall as 1/L at the same E and B; yoke depth unchanged
             lo, hi = 1.0, 4.0
             for _ in range(40):
                 fL = (lo + hi)/2; A2 = As/fL; h2 = (-b1 + math.sqrt(b1**2 + 2*k*A2))/k
-                lo, hi = (fL, hi) if Dg + dl + 2*(h2 + hy) > Do*1.02 else (lo, fL)
+                lo, hi = (fL, hi) if Dg + dl + 2*(h2 + hy) > Do*v('MFG.tools-metal-forming-train.mfa_od_tol') else (lo, fL)
             fL = hi
-        Ibar = 2*3*N*0.95*I*pf/Qr; Abar = Ibar/5.0                                        # A, mm2 at 5 A/mm2 die-cast Al
+        Ibar = 2*3*N*v('MFG.tools-metal-forming-train.mfa_bar_current_factor')*I*pf/Qr; Abar = Ibar/v('MFG.tools-metal-forming-train.mfa_bar_J_A_mm2')                                        # A, mm2 at 5 A/mm2 die-cast Al
         fr = g('Frame'); fm = re.search(r'H (\d+), shaft D (\d+) x E (\d+), feet A (\d+) x B (\d+), holes K (\d+)', fr)
         r.update(P_kW=P/1000, poles=poles, Dg=Dg, L=L, Dout=Do, airgap_mm=round(dl, 3), Dbore=round(Dg + dl, 2), Qs=Qs, Qr=Qr, slot_area_mm2=round(As, 1), tooth_mm=round(bt, 2),
-                 slot_depth_mm=round(hs, 2), yoke_mm=round(hy, 2), Dout_check_mm=round(Do_calc, 1), od_ok=Do_calc <= Do*1.02, L_req_mm=round(L*fL), N_req=round(N/fL), bar_mm2=round(Abar, 1), ring_mm2=round(Abar*Qr/(2*math.pi*p)*0.5, 1),
-                 frame=fr, T_Nm=round(P/(2*math.pi*(120*60/poles)*0.97/60), 1))
+                 slot_depth_mm=round(hs, 2), yoke_mm=round(hy, 2), Dout_check_mm=round(Do_calc, 1), od_ok=Do_calc <= Do*v('MFG.tools-metal-forming-train.mfa_od_tol'), L_req_mm=round(L*fL), N_req=round(N/fL), bar_mm2=round(Abar, 1), ring_mm2=round(Abar*Qr/(2*math.pi*p)*0.5, 1),
+                 frame=fr, T_Nm=round(P/(2*math.pi*(2*v('MFG.tools-metal-forming-train.mfa_line_hz')*60/poles)*v('MFG.tools-metal-forming-train.mfa_rated_speed_frac')/60), 1))
         H, Ds, E, A, B, K = [int(x) for x in fm.groups()] if fm else [None]*6
         sc = 150/Do; cx, cy = 170, 180
         svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" font-family="sans-serif" font-size="10">',
@@ -51,7 +53,7 @@ for d in D:
             a = 2*math.pi*(i + 0.5)/Qr; rb = (Dg - dl)/2 - math.sqrt(Abar)/2 - 0.5
             svg.append(f'<circle cx="{cx + rb*sc*math.cos(a):.1f}" cy="{cy + rb*sc*math.sin(a):.1f}" r="{max(1, math.sqrt(Abar/math.pi)*sc):.1f}" fill="#999"/>')
         if Ds: svg.append(f'<circle cx="{cx}" cy="{cy}" r="{Ds/2*sc:.1f}" fill="#555"/>')
-        lines = [f'Stator OD {Do:.0f} mm (check {Do_calc:.1f} mm from slot + yoke: {"fits" if Do_calc <= Do*1.02 else "EXCEEDS, lengthen core"})', f'Bore {Dg + dl:.2f} mm; rotor OD {Dg - dl:.2f} mm; air gap {dl:.2f} mm',
+        lines = [f'Stator OD {Do:.0f} mm (check {Do_calc:.1f} mm from slot + yoke: {"fits" if Do_calc <= Do*v("MFG.tools-metal-forming-train.mfa_od_tol") else "EXCEEDS, lengthen core"})', f'Bore {Dg + dl:.2f} mm; rotor OD {Dg - dl:.2f} mm; air gap {dl:.2f} mm',
                  f'Core length {L:.0f} mm, stacking factor {KFE}', f'Stator {Qs} slots: area {As:.0f} mm2 at fill {FILL}, depth {hs:.1f} mm, parallel tooth {bt:.2f} mm ({BT} T)', f'Yoke {hy:.1f} mm ({BY} T)',
                  f'Winding {N} turns/phase, {zQ:.0f} conductors/slot, {d["conductor"]} class 200 enamel', f'Rotor {Qr} die-cast Al bars {Abar:.0f} mm2, end ring {r["ring_mm2"]:.0f} mm2, skew 1 slot',
                  (f'Frame IEC H {H}, feet A {A} x B {B}, holes K {K}, shaft D {Ds} k6 x E {E}' if H else f'Frame: {fr}'), f'Rated torque {r["T_Nm"]} N m; bearings {g("Bearings") or "per sheet"}']

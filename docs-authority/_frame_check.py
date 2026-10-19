@@ -7,12 +7,14 @@ braced lines per direction, two braced bays per line, tension-only diagonals. Ru
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 from flow_graph.param.refs import cite
+from flow_graph.param import drivers as DR   # U4b: frame check literals single-sourced from drivers.json (A-M-207)
+_d = DR.load(); v = lambda k: DR.val(_d, k)
 for k in ('AISC360_22', 'ASTM_A992', 'ASCE7_22'): cite(k)
 import params as P
 from flow_graph.param import water_tower as WT
-E_ = 200e3; FY = 345.0; G_C = 24.0                                   # MPa; concrete kN/m3
+E_ = 200e3; FY = v('MFG.tools-metal-forming-train.hall-services.fc_Fy_MPa'); G_C = 24.0                                   # MPa; concrete kN/m3
 BAY = P.BAY/1000; Lp, Wp = P.PLATE_L/1000, P.PLATE_W/1000; A_pl = Lp*Wp; nx, ny = round(Lp/BAY), round(Wp/BAY)
-LIVE = {'L-2': 0.0, 'L-1': 6.0, 'L0': 6.0, 'L1': 4.79, 'L2': 4.79, 'R1': 0.0, 'R2': 0.0, 'R3': 0.0, 'ROOF': 0.96}   # kPa: light manufacturing 125 psf, assembly/corridors 100 psf, water storeys (F), roof 20 psf
+LIVE = v('MFG.tools-metal-forming-train.hall-services.fc_live_loads_kPa')   # kPa: light manufacturing 125 psf, assembly/corridors 100 psf, water storeys (F), roof 20 psf
 z0 = P.HYDRO_RES_Z0/1000; clr = P.HYDRO_RES_CLEAR/1000
 Z = {'L-2': P.basement_z(1)/1000, 'L-1': P.basement_z(0)/1000, 'L0': P.Z_L0/1000, 'L1': P.Z_L1/1000, 'L2': P.Z_L2/1000, 'R1': z0, 'R2': z0 + clr, 'R3': z0 + 2*clr, 'ROOF': P.Z_ROOF/1000}
 SL = {}

@@ -5,15 +5,16 @@ blocked-outlet case: the largest inflow rate (electrolyser streams over its PV w
 cylinder to CGA_S1_1 and stays with X-SAF-04. Run before write_graph relief, which computes the orifice."""
 import json, os
 from . import drivers as DR
+_D = DR.load()
 from .refs import cite
 GP = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'flow_graph/plant_flow_graph.json')
-GAS = {'MEOH_SYNTH': dict(P_bar=50.0, T_K=523.15, M=12.51, k=1.38, Z=1.0, fluid='3 H2 : 1 CO2 loop gas'),
-       'CRYO_H2': dict(P_bar=200.0, T_K=313.15, M=2.016, k=1.41, Z=1.13, fluid='hydrogen'),
-       'HTC': dict(P_bar=15.55, T_K=473.15, M=18.015, k=1.33, Z=0.95, fluid='steam from the heater at full power', W_heater=True),
-       'MEAM': dict(P_bar=20.7, T_K=673.15, M=23.4, k=1.25, Z=1.0, fluid='MeOH/NH3 vapour'),
-       'CRYO_CO2': dict(P_bar=20.0, T_K=253.15, M=44.01, k=1.29, Z=0.85, fluid='CO2 vapour off the liquid store at -20 C (AQS-DUTY-069, NIST_WEBBOOK)'),
-       'CRYO_O2': dict(P_bar=200.0, T_K=313.15, M=31.999, k=1.40, Z=0.97, fluid='oxygen'),
-       'H2O_ELYZ': dict(P_bar=9.0, T_K=353.15, M=2.016, k=1.41, Z=1.0, fluid='hydrogen side of the PEM stack at the compressor suction (h2c_P1_bar 10 bar a); O2 side on its own valve at the same set, A-M-196', W_gas_out=True),
+GAS = {'MEOH_SYNTH': dict(P_bar=_D['GAS.headers.methanol_synth_loop_P_bar']['value'], T_K=_D['GAS.headers.methanol_synth_loop_T_K']['value'], M=12.51, k=1.38, Z=1.0, fluid='3 H2 : 1 CO2 loop gas'),
+       'CRYO_H2': dict(P_bar=_D['CRYO.cold-box-asu-recovery-train.CRYO_H2_store_P_bar']['value'], T_K=_D['CRYO.cold-box-asu-recovery-train.CRYO_H2_store_T_K']['value'], M=2.016, k=1.41, Z=1.13, fluid='hydrogen'),
+       'HTC': dict(P_bar=_D['DIGESTER.metals-leach-train.htc_header_P_bar']['value'], T_K=_D['DIGESTER.metals-leach-train.htc_header_T_K']['value'], M=18.015, k=1.33, Z=0.95, fluid='steam from the heater at full power', W_heater=True),
+       'MEAM': dict(P_bar=_D['GAS.headers.meam_header_P_bar']['value'], T_K=_D['GAS.headers.meam_header_T_K']['value'], M=23.4, k=1.25, Z=1.0, fluid='MeOH/NH3 vapour'),
+       'CRYO_CO2': dict(P_bar=_D['CRYO.cold-box-asu-recovery-train.CRYO_CO2_store_P_bar']['value'], T_K=_D['CRYO.cold-box-asu-recovery-train.CRYO_CO2_store_T_K']['value'], M=44.01, k=1.29, Z=0.85, fluid='CO2 vapour off the liquid store at -20 C (AQS-DUTY-069, NIST_WEBBOOK)'),
+       'CRYO_O2': dict(P_bar=_D['CRYO.cold-box-asu-recovery-train.CRYO_O2_store_P_bar']['value'], T_K=_D['CRYO.cold-box-asu-recovery-train.CRYO_O2_store_T_K']['value'], M=31.999, k=1.40, Z=0.97, fluid='oxygen'),
+       'H2O_ELYZ': dict(P_bar=_D['WTR.potable-upw-train.H2O_ELYZ_suction_P_bar']['value'], T_K=_D['WTR.potable-upw-train.H2O_ELYZ_suction_T_K']['value'], M=2.016, k=1.41, Z=1.0, fluid='hydrogen side of the PEM stack at the compressor suction (h2c_P1_bar 10 bar a); O2 side on its own valve at the same set, A-M-196', W_gas_out=True),
        'HCL_BURNER': dict(P_bar=0.5, T_K=1273.15, M=36.46, k=1.30, Z=1.0, fluid='HCl flame products; deflagration case is a rupture disc to NFPA 68 at detail, A-M-196')}
 def main():
     d = DR.load(); m = DR.val(d, 'press_design_margin'); win = DR.val(d, 'ely_window_h'); g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}

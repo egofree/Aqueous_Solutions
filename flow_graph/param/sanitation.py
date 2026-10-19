@@ -12,8 +12,8 @@ from .write_graph import edge, rate
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json'); SP = os.path.join(ROOT, 'flow_graph/placement_seed.json'); STP = os.path.join(ROOT, 'flow_graph/placement_study.json')
 TAG = 'X-SAN-01 AQS-DUTY-063'
+SAN = 'WTR.grey-black-train.'   # U4b: sizing literals single-sourced from drivers.json (A-M-118)
 NEW = ('BLACK_DEWATER', 'BLACK_PASTEUR', 'BLACK_ALK_HOLD')
-
 def design(d, g):
     v = lambda k: DR.val(d, k); R = {e['stream_id']: e['rate']['value'] for e in g['edges']}
     n, fc = v('san_crew'), v('san_compost_fraction')
@@ -27,26 +27,26 @@ def design(d, g):
     fixed = {'IA-URN-STR': R['IA-URN-STR'], 'IA-BLK-BIO': R.get('IA-BLK-BIO', R['IA-TOIL-URN']), 'IA-BLK-NUT': R.get('IA-BLK-NUT', R['IA-TOIL-SOL'])}   # downstream feeds kept at their pre-X-SAN-01 rates
     grey = past - sum(fixed.values())
     # combustion of cake and biogas [METCALF5_BIOMASS]: VS as C5H7O2N + 5.75 O2 -> 5 CO2 + 3.5 H2O + 0.5 N2 (N scrubbed as nitrate); biogas 65 % CH4 by volume
-    vs_rem = VS - G; ash = TS - G - vs_rem; w_cake = cake - (TS - G); x = 0.65*16/(0.65*16 + 0.35*44); ch4, co2g = G*x, G*(1 - x)
+    vs_rem = VS - G; ash = TS - G - vs_rem; w_cake = cake - (TS - G); ch4f = v(SAN+'san_biogas_ch4_frac'); x = ch4f*16/(ch4f*16 + (1 - ch4f)*44); ch4, co2g = G*x, G*(1 - x)
     comb = {'CO2': co2g + ch4*44/16 + vs_rem*220/113, 'H2O': w_cake + ch4*36/16 + vs_rem*63/113, 'O2': ch4*64/16 + vs_rem*184/113, 'N': vs_rem*14/113, 'ash': ash}
     comb['check'] = comb['CO2'] + comb['H2O'] - comb['O2'] + comb['N'] + comb['ash'] - (cake + G)
     # AFTERBURNER chamber: >= 850 C for >= 2 s [EU_IED2010]; flue = DUTY-008 241.68 kg/d + sanitation fuel
-    flue = 241.68 + cake + G; rho = 1.2*293/1123; Q = flue/86400/rho; Vc = Q*2.0
-    Dc = next(x for x in (150, 200, 250, 300, 350, 400) if 3*(x/1000) >= (4*Vc/math.pi/(x/1000)**2) or x == 400); Lc = 4*Vc/math.pi/(Dc/1000)**2
-    q_extra = (ch4*50.0 + vs_rem*20.0 - w_cake*2.45)/86.4      # kW: LHV CH4 50 MJ/kg, dry VS about 20 MJ/kg, evaporation 2.45 MJ/kg (study)
-    ab = dict(flue_kg_h=flue/24, Q_m3_s_850C=Q, V_m3=Vc, D_mm=Dc, L_mm=math.ceil(Lc*1000/50)*50, net_heat_kW=q_extra, feed_kg_d=6.2662 + cake + G)
-    ko_v = (flue/24/3600)/(1.2*293/353)/(math.pi*0.3**2/4)            # FLUE_KO DN300 at 80 C
-    nox_v = (497.918 + cake + G)/86400/1.2/(math.pi*0.1**2/4)           # NOX_SCRUB DN100 superficial
+    flue = v(SAN+'san_ab_flue_base_kg_d') + cake + G; rho = v(SAN+'san_air_rho20_kg_m3')*293/(v(SAN+'san_ab_T_C') + 273); Q = flue/86400/rho; Vc = Q*v(SAN+'san_ab_residence_s')
+    Dc = next(x for x in v(SAN+'san_ab_DN_ladder_mm') if v(SAN+'san_ab_LD')*(x/1000) >= (4*Vc/math.pi/(x/1000)**2) or x == 400); Lc = 4*Vc/math.pi/(Dc/1000)**2
+    q_extra = (ch4*v(SAN+'san_lhv_ch4_MJ_kg') + vs_rem*v(SAN+'san_lhv_vs_MJ_kg') - w_cake*v(SAN+'san_evap_MJ_kg'))/86.4      # kW: LHV CH4 50 MJ/kg, dry VS about 20 MJ/kg, evaporation 2.45 MJ/kg (study)
+    ab = dict(flue_kg_h=flue/24, Q_m3_s_850C=Q, V_m3=Vc, D_mm=Dc, L_mm=math.ceil(Lc*1000/50)*50, net_heat_kW=q_extra, feed_kg_d=v(SAN+'san_ab_feed_base_kg_d') + cake + G)
+    ko_v = (flue/24/3600)/(v(SAN+'san_air_rho20_kg_m3')*293/(v(SAN+'san_ko_T_C') + 273))/(math.pi*v(SAN+'san_ko_D_m')**2/4)            # FLUE_KO DN300 at 80 C
+    nox_v = (v(SAN+'san_nox_feed_base_kg_d') + cake + G)/86400/v(SAN+'san_air_rho20_kg_m3')/(math.pi*v(SAN+'san_nox_D_m')**2/4)           # NOX_SCRUB DN100 superficial
     # vessels
-    Vd = dig_in/1000*v('san_digest_srt_d'); dg = vessel(Vd, 0.8, 1000.0, sigma_MPa=3.0, t_min=5.0)
+    Vd = dig_in/1000*v('san_digest_srt_d'); dg = vessel(Vd, v(SAN+'san_dig_fill'), 1000.0, sigma_MPa=v(SAN+'san_sigma_PP_MPa'), t_min=v(SAN+'san_pp_t_min_mm'))
     A = math.pi*dg['D_mm']/1000*dg['H_mm']/1000 + math.pi*(dg['D_mm']/1000)**2/2
-    q_dig = dig_in*4.18*(v('san_digest_T_C') - 20)/86.4 + 0.5*A*(v('san_digest_T_C') - 20)          # W, feed heat-up + 50 mm PIR losses
-    Vb = past/1000/v('san_past_batches_d'); ps = vessel(Vb, 0.8, 1000.0, steel=True, t_min=2.0, CA=0.0)
-    T_mix = (centrate*(v('san_digest_T_C') - 5) + ur_c*20)/past                                           # centrate cools 5 K in the press
-    q_past = past*4.18*(v('san_past_T_C') - T_mix)/86.4 + 30.0                                             # W, + 30 W hold losses (insulated)
-    Vh = past/1000; hd = vessel(Vh, 0.9, 1000.0, sigma_MPa=5.0, t_min=4.0)
-    naoh = past*0.2*40/1000                                                                                # kg/d NaOH at 0.2 mol/L dose when the standby barrier runs
-    kW = {'BLACK_DIGEST': q_dig/1000 + 0.02, 'BLACK_DEWATER': 0.09*2/24, 'BLACK_PASTEUR': q_past/1000 + 0.01, 'BLACK_ALK_HOLD': 0.02}
+    q_dig = dig_in*v(SAN+'san_water_cp_kJ_kgK')*(v('san_digest_T_C') - v(SAN+'san_feed_T_C'))/86.4 + v(SAN+'san_dig_U_W_m2K')*A*(v('san_digest_T_C') - v(SAN+'san_feed_T_C'))          # W, feed heat-up + 50 mm PIR losses
+    Vb = past/1000/v('san_past_batches_d'); ps = vessel(Vb, v(SAN+'san_dig_fill'), 1000.0, steel=True, t_min=v(SAN+'san_steel_t_min_mm'), CA=v(SAN+'san_CA_mm'))
+    T_mix = (centrate*(v('san_digest_T_C') - v(SAN+'san_press_cool_K')) + ur_c*v(SAN+'san_feed_T_C'))/past                                           # centrate cools 5 K in the press
+    q_past = past*v(SAN+'san_water_cp_kJ_kgK')*(v('san_past_T_C') - T_mix)/86.4 + v(SAN+'san_past_loss_W')                                             # W, + 30 W hold losses (insulated)
+    Vh = past/1000; hd = vessel(Vh, v(SAN+'san_hold_fill'), 1000.0, sigma_MPa=v(SAN+'san_sigma_HDPE_MPa'), t_min=v(SAN+'san_hdpe_t_min_mm'))
+    naoh = past*v(SAN+'san_naoh_dose_mol_L')*40/1000                                                                                # kg/d NaOH at 0.2 mol/L dose when the standby barrier runs
+    kW = {'BLACK_DIGEST': q_dig/1000 + v(SAN+'san_dig_aux_kW'), 'BLACK_DEWATER': v(SAN+'san_press_kW')*v(SAN+'san_press_run_h')/24, 'BLACK_PASTEUR': q_past/1000 + v(SAN+'san_past_aux_kW'), 'BLACK_ALK_HOLD': v(SAN+'san_hold_aux_kW')}
     return dict(n=n, fc=fc, fec_c=fec_c, ur_c=ur_c, E_f=E_f, F=F, blk=blk, sol=sol, dig_in=dig_in, TS=TS, VS=VS, G=G, cake=cake, centrate=centrate,
                 past=past, comb=comb, ab=ab, ko_v=ko_v, nox_v=nox_v, fixed=fixed, grey=grey, dg=dg, ps=ps, hd=hd, q_dig=q_dig, q_past=q_past, T_mix=T_mix, naoh_standby=naoh, kW=kW)
 
@@ -101,7 +101,7 @@ def write(d, g, r):
     # X-SAN-01 Rev B (owner 2026-10-15): S11 restored; the cake and biogas are burned on top of the existing AFTERBURNER feed and the products are
     # carried downstream species by species [METCALF5_BIOMASS]: water to ROOF_TANK -> HABITATION, CO2 via CRYO_ASU/CRYO_CO2/HDR_CO2 -> GROW_BED -> food,
     # ash and N via NOX_SCRUB liquor -> NUTRIENT_DOSE -> GROW_BED -> food, O2 consumed out of the air remainder -> CRYO_O2 -> HDR_O2 -> HABITATION.
-    E['S11']['rate']['value'] = round(base.setdefault('S11', 0.8), 4); E['S11']['rate']['note'] = 'Grow-bed organics to the afterburner (S11 restored, X-SAN-01 Rev B).'
+    E['S11']['rate']['value'] = round(base.setdefault('S11', DR.val(d, SAN+'san_s11_kg_d')), 4); E['S11']['rate']['note'] = 'Grow-bed organics to the afterburner (S11 restored, X-SAN-01 Rev B).'
     c = r['comb']; D = r['cake'] + r['G']
     deltas = {'IA-AB-FLUE': D, 'S67': D, 'IA-FLUE-EXH': D, 'IA-NOX-H2O': c['H2O'], 'IA-NOX-CO2': c['CO2'], 'IA-NOX-N': c['ash'] + c['N'], 'IA-NOX-N2': -c['O2'],
               'S21': c['H2O'], 'IA-ASU-CO2': c['CO2'], 'IA-ASU-O2': -c['O2'], 'S83': -c['O2'], 'S02': -c['O2'], 'S85': c['CO2'], 'S89': c['CO2'],
@@ -115,7 +115,7 @@ def write(d, g, r):
     A = r['ab']; N['AFTERBURNER']['params']['design'] = {k: round(v, 4) for k, v in A.items()} | {'basis': 'X-SAN-01 Rev B: chamber >= 850 C for >= 2 s [EU_IED2010]; feed incl. sanitation cake and biogas; refractory-lined, ID as stated'}
     N['AFTERBURNER']['params']['size_note'] = f"combustion chamber ID {A['D_mm']} x {A['L_mm']} mm (X-SAN-01 Rev B, AQS-DUTY-063 section 6)"
     N['FLUE_KO']['params']['duty_check'] = f"flue {A['flue_kg_h']:.2f} kg/h (S67, X-SAN-01 Rev B): DN300 KO drum superficial {r['ko_v']:.3f} m/s at 80 C; fits the 600x700 plan (AQS-GAS-003 NCG case 0.7 m/s governs)"
-    N['NOX_SCRUB']['params']['duty_check'] = f"inlet {(497.918 + D)/24:.2f} kg/h (X-SAN-01 Rev B): DN100 superficial {r['nox_v']:.2f} m/s; full packing design at X-PAR-03"
+    N['NOX_SCRUB']['params']['duty_check'] = f"inlet {(DR.val(d, SAN+'san_nox_feed_base_kg_d') + D)/24:.2f} kg/h (X-SAN-01 Rev B): DN100 superficial {r['nox_v']:.2f} m/s; full packing design at X-PAR-03"
     ab = N['AFTERBURNER']['params']['balance_rev_l']['terms']
     ab[:] = [t for t in ab if t.get('label') != 'sanitation cake and biogas combustion products to flue']
     for u in ('BLACK_DIGEST',) + NEW:
@@ -123,8 +123,8 @@ def write(d, g, r):
         put(f'SQ-{u}', u, 'HEAT_SINK', 'E', 'electrical input leaving as heat', ks, f'{TAG}.')
     for u, k in (('BLACK_DIGEST', 'dg'), ('BLACK_PASTEUR', 'ps'), ('BLACK_ALK_HOLD', 'hd')):
         x = r[k]; N[u]['params']['design'] = x
-        N[u]['params']['size_mm'] = [x['D_mm'] + 300, x['D_mm'] + 300, x['H_mm'] + 500] if u != 'BLACK_ALK_HOLD' else [3*(x['D_mm'] + 150) + 300, x['D_mm'] + 300, x['H_mm'] + 500]
-    N['BLACK_DEWATER']['params']['size_mm'] = [800, 600, 900]
+        N[u]['params']['size_mm'] = [x['D_mm'] + DR.val(d, SAN+'san_vessel_allow_mm'), x['D_mm'] + DR.val(d, SAN+'san_vessel_allow_mm'), x['H_mm'] + DR.val(d, SAN+'san_height_allow_mm')] if u != 'BLACK_ALK_HOLD' else [3*(x['D_mm'] + DR.val(d, SAN+'san_hold_gap_mm')) + DR.val(d, SAN+'san_vessel_allow_mm'), x['D_mm'] + DR.val(d, SAN+'san_vessel_allow_mm'), x['H_mm'] + DR.val(d, SAN+'san_height_allow_mm')]
+    N['BLACK_DEWATER']['params']['size_mm'] = DR.val(d, SAN+'san_dewater_size_mm')
     for u in ('BLACK_DIGEST',) + NEW:
         N[u]['params']['duty'] = f'{TAG}. Sheet docs-authority/sizing/SANITATION.md.'
     open(GP, 'w').write(json.dumps(g, indent=2))

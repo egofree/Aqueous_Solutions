@@ -9,18 +9,19 @@ from . import drivers as DR
 from .sizing import heat as HT
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
+PVL = 'FAB.wafer-line-train.SOLAR_PV_CELL.'   # U4b: sizing literals single-sourced from drivers.json (A-M-178)
 def design(d):
     v = lambda k: DR.val(d, k); T = []
     # texture: water bath heat-up and an insulated tank loss at temperature
-    q = v('pvl_tex_L')*4.18*(v('pvl_tex_C') - 25)/3600; _, loss = HT.insulated_cylinder(v('pvl_tex_C'), 250, 0.3)
+    q = v('pvl_tex_L')*v(PVL+'pvl_water_cp_kJ_kgK')*(v('pvl_tex_C') - v(PVL+'pvl_amb_T_C'))/3600; _, loss = HT.insulated_cylinder(v('pvl_tex_C'), v(PVL+'pvl_tex_tank_D_mm'), v(PVL+'pvl_tex_tank_H_m'))
     T.append(('PV-TEX-01', 'KOH texture bath, 10 L PP tank, immersion heater', q/v('pvl_tex_heat_h') + loss/1000, q + loss/1000*v('pvl_tex_run_h')))
     # diffusion tube furnace
-    q = v('pvl_diff_mass_kg')*1.0*(v('pvl_diff_C') - 25)/3600
+    q = v('pvl_diff_mass_kg')*v(PVL+'pvl_diff_cp_kJ_kgK')*(v('pvl_diff_C') - v(PVL+'pvl_amb_T_C'))/3600
     t, loss = HT.insulated_cylinder(v('pvl_diff_C'), v('pvl_diff_D_mm'), v('pvl_diff_L_m'), k_a=v('pvl_hot_k_a'), k_b=v('pvl_hot_k_b'))
     T.append(('PV-EMIT-01', f"POCl3 diffusion, quartz tube {v('pvl_diff_D_mm'):.0f} mm x {v('pvl_diff_L_m'):.1f} m, {t} mm ceramic fibre", q/v('pvl_diff_heat_h') + loss/1000, q + loss/1000*(v('pvl_diff_run_h') + v('pvl_diff_heat_h')/2)))
     T.append(('PV-PSG-01', 'HF PSG etch, room temperature PP bath', 0.0, 0.0))
-    rf = v('pvl_pecvd_W_cm2')*v('pvl_pecvd_area_m2')*1e4/1000; qh = 5.0*0.5*(v('pvl_pecvd_C') - 25)/3600; _, lh = HT.insulated_cylinder(v('pvl_pecvd_C'), 300, 0.4, k_a=v('pvl_hot_k_a'), k_b=v('pvl_hot_k_b'))
-    T.append(('PV-ARC-01', 'PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump', rf + qh/0.5 + lh/1000 + v('pvl_vac_kW'),
+    rf = v('pvl_pecvd_W_cm2')*v('pvl_pecvd_area_m2')*1e4/1000; qh = v(PVL+'pvl_pecvd_platen_kg')*v(PVL+'pvl_pecvd_platen_cp_kJ_kgK')*(v('pvl_pecvd_C') - v(PVL+'pvl_amb_T_C'))/3600; _, lh = HT.insulated_cylinder(v('pvl_pecvd_C'), v(PVL+'pvl_pecvd_chamber_D_mm'), v(PVL+'pvl_pecvd_chamber_H_m'), k_a=v('pvl_hot_k_a'), k_b=v('pvl_hot_k_b'))
+    T.append(('PV-ARC-01', 'PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump', rf + qh/v(PVL+'pvl_pecvd_heat_h') + lh/1000 + v('pvl_vac_kW'),
               rf*v('pvl_pecvd_dep_h') + qh + lh/1000*v('pvl_vac_h') + v('pvl_vac_kW')*v('pvl_vac_h')))
     T.append(('PV-CON-01', 'Screen printer and 200 C dryer', v('pvl_print_kW') + v('pvl_dry_kW'), (v('pvl_print_kW') + v('pvl_dry_kW'))*v('pvl_print_h')))
     T.append(('PV-FIRE-01', 'IR lamp fast-firing furnace', v('pvl_fire_kW'), v('pvl_fire_kW')*v('pvl_fire_h')))

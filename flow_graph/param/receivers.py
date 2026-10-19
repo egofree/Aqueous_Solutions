@@ -8,24 +8,25 @@ import json, math, os, sys
 from . import drivers as DR
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
-OD, T = 114.3, 13.49
+RCVK = 'CRYO.cold-box-asu-recovery-train.cold-box.'   # U4b: sizing literals single-sourced from drivers.json (A-M-167/180)
 def design(d, g):
     N = {n['unit_id']: n for n in g['nodes']}; S = DR.val(d, 's_316L_38C_MPa'); L = DR.val(d, 'rcv_tube_len_m'); out = {}
+    OD, T = DR.val(d, RCVK+'rcv_tube_OD_mm'), DR.val(d, RCVK+'rcv_tube_wall_mm')
     pc = N['CRYO_CO2']['params']; inflow = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == 'CRYO_CO2' and e['presence'] == 'present' and (e['rate'] or {}).get('unit') == 'kg/d')
     pc['store_kg'] = round(DR.val(d, 'co2_store_hold_d')*inflow, 3); pc['store_water_volume_m3'] = round(pc['store_kg']/DR.val(d, 'co2_liq_rho_kg_m3')/DR.val(d, 'co2_fill'), 4)   # A-M-181
     for u in ('CRYO_H2', 'CRYO_O2', 'CRYO_CO2'):
-        p = N[u]['params']; P = p.get('design_kPa', 2200 if u == 'CRYO_CO2' else 22000)/1000   # R11 Rev AC regen: params.design_kPa dropped from the graph in Rev AC; module basis A-M-167 (22 MPa) / A-M-180 (2200 kPa g)
-        t_req = P*OD/(2*(S + P*0.4)); tmin = T*0.875
+        p = N[u]['params']; P = p.get('design_kPa', DR.val(d, RCVK+('rcv_design_kPa_co2' if u == 'CRYO_CO2' else 'rcv_design_kPa_hp')))/1000   # R11 Rev AC regen: params.design_kPa dropped from the graph in Rev AC; module basis A-M-167 (22 MPa) / A-M-180 (2200 kPa g)
+        t_req = P*OD/(2*(S + P*0.4)); tmin = T*DR.val(d, RCVK+'rcv_wall_mill_factor')
         ID = OD - 2*T; a = math.pi*(ID/1000)**2/4
         banks = [('main', p['store_water_volume_m3'])]
         if u == 'CRYO_O2' and p.get('crew_reserve_kg'): banks.append(('crew reserve', p['store_water_volume_m3']*p['crew_reserve_kg']/p['store_kg']))
         bk = []
         for name, V in banks:
-            n = max(2, math.ceil(V/(a*L))); n += n % 2
-            bk.append(dict(bank=name, V_m3=V, tubes=n, halves=2))
-        nt = sum(b['tubes'] for b in bk); rows = math.ceil(nt/8)
+            n = max(DR.val(d, RCVK+'rcv_manifold_halves'), math.ceil(V/(a*L))); n += n % DR.val(d, RCVK+'rcv_manifold_halves')
+            bk.append(dict(bank=name, V_m3=V, tubes=n, halves=DR.val(d, RCVK+'rcv_manifold_halves')))
+        nt = sum(b['tubes'] for b in bk); rows = math.ceil(nt/DR.val(d, RCVK+'rcv_tubes_per_row'))
         out[u] = dict(P_design_MPa=P, S_MPa=S, t_req_mm=t_req, t_min_mm=tmin, t_ok=tmin >= t_req, OD_mm=OD, ID_mm=ID, tube_m=L, banks=bk, tubes=nt,
-                      steel_kg=nt*L*28.3, D_mm=round(OD), wall_mm=T, H_mm=rows*150 + 300, T_C=25, rack_mm=[round(L*1000) + 600, 8*150 + 300, rows*150 + 300],
+                      steel_kg=nt*L*DR.val(d, RCVK+'rcv_tube_kg_m'), D_mm=round(OD), wall_mm=T, H_mm=rows*DR.val(d, RCVK+'rcv_row_pitch_mm') + DR.val(d, RCVK+'rcv_rack_allow_mm'), T_C=DR.val(d, RCVK+'rcv_T_amb_C'), rack_mm=[round(L*1000) + DR.val(d, RCVK+'rcv_rack_len_allow_mm'), DR.val(d, RCVK+'rcv_tubes_per_row')*DR.val(d, RCVK+'rcv_row_pitch_mm') + DR.val(d, RCVK+'rcv_rack_allow_mm'), rows*DR.val(d, RCVK+'rcv_row_pitch_mm') + DR.val(d, RCVK+'rcv_rack_allow_mm')],
                       material='SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93')
     return out
 def write(g, R):

@@ -5,6 +5,7 @@ import json, math, os, sys
 from . import drivers as DR
 from .sizing import scrubber as S, hcl_vle as V, evaporator as EV
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+VSK = 'DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS.'   # U4b: sizing literals single-sourced from drivers.json (A-M-111)
 
 def case(d, feed_kg_d, w_cond_pct):
     v = lambda k: DR.val(d, k); T = v('vs_T_C'); TK = T + 273.15
@@ -17,11 +18,11 @@ def case(d, feed_kg_d, w_cond_pct):
 def design(d, ea):
     """Design case = upset (column bypassed: condensate at the body vapour composition); normal = column working."""
     up = case(d, ea['feed_kg_d'], ea['design']['column']['y_eq_body_pct']); nm = case(d, ea['feed_kg_d'], ea['cond_hcl_wt']*100)
-    D = up['D_m']; DN = next(x for x in (100, 125, 150, 200) if x >= D*1000)
-    sump_L = 20.0                                                          # charge of 2 M NaOH (study, A-M-111)
-    pump_kW = up['recirc_m3_h']/3600*1000*9.81*10.0/0.4/1000               # 10 m head, 40 % small-pump efficiency (study)
+    D = up['D_m']; DN = next(x for x in DR.val(d, VSK+'vs_DN_ladder_mm') if x >= D*1000)
+    sump_L = DR.val(d, VSK+'vs_sump_L')                                                # charge of 2 M NaOH (study, A-M-111)
+    pump_kW = up['recirc_m3_h']/3600*1000*9.81*DR.val(d, VSK+'vs_pump_head_m')/DR.val(d, VSK+'vs_pump_eta')/1000               # 10 m head, 40 % small-pump efficiency (study)
     return dict(upset=up, normal=nm, DN=DN, packed_mm=math.ceil(up['packed_m']*1000/100)*100, sump_L=sump_L,
-                sump_mol=sump_L*DR.val(d, 'bmed_product_molarity'), pump_kW=pump_kW, height_mm=math.ceil(up['packed_m']*1000/100)*100 + 900,
+                sump_mol=sump_L*DR.val(d, 'bmed_product_molarity'), pump_kW=pump_kW, height_mm=math.ceil(up['packed_m']*1000/100)*100 + DR.val(d, VSK+'vs_head_allowance_mm'),
                 material='PVC-U pipe and fittings (ASTM D1785 Sch 80), in-house cut PVC tube rings, PVC mesh demister (PERRY9_MAT: PVC to 60 C in HCl and NaOH)')
 
 def main(write=False):

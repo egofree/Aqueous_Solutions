@@ -16,7 +16,7 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 0.62,
+   "seconds": 1.19,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -107,7 +107,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "a62e5bc48c0bb7f378dfea5f5fbf25ebf00648be37ee5f5574cb9b084a18acca"
   },
@@ -120,7 +120,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "a62e5bc48c0bb7f378dfea5f5fbf25ebf00648be37ee5f5574cb9b084a18acca"
   },
@@ -133,7 +133,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "2496b8dc4036620408dd08479bd448d517539b77af0f9caaea47074c7f322d74"
   },
@@ -146,7 +146,7 @@
     "heat"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "a62e5bc48c0bb7f378dfea5f5fbf25ebf00648be37ee5f5574cb9b084a18acca"
   },
@@ -159,7 +159,7 @@
     "relief"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "d93b4a35dc68d14ab1a9ce2a69adc4bbefa6151b6907fe5c63f449c0c460fd5a"
   },
@@ -172,7 +172,7 @@
     "vent"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -196,7 +196,7 @@
     "power"
    ],
    "pass": 1,
-   "seconds": 0.3,
+   "seconds": 0.29,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -209,7 +209,7 @@
     "--write"
    ],
    "pass": 0,
-   "seconds": 0.21,
+   "seconds": 0.2,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -221,7 +221,7 @@
     "flow_graph.param.balance"
    ],
    "pass": 0,
-   "seconds": 0.44,
+   "seconds": 0.43,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -379,7 +379,7 @@
     "docs-authority/_insulation.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -390,7 +390,7 @@
     "docs-authority/_ew_busbar.py"
    ],
    "pass": 0,
-   "seconds": 0.13,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -412,7 +412,7 @@
     "docs-authority/_protection.py"
    ],
    "pass": 0,
-   "seconds": 0.27,
+   "seconds": 0.28,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -456,7 +456,7 @@
     "flow_graph/export_candidate_mvs.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -478,7 +478,7 @@
     "docs-authority/_assumptions_register.py"
    ],
    "pass": 0,
-   "seconds": 0.18,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -489,7 +489,7 @@
     "flow_graph/regen_derived.py"
    ],
    "pass": 0,
-   "seconds": 15.53,
+   "seconds": 15.16,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -500,7 +500,7 @@
     "docs-authority/_rev_stamp.py"
    ],
    "pass": 0,
-   "seconds": 0.24,
+   "seconds": 0.25,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   }

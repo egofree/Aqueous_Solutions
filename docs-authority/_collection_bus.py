@@ -5,19 +5,19 @@ import json, math, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flow_graph.param import drivers as DR
 d = DR.load(); v = lambda k: DR.val(d, k)
-STD_A = (100,125,150,175,200,225,250,300,350,400,450,500,600,700,800,1000,1200,1600,2000,2500,3000,4000,5000,6000)   # NEC 240.6(A)
-KVA = (75,112.5,150,225,300,500,750,1000,1500,2000,2500)                                                      # IEEE C57.12.34
+STD_A = v('ELEC.distribution-train.SOL_ARK_60K.cb_std_breaker_A')   # NEC 240.6(A)
+KVA = v('ELEC.distribution-train.SOL_ARK_60K.cb_std_kVA')                                                      # IEEE C57.12.34
 G = 'flow_graph/plant_flow_graph.json'; g = json.load(open(G)); N = {n['unit_id']: n for n in g['nodes']}
 inv = N['SOL_ARK_60K']['params']; n_inv = inv['count']; unit_kW = inv['kW']/n_inv; zn = N['ZNBR2']['params']
-V = 480.0; I1 = unit_kW*1000/(math.sqrt(3)*V)
-kmax = int(v('sec_ocpd_max_A')/1.25/I1); ns = math.ceil(n_inv/kmax)
+V = v('ELEC.distribution-train.SOL_ARK_60K.cb_bus_V'); I1 = unit_kW*1000/(math.sqrt(3)*V)
+kmax = int(v('sec_ocpd_max_A')/v('continuous_load_factor')/I1); ns = math.ceil(n_inv/kmax)
 per = [n_inv//ns + (1 if i < n_inv % ns else 0) for i in range(ns)]
 plant_kW = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and 'elec' in (e.get('layers') or []))   # R10b: null-rated feeder stubs (SF-HF_GEN unrated) count 0
 rows = []
 for i, k in enumerate(per, 1):
-    I = k*I1; brk = next(b for b in STD_A if b >= 1.25*I); kva = next(x for x in KVA if x >= k*unit_kW)
+    I = k*I1; brk = next(b for b in STD_A if b >= v('continuous_load_factor')*I); kva = next(x for x in KVA if x >= k*unit_kW)
     Imv = kva*1000/(math.sqrt(3)*v('mv_kV')*1000)
-    rows.append(dict(section=f'CB-{i}', inverters=k, kW=k*unit_kW, I_A=I, breaker_A=brk, xfmr_kVA=kva, I_mv_A=Imv, fuse_mv_A=next(b for b in (10,15,20,25,30,40,50,65,80,100) if b >= 1.5*Imv),
+    rows.append(dict(section=f'CB-{i}', inverters=k, kW=k*unit_kW, I_A=I, breaker_A=brk, xfmr_kVA=kva, I_mv_A=Imv, fuse_mv_A=next(b for b in v('ELEC.distribution-train.SOL_ARK_60K.cb_mv_fuse_A') if b >= v('ELEC.distribution-train.SOL_ARK_60K.cb_mv_fuse_margin')*Imv),
                      store_kWh=zn['kWh']*k/n_inv, charge_kW=zn['charge_kW']*k/n_inv, If_A=2*n_inv*I1))
 plant_sec = 'CB-1'
 Itot_mv = sum(r['kW'] for r in rows)*1000/(math.sqrt(3)*v('mv_kV')*1000)

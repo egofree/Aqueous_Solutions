@@ -11,7 +11,7 @@ def design():
     I = v('bmed_j_A_m2')*v('bmed_cell_area_m2'); N = math.ceil(n*F/(v('bmed_CE')*I))
     ns = math.ceil(N/v('bmed_cells_per_stack_max')); per = math.ceil(N/ns)
     bv = s['bmed']['voltage']; V = bv['V_design']
-    return dict(NaOH_kg_d=s['bmed']['base_kg_d'], mol_s=n, I_stack_A=I, triplets=N, stacks=ns, spare_stacks=1, triplets_per_stack=per, membrane_m2=3*N*v('bmed_cell_area_m2'),
+    return dict(NaOH_kg_d=s['bmed']['base_kg_d'], mol_s=n, I_stack_A=I, triplets=N, stacks=ns, spare_stacks=v('DIGESTER.metals-leach-train.acid-base-regen.bmed_spare_stacks'), triplets_per_stack=per, membrane_m2=3*N*v('bmed_cell_area_m2'),
                 V_triplet_implied=V, volt=bv, V_whey=v('bmed_sec_kWh_per_kg_base')*3.6e6*0.039997*v('bmed_CE')/F, kW=N*I*V/1000, frame='PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode and 316L/Ni cathode end plates, PP end plates with tie rods')
 def main():
     r = design(); print(json.dumps(r, default=float))

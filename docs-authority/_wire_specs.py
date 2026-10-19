@@ -3,10 +3,12 @@ inventory/WIRE_FAMILIES.csv: conductor (ASTM B3 soft Cu, ASTM B8 class B strandi
 standard, finished diameter, copper and compound mass for the inventory length, the drawing schedule on WIRE_DRAW from 8 mm
 ASTM B49 rod, and the routine and type tests. Cross-section drawings to docs-authority/drawings/wire/WF-nn.svg.
 Desk package for the build; the production runs and type tests remain open (the X-INV-03-WF tasks stay unticked)."""
-import csv, math, os, re
-R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
+import csv, math, os, re, sys
+R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
+from flow_graph.param import drivers as DR   # U4b: process literals single-sourced from drivers.json (A-M-217)
+_d = DR.load(); v = lambda k: DR.val(_d, k)
 FAM = list(csv.DictReader(open('docs-authority/inventory/WIRE_FAMILIES.csv')))
-RHO = 0.017241; CU = 8.89; ROD_D = 8.0; RED = 0.20  # ohm mm2/m (ASTM_B3_2013); g/cm3; mm rod (ASTM_B49_2020); area reduction per pass (A-M-217)
+RHO = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_cu_rho_ohm_mm2_m'); CU = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_cu_density_g_cm3'); ROD_D = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_rod_D_mm'); RED = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_pass_reduction')  # ohm mm2/m (ASTM_B3_2013); g/cm3; mm rod (ASTM_B49_2020); area reduction per pass (A-M-217)
 def area(sz):
     m = re.match(r'([\d/]+)\s*(AWG|kcmil)', sz); v, u = m.groups()
     if u == 'kcmil': return float(v)*0.506707

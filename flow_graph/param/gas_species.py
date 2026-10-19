@@ -5,6 +5,8 @@ Stoichiometry: H2 + 1/2 O2 -> H2O (7.94 kg O2/kg H2); C7.5H17 alkane cut + 11.75
 CH2O organics + O2 (1.066); photosynthesis CO2 + H2O -> CH2O + O2 (S87, TAIZ2015). Writes docs-authority/GAS_SPECIES.md.
 Run: python3 -m flow_graph.param.gas_species"""
 import json, os
+from . import drivers as DR
+_D = DR.load()   # U4b: sanitation combustion-O2 literal single-sourced from drivers.json (AQS-DUTY-063 Rev B)
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 def ledger(g):
     E = {e['stream_id']: e for e in g['edges']}; v = lambda k: float(E[k]['rate']['value'] or 0) if k in E else 0.0
@@ -14,7 +16,7 @@ def ledger(g):
             'IA-FORM-O2': 'formaldehyde oxidation', 'IA-H2O2-SRC': 'peroxide (returns as H2O + 1/2 O2 on decomposition at the bench)'}
     comb = [('BACKUP_GEN', 'S45 H2', v('S45'), 7.94), ('BACKUP_GEN', 'CUT-1-OUT C5-C10 fuel', v('CUT-1-OUT'), 3.51), ('AFTERBURNER', 'IA-SIC-CO carbon monoxide', v('IA-SIC-CO'), 0.571),
             ('AFTERBURNER', 'S11 grow-bed organics (CH2O basis)', v('S11'), 1.066)]
-    san = 0.32   # AQS-DUTY-063 Rev B combustion O2 for cake + biogas (taken on S02 there)
+    san = DR.val(_D, 'WTR.grey-black-train.BLACK_DIGEST.san_comb_O2_kg_d')   # AQS-DUTY-063 Rev B combustion O2 for cake + biogas (taken on S02 there)
     ncg = v('NCG_TO_AB')
     regen = [('S87', 'grow-bed photosynthesis', v('S87'))]
     sink = sum(d for _, _, d in draws); need = sum(m*f for _, _, m, f in comb)

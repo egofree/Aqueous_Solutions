@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 def design(d, g):
     v = lambda k: DR.val(d, k); m_d = sum(e['rate']['value'] for e in g['edges'] if e['to_unit_id'] == 'CRYO_H2' and 'mass' in e['layers'])
-    k = v('h2c_k'); T1 = 308.15; Rm = 8.314/0.002016; x = (k - 1)/k; R = v('h2c_P2_bar')/v('h2c_P1_bar')
+    k = v('h2c_k'); T1 = v('CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.h2c_T_suction_K'); Rm = 8.314/0.002016; x = (k - 1)/k; R = v('h2c_P2_bar')/v('h2c_P1_bar')
     Tout = lambda r: T1*(1 + (r**x - 1)/v('h2c_eta_ad'))
     n = 1
     while Tout(R**(1/n)) - 273.15 > v('h2c_T_out_max_C'): n += 1
@@ -20,7 +20,7 @@ def design(d, g):
     for i, Ps in enumerate([v('h2c_P1_bar')*r**j for j in range(n)]):
         rho = Ps*1e5/(Rm*T1); Vs = m_pk/rho/(v('h2c_rpm')/60*v('h2c_eta_v')); h = v('h2c_cavity_h_mm')/1000
         st.append(dict(stage=i + 1, P_in_bar=Ps, P_out_bar=Ps*r, T_out_C=Tout(r) - 273.15, intercooler_W=m_pk*v('h2c_cp_kJ_kgK')*1000*(Tout(r) - T1), swept_cm3=Vs*1e6, diaphragm_D_mm=math.sqrt(8*Vs/(math.pi*h))*1000))
-    return dict(H2_kg_d=m_d, n_stages=n, T_limit_C=v('h2c_T_out_max_C'), ratio_per_stage=r, kWh_per_kg=w/3.6e6/v('h2c_eta_motor'), P_avg_kW=P_avg, P_peak_kW=P_pk, stages=st, units=2,
+    return dict(H2_kg_d=m_d, n_stages=n, T_limit_C=v('h2c_T_out_max_C'), ratio_per_stage=r, kWh_per_kg=w/3.6e6/v('h2c_eta_motor'), P_avg_kW=P_avg, P_peak_kW=P_pk, stages=st, units=v('CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.h2c_units'),
                 material='head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers')
 def write(g, r):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; n = N['CRYO_H2']

@@ -253,6 +253,8 @@ REFS = {
  'INDUCT_SOCX': 'Small coreless induction furnaces (10-50 kW class for charges under 20 kg): 2-3 kHz for steel/Cu charges, specific connected power about 2.5 kW/kg of steel-equivalent charge; melt energy to tap 0.7-0.9 kWh/kg steel, 0.5-0.6 kWh/kg Al/Cu from cold charge; dross/slag make on clean scrap remelt 1-2 % of charge (published small-furnace practice as summarised in notes/FOUNDRY_SIZING.md, AQS-SIZE-FOUNDRY).',
  'API526': 'API Standard 526, Flanged Steel Pressure-relief Devices, 7th ed. (2017): effective orifice designations D through T; orifice D area 0.110 in2 (71 mm2), the smallest standard designation.',
  'CRC_H2': 'Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of hydrogen: HHV 141.8 MJ/kg (39.4 kWh/kg), LHV 120.0 MJ/kg (33.3 kWh/kg).',
+ 'ASME_B36_10M': 'ASME B36.10M-2018, Welded and Seamless Wrought Steel Pipe: NPS 1 (DN25) OD 33.4 mm and NPS 2 (DN50) OD 60.3 mm with Schedule 40 walls 3.38 and 3.91 mm; NPS 4 (DN100) OD 114.3 mm.',
+ 'ASTM_A999': 'ASTM A999/A999M-19, Standard Specification for General Requirements for Alloy and Stainless Steel Pipe: pipe furnished to dimensional specifications may be ordered to minimum wall; the customary supplied-wall practice carries a 12.5 % under-tolerance on wall thickness (0.875 factor on nominal wall).',
 }
 def cite(k):
     assert k in REFS, f'unknown reference {k}'

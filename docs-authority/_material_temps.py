@@ -1,6 +1,8 @@
 """X-MAT-09. Liquor temperature on every liquid edge into a thermoplastic unit, checked against the
 material limit (AQS-STD-002 M5). Writes params.T_C and params.T_basis on edges that lack T_C when run
 with --write. Prints a markdown table."""
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from flow_graph.param.drivers import load as _dl; _D=_dl()
 import json, re, sys
 LIM={'PVC-U':60,'CPVC':93,'PVDF':120}
 U={**{u:'PVC-U' for u in 'BMED_ACID BMED_BASE POLISH_BANK CONTINUOUS_RECYCLE CRU FLOAT_SINK S13_CLASS_TREAT SALT_FEED WS_KOH WS_PHOS WS_AMMONIA WS_HF_ED WET_BENCH GREY_TREAT BLACK_DIGEST MEOH_FERM ACID_POLISH_SCRUB ALK_SCRUBBER NOX_SCRUB MET_SCRUB CATCH_TANK ROOF_TANK REMIN ZNBR2_BR2_REGEN EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9'.split()},
@@ -29,7 +31,7 @@ for e in g['edges']:
     if e.get('phase') not in ('L','S/L','L/G'): continue
     t,b=parse(e)
     if t is None: t,b=upstream(e['from_unit_id'])
-    if t is None: t,b=40.0,'assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up'
+    if t is None: t,b=_D['storage.default_no_heat_input_T_C']['value'],'assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269)'
     lim=LIM[U[u]]; ok=t<=lim
     rows.append((e['stream_id'],e['from_unit_id'],u,U[u],t,lim,'ok' if ok else 'EXCEEDS',b))
     if W and not isinstance((e.get('params') or {}).get('T_C'),(int,float)):

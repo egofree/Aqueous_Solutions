@@ -13,7 +13,7 @@ def design(d, g):
     upw = r('IA-UPW-FAB') + r('S01'); rej = r('IA-UPW-REJ'); feed = upw + rej; rec = upw/feed
     c = v('ro_feed_TDS_mg_L')/58.44                                                   # mol/m3 NaCl
     c_conc = c*(1 - (1 - v('ro_rejection'))*rec)/(1 - rec)                            # concentrate
-    pi = 2*(c + c_conc)/2*8.314*298.15/1e5                                            # bar, mean feed-side
+    pi = 2*(c + c_conc)/2*8.314*v('WTR.potable-upw-train.BMED_UPW_POLISH.ro_eval_T_K')/1e5                                    # bar, mean feed-side
     dP = v('ro_flux_LMH')/v('ro_A_LMH_bar') + pi
     area = upw/24/v('ro_flux_LMH')                                                   # m2 (kg/d ~ L/d)
     Qf = feed/1000/86400; P_ro = Qf*dP*1e5/v('ro_pump_eta')/1000
@@ -21,7 +21,7 @@ def design(d, g):
     I = 96485*n/v('edi_CE'); P_edi = I*v('edi_V_cell')*v('edi_cells')/1000
     P_uv = v('upw_uv_W')/1000
     return dict(UPW_kg_d=upw, bypass_kg_d=r('IA-UPW-REMIN'), RO_feed_kg_d=feed, recovery=rec, osmotic_bar=pi, feed_bar=dP, membrane_m2=area,
-                modules=2, RO_kW=P_ro, EDI_A=I, EDI_kW=P_edi, UV_kW=P_uv, total_kW=P_ro + P_edi + P_uv,
+                modules=v('WTR.potable-upw-train.BMED_UPW_POLISH.ro_modules'), RO_kW=P_ro, EDI_A=I, EDI_kW=P_edi, UV_kW=P_uv, total_kW=P_ro + P_edi + P_uv,
                 kWh_per_m3=(P_ro + P_edi + P_uv)*24/(feed/1000), kWh_per_m3_RO_EDI=(P_ro + P_edi)*24/(feed/1000))
 def write(g, r):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}; n = N['BMED_UPW_POLISH']; TAG = 'X-MFG-34 (A-M-176, AQS-DUTY-070)'

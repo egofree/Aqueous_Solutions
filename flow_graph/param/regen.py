@@ -187,6 +187,18 @@ def main(argv=None):
             ents = [e for e in entries if e['name'] == s['name']]
             if ents and ents[-1]['status'] == 'ok' and ents[-1]['pass'] in (passes, 0):
                 vouched += s.get('outputs', [])
+    # Monotonic vouch carry-over (U4b fix): a converged clean pass re-derives every output
+    # byte-identically against the same final graph sha, so prior vouches remain true and must
+    # survive the rewrite - zeroing them on an already-converged tree turns _rev_stamp red
+    # until the next content-changing commit.
+    prior = {}
+    try:
+        prev = json.load(open(receipt_path))
+        if prev.get('graph_sha256') == final_sha and prev.get('converged'):
+            prior = set(prev.get('vouched_patterns', []))
+    except Exception:
+        pass
+    vouched = sorted(set(vouched) | prior)
     receipt = {
         'generated_by': 'flow_graph/param/regen.py',
         'manifest': os.path.relpath(MANIFEST_PATH, ROOT),

@@ -6,6 +6,7 @@ Run: python3 -m flow_graph.param.h2_purifier [--write]"""
 import json, math, os, sys
 from . import drivers as DR
 from .sizing.heat import insulated_cylinder
+_D = DR.load(); HP = 'GAS.scrubbing-headers-train.gas-headers.H2_DRYER.'   # U4b: sizing literals single-sourced from drivers.json (A-M-168)
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 def design(d, g):
@@ -17,19 +18,19 @@ def design(d, g):
     hcl = n*v('h2p_hcl_ppmv')*1e-6*36.461/1000; m_guard = hcl*v('h2p_guard_days')/v('h2p_guard_cap')
     w = S['rate']['value']*(S.get('composition') or {}).get('water', 0.0) + w_deoxo
     m_sieve = w*v('h2p_cycle_h')/24/v('h2p_sieve_work_cap')*v('h2p_bed_margin')
-    V_sieve = m_sieve/0.7                                                                      # L at 0.7 kg/L bulk
-    beds = {'deoxo': V_deoxo, 'guard': m_guard/0.8, 'TSA': V_sieve}
+    V_sieve = m_sieve/v(HP+'h2p_sieve_bulk_kg_L')                                      # L at 0.7 kg/L bulk
+    beds = {'deoxo': V_deoxo, 'guard': m_guard/v(HP+'h2p_guard_bulk_kg_L'), 'TSA': V_sieve}
     geo = {}
     for b, V in beds.items():
-        V = max(V, 0.05); D = 33.4 if V < 0.25 else 60.3; t = 3.38 if D < 40 else 3.91; idm = D - 2*t
-        L = max(300, V/1000/(math.pi*(idm/1000)**2/4)*1000); geo[b] = dict(V_L=V, tube=f'DN{25 if D < 40 else 50} Sch 40 316L', L_mm=round(L), count=2)
-    Lt = geo['TSA']['L_mm']/1000; steel = math.pi*(60.3 if 'DN50' in geo['TSA']['tube'] else 33.4)/1000*Lt*0.0039*8000
+        V = max(V, v(HP+'h2p_bed_min_L')); D = v(HP+'h2p_tube_OD_small_mm') if V < v(HP+'h2p_tube_vol_switch_L') else v(HP+'h2p_tube_OD_large_mm'); t = v(HP+'h2p_wall_small_mm') if D < 40 else v(HP+'h2p_wall_large_mm'); idm = D - 2*t
+        L = max(v(HP+'h2p_bed_min_L_mm'), V/1000/(math.pi*(idm/1000)**2/4)*1000); geo[b] = dict(V_L=V, tube=f'DN{25 if D < 40 else 50} Sch 40 316L', L_mm=round(L), count=v(HP+'h2p_bed_count'))
+    Lt = geo['TSA']['L_mm']/1000; steel = math.pi*(v(HP+'h2p_tube_OD_large_mm') if 'DN50' in geo['TSA']['tube'] else v(HP+'h2p_tube_OD_small_mm'))/1000*Lt*v(HP+'h2p_steel_wall_m')*v(HP+'h2p_steel_rho_kg_m3')
     cyc = 24/(2*v('h2p_cycle_h'))
-    Q = (m_sieve*0.92*(v('h2p_regen_T_C') - 25) + steel*0.5*(v('h2p_regen_T_C') - 25))/1000 + w*v('h2p_cycle_h')/24*2500     # kJ per regeneration
-    regen_W = Q*1000/86400*(24/v('h2p_cycle_h')); ins, loss = insulated_cylinder(v('h2p_regen_T_C'), 60.3, Lt)
-    kw = (regen_W/0.7 + loss*0.5)/1000                                                        # loss while hot, half the time
+    Q = (m_sieve*v(HP+'h2p_sieve_cp_kJ_kgK')*(v('h2p_regen_T_C') - v(HP+'h2p_sensible_ref_T_C')) + steel*v(HP+'h2p_steel_cp_kJ_kgK')*(v('h2p_regen_T_C') - v(HP+'h2p_sensible_ref_T_C')))/1000 + w*v('h2p_cycle_h')/24*v(HP+'h2p_water_desorb_kJ_kg')     # kJ per regeneration
+    regen_W = Q*1000/86400*(24/v('h2p_cycle_h')); ins, loss = insulated_cylinder(v('h2p_regen_T_C'), v(HP+'h2p_tube_OD_large_mm'), Lt)
+    kw = (regen_W/v(HP+'h2p_regen_heater_eta') + loss*v(HP+'h2p_loss_hot_frac'))/1000                                       # loss while hot, half the time
     return dict(H2_kg_d=h2, Nm3_h=Nm3_h, O2_mol_d=o2, water_kg_d=w, HCl_kg_d=hcl, guard_kg=m_guard, sieve_kg=m_sieve, beds=geo, regen_W=regen_W, loss_W=loss,
-                insulation_mm=ins, kW=round(kw, 4), D_mm=60, H_mm=max(g_['L_mm'] for g_ in geo.values()) + 300, T_C=v('h2p_regen_T_C'), wall_mm=3.91)
+                insulation_mm=ins, kW=round(kw, 4), D_mm=v(HP+'h2p_envelope_D_mm'), H_mm=max(g_['L_mm'] for g_ in geo.values()) + v(HP+'h2p_envelope_top_mm'), T_C=v('h2p_regen_T_C'), wall_mm=v(HP+'h2p_wall_large_mm'))
 def write(g, r):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
     U = 'H2_DRYER' if 'H2_DRYER' in N else 'H2_PURIFIER'   # R11 Rev AC regen: node renamed H2_PURIFIER -> H2_DRYER
@@ -37,7 +38,7 @@ def write(g, r):
     n['params']['design'] = json.loads(json.dumps(r, default=float)); n['continuous_kw'] = {'value': r['kW'], 'unit': 'kW', 'status': 'study', 'note': f"X-MFG-39 (A-M-168): TSA regeneration {r['regen_W']:.1f} W / 0.7 + half the insulated loss."}
     for sid in (f'SF-{U}', f'SQ-{U}'):
         if sid in E: E[sid]['rate']['value'] = r['kW']
-    n['params']['size_mm'] = [600, 400, r['H_mm'] + 400]
+    n['params']['size_mm'] = [DR.val(_D, HP+'h2p_envelope_L_mm'), DR.val(_D, HP+'h2p_envelope_W_mm'), r['H_mm'] + DR.val(_D, HP+'h2p_envelope_head_mm')]
     # X-PAR-15: feed water leaves on the TSA regeneration purge to the roof tank; product to Grade D (water taken as nil at 5 umol/mol)
     from .o2_close import _edge
     wf = 0.0

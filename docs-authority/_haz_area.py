@@ -8,17 +8,17 @@ Run after _hse_sep.py and _instr_index.py."""
 import csv, json, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
+from flow_graph.param import drivers as DR   # U4b: gas class table single-sourced from drivers.json (A-M-210)
+_d = DR.load(); v = lambda k: DR.val(_d, k)
 for k in ('IEC60079_10_1', 'NFPA497_2024', 'NEC2023'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
-GAS = {'H2': ('IIC (Group B)', 'T1', 560, 1.0, 1.5, 'buoyant gas'), 'CH3OH': ('IIA (Group D)', 'T1', 464, 1.5, 3.0, 'vapour'),
-       'C5-C10': ('IIA (Group D)', 'T3', 280, 1.5, 3.0, 'vapour'), 'C11-C18': ('IIA (Group D)', 'T3', 220, 1.5, 3.0, 'vapour'),
-       'C19-C28': ('IIA (Group D)', 'T3', 210, 1.5, 3.0, 'vapour (heated only)'), 'hydrocarbon': ('IIA (Group D)', 'T3', 210, 1.5, 3.0, 'vapour'),
-       'AcOH': ('IIA (Group D)', 'T1', 485, 1.5, 3.0, 'vapour')}   # AIT C (NFPA 497 Table 4.4.2 class values)
+GASt = v('ELEC.distribution-train.haz_gas_classes')   # AIT C (NFPA 497 Table 4.4.2 class values)
+GAS = {x: (c['group'], c['T_class'], c['AIT_C'], c['R1_m'], c['R2_m'], c['kind']) for x, c in GASt.items()}
 src = collections.defaultdict(dict)
 for e in g['edges']:
     if e['presence'] != 'present' or not (e['rate'].get('value') or 0) > 0: continue
     for x, f in (e.get('composition') or {}).items():
-        if x in GAS and (f or 0) > (0.5 if x == 'H2' else 0.2) and e.get('phase') in ('L', 'G') and not (x == 'hydrocarbon' and {(N.get(e['from_unit_id']) or {}).get('sector_id'), (N.get(e['to_unit_id']) or {}).get('sector_id')} & {'FARM', 'HAB', 'WTR'}):   # biological 'hydrocarbon' (biomass) is not a vapour source
+        if x in GAS and (f or 0) > (v('ELEC.distribution-train.haz_min_frac_H2') if x == 'H2' else v('ELEC.distribution-train.haz_min_frac_vap')) and e.get('phase') in ('L', 'G') and not (x == 'hydrocarbon' and {(N.get(e['from_unit_id']) or {}).get('sector_id'), (N.get(e['to_unit_id']) or {}).get('sector_id')} & {'FARM', 'HAB', 'WTR'}):   # biological 'hydrocarbon' (biomass) is not a vapour source
             for u in (e['from_unit_id'], e['to_unit_id']):
                 n = N.get(u) or {}
                 if n.get('class') not in ('header', 'boundary', 'building', 'dock', 'relief'): src[u][x] = max(src[u].get(x, 0), e['rate']['value']*f)
