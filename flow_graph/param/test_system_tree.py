@@ -323,10 +323,9 @@ def test_enabled_units_helper_effective_set() -> None:
 
     m = _model()
     on = _enabled_units(m)
-    # 177 not 178: EVAP_ACID_VS still carries legacy sector WET (pre-rename
-    # DIGESTER) with no sector row, so the sector-aware set excludes it —
-    # same as the P0 sector checks. The tree places it under DIGESTER.
-    assert len(on) == 177
+    # 178 (2026-10-19): EVAP_ACID_VS sector stamp fixed WET->DIGESTER, so the
+    # sector-aware set now includes every unit (the 177 exception is closed).
+    assert len(on) == 178
     assert "EVAP_ACID_VS" not in on
     # unit off leaves the set even with the sector on
     m2 = copy.deepcopy(m)
