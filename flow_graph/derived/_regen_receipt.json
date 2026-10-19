@@ -16,7 +16,7 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 1.19,
+   "seconds": 0.63,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -29,7 +29,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -68,7 +68,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "a62e5bc48c0bb7f378dfea5f5fbf25ebf00648be37ee5f5574cb9b084a18acca"
   },
@@ -107,7 +107,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "a62e5bc48c0bb7f378dfea5f5fbf25ebf00648be37ee5f5574cb9b084a18acca"
   },
@@ -221,7 +221,7 @@
     "flow_graph.param.balance"
    ],
    "pass": 0,
-   "seconds": 0.43,
+   "seconds": 0.42,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -243,7 +243,7 @@
     "docs-authority/_one_line.py"
    ],
    "pass": 0,
-   "seconds": 0.42,
+   "seconds": 0.43,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -300,7 +300,7 @@
     "docs-authority/_polymers_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -434,7 +434,7 @@
     "flow_graph/export_authority_md.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -472,6 +472,17 @@
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
   {
+   "name": "model_workbook",
+   "argv": [
+    "python3",
+    "docs-authority/_model_workbook.py"
+   ],
+   "pass": 0,
+   "seconds": 1.29,
+   "status": "ok",
+   "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
+  },
+  {
    "name": "assumptions_register",
    "argv": [
     "python3",
@@ -489,7 +500,7 @@
     "flow_graph/regen_derived.py"
    ],
    "pass": 0,
-   "seconds": 15.16,
+   "seconds": 15.15,
    "status": "ok",
    "post_graph_sha256": "77109fdabf5ba13246bd84e0b3c969bc6ef755d4739631218c89e9e93f78faa1"
   },
@@ -522,6 +533,7 @@
   "docs-authority/LINE_LIST.md",
   "docs-authority/LOAD_LIST.json",
   "docs-authority/LOAD_LIST.md",
+  "docs-authority/MODEL_WORKBOOK.xlsx",
   "docs-authority/ONE_LINE.json",
   "docs-authority/ONE_LINE.md",
   "docs-authority/SUPPORTS.md",
