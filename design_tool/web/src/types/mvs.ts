@@ -92,6 +92,18 @@ export interface SurplusItem {
   threshold?: number | null
 }
 
+export interface ElectricalMatch {
+  generation_kw_study?: number | null
+  storage_power_kw_study?: number | null
+  load_kw_study?: number | null
+  need_kw?: number | null
+  target_kw?: number | null
+  pv_nameplate_kw_study?: number | null
+  enabled_storage_options?: string[]
+  status?: string
+  note?: string
+}
+
 export interface SolveResponse {
   status: string
   mvs_equivalent: boolean
@@ -99,6 +111,7 @@ export interface SolveResponse {
   gaps: Gap[]
   unclosed_streams: UnclosedStream[]
   surplus: Record<string, SurplusItem>
+  electrical_match?: ElectricalMatch
   notes: string[]
   solved_at?: string
 }

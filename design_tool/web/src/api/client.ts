@@ -7,6 +7,11 @@ import type {
   LayerViewName,
 } from '../types/graph'
 import type {
+  ParamsResponse,
+  RegenStatus,
+  SystemTreeResponse,
+} from '../types/design'
+import type {
   ExportResponse,
   FlagsResponse,
   MvsModel,
@@ -120,4 +125,19 @@ export async function getFlowGraphView(
   name: LayerViewName,
 ): Promise<FlowGraphView> {
   return jsonOrThrow(await fetch(`/api/v1/flow-graph/views/${name}`))
+}
+
+/** U6: read-only system tree (AQS-SYS-TREE-001) with unit sets + aggregates. */
+export async function getSystemTree(): Promise<SystemTreeResponse> {
+  return jsonOrThrow(await fetch('/api/v1/system-tree'))
+}
+
+/** U6: drivers.json listing — READ-ONLY (values live in drivers.json). */
+export async function getParams(): Promise<ParamsResponse> {
+  return jsonOrThrow(await fetch('/api/v1/params'))
+}
+
+/** U6: derived-artefact staleness vs the graph (read-only check). */
+export async function getRegenStatus(): Promise<RegenStatus> {
+  return jsonOrThrow(await fetch('/api/v1/regen-status'))
 }

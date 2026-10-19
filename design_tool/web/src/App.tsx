@@ -9,6 +9,8 @@ import {
   getFlowGraphTopology,
   getFlowGraphView,
   getMvs,
+  getParams,
+  getSystemTree,
   patchSandbox,
   solveSandbox,
 } from './api/client'
@@ -16,14 +18,19 @@ import { CycleViews } from './components/CycleViews'
 import { ExportButton, P0_MODULES } from './components/ExportButton'
 import { GapPanel } from './components/GapPanel'
 import { LayerFilters } from './components/LayerFilters'
+import { ParamsPanel } from './components/ParamsPanel'
+import { RegenStatusBadge } from './components/RegenStatusBadge'
 import { SchematicCanvas } from './components/SchematicCanvas'
 import { SectorToggles } from './components/SectorToggles'
 import { SiteInputs } from './components/SiteInputs'
+import { TreeTogglePanel } from './components/TreeTogglePanel'
+import type { TreeNodeDto, ParamsResponse, SystemTreeResponse } from './types/design'
 import type { FlowGraphView, LayerViewName } from './types/graph'
 import type {
   ExportResponse,
   Gap,
   MvsModel,
+  SandboxOverrides,
   SolveResponse,
   UnclosedStream,
 } from './types/mvs'
@@ -50,6 +57,10 @@ export default function App() {
   const [layer, setLayer] = useState<LayerViewName>(DEFAULT_LAYER)
   const [layerView, setLayerView] = useState<FlowGraphView | null>(null)
   const [layerBusy, setLayerBusy] = useState(false)
+  // U6 design-UI state
+  const [systemTree, setSystemTree] = useState<SystemTreeResponse | null>(null)
+  const [params, setParams] = useState<ParamsResponse | null>(null)
+  const [regenRefresh, setRegenRefresh] = useState(0)
 
   const refreshFlags = useCallback(async (id: string) => {
     const flags = await getFlags(id)
@@ -62,6 +73,8 @@ export default function App() {
     setSolve(result)
     setGaps(result.gaps)
     setUnclosed(result.unclosed_streams)
+    // Regen badge re-checks after every solve (U6).
+    setRegenRefresh((k) => k + 1)
     return result
   }, [])
 
@@ -96,6 +109,11 @@ export default function App() {
         if (cancelled) return
         // Topology proves graph load; MVS is graph projection for sandbox edits
         void topo
+        // U6 read-only views (tree + drivers) load alongside the model.
+        const [tree, drv] = await Promise.all([getSystemTree(), getParams()])
+        if (cancelled) return
+        setSystemTree(tree)
+        setParams(drv)
         const mvs = await getMvs()
         if (cancelled) return
         setMvsRevision(mvs.revision)
@@ -124,6 +142,29 @@ export default function App() {
       const sb = await patchSandbox(sandboxId, {
         sector_enabled: { [sectorId]: enabled },
       })
+      setModel(sb.model)
+      await runSolve(sandboxId)
+      await refreshFlags(sandboxId)
+    } catch (e) {
+      setError(String(e))
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  /** U4a tree toggle: root→sector, train→system, subsystem, leaf→unit. */
+  async function onToggleTree(node: TreeNodeDto, enabled: boolean) {
+    if (!sandboxId) return
+    const overrides: SandboxOverrides = {}
+    if (node.level === 0) overrides.sector_enabled = { [node.id]: enabled }
+    else if (node.unit_id != null)
+      overrides.unit_enabled = { [node.unit_id]: enabled }
+    else if (node.level === 1) overrides.system_enabled = { [node.id]: enabled }
+    else overrides.subsystem_enabled = { [node.id]: enabled }
+    setBusy(true)
+    setError(null)
+    try {
+      const sb = await patchSandbox(sandboxId, overrides)
       setModel(sb.model)
       await runSolve(sandboxId)
       await refreshFlags(sandboxId)
@@ -188,11 +229,13 @@ export default function App() {
         <div>
           <h1>Aqueous Design Tool — B′ Graph-layer UI</h1>
           <p className="sub">
-            AQS-UI-001 Rev D · unify_then_reshape · schema aqs-mvs-0.3 ·
-            CERN-OHL-S-2.0 · Graph sole topology; sandbox overlays only
+            AQS-UI-001 Rev D · unify_then_reshape · U6 design UI · schema
+            aqs-mvs-0.3 · CERN-OHL-S-2.0 · Graph sole topology; sandbox
+            overlays only
           </p>
         </div>
         <div className="meta">
+          <RegenStatusBadge refreshKey={regenRefresh} />
           <div>
             MVS rev (projection): <code>{mvsRevision || '—'}</code>
           </div>
@@ -231,6 +274,12 @@ export default function App() {
               busy={busy}
               onToggle={onToggleSector}
             />
+            <TreeTogglePanel
+              tree={systemTree}
+              model={model}
+              busy={busy}
+              onToggle={onToggleTree}
+            />
             <CycleViews
               cycles={model.ui?.cycle_views ?? []}
               active={cycle}
@@ -257,6 +306,7 @@ export default function App() {
               layerView={layerView}
             />
             <GapPanel solve={solve} gaps={gaps} unclosed={unclosed} />
+            <ParamsPanel params={params} />
           </main>
         </div>
       )}

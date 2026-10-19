@@ -153,3 +153,159 @@ code { font-family: ui-monospace, "DejaVu Sans Mono", monospace; font-size: 0.92
 .layer-filters .hint code {
   font-size: 0.7rem;
 }
+
+/* U6 regen status badge (header) */
+.regen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: help;
+}
+.regen-badge .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #999;
+  flex: none;
+}
+.regen-badge.ok .dot { background: #2ecc71; box-shadow: 0 0 4px #2ecc71; }
+.regen-badge.bad .dot { background: #e74c3c; box-shadow: 0 0 4px #e74c3c; }
+.regen-badge code { font-size: 0.72rem; }
+
+/* U6 electrical envelope (GapPanel) */
+.elec-envelope {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
+  margin: 0.4rem 0 0.2rem;
+  padding: 0.4rem 0.55rem;
+  border-left: 4px solid #95a5a6;
+  background: #f4f6f8;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+.elec-envelope.ok { border-left-color: #27ae60; }
+.elec-envelope.bad { border-left-color: #e74c3c; background: #fdf0ee; }
+.elec-envelope.warn { border-left-color: #f0c674; }
+.elec-envelope .elec-status strong { text-transform: none; }
+.elec-envelope .elec-nums { font-variant-numeric: tabular-nums; }
+.elec-envelope .elec-note {
+  flex-basis: 100%;
+  font-size: 0.72rem;
+  color: #666;
+}
+
+/* U6 system tree toggles (sidebar) */
+.tree-toggle-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tree-toggle-panel .tree-root-list {
+  max-height: 320px;
+  overflow: auto;
+}
+.tree-toggle-panel .tree-node ul {
+  border-left: 1px dotted #d5d9de;
+  margin-left: 0.4rem;
+}
+.tree-toggle-panel .tree-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.12rem 0.15rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f4f4f4;
+}
+.tree-toggle-panel .tree-row:hover { background: #fafbfc; }
+.tree-toggle-panel .tree-name {
+  font-family: ui-monospace, monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+}
+.tree-toggle-panel .tree-node.leaf .tree-name { font-weight: 400; color: #444; }
+.tree-toggle-panel .tree-meta {
+  margin-left: auto;
+  font-size: 0.68rem;
+  color: #777;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.tree-toggle-panel .badge.presence-placeholder { background: #fef9e7; color: #7d6608; }
+.tree-toggle-panel .badge.presence-study { background: #eaf2f8; color: #1f618d; }
+.tree-toggle-panel .badge.presence-retired { background: #eee; color: #888; }
+
+/* U6 params table */
+.params-controls {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0.4rem 0;
+  flex-wrap: wrap;
+}
+.params-controls input[type='search'] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.params-controls .nv-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.params-table-wrap { overflow: auto; max-height: 420px; }
+.params-panel table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.78rem;
+}
+.params-panel th {
+  position: sticky;
+  top: 0;
+  background: #eef1f4;
+  text-align: left;
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1px solid #ccd2d8;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.params-panel td {
+  padding: 0.18rem 0.4rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+.params-panel td.key {
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  white-space: nowrap;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.params-panel td.val {
+  font-variant-numeric: tabular-nums;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.params-panel td.basis { max-width: 300px; }
+.params-panel td.basis .badge { margin-right: 0.25rem; }
+.params-panel tr.nv td.key { color: #7d6608; }
+.params-panel .badge.ref { background: #d6eaf8; color: #1a5276; }
+.params-panel .badge.own { background: #d5f5e3; color: #186a3b; }
+.params-panel .badge.ro { background: #ecf0f1; color: #555; }

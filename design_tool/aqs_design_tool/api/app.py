@@ -8,6 +8,13 @@ All mutations are sandbox-scoped.
 
 from __future__ import annotations
 
+import ast
+import hashlib
+import json
+import subprocess
+import sys
+from datetime import datetime, timezone
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -312,3 +319,225 @@ def list_sector_definitions() -> JSONResponse:
 
 def create_app() -> FastAPI:
     return app
+
+
+# ----------------------------------------------------------------------
+# U6 design UI — read-only views over the unified engine
+# (flow_graph.system_tree / param/drivers.json / param.regen). None of
+# these mutate anything: the write path stays edit → regen (AGENTS loop).
+# ----------------------------------------------------------------------
+
+
+def _repo_paths() -> tuple:
+    """(repo_root, drivers.json, regen receipt, rev_stamp checker)."""
+    from ..paths import FLOW_GRAPH_PACKAGE
+
+    root = FLOW_GRAPH_PACKAGE.parent
+    return (
+        root,
+        FLOW_GRAPH_PACKAGE / "param" / "drivers.json",
+        FLOW_GRAPH_PACKAGE / "derived" / "_regen_receipt.json",
+        root / "docs-authority" / "_rev_stamp.py",
+    )
+
+
+def _flow_graph_on_path() -> None:
+    """Make the flow_graph package importable (repo root on sys.path)."""
+    from ..paths import FLOW_GRAPH_PACKAGE
+
+    root = str(FLOW_GRAPH_PACKAGE.parent)
+    if root not in sys.path:
+        sys.path.insert(0, root)
+
+
+def _load_system_tree():
+    """Import flow_graph.system_tree with the flow_graph package importable."""
+    _flow_graph_on_path()
+    from flow_graph.system_tree import load as load_tree
+
+    return load_tree()
+
+
+@app.get("/api/v1/system-tree")
+def get_system_tree(include_unit_ids: bool = True) -> dict:
+    """U4a containment tree (AQS-SYS-TREE-001), served read-only.
+
+    Every node carries its resolved unit set and an aggregate (count,
+    ``kw_sum`` from graph ``continuous_kw``, worst presence) rolled up
+    from the graph — the tree only partitions the graph (sole
+    authority). Sandbox toggles PATCH ``system_enabled`` /
+    ``subsystem_enabled`` / ``unit_enabled`` with these node ids;
+    most-specific wins server-side.
+    """
+    from ..flow_graph_adapter import load_plant_flow_graph_dict
+
+    _flow_graph_on_path()
+    from flow_graph.system_tree import TreeValidationError
+
+    try:
+        tree = _load_system_tree()
+        graph = load_plant_flow_graph_dict()
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except TreeValidationError as exc:
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "error": "system tree structurally invalid",
+                "issues": exc.issues,
+            },
+        ) from exc
+
+    nodes = []
+    for n in tree.nodes:
+        units = sorted(tree.resolve_units(n.id))
+        nodes.append(
+            {
+                "id": n.id,
+                "parent": n.parent,
+                "level": n.level,
+                "children": list(n.children),
+                "unit_id": n.unit_id,
+                "description": n.description,
+                "unit_ids": units if include_unit_ids else None,
+                "aggregate": tree.aggregate(units, graph=graph),
+            }
+        )
+    return {
+        "source": "AQS-SYS-TREE-001 (flow_graph/system_tree.yaml)",
+        "graph_authority": "AQS-FLOW-GRAPH-001",
+        "read_only": True,
+        "schema_version": tree.schema_version,
+        "doc_id": tree.doc_id,
+        "revision": tree.revision,
+        "date": tree.date,
+        "sector_exceptions": tree.sector_exceptions,
+        "stats": tree.stats(),
+        "node_count": len(nodes),
+        "nodes": nodes,
+    }
+
+
+@app.get("/api/v1/params")
+def get_params() -> dict:
+    """Design drivers listing — READ-ONLY projection of drivers.json.
+
+    Values live in ``flow_graph/param/drivers.json`` (X-PAR-01: every
+    independent input with a published reference / register id / owner
+    basis). The write path is edit drivers.json + regen, never this API.
+    """
+    _, drivers_path, _, _ = _repo_paths()
+    if not drivers_path.is_file():
+        raise HTTPException(
+            status_code=404, detail=f"drivers.json not found: {drivers_path}"
+        )
+    raw = drivers_path.read_bytes()
+    data = json.loads(raw)
+    rows = []
+    for key in sorted(data):
+        e = data[key] if isinstance(data[key], dict) else {"value": data[key]}
+        rows.append(
+            {
+                "key": key,
+                "value": e.get("value"),
+                "units": e.get("units"),
+                "ref": e.get("ref"),
+                "owner": e.get("owner"),
+                "register": e.get("register"),
+                "needs_verification": bool(e.get("needs_verification")),
+                "verification_test": e.get("verification_test"),
+            }
+        )
+    return {
+        "source": "flow_graph/param/drivers.json (X-PAR-01)",
+        "read_only": True,
+        "note": "Values live in drivers.json; edit + regen is the write path.",
+        "count": len(rows),
+        "needs_verification_count": sum(
+            1 for r in rows if r["needs_verification"]
+        ),
+        "drivers_sha256": hashlib.sha256(raw).hexdigest(),
+        "params": rows,
+    }
+
+
+@app.get("/api/v1/regen-status")
+def get_regen_status() -> dict:
+    """Staleness of derived artefacts vs the graph — read-only check.
+
+    ``python3 -m flow_graph.param.regen --check`` delegates to
+    ``docs-authority/_rev_stamp.py`` but *rewrites*
+    ``docs-authority/DERIVED_REVISIONS.md``; ``--check-only`` runs the
+    same evaluator and writes nothing, so this GET stays side-effect
+    free. Exit 1 ⇔ gated stale files exist.
+    """
+    import re
+
+    root, _, receipt_path, rev_stamp = _repo_paths()
+    checked_at = datetime.now(timezone.utc).isoformat()
+    out: dict = {
+        "ok": False,
+        "stale_count": None,
+        "gated_stale": [],
+        "files_checked": None,
+        "last_receipt": None,
+        "checked_at": checked_at,
+        "command": f"python3 {rev_stamp.relative_to(root)} --check-only",
+    }
+    try:
+        r = subprocess.run(
+            [sys.executable, str(rev_stamp), "--check-only"],
+            cwd=str(root),
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+    except subprocess.TimeoutExpired:
+        return {**out, "error": "rev_stamp --check-only timed out after 15 s"}
+    except OSError as exc:  # noqa: BLE001 — surface as status, not a 500
+        return {**out, "error": f"failed to run rev_stamp: {exc}"}
+
+    m = re.search(
+        r"^(\d+) files (\d+) stale gated stale: \[(.*)\]\s*$",
+        r.stdout,
+        re.MULTILINE,
+    )
+    if m is None:
+        tail = "\n".join((r.stdout + r.stderr).strip().splitlines()[-5:])
+        return {
+            **out,
+            "error": f"could not parse rev_stamp output (rc={r.returncode}): {tail}",
+        }
+    files_checked = int(m.group(1))
+    stale_count = int(m.group(2))
+    gated: list[str] = []
+    if m.group(3).strip():
+        try:
+            parsed = ast.literal_eval(f"[{m.group(3)}]")
+            gated = [str(x) for x in parsed]
+        except (ValueError, SyntaxError):
+            gated = []
+    status = {
+        **out,
+        "ok": r.returncode == 0 and stale_count == 0,
+        "stale_count": stale_count,
+        "gated_stale": gated,
+        "files_checked": files_checked,
+        "returncode": r.returncode,
+    }
+    # Last full-regen provenance receipt (best effort; never a 500).
+    try:
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        status["last_receipt"] = {
+            "graph_sha256": receipt.get("graph_sha256"),
+            "passes": receipt.get("passes"),
+            "converged": receipt.get("converged"),
+            "vouched_count": len(receipt.get("vouched_patterns") or []),
+            "failed": receipt.get("failed") or [],
+            "generated_by": receipt.get("generated_by"),
+        }
+    except FileNotFoundError:
+        status["receipt_error"] = f"no regen receipt at {receipt_path}"
+    except (json.JSONDecodeError, OSError) as exc:
+        status["receipt_error"] = f"unreadable regen receipt: {exc}"
+    return status
