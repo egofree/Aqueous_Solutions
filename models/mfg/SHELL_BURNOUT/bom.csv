@@ -1,2 +1,6 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1000 x 1000 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)
+1,"Flash-dewax + fire chamber 1000 x 640 x 900 mm, 900 C, 60 mm lined",1,"CS casing, ceramic fibre","AQS-DUTY-072 section 4; flash-dewax + shell fire furnace, 900 C"
+2,Shell trolley deck with casters and stop,1,"CS, heat-resistant wheels",8 kg/d fired shells (A-M-281)
+3,Off-gas stack DN150 with dewax-air bias damper,1,SA-240 304L,AQS-DUTY-072 section 4; flash dewax stage
+4,"Wax condenser D120 x 360 mm with run, downcomer and receiver",1,"SA-240 304L, jacketed",1.8 kg/d wax reclaim to WAX_PATTERN; 0.2 kg/d burned (A-M-281)
+5,"Control cabinet, SCR and 0.25 kW elements, 2-zone",1,"CS enclosure, IP54",AQS-DUTY-072 section 4; wax condensate to WAX_PATTERN

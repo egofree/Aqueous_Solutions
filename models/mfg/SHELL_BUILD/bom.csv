@@ -1,2 +1,6 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+1,"Dip slurry tank 480 x 300 x 300 mm (40 L), binder + flour",1,"SS 304, agitated",AQS-DUTY-072 section 4; dip-coat + stucco rainfall shell-building booth
+2,Rainfall stucco booth 420 x 480 x 880 mm with hopper top,1,"CS, recycled-stucco circuit",6 dips per shell at 4 kg/kg castings (A-M-281)
+3,Stucco blower / conveyor module,1,CS,AQS-DUTY-072 section 4
+4,"Mold-handling gantry, 1000 mm span beam + hoist trolley",1,"CS beam, chain hoist",AQS-DUTY-072 section 4
+5,3-tier drying rack 180 x 560 mm,1,CS angle + mesh,8 kg/d shells; silica make-up 1 + reclaim 7 kg/d (A-M-281)

@@ -1,2 +1,8 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 600 x 600 x 1200 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),"AQS-DUTY-073 sections 3-4; F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+1,"Synthesis reactor shell D360 x 440 mm, wall 8 mm, jacketed",1,"316L shell, PTFE-lined heads (fluorocarbon service)",AQS-DUTY-073 fluoro train; duty 0.3989 kW; AQS-SEL-FP route
+2,Catalyst charge port and dip leg,1,316L / PTFE,catalyst per route
+3,Chlorination / pyrolysis heater circuit with SCR control,1,Inconel 600 sheath,stage temperatures per AQS-DUTY-073 route table
+4,Dilute-HCl return pump and transfer line to CRU,1,PVDF pump + PTFE line,HCl return 0.327654 kg/d
+5,Scrub/catch pot with caustic charge,1,PP-H / PVDF,vent scrub per AQS-SEL-FP
+6,Skid frame rails and module tie-ins,1,"CS, HDG",envelope 600 x 600 x 1200 mm
+7,"Control cabinet with interlocks (high-T, high-P, low-flow)",1,CS enclosure IP54,study

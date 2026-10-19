@@ -1,6 +1,9 @@
 # Work order TFE_SYN
 
-Authority: AQS-DUTY-073 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.
 
-Envelope-only placeholder (600 x 600 x 1200 mm). F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013).
-This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/TFE_SYN/export/tfe_syn.step for the reserved volume only.
+1. Fabricate the D360 jacketed shell; line the heads in PTFE (fluorocarbon service).
+2. Fit the heater circuit, dip leg and the HCl-return pump skid module.
+3. Wire interlocks: high-T, high-P, low circulation flow.
+4. Test: inert pressure hold, then the route trial per AQS-DUTY-073.
+5. Inspect against models/mfg/TFE_SYN/export/tfe_syn.step.

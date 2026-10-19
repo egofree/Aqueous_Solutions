@@ -1,6 +1,9 @@
 # Work order SHELL_BURNOUT
 
-Authority: AQS-DUTY-072 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+Authority: AQS-DUTY-072 (X-MFG-30 pattern). LIVE unit - IND_TO_INV castings train (A-M-281).
 
-Envelope-only placeholder (1000 x 1000 x 1500 mm). installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity).
-This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/SHELL_BURNOUT/export/shell_burnout.step for the reserved volume only.
+1. Fabricate the chamber; line 60 mm for 900 C; fit the door frame and trolley deck.
+2. Mount the DN150 stack with bias damper; set the wax condenser, run, downcomer and receiver.
+3. Wire the 0.25 kW SCR zones; interlock door-open and stack draft.
+4. Test: dewax burn-off curve, then fire 8 shells; verify wax condensate quality to WAX_PATTERN.
+5. Inspect against models/mfg/SHELL_BURNOUT/export/shell_burnout.step; record dimensions on the traveller.

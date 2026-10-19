@@ -1,2 +1,8 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-073 sections 3-4; installed standby: fluoropolymer feed blocked (Q-013)
+1,Pin mill D260 x 300 mm with vertical spindle,1,"316L mill, PE-lined collector",AQS-DUTY-073 fluoro train; 0.09 kg/d PTFE at 0.05 kWh/kg (0.0152 kW)
+2,Mill motor D160 with belt guard,1,IEC frame,AQS-DUTY-073 fluoro train
+3,Feed hopper D140 x 240 mm with metering screw,1,316L,AQS-DUTY-073 fluoro train
+4,Cyclone classifier D220 with vortex outlet and fines drop,1,316L,AQS-DUTY-073 fluoro train; fine-cut classification
+5,PE-lined collector bin 260 x 260 x 380 mm,1,"316L shell, PE liner",fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY)
+6,Blower with oversize-return duct to the hopper,1,316L fan,AQS-DUTY-073 fluoro train
+7,Control panel with interlocks,1,"CS enclosure, IP54",study

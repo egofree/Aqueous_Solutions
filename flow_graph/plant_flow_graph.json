@@ -3767,7 +3767,7 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "status_note": "live via fluoro_train (Q-013 reopened, A-M-283); rates re-stamped by the fluoro stage",
           "size_mm": [
             1200,
             700,
@@ -3836,7 +3836,7 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "status_note": "live via fluoro_train (Q-013 reopened, A-M-283); rates re-stamped by the fluoro stage",
           "size_mm": [
             600,
             600,
@@ -3901,7 +3901,7 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "status_note": "live via fluoro_train (Q-013 reopened, A-M-283); rates re-stamped by the fluoro stage",
           "size_mm": [
             600,
             600,
@@ -3964,7 +3964,7 @@
             "ptfE_kg_d": 0.09,
             "source": "AQS-RATE-FP-MET design case"
           },
-          "status_note": "F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)",
+          "status_note": "live via fluoro_train (Q-013 reopened, A-M-283); rates re-stamped by the fluoro stage",
           "size_mm": [
             600,
             600,
@@ -5664,7 +5664,7 @@
           "status": "study",
           "source": "AQS-DUTY-073",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: fluoropolymer feed blocked (Q-013)",
+          "status_note": "live via fluoro_train (Q-013 reopened on dock fluorspar, A-M-283); rates re-stamped by the fluoro stage each pass",
           "size_mm": [
             1500,
             800,
@@ -5715,7 +5715,7 @@
           "status": "study",
           "source": "AQS-DUTY-073",
           "rate_kg_d": 0.0,
-          "status_note": "installed standby: no feed edge at Rev AC",
+          "status_note": "live via fluoro_train (A-M-283); PVDF film rates re-stamped by the fluoro stage",
           "size_mm": [
             1500,
             800,

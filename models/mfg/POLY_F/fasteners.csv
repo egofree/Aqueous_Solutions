@@ -1,2 +1,4 @@
 item,size,grade,qty,location,basis
-1,M12 anchor,ISO 898-1 8.8,4,footprint bolting to the envelope layout,study
+1,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-80,12,lid flange at 80 mm pitch,study
+2,M10 clamp,ISO 3506 A4-70,8,receiver bottle heads,study
+3,M12 anchor,ISO 3506 A4-80,4,frame feet,study

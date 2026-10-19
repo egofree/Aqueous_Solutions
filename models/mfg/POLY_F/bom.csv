@@ -1,2 +1,8 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 600 x 600 x 1200 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),"AQS-DUTY-073 sections 3-4; F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)"
+1,"Kettle shell DN150 x 225 mm, 6 mm wall, 60 C emulsion service",1,"Hastelloy C-276 wetted, PTFE gasketed",AQS-DUTY-073 fluoro train; PVDF/PTFE emulsion polymerization kettle
+2,Hot-water jacket band at 60 C with PID,1,SS 304 jacket,AQS-DUTY-073 fluoro train; duty 0.0449 kW
+3,Top-entry agitator with variable-speed drive and gland,1,"Hastelloy C-276 shaft, PTFE gland","persulfate class, emulsion/suspension (ULLMANN_FLUOROPOLY)"
+4,"Monomer feed receivers, 2 x D110 x 400 mm, with metering heads",2,"SS 316L, PTFE",VDF 0.15 + TFE 0.1 kg/d from the synthesis skids
+5,Reclaim pump module: transfer of unreacted monomer (0.02 kg/d to F_RECOVER),1,"PVDF pump, PTFE line",AQS-DUTY-073 fluoro train; F recovery closure
+6,Relief: rupture disc DN25 to the vent scrubber,1,Hastelloy / graphite,"blocked-outlet case, API 520 class"
+7,"Frame, 4 legs 30 x 30 mm with foot plates",4,SS 304,study

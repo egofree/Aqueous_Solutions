@@ -1,2 +1,8 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 800 x 800 x 1600 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+1,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 700 C",1,"CS casing, ceramic-fibre + ram lining","AQS-DUTY-072 section 4; molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C"
+2,"Anode bank, 4 x D50 mm graphite anodes at 300 mm immersion",4,"graphite, chlorinated",Faraday I = 55 A at CE 0.85 (A-M-282); MgCl2 -> Mg + Cl2
+3,"Cathode plate set, 3 x 110 x 12 mm with product pocket",3,mild steel / clad,0.5078 kg/d metal on the D-DOCK chloride import (A-M-284)
+4,"Cu busbar ladder: 2 rails 12 x 5 mm (50 mm2 class), straps and DC drops",1,Cu ETP,55 A at 4.2 V cell; 0.231 kW dc + 0.1069 kW hold of 1 kW connected
+5,Hood with gas offtake DN80 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",1.4813 kg/d Cl2 to the Kroll loop (AQS-BAL-KROLL)
+6,Feed chute with hopper cone and rotary seal,1,CS + refractory throat,1.989 kg/d feed (A-M-284 feedstock ruling)
+7,"Thyristor rectifier + bath hold heaters, 1 kW connected",1,"cabinet, IP54",AQS-DUTY-072 section 4; A-M-282 current class

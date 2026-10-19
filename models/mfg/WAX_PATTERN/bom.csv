@@ -1,2 +1,5 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 800 x 600 x 1200 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+1,"Prep bench 800 x 600 x 900 mm, CS frame, lower shelf",1,"CS weldment, SS top",AQS-DUTY-072 section 4; wax pattern injection bench
+2,"Wax pot D220 x 260 mm, 10 L, thermostatted",1,"SS 304, jacketed","2 kg/d wax duty (0.2 make-up + 1.8 reclaim, A-M-281)"
+3,"Pattern injector: 2-post frame, platen, plunger, die plate (0.5 kW)",1,"CS frame, pneumatic cylinder",AQS-DUTY-072 section 4; A-M-281 wax loop
+4,"Reclaim-wax melter with filter bag, on the lower shelf",1,SS 304,"SHELL_BURNOUT condensate return, 90 % reclaim (A-M-281)"

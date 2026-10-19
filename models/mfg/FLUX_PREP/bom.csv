@@ -1,2 +1,5 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 800 x 600 x 1200 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+1,"Prep bench 800 x 600 x 900 mm, CS frame, lower shelf",1,"CS weldment, SS top",AQS-DUTY-072 section 4; salt flux cover preparation bench
+2,"Salt hopper D300 x 283 mm, 20 L, with lid",1,SS 304,"0.0398 kg/d salt-flux cover (Kroll MgCl2-class drag-out, A-M-280)"
+3,Side-entry mixer 0.1 kW with shaft and gland,1,"SS 304, PTFE gland",AQS-DUTY-072 section 4
+4,Mixing tub and salt day-bin (lower shelf),2,SS 304 / HDPE,AQS-DUTY-072 section 4; batch cover for the Al-charged melt

@@ -1,2 +1,3 @@
 item,size,grade,qty,location,basis
-1,M12 anchor,ISO 898-1 8.8,4,footprint bolting to the envelope layout,study
+1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,hatch and hood flanges,study
+2,M12 anchor,ISO 898-1 8.8,6,pedestals and chamber feet,study

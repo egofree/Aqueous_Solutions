@@ -1,10 +1,11 @@
 """FOUNDRY train parametric CAD (CadQuery, X-MFG-30 pattern). Reads params.design + params.envelope on the graph
-(written by flow_graph/param/foundry_poly.py, AQS-DUTY-072) and writes models/mfg/<UNIT>/export/<unit>.step and .stl,
-bom.csv, fasteners.csv and WORK_ORDER.md per unit. Live trains (scrap-remelt melt-and-cast + roll + stock staging)
-get machine geometry; standby trains (pot/cell, investment casting, alternates, forming extras) get the envelope box
-only as a presence-consistent PLACEHOLDER, marked in bom.csv and the work order.
+(written by flow_graph/param/foundry_poly.py, AQS-DUTY-072 Rev B D-DOCK feedstock program) and writes
+models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and WORK_ORDER.md per unit. Live trains
+(scrap-remelt melt-and-cast + roll + stock staging; D-DOCK pot/cell molten-chloride electrolysis, Kroll Ti train,
+investment casting on wax make-up + shell reclaim) get machine geometry; the standby_rated N+1 alternates (A-M-282)
+keep the envelope box only as a presence-consistent PLACEHOLDER, marked in bom.csv and the work order.
 Run: /tmp/cqvenv/bin/python models/mfg/foundry.py [UNIT ...]"""
-import csv, json, os, sys
+import csv, json, math, os, sys
 import cadquery as cq
 
 UNITS = ['IND_MELT', 'CAST_LINE', 'CONT_CAST', 'ROLL', 'STOCK_OUT',
@@ -25,6 +26,14 @@ def cyl_x(x, y, z, r, h):
 
 def cyl_y(x, y, z, r, h):
     return cq.Workplane('XY').circle(r).extrude(h).rotate((0, 0, 0), (1, 0, 0), -90).translate((x, y, z))
+
+
+def ring_z(x, y, z, r_out, r_in, h):
+    return cq.Workplane('XY').circle(r_out).circle(r_in).extrude(h).translate((x, y, z))
+
+
+def cone_z(x, y, z, r_bot, r_top, h):
+    return cq.Workplane('XY').circle(r_bot).workplane(offset=h).circle(r_top).loft(ruled=True).translate((x, y, z))
 
 
 def box(x, y, z, L, W, H):
@@ -64,8 +73,184 @@ def build(U):
     if e['state'] != 'live':
         return placeholder(U)
     L, W, H = e['size_mm']; style = e['style']
-    if style == 'box_furnace':                     # IND_MELT: induction melt box furnace
-        Dc, Hc = d['crucible_D_mm'], d['crucible_H_mm']
+    if style == 'pot_cell':                          # AL/MG/CA pots + Mo/Cr cells: molten-chloride electrolysis
+        imm, nD, nc = d['anode_imm_mm'], d['anode_D_mm'], d['cathodes']
+        A = d['busbar_mm2']
+        bw = max(12, int(math.sqrt(A)) + 1); bh = max(4, -(-A // bw))               # busbar rail cross-section, mm
+        gas = d.get('cl2_kg_d') or d.get('co2_kg_d') or d.get('co_kg_d') or 0.0
+        dn = 150 if gas > 10 else (80 if gas > 1 else 50)
+        if 'cl2_kg_d' in d:
+            gasdesc = (f'{d["cl2_kg_d"]:g} kg/d Cl2 to the Kroll loop (AQS-BAL-KROLL)' if U == 'MG_POT'
+                       else f'{d["cl2_kg_d"]:g} kg/d Cl2 dock export at the CRU (A-M-280 ruling)')
+        else:
+            gasdesc = f'anode-gas chlorine recycle, internal loop ({d.get("co2_kg_d", d.get("co_kg_d", 0)):g} kg/d COx, A-M-280)'
+        m = box(0, 0, 0, 800, 800, 1000).cut(box(70, 70, 60, 660, 660, 940))        # lined rectangular cell shell
+        for i in range(nc):                                                          # anode bank, one row
+            ax = 160 + i * (480 / (nc - 1)) if nc > 1 else 400
+            m = m.union(cyl_z(ax, 250, 820 - imm, nD / 2, imm + 300))
+            m = m.union(box(ax - 8, 250, 1108, 16, 490, 8))                          # anode strap to the + rail
+        for i in range(nc - 1):                                                      # cathode plates, interleaved
+            cx = 160 + (i + 0.5) * (480 / (nc - 1)) if nc > 1 else 400
+            m = m.union(box(cx - 55, 545, 700, 110, 12, 420))
+            m = m.union(box(cx - 8, 55, 1108, 16, 490, 8))                            # cathode strap to the - rail
+        m = m.union(box(70, 740, 1140, 660, bw, bh))                                  # anode rail (+)
+        m = m.union(box(70, 55 - bw // 2, 1140, 660, bw, bh))                         # cathode rail (-)
+        m = m.union(box(0, 0, 1000, 800, 800, 120).cut(box(40, 40, 1000, 720, 720, 120)))   # hood
+        m = m.union(cyl_z(650, 400, 1120, dn / 2, 460))                               # gas offtake
+        m = m.union(box(20, 80, 1000, 130, 170, 520))                                 # feed chute barrel
+        m = m.union(cone_z(85, 165, 1520, 80, 35, 70))                                # feed hopper cone
+        rows = [('1', f'Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at {d["bath_T_C"]:.0f} C', 1,
+                 'CS casing, ceramic-fibre + ram lining', f'{DOC} section 4; {d["service"]}'),
+                ('2', f'Anode bank, {nc} x D{nD} mm graphite anodes at {imm} mm immersion', nc, 'graphite, chlorinated',
+                 f'Faraday I = {d["I_A"]:.0f} A at CE 0.85 (A-M-282); {d["chemistry"]}'),
+                ('3', f'Cathode plate set, {nc - 1} x 110 x 12 mm with product pocket', nc - 1, 'mild steel / clad',
+                 f'{d["metal_kg_d"]:g} kg/d metal on the D-DOCK chloride import (A-M-284)'),
+                ('4', f'Cu busbar ladder: 2 rails {bw} x {bh} mm ({A} mm2 class), straps and DC drops', 1, 'Cu ETP',
+                 f'{d["I_A"]:.0f} A at {d["cell_V"]} V cell; {d["dc_kW"]:.3f} kW dc + {d["hold_kW"]} kW hold of {d["connected_kW"]} kW connected'),
+                ('5', f'Hood with gas offtake DN{dn} and dip leg', 1, 'CS hood, Hastelloy C-276 dip leg', gasdesc),
+                ('6', 'Feed chute with hopper cone and rotary seal', 1, 'CS + refractory throat',
+                 f'{d["feed_kg_d"]:.3f} kg/d feed (A-M-284 feedstock ruling)'),
+                ('7', f'Thyristor rectifier + bath hold heaters, {d["connected_kW"]} kW connected', 1, 'cabinet, IP54',
+                 f'{DOC} section 4; A-M-282 current class')]
+        fast = ('item,size,grade,qty,location,basis\n'
+                '1,M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,anode clamp bars,study\n'
+                '2,M10 x 30 hood bolts,ISO 898-1 8.8,16,hood rim flange,study\n'
+                '3,M12 anchor,ISO 898-1 8.8,4,cell shell to slab,study\n')
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - D-DOCK feedstock program (A-M-284).\n\n'
+              f'1. Fabricate the 800 x 800 x 1000 mm shell; line 70 mm (casing + ceramic fibre + ram) for {d["bath_T_C"]:.0f} C service.\n'
+              f'2. Set the {nc - 1} cathode plates on the pocket wall; hang the {nc} x D{nD} mm anodes at {imm} mm immersion.\n'
+              f'3. Fit the busbar ladder ({A} mm2 Cu class for {d["I_A"]:.0f} A) and the DC drops; torque and megger-check.\n'
+              f'4. Mount the hood, DN{dn} offtake with dip leg, and the feed chute with rotary seal.\n'
+              f'5. Wire the {d["connected_kW"]} kW rectifier; interlock hood draft, bath temperature and cover position.\n'
+              f'6. Test: dry-out and melt-up curve, then trial electrolysis; route the off-gas per the Cl2 ruling ({gasdesc}).\n'
+              f'7. Inspect against models/mfg/{U}/export/{U.lower()}.step; record dimensions on the traveller.\n')
+        return export(U, m, rows, fast, wo)
+    if style == 'kroll_train':                       # TI_CELL: chlorinator + condenser + reduction vessel trio
+        m = cyl_z(170, 560, 240, 90, 640)                                            # chlorinator retort
+        m = m.union(ring_z(170, 560, 260, 105, 90, 320))                             # chlorinator heater band
+        m = m.union(cone_z(170, 560, 880, 80, 35, 70))                               # oxide + carbon charge hopper
+        m = m.union(cyl_z(400, 560, 240, 70, 420))                                   # TiCl4 condenser
+        m = m.union(ring_z(400, 560, 300, 85, 70, 200))                              # condenser water band
+        m = m.union(cyl_z(660, 520, 200, 100, 520))                                  # Mg reduction retort
+        m = m.union(box(560, 400, 60, 200, 240, 420))                                # reduction furnace box
+        m = m.union(cyl_z(660, 520, 720, 20, 20))                                    # Mg hopper neck
+        m = m.union(cyl_z(660, 520, 740, 55, 240))                                   # Mg charge hopper
+        m = m.union(cyl_x(260, 560, 560, 12, 140))                                   # chlorinator -> condenser
+        m = m.union(cyl_x(470, 560, 600, 12, 190))                                   # condenser -> reduction retort
+        m = m.union(box(80, 60, 40, 640, 110, 90))                                   # MgCl2 drag-out trough
+        rows = [('1', f'Chlorinator retort D180 x 640 mm with 320 mm heater band, {d["chlorinator_T_C"]:.0f} C', 1,
+                 'Inconel 601 retort, CS shell', f'{DOC} section 4; TiO2 {d["tio2_kg_d"]:g} + C {d["c_kg_d"]:g} kg/d, Cl2 {d["cl2_kg_d"]:g} kg/d from MG_POT'),
+                ('2', 'TiCl4 condenser D140 x 420 mm with water band', 1, 'Hastelloy C-276',
+                 f'{DOC} section 4; AQS-BAL-KROLL TiCl4 pass'),
+                ('3', f'Mg reduction retort D200 x 520 mm in furnace box, {d["retort_T_C"]:.0f} C', 1,
+                 'Inconel 601 retort, argon-latched', f'{d["mg_kg_d"]:g} kg/d Mg at {d["batch_kg"]:g} kg Ti batch campaigns'),
+                ('4', f'Mg charge hopper D110 with neck and metering valve', 1, 'CS',
+                 f'{DOC} section 4; A-M-280 Mg-pot loop'),
+                ('5', 'TiCl4 transfer lines DN25, chlorinator -> condenser -> retort', 2, 'Hastelloy C-276',
+                 f'{DOC} section 4'),
+                ('6', 'MgCl2 drag-out trough 640 x 110 x 90 mm, tapping spout', 1, 'CS, Monel-lined',
+                 f'{d["mgcl2_gross_kg_d"]:g} kg/d gross MgCl2; drag-out to FLUX_PREP (A-M-280)'),
+                ('7', f'Retort hold furnace + SCR, {d["hold_kW"]} kW', 1, 'resistance, PID', f'{DOC} section 4; CO {d["co_kg_d"]:g} kg/d off-gas to burn')]
+        fast = ('item,size,grade,qty,location,basis\n'
+                '1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,retort and hopper flanges,study\n'
+                '2,M12 anchor,ISO 898-1 8.8,4,train stands to slab,study\n')
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - D-DOCK rutile + carbon (A-M-280/284).\n\n'
+              f'1. Set the three-vessel train: chlorinator (800 C), TiCl4 condenser, Mg reduction retort (900 C) in its furnace box.\n'
+              f'2. Fit the charge hopper (TiO2 + C), the Mg charge hopper, and the DN25 transfer lines.\n'
+              f'3. Weld and Monel-line the MgCl2 drag-out trough; route it to FLUX_PREP.\n'
+              f'4. Leak-check the train on argon (Kroll retorts run oxygen-free); commission the {d["hold_kW"]} kW hold furnace.\n'
+              f'5. Test: one {d["batch_kg"]:g} kg Ti campaign; verify the Cl2 return balance to MG_POT (AQS-BAL-KROLL).\n'
+              f'6. Inspect against models/mfg/{U}/export/{U.lower()}.step; record dimensions on the traveller.\n')
+        return export(U, m, rows, fast, wo)
+    if style == 'bench_prep':                        # WAX_PATTERN / FLUX_PREP: prep bench class
+        m = box(0, 0, 860, 800, 600, 40)                                             # bench top
+        for lx, ly in ((20, 20), (740, 20), (20, 540), (740, 540)):
+            m = m.union(box(lx, ly, 0, 40, 40, 860))                                 # legs
+        m = m.union(box(20, 20, 150, 760, 560, 25))                                  # lower shelf
+        if U == 'WAX_PATTERN':
+            m = m.union(cyl_z(180, 300, 900, 110, 260))                              # wax pot (10 L)
+            m = m.union(box(520, 150, 900, 30, 30, 250))                             # injector posts
+            m = m.union(box(520, 420, 900, 30, 30, 250))
+            m = m.union(box(480, 120, 900, 260, 360, 16))                            # die plate
+            m = m.union(cyl_z(600, 300, 920, 40, 230))                               # injector plunger
+            m = m.union(box(480, 120, 1150, 260, 360, 30))                           # top platen
+            m = m.union(box(40, 40, 175, 190, 200, 190))                             # reclaim wax melter
+            rows = [('1', 'Prep bench 800 x 600 x 900 mm, CS frame, lower shelf', 1, 'CS weldment, SS top',
+                     f'{DOC} section 4; {d["bench"]}'),
+                    ('2', f'Wax pot D220 x 260 mm, {d["pot_L"]:.0f} L, thermostatted', 1, 'SS 304, jacketed',
+                     f'{d["wax_kg_d"]:g} kg/d wax duty ({d["makeup_kg_d"]:g} make-up + {d["reclaim_kg_d"]:g} reclaim, A-M-281)'),
+                    ('3', f'Pattern injector: 2-post frame, platen, plunger, die plate ({d["injector_kW"]} kW)', 1,
+                     'CS frame, pneumatic cylinder', f'{DOC} section 4; A-M-281 wax loop'),
+                    ('4', 'Reclaim-wax melter with filter bag, on the lower shelf', 1, 'SS 304',
+                     'SHELL_BURNOUT condensate return, 90 % reclaim (A-M-281)')]
+            fast = ('item,size,grade,qty,location,basis\n'
+                    '1,M10 x 30 bench bolts,ISO 898-1 8.8,12,legs and platen,study\n'
+                    '2,M12 anchor,ISO 898-1 8.8,4,bench feet to slab,study\n')
+            wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - wax make-up import + 90 % reclaim (A-M-281).\n\n'
+                  f'1. Weld the bench; fit the SS top and lower shelf.\n'
+                  f'2. Set the {d["pot_L"]:.0f} L wax pot with thermostat; plumb the reclaim melter beside it on the shelf.\n'
+                  f'3. Build the injector frame; align plunger to die plate.\n'
+                  f'4. Test: wax at temperature, 10 injection shots; check reclaim melt quality.\n'
+                  f'5. Inspect against models/mfg/{U}/export/{U.lower()}.step.\n')
+            return export(U, m, rows, fast, wo)
+        m = m.union(cyl_z(400, 300, 900, 150, 283))                                  # salt hopper (20 L)
+        m = m.union(cyl_z(400, 300, 1183, 158, 8))                                   # hopper lid
+        m = m.union(box(640, 240, 1030, 120, 120, 160))                              # mixer motor
+        m = m.union(cyl_x(540, 300, 1100, 10, 100))                                  # mixer shaft
+        m = m.union(box(100, 120, 900, 170, 150, 110))                               # mixing tub
+        m = m.union(box(560, 380, 175, 220, 180, 220))                               # salt day-bin
+        rows = [('1', 'Prep bench 800 x 600 x 900 mm, CS frame, lower shelf', 1, 'CS weldment, SS top',
+                 f'{DOC} section 4; {d["bench"]}'),
+                ('2', f'Salt hopper D300 x 283 mm, {d["hopper_L"]:.0f} L, with lid', 1, 'SS 304',
+                 f'{d["salt_kg_d"]:g} kg/d salt-flux cover (Kroll MgCl2-class drag-out, A-M-280)'),
+                ('3', f'Side-entry mixer {d["mixer_kW"]} kW with shaft and gland', 1, 'SS 304, PTFE gland',
+                 f'{DOC} section 4'),
+                ('4', 'Mixing tub and salt day-bin (lower shelf)', 2, 'SS 304 / HDPE',
+                 f'{DOC} section 4; batch cover for the Al-charged melt')]
+        fast = ('item,size,grade,qty,location,basis\n'
+                '1,M10 x 30 bench bolts,ISO 898-1 8.8,12,legs and hopper bracket,study\n'
+                '2,M12 anchor,ISO 898-1 8.8,4,bench feet to slab,study\n')
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - Kroll drag-out landed (A-M-280).\n\n'
+              f'1. Weld the bench; fit the SS top and lower shelf.\n'
+              f'2. Set the {d["hopper_L"]:.0f} L salt hopper with lid; mount the {d["mixer_kW"]} kW side-entry mixer.\n'
+              f'3. Place the mixing tub and the day-bin on the shelf.\n'
+              f'4. Test: one {d["salt_kg_d"]:g} kg/d salt-flux batch; check the cover quality on a trial melt.\n'
+              f'5. Inspect against models/mfg/{U}/export/{U.lower()}.step.\n')
+        return export(U, m, rows, fast, wo)
+    if style == 'box_furnace':                       # box furnace class
+        if U == 'SHELL_BURNOUT':                     # flash-dewax + shell fire furnace
+            m = box(0, 0, 0, 1000, 640, 900).cut(box(60, 60, 80, 880, 520, 780))    # chamber + cavity
+            m = m.union(box(200, 10, 200, 600, 50, 500))                             # door frame / face
+            m = m.union(box(90, 90, 90, 820, 520, 50))                               # shell trolley deck
+            m = m.union(cyl_z(250, 320, 900, 75, 540))                               # off-gas stack
+            m = m.union(cyl_z(500, 320, 900, 60, 360))                               # wax condenser
+            m = m.union(cyl_x(325, 320, 1150, 22, 115))                              # stack -> condenser cross-duct
+            m = m.union(cyl_x(560, 320, 980, 12, 300))                               # condensate run
+            m = m.union(cyl_y(860, 320, 980, 12, 320))                               # downcomer to corridor
+            m = m.union(cyl_z(860, 700, 240, 12, 660))                               # drop leg
+            m = m.union(box(790, 660, 0, 180, 200, 240))                             # condensate receiver
+            m = m.union(box(0, 660, 0, 400, 320, 1100))                              # control cabinet
+            rows = [('1', f'Flash-dewax + fire chamber 1000 x 640 x 900 mm, {d["T_C"]:.0f} C, 60 mm lined', 1,
+                     'CS casing, ceramic fibre', f'{DOC} section 4; {d["service"]}'),
+                    ('2', 'Shell trolley deck with casters and stop', 1, 'CS, heat-resistant wheels',
+                     f'{d["shell_kg_d"]:g} kg/d fired shells (A-M-281)'),
+                    ('3', 'Off-gas stack DN150 with dewax-air bias damper', 1, 'SA-240 304L',
+                     f'{DOC} section 4; flash dewax stage'),
+                    ('4', f'Wax condenser D120 x 360 mm with run, downcomer and receiver', 1, 'SA-240 304L, jacketed',
+                     f'{d["wax_reclaim_kg_d"]:g} kg/d wax reclaim to WAX_PATTERN; {d["burned_wax_kg_d"]:g} kg/d burned (A-M-281)'),
+                    ('5', f'Control cabinet, SCR and {d["kW"]} kW elements, 2-zone', 1, 'CS enclosure, IP54',
+                     f'{DOC} section 4; {d["condenser"]}')]
+            fast = ('item,size,grade,qty,location,basis\n'
+                    '1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,16,door frame and stack flange,study\n'
+                    '2,M12 anchor,ISO 898-1 8.8,4,chamber and cabinet feet,study\n')
+            wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - IND_TO_INV castings train (A-M-281).\n\n'
+                  f'1. Fabricate the chamber; line 60 mm for {d["T_C"]:.0f} C; fit the door frame and trolley deck.\n'
+                  f'2. Mount the DN150 stack with bias damper; set the wax condenser, run, downcomer and receiver.\n'
+                  f'3. Wire the {d["kW"]} kW SCR zones; interlock door-open and stack draft.\n'
+                  f'4. Test: dewax burn-off curve, then fire 8 shells; verify wax condensate quality to WAX_PATTERN.\n'
+                  f'5. Inspect against models/mfg/{U}/export/{U.lower()}.step; record dimensions on the traveller.\n')
+            return export(U, m, rows, fast, wo)
+        Dc, Hc = d['crucible_D_mm'], d['crucible_H_mm']                              # IND_MELT: induction melt box furnace
         m = box(0, 0, 0, 660, W, 1100)                                              # chamber casing
         m = m.cut(box(130, 150, 200, 400, W - 300, 800))                            # lined cavity
         m = m.union(box(0, 0, 1100, 660, W, 50))                                    # lid
@@ -96,7 +281,7 @@ def build(U):
         return export(U, m, rows, fast, wo)
     if style == 'line_machine':
         mach = d.get('machine', '')
-        if U == 'CAST_LINE':                        # permanent-mould Cu cast line
+        if U == 'CAST_LINE':                         # permanent-mould Cu cast line
             m = box(0, 150, 0, 700, 500, 900)                                         # mould table
             m = m.union(box(310, 250, 900, 80, 300, 120))                             # ladle bracket
             m = m.union(cyl_z(350, 400, 1020, 110, 260))                              # pouring ladle
@@ -138,6 +323,71 @@ def build(U):
                     ('2', f"Work rolls {d['rolls_D_mm']} dia x {d['roll_L_mm']} mm", 2, 'forged tool steel', f'{DOC} section 3'),
                     ('3', 'Entry and exit roller tables 400 mm', 2, 'CS rollers', f'{DOC} section 3'),
                     ('4', 'Geared drive with motor', 1, 'geared motor, IEC frame', f'{d["kWh_d"]} kWh/d (A-M-177 rolling class)')]
+        elif U == 'SHELL_BREAK':                    # vibratory knock-out station + reclaim sieve
+            m = box(100, 260, 720, 1000, 360, 70)                                    # knock-out grid table
+            m = m.union(box(100, 260, 560, 1000, 360, 40))                           # base frame
+            for sx, sy in ((150, 300), (1050, 300), (150, 580), (1050, 580)):
+                m = m.union(cyl_z(sx, sy, 600, 25, 120))                             # isolation springs
+            m = m.union(cyl_y(1150, 380, 600, 60, 200))                              # eccentric vibrator drive
+            m = m.union(box(1120, 300, 560, 120, 160, 120))                          # belt guard
+            m = m.union(box(150, 300, 60, 900, 360, 500))                            # breakout bin
+            m = m.union(box(1140, 300, 360, 320, 300, 40))                           # reclaim sieve deck
+            m = m.union(box(1140, 320, 280, 300, 260, 60))                           # fines pan
+            m = m.union(box(100, 240, 790, 1000, 420, 50))                           # dust hood
+            m = m.union(cyl_z(950, 450, 840, 60, 280))                               # dust offtake
+            rows = [('1', 'Vibratory knock-out table 1000 x 360 mm on isolation springs', 1, 'CS deck, Mn liner',
+                     f'{DOC} section 4; {d["machine"]}'),
+                    ('2', f'Eccentric vibrator drive, {d["table_kW"]} kW, with belt guard', 1, 'geared motor',
+                     f'{DOC} section 4; A-M-199 forming class'),
+                    ('3', f'Breakout bin 900 x 360 x 500 mm under the grid', 1, 'CS, lined',
+                     f'{d["spent_shell_kg_d"]:g} kg/d spent shells (A-M-281)'),
+                    ('4', f'Reclaim sieve deck 320 x 300 mm with fines pan', 1, 'SS mesh, CS pan',
+                     f'{d["reclaim_kg_d"]:g} kg/d reclaim to SHELL_BUILD; {d["export_kg_d"]:g} kg/d fines exported (A-M-281)'),
+                    ('5', 'Dust hood with DN120 offtake', 1, 'CS', 'knock-out dust to the baghouse')]
+        elif U == 'SHELL_BUILD':                    # dip-coat + stucco rainfall booth
+            m = box(100, 280, 100, 520, 340, 300).cut(box(120, 300, 100, 480, 300, 300))   # slurry tank (40 L)
+            m = m.union(box(700, 160, 100, 420, 480, 880))                           # rainfall booth
+            m = m.union(box(700, 160, 980, 420, 480, 140))                           # booth hopper top
+            m = m.union(box(1180, 200, 100, 180, 180, 240))                          # stucco blower
+            m = m.union(box(200, 660, 400, 50, 50, 840))                             # gantry posts
+            m = m.union(box(1150, 660, 400, 50, 50, 840))
+            m = m.union(box(200, 660, 1240, 1000, 50, 60))                           # gantry beam
+            m = m.union(box(700, 645, 1180, 120, 80, 60))                            # hoist trolley
+            for rx, ry in ((1320, 140), (1440, 140), (1320, 620), (1440, 620)):
+                m = m.union(box(rx, ry, 0, 40, 40, 1100))                            # drying rack posts
+            for i in range(3):
+                m = m.union(box(1300, 120, 300 + i * 250, 180, 560, 30))             # rack shelves
+            rows = [('1', f'Dip slurry tank 480 x 300 x 300 mm ({d["slurry_L"]:.0f} L), binder + flour', 1,
+                     'SS 304, agitated', f'{DOC} section 4; {d["machine"]}'),
+                    ('2', 'Rainfall stucco booth 420 x 480 x 880 mm with hopper top', 1, 'CS, recycled-stucco circuit',
+                     f'{d["dips"]} dips per shell at 4 kg/kg castings (A-M-281)'),
+                    ('3', 'Stucco blower / conveyor module', 1, 'CS', f'{DOC} section 4'),
+                    ('4', 'Mold-handling gantry, 1000 mm span beam + hoist trolley', 1, 'CS beam, chain hoist',
+                     f'{DOC} section 4'),
+                    ('5', '3-tier drying rack 180 x 560 mm', 1, 'CS angle + mesh',
+                     f'{d["shell_kg_d"]:g} kg/d shells; silica make-up {d["silica_makeup_kg_d"]:g} + reclaim {d["reclaim_kg_d"]:g} kg/d (A-M-281)')]
+        elif U == 'INV_CAST':                       # investment casting tilt-pour station
+            m = box(180, 300, 0, 320, 320, 700)                                      # tilt pedestal
+            m = m.union(box(300, 440, 700, 150, 60, 60))                             # tilt bracket
+            m = m.union(cyl_z(340, 460, 700, 110, 190))                              # pouring ladle
+            m = m.union(cyl_y(340, 260, 760, 25, 440))                               # trunnion
+            m = m.union(box(640, 240, 700, 520, 420, 70))                            # mold table
+            for mx in (700, 810, 920, 1030):
+                for my in (330, 480):
+                    m = m.union(cyl_z(mx, my, 770, 48, 130))                         # shell mold seats
+            m = m.union(box(1180, 260, 0, 60, 60, 900))                              # rollover frame posts
+            m = m.union(box(1180, 480, 0, 60, 60, 900))
+            m = m.union(box(1160, 260, 880, 120, 280, 40))                           # rollover cross-beam
+            m = m.union(box(1240, 300, 0, 200, 240, 300))                            # cool/quench bin
+            m = m.union(box(1380, 300, 0, 110, 240, 1000))                           # control pedestal
+            rows = [('1', 'Tilt-pour pedestal and bracket, 700 mm axis height', 1, 'CS weldment',
+                     f'{DOC} section 4; {d["machine"]}'),
+                    ('2', 'Pouring ladle D220 x 190 mm, trunnion-mounted', 1, 'CS, refractory lined',
+                     f'{d["pour_kg_d"]:g} kg/d pour from IND_MELT (A-M-281)'),
+                    ('3', f'Mold table with {d["molds_per_campaign"]} fired-shell seats', 1, 'CS, pinned',
+                     f'{d["shell_kg_d"]:g} kg/d shells at 8/campaign (A-M-281)'),
+                    ('4', 'Rollover frame and cross-beam for shell cooling', 1, 'CS', f'{DOC} section 4'),
+                    ('5', 'Cool/quench bin and control pedestal', 2, 'CS / CS enclosure IP54', f'{DOC} section 4')]
         else:
             return placeholder(U)
         fast = ('item,size,grade,qty,location,basis\n'

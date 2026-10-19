@@ -1,2 +1,6 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)
+1,"Tilt-pour pedestal and bracket, 700 mm axis height",1,CS weldment,AQS-DUTY-072 section 4; investment casting tilt-pour station
+2,"Pouring ladle D220 x 190 mm, trunnion-mounted",1,"CS, refractory lined",2 kg/d pour from IND_MELT (A-M-281)
+3,Mold table with 8 fired-shell seats,1,"CS, pinned",8 kg/d shells at 8/campaign (A-M-281)
+4,Rollover frame and cross-beam for shell cooling,1,CS,AQS-DUTY-072 section 4
+5,Cool/quench bin and control pedestal,2,CS / CS enclosure IP54,AQS-DUTY-072 section 4

@@ -1,6 +1,9 @@
 # Work order WAX_PATTERN
 
-Authority: AQS-DUTY-072 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+Authority: AQS-DUTY-072 (X-MFG-30 pattern). LIVE unit - wax make-up import + 90 % reclaim (A-M-281).
 
-Envelope-only placeholder (800 x 600 x 1200 mm). standby train (AQS-DUTY-072 section 4).
-This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/WAX_PATTERN/export/wax_pattern.step for the reserved volume only.
+1. Weld the bench; fit the SS top and lower shelf.
+2. Set the 10 L wax pot with thermostat; plumb the reclaim melter beside it on the shelf.
+3. Build the injector frame; align plunger to die plate.
+4. Test: wax at temperature, 10 injection shots; check reclaim melt quality.
+5. Inspect against models/mfg/WAX_PATTERN/export/wax_pattern.step.

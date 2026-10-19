@@ -5,7 +5,6 @@ P=[n for n in g['nodes'] if n.get('presence')=='present']
 ex=os.path.exists
 def need(f):
     assert ex(f), f; return f
-inst=open('docs-authority/INSTRUMENT_LOOPS.md').read()
 def sysof(n):
     # Owner ruling 2026-10-18 (first-principles audit): the plant is organized by SECTORS;
     # task systems mirror sectors 1:1. No folding into legacy systems.
@@ -33,25 +32,97 @@ ST=[('01','Process basis and mass/energy closure','duty sheet section 1 with in 
 ('15','Test and commission','test procedure and acceptance record','14, X-COM-01')]
 DONE_U={('LEACH_CSTR_1', '02'): '`docs-authority/sizing/LEACH_CSTR_1.md` (AQS-DUTY-050)', ('LEACH_CSTR_1', '06'): '`docs-authority/sizing/LEACH_CSTR_1.md` §2 agitator, HX-5 coil', ('EW_1', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_2', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_3', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_4', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_5', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_6', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_7', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_8', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_9', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)'}
 _SH={r['unit'] for r in json.load(open('docs-authority/inventory/STORAGE_HOLDUP.json'))} if os.path.exists('docs-authority/inventory/STORAGE_HOLDUP.json') else set()
+# 2026-10-20 unit-task evidence audit (notes/2026-10-20-evidence-audit.md): the unit-task checks read the
+# per-unit artifact itself, not a graph-side stand-in. T01: the section 1 closure line _duty_basis.py
+# regenerates every pass ("Mass in X kg/d. Mass out Y kg/d. Electrical duty Z kW."), in = out within the
+# 4-significant-figure rounding of the sheet text. T04: nozzles/<UNIT>.csv must list every process
+# connection of the unit (present kg/d mass edges plus HL-/thermal kW edges), a row counting where the
+# service text equals the edge `carries` - the same match rule _pid_sheets.py uses; utility rows
+# (drain, vent) match no edge and are allowed extras. T05: every present edge of the unit has a row in
+# LINE_LIST.md (AQS-PIP-004) and every piped row carries DN + class (schedule, rating and material
+# resolve per class in AQS-PIP-003 PIPING_CLASSES). T08: the unit owns at least one instrument loop in
+# the index (AQS-CTL-001, full CSV; the Done-when's AQS-INST-001 lists only the assay/digester/farm
+# study loops - X-CTL-05 partial - so loop membership is evidenced where the plant-wide index carries
+# it; trips/setpoints for SIFs live in AQS-CTL-003). T10 stays open for every unit: its Done-when is
+# acceptance M3 per AQS-PLAN-006 section 5 and no unit passes it (no drawings); the note names the real
+# state of models/mfg/<UNIT> (real BOM at M2 / standby envelope + PLACEHOLDER BOM / envelope STL only).
+import csv as _csv
+_EU=collections.defaultdict(list)   # present edges touching each unit
+for _e in g['edges']:
+    if _e.get('presence')=='present':
+        _EU[_e['to_unit_id']].append(_e); _EU[_e['from_unit_id']].append(_e)
+def _noz_edges(u):   # connections a nozzle schedule must list: process mass edges + thermal kW edges (cables are not nozzles)
+    out=[]
+    for e in _EU.get(u,()):
+        lay=e.get('layers') or []; un=(e.get('rate') or {}).get('unit')
+        if 'mass' in lay and un=='kg/d': out.append(e)
+        elif un=='kW' and (e['stream_id'].startswith('HL-') or 'thermal' in lay) and e.get('phase') not in ('E','electric') and 'elec' not in lay: out.append(e)
+    return out
+_S1=re.compile(r'^1\. Basis\. Mass in ([\d.eE+-]+) kg/d\. Mass out ([\d.eE+-]+) kg/d\. Electrical duty ([\d.eE+-]+) kW\.',re.M)
+_DUTY={}
+for _n in P:
+    _p=f'docs-authority/duties/{_n["unit_id"]}.md'
+    if ex(_p):
+        _m=_S1.search(open(_p).read())
+        if _m: _DUTY[_n['unit_id']]=(_m[1],_m[3],abs(float(_m[1])-float(_m[2]))<=1e-3*max(float(_m[1]),float(_m[2]),1e-9))
+_NOZ={}
+for _n in P:
+    _u=_n['unit_id']; _p=f'docs-authority/nozzles/{_u}.csv'
+    if ex(_p):
+        _svc=collections.Counter(r.get('service','') for r in _csv.DictReader(open(_p)))
+        _need=collections.Counter(e.get('carries') or '' for e in _noz_edges(_u))
+        _NOZ[_u]=(sum(max(0,k-_svc.get(c,0)) for c,k in _need.items()),sum(_need.values()))
+_LL=collections.defaultdict(list)
+for _l in open('docs-authority/LINE_LIST.md'):
+    if _l.startswith('|'):
+        _c=[x.strip() for x in _l.strip().strip('|').split('|')]
+        if len(_c)>=9 and _c[0]!='Line' and not _c[0].startswith('-'): _LL[_c[0]].append((_c[3],_c[4]))
+def _ll_ok(u):
+    for e in _EU.get(u,()):
+        rows=_LL.get(e['stream_id'])
+        if not rows: return False
+        if any(dn.startswith('DN') and not cl for dn,cl in rows): return False
+    return True
+_IIDX=collections.defaultdict(set)
+for _r in _csv.DictReader(open('docs-authority/inventory/INSTRUMENT_INDEX.csv')): _IIDX[_r['unit']].add(_r['loop'])
+_MFG={}
+for _n in P:
+    _u=_n['unit_id']; _p=f'models/mfg/{_u}/bom.csv'
+    if ex(_p):
+        _rows=list(_csv.DictReader(open(_p)))
+        _all_ph=bool(_rows) and all(re.search(r'PLACEHOLDER\s*\(standby',' '.join(map(str,r.values())),re.I) for r in _rows)
+        _MFG[_u]='standby' if _all_ph else 'real'
 def status(n,k):
     u=n['unit_id']; d=f'docs-authority/duties/{u}.md'
     if (u,k) in DONE_U: return DONE_U[(u,k)]
     if k=='02' and u in _SH: return '`docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064)'
     if k=='01':
-        m=re.search(r'In ([\d.]+) kg/d, out ([\d.]+) kg/d',(n.get('params') or {}).get('duty') or '')
-        if ex(d) and m and abs(float(m[1])-float(m[2]))<1e-6: return f'`{d}` §1; graph duty {m[1]} kg/d in = out'
+        v=_DUTY.get(u)
+        if v and v[2]: return f'`{d}` §1; mass in = out {v[0]} kg/d, {v[1]} kW'
     if k=='03' and ex(f'docs-authority/pid/{u}.svg'): return f'`docs-authority/pid/{u}.svg` (AQS-PID-001)'
-    if k=='04' and ex(f'docs-authority/nozzles/{u}.csv'): return f'`docs-authority/nozzles/{u}.csv` (bores not calculated)'
+    if k=='04':
+        v=_NOZ.get(u)
+        if v and v[1] and v[0]==0: return f'`docs-authority/nozzles/{u}.csv` (all {v[1]} process connections listed)'
+    if k=='05' and _ll_ok(u): return f'`docs-authority/LINE_LIST.md` (all {len(_EU.get(u,()))} edges with DN + class; schedule/rating/material per class in AQS-PIP-003)'
     if k=='07' and ex(d) and re.search(r'^6\. Relief',open(d).read(),re.M): return f'`{d}` §6 (C7 closed on MASTER_PLAN)'
-    if k=='08' and re.search(r'\b'+re.escape(u)+r'\b',inst): return '`docs-authority/INSTRUMENT_LOOPS.md`'
+    if k=='08':
+        v=_IIDX.get(u)
+        if v: return f'`docs-authority/INSTRUMENT_INDEX.md` ({len(v)} loops; AQS-CTL-001)'
     if k=='12' and ex(f'models/mfg/{u}/bom.csv'): return f'`models/mfg/{u}/bom.csv`'
     if k=='13' and ex(f'docs-authority/fab/{u}.md'): return f'`docs-authority/fab/{u}.md` (study route)'
     return None
 def note(n,k):
     u=n['unit_id']
     if k=='10':
+        m=_MFG.get(u)
+        if m=='real': return f'partial: M2 at `models/mfg/{u}/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings)'
+        if m=='standby': return f'partial: `models/mfg/{u}/` envelope + PLACEHOLDER BOM (standby style, machine design not started)'
         if ex(f'models/mfg/{u}'): return f'partial: M2 at `models/mfg/{u}/`, not accepted'
         if ex(f'cad/stl/{u}.stl'): return f'partial: envelope `cad/stl/{u}.stl`'
+    if k=='04':
+        v=_NOZ.get(u)
+        if v and v[1]: return f'partial: {v[0]} of {v[1]} process connections without a row'
+        if v: return 'no piped process connections; nozzle schedule n/a'
     if k=='02' and ex(f'docs-authority/duties/{u}.md'): return 'partial: graph envelope only'
     return ''
 ACC=lambda n: n['class'] in('boundary',)

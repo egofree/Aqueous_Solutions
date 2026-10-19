@@ -1,6 +1,9 @@
 # Work order FLUX_PREP
 
-Authority: AQS-DUTY-072 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+Authority: AQS-DUTY-072 (X-MFG-30 pattern). LIVE unit - Kroll drag-out landed (A-M-280).
 
-Envelope-only placeholder (800 x 600 x 1200 mm). standby train (AQS-DUTY-072 section 4).
-This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/FLUX_PREP/export/flux_prep.step for the reserved volume only.
+1. Weld the bench; fit the SS top and lower shelf.
+2. Set the 20 L salt hopper with lid; mount the 0.1 kW side-entry mixer.
+3. Place the mixing tub and the day-bin on the shelf.
+4. Test: one 0.0398 kg/d salt-flux batch; check the cover quality on a trial melt.
+5. Inspect against models/mfg/FLUX_PREP/export/flux_prep.step.

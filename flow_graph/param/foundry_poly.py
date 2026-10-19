@@ -661,12 +661,12 @@ def stamp(g, s):
        T_C='150-250', P_MPa='1-5', heat_W=round(s['poly_feed'] * 2.1 * 175 / 86400, 4),
        basis='AQS-SIZE-OIL-POLY POLY_OLEFIN reactor; feed heating 25->200 C at 2.1 kJ/kg K, exotherm neglected (study)')
     st('PELLET', source=src_p, pellet_kg_d=round(s['poly_feed'], 6), form='2-4 mm pellets (AQS-DES-POLY)')
-    st('POWDER_RESIN', source=src_p, rate_kg_d=0.0, status_note='installed standby: fluoropolymer feed blocked (Q-013)')
-    st('FILM_CAST', source=src_p, rate_kg_d=0.0, status_note='installed standby: no feed edge at Rev AC')
+    st('POWDER_RESIN', source=src_p, rate_kg_d=0.0, status_note='live via fluoro_train (Q-013 reopened on dock fluorspar, A-M-283); rates re-stamped by the fluoro stage each pass')
+    st('FILM_CAST', source=src_p, rate_kg_d=0.0, status_note='live via fluoro_train (A-M-283); PVDF film rates re-stamped by the fluoro stage')
     st('POLY_STOCK', source=src_p, out_kg_d=round(s['P'], 6), to_wet_kg_d=round(s['poly_wet'], 6), to_fab_kg_d=0.0)
     fp = dict(hf_kg_d=0.5, vdf_kg_d=0.15, tfe_kg_d=0.10, pvdf_kg_d=0.14, ptfE_kg_d=0.09, source='AQS-RATE-FP-MET design case')
     for u in ('HF_GEN', 'VDF_SYN', 'TFE_SYN', 'POLY_F'):
-        st(u, source=src_p, rate_kg_d=0.0, design_case=fp, status_note='F-blocked: no fluorine source on site (AQS-BOM-SC-001, Q-013)')
+        st(u, source=src_p, rate_kg_d=0.0, design_case=fp, status_note='live via fluoro_train (Q-013 reopened, A-M-283); rates re-stamped by the fluoro stage')
     st('POLY_COND', source=src_p, rate_kg_d=0.0, status_note='recipe waits on the digester organic assay (AQS-DES-POLY)')
 
     # ---- CAD stamps (X-MFG-30 pattern): params.design + params.envelope per unit, read by

@@ -1,2 +1,8 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 800 x 800 x 1600 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+1,"Chlorinator retort D180 x 640 mm with 320 mm heater band, 800 C",1,"Inconel 601 retort, CS shell","AQS-DUTY-072 section 4; TiO2 0.8342 + C 0.2509 kg/d, Cl2 1.4813 kg/d from MG_POT"
+2,TiCl4 condenser D140 x 420 mm with water band,1,Hastelloy C-276,AQS-DUTY-072 section 4; AQS-BAL-KROLL TiCl4 pass
+3,"Mg reduction retort D200 x 520 mm in furnace box, 900 C",1,"Inconel 601 retort, argon-latched",0.5078 kg/d Mg at 1 kg Ti batch campaigns
+4,Mg charge hopper D110 with neck and metering valve,1,CS,AQS-DUTY-072 section 4; A-M-280 Mg-pot loop
+5,"TiCl4 transfer lines DN25, chlorinator -> condenser -> retort",2,Hastelloy C-276,AQS-DUTY-072 section 4
+6,"MgCl2 drag-out trough 640 x 110 x 90 mm, tapping spout",1,"CS, Monel-lined",1.9891 kg/d gross MgCl2; drag-out to FLUX_PREP (A-M-280)
+7,"Retort hold furnace + SCR, 0.5 kW",1,"resistance, PID",AQS-DUTY-072 section 4; CO 0.5852 kg/d off-gas to burn

@@ -1,2 +1,6 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; installed standby: wax make-up unfed and GLASS_DIGEST fully committed (no shell capacity)
+1,Vibratory knock-out table 1000 x 360 mm on isolation springs,1,"CS deck, Mn liner",AQS-DUTY-072 section 4; vibratory shell knock-out station with reclaim sieve
+2,"Eccentric vibrator drive, 0.4 kW, with belt guard",1,geared motor,AQS-DUTY-072 section 4; A-M-199 forming class
+3,Breakout bin 900 x 360 x 500 mm under the grid,1,"CS, lined",8 kg/d spent shells (A-M-281)
+4,Reclaim sieve deck 320 x 300 mm with fines pan,1,"SS mesh, CS pan",7 kg/d reclaim to SHELL_BUILD; 1 kg/d fines exported (A-M-281)
+5,Dust hood with DN120 offtake,1,CS,knock-out dust to the baghouse

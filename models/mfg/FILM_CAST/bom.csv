@@ -1,2 +1,7 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-073 sections 3-4; installed standby: no feed edge at Rev AC
+1,"Extruder D25 with D70 x 430 mm barrel, L/D 24 class",1,"316L barrel, Hastelloy die",AQS-DUTY-073 fluoro train; 0.14 kg/d PVDF at 220 C melt
+2,Feed hopper D90 with dryer sleeve,1,316L,AQS-DUTY-073 fluoro train
+3,"Coat-hanger die, 200 mm width slot",1,Hastelloy C-276,AQS-DUTY-073 fluoro train; gasket/lining sheet (AQS-RATE-FP-MET PVDF linings and gaskets)
+4,Chill roll D150 x 300 mm with idler/pull roll,2,"CS cored, chrome plated",AQS-DUTY-073 fluoro train; duty 0.1087 kW
+5,Double-station surface winder with lay-on roll,1,"CS frame, pneumatic shafts",AQS-DUTY-073 fluoro train; gasket/lining sheet to MFG
+6,Control panel with heat and speed loops,1,"CS enclosure, IP54",study

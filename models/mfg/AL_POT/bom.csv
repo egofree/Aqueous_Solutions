@@ -1,2 +1,8 @@
 item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 800 x 800 x 1600 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+1,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 700 C",1,"CS casing, ceramic-fibre + ram lining","AQS-DUTY-072 section 4; molten AlCl3-(NaCl-KCl) electrolysis cell, 700 C"
+2,"Anode bank, 5 x D75 mm graphite anodes at 400 mm immersion",5,"graphite, chlorinated",Faraday I = 1461 A at CE 0.85 (A-M-282); 2 AlCl3 -> 2 Al + 3 Cl2
+3,"Cathode plate set, 4 x 110 x 12 mm with product pocket",4,mild steel / clad,10 kg/d metal on the D-DOCK chloride import (A-M-284)
+4,"Cu busbar ladder: 2 rails 32 x 31 mm (975 mm2 class), straps and DC drops",1,Cu ETP,1461 A at 3.8 V cell; 5.551 kW dc + 0.1069 kW hold of 7 kW connected
+5,Hood with gas offtake DN150 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",39.4192 kg/d Cl2 dock export at the CRU (A-M-280 ruling)
+6,Feed chute with hopper cone and rotary seal,1,CS + refractory throat,49.419 kg/d feed (A-M-284 feedstock ruling)
+7,"Thyristor rectifier + bath hold heaters, 7 kW connected",1,"cabinet, IP54",AQS-DUTY-072 section 4; A-M-282 current class

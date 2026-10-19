@@ -1,6 +1,9 @@
 # Work order POWDER_RESIN
 
-Authority: AQS-DUTY-073 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.
 
-Envelope-only placeholder (1500 x 800 x 1500 mm). installed standby: fluoropolymer feed blocked (Q-013).
-This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/POWDER_RESIN/export/powder_resin.step for the reserved volume only.
+1. Set the pin mill on its motor base; align the belt; guard it.
+2. Mount the cyclone classifier; connect the mill duct, fines drop and collector bin (PE liner).
+3. Fit the blower and oversize-return duct; wire the panel with interlocks.
+4. Test: dry run, then a PTFE trial at 0.09 kg/d; check the cut on a sieve assay.
+5. Inspect against models/mfg/POWDER_RESIN/export/powder_resin.step.
