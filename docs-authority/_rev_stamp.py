@@ -15,7 +15,7 @@ iso/ISO_SHEETS.csv. Anything else that is stale fails the gate: run python3 -m f
 import json, os, subprocess, sys, fnmatch
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); GP = 'flow_graph/plant_flow_graph.json'
 DERIVED = ['docs-authority/iso/*', 'iso/*', 'media/*', 'media/pfd/*', 'flow_graph/views/*', 'flow_graph/derived/*', 'docs-authority/duties/*.md',
-           'docs-authority/sizing/*.md', 'docs-authority/LOAD_LIST.md', 'docs-authority/ONE_LINE.md', 'docs-authority/BALANCE_RECONCILIATION.md',
+           'docs-authority/sizing/*.md', 'docs-authority/pid/*', 'docs-authority/LOAD_LIST.md', 'docs-authority/ONE_LINE.md', 'docs-authority/BALANCE_RECONCILIATION.md',
            'docs-authority/O2_SOURCE.md', 'docs-authority/ASSUMPTIONS_REGISTER.md', 'docs-authority/MODEL_WORKBOOK.xlsx', 'design_tool/aqs_design_tool/data/candidate_mvs.json']
 CLASS = {'iso/*': 'superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired',
          'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}

@@ -426,14 +426,14 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1630.49,-1074.67C1630.92,-1071.6 1631.21,-1068.33 1631.32,-1065.06"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1634.82,-1064.75 1631.14,-1054.81 1627.82,-1064.88 1634.82,-1064.75"/>
-<text text-anchor="middle" x="1680.91" y="-1063.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n1092.975294 kg/d</text>
+<text text-anchor="middle" x="1680.91" y="-1063.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n1009.369242 kg/d</text>
 </g>
 <!-- ZNBR2_BR2_REGEN&#45;&gt;ZNBR2 -->
 <g id="edge57" class="edge">
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1613.47,-1054.72C1613,-1057.79 1612.71,-1061.06 1612.59,-1064.33"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1609.1,-1064.66 1612.82,-1074.58 1616.09,-1064.5 1609.1,-1064.66"/>
-<text text-anchor="middle" x="1560.53" y="-1062.12" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n1092.975294 kg/d</text>
+<text text-anchor="middle" x="1560.53" y="-1062.12" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n1009.369242 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node19" class="node">

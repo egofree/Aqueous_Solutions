@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3 kg/d. Mass out 3 kg/d. Electrical duty 0.0000 kW. In: IA-H2O2-SRC 0.176 kg/d (oxygen to peroxide); IA-PEROX-H2O 2.824 kg/d (peroxide dilution water). Out: S32 3 kg/d (H₂O₂).
+1. Basis. Mass in 3 kg/d. Mass out 3 kg/d. Electrical duty 0.0308 kW. In: IA-H2O2-SRC 0.176 kg/d (oxygen to peroxide); IA-PEROX-H2O 2.824 kg/d (peroxide dilution water). Out: S32 3 kg/d (H₂O₂).
 
 2. Size.
 - Storage (X-SAF-09): 1 d holdup at 2.94 L/d = 2.9 L net; tank 5 L nominal; own bund 6 L (≥110 %). Holdup days are an assumption: unstabilised peroxide decomposes; product_spec holdup_max_d 1.0.

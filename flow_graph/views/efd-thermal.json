@@ -229,10 +229,10 @@
       "notes": " Duty: notes/POWER_DUTIES.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 2.0,
+        "value": 0.686,
         "unit": "kW",
         "status": "study",
-        "note": "Study HP electrical draw class \u2014 thermal primary; not ORC"
+        "note": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Ground-loop circulator not yet sized (X-ELS-02 residual)."
       },
       "modules": [],
       "params": {
@@ -269,10 +269,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "Study digest duty class"
+        "note": "X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to GLASS_DIGEST continuous_kw.."
       },
       "modules": [],
       "params": {
@@ -332,10 +332,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 2.0,
+        "value": 0.75,
         "unit": "kW",
         "status": "study",
-        "note": "AC parasitics share; study"
+        "note": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share)."
       },
       "modules": [],
       "params": {
@@ -428,7 +428,8 @@
       "continuous_kw": {
         "value": 12.0,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value."
       },
       "modules": [],
       "params": {
@@ -451,24 +452,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 60.0,
+        "value": 240.9944,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1187,
-        "kWh": 3654,
+        "kW": 1096,
+        "kWh": 3374,
         "presence": "present",
-        "charge_kW": 1187,
-        "discharge_kW": 261,
+        "charge_kW": 1096,
+        "discharge_kW": 241,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 51 hybrid inverters, 71.6 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 47 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.263,
-          "purge_m3_h": 38.59,
+          "H2_m3_d": 8.554,
+          "purge_m3_h": 35.64,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2389.7
+          "electrode_area_m2": 2206.9
         }
       }
     },
@@ -729,7 +731,12 @@
           "basis": "scrap remelt; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN"
         }
       },
-      "continuous_kw": 25
+      "continuous_kw": {
+        "value": 25.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+      }
     },
     {
       "unit_id": "VAC_IND",
@@ -753,7 +760,12 @@
           "design_case": "2 kg ISM skull melt (AQS-SIZE-FOUNDRY); Ti feed-blocked (AQS-ASSAY-TI-MO)"
         }
       },
-      "continuous_kw": 15
+      "continuous_kw": {
+        "value": 15.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md (IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02."
+      }
     },
     {
       "unit_id": "ADS_CHILL",

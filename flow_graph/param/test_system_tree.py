@@ -197,11 +197,11 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     gen = tree.aggregate(tree.resolve_units("ELEC.generation-train"), graph)
     assert gen["count"] == 3
     assert gen["kw_count"] == 3
-    # PV 405.3506 (write-convergence fix 2026-10-19: IA-ACID-01 re-sized to the leach HCl
-    # demand 439.6127 kg/d took the EVAP_ACID train 1.521 -> 1.498 kW and the bus with it;
-    # _power_sizing and close_power agree at the fixed point - balance --write is back in
-    # the regen manifest and the loop converges in 2 passes)
-    assert gen["kw_sum"] == pytest.approx(405.3506 + 0.0082 + 4.0)
+    # PV 395.872 (X-ELS-02 load-basis promotion, A-M-275: node stamps aligned to their calculations -
+    # MFG_SHOP 12 -> 2.9 tool-list average, LEACH_CSTR_1 2 -> 0.75 agitator, GLASS_DIGEST 1.5 -> 0.09,
+    # MEOH_SYNTH 0.5 -> 0.7388, GEO_HP 2 -> S44/COP 0.686 - took the demand 260.96 -> 240.99 kW, the
+    # converged EXT_HALL 97.49 -> 90.57 kW and the bus with it; fixed point in 3 passes)
+    assert gen["kw_sum"] == pytest.approx(395.872 + 0.0082 + 4.0)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

@@ -1,350 +1,594 @@
 {
  "_generated_from": {
-  "graph_sha256": "f4ef1fb78bd813d7cade94d0ef3c343ac1bd731a6fd017218ec7f9ff4f5671ed",
+  "graph_sha256": "c1fd2bec1b943618c9607755b0877923a16474da6cd9ae87a03eff07a08299bb",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
+  {
+   "unit": "PV_ARRAY",
+   "role": "generation",
+   "kw": 395.872,
+   "calc_kw": 395.872,
+   "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
+   "class": "calculated",
+   "sector": "ELEC"
+  },
+  {
+   "unit": "ZNBR2",
+   "role": "storage",
+   "kw": 240.994,
+   "calc_kw": 240.994,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "class": "calculated",
+   "sector": "ELEC"
+  },
+  {
+   "unit": "EXT_HALL",
+   "role": "load",
+   "kw": 90.574,
+   "calc_kw": 90.574,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 31644 m2; lighting 27.85 kW (IECC 2021 C405, 10 % lit), ventilation 39.47 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 23.26 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 55.0 kW and cooling 110.1 kW thermal average after internal gains 39.7 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "class": "calculated",
+   "sector": "ELEC"
+  },
+  {
+   "unit": "H2O_ELYZ",
+   "role": "load",
+   "kw": 21.452,
+   "calc_kw": 21.452,
+   "basis": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window.",
+   "class": "calculated",
+   "sector": "CRYO"
+  },
+  {
+   "unit": "RECTIFIER",
+   "role": "load",
+   "kw": 12.0,
+   "calc_kw": 12.0,
+   "basis": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value.",
+   "class": "calculated",
+   "sector": "ELEC"
+  },
   {
    "unit": "EW_9",
    "role": "load",
    "kw": 0,
    "calc_kw": 6.604,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "EW_7",
    "role": "load",
    "kw": 0,
    "calc_kw": 6.236,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
+  },
+  {
+   "unit": "BMED_ACID",
+   "role": "\u2014",
+   "kw": 5.627,
+   "calc_kw": 5.627,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed().",
+   "class": "calculated",
+   "sector": "DIGESTER"
   },
   {
    "unit": "EW_2",
    "role": "load",
    "kw": 0,
    "calc_kw": 5.25,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "EW_1",
    "role": "load",
    "kw": 5.248,
    "calc_kw": 5.248,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW).",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "EW_1",
+   "role": "load",
+   "kw": 5.248,
+   "calc_kw": 5.248,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "MFG_SHOP",
    "role": "load",
-   "kw": 12.0,
+   "kw": 2.9,
    "calc_kw": 2.9,
-   "basis": "AQS-MFG-010 tool list, one shift; peak 24.5 kW"
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev B tool list from graph throughputs, one 8 h shift; 69.6 kWh/d / 24 h; connected 42.8 kW, coincident peak 24.5 kW sizes MCC-1 (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
+   "unit": "MET_SCRUB",
+   "role": "\u2014",
+   "kw": 2.123,
+   "calc_kw": 2.123,
+   "basis": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W.",
+   "class": "calculated",
+   "sector": "MFG"
   },
   {
    "unit": "GROW_BED",
    "role": "load",
    "kw": 2.046,
-   "calc_kw": 2.25,
-   "basis": "LED: 28 m2 x DLI 17 mol/m2/d (S26 Both, Cornell CEA lettuce) / 2.5 umol/J = 2.20 kW; recirculation 18909 kg/d at 10 m head, 50% wire-to-water = 0.043 kW"
+   "calc_kw": 2.046,
+   "basis": "LED 29.12 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J, A-M-133/A-M-144); crew duty (A-M-229)",
+   "class": "calculated",
+   "sector": "FARM"
   },
   {
    "unit": "EW_3",
    "role": "load",
    "kw": 0,
    "calc_kw": 1.971,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "CRYO_ASU",
    "role": "\u2014",
    "kw": 1.669,
    "calc_kw": 1.669,
-   "basis": "AQS-DUTY-069 (X-MFG-33): 13X TSA, CO2 compressor and condenser, Ar getter; no cryogenic column"
+   "basis": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.41 + blower 0.044 + CO2 compressor 0.082 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake).",
+   "class": "calculated",
+   "sector": "CRYO"
+  },
+  {
+   "unit": "OIL_PYRO",
+   "role": "\u2014",
+   "kw": 1.664,
+   "calc_kw": 1.664,
+   "basis": "X-ELS-02: node aligned to its calculated SF-OIL_PYRO feed (retort heat / heater efficiency); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to OIL_PYRO continuous_kw..",
+   "class": "calculated",
+   "sector": "OIL"
+  },
+  {
+   "unit": "EVAP_ACID",
+   "role": "load",
+   "kw": 1.498,
+   "calc_kw": 1.498,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.2 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study.",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "EVAP_BASE",
+   "role": "load",
+   "kw": 1.328,
+   "calc_kw": 1.328,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 801.9 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.321 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.33 kW. Study.",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "ACID_POLISH_SCRUB",
+   "role": "\u2014",
+   "kw": 1.112,
+   "calc_kw": 1.112,
+   "basis": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W.",
+   "class": "calculated",
+   "sector": "GAS"
+  },
+  {
+   "unit": "ALK_SCRUBBER",
+   "role": "load",
+   "kw": 1.112,
+   "calc_kw": 1.112,
+   "basis": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W.",
+   "class": "calculated",
+   "sector": "GAS"
   },
   {
    "unit": "CRYO_H2",
    "role": "load",
    "kw": 0.933,
    "calc_kw": 0.933,
-   "basis": "AQS-DUTY-067 (X-MFG-36): 5-stage intercooled diaphragm compressor, average over the day"
+   "basis": "X-MFG-36 (A-M-169): 11.34 kg/d x 1.97 kWh/kg; peak 2.80 kW over the run hours.",
+   "class": "calculated",
+   "sector": "CRYO"
   },
   {
    "unit": "LEACH_CSTR_1",
    "role": "load",
-   "kw": 2.0,
+   "kw": 0.75,
    "calc_kw": 0.75,
-   "basis": "AQS-DUTY-050 agitator motor; heat by Q3 (HX-5), not electric"
+   "basis": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share).",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "MEOH_SYNTH",
+   "role": "load",
+   "kw": 0.739,
+   "calc_kw": 0.739,
+   "basis": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw..",
+   "class": "calculated",
+   "sector": "MEOH"
+  },
+  {
+   "unit": "GEO_HP",
+   "role": "load",
+   "kw": 0.686,
+   "calc_kw": 0.686,
+   "basis": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Ground-loop circulator not yet sized (X-ELS-02 residual).",
+   "class": "calculated",
+   "sector": "GEO"
+  },
+  {
+   "unit": "CRYO_AHU",
+   "role": "\u2014",
+   "kw": 0.647,
+   "calc_kw": 0.647,
+   "basis": "latent 1.92 kW (condensate 67.4 kg/d x 2.454 MJ/kg) / COP 2.96 (A-M-153)",
+   "class": "calculated",
+   "sector": "CRYO"
   },
   {
    "unit": "EW_6",
    "role": "load",
    "kw": 0,
    "calc_kw": 0.48,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "EW_8",
    "role": "load",
    "kw": 0,
    "calc_kw": 0.443,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "EW_5",
    "role": "load",
    "kw": 0,
    "calc_kw": 0.44,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
    "unit": "EW_4",
    "role": "load",
    "kw": 0,
    "calc_kw": 0.425,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECT_EW (DC, not in the AC sum)"
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "WET"
   },
   {
-   "unit": "H2_PURIFIER",
+   "unit": "SOLAR_PV_CELL",
+   "role": "\u2014",
+   "kw": 0.392,
+   "calc_kw": 0.392,
+   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time).",
+   "class": "calculated",
+   "sector": "FAB"
+  },
+  {
+   "unit": "VCD_TRAIN",
+   "role": "\u2014",
+   "kw": 0.236,
+   "calc_kw": 0.236,
+   "basis": "0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "class": "calculated",
+   "sector": "WTR"
+  },
+  {
+   "unit": "BLACK_DIGEST",
+   "role": "\u2014",
+   "kw": 0.105,
+   "calc_kw": 0.105,
+   "basis": "X-ELS-02: node aligned to its calculated SF-BLACK_DIGEST feed; sizing module flow_graph/param/sanitation.py (X-SAN-01, AQS-DUTY-063). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to BLACK_DIGEST continuous_kw..",
+   "class": "calculated",
+   "sector": "WTR"
+  },
+  {
+   "unit": "GLASS_DIGEST",
    "role": "load",
-   "kw": 0,
-   "calc_kw": 0.05,
-   "basis": "TSA regeneration average (study)"
+   "kw": 0.09,
+   "calc_kw": 0.09,
+   "basis": "X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to GLASS_DIGEST continuous_kw..",
+   "class": "calculated",
+   "sector": "GLASS"
+  },
+  {
+   "unit": "NOX_SCRUB",
+   "role": "\u2014",
+   "kw": 0.038,
+   "calc_kw": 0.038,
+   "basis": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W.",
+   "class": "calculated",
+   "sector": "GAS"
   },
   {
    "unit": "WS_PEROX",
-   "role": "load",
-   "kw": 0,
+   "role": "\u2014",
+   "kw": 0.031,
    "calc_kw": 0.031,
-   "basis": "AQS-DSN-OX-001 cell 12.31 A at 2.5 V"
+   "basis": "X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum.",
+   "class": "calculated",
+   "sector": "FAB"
+  },
+  {
+   "unit": "EVAP_ACID_VS",
+   "role": "load",
+   "kw": 0.024,
+   "calc_kw": 0.024,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study).",
+   "class": "calculated",
+   "sector": "WET"
+  },
+  {
+   "unit": "MEOH_FERM",
+   "role": "\u2014",
+   "kw": 0.021,
+   "calc_kw": 0.021,
+   "basis": "X-ELS-02: node aligned to its calculated SF-MEOH_FERM feed (losses and feed heat); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_FERM continuous_kw..",
+   "class": "calculated",
+   "sector": "MEOH"
+  },
+  {
+   "unit": "H2_DRYER",
+   "role": "load",
+   "kw": 0.021,
+   "calc_kw": 0.021,
+   "basis": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss.",
+   "class": "calculated",
+   "sector": "GAS"
   },
   {
    "unit": "BMED_UPW_POLISH",
    "role": "load",
    "kw": 0.018,
    "calc_kw": 0.018,
-   "basis": "AQS-DUTY-070 (X-MFG-34): RO + EDI on the UPW share, potable bypass, UV-TOC"
+   "basis": "X-MFG-34 (A-M-176, AQS-DUTY-070): RO pump 2.6 W + EDI 0.39 W + UV 15 W; potable share bypasses.",
+   "class": "calculated",
+   "sector": "WTR"
   },
   {
-   "unit": "PV_ARRAY",
+   "unit": "BACKUP_GEN",
    "role": "generation",
-   "kw": 405.351,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "kw": 0.008,
+   "calc_kw": 0.008,
+   "basis": "X-PAR-12 TF: standby, NFPA 110 exercise average",
+   "class": "calculated",
+   "sector": "ELEC"
   },
   {
-   "unit": "EXT_HALL",
-   "role": "load",
-   "kw": 97.486,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "ZNBR2",
-   "role": "storage",
-   "kw": 60.0,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "H2O_ELYZ",
-   "role": "load",
-   "kw": 21.452,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "RECTIFIER",
-   "role": "load",
-   "kw": 12.0,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "BMED_ACID",
+   "unit": "HF_GEN",
    "role": "\u2014",
-   "kw": 5.627,
+   "kw": 0,
+   "calc_kw": 0.0,
+   "basis": "standby, 0 duty at the bounding case (AQS-DUTY-073 sec. 3). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073).",
+   "class": "calculated",
+   "sector": "POLYMERS"
+  },
+  {
+   "unit": "IND_MELT",
+   "role": "load",
+   "kw": 25.0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; calculated average 0.298 kW (sizing/FOUNDRY_LINE.md) held for the logged batch schedule (X-MFG-37 trial)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "VAC_IND",
+   "role": "\u2014",
+   "kw": 15.0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; Ti Kroll train (AQS-ASSAY-TI-MO), duty-cycle wiring at the X-MFG-37 trial",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "RF_HEAT",
+   "role": "load",
+   "kw": 5.0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: A-M-232: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value; duty-cycle wiring at the X-MFG-37 trial",
+   "class": "pending",
+   "sector": "FOUNDRY"
   },
   {
    "unit": "FUEL_CELL",
    "role": "generation",
    "kw": 4.0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: owner requirement lock AQS-REQ-KW-001 REQ-FC-CONT; not a vendor nameplate (ELEC unit task 02)",
+   "class": "pending",
+   "sector": "ELEC"
   },
   {
    "unit": "HABITATION",
    "role": "load",
    "kw": 3.0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "MET_SCRUB",
-   "role": "\u2014",
-   "kw": 2.123,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "GEO_HP",
-   "role": "load",
-   "kw": 2.0,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: habitat equipment list not engineered (HAB unit task 02; drivers carry only the 3 kW backup critical share)",
+   "class": "pending",
+   "sector": "HAB"
   },
   {
    "unit": "WAFER_FAB",
    "role": "load",
    "kw": 2.0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "GLASS_DIGEST",
-   "role": "load",
-   "kw": 1.5,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "EVAP_ACID",
-   "role": "load",
-   "kw": 1.498,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "EVAP_BASE",
-   "role": "load",
-   "kw": 1.328,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "ACID_POLISH_SCRUB",
-   "role": "\u2014",
-   "kw": 1.112,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "ALK_SCRUBBER",
-   "role": "load",
-   "kw": 1.112,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: wafer-line tool list not engineered (X-MFG-38 sizes the SOLAR_PV_CELL line only)",
+   "class": "pending",
+   "sector": "FAB"
   },
   {
    "unit": "MEOH_FC",
    "role": "generation",
    "kw": 1.0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: owner requirement lock AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)",
+   "class": "pending",
+   "sector": "MEOH"
   },
   {
    "unit": "WET_BENCH",
    "role": "load",
    "kw": 1.0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "CRYO_AHU",
-   "role": "\u2014",
-   "kw": 0.647,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: fab wet-bench share; closes with the wafer-line tool list (FAB unit task 02)",
+   "class": "pending",
+   "sector": "FAB"
   },
   {
    "unit": "AFTERBURNER",
    "role": "load",
    "kw": 0.5,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: ignition/blower parasitic has no sizing module (OIL unit task 02; flue 7.097 kg/d is too small to fix a fan class)",
+   "class": "pending",
+   "sector": "OIL"
   },
   {
-   "unit": "MEOH_SYNTH",
+   "unit": "BLOW_MOLD",
    "role": "load",
    "kw": 0.5,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: blow-molding tool not selected (study stub class); kW from the SF-BLOW_MOLD feed (node has no continuous_kw stamp)",
+   "class": "pending",
+   "sector": "MFG"
   },
   {
-   "unit": "SOLAR_PV_CELL",
-   "role": "\u2014",
-   "kw": 0.392,
+   "unit": "ELECTRODE_COAT",
+   "role": "load",
+   "kw": 0.3,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "VCD_TRAIN",
-   "role": "\u2014",
-   "kw": 0.236,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: electrode coating tool not selected (study stub class); kW from the SF-ELECTRODE_COAT feed (node has no continuous_kw stamp)",
+   "class": "pending",
+   "sector": "MFG"
   },
   {
    "unit": "NUTRIENT_DOSE",
    "role": "load",
    "kw": 0.1,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: dose pump kW not sized (NUT unit task 02; the tank itself is sized in _storage_sizing)",
+   "class": "pending",
+   "sector": "NUT"
   },
   {
-   "unit": "NOX_SCRUB",
-   "role": "\u2014",
-   "kw": 0.038,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "EVAP_ACID_VS",
+   "unit": "LITHO_STUB",
    "role": "load",
-   "kw": 0.024,
+   "kw": 0.1,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "H2_DRYER",
-   "role": "load",
-   "kw": 0.021,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "BACKUP_GEN",
-   "role": "generation",
-   "kw": 0.008,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "study share - basis pending: lithography tool not selected (study stub class); kW from the SF-LITHO_STUB feed (node has no continuous_kw stamp)",
+   "class": "pending",
+   "sector": "FAB"
   },
   {
    "unit": "HYDRO_SET",
    "role": "storage",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "charge/discharge kW model incomplete - honest incomplete (WP-A4, AQS-ESS-001)",
+   "class": "null",
+   "sector": "PUMPED_HYDRO"
   },
   {
    "unit": "MEOH_TANK",
    "role": "storage",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share; held for unit task 02"
-  },
-  {
-   "unit": "HF_GEN",
-   "role": "\u2014",
-   "kw": 0,
-   "calc_kw": null,
-   "basis": "study share; held for unit task 02"
+   "basis": "inventory store; no continuous kW (fuel to MEOH_FC)",
+   "class": "null",
+   "sector": "MEOH"
   }
  ],
  "summary": {
-  "calculated": 17,
-  "rows": 48,
-  "graph_sum_kW": 164.2,
-  "calc_sum_kW": 154.1
+  "calculated": 42,
+  "pending": 13,
+  "null": 2,
+  "rows": 57,
+  "graph_sum_kW": 202.3,
+  "calc_sum_kW": 202.3,
+  "connected_load_kW": 202.3,
+  "connected_calculated_kW": 149.8,
+  "connected_calculated_pct": 74.1,
+  "by_sector": {
+   "CRYO": {
+    "calculated": 4
+   },
+   "DIGESTER": {
+    "calculated": 5
+   },
+   "ELEC": {
+    "calculated": 5,
+    "pending": 1
+   },
+   "FAB": {
+    "calculated": 2,
+    "pending": 3
+   },
+   "FARM": {
+    "calculated": 1
+   },
+   "FOUNDRY": {
+    "pending": 3
+   },
+   "GAS": {
+    "calculated": 4
+   },
+   "GEO": {
+    "calculated": 1
+   },
+   "GLASS": {
+    "calculated": 1
+   },
+   "HAB": {
+    "pending": 1
+   },
+   "MEOH": {
+    "calculated": 2,
+    "pending": 1,
+    "null": 1
+   },
+   "MFG": {
+    "calculated": 2,
+    "pending": 2
+   },
+   "NUT": {
+    "pending": 1
+   },
+   "OIL": {
+    "calculated": 1,
+    "pending": 1
+   },
+   "POLYMERS": {
+    "calculated": 1
+   },
+   "PUMPED_HYDRO": {
+    "null": 1
+   },
+   "WET": {
+    "calculated": 10
+   },
+   "WTR": {
+    "calculated": 3
+   }
+  }
  }
 }

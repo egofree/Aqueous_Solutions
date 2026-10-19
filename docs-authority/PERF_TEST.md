@@ -13,8 +13,8 @@ Bounding case: AQS-ASSAY-001 class A feed at 102.68 kg/d. Run 72 h at steady sta
 | PROD_C19_C28 | CUT-3 | OIL_FRAC | 6.166 | kg/d | OIL_FRAC-FT-03 | 5.549 - 6.782 |
 | PROD_C29 | CUT-4 | OIL_FRAC | 5.873 | kg/d | OIL_FRAC-FT-04 | 5.286 - 6.461 |
 | PROD_C5_C10 | CUT-1 | OIL_FRAC | 7.425 | kg/d | OIL_FRAC-FT-01 | 6.682 - 8.167 |
-| PROD_MEOH | IA-MEOH-PROD | MEOH_TANK | 27.09 | kg/d | weighed batch (scale, 0.1 % FS) | 24.38 - 29.8 |
-| PROD_O2 | IA-O2-PROD | HDR_O2 | 43.57 | kg/d | weighed batch (scale, 0.1 % FS) | 39.21 - 47.93 |
+| PROD_MEOH | IA-MEOH-PROD | MEOH_TANK | 28.36 | kg/d | weighed batch (scale, 0.1 % FS) | 25.53 - 31.2 |
+| PROD_O2 | IA-O2-PROD | HDR_O2 | 22.88 | kg/d | weighed batch (scale, 0.1 % FS) | 20.59 - 25.16 |
 | metal from EW_1 | IA-EW-MET-1 | EW_1 | 59.87 | kg/d | weighed cathode harvest | 53.88 - 65.86 |
 | metal from EW_2 | IA-EW-MET-2 | EW_2 | 59.89 | kg/d | weighed cathode harvest | 53.9 - 65.88 |
 | metal from EW_3 | IA-EW-MET-3 | EW_3 | 22.48 | kg/d | weighed cathode harvest | 20.23 - 24.73 |
@@ -26,8 +26,8 @@ Bounding case: AQS-ASSAY-001 class A feed at 102.68 kg/d. Run 72 h at steady sta
 | metal from EW_9 | IA-EW-MET-9 | EW_9 | 61.34 | kg/d | weighed cathode harvest | 55.21 - 67.48 |
 | metal from EW_9 | IA-EW-SHEET | EW_9 | 13.99 | kg/d | weighed cathode harvest | 12.59 - 15.39 |
 | metal from EW_1 | IA-COAT-IN | EW_1 | 0.02 | kg/d | weighed cathode harvest | 0.018 - 0.022 |
-| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 11.1 | kg/d | thermal mass flow meter | 9.986 - 12.21 |
+| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 9.361 | kg/d | thermal mass flow meter | 8.425 - 10.3 |
 
-| Plant load (sum of consumer continuous kW; PV, fuel cells, genset, battery and ORC excluded) | - | - | 235.6 | kW | revenue-grade meter at LOAD_AGG | <= 259.2 |
+| Plant load (sum of consumer continuous kW; PV, fuel cells, genset, battery and ORC excluded) | - | - | 206.7 | kW | revenue-grade meter at LOAD_AGG | <= 227.4 |
 
 18 product guarantee points. A failed point is re-run once after a 24 h hold; a second failure opens a design query against the unit sizing module.

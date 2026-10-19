@@ -501,6 +501,22 @@
       "note": "AQS-PIP-004; unit centres from duties/_origins.json."
     },
     {
+      "name": "pid_sheets",
+      "argv": [
+        "python3",
+        "docs-authority/_pid_sheets.py"
+      ],
+      "outputs": [
+        "docs-authority/pid/*"
+      ],
+      "depends_on": [
+        "line_list"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "AQS-PID-001 unit P&ID sheets (unit task 03): pid/<UNIT>.svg + pid/_register.csv + pid/_generated.json (graph-sha manifest); reads the line list, instrument index, valve inventory, cause-effect SIFs and nozzle CSVs; appends its rows to DRAWING_REGISTER.md (owned by _drawings.py, which does not glob pid/)."
+    },
+    {
       "name": "iso_routes",
       "argv": [
         "python3",
@@ -691,11 +707,12 @@
         "docs-authority/TASK_PLAN.md"
       ],
       "depends_on": [
-        "storage_sizing"
+        "storage_sizing",
+        "pid_sheets"
       ],
       "writes_graph": false,
       "quick": false,
-      "note": "AQS-PLAN-007 regen (AGENTS loop step 1); reads graph + STORAGE_HOLDUP.json + committed inventory CSVs."
+      "note": "AQS-PLAN-007 regen (AGENTS loop step 1); reads graph + STORAGE_HOLDUP.json + committed inventory CSVs + pid/<UNIT>.svg (unit task 03 evidence)."
     },
     {
       "name": "model_workbook",

@@ -40,6 +40,7 @@ def status(n,k):
     if k=='01':
         m=re.search(r'In ([\d.]+) kg/d, out ([\d.]+) kg/d',(n.get('params') or {}).get('duty') or '')
         if ex(d) and m and abs(float(m[1])-float(m[2]))<1e-6: return f'`{d}` §1; graph duty {m[1]} kg/d in = out'
+    if k=='03' and ex(f'docs-authority/pid/{u}.svg'): return f'`docs-authority/pid/{u}.svg` (AQS-PID-001)'
     if k=='04' and ex(f'docs-authority/nozzles/{u}.csv'): return f'`docs-authority/nozzles/{u}.csv` (bores not calculated)'
     if k=='07' and ex(d) and re.search(r'^6\. Relief',open(d).read(),re.M): return f'`{d}` §6 (C7 closed on MASTER_PLAN)'
     if k=='08' and re.search(r'\b'+re.escape(u)+r'\b',inst): return '`docs-authority/INSTRUMENT_LOOPS.md`'

@@ -14,6 +14,7 @@ Construction jurisdiction is the USA (AQS-STD-003), so drawing practice follows 
 | Drawing type | Number | Example |
 |---|---|---|
 | Flow diagram generated from the graph | AQS-DWG-PFD-<view> | AQS-DWG-PFD-PFD |
+| Piping and instrumentation diagram (unit task 03, generated) | AQS-PID-001-<unit> | AQS-PID-001-LEACH_CSTR_1 |
 | Piping isometric | AQS-ISO-002-<line> | AQS-ISO-002-C29_RECYCLE |
 | Motor family assembly | AQS-INV-005-<family> | AQS-INV-005-MF-07 |
 | Fabrication model (model-based definition) | AQS-MFG-<unit> | AQS-MFG-MEOH_SYNTH |

@@ -124,6 +124,49 @@ def process():
         n_rect['notes'] = f"{TAG}; AQS-ELEC-004. Nine-channel EW rectifier, {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V (Rev AC node RECTIFIER; RECT_EW remapped R10b)."
     if 'S17-EW' in E: E['S17-EW']['rate'] = rate(R['P_ac_kW'],'kW',f'{TAG}. RECT-EW AC input.')
     if 'IA-RECT-EW-LOSS' in E: E['IA-RECT-EW-LOSS']['rate'] = rate(R['loss_kW'],'kW',f'{TAG}. Rectifier conversion loss.')
+    # X-ELS-02 load-basis provenance (A-M-275): every node continuous_kw either cites its calculation or is
+    # listed as an explicit study share in the load list. This block aligns node stamps to the owning
+    # calculation: driver-keyed nameplates, the calculated SF-* feeds (X-MFG-31 reactor design, X-SAN-01
+    # sanitation, X-MFG-37 shop tool list) and the AQS-DUTY-050 agitator. Node kW changes only where the
+    # calculation says so (MFG_SHOP 12 -> tool-list average, LEACH_CSTR_1 2 -> motor, GLASS_DIGEST 1.5 ->
+    # agitator, MEOH_SYNTH 0.5 -> feed preheat); feed edges follow their nodes so the bus balance rides along.
+    LTAG = 'X-ELS-02 load-basis (A-M-275)'
+    def _stamp(u, kw, note, feed=True):
+        n = N.get(u)
+        if n is None: return
+        n['continuous_kw'] = rate(kw,'kW',note)
+        if feed and f'SF-{u}' in E: E[f'SF-{u}']['rate'] = rate(kw,'kW',f'{LTAG}. Feed equal to {u} continuous_kw.')
+    mf = json.loads(subprocess.run([sys.executable,'docs-authority/_mfg_tools.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)
+    _stamp('MFG_SHOP', round(mf['avg'],4),
+           f"X-MFG-37 (A-M-177): AQS-MFG-010 rev B tool list from graph throughputs, one 8 h shift; {mf['avg']*24:.1f} kWh/d / 24 h; "
+           f"connected {mf['connected']:.1f} kW, coincident peak {mf['peak']} kW sizes MCC-1 (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).")
+    lc = 'DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.'
+    _shaft = DR.val(d,lc+'imp_Np')*DR.val(d,lc+'liquor_rho_kg_m3')*(DR.val(d,lc+'imp_N_rpm')/60)**3*DR.val(d,lc+'imp_D_m')**5
+    _stamp('LEACH_CSTR_1', DR.val(d,lc+'motor_kW'),
+           f"X-ELS-02: agitator PBT D{DR.val(d,lc+'imp_D_m')*1000:.0f} at {DR.val(d,lc+'imp_N_rpm')} rpm, {_shaft:.0f} W shaft "
+           f"(Np x rho x N^3 x D^5) -> {DR.val(d,lc+'motor_kW')} kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); "
+           f"leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share).")
+    for u, mod in (('GLASS_DIGEST','agitator motor'), ('MEOH_SYNTH','feed preheat, no interchanger credit'), ('OIL_PYRO','retort heat / heater efficiency'), ('MEOH_FERM','losses and feed heat')):
+        f = E.get(f'SF-{u}')
+        if f is not None and isinstance(f['rate'].get('value'),(int,float)):
+            _stamp(u, f['rate']['value'],
+                   f"X-ELS-02: node aligned to its calculated SF-{u} feed ({mod}); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: {f['rate'].get('note') or 'X-MFG-31'}.")
+    f = E.get('SF-BLACK_DIGEST')
+    if f is not None and isinstance(f['rate'].get('value'),(int,float)):
+        _stamp('BLACK_DIGEST', f['rate']['value'],
+               f"X-ELS-02: node aligned to its calculated SF-BLACK_DIGEST feed; sizing module flow_graph/param/sanitation.py (X-SAN-01, AQS-DUTY-063). Feed basis: {f['rate'].get('note') or 'X-SAN-01'}.")
+    _stamp('WS_PEROX', round(12.31*2.5/1000,4),
+           'X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum.',
+           feed=False)
+    if n_rect is not None and isinstance(n_rect.get('continuous_kw'), dict):
+        n_rect['continuous_kw']['note'] = (f"A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once "
+                                           f"behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW {R['P_ac_kW']:.2f} kW; A-M-255); S17 equals this node value.")
+    for u in ('IND_MELT','RF_HEAT','VAC_IND'):   # R11 foundry bare ints -> rated dicts, value per A-M-232 (face value, unchanged)
+        n = N.get(u)
+        if n is not None and not isinstance(n.get('continuous_kw'), dict):
+            n['continuous_kw'] = rate(float(n['continuous_kw']),'kW',
+                f"study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md "
+                f"(IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02.")
     # SOL_ARK bus: PV average carries the change
     delta = bus_load(g) - before
     pv = E['IA-PV-01']['rate']['value'] + delta
@@ -188,6 +231,20 @@ def power():
     # D4 companion: keep the ZNBR2 per-inverter distribution live with the section count (AQS-ELEC-008)
     N['ZNBR2']['params']['distribution'] = (f"distributed over the {p['inverters']} hybrid inverters, {p['store_kWh']/p['inverters']:.1f} kWh and "
                                             f"{p['charge_kW']/p['inverters']:.1f} kW charge each (AQS-ELEC-008)")
+    # X-ELS-02 load-basis (A-M-275), power-chain-owned rows: ZNBR2 continuous_kw is the solved discharge
+    # rating (was the stale 60 kW study value with no note); GEO_HP electrical = the re-solved Q4-bus lift
+    # S44 (write_graph heat, AQS-DUTY-010 dispatch) over the ground-source heating COP (drivers gsh_cop_h).
+    N['ZNBR2']['continuous_kw'] = {'value': round(p['discharge_kW'],4), 'unit': 'kW', 'status': 'study',
+        'note': (f"X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): "
+                 f"discharge {p['discharge_kW']:.1f} kW, charge {p['charge_kW']:.1f} kW, {p['store_kWh']:.0f} kWh over {p['inverters']} hybrid inverters (AQS-ELEC-008). "
+                 f"Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.")}
+    if 'S44' in E and isinstance(E['S44'].get('rate',{}).get('value'),(int,float)):
+        s44 = float(E['S44']['rate']['value']); gkw = s44/DR.val(d,'gsh_cop_h')
+        if N.get('GEO_HP') is not None:
+            N['GEO_HP']['continuous_kw'] = rate(gkw,'kW',
+                f"X-ELS-02: Q4-bus lift S44 {s44:.4f} kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP "
+                f"{DR.val(d,'gsh_cop_h')} (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = {gkw:.4f} kW; 2 x 100 % units (X-RED-07). Ground-loop circulator not yet sized (X-ELS-02 residual).")
+            if 'SF-GEO_HP' in E: E['SF-GEO_HP']['rate'] = rate(gkw,'kW','X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP continuous_kw.')
     # D1/D2 (2026-10-18): mvs.electrical is WRITTEN here from the live power-chain derivation (A-M-234 replaced_by; A-M-258
     # chain) instead of being a seed block that drifts from PV_ARRAY/ZNBR2/SOL_ARK params. Schema keys only
     # (design_tool ElectricalModel, extra=forbid). need = converged bounding demand incl. the EXT_HALL extension;

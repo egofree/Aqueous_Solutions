@@ -183,7 +183,12 @@
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.1052,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: node aligned to its calculated SF-BLACK_DIGEST feed; sizing module flow_graph/param/sanitation.py (X-SAN-01, AQS-DUTY-063). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to BLACK_DIGEST continuous_kw.."
+      }
     },
     {
       "unit_id": "BMED_ACID",
@@ -761,10 +766,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.5,
+        "value": 0.09,
         "unit": "kW",
         "status": "study",
-        "note": "Study digest duty class"
+        "note": "X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to GLASS_DIGEST continuous_kw.."
       },
       "modules": [],
       "params": {
@@ -1020,8 +1025,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2701.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3654.0,
-        "fraction_of_znbr2_study": 0.058,
+        "vs_znbr2_kwh": 3374.0,
+        "fraction_of_znbr2_study": 0.063,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1057,10 +1062,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 2.0,
+        "value": 0.75,
         "unit": "kW",
         "status": "study",
-        "note": "AC parasitics share; study"
+        "note": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share)."
       },
       "modules": [],
       "params": {
@@ -1124,7 +1129,12 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope"
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0207,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: node aligned to its calculated SF-MEOH_FERM feed (losses and feed heat); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_FERM continuous_kw.."
+      }
     },
     {
       "unit_id": "MEOH_SYNTH",
@@ -1137,10 +1147,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.5,
+        "value": 0.7388,
         "unit": "kW",
         "status": "study",
-        "note": "Study synth parasitic mid when surplus-H2 path active (AQS-MeOH-001)"
+        "note": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw.."
       },
       "modules": [],
       "params": {
@@ -1270,10 +1280,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 12.0,
+        "value": 2.9,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-MFG-TOTAL-CONT mid"
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev B tool list from graph throughputs, one 8 h shift; 69.6 kWh/d / 24 h; connected 42.8 kW, coincident peak 24.5 kW sizes MCC-1 (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share)."
       },
       "modules": [],
       "params": {
@@ -1683,7 +1693,12 @@
           "material": "PE (rotomoulded / fabricated)"
         }
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0308,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum."
+      }
     },
     {
       "unit_id": "WS_SLURRY",
@@ -1725,24 +1740,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 60.0,
+        "value": 240.9944,
         "unit": "kW",
-        "status": "study"
+        "status": "study",
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 241.0 kW, charge 1095.4 kW, 3374 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1187,
-        "kWh": 3654,
+        "kW": 1096,
+        "kWh": 3374,
         "presence": "present",
-        "charge_kW": 1187,
-        "discharge_kW": 261,
+        "charge_kW": 1096,
+        "discharge_kW": 241,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 51 hybrid inverters, 71.6 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 47 hybrid inverters, 71.8 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.263,
-          "purge_m3_h": 38.59,
+          "H2_m3_d": 8.554,
+          "purge_m3_h": 35.64,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2389.7
+          "electrode_area_m2": 2206.9
         }
       }
     },
@@ -3388,10 +3404,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1092.975294,
+        "value": 1009.369242,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 38.6 m3/h holds H2 at 25 % LFL: HER 7.89 + open-circuit 1.38 m3/d H2 on 5219 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 35.6 m3/h holds H2 at 25 % LFL: HER 7.28 + open-circuit 1.27 m3/d H2 on 4820 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -3411,7 +3427,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1092.975294,
+        "value": 1009.369242,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
