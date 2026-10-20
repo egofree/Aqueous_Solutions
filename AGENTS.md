@@ -11,13 +11,24 @@ Follow the plan file. Do not keep a second list of exceptions.
 
 ## Verification
 
-After any graph/drivers/TF change, in order: `pytest flow_graph/` (1% misfit gate), `python3 -m flow_graph.param.regen --check` (staleness gates), `python3 flow_graph/check_authority_contract.py` (contract). All three must pass before commit; `notes/` holds the change records.
+After any graph/drivers/TF change, in order: `pytest flow_graph/` (1% misfit gate), `python3 -m flow_graph.param.regen --check` (staleness gates), `python3 flow_graph/check_authority_contract.py` (contract). All three must pass before commit; `notes/` holds the change records (a dated file per lane in `notes/` or `docs-authority/notes/`, driving the task-plan's `EVIDENCE_PASS` detection).
 
 ## Environment
 
 - STLs under `cad/stl/` are git-LFS - `git lfs pull` before CAD work. `pip install openpyxl` is needed for the workbook; CadQuery runs from `/tmp/cqvenv/bin/python`.
 - `docs-authority/_*.py` are the study calculators (keep their naming); one-shot historical studies pin frozen graphs by git ref (e.g. `--base d9cd071`, `--revm 57cb484`) and cannot re-run until those refs exist in history.
 - Port 22 SSH to github.com is blocked in some sessions; pushes work over HTTPS via `git -c credential.helper='!gh auth git-credential' push`.
+
+## Concurrency
+
+- Wrap every graph, `drivers.json`, or `refs.py` write in `flock /tmp/opencode/aqs-design.lock` when any other lane may be active. Writers that skip the lock corrupt each other's staged JSON.
+- Subagent lanes die on usage limits; recover by inventorying `git status` and completing the lane's semantic work from its script headers and assert messages, which carry the design intent. Do not respawn the same objective as fresh work without checking what the dead lane left on disk.
+
+## Regenerator
+
+- `flow_graph/param/regen_manifest.json` is a 44-stage DAG; `--quick` runs only the five graph-writing stages (no docs, no receipt) for what-if passes.
+- **Graph-writing stages couple**: `foundry_poly` → `fluoro_train` → `stub_activation` mutate rates before the solver, and `balance_report` is currently report-only because `--write` couples with the post-2026-10-19 `_collection_bus` writer and the successive-substitution oscillates (reverted at `1aba493`; re-enable only with a designed convergence scheme). If the graph sha cycles across regen passes, suspect a new writer, not the solver.
+- Study-calculator coverage gaps hide in `docs-authority/_*.py`: missing duty/nozzle/instrument rows are usually a unit-list filter in the generator, not missing data. Extend the generator and rerun it - never hand-edit its output.
 
 ## Loop
 
@@ -51,5 +62,7 @@ Build redundancy into every energy and life-support system wherever possible (po
 ## Done
 
 Housekeeping is part of the item, not a later pass. A commit that changes the work and leaves the board or a contradicted page behind is not done.
+
+Previous sessions committed with `--no-verify`; hooks are not what forces it - `.git/hooks/pre-commit` is empty and the hooks are LFS plumbing only, the broken SSH remote was. Push over HTTPS with the gh credential helper (see Environment), and add `-c lfs.url=https://github.com/egofree/Aqueous_Solutions.git/info/lfs` when STLs change.
 
 The plan holds the engineering limits. Read them there when the item touches them. Do not copy them into this file.
