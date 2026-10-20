@@ -2,3 +2,5 @@ tag,size,rating,service,face,height_mm
 N1,DN50,Class 150,acid-gas residual,outlet,1500
 N2,DN15,Class 150,drain,bottom,50
 N3,DN15,Class 150,vent,top,2000
+N4,DN250,Class 150,acid-gas dilution air returned to the alkaline scrubber,inlet,160
+N5,DN15,Class 150,scrubbed vent to the house acid-gas header,inlet,160

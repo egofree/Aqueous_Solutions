@@ -6,3 +6,6 @@ N4,DN25,Class 150,exhaust condensate / NOx,outlet,600
 N5,DN15,Class 150,GEN AC,outlet,600
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,800
+N8,DN15,Class 150,H2 fuel,inlet,160
+N9,DN15,Class 150,C5-C10 fuel from the tank,inlet,160
+N10,DN15,Class 150,"combustion O2, 10 % excess",inlet,160

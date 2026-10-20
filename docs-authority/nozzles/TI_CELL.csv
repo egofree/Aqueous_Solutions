@@ -1,0 +1,15 @@
+tag,size,rating,service,face,height_mm
+N1,solids,Class 150,slag / residual grit,outlet,600
+N2,solids,Class 150,dense grit (ilmenite/rutile fraction),inlet,160
+N3,DN15,Class 150,chlorine from Kroll chlorinator / Mg recycle,outlet,600
+N4,solids,Class 150,Ti and other metal powders/sponge,outlet,600
+N5,solids,Class 150,Ti sponge/powder to vacuum melt,outlet,600
+N6,DN15,Class 150,Kroll retort MgCl2 return (net of drag-out),outlet,600
+N7,solids,Class 150,MgCl2-class salt drag-out (flux cover source),outlet,600
+N8,solids,Class 150,Mg reductant to the Kroll retort,inlet,160
+N9,DN15,Class 150,chlorine to the Kroll chlorinator,inlet,160
+N10,solids,Class 150,TiO2-equivalent rutile concentrate (dock import class),inlet,160
+N11,solids,Class 150,carbon reductant (petcoke/char class),inlet,160
+N12,DN15,Class 150,chlorinator CO (fuel-gas class export),outlet,600
+N13,DN15,Class 150,drain,bottom,50
+N14,DN15,Class 150,vent,top,800

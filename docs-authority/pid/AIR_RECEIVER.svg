@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="595" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="587" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="610" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit AIR_RECEIVER · store · sector CRYO · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 1 in + 1 out · valves 0 placed / 0 unplaced · instruments 0 (0 SIF) · nozzles 0</text>
+<text x="24" y="72" font-size="10.5">Edges 1 in + 1 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 4</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -16,6 +16,14 @@
 <circle cx="1204" cy="131" r="9" fill="white" stroke="#111"/><text x="1204" y="134" font-size="7" text-anchor="middle">FT-01</text>
 <text x="1234" y="134" font-size="8.5">instrument bubble (SIF: double)</text>
 <text x="24" y="152" font-size="10.5" font-weight="600">Instrument loops (tags are AIR_RECEIVER-&lt;loop&gt;; range and signal per AQS-CTL-001)</text>
+<circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
+<text x="40" y="175.5" font-size="7.5" text-anchor="middle">PT-01</text>
+<text x="62" y="170" font-size="7">0-10 bar g</text>
+<text x="62" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
+<circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
+<text x="198" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
+<text x="220" y="170" font-size="7">-20 to 150 C</text>
+<text x="220" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
 <rect x="590" y="210" width="320" height="140" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">AIR_RECEIVER</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">store · CRYO sector</text>
@@ -24,19 +32,22 @@
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">CRYO_N2</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">S84</text>
 <text x="24" y="253" font-size="10" text-anchor="start">192.0 kg/d · DN15 M1</text>
+<text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">HDR_N2</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-AIR-RX-OUT</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">192.0 kg/d · DN15 P3</text>
+<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N2</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 1 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; no nozzle schedule for AIR_RECEIVER yet (unit task 04).</text>
-<text x="24" y="440" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="477" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="494" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-AIR_RECEIVER</text>
-<text x="1124" y="511" font-size="9">P&amp;ID AIR_RECEIVER (store, CRYO sector)</text>
-<text x="1124" y="528" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 084af054   Issued 2026-10-19</text>
-<text x="1124" y="545" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="562" font-size="9">Graph SHA-256 444ed85e13c255f0   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/AIR_RECEIVER.csv.</text>
+<text x="24" y="440" font-size="9">Nozzles with no matching graph edge (service text): N3 drain; N4 vent</text>
+<text x="24" y="455" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-AIR_RECEIVER</text>
+<text x="1124" y="526" font-size="9">P&amp;ID AIR_RECEIVER (store, CRYO sector)</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b9365625   Issued 2026-10-19</text>
+<text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 8fc4a77ce9f30915   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

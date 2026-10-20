@@ -1,0 +1,10 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,raffinate after Mo cut,outlet,600
+N2,DN15,Class 150,post-EW liquor for Mo cut,inlet,160
+N3,DN15,Class 150,anode gas (Cl2 or O2) from molten-salt pot,outlet,600
+N4,solids,Class 150,Mo metal,outlet,600
+N5,solids,Class 150,MoO3-equivalent concentrate (dock import class),inlet,160
+N6,solids,Class 150,carbon reductant (petcoke/char class),inlet,160
+N7,DN15,Class 150,chlorinator CO2 (vent class),outlet,600
+N8,DN15,Class 150,drain,bottom,50
+N9,DN15,Class 150,vent,top,800

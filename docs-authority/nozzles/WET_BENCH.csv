@@ -7,3 +7,8 @@ N5,DN25,Class 150,spent etch,outlet,600
 N6,DN15,Class 150,resist and solvent waste,outlet,600
 N7,DN15,Class 150,drain,bottom,50
 N8,DN15,Class 150,vent,top,800
+N9,DN15,Class 150,NH₄OH / NH₃ (aq),inlet,160
+N10,DN15,Class 150,KOH,inlet,160
+N11,DN15,Class 150,HNO3,inlet,160
+N12,DN15,Class 150,H3PO4,inlet,160
+N13,DN15,Class 150,ethanol and acetone,inlet,160

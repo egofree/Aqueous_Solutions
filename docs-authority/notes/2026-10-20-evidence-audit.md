@@ -160,3 +160,19 @@ COMB_HEAT, VAC_IND, VAC_CAST, EXTRUDE, DRAW, FORGE, SINTER, POLY_COND) — `enve
   definition, triage, or prose changed), `docs-authority/TASK_PLAN.md` (regenerated),
   `docs-authority/notes/2026-10-20-evidence-audit.md` (this record). No other docs were edited by this
   pass; duty sheets, LINE_LIST, INSTRUMENT_INDEX and mfg exports were read, not written. No commits.
+
+
+## X-MFG-31 disposition + convergence revert (2026-10-20)
+
+The fluoro/pot/investment chamber models EXIST (models/mfg/foundry.py + polymers.py); the
+standby geometry is presence-consistent. The _collection_bus writer added in the power stage
+couples with balance-writes, so the regen no longer converges under --write: reverted the
+manifest to report-only (the proven-stable fixed point, suite 43/43). A designed
+write-convergence scheme for the collection-bus stage remains a separate follow-up.
+
+Remaining placeholders after this program (all envelope-real, geometry-class-level):
+  - pot_cell, kroll_train, bench_prep -> live now (foundry.py); geometry branch pending
+  - film/powder formers, POLY_F -> live; line-machine branches pending
+  - 9 N+1 alternates -> standby_rated (correct design-day state)
+  - PROD_O2/PROD_MEOH -> sized, placement pending a CAD lane
+  - TE/LT instrument loops -> X-CTL-01 lane (closes 18 HAZOP indication rows)

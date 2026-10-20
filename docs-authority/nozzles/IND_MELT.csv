@@ -1,0 +1,18 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,molten metal,outlet,600
+N2,solids,Class 150,foundry scrap,inlet,160
+N3,solids,Class 150,Ti and other metal powders/sponge,inlet,160
+N4,solids,Class 150,flux,inlet,160
+N5,solids,Class 150,EW cathode/powder metals,inlet,160
+N6,solids,Class 150,Mo metal,inlet,160
+N7,solids,Class 150,Cr metal,inlet,160
+N8,DN15,Class 150,melt to continuous caster,outlet,600
+N9,solids,Class 150,slag return,outlet,600
+N10,solids,Class 150,Al metal,inlet,160
+N11,solids,Class 150,Mg metal,inlet,160
+N12,solids,Class 150,Ca metal,inlet,160
+N13,DN15,Class 150,melt to atomizer when powder required,outlet,600
+N14,DN15,Class 150,melt for investment pour,outlet,600
+N15,solids,Class 150,manufacturing scrap return,inlet,160
+N16,DN15,Class 150,drain,bottom,50
+N17,DN15,Class 150,vent,top,800

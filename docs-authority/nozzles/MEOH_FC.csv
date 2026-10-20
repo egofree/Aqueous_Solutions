@@ -9,3 +9,4 @@ N7,DN15,Class 150,MeOH FC condensate,outlet,600
 N8,DN15,Class 150,CO₂ return from MeOH FC,outlet,600
 N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,800
+N11,DN15,Class 150,cell exhaust,outlet,600

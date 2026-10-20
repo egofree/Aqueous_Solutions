@@ -6,3 +6,4 @@ N4,DN25,Class 150,plated sheet,outlet,487
 N5,DN15,Class 150,hood hydrogen,outlet,487
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,650
+N8,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,outlet,600

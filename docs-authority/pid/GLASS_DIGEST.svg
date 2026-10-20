@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="860" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit GLASS_DIGEST · digest · sector GLASS · present</text>
 <text x="24" y="54" font-size="10.5">0.09 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 8 in + 3 out · valves 4 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 10</text>
+<text x="24" y="72" font-size="10.5">Edges 8 in + 3 out · valves 4 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 12</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-093 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-123 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -58,6 +58,7 @@
 <text x="24" y="359" font-size="9" fill="#666" text-anchor="start">EVAP_BASE</text>
 <text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">IA-BASE-01</text>
 <text x="24" y="391" font-size="10" text-anchor="start">22.0 kg/d · DN15 P4</text>
+<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
 <line x1="430" y1="424" x2="577" y2="424" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">GLASS_BURNOUT</text>
@@ -100,6 +101,7 @@
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">S08G</text>
 <text x="1476" y="345" font-size="10" text-anchor="end">26.7 kg/d · solids transfer</text>
+<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N11</text>
 <text x="24" y="658" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="668" font-size="9">Every incident graph edge is drawn: 8 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="683" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/GLASS_DIGEST.csv.</text>
@@ -108,7 +110,7 @@
 <g id="aqs-title-block"><rect x="1116" y="750" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="767" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-GLASS_DIGEST</text>
 <text x="1124" y="784" font-size="9">P&amp;ID GLASS_DIGEST (digest, GLASS sector)</text>
-<text x="1124" y="801" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 55bf36b1   Issued 2026-10-19</text>
+<text x="1124" y="801" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a56f013b   Issued 2026-10-19</text>
 <text x="1124" y="818" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="835" font-size="9">Graph SHA-256 444ed85e13c255f0   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="835" font-size="9">Graph SHA-256 8fc4a77ce9f30915   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

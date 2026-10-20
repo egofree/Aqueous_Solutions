@@ -79,7 +79,10 @@ def placeholder(U):
 
 def build(U):
     p = N[U]['params']; e = p['envelope']; d = p['design']
-    if e['state'] != 'live' and not _live_rates(d):
+    # POLY_COND (X-MFG-31): assay-gated standby, but its design-case chamber IS issued (AQS-DUTY-073
+    # sec. 4: design case 0.5 kg/d condensation resin; foundry_poly stamps the kettle design), so it
+    # gets real geometry at the design case and a standby-marked BOM/WO - not an envelope placeholder.
+    if e['state'] != 'live' and not _live_rates(d) and U != 'POLY_COND':
         return placeholder(U)
     L, W, H = e['size_mm']; style = e['style']
     if style == 'reactor' and U == 'POLY_OLEFIN':    # DN150 vertical oligomerization reactor

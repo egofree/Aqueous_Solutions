@@ -1,0 +1,8 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,"digest NaOH, 20 wt%",outlet,600
+N2,DN15,Class 150,"NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",outlet,600
+N3,DN15,Class 150,NaOH 2 M from BMED,inlet,160
+N4,DN15,Class 150,evaporator condensate return (BMED water make-up),outlet,600
+N5,solids,Class 150,purchased NaOH flake make-up,inlet,160
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800

@@ -3,3 +3,7 @@ N1,DN50,Class 150,nitrogen product,inlet,400
 N2,DN50,Class 150,N2 product,outlet,1500
 N3,DN15,Class 150,drain,bottom,50
 N4,DN15,Class 150,vent,top,2000
+N5,DN15,Class 150,N2,outlet,600
+N6,DN15,Class 150,N2 make-up,outlet,600
+N7,DN15,Class 150,nitrogen vent,outlet,600
+N8,DN50,Class 150,handler makeup,outlet,600

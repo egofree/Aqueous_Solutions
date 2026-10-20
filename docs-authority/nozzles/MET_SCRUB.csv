@@ -6,3 +6,5 @@ N4,DN15,Class 150,metal fines and aqueous scrub liquor,outlet,1500
 N5,DN15,Class 150,organic mist,outlet,1500
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,2000
+N8,DN15,Class 150,combustion off-gas when alternate used,inlet,160
+N9,DN300,Class 150,scrubbed metal-aisle air returned to the hall,outlet,600

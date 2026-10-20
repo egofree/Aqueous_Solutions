@@ -107,7 +107,25 @@
       "notes": "Sector placement DIGESTER -> GAS 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis). Classed flue_junction and moved DIGESTER -> GAS 2026-10-18 per first_principles_audit_2026-10-17.md (unclassed junction with no DIGESTER neighbour; only outbound edge S67 feeds FLUE_KO in the GAS scrub/vent closure).",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "service": "afterburner flue duct to the knock-out (flue gas at 200 C class)",
+          "kind": "flue",
+          "flow_kg_s": 0.0014,
+          "duty_kW": null,
+          "rho_kg_m3": 0.75,
+          "Q_m3_s": 0.0018,
+          "v_m_s": 8.0,
+          "id_req_mm": 17.0,
+          "DN": 100,
+          "length_m": 44.7,
+          "volume_m3": 0.2971,
+          "material": "CS Sch 40, insulated per AQS-THM-003",
+          "hold_kg": 0.22,
+          "connections": 3
+        },
+        "size_note": "DN100 manifold x 45 m run (0.297 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      },
       "continuous_kw": null
     },
     {
@@ -338,7 +356,20 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "fire": {
+          "role": "pumped supply: fire-pump suction source and sprinkler run-off",
+          "governing_level": "L0",
+          "governing_hazard": "EH1",
+          "reserve_m3": 451.2,
+          "demand_Lmin": 5013,
+          "duration_min": 90.0,
+          "pump_rated_Lmin": 5678,
+          "pump_rated_head_kPa": 150,
+          "pump_kW": 2.1,
+          "refill_h": 8,
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+        }
       }
     },
     {
@@ -542,7 +573,35 @@
           1500,
           450
         ],
-        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)"
+        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
+        "design_kPa": 2200.0,
+        "relief_mm": 9.0,
+        "relief_basis": {
+          "P1_kPa_abs": 2521.3,
+          "T_K": 253.15,
+          "M_kg_kmol": 44.01,
+          "k": 1.29,
+          "Z": 0.85,
+          "W_kg_h": 1.851,
+          "bore_req_mm": 0.28,
+          "A_req_mm2": 0.06,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 8.756,
+            "per_half_m2": 4.378,
+            "P1_kPa_abs": 2763.325,
+            "T1_K": 283.15,
+            "A_req_mm2_per_half": 61.073,
+            "bore_req_mm_per_half": 8.818,
+            "valves": 2,
+            "depress_kg": 0.0,
+            "depress_bore_mm": 0.0,
+            "liquid": true,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
+        }
       }
     },
     {
@@ -675,7 +734,35 @@
           "units": 2,
           "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers"
         },
-        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)"
+        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)",
+        "design_kPa": 22000.0,
+        "relief_mm": 13.0,
+        "relief_basis": {
+          "P1_kPa_abs": 24301.3,
+          "T_K": 313.15,
+          "M_kg_kmol": 2.016,
+          "k": 1.41,
+          "Z": 1.13,
+          "W_kg_h": 1.6424,
+          "bore_req_mm": 0.21,
+          "A_req_mm2": 0.03,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 70.047,
+            "per_half_m2": 35.024,
+            "P1_kPa_abs": 26721.325,
+            "T1_K": 344.335,
+            "A_req_mm2_per_half": 116.06,
+            "bore_req_mm_per_half": 12.156,
+            "valves": 2,
+            "depress_kg": 8.593,
+            "depress_bore_mm": 1.408,
+            "liquid": false,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
+        }
       }
     },
     {
@@ -808,7 +895,35 @@
           1500,
           600
         ],
-        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)"
+        "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
+        "design_kPa": 22000.0,
+        "relief_mm": 9.0,
+        "relief_basis": {
+          "P1_kPa_abs": 24301.3,
+          "T_K": 313.15,
+          "M_kg_kmol": 31.999,
+          "k": 1.4,
+          "Z": 0.97,
+          "W_kg_h": 12.4107,
+          "bore_req_mm": 0.28,
+          "A_req_mm2": 0.06,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 35.024,
+            "per_half_m2": 17.512,
+            "P1_kPa_abs": 26721.325,
+            "T1_K": 344.335,
+            "A_req_mm2_per_half": 58.173,
+            "bore_req_mm_per_half": 8.606,
+            "valves": 2,
+            "depress_kg": 68.81,
+            "depress_bore_mm": 1.924,
+            "liquid": false,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
+        }
       }
     },
     {
@@ -1293,7 +1408,27 @@
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "design": {
+          "Q_ceiling_kW_th": 3.0,
+          "k_ground_W_mK": 1.5,
+          "T_source_K": 285.0,
+          "q_per_m_W": 35,
+          "bore_metres_req": 85.7,
+          "bores": 2,
+          "bore_depth_m": 45,
+          "bore_metres_installed": 90,
+          "bore_spacing_m": 6,
+          "header_m": 6,
+          "loop_DN": 32,
+          "loop_flow_kg_s": 0.2564,
+          "loop_dT_K": 3,
+          "loop_fluid": "25 % propylene glycol",
+          "circ_pump_W": 125.8,
+          "status": "design_survey_locked (ST-ORC-01)",
+          "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       },
       "continuous_kw": null
     },
@@ -1320,7 +1455,21 @@
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
         "units_installed": 2,
-        "redundancy": "2 x 100 % (X-RED-07)"
+        "redundancy": "2 x 100 % (X-RED-07)",
+        "design": {
+          "lift_kW_th": 2.1952,
+          "electric_kW": 0.686,
+          "cop": 3.2,
+          "modules": 2,
+          "redundancy": "2 x 100 % (X-RED-07)",
+          "module_kW_th": 2.2,
+          "source_area_m2": 0.22,
+          "condenser_area_m2": 0.289,
+          "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
+          "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
+          "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       }
     },
     {
@@ -1334,7 +1483,19 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "design_case_kW_th": 3.0,
+          "flow_kg_s": 0.2564,
+          "DN": 32,
+          "dT_K": 3,
+          "head_m": 25,
+          "pump_W": 125.8,
+          "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
+          "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+      },
       "continuous_kw": null
     },
     {
@@ -1648,7 +1809,25 @@
       "notes": "Life CO2 header. Not raw flue. Not the dock.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "design": {
+          "service": "CO2 header (crew and cold-box in; farm and methanol-synthesis draws)",
+          "kind": "gas",
+          "flow_kg_s": 0.0,
+          "duty_kW": null,
+          "rho_kg_m3": 1.84,
+          "Q_m3_s": 0.0,
+          "v_m_s": 8.0,
+          "id_req_mm": 2.0,
+          "DN": 25,
+          "length_m": 29.2,
+          "volume_m3": 0.0066,
+          "material": "316L tube",
+          "hold_kg": 0.01,
+          "connections": 5
+        },
+        "size_note": "DN25 manifold x 29 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      }
     },
     {
       "unit_id": "HDR_H2",
@@ -1663,7 +1842,24 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "service": "H2 header (EW cathode gas in, dryer and trim draws out)",
+          "kind": "gas",
+          "flow_kg_s": 0.0,
+          "duty_kW": null,
+          "rho_kg_m3": 0.084,
+          "Q_m3_s": 0.0003,
+          "v_m_s": 8.0,
+          "id_req_mm": 6.6,
+          "DN": 25,
+          "length_m": 23.6,
+          "volume_m3": 0.0054,
+          "material": "316L tube, orbital-welded",
+          "hold_kg": 0.0,
+          "connections": 14
+        },
+        "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
     },
     {
@@ -1674,7 +1870,25 @@
       "notes": "Life N2 header. Not a process header. Not the dock.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "design": {
+          "service": "plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws)",
+          "kind": "gas",
+          "flow_kg_s": 0.0022,
+          "duty_kW": null,
+          "rho_kg_m3": 1.2,
+          "Q_m3_s": 0.0019,
+          "v_m_s": 8.0,
+          "id_req_mm": 17.2,
+          "DN": 32,
+          "length_m": 44.7,
+          "volume_m3": 0.0202,
+          "material": "316L tube",
+          "hold_kg": 0.02,
+          "connections": 7
+        },
+        "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      }
     },
     {
       "unit_id": "HDR_O2",
@@ -1687,7 +1901,25 @@
       "notes": "O2 header (S15/S02)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "service": "O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",
+          "kind": "gas",
+          "flow_kg_s": 0.0004,
+          "duty_kW": null,
+          "rho_kg_m3": 1.2,
+          "Q_m3_s": 0.0003,
+          "v_m_s": 8.0,
+          "id_req_mm": 7.1,
+          "DN": 25,
+          "length_m": 33.6,
+          "volume_m3": 0.0076,
+          "material": "316L tube, oxygen-clean per ASTM_G93, socketless",
+          "hold_kg": 0.01,
+          "connections": 8
+        },
+        "size_note": "DN25 manifold x 34 m run (0.008 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      },
       "continuous_kw": null
     },
     {
@@ -1703,7 +1935,24 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "service": "UPW distribution header (polish skid in; fab and hab draws)",
+          "kind": "liquid",
+          "flow_kg_s": 0.0008,
+          "duty_kW": null,
+          "rho_kg_m3": 983,
+          "Q_m3_s": 0.0,
+          "v_m_s": 1.5,
+          "id_req_mm": 0.8,
+          "DN": 25,
+          "length_m": 32.5,
+          "volume_m3": 0.0074,
+          "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002)",
+          "hold_kg": 7.24,
+          "connections": 3
+        },
+        "size_note": "DN25 manifold x 32 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
     },
     {
@@ -1843,7 +2092,24 @@
       "notes": "Methanol fuel-cell condensate. Process, not grey. Sector placement ELEC -> MEOH 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis). Fossil placement: all mass edges tie to the MEOH sector (S81 from MEOH_FC, IA-MEOH-H2O from MEOH_SYNTH, condensate to ROOF_TANK).",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "design": {
+          "water_kg_d": 26.7201,
+          "sources": "IA-MEOH-H2O (synthesis loop) + S81 (fuel cell)",
+          "condensing_kW": 0.7098,
+          "U_kW_m2K": 1.2,
+          "LMTD_K": 19.6,
+          "area_m2": 0.0302,
+          "tube": "1 x 10 mm x 1 m coil",
+          "drum_L": 71.37,
+          "D_mm": 400,
+          "H_mm": 600,
+          "to": "condensate to ROOF_TANK (IA-MEOH-COND)",
+          "material": "316L shell and coil (methanol/water traces)",
+          "note": "knock-out pot + condenser on the same skid"
+        },
+        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)"
+      }
     },
     {
       "unit_id": "MEOH_FC",
@@ -1869,7 +2135,24 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
+        "design": {
+          "rated_kWe": 1.0,
+          "methanol_kg_d": 5.0,
+          "air_O2_kg_d": 9.4071,
+          "water_kg_d": 7.251,
+          "CO2_kg_d": 8.6256,
+          "heat_kW": 0.3689,
+          "n_cells": 28,
+          "cell_V": 0.6,
+          "j_A_cm2": 0.3,
+          "cell_A_cm2": 200,
+          "stack_area_m2": 0.56,
+          "methanol_energy_kW": 1.152,
+          "basis": "rated graph duty S79; cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
+          "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
+          "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
+        }
       }
     },
     {
@@ -2074,7 +2357,25 @@
       "notes": "Non-condensable gas from the fractionator. Only this stream may enter the afterburner. Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "design": {
+          "service": "pyrolysis non-condensable gas header (OIL_FRAC in; afterburner out)",
+          "kind": "gas",
+          "flow_kg_s": 0.0001,
+          "duty_kW": null,
+          "rho_kg_m3": 0.5,
+          "Q_m3_s": 0.0001,
+          "v_m_s": 8.0,
+          "id_req_mm": 4.3,
+          "DN": 25,
+          "length_m": 26.4,
+          "volume_m3": 0.006,
+          "material": "304L, heat-traced (tar service)",
+          "hold_kg": 0.0,
+          "connections": 2
+        },
+        "size_note": "DN25 manifold x 26 m run (0.006 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      }
     },
     {
       "unit_id": "NORTH_DOCK",
@@ -2493,7 +2794,24 @@
       "modules": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "design": {
+          "service": "Q4 hot-water bus (Q4 batteries in; life, HX-9/HX-10 preheat, GHEX recharge, MAU/ADS branches)",
+          "kind": "liquid",
+          "flow_kg_s": 0.3778,
+          "duty_kW": 15.8144,
+          "rho_kg_m3": 983,
+          "Q_m3_s": 0.0004,
+          "v_m_s": 1.5,
+          "id_req_mm": 18.1,
+          "DN": 32,
+          "length_m": 37.1,
+          "volume_m3": 0.0168,
+          "material": "PP-H SDR 11 (80 C class), fusion-welded",
+          "hold_kg": 16.48,
+          "connections": 14
+        },
+        "size_note": "DN32 manifold x 37 m run (0.017 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
       "continuous_kw": null
     },
@@ -2556,7 +2874,20 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "fire": {
+          "role": "gravity supply: fire reserve as water-tower dead storage",
+          "governing_level": "L0",
+          "governing_hazard": "EH1",
+          "reserve_m3": 451.2,
+          "demand_Lmin": 5013,
+          "duration_min": 90.0,
+          "pump_rated_Lmin": 5678,
+          "pump_rated_head_kPa": 150,
+          "pump_kW": 2.1,
+          "refill_h": 8,
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+        }
       }
     },
     {
@@ -3533,7 +3864,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q1",
+          "ladder": "A",
+          "fluid": "thermal oil",
+          "t_nom_C": 250,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.161,
+          "issued_loss_kW": 0.2,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -3557,7 +3917,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q2",
+          "ladder": "A",
+          "fluid": "thermal oil",
+          "t_nom_C": 180,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.112,
+          "issued_loss_kW": 0.111,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -3581,11 +3970,40 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "store D750 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
         "x_thm_rated_draws": {
           "HL-Q3-A-HX4": 0.302,
           "HL-Q3-A-HX5": 7.941,
           "HL-Q3-A-HX6": 2.079
+        },
+        "design": {
+          "tier": "Q3",
+          "ladder": "A",
+          "fluid": "water",
+          "t_nom_C": 100,
+          "hold_kWh_th": 14,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 401.3,
+          "V_req_m3": 0.4104,
+          "V_m3": 0.4104,
+          "issued_V_m3": 0.407,
+          "D_mm": 750,
+          "H_mm": 950,
+          "insulation": "60 mm mineral wool",
+          "U_W_m2K": 0.55,
+          "area_m2": 3.122,
+          "standing_loss_kW": 0.137,
+          "issued_loss_kW": 0.174,
+          "wall_mm": 29722,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
         }
       }
     },
@@ -3610,7 +4028,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D800 x H1200 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q4",
+          "ladder": "A",
+          "fluid": "water",
+          "t_nom_C": 70,
+          "hold_kWh_th": 20,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 573.3,
+          "V_req_m3": 0.5862,
+          "V_m3": 0.602,
+          "issued_V_m3": 0.602,
+          "D_mm": 800,
+          "H_mm": 1200,
+          "insulation": "30 mm PIR foam",
+          "U_W_m2K": 0.76,
+          "area_m2": 4.021,
+          "standing_loss_kW": 0.153,
+          "issued_loss_kW": 0.164,
+          "wall_mm": 40046,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -3634,7 +4081,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q1",
+          "ladder": "B",
+          "fluid": "thermal oil",
+          "t_nom_C": 250,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.161,
+          "issued_loss_kW": 0.2,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -3658,7 +4134,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q2",
+          "ladder": "B",
+          "fluid": "thermal oil",
+          "t_nom_C": 180,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.112,
+          "issued_loss_kW": 0.111,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -3682,11 +4187,40 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "store D750 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
         "x_thm_rated_draws": {
           "HL-Q3-B-HX4": 0.302,
           "HL-Q3-B-HX5": 7.941,
           "HL-Q3-B-HX6": 2.079
+        },
+        "design": {
+          "tier": "Q3",
+          "ladder": "B",
+          "fluid": "water",
+          "t_nom_C": 100,
+          "hold_kWh_th": 14,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 401.3,
+          "V_req_m3": 0.4104,
+          "V_m3": 0.4104,
+          "issued_V_m3": 0.407,
+          "D_mm": 750,
+          "H_mm": 950,
+          "insulation": "60 mm mineral wool",
+          "U_W_m2K": 0.55,
+          "area_m2": 3.122,
+          "standing_loss_kW": 0.137,
+          "issued_loss_kW": 0.174,
+          "wall_mm": 29722,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
         }
       }
     },
@@ -3711,7 +4245,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D800 x H1200 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q4",
+          "ladder": "B",
+          "fluid": "water",
+          "t_nom_C": 70,
+          "hold_kWh_th": 20,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 573.3,
+          "V_req_m3": 0.5862,
+          "V_m3": 0.602,
+          "issued_V_m3": 0.602,
+          "D_mm": 800,
+          "H_mm": 1200,
+          "insulation": "30 mm PIR foam",
+          "U_W_m2K": 0.76,
+          "area_m2": 4.021,
+          "standing_loss_kW": 0.153,
+          "issued_loss_kW": 0.164,
+          "wall_mm": 40046,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -17754,7 +18317,7 @@
         "value": 7.07675,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0539 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0539 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",

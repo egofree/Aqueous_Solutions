@@ -1,3 +1,5 @@
 tag,size,rating,service,face,height_mm
 N1,DN15,Class 150,drain,bottom,50
 N2,DN15,Class 150,vent,top,800
+N3,solids,Class 150,spent resist and solvent,inlet,160
+N4,solids,Class 150,resist/solvent carry (coat catch bowl + developer) to the develop bench,outlet,600

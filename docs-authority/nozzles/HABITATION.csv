@@ -9,3 +9,15 @@ N7,DN15,Class 150,metabolic CO2 (desorbed from the HAB CO2 sorbent bed),outlet,6
 N8,DN15,Class 150,feces,outlet,600
 N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,800
+N11,DN15,Class 150,photosynthetic O2,inlet,160
+N12,DN15,Class 150,farm O2,inlet,160
+N13,DN15,Class 150,life heat,inlet,160
+N14,solids,Class 150,goods in service,inlet,160
+N15,DN15,Class 150,respired and evaporated water,outlet,600
+N16,DN50,Class 150,potable makeup,inlet,160
+N17,DN15,Class 150,scrubber water,inlet,160
+N18,solids,Class 150,worn goods,outlet,600
+N19,DN15,Class 150,vacuum-toilet blackwater,outlet,600
+N20,DN15,Class 150,urine to the blackwater barrier train,outlet,600
+N21,solids,Class 150,fecal solids to the blackwater barrier train,outlet,600
+N22,solids,Class 150,galley food waste to the blackwater barrier train,outlet,600

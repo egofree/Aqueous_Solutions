@@ -4,3 +4,4 @@ N2,DN25,Class 150,scrub feed,inlet,400
 N3,DN25,Class 150,scrub liquor → chlorate finish,outlet,1500
 N4,DN15,Class 150,drain,bottom,50
 N5,DN15,Class 150,vent,top,2000
+N6,DN250,Class 150,acid-gas dilution air returned to the alkaline scrubber,outlet,600

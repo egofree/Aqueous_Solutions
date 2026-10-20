@@ -32,6 +32,11 @@ ST=[('01','Process basis and mass/energy closure','duty sheet section 1 with in 
 ('15','Test and commission','test procedure and acceptance record','14, X-COM-01')]
 DONE_U={('LEACH_CSTR_1', '02'): '`docs-authority/sizing/LEACH_CSTR_1.md` (AQS-DUTY-050)', ('LEACH_CSTR_1', '06'): '`docs-authority/sizing/LEACH_CSTR_1.md` §2 agitator, HX-5 coil', ('EW_1', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_2', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_3', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_4', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_5', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_6', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_7', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_8', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)', ('EW_9', '02'): '`docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051)'}
 _SH={r['unit'] for r in json.load(open('docs-authority/inventory/STORAGE_HOLDUP.json'))} if os.path.exists('docs-authority/inventory/STORAGE_HOLDUP.json') else set()
+# 2026-10-20 unit task 02 evidence registry: sizing_coverage.py maps every sized unit to the sizing
+# document that carries its calculation (build asserts the doc names the unit); regenerated in the
+# pipeline before this stage. Kept as the single evidence source for task 02 alongside the legacy
+# DONE_U/_SH rows, which the registry also carries.
+_COV=json.load(open('docs-authority/inventory/SIZING_COVERAGE.json')) if os.path.exists('docs-authority/inventory/SIZING_COVERAGE.json') else {}
 # 2026-10-20 unit-task evidence audit (notes/2026-10-20-evidence-audit.md): the unit-task checks read the
 # per-unit artifact itself, not a graph-side stand-in. T01: the section 1 closure line _duty_basis.py
 # regenerates every pass ("Mass in X kg/d. Mass out Y kg/d. Electrical duty Z kW."), in = out within the
@@ -96,6 +101,7 @@ def status(n,k):
     u=n['unit_id']; d=f'docs-authority/duties/{u}.md'
     if (u,k) in DONE_U: return DONE_U[(u,k)]
     if k=='02' and u in _SH: return '`docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064)'
+    if k=='02' and u in _COV: return f"`{_COV[u]['doc']}` ({_COV[u]['docnum']})"
     if k=='01':
         v=_DUTY.get(u)
         if v and v[2]: return f'`{d}` §1; mass in = out {v[0]} kg/d, {v[1]} kW'

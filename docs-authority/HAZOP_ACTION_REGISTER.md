@@ -15,39 +15,5 @@ lane (flow_graph/inventory/other.py) once setpoints exist; the relief items need
 
 | Register id | HAZOP action | Node | Deviation | Open action | Owner task (AQS-PLAN-007) |
 |---|---|---|---|---|---|
-| HA-01 | HZ-130 | IND_MELT | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-IND_MELT-07 |
-| HA-02 | HZ-133 | RF_HEAT | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-RF_HEAT-07 |
-| HA-03 | HZ-134 | RF_HEAT | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-RF_HEAT-08 |
-| HA-04 | HZ-136 | CAST_LINE | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-CAST_LINE-07 |
-| HA-05 | HZ-137 | CAST_LINE | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-CAST_LINE-08 |
-| HA-06 | HZ-139 | CAST_LINE | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-CAST_LINE-08 |
-| HA-07 | HZ-141 | VAC_IND | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-VAC_IND-07 |
-| HA-08 | HZ-142 | VAC_IND | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-VAC_IND-08 |
-| HA-09 | HZ-144 | ROLL | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-ROLL-07 |
-| HA-10 | HZ-145 | ROLL | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-ROLL-08 |
-| HA-11 | HZ-147 | STOCK_OUT | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-STOCK_OUT-07 |
-| HA-12 | HZ-148 | STOCK_OUT | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-STOCK_OUT-08 |
-| HA-13 | HZ-150 | CONT_CAST | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-CONT_CAST-07 |
-| HA-14 | HZ-151 | CONT_CAST | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-CONT_CAST-08 |
-| HA-15 | HZ-153 | CONT_CAST | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-CONT_CAST-08 |
-| HA-16 | HZ-155 | POLY_OLEFIN | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | POLYMERS-POLY_OLEFIN-07 |
-| HA-17 | HZ-158 | POLY_OLEFIN | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | POLYMERS-POLY_OLEFIN-08 |
-| HA-18 | HZ-160 | PELLET | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | POLYMERS-PELLET-07 |
-| HA-19 | HZ-161 | PELLET | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | POLYMERS-PELLET-08 |
-| HA-20 | HZ-163 | POLY_STOCK | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | POLYMERS-POLY_STOCK-07 |
-| HA-21 | HZ-164 | POLY_STOCK | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | POLYMERS-POLY_STOCK-08 |
-| HA-22 | HZ-168 | ADS_CHILL | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | HEAT-ADS_CHILL-07 |
-| HA-23 | HZ-169 | ADS_CHILL | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | HEAT-ADS_CHILL-08 |
-| HA-24 | HZ-171 | MAU_HX | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | HEAT-MAU_HX-07 |
-| HA-25 | HZ-172 | MAU_HX | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | HEAT-MAU_HX-08 |
-| HA-26 | HZ-174 | DRY_COOLER | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | HEAT-DRY_COOLER-07 |
-| HA-27 | HZ-175 | DRY_COOLER | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | HEAT-DRY_COOLER-08 |
-| HA-28 | HZ-181 | EVAP_ACID_VS | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | DIGESTER-EVAP_ACID_VS-08 |
-| HA-29 | HZ-183 | FOOD_STORE | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FARM-FOOD_STORE-07 |
-| HA-30 | HZ-184 | FOOD_STORE | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FARM-FOOD_STORE-08 |
-| HA-31 | HZ-186 | METAL_STORE | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FOUNDRY-METAL_STORE-07 |
-| HA-32 | HZ-187 | METAL_STORE | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-METAL_STORE-08 |
-| HA-33 | HZ-189 | AIR_RECEIVER | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | CRYO-AIR_RECEIVER-07 |
-| HA-34 | HZ-190 | AIR_RECEIVER | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | CRYO-AIR_RECEIVER-08 |
 
-34 open engineering actions on 17 units: ADS_CHILL, AIR_RECEIVER, CAST_LINE, CONT_CAST, DRY_COOLER, EVAP_ACID_VS, FOOD_STORE, IND_MELT, MAU_HX, METAL_STORE, PELLET, POLY_OLEFIN, POLY_STOCK, RF_HEAT, ROLL, STOCK_OUT, VAC_IND.
+No open engineering actions.

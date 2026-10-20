@@ -1,0 +1,6 @@
+tag,size,rating,service,face,height_mm
+N1,solids,Class 150,Ca metal,outlet,600
+N2,DN15,Class 150,CaCl2 brine concentrate (mining-waste class),inlet,160
+N3,DN15,Class 150,chlorine byproduct export (water-treatment class),outlet,600
+N4,DN15,Class 150,drain,bottom,50
+N5,DN15,Class 150,vent,top,800

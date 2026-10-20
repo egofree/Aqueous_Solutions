@@ -11,3 +11,6 @@ N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,2000
 N11,DN25,hose,nitric tank vent,inlet,
 N12,DN25,hose,nitric absorber tail gas,inlet,
+N13,DN15,Class 150,cell exhaust,inlet,160
+N14,DN50,Class 150,cell water,inlet,160
+N15,DN50,Class 150,leach vent to the NOx scrubber,inlet,160

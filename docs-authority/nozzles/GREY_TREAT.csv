@@ -5,3 +5,5 @@ N3,DN25,Class 150,treated grey,outlet,600
 N4,DN50,Class 150,grey sludge,outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
+N7,DN15,Class 150,treated grey to the water cycle,outlet,600
+N8,DN15,Class 150,released digest liquor to grey treatment,inlet,160

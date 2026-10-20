@@ -4,3 +4,5 @@ N2,DN50,Class 150,raffinate (EW tail after polish) to continuous recycle,outlet,
 N3,DN50,Class 150,recovered cake,outlet,600
 N4,DN15,Class 150,drain,bottom,50
 N5,DN15,Class 150,vent,top,800
+N6,DN15,Class 150,Polish bank liquor return to the continuous recycle,outlet,600
+N7,DN15,Class 150,raffinate after Mo cut,inlet,160

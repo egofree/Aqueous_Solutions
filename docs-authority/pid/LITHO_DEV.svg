@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit LITHO_DEV · wet_bench · sector FAB · present</text>
 <text x="24" y="54" font-size="10.5">0.008 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 2 in + 1 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 2</text>
+<text x="24" y="72" font-size="10.5">Edges 2 in + 1 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 4</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -32,6 +32,7 @@
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">LITHO_COAT</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-LITHO-CARRY</text>
 <text x="24" y="253" font-size="10" text-anchor="start">1.0 kg/d · solids transfer</text>
+<text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N4</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
@@ -42,6 +43,7 @@
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">OIL_FRAC</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-LITHO-OUT</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">1.0 kg/d · solids transfer</text>
+<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N3</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 2 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/LITHO_DEV.csv.</text>
@@ -50,7 +52,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LITHO_DEV</text>
 <text x="1124" y="526" font-size="9">P&amp;ID LITHO_DEV (wet_bench, FAB sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev da1fe71c   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a1a30ee9   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 444ed85e13c255f0   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 8fc4a77ce9f30915   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

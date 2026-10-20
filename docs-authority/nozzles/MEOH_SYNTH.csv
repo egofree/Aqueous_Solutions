@@ -4,3 +4,6 @@ N2,DN15,Class 150,H2 for MeOH,inlet,160
 N3,DN15,Class 150,crude MeOH,outlet,600
 N4,DN15,Class 150,drain,bottom,50
 N5,DN15,Class 150,vent,top,800
+N6,DN15,Class 150,methanol co-feed,outlet,600
+N7,DN15,Class 150,synthesis water,outlet,600
+N8,DN15,Class 150,CO2 not taken by the bed,inlet,160

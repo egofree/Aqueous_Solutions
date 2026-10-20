@@ -228,7 +228,27 @@
         "k_ground_W_mK": 1.5,
         "Q_GHEX_avail_kW_th": 3.0,
         "Q_surplus_kW_th": 0.0,
-        "survey_status": "design_survey_locked"
+        "survey_status": "design_survey_locked",
+        "design": {
+          "Q_ceiling_kW_th": 3.0,
+          "k_ground_W_mK": 1.5,
+          "T_source_K": 285.0,
+          "q_per_m_W": 35,
+          "bore_metres_req": 85.7,
+          "bores": 2,
+          "bore_depth_m": 45,
+          "bore_metres_installed": 90,
+          "bore_spacing_m": 6,
+          "header_m": 6,
+          "loop_DN": 32,
+          "loop_flow_kg_s": 0.2564,
+          "loop_dT_K": 3,
+          "loop_fluid": "25 % propylene glycol",
+          "circ_pump_W": 125.8,
+          "status": "design_survey_locked (ST-ORC-01)",
+          "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       },
       "continuous_kw": null
     },
@@ -255,7 +275,21 @@
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
         "units_installed": 2,
-        "redundancy": "2 x 100 % (X-RED-07)"
+        "redundancy": "2 x 100 % (X-RED-07)",
+        "design": {
+          "lift_kW_th": 2.1952,
+          "electric_kW": 0.686,
+          "cop": 3.2,
+          "modules": 2,
+          "redundancy": "2 x 100 % (X-RED-07)",
+          "module_kW_th": 2.2,
+          "source_area_m2": 0.22,
+          "condenser_area_m2": 0.289,
+          "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
+          "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
+          "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       }
     },
     {
@@ -269,7 +303,19 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "design_case_kW_th": 3.0,
+          "flow_kg_s": 0.2564,
+          "DN": 32,
+          "dT_K": 3,
+          "head_m": 25,
+          "pump_W": 125.8,
+          "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
+          "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+      },
       "continuous_kw": null
     },
     {
@@ -428,7 +474,24 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
+        "design": {
+          "rated_kWe": 1.0,
+          "methanol_kg_d": 5.0,
+          "air_O2_kg_d": 9.4071,
+          "water_kg_d": 7.251,
+          "CO2_kg_d": 8.6256,
+          "heat_kW": 0.3689,
+          "n_cells": 28,
+          "cell_V": 0.6,
+          "j_A_cm2": 0.3,
+          "cell_A_cm2": 200,
+          "stack_area_m2": 0.56,
+          "methanol_energy_kW": 1.152,
+          "basis": "rated graph duty S79; cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
+          "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
+          "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
+        }
       }
     },
     {
@@ -472,7 +535,24 @@
       "modules": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "design": {
+          "service": "Q4 hot-water bus (Q4 batteries in; life, HX-9/HX-10 preheat, GHEX recharge, MAU/ADS branches)",
+          "kind": "liquid",
+          "flow_kg_s": 0.3778,
+          "duty_kW": 15.8144,
+          "rho_kg_m3": 983,
+          "Q_m3_s": 0.0004,
+          "v_m_s": 1.5,
+          "id_req_mm": 18.1,
+          "DN": 32,
+          "length_m": 37.1,
+          "volume_m3": 0.0168,
+          "material": "PP-H SDR 11 (80 C class), fusion-welded",
+          "hold_kg": 16.48,
+          "connections": 14
+        },
+        "size_note": "DN32 manifold x 37 m run (0.017 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
       "continuous_kw": null
     },
@@ -576,7 +656,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q1",
+          "ladder": "A",
+          "fluid": "thermal oil",
+          "t_nom_C": 250,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.161,
+          "issued_loss_kW": 0.2,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -600,7 +709,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q2",
+          "ladder": "A",
+          "fluid": "thermal oil",
+          "t_nom_C": 180,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.112,
+          "issued_loss_kW": 0.111,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -624,11 +762,40 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "store D750 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
         "x_thm_rated_draws": {
           "HL-Q3-A-HX4": 0.302,
           "HL-Q3-A-HX5": 7.941,
           "HL-Q3-A-HX6": 2.079
+        },
+        "design": {
+          "tier": "Q3",
+          "ladder": "A",
+          "fluid": "water",
+          "t_nom_C": 100,
+          "hold_kWh_th": 14,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 401.3,
+          "V_req_m3": 0.4104,
+          "V_m3": 0.4104,
+          "issued_V_m3": 0.407,
+          "D_mm": 750,
+          "H_mm": 950,
+          "insulation": "60 mm mineral wool",
+          "U_W_m2K": 0.55,
+          "area_m2": 3.122,
+          "standing_loss_kW": 0.137,
+          "issued_loss_kW": 0.174,
+          "wall_mm": 29722,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
         }
       }
     },
@@ -653,7 +820,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D800 x H1200 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q4",
+          "ladder": "A",
+          "fluid": "water",
+          "t_nom_C": 70,
+          "hold_kWh_th": 20,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 573.3,
+          "V_req_m3": 0.5862,
+          "V_m3": 0.602,
+          "issued_V_m3": 0.602,
+          "D_mm": 800,
+          "H_mm": 1200,
+          "insulation": "30 mm PIR foam",
+          "U_W_m2K": 0.76,
+          "area_m2": 4.021,
+          "standing_loss_kW": 0.153,
+          "issued_loss_kW": 0.164,
+          "wall_mm": 40046,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -677,7 +873,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q1",
+          "ladder": "B",
+          "fluid": "thermal oil",
+          "t_nom_C": 250,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.161,
+          "issued_loss_kW": 0.2,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -701,7 +926,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D650 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q2",
+          "ladder": "B",
+          "fluid": "thermal oil",
+          "t_nom_C": 180,
+          "hold_kWh_th": 10,
+          "swing_K": 80,
+          "rho_kg_m3": 860,
+          "cp_kJ_kgK": 2100.0,
+          "mass_kg": 214.3,
+          "V_req_m3": 0.2492,
+          "V_m3": 0.302,
+          "issued_V_m3": 0.302,
+          "D_mm": 650,
+          "H_mm": 950,
+          "insulation": "90 mm microporous silica board",
+          "U_W_m2K": 0.27,
+          "area_m2": 2.604,
+          "standing_loss_kW": 0.112,
+          "issued_loss_kW": 0.111,
+          "wall_mm": 22651,
+          "material": "SA-240 304L, welded",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {
@@ -725,11 +979,40 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "store D750 x H950 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
         "x_thm_rated_draws": {
           "HL-Q3-B-HX4": 0.302,
           "HL-Q3-B-HX5": 7.941,
           "HL-Q3-B-HX6": 2.079
+        },
+        "design": {
+          "tier": "Q3",
+          "ladder": "B",
+          "fluid": "water",
+          "t_nom_C": 100,
+          "hold_kWh_th": 14,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 401.3,
+          "V_req_m3": 0.4104,
+          "V_m3": 0.4104,
+          "issued_V_m3": 0.407,
+          "D_mm": 750,
+          "H_mm": 950,
+          "insulation": "60 mm mineral wool",
+          "U_W_m2K": 0.55,
+          "area_m2": 3.122,
+          "standing_loss_kW": 0.137,
+          "issued_loss_kW": 0.174,
+          "wall_mm": 29722,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
         }
       }
     },
@@ -754,7 +1037,36 @@
           800,
           1200
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "store D800 x H1200 mm inside the 800 x 800 x 1200 mm issued envelope, heat battery sizing (flow_graph/param/heat_battery.py, AQS-DUTY-074)",
+        "design": {
+          "tier": "Q4",
+          "ladder": "B",
+          "fluid": "water",
+          "t_nom_C": 70,
+          "hold_kWh_th": 20,
+          "swing_K": 30,
+          "rho_kg_m3": 978,
+          "cp_kJ_kgK": 4186.0,
+          "mass_kg": 573.3,
+          "V_req_m3": 0.5862,
+          "V_m3": 0.602,
+          "issued_V_m3": 0.602,
+          "D_mm": 800,
+          "H_mm": 1200,
+          "insulation": "30 mm PIR foam",
+          "U_W_m2K": 0.76,
+          "area_m2": 4.021,
+          "standing_loss_kW": 0.153,
+          "issued_loss_kW": 0.164,
+          "wall_mm": 40046,
+          "material": "PP-H (fusion welded)",
+          "envelope": [
+            800,
+            800,
+            1200
+          ],
+          "fits": true
+        }
       }
     },
     {

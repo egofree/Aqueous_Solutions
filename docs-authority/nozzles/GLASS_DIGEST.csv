@@ -9,3 +9,5 @@ N7,DN15,Class 150,silicate to slurry,outlet,600
 N8,DN15,Class 150,digest reject,outlet,600
 N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,800
+N11,solids,Class 150,glass/ceramic goods,outlet,600
+N12,DN15,Class 150,"digest NaOH, 20 wt%",inlet,160

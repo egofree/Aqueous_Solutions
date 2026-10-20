@@ -422,7 +422,35 @@
           "units": 2,
           "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers"
         },
-        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)"
+        "compressor": "in-house 5-stage diaphragm, 10 to 200 bar, intercooled, 2 x 100 % (X-MFG-36)",
+        "design_kPa": 22000.0,
+        "relief_mm": 13.0,
+        "relief_basis": {
+          "P1_kPa_abs": 24301.3,
+          "T_K": 313.15,
+          "M_kg_kmol": 2.016,
+          "k": 1.41,
+          "Z": 1.13,
+          "W_kg_h": 1.6424,
+          "bore_req_mm": 0.21,
+          "A_req_mm2": 0.03,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "adequate": true,
+          "fire_case": {
+            "exposed_m2": 70.047,
+            "per_half_m2": 35.024,
+            "P1_kPa_abs": 26721.325,
+            "T1_K": 344.335,
+            "A_req_mm2_per_half": 116.06,
+            "bore_req_mm_per_half": 12.156,
+            "valves": 2,
+            "depress_kg": 8.593,
+            "depress_bore_mm": 1.408,
+            "liquid": false,
+            "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
+          },
+          "relief_mm_basis": "governing of blocked outlet and fire case per half bank, rounded up to whole mm"
+        }
       }
     },
     {
@@ -846,7 +874,21 @@
         "coupled_GHEX": true,
         "survey_status": "design_survey_locked",
         "units_installed": 2,
-        "redundancy": "2 x 100 % (X-RED-07)"
+        "redundancy": "2 x 100 % (X-RED-07)",
+        "design": {
+          "lift_kW_th": 2.1952,
+          "electric_kW": 0.686,
+          "cop": 3.2,
+          "modules": 2,
+          "redundancy": "2 x 100 % (X-RED-07)",
+          "module_kW_th": 2.2,
+          "source_area_m2": 0.22,
+          "condenser_area_m2": 0.289,
+          "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
+          "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
+          "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
+        },
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       }
     },
     {
@@ -1156,7 +1198,24 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
+        "design": {
+          "rated_kWe": 1.0,
+          "methanol_kg_d": 5.0,
+          "air_O2_kg_d": 9.4071,
+          "water_kg_d": 7.251,
+          "CO2_kg_d": 8.6256,
+          "heat_kW": 0.3689,
+          "n_cells": 28,
+          "cell_V": 0.6,
+          "j_A_cm2": 0.3,
+          "cell_A_cm2": 200,
+          "stack_area_m2": 0.56,
+          "methanol_energy_kW": 1.152,
+          "basis": "rated graph duty S79; cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
+          "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
+          "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
+        }
       }
     },
     {

@@ -3,3 +3,8 @@ N1,DN25,Class 150,oxygen product,inlet,400
 N2,DN25,Class 150,O2 product,outlet,1500
 N3,DN15,Class 150,drain,bottom,50
 N4,DN15,Class 150,vent,top,2000
+N5,DN15,Class 150,O2,outlet,600
+N6,DN15,Class 150,O2 oxidizer,outlet,600
+N7,DN15,Class 150,surplus O2 capture,inlet,160
+N8,DN50,Class 150,oxygen makeup,outlet,600
+N9,DN15,Class 150,electrolyser O2,inlet,160

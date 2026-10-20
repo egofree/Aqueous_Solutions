@@ -9,3 +9,53 @@ N7,DN50,Class 150,CSTR to EW-1,outlet,1050
 N8,DN25,Class 150,metals/Si,outlet,1050
 N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,1400
+N11,DN15,Class 150,spent etch,inlet,160
+N12,solids,Class 150,scrap,inlet,160
+N13,solids,Class 150,dust,inlet,160
+N14,DN15,Class 150,VCD brine,inlet,160
+N15,DN50,Class 150,spent slurry and etch liquor,inlet,160
+N16,DN15,Class 150,flue condensate,inlet,160
+N17,DN50,Class 150,metal fines and aqueous scrub liquor,inlet,160
+N18,solids,Class 150,slag / residual grit,inlet,160
+N19,solids,Class 150,slag return,inlet,160
+N20,solids,Class 150,lining/gasket stock return path,inlet,160
+N21,DN50,Class 150,grey sludge,inlet,160
+N22,DN15,Class 150,sodium chlorate liquor,inlet,160
+N23,DN15,Class 150,polish reject,inlet,160
+N24,DN15,Class 150,electrolyte water make-up,outlet,600
+N25,DN15,Class 150,silicate liquor,inlet,160
+N26,DN15,Class 150,bleed salts to nutrient,outlet,600
+N27,DN15,Class 150,still bottoms,inlet,160
+N28,DN15,Class 150,nutrient surplus,inlet,160
+N29,DN15,Class 150,"plant feedstock, any class",inlet,160
+N30,DN50,Class 150,captured dust,inlet,160
+N31,DN50,Class 150,sink solids,outlet,600
+N32,DN50,Class 150,cullet,outlet,600
+N33,DN50,Class 150,scrub feed,outlet,600
+N34,DN50,Class 150,fluoride to HF,outlet,600
+N35,DN15,Class 150,spent UPW,inlet,160
+N36,solids,Class 150,returned scrap,inlet,160
+N37,solids,Class 150,phosphate,outlet,600
+N38,DN50,Class 150,leach offgas,outlet,600
+N39,DN50,Class 150,leach vent,outlet,600
+N40,DN50,Class 150,returned solids,outlet,600
+N41,DN50,Class 150,dissolved hydrogen,outlet,600
+N42,DN15,Class 150,cell water,inlet,160
+N43,DN50,Class 150,leach vent to the NOx scrubber,outlet,600
+N44,DN50,Class 150,leach condensate to the methanol cell,outlet,600
+N45,DN15,Class 150,compost carbon returned to the leach,inlet,160
+N46,DN15,Class 150,leach liquor water bleed to vapour-compression distillation,outlet,600
+N47,DN15,Class 150,sodium salt purge equal to the make-up mass,outlet,600
+N48,DN15,Class 150,water make-up for H and O leaving as product,inlet,160
+N49,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N50,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N51,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N52,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N53,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N54,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N55,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N56,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N57,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,inlet,160
+N58,DN15,Class 150,"regen HCl, 20 wt%",inlet,160
+N59,DN15,Class 150,"NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",inlet,160
+N60,DN50,Class 150,dissolved gas,outlet,600

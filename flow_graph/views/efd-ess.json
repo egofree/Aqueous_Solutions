@@ -39,7 +39,20 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "fire": {
+          "role": "pumped supply: fire-pump suction source and sprinkler run-off",
+          "governing_level": "L0",
+          "governing_hazard": "EH1",
+          "reserve_m3": 451.2,
+          "demand_Lmin": 5013,
+          "duration_min": 90.0,
+          "pump_rated_Lmin": 5678,
+          "pump_rated_head_kPa": 150,
+          "pump_kW": 2.1,
+          "refill_h": 8,
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+        }
       }
     },
     {
@@ -115,7 +128,24 @@
           800,
           1600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
+        "design": {
+          "rated_kWe": 1.0,
+          "methanol_kg_d": 5.0,
+          "air_O2_kg_d": 9.4071,
+          "water_kg_d": 7.251,
+          "CO2_kg_d": 8.6256,
+          "heat_kW": 0.3689,
+          "n_cells": 28,
+          "cell_V": 0.6,
+          "j_A_cm2": 0.3,
+          "cell_A_cm2": 200,
+          "stack_area_m2": 0.56,
+          "methanol_energy_kW": 1.152,
+          "basis": "rated graph duty S79; cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
+          "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
+          "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
+        }
       }
     },
     {
@@ -244,7 +274,20 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "fire": {
+          "role": "gravity supply: fire reserve as water-tower dead storage",
+          "governing_level": "L0",
+          "governing_hazard": "EH1",
+          "reserve_m3": 451.2,
+          "demand_Lmin": 5013,
+          "duration_min": 90.0,
+          "pump_rated_Lmin": 5678,
+          "pump_rated_head_kPa": 150,
+          "pump_kW": 2.1,
+          "refill_h": 8,
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+        }
       }
     },
     {

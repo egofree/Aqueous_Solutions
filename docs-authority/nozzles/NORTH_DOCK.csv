@@ -1,3 +1,36 @@
 tag,size,rating,service,face,height_mm
 N1,DN15,Class 150,drain,bottom,50
 N2,DN15,Class 150,vent,top,800
+N3,DN15,Class 150,nitrogen vent,inlet,160
+N4,DN15,Class 150,sodium salt purge equal to the make-up mass,inlet,160
+N5,DN15,Class 150,water make-up for H and O leaving as product,outlet,600
+N6,DN15,Class 150,C5-C10 product shipped,inlet,160
+N7,DN15,Class 150,C11-C18 surplus shipped,inlet,160
+N8,DN15,Class 150,C19-C28 surplus shipped,inlet,160
+N9,solids,Class 150,purchased NaOH flake make-up,outlet,600
+N10,DN50,Class 150,intake air,outlet,600
+N11,DN15,Class 150,O2 cylinders shipped at the dock,inlet,160
+N12,DN15,Class 150,methanol shipped at the dock,inlet,160
+N13,DN15,Class 150,solvent resupply (ethanol and acetone),outlet,600
+N14,solids,Class 150,"fluorspar make-up, acid-spar class >= 97 % CaF2",outlet,600
+N15,DN15,Class 150,98 wt% sulfuric acid make-up,outlet,600
+N16,solids,Class 150,fluorgypsum (anhydrite) cake byproduct,inlet,160
+N17,solids,Class 150,anhydrous AlCl3 feed (mining-waste chloride class),outlet,600
+N18,DN15,Class 150,chlorine byproduct export (water-treatment class product),inlet,160
+N19,DN15,Class 150,CaCl2-MgCl2 brine concentrate (mining-waste class),outlet,600
+N20,DN15,Class 150,CaCl2 brine concentrate (mining-waste class),outlet,600
+N21,DN15,Class 150,chlorine byproduct export (water-treatment class),inlet,160
+N22,solids,Class 150,TiO2-equivalent rutile concentrate (dock import class),outlet,600
+N23,solids,Class 150,carbon reductant (petcoke/char class),outlet,600
+N24,solids,Class 150,carbon reductant (petcoke/char class),outlet,600
+N25,solids,Class 150,carbon reductant (petcoke/char class),outlet,600
+N26,DN15,Class 150,chlorinator CO (fuel-gas class export),inlet,160
+N27,DN15,Class 150,chlorinator CO (fuel-gas class export),inlet,160
+N28,solids,Class 150,MoO3-equivalent concentrate (dock import class),outlet,600
+N29,DN15,Class 150,chlorinator CO2 (vent class),inlet,160
+N30,solids,Class 150,Cr2O3-equivalent chromite concentrate (dock import class),outlet,600
+N31,solids,Class 150,pattern wax make-up (petro-wax class import),outlet,600
+N32,solids,Class 150,foundry silica (flour/stucco/binder make-up),outlet,600
+N33,DN15,Class 150,dewax/burnout off-gas (burned wax + steam),inlet,160
+N34,solids,Class 150,spent foundry silica (solids return class),inlet,160
+N35,solids,Class 150,"surplus foundry metal export (pot-line product, dispatch campaign)",inlet,160

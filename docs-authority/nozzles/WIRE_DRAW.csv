@@ -5,3 +5,4 @@ N3,DN15,Class 150,draw scrap,outlet,600
 N4,DN15,Class 150,draw fume,outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
+N7,solids,Class 150,rod/wire for final sizing,inlet,160

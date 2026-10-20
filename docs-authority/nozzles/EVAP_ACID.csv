@@ -1,0 +1,7 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,"regen HCl, 20 wt%",outlet,600
+N2,DN15,Class 150,HCl 2 M from BMED,inlet,160
+N3,DN15,Class 150,evaporator condensate return (BMED water make-up),outlet,600
+N4,DN15,Class 150,"column vent: non-condensables, water vapour, trace HCl",outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

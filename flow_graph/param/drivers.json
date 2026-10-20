@@ -4735,5 +4735,400 @@
     "needs_verification": true,
     "verification_test": "first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge",
     "published": "Ca treatment 0.10-0.20 % of charge class (steelmaking practice; the grease-thickener Ca(OH)2 draw of AQS-DUTY-GREASE rides the same line)"
+  },
+  "HEAT.heat-battery-train.hb_oil_hold_kWh_th": {
+    "value": 10,
+    "units": "kWh_th sensible hold per oil store",
+    "register": "A-M-286",
+    "note": "Issued graph params.basis of the Q1/Q2 oil stores (AQS-HEAT-LADDER-001); reconciles to the AQS-DUTY-008 sec. 5 volume."
+  },
+  "HEAT.heat-battery-train.hb_oil_swing_K": {
+    "value": 80,
+    "units": "K swing",
+    "register": "A-M-286",
+    "note": "Issued oil-store swing (graph params.basis)."
+  },
+  "HEAT.heat-battery-train.hb_water_hold_kWh_th": {
+    "value": 20,
+    "units": "kWh_th sensible hold per water store",
+    "register": "A-M-286",
+    "note": "Issued graph params.basis of the Q3/Q4 water stores."
+  },
+  "HEAT.heat-battery-train.hb_q3_hold_kWh_th": {
+    "value": 14,
+    "units": "kWh_th",
+    "register": "A-M-300",
+    "needs_verification": true,
+    "verification_test": "Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision",
+    "note": "Q3 hold reconciled from the issued sec. 5 volume (0.407 m3 water at a 30 K swing = 13.9 kWh)."
+  },
+  "HEAT.heat-battery-train.hb_water_swing_K": {
+    "value": 30,
+    "units": "K swing",
+    "register": "A-M-286",
+    "note": "Issued water-store swing (graph params.basis)."
+  },
+  "HEAT.heat-battery-train.hb_HD": {
+    "value": 1.5,
+    "units": "H/D",
+    "ref": "ASTM_D1998",
+    "note": "Upright cylinder proportion, storage-train convention (AQS-DUTY-064 pattern)."
+  },
+  "HEAT.heat-battery-train.hb_rho_oil_kg_m3": {
+    "value": 860,
+    "units": "kg/m3 mineral thermal oil at 180-250 C",
+    "ref": "PERRY9"
+  },
+  "HEAT.heat-battery-train.hb_cp_oil_kJ_kgK": {
+    "value": 2.1,
+    "units": "kJ/kg K mineral thermal oil",
+    "ref": "PERRY9"
+  },
+  "HEAT.heat-battery-train.hb_rho_water_kg_m3": {
+    "value": 978,
+    "units": "kg/m3 water at the store temperature",
+    "ref": "IAPWS_IF97"
+  },
+  "HEAT.heat-battery-train.hb_cp_water_kJ_kgK": {
+    "value": 4.186,
+    "units": "kJ/kg K water",
+    "ref": "IAPWS_IF97"
+  },
+  "HEAT.heat-battery-train.hb_wall_min_mm": {
+    "value": 3,
+    "units": "mm minimum wall",
+    "ref": "ASME_VIII_1_UG27",
+    "note": "Fabricated-shell minimum (AQS-DUTY-064 steel pattern)."
+  },
+  "HEAT.heat-battery-train.hb_allow_MPa": {
+    "value": 115,
+    "units": "MPa allow, 304L at store temperature",
+    "ref": "ASME_VIII_1_UG27"
+  },
+  "HEAT.heat-battery-train.hb_insul_q12_mm": {
+    "value": 90,
+    "units": "mm microporous silica board on Q1/Q2 stores",
+    "note": "Issued AQS-DUTY-008 sec. 5 store table.",
+    "owner": "AQS-DUTY-008 sec. 5 issued store table (90 mm microporous, k 0.025)"
+  },
+  "HEAT.heat-battery-train.hb_insul_q3_mm": {
+    "value": 60,
+    "units": "mm mineral wool on Q3 stores",
+    "note": "Issued AQS-DUTY-008 sec. 5 store table.",
+    "owner": "AQS-DUTY-008 sec. 5 issued store table (60 mm mineral wool)"
+  },
+  "HEAT.heat-battery-train.hb_insul_q4_mm": {
+    "value": 30,
+    "units": "mm PIR on Q4 stores",
+    "note": "Issued AQS-DUTY-008 sec. 5 store table.",
+    "owner": "AQS-DUTY-008 sec. 5 issued store table (30 mm PIR)"
+  },
+  "HEAT.heat-battery-train.hb_k_micro_W_mK": {
+    "value": 0.025,
+    "units": "W/m K microporous board",
+    "note": "Issued AQS-DUTY-008 sec. 5 store table.",
+    "owner": "AQS-DUTY-008 sec. 5 issued store table"
+  },
+  "HEAT.heat-battery-train.hb_k_wool_W_mK": {
+    "value": 0.035,
+    "units": "W/m K mineral wool at mean temperature",
+    "ref": "ASTM_C547"
+  },
+  "HEAT.heat-battery-train.hb_k_pir_W_mK": {
+    "value": 0.025,
+    "units": "W/m K PIR foam",
+    "note": "Issued AQS-DUTY-008 sec. 5 store table.",
+    "owner": "AQS-DUTY-008 sec. 5 issued store table"
+  },
+  "HDR.headers-train.hdr_min_DN_gas": {
+    "value": 25,
+    "units": "DN minimum, gas headers",
+    "register": "A-M-287",
+    "needs_verification": true,
+    "verification_test": "Take-off and instrument tapping check on the header GA at unit task 05",
+    "note": "Smallest DN that seats take-off valves and instrument taps on a plant header; bores from velocity come out smaller at this scale."
+  },
+  "HDR.headers-train.hdr_min_DN_water": {
+    "value": 25,
+    "units": "DN minimum, water headers",
+    "register": "A-M-287",
+    "note": "As gas; also keeps the bus drainable and roddable."
+  },
+  "HDR.headers-train.hdr_min_DN_flue": {
+    "value": 100,
+    "units": "DN minimum, afterburner flue",
+    "register": "A-M-288",
+    "needs_verification": true,
+    "verification_test": "Natural-draft and condensate-drainage check on the flue routing drawing",
+    "note": "Flue practice: keeps draft stable and condensate drained at this duty; velocity sizing alone gives DN20."
+  },
+  "HDR.headers-train.hdr_v_gas_m_s": {
+    "value": 8.0,
+    "units": "m/s gas header design velocity",
+    "ref": "PERRY9"
+  },
+  "HDR.headers-train.hdr_v_water_m_s": {
+    "value": 1.5,
+    "units": "m/s water header design velocity",
+    "ref": "PERRY9"
+  },
+  "HDR.headers-train.hdr_v_flue_m_s": {
+    "value": 8.0,
+    "units": "m/s flue design velocity",
+    "ref": "PERRY9"
+  },
+  "HDR.headers-train.hdr_rho_H2": {
+    "value": 0.084,
+    "units": "kg/m3 hydrogen at 20 C 1 atm",
+    "ref": "NIST_WEBBOOK"
+  },
+  "HDR.headers-train.hdr_rho_air": {
+    "value": 1.2,
+    "units": "kg/m3 air / N2 class at 20 C",
+    "ref": "NIST_WEBBOOK"
+  },
+  "HDR.headers-train.hdr_rho_CO2": {
+    "value": 1.84,
+    "units": "kg/m3 CO2 at 20 C 1 atm",
+    "ref": "NIST_WEBBOOK"
+  },
+  "HDR.headers-train.hdr_rho_ncg": {
+    "value": 0.5,
+    "units": "kg/m3 pyrolysis NCG at 150-200 C",
+    "register": "A-M-289",
+    "needs_verification": true,
+    "verification_test": "NCG composition from the pyrolysis assay at the OIL_FRAC unit task",
+    "note": "Light pyrolysis gas class (H2/CH4/C2 rich) at header temperature."
+  },
+  "HDR.headers-train.hdr_rho_flue": {
+    "value": 0.75,
+    "units": "kg/m3 flue gas at about 200 C",
+    "register": "A-M-289",
+    "note": "Air class at the flue temperature."
+  },
+  "HDR.headers-train.hdr_rho_water": {
+    "value": 983,
+    "units": "kg/m3 water at 60 C",
+    "ref": "IAPWS_IF97"
+  },
+  "HDR.headers-train.hdr_cp_water_kJ_kgK": {
+    "value": 4.186,
+    "units": "kJ/kg K water",
+    "ref": "IAPWS_IF97"
+  },
+  "HDR.headers-train.hdr_run_default_m": {
+    "value": 20,
+    "units": "m fallback manifold run when no isometric route exists",
+    "register": "A-M-290",
+    "needs_verification": true,
+    "verification_test": "Header run lengths from the routed isometrics at the next AQS-ISO-002 regen",
+    "note": "Volume-only fallback; all present headers have routed lines."
+  },
+  "GEO.geo-loop.ghex_q_per_m_W": {
+    "value": 35,
+    "units": "W/m sustained per-metre bore capacity",
+    "ref": "KAVANAUGH2014",
+    "register": "A-M-291",
+    "needs_verification": true,
+    "verification_test": "Thermal response test on the first bore (ST-ORC-01)",
+    "note": "Mid of the 30-50 W/m small-closed-loop band; survey values stay locked."
+  },
+  "GEO.geo-loop.ghex_bore_depth_m": {
+    "value": 45,
+    "units": "m bore depth",
+    "ref": "KAVANAUGH2014",
+    "note": "Shallow closed loop above the 60 m permitting band."
+  },
+  "GEO.geo-loop.ghex_bore_spacing_m": {
+    "value": 6,
+    "units": "m bore spacing",
+    "register": "A-M-292",
+    "note": "Interference limit for small arrays; 8 h thermal diffusion at these rates."
+  },
+  "GEO.geo-loop.glycol_cp_kJ_kgK": {
+    "value": 3.9,
+    "units": "kJ/kg K 25 % propylene glycol",
+    "register": "A-M-293",
+    "note": "Manufacturer class data at 0-20 C."
+  },
+  "GEO.geo-loop.glycol_rho_kg_m3": {
+    "value": 1030,
+    "units": "kg/m3 25 % propylene glycol",
+    "register": "A-M-293",
+    "note": "Manufacturer class data."
+  },
+  "GEO.geo-loop.glycol_vol_pct": {
+    "value": 25,
+    "units": "vol % propylene glycol",
+    "register": "A-M-293",
+    "note": "Freeze protection to -10 C (Dallas design low -8 C, AQS-SITE-002)."
+  },
+  "GEO.geo-loop.glycol_dT_K": {
+    "value": 3,
+    "units": "K source-loop rise",
+    "register": "A-M-294",
+    "note": "Keeps the evaporator approach and the pump power balanced at these duties."
+  },
+  "GEO.geo-loop.glycol_v_m_s": {
+    "value": 1.0,
+    "units": "m/s loop velocity",
+    "ref": "PERRY9"
+  },
+  "GEO.geo-loop.loop_head_m": {
+    "value": 25,
+    "units": "m loop circuit head",
+    "register": "A-M-294",
+    "needs_verification": true,
+    "verification_test": "Circuit head from the routed loop isometric",
+    "note": "Buried header + U-tube circuit class estimate."
+  },
+  "GEO.geo-loop.loop_pump_eff": {
+    "value": 0.5,
+    "units": "fraction circulator wire-to-water",
+    "ref": "PERRY9"
+  },
+  "GEO.geo-loop.geo_hp_cop_design": {
+    "value": 3.2,
+    "units": "COP at the winter design point",
+    "note": "Graph S44/SF-GEO_HP; study 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6).",
+    "owner": "graph S44/SF-GEO_HP; AQS-HEAT-STUDY-002 sec. 6 (COP 3.43 at 285 K)"
+  },
+  "GEO.geo-loop.geo_hp_module_min_kW": {
+    "value": 2.2,
+    "units": "kW_th minimum module",
+    "note": "Smallest catalogued scroll class near the issued lift.",
+    "owner": "scroll-class catalogue minimum near the issued lift (AQS-HEAT-STUDY-002 sec. 6 GEO_HP module basis)"
+  },
+  "GEO.geo-loop.bp_ux_U_kW_m2K": {
+    "value": 2.0,
+    "units": "kW/m2 K brazed-plate U",
+    "ref": "PERRY9"
+  },
+  "GEO.geo-loop.bp_ux_dT_K": {
+    "value": 5,
+    "units": "K exchanger approach",
+    "ref": "PERRY9"
+  },
+  "MEOH.synthesis-train.MEOH_COND.latent_kJ_kg": {
+    "value": 2257,
+    "units": "kJ/kg water latent at near-atmospheric dew",
+    "ref": "IAPWS_IF97"
+  },
+  "MEOH.synthesis-train.MEOH_COND.cp_vap_kJ_kgK": {
+    "value": 1.9,
+    "units": "kJ/kg K water vapour",
+    "ref": "PERRY9"
+  },
+  "MEOH.synthesis-train.MEOH_COND.subcool_K": {
+    "value": 20,
+    "units": "K condensate subcool to 40 C",
+    "register": "A-M-295",
+    "note": "Condensate to ROOF_TANK below the tank class limit."
+  },
+  "MEOH.synthesis-train.MEOH_COND.U_kW_m2K": {
+    "value": 1.2,
+    "units": "kW/m2 K water vapour condensing on water",
+    "ref": "PERRY9"
+  },
+  "MEOH.synthesis-train.MEOH_COND.drum_HD": {
+    "value": 2.0,
+    "units": "H/D knock-out pot",
+    "ref": "PERRY9",
+    "note": "Vapour-liquid disengagement proportion."
+  },
+  "MEOH.synthesis-train.MEOH_FC.cell_V": {
+    "value": 0.6,
+    "units": "V per cell at the design point",
+    "ref": "IEC62282_3_100",
+    "register": "A-M-296",
+    "needs_verification": true,
+    "verification_test": "Stack polarisation set at the first article",
+    "note": "PEM module class design point."
+  },
+  "MEOH.synthesis-train.MEOH_FC.j_A_cm2": {
+    "value": 0.3,
+    "units": "A/cm2 current density at the design point",
+    "ref": "IEC62282_3_100",
+    "register": "A-M-296",
+    "needs_verification": true,
+    "verification_test": "Stack polarisation set at the first article",
+    "note": "PEM module class design point."
+  },
+  "MEOH.synthesis-train.MEOH_FC.cell_A_cm2": {
+    "value": 200,
+    "units": "cm2 active area per cell",
+    "ref": "IEC62282_3_100",
+    "note": "Standard-sized MEA on the module grid."
+  },
+  "MEOH.synthesis-train.MEOH_FC.meoh_LHV_MJ_kg": {
+    "value": 19.9,
+    "units": "MJ/kg methanol LHV",
+    "ref": "PERRY9"
+  },
+  "fire_pump_type": {
+    "value": "electric horizontal split-case, listed, NFPA 20; critical bus with the genset as second supply",
+    "units": "text",
+    "ref": "NFPA20_2022",
+    "note": "X-FIR-01: boosts the gravity supply where the static head is short of the remote-area hydraulics; jockey pump holds the riser."
+  },
+  "fire_pump_churn_frac": {
+    "value": 1.21,
+    "units": "fraction of rated head at shutoff (churn)",
+    "ref": "NFPA20_2022",
+    "note": "4.16 curve limit at zero flow."
+  },
+  "fire_pump_150_flow_frac": {
+    "value": 1.5,
+    "units": "fraction of rated flow at runout",
+    "ref": "NFPA20_2022",
+    "note": "4.18: not less than 150 % rated flow."
+  },
+  "fire_pump_150_head_frac": {
+    "value": 0.65,
+    "units": "fraction of rated head at 150 % flow",
+    "ref": "NFPA20_2022",
+    "note": "4.18 minimum at runout."
+  },
+  "fire_pump_head_margin_kPa": {
+    "value": 150,
+    "units": "kPa design margin over static + friction to the remote area",
+    "register": "A-M-297",
+    "needs_verification": true,
+    "verification_test": "Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record)",
+    "note": "Carried until the hydraulic network calc issues."
+  },
+  "fire_tank_type": {
+    "value": "gravity: water-tower dead storage (primary) + CATCH_TANK suction source for the pump (second supply)",
+    "units": "text",
+    "ref": "NFPA22_2023",
+    "note": "X-FIR-01 / X-SAF-05 two-supply ruling; the reserve sits below the hydro outlet nozzles so a hydro discharge cannot draw it."
+  },
+  "fire_tank_refill_h": {
+    "value": 8,
+    "units": "h to refill the reserve from the normal supply",
+    "register": "A-M-298",
+    "needs_verification": true,
+    "verification_test": "City/well fill-rate confirmation at X-BAS-03 (site utilities)",
+    "note": "NFPA 22 class duration for a protected occupancy at this hazard level."
+  },
+  "fire_pipe_schedule": {
+    "value": "Sch 40 black steel ASTM A53, hydraulically designed (density/area); pipe-schedule method not used where EH1 is present",
+    "units": "text",
+    "ref": "NFPA13_2022",
+    "note": "7.4 pipe schedule limits to LH/OH; the L0 EH1 areas require hydraulic design."
+  },
+  "fire_zone_hazard": {
+    "value": {
+      "L-1 wet process": "OH2",
+      "L0 shops/pyrolysis/oils/reagents/genset/flow battery": "EH1",
+      "L0 electrical rooms": "pre-action, OH2 void",
+      "L1 farm/digesters": "OH1",
+      "L1 HAB west half": "LH",
+      "H2/O2/CO2 receiver bays": "OH2 + NFPA 15 water spray",
+      "ZNBR2 enclosure": "OH2 + NFPA 855 purge"
+    },
+    "units": "NFPA 13 hazard class per zone",
+    "ref": "NFPA13_2022",
+    "note": "Zone map refined from AQS-ELEC-009 release sources and AQS-SAF-007 separation layout; hazard class flagged pending the owner hall programme (X-FIR-01 Done-when)."
   }
 }

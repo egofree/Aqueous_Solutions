@@ -1,0 +1,21 @@
+# DRY_COOLER
+
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
+
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+
+2. Size.
+- Node params (AQS-PAR-001): rated_kW 12; design_C 37.8; design_basis 0.4 % summer design temp (AQS-SITE-002 via AQS-THM-002); LMTD_K 15; fan_kW 0.6.
+- Basis (graph node): AQS-HEAT-STUDY-002 Rev A 2026-10-18 §10.8 (A-M-244): 0.05 kW_fan/kW_th class; rated 12 kW to pass the 10.16 kW no-preheat upset with margin.
+
+3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+
+4. Nozzles. Schedule at `nozzles/DRY_COOLER.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
+
+5. Instruments. No instrument loop for this unit in AQS-CTL-001 yet (unit task 08). No trip is specified.
+
+6. Relief. Relief case study pending (unit task 07). No set point is claimed on this page. Not to the room.
+
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet.
+
+8. Open items. Sizing calculation pending (unit task 02). Material selection pending (unit task 09). No instrument loop yet (unit task 08). Relief case pending (unit task 07). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).

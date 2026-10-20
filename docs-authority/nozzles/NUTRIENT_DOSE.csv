@@ -9,3 +9,6 @@ N7,DN50,Class 150,nutrient surplus,outlet,600
 N8,DN50,Class 150,nitrate and bleed salts,outlet,600
 N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,800
+N11,DN15,Class 150,nutrient solution,outlet,600
+N12,DN15,Class 150,compost carbon returned to the leach,outlet,600
+N13,DN15,Class 150,released digest-liquor nutrient split,inlet,160

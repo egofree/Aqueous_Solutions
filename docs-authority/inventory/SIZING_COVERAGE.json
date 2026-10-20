@@ -1,0 +1,617 @@
+{
+ "ACID_POLISH_SCRUB": {
+  "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
+ },
+ "AFTERBURNER_FLUE": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "AIR_RECEIVER": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "ALK_SCRUBBER": {
+  "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
+ },
+ "AL_POT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "BACKUP_GEN": {
+  "doc": "docs-authority/POWER_SIZING.md",
+  "docnum": "AQS-ELEC-007",
+  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+ },
+ "BLACK_DIGEST": {
+  "doc": "docs-authority/sizing/SANITATION.md",
+  "docnum": "AQS-DUTY-063",
+  "family": "Sanitation train (flow_graph/param/sanitation.py)"
+ },
+ "BMED_ACID": {
+  "doc": "docs-authority/sizing/BMED_STACK.md",
+  "docnum": "AQS-DUTY-068",
+  "family": "BMED stacks (flow_graph/param/bmed_stack.py)"
+ },
+ "BMED_BASE": {
+  "doc": "docs-authority/sizing/BMED_STACK.md",
+  "docnum": "AQS-DUTY-068",
+  "family": "BMED stacks (flow_graph/param/bmed_stack.py)"
+ },
+ "BMED_UPW_POLISH": {
+  "doc": "docs-authority/sizing/UPW_POLISH.md",
+  "docnum": "AQS-DUTY-070",
+  "family": "UPW polish RO/EDI (flow_graph/param/upw_polish.py)"
+ },
+ "CAST_LINE": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "CATCH_TANK": {
+  "doc": "docs-authority/WATER_TOWER.md",
+  "docnum": "AQS-BLD-014",
+  "family": "Water tower reservoirs and hydro set (docs-authority/_water_tower.py)"
+ },
+ "CA_POT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "COLD_MILL": {
+  "doc": "docs-authority/MFG_TOOLS.md",
+  "docnum": "AQS-MFG-010",
+  "family": "Metal-shop tools (docs-authority/_mfg_tools.py, X-MFG-37)"
+ },
+ "COMB_HEAT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "CONT_CAST": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "CRYO_ASU": {
+  "doc": "docs-authority/sizing/COLD_BOX.md",
+  "docnum": "AQS-DUTY-069",
+  "family": "Micro cold box (flow_graph/param/cold_box.py)"
+ },
+ "CRYO_CO2": {
+  "doc": "docs-authority/sizing/GAS_RECEIVERS.md",
+  "docnum": "AQS-DUTY-065",
+  "family": "Gas receiver banks (flow_graph/param/receivers.py)"
+ },
+ "CRYO_H2": {
+  "doc": "docs-authority/sizing/GAS_RECEIVERS.md",
+  "docnum": "AQS-DUTY-065",
+  "family": "Gas receiver banks (flow_graph/param/receivers.py)"
+ },
+ "CRYO_O2": {
+  "doc": "docs-authority/sizing/GAS_RECEIVERS.md",
+  "docnum": "AQS-DUTY-065",
+  "family": "Gas receiver banks (flow_graph/param/receivers.py)"
+ },
+ "CR_CELL": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "DRAW": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "EVAP_ACID": {
+  "doc": "docs-authority/sizing/EVAP_DESIGN.md",
+  "docnum": "AQS-DUTY-060",
+  "family": "MVR evaporators (flow_graph/param/evap_design.py)"
+ },
+ "EVAP_ACID_VS": {
+  "doc": "docs-authority/sizing/VENT_SCRUBBER.md",
+  "docnum": "AQS-DUTY-061",
+  "family": "Evaporator vent scrubber (flow_graph/param/vent_scrubber.py)"
+ },
+ "EVAP_BASE": {
+  "doc": "docs-authority/sizing/EVAP_DESIGN.md",
+  "docnum": "AQS-DUTY-060",
+  "family": "MVR evaporators (flow_graph/param/evap_design.py)"
+ },
+ "EW_1": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_2": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_3": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_4": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_5": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_6": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_7": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_8": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EW_9": {
+  "doc": "docs-authority/sizing/EW_CELLS.md",
+  "docnum": "AQS-DUTY-051",
+  "family": "EW cells, Faraday basis (docs-authority/_ew_sizing.py)"
+ },
+ "EXTRUDE": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "FAB_UPW_TANK": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "FILM_CAST": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "FLUX_PREP": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "FOOD_STORE": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "FORGE": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "FUEL_CELL": {
+  "doc": "docs-authority/POWER_SIZING.md",
+  "docnum": "AQS-ELEC-007",
+  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+ },
+ "GAS_ATOMIZER": {
+  "doc": "docs-authority/MFG_TOOLS.md",
+  "docnum": "AQS-MFG-010",
+  "family": "Metal-shop tools (docs-authority/_mfg_tools.py, X-MFG-37)"
+ },
+ "GEO_GHEX": {
+  "doc": "docs-authority/sizing/GEO_LOOP.md",
+  "docnum": "AQS-DUTY-076",
+  "family": "GEO loop (flow_graph/param/geo_loop.py)"
+ },
+ "GEO_HP": {
+  "doc": "docs-authority/sizing/GEO_LOOP.md",
+  "docnum": "AQS-DUTY-076",
+  "family": "GEO loop (flow_graph/param/geo_loop.py)"
+ },
+ "GEO_HP_CLOSED_LOOP": {
+  "doc": "docs-authority/sizing/GEO_LOOP.md",
+  "docnum": "AQS-DUTY-076",
+  "family": "GEO loop (flow_graph/param/geo_loop.py)"
+ },
+ "GLASS_DIGEST": {
+  "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docnum": "AQS-DUTY-062",
+  "family": "In-house reactors (flow_graph/param/reactor_design.py)"
+ },
+ "H2_DRYER": {
+  "doc": "docs-authority/sizing/H2_PURIFIER_BEDS.md",
+  "docnum": "AQS-DUTY-066",
+  "family": "H2 purifier / dryer beds (flow_graph/param/h2_purifier.py)"
+ },
+ "HDR_CO2": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "HDR_H2": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "HDR_N2": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "HDR_O2": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "HDR_UPW": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "HF_GEN": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "HOPPER": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "HX8": {
+  "doc": "docs-authority/POLYMER_HX_SIZING.md",
+  "docnum": "AQS-DUTY-049",
+  "family": "Polymer heat exchangers (docs-authority/_polymer_hx_study.py, X-MAT-11/12)"
+ },
+ "HYDRO_SET": {
+  "doc": "docs-authority/WATER_TOWER.md",
+  "docnum": "AQS-BLD-014",
+  "family": "Water tower reservoirs and hydro set (docs-authority/_water_tower.py)"
+ },
+ "IND_MELT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "INV_CAST": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "LEACH_CSTR_1": {
+  "doc": "docs-authority/sizing/LEACH_CSTR_1.md",
+  "docnum": "AQS-DUTY-050",
+  "family": "Leach CSTR (docs-authority/_leach_sizing.py)"
+ },
+ "MEOH_COND": {
+  "doc": "docs-authority/sizing/MEOH_TRAIN.md",
+  "docnum": "AQS-DUTY-077",
+  "family": "Methanol train residuals (flow_graph/param/meoh_train.py)"
+ },
+ "MEOH_FC": {
+  "doc": "docs-authority/sizing/MEOH_TRAIN.md",
+  "docnum": "AQS-DUTY-077",
+  "family": "Methanol train residuals (flow_graph/param/meoh_train.py)"
+ },
+ "MEOH_FERM": {
+  "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docnum": "AQS-DUTY-062",
+  "family": "In-house reactors (flow_graph/param/reactor_design.py)"
+ },
+ "MEOH_SYNTH": {
+  "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docnum": "AQS-DUTY-062",
+  "family": "In-house reactors (flow_graph/param/reactor_design.py)"
+ },
+ "MEOH_TANK": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "METAL_STORE": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "MET_MELT": {
+  "doc": "docs-authority/MFG_TOOLS.md",
+  "docnum": "AQS-MFG-010",
+  "family": "Metal-shop tools (docs-authority/_mfg_tools.py, X-MFG-37)"
+ },
+ "MET_SCRUB": {
+  "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
+ },
+ "MG_POT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "MO_CELL": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "NCG_HEADER": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "NOX_SCRUB": {
+  "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
+ },
+ "NUTRIENT_DOSE": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "OIL_PYRO": {
+  "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docnum": "AQS-DUTY-062",
+  "family": "In-house reactors (flow_graph/param/reactor_design.py)"
+ },
+ "PELLET": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POLY_COND": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POLY_F": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POLY_OLEFIN": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POLY_STOCK": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POWDER_RESIN": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "PROD_C11_C18": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "PROD_C19_C28": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "PROD_C29": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "PROD_C5_C10": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "PROD_MEOH": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "PROD_O2": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "PV_ARRAY": {
+  "doc": "docs-authority/POWER_SIZING.md",
+  "docnum": "AQS-ELEC-007",
+  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+ },
+ "Q1_A": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q1_B": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q2_A": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q2_B": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q3_A": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q3_B": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q4_A": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q4_B": {
+  "doc": "docs-authority/sizing/HEAT_BATTERY.md",
+  "docnum": "AQS-DUTY-074",
+  "family": "Heat batteries (flow_graph/param/heat_battery.py)"
+ },
+ "Q4_BUS": {
+  "doc": "docs-authority/sizing/HEADERS.md",
+  "docnum": "AQS-DUTY-075",
+  "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
+ },
+ "REMIN": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "RES_HEAT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "ROLL": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "ROOF_TANK": {
+  "doc": "docs-authority/WATER_TOWER.md",
+  "docnum": "AQS-BLD-014",
+  "family": "Water tower reservoirs and hydro set (docs-authority/_water_tower.py)"
+ },
+ "SHELL_BREAK": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "SHELL_BUILD": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "SHELL_BURNOUT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "SINTER": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "SOLAR_PV_CELL": {
+  "doc": "docs-authority/sizing/PV_CELL_LINE.md",
+  "docnum": "AQS-DUTY-071",
+  "family": "PV cell line (flow_graph/param/pv_cell_line.py)"
+ },
+ "SOL_ARK_60K": {
+  "doc": "docs-authority/POWER_SIZING.md",
+  "docnum": "AQS-ELEC-007",
+  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+ },
+ "STOCK_OUT": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "TFE_SYN": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "TI_CELL": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "VAC_CAST": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "VAC_IND": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "VDF_SYN": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "WAX_PATTERN": {
+  "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
+  "docnum": "AQS-DUTY-072",
+  "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "WIRE_DRAW": {
+  "doc": "docs-authority/MFG_TOOLS.md",
+  "docnum": "AQS-MFG-010",
+  "family": "Metal-shop tools (docs-authority/_mfg_tools.py, X-MFG-37)"
+ },
+ "WS_AMMONIA": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_DOPE": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_HF_ED": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_KOH": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_NITRIC": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_PEROX": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_PHOS": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_SLURRY": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "WS_SOLV": {
+  "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
+  "docnum": "AQS-DUTY-064",
+  "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "ZNBR2": {
+  "doc": "docs-authority/POWER_SIZING.md",
+  "docnum": "AQS-ELEC-007",
+  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+ }
+}

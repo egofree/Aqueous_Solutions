@@ -1,0 +1,7 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,molten metal,inlet,160
+N2,solids,Class 150,foundry scrap,outlet,600
+N3,solids,Class 150,billet to roll,outlet,600
+N4,solids,Class 150,billet to extrude,outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

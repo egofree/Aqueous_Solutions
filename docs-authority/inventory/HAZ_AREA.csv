@@ -1,5 +1,5 @@
 unit,sector,substances,kg_d,group,T_class,zone0,zone1,zone2,instruments,motors_pumps,protection
-CRYO_H2,CRYO,H2,9.361,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",2,0,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
+CRYO_H2,CRYO,H2,9.361,IIC (Group B),T1,inside vessel,1.0 m around relief/vent outlet,"1.5 m around the envelope, upward bias",2,0,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_3,DIGESTER,H2,0.141,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",6,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_5,DIGESTER,H2,0.031,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",6,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_6,DIGESTER,H2,0.034,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",6,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
@@ -7,8 +7,8 @@ EW_7,DIGESTER,H2,0.446,IIC (Group B),T1,inside vessel,none (no vent on the unit)
 EW_8,DIGESTER,H2,0.032,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",6,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 H2O_ELYZ,CRYO,H2,9.361,IIC (Group B),T1,inside vessel,1.0 m around relief/vent outlet,"1.5 m around the envelope, upward bias",4,0,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 MEOH_TANK,MEOH,CH3OH,28.15,IIA (Group D),T1,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",11,0,Zone 1: Ex d/e or Ex ia IIA T1; Zone 2: Ex ec/nA IIA T1
-POLY_OLEFIN,POLYMERS,C5-C10,0.294,IIA (Group D),T3,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",0,0,Zone 1: Ex d/e or Ex ia IIA T3; Zone 2: Ex ec/nA IIA T3
+POLY_OLEFIN,POLYMERS,C5-C10,0.294,IIA (Group D),T3,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",4,0,Zone 1: Ex d/e or Ex ia IIA T3; Zone 2: Ex ec/nA IIA T3
 PROD_C11_C18,OIL,C11-C18,1.512,IIA (Group D),T3,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",4,0,Zone 1: Ex d/e or Ex ia IIA T3; Zone 2: Ex ec/nA IIA T3
 PROD_C19_C28,OIL,C19-C28,2.218,IIA (Group D),T3,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",6,0,Zone 1: Ex d/e or Ex ia IIA T3; Zone 2: Ex ec/nA IIA T3
 PROD_C5_C10,OIL,C5-C10,7.077,IIA (Group D),T3,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",6,0,Zone 1: Ex d/e or Ex ia IIA T3; Zone 2: Ex ec/nA IIA T3
-PROD_MEOH,CRYO,CH3OH,28.15,IIA (Group D),T1,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",0,0,Zone 1: Ex d/e or Ex ia IIA T1; Zone 2: Ex ec/nA IIA T1
+PROD_MEOH,CRYO,CH3OH,28.15,IIA (Group D),T1,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",4,0,Zone 1: Ex d/e or Ex ia IIA T1; Zone 2: Ex ec/nA IIA T1

@@ -1,0 +1,7 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,"column vent: non-condensables, water vapour, trace HCl",inlet,160
+N2,DN15,Class 150,NaOH 2 M bleed,inlet,160
+N3,DN15,Class 150,spent scrub liquor (NaCl in NaOH) to the BMED brine,outlet,600
+N4,DN15,Class 150,scrubbed vent to the house acid-gas header,outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

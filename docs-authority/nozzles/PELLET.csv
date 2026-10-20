@@ -1,0 +1,6 @@
+tag,size,rating,service,face,height_mm
+N1,solids,Class 150,polyolefin resin,inlet,160
+N2,solids,Class 150,PVDF/PTFE resin,inlet,160
+N3,solids,Class 150,pellet stock,outlet,600
+N4,DN15,Class 150,drain,bottom,50
+N5,DN15,Class 150,vent,top,800

@@ -1,3 +1,13 @@
 tag,size,rating,service,face,height_mm
 N1,DN15,Class 150,drain,bottom,50
 N2,DN15,Class 150,vent,top,800
+N3,DN15,Class 150,digester organics,outlet,600
+N4,DN15,Class 150,vacuum-toilet blackwater,inlet,160
+N5,DN15,Class 150,"digester biogas, flared in the afterburner",outlet,600
+N6,DN15,Class 150,urine to the blackwater barrier train,inlet,160
+N7,solids,Class 150,fecal solids to the blackwater barrier train,inlet,160
+N8,solids,Class 150,galley food waste to the blackwater barrier train,inlet,160
+N9,solids,Class 150,dewatered digestate cake to incineration (barrier 2),outlet,600
+N10,DN15,Class 150,released digest-liquor nutrient split,outlet,600
+N11,DN15,Class 150,released digest liquor to grey treatment,outlet,600
+N12,solids,Class 150,fermenter digestate (water + spent solids),inlet,160

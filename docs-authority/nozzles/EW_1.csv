@@ -7,3 +7,7 @@ N5,DN15,Class 150,EW heat,outlet,487
 N6,DN25,Class 150,plated sheet,outlet,487
 N7,DN15,Class 150,drain,bottom,50
 N8,DN15,Class 150,vent,top,650
+N9,DN50,Class 150,hood hydrogen,outlet,600
+N10,solids,Class 150,nickel sheet to the booth,outlet,600
+N11,solids,Class 150,coated anode,inlet,160
+N12,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,outlet,600
