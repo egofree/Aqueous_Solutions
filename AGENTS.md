@@ -2,6 +2,23 @@
 
 Follow the plan file. Do not keep a second list of exceptions.
 
+## Repo roles
+
+- This repo (`dev/Aqueous/share/aqueous-solutions`) is the **canonical plant model**: the graph (`flow_graph/plant_flow_graph.json`) is the sole topology authority, `drivers.json` holds every input parameter, and A-M assumptions back both.
+- The working copy `dev/Aqueous/Diagrams/aqueous_diagrams` is a separate, non-git tree that mirrors these files for rendering: `rebuild.py` drives the `pfd_scripts/` PFD/PNG generators, `design_tool/web` is the Vite UI. After engine changes, refresh the working copy from here (rsync the three subtrees).
+- **Generated artifacts are never hand-edited**: duties (`duties/*.md`), sizing (`sizing/*.md`), views (`flow_graph/views/*`), registers, `MODEL_WORKBOOK.xlsx`, and P&IDs (`docs-authority/pid/*`) all regenerate via `python3 -m flow_graph.param.regen` (see Regeneration below).
+- The outer `/home/user` git repo is a different, multi-project workspace - do not `git add` from its root.
+
+## Verification
+
+After any graph/drivers/TF change, in order: `pytest flow_graph/` (1% misfit gate), `python3 -m flow_graph.param.regen --check` (staleness gates), `python3 flow_graph/check_authority_contract.py` (contract). All three must pass before commit; `notes/` holds the change records.
+
+## Environment
+
+- STLs under `cad/stl/` are git-LFS - `git lfs pull` before CAD work. `pip install openpyxl` is needed for the workbook; CadQuery runs from `/tmp/cqvenv/bin/python`.
+- `docs-authority/_*.py` are the study calculators (keep their naming); one-shot historical studies pin frozen graphs by git ref (e.g. `--base d9cd071`, `--revm 57cb484`) and cannot re-run until those refs exist in history.
+- Port 22 SSH to github.com is blocked in some sessions; pushes work over HTTPS via `git -c credential.helper='!gh auth git-credential' push`.
+
 ## Loop
 
 1. Read the plan. The master task list is `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). The engineering limits and holds are in `docs-authority/PROJECT_PLAN.md`. The close-out record of plan lines is `docs-authority/MASTER_PLAN.md`. Check a task on AQS-PLAN-007 only with a cited file, and rerun `docs-authority/_task_plan_gen.py`. The plan names the authority and the active item.
