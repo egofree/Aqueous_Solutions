@@ -1,7 +1,7 @@
 # Flow graph census — DERIVED
 
 Source: AQS-FLOW-GRAPH-001 Rev AC
-Generated: 2026-10-19
+Generated: 2026-10-21
 
 - nodes: **178** (present=175, placeholder=1)
 - edges: **557** (present=528, placeholder=6)

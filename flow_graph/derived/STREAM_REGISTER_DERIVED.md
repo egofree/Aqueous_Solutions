@@ -2,7 +2,7 @@
 
 Document number: AQS-STR-001-DERIVED
 Source: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Generated: 2026-10-19
+Generated: 2026-10-21
 Licence: CERN-OHL-S-2.0
 
 **Not** the legacy master while migration is incomplete — compare to `cad/STREAM_REGISTER.md`.

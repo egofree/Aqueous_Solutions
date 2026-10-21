@@ -3,11 +3,11 @@
  "manifest": "flow_graph/param/regen_manifest.json",
  "argv": [
   "--max-passes",
-  "4"
+  "2"
  ],
  "quick": false,
  "graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d",
- "passes": 2,
+ "passes": 1,
  "converged": true,
  "stages": [
   {
@@ -19,9 +19,9 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 0.78,
+   "seconds": 0.82,
    "status": "ok",
-   "post_graph_sha256": "815f5b918acc725a996c0660a79542655f7a401f551af8b602520a00a9c18039"
+   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
   {
    "name": "sizing_cold_box",
@@ -32,9 +32,9 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "815f5b918acc725a996c0660a79542655f7a401f551af8b602520a00a9c18039"
+   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
   {
    "name": "sizing_evap_design",
@@ -47,7 +47,7 @@
    "pass": 1,
    "seconds": 0.27,
    "status": "ok",
-   "post_graph_sha256": "451d816b9caef2ebb981ee996307c167fa62d4be34391907a8fa3294086b96b9"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "sizing_receivers",
@@ -60,7 +60,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "sizing_h2_compressor",
@@ -73,7 +73,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "sizing_h2_purifier",
@@ -86,7 +86,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "sizing_house_scrubbers",
@@ -97,9 +97,9 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "sizing_pv_cell_line",
@@ -110,9 +110,9 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "sizing_upw_polish",
@@ -125,7 +125,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
+   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
   {
    "name": "foundry_poly",
@@ -149,7 +149,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "b269e9aa34d523318159a0faf3fb03ed0b46e3e57bb9cd93bc42dee03021df87"
   },
@@ -175,7 +175,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
@@ -201,7 +201,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
@@ -227,7 +227,7 @@
     "heat"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
@@ -240,7 +240,7 @@
     "relief"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "b4a560f18fb080df43975673f63dc7e42bc4babff6fba3b808dadef12aa95982"
   },
@@ -253,7 +253,7 @@
     "vent"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -278,277 +278,6 @@
    ],
    "pass": 1,
    "seconds": 0.3,
-   "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
-  },
-  {
-   "name": "write_graph_process",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "process"
-   ],
-   "pass": 2,
-   "seconds": 0.79,
-   "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
-  },
-  {
-   "name": "sizing_cold_box",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.cold_box",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
-  },
-  {
-   "name": "sizing_evap_design",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.evap_design",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.27,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_receivers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.receivers",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_h2_compressor",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_compressor",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_h2_purifier",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_purifier",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_house_scrubbers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.house_scrubbers",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_pv_cell_line",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.pv_cell_line",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_upw_polish",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.upw_polish",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "foundry_poly",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.foundry_poly",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "086b7139beb2108c8e5dc6afb303755840d32b27dc96ad7fb905d170323320e9"
-  },
-  {
-   "name": "fluoro_train",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.fluoro_train",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "b269e9aa34d523318159a0faf3fb03ed0b46e3e57bb9cd93bc42dee03021df87"
-  },
-  {
-   "name": "stub_activation",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.stub_activation",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "b269e9aa34d523318159a0faf3fb03ed0b46e3e57bb9cd93bc42dee03021df87"
-  },
-  {
-   "name": "sizing_heat_battery",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.heat_battery",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_headers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.headers",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_geo_loop",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.geo_loop",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "sizing_meoh_train",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.meoh_train",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "write_graph_heat",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "heat"
-   ],
-   "pass": 2,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
-  },
-  {
-   "name": "write_graph_relief",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "relief"
-   ],
-   "pass": 2,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "b4a560f18fb080df43975673f63dc7e42bc4babff6fba3b808dadef12aa95982"
-  },
-  {
-   "name": "write_graph_vent",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "vent"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
-  },
-  {
-   "name": "storage_sizing",
-   "argv": [
-    "python3",
-    "docs-authority/_storage_sizing.py"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
-  },
-  {
-   "name": "write_graph_power",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "power"
-   ],
-   "pass": 2,
-   "seconds": 0.31,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -573,7 +302,7 @@
     "flow_graph.param.balance"
    ],
    "pass": 0,
-   "seconds": 0.58,
+   "seconds": 0.57,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -584,7 +313,7 @@
     "docs-authority/_load_list.py"
    ],
    "pass": 0,
-   "seconds": 0.3,
+   "seconds": 0.31,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -595,7 +324,7 @@
     "docs-authority/_one_line.py"
    ],
    "pass": 0,
-   "seconds": 0.44,
+   "seconds": 0.46,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -606,7 +335,7 @@
     "docs-authority/_ew_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -617,7 +346,7 @@
     "docs-authority/_leach_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -630,7 +359,7 @@
     "--doc-only"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -641,7 +370,7 @@
     "docs-authority/_foundry_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -652,7 +381,7 @@
     "docs-authority/_polymers_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -681,13 +410,35 @@
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
   {
+   "name": "nozzle_sched",
+   "argv": [
+    "python3",
+    "docs-authority/_nozzle_sched.py"
+   ],
+   "pass": 0,
+   "seconds": 0.15,
+   "status": "ok",
+   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+  },
+  {
+   "name": "unit_sizing_sweep",
+   "argv": [
+    "python3",
+    "docs-authority/_unit_sizing_sweep.py"
+   ],
+   "pass": 0,
+   "seconds": 0.17,
+   "status": "ok",
+   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+  },
+  {
    "name": "line_list",
    "argv": [
     "python3",
     "docs-authority/_line_list.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -698,7 +449,7 @@
     "docs-authority/_pid_sheets.py"
    ],
    "pass": 0,
-   "seconds": 1.55,
+   "seconds": 1.59,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -731,7 +482,7 @@
     "docs-authority/_supports.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -753,7 +504,7 @@
     "docs-authority/_ew_busbar.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -764,7 +515,7 @@
     "docs-authority/_cable_schedule.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -786,7 +537,7 @@
     "docs-authority/_haz_area.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -797,7 +548,7 @@
     "flow_graph/export_authority_md.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -819,7 +570,7 @@
     "flow_graph/export_candidate_mvs.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -842,7 +593,7 @@
     "docs-authority/_task_plan_gen.py"
    ],
    "pass": 0,
-   "seconds": 0.19,
+   "seconds": 0.2,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -853,7 +604,7 @@
     "docs-authority/_model_workbook.py"
    ],
    "pass": 0,
-   "seconds": 1.54,
+   "seconds": 1.53,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -864,7 +615,7 @@
     "docs-authority/_assumptions_register.py"
    ],
    "pass": 0,
-   "seconds": 0.7,
+   "seconds": 0.19,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -875,7 +626,7 @@
     "flow_graph/regen_derived.py"
    ],
    "pass": 0,
-   "seconds": 16.05,
+   "seconds": 16.06,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -886,7 +637,7 @@
     "docs-authority/_rev_stamp.py"
    ],
    "pass": 0,
-   "seconds": 0.26,
+   "seconds": 0.29,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   }
@@ -918,7 +669,9 @@
   "docs-authority/inventory/SIZING_COVERAGE.json",
   "docs-authority/inventory/STORAGE_HOLDUP.json",
   "docs-authority/iso/*",
+  "docs-authority/nozzles/*.csv",
   "docs-authority/pid/*",
+  "docs-authority/sizing/*.md",
   "docs-authority/sizing/BMED_STACK.md",
   "docs-authority/sizing/COLD_BOX.md",
   "docs-authority/sizing/EVAP_DESIGN.md",
@@ -940,6 +693,7 @@
   "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docs-authority/sizing/UPW_POLISH.md",
   "docs-authority/sizing/VENT_SCRUBBER.md",
+  "docs-authority/sizing/_generated.json",
   "flow_graph/derived/CENSUS.md",
   "flow_graph/derived/LOOP_CLOSURE.md",
   "flow_graph/derived/MASS_FLOW_DERIVED.md",
